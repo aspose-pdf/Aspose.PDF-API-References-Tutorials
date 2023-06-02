@@ -19,7 +19,7 @@ These tutorials also provide detailed code examples, clear explanations, and ill
 | [Create Doc](./create-doc/) | Easily create a document with radio buttons using Aspose.PDF for .NET. |  
 | [Delete Form Field](./delete-form-field/) | Easily remove unwanted form fields from your PDF documents using Aspose.PDF for .NET. |  
 | [Determine Required Field](./determine-required-field/) | Easily determine required fields in your PDF forms using Aspose.PDF for .NET. |  
-| [Dynamic XFATo Acro Form](./dynamic-xfato-acro-form/) | Easily convert dynamic XFATo forms to standard AcroForm forms with Aspose.PDF for .NET. |  
+| [Dynamic XFA To Acro Form](./dynamic-xfa-to-acro-form/) | Easily convert dynamic XFATo forms to standard AcroForm forms with Aspose.PDF for .NET. |  
 | [Fill Form Field](./fill-form-field/) | Easily fill out form fields in your PDF documents using Aspose.PDF for .NET. |  
 | [Fill XFAFields](./fill-xfafields/) | Easily fill XFA fields in your PDF documents using Aspose.PDF for .NET. |  
 | [Flatten Forms](./flatten-forms/) | Easily flatten forms in your PDF documents using Aspose.PDF for .NET. |  

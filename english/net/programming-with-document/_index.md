@@ -32,7 +32,6 @@ The resource includes tutorials on the Aspose.PDF for .NET library's programming
 | [Get Warnings For Font Substitution](./getwarningsforfontsubstitution/) | Learn how to use the GetWarningsForFontSubstitution feature of Aspose.PDF for .NET to detect font substitution warnings when opening a PDF document. |  
 | [Get XMP Metadata](./getxmpmetadata/) | Learn how to use the GetXmpMetadata feature of Aspose.PDF for .NET to extract XMP metadata from a PDF document using C# source code. |  
 | [Get Warnings For Font Substitution](./getwarningsforfontsubstitution/) | Learn how to use the GetWarningsForFontSubstitution feature of Aspose.PDF for .NET to detect font substitution warnings when opening a PDF document. |  
-| [Get XMPMetadata](./getxmpmetadata/) | Learn how to use the GetXmpMetadata feature of Aspose.PDF for .NET to extract XMP metadata from a PDF document using C# source code. |  
 | [Get Zoom Factor](./getzoomfactor/) | Learn how to use Aspose.PDF for .NET to get the zoom factor of a PDF file with this step-by-step guide. |  
 | [Hide Page Numbers In TOC](./hidepagenumbersintoc/) | Learn how to hide page numbers in a table of contents using Aspose.PDF for .NET with this step-by-step guide. |  
 | [Link Duplicate Streams](./linkduplicatestreams/) | Learn how to use Aspose.PDF for .NET Link Duplicate Streams feature to optimize your PDF documents with this step-by-step guide. |  

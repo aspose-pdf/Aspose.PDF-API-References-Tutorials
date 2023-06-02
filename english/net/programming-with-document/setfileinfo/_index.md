@@ -60,36 +60,33 @@ Console.WriteLine("\nFile informations setup successfully.\nFile saved at " + da
 
 You have successfully set file information for a PDF document using Aspose.PDF for .NET.
 
-## Conclusion
-
-In conclusion, Aspose.PDF for .NET provides a simple and effective way of setting file information for PDF documents. By following the above-mentioned steps, you can easily set the desired file information values for your PDF documents using C# source code.
-
 ### Example source code for Set File Info using Aspose.PDF for .NET
 
 
 ```csharp
+// The path to the documents directory.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// The path to the documents directory.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Open document
+Document pdfDocument = new Document(dataDir + "SetFileInfo.pdf");
 
-	// Open document
-	Document pdfDocument = new Document(dataDir + "SetFileInfo.pdf");
+// Specify document information
+DocumentInfo docInfo = new DocumentInfo(pdfDocument);
 
-	// Specify document information
-	DocumentInfo docInfo = new DocumentInfo(pdfDocument);
+docInfo.Author = "Aspose";
+docInfo.CreationDate = DateTime.Now;
+docInfo.Keywords = "Aspose.Pdf, DOM, API";
+docInfo.ModDate = DateTime.Now;
+docInfo.Subject = "PDF Information";
+docInfo.Title = "Setting PDF Document Information";
 
-	docInfo.Author = "Aspose";
-	docInfo.CreationDate = DateTime.Now;
-	docInfo.Keywords = "Aspose.Pdf, DOM, API";
-	docInfo.ModDate = DateTime.Now;
-	docInfo.Subject = "PDF Information";
-	docInfo.Title = "Setting PDF Document Information";
+dataDir = dataDir + "SetFileInfo_out.pdf";
+// Save output document
+pdfDocument.Save(dataDir);
 
-	dataDir = dataDir + "SetFileInfo_out.pdf";
-	// Save output document
-	pdfDocument.Save(dataDir);
-	
-	Console.WriteLine("\nFile informations setup successfully.\nFile saved at " + dataDir);
-	
+Console.WriteLine("\nFile informations setup successfully.\nFile saved at " + dataDir);
 ```
 
+## Conclusion
+
+In conclusion, Aspose.PDF for .NET provides a simple and effective way of setting file information for PDF documents. By following the above-mentioned steps, you can easily set the desired file information values for your PDF documents using C# source code.

@@ -42,22 +42,19 @@ pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1B);
 
 The second parameter "PdfFormat.PDF_A_1B" specifies that we want to validate the PDF against PDF/A-1a standard.
 
-## Conclusion
-
-In this article, we have explained how to use Aspose.PDF for .NET to validate a PDF document against PDF/A-1a standard. By following the above steps, you can easily validate your PDF documents against various standards using Aspose.PDF for .NET.
-
 ### Example source code for Get Validate PDFABStandard using Aspose.PDF for .NET
 
 ```csharp
+// The path to the documents directory.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// The path to the documents directory.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Open document
+Document pdfDocument = new Document(dataDir + "ValidatePDFAStandard.pdf");
 
-	// Open document
-	Document pdfDocument = new Document(dataDir + "ValidatePDFAStandard.pdf");
-
-	// Validate PDF for PDF/A-1a
-	pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1B);
-	
+// Validate PDF for PDF/A-1a
+pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1B);
 ```
 
+## Conclusion
+
+In this article, we have explained how to use Aspose.PDF for .NET to validate a PDF document against PDF/A-1a standard. By following the above steps, you can easily validate your PDF documents against various standards using Aspose.PDF for .NET.

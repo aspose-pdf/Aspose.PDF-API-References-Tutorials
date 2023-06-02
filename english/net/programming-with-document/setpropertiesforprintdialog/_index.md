@@ -43,22 +43,19 @@ doc.Duplex = PrintDuplex.DuplexFlipLongEdge;
 doc.Save(dataDir + "35297_out.pdf", SaveFormat.Pdf);
 ```
 
-## Conclusion
-
-Aspose.PDF for .NET makes it easy to set properties for the print dialog in your PDF files. By following the step-by-step guide above, you can quickly optimize your PDF files for printing.
-
 ### Example source code for Set Properties For Print Dialog using Aspose.PDF for .NET
 
 ```csharp
+var dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	var dataDir = "YOUR DOCUMENT DIRECTORY";
-
-	using (Document doc = new Document())
-	{
-		doc.Pages.Add();
-		doc.Duplex = PrintDuplex.DuplexFlipLongEdge;
-		doc.Save(dataDir + "35297_out.pdf", SaveFormat.Pdf);
-	}
-
+using (Document doc = new Document())
+{
+	doc.Pages.Add();
+	doc.Duplex = PrintDuplex.DuplexFlipLongEdge;
+	doc.Save(dataDir + "35297_out.pdf", SaveFormat.Pdf);
+}
 ```
 
+## Conclusion
+
+Aspose.PDF for .NET makes it easy to set properties for the print dialog in your PDF files. By following the step-by-step guide above, you can quickly optimize your PDF files for printing.

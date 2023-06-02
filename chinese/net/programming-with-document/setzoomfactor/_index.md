@@ -49,24 +49,22 @@ dataDir = dataDir + "Zoomed_pdf_out.pdf";
 doc.Save(dataDir);
 ```
 
-## 结论
-
-Aspose.PDF for .NET 提供了一种简单有效的方法来使用 C# 代码设置 PDF 文档的缩放系数。通过执行上述步骤，您可以轻松地在 .NET 应用程序中修改任何 PDF 文档的缩放比例。
-
 ### 使用 Aspose.PDF for .NET 设置缩放因子的示例源代码
 
 ```csharp
+//文档目录的路径。
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	//文档目录的路径。
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+//实例化新的文档对象
+Document doc = new Document(dataDir + "SetZoomFactor.pdf");
 
-	//实例化新的文档对象
-	Document doc = new Document(dataDir + "SetZoomFactor.pdf");
-
-	GoToAction action = new GoToAction(new XYZExplicitDestination(1, 0, 0, .5));
-	doc.OpenAction = action;
-	dataDir = dataDir + "Zoomed_pdf_out.pdf";
-	//保存文件
-	doc.Save(dataDir);
-
+GoToAction action = new GoToAction(new XYZExplicitDestination(1, 0, 0, .5));
+doc.OpenAction = action;
+dataDir = dataDir + "Zoomed_pdf_out.pdf";
+//保存文件
+doc.Save(dataDir);
 ```
+
+## 结论
+
+Aspose.PDF for .NET 提供了一种简单有效的方法来使用 C# 代码设置 PDF 文档的缩放系数。通过执行上述步骤，您可以轻松地在 .NET 应用程序中修改任何 PDF 文档的缩放比例。

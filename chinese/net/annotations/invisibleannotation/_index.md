@@ -7,7 +7,6 @@ type: docs
 weight: 100
 url: /zh/net/annotations/invisibleannotation/
 ---
-## 了解 PDF 文档中的注释
 
 PDF 文档中的注释是一项强大的功能，允许您在不更改实际内容的情况下向文档添加额外的信息或注释。它们可用于突出显示文本、引起对文档特定区域的注意或添加评论或反馈。
 
@@ -20,7 +19,7 @@ PDF 文档中的注释是一项强大的功能，允许您在不更改实际内�
 - 文件附件注释
 - 还有很多
 
-## 使用 Aspose.PDF for .NET 在 PDF 文档中创建不可见注释
+## 第 1 步：使用 Aspose.PDF for .NET 在 PDF 文档中创建不可见注释
 
 要使用 Aspose.PDF for .NET 在 PDF 文档中创建不可见的注释，我们首先需要创建一个`FreeTextAnnotation`对象并指定注释的位置和大小。
 
@@ -36,7 +35,7 @@ FreeTextAnnotation annotation = new FreeTextAnnotation(doc.Pages[1], new Aspose.
 
 在上面的代码中，我们创建了一个`FreeTextAnnotation`对象并指定注释在 PDF 文档第 2 页上的位置。我们还指定将在注释中显示的文本的字体类型、大小和颜色。
 
-## 向不可见注释添加特征
+## 第 2 步：向不可见注释添加特征
 
 接下来，我们可以为注释添加一些特征，例如边框颜色、背景颜色或不透明度。
 
@@ -46,15 +45,16 @@ annotation.Characteristics.Border = System.Drawing.Color.Red;
 
 在上面的代码中，我们将注释的边框颜色设置为红色。
 
-## 设置注释标志
+## 第 3 步：设置注释标志
 
 在创建注解并设置其特征后，我们可以指定注解标志。在本教程中，我们希望注释可打印，但不可查看。
 
 ```csharp
 annotation.Flags = AnnotationFlags.Print | AnnotationFlags.NoView;
+doc.Pages[1].Annotations.Add(annotation);
 ```
 
-## 保存修改后的 PDF 文档
+## 第 4 步：保存修改后的 PDF 文档
 
 最后，我们可以使用新的不可见注释保存修改后的 PDF 文档。
 
@@ -76,4 +76,11 @@ FreeTextAnnotation annotation = new FreeTextAnnotation(doc.Pages[1], new Aspose.
 annotation.Contents = "ABCDEFG";
 annotation.Characteristics.Border = System.Drawing.Color.Red;
 annotation.Flags = AnnotationFlags.Print | AnnotationFlags.NoView;
-doc.Pages[1
+doc.Pages[1].Annotations.Add(annotation);
+
+dataDir = dataDir + "InvisibleAnnotation_out.pdf";
+//保存输出文件
+doc.Save(dataDir);
+//ExEnd:InvisibleAnnotation
+Console.WriteLine("\nAnnotation nvisible successfully.\nFile saved at " + dataDir);
+```

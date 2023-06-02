@@ -54,20 +54,18 @@ Console.WriteLine("\nParticular annotation deleted successfully.\nFile saved at 
 ### مثال التعليمات البرمجية المصدر لحذف تعليق توضيحي معين باستخدام Aspose.PDF لـ .NET
 
 ```csharp
+// المسار إلى دليل المستندات.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// المسار إلى دليل المستندات.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// افتح المستند
+Document pdfDocument = new Document(dataDir + "DeleteParticularAnnotation.pdf");
 
-	// افتح المستند
-	Document pdfDocument = new Document(dataDir + "DeleteParticularAnnotation.pdf");
+// حذف تعليق توضيحي معين
+pdfDocument.Pages[1].Annotations.Delete(1);
 
-	// حذف تعليق توضيحي معين
-	pdfDocument.Pages[1].Annotations.Delete(1);
+dataDir = dataDir + "DeleteParticularAnnotation_out.pdf";
+// احفظ المستند المحدث
+pdfDocument.Save(dataDir);
 
-	dataDir = dataDir + "DeleteParticularAnnotation_out.pdf";
-	// احفظ المستند المحدث
-	pdfDocument.Save(dataDir);
-
-	Console.WriteLine("\nParticular annotation deleted successfully.\nFile saved at " + dataDir);
-
+Console.WriteLine("\nParticular annotation deleted successfully.\nFile saved at " + dataDir);
 ```

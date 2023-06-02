@@ -25,7 +25,7 @@ In dieser Zeile legen wir den Pfad zu dem Verzeichnis fest, das das PDF-Dokument
 Document doc1 = new Document(dataDir + "input.pdf");
 ```
 
- Hier öffnen wir das PDF-Dokument mit Aspose.PDFs`Document` Klasse und Angabe des Pfads zur Eingabe-PDF-Datei.
+Hier öffnen wir das PDF-Dokument mit Aspose.PDFs`Document` Klasse und Angabe des Pfads zur Eingabe-PDF-Datei.
 
 ## Schritt 3: Aktualisieren der Schriftgröße und -farbe der Freitextanmerkung
 
@@ -46,10 +46,6 @@ catch (Exception ex)
 ```
 
  Dies ist ein Standard`try-catch` Block, der alle Ausnahmen abfängt, die während der Ausführung des Codes auftreten können, und die Fehlermeldung an die Konsole ausgibt.
-
-## Abschluss
-
-In diesem Artikel haben wir eine Schritt-für-Schritt-Anleitung zur Erläuterung des C#-Quellcodes der Funktion „Freitextanmerkungen aktualisieren“ von Aspose.PDF für .NET bereitgestellt. Wenn Sie diese Schritte befolgen, können Sie mit Aspose.PDF für .NET ganz einfach die Schriftgröße und Farbe von Freitextanmerkungen in Ihren PDF-Dokumenten aktualisieren.
 
 ### Beispielquellcode für die Aktualisierung der Freitextanmerkung mit Aspose.PDF für .NET
 
@@ -74,3 +70,7 @@ catch (Exception ex)
     Console.WriteLine(ex.Message);
 }
 ```
+
+## Abschluss
+
+In diesem Artikel haben wir eine Schritt-für-Schritt-Anleitung zur Erläuterung des C#-Quellcodes der Funktion „Freitextanmerkungen aktualisieren“ von Aspose.PDF für .NET bereitgestellt. Wenn Sie diese Schritte befolgen, können Sie mit Aspose.PDF für .NET ganz einfach die Schriftgröße und Farbe von Freitextanmerkungen in Ihren PDF-Dokumenten aktualisieren.

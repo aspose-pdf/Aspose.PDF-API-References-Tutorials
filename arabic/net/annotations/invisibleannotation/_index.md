@@ -7,7 +7,6 @@ type: docs
 weight: 100
 url: /ar/net/annotations/invisibleannotation/
 ---
-## فهم التعليقات التوضيحية في مستندات PDF
 
 تعد التعليقات التوضيحية في مستندات PDF ميزة قوية تتيح لك إضافة معلومات أو ملاحظات إضافية إلى المستند دون تغيير المحتوى الفعلي. يمكن استخدامها لتمييز النص أو لفت الانتباه إلى مناطق معينة من المستند أو إضافة تعليقات أو ملاحظات.
 
@@ -20,7 +19,7 @@ url: /ar/net/annotations/invisibleannotation/
 - شروح الملف المرفقات
 - و أكثر من ذلك بكثير
 
-## إنشاء تعليق غير مرئي في مستند PDF باستخدام Aspose.PDF لـ .NET
+## الخطوة 1: إنشاء تعليق غير مرئي في مستند PDF باستخدام Aspose.PDF لـ .NET
 
  لإنشاء تعليق توضيحي غير مرئي في مستند PDF باستخدام Aspose.PDF لـ .NET ، نحتاج أولاً إلى إنشاء`FreeTextAnnotation` الكائن وتحديد موقع وحجم التعليق التوضيحي.
 
@@ -36,7 +35,7 @@ FreeTextAnnotation annotation = new FreeTextAnnotation(doc.Pages[1], new Aspose.
 
  في الكود أعلاه ، نقوم بإنشاء ملف`FreeTextAnnotation`كائن وحدد مكان التعليق التوضيحي في الصفحة 2 من مستند PDF. نحدد أيضًا نوع الخط وحجمه ولونه للنص الذي سيتم عرضه في التعليق التوضيحي.
 
-## إضافة خصائص إلى التعليق التوضيحي غير المرئي
+## الخطوة 2: إضافة الخصائص إلى التعليق التوضيحي غير المرئي
 
 بعد ذلك ، يمكننا إضافة بعض الخصائص إلى التعليق التوضيحي ، مثل لون الحد أو لون الخلفية أو التعتيم.
 
@@ -46,15 +45,16 @@ annotation.Characteristics.Border = System.Drawing.Color.Red;
 
 في الكود أعلاه ، قمنا بتعيين لون حد التعليق التوضيحي إلى اللون الأحمر.
 
-## تعيين إشارات التعليق التوضيحي
+## الخطوة 3: ضبط علامات التعليقات التوضيحية
 
 بعد إنشاء التعليق التوضيحي وتعيين خصائصه ، يمكننا تحديد علامات التعليق التوضيحي. في هذا البرنامج التعليمي ، نريد أن يكون التعليق التوضيحي قابلاً للطباعة ، ولكن غير قابل للعرض.
 
 ```csharp
 annotation.Flags = AnnotationFlags.Print | AnnotationFlags.NoView;
+doc.Pages[1].Annotations.Add(annotation);
 ```
 
-## حفظ مستند PDF المعدل
+## الخطوة 4: حفظ مستند PDF المعدل
 
 أخيرًا ، يمكننا حفظ مستند PDF المعدل مع التعليق التوضيحي غير المرئي الجديد.
 
@@ -76,4 +76,11 @@ FreeTextAnnotation annotation = new FreeTextAnnotation(doc.Pages[1], new Aspose.
 annotation.Contents = "ABCDEFG";
 annotation.Characteristics.Border = System.Drawing.Color.Red;
 annotation.Flags = AnnotationFlags.Print | AnnotationFlags.NoView;
-doc.Pages[1
+doc.Pages[1].Annotations.Add(annotation);
+
+dataDir = dataDir + "InvisibleAnnotation_out.pdf";
+// حفظ ملف الإخراج
+doc.Save(dataDir);
+// ExEnd: InvisibleAnnotation
+Console.WriteLine("\nAnnotation nvisible successfully.\nFile saved at " + dataDir);
+```

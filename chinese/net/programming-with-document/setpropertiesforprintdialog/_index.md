@@ -43,21 +43,19 @@ doc.Duplex = PrintDuplex.DuplexFlipLongEdge;
 doc.Save(dataDir + "35297_out.pdf", SaveFormat.Pdf);
 ```
 
-## 结论
-
-Aspose.PDF for .NET 可以轻松设置 PDF 文件中打印对话框的属性。按照上面的分步指南，您可以快速优化 PDF 文件以进行打印。
-
 ### 使用 Aspose.PDF for .NET 设置打印对话框属性的示例源代码
 
 ```csharp
+var dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	var dataDir = "YOUR DOCUMENT DIRECTORY";
-
-	using (Document doc = new Document())
-	{
-		doc.Pages.Add();
-		doc.Duplex = PrintDuplex.DuplexFlipLongEdge;
-		doc.Save(dataDir + "35297_out.pdf", SaveFormat.Pdf);
-	}
-
+using (Document doc = new Document())
+{
+	doc.Pages.Add();
+	doc.Duplex = PrintDuplex.DuplexFlipLongEdge;
+	doc.Save(dataDir + "35297_out.pdf", SaveFormat.Pdf);
+}
 ```
+
+## 结论
+
+Aspose.PDF for .NET 可以轻松设置 PDF 文件中打印对话框的属性。按照上面的分步指南，您可以快速优化 PDF 文件以进行打印。

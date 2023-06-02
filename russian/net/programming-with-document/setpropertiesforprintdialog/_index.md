@@ -43,21 +43,19 @@ doc.Duplex = PrintDuplex.DuplexFlipLongEdge;
 doc.Save(dataDir + "35297_out.pdf", SaveFormat.Pdf);
 ```
 
-## Заключение
-
-Aspose.PDF for .NET упрощает настройку свойств диалогового окна печати в ваших PDF-файлах. Следуя приведенному выше пошаговому руководству, вы сможете быстро оптимизировать файлы PDF для печати.
-
 ### Пример исходного кода диалогового окна «Установить свойства для печати» с использованием Aspose.PDF для .NET
 
 ```csharp
+var dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	var dataDir = "YOUR DOCUMENT DIRECTORY";
-
-	using (Document doc = new Document())
-	{
-		doc.Pages.Add();
-		doc.Duplex = PrintDuplex.DuplexFlipLongEdge;
-		doc.Save(dataDir + "35297_out.pdf", SaveFormat.Pdf);
-	}
-
+using (Document doc = new Document())
+{
+	doc.Pages.Add();
+	doc.Duplex = PrintDuplex.DuplexFlipLongEdge;
+	doc.Save(dataDir + "35297_out.pdf", SaveFormat.Pdf);
+}
 ```
+
+## Заключение
+
+Aspose.PDF for .NET упрощает настройку свойств диалогового окна печати в ваших PDF-файлах. Следуя приведенному выше пошаговому руководству, вы сможете быстро оптимизировать файлы PDF для печати.

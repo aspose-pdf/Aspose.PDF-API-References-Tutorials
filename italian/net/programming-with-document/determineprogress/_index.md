@@ -71,4 +71,4 @@ private void ShowProgressOnConsole(ConversionProgressEventArgs args)
 
 ## Conclusione
 
-In questo tutorial, abbiamo fornito una guida passo passo su come determinare l'avanzamento del processo di conversione di un documento PDF utilizzando Aspose.PDF per .NET. Abbiamo anche fornito un esempio di codice che puoi usare come riferimento quando implementi questa funzionalità nella tua applicazione.
+In questo tutorial, abbiamo fornito una guida passo passo su come determinare l'avanzamento del processo di conversione di un documento PDF utilizzando Aspose.PDF per .NET. Abbiamo anche fornito un esempio di codice che puoi utilizzare come riferimento quando implementi questa funzione nella tua applicazione.

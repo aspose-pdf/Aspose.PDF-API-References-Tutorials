@@ -21,13 +21,13 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Шаг 2: Создайте экземпляр нового объекта Document
 
-Для работы с PDF-документом с помощью Aspose.PDF for .NET нам нужно создать новый`Document` объект и загрузите в него файл PDF. 
+ Для работы с PDF-документом с помощью Aspose.PDF for .NET нам нужно создать новый`Document` объект и загрузите в него файл PDF. 
 
 ```csharp
 Document doc = new Document(dataDir + "SetZoomFactor.pdf");
 ```
 
- Этот код создаст новый`Document` объект и загрузите файл PDF с именем «SetZoomFactor.pdf» из`dataDir` каталог в него.
+ Этот код создаст новый`Document`объект и загрузите файл PDF с именем «SetZoomFactor.pdf» из`dataDir` каталог в него.
 
 ## Шаг 3: Установите коэффициент масштабирования
 
@@ -49,24 +49,22 @@ dataDir = dataDir + "Zoomed_pdf_out.pdf";
 doc.Save(dataDir);
 ```
 
-## Заключение
-
-Aspose.PDF для .NET предоставляет простой и эффективный способ установить коэффициент масштабирования PDF-документа с помощью кода C#. Следуя описанным выше шагам, вы можете легко изменить коэффициент масштабирования любого документа PDF в своем приложении .NET.
-
 ### Пример исходного кода для установки коэффициента масштабирования с использованием Aspose.PDF для .NET
 
 ```csharp
+// Путь к каталогу документов.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Путь к каталогу документов.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Создать новый объект документа
+Document doc = new Document(dataDir + "SetZoomFactor.pdf");
 
-	// Создать новый объект документа
-	Document doc = new Document(dataDir + "SetZoomFactor.pdf");
-
-	GoToAction action = new GoToAction(new XYZExplicitDestination(1, 0, 0, .5));
-	doc.OpenAction = action;
-	dataDir = dataDir + "Zoomed_pdf_out.pdf";
-	// Сохраните документ
-	doc.Save(dataDir);
-
+GoToAction action = new GoToAction(new XYZExplicitDestination(1, 0, 0, .5));
+doc.OpenAction = action;
+dataDir = dataDir + "Zoomed_pdf_out.pdf";
+// Сохраните документ
+doc.Save(dataDir);
 ```
+
+## Заключение
+
+Aspose.PDF для .NET предоставляет простой и эффективный способ установить коэффициент масштабирования PDF-документа с помощью кода C#. Следуя описанным выше шагам, вы можете легко изменить коэффициент масштабирования любого документа PDF в своем приложении .NET.

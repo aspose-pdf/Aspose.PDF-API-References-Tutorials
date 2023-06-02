@@ -1,6 +1,6 @@
 ---
-title: Подтвердить стандарт PDF
-linktitle: Подтвердить стандарт PDF
+title: Подтвердить стандарт PDF A
+linktitle: Подтвердить стандарт PDF A
 second_title: Aspose.PDF для справочника API .NET
 description: Узнайте, как использовать Aspose.PDF для .NET для проверки PDF-файлов для PDFAStandard, с помощью этого пошагового руководства.
 type: docs
@@ -35,21 +35,19 @@ Document pdfDocument = new Document(dataDir + "ValidatePDFAStandard.pdf");
 pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1A);
 ```
 
-## Заключение
-
-Проверка файлов PDF на соответствие различным стандартам PDF является важным аспектом работы с файлами PDF в профессиональной среде. Aspose.PDF для .NET предоставляет мощный и простой в использовании API для проверки PDF-файлов на соответствие различным стандартам PDF, включая PDF/A-1a. Следуя пошаговому руководству, представленному в этой статье, вы сможете быстро и легко проверить свои PDF-файлы с помощью Aspose.PDF для .NET.
-
 ### Пример исходного кода для Get Validate PDFAStandard с использованием Aspose.PDF для .NET
 
 ```csharp
+// Путь к каталогу документов.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Путь к каталогу документов.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Открыть документ
+Document pdfDocument = new Document(dataDir + "ValidatePDFAStandard.pdf");
 
-	// Открыть документ
-	Document pdfDocument = new Document(dataDir + "ValidatePDFAStandard.pdf");
-
-	// Подтвердить PDF для PDF/A-1a
-	pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1A);
-
+// Подтвердить PDF для PDF/A-1a
+pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1A);
 ```
+
+## Заключение
+
+Проверка файлов PDF на соответствие различным стандартам PDF является важным аспектом работы с файлами PDF в профессиональной среде. Aspose.PDF для .NET предоставляет мощный и простой в использовании API для проверки PDF-файлов на соответствие различным стандартам PDF, включая PDF/A-1a. Следуя пошаговому руководству, представленному в этой статье, вы сможете быстро и легко проверить свои PDF-файлы с помощью Aspose.PDF для .NET.

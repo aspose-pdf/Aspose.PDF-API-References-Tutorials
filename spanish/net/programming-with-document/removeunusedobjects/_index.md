@@ -38,7 +38,7 @@ var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 
 ## Paso 4: Optimice el documento PDF usando OptimizationOptions
 
-Ahora, puede optimizar su documento PDF utilizando el método OptimizeResources con las opciones de optimización que acaba de configurar:
+Ahora, puede optimizar su documento PDF utilizando el método OptimizeResources con las opciones de optimización que acaba de establecer:
 
 ```csharp
 pdfDocument.OptimizeResources(optimizeOptions);
@@ -58,20 +58,18 @@ pdfDocument.Save(dataDir);
 ### Ejemplo de código fuente para Eliminar objetos no utilizados usando Aspose.PDF para .NET:
 
 ```csharp
-
-	// La ruta al directorio de documentos.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Abrir documento
-	Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-	// Establecer la opción RemoveUsedObject
-	var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-	{
-		RemoveUnusedObjects = true
-	};
-	// Optimizar documento PDF usando OptimizationOptions
-	pdfDocument.OptimizeResources(optimizeOptions);
-	dataDir = dataDir + "OptimizeDocument_out.pdf";
-	// Guardar documento actualizado
-	pdfDocument.Save(dataDir);
-
+// La ruta al directorio de documentos.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Abrir documento
+Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
+// Establecer la opción RemoveUsedObject
+var optimizeOptions = new Pdf.Optimization.OptimizationOptions
+{
+	RemoveUnusedObjects = true
+};
+// Optimizar documento PDF usando OptimizationOptions
+pdfDocument.OptimizeResources(optimizeOptions);
+dataDir = dataDir + "OptimizeDocument_out.pdf";
+// Guardar documento actualizado
+pdfDocument.Save(dataDir);
 ```

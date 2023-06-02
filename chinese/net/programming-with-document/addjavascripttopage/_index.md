@@ -66,12 +66,6 @@ Console.WriteLine("\nJavascript added successfully to a page.\nFile saved at " +
 ### 使用 Aspose.PDF for .NET 将 Java 脚本添加到页面的示例源代码
 
 ```csharp
-//文档目录的路径。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-//加载现有的 PDF 文件
-
-```csharp
             
 //文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -94,8 +88,7 @@ dataDir = dataDir + "JavaScript-Added_out.pdf";
 //保存 PDF 文档
 doc.Save(dataDir);
 
-Console.WriteLine("\nJavascript added successfully to a page.\nFile saved at " + dataDir);
-        
+Console.WriteLine("\nJavascript added successfully to a page.\nFile saved at " + dataDir);     
 ```
 
 ## 结论

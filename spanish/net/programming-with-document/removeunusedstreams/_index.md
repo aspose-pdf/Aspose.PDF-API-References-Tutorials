@@ -58,20 +58,18 @@ pdfDocument.Save(dataDir);
 A continuación se muestra el código fuente de ejemplo para eliminar secuencias no utilizadas mediante Aspose.PDF para .NET.
 
 ```csharp
-
-	// La ruta al directorio de documentos.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Abrir documento
-	Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-	// Establecer la opción RemoveUsedStreams
-	var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-	{
-		RemoveUnusedStreams = true
-	};
-	// Optimizar documento PDF usando OptimizationOptions
-	pdfDocument.OptimizeResources(optimizeOptions);
-	dataDir = dataDir + "OptimizeDocument_out.pdf";
-	// Guardar documento actualizado
-	pdfDocument.Save(dataDir);
-
+// La ruta al directorio de documentos.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Abrir documento
+Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
+// Establecer la opción RemoveUsedStreams
+var optimizeOptions = new Pdf.Optimization.OptimizationOptions
+{
+	RemoveUnusedStreams = true
+};
+// Optimizar documento PDF usando OptimizationOptions
+pdfDocument.OptimizeResources(optimizeOptions);
+dataDir = dataDir + "OptimizeDocument_out.pdf";
+// Guardar documento actualizado
+pdfDocument.Save(dataDir);
 ```

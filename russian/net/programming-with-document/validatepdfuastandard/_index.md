@@ -1,6 +1,6 @@
 ---
-title: Подтвердить стандарт PDFUA
-linktitle: Подтвердить стандарт PDFUA
+title: Подтвердить стандарт PDF UA
+linktitle: Подтвердить стандарт PDF UA
 second_title: Aspose.PDF для справочника API .NET
 description: Узнайте, как использовать Aspose.PDF для .NET для проверки стандарта PDF/UA с использованием кода C#. Пошаговое руководство.
 type: docs
@@ -42,14 +42,12 @@ bool isValidPdfUa = pdfDocument.Validate(dataDir + "validation-result-UA.xml", P
 ### Пример исходного кода для Get Validate PDFUAstandard с использованием Aspose.PDF для .NET
 
 ```csharp
-           
-	// Путь к каталогу документов.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Путь к каталогу документов.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Открыть документ
-	Document pdfDocument = new Document(dataDir + "ValidatePDFUAStandard.pdf");
+// Открыть документ
+Document pdfDocument = new Document(dataDir + "ValidatePDFUAStandard.pdf");
 
-	// Подтвердить PDF для PDF/UA
-	bool isValidPdfUa = pdfDocument.Validate(dataDir + "validation-result-UA.xml", PdfFormat.PDF_UA_1);
-		   
+// Подтвердить PDF для PDF/UA
+bool isValidPdfUa = pdfDocument.Validate(dataDir + "validation-result-UA.xml", PdfFormat.PDF_UA_1); 
 ```

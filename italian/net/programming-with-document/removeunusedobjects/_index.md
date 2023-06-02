@@ -7,7 +7,7 @@ type: docs
 weight: 260
 url: /it/net/programming-with-document/removeunusedobjects/
 ---
-Se stai cercando un modo per rimuovere oggetti inutilizzati nei tuoi documenti PDF utilizzando Aspose.PDF per .NET, sei nel posto giusto. Questa guida dettagliata ti mostrerà come utilizzare il codice sorgente C# fornito per eseguire questa operazione.
+Se stai cercando un modo per rimuovere oggetti inutilizzati nei tuoi documenti PDF utilizzando Aspose.PDF per .NET, sei nel posto giusto. Questa guida dettagliata ti mostrerà come utilizzare il codice sorgente C# fornito per eseguire questa attività.
 
 ## Passaggio 1: impostare il percorso della directory
 
@@ -58,20 +58,18 @@ Questo è tutto! Hai rimosso con successo gli oggetti inutilizzati dal documento
 ### Esempio di codice sorgente per Rimuovi oggetti inutilizzati utilizzando Aspose.PDF per .NET:
 
 ```csharp
-
-	// Il percorso della directory dei documenti.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Apri documento
-	Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-	// Imposta l'opzione RimuoviOggettoUsato
-	var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-	{
-		RemoveUnusedObjects = true
-	};
-	// Ottimizza il documento PDF utilizzando OptimizationOptions
-	pdfDocument.OptimizeResources(optimizeOptions);
-	dataDir = dataDir + "OptimizeDocument_out.pdf";
-	// Salva documento aggiornato
-	pdfDocument.Save(dataDir);
-
+// Il percorso della directory dei documenti.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Apri documento
+Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
+// Imposta l'opzione RimuoviOggettoUsato
+var optimizeOptions = new Pdf.Optimization.OptimizationOptions
+{
+	RemoveUnusedObjects = true
+};
+// Ottimizza il documento PDF utilizzando OptimizationOptions
+pdfDocument.OptimizeResources(optimizeOptions);
+dataDir = dataDir + "OptimizeDocument_out.pdf";
+// Salva documento aggiornato
+pdfDocument.Save(dataDir);
 ```

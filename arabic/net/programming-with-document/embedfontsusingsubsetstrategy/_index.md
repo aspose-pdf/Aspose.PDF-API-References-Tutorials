@@ -58,19 +58,14 @@ doc.Save(dataDir + "Output_out.pdf");
 ### مثال على كود المصدر لتضمين الخطوط مع إستراتيجية المجموعة الفرعية باستخدام Aspose.PDF for .NET. 
 
 ```csharp
-
-            
-            // المسار إلى دليل المستندات.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
-            Document doc = new Document(dataDir + "input.pdf");
-            // سيتم تضمين جميع الخطوط كمجموعة فرعية في المستند في حالة SubsetAllFonts.
-            doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
-            // سيتم دمج مجموعة الخطوط الفرعية للخطوط المضمنة بالكامل ولكن الخطوط التي لم يتم تضمينها في المستند لن تتأثر.
-            doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
-            doc.Save(dataDir + "Output_out.pdf");
-            
-
-        
+// المسار إلى دليل المستندات.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+Document doc = new Document(dataDir + "input.pdf");
+// سيتم تضمين جميع الخطوط كمجموعة فرعية في المستند في حالة SubsetAllFonts.
+doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
+// سيتم دمج مجموعة الخطوط الفرعية للخطوط المضمنة بالكامل ولكن الخطوط التي لم يتم تضمينها في المستند لن تتأثر.
+doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
+doc.Save(dataDir + "Output_out.pdf");
 ```
 
 ## خاتمة

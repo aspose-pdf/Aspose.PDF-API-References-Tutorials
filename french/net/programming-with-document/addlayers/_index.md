@@ -12,7 +12,7 @@ Pour ajouter des calques à un fichier PDF, nous utiliserons Aspose.PDF pour .NE
 
 ## Étape 1 : créer un nouveau document PDF
 
- Commencez par créer une nouvelle instance de`Document`classe fournie par Aspose.PDF pour .NET. Cela servira de document PDF où nous ajouterons les calques.
+ Commencez par créer une nouvelle instance de`Document` classe fournie par Aspose.PDF pour .NET. Cela servira de document PDF où nous ajouterons les calques.
 
 ```csharp
 // Chemin d'accès au répertoire des documents.
@@ -61,7 +61,7 @@ Dans ce didacticiel, nous avons ajouté trois calques avec des couleurs et des n
 
 ## Étape 4 : Enregistrer le fichier PDF
 
- Enregistrez le fichier PDF modifié à l'aide de la`Save` méthode de la`Document` classe.
+Enregistrez le fichier PDF modifié à l'aide de la`Save` méthode de la`Document` classe.
 
 ```csharp
 dataDir = dataDir + "AddLayers_out.pdf";

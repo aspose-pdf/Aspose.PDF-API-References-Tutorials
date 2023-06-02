@@ -79,23 +79,21 @@ freetext.Contents = "Free Text
 
 ### Exemple de code source pour définir la mise en forme d'annotation de texte libre à l'aide d'Aspose.PDF pour .NET
 ```csharp
+// Chemin d'accès au répertoire des documents.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Chemin d'accès au répertoire des documents.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	
-	// Ouvrir le document
-	Document pdfDocument = new Document(dataDir + "SetFreeTextAnnotationFormatting.pdf");
+// Ouvrir le document
+Document pdfDocument = new Document(dataDir + "SetFreeTextAnnotationFormatting.pdf");
 
-	// Instancier l'objet DefaultAppearance
-	DefaultAppearance default_appearance = new DefaultAppearance("Arial", 28, System.Drawing.Color.Red);
-	// Créer une annotation
-	FreeTextAnnotation freetext = new FreeTextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600), default_appearance);
-	// Spécifier le contenu de l'annotation
-	freetext.Contents = "Free Text";
-	// Ajouter une annotation à la collection d'annotations de la page
-	pdfDocument.Pages[1].Annotations.Add(freetext);
-	dataDir = dataDir + "SetFreeTextAnnotationFormatting_out.pdf";
-	//Enregistrer le document mis à jour
-	pdfDocument.Save(dataDir);            
- 
+// Instancier l'objet DefaultAppearance
+DefaultAppearance default_appearance = new DefaultAppearance("Arial", 28, System.Drawing.Color.Red);
+// Créer une annotation
+FreeTextAnnotation freetext = new FreeTextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600), default_appearance);
+// Spécifier le contenu de l'annotation
+freetext.Contents = "Free Text";
+// Ajouter une annotation à la collection d'annotations de la page
+pdfDocument.Pages[1].Annotations.Add(freetext);
+dataDir = dataDir + "SetFreeTextAnnotationFormatting_out.pdf";
+// Enregistrer le document mis à jour
+pdfDocument.Save(dataDir);            
 ```

@@ -12,7 +12,7 @@ url: /zh/net/programming-with-document/addremovejavascripttodoc/
 
 ## 步骤 1：创建一个新的 PDF 文档
 
-首先创建一个新的实例`Document` Aspose.PDF for .NET 提供的类。这将用作我们将在其中添加 JavaScript 的 PDF 文档。
+首先创建一个新的实例`Document`Aspose.PDF for .NET 提供的类。这将用作我们将在其中添加 JavaScript 的 PDF 文档。
 
 ```csharp
 //文档目录的路径。
@@ -66,32 +66,29 @@ Console.WriteLine("\nJavascript added/removed successfully to a document.");
 ### 使用 Aspose.PDF for .NET 从 PDF 文档中添加和删除 Javascript 的示例源代码
 
 ```csharp
+//文档目录的路径。
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-            
-            //文档目录的路径。
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
+Document doc = new Document();
+doc.Pages.Add();
+doc.JavaScript["func1"] = "function func1() { hello(); }";
+doc.JavaScript["func2"] = "function func2() { hello(); }";
+doc.Save(dataDir + "AddJavascript.pdf");
 
-            Document doc = new Document();
-            doc.Pages.Add();
-            doc.JavaScript["func1"] = "function func1() { hello(); }";
-            doc.JavaScript["func2"] = "function func2() { hello(); }";
-            doc.Save(dataDir + "AddJavascript.pdf");
+//删除文档级 JavaScript
+Document doc1 = new Document(dataDir + "AddJavascript.pdf");
+IList keys = (System.Collections.IList)doc1.JavaScript.Keys;
+Console.WriteLine("=============================== ");
+foreach (string key in keys)
+{
+	Console.WriteLine(key + " ==> " + doc1.JavaScript[key]);
+}
 
-            //删除文档级 JavaScript
-            Document doc1 = new Document(dataDir + "AddJavascript.pdf");
-            IList keys = (System.Collections.IList)doc1.JavaScript.Keys;
-            Console.WriteLine("=============================== ");
-            foreach (string key in keys)
-            {
-                Console.WriteLine(key + " ==> " + doc1.JavaScript[key]);
-            }
+doc1.JavaScript.Remove("func1");
+Console.WriteLine("Key 'func1' removed ");
+Console.WriteLine("=============================== ");
 
-            doc1.JavaScript.Remove("func1");
-            Console.WriteLine("Key 'func1' removed ");
-            Console.WriteLine("=============================== ");
-            
-            Console.WriteLine("\nJavascript added/removed successfully to a document.");
-        
+Console.WriteLine("\nJavascript added/removed successfully to a document.");
 ```
 
 ## 结论

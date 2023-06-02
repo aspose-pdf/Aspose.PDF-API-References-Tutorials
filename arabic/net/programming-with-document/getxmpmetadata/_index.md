@@ -44,7 +44,7 @@ Console.WriteLine(pdfDocument.Metadata["xmp:CustomProperty"]);
 
  في الكود أعلاه ،`xmp:CreateDate`, `xmp:Nickname` ، و`xmp:CustomProperty`هي أمثلة على خصائص بيانات XMP الأولية التي يمكنك استخلاصها من مستند PDF. يمكنك استبدال أسماء الخصائص هذه بأسماء أي خصائص بيانات أولية لـ XMP تريد استخراجها.
 
-## مثال التعليمات البرمجية المصدر للحصول على بيانات تعريف XMP باستخدام Aspose.PDF لـ .NET
+### مثال التعليمات البرمجية المصدر للحصول على بيانات تعريف XMP باستخدام Aspose.PDF لـ .NET
 
  إليك التعليمات البرمجية المصدر الكاملة لاستخراج بيانات XMP الوصفية من مستند PDF باستخدام ملف`GetXmpMetadata` ميزة Aspose.PDF لـ .NET:
 

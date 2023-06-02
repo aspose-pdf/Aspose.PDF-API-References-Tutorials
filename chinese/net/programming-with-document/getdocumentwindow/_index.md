@@ -57,49 +57,45 @@ Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
 这是使用检索 PDF 文档的窗口属性的完整源代码`GetDocumentWindow`Aspose.PDF for .NET 的特点：
 
 ```csharp
+//文档目录的路径。
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-            
-            //文档目录的路径。
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
+//打开文档
+Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
 
-            //打开文档
-            Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
+//获取不同的文档属性
+//文档窗口的位置 - 默认值：false
+Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
 
-            //获取不同的文档属性
-            //文档窗口的位置 - 默认值：false
-            Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
-   
-            //主要阅读顺序；确定页面的位置
-            //并排显示时 - 默认值：L2R
-            Console.WriteLine("Direction : {0}", pdfDocument.Direction);
-            
-            //窗口的标题栏是否应显示文档标题
-            //如果为 false，标题栏显示 PDF 文件名 - 默认值：false
-            Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
-            
-            //是否调整文档窗口的大小以适应
-            //首先显示的页面 - 默认值：false
-            Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
-            
-            //是否隐藏查看器应用程序的菜单栏 - 默认值：false
-            Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
-            
-            //是否隐藏查看器应用程序的工具栏 - 默认值：false
-            Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
-            
-            //是否隐藏滚动条等UI元素
-            //并且只保留显示的页面内容 - 默认值：false
-            Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
-            
-            //文档的页面模式。如何在退出全屏模式时显示文档。
-            Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
-            
-            //页面布局即单页，一栏
-            Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
-            
-            //打开文档时应如何显示
-            //即显示缩略图、全屏、显示附件面板
-            Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
-            
-        
+//主要阅读顺序；确定页面的位置
+//并排显示时 - 默认值：L2R
+Console.WriteLine("Direction : {0}", pdfDocument.Direction);
+
+//窗口的标题栏是否应显示文档标题
+//如果为 false，标题栏显示 PDF 文件名 - 默认值：false
+Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
+
+//是否调整文档窗口的大小以适应
+//首先显示的页面 - 默认值：false
+Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
+
+//是否隐藏查看器应用程序的菜单栏 - 默认值：false
+Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
+
+//是否隐藏查看器应用程序的工具栏 - 默认值：false
+Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
+
+//是否隐藏滚动条等UI元素
+//并且只保留显示的页面内容 - 默认值：false
+Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
+
+//文档的页面模式。如何在退出全屏模式时显示文档。
+Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
+
+//页面布局即单页，一栏
+Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
+
+//打开文档时应如何显示
+//即显示缩略图、全屏、显示附件面板
+Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
 ```

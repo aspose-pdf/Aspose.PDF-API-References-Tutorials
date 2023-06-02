@@ -60,17 +60,15 @@ System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); /
 Ecco il codice sorgente di esempio completo per Ottieni fattore di zoom utilizzando Aspose.PDF per .NET:
 
 ```csharp
+// Il percorso della directory dei documenti.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Il percorso della directory dei documenti.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Crea un'istanza di un nuovo oggetto Document
+Document doc = new Document(dataDir + "Zoomed_pdf.pdf");
 
-	// Crea un'istanza di un nuovo oggetto Document
-	Document doc = new Document(dataDir + "Zoomed_pdf.pdf");
+// Crea un oggetto GoToAction
+GoToAction action = doc.OpenAction as GoToAction;
 
-	// Crea un oggetto GoToAction
-	GoToAction action = doc.OpenAction as GoToAction;
-	
-	// Ottieni il fattore di zoom del file PDF
-	System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); // Valore di zoom del documento;
-	
+// Ottieni il fattore di zoom del file PDF
+System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); // Valore di zoom del documento;
 ```

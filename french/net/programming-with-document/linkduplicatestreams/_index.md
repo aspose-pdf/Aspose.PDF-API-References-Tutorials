@@ -62,20 +62,18 @@ Dans le code ci-dessus, nous avons utilisé la méthode Save de l'objet pdfDocum
 ### Exemple de code source pour relier des flux en double à l'aide d'Aspose.PDF pour .NET
 
 ```csharp
-
-	// Chemin d'accès au répertoire des documents.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Ouvrir le document
-	Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-	// Définir l'option LinkDuplcateStreams
-	var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-	{
-		LinkDuplcateStreams = true
-	};
-	// Optimiser le document PDF à l'aide d'OptimizationOptions
-	pdfDocument.OptimizeResources(optimizeOptions);
-	dataDir = dataDir + "OptimizeDocument_out.pdf";
-	// Enregistrer le document mis à jour
-	pdfDocument.Save(dataDir);
-	
+// Chemin d'accès au répertoire des documents.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Ouvrir le document
+Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
+// Définir l'option LinkDuplcateStreams
+var optimizeOptions = new Pdf.Optimization.OptimizationOptions
+{
+	LinkDuplcateStreams = true
+};
+// Optimiser le document PDF à l'aide d'OptimizationOptions
+pdfDocument.OptimizeResources(optimizeOptions);
+dataDir = dataDir + "OptimizeDocument_out.pdf";
+// Enregistrer le document mis à jour
+pdfDocument.Save(dataDir);
 ```

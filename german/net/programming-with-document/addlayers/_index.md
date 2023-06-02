@@ -12,7 +12,7 @@ Um Ebenen zu einer PDF-Datei hinzuzufügen, verwenden wir Aspose.PDF für .NET. 
 
 ## Schritt 1: Erstellen Sie ein neues PDF-Dokument
 
- Beginnen Sie mit der Erstellung einer neuen Instanz von`Document`Von Aspose.PDF für .NET bereitgestellte Klasse. Dies dient als PDF-Dokument, in dem wir die Ebenen hinzufügen.
+ Beginnen Sie mit der Erstellung einer neuen Instanz von`Document` Von Aspose.PDF für .NET bereitgestellte Klasse. Dies dient als PDF-Dokument, in dem wir die Ebenen hinzufügen.
 
 ```csharp
 // Der Pfad zum Dokumentenverzeichnis.
@@ -61,7 +61,7 @@ In diesem Tutorial haben wir der Seite drei Ebenen mit unterschiedlichen Farben 
 
 ## Schritt 4: Speichern Sie die PDF-Datei
 
- Speichern Sie die geänderte PDF-Datei mit`Save` Methode der`Document` Klasse.
+Speichern Sie die geänderte PDF-Datei mit`Save` Methode der`Document` Klasse.
 
 ```csharp
 dataDir = dataDir + "AddLayers_out.pdf";

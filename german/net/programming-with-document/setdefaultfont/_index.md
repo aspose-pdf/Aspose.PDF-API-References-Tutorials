@@ -33,7 +33,7 @@ using (Document document = new Document(fs))
 
 ## Schritt 3: Legen Sie die Standardschriftart fest
 
- Als Nächstes legen wir mithilfe von die Standardschriftart für das PDF-Dokument fest`PdfSaveOptions`Klasse. In diesem Beispiel legen wir die Standardschriftart auf „Arial“ fest.
+ Als Nächstes legen wir mithilfe von die Standardschriftart für das PDF-Dokument fest`PdfSaveOptions` Klasse. In diesem Beispiel legen wir die Standardschriftart auf „Arial“ fest.
 
 ```csharp
 PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
@@ -51,19 +51,17 @@ document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
 ### Beispielquellcode zum Festlegen der Standardschriftart mit Aspose.PDF für .NET
 
 ```csharp
-	
-	// Der Pfad zum Dokumentenverzeichnis.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Laden Sie ein vorhandenes PDF-Dokument mit fehlender Schriftart
-	string documentName = dataDir + "input.pdf";
-	string newName = "Arial";
-	using (System.IO.FileStream fs = new System.IO.FileStream(documentName, System.IO.FileMode.Open))
-	using (Document document = new Document(fs))
-	{
-		PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
-		// Geben Sie den Namen der Standardschriftart an
-		pdfSaveOptions.DefaultFontName = newName;
-		document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
-	}
-	
+// Der Pfad zum Dokumentenverzeichnis.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Laden Sie ein vorhandenes PDF-Dokument mit fehlender Schriftart
+string documentName = dataDir + "input.pdf";
+string newName = "Arial";
+using (System.IO.FileStream fs = new System.IO.FileStream(documentName, System.IO.FileMode.Open))
+using (Document document = new Document(fs))
+{
+	PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
+	// Geben Sie den Namen der Standardschriftart an
+	pdfSaveOptions.DefaultFontName = newName;
+	document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
+}
 ```

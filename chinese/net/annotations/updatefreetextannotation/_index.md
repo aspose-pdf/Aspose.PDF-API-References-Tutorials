@@ -47,10 +47,6 @@ catch (Exception ex)
 
 这是一个标准`try-catch`块捕获执行代码时可能发生的任何异常并将错误消息打印到控制台。
 
-## 结论
-
-在本文中，我们提供了一个分步指南来解释 Aspose.PDF for .NET 的更新自由文本注释功能的 C# 源代码。通过执行这些步骤，您可以使用 Aspose.PDF for .NET 轻松更新 PDF 文档中自由文本注释的字体大小和颜色。
-
 ### 使用 Aspose.PDF for .NET 更新自由文本注释的示例源代码
 
 在深入解释代码之前，我们先来看一下代码本身。此代码示例显示如何使用 Aspose.PDF for .NET 更新 PDF 文档中自由文本注释的属性。
@@ -74,3 +70,7 @@ catch (Exception ex)
     Console.WriteLine(ex.Message);
 }
 ```
+
+## 结论
+
+在本文中，我们提供了一个分步指南来解释 Aspose.PDF for .NET 的更新自由文本注释功能的 C# 源代码。通过执行这些步骤，您可以使用 Aspose.PDF for .NET 轻松更新 PDF 文档中自由文本注释的字体大小和颜色。

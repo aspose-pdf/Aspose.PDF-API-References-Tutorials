@@ -44,20 +44,18 @@ Questo codice visualizza il titolo, l'oggetto e il contenuto dell'annotazione ne
 ### Codice sorgente di esempio per ottenere un'annotazione particolare utilizzando Aspose.PDF per .NET
 
 ```csharp
+// Il percorso della directory dei documenti.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Il percorso della directory dei documenti.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Apri documento
+Document pdfDocument = new Document(dataDir + "GetParticularAnnotation.pdf");
 
-	// Apri documento
-	Document pdfDocument = new Document(dataDir + "GetParticularAnnotation.pdf");
+// Ottieni un'annotazione particolare
+TextAnnotation textAnnotation = (TextAnnotation)pdfDocument.Pages[1].Annotations[1];
 
-	// Ottieni un'annotazione particolare
-	TextAnnotation textAnnotation = (TextAnnotation)pdfDocument.Pages[1].Annotations[1];
-
-	// Ottieni proprietà di annotazione
-	Console.WriteLine("Title : {0} ", textAnnotation.Title);
-	Console.WriteLine("Subject : {0} ", textAnnotation.Subject);
-	Console.WriteLine("Contents : {0} ", textAnnotation.Contents);
-
+// Ottieni proprietà di annotazione
+Console.WriteLine("Title : {0} ", textAnnotation.Title);
+Console.WriteLine("Subject : {0} ", textAnnotation.Subject);
+Console.WriteLine("Contents : {0} ", textAnnotation.Contents);
 ```
 

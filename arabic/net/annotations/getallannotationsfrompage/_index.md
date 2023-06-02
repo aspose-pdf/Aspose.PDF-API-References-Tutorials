@@ -66,20 +66,18 @@ Console.WriteLine("Contents : {0} ", annotation.Contents);
 إليك الكود المصدري الكامل للحصول على جميع التعليقات التوضيحية من صفحة PDF باستخدام Aspose.PDF for .NET:
 
 ```csharp
+// المسار إلى دليل المستندات.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// المسار إلى دليل المستندات.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// افتح المستند
+Document pdfDocument = new Document(dataDir + "GetAllAnnotationsFromPage.pdf");
 
-	// افتح المستند
-	Document pdfDocument = new Document(dataDir + "GetAllAnnotationsFromPage.pdf");
-
-	// حلقة خلال جميع التعليقات التوضيحية
-	foreach (MarkupAnnotation annotation in pdfDocument.Pages[1].Annotations)
-	{
-		// احصل على خصائص التعليقات التوضيحية
-		Console.WriteLine("Title : {0} ", annotation.Title);
-		Console.WriteLine("Subject : {0} ", annotation.Subject);
-		Console.WriteLine("Contents : {0} ", annotation.Contents);                
-	}
-
+// حلقة خلال جميع التعليقات التوضيحية
+foreach (MarkupAnnotation annotation in pdfDocument.Pages[1].Annotations)
+{
+	// احصل على خصائص التعليقات التوضيحية
+	Console.WriteLine("Title : {0} ", annotation.Title);
+	Console.WriteLine("Subject : {0} ", annotation.Subject);
+	Console.WriteLine("Contents : {0} ", annotation.Contents);                
+}
 ```

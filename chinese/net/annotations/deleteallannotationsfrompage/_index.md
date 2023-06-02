@@ -45,23 +45,23 @@ dataDir = dataDir + "DeleteAllAnnotationsFromPage_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-## 结论
-
-在本文中，我们提供了一个分步指南，帮助您了解如何使用 Aspose.PDF for .NET 从 PDF 文档的特定页面删除所有注释。按照本指南中列出的步骤，您可以轻松地在自己的项目中实现此功能。
-
 ### 使用 Aspose.PDF for .NET 从页面中删除所有注释的示例源代码
 
 ```csharp
-	//文档目录的路径。
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+//文档目录的路径。
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	//打开文档
-	Document pdfDocument = new Document(dataDir + "DeleteAllAnnotationsFromPage.pdf");
+//打开文档
+Document pdfDocument = new Document(dataDir + "DeleteAllAnnotationsFromPage.pdf");
 
-	//删除特定注释
-	pdfDocument.Pages[1].Annotations.Delete();
+//删除特定注释
+pdfDocument.Pages[1].Annotations.Delete();
 
-	dataDir = dataDir + "DeleteAllAnnotationsFromPage_out.pdf";
-	//保存更新的文档
-	pdfDocument.Save(dataDir);
+dataDir = dataDir + "DeleteAllAnnotationsFromPage_out.pdf";
+//保存更新的文档
+pdfDocument.Save(dataDir);
 ``` 
+
+## 结论
+
+在本文中，我们提供了一个分步指南，帮助您了解如何使用 Aspose.PDF for .NET 从 PDF 文档的特定页面删除所有注释。按照本指南中列出的步骤，您可以轻松地在自己的项目中实现此功能。

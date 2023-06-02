@@ -1,0 +1,112 @@
+---
+title: استرداد حقل النموذج في ترتيب الجدولة
+linktitle: استرداد حقل النموذج في ترتيب الجدولة
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية استرداد حقول النموذج بترتيب علامات التبويب باستخدام Aspose.PDF for .NET.
+type: docs
+weight: 240
+url: /ar/net/programming-with-forms/retrieve-form-field-in-tab-order/
+---
+
+عند العمل مع مستندات PDF في C # باستخدام Aspose.PDF لـ .NET ، قد تصادف سيناريو حيث تحتاج إلى استرداد حقول النموذج بترتيب محدد لعلامات التبويب. يمكن أن يكون هذا مفيدًا عندما تريد إجراء عمليات في حقول النموذج بناءً على تسلسل علامات التبويب الخاصة بها. في هذا البرنامج التعليمي ، سنوجهك خطوة بخطوة حول كيفية استرداد حقول النموذج بترتيب علامات الجدولة باستخدام Aspose.PDF for .NET.
+
+## متطلبات
+
+قبل أن نبدأ ، تأكد من توفر المتطلبات الأساسية التالية لديك:
+
+- تم تثبيت Visual Studio على نظامك
+- تثبيت Aspose.PDF لمكتبة .NET
+
+الآن ، دعنا نتعمق في خطوات استرداد حقول النموذج بترتيب علامات التبويب.
+
+## الخطوة 1: إعداد دليل المستندات
+
+للبدء ، تحتاج إلى تعيين دليل المستند حيث يوجد مستند PDF الخاص بك. يمكنك القيام بذلك عن طريق تحديد المسار إلى الدليل في ملف`dataDir` عامل.
+
+```csharp
+// المسار إلى دليل المستندات.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ يستبدل`"YOUR DOCUMENT DIRECTORY"` مع المسار الفعلي إلى دليل المستند الخاص بك.
+
+## الخطوة 2: تحميل مستند PDF
+
+ في هذه الخطوة ، سنقوم بتحميل مستند PDF باستخدام Aspose.PDF for .NET. ال`Document` توفر class القدرة على تحميل مستندات PDF ومعالجتها.
+
+```csharp
+Document doc = new Document(dataDir + "Test2.pdf");
+```
+
+ هنا،`"Test2.pdf"` هو اسم مستند PDF الذي تريد تحميله. تأكد من وجود المستند في دليل المستند المحدد.
+
+## الخطوة 3: استرجاع حقول النموذج في ترتيب الجدولة
+
+ لاسترداد حقول النموذج بترتيب علامات التبويب ، نحتاج إلى الوصول إلى ملف`FieldsInTabOrder` ممتلكات`Page` فصل. تقوم هذه الخاصية بإرجاع قائمة بحقول النموذج مرتبة حسب تسلسل علامات التبويب الخاصة بها.
+
+```csharp
+Page page = doc.Pages[1];
+IList<Field> fields = page.FieldsInTabOrder;
+string s = "";
+foreach (Field field in fields)
+{
+     s += field. PartialName;
+}
+```
+
+في مقتطف الشفرة أعلاه ، نسترجع حقول النموذج من الصفحة الثانية (`doc.Pages[1]` ) ثم قم بالتكرار خلال كل حقل لتسلسل أسمائهم الجزئية في`s` عامل. يمكنك تعديل مقتطف الشفرة هذا بناءً على متطلباتك المحددة.
+
+## الخطوة 4: تعديل ترتيب الجدولة
+
+ إذا كنت تريد تعديل ترتيب علامات التبويب لحقول النموذج ، فيمكنك القيام بذلك عن طريق الوصول إلى ملف`TabOrder` لكل حقل وتعيين قيمة ترتيب علامة تبويب جديدة. هذا مثال:
+
+```csharp
+(doc.Form[3] as Field).TabOrder = 1;
+(doc.Form[1] as Field).TabOrder = 2;
+(doc.Form[2] as Field).TabOrder = 3;
+```
+
+في مقتطف الشفرة أعلاه ، نقوم بتعيين قيم ترتيب علامة تبويب جديدة لثلاثة حقول نموذج (`doc.Form[3]`, `doc.Form[1]` ، و`doc.Form[2]`). اضبط فهارس الحقول وقيم ترتيب الجدولة وفقًا لمتطلباتك المحددة.
+
+## الخطوة 5: حفظ المستند المعدل
+
+ بعد تعديل ترتيب علامات التبويب لحقول النموذج ، تحتاج إلى حفظ المستند المعدل. يمكنك القيام بذلك باستخدام ملف`Save` طريقة`Document` فصل.
+
+```csharp
+doc.Save(dataDir + "39522_out.pdf");
+```
+
+ هنا،`"39522_out.pdf"` هو اسم ملف الإخراج حيث سيتم حفظ المستند المعدل. حدد الاسم والموقع المطلوبين لملف الإخراج.
+
+### نموذج التعليمات البرمجية المصدر لـ Retrieve Form Field In Tab Order باستخدام Aspose.Words for .NET 
+```csharp
+// المسار إلى دليل المستندات.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+Document doc = new Document(dataDir + "Test2.pdf");
+Page page = doc.Pages[1];
+IList<Field> fields = page.FieldsInTabOrder;
+string s = "";
+foreach (Field field in fields)
+{
+	s += field.PartialName;
+}
+(doc.Form[3] as Field).TabOrder = 1;
+(doc.Form[1] as Field).TabOrder = 2;
+(doc.Form[2] as Field).TabOrder = 3;
+doc.Save(dataDir + "39522_out.pdf");
+Document doc1 = new Document(dataDir + "39522_out.pdf");
+s = "";
+foreach (Field field in doc1.Pages[1].FieldsInTabOrder)
+{
+	s += field.PartialName;
+}
+string index = "";
+foreach (Field field in doc1.Form)
+{
+	index += field.TabOrder;
+}
+```
+
+## خاتمة
+
+في هذا البرنامج التعليمي ، تعلمنا كيفية استرداد حقول النموذج بترتيب علامات التبويب باستخدام Aspose.PDF for .NET. لقد غطينا الخطوات المتضمنة في تحميل مستند PDF ، واستعادة حقول النموذج في ترتيب الجدولة ، وتعديل ترتيب الجدولة ، وحفظ المستند المعدل. باتباع هذه الخطوات ، يمكنك العمل بكفاءة مع حقول النموذج وتخصيص تسلسل علامات التبويب وفقًا لمتطلباتك.

@@ -58,20 +58,18 @@ pdfDocument.Save(dataDir);
 下面是使用 Aspose.PDF for .NET 删除未使用流的示例源代码。
 
 ```csharp
-
-	//文档目录的路径。
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	//打开文档
-	Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-	//设置 RemoveUsedStreams 选项
-	var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-	{
-		RemoveUnusedStreams = true
-	};
-	//使用 OptimizationOptions 优化 PDF 文档
-	pdfDocument.OptimizeResources(optimizeOptions);
-	dataDir = dataDir + "OptimizeDocument_out.pdf";
-	//保存更新的文档
-	pdfDocument.Save(dataDir);
-
+//文档目录的路径。
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+//打开文档
+Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
+//设置 RemoveUsedStreams 选项
+var optimizeOptions = new Pdf.Optimization.OptimizationOptions
+{
+	RemoveUnusedStreams = true
+};
+//使用 OptimizationOptions 优化 PDF 文档
+pdfDocument.OptimizeResources(optimizeOptions);
+dataDir = dataDir + "OptimizeDocument_out.pdf";
+//保存更新的文档
+pdfDocument.Save(dataDir);
 ```

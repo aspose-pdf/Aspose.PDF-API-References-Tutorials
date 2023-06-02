@@ -12,7 +12,7 @@ In diesem Tutorial erfahren Sie, wie Sie mit Aspose.PDF für .NET Seitenzahlen a
 
 ## Schritt 1: Laden einer vorhandenen PDF-Datei
 
-Zuerst müssen wir eine vorhandene PDF-Datei laden. Für dieses Tutorial verwenden wir die Datei „42824.pdf“, die sich im Verzeichnis „IHR DOKUMENTENVERZEICHNIS“ befindet. Ersetzen Sie diesen Verzeichnispfad durch den tatsächlichen Pfad zu Ihrem Dokumentverzeichnis.
+Zuerst müssen wir eine vorhandene PDF-Datei laden. Für dieses Tutorial verwenden wir die Datei „42824.pdf“, die sich im Verzeichnis „IHR DOKUMENTVERZEICHNIS“ befindet. Ersetzen Sie diesen Verzeichnispfad durch den tatsächlichen Pfad zu Ihrem Dokumentverzeichnis.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -77,45 +77,41 @@ doc.Save(outFile);
 ### Beispielquellcode zum Anpassen von Seitenzahlen beim Hinzufügen von Inhaltsverzeichnissen mit Aspose.PDF für .NET
 
 ```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+string inFile = dataDir + "42824.pdf";
+string outFile = dataDir + "42824_out.pdf";
+//Laden Sie eine vorhandene PDF-Datei
+Document doc = new Document(inFile);
+// Erhalten Sie Zugriff auf die erste Seite der PDF-Datei
+Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
+// Erstellen Sie ein Objekt zur Darstellung von TOC-Informationen
+TocInfo tocInfo = new TocInfo();
+TextFragment title = new TextFragment("Table Of Contents");
+title.TextState.FontSize = 20;
+title.TextState.FontStyle = FontStyles.Bold;
+// Legen Sie den Titel für das Inhaltsverzeichnis fest
+tocInfo.Title = title;
+tocInfo.PageNumbersPrefix = "P";
+tocPage.TocInfo = tocInfo;
+for (int i = 1; i<doc.Pages.Count; i++)
+{
+	// Erstellen Sie ein Überschriftenobjekt
+	Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
+	TextSegment segment2 = new TextSegment();
+	heading2.TocPage = tocPage;
+	heading2.Segments.Add(segment2);
+	// Geben Sie die Zielseite für das Überschriftenobjekt an
+	heading2.DestinationPage = doc.Pages[i + 1];
+	// Zielseite
+	heading2.Top = doc.Pages[i + 1].Rect.Height;
+	// Zielkoordinate
+	segment2.Text = "Page " + i.ToString();
+	// Fügen Sie der Seite mit dem Inhaltsverzeichnis eine Überschrift hinzu
+	tocPage.Paragraphs.Add(heading2);
+}
 
-            
-			string dataDir = "YOUR DOCUMENT DIRECTORY";
-            string inFile = dataDir + "42824.pdf";
-            string outFile = dataDir + "42824_out.pdf";
-            // Laden Sie eine vorhandene PDF-Datei
-            Document doc = new Document(inFile);
-            // Erhalten Sie Zugriff auf die erste Seite der PDF-Datei
-            Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
-            // Erstellen Sie ein Objekt zur Darstellung von TOC-Informationen
-            TocInfo tocInfo = new TocInfo();
-            TextFragment title = new TextFragment("Table Of Contents");
-            title.TextState.FontSize = 20;
-            title.TextState.FontStyle = FontStyles.Bold;
-            // Legen Sie den Titel für das Inhaltsverzeichnis fest
-            tocInfo.Title = title;
-            tocInfo.PageNumbersPrefix = "P";
-            tocPage.TocInfo = tocInfo;
-            for (int i = 1; i<doc.Pages.Count; i++)
-            {
-                // Erstellen Sie ein Überschriftenobjekt
-                Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
-                TextSegment segment2 = new TextSegment();
-                heading2.TocPage = tocPage;
-                heading2.Segments.Add(segment2);
-                // Geben Sie die Zielseite für das Überschriftenobjekt an
-                heading2.DestinationPage = doc.Pages[i + 1];
-                // Zielseite
-                heading2.Top = doc.Pages[i + 1].Rect.Height;
-                // Zielkoordinate
-                segment2.Text = "Page " + i.ToString();
-                // Fügen Sie der Seite mit dem Inhaltsverzeichnis eine Überschrift hinzu
-                tocPage.Paragraphs.Add(heading2);
-            }
-
-            //Speichern Sie das aktualisierte Dokument
-            doc.Save(outFile);
-            
-        
+// Speichern Sie das aktualisierte Dokument
+doc.Save(outFile);
 ```
 
 ## Abschluss

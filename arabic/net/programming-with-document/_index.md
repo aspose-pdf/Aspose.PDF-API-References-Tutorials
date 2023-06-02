@@ -19,7 +19,7 @@ description: يقدم هذا المورد دروس Aspose.PDF لمكتبة .NET 
 | [تحويل من RGB إلى تدرج الرمادي](./convertfromrgbtograyscale/) | تعرف على كيفية تحويل ملفات PDF من RGB إلى تدرج الرمادي باستخدام Aspose.PDF لـ .NET. تحسين جودة الطباعة وتقليل حجم الملف. |  
 | [إنشاء نهج PDF متعدد الطبقات أولاً](./createmultilayerpdffirstapproach/) | تعرف على كيفية إنشاء مستندات PDF متعددة الطبقات باستخدام الأسلوب الأول مع Aspose.PDF for .NET. أضف نصًا وصورًا والمزيد لتحسين ملفات PDF الخاصة بك. |  
 | [إنشاء نهج PDF متعدد الطبقات الثاني](./createmultilayerpdfsecondapproach/) | تعرف على كيفية إنشاء ملف PDF متعدد الطبقات باستخدام Aspose.PDF for .NET. دليل خطوة بخطوة مع الكود المصدري لإنشاء ملفات PDF ديناميكية تحتوي على نصوص وصور. |  
-| [قم بإنشاء ملف PDF A1 باستخدام Aspose Pdf](./createpdfa1withasposepdf/) | تعرف على كيفية إنشاء مستند PDF A1 باستخدام Aspose.PDF for .NET. دليل خطوة بخطوة مع شفرة المصدر C #. تحسين كفاءة ملفات PDF. |  
+| [إنشاء ملف PDF A1 باستخدام Aspose Pdf](./createpdfa1withasposepdf/) | تعرف على كيفية إنشاء مستند PDF A1 باستخدام Aspose.PDF for .NET. دليل خطوة بخطوة مع شفرة المصدر C #. تحسين كفاءة ملفات PDF. |  
 | [تخصيص أرقام الصفحات أثناء إضافة جدول المحتويات](./customizepagenumbeswhileaddingtoc/) | تعرف على كيفية تخصيص أرقام الصفحات أثناء إضافة جدول محتويات (TOC) باستخدام Aspose.PDF for .NET باستخدام هذا الدليل التفصيلي ومثال التعليمات البرمجية هذا. |  
 | [تحديد التقدم](./determineprogress/) | تعرف على كيفية تحديد تقدم عملية تحويل مستند PDF باستخدام Aspose.PDF for .NET مع هذا الدليل خطوة بخطوة ومثال التعليمات البرمجية. |  
 | [تضمين الخط](./embedfont/) | تعرف على كيفية تضمين الخطوط في ملف PDF باستخدام Aspose.PDF for .NET باستخدام هذا الدليل المفصل خطوة بخطوة. تأكد من عرض المستندات الخاصة بك بشكل صحيح على أي جهاز. |  
@@ -32,7 +32,6 @@ description: يقدم هذا المورد دروس Aspose.PDF لمكتبة .NET 
 | [الحصول على تحذيرات لاستبدال الخط](./getwarningsforfontsubstitution/) | تعرف على كيفية استخدام ميزة GetWarningsForFontSubstitution الخاصة بـ Aspose.PDF for .NET لاكتشاف تحذيرات استبدال الخط عند فتح مستند PDF. |  
 | [احصل على XMP Metadata](./getxmpmetadata/) | تعرف على كيفية استخدام ميزة GetXmpMetadata في Aspose.PDF for .NET لاستخراج بيانات XMP الوصفية من مستند PDF باستخدام كود مصدر C #. |  
 | [الحصول على تحذيرات لاستبدال الخط](./getwarningsforfontsubstitution/) | تعرف على كيفية استخدام ميزة GetWarningsForFontSubstitution الخاصة بـ Aspose.PDF for .NET لاكتشاف تحذيرات استبدال الخط عند فتح مستند PDF. |  
-| [احصل على XMPMetadata](./getxmpmetadata/) | تعرف على كيفية استخدام ميزة GetXmpMetadata في Aspose.PDF for .NET لاستخراج بيانات XMP الوصفية من مستند PDF باستخدام كود مصدر C #. |  
 | [احصل على عامل التكبير](./getzoomfactor/) | تعرف على كيفية استخدام Aspose.PDF for .NET للحصول على عامل التكبير / التصغير لملف PDF باستخدام هذا الدليل المفصل خطوة بخطوة. |  
 | [إخفاء أرقام الصفحات في جدول المحتويات](./hidepagenumbersintoc/) | تعرف على كيفية إخفاء أرقام الصفحات في جدول المحتويات باستخدام Aspose.PDF for .NET مع هذا الدليل المفصل خطوة بخطوة. |  
 | [ربط تيارات مكررة](./linkduplicatestreams/) | تعرف على كيفية استخدام Aspose.PDF لميزة .NET ربط تيارات مكررة لتحسين مستندات PDF باستخدام هذا الدليل التفصيلي. |  
@@ -44,10 +43,10 @@ description: يقدم هذا المورد دروس Aspose.PDF لمكتبة .NET 
 | [حدد تاريخ انتهاء الصلاحية](./setexpirydate/) | تعرف على كيفية تعيين تاريخ انتهاء الصلاحية في مستندات PDF باستخدام Aspose.PDF for .NET مع هذا الدليل المفصل خطوة بخطوة. |  
 | [تعيين معلومات الملف](./setfileinfo/) | تعرف على كيفية استخدام Aspose.PDF for .NET لتعيين معلومات الملف في مستندات PDF الخاصة بك باستخدام هذا الدليل التفصيلي. |  
 | [تعيين خصائص مربع حوار الطباعة](./setpropertiesforprintdialog/) | تعرف على كيفية تعيين خصائص مربع حوار الطباعة في Aspose.PDF for .NET باستخدام دليل خطوة بخطوة. |  
-| [قم بتعيين XMPMetadata](./setxmpmetadata/) | تعرف على كيفية تعيين XMPMetadata في ملفات PDF باستخدام Aspose.PDF لـ .NET. اتبع هذا الدليل المفصل خطوة بخطوة. |  
+| [قم بتعيين بيانات تعريف XMP](./setxmpmetadata/) | تعرف على كيفية تعيين XMPMetadata في ملفات PDF باستخدام Aspose.PDF لـ .NET. اتبع هذا الدليل المفصل خطوة بخطوة. |  
 | [قم بتعيين عامل التكبير](./setzoomfactor/) | تعرف على كيفية تعيين عامل التكبير / التصغير لملفات PDF باستخدام Aspose.PDF for .NET مع دليلنا المفصل خطوة بخطوة. |  
 | [تقليص المستندات](./shrinkdocuments/) | تعرف على كيفية استخدام Aspose.PDF for .NET لتقليص مستندات PDF باستخدام هذا الدليل المفصل خطوة بخطوة.  |  
 | [الخطوط غير المجمعة](./unembedfonts/) | تعرف على كيفية استخدام Aspose.PDF for .NET للحصول على الخطوط غير المجمعة وتحسين ملفات PDF. دليل خطوة بخطوة. |  
-| [تحقق من صحة PDFABStandard](./validatepdfabstandard/) | تعرف على كيفية استخدام Aspose.PDF for .NET للتحقق من صحة مستندات PDF مقابل PDFABStandard من خلال دليلنا خطوة بخطوة ومثال التعليمات البرمجية. |  
-| [تحقق من صحة PDFAStandard](./validatepdfastandard/) | تعرف على كيفية استخدام Aspose.PDF for .NET للتحقق من صحة ملفات PDF لـ PDFAStandard باستخدام هذا الدليل المفصل خطوة بخطوة. |  
-| [تحقق من صحة PDFUAstandard](./validatepdfuastandard/) | تعرف على كيفية استخدام Aspose.PDF for .NET للتحقق من صحة PDFUAstandard باستخدام كود C #. دليل خطوة بخطوة. |  
+| [تحقق من صحة معيار PDF AB](./validatepdfabstandard/) | تعرف على كيفية استخدام Aspose.PDF for .NET للتحقق من صحة مستندات PDF مقابل PDFABStandard من خلال دليلنا خطوة بخطوة ومثال التعليمات البرمجية. |  
+| [تحقق من صحة ملف PDF A القياسي](./validatepdfastandard/) | تعرف على كيفية استخدام Aspose.PDF for .NET للتحقق من صحة ملفات PDF لـ PDFAStandard باستخدام هذا الدليل المفصل خطوة بخطوة. |  
+| [تحقق من صحة معيار PDF UA](./validatepdfuastandard/) | تعرف على كيفية استخدام Aspose.PDF for .NET للتحقق من صحة PDFUAstandard باستخدام كود C #. دليل خطوة بخطوة. |  

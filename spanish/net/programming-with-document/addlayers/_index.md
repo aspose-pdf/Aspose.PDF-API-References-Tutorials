@@ -12,7 +12,7 @@ Para agregar capas a un archivo PDF, utilizaremos Aspose.PDF para .NET. Esta bib
 
 ## Paso 1: cree un nuevo documento PDF
 
- Comience por crear una nueva instancia de la`Document`clase proporcionada por Aspose.PDF para .NET. Esto servirá como el documento PDF donde agregaremos las capas.
+ Comience por crear una nueva instancia de la`Document` clase proporcionada por Aspose.PDF para .NET. Esto servirá como el documento PDF donde agregaremos las capas.
 
 ```csharp
 // La ruta al directorio de documentos.
@@ -61,7 +61,7 @@ En este tutorial, hemos agregado tres capas con diferentes colores y nombres a l
 
 ## Paso 4: Guarde el archivo PDF
 
- Guarde el archivo PDF modificado usando el`Save` metodo de la`Document` clase.
+Guarde el archivo PDF modificado usando el`Save` metodo de la`Document` clase.
 
 ```csharp
 dataDir = dataDir + "AddLayers_out.pdf";

@@ -21,13 +21,13 @@ Remplacez "VOTRE RÉPERTOIRE DE DOCUMENTS" par le chemin d'accès réel au répe
 
 ## Étape 2 : instanciez un nouvel objet Document
 
-Pour travailler avec un document PDF en utilisant Aspose.PDF pour .NET, nous devons créer un nouveau`Document` objet et chargez-y le fichier PDF. 
+ Pour travailler avec un document PDF en utilisant Aspose.PDF pour .NET, nous devons créer un nouveau`Document` objet et chargez-y le fichier PDF. 
 
 ```csharp
 Document doc = new Document(dataDir + "SetZoomFactor.pdf");
 ```
 
- Ce code va créer un nouveau`Document` objet et chargez le fichier PDF nommé "SetZoomFactor.pdf" à partir du`dataDir` répertoire dans celui-ci.
+ Ce code va créer un nouveau`Document`objet et chargez le fichier PDF nommé "SetZoomFactor.pdf" à partir du`dataDir` répertoire dans celui-ci.
 
 ## Étape 3 : Définir le facteur de zoom
 
@@ -49,24 +49,22 @@ dataDir = dataDir + "Zoomed_pdf_out.pdf";
 doc.Save(dataDir);
 ```
 
-## Conclusion
-
-Aspose.PDF pour .NET fournit un moyen simple et efficace de définir le facteur de zoom d'un document PDF à l'aide de code C#. En suivant les étapes ci-dessus, vous pouvez facilement modifier le facteur de zoom de n'importe quel document PDF dans votre application .NET.
-
 ### Exemple de code source pour Définir le facteur de zoom à l'aide d'Aspose.PDF pour .NET
 
 ```csharp
+// Chemin d'accès au répertoire des documents.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Chemin d'accès au répertoire des documents.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Instancier un nouvel objet Document
+Document doc = new Document(dataDir + "SetZoomFactor.pdf");
 
-	// Instancier un nouvel objet Document
-	Document doc = new Document(dataDir + "SetZoomFactor.pdf");
-
-	GoToAction action = new GoToAction(new XYZExplicitDestination(1, 0, 0, .5));
-	doc.OpenAction = action;
-	dataDir = dataDir + "Zoomed_pdf_out.pdf";
-	// Enregistrer le document
-	doc.Save(dataDir);
-
+GoToAction action = new GoToAction(new XYZExplicitDestination(1, 0, 0, .5));
+doc.OpenAction = action;
+dataDir = dataDir + "Zoomed_pdf_out.pdf";
+// Enregistrer le document
+doc.Save(dataDir);
 ```
+
+## Conclusion
+
+Aspose.PDF pour .NET fournit un moyen simple et efficace de définir le facteur de zoom d'un document PDF à l'aide de code C#. En suivant les étapes ci-dessus, vous pouvez facilement modifier le facteur de zoom de n'importe quel document PDF dans votre application .NET.

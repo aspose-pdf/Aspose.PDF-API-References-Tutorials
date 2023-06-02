@@ -1,0 +1,100 @@
+---
+title: Длина тире
+linktitle: Длина тире
+second_title: Aspose.PDF для справочника API .NET
+description: Узнайте, как установить длину тире с помощью Aspose.PDF для .NET. Пошаговое руководство по настройке шаблонов тире.
+type: docs
+weight: 70
+url: /ru/net/programming-with-graphs/dash-length/
+---
+В этом руководстве мы шаг за шагом проведем вас через следующий исходный код C#, чтобы установить длину тире с помощью Aspose.PDF для .NET.
+
+Прежде чем начать, убедитесь, что вы установили библиотеку Aspose.PDF и настроили среду разработки. Также есть базовые знания программирования на C#.
+
+## Шаг 1: Настройка каталога документов
+
+В предоставленном исходном коде вам необходимо указать каталог, в котором вы хотите сохранить полученный PDF-файл. Измените переменную «dataDir» на нужный каталог.
+
+```csharp
+string dataDir = "YOUR DOCUMENTS DIRECTORY";
+```
+
+## Шаг 2. Создание экземпляра объекта документа и добавление страницы
+
+Мы создаем экземпляр класса Document и добавляем в этот документ страницу.
+
+```csharp
+Document doc = new Document();
+Page page = doc.Pages.Add();
+```
+
+## Шаг 3: Создание объекта Graph и добавление его на страницу
+
+Мы создаем объект Graph с указанными размерами и добавляем его в коллекцию абзацев страницы.
+
+```csharp
+Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
+page.Paragraphs.Add(canvas);
+```
+
+## Шаг 4: Создание линейного объекта и настройка
+
+Создаем объект Line с указанными координатами и настраиваем цвет и длину штрихов.
+
+```csharp
+Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { 100, 100, 200, 100 });
+line.GraphInfo.Color = Aspose.Pdf.Color.Red;
+line.GraphInfo.DashArray = new int[] { 0, 1, 0 };
+line.GraphInfo.DashPhase = 1;
+```
+
+## Шаг 5: Добавление линии к объекту графика
+
+Мы добавляем линию в коллекцию фигур объекта Graph.
+
+```csharp
+canvas.Shapes.Add(line);
+```
+
+## Шаг 6: Сохранение полученного PDF-файла
+
+Наконец, мы сохраняем полученный файл PDF с именем «DashLength_out.pdf» в указанном каталоге.
+
+```csharp
+doc.Save(dataDir + "DashLength_out.pdf");
+```
+
+### Пример исходного кода для длины тире с использованием Aspose.Words для .NET 
+
+```csharp
+
+// Путь к каталогу документов.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Создать экземпляр документа
+Document doc = new Document();
+// Добавить страницу в коллекцию страниц объекта Document
+Page page = doc.Pages.Add();
+// Создать объект чертежа с определенными размерами
+Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
+// Добавить объект рисования в коллекцию абзацев экземпляра страницы
+page.Paragraphs.Add(canvas);
+// Создать объект «Линия»
+Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { 100, 100, 200, 100 });
+// Установить цвет для объекта «Линия»
+line.GraphInfo.Color = Aspose.Pdf.Color.Red;
+// Укажите массив штрихов для линейного объекта
+line.GraphInfo.DashArray = new int[] { 0, 1, 0 };
+// Установите фазу тире для экземпляра Line
+line.GraphInfo.DashPhase = 1;
+// Добавить линию в коллекцию фигур объекта рисования
+canvas.Shapes.Add(line);
+dataDir = dataDir + "DashLength_out.pdf";
+// Сохранить PDF-документ
+doc.Save(dataDir);
+Console.WriteLine("\nLength dashed successfully in black and white.\nFile saved at " + dataDir);            
+
+```
+
+## Заключение
+
+В этом руководстве мы объяснили, как установить длину тире с помощью Aspose.PDF для .NET. Теперь вы можете использовать эти знания для создания линий с пользовательскими шаблонами штрихов в ваших файлах PDF.

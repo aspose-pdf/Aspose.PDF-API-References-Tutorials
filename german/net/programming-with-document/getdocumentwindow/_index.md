@@ -57,49 +57,45 @@ Im obigen Code ruft jede Zeile eine andere Fenstereigenschaft des PDF-Dokuments 
  Hier ist der vollständige Quellcode zum Abrufen der Fenstereigenschaften eines PDF-Dokuments mithilfe von`GetDocumentWindow` Funktion von Aspose.PDF für .NET:
 
 ```csharp
+// Der Pfad zum Dokumentenverzeichnis.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-            
-            // Der Pfad zum Dokumentenverzeichnis.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Dokument öffnen
+Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
 
-            // Dokument öffnen
-            Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
+// Erhalten Sie verschiedene Dokumenteigenschaften
+// Position des Dokumentfensters – Standard: false
+Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
 
-            // Erhalten Sie verschiedene Dokumenteigenschaften
-            // Position des Dokumentfensters – Standard: false
-            Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
-   
-            // Vorherrschende Lesereihenfolge; bestimmt die Position der Seite
-            // Wenn nebeneinander angezeigt – Standard: L2R
-            Console.WriteLine("Direction : {0}", pdfDocument.Direction);
-            
-            // Ob in der Titelleiste des Fensters der Dokumenttitel angezeigt werden soll
-            // Bei „false“ zeigt die Titelleiste den Namen der PDF-Datei an – Standard: „false“.
-            Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
-            
-            // Ob die Größe des Dokumentfensters an die Größe angepasst werden soll
-            // Erste angezeigte Seite – Standard: false
-            Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
-            
-            // Ob die Menüleiste der Viewer-Anwendung ausgeblendet werden soll – Standard: false
-            Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
-            
-            //Ob die Symbolleiste der Viewer-Anwendung ausgeblendet werden soll – Standard: false
-            Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
-            
-            // Ob Benutzeroberflächenelemente wie Bildlaufleisten ausgeblendet werden sollen
-            // Und es werden nur die Seiteninhalte angezeigt – Standard: false
-            Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
-            
-            // Seitenmodus des Dokuments. So zeigen Sie das Dokument beim Verlassen des Vollbildmodus an.
-            Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
-            
-            // Das Seitenlayout, dh eine Seite, eine Spalte
-            Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
-            
-            // Wie das Dokument beim Öffnen angezeigt werden soll
-            // Dh Miniaturansichten, Vollbild anzeigen, Anhangsfenster anzeigen
-            Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
-            
-        
+// Vorherrschende Lesereihenfolge; bestimmt die Position der Seite
+// Wenn nebeneinander angezeigt – Standard: L2R
+Console.WriteLine("Direction : {0}", pdfDocument.Direction);
+
+// Ob in der Titelleiste des Fensters der Dokumenttitel angezeigt werden soll
+// Bei „false“ zeigt die Titelleiste den Namen der PDF-Datei an – Standard: „false“.
+Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
+
+// Ob die Größe des Dokumentfensters an die Größe angepasst werden soll
+// Erste angezeigte Seite – Standard: false
+Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
+
+// Ob die Menüleiste der Viewer-Anwendung ausgeblendet werden soll – Standard: false
+Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
+
+//Ob die Symbolleiste der Viewer-Anwendung ausgeblendet werden soll – Standard: false
+Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
+
+// Ob Benutzeroberflächenelemente wie Bildlaufleisten ausgeblendet werden sollen
+// Und es werden nur die Seiteninhalte angezeigt – Standard: false
+Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
+
+// Seitenmodus des Dokuments. So zeigen Sie das Dokument beim Verlassen des Vollbildmodus an.
+Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
+
+// Das Seitenlayout, dh eine Seite, eine Spalte
+Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
+
+// Wie das Dokument beim Öffnen angezeigt werden soll
+// Dh Miniaturansichten, Vollbild anzeigen, Anhangsfenster anzeigen
+Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
 ```

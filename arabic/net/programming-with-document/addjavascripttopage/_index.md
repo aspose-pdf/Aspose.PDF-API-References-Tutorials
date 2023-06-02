@@ -18,7 +18,7 @@ url: /ar/net/programming-with-document/addjavascripttopage/
 // المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// قم بتحميل ملفات PDF موجودة
+//قم بتحميل ملفات PDF موجودة
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
@@ -66,21 +66,15 @@ Console.WriteLine("\nJavascript added successfully to a page.\nFile saved at " +
 ### مثال على الكود المصدري لإضافة Java Script To Page باستخدام Aspose.PDF for .NET
 
 ```csharp
-// المسار إلى دليل المستندات.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// قم بتحميل ملفات PDF موجودة
-
-```csharp
             
 // المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// قم بتحميل ملفات PDF موجودة
+//قم بتحميل ملفات PDF موجودة
 Document doc = new Document(dataDir + "input.pdf");
 
 // إضافة JavaScript على مستوى المستند
-//قم بإنشاء JavascriptAction باستخدام عبارة JavaScript الموصوفة
+// قم بإنشاء JavascriptAction باستخدام عبارة JavaScript الموصوفة
 JavascriptAction javaScript = new JavascriptAction("this.print({bUI:true,bSilent:false,bShrinkToFit:true});");
 
 // قم بتعيين كائن JavascriptAction للإجراء المطلوب من المستند
@@ -94,8 +88,7 @@ dataDir = dataDir + "JavaScript-Added_out.pdf";
 // حفظ وثيقة PDF
 doc.Save(dataDir);
 
-Console.WriteLine("\nJavascript added successfully to a page.\nFile saved at " + dataDir);
-        
+Console.WriteLine("\nJavascript added successfully to a page.\nFile saved at " + dataDir);     
 ```
 
 ## خاتمة

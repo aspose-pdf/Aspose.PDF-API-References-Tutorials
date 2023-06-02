@@ -20,7 +20,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Passaggio 2: caricare il documento PDF
 
- Inizieremo caricando un documento PDF esistente a cui mancano i caratteri. In questo esempio, supponiamo che il documento PDF si trovi nella directory specificata dal file`dataDir` variabile.
+ Inizieremo caricando un documento PDF esistente a cui mancano i font. In questo esempio, supponiamo che il documento PDF si trovi nella directory specificata dal file`dataDir` variabile.
 
 ```csharp
 string documentName = dataDir + "input.pdf";
@@ -33,7 +33,7 @@ using (Document document = new Document(fs))
 
 ## Passaggio 3: imposta il carattere predefinito
 
- Successivamente, imposteremo il carattere predefinito per il documento PDF utilizzando il file`PdfSaveOptions`classe. In questo esempio, imposteremo il carattere predefinito su "Arial".
+ Successivamente, imposteremo il carattere predefinito per il documento PDF utilizzando il file`PdfSaveOptions` classe. In questo esempio, imposteremo il carattere predefinito su "Arial".
 
 ```csharp
 PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
@@ -51,19 +51,17 @@ document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
 ### Esempio di codice sorgente per impostare il carattere predefinito utilizzando Aspose.PDF per .NET
 
 ```csharp
-	
-	// Il percorso della directory dei documenti.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Carica un documento PDF esistente con font mancante
-	string documentName = dataDir + "input.pdf";
-	string newName = "Arial";
-	using (System.IO.FileStream fs = new System.IO.FileStream(documentName, System.IO.FileMode.Open))
-	using (Document document = new Document(fs))
-	{
-		PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
-		// Specifica il nome del carattere predefinito
-		pdfSaveOptions.DefaultFontName = newName;
-		document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
-	}
-	
+// Il percorso della directory dei documenti.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Carica un documento PDF esistente con font mancante
+string documentName = dataDir + "input.pdf";
+string newName = "Arial";
+using (System.IO.FileStream fs = new System.IO.FileStream(documentName, System.IO.FileMode.Open))
+using (Document document = new Document(fs))
+{
+	PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
+	// Specifica il nome del carattere predefinito
+	pdfSaveOptions.DefaultFontName = newName;
+	document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
+}
 ```

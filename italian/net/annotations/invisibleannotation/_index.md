@@ -7,7 +7,6 @@ type: docs
 weight: 100
 url: /it/net/annotations/invisibleannotation/
 ---
-## Comprensione delle annotazioni nei documenti PDF
 
 Le annotazioni nei documenti PDF sono una potente funzionalità che consente di aggiungere ulteriori informazioni o note a un documento senza modificare il contenuto effettivo. Possono essere utilizzati per evidenziare il testo, attirare l'attenzione su aree specifiche di un documento o aggiungere commenti o feedback.
 
@@ -20,7 +19,7 @@ Esistono molti tipi diversi di annotazioni che è possibile utilizzare nei docum
 - Annotazioni di file allegati
 - e molti altri
 
-## Creazione di un'annotazione invisibile in un documento PDF utilizzando Aspose.PDF per .NET
+## Passaggio 1: creazione di un'annotazione invisibile in un documento PDF utilizzando Aspose.PDF per .NET
 
  Per creare un'annotazione invisibile in un documento PDF utilizzando Aspose.PDF per .NET, dobbiamo prima creare un file`FreeTextAnnotation` oggetto e specificare la posizione e la dimensione dell'annotazione.
 
@@ -36,7 +35,7 @@ FreeTextAnnotation annotation = new FreeTextAnnotation(doc.Pages[1], new Aspose.
 
  Nel codice sopra, creiamo a`FreeTextAnnotation`oggetto e specificare la posizione dell'annotazione a pagina 2 del documento PDF. Specifichiamo anche il tipo di carattere, la dimensione e il colore per il testo che verrà visualizzato nell'annotazione.
 
-## Aggiunta di caratteristiche all'annotazione invisibile
+## Passaggio 2: aggiunta di caratteristiche all'annotazione invisibile
 
 Successivamente, possiamo aggiungere alcune caratteristiche all'annotazione, come un colore del bordo, un colore di sfondo o un'opacità.
 
@@ -46,15 +45,16 @@ annotation.Characteristics.Border = System.Drawing.Color.Red;
 
 Nel codice sopra, impostiamo il colore del bordo dell'annotazione su rosso.
 
-## Impostazione dei flag di annotazione
+## Passaggio 3: impostazione dei flag di annotazione
 
 Dopo aver creato l'annotazione e impostato le sue caratteristiche, possiamo specificare i flag di annotazione. In questo tutorial, vogliamo che l'annotazione sia stampabile, ma non visualizzabile.
 
 ```csharp
 annotation.Flags = AnnotationFlags.Print | AnnotationFlags.NoView;
+doc.Pages[1].Annotations.Add(annotation);
 ```
 
-## Salvataggio del documento PDF modificato
+## Passaggio 4: salvare il documento PDF modificato
 
 Infine, possiamo salvare il documento PDF modificato con la nuova annotazione invisibile.
 
@@ -76,4 +76,11 @@ FreeTextAnnotation annotation = new FreeTextAnnotation(doc.Pages[1], new Aspose.
 annotation.Contents = "ABCDEFG";
 annotation.Characteristics.Border = System.Drawing.Color.Red;
 annotation.Flags = AnnotationFlags.Print | AnnotationFlags.NoView;
-doc.Pages[1
+doc.Pages[1].Annotations.Add(annotation);
+
+dataDir = dataDir + "InvisibleAnnotation_out.pdf";
+// Salva il file di output
+doc.Save(dataDir);
+// ExEnd:InvisibleAnnotation
+Console.WriteLine("\nAnnotation nvisible successfully.\nFile saved at " + dataDir);
+```

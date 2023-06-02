@@ -58,19 +58,14 @@ doc.Save(dataDir + "Output_out.pdf");
 ### Пример исходного кода для внедрения шрифтов со стратегией подмножества с использованием Aspose.PDF для .NET. 
 
 ```csharp
-
-            
-            // Путь к каталогу документов.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
-            Document doc = new Document(dataDir + "input.pdf");
-            // Все шрифты будут встроены в документ как подмножество в случае SubsetAllFonts.
-            doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
-            // Подмножество шрифтов будет встроено для полностью встроенных шрифтов, но шрифты, которые не встроены в документ, не будут затронуты.
-            doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
-            doc.Save(dataDir + "Output_out.pdf");
-            
-
-        
+// Путь к каталогу документов.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+Document doc = new Document(dataDir + "input.pdf");
+// Все шрифты будут встроены в документ как подмножество в случае SubsetAllFonts.
+doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
+// Подмножество шрифтов будет встроено для полностью встроенных шрифтов, но шрифты, которые не встроены в документ, не будут затронуты.
+doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
+doc.Save(dataDir + "Output_out.pdf");
 ```
 
 ## Заключение

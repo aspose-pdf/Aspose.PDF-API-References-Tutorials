@@ -22,7 +22,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Шаг 2: Откройте файл PDF
 
-Первый шаг — открыть файл PDF, для которого вы хотите установить метаданные XMP. Для этого вам нужно создать новую`Document` object и укажите путь к вашему файлу PDF.
+ Первый шаг — открыть файл PDF, для которого вы хотите установить метаданные XMP. Для этого вам нужно создать новую`Document` object и укажите путь к вашему файлу PDF.
 
 ```csharp
 // Путь к каталогу документов.
@@ -57,7 +57,7 @@ pdfDocument.Metadata["xmp:CustomProperty"] = "Custom Value";
 
 ```csharp
 dataDir = dataDir + "SetXMPMetadata_out.pdf";
-//Сохранить документ
+// Сохранить документ
 pdfDocument.Save(dataDir);
 ```
 
@@ -66,22 +66,20 @@ pdfDocument.Save(dataDir);
 Вот полный пример исходного кода для настройки XMPMetadata с использованием Aspose.PDF для .NET:
 
 ```csharp
+// Путь к каталогу документов.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Путь к каталогу документов.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Открыть документ
+Document pdfDocument = new Document(dataDir + "SetXMPMetadata.pdf");
 
-	// Открыть документ
-	Document pdfDocument = new Document(dataDir + "SetXMPMetadata.pdf");
+// Установить свойства
+pdfDocument.Metadata["xmp:CreateDate"] = DateTime.Now;
+pdfDocument.Metadata["xmp:Nickname"] = "Nickname";
+pdfDocument.Metadata["xmp:CustomProperty"] = "Custom Value";
 
-	// Установить свойства
-	pdfDocument.Metadata["xmp:CreateDate"] = DateTime.Now;
-	pdfDocument.Metadata["xmp:Nickname"] = "Nickname";
-	pdfDocument.Metadata["xmp:CustomProperty"] = "Custom Value";
+dataDir = dataDir + "SetXMPMetadata_out.pdf";
+// Сохранить документ
+pdfDocument.Save(dataDir);
 
-	dataDir = dataDir + "SetXMPMetadata_out.pdf";
-	//Сохранить документ
-	pdfDocument.Save(dataDir);
-	
-	Console.WriteLine("\nXMP metadata in a pdf file setup successfully.\nFile saved at " + dataDir);
-
+Console.WriteLine("\nXMP metadata in a pdf file setup successfully.\nFile saved at " + dataDir);
 ```

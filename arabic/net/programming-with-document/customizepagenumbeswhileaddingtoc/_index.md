@@ -77,45 +77,41 @@ doc.Save(outFile);
 ### مثال على شفرة المصدر لتخصيص الصفحات المخدرة أثناء إضافة جدول المحتويات باستخدام Aspose.PDF لـ .NET
 
 ```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+string inFile = dataDir + "42824.pdf";
+string outFile = dataDir + "42824_out.pdf";
+//قم بتحميل ملفات PDF موجودة
+Document doc = new Document(inFile);
+// احصل على الوصول إلى الصفحة الأولى من ملف PDF
+Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
+// إنشاء كائن لتمثيل معلومات جدول المحتويات
+TocInfo tocInfo = new TocInfo();
+TextFragment title = new TextFragment("Table Of Contents");
+title.TextState.FontSize = 20;
+title.TextState.FontStyle = FontStyles.Bold;
+// قم بتعيين عنوان جدول المحتويات
+tocInfo.Title = title;
+tocInfo.PageNumbersPrefix = "P";
+tocPage.TocInfo = tocInfo;
+for (int i = 1; i<doc.Pages.Count; i++)
+{
+	// إنشاء كائن العنوان
+	Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
+	TextSegment segment2 = new TextSegment();
+	heading2.TocPage = tocPage;
+	heading2.Segments.Add(segment2);
+	// حدد صفحة الوجهة لكائن العنوان
+	heading2.DestinationPage = doc.Pages[i + 1];
+	// صفحة الوجهة
+	heading2.Top = doc.Pages[i + 1].Rect.Height;
+	// تنسيق الوجهة
+	segment2.Text = "Page " + i.ToString();
+	// أضف عنوانًا إلى الصفحة التي تحتوي على جدول المحتويات
+	tocPage.Paragraphs.Add(heading2);
+}
 
-            
-			string dataDir = "YOUR DOCUMENT DIRECTORY";
-            string inFile = dataDir + "42824.pdf";
-            string outFile = dataDir + "42824_out.pdf";
-            // قم بتحميل ملفات PDF موجودة
-            Document doc = new Document(inFile);
-            // احصل على الوصول إلى الصفحة الأولى من ملف PDF
-            Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
-            // إنشاء كائن لتمثيل معلومات جدول المحتويات
-            TocInfo tocInfo = new TocInfo();
-            TextFragment title = new TextFragment("Table Of Contents");
-            title.TextState.FontSize = 20;
-            title.TextState.FontStyle = FontStyles.Bold;
-            // قم بتعيين عنوان جدول المحتويات
-            tocInfo.Title = title;
-            tocInfo.PageNumbersPrefix = "P";
-            tocPage.TocInfo = tocInfo;
-            for (int i = 1; i<doc.Pages.Count; i++)
-            {
-                // إنشاء كائن العنوان
-                Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
-                TextSegment segment2 = new TextSegment();
-                heading2.TocPage = tocPage;
-                heading2.Segments.Add(segment2);
-                // حدد صفحة الوجهة لكائن العنوان
-                heading2.DestinationPage = doc.Pages[i + 1];
-                // صفحة الوجهة
-                heading2.Top = doc.Pages[i + 1].Rect.Height;
-                // تنسيق الوجهة
-                segment2.Text = "Page " + i.ToString();
-                // أضف عنوانًا إلى الصفحة التي تحتوي على جدول المحتويات
-                tocPage.Paragraphs.Add(heading2);
-            }
-
-            //احفظ المستند المحدث
-            doc.Save(outFile);
-            
-        
+// احفظ المستند المحدث
+doc.Save(outFile);
 ```
 
 ## خاتمة

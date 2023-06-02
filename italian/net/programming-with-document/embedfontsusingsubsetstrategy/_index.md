@@ -58,19 +58,14 @@ doc.Save(dataDir + "Output_out.pdf");
 ### Codice sorgente di esempio per l'incorporamento di caratteri con strategia di sottoinsieme utilizzando Aspose.PDF per .NET. 
 
 ```csharp
-
-            
-            // Il percorso della directory dei documenti.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
-            Document doc = new Document(dataDir + "input.pdf");
-            // Tutti i caratteri verranno incorporati come sottoinsieme nel documento in caso di SubsetAllFonts.
-            doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
-            // Il sottoinsieme di caratteri verrà incorporato per i caratteri completamente incorporati, ma i caratteri che non sono incorporati nel documento non saranno interessati.
-            doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
-            doc.Save(dataDir + "Output_out.pdf");
-            
-
-        
+// Il percorso della directory dei documenti.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+Document doc = new Document(dataDir + "input.pdf");
+// Tutti i caratteri verranno incorporati come sottoinsieme nel documento in caso di SubsetAllFonts.
+doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
+// Il sottoinsieme di caratteri verrà incorporato per i caratteri completamente incorporati, ma i caratteri che non sono incorporati nel documento non saranno interessati.
+doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
+doc.Save(dataDir + "Output_out.pdf");
 ```
 
 ## Conclusione

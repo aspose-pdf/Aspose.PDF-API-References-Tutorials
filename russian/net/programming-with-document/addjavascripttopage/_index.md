@@ -18,7 +18,7 @@ url: /ru/net/programming-with-document/addjavascripttopage/
 // Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Загрузите существующие файлы PDF
+//Загрузите существующие файлы PDF
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
@@ -66,21 +66,15 @@ Console.WriteLine("\nJavascript added successfully to a page.\nFile saved at " +
 ### Пример исходного кода для добавления сценария Java на страницу с использованием Aspose.PDF для .NET
 
 ```csharp
-// Путь к каталогу документов.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Загрузите существующие файлы PDF
-
-```csharp
             
 // Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Загрузите существующие файлы PDF
+//Загрузите существующие файлы PDF
 Document doc = new Document(dataDir + "input.pdf");
 
 // Добавление JavaScript на уровне документа
-//Создание экземпляра JavascriptAction с требуемым оператором JavaScript
+// Создание экземпляра JavascriptAction с требуемым оператором JavaScript
 JavascriptAction javaScript = new JavascriptAction("this.print({bUI:true,bSilent:false,bShrinkToFit:true});");
 
 // Назначьте объект JavascriptAction желаемому действию документа
@@ -94,8 +88,7 @@ dataDir = dataDir + "JavaScript-Added_out.pdf";
 // Сохранить PDF-документ
 doc.Save(dataDir);
 
-Console.WriteLine("\nJavascript added successfully to a page.\nFile saved at " + dataDir);
-        
+Console.WriteLine("\nJavascript added successfully to a page.\nFile saved at " + dataDir);     
 ```
 
 ## Заключение

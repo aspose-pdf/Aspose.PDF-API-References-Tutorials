@@ -14,7 +14,12 @@ Aspose.PDF for .NET 教程和代码片段，用于在您的应用程序中创建
 {{% /alert %}}
 
 这些是一些有用资源的链接：
-- [文档编程](./net/programming-with-document/)
-- [使用注解编程](./net/annotations/)
+- [文档编程](./programming-with-document/)
+- [使用注解编程](./annotations/)  
+- [文档转换](./document-conversion/)
+- [使用表单编程](./programming-with-forms/)
+- [使用表编程](./programming-with-tables/) 
+- [使用 PDF 页面编程](./programming-with-pdf-pages/)
+- [用图编程](./programming-with-graphs/)
  
 

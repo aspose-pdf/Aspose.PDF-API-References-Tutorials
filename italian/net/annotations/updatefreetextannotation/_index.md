@@ -25,7 +25,7 @@ In questa riga, stiamo impostando il percorso della directory che contiene il do
 Document doc1 = new Document(dataDir + "input.pdf");
 ```
 
- Qui stiamo aprendo il documento PDF utilizzando Aspose.PDF`Document` class e specificando il percorso del file PDF di input.
+Qui stiamo aprendo il documento PDF utilizzando Aspose.PDF`Document` class e specificando il percorso del file PDF di input.
 
 ## Passaggio 3: aggiornare la dimensione del carattere e il colore dell'annotazione di testo libero
 
@@ -46,10 +46,6 @@ catch (Exception ex)
 ```
 
  Questo è uno standard`try-catch` blocco che rileva eventuali eccezioni che possono verificarsi durante l'esecuzione del codice e stampa il messaggio di errore sulla console.
-
-## Conclusione
-
-In questo articolo, abbiamo fornito una guida dettagliata per spiegare il codice sorgente C# della funzione Aggiorna annotazione di testo libero di Aspose.PDF per .NET. Seguendo questi passaggi, puoi aggiornare facilmente la dimensione del carattere e il colore delle annotazioni di testo libero nei tuoi documenti PDF utilizzando Aspose.PDF per .NET.
 
 ### Esempio di codice sorgente per l'aggiornamento dell'annotazione di testo libero utilizzando Aspose.PDF per .NET
 
@@ -74,3 +70,7 @@ catch (Exception ex)
     Console.WriteLine(ex.Message);
 }
 ```
+
+## Conclusione
+
+In questo articolo, abbiamo fornito una guida dettagliata per spiegare il codice sorgente C# della funzione Aggiorna annotazione di testo libero di Aspose.PDF per .NET. Seguendo questi passaggi, puoi aggiornare facilmente la dimensione del carattere e il colore delle annotazioni di testo libero nei tuoi documenti PDF utilizzando Aspose.PDF per .NET.

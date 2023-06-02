@@ -75,22 +75,22 @@ Dieser Code speichert das aktualisierte PDF-Dokument mit der Anmerkung als „Ad
 ### Beispielquellcode zum Hinzufügen einer SWF-Datei als Anmerkung mit Aspose.PDF für .NET
 
 ```csharp
-	// Der Pfad zum Dokumentenverzeichnis.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Der Pfad zum Dokumentenverzeichnis.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	//Öffnen Sie das PDF-Dokument
-	Document doc = new Document(dataDir + "AddSwfFileAsAnnotation.pdf");
+//Öffnen Sie das PDF-Dokument
+Document doc = new Document(dataDir + "AddSwfFileAsAnnotation.pdf");
 
-	// Rufen Sie den Verweis auf die Seite ab, zu der Sie die Anmerkung hinzufügen müssen
-	Page page = doc.Pages[1];
+// Rufen Sie den Verweis auf die Seite ab, zu der Sie die Anmerkung hinzufügen müssen
+Page page = doc.Pages[1];
 
-	// Erstellen Sie ein ScreenAnnotation-Objekt mit einer SWF-Multimediadatei als Argument
-	ScreenAnnotation annotation = new ScreenAnnotation(page, new Aspose.Pdf.Rectangle(0, 400, 600, 700), dataDir + "input.swf");
+// Erstellen Sie ein ScreenAnnotation-Objekt mit einer SWF-Multimediadatei als Argument
+ScreenAnnotation annotation = new ScreenAnnotation(page, new Aspose.Pdf.Rectangle(0, 400, 600, 700), dataDir + "input.swf");
 
-	// Fügen Sie die Anmerkung zur Anmerkungssammlung der Seite hinzu
-	page.Annotations.Add(annotation);
+// Fügen Sie die Anmerkung zur Anmerkungssammlung der Seite hinzu
+page.Annotations.Add(annotation);
 
-	dataDir = dataDir + "AddSwfFileAsAnnotation_out.pdf";
-	// Speichern Sie das aktualisierte PDF-Dokument mit Anmerkungen
-	doc.Save(dataDir);
+dataDir = dataDir + "AddSwfFileAsAnnotation_out.pdf";
+// Speichern Sie das aktualisierte PDF-Dokument mit Anmerkungen
+doc.Save(dataDir);
 ```        

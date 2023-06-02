@@ -1,6 +1,6 @@
 ---
-title: Convalida PDFAStandard
-linktitle: Convalida PDFAStandard
+title: Convalida PDF A Standard
+linktitle: Convalida PDF A Standard
 second_title: Aspose.PDF per riferimento API .NET
 description: Scopri come utilizzare Aspose.PDF per .NET per convalidare i file PDF per PDFAStandard con questa guida dettagliata.
 type: docs
@@ -35,21 +35,19 @@ Dopo aver caricato il documento PDF, è possibile utilizzare il metodo "Convalid
 pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1A);
 ```
 
-## Conclusione
-
-La convalida dei file PDF rispetto a vari standard PDF è un aspetto importante del lavoro con i file PDF in un ambiente professionale. Aspose.PDF per .NET fornisce un'API potente e facile da usare per la convalida dei file PDF rispetto a vari standard PDF, incluso PDF/A-1a. Seguendo la guida dettagliata fornita in questo articolo, puoi convalidare rapidamente e facilmente i tuoi file PDF utilizzando Aspose.PDF per .NET.
-
 ### Esempio di codice sorgente per Get Validate PDFAStandard utilizzando Aspose.PDF per .NET
 
 ```csharp
+// Il percorso della directory dei documenti.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Il percorso della directory dei documenti.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Apri documento
+Document pdfDocument = new Document(dataDir + "ValidatePDFAStandard.pdf");
 
-	// Apri documento
-	Document pdfDocument = new Document(dataDir + "ValidatePDFAStandard.pdf");
-
-	// Convalida PDF per PDF/A-1a
-	pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1A);
-
+// Convalida PDF per PDF/A-1a
+pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1A);
 ```
+
+## Conclusione
+
+La convalida dei file PDF rispetto a vari standard PDF è un aspetto importante del lavoro con i file PDF in un ambiente professionale. Aspose.PDF per .NET fornisce un'API potente e facile da usare per la convalida dei file PDF rispetto a vari standard PDF, incluso PDF/A-1a. Seguendo la guida dettagliata fornita in questo articolo, puoi convalidare rapidamente e facilmente i tuoi file PDF utilizzando Aspose.PDF per .NET.

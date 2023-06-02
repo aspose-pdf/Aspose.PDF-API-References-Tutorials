@@ -1,0 +1,111 @@
+---
+title: Manipola tabella
+linktitle: Manipola tabella
+second_title: Aspose.PDF per riferimento API .NET
+description: Manipola facilmente le tabelle nei documenti PDF con Aspose.PDF per .NET.
+type: docs
+weight: 130
+url: /it/net/programming-with-tables/manipulate-table/
+---
+
+In questo tutorial, ti guideremo attraverso il processo passo-passo di manipolazione delle tabelle in un documento PDF utilizzando Aspose.PDF per .NET. Le tabelle sono un elemento comune nei documenti PDF e la possibilità di modificarne il contenuto a livello di codice può essere estremamente vantaggioso in vari scenari. Useremo il codice sorgente C# fornito per dimostrare il processo.
+
+## Requisiti
+
+Prima di iniziare, assicurati di avere quanto segue:
+
+- Visual Studio o qualsiasi altro ambiente di sviluppo C# installato.
+- Aspose.PDF per la libreria .NET aggiunta come riferimento al tuo progetto.
+
+Ora, tuffiamoci nei passaggi necessari per manipolare le tabelle in un documento PDF utilizzando Aspose.PDF per .NET.
+
+## Passaggio 1: caricamento del documento PDF
+
+Il primo passaggio consiste nel caricare il documento PDF esistente nell'applicazione C#. È necessario fornire il percorso della directory in cui si trova il documento.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+Document pdfDocument = new Document(dataDir + "input.pdf");
+```
+
+Sostituisci "YOUR DOCUMENT DIRECTORY" con il percorso effettivo della directory in cui si trova il tuo documento PDF.
+
+## Passaggio 2: ricerca delle tabelle nel documento
+
+Per manipolare le tabelle, dobbiamo trovarle all'interno del documento PDF. Aspose.PDF per .NET fornisce una classe TableAbsorber che ci consente di estrarre tabelle dal documento. Creeremo un'istanza della classe TableAbsorber e visiteremo la pagina desiderata del documento.
+
+```csharp
+TableAbsorber absorber = new TableAbsorber();
+absorb.Visit(pdfDocument.Pages[1]);
+```
+
+In questo esempio, stiamo visitando la prima pagina del documento. È possibile modificare il numero di pagina in base alle proprie esigenze.
+
+## Passaggio 3: accesso alle celle della tabella e ai frammenti di testo
+
+Una volta che abbiamo le tabelle, possiamo accedere alle loro celle e frammenti di testo per la manipolazione. Nel codice sorgente fornito, stiamo accedendo alla prima tabella, alla prima cella della sua prima riga e al secondo frammento di testo all'interno di quella cella.
+
+```csharp
+TextFragment fragment = absorb.TableList[0].RowList[0].CellList[0].TextFragments[1];
+```
+
+Puoi modificare il codice per scegliere come target tabelle, celle o frammenti di testo diversi in base alle tue esigenze specifiche.
+
+## Passaggio 4: manipolazione del testo della tabella
+
+Con l'accesso al frammento di testo, ora possiamo modificarne il contenuto. Nell'esempio dato, stiamo cambiando il testo in "ciao mondo".
+
+```csharp
+fragment.Text = "hi world";
+```
+
+Sentiti libero di sostituire "ciao mondo" con il testo desiderato.
+
+## Passaggio 5: salvare il documento modificato
+
+Una volta apportate le modifiche desiderate, dobbiamo salvare il documento PDF modificato.
+
+```csharp
+dataDir = dataDir + "ManipulateTable_out.pdf";
+pdfDocument.Save(dataDir);
+```
+
+Assicurati di fornire il percorso e il nome del file per il documento modificato.
+
+
+### Codice sorgente di esempio per manipolare la tabella utilizzando Aspose.Words per .NET
+
+```csharp
+try
+{
+	
+	// Il percorso della directory dei documenti.
+	string dataDir = "YOUR DOCUMENT DIRECTORY";
+
+	// Carica il file PDF esistente
+	Document pdfDocument = new Document(dataDir + "input.pdf");
+	// Crea un oggetto TableAbsorber per trovare le tabelle
+	TableAbsorber absorber = new TableAbsorber();
+
+	// Visita la prima pagina con assorbitore
+	absorber.Visit(pdfDocument.Pages[1]);
+
+	// Ottieni l'accesso alla prima tabella sulla pagina, alla loro prima cella e ai frammenti di testo in essa contenuti
+	TextFragment fragment = absorber.TableList[0].RowList[0].CellList[0].TextFragments[1];
+
+	// Modifica il testo del primo frammento di testo nella cella
+	fragment.Text = "hi world";
+	dataDir = dataDir + "ManipulateTable_out.pdf";
+	pdfDocument.Save(dataDir);
+	
+	Console.WriteLine("\nTable manipulated successfully.\nFile saved at " + dataDir);
+}
+catch (Exception ex)
+{
+	Console.WriteLine(ex.Message);
+}
+```
+
+## Conclusione
+
+In questo tutorial, abbiamo imparato come manipolare le tabelle in un documento PDF utilizzando Aspose.PDF per .NET. Seguendo la guida passo passo, puoi caricare facilmente un documento PDF, trovare tabelle, accedere a celle e frammenti di testo, modificare il contenuto della tabella e salvare il documento modificato. Questo approccio fornisce flessibilità ed efficienza quando si ha a che fare con la manipolazione delle tabelle nei documenti PDF.

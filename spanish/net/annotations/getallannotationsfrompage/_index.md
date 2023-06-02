@@ -26,7 +26,7 @@ Reemplace "SU DIRECTORIO DE DOCUMENTOS" con la ruta a la carpeta donde se almace
 string dataDir = @"C:\Users\JohnDoe\Documents\PDFs\";
 ```
 
-## Paso 3: Abrir documento
+## Paso 3: Abrir Documento
 
 El siguiente paso es abrir el documento PDF que contiene las anotaciones que desea extraer. Puedes hacerlo agregando el siguiente código:
 
@@ -66,20 +66,18 @@ Este código escribe el Título, el Asunto y el Contenido de cada anotación en 
 Aquí está el código fuente completo para obtener todas las anotaciones de una página PDF usando Aspose.PDF para .NET:
 
 ```csharp
+// La ruta al directorio de documentos.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// La ruta al directorio de documentos.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Abrir documento
+Document pdfDocument = new Document(dataDir + "GetAllAnnotationsFromPage.pdf");
 
-	// Abrir documento
-	Document pdfDocument = new Document(dataDir + "GetAllAnnotationsFromPage.pdf");
-
-	// Recorrer todas las anotaciones
-	foreach (MarkupAnnotation annotation in pdfDocument.Pages[1].Annotations)
-	{
-		// Obtener propiedades de anotación
-		Console.WriteLine("Title : {0} ", annotation.Title);
-		Console.WriteLine("Subject : {0} ", annotation.Subject);
-		Console.WriteLine("Contents : {0} ", annotation.Contents);                
-	}
-
+// Recorrer todas las anotaciones
+foreach (MarkupAnnotation annotation in pdfDocument.Pages[1].Annotations)
+{
+	// Obtener propiedades de anotación
+	Console.WriteLine("Title : {0} ", annotation.Title);
+	Console.WriteLine("Subject : {0} ", annotation.Subject);
+	Console.WriteLine("Contents : {0} ", annotation.Contents);                
+}
 ```

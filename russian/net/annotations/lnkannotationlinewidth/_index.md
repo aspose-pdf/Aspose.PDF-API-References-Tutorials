@@ -13,19 +13,19 @@ Aspose.PDF — это мощный и широко используемый ин
 
 Чтобы добавить аннотацию lnk в документ PDF, выполните следующие действия:
 
-##  Создать новый`Document` object.
+##  Шаг 1: Создайте новый`Document` object.
 ```csharp
 Document doc = new Document();
 ```
-## Добавьте новую страницу в документ.
+## Шаг 2: Добавьте новую страницу в документ.
 ```csharp
 doc.Pages.Add();
 ```
-##  Создайте список`Point` arrays that represent the ink gesture for the annotation.
+##  Шаг 3: Создайте список`Point` arrays that represent the ink gesture for the annotation.
 ```csharp
 IList<Point[]> inkList = new List<Point[]>();
 ```
-##  Создать новый`LineInfo` object that defines the properties of the ink gesture.
+##  Шаг 4: Создайте новый`LineInfo` object that defines the properties of the ink gesture.
 ```csharp
 LineInfo lineInfo = new LineInfo();
 lineInfo.VerticeCoordinate = new float[] { 55, 55, 70, 70, 70, 90, 150, 60 };
@@ -33,7 +33,7 @@ lineInfo.Visibility = true;
 lineInfo.LineColor = System.Drawing.Color.Red;
 lineInfo.LineWidth = 2;
 ```
-##  Создать новый`Aspose.Pdf.Point` array that represents the gesture from the `LineInfo` object.
+## Шаг 5: Создайте новый`Aspose.Pdf.Point` array that represents the gesture from the `LineInfo` object.
 ```csharp
 int length = lineInfo.VerticeCoordinate.Length / 2;
 Aspose.Pdf.Point[] gesture = new Aspose.Pdf.Point[length];
@@ -42,24 +42,24 @@ for (int i = 0; i < length; i++)
     gesture[i] = new Aspose.Pdf.Point(lineInfo.VerticeCoordinate[2 * i], lineInfo.VerticeCoordinate[2 * i + 1]);
 }
 ```
-## Добавьте жест в список рукописных жестов.
+## Шаг 6: Добавьте жест в список рукописных жестов.
 ```csharp
 inkList.Add(gesture);
 ```
-##  Создать новый`InkAnnotation` object that represents the link annotation.
+##  Шаг 7: Создайте новый`InkAnnotation` object that represents the link annotation.
 ```csharp
 InkAnnotation a1 = new InkAnnotation(doc.Pages[1], new Aspose.Pdf.Rectangle(100, 100, 300, 300), inkList);
 ```
-## Установите тему и заголовок аннотации.
+## Шаг 8: Установите тему и заголовок аннотации.
 ```csharp
 a1.Subject = "Test";
 a1.Title = "Title";
 ```
-## Установите цвет аннотации.
+## Шаг 9: Установите цвет аннотации.
 ```csharp
 a1.Color = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Green);
 ```
-##  Создать новый`Border` object that defines the properties of the annotation's border.
+##  Шаг 10: Создайте новый`Border` object that defines the properties of the annotation's border.
 ```csharp
 Border border = new Border(a1);
 border.Width = 3;
@@ -67,12 +67,13 @@ border.Effect = BorderEffect.Cloudy;
 border.Dash = new Dash(1, 1);
 border.Style = BorderStyle.Solid;
 ```
-## Добавьте аннотацию на страницу.
+## Шаг 11: Добавьте аннотацию на страницу.
 ```csharp
 doc.Pages[1].Annotations.Add(a1);
 ```
-## Сохраните документ в файл.
-```c// Save output file
+## Шаг 12: Сохраните документ в файл.
+```csharp
+// Сохранить выходной файл
 doc.Save(dataDir);
 
 
@@ -80,8 +81,6 @@ doc.Save(dataDir);
 ### В примере показана ширина строки аннотации lnk с Aspose.PDF для .NET.
 
 ```csharp
-
-
 // Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
@@ -115,6 +114,4 @@ doc.Pages[1].Annotations.Add(a1);
 dataDir = dataDir + "lnkAnnotationLineWidth_out.pdf";
 // Сохранить выходной файл
 doc.Save(dataDir);
-
-
 ```

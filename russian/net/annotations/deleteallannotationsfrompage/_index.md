@@ -45,23 +45,23 @@ dataDir = dataDir + "DeleteAllAnnotationsFromPage_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-## Заключение
-
-В этой статье мы предоставили пошаговое руководство, которое поможет вам понять, как удалить все аннотации с определенной страницы документа PDF с помощью Aspose.PDF для .NET. Выполняя шаги, описанные в этом руководстве, вы можете легко реализовать эту функцию в своем собственном проекте.
-
 ### Пример исходного кода для удаления всех аннотаций со страницы с использованием Aspose.PDF для .NET
 
 ```csharp
-	// Путь к каталогу документов.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Путь к каталогу документов.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Открыть документ
-	Document pdfDocument = new Document(dataDir + "DeleteAllAnnotationsFromPage.pdf");
+// Открыть документ
+Document pdfDocument = new Document(dataDir + "DeleteAllAnnotationsFromPage.pdf");
 
-	// Удалить конкретную аннотацию
-	pdfDocument.Pages[1].Annotations.Delete();
+// Удалить конкретную аннотацию
+pdfDocument.Pages[1].Annotations.Delete();
 
-	dataDir = dataDir + "DeleteAllAnnotationsFromPage_out.pdf";
-	// Сохранить обновленный документ
-	pdfDocument.Save(dataDir);
+dataDir = dataDir + "DeleteAllAnnotationsFromPage_out.pdf";
+// Сохранить обновленный документ
+pdfDocument.Save(dataDir);
 ``` 
+
+## Заключение
+
+В этой статье мы предоставили пошаговое руководство, которое поможет вам понять, как удалить все аннотации с определенной страницы документа PDF с помощью Aspose.PDF для .NET. Выполняя шаги, описанные в этом руководстве, вы можете легко реализовать эту функцию в своем собственном проекте.

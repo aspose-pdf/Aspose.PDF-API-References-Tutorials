@@ -1,6 +1,6 @@
 ---
-title: Convalida lo standard PDFUA
-linktitle: Convalida lo standard PDFUA
+title: Convalida PDF UA Standard
+linktitle: Convalida PDF UA Standard
 second_title: Aspose.PDF per riferimento API .NET
 description: Scopri come utilizzare Aspose.PDF per .NET per convalidare lo standard PDF/UA utilizzando il codice C#. Guida passo dopo passo.
 type: docs
@@ -42,14 +42,12 @@ Questo codice convalida il documento PDF per la conformità allo standard PDF/UA
 ### Esempio di codice sorgente per Get Validate PDFUAstandard utilizzando Aspose.PDF per .NET
 
 ```csharp
-           
-	// Il percorso della directory dei documenti.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Il percorso della directory dei documenti.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Apri documento
-	Document pdfDocument = new Document(dataDir + "ValidatePDFUAStandard.pdf");
+// Apri documento
+Document pdfDocument = new Document(dataDir + "ValidatePDFUAStandard.pdf");
 
-	// Convalida PDF per PDF/UA
-	bool isValidPdfUa = pdfDocument.Validate(dataDir + "validation-result-UA.xml", PdfFormat.PDF_UA_1);
-		   
+// Convalida PDF per PDF/UA
+bool isValidPdfUa = pdfDocument.Validate(dataDir + "validation-result-UA.xml", PdfFormat.PDF_UA_1); 
 ```

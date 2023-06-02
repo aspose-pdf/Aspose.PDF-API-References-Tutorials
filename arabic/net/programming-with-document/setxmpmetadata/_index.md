@@ -22,7 +22,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## الخطوة 2: افتح ملف PDF
 
-الخطوة الأولى هي فتح ملف PDF الذي تريد تعيين بيانات XMP الوصفية له. للقيام بذلك ، ستحتاج إلى إنشاء ملف`Document` الكائن وتمرير المسار إلى ملف PDF الخاص بك.
+ الخطوة الأولى هي فتح ملف PDF الذي تريد تعيين بيانات XMP الوصفية له. للقيام بذلك ، ستحتاج إلى إنشاء ملف`Document` الكائن وتمرير المسار إلى ملف PDF الخاص بك.
 
 ```csharp
 // المسار إلى دليل المستندات.
@@ -32,7 +32,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "SetXMPMetadata.pdf");
 ```
 
-## الخطوة 3: تعيين خصائص بيانات تعريف XMP
+## الخطوة 3: قم بتعيين خصائص بيانات تعريف XMP
 
 الآن بعد أن أصبح لديك ملف PDF مفتوحًا ، يمكنك البدء في تعيين خصائص بيانات XMP الوصفية. ستعتمد الخصائص التي تحددها على احتياجاتك الخاصة ، ولكن إليك بعض الخصائص الشائعة التي قد ترغب في تعيينها:
 
@@ -57,7 +57,7 @@ pdfDocument.Metadata["xmp:CustomProperty"] = "Custom Value";
 
 ```csharp
 dataDir = dataDir + "SetXMPMetadata_out.pdf";
-//احفظ المستند
+// احفظ المستند
 pdfDocument.Save(dataDir);
 ```
 
@@ -66,22 +66,20 @@ pdfDocument.Save(dataDir);
 إليك المثال الكامل لشفرة المصدر لإعداد XMPMetadata باستخدام Aspose.PDF لـ .NET:
 
 ```csharp
+// المسار إلى دليل المستندات.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// المسار إلى دليل المستندات.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// افتح المستند
+Document pdfDocument = new Document(dataDir + "SetXMPMetadata.pdf");
 
-	// افتح المستند
-	Document pdfDocument = new Document(dataDir + "SetXMPMetadata.pdf");
+// تعيين الخصائص
+pdfDocument.Metadata["xmp:CreateDate"] = DateTime.Now;
+pdfDocument.Metadata["xmp:Nickname"] = "Nickname";
+pdfDocument.Metadata["xmp:CustomProperty"] = "Custom Value";
 
-	// تعيين الخصائص
-	pdfDocument.Metadata["xmp:CreateDate"] = DateTime.Now;
-	pdfDocument.Metadata["xmp:Nickname"] = "Nickname";
-	pdfDocument.Metadata["xmp:CustomProperty"] = "Custom Value";
+dataDir = dataDir + "SetXMPMetadata_out.pdf";
+// احفظ المستند
+pdfDocument.Save(dataDir);
 
-	dataDir = dataDir + "SetXMPMetadata_out.pdf";
-	//احفظ المستند
-	pdfDocument.Save(dataDir);
-	
-	Console.WriteLine("\nXMP metadata in a pdf file setup successfully.\nFile saved at " + dataDir);
-
+Console.WriteLine("\nXMP metadata in a pdf file setup successfully.\nFile saved at " + dataDir);
 ```

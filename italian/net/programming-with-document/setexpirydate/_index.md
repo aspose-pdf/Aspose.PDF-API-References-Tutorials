@@ -9,20 +9,6 @@ url: /it/net/programming-with-document/setexpirydate/
 ---
 Aspose.PDF per .NET è una potente libreria che offre varie funzionalità per lavorare con i file PDF. Una di queste funzionalità è la possibilità di impostare una data di scadenza per un documento PDF. In questo tutorial, ti guideremo attraverso il processo di impostazione di una data di scadenza per un documento PDF utilizzando Aspose.PDF per .NET. 
 
-## Contorno
-1. Cos'è Aspose.PDF per .NET?
-2. Imposta la funzionalità della data di scadenza di Aspose.PDF per .NET
-3. Impostazione dell'ambiente
-4. Creazione di un nuovo documento PDF
-5. Aggiunta di una pagina al documento PDF
-6. Aggiunta di testo al documento PDF
-7. Creazione di un oggetto JavaScript per impostare la data di scadenza del PDF
-8. Impostazione di JavaScript come azione di apertura PDF
-9. Salvataggio del documento PDF
-10. Codice sorgente di esempio per impostare la data di scadenza utilizzando Aspose.PDF per .NET
-11. Conclusione
-12. Domande frequenti
-
 ## Passaggio 1: impostare il percorso della directory dei documenti
 
 Prima di iniziare, dobbiamo impostare il percorso della directory in cui si trova il nostro documento PDF. Memorizzeremo questo percorso in una variabile chiamata "dataDir".
@@ -33,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Passaggio 2: creazione di un nuovo documento PDF
 
- Per creare un nuovo documento PDF, dobbiamo istanziare un nuovo file`Aspose.Pdf.Document` oggetto. Possiamo farlo usando il seguente codice:
+Per creare un nuovo documento PDF, dobbiamo istanziare un nuovo file`Aspose.Pdf.Document` oggetto. Possiamo farlo usando il seguente codice:
 
 ```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
@@ -89,29 +75,27 @@ doc.Save(dataDir);
 Ecco il codice sorgente di esempio completo per l'impostazione della data di scadenza utilizzando Aspose.PDF per .NET:
 
 ```csharp
+// Il percorso della directory dei documenti.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Il percorso della directory dei documenti.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Crea un'istanza dell'oggetto Document
+Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
+// Aggiungi pagine alla raccolta di pagine di file PDF
+doc.Pages.Add();
+// Aggiungi frammento di testo alla raccolta di paragrafi dell'oggetto pagina
+doc.Pages[1].Paragraphs.Add(new TextFragment("Hello World..."));
+// Crea un oggetto JavaScript per impostare la data di scadenza del PDF
+JavascriptAction javaScript = new JavascriptAction(
+"var year=2017;"
++ "var month=5;"
++ "today = new Date(); today = new Date(today.getFullYear(), today.getMonth());"
++ "expiry = new Date(year, month);"
++ "if (today.getTime() > expiry.getTime())"
++ "app.alert('The file is expired. You need a new one.');");
+// Imposta JavaScript come azione di apertura PDF
+doc.OpenAction = javaScript;
 
-	// Crea un'istanza dell'oggetto Document
-	Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
-	// Aggiungi pagine alla raccolta di pagine di file PDF
-	doc.Pages.Add();
-	// Aggiungi frammento di testo alla raccolta di paragrafi dell'oggetto pagina
-	doc.Pages[1].Paragraphs.Add(new TextFragment("Hello World..."));
-	// Crea un oggetto JavaScript per impostare la data di scadenza del PDF
-	JavascriptAction javaScript = new JavascriptAction(
-	"var year=2017;"
-	+ "var month=5;"
-	+ "today = new Date(); today = new Date(today.getFullYear(), today.getMonth());"
-	+ "expiry = new Date(year, month);"
-	+ "if (today.getTime() > expiry.getTime())"
-	+ "app.alert('The file is expired. You need a new one.');");
-	// Imposta JavaScript come azione di apertura PDF
-	doc.OpenAction = javaScript;
-
-	dataDir = dataDir + "SetExpiryDate_out.pdf";
-	// Salva documento PDF
-	doc.Save(dataDir);
-	
+dataDir = dataDir + "SetExpiryDate_out.pdf";
+// Salva documento PDF
+doc.Save(dataDir);
 ```

@@ -12,7 +12,7 @@ Aspose.PDF для .NET — это библиотека для обработки
 ## Загрузка PDF-документа
 Первый шаг — загрузить документ PDF, который вы хотите изменить. В этом руководстве мы загрузим PDF-документ с именем «input.pdf» из папки «ВАШ КАТАЛОГ ДОКУМЕНТОВ». 
 
-```
+```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document document = new Document(dataDir + "input.pdf");
 ```
@@ -20,7 +20,7 @@ Document document = new Document(dataDir + "input.pdf");
 ## Поиск текстовых фрагментов
 Чтобы вычеркнуть определенные слова или фразы в документе PDF, сначала необходимо выполнить их поиск. Aspose.PDF предоставляет класс TextFragmentAbsorber, который можно использовать для поиска определенного текстового фрагмента в документе PDF.
 
-```
+```csharp
 Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.TextFragmentAbsorber("Estoque");
 ```
 
@@ -29,7 +29,7 @@ Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.
 ## Вычеркивание фрагментов текста
 После нахождения текстовых фрагментов следующим шагом будет их вычеркивание. Aspose.PDF предоставляет класс StrikeOutAnnotation, который можно использовать для создания зачеркивающей аннотации к текстовому фрагменту. 
 
-```
+```csharp
 Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle((float)textFragment.Position.XIndent, (float)textFragment.Position.YIndent, (float)textFragment.Position.XIndent + (float)textFragment.Rectangle.Width, (float)textFragment.Position.YIndent + (float)textFragment.Rectangle.Height);
 
 StrikeOutAnnotation strikeOut = new StrikeOutAnnotation(textFragment.Page, rect);
@@ -44,7 +44,7 @@ textFragment.Page.Annotations.Add(strikeOut);
 ## Сохранение измененного документа PDF
 Вычеркнув фрагменты текста, сохраните измененный документ.
 
-```
+```csharp
 dataDir = dataDir + "StrikeOutWords_out.pdf";
 document.Save(dataDir);
 ```
@@ -54,55 +54,50 @@ document.Save(dataDir);
 
 ```csharp
 
-            
-            
-            // Путь к каталогу документов.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Путь к каталогу документов.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-            // Открыть документ
-            Document document = new Document(dataDir + "input.pdf");
+// Открыть документ
+Document document = new Document(dataDir + "input.pdf");
 
-            // Создайте экземпляр TextFragment Absorber для поиска определенного текстового фрагмента
-            Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.TextFragmentAbsorber("Estoque");
-            // Итерация по страницам PDF-документа
-            for (int i = 1; i <= document.Pages.Count; i++)
-            {
-                // Получить первую страницу документа PDF
-                Page page = document.Pages[1];
-                page.Accept(textFragmentAbsorber);
-            }
+// Создайте экземпляр TextFragment Absorber для поиска определенного текстового фрагмента
+Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.TextFragmentAbsorber("Estoque");
+// Итерация по страницам PDF-документа
+for (int i = 1; i <= document.Pages.Count; i++)
+{
+	// Получить первую страницу документа PDF
+	Page page = document.Pages[1];
+	page.Accept(textFragmentAbsorber);
+}
 
-            // Создайте коллекцию поглощенного текста
-            Aspose.Pdf.Text.TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
+// Создайте коллекцию поглощенного текста
+Aspose.Pdf.Text.TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
 
-            // Повторить вышеприведенную коллекцию
-            for (int j = 1; j <= textFragmentCollection.Count; j++)
-            {
-                Aspose.Pdf.Text.TextFragment textFragment = textFragmentCollection[j];
+//Повторить вышеприведенную коллекцию
+for (int j = 1; j <= textFragmentCollection.Count; j++)
+{
+	Aspose.Pdf.Text.TextFragment textFragment = textFragmentCollection[j];
 
-                // Получить прямоугольные размеры объекта TextFragment
-                Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle(
-                            (float)textFragment.Position.XIndent,
-                            (float)textFragment.Position.YIndent,
-                            (float)textFragment.Position.XIndent +
-                            (float)textFragment.Rectangle.Width,
-                            (float)textFragment.Position.YIndent +
-                            (float)textFragment.Rectangle.Height);
+	// Получить прямоугольные размеры объекта TextFragment
+	Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle(
+				(float)textFragment.Position.XIndent,
+				(float)textFragment.Position.YIndent,
+				(float)textFragment.Position.XIndent +
+				(float)textFragment.Rectangle.Width,
+				(float)textFragment.Position.YIndent +
+				(float)textFragment.Rectangle.Height);
 
-                // Создание экземпляра аннотации StrikeOut
-                StrikeOutAnnotation strikeOut = new StrikeOutAnnotation(textFragment.Page, rect);
-                // Установить непрозрачность для аннотации
-                strikeOut.Opacity = .80f;
-                // Установите границу для экземпляра аннотации
-                strikeOut.Border = new Border(strikeOut);
-                // Установить цвет аннотации
-                strikeOut.Color = Aspose.Pdf.Color.Red;
-                // Добавить аннотацию в коллекцию аннотаций TextFragment
-                textFragment.Page.Annotations.Add(strikeOut);
-            }
-            dataDir = dataDir + "StrikeOutWords_out.pdf";
-            document.Save(dataDir);
-
-
-        
+	// Создание экземпляра аннотации StrikeOut
+	StrikeOutAnnotation strikeOut = new StrikeOutAnnotation(textFragment.Page, rect);
+	// Установить непрозрачность для аннотации
+	strikeOut.Opacity = .80f;
+	// Установите границу для экземпляра аннотации
+	strikeOut.Border = new Border(strikeOut);
+	// Установить цвет аннотации
+	strikeOut.Color = Aspose.Pdf.Color.Red;
+	// Добавить аннотацию в коллекцию аннотаций TextFragment
+	textFragment.Page.Annotations.Add(strikeOut);
+}
+dataDir = dataDir + "StrikeOutWords_out.pdf";
+document.Save(dataDir);
 ```

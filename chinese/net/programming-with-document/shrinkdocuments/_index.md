@@ -43,15 +43,13 @@ pdfDocument.Save(outputFilePath);
 ### 使用 Aspose.PDF for .NET 收缩文档的示例源代码
 
 ```csharp
-
-	//文档目录的路径。
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	//打开文档
-	Document pdfDocument = new Document(dataDir + "ShrinkDocument.pdf");
-	//优化PDF文档。但请注意，此方法不能保证文档缩小
-	pdfDocument.OptimizeResources();
-	dataDir = dataDir + "ShrinkDocument_out.pdf";
-	//保存更新的文档
-	pdfDocument.Save(dataDir);
-	
+//文档目录的路径。
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+//打开文档
+Document pdfDocument = new Document(dataDir + "ShrinkDocument.pdf");
+//优化PDF文档。但请注意，此方法不能保证文档缩小
+pdfDocument.OptimizeResources();
+dataDir = dataDir + "ShrinkDocument_out.pdf";
+//保存更新的文档
+pdfDocument.Save(dataDir);
 ```

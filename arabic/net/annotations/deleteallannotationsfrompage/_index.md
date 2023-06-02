@@ -45,23 +45,23 @@ dataDir = dataDir + "DeleteAllAnnotationsFromPage_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-## خاتمة
-
-في هذه المقالة ، قدمنا دليلًا تفصيليًا لمساعدتك على فهم كيفية حذف جميع التعليقات التوضيحية من صفحة معينة من مستند PDF باستخدام Aspose.PDF لـ .NET. باتباع الخطوات الموضحة في هذا الدليل ، يمكنك بسهولة تنفيذ هذه الميزة في مشروعك الخاص.
-
 ### مثال التعليمات البرمجية المصدر لحذف كافة التعليقات التوضيحية من الصفحة باستخدام Aspose.PDF لـ .NET
 
 ```csharp
-	// المسار إلى دليل المستندات.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// المسار إلى دليل المستندات.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// افتح المستند
-	Document pdfDocument = new Document(dataDir + "DeleteAllAnnotationsFromPage.pdf");
+// افتح المستند
+Document pdfDocument = new Document(dataDir + "DeleteAllAnnotationsFromPage.pdf");
 
-	// حذف تعليق توضيحي معين
-	pdfDocument.Pages[1].Annotations.Delete();
+// حذف تعليق توضيحي معين
+pdfDocument.Pages[1].Annotations.Delete();
 
-	dataDir = dataDir + "DeleteAllAnnotationsFromPage_out.pdf";
-	// احفظ المستند المحدث
-	pdfDocument.Save(dataDir);
+dataDir = dataDir + "DeleteAllAnnotationsFromPage_out.pdf";
+// احفظ المستند المحدث
+pdfDocument.Save(dataDir);
 ``` 
+
+## خاتمة
+
+في هذه المقالة ، قدمنا دليلًا تفصيليًا لمساعدتك على فهم كيفية حذف جميع التعليقات التوضيحية من صفحة معينة من مستند PDF باستخدام Aspose.PDF لـ .NET. باتباع الخطوات الموضحة في هذا الدليل ، يمكنك بسهولة تنفيذ هذه الميزة في مشروعك الخاص.

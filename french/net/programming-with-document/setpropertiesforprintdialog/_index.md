@@ -43,21 +43,19 @@ doc.Duplex = PrintDuplex.DuplexFlipLongEdge;
 doc.Save(dataDir + "35297_out.pdf", SaveFormat.Pdf);
 ```
 
-## Conclusion
-
-Aspose.PDF pour .NET facilite la définition des propriétés de la boîte de dialogue d'impression dans vos fichiers PDF. En suivant le guide étape par étape ci-dessus, vous pouvez rapidement optimiser vos fichiers PDF pour l'impression.
-
 ### Exemple de code source pour la boîte de dialogue Définir les propriétés pour l'impression à l'aide d'Aspose.PDF pour .NET
 
 ```csharp
+var dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	var dataDir = "YOUR DOCUMENT DIRECTORY";
-
-	using (Document doc = new Document())
-	{
-		doc.Pages.Add();
-		doc.Duplex = PrintDuplex.DuplexFlipLongEdge;
-		doc.Save(dataDir + "35297_out.pdf", SaveFormat.Pdf);
-	}
-
+using (Document doc = new Document())
+{
+	doc.Pages.Add();
+	doc.Duplex = PrintDuplex.DuplexFlipLongEdge;
+	doc.Save(dataDir + "35297_out.pdf", SaveFormat.Pdf);
+}
 ```
+
+## Conclusion
+
+Aspose.PDF pour .NET facilite la définition des propriétés de la boîte de dialogue d'impression dans vos fichiers PDF. En suivant le guide étape par étape ci-dessus, vous pouvez rapidement optimiser vos fichiers PDF pour l'impression.

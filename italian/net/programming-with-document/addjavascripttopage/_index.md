@@ -18,7 +18,7 @@ Per aggiungere JavaScript a un file PDF, useremo Aspose.PDF per .NET. Questa lib
 // Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Carica un file PDF esistente
+//Carica un file PDF esistente
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
@@ -66,21 +66,15 @@ Questo codice salverà il file PDF modificato nella directory specificata.
 ### Codice sorgente di esempio per Aggiungi script Java alla pagina utilizzando Aspose.PDF per .NET
 
 ```csharp
-// Il percorso della directory dei documenti.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Carica un file PDF esistente
-
-```csharp
             
 // Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Carica un file PDF esistente
+//Carica un file PDF esistente
 Document doc = new Document(dataDir + "input.pdf");
 
 // Aggiunta di JavaScript a livello di documento
-//Crea un'istanza di JavascriptAction con l'istruzione JavaScript desiderata
+// Crea un'istanza di JavascriptAction con l'istruzione JavaScript desiderata
 JavascriptAction javaScript = new JavascriptAction("this.print({bUI:true,bSilent:false,bShrinkToFit:true});");
 
 // Assegna l'oggetto JavascriptAction all'azione desiderata di Document
@@ -94,8 +88,7 @@ dataDir = dataDir + "JavaScript-Added_out.pdf";
 // Salva documento PDF
 doc.Save(dataDir);
 
-Console.WriteLine("\nJavascript added successfully to a page.\nFile saved at " + dataDir);
-        
+Console.WriteLine("\nJavascript added successfully to a page.\nFile saved at " + dataDir);     
 ```
 
 ## Conclusione

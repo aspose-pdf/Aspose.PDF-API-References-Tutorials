@@ -12,7 +12,7 @@ Per aggiungere livelli a un file PDF, utilizzeremo Aspose.PDF per .NET. Questa l
 
 ## Passaggio 1: crea un nuovo documento PDF
 
- Inizia creando una nuova istanza di`Document`classe fornita da Aspose.PDF per .NET. Questo servirà come documento PDF in cui aggiungeremo i livelli.
+ Inizia creando una nuova istanza di`Document` classe fornita da Aspose.PDF per .NET. Questo servirà come documento PDF in cui aggiungeremo i livelli.
 
 ```csharp
 // Il percorso della directory dei documenti.
@@ -61,7 +61,7 @@ In questo tutorial, abbiamo aggiunto alla pagina tre livelli con colori e nomi d
 
 ## Passaggio 4: salvare il file PDF
 
- Salvare il file PDF modificato utilizzando il file`Save` metodo del`Document` classe.
+Salvare il file PDF modificato utilizzando il file`Save` metodo del`Document` classe.
 
 ```csharp
 dataDir = dataDir + "AddLayers_out.pdf";

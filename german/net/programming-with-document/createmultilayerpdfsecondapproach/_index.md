@@ -8,7 +8,7 @@ weight: 80
 url: /de/net/programming-with-document/createmultilayerpdfsecondapproach/
 ---
 
-In diesem Tutorial erfahren Sie, wie Sie mit dem zweiten Ansatz in Aspose.PDF für .NET ein mehrschichtiges PDF erstellen. Wir stellen Ihnen eine Schritt-für-Schritt-Anleitung mit detaillierten Erklärungen zur Verfügung und fügen den vollständigen Quellcode hinzu. Wenn Sie diesem Tutorial folgen, können Sie mithilfe der Aspose.PDF-Bibliothek in Ihren .NET-Anwendungen PDF-Dokumente mit mehreren Ebenen generieren.
+In diesem Tutorial erfahren Sie, wie Sie mit dem zweiten Ansatz in Aspose.PDF für .NET ein mehrschichtiges PDF erstellen. Wir stellen Ihnen eine Schritt-für-Schritt-Anleitung mit detaillierten Erklärungen zur Verfügung und fügen den vollständigen Quellcode bei. Wenn Sie diesem Tutorial folgen, können Sie mithilfe der Aspose.PDF-Bibliothek in Ihren .NET-Anwendungen PDF-Dokumente mit mehreren Ebenen generieren.
 
 Beginnen wir nun mit der Schritt-für-Schritt-Anleitung.
 
@@ -91,9 +91,7 @@ doc.Save(dataDir + @"Multilayer-2ndApproach_out.pdf");
 
 ### Beispielquellcode für die Erstellung eines mehrschichtigen PDF-Zweitansatzes mit Aspose.PDF für .NET.
 
-```csharp
-
-            
+```csharp   
 // Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
@@ -126,8 +124,6 @@ ImageFloatingBox.ZIndex = 2;
 ImageFloatingBox.Paragraphs.Add(image1);
 
 doc.Save(dataDir + @"Multilayer-2ndApproach_out.pdf");
-            
-        
 ```
 
 ## Abschluss

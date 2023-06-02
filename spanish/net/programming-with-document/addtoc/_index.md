@@ -8,7 +8,7 @@ weight: 40
 url: /es/net/programming-with-document/addtoc/
 ---
 
-En este tutorial, exploraremos cómo usar la función Agregar TOC (Tabla de contenido) de Aspose.PDF para .NET para agregar una tabla de contenido a los documentos PDF. Proporcionaremos una guía paso a paso y explicaremos el código fuente de C# necesario para lograrlo. Al final de este tutorial, podrá generar un documento PDF con una tabla de contenido usando Aspose.PDF para .NET.
+En este tutorial, exploraremos cómo usar la función Agregar TOC (Tabla de contenido) de Aspose.PDF para .NET para agregar una tabla de contenido a los documentos PDF. Proporcionaremos una guía paso a paso y explicaremos el código fuente de C# necesario para lograrlo. Al final de este tutorial, podrá generar un documento PDF con una tabla de contenido utilizando Aspose.PDF para .NET.
 
 
 ## Paso 1: Cargue el archivo PDF existente
@@ -85,7 +85,7 @@ Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at "
 // La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Cargue un archivo PDF existente
+//Cargue un archivo PDF existente
 Document doc = new Document(dataDir + "AddTOC.pdf");
 
 // Obtenga acceso a la primera página del archivo PDF
@@ -128,9 +128,8 @@ for (int i = 0; i < 2; i++)
 	tocPage.Paragraphs.Add(heading2);
 }
 dataDir = dataDir + "TOC_out.pdf";
-//Guardar el documento actualizado
+// Guardar el documento actualizado
 doc.Save(dataDir);
 
 Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at " + dataDir);
-
 ```

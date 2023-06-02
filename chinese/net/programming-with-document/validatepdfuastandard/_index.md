@@ -1,6 +1,6 @@
 ---
-title: 验证 PDFUA 标准
-linktitle: 验证 PDFUA 标准
+title: 验证 PDF UA 标准
+linktitle: 验证 PDF UA 标准
 second_title: Aspose.PDF for .NET API 参考
 description: 了解如何使用 Aspose.PDF for .NET 通过 C# 代码验证 PDF/UA 标准。分步指南。
 type: docs
@@ -42,14 +42,12 @@ bool isValidPdfUa = pdfDocument.Validate(dataDir + "validation-result-UA.xml", P
 ### 使用 Aspose.PDF for .NET 获取验证 PDFUAstandard 的示例源代码
 
 ```csharp
-           
-	//文档目录的路径。
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+//文档目录的路径。
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	//打开文档
-	Document pdfDocument = new Document(dataDir + "ValidatePDFUAStandard.pdf");
+//打开文档
+Document pdfDocument = new Document(dataDir + "ValidatePDFUAStandard.pdf");
 
-	//为 PDF/UA 验证 PDF
-	bool isValidPdfUa = pdfDocument.Validate(dataDir + "validation-result-UA.xml", PdfFormat.PDF_UA_1);
-		   
+//为 PDF/UA 验证 PDF
+bool isValidPdfUa = pdfDocument.Validate(dataDir + "validation-result-UA.xml", PdfFormat.PDF_UA_1); 
 ```

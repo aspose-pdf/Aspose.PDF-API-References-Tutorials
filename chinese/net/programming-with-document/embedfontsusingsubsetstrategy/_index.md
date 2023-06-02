@@ -58,19 +58,14 @@ doc.Save(dataDir + "Output_out.pdf");
 ### 使用 Aspose.PDF for .NET 使用子集策略嵌入字体的示例源代码。 
 
 ```csharp
-
-            
-            //文档目录的路径。
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
-            Document doc = new Document(dataDir + "input.pdf");
-            //在 SubsetAllFonts 的情况下，所有字体都将作为子集嵌入到文档中。
-            doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
-            //字体子集将嵌入完全嵌入的字体，但未嵌入文档的字体不会受到影响。
-            doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
-            doc.Save(dataDir + "Output_out.pdf");
-            
-
-        
+//文档目录的路径。
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+Document doc = new Document(dataDir + "input.pdf");
+//在 SubsetAllFonts 的情况下，所有字体都将作为子集嵌入到文档中。
+doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
+//字体子集将嵌入完全嵌入的字体，但未嵌入文档的字体不会受到影响。
+doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
+doc.Save(dataDir + "Output_out.pdf");
 ```
 
 ## 结论

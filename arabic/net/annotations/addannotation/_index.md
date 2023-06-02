@@ -24,7 +24,7 @@ url: /ar/net/annotations/addannotation/
 
 الخطوة الأولى في إضافة التعليقات التوضيحية هي فتح مستند PDF. يمكننا استخدام الكود التالي لفتح المستند:
 
-```
+```csharp
 string dataDir = "YOUR DATA DIRECTORY";
 Document pdfDocument = new Document(dataDir + "AddAnnotation.pdf");
 ```
@@ -35,7 +35,7 @@ Document pdfDocument = new Document(dataDir + "AddAnnotation.pdf");
 
  لإضافة تعليق توضيحي ، نحتاج إلى إنشاء مثيل جديد لملف`TextAnnotation` فصل. يمكننا استخدام الكود التالي لإنشاء تعليق توضيحي نصي جديد:
 
-```
+```csharp
 TextAnnotation textAnnotation = new TextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600));
 textAnnotation.Title = "Sample Annotation Title";
 textAnnotation.Subject = "Sample Subject";
@@ -51,7 +51,7 @@ textAnnotation.Icon = TextIcon.Key;
 
  يمكننا تخصيص مظهر التعليق التوضيحي باستخدام امتداد`Border` فصل. يمكننا استخدام الكود التالي لتخصيص حدود التعليق التوضيحي:
 
-```
+```csharp
 Border border = new Border(textAnnotation);
 border.Width = 5;
 border.Dash = new Dash(1, 1);
@@ -59,13 +59,13 @@ textAnnotation.Border = border;
 textAnnotation.Rect = new Aspose.Pdf.Rectangle(200, 400, 400, 600);
 ```
 
- في هذا الرمز ، نقوم بإنشاء ملف`Border` الكائن وتعيين خصائص العرض والشرطة. ثم قمنا بتعيين ملف`Border`خاصية التعليق التوضيحي على الجديد`Border` هدف. أخيرًا ، قمنا بتعيين ملف`Rect` خاصية التعليق التوضيحي لتحديد موقعها وحجمها.
+ في هذا الرمز ، نقوم بإنشاء ملف`Border` الكائن وتعيين خصائص العرض والشرطة. ثم قمنا بتعيين ملف`Border` خاصية التعليق التوضيحي على الجديد`Border`هدف. أخيرًا ، قمنا بتعيين ملف`Rect` خاصية التعليق التوضيحي لتحديد موقعها وحجمها.
 
 ## الخطوة 5: أضف التعليق التوضيحي إلى مستند PDF
 
 بمجرد إنشاء التعليق التوضيحي وتخصيصه ، نحتاج إلى إضافته إلى مستند PDF. يمكننا استخدام الكود التالي لإضافة تعليق توضيحي إلى مستند PDF:
 
-```
+```csharp
 pdfDocument.Pages[1].Annotations.Add(textAnnotation);
 ```
 
@@ -75,7 +75,7 @@ pdfDocument.Pages[1].Annotations.Add(textAnnotation);
 
 أخيرًا ، نحتاج إلى حفظ مستند PDF مع التعليق التوضيحي الإضافي. يمكننا استخدام الكود التالي لحفظ ملف الإخراج:
 
-```
+```csharp
 dataDir = dataDir + "AddAnnotation_out.pdf";
 pdfDocument.Save(dataDir);
 ```
@@ -83,31 +83,31 @@ pdfDocument.Save(dataDir);
 
 
 ```csharp   
-	 // المسار إلى دليل المستندات.
-	string dataDir = "YOUR DATA DIRECTORY";
+ // المسار إلى دليل المستندات.
+string dataDir = "YOUR DATA DIRECTORY";
 
-	// افتح المستند
-	Document pdfDocument = new Document(dataDir + "AddAnnotation.pdf");
+// افتح المستند
+Document pdfDocument = new Document(dataDir + "AddAnnotation.pdf");
 
-	// أنشئ تعليقًا توضيحيًا
-	TextAnnotation textAnnotation = new TextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600));
-	textAnnotation.Title = "Sample Annotation Title";
-	textAnnotation.Subject = "Sample Subject";
-	textAnnotation.State = AnnotationState.Accepted;
-	textAnnotation.Contents = "Sample contents for the annotation";
-	textAnnotation.Open = true;
-	textAnnotation.Icon = TextIcon.Key;
-   
-	Border border = new Border(textAnnotation);
-	border.Width = 5;
-	border.Dash = new Dash(1, 1);
-	textAnnotation.Border = border;
-	textAnnotation.Rect = new Aspose.Pdf.Rectangle(200, 400, 400, 600);
-   
-	// أضف تعليقًا توضيحيًا في مجموعة التعليقات التوضيحية بالصفحة
-	pdfDocument.Pages[1].Annotations.Add(textAnnotation);
-	dataDir = dataDir + "AddAnnotation_out.pdf";
-	// حفظ ملف الإخراج
-	pdfDocument.Save(dataDir);
+// أنشئ تعليقًا توضيحيًا
+TextAnnotation textAnnotation = new TextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600));
+textAnnotation.Title = "Sample Annotation Title";
+textAnnotation.Subject = "Sample Subject";
+textAnnotation.State = AnnotationState.Accepted;
+textAnnotation.Contents = "Sample contents for the annotation";
+textAnnotation.Open = true;
+textAnnotation.Icon = TextIcon.Key;
+
+Border border = new Border(textAnnotation);
+border.Width = 5;
+border.Dash = new Dash(1, 1);
+textAnnotation.Border = border;
+textAnnotation.Rect = new Aspose.Pdf.Rectangle(200, 400, 400, 600);
+
+// أضف تعليقًا توضيحيًا في مجموعة التعليقات التوضيحية بالصفحة
+pdfDocument.Pages[1].Annotations.Add(textAnnotation);
+dataDir = dataDir + "AddAnnotation_out.pdf";
+// حفظ ملف الإخراج
+pdfDocument.Save(dataDir);
 ```
 يوضح هذا الرمز كيفية إضافة تعليق توضيحي نصي بعنوان محدد وموضوع وحالة ومحتويات وأيقونة إلى صفحة PDF باستخدام Aspose.PDF for .NET. يمكنك تعديل هذا الرمز وفقًا لمتطلباتك لإضافة التعليقات التوضيحية إلى مستندات PDF الخاصة بك. فقط تذكر استبدال دليل البيانات الخاص بك بمسار الدليل الفعلي حيث يوجد ملف PDF الخاص بك والمكان الذي تريد حفظ ملف الإخراج فيه.

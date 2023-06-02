@@ -64,7 +64,7 @@ pdf.Save(dataDir + "CreateMultiLayerPdf_out.pdf");
 
 ¡Felicidades! Ha creado con éxito un documento PDF multicapa utilizando el primer enfoque con Aspose.PDF para .NET.
 
-Ejemplo de código fuente para crear un primer enfoque de PDF multicapa usando Aspose.PDF para .NET:
+### Ejemplo de código fuente para crear un primer enfoque de PDF multicapa usando Aspose.PDF para .NET:
 
 ```csharp
 // La ruta al directorio de documentos.

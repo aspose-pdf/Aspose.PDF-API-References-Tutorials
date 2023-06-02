@@ -22,7 +22,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Paso 2: Abra el archivo PDF
 
-El primer paso es abrir el archivo PDF para el que desea configurar los metadatos XMP. Para hacer esto, deberá crear una nueva`Document` objeto y pase la ruta a su archivo PDF.
+ El primer paso es abrir el archivo PDF para el que desea configurar los metadatos XMP. Para hacer esto, deberá crear una nueva`Document` objeto y pase la ruta a su archivo PDF.
 
 ```csharp
 // La ruta al directorio de documentos.
@@ -57,7 +57,7 @@ En este tutorial, estableceremos la fecha de creación en la fecha y hora actual
 
 ```csharp
 dataDir = dataDir + "SetXMPMetadata_out.pdf";
-//Guardar documento
+// Guardar documento
 pdfDocument.Save(dataDir);
 ```
 
@@ -66,22 +66,20 @@ pdfDocument.Save(dataDir);
 Aquí está el código fuente de ejemplo completo para configurar XMPMetadata usando Aspose.PDF para .NET:
 
 ```csharp
+// La ruta al directorio de documentos.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// La ruta al directorio de documentos.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Abrir documento
+Document pdfDocument = new Document(dataDir + "SetXMPMetadata.pdf");
 
-	// Abrir documento
-	Document pdfDocument = new Document(dataDir + "SetXMPMetadata.pdf");
+// Establecer propiedades
+pdfDocument.Metadata["xmp:CreateDate"] = DateTime.Now;
+pdfDocument.Metadata["xmp:Nickname"] = "Nickname";
+pdfDocument.Metadata["xmp:CustomProperty"] = "Custom Value";
 
-	// Establecer propiedades
-	pdfDocument.Metadata["xmp:CreateDate"] = DateTime.Now;
-	pdfDocument.Metadata["xmp:Nickname"] = "Nickname";
-	pdfDocument.Metadata["xmp:CustomProperty"] = "Custom Value";
+dataDir = dataDir + "SetXMPMetadata_out.pdf";
+// Guardar documento
+pdfDocument.Save(dataDir);
 
-	dataDir = dataDir + "SetXMPMetadata_out.pdf";
-	//Guardar documento
-	pdfDocument.Save(dataDir);
-	
-	Console.WriteLine("\nXMP metadata in a pdf file setup successfully.\nFile saved at " + dataDir);
-
+Console.WriteLine("\nXMP metadata in a pdf file setup successfully.\nFile saved at " + dataDir);
 ```

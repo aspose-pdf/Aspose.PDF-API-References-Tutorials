@@ -9,20 +9,6 @@ url: /fr/net/programming-with-document/setexpirydate/
 ---
 Aspose.PDF pour .NET est une bibliothèque puissante qui fournit diverses fonctionnalités pour travailler avec des fichiers PDF. L'une de ces fonctionnalités est la possibilité de définir une date d'expiration pour un document PDF. Dans ce didacticiel, nous vous guiderons tout au long du processus de définition d'une date d'expiration pour un document PDF à l'aide d'Aspose.PDF pour .NET. 
 
-## Contour
-1. Qu'est-ce qu'Aspose.PDF pour .NET ?
-2. Définir la fonction de date d'expiration d'Aspose.PDF pour .NET
-3. Configuration de l'environnement
-4. Création d'un nouveau document PDF
-5. Ajouter une page au document PDF
-6. Ajouter du texte au document PDF
-7. Création d'un objet JavaScript pour définir la date d'expiration du PDF
-8. Définition de JavaScript en tant qu'action d'ouverture de PDF
-9. Enregistrement du document PDF
-10. Exemple de code source pour définir la date d'expiration à l'aide d'Aspose.PDF pour .NET
-11. Conclusion
-12. FAQ
-
 ## Étape 1 : Définissez le chemin d'accès au répertoire de documents
 
 Avant de commencer, nous devons définir le chemin d'accès au répertoire où se trouve notre document PDF. Nous stockerons ce chemin dans une variable appelée "dataDir".
@@ -33,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Étape 2 : Création d'un nouveau document PDF
 
- Pour créer un nouveau document PDF, nous devons instancier un nouveau`Aspose.Pdf.Document` objet. Nous pouvons le faire en utilisant le code suivant :
+Pour créer un nouveau document PDF, nous devons instancier un nouveau`Aspose.Pdf.Document` objet. Nous pouvons le faire en utilisant le code suivant :
 
 ```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
@@ -74,7 +60,7 @@ doc.OpenAction = javaScript;
 
 Dans ce code, nous fixons la date d'expiration à mai 2017.
 
-## Étape 6 : Enregistrer le fichier PDF
+## Étape 6 : Enregistrez le fichier PDF
 
  Après avoir défini la date d'expiration, vous devez enregistrer le fichier PDF. Pour ce faire, vous pouvez utiliser le`Save` méthode de la`Document` objet et transmettez le chemin d'accès à l'endroit où vous souhaitez enregistrer le fichier PDF mis à jour.
 
@@ -89,29 +75,27 @@ doc.Save(dataDir);
 Voici l'exemple de code source complet pour définir la date d'expiration à l'aide d'Aspose.PDF pour .NET :
 
 ```csharp
+// Chemin d'accès au répertoire des documents.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Chemin d'accès au répertoire des documents.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Instancier l'objet Document
+Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
+// Ajouter une page à la collection de pages du fichier PDF
+doc.Pages.Add();
+// Ajouter un fragment de texte à la collection de paragraphes de l'objet de page
+doc.Pages[1].Paragraphs.Add(new TextFragment("Hello World..."));
+// Créer un objet JavaScript pour définir la date d'expiration du PDF
+JavascriptAction javaScript = new JavascriptAction(
+"var year=2017;"
++ "var month=5;"
++ "today = new Date(); today = new Date(today.getFullYear(), today.getMonth());"
++ "expiry = new Date(year, month);"
++ "if (today.getTime() > expiry.getTime())"
++ "app.alert('The file is expired. You need a new one.');");
+// Définir JavaScript comme action d'ouverture de PDF
+doc.OpenAction = javaScript;
 
-	// Instancier l'objet Document
-	Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
-	// Ajouter une page à la collection de pages du fichier PDF
-	doc.Pages.Add();
-	// Ajouter un fragment de texte à la collection de paragraphes de l'objet de page
-	doc.Pages[1].Paragraphs.Add(new TextFragment("Hello World..."));
-	// Créer un objet JavaScript pour définir la date d'expiration du PDF
-	JavascriptAction javaScript = new JavascriptAction(
-	"var year=2017;"
-	+ "var month=5;"
-	+ "today = new Date(); today = new Date(today.getFullYear(), today.getMonth());"
-	+ "expiry = new Date(year, month);"
-	+ "if (today.getTime() > expiry.getTime())"
-	+ "app.alert('The file is expired. You need a new one.');");
-	// Définir JavaScript comme action d'ouverture de PDF
-	doc.OpenAction = javaScript;
-
-	dataDir = dataDir + "SetExpiryDate_out.pdf";
-	// Enregistrer le document PDF
-	doc.Save(dataDir);
-	
+dataDir = dataDir + "SetExpiryDate_out.pdf";
+// Enregistrer le document PDF
+doc.Save(dataDir);
 ```

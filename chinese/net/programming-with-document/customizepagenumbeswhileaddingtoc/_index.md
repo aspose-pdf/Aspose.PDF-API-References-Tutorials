@@ -77,45 +77,41 @@ doc.Save(outFile);
 ### 使用 Aspose.PDF for .NET 添加 TOC 时自定义页码的示例源代码
 
 ```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+string inFile = dataDir + "42824.pdf";
+string outFile = dataDir + "42824_out.pdf";
+//加载现有的 PDF 文件
+Document doc = new Document(inFile);
+//访问 PDF 文件的第一页
+Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
+//创建对象来表示 TOC 信息
+TocInfo tocInfo = new TocInfo();
+TextFragment title = new TextFragment("Table Of Contents");
+title.TextState.FontSize = 20;
+title.TextState.FontStyle = FontStyles.Bold;
+//为目录设置标题
+tocInfo.Title = title;
+tocInfo.PageNumbersPrefix = "P";
+tocPage.TocInfo = tocInfo;
+for (int i = 1; i<doc.Pages.Count; i++)
+{
+	//创建标题对象
+	Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
+	TextSegment segment2 = new TextSegment();
+	heading2.TocPage = tocPage;
+	heading2.Segments.Add(segment2);
+	//指定标题对象的目标页面
+	heading2.DestinationPage = doc.Pages[i + 1];
+	//目标页面
+	heading2.Top = doc.Pages[i + 1].Rect.Height;
+	//目的地坐标
+	segment2.Text = "Page " + i.ToString();
+	//将标题添加到包含目录的页面
+	tocPage.Paragraphs.Add(heading2);
+}
 
-            
-			string dataDir = "YOUR DOCUMENT DIRECTORY";
-            string inFile = dataDir + "42824.pdf";
-            string outFile = dataDir + "42824_out.pdf";
-            //加载现有的 PDF 文件
-            Document doc = new Document(inFile);
-            //访问 PDF 文件的第一页
-            Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
-            //创建对象来表示 TOC 信息
-            TocInfo tocInfo = new TocInfo();
-            TextFragment title = new TextFragment("Table Of Contents");
-            title.TextState.FontSize = 20;
-            title.TextState.FontStyle = FontStyles.Bold;
-            //为目录设置标题
-            tocInfo.Title = title;
-            tocInfo.PageNumbersPrefix = "P";
-            tocPage.TocInfo = tocInfo;
-            for (int i = 1; i<doc.Pages.Count; i++)
-            {
-                //创建标题对象
-                Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
-                TextSegment segment2 = new TextSegment();
-                heading2.TocPage = tocPage;
-                heading2.Segments.Add(segment2);
-                //指定标题对象的目标页面
-                heading2.DestinationPage = doc.Pages[i + 1];
-                //目标页面
-                heading2.Top = doc.Pages[i + 1].Rect.Height;
-                //目的地坐标
-                segment2.Text = "Page " + i.ToString();
-                //将标题添加到包含目录的页面
-                tocPage.Paragraphs.Add(heading2);
-            }
-
-            //保存更新的文档
-            doc.Save(outFile);
-            
-        
+//保存更新的文档
+doc.Save(outFile);
 ```
 
 ## 结论

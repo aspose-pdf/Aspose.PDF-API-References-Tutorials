@@ -75,22 +75,22 @@ doc.Save(dataDir);
 ### 使用 Aspose.PDF for .NET 添加 SWF 文件作为注释的示例源代码
 
 ```csharp
-	//文档目录的路径。
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+//文档目录的路径。
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	//打开 PDF 文档
-	Document doc = new Document(dataDir + "AddSwfFileAsAnnotation.pdf");
+//打开 PDF 文档
+Document doc = new Document(dataDir + "AddSwfFileAsAnnotation.pdf");
 
-	//获取需要添加注释的页面的引用
-	Page page = doc.Pages[1];
+//获取需要添加注释的页面的引用
+Page page = doc.Pages[1];
 
-	//使用 .swf 多媒体文件作为参数创建 ScreenAnnotation 对象
-	ScreenAnnotation annotation = new ScreenAnnotation(page, new Aspose.Pdf.Rectangle(0, 400, 600, 700), dataDir + "input.swf");
+//使用 .swf 多媒体文件作为参数创建 ScreenAnnotation 对象
+ScreenAnnotation annotation = new ScreenAnnotation(page, new Aspose.Pdf.Rectangle(0, 400, 600, 700), dataDir + "input.swf");
 
-	//添加注释到页面的注释集合
-	page.Annotations.Add(annotation);
+//添加注释到页面的注释集合
+page.Annotations.Add(annotation);
 
-	dataDir = dataDir + "AddSwfFileAsAnnotation_out.pdf";
-	//保存带有注释的更新 PDF 文档
-	doc.Save(dataDir);
+dataDir = dataDir + "AddSwfFileAsAnnotation_out.pdf";
+//保存带有注释的更新 PDF 文档
+doc.Save(dataDir);
 ```        

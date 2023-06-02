@@ -44,7 +44,7 @@ Console.WriteLine(pdfDocument.Metadata["xmp:CustomProperty"]);
 
  Dans le code ci-dessus,`xmp:CreateDate`, `xmp:Nickname` , et`xmp:CustomProperty`sont des exemples de propriétés de métadonnées XMP que vous pouvez extraire d'un document PDF. Vous pouvez remplacer ces noms de propriété par les noms de toute autre propriété de métadonnées XMP que vous souhaitez extraire.
 
-## Exemple de code source pour obtenir des métadonnées XMP à l'aide d'Aspose.PDF pour .NET
+### Exemple de code source pour obtenir des métadonnées XMP à l'aide d'Aspose.PDF pour .NET
 
  Voici le code source complet pour extraire les métadonnées XMP d'un document PDF à l'aide de`GetXmpMetadata` fonctionnalité d'Aspose.PDF pour .NET :
 

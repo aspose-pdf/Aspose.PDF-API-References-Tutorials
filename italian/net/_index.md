@@ -15,3 +15,8 @@ Aspose.PDF per .NET Tutorials è una guida completa e dettagliata all'utilizzo d
 | --- | --- | 
 | [Programmazione con Documento](./programming-with-document/) | Questa risorsa offre Aspose.PDF per i tutorial della libreria .NET per la programmazione con i documenti. Copre argomenti come la creazione/manipolazione di PDF, l'aggiunta di immagini/tabelle/collegamenti, l'ottimizzazione di documenti e l'aggiunta di sicurezza. È una risorsa preziosa per gli sviluppatori che lavorano con documenti PDF utilizzando Aspose.PDF per .NET. |
 | [Programmazione con annotazioni](./annotations/) | La programmazione con annotazioni include tutorial API e frammenti di codice di Aspose.PDF per .NET che include l'aggiunta di annotazioni, l'eliminazione di annotazioni, l'ottenimento di informazioni sull'annotazione e molto altro. |  
+| [Conversione documenti](./document-conversion/) | Dai un'occhiata ai tutorial sulla conversione dei documenti con Aspose.PDF per .NET. Converti facilmente i file in diversi formati. |
+| [Programmazione con form](./programming-with-forms/) | Scopri i tutorial di programmazione con Aspose.PDF Forms per .NET per creare e gestire moduli interattivi nei tuoi file PDF. |
+| [Programmazione con le tabelle](./programming-with-tables/) | Scopri come programmare con le tabelle in Aspose.PDF per .NET con tutorial passo-passo. | 
+| [Programmazione con pagine PDF](./programming-with-pdf-pages/) | Scopri i tutorial di programmazione con pagine PDF utilizzando Aspose.PDF per .NET. Scopri come manipolare e personalizzare le pagine dei file PDF. |
+| [Programmazione con Grafici](./programming-with-graphs/) | Trova tutorial sulla programmazione con la grafica in Aspose.PDF per .NET. Scopri come creare e personalizzare la grafica nei tuoi documenti PDF. |

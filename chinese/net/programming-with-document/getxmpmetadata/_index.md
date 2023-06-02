@@ -44,7 +44,7 @@ Console.WriteLine(pdfDocument.Metadata["xmp:CustomProperty"]);
 
 在上面的代码中，`xmp:CreateDate`, `xmp:Nickname` ， 和`xmp:CustomProperty`是您可以从 PDF 文档中提取的 XMP 元数据属性的示例。您可以将这些属性名称替换为您要提取的任何其他 XMP 元数据属性的名称。
 
-## 使用 Aspose.PDF for .NET 获取 XMP 元数据的示例源代码
+### 使用 Aspose.PDF for .NET 获取 XMP 元数据的示例源代码
 
 这是使用从 PDF 文档中提取 XMP 元数据的完整源代码`GetXmpMetadata`Aspose.PDF for .NET 的特点：
 

@@ -8,7 +8,7 @@ weight: 190
 url: /es/net/programming-with-document/getwarningsforfontsubstitution/
 ---
 
- Aspose.PDF para .NET es una popular biblioteca de manipulación de PDF que permite a los desarrolladores crear, editar y convertir archivos PDF en sus aplicaciones .NET. Una de las características que ofrece esta biblioteca es la capacidad de detectar advertencias de sustitución de fuentes cuando se abre un documento PDF. Este tutorial lo guiará a través de los pasos para usar el`GetWarningsForFontSubstitution` función de Aspose.PDF para .NET para detectar advertencias de sustitución de fuentes al abrir un documento PDF.
+ Aspose.PDF para .NET es una popular biblioteca de manipulación de PDF que permite a los desarrolladores crear, editar y convertir archivos PDF en sus aplicaciones .NET. Una de las características que ofrece esta biblioteca es la capacidad de detectar advertencias de sustitución de fuentes cuando se abre un documento PDF. Este tutorial lo guiará a través de los pasos para usar el`GetWarningsForFontSubstitution` función de Aspose.PDF para .NET para detectar advertencias de sustitución de fuente al abrir un documento PDF.
 
 ## Paso 1: Instale Aspose.PDF para .NET
 
@@ -30,7 +30,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
- En el código anterior, reemplace`"YOUR DOCUMENT DIRECTORY"` con la ruta al directorio donde se encuentra su documento PDF. Este código cargará el documento PDF en un`Document` objeto, que luego puede usar para detectar advertencias de sustitución de fuentes.
+ En el código anterior, reemplace`"YOUR DOCUMENT DIRECTORY"` con la ruta al directorio donde se encuentra su documento PDF. Este código cargará el documento PDF en un`Document` objeto, que luego puede usar para detectar advertencias de sustitución de fuente.
 
 ## Paso 3: Detectar advertencias de sustitución de fuentes
 
@@ -70,4 +70,6 @@ doc.FontSubstitution += new Document.FontSubstitutionHandler(OnFontSubstitution)
 // Manejar la advertencia de sustitución de fuente
 private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArgs e)
 {
-    Console.WriteLine("Font substitution: {0} => {1}", e.
+    Console.WriteLine("Font substitution: {0} => {1}", e.OriginalFontName, e.SubstitutedFontName);
+}
+```

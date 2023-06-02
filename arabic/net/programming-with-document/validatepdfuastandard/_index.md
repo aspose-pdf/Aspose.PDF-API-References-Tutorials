@@ -1,6 +1,6 @@
 ---
-title: تحقق من صحة PDFUAstandard
-linktitle: تحقق من صحة PDFUAstandard
+title: تحقق من صحة معيار PDF UA
+linktitle: تحقق من صحة معيار PDF UA
 second_title: Aspose.PDF لمرجع .NET API
 description: تعرف على كيفية استخدام Aspose.PDF for .NET للتحقق من صحة معيار PDF / UA باستخدام كود C #. دليل خطوة بخطوة.
 type: docs
@@ -42,14 +42,12 @@ bool isValidPdfUa = pdfDocument.Validate(dataDir + "validation-result-UA.xml", P
 ### مثال على شفرة المصدر للحصول على Validate PDFUAstandard باستخدام Aspose.PDF for .NET
 
 ```csharp
-           
-	// المسار إلى دليل المستندات.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// المسار إلى دليل المستندات.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// افتح المستند
-	Document pdfDocument = new Document(dataDir + "ValidatePDFUAStandard.pdf");
+// افتح المستند
+Document pdfDocument = new Document(dataDir + "ValidatePDFUAStandard.pdf");
 
-	// تحقق من صحة PDF لـ PDF / UA
-	bool isValidPdfUa = pdfDocument.Validate(dataDir + "validation-result-UA.xml", PdfFormat.PDF_UA_1);
-		   
+// تحقق من صحة PDF لـ PDF / UA
+bool isValidPdfUa = pdfDocument.Validate(dataDir + "validation-result-UA.xml", PdfFormat.PDF_UA_1); 
 ```

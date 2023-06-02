@@ -22,7 +22,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Étape 2 : Ouvrez le fichier PDF
 
-La première étape consiste à ouvrir le fichier PDF pour lequel vous souhaitez définir les métadonnées XMP. Pour ce faire, vous devrez créer un nouveau`Document` objet et transmettez le chemin d'accès à votre fichier PDF.
+ La première étape consiste à ouvrir le fichier PDF pour lequel vous souhaitez définir les métadonnées XMP. Pour ce faire, vous devrez créer un nouveau`Document` objet et transmettez le chemin d'accès à votre fichier PDF.
 
 ```csharp
 // Chemin d'accès au répertoire des documents.
@@ -49,7 +49,7 @@ pdfDocument.Metadata["xmp:Nickname"] = "Nickname";
 pdfDocument.Metadata["xmp:CustomProperty"] = "Custom Value";
 ```
 
-Dans ce didacticiel, nous définissons la date de création sur la date et l'heure actuelles, le surnom sur "Surnom" et une propriété personnalisée sur "Valeur personnalisée". Vous pouvez remplacer ces valeurs par les vôtres.
+Dans ce didacticiel, nous définissons la date de création sur la date et l'heure actuelles, le surnom sur "Pseudonyme" et une propriété personnalisée sur "Valeur personnalisée". Vous pouvez remplacer ces valeurs par les vôtres.
 
 ## Étape 4 : Enregistrer le fichier PDF
 
@@ -57,7 +57,7 @@ Dans ce didacticiel, nous définissons la date de création sur la date et l'heu
 
 ```csharp
 dataDir = dataDir + "SetXMPMetadata_out.pdf";
-//Enregistrer le document
+// Enregistrer le document
 pdfDocument.Save(dataDir);
 ```
 
@@ -66,22 +66,20 @@ pdfDocument.Save(dataDir);
 Voici l'exemple de code source complet pour définir XMPMetadata à l'aide d'Aspose.PDF pour .NET :
 
 ```csharp
+// Chemin d'accès au répertoire des documents.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Chemin d'accès au répertoire des documents.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Ouvrir le document
+Document pdfDocument = new Document(dataDir + "SetXMPMetadata.pdf");
 
-	// Ouvrir le document
-	Document pdfDocument = new Document(dataDir + "SetXMPMetadata.pdf");
+// Définir les propriétés
+pdfDocument.Metadata["xmp:CreateDate"] = DateTime.Now;
+pdfDocument.Metadata["xmp:Nickname"] = "Nickname";
+pdfDocument.Metadata["xmp:CustomProperty"] = "Custom Value";
 
-	// Définir les propriétés
-	pdfDocument.Metadata["xmp:CreateDate"] = DateTime.Now;
-	pdfDocument.Metadata["xmp:Nickname"] = "Nickname";
-	pdfDocument.Metadata["xmp:CustomProperty"] = "Custom Value";
+dataDir = dataDir + "SetXMPMetadata_out.pdf";
+// Enregistrer le document
+pdfDocument.Save(dataDir);
 
-	dataDir = dataDir + "SetXMPMetadata_out.pdf";
-	//Enregistrer le document
-	pdfDocument.Save(dataDir);
-	
-	Console.WriteLine("\nXMP metadata in a pdf file setup successfully.\nFile saved at " + dataDir);
-
+Console.WriteLine("\nXMP metadata in a pdf file setup successfully.\nFile saved at " + dataDir);
 ```

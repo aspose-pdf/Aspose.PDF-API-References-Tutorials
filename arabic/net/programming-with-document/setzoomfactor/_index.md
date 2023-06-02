@@ -21,13 +21,13 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## الخطوة 2: إنشاء كائن مستند جديد
 
-للعمل مع مستند PDF باستخدام Aspose.PDF for .NET ، نحتاج إلى إنشاء ملف`Document` كائن وتحميل ملف PDF فيه. 
+ للعمل مع مستند PDF باستخدام Aspose.PDF for .NET ، نحتاج إلى إنشاء ملف`Document` كائن وتحميل ملف PDF فيه. 
 
 ```csharp
 Document doc = new Document(dataDir + "SetZoomFactor.pdf");
 ```
 
- هذا الرمز سيخلق`Document` الكائن وتحميل ملف PDF المسمى "SetZoomFactor.pdf" من ملف`dataDir` الدليل فيه.
+ هذا الرمز سيخلق`Document`الكائن وتحميل ملف PDF المسمى "SetZoomFactor.pdf" من ملف`dataDir` الدليل فيه.
 
 ## الخطوة 3: اضبط عامل الزوم
 
@@ -49,24 +49,22 @@ dataDir = dataDir + "Zoomed_pdf_out.pdf";
 doc.Save(dataDir);
 ```
 
-## خاتمة
-
-يوفر Aspose.PDF for .NET طريقة بسيطة وفعالة لتعيين عامل التكبير / التصغير لمستند PDF باستخدام كود C #. باتباع الخطوات المذكورة أعلاه ، يمكنك بسهولة تعديل عامل التكبير / التصغير لأي مستند PDF في تطبيق .NET الخاص بك.
-
 ### مثال على الكود المصدري لـ Set Zoom Factor باستخدام Aspose.PDF for .NET
 
 ```csharp
+// المسار إلى دليل المستندات.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// المسار إلى دليل المستندات.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// إنشاء كائن مستند جديد
+Document doc = new Document(dataDir + "SetZoomFactor.pdf");
 
-	// إنشاء كائن مستند جديد
-	Document doc = new Document(dataDir + "SetZoomFactor.pdf");
-
-	GoToAction action = new GoToAction(new XYZExplicitDestination(1, 0, 0, .5));
-	doc.OpenAction = action;
-	dataDir = dataDir + "Zoomed_pdf_out.pdf";
-	// احفظ المستند
-	doc.Save(dataDir);
-
+GoToAction action = new GoToAction(new XYZExplicitDestination(1, 0, 0, .5));
+doc.OpenAction = action;
+dataDir = dataDir + "Zoomed_pdf_out.pdf";
+// احفظ المستند
+doc.Save(dataDir);
 ```
+
+## خاتمة
+
+يوفر Aspose.PDF for .NET طريقة بسيطة وفعالة لتعيين عامل التكبير / التصغير لمستند PDF باستخدام كود C #. باتباع الخطوات المذكورة أعلاه ، يمكنك بسهولة تعديل عامل التكبير / التصغير لأي مستند PDF في تطبيق .NET الخاص بك.

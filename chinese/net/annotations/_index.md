@@ -2,7 +2,7 @@
 title: 使用注解编程
 linktitle: 使用注解编程
 type: docs
-weight: 11
+weight: 12
 url: /zh/net/annotations/
 description: “使用注释编程包括 API 教程和 Aspose.PDF for .NET 的代码片段，其中包括添加注释、删除注释、获取注释信息等等。”
 ---

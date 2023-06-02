@@ -1,0 +1,96 @@
+---
+title: Добавить линейный объект
+linktitle: Добавить линейный объект
+second_title: Aspose.PDF для справочника API .NET
+description: Узнайте, как добавить пользовательский объект линии в файл PDF с помощью Aspose.PDF для .NET.
+type: docs
+weight: 30
+url: /ru/net/programming-with-graphs/add-line-object/
+---
+В этом руководстве мы шаг за шагом проведем вас через следующий исходный код C#, чтобы добавить линейный объект с помощью Aspose.PDF для .NET.
+
+Прежде чем начать, убедитесь, что вы установили библиотеку Aspose.PDF и настроили среду разработки. Также есть базовые знания программирования на C#.
+
+## Шаг 1: Настройка каталога документов
+
+В предоставленном исходном коде вам необходимо указать каталог, в котором вы хотите сохранить полученный PDF-файл. Измените переменную «dataDir» на нужный каталог.
+
+```csharp
+string dataDir = "YOUR DOCUMENTS DIRECTORY";
+```
+
+## Шаг 2: Создание экземпляра документа и добавление страницы
+
+Мы создаем экземпляр класса Document и добавляем в этот документ страницу.
+
+```csharp
+Document doc = new Document();
+Page page = doc.Pages.Add();
+```
+
+## Шаг 3: Создание объекта Graph и добавление его на страницу
+
+Мы создаем объект Graph с указанными размерами и добавляем его в коллекцию абзацев страницы.
+
+```csharp
+Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(100, 400);
+page.Paragraphs.Add(graph);
+```
+
+## Шаг 4: Создайте линейный объект и добавьте его в диаграмму
+
+Мы создаем объект Line с указанными координатами и добавляем его в коллекцию форм диаграммы.
+
+```csharp
+Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { 100, 100, 200, 100 });
+graph.Shapes.Add(line);
+```
+
+## Шаг 5: Настройка линии
+
+Мы можем указать свойства линии, такие как тип штриха и фаза штриха.
+
+```csharp
+line.GraphInfo.DashArray = new int[] { 0, 1, 0 };
+line.GraphInfo.DashPhase = 1;
+```
+
+## Шаг 6: Сохранение PDF-файла
+
+Наконец, мы сохраняем полученный файл PDF с именем «AddLineObject_out.pdf» в указанном каталоге.
+
+```csharp
+doc.Save(dataDir + "AddLineObject_out.pdf");
+```
+
+### Пример исходного кода для добавления линейного объекта с использованием Aspose.Words для .NET 
+
+```csharp
+
+// Путь к каталогу документов.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Создать экземпляр документа
+Document doc = new Document();
+// Добавить страницу в коллекцию страниц файла PDF
+Page page = doc.Pages.Add();
+// Создать экземпляр графа
+Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(100, 400);
+// Добавить объект графика в коллекцию абзацев экземпляра страницы
+page.Paragraphs.Add(graph);
+// Создать экземпляр прямоугольника
+Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { 100, 100, 200, 100 });
+// Укажите цвет заливки для объекта Graph
+line.GraphInfo.DashArray = new int[] { 0, 1, 0 };
+line.GraphInfo.DashPhase = 1;
+// Добавить прямоугольный объект в коллекцию фигур объекта Graph
+graph.Shapes.Add(line);
+dataDir = dataDir + "AddLineObject_out.pdf";
+// Сохранить PDF-файл
+doc.Save(dataDir);
+Console.WriteLine("\nLine object added successfully to pdf.\nFile saved at " + dataDir);            
+
+```
+
+## Заключение
+
+В этом руководстве мы шаг за шагом объяснили, как добавить линейный объект с помощью Aspose.PDF для .NET. Теперь вы можете использовать эти знания для создания PDF-документов с произвольными строками в своих приложениях.

@@ -4,7 +4,7 @@ linktitle: Programación con anotaciones
 type: docs
 weight: 12
 url: /es/net/annotations/
-description: "La programación con anotaciones incluye tutoriales de API y fragmentos de código de Aspose.PDF para .NET que incluye agregar anotaciones, eliminar anotaciones, obtener información de anotaciones y mucho más".
+description: La programación con anotaciones incluye tutoriales de API y fragmentos de código de Aspose.PDF para .NET que incluye agregar anotaciones, eliminar anotaciones, obtener información de anotaciones y mucho más.
 ---
 Una colección completa de tutoriales que muestran cómo trabajar con anotaciones en documentos PDF utilizando Aspose.PDF para .NET. Proporciona una amplia gama de fragmentos de código que demuestran cómo crear y manipular varios tipos de anotaciones, como texto, línea, círculo, rectángulo, polígono, hipervínculo y muchos más. Cada ejemplo incluye el código C# completo junto con una explicación detallada de la funcionalidad del código y el resultado esperado. Es un recurso excelente para los desarrolladores de .NET que desean aprender a trabajar con anotaciones en documentos PDF utilizando Aspose.PDF.
 

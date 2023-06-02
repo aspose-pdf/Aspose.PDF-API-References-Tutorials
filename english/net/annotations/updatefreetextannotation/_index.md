@@ -47,10 +47,6 @@ catch (Exception ex)
 
 This is a standard `try-catch` block that catches any exceptions that may occur while executing the code and prints the error message to the console.
 
-## Conclusion
-
-In this article, we have provided a step-by-step guide to explain the C# source code of the Update Free Text Annotation feature of Aspose.PDF for .NET. By following these steps, you can easily update the font size and color of free text annotations in your PDF documents using Aspose.PDF for .NET.
-
 ### Example source code for Update Free Text Annotation using Aspose.PDF for .NET
 
 Before diving into the explanation of the code, let's first take a look at the code itself. This code example shows how to update the properties of a free text annotation in a PDF document using Aspose.PDF for .NET.
@@ -74,3 +70,7 @@ catch (Exception ex)
     Console.WriteLine(ex.Message);
 }
 ```
+
+## Conclusion
+
+In this article, we have provided a step-by-step guide to explain the C# source code of the Update Free Text Annotation feature of Aspose.PDF for .NET. By following these steps, you can easily update the font size and color of free text annotations in your PDF documents using Aspose.PDF for .NET.

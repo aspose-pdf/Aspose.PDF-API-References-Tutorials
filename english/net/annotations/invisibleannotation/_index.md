@@ -7,7 +7,6 @@ type: docs
 weight: 100
 url: /net/annotations/invisibleannotation/
 ---
-## Understanding Annotations in PDF Documents
 
 Annotations in PDF documents are a powerful feature that allows you to add extra information or notes to a document without changing the actual content. They can be used to highlight text, draw attention to specific areas of a document, or add comments or feedback.
 
@@ -20,7 +19,7 @@ There are many different types of annotations that you can use in PDF documents,
 - File Attachment Annotations
 - and many more
 
-## Creating an Invisible Annotation in a PDF Document Using Aspose.PDF for .NET
+## Step 1: Creating an Invisible Annotation in a PDF Document Using Aspose.PDF for .NET
 
 To create an invisible annotation in a PDF document using Aspose.PDF for .NET, we first need to create a `FreeTextAnnotation` object and specify the location and size of the annotation.
 
@@ -36,7 +35,7 @@ FreeTextAnnotation annotation = new FreeTextAnnotation(doc.Pages[1], new Aspose.
 
 In the code above, we create a `FreeTextAnnotation` object and specify the location of the annotation on page 2 of the PDF document. We also specify the font type, size, and color for the text that will be displayed in the annotation.
 
-## Adding Characteristics to the Invisible Annotation
+## Step 2: Adding Characteristics to the Invisible Annotation
 
 Next, we can add some characteristics to the annotation, such as a border color, background color, or opacity.
 
@@ -46,15 +45,16 @@ annotation.Characteristics.Border = System.Drawing.Color.Red;
 
 In the code above, we set the border color of the annotation to red.
 
-## Setting the Annotation Flags
+## Step 3: Setting the Annotation Flags
 
 After we have created the annotation and set its characteristics, we can specify the annotation flags. In this tutorial, we want the annotation to be printable, but not viewable.
 
 ```csharp
 annotation.Flags = AnnotationFlags.Print | AnnotationFlags.NoView;
+doc.Pages[1].Annotations.Add(annotation);
 ```
 
-## Saving the Modified PDF Document
+## Step 4: Saving the Modified PDF Document
 
 Finally, we can save the modified PDF document with the new invisible annotation.
 
@@ -76,4 +76,11 @@ FreeTextAnnotation annotation = new FreeTextAnnotation(doc.Pages[1], new Aspose.
 annotation.Contents = "ABCDEFG";
 annotation.Characteristics.Border = System.Drawing.Color.Red;
 annotation.Flags = AnnotationFlags.Print | AnnotationFlags.NoView;
-doc.Pages[1
+doc.Pages[1].Annotations.Add(annotation);
+
+dataDir = dataDir + "InvisibleAnnotation_out.pdf";
+// Save output file
+doc.Save(dataDir);
+// ExEnd:InvisibleAnnotation
+Console.WriteLine("\nAnnotation nvisible successfully.\nFile saved at " + dataDir);
+```

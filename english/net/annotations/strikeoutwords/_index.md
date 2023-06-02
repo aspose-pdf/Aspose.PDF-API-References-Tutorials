@@ -12,7 +12,7 @@ Aspose.PDF for .NET is a PDF document manipulation and processing library that p
 ## Loading the PDF document
 The first step is to load the PDF document that you want to modify. In this tutorial, we will load a PDF document named "input.pdf" from the "YOUR DOCUMENT DIRECTORY" folder. 
 
-```
+```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document document = new Document(dataDir + "input.pdf");
 ```
@@ -20,7 +20,7 @@ Document document = new Document(dataDir + "input.pdf");
 ## Searching for text fragments
 To strike out specific words or phrases in the PDF document, you first need to search for them. Aspose.PDF provides a TextFragmentAbsorber class that can be used to search for a specific text fragment in the PDF document.
 
-```
+```csharp
 Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.TextFragmentAbsorber("Estoque");
 ```
 
@@ -29,7 +29,7 @@ In the above code, we are searching for the text fragment "Estoque" in the PDF d
 ## Striking out the text fragments
 After finding the text fragments, the next step is to strike them out. Aspose.PDF provides a StrikeOutAnnotation class that can be used to create a strike-out annotation for the text fragment. 
 
-```
+```csharp
 Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle((float)textFragment.Position.XIndent, (float)textFragment.Position.YIndent, (float)textFragment.Position.XIndent + (float)textFragment.Rectangle.Width, (float)textFragment.Position.YIndent + (float)textFragment.Rectangle.Height);
 
 StrikeOutAnnotation strikeOut = new StrikeOutAnnotation(textFragment.Page, rect);
@@ -44,7 +44,7 @@ In the above code, we are creating a strike-out annotation for each text fragmen
 ## Saving the modified PDF document
 After striking out the text fragments, the save the modified document.
 
-```
+```csharp
 dataDir = dataDir + "StrikeOutWords_out.pdf";
 document.Save(dataDir);
 ```
@@ -54,56 +54,51 @@ document.Save(dataDir);
 
 ```csharp
 
-            
-            
-            // The path to the documents directory.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
+// The path to the documents directory.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-            // Open document
-            Document document = new Document(dataDir + "input.pdf");
+// Open document
+Document document = new Document(dataDir + "input.pdf");
 
-            // Create TextFragment Absorber instance to search particular text fragment
-            Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.TextFragmentAbsorber("Estoque");
-            // Iterate through pages of PDF document
-            for (int i = 1; i <= document.Pages.Count; i++)
-            {
-                // Get first page of PDF document
-                Page page = document.Pages[1];
-                page.Accept(textFragmentAbsorber);
-            }
+// Create TextFragment Absorber instance to search particular text fragment
+Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.TextFragmentAbsorber("Estoque");
+// Iterate through pages of PDF document
+for (int i = 1; i <= document.Pages.Count; i++)
+{
+	// Get first page of PDF document
+	Page page = document.Pages[1];
+	page.Accept(textFragmentAbsorber);
+}
 
-            // Create a collection of Absorbed text
-            Aspose.Pdf.Text.TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
+// Create a collection of Absorbed text
+Aspose.Pdf.Text.TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
 
-            // Iterate on above collection
-            for (int j = 1; j <= textFragmentCollection.Count; j++)
-            {
-                Aspose.Pdf.Text.TextFragment textFragment = textFragmentCollection[j];
+// Iterate on above collection
+for (int j = 1; j <= textFragmentCollection.Count; j++)
+{
+	Aspose.Pdf.Text.TextFragment textFragment = textFragmentCollection[j];
 
-                // Get rectangular dimensions of TextFragment object  	
-                Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle(
-                            (float)textFragment.Position.XIndent,
-                            (float)textFragment.Position.YIndent,
-                            (float)textFragment.Position.XIndent +
-                            (float)textFragment.Rectangle.Width,
-                            (float)textFragment.Position.YIndent +
-                            (float)textFragment.Rectangle.Height);
+	// Get rectangular dimensions of TextFragment object  	
+	Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle(
+				(float)textFragment.Position.XIndent,
+				(float)textFragment.Position.YIndent,
+				(float)textFragment.Position.XIndent +
+				(float)textFragment.Rectangle.Width,
+				(float)textFragment.Position.YIndent +
+				(float)textFragment.Rectangle.Height);
 
-                // Instantiate StrikeOut Annotation instance
-                StrikeOutAnnotation strikeOut = new StrikeOutAnnotation(textFragment.Page, rect);
-                // Set opacity for annotation
-                strikeOut.Opacity = .80f;
-                // Set the border for annotation instance
-                strikeOut.Border = new Border(strikeOut);
-                // Set the color of annotation
-                strikeOut.Color = Aspose.Pdf.Color.Red;
-                // Add annotation to annotations collection of TextFragment
-                textFragment.Page.Annotations.Add(strikeOut);
-            }
-            dataDir = dataDir + "StrikeOutWords_out.pdf";
-            document.Save(dataDir);
-
-
-        
+	// Instantiate StrikeOut Annotation instance
+	StrikeOutAnnotation strikeOut = new StrikeOutAnnotation(textFragment.Page, rect);
+	// Set opacity for annotation
+	strikeOut.Opacity = .80f;
+	// Set the border for annotation instance
+	strikeOut.Border = new Border(strikeOut);
+	// Set the color of annotation
+	strikeOut.Color = Aspose.Pdf.Color.Red;
+	// Add annotation to annotations collection of TextFragment
+	textFragment.Page.Annotations.Add(strikeOut);
+}
+dataDir = dataDir + "StrikeOutWords_out.pdf";
+document.Save(dataDir);
 ```
 

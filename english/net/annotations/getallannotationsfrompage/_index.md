@@ -66,21 +66,19 @@ This code writes the Title, Subject, and Contents of each annotation to the cons
 Here is the complete source code for getting all annotations from a PDF page using Aspose.PDF for .NET:
 
 ```csharp
+// The path to the documents directory.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// The path to the documents directory.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Open document
+Document pdfDocument = new Document(dataDir + "GetAllAnnotationsFromPage.pdf");
 
-	// Open document
-	Document pdfDocument = new Document(dataDir + "GetAllAnnotationsFromPage.pdf");
-
-	// Loop through all the annotations
-	foreach (MarkupAnnotation annotation in pdfDocument.Pages[1].Annotations)
-	{
-		// Get annotation properties
-		Console.WriteLine("Title : {0} ", annotation.Title);
-		Console.WriteLine("Subject : {0} ", annotation.Subject);
-		Console.WriteLine("Contents : {0} ", annotation.Contents);                
-	}
-
+// Loop through all the annotations
+foreach (MarkupAnnotation annotation in pdfDocument.Pages[1].Annotations)
+{
+	// Get annotation properties
+	Console.WriteLine("Title : {0} ", annotation.Title);
+	Console.WriteLine("Subject : {0} ", annotation.Subject);
+	Console.WriteLine("Contents : {0} ", annotation.Contents);                
+}
 ```
 

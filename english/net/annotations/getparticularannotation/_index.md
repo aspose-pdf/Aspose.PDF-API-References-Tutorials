@@ -44,21 +44,19 @@ This code displays the title, subject, and contents of the annotation in the con
 ### Example Source Code for Get Particular Annotation using Aspose.PDF for .NET
 
 ```csharp
+// The path to the documents directory.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// The path to the documents directory.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Open document
+Document pdfDocument = new Document(dataDir + "GetParticularAnnotation.pdf");
 
-	// Open document
-	Document pdfDocument = new Document(dataDir + "GetParticularAnnotation.pdf");
+// Get particular annotation
+TextAnnotation textAnnotation = (TextAnnotation)pdfDocument.Pages[1].Annotations[1];
 
-	// Get particular annotation
-	TextAnnotation textAnnotation = (TextAnnotation)pdfDocument.Pages[1].Annotations[1];
-
-	// Get annotation properties
-	Console.WriteLine("Title : {0} ", textAnnotation.Title);
-	Console.WriteLine("Subject : {0} ", textAnnotation.Subject);
-	Console.WriteLine("Contents : {0} ", textAnnotation.Contents);
-
+// Get annotation properties
+Console.WriteLine("Title : {0} ", textAnnotation.Title);
+Console.WriteLine("Subject : {0} ", textAnnotation.Subject);
+Console.WriteLine("Contents : {0} ", textAnnotation.Contents);
 ```
 
 

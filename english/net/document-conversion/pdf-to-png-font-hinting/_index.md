@@ -1,11 +1,11 @@
 ---
-title: PDF to PNGFont Hinting
-linktitle: PDF to PNGFont Hinting
+title: PDF to PNG Font Hinting
+linktitle: PDF to PNG Font Hinting
 second_title: Aspose.PDF for .NET API Reference
 description: Step by step guide to convert PDF to PNG with font hinting using Aspose.PDF for .NET.
 type: docs
 weight: 160
-url: /net/document-conversion/pdf-to-pngfont-hinting/
+url: /net/document-conversion/pdf-to-png-font-hinting/
 ---
 
 In this tutorial, we'll walk you through the process of converting a PDF to PNG images using Aspose.PDF for .NET, while enabling font hinting. Font hinting is a technique that improves the readability of small fonts. By following the steps below, you will be able to convert every page of the PDF to a PNG image with font hinting.

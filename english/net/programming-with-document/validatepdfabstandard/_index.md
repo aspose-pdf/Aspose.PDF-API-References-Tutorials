@@ -1,6 +1,6 @@
 ---
-title: Validate PDFABStandard
-linktitle: Validate PDFABStandard
+title: Validate PDF AB Standard
+linktitle: Validate PDF AB Standard
 second_title: Aspose.PDF for .NET API Reference
 description: Learn how to use Aspose.PDF for .NET to validate PDF documents against the PDFABStandard with our step-by-step guide and code example.
 type: docs

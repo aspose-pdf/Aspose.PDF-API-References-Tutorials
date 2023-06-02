@@ -28,7 +28,7 @@ You'll learn how to specify conversion settings, extract text and images, retain
 | [PDF to HTML](./pdf-to-html/) | Step by step guide to convert PDF to HTML using Aspose.PDF for .NET. |  
 | [PDF to PDFA](./pdf-to-pdfa/) | Step by step guide to convert PDF to PDFA using Aspose.PDF for .NET. |  
 | [PDF to PDFA3b](./pdf-to-pdfa3b/) | Step by step guide to convert PDF to PDF/A-3b using Aspose.PDF for .NET. |  
-| [PDF to PNGFont Hinting](./pdf-to-pngfont-hinting/) | Step by step guide to convert PDF to PNG with font hinting using Aspose.PDF for .NET. |  
+| [PDF to PNG Font Hinting](./pdf-to-png-font-hinting/) | Step by step guide to convert PDF to PNG with font hinting using Aspose.PDF for .NET. |  
 | [PDF to PPT](./pdf-to-ppt/) | Step by step guide to convert PDF to PPT using Aspose.PDF for .NET. |  
 | [PDF to SVG](./pdf-to-svg/) | Step by step guide to convert PDF to SVG using Aspose.PDF for .NET. |  
 | [PDF to Te X](./pdf-to-te-x/) | Step by step guide to convert PDF to Te X using Aspose.PDF for .NET. |  

@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Learn how to create a text field in a PDF document using Aspose.PDF for .NET.
 type: docs
 weight: 290
-url: /pdf/net/programming-with-forms/text-box/
+url: /net/programming-with-forms/text-box/
 ---
 
 In this guide, we will explain step by step how to use the Aspose.PDF library for .NET to create a text field in a PDF document. We'll show you how to open the document, create the text field, customize its properties, and save the edited PDF.

@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Step by step guide to set default font name in PDF file using Aspose.PDF for .NET.
 type: docs
 weight: 270
-url: /pdf/net/document-conversion/set-default-font-name/
+url: /net/document-conversion/set-default-font-name/
 ---
 
 In this tutorial, we will show you how to set the default font name in a PDF file using Aspose.PDF for .NET. Sometimes when you extract images from a PDF file, you may encounter missing font issues. By specifying a default font name, you can ensure that extracted text will be displayed correctly. Follow the steps below to set the default font name in a PDF file.

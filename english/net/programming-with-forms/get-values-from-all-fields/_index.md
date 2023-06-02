@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Easily get the values of all form fields in your PDF documents with Aspose.PDF for .NET.
 type: docs
 weight: 150
-url: /pdf/net/programming-with-forms/get-values-from-all-fields/
+url: /net/programming-with-forms/get-values-from-all-fields/
 ---
 
 In this tutorial, we will show you how to get the values of all form fields in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.

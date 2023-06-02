@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Easily convert CGM files to PDF using Aspose.PDF for .NET.
 type: docs
 weight: 20
-url: /pdf/net/document-conversion/cgm-to-pdf/
+url: /net/document-conversion/cgm-to-pdf/
 ---
 
 In this tutorial, we will guide you step by step to convert CGM to PDF using Aspose.PDF for .NET. We'll explain the provided C# source code and provide step-by-step instructions to help you follow along easily.

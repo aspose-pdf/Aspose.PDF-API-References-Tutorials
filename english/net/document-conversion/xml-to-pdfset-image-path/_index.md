@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Step-by-step guide to set the path of an image when converting XML to PDF with Aspose.PDF for .NET.
 type: docs
 weight: 340
-url: /pdf/net/document-conversion/xml-to-pdfset-image-path/
+url: /net/document-conversion/xml-to-pdfset-image-path/
 ---
 
 In this tutorial, we will walk you through step-by-step how to set the path of an image when converting an XML file to PDF using the Aspose.PDF library for .NET. We'll detail the provided C# source code and show you how to implement it in your own projects. By the end of this tutorial, you can easily specify the path of an image when converting XML to PDF.

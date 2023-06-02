@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Step by step guide to convert HTML to PDF by providing credentials with Aspose.PDF for .NET.
 type: docs
 weight: 240
-url: /pdf/net/document-conversion/provide-credentials-during-html-to-pdf/
+url: /net/document-conversion/provide-credentials-during-html-to-pdf/
 ---
 
 In this tutorial, we will walk you through the process of converting an HTML file to PDF while providing credentials when accessing a secure URL using Aspose.PDF for .NET. By following the steps below, you will be able to convert HTML content to PDF using the appropriate credentials.

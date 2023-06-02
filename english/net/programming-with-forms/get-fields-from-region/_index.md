@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Easily get fields from a specific region into your PDF documents with Aspose.PDF for .NET.
 type: docs
 weight: 130
-url: /pdf/net/programming-with-forms/get-fields-from-region/
+url: /net/programming-with-forms/get-fields-from-region/
 ---
 
 In this tutorial, we will show you how to get the fields of a specific region in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.

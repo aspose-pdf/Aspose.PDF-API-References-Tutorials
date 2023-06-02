@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Step by step guide to convert MHT to PDF using Aspose.PDF for .NET.
 type: docs
 weight: 70
-url: /pdf/net/document-conversion/mht-to-pdf/
+url: /net/document-conversion/mht-to-pdf/
 ---
 
 In this tutorial, we will guide you through the process of converting an MHT file to PDF using Aspose.PDF for .NET. MHT (MIME HTML) is a format used to save a complete web page, including images and associated content. By following the steps below, you will be able to convert MHT files to PDF format.

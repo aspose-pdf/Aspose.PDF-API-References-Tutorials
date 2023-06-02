@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Easily fill out form fields in your PDF documents using Aspose.PDF for .NET.
 type: docs
 weight: 80
-url: /pdf/net/programming-with-forms/fill-form-field/
+url: /net/programming-with-forms/fill-form-field/
 ---
 
 In this tutorial, we will show you how to populate a form field using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.

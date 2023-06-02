@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Learn how to set a field boundary in a PDF document using Aspose.PDF for .NET.
 type: docs
 weight: 260
-url: /pdf/net/programming-with-forms/set-field-limit/
+url: /net/programming-with-forms/set-field-limit/
 ---
 
 Here is a detailed tutorial on how to set a field boundary using Aspose.PDF for .NET. Follow these steps:

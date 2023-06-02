@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Learn how to use HTML tags inside a table in a PDF document with Aspose.PDF for .NET.
 type: docs
 weight: 100
-url: /pdf/net/programming-with-tables/html-tags-inside-table/
+url: /net/programming-with-tables/html-tags-inside-table/
 ---
 
 In this tutorial, we are going to learn how to use HTML tags inside a table in a PDF document using Aspose.PDF for .NET. We will explain the source code in C# step by step. At the end of this tutorial, you will know how to insert HTML content into a table in a PDF document. Let's start!

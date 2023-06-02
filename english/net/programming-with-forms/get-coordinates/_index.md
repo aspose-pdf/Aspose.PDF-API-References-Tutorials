@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Easily get form field coordinates in your PDF documents with Aspose.PDF for .NET.
 type: docs
 weight: 120
-url: /pdf/net/programming-with-forms/get-coordinates/
+url: /net/programming-with-forms/get-coordinates/
 ---
 
 In this tutorial, we will show you how to get form field coordinates using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.

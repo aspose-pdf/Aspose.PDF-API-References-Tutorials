@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Learn how to extract the border from a PDF document using Aspose.PDF for .NET.
 type: docs
 weight: 80
-url: /pdf/net/programming-with-tables/extract-border/
+url: /net/programming-with-tables/extract-border/
 ---
 
 In this tutorial, we are going to learn how to extract the border from a PDF document using Aspose.PDF for .NET. We will explain the source code in C# step by step. At the end of this tutorial, you will know how to extract the border from a PDF document and save it as an image. Let's start!

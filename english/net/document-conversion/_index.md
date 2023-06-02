@@ -16,7 +16,7 @@ You'll learn how to specify conversion settings, extract text and images, retain
 | [Add Attachment to PDFA](./add-attachment-to-pdfa/) | Easily add attachments to your PDF/A files using Aspose.PDF for .NET. |  
 | [CGM to PDF](./cgm-to-pdf/) | Easily convert CGM files to PDF using Aspose.PDF for .NET. |  
 | [EPUB to PDF](./epub-to-pdf/) | Step by step guide to convert EPUB to PDF using Aspose.PDF for .NET. |  
-| [Get SVGDimensions](./get-svgdimensions/) | Step by step guide to getting SVG dimensions using Aspose.PDF for .NET. |  
+| [Get SVG Dimensions](./get-svg-dimensions/) | Step by step guide to getting SVG dimensions using Aspose.PDF for .NET. |  
 | [HTML to PDF](./html-to-pdf/) | Step by step guide to convert HTML to PDF using Aspose.PDF for .NET. |  
 | [Markdown to PDF](./markdown-to-pdf/) | Step by step guide to convert Markdown to PDF using Aspose.PDF for .NET. |  
 | [MHT to PDF](./mht-to-pdf/) | Step by step guide to convert MHT to PDF using Aspose.PDF for .NET. |  

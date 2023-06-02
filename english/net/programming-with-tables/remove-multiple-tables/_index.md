@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Learn how to remove multiple tables in a PDF document using Aspose.PDF for .NET.
 type: docs
 weight: 150
-url: /pdf/net/programming-with-tables/remove-multiple-tables/
+url: /net/programming-with-tables/remove-multiple-tables/
 ---
 
 In this tutorial, we will guide you step by step to remove multiple tables in a PDF document using Aspose.PDF for .NET. We'll explain the provided C# source code and show you how to implement it.

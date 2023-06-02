@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Export data from an Excel sheet to a PDF table using Aspose.PDF for .NET.
 type: docs
 weight: 70
-url: /pdf/net/programming-with-tables/export-excel-worksheet-data-to-table/
+url: /net/programming-with-tables/export-excel-worksheet-data-to-table/
 ---
 
 In this tutorial, we will learn how to export data from an Excel worksheet and create a table in a PDF document using the Aspose.PDF for .NET library. We will walk through the source code step by step and explain each section in detail. By the end of this tutorial, you will be able to generate PDF files with tables containing data from Excel worksheets. Let's get started!

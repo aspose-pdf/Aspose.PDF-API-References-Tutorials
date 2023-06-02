@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Learn how to select a radio button in a PDF document using Aspose.PDF for .NET.
 type: docs
 weight: 250
-url: /pdf/net/programming-with-forms/select-radio-button/
+url: /net/programming-with-forms/select-radio-button/
 ---
 
 Here is a detailed tutorial on how to select a radio button using Aspose.PDF for .NET. Follow these steps:

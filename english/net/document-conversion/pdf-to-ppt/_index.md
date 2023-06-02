@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Step by step guide to convert PDF to PPT using Aspose.PDF for .NET.
 type: docs
 weight: 170
-url: /pdf/net/document-conversion/pdf-to-ppt/
+url: /net/document-conversion/pdf-to-ppt/
 ---
 
 In this tutorial, we will guide you through the process of converting a PDF file to PPT format using Aspose.PDF for .NET. The PPT format is the file format used by Microsoft PowerPoint for presentations. By following the steps below, you will be able to convert a PDF file to PPT format.

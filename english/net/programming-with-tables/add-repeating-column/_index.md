@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Learn how to add a repeating column in a PDF document using Aspose.PDF for .NET.
 type: docs
 weight: 20
-url: /pdf/net/programming-with-tables/add-repeating-column/
+url: /net/programming-with-tables/add-repeating-column/
 ---
 
 In this tutorial, we are going to learn how to add a repeating column in a PDF document using Aspose.PDF for .NET. We will explain the source code in C# step by step. At the end of this tutorial, you will know how to create a table with a repeating column in a PDF document. Let's start!

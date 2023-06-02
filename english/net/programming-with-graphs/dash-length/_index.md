@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Learn how to set the length of dashes with Aspose.PDF for .NET. Step by step guide to customize dash patterns.
 type: docs
 weight: 70
-url: /pdf/net/programming-with-graphs/dash-length/
+url: /net/programming-with-graphs/dash-length/
 ---
 In this tutorial, we will walk you through the following C# source code step by step to set the length of dashes using Aspose.PDF for .NET.
 

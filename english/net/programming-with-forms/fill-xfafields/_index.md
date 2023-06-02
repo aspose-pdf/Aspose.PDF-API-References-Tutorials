@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Easily fill XFA fields in your PDF documents using Aspose.PDF for .NET.
 type: docs
 weight: 90
-url: /pdf/net/programming-with-forms/fill-xfafields/
+url: /net/programming-with-forms/fill-xfafields/
 ---
 
 In this tutorial, we will show you how to fill XFA fields using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.

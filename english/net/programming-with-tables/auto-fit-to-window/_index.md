@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Step-by-step guide to use Aspose.PDF for .NET and achieve auto fit to window in PDF generation.
 type: docs
 weight: 50
-url: /pdf/net/programming-with-tables/auto-fit-to-window/
+url: /net/programming-with-tables/auto-fit-to-window/
 ---
 
 The following article is a step-by-step guide on how to use the provided C# source code to achieve Auto Fit To Window functionality using the Aspose.PDF library for .NET. The Auto Fit To Window function allows you to generate PDF files with a layout adapted to the viewing window. This feature is particularly useful when you want your PDF document to automatically adjust to the size of the PDF reader window used by the user.

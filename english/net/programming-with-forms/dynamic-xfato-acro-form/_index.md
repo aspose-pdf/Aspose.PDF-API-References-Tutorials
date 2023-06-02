@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Easily convert dynamic XFATo forms to standard AcroForm forms with Aspose.PDF for .NET.
 type: docs
 weight: 70
-url: /pdf/net/programming-with-forms/dynamic-xfato-acro-form/
+url: /net/programming-with-forms/dynamic-xfato-acro-form/
 ---
 
 In this tutorial, we will show you how to convert an XFATo dynamic form to an AcroForm using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.

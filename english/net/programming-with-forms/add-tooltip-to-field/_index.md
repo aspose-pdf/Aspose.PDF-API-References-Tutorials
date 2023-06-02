@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Learn how to add a tooltip to a field with Aspose.PDF for .NET.
 type: docs
 weight: 10
-url: /pdf/net/programming-with-forms/add-tooltip-to-field/
+url: /net/programming-with-forms/add-tooltip-to-field/
 ---
 
 Aspose.PDF for .NET is a powerful library that allows developers to manipulate PDF documents programmatically. In this tutorial, we will walk through the process of adding a tooltip to a field using Aspose.PDF for .NET. We will provide a step-by-step guide to help you understand and implement this functionality in your C# code.

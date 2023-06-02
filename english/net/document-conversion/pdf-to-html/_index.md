@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Step by step guide to convert PDF to HTML using Aspose.PDF for .NET.
 type: docs
 weight: 130
-url: /pdf/net/document-conversion/pdf-to-html/
+url: /net/document-conversion/pdf-to-html/
 ---
 
 In this tutorial, we'll walk you through the process of converting a PDF file to HTML format using Aspose.PDF for .NET. The PDF format is commonly used to view and share documents, while the HTML format is used to create web pages. By following the steps below, you will be able to convert PDF files to HTML format.

@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Step by step guide to remove hyperlinks after converting HTML to PDF using Aspose.PDF for .NET.
 type: docs
 weight: 250
-url: /pdf/net/document-conversion/remove-hyperlinks-after-converting-from-html/
+url: /net/document-conversion/remove-hyperlinks-after-converting-from-html/
 ---
 
 In this tutorial, we'll walk you through the process of removing hyperlinks from a PDF file generated from an HTML file using Aspose.PDF for .NET. Hyperlinks are clickable links that may redirect to other pages or websites. By following the steps below, you will be able to remove hyperlinks from the resulting PDF file.

@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Preserve form rights in your PDF documents with Aspose.PDF for .NET.
 type: docs
 weight: 210
-url: /pdf/net/programming-with-forms/preserve-rights/
+url: /net/programming-with-forms/preserve-rights/
 ---
 
 In this tutorial, we will show you how to preserve form rights in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.

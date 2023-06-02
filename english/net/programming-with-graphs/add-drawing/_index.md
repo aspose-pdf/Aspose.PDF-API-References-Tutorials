@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Learn how to add drawings using Aspose.PDF for .NET. Follow this step-by-step guide to create attractive PDF documents with drawing features.
 type: docs
 weight: 10
-url: /pdf/net/programming-with-graphs/add-drawing/
+url: /net/programming-with-graphs/add-drawing/
 ---
 
 Application development often requires adding features such as drawings and graphics to make documents more attractive and informative. In this article, we will guide you step by step to explain the C# source code to add drawing to programming with graphics using Aspose.PDF for .NET.

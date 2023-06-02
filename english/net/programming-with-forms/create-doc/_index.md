@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Easily create a document with radio buttons using Aspose.PDF for .NET.
 type: docs
 weight: 40
-url: /pdf/net/programming-with-forms/create-doc/
+url: /net/programming-with-forms/create-doc/
 ---
 
 In this tutorial, we will show you how to create a document with radio buttons using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.

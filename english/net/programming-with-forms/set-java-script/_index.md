@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Learn how to use Aspose.PDF for .NET to set JavaScript in form fields in PDF files.
 type: docs
 weight: 270
-url: /pdf/net/programming-with-forms/set-java-script/
+url: /net/programming-with-forms/set-java-script/
 ---
 
 In this guide, we are going to explain step by step how to use the Aspose.PDF library for .NET to define JavaScript in a form field of a PDF document. We'll show you how to configure JavaScript actions to perform specific operations on the text field.

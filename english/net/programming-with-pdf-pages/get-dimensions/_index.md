@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: In this tutorial, we explain how to get PDF page dimensions and perform manipulations using Aspose.PDF for .NET. Detailed steps are provided to guide you through the process.
 type: docs
 weight: 60
-url: /pdf/net/programming-with-pdf-pages/get-dimensions/
+url: /net/programming-with-pdf-pages/get-dimensions/
 ---
 In this tutorial, we'll walk you through the step-by-step process of getting page dimensions in a PDF file using Aspose.PDF for .NET. We'll explain the bundled C# source code and provide you with a comprehensive guide to help you understand and implement this feature in your own projects. At the end of this tutorial, you will know how to get the dimensions of a page in a PDF file using Aspose.PDF for .NET.
 

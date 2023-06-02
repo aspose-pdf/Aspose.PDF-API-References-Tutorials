@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Learn how to add a drawing with gradient fill with Aspose.PDF for .NET. Step by step tutorial to create attractive PDF documents.
 type: docs
 weight: 20
-url: /pdf/net/programming-with-graphs/add-drawing-with-gradient-fill/
+url: /net/programming-with-graphs/add-drawing-with-gradient-fill/
 ---
 In this tutorial, we will walk you through the following C# source code step by step to add a drawing with gradient fill to programming with graphics using Aspose.PDF for .NET.
 

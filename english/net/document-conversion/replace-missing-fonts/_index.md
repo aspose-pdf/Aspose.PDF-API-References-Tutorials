@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Step-by-step guide to replace missing fonts in a PDF file using Aspose.PDF for .NET.
 type: docs
 weight: 260
-url: /pdf/net/document-conversion/replace-missing-fonts/
+url: /net/document-conversion/replace-missing-fonts/
 ---
 
 In this tutorial, we will walk you through the process of replacing missing fonts in a PDF file using Aspose.PDF for .NET. When you open a PDF file on a machine where a specific font is missing, there may be font display issues. In such cases, it is possible to substitute the missing font with another font available on the machine. By following the steps below, you will be able to replace missing fonts in a PDF file.

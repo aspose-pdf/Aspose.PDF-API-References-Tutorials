@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Learn how to determine table breaks in a PDF document using Aspose.PDF for .NET.
 type: docs
 weight: 60
-url: /pdf/net/programming-with-tables/determine-table-break/
+url: /net/programming-with-tables/determine-table-break/
 ---
 
 In this tutorial, we are going to learn how to determine table breaks in a PDF document using Aspose.PDF for .NET. We will explain the source code in C# step by step. At the end of this tutorial, you will know how to determine if a table exceeds the page margins. Let's start!

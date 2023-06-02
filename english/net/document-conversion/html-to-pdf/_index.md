@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Step by step guide to convert HTML to PDF using Aspose.PDF for .NET.
 type: docs
 weight: 50
-url: /pdf/net/document-conversion/html-to-pdf/
+url: /net/document-conversion/html-to-pdf/
 ---
 
 In this tutorial, we will walk you through the process of converting an HTML file to PDF using Aspose.PDF for .NET. HTML (HyperText Markup Language) is a markup language used to structure and present web content. By following the steps below, you will be able to convert HTML files to PDF format.

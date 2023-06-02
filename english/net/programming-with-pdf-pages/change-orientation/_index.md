@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Step-by-step guide to change page orientation of a PDF with Aspose.PDF for .NET. Easy to follow and implement in your projects.
 type: docs
 weight: 10
-url: /pdf/net/programming-with-pdf-pages/change-orientation/
+url: /net/programming-with-pdf-pages/change-orientation/
 ---
 In this tutorial, we'll walk you through the step-by-step process to change the page orientation of a PDF document using Aspose.PDF for .NET. We'll explain the bundled C# source code and provide you with a comprehensive guide to help you understand and implement this feature in your own projects. At the end of this tutorial, you will know how to change the page orientation of your PDF documents using Aspose.PDF for .NET.
 

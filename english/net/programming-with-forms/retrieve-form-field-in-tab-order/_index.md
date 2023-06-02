@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Learn how to retrieve form fields in tab order using Aspose.PDF for .NET.
 type: docs
 weight: 240
-url: /pdf/net/programming-with-forms/retrieve-form-field-in-tab-order/
+url: /net/programming-with-forms/retrieve-form-field-in-tab-order/
 ---
 
 When working with PDF documents in C# using Aspose.PDF for .NET, you may come across a scenario where you need to retrieve form fields in a specific tab order. This can be useful when you want to perform operations on form fields based on their tab sequence. In this tutorial, we will guide you step by step on how to retrieve form fields in tab order using Aspose.PDF for .NET.

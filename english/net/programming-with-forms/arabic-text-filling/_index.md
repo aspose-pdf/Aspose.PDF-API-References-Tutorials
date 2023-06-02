@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Easily populate PDF form fields with Arabic text using Aspose.PDF for .NET.
 type: docs
 weight: 20
-url: /pdf/net/programming-with-forms/arabic-text-filling/
+url: /net/programming-with-forms/arabic-text-filling/
 ---
 
 In this tutorial, we are going to learn how to populate a PDF form field with Arabic text using Aspose.PDF for .NET. Aspose.PDF is a powerful library that allows developers to programmatically manipulate PDF documents. We'll walk you through the process step by step, explaining the C# source code required to accomplish this task.

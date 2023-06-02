@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Step by step guide to convert web page to PDF using Aspose.PDF for .NET.
 type: docs
 weight: 320
-url: /pdf/net/document-conversion/web-page-to-pdf/
+url: /net/document-conversion/web-page-to-pdf/
 ---
 
 In this tutorial, we will guide you step by step on how to convert a web page to PDF using the Aspose.PDF for .NET library. We will explain the provided C# source code and show you how to implement it in your own projects. By the end of this tutorial, you will be able to convert web pages to PDF documents effortlessly.

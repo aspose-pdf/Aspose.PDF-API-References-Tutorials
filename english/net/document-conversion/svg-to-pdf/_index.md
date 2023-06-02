@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Easy and fast SVG to PDF conversion using Aspose.PDF for .NET.
 type: docs
 weight: 280
-url: /pdf/net/document-conversion/svg-to-pdf/
+url: /net/document-conversion/svg-to-pdf/
 ---
 
 This tutorial will walk you through the steps to convert an SVG file to a PDF file using Aspose.PDF for .NET. Aspose.PDF offers a simple and effective solution for converting SVG files to PDF while preserving content quality and layout. Follow the steps below to perform this conversion.

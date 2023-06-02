@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Learn how to get the width of a table in a PDF document using Aspose.PDF for .NET.
 type: docs
 weight: 90
-url: /pdf/net/programming-with-tables/get-table-width/
+url: /net/programming-with-tables/get-table-width/
 ---
 
 In this tutorial, we are going to learn how to get the width of a table in a PDF document using Aspose.PDF for .NET. We will explain the source code in C# step by step. At the end of this tutorial, you will know how to get the width of a table in a PDF document. Let's start!

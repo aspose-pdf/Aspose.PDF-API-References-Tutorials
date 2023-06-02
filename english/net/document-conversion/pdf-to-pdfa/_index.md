@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Step by step guide to convert PDF to PDFA using Aspose.PDF for .NET.
 type: docs
 weight: 140
-url: /pdf/net/document-conversion/pdf-to-pdfa/
+url: /net/document-conversion/pdf-to-pdfa/
 ---
 
 In this tutorial, we will walk you through the process of converting a PDF file to PDF/A format using Aspose.PDF for .NET. The PDF/A format is an ISO standard that guarantees the long-term preservation of electronic documents. By following the steps below, you will be able to convert PDF files to PDF/A format.

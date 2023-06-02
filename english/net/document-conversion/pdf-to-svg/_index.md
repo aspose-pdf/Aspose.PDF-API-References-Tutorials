@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Step by step guide to convert PDF to SVG using Aspose.PDF for .NET.
 type: docs
 weight: 180
-url: /pdf/net/document-conversion/pdf-to-svg/
+url: /net/document-conversion/pdf-to-svg/
 ---
 
 In this tutorial, we'll walk you through the process of converting a PDF to SVG format using Aspose.PDF for .NET. SVG (Scalable Vector Graphics) is a vector image format that helps maintain the quality and scaling of graphics. By following the steps below, you will be able to convert a PDF file to SVG format.

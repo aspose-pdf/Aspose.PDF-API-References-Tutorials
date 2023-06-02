@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Learn how to set margins or padding in a table using Aspose.PDF for .NET.
 type: docs
 weight: 140
-url: /pdf/net/programming-with-tables/margins-or-padding/
+url: /net/programming-with-tables/margins-or-padding/
 ---
 
 In this tutorial, we will guide you through the step-by-step process of using Aspose.PDF for .NET to set margins or padding in a table. We will provide explanations and code snippets to help you understand and implement this functionality in your C# source code.

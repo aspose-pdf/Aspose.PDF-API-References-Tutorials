@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Easily create horizontal and vertical radio buttons in your PDF documents with Aspose.PDF for .NET.
 type: docs
 weight: 180
-url: /pdf/net/programming-with-forms/horizontally-and-vertically-radio-buttons/
+url: /net/programming-with-forms/horizontally-and-vertically-radio-buttons/
 ---
 
 In this tutorial, we will show you how to create horizontally and vertically arranged radio buttons in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.

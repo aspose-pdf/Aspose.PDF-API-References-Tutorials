@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Embed data from a database into a PDF document using Aspose.PDF for .NET.
 type: docs
 weight: 120
-url: /pdf/net/programming-with-tables/integrate-with-database/
+url: /net/programming-with-tables/integrate-with-database/
 ---
 
 In this tutorial, we will learn how to embed data from a database into a PDF document using Aspose.PDF for .NET. We will explain the source code in C# step by step. At the end of this tutorial, you will know how to import table data from a database into a PDF document. Let's start!

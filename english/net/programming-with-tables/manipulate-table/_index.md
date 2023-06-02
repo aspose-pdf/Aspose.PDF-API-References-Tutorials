@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Easily manipulate tables in PDF documents with Aspose.PDF for .NET.
 type: docs
 weight: 130
-url: /pdf/net/programming-with-tables/manipulate-table/
+url: /net/programming-with-tables/manipulate-table/
 ---
 
 In this tutorial, we will walk you through the step-by-step process of manipulating tables in a PDF document using Aspose.PDF for .NET. Tables are a common element in PDF documents, and being able to modify their content programmatically can be highly beneficial in various scenarios. We will use the C# source code provided to demonstrate the process.

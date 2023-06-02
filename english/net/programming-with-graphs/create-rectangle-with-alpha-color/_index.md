@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Learn how to create a rectangle with transparent color using Aspose.PDF for .NET. Step-by-step guide to customize transparency.
 type: docs
 weight: 60
-url: /pdf/net/programming-with-graphs/create-rectangle-with-alpha-color/
+url: /net/programming-with-graphs/create-rectangle-with-alpha-color/
 ---
 
 In this tutorial, we will walk you through the following C# source code step by step to create a rectangle with alpha color using Aspose.PDF for .NET.

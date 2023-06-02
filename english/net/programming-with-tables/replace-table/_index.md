@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Learn how to replace a table in a PDF document using Aspose.PDF for .NET.
 type: docs
 weight: 180
-url: /pdf/net/programming-with-tables/replace-table/
+url: /net/programming-with-tables/replace-table/
 ---
 
 In this tutorial, we will guide you step by step to replace a table in a PDF document using Aspose.PDF for .NET. We'll explain the provided C# source code and show you how to implement it.

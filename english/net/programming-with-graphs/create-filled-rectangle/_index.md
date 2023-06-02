@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Learn how to create a filled rectangle with Aspose.PDF for .NET. Step by step guide to customize fill color.
 type: docs
 weight: 50
-url: /pdf/net/programming-with-graphs/create-filled-rectangle/
+url: /net/programming-with-graphs/create-filled-rectangle/
 ---
 In this tutorial, we will walk you through the following C# source code step by step to create a filled rectangle using Aspose.PDF for .NET.
 

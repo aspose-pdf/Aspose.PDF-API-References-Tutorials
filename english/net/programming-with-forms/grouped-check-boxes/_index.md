@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Easily create grouped checkboxes in your PDF documents with Aspose.PDF for .NET.
 type: docs
 weight: 170
-url: /pdf/net/programming-with-forms/grouped-check-boxes/
+url: /net/programming-with-forms/grouped-check-boxes/
 ---
 
 In this tutorial, we will show you how to create grouped checkboxes in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.

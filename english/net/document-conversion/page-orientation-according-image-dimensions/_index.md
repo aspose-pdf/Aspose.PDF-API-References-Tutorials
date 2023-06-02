@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Step-by-step guide to set page orientation based on image dimensions with Aspose.PDF for .NET.
 type: docs
 weight: 80
-url: /pdf/net/document-conversion/page-orientation-according-image-dimensions/
+url: /net/document-conversion/page-orientation-according-image-dimensions/
 ---
 
 In this tutorial, we'll walk you through the process of setting page orientation based on an image's dimensions using Aspose.PDF for .NET. We will loop through a list of JPG images in a given directory and automatically adjust the page orientation based on the width of each image. Follow the steps below to achieve this.

@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Easily add radio buttons to your PDF documents with Aspose.PDF for .NET.
 type: docs
 weight: 220
-url: /pdf/net/programming-with-forms/radio-button/
+url: /net/programming-with-forms/radio-button/
 ---
 
 In this tutorial, we will show you how to add a radio button in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.

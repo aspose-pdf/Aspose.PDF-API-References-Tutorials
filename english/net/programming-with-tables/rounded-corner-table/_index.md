@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Learn how to create a rounded corner table in a PDF document using Aspose.PDF for .NET.
 type: docs
 weight: 190
-url: /pdf/net/programming-with-tables/rounded-corner-table/
+url: /net/programming-with-tables/rounded-corner-table/
 ---
 
 In this tutorial, we will guide you step by step to create a rounded corner table in a PDF document using Aspose.PDF for .NET. We'll explain the provided C# source code and show you how to implement it.

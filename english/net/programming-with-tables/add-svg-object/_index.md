@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Easily add SVG objects to your PDF files using Aspose.PDF for .NET.
 type: docs
 weight: 30
-url: /pdf/net/programming-with-tables/add-svg-object/
+url: /net/programming-with-tables/add-svg-object/
 ---
 
 In this tutorial, we will learn how to add an SVG object to a PDF file using the Aspose.PDF for .NET library. SVG (Scalable Vector Graphics) is a popular format for vector graphics that can be easily scaled without losing quality. With Aspose.PDF, you can add SVG objects to your PDF documents programmatically.

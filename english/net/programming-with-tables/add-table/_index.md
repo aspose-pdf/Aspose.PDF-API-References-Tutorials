@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Easily add tables to your PDF documents using Aspose.PDF for .NET.
 type: docs
 weight: 40
-url: /pdf/net/programming-with-tables/add-table/
+url: /net/programming-with-tables/add-table/
 ---
 
 Aspose.PDF for .NET is a powerful library that allows developers to create, manipulate, and transform PDF documents programmatically. In this tutorial, we will guide you through the process of adding a table to a PDF document using Aspose.PDF for .NET. We will explain each step of the code snippet provided and provide a comprehensive guide to help you understand and implement the functionality in your own projects.

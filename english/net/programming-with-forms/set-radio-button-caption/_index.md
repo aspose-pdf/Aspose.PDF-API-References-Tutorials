@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Learn how to use Aspose.PDF for .NET to set the caption for a radio button in a PDF form.
 type: docs
 weight: 280
-url: /pdf/net/programming-with-forms/set-radio-button-caption/
+url: /net/programming-with-forms/set-radio-button-caption/
 ---
 
 In this guide, we will explain step by step how to use the Aspose.PDF library for .NET to define the caption of a radio button in a PDF form. We'll show you how to access the radio button field, create a new radio button option, and customize the button caption.

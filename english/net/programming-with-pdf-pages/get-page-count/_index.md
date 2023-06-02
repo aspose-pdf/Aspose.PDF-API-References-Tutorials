@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Step-by-step guide to get the page count of a PDF file using Aspose.PDF for .NET. Easy to follow and implement in your projects.
 type: docs
 weight: 80
-url: /pdf/net/programming-with-pdf-pages/get-page-count/
+url: /net/programming-with-pdf-pages/get-page-count/
 ---
 In this tutorial, we'll walk you through the step-by-step process to get the page count of a PDF file using Aspose.PDF for .NET. We'll explain the bundled C# source code and provide you with a comprehensive guide to help you understand and implement this feature in your own projects. At the end of this tutorial, you will know how to get the page count of a PDF file using Aspose.PDF for .NET.
 

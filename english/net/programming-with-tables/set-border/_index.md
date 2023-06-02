@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Learn how to set a border in a PDF table with Aspose.PDF for .NET.
 type: docs
 weight: 200
-url: /pdf/net/programming-with-tables/set-border/
+url: /net/programming-with-tables/set-border/
 ---
 
 In this tutorial, we will guide you step by step to set a border in a table of a PDF document using Aspose.PDF for .NET. We'll explain the provided C# source code and show you how to implement it.

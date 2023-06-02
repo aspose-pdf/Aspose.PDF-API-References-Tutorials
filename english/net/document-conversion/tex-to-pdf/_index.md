@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Easy and accurate conversion of TeX files to PDF using Aspose.PDF for .NET.
 type: docs
 weight: 290
-url: /pdf/net/document-conversion/tex-to-pdf/
+url: /net/document-conversion/tex-to-pdf/
 ---
 
 This tutorial will walk you through the steps to convert a TeX file to a PDF file using Aspose.PDF for .NET. Aspose.PDF offers a simple and effective solution for converting TeX files to PDF while preserving content quality and layout. Follow the steps below to perform this conversion.

@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Step by step guide to convert PCL to PDF using Aspose.PDF for .NET.
 type: docs
 weight: 90
-url: /pdf/net/document-conversion/pcl-to-pdf/
+url: /net/document-conversion/pcl-to-pdf/
 ---
 
 In this tutorial, we will walk you through the process of converting a PCL file to PDF using Aspose.PDF for .NET. PCL (Printer Control Language) is a page description language used primarily for printing on laser printers. By following the steps below, you will be able to convert PCL files to PDF format.

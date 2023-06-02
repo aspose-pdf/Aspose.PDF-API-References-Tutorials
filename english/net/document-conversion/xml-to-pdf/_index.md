@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Step by step guide to convert XML file to PDF using Aspose.PDF for .NET.
 type: docs
 weight: 330
-url: /pdf/net/document-conversion/xml-to-pdf/
+url: /net/document-conversion/xml-to-pdf/
 ---
 
 In this tutorial, we will walk you through how to convert XML file to PDF using Aspose.PDF library for .NET step by step. We'll detail the provided C# source code and show you how to implement it in your own projects. By the end of this tutorial, you will be able to easily convert XML files to PDF documents.

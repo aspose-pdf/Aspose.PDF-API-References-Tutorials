@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Step by step guide to convert PostScript to PDF using Aspose.PDF for .NET.
 type: docs
 weight: 230
-url: /pdf/net/document-conversion/postscript-to-pdf/
+url: /net/document-conversion/postscript-to-pdf/
 ---
 
 In this tutorial, we'll walk you through the process of converting a PostScript (PS) file to PDF format using Aspose.PDF for .NET. The PostScript format is a page description language used to describe the graphical appearance of documents. By following the steps below, you will be able to convert a PostScript file to PDF format.

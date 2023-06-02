@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Simple and efficient conversion of text files to PDF using Aspose.PDF for .NET.
 type: docs
 weight: 300
-url: /pdf/net/document-conversion/text-to-pdf/
+url: /net/document-conversion/text-to-pdf/
 ---
 
 This tutorial will walk you through the steps to convert a text file to a PDF file using Aspose.PDF for .NET. Aspose.PDF offers a simple and effective solution for converting plain text to PDF while preserving text formatting and presentation. Follow the steps below to perform this conversion.

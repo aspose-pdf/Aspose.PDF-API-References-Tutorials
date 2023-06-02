@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Step by step guide to convert EPUB to PDF using Aspose.PDF for .NET.
 type: docs
 weight: 30
-url: /pdf/net/document-conversion/epub-to-pdf/
+url: /net/document-conversion/epub-to-pdf/
 ---
 
 In this tutorial, we will guide you through the process of converting an EPUB file to PDF using the Aspose.PDF library for .NET. EPUB (Electronic Publication) is a widely used format for electronic books, while PDF (Portable Document Format) is a document exchange standard. By following the steps given below, you will be able to convert EPUB files to PDF format effortlessly.

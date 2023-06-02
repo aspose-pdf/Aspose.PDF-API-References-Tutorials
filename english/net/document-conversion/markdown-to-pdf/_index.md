@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Step by step guide to convert Markdown to PDF using Aspose.PDF for .NET.
 type: docs
 weight: 60
-url: /pdf/net/document-conversion/markdown-to-pdf/
+url: /net/document-conversion/markdown-to-pdf/
 ---
 
 In this tutorial, we'll walk you through the process of converting a Markdown file to PDF using Aspose.PDF for .NET. Markdown is a lightweight markup language used to format plain text in a structured way. By following the steps below, you will be able to convert Markdown files to PDF format.

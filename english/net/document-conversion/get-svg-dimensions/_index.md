@@ -1,11 +1,11 @@
 ---
-title: Get SVGDimensions
-linktitle: Get SVGDimensions
+title: Get SVG Dimensions
+linktitle: Get SVG Dimensions
 second_title: Aspose.PDF for .NET API Reference
 description: Step by step guide to getting SVG dimensions using Aspose.PDF for .NET.
 type: docs
 weight: 40
-url: /pdf/net/document-conversion/get-svgdimensions/
+url: /net/document-conversion/get-svg-dimensions/
 ---
 
 ## Introduction

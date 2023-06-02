@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Learn how to control the Z-order of rectangles in a PDF file using Aspose.PDF for .NET. 
 type: docs
 weight: 40
-url: /pdf/net/programming-with-graphs/control-rectangle-z-order/
+url: /net/programming-with-graphs/control-rectangle-z-order/
 ---
 
 In this tutorial, we will walk you through the following C# source code step by step to control the Z-order of rectangles using Aspose.PDF for .NET.

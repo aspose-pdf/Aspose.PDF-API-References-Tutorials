@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Learn how to draw a line across a page using Aspose.PDF for .NET. Step-by-step guide to creating custom lines.
 type: docs
 weight: 80
-url: /pdf/net/programming-with-graphs/drawing-line/
+url: /net/programming-with-graphs/drawing-line/
 ---
 
 In this tutorial, we will walk you through the following C# source code step by step to draw a line using Aspose.PDF for .NET.

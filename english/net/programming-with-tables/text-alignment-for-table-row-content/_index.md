@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Learn how to align row content in a PDF table using Aspose.PDF for .NET.
 type: docs
 weight: 210
-url: /pdf/net/programming-with-tables/text-alignment-for-table-row-content/
+url: /net/programming-with-tables/text-alignment-for-table-row-content/
 ---
 
 In this tutorial, we will guide you step by step to align the contents of a row in a table of a PDF document using Aspose.PDF for .NET. We'll explain the provided C# source code and show you how to implement it.

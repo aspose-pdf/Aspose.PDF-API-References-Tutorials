@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Easily get the value of a form field in your PDF documents with Aspose.PDF for .NET.
 type: docs
 weight: 140
-url: /pdf/net/programming-with-forms/get-value-from-field/
+url: /net/programming-with-forms/get-value-from-field/
 ---
 
 In this tutorial, we will show you how to get the value of a form field using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.

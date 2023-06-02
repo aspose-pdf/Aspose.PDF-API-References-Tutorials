@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Easily determine required fields in your PDF forms using Aspose.PDF for .NET.
 type: docs
 weight: 60
-url: /pdf/net/programming-with-forms/determine-required-field/
+url: /net/programming-with-forms/determine-required-field/
 ---
 
 In this tutorial, we will show you how to determine the required fields of a PDF form using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.

@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Easily edit form fields in your PDF documents with Aspose.PDF for .NET.
 type: docs
 weight: 190
-url: /pdf/net/programming-with-forms/modify-form-field/
+url: /net/programming-with-forms/modify-form-field/
 ---
 
 In this tutorial, we will show you how to edit a form field in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.

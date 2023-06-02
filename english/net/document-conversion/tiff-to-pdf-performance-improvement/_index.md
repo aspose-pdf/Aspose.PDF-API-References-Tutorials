@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Step-by-step guide to improve TIFF to PDF conversion performance with Aspose.PDF for .NET.
 type: docs
 weight: 310
-url: /pdf/net/document-conversion/tiff-to-pdf-performance-improvement/
+url: /net/document-conversion/tiff-to-pdf-performance-improvement/
 ---
 
 In this tutorial, we will walk you through step-by-step how to improve the performance of converting TIFF files to PDF using the Aspose.PDF library for .NET. We'll detail the provided C# source code and show you how to implement it in your own projects. By the end of this tutorial, you will be able to perform faster and more efficient conversions of TIFF files to PDF.

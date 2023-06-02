@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Learn how to add a custom line object in a PDF file using Aspose.PDF for .NET.
 type: docs
 weight: 30
-url: /pdf/net/programming-with-graphs/add-line-object/
+url: /net/programming-with-graphs/add-line-object/
 ---
 In this tutorial, we will walk you through the following C# source code step by step to add a line object using Aspose.PDF for .NET.
 

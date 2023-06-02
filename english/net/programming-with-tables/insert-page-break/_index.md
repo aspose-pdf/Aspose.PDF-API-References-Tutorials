@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Learn how to insert a page break in a PDF document using Aspose.PDF for .NET.
 type: docs
 weight: 110
-url: /pdf/net/programming-with-tables/insert-page-break/
+url: /net/programming-with-tables/insert-page-break/
 ---
 
 In this tutorial, we will learn how to insert a page break in a PDF document using Aspose.PDF for .NET. We will explain the source code in C# step by step. At the end of this tutorial, you will know how to add a page break after a certain number of lines in a table of a PDF document. Let's start!

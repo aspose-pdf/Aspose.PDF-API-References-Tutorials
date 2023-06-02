@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Step-by-step guide to extract a specific page from a PDF file using Aspose.PDF for .NET. Easy to follow and implement in your projects.
 type: docs
 weight: 90
-url: /pdf/net/programming-with-pdf-pages/get-particular-page/
+url: /net/programming-with-pdf-pages/get-particular-page/
 ---
 In this tutorial, we will show you how to get a specific page from a PDF using Aspose.PDF for .NET. We'll walk you through each step of the process using the provided C# source code. At the end of this tutorial, you will know how to navigate to a specific page and save that page as a separate PDF file.
 

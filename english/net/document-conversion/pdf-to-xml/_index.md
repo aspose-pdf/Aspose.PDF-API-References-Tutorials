@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Step by step guide to convert PDF to XML using Aspose.PDF for .NET.
 type: docs
 weight: 210
-url: /pdf/net/document-conversion/pdf-to-xml/
+url: /net/document-conversion/pdf-to-xml/
 ---
 
 In this tutorial, we'll walk you through the process of converting a PDF file to XML format using Aspose.PDF for .NET. XML (eXtensible Markup Language) is a data format used to store and exchange structured information. By following the steps below, you will be able to convert a PDF file to XML format.

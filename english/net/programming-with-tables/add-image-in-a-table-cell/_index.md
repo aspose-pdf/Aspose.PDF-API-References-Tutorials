@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Add an image in a table cell with Aspose.PDF for .NET a step-by-step guide for precise manipulation of images in PDF documents.
 type: docs
 weight: 10
-url: /pdf/net/programming-with-tables/add-image-in-a-table-cell/
+url: /net/programming-with-tables/add-image-in-a-table-cell/
 ---
 
 In this tutorial, we will guide you through the process of adding an image to a table cell using Aspose.PDF for .NET. The provided C# source code demonstrates how to achieve this functionality. By following the steps outlined below, you will be able to incorporate images into your table cells effectively.

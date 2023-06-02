@@ -33,7 +33,7 @@ using (Document document = new Document(fs))
 
 ## Étape 3 : Définir la police par défaut
 
- Ensuite, nous définirons la police par défaut du document PDF à l'aide de la`PdfSaveOptions`classe. Dans cet exemple, nous allons définir la police par défaut sur "Arial".
+ Ensuite, nous définirons la police par défaut du document PDF à l'aide de la`PdfSaveOptions` classe. Dans cet exemple, nous allons définir la police par défaut sur "Arial".
 
 ```csharp
 PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
@@ -51,19 +51,17 @@ document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
 ### Exemple de code source pour définir la police par défaut à l'aide d'Aspose.PDF pour .NET
 
 ```csharp
-	
-	// Chemin d'accès au répertoire des documents.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Charger un document PDF existant avec une police manquante
-	string documentName = dataDir + "input.pdf";
-	string newName = "Arial";
-	using (System.IO.FileStream fs = new System.IO.FileStream(documentName, System.IO.FileMode.Open))
-	using (Document document = new Document(fs))
-	{
-		PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
-		// Spécifier le nom de la police par défaut
-		pdfSaveOptions.DefaultFontName = newName;
-		document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
-	}
-	
+// Chemin d'accès au répertoire des documents.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Charger un document PDF existant avec une police manquante
+string documentName = dataDir + "input.pdf";
+string newName = "Arial";
+using (System.IO.FileStream fs = new System.IO.FileStream(documentName, System.IO.FileMode.Open))
+using (Document document = new Document(fs))
+{
+	PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
+	// Spécifier le nom de la police par défaut
+	pdfSaveOptions.DefaultFontName = newName;
+	document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
+}
 ```

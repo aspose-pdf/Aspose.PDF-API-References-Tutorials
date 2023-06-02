@@ -1,7 +1,7 @@
 ---
 title: Tillåt återanvänd sidinnehåll
 linktitle: Tillåt återanvänd sidinnehåll
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du optimerar PDF-filer genom att aktivera funktionen "Tillåt återanvänd sidinnehåll" med Aspose.PDF för .NET. Minska filstorleken och förbättra prestandan.
 type: docs
 weight: 50

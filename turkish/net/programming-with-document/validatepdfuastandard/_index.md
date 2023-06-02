@@ -1,6 +1,6 @@
 ---
-title: PDFUA standardını doğrulayın
-linktitle: PDFUA standardını doğrulayın
+title: PDF UA Standardını Doğrulayın
+linktitle: PDF UA Standardını Doğrulayın
 second_title: Aspose.PDF for .NET API Referansı
 description: C# kodunu kullanarak PDF/UA standardını doğrulamak için Aspose.PDF for .NET'i nasıl kullanacağınızı öğrenin. Adım adım rehber.
 type: docs
@@ -42,14 +42,12 @@ Bu kod, PDF belgesini PDF/UA standart uyumluluğu için doğrular ve belirtilen 
 ### Aspose.PDF for .NET kullanarak Get Validate PDFUAstandard için örnek kaynak kodu
 
 ```csharp
-           
-	// Belgeler dizininin yolu.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Belgeler dizininin yolu.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Belgeyi aç
-	Document pdfDocument = new Document(dataDir + "ValidatePDFUAStandard.pdf");
+// Belgeyi aç
+Document pdfDocument = new Document(dataDir + "ValidatePDFUAStandard.pdf");
 
-	// PDF/UA için PDF'yi Doğrula
-	bool isValidPdfUa = pdfDocument.Validate(dataDir + "validation-result-UA.xml", PdfFormat.PDF_UA_1);
-		   
+// PDF/UA için PDF'yi Doğrula
+bool isValidPdfUa = pdfDocument.Validate(dataDir + "validation-result-UA.xml", PdfFormat.PDF_UA_1); 
 ```

@@ -13,19 +13,19 @@ Bu ön koşullara sahip olduğunuzda, Visual Studio'da yeni bir konsol uygulama 
 
 Bir PDF belgesine bağlantı notu eklemek için şu adımları izleyin:
 
-##  Yeni bir tane oluştur`Document` object.
+##  1. Adım: Yeni bir tane oluşturun`Document` object.
 ```csharp
 Document doc = new Document();
 ```
-## Belgeye yeni bir sayfa ekleyin.
+## Adım 2: Belgeye yeni bir sayfa ekleyin.
 ```csharp
 doc.Pages.Add();
 ```
-##  listesi oluştur`Point` arrays that represent the ink gesture for the annotation.
+##  3. Adım: Bir liste oluşturun`Point` arrays that represent the ink gesture for the annotation.
 ```csharp
 IList<Point[]> inkList = new List<Point[]>();
 ```
-##  Yeni bir tane oluştur`LineInfo` object that defines the properties of the ink gesture.
+##  4. Adım: Yeni bir tane oluşturun`LineInfo` object that defines the properties of the ink gesture.
 ```csharp
 LineInfo lineInfo = new LineInfo();
 lineInfo.VerticeCoordinate = new float[] { 55, 55, 70, 70, 70, 90, 150, 60 };
@@ -33,7 +33,7 @@ lineInfo.Visibility = true;
 lineInfo.LineColor = System.Drawing.Color.Red;
 lineInfo.LineWidth = 2;
 ```
-##  Yeni bir tane oluştur`Aspose.Pdf.Point` array that represents the gesture from the `LineInfo` object.
+## 5. Adım: Yeni bir tane oluşturun`Aspose.Pdf.Point` array that represents the gesture from the `LineInfo` object.
 ```csharp
 int length = lineInfo.VerticeCoordinate.Length / 2;
 Aspose.Pdf.Point[] gesture = new Aspose.Pdf.Point[length];
@@ -42,24 +42,24 @@ for (int i = 0; i < length; i++)
     gesture[i] = new Aspose.Pdf.Point(lineInfo.VerticeCoordinate[2 * i], lineInfo.VerticeCoordinate[2 * i + 1]);
 }
 ```
-## Hareketi mürekkep hareketleri listesine ekleyin.
+## Adım 6: Hareketi mürekkep hareketleri listesine ekleyin.
 ```csharp
 inkList.Add(gesture);
 ```
-##  Yeni bir tane oluştur`InkAnnotation` object that represents the link annotation.
+##  7. Adım: Yeni bir tane oluşturun`InkAnnotation` object that represents the link annotation.
 ```csharp
 InkAnnotation a1 = new InkAnnotation(doc.Pages[1], new Aspose.Pdf.Rectangle(100, 100, 300, 300), inkList);
 ```
-## Ek açıklamanın konusunu ve başlığını ayarlayın.
+## Adım 8: Ek açıklamanın konusunu ve başlığını ayarlayın.
 ```csharp
 a1.Subject = "Test";
 a1.Title = "Title";
 ```
-## Ek açıklamanın rengini ayarlayın.
+## Adım 9: Ek açıklamanın rengini ayarlayın.
 ```csharp
 a1.Color = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Green);
 ```
-##  Yeni bir tane oluştur`Border` object that defines the properties of the annotation's border.
+##  10. Adım: Yeni bir tane oluşturun`Border` object that defines the properties of the annotation's border.
 ```csharp
 Border border = new Border(a1);
 border.Width = 3;
@@ -67,12 +67,13 @@ border.Effect = BorderEffect.Cloudy;
 border.Dash = new Dash(1, 1);
 border.Style = BorderStyle.Solid;
 ```
-## Ek açıklamayı sayfaya ekleyin.
+## Adım 11: Ek açıklamayı sayfaya ekleyin.
 ```csharp
 doc.Pages[1].Annotations.Add(a1);
 ```
-## Belgeyi bir dosyaya kaydedin.
-```c// Save output file
+## Adım 12: Belgeyi bir dosyaya kaydedin.
+```csharp
+// Çıktı dosyasını kaydet
 doc.Save(dataDir);
 
 
@@ -80,8 +81,6 @@ doc.Save(dataDir);
 ### Örnek, Aspose.PDF for .NET ile lnk Annotation Line Width'i göstermektedir.
 
 ```csharp
-
-
 // Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
@@ -115,6 +114,4 @@ doc.Pages[1].Annotations.Add(a1);
 dataDir = dataDir + "lnkAnnotationLineWidth_out.pdf";
 // Çıktı dosyasını kaydet
 doc.Save(dataDir);
-
-
 ```

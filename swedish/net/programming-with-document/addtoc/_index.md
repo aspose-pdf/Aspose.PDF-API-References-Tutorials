@@ -1,7 +1,7 @@
 ---
 title: Lägg till innehållsförteckning
 linktitle: Lägg till innehållsförteckning
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du lägger till en innehållsförteckning till PDF-dokument med Aspose.PDF för .NET. Steg-för-steg guide med exempel på källkod. Öka dokumentnavigeringen!
 type: docs
 weight: 40
@@ -85,7 +85,7 @@ Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at "
 // Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Ladda en befintlig PDF-fil
+//Ladda en befintlig PDF-fil
 Document doc = new Document(dataDir + "AddTOC.pdf");
 
 // Få tillgång till första sidan av PDF-filen
@@ -128,9 +128,8 @@ for (int i = 0; i < 2; i++)
 	tocPage.Paragraphs.Add(heading2);
 }
 dataDir = dataDir + "TOC_out.pdf";
-//Spara det uppdaterade dokumentet
+// Spara det uppdaterade dokumentet
 doc.Save(dataDir);
 
 Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at " + dataDir);
-
 ```

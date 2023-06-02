@@ -51,20 +51,18 @@ document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
 ### Example Source Code for Set Default Font using Aspose.PDF for .NET
 
 ```csharp
-	
-	// The path to the documents directory.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Load an existing PDF document with missing font
-	string documentName = dataDir + "input.pdf";
-	string newName = "Arial";
-	using (System.IO.FileStream fs = new System.IO.FileStream(documentName, System.IO.FileMode.Open))
-	using (Document document = new Document(fs))
-	{
-		PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
-		// Specify Default Font Name
-		pdfSaveOptions.DefaultFontName = newName;
-		document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
-	}
-	
+// The path to the documents directory.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Load an existing PDF document with missing font
+string documentName = dataDir + "input.pdf";
+string newName = "Arial";
+using (System.IO.FileStream fs = new System.IO.FileStream(documentName, System.IO.FileMode.Open))
+using (Document document = new Document(fs))
+{
+	PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
+	// Specify Default Font Name
+	pdfSaveOptions.DefaultFontName = newName;
+	document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
+}
 ```
 

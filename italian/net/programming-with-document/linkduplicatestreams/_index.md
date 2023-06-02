@@ -62,20 +62,18 @@ Nel codice precedente, abbiamo utilizzato il metodo Save dell'oggetto pdfDocumen
 ### Esempio di codice sorgente per collegare flussi duplicati utilizzando Aspose.PDF per .NET
 
 ```csharp
-
-	// Il percorso della directory dei documenti.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Apri documento
-	Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-	// Imposta l'opzione LinkDuplcateStreams
-	var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-	{
-		LinkDuplcateStreams = true
-	};
-	// Ottimizza il documento PDF utilizzando OptimizationOptions
-	pdfDocument.OptimizeResources(optimizeOptions);
-	dataDir = dataDir + "OptimizeDocument_out.pdf";
-	// Salva documento aggiornato
-	pdfDocument.Save(dataDir);
-	
+// Il percorso della directory dei documenti.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Apri documento
+Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
+// Imposta l'opzione LinkDuplcateStreams
+var optimizeOptions = new Pdf.Optimization.OptimizationOptions
+{
+	LinkDuplcateStreams = true
+};
+// Ottimizza il documento PDF utilizzando OptimizationOptions
+pdfDocument.OptimizeResources(optimizeOptions);
+dataDir = dataDir + "OptimizeDocument_out.pdf";
+// Salva documento aggiornato
+pdfDocument.Save(dataDir);
 ```

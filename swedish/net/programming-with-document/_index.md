@@ -32,7 +32,6 @@ Resursen innehåller handledningar om Aspose.PDF för .NET-bibliotekets programm
 | [Få varningar för teckensnittsersättning](./getwarningsforfontsubstitution/) | Lär dig hur du använder GetWarningsForFontSubstitution-funktionen i Aspose.PDF för .NET för att upptäcka varningar för teckensnittsersättning när du öppnar ett PDF-dokument. |  
 | [Skaffa XMP-metadata](./getxmpmetadata/) | Lär dig hur du använder GetXmpMetadata-funktionen i Aspose.PDF för .NET för att extrahera XMP-metadata från ett PDF-dokument med C#-källkod. |  
 | [Få varningar för teckensnittsersättning](./getwarningsforfontsubstitution/) | Lär dig hur du använder GetWarningsForFontSubstitution-funktionen i Aspose.PDF för .NET för att upptäcka varningar för teckensnittsersättning när du öppnar ett PDF-dokument. |  
-| [Hämta XMPMetadata](./getxmpmetadata/) | Lär dig hur du använder GetXmpMetadata-funktionen i Aspose.PDF för .NET för att extrahera XMP-metadata från ett PDF-dokument med C#-källkod. |  
 | [Skaffa Zoom Factor](./getzoomfactor/) | Lär dig hur du använder Aspose.PDF för .NET för att få zoomfaktorn för en PDF-fil med denna steg-för-steg-guide. |  
 | [Göm sidnummer i innehållsförteckningen](./hidepagenumbersintoc/) | Lär dig hur du döljer sidnummer i en innehållsförteckning med Aspose.PDF för .NET med denna steg-för-steg-guide. |  
 | [Länka dubbletter av strömmar](./linkduplicatestreams/) | Lär dig hur du använder funktionen Aspose.PDF för .NET Länka dubbletter av strömmar för att optimera dina PDF-dokument med denna steg-för-steg-guide. |  
@@ -44,10 +43,10 @@ Resursen innehåller handledningar om Aspose.PDF för .NET-bibliotekets programm
 | [Ställ in utgångsdatum](./setexpirydate/) | Lär dig hur du ställer in utgångsdatum i PDF-dokument med Aspose.PDF för .NET med denna steg-för-steg-guide. |  
 | [Ställ in filinformation](./setfileinfo/) | Lär dig hur du använder Aspose.PDF för .NET för att ställa in filinformation i dina PDF-dokument med denna steg-för-steg-guide. |  
 | [Ställ in egenskaper för utskriftsdialog](./setpropertiesforprintdialog/) | Lär dig hur du ställer in egenskaper för utskriftsdialog i Aspose.PDF för .NET med hjälp av en steg-för-steg-guide. |  
-| [Ställ in XMPMetadata](./setxmpmetadata/) | Lär dig hur du ställer in XMPMetadata i PDF-filer med Aspose.PDF för .NET. Följ denna steg-för-steg-guide. |  
+| [Ställ in XMP-metadata](./setxmpmetadata/) | Lär dig hur du ställer in XMPMetadata i PDF-filer med Aspose.PDF för .NET. Följ denna steg-för-steg-guide. |  
 | [Ställ in zoomfaktor](./setzoomfactor/) | Lär dig hur du ställer in zoomfaktorn för PDF-filer med Aspose.PDF för .NET med vår steg-för-steg-guide. |  
 | [Krympa dokument](./shrinkdocuments/) | Lär dig hur du använder Aspose.PDF för .NET för att krympa PDF-dokument med denna steg-för-steg-guide.  |  
 | [Ta bort teckensnitt](./unembedfonts/) | Lär dig hur du använder Aspose.PDF för .NET för att få Ta bort teckensnitt och optimera PDF-filer. En steg-för-steg-guide. |  
-| [Validera PDFABStandard](./validatepdfabstandard/) | Lär dig hur du använder Aspose.PDF för .NET för att validera PDF-dokument mot PDFAB-standarden med vår steg-för-steg-guide och kodexempel. |  
-| [Validera PDFAS-standard](./validatepdfastandard/) | Lär dig hur du använder Aspose.PDF för .NET för att validera PDF-filer för PDFAStandard med denna steg-för-steg-guide. |  
-| [Validera PDFUAstandard](./validatepdfuastandard/) | Lär dig hur du använder Aspose.PDF för .NET för att validera PDFUAstandard med C#-kod. Steg-för-steg guide. |  
+| [Validera PDF AB Standard](./validatepdfabstandard/) | Lär dig hur du använder Aspose.PDF för .NET för att validera PDF-dokument mot PDFAB-standarden med vår steg-för-steg-guide och kodexempel. |  
+| [Validera PDF A Standard](./validatepdfastandard/) | Lär dig hur du använder Aspose.PDF för .NET för att validera PDF-filer för PDFAStandard med denna steg-för-steg-guide. |  
+| [Validera PDF UA Standard](./validatepdfuastandard/) | Lär dig hur du använder Aspose.PDF för .NET för att validera PDFUAstandard med C#-kod. Steg-för-steg guide. |  

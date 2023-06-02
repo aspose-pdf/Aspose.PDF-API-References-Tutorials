@@ -2,7 +2,7 @@
 title: Programmieren mit Anmerkungen
 linktitle: Programmieren mit Anmerkungen
 type: docs
-weight: 11
+weight: 12
 url: /de/net/annotations/
 description: „Programmierung mit Annotationen umfasst API-Tutorials und Codeausschnitte von Aspose.PDF für .NET, die das Hinzufügen von Annotationen, das Löschen von Annotationen, das Abrufen von Annotationsinformationen und vieles mehr umfassen.“
 ---
@@ -12,7 +12,7 @@ Eine umfassende Sammlung von Tutorials, die zeigen, wie Sie mit Aspose.PDF für 
 | Titel | Beschreibung |
 | --- | --- | 
 | [Anmerkung hinzufügen](./addannotation/) | Erfahren Sie, wie Sie mithilfe dieses C#-Quellcodes Textanmerkungen mit Aspose.PDF für .NET hinzufügen. Passen Sie Ihre Anmerkungen mit spezifischen Details und Symbolen an. |  
-| [Addlnk-Anmerkung](./addlnkannotation/) | Erfahren Sie mit einer Schritt-für-Schritt-Anleitung und vollständigem Quellcode, wie Sie mit Aspose.PDF für .NET die Funktion „Ink Annotation“ zu PDF-Dokumenten in C# hinzufügen. |  
+| [Fügen Sie eine lnk-Anmerkung hinzu](./addlnkannotation/) | Erfahren Sie mit einer Schritt-für-Schritt-Anleitung und vollständigem Quellcode, wie Sie mit Aspose.PDF für .NET die Funktion „Ink Annotation“ zu PDF-Dokumenten in C# hinzufügen. |  
 | [Fügen Sie eine SWF-Datei als Anmerkung hinzu](./addswffileasannotation/) | Erfahren Sie in dieser Schritt-für-Schritt-Anleitung, wie Sie SWF-Dateien als Anmerkungen in Aspose.PDF für .NET hinzufügen. |  
 | [Alle Anmerkungen von der Seite löschen](./deleteallannotationsfrompage/) | Erfahren Sie in dieser Schritt-für-Schritt-Anleitung, wie Sie mit Aspose.PDF für .NET alle Anmerkungen von einer PDF-Seite löschen. |  
 | [Bestimmte Anmerkung löschen](./deleteparticularannotation/) | Erfahren Sie in dieser Schritt-für-Schritt-Anleitung, wie Sie mit Aspose.PDF für .NET eine bestimmte Anmerkung aus einem PDF-Dokument löschen. |  

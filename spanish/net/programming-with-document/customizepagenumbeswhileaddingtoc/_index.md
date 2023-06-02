@@ -77,48 +77,44 @@ doc.Save(outFile);
 ### Código fuente de ejemplo para personalizar números de página al agregar TOC usando Aspose.PDF para .NET
 
 ```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+string inFile = dataDir + "42824.pdf";
+string outFile = dataDir + "42824_out.pdf";
+//Cargue un archivo PDF existente
+Document doc = new Document(inFile);
+// Obtenga acceso a la primera página del archivo PDF
+Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
+// Crear objeto para representar información TOC
+TocInfo tocInfo = new TocInfo();
+TextFragment title = new TextFragment("Table Of Contents");
+title.TextState.FontSize = 20;
+title.TextState.FontStyle = FontStyles.Bold;
+// Establecer el título para TOC
+tocInfo.Title = title;
+tocInfo.PageNumbersPrefix = "P";
+tocPage.TocInfo = tocInfo;
+for (int i = 1; i<doc.Pages.Count; i++)
+{
+	// Crear objeto de encabezado
+	Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
+	TextSegment segment2 = new TextSegment();
+	heading2.TocPage = tocPage;
+	heading2.Segments.Add(segment2);
+	// Especificar la página de destino para el objeto de encabezado
+	heading2.DestinationPage = doc.Pages[i + 1];
+	// página de destino
+	heading2.Top = doc.Pages[i + 1].Rect.Height;
+	// Coordenada de destino
+	segment2.Text = "Page " + i.ToString();
+	// Agregar encabezado a la página que contiene TOC
+	tocPage.Paragraphs.Add(heading2);
+}
 
-            
-			string dataDir = "YOUR DOCUMENT DIRECTORY";
-            string inFile = dataDir + "42824.pdf";
-            string outFile = dataDir + "42824_out.pdf";
-            // Cargue un archivo PDF existente
-            Document doc = new Document(inFile);
-            // Obtenga acceso a la primera página del archivo PDF
-            Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
-            // Crear objeto para representar información TOC
-            TocInfo tocInfo = new TocInfo();
-            TextFragment title = new TextFragment("Table Of Contents");
-            title.TextState.FontSize = 20;
-            title.TextState.FontStyle = FontStyles.Bold;
-            // Establecer el título para TOC
-            tocInfo.Title = title;
-            tocInfo.PageNumbersPrefix = "P";
-            tocPage.TocInfo = tocInfo;
-            for (int i = 1; i<doc.Pages.Count; i++)
-            {
-                // Crear objeto de encabezado
-                Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
-                TextSegment segment2 = new TextSegment();
-                heading2.TocPage = tocPage;
-                heading2.Segments.Add(segment2);
-                // Especificar la página de destino para el objeto de encabezado
-                heading2.DestinationPage = doc.Pages[i + 1];
-                // página de destino
-                heading2.Top = doc.Pages[i + 1].Rect.Height;
-                // Coordenada de destino
-                segment2.Text = "Page " + i.ToString();
-                // Agregar encabezado a la página que contiene TOC
-                tocPage.Paragraphs.Add(heading2);
-            }
-
-            //Guardar el documento actualizado
-            doc.Save(outFile);
-            
-        
+// Guardar el documento actualizado
+doc.Save(outFile);
 ```
 
 ## Conclusión
 
-En este tutorial, proporcionamos una guía paso a paso sobre cómo personalizar los números de página al agregar una TOC usando Aspose.PDF para .NET. También proporcionamos un ejemplo de código que puede usar como referencia al implementar esta función en su
+En este tutorial, proporcionamos una guía paso a paso sobre cómo personalizar los números de página al agregar una TOC usando Aspose.PDF para .NET. También proporcionamos un ejemplo de código que puede usar como referencia al implementar esta característica en su
 

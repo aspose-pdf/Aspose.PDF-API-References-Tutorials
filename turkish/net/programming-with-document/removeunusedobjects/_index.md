@@ -58,20 +58,18 @@ Bu kadar! Aspose.PDF for .NET'i kullanarak kullanılmayan nesneleri PDF belgeniz
 ### Aspose.PDF for .NET kullanarak Kullanılmayan Nesneleri Kaldır için örnek kaynak kodu:
 
 ```csharp
-
-	// Belgeler dizininin yolu.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Belgeyi aç
-	Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-	// RemoveUsedObject seçeneğini ayarla
-	var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-	{
-		RemoveUnusedObjects = true
-	};
-	// OptimizationOptions kullanarak PDF belgesini optimize edin
-	pdfDocument.OptimizeResources(optimizeOptions);
-	dataDir = dataDir + "OptimizeDocument_out.pdf";
-	// Güncellenen belgeyi kaydet
-	pdfDocument.Save(dataDir);
-
+// Belgeler dizininin yolu.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Belgeyi aç
+Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
+// RemoveUsedObject seçeneğini ayarla
+var optimizeOptions = new Pdf.Optimization.OptimizationOptions
+{
+	RemoveUnusedObjects = true
+};
+// OptimizationOptions kullanarak PDF belgesini optimize edin
+pdfDocument.OptimizeResources(optimizeOptions);
+dataDir = dataDir + "OptimizeDocument_out.pdf";
+// Güncellenen belgeyi kaydet
+pdfDocument.Save(dataDir);
 ```

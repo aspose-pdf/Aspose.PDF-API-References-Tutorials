@@ -1,7 +1,7 @@
 ---
 title: Få särskild anteckning
 linktitle: Få särskild anteckning
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du använder Aspose.PDF för .NET för att få speciell anteckning i ett PDF-dokument med denna steg-för-steg-guide.
 type: docs
 weight: 80
@@ -44,20 +44,18 @@ Den här koden visar titeln, ämnet och innehållet för anteckningen i konsolen
 ### Exempel på källkod för Get Particular Annotation med Aspose.PDF för .NET
 
 ```csharp
+// Sökvägen till dokumentkatalogen.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Sökvägen till dokumentkatalogen.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Öppna dokumentet
+Document pdfDocument = new Document(dataDir + "GetParticularAnnotation.pdf");
 
-	// Öppna dokumentet
-	Document pdfDocument = new Document(dataDir + "GetParticularAnnotation.pdf");
+// Få en speciell kommentar
+TextAnnotation textAnnotation = (TextAnnotation)pdfDocument.Pages[1].Annotations[1];
 
-	// Få en speciell kommentar
-	TextAnnotation textAnnotation = (TextAnnotation)pdfDocument.Pages[1].Annotations[1];
-
-	// Få anteckningsegenskaper
-	Console.WriteLine("Title : {0} ", textAnnotation.Title);
-	Console.WriteLine("Subject : {0} ", textAnnotation.Subject);
-	Console.WriteLine("Contents : {0} ", textAnnotation.Contents);
-
+// Få anteckningsegenskaper
+Console.WriteLine("Title : {0} ", textAnnotation.Title);
+Console.WriteLine("Subject : {0} ", textAnnotation.Subject);
+Console.WriteLine("Contents : {0} ", textAnnotation.Contents);
 ```
 

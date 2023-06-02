@@ -47,19 +47,17 @@ pdfDocument.Save(dataDir);
 ### Пример исходного кода для оптимизации PDF-документов с использованием Aspose.PDF для .NET
 
 ```csharp
+// Путь к каталогу документов.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Путь к каталогу документов.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Открыть документ
+Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 
-	// Открыть документ
-	Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
+// Оптимизировать для Интернета
+pdfDocument.Optimize();
 
-	// Оптимизировать для Интернета
-	pdfDocument.Optimize();
+dataDir = dataDir + "OptimizeDocument_out.pdf";
 
-	dataDir = dataDir + "OptimizeDocument_out.pdf";
-
-	// Сохранить выходной документ
-	pdfDocument.Save(dataDir);
-
+// Сохранить выходной документ
+pdfDocument.Save(dataDir);
 ```

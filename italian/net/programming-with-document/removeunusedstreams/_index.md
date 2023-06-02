@@ -58,20 +58,18 @@ pdfDocument.Save(dataDir);
 Di seguito è riportato il codice sorgente di esempio per la rimozione di flussi inutilizzati utilizzando Aspose.PDF per .NET.
 
 ```csharp
-
-	// Il percorso della directory dei documenti.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Apri documento
-	Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-	// Imposta l'opzione RemoveUsedStreams
-	var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-	{
-		RemoveUnusedStreams = true
-	};
-	// Ottimizza il documento PDF utilizzando OptimizationOptions
-	pdfDocument.OptimizeResources(optimizeOptions);
-	dataDir = dataDir + "OptimizeDocument_out.pdf";
-	// Salva documento aggiornato
-	pdfDocument.Save(dataDir);
-
+// Il percorso della directory dei documenti.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Apri documento
+Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
+// Imposta l'opzione RemoveUsedStreams
+var optimizeOptions = new Pdf.Optimization.OptimizationOptions
+{
+	RemoveUnusedStreams = true
+};
+// Ottimizza il documento PDF utilizzando OptimizationOptions
+pdfDocument.OptimizeResources(optimizeOptions);
+dataDir = dataDir + "OptimizeDocument_out.pdf";
+// Salva documento aggiornato
+pdfDocument.Save(dataDir);
 ```

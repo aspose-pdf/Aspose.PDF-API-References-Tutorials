@@ -91,9 +91,7 @@ doc.Save(dataDir + @"Multilayer-2ndApproach_out.pdf");
 
 ### Codice sorgente di esempio per la creazione di un secondo approccio PDF multistrato utilizzando Aspose.PDF per .NET.
 
-```csharp
-
-            
+```csharp   
 // Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
@@ -126,8 +124,6 @@ ImageFloatingBox.ZIndex = 2;
 ImageFloatingBox.Paragraphs.Add(image1);
 
 doc.Save(dataDir + @"Multilayer-2ndApproach_out.pdf");
-            
-        
 ```
 
 ## Conclusione

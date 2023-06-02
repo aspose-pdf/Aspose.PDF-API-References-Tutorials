@@ -1,7 +1,7 @@
 ---
 title: Lägg till Java-skript på sidan
 linktitle: Lägg till Java-skript på sidan
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du lägger till JavaScript i PDF-filer med Aspose.PDF för .NET. Steg-för-steg-guide med kodhandledning för dokument- och sidnivåskript.
 type: docs
 weight: 10
@@ -18,7 +18,7 @@ För att lägga till JavaScript i en PDF-fil kommer vi att använda Aspose.PDF f
 // Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Ladda en befintlig PDF-fil
+//Ladda en befintlig PDF-fil
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
@@ -35,7 +35,7 @@ JavascriptAction javaScript = new JavascriptAction("this.print({bUI:true,bSilent
 doc.OpenAction = javaScript;
 ```
 
-den här handledningen lägger vi till en JavaScript-sats som kommer att skriva ut PDF-filen med de angivna alternativen när dokumentet öppnas.
+I den här handledningen lägger vi till en JavaScript-sats som kommer att skriva ut PDF-filen med de angivna alternativen när dokumentet öppnas.
 
 ## Steg 3: Lägg till JavaScript på sidnivå
 
@@ -47,7 +47,7 @@ doc.Pages[2].Actions.OnOpen = new JavascriptAction("app.alert('page 1 opened')")
 doc.Pages[2].Actions.OnClose = new JavascriptAction("app.alert('page 1 closed')");
 ```
 
-I den här handledningen lägger vi till JavaScript-satser som visar ett varningsmeddelande när sidan öppnas eller stängs.
+den här handledningen lägger vi till JavaScript-satser som visar ett varningsmeddelande när sidan öppnas eller stängs.
 
 ## Steg 4: Spara PDF-filen
 
@@ -66,21 +66,15 @@ Denna kod kommer att spara den modifierade PDF-filen i den angivna katalogen.
 ### Exempel på källkod för Add Java Script To Page med Aspose.PDF för .NET
 
 ```csharp
-// Sökvägen till dokumentkatalogen.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Ladda en befintlig PDF-fil
-
-```csharp
             
 // Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Ladda en befintlig PDF-fil
+//Ladda en befintlig PDF-fil
 Document doc = new Document(dataDir + "input.pdf");
 
 // Lägga till JavaScript på dokumentnivå
-//Instantiera JavascriptAction med önskat JavaScript-uttalande
+// Instantiera JavascriptAction med önskat JavaScript-uttalande
 JavascriptAction javaScript = new JavascriptAction("this.print({bUI:true,bSilent:false,bShrinkToFit:true});");
 
 // Tilldela JavascriptAction-objekt till önskad handling i dokumentet
@@ -94,8 +88,7 @@ dataDir = dataDir + "JavaScript-Added_out.pdf";
 // Spara PDF-dokument
 doc.Save(dataDir);
 
-Console.WriteLine("\nJavascript added successfully to a page.\nFile saved at " + dataDir);
-        
+Console.WriteLine("\nJavascript added successfully to a page.\nFile saved at " + dataDir);     
 ```
 
 ## Slutsats

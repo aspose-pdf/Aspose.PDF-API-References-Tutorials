@@ -21,13 +21,13 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## 2. Adım: Yeni bir Belge nesnesi örneği oluşturun
 
-Aspose.PDF for .NET kullanarak bir PDF belgesiyle çalışmak için yeni bir belge oluşturmamız gerekiyor.`Document` nesne ve PDF dosyasını içine yükleyin. 
+ Aspose.PDF for .NET kullanarak bir PDF belgesiyle çalışmak için yeni bir belge oluşturmamız gerekiyor.`Document` nesne ve PDF dosyasını içine yükleyin. 
 
 ```csharp
 Document doc = new Document(dataDir + "SetZoomFactor.pdf");
 ```
 
- Bu kod yeni bir oluşturacak`Document` nesnesini seçin ve "SetZoomFactor.pdf" adlı PDF dosyasını yükleyin.`dataDir` bunun içine dizin.
+ Bu kod yeni bir oluşturacak`Document`nesnesini seçin ve "SetZoomFactor.pdf" adlı PDF dosyasını yükleyin.`dataDir` bunun içine dizin.
 
 ## 3. Adım: Yakınlaştırma faktörünü ayarlayın
 
@@ -49,24 +49,22 @@ dataDir = dataDir + "Zoomed_pdf_out.pdf";
 doc.Save(dataDir);
 ```
 
-## Çözüm
-
-Aspose.PDF for .NET, C# kodunu kullanarak bir PDF belgesinin yakınlaştırma faktörünü ayarlamak için basit ve verimli bir yol sunar. Yukarıdaki adımları izleyerek, herhangi bir PDF belgesinin yakınlaştırma faktörünü .NET uygulamanızda kolayca değiştirebilirsiniz.
-
 ### Aspose.PDF for .NET kullanarak Yakınlaştırma Faktörünü Ayarlamak için örnek kaynak kodu
 
 ```csharp
+// Belgeler dizininin yolu.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Belgeler dizininin yolu.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Yeni Document nesnesinin örneğini oluştur
+Document doc = new Document(dataDir + "SetZoomFactor.pdf");
 
-	// Yeni Document nesnesinin örneğini oluştur
-	Document doc = new Document(dataDir + "SetZoomFactor.pdf");
-
-	GoToAction action = new GoToAction(new XYZExplicitDestination(1, 0, 0, .5));
-	doc.OpenAction = action;
-	dataDir = dataDir + "Zoomed_pdf_out.pdf";
-	// belgeyi kaydet
-	doc.Save(dataDir);
-
+GoToAction action = new GoToAction(new XYZExplicitDestination(1, 0, 0, .5));
+doc.OpenAction = action;
+dataDir = dataDir + "Zoomed_pdf_out.pdf";
+// belgeyi kaydet
+doc.Save(dataDir);
 ```
+
+## Çözüm
+
+Aspose.PDF for .NET, C# kodunu kullanarak bir PDF belgesinin yakınlaştırma faktörünü ayarlamak için basit ve verimli bir yol sunar. Yukarıdaki adımları izleyerek, herhangi bir PDF belgesinin yakınlaştırma faktörünü .NET uygulamanızda kolayca değiştirebilirsiniz.

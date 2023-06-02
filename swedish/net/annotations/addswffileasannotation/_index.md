@@ -1,7 +1,7 @@
 ---
 title: Lägg till SWF-fil som anteckning
 linktitle: Lägg till SWF-fil som anteckning
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du lägger till SWF-filer som kommentarer i Aspose.PDF för .NET med denna steg-för-steg-guide.
 type: docs
 weight: 30
@@ -75,22 +75,22 @@ Denna kod kommer att spara det uppdaterade PDF-dokumentet med anteckningen som "
 ### Exempel på källkod för att lägga till SWF-fil som en anteckning med Aspose.PDF för .NET
 
 ```csharp
-	// Sökvägen till dokumentkatalogen.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Sökvägen till dokumentkatalogen.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	//Öppna PDF-dokumentet
-	Document doc = new Document(dataDir + "AddSwfFileAsAnnotation.pdf");
+//Öppna PDF-dokumentet
+Document doc = new Document(dataDir + "AddSwfFileAsAnnotation.pdf");
 
-	// Få referens till sidan som du behöver lägga till anteckningen på
-	Page page = doc.Pages[1];
+// Få referens till sidan som du behöver lägga till anteckningen på
+Page page = doc.Pages[1];
 
-	// Skapa ScreenAnnotation-objekt med .swf multimediafil som argument
-	ScreenAnnotation annotation = new ScreenAnnotation(page, new Aspose.Pdf.Rectangle(0, 400, 600, 700), dataDir + "input.swf");
+// Skapa ScreenAnnotation-objekt med .swf multimediafil som argument
+ScreenAnnotation annotation = new ScreenAnnotation(page, new Aspose.Pdf.Rectangle(0, 400, 600, 700), dataDir + "input.swf");
 
-	// Lägg till anteckningen i anteckningssamlingen på sidan
-	page.Annotations.Add(annotation);
+// Lägg till anteckningen i anteckningssamlingen på sidan
+page.Annotations.Add(annotation);
 
-	dataDir = dataDir + "AddSwfFileAsAnnotation_out.pdf";
-	// Spara uppdateringen av PDF-dokumentet med anteckning
-	doc.Save(dataDir);
+dataDir = dataDir + "AddSwfFileAsAnnotation_out.pdf";
+// Spara uppdateringen av PDF-dokumentet med anteckning
+doc.Save(dataDir);
 ```        

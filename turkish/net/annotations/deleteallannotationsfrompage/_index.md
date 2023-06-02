@@ -45,23 +45,23 @@ dataDir = dataDir + "DeleteAllAnnotationsFromPage_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
+### Aspose.PDF for .NET Kullanarak Sayfadaki Tüm Ek Açıklamaları Silmek için Örnek Kaynak Kodu
+
+```csharp
+// Belgeler dizininin yolu.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+
+// Belgeyi aç
+Document pdfDocument = new Document(dataDir + "DeleteAllAnnotationsFromPage.pdf");
+
+// Belirli notu sil
+pdfDocument.Pages[1].Annotations.Delete();
+
+dataDir = dataDir + "DeleteAllAnnotationsFromPage_out.pdf";
+// Güncellenen belgeyi kaydet
+pdfDocument.Save(dataDir);
+``` 
+
 ## Çözüm
 
 Bu makalede, Aspose.PDF for .NET kullanarak bir PDF belgesinin belirli bir sayfasındaki tüm açıklamaları nasıl sileceğinizi anlamanıza yardımcı olacak adım adım bir kılavuz sağladık. Bu kılavuzda belirtilen adımları izleyerek bu özelliği kendi projenizde kolayca uygulayabilirsiniz.
-
-### Aspose.PDF for .NET Kullanarak Sayfadaki Tüm Ek Açıklamaları Silmek İçin Örnek Kaynak Kodu
-
-```csharp
-	// Belgeler dizininin yolu.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-	// Belgeyi aç
-	Document pdfDocument = new Document(dataDir + "DeleteAllAnnotationsFromPage.pdf");
-
-	// Belirli notu sil
-	pdfDocument.Pages[1].Annotations.Delete();
-
-	dataDir = dataDir + "DeleteAllAnnotationsFromPage_out.pdf";
-	// Güncellenen belgeyi kaydet
-	pdfDocument.Save(dataDir);
-``` 

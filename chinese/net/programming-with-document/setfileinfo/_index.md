@@ -60,35 +60,33 @@ Console.WriteLine("\nFile informations setup successfully.\nFile saved at " + da
 
 您已经成功地使用 Aspose.PDF for .NET 为 PDF 文档设置了文件信息。
 
-## 结论
-
-总之，Aspose.PDF for .NET 提供了一种简单有效的方式来设置PDF 文档的文件信息。按照上述步骤，您可以使用 C# 源代码轻松地为您的 PDF 文档设置所需的文件信息值。
-
 ### 使用 Aspose.PDF for .NET 设置文件信息的示例源代码
 
 
 ```csharp
+//文档目录的路径。
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	//文档目录的路径。
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+//打开文档
+Document pdfDocument = new Document(dataDir + "SetFileInfo.pdf");
 
-	//打开文档
-	Document pdfDocument = new Document(dataDir + "SetFileInfo.pdf");
+//指定文档信息
+DocumentInfo docInfo = new DocumentInfo(pdfDocument);
 
-	//指定文档信息
-	DocumentInfo docInfo = new DocumentInfo(pdfDocument);
+docInfo.Author = "Aspose";
+docInfo.CreationDate = DateTime.Now;
+docInfo.Keywords = "Aspose.Pdf, DOM, API";
+docInfo.ModDate = DateTime.Now;
+docInfo.Subject = "PDF Information";
+docInfo.Title = "Setting PDF Document Information";
 
-	docInfo.Author = "Aspose";
-	docInfo.CreationDate = DateTime.Now;
-	docInfo.Keywords = "Aspose.Pdf, DOM, API";
-	docInfo.ModDate = DateTime.Now;
-	docInfo.Subject = "PDF Information";
-	docInfo.Title = "Setting PDF Document Information";
+dataDir = dataDir + "SetFileInfo_out.pdf";
+//保存输出文档
+pdfDocument.Save(dataDir);
 
-	dataDir = dataDir + "SetFileInfo_out.pdf";
-	//保存输出文件
-	pdfDocument.Save(dataDir);
-	
-	Console.WriteLine("\nFile informations setup successfully.\nFile saved at " + dataDir);
-	
+Console.WriteLine("\nFile informations setup successfully.\nFile saved at " + dataDir);
 ```
+
+## 结论
+
+总之，Aspose.PDF for .NET 提供了一种简单有效的方式来设置PDF 文档的文件信息。按照上述步骤，您可以使用 C# 源代码轻松地为您的 PDF 文档设置所需的文件信息值。

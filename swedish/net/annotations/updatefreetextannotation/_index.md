@@ -1,7 +1,7 @@
 ---
 title: Uppdatera fritextkommentar
 linktitle: Uppdatera fritextkommentar
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du uppdaterar fritextanteckningsfunktionen i Aspose.PDF för .NET med C#-källkod.
 type: docs
 weight: 160
@@ -25,7 +25,7 @@ På den här raden ställer vi in sökvägen till katalogen som innehåller PDF-
 Document doc1 = new Document(dataDir + "input.pdf");
 ```
 
- Här öppnar vi PDF-dokumentet med Aspose.PDF:s`Document` klass och ange sökvägen till indata-PDF-filen.
+Här öppnar vi PDF-dokumentet med Aspose.PDF:s`Document` klass och ange sökvägen till indata-PDF-filen.
 
 ## Steg 3: Uppdatera teckenstorleken och färgen på fritextkommentaren
 
@@ -47,10 +47,6 @@ catch (Exception ex)
 
  Detta är en standard`try-catch` block som fångar upp eventuella undantag som kan inträffa när koden körs och skriver ut felmeddelandet till konsolen.
 
-## Slutsats
-
-den här artikeln har vi tillhandahållit en steg-för-steg-guide för att förklara C#-källkoden för funktionen Update Free Text Annotation i Aspose.PDF för .NET. Genom att följa dessa steg kan du enkelt uppdatera teckenstorleken och färgen på fritextkommentarer i dina PDF-dokument med Aspose.PDF för .NET.
-
 ### Exempel på källkod för Update Free Text Annotation med Aspose.PDF för .NET
 
 Innan vi går in i förklaringen av koden, låt oss först ta en titt på själva koden. Detta kodexempel visar hur man uppdaterar egenskaperna för en fritextkommentar i ett PDF-dokument med Aspose.PDF för .NET.
@@ -64,7 +60,7 @@ try
     // Öppna dokumentet
     Document doc1 = new Document(dataDir + "input.pdf");
 
-    // Ange teckenstorlek och färg på annoteringen:
+    // Ställ in teckenstorlek och färg på annoteringen:
     (doc1.Pages[1].Annotations[0] as FreeTextAnnotation).TextStyle.FontSize = 18;
     (doc1.Pages[1].Annotations[0] as FreeTextAnnotation).TextStyle.Color = System.Drawing.Color.Green;
                 
@@ -74,3 +70,7 @@ catch (Exception ex)
     Console.WriteLine(ex.Message);
 }
 ```
+
+## Slutsats
+
+den här artikeln har vi tillhandahållit en steg-för-steg-guide för att förklara C#-källkoden för funktionen Update Free Text Annotation i Aspose.PDF för .NET. Genom att följa dessa steg kan du enkelt uppdatera teckenstorleken och färgen på fritextkommentarer i dina PDF-dokument med Aspose.PDF för .NET.

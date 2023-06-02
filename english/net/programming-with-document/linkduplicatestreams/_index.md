@@ -62,21 +62,19 @@ In the code above, we used the Save method of the pdfDocument object to save the
 ### Example Source Code for Link Duplicate Streams using Aspose.PDF for .NET
 
 ```csharp
-
-	// The path to the documents directory.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Open document
-	Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-	// Set LinkDuplcateStreams option 
-	var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-	{
-		LinkDuplcateStreams = true
-	};
-	// Optimize PDF document using OptimizationOptions
-	pdfDocument.OptimizeResources(optimizeOptions);
-	dataDir = dataDir + "OptimizeDocument_out.pdf";
-	// Save updated document
-	pdfDocument.Save(dataDir);
-	
+// The path to the documents directory.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Open document
+Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
+// Set LinkDuplcateStreams option 
+var optimizeOptions = new Pdf.Optimization.OptimizationOptions
+{
+	LinkDuplcateStreams = true
+};
+// Optimize PDF document using OptimizationOptions
+pdfDocument.OptimizeResources(optimizeOptions);
+dataDir = dataDir + "OptimizeDocument_out.pdf";
+// Save updated document
+pdfDocument.Save(dataDir);
 ```
 

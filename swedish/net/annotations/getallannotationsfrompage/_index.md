@@ -1,7 +1,7 @@
 ---
 title: Hämta alla kommentarer från sidan
 linktitle: Hämta alla kommentarer från sidan
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du använder Aspose.PDF för .NET för att hämta alla kommentarer från en PDF-sida med denna steg-för-steg-guide.
 type: docs
 weight: 70
@@ -49,7 +49,7 @@ foreach (MarkupAnnotation annotation in pdfDocument.Pages[1].Annotations)
 
 Den här koden går igenom alla anteckningar på första sidan i PDF-dokumentet och tilldelar varje anteckning till variabeln "annotation".
 
-## Steg 5: Skaffa anteckningsegenskaper
+## Steg 5: Hämta anteckningsegenskaper
 
 För att extrahera egenskaperna för varje anteckning kan du lägga till följande kod inuti foreach loop:
 
@@ -66,20 +66,18 @@ Den här koden skriver titeln, ämnet och innehållet för varje anteckning till
 Här är den fullständiga källkoden för att få alla kommentarer från en PDF-sida med Aspose.PDF för .NET:
 
 ```csharp
+// Sökvägen till dokumentkatalogen.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Sökvägen till dokumentkatalogen.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Öppna dokumentet
+Document pdfDocument = new Document(dataDir + "GetAllAnnotationsFromPage.pdf");
 
-	// Öppna dokumentet
-	Document pdfDocument = new Document(dataDir + "GetAllAnnotationsFromPage.pdf");
-
-	// Gå igenom alla kommentarer
-	foreach (MarkupAnnotation annotation in pdfDocument.Pages[1].Annotations)
-	{
-		// Få anteckningsegenskaper
-		Console.WriteLine("Title : {0} ", annotation.Title);
-		Console.WriteLine("Subject : {0} ", annotation.Subject);
-		Console.WriteLine("Contents : {0} ", annotation.Contents);                
-	}
-
+// Gå igenom alla kommentarer
+foreach (MarkupAnnotation annotation in pdfDocument.Pages[1].Annotations)
+{
+	// Få anteckningsegenskaper
+	Console.WriteLine("Title : {0} ", annotation.Title);
+	Console.WriteLine("Subject : {0} ", annotation.Subject);
+	Console.WriteLine("Contents : {0} ", annotation.Contents);                
+}
 ```

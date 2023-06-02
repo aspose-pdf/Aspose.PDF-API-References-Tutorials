@@ -1,7 +1,7 @@
 ---
 title: Hämta alla teckensnitt
 linktitle: Hämta alla teckensnitt
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du använder Aspose.PDF för .NET för att få alla teckensnitt som används i ett PDF-dokument programmatiskt med denna steg-för-steg-guide och exempelkod.
 type: docs
 weight: 160

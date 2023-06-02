@@ -85,7 +85,7 @@ Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at "
 // Chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Charger un fichier PDF existant
+//Charger un fichier PDF existant
 Document doc = new Document(dataDir + "AddTOC.pdf");
 
 // Accéder à la première page du fichier PDF
@@ -128,9 +128,8 @@ for (int i = 0; i < 2; i++)
 	tocPage.Paragraphs.Add(heading2);
 }
 dataDir = dataDir + "TOC_out.pdf";
-//Enregistrer le document mis à jour
+// Enregistrer le document mis à jour
 doc.Save(dataDir);
 
 Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at " + dataDir);
-
 ```

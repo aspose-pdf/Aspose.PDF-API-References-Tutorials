@@ -32,7 +32,6 @@ description: 此资源提供用于使用文档进行编程的 Aspose.PDF for .NE
 | [获取字体替换警告](./getwarningsforfontsubstitution/) | 了解如何使用 Aspose.PDF for .NET 的 GetWarningsForFontSubstitution 功能在打开 PDF 文档时检测字体替换警告。 |  
 | [获取 XMP 元数据](./getxmpmetadata/) | 了解如何使用 Aspose.PDF for .NET 的 GetXmpMetadata 功能使用 C# 源代码从 PDF 文档中提取 XMP 元数据。 |  
 | [获取字体替换警告](./getwarningsforfontsubstitution/) | 了解如何使用 Aspose.PDF for .NET 的 GetWarningsForFontSubstitution 功能在打开 PDF 文档时检测字体替换警告。 |  
-| [获取 XMP 元数据](./getxmpmetadata/) | 了解如何使用 Aspose.PDF for .NET 的 GetXmpMetadata 功能使用 C# 源代码从 PDF 文档中提取 XMP 元数据。 |  
 | [获取缩放因子](./getzoomfactor/) | 通过此分步指南了解如何使用 Aspose.PDF for .NET 获取 PDF 文件的缩放系数。 |  
 | [在目录中隐藏页码](./hidepagenumbersintoc/) | 通过此分步指南了解如何使用 Aspose.PDF for .NET 隐藏目录中的页码。 |  
 | [链接重复流](./linkduplicatestreams/) | 通过此分步指南了解如何使用 Aspose.PDF for .NET 链接重复流 功能来优化您的 PDF 文档。 |  
@@ -48,6 +47,6 @@ description: 此资源提供用于使用文档进行编程的 Aspose.PDF for .NE
 | [设置缩放系数](./setzoomfactor/) | 通过我们的分步指南，了解如何使用 Aspose.PDF for .NET 为 PDF 文件设置缩放系数。 |  
 | [收缩文件](./shrinkdocuments/) | 通过此分步指南了解如何使用 Aspose.PDF for .NET 来缩小 PDF 文档。  |  
 | [取消嵌入字体](./unembedfonts/) | 了解如何使用 Aspose.PDF for .NET 获取 取消嵌入字体 和优化 PDF 文件。分步指南。 |  
-| [验证 PDFAB 标准](./validatepdfabstandard/) | 通过我们的分步指南和代码示例，了解如何使用 Aspose.PDF for .NET 根据 PDFAB 标准验证 PDF 文档。 |  
-| [验证 PDFA 标准](./validatepdfastandard/) | 通过此分步指南了解如何使用 Aspose.PDF for .NET 验证 PDF 文件是否符合 PDFAStandard。 |  
-| [验证 PDFUA 标准](./validatepdfuastandard/) | 了解如何使用 Aspose.PDF for .NET 通过 C# 代码验证 PDFUAstandard。分步指南。 |  
+| [验证 PDF AB 标准](./validatepdfabstandard/) | 通过我们的分步指南和代码示例，了解如何使用 Aspose.PDF for .NET 根据 PDFAB 标准验证 PDF 文档。 |  
+| [验证 PDF A 标准](./validatepdfastandard/) | 通过此分步指南了解如何使用 Aspose.PDF for .NET 验证 PDF 文件是否符合 PDFAStandard。 |  
+| [验证 PDF UA 标准](./validatepdfuastandard/) | 了解如何使用 Aspose.PDF for .NET 通过 C# 代码验证 PDFUAstandard。分步指南。 |  

@@ -24,7 +24,7 @@ Una volta completata l'installazione, possiamo iniziare a scrivere il codice.
 
 Il primo passo per aggiungere annotazioni è aprire il documento PDF. Possiamo usare il seguente codice per aprire il documento:
 
-```
+```csharp
 string dataDir = "YOUR DATA DIRECTORY";
 Document pdfDocument = new Document(dataDir + "AddAnnotation.pdf");
 ```
@@ -35,7 +35,7 @@ In questo codice specifichiamo il percorso del documento PDF che vogliamo aprire
 
  Per aggiungere un'annotazione, dobbiamo creare una nuova istanza del file`TextAnnotation` classe. Possiamo utilizzare il seguente codice per creare una nuova annotazione di testo:
 
-```
+```csharp
 TextAnnotation textAnnotation = new TextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600));
 textAnnotation.Title = "Sample Annotation Title";
 textAnnotation.Subject = "Sample Subject";
@@ -51,7 +51,7 @@ In questo codice creiamo una nuova annotazione di testo nella seconda pagina del
 
  Possiamo personalizzare l'aspetto dell'annotazione utilizzando il file`Border` classe. Possiamo utilizzare il seguente codice per personalizzare il bordo dell'annotazione:
 
-```
+```csharp
 Border border = new Border(textAnnotation);
 border.Width = 5;
 border.Dash = new Dash(1, 1);
@@ -59,13 +59,13 @@ textAnnotation.Border = border;
 textAnnotation.Rect = new Aspose.Pdf.Rectangle(200, 400, 400, 600);
 ```
 
- In questo codice, creiamo un nuovo`Border` oggetto e impostarne le proprietà di larghezza e trattino. Impostiamo quindi il`Border`proprietà dell'annotazione al nuovo`Border` oggetto. Infine, impostiamo il`Rect` proprietà dell'annotazione per specificarne la posizione e le dimensioni.
+ In questo codice, creiamo un nuovo`Border` oggetto e impostarne le proprietà di larghezza e trattino. Impostiamo quindi il`Border` proprietà dell'annotazione al nuovo`Border`oggetto. Infine, impostiamo il`Rect` proprietà dell'annotazione per specificarne la posizione e le dimensioni.
 
 ## Passaggio 5: aggiungere l'annotazione al documento PDF
 
 Dopo aver creato e personalizzato l'annotazione, dobbiamo aggiungerla al documento PDF. Possiamo utilizzare il seguente codice per aggiungere l'annotazione al documento PDF:
 
-```
+```csharp
 pdfDocument.Pages[1].Annotations.Add(textAnnotation);
 ```
 
@@ -75,7 +75,7 @@ In questo codice, aggiungiamo l'annotazione alla raccolta di annotazioni della s
 
 Infine, dobbiamo salvare il documento PDF con l'annotazione aggiunta. Possiamo usare il seguente codice per salvare il file di output:
 
-```
+```csharp
 dataDir = dataDir + "AddAnnotation_out.pdf";
 pdfDocument.Save(dataDir);
 ```
@@ -83,31 +83,31 @@ pdfDocument.Save(dataDir);
 
 
 ```csharp   
-	 // Il percorso della directory dei documenti.
-	string dataDir = "YOUR DATA DIRECTORY";
+ // Il percorso della directory dei documenti.
+string dataDir = "YOUR DATA DIRECTORY";
 
-	// Apri documento
-	Document pdfDocument = new Document(dataDir + "AddAnnotation.pdf");
+// Apri documento
+Document pdfDocument = new Document(dataDir + "AddAnnotation.pdf");
 
-	// Crea annotazione
-	TextAnnotation textAnnotation = new TextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600));
-	textAnnotation.Title = "Sample Annotation Title";
-	textAnnotation.Subject = "Sample Subject";
-	textAnnotation.State = AnnotationState.Accepted;
-	textAnnotation.Contents = "Sample contents for the annotation";
-	textAnnotation.Open = true;
-	textAnnotation.Icon = TextIcon.Key;
-   
-	Border border = new Border(textAnnotation);
-	border.Width = 5;
-	border.Dash = new Dash(1, 1);
-	textAnnotation.Border = border;
-	textAnnotation.Rect = new Aspose.Pdf.Rectangle(200, 400, 400, 600);
-   
-	// Aggiungi annotazione nella raccolta di annotazioni della pagina
-	pdfDocument.Pages[1].Annotations.Add(textAnnotation);
-	dataDir = dataDir + "AddAnnotation_out.pdf";
-	// Salva il file di output
-	pdfDocument.Save(dataDir);
+// Crea annotazione
+TextAnnotation textAnnotation = new TextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600));
+textAnnotation.Title = "Sample Annotation Title";
+textAnnotation.Subject = "Sample Subject";
+textAnnotation.State = AnnotationState.Accepted;
+textAnnotation.Contents = "Sample contents for the annotation";
+textAnnotation.Open = true;
+textAnnotation.Icon = TextIcon.Key;
+
+Border border = new Border(textAnnotation);
+border.Width = 5;
+border.Dash = new Dash(1, 1);
+textAnnotation.Border = border;
+textAnnotation.Rect = new Aspose.Pdf.Rectangle(200, 400, 400, 600);
+
+// Aggiungi annotazione nella raccolta di annotazioni della pagina
+pdfDocument.Pages[1].Annotations.Add(textAnnotation);
+dataDir = dataDir + "AddAnnotation_out.pdf";
+// Salva il file di output
+pdfDocument.Save(dataDir);
 ```
 Questo codice mostra come aggiungere un'annotazione di testo con titolo, oggetto, stato, contenuto e icona specifici a una pagina PDF utilizzando Aspose.PDF per .NET. È possibile modificare questo codice in base alle proprie esigenze per l'aggiunta di annotazioni ai documenti PDF. Ricorda solo di sostituire LA TUA DIRECTORY DEI DATI con il percorso effettivo della directory in cui si trova il tuo file PDF e dove vuoi salvare il file di output.

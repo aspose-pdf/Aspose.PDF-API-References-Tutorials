@@ -22,7 +22,7 @@ Document pdfDocument = new Document(dataDir + "ShrinkDocument.pdf");
 
 ## 2. Adım: PDF Belgesini Küçültme
 
- PDF belgesini yükledikten sonra,`OptimizeResources` yöntemi`Document`Belgeyi en iyi duruma getirmek ve boyutunu potansiyel olarak küçültmek için sınıf. Bazı PDF belgeleri zaten yüksek düzeyde optimize edilmiş olabileceğinden, bu yöntemin belge küçültmeyi garanti edemeyeceğini unutmayın.
+ PDF belgesini yükledikten sonra,`OptimizeResources` yöntemi`Document` Belgeyi en iyi duruma getirmek ve boyutunu potansiyel olarak küçültmek için sınıf. Bazı PDF belgeleri zaten yüksek düzeyde optimize edilmiş olabileceğinden, bu yöntemin belge küçültmeyi garanti edemeyeceğini unutmayın.
 
 ```csharp
 // PDF belgesini optimize edin. Ancak, bu yöntemin belge küçültmeyi garanti edemeyeceğini unutmayın.
@@ -31,7 +31,7 @@ pdfDocument.OptimizeResources();
 
 ## 3. Adım: Güncellenmiş PDF Belgesini Kaydetme
 
- PDF belgesini optimize ettikten sonra, güncellenmiş sürümü kullanarak yeni bir dosyaya kaydedebiliriz.`Save` yöntemi`Document` sınıf. Aşağıdaki kodda çıktı dosyasının yolunu ve dosya adını belirtiyoruz.
+PDF belgesini optimize ettikten sonra, güncellenmiş sürümü kullanarak yeni bir dosyaya kaydedebiliriz.`Save` yöntemi`Document` sınıf. Aşağıdaki kodda çıktı dosyasının yolunu ve dosya adını belirtiyoruz.
 
 ```csharp
 // Çıktı dosyası yolunu belirtin
@@ -43,15 +43,13 @@ pdfDocument.Save(outputFilePath);
 ### Aspose.PDF for .NET kullanan Belgeleri Küçültmek için Örnek Kaynak Kodu
 
 ```csharp
-
-	// Belgeler dizininin yolu.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Belgeyi aç
-	Document pdfDocument = new Document(dataDir + "ShrinkDocument.pdf");
-	// PDF belgesini optimize edin. Ancak, bu yöntemin belge küçültmeyi garanti edemeyeceğini unutmayın.
-	pdfDocument.OptimizeResources();
-	dataDir = dataDir + "ShrinkDocument_out.pdf";
-	// Güncellenen belgeyi kaydet
-	pdfDocument.Save(dataDir);
-	
+// Belgeler dizininin yolu.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Belgeyi aç
+Document pdfDocument = new Document(dataDir + "ShrinkDocument.pdf");
+// PDF belgesini optimize edin. Ancak, bu yöntemin belge küçültmeyi garanti edemeyeceğini unutmayın.
+pdfDocument.OptimizeResources();
+dataDir = dataDir + "ShrinkDocument_out.pdf";
+// Güncellenen belgeyi kaydet
+pdfDocument.Save(dataDir);
 ```

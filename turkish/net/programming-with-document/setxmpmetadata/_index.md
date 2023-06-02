@@ -22,7 +22,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Adım 2: PDF Dosyasını Açın
 
-İlk adım, XMP meta verilerini ayarlamak istediğiniz PDF dosyasını açmaktır. Bunu yapmak için yeni bir tane oluşturmanız gerekir.`Document` nesne ve PDF dosyanızın yolunu iletin.
+ İlk adım, XMP meta verilerini ayarlamak istediğiniz PDF dosyasını açmaktır. Bunu yapmak için yeni bir tane oluşturmanız gerekir.`Document` nesne ve PDF dosyanızın yolunu iletin.
 
 ```csharp
 // Belgeler dizininin yolu.
@@ -57,7 +57,7 @@ Bu eğitimde, oluşturma tarihini geçerli tarih ve saate, takma adı "Takma Ad"
 
 ```csharp
 dataDir = dataDir + "SetXMPMetadata_out.pdf";
-//Belgeyi kaydet
+// Belgeyi kaydet
 pdfDocument.Save(dataDir);
 ```
 
@@ -66,22 +66,20 @@ pdfDocument.Save(dataDir);
 İşte Aspose.PDF for .NET kullanarak XMPMetadata'yı ayarlamak için eksiksiz örnek kaynak kodu:
 
 ```csharp
+// Belgeler dizininin yolu.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Belgeler dizininin yolu.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Belgeyi aç
+Document pdfDocument = new Document(dataDir + "SetXMPMetadata.pdf");
 
-	// Belgeyi aç
-	Document pdfDocument = new Document(dataDir + "SetXMPMetadata.pdf");
+// Özellikleri ayarla
+pdfDocument.Metadata["xmp:CreateDate"] = DateTime.Now;
+pdfDocument.Metadata["xmp:Nickname"] = "Nickname";
+pdfDocument.Metadata["xmp:CustomProperty"] = "Custom Value";
 
-	// Özellikleri ayarla
-	pdfDocument.Metadata["xmp:CreateDate"] = DateTime.Now;
-	pdfDocument.Metadata["xmp:Nickname"] = "Nickname";
-	pdfDocument.Metadata["xmp:CustomProperty"] = "Custom Value";
+dataDir = dataDir + "SetXMPMetadata_out.pdf";
+// Belgeyi kaydet
+pdfDocument.Save(dataDir);
 
-	dataDir = dataDir + "SetXMPMetadata_out.pdf";
-	//Belgeyi kaydet
-	pdfDocument.Save(dataDir);
-	
-	Console.WriteLine("\nXMP metadata in a pdf file setup successfully.\nFile saved at " + dataDir);
-
+Console.WriteLine("\nXMP metadata in a pdf file setup successfully.\nFile saved at " + dataDir);
 ```

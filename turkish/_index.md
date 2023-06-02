@@ -14,7 +14,12 @@ Uygulamanızda PDF belgeleri oluşturmak, düzenlemek, dönüştürmek, yazdırm
 {{% /alert %}}
 
 Bunlar bazı faydalı kaynaklara bağlantılar:
-- [Belge ile Programlama](./net/programming-with-document/)
-- [Ek açıklamalarla programlama](./net/annotations/)
+- [Belge ile Programlama](./programming-with-document/)
+- [Ek Açıklamalarla Programlama](./annotations/)  
+- [Belge Dönüştürme](./document-conversion/)
+- [Formlarla Programlama](./programming-with-forms/)
+- [Tablolarla Programlama](./programming-with-tables/) 
+- [PDF Sayfaları ile Programlama](./programming-with-pdf-pages/)
+- [Grafiklerle Programlama](./programming-with-graphs/)
  
 

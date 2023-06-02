@@ -1,7 +1,7 @@
 ---
 title: Skapa flerskikts PDF First Approach
 linktitle: Skapa flerskikts PDF First Approach
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du skapar PDF-dokument i flera lager med hjälp av First Approach med Aspose.PDF för .NET. Lägg till text, bilder och mer för att förbättra dina PDF-filer.
 type: docs
 weight: 70
@@ -64,7 +64,7 @@ pdf.Save(dataDir + "CreateMultiLayerPdf_out.pdf");
 
 Grattis! Du har framgångsrikt skapat ett PDF-dokument med flera lager med den första metoden med Aspose.PDF för .NET.
 
-Exempel på källkod för Create Multilayer PDF First Approach med Aspose.PDF för .NET:
+### Exempel på källkod för Create Multilayer PDF First Approach med Aspose.PDF för .NET:
 
 ```csharp
 // Sökvägen till dokumentkatalogen.

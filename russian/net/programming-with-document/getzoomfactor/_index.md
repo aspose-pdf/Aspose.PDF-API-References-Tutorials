@@ -60,17 +60,15 @@ System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); /
 Вот полный пример исходного кода для получения коэффициента масштабирования с использованием Aspose.PDF для .NET:
 
 ```csharp
+// Путь к каталогу документов.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Путь к каталогу документов.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Создать новый объект документа
+Document doc = new Document(dataDir + "Zoomed_pdf.pdf");
 
-	// Создать новый объект документа
-	Document doc = new Document(dataDir + "Zoomed_pdf.pdf");
+// Создать объект GoToAction
+GoToAction action = doc.OpenAction as GoToAction;
 
-	// Создать объект GoToAction
-	GoToAction action = doc.OpenAction as GoToAction;
-	
-	// Получить коэффициент масштабирования файла PDF
-	System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); // Значение масштабирования документа;
-	
+// Получить коэффициент масштабирования файла PDF
+System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); // Значение масштабирования документа;
 ```

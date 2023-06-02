@@ -58,19 +58,14 @@ doc.Save(dataDir + "Output_out.pdf");
 ### Aspose.PDF for .NET kullanarak alt küme stratejisiyle yazı tiplerini gömmek için örnek kaynak kodu. 
 
 ```csharp
-
-            
-            // Belgeler dizininin yolu.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
-            Document doc = new Document(dataDir + "input.pdf");
-            // SubsetAllFonts durumunda tüm yazı tipleri belgeye alt küme olarak gömülecektir.
-            doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
-            // Yazı tipi alt kümesi, tamamen gömülü yazı tipleri için gömülecektir ancak belgeye gömülmemiş yazı tipleri etkilenmeyecektir.
-            doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
-            doc.Save(dataDir + "Output_out.pdf");
-            
-
-        
+// Belgeler dizininin yolu.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+Document doc = new Document(dataDir + "input.pdf");
+// SubsetAllFonts durumunda tüm yazı tipleri belgeye alt küme olarak gömülecektir.
+doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
+// Yazı tipi alt kümesi, tamamen gömülü yazı tipleri için gömülecektir ancak belgeye gömülmemiş yazı tipleri etkilenmeyecektir.
+doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
+doc.Save(dataDir + "Output_out.pdf");
 ```
 
 ## Çözüm

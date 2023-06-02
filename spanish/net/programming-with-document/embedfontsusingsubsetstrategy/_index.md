@@ -58,19 +58,14 @@ doc.Save(dataDir + "Output_out.pdf");
 ### Código fuente de ejemplo para incrustar fuentes con estrategia de subconjunto utilizando Aspose.PDF para .NET. 
 
 ```csharp
-
-            
-            // La ruta al directorio de documentos.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
-            Document doc = new Document(dataDir + "input.pdf");
-            // Todas las fuentes se incrustarán como subconjunto en el documento en el caso de SubsetAllFonts.
-            doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
-            // El subconjunto de fuentes se incrustará para las fuentes totalmente incrustadas, pero las fuentes que no estén incrustadas en el documento no se verán afectadas.
-            doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
-            doc.Save(dataDir + "Output_out.pdf");
-            
-
-        
+// La ruta al directorio de documentos.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+Document doc = new Document(dataDir + "input.pdf");
+// Todas las fuentes se incrustarán como subconjunto en el documento en el caso de SubsetAllFonts.
+doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
+// El subconjunto de fuentes se incrustará para las fuentes totalmente incrustadas, pero las fuentes que no estén incrustadas en el documento no se verán afectadas.
+doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
+doc.Save(dataDir + "Output_out.pdf");
 ```
 
 ## Conclusión

@@ -1,7 +1,7 @@
 ---
 title: Få varningar för teckensnittsersättning
 linktitle: Få varningar för teckensnittsersättning
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du använder GetWarningsForFontSubstitution-funktionen i Aspose.PDF för .NET för att upptäcka varningar för teckensnittsersättning när du öppnar ett PDF-dokument.
 type: docs
 weight: 190
@@ -70,4 +70,6 @@ doc.FontSubstitution += new Document.FontSubstitutionHandler(OnFontSubstitution)
 // Hantera varning för teckensnittsbyte
 private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArgs e)
 {
-    Console.WriteLine("Font substitution: {0} => {1}", e.
+    Console.WriteLine("Font substitution: {0} => {1}", e.OriginalFontName, e.SubstitutedFontName);
+}
+```

@@ -75,22 +75,22 @@ Bu kod, güncellenmiş PDF belgesini açıklamayla birlikte belge dizinine "AddS
 ### Aspose.PDF for .NET kullanarak SWF dosyasını ek açıklama olarak eklemek için örnek kaynak kodu
 
 ```csharp
-	// Belgeler dizininin yolu.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Belgeler dizininin yolu.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	//PDF belgesini aç
-	Document doc = new Document(dataDir + "AddSwfFileAsAnnotation.pdf");
+//PDF belgesini aç
+Document doc = new Document(dataDir + "AddSwfFileAsAnnotation.pdf");
 
-	// Ek açıklamayı eklemeniz gereken sayfanın referansını alın
-	Page page = doc.Pages[1];
+// Ek açıklamayı eklemeniz gereken sayfanın referansını alın
+Page page = doc.Pages[1];
 
-	// Bağımsız değişken olarak .swf multimedya dosyasıyla ScreenAnnotation nesnesi oluşturun
-	ScreenAnnotation annotation = new ScreenAnnotation(page, new Aspose.Pdf.Rectangle(0, 400, 600, 700), dataDir + "input.swf");
+// Bağımsız değişken olarak .swf multimedya dosyasıyla ScreenAnnotation nesnesi oluşturun
+ScreenAnnotation annotation = new ScreenAnnotation(page, new Aspose.Pdf.Rectangle(0, 400, 600, 700), dataDir + "input.swf");
 
-	// Ek açıklamayı sayfanın ek açıklamalar koleksiyonuna ekleyin
-	page.Annotations.Add(annotation);
+// Ek açıklamayı sayfanın ek açıklamalar koleksiyonuna ekleyin
+page.Annotations.Add(annotation);
 
-	dataDir = dataDir + "AddSwfFileAsAnnotation_out.pdf";
-	// Güncelleme PDF belgesini ek açıklama ile kaydedin
-	doc.Save(dataDir);
+dataDir = dataDir + "AddSwfFileAsAnnotation_out.pdf";
+// Güncelleme PDF belgesini ek açıklama ile kaydedin
+doc.Save(dataDir);
 ```        

@@ -43,16 +43,14 @@ pdfDocument.Save(outputFilePath);
 ### Example Source Code for Shrink Documents using Aspose.PDF for .NET
 
 ```csharp
-
-	// The path to the documents directory.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Open document
-	Document pdfDocument = new Document(dataDir + "ShrinkDocument.pdf");
-	// Optimize PDF document. Note, though, that this method cannot guarantee document shrinking
-	pdfDocument.OptimizeResources();
-	dataDir = dataDir + "ShrinkDocument_out.pdf";
-	// Save updated document
-	pdfDocument.Save(dataDir);
-	
+// The path to the documents directory.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Open document
+Document pdfDocument = new Document(dataDir + "ShrinkDocument.pdf");
+// Optimize PDF document. Note, though, that this method cannot guarantee document shrinking
+pdfDocument.OptimizeResources();
+dataDir = dataDir + "ShrinkDocument_out.pdf";
+// Save updated document
+pdfDocument.Save(dataDir);
 ```
 

@@ -22,7 +22,7 @@ Document pdfDocument = new Document(dataDir + "ShrinkDocument.pdf");
 
 ## الخطوة الثانية: تقليص مستند PDF
 
- بمجرد تحميل مستند PDF ، يمكننا استخدام ملف`OptimizeResources` طريقة`Document`فئة لتحسين المستند واحتمالية تقليص حجمه. لاحظ أن هذه الطريقة لا يمكن أن تضمن تقلص المستند ، حيث قد تكون بعض مستندات PDF محسّنة بشكل كبير بالفعل.
+ بمجرد تحميل مستند PDF ، يمكننا استخدام ملف`OptimizeResources` طريقة`Document` فئة لتحسين المستند واحتمالية تقليص حجمه. لاحظ أن هذه الطريقة لا يمكن أن تضمن تقلص المستند ، حيث قد تكون بعض مستندات PDF محسّنة بشكل كبير بالفعل.
 
 ```csharp
 // تحسين مستند PDF. لاحظ ، مع ذلك ، أن هذه الطريقة لا تضمن تقلص المستند
@@ -31,7 +31,7 @@ pdfDocument.OptimizeResources();
 
 ## الخطوة 3: حفظ مستند PDF المحدث
 
- بعد أن نقوم بتحسين مستند PDF ، يمكننا حفظ الإصدار المحدث في ملف جديد باستخدام امتداد`Save` طريقة`Document` فصل. في الكود أدناه ، نحدد مسار واسم ملف الإخراج.
+بعد أن نقوم بتحسين مستند PDF ، يمكننا حفظ الإصدار المحدث في ملف جديد باستخدام امتداد`Save` طريقة`Document` فصل. في الكود أدناه ، نحدد مسار واسم ملف الإخراج.
 
 ```csharp
 // حدد مسار ملف الإخراج
@@ -43,15 +43,13 @@ pdfDocument.Save(outputFilePath);
 ### مثال التعليمات البرمجية المصدر لتقليص المستندات باستخدام Aspose.PDF لـ .NET
 
 ```csharp
-
-	// المسار إلى دليل المستندات.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// افتح المستند
-	Document pdfDocument = new Document(dataDir + "ShrinkDocument.pdf");
-	// تحسين مستند PDF. لاحظ ، مع ذلك ، أن هذه الطريقة لا تضمن تقلص المستند
-	pdfDocument.OptimizeResources();
-	dataDir = dataDir + "ShrinkDocument_out.pdf";
-	// احفظ المستند المحدث
-	pdfDocument.Save(dataDir);
-	
+// المسار إلى دليل المستندات.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// افتح المستند
+Document pdfDocument = new Document(dataDir + "ShrinkDocument.pdf");
+// تحسين مستند PDF. لاحظ ، مع ذلك ، أن هذه الطريقة لا تضمن تقلص المستند
+pdfDocument.OptimizeResources();
+dataDir = dataDir + "ShrinkDocument_out.pdf";
+// احفظ المستند المحدث
+pdfDocument.Save(dataDir);
 ```

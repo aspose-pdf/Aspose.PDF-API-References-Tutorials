@@ -1,7 +1,7 @@
 ---
-title: Anpassa sidnummer när du lägger till innehållsförteckning
-linktitle: Anpassa sidnummer när du lägger till innehållsförteckning
-second_title: Aspose.PDF för .NET API-referens
+title: Anpassa sidnummer medan du lägger till innehållsförteckning
+linktitle: Anpassa sidnummer medan du lägger till innehållsförteckning
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du anpassar sidnummer samtidigt som du lägger till en innehållsförteckning (TOC) med Aspose.PDF för .NET med denna steg-för-steg-guide och kodexempel.
 type: docs
 weight: 100
@@ -77,45 +77,41 @@ doc.Save(outFile);
 ### Exempel på källkod för att anpassa sidnummer samtidigt som TOC läggs till med Aspose.PDF för .NET
 
 ```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+string inFile = dataDir + "42824.pdf";
+string outFile = dataDir + "42824_out.pdf";
+//Ladda en befintlig PDF-fil
+Document doc = new Document(inFile);
+// Få tillgång till första sidan av PDF-filen
+Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
+// Skapa objekt för att representera TOC-information
+TocInfo tocInfo = new TocInfo();
+TextFragment title = new TextFragment("Table Of Contents");
+title.TextState.FontSize = 20;
+title.TextState.FontStyle = FontStyles.Bold;
+// Ställ in titeln för TOC
+tocInfo.Title = title;
+tocInfo.PageNumbersPrefix = "P";
+tocPage.TocInfo = tocInfo;
+for (int i = 1; i<doc.Pages.Count; i++)
+{
+	// Skapa rubrikobjekt
+	Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
+	TextSegment segment2 = new TextSegment();
+	heading2.TocPage = tocPage;
+	heading2.Segments.Add(segment2);
+	// Ange målsidan för rubrikobjektet
+	heading2.DestinationPage = doc.Pages[i + 1];
+	// Destinationssida
+	heading2.Top = doc.Pages[i + 1].Rect.Height;
+	// Destinationskoordinat
+	segment2.Text = "Page " + i.ToString();
+	// Lägg till rubrik på sidan som innehåller innehållsförteckningen
+	tocPage.Paragraphs.Add(heading2);
+}
 
-            
-			string dataDir = "YOUR DOCUMENT DIRECTORY";
-            string inFile = dataDir + "42824.pdf";
-            string outFile = dataDir + "42824_out.pdf";
-            // Ladda en befintlig PDF-fil
-            Document doc = new Document(inFile);
-            // Få tillgång till första sidan av PDF-filen
-            Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
-            // Skapa objekt för att representera TOC-information
-            TocInfo tocInfo = new TocInfo();
-            TextFragment title = new TextFragment("Table Of Contents");
-            title.TextState.FontSize = 20;
-            title.TextState.FontStyle = FontStyles.Bold;
-            // Ställ in titeln för TOC
-            tocInfo.Title = title;
-            tocInfo.PageNumbersPrefix = "P";
-            tocPage.TocInfo = tocInfo;
-            for (int i = 1; i<doc.Pages.Count; i++)
-            {
-                // Skapa rubrikobjekt
-                Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
-                TextSegment segment2 = new TextSegment();
-                heading2.TocPage = tocPage;
-                heading2.Segments.Add(segment2);
-                // Ange målsidan för rubrikobjektet
-                heading2.DestinationPage = doc.Pages[i + 1];
-                // Destinationssida
-                heading2.Top = doc.Pages[i + 1].Rect.Height;
-                // Destinationskoordinat
-                segment2.Text = "Page " + i.ToString();
-                // Lägg till rubrik på sidan som innehåller innehållsförteckningen
-                tocPage.Paragraphs.Add(heading2);
-            }
-
-            //Spara det uppdaterade dokumentet
-            doc.Save(outFile);
-            
-        
+// Spara det uppdaterade dokumentet
+doc.Save(outFile);
 ```
 
 ## Slutsats

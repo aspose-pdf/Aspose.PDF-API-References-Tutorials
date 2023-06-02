@@ -54,20 +54,18 @@ Console.WriteLine("\nParticular annotation deleted successfully.\nFile saved at 
 ### Aspose.PDF for .NET kullanarak Belirli Bir Açıklamayı Silmek için Örnek Kaynak Kodu
 
 ```csharp
+// Belgeler dizininin yolu.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Belgeler dizininin yolu.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Belgeyi aç
+Document pdfDocument = new Document(dataDir + "DeleteParticularAnnotation.pdf");
 
-	// Belgeyi aç
-	Document pdfDocument = new Document(dataDir + "DeleteParticularAnnotation.pdf");
+// Belirli notu sil
+pdfDocument.Pages[1].Annotations.Delete(1);
 
-	// Belirli notu sil
-	pdfDocument.Pages[1].Annotations.Delete(1);
+dataDir = dataDir + "DeleteParticularAnnotation_out.pdf";
+// Güncellenen belgeyi kaydet
+pdfDocument.Save(dataDir);
 
-	dataDir = dataDir + "DeleteParticularAnnotation_out.pdf";
-	// Güncellenen belgeyi kaydet
-	pdfDocument.Save(dataDir);
-
-	Console.WriteLine("\nParticular annotation deleted successfully.\nFile saved at " + dataDir);
-
+Console.WriteLine("\nParticular annotation deleted successfully.\nFile saved at " + dataDir);
 ```

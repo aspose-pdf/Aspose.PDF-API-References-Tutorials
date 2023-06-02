@@ -1,7 +1,7 @@
 ---
-title: Validera PDFAS-standard
-linktitle: Validera PDFAS-standard
-second_title: Aspose.PDF för .NET API-referens
+title: Validera PDF A Standard
+linktitle: Validera PDF A Standard
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du använder Aspose.PDF för .NET för att validera PDF-filer för PDFAStandard med denna steg-för-steg-guide.
 type: docs
 weight: 390
@@ -35,21 +35,19 @@ Efter att ha laddat PDF-dokumentet kan du använda metoden "Validera" för klass
 pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1A);
 ```
 
-## Slutsats
-
-Att validera PDF-filer mot olika PDF-standarder är en viktig aspekt av att arbeta med PDF-filer i en professionell miljö. Aspose.PDF för .NET tillhandahåller ett kraftfullt och lättanvänt API för att validera PDF-filer mot olika PDF-standarder, inklusive PDF/A-1a. Genom att följa den steg-för-steg-guide som finns i den här artikeln kan du snabbt och enkelt validera dina PDF-filer med Aspose.PDF för .NET.
-
 ### Exempel på källkod för Get Validate PDFAStandard med Aspose.PDF för .NET
 
 ```csharp
+// Sökvägen till dokumentkatalogen.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Sökvägen till dokumentkatalogen.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Öppna dokumentet
+Document pdfDocument = new Document(dataDir + "ValidatePDFAStandard.pdf");
 
-	// Öppna dokumentet
-	Document pdfDocument = new Document(dataDir + "ValidatePDFAStandard.pdf");
-
-	// Validera PDF för PDF/A-1a
-	pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1A);
-
+// Validera PDF för PDF/A-1a
+pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1A);
 ```
+
+## Slutsats
+
+Att validera PDF-filer mot olika PDF-standarder är en viktig aspekt av att arbeta med PDF-filer i en professionell miljö. Aspose.PDF för .NET tillhandahåller ett kraftfullt och lättanvänt API för att validera PDF-filer mot olika PDF-standarder, inklusive PDF/A-1a. Genom att följa den steg-för-steg-guide som finns i den här artikeln kan du snabbt och enkelt validera dina PDF-filer med Aspose.PDF för .NET.

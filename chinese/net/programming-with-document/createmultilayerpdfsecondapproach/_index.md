@@ -91,9 +91,7 @@ doc.Save(dataDir + @"Multilayer-2ndApproach_out.pdf");
 
 ### 使用 Aspose.PDF for .NET 创建多层 PDF 第二种方法的示例源代码。
 
-```csharp
-
-            
+```csharp   
 //文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
@@ -126,8 +124,6 @@ ImageFloatingBox.ZIndex = 2;
 ImageFloatingBox.Paragraphs.Add(image1);
 
 doc.Save(dataDir + @"Multilayer-2ndApproach_out.pdf");
-            
-        
 ```
 
 ## 结论

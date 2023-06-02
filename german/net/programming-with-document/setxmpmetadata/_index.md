@@ -22,7 +22,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Schritt 2: Öffnen Sie die PDF-Datei
 
-Der erste Schritt besteht darin, die PDF-Datei zu öffnen, für die Sie XMP-Metadaten festlegen möchten. Dazu müssen Sie ein neues erstellen`Document` Objekt und übergeben Sie den Pfad zu Ihrer PDF-Datei.
+ Der erste Schritt besteht darin, die PDF-Datei zu öffnen, für die Sie XMP-Metadaten festlegen möchten. Dazu müssen Sie ein neues erstellen`Document` Objekt und übergeben Sie den Pfad zu Ihrer PDF-Datei.
 
 ```csharp
 // Der Pfad zum Dokumentenverzeichnis.
@@ -57,7 +57,7 @@ In diesem Tutorial setzen wir das Erstellungsdatum auf das aktuelle Datum und di
 
 ```csharp
 dataDir = dataDir + "SetXMPMetadata_out.pdf";
-//Dokument speichern
+// Dokument speichern
 pdfDocument.Save(dataDir);
 ```
 
@@ -66,22 +66,20 @@ pdfDocument.Save(dataDir);
 Hier ist der vollständige Beispielquellcode zum Festlegen von XMPMetadata mit Aspose.PDF für .NET:
 
 ```csharp
+// Der Pfad zum Dokumentenverzeichnis.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Der Pfad zum Dokumentenverzeichnis.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Dokument öffnen
+Document pdfDocument = new Document(dataDir + "SetXMPMetadata.pdf");
 
-	// Dokument öffnen
-	Document pdfDocument = new Document(dataDir + "SetXMPMetadata.pdf");
+// Eigenschaften festlegen
+pdfDocument.Metadata["xmp:CreateDate"] = DateTime.Now;
+pdfDocument.Metadata["xmp:Nickname"] = "Nickname";
+pdfDocument.Metadata["xmp:CustomProperty"] = "Custom Value";
 
-	// Eigenschaften festlegen
-	pdfDocument.Metadata["xmp:CreateDate"] = DateTime.Now;
-	pdfDocument.Metadata["xmp:Nickname"] = "Nickname";
-	pdfDocument.Metadata["xmp:CustomProperty"] = "Custom Value";
+dataDir = dataDir + "SetXMPMetadata_out.pdf";
+// Dokument speichern
+pdfDocument.Save(dataDir);
 
-	dataDir = dataDir + "SetXMPMetadata_out.pdf";
-	//Dokument speichern
-	pdfDocument.Save(dataDir);
-	
-	Console.WriteLine("\nXMP metadata in a pdf file setup successfully.\nFile saved at " + dataDir);
-
+Console.WriteLine("\nXMP metadata in a pdf file setup successfully.\nFile saved at " + dataDir);
 ```

@@ -62,20 +62,18 @@ pdfDocument.Save(dataDir);
 ### Пример исходного кода для связывания повторяющихся потоков с использованием Aspose.PDF для .NET
 
 ```csharp
-
-	// Путь к каталогу документов.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Открыть документ
-	Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-	// Установите параметр LinkDuplicateStreams
-	var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-	{
-		LinkDuplcateStreams = true
-	};
-	// Оптимизируйте документ PDF с помощью OptimizationOptions
-	pdfDocument.OptimizeResources(optimizeOptions);
-	dataDir = dataDir + "OptimizeDocument_out.pdf";
-	// Сохранить обновленный документ
-	pdfDocument.Save(dataDir);
-	
+// Путь к каталогу документов.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Открыть документ
+Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
+// Установите параметр LinkDuplicateStreams
+var optimizeOptions = new Pdf.Optimization.OptimizationOptions
+{
+	LinkDuplcateStreams = true
+};
+// Оптимизируйте документ PDF с помощью OptimizationOptions
+pdfDocument.OptimizeResources(optimizeOptions);
+dataDir = dataDir + "OptimizeDocument_out.pdf";
+// Сохранить обновленный документ
+pdfDocument.Save(dataDir);
 ```

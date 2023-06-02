@@ -1,7 +1,7 @@
 ---
 title: Ställ in filinformation
 linktitle: Ställ in filinformation
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du använder Aspose.PDF för .NET för att ställa in filinformation i dina PDF-dokument med denna steg-för-steg-guide.
 type: docs
 weight: 310
@@ -60,35 +60,33 @@ Console.WriteLine("\nFile informations setup successfully.\nFile saved at " + da
 
 Du har framgångsrikt angett filinformation för ett PDF-dokument med Aspose.PDF för .NET.
 
-## Slutsats
-
-Sammanfattningsvis erbjuder Aspose.PDF för .NET ett enkelt och effektivt sätt att ställa in filinformation för PDF-dokument. Genom att följa de ovan nämnda stegen kan du enkelt ställa in önskade filinformationsvärden för dina PDF-dokument med hjälp av C#-källkoden.
-
 ### Exempel på källkod för Set File Info med Aspose.PDF för .NET
 
 
 ```csharp
+// Sökvägen till dokumentkatalogen.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Sökvägen till dokumentkatalogen.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Öppna dokumentet
+Document pdfDocument = new Document(dataDir + "SetFileInfo.pdf");
 
-	// Öppna dokumentet
-	Document pdfDocument = new Document(dataDir + "SetFileInfo.pdf");
+// Ange dokumentinformation
+DocumentInfo docInfo = new DocumentInfo(pdfDocument);
 
-	// Ange dokumentinformation
-	DocumentInfo docInfo = new DocumentInfo(pdfDocument);
+docInfo.Author = "Aspose";
+docInfo.CreationDate = DateTime.Now;
+docInfo.Keywords = "Aspose.Pdf, DOM, API";
+docInfo.ModDate = DateTime.Now;
+docInfo.Subject = "PDF Information";
+docInfo.Title = "Setting PDF Document Information";
 
-	docInfo.Author = "Aspose";
-	docInfo.CreationDate = DateTime.Now;
-	docInfo.Keywords = "Aspose.Pdf, DOM, API";
-	docInfo.ModDate = DateTime.Now;
-	docInfo.Subject = "PDF Information";
-	docInfo.Title = "Setting PDF Document Information";
+dataDir = dataDir + "SetFileInfo_out.pdf";
+// Spara utdatadokument
+pdfDocument.Save(dataDir);
 
-	dataDir = dataDir + "SetFileInfo_out.pdf";
-	// Spara utdatadokument
-	pdfDocument.Save(dataDir);
-	
-	Console.WriteLine("\nFile informations setup successfully.\nFile saved at " + dataDir);
-	
+Console.WriteLine("\nFile informations setup successfully.\nFile saved at " + dataDir);
 ```
+
+## Slutsats
+
+Sammanfattningsvis erbjuder Aspose.PDF för .NET ett enkelt och effektivt sätt att ställa in filinformation för PDF-dokument. Genom att följa de ovan nämnda stegen kan du enkelt ställa in önskade filinformationsvärden för dina PDF-dokument med hjälp av C#-källkoden.

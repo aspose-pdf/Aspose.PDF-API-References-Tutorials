@@ -22,7 +22,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Passaggio 2: apri il file PDF
 
-Il primo passaggio consiste nell'aprire il file PDF per il quale desideri impostare i metadati XMP. Per fare ciò, dovrai creare un nuovo file`Document` oggetto e passare il percorso al file PDF.
+ Il primo passaggio consiste nell'aprire il file PDF per il quale desideri impostare i metadati XMP. Per fare ciò, dovrai creare un nuovo file`Document` oggetto e passare il percorso al file PDF.
 
 ```csharp
 // Il percorso della directory dei documenti.
@@ -57,7 +57,7 @@ In questo tutorial, stiamo impostando la data di creazione sulla data e l'ora co
 
 ```csharp
 dataDir = dataDir + "SetXMPMetadata_out.pdf";
-//Salva documento
+// Salva documento
 pdfDocument.Save(dataDir);
 ```
 
@@ -66,22 +66,20 @@ pdfDocument.Save(dataDir);
 Ecco il codice sorgente di esempio completo per l'impostazione di XMPMetadata utilizzando Aspose.PDF per .NET:
 
 ```csharp
+// Il percorso della directory dei documenti.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Il percorso della directory dei documenti.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Apri documento
+Document pdfDocument = new Document(dataDir + "SetXMPMetadata.pdf");
 
-	// Apri documento
-	Document pdfDocument = new Document(dataDir + "SetXMPMetadata.pdf");
+// Imposta proprietà
+pdfDocument.Metadata["xmp:CreateDate"] = DateTime.Now;
+pdfDocument.Metadata["xmp:Nickname"] = "Nickname";
+pdfDocument.Metadata["xmp:CustomProperty"] = "Custom Value";
 
-	// Imposta proprietà
-	pdfDocument.Metadata["xmp:CreateDate"] = DateTime.Now;
-	pdfDocument.Metadata["xmp:Nickname"] = "Nickname";
-	pdfDocument.Metadata["xmp:CustomProperty"] = "Custom Value";
+dataDir = dataDir + "SetXMPMetadata_out.pdf";
+// Salva documento
+pdfDocument.Save(dataDir);
 
-	dataDir = dataDir + "SetXMPMetadata_out.pdf";
-	//Salva documento
-	pdfDocument.Save(dataDir);
-	
-	Console.WriteLine("\nXMP metadata in a pdf file setup successfully.\nFile saved at " + dataDir);
-
+Console.WriteLine("\nXMP metadata in a pdf file setup successfully.\nFile saved at " + dataDir);
 ```

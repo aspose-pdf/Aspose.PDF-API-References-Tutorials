@@ -14,7 +14,12 @@ Aspose.PDF für .NET-Tutorials und Codeausschnitte zum Erstellen, Bearbeiten, Ko
 {{% /alert %}}
 
 Dies sind Links zu einigen nützlichen Ressourcen:
-- [Programmieren mit Dokument](./net/programming-with-document/)
-- [Programmieren mit Anmerkungen](./net/annotations/)
+- [Programmieren mit Dokument](./programming-with-document/)
+- [Programmieren mit Anmerkungen](./annotations/)  
+- [Dokumentenkonvertierung](./document-conversion/)
+- [Programmieren mit Formularen](./programming-with-forms/)
+- [Programmieren mit Tabellen](./programming-with-tables/) 
+- [Programmieren mit PDF-Seiten](./programming-with-pdf-pages/)
+- [Programmieren mit Graphen](./programming-with-graphs/)
  
 

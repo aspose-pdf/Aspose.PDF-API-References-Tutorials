@@ -1,7 +1,7 @@
 ---
 title: Ställ in formatering av fritextkommentarer
 linktitle: Ställ in formatering av fritextkommentarer
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Den här artikeln ger en steg-för-steg-guide om hur du skapar en fritextkommentar och anger dess innehåll med Aspose.PDF för .NET
 type: docs
 weight: 140
@@ -79,23 +79,21 @@ freetext.Contents = "Free Text
 
 ### Exempel på källkod för formatering av fritextkommentarer med Aspose.PDF för .NET
 ```csharp
+// Sökvägen till dokumentkatalogen.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Sökvägen till dokumentkatalogen.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	
-	// Öppna dokumentet
-	Document pdfDocument = new Document(dataDir + "SetFreeTextAnnotationFormatting.pdf");
+// Öppna dokumentet
+Document pdfDocument = new Document(dataDir + "SetFreeTextAnnotationFormatting.pdf");
 
-	// Instantiera DefaultAppearance-objekt
-	DefaultAppearance default_appearance = new DefaultAppearance("Arial", 28, System.Drawing.Color.Red);
-	// Skapa anteckning
-	FreeTextAnnotation freetext = new FreeTextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600), default_appearance);
-	// Ange innehållet i anteckningen
-	freetext.Contents = "Free Text";
-	// Lägg till anteckningar till anteckningssamlingen på sidan
-	pdfDocument.Pages[1].Annotations.Add(freetext);
-	dataDir = dataDir + "SetFreeTextAnnotationFormatting_out.pdf";
-	//Spara det uppdaterade dokumentet
-	pdfDocument.Save(dataDir);            
- 
+// Instantiera DefaultAppearance-objekt
+DefaultAppearance default_appearance = new DefaultAppearance("Arial", 28, System.Drawing.Color.Red);
+// Skapa anteckning
+FreeTextAnnotation freetext = new FreeTextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600), default_appearance);
+// Ange innehållet i anteckningen
+freetext.Contents = "Free Text";
+// Lägg till anteckningar till anteckningssamlingen på sidan
+pdfDocument.Pages[1].Annotations.Add(freetext);
+dataDir = dataDir + "SetFreeTextAnnotationFormatting_out.pdf";
+// Spara det uppdaterade dokumentet
+pdfDocument.Save(dataDir);            
 ```

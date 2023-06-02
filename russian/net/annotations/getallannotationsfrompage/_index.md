@@ -66,20 +66,18 @@ Console.WriteLine("Contents : {0} ", annotation.Contents);
 Вот полный исходный код для получения всех аннотаций со страницы PDF с использованием Aspose.PDF для .NET:
 
 ```csharp
+// Путь к каталогу документов.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Путь к каталогу документов.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Открыть документ
+Document pdfDocument = new Document(dataDir + "GetAllAnnotationsFromPage.pdf");
 
-	// Открыть документ
-	Document pdfDocument = new Document(dataDir + "GetAllAnnotationsFromPage.pdf");
-
-	// Перебрать все аннотации
-	foreach (MarkupAnnotation annotation in pdfDocument.Pages[1].Annotations)
-	{
-		// Получить свойства аннотации
-		Console.WriteLine("Title : {0} ", annotation.Title);
-		Console.WriteLine("Subject : {0} ", annotation.Subject);
-		Console.WriteLine("Contents : {0} ", annotation.Contents);                
-	}
-
+// Перебрать все аннотации
+foreach (MarkupAnnotation annotation in pdfDocument.Pages[1].Annotations)
+{
+	// Получить свойства аннотации
+	Console.WriteLine("Title : {0} ", annotation.Title);
+	Console.WriteLine("Subject : {0} ", annotation.Subject);
+	Console.WriteLine("Contents : {0} ", annotation.Contents);                
+}
 ```

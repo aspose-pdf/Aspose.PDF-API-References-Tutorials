@@ -66,20 +66,18 @@ Bu kod, konsola her açıklamanın Başlığını, Konusunu ve İçeriğini yaza
 Aspose.PDF for .NET kullanarak bir PDF sayfasından tüm açıklamaları almak için eksiksiz kaynak kodu burada:
 
 ```csharp
+// Belgeler dizininin yolu.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Belgeler dizininin yolu.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Belgeyi aç
+Document pdfDocument = new Document(dataDir + "GetAllAnnotationsFromPage.pdf");
 
-	// Belgeyi aç
-	Document pdfDocument = new Document(dataDir + "GetAllAnnotationsFromPage.pdf");
-
-	// Tüm ek açıklamalar arasında dolaşın
-	foreach (MarkupAnnotation annotation in pdfDocument.Pages[1].Annotations)
-	{
-		// Ek açıklama özelliklerini al
-		Console.WriteLine("Title : {0} ", annotation.Title);
-		Console.WriteLine("Subject : {0} ", annotation.Subject);
-		Console.WriteLine("Contents : {0} ", annotation.Contents);                
-	}
-
+// Tüm ek açıklamalar arasında dolaşın
+foreach (MarkupAnnotation annotation in pdfDocument.Pages[1].Annotations)
+{
+	// Ek açıklama özelliklerini al
+	Console.WriteLine("Title : {0} ", annotation.Title);
+	Console.WriteLine("Subject : {0} ", annotation.Subject);
+	Console.WriteLine("Contents : {0} ", annotation.Contents);                
+}
 ```

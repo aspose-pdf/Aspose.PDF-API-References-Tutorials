@@ -66,33 +66,28 @@ doc.Save(dataDir);
 ### مثال على رمز المصدر لتضمين الخط أثناء إنشاء المستند باستخدام Aspose.PDF لـ .NET
 
 ```csharp
+// المسار إلى دليل المستندات.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-            
-            // المسار إلى دليل المستندات.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
+// إنشاء كائن Pdf عن طريق استدعاء المُنشئ الفارغ
+Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
-            // إنشاء كائن Pdf عن طريق استدعاء المُنشئ الفارغ
-            Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
+// قم بإنشاء قسم في كائن Pdf
+Aspose.Pdf.Page page = doc.Pages.Add();
 
-            // قم بإنشاء قسم في كائن Pdf
-            Aspose.Pdf.Page page = doc.Pages.Add();
+Aspose.Pdf.Text.TextFragment fragment = new Aspose.Pdf.Text.TextFragment("");
 
-            Aspose.Pdf.Text.TextFragment fragment = new Aspose.Pdf.Text.TextFragment("");
+Aspose.Pdf.Text.TextSegment segment = new Aspose.Pdf.Text.TextSegment(" This is a sample text using Custom font.");
+Aspose.Pdf.Text.TextState ts = new Aspose.Pdf.Text.TextState();
+ts.Font = FontRepository.FindFont("Arial");
+ts.Font.IsEmbedded = true;
+segment.TextState = ts;
+fragment.Segments.Add(segment);
+page.Paragraphs.Add(fragment);
 
-            Aspose.Pdf.Text.TextSegment segment = new Aspose.Pdf.Text.TextSegment(" This is a sample text using Custom font.");
-            Aspose.Pdf.Text.TextState ts = new Aspose.Pdf.Text.TextState();
-            ts.Font = FontRepository.FindFont("Arial");
-            ts.Font.IsEmbedded = true;
-            segment.TextState = ts;
-            fragment.Segments.Add(segment);
-            page.Paragraphs.Add(fragment);
-
-            dataDir = dataDir + "EmbedFontWhileDocCreation_out.pdf";
-            // حفظ وثيقة PDF
-            doc.Save(dataDir);
-            
-            
-        
+dataDir = dataDir + "EmbedFontWhileDocCreation_out.pdf";
+// حفظ وثيقة PDF
+doc.Save(dataDir);
 ```
 
 ## خاتمة

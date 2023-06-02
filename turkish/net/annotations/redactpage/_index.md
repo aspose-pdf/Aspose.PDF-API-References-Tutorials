@@ -9,25 +9,25 @@ url: /tr/net/annotations/redactpage/
 ---
 Aspose.PDF for .NET kullanarak bir PDF belgesindeki hassas bilgileri yeniden düzenlemek istiyorsanız, şanslısınız! İşte başlamanız için adım adım bir kılavuz:
 
-## Kodda, PDF belgenizin bulunduğu dizinin yolunu ayarlayın:
+## Adım 1: Kodda, PDF belgenizin bulunduğu dizinin yolunu ayarlayın:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## PDF belgesini açın:
+## 2. Adım: PDF belgesini açın:
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Belirli bir sayfa bölgesi için bir RedactionAnnotation örneği oluşturun:
+## 3. Adım: Belirli bir sayfa bölgesi için bir RedactionAnnotation örneği oluşturun:
 
 ```csharp
 RedactionAnnotation annot = new RedactionAnnotation(doc.Pages[1], new Aspose.Pdf.Rectangle(200, 500, 300, 600));
 ```
 
-## Redaksiyon açıklamasının dolgu rengini, kenarlık rengini ve metin rengini ayarlayın:
+## Adım 4: Redaksiyon notunun dolgu rengini, kenarlık rengini ve metin rengini ayarlayın:
 
 ```csharp
 annot.FillColor = Aspose.Pdf.Color.Green;
@@ -35,38 +35,38 @@ annot.BorderColor = Aspose.Pdf.Color.Yellow;
 annot.Color = Aspose.Pdf.Color.Blue;
 ```
 
-## Redaksiyon açıklamasına ve hizalamasına yazdırılacak metni ayarlayın:
+## Adım 5: Redaksiyon açıklamasına yazdırılacak metni ve hizalamasını ayarlayın:
 
 ```csharp
 annot.OverlayText = "REDACTED";
 annot.TextAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 ```
 
-## Bindirme metnini redaksiyon notunun üzerinde tekrarlayın:
+## Adım 6: Bindirme metnini redaksiyon notunun üzerinde tekrarlayın:
 
 ```csharp
 annot.Repeat = true;
 ```
 
-## Ek açıklamayı ilk sayfanın ek açıklamalar koleksiyonuna ekleyin:
+## Adım 7: Ek açıklamayı ilk sayfanın ek açıklamalar koleksiyonuna ekleyin:
 
 ```csharp
 doc.Pages[1].Annotations.Add(annot);
 ```
 
-## Ek açıklamayı düzleştirin ve sayfa içeriğini yeniden düzenleyin, yani düzeltilmiş ek açıklamanın altındaki metin ve resimleri kaldırın:
+## 8. Adım: Ek açıklamayı düzleştirin ve sayfa içeriğini yeniden düzenleyin, yani, düzeltilen açıklamanın altındaki metin ve resimleri kaldırın:
 
 ```csharp
 annot.Redact();
 ```
 
-## Çıktı PDF dosyasının yolunu ve adını ayarlayın:
+## 9. Adım: Çıktı PDF dosyasının yolunu ve adını ayarlayın:
 
 ```csharp
 dataDir = dataDir + "RedactPage_out.pdf";
 ```
 
-## Düzenlenen sayfayla birlikte PDF belgesini kaydedin:
+## 10. Adım: PDF belgesini düzeltilmiş sayfayla kaydedin:
 
 ```csharp
 doc.Save(dataDir);
@@ -95,7 +95,7 @@ annot.TextAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 annot.Repeat = true;
 // İlk sayfanın ek açıklamalar koleksiyonuna ek açıklama ekleyin
 doc.Pages[1].Annotations.Add(annot);
-// Ek açıklamayı düzleştirir ve sayfa içeriğini düzeltir (yani metin ve resmi kaldırır)
+//Ek açıklamayı düzleştirir ve sayfa içeriğini düzeltir (yani metin ve resmi kaldırır)
 // Düzenlenmiş ek açıklama altında)
 annot.Redact();
 dataDir = dataDir + "RedactPage_out.pdf";

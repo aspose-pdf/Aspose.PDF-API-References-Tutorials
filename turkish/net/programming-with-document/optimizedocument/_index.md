@@ -47,19 +47,17 @@ Bu adım adım kılavuzu izleyerek artık Aspose.PDF for .NET kullanarak PDF bel
 ### Aspose.PDF for .NET kullanarak PDF Belgelerini Optimize Etmek için Örnek Kaynak Kodu
 
 ```csharp
+// Belgeler dizininin yolu.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Belgeler dizininin yolu.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Belgeyi aç
+Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 
-	// Belgeyi aç
-	Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
+// web için optimize et
+pdfDocument.Optimize();
 
-	// web için optimize et
-	pdfDocument.Optimize();
+dataDir = dataDir + "OptimizeDocument_out.pdf";
 
-	dataDir = dataDir + "OptimizeDocument_out.pdf";
-
-	// Çıkış belgesini kaydet
-	pdfDocument.Save(dataDir);
-
+// Çıkış belgesini kaydet
+pdfDocument.Save(dataDir);
 ```

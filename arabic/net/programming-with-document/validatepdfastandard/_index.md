@@ -1,6 +1,6 @@
 ---
-title: تحقق من صحة PDFAStandard
-linktitle: تحقق من صحة PDFAStandard
+title: تحقق من صحة ملف PDF A القياسي
+linktitle: تحقق من صحة ملف PDF A القياسي
 second_title: Aspose.PDF لمرجع .NET API
 description: تعرف على كيفية استخدام Aspose.PDF for .NET للتحقق من صحة ملفات PDF لـ PDFAStandard باستخدام هذا الدليل المفصل خطوة بخطوة.
 type: docs
@@ -35,21 +35,19 @@ Document pdfDocument = new Document(dataDir + "ValidatePDFAStandard.pdf");
 pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1A);
 ```
 
-## خاتمة
-
-يعد التحقق من صحة ملفات PDF مقابل معايير PDF المختلفة جانبًا مهمًا للعمل مع ملفات PDF في بيئة احترافية. يوفر Aspose.PDF for .NET واجهة برمجة تطبيقات قوية وسهلة الاستخدام للتحقق من صحة ملفات PDF مقابل معايير PDF المختلفة ، بما في ذلك PDF / A-1a. باتباع الدليل التفصيلي الوارد في هذه المقالة ، يمكنك التحقق من صحة ملفات PDF الخاصة بك بسرعة وسهولة باستخدام Aspose.PDF for .NET.
-
 ### مثال على الكود المصدري للحصول على التحقق من صحة PDFAS القياسي باستخدام Aspose.PDF for .NET
 
 ```csharp
+// المسار إلى دليل المستندات.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// المسار إلى دليل المستندات.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// افتح المستند
+Document pdfDocument = new Document(dataDir + "ValidatePDFAStandard.pdf");
 
-	// افتح المستند
-	Document pdfDocument = new Document(dataDir + "ValidatePDFAStandard.pdf");
-
-	// تحقق من صحة PDF لـ PDF / A-1a
-	pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1A);
-
+// تحقق من صحة PDF لـ PDF / A-1a
+pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1A);
 ```
+
+## خاتمة
+
+يعد التحقق من صحة ملفات PDF مقابل معايير PDF المختلفة جانبًا مهمًا للعمل مع ملفات PDF في بيئة احترافية. يوفر Aspose.PDF for .NET واجهة برمجة تطبيقات قوية وسهلة الاستخدام للتحقق من صحة ملفات PDF مقابل معايير PDF المختلفة ، بما في ذلك PDF / A-1a. باتباع الدليل التفصيلي الوارد في هذه المقالة ، يمكنك التحقق من صحة ملفات PDF الخاصة بك بسرعة وسهولة باستخدام Aspose.PDF for .NET.

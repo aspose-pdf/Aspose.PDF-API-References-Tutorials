@@ -1,7 +1,7 @@
 ---
 title: Bädda in teckensnitt med hjälp av delmängdsstrategi
 linktitle: Bädda in teckensnitt med hjälp av delmängdsstrategi
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du bäddar in teckensnitt i en PDF-fil med Subset Strategy med Aspose.PDF för .NET. Optimera din PDF-storlek genom att bädda in endast nödvändiga tecken.
 type: docs
 weight: 130
@@ -58,19 +58,14 @@ doc.Save(dataDir + "Output_out.pdf");
 ### Exempel på källkod för inbäddning av typsnitt med delmängdsstrategi med Aspose.PDF för .NET. 
 
 ```csharp
-
-            
-            // Sökvägen till dokumentkatalogen.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
-            Document doc = new Document(dataDir + "input.pdf");
-            // Alla teckensnitt kommer att bäddas in som delmängder i dokumentet i händelse av SubsetAllFonts.
-            doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
-            // Teckensnittsunderuppsättning kommer att bäddas in för helt inbäddade teckensnitt, men teckensnitt som inte är inbäddade i dokumentet kommer inte att påverkas.
-            doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
-            doc.Save(dataDir + "Output_out.pdf");
-            
-
-        
+// Sökvägen till dokumentkatalogen.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+Document doc = new Document(dataDir + "input.pdf");
+// Alla teckensnitt kommer att bäddas in som delmängder i dokumentet i händelse av SubsetAllFonts.
+doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
+// Teckensnittsunderuppsättning kommer att bäddas in för helt inbäddade teckensnitt, men teckensnitt som inte är inbäddade i dokumentet kommer inte att påverkas.
+doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
+doc.Save(dataDir + "Output_out.pdf");
 ```
 
 ## Slutsats

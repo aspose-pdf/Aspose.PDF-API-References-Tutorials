@@ -43,21 +43,19 @@ doc.Duplex = PrintDuplex.DuplexFlipLongEdge;
 doc.Save(dataDir + "35297_out.pdf", SaveFormat.Pdf);
 ```
 
-## Conclusión
-
-Aspose.PDF para .NET facilita la configuración de propiedades para el cuadro de diálogo de impresión en sus archivos PDF. Siguiendo la guía paso a paso anterior, puede optimizar rápidamente sus archivos PDF para su impresión.
-
 ### Ejemplo de código fuente para el cuadro de diálogo Establecer propiedades para imprimir usando Aspose.PDF para .NET
 
 ```csharp
+var dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	var dataDir = "YOUR DOCUMENT DIRECTORY";
-
-	using (Document doc = new Document())
-	{
-		doc.Pages.Add();
-		doc.Duplex = PrintDuplex.DuplexFlipLongEdge;
-		doc.Save(dataDir + "35297_out.pdf", SaveFormat.Pdf);
-	}
-
+using (Document doc = new Document())
+{
+	doc.Pages.Add();
+	doc.Duplex = PrintDuplex.DuplexFlipLongEdge;
+	doc.Save(dataDir + "35297_out.pdf", SaveFormat.Pdf);
+}
 ```
+
+## Conclusión
+
+Aspose.PDF para .NET facilita la configuración de propiedades para el cuadro de diálogo de impresión en sus archivos PDF. Siguiendo la guía paso a paso anterior, puede optimizar rápidamente sus archivos PDF para su impresión.

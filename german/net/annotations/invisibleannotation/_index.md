@@ -7,7 +7,6 @@ type: docs
 weight: 100
 url: /de/net/annotations/invisibleannotation/
 ---
-## Anmerkungen in PDF-Dokumenten verstehen
 
 Anmerkungen in PDF-Dokumenten sind eine leistungsstarke Funktion, mit der Sie einem Dokument zusätzliche Informationen oder Notizen hinzufügen können, ohne den eigentlichen Inhalt zu ändern. Sie können verwendet werden, um Text hervorzuheben, die Aufmerksamkeit auf bestimmte Bereiche eines Dokuments zu lenken oder Kommentare oder Feedback hinzuzufügen.
 
@@ -20,7 +19,7 @@ Es gibt viele verschiedene Arten von Anmerkungen, die Sie in PDF-Dokumenten verw
 - Anmerkungen zu Dateianhängen
 - und viele mehr
 
-## Erstellen einer unsichtbaren Anmerkung in einem PDF-Dokument mit Aspose.PDF für .NET
+## Schritt 1: Erstellen einer unsichtbaren Anmerkung in einem PDF-Dokument mit Aspose.PDF für .NET
 
  Um mit Aspose.PDF für .NET eine unsichtbare Anmerkung in einem PDF-Dokument zu erstellen, müssen wir zunächst eine erstellen`FreeTextAnnotation` Objekt und geben Sie die Position und Größe der Anmerkung an.
 
@@ -36,7 +35,7 @@ FreeTextAnnotation annotation = new FreeTextAnnotation(doc.Pages[1], new Aspose.
 
  Im obigen Code erstellen wir eine`FreeTextAnnotation`Objekt und geben Sie die Position der Anmerkung auf Seite 2 des PDF-Dokuments an. Wir legen außerdem Schriftart, -größe und -farbe für den Text fest, der in der Anmerkung angezeigt wird.
 
-## Hinzufügen von Merkmalen zur unsichtbaren Anmerkung
+## Schritt 2: Merkmale zur unsichtbaren Anmerkung hinzufügen
 
 Als Nächstes können wir der Anmerkung einige Eigenschaften hinzufügen, beispielsweise eine Rahmenfarbe, Hintergrundfarbe oder Deckkraft.
 
@@ -46,15 +45,16 @@ annotation.Characteristics.Border = System.Drawing.Color.Red;
 
 Im obigen Code setzen wir die Rahmenfarbe der Anmerkung auf Rot.
 
-## Festlegen der Anmerkungsflags
+## Schritt 3: Festlegen der Anmerkungsflags
 
 Nachdem wir die Annotation erstellt und ihre Eigenschaften festgelegt haben, können wir die Annotations-Flags festlegen. In diesem Tutorial möchten wir, dass die Anmerkung druckbar, aber nicht sichtbar ist.
 
 ```csharp
 annotation.Flags = AnnotationFlags.Print | AnnotationFlags.NoView;
+doc.Pages[1].Annotations.Add(annotation);
 ```
 
-## Speichern des geänderten PDF-Dokuments
+## Schritt 4: Speichern des geänderten PDF-Dokuments
 
 Schließlich können wir das geänderte PDF-Dokument mit der neuen unsichtbaren Anmerkung speichern.
 
@@ -76,4 +76,11 @@ FreeTextAnnotation annotation = new FreeTextAnnotation(doc.Pages[1], new Aspose.
 annotation.Contents = "ABCDEFG";
 annotation.Characteristics.Border = System.Drawing.Color.Red;
 annotation.Flags = AnnotationFlags.Print | AnnotationFlags.NoView;
-doc.Pages[1
+doc.Pages[1].Annotations.Add(annotation);
+
+dataDir = dataDir + "InvisibleAnnotation_out.pdf";
+// Ausgabedatei speichern
+doc.Save(dataDir);
+// ExEnd:InvisibleAnnotation
+Console.WriteLine("\nAnnotation nvisible successfully.\nFile saved at " + dataDir);
+```

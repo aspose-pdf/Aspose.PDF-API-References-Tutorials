@@ -26,7 +26,7 @@ Primero, cree una nueva aplicación de consola C# en Microsoft Visual Studio. Pa
 
 ## 2. Agregar referencia a Aspose.PDF para .NET
 
-continuación, agregue una referencia a Aspose.PDF para .NET en su proyecto. Para hacer esto, haga clic con el botón derecho en su proyecto en el panel "Explorador de soluciones", seleccione "Agregar" > "Referencia" y luego busque la ubicación donde guardó el archivo Aspose.PDF para .NET DLL. Seleccione el archivo DLL y haga clic en "Aceptar" para agregar la referencia a su proyecto.
+A continuación, agregue una referencia a Aspose.PDF para .NET en su proyecto. Para hacer esto, haga clic con el botón derecho en su proyecto en el panel "Explorador de soluciones", seleccione "Agregar" > "Referencia" y luego busque la ubicación donde guardó el archivo Aspose.PDF para .NET DLL. Seleccione el archivo DLL y haga clic en "Aceptar" para agregar la referencia a su proyecto.
 
 ## 3. Configurar el entorno
 
@@ -79,23 +79,21 @@ freetext.Contents = "Free Text
 
 ### Ejemplo de código fuente para Establecer formato de anotación de texto libre usando Aspose.PDF para .NET
 ```csharp
+// La ruta al directorio de documentos.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// La ruta al directorio de documentos.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	
-	// Abrir documento
-	Document pdfDocument = new Document(dataDir + "SetFreeTextAnnotationFormatting.pdf");
+// Abrir documento
+Document pdfDocument = new Document(dataDir + "SetFreeTextAnnotationFormatting.pdf");
 
-	// Crear una instancia del objeto DefaultAppearance
-	DefaultAppearance default_appearance = new DefaultAppearance("Arial", 28, System.Drawing.Color.Red);
-	// Crear anotación
-	FreeTextAnnotation freetext = new FreeTextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600), default_appearance);
-	// Especificar el contenido de la anotación
-	freetext.Contents = "Free Text";
-	// Agregar anotación a la colección de anotaciones de la página
-	pdfDocument.Pages[1].Annotations.Add(freetext);
-	dataDir = dataDir + "SetFreeTextAnnotationFormatting_out.pdf";
-	//Guardar el documento actualizado
-	pdfDocument.Save(dataDir);            
- 
+// Crear una instancia del objeto DefaultAppearance
+DefaultAppearance default_appearance = new DefaultAppearance("Arial", 28, System.Drawing.Color.Red);
+// Crear anotación
+FreeTextAnnotation freetext = new FreeTextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600), default_appearance);
+// Especificar el contenido de la anotación
+freetext.Contents = "Free Text";
+// Agregar anotación a la colección de anotaciones de la página
+pdfDocument.Pages[1].Annotations.Add(freetext);
+dataDir = dataDir + "SetFreeTextAnnotationFormatting_out.pdf";
+// Guardar el documento actualizado
+pdfDocument.Save(dataDir);            
 ```

@@ -10,67 +10,67 @@ url: /es/net/annotations/getresourceofannotation/
 
 El ejemplo muestra cómo obtener recursos de anotación con Aspose.PDF para .NET. Para obtener el recurso de una anotación usando Aspose.PDF para .NET, siga estos pasos:
 
-## Establezca la ruta del directorio donde se encuentra el documento.
+## Paso 1: establezca la ruta del directorio donde se encuentra el documento.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Abra el documento PDF que contiene la anotación cuyo recurso desea obtener.
+## Paso 2: Abra el documento PDF que contiene la anotación cuyo recurso desea obtener.
 
 ```csharp
 Document doc = new Document(dataDir + "AddAnnotation.pdf");
 ```
 
-## Crea una anotación.
+## Paso 3: Crea una anotación.
 
 ```csharp
 ScreenAnnotation sa = new ScreenAnnotation(doc.Pages[1], new Rectangle(100, 400, 300, 600), dataDir + "AddSwfFileAsAnnotation.swf");
 ```
 
-## Agregue la anotación a una página del documento.
+## Paso 4: agregue la anotación a una página del documento.
 
 ```csharp
 doc.Pages[1].Annotations.Add(sa);
 ```
 
-## Guarde el documento.
+## Paso 5: Guarde el documento.
 
 ```csharp
 doc.Save(dataDir + "GetResourceOfAnnotation_Out.pdf");
 ```
 
-## Abra el documento modificado.
+## Paso 6: Abra el documento modificado.
 
 ```csharp
 Document doc1 = new Document(dataDir + "GetResourceOfAnnotation_Out.pdf");
 ```
 
-## Obtener la acción de la anotación.
+## Paso 7: Obtenga la acción de la anotación.
 
 ```csharp
 RenditionAction action = (doc.Pages[1].Annotations[1] as ScreenAnnotation).Action as RenditionAction;
 ```
 
-## Obtener la interpretación de la acción.
+## Paso 7: Obtenga la interpretación de la acción.
 
 ```csharp
 Rendition rendition = ((doc.Pages[1].Annotations[1] as ScreenAnnotation).Action as RenditionAction).Rendition;
 ```
 
-## Obtenga el clip multimedia.
+## Paso 8: Obtenga el clip multimedia.
 
 ```csharp
 MediaClip clip = (rendition as MediaRendition).MediaClip;
 ```
 
-## Obtenga la especificación del archivo.
+## Paso 9: obtenga la especificación del archivo.
 
 ```csharp
 FileSpecification data = (clip as MediaClipData).Data;
 ```
 
-## Leer los datos de los medios.
+## Paso 10: Lea los datos de los medios.
 
 ```csharp
 MemoryStream ms = new MemoryStream();
@@ -83,7 +83,7 @@ while ((read = source.Read(buffer, 0, buffer.Length)) > 0)
 }
 ```
 
-## Imprima el nombre de la copia y la operación de copia.
+## Paso 11: Imprima el nombre de la copia y la operación de copia.
 
 ```csharp
 Console.WriteLine(rendition.Name);
@@ -95,36 +95,34 @@ Siguiendo estos pasos, puede obtener fácilmente el recurso de una anotación en
 ### Ejemplo de código fuente para Obtener recurso de anotación usando Aspose.PDF para .NET:
 
 ```csharp
+// La ruta al directorio de documentos.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// La ruta al directorio de documentos.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-	// Abrir documento
-	Document doc = new Document(dataDir + "AddAnnotation.pdf");
-	//Crear anotación
-	ScreenAnnotation sa = new ScreenAnnotation(doc.Pages[1], new Rectangle(100, 400, 300, 600), dataDir + "AddSwfFileAsAnnotation.swf");
-	doc.Pages[1].Annotations.Add(sa);
-	// Guardar documento
-	doc.Save(dataDir + "GetResourceOfAnnotation_Out.pdf");
-	// Abrir documento
-	Document doc1 = new Document(dataDir + "GetResourceOfAnnotation_Out.pdf");
-	//Obtener acción de la anotación
-	RenditionAction action = (doc.Pages[1].Annotations[1] as ScreenAnnotation).Action as RenditionAction;
-	//Obtener la representación de la acción de representación
-	Rendition rendition = ((doc.Pages[1].Annotations[1] as ScreenAnnotation).Action as RenditionAction).Rendition;
-	// Clip multimedia
-	MediaClip clip = (rendition as MediaRendition).MediaClip;
-	FileSpecification data = (clip as MediaClipData).Data;
-	MemoryStream ms = new MemoryStream();
-	byte[] buffer = new byte[1024];
-	int read = 0;
-	//Se puede acceder a los datos de los medios en FileSpecification.Contents
-	Stream source = data.Contents;
-	while ((read = source.Read(buffer, 0, buffer.Length)) > 0)
-	{
-	ms.Write(buffer, 0, read);
-	}
-	Console.WriteLine(rendition.Name);
-	Console.WriteLine(action.RenditionOperation);
-
+// Abrir documento
+Document doc = new Document(dataDir + "AddAnnotation.pdf");
+//Crear anotación
+ScreenAnnotation sa = new ScreenAnnotation(doc.Pages[1], new Rectangle(100, 400, 300, 600), dataDir + "AddSwfFileAsAnnotation.swf");
+doc.Pages[1].Annotations.Add(sa);
+// Guardar documento
+doc.Save(dataDir + "GetResourceOfAnnotation_Out.pdf");
+// Abrir documento
+Document doc1 = new Document(dataDir + "GetResourceOfAnnotation_Out.pdf");
+//Obtener acción de la anotación
+RenditionAction action = (doc.Pages[1].Annotations[1] as ScreenAnnotation).Action as RenditionAction;
+//Obtener la representación de la acción de representación
+Rendition rendition = ((doc.Pages[1].Annotations[1] as ScreenAnnotation).Action as RenditionAction).Rendition;
+// Clip multimedia
+MediaClip clip = (rendition as MediaRendition).MediaClip;
+FileSpecification data = (clip as MediaClipData).Data;
+MemoryStream ms = new MemoryStream();
+byte[] buffer = new byte[1024];
+int read = 0;
+//Se puede acceder a los datos de los medios en FileSpecification.Contents
+Stream source = data.Contents;
+while ((read = source.Read(buffer, 0, buffer.Length)) > 0)
+{
+ms.Write(buffer, 0, read);
+}
+Console.WriteLine(rendition.Name);
+Console.WriteLine(action.RenditionOperation);
 ```

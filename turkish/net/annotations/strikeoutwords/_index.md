@@ -12,7 +12,7 @@ Aspose.PDF for .NET, PDF dosyalarını oluşturmak, değiştirmek ve dönüştü
 ## PDF belgesini yükleme
 İlk adım, değiştirmek istediğiniz PDF belgesini yüklemektir. Bu eğitimde, "BELGE DİZİNİNİZ" klasöründen "input.pdf" adlı bir PDF belgesi yükleyeceğiz. 
 
-```
+```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document document = new Document(dataDir + "input.pdf");
 ```
@@ -20,7 +20,7 @@ Document document = new Document(dataDir + "input.pdf");
 ## Metin parçalarını arama
 PDF belgesindeki belirli sözcüklerin veya tümceciklerin üstünü çizmek için önce bunları aramanız gerekir. Aspose.PDF, PDF belgesinde belirli bir metin parçasını aramak için kullanılabilecek bir TextFragmentAbsorber sınıfı sağlar.
 
-```
+```csharp
 Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.TextFragmentAbsorber("Estoque");
 ```
 
@@ -29,7 +29,7 @@ Yukarıdaki kodda, PDF belgesindeki "Estoque" metin parçasını arıyoruz. Üst
 ## Metin parçalarının üzerinin çizilmesi
 Metin parçalarını bulduktan sonraki adım, bunların üstünü çizmek. Aspose.PDF, metin parçası için üzeri çizili not oluşturmak için kullanılabilecek bir StrikeOutAnnotation sınıfı sağlar. 
 
-```
+```csharp
 Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle((float)textFragment.Position.XIndent, (float)textFragment.Position.YIndent, (float)textFragment.Position.XIndent + (float)textFragment.Rectangle.Width, (float)textFragment.Position.YIndent + (float)textFragment.Rectangle.Height);
 
 StrikeOutAnnotation strikeOut = new StrikeOutAnnotation(textFragment.Page, rect);
@@ -44,7 +44,7 @@ Yukarıdaki kodda, bulduğumuz her metin parçası için üstü çizili bir not 
 ## Değiştirilen PDF belgesini kaydetme
 Metin parçalarının üzerini çizdikten sonra değiştirilen belgeyi kaydedin.
 
-```
+```csharp
 dataDir = dataDir + "StrikeOutWords_out.pdf";
 document.Save(dataDir);
 ```
@@ -54,55 +54,50 @@ document.Save(dataDir);
 
 ```csharp
 
-            
-            
-            // Belgeler dizininin yolu.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Belgeler dizininin yolu.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-            // Belgeyi aç
-            Document document = new Document(dataDir + "input.pdf");
+// Belgeyi aç
+Document document = new Document(dataDir + "input.pdf");
 
-            // Belirli bir metin parçasını aramak için TextFragment Absorber örneği oluşturun
-            Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.TextFragmentAbsorber("Estoque");
-            // PDF belgesinin sayfalarını yineleyin
-            for (int i = 1; i <= document.Pages.Count; i++)
-            {
-                // PDF belgesinin ilk sayfasını alın
-                Page page = document.Pages[1];
-                page.Accept(textFragmentAbsorber);
-            }
+// Belirli bir metin parçasını aramak için TextFragment Absorber örneği oluşturun
+Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.TextFragmentAbsorber("Estoque");
+// PDF belgesinin sayfalarını yineleyin
+for (int i = 1; i <= document.Pages.Count; i++)
+{
+	// PDF belgesinin ilk sayfasını alın
+	Page page = document.Pages[1];
+	page.Accept(textFragmentAbsorber);
+}
 
-            // Emilmiş metin koleksiyonu oluşturma
-            Aspose.Pdf.Text.TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
+// Emilmiş metin koleksiyonu oluşturma
+Aspose.Pdf.Text.TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
 
-            // Yukarıdaki koleksiyonu yineleyin
-            for (int j = 1; j <= textFragmentCollection.Count; j++)
-            {
-                Aspose.Pdf.Text.TextFragment textFragment = textFragmentCollection[j];
+//Yukarıdaki koleksiyonu yineleyin
+for (int j = 1; j <= textFragmentCollection.Count; j++)
+{
+	Aspose.Pdf.Text.TextFragment textFragment = textFragmentCollection[j];
 
-                // TextFragment nesnesinin dikdörtgen boyutlarını alın
-                Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle(
-                            (float)textFragment.Position.XIndent,
-                            (float)textFragment.Position.YIndent,
-                            (float)textFragment.Position.XIndent +
-                            (float)textFragment.Rectangle.Width,
-                            (float)textFragment.Position.YIndent +
-                            (float)textFragment.Rectangle.Height);
+	// TextFragment nesnesinin dikdörtgen boyutlarını alın
+	Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle(
+				(float)textFragment.Position.XIndent,
+				(float)textFragment.Position.YIndent,
+				(float)textFragment.Position.XIndent +
+				(float)textFragment.Rectangle.Width,
+				(float)textFragment.Position.YIndent +
+				(float)textFragment.Rectangle.Height);
 
-                // StrikeOut Annotation örneğini başlat
-                StrikeOutAnnotation strikeOut = new StrikeOutAnnotation(textFragment.Page, rect);
-                // Açıklama için opaklığı ayarla
-                strikeOut.Opacity = .80f;
-                // Ek açıklama örneği için sınırı ayarlayın
-                strikeOut.Border = new Border(strikeOut);
-                // Ek açıklamanın rengini ayarlayın
-                strikeOut.Color = Aspose.Pdf.Color.Red;
-                // TextFragment ek açıklamalar koleksiyonuna ek açıklama ekleyin
-                textFragment.Page.Annotations.Add(strikeOut);
-            }
-            dataDir = dataDir + "StrikeOutWords_out.pdf";
-            document.Save(dataDir);
-
-
-        
+	// StrikeOut Annotation örneğini başlat
+	StrikeOutAnnotation strikeOut = new StrikeOutAnnotation(textFragment.Page, rect);
+	// Açıklama için opaklığı ayarla
+	strikeOut.Opacity = .80f;
+	// Ek açıklama örneği için sınırı ayarlayın
+	strikeOut.Border = new Border(strikeOut);
+	// Ek açıklamanın rengini ayarlayın
+	strikeOut.Color = Aspose.Pdf.Color.Red;
+	// TextFragment ek açıklamalar koleksiyonuna ek açıklama ekleyin
+	textFragment.Page.Annotations.Add(strikeOut);
+}
+dataDir = dataDir + "StrikeOutWords_out.pdf";
+document.Save(dataDir);
 ```

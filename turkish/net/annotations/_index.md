@@ -2,7 +2,7 @@
 title: Ek Açıklamalarla Programlama
 linktitle: Ek Açıklamalarla Programlama
 type: docs
-weight: 11
+weight: 12
 url: /tr/net/annotations/
 description: "Açıklamalarla Programlama, API Öğreticilerini ve açıklama ekleme, açıklamayı silme, açıklama bilgisi alma ve çok daha fazlasını içeren Aspose.PDF for .NET'in kod parçacıklarını içerir."
 ---
@@ -12,7 +12,7 @@ Aspose.PDF for .NET kullanarak PDF belgelerindeki açıklamalarla nasıl çalı�
 | Başlık | Tanım |
 | --- | --- | 
 | [Açıklama Ekle](./addannotation/) | Bu C# kaynak kodunu kullanarak Aspose.PDF for .NET ile nasıl metin açıklamaları ekleyeceğinizi öğrenin. Ek açıklamalarınızı belirli ayrıntılar ve simgelerle özelleştirin. |  
-| [Eklenti Açıklaması](./addlnkannotation/) | Adım adım kılavuz ve tam kaynak kodu ile Aspose.PDF for .NET kullanarak C# dilinde Ink Annotation özelliğinin PDF belgelerine nasıl ekleneceğini öğrenin. |  
+| [Bağlantı Ek Açıklama Ekle](./addlnkannotation/) | Adım adım kılavuz ve tam kaynak kodu ile Aspose.PDF for .NET kullanarak C# dilinde Ink Annotation özelliğinin PDF belgelerine nasıl ekleneceğini öğrenin. |  
 | [Swf Dosyasını Açıklama Olarak Ekle](./addswffileasannotation/) | Bu adım adım kılavuz ile Aspose.PDF for .NET'te SWF dosyalarını açıklama olarak nasıl ekleyeceğinizi öğrenin. |  
 | [Sayfadaki Tüm Ek Açıklamaları Sil](./deleteallannotationsfrompage/) | Bu adım adım kılavuzu kullanarak Aspose.PDF for .NET ile bir PDF sayfasından tüm notları nasıl sileceğinizi öğrenin. |  
 | [Belirli Ek Açıklamayı Sil](./deleteparticularannotation/) | Bu adım adım kılavuz ile Aspose.PDF for .NET kullanarak bir PDF belgesinden belirli bir açıklamayı nasıl sileceğinizi öğrenin. |  

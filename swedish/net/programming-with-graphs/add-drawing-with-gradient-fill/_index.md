@@ -1,0 +1,99 @@
+---
+title: Lägg till ritning med gradientfyllning
+linktitle: Lägg till ritning med gradientfyllning
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du lägger till en ritning med gradientfyllning med Aspose.PDF för .NET. Steg för steg handledning för att skapa attraktiva PDF-dokument.
+type: docs
+weight: 20
+url: /sv/net/programming-with-graphs/add-drawing-with-gradient-fill/
+---
+I den här handledningen går vi igenom följande C#-källkod steg för steg för att lägga till en ritning med gradientfyllning till programmering med grafik med Aspose.PDF för .NET.
+
+Se till att du har installerat Aspose.PDF-biblioteket och ställt in din utvecklingsmiljö innan du börjar. Har även grundläggande kunskaper i C#-programmering.
+
+## Steg 1: Installation av dokumentkatalog
+
+I den medföljande källkoden måste du ange katalogen där du vill spara den resulterande PDF-filen. Ändra variabeln "dataDir" till önskad katalog.
+
+```csharp
+string dataDir = "YOUR DOCUMENTS DIRECTORY";
+```
+
+## Steg 2: Instantiera ett dokumentobjekt och lägga till en sida
+
+Vi skapar en instans av klassen Document och lägger till en sida i detta dokument.
+
+```csharp
+Document doc = new Document();
+Page page = doc.Pages.Add();
+```
+
+## Steg 3: Skapa ett grafobjekt och lägga till det på sidan
+
+Vi skapar ett Graph-objekt med specificerade mått och lägger till det i sidans styckesamling.
+
+```csharp
+Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(300, 300);
+page.Paragraphs.Add(graph);
+```
+
+## Steg 4: Skapa rektangelobjekt och lägg till i diagram
+
+Vi skapar ett rektangelobjekt med specificerade dimensioner och lägger till det i diagrammets formsamling.
+
+```csharp
+Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(0, 0, 300, 300);
+graph.Shapes.Add(rect);
+```
+
+## Steg 5: Konfigurera Gradient Fill
+
+Vi konfigurerar gradientfyllningen för rektangeln med klassen GradientAxialShading.
+
+```csharp
+rect.GraphInfo.FillColor = new Aspose.Pdf.Color
+{
+PatternColorSpace = new GradientAxialShading(Color.Red, Color.Blue)
+{
+Start = new Point(0, 0),
+End = new Point(300, 300)
+}
+};
+```
+
+Detta skapar en gradientfyllning från rött till blått, från punkt (0, 0) till punkt (300, 300).
+
+## Steg 6: Spara PDF-filen
+
+Slutligen sparar vi den resulterande PDF-filen med namnet "AddDrawingWithGradientFill_out.pdf" i den angivna katalogen.
+
+```csharp
+doc.Save(dataDir + "AddDrawingWithGradientFill_out.pdf");
+```
+
+### Exempel på källkod för Lägg till ritning med gradientfyllning med Aspose.Words för .NET 
+
+```csharp
+
+// Sökvägen till dokumentkatalogen.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+Document doc = new Document();
+Page page = doc.Pages.Add();
+Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(300, 300);
+page.Paragraphs.Add(graph);
+Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(0, 0, 300, 300);
+graph.Shapes.Add(rect);
+rect.GraphInfo.FillColor = new Aspose.Pdf.Color
+{
+	PatternColorSpace = new GradientAxialShading(Color.Red, Color.Blue)
+	{
+		Start = new Point(0, 0),
+		End = new Point(300, 300)
+	}
+};
+doc.Save(dataDir + "AddDrawingWithGradientFill_out.pdf");
+
+```
+## Slutsats
+
+I den här handledningen har vi förklarat steg för steg hur man lägger till en ritning med en gradientfyllning till programmering med grafik med Aspose.PDF för .NET. Nu kan du använda denna kunskap för att skapa attraktiva PDF-dokument med anpassade mönster och övertoningsfyllningar.

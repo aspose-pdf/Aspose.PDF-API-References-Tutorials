@@ -32,9 +32,8 @@ La risorsa include tutorial su Aspose.PDF per la programmazione della libreria .
 | [Ricevi avvisi per la sostituzione dei caratteri](./getwarningsforfontsubstitution/) | Scopri come utilizzare la funzione GetWarningsForFontSubstitution di Aspose.PDF per .NET per rilevare gli avvisi di sostituzione dei caratteri all'apertura di un documento PDF. |  
 | [Ottieni metadati XMP](./getxmpmetadata/) | Scopri come utilizzare la funzione GetXmpMetadata di Aspose.PDF per .NET per estrarre i metadati XMP da un documento PDF utilizzando il codice sorgente C#. |  
 | [Ricevi avvisi per la sostituzione dei caratteri](./getwarningsforfontsubstitution/) | Scopri come utilizzare la funzione GetWarningsForFontSubstitution di Aspose.PDF per .NET per rilevare gli avvisi di sostituzione dei caratteri all'apertura di un documento PDF. |  
-| [Ottieni i metadati XMP](./getxmpmetadata/) | Scopri come utilizzare la funzione GetXmpMetadata di Aspose.PDF per .NET per estrarre i metadati XMP da un documento PDF utilizzando il codice sorgente C#. |  
 | [Ottieni il fattore di zoom](./getzoomfactor/) | Scopri come utilizzare Aspose.PDF per .NET per ottenere il fattore di zoom di un file PDF con questa guida dettagliata. |  
-| [Nascondi i numeri di pagina nel sommario](./hidepagenumbersintoc/) | Scopri come nascondere i numeri di pagina in un sommario utilizzando Aspose.PDF per .NET con questa guida dettagliata. |  
+| [Nascondi i numeri di pagina nel TOC](./hidepagenumbersintoc/) | Scopri come nascondere i numeri di pagina in un sommario utilizzando Aspose.PDF per .NET con questa guida dettagliata. |  
 | [Collega flussi duplicati](./linkduplicatestreams/) | Scopri come utilizzare Aspose.PDF per la funzione .NET Collega flussi duplicati per ottimizzare i tuoi documenti PDF con questa guida dettagliata. |  
 | [Ottimizza documento](./optimizedocument/) | Ottimizza documento per il Web è essenziale per l'esperienza dell'utente. Scopri come farlo utilizzando Aspose.PDF per .NET con questa guida dettagliata. |  
 | [Ottimizza la dimensione del file](./optimizefilesize/) | Scopri come ottimizzare la dimensione del file dei tuoi documenti PDF con Aspose.PDF per .NET utilizzando questa guida passo-passo. |  
@@ -48,6 +47,6 @@ La risorsa include tutorial su Aspose.PDF per la programmazione della libreria .
 | [Imposta il fattore di ingrandimento](./setzoomfactor/) | Scopri come impostare il fattore di zoom per i file PDF utilizzando Aspose.PDF per .NET con la nostra guida dettagliata. |  
 | [Riduci i documenti](./shrinkdocuments/) | Scopri come utilizzare Aspose.PDF per .NET per ridurre i documenti PDF con questa guida dettagliata.  |  
 | [Disincorpora i caratteri](./unembedfonts/) | Scopri come utilizzare Aspose.PDF per .NET per ottenere font Unembed e ottimizzare i file PDF. Una guida passo passo. |  
-| [Convalida PDFABStandard](./validatepdfabstandard/) | Scopri come utilizzare Aspose.PDF per .NET per convalidare i documenti PDF rispetto allo standard PDFABS con la nostra guida dettagliata e l'esempio di codice. |  
-| [Convalida PDFAStandard](./validatepdfastandard/) | Scopri come utilizzare Aspose.PDF per .NET per convalidare i file PDF per PDFAStandard con questa guida dettagliata. |  
-| [Convalida lo standard PDFUA](./validatepdfuastandard/) | Scopri come utilizzare Aspose.PDF per .NET per convalidare lo standard PDFUA utilizzando il codice C#. Guida passo dopo passo. |  
+| [Convalida PDF AB Standard](./validatepdfabstandard/) | Scopri come utilizzare Aspose.PDF per .NET per convalidare i documenti PDF rispetto allo standard PDFABS con la nostra guida dettagliata e l'esempio di codice. |  
+| [Convalida PDF A Standard](./validatepdfastandard/) | Scopri come utilizzare Aspose.PDF per .NET per convalidare i file PDF per PDFAStandard con questa guida dettagliata. |  
+| [Convalida PDF UA Standard](./validatepdfuastandard/) | Scopri come utilizzare Aspose.PDF per .NET per convalidare lo standard PDFUA utilizzando il codice C#. Guida passo dopo passo. |  

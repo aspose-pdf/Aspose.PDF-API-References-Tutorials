@@ -1,13 +1,13 @@
 ---
-title: Validieren Sie den PDFUA-Standard
-linktitle: Validieren Sie den PDFUA-Standard
+title: Validieren Sie den PDF UA-Standard
+linktitle: Validieren Sie den PDF UA-Standard
 second_title: Aspose.PDF für .NET API-Referenz
 description: Erfahren Sie, wie Sie Aspose.PDF für .NET verwenden, um den PDF/UA-Standard mithilfe von C#-Code zu validieren. Schritt für Schritt Anleitung.
 type: docs
 weight: 400
 url: /de/net/programming-with-document/validatepdfuastandard/
 ---
-Aspose.PDF für .NET ist eine leistungsstarke Bibliothek, die verschiedene Funktionen für die Arbeit mit PDF-Dokumenten bietet. Eine seiner Funktionen ist die Möglichkeit, PDF-Dokumente auf Konformität mit dem PDF/UA-Standard zu überprüfen. In diesem Artikel geben wir eine Schritt-für-Schritt-Anleitung zur Verwendung von Aspose.PDF für .NET, um die PDF/UA-Standardkonformität mithilfe von C#-Code zu erreichen und zu validieren.
+Aspose.PDF für .NET ist eine leistungsstarke Bibliothek, die verschiedene Funktionen für die Arbeit mit PDF-Dokumenten bietet. Eine seiner Funktionen ist die Möglichkeit, PDF-Dokumente auf Konformität mit dem PDF/UA-Standard zu überprüfen. In diesem Artikel geben wir eine Schritt-für-Schritt-Anleitung zur Verwendung von Aspose.PDF für .NET, um die PDF/UA-Standardkonformität mithilfe von C#-Code zu erhalten und zu validieren.
 
 ## Schritt 1: Definieren des Dokumentverzeichnispfads
 
@@ -42,14 +42,12 @@ Dieser Code validiert das PDF-Dokument auf Konformität mit dem PDF/UA-Standard 
 ### Beispielquellcode für Get Validate PDFUAstandard mit Aspose.PDF für .NET
 
 ```csharp
-           
-	// Der Pfad zum Dokumentenverzeichnis.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Der Pfad zum Dokumentenverzeichnis.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Dokument öffnen
-	Document pdfDocument = new Document(dataDir + "ValidatePDFUAStandard.pdf");
+// Dokument öffnen
+Document pdfDocument = new Document(dataDir + "ValidatePDFUAStandard.pdf");
 
-	// PDF für PDF/UA validieren
-	bool isValidPdfUa = pdfDocument.Validate(dataDir + "validation-result-UA.xml", PdfFormat.PDF_UA_1);
-		   
+// PDF für PDF/UA validieren
+bool isValidPdfUa = pdfDocument.Validate(dataDir + "validation-result-UA.xml", PdfFormat.PDF_UA_1); 
 ```

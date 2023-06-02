@@ -91,9 +91,7 @@ doc.Save(dataDir + @"Multilayer-2ndApproach_out.pdf");
 
 ### Aspose.PDF for .NET kullanarak çok katmanlı PDF ikinci yaklaşımı oluşturmak için örnek kaynak kodu.
 
-```csharp
-
-            
+```csharp   
 // Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
@@ -126,8 +124,6 @@ ImageFloatingBox.ZIndex = 2;
 ImageFloatingBox.Paragraphs.Add(image1);
 
 doc.Save(dataDir + @"Multilayer-2ndApproach_out.pdf");
-            
-        
 ```
 
 ## Çözüm

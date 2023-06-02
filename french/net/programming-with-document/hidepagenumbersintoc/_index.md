@@ -9,40 +9,31 @@ url: /fr/net/programming-with-document/hidepagenumbersintoc/
 ---
 Dans cet article, nous discuterons de l'implémentation de la fonction Masquer les numéros de page dans la table des matières d'Aspose.PDF pour .NET à l'aide de C#. Nous commencerons par une brève introduction à Aspose.PDF pour .NET, puis plongerons dans le guide étape par étape pour implémenter cette fonctionnalité. 
 
-### Table des matières
-
-- Introduction à Aspose.PDF pour .NET
-- Qu'est-ce que la fonction Masquer les numéros de page dans la table des matières ?
-- Conditions préalables
-- Guide étape par étape pour implémenter la fonction Masquer les numéros de page dans la table des matières
-- Exemple de code source pour masquer les numéros de page dans la table des matières à l'aide d'Aspose.PDF pour .NET
-- Conclusion
-
-### Introduction à Aspose.PDF pour .NET
+## Introduction à Aspose.PDF pour .NET
 
 Aspose.PDF pour .NET est un puissant composant de manipulation PDF qui permet aux développeurs de créer, modifier et manipuler des fichiers PDF par programme. Il offre un large éventail de caractéristiques et de fonctionnalités qui facilitent le travail avec les documents PDF. Aspose.PDF pour .NET prend en charge les systèmes d'exploitation 32 bits et 64 bits et peut être utilisé avec les plates-formes .NET Framework, .NET Core et Xamarin. 
 
-### Qu'est-ce que la fonction Masquer les numéros de page dans la table des matières ?
+## Qu'est-ce que la fonction Masquer les numéros de page dans la table des matières ?
 
 La table des matières (TOC) est une partie essentielle d'un document PDF qui fournit aux utilisateurs un aperçu rapide du contenu. Parfois, les utilisateurs peuvent souhaiter masquer les numéros de page dans la table des matières pour la rendre plus conviviale. Aspose.PDF pour .NET fournit une fonctionnalité intégrée pour masquer les numéros de page dans la table des matières. Cette fonctionnalité peut être utilisée pour créer des documents PDF plus conviviaux. 
 
-### Conditions préalables
+## Conditions préalables
 
-Pour suivre ce tutoriel, vous aurez besoin des éléments suivants :
+Pour suivre ce tutoriel, vous aurez besoin des éléments suivants :
 
 - Visual Studio 2010 ou version ultérieure
 - Aspose.PDF pour .NET installé sur votre système
 - Connaissance de base du langage de programmation C#
 
-### Guide étape par étape pour implémenter la fonction Masquer les numéros de page dans la table des matières
+## Guide étape par étape pour implémenter la fonction Masquer les numéros de page dans la table des matières
 
 Suivez les étapes ci-dessous pour implémenter la fonctionnalité Masquer les numéros de page dans la table des matières à l'aide d'Aspose.PDF pour .NET :
 
-#### Étape 1 : Créer une nouvelle application de console C# dans Visual Studio
+## Étape 1 : Créer une nouvelle application de console C# dans Visual Studio
 
 Ouvrez Visual Studio et créez une nouvelle application console C#.
 
-#### Étape 2 : Ajouter une référence à Aspose.PDF pour .NET
+## Étape 2 : Ajouter une référence à Aspose.PDF pour .NET
 
 Cliquez avec le bouton droit sur le dossier Références de votre projet et sélectionnez Ajouter une référence. Accédez à l'emplacement où Aspose.PDF pour .NET est installé sur votre système et ajoutez-y une référence.
 
@@ -116,44 +107,42 @@ doc.Save(outFile);
 ### Exemple de code source pour masquer les numéros de page dans la table des matières à l'aide d'Aspose.PDF pour .NET
 
 ```csharp
+// Chemin d'accès au répertoire des documents.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+string outFile = dataDir + "HiddenPageNumbers_out.pdf";
+Document doc = new Document();
+Page tocPage = doc.Pages.Add();
+TocInfo tocInfo = new TocInfo();
+TextFragment title = new TextFragment("Table Of Contents");
+title.TextState.FontSize = 20;
+title.TextState.FontStyle = FontStyles.Bold;
+tocInfo.Title = title;
+//Ajouter la section de liste à la collection de sections du document Pdf
+tocPage.TocInfo = tocInfo;
+//Définissez le format de la liste des quatre niveaux en définissant les marges de gauche et
+//paramètres de format de texte de chaque niveau
 
-	// Chemin d'accès au répertoire des documents.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	string outFile = dataDir + "HiddenPageNumbers_out.pdf";
-	Document doc = new Document();
-	Page tocPage = doc.Pages.Add();
-	TocInfo tocInfo = new TocInfo();
-	TextFragment title = new TextFragment("Table Of Contents");
-	title.TextState.FontSize = 20;
-	title.TextState.FontStyle = FontStyles.Bold;
-	tocInfo.Title = title;
-	//Ajouter la section de liste à la collection de sections du document Pdf
-	tocPage.TocInfo = tocInfo;
-	//Définissez le format de la liste des quatre niveaux en définissant les marges de gauche et
-	//paramètres de format de texte de chaque niveau
-
-	tocInfo.IsShowPageNumbers = false;
-	tocInfo.FormatArrayLength = 4;
-	tocInfo.FormatArray[0].Margin.Right = 0;
-	tocInfo.FormatArray[0].TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;
-	tocInfo.FormatArray[1].Margin.Left = 30;
-	tocInfo.FormatArray[1].TextState.Underline = true;
-	tocInfo.FormatArray[1].TextState.FontSize = 10;
-	tocInfo.FormatArray[2].TextState.FontStyle = FontStyles.Bold;
-	tocInfo.FormatArray[3].TextState.FontStyle = FontStyles.Bold;
-	Page page = doc.Pages.Add();
-	//Ajouter quatre titres dans la section
-	for (int Level = 1; Level != 5; Level++)
-		{ 
-			Heading heading2 = new Heading(Level); 
-			TextSegment segment2 = new TextSegment(); 
-			heading2.TocPage = tocPage; 
-			heading2.Segments.Add(segment2); 
-			heading2.IsAutoSequence = true; 
-			segment2.Text = "this is heading of level " + Level; 
-			heading2.IsInList = true; 
-			page.Paragraphs.Add(heading2); 
-		}
-	doc.Save(outFile);
-
+tocInfo.IsShowPageNumbers = false;
+tocInfo.FormatArrayLength = 4;
+tocInfo.FormatArray[0].Margin.Right = 0;
+tocInfo.FormatArray[0].TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;
+tocInfo.FormatArray[1].Margin.Left = 30;
+tocInfo.FormatArray[1].TextState.Underline = true;
+tocInfo.FormatArray[1].TextState.FontSize = 10;
+tocInfo.FormatArray[2].TextState.FontStyle = FontStyles.Bold;
+tocInfo.FormatArray[3].TextState.FontStyle = FontStyles.Bold;
+Page page = doc.Pages.Add();
+//Ajouter quatre titres dans la section
+for (int Level = 1; Level != 5; Level++)
+	{ 
+		Heading heading2 = new Heading(Level); 
+		TextSegment segment2 = new TextSegment(); 
+		heading2.TocPage = tocPage; 
+		heading2.Segments.Add(segment2); 
+		heading2.IsAutoSequence = true; 
+		segment2.Text = "this is heading of level " + Level; 
+		heading2.IsInList = true; 
+		page.Paragraphs.Add(heading2); 
+	}
+doc.Save(outFile);
 ```

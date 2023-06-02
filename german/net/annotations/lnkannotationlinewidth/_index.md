@@ -13,19 +13,19 @@ Sobald Sie diese Voraussetzungen erfüllen, erstellen Sie ein neues Konsolenanwe
 
 Gehen Sie folgendermaßen vor, um einem PDF-Dokument eine LNK-Anmerkung hinzuzufügen:
 
-##  Erstelle eine neue`Document` object.
+##  Schritt 1: Erstellen Sie ein neues`Document` object.
 ```csharp
 Document doc = new Document();
 ```
-## Fügen Sie dem Dokument eine neue Seite hinzu.
+## Schritt 2: Fügen Sie dem Dokument eine neue Seite hinzu.
 ```csharp
 doc.Pages.Add();
 ```
-##  Erstellen Sie eine Liste von`Point` arrays that represent the ink gesture for the annotation.
+##  Schritt 3: Erstellen Sie eine Liste mit`Point` arrays that represent the ink gesture for the annotation.
 ```csharp
 IList<Point[]> inkList = new List<Point[]>();
 ```
-##  Erstelle eine neue`LineInfo` object that defines the properties of the ink gesture.
+##  Schritt 4: Erstellen Sie ein neues`LineInfo` object that defines the properties of the ink gesture.
 ```csharp
 LineInfo lineInfo = new LineInfo();
 lineInfo.VerticeCoordinate = new float[] { 55, 55, 70, 70, 70, 90, 150, 60 };
@@ -33,7 +33,7 @@ lineInfo.Visibility = true;
 lineInfo.LineColor = System.Drawing.Color.Red;
 lineInfo.LineWidth = 2;
 ```
-##  Erstelle eine neue`Aspose.Pdf.Point` array that represents the gesture from the `LineInfo` object.
+## Schritt 5: Erstellen Sie ein neues`Aspose.Pdf.Point` array that represents the gesture from the `LineInfo` object.
 ```csharp
 int length = lineInfo.VerticeCoordinate.Length / 2;
 Aspose.Pdf.Point[] gesture = new Aspose.Pdf.Point[length];
@@ -42,24 +42,24 @@ for (int i = 0; i < length; i++)
     gesture[i] = new Aspose.Pdf.Point(lineInfo.VerticeCoordinate[2 * i], lineInfo.VerticeCoordinate[2 * i + 1]);
 }
 ```
-## Fügen Sie die Geste zur Liste der Freihandgesten hinzu.
+## Schritt 6: Fügen Sie die Geste zur Liste der Freihandgesten hinzu.
 ```csharp
 inkList.Add(gesture);
 ```
-##  Erstelle eine neue`InkAnnotation` object that represents the link annotation.
+##  Schritt 7: Erstellen Sie ein neues`InkAnnotation` object that represents the link annotation.
 ```csharp
 InkAnnotation a1 = new InkAnnotation(doc.Pages[1], new Aspose.Pdf.Rectangle(100, 100, 300, 300), inkList);
 ```
-## Legen Sie den Betreff und den Titel der Anmerkung fest.
+## Schritt 8: Legen Sie Betreff und Titel der Anmerkung fest.
 ```csharp
 a1.Subject = "Test";
 a1.Title = "Title";
 ```
-## Legen Sie die Farbe der Anmerkung fest.
+## Schritt 9: Legen Sie die Farbe der Anmerkung fest.
 ```csharp
 a1.Color = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Green);
 ```
-##  Erstelle eine neue`Border` object that defines the properties of the annotation's border.
+##  Schritt 10: Erstellen Sie ein neues`Border` object that defines the properties of the annotation's border.
 ```csharp
 Border border = new Border(a1);
 border.Width = 3;
@@ -67,12 +67,13 @@ border.Effect = BorderEffect.Cloudy;
 border.Dash = new Dash(1, 1);
 border.Style = BorderStyle.Solid;
 ```
-## Fügen Sie die Anmerkung zur Seite hinzu.
+## Schritt 11: Fügen Sie die Anmerkung zur Seite hinzu.
 ```csharp
 doc.Pages[1].Annotations.Add(a1);
 ```
-## Speichern Sie das Dokument in einer Datei.
-```c// Save output file
+## Schritt 12: Speichern Sie das Dokument in einer Datei.
+```csharp
+// Ausgabedatei speichern
 doc.Save(dataDir);
 
 
@@ -80,8 +81,6 @@ doc.Save(dataDir);
 ### Das Beispiel zeigt die Linienbreite von lnk-Anmerkungen mit Aspose.PDF für .NET
 
 ```csharp
-
-
 // Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
@@ -115,6 +114,4 @@ doc.Pages[1].Annotations.Add(a1);
 dataDir = dataDir + "lnkAnnotationLineWidth_out.pdf";
 // Ausgabedatei speichern
 doc.Save(dataDir);
-
-
 ```

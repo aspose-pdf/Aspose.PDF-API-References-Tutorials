@@ -7,7 +7,7 @@ type: docs
 weight: 230
 url: /es/net/programming-with-document/linkduplicatestreams/
 ---
-Aspose.PDF para .NET es una biblioteca completa y potente que proporciona una variedad de funciones para trabajar con archivos PDF. Una de sus características clave es la capacidad de optimizar archivos PDF. En este artículo, explicaremos cómo usar la función Vincular flujos duplicados de Aspose.PDF para .NET para optimizar archivos PDF. Proporcionaremos instrucciones paso a paso e incluiremos un ejemplo de código fuente completo para que los desarrolladores puedan seguirlo fácilmente.
+Aspose.PDF para .NET es una biblioteca completa y potente que proporciona una variedad de características para trabajar con archivos PDF. Una de sus características clave es la capacidad de optimizar archivos PDF. En este artículo, explicaremos cómo usar la función Vincular flujos duplicados de Aspose.PDF para .NET para optimizar archivos PDF. Proporcionaremos instrucciones paso a paso e incluiremos un ejemplo de código fuente completo para que los desarrolladores puedan seguirlo fácilmente.
 
 ## Paso 1: Abrir el documento PDF
 
@@ -62,20 +62,18 @@ En el código anterior, usamos el método Guardar del objeto pdfDocument para gu
 ### Ejemplo de código fuente para secuencias duplicadas de enlaces usando Aspose.PDF para .NET
 
 ```csharp
-
-	// La ruta al directorio de documentos.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Abrir documento
-	Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-	// Establecer la opción LinkDuplcateStreams
-	var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-	{
-		LinkDuplcateStreams = true
-	};
-	// Optimizar documento PDF usando OptimizationOptions
-	pdfDocument.OptimizeResources(optimizeOptions);
-	dataDir = dataDir + "OptimizeDocument_out.pdf";
-	// Guardar documento actualizado
-	pdfDocument.Save(dataDir);
-	
+// La ruta al directorio de documentos.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Abrir documento
+Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
+// Establecer la opción LinkDuplcateStreams
+var optimizeOptions = new Pdf.Optimization.OptimizationOptions
+{
+	LinkDuplcateStreams = true
+};
+// Optimizar documento PDF usando OptimizationOptions
+pdfDocument.OptimizeResources(optimizeOptions);
+dataDir = dataDir + "OptimizeDocument_out.pdf";
+// Guardar documento actualizado
+pdfDocument.Save(dataDir);
 ```

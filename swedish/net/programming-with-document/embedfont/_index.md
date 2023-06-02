@@ -1,7 +1,7 @@
 ---
 title: Bädda in teckensnitt
 linktitle: Bädda in teckensnitt
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du bäddar in teckensnitt i en PDF-fil med Aspose.PDF för .NET med denna steg-för-steg-guide. Se till att dina dokument visas korrekt på alla enheter.
 type: docs
 weight: 120
@@ -80,47 +80,44 @@ Här är den fullständiga källkoden för att bädda in ett teckensnitt med Asp
 
 
 ```csharp
+// Sökvägen till dokumentkatalogen.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-            
-            // Sökvägen till dokumentkatalogen.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
+//Ladda en befintlig PDF-fil
+Document doc = new Document(dataDir + "input.pdf");
 
-            // Ladda en befintlig PDF-fil
-            Document doc = new Document(dataDir + "input.pdf");
+// Gå igenom alla sidorna
+foreach (Page page in doc.Pages)
+{
+	if (page.Resources.Fonts != null)
+	{
+		foreach (Aspose.Pdf.Text.Font pageFont in page.Resources.Fonts)
+		{
+			// Kontrollera om teckensnittet redan är inbäddat
+			if (!pageFont.IsEmbedded)
+				pageFont.IsEmbedded = true;
+		}
+	}
 
-            // Gå igenom alla sidorna
-            foreach (Page page in doc.Pages)
-            {
-                if (page.Resources.Fonts != null)
-                {
-                    foreach (Aspose.Pdf.Text.Font pageFont in page.Resources.Fonts)
-                    {
-                        // Kontrollera om teckensnittet redan är inbäddat
-                        if (!pageFont.IsEmbedded)
-                            pageFont.IsEmbedded = true;
-                    }
-                }
+	// Leta efter formulärobjekten
+	foreach (XForm form in page.Resources.Forms)
+	{
+		if (form.Resources.Fonts != null)
+		{
+			foreach (Aspose.Pdf.Text.Font formFont in form.Resources.Fonts)
+			{
+				// Kontrollera om teckensnittet är inbäddat
+				if (!formFont.IsEmbedded)
+					formFont.IsEmbedded = true;
+			}
+		}
+	}
+}
+dataDir = dataDir + "EmbedFont_out.pdf";
+// Spara PDF-dokument
+doc.Save(dataDir);
 
-                // Leta efter formulärobjekten
-                foreach (XForm form in page.Resources.Forms)
-                {
-                    if (form.Resources.Fonts != null)
-                    {
-                        foreach (Aspose.Pdf.Text.Font formFont in form.Resources.Fonts)
-                        {
-                            // Kontrollera om teckensnittet är inbäddat
-                            if (!formFont.IsEmbedded)
-                                formFont.IsEmbedded = true;
-                        }
-                    }
-                }
-            }
-            dataDir = dataDir + "EmbedFont_out.pdf";
-            // Spara PDF-dokument
-            doc.Save(dataDir);
-            
-            Console.WriteLine("\nFont embedded successfully in a PDF file.\nFile saved at " + dataDir);
-        
+Console.WriteLine("\nFont embedded successfully in a PDF file.\nFile saved at " + dataDir);
 ```
 
 

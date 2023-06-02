@@ -2,7 +2,7 @@
 title: Programación con anotaciones
 linktitle: Programación con anotaciones
 type: docs
-weight: 11
+weight: 12
 url: /es/net/annotations/
 description: La programación con anotaciones incluye tutoriales de API y fragmentos de código de Aspose.PDF para .NET que incluye agregar anotaciones, eliminar anotaciones, obtener información de anotaciones y mucho más.
 ---
@@ -12,7 +12,7 @@ Una colección completa de tutoriales que muestran cómo trabajar con anotacione
 | Título | Descripción |
 | --- | --- | 
 | [Agregar anotación](./addannotation/) | Aprenda a agregar anotaciones de texto con Aspose.PDF para .NET usando este código fuente de C#. Personaliza tus anotaciones con detalles e íconos específicos. |  
-| [Anotación Addlnk](./addlnkannotation/) | Aprenda a agregar la función de anotación de tinta a documentos PDF en C# usando Aspose.PDF para .NET con una guía paso a paso y el código fuente completo. |  
+| [Añadir anotación lnk](./addlnkannotation/) | Aprenda a agregar la función de anotación de tinta a documentos PDF en C# usando Aspose.PDF para .NET con una guía paso a paso y el código fuente completo. |  
 | [Agregar archivo SWF como anotación](./addswffileasannotation/) | Aprenda a agregar archivos SWF como anotaciones en Aspose.PDF para .NET con esta guía paso a paso. |  
 | [Eliminar todas las anotaciones de la página](./deleteallannotationsfrompage/) | Aprenda a eliminar todas las anotaciones de una página PDF con Aspose.PDF para .NET usando esta guía paso a paso. |  
 | [Eliminar anotación particular](./deleteparticularannotation/) | Aprenda cómo eliminar una anotación en particular de un documento PDF usando Aspose.PDF para .NET con esta guía paso a paso. |  

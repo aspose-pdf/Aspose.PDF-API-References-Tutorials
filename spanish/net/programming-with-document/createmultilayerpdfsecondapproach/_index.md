@@ -91,9 +91,7 @@ doc.Save(dataDir + @"Multilayer-2ndApproach_out.pdf");
 
 ### Código fuente de ejemplo para crear un segundo enfoque de PDF multicapa utilizando Aspose.PDF para .NET.
 
-```csharp
-
-            
+```csharp   
 // La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
@@ -126,8 +124,6 @@ ImageFloatingBox.ZIndex = 2;
 ImageFloatingBox.Paragraphs.Add(image1);
 
 doc.Save(dataDir + @"Multilayer-2ndApproach_out.pdf");
-            
-        
 ```
 
 ## Conclusión

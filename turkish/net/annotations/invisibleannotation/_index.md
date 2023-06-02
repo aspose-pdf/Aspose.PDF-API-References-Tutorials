@@ -7,7 +7,6 @@ type: docs
 weight: 100
 url: /tr/net/annotations/invisibleannotation/
 ---
-## PDF Belgelerindeki Ek Açıklamaları Anlama
 
 PDF belgelerindeki ek açıklamalar, gerçek içeriği değiştirmeden bir belgeye fazladan bilgi veya notlar eklemenizi sağlayan güçlü bir özelliktir. Metni vurgulamak, bir belgenin belirli alanlarına dikkat çekmek veya yorum veya geri bildirim eklemek için kullanılabilirler.
 
@@ -20,7 +19,7 @@ PDF belgelerinde kullanabileceğiniz pek çok farklı ek açıklama türü vard�
 - Dosya Ek Açıklamaları
 - ve daha fazlası
 
-## Aspose.PDF for .NET Kullanarak PDF Belgesinde Görünmez Ek Açıklama Oluşturma
+## 1. Adım: Aspose.PDF for .NET Kullanarak PDF Belgesinde Görünmez Ek Açıklama Oluşturma
 
  Aspose.PDF for .NET kullanarak bir PDF belgesinde görünmez bir ek açıklama oluşturmak için önce bir`FreeTextAnnotation` nesnesini seçin ve ek açıklamanın konumunu ve boyutunu belirtin.
 
@@ -36,7 +35,7 @@ FreeTextAnnotation annotation = new FreeTextAnnotation(doc.Pages[1], new Aspose.
 
  Yukarıdaki kodda bir tane oluşturuyoruz.`FreeTextAnnotation`nesnesini seçin ve açıklamanın konumunu PDF belgesinin 2. sayfasında belirtin. Açıklamada görüntülenecek metnin yazı tipini, boyutunu ve rengini de belirliyoruz.
 
-## Görünmez Ek Açıklamaya Özellikler Ekleme
+## 2. Adım: Görünmez Ek Açıklamaya Özellikler Ekleme
 
 Ardından, ek açıklamaya kenarlık rengi, arka plan rengi veya opaklık gibi bazı özellikler ekleyebiliriz.
 
@@ -46,15 +45,16 @@ annotation.Characteristics.Border = System.Drawing.Color.Red;
 
 Yukarıdaki kodda açıklamanın kenarlık rengini kırmızı olarak ayarladık.
 
-## Ek Açıklama İşaretlerini Ayarlama
+## 3. Adım: Ek Açıklama İşaretlerini Ayarlama
 
 Ek açıklamayı oluşturup özelliklerini ayarladıktan sonra, açıklama bayraklarını belirtebiliriz. Bu öğreticide, ek açıklamanın yazdırılabilir olmasını ancak görüntülenemez olmasını istiyoruz.
 
 ```csharp
 annotation.Flags = AnnotationFlags.Print | AnnotationFlags.NoView;
+doc.Pages[1].Annotations.Add(annotation);
 ```
 
-## Değiştirilmiş PDF Belgesini Kaydetme
+## 4. Adım: Değiştirilmiş PDF Belgesini Kaydetme
 
 Son olarak, değiştirilen PDF belgesini yeni görünmez notla kaydedebiliriz.
 
@@ -76,4 +76,11 @@ FreeTextAnnotation annotation = new FreeTextAnnotation(doc.Pages[1], new Aspose.
 annotation.Contents = "ABCDEFG";
 annotation.Characteristics.Border = System.Drawing.Color.Red;
 annotation.Flags = AnnotationFlags.Print | AnnotationFlags.NoView;
-doc.Pages[1
+doc.Pages[1].Annotations.Add(annotation);
+
+dataDir = dataDir + "InvisibleAnnotation_out.pdf";
+// Çıktı dosyasını kaydet
+doc.Save(dataDir);
+// ExEnd:GörünmezAçıklama
+Console.WriteLine("\nAnnotation nvisible successfully.\nFile saved at " + dataDir);
+```

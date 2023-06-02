@@ -80,47 +80,44 @@ Console.WriteLine("\nFont embedded successfully in a PDF file.\nFile saved at " 
 
 
 ```csharp
+// Belgeler dizininin yolu.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-            
-            // Belgeler dizininin yolu.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
+//Mevcut bir PDF dosyasını yükleyin
+Document doc = new Document(dataDir + "input.pdf");
 
-            // Mevcut bir PDF dosyasını yükleyin
-            Document doc = new Document(dataDir + "input.pdf");
+// Tüm sayfaları yineleyin
+foreach (Page page in doc.Pages)
+{
+	if (page.Resources.Fonts != null)
+	{
+		foreach (Aspose.Pdf.Text.Font pageFont in page.Resources.Fonts)
+		{
+			// Yazı tipinin zaten gömülü olup olmadığını kontrol edin
+			if (!pageFont.IsEmbedded)
+				pageFont.IsEmbedded = true;
+		}
+	}
 
-            // Tüm sayfaları yineleyin
-            foreach (Page page in doc.Pages)
-            {
-                if (page.Resources.Fonts != null)
-                {
-                    foreach (Aspose.Pdf.Text.Font pageFont in page.Resources.Fonts)
-                    {
-                        // Yazı tipinin zaten gömülü olup olmadığını kontrol edin
-                        if (!pageFont.IsEmbedded)
-                            pageFont.IsEmbedded = true;
-                    }
-                }
+	// Form nesnelerini kontrol edin
+	foreach (XForm form in page.Resources.Forms)
+	{
+		if (form.Resources.Fonts != null)
+		{
+			foreach (Aspose.Pdf.Text.Font formFont in form.Resources.Fonts)
+			{
+				// Yazı tipinin gömülü olup olmadığını kontrol edin
+				if (!formFont.IsEmbedded)
+					formFont.IsEmbedded = true;
+			}
+		}
+	}
+}
+dataDir = dataDir + "EmbedFont_out.pdf";
+// PDF Belgesini Kaydet
+doc.Save(dataDir);
 
-                // Form nesnelerini kontrol edin
-                foreach (XForm form in page.Resources.Forms)
-                {
-                    if (form.Resources.Fonts != null)
-                    {
-                        foreach (Aspose.Pdf.Text.Font formFont in form.Resources.Fonts)
-                        {
-                            // Yazı tipinin gömülü olup olmadığını kontrol edin
-                            if (!formFont.IsEmbedded)
-                                formFont.IsEmbedded = true;
-                        }
-                    }
-                }
-            }
-            dataDir = dataDir + "EmbedFont_out.pdf";
-            // PDF Belgesini Kaydet
-            doc.Save(dataDir);
-            
-            Console.WriteLine("\nFont embedded successfully in a PDF file.\nFile saved at " + dataDir);
-        
+Console.WriteLine("\nFont embedded successfully in a PDF file.\nFile saved at " + dataDir);
 ```
 
 

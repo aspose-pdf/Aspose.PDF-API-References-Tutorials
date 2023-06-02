@@ -91,9 +91,7 @@ doc.Save(dataDir + @"Multilayer-2ndApproach_out.pdf");
 
 ### Пример исходного кода для создания многослойного PDF второго подхода с использованием Aspose.PDF для .NET.
 
-```csharp
-
-            
+```csharp   
 // Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
@@ -126,8 +124,6 @@ ImageFloatingBox.ZIndex = 2;
 ImageFloatingBox.Paragraphs.Add(image1);
 
 doc.Save(dataDir + @"Multilayer-2ndApproach_out.pdf");
-            
-        
 ```
 
 ## Заключение

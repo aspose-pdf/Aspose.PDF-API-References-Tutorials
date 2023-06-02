@@ -20,7 +20,7 @@ Aspose.PDF for .NET هي واجهة برمجة تطبيقات معالجة مس�
 
 
 
-## 1. قم بإنشاء تطبيق وحدة تحكم C # جديد
+## 1. إنشاء تطبيق وحدة تحكم C # جديد
 
 أولاً ، قم بإنشاء تطبيق وحدة تحكم C # جديد في Microsoft Visual Studio. لإنشاء تطبيق وحدة تحكم جديد ، حدد "ملف"> "جديد"> "مشروع"> "Visual C #"> "تطبيق وحدة التحكم" من القائمة الرئيسية.
 
@@ -79,23 +79,21 @@ freetext.Contents = "Free Text
 
 ### مثال على التعليمات البرمجية المصدر لـ Set Free Text Annotation Formatting باستخدام Aspose.PDF for .NET
 ```csharp
+// المسار إلى دليل المستندات.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// المسار إلى دليل المستندات.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	
-	// افتح المستند
-	Document pdfDocument = new Document(dataDir + "SetFreeTextAnnotationFormatting.pdf");
+// افتح المستند
+Document pdfDocument = new Document(dataDir + "SetFreeTextAnnotationFormatting.pdf");
 
-	// إنشاء كائن DefaultAppearance
-	DefaultAppearance default_appearance = new DefaultAppearance("Arial", 28, System.Drawing.Color.Red);
-	// أنشئ تعليقًا توضيحيًا
-	FreeTextAnnotation freetext = new FreeTextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600), default_appearance);
-	// حدد محتويات التعليق التوضيحي
-	freetext.Contents = "Free Text";
-	// إضافة شرح إلى مجموعة التعليقات التوضيحية للصفحة
-	pdfDocument.Pages[1].Annotations.Add(freetext);
-	dataDir = dataDir + "SetFreeTextAnnotationFormatting_out.pdf";
-	//احفظ المستند المحدث
-	pdfDocument.Save(dataDir);            
- 
+// إنشاء كائن DefaultAppearance
+DefaultAppearance default_appearance = new DefaultAppearance("Arial", 28, System.Drawing.Color.Red);
+// أنشئ تعليقًا توضيحيًا
+FreeTextAnnotation freetext = new FreeTextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600), default_appearance);
+// حدد محتويات التعليق التوضيحي
+freetext.Contents = "Free Text";
+// إضافة شرح إلى مجموعة التعليقات التوضيحية للصفحة
+pdfDocument.Pages[1].Annotations.Add(freetext);
+dataDir = dataDir + "SetFreeTextAnnotationFormatting_out.pdf";
+// احفظ المستند المحدث
+pdfDocument.Save(dataDir);            
 ```

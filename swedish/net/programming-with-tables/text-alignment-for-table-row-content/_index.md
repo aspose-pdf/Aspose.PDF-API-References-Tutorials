@@ -1,0 +1,120 @@
+---
+title: Textjustering för tabellradinnehåll
+linktitle: Textjustering för tabellradinnehåll
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du justerar radinnehåll i en PDF-tabell med Aspose.PDF för .NET.
+type: docs
+weight: 210
+url: /sv/net/programming-with-tables/text-alignment-for-table-row-content/
+---
+
+I den här handledningen guidar vi dig steg för steg för att anpassa innehållet i en rad i en tabell i ett PDF-dokument med Aspose.PDF för .NET. Vi kommer att förklara den medföljande C#-källkoden och visa dig hur du implementerar den.
+
+## Steg 1: Skapa PDF-dokumentet
+Först skapar vi PDF-dokumentet:
+
+```csharp
+var dataDir = "YOUR DOCUMENTS DIRECTORY";
+Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
+```
+
+## Steg 2: Tabellinitiering
+Därefter kommer vi att initiera tabellen:
+
+```csharp
+Aspose.Pdf.Table table = new Aspose.Pdf.Table();
+```
+
+## Steg 3: Ställa in bordets kantfärg
+Vi kommer att konfigurera tabellkantfärgen:
+
+```csharp
+table.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
+```
+
+## Steg 4: Konfigurera tabellcellskanten
+Vi kommer att konfigurera tabellcellsgränsen:
+
+```csharp
+table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
+```
+
+## Steg 5: Slinga för att lägga till 10 rader i tabellen
+Vi kommer nu att använda en slinga för att lägga till 10 rader i tabellen:
+
+```csharp
+for (int row_count = 0; row_count < 10; row_count++)
+{
+     Aspose.Pdf.Row row = table.Rows.Add();
+     row.VerticalAlignment = VerticalAlignment.Center;
+
+     row.Cells.Add("Column("+row_count+",1)"+DateTime.Now.Ticks);
+     row.Cells.Add("Column("+row_count+",2)");
+     row.Cells.Add("Column("+row_count+",3)");
+}
+```
+
+## Steg 6: Konfigurera den vertikala linjejusteringen
+Vi kommer att konfigurera den vertikala justeringen av tabellens rader:
+
+```csharp
+row.VerticalAlignment = VerticalAlignment.Center;
+```
+
+## Steg 7: Lägga till innehåll i radceller
+Vi kommer att lägga till innehåll i radcellerna:
+
+```csharp
+row.Cells.Add("Column("+row_count+",1)"+DateTime.Now.Ticks);
+row.Cells.Add("Column("+row_count+",2)");
+row.Cells.Add("Column("+row_count+",3)");
+```
+
+## Steg 8: Lägga till tabellen på dokumentsidan
+Låt oss nu lägga till tabellen på dokumentsidan:
+
+```csharp
+Page tocPage = doc.Pages.Add();
+tocPage.Paragraphs.Add(table);
+```
+
+## Steg 9: Spara PDF-dokumentet
+Slutligen kommer vi att spara PDF-dokumentet:
+
+```csharp
+doc.Save(dataDir + "43620_ByWords_out.pdf");
+```
+
+### Exempel på källkod för textjustering för innehåll i tabellrader med Aspose.Words för .NET
+
+```csharp
+var dataDir = "YOUR DOCUMENT DIRECTORY";
+
+// Skapa PDF-dokument
+Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
+// Initierar en ny instans av tabellen
+Aspose.Pdf.Table table = new Aspose.Pdf.Table();
+// Ställ in bordets kantfärg som ljusgrå
+table.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
+// ställ in gränsen för tabellceller
+table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
+// skapa en slinga för att lägga till 10 rader
+for (int row_count = 0; row_count < 10; row_count++)
+{
+	// lägg till rad i tabellen
+	Aspose.Pdf.Row row = table.Rows.Add();
+	row.VerticalAlignment = VerticalAlignment.Center;
+
+	row.Cells.Add("Column (" + row_count + ", 1)" + DateTime.Now.Ticks);
+	row.Cells.Add("Column (" + row_count + ", 2)");
+	row.Cells.Add("Column (" + row_count + ", 3)");
+}
+Page tocPage = doc.Pages.Add();
+// Lägg till tabellobjekt på första sidan i inmatningsdokumentet
+tocPage.Paragraphs.Add(table);
+// Spara uppdaterat dokument som innehåller tabellobjekt
+doc.Save(dataDir + "43620_ByWords_out.pdf");
+```
+
+## Slutsats
+Grattis! Du har nu lärt dig hur du justerar innehållet i en rad i en tabell i ett PDF-dokument med Aspose.PDF för .NET. Den här steg-för-steg-guiden visade hur du skapar ett dokument, initierar en tabell, konfigurerar kantlinje och justering, lägger till innehåll och sparar PDF-dokumentet. Nu kan du tillämpa denna kunskap i dina egna projekt.

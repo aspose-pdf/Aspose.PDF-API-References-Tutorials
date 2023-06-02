@@ -79,23 +79,21 @@ freetext.Contents = "Free Text
 
 ### Beispielquellcode für die Formatierung freier Textanmerkungen mithilfe von Aspose.PDF für .NET
 ```csharp
+// Der Pfad zum Dokumentenverzeichnis.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Der Pfad zum Dokumentenverzeichnis.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	
-	// Dokument öffnen
-	Document pdfDocument = new Document(dataDir + "SetFreeTextAnnotationFormatting.pdf");
+// Dokument öffnen
+Document pdfDocument = new Document(dataDir + "SetFreeTextAnnotationFormatting.pdf");
 
-	// Instanziieren Sie das DefaultAppearance-Objekt
-	DefaultAppearance default_appearance = new DefaultAppearance("Arial", 28, System.Drawing.Color.Red);
-	// Anmerkung erstellen
-	FreeTextAnnotation freetext = new FreeTextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600), default_appearance);
-	// Geben Sie den Inhalt der Anmerkung an
-	freetext.Contents = "Free Text";
-	// Fügen Sie eine Anmerkung zur Anmerkungssammlung der Seite hinzu
-	pdfDocument.Pages[1].Annotations.Add(freetext);
-	dataDir = dataDir + "SetFreeTextAnnotationFormatting_out.pdf";
-	//Speichern Sie das aktualisierte Dokument
-	pdfDocument.Save(dataDir);            
- 
+// Instanziieren Sie das DefaultAppearance-Objekt
+DefaultAppearance default_appearance = new DefaultAppearance("Arial", 28, System.Drawing.Color.Red);
+// Anmerkung erstellen
+FreeTextAnnotation freetext = new FreeTextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600), default_appearance);
+// Geben Sie den Inhalt der Anmerkung an
+freetext.Contents = "Free Text";
+// Fügen Sie eine Anmerkung zur Anmerkungssammlung der Seite hinzu
+pdfDocument.Pages[1].Annotations.Add(freetext);
+dataDir = dataDir + "SetFreeTextAnnotationFormatting_out.pdf";
+// Speichern Sie das aktualisierte Dokument
+pdfDocument.Save(dataDir);            
 ```

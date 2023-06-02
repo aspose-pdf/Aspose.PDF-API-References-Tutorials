@@ -47,19 +47,17 @@ Siguiendo esta guía paso a paso, ahora puede optimizar fácilmente sus document
 ### Ejemplo de código fuente para optimizar documentos PDF usando Aspose.PDF para .NET
 
 ```csharp
+// La ruta al directorio de documentos.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// La ruta al directorio de documentos.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Abrir documento
+Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 
-	// Abrir documento
-	Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
+// Optimizar para web
+pdfDocument.Optimize();
 
-	// Optimizar para web
-	pdfDocument.Optimize();
+dataDir = dataDir + "OptimizeDocument_out.pdf";
 
-	dataDir = dataDir + "OptimizeDocument_out.pdf";
-
-	// Guardar documento de salida
-	pdfDocument.Save(dataDir);
-
+// Guardar documento de salida
+pdfDocument.Save(dataDir);
 ```

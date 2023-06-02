@@ -1,7 +1,7 @@
 ---
 title: Lägg till Ta bort Javascript till Doc
 linktitle: Lägg till Ta bort Javascript till Doc
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du lägger till och tar bort JavaScript från PDF-dokument med Aspose.PDF för .NET. Steg-för-steg-guide med kodhandledning för skript på dokumentnivå.
 type: docs
 weight: 30
@@ -12,7 +12,7 @@ För att lägga till och ta bort JavaScript från PDF-dokument kommer vi att anv
 
 ## Steg 1: Skapa ett nytt PDF-dokument
 
- Börja med att skapa en ny instans av`Document` klass tillhandahållen av Aspose.PDF för .NET. Detta kommer att fungera som PDF-dokumentet där vi lägger till JavaScript.
+ Börja med att skapa en ny instans av`Document`klass tillhandahållen av Aspose.PDF för .NET. Detta kommer att fungera som PDF-dokumentet där vi lägger till JavaScript.
 
 ```csharp
 // Sökvägen till dokumentkatalogen.
@@ -66,32 +66,29 @@ Denna kod sparar det ändrade PDF-dokumentet och visar framgångsmeddelandet.
 ### Exempel på källkod för Lägg till Ta bort Javascript från PDF-dokument med Aspose.PDF för .NET
 
 ```csharp
+// Sökvägen till dokumentkatalogen.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-            
-            // Sökvägen till dokumentkatalogen.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
+Document doc = new Document();
+doc.Pages.Add();
+doc.JavaScript["func1"] = "function func1() { hello(); }";
+doc.JavaScript["func2"] = "function func2() { hello(); }";
+doc.Save(dataDir + "AddJavascript.pdf");
 
-            Document doc = new Document();
-            doc.Pages.Add();
-            doc.JavaScript["func1"] = "function func1() { hello(); }";
-            doc.JavaScript["func2"] = "function func2() { hello(); }";
-            doc.Save(dataDir + "AddJavascript.pdf");
+// Ta bort JavaScript på dokumentnivå
+Document doc1 = new Document(dataDir + "AddJavascript.pdf");
+IList keys = (System.Collections.IList)doc1.JavaScript.Keys;
+Console.WriteLine("=============================== ");
+foreach (string key in keys)
+{
+	Console.WriteLine(key + " ==> " + doc1.JavaScript[key]);
+}
 
-            // Ta bort JavaScript på dokumentnivå
-            Document doc1 = new Document(dataDir + "AddJavascript.pdf");
-            IList keys = (System.Collections.IList)doc1.JavaScript.Keys;
-            Console.WriteLine("=============================== ");
-            foreach (string key in keys)
-            {
-                Console.WriteLine(key + " ==> " + doc1.JavaScript[key]);
-            }
+doc1.JavaScript.Remove("func1");
+Console.WriteLine("Key 'func1' removed ");
+Console.WriteLine("=============================== ");
 
-            doc1.JavaScript.Remove("func1");
-            Console.WriteLine("Key 'func1' removed ");
-            Console.WriteLine("=============================== ");
-            
-            Console.WriteLine("\nJavascript added/removed successfully to a document.");
-        
+Console.WriteLine("\nJavascript added/removed successfully to a document.");
 ```
 
 ## Slutsats

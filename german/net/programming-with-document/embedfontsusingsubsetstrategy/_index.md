@@ -58,19 +58,14 @@ doc.Save(dataDir + "Output_out.pdf");
 ### Beispielquellcode zum Einbetten von Schriftarten mit Teilmengenstrategie unter Verwendung von Aspose.PDF für .NET. 
 
 ```csharp
-
-            
-            // Der Pfad zum Dokumentenverzeichnis.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
-            Document doc = new Document(dataDir + "input.pdf");
-            // Bei SubsetAllFonts werden alle Schriftarten als Teilmenge in das Dokument eingebettet.
-            doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
-            // Bei vollständig eingebetteten Schriftarten wird eine Teilmenge der Schriftarten eingebettet, Schriftarten, die nicht in das Dokument eingebettet sind, sind jedoch nicht betroffen.
-            doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
-            doc.Save(dataDir + "Output_out.pdf");
-            
-
-        
+// Der Pfad zum Dokumentenverzeichnis.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+Document doc = new Document(dataDir + "input.pdf");
+// Bei SubsetAllFonts werden alle Schriftarten als Teilmenge in das Dokument eingebettet.
+doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
+// Bei vollständig eingebetteten Schriftarten wird eine Teilmenge der Schriftarten eingebettet, Schriftarten, die nicht in das Dokument eingebettet sind, sind jedoch nicht betroffen.
+doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
+doc.Save(dataDir + "Output_out.pdf");
 ```
 
 ## Abschluss

@@ -80,47 +80,44 @@ Ecco il codice sorgente completo per incorporare un font utilizzando Aspose.PDF 
 
 
 ```csharp
+// Il percorso della directory dei documenti.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-            
-            // Il percorso della directory dei documenti.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
+//Carica un file PDF esistente
+Document doc = new Document(dataDir + "input.pdf");
 
-            // Carica un file PDF esistente
-            Document doc = new Document(dataDir + "input.pdf");
+// Scorri tutte le pagine
+foreach (Page page in doc.Pages)
+{
+	if (page.Resources.Fonts != null)
+	{
+		foreach (Aspose.Pdf.Text.Font pageFont in page.Resources.Fonts)
+		{
+			// Controlla se il carattere è già incorporato
+			if (!pageFont.IsEmbedded)
+				pageFont.IsEmbedded = true;
+		}
+	}
 
-            // Scorri tutte le pagine
-            foreach (Page page in doc.Pages)
-            {
-                if (page.Resources.Fonts != null)
-                {
-                    foreach (Aspose.Pdf.Text.Font pageFont in page.Resources.Fonts)
-                    {
-                        // Controlla se il carattere è già incorporato
-                        if (!pageFont.IsEmbedded)
-                            pageFont.IsEmbedded = true;
-                    }
-                }
+	// Controlla gli oggetti Form
+	foreach (XForm form in page.Resources.Forms)
+	{
+		if (form.Resources.Fonts != null)
+		{
+			foreach (Aspose.Pdf.Text.Font formFont in form.Resources.Fonts)
+			{
+				// Controlla se il carattere è incorporato
+				if (!formFont.IsEmbedded)
+					formFont.IsEmbedded = true;
+			}
+		}
+	}
+}
+dataDir = dataDir + "EmbedFont_out.pdf";
+// Salva documento PDF
+doc.Save(dataDir);
 
-                // Controlla gli oggetti Form
-                foreach (XForm form in page.Resources.Forms)
-                {
-                    if (form.Resources.Fonts != null)
-                    {
-                        foreach (Aspose.Pdf.Text.Font formFont in form.Resources.Fonts)
-                        {
-                            // Controlla se il carattere è incorporato
-                            if (!formFont.IsEmbedded)
-                                formFont.IsEmbedded = true;
-                        }
-                    }
-                }
-            }
-            dataDir = dataDir + "EmbedFont_out.pdf";
-            // Salva documento PDF
-            doc.Save(dataDir);
-            
-            Console.WriteLine("\nFont embedded successfully in a PDF file.\nFile saved at " + dataDir);
-        
+Console.WriteLine("\nFont embedded successfully in a PDF file.\nFile saved at " + dataDir);
 ```
 
 

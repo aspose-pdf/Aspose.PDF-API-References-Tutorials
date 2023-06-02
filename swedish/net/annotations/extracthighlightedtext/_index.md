@@ -1,7 +1,7 @@
 ---
 title: Extrahera markerad text
 linktitle: Extrahera markerad text
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du extraherar markerad text med Aspose.PDF för .NET med denna steg-för-steg-guide.
 type: docs
 weight: 60
@@ -64,22 +64,21 @@ foreach (TextFragment tf in collection)
 ### Exempel på källkod för extrahera markerad text med Aspose.PDF för .NET
 
 ```csharp
+// Sökvägen till dokumentkatalogen.
+string dataDir ="YOUR DOCUMENT DIRECTORY";
+Document doc = new Document(dataDir + "ExtractHighlightedText.pdf");
 
-	// Sökvägen till dokumentkatalogen.
-	string dataDir ="YOUR DOCUMENT DIRECTORY";
-	Document doc = new Document(dataDir + "ExtractHighlightedText.pdf");
-
-	foreach (Annotation annotation in doc.Pages[1].Annotations)
+foreach (Annotation annotation in doc.Pages[1].Annotations)
+{
+	if (annotation is TextMarkupAnnotation)
 	{
-		if (annotation is TextMarkupAnnotation)
+		TextMarkupAnnotation highlightedAnnotation = annotation as TextMarkupAnnotation;
+		TextFragmentCollection collection = highlightedAnnotation.GetMarkedTextFragments();
+		foreach (TextFragment tf in collection)
 		{
-			TextMarkupAnnotation highlightedAnnotation = annotation as TextMarkupAnnotation;
-			TextFragmentCollection collection = highlightedAnnotation.GetMarkedTextFragments();
-			foreach (TextFragment tf in collection)
-			{
-				Console.WriteLine(tf.Text);
-			}
+			Console.WriteLine(tf.Text);
 		}
 	}
+}
 ```
 

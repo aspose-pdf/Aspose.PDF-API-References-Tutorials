@@ -33,7 +33,7 @@ using (Document document = new Document(fs))
 
 ## 3. Adım: Varsayılan yazı tipini ayarlayın
 
- Ardından, kullanarak PDF belgesi için varsayılan yazı tipini ayarlayacağız.`PdfSaveOptions`sınıf. Bu örnekte, varsayılan yazı tipini "Arial" olarak ayarlayacağız.
+ Ardından, kullanarak PDF belgesi için varsayılan yazı tipini ayarlayacağız.`PdfSaveOptions` sınıf. Bu örnekte, varsayılan yazı tipini "Arial" olarak ayarlayacağız.
 
 ```csharp
 PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
@@ -51,19 +51,17 @@ document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
 ### Aspose.PDF for .NET kullanarak Varsayılan Yazı Tipini Ayarlamak için Örnek Kaynak Kodu
 
 ```csharp
-	
-	// Belgeler dizininin yolu.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Mevcut bir PDF belgesini eksik yazı tipiyle yükleyin
-	string documentName = dataDir + "input.pdf";
-	string newName = "Arial";
-	using (System.IO.FileStream fs = new System.IO.FileStream(documentName, System.IO.FileMode.Open))
-	using (Document document = new Document(fs))
-	{
-		PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
-		// Varsayılan Yazı Tipi Adını Belirtin
-		pdfSaveOptions.DefaultFontName = newName;
-		document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
-	}
-	
+// Belgeler dizininin yolu.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Mevcut bir PDF belgesini eksik yazı tipiyle yükleyin
+string documentName = dataDir + "input.pdf";
+string newName = "Arial";
+using (System.IO.FileStream fs = new System.IO.FileStream(documentName, System.IO.FileMode.Open))
+using (Document document = new Document(fs))
+{
+	PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
+	// Varsayılan Yazı Tipi Adını Belirtin
+	pdfSaveOptions.DefaultFontName = newName;
+	document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
+}
 ```

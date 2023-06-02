@@ -1,7 +1,7 @@
 ---
 title: Ta bort teckensnitt
 linktitle: Ta bort teckensnitt
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du använder Aspose.PDF för .NET för att få Unembed Fonts och optimera PDF-filer. En steg-för-steg-guide.
 type: docs
 weight: 370
@@ -24,7 +24,7 @@ Ersätt "DIN DOKUMENTKATOLOG" med den faktiska sökvägen till katalogen där di
 
 ## Steg 2: Öppna PDF-dokumentet
 
- Det första steget är att ladda PDF-dokumentet som du vill göra detta, använd`Document` klass av Aspose.PDF för .NET. Följande kodavsnitt visar hur du laddar PDF-dokumentet:
+Det första steget är att ladda PDF-dokumentet som du vill göra detta, använd`Document` klass av Aspose.PDF för .NET. Följande kodavsnitt visar hur du laddar PDF-dokumentet:
 
 ```csharp
 // Öppna dokumentet
@@ -45,7 +45,7 @@ var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 
 ## Steg 4: Optimera PDF-dokumentet
 
-Efter att ha ställt in`UnembedFonts` alternativet kan du optimera PDF-dokumentet med hjälp av`OptimizeResources` metod för`Document` klass. Följande kodavsnitt visar hur du optimerar PDF-dokumentet:
+ Efter att ha ställt in`UnembedFonts` alternativet kan du optimera PDF-dokumentet med hjälp av`OptimizeResources` metod för`Document` klass. Följande kodavsnitt visar hur du optimerar PDF-dokumentet:
 
 ```csharp
 // Optimera PDF-dokument med OptimizationOptions
@@ -63,7 +63,7 @@ pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
 
 ## Steg 6: Skaffa den ursprungliga och reducerade filstorleken
 
- Slutligen kan du få den ursprungliga och reducerade filstorleken för PDF-dokumentet med hjälp av`FileInfo` klass av System.IO. Följande kodavsnitt visar hur du får den ursprungliga och reducerade filstorleken:
+ Slutligen kan du få den ursprungliga och reducerade filstorleken för PDF-dokumentet med hjälp av`FileInfo`klass av System.IO. Följande kodavsnitt visar hur du får den ursprungliga och reducerade filstorleken:
 
 ```csharp
 var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
@@ -76,24 +76,22 @@ Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length,
 Här är det kompletta exemplet på källkoden för att hämta inbäddade teckensnitt från ett PDF-dokument med Aspose.PDF för .NET:
 
 ```csharp
-	
-	// Sökvägen till dokumentkatalogen.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Öppna dokumentet
-	Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-	// Ställ in alternativet UnembedFonts
-	var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-	{
-		UnembedFonts = true
-	};
-	Console.WriteLine("Start");
-	// Optimera PDF-dokument med OptimizationOptions
-	pdfDocument.OptimizeResources(optimizeOptions);
-	// Spara uppdaterat dokument
-	pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
-	Console.WriteLine("Finished");
-	var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
-	var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
-	Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
-	
+// Sökvägen till dokumentkatalogen.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Öppna dokumentet
+Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
+// Ställ in alternativet UnembedFonts
+var optimizeOptions = new Pdf.Optimization.OptimizationOptions
+{
+	UnembedFonts = true
+};
+Console.WriteLine("Start");
+// Optimera PDF-dokument med OptimizationOptions
+pdfDocument.OptimizeResources(optimizeOptions);
+// Spara uppdaterat dokument
+pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
+Console.WriteLine("Finished");
+var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
+var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
+Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
 ```

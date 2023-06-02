@@ -60,35 +60,33 @@ Console.WriteLine("\nFile informations setup successfully.\nFile saved at " + da
 
 Вы успешно установили информацию о файле для документа PDF, используя Aspose.PDF для .NET.
 
-## Заключение
-
-В заключение, Aspose.PDF для .NET предоставляет простой и эффективный способ установки информации о файлах для документов PDF. Следуя вышеупомянутым шагам, вы можете легко установить желаемые значения информации о файле для ваших документов PDF, используя исходный код C#.
-
 ### Пример исходного кода для установки информации о файле с использованием Aspose.PDF для .NET
 
 
 ```csharp
+// Путь к каталогу документов.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Путь к каталогу документов.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Открыть документ
+Document pdfDocument = new Document(dataDir + "SetFileInfo.pdf");
 
-	// Открыть документ
-	Document pdfDocument = new Document(dataDir + "SetFileInfo.pdf");
+// Укажите информацию о документе
+DocumentInfo docInfo = new DocumentInfo(pdfDocument);
 
-	// Укажите информацию о документе
-	DocumentInfo docInfo = new DocumentInfo(pdfDocument);
+docInfo.Author = "Aspose";
+docInfo.CreationDate = DateTime.Now;
+docInfo.Keywords = "Aspose.Pdf, DOM, API";
+docInfo.ModDate = DateTime.Now;
+docInfo.Subject = "PDF Information";
+docInfo.Title = "Setting PDF Document Information";
 
-	docInfo.Author = "Aspose";
-	docInfo.CreationDate = DateTime.Now;
-	docInfo.Keywords = "Aspose.Pdf, DOM, API";
-	docInfo.ModDate = DateTime.Now;
-	docInfo.Subject = "PDF Information";
-	docInfo.Title = "Setting PDF Document Information";
+dataDir = dataDir + "SetFileInfo_out.pdf";
+// Сохранить выходной документ
+pdfDocument.Save(dataDir);
 
-	dataDir = dataDir + "SetFileInfo_out.pdf";
-	// Сохранить выходной документ
-	pdfDocument.Save(dataDir);
-	
-	Console.WriteLine("\nFile informations setup successfully.\nFile saved at " + dataDir);
-	
+Console.WriteLine("\nFile informations setup successfully.\nFile saved at " + dataDir);
 ```
+
+## Заключение
+
+В заключение, Aspose.PDF для .NET предоставляет простой и эффективный способ установки информации о файлах для документов PDF. Следуя вышеупомянутым шагам, вы можете легко установить желаемые значения информации о файле для ваших документов PDF, используя исходный код C#.

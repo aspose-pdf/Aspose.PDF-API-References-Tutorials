@@ -33,7 +33,7 @@ using (Document document = new Document(fs))
 
 ## الخطوة 3: تعيين الخط الافتراضي
 
- بعد ذلك ، سنقوم بتعيين الخط الافتراضي لمستند PDF باستخدام امتداد`PdfSaveOptions`فصل. في هذا المثال ، سنقوم بتعيين الخط الافتراضي على "Arial".
+ بعد ذلك ، سنقوم بتعيين الخط الافتراضي لمستند PDF باستخدام امتداد`PdfSaveOptions` فصل. في هذا المثال ، سنقوم بتعيين الخط الافتراضي على "Arial".
 
 ```csharp
 PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
@@ -51,19 +51,17 @@ document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
 ### مثال التعليمات البرمجية المصدر لتعيين الخط الافتراضي باستخدام Aspose.PDF لـ .NET
 
 ```csharp
-	
-	// المسار إلى دليل المستندات.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// قم بتحميل مستند PDF موجود بخط مفقود
-	string documentName = dataDir + "input.pdf";
-	string newName = "Arial";
-	using (System.IO.FileStream fs = new System.IO.FileStream(documentName, System.IO.FileMode.Open))
-	using (Document document = new Document(fs))
-	{
-		PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
-		// حدد اسم الخط الافتراضي
-		pdfSaveOptions.DefaultFontName = newName;
-		document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
-	}
-	
+// المسار إلى دليل المستندات.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// قم بتحميل مستند PDF موجود بخط مفقود
+string documentName = dataDir + "input.pdf";
+string newName = "Arial";
+using (System.IO.FileStream fs = new System.IO.FileStream(documentName, System.IO.FileMode.Open))
+using (Document document = new Document(fs))
+{
+	PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
+	// حدد اسم الخط الافتراضي
+	pdfSaveOptions.DefaultFontName = newName;
+	document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
+}
 ```

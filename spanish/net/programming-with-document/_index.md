@@ -32,7 +32,6 @@ El recurso incluye tutoriales sobre la programación de la biblioteca Aspose.PDF
 | [Obtenga advertencias para la sustitución de fuentes](./getwarningsforfontsubstitution/) | Aprenda a usar la función GetWarningsForFontSubstitution de Aspose.PDF para .NET para detectar advertencias de sustitución de fuentes al abrir un documento PDF. |  
 | [Obtener metadatos XMP](./getxmpmetadata/) | Aprenda a usar la función GetXmpMetadata de Aspose.PDF para .NET para extraer metadatos XMP de un documento PDF usando el código fuente de C#. |  
 | [Obtenga advertencias para la sustitución de fuentes](./getwarningsforfontsubstitution/) | Aprenda a usar la función GetWarningsForFontSubstitution de Aspose.PDF para .NET para detectar advertencias de sustitución de fuentes al abrir un documento PDF. |  
-| [Obtener metadatos XMP](./getxmpmetadata/) | Aprenda a usar la función GetXmpMetadata de Aspose.PDF para .NET para extraer metadatos XMP de un documento PDF usando el código fuente de C#. |  
 | [Obtener factor de zoom](./getzoomfactor/) | Aprenda a usar Aspose.PDF para .NET para obtener el factor de zoom de un archivo PDF con esta guía paso a paso. |  
 | [Ocultar números de página en la tabla de contenido](./hidepagenumbersintoc/) | Aprenda a ocultar números de página en una tabla de contenido usando Aspose.PDF para .NET con esta guía paso a paso. |  
 | [Vincular secuencias duplicadas](./linkduplicatestreams/) | Aprenda a usar Aspose.PDF para la función .NET Vincular secuencias duplicadas para optimizar sus documentos PDF con esta guía paso a paso. |  
@@ -48,6 +47,6 @@ El recurso incluye tutoriales sobre la programación de la biblioteca Aspose.PDF
 | [Establecer factor de zoom](./setzoomfactor/) | Aprenda a configurar el factor de zoom para archivos PDF usando Aspose.PDF para .NET con nuestra guía paso a paso. |  
 | [Reducir documentos](./shrinkdocuments/) | Aprenda a usar Aspose.PDF para .NET para reducir documentos PDF con esta guía paso a paso.  |  
 | [Fuentes desincrustadas](./unembedfonts/) | Aprenda a usar Aspose.PDF para .NET para obtener fuentes no incrustadas y optimizar archivos PDF. Una guía paso a paso. |  
-| [Validar PDFABEstándar](./validatepdfabstandard/) | Aprenda a usar Aspose.PDF para .NET para validar documentos PDF con PDFABStandard con nuestra guía paso a paso y código de ejemplo. |  
-| [Validar PDFAStándar](./validatepdfastandard/) | Aprenda a usar Aspose.PDF para .NET para validar archivos PDF para PDFAStandard con esta guía paso a paso. |  
-| [Validar estándar PDFUA](./validatepdfuastandard/) | Aprenda a usar Aspose.PDF para .NET para validar el estándar PDFUA con el código C#. Guía paso por paso. |  
+| [Validar estándar PDF AB](./validatepdfabstandard/) | Aprenda a usar Aspose.PDF para .NET para validar documentos PDF con PDFABStandard con nuestra guía paso a paso y código de ejemplo. |  
+| [Validar PDF A Estándar](./validatepdfastandard/) | Aprenda a usar Aspose.PDF para .NET para validar archivos PDF para PDFAStandard con esta guía paso a paso. |  
+| [Validar estándar PDF UA](./validatepdfuastandard/) | Aprenda a usar Aspose.PDF para .NET para validar el estándar PDFUA con el código C#. Guía paso por paso. |  

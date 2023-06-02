@@ -57,49 +57,45 @@ Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
  فيما يلي رمز المصدر الكامل لاسترداد خصائص نافذة مستند PDF باستخدام امتداد`GetDocumentWindow` ميزة Aspose.PDF لـ .NET:
 
 ```csharp
+// المسار إلى دليل المستندات.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-            
-            // المسار إلى دليل المستندات.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
+// افتح المستند
+Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
 
-            // افتح المستند
-            Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
+// الحصول على خصائص وثيقة مختلفة
+// موضع نافذة المستند - الافتراضي: خطأ
+Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
 
-            // الحصول على خصائص وثيقة مختلفة
-            // موضع نافذة المستند - الافتراضي: خطأ
-            Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
-   
-            // ترتيب القراءة السائد ؛ يحدد موضع الصفحة
-            // عند عرضها جنبًا إلى جنب - الافتراضي: L2R
-            Console.WriteLine("Direction : {0}", pdfDocument.Direction);
-            
-            // ما إذا كان يجب أن يعرض شريط عنوان النافذة عنوان المستند
-            // إذا كان خطأ ، يعرض شريط العنوان اسم ملف PDF - الافتراضي: خطأ
-            Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
-            
-            // ما إذا كان سيتم تغيير حجم نافذة المستند لتناسب حجم
-            // أول صفحة معروضة - الافتراضي: خطأ
-            Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
-            
-            // ما إذا كان سيتم إخفاء شريط قوائم تطبيق العارض - الإعداد الافتراضي: خطأ
-            Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
-            
-            //ما إذا كان سيتم إخفاء شريط الأدوات لتطبيق العارض - الإعداد الافتراضي: خطأ
-            Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
-            
-            // ما إذا كان سيتم إخفاء عناصر واجهة المستخدم مثل أشرطة التمرير
-            // وترك فقط محتويات الصفحة معروضة - الافتراضي: خطأ
-            Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
-            
-            // وضع صفحة المستند. كيفية عرض المستند عند الخروج من وضع ملء الشاشة.
-            Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
-            
-            // تخطيط الصفحة أي صفحة واحدة ، عمود واحد
-            Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
-            
-            // كيف يجب أن يظهر المستند عند فتحه
-            // أي عرض الصور المصغرة ، ملء الشاشة ، إظهار لوحة المرفقات
-            Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
-            
-        
+// ترتيب القراءة السائد ؛ يحدد موضع الصفحة
+// عند عرضها جنبًا إلى جنب - الافتراضي: L2R
+Console.WriteLine("Direction : {0}", pdfDocument.Direction);
+
+// ما إذا كان يجب أن يعرض شريط عنوان النافذة عنوان المستند
+// إذا كان خطأ ، يعرض شريط العنوان اسم ملف PDF - الافتراضي: خطأ
+Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
+
+// ما إذا كان سيتم تغيير حجم نافذة المستند لتناسب حجم
+// أول صفحة معروضة - الافتراضي: خطأ
+Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
+
+// ما إذا كان سيتم إخفاء شريط قوائم تطبيق العارض - الإعداد الافتراضي: خطأ
+Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
+
+//ما إذا كان سيتم إخفاء شريط الأدوات لتطبيق العارض - الإعداد الافتراضي: خطأ
+Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
+
+// ما إذا كان سيتم إخفاء عناصر واجهة المستخدم مثل أشرطة التمرير
+// وترك فقط محتويات الصفحة معروضة - الافتراضي: خطأ
+Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
+
+// وضع صفحة المستند. كيفية عرض المستند عند الخروج من وضع ملء الشاشة.
+Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
+
+// تخطيط الصفحة أي صفحة واحدة ، عمود واحد
+Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
+
+// كيف يجب أن يظهر المستند عند فتحه
+// أي عرض الصور المصغرة ، ملء الشاشة ، إظهار لوحة المرفقات
+Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
 ```

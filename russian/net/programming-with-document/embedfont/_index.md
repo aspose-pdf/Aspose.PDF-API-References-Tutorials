@@ -80,47 +80,44 @@ Console.WriteLine("\nFont embedded successfully in a PDF file.\nFile saved at " 
 
 
 ```csharp
+// Путь к каталогу документов.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-            
-            // Путь к каталогу документов.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
+//Загрузите существующие файлы PDF
+Document doc = new Document(dataDir + "input.pdf");
 
-            // Загрузите существующие файлы PDF
-            Document doc = new Document(dataDir + "input.pdf");
+// Перебрать все страницы
+foreach (Page page in doc.Pages)
+{
+	if (page.Resources.Fonts != null)
+	{
+		foreach (Aspose.Pdf.Text.Font pageFont in page.Resources.Fonts)
+		{
+			// Проверьте, встроен ли уже шрифт
+			if (!pageFont.IsEmbedded)
+				pageFont.IsEmbedded = true;
+		}
+	}
 
-            // Перебрать все страницы
-            foreach (Page page in doc.Pages)
-            {
-                if (page.Resources.Fonts != null)
-                {
-                    foreach (Aspose.Pdf.Text.Font pageFont in page.Resources.Fonts)
-                    {
-                        // Проверьте, встроен ли уже шрифт
-                        if (!pageFont.IsEmbedded)
-                            pageFont.IsEmbedded = true;
-                    }
-                }
+	// Проверка объектов формы
+	foreach (XForm form in page.Resources.Forms)
+	{
+		if (form.Resources.Fonts != null)
+		{
+			foreach (Aspose.Pdf.Text.Font formFont in form.Resources.Fonts)
+			{
+				// Проверьте, встроен ли шрифт
+				if (!formFont.IsEmbedded)
+					formFont.IsEmbedded = true;
+			}
+		}
+	}
+}
+dataDir = dataDir + "EmbedFont_out.pdf";
+// Сохранить PDF-документ
+doc.Save(dataDir);
 
-                // Проверка объектов формы
-                foreach (XForm form in page.Resources.Forms)
-                {
-                    if (form.Resources.Fonts != null)
-                    {
-                        foreach (Aspose.Pdf.Text.Font formFont in form.Resources.Fonts)
-                        {
-                            // Проверьте, встроен ли шрифт
-                            if (!formFont.IsEmbedded)
-                                formFont.IsEmbedded = true;
-                        }
-                    }
-                }
-            }
-            dataDir = dataDir + "EmbedFont_out.pdf";
-            // Сохранить PDF-документ
-            doc.Save(dataDir);
-            
-            Console.WriteLine("\nFont embedded successfully in a PDF file.\nFile saved at " + dataDir);
-        
+Console.WriteLine("\nFont embedded successfully in a PDF file.\nFile saved at " + dataDir);
 ```
 
 

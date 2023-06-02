@@ -1,6 +1,6 @@
 ---
-title: 验证 PDFA 标准
-linktitle: 验证 PDFA 标准
+title: 验证 PDF A 标准
+linktitle: 验证 PDF A 标准
 second_title: Aspose.PDF for .NET API 参考
 description: 通过此分步指南了解如何使用 Aspose.PDF for .NET 验证 PDF 文件是否符合 PDFAStandard。
 type: docs
@@ -35,21 +35,19 @@ Document pdfDocument = new Document(dataDir + "ValidatePDFAStandard.pdf");
 pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1A);
 ```
 
-## 结论
-
-根据各种 PDF 标准验证 PDF 文件是在专业环境中处理 PDF 文件的一个重要方面。 Aspose.PDF for .NET 提供了一个功能强大且易于使用的 API，用于根据各种 PDF 标准（包括 PDF/A-1a）验证 PDF 文件。按照本文提供的分步指南，您可以使用 Aspose.PDF for .NET 快速轻松地验证您的 PDF 文件。
-
 ### 使用 Aspose.PDF for .NET 获取验证 PDFAStandard 的示例源代码
 
 ```csharp
+//文档目录的路径。
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	//文档目录的路径。
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+//打开文档
+Document pdfDocument = new Document(dataDir + "ValidatePDFAStandard.pdf");
 
-	//打开文档
-	Document pdfDocument = new Document(dataDir + "ValidatePDFAStandard.pdf");
-
-	//为 PDF/A-1a 验证 PDF
-	pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1A);
-
+//为 PDF/A-1a 验证 PDF
+pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1A);
 ```
+
+## 结论
+
+根据各种 PDF 标准验证 PDF 文件是在专业环境中处理 PDF 文件的一个重要方面。 Aspose.PDF for .NET 提供了一个功能强大且易于使用的 API，用于根据各种 PDF 标准（包括 PDF/A-1a）验证 PDF 文件。按照本文提供的分步指南，您可以使用 Aspose.PDF for .NET 快速轻松地验证您的 PDF 文件。

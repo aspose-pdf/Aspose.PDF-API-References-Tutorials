@@ -1,7 +1,7 @@
 ---
 title: Ta bort alla kommentarer från sidan
 linktitle: Ta bort alla kommentarer från sidan
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du tar bort alla kommentarer från en PDF-sida med Aspose.PDF för .NET med hjälp av denna steg-för-steg-guide.
 type: docs
 weight: 40
@@ -45,23 +45,23 @@ dataDir = dataDir + "DeleteAllAnnotationsFromPage_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-## Slutsats
-
-I den här artikeln har vi tillhandahållit en steg-för-steg-guide som hjälper dig att förstå hur du tar bort alla kommentarer från en specifik sida i ett PDF-dokument med Aspose.PDF för .NET. Genom att följa stegen som beskrivs i den här guiden kan du enkelt implementera den här funktionen i ditt eget projekt.
-
 ### Exempel på källkod för att ta bort alla kommentarer från sidan med Aspose.PDF för .NET
 
 ```csharp
-	// Sökvägen till dokumentkatalogen.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Sökvägen till dokumentkatalogen.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Öppna dokumentet
-	Document pdfDocument = new Document(dataDir + "DeleteAllAnnotationsFromPage.pdf");
+// Öppna dokumentet
+Document pdfDocument = new Document(dataDir + "DeleteAllAnnotationsFromPage.pdf");
 
-	// Ta bort en viss anteckning
-	pdfDocument.Pages[1].Annotations.Delete();
+// Ta bort en viss anteckning
+pdfDocument.Pages[1].Annotations.Delete();
 
-	dataDir = dataDir + "DeleteAllAnnotationsFromPage_out.pdf";
-	// Spara uppdaterat dokument
-	pdfDocument.Save(dataDir);
+dataDir = dataDir + "DeleteAllAnnotationsFromPage_out.pdf";
+// Spara uppdaterat dokument
+pdfDocument.Save(dataDir);
 ``` 
+
+## Slutsats
+
+I den här artikeln har vi tillhandahållit en steg-för-steg-guide som hjälper dig att förstå hur du tar bort alla kommentarer från en specifik sida i ett PDF-dokument med Aspose.PDF för .NET. Genom att följa stegen som beskrivs i den här guiden kan du enkelt implementera den här funktionen i ditt eget projekt.

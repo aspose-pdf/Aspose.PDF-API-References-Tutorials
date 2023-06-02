@@ -12,7 +12,7 @@ Aspose.PDF pour .NET est une bibliothèque de manipulation et de traitement de d
 ## Chargement du document PDF
 La première étape consiste à charger le document PDF que vous souhaitez modifier. Dans ce didacticiel, nous allons charger un document PDF nommé "input.pdf" à partir du dossier "YOUR DOCUMENT DIRECTORY". 
 
-```
+```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document document = new Document(dataDir + "input.pdf");
 ```
@@ -20,7 +20,7 @@ Document document = new Document(dataDir + "input.pdf");
 ## Recherche de fragments de texte
 Pour rayer des mots ou des phrases spécifiques dans le document PDF, vous devez d'abord les rechercher. Aspose.PDF fournit une classe TextFragmentAbsorber qui peut être utilisée pour rechercher un fragment de texte spécifique dans le document PDF.
 
-```
+```csharp
 Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.TextFragmentAbsorber("Estoque");
 ```
 
@@ -29,7 +29,7 @@ Dans le code ci-dessus, nous recherchons le fragment de texte "Estoque" dans le 
 ## Biffer les fragments de texte
 Après avoir trouvé les fragments de texte, l'étape suivante consiste à les supprimer. Aspose.PDF fournit une classe StrikeOutAnnotation qui peut être utilisée pour créer une annotation barrée pour le fragment de texte. 
 
-```
+```csharp
 Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle((float)textFragment.Position.XIndent, (float)textFragment.Position.YIndent, (float)textFragment.Position.XIndent + (float)textFragment.Rectangle.Width, (float)textFragment.Position.YIndent + (float)textFragment.Rectangle.Height);
 
 StrikeOutAnnotation strikeOut = new StrikeOutAnnotation(textFragment.Page, rect);
@@ -44,7 +44,7 @@ Dans le code ci-dessus, nous créons une annotation barrée pour chaque fragment
 ## Enregistrement du document PDF modifié
 Après avoir supprimé les fragments de texte, enregistrez le document modifié.
 
-```
+```csharp
 dataDir = dataDir + "StrikeOutWords_out.pdf";
 document.Save(dataDir);
 ```
@@ -54,55 +54,50 @@ document.Save(dataDir);
 
 ```csharp
 
-            
-            
-            // Chemin d'accès au répertoire des documents.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Chemin d'accès au répertoire des documents.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-            // Ouvrir le document
-            Document document = new Document(dataDir + "input.pdf");
+// Ouvrir le document
+Document document = new Document(dataDir + "input.pdf");
 
-            // Créer une instance TextFragment Absorber pour rechercher un fragment de texte particulier
-            Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.TextFragmentAbsorber("Estoque");
-            // Parcourir les pages d'un document PDF
-            for (int i = 1; i <= document.Pages.Count; i++)
-            {
-                // Obtenir la première page du document PDF
-                Page page = document.Pages[1];
-                page.Accept(textFragmentAbsorber);
-            }
+// Créer une instance TextFragment Absorber pour rechercher un fragment de texte particulier
+Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.TextFragmentAbsorber("Estoque");
+// Parcourir les pages d'un document PDF
+for (int i = 1; i <= document.Pages.Count; i++)
+{
+	// Obtenir la première page du document PDF
+	Page page = document.Pages[1];
+	page.Accept(textFragmentAbsorber);
+}
 
-            // Créer une collection de texte Absorbé
-            Aspose.Pdf.Text.TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
+// Créer une collection de texte Absorbé
+Aspose.Pdf.Text.TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
 
-            // Itérer sur la collection ci-dessus
-            for (int j = 1; j <= textFragmentCollection.Count; j++)
-            {
-                Aspose.Pdf.Text.TextFragment textFragment = textFragmentCollection[j];
+//Itérer sur la collection ci-dessus
+for (int j = 1; j <= textFragmentCollection.Count; j++)
+{
+	Aspose.Pdf.Text.TextFragment textFragment = textFragmentCollection[j];
 
-                // Obtenir les dimensions rectangulaires de l'objet TextFragment
-                Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle(
-                            (float)textFragment.Position.XIndent,
-                            (float)textFragment.Position.YIndent,
-                            (float)textFragment.Position.XIndent +
-                            (float)textFragment.Rectangle.Width,
-                            (float)textFragment.Position.YIndent +
-                            (float)textFragment.Rectangle.Height);
+	// Obtenir les dimensions rectangulaires de l'objet TextFragment
+	Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle(
+				(float)textFragment.Position.XIndent,
+				(float)textFragment.Position.YIndent,
+				(float)textFragment.Position.XIndent +
+				(float)textFragment.Rectangle.Width,
+				(float)textFragment.Position.YIndent +
+				(float)textFragment.Rectangle.Height);
 
-                // Instancier l'instance d'annotation StrikeOut
-                StrikeOutAnnotation strikeOut = new StrikeOutAnnotation(textFragment.Page, rect);
-                // Définir l'opacité de l'annotation
-                strikeOut.Opacity = .80f;
-                // Définir la bordure de l'instance d'annotation
-                strikeOut.Border = new Border(strikeOut);
-                // Définir la couleur de l'annotation
-                strikeOut.Color = Aspose.Pdf.Color.Red;
-                // Ajouter une annotation à la collection d'annotations de TextFragment
-                textFragment.Page.Annotations.Add(strikeOut);
-            }
-            dataDir = dataDir + "StrikeOutWords_out.pdf";
-            document.Save(dataDir);
-
-
-        
+	// Instancier l'instance d'annotation StrikeOut
+	StrikeOutAnnotation strikeOut = new StrikeOutAnnotation(textFragment.Page, rect);
+	// Définir l'opacité de l'annotation
+	strikeOut.Opacity = .80f;
+	// Définir la bordure de l'instance d'annotation
+	strikeOut.Border = new Border(strikeOut);
+	// Définir la couleur de l'annotation
+	strikeOut.Color = Aspose.Pdf.Color.Red;
+	// Ajouter une annotation à la collection d'annotations de TextFragment
+	textFragment.Page.Annotations.Add(strikeOut);
+}
+dataDir = dataDir + "StrikeOutWords_out.pdf";
+document.Save(dataDir);
 ```

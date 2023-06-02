@@ -57,49 +57,45 @@ Yukarıdaki kodda, her satır PDF belgesinin farklı bir pencere özelliğini al
  Burada, bir PDF belgesinin pencere özelliklerini almak için tam kaynak kodu`GetDocumentWindow` Aspose.PDF for .NET özelliği:
 
 ```csharp
+// Belgeler dizininin yolu.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-            
-            // Belgeler dizininin yolu.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Belgeyi aç
+Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
 
-            // Belgeyi aç
-            Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
+// Farklı belge özellikleri edinin
+// Belge penceresinin konumu - Varsayılan: yanlış
+Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
 
-            // Farklı belge özellikleri edinin
-            // Belge penceresinin konumu - Varsayılan: yanlış
-            Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
-   
-            // Baskın okuma sırası; sayfanın konumunu belirler
-            // Yan yana görüntülendiğinde - Varsayılan: L2R
-            Console.WriteLine("Direction : {0}", pdfDocument.Direction);
-            
-            // Pencerenin başlık çubuğunun belge başlığını gösterip göstermeyeceği
-            // Yanlışsa, başlık çubuğunda PDF dosya adı görüntülenir - Varsayılan: yanlış
-            Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
-            
-            // Belgenin penceresinin boyutuna sığacak şekilde yeniden boyutlandırılıp boyutlandırılmayacağı
-            // İlk görüntülenen sayfa - Varsayılan: yanlış
-            Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
-            
-            // Görüntüleyici uygulamasının menü çubuğunun gizlenip gizlenmeyeceği - Varsayılan: false
-            Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
-            
-            //Görüntüleyici uygulamasının araç çubuğunun gizlenip gizlenmeyeceği - Varsayılan: false
-            Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
-            
-            // Kaydırma çubukları gibi UI öğelerinin gizlenip gizlenmeyeceği
-            // Ve yalnızca görüntülenen sayfa içeriğini bırakmak - Varsayılan: false
-            Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
-            
-            // Belgenin sayfa modu. Tam ekran modundan çıkarken belge nasıl görüntülenir?
-            Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
-            
-            // Sayfa düzeni, yani tek sayfa, bir sütun
-            Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
-            
-            // Belge açıldığında nasıl görünmelidir?
-            // Yani küçük resimleri göster, tam ekran, ek panelini göster
-            Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
-            
-        
+// Baskın okuma sırası; sayfanın konumunu belirler
+// Yan yana görüntülendiğinde - Varsayılan: L2R
+Console.WriteLine("Direction : {0}", pdfDocument.Direction);
+
+// Pencerenin başlık çubuğunun belge başlığını gösterip göstermeyeceği
+// Yanlışsa, başlık çubuğunda PDF dosya adı görüntülenir - Varsayılan: yanlış
+Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
+
+// Belgenin penceresinin boyutuna sığacak şekilde yeniden boyutlandırılıp boyutlandırılmayacağı
+// İlk görüntülenen sayfa - Varsayılan: yanlış
+Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
+
+// Görüntüleyici uygulamasının menü çubuğunun gizlenip gizlenmeyeceği - Varsayılan: false
+Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
+
+//Görüntüleyici uygulamasının araç çubuğunun gizlenip gizlenmeyeceği - Varsayılan: false
+Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
+
+// Kaydırma çubukları gibi UI öğelerinin gizlenip gizlenmeyeceği
+// Ve yalnızca görüntülenen sayfa içeriğini bırakmak - Varsayılan: false
+Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
+
+// Belgenin sayfa modu. Tam ekran modundan çıkarken belge nasıl görüntülenir?
+Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
+
+// Sayfa düzeni, yani tek sayfa, bir sütun
+Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
+
+// Belge açıldığında nasıl görünmelidir?
+// Yani küçük resimleri göster, tam ekran, ek panelini göster
+Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
 ```

@@ -65,23 +65,21 @@ pdfDocument.Save(dataDir);
 ### مثال التعليمات البرمجية المصدر لتحسين حجم الملف باستخدام Aspose.PDF لـ .NET
 
 ```csharp
+// المسار إلى دليل المستندات.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// المسار إلى دليل المستندات.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// افتح المستند
+Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 
-	// افتح المستند
-	Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-
-	OptimizationOptions optimizationOptions = new OptimizationOptions();
-	optimizationOptions.LinkDuplcateStreams = true;
-	optimizationOptions.RemoveUnusedObjects = true;
-	optimizationOptions.RemoveUnusedStreams = true;
-	optimizationOptions.ImageCompressionOptions.CompressImages = true;
-	optimizationOptions.ImageCompressionOptions.ImageQuality = 10;
-	// قم بتحسين حجم الملف عن طريق إزالة الكائنات غير المستخدمة
-	pdfDocument.OptimizeResources(optimizationOptions);
-	dataDir = dataDir + "OptimizeFileSize_out.pdf";
-	// حفظ وثيقة الإخراج
-	pdfDocument.Save(dataDir);
-
+OptimizationOptions optimizationOptions = new OptimizationOptions();
+optimizationOptions.LinkDuplcateStreams = true;
+optimizationOptions.RemoveUnusedObjects = true;
+optimizationOptions.RemoveUnusedStreams = true;
+optimizationOptions.ImageCompressionOptions.CompressImages = true;
+optimizationOptions.ImageCompressionOptions.ImageQuality = 10;
+// قم بتحسين حجم الملف عن طريق إزالة الكائنات غير المستخدمة
+pdfDocument.OptimizeResources(optimizationOptions);
+dataDir = dataDir + "OptimizeFileSize_out.pdf";
+// حفظ وثيقة الإخراج
+pdfDocument.Save(dataDir);
 ```

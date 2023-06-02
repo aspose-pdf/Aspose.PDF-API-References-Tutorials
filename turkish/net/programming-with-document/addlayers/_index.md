@@ -12,7 +12,7 @@ Bir PDF dosyasına katman eklemek için Aspose.PDF for .NET'i kullanacağız. Bu
 
 ## 1. Adım: Yeni bir PDF Belgesi Oluşturun
 
- Yeni bir örneğini oluşturarak başlayın.`Document`Aspose.PDF for .NET tarafından sağlanan sınıf. Bu, katmanları ekleyeceğimiz PDF belgesi olarak hizmet edecektir.
+ Yeni bir örneğini oluşturarak başlayın.`Document` Aspose.PDF for .NET tarafından sağlanan sınıf. Bu, katmanları ekleyeceğimiz PDF belgesi olarak hizmet edecektir.
 
 ```csharp
 // Belgeler dizininin yolu.
@@ -61,7 +61,7 @@ Bu eğitimde, sayfaya farklı renk ve adlara sahip üç katman ekledik.
 
 ## 4. Adım: PDF Dosyasını Kaydedin
 
- Değiştirilen PDF dosyasını kullanarak kaydedin.`Save` yöntemi`Document` sınıf.
+Değiştirilen PDF dosyasını kullanarak kaydedin.`Save` yöntemi`Document` sınıf.
 
 ```csharp
 dataDir = dataDir + "AddLayers_out.pdf";

@@ -24,7 +24,7 @@ Kurulum tamamlandıktan sonra kodu yazmaya başlayabiliriz.
 
 Açıklama eklemenin ilk adımı, PDF belgesini açmaktır. Belgeyi açmak için aşağıdaki kodu kullanabiliriz:
 
-```
+```csharp
 string dataDir = "YOUR DATA DIRECTORY";
 Document pdfDocument = new Document(dataDir + "AddAnnotation.pdf");
 ```
@@ -35,7 +35,7 @@ Bu kodda açmak istediğimiz PDF belgesinin yolunu belirtiyoruz. "VERİ DİZİN�
 
  Ek açıklama eklemek için, yeni bir örnek oluşturmamız gerekir.`TextAnnotation` sınıf. Yeni bir metin ek açıklaması oluşturmak için aşağıdaki kodu kullanabiliriz:
 
-```
+```csharp
 TextAnnotation textAnnotation = new TextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600));
 textAnnotation.Title = "Sample Annotation Title";
 textAnnotation.Subject = "Sample Subject";
@@ -51,7 +51,7 @@ Bu kodda, PDF belgesinin ikinci sayfasında yeni bir metin notu oluşturuyoruz. 
 
  Ek açıklamanın görünümünü kullanarak özelleştirebiliriz.`Border` sınıf. Ek açıklamanın kenarlığını özelleştirmek için aşağıdaki kodu kullanabiliriz:
 
-```
+```csharp
 Border border = new Border(textAnnotation);
 border.Width = 5;
 border.Dash = new Dash(1, 1);
@@ -59,13 +59,13 @@ textAnnotation.Border = border;
 textAnnotation.Rect = new Aspose.Pdf.Rectangle(200, 400, 400, 600);
 ```
 
- Bu kodda yeni bir tane oluşturuyoruz.`Border` nesne ve genişlik ve tire özelliklerini ayarlayın. daha sonra ayarlıyoruz`Border`ek açıklamanın özelliği yeni`Border` nesne. Son olarak, ayarlıyoruz`Rect` konumunu ve boyutunu belirtmek için ek açıklamanın özelliği.
+ Bu kodda yeni bir tane oluşturuyoruz.`Border` nesne ve genişlik ve tire özelliklerini ayarlayın. daha sonra ayarlıyoruz`Border` ek açıklamanın özelliği yeni`Border`nesne. Son olarak, ayarlıyoruz`Rect` konumunu ve boyutunu belirtmek için ek açıklamanın özelliği.
 
 ## Adım 5: Açıklamayı PDF Belgesine Ekleyin
 
 Ek açıklamayı oluşturup özelleştirdikten sonra, onu PDF belgesine eklememiz gerekiyor. Ek açıklamayı PDF belgesine eklemek için aşağıdaki kodu kullanabiliriz:
 
-```
+```csharp
 pdfDocument.Pages[1].Annotations.Add(textAnnotation);
 ```
 
@@ -75,7 +75,7 @@ Bu kodda, ek açıklamayı PDF belgesinin ikinci sayfasının açıklama koleksi
 
 Son olarak, eklenen ek açıklama ile PDF belgesini kaydetmemiz gerekiyor. Çıktı dosyasını kaydetmek için aşağıdaki kodu kullanabiliriz:
 
-```
+```csharp
 dataDir = dataDir + "AddAnnotation_out.pdf";
 pdfDocument.Save(dataDir);
 ```
@@ -83,31 +83,31 @@ pdfDocument.Save(dataDir);
 
 
 ```csharp   
-	 // Belgeler dizininin yolu.
-	string dataDir = "YOUR DATA DIRECTORY";
+ // Belgeler dizininin yolu.
+string dataDir = "YOUR DATA DIRECTORY";
 
-	// Belgeyi aç
-	Document pdfDocument = new Document(dataDir + "AddAnnotation.pdf");
+// Belgeyi aç
+Document pdfDocument = new Document(dataDir + "AddAnnotation.pdf");
 
-	// Ek açıklama oluştur
-	TextAnnotation textAnnotation = new TextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600));
-	textAnnotation.Title = "Sample Annotation Title";
-	textAnnotation.Subject = "Sample Subject";
-	textAnnotation.State = AnnotationState.Accepted;
-	textAnnotation.Contents = "Sample contents for the annotation";
-	textAnnotation.Open = true;
-	textAnnotation.Icon = TextIcon.Key;
-   
-	Border border = new Border(textAnnotation);
-	border.Width = 5;
-	border.Dash = new Dash(1, 1);
-	textAnnotation.Border = border;
-	textAnnotation.Rect = new Aspose.Pdf.Rectangle(200, 400, 400, 600);
-   
-	// Sayfanın ek açıklamalar koleksiyonuna ek açıklama ekleyin
-	pdfDocument.Pages[1].Annotations.Add(textAnnotation);
-	dataDir = dataDir + "AddAnnotation_out.pdf";
-	// Çıktı dosyasını kaydet
-	pdfDocument.Save(dataDir);
+// Ek açıklama oluştur
+TextAnnotation textAnnotation = new TextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600));
+textAnnotation.Title = "Sample Annotation Title";
+textAnnotation.Subject = "Sample Subject";
+textAnnotation.State = AnnotationState.Accepted;
+textAnnotation.Contents = "Sample contents for the annotation";
+textAnnotation.Open = true;
+textAnnotation.Icon = TextIcon.Key;
+
+Border border = new Border(textAnnotation);
+border.Width = 5;
+border.Dash = new Dash(1, 1);
+textAnnotation.Border = border;
+textAnnotation.Rect = new Aspose.Pdf.Rectangle(200, 400, 400, 600);
+
+// Sayfanın ek açıklamalar koleksiyonuna ek açıklama ekleyin
+pdfDocument.Pages[1].Annotations.Add(textAnnotation);
+dataDir = dataDir + "AddAnnotation_out.pdf";
+// Çıktı dosyasını kaydet
+pdfDocument.Save(dataDir);
 ```
 Bu kod, Aspose.PDF for .NET kullanılarak bir PDF sayfasına belirli bir başlık, konu, durum, içerik ve simge içeren bir metin notunun nasıl ekleneceğini gösterir. Bu kodu, PDF belgelerinize ek açıklamalar eklemek için gereksinimlerinize göre değiştirebilirsiniz. VERİ DİZİNİNİZİ, PDF dosyanızın bulunduğu ve çıktı dosyasını kaydetmek istediğiniz asıl dizin yolu ile değiştirmeyi unutmayın.

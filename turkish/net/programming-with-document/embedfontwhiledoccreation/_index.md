@@ -66,33 +66,28 @@ doc.Save(dataDir);
 ### Aspose.PDF for .NET kullanarak Belge Oluşturma Sırasında Yazı Tipini Gömmek için Örnek Kaynak Kodu
 
 ```csharp
+// Belgeler dizininin yolu.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-            
-            // Belgeler dizininin yolu.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Boş oluşturucusunu çağırarak Pdf nesnesinin örneğini oluşturun
+Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
-            // Boş oluşturucusunu çağırarak Pdf nesnesinin örneğini oluşturun
-            Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
+// Pdf nesnesinde bir bölüm oluşturun
+Aspose.Pdf.Page page = doc.Pages.Add();
 
-            // Pdf nesnesinde bir bölüm oluşturun
-            Aspose.Pdf.Page page = doc.Pages.Add();
+Aspose.Pdf.Text.TextFragment fragment = new Aspose.Pdf.Text.TextFragment("");
 
-            Aspose.Pdf.Text.TextFragment fragment = new Aspose.Pdf.Text.TextFragment("");
+Aspose.Pdf.Text.TextSegment segment = new Aspose.Pdf.Text.TextSegment(" This is a sample text using Custom font.");
+Aspose.Pdf.Text.TextState ts = new Aspose.Pdf.Text.TextState();
+ts.Font = FontRepository.FindFont("Arial");
+ts.Font.IsEmbedded = true;
+segment.TextState = ts;
+fragment.Segments.Add(segment);
+page.Paragraphs.Add(fragment);
 
-            Aspose.Pdf.Text.TextSegment segment = new Aspose.Pdf.Text.TextSegment(" This is a sample text using Custom font.");
-            Aspose.Pdf.Text.TextState ts = new Aspose.Pdf.Text.TextState();
-            ts.Font = FontRepository.FindFont("Arial");
-            ts.Font.IsEmbedded = true;
-            segment.TextState = ts;
-            fragment.Segments.Add(segment);
-            page.Paragraphs.Add(fragment);
-
-            dataDir = dataDir + "EmbedFontWhileDocCreation_out.pdf";
-            // PDF Belgesini Kaydet
-            doc.Save(dataDir);
-            
-            
-        
+dataDir = dataDir + "EmbedFontWhileDocCreation_out.pdf";
+// PDF Belgesini Kaydet
+doc.Save(dataDir);
 ```
 
 ## Çözüm

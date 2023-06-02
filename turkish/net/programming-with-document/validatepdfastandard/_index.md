@@ -1,6 +1,6 @@
 ---
-title: PDFASstandartını Doğrula
-linktitle: PDFASstandartını Doğrula
+title: PDF A Standardını Doğrula
+linktitle: PDF A Standardını Doğrula
 second_title: Aspose.PDF for .NET API Referansı
 description: Bu adım adım kılavuz ile PDFASstandard için PDF dosyalarını doğrulamak üzere Aspose.PDF for .NET'i nasıl kullanacağınızı öğrenin.
 type: docs
@@ -35,21 +35,19 @@ PDF belgesini yükledikten sonra, belgeyi PDF/A-1a standardına göre doğrulama
 pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1A);
 ```
 
-## Çözüm
-
-PDF dosyalarının çeşitli PDF standartlarına göre doğrulanması, profesyonel bir ortamda PDF dosyalarıyla çalışmanın önemli bir yönüdür. Aspose.PDF for .NET, PDF dosyalarını PDF/A-1a dahil olmak üzere çeşitli PDF standartlarına göre doğrulamak için güçlü ve kullanımı kolay bir API sağlar. Bu makalede sağlanan adım adım kılavuzu izleyerek, Aspose.PDF for .NET kullanarak PDF dosyalarınızı hızlı ve kolay bir şekilde doğrulayabilirsiniz.
-
 ### Aspose.PDF for .NET kullanarak Get Validate PDFASstandard için örnek kaynak kodu
 
 ```csharp
+// Belgeler dizininin yolu.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Belgeler dizininin yolu.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Belgeyi aç
+Document pdfDocument = new Document(dataDir + "ValidatePDFAStandard.pdf");
 
-	// Belgeyi aç
-	Document pdfDocument = new Document(dataDir + "ValidatePDFAStandard.pdf");
-
-	// PDF/A-1a için PDF'yi Doğrula
-	pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1A);
-
+// PDF/A-1a için PDF'yi Doğrula
+pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1A);
 ```
+
+## Çözüm
+
+PDF dosyalarının çeşitli PDF standartlarına göre doğrulanması, profesyonel bir ortamda PDF dosyalarıyla çalışmanın önemli bir yönüdür. Aspose.PDF for .NET, PDF dosyalarını PDF/A-1a dahil olmak üzere çeşitli PDF standartlarına göre doğrulamak için güçlü ve kullanımı kolay bir API sağlar. Bu makalede sağlanan adım adım kılavuzu izleyerek, Aspose.PDF for .NET kullanarak PDF dosyalarınızı hızlı ve kolay bir şekilde doğrulayabilirsiniz.

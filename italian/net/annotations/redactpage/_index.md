@@ -9,25 +9,25 @@ url: /it/net/annotations/redactpage/
 ---
 Se stai cercando di redigere informazioni sensibili da un documento PDF utilizzando Aspose.PDF per .NET, sei fortunato! Ecco una guida passo passo per iniziare:
 
-## Nel codice, imposta il percorso della directory in cui si trova il tuo documento PDF:
+## Passaggio 1: nel codice, imposta il percorso della directory in cui si trova il tuo documento PDF:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Apri il documento PDF:
+## Passaggio 2: apri il documento PDF:
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Crea un'istanza RedactionAnnotation per un'area di pagina specifica:
+## Passaggio 3: creare un'istanza RedactionAnnotation per un'area di pagina specifica:
 
 ```csharp
 RedactionAnnotation annot = new RedactionAnnotation(doc.Pages[1], new Aspose.Pdf.Rectangle(200, 500, 300, 600));
 ```
 
-## Impostare il colore di riempimento, il colore del bordo e il colore del testo dell'annotazione di redazione:
+## Passaggio 4: impostare il colore di riempimento, il colore del bordo e il colore del testo dell'annotazione di redazione:
 
 ```csharp
 annot.FillColor = Aspose.Pdf.Color.Green;
@@ -35,38 +35,38 @@ annot.BorderColor = Aspose.Pdf.Color.Yellow;
 annot.Color = Aspose.Pdf.Color.Blue;
 ```
 
-## Impostare il testo da stampare sull'annotazione di redazione e il suo allineamento:
+## Passaggio 5: impostare il testo da stampare sull'annotazione di redazione e il relativo allineamento:
 
 ```csharp
 annot.OverlayText = "REDACTED";
 annot.TextAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 ```
 
-## Ripeti il testo sovrapposto sopra l'annotazione di redazione:
+## Passaggio 6: ripetere il testo sovrapposto sull'annotazione di redazione:
 
 ```csharp
 annot.Repeat = true;
 ```
 
-## Aggiungi l'annotazione alla raccolta di annotazioni della prima pagina:
+## Passaggio 7: aggiungi l'annotazione alla raccolta di annotazioni della prima pagina:
 
 ```csharp
 doc.Pages[1].Annotations.Add(annot);
 ```
 
-## Appiattire l'annotazione e redigere i contenuti della pagina, ovvero rimuovere testo e immagini sotto l'annotazione redatta:
+## Passaggio 8: Appiattire l'annotazione e redigere i contenuti della pagina, ovvero rimuovere testo e immagini sotto l'annotazione redatta:
 
 ```csharp
 annot.Redact();
 ```
 
-## Imposta il percorso e il nome del file PDF di output:
+## Passaggio 9: imposta il percorso e il nome del file PDF di output:
 
 ```csharp
 dataDir = dataDir + "RedactPage_out.pdf";
 ```
 
-## Salva il documento PDF con la pagina redatta:
+## Passaggio 10: salva il documento PDF con la pagina redatta:
 
 ```csharp
 doc.Save(dataDir);
@@ -95,7 +95,7 @@ annot.TextAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 annot.Repeat = true;
 // Aggiungi annotazione alla raccolta di annotazioni della prima pagina
 doc.Pages[1].Annotations.Add(annot);
-// Appiattisce le annotazioni e oscura i contenuti della pagina (ovvero rimuove testo e immagine
+//Appiattisce le annotazioni e oscura i contenuti della pagina (ovvero rimuove testo e immagine
 // Sotto annotazione redatta)
 annot.Redact();
 dataDir = dataDir + "RedactPage_out.pdf";

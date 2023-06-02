@@ -44,20 +44,18 @@ Console.WriteLine("Contents : {0} ", textAnnotation.Contents);
 ### مثال على التعليمات البرمجية المصدر للحصول على تعليق توضيحي معين باستخدام Aspose.PDF لـ .NET
 
 ```csharp
+// المسار إلى دليل المستندات.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// المسار إلى دليل المستندات.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// افتح المستند
+Document pdfDocument = new Document(dataDir + "GetParticularAnnotation.pdf");
 
-	// افتح المستند
-	Document pdfDocument = new Document(dataDir + "GetParticularAnnotation.pdf");
+// احصل على تعليق توضيحي معين
+TextAnnotation textAnnotation = (TextAnnotation)pdfDocument.Pages[1].Annotations[1];
 
-	// احصل على تعليق توضيحي معين
-	TextAnnotation textAnnotation = (TextAnnotation)pdfDocument.Pages[1].Annotations[1];
-
-	// احصل على خصائص التعليقات التوضيحية
-	Console.WriteLine("Title : {0} ", textAnnotation.Title);
-	Console.WriteLine("Subject : {0} ", textAnnotation.Subject);
-	Console.WriteLine("Contents : {0} ", textAnnotation.Contents);
-
+// احصل على خصائص التعليقات التوضيحية
+Console.WriteLine("Title : {0} ", textAnnotation.Title);
+Console.WriteLine("Subject : {0} ", textAnnotation.Subject);
+Console.WriteLine("Contents : {0} ", textAnnotation.Contents);
 ```
 

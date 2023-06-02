@@ -1,7 +1,7 @@
 ---
 title: Lägg till lnk-anteckning
 linktitle: Lägg till lnk-anteckning
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du lägger till funktionen Ink Annotation till PDF-dokument i C# med Aspose.PDF för .NET med steg-för-steg-guide och fullständig källkod.
 type: docs
 weight: 20

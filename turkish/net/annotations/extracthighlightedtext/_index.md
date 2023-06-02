@@ -64,22 +64,21 @@ foreach (TextFragment tf in collection)
 ### Aspose.PDF for .NET kullanarak Vurgulanmış Metni Çıkarma için örnek kaynak kodu
 
 ```csharp
+// Belgeler dizininin yolu.
+string dataDir ="YOUR DOCUMENT DIRECTORY";
+Document doc = new Document(dataDir + "ExtractHighlightedText.pdf");
 
-	// Belgeler dizininin yolu.
-	string dataDir ="YOUR DOCUMENT DIRECTORY";
-	Document doc = new Document(dataDir + "ExtractHighlightedText.pdf");
-
-	foreach (Annotation annotation in doc.Pages[1].Annotations)
+foreach (Annotation annotation in doc.Pages[1].Annotations)
+{
+	if (annotation is TextMarkupAnnotation)
 	{
-		if (annotation is TextMarkupAnnotation)
+		TextMarkupAnnotation highlightedAnnotation = annotation as TextMarkupAnnotation;
+		TextFragmentCollection collection = highlightedAnnotation.GetMarkedTextFragments();
+		foreach (TextFragment tf in collection)
 		{
-			TextMarkupAnnotation highlightedAnnotation = annotation as TextMarkupAnnotation;
-			TextFragmentCollection collection = highlightedAnnotation.GetMarkedTextFragments();
-			foreach (TextFragment tf in collection)
-			{
-				Console.WriteLine(tf.Text);
-			}
+			Console.WriteLine(tf.Text);
 		}
 	}
+}
 ```
 

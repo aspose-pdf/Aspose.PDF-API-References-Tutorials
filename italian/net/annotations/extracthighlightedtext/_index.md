@@ -64,22 +64,21 @@ foreach (TextFragment tf in collection)
 ### Esempio di codice sorgente per Estrai testo evidenziato utilizzando Aspose.PDF per .NET
 
 ```csharp
+// Il percorso della directory dei documenti.
+string dataDir ="YOUR DOCUMENT DIRECTORY";
+Document doc = new Document(dataDir + "ExtractHighlightedText.pdf");
 
-	// Il percorso della directory dei documenti.
-	string dataDir ="YOUR DOCUMENT DIRECTORY";
-	Document doc = new Document(dataDir + "ExtractHighlightedText.pdf");
-
-	foreach (Annotation annotation in doc.Pages[1].Annotations)
+foreach (Annotation annotation in doc.Pages[1].Annotations)
+{
+	if (annotation is TextMarkupAnnotation)
 	{
-		if (annotation is TextMarkupAnnotation)
+		TextMarkupAnnotation highlightedAnnotation = annotation as TextMarkupAnnotation;
+		TextFragmentCollection collection = highlightedAnnotation.GetMarkedTextFragments();
+		foreach (TextFragment tf in collection)
 		{
-			TextMarkupAnnotation highlightedAnnotation = annotation as TextMarkupAnnotation;
-			TextFragmentCollection collection = highlightedAnnotation.GetMarkedTextFragments();
-			foreach (TextFragment tf in collection)
-			{
-				Console.WriteLine(tf.Text);
-			}
+			Console.WriteLine(tf.Text);
 		}
 	}
+}
 ```
 

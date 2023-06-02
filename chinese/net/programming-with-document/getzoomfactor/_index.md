@@ -46,7 +46,7 @@ System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); /
 
 在上面的代码中，我们访问了`Destination`的财产`GoToAction`对象，然后将其投射到`XYZExplicitDestination`.之后，我们访问了`Zoom`的财产`XYZExplicitDestination`对象获取 PDF 文件的缩放系数。
 
-## 第 4 步：输出缩放系数
+## 第 4 步：输出缩放因子
 
 最后一步是输出 PDF 文件的缩放系数。我们可以使用`System.Console.WriteLine`
 
@@ -60,17 +60,15 @@ System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); /
 下面是使用 Aspose.PDF for .NET 获取缩放因子的完整示例源代码：
 
 ```csharp
+//文档目录的路径。
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	//文档目录的路径。
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+//实例化新的文档对象
+Document doc = new Document(dataDir + "Zoomed_pdf.pdf");
 
-	//实例化新的文档对象
-	Document doc = new Document(dataDir + "Zoomed_pdf.pdf");
+//创建 GoToAction 对象
+GoToAction action = doc.OpenAction as GoToAction;
 
-	//创建 GoToAction 对象
-	GoToAction action = doc.OpenAction as GoToAction;
-	
-	//获取 PDF 文件的缩放因子
-	System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); //文档缩放值；
-	
+//获取 PDF 文件的缩放因子
+System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); //文档缩放值；
 ```

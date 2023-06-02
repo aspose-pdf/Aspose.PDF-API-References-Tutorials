@@ -65,23 +65,21 @@ pdfDocument.Save(dataDir);
 ### Aspose.PDF for .NET kullanarak Dosya Boyutunu Optimize Etme için Örnek Kaynak Kodu
 
 ```csharp
+// Belgeler dizininin yolu.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Belgeler dizininin yolu.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Belgeyi aç
+Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 
-	// Belgeyi aç
-	Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-
-	OptimizationOptions optimizationOptions = new OptimizationOptions();
-	optimizationOptions.LinkDuplcateStreams = true;
-	optimizationOptions.RemoveUnusedObjects = true;
-	optimizationOptions.RemoveUnusedStreams = true;
-	optimizationOptions.ImageCompressionOptions.CompressImages = true;
-	optimizationOptions.ImageCompressionOptions.ImageQuality = 10;
-	// Kullanılmayan nesneleri kaldırarak dosya boyutunu optimize edin
-	pdfDocument.OptimizeResources(optimizationOptions);
-	dataDir = dataDir + "OptimizeFileSize_out.pdf";
-	// Çıkış belgesini kaydet
-	pdfDocument.Save(dataDir);
-
+OptimizationOptions optimizationOptions = new OptimizationOptions();
+optimizationOptions.LinkDuplcateStreams = true;
+optimizationOptions.RemoveUnusedObjects = true;
+optimizationOptions.RemoveUnusedStreams = true;
+optimizationOptions.ImageCompressionOptions.CompressImages = true;
+optimizationOptions.ImageCompressionOptions.ImageQuality = 10;
+// Kullanılmayan nesneleri kaldırarak dosya boyutunu optimize edin
+pdfDocument.OptimizeResources(optimizationOptions);
+dataDir = dataDir + "OptimizeFileSize_out.pdf";
+// Çıkış belgesini kaydet
+pdfDocument.Save(dataDir);
 ```

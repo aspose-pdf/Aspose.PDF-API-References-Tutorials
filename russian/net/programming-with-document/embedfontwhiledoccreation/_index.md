@@ -66,33 +66,28 @@ doc.Save(dataDir);
 ### Пример исходного кода для встраивания шрифта при создании документа с использованием Aspose.PDF для .NET
 
 ```csharp
+// Путь к каталогу документов.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-            
-            // Путь к каталогу документов.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Создайте экземпляр объекта Pdf, вызвав его пустой конструктор
+Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
-            // Создайте экземпляр объекта Pdf, вызвав его пустой конструктор
-            Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
+// Создайте раздел в объекте Pdf
+Aspose.Pdf.Page page = doc.Pages.Add();
 
-            // Создайте раздел в объекте Pdf
-            Aspose.Pdf.Page page = doc.Pages.Add();
+Aspose.Pdf.Text.TextFragment fragment = new Aspose.Pdf.Text.TextFragment("");
 
-            Aspose.Pdf.Text.TextFragment fragment = new Aspose.Pdf.Text.TextFragment("");
+Aspose.Pdf.Text.TextSegment segment = new Aspose.Pdf.Text.TextSegment(" This is a sample text using Custom font.");
+Aspose.Pdf.Text.TextState ts = new Aspose.Pdf.Text.TextState();
+ts.Font = FontRepository.FindFont("Arial");
+ts.Font.IsEmbedded = true;
+segment.TextState = ts;
+fragment.Segments.Add(segment);
+page.Paragraphs.Add(fragment);
 
-            Aspose.Pdf.Text.TextSegment segment = new Aspose.Pdf.Text.TextSegment(" This is a sample text using Custom font.");
-            Aspose.Pdf.Text.TextState ts = new Aspose.Pdf.Text.TextState();
-            ts.Font = FontRepository.FindFont("Arial");
-            ts.Font.IsEmbedded = true;
-            segment.TextState = ts;
-            fragment.Segments.Add(segment);
-            page.Paragraphs.Add(fragment);
-
-            dataDir = dataDir + "EmbedFontWhileDocCreation_out.pdf";
-            // Сохранить PDF-документ
-            doc.Save(dataDir);
-            
-            
-        
+dataDir = dataDir + "EmbedFontWhileDocCreation_out.pdf";
+// Сохранить PDF-документ
+doc.Save(dataDir);
 ```
 
 ## Заключение

@@ -54,20 +54,18 @@ Console.WriteLine("\nParticular annotation deleted successfully.\nFile saved at 
 ### Código fuente de ejemplo para eliminar una anotación en particular usando Aspose.PDF para .NET
 
 ```csharp
+// La ruta al directorio de documentos.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// La ruta al directorio de documentos.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Abrir documento
+Document pdfDocument = new Document(dataDir + "DeleteParticularAnnotation.pdf");
 
-	// Abrir documento
-	Document pdfDocument = new Document(dataDir + "DeleteParticularAnnotation.pdf");
+// Eliminar anotación particular
+pdfDocument.Pages[1].Annotations.Delete(1);
 
-	// Eliminar anotación particular
-	pdfDocument.Pages[1].Annotations.Delete(1);
+dataDir = dataDir + "DeleteParticularAnnotation_out.pdf";
+// Guardar documento actualizado
+pdfDocument.Save(dataDir);
 
-	dataDir = dataDir + "DeleteParticularAnnotation_out.pdf";
-	// Guardar documento actualizado
-	pdfDocument.Save(dataDir);
-
-	Console.WriteLine("\nParticular annotation deleted successfully.\nFile saved at " + dataDir);
-
+Console.WriteLine("\nParticular annotation deleted successfully.\nFile saved at " + dataDir);
 ```

@@ -47,19 +47,17 @@ pdfDocument.Save(dataDir);
 ### 使用 Aspose.PDF for .NET 优化 PDF 文档的示例源代码
 
 ```csharp
+//文档目录的路径。
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	//文档目录的路径。
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+//打开文档
+Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 
-	//打开文档
-	Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
+//针对网络进行优化
+pdfDocument.Optimize();
 
-	//针对网络进行优化
-	pdfDocument.Optimize();
+dataDir = dataDir + "OptimizeDocument_out.pdf";
 
-	dataDir = dataDir + "OptimizeDocument_out.pdf";
-
-	//保存输出文件
-	pdfDocument.Save(dataDir);
-
+//保存输出文档
+pdfDocument.Save(dataDir);
 ```

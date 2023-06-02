@@ -25,7 +25,7 @@ Dans cette ligne, nous définissons le chemin d'accès au répertoire contenant 
 Document doc1 = new Document(dataDir + "input.pdf");
 ```
 
- Ici, nous ouvrons le document PDF en utilisant Aspose.PDF's`Document` classe et en spécifiant le chemin d'accès au fichier PDF d'entrée.
+Ici, nous ouvrons le document PDF en utilisant Aspose.PDF's`Document` classe et en spécifiant le chemin d'accès au fichier PDF d'entrée.
 
 ## Étape 3 : Mise à jour de la taille de la police et de la couleur de l'annotation de texte libre
 
@@ -46,10 +46,6 @@ catch (Exception ex)
 ```
 
  Ceci est une norme`try-catch` qui intercepte toutes les exceptions pouvant survenir lors de l'exécution du code et imprime le message d'erreur sur la console.
-
-## Conclusion
-
-Dans cet article, nous avons fourni un guide étape par étape pour expliquer le code source C# de la fonctionnalité Mettre à jour l'annotation de texte libre d'Aspose.PDF pour .NET. En suivant ces étapes, vous pouvez facilement mettre à jour la taille de police et la couleur des annotations de texte libre dans vos documents PDF à l'aide d'Aspose.PDF pour .NET.
 
 ### Exemple de code source pour la mise à jour de l'annotation de texte libre à l'aide d'Aspose.PDF pour .NET
 
@@ -74,3 +70,7 @@ catch (Exception ex)
     Console.WriteLine(ex.Message);
 }
 ```
+
+## Conclusion
+
+Dans cet article, nous avons fourni un guide étape par étape pour expliquer le code source C# de la fonctionnalité Mettre à jour l'annotation de texte libre d'Aspose.PDF pour .NET. En suivant ces étapes, vous pouvez facilement mettre à jour la taille de police et la couleur des annotations de texte libre dans vos documents PDF à l'aide d'Aspose.PDF pour .NET.

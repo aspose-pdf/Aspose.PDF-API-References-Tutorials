@@ -57,49 +57,45 @@ Nel codice precedente, ogni riga recupera una diversa proprietà della finestra 
  Ecco il codice sorgente completo per il recupero delle proprietà della finestra di un documento PDF utilizzando il file`GetDocumentWindow` caratteristica di Aspose.PDF per .NET:
 
 ```csharp
+// Il percorso della directory dei documenti.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-            
-            // Il percorso della directory dei documenti.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Apri documento
+Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
 
-            // Apri documento
-            Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
+// Ottieni diverse proprietà del documento
+// Posizione della finestra del documento - Predefinito: false
+Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
 
-            // Ottieni diverse proprietà del documento
-            // Posizione della finestra del documento - Predefinito: false
-            Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
-   
-            // Ordine di lettura predominante; determina la posizione della pagina
-            // Se visualizzati fianco a fianco - Predefinito: L2R
-            Console.WriteLine("Direction : {0}", pdfDocument.Direction);
-            
-            // Indica se la barra del titolo della finestra deve visualizzare il titolo del documento
-            // Se falso, la barra del titolo visualizza il nome del file PDF - Predefinito: falso
-            Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
-            
-            // Se ridimensionare la finestra del documento per adattarla alle dimensioni di
-            // Prima pagina visualizzata - Predefinito: false
-            Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
-            
-            // Se nascondere la barra dei menu dell'applicazione visualizzatore - Predefinito: falso
-            Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
-            
-            //Se nascondere la barra degli strumenti dell'applicazione visualizzatore - Predefinito: false
-            Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
-            
-            // Se nascondere gli elementi dell'interfaccia utente come le barre di scorrimento
-            // E lasciando visualizzato solo il contenuto della pagina - Predefinito: false
-            Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
-            
-            // Modalità pagina del documento. Come visualizzare il documento all'uscita dalla modalità a schermo intero.
-            Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
-            
-            // Il layout della pagina, cioè pagina singola, una colonna
-            Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
-            
-            // Come deve essere visualizzato il documento una volta aperto
-            // Cioè mostra le miniature, a schermo intero, mostra il pannello degli allegati
-            Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
-            
-        
+// Ordine di lettura predominante; determina la posizione della pagina
+// Se visualizzati fianco a fianco - Predefinito: L2R
+Console.WriteLine("Direction : {0}", pdfDocument.Direction);
+
+// Indica se la barra del titolo della finestra deve visualizzare il titolo del documento
+// Se falso, la barra del titolo visualizza il nome del file PDF - Predefinito: falso
+Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
+
+// Se ridimensionare la finestra del documento per adattarla alle dimensioni di
+// Prima pagina visualizzata - Predefinito: false
+Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
+
+// Se nascondere la barra dei menu dell'applicazione visualizzatore - Predefinito: false
+Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
+
+//Se nascondere la barra degli strumenti dell'applicazione visualizzatore - Predefinito: false
+Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
+
+// Se nascondere gli elementi dell'interfaccia utente come le barre di scorrimento
+// E lasciando visualizzato solo il contenuto della pagina - Predefinito: falso
+Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
+
+// Modalità pagina del documento. Come visualizzare il documento all'uscita dalla modalità a schermo intero.
+Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
+
+// Il layout della pagina, cioè pagina singola, una colonna
+Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
+
+// Come deve essere visualizzato il documento una volta aperto
+// Cioè mostra le miniature, a schermo intero, mostra il pannello degli allegati
+Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
 ```

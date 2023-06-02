@@ -43,21 +43,19 @@ doc.Duplex = PrintDuplex.DuplexFlipLongEdge;
 doc.Save(dataDir + "35297_out.pdf", SaveFormat.Pdf);
 ```
 
-## Çözüm
-
-Aspose.PDF for .NET, PDF dosyalarınızda yazdırma iletişim kutusunun özelliklerini ayarlamayı kolaylaştırır. Yukarıdaki adım adım kılavuzu izleyerek, PDF dosyalarınızı yazdırmak için hızlı bir şekilde optimize edebilirsiniz.
-
 ### Aspose.PDF for .NET kullanarak Yazdırma İçin Özellikleri Ayarla İletişim Kutusu için örnek kaynak kodu
 
 ```csharp
+var dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	var dataDir = "YOUR DOCUMENT DIRECTORY";
-
-	using (Document doc = new Document())
-	{
-		doc.Pages.Add();
-		doc.Duplex = PrintDuplex.DuplexFlipLongEdge;
-		doc.Save(dataDir + "35297_out.pdf", SaveFormat.Pdf);
-	}
-
+using (Document doc = new Document())
+{
+	doc.Pages.Add();
+	doc.Duplex = PrintDuplex.DuplexFlipLongEdge;
+	doc.Save(dataDir + "35297_out.pdf", SaveFormat.Pdf);
+}
 ```
+
+## Çözüm
+
+Aspose.PDF for .NET, PDF dosyalarınızda yazdırma iletişim kutusunun özelliklerini ayarlamayı kolaylaştırır. Yukarıdaki adım adım kılavuzu izleyerek, PDF dosyalarınızı yazdırmak için hızlı bir şekilde optimize edebilirsiniz.

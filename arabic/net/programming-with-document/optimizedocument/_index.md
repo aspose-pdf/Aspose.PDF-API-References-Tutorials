@@ -47,19 +47,17 @@ pdfDocument.Save(dataDir);
 ### مثال على كود المصدر لتحسين مستندات PDF باستخدام Aspose.PDF لـ .NET
 
 ```csharp
+// المسار إلى دليل المستندات.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// المسار إلى دليل المستندات.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// افتح المستند
+Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 
-	// افتح المستند
-	Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
+// تحسين للويب
+pdfDocument.Optimize();
 
-	// تحسين للويب
-	pdfDocument.Optimize();
+dataDir = dataDir + "OptimizeDocument_out.pdf";
 
-	dataDir = dataDir + "OptimizeDocument_out.pdf";
-
-	// حفظ وثيقة الإخراج
-	pdfDocument.Save(dataDir);
-
+// حفظ وثيقة الإخراج
+pdfDocument.Save(dataDir);
 ```

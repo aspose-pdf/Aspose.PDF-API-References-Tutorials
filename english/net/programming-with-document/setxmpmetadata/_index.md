@@ -66,23 +66,21 @@ pdfDocument.Save(dataDir);
 Here's the complete example source code for setting XMPMetadata using Aspose.PDF for .NET:
 
 ```csharp
+// The path to the documents directory.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// The path to the documents directory.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Open document
+Document pdfDocument = new Document(dataDir + "SetXMPMetadata.pdf");
 
-	// Open document
-	Document pdfDocument = new Document(dataDir + "SetXMPMetadata.pdf");
+// Set properties
+pdfDocument.Metadata["xmp:CreateDate"] = DateTime.Now;
+pdfDocument.Metadata["xmp:Nickname"] = "Nickname";
+pdfDocument.Metadata["xmp:CustomProperty"] = "Custom Value";
 
-	// Set properties
-	pdfDocument.Metadata["xmp:CreateDate"] = DateTime.Now;
-	pdfDocument.Metadata["xmp:Nickname"] = "Nickname";
-	pdfDocument.Metadata["xmp:CustomProperty"] = "Custom Value";
+dataDir = dataDir + "SetXMPMetadata_out.pdf";
+// Save document
+pdfDocument.Save(dataDir);
 
-	dataDir = dataDir + "SetXMPMetadata_out.pdf";
-	// Save document
-	pdfDocument.Save(dataDir);
-	
-	Console.WriteLine("\nXMP metadata in a pdf file setup successfully.\nFile saved at " + dataDir);
-
+Console.WriteLine("\nXMP metadata in a pdf file setup successfully.\nFile saved at " + dataDir);
 ```
 

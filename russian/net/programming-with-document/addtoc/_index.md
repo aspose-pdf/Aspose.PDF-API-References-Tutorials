@@ -85,7 +85,7 @@ Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at "
 // Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Загрузите существующие файлы PDF
+//Загрузите существующие файлы PDF
 Document doc = new Document(dataDir + "AddTOC.pdf");
 
 // Получить доступ к первой странице файла PDF
@@ -128,9 +128,8 @@ for (int i = 0; i < 2; i++)
 	tocPage.Paragraphs.Add(heading2);
 }
 dataDir = dataDir + "TOC_out.pdf";
-//Сохраните обновленный документ
+// Сохраните обновленный документ
 doc.Save(dataDir);
 
 Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at " + dataDir);
-
 ```

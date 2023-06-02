@@ -58,20 +58,18 @@ C'est ça! Vous avez supprimé avec succès les objets inutilisés de votre docu
 ### Exemple de code source pour supprimer les objets inutilisés à l'aide d'Aspose.PDF pour .NET :
 
 ```csharp
-
-	// Chemin d'accès au répertoire des documents.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Ouvrir le document
-	Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-	// Définir l'option RemoveUsedObject
-	var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-	{
-		RemoveUnusedObjects = true
-	};
-	// Optimiser le document PDF à l'aide d'OptimizationOptions
-	pdfDocument.OptimizeResources(optimizeOptions);
-	dataDir = dataDir + "OptimizeDocument_out.pdf";
-	// Enregistrer le document mis à jour
-	pdfDocument.Save(dataDir);
-
+// Chemin d'accès au répertoire des documents.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Ouvrir le document
+Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
+// Définir l'option RemoveUsedObject
+var optimizeOptions = new Pdf.Optimization.OptimizationOptions
+{
+	RemoveUnusedObjects = true
+};
+// Optimiser le document PDF à l'aide d'OptimizationOptions
+pdfDocument.OptimizeResources(optimizeOptions);
+dataDir = dataDir + "OptimizeDocument_out.pdf";
+// Enregistrer le document mis à jour
+pdfDocument.Save(dataDir);
 ```

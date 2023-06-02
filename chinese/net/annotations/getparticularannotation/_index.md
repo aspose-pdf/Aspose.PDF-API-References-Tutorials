@@ -44,20 +44,18 @@ Console.WriteLine("Contents : {0} ", textAnnotation.Contents);
 ### 使用 Aspose.PDF for .NET 获取特定注释的示例源代码
 
 ```csharp
+//文档目录的路径。
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	//文档目录的路径。
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+//打开文档
+Document pdfDocument = new Document(dataDir + "GetParticularAnnotation.pdf");
 
-	//打开文档
-	Document pdfDocument = new Document(dataDir + "GetParticularAnnotation.pdf");
+//获取特定注释
+TextAnnotation textAnnotation = (TextAnnotation)pdfDocument.Pages[1].Annotations[1];
 
-	//获取特定注释
-	TextAnnotation textAnnotation = (TextAnnotation)pdfDocument.Pages[1].Annotations[1];
-
-	//获取注释属性
-	Console.WriteLine("Title : {0} ", textAnnotation.Title);
-	Console.WriteLine("Subject : {0} ", textAnnotation.Subject);
-	Console.WriteLine("Contents : {0} ", textAnnotation.Contents);
-
+//获取注释属性
+Console.WriteLine("Title : {0} ", textAnnotation.Title);
+Console.WriteLine("Subject : {0} ", textAnnotation.Subject);
+Console.WriteLine("Contents : {0} ", textAnnotation.Contents);
 ```
 

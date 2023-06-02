@@ -24,7 +24,7 @@ Sostituisci "YOUR DOCUMENT DIRECTORY" con il percorso effettivo della directory 
 
 ## Passaggio 2: apri il documento PDF
 
- Il primo passo è caricare il documento PDF che vuoi fare, usa il file`Document` classe di Aspose.PDF per .NET. Il seguente frammento di codice mostra come caricare il documento PDF:
+Il primo passo è caricare il documento PDF che vuoi fare, usa il file`Document` classe di Aspose.PDF per .NET. Il seguente frammento di codice mostra come caricare il documento PDF:
 
 ```csharp
 // Apri documento
@@ -45,7 +45,7 @@ var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 
 ## Passaggio 4: ottimizza il documento PDF
 
-Dopo aver impostato il`UnembedFonts` opzione, è possibile ottimizzare il documento PDF utilizzando l'`OptimizeResources` metodo del`Document` classe. Il seguente frammento di codice mostra come ottimizzare il documento PDF:
+ Dopo aver impostato il`UnembedFonts` opzione, è possibile ottimizzare il documento PDF utilizzando l'`OptimizeResources` metodo del`Document` classe. Il seguente frammento di codice mostra come ottimizzare il documento PDF:
 
 ```csharp
 // Ottimizza il documento PDF utilizzando OptimizationOptions
@@ -63,7 +63,7 @@ pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
 
 ## Passaggio 6: ottieni la dimensione del file originale e ridotta
 
- Infine, puoi ottenere la dimensione del file originale e ridotta del documento PDF utilizzando il file`FileInfo` classe di System.IO. Il seguente frammento di codice mostra come ottenere la dimensione del file originale e ridotta:
+ Infine, puoi ottenere la dimensione del file originale e ridotta del documento PDF utilizzando il file`FileInfo`classe di System.IO. Il seguente frammento di codice mostra come ottenere la dimensione del file originale e ridotta:
 
 ```csharp
 var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
@@ -76,24 +76,22 @@ Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length,
 Ecco il codice sorgente di esempio completo per ottenere caratteri non incorporati da un documento PDF utilizzando Aspose.PDF per .NET:
 
 ```csharp
-	
-	// Il percorso della directory dei documenti.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Apri documento
-	Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-	// Imposta l'opzione UnembedFonts
-	var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-	{
-		UnembedFonts = true
-	};
-	Console.WriteLine("Start");
-	// Ottimizza il documento PDF utilizzando OptimizationOptions
-	pdfDocument.OptimizeResources(optimizeOptions);
-	// Salva documento aggiornato
-	pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
-	Console.WriteLine("Finished");
-	var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
-	var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
-	Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
-	
+// Il percorso della directory dei documenti.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Apri documento
+Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
+// Imposta l'opzione UnembedFonts
+var optimizeOptions = new Pdf.Optimization.OptimizationOptions
+{
+	UnembedFonts = true
+};
+Console.WriteLine("Start");
+// Ottimizza il documento PDF utilizzando OptimizationOptions
+pdfDocument.OptimizeResources(optimizeOptions);
+// Salva documento aggiornato
+pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
+Console.WriteLine("Finished");
+var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
+var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
+Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
 ```

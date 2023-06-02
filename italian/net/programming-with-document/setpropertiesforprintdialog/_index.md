@@ -43,21 +43,19 @@ doc.Duplex = PrintDuplex.DuplexFlipLongEdge;
 doc.Save(dataDir + "35297_out.pdf", SaveFormat.Pdf);
 ```
 
-## Conclusione
-
-Aspose.PDF per .NET semplifica l'impostazione delle proprietà per la finestra di dialogo di stampa nei file PDF. Seguendo la guida dettagliata sopra, puoi ottimizzare rapidamente i tuoi file PDF per la stampa.
-
 ### Esempio di codice sorgente per Imposta proprietà per la finestra di dialogo di stampa utilizzando Aspose.PDF per .NET
 
 ```csharp
+var dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	var dataDir = "YOUR DOCUMENT DIRECTORY";
-
-	using (Document doc = new Document())
-	{
-		doc.Pages.Add();
-		doc.Duplex = PrintDuplex.DuplexFlipLongEdge;
-		doc.Save(dataDir + "35297_out.pdf", SaveFormat.Pdf);
-	}
-
+using (Document doc = new Document())
+{
+	doc.Pages.Add();
+	doc.Duplex = PrintDuplex.DuplexFlipLongEdge;
+	doc.Save(dataDir + "35297_out.pdf", SaveFormat.Pdf);
+}
 ```
+
+## Conclusione
+
+Aspose.PDF per .NET semplifica l'impostazione delle proprietà per la finestra di dialogo di stampa nei file PDF. Seguendo la guida dettagliata sopra, puoi ottimizzare rapidamente i tuoi file PDF per la stampa.

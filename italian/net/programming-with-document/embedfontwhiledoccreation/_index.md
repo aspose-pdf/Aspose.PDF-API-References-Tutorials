@@ -66,33 +66,28 @@ doc.Save(dataDir);
 ### Esempio di codice sorgente per incorporare il carattere durante la creazione di documenti utilizzando Aspose.PDF per .NET
 
 ```csharp
+// Il percorso della directory dei documenti.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-            
-            // Il percorso della directory dei documenti.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Crea un'istanza dell'oggetto Pdf chiamando il suo costruttore vuoto
+Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
-            // Crea un'istanza dell'oggetto Pdf chiamando il suo costruttore vuoto
-            Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
+// Crea una sezione nell'oggetto Pdf
+Aspose.Pdf.Page page = doc.Pages.Add();
 
-            // Crea una sezione nell'oggetto Pdf
-            Aspose.Pdf.Page page = doc.Pages.Add();
+Aspose.Pdf.Text.TextFragment fragment = new Aspose.Pdf.Text.TextFragment("");
 
-            Aspose.Pdf.Text.TextFragment fragment = new Aspose.Pdf.Text.TextFragment("");
+Aspose.Pdf.Text.TextSegment segment = new Aspose.Pdf.Text.TextSegment(" This is a sample text using Custom font.");
+Aspose.Pdf.Text.TextState ts = new Aspose.Pdf.Text.TextState();
+ts.Font = FontRepository.FindFont("Arial");
+ts.Font.IsEmbedded = true;
+segment.TextState = ts;
+fragment.Segments.Add(segment);
+page.Paragraphs.Add(fragment);
 
-            Aspose.Pdf.Text.TextSegment segment = new Aspose.Pdf.Text.TextSegment(" This is a sample text using Custom font.");
-            Aspose.Pdf.Text.TextState ts = new Aspose.Pdf.Text.TextState();
-            ts.Font = FontRepository.FindFont("Arial");
-            ts.Font.IsEmbedded = true;
-            segment.TextState = ts;
-            fragment.Segments.Add(segment);
-            page.Paragraphs.Add(fragment);
-
-            dataDir = dataDir + "EmbedFontWhileDocCreation_out.pdf";
-            // Salva documento PDF
-            doc.Save(dataDir);
-            
-            
-        
+dataDir = dataDir + "EmbedFontWhileDocCreation_out.pdf";
+// Salva documento PDF
+doc.Save(dataDir);
 ```
 
 ## Conclusione

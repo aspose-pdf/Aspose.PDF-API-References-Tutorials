@@ -132,6 +132,5 @@ dataDir = dataDir + "TOC_out.pdf";
 doc.Save(dataDir);
 
 Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at " + dataDir);
-
 ```
 

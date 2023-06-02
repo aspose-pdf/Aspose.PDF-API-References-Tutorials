@@ -14,7 +14,12 @@ Aspose.PDF för .NET tutorials och kodsnuttar för att skapa, redigera, konverte
 {{% /alert %}}
 
 Det här är länkar till några användbara resurser:
-- [Programmering med dokument](./net/programming-with-document/)
-- [Programmering med anteckningar](./net/annotations/)
+- [Programmering med dokument](./programming-with-document/)
+- [Programmering med anteckningar](./annotations/)  
+- [Dokumentkonvertering](./document-conversion/)
+- [Programmering med formulär](./programming-with-forms/)
+- [Programmering med tabeller](./programming-with-tables/) 
+- [Programmering med PDF-sidor](./programming-with-pdf-pages/)
+- [Programmering med grafer](./programming-with-graphs/)
  
 

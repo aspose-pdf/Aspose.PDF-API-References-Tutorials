@@ -1,7 +1,7 @@
 ---
 title: Lägg till lager
 linktitle: Lägg till lager
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du lägger till lager i PDF-filer med Aspose.PDF för .NET. Steg-för-steg-guide med kodhandledning för att skapa och spara skiktade PDF-filer.
 type: docs
 weight: 20
@@ -12,7 +12,7 @@ För att lägga till lager i en PDF-fil kommer vi att använda Aspose.PDF för .
 
 ## Steg 1: Skapa ett nytt PDF-dokument
 
- Börja med att skapa en ny instans av`Document`klass tillhandahållen av Aspose.PDF för .NET. Detta kommer att fungera som PDF-dokumentet där vi lägger till lagren.
+ Börja med att skapa en ny instans av`Document` klass tillhandahållen av Aspose.PDF för .NET. Detta kommer att fungera som PDF-dokumentet där vi lägger till lagren.
 
 ```csharp
 // Sökvägen till dokumentkatalogen.
@@ -61,7 +61,7 @@ I den här handledningen har vi lagt till tre lager med olika färger och namn p
 
 ## Steg 4: Spara PDF-filen
 
- Spara den ändrade PDF-filen med hjälp av`Save` metod för`Document` klass.
+Spara den ändrade PDF-filen med hjälp av`Save` metod för`Document` klass.
 
 ```csharp
 dataDir = dataDir + "AddLayers_out.pdf";
@@ -108,4 +108,4 @@ Console.WriteLine("\nLayers added successfully to PDF file.\nFile saved at " + d
 
 ## Slutsats
 
-den här artikeln har vi tillhandahållit en steg-för-steg-guide för att lägga till lager i PDF-filer med Aspose.PDF för .NET. Genom att följa instruktionerna och använda de medföljande kodhandledningarna kan du enkelt infoga lager i dina PDF-dokument. Lager låter dig organisera och kontrollera innehållets synlighet, vilket ger en mer interaktiv och anpassningsbar upplevelse för dina användare.
+I den här artikeln har vi tillhandahållit en steg-för-steg-guide för att lägga till lager i PDF-filer med Aspose.PDF för .NET. Genom att följa instruktionerna och använda de medföljande kodhandledningarna kan du enkelt infoga lager i dina PDF-dokument. Lager låter dig organisera och kontrollera innehållets synlighet, vilket ger en mer interaktiv och anpassningsbar upplevelse för dina användare.

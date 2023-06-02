@@ -25,7 +25,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc1 = new Document(dataDir + "input.pdf");
 ```
 
- نحن هنا نفتح مستند PDF باستخدام Aspose.PDF's`Document` class وتحديد المسار إلى ملف PDF المدخل.
+نحن هنا نفتح مستند PDF باستخدام Aspose.PDF's`Document` class وتحديد المسار إلى ملف PDF المدخل.
 
 ## الخطوة 3: تحديث حجم الخط ولون التعليق التوضيحي للنص المجاني
 
@@ -47,10 +47,6 @@ catch (Exception ex)
 
  هذا معيار`try-catch` الذي يمسك أي استثناءات قد تحدث أثناء تنفيذ التعليمات البرمجية ويطبع رسالة الخطأ إلى وحدة التحكم.
 
-## خاتمة
-
-في هذه المقالة ، قدمنا دليلاً خطوة بخطوة لشرح الكود المصدري C # لميزة Update Free Text Annotation في Aspose.PDF for .NET. باتباع هذه الخطوات ، يمكنك بسهولة تحديث حجم الخط ولون التعليقات التوضيحية النصية المجانية في مستندات PDF الخاصة بك باستخدام Aspose.PDF for .NET.
-
 ### مثال على الكود المصدري لتحديث التعليق التوضيحي للنص الحر باستخدام Aspose.PDF for .NET
 
 قبل الغوص في شرح الكود ، دعنا أولاً نلقي نظرة على الكود نفسه. يوضح مثال الكود هذا كيفية تحديث خصائص التعليق التوضيحي للنص الحر في مستند PDF باستخدام Aspose.PDF لـ .NET.
@@ -64,7 +60,7 @@ try
     // افتح المستند
     Document doc1 = new Document(dataDir + "input.pdf");
 
-    // اضبط حجم الخط ولونه في التعليق التوضيحي:
+    // تعيين حجم الخط ولونه في التعليق التوضيحي:
     (doc1.Pages[1].Annotations[0] as FreeTextAnnotation).TextStyle.FontSize = 18;
     (doc1.Pages[1].Annotations[0] as FreeTextAnnotation).TextStyle.Color = System.Drawing.Color.Green;
                 
@@ -74,3 +70,7 @@ catch (Exception ex)
     Console.WriteLine(ex.Message);
 }
 ```
+
+## خاتمة
+
+في هذه المقالة ، قدمنا دليلاً خطوة بخطوة لشرح الكود المصدري C # لميزة Update Free Text Annotation في Aspose.PDF for .NET. باتباع هذه الخطوات ، يمكنك بسهولة تحديث حجم الخط ولون التعليقات التوضيحية النصية المجانية في مستندات PDF الخاصة بك باستخدام Aspose.PDF for .NET.

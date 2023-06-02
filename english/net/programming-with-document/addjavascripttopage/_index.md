@@ -66,12 +66,6 @@ This code will save the modified PDF file to the specified directory.
 ### Example source code for Add Java Script To Page using Aspose.PDF for .NET
 
 ```csharp
-// The path to the documents directory.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Load an existing PDF files
-
-```csharp
             
 // The path to the documents directory.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -94,8 +88,7 @@ dataDir = dataDir + "JavaScript-Added_out.pdf";
 // Save PDF Document
 doc.Save(dataDir);
 
-Console.WriteLine("\nJavascript added successfully to a page.\nFile saved at " + dataDir);
-        
+Console.WriteLine("\nJavascript added successfully to a page.\nFile saved at " + dataDir);     
 ```
 
 ## Conclusion

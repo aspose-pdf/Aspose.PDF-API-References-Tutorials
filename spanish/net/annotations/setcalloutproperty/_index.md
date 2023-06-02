@@ -7,7 +7,7 @@ type: docs
 weight: 130
 url: /es/net/annotations/setcalloutproperty/
 ---
-Aspose.PDF para .NET es una poderosa biblioteca para crear, manipular y convertir documentos PDF en C#. Una de las características proporcionadas por esta biblioteca es la capacidad de establecer propiedades de llamada para anotaciones de texto libre en documentos PDF. Esto se puede hacer usando el`FreeTextAnnotation` class, que le permite crear anotaciones con llamadas.
+ Aspose.PDF para .NET es una poderosa biblioteca para crear, manipular y convertir documentos PDF en C#. Una de las características proporcionadas por esta biblioteca es la capacidad de establecer propiedades de llamada para anotaciones de texto libre en documentos PDF. Esto se puede hacer usando el`FreeTextAnnotation` class, que le permite crear anotaciones con llamadas.
 
 En este tutorial, lo guiaremos a través del proceso de configuración de propiedades de llamada para una anotación de texto libre usando Aspose.PDF para .NET en C#. Siga los pasos a continuación para comenzar.
 
@@ -35,7 +35,7 @@ Page page = doc.Pages.Add();
 
 ## Establecer apariencia predeterminada
 
-Establezca la apariencia predeterminada para la anotación de texto libre creando una nueva`DefaultAppearance` objeto y establecer sus propiedades tales como`TextColor` y`FontSize`.
+ Establezca la apariencia predeterminada para la anotación de texto libre creando una nueva`DefaultAppearance` objeto y establecer sus propiedades tales como`TextColor` y`FontSize`.
 
 ```csharp
 DefaultAppearance da = new DefaultAppearance();
@@ -67,7 +67,7 @@ page.Annotations.Add(fta);
 
 ## Agregar texto a la anotación
 
- Agregue texto a la anotación configurando el`RichText` propiedad a una cadena de XML formateado. En este tutorial, estamos configurando el color del texto en rojo y el tamaño de fuente en 9.
+ Agregue texto a la anotación configurando el`RichText`propiedad a una cadena de XML formateado. En este tutorial, estamos configurando el color del texto en rojo y el tamaño de fuente en 9.
 
 ```csharp
 fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"color:#FF
@@ -84,27 +84,22 @@ doc.Save(dataDir + "SetCalloutProperty.pdf")
 ### Ejemplo de código fuente para Establecer propiedad de llamada usando Aspose.PDF para .NET
 
 ```csharp
+// La ruta al directorio de documentos.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-            
-            // La ruta al directorio de documentos.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-            Document doc = new Document();
-            Page page = doc.Pages.Add();
-            DefaultAppearance da = new DefaultAppearance();
-            da.TextColor = System.Drawing.Color.Red;
-            da.FontSize = 10;
-            FreeTextAnnotation fta = new FreeTextAnnotation(page, new Rectangle(422.25, 645.75, 583.5, 702.75), da);
-            fta.Intent = FreeTextIntent.FreeTextCallout;
-            fta.EndingStyle = LineEnding.OpenArrow;
-            fta.Callout = new Point[]
-            {
-                new Point(428.25,651.75), new Point(462.75,681.375), new Point(474,681.375)
-            };
-            page.Annotations.Add(fta);
-            fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"color:#FF0000;font-weight:normal;font-style:normal;font-stretch:normal\"><p dir=\"ltr\"> <span style=\"font-size:9.0pt;font-family:Helvetica\">Esta es una muestra</span></p></body>";
-            doc.Save(dataDir + "SetCalloutProperty.pdf");
-
-            
-        
+Document doc = new Document();
+Page page = doc.Pages.Add();
+DefaultAppearance da = new DefaultAppearance();
+da.TextColor = System.Drawing.Color.Red;
+da.FontSize = 10;
+FreeTextAnnotation fta = new FreeTextAnnotation(page, new Rectangle(422.25, 645.75, 583.5, 702.75), da);
+fta.Intent = FreeTextIntent.FreeTextCallout;
+fta.EndingStyle = LineEnding.OpenArrow;
+fta.Callout = new Point[]
+{
+	new Point(428.25,651.75), new Point(462.75,681.375), new Point(474,681.375)
+};
+page.Annotations.Add(fta);
+fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"color:#FF0000;font-weight:normal;font-style:normal;font-stretch:normal\"><p dir=\"ltr\"> <span style=\"font-size:9.0pt;font-family:Helvetica\">Esta es una muestra</span></p></body>";
+doc.Save(dataDir + "SetCalloutProperty.pdf");
 ```

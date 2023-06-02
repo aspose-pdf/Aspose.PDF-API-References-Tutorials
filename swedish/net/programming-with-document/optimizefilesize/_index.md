@@ -1,7 +1,7 @@
 ---
 title: Optimera filstorlek
 linktitle: Optimera filstorlek
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du optimerar filstorleken på dina PDF-dokument med Aspose.PDF för .NET med hjälp av denna steg-för-steg-guide.
 type: docs
 weight: 250
@@ -65,23 +65,21 @@ pdfDocument.Save(dataDir);
 ### Exempel på källkod för Optimera filstorlek med Aspose.PDF för .NET
 
 ```csharp
+// Sökvägen till dokumentkatalogen.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Sökvägen till dokumentkatalogen.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Öppna dokumentet
+Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 
-	// Öppna dokumentet
-	Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-
-	OptimizationOptions optimizationOptions = new OptimizationOptions();
-	optimizationOptions.LinkDuplcateStreams = true;
-	optimizationOptions.RemoveUnusedObjects = true;
-	optimizationOptions.RemoveUnusedStreams = true;
-	optimizationOptions.ImageCompressionOptions.CompressImages = true;
-	optimizationOptions.ImageCompressionOptions.ImageQuality = 10;
-	// Optimera filstorleken genom att ta bort oanvända objekt
-	pdfDocument.OptimizeResources(optimizationOptions);
-	dataDir = dataDir + "OptimizeFileSize_out.pdf";
-	// Spara utdatadokument
-	pdfDocument.Save(dataDir);
-
+OptimizationOptions optimizationOptions = new OptimizationOptions();
+optimizationOptions.LinkDuplcateStreams = true;
+optimizationOptions.RemoveUnusedObjects = true;
+optimizationOptions.RemoveUnusedStreams = true;
+optimizationOptions.ImageCompressionOptions.CompressImages = true;
+optimizationOptions.ImageCompressionOptions.ImageQuality = 10;
+// Optimera filstorleken genom att ta bort oanvända objekt
+pdfDocument.OptimizeResources(optimizationOptions);
+dataDir = dataDir + "OptimizeFileSize_out.pdf";
+// Spara utdatadokument
+pdfDocument.Save(dataDir);
 ```

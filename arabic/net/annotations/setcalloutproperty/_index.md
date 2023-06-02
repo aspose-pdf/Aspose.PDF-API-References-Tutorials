@@ -7,7 +7,7 @@ type: docs
 weight: 130
 url: /ar/net/annotations/setcalloutproperty/
 ---
-Aspose.PDF for .NET مكتبة قوية لإنشاء مستندات PDF ومعالجتها وتحويلها في C #. تتمثل إحدى الميزات التي توفرها هذه المكتبة في القدرة على تعيين خصائص وسيلة الشرح للتعليقات التوضيحية النصية المجانية في مستندات PDF. يمكن القيام بذلك باستخدام ملف`FreeTextAnnotation` class ، والتي تتيح لك إنشاء تعليقات توضيحية باستخدام وسائل الشرح.
+ Aspose.PDF for .NET مكتبة قوية لإنشاء مستندات PDF ومعالجتها وتحويلها في C #. تتمثل إحدى الميزات التي توفرها هذه المكتبة في القدرة على تعيين خصائص وسيلة الشرح للتعليقات التوضيحية النصية المجانية في مستندات PDF. يمكن القيام بذلك باستخدام ملف`FreeTextAnnotation` class ، والتي تتيح لك إنشاء تعليقات توضيحية باستخدام وسائل الشرح.
 
 في هذا البرنامج التعليمي ، سنوجهك خلال عملية تعيين خصائص وسيلة الشرح للحصول على تعليق توضيحي نصي مجاني باستخدام Aspose.PDF لـ .NET في C #. اتبع الخطوات أدناه للبدء.
 
@@ -35,7 +35,7 @@ Page page = doc.Pages.Add();
 
 ## تعيين المظهر الافتراضي
 
-عيّن المظهر الافتراضي للتعليق النصي المجاني عن طريق إنشاء ملف`DefaultAppearance` الكائن وتعيين خصائصه مثل`TextColor` و`FontSize`.
+ عيّن المظهر الافتراضي للتعليق النصي المجاني عن طريق إنشاء ملف`DefaultAppearance` الكائن وتعيين خصائصه مثل`TextColor` و`FontSize`.
 
 ```csharp
 DefaultAppearance da = new DefaultAppearance();
@@ -45,7 +45,7 @@ da.FontSize = 10;
 
 ## قم بإنشاء تعليق توضيحي نصي مجاني باستخدام وسيلة الشرح
 
- أنشئ تعليقًا توضيحيًا نصيًا مجانيًا جديدًا باستخدام وسيلة الشرح باستخدام`FreeTextAnnotation` فصل. تعيين`Intent` ملكية ل`FreeTextIntent.FreeTextCallout` لتحديد أن هذا تعليق توضيحي. تعيين`EndingStyle` ملكية ل`LineEnding.OpenArrow` لتحديد نمط السهم في نهاية وسيلة الشرح. تعيين`Callout` خاصية لمجموعة من`Point` كائنات تمثل النقاط على الصفحة حيث يجب رسم خط وسيلة الشرح.
+ أنشئ تعليقًا توضيحيًا نصيًا مجانيًا جديدًا باستخدام وسيلة الشرح باستخدام`FreeTextAnnotation` فصل. تعيين`Intent` الملكية ل`FreeTextIntent.FreeTextCallout` لتحديد أن هذا تعليق توضيحي. تعيين`EndingStyle` الملكية ل`LineEnding.OpenArrow` لتحديد نمط السهم في نهاية وسيلة الشرح. تعيين`Callout` خاصية لمجموعة من`Point` كائنات تمثل النقاط على الصفحة حيث يجب رسم خط وسيلة الشرح.
 
 ```csharp
 FreeTextAnnotation fta = new FreeTextAnnotation(page, new Rectangle(422.25, 645.75, 583.5, 702.75), da);
@@ -67,7 +67,7 @@ page.Annotations.Add(fta);
 
 ## أضف نصًا إلى التعليق التوضيحي
 
- أضف نصًا إلى التعليق التوضيحي عن طريق تعيين`RichText` إلى سلسلة من XML المنسق. في هذا البرنامج التعليمي ، نقوم بتعيين لون النص إلى اللون الأحمر وحجم الخط على 9.
+ أضف نصًا إلى التعليق التوضيحي عن طريق تعيين`RichText`إلى سلسلة من XML المنسق. في هذا البرنامج التعليمي ، نقوم بتعيين لون النص إلى اللون الأحمر وحجم الخط على 9.
 
 ```csharp
 fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml \ "xmlns: xfa = \" http: //www.xfa.org/schema/xfa-data/1.0/ \ "xfa: APIVersion = \" Acrobat: 11.0.23 \ " xfa: المواصفات = \ "2.0.2 \" style = \ "color: #FF
@@ -84,27 +84,22 @@ doc.Save(dataDir + "SetCalloutProperty.pdf")
 ### مثال على التعليمات البرمجية المصدر لـ Set Callout Property باستخدام Aspose.PDF for .NET
 
 ```csharp
+// المسار إلى دليل المستندات.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-            
-            // المسار إلى دليل المستندات.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-            Document doc = new Document();
-            Page page = doc.Pages.Add();
-            DefaultAppearance da = new DefaultAppearance();
-            da.TextColor = System.Drawing.Color.Red;
-            da.FontSize = 10;
-            FreeTextAnnotation fta = new FreeTextAnnotation(page, new Rectangle(422.25, 645.75, 583.5, 702.75), da);
-            fta.Intent = FreeTextIntent.FreeTextCallout;
-            fta.EndingStyle = LineEnding.OpenArrow;
-            fta.Callout = new Point[]
-            {
-                new Point(428.25,651.75), new Point(462.75,681.375), new Point(474,681.375)
-            };
-            page.Annotations.Add(fta);
-            fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml \ "xmlns: xfa = \" http: //www.xfa.org/schema/xfa-data/1.0/ \ "xfa: APIVersion = \" Acrobat: 11.0.23 \ " xfa: spec = \ "2.0.2 \" style = \ "color: # FF0000؛ font-weight: normal؛ font-style: normal؛ font-stretch: normal \"> <p dir = \ "ltr \"> <span style = \ "font-size: 9.0pt؛ font-family: Helvetica \"> هذا نموذج </ span> </p> </body> "؛
-            doc.Save(dataDir + "SetCalloutProperty.pdf");
-
-            
-        
+Document doc = new Document();
+Page page = doc.Pages.Add();
+DefaultAppearance da = new DefaultAppearance();
+da.TextColor = System.Drawing.Color.Red;
+da.FontSize = 10;
+FreeTextAnnotation fta = new FreeTextAnnotation(page, new Rectangle(422.25, 645.75, 583.5, 702.75), da);
+fta.Intent = FreeTextIntent.FreeTextCallout;
+fta.EndingStyle = LineEnding.OpenArrow;
+fta.Callout = new Point[]
+{
+	new Point(428.25,651.75), new Point(462.75,681.375), new Point(474,681.375)
+};
+page.Annotations.Add(fta);
+fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml \ "xmlns: xfa = \" http: //www.xfa.org/schema/xfa-data/1.0/ \ "xfa: APIVersion = \" Acrobat: 11.0.23 \ " xfa: spec = \ "2.0.2 \" style = \ "color: # FF0000؛ font-weight: normal؛ font-style: normal؛ font-stretch: normal \"> <p dir = \ "ltr \"> <span style = \ "font-size: 9.0pt؛ font-family: Helvetica \"> هذا نموذج </ span> </p> </body> "؛
+doc.Save(dataDir + "SetCalloutProperty.pdf");
 ```

@@ -8,7 +8,7 @@ weight: 130
 url: /fr/net/programming-with-document/embedfontsusingsubsetstrategy/
 ---
 
-Dans ce didacticiel, nous expliquerons comment incorporer des polices dans un fichier PDF avec une stratégie de sous-ensemble à l'aide d'Aspose.PDF pour .NET. Aspose.PDF pour .NET est une bibliothèque puissante qui permet aux développeurs de créer, modifier et manipuler des documents PDF par programme. L'intégration de polices dans un fichier PDF est une étape importante pour garantir que le document s'affiche correctement sur différents appareils, que les polices requises soient installées ou non sur ces appareils.
+Dans ce didacticiel, nous expliquerons comment incorporer des polices dans un fichier PDF avec une stratégie de sous-ensemble à l'aide d'Aspose.PDF pour .NET. Aspose.PDF pour .NET est une bibliothèque puissante qui permet aux développeurs de créer, modifier et manipuler des documents PDF par programmation. L'intégration de polices dans un fichier PDF est une étape importante pour garantir que le document s'affiche correctement sur différents appareils, que les polices requises soient installées ou non sur ces appareils.
 
 ## Étape 1 : Créer une nouvelle application de console C#
 Pour commencer, créez une nouvelle application console C# dans Visual Studio. Vous pouvez le nommer comme bon vous semble. Une fois le projet créé, vous devez ajouter une référence à la bibliothèque Aspose.PDF pour .NET.
@@ -58,19 +58,14 @@ doc.Save(dataDir + "Output_out.pdf");
 ### Exemple de code source pour l'intégration de polices avec une stratégie de sous-ensemble à l'aide d'Aspose.PDF pour .NET. 
 
 ```csharp
-
-            
-            // Chemin d'accès au répertoire des documents.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
-            Document doc = new Document(dataDir + "input.pdf");
-            // Toutes les polices seront intégrées en tant que sous-ensemble dans le document en cas de SubsetAllFonts.
-            doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
-            // Le sous-ensemble de polices sera intégré pour les polices entièrement intégrées, mais les polices qui ne sont pas intégrées au document ne seront pas affectées.
-            doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
-            doc.Save(dataDir + "Output_out.pdf");
-            
-
-        
+// Chemin d'accès au répertoire des documents.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+Document doc = new Document(dataDir + "input.pdf");
+// Toutes les polices seront intégrées en tant que sous-ensemble dans le document en cas de SubsetAllFonts.
+doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
+// Le sous-ensemble de polices sera intégré pour les polices entièrement intégrées, mais les polices qui ne sont pas intégrées au document ne seront pas affectées.
+doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
+doc.Save(dataDir + "Output_out.pdf");
 ```
 
 ## Conclusion

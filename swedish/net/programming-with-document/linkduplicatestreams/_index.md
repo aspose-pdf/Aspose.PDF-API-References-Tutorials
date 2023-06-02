@@ -1,7 +1,7 @@
 ---
 title: Länka dubbletter av strömmar
 linktitle: Länka dubbletter av strömmar
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du använder funktionen Aspose.PDF för .NET Link Duplicate Streams för att optimera dina PDF-dokument med denna steg-för-steg-guide.
 type: docs
 weight: 230
@@ -62,20 +62,18 @@ I koden ovan använde vi Save-metoden för pdfDocument-objektet för att spara d
 ### Exempel på källkod för länkduplikatströmmar med Aspose.PDF för .NET
 
 ```csharp
-
-	// Sökvägen till dokumentkatalogen.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Öppna dokumentet
-	Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-	// Ställ in alternativet LinkDuplcateStreams
-	var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-	{
-		LinkDuplcateStreams = true
-	};
-	// Optimera PDF-dokument med OptimizationOptions
-	pdfDocument.OptimizeResources(optimizeOptions);
-	dataDir = dataDir + "OptimizeDocument_out.pdf";
-	// Spara uppdaterat dokument
-	pdfDocument.Save(dataDir);
-	
+// Sökvägen till dokumentkatalogen.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Öppna dokumentet
+Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
+// Ställ in alternativet LinkDuplcateStreams
+var optimizeOptions = new Pdf.Optimization.OptimizationOptions
+{
+	LinkDuplcateStreams = true
+};
+// Optimera PDF-dokument med OptimizationOptions
+pdfDocument.OptimizeResources(optimizeOptions);
+dataDir = dataDir + "OptimizeDocument_out.pdf";
+// Spara uppdaterat dokument
+pdfDocument.Save(dataDir);
 ```

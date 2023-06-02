@@ -1,7 +1,7 @@
 ---
 title: Bädda in teckensnitt medan du skapar dokument
 linktitle: Bädda in teckensnitt medan du skapar dokument
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du bäddar in ett teckensnitt samtidigt som du skapar ett PDF-dokument med Aspose.PDF för .NET. Säkerställ korrekt visning på olika enheter.
 type: docs
 weight: 140
@@ -66,33 +66,28 @@ doc.Save(dataDir);
 ### Exempel på källkod för Embed Font While Doc Creation med Aspose.PDF för .NET
 
 ```csharp
+// Sökvägen till dokumentkatalogen.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-            
-            // Sökvägen till dokumentkatalogen.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Instantiera Pdf-objekt genom att anropa dess tomma konstruktor
+Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
-            // Instantiera Pdf-objekt genom att anropa dess tomma konstruktor
-            Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
+// Skapa ett avsnitt i Pdf-objektet
+Aspose.Pdf.Page page = doc.Pages.Add();
 
-            // Skapa ett avsnitt i Pdf-objektet
-            Aspose.Pdf.Page page = doc.Pages.Add();
+Aspose.Pdf.Text.TextFragment fragment = new Aspose.Pdf.Text.TextFragment("");
 
-            Aspose.Pdf.Text.TextFragment fragment = new Aspose.Pdf.Text.TextFragment("");
+Aspose.Pdf.Text.TextSegment segment = new Aspose.Pdf.Text.TextSegment(" This is a sample text using Custom font.");
+Aspose.Pdf.Text.TextState ts = new Aspose.Pdf.Text.TextState();
+ts.Font = FontRepository.FindFont("Arial");
+ts.Font.IsEmbedded = true;
+segment.TextState = ts;
+fragment.Segments.Add(segment);
+page.Paragraphs.Add(fragment);
 
-            Aspose.Pdf.Text.TextSegment segment = new Aspose.Pdf.Text.TextSegment(" This is a sample text using Custom font.");
-            Aspose.Pdf.Text.TextState ts = new Aspose.Pdf.Text.TextState();
-            ts.Font = FontRepository.FindFont("Arial");
-            ts.Font.IsEmbedded = true;
-            segment.TextState = ts;
-            fragment.Segments.Add(segment);
-            page.Paragraphs.Add(fragment);
-
-            dataDir = dataDir + "EmbedFontWhileDocCreation_out.pdf";
-            // Spara PDF-dokument
-            doc.Save(dataDir);
-            
-            
-        
+dataDir = dataDir + "EmbedFontWhileDocCreation_out.pdf";
+// Spara PDF-dokument
+doc.Save(dataDir);
 ```
 
 ## Slutsats

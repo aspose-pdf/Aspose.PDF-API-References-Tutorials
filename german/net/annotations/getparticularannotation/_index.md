@@ -44,20 +44,18 @@ Dieser Code zeigt den Titel, den Betreff und den Inhalt der Anmerkung in der Kon
 ### Beispielquellcode zum Abrufen bestimmter Anmerkungen mit Aspose.PDF für .NET
 
 ```csharp
+// Der Pfad zum Dokumentenverzeichnis.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Der Pfad zum Dokumentenverzeichnis.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Dokument öffnen
+Document pdfDocument = new Document(dataDir + "GetParticularAnnotation.pdf");
 
-	// Dokument öffnen
-	Document pdfDocument = new Document(dataDir + "GetParticularAnnotation.pdf");
+// Erhalten Sie eine bestimmte Anmerkung
+TextAnnotation textAnnotation = (TextAnnotation)pdfDocument.Pages[1].Annotations[1];
 
-	// Erhalten Sie eine bestimmte Anmerkung
-	TextAnnotation textAnnotation = (TextAnnotation)pdfDocument.Pages[1].Annotations[1];
-
-	// Anmerkungseigenschaften abrufen
-	Console.WriteLine("Title : {0} ", textAnnotation.Title);
-	Console.WriteLine("Subject : {0} ", textAnnotation.Subject);
-	Console.WriteLine("Contents : {0} ", textAnnotation.Contents);
-
+// Anmerkungseigenschaften abrufen
+Console.WriteLine("Title : {0} ", textAnnotation.Title);
+Console.WriteLine("Subject : {0} ", textAnnotation.Subject);
+Console.WriteLine("Contents : {0} ", textAnnotation.Contents);
 ```
 

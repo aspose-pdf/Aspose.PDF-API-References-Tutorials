@@ -24,7 +24,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## الخطوة 2: افتح مستند PDF
 
- الخطوة الأولى هي تحميل مستند PDF الذي تريد القيام بذلك ، استخدم ملف`Document` فئة Aspose.PDF لـ .NET. يوضح مقتطف الشفرة التالي كيفية تحميل مستند PDF:
+الخطوة الأولى هي تحميل مستند PDF الذي تريد القيام بذلك ، استخدم ملف`Document` فئة Aspose.PDF لـ .NET. يوضح مقتطف الشفرة التالي كيفية تحميل مستند PDF:
 
 ```csharp
 // افتح المستند
@@ -45,7 +45,7 @@ var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 
 ## الخطوة 4: تحسين مستند PDF
 
-بعد ضبط ملف`UnembedFonts` الخيار ، يمكنك تحسين مستند PDF باستخدام ملف`OptimizeResources` طريقة`Document` فصل. يوضح مقتطف الشفرة التالي كيفية تحسين مستند PDF:
+ بعد ضبط ملف`UnembedFonts` الخيار ، يمكنك تحسين مستند PDF باستخدام ملف`OptimizeResources` طريقة`Document` فصل. يوضح مقتطف الشفرة التالي كيفية تحسين مستند PDF:
 
 ```csharp
 // تحسين مستند PDF باستخدام OptimizationOptions
@@ -63,7 +63,7 @@ pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
 
 ## الخطوة 6: احصل على حجم الملف الأصلي والمخفض
 
- أخيرًا ، يمكنك الحصول على حجم الملف الأصلي والصغير لمستند PDF باستخدام تنسيق`FileInfo` فئة System.IO. يوضح مقتطف الشفرة التالي كيفية الحصول على حجم الملف الأصلي والصغير:
+ أخيرًا ، يمكنك الحصول على حجم الملف الأصلي والصغير لمستند PDF باستخدام تنسيق`FileInfo`فئة System.IO. يوضح مقتطف الشفرة التالي كيفية الحصول على حجم الملف الأصلي والصغير:
 
 ```csharp
 var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
@@ -76,24 +76,22 @@ Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length,
 فيما يلي المثال الكامل لشفرة المصدر للحصول على خطوط غير مجمعة من مستند PDF باستخدام Aspose.PDF لـ .NET:
 
 ```csharp
-	
-	// المسار إلى دليل المستندات.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// افتح المستند
-	Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-	// تعيين خيار UnembedFonts
-	var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-	{
-		UnembedFonts = true
-	};
-	Console.WriteLine("Start");
-	// تحسين مستند PDF باستخدام OptimizationOptions
-	pdfDocument.OptimizeResources(optimizeOptions);
-	// احفظ المستند المحدث
-	pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
-	Console.WriteLine("Finished");
-	var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
-	var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
-	Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
-	
+// المسار إلى دليل المستندات.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// افتح المستند
+Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
+// تعيين خيار UnembedFonts
+var optimizeOptions = new Pdf.Optimization.OptimizationOptions
+{
+	UnembedFonts = true
+};
+Console.WriteLine("Start");
+// تحسين مستند PDF باستخدام OptimizationOptions
+pdfDocument.OptimizeResources(optimizeOptions);
+// احفظ المستند المحدث
+pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
+Console.WriteLine("Finished");
+var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
+var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
+Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
 ```

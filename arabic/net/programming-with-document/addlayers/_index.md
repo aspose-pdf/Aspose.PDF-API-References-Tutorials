@@ -12,7 +12,7 @@ url: /ar/net/programming-with-document/addlayers/
 
 ## الخطوة 1: قم بإنشاء مستند PDF جديد
 
- ابدأ بإنشاء مثيل جديد لـ`Document`فئة مقدمة من Aspose.PDF لـ .NET. سيكون هذا بمثابة مستند PDF حيث سنضيف الطبقات.
+ ابدأ بإنشاء مثيل جديد لـ`Document` فئة مقدمة من Aspose.PDF لـ .NET. سيكون هذا بمثابة مستند PDF حيث سنضيف الطبقات.
 
 ```csharp
 // المسار إلى دليل المستندات.
@@ -61,7 +61,7 @@ page.Layers.Add(layer);
 
 ## الخطوة 4: احفظ ملف PDF
 
- احفظ ملف PDF المعدل باستخدام امتداد`Save` طريقة`Document` فصل.
+احفظ ملف PDF المعدل باستخدام امتداد`Save` طريقة`Document` فصل.
 
 ```csharp
 dataDir = dataDir + "AddLayers_out.pdf";

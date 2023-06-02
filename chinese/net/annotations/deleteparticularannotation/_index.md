@@ -54,20 +54,18 @@ Console.WriteLine("\nParticular annotation deleted successfully.\nFile saved at 
 ### 使用 Aspose.PDF for .NET 删除特定注释的示例源代码
 
 ```csharp
+//文档目录的路径。
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	//文档目录的路径。
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+//打开文档
+Document pdfDocument = new Document(dataDir + "DeleteParticularAnnotation.pdf");
 
-	//打开文档
-	Document pdfDocument = new Document(dataDir + "DeleteParticularAnnotation.pdf");
+//删除特定注释
+pdfDocument.Pages[1].Annotations.Delete(1);
 
-	//删除特定注释
-	pdfDocument.Pages[1].Annotations.Delete(1);
+dataDir = dataDir + "DeleteParticularAnnotation_out.pdf";
+//保存更新的文档
+pdfDocument.Save(dataDir);
 
-	dataDir = dataDir + "DeleteParticularAnnotation_out.pdf";
-	//保存更新的文档
-	pdfDocument.Save(dataDir);
-
-	Console.WriteLine("\nParticular annotation deleted successfully.\nFile saved at " + dataDir);
-
+Console.WriteLine("\nParticular annotation deleted successfully.\nFile saved at " + dataDir);
 ```

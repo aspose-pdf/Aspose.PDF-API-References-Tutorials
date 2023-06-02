@@ -1,7 +1,7 @@
 ---
 title: Skaffa XMP-metadata
 linktitle: Skaffa XMP-metadata
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du använder GetXmpMetadata-funktionen i Aspose.PDF för .NET för att extrahera XMP-metadata från ett PDF-dokument med C#-källkod.
 type: docs
 weight: 200
@@ -44,7 +44,7 @@ Console.WriteLine(pdfDocument.Metadata["xmp:CustomProperty"]);
 
  I ovanstående kod,`xmp:CreateDate`, `xmp:Nickname` , och`xmp:CustomProperty`är exempel på XMP-metadataegenskaper som du kan extrahera från ett PDF-dokument. Du kan ersätta dessa egenskapsnamn med namnen på alla andra XMP-metadataegenskaper som du vill extrahera.
 
-## Exempel på källkod för Hämta XMP-metadata med Aspose.PDF för .NET
+### Exempel på källkod för Hämta XMP-metadata med Aspose.PDF för .NET
 
  Här är den fullständiga källkoden för att extrahera XMP-metadata från ett PDF-dokument med hjälp av`GetXmpMetadata` funktion i Aspose.PDF för .NET:
 

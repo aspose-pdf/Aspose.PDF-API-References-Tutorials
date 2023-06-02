@@ -44,20 +44,18 @@ Bu kod, açıklamanın başlığını, konusunu ve içeriğini konsolda görünt
 ### Aspose.PDF for .NET kullanarak Özel Ek Açıklama Almak için Örnek Kaynak Kodu
 
 ```csharp
+// Belgeler dizininin yolu.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Belgeler dizininin yolu.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Belgeyi aç
+Document pdfDocument = new Document(dataDir + "GetParticularAnnotation.pdf");
 
-	// Belgeyi aç
-	Document pdfDocument = new Document(dataDir + "GetParticularAnnotation.pdf");
+// Belirli ek açıklamayı alın
+TextAnnotation textAnnotation = (TextAnnotation)pdfDocument.Pages[1].Annotations[1];
 
-	// Belirli ek açıklamayı alın
-	TextAnnotation textAnnotation = (TextAnnotation)pdfDocument.Pages[1].Annotations[1];
-
-	// Ek açıklama özelliklerini al
-	Console.WriteLine("Title : {0} ", textAnnotation.Title);
-	Console.WriteLine("Subject : {0} ", textAnnotation.Subject);
-	Console.WriteLine("Contents : {0} ", textAnnotation.Contents);
-
+// Ek açıklama özelliklerini al
+Console.WriteLine("Title : {0} ", textAnnotation.Title);
+Console.WriteLine("Subject : {0} ", textAnnotation.Subject);
+Console.WriteLine("Contents : {0} ", textAnnotation.Contents);
 ```
 

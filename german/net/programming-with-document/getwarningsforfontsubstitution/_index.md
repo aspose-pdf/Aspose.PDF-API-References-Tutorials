@@ -70,4 +70,6 @@ doc.FontSubstitution += new Document.FontSubstitutionHandler(OnFontSubstitution)
 // Behandeln Sie die Schriftartersetzungswarnung
 private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArgs e)
 {
-    Console.WriteLine("Font substitution: {0} => {1}", e.
+    Console.WriteLine("Font substitution: {0} => {1}", e.OriginalFontName, e.SubstitutedFontName);
+}
+```

@@ -58,19 +58,14 @@ doc.Save(dataDir + "Output_out.pdf");
 ### Example source code for embeding fonts with subset strategy using Aspose.PDF for .NET. 
 
 ```csharp
-
-            
-            // The path to the documents directory.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
-            Document doc = new Document(dataDir + "input.pdf");
-            // All fonts will be embedded as subset into document in case of SubsetAllFonts.
-            doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
-            // Font subset will be embedded for fully embedded fonts but fonts which are not embedded into document will not be affected.
-            doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
-            doc.Save(dataDir + "Output_out.pdf");
-            
-
-        
+// The path to the documents directory.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+Document doc = new Document(dataDir + "input.pdf");
+// All fonts will be embedded as subset into document in case of SubsetAllFonts.
+doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
+// Font subset will be embedded for fully embedded fonts but fonts which are not embedded into document will not be affected.
+doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
+doc.Save(dataDir + "Output_out.pdf");
 ```
 
 ## Conclusion

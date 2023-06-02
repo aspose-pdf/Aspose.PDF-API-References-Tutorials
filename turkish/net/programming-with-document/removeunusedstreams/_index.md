@@ -58,20 +58,18 @@ pdfDocument.Save(dataDir);
 Aspose.PDF for .NET kullanarak kullanılmayan akışları kaldırmak için örnek kaynak kodu aşağıdadır.
 
 ```csharp
-
-	// Belgeler dizininin yolu.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Belgeyi aç
-	Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-	// RemoveUsedStreams seçeneğini ayarlayın
-	var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-	{
-		RemoveUnusedStreams = true
-	};
-	// OptimizationOptions kullanarak PDF belgesini optimize edin
-	pdfDocument.OptimizeResources(optimizeOptions);
-	dataDir = dataDir + "OptimizeDocument_out.pdf";
-	// Güncellenen belgeyi kaydet
-	pdfDocument.Save(dataDir);
-
+// Belgeler dizininin yolu.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Belgeyi aç
+Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
+// RemoveUsedStreams seçeneğini ayarlayın
+var optimizeOptions = new Pdf.Optimization.OptimizationOptions
+{
+	RemoveUnusedStreams = true
+};
+// OptimizationOptions kullanarak PDF belgesini optimize edin
+pdfDocument.OptimizeResources(optimizeOptions);
+dataDir = dataDir + "OptimizeDocument_out.pdf";
+// Güncellenen belgeyi kaydet
+pdfDocument.Save(dataDir);
 ```

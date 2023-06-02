@@ -12,7 +12,7 @@ Pour ajouter et supprimer JavaScript des documents PDF, nous utiliserons la bibl
 
 ## Étape 1 : créer un nouveau document PDF
 
- Commencez par créer une nouvelle instance de`Document` classe fournie par Aspose.PDF pour .NET. Cela servira de document PDF où nous ajouterons le JavaScript.
+ Commencez par créer une nouvelle instance de`Document`classe fournie par Aspose.PDF pour .NET. Cela servira de document PDF où nous ajouterons le JavaScript.
 
 ```csharp
 // Chemin d'accès au répertoire des documents.
@@ -66,32 +66,29 @@ Ce code enregistrera le document PDF modifié et affichera le message de réussi
 ### Exemple de code source pour Ajouter Supprimer Javascript des documents PDF à l'aide d'Aspose.PDF pour .NET
 
 ```csharp
+// Chemin d'accès au répertoire des documents.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-            
-            // Chemin d'accès au répertoire des documents.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
+Document doc = new Document();
+doc.Pages.Add();
+doc.JavaScript["func1"] = "function func1() { hello(); }";
+doc.JavaScript["func2"] = "function func2() { hello(); }";
+doc.Save(dataDir + "AddJavascript.pdf");
 
-            Document doc = new Document();
-            doc.Pages.Add();
-            doc.JavaScript["func1"] = "function func1() { hello(); }";
-            doc.JavaScript["func2"] = "function func2() { hello(); }";
-            doc.Save(dataDir + "AddJavascript.pdf");
+// Supprimer le JavaScript au niveau du document
+Document doc1 = new Document(dataDir + "AddJavascript.pdf");
+IList keys = (System.Collections.IList)doc1.JavaScript.Keys;
+Console.WriteLine("=============================== ");
+foreach (string key in keys)
+{
+	Console.WriteLine(key + " ==> " + doc1.JavaScript[key]);
+}
 
-            // Supprimer le JavaScript au niveau du document
-            Document doc1 = new Document(dataDir + "AddJavascript.pdf");
-            IList keys = (System.Collections.IList)doc1.JavaScript.Keys;
-            Console.WriteLine("=============================== ");
-            foreach (string key in keys)
-            {
-                Console.WriteLine(key + " ==> " + doc1.JavaScript[key]);
-            }
+doc1.JavaScript.Remove("func1");
+Console.WriteLine("Key 'func1' removed ");
+Console.WriteLine("=============================== ");
 
-            doc1.JavaScript.Remove("func1");
-            Console.WriteLine("Key 'func1' removed ");
-            Console.WriteLine("=============================== ");
-            
-            Console.WriteLine("\nJavascript added/removed successfully to a document.");
-        
+Console.WriteLine("\nJavascript added/removed successfully to a document.");
 ```
 
 ## Conclusion

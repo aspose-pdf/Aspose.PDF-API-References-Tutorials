@@ -77,45 +77,41 @@ doc.Save(outFile);
 ### Aspose.PDF for .NET kullanarak İçindekiler eklerken sayfa numaralarını özelleştirmek için örnek kaynak kodu
 
 ```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+string inFile = dataDir + "42824.pdf";
+string outFile = dataDir + "42824_out.pdf";
+//Mevcut bir PDF dosyasını yükleyin
+Document doc = new Document(inFile);
+// PDF dosyasının ilk sayfasına erişin
+Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
+// İçindekiler bilgisini temsil edecek nesne oluştur
+TocInfo tocInfo = new TocInfo();
+TextFragment title = new TextFragment("Table Of Contents");
+title.TextState.FontSize = 20;
+title.TextState.FontStyle = FontStyles.Bold;
+// İçindekiler için başlığı ayarla
+tocInfo.Title = title;
+tocInfo.PageNumbersPrefix = "P";
+tocPage.TocInfo = tocInfo;
+for (int i = 1; i<doc.Pages.Count; i++)
+{
+	// Başlık nesnesi oluştur
+	Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
+	TextSegment segment2 = new TextSegment();
+	heading2.TocPage = tocPage;
+	heading2.Segments.Add(segment2);
+	// Başlık nesnesi için hedef sayfayı belirtin
+	heading2.DestinationPage = doc.Pages[i + 1];
+	// hedef sayfa
+	heading2.Top = doc.Pages[i + 1].Rect.Height;
+	// hedef koordinat
+	segment2.Text = "Page " + i.ToString();
+	// İçindekiler içeren sayfaya başlık ekle
+	tocPage.Paragraphs.Add(heading2);
+}
 
-            
-			string dataDir = "YOUR DOCUMENT DIRECTORY";
-            string inFile = dataDir + "42824.pdf";
-            string outFile = dataDir + "42824_out.pdf";
-            // Mevcut bir PDF dosyasını yükleyin
-            Document doc = new Document(inFile);
-            // PDF dosyasının ilk sayfasına erişin
-            Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
-            // İçindekiler bilgisini temsil edecek nesne oluştur
-            TocInfo tocInfo = new TocInfo();
-            TextFragment title = new TextFragment("Table Of Contents");
-            title.TextState.FontSize = 20;
-            title.TextState.FontStyle = FontStyles.Bold;
-            // İçindekiler için başlığı ayarla
-            tocInfo.Title = title;
-            tocInfo.PageNumbersPrefix = "P";
-            tocPage.TocInfo = tocInfo;
-            for (int i = 1; i<doc.Pages.Count; i++)
-            {
-                // Başlık nesnesi oluştur
-                Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
-                TextSegment segment2 = new TextSegment();
-                heading2.TocPage = tocPage;
-                heading2.Segments.Add(segment2);
-                // Başlık nesnesi için hedef sayfayı belirtin
-                heading2.DestinationPage = doc.Pages[i + 1];
-                // hedef sayfa
-                heading2.Top = doc.Pages[i + 1].Rect.Height;
-                // hedef koordinat
-                segment2.Text = "Page " + i.ToString();
-                // İçindekiler içeren sayfaya başlık ekle
-                tocPage.Paragraphs.Add(heading2);
-            }
-
-            //Güncellenen belgeyi kaydedin
-            doc.Save(outFile);
-            
-        
+// Güncellenen belgeyi kaydedin
+doc.Save(outFile);
 ```
 
 ## Çözüm

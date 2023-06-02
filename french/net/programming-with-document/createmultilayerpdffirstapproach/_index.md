@@ -64,7 +64,7 @@ pdf.Save(dataDir + "CreateMultiLayerPdf_out.pdf");
 
 Toutes nos félicitations! Vous avez créé avec succès un document PDF multicouche en utilisant la première approche avec Aspose.PDF pour .NET.
 
-Exemple de code source pour la première approche de création de PDF multicouche à l'aide d'Aspose.PDF pour .NET :
+### Exemple de code source pour la première approche de création de PDF multicouche à l'aide d'Aspose.PDF pour .NET :
 
 ```csharp
 // Chemin d'accès au répertoire des documents.

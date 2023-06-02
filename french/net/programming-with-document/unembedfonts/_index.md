@@ -24,7 +24,7 @@ Remplacez "VOTRE RÉPERTOIRE DE DOCUMENTS" par le chemin d'accès réel au répe
 
 ## Étape 2 : Ouvrez le document PDF
 
- La première étape consiste à charger le document PDF que vous voulez faire, utilisez le`Document` classe de Aspose.PDF pour .NET. L'extrait de code suivant montre comment charger le document PDF :
+La première étape consiste à charger le document PDF que vous voulez faire, utilisez le`Document` classe de Aspose.PDF pour .NET. L'extrait de code suivant montre comment charger le document PDF :
 
 ```csharp
 // Ouvrir le document
@@ -45,7 +45,7 @@ var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 
 ## Étape 4 : Optimisez le document PDF
 
-Après avoir réglé le`UnembedFonts` option, vous pouvez optimiser le document PDF à l'aide de l'option`OptimizeResources` méthode de la`Document` classe. L'extrait de code suivant montre comment optimiser le document PDF :
+ Après avoir réglé le`UnembedFonts` option, vous pouvez optimiser le document PDF à l'aide de l'option`OptimizeResources` méthode de la`Document` classe. L'extrait de code suivant montre comment optimiser le document PDF :
 
 ```csharp
 // Optimiser le document PDF à l'aide d'OptimizationOptions
@@ -63,7 +63,7 @@ pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
 
 ## Étape 6 : Obtenir la taille de fichier d'origine et réduite
 
- Enfin, vous pouvez obtenir la taille de fichier d'origine et réduite du document PDF à l'aide de l'outil`FileInfo` classe de System.IO. L'extrait de code suivant montre comment obtenir la taille de fichier d'origine et réduite :
+ Enfin, vous pouvez obtenir la taille de fichier d'origine et réduite du document PDF à l'aide de l'outil`FileInfo`classe de System.IO. L'extrait de code suivant montre comment obtenir la taille de fichier d'origine et réduite :
 
 ```csharp
 var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
@@ -76,24 +76,22 @@ Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length,
 Voici l'exemple de code source complet permettant d'obtenir des polices non incorporées à partir d'un document PDF à l'aide d'Aspose.PDF pour .NET :
 
 ```csharp
-	
-	// Chemin d'accès au répertoire des documents.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Ouvrir le document
-	Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-	// Définir l'option Annuler l'intégration des polices
-	var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-	{
-		UnembedFonts = true
-	};
-	Console.WriteLine("Start");
-	// Optimiser le document PDF à l'aide d'OptimizationOptions
-	pdfDocument.OptimizeResources(optimizeOptions);
-	// Enregistrer le document mis à jour
-	pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
-	Console.WriteLine("Finished");
-	var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
-	var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
-	Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
-	
+// Chemin d'accès au répertoire des documents.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Ouvrir le document
+Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
+// Définir l'option Annuler l'intégration des polices
+var optimizeOptions = new Pdf.Optimization.OptimizationOptions
+{
+	UnembedFonts = true
+};
+Console.WriteLine("Start");
+// Optimiser le document PDF à l'aide d'OptimizationOptions
+pdfDocument.OptimizeResources(optimizeOptions);
+// Enregistrer le document mis à jour
+pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
+Console.WriteLine("Finished");
+var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
+var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
+Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
 ```

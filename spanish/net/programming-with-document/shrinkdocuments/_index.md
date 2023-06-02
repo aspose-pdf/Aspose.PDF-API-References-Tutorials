@@ -22,7 +22,7 @@ Document pdfDocument = new Document(dataDir + "ShrinkDocument.pdf");
 
 ## Paso 2: Reducir el documento PDF
 
- Una vez hayamos cargado el documento PDF, podemos utilizar el`OptimizeResources` metodo de la`Document`class para optimizar el documento y reducir potencialmente su tamaño. Tenga en cuenta que este método no puede garantizar la reducción del tamaño del documento, ya que algunos documentos PDF ya pueden estar muy optimizados.
+ Una vez hayamos cargado el documento PDF, podemos utilizar el`OptimizeResources` metodo de la`Document` class para optimizar el documento y reducir potencialmente su tamaño. Tenga en cuenta que este método no puede garantizar la reducción del tamaño del documento, ya que algunos documentos PDF ya pueden estar muy optimizados.
 
 ```csharp
 // Optimizar documento PDF. Tenga en cuenta, sin embargo, que este método no puede garantizar la reducción del documento
@@ -31,7 +31,7 @@ pdfDocument.OptimizeResources();
 
 ## Paso 3: Guardar el documento PDF actualizado
 
- Después de haber optimizado el documento PDF, podemos guardar la versión actualizada en un nuevo archivo usando el`Save` metodo de la`Document` clase. En el siguiente código, especificamos la ruta y el nombre del archivo de salida.
+Después de haber optimizado el documento PDF, podemos guardar la versión actualizada en un nuevo archivo usando el`Save` metodo de la`Document` clase. En el siguiente código, especificamos la ruta y el nombre del archivo de salida.
 
 ```csharp
 // Especificar la ruta del archivo de salida
@@ -43,15 +43,13 @@ pdfDocument.Save(outputFilePath);
 ### Ejemplo de código fuente para reducir documentos usando Aspose.PDF para .NET
 
 ```csharp
-
-	// La ruta al directorio de documentos.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Abrir documento
-	Document pdfDocument = new Document(dataDir + "ShrinkDocument.pdf");
-	// Optimizar documento PDF. Tenga en cuenta, sin embargo, que este método no puede garantizar la reducción del documento
-	pdfDocument.OptimizeResources();
-	dataDir = dataDir + "ShrinkDocument_out.pdf";
-	// Guardar documento actualizado
-	pdfDocument.Save(dataDir);
-	
+// La ruta al directorio de documentos.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Abrir documento
+Document pdfDocument = new Document(dataDir + "ShrinkDocument.pdf");
+// Optimizar documento PDF. Tenga en cuenta, sin embargo, que este método no puede garantizar la reducción del documento
+pdfDocument.OptimizeResources();
+dataDir = dataDir + "ShrinkDocument_out.pdf";
+// Guardar documento actualizado
+pdfDocument.Save(dataDir);
 ```

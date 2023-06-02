@@ -1,6 +1,6 @@
 ---
-title: Valider la norme PDFUA
-linktitle: Valider la norme PDFUA
+title: Valider la norme PDF UA
+linktitle: Valider la norme PDF UA
 second_title: Référence de l'API Aspose.PDF pour .NET
 description: Apprenez à utiliser Aspose.PDF pour .NET pour valider la norme PDF/UA à l'aide du code C#. Guide étape par étape.
 type: docs
@@ -42,14 +42,12 @@ Ce code valide le document PDF pour la conformité à la norme PDF/UA et génèr
 ### Exemple de code source pour Get Validate PDFUAstandard en utilisant Aspose.PDF pour .NET
 
 ```csharp
-           
-	// Chemin d'accès au répertoire des documents.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Chemin d'accès au répertoire des documents.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Ouvrir le document
-	Document pdfDocument = new Document(dataDir + "ValidatePDFUAStandard.pdf");
+// Ouvrir le document
+Document pdfDocument = new Document(dataDir + "ValidatePDFUAStandard.pdf");
 
-	// Valider PDF pour PDF/UA
-	bool isValidPdfUa = pdfDocument.Validate(dataDir + "validation-result-UA.xml", PdfFormat.PDF_UA_1);
-		   
+// Valider PDF pour PDF/UA
+bool isValidPdfUa = pdfDocument.Validate(dataDir + "validation-result-UA.xml", PdfFormat.PDF_UA_1); 
 ```

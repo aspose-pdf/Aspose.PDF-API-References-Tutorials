@@ -33,7 +33,7 @@ using (Document document = new Document(fs))
 
 ## Paso 3: establece la fuente predeterminada
 
- A continuación, estableceremos la fuente predeterminada para el documento PDF usando el`PdfSaveOptions`clase. En este ejemplo, estableceremos la fuente predeterminada en "Arial".
+ A continuación, estableceremos la fuente predeterminada para el documento PDF usando el`PdfSaveOptions` clase. En este ejemplo, estableceremos la fuente predeterminada en "Arial".
 
 ```csharp
 PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
@@ -42,7 +42,7 @@ pdfSaveOptions.DefaultFontName = "Arial";
 
 ## Paso 4: Guarde el documento actualizado
 
-Finalmente, guardaremos el documento actualizado en un archivo nuevo. En este ejemplo, guardaremos el documento actualizado en un archivo llamado "output_out.pdf" en el mismo directorio que el archivo de entrada.
+Finalmente, guardaremos el documento actualizado en un nuevo archivo. En este ejemplo, guardaremos el documento actualizado en un archivo llamado "output_out.pdf" en el mismo directorio que el archivo de entrada.
 
 ```csharp
 document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
@@ -51,19 +51,17 @@ document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
 ### Ejemplo de código fuente para establecer la fuente predeterminada usando Aspose.PDF para .NET
 
 ```csharp
-	
-	// La ruta al directorio de documentos.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Cargue un documento PDF existente al que le falta la fuente
-	string documentName = dataDir + "input.pdf";
-	string newName = "Arial";
-	using (System.IO.FileStream fs = new System.IO.FileStream(documentName, System.IO.FileMode.Open))
-	using (Document document = new Document(fs))
-	{
-		PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
-		// Especificar nombre de fuente predeterminado
-		pdfSaveOptions.DefaultFontName = newName;
-		document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
-	}
-	
+// La ruta al directorio de documentos.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Cargue un documento PDF existente al que le falta la fuente
+string documentName = dataDir + "input.pdf";
+string newName = "Arial";
+using (System.IO.FileStream fs = new System.IO.FileStream(documentName, System.IO.FileMode.Open))
+using (Document document = new Document(fs))
+{
+	PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
+	// Especificar nombre de fuente predeterminado
+	pdfSaveOptions.DefaultFontName = newName;
+	document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
+}
 ```

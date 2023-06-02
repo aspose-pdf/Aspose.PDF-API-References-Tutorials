@@ -44,7 +44,7 @@ Console.WriteLine(pdfDocument.Metadata["xmp:CustomProperty"]);
 
  Yukarıdaki kodda,`xmp:CreateDate`, `xmp:Nickname` , Ve`xmp:CustomProperty`bir PDF belgesinden çıkarabileceğiniz XMP meta veri özelliklerine örneklerdir. Bu özellik adlarını, ayıklamak istediğiniz diğer XMP meta veri özelliklerinin adlarıyla değiştirebilirsiniz.
 
-## Aspose.PDF for .NET kullanarak XMP Meta Verilerini Almak için Örnek Kaynak Kodu
+### Aspose.PDF for .NET kullanarak XMP Meta Verilerini Almak için Örnek Kaynak Kodu
 
  XMP meta verilerini bir PDF belgesinden ayıklamak için tam kaynak kodunu burada bulabilirsiniz.`GetXmpMetadata` Aspose.PDF for .NET özelliği:
 

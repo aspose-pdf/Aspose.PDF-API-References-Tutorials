@@ -60,35 +60,33 @@ Console.WriteLine("\nFile informations setup successfully.\nFile saved at " + da
 
 Ha configurado con éxito la información del archivo para un documento PDF utilizando Aspose.PDF para .NET.
 
-## Conclusión
-
-En conclusión, Aspose.PDF para .NET proporciona una forma simple y efectiva de configurar la información de archivo para documentos PDF. Siguiendo los pasos mencionados anteriormente, puede configurar fácilmente los valores de información de archivo deseados para sus documentos PDF utilizando el código fuente de C#.
-
 ### Ejemplo de código fuente para Establecer información de archivo usando Aspose.PDF para .NET
 
 
 ```csharp
+// La ruta al directorio de documentos.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// La ruta al directorio de documentos.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Abrir documento
+Document pdfDocument = new Document(dataDir + "SetFileInfo.pdf");
 
-	// Abrir documento
-	Document pdfDocument = new Document(dataDir + "SetFileInfo.pdf");
+// Especificar la información del documento
+DocumentInfo docInfo = new DocumentInfo(pdfDocument);
 
-	// Especificar la información del documento
-	DocumentInfo docInfo = new DocumentInfo(pdfDocument);
+docInfo.Author = "Aspose";
+docInfo.CreationDate = DateTime.Now;
+docInfo.Keywords = "Aspose.Pdf, DOM, API";
+docInfo.ModDate = DateTime.Now;
+docInfo.Subject = "PDF Information";
+docInfo.Title = "Setting PDF Document Information";
 
-	docInfo.Author = "Aspose";
-	docInfo.CreationDate = DateTime.Now;
-	docInfo.Keywords = "Aspose.Pdf, DOM, API";
-	docInfo.ModDate = DateTime.Now;
-	docInfo.Subject = "PDF Information";
-	docInfo.Title = "Setting PDF Document Information";
+dataDir = dataDir + "SetFileInfo_out.pdf";
+// Guardar documento de salida
+pdfDocument.Save(dataDir);
 
-	dataDir = dataDir + "SetFileInfo_out.pdf";
-	// Guardar documento de salida
-	pdfDocument.Save(dataDir);
-	
-	Console.WriteLine("\nFile informations setup successfully.\nFile saved at " + dataDir);
-	
+Console.WriteLine("\nFile informations setup successfully.\nFile saved at " + dataDir);
 ```
+
+## Conclusión
+
+En conclusión, Aspose.PDF para .NET proporciona una forma simple y efectiva de configurar la información de archivo para documentos PDF. Siguiendo los pasos mencionados anteriormente, puede configurar fácilmente los valores de información de archivo deseados para sus documentos PDF utilizando el código fuente de C#.

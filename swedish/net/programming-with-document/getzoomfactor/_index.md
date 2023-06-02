@@ -1,7 +1,7 @@
 ---
 title: Skaffa Zoom Factor
 linktitle: Skaffa Zoom Factor
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du använder Aspose.PDF för .NET för att få zoomfaktorn för en PDF-fil med denna steg-för-steg-guide.
 type: docs
 weight: 210
@@ -60,17 +60,15 @@ System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); /
 Här är den kompletta källkoden för Get Zoom Factor med Aspose.PDF för .NET:
 
 ```csharp
+// Sökvägen till dokumentkatalogen.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Sökvägen till dokumentkatalogen.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Instantiera nytt dokumentobjekt
+Document doc = new Document(dataDir + "Zoomed_pdf.pdf");
 
-	// Instantiera nytt dokumentobjekt
-	Document doc = new Document(dataDir + "Zoomed_pdf.pdf");
+// Skapa GoToAction-objekt
+GoToAction action = doc.OpenAction as GoToAction;
 
-	// Skapa GoToAction-objekt
-	GoToAction action = doc.OpenAction as GoToAction;
-	
-	// Hämta zoomfaktorn för PDF-filen
-	System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); // Dokumentzoomvärde;
-	
+// Hämta zoomfaktorn för PDF-filen
+System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); // Dokumentzoomvärde;
 ```

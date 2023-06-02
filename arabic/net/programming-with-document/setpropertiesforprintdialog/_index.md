@@ -43,21 +43,19 @@ doc.Duplex = PrintDuplex.DuplexFlipLongEdge;
 doc.Save(dataDir + "35297_out.pdf", SaveFormat.Pdf);
 ```
 
-## خاتمة
-
-يجعل Aspose.PDF for .NET من السهل تعيين خصائص مربع حوار الطباعة في ملفات PDF الخاصة بك. باتباع الدليل المفصل خطوة بخطوة أعلاه ، يمكنك تحسين ملفات PDF الخاصة بك بسرعة للطباعة.
-
 ### مثال على التعليمات البرمجية المصدر لـ Set Properties For Print Dialog باستخدام Aspose.PDF for .NET
 
 ```csharp
+var dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	var dataDir = "YOUR DOCUMENT DIRECTORY";
-
-	using (Document doc = new Document())
-	{
-		doc.Pages.Add();
-		doc.Duplex = PrintDuplex.DuplexFlipLongEdge;
-		doc.Save(dataDir + "35297_out.pdf", SaveFormat.Pdf);
-	}
-
+using (Document doc = new Document())
+{
+	doc.Pages.Add();
+	doc.Duplex = PrintDuplex.DuplexFlipLongEdge;
+	doc.Save(dataDir + "35297_out.pdf", SaveFormat.Pdf);
+}
 ```
+
+## خاتمة
+
+يجعل Aspose.PDF for .NET من السهل تعيين خصائص مربع حوار الطباعة في ملفات PDF الخاصة بك. باتباع الدليل المفصل خطوة بخطوة أعلاه ، يمكنك تحسين ملفات PDF الخاصة بك بسرعة للطباعة.

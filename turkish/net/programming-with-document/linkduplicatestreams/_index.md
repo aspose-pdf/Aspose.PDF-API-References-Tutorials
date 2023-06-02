@@ -62,20 +62,18 @@ Yukarıdaki kodda, güncellenen belgeyi proje dizininde "OptimizeDocument_out.pd
 ### Aspose.PDF for .NET kullanarak Yinelenen Akışları Bağlamak için Örnek Kaynak Kodu
 
 ```csharp
-
-	// Belgeler dizininin yolu.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Belgeyi aç
-	Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-	// LinkDuplcateStreams seçeneğini ayarlayın
-	var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-	{
-		LinkDuplcateStreams = true
-	};
-	// OptimizationOptions kullanarak PDF belgesini optimize edin
-	pdfDocument.OptimizeResources(optimizeOptions);
-	dataDir = dataDir + "OptimizeDocument_out.pdf";
-	// Güncellenen belgeyi kaydet
-	pdfDocument.Save(dataDir);
-	
+// Belgeler dizininin yolu.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Belgeyi aç
+Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
+// LinkDuplcateStreams seçeneğini ayarlayın
+var optimizeOptions = new Pdf.Optimization.OptimizationOptions
+{
+	LinkDuplcateStreams = true
+};
+// OptimizationOptions kullanarak PDF belgesini optimize edin
+pdfDocument.OptimizeResources(optimizeOptions);
+dataDir = dataDir + "OptimizeDocument_out.pdf";
+// Güncellenen belgeyi kaydet
+pdfDocument.Save(dataDir);
 ```

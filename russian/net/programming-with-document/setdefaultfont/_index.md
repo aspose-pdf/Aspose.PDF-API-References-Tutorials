@@ -33,7 +33,7 @@ using (Document document = new Document(fs))
 
 ## Шаг 3: Установите шрифт по умолчанию
 
- Далее мы установим шрифт по умолчанию для документа PDF, используя`PdfSaveOptions`сорт. В этом примере мы установим шрифт по умолчанию «Arial».
+ Далее мы установим шрифт по умолчанию для документа PDF, используя`PdfSaveOptions` сорт. В этом примере мы установим шрифт по умолчанию «Arial».
 
 ```csharp
 PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
@@ -51,19 +51,17 @@ document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
 ### Пример исходного кода для установки шрифта по умолчанию с использованием Aspose.PDF для .NET
 
 ```csharp
-	
-	// Путь к каталогу документов.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Загрузите существующий документ PDF с отсутствующим шрифтом
-	string documentName = dataDir + "input.pdf";
-	string newName = "Arial";
-	using (System.IO.FileStream fs = new System.IO.FileStream(documentName, System.IO.FileMode.Open))
-	using (Document document = new Document(fs))
-	{
-		PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
-		// Укажите имя шрифта по умолчанию
-		pdfSaveOptions.DefaultFontName = newName;
-		document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
-	}
-	
+// Путь к каталогу документов.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Загрузите существующий документ PDF с отсутствующим шрифтом
+string documentName = dataDir + "input.pdf";
+string newName = "Arial";
+using (System.IO.FileStream fs = new System.IO.FileStream(documentName, System.IO.FileMode.Open))
+using (Document document = new Document(fs))
+{
+	PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
+	// Укажите имя шрифта по умолчанию
+	pdfSaveOptions.DefaultFontName = newName;
+	document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
+}
 ```

@@ -51,6 +51,7 @@ Console.WriteLine("\nFlattened annotation successfully.\nFile saved at " + dataD
 ```
 
 ### Пример исходного кода для Flatten Annotation с использованием Aspose.PDF для .NET
+
 ```csharp
 // Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -59,37 +60,16 @@ Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 // Свести аннотации
 foreach (var page in pdfDocument.Pages)
 {
-    foreach (var annotation in page.Annotations)
-    {
-        annotation.Flatten();
-    }
+	foreach (var annotation in page.Annotations)
+	{
+		annotation.Flatten();
+	}
+
 }
 // Сохранить обновленный документ
 pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
+
 Console.WriteLine("\nFlattened annotation successfully.\nFile saved at " + dataDir);
-```
-
-```csharp
-
-            
-            // Путь к каталогу документов.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
-            // Открыть документ
-            Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-            // Свести аннотации
-            foreach (var page in pdfDocument.Pages)
-            {
-                foreach (var annotation in page.Annotations)
-                {
-                    annotation.Flatten();
-                }
-
-            }
-            // Сохранить обновленный документ
-            pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
-            
-            Console.WriteLine("\nFlattened annotation successfully.\nFile saved at " + dataDir);
-        
 ```
 
 ## Заключение

@@ -57,7 +57,7 @@ pdfDocument.Metadata["xmp:CustomProperty"] = "Custom Value";
 
 ```csharp
 dataDir = dataDir + "SetXMPMetadata_out.pdf";
-//保存文档
+//保存文件
 pdfDocument.Save(dataDir);
 ```
 
@@ -66,22 +66,20 @@ pdfDocument.Save(dataDir);
 下面是使用 Aspose.PDF for .NET 设置 XMPMetadata 的完整示例源代码：
 
 ```csharp
+//文档目录的路径。
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	//文档目录的路径。
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+//打开文档
+Document pdfDocument = new Document(dataDir + "SetXMPMetadata.pdf");
 
-	//打开文档
-	Document pdfDocument = new Document(dataDir + "SetXMPMetadata.pdf");
+//设置属性
+pdfDocument.Metadata["xmp:CreateDate"] = DateTime.Now;
+pdfDocument.Metadata["xmp:Nickname"] = "Nickname";
+pdfDocument.Metadata["xmp:CustomProperty"] = "Custom Value";
 
-	//设置属性
-	pdfDocument.Metadata["xmp:CreateDate"] = DateTime.Now;
-	pdfDocument.Metadata["xmp:Nickname"] = "Nickname";
-	pdfDocument.Metadata["xmp:CustomProperty"] = "Custom Value";
+dataDir = dataDir + "SetXMPMetadata_out.pdf";
+//保存文件
+pdfDocument.Save(dataDir);
 
-	dataDir = dataDir + "SetXMPMetadata_out.pdf";
-	//保存文档
-	pdfDocument.Save(dataDir);
-	
-	Console.WriteLine("\nXMP metadata in a pdf file setup successfully.\nFile saved at " + dataDir);
-
+Console.WriteLine("\nXMP metadata in a pdf file setup successfully.\nFile saved at " + dataDir);
 ```

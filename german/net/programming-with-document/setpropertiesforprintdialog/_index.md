@@ -43,21 +43,19 @@ doc.Duplex = PrintDuplex.DuplexFlipLongEdge;
 doc.Save(dataDir + "35297_out.pdf", SaveFormat.Pdf);
 ```
 
-## Abschluss
-
-Mit Aspose.PDF für .NET können Sie ganz einfach Eigenschaften für den Druckdialog in Ihren PDF-Dateien festlegen. Wenn Sie der obigen Schritt-für-Schritt-Anleitung folgen, können Sie Ihre PDF-Dateien schnell für den Druck optimieren.
-
 ### Beispielquellcode für das Dialogfeld „Eigenschaften für Druck festlegen“ mit Aspose.PDF für .NET
 
 ```csharp
+var dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	var dataDir = "YOUR DOCUMENT DIRECTORY";
-
-	using (Document doc = new Document())
-	{
-		doc.Pages.Add();
-		doc.Duplex = PrintDuplex.DuplexFlipLongEdge;
-		doc.Save(dataDir + "35297_out.pdf", SaveFormat.Pdf);
-	}
-
+using (Document doc = new Document())
+{
+	doc.Pages.Add();
+	doc.Duplex = PrintDuplex.DuplexFlipLongEdge;
+	doc.Save(dataDir + "35297_out.pdf", SaveFormat.Pdf);
+}
 ```
+
+## Abschluss
+
+Mit Aspose.PDF für .NET können Sie ganz einfach Eigenschaften für den Druckdialog in Ihren PDF-Dateien festlegen. Wenn Sie der obigen Schritt-für-Schritt-Anleitung folgen, können Sie Ihre PDF-Dateien schnell für den Druck optimieren.

@@ -66,33 +66,28 @@ doc.Save(dataDir);
 ### 使用 Aspose.PDF for .NET 创建文档时嵌入字体的示例源代码
 
 ```csharp
+//文档目录的路径。
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-            
-            //文档目录的路径。
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
+//通过调用其空构造函数来实例化 Pdf 对象
+Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
-            //通过调用其空构造函数来实例化 Pdf 对象
-            Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
+//在 Pdf 对象中创建一个部分
+Aspose.Pdf.Page page = doc.Pages.Add();
 
-            //在 Pdf 对象中创建一个部分
-            Aspose.Pdf.Page page = doc.Pages.Add();
+Aspose.Pdf.Text.TextFragment fragment = new Aspose.Pdf.Text.TextFragment("");
 
-            Aspose.Pdf.Text.TextFragment fragment = new Aspose.Pdf.Text.TextFragment("");
+Aspose.Pdf.Text.TextSegment segment = new Aspose.Pdf.Text.TextSegment(" This is a sample text using Custom font.");
+Aspose.Pdf.Text.TextState ts = new Aspose.Pdf.Text.TextState();
+ts.Font = FontRepository.FindFont("Arial");
+ts.Font.IsEmbedded = true;
+segment.TextState = ts;
+fragment.Segments.Add(segment);
+page.Paragraphs.Add(fragment);
 
-            Aspose.Pdf.Text.TextSegment segment = new Aspose.Pdf.Text.TextSegment(" This is a sample text using Custom font.");
-            Aspose.Pdf.Text.TextState ts = new Aspose.Pdf.Text.TextState();
-            ts.Font = FontRepository.FindFont("Arial");
-            ts.Font.IsEmbedded = true;
-            segment.TextState = ts;
-            fragment.Segments.Add(segment);
-            page.Paragraphs.Add(fragment);
-
-            dataDir = dataDir + "EmbedFontWhileDocCreation_out.pdf";
-            //保存 PDF 文档
-            doc.Save(dataDir);
-            
-            
-        
+dataDir = dataDir + "EmbedFontWhileDocCreation_out.pdf";
+//保存 PDF 文档
+doc.Save(dataDir);
 ```
 
 ## 结论

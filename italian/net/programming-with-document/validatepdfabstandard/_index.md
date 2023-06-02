@@ -1,6 +1,6 @@
 ---
-title: Convalida PDFABStandard
-linktitle: Convalida PDFABStandard
+title: Convalida PDF AB Standard
+linktitle: Convalida PDF AB Standard
 second_title: Aspose.PDF per riferimento API .NET
 description: Scopri come utilizzare Aspose.PDF per .NET per convalidare i documenti PDF rispetto allo standard PDFABS con la nostra guida dettagliata e l'esempio di codice.
 type: docs
@@ -42,21 +42,19 @@ pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1B);
 
 Il secondo parametro "PdfFormat.PDF_A_1B" specifica che vogliamo convalidare il PDF rispetto allo standard PDF/A-1a.
 
-## Conclusione
-
-In questo articolo, abbiamo spiegato come utilizzare Aspose.PDF per .NET per convalidare un documento PDF rispetto allo standard PDF/A-1a. Seguendo i passaggi precedenti, puoi facilmente convalidare i tuoi documenti PDF rispetto a vari standard utilizzando Aspose.PDF per .NET.
-
 ### Esempio di codice sorgente per Get Validate PDFABStandard utilizzando Aspose.PDF per .NET
 
 ```csharp
+// Il percorso della directory dei documenti.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Il percorso della directory dei documenti.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Apri documento
+Document pdfDocument = new Document(dataDir + "ValidatePDFAStandard.pdf");
 
-	// Apri documento
-	Document pdfDocument = new Document(dataDir + "ValidatePDFAStandard.pdf");
-
-	// Convalida PDF per PDF/A-1a
-	pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1B);
-	
+// Convalida PDF per PDF/A-1a
+pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1B);
 ```
+
+## Conclusione
+
+In questo articolo, abbiamo spiegato come utilizzare Aspose.PDF per .NET per convalidare un documento PDF rispetto allo standard PDF/A-1a. Seguendo i passaggi precedenti, puoi facilmente convalidare i tuoi documenti PDF rispetto a vari standard utilizzando Aspose.PDF per .NET.

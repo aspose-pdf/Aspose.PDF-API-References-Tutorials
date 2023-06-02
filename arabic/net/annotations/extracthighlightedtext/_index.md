@@ -64,22 +64,21 @@ foreach (TextFragment tf in collection)
 ### مثال على التعليمات البرمجية المصدر لاستخراج النص المميز باستخدام Aspose.PDF لـ .NET
 
 ```csharp
+// المسار إلى دليل المستندات.
+string dataDir ="YOUR DOCUMENT DIRECTORY";
+Document doc = new Document(dataDir + "ExtractHighlightedText.pdf");
 
-	// المسار إلى دليل المستندات.
-	string dataDir ="YOUR DOCUMENT DIRECTORY";
-	Document doc = new Document(dataDir + "ExtractHighlightedText.pdf");
-
-	foreach (Annotation annotation in doc.Pages[1].Annotations)
+foreach (Annotation annotation in doc.Pages[1].Annotations)
+{
+	if (annotation is TextMarkupAnnotation)
 	{
-		if (annotation is TextMarkupAnnotation)
+		TextMarkupAnnotation highlightedAnnotation = annotation as TextMarkupAnnotation;
+		TextFragmentCollection collection = highlightedAnnotation.GetMarkedTextFragments();
+		foreach (TextFragment tf in collection)
 		{
-			TextMarkupAnnotation highlightedAnnotation = annotation as TextMarkupAnnotation;
-			TextFragmentCollection collection = highlightedAnnotation.GetMarkedTextFragments();
-			foreach (TextFragment tf in collection)
-			{
-				Console.WriteLine(tf.Text);
-			}
+			Console.WriteLine(tf.Text);
 		}
 	}
+}
 ```
 

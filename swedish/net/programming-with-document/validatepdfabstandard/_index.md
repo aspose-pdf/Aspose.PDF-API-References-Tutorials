@@ -1,7 +1,7 @@
 ---
-title: Validera PDFABStandard
-linktitle: Validera PDFABStandard
-second_title: Aspose.PDF för .NET API-referens
+title: Validera PDF AB Standard
+linktitle: Validera PDF AB Standard
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du använder Aspose.PDF för .NET för att validera PDF-dokument mot PDFAB-standarden med vår steg-för-steg-guide och kodexempel.
 type: docs
 weight: 380
@@ -42,21 +42,19 @@ pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1B);
 
 Den andra parametern "PdfFormat.PDF_A_1B" anger att vi vill validera PDF-filen mot PDF/A-1a-standarden.
 
-## Slutsats
-
-I den här artikeln har vi förklarat hur man använder Aspose.PDF för .NET för att validera ett PDF-dokument mot PDF/A-1a-standarden. Genom att följa stegen ovan kan du enkelt validera dina PDF-dokument mot olika standarder med Aspose.PDF för .NET.
-
 ### Exempel på källkod för Get Validate PDFABStandard med Aspose.PDF för .NET
 
 ```csharp
+// Sökvägen till dokumentkatalogen.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Sökvägen till dokumentkatalogen.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Öppna dokumentet
+Document pdfDocument = new Document(dataDir + "ValidatePDFAStandard.pdf");
 
-	// Öppna dokumentet
-	Document pdfDocument = new Document(dataDir + "ValidatePDFAStandard.pdf");
-
-	// Validera PDF för PDF/A-1a
-	pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1B);
-	
+// Validera PDF för PDF/A-1a
+pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1B);
 ```
+
+## Slutsats
+
+den här artikeln har vi förklarat hur man använder Aspose.PDF för .NET för att validera ett PDF-dokument mot PDF/A-1a-standarden. Genom att följa stegen ovan kan du enkelt validera dina PDF-dokument mot olika standarder med Aspose.PDF för .NET.

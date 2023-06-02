@@ -58,20 +58,18 @@ pdfDocument.Save(dataDir);
 يوجد أدناه مثال لشفرة المصدر لإزالة التدفقات غير المستخدمة باستخدام Aspose.PDF لـ .NET.
 
 ```csharp
-
-	// المسار إلى دليل المستندات.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// افتح المستند
-	Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-	// قم بتعيين خيار RemoveUsedStreams
-	var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-	{
-		RemoveUnusedStreams = true
-	};
-	// تحسين مستند PDF باستخدام OptimizationOptions
-	pdfDocument.OptimizeResources(optimizeOptions);
-	dataDir = dataDir + "OptimizeDocument_out.pdf";
-	// احفظ المستند المحدث
-	pdfDocument.Save(dataDir);
-
+// المسار إلى دليل المستندات.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// افتح المستند
+Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
+// قم بتعيين خيار RemoveUsedStreams
+var optimizeOptions = new Pdf.Optimization.OptimizationOptions
+{
+	RemoveUnusedStreams = true
+};
+// تحسين مستند PDF باستخدام OptimizationOptions
+pdfDocument.OptimizeResources(optimizeOptions);
+dataDir = dataDir + "OptimizeDocument_out.pdf";
+// احفظ المستند المحدث
+pdfDocument.Save(dataDir);
 ```

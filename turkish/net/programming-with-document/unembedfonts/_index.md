@@ -24,7 +24,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Adım 2: PDF Belgesini Açın
 
- İlk adım, bunu yapmak istediğiniz PDF belgesini yüklemektir,`Document` .NET için Aspose.PDF sınıfı. Aşağıdaki kod parçacığı, PDF belgesinin nasıl yükleneceğini gösterir:
+İlk adım, bunu yapmak istediğiniz PDF belgesini yüklemektir,`Document` .NET için Aspose.PDF sınıfı. Aşağıdaki kod parçacığı, PDF belgesinin nasıl yükleneceğini gösterir:
 
 ```csharp
 // Belgeyi aç
@@ -45,7 +45,7 @@ var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 
 ## 4. Adım: PDF Belgesini Optimize Edin
 
-ayarladıktan sonra`UnembedFonts` seçeneğini kullanarak PDF belgesini optimize edebilirsiniz.`OptimizeResources` yöntemi`Document` sınıf. Aşağıdaki kod parçacığı, PDF belgesinin nasıl optimize edileceğini gösterir:
+ ayarladıktan sonra`UnembedFonts` seçeneğini kullanarak PDF belgesini optimize edebilirsiniz.`OptimizeResources` yöntemi`Document` sınıf. Aşağıdaki kod parçacığı, PDF belgesinin nasıl optimize edileceğini gösterir:
 
 ```csharp
 // OptimizationOptions kullanarak PDF belgesini optimize edin
@@ -63,7 +63,7 @@ pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
 
 ## 6. Adım: Orijinali ve Küçültülmüş Dosya Boyutunu Alın
 
- Son olarak, PDF belgesinin orijinal ve küçültülmüş dosya boyutunu elde edebilirsiniz.`FileInfo` System.IO sınıfı. Aşağıdaki kod parçacığı, orijinal ve küçültülmüş dosya boyutunun nasıl alınacağını gösterir:
+ Son olarak, PDF belgesinin orijinal ve küçültülmüş dosya boyutunu elde edebilirsiniz.`FileInfo`System.IO sınıfı. Aşağıdaki kod parçacığı, orijinal ve küçültülmüş dosya boyutunun nasıl alınacağını gösterir:
 
 ```csharp
 var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
@@ -76,24 +76,22 @@ Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length,
 Aspose.PDF for .NET kullanarak bir PDF belgesinden gömülmemiş yazı tiplerini almak için eksiksiz örnek kaynak kodu:
 
 ```csharp
-	
-	// Belgeler dizininin yolu.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Belgeyi aç
-	Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-	// UnembedFonts seçeneğini ayarla
-	var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-	{
-		UnembedFonts = true
-	};
-	Console.WriteLine("Start");
-	// OptimizationOptions kullanarak PDF belgesini optimize edin
-	pdfDocument.OptimizeResources(optimizeOptions);
-	// Güncellenen belgeyi kaydet
-	pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
-	Console.WriteLine("Finished");
-	var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
-	var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
-	Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
-	
+// Belgeler dizininin yolu.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Belgeyi aç
+Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
+// UnembedFonts seçeneğini ayarla
+var optimizeOptions = new Pdf.Optimization.OptimizationOptions
+{
+	UnembedFonts = true
+};
+Console.WriteLine("Start");
+// OptimizationOptions kullanarak PDF belgesini optimize edin
+pdfDocument.OptimizeResources(optimizeOptions);
+// Güncellenen belgeyi kaydet
+pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
+Console.WriteLine("Finished");
+var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
+var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
+Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
 ```

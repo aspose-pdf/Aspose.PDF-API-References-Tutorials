@@ -25,7 +25,7 @@ Bu satırda güncellemek istediğimiz PDF belgesinin bulunduğu dizine giden yol
 Document doc1 = new Document(dataDir + "input.pdf");
 ```
 
- Burada Aspose.PDF'leri kullanarak PDF belgesini açıyoruz.`Document` sınıfı ve giriş PDF dosyasının yolunu belirtme.
+Burada Aspose.PDF'leri kullanarak PDF belgesini açıyoruz.`Document` sınıfı ve giriş PDF dosyasının yolunu belirtme.
 
 ## 3. Adım: Serbest metin açıklamasının yazı tipi boyutunu ve rengini güncelleme
 
@@ -46,10 +46,6 @@ catch (Exception ex)
 ```
 
  bu bir standart`try-catch` kod yürütülürken oluşabilecek istisnaları yakalayan ve hata mesajını konsola yazdıran blok.
-
-## Çözüm
-
-Bu makalede, Aspose.PDF for .NET'in Serbest Metin Ek Açıklamasını Güncelle özelliğinin C# kaynak kodunu açıklayan adım adım bir kılavuz sağladık. Bu adımları izleyerek, Aspose.PDF for .NET kullanarak PDF belgelerinizdeki serbest metin notlarının yazı tipi boyutunu ve rengini kolayca güncelleyebilirsiniz.
 
 ### Aspose.PDF for .NET kullanarak Serbest Metin Ek Açıklamasını Güncellemek için örnek kaynak kodu
 
@@ -74,3 +70,7 @@ catch (Exception ex)
     Console.WriteLine(ex.Message);
 }
 ```
+
+## Çözüm
+
+Bu makalede, Aspose.PDF for .NET'in Serbest Metin Ek Açıklamasını Güncelle özelliğinin C# kaynak kodunu açıklayan adım adım bir kılavuz sağladık. Bu adımları izleyerek, Aspose.PDF for .NET kullanarak PDF belgelerinizdeki serbest metin notlarının yazı tipi boyutunu ve rengini kolayca güncelleyebilirsiniz.

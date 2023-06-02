@@ -9,20 +9,6 @@ url: /tr/net/programming-with-document/setexpirydate/
 ---
 Aspose.PDF for .NET, PDF dosyalarıyla çalışmak için çeşitli özellikler sağlayan güçlü bir kitaplıktır. Böyle bir özellik, bir PDF belgesi için bir son kullanma tarihi belirleme yeteneğidir. Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF belgesi için son kullanma tarihi belirleme sürecinde size yol göstereceğiz. 
 
-## Anahat
-1. Aspose.PDF for .NET nedir?
-2. Aspose.PDF for .NET'in Son Kullanım Tarihi Özelliğini Ayarlama
-3. Ortamı Kurma
-4. Yeni bir PDF Belgesi Oluşturma
-5. PDF Belgesine Sayfa Ekleme
-6. PDF Belgesine Metin Ekleme
-7. PDF Son Kullanma Tarihini Ayarlamak için Bir JavaScript Nesnesi Oluşturma
-8. JavaScript'i PDF Açma Eylemi olarak ayarlama
-9. PDF Belgesini Kaydetme
-10. Aspose.PDF for .NET kullanarak Bitiş Tarihini Ayarlamak için Örnek Kaynak Kodu
-11. Çözüm
-12. SSS
-
 ## 1. Adım: Belge dizinine giden yolu ayarlayın
 
 Başlamadan önce, PDF belgemizin bulunduğu dizinin yolunu belirlememiz gerekiyor. Bu yolu "dataDir" adlı bir değişkende saklayacağız.
@@ -33,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## 2. Adım: Yeni bir PDF belgesi oluşturma
 
- Yeni bir PDF belgesi oluşturmak için yeni bir PDF belgesi oluşturmamız gerekir.`Aspose.Pdf.Document` nesne. Bunu aşağıdaki kodu kullanarak yapabiliriz:
+Yeni bir PDF belgesi oluşturmak için yeni bir PDF belgesi oluşturmamız gerekir.`Aspose.Pdf.Document` nesne. Bunu aşağıdaki kodu kullanarak yapabiliriz:
 
 ```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
@@ -89,29 +75,27 @@ doc.Save(dataDir);
 Aspose.PDF for .NET kullanarak son kullanım tarihini ayarlamak için eksiksiz örnek kaynak kodunu burada bulabilirsiniz:
 
 ```csharp
+// Belgeler dizininin yolu.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Belgeler dizininin yolu.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Belge nesnesini örneklendir
+Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
+// PDF dosyasının sayfa koleksiyonuna sayfa ekle
+doc.Pages.Add();
+// Sayfa nesnesinin paragraf koleksiyonuna metin parçası ekleyin
+doc.Pages[1].Paragraphs.Add(new TextFragment("Hello World..."));
+// PDF son kullanma tarihini ayarlamak için JavaScript nesnesi oluşturun
+JavascriptAction javaScript = new JavascriptAction(
+"var year=2017;"
++ "var month=5;"
++ "today = new Date(); today = new Date(today.getFullYear(), today.getMonth());"
++ "expiry = new Date(year, month);"
++ "if (today.getTime() > expiry.getTime())"
++ "app.alert('The file is expired. You need a new one.');");
+// JavaScript'i PDF açma eylemi olarak ayarla
+doc.OpenAction = javaScript;
 
-	// Belge nesnesini örneklendir
-	Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
-	// PDF dosyasının sayfa koleksiyonuna sayfa ekle
-	doc.Pages.Add();
-	// Sayfa nesnesinin paragraf koleksiyonuna metin parçası ekleyin
-	doc.Pages[1].Paragraphs.Add(new TextFragment("Hello World..."));
-	// PDF son kullanma tarihini ayarlamak için JavaScript nesnesi oluşturun
-	JavascriptAction javaScript = new JavascriptAction(
-	"var year=2017;"
-	+ "var month=5;"
-	+ "today = new Date(); today = new Date(today.getFullYear(), today.getMonth());"
-	+ "expiry = new Date(year, month);"
-	+ "if (today.getTime() > expiry.getTime())"
-	+ "app.alert('The file is expired. You need a new one.');");
-	// JavaScript'i PDF açma eylemi olarak ayarla
-	doc.OpenAction = javaScript;
-
-	dataDir = dataDir + "SetExpiryDate_out.pdf";
-	// PDF Belgesini Kaydet
-	doc.Save(dataDir);
-	
+dataDir = dataDir + "SetExpiryDate_out.pdf";
+// PDF Belgesini Kaydet
+doc.Save(dataDir);
 ```

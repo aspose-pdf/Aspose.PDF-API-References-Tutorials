@@ -18,7 +18,7 @@ Bir PDF dosyasına JavaScript eklemek için Aspose.PDF for .NET'i kullanacağız
 // Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Mevcut bir PDF dosyasını yükleyin
+//Mevcut bir PDF dosyasını yükleyin
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
@@ -66,21 +66,15 @@ Bu kod, değiştirilen PDF dosyasını belirtilen dizine kaydedecektir.
 ### Aspose.PDF for .NET kullanarak Sayfaya Java Script Ekleme için örnek kaynak kodu
 
 ```csharp
-// Belgeler dizininin yolu.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Mevcut bir PDF dosyasını yükleyin
-
-```csharp
             
 // Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Mevcut bir PDF dosyasını yükleyin
+//Mevcut bir PDF dosyasını yükleyin
 Document doc = new Document(dataDir + "input.pdf");
 
 // Belge Düzeyinde JavaScript Ekleme
-//JavascriptAction'ı istenen JavaScript deyimiyle örnekleyin
+// JavascriptAction'ı istenen JavaScript deyimiyle örnekleyin
 JavascriptAction javaScript = new JavascriptAction("this.print({bUI:true,bSilent:false,bShrinkToFit:true});");
 
 // Belgenin istenen eylemine JavascriptAction nesnesini atayın
@@ -94,8 +88,7 @@ dataDir = dataDir + "JavaScript-Added_out.pdf";
 // PDF Belgesini Kaydet
 doc.Save(dataDir);
 
-Console.WriteLine("\nJavascript added successfully to a page.\nFile saved at " + dataDir);
-        
+Console.WriteLine("\nJavascript added successfully to a page.\nFile saved at " + dataDir);     
 ```
 
 ## Çözüm

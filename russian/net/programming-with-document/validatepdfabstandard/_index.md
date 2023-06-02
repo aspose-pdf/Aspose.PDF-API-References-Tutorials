@@ -1,8 +1,8 @@
 ---
-title: Подтвердить PDFABStandard
-linktitle: Подтвердить PDFABStandard
+title: Подтвердить стандарт PDF AB
+linktitle: Подтвердить стандарт PDF AB
 second_title: Aspose.PDF для справочника API .NET
-description: Узнайте, как использовать Aspose.PDF для .NET для проверки PDF-документов на соответствие стандарту PDFABStandard с помощью нашего пошагового руководства и примера кода.
+description: Узнайте, как использовать Aspose.PDF для .NET для проверки PDF-документов на соответствие PDFABStandard с помощью нашего пошагового руководства и примера кода.
 type: docs
 weight: 380
 url: /ru/net/programming-with-document/validatepdfabstandard/
@@ -42,21 +42,19 @@ pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1B);
 
 Второй параметр «PdfFormat.PDF_A_1B» указывает, что мы хотим проверить PDF на соответствие стандарту PDF/A-1a.
 
-## Заключение
-
-В этой статье мы объяснили, как использовать Aspose.PDF для .NET для проверки PDF-документа на соответствие стандарту PDF/A-1a. Следуя приведенным выше шагам, вы можете легко проверить свои PDF-документы на соответствие различным стандартам, используя Aspose.PDF для .NET.
-
 ### Пример исходного кода для Get Validate PDFABStandard с использованием Aspose.PDF для .NET
 
 ```csharp
+// Путь к каталогу документов.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Путь к каталогу документов.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Открыть документ
+Document pdfDocument = new Document(dataDir + "ValidatePDFAStandard.pdf");
 
-	// Открыть документ
-	Document pdfDocument = new Document(dataDir + "ValidatePDFAStandard.pdf");
-
-	// Подтвердить PDF для PDF/A-1a
-	pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1B);
-	
+// Подтвердить PDF для PDF/A-1a
+pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1B);
 ```
+
+## Заключение
+
+В этой статье мы объяснили, как использовать Aspose.PDF для .NET для проверки PDF-документа на соответствие стандарту PDF/A-1a. Следуя приведенным выше шагам, вы можете легко проверить свои PDF-документы на соответствие различным стандартам, используя Aspose.PDF для .NET.

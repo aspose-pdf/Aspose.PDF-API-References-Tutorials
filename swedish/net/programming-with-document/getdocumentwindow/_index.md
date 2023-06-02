@@ -1,7 +1,7 @@
 ---
 title: Hämta dokumentfönstret
 linktitle: Hämta dokumentfönstret
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du använder GetDocumentWindow-funktionen i Aspose.PDF för .NET för att hämta information om ett PDF-dokuments fönsteregenskaper.
 type: docs
 weight: 170
@@ -57,49 +57,45 @@ koden ovan hämtar varje rad en annan fönsteregenskap för PDF-dokumentet och m
  Här är den fullständiga källkoden för att hämta ett PDF-dokuments fönsteregenskaper med hjälp av`GetDocumentWindow` funktion i Aspose.PDF för .NET:
 
 ```csharp
+// Sökvägen till dokumentkatalogen.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-            
-            // Sökvägen till dokumentkatalogen.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Öppna dokumentet
+Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
 
-            // Öppna dokumentet
-            Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
+// Få olika dokumentegenskaper
+// Position för dokumentets fönster - Standard: falskt
+Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
 
-            // Få olika dokumentegenskaper
-            // Position för dokumentets fönster - Standard: falskt
-            Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
-   
-            // Övervägande läsordning; bestämmer sidans position
-            // När den visas sida vid sida - Standard: L2R
-            Console.WriteLine("Direction : {0}", pdfDocument.Direction);
-            
-            // Om fönstrets namnlist ska visa dokumentets titel
-            // Om falskt visar titelfältet PDF-filens namn - Standard: falskt
-            Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
-            
-            // Om storleken på dokumentets fönster ska anpassas till storleken på
-            // Första visade sidan - Standard: falskt
-            Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
-            
-            // Om menyraden för visningsprogrammet ska döljas - Standard: falskt
-            Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
-            
-            //Om verktygsfältet för visningsprogrammet ska döljas - Standard: falskt
-            Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
-            
-            // Om du vill dölja UI-element som rullningslister
-            // Och lämnar bara sidinnehållet visas - Standard: falskt
-            Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
-            
-            // Dokumentets sidläge. Så här visar du dokument när du avslutar helskärmsläge.
-            Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
-            
-            // Sidlayouten dvs en sida, en kolumn
-            Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
-            
-            // Hur dokumentet ska visas när det öppnas
-            // Dvs visa miniatyrer, helskärm, visa bilaga panel
-            Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
-            
-        
+// Övervägande läsordning; bestämmer sidans position
+// När den visas sida vid sida - Standard: L2R
+Console.WriteLine("Direction : {0}", pdfDocument.Direction);
+
+// Om fönstrets namnlist ska visa dokumentets titel
+// Om falskt visar titelfältet PDF-filens namn - Standard: falskt
+Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
+
+// Om storleken på dokumentets fönster ska anpassas till storleken på
+// Första visade sidan - Standard: falskt
+Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
+
+// Om menyraden för visningsprogrammet ska döljas - Standard: falskt
+Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
+
+//Om verktygsfältet för visningsprogrammet ska döljas - Standard: falskt
+Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
+
+// Om du vill dölja UI-element som rullningslister
+// Och lämnar bara sidinnehållet visas - Standard: falskt
+Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
+
+// Dokumentets sidläge. Så här visar du dokument när du avslutar helskärmsläge.
+Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
+
+// Sidlayouten dvs en sida, en kolumn
+Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
+
+// Hur dokumentet ska visas när det öppnas
+// Dvs visa miniatyrer, helskärm, visa bilaga panel
+Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
 ```

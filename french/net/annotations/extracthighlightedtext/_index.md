@@ -64,22 +64,21 @@ foreach (TextFragment tf in collection)
 ### Exemple de code source pour Extraire le texte en surbrillance à l'aide d'Aspose.PDF pour .NET
 
 ```csharp
+// Chemin d'accès au répertoire des documents.
+string dataDir ="YOUR DOCUMENT DIRECTORY";
+Document doc = new Document(dataDir + "ExtractHighlightedText.pdf");
 
-	// Chemin d'accès au répertoire des documents.
-	string dataDir ="YOUR DOCUMENT DIRECTORY";
-	Document doc = new Document(dataDir + "ExtractHighlightedText.pdf");
-
-	foreach (Annotation annotation in doc.Pages[1].Annotations)
+foreach (Annotation annotation in doc.Pages[1].Annotations)
+{
+	if (annotation is TextMarkupAnnotation)
 	{
-		if (annotation is TextMarkupAnnotation)
+		TextMarkupAnnotation highlightedAnnotation = annotation as TextMarkupAnnotation;
+		TextFragmentCollection collection = highlightedAnnotation.GetMarkedTextFragments();
+		foreach (TextFragment tf in collection)
 		{
-			TextMarkupAnnotation highlightedAnnotation = annotation as TextMarkupAnnotation;
-			TextFragmentCollection collection = highlightedAnnotation.GetMarkedTextFragments();
-			foreach (TextFragment tf in collection)
-			{
-				Console.WriteLine(tf.Text);
-			}
+			Console.WriteLine(tf.Text);
 		}
 	}
+}
 ```
 

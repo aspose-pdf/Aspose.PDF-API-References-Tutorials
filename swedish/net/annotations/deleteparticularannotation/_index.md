@@ -1,7 +1,7 @@
 ---
 title: Ta bort särskild anteckning
 linktitle: Ta bort särskild anteckning
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du tar bort en viss anteckning från ett PDF-dokument med Aspose.PDF för .NET med denna steg-för-steg-guide.
 type: docs
 weight: 50
@@ -54,20 +54,18 @@ Console.WriteLine("\nParticular annotation deleted successfully.\nFile saved at 
 ### Exempel på källkod för att ta bort en viss anteckning med Aspose.PDF för .NET
 
 ```csharp
+// Sökvägen till dokumentkatalogen.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Sökvägen till dokumentkatalogen.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Öppna dokumentet
+Document pdfDocument = new Document(dataDir + "DeleteParticularAnnotation.pdf");
 
-	// Öppna dokumentet
-	Document pdfDocument = new Document(dataDir + "DeleteParticularAnnotation.pdf");
+// Ta bort en viss anteckning
+pdfDocument.Pages[1].Annotations.Delete(1);
 
-	// Ta bort en viss anteckning
-	pdfDocument.Pages[1].Annotations.Delete(1);
+dataDir = dataDir + "DeleteParticularAnnotation_out.pdf";
+// Spara uppdaterat dokument
+pdfDocument.Save(dataDir);
 
-	dataDir = dataDir + "DeleteParticularAnnotation_out.pdf";
-	// Spara uppdaterat dokument
-	pdfDocument.Save(dataDir);
-
-	Console.WriteLine("\nParticular annotation deleted successfully.\nFile saved at " + dataDir);
-
+Console.WriteLine("\nParticular annotation deleted successfully.\nFile saved at " + dataDir);
 ```

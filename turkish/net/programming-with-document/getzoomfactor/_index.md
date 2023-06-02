@@ -60,17 +60,15 @@ System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); /
 İşte Aspose.PDF for .NET kullanarak Get Zoom Factor için tam örnek kaynak kodu:
 
 ```csharp
+// Belgeler dizininin yolu.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Belgeler dizininin yolu.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Yeni Document nesnesinin örneğini oluştur
+Document doc = new Document(dataDir + "Zoomed_pdf.pdf");
 
-	// Yeni Document nesnesinin örneğini oluştur
-	Document doc = new Document(dataDir + "Zoomed_pdf.pdf");
+// GoToAction nesnesi oluştur
+GoToAction action = doc.OpenAction as GoToAction;
 
-	// GoToAction nesnesi oluştur
-	GoToAction action = doc.OpenAction as GoToAction;
-	
-	// PDF dosyasının Yakınlaştırma faktörünü alın
-	System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); // Belge yakınlaştırma değeri;
-	
+// PDF dosyasının Yakınlaştırma faktörünü alın
+System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); // Belge yakınlaştırma değeri;
 ```

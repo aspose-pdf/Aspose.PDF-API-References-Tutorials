@@ -1,7 +1,7 @@
 ---
 title: Platta ut anteckning
 linktitle: Platta ut anteckning
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du förenklar anteckningar i ett PDF-dokument med Aspose.PDF för .NET. Bevara anteckningar och förhindra oavsiktliga ändringar.
 type: docs
 weight: 150
@@ -51,6 +51,7 @@ Console.WriteLine("\nFlattened annotation successfully.\nFile saved at " + dataD
 ```
 
 ### Exempel på källkod för Flatten Annotation med Aspose.PDF för .NET
+
 ```csharp
 // Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -59,37 +60,16 @@ Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 // Platta ut kommentarer
 foreach (var page in pdfDocument.Pages)
 {
-    foreach (var annotation in page.Annotations)
-    {
-        annotation.Flatten();
-    }
+	foreach (var annotation in page.Annotations)
+	{
+		annotation.Flatten();
+	}
+
 }
 // Spara uppdaterat dokument
 pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
+
 Console.WriteLine("\nFlattened annotation successfully.\nFile saved at " + dataDir);
-```
-
-```csharp
-
-            
-            // Sökvägen till dokumentkatalogen.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
-            // Öppna dokumentet
-            Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-            // Platta ut kommentarer
-            foreach (var page in pdfDocument.Pages)
-            {
-                foreach (var annotation in page.Annotations)
-                {
-                    annotation.Flatten();
-                }
-
-            }
-            // Spara uppdaterat dokument
-            pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
-            
-            Console.WriteLine("\nFlattened annotation successfully.\nFile saved at " + dataDir);
-        
 ```
 
 ## Slutsats

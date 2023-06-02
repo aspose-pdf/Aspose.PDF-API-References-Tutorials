@@ -66,33 +66,28 @@ doc.Save(dataDir);
 ### Código fuente de ejemplo para fuente incrustada durante la creación de documentos usando Aspose.PDF para .NET
 
 ```csharp
+// La ruta al directorio de documentos.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-            
-            // La ruta al directorio de documentos.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Crea una instancia del objeto Pdf llamando a su constructor vacío
+Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
-            // Crea una instancia del objeto Pdf llamando a su constructor vacío
-            Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
+// Crear una sección en el objeto Pdf
+Aspose.Pdf.Page page = doc.Pages.Add();
 
-            // Crear una sección en el objeto Pdf
-            Aspose.Pdf.Page page = doc.Pages.Add();
+Aspose.Pdf.Text.TextFragment fragment = new Aspose.Pdf.Text.TextFragment("");
 
-            Aspose.Pdf.Text.TextFragment fragment = new Aspose.Pdf.Text.TextFragment("");
+Aspose.Pdf.Text.TextSegment segment = new Aspose.Pdf.Text.TextSegment(" This is a sample text using Custom font.");
+Aspose.Pdf.Text.TextState ts = new Aspose.Pdf.Text.TextState();
+ts.Font = FontRepository.FindFont("Arial");
+ts.Font.IsEmbedded = true;
+segment.TextState = ts;
+fragment.Segments.Add(segment);
+page.Paragraphs.Add(fragment);
 
-            Aspose.Pdf.Text.TextSegment segment = new Aspose.Pdf.Text.TextSegment(" This is a sample text using Custom font.");
-            Aspose.Pdf.Text.TextState ts = new Aspose.Pdf.Text.TextState();
-            ts.Font = FontRepository.FindFont("Arial");
-            ts.Font.IsEmbedded = true;
-            segment.TextState = ts;
-            fragment.Segments.Add(segment);
-            page.Paragraphs.Add(fragment);
-
-            dataDir = dataDir + "EmbedFontWhileDocCreation_out.pdf";
-            // Guardar documento PDF
-            doc.Save(dataDir);
-            
-            
-        
+dataDir = dataDir + "EmbedFontWhileDocCreation_out.pdf";
+// Guardar documento PDF
+doc.Save(dataDir);
 ```
 
 ## Conclusión

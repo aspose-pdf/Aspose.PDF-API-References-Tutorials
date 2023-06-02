@@ -1,6 +1,6 @@
 ---
-title: Valider PDFA Standard
-linktitle: Valider PDFA Standard
+title: Valider PDF A Norme
+linktitle: Valider PDF A Norme
 second_title: Référence de l'API Aspose.PDF pour .NET
 description: Apprenez à utiliser Aspose.PDF pour .NET pour valider les fichiers PDF pour PDFAStandard avec ce guide étape par étape.
 type: docs
@@ -35,21 +35,19 @@ Après avoir chargé le document PDF, vous pouvez utiliser la méthode "Valider"
 pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1A);
 ```
 
-## Conclusion
-
-La validation des fichiers PDF par rapport à diverses normes PDF est un aspect important du travail avec des fichiers PDF dans un environnement professionnel. Aspose.PDF pour .NET fournit une API puissante et facile à utiliser pour valider les fichiers PDF par rapport à diverses normes PDF, y compris PDF/A-1a. En suivant le guide étape par étape fourni dans cet article, vous pouvez rapidement et facilement valider vos fichiers PDF à l'aide d'Aspose.PDF pour .NET.
-
 ### Exemple de code source pour Get Validate PDFAStandard en utilisant Aspose.PDF pour .NET
 
 ```csharp
+// Chemin d'accès au répertoire des documents.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Chemin d'accès au répertoire des documents.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Ouvrir le document
+Document pdfDocument = new Document(dataDir + "ValidatePDFAStandard.pdf");
 
-	// Ouvrir le document
-	Document pdfDocument = new Document(dataDir + "ValidatePDFAStandard.pdf");
-
-	// Valider PDF pour PDF/A-1a
-	pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1A);
-
+// Valider PDF pour PDF/A-1a
+pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1A);
 ```
+
+## Conclusion
+
+La validation des fichiers PDF par rapport à diverses normes PDF est un aspect important du travail avec des fichiers PDF dans un environnement professionnel. Aspose.PDF pour .NET fournit une API puissante et facile à utiliser pour valider les fichiers PDF par rapport à diverses normes PDF, y compris PDF/A-1a. En suivant le guide étape par étape fourni dans cet article, vous pouvez rapidement et facilement valider vos fichiers PDF à l'aide d'Aspose.PDF pour .NET.

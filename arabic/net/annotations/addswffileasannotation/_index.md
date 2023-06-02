@@ -75,22 +75,22 @@ doc.Save(dataDir);
 ### مثال على كود المصدر لإضافة ملف SWF كتعليق توضيحي باستخدام Aspose.PDF for .NET
 
 ```csharp
-	// المسار إلى دليل المستندات.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// المسار إلى دليل المستندات.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	//افتح مستند PDF
-	Document doc = new Document(dataDir + "AddSwfFileAsAnnotation.pdf");
+//افتح مستند PDF
+Document doc = new Document(dataDir + "AddSwfFileAsAnnotation.pdf");
 
-	// احصل على مرجع للصفحة التي تريد إضافة التعليق التوضيحي إليها
-	Page page = doc.Pages[1];
+// احصل على مرجع للصفحة التي تريد إضافة التعليق التوضيحي إليها
+Page page = doc.Pages[1];
 
-	// قم بإنشاء كائن ScreenAnnotation باستخدام ملف الوسائط المتعددة .swf كوسيطة
-	ScreenAnnotation annotation = new ScreenAnnotation(page, new Aspose.Pdf.Rectangle(0, 400, 600, 700), dataDir + "input.swf");
+// قم بإنشاء كائن ScreenAnnotation باستخدام ملف الوسائط المتعددة .swf كوسيطة
+ScreenAnnotation annotation = new ScreenAnnotation(page, new Aspose.Pdf.Rectangle(0, 400, 600, 700), dataDir + "input.swf");
 
-	// أضف التعليق التوضيحي إلى مجموعة التعليقات التوضيحية للصفحة
-	page.Annotations.Add(annotation);
+// أضف التعليق التوضيحي إلى مجموعة التعليقات التوضيحية للصفحة
+page.Annotations.Add(annotation);
 
-	dataDir = dataDir + "AddSwfFileAsAnnotation_out.pdf";
-	// احفظ مستند PDF المحدث مع التعليق التوضيحي
-	doc.Save(dataDir);
+dataDir = dataDir + "AddSwfFileAsAnnotation_out.pdf";
+// احفظ مستند PDF المحدث مع التعليق التوضيحي
+doc.Save(dataDir);
 ```        

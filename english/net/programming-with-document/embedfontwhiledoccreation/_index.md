@@ -66,33 +66,28 @@ doc.Save(dataDir);
 ### Example Source Code for Embed Font While Doc Creation using Aspose.PDF for .NET
 
 ```csharp
+// The path to the documents directory.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-            
-            // The path to the documents directory.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Instantiate Pdf object by calling its empty constructor
+Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
-            // Instantiate Pdf object by calling its empty constructor
-            Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
+// Create a section in the Pdf object
+Aspose.Pdf.Page page = doc.Pages.Add();
 
-            // Create a section in the Pdf object
-            Aspose.Pdf.Page page = doc.Pages.Add();
+Aspose.Pdf.Text.TextFragment fragment = new Aspose.Pdf.Text.TextFragment("");
 
-            Aspose.Pdf.Text.TextFragment fragment = new Aspose.Pdf.Text.TextFragment("");
+Aspose.Pdf.Text.TextSegment segment = new Aspose.Pdf.Text.TextSegment(" This is a sample text using Custom font.");
+Aspose.Pdf.Text.TextState ts = new Aspose.Pdf.Text.TextState();
+ts.Font = FontRepository.FindFont("Arial");
+ts.Font.IsEmbedded = true;
+segment.TextState = ts;
+fragment.Segments.Add(segment);
+page.Paragraphs.Add(fragment);
 
-            Aspose.Pdf.Text.TextSegment segment = new Aspose.Pdf.Text.TextSegment(" This is a sample text using Custom font.");
-            Aspose.Pdf.Text.TextState ts = new Aspose.Pdf.Text.TextState();
-            ts.Font = FontRepository.FindFont("Arial");
-            ts.Font.IsEmbedded = true;
-            segment.TextState = ts;
-            fragment.Segments.Add(segment);
-            page.Paragraphs.Add(fragment);
-
-            dataDir = dataDir + "EmbedFontWhileDocCreation_out.pdf";
-            // Save PDF Document
-            doc.Save(dataDir);
-            
-            
-        
+dataDir = dataDir + "EmbedFontWhileDocCreation_out.pdf";
+// Save PDF Document
+doc.Save(dataDir);
 ```
 
 ## Conclusion

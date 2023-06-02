@@ -85,7 +85,7 @@ Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at "
 // Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Mevcut bir PDF dosyasını yükleyin
+//Mevcut bir PDF dosyasını yükleyin
 Document doc = new Document(dataDir + "AddTOC.pdf");
 
 // PDF dosyasının ilk sayfasına erişin
@@ -128,9 +128,8 @@ for (int i = 0; i < 2; i++)
 	tocPage.Paragraphs.Add(heading2);
 }
 dataDir = dataDir + "TOC_out.pdf";
-//Güncellenen belgeyi kaydedin
+// Güncellenen belgeyi kaydedin
 doc.Save(dataDir);
 
 Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at " + dataDir);
-
 ```

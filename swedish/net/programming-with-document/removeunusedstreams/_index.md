@@ -1,7 +1,7 @@
 ---
 title: Ta bort oanvända strömmar
 linktitle: Ta bort oanvända strömmar
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du tar bort oanvända strömmar från PDF-filer med Aspose.PDF för .NET. Vår steg-för-steg guide.
 type: docs
 weight: 270
@@ -58,20 +58,18 @@ pdfDocument.Save(dataDir);
 Nedan är exempel på källkoden för att ta bort oanvända strömmar med Aspose.PDF för .NET.
 
 ```csharp
-
-	// Sökvägen till dokumentkatalogen.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Öppna dokumentet
-	Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-	// Ställ in alternativet RemoveUsedStreams
-	var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-	{
-		RemoveUnusedStreams = true
-	};
-	// Optimera PDF-dokument med OptimizationOptions
-	pdfDocument.OptimizeResources(optimizeOptions);
-	dataDir = dataDir + "OptimizeDocument_out.pdf";
-	// Spara uppdaterat dokument
-	pdfDocument.Save(dataDir);
-
+// Sökvägen till dokumentkatalogen.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Öppna dokumentet
+Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
+// Ställ in alternativet RemoveUsedStreams
+var optimizeOptions = new Pdf.Optimization.OptimizationOptions
+{
+	RemoveUnusedStreams = true
+};
+// Optimera PDF-dokument med OptimizationOptions
+pdfDocument.OptimizeResources(optimizeOptions);
+dataDir = dataDir + "OptimizeDocument_out.pdf";
+// Spara uppdaterat dokument
+pdfDocument.Save(dataDir);
 ```

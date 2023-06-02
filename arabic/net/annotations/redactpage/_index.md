@@ -9,25 +9,25 @@ url: /ar/net/annotations/redactpage/
 ---
 إذا كنت تبحث عن تنقيح معلومات حساسة من مستند PDF باستخدام Aspose.PDF for .NET ، فأنت محظوظ! إليك دليل تفصيلي للبدء:
 
-## في الكود ، قم بتعيين المسار إلى الدليل حيث يوجد مستند PDF الخاص بك:
+## الخطوة 1: في الكود ، قم بتعيين المسار إلى الدليل حيث يوجد مستند PDF الخاص بك:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## افتح مستند PDF:
+## الخطوة 2: افتح مستند PDF:
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## قم بإنشاء مثيل RedactionAnnotation لمنطقة صفحة معينة:
+## الخطوة 3: إنشاء مثيل RedactionAnnotation لمنطقة صفحة معينة:
 
 ```csharp
 RedactionAnnotation annot = new RedactionAnnotation(doc.Pages[1], new Aspose.Pdf.Rectangle(200, 500, 300, 600));
 ```
 
-## عيّن لون التعبئة ولون الحد ولون النص لتعليق التنقيح التوضيحي:
+## الخطوة 4: عيّن لون التعبئة ولون الحد ولون النص لتعليق التنقيح التوضيحي:
 
 ```csharp
 annot.FillColor = Aspose.Pdf.Color.Green;
@@ -35,38 +35,38 @@ annot.BorderColor = Aspose.Pdf.Color.Yellow;
 annot.Color = Aspose.Pdf.Color.Blue;
 ```
 
-## قم بتعيين النص المراد طباعته على التعليق التوضيحي للتنقيح ومحاذاة:
+## الخطوة 5: قم بتعيين النص المراد طباعته على التعليق التوضيحي للتنقيح ومحاذاة النص:
 
 ```csharp
 annot.OverlayText = "REDACTED";
 annot.TextAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 ```
 
-## كرر نص التراكب فوق التعليق التوضيحي للتنقيح:
+## الخطوة 6: كرر نص التراكب فوق التعليق التوضيحي للتنقيح:
 
 ```csharp
 annot.Repeat = true;
 ```
 
-## أضف التعليق التوضيحي إلى مجموعة التعليقات التوضيحية في الصفحة الأولى:
+## الخطوة 7: أضف التعليق التوضيحي إلى مجموعة التعليقات التوضيحية في الصفحة الأولى:
 
 ```csharp
 doc.Pages[1].Annotations.Add(annot);
 ```
 
-## قم بتسوية التعليق التوضيحي وتنقيح محتويات الصفحة ، أي إزالة النص والصور الموجودة أسفل التعليق التوضيحي المنقح:
+## الخطوة 8: قم بتسوية التعليق التوضيحي وتنقيح محتويات الصفحة ، أي إزالة النص والصور الموجودة أسفل التعليق التوضيحي المنقح:
 
 ```csharp
 annot.Redact();
 ```
 
-## قم بتعيين مسار واسم ملف PDF الناتج:
+## الخطوة 9: حدد مسار واسم ملف PDF الناتج:
 
 ```csharp
 dataDir = dataDir + "RedactPage_out.pdf";
 ```
 
-## احفظ مستند PDF بالصفحة المنقحة:
+## الخطوة 10: احفظ مستند PDF بالصفحة المنقحة:
 
 ```csharp
 doc.Save(dataDir);
@@ -95,7 +95,7 @@ annot.TextAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 annot.Repeat = true;
 // أضف تعليقًا توضيحيًا إلى مجموعة التعليقات التوضيحية في الصفحة الأولى
 doc.Pages[1].Annotations.Add(annot);
-// يسوي التعليقات التوضيحية وينقح محتويات الصفحة (على سبيل المثال ، يزيل النص والصورة
+//يسوي التعليقات التوضيحية وينقح محتويات الصفحة (على سبيل المثال ، يزيل النص والصورة
 // تحت تعليق توضيحي منقح)
 annot.Redact();
 dataDir = dataDir + "RedactPage_out.pdf";

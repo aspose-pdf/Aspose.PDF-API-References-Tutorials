@@ -24,7 +24,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Шаг 2: Откройте PDF-документ
 
- Первым шагом является загрузка PDF-документа, который вы хотите сделать, используйте кнопку`Document` класс Aspose.PDF для .NET. В следующем фрагменте кода показано, как загрузить PDF-документ:
+Первым шагом является загрузка PDF-документа, который вы хотите сделать, используйте кнопку`Document` класс Aspose.PDF для .NET. В следующем фрагменте кода показано, как загрузить PDF-документ:
 
 ```csharp
 // Открыть документ
@@ -45,7 +45,7 @@ var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 
 ## Шаг 4. Оптимизируйте PDF-документ
 
-После установки`UnembedFonts` вариант, вы можете оптимизировать документ PDF с помощью`OptimizeResources` метод`Document` сорт. В следующем фрагменте кода показано, как оптимизировать PDF-документ:
+ После установки`UnembedFonts` вариант, вы можете оптимизировать документ PDF с помощью`OptimizeResources` метод`Document` сорт. В следующем фрагменте кода показано, как оптимизировать PDF-документ:
 
 ```csharp
 // Оптимизируйте документ PDF с помощью OptimizationOptions
@@ -63,7 +63,7 @@ pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
 
 ## Шаг 6: Получите исходный и уменьшенный размер файла
 
- Наконец, вы можете получить исходный и уменьшенный размер файла PDF-документа, используя`FileInfo` класс System.IO. В следующем фрагменте кода показано, как получить исходный и уменьшенный размер файла:
+ Наконец, вы можете получить исходный и уменьшенный размер файла PDF-документа, используя`FileInfo`класс System.IO. В следующем фрагменте кода показано, как получить исходный и уменьшенный размер файла:
 
 ```csharp
 var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
@@ -76,24 +76,22 @@ Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length,
 Вот полный пример исходного кода для получения невстроенных шрифтов из документа PDF с использованием Aspose.PDF для .NET:
 
 ```csharp
-	
-	// Путь к каталогу документов.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Открыть документ
-	Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-	// Установите параметр UnembedFonts
-	var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-	{
-		UnembedFonts = true
-	};
-	Console.WriteLine("Start");
-	// Оптимизируйте документ PDF с помощью OptimizationOptions
-	pdfDocument.OptimizeResources(optimizeOptions);
-	// Сохранить обновленный документ
-	pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
-	Console.WriteLine("Finished");
-	var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
-	var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
-	Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
-	
+// Путь к каталогу документов.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Открыть документ
+Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
+// Установите параметр UnembedFonts
+var optimizeOptions = new Pdf.Optimization.OptimizationOptions
+{
+	UnembedFonts = true
+};
+Console.WriteLine("Start");
+// Оптимизируйте документ PDF с помощью OptimizationOptions
+pdfDocument.OptimizeResources(optimizeOptions);
+// Сохранить обновленный документ
+pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
+Console.WriteLine("Finished");
+var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
+var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
+Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
 ```

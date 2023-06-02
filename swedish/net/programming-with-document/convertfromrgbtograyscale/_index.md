@@ -1,7 +1,7 @@
 ---
 title: Konvertera från RGB till gråskala
 linktitle: Konvertera från RGB till gråskala
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du konverterar PDF-filer från RGB till gråskala med Aspose.PDF för .NET. Förbättra utskriftskvaliteten och minska filstorleken.
 type: docs
 weight: 60

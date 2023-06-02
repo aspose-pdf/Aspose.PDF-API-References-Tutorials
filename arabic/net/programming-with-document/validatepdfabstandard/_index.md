@@ -1,6 +1,6 @@
 ---
-title: تحقق من صحة PDFABStandard
-linktitle: تحقق من صحة PDFABStandard
+title: تحقق من صحة معيار PDF AB
+linktitle: تحقق من صحة معيار PDF AB
 second_title: Aspose.PDF لمرجع .NET API
 description: تعرف على كيفية استخدام Aspose.PDF for .NET للتحقق من صحة مستندات PDF مقابل PDFABStandard من خلال دليلنا خطوة بخطوة ومثال التعليمات البرمجية.
 type: docs
@@ -42,21 +42,19 @@ pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1B);
 
 يحدد المعامل الثاني "PdfFormat.PDF_A_1B" أننا نريد التحقق من صحة ملف PDF مقابل معيار PDF / A-1a.
 
-## خاتمة
-
-في هذه المقالة ، أوضحنا كيفية استخدام Aspose.PDF for .NET للتحقق من صحة مستند PDF مقابل معيار PDF / A-1a. باتباع الخطوات المذكورة أعلاه ، يمكنك بسهولة التحقق من صحة مستندات PDF الخاصة بك مقابل معايير مختلفة باستخدام Aspose.PDF for .NET.
-
 ### مثال على كود المصدر للحصول على Validate PDFABStandard باستخدام Aspose.PDF for .NET
 
 ```csharp
+// المسار إلى دليل المستندات.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// المسار إلى دليل المستندات.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// افتح المستند
+Document pdfDocument = new Document(dataDir + "ValidatePDFAStandard.pdf");
 
-	// افتح المستند
-	Document pdfDocument = new Document(dataDir + "ValidatePDFAStandard.pdf");
-
-	// تحقق من صحة PDF لـ PDF / A-1a
-	pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1B);
-	
+// تحقق من صحة PDF لـ PDF / A-1a
+pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1B);
 ```
+
+## خاتمة
+
+في هذه المقالة ، أوضحنا كيفية استخدام Aspose.PDF for .NET للتحقق من صحة مستند PDF مقابل معيار PDF / A-1a. باتباع الخطوات المذكورة أعلاه ، يمكنك بسهولة التحقق من صحة مستندات PDF الخاصة بك مقابل معايير مختلفة باستخدام Aspose.PDF for .NET.

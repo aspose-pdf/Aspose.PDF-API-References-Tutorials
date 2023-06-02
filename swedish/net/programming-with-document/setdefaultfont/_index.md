@@ -1,7 +1,7 @@
 ---
 title: Ställ in standardteckensnitt
 linktitle: Ställ in standardteckensnitt
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du ställer in standardteckensnittet för ett PDF-dokument med Aspose.PDF för .NET med denna steg-för-steg-guide.
 type: docs
 weight: 280
@@ -33,7 +33,7 @@ using (Document document = new Document(fs))
 
 ## Steg 3: Ställ in standardteckensnittet
 
- Därefter ställer vi in standardteckensnittet för PDF-dokumentet med hjälp av`PdfSaveOptions`klass. I det här exemplet ställer vi in standardteckensnittet till "Arial".
+ Därefter ställer vi in standardteckensnittet för PDF-dokumentet med hjälp av`PdfSaveOptions` klass. I det här exemplet ställer vi in standardteckensnittet till "Arial".
 
 ```csharp
 PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
@@ -51,19 +51,17 @@ document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
 ### Exempel på källkod för Set Default Font med Aspose.PDF för .NET
 
 ```csharp
-	
-	// Sökvägen till dokumentkatalogen.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Ladda ett befintligt PDF-dokument med saknat teckensnitt
-	string documentName = dataDir + "input.pdf";
-	string newName = "Arial";
-	using (System.IO.FileStream fs = new System.IO.FileStream(documentName, System.IO.FileMode.Open))
-	using (Document document = new Document(fs))
-	{
-		PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
-		// Ange standardteckensnittsnamn
-		pdfSaveOptions.DefaultFontName = newName;
-		document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
-	}
-	
+// Sökvägen till dokumentkatalogen.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Ladda ett befintligt PDF-dokument med saknat teckensnitt
+string documentName = dataDir + "input.pdf";
+string newName = "Arial";
+using (System.IO.FileStream fs = new System.IO.FileStream(documentName, System.IO.FileMode.Open))
+using (Document document = new Document(fs))
+{
+	PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
+	// Ange standardteckensnittsnamn
+	pdfSaveOptions.DefaultFontName = newName;
+	document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
+}
 ```

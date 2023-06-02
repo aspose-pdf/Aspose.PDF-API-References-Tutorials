@@ -77,45 +77,41 @@ doc.Save(outFile);
 ### Codice sorgente di esempio per la personalizzazione dei numeri di pagina durante l'aggiunta del sommario utilizzando Aspose.PDF per .NET
 
 ```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+string inFile = dataDir + "42824.pdf";
+string outFile = dataDir + "42824_out.pdf";
+//Carica un file PDF esistente
+Document doc = new Document(inFile);
+// Ottieni l'accesso alla prima pagina del file PDF
+Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
+// Crea un oggetto per rappresentare le informazioni TOC
+TocInfo tocInfo = new TocInfo();
+TextFragment title = new TextFragment("Table Of Contents");
+title.TextState.FontSize = 20;
+title.TextState.FontStyle = FontStyles.Bold;
+// Imposta il titolo per TOC
+tocInfo.Title = title;
+tocInfo.PageNumbersPrefix = "P";
+tocPage.TocInfo = tocInfo;
+for (int i = 1; i<doc.Pages.Count; i++)
+{
+	// Crea oggetto Intestazione
+	Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
+	TextSegment segment2 = new TextSegment();
+	heading2.TocPage = tocPage;
+	heading2.Segments.Add(segment2);
+	// Specificare la pagina di destinazione per l'oggetto intestazione
+	heading2.DestinationPage = doc.Pages[i + 1];
+	// Pagina di destinazione
+	heading2.Top = doc.Pages[i + 1].Rect.Height;
+	// Coordinate di destinazione
+	segment2.Text = "Page " + i.ToString();
+	// Aggiungi un'intestazione alla pagina contenente il TOC
+	tocPage.Paragraphs.Add(heading2);
+}
 
-            
-			string dataDir = "YOUR DOCUMENT DIRECTORY";
-            string inFile = dataDir + "42824.pdf";
-            string outFile = dataDir + "42824_out.pdf";
-            // Carica un file PDF esistente
-            Document doc = new Document(inFile);
-            // Ottieni l'accesso alla prima pagina del file PDF
-            Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
-            // Crea un oggetto per rappresentare le informazioni TOC
-            TocInfo tocInfo = new TocInfo();
-            TextFragment title = new TextFragment("Table Of Contents");
-            title.TextState.FontSize = 20;
-            title.TextState.FontStyle = FontStyles.Bold;
-            // Imposta il titolo per TOC
-            tocInfo.Title = title;
-            tocInfo.PageNumbersPrefix = "P";
-            tocPage.TocInfo = tocInfo;
-            for (int i = 1; i<doc.Pages.Count; i++)
-            {
-                // Crea oggetto Intestazione
-                Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
-                TextSegment segment2 = new TextSegment();
-                heading2.TocPage = tocPage;
-                heading2.Segments.Add(segment2);
-                // Specificare la pagina di destinazione per l'oggetto intestazione
-                heading2.DestinationPage = doc.Pages[i + 1];
-                // Pagina di destinazione
-                heading2.Top = doc.Pages[i + 1].Rect.Height;
-                // Coordinate di destinazione
-                segment2.Text = "Page " + i.ToString();
-                // Aggiungi un'intestazione alla pagina contenente il TOC
-                tocPage.Paragraphs.Add(heading2);
-            }
-
-            //Salva il documento aggiornato
-            doc.Save(outFile);
-            
-        
+// Salva il documento aggiornato
+doc.Save(outFile);
 ```
 
 ## Conclusione

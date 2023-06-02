@@ -9,24 +9,15 @@ url: /ar/net/programming-with-document/hidepagenumbersintoc/
 ---
 في هذه المقالة ، سنناقش تنفيذ ميزة إخفاء أرقام الصفحات في جدول المحتويات في Aspose.PDF لـ .NET باستخدام C #. سنبدأ بمقدمة موجزة عن Aspose.PDF for .NET ثم نتعمق في الدليل خطوة بخطوة لتنفيذ هذه الميزة. 
 
-### جدول المحتويات
-
-- مقدمة إلى Aspose.PDF for .NET
-- ما هي ميزة إخفاء أرقام الصفحات في جدول المحتويات؟
-- المتطلبات الأساسية
-- دليل خطوة بخطوة لتنفيذ ميزة إخفاء أرقام الصفحات في جدول المحتويات
-- مثال على شفرة المصدر لإخفاء أرقام الصفحات في جدول المحتويات باستخدام Aspose.PDF for .NET
-- خاتمة
-
-### مقدمة إلى Aspose.PDF for .NET
+## مقدمة إلى Aspose.PDF for .NET
 
 Aspose.PDF for .NET هو مكون قوي لمعالجة ملفات PDF يسمح للمطورين بإنشاء ملفات PDF وتحريرها ومعالجتها برمجيًا. يوفر مجموعة واسعة من الميزات والوظائف التي تسهل العمل مع مستندات PDF. يدعم Aspose.PDF for .NET كلاً من أنظمة التشغيل 32 بت و 64 بت ويمكن استخدامه مع الأنظمة الأساسية .NET Framework و .NET Core و Xamarin. 
 
-### ما هي ميزة إخفاء أرقام الصفحات في جدول المحتويات؟
+## ما هي ميزة إخفاء أرقام الصفحات في جدول المحتويات؟
 
 يعد جدول المحتويات (TOC) جزءًا أساسيًا من مستند PDF الذي يوفر للمستخدمين نظرة عامة سريعة على المحتوى. في بعض الأحيان ، قد يرغب المستخدمون في إخفاء أرقام الصفحات في جدول المحتويات لجعلها أكثر سهولة في الاستخدام. يوفر Aspose.PDF for .NET ميزة مضمنة لإخفاء أرقام الصفحات في جدول المحتويات. يمكن استخدام هذه الميزة لإنشاء مستندات PDF أكثر سهولة في الاستخدام. 
 
-### المتطلبات الأساسية
+## المتطلبات الأساسية
 
 لمتابعة هذا البرنامج التعليمي ، ستحتاج إلى ما يلي:
 
@@ -34,15 +25,15 @@ Aspose.PDF for .NET هو مكون قوي لمعالجة ملفات PDF يسمح 
 - Aspose.PDF for .NET مثبتة على نظامك
 - المعرفة الأساسية بلغة البرمجة C #
 
-### دليل خطوة بخطوة لتنفيذ ميزة إخفاء أرقام الصفحات في جدول المحتويات
+## دليل خطوة بخطوة لتنفيذ ميزة إخفاء أرقام الصفحات في جدول المحتويات
 
 اتبع الخطوات أدناه لتنفيذ ميزة إخفاء أرقام الصفحات في جدول المحتويات باستخدام Aspose.PDF for .NET:
 
-#### الخطوة 1: إنشاء تطبيق وحدة تحكم C # جديد في Visual Studio
+## الخطوة 1: إنشاء تطبيق وحدة تحكم C # جديد في Visual Studio
 
 افتح Visual Studio وأنشئ تطبيق وحدة تحكم C # جديد.
 
-#### الخطوة 2: أضف مرجعًا إلى Aspose.PDF لـ .NET
+## الخطوة 2: أضف مرجعًا إلى Aspose.PDF لـ .NET
 
 انقر بزر الماوس الأيمن فوق مجلد المراجع في مشروعك وحدد إضافة مرجع. استعرض إلى الموقع حيث تم تثبيت Aspose.PDF for .NET على نظامك وأضف مرجعًا إليه.
 
@@ -116,44 +107,42 @@ doc.Save(outFile);
 ### مثال التعليمات البرمجية المصدر لإخفاء أرقام الصفحات في جدول المحتويات باستخدام Aspose.PDF لـ .NET
 
 ```csharp
+// المسار إلى دليل المستندات.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+string outFile = dataDir + "HiddenPageNumbers_out.pdf";
+Document doc = new Document();
+Page tocPage = doc.Pages.Add();
+TocInfo tocInfo = new TocInfo();
+TextFragment title = new TextFragment("Table Of Contents");
+title.TextState.FontSize = 20;
+title.TextState.FontStyle = FontStyles.Bold;
+tocInfo.Title = title;
+//أضف قسم القائمة إلى مجموعة أقسام وثيقة Pdf
+tocPage.TocInfo = tocInfo;
+//حدد تنسيق قائمة المستويات الأربعة عن طريق تعيين الهوامش اليسرى و
+//إعدادات تنسيق النص لكل مستوى
 
-	// المسار إلى دليل المستندات.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	string outFile = dataDir + "HiddenPageNumbers_out.pdf";
-	Document doc = new Document();
-	Page tocPage = doc.Pages.Add();
-	TocInfo tocInfo = new TocInfo();
-	TextFragment title = new TextFragment("Table Of Contents");
-	title.TextState.FontSize = 20;
-	title.TextState.FontStyle = FontStyles.Bold;
-	tocInfo.Title = title;
-	//أضف قسم القائمة إلى مجموعة أقسام وثيقة Pdf
-	tocPage.TocInfo = tocInfo;
-	//حدد تنسيق قائمة المستويات الأربعة عن طريق تعيين الهوامش اليسرى و
-	//إعدادات تنسيق النص لكل مستوى
-
-	tocInfo.IsShowPageNumbers = false;
-	tocInfo.FormatArrayLength = 4;
-	tocInfo.FormatArray[0].Margin.Right = 0;
-	tocInfo.FormatArray[0].TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;
-	tocInfo.FormatArray[1].Margin.Left = 30;
-	tocInfo.FormatArray[1].TextState.Underline = true;
-	tocInfo.FormatArray[1].TextState.FontSize = 10;
-	tocInfo.FormatArray[2].TextState.FontStyle = FontStyles.Bold;
-	tocInfo.FormatArray[3].TextState.FontStyle = FontStyles.Bold;
-	Page page = doc.Pages.Add();
-	//أضف أربعة عناوين في القسم
-	for (int Level = 1; Level != 5; Level++)
-		{ 
-			Heading heading2 = new Heading(Level); 
-			TextSegment segment2 = new TextSegment(); 
-			heading2.TocPage = tocPage; 
-			heading2.Segments.Add(segment2); 
-			heading2.IsAutoSequence = true; 
-			segment2.Text = "this is heading of level " + Level; 
-			heading2.IsInList = true; 
-			page.Paragraphs.Add(heading2); 
-		}
-	doc.Save(outFile);
-
+tocInfo.IsShowPageNumbers = false;
+tocInfo.FormatArrayLength = 4;
+tocInfo.FormatArray[0].Margin.Right = 0;
+tocInfo.FormatArray[0].TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;
+tocInfo.FormatArray[1].Margin.Left = 30;
+tocInfo.FormatArray[1].TextState.Underline = true;
+tocInfo.FormatArray[1].TextState.FontSize = 10;
+tocInfo.FormatArray[2].TextState.FontStyle = FontStyles.Bold;
+tocInfo.FormatArray[3].TextState.FontStyle = FontStyles.Bold;
+Page page = doc.Pages.Add();
+//أضف أربعة عناوين في القسم
+for (int Level = 1; Level != 5; Level++)
+	{ 
+		Heading heading2 = new Heading(Level); 
+		TextSegment segment2 = new TextSegment(); 
+		heading2.TocPage = tocPage; 
+		heading2.Segments.Add(segment2); 
+		heading2.IsAutoSequence = true; 
+		segment2.Text = "this is heading of level " + Level; 
+		heading2.IsInList = true; 
+		page.Paragraphs.Add(heading2); 
+	}
+doc.Save(outFile);
 ```

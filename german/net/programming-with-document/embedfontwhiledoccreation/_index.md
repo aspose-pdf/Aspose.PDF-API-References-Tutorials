@@ -66,33 +66,28 @@ doc.Save(dataDir);
 ### Beispielquellcode zum Einbetten von Schriftarten bei der Dokumenterstellung mit Aspose.PDF für .NET
 
 ```csharp
+// Der Pfad zum Dokumentenverzeichnis.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-            
-            // Der Pfad zum Dokumentenverzeichnis.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Instanziieren Sie ein PDF-Objekt, indem Sie seinen leeren Konstruktor aufrufen
+Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
-            // Instanziieren Sie ein PDF-Objekt, indem Sie seinen leeren Konstruktor aufrufen
-            Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
+// Erstellen Sie einen Abschnitt im PDF-Objekt
+Aspose.Pdf.Page page = doc.Pages.Add();
 
-            // Erstellen Sie einen Abschnitt im PDF-Objekt
-            Aspose.Pdf.Page page = doc.Pages.Add();
+Aspose.Pdf.Text.TextFragment fragment = new Aspose.Pdf.Text.TextFragment("");
 
-            Aspose.Pdf.Text.TextFragment fragment = new Aspose.Pdf.Text.TextFragment("");
+Aspose.Pdf.Text.TextSegment segment = new Aspose.Pdf.Text.TextSegment(" This is a sample text using Custom font.");
+Aspose.Pdf.Text.TextState ts = new Aspose.Pdf.Text.TextState();
+ts.Font = FontRepository.FindFont("Arial");
+ts.Font.IsEmbedded = true;
+segment.TextState = ts;
+fragment.Segments.Add(segment);
+page.Paragraphs.Add(fragment);
 
-            Aspose.Pdf.Text.TextSegment segment = new Aspose.Pdf.Text.TextSegment(" This is a sample text using Custom font.");
-            Aspose.Pdf.Text.TextState ts = new Aspose.Pdf.Text.TextState();
-            ts.Font = FontRepository.FindFont("Arial");
-            ts.Font.IsEmbedded = true;
-            segment.TextState = ts;
-            fragment.Segments.Add(segment);
-            page.Paragraphs.Add(fragment);
-
-            dataDir = dataDir + "EmbedFontWhileDocCreation_out.pdf";
-            // PDF-Dokument speichern
-            doc.Save(dataDir);
-            
-            
-        
+dataDir = dataDir + "EmbedFontWhileDocCreation_out.pdf";
+// PDF-Dokument speichern
+doc.Save(dataDir);
 ```
 
 ## Abschluss

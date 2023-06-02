@@ -1,7 +1,7 @@
 ---
 title: Optimera dokument
 linktitle: Optimera dokument
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Optimera dokument för webben är avgörande för användarupplevelsen. Lär dig hur du gör det med Aspose.PDF för .NET med denna steg-för-steg-guide.
 type: docs
 weight: 240
@@ -47,19 +47,17 @@ Genom att följa denna steg-för-steg-guide kan du nu enkelt optimera dina PDF-d
 ### Exempel på källkod för optimering av PDF-dokument med Aspose.PDF för .NET
 
 ```csharp
+// Sökvägen till dokumentkatalogen.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Sökvägen till dokumentkatalogen.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Öppna dokumentet
+Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 
-	// Öppna dokumentet
-	Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
+// Optimera för webben
+pdfDocument.Optimize();
 
-	// Optimera för webben
-	pdfDocument.Optimize();
+dataDir = dataDir + "OptimizeDocument_out.pdf";
 
-	dataDir = dataDir + "OptimizeDocument_out.pdf";
-
-	// Spara utdatadokument
-	pdfDocument.Save(dataDir);
-
+// Spara utdatadokument
+pdfDocument.Save(dataDir);
 ```

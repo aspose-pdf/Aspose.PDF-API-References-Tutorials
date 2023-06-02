@@ -80,47 +80,44 @@ Hier ist der vollständige Quellcode zum Einbetten einer Schriftart mit Aspose.P
 
 
 ```csharp
+// Der Pfad zum Dokumentenverzeichnis.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-            
-            // Der Pfad zum Dokumentenverzeichnis.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
+//Laden Sie eine vorhandene PDF-Datei
+Document doc = new Document(dataDir + "input.pdf");
 
-            // Laden Sie eine vorhandene PDF-Datei
-            Document doc = new Document(dataDir + "input.pdf");
+// Durchlaufen Sie alle Seiten
+foreach (Page page in doc.Pages)
+{
+	if (page.Resources.Fonts != null)
+	{
+		foreach (Aspose.Pdf.Text.Font pageFont in page.Resources.Fonts)
+		{
+			// Überprüfen Sie, ob die Schriftart bereits eingebettet ist
+			if (!pageFont.IsEmbedded)
+				pageFont.IsEmbedded = true;
+		}
+	}
 
-            // Durchlaufen Sie alle Seiten
-            foreach (Page page in doc.Pages)
-            {
-                if (page.Resources.Fonts != null)
-                {
-                    foreach (Aspose.Pdf.Text.Font pageFont in page.Resources.Fonts)
-                    {
-                        // Überprüfen Sie, ob die Schriftart bereits eingebettet ist
-                        if (!pageFont.IsEmbedded)
-                            pageFont.IsEmbedded = true;
-                    }
-                }
+	// Suchen Sie nach den Formularobjekten
+	foreach (XForm form in page.Resources.Forms)
+	{
+		if (form.Resources.Fonts != null)
+		{
+			foreach (Aspose.Pdf.Text.Font formFont in form.Resources.Fonts)
+			{
+				// Überprüfen Sie, ob die Schriftart eingebettet ist
+				if (!formFont.IsEmbedded)
+					formFont.IsEmbedded = true;
+			}
+		}
+	}
+}
+dataDir = dataDir + "EmbedFont_out.pdf";
+// PDF-Dokument speichern
+doc.Save(dataDir);
 
-                // Suchen Sie nach den Formularobjekten
-                foreach (XForm form in page.Resources.Forms)
-                {
-                    if (form.Resources.Fonts != null)
-                    {
-                        foreach (Aspose.Pdf.Text.Font formFont in form.Resources.Fonts)
-                        {
-                            // Überprüfen Sie, ob die Schriftart eingebettet ist
-                            if (!formFont.IsEmbedded)
-                                formFont.IsEmbedded = true;
-                        }
-                    }
-                }
-            }
-            dataDir = dataDir + "EmbedFont_out.pdf";
-            // PDF-Dokument speichern
-            doc.Save(dataDir);
-            
-            Console.WriteLine("\nFont embedded successfully in a PDF file.\nFile saved at " + dataDir);
-        
+Console.WriteLine("\nFont embedded successfully in a PDF file.\nFile saved at " + dataDir);
 ```
 
 

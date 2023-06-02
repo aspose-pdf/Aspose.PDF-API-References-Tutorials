@@ -57,49 +57,45 @@ Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
  Вот полный исходный код для получения свойств окна PDF-документа с помощью`GetDocumentWindow` особенность Aspose.PDF для .NET:
 
 ```csharp
+// Путь к каталогу документов.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-            
-            // Путь к каталогу документов.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Открыть документ
+Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
 
-            // Открыть документ
-            Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
+// Получить различные свойства документа
+// Положение окна документа - По умолчанию: false
+Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
 
-            // Получить различные свойства документа
-            // Положение окна документа - По умолчанию: false
-            Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
-   
-            // преобладающий порядок чтения; определяет позицию страницы
-            // При отображении рядом — по умолчанию: L2R
-            Console.WriteLine("Direction : {0}", pdfDocument.Direction);
-            
-            // Должна ли строка заголовка окна отображать название документа
-            // Если false, в строке заголовка отображается имя файла PDF. По умолчанию: false
-            Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
-            
-            // Нужно ли изменять размер окна документа, чтобы он соответствовал размеру
-            // Первая отображаемая страница — по умолчанию: false
-            Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
-            
-            // Скрывать ли строку меню приложения просмотра — по умолчанию: false
-            Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
-            
-            //Скрывать ли панель инструментов приложения просмотра — по умолчанию: false
-            Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
-            
-            // Следует ли скрывать элементы пользовательского интерфейса, такие как полосы прокрутки
-            // И оставить только отображаемое содержимое страницы — по умолчанию: false
-            Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
-            
-            // Страничный режим документа. Как отображать документ при выходе из полноэкранного режима.
-            Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
-            
-            // Макет страницы, т.е. одна страница, один столбец
-            Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
-            
-            // Как документ должен отображаться при открытии
-            // Т.е. показывать эскизы, полноэкранный режим, показывать панель вложений
-            Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
-            
-        
+// преобладающий порядок чтения; определяет позицию страницы
+// При отображении рядом — по умолчанию: L2R
+Console.WriteLine("Direction : {0}", pdfDocument.Direction);
+
+// Должна ли строка заголовка окна отображать название документа
+// Если false, в строке заголовка отображается имя файла PDF. По умолчанию: false
+Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
+
+// Нужно ли изменять размер окна документа, чтобы он соответствовал размеру
+// Первая отображаемая страница — по умолчанию: false
+Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
+
+// Скрывать ли строку меню приложения просмотра — по умолчанию: false
+Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
+
+//Скрывать ли панель инструментов приложения просмотра — по умолчанию: false
+Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
+
+// Следует ли скрывать элементы пользовательского интерфейса, такие как полосы прокрутки
+// И оставить только отображаемое содержимое страницы — по умолчанию: false
+Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
+
+// Страничный режим документа. Как отображать документ при выходе из полноэкранного режима.
+Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
+
+// Макет страницы, т.е. одна страница, один столбец
+Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
+
+// Как документ должен отображаться при открытии
+// Т.е. показывать эскизы, полноэкранный режим, показывать панель вложений
+Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
 ```

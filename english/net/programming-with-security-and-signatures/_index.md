@@ -9,15 +9,16 @@ description:
 
 ## Tutorials
 | Title | Description |
-| --- | --- | | [Change Password](./change-password/) |  |  
-| [Decrypt](./decrypt/) |  |  
-| [Determine Correct Password](./determine-correct-password/) |  |  
-| [Digitally Sign](./digitally-sign/) |  |  
-| [Digitally Sign With Time Stamp](./digitally-sign-with-time-stamp/) |  |  
-| [Encrypt](./encrypt/) |  |  
-| [Extracting Image](./extracting-image/) |  |  
-| [Extract Signature Info](./extract-signature-info/) |  |  
-| [Is Password Protected](./is-password-protected/) |  |  
-| [Set Privileges](./set-privileges/) |  |  
-| [Sign With Smart Card Using Pdf File Signature](./sign-with-smart-card-using-pdf-file-signature/) |  |  
-| [Sign With Smart Card Using Signature Field](./sign-with-smart-card-using-signature-field/) |  |  
+| --- | --- | 
+| [Change Password](./change-password/) | Learn how to change the password of a PDF document using Aspose.PDF for .NET. |  
+| [Decrypt](./decrypt/) | Learn how to decrypt PDF files using Aspose.PDF for .NET. |  
+| [Determine Correct Password](./determine-correct-password/) | Learn how to determine the correct password for a PDF file with Aspose.PDF for .NET. |  
+| [Digitally Sign](./digitally-sign/) | Learn how to digitally sign a PDF file with Aspose.PDF for .NET. |  
+| [Digitally Sign With Time Stamp](./digitally-sign-with-time-stamp/) | Learn how to perform a digital signature with time stamp on a PDF file using Aspose.PDF for .NET. |  
+| [Encrypt](./encrypt/) | Securely encrypt your PDF files with Aspose.PDF for .NET. |  
+| [Extracting Image](./extracting-image/) | Easily extract images from PDF documents with Aspose.PDF for .NET. |  
+| [Extract Signature Info](./extract-signature-info/) | Extracting signature information using Aspose.PDF for .NET. |  
+| [Is Password Protected](./is-password-protected/) | Easily check if a PDF document is password protected with Aspose.PDF for .NET. |  
+| [Set Privileges](./set-privileges/) | Easily set access privileges for your PDF files with Aspose.PDF for .NET. |  
+| [Sign With Smart Card Using Pdf File Signature](./sign-with-smart-card-using-pdf-file-signature/) | Sign your PDF files securely with a smart card using Aspose.PDF for .NET. |  
+| [Sign With Smart Card Using Signature Field](./sign-with-smart-card-using-signature-field/) | Sign your PDF files securely with a smart card using Aspose.PDF for .NET. |  

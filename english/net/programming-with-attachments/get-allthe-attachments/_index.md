@@ -10,7 +10,7 @@ url: /net/programming-with-attachments/get-allthe-attachments/
 ### Sample source code for Get Allthe Attachments using Aspose.Words for .NET 
 ```csharp
             // The path to the documents directory.
-            string dataDir = RunExamples.GetDataDir_AsposePdf_Attachments();
+            string dataDir = "YOUR DOCUMENT DIRECTORY";
             // Open document
             Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
             // Get embedded files collection

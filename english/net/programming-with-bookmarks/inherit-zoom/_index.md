@@ -10,7 +10,7 @@ url: /net/programming-with-bookmarks/inherit-zoom/
 ### Sample source code for Inherit Zoom using Aspose.Words for .NET 
 ```csharp
             // The path to the documents directory.
-            string dataDir = RunExamples.GetDataDir_AsposePdf_Bookmarks();
+            string dataDir = "YOUR DOCUMENT DIRECTORY";
             // Open document
             Document doc = new Document(dataDir + "input.pdf");
             // Get outlines/bookmarks collection of PDF file

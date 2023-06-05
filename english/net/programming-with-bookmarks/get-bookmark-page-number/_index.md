@@ -10,7 +10,7 @@ url: /net/programming-with-bookmarks/get-bookmark-page-number/
 ### Sample source code for Get Bookmark Page Number using Aspose.Words for .NET 
 ```csharp
             // The path to the documents directory.
-            string dataDir = RunExamples.GetDataDir_AsposePdf_Bookmarks();
+            string dataDir = "YOUR DOCUMENT DIRECTORY";
             // Create PdfBookmarkEditor
             PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
             // Open PDF file

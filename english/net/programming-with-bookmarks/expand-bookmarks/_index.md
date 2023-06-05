@@ -10,7 +10,7 @@ url: /net/programming-with-bookmarks/expand-bookmarks/
 ### Sample source code for Expand Bookmarks using Aspose.Words for .NET 
 ```csharp
             // The path to the documents directory.
-            string dataDir = RunExamples.GetDataDir_AsposePdf_Bookmarks();
+            string dataDir = "YOUR DOCUMENT DIRECTORY";
             // Open document
             Document doc = new Document(dataDir + "input.pdf");
             // Set page view mode i.e. show thumbnails, full-screen, show attachment panel

@@ -10,7 +10,7 @@ url: /net/programming-with-attachments/get-individual-attachment/
 ### Sample source code for Get Individual Attachment using Aspose.Words for .NET 
 ```csharp
             // The path to the documents directory.
-            string dataDir = RunExamples.GetDataDir_AsposePdf_Attachments();
+            string dataDir = "YOUR DOCUMENT DIRECTORY";
             // Open document
             Document pdfDocument = new Document(dataDir + "GetIndividualAttachment.pdf");
             // Get particular embedded file

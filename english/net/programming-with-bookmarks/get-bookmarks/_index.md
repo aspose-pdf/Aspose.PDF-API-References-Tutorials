@@ -10,7 +10,7 @@ url: /net/programming-with-bookmarks/get-bookmarks/
 ### Sample source code for Get Bookmarks using Aspose.Words for .NET 
 ```csharp
             // The path to the documents directory.
-            string dataDir = RunExamples.GetDataDir_AsposePdf_Bookmarks();
+            string dataDir = "YOUR DOCUMENT DIRECTORY";
             // Open document
             Document pdfDocument = new Document(dataDir + "GetBookmarks.pdf");
             // Loop through all the bookmarks

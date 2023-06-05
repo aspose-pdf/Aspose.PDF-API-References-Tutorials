@@ -10,7 +10,7 @@ url: /net/programming-with-bookmarks/add-bookmark/
 ### Sample source code for Add Bookmark using Aspose.Words for .NET 
 ```csharp
             // The path to the documents directory.
-            string dataDir = RunExamples.GetDataDir_AsposePdf_Bookmarks();
+            string dataDir = "YOUR DOCUMENT DIRECTORY";
             // Open document
             Document pdfDocument = new Document(dataDir + "AddBookmark.pdf");
             // Create a bookmark object

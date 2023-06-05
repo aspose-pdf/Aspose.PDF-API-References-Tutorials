@@ -10,7 +10,7 @@ url: /net/programming-with-bookmarks/delete-all-bookmarks/
 ### Sample source code for Delete All Bookmarks using Aspose.Words for .NET 
 ```csharp
             // The path to the documents directory.
-            string dataDir = RunExamples.GetDataDir_AsposePdf_Bookmarks();
+            string dataDir = "YOUR DOCUMENT DIRECTORY";
             // Open document
             Document pdfDocument = new Document(dataDir + "DeleteAllBookmarks.pdf");
             // Delete all bookmarks

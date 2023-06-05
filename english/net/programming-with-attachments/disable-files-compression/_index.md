@@ -10,7 +10,7 @@ url: /net/programming-with-attachments/disable-files-compression/
 ### Sample source code for Disable Files Compression using Aspose.Words for .NET 
 ```csharp
             // The path to the documents directory.
-            string dataDir = RunExamples.GetDataDir_AsposePdf_Attachments();
+            string dataDir = "YOUR DOCUMENT DIRECTORY";
             Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
             // Setup new file to be added as attachment
             FileSpecification fileSpecification = new FileSpecification("test_out.txt", "Sample text file");

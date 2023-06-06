@@ -58,7 +58,7 @@ Display a message indicating that the destination link was successfully configur
 Console.WriteLine("\nDestination link configured successfully.\nFile saved to location: " + dataDir);
 ```
 
-### Sample source code for Set Destination Link using Aspose.Words for .NET 
+### Sample source code for Set Destination Link using Aspose.PDF for .NET 
 ```csharp
 try
 {

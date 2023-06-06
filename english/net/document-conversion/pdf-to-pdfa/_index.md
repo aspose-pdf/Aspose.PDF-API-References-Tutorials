@@ -52,7 +52,7 @@ pdfDocument.Save(dataDir);
 
 Replace `"YOUR DOCUMENTS DIRECTORY"` with the desired directory where you want to save the output PDF/A file.
 
-### Example source code for PDF to HTML using Aspose.Words for .NET
+### Example source code for PDF to HTML using Aspose.PDF for .NET
 
 ```csharp
 // The path to the documents directory.

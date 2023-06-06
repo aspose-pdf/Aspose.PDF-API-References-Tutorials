@@ -76,7 +76,7 @@ dataDir = dataDir + "InheritZoom_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Inherit Zoom using Aspose.Words for .NET 
+### Sample source code for Inherit Zoom using Aspose.PDF for .NET 
 ```csharp
 // The path to the documents directory.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

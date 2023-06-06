@@ -7,7 +7,7 @@ type: docs
 weight: 220
 url: /net/programming-with-images/page-to-png/
 ---
-### Sample source code for Page To PNG using Aspose.Words for .NET 
+### Sample source code for Page To PNG using Aspose.PDF for .NET 
 ```csharp
             // The path to the documents directory.
             string dataDir = "YOUR DOCUMENT DIRECTORY";

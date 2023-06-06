@@ -61,7 +61,7 @@ Display a message indicating that the links were updated successfully and specif
 Console.WriteLine("\nLinks updated successfully.\nFile saved to location: " + dataDir);
 ```
 
-### Sample source code for Update Links using Aspose.Words for .NET 
+### Sample source code for Update Links using Aspose.PDF for .NET 
 ```csharp
 try
 {

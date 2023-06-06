@@ -54,7 +54,7 @@ Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
 }
 ```
 
-### Sample source code for Get Attachment Info using Aspose.Words for .NET
+### Sample source code for Get Attachment Info using Aspose.PDF for .NET
  
 ```csharp
 

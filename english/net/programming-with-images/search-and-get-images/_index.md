@@ -7,7 +7,7 @@ type: docs
 weight: 260
 url: /net/programming-with-images/search-and-get-images/
 ---
-### Sample source code for Search And Get Images using Aspose.Words for .NET 
+### Sample source code for Search And Get Images using Aspose.PDF for .NET 
 ```csharp
             // The path to the documents directory.
             string dataDir = "YOUR DOCUMENT DIRECTORY";

@@ -7,7 +7,7 @@ type: docs
 weight: 250
 url: /net/programming-with-images/resize-images/
 ---
-### Sample source code for Resize Images using Aspose.Words for .NET 
+### Sample source code for Resize Images using Aspose.PDF for .NET 
 ```csharp
             // Initialize Time
             var time = DateTime.Now.Ticks;

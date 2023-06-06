@@ -50,7 +50,7 @@ Display a message indicating that the open action was successfully removed and s
 Console.WriteLine("\nOpen action deleted successfully.\nFile saved to location: " + dataDir);
 ```
 
-### Sample source code for Remove Open Action using Aspose.Words for .NET 
+### Sample source code for Remove Open Action using Aspose.PDF for .NET 
 ```csharp
 // The path to the documents directory.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

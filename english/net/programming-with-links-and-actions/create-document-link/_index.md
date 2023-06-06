@@ -57,7 +57,7 @@ dataDir = dataDir + "CreateDocumentLink_out.pdf";
 document. Save(dataDir);
 ```
 
-### Sample source code for Create Document Link using Aspose.Words for .NET 
+### Sample source code for Create Document Link using Aspose.PDF for .NET 
 ```csharp
 // The path to the documents directory.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

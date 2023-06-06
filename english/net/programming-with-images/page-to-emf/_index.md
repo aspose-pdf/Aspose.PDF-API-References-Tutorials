@@ -7,7 +7,7 @@ type: docs
 weight: 210
 url: /net/programming-with-images/page-to-emf/
 ---
-### Sample source code for Page To EMF using Aspose.Words for .NET 
+### Sample source code for Page To EMF using Aspose.PDF for .NET 
 ```csharp
             // The path to the documents directory.
             string dataDir = "YOUR DOCUMENT DIRECTORY";

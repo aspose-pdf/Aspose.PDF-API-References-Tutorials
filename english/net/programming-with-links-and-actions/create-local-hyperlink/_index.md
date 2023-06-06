@@ -66,7 +66,7 @@ dataDir = dataDir + "CreateLocalHyperlink_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Create Local Hyperlink using Aspose.Words for .NET 
+### Sample source code for Create Local Hyperlink using Aspose.PDF for .NET 
 ```csharp
 // The path to the documents directory.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

@@ -77,7 +77,7 @@ Save the updated document using the `Save` method:
 doc.Save(dataDir + "goto2page_out.pdf");
 ```
 
-### Sample source code for Specify Page When Viewing using Aspose.Words for .NET 
+### Sample source code for Specify Page When Viewing using Aspose.PDF for .NET 
 ```csharp
 // The path to the documents directory.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

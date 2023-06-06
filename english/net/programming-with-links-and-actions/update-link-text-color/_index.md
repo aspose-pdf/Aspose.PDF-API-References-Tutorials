@@ -69,7 +69,7 @@ Display a message that the link annotation text color was updated successfully a
 Console.WriteLine("\nText color of link annotations updated successfully.\nFile saved to location: " + dataDir);
 ```
 
-### Sample source code for Update Link Text Color using Aspose.Words for .NET 
+### Sample source code for Update Link Text Color using Aspose.PDF for .NET 
 ```csharp
 try
 {

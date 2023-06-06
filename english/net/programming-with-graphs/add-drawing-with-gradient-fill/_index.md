@@ -71,7 +71,7 @@ Finally, we save the resulting PDF file with the name "AddDrawingWithGradientFil
 doc.Save(dataDir + "AddDrawingWithGradientFill_out.pdf");
 ```
 
-### Sample source code for Add Drawing With Gradient Fill using Aspose.Words for .NET 
+### Sample source code for Add Drawing With Gradient Fill using Aspose.PDF for .NET 
 
 ```csharp
 

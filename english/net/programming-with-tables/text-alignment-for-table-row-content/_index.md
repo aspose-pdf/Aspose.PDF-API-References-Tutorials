@@ -85,7 +85,7 @@ Finally, we will save the PDF document:
 doc.Save(dataDir + "43620_ByWords_out.pdf");
 ```
 
-### Example source code for Text Alignment For Table Row Content using Aspose.Words for .NET
+### Example source code for Text Alignment For Table Row Content using Aspose.PDF for .NET
 
 ```csharp
 var dataDir = "YOUR DOCUMENT DIRECTORY";

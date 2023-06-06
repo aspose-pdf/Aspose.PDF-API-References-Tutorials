@@ -63,7 +63,7 @@ Finally, we save the resulting PDF file with the name "ControlRectangleZOrder_ou
 ```csharp
 doc1.Save(dataDir);
 ```
-### Sample source code for Control Rectangle Z Order using Aspose.Words for .NET 
+### Sample source code for Control Rectangle Z Order using Aspose.PDF for .NET 
 
 ```csharp
 

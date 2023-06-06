@@ -94,7 +94,7 @@ pdfDoc.Save(dataDir);
 Console.WriteLine("\nNumbering style successfully applied to headers.\nFile saved as: " + dataDir);
 ```
 
-### Sample source code for Apply Number Style using Aspose.Words for .NET 
+### Sample source code for Apply Number Style using Aspose.PDF for .NET 
 ```csharp
 
 // The path to the documents directory.

@@ -61,7 +61,7 @@ Console.WriteLine("\nPDF file password changed successfully.\nFile saved at " + 
 
 The updated PDF will be saved at the specified location.
 
-### Sample source code for Change Password using Aspose.Words for .NET 
+### Sample source code for Change Password using Aspose.PDF for .NET 
 ```csharp
 // The path to the documents directory.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";

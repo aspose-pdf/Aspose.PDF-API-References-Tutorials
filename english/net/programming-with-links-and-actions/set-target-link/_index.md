@@ -65,7 +65,7 @@ Display a message indicating that the target link was successfully configured an
 Console.WriteLine("\nConfiguration of target link successful.\nFile saved at location: " + dataDir);
 ```
 
-### Sample source code for Set Target Link using Aspose.Words for .NET 
+### Sample source code for Set Target Link using Aspose.PDF for .NET 
 ```csharp
 try
 {

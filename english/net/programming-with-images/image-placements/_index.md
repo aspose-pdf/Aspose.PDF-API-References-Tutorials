@@ -7,7 +7,7 @@ type: docs
 weight: 170
 url: /net/programming-with-images/image-placements/
 ---
-### Sample source code for Image Placements using Aspose.Words for .NET 
+### Sample source code for Image Placements using Aspose.PDF for .NET 
 ```csharp
             // The path to the documents directory.
             string dataDir = "YOUR DOCUMENT DIRECTORY";

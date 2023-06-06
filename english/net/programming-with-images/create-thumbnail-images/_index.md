@@ -7,7 +7,7 @@ type: docs
 weight: 100
 url: /net/programming-with-images/create-thumbnail-images/
 ---
-### Sample source code for Create Thumbnail Images using Aspose.Words for .NET 
+### Sample source code for Create Thumbnail Images using Aspose.PDF for .NET 
 ```csharp
             // The path to the documents directory.
             string dataDir = "YOUR DOCUMENT DIRECTORY";

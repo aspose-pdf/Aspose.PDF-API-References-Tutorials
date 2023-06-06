@@ -7,7 +7,7 @@ type: docs
 weight: 140
 url: /net/programming-with-images/flate-decode-compression/
 ---
-### Sample source code for Flate Decode Compression using Aspose.Words for .NET 
+### Sample source code for Flate Decode Compression using Aspose.PDF for .NET 
 ```csharp
             // The path to the documents directory.
             string dataDir = "YOUR DOCUMENT DIRECTORY";

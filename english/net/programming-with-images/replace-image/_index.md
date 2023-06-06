@@ -7,7 +7,7 @@ type: docs
 weight: 240
 url: /net/programming-with-images/replace-image/
 ---
-### Sample source code for Replace Image using Aspose.Words for .NET 
+### Sample source code for Replace Image using Aspose.PDF for .NET 
 ```csharp
             // The path to the documents directory.
             string dataDir = "YOUR DOCUMENT DIRECTORY";

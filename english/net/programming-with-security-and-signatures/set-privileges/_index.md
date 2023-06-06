@@ -52,7 +52,7 @@ document.Encrypt("user", "owner", documentPrivilege, CryptoAlgorithm.AESx128, fa
 document.Save(dataDir + "SetPrivileges_out.pdf");
 ```
 
-### Sample source code for Set Privileges using Aspose.Words for .NET 
+### Sample source code for Set Privileges using Aspose.PDF for .NET 
 ```csharp
 // The path to the documents directory.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";

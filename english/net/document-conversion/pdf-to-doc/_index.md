@@ -42,7 +42,7 @@ The code above converts the PDF file to DOC format and saves it as the filename 
 
 Replace `"YOUR DOCUMENTS DIRECTORY"` with the desired directory where you want to save the output DOC file.
 
-### Example source code for PDF to DOC using Aspose.Words for .NET
+### Example source code for PDF to DOC using Aspose.PDF for .NET
 
 ```csharp
 // The path to the documents directory.

@@ -69,7 +69,7 @@ dataDir = dataDir + "UpdateChildBookmarks_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Update Child Bookmarks using Aspose.Words for .NET 
+### Sample source code for Update Child Bookmarks using Aspose.PDF for .NET 
 ```csharp
 // The path to the documents directory.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

@@ -75,7 +75,7 @@ Console.WriteLine("The password " + passwords[passwordcount] + " is not correct.
 This loop tests each word of pass from the list. If the password is correct, the number of pages in the document is displayed. Otherwise, a message indicating that the password is not correct is displayed.
 
 
-### Sample source code for Determine Correct Password using Aspose.Words for .NET 
+### Sample source code for Determine Correct Password using Aspose.PDF for .NET 
 ```csharp
 // The path to the documents directory.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";            

@@ -52,7 +52,7 @@ Finally, we save the resulting new PDF file with the name "AddAttachment_out.pdf
 pdfDocument.Save(dataDir + "AddAttachment_out.pdf");
 ```
 
-### Sample source code for Add Attachment using Aspose.Words for .NET
+### Sample source code for Add Attachment using Aspose.PDF for .NET
  
 ```csharp
 

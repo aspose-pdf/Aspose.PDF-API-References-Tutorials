@@ -7,7 +7,7 @@ type: docs
 weight: 190
 url: /net/programming-with-images/large-cgmimage-to-pdf/
 ---
-### Sample source code for Large CGMImage to PDF using Aspose.Words for .NET 
+### Sample source code for Large CGMImage to PDF using Aspose.PDF for .NET 
 ```csharp
             // The path to the documents directory.
             string dataDir = "YOUR DOCUMENT DIRECTORY";

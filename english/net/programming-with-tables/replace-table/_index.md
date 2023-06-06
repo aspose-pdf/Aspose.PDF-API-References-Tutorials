@@ -74,7 +74,7 @@ Finally, we save the modified PDF document:
 pdfDocument.Save(dataDir + "TableReplaced_out.pdf");
 ```
 
-### Example source code for Replace Table using Aspose.Words for .NET
+### Example source code for Replace Table using Aspose.PDF for .NET
 
 ```csharp
 // The path to the documents directory.

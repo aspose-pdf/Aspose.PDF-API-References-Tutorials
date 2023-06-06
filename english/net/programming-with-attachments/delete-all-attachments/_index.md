@@ -43,7 +43,7 @@ Finally, we save the updated PDF file with the name "DeleteAllAttachments_out.pd
 pdfDocument.Save(dataDir + "DeleteAllAttachments_out.pdf");
 ```
 
-### Sample source code for Delete All Attachments using Aspose.Words for .NET 
+### Sample source code for Delete All Attachments using Aspose.PDF for .NET 
 
 ```csharp
 // The path to the documents directory.

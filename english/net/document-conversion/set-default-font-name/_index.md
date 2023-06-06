@@ -62,7 +62,7 @@ pngDevice.Process(pdfDocument.Pages[1], imageStream);
 
 Be sure to specify the correct page number in `pdfDocument.Pages[1]`.
 
-### Example source code for Set Default Font Name using Aspose.Words for .NET
+### Example source code for Set Default Font Name using Aspose.PDF for .NET
 
 ```csharp
 // The path to the documents directory.

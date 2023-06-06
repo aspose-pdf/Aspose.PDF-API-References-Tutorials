@@ -121,7 +121,7 @@ pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 
 Congratulations! You have successfully learned how to add an image to a table cell using Aspose.PDF for .NET. Feel free to explore further customization options and integrate this functionality into your projects.
 
-### Example source code for add image in a table cell using Aspose.Words for .NET
+### Example source code for add image in a table cell using Aspose.PDF for .NET
 
 ```csharp
 // The path to the documents directory.

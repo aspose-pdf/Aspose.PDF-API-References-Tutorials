@@ -76,7 +76,7 @@ using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "e
 }
 ```
 
-### Sample source code for Sign With Smart Card Using Pdf File Signature using Aspose.Words for .NET 
+### Sample source code for Sign With Smart Card Using Pdf File Signature using Aspose.PDF for .NET 
 ```csharp
 // The path to the documents directory.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";

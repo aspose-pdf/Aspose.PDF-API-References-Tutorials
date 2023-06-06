@@ -104,7 +104,7 @@ using (FileStream fs = new FileStream(dataDir + @"input.cer", FileMode.CreateNew
 
 That's it! You have successfully extracted signature information using Aspose.PDF for .NET. Feel free to integrate this code into your own applications or modify it according to your needs.
 
-### Sample source code for Extract Signature Info using Aspose.Words for .NET 
+### Sample source code for Extract Signature Info using Aspose.PDF for .NET 
 ```csharp
 try
 {

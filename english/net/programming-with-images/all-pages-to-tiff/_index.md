@@ -7,7 +7,7 @@ type: docs
 weight: 20
 url: /net/programming-with-images/all-pages-to-tiff/
 ---
-### Sample source code for All Pages To TIFF using Aspose.Words for .NET 
+### Sample source code for All Pages To TIFF using Aspose.PDF for .NET 
 ```csharp
             // The path to the documents directory.
             string dataDir = "YOUR DOCUMENT DIRECTORY";

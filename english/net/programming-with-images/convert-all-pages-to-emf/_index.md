@@ -7,7 +7,7 @@ type: docs
 weight: 50
 url: /net/programming-with-images/convert-all-pages-to-emf/
 ---
-### Sample source code for Convert All Pages To EMF using Aspose.Words for .NET 
+### Sample source code for Convert All Pages To EMF using Aspose.PDF for .NET 
 ```csharp
             // The path to the documents directory.
             string dataDir = "YOUR DOCUMENT DIRECTORY";

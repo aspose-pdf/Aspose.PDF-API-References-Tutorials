@@ -53,7 +53,7 @@ using (Document document = new Document(dataDir + @"DigitallySign.pdf"))
 
 This code loads a PDF file, creates a digital signature with timestamp using a PFX file (private key) and the specified timestamp parameters. The signature is then added to the PDF file and saved with the suffix "_out".
 
-### Sample source code for Digitally Sign With Time Stamp using Aspose.Words for .NET 
+### Sample source code for Digitally Sign With Time Stamp using Aspose.PDF for .NET 
 ```csharp
 // The path to the documents directory.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";

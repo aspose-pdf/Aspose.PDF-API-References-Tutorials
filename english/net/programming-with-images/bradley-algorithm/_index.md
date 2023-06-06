@@ -7,7 +7,7 @@ type: docs
 weight: 30
 url: /net/programming-with-images/bradley-algorithm/
 ---
-### Sample source code for Bradley Algorithm using Aspose.Words for .NET 
+### Sample source code for Bradley Algorithm using Aspose.PDF for .NET 
 ```csharp
             // The path to the documents directory.
             string dataDir = "YOUR DOCUMENT DIRECTORY";

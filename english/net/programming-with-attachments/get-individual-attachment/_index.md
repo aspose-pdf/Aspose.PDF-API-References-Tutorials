@@ -66,7 +66,7 @@ fileStream.Write(fileContent, 0, fileContent.Length);
 fileStream.Close();
 ```
 
-### Sample source code for Get Individual Attachment using Aspose.Words for .NET 
+### Sample source code for Get Individual Attachment using Aspose.PDF for .NET 
 
 ```csharp
 

@@ -40,7 +40,7 @@ doc.Save(dataDir + "MarkdownToPDF.pdf");
 
 The code above converts the Markdown file to PDF format and saves it as the file name `"MarkdownToPDF.pdf"`.
 
-### Example source code for Markdown to PDF using Aspose.Words for .NET
+### Example source code for Markdown to PDF using Aspose.PDF for .NET
 
 
 ```csharp

@@ -87,7 +87,7 @@ foreach(Aspose.Pdf.Page page in document.Pages)
 
 In this code, we get each hyperlink destination from the link annotations and store the destination in a variable. You can then use this destination as you wish in your application.
 
-### Sample source code for Get Hyperlink Destinations using Aspose.Words for .NET 
+### Sample source code for Get Hyperlink Destinations using Aspose.PDF for .NET 
 ```csharp
 try
 {

@@ -52,7 +52,7 @@ Console.WriteLine(encrypted.ToString());
 
 The displayed message will indicate whether the PDF document is password protected or not.
 
-### Sample source code for Is Password Protected using Aspose.Words for .NET 
+### Sample source code for Is Password Protected using Aspose.PDF for .NET 
 ```csharp
 // The path to the documents directory.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";

@@ -7,7 +7,7 @@ type: docs
 weight: 50
 url: /net/licensing-aspose-pdf/set-license-using-embedded-resource/
 ---
-### Sample source code for Set License Using Embedded Resource using Aspose.Words for .NET 
+### Sample source code for Set License Using Embedded Resource using Aspose.PDF for .NET 
 ```csharp
             // The path to the documents directory.
             string dataDir = "YOUR DOCUMENT DIRECTORY";

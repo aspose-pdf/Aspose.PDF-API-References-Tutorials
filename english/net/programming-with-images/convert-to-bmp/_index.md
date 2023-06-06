@@ -7,7 +7,7 @@ type: docs
 weight: 90
 url: /net/programming-with-images/convert-to-bmp/
 ---
-### Sample source code for Convert To BMP using Aspose.Words for .NET 
+### Sample source code for Convert To BMP using Aspose.PDF for .NET 
 ```csharp
             // The path to the documents directory.
             string dataDir = "YOUR DOCUMENT DIRECTORY";

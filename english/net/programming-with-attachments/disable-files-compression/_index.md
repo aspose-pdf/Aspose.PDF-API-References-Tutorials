@@ -60,7 +60,7 @@ pdfDocument.Save(dataDir + "DisableFilesCompression_out.pdf");
 ```
 
 
-### Sample source code for Disable Files Compression using Aspose.Words for .NET 
+### Sample source code for Disable Files Compression using Aspose.PDF for .NET 
 
 ```csharp
 

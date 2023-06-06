@@ -7,7 +7,7 @@ type: docs
 weight: 40
 url: /net/licensing-aspose-pdf/secure-license/
 ---
-### Sample source code for Secure License using Aspose.Words for .NET 
+### Sample source code for Secure License using Aspose.PDF for .NET 
 ```csharp
             using (Stream zip = new SecureLicense().GetType().Assembly.GetManifestResourceStream("Aspose.Total.lic.zip"))
             {

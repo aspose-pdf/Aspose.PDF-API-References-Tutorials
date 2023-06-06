@@ -7,7 +7,7 @@ type: docs
 weight: 130
 url: /net/programming-with-images/fast-shrink-images/
 ---
-### Sample source code for Fast Shrink Images using Aspose.Words for .NET 
+### Sample source code for Fast Shrink Images using Aspose.PDF for .NET 
 ```csharp
             // Initialize Time
             var time = DateTime.Now.Ticks;

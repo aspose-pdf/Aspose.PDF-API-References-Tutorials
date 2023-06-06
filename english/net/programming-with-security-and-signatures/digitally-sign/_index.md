@@ -85,7 +85,7 @@ using(Document document = new Document(outFile))
 
 This code verifies the first signature of the PDF file and performs additional actions if the signature is certified and has specific permissions.
 
-### Sample source code for Digitally Sign using Aspose.Words for .NET 
+### Sample source code for Digitally Sign using Aspose.PDF for .NET 
 ```csharp
 try
 {

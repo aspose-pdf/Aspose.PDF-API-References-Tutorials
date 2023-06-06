@@ -68,7 +68,7 @@ foreach (Bookmark bookmark in bookmarks)
 }
 ```
 
-### Sample source code for Get Bookmark Page Number using Aspose.Words for .NET 
+### Sample source code for Get Bookmark Page Number using Aspose.PDF for .NET 
 ```csharp
 // The path to the documents directory.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

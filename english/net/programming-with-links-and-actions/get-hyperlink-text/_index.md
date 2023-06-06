@@ -48,7 +48,7 @@ catch (Exception ex)
 }
 ```
 
-### Sample source code for Get Hyperlink Text using Aspose.Words for .NET 
+### Sample source code for Get Hyperlink Text using Aspose.PDF for .NET 
 ```csharp
 try
 {

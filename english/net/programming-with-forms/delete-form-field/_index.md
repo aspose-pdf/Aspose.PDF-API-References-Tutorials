@@ -43,7 +43,7 @@ dataDir = dataDir + "DeleteFormField_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Delete Form Field using Aspose.Words for .NET 
+### Sample source code for Delete Form Field using Aspose.PDF for .NET 
 ```csharp
 // The path to the documents directory.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

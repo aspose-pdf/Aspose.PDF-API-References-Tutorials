@@ -55,7 +55,7 @@ document. Save(dataDir);
 
 Be sure to specify the desired path and filename for the encrypted PDF.
 
-### Sample source code for Encrypt using Aspose.Words for .NET 
+### Sample source code for Encrypt using Aspose.PDF for .NET 
 ```csharp
 // The path to the documents directory.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";

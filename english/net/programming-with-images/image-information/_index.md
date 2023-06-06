@@ -7,7 +7,7 @@ type: docs
 weight: 160
 url: /net/programming-with-images/image-information/
 ---
-### Sample source code for Image Information using Aspose.Words for .NET 
+### Sample source code for Image Information using Aspose.PDF for .NET 
 ```csharp
             // The path to the documents directory.
             string dataDir = "YOUR DOCUMENT DIRECTORY";

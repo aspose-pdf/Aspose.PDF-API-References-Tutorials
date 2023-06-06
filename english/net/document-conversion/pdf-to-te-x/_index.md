@@ -61,7 +61,7 @@ doc.Save(dataDir + "PDFToTeX_out.tex", saveOptions);
 
 The code above saves the converted PDF file in TeX format with the filename `"PDFToTeX_out.tex"`.
 
-### Example source code for PDF to Te X using Aspose.Words for .NET
+### Example source code for PDF to Te X using Aspose.PDF for .NET
 
 ```csharp
 // The path to the documents directory.

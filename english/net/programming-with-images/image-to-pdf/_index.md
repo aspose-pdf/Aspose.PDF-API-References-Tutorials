@@ -7,7 +7,7 @@ type: docs
 weight: 180
 url: /net/programming-with-images/image-to-pdf/
 ---
-### Sample source code for Image to PDF using Aspose.Words for .NET 
+### Sample source code for Image to PDF using Aspose.PDF for .NET 
 ```csharp
             // The path to the documents directory.
             string dataDir = "YOUR DOCUMENT DIRECTORY";

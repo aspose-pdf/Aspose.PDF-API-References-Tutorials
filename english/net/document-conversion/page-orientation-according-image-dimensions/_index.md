@@ -84,7 +84,7 @@ doc.Save(dataDir + "SetPageOrientation_out.pdf");
 
 Replace `"YOUR DOCUMENTS DIRECTORY"` with the desired directory where you want to save the output PDF file.
 
-### Example source code for Page Orientation According Image Dimensions using Aspose.Words for .NET
+### Example source code for Page Orientation According Image Dimensions using Aspose.PDF for .NET
 
 ```csharp
 

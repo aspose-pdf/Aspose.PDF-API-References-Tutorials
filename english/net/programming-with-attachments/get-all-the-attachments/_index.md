@@ -68,7 +68,7 @@ count += 1;
 ```
 
 
-### Sample source code for Get Allthe Attachments using Aspose.Words for .NET 
+### Sample source code for Get Allthe Attachments using Aspose.PDF for .NET 
 
 ```csharp
 

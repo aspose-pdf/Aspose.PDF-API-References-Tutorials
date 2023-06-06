@@ -7,7 +7,7 @@ type: docs
 weight: 270
 url: /net/programming-with-images/set-image-size/
 ---
-### Sample source code for Set Image Size using Aspose.Words for .NET 
+### Sample source code for Set Image Size using Aspose.PDF for .NET 
 ```csharp
             // The path to the documents directory.
             string dataDir = "YOUR DOCUMENT DIRECTORY";

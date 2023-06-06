@@ -7,7 +7,7 @@ type: docs
 weight: 290
 url: /net/programming-with-images/store-image-in-ximage-collection/
 ---
-### Sample source code for Store Image In XImage Collection using Aspose.Words for .NET 
+### Sample source code for Store Image In XImage Collection using Aspose.PDF for .NET 
 ```csharp
             // The path to the documents directory.
             string dataDir = "YOUR DOCUMENT DIRECTORY";

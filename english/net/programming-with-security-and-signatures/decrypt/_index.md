@@ -61,7 +61,7 @@ Console.WriteLine("\nPDF file decrypted successfully.\nFile saved at " + dataDir
 
 The updated PDF will be saved to the specified location.
 
-### Sample source code for Decrypt using Aspose.Words for .NET 
+### Sample source code for Decrypt using Aspose.PDF for .NET 
 
 ```csharp
 // The path to the documents directory.

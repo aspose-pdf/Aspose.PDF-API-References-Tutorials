@@ -1,4 +1,15 @@
-| [Access Text Fragement And Text Segment Elements From XMLFile](./access-text-fragement-and-text-segment-elements-from-xmlfile/) |  |  
+---
+title: Programming with Text
+linktitle: Programming with Text
+type: docs
+weight: 25
+url: /net/programming-with-text/
+description: 
+---
+
+## Tutorials
+| Title | Description |
+| --- | --- | 
 | [Add And Search Hidden Text](./add-and-search-hidden-text/) |  |  
 | [Add HTMLOrdered List Into Documents](./add-htmlordered-list-into-documents/) |  |  
 | [Add HTMLUsing DOM](./add-htmlusing-dom/) |  |  
@@ -53,5 +64,3 @@
 | [Text And Image As Paragraph](./text-and-image-as-paragraph/) |  |  
 | [Text Segments](./text-segments/) |  |  
 | [Use Latex Script](./use-latex-script/) |  |  
-| [Use Latex Script 2](./use-latex-script-2/) |  |  
-| [Use Latex Script 3](./use-latex-script-3/) |  |  

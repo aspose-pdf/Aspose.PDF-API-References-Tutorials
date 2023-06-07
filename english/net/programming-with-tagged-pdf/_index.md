@@ -4,8 +4,10 @@ linktitle: Programming with Tagged PDF
 type: docs
 weight: 24
 url: /net/programming-with-tagged-pdf/
-description: 
+description: Check out Aspose.PDF for .NET's Programming with Tagged PDF tutorials to master tagged PDF manipulation and generation.
 ---
+
+Aspose.PDF for .NET's "Programming with Tagged PDFs" tutorials walk you through using this library to manipulate and generate tagged PDFs. Learn how to create content structures, manage tagged elements, validate PDF/UA compliance, and improve accessibility of PDF documents. These tutorials give you an in-depth understanding of programming with tagged PDFs and help you get the most out of the power of Aspose.PDF for .NET.
 
 ## Tutorials
 | Title | Description |

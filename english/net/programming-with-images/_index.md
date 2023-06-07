@@ -4,8 +4,10 @@ linktitle: Programming with Images
 type: docs
 weight: 22
 url: /net/programming-with-images/
-description: 
+description: Aspose.PDF for .NET's Programming with Images tutorials teach you how to manipulate and manage images in PDF documents.
 ---
+
+Aspose.PDF for .NET's "Programming with Images" tutorials walk you through the steps of manipulating and managing images in your PDF documents. Learn how to insert, extract, resize and edit images to create visually rich PDF documents. These step-by-step tutorials provide clear code examples and in-depth explanations to help you master the image-related features of Aspose.PDF for .NET. Improve your PDF programming skills with these practical tutorials and enrich your documents with attractive and informative images.
 
 ## Tutorials
 | Title | Description |

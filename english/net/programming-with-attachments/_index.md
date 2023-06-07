@@ -4,8 +4,11 @@ linktitle: Programming with Attachments
 type: docs
 weight: 18
 url: /net/programming-with-attachments/
-description: 
+description: Learn how to manipulate attachments in PDF documents, including adding, extracting and deleting them, to improve the functionality of PDF files.
 ---
+The Aspose.PDF for .NET tutorials on programming with attachments provide step-by-step instructions for working with attachments in PDF documents. Learn how to add, extract and delete attachments, as well as manage their properties.
+
+These tutorials will guide you through the different steps to manipulate attachments in your PDF documents, allowing you to improve the functionality and interactivity of your PDF files.
 
 ## Tutorials
 | Title | Description |

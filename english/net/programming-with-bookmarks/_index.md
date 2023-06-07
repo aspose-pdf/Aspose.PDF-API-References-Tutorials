@@ -4,8 +4,11 @@ linktitle: Programming with Bookmarks
 type: docs
 weight: 19
 url: /net/programming-with-bookmarks/
-description: 
+description: Learn how to manipulate, manage and customize bookmarks in your PDF documents for better navigation and improved user experience.
 ---
+Aspose.PDF for .NET's tutorials on programming with bookmarks walk you through the steps to manipulate and manage bookmarks in your PDF documents. Learn how to create, edit and delete bookmarks to make it easier to navigate and organize your PDF files.
+
+Additionally, these tutorials show you how to customize bookmark properties, such as titles, actions, and hierarchical levels, to improve the user experience and make your PDF documents more interactive and user-friendly. Master the use of bookmarks in your PDF projects with these step-by-step guides.
 
 ## Tutorials
 | Title | Description |

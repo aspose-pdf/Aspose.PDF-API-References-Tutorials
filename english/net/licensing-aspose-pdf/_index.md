@@ -4,8 +4,9 @@ linktitle: Licensing Aspose.PDF for .NET
 type: docs
 weight: 21
 url: /net/licensing-aspose-pdf/
-description: 
+description: Licensing Aspose.PDF for .NET tutorials walk you through managing the license to use Aspose.PDF for .NET, including loading and applying the license.
 ---
+The "Licensing Aspose.PDF for .NET" tutorials explain in detail how to manage the license to use Aspose.PDF for .NET. These tutorials walk you through the various methods of uploading and applying a license, including using an external license file or an embedded license chain. You will also learn how to check your license status and manage license exceptions. These resources will help you understand the essential aspects of managing the Aspose.PDF for .NET license in your projects.
 
 ## Tutorials
 | Title | Description |

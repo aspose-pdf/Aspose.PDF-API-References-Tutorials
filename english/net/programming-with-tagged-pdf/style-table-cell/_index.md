@@ -2,7 +2,7 @@
 title: Style Table Cell
 linktitle: Style Table Cell
 second_title: Aspose.PDF for .NET API Reference
-description: Learn how to style table cells with Aspose.PDF for .NET: step-by-step guide to creating and customizing tables.
+description: Learn how to style table cells with Aspose.PDF for .NET. Step-by-step guide to creating and customizing tables.
 type: docs
 weight: 160
 url: /net/programming-with-tagged-pdf/style-table-cell/

@@ -2,46 +2,156 @@
 title: Tag Image In Existing PDF
 linktitle: Tag Image In Existing PDF
 second_title: Aspose.PDF for .NET API Reference
-description: 
+description: Learn how to mark up an image in an existing PDF with Aspose.PDF for .NET. A Step-by-Step Guide to Adding Tags to Images.
 type: docs
 weight: 210
 url: /net/programming-with-tagged-pdf/tag-image-in-existing-pdf/
 ---
-### Sample source code for Tag Image In Existing PDF using Aspose.PDF for .NET 
+In this detailed tutorial, we will walk you through the provided C# source code step by step to mark up an image in an existing PDF using Aspose.PDF for .NET. Follow the instructions below to understand how to add tags to an image in a PDF.
+
+## Step 1: Setting up the environment
+
+Before you begin, make sure you've configured your development environment to use Aspose.PDF for .NET. This includes installing the Aspose.PDF library and configuring your project to reference it.
+
+## Step 2: Open the existing PDF document
+
+In this step, we will open an existing PDF document using Aspose.PDF.
+
 ```csharp
-            // The path to the documents directory.
-            string dataDir = "YOUR DOCUMENT DIRECTORY";
-            string inFile = dataDir + "TH.pdf";
-            string outFile = dataDir + "TH_out.pdf";
-            string logFile = dataDir + "TH_out.xml";
-            // Open document
-            Document document = new Document(inFile);
-            // Gets tagged content and root structure element
-            ITaggedContent taggedContent = document.TaggedContent;
-            StructureElement rootElement = taggedContent.RootElement;
-            // Set title for tagged pdf document
-            taggedContent.SetTitle("Document with images");
-            foreach (FigureElement figureElement in rootElement.FindElements<FigureElement>(true))
-            {
-                // Set Alternative Text  for Figure
-                figureElement.AlternativeText = "Figure alternative text (technique 2)";
-                // Create and Set BBox Attribute
-                StructureAttribute bboxAttribute = new StructureAttribute(AttributeKey.BBox);
-                bboxAttribute.SetRectangleValue(new Rectangle(0.0, 0.0, 100.0, 100.0));
-                StructureAttributes figureLayoutAttributes = figureElement.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
-                figureLayoutAttributes.SetAttribute(bboxAttribute);
-            }
-            // Move Span Element into Paragraph (find wrong span and paragraph in first TD)
-            TableElement tableElement = rootElement.FindElements<TableElement>(true)[0];
-            SpanElement spanElement = tableElement.FindElements<SpanElement>(true)[0];
-            TableTDElement firstTdElement = tableElement.FindElements<TableTDElement>(true)[0];
-            ParagraphElement paragraph = firstTdElement.FindElements<ParagraphElement>(true)[0];
-            // Move Span Element into Paragraph
-            spanElement.ChangeParentElement(paragraph);
-            // Save document
-            document.Save(outFile);
-            // Checking PDF/UA Compliance for out document
-            document = new Document(outFile);
-            bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
-            Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
+// The path to the documents directory.
+string dataDir = "YOUR DOCUMENTS DIRECTORY";
+
+// Input and output file paths
+string inFile = dataDir + "TH.pdf";
+string outFile = dataDir + "TH_out.pdf";
+string logFile = dataDir + "TH_out.xml";
+
+// Open the document
+Document document = new Document(inFile);
 ```
+
+We opened the existing PDF document using Aspose.PDF.
+
+## Step 3: Obtain Tagged Content and Root Structure Element
+
+Now we will get the tagged content of the PDF document and the corresponding root structure element.
+
+```csharp
+// Get tagged content and root structure element
+ITaggedContent taggedContent = document.TaggedContent;
+StructureElement rootElement = taggedContent.RootElement;
+```
+
+We got the tagged content of the PDF document and the corresponding root structure element.
+
+## Step 4: Setting the title for the tagged PDF document
+
+Now let's set the title for the tagged PDF document.
+
+```csharp
+// Define the title for the tagged PDF document
+taggedContent.SetTitle("Document with images");
+```
+
+We have set the title for the tagged PDF document.
+
+## Step 5: Assign alt texts and bounding box to the image
+
+Now, for each image element, we'll assign alt text and a bounding box.
+
+```csharp
+foreach(FigureElement figureElement in rootElement.FindElements<FigureElement>(true))
+{
+     // Assign alternative text to the image
+     figureElement.AlternativeText = "Alternative text for image (technique 2)";
+     // Create and assign the bounding box (bbox)
+     StructureAttribute bboxAttribute = new StructureAttribute(AttributeKey.BBox);
+     bboxAttribute.SetRectangleValue(new Rectangle(0.0, 0.0, 100.0, 100.0));
+     StructureAttributes figureLayoutAttributes = figureElement.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
+     figureLayoutAttributes.SetAttribute(bboxAttribute);
+}
+```
+
+We've assigned alt text and a bounding box to each image element in the PDF document.
+
+## Step 6: Moving the Span element into the paragraph
+
+Now let's move the Span element into the paragraph.
+
+```csharp
+// Move Span element into paragraph (find incorrect span and paragraph in first TD)
+TableElement tableElement = rootElement.FindElements<TableElement>(true)[0];
+SpanElement spanElement = tableElement.FindElements<SpanElement>(true)[0];
+TableTDElement firstTdElement = tableElement.FindElements<TableTDElement>(true)[0];
+ParagraphElement paragraph = firstTdElement.FindElements<ParagraphElement>(true)[0];
+
+// Move the Span element in the paragraph
+spanElement.ChangeParentElement(paragraph);
+```
+
+We moved the Span element into the specified paragraph.
+
+## Step 7: Saving the modified PDF document
+
+Now that we have made the necessary changes, we will save the modified PDF document.
+
+```csharp
+// Save the PDF document
+document. Save(outFile);
+```
+
+We saved the modified PDF document in the specified directory.
+
+### Sample source code for Tag Image In Existing PDF using Aspose.PDF for .NET 
+
+```csharp
+
+// The path to the documents directory.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+string inFile = dataDir + "TH.pdf";
+string outFile = dataDir + "TH_out.pdf";
+string logFile = dataDir + "TH_out.xml";
+
+// Open document
+Document document = new Document(inFile);
+
+// Gets tagged content and root structure element
+ITaggedContent taggedContent = document.TaggedContent;
+StructureElement rootElement = taggedContent.RootElement;
+
+// Set title for tagged pdf document
+taggedContent.SetTitle("Document with images");
+foreach (FigureElement figureElement in rootElement.FindElements<FigureElement>(true))
+{
+	// Set Alternative Text  for Figure
+	figureElement.AlternativeText = "Figure alternative text (technique 2)";
+	// Create and Set BBox Attribute
+	StructureAttribute bboxAttribute = new StructureAttribute(AttributeKey.BBox);
+	bboxAttribute.SetRectangleValue(new Rectangle(0.0, 0.0, 100.0, 100.0));
+	StructureAttributes figureLayoutAttributes = figureElement.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
+	figureLayoutAttributes.SetAttribute(bboxAttribute);
+}
+
+// Move Span Element into Paragraph (find wrong span and paragraph in first TD)
+TableElement tableElement = rootElement.FindElements<TableElement>(true)[0];
+SpanElement spanElement = tableElement.FindElements<SpanElement>(true)[0];
+TableTDElement firstTdElement = tableElement.FindElements<TableTDElement>(true)[0];
+ParagraphElement paragraph = firstTdElement.FindElements<ParagraphElement>(true)[0];
+
+// Move Span Element into Paragraph
+spanElement.ChangeParentElement(paragraph);
+
+// Save document
+document.Save(outFile);
+
+// Checking PDF/UA Compliance for out document
+document = new Document(outFile);
+bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
+Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
+
+```
+
+## Conclusion
+
+In this tutorial, we learned how to mark up an image in an existing PDF using Aspose.PDF for .NET. You can now use Aspose.PDF to add tags and make edits to images in your PDF documents.
+

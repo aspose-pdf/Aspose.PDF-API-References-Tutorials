@@ -28,9 +28,9 @@ description:
 | [Style Table Cell](./style-table-cell/) | Learn how to style table cells with Aspose.PDF for .NET: step-by-step guide to creating and customizing tables. |  
 | [Style Table Element](./style-table-element/) | Learn how to format table element with Aspose.PDF for .NET. Step-by-step guide to customize styles and properties. |  
 | [Style Table Row](./style-table-row/) | Learn how to customize table rows with Aspose.PDF for .NET step by step guide to styling and formatting rows. |  
-| [Style Text Structure](./style-text-structure/) |  |  
-| [Tagged PDFContent](./tagged-pdfcontent/) |  |  
-| [Tag Image In Existing PDF](./tag-image-in-existing-pdf/) |  |  
-| [Text Block Structure Elements](./text-block-structure-elements/) |  |  
-| [Text Structure Elements](./text-structure-elements/) |  |  
-| [Validate PDF](./validate-pdf/) |  |  
+| [Style Text Structure](./style-text-structure/) | Learn how to format text structure in a PDF document with Aspose.PDF for .NET. Step-by-step guide to style text. |  
+| [Tagged PDF Content](./tagged-pdf-content/) | Learn how to work with tagged content in a PDF document with Aspose.PDF for .NET. A step-by-step guide to using tags. |  
+| [Tag Image In Existing PDF](./tag-image-in-existing-pdf/) | Learn how to mark up an image in an existing PDF with Aspose.PDF for .NET. A Step-by-Step Guide to Adding Tags to Images. |  
+| [Text Block Structure Elements](./text-block-structure-elements/) | Learn how to use Aspose.PDF for .NET to add text block structure elements, such as headings and tagged paragraphs, to an existing PDF document. |  
+| [Text Structure Elements](./text-structure-elements/) | Learn how to add text structure elements to a PDF document using Aspose.PDF for .NET. Improve the structure and accessibility of your PDFs. |  
+| [Validate PDF](./validate-pdf/) | Learn how to validate a PDF document with Aspose.PDF for .NET. Check its compliance with standards and generate a validation report. |  

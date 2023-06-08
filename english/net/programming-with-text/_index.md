@@ -4,8 +4,9 @@ linktitle: Programming with Text
 type: docs
 weight: 25
 url: /net/programming-with-text/
-description: 
+description: Check out Aspose.PDF for .NET's Programming with Text tutorials, which walk you through advanced text manipulation in your PDF documents.
 ---
+Aspose.PDF's "Programming with Text" tutorials for .NET offer a comprehensive range of instructions for working with text in your PDF documents. You will learn how to add text, format it with fonts and styles, edit existing content, and extract textual information. The tutorials also cover advanced topics such as managing alignments, text tables, and keyword research. These step-by-step resources will help you master all facets of manipulating text with Aspose.PDF for .NET.
 
 ## Tutorials
 | Title | Description |

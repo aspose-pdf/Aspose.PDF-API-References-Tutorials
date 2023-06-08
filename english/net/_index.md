@@ -30,4 +30,4 @@ Aspose.PDF for .NET Tutorials is a comprehensive and detailed guide to using Asp
 | [Programming with Operators](./programming-with-operators/) | The Aspose.PDF for .NET "Programming with Operators" tutorials teach you the essential techniques for working with operators in PDF programming. |
 | [Programming with Stamps and Watermarks](./programming-with-stamps-and-watermarks/) | Aspose.PDF for .NET's "Programming with Stamps and Watermarks" tutorials teach you how to add security and personalization elements to your PDF documents. |
 | [Programming with Tagged PDF](./programming-with-tagged-pdf/) | Check out Aspose.PDF for .NET's "Programming with Tagged PDF" tutorials to master tagged PDF manipulation and generation. |
-| [Programming with Text](./programming-with-text/) |  |
+| [Programming with Text](./programming-with-text/) | Check out Aspose.PDF for .NET's "Programming with Text" tutorials, which walk you through advanced text manipulation in your PDF documents. |

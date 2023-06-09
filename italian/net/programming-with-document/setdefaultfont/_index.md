@@ -20,7 +20,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Passaggio 2: caricare il documento PDF
 
- Inizieremo caricando un documento PDF esistente a cui mancano i font. In questo esempio, supponiamo che il documento PDF si trovi nella directory specificata dal file`dataDir` variabile.
+ Inizieremo caricando un documento PDF esistente a cui mancano i caratteri. In questo esempio, supponiamo che il documento PDF si trovi nella directory specificata dal file`dataDir` variabile.
 
 ```csharp
 string documentName = dataDir + "input.pdf";

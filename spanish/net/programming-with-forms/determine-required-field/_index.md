@@ -51,7 +51,7 @@ Console.WriteLine("The field " + field.FullName + " is required");
 }
 ```
 
-### Ejemplo de código fuente para determinar el campo requerido usando Aspose.Words para .NET 
+### Ejemplo de código fuente para determinar el campo requerido usando Aspose.PDF para .NET 
 ```csharp
 // La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -74,4 +74,4 @@ foreach (Field field in pdf.Form.Fields)
 
 ## Conclusión
 
-En este tutorial, aprendimos cómo determinar los campos obligatorios de un formulario PDF utilizando Aspose.PDF para .NET. Siguiendo estos pasos, puede verificar fácilmente qué campos están marcados como obligatorios en su formulario PDF usando Aspose.PDF.
+En este tutorial, aprendimos cómo determinar los campos obligatorios de un formulario PDF usando Aspose.PDF para .NET. Siguiendo estos pasos, puede verificar fácilmente qué campos están marcados como obligatorios en su formulario PDF usando Aspose.PDF.

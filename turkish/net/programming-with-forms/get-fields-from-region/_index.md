@@ -61,7 +61,7 @@ Console.Out.WriteLine("Field name: " + field.FullName + "-" + "Field value: " + 
 }
 ```
 
-### Aspose.Words for .NET kullanarak Bölgeden Alan Getir için örnek kaynak kodu 
+### Aspose.PDF for .NET kullanarak Bölgeden Alan Getir için örnek kaynak kodu 
 ```csharp
 // Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

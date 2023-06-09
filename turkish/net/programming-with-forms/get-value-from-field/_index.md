@@ -43,7 +43,7 @@ Console.WriteLine("PartialName: {0}", textBoxField.PartialName);
 Console.WriteLine("Value: {0}", textBoxField.Value);
 ```
 
-### Aspose.Words for .NET kullanarak Get Value From Field için örnek kaynak kodu 
+### Aspose.PDF for .NET kullanarak Get Value From Field için örnek kaynak kodu 
 ```csharp
 // Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

@@ -30,14 +30,14 @@ Document pdfDocument = new Document(dataDir + "UpdateDimensions.pdf");
 ```
 
 ## 3. Adım: Boş bir sayfa ekleyin (gerekirse)
- PDF belgesinde zaten sayfalar varsa, dizini kullanarak mevcut bir sayfaya atlayabilirsiniz.`1` (ilk sayfanın indeksi 1'dir). Aksi takdirde, belgeye yeni bir sayfa ekleyebilirsiniz.
+PDF belgesinde zaten sayfalar varsa, dizini kullanarak mevcut bir sayfaya atlayabilirsiniz.`1` (ilk sayfanın indeksi 1'dir). Aksi takdirde, belgeye yeni bir sayfa ekleyebilirsiniz.
 
 ```csharp
 Page page = pdfDocument.Pages.Count > 0? pdfDocument.Pages[1] : pdfDocument.Pages.Add();
 ```
 
 ## 4. Adım: Sayfa boyutlarını alın
- Artık sayfa boyutlarını kullanarak alabilirsiniz.`GetPageRect()` yöntemi`Page` nesne. Bu yöntem bir döndürür`Rectangle`sayfanın boyutlarını içeren nesne. kullanarak genişlik ve yüksekliğe erişebilirsiniz.`Width` Ve`Height` özellikler.
+ Artık sayfa boyutlarını kullanarak alabilirsiniz.`GetPageRect()` yöntemi`Page` nesne. Bu yöntem bir döndürür`Rectangle` sayfanın boyutlarını içeren nesne. kullanarak genişlik ve yüksekliğe erişebilirsiniz.`Width` Ve`Height` özellikler.
 
 ```csharp
 Console.WriteLine(page.GetPageRect(true).Width.ToString() + ":" + page.GetPageRect(true).Height);

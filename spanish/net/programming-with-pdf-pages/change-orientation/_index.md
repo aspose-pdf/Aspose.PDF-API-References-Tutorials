@@ -7,7 +7,7 @@ type: docs
 weight: 10
 url: /es/net/programming-with-pdf-pages/change-orientation/
 ---
-En este tutorial, lo guiaremos a través del proceso paso a paso para cambiar la orientación de la página de un documento PDF usando Aspose.PDF para .NET. Explicaremos el código fuente de C# incluido y le proporcionaremos una guía completa para ayudarlo a comprender e implementar esta característica en sus propios proyectos. Al final de este tutorial, sabrá cómo cambiar la orientación de la página de sus documentos PDF usando Aspose.PDF para .NET.
+En este tutorial, lo guiaremos a través del proceso paso a paso para cambiar la orientación de la página de un documento PDF usando Aspose.PDF para .NET. Explicaremos el código fuente de C# incluido y le proporcionaremos una guía completa para ayudarlo a comprender e implementar esta función en sus propios proyectos. Al final de este tutorial, sabrá cómo cambiar la orientación de la página de sus documentos PDF usando Aspose.PDF para .NET.
 
 ## requisitos previos
 Antes de comenzar, asegúrese de tener lo siguiente:
@@ -47,7 +47,7 @@ page. Rotate = Rotate. on90;
 ```
 
 ## Paso 4: Guarde el documento PDF modificado
- Finalmente, puede guardar el documento PDF modificado en un archivo de salida utilizando el`Save()` metodo de la`Document` clase. Asegúrese de especificar la ruta y el nombre de archivo correctos.
+ Finalmente, puede guardar el documento PDF modificado en un archivo de salida utilizando el`Save()` metodo de la`Document`clase. Asegúrese de especificar la ruta y el nombre de archivo correctos.
 
 ```csharp
 dataDir = dataDir + "ChangeOrientation_out.pdf";

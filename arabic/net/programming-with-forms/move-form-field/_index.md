@@ -51,7 +51,7 @@ dataDir = dataDir + "MoveFormField_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### نموذج التعليمات البرمجية المصدر لـ Move Form Field باستخدام Aspose.Words for .NET 
+### نموذج التعليمات البرمجية المصدر لـ Move Form Field باستخدام Aspose.PDF for .NET 
 ```csharp
 // المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

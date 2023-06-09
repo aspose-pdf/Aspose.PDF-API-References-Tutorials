@@ -71,7 +71,7 @@ Console.WriteLine(ex.Message);
 ```
 Attrapez toutes les exceptions qui peuvent se produire pendant le processus de conversion et affichez le message d'erreur.
 
-### Exemple de code source pour une page Web au format PDF en utilisant Aspose.Words pour .NET
+### Exemple de code source pour une page Web au format PDF à l'aide d'Aspose.PDF pour .NET
 
 ```csharp
 try
@@ -119,4 +119,4 @@ catch (Exception ex)
 ```
 
 ## Conclusion
-Dans ce didacticiel, nous avons appris à convertir une page Web en PDF à l'aide de la bibliothèque Aspose.PDF pour .NET. Nous avons parcouru le guide étape par étape expliquant le code source C# fourni. En suivant ces instructions, vous pouvez facilement intégrer la fonctionnalité de conversion de page Web en PDF dans vos propres applications .NET.
+Dans ce didacticiel, nous avons appris à convertir une page Web au format PDF à l'aide de la bibliothèque Aspose.PDF pour .NET. Nous avons parcouru le guide étape par étape expliquant le code source C# fourni. En suivant ces instructions, vous pouvez facilement intégrer la fonctionnalité de conversion de page Web en PDF dans vos propres applications .NET.

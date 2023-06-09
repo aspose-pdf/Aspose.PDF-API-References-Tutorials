@@ -58,7 +58,7 @@ Document pdfDocument2 = new Document(dataDir + "Concat2.pdf");
 // أضف صفحات من المستند الثاني إلى الأول
 pdfDocument1.Pages.Add(pdfDocument2.Pages);
 dataDir = dataDir + "ConcatenatePdfFiles_out.pdf";
-//حفظ ملف الإخراج المتسلسل
+// حفظ ملف الإخراج المتسلسل
 pdfDocument1.Save(dataDir);
 System.Console.WriteLine("\nPDFs are concatenated successfully.\nFile saved at " + dataDir);
 

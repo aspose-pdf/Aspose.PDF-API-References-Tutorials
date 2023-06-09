@@ -8,7 +8,7 @@ weight: 70
 url: /sv/net/programming-with-tables/export-excel-worksheet-data-to-table/
 ---
 
-den här handledningen kommer vi att lära oss hur du exporterar data från ett Excel-kalkylblad och skapar en tabell i ett PDF-dokument med Aspose.PDF för .NET-biblioteket. Vi kommer att gå igenom källkoden steg för steg och förklara varje avsnitt i detalj. I slutet av denna handledning kommer du att kunna generera PDF-filer med tabeller som innehåller data från Excel-kalkylblad. Låt oss börja!
+I den här handledningen kommer vi att lära oss hur du exporterar data från ett Excel-kalkylblad och skapar en tabell i ett PDF-dokument med Aspose.PDF för .NET-biblioteket. Vi kommer att gå igenom källkoden steg för steg och förklara varje avsnitt i detalj. I slutet av denna handledning kommer du att kunna generera PDF-filer med tabeller som innehåller data från Excel-kalkylblad. Låt oss börja!
 
 ## Krav
 Innan vi börjar, se till att du har följande:
@@ -56,7 +56,7 @@ I det här exemplet exporterar vi alla rader och kolumner från den första cell
 Nu kommer vi att skapa ett nytt PDF-dokument med hjälp av Aspose.PDF-biblioteket.
 
 ```csharp
-//Instantiera en dokumentinstans
+// Instantiera en dokumentinstans
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 ```
 
@@ -92,7 +92,7 @@ tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.
 I det här exemplet ställer vi in kolumnbredderna till 40, 100 och 100 enheter. Justera värdena baserat på dina data. Vi ställer också in standardcellkanten för att visa kanter på alla sidor av varje cell.
 
 ## Steg 8: Importera data till tabellen
-Nu kommer vi att importera data från`DataTable` objekt i tabellen med hjälp av`ImportDataTable` metod.
+ Nu kommer vi att importera data från`DataTable` objekt i tabellen med hjälp av`ImportDataTable` metod.
 
 ```csharp
 // Importera data till Table-objektet från DataTable som skapats ovan
@@ -148,7 +148,7 @@ pdf1.Save(dataDir + @"Exceldata_toPdf_table.pdf");
 
 Se till att ersätta "DIN DOKUMENTKATOGRAF" med önskad katalogsökväg och filnamn för den utgående PDF-filen.
 
-### Exempel på källkod för Exportera Excel-kalkylbladsdata till tabell med Aspose.Words för .NET
+### Exempel på källkod för Exportera Excel-kalkylbladsdata till tabell med Aspose.PDF för .NET
 
 ```csharp
 // Sökvägen till dokumentkatalogen.
@@ -190,7 +190,7 @@ foreach (Aspose.Pdf.Cell curCell in row1.Cells)
 	curCell.BackgroundColor = Color.Blue;
 	// Ställ in teckensnittet för cellerna på första raden i tabellen.
 	curCell.DefaultCellTextState.Font = Aspose.Pdf.Text.FontRepository.FindFont("Helvetica-Oblique");
-	//Ställ in teckensnittsfärgen för alla celler i den första raden i tabellen.
+	// Ställ in teckensnittsfärgen för alla celler i den första raden i tabellen.
 	curCell.DefaultCellTextState.ForegroundColor = Color.Yellow;
 	// Ställ in textjusteringen för cellerna i första raden som Center.
 	curCell.DefaultCellTextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
@@ -213,4 +213,4 @@ pdf1.Save(dataDir + @"Exceldata_toPdf_table.pdf");
 ```
 
 ## Slutsats
-I den här handledningen lärde vi oss hur man exporterar data från ett Excel-kalkylblad till en PDF-tabell med hjälp av Aspose.PDF för .NET-biblioteket. Vi täckte steg-för-steg-processen med att ladda Excel-kalkylbladet, skapa ett PDF-dokument, lägga till en tabell, importera data och formatera tabellen. Du kan nu generera PDF-filer med tabeller som innehåller Excel-data programmatiskt.
+den här handledningen lärde vi oss hur man exporterar data från ett Excel-kalkylblad till en PDF-tabell med hjälp av Aspose.PDF för .NET-biblioteket. Vi täckte steg-för-steg-processen med att ladda Excel-kalkylbladet, skapa ett PDF-dokument, lägga till en tabell, importera data och formatera tabellen. Du kan nu generera PDF-filer med tabeller som innehåller Excel-data programmatiskt.

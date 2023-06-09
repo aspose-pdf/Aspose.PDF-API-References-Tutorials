@@ -47,7 +47,7 @@ page. Rotate = Rotate. on90;
 ```
 
 ## 4. Adım: Değiştirilen PDF belgesini kaydedin
- Son olarak, değiştirilmiş PDF belgesini kullanarak bir çıktı dosyasına kaydedebilirsiniz.`Save()` yöntemi`Document` sınıf. Doğru yolu ve dosya adını belirttiğinizden emin olun.
+ Son olarak, değiştirilmiş PDF belgesini kullanarak bir çıktı dosyasına kaydedebilirsiniz.`Save()` yöntemi`Document`sınıf. Doğru yolu ve dosya adını belirttiğinizden emin olun.
 
 ```csharp
 dataDir = dataDir + "ChangeOrientation_out.pdf";

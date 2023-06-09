@@ -71,7 +71,7 @@ Abschließend speichern wir die resultierende PDF-Datei mit dem Namen „AddDraw
 doc.Save(dataDir + "AddDrawingWithGradientFill_out.pdf");
 ```
 
-### Beispielquellcode für „Zeichnung mit Farbverlauf hinzufügen“ mit Aspose.Words für .NET 
+### Beispielquellcode für „Zeichnung mit Farbverlauf hinzufügen“ mit Aspose.PDF für .NET 
 
 ```csharp
 

@@ -8,7 +8,7 @@ weight: 60
 url: /sv/net/programming-with-graphs/create-rectangle-with-alpha-color/
 ---
 
-den här handledningen går vi igenom följande C#-källkod steg för steg för att skapa en rektangel med alfafärg med Aspose.PDF för .NET.
+I den här handledningen går vi igenom följande C#-källkod steg för steg för att skapa en rektangel med alfafärg med Aspose.PDF för .NET.
 
 Se till att du har installerat Aspose.PDF-biblioteket och ställt in din utvecklingsmiljö innan du börjar. Har även grundläggande kunskaper i C#-programmering.
 
@@ -80,7 +80,7 @@ Slutligen sparar vi den resulterande PDF-filen med namnet "CreateRectangleWithAl
 doc.Save(dataDir + "CreateRectangleWithAlphaColor_out.pdf");
 ```
 
-### Exempel på källkod för Skapa rektangel med alfafärg med Aspose.Words för .NET 
+### Exempel på källkod för Skapa rektangel med alfafärg med Aspose.PDF för .NET 
 
 ```csharp
 
@@ -96,7 +96,7 @@ Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 200, 100);
 // Ställ in graffyllningsfärg från System.Drawing.Color-struktur från ett 32-bitars ARGB-värde
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
-// Lägg till rektangelobjekt till formsamlingen av Graph-instansen
+//Lägg till rektangelobjekt till formsamlingen av Graph-instansen
 canvas.Shapes.Add(rect);
 // Skapa andra rektangelobjekt
 Aspose.Pdf.Drawing.Rectangle rect1 = new Aspose.Pdf.Drawing.Rectangle(200, 150, 200, 100);

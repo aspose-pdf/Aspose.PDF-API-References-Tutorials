@@ -43,7 +43,7 @@ form.Save(dataDir);
 Console.WriteLine("\nField added successfully with limit.\nFile saved to location: " + dataDir);
 ```
 
-### Ejemplo de código fuente para Establecer límite de campo usando Aspose.Words para .NET 
+### Ejemplo de código fuente para Establecer límite de campo usando Aspose.PDF para .NET 
 ```csharp
 // La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

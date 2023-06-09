@@ -26,7 +26,7 @@ url: /ru/net/programming-with-document/getxmpmetadata/
 // Путь к PDF-документу
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Откройте PDF-документ
+// Откройте PDF-документ
 Document pdfDocument = new Document(dataDir + "GetXMPMetadata.pdf");
 ```
 
@@ -52,7 +52,7 @@ Console.WriteLine(pdfDocument.Metadata["xmp:CustomProperty"]);
 // Путь к PDF-документу
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Откройте PDF-документ
+// Откройте PDF-документ
 Document pdfDocument = new Document(dataDir + "GetXMPMetadata.pdf");
 
 // Извлечь метаданные XMP

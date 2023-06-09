@@ -43,7 +43,7 @@ form.Save(dataDir);
 Console.WriteLine("\nField added successfully with limit.\nFile saved to location: " + dataDir);
 ```
 
-### 使用 Aspose.Words for .NET 设置字段限制的示例源代码 
+### 使用 Aspose.PDF for .NET 设置字段限制的示例源代码 
 ```csharp
 //文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";

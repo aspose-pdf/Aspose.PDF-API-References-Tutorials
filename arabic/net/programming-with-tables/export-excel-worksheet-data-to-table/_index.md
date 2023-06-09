@@ -56,7 +56,7 @@ DataTable dataTable = worksheet.Cells.ExportDataTable(0, 0, worksheet.Cells.MaxR
 الآن ، سنقوم بإنشاء مستند PDF جديد باستخدام مكتبة Aspose.PDF.
 
 ```csharp
-//إنشاء مثيل المستند
+// إنشاء مثيل المستند
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 ```
 
@@ -92,7 +92,7 @@ tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.
 في هذا المثال ، قمنا بتعيين عرض العمود على 40 و 100 و 100 وحدة. اضبط القيم بناءً على بياناتك. قمنا أيضًا بتعيين حدود الخلية الافتراضية لعرض الحدود على جميع جوانب كل خلية.
 
 ## الخطوة 8: استيراد البيانات إلى الجدول
-الآن ، سنقوم باستيراد البيانات من ملف`DataTable` كائن في الجدول باستخدام`ImportDataTable` طريقة.
+ الآن ، سنقوم باستيراد البيانات من ملف`DataTable` كائن في الجدول باستخدام`ImportDataTable` طريقة.
 
 ```csharp
 // استيراد البيانات إلى كائن الجدول من DataTable الذي تم إنشاؤه أعلاه
@@ -148,7 +148,7 @@ pdf1.Save(dataDir + @"Exceldata_toPdf_table.pdf");
 
 تأكد من استبدال "دليل المستند" بمسار الدليل المطلوب واسم الملف لملف PDF الناتج.
 
-### مثال على شفرة المصدر لتصدير بيانات ورقة عمل Excel إلى جدول باستخدام Aspose.Words for .NET
+### مثال على التعليمات البرمجية المصدر لتصدير بيانات ورقة عمل Excel إلى جدول باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 // المسار إلى دليل المستندات.
@@ -190,7 +190,7 @@ foreach (Aspose.Pdf.Cell curCell in row1.Cells)
 	curCell.BackgroundColor = Color.Blue;
 	// عيّن وجه الخط لخلايا الصف الأول في الجدول.
 	curCell.DefaultCellTextState.Font = Aspose.Pdf.Text.FontRepository.FindFont("Helvetica-Oblique");
-	//عيّن لون الخط لجميع الخلايا في الصف الأول من الجدول.
+	// عيّن لون الخط لجميع الخلايا في الصف الأول من الجدول.
 	curCell.DefaultCellTextState.ForegroundColor = Color.Yellow;
 	// قم بتعيين محاذاة النص لخلايا الصف الأول كمركز.
 	curCell.DefaultCellTextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;

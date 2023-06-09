@@ -48,7 +48,7 @@ options.CustomLoaderOfExternalResources = new LoadOptions.ResourceLoadingStrateg
 pdfDocument.Save("HTMLToPDF_out.pdf");
 ```
 
-### مثال على شفرة المصدر لـ HTML إلى PDF باستخدام Aspose.Words for .NET
+### مثال على كود المصدر لـ HTML إلى PDF باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 try

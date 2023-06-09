@@ -7,7 +7,7 @@ type: docs
 weight: 20
 url: /tr/net/programming-with-graphs/add-drawing-with-gradient-fill/
 ---
-Bu öğreticide, Aspose.PDF for .NET kullanarak grafiklerle programlamaya degrade dolgulu bir çizim eklemek için aşağıdaki C# kaynak kodunda adım adım yol göstereceğiz.
+Bu eğitimde, Aspose.PDF for .NET kullanarak grafiklerle programlamaya gradyan dolgulu bir çizim eklemek için aşağıdaki C# kaynak kodunda adım adım yol göstereceğiz.
 
 Başlamadan önce Aspose.PDF kitaplığını kurduğunuzdan ve geliştirme ortamınızı kurduğunuzdan emin olun. Ayrıca temel C# programlama bilgisine sahip olmak.
 
@@ -71,7 +71,7 @@ Son olarak ortaya çıkan PDF dosyasını "AddDrawingWithGradientFill_out.pdf" a
 doc.Save(dataDir + "AddDrawingWithGradientFill_out.pdf");
 ```
 
-### Aspose.Words for .NET kullanarak Degrade Dolgulu Çizim Ekleme için örnek kaynak kodu 
+### Aspose.PDF for .NET kullanarak Degrade Dolgulu Çizim Ekleme için örnek kaynak kodu 
 
 ```csharp
 

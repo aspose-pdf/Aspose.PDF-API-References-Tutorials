@@ -63,7 +63,7 @@ Nous enregistrons le document PDF avec le saut de page inséré.
 doc.Save(dataDir + "InsertPageBreak_out.pdf");
 ```
 
-### Exemple de code source pour Insérer un saut de page en utilisant Aspose.Words pour .NET
+### Exemple de code source pour Insérer un saut de page en utilisant Aspose.PDF pour .NET
 
 ```csharp
 // Chemin d'accès au répertoire des documents.

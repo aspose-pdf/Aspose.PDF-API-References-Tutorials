@@ -53,7 +53,7 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nRadio button successfully selected in group.\nFile saved to location: " + dataDir);
 ```
 
-### Пример исходного кода для выбора радиокнопки с использованием Aspose.Words для .NET 
+### Пример исходного кода для выбора радиокнопки с использованием Aspose.PDF для .NET 
 ```csharp
 try
 {

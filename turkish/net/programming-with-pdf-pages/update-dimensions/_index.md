@@ -51,7 +51,7 @@ pdfPage.SetPageSize(597.6, 842.4);
 ```
 
 ## 6. Adım: Güncellenen belgeyi kaydedin
-Son olarak, güncellenmiş PDF belgesini kullanarak bir dosyaya kaydedebilirsiniz.`Save()` yöntemi`Document` sınıf. Doğru yolu ve dosya adını belirttiğinizden emin olun.
+Son olarak, güncellenmiş PDF belgesini kullanarak bir dosyaya kaydedebilirsiniz.`Save()` yöntemi`Document`sınıf. Doğru yolu ve dosya adını belirttiğinizden emin olun.
 
 ```csharp
 dataDir = dataDir + "UpdateDimensions_out.pdf";

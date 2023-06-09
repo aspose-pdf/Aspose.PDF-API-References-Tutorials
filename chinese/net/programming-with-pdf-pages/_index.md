@@ -20,7 +20,7 @@ Aspose.PDF for .NET 的“使用 PDF 页面编程”文档提供了分步教程�
 | [适合页面内容](./fit-page-contents/) | 使用 Aspose.PDF for .NET 调整 PDF 页面内容的详细分步指南。易于实施和有益的结论。 |  
 | [获取维度](./get-dimensions/) | 在本教程中，我们将解释如何获取 PDF 页面尺寸并使用 Aspose.PDF for .NET 执行操作。提供了详细的步骤来指导您完成整个过程。 |  
 | [获取页数](./get-number-of-pages/) | 使用 Aspose.PDF for .NET 获取 PDF 页数的分步指南。易于实施，非常适合您的项目。 |  
-| [获取页数](./get-page-count/) | 使用 Aspose.PDF for .NET 获取 PDF 文件页数的分步指南。在您的项目中易于遵循和实施。 |  
+| [获取页数](./get-page-count/) | 使用 Aspose.PDF for .NET 获取 PDF 文件页数的分步指南。易于在您的项目中遵循和实施。 |  
 | [获取特定页面](./get-particular-page/) | 使用 Aspose.PDF for .NET 从 PDF 文件中提取特定页面的分步指南。易于在您的项目中遵循和实施。 |  
 | [获取属性](./get-properties/) | 使用 Aspose.PDF for .NET 获取 PDF 属性（如框尺寸和旋转）的分步指南。 |  
 | [将图像设置为背景](./image-as-background/) | 使用 Aspose.PDF for .NET 将图像设置为 PDF 文档中的页面背景的分步指南。 |  

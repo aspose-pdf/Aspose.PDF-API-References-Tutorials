@@ -7,7 +7,7 @@ type: docs
 weight: 10
 url: /sv/net/programming-with-pdf-pages/change-orientation/
 ---
-den här handledningen går vi igenom steg-för-steg-processen för att ändra sidriktningen för ett PDF-dokument med Aspose.PDF för .NET. Vi kommer att förklara den medföljande C#-källkoden och förse dig med en omfattande guide som hjälper dig att förstå och implementera den här funktionen i dina egna projekt. I slutet av denna handledning kommer du att veta hur du ändrar sidriktningen för dina PDF-dokument med Aspose.PDF för .NET.
+I den här handledningen går vi igenom steg-för-steg-processen för att ändra sidriktningen för ett PDF-dokument med Aspose.PDF för .NET. Vi kommer att förklara den medföljande C#-källkoden och förse dig med en omfattande guide som hjälper dig att förstå och implementera den här funktionen i dina egna projekt. I slutet av denna handledning kommer du att veta hur du ändrar sidriktningen för dina PDF-dokument med Aspose.PDF för .NET.
 
 ## Förutsättningar
 Innan du börjar, se till att du har följande:
@@ -47,7 +47,7 @@ page. Rotate = Rotate. on90;
 ```
 
 ## Steg 4: Spara det ändrade PDF-dokumentet
- Slutligen kan du spara det ändrade PDF-dokumentet till en utdatafil med hjälp av`Save()` metod för`Document` klass. Var noga med att ange rätt sökväg och filnamn.
+ Slutligen kan du spara det ändrade PDF-dokumentet till en utdatafil med hjälp av`Save()` metod för`Document`klass. Var noga med att ange rätt sökväg och filnamn.
 
 ```csharp
 dataDir = dataDir + "ChangeOrientation_out.pdf";
@@ -86,4 +86,4 @@ System.Console.WriteLine("\nPage orientation changed successfully.\nFile saved a
 ```
 
 ## Slutsats
-den här handledningen lärde vi oss hur man ändrar sidriktningen för ett PDF-dokument med Aspose.PDF för .NET. Genom att följa stegen ovan kan du enkelt implementera denna funktion i dina egna projekt. Utforska gärna Aspose.PDF-dokumentationen ytterligare för att upptäcka andra användbara funktioner för att arbeta med PDF-filer.
+I den här handledningen lärde vi oss hur man ändrar sidriktningen för ett PDF-dokument med Aspose.PDF för .NET. Genom att följa stegen ovan kan du enkelt implementera denna funktion i dina egna projekt. Utforska gärna Aspose.PDF-dokumentationen ytterligare för att upptäcka andra användbara funktioner för att arbeta med PDF-filer.

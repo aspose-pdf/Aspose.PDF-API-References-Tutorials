@@ -51,7 +51,7 @@ pdfDocument.Save(dataDir);
 
  Yer değiştirmek`"YOUR DOCUMENTS DIRECTORY"` Çıktı PDF/A-3b dosyasını kaydetmek istediğiniz istediğiniz dizinle.
 
-### Aspose.Words for .NET kullanarak PDF'den PDFA3b'ye dönüştürme için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak PDF'den PDFA3b'ye örnek kaynak kodu
 
 ```csharp
 // Belgeler dizininin yolu.

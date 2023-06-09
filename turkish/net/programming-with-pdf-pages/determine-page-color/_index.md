@@ -62,7 +62,7 @@ for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Açık kaynaklı PDF dosyası
 Document pdfDocument = new Document( dataDir + "input.pdf");
-// PDF dosyasının tüm sayfasını yineleyin
+//PDF dosyasının tüm sayfasını yineleyin
 for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 {
 	// Belirli bir PDF sayfası için renk türü bilgilerini alın

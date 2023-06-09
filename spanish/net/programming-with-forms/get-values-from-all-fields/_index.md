@@ -38,7 +38,7 @@ Console.WriteLine("Value: {0}", formField.Value);
 }
 ```
 
-### Ejemplo de código fuente para Obtener valores de todos los campos usando Aspose.Words para .NET 
+### Ejemplo de código fuente para Obtener valores de todos los campos usando Aspose.PDF para .NET 
 ```csharp
 // La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -54,4 +54,4 @@ foreach (Field formField in pdfDocument.Form)
 
 ## Conclusión
 
-En este tutorial, aprendimos cómo obtener los valores de todos los campos de formulario en un documento PDF usando Aspose.PDF para .NET. Siguiendo estos pasos, puede extraer fácilmente los valores de todos los campos de formulario de sus documentos PDF utilizando Aspose.PDF.
+En este tutorial, aprendimos cómo obtener los valores de todos los campos de formulario en un documento PDF usando Aspose.PDF para .NET. Siguiendo estos pasos, puede extraer fácilmente los valores de todos los campos de formulario de sus documentos PDF usando Aspose.PDF.

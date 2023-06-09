@@ -47,7 +47,7 @@ doc.Save(dataDir + "XMLToPDF_out.pdf");
 ```
 Ortaya çıkan PDF dosyasını belirtilen dizine kaydedin.
 
-### Aspose.Words for .NET kullanarak XML'den PDF'e dönüştürme için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak XML'den PDF'e örnek kaynak kodu
 
 ```csharp
 // Belgeler dizininin yolu.

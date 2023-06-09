@@ -18,7 +18,7 @@ Per aggiungere JavaScript a un file PDF, useremo Aspose.PDF per .NET. Questa lib
 // Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Carica un file PDF esistente
+// Carica un file PDF esistente
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
@@ -39,7 +39,7 @@ In questo tutorial, stiamo aggiungendo un'istruzione JavaScript che stamperà il
 
 ## Passaggio 3: aggiungi JavaScript a livello di pagina
 
- Per aggiungere JavaScript a livello di pagina, utilizzeremo il file`JavascriptAction` classe e il`Actions` proprietà fornita da Aspose.PDF per .NET. Questa proprietà consente di specificare istruzioni JavaScript che verranno eseguite all'apertura o alla chiusura della pagina.
+ Per aggiungere JavaScript a livello di pagina, utilizzeremo il file`JavascriptAction` classe e il`Actions`proprietà fornita da Aspose.PDF per .NET. Questa proprietà consente di specificare istruzioni JavaScript che verranno eseguite all'apertura o alla chiusura della pagina.
 
 ```csharp
 // Aggiunta di JavaScript a livello di pagina
@@ -70,7 +70,7 @@ Questo codice salverà il file PDF modificato nella directory specificata.
 // Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Carica un file PDF esistente
+// Carica un file PDF esistente
 Document doc = new Document(dataDir + "input.pdf");
 
 // Aggiunta di JavaScript a livello di documento

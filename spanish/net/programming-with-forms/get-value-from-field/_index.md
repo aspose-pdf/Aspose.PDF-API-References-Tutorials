@@ -43,7 +43,7 @@ Console.WriteLine("PartialName: {0}", textBoxField.PartialName);
 Console.WriteLine("Value: {0}", textBoxField.Value);
 ```
 
-### Ejemplo de código fuente para Obtener valor de campo usando Aspose.Words para .NET 
+### Ejemplo de código fuente para Obtener valor del campo usando Aspose.PDF para .NET 
 ```csharp
 // La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

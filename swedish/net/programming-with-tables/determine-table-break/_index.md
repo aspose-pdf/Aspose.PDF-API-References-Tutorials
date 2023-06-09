@@ -85,7 +85,7 @@ Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dat
 
 Var noga med att ange rätt dokumentkatalog. Den resulterande PDF-filen kommer att sparas med de fastställda tabellbrytningarna.
 
-### Exempel på källkod för Determine Table Break med Aspose.Words för .NET
+### Exempel på källkod för Determine Table Break med Aspose.PDF för .NET
 
 ```csharp
 // Sökvägen till dokumentkatalogen.
@@ -134,11 +134,11 @@ float TotalObjectsHeight = (float)page.PageInfo.Margin.Top + (float)page.PageInf
 // Och bottenmarginalinformation
 Console.WriteLine("PDF document Height = " + pdf.PageInfo.Height.ToString() + "\nTop Margin Info = " + page.PageInfo.Margin.Top.ToString() + "\nBottom Margin Info = " + page.PageInfo.Margin.Bottom.ToString() + "\n\nTable-Top Margin Info = " + table1.Margin.Top.ToString() + "\nAverage Row Height = " + table1.Rows[0].MinRowHeight.ToString() + " \nTable height " + table1.GetHeight().ToString() + "\n ----------------------------------------" + "\nTotal Page Height =" + PageHeight.ToString() + "\nCummulative height including Table =" + TotalObjectsHeight.ToString());
 
-//Kontrollera om vi drar av summan av Sidans övre marginal + Sidans bottenmarginal
+// Kontrollera om vi drar av summan av Sidans övre marginal + Sidans bottenmarginal
 // + Bordsmarginal och bordshöjd från sidans höjd och dess mindre
 // Än 10 (en genomsnittlig rad kan vara större än 10)
 if ((PageHeight - TotalObjectsHeight) <= 10)
-	// Om värdet är mindre än 10, visa meddelandet.
+	//Om värdet är mindre än 10, visa meddelandet.
 	// Vilket visar att ytterligare en rad inte kan placeras och om vi lägger till nya
 	// Rad, bord kommer att gå sönder. Det beror på radens höjdvärde.
 	Console.WriteLine("Page Height - Objects Height < 10, so table will break");

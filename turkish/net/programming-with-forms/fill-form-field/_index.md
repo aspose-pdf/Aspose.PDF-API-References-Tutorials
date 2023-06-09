@@ -51,7 +51,7 @@ dataDir = dataDir + "FillFormField_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Aspose.Words for .NET kullanan Form Alanını Doldur için örnek kaynak kodu 
+### Aspose.PDF for .NET kullanarak Form Alanını Doldur için örnek kaynak kodu 
 ```csharp
 // Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

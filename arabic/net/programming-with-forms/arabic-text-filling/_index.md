@@ -61,7 +61,7 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nArabic text successfully filled in the form field.\nFile saved in the following location: " + dataDir);
 ```
 
-### نموذج لشفرة مصدر لتعبئة النص العربي باستخدام Aspose.Words for .NET 
+### عينة من التعليمات البرمجية المصدر لتعبئة النص العربي باستخدام Aspose.PDF لـ .NET 
 ```csharp
 // المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

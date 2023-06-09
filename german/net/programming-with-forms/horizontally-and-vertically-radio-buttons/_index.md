@@ -67,7 +67,7 @@ dataDir = dataDir + "HorizontallyAndVerticallyRadioButtons_out.pdf";
 formEditor.Save(dataDir);
 ```
 
-### Beispielquellcode für horizontale und vertikale Optionsfelder mit Aspose.Words für .NET 
+### Beispielquellcode für horizontale und vertikale Optionsfelder mit Aspose.PDF für .NET 
 ```csharp
 try
 {

@@ -40,7 +40,7 @@ doc.Save(dataDir + "PDFToXML_out.xml", SaveFormat.MobiXml);
 
 The above code saves the converted PDF file in XML format with the filename `"PDFToXML_out.xml"`.
 
-### Example source code for PDF to XML using Aspose.Words for .NET
+### Example source code for PDF to XML using Aspose.PDF for .NET
 
 ```csharp
 // The path to the documents directory.

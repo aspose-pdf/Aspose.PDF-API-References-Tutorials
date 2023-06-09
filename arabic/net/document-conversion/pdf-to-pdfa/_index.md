@@ -52,7 +52,7 @@ pdfDocument.Save(dataDir);
 
  يستبدل`"YOUR DOCUMENTS DIRECTORY"` مع الدليل المطلوب حيث تريد حفظ ملف PDF / A الناتج.
 
-### مثال على شفرة المصدر لـ PDF إلى HTML باستخدام Aspose.Words for .NET
+### مثال على كود المصدر لـ PDF إلى HTML باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 // المسار إلى دليل المستندات.

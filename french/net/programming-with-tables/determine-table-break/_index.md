@@ -85,7 +85,7 @@ Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dat
 
 Assurez-vous de spécifier le répertoire de documents correct. Le fichier PDF résultant sera enregistré avec les sauts de table déterminés.
 
-### Exemple de code source pour déterminer le saut de table à l'aide de Aspose.Words pour .NET
+### Exemple de code source pour déterminer le saut de table à l'aide d'Aspose.PDF pour .NET
 
 ```csharp
 // Chemin d'accès au répertoire des documents.
@@ -134,11 +134,11 @@ float TotalObjectsHeight = (float)page.PageInfo.Margin.Top + (float)page.PageInf
 // Et informations sur la marge inférieure
 Console.WriteLine("PDF document Height = " + pdf.PageInfo.Height.ToString() + "\nTop Margin Info = " + page.PageInfo.Margin.Top.ToString() + "\nBottom Margin Info = " + page.PageInfo.Margin.Bottom.ToString() + "\n\nTable-Top Margin Info = " + table1.Margin.Top.ToString() + "\nAverage Row Height = " + table1.Rows[0].MinRowHeight.ToString() + " \nTable height " + table1.GetHeight().ToString() + "\n ----------------------------------------" + "\nTotal Page Height =" + PageHeight.ToString() + "\nCummulative height including Table =" + TotalObjectsHeight.ToString());
 
-//Vérifiez si nous déduisons la somme de la marge supérieure de la page + la marge inférieure de la page
+// Vérifiez si nous déduisons la somme de la marge supérieure de la page + la marge inférieure de la page
 // + Marge du dessus du tableau et hauteur du tableau à partir de la hauteur de la page et moins
 // Supérieur à 10 (une ligne moyenne peut être supérieure à 10)
 if ((PageHeight - TotalObjectsHeight) <= 10)
-	// Si la valeur est inférieure à 10, affichez le message.
+	//Si la valeur est inférieure à 10, affichez le message.
 	// Ce qui montre qu'une autre ligne ne peut pas être placée et si nous ajoutons de nouvelles
 	// Ligne, table va se casser. Cela dépend de la valeur de hauteur de ligne.
 	Console.WriteLine("Page Height - Objects Height < 10, so table will break");

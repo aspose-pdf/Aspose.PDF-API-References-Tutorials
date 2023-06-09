@@ -8,7 +8,7 @@ weight: 100
 url: /sv/net/programming-with-tables/html-tags-inside-table/
 ---
 
-den här handledningen ska vi lära oss hur man använder HTML-taggar i en tabell i ett PDF-dokument med Aspose.PDF för .NET. Vi kommer att förklara källkoden i C# steg för steg. I slutet av denna handledning kommer du att veta hur du infogar HTML-innehåll i en tabell i ett PDF-dokument. Låt oss börja!
+I den här handledningen ska vi lära oss hur man använder HTML-taggar i en tabell i ett PDF-dokument med Aspose.PDF för .NET. Vi kommer att förklara källkoden i C# steg för steg. I slutet av denna handledning kommer du att veta hur du infogar HTML-innehåll i en tabell i ett PDF-dokument. Låt oss börja!
 
 ## Steg 1: Sätta upp miljön
 Se till att du har konfigurerat din C#-utvecklingsmiljö med Aspose.PDF för .NET. Lägg till referensen till biblioteket och importera de nödvändiga namnrymden.
@@ -70,7 +70,7 @@ Vi sparar PDF-dokumentet med tabellen som innehåller HTML-innehåll.
 doc.Save(dataDir + "HTMLInsideTableCell_out.pdf");
 ```
 
-### Exempel på källkod för HTML-taggar Inside Table med Aspose.Words för .NET
+### Exempel på källkod för HTML-taggar Inside Table med Aspose.PDF för .NET
 
 ```csharp
 // Sökvägen till dokumentkatalogen.

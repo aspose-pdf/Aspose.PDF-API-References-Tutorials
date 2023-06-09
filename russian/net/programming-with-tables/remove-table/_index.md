@@ -33,7 +33,7 @@ TableAbsorber absorber = new TableAbsorber();
 Теперь мы посетим первую страницу PDF-документа с помощью поглотителя:
 
 ```csharp
-//Посетите первую страницу с поглотителем
+// Посетите первую страницу с поглотителем
 absorb.Visit(pdfDocument.Pages[1]);
 ```
 
@@ -49,7 +49,7 @@ AbsorbedTable table = absorb.TableList[0];
 Теперь с помощью абсорбера снимаем стол:
 
 ```csharp
-// удалить стол
+//удалить стол
 absorb.Remove(table);
 ```
 
@@ -61,7 +61,7 @@ absorb.Remove(table);
 pdfDocument.Save(dataDir + "Table_out.pdf");
 ```
 
-### Пример исходного кода для удаления таблицы с использованием Aspose.Words для .NET
+### Пример исходного кода для удаления таблицы с использованием Aspose.PDF для .NET
 
 ```csharp
 // Путь к каталогу документов.

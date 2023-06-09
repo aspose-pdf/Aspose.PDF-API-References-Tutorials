@@ -56,7 +56,7 @@ DataTable dataTable = worksheet.Cells.ExportDataTable(0, 0, worksheet.Cells.MaxR
 Теперь мы создадим новый PDF-документ, используя библиотеку Aspose.PDF.
 
 ```csharp
-//Создание экземпляра документа
+// Создание экземпляра документа
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 ```
 
@@ -92,7 +92,7 @@ tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.
 В этом примере мы устанавливаем ширину столбцов на 40, 100 и 100 единиц. Настройте значения на основе ваших данных. Мы также устанавливаем границу ячейки по умолчанию для отображения границ со всех сторон каждой ячейки.
 
 ## Шаг 8: Импорт данных в таблицу
-Теперь мы будем импортировать данные из`DataTable` объект в таблицу с помощью`ImportDataTable` метод.
+ Теперь мы будем импортировать данные из`DataTable` объект в таблицу с помощью`ImportDataTable` метод.
 
 ```csharp
 // Импортируйте данные в объект Table из таблицы DataTable, созданной выше.
@@ -148,7 +148,7 @@ pdf1.Save(dataDir + @"Exceldata_toPdf_table.pdf");
 
 Обязательно замените «КАТАЛОГ ВАШИХ ДОКУМЕНТОВ» на желаемый путь к каталогу и имя файла для выходного PDF-файла.
 
-### Пример исходного кода для экспорта данных рабочего листа Excel в таблицу с использованием Aspose.Words для .NET
+### Пример исходного кода для экспорта данных листа Excel в таблицу с использованием Aspose.PDF для .NET
 
 ```csharp
 // Путь к каталогу документов.
@@ -190,7 +190,7 @@ foreach (Aspose.Pdf.Cell curCell in row1.Cells)
 	curCell.BackgroundColor = Color.Blue;
 	// Установите начертание шрифта для ячеек 1-й строки таблицы.
 	curCell.DefaultCellTextState.Font = Aspose.Pdf.Text.FontRepository.FindFont("Helvetica-Oblique");
-	//Установите цвет шрифта для всех ячеек в 1-й строке таблицы.
+	// Установите цвет шрифта для всех ячеек в 1-й строке таблицы.
 	curCell.DefaultCellTextState.ForegroundColor = Color.Yellow;
 	// Установите выравнивание текста для ячеек 1-й строки как Центр.
 	curCell.DefaultCellTextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;

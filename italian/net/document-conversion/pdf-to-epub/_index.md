@@ -47,7 +47,7 @@ options.ContentRecognitionMode = EpubSaveOptions.RecognitionMode.Flow;
 ```
 
 ## Passaggio 4: salvare il documento EPUB
-Dopo aver configurato le opzioni di salvataggio, ora possiamo salvare il file EPUB risultante. Ecco l'ultimo passo:
+Dopo aver configurato le opzioni di salvataggio, ora possiamo salvare il file EPUB risultante. Ecco l'ultimo passaggio:
 
 ```csharp
 // Salva il documento EPUB
@@ -56,7 +56,7 @@ pdfDocument.Save(dataDir + "PDFToEPUB_out.epub", options);
 
  Sostituire`"YOUR DOCUMENTS DIRECTORY"` con la directory desiderata in cui si desidera salvare il file EPUB di output.
 
-### Esempio di codice sorgente per PDF in EPUB utilizzando Aspose.Words per .NET
+### Esempio di codice sorgente per PDF in EPUB utilizzando Aspose.PDF per .NET
 
 ```csharp
 // Il percorso della directory dei documenti.

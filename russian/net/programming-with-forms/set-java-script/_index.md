@@ -30,7 +30,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ## Шаг 2: Загрузка входного PDF-файла
 
- На этом шаге мы загрузим входной PDF-файл, используя`Document` класс Aspose.PDF.
+ На этом шаге мы загрузим входной PDF-файл, используя`Document`класс Aspose.PDF.
 
 ```csharp
 // Загрузить исходный PDF-файл
@@ -83,7 +83,7 @@ doc.Save(dataDir);
 Обязательно укажите полный путь и имя файла для полученного PDF-файла.
 
 
-### Пример исходного кода для Set Java Script с использованием Aspose.Words для .NET 
+### Пример исходного кода для Set Java Script с использованием Aspose.PDF для .NET 
 ```csharp
 // Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

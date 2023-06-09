@@ -42,7 +42,7 @@ pdfDocument.Save(dataDir + "PDFToDOC_out.doc", SaveFormat.Doc);
 
 代替`"YOUR DOCUMENTS DIRECTORY"`使用要保存输出 DOC 文件的所需目录。
 
-### 使用 Aspose.Words for .NET 将 PDF 转换为 DOC 的示例源代码
+### 使用 Aspose.PDF for .NET 的 PDF 到 DOC 的示例源代码
 
 ```csharp
 //文档目录的路径。

@@ -47,7 +47,7 @@ doc.Save(dataDir + "XMLToPDF_out.pdf");
 ```
 Enregistrez le fichier PDF résultant dans le répertoire spécifié.
 
-### Exemple de code source pour XML en PDF en utilisant Aspose.Words pour .NET
+### Exemple de code source pour XML en PDF en utilisant Aspose.PDF pour .NET
 
 ```csharp
 // Chemin d'accès au répertoire des documents.

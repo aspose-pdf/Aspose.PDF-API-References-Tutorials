@@ -67,7 +67,7 @@ pdfDocument.Save(dataDir + "ProvideCredentialsDuringHTMLToPDF_out.pdf");
 
  Koden ovan sparar den resulterande PDF-filen med filnamnet`"ProvideCredentialsDuringHTMLToPDF_out.pdf"`.
 
-### Exempel på källkod för tillhandahålla referenser under HTML till PDF med Aspose.Words för .NET
+### Exempel på källkod för tillhandahålla referenser under HTML till PDF med Aspose.PDF för .NET
 
 ```csharp
 try

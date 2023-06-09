@@ -59,7 +59,7 @@ textAnnotation.Border = border;
 textAnnotation.Rect = new Aspose.Pdf.Rectangle(200, 400, 400, 600);
 ```
 
- Bu kodda yeni bir tane oluşturuyoruz.`Border` nesne ve genişlik ve tire özelliklerini ayarlayın. daha sonra ayarlıyoruz`Border` ek açıklamanın özelliği yeni`Border`nesne. Son olarak, ayarlıyoruz`Rect` konumunu ve boyutunu belirtmek için ek açıklamanın özelliği.
+ Bu kodda yeni bir tane oluşturuyoruz.`Border` nesne ve genişlik ve tire özelliklerini ayarlayın. daha sonra ayarlıyoruz`Border` ek açıklamanın özelliği yeni`Border` nesne. Son olarak, ayarlıyoruz`Rect` konumunu ve boyutunu belirtmek için ek açıklamanın özelliği.
 
 ## Adım 5: Açıklamayı PDF Belgesine Ekleyin
 

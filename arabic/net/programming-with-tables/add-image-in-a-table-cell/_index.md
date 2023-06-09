@@ -14,7 +14,7 @@ url: /ar/net/programming-with-tables/add-image-in-a-table-cell/
 
 ## الخطوة 1: إعداد المستند
 
- للبدء ، نحتاج إلى إنشاء مثيل جديد من`Document` فئة من مساحة الاسم Aspose.Pdf. يمثل هذا الفصل وثيقة PDF.
+ للبدء ، نحتاج إلى إنشاء مثيل جديد من`Document`فئة من مساحة الاسم Aspose.Pdf. يمثل هذا الفصل وثيقة PDF.
 
 ```csharp
 // المسار إلى دليل المستندات.
@@ -35,7 +35,7 @@ Page sec1 = pdfDocument.Pages.Add();
 
 ## الخطوة 3: إضافة جدول
 
-في هذه الخطوة ، سننشئ جدولًا عن طريق إنشاء مثيل`Table` فئة من مساحة الاسم Aspose.Pdf.
+ في هذه الخطوة ، سننشئ جدولًا عن طريق إنشاء مثيل`Table` فئة من مساحة الاسم Aspose.Pdf.
 
 ```csharp
 // إنشاء كائن جدول
@@ -121,7 +121,7 @@ pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 
 تهانينا! لقد تعلمت بنجاح كيفية إضافة صورة إلى خلية جدول باستخدام Aspose.PDF for .NET. لا تتردد في استكشاف المزيد من خيارات التخصيص ودمج هذه الوظيفة في مشاريعك.
 
-### مثال على شفرة المصدر لإضافة صورة في خلية جدول باستخدام Aspose.Words for .NET
+### مثال على كود المصدر لإضافة صورة في خلية جدول باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 // المسار إلى دليل المستندات.
@@ -133,7 +133,7 @@ Document pdfDocument = new Document();
 Page sec1 = pdfDocument.Pages.Add();
 // إنشاء كائن جدول
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
-// أضف الجدول في مجموعة فقرات الصفحة المطلوبة
+//أضف الجدول في مجموعة فقرات الصفحة المطلوبة
 sec1.Paragraphs.Add(tab1);
 // تعيين حد الخلية الافتراضي باستخدام كائن BorderInfo
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);

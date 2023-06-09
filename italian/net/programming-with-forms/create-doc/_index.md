@@ -92,7 +92,7 @@ dataDir = dataDir + "CreateDoc_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Esempio di codice sorgente per Crea documento utilizzando Aspose.Words per .NET 
+### Esempio di codice sorgente per Crea documento utilizzando Aspose.PDF per .NET 
 ```csharp
 try
 {

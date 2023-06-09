@@ -43,7 +43,7 @@ dataDir = dataDir + "DeleteFormField_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Beispielquellcode für „Formularfeld löschen“ mit Aspose.Words für .NET 
+### Beispielquellcode für „Formularfeld löschen“ mit Aspose.PDF für .NET 
 ```csharp
 // Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

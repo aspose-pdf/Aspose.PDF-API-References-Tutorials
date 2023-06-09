@@ -59,7 +59,7 @@ Console.WriteLine("\nTooltip added successfully.\nFile saved at " + dataDir);
 
 تأكد من توفير اسم ومسار ملف الإخراج المطلوب. بعد تنفيذ هذا الرمز ، سيتم حفظ نموذج PDF المعدل مع تلميح الأدوات المضاف في الموقع المحدد.
 
-### نموذج التعليمات البرمجية المصدر لـ Add Tooltip To Field باستخدام Aspose.Words for .NET 
+### نموذج التعليمات البرمجية المصدر لـ Add Tooltip To Field باستخدام Aspose.PDF for .NET 
 
 ```csharp
 // المسار إلى دليل المستندات.

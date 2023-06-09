@@ -62,7 +62,7 @@ Infine, salviamo il file PDF risultante con il nome "CreateFilledRectangle_out.p
 doc.Save(dataDir + "CreateFilledRectangle_out.pdf");
 ```
 
-### Esempio di codice sorgente per Crea rettangolo pieno utilizzando Aspose.Words per .NET 
+### Esempio di codice sorgente per Crea rettangolo pieno utilizzando Aspose.PDF per .NET 
 
 ```csharp
 

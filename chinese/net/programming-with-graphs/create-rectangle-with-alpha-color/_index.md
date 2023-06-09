@@ -80,7 +80,7 @@ page.Paragraphs.Add(canvas);
 doc.Save(dataDir + "CreateRectangleWithAlphaColor_out.pdf");
 ```
 
-### 使用 Aspose.Words for .NET 创建具有 Alpha 颜色的矩形的示例源代码 
+### 使用 Aspose.PDF for .NET 使用 Alpha 颜色创建矩形的示例源代码 
 
 ```csharp
 

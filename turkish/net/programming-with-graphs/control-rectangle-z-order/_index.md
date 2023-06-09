@@ -63,7 +63,7 @@ Son olarak ortaya çıkan PDF dosyasını "ControlRectangleZOrder_out.pdf" ismiy
 ```csharp
 doc1.Save(dataDir);
 ```
-### Aspose.Words for .NET kullanan Control Rectangle Z Order için örnek kaynak kodu 
+### Aspose.PDF for .NET kullanan Control Rectangle Z Order için örnek kaynak kodu 
 
 ```csharp
 
@@ -75,7 +75,7 @@ Document doc1 = new Document();
 Aspose.Pdf.Page page1 = doc1.Pages.Add();
 // PDF sayfasının boyutunu ayarla
 page1.SetPageSize(375, 300);
-// Sayfa nesnesi için sol kenar boşluğunu 0 olarak ayarla
+//Sayfa nesnesi için sol kenar boşluğunu 0 olarak ayarla
 page1.PageInfo.Margin.Left = 0;
 // Sayfa nesnesinin üst kenar boşluğunu 0 olarak ayarla
 page1.PageInfo.Margin.Top = 0;

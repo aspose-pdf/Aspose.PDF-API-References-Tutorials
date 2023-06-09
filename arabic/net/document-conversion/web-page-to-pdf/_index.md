@@ -58,7 +58,7 @@ Document pdfDocument = new Document(stream, options);
 options.PageInfo.IsLandscape = true;
 pdfDocument.Save(dataDir + "WebPageToPDF_out.pdf");
 ```
- إنشاء`MemoryStream` كائن لتحميل محتوى صفحة الويب. ثم قم بإنشاء مثيل لـ`HtmlLoadOptions` وتمرير عنوان URL الأساسي لصفحة الويب. بعد ذلك ، قم بإنشاء ملف`Document` باستخدام الدفق المحمل وخيارات تحميل HTML. تعيين`IsLandscape` الملكية ل`true` إذا كنت تريد أن يكون ملف PDF في اتجاه أفقي. أخيرًا ، احفظ مستند PDF في الدليل المحدد
+ إنشاء`MemoryStream` كائن لتحميل محتوى صفحة الويب. ثم قم بإنشاء مثيل لـ`HtmlLoadOptions` وتمرير عنوان URL الأساسي لصفحة الويب. بعد ذلك ، قم بإنشاء ملف`Document` باستخدام الدفق المحمل وخيارات تحميل HTML. تعيين`IsLandscape` ملكية ل`true` إذا كنت تريد أن يكون ملف PDF في اتجاه أفقي. أخيرًا ، احفظ مستند PDF في الدليل المحدد
 
 .
 
@@ -71,7 +71,7 @@ Console.WriteLine(ex.Message);
 ```
 اكتشف أي استثناءات قد تحدث أثناء عملية التحويل واعرض رسالة الخطأ.
 
-### مثال على شفرة المصدر لصفحة ويب إلى PDF باستخدام Aspose.Words for .NET
+### مثال على الكود المصدري لصفحة الويب إلى PDF باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 try

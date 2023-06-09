@@ -50,7 +50,7 @@ doc.Save(dataDir + "PDFToSVG_out.svg", saveOptions);
 
  Yukarıdaki kod, dönüştürülen PDF'yi dosya adıyla SVG formatına kaydeder`"PDFToSVG_out.svg"`.
 
-### Aspose.Words for .NET kullanarak PDF'den SVG'ye dönüştürme için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak PDF to SVG için örnek kaynak kodu
 
 ```csharp
 // Belgeler dizininin yolu.

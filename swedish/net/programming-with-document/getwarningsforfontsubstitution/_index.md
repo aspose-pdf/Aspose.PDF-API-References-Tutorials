@@ -26,7 +26,7 @@ Det första steget i att använda den här funktionen är att ladda PDF-dokument
 // Sökvägen till PDF-dokumentet
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Öppna PDF-dokumentet
+// Öppna PDF-dokumentet
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
@@ -61,7 +61,7 @@ private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArg
 // Sökvägen till PDF-dokumentet
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Öppna PDF-dokumentet
+// Öppna PDF-dokumentet
 Document doc = new Document(dataDir + "input.pdf");
 
 // Upptäck varningar för teckensnittsersättning

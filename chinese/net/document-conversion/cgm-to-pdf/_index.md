@@ -40,7 +40,7 @@ doc.Save(dataDir + "TECHDRAW_out.pdf");
 
 在上面的代码中，一定要替换`"YOUR DOCUMENTS DIRECTORY"`使用要转换的 CGM 文件所在目录的实际路径。此代码使用`CgmLoadOptions`类，然后使用`Document`目的。最后，保存生成的 PDF 文档。
 
-### 使用 Aspose.Words for .NET 的 CGM 到 PDF 的示例源代码
+### 使用 Aspose.PDF for .NET 的 CGM 到 PDF 的示例源代码
 
 ```csharp
 //文档目录的路径。

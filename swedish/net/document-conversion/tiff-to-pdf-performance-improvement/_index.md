@@ -65,7 +65,7 @@ doc.Save(dataDir + "PerformaceImprovement_out.pdf");
 ```
 Spara det resulterande PDF-dokumentet i den angivna katalogen.
 
-### Exempel på källkod för TIFF till PDF-prestandaförbättring med Aspose.Words för .NET
+### Exempel på källkod för TIFF till PDF-prestandaförbättring med Aspose.PDF för .NET
 
 ```csharp
 // Sökvägen till dokumentkatalogen.

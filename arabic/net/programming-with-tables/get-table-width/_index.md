@@ -47,7 +47,7 @@ cell = row.Cells.Add("Text from cell 2");
 Console.WriteLine(table.GetWidth());
 ```
 
-### مثال على شفرة المصدر للحصول على عرض الجدول باستخدام Aspose.Words for .NET
+### مثال على شفرة المصدر للحصول على عرض الجدول باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 // قم بإنشاء مستند جديد

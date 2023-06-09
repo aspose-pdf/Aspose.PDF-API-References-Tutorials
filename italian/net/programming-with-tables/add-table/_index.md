@@ -12,7 +12,7 @@ Aspose.PDF per .NET è una potente libreria che consente agli sviluppatori di cr
 
 ## introduzione
 
-I documenti PDF sono ampiamente utilizzati per condividere e conservare le informazioni in un formato portatile. L'aggiunta di tabelle ai documenti PDF può migliorarne l'aspetto visivo e rendere la presentazione dei dati più organizzata e strutturata. Aspose.PDF per .NET fornisce un modo conveniente per aggiungere tabelle ai documenti PDF esistenti o crearne di nuovi da zero.
+documenti PDF sono ampiamente utilizzati per condividere e conservare le informazioni in un formato portatile. L'aggiunta di tabelle ai documenti PDF può migliorarne l'aspetto visivo e rendere la presentazione dei dati più organizzata e strutturata. Aspose.PDF per .NET fornisce un modo conveniente per aggiungere tabelle ai documenti PDF esistenti o crearne di nuovi da zero.
 
 ## Cos'è Aspose.PDF per .NET?
 
@@ -83,13 +83,13 @@ Console.WriteLine("\nText added successfully to an existing pdf file.\nFile save
 
 Infine, aggiungiamo l'oggetto tabella alla prima pagina del documento PDF utilizzando la raccolta Paragrafi della pagina corrispondente.
 
-### Esempio di codice sorgente per aggiungere una tabella utilizzando Aspose.Words per .NET
+### Esempio di codice sorgente per aggiungere una tabella utilizzando Aspose.PDF per .NET
 
 ```csharp
 // Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Carica il documento PDF di origine
+// Carica il documento PDF di origine
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir+ "AddTable.pdf");
 // Inizializza una nuova istanza di Table
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();

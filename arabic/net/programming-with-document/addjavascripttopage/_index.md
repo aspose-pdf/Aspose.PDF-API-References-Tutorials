@@ -18,7 +18,7 @@ url: /ar/net/programming-with-document/addjavascripttopage/
 // المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//قم بتحميل ملفات PDF موجودة
+// قم بتحميل ملفات PDF موجودة
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
@@ -39,7 +39,7 @@ doc.OpenAction = javaScript;
 
 ## الخطوة 3: أضف JavaScript على مستوى الصفحة
 
- لإضافة JavaScript على مستوى الصفحة ، سنستخدم الامتداد`JavascriptAction` الطبقة و`Actions` الخاصية المقدمة من Aspose.PDF لـ .NET. تتيح لك هذه الخاصية تحديد عبارات JavaScript التي سيتم تنفيذها عند فتح الصفحة أو إغلاقها.
+ لإضافة JavaScript على مستوى الصفحة ، سنستخدم الامتداد`JavascriptAction` الطبقة و`Actions`الخاصية المقدمة من Aspose.PDF لـ .NET. تتيح لك هذه الخاصية تحديد عبارات JavaScript التي سيتم تنفيذها عند فتح الصفحة أو إغلاقها.
 
 ```csharp
 // إضافة JavaScript على مستوى الصفحة
@@ -70,7 +70,7 @@ Console.WriteLine("\nJavascript added successfully to a page.\nFile saved at " +
 // المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//قم بتحميل ملفات PDF موجودة
+// قم بتحميل ملفات PDF موجودة
 Document doc = new Document(dataDir + "input.pdf");
 
 // إضافة JavaScript على مستوى المستند

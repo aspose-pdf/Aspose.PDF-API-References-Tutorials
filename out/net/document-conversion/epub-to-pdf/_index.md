@@ -46,7 +46,7 @@ The above code converts the EP file EPUB loaded in PDF format and saves it as fi
 
 Replace `"YOUR DOCUMENTS DIRECTORY"` with the desired directory where you want to save the output PDF file.
 
-### Example source code for EPUB to PDF using Aspose.Words for .NET
+### Example source code for EPUB to PDF using Aspose.PDF for .NET
 
 ```csharp
 try

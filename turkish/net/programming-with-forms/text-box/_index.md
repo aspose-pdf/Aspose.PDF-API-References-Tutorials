@@ -23,7 +23,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ## 2. Adım: PDF belgesini açma
 
- Bu adımda, PDF belgesini kullanarak açacağız.`Document` Aspose.PDF sınıfı.
+ Bu adımda, PDF belgesini kullanarak açacağız.`Document`Aspose.PDF sınıfı.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "TextField.pdf");
@@ -76,7 +76,7 @@ pdfDocument.Save(dataDir);
 
 Düzenlenen PDF için tam yolu ve dosya adını belirttiğinizden emin olun.
 
-### Aspose.Words for .NET kullanan Text Box için örnek kaynak kodu 
+### Aspose.PDF for .NET kullanan Text Box için örnek kaynak kodu 
 ```csharp
 // Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

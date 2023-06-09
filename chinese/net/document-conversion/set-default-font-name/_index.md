@@ -62,7 +62,7 @@ pngDevice.Process(pdfDocument.Pages[1], imageStream);
 
 请务必在中指定正确的页码`pdfDocument.Pages[1]`.
 
-### 使用 Aspose.Words for .NET 设置默认字体名称的示例源代码
+### 使用 Aspose.PDF for .NET 设置默认字体名称的示例源代码
 
 ```csharp
 //文档目录的路径。

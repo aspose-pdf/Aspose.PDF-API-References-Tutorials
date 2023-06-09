@@ -91,7 +91,7 @@ doc.Save(dataDir);
 Console.WriteLine("\nBorder setup successfully.\nFile saved at " + dataDir);
 ```
 
-### Example source code for Set Border using Aspose.Words for .NET
+### Example source code for Set Border using Aspose.PDF for .NET
 
 ```csharp
 // The path to the documents directory.

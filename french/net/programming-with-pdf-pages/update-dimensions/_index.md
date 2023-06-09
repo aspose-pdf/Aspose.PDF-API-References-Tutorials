@@ -51,7 +51,7 @@ pdfPage.SetPageSize(597.6, 842.4);
 ```
 
 ## Étape 6 : Enregistrer le document mis à jour
-Enfin, vous pouvez enregistrer le document PDF mis à jour dans un fichier à l'aide de la`Save()` méthode de la`Document` classe. Assurez-vous de spécifier le chemin d'accès et le nom de fichier corrects.
+Enfin, vous pouvez enregistrer le document PDF mis à jour dans un fichier à l'aide de la`Save()` méthode de la`Document`classe. Assurez-vous de spécifier le chemin d'accès et le nom de fichier corrects.
 
 ```csharp
 dataDir = dataDir + "UpdateDimensions_out.pdf";

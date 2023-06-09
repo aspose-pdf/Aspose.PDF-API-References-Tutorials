@@ -78,7 +78,7 @@ doc.Save(dataDir);
 // Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Откройте PDF-документ
+// Откройте PDF-документ
 Document doc = new Document(dataDir + "AddSwfFileAsAnnotation.pdf");
 
 // Получить ссылку на страницу, на которую нужно добавить аннотацию

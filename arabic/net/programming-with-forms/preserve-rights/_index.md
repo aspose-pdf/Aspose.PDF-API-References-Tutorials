@@ -58,7 +58,7 @@ pdfDocument.Save();
 fs. Close();
 ```
 
-### نموذج التعليمات البرمجية المصدر لـ Preserve Rights باستخدام Aspose.Words for .NET 
+### نموذج التعليمات البرمجية المصدر لـ Preserve Rights باستخدام Aspose.PDF لـ .NET 
 ```csharp
 // المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

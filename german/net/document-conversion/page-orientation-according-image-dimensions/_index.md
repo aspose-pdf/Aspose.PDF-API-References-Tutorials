@@ -84,7 +84,7 @@ doc.Save(dataDir + "SetPageOrientation_out.pdf");
 
  Ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem gewünschten Verzeichnis, in dem Sie die ausgegebene PDF-Datei speichern möchten.
 
-### Beispielquellcode für die Seitenausrichtung gemäß Bildabmessungen mit Aspose.Words für .NET
+### Beispielquellcode für die Seitenausrichtung entsprechend den Bildabmessungen mit Aspose.PDF für .NET
 
 ```csharp
 

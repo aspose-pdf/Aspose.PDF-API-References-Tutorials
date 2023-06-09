@@ -10,7 +10,7 @@ url: /ar/net/programming-with-document/customizepagenumbeswhileaddingtoc/
 
 في هذا البرنامج التعليمي ، سوف نستكشف كيفية تخصيص أرقام الصفحات أثناء إضافة جدول محتويات (TOC) باستخدام Aspose.PDF لـ .NET. سنقدم إرشادات خطوة بخطوة ، جنبًا إلى جنب مع مثال رمز ، لمساعدتك في تحقيق ذلك.
 
-## الخطوة 1: تحميل ملف PDF موجود
+## الخطوة الأولى: تحميل ملف PDF موجود
 
 أولاً ، نحتاج إلى تحميل ملف PDF موجود. في هذا البرنامج التعليمي ، سنستخدم الملف "42824.pdf" الموجود في دليل "دليل المستندات". استبدل مسار الدليل هذا بالمسار الفعلي إلى دليل المستند.
 
@@ -61,7 +61,7 @@ for (int i = 1; i < doc.Pages.Count; i++)
     heading2.Top = doc.Pages[i + 1].Rect.Height;
     // تنسيق الوجهة
     segment2.Text = "Page " + i.ToString();
-    // أضف عنوانًا إلى الصفحة التي تحتوي على جدول المحتويات
+    //أضف عنوانًا إلى الصفحة التي تحتوي على جدول المحتويات
     tocPage.Paragraphs.Add(heading2);
 }
 ```
@@ -80,7 +80,7 @@ doc.Save(outFile);
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string inFile = dataDir + "42824.pdf";
 string outFile = dataDir + "42824_out.pdf";
-//قم بتحميل ملفات PDF موجودة
+// قم بتحميل ملفات PDF موجودة
 Document doc = new Document(inFile);
 // احصل على الوصول إلى الصفحة الأولى من ملف PDF
 Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
@@ -106,7 +106,7 @@ for (int i = 1; i<doc.Pages.Count; i++)
 	heading2.Top = doc.Pages[i + 1].Rect.Height;
 	// تنسيق الوجهة
 	segment2.Text = "Page " + i.ToString();
-	// أضف عنوانًا إلى الصفحة التي تحتوي على جدول المحتويات
+	//أضف عنوانًا إلى الصفحة التي تحتوي على جدول المحتويات
 	tocPage.Paragraphs.Add(heading2);
 }
 

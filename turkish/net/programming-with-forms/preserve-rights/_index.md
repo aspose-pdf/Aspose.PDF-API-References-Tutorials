@@ -58,7 +58,7 @@ pdfDocument.Save();
 fs. Close();
 ```
 
-### Aspose.Words for .NET kullanan Preserve Rights için örnek kaynak kodu 
+### Aspose.PDF for .NET kullanarak Hakları Koruma için örnek kaynak kodu 
 ```csharp
 // Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

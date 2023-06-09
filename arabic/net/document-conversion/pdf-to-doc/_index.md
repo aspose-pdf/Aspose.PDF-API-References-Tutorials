@@ -42,7 +42,7 @@ pdfDocument.Save(dataDir + "PDFToDOC_out.doc", SaveFormat.Doc);
 
  يستبدل`"YOUR DOCUMENTS DIRECTORY"` مع الدليل المطلوب حيث تريد حفظ ملف DOC الناتج.
 
-### مثال على شفرة المصدر لـ PDF إلى DOC باستخدام Aspose.Words for .NET
+### مثال على كود المصدر لـ PDF إلى DOC باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 // المسار إلى دليل المستندات.

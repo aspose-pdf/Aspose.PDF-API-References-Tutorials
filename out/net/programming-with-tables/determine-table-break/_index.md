@@ -85,7 +85,7 @@ Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dat
 
 Be sure to specify the correct document directory. The resulting PDF file will be saved with the determined table breaks.
 
-### Example source code for Determine Table Break using Aspose.Words for .NET
+### Example source code for Determine Table Break using Aspose.PDF for .NET
 
 ```csharp
 // The path to the documents directory.

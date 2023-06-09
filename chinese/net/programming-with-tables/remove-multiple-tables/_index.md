@@ -55,7 +55,7 @@ foreach(AbsorbedTable table in tables)
      absorb.Remove(table);
 ```
 
-## 第 6 步：保存文档
+## 第 6 步：保存文件
 最后，我们保存修改后的PDF文档：
 
 ```csharp
@@ -63,7 +63,7 @@ foreach(AbsorbedTable table in tables)
 pdfDocument.Save(dataDir + "Table2_out.pdf");
 ```
 
-### 使用 Aspose.Words for .NET 删除多个表的示例源代码
+### 使用 Aspose.PDF for .NET 删除多个表的示例源代码
 
 ```csharp
 //文档目录的路径。
@@ -86,7 +86,7 @@ absorber.TableList.CopyTo(tables, 0);
 foreach (AbsorbedTable table in tables)
 	absorber.Remove(table);
 
-//保存文件
+//保存文档
 pdfDocument.Save(dataDir + "Table2_out.pdf");
 ```
 

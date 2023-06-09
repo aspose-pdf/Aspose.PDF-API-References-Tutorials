@@ -74,7 +74,7 @@ absorb.Replace(pdfDocument.Pages[1], table, newTable);
 pdfDocument.Save(dataDir + "TableReplaced_out.pdf");
 ```
 
-### 使用 Aspose.Words for .NET 替换表的示例源代码
+### 使用 Aspose.PDF for .NET 替换表的示例源代码
 
 ```csharp
 //文档目录的路径。
@@ -105,7 +105,7 @@ row.Cells.Add("Col 3");
 //换一张新桌子
 absorber.Replace(pdfDocument.Pages[1], table, newTable);
 
-//保存文件
+//保存文档
 pdfDocument.Save(dataDir + "TableReplaced_out.pdf");
 ```
 

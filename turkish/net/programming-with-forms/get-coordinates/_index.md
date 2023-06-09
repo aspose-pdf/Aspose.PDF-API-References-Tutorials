@@ -55,7 +55,7 @@ Console.WriteLine(option.Rect);
 }
 ```
 
-### Aspose.Words for .NET kullanarak Koordinatları Al için örnek kaynak kodu 
+### Aspose.PDF for .NET kullanarak Koordinatları Al için örnek kaynak kodu 
 ```csharp
 try
 {

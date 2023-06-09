@@ -56,7 +56,7 @@ pdfDocument.Save(dataDir + "PDFToEPUB_out.epub", options);
 
  يستبدل`"YOUR DOCUMENTS DIRECTORY"` مع الدليل المطلوب حيث تريد حفظ ملف EPUB الناتج.
 
-### مثال على شفرة المصدر لـ PDF إلى EPUB باستخدام Aspose.Words for .NET
+### مثال على كود المصدر لـ PDF إلى EPUB باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 // المسار إلى دليل المستندات.

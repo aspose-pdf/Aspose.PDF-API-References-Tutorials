@@ -13,7 +13,7 @@ Följ stegen nedan för att ta bort alla kommentarer från sidan med Aspose.PDF 
 
 ## Steg 1: Installera Aspose.PDF för .NET
 
- För att använda Aspose.PDF för .NET måste du först installera biblioteket. Du kan[ladda ner](https://releases.aspose.com/pdf/net/)biblioteket från Aspose-versionerna och installera det på din dator. Efter installationen måste du lägga till en referens till biblioteket i ditt projekt.
+ För att använda Aspose.PDF för .NET måste du först installera biblioteket. Du kan[ladda ner](https://releases.aspose.com/pdf/net/) biblioteket från Aspose-versionerna och installera det på din dator. Efter installationen måste du lägga till en referens till biblioteket i ditt projekt.
 
 ## Steg 2: Skapa en ny konsolapplikation
 

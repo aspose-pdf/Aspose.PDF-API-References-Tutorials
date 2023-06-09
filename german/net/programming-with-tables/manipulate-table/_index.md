@@ -73,7 +73,7 @@ pdfDocument.Save(dataDir);
 Stellen Sie sicher, dass Sie den Pfad und Dateinamen für das geänderte Dokument angeben.
 
 
-### Beispielquellcode für Manipulate Table mit Aspose.Words für .NET
+### Beispielquellcode für Manipulate Table mit Aspose.PDF für .NET
 
 ```csharp
 try

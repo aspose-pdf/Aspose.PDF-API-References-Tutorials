@@ -108,7 +108,7 @@ bitmap.Save(dataDir, ImageFormat.Png);
 
 Be sure to specify the correct directory and filename to save the output image.
 
-### Example source code for Extract Border using Aspose.Words for .NET
+### Example source code for Extract Border using Aspose.PDF for .NET
 
 ```csharp
 // The path to the documents directory.

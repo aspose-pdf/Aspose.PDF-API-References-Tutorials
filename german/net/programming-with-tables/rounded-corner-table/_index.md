@@ -28,7 +28,7 @@ tab1.CornerStyle = Aspose.Pdf.BorderCornerStyle.Round;
 Um der Tabelle einen Rand mit abgerundeten Ecken zu geben, müssen wir ein BorderInfo-Objekt erstellen und es mit den entsprechenden Parametern konfigurieren:
 
 ```csharp
-// Erstellen Sie ein GraphInfo-Objekt, um die Rahmenfarbe festzulegen
+//Erstellen Sie ein GraphInfo-Objekt, um die Rahmenfarbe festzulegen
 GraphInfo graph = new GraphInfo();
 graph.Color = Aspose.Pdf.Color.Red;
 
@@ -42,7 +42,7 @@ bInfo.RoundedBorderRadius = 15;
 tab1.Border = bInfo;
 ```
 
-### Beispielquellcode für Rounded Corner Table mit Aspose.Words für .NET
+### Beispielquellcode für Rounded Corner Table mit Aspose.PDF für .NET
 
 ```csharp
 // Der Pfad zum Dokumentenverzeichnis.

@@ -33,7 +33,7 @@ TableAbsorber absorber = new TableAbsorber();
 سنقوم الآن بزيارة الصفحة الأولى من مستند PDF باستخدام أداة الامتصاص:
 
 ```csharp
-//قم بزيارة الصفحة الأولى مع الممتص
+// قم بزيارة الصفحة الأولى مع الممتص
 absorb.Visit(pdfDocument.Pages[1]);
 ```
 
@@ -49,7 +49,7 @@ AbsorbedTable table = absorb.TableList[0];
 الآن دعنا نزيل المنضدة باستخدام جهاز الامتصاص:
 
 ```csharp
-// قم بإزالة الجدول
+//قم بإزالة الجدول
 absorb.Remove(table);
 ```
 
@@ -61,7 +61,7 @@ absorb.Remove(table);
 pdfDocument.Save(dataDir + "Table_out.pdf");
 ```
 
-### مثال على شفرة المصدر لـ Remove Table باستخدام Aspose.Words for .NET
+### مثال على التعليمات البرمجية المصدر لـ Remove Table باستخدام Aspose.PDF for .NET
 
 ```csharp
 // المسار إلى دليل المستندات.

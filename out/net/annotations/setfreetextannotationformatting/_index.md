@@ -20,15 +20,15 @@ Before we get started, make sure that you have the following prerequisites:
 
 
 
-## 1. Create a new C# console application
+## Step 1: Create a new C# console application
 
 First, create a new C# console application in Microsoft Visual Studio. To create a new console application, select "File" > "New" > "Project" > "Visual C#" > "Console Application" from the main menu.
 
-## 2. Add reference to Aspose.PDF for .NET
+## Step 2: Add reference to Aspose.PDF for .NET
 
 Next, add a reference to Aspose.PDF for .NET in your project. To do this, right-click on your project in the "Solution Explorer" pane, select "Add" > "Reference", and then browse to the location where you saved the Aspose.PDF for .NET DLL file. Select the DLL file and click "OK" to add the reference to your project.
 
-## 3. Set up the environment
+## Step 3: Set up the environment
 
 After adding the reference to Aspose.PDF for .NET, you need to set up the environment. To do this, create a new string variable called "dataDir" and set it to the path of the directory where your PDF document is located. Replace "YOUR DOCUMENT DIRECTORY" in the code below with the actual path of your document directory:
 
@@ -37,7 +37,7 @@ After adding the reference to Aspose.PDF for .NET, you need to set up the enviro
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## 4. Open the PDF document
+## Step 4: Open the PDF document
 
 Once you have set up the environment, you can open the PDF document using the following code:
 
@@ -48,7 +48,7 @@ Document pdfDocument = new Document(dataDir + "SetFreeTextAnnotationFormatting.p
 
 Replace "SetFreeTextAnnotationFormatting.pdf" with the actual name of your PDF document.
 
-## 5. Set up default appearance
+## Step 5: Set up default appearance
 
 To set up the default appearance of the free text annotation, you need to instantiate the DefaultAppearance object with the desired font, font size, and color. In this tutorial, we are setting the font to "Arial", font size to 28, and color to red.
 
@@ -57,7 +57,7 @@ To set up the default appearance of the free text annotation, you need to instan
 DefaultAppearance default_appearance = new DefaultAppearance("Arial", 28, System.Drawing.Color.Red);
 ```
 
-## 6. Create a free text annotation
+## Step 6: Create a free text annotation
 
 Now that you have set up the default appearance, you can create a free text annotation using the following code:
 
@@ -68,7 +68,7 @@ FreeTextAnnotation freetext = new FreeTextAnnotation(pdfDocument.Pages[1], new A
 
 The above code creates a new free text annotation on the second page of the PDF document. The annotation will be positioned at (200, 400) and will have a width of 400 and a height of 600.
 
-## 7. Specify the contents of the annotation
+## Step 7: Specify the contents of the annotation
 
 After creating the free text annotation, you can specify the contents of the annotation using the following code:
 

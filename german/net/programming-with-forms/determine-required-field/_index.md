@@ -51,7 +51,7 @@ Console.WriteLine("The field " + field.FullName + " is required");
 }
 ```
 
-### Beispielquellcode für „Erforderliches Feld ermitteln“ mit Aspose.Words für .NET 
+### Beispielquellcode für „Erforderliches Feld ermitteln“ mit Aspose.PDF für .NET 
 ```csharp
 // Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

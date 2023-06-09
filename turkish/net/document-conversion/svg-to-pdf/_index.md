@@ -43,7 +43,7 @@ doc.Save(dataDir + "SVGToPDF_out.pdf");
 
 Ortaya çıkan PDF dosyası için istenen yolu ve dosya adını belirttiğinizden emin olun.
 
-### Aspose.Words for .NET kullanarak SVG'den PDF'e dönüştürme için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak SVG'den PDF'e dönüştürme için örnek kaynak kodu
 
 ```csharp
 // Belgeler dizininin yolu.

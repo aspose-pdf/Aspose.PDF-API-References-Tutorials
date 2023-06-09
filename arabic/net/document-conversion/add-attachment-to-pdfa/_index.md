@@ -61,7 +61,7 @@ FileSpecification fileSpecification = new FileSpecification(dataDir + "aspose-lo
 doc.EmbeddedFiles.Add(fileSpecification);
 ```
 
- في الكود أعلاه ، نستخدم الامتداد`Add` طريقة الوثيقة`s `مجموعة EmbeddedFiles` لإضافة مواصفات الملف كمرفق.
+ في الكود أعلاه ، نستخدم الامتداد`Add` طريقة المستند`s `مجموعة EmbeddedFiles` لإضافة مواصفات الملف كمرفق.
 
 ## الخطوة 4: التحويل إلى PDF / A_3a
 
@@ -85,7 +85,7 @@ doc.Save(dataDir + "AddAttachmentToPDFA_out.pdf");
 
  في الكود أعلاه ، نستخدم الامتداد`Save` طريقة لحفظ المستند باسم الملف`"AddAttachmentToPDFA_out.pdf"`. تأكد من تحديد المسار المناسب حيث تريد حفظ الملف الناتج.
 
-### مثال على الكود المصدري لإضافة مرفق إلى PDFA باستخدام Aspose.Words for .NET
+### مثال على الكود المصدري لإضافة مرفق إلى PDFA باستخدام Aspose.PDF for .NET
 
 ```csharp
 // المسار إلى دليل المستندات.

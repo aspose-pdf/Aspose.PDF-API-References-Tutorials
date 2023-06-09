@@ -7,7 +7,7 @@ type: docs
 weight: 70
 url: /sv/net/programming-with-pdf-pages/get-number-of-pages/
 ---
-I den här handledningen går vi igenom steg-för-steg-processen för att få sidantal för en PDF-fil med Aspose.PDF för .NET. Vi kommer att förklara den medföljande C#-källkoden och förse dig med en omfattande guide som hjälper dig att förstå och implementera den här funktionen i dina egna projekt. I slutet av denna handledning kommer du att veta hur du får sidräkningen för en PDF-fil med Aspose.PDF för .NET.
+den här handledningen går vi igenom steg-för-steg-processen för att få sidantal för en PDF-fil med Aspose.PDF för .NET. Vi kommer att förklara den medföljande C#-källkoden och förse dig med en omfattande guide som hjälper dig att förstå och implementera den här funktionen i dina egna projekt. I slutet av denna handledning kommer du att veta hur du får sidräkningen för en PDF-fil med Aspose.PDF för .NET.
 
 ## Förutsättningar
 Innan du börjar, se till att du har följande:
@@ -30,7 +30,7 @@ Document pdfDocument = new Document(dataDir + "GetNumberofPages.pdf");
 ```
 
 ## Steg 3: Få antalet sidor
- Nu kan du få antalet sidor i dokumentet med hjälp av`Count`handlingens egendom`s `Sidornas samling. Detta ger dig det totala antalet sidor i PDF-filen.
+ Nu kan du få antalet sidor i dokumentet med hjälp av`Count` handlingens egendom`s `Sidornas samling. Detta ger dig det totala antalet sidor i PDF-filen.
 
 ```csharp
 System.Console.WriteLine("Number of pages: {0}", pdfDocument.Pages.Count);
@@ -50,4 +50,4 @@ System.Console.WriteLine("Page Count : {0}", pdfDocument.Pages.Count);
 ```
 
 ## Slutsats
-I den här handledningen lärde vi oss hur man får sidantalet för en PDF-fil med Aspose.PDF för .NET. Genom att följa stegen ovan kan du enkelt implementera denna funktion i dina egna projekt. Utforska gärna Aspose.PDF-dokumentationen ytterligare för att upptäcka andra användbara funktioner för att arbeta med PDF-filer.
+den här handledningen lärde vi oss hur man får sidantalet för en PDF-fil med Aspose.PDF för .NET. Genom att följa stegen ovan kan du enkelt implementera denna funktion i dina egna projekt. Utforska gärna Aspose.PDF-dokumentationen ytterligare för att upptäcka andra användbara funktioner för att arbeta med PDF-filer.

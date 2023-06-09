@@ -49,7 +49,7 @@ dataDir = dataDir + "FlattenForms_out.pdf";
 doc.Save(dataDir);
 ```
 
-### 使用 Aspose.Words for .NET 的 Flatten Forms 示例源代码 
+### 使用 Aspose.PDF for .NET 的 Flatten Forms 示例源代码 
 ```csharp
 //文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";

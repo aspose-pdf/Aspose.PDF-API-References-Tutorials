@@ -83,7 +83,7 @@ Voici le code source complet pour intégrer une police à l'aide d'Aspose.PDF po
 // Chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Charger un fichier PDF existant
+// Charger un fichier PDF existant
 Document doc = new Document(dataDir + "input.pdf");
 
 // Parcourez toutes les pages

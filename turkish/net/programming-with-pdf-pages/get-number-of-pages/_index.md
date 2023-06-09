@@ -30,7 +30,7 @@ Document pdfDocument = new Document(dataDir + "GetNumberofPages.pdf");
 ```
 
 ## 3. Adım: Sayfa sayısını alın
- Artık belgedeki sayfa sayısını aşağıdakini kullanarak alabilirsiniz:`Count`belgenin özelliği`s `Sayfaların koleksiyonu. Bu size PDF dosyasındaki toplam sayfa sayısını verecektir.
+ Artık belgedeki sayfa sayısını aşağıdakini kullanarak alabilirsiniz:`Count` belgenin özelliği`s `Sayfaların koleksiyonu. Bu size PDF dosyasındaki toplam sayfa sayısını verecektir.
 
 ```csharp
 System.Console.WriteLine("Number of pages: {0}", pdfDocument.Pages.Count);

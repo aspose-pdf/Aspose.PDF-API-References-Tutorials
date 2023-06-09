@@ -43,7 +43,7 @@ doc.Save(dataDir + "PCLToPDF_out.pdf");
 
 上面的代码将 PCL 文件转换为 PDF 格式并将其保存为文件名`"PCLToPDF_out.pdf"`.
 
-### 使用 Aspose.Words for .NET 的 PCL 到 PDF 的示例源代码
+### 使用 Aspose.PDF for .NET 的 PCL 到 PDF 的示例源代码
 
 ```csharp
 try

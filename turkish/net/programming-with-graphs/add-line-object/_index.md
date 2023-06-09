@@ -63,7 +63,7 @@ Son olarak ortaya çıkan PDF dosyasını belirtilen dizine "AddLineObject_out.p
 doc.Save(dataDir + "AddLineObject_out.pdf");
 ```
 
-### Aspose.Words for .NET kullanarak Add Line Object için örnek kaynak kodu 
+### Aspose.PDF for .NET kullanarak Add Line Object için örnek kaynak kodu 
 
 ```csharp
 

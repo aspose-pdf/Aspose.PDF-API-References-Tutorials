@@ -42,7 +42,7 @@ pdfDocument.Save(dataDir + "output_out.html", SaveFormat.Html);
 
 代替`"YOUR DOCUMENTS DIRECTORY"`使用要保存输出 HTML 文件的所需目录。
 
-### 使用 Aspose.Words for .NET 将 PDF 转换为 HTML 的示例源代码
+### 使用 Aspose.PDF for .NET 将 PDF 转换为 HTML 的示例源代码
 
 ```csharp
 //文档目录的路径。

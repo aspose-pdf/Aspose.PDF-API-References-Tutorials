@@ -80,7 +80,7 @@ Finally, we save the resulting PDF file with the name "CreateRectangleWithAlphaC
 doc.Save(dataDir + "CreateRectangleWithAlphaColor_out.pdf");
 ```
 
-### Sample source code for Create Rectangle With Alpha Color using Aspose.Words for .NET 
+### Sample source code for Create Rectangle With Alpha Color using Aspose.PDF for .NET 
 
 ```csharp
 

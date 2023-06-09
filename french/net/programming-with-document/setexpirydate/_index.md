@@ -60,7 +60,7 @@ doc.OpenAction = javaScript;
 
 Dans ce code, nous fixons la date d'expiration à mai 2017.
 
-## Étape 6 : Enregistrez le fichier PDF
+## Étape 6 : Enregistrer le fichier PDF
 
  Après avoir défini la date d'expiration, vous devez enregistrer le fichier PDF. Pour ce faire, vous pouvez utiliser le`Save` méthode de la`Document` objet et transmettez le chemin d'accès à l'endroit où vous souhaitez enregistrer le fichier PDF mis à jour.
 

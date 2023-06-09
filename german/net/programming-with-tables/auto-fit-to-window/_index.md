@@ -8,7 +8,7 @@ weight: 50
 url: /de/net/programming-with-tables/auto-fit-to-window/
 ---
 
-Der folgende Artikel ist eine Schritt-für-Schritt-Anleitung zur Verwendung des bereitgestellten C#-Quellcodes, um mithilfe der Aspose.PDF-Bibliothek für .NET die Funktion „Automatisch an Fenster anpassen“ zu erreichen. Mit der Funktion „Automatisch an Fenster anpassen“ können Sie PDF-Dateien mit einem an das Anzeigefenster angepassten Layout erstellen. Diese Funktion ist besonders nützlich, wenn Ihr PDF-Dokument automatisch an die Größe des vom Benutzer verwendeten PDF-Reader-Fensters angepasst werden soll.
+Der folgende Artikel ist eine Schritt-für-Schritt-Anleitung zur Verwendung des bereitgestellten C#-Quellcodes, um mithilfe der Aspose.PDF-Bibliothek für .NET die Funktion „Automatisch an Fenster anpassen“ zu erreichen. Mit der Funktion „Auto Fit To Window“ können Sie PDF-Dateien mit einem an das Anzeigefenster angepassten Layout erstellen. Diese Funktion ist besonders nützlich, wenn Ihr PDF-Dokument automatisch an die Größe des vom Benutzer verwendeten PDF-Reader-Fensters angepasst werden soll.
 
 ## Schritt 1: Einrichten der Umgebung
 
@@ -92,7 +92,7 @@ dataDir = dataDir + "AutoFitToWindow_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Beispielquellcode für „Auto Fit To Window“ mit Aspose.Words für .NET
+### Beispielquellcode für „Auto Fit To Window“ mit Aspose.PDF für .NET
 
 ```csharp
 // Der Pfad zum Dokumentenverzeichnis.

@@ -49,7 +49,7 @@ dataDir = dataDir + "FlattenForms_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Exemple de code source pour Flatten Forms en utilisant Aspose.Words pour .NET 
+### Exemple de code source pour Flatten Forms à l'aide d'Aspose.PDF pour .NET 
 ```csharp
 // Chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

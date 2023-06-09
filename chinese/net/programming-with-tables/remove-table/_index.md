@@ -1,6 +1,6 @@
 ---
-title: 删除表格
-linktitle: 删除表格
+title: 删除表
+linktitle: 删除表
 second_title: Aspose.PDF for .NET API 参考
 description: 了解如何使用 Aspose.PDF for .NET 删除 PDF 文档中的表格。
 type: docs
@@ -61,7 +61,7 @@ absorb.Remove(table);
 pdfDocument.Save(dataDir + "Table_out.pdf");
 ```
 
-### 使用 Aspose.Words for .NET 删除表格的示例源代码
+### 使用 Aspose.PDF for .NET 删除表格的示例源代码
 
 ```csharp
 //文档目录的路径。

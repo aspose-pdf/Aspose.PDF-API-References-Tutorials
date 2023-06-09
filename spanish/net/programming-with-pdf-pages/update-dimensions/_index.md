@@ -7,7 +7,7 @@ type: docs
 weight: 150
 url: /es/net/programming-with-pdf-pages/update-dimensions/
 ---
-En este tutorial, lo guiaremos a través del proceso paso a paso para actualizar las dimensiones de la página en un documento PDF usando Aspose.PDF para .NET. Explicaremos el código fuente de C# incluido y le proporcionaremos una guía completa para ayudarlo a comprender e implementar esta función en sus propios proyectos. Al final de este tutorial, sabrá cómo cambiar las dimensiones de la página en un documento PDF utilizando Aspose.PDF para .NET.
+En este tutorial, lo guiaremos a través del proceso paso a paso para actualizar las dimensiones de la página en un documento PDF usando Aspose.PDF para .NET. Explicaremos el código fuente de C# incluido y le proporcionaremos una guía completa para ayudarlo a comprender e implementar esta característica en sus propios proyectos. Al final de este tutorial, sabrá cómo cambiar las dimensiones de la página en un documento PDF utilizando Aspose.PDF para .NET.
 
 ## requisitos previos
 Antes de comenzar, asegúrese de tener lo siguiente:
@@ -16,7 +16,7 @@ Antes de comenzar, asegúrese de tener lo siguiente:
 - Aspose.PDF para .NET instalado en su entorno de desarrollo
 
 ## Paso 1: Definir el directorio de documentos
-Primero, debe establecer la ruta a su directorio de documentos. Esta es la ubicación donde desea guardar su documento PDF editado. Reemplace "SU DIRECTORIO DE DOCUMENTOS" con la ruta apropiada.
+Primero, debe establecer la ruta a su directorio de documentos. Esta es la ubicación donde desea guardar su documento PDF editado. Reemplace "SU DIRECTORIO DE DOCUMENTOS" con la ruta adecuada.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -51,7 +51,7 @@ pdfPage.SetPageSize(597.6, 842.4);
 ```
 
 ## Paso 6: Guarde el documento actualizado
-Finalmente, puede guardar el documento PDF actualizado en un archivo usando el`Save()` metodo de la`Document` clase. Asegúrese de especificar la ruta y el nombre de archivo correctos.
+Finalmente, puede guardar el documento PDF actualizado en un archivo usando el`Save()` metodo de la`Document`clase. Asegúrese de especificar la ruta y el nombre de archivo correctos.
 
 ```csharp
 dataDir = dataDir + "UpdateDimensions_out.pdf";

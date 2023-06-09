@@ -15,7 +15,7 @@ url: /zh/net/annotations/setcalloutproperty/
 
 如果您还没有这样做，您将需要[下载](https://releases.aspose.com/pdf/net/)并从 Aspose Releases 或通过 NuGet 包管理器安装 Aspose.PDF for .NET。
 
-## 创建一个新的 PDF 文档
+## 第 1 步：创建一个新的 PDF 文档
 
 使用创建一个新的 PDF 文档`Document`Aspose.PDF for .NET 提供的类。
 
@@ -25,7 +25,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 ```
 
-## 向文档添加新页面
+## 第 2 步：向文档添加新页面
 
 使用`Pages`的集合`Document`班级。
 
@@ -33,7 +33,7 @@ Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## 设置默认外观
+## 第 3 步：设置默认外观
 
 通过创建一个新的来设置自由文本注释的默认外观`DefaultAppearance`对象并设置其属性，例如`TextColor`和`FontSize`.
 
@@ -43,7 +43,7 @@ da.TextColor = System.Drawing.Color.Red;
 da.FontSize = 10;
 ```
 
-## 创建带有标注的自由文本注释
+## 第 4 步：创建带有标注的自由文本注释
 
 使用标注创建一个新的自由文本注释`FreeTextAnnotation`班级。设置`Intent`财产给`FreeTextIntent.FreeTextCallout`指定这是标注注释。设置`EndingStyle`财产给`LineEnding.OpenArrow`指定标注末尾箭头的样式。设置`Callout`属性数组`Point`表示页面上应绘制标注线的点的对象。
 
@@ -57,7 +57,7 @@ fta.Callout = new Point[]
 };
 ```
 
-## 将自由文本注释添加到页面
+## 第 5 步：将自由文本注释添加到页面
 
 使用`Annotations`的集合`Page`班级。
 
@@ -65,7 +65,7 @@ fta.Callout = new Point[]
 page.Annotations.Add(fta);
 ```
 
-## 向注释添加文本
+## 第 6 步：向注释添加文本
 
 通过设置`RichText`属性为格式化的 XML 字符串。在本教程中，我们将文本颜色设置为红色，将字体大小设置为 9。
 
@@ -73,7 +73,7 @@ page.Annotations.Add(fta);
 fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"color:#FF
 ```
 
-## 8.保存文档
+## 第七步：保存文件
 
 现在使用以下代码保存文档：
 

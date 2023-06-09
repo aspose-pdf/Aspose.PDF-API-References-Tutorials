@@ -73,7 +73,7 @@ Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length,
 
 ### Exemple de code source pour obtenir des polices non incorporées à l'aide d'Aspose.PDF pour .NET
 
-Voici l'exemple de code source complet permettant d'obtenir des polices non incorporées à partir d'un document PDF à l'aide d'Aspose.PDF pour .NET :
+Voici l'exemple de code source complet pour obtenir des polices non incorporées à partir d'un document PDF à l'aide d'Aspose.PDF pour .NET :
 
 ```csharp
 // Chemin d'accès au répertoire des documents.

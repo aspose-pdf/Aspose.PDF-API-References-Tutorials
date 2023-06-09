@@ -30,7 +30,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ## الخطوة الثانية: تحميل ملف PDF المدخل
 
- في هذه الخطوة ، سنقوم بتحميل ملف PDF المدخل باستخدام الامتداد`Document` فئة Aspose.PDF.
+ في هذه الخطوة ، سنقوم بتحميل ملف PDF المدخل باستخدام الامتداد`Document`فئة Aspose.PDF.
 
 ```csharp
 // قم بتحميل ملف PDF للإدخال
@@ -51,7 +51,7 @@ TextBoxField field = (TextBoxField)doc.Form["textbox1"];
 
 ## الخطوة 4: تكوين إجراءات JavaScript
 
- الآن وقد وصلنا إلى حقل النص ، يمكننا تكوين إجراءات JavaScript المرتبطة بهذا الحقل. في هذا المثال ، سوف نستخدم إجراءين:`OnModifyCharacter` و`OnFormat` . سيتم تحديد هذه الإجراءات باستخدام`JavascriptAction` أشياء.
+ الآن وقد وصلنا إلى حقل النص ، يمكننا تكوين إجراءات JavaScript المرتبطة بهذا الحقل. في هذا المثال ، سنستخدم إجراءين:`OnModifyCharacter` و`OnFormat` . سيتم تحديد هذه الإجراءات باستخدام`JavascriptAction` أشياء.
 
 ```csharp
 field.Actions.OnModifyCharacter = new JavascriptAction("AFNumber_Keystroke(2, 1, 1, 0, \"\", true)");
@@ -83,7 +83,7 @@ doc.Save(dataDir);
 تأكد من تحديد المسار الكامل واسم الملف لملف PDF الناتج.
 
 
-### عينة من التعليمات البرمجية المصدر لـ Set Java Script باستخدام Aspose.Words for .NET 
+### نموذج التعليمات البرمجية المصدر لـ Set Java Script باستخدام Aspose.PDF لـ .NET 
 ```csharp
 // المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

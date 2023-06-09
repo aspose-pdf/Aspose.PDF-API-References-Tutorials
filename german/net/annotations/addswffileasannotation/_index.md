@@ -78,7 +78,7 @@ Dieser Code speichert das aktualisierte PDF-Dokument mit der Anmerkung als „Ad
 // Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Öffnen Sie das PDF-Dokument
+// Öffnen Sie das PDF-Dokument
 Document doc = new Document(dataDir + "AddSwfFileAsAnnotation.pdf");
 
 // Rufen Sie den Verweis auf die Seite ab, zu der Sie die Anmerkung hinzufügen müssen

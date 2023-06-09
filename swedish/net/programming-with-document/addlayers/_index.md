@@ -23,7 +23,7 @@ Document doc = new Document();
 
 ## Steg 2: Lägg till en sida i dokumentet
 
- Lägg sedan till en sida i dokumentet med hjälp av`Add` metod för`Pages` samling i`Document` klass.
+Lägg sedan till en sida i dokumentet med hjälp av`Add` metod för`Pages` samling i`Document` klass.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -61,7 +61,7 @@ I den här handledningen har vi lagt till tre lager med olika färger och namn p
 
 ## Steg 4: Spara PDF-filen
 
-Spara den ändrade PDF-filen med hjälp av`Save` metod för`Document` klass.
+ Spara den ändrade PDF-filen med hjälp av`Save` metod för`Document` klass.
 
 ```csharp
 dataDir = dataDir + "AddLayers_out.pdf";

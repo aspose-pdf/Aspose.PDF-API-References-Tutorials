@@ -7,7 +7,7 @@ type: docs
 weight: 140
 url: /es/net/programming-with-pdf-pages/split-to-pages/
 ---
-En este tutorial, lo guiaremos a través del proceso paso a paso para dividir un documento PDF en páginas individuales usando Aspose.PDF para .NET. Explicaremos el código fuente de C# incluido y le proporcionaremos una guía completa para ayudarlo a comprender e implementar esta función en sus propios proyectos. Al final de este tutorial, sabrá cómo dividir un documento PDF en varios archivos PDF, cada uno con una sola página.
+En este tutorial, lo guiaremos a través del proceso paso a paso para dividir un documento PDF en páginas individuales usando Aspose.PDF para .NET. Explicaremos el código fuente de C# incluido y le proporcionaremos una guía completa para ayudarlo a comprender e implementar esta característica en sus propios proyectos. Al final de este tutorial, sabrá cómo dividir un documento PDF en varios archivos PDF, cada uno con una sola página.
 
 ## requisitos previos
 Antes de comenzar, asegúrese de tener lo siguiente:

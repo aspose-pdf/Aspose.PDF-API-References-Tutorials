@@ -33,7 +33,7 @@ TableAbsorber absorber = new TableAbsorber();
 Wir besuchen nun die erste Seite des PDF-Dokuments mit dem Absorber:
 
 ```csharp
-//Besuchen Sie die erste Seite mit dem Absorber
+// Besuchen Sie die erste Seite mit dem Absorber
 absorb.Visit(pdfDocument.Pages[1]);
 ```
 
@@ -49,7 +49,7 @@ AbsorbedTable table = absorb.TableList[0];
 Jetzt entfernen wir den Tisch mit dem Absorber:
 
 ```csharp
-// Entfernen Sie den Tisch
+//Entfernen Sie den Tisch
 absorb.Remove(table);
 ```
 
@@ -61,7 +61,7 @@ Abschließend speichern wir das geänderte PDF-Dokument:
 pdfDocument.Save(dataDir + "Table_out.pdf");
 ```
 
-### Beispielquellcode für Remove Table mit Aspose.Words für .NET
+### Beispielquellcode für Remove Table mit Aspose.PDF für .NET
 
 ```csharp
 // Der Pfad zum Dokumentenverzeichnis.

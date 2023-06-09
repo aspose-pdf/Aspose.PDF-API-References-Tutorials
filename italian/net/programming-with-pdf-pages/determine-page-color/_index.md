@@ -29,7 +29,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document pdfDocument = new Document(dataDir + "input.pdf");
 ```
 
-## Passaggio 3: analizza le pagine
+## Passaggio 3: analizzare le pagine
  Ora puoi scorrere tutte le pagine del documento PDF usando a`for` ciclo continuo. Per ogni pagina, puoi ottenere il tipo di colore della pagina utilizzando il file`ColorType` proprietà del`Page` oggetto e visualizzarlo nella console.
 
 ```csharp
@@ -62,7 +62,7 @@ for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // File PDF di origine aperta
 Document pdfDocument = new Document( dataDir + "input.pdf");
-// Itera attraverso tutta la pagina del file PDF
+//Itera attraverso tutta la pagina del file PDF
 for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 {
 	// Ottieni le informazioni sul tipo di colore per una particolare pagina PDF

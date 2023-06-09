@@ -70,7 +70,7 @@ table. ColumnWidths = "100 100";
 In questo passaggio, aggiungeremo una riga e celle alla tabella. Ogni riga rappresenta una riga orizzontale nella tabella e le celle vengono aggiunte alle righe. Aggiungi il seguente codice:
 
 ```csharp
-// Crea un oggetto riga e aggiungilo all'istanza della tabella
+//Crea un oggetto riga e aggiungilo all'istanza della tabella
 Aspose.Pdf.Row row = table.Rows.Add();
 // Crea un oggetto cella e aggiungilo all'istanza di riga
 Aspose.Pdf.Cell cell = row.Cells.Add();
@@ -112,7 +112,7 @@ doc.Save(dataDir);
 Console.WriteLine("\nSVG image added successfully inside a table cell.\nFile saved at " + dataDir);
 ```
 
-### Esempio di codice sorgente per aggiungere un oggetto SVG utilizzando Aspose.Words per .NET
+### Esempio di codice sorgente per aggiungere un oggetto SVG utilizzando Aspose.PDF per .NET
 
 ```csharp
 // Il percorso della directory dei documenti.
@@ -134,7 +134,7 @@ img.FixHeight = 50;
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
 // Imposta la larghezza delle celle della tabella
 table.ColumnWidths = "100 100";
-// Crea un oggetto riga e aggiungilo all'istanza della tabella
+//Crea un oggetto riga e aggiungilo all'istanza della tabella
 Aspose.Pdf.Row row = table.Rows.Add();
 // Crea un oggetto cella e aggiungilo all'istanza di riga
 Aspose.Pdf.Cell cell = row.Cells.Add();

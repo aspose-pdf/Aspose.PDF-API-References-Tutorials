@@ -67,7 +67,7 @@ dataDir = dataDir + "HorizontallyAndVerticallyRadioButtons_out.pdf";
 formEditor.Save(dataDir);
 ```
 
-### Esempio di codice sorgente per i pulsanti di opzione orizzontali e verticali utilizzando Aspose.Words per .NET 
+### Esempio di codice sorgente per i pulsanti di opzione orizzontali e verticali utilizzando Aspose.PDF per .NET 
 ```csharp
 try
 {

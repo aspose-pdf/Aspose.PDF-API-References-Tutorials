@@ -62,7 +62,7 @@ pngDevice.Process(pdfDocument.Pages[1], imageStream);
 
  تأكد من تحديد رقم الصفحة الصحيح في`pdfDocument.Pages[1]`.
 
-### مثال على شفرة المصدر لـ Set Default Font Name باستخدام Aspose.Words for .NET
+### مثال على التعليمات البرمجية المصدر لتعيين اسم الخط الافتراضي باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 // المسار إلى دليل المستندات.

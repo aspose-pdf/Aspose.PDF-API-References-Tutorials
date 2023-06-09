@@ -85,7 +85,7 @@ tocPage.Paragraphs.Add(table);
 doc.Save(dataDir + "43620_ByWords_out.pdf");
 ```
 
-### 使用 Aspose.Words for .NET 的表格行内容文本对齐示例源代码
+### 使用 Aspose.PDF for .NET 的表格行内容文本对齐示例源代码
 
 ```csharp
 var dataDir = "YOUR DOCUMENT DIRECTORY";

@@ -62,7 +62,7 @@ for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Archivo PDF de código abierto
 Document pdfDocument = new Document( dataDir + "input.pdf");
-// Iterar a través de toda la página del archivo PDF
+//Iterar a través de toda la página del archivo PDF
 for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 {
 	// Obtenga la información del tipo de color para una página PDF en particular

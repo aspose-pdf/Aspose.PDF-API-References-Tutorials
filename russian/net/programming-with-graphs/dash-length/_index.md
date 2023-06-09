@@ -64,7 +64,7 @@ canvas.Shapes.Add(line);
 doc.Save(dataDir + "DashLength_out.pdf");
 ```
 
-### Пример исходного кода для длины тире с использованием Aspose.Words для .NET 
+### Пример исходного кода для Dash Length с использованием Aspose.PDF для .NET 
 
 ```csharp
 

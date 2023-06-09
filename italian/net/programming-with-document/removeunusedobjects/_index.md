@@ -7,7 +7,7 @@ type: docs
 weight: 260
 url: /it/net/programming-with-document/removeunusedobjects/
 ---
-Se stai cercando un modo per rimuovere oggetti inutilizzati nei tuoi documenti PDF utilizzando Aspose.PDF per .NET, sei nel posto giusto. Questa guida dettagliata ti mostrerà come utilizzare il codice sorgente C# fornito per eseguire questa attività.
+Se stai cercando un modo per rimuovere oggetti inutilizzati nei tuoi documenti PDF utilizzando Aspose.PDF per .NET, sei nel posto giusto. Questa guida dettagliata ti mostrerà come utilizzare il codice sorgente C# fornito per eseguire questa operazione.
 
 ## Passaggio 1: impostare il percorso della directory
 

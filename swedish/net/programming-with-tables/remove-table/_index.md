@@ -33,7 +33,7 @@ TableAbsorber absorber = new TableAbsorber();
 Vi kommer nu att besöka den första sidan av PDF-dokumentet med hjälp av absorberaren:
 
 ```csharp
-//Besök första sidan med absorbenten
+// Besök första sidan med absorbenten
 absorb.Visit(pdfDocument.Pages[1]);
 ```
 
@@ -49,7 +49,7 @@ AbsorbedTable table = absorb.TableList[0];
 Låt oss nu ta bort bordet med hjälp av absorbatorn:
 
 ```csharp
-// ta bort bordet
+//ta bort bordet
 absorb.Remove(table);
 ```
 
@@ -61,7 +61,7 @@ Slutligen sparar vi det modifierade PDF-dokumentet:
 pdfDocument.Save(dataDir + "Table_out.pdf");
 ```
 
-### Exempel på källkod för Remove Table med Aspose.Words för .NET
+### Exempel på källkod för Remove Table med Aspose.PDF för .NET
 
 ```csharp
 // Sökvägen till dokumentkatalogen.

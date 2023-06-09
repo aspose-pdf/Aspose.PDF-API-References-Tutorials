@@ -8,7 +8,7 @@ weight: 30
 url: /fr/net/programming-with-tables/add-svg-object/
 ---
 
-Dans ce didacticiel, nous allons apprendre à ajouter un objet SVG à un fichier PDF à l'aide de la bibliothèque Aspose.PDF pour .NET. SVG (Scalable Vector Graphics) est un format populaire pour les graphiques vectoriels qui peuvent être facilement mis à l'échelle sans perte de qualité. Avec Aspose.PDF, vous pouvez ajouter des objets SVG à vos documents PDF par programmation.
+Dans ce didacticiel, nous allons apprendre à ajouter un objet SVG à un fichier PDF à l'aide de la bibliothèque Aspose.PDF pour .NET. SVG (Scalable Vector Graphics) est un format populaire pour les graphiques vectoriels qui peuvent être facilement mis à l'échelle sans perte de qualité. Avec Aspose.PDF, vous pouvez ajouter des objets SVG à vos documents PDF par programme.
 
 ## Exigences
 
@@ -70,7 +70,7 @@ table. ColumnWidths = "100 100";
 Dans cette étape, nous allons ajouter une ligne et des cellules au tableau. Chaque ligne représente une ligne horizontale dans le tableau et des cellules sont ajoutées aux lignes. Ajoutez le code suivant :
 
 ```csharp
-// Créer un objet de ligne et l'ajouter à l'instance de table
+//Créer un objet de ligne et l'ajouter à l'instance de table
 Aspose.Pdf.Row row = table.Rows.Add();
 // Créer un objet cellule et l'ajouter à l'instance de ligne
 Aspose.Pdf.Cell cell = row.Cells.Add();
@@ -112,7 +112,7 @@ doc.Save(dataDir);
 Console.WriteLine("\nSVG image added successfully inside a table cell.\nFile saved at " + dataDir);
 ```
 
-### Exemple de code source pour ajouter un objet SVG à l'aide de Aspose.Words pour .NET
+### Exemple de code source pour ajouter un objet SVG à l'aide d'Aspose.PDF pour .NET
 
 ```csharp
 // Chemin d'accès au répertoire des documents.
@@ -134,7 +134,7 @@ img.FixHeight = 50;
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
 // Définir la largeur des cellules du tableau
 table.ColumnWidths = "100 100";
-// Créer un objet de ligne et l'ajouter à l'instance de table
+//Créer un objet de ligne et l'ajouter à l'instance de table
 Aspose.Pdf.Row row = table.Rows.Add();
 // Créer un objet cellule et l'ajouter à l'instance de ligne
 Aspose.Pdf.Cell cell = row.Cells.Add();

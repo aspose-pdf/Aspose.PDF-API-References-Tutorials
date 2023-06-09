@@ -48,7 +48,7 @@ pdfDocument.Save("PDFToXLS_out.xls", excelsave);
 
  Le code ci-dessus enregistre le fichier PDF converti au format XLS avec le nom de fichier`"PDFToXLS_out.xls"`.
 
-### Exemple de code source pour PDF vers XLS en utilisant Aspose.Words pour .NET
+### Exemple de code source pour PDF vers XLS en utilisant Aspose.PDF pour .NET
 
 ```csharp
 // Chemin d'accès au répertoire des documents.

@@ -1,6 +1,6 @@
 ---
-title: Web Sayfasından PDF'ye
-linktitle: Web Sayfasından PDF'ye
+title: Web Sayfasından PDF'e
+linktitle: Web Sayfasından PDF'e
 second_title: Aspose.PDF for .NET API Referansı
 description: Aspose.PDF for .NET kullanarak web sayfasını PDF'ye dönüştürmek için adım adım kılavuz.
 type: docs
@@ -71,7 +71,7 @@ Console.WriteLine(ex.Message);
 ```
 Dönüştürme işlemi sırasında oluşabilecek istisnaları yakalayın ve hata mesajını görüntüleyin.
 
-### Aspose.Words for .NET kullanarak Web Sayfasını PDF'e dönüştürmek için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak Web Sayfasını PDF'e dönüştürmek için örnek kaynak kodu
 
 ```csharp
 try

@@ -83,7 +83,7 @@ doc.Save(dataDir);
 请务必指定生成的 PDF 的完整路径和文件名。
 
 
-### 使用 Aspose.Words for .NET 设置 Java 脚本的示例源代码 
+### 使用 Aspose.PDF for .NET 设置 Java 脚本的示例源代码 
 ```csharp
 //文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";

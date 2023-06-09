@@ -14,7 +14,7 @@ Koda dalmadan önce, Aspose.PDF for .NET kitaplığının kurulu olduğundan ve 
 
 ## 1. Adım: Belgeyi Ayarlama
 
- Başlamak için, yeni bir örnek oluşturmamız gerekiyor.`Document` Aspose.Pdf ad alanından sınıf. Bu sınıf bir PDF belgesini temsil eder.
+ Başlamak için, yeni bir örnek oluşturmamız gerekiyor.`Document`Aspose.Pdf ad alanından sınıf. Bu sınıf bir PDF belgesini temsil eder.
 
 ```csharp
 // Belgeler dizininin yolu.
@@ -35,7 +35,7 @@ Page sec1 = pdfDocument.Pages.Add();
 
 ## 3. Adım: Tablo Ekleme
 
-Bu adımda, somutlaştırarak bir tablo oluşturacağız.`Table` Aspose.Pdf ad alanından sınıf.
+ Bu adımda, somutlaştırarak bir tablo oluşturacağız.`Table` Aspose.Pdf ad alanından sınıf.
 
 ```csharp
 // Bir tablo nesnesini somutlaştırın
@@ -121,7 +121,7 @@ pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 
 Tebrikler! Aspose.PDF for .NET kullanarak bir tablo hücresine nasıl resim ekleneceğini başarıyla öğrendiniz. Daha fazla özelleştirme seçeneğini keşfetmekten ve bu işlevi projelerinize entegre etmekten çekinmeyin.
 
-### Aspose.Words for .NET kullanarak bir tablo hücresine görüntü eklemek için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak bir tablo hücresine görüntü eklemek için örnek kaynak kodu
 
 ```csharp
 // Belgeler dizininin yolu.
@@ -133,7 +133,7 @@ Document pdfDocument = new Document();
 Page sec1 = pdfDocument.Pages.Add();
 // Bir tablo nesnesini somutlaştırın
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
-// İstenilen sayfanın paragraf koleksiyonuna tablo ekleme
+//İstenilen sayfanın paragraf koleksiyonuna tablo ekleme
 sec1.Paragraphs.Add(tab1);
 // BorderInfo nesnesini kullanarak varsayılan hücre kenarlığını ayarlayın
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);

@@ -67,4 +67,4 @@ doc.Save(dataDir);
 
 ## Çözüm
 
-Aspose.PDF for .NET, C# kodunu kullanarak bir PDF belgesinin yakınlaştırma faktörünü ayarlamak için basit ve verimli bir yol sunar. Yukarıdaki adımları izleyerek, herhangi bir PDF belgesinin yakınlaştırma faktörünü .NET uygulamanızda kolayca değiştirebilirsiniz.
+Aspose.PDF for .NET, C# kodunu kullanarak bir PDF belgesinin yakınlaştırma faktörünü ayarlamak için basit ve verimli bir yol sağlar. Yukarıdaki adımları izleyerek, herhangi bir PDF belgesinin yakınlaştırma faktörünü .NET uygulamanızda kolayca değiştirebilirsiniz.

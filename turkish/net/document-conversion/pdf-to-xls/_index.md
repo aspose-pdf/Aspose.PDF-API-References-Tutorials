@@ -48,7 +48,7 @@ pdfDocument.Save("PDFToXLS_out.xls", excelsave);
 
  Yukarıdaki kod, dönüştürülen PDF dosyasını dosya adıyla XLS formatında kaydeder.`"PDFToXLS_out.xls"`.
 
-### Aspose.Words for .NET kullanan PDF to XLS için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak PDF to XLS için örnek kaynak kodu
 
 ```csharp
 // Belgeler dizininin yolu.

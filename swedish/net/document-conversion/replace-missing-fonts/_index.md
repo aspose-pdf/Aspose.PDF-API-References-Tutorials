@@ -66,7 +66,7 @@ pdf.Save(fileNew.FullName);
 
 Säkerställer att du har angett rätt destinationssökväg för den resulterande PDF-filen.
 
-### Exempel på källkod för Ersätt saknade teckensnitt med Aspose.Words för .NET
+### Exempel på källkod för Ersätt saknade teckensnitt med Aspose.PDF för .NET
 
 ```csharp
 // Sökvägen till dokumentkatalogen.

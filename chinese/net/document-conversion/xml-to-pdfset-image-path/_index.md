@@ -44,7 +44,7 @@ doc.Save(outFile);
 ```
 将生成的 PDF 文件保存到指定目录。
 
-### 使用 Aspose.Words for .NET 的 XML 到 PDFSet Image Path 的示例源代码
+### XML to PDFSet Image Path using Aspose.PDF for .NET 的示例源代码
 
 ```csharp
 try

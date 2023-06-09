@@ -70,7 +70,7 @@ Nous enregistrons le document PDF avec le tableau contenant le contenu HTML.
 doc.Save(dataDir + "HTMLInsideTableCell_out.pdf");
 ```
 
-### Exemple de code source pour les balises HTML à l'intérieur du tableau à l'aide de Aspose.Words pour .NET
+### Exemple de code source pour les balises HTML à l'intérieur du tableau à l'aide d'Aspose.PDF pour .NET
 
 ```csharp
 // Chemin d'accès au répertoire des documents.

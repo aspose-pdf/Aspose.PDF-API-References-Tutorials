@@ -52,7 +52,7 @@ page. Artifacts. Add(background);
 ```
 
 ## Passaggio 6: salvare il documento PDF
- Infine, puoi salvare il documento PDF in un file utilizzando l'estensione`Save()` metodo del`Document` classe. Assicurarsi di specificare il percorso e il nome file corretti.
+ Infine, puoi salvare il documento PDF in un file utilizzando l'estensione`Save()` metodo del`Document`classe. Assicurarsi di specificare il percorso e il nome file corretti.
 
 ```csharp
 doc.Save(dataDir + "ImageAsBackground_out.pdf");

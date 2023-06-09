@@ -1,6 +1,6 @@
 ---
-title: Récupérer le champ du formulaire dans l'ordre de tabulation
-linktitle: Récupérer le champ du formulaire dans l'ordre de tabulation
+title: Récupérer le champ du formulaire dans l'ordre des onglets
+linktitle: Récupérer le champ du formulaire dans l'ordre des onglets
 second_title: Référence de l'API Aspose.PDF pour .NET
 description: Apprenez à récupérer les champs de formulaire dans l'ordre de tabulation à l'aide d'Aspose.PDF pour .NET.
 type: docs
@@ -78,7 +78,7 @@ doc.Save(dataDir + "39522_out.pdf");
 
  Ici,`"39522_out.pdf"` est le nom du fichier de sortie où sera enregistré le document modifié. Spécifiez le nom et l'emplacement souhaités pour le fichier de sortie.
 
-### Exemple de code source pour Récupérer le champ de formulaire dans l'ordre de tabulation à l'aide de Aspose.Words pour .NET 
+### Exemple de code source pour Récupérer le champ de formulaire dans l'ordre de tabulation à l'aide d'Aspose.PDF pour .NET 
 ```csharp
 // Chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

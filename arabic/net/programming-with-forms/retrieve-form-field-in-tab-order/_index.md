@@ -78,7 +78,7 @@ doc.Save(dataDir + "39522_out.pdf");
 
  هنا،`"39522_out.pdf"` هو اسم ملف الإخراج حيث سيتم حفظ المستند المعدل. حدد الاسم والموقع المطلوبين لملف الإخراج.
 
-### نموذج التعليمات البرمجية المصدر لـ Retrieve Form Field In Tab Order باستخدام Aspose.Words for .NET 
+### نموذج التعليمات البرمجية المصدر لـ Retrieve Form Field In Tab Order باستخدام Aspose.PDF for .NET 
 ```csharp
 // المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

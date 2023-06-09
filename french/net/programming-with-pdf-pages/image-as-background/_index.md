@@ -52,7 +52,7 @@ page. Artifacts. Add(background);
 ```
 
 ## Étape 6 : Enregistrez le document PDF
- Enfin, vous pouvez enregistrer le document PDF dans un fichier à l'aide de la`Save()` méthode de la`Document` classe. Assurez-vous de spécifier le chemin d'accès et le nom de fichier corrects.
+ Enfin, vous pouvez enregistrer le document PDF dans un fichier à l'aide de la`Save()` méthode de la`Document`classe. Assurez-vous de spécifier le chemin d'accès et le nom de fichier corrects.
 
 ```csharp
 doc.Save(dataDir + "ImageAsBackground_out.pdf");

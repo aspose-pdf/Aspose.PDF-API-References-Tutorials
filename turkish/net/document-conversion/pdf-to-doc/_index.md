@@ -42,7 +42,7 @@ pdfDocument.Save(dataDir + "PDFToDOC_out.doc", SaveFormat.Doc);
 
  Yer değiştirmek`"YOUR DOCUMENTS DIRECTORY"` çıktı DOC dosyasını kaydetmek istediğiniz istediğiniz dizinle.
 
-### Aspose.Words for .NET kullanılarak PDF'den DOC'a için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak PDF to DOC için örnek kaynak kodu
 
 ```csharp
 // Belgeler dizininin yolu.

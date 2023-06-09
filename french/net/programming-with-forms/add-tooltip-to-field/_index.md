@@ -8,7 +8,7 @@ weight: 10
 url: /fr/net/programming-with-forms/add-tooltip-to-field/
 ---
 
-Aspose.PDF pour .NET est une bibliothèque puissante qui permet aux développeurs de manipuler des documents PDF par programmation. Dans ce didacticiel, nous allons parcourir le processus d'ajout d'une info-bulle à un champ à l'aide d'Aspose.PDF pour .NET. Nous vous fournirons un guide étape par étape pour vous aider à comprendre et à implémenter cette fonctionnalité dans votre code C#.
+Aspose.PDF pour .NET est une bibliothèque puissante qui permet aux développeurs de manipuler des documents PDF par programme. Dans ce didacticiel, nous allons parcourir le processus d'ajout d'une info-bulle à un champ à l'aide d'Aspose.PDF pour .NET. Nous vous fournirons un guide étape par étape pour vous aider à comprendre et à implémenter cette fonctionnalité dans votre code C#.
 
 ## Étape 1 : Configurer le projet et inclure Aspose.PDF pour .NET
 
@@ -59,7 +59,7 @@ Console.WriteLine("\nTooltip added successfully.\nFile saved at " + dataDir);
 
 Assurez-vous de fournir le nom et le chemin du fichier de sortie souhaité. Après avoir exécuté ce code, le formulaire PDF modifié avec l'info-bulle ajoutée sera enregistré à l'emplacement spécifié.
 
-### Exemple de code source pour Ajouter une info-bulle au champ à l'aide de Aspose.Words pour .NET 
+### Exemple de code source pour Ajouter une info-bulle au champ à l'aide d'Aspose.PDF pour .NET 
 
 ```csharp
 // Chemin d'accès au répertoire des documents.

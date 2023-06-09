@@ -23,7 +23,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ## Paso 2: Cargar el formulario PDF de origen
 
- En este paso, cargaremos el formulario PDF de origen usando el`Aspose.Pdf.Facades.Form` clase de Aspose.PDF.
+ En este paso, cargaremos el formulario PDF de origen usando el`Aspose.Pdf.Facades.Form`clase de Aspose.PDF.
 
 ```csharp
 Aspose.Pdf.Facades.Form form1 = new Aspose.Pdf.Facades.Form(dataDir + "RadioButtonField.pdf");
@@ -76,7 +76,7 @@ PDF_Template_PDF_HTML.Save(dataDir + "RadioButtonField_out.pdf");
 
 Asegúrese de especificar la ruta completa y el nombre de archivo del PDF resultante.
 
-### Ejemplo de código fuente para Establecer título de botón de radio usando Aspose.Words para .NET 
+### Ejemplo de código fuente para Establecer título de botón de radio usando Aspose.PDF para .NET 
 ```csharp
 // La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

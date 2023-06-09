@@ -12,7 +12,7 @@ PDF belgelerine JavaScript eklemek ve kaldırmak için Aspose.PDF for .NET kitap
 
 ## 1. Adım: Yeni bir PDF Belgesi Oluşturun
 
- Yeni bir örneğini oluşturarak başlayın.`Document`Aspose.PDF for .NET tarafından sağlanan sınıf. Bu, JavaScript'i ekleyeceğimiz PDF belgesi olarak hizmet edecek.
+ Yeni bir örneğini oluşturarak başlayın.`Document` Aspose.PDF for .NET tarafından sağlanan sınıf. Bu, JavaScript'i ekleyeceğimiz PDF belgesi olarak hizmet edecek.
 
 ```csharp
 // Belgeler dizininin yolu.
@@ -36,7 +36,7 @@ doc.Save(dataDir + "AddJavascript.pdf");
 
 ## 3. Adım: Belge Düzeyinde JavaScript'i Kaldırın
 
- JavaScript'i belge düzeyinde kaldırmak için PDF belgesini yükleyin ve`JavaScript` sözlük. Tuşlar üzerinde yineleme yapın ve istenen JavaScript işlevini kaldırın.
+ JavaScript'i belge düzeyinde kaldırmak için PDF belgesini yükleyin ve`JavaScript`sözlük. Tuşlar üzerinde yineleme yapın ve istenen JavaScript işlevini kaldırın.
 
 ```csharp
 Document doc1 = new Document(dataDir + "AddJavascript.pdf");

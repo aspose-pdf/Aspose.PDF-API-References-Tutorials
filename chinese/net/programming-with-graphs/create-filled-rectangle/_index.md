@@ -62,7 +62,7 @@ rect.GraphInfo.FillColor = Aspose.Pdf.Color.Red;
 doc.Save(dataDir + "CreateFilledRectangle_out.pdf");
 ```
 
-### 使用 Aspose.Words for .NET 创建填充矩形的示例源代码 
+### 使用 Aspose.PDF for .NET 创建填充矩形的示例源代码 
 
 ```csharp
 

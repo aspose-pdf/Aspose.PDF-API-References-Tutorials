@@ -42,7 +42,7 @@ The above code converts the PDF file to HTML format and saves it as `"output_out
 
 Replace `"YOUR DOCUMENTS DIRECTORY"` with the desired directory where you want to save the output HTML file.
 
-### Example source code for PDF to HTML using Aspose.Words for .NET
+### Example source code for PDF to HTML using Aspose.PDF for .NET
 
 ```csharp
 // The path to the documents directory.

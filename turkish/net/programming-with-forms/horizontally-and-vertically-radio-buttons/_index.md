@@ -67,7 +67,7 @@ dataDir = dataDir + "HorizontallyAndVerticallyRadioButtons_out.pdf";
 formEditor.Save(dataDir);
 ```
 
-### Aspose.Words for .NET kullanan Yatay ve Dikey Radyo Düğmeleri için örnek kaynak kodu 
+### Aspose.PDF for .NET kullanan Yatay ve Dikey Radyo Düğmeleri için örnek kaynak kodu 
 ```csharp
 try
 {

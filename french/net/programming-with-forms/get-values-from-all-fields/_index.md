@@ -38,7 +38,7 @@ Console.WriteLine("Value: {0}", formField.Value);
 }
 ```
 
-### Exemple de code source pour Get Values From All Fields en utilisant Aspose.Words pour .NET 
+### Exemple de code source pour obtenir les valeurs de tous les champs à l'aide d'Aspose.PDF pour .NET 
 ```csharp
 // Chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

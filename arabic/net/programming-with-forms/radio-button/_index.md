@@ -68,7 +68,7 @@ dataDir = dataDir + "RadioButton_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### نموذج التعليمات البرمجية المصدر لزر الراديو باستخدام Aspose.Words for .NET 
+### نموذج التعليمات البرمجية المصدر لزر الراديو باستخدام Aspose.PDF لـ .NET 
 ```csharp
 try
 {

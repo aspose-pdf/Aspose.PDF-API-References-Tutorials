@@ -31,7 +31,7 @@ description: 查看 Aspose.PDF for .NET 的文档转换教程。轻松将文件�
 | [PDF 到 PNG 字体提示](./pdf-to-png-font-hinting/) | 使用 Aspose.PDF for .NET 将 PDF 转换为带有字体提示的 PNG 的分步指南。 |  
 | [PDF转PPT](./pdf-to-ppt/) | 使用 Aspose.PDF for .NET 将 PDF 转换为 PPT 的分步指南。 |  
 | [PDF转SVG](./pdf-to-svg/) | 使用 Aspose.PDF for .NET 将 PDF 转换为 SVG 的分步指南。 |  
-| [PDF 到 Te X](./pdf-to-te-x/) | 使用 Aspose.PDF for .NET 将 PDF 转换为 Te X 的分步指南。 |  
+| [PDF 到 TeX](./pdf-to-tex/) | 使用 Aspose.PDF for .NET 将 PDF 转换为 Te X 的分步指南。 |  
 | [PDF 到 XLS](./pdf-to-xls/) | 使用 Aspose.PDF for .NET 将 PDF 转换为 XLS 的分步指南。 |  
 | [PDF 到 XML](./pdf-to-xml/) | 使用 Aspose.PDF for .NET 将 PDF 转换为 XML 的分步指南。 |  
 | [PDF 到 XPS](./pdf-to-xps/) | 使用 Aspose.PDF for .NET 将 PDF 转换为 XPS 的分步指南。 |  

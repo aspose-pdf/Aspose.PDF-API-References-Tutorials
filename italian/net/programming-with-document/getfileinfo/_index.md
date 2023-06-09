@@ -26,7 +26,7 @@ Il primo passaggio per utilizzare questa funzione è caricare il documento PDF d
 // Il percorso del documento PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Apri il documento PDF
+// Apri il documento PDF
 Document pdfDocument = new Document(dataDir + "GetFileInfo.pdf");
 ```
 
@@ -59,7 +59,7 @@ Nel codice precedente, ogni riga recupera una diversa proprietà dei metadati de
 // Il percorso del documento PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Apri il documento PDF
+// Apri il documento PDF
 Document pdfDocument = new Document(dataDir + "GetFileInfo.pdf");
 
 // Ottieni informazioni sul documento

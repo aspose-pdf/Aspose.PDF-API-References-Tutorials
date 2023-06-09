@@ -46,7 +46,7 @@ pdf. Save(dataDir + "EPUBToPDF_out.pdf");
 
  Yer değiştirmek`"YOUR DOCUMENTS DIRECTORY"` Çıktı PDF dosyasını kaydetmek istediğiniz istediğiniz dizinle.
 
-### Aspose.Words for .NET kullanarak EPUB'dan PDF'e örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak EPUB'dan PDF'e örnek kaynak kodu
 
 ```csharp
 try

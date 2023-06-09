@@ -63,7 +63,7 @@ Son olarak, değiştirilen PDF belgesini kaydediyoruz:
 pdfDocument.Save(dataDir + "Table2_out.pdf");
 ```
 
-### Aspose.Words for .NET kullanarak Birden Çok Tabloyu Kaldır için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak Birden Çok Tabloyu Kaldır için örnek kaynak kodu
 
 ```csharp
 // Belgeler dizininin yolu.

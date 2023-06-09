@@ -2,7 +2,7 @@
 title: Подтвердить стандарт PDF AB
 linktitle: Подтвердить стандарт PDF AB
 second_title: Aspose.PDF для справочника API .NET
-description: Узнайте, как использовать Aspose.PDF для .NET для проверки PDF-документов на соответствие PDFABStandard с помощью нашего пошагового руководства и примера кода.
+description: Узнайте, как использовать Aspose.PDF для .NET для проверки PDF-документов на соответствие стандарту PDFABStandard с помощью нашего пошагового руководства и примера кода.
 type: docs
 weight: 380
 url: /ru/net/programming-with-document/validatepdfabstandard/

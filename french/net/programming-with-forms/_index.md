@@ -36,7 +36,7 @@ Ces didacticiels fournissent également des exemples de code détaillés, des ex
 | [Préserver les droits](./preserve-rights/) | Préservez les droits de formulaire dans vos documents PDF avec Aspose.PDF pour .NET. |  
 | [Bouton radio](./radio-button/) | Ajoutez facilement des boutons radio à vos documents PDF avec Aspose.PDF pour .NET. |  
 | [Bouton radio avec options](./radio-button-with-options/) | Ajoutez facilement un bouton radio avec des options à un document PDF en utilisant Aspose.PDF pour .NET. |  
-| [Récupérer le champ du formulaire dans l'ordre de tabulation](./retrieve-form-field-in-tab-order/) | Apprenez à récupérer les champs de formulaire dans l'ordre de tabulation à l'aide d'Aspose.PDF pour .NET. |  
+| [Récupérer le champ du formulaire dans l'ordre des onglets](./retrieve-form-field-in-tab-order/) | Apprenez à récupérer les champs de formulaire dans l'ordre de tabulation à l'aide d'Aspose.PDF pour .NET. |  
 | [Sélectionner le bouton radio](./select-radio-button/) | Apprenez à sélectionner un bouton radio dans un document PDF à l'aide d'Aspose.PDF pour .NET. |  
 | [Définir la limite de champ](./set-field-limit/) | Apprenez à définir une limite de champ dans un document PDF à l'aide d'Aspose.PDF pour .NET. |  
 | [Définir le script Java](./set-java-script/) | Apprenez à utiliser Aspose.PDF pour .NET pour définir JavaScript dans les champs de formulaire des fichiers PDF. |  

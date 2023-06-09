@@ -91,7 +91,7 @@ doc.Save(dataDir);
 Console.WriteLine("\nCell and table border width setup successfully.\nFile saved at " + dataDir);
 ```
 
-### مثال على شفرة المصدر للهوامش أو الحشو باستخدام Aspose.Words for .NET
+### مثال على شفرة المصدر لـ Margins Or Padding باستخدام Aspose.PDF for .NET
 
 ```csharp
 // المسار إلى دليل المستندات.

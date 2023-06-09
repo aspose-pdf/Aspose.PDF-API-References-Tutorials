@@ -29,7 +29,7 @@ string dataDir = RunExamples.GetDataDir_AsposePdf_Tables();
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir+ "AddTable.pdf");
 ```
 
-上面的代码片段加载了您要将表格添加到的源 PDF 文档。确保提供正确的 PDF 文件路径。
+上面的代码片段加载了您要将表格添加到的源 PDF 文档。确保提供 PDF 文件的正确路径。
 
 ## 第 2 步：初始化 Table 的新实例
 
@@ -83,7 +83,7 @@ Console.WriteLine("\nText added successfully to an existing pdf file.\nFile save
 
 最后，我们使用相应页面的 Paragraphs 集合将表格对象添加到 PDF 文档的第一页。
 
-### 使用 Aspose.Words for .NET 添加表格的示例源代码
+### 使用 Aspose.PDF for .NET 添加表格的示例源代码
 
 ```csharp
 //文档目录的路径。

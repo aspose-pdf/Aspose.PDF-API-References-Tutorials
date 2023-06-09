@@ -26,7 +26,7 @@ Il primo passaggio nell'utilizzo di questa funzione consiste nel caricare il doc
 // Il percorso del documento PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Apri il documento PDF
+// Apri il documento PDF
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
@@ -61,7 +61,7 @@ private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArg
 // Il percorso del documento PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Apri il documento PDF
+// Apri il documento PDF
 Document doc = new Document(dataDir + "input.pdf");
 
 // Rileva gli avvisi di sostituzione dei caratteri

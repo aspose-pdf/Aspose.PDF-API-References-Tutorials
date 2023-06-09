@@ -80,7 +80,7 @@ page.Paragraphs.Add(canvas);
 doc.Save(dataDir + "CreateRectangleWithAlphaColor_out.pdf");
 ```
 
-### عينة من التعليمات البرمجية المصدر لـ Create Rectangle With Alpha Color باستخدام Aspose.Words for .NET 
+### نموذج التعليمات البرمجية المصدر لـ Create Rectangle With Alpha Color باستخدام Aspose.PDF for .NET 
 
 ```csharp
 
@@ -96,7 +96,7 @@ Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 200, 100);
 // عيّن لون تعبئة الرسم البياني من بنية System.Drawing.Color من قيمة ARGB 32 بت
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
-// أضف كائن مستطيل إلى مجموعة الأشكال لمثيل الرسم البياني
+//أضف كائن مستطيل إلى مجموعة الأشكال لمثيل الرسم البياني
 canvas.Shapes.Add(rect);
 // إنشاء كائن المستطيل الثاني
 Aspose.Pdf.Drawing.Rectangle rect1 = new Aspose.Pdf.Drawing.Rectangle(200, 150, 200, 100);

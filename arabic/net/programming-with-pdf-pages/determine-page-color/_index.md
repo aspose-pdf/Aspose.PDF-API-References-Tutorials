@@ -62,7 +62,7 @@ for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // ملف PDF مفتوح المصدر
 Document pdfDocument = new Document( dataDir + "input.pdf");
-// كرر من خلال جميع صفحات ملف PDF
+//كرر من خلال جميع صفحات ملف PDF
 for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 {
 	// احصل على معلومات نوع اللون لصفحة PDF معينة

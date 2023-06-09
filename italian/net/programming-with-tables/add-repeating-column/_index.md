@@ -50,7 +50,7 @@ mytable.RepeatingColumnsCount = 5;
 page.Paragraphs.Add(mytable);
 ```
 
-Per prima cosa aggiungiamo la tabella principale (`outerTable`al documento PDF. Successivamente, aggiungiamo la tabella nidificata (`mytable` ) come paragrafo in una cella della tabella principale. Specifichiamo anche il numero di colonne ripetute per`mytable` (in questo esempio, 5 colonne).
+Per prima cosa aggiungiamo la tabella principale (`outerTable`) al documento PDF. Successivamente, aggiungiamo la tabella nidificata (`mytable` ) come paragrafo in una cella della tabella principale. Specifichiamo anche il numero di colonne ripetute per`mytable` (in questo esempio, 5 colonne).
 
 ## Passaggio 5: aggiunta di intestazioni e righe
 Ora aggiungiamo le intestazioni e le righe alla tabella.
@@ -70,7 +70,7 @@ for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
      row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
      row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
      // ...
-     // Aggiungi qui le altre colonne
+     //Aggiungi qui le altre colonne
 }
 ```
 
@@ -86,7 +86,7 @@ doc.Save(outFile);
 
 Assicurati di specificare la directory e il nome file corretti per salvare il file PDF di output.
 
-### Esempio di codice sorgente per aggiungere una colonna ripetuta utilizzando Aspose.Words per .NET
+### Esempio di codice sorgente per aggiungere una colonna ripetuta utilizzando Aspose.PDF per .NET
 
 ```csharp
 // Il percorso della directory dei documenti.
@@ -108,7 +108,7 @@ mytable.Broken = TableBroken.VerticalInSamePage;
 mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;
 
 // Aggiungi la outerTable ai paragrafi della pagina
-//Aggiungi mytable a outerTable
+// Aggiungi mytable a outerTable
 page.Paragraphs.Add(outerTable);
 var bodyRow = outerTable.Rows.Add();
 var bodyCell = bodyRow.Cells.Add();

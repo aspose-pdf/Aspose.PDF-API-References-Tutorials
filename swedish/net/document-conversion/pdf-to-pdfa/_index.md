@@ -52,7 +52,7 @@ pdfDocument.Save(dataDir);
 
  Byta ut`"YOUR DOCUMENTS DIRECTORY"` med den önskade katalogen där du vill spara den utgående PDF/A-filen.
 
-### Exempel på källkod för PDF till HTML med Aspose.Words för .NET
+### Exempel på källkod för PDF till HTML med Aspose.PDF för .NET
 
 ```csharp
 // Sökvägen till dokumentkatalogen.

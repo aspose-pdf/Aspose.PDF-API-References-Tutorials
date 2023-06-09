@@ -62,7 +62,7 @@ pngDevice.Process(pdfDocument.Pages[1], imageStream);
 
  Var noga med att ange rätt sidnummer i`pdfDocument.Pages[1]`.
 
-### Exempel på källkod för Set Default Font Name med Aspose.Words för .NET
+### Exempel på källkod för Set Default Font Name med Aspose.PDF för .NET
 
 ```csharp
 // Sökvägen till dokumentkatalogen.

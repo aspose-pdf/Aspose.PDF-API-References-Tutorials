@@ -49,7 +49,7 @@ pdfDocument.Save("PDFToXPS_out.xps", saveOptions);
  يحفظ الكود أعلاه ملف PDF المحول بتنسيق XPS باسم الملف`"PDFToXPS_out.xps"`.
 
 
-### مثال على شفرة المصدر لـ PDF إلى XPS باستخدام Aspose.Words for .NET
+### مثال على شفرة المصدر لـ PDF إلى XPS باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 // المسار إلى دليل المستندات.

@@ -14,7 +14,7 @@ Innan vi dyker in i koden, se till att du har Aspose.PDF för .NET-biblioteket i
 
 ## Steg 1: Konfigurera dokumentet
 
- Till att börja med måste vi skapa en ny instans av`Document` klass från namnområdet Aspose.Pdf. Den här klassen representerar ett PDF-dokument.
+ Till att börja med måste vi skapa en ny instans av`Document`klass från namnområdet Aspose.Pdf. Den här klassen representerar ett PDF-dokument.
 
 ```csharp
 // Sökvägen till dokumentkatalogen.
@@ -35,14 +35,14 @@ Page sec1 = pdfDocument.Pages.Add();
 
 ## Steg 3: Lägga till en tabell
 
- det här steget kommer vi att skapa en tabell genom att instansiera`Table` klass från namnområdet Aspose.Pdf.
+ I det här steget kommer vi att skapa en tabell genom att instansiera`Table` klass från namnområdet Aspose.Pdf.
 
 ```csharp
 // Instantiera ett tabellobjekt
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 ```
 
-## Steg 4: Ställ in standardcellgräns
+## Steg 4: Ställ in standardcellkant
 
  För att säkerställa konsekvens kan vi ställa in en standardcellkant med hjälp av`DefaultCellBorder` tabellens egendom`BorderInfo` objekt.
 
@@ -121,7 +121,7 @@ pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 
 Grattis! Du har framgångsrikt lärt dig hur du lägger till en bild i en tabellcell med Aspose.PDF för .NET. Känn dig fri att utforska ytterligare anpassningsalternativ och integrera denna funktion i dina projekt.
 
-### Exempel på källkod för att lägga till bild i en tabellcell med Aspose.Words för .NET
+### Exempel på källkod för att lägga till bild i en tabellcell med Aspose.PDF för .NET
 
 ```csharp
 // Sökvägen till dokumentkatalogen.
@@ -133,7 +133,7 @@ Document pdfDocument = new Document();
 Page sec1 = pdfDocument.Pages.Add();
 // Instantiera ett tabellobjekt
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
-// Lägg till tabellen i styckesamlingen på den önskade sidan
+//Lägg till tabellen i styckesamlingen på den önskade sidan
 sec1.Paragraphs.Add(tab1);
 // Ställ in standardcellkant med BorderInfo-objekt
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);

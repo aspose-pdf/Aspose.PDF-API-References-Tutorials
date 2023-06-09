@@ -51,7 +51,7 @@ pdfDocument.Save(dataDir);
 
  Ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem gewünschten Verzeichnis, in dem Sie die ausgegebene PDF/A-3b-Datei speichern möchten.
 
-### Beispielquellcode für PDF zu PDFA3b mit Aspose.Words für .NET
+### Beispielquellcode für PDF zu PDFA3b mit Aspose.PDF für .NET
 
 ```csharp
 // Der Pfad zum Dokumentenverzeichnis.

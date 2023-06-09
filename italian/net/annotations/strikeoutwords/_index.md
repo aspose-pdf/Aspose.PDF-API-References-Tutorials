@@ -9,7 +9,7 @@ url: /it/net/annotations/strikeoutwords/
 ---
 Aspose.PDF per .NET è una libreria per la manipolazione e l'elaborazione di documenti PDF che fornisce varie funzionalità per creare, modificare e convertire file PDF. Una delle funzioni utili fornite da Aspose.PDF è la possibilità di barrare parole o frasi in un documento PDF utilizzando il codice sorgente C#. In questo articolo, forniremo una guida dettagliata su come cancellare le parole usando Aspose.PDF per .NET.
 
-## Caricamento del documento PDF
+## Passaggio 1: caricamento del documento PDF
 Il primo passo è caricare il documento PDF che vuoi modificare. In questo tutorial, caricheremo un documento PDF denominato "input.pdf" dalla cartella "YOUR DOCUMENT DIRECTORY". 
 
 ```csharp
@@ -17,7 +17,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document document = new Document(dataDir + "input.pdf");
 ```
 
-## Ricerca di frammenti di testo
+## Passaggio 2: ricerca di frammenti di testo
 Per eliminare parole o frasi specifiche nel documento PDF, devi prima cercarle. Aspose.PDF fornisce una classe TextFragmentAbsorber che può essere utilizzata per cercare un frammento di testo specifico nel documento PDF.
 
 ```csharp
@@ -26,7 +26,7 @@ Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.
 
 Nel codice sopra, stiamo cercando il frammento di testo "Estoque" nel documento PDF. Puoi modificarlo per cercare qualsiasi altra parola o frase che desideri barrare.
 
-## Cancellare i frammenti di testo
+## Passaggio 3: eliminare i frammenti di testo
 Dopo aver trovato i frammenti di testo, il passo successivo è cancellarli. Aspose.PDF fornisce una classe StrikeOutAnnotation che può essere utilizzata per creare un'annotazione barrata per il frammento di testo. 
 
 ```csharp
@@ -41,7 +41,7 @@ textFragment.Page.Annotations.Add(strikeOut);
 
 Nel codice sopra, stiamo creando un'annotazione barrata per ogni frammento di testo che abbiamo trovato. Stiamo anche impostando l'opacità, il bordo e il colore dell'annotazione barrata.
 
-## Salvataggio del documento PDF modificato
+## Passaggio 4: salvare il documento PDF modificato
 Dopo aver eliminato i frammenti di testo, salvare il documento modificato.
 
 ```csharp

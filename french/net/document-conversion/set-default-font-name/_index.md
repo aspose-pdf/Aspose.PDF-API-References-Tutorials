@@ -62,7 +62,7 @@ pngDevice.Process(pdfDocument.Pages[1], imageStream);
 
  Assurez-vous de spécifier le bon numéro de page dans`pdfDocument.Pages[1]`.
 
-### Exemple de code source pour définir le nom de police par défaut à l'aide de Aspose.Words pour .NET
+### Exemple de code source pour définir le nom de police par défaut à l'aide d'Aspose.PDF pour .NET
 
 ```csharp
 // Chemin d'accès au répertoire des documents.

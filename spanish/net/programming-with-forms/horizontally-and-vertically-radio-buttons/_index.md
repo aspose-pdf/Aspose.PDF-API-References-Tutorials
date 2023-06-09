@@ -39,7 +39,7 @@ formEditor.Facade.BorderWidth = 1; // Ancho del borde del botón de opción
 formEditor.Facade.BorderColor = System.Drawing.Color.Black; // Color del borde del botón de opción
 ```
 
-## Paso 4: agregue botones de radio horizontales
+## Paso 4: agregue botones de opción horizontales
 
 Agregue botones de radio dispuestos horizontalmente especificando las opciones y la posición del campo:
 
@@ -67,7 +67,7 @@ dataDir = dataDir + "HorizontallyAndVerticallyRadioButtons_out.pdf";
 formEditor.Save(dataDir);
 ```
 
-### Ejemplo de código fuente para botones de radio horizontales y verticales usando Aspose.Words para .NET 
+### Ejemplo de código fuente para botones de radio horizontales y verticales usando Aspose.PDF para .NET 
 ```csharp
 try
 {

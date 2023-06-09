@@ -59,7 +59,7 @@ textAnnotation.Border = border;
 textAnnotation.Rect = new Aspose.Pdf.Rectangle(200, 400, 400, 600);
 ```
 
- En este código, creamos un nuevo`Border` objeto y establezca sus propiedades de ancho y guión. Luego configuramos el`Border` propiedad de la anotación a la nueva`Border`objeto. Finalmente, configuramos el`Rect` propiedad de la anotación para especificar su posición y tamaño.
+ En este código, creamos un nuevo`Border` objeto y establezca sus propiedades de ancho y guión. Luego configuramos el`Border` propiedad de la anotación a la nueva`Border` objeto. Finalmente, configuramos el`Rect` propiedad de la anotación para especificar su posición y tamaño.
 
 ## Paso 5: agregue la anotación al documento PDF
 

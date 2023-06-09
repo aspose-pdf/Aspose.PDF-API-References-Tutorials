@@ -52,7 +52,7 @@ pdfDocument.Save(dataDir);
 
  Yer değiştirmek`"YOUR DOCUMENTS DIRECTORY"` Çıktı PDF/A dosyasını kaydetmek istediğiniz istediğiniz dizinle.
 
-### Aspose.Words for .NET kullanarak PDF'den HTML'ye dönüştürme için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak PDF to HTML için örnek kaynak kodu
 
 ```csharp
 // Belgeler dizininin yolu.

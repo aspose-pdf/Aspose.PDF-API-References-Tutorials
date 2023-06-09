@@ -43,7 +43,7 @@ pdfDocument.Save(dataDir + "PSToPDF.pdf");
 
  Yukarıdaki kod, dönüştürülen PostScript dosyasını dosya adıyla PDF formatında kaydeder.`"PSToPDF.pdf"`.
 
-### Aspose.Words for .NET kullanarak Postscript to PDF için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak Postscript to PDF için örnek kaynak kodu
 
 ```csharp
 // Belgeler dizininin yolu.

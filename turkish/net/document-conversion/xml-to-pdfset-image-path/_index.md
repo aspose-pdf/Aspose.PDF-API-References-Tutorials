@@ -44,7 +44,7 @@ doc.Save(outFile);
 ```
 Ortaya çıkan PDF dosyasını belirtilen dizine kaydedin.
 
-### Aspose.Words for .NET kullanarak XML to PDFSet Image Path için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak XML to PDFSet Image Path için örnek kaynak kodu
 
 ```csharp
 try

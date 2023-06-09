@@ -55,7 +55,7 @@ Console.WriteLine(option.Rect);
 }
 ```
 
-### Esempio di codice sorgente per Ottieni coordinate utilizzando Aspose.Words per .NET 
+### Esempio di codice sorgente per Ottieni coordinate utilizzando Aspose.PDF per .NET 
 ```csharp
 try
 {

@@ -72,7 +72,7 @@ pg.Paragraphs.Add(graph);
 pDoc.Save(dataDir + "DrawingLine_out.pdf");
 ```
 
-### 使用 Aspose.Words for .NET 绘制线条的示例源代码 
+### 使用 Aspose.PDF for .NET 绘制线条的示例源代码 
 
 ```csharp
 

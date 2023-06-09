@@ -57,7 +57,7 @@ pdfDocument.Metadata["xmp:CustomProperty"] = "Custom Value";
 
 ```csharp
 dataDir = dataDir + "SetXMPMetadata_out.pdf";
-//保存文件
+//保存文档
 pdfDocument.Save(dataDir);
 ```
 
@@ -78,7 +78,7 @@ pdfDocument.Metadata["xmp:Nickname"] = "Nickname";
 pdfDocument.Metadata["xmp:CustomProperty"] = "Custom Value";
 
 dataDir = dataDir + "SetXMPMetadata_out.pdf";
-//保存文件
+//保存文档
 pdfDocument.Save(dataDir);
 
 Console.WriteLine("\nXMP metadata in a pdf file setup successfully.\nFile saved at " + dataDir);

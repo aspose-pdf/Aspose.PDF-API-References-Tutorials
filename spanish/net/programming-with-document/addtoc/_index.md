@@ -13,7 +13,7 @@ En este tutorial, exploraremos cómo usar la función Agregar TOC (Tabla de cont
 
 ## Paso 1: Cargue el archivo PDF existente
 
-Para comenzar, necesitamos cargar un archivo PDF existente. Reemplazar`"YOUR DOCUMENT DIRECTORY"` en el siguiente código con la ruta real a su archivo PDF:
+ Para comenzar, necesitamos cargar un archivo PDF existente. Reemplazar`"YOUR DOCUMENT DIRECTORY"` en el siguiente código con la ruta real a su archivo PDF:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -30,7 +30,7 @@ Page tocPage = doc.Pages.Insert(1);
 
 ## Paso 3: Definir la información de la tabla de contenido
 
-A continuación, necesitamos definir la información de la tabla de contenido. Estableceremos el título y otras propiedades de la tabla de contenido. Agrega el siguiente código:
+continuación, necesitamos definir la información de la tabla de contenido. Estableceremos el título y otras propiedades de la tabla de contenido. Agrega el siguiente código:
 
 ```csharp
 TocInfo tocInfo = new TocInfo();
@@ -85,7 +85,7 @@ Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at "
 // La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Cargue un archivo PDF existente
+// Cargue un archivo PDF existente
 Document doc = new Document(dataDir + "AddTOC.pdf");
 
 // Obtenga acceso a la primera página del archivo PDF
@@ -124,7 +124,7 @@ for (int i = 0; i < 2; i++)
 	// Coordenada de destino
 	segment2.Text = titles[i];
 
-	// Agregar encabezado a la página que contiene TOC
+	//Agregar encabezado a la página que contiene TOC
 	tocPage.Paragraphs.Add(heading2);
 }
 dataDir = dataDir + "TOC_out.pdf";

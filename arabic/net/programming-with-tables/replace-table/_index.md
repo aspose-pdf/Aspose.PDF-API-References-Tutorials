@@ -33,7 +33,7 @@ TableAbsorber absorber = new TableAbsorber();
 سنقوم الآن بزيارة الصفحة الأولى من مستند PDF باستخدام أداة الامتصاص:
 
 ```csharp
-//قم بزيارة الصفحة الأولى مع الممتص
+// قم بزيارة الصفحة الأولى مع الممتص
 absorb.Visit(pdfDocument.Pages[1]);
 ```
 
@@ -74,7 +74,7 @@ absorb.Replace(pdfDocument.Pages[1], table, newTable);
 pdfDocument.Save(dataDir + "TableReplaced_out.pdf");
 ```
 
-### مثال على شفرة المصدر لاستبدال الجدول باستخدام Aspose.Words for .NET
+### مثال على التعليمات البرمجية المصدر لاستبدال الجدول باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 // المسار إلى دليل المستندات.

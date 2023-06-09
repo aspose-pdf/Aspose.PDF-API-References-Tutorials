@@ -72,7 +72,7 @@ Enfin, nous enregistrons le fichier PDF résultant sous le nom "DrawingLine_out.
 pDoc.Save(dataDir + "DrawingLine_out.pdf");
 ```
 
-### Exemple de code source pour Drawing Line à l'aide d'Aspose.Words pour .NET 
+### Exemple de code source pour Drawing Line à l'aide d'Aspose.PDF pour .NET 
 
 ```csharp
 
@@ -84,7 +84,7 @@ Document pDoc = new Document();
 Page pg = pDoc.Pages.Add();
 // Définir la marge de la page sur tous les côtés à 0
 pg.PageInfo.Margin.Left = pg.PageInfo.Margin.Right = pg.PageInfo.Margin.Bottom = pg.PageInfo.Margin.Top = 0;
-// Créer un objet graphique avec une largeur et une hauteur égales aux dimensions de la page
+//Créer un objet graphique avec une largeur et une hauteur égales aux dimensions de la page
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph((float)pg.PageInfo.Width , (float)pg.PageInfo.Height);
 // Créer un objet de première ligne en partant du coin inférieur gauche vers le coin supérieur droit de la page
 Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { (float)pg.Rect.LLX, 0, (float)pg.PageInfo.Width, (float)pg.Rect.URY });

@@ -63,7 +63,7 @@ Infine, salviamo il documento PDF modificato:
 pdfDocument.Save(dataDir + "Table2_out.pdf");
 ```
 
-### Codice sorgente di esempio per rimuovere più tabelle utilizzando Aspose.Words per .NET
+### Codice sorgente di esempio per rimuovere più tabelle utilizzando Aspose.PDF per .NET
 
 ```csharp
 // Il percorso della directory dei documenti.

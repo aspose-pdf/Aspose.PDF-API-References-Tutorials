@@ -148,7 +148,7 @@ pdf1.Save(dataDir + @"Exceldata_toPdf_table.pdf");
 
 Make sure to replace "YOUR DOCUMENT DIRECTORY" with the desired directory path and filename for the output PDF file.
 
-### Example source code for Export Excel Worksheet Data To Table using Aspose.Words for .NET
+### Example source code for Export Excel Worksheet Data To Table using Aspose.PDF for .NET
 
 ```csharp
 // The path to the documents directory.

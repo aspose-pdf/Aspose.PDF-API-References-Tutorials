@@ -45,7 +45,7 @@ pdfDocument1.Save(dataDir);
 ```
 
 
-### نموذج التعليمات البرمجية المصدر لـ Insert Empty Page باستخدام Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لإدراج صفحة فارغة باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
 

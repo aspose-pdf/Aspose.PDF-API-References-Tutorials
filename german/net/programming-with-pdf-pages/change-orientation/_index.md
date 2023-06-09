@@ -47,7 +47,7 @@ page. Rotate = Rotate. on90;
 ```
 
 ## Schritt 4: Speichern Sie das geänderte PDF-Dokument
- Abschließend können Sie das geänderte PDF-Dokument mit in einer Ausgabedatei speichern`Save()` Methode der`Document` Klasse. Stellen Sie sicher, dass Sie den richtigen Pfad und Dateinamen angeben.
+ Abschließend können Sie das geänderte PDF-Dokument mit in einer Ausgabedatei speichern`Save()` Methode der`Document`Klasse. Stellen Sie sicher, dass Sie den richtigen Pfad und Dateinamen angeben.
 
 ```csharp
 dataDir = dataDir + "ChangeOrientation_out.pdf";

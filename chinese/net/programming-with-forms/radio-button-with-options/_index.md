@@ -108,7 +108,7 @@ dataDir = dataDir + "RadioButtonWithOptions_out.pdf";
 doc.Save(dataDir);
 ```
 
-### 使用 Aspose.Words for .NET 的带有选项的单选按钮示例源代码 
+### 使用 Aspose.PDF for .NET 的带有选项的单选按钮示例源代码 
 ```csharp
 try
 {

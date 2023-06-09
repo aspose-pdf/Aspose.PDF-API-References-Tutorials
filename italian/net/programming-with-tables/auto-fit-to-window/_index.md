@@ -92,7 +92,7 @@ dataDir = dataDir + "AutoFitToWindow_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Esempio di codice sorgente per Adattamento automatico alla finestra utilizzando Aspose.Words per .NET
+### Esempio di codice sorgente per Adattamento automatico alla finestra utilizzando Aspose.PDF per .NET
 
 ```csharp
 // Il percorso della directory dei documenti.

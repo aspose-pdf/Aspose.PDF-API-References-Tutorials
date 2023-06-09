@@ -47,7 +47,7 @@ cell = row.Cells.Add("Text from cell 2");
 Console.WriteLine(table.GetWidth());
 ```
 
-### Пример исходного кода для получения ширины таблицы с использованием Aspose.Words для .NET
+### Пример исходного кода для получения ширины таблицы с использованием Aspose.PDF для .NET
 
 ```csharp
 // Создать новый документ

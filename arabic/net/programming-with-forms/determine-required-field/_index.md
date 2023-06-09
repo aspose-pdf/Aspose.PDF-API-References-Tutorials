@@ -18,7 +18,7 @@ url: /ar/net/programming-with-forms/determine-required-field/
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## الخطوة 2: تحميل ملف PDF المصدر
+## الخطوة الثانية: تحميل ملف PDF المصدر
 
 قم بتحميل ملف PDF المصدر:
 
@@ -51,7 +51,7 @@ Console.WriteLine("The field " + field.FullName + " is required");
 }
 ```
 
-### نموذج شفرة المصدر لتحديد الحقل المطلوب باستخدام Aspose.Words for .NET 
+### نموذج التعليمات البرمجية المصدر لتحديد الحقل المطلوب باستخدام Aspose.PDF لـ .NET 
 ```csharp
 // المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

@@ -51,7 +51,7 @@ pdfDocument.Save(dataDir);
 
  Sostituire`"YOUR DOCUMENTS DIRECTORY"` con la directory desiderata in cui si desidera salvare il file PDF/A-3b di output.
 
-### Esempio di codice sorgente per PDF in PDFA3b utilizzando Aspose.Words per .NET
+### Esempio di codice sorgente per PDF in PDFA3b utilizzando Aspose.PDF per .NET
 
 ```csharp
 // Il percorso della directory dei documenti.

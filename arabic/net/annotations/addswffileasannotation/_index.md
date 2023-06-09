@@ -78,7 +78,7 @@ doc.Save(dataDir);
 // المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//افتح مستند PDF
+// افتح مستند PDF
 Document doc = new Document(dataDir + "AddSwfFileAsAnnotation.pdf");
 
 // احصل على مرجع للصفحة التي تريد إضافة التعليق التوضيحي إليها

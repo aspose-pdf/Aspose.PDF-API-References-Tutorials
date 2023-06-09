@@ -18,7 +18,7 @@ Um JavaScript zu einer PDF-Datei hinzuzufügen, verwenden wir Aspose.PDF für .N
 // Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Laden Sie eine vorhandene PDF-Datei
+// Laden Sie eine vorhandene PDF-Datei
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
@@ -39,7 +39,7 @@ In diesem Tutorial fügen wir eine JavaScript-Anweisung hinzu, die die PDF-Datei
 
 ## Schritt 3: Fügen Sie JavaScript auf Seitenebene hinzu
 
- Um JavaScript auf Seitenebene hinzuzufügen, verwenden wir die`JavascriptAction` Klasse und die`Actions` Eigenschaft, die von Aspose.PDF für .NET bereitgestellt wird. Mit dieser Eigenschaft können Sie JavaScript-Anweisungen angeben, die ausgeführt werden, wenn die Seite geöffnet oder geschlossen wird.
+ Um JavaScript auf Seitenebene hinzuzufügen, verwenden wir die`JavascriptAction` Klasse und die`Actions`Eigenschaft, die von Aspose.PDF für .NET bereitgestellt wird. Mit dieser Eigenschaft können Sie JavaScript-Anweisungen angeben, die ausgeführt werden, wenn die Seite geöffnet oder geschlossen wird.
 
 ```csharp
 // Hinzufügen von JavaScript auf Seitenebene
@@ -70,7 +70,7 @@ Dieser Code speichert die geänderte PDF-Datei im angegebenen Verzeichnis.
 // Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Laden Sie eine vorhandene PDF-Datei
+// Laden Sie eine vorhandene PDF-Datei
 Document doc = new Document(dataDir + "input.pdf");
 
 // JavaScript auf Dokumentebene hinzufügen

@@ -44,7 +44,7 @@ Det tredje steget är att få PDF-filens zoomfaktor. Vi kan få zoomfaktorn för
 System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); // Dokumentzoomvärde;
 ```
 
- I ovanstående kod har vi tillgång till`Destination` egendom av`GoToAction` objekt och sedan kasta det till`XYZExplicitDestination` . Efter det har vi kommit åt`Zoom` egendom av`XYZExplicitDestination` objekt för att få PDF-filens zoomfaktor.
+ I ovanstående kod har vi tillgång till`Destination` egendom av`GoToAction` objekt och sedan kasta det till`XYZExplicitDestination` . Efter det har vi kommit åt`Zoom` egendom av`XYZExplicitDestination` objekt för att få zoomfaktorn för PDF-filen.
 
 ## Steg 4: Mata ut zoomfaktorn
 

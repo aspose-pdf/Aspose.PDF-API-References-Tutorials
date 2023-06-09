@@ -7,7 +7,7 @@ type: docs
 weight: 80
 url: /es/net/programming-with-pdf-pages/get-page-count/
 ---
-En este tutorial, lo guiaremos a través del proceso paso a paso para obtener el recuento de páginas de un archivo PDF utilizando Aspose.PDF para .NET. Explicaremos el código fuente de C# incluido y le proporcionaremos una guía completa para ayudarlo a comprender e implementar esta característica en sus propios proyectos. Al final de este tutorial, sabrá cómo obtener el recuento de páginas de un archivo PDF utilizando Aspose.PDF para .NET.
+En este tutorial, lo guiaremos a través del proceso paso a paso para obtener el recuento de páginas de un archivo PDF utilizando Aspose.PDF para .NET. Explicaremos el código fuente de C# incluido y le proporcionaremos una guía completa para ayudarlo a comprender e implementar esta función en sus propios proyectos. Al final de este tutorial, sabrá cómo obtener el recuento de páginas de un archivo PDF utilizando Aspose.PDF para .NET.
 
 ## requisitos previos
 Antes de comenzar, asegúrese de tener lo siguiente:
@@ -30,14 +30,14 @@ Page page = doc.Pages.Add();
 ```
 
 ## Paso 3: Crea el contenido de la página
-Ahora puede crear contenido de página agregando objetos TextFragment a la colección Paragraphs del objeto Page. En este ejemplo, agregamos un TextFragment repetido 300 veces para simular un documento con contenido más extenso.
+Ahora puede crear contenido de página agregando objetos TextFragment a la colección Paragraphs del objeto Page. En este ejemplo, agregamos un TextFragment repetido 300 veces para simular un documento con contenido más largo.
 
 ```csharp
 for (int i = 0; i < 300; i++)
 page.Paragraphs.Add(new TextFragment("Page count test"));
 ```
 
-## Paso 4: procesamiento de párrafos y obtención del número de páginas
+## Paso 4: procesamiento de párrafos y obtención del recuento de páginas
  Una vez que haya agregado el contenido a la página, debe procesar los párrafos del documento llamando al`ProcessParagraphs()` método. Esto permite que Aspose.PDF calcule el número de páginas con precisión.
 
 ```csharp

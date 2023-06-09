@@ -18,7 +18,7 @@ För att lägga till JavaScript i en PDF-fil kommer vi att använda Aspose.PDF f
 // Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Ladda en befintlig PDF-fil
+// Ladda en befintlig PDF-fil
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
@@ -39,7 +39,7 @@ I den här handledningen lägger vi till en JavaScript-sats som kommer att skriv
 
 ## Steg 3: Lägg till JavaScript på sidnivå
 
- För att lägga till JavaScript på sidnivå kommer vi att använda`JavascriptAction` klass och`Actions` egendom tillhandahållen av Aspose.PDF för .NET. Den här egenskapen låter dig ange JavaScript-satser som kommer att köras när sidan öppnas eller stängs.
+ För att lägga till JavaScript på sidnivå kommer vi att använda`JavascriptAction` klass och`Actions`egendom tillhandahållen av Aspose.PDF för .NET. Den här egenskapen låter dig ange JavaScript-satser som kommer att köras när sidan öppnas eller stängs.
 
 ```csharp
 // Lägger till JavaScript på sidnivå
@@ -47,7 +47,7 @@ doc.Pages[2].Actions.OnOpen = new JavascriptAction("app.alert('page 1 opened')")
 doc.Pages[2].Actions.OnClose = new JavascriptAction("app.alert('page 1 closed')");
 ```
 
-den här handledningen lägger vi till JavaScript-satser som visar ett varningsmeddelande när sidan öppnas eller stängs.
+I den här handledningen lägger vi till JavaScript-satser som visar ett varningsmeddelande när sidan öppnas eller stängs.
 
 ## Steg 4: Spara PDF-filen
 
@@ -70,7 +70,7 @@ Denna kod kommer att spara den modifierade PDF-filen i den angivna katalogen.
 // Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Ladda en befintlig PDF-fil
+// Ladda en befintlig PDF-fil
 Document doc = new Document(dataDir + "input.pdf");
 
 // Lägga till JavaScript på dokumentnivå
@@ -93,6 +93,6 @@ Console.WriteLine("\nJavascript added successfully to a page.\nFile saved at " +
 
 ## Slutsats
 
-I den här artikeln har vi förklarat hur man lägger till JavaScript i en PDF-fil på både dokumentnivå och sidnivå med Aspose.PDF för .NET. Vi har tillhandahållit steg-för-steg-instruktioner och inkluderat hela källkoden för varje exempel. Med denna kunskap kan du lägga till JavaScript i dina PDF-filer och anpassa deras beteende efter dina behov.
+den här artikeln har vi förklarat hur man lägger till JavaScript i en PDF-fil på både dokumentnivå och sidnivå med Aspose.PDF för .NET. Vi har tillhandahållit steg-för-steg-instruktioner och inkluderat hela källkoden för varje exempel. Med denna kunskap kan du lägga till JavaScript i dina PDF-filer och anpassa deras beteende efter dina behov.
 
 

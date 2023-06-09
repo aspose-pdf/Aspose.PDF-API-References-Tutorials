@@ -48,7 +48,7 @@ doc.Save(dataDir + "PDFAToPDF_out.pdf");
 
 يحفظ الكود أعلاه ملف PDFA المحول إلى تنسيق PDF باسم الملف`"PDFAToPDF_out.pdf"`.
 
-### مثال على شفرة المصدر لـ PDFA إلى PDF باستخدام Aspose.Words for .NET
+### مثال على كود المصدر لـ PDFA إلى PDF باستخدام Aspose.PDF لـ .NET
 
 
 ```csharp

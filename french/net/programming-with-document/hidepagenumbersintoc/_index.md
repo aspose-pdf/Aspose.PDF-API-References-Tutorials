@@ -19,7 +19,7 @@ La table des matières (TOC) est une partie essentielle d'un document PDF qui fo
 
 ## Conditions préalables
 
-Pour suivre ce tutoriel, vous aurez besoin des éléments suivants :
+Pour suivre ce tutoriel, vous aurez besoin des éléments suivants :
 
 - Visual Studio 2010 ou version ultérieure
 - Aspose.PDF pour .NET installé sur votre système

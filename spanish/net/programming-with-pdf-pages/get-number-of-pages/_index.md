@@ -2,12 +2,12 @@
 title: Obtener número de páginas
 linktitle: Obtener número de páginas
 second_title: Referencia de API de Aspose.PDF para .NET
-description: Guía paso a paso para obtener el recuento de páginas de un PDF usando Aspose.PDF para .NET. Simple de implementar, ideal para sus proyectos.
+description: Guía paso a paso para obtener el recuento de páginas de un PDF utilizando Aspose.PDF para .NET. Simple de implementar, ideal para sus proyectos.
 type: docs
 weight: 70
 url: /es/net/programming-with-pdf-pages/get-number-of-pages/
 ---
-En este tutorial, lo guiaremos a través del proceso paso a paso para obtener el recuento de páginas de un archivo PDF utilizando Aspose.PDF para .NET. Explicaremos el código fuente de C# incluido y le proporcionaremos una guía completa para ayudarlo a comprender e implementar esta característica en sus propios proyectos. Al final de este tutorial, sabrá cómo obtener el recuento de páginas de un archivo PDF utilizando Aspose.PDF para .NET.
+En este tutorial, lo guiaremos a través del proceso paso a paso para obtener el recuento de páginas de un archivo PDF utilizando Aspose.PDF para .NET. Explicaremos el código fuente de C# incluido y le proporcionaremos una guía completa para ayudarlo a comprender e implementar esta función en sus propios proyectos. Al final de este tutorial, sabrá cómo obtener el recuento de páginas de un archivo PDF utilizando Aspose.PDF para .NET.
 
 ## requisitos previos
 Antes de comenzar, asegúrese de tener lo siguiente:
@@ -30,7 +30,7 @@ Document pdfDocument = new Document(dataDir + "GetNumberofPages.pdf");
 ```
 
 ## Paso 3: Obtener el número de páginas
- Ahora puede obtener el número de páginas en el documento usando el`Count`propiedad del documento`s `Colección de páginas. Esto le dará el número total de páginas en el archivo PDF.
+ Ahora puede obtener el número de páginas en el documento usando el`Count` propiedad del documento`s `Colección de páginas. Esto le dará el número total de páginas en el archivo PDF.
 
 ```csharp
 System.Console.WriteLine("Number of pages: {0}", pdfDocument.Pages.Count);

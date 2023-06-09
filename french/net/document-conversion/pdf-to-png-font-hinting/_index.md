@@ -66,7 +66,7 @@ for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 
 Le code ci-dessus convertit chaque page du PDF en une image PNG avec un indice de police et enregistre chaque image dans un fichier PNG séparé.
 
-### Exemple de code source pour PDF vers PNGFont Hinting utilisant Aspose.Words pour .NET
+### Exemple de code source pour PDF vers PNGFont Hinting utilisant Aspose.PDF pour .NET
 
 ```csharp
 try

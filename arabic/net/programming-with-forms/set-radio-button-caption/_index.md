@@ -23,7 +23,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ## الخطوة 2: تحميل نموذج PDF المصدر
 
- في هذه الخطوة ، سنقوم بتحميل نموذج PDF المصدر باستخدام امتداد`Aspose.Pdf.Facades.Form` فئة Aspose.PDF.
+ في هذه الخطوة ، سنقوم بتحميل نموذج PDF المصدر باستخدام امتداد`Aspose.Pdf.Facades.Form`فئة Aspose.PDF.
 
 ```csharp
 Aspose.Pdf.Facades.Form form1 = new Aspose.Pdf.Facades.Form(dataDir + "RadioButtonField.pdf");
@@ -76,7 +76,7 @@ PDF_Template_PDF_HTML.Save(dataDir + "RadioButtonField_out.pdf");
 
 تأكد من تحديد المسار الكامل واسم الملف لملف PDF الناتج.
 
-### نموذج التعليمات البرمجية المصدر لـ Set Radio Button Caption باستخدام Aspose.Words for .NET 
+### نموذج التعليمات البرمجية المصدر لـ Set Radio Button Caption باستخدام Aspose.PDF for .NET 
 ```csharp
 // المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

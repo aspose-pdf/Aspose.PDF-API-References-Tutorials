@@ -87,7 +87,7 @@ dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Esempio di codice sorgente per caselle di controllo raggruppate utilizzando Aspose.Words per .NET 
+### Esempio di codice sorgente per caselle di controllo raggruppate utilizzando Aspose.PDF per .NET 
 ```csharp
 try
 {

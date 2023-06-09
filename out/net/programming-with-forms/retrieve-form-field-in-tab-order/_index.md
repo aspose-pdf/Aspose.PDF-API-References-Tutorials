@@ -78,7 +78,7 @@ doc.Save(dataDir + "39522_out.pdf");
 
 Here, `"39522_out.pdf"` is the name of the output file where the modified document will be saved. Specify the desired name and location for the output file.
 
-### Sample source code for Retrieve Form Field In Tab Order using Aspose.Words for .NET 
+### Sample source code for Retrieve Form Field In Tab Order using Aspose.PDF for .NET 
 ```csharp
 // The path to the documents directory.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

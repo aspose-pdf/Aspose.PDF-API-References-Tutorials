@@ -30,7 +30,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ## Paso 2: Cargar el archivo PDF de entrada
 
- En este paso, cargaremos el archivo PDF de entrada usando el`Document` clase de Aspose.PDF.
+ En este paso, cargaremos el archivo PDF de entrada usando el`Document`clase de Aspose.PDF.
 
 ```csharp
 // Cargar archivo PDF de entrada
@@ -83,7 +83,7 @@ doc.Save(dataDir);
 Asegúrese de especificar la ruta completa y el nombre de archivo del PDF resultante.
 
 
-### Ejemplo de código fuente para Set Java Script usando Aspose.Words para .NET 
+### Ejemplo de código fuente para Set Java Script usando Aspose.PDF para .NET 
 ```csharp
 // La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

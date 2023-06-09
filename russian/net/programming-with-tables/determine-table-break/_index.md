@@ -85,7 +85,7 @@ Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dat
 
 Обязательно укажите правильный каталог документов. Полученный файл PDF будет сохранен с определенными разрывами таблицы.
 
-### Пример исходного кода для определения разрыва таблицы с использованием Aspose.Words для .NET
+### Пример исходного кода для определения разрыва таблицы с использованием Aspose.PDF для .NET
 
 ```csharp
 // Путь к каталогу документов.
@@ -134,11 +134,11 @@ float TotalObjectsHeight = (float)page.PageInfo.Margin.Top + (float)page.PageInf
 // Информация о нижнем поле
 Console.WriteLine("PDF document Height = " + pdf.PageInfo.Height.ToString() + "\nTop Margin Info = " + page.PageInfo.Margin.Top.ToString() + "\nBottom Margin Info = " + page.PageInfo.Margin.Bottom.ToString() + "\n\nTable-Top Margin Info = " + table1.Margin.Top.ToString() + "\nAverage Row Height = " + table1.Rows[0].MinRowHeight.ToString() + " \nTable height " + table1.GetHeight().ToString() + "\n ----------------------------------------" + "\nTotal Page Height =" + PageHeight.ToString() + "\nCummulative height including Table =" + TotalObjectsHeight.ToString());
 
-//Проверьте, вычитаем ли мы сумму верхнего поля страницы + нижнего поля страницы
+// Проверьте, вычитаем ли мы сумму верхнего поля страницы + нижнего поля страницы
 // + Поле таблицы и высота таблицы от высоты страницы и меньше
 // Больше 10 (средний ряд может быть больше 10)
 if ((PageHeight - TotalObjectsHeight) <= 10)
-	// Если значение меньше 10, отобразите сообщение.
+	//Если значение меньше 10, отобразите сообщение.
 	// Что показывает, что другую строку нельзя разместить, и если мы добавим новую
 	// Ряд, стол сломается. Это зависит от значения высоты строки.
 	Console.WriteLine("Page Height - Objects Height < 10, so table will break");

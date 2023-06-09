@@ -13,7 +13,7 @@ Aspose.PDF for .NET Kullanarak Sayfadaki Tüm Ek Açıklamaları Sil için aşa�
 
 ## 1. Adım: Aspose.PDF for .NET'i kurun
 
- Aspose.PDF for .NET'i kullanmak için önce kütüphaneyi kurmanız gerekir. Yapabilirsiniz[indirmek](https://releases.aspose.com/pdf/net/)Aspose yayınlarından kütüphaneyi indirin ve bilgisayarınıza kurun. Kurulumdan sonra, projenizdeki kütüphaneye bir referans eklemeniz gerekir.
+ Aspose.PDF for .NET'i kullanmak için önce kütüphaneyi kurmanız gerekir. Yapabilirsiniz[indirmek](https://releases.aspose.com/pdf/net/) Aspose yayınlarından kütüphaneyi indirin ve bilgisayarınıza kurun. Kurulumdan sonra, projenizdeki kütüphaneye bir referans eklemeniz gerekir.
 
 ## 2. Adım: Yeni Bir Konsol Uygulaması Oluşturun
 

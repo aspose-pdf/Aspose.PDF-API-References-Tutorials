@@ -51,7 +51,7 @@ dataDir = dataDir + "FillFormField_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### نموذج لشفرة مصدر لملء حقل النموذج باستخدام Aspose.Words for .NET 
+### نموذج التعليمات البرمجية المصدر لملء حقل النموذج باستخدام Aspose.PDF لـ .NET 
 ```csharp
 // المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

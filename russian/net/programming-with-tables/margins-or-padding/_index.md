@@ -91,7 +91,7 @@ doc.Save(dataDir);
 Console.WriteLine("\nCell and table border width setup successfully.\nFile saved at " + dataDir);
 ```
 
-### Пример исходного кода для Margins Or Padding с использованием Aspose.Words для .NET
+### Пример исходного кода для Margins Or Padding с использованием Aspose.PDF для .NET
 
 ```csharp
 // Путь к каталогу документов.

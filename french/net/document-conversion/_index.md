@@ -8,7 +8,7 @@ description: Consultez les didacticiels de conversion de documents avec Aspose.P
 ---
 Dans les didacticiels de conversion de documents Aspose.PDF pour .NET, vous apprendrez à convertir différents types de documents tels que Word, Excel, HTML, images, etc. en fichiers PDF. Vous apprendrez à convertir un document existant à l'aide d'options de conversion avancées telles que la mise en page, les polices, les images, les tableaux, etc. Les didacticiels vous guideront également sur la conversion de documents PDF vers d'autres formats, tels que Word, Excel, HTML, images, etc. 
 
-Vous apprendrez à spécifier les paramètres de conversion, à extraire du texte et des images, à conserver la structure et la mise en forme du document d'origine et à effectuer des conversions en bloc. Les didacticiels fournissent des exemples de code détaillés et des explications étape par étape pour vous aider à maîtriser les capacités de conversion de documents d'Aspose.PDF pour .NET. Que vous ayez besoin de convertir des documents pour l'archivage, la distribution électronique ou d'autres besoins, ces didacticiels vous fournissent les connaissances nécessaires pour effectuer efficacement toutes les tâches de conversion de documents à l'aide de la puissante bibliothèque Aspose.PDF pour .NET.
+Vous apprendrez à spécifier les paramètres de conversion, à extraire du texte et des images, à conserver la structure et la mise en forme du document d'origine et à effectuer des conversions en masse. Les didacticiels fournissent des exemples de code détaillés et des explications étape par étape pour vous aider à maîtriser les capacités de conversion de documents d'Aspose.PDF pour .NET. Que vous ayez besoin de convertir des documents pour l'archivage, la distribution électronique ou d'autres besoins, ces didacticiels vous fournissent les connaissances nécessaires pour effectuer efficacement toutes les tâches de conversion de documents à l'aide de la puissante bibliothèque Aspose.PDF pour .NET.
 
 ## Tutoriels
 | Titre | Description |
@@ -31,7 +31,7 @@ Vous apprendrez à spécifier les paramètres de conversion, à extraire du text
 | [Indice de police PDF vers PNG](./pdf-to-png-font-hinting/) | Guide étape par étape pour convertir un PDF en PNG avec un indice de police à l'aide d'Aspose.PDF pour .NET. |  
 | [PDF à PPT](./pdf-to-ppt/) | Guide étape par étape pour convertir un PDF en PPT en utilisant Aspose.PDF pour .NET. |  
 | [PDF vers SVG](./pdf-to-svg/) | Guide étape par étape pour convertir un PDF en SVG en utilisant Aspose.PDF pour .NET. |  
-| [PDF à Te X](./pdf-to-te-x/) | Guide étape par étape pour convertir un PDF en Te X en utilisant Aspose.PDF pour .NET. |  
+| [PDF à TeX](./pdf-to-tex/) | Guide étape par étape pour convertir un PDF en Te X en utilisant Aspose.PDF pour .NET. |  
 | [PDF vers XLS](./pdf-to-xls/) | Guide étape par étape pour convertir un PDF en XLS en utilisant Aspose.PDF pour .NET. |  
 | [PDF vers XML](./pdf-to-xml/) | Guide étape par étape pour convertir un PDF en XML à l'aide d'Aspose.PDF pour .NET. |  
 | [PDF à XPS](./pdf-to-xps/) | Guide étape par étape pour convertir un PDF en XPS en utilisant Aspose.PDF pour .NET. |  

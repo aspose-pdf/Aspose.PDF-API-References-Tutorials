@@ -33,7 +33,7 @@ TableAbsorber absorber = new TableAbsorber();
 Теперь мы посетим первую страницу PDF-документа с помощью поглотителя:
 
 ```csharp
-//Посетите первую страницу с поглотителем
+// Посетите первую страницу с поглотителем
 absorb.Visit(pdfDocument.Pages[1]);
 ```
 
@@ -74,7 +74,7 @@ absorb.Replace(pdfDocument.Pages[1], table, newTable);
 pdfDocument.Save(dataDir + "TableReplaced_out.pdf");
 ```
 
-### Пример исходного кода для замены таблицы с использованием Aspose.Words для .NET
+### Пример исходного кода для замены таблицы с использованием Aspose.PDF для .NET
 
 ```csharp
 // Путь к каталогу документов.

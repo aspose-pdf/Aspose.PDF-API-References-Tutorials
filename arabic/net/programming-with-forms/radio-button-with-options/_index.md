@@ -108,7 +108,7 @@ dataDir = dataDir + "RadioButtonWithOptions_out.pdf";
 doc.Save(dataDir);
 ```
 
-### عينة من التعليمات البرمجية المصدر لـ Radio Button With Options باستخدام Aspose.Words for .NET 
+### نموذج التعليمات البرمجية المصدر لزر الراديو مع الخيارات باستخدام Aspose.PDF لـ .NET 
 ```csharp
 try
 {

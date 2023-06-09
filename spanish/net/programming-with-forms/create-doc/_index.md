@@ -34,7 +34,7 @@ Agregar una nueva página al documento:
 Page page = doc.Pages.Add();
 ```
 
-## Paso 4: agregue un campo de botón de opción
+## Paso 4: agregue un campo de botón de radio
 
 Cree un campo de botón de radio y establezca su posición y tamaño:
 
@@ -44,7 +44,7 @@ field.Rect = new Aspose.Pdf.Rectangle(40, 650, 100, 720);
 field. PartialName = "NewField";
 ```
 
-## Paso 5: Agregar opciones de botón de opción
+## Paso 5: Agregar opciones de botón de radio
 
 Agregue las opciones deseadas al campo del botón de opción. Puede establecer las coordenadas y el tamaño de cada opción según sea necesario:
 
@@ -92,7 +92,7 @@ dataDir = dataDir + "CreateDoc_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Ejemplo de código fuente para Create Doc usando Aspose.Words para .NET 
+### Ejemplo de código fuente para Create Doc usando Aspose.PDF para .NET 
 ```csharp
 try
 {
@@ -101,7 +101,7 @@ try
 	// Crear un nuevo documento
 	Document doc = new Document();
 	Page page = doc.Pages.Add();
-	// Agregar campo de botón de radio
+	// Agregar campo de botón de opción
 	RadioButtonField field = new RadioButtonField(page);
 	field.Rect = new Aspose.Pdf.Rectangle(40, 650, 100, 720);
 	field.PartialName = "NewField";

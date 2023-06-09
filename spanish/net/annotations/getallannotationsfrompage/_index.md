@@ -26,7 +26,7 @@ Reemplace "SU DIRECTORIO DE DOCUMENTOS" con la ruta a la carpeta donde se almace
 string dataDir = @"C:\Users\JohnDoe\Documents\PDFs\";
 ```
 
-## Paso 3: Abrir Documento
+## Paso 3: Abrir documento
 
 El siguiente paso es abrir el documento PDF que contiene las anotaciones que desea extraer. Puedes hacerlo agregando el siguiente código:
 

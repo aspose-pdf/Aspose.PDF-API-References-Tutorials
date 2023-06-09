@@ -48,7 +48,7 @@ HTML dosyasını yükleyip yükleme seçeneklerini belirttikten sonra PDF'e dön
 pdfDocument.Save("HTMLToPDF_out.pdf");
 ```
 
-### Aspose.Words for .NET kullanarak HTML'den PDF'e dönüştürme için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak HTML'den PDF'e dönüştürme için örnek kaynak kodu
 
 ```csharp
 try

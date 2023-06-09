@@ -62,7 +62,7 @@ Abschließend speichern wir die resultierende PDF-Datei mit dem Namen „CreateF
 doc.Save(dataDir + "CreateFilledRectangle_out.pdf");
 ```
 
-### Beispielquellcode für „Gefülltes Rechteck erstellen“ mit Aspose.Words für .NET 
+### Beispielquellcode für „Gefülltes Rechteck erstellen“ mit Aspose.PDF für .NET 
 
 ```csharp
 

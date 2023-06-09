@@ -20,3 +20,14 @@ Aspose.PDF for .NET 教程是使用 Aspose.PDF for .NET 的全面而详细的指
 | [使用表编程](./programming-with-tables/) | 通过分步教程了解如何使用 Aspose.PDF for .NET 中的表格进行编程。 | 
 | [使用 PDF 页面编程](./programming-with-pdf-pages/) | 使用 Aspose.PDF for .NET 查看带有 PDF 页面的编程教程。了解如何操作和自定义 PDF 文件的页面。 |
 | [用图编程](./programming-with-graphs/) | 在 Aspose.PDF for .NET 中查找有关图形编程的教程。了解如何在 PDF 文档中创建和自定义图形。 |
+| [使用安全和签名进行编程](./programming-with-security-and-signatures/) | 使用安全和签名进行编程 教程教您如何保护和签署您的 PDF 文档，确保机密性和真实性。 |
+| [使用附件编程](./programming-with-attachments/) | 了解如何操作 PDF 文档中的附件，包括添加、提取和删除它们，以改进 PDF 文件的功能。 |
+| [使用书签编程](./programming-with-bookmarks/) | 了解如何操作、管理和自定义 PDF 文档中的书签，以实现更好的导航和改进的用户体验。 |
+| [标题编程](./programming-with-headings/) | Aspose.PDF for .NET 教程将引导您使用标题改进 PDF 文档的结构。 |
+| [许可 Aspose.PDF for .NET](./licensing-aspose-pdf/) | 许可 Aspose.PDF for .NET 教程将引导您管理许可以使用 Aspose.PDF for .NET，包括加载和应用许可。 |
+| [使用链接和操作进行编程](./programming-with-links-and-actions/) | Aspose.PDF for .NET 的“使用链接和动作编程”教程是掌握在 PDF 文档中创建和管理交互式链接的综合资源。 |
+| [图像编程](./programming-with-images/) | Aspose.PDF for .NET 的“图像编程”教程教您如何操作和管理 PDF 文档中的图像。 |
+| [与操作员一起编程](./programming-with-operators/) | Aspose.PDF for .NET“使用运算符编程”教程教您在 PDF 编程中使用运算符的基本技术。 |
+| [使用图章和水印进行编程](./programming-with-stamps-and-watermarks/) | Aspose.PDF for .NET 的“使用图章和水印进行编程”教程教您如何向 PDF 文档添加安全和个性化元素。 |
+| [使用标记的 PDF 编程](./programming-with-tagged-pdf/) | 查看 Aspose.PDF for .NET 的“使用标记的 PDF 编程”教程以掌握带标签的 PDF 操作和生成。 |
+| [文本编程](./programming-with-text/) | 查看 Aspose.PDF for .NET 的“使用文本编程”教程，该教程将引导您完成 PDF 文档中的高级文本操作。 |

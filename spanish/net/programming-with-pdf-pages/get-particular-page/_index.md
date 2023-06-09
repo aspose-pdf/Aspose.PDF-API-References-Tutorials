@@ -16,7 +16,7 @@ Antes de comenzar, asegúrese de tener lo siguiente:
 - Aspose.PDF para .NET instalado en su entorno de desarrollo
 
 ## Paso 1: Definir el directorio de documentos
-Primero, debe establecer la ruta a su directorio de documentos. Esta es la ubicación del archivo PDF del que desea obtener una página específica. Reemplace "SU DIRECTORIO DE DOCUMENTOS" con la ruta adecuada.
+Primero, debe establecer la ruta a su directorio de documentos. Esta es la ubicación del archivo PDF del que desea obtener una página específica. Reemplace "SU DIRECTORIO DE DOCUMENTOS" con la ruta apropiada.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";

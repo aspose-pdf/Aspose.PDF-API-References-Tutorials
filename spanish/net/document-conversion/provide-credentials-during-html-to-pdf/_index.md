@@ -67,7 +67,7 @@ pdfDocument.Save(dataDir + "ProvideCredentialsDuringHTMLToPDF_out.pdf");
 
  El código anterior guarda el archivo PDF resultante con el nombre de archivo`"ProvideCredentialsDuringHTMLToPDF_out.pdf"`.
 
-### Ejemplo de código fuente para Proporcionar credenciales durante HTML a PDF usando Aspose.Words para .NET
+### Ejemplo de código fuente para Proporcionar credenciales durante HTML a PDF usando Aspose.PDF para .NET
 
 ```csharp
 try

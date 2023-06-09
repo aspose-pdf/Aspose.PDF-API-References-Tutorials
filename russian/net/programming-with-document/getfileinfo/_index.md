@@ -26,7 +26,7 @@ url: /ru/net/programming-with-document/getfileinfo/
 // Путь к PDF-документу
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Откройте PDF-документ
+// Откройте PDF-документ
 Document pdfDocument = new Document(dataDir + "GetFileInfo.pdf");
 ```
 
@@ -59,7 +59,7 @@ Console.WriteLine("Title: {0}", docInfo.Title);
 // Путь к PDF-документу
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Откройте PDF-документ
+// Откройте PDF-документ
 Document pdfDocument = new Document(dataDir + "GetFileInfo.pdf");
 
 // Получить информацию о документе

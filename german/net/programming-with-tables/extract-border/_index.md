@@ -108,7 +108,7 @@ bitmap.Save(dataDir, ImageFormat.Png);
 
 Stellen Sie sicher, dass Sie das richtige Verzeichnis und den richtigen Dateinamen angeben, um das Ausgabebild zu speichern.
 
-### Beispielquellcode für Extract Border mit Aspose.Words für .NET
+### Beispielquellcode für Extract Border mit Aspose.PDF für .NET
 
 ```csharp
 // Der Pfad zum Dokumentenverzeichnis.
@@ -121,7 +121,7 @@ System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap((int)doc.Pages[1].PageI
 System.Drawing.Drawing2D.GraphicsPath graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
 // Der Standardwert der CTM-Matrix ist 1,0,0,1,0,0
 System.Drawing.Drawing2D.Matrix lastCTM = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, 0);
-//Das System.Drawing-Koordinatensystem basiert auf der oberen linken Seite, während das PDF-Koordinatensystem auf der unteren linken Seite basiert. Daher müssen wir die Inversionsmatrix anwenden
+// Das System.Drawing-Koordinatensystem basiert auf der oberen linken Seite, während das PDF-Koordinatensystem auf der unteren linken Seite basiert. Daher müssen wir die Inversionsmatrix anwenden
 System.Drawing.Drawing2D.Matrix inversionMatrix = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, (float)doc.Pages[1].PageInfo.Height);
 System.Drawing.PointF lastPoint = new System.Drawing.PointF(0, 0);
 System.Drawing.Color fillColor = System.Drawing.Color.FromArgb(0, 0, 0);
@@ -150,7 +150,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 
 		if (opSaveState != null)
 		{
-			// Vorherigen Status speichern und aktuellen Status an die Spitze des Stapels verschieben
+			//Vorherigen Status speichern und aktuellen Status an die Spitze des Stapels verschieben
 			graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
 			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 		}

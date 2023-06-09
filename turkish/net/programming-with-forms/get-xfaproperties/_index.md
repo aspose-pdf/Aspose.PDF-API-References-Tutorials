@@ -61,7 +61,7 @@ dataDir = dataDir + "Filled_XFA_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Aspose.Words for .NET kullanarak Get XFAProperties için örnek kaynak kodu 
+### Aspose.PDF for .NET kullanarak Get XFAProperties için örnek kaynak kodu 
 ```csharp
 // Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

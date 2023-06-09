@@ -85,7 +85,7 @@ tocPage.Paragraphs.Add(table);
 doc.Save(dataDir + "43620_ByWords_out.pdf");
 ```
 
-### Пример исходного кода для выравнивания текста для содержимого строки таблицы с использованием Aspose.Words для .NET
+### Пример исходного кода для выравнивания текста для содержимого строки таблицы с использованием Aspose.PDF для .NET
 
 ```csharp
 var dataDir = "YOUR DOCUMENT DIRECTORY";

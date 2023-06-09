@@ -2,7 +2,7 @@
 title: 表单字段字体 14
 linktitle: 表单字段字体 14
 second_title: Aspose.PDF for .NET API 参考
-description: 使用 Aspose.PDF for .NET 轻松配置 PDF 文档中表单字段的字体。
+description: 使用 Aspose.PDF for .NET 轻松配置 PDF 文档中表单域的字体。
 type: docs
 weight: 110
 url: /zh/net/programming-with-forms/form-field-font-14/
@@ -60,7 +60,7 @@ pdfDocument.Save(dataDir);
 ```
 
 
-### 使用 Aspose.Words for .NET 的 Form Field Font 14 示例源代码 
+### 使用 Aspose.PDF for .NET 的 Form Field Font 14 示例源代码 
 ```csharp
 //文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";

@@ -55,7 +55,7 @@ Console.WriteLine(option.Rect);
 }
 ```
 
-### Ejemplo de código fuente para Obtener coordenadas usando Aspose.Words para .NET 
+### Ejemplo de código fuente para Obtener coordenadas usando Aspose.PDF para .NET 
 ```csharp
 try
 {

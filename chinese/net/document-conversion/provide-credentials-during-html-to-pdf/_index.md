@@ -67,7 +67,7 @@ pdfDocument.Save(dataDir + "ProvideCredentialsDuringHTMLToPDF_out.pdf");
 
 上面的代码使用文件名保存生成的 PDF 文件`"ProvideCredentialsDuringHTMLToPDF_out.pdf"`.
 
-### 使用 Aspose.Words for .NET 在 HTML 到 PDF 期间提供凭据的示例源代码
+### 使用 Aspose.PDF for .NET 在 HTML 到 PDF 期间提供凭据的示例源代码
 
 ```csharp
 try

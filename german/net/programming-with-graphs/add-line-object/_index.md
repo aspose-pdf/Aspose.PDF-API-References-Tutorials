@@ -63,7 +63,7 @@ Abschließend speichern wir die resultierende PDF-Datei mit dem Namen „AddLine
 doc.Save(dataDir + "AddLineObject_out.pdf");
 ```
 
-### Beispielquellcode für „Linienobjekt hinzufügen“ mit Aspose.Words für .NET 
+### Beispielquellcode für „Linienobjekt hinzufügen“ mit Aspose.PDF für .NET 
 
 ```csharp
 

@@ -122,7 +122,7 @@ document. Save(dataDir);
 Console.WriteLine("\nSuccessfully added drawing with transparent color.\nFile saved to location: " + dataDir);
 ```
 
-### Beispielquellcode für „Zeichnung hinzufügen“ mit Aspose.Words für .NET 
+### Beispielquellcode für „Zeichnung hinzufügen“ mit Aspose.PDF für .NET 
 
 ```csharp
 

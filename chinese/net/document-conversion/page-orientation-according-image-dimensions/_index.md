@@ -84,7 +84,7 @@ doc.Save(dataDir + "SetPageOrientation_out.pdf");
 
 代替`"YOUR DOCUMENTS DIRECTORY"`使用要保存输出 PDF 文件的所需目录。
 
-### 使用 Aspose.Words for .NET 的页面方向根据图像尺寸的示例源代码
+### 使用 Aspose.PDF for .NET 的页面方向根据图像尺寸的示例源代码
 
 ```csharp
 

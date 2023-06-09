@@ -7,7 +7,7 @@ type: docs
 weight: 40
 url: /sv/net/programming-with-pdf-pages/determine-page-color/
 ---
-I den här handledningen går vi igenom steg-för-steg-processen för att bestämma sidfärgen på en PDF-fil med Aspose.PDF för .NET. Vi kommer att förklara den medföljande C#-källkoden och förse dig med en omfattande guide som hjälper dig att förstå och implementera den här funktionen i dina egna projekt. I slutet av denna handledning kommer du att veta hur du bestämmer sidfärgen på en PDF med Aspose.PDF för .NET.
+den här handledningen går vi igenom steg-för-steg-processen för att bestämma sidfärgen på en PDF-fil med Aspose.PDF för .NET. Vi kommer att förklara den medföljande C#-källkoden och förse dig med en omfattande guide som hjälper dig att förstå och implementera den här funktionen i dina egna projekt. I slutet av denna handledning kommer du att veta hur du bestämmer sidfärgen på en PDF med Aspose.PDF för .NET.
 
 ## Förutsättningar
 Innan du börjar, se till att du har följande:
@@ -62,7 +62,7 @@ for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // PDF-fil med öppen källkod
 Document pdfDocument = new Document( dataDir + "input.pdf");
-// Iterera genom hela PDF-filens sida
+//Iterera genom hela PDF-filens sida
 for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 {
 	// Få information om färgtyp för en viss PDF-sida

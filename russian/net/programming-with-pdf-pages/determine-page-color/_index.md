@@ -62,7 +62,7 @@ for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // PDF-файл с открытым исходным кодом
 Document pdfDocument = new Document( dataDir + "input.pdf");
-// Перебрать всю страницу файла PDF
+//Перебрать всю страницу файла PDF
 for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 {
 	// Получить информацию о типе цвета для конкретной страницы PDF

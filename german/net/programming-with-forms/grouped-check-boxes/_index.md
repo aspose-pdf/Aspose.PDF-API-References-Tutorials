@@ -87,7 +87,7 @@ dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Beispielquellcode für gruppierte Kontrollkästchen mit Aspose.Words für .NET 
+### Beispielquellcode für gruppierte Kontrollkästchen mit Aspose.PDF für .NET 
 ```csharp
 try
 {

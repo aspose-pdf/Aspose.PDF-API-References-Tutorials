@@ -78,7 +78,7 @@ doc.Save(dataDir + "39522_out.pdf");
 
  Qui,`"39522_out.pdf"` è il nome del file di output in cui verrà salvato il documento modificato. Specificare il nome e la posizione desiderati per il file di output.
 
-### Esempio di codice sorgente per Recupera campo modulo in ordine di tabulazione utilizzando Aspose.Words per .NET 
+### Esempio di codice sorgente per Recupera campo modulo in ordine di tabulazione utilizzando Aspose.PDF per .NET 
 ```csharp
 // Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

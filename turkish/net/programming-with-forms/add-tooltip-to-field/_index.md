@@ -46,7 +46,7 @@ Metin alanına araç ipucu eklemek için aşağıdaki kodu kullanın:
 
 ## 4. Adım: Güncellenen belgeyi kaydetme
 
-Tooltip'i alana ekledikten sonra, güncellenen belgeyi kaydetmemiz gerekiyor. Değiştirilen PDF formunu kaydetmek istediğiniz çıktı dosyası yolunu belirtin.
+Araç ipucunu alana ekledikten sonra güncellenen belgeyi kaydetmemiz gerekiyor. Değiştirilen PDF formunu kaydetmek istediğiniz çıktı dosyası yolunu belirtin.
 
 Güncellenen belgeyi kaydetmek için aşağıdaki kodu kullanın:
 
@@ -59,7 +59,7 @@ Console.WriteLine("\nTooltip added successfully.\nFile saved at " + dataDir);
 
 İstenen çıktı dosyası adını ve yolunu sağladığınızdan emin olun. Bu kodu çalıştırdıktan sonra, eklenen araç ipucu ile değiştirilmiş PDF formu belirtilen konuma kaydedilecektir.
 
-### Aspose.Words for .NET kullanarak Alana Araç İpucu Ekle için örnek kaynak kodu 
+### Aspose.PDF for .NET kullanarak Alana Araç İpucu Ekle için örnek kaynak kodu 
 
 ```csharp
 // Belgeler dizininin yolu.
@@ -76,4 +76,4 @@ Console.WriteLine("\nTooltip added successfully.\nFile saved at " + dataDir);
 
 ## Çözüm
 
-Tebrikler! Aspose.PDF for .NET kullanarak bir alana araç ipucu eklemeyi başarıyla öğrendiniz. Bu eğitimdeki adım adım kılavuzu izleyerek, kullanıcılara ek bilgi veya rehberlik sağlamak için PDF formlarınızı araç ipuçlarıyla geliştirebilirsiniz. Kitaplığın sunduğu daha gelişmiş özellikleri ve işlevleri keşfetmek için Aspose.PDF for .NET tarafından sağlanan belgeleri ve örnekleri incelemeyi unutmayın.
+Tebrikler! Aspose.PDF for .NET kullanarak bir alana araç ipucu eklemeyi başarıyla öğrendiniz. Bu eğitimdeki adım adım kılavuzu izleyerek, kullanıcılara ek bilgi veya rehberlik sağlamak için PDF formlarınızı araç ipuçlarıyla geliştirebilirsiniz. Kitaplığın sunduğu daha gelişmiş özellikleri ve işlevleri keşfetmek için Aspose.PDF for .NET tarafından sağlanan belgeleri ve örnekleri keşfetmeyi unutmayın.

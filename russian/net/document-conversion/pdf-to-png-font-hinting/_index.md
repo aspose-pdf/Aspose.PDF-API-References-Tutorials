@@ -66,7 +66,7 @@ for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 
 Приведенный выше код преобразует каждую страницу PDF-файла в изображение PNG с подсказкой шрифта и сохраняет каждое изображение в виде отдельного файла PNG.
 
-### Пример исходного кода для хинтинга PDF в PNGFont с использованием Aspose.Words для .NET
+### Пример исходного кода для преобразования PDF в PNGFont с использованием Aspose.PDF для .NET
 
 ```csharp
 try

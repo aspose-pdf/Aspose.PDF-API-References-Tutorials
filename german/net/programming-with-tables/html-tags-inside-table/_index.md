@@ -70,7 +70,7 @@ Wir speichern das PDF-Dokument mit der Tabelle mit HTML-Inhalt.
 doc.Save(dataDir + "HTMLInsideTableCell_out.pdf");
 ```
 
-### Beispielquellcode für HTML-Tags in der Tabelle mit Aspose.Words für .NET
+### Beispielquellcode für HTML-Tags in der Tabelle mit Aspose.PDF für .NET
 
 ```csharp
 // Der Pfad zum Dokumentenverzeichnis.

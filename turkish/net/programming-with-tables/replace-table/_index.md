@@ -33,7 +33,7 @@ TableAbsorber absorber = new TableAbsorber();
 Şimdi emiciyi kullanarak PDF belgesinin ilk sayfasını ziyaret edeceğiz:
 
 ```csharp
-//Emici ile ilk sayfayı ziyaret edin
+// Emici ile ilk sayfayı ziyaret edin
 absorb.Visit(pdfDocument.Pages[1]);
 ```
 
@@ -74,7 +74,7 @@ Son olarak, değiştirilen PDF belgesini kaydediyoruz:
 pdfDocument.Save(dataDir + "TableReplaced_out.pdf");
 ```
 
-### Aspose.Words for .NET kullanan Tablo Değiştir için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak Tablo Değiştir için örnek kaynak kodu
 
 ```csharp
 // Belgeler dizininin yolu.

@@ -51,7 +51,7 @@ pdfPage.SetPageSize(597.6, 842.4);
 ```
 
 ## Schritt 6: Speichern Sie das aktualisierte Dokument
-Abschließend können Sie das aktualisierte PDF-Dokument mit in einer Datei speichern`Save()` Methode der`Document` Klasse. Stellen Sie sicher, dass Sie den richtigen Pfad und Dateinamen angeben.
+Abschließend können Sie das aktualisierte PDF-Dokument mit in einer Datei speichern`Save()` Methode der`Document`Klasse. Stellen Sie sicher, dass Sie den richtigen Pfad und Dateinamen angeben.
 
 ```csharp
 dataDir = dataDir + "UpdateDimensions_out.pdf";

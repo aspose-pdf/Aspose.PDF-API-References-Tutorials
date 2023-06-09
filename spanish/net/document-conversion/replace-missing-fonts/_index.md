@@ -66,7 +66,7 @@ pdf.Save(fileNew.FullName);
 
 Asegúrese de haber establecido la ruta de destino correcta para el archivo PDF resultante.
 
-### Ejemplo de código fuente para Reemplazar fuentes faltantes usando Aspose.Words para .NET
+### Ejemplo de código fuente para Reemplazar fuentes faltantes usando Aspose.PDF para .NET
 
 ```csharp
 // La ruta al directorio de documentos.

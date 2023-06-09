@@ -14,7 +14,7 @@ Avant de plonger dans le code, assurez-vous que la bibliothèque Aspose.PDF pour
 
 ## Étape 1 : Configurer le document
 
- Pour commencer, nous devons créer une nouvelle instance de`Document` classe de l'espace de noms Aspose.Pdf. Cette classe représente un document PDF.
+ Pour commencer, nous devons créer une nouvelle instance de`Document`classe de l'espace de noms Aspose.Pdf. Cette classe représente un document PDF.
 
 ```csharp
 // Chemin d'accès au répertoire des documents.
@@ -35,7 +35,7 @@ Page sec1 = pdfDocument.Pages.Add();
 
 ## Étape 3 : Ajouter un tableau
 
-Dans cette étape, nous allons créer une table en instanciant le`Table` classe de l'espace de noms Aspose.Pdf.
+ Dans cette étape, nous allons créer une table en instanciant le`Table` classe de l'espace de noms Aspose.Pdf.
 
 ```csharp
 // Instancier un objet table
@@ -121,7 +121,7 @@ pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 
 Toutes nos félicitations! Vous avez appris avec succès comment ajouter une image à une cellule de tableau en utilisant Aspose.PDF pour .NET. N'hésitez pas à explorer d'autres options de personnalisation et à intégrer cette fonctionnalité dans vos projets.
 
-### Exemple de code source pour ajouter une image dans une cellule de tableau à l'aide de Aspose.Words pour .NET
+### Exemple de code source pour ajouter une image dans une cellule de tableau en utilisant Aspose.PDF pour .NET
 
 ```csharp
 // Chemin d'accès au répertoire des documents.
@@ -133,7 +133,7 @@ Document pdfDocument = new Document();
 Page sec1 = pdfDocument.Pages.Add();
 // Instancier un objet table
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
-// Ajouter le tableau dans la collection de paragraphes de la page souhaitée
+//Ajouter le tableau dans la collection de paragraphes de la page souhaitée
 sec1.Paragraphs.Add(tab1);
 // Définir la bordure de cellule par défaut à l'aide de l'objet BorderInfo
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);

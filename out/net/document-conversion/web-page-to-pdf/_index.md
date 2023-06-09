@@ -71,7 +71,7 @@ Console.WriteLine(ex.Message);
 ```
 Catch any exceptions that may occur during the conversion process and display the error message.
 
-### Example source code for Web Page to PDF using Aspose.Words for .NET
+### Example source code for Web Page to PDF using Aspose.PDF for .NET
 
 ```csharp
 try

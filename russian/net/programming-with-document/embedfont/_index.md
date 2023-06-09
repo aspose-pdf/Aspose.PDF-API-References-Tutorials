@@ -2,7 +2,7 @@
 title: Встроить шрифт
 linktitle: Встроить шрифт
 second_title: Aspose.PDF для справочника API .NET
-description: Из этого пошагового руководства вы узнаете, как встраивать шрифты в файл PDF с помощью Aspose.PDF для .NET. Убедитесь, что ваши документы корректно отображаются на любом устройстве.
+description: Из этого пошагового руководства вы узнаете, как встроить шрифты в файл PDF с помощью Aspose.PDF для .NET. Убедитесь, что ваши документы корректно отображаются на любом устройстве.
 type: docs
 weight: 120
 url: /ru/net/programming-with-document/embedfont/
@@ -83,7 +83,7 @@ Console.WriteLine("\nFont embedded successfully in a PDF file.\nFile saved at " 
 // Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Загрузите существующие файлы PDF
+// Загрузите существующие файлы PDF
 Document doc = new Document(dataDir + "input.pdf");
 
 // Перебрать все страницы

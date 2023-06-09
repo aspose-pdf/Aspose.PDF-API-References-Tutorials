@@ -78,7 +78,7 @@ doc.Save(dataDir + "39522_out.pdf");
 
  Hier,`"39522_out.pdf"` ist der Name der Ausgabedatei, in der das geänderte Dokument gespeichert wird. Geben Sie den gewünschten Namen und Speicherort für die Ausgabedatei an.
 
-### Beispielquellcode für „Formularfeld in Tab-Reihenfolge abrufen“ mit Aspose.Words für .NET 
+### Beispielquellcode für „Formularfeld in Tab-Reihenfolge abrufen“ mit Aspose.PDF für .NET 
 ```csharp
 // Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

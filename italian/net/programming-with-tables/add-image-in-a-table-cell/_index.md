@@ -14,7 +14,7 @@ Prima di immergerci nel codice, assicurati di avere la libreria Aspose.PDF per .
 
 ## Passaggio 1: impostazione del documento
 
- Per iniziare, dobbiamo creare una nuova istanza del file`Document` class dallo spazio dei nomi Aspose.Pdf. Questa classe rappresenta un documento PDF.
+ Per iniziare, dobbiamo creare una nuova istanza del file`Document`class dallo spazio dei nomi Aspose.Pdf. Questa classe rappresenta un documento PDF.
 
 ```csharp
 // Il percorso della directory dei documenti.
@@ -35,7 +35,7 @@ Page sec1 = pdfDocument.Pages.Add();
 
 ## Passaggio 3: aggiunta di una tabella
 
-In questo passaggio, creeremo una tabella istanziando il file`Table` class dallo spazio dei nomi Aspose.Pdf.
+ In questo passaggio, creeremo una tabella istanziando il file`Table` class dallo spazio dei nomi Aspose.Pdf.
 
 ```csharp
 // Crea un'istanza di un oggetto tabella
@@ -121,7 +121,7 @@ pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 
 Congratulazioni! Hai imparato con successo come aggiungere un'immagine a una cella di tabella utilizzando Aspose.PDF per .NET. Sentiti libero di esplorare ulteriori opzioni di personalizzazione e integrare questa funzionalità nei tuoi progetti.
 
-### Esempio di codice sorgente per aggiungere un'immagine in una cella di tabella utilizzando Aspose.Words per .NET
+### Codice sorgente di esempio per aggiungere un'immagine in una cella di tabella utilizzando Aspose.PDF per .NET
 
 ```csharp
 // Il percorso della directory dei documenti.
@@ -133,7 +133,7 @@ Document pdfDocument = new Document();
 Page sec1 = pdfDocument.Pages.Add();
 // Crea un'istanza di un oggetto tabella
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
-// Aggiungi la tabella nella raccolta di paragrafi della pagina desiderata
+//Aggiungi la tabella nella raccolta di paragrafi della pagina desiderata
 sec1.Paragraphs.Add(tab1);
 // Imposta il bordo della cella predefinito utilizzando l'oggetto BorderInfo
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);

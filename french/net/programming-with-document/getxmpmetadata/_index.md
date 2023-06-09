@@ -20,13 +20,13 @@ Une fois que vous avez téléchargé la bibliothèque, extrayez le contenu du fi
 
  Une fois que vous avez installé Aspose.PDF pour .NET et ajouté une référence à la DLL dans votre projet .NET, vous pouvez commencer à utiliser le`GetXmpMetadata` fonctionnalité pour extraire les métadonnées XMP d'un document PDF.
 
-La première étape de l'utilisation de cette fonctionnalité consiste à charger le document PDF dont vous souhaitez extraire les métadonnées XMP. Pour ce faire, vous pouvez utiliser le code suivant :
+La première étape de l'utilisation de cette fonctionnalité consiste à charger le document PDF dont vous souhaitez extraire les métadonnées XMP. Pour ce faire, vous pouvez utiliser le code suivant :
 
 ```csharp
 // Le chemin d'accès au document PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Ouvrir le document PDF
+// Ouvrir le document PDF
 Document pdfDocument = new Document(dataDir + "GetXMPMetadata.pdf");
 ```
 
@@ -52,7 +52,7 @@ Console.WriteLine(pdfDocument.Metadata["xmp:CustomProperty"]);
 // Le chemin d'accès au document PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Ouvrir le document PDF
+// Ouvrir le document PDF
 Document pdfDocument = new Document(dataDir + "GetXMPMetadata.pdf");
 
 // Extraire les métadonnées XMP

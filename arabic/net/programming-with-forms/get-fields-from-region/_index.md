@@ -61,7 +61,7 @@ Console.Out.WriteLine("Field name: " + field.FullName + "-" + "Field value: " + 
 }
 ```
 
-### نموذج لشفرة مصدر للحصول على الحقول من المنطقة باستخدام Aspose.Words for .NET 
+### نموذج التعليمات البرمجية المصدر للحصول على الحقول من المنطقة باستخدام Aspose.PDF لـ .NET 
 ```csharp
 // المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

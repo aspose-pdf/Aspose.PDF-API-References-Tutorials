@@ -70,7 +70,7 @@ table. ColumnWidths = "100 100";
 In diesem Schritt fügen wir der Tabelle eine Zeile und Zellen hinzu. Jede Zeile stellt eine horizontale Zeile in der Tabelle dar, und den Zeilen werden Zellen hinzugefügt. Fügen Sie den folgenden Code hinzu:
 
 ```csharp
-// Erstellen Sie ein Zeilenobjekt und fügen Sie es der Tabelleninstanz hinzu
+//Erstellen Sie ein Zeilenobjekt und fügen Sie es der Tabelleninstanz hinzu
 Aspose.Pdf.Row row = table.Rows.Add();
 // Erstellen Sie ein Zellobjekt und fügen Sie es der Zeileninstanz hinzu
 Aspose.Pdf.Cell cell = row.Cells.Add();
@@ -112,7 +112,7 @@ doc.Save(dataDir);
 Console.WriteLine("\nSVG image added successfully inside a table cell.\nFile saved at " + dataDir);
 ```
 
-### Beispielquellcode zum Hinzufügen eines SVG-Objekts mit Aspose.Words für .NET
+### Beispielquellcode zum Hinzufügen eines SVG-Objekts mit Aspose.PDF für .NET
 
 ```csharp
 // Der Pfad zum Dokumentenverzeichnis.
@@ -134,7 +134,7 @@ img.FixHeight = 50;
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
 // Legen Sie die Breite für Tabellenzellen fest
 table.ColumnWidths = "100 100";
-// Erstellen Sie ein Zeilenobjekt und fügen Sie es der Tabelleninstanz hinzu
+//Erstellen Sie ein Zeilenobjekt und fügen Sie es der Tabelleninstanz hinzu
 Aspose.Pdf.Row row = table.Rows.Add();
 // Erstellen Sie ein Zellobjekt und fügen Sie es der Zeileninstanz hinzu
 Aspose.Pdf.Cell cell = row.Cells.Add();

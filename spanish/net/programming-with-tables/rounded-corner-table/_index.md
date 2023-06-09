@@ -28,7 +28,7 @@ tab1.CornerStyle = Aspose.Pdf.BorderCornerStyle.Round;
 Para darle a la tabla un borde de esquina redondeada, necesitamos crear un objeto BorderInfo y configurarlo con los parámetros apropiados:
 
 ```csharp
-// Cree un objeto GraphInfo para establecer el color del borde
+//Cree un objeto GraphInfo para establecer el color del borde
 GraphInfo graph = new GraphInfo();
 graph.Color = Aspose.Pdf.Color.Red;
 
@@ -42,7 +42,7 @@ bInfo.RoundedBorderRadius = 15;
 tab1.Border = bInfo;
 ```
 
-### Ejemplo de código fuente para Rounded Corner Table usando Aspose.Words para .NET
+### Ejemplo de código fuente para la tabla de esquinas redondeadas usando Aspose.PDF para .NET
 
 ```csharp
 // La ruta al directorio de documentos.

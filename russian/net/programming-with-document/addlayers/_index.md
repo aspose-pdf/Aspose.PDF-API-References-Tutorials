@@ -23,7 +23,7 @@ Document doc = new Document();
 
 ## Шаг 2: добавьте страницу в документ
 
- Затем добавьте страницу в документ, используя`Add` метод`Pages` коллекция в`Document` сорт.
+Затем добавьте страницу в документ, используя`Add` метод`Pages` коллекция в`Document` сорт.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -61,7 +61,7 @@ page.Layers.Add(layer);
 
 ## Шаг 4: Сохраните файл PDF
 
-Сохраните измененный файл PDF с помощью`Save` метод`Document` сорт.
+ Сохраните измененный файл PDF с помощью`Save` метод`Document` сорт.
 
 ```csharp
 dataDir = dataDir + "AddLayers_out.pdf";

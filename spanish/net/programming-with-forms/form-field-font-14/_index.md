@@ -60,7 +60,7 @@ pdfDocument.Save(dataDir);
 ```
 
 
-### Ejemplo de código fuente para Form Field Font 14 usando Aspose.Words para .NET 
+### Ejemplo de código fuente para Form Field Font 14 usando Aspose.PDF para .NET 
 ```csharp
 // La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

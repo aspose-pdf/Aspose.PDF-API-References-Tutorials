@@ -51,7 +51,7 @@ Console.WriteLine("The field " + field.FullName + " is required");
 }
 ```
 
-### Esempio di codice sorgente per determinare il campo obbligatorio utilizzando Aspose.Words per .NET 
+### Esempio di codice sorgente per determinare il campo obbligatorio utilizzando Aspose.PDF per .NET 
 ```csharp
 // Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

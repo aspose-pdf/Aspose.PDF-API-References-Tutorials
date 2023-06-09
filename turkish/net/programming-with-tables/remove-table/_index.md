@@ -33,7 +33,7 @@ TableAbsorber absorber = new TableAbsorber();
 Şimdi emiciyi kullanarak PDF belgesinin ilk sayfasını ziyaret edeceğiz:
 
 ```csharp
-//Emici ile ilk sayfayı ziyaret edin
+// Emici ile ilk sayfayı ziyaret edin
 absorb.Visit(pdfDocument.Pages[1]);
 ```
 
@@ -45,11 +45,11 @@ Tabloyu kaldırabilmek için sayfanın ilk tablosunu elde edeceğiz:
 AbsorbedTable table = absorb.TableList[0];
 ```
 
-## Adım 5: Tablonun silinmesi
+## 5. Adım: Tablonun silinmesi
 Şimdi emiciyi kullanarak masayı kaldıralım:
 
 ```csharp
-// masayı kaldır
+//masayı kaldır
 absorb.Remove(table);
 ```
 
@@ -61,7 +61,7 @@ Son olarak, değiştirilen PDF belgesini kaydediyoruz:
 pdfDocument.Save(dataDir + "Table_out.pdf");
 ```
 
-### Aspose.Words for .NET kullanarak Tabloyu Kaldır için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak Tabloyu Kaldır için örnek kaynak kodu
 
 ```csharp
 // Belgeler dizininin yolu.

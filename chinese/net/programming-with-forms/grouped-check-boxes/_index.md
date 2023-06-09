@@ -87,7 +87,7 @@ dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### 使用 Aspose.Words for .NET 的分组复选框示例源代码 
+### 使用 Aspose.PDF for .NET 的分组复选框示例源代码 
 ```csharp
 try
 {

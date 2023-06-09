@@ -34,7 +34,7 @@ document.Save(dataDir + "XPSToPDF_out.pdf");
 ```
 Save the resulting PDF document to the specified directory.
 
-### Example source code for XPS to PDF using Aspose.Words for .NET
+### Example source code for XPS to PDF using Aspose.PDF for .NET
 
 ```csharp
 try

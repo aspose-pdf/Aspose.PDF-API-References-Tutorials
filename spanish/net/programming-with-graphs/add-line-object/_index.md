@@ -63,7 +63,7 @@ Finalmente, guardamos el archivo PDF resultante con el nombre "AddLineObject_out
 doc.Save(dataDir + "AddLineObject_out.pdf");
 ```
 
-### Ejemplo de código fuente para Agregar objeto de línea usando Aspose.Words para .NET 
+### Ejemplo de código fuente para Agregar objeto de línea usando Aspose.PDF para .NET 
 
 ```csharp
 

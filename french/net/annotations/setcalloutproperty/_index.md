@@ -15,7 +15,7 @@ Dans ce didacticiel, nous vous guiderons tout au long du processus de définitio
 
  Si vous ne l'avez pas déjà fait, vous devrez[télécharger](https://releases.aspose.com/pdf/net/) et installez Aspose.PDF pour .NET à partir des versions d'Aspose ou via le gestionnaire de packages NuGet.
 
-## Créer un nouveau document PDF
+## Étape 1 : Créer un nouveau document PDF
 
  Créez un nouveau document PDF à l'aide de`Document` classe fournie par Aspose.PDF pour .NET.
 
@@ -25,7 +25,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 ```
 
-## Ajouter une nouvelle page au document
+## Étape 2 : Ajouter une nouvelle page au document
 
  Ajoutez une nouvelle page au document à l'aide de la`Pages` collecte de la`Document` classe.
 
@@ -33,7 +33,7 @@ Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Définir l'apparence par défaut
+## Étape 3 : Définir l'apparence par défaut
 
  Définissez l'apparence par défaut de l'annotation de texte libre en créant un nouveau`DefaultAppearance` objet et la définition de ses propriétés telles que`TextColor` et`FontSize`.
 
@@ -43,7 +43,7 @@ da.TextColor = System.Drawing.Color.Red;
 da.FontSize = 10;
 ```
 
-## Créer une annotation de texte libre avec légende
+## Étape 4 : Créer une annotation de texte libre avec légende
 
  Créez une nouvelle annotation de texte libre avec légende à l'aide de la`FreeTextAnnotation` classe. Met le`Intent` propriété à`FreeTextIntent.FreeTextCallout` pour spécifier qu'il s'agit d'une annotation de légende. Met le`EndingStyle` propriété à`LineEnding.OpenArrow` pour spécifier le style de la flèche à la fin de la légende. Met le`Callout` propriété à un tableau de`Point` objets qui représentent les points sur la page où la ligne de légende doit être tracée.
 
@@ -57,7 +57,7 @@ fta.Callout = new Point[]
 };
 ```
 
-## Ajouter l'annotation de texte libre à la page
+## Étape 5 : Ajoutez l'annotation de texte libre à la page
 
  Ajoutez l'annotation de texte libre à la page en utilisant le`Annotations` collecte de la`Page` classe.
 
@@ -65,15 +65,15 @@ fta.Callout = new Point[]
 page.Annotations.Add(fta);
 ```
 
-## Ajouter du texte à l'annotation
+## Étape 6 : Ajouter du texte à l'annotation
 
- Ajoutez du texte à l'annotation en définissant le`RichText`propriété à une chaîne de XML formaté. Dans ce didacticiel, nous définissons la couleur du texte sur le rouge et la taille de la police sur 9.
+Ajoutez du texte à l'annotation en définissant le`RichText` propriété à une chaîne de XML formaté. Dans ce didacticiel, nous définissons la couleur du texte sur le rouge et la taille de la police sur 9.
 
 ```csharp
 fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"color:#FF
 ```
 
-## 8. enregistrer le document
+## Étape 7 : enregistrez le document
 
 Enregistrez maintenant le document en utilisant le code suivant :
 

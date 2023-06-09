@@ -48,7 +48,7 @@ pdfDocument.Save("PDFToXLS_out.xls", excelsave);
 
  يحفظ الكود أعلاه ملف PDF المحول بتنسيق XLS باسم الملف`"PDFToXLS_out.xls"`.
 
-### مثال على شفرة المصدر لـ PDF إلى XLS باستخدام Aspose.Words for .NET
+### مثال على كود المصدر لـ PDF إلى XLS باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 // المسار إلى دليل المستندات.

@@ -66,7 +66,7 @@ pdf.Save(fileNew.FullName);
 
 Assurez-vous que vous avez défini le chemin de destination correct pour le fichier PDF résultant.
 
-### Exemple de code source pour Remplacer les polices manquantes à l'aide de Aspose.Words pour .NET
+### Exemple de code source pour Remplacer les polices manquantes à l'aide d'Aspose.PDF pour .NET
 
 ```csharp
 // Chemin d'accès au répertoire des documents.

@@ -83,7 +83,7 @@ Console.WriteLine("\nFont embedded successfully in a PDF file.\nFile saved at " 
 // المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//قم بتحميل ملفات PDF موجودة
+// قم بتحميل ملفات PDF موجودة
 Document doc = new Document(dataDir + "input.pdf");
 
 // كرر من خلال جميع الصفحات

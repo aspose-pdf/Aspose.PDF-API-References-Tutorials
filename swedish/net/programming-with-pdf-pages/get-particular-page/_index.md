@@ -7,7 +7,7 @@ type: docs
 weight: 90
 url: /sv/net/programming-with-pdf-pages/get-particular-page/
 ---
-I den här handledningen kommer vi att visa dig hur du får en specifik sida från en PDF med Aspose.PDF för .NET. Vi går igenom varje steg i processen med hjälp av den medföljande C#-källkoden. I slutet av denna handledning vet du hur du navigerar till en specifik sida och sparar den sidan som en separat PDF-fil.
+den här handledningen kommer vi att visa dig hur du får en specifik sida från en PDF med Aspose.PDF för .NET. Vi går igenom varje steg i processen med hjälp av den medföljande C#-källkoden. I slutet av denna handledning vet du hur du navigerar till en specifik sida och sparar den sidan som en separat PDF-fil.
 
 ## Förutsättningar
 Innan du börjar, se till att du har följande:

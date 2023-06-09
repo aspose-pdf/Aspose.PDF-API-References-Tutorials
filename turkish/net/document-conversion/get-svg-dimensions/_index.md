@@ -53,7 +53,7 @@ svgDoc.Save(dataDir + "GetSVGDimensions_out.pdf");
 
  Yer değiştirmek`"YOUR DOCUMENTS DIRECTORY"` Çıktı PDF dosyasını kaydetmek istediğiniz istediğiniz dizinle.
   
-### Aspose.Words for .NET kullanarak Get SVG Dimensions için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak Get SVG Dimensions için örnek kaynak kodu
 
 ```csharp
 // Belgeler dizininin yolu.

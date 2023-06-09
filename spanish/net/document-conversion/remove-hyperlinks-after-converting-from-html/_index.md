@@ -72,7 +72,7 @@ doc.Save(dataDir + "RemoveHyperlinksFromText_out.pdf");
 
  El código anterior guarda el archivo PDF resultante con el nombre de archivo`"RemoveHyperlinksFromText_out.pdf"`.
 
-### Código fuente de ejemplo para Eliminar hipervínculos después de convertir de HTML usando Aspose.Words para .NET
+### Código fuente de ejemplo para Eliminar hipervínculos después de convertir de HTML usando Aspose.PDF para .NET
 
 ```csharp
 // La ruta al directorio de documentos.

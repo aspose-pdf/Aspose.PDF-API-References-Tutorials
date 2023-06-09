@@ -85,7 +85,7 @@ Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dat
 
 تأكد من تحديد دليل المستند الصحيح. سيتم حفظ ملف PDF الناتج مع فواصل الجدول المحددة.
 
-### مثال على شفرة المصدر لتحديد فاصل الجدول باستخدام Aspose.Words for .NET
+### مثال على التعليمات البرمجية المصدر لتحديد فاصل الجدول باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 // المسار إلى دليل المستندات.
@@ -134,11 +134,11 @@ float TotalObjectsHeight = (float)page.PageInfo.Margin.Top + (float)page.PageInf
 // ومعلومات الهامش السفلي
 Console.WriteLine("PDF document Height = " + pdf.PageInfo.Height.ToString() + "\nTop Margin Info = " + page.PageInfo.Margin.Top.ToString() + "\nBottom Margin Info = " + page.PageInfo.Margin.Bottom.ToString() + "\n\nTable-Top Margin Info = " + table1.Margin.Top.ToString() + "\nAverage Row Height = " + table1.Rows[0].MinRowHeight.ToString() + " \nTable height " + table1.GetHeight().ToString() + "\n ----------------------------------------" + "\nTotal Page Height =" + PageHeight.ToString() + "\nCummulative height including Table =" + TotalObjectsHeight.ToString());
 
-//تحقق مما إذا كنا قد اقتطعنا حجم الهامش العلوي للصفحة + الهامش السفلي للصفحة
+// تحقق مما إذا كنا قد اقتطعنا حجم الهامش العلوي للصفحة + الهامش السفلي للصفحة
 // + هامش أعلى الجدول وارتفاع الجدول من ارتفاع الصفحة وأقلها
 // من 10 (يمكن أن يكون الصف المتوسط أكبر من 10)
 if ((PageHeight - TotalObjectsHeight) <= 10)
-	// إذا كانت القيمة أقل من 10 ، فقم بعرض الرسالة.
+	//إذا كانت القيمة أقل من 10 ، فقم بعرض الرسالة.
 	// مما يدل على أنه لا يمكن وضع صف آخر وإذا أضفنا جديدًا
 	// صف ، الجدول سوف ينكسر. يعتمد ذلك على قيمة ارتفاع الصف.
 	Console.WriteLine("Page Height - Objects Height < 10, so table will break");

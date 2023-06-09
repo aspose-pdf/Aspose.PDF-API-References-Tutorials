@@ -53,7 +53,7 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nRadio button successfully selected in group.\nFile saved to location: " + dataDir);
 ```
 
-### 使用 Aspose.Words for .NET 选择单选按钮的示例源代码 
+### 使用 Aspose.PDF for .NET 选择单选按钮的示例源代码 
 ```csharp
 try
 {

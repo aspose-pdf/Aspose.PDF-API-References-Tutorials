@@ -85,7 +85,7 @@ doc.Save(dataDir + "AddAttachmentToPDFA_out.pdf");
 
  Yukarıdaki kodda,`Save` belgeyi dosya adıyla kaydetme yöntemi`"AddAttachmentToPDFA_out.pdf"`. Ortaya çıkan dosyayı kaydetmek istediğiniz uygun yolu belirttiğinizden emin olun.
 
-### Aspose.Words for .NET kullanarak PDFA'ya ek eklemek için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak PDFA'ya ek eklemek için örnek kaynak kodu
 
 ```csharp
 // Belgeler dizininin yolu.

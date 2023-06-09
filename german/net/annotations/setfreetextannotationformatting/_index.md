@@ -20,15 +20,15 @@ Bevor wir beginnen, stellen Sie sicher, dass Sie die folgenden Voraussetzungen e
 
 
 
-## 1. Erstellen Sie eine neue C#-Konsolenanwendung
+## Schritt 1: Erstellen Sie eine neue C#-Konsolenanwendung
 
 Erstellen Sie zunächst eine neue C#-Konsolenanwendung in Microsoft Visual Studio. Um eine neue Konsolenanwendung zu erstellen, wählen Sie im Hauptmenü „Datei“ > „Neu“ > „Projekt“ > „Visual C#“ > „Konsolenanwendung“.
 
-## 2. Fügen Sie einen Verweis auf Aspose.PDF für .NET hinzu
+## Schritt 2: Verweis auf Aspose.PDF für .NET hinzufügen
 
 Fügen Sie als Nächstes einen Verweis auf Aspose.PDF für .NET in Ihrem Projekt hinzu. Klicken Sie dazu im Bereich „Projektmappen-Explorer“ mit der rechten Maustaste auf Ihr Projekt, wählen Sie „Hinzufügen“ > „Referenz“ und navigieren Sie dann zu dem Speicherort, an dem Sie die DLL-Datei „Aspose.PDF für .NET“ gespeichert haben. Wählen Sie die DLL-Datei aus und klicken Sie auf „OK“, um die Referenz zu Ihrem Projekt hinzuzufügen.
 
-## 3. Richten Sie die Umgebung ein
+## Schritt 3: Richten Sie die Umgebung ein
 
 Nachdem Sie den Verweis auf Aspose.PDF für .NET hinzugefügt haben, müssen Sie die Umgebung einrichten. Erstellen Sie dazu eine neue String-Variable mit dem Namen „dataDir“ und legen Sie diese auf den Pfad des Verzeichnisses fest, in dem sich Ihr PDF-Dokument befindet. Ersetzen Sie „IHR DOKUMENTVERZEICHNIS“ im folgenden Code durch den tatsächlichen Pfad Ihres Dokumentverzeichnisses:
 
@@ -37,7 +37,7 @@ Nachdem Sie den Verweis auf Aspose.PDF für .NET hinzugefügt haben, müssen Sie
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## 4. Öffnen Sie das PDF-Dokument
+## Schritt 4: Öffnen Sie das PDF-Dokument
 
 Sobald Sie die Umgebung eingerichtet haben, können Sie das PDF-Dokument mit dem folgenden Code öffnen:
 
@@ -48,7 +48,7 @@ Document pdfDocument = new Document(dataDir + "SetFreeTextAnnotationFormatting.p
 
 Ersetzen Sie „SetFreeTextAnnotationFormatting.pdf“ durch den tatsächlichen Namen Ihres PDF-Dokuments.
 
-## 5. Richten Sie das Standard-Erscheinungsbild ein
+## Schritt 5: Standard-Erscheinungsbild einrichten
 
 Um das Standard-Erscheinungsbild der Freitextanmerkung einzurichten, müssen Sie das DefaultAppearance-Objekt mit der gewünschten Schriftart, Schriftgröße und Farbe instanziieren. In diesem Tutorial stellen wir die Schriftart auf „Arial“, die Schriftgröße auf 28 und die Farbe auf Rot ein.
 
@@ -57,7 +57,7 @@ Um das Standard-Erscheinungsbild der Freitextanmerkung einzurichten, müssen Sie
 DefaultAppearance default_appearance = new DefaultAppearance("Arial", 28, System.Drawing.Color.Red);
 ```
 
-## 6. Erstellen Sie eine Freitextanmerkung
+## Schritt 6: Erstellen Sie eine Freitextanmerkung
 
 Nachdem Sie nun das Standard-Erscheinungsbild eingerichtet haben, können Sie mit dem folgenden Code eine Freitextanmerkung erstellen:
 
@@ -68,7 +68,7 @@ FreeTextAnnotation freetext = new FreeTextAnnotation(pdfDocument.Pages[1], new A
 
 Der obige Code erstellt eine neue Freitextanmerkung auf der zweiten Seite des PDF-Dokuments. Die Anmerkung wird bei (200, 400) positioniert und hat eine Breite von 400 und eine Höhe von 600.
 
-## 7. Geben Sie den Inhalt der Anmerkung an
+## Schritt 7: Geben Sie den Inhalt der Anmerkung an
 
 Nachdem Sie die Freitextanmerkung erstellt haben, können Sie den Inhalt der Anmerkung mit dem folgenden Code angeben:
 

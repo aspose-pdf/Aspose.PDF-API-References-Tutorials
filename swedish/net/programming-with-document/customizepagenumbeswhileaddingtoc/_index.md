@@ -1,6 +1,6 @@
 ---
-title: Anpassa sidnummer medan du lägger till innehållsförteckning
-linktitle: Anpassa sidnummer medan du lägger till innehållsförteckning
+title: Anpassa sidnummer när du lägger till innehållsförteckning
+linktitle: Anpassa sidnummer när du lägger till innehållsförteckning
 second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du anpassar sidnummer samtidigt som du lägger till en innehållsförteckning (TOC) med Aspose.PDF för .NET med denna steg-för-steg-guide och kodexempel.
 type: docs
@@ -61,7 +61,7 @@ for (int i = 1; i < doc.Pages.Count; i++)
     heading2.Top = doc.Pages[i + 1].Rect.Height;
     // Destinationskoordinat
     segment2.Text = "Page " + i.ToString();
-    // Lägg till rubrik på sidan som innehåller innehållsförteckningen
+    //Lägg till rubrik på sidan som innehåller innehållsförteckningen
     tocPage.Paragraphs.Add(heading2);
 }
 ```
@@ -80,7 +80,7 @@ doc.Save(outFile);
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string inFile = dataDir + "42824.pdf";
 string outFile = dataDir + "42824_out.pdf";
-//Ladda en befintlig PDF-fil
+// Ladda en befintlig PDF-fil
 Document doc = new Document(inFile);
 // Få tillgång till första sidan av PDF-filen
 Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
@@ -106,7 +106,7 @@ for (int i = 1; i<doc.Pages.Count; i++)
 	heading2.Top = doc.Pages[i + 1].Rect.Height;
 	// Destinationskoordinat
 	segment2.Text = "Page " + i.ToString();
-	// Lägg till rubrik på sidan som innehåller innehållsförteckningen
+	//Lägg till rubrik på sidan som innehåller innehållsförteckningen
 	tocPage.Paragraphs.Add(heading2);
 }
 

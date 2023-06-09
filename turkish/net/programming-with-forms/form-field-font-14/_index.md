@@ -60,7 +60,7 @@ pdfDocument.Save(dataDir);
 ```
 
 
-### Aspose.Words for .NET kullanan Form Field Font 14 için örnek kaynak kodu 
+### Aspose.PDF for .NET kullanan Form Field Font 14 için örnek kaynak kodu 
 ```csharp
 // Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -80,4 +80,4 @@ Console.WriteLine("\nForm field font setup successfully.\nFile saved at " + data
 
 ## Çözüm
 
-Bu öğreticide, Aspose.PDF for .NET kullanarak bir form alanının yazı tipini nasıl yapılandıracağımızı öğrendik. Bu adımları izleyerek Aspose.PDF kullanarak PDF belgelerinizdeki form alanları için yazı tipini ve yazı tipi boyutunu kolayca belirtebilirsiniz.
+Bu öğreticide, Aspose.PDF for .NET kullanarak bir form alanının yazı tipini nasıl yapılandıracağımızı öğrendik. Bu adımları izleyerek Aspose.PDF kullanarak PDF belgelerinizdeki form alanları için yazı tipini ve yazı tipi boyutunu kolayca belirleyebilirsiniz.

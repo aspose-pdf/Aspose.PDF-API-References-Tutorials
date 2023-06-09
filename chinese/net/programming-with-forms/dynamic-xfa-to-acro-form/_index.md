@@ -43,7 +43,7 @@ dataDir = dataDir + "Standard_AcroForm_out.pdf";
 document. Save(dataDir);
 ```
 
-### 使用 Aspose.Words for .NET 的动态 XFA 到 Acro 表单的示例源代码 
+### 使用 Aspose.PDF for .NET 的动态 XFA 到 Acro 表单的示例源代码 
 ```csharp
 //文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";

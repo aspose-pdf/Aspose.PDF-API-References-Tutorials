@@ -78,7 +78,7 @@ Ce code enregistrera le document PDF mis à jour avec l'annotation "AddSwfFileAs
 // Chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Ouvrir le document PDF
+// Ouvrir le document PDF
 Document doc = new Document(dataDir + "AddSwfFileAsAnnotation.pdf");
 
 // Obtenir la référence de la page à laquelle vous devez ajouter l'annotation

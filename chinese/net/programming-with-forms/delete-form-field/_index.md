@@ -43,7 +43,7 @@ dataDir = dataDir + "DeleteFormField_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### 使用 Aspose.Words for .NET 删除表单字段的示例源代码 
+### 使用 Aspose.PDF for .NET 删除表单字段的示例源代码 
 ```csharp
 //文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -52,7 +52,7 @@ Document pdfDocument = new Document(dataDir + "DeleteFormField.pdf");
 //按名称删除特定字段
 pdfDocument.Form.Delete("textbox1");
 dataDir = dataDir + "DeleteFormField_out.pdf";
-//保存修改后的文件
+//保存修改后的文档
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nParticular field deleted successfully.\nFile saved at " + dataDir);
 ```

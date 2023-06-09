@@ -92,7 +92,7 @@ dataDir = dataDir + "AutoFitToWindow_out.pdf";
 doc.Save(dataDir);
 ```
 
-### 使用 Aspose.Words for .NET 自动适应窗口的示例源代码
+### 使用 Aspose.PDF for .NET 自动适应窗口的示例源代码
 
 ```csharp
 //文档目录的路径。

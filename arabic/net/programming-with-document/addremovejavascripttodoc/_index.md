@@ -12,7 +12,7 @@ url: /ar/net/programming-with-document/addremovejavascripttodoc/
 
 ## الخطوة 1: قم بإنشاء مستند PDF جديد
 
- ابدأ بإنشاء مثيل جديد لـ`Document`فئة مقدمة من Aspose.PDF لـ .NET. سيكون هذا بمثابة مستند PDF حيث سنضيف JavaScript.
+ ابدأ بإنشاء مثيل جديد لـ`Document` فئة مقدمة من Aspose.PDF لـ .NET. سيكون هذا بمثابة مستند PDF حيث سنضيف JavaScript.
 
 ```csharp
 // المسار إلى دليل المستندات.
@@ -36,7 +36,7 @@ doc.Save(dataDir + "AddJavascript.pdf");
 
 ## الخطوة 3: إزالة Document Level JavaScript
 
- لإزالة JavaScript على مستوى المستند ، قم بتحميل مستند PDF والوصول إلى ملف`JavaScript` قاموس. كرر على المفاتيح وقم بإزالة وظيفة JavaScript المطلوبة.
+ لإزالة JavaScript على مستوى المستند ، قم بتحميل مستند PDF والوصول إلى ملف`JavaScript`قاموس. كرر على المفاتيح وقم بإزالة وظيفة JavaScript المطلوبة.
 
 ```csharp
 Document doc1 = new Document(dataDir + "AddJavascript.pdf");

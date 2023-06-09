@@ -28,7 +28,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document doc = new Document(dataDir + "sample.md", new MdLoadOptions());
 ```
 
- Assurez-vous de remplacer`"YOUR DOCUMENTS DIRECTORY"`avec le répertoire réel où se trouve votre fichier Markdown.
+ Assurez-vous de remplacer`"YOUR DOCUMENTS DIRECTORY"` avec le répertoire réel où se trouve votre fichier Markdown.
 
 ## Étape 2 : Conversion Markdown en PDF
 Après avoir chargé le fichier Markdown, nous pouvons procéder à la conversion en PDF. Utilisez le code suivant :
@@ -40,7 +40,7 @@ doc.Save(dataDir + "MarkdownToPDF.pdf");
 
  Le code ci-dessus convertit le fichier Markdown au format PDF et l'enregistre sous le nom de fichier`"MarkdownToPDF.pdf"`.
 
-### Exemple de code source pour Markdown au format PDF en utilisant Aspose.Words pour .NET
+### Exemple de code source pour Markdown au format PDF en utilisant Aspose.PDF pour .NET
 
 
 ```csharp

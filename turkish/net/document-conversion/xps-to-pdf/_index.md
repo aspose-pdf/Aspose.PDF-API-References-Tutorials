@@ -34,7 +34,7 @@ document.Save(dataDir + "XPSToPDF_out.pdf");
 ```
 Ortaya çıkan PDF belgesini belirtilen dizine kaydedin.
 
-### Aspose.Words for .NET kullanarak XPS'den PDF'e dönüştürme için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak XPS'den PDF'e örnek kaynak kodu
 
 ```csharp
 try

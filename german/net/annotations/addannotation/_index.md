@@ -59,7 +59,7 @@ textAnnotation.Border = border;
 textAnnotation.Rect = new Aspose.Pdf.Rectangle(200, 400, 400, 600);
 ```
 
- In diesem Code erstellen wir einen neuen`Border` Objekt und legen Sie seine Breiten- und Stricheigenschaften fest. Wir stellen dann die ein`Border` Eigenschaft der Annotation zum Neuen`Border`Objekt. Zum Schluss legen wir fest`Rect` Eigenschaft der Anmerkung, um ihre Position und Größe anzugeben.
+ In diesem Code erstellen wir einen neuen`Border` Objekt und legen Sie seine Breiten- und Stricheigenschaften fest. Wir stellen dann die ein`Border` Eigenschaft der Annotation zum Neuen`Border` Objekt. Zum Schluss legen wir fest`Rect` Eigenschaft der Anmerkung, um ihre Position und Größe anzugeben.
 
 ## Schritt 5: Fügen Sie die Anmerkung zum PDF-Dokument hinzu
 

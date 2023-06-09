@@ -33,7 +33,7 @@ TableAbsorber absorber = new TableAbsorber();
 Ahora visitaremos la primera página del documento PDF usando el absorbedor:
 
 ```csharp
-//Visite la primera página con el absorbedor
+// Visite la primera página con el absorbedor
 absorb.Visit(pdfDocument.Pages[1]);
 ```
 
@@ -49,7 +49,7 @@ AbsorbedTable table = absorb.TableList[0];
 Ahora eliminemos la tabla usando el absorbedor:
 
 ```csharp
-// quita la mesa
+//quita la mesa
 absorb.Remove(table);
 ```
 
@@ -61,7 +61,7 @@ Finalmente, guardamos el documento PDF modificado:
 pdfDocument.Save(dataDir + "Table_out.pdf");
 ```
 
-### Ejemplo de código fuente para Quitar tabla usando Aspose.Words para .NET
+### Código fuente de ejemplo para Eliminar tabla usando Aspose.PDF para .NET
 
 ```csharp
 // La ruta al directorio de documentos.
@@ -87,4 +87,4 @@ pdfDocument.Save(dataDir + "Table_out.pdf");
 ```
 
 ## Conclusión
-¡Felicidades! Ahora ha aprendido cómo eliminar una tabla en un documento PDF usando Aspose.PDF para .NET. Esta guía paso a paso le mostró cómo cargar el documento, encontrar la tabla y quitarla. Ahora puedes aplicar este conocimiento a tus propios proyectos.
+¡Felicidades! Ahora ha aprendido cómo eliminar una tabla en un documento PDF utilizando Aspose.PDF para .NET. Esta guía paso a paso le mostró cómo cargar el documento, encontrar la tabla y quitarla. Ahora puedes aplicar este conocimiento a tus propios proyectos.

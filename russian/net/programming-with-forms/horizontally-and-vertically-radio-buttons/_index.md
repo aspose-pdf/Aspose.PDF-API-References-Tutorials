@@ -67,7 +67,7 @@ dataDir = dataDir + "HorizontallyAndVerticallyRadioButtons_out.pdf";
 formEditor.Save(dataDir);
 ```
 
-### Пример исходного кода для переключателей по горизонтали и вертикали с использованием Aspose.Words для .NET 
+### Пример исходного кода для переключателей по горизонтали и вертикали с использованием Aspose.PDF для .NET 
 ```csharp
 try
 {

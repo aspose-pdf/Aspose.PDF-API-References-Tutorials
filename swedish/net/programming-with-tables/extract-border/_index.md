@@ -8,7 +8,7 @@ weight: 80
 url: /sv/net/programming-with-tables/extract-border/
 ---
 
-den här handledningen ska vi lära oss hur man extraherar gränsen från ett PDF-dokument med Aspose.PDF för .NET. Vi kommer att förklara källkoden i C# steg för steg. I slutet av denna handledning vet du hur du extraherar gränsen från ett PDF-dokument och sparar den som en bild. Låt oss börja!
+I den här handledningen ska vi lära oss hur man extraherar gränsen från ett PDF-dokument med Aspose.PDF för .NET. Vi kommer att förklara källkoden i C# steg för steg. I slutet av denna handledning vet du hur du extraherar gränsen från ett PDF-dokument och sparar den som en bild. Låt oss börja!
 
 ## Steg 1: Sätta upp miljön
 Se först till att du har ställt in din C#-utvecklingsmiljö med Aspose.PDF för .NET. Lägg till referensen till biblioteket och importera de nödvändiga namnrymden.
@@ -50,7 +50,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
  Vi skapar en`graphicsState` stack för att lagra grafiktillstånd, en bitmappsbild för att fånga den extraherade gränsen, en`GraphicsPath` objekt för att lagra ritningsbanor och andra variabler för att spåra tillstånd och färger.
 
 ## Steg 4: Transaktionsbearbetning
-det här steget behandlar vi varje operation av dokumentet för att extrahera gränsen.
+I det här steget behandlar vi varje operation av dokumentet för att extrahera gränsen.
 
 ```csharp
 // Kontrollera typen av operation
@@ -108,7 +108,7 @@ bitmap.Save(dataDir, ImageFormat.Png);
 
 Var noga med att ange rätt katalog och filnamn för att spara utdatabilden.
 
-### Exempel på källkod för Extrahera Border med Aspose.Words för .NET
+### Exempel på källkod för Extrahera Border med Aspose.PDF för .NET
 
 ```csharp
 // Sökvägen till dokumentkatalogen.
@@ -121,7 +121,7 @@ System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap((int)doc.Pages[1].PageI
 System.Drawing.Drawing2D.GraphicsPath graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
 // Standardvärde för ctm-matris är 1,0,0,1,0,0
 System.Drawing.Drawing2D.Matrix lastCTM = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, 0);
-//System.Drawing koordinatsystem är upptill vänster baserat, medan pdf koordinatsystem är låg vänster baserat, så vi måste tillämpa inversionsmatrisen
+// System.Drawing koordinatsystem är upptill vänster baserat, medan pdf koordinatsystem är låg vänster baserat, så vi måste tillämpa inversionsmatrisen
 System.Drawing.Drawing2D.Matrix inversionMatrix = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, (float)doc.Pages[1].PageInfo.Height);
 System.Drawing.PointF lastPoint = new System.Drawing.PointF(0, 0);
 System.Drawing.Color fillColor = System.Drawing.Color.FromArgb(0, 0, 0);
@@ -150,7 +150,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 
 		if (opSaveState != null)
 		{
-			// Spara föregående tillstånd och tryck aktuellt tillstånd till toppen av stacken
+			//Spara föregående tillstånd och tryck aktuellt tillstånd till toppen av stacken
 			graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
 			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 		}

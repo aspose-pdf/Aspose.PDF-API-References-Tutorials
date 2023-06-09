@@ -26,7 +26,7 @@ Bu özelliği kullanmanın ilk adımı, yazı tipi değiştirme uyarılarını a
 // PDF belgesine giden yol
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//PDF belgesini aç
+// PDF belgesini aç
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
@@ -61,7 +61,7 @@ private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArg
 // PDF belgesine giden yol
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//PDF belgesini aç
+// PDF belgesini aç
 Document doc = new Document(dataDir + "input.pdf");
 
 // Yazı tipi değiştirme uyarılarını algıla

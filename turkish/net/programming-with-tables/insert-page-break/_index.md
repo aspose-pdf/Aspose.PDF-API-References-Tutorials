@@ -63,7 +63,7 @@ PDF belgesini sayfa sonu eklenmiş olarak kaydediyoruz.
 doc.Save(dataDir + "InsertPageBreak_out.pdf");
 ```
 
-### Aspose.Words for .NET kullanarak Sayfa Sonu Ekleme için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak Sayfa Sonu Ekleme için örnek kaynak kodu
 
 ```csharp
 // Belgeler dizininin yolu.

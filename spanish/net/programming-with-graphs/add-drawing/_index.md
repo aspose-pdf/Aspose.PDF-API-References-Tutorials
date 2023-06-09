@@ -12,7 +12,7 @@ El desarrollo de aplicaciones a menudo requiere agregar funciones como dibujos y
 
 Antes de comenzar, asegúrese de haber instalado la biblioteca Aspose.PDF y configurar su entorno de desarrollo. Además, asegúrese de tener conocimientos básicos de programación en C#.
 
-## Paso 1: Introducción a Aspose.PDF para .NET y sus funciones
+## Paso 1: Introducción a Aspose.PDF para .NET y sus características
 
 Aspose.PDF es una biblioteca poderosa y versátil para crear, manipular y convertir archivos PDF en aplicaciones .NET. Ofrece una amplia gama de funciones para trabajar con documentos PDF, incluida la adición de dibujos, gráficos, texto, etc.
 
@@ -60,7 +60,7 @@ En este paso, creamos un objeto Graph con dimensiones específicas. Este objeto 
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(300, 400);
 ```
 
-## Paso 8: Establecer el borde para el objeto Dibujo
+## Paso 8: Configuración del borde para el objeto Dibujo
 
 Podemos establecer el borde del objeto Drawing usando la clase BorderInfo.
 
@@ -122,7 +122,7 @@ document. Save(dataDir);
 Console.WriteLine("\nSuccessfully added drawing with transparent color.\nFile saved to location: " + dataDir);
 ```
 
-### Ejemplo de código fuente para Agregar dibujo usando Aspose.Words para .NET 
+### Ejemplo de código fuente para Agregar dibujo usando Aspose.PDF para .NET 
 
 ```csharp
 

@@ -83,13 +83,13 @@ Console.WriteLine("\nText added successfully to an existing pdf file.\nFile save
 
 Наконец, мы добавляем объект таблицы на первую страницу документа PDF, используя коллекцию Paragraphs соответствующей страницы.
 
-### Пример исходного кода для добавления таблицы с использованием Aspose.Words для .NET
+### Пример исходного кода для добавления таблицы с использованием Aspose.PDF для .NET
 
 ```csharp
 // Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Загрузить исходный PDF-документ
+// Загрузить исходный PDF-документ
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir+ "AddTable.pdf");
 // Инициализирует новый экземпляр таблицы
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();

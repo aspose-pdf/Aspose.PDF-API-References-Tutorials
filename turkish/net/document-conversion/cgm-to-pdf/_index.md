@@ -40,7 +40,7 @@ doc.Save(dataDir + "TECHDRAW_out.pdf");
 
  Yukarıdaki kodda, değiştirdiğinizden emin olun`"YOUR DOCUMENTS DIRECTORY"` dönüştürülecek CGM dosyanızın bulunduğu dizinin gerçek yolu ile. Bu kod, CGM dosyasını kullanarak yükler.`CgmLoadOptions` class'ı kullanarak bir PDF belgesi oluşturur.`Document` nesne. Son olarak, ortaya çıkan PDF belgesi kaydedilir.
 
-### Aspose.Words for .NET kullanarak CGM'den PDF'e dönüştürme için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak CGM'den PDF'e dönüştürme için örnek kaynak kodu
 
 ```csharp
 // Belgeler dizininin yolu.

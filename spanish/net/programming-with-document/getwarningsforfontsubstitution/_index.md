@@ -26,7 +26,7 @@ El primer paso para usar esta función es cargar el documento PDF para el que de
 // La ruta al documento PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Abre el documento PDF
+// Abre el documento PDF
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
@@ -61,7 +61,7 @@ private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArg
 // La ruta al documento PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Abre el documento PDF
+// Abre el documento PDF
 Document doc = new Document(dataDir + "input.pdf");
 
 // Detectar advertencias de sustitución de fuentes

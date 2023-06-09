@@ -85,7 +85,7 @@ Abschließend speichern wir das PDF-Dokument:
 doc.Save(dataDir + "43620_ByWords_out.pdf");
 ```
 
-### Beispielquellcode für die Textausrichtung für Tabellenzeileninhalte mit Aspose.Words für .NET
+### Beispielquellcode für die Textausrichtung für Tabellenzeileninhalte mit Aspose.PDF für .NET
 
 ```csharp
 var dataDir = "YOUR DOCUMENT DIRECTORY";

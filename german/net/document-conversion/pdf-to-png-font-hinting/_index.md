@@ -66,7 +66,7 @@ for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 
 Der obige Code konvertiert jede Seite der PDF-Datei in ein PNG-Bild mit Schriftartenhinweisen und speichert jedes Bild als separate PNG-Datei.
 
-### Beispielquellcode für PDF-zu-PNGFont-Hinweise mit Aspose.Words für .NET
+### Beispielquellcode für PDF-zu-PNGFont-Hinweise mit Aspose.PDF für .NET
 
 ```csharp
 try

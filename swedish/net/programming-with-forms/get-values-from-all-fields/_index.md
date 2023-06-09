@@ -38,7 +38,7 @@ Console.WriteLine("Value: {0}", formField.Value);
 }
 ```
 
-### Exempel på källkod för Hämta värden från alla fält med Aspose.Words för .NET 
+### Exempel på källkod för Hämta värden från alla fält med Aspose.PDF för .NET 
 ```csharp
 // Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

@@ -108,7 +108,7 @@ bitmap.Save(dataDir, ImageFormat.Png);
 
 تأكد من تحديد الدليل الصحيح واسم الملف لحفظ الصورة الناتجة.
 
-### مثال على شفرة المصدر لاستخراج الحدود باستخدام Aspose.Words for .NET
+### مثال على التعليمات البرمجية المصدر لاستخراج الحدود باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 // المسار إلى دليل المستندات.
@@ -121,7 +121,7 @@ System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap((int)doc.Pages[1].PageI
 System.Drawing.Drawing2D.GraphicsPath graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
 // قيمة مصفوفة ctm الافتراضية هي 1،0،0،1،0،0
 System.Drawing.Drawing2D.Matrix lastCTM = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, 0);
-//System.Drawing نظام الإحداثيات هو أعلى اليسار ، في حين أن نظام الإحداثيات pdf منخفض على اليسار ، لذلك يتعين علينا تطبيق مصفوفة الانعكاس
+// System.Drawing نظام الإحداثيات هو أعلى اليسار ، في حين أن نظام الإحداثيات pdf منخفض على اليسار ، لذلك يتعين علينا تطبيق مصفوفة الانعكاس
 System.Drawing.Drawing2D.Matrix inversionMatrix = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, (float)doc.Pages[1].PageInfo.Height);
 System.Drawing.PointF lastPoint = new System.Drawing.PointF(0, 0);
 System.Drawing.Color fillColor = System.Drawing.Color.FromArgb(0, 0, 0);
@@ -150,7 +150,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 
 		if (opSaveState != null)
 		{
-			// احفظ الحالة السابقة وادفع الحالة الحالية إلى أعلى المكدس
+			//احفظ الحالة السابقة وادفع الحالة الحالية إلى أعلى المكدس
 			graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
 			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 		}

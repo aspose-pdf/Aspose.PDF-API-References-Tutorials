@@ -85,7 +85,7 @@ Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dat
 
 请务必指定正确的文档目录。生成的 PDF 文件将与确定的表格分隔符一起保存。
 
-### Determine Table Break using Aspose.Words for .NET 的示例源代码
+### 使用 Aspose.PDF for .NET 确定分表符的示例源代码
 
 ```csharp
 //文档目录的路径。

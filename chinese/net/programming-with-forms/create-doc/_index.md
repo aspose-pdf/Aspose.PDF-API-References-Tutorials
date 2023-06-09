@@ -92,7 +92,7 @@ dataDir = dataDir + "CreateDoc_out.pdf";
 doc.Save(dataDir);
 ```
 
-### 使用 Aspose.Words for .NET 创建文档的示例源代码 
+### 使用 Aspose.PDF for .NET 创建文档的示例源代码 
 ```csharp
 try
 {

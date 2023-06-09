@@ -26,7 +26,7 @@ Il primo passaggio per utilizzare questa funzione è caricare il documento PDF d
 // Il percorso del documento PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Apri il documento PDF
+// Apri il documento PDF
 Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
 ```
 
@@ -76,7 +76,7 @@ Console.WriteLine("Direction : {0}", pdfDocument.Direction);
 Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
 
 // Se ridimensionare la finestra del documento per adattarla alle dimensioni di
-// Prima pagina visualizzata - Predefinito: false
+// Prima pagina visualizzata - Predefinito: falso
 Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
 
 // Se nascondere la barra dei menu dell'applicazione visualizzatore - Predefinito: false
@@ -86,7 +86,7 @@ Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
 Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
 
 // Se nascondere gli elementi dell'interfaccia utente come le barre di scorrimento
-// E lasciando visualizzato solo il contenuto della pagina - Predefinito: falso
+// E lasciando visualizzato solo il contenuto della pagina - Predefinito: false
 Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
 
 // Modalità pagina del documento. Come visualizzare il documento all'uscita dalla modalità a schermo intero.

@@ -26,7 +26,7 @@ Bu özelliği kullanmanın ilk adımı, XMP meta verilerini ayıklamak istediği
 // PDF belgesine giden yol
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//PDF belgesini aç
+// PDF belgesini aç
 Document pdfDocument = new Document(dataDir + "GetXMPMetadata.pdf");
 ```
 
@@ -52,7 +52,7 @@ Console.WriteLine(pdfDocument.Metadata["xmp:CustomProperty"]);
 // PDF belgesine giden yol
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//PDF belgesini aç
+// PDF belgesini aç
 Document pdfDocument = new Document(dataDir + "GetXMPMetadata.pdf");
 
 // XMP meta verilerini ayıklayın

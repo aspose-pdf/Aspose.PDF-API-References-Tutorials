@@ -70,7 +70,7 @@ doc.Pages[1].Paragraphs.Add(tableProvider);
 doc.Save(dataDir + "HTMLInsideTableCell_out.pdf");
 ```
 
-### مثال على شفرة المصدر لعلامات HTML داخل الجدول باستخدام Aspose.Words for .NET
+### مثال على التعليمات البرمجية المصدر لعلامات HTML داخل الجدول باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 // المسار إلى دليل المستندات.

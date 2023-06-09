@@ -58,7 +58,7 @@ pdfDocument.Save();
 fs. Close();
 ```
 
-### 使用 Aspose.Words for .NET 的保留权限示例源代码 
+### 使用 Aspose.PDF for .NET 的保留权限示例源代码 
 ```csharp
 //文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";

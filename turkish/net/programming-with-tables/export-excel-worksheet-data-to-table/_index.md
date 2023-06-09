@@ -56,7 +56,7 @@ Bu örnekte, çalışma sayfasındaki ilk hücreden (0, 0) başlayarak son hücr
 Şimdi Aspose.PDF kütüphanesini kullanarak yeni bir PDF belgesi oluşturacağız.
 
 ```csharp
-//Bir Document örneğini somutlaştırın
+// Bir Document örneğini somutlaştırın
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 ```
 
@@ -92,7 +92,7 @@ tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.
 Bu örnekte sütun genişliklerini 40, 100 ve 100 birim olarak ayarladık. Verilerinize göre değerleri ayarlayın. Ayrıca varsayılan hücre kenarlığını, her bir hücrenin tüm kenarlarında kenarlıkları gösterecek şekilde ayarladık.
 
 ## 8. Adım: Verileri Tabloya Aktarma
-Şimdi, verileri bilgisayardan içe aktaracağız.`DataTable` kullanarak tabloya nesne`ImportDataTable` yöntem.
+ Şimdi, verileri bilgisayardan içe aktaracağız.`DataTable` kullanarak tabloya nesne`ImportDataTable` yöntem.
 
 ```csharp
 // Yukarıda oluşturulan DataTable'dan Table nesnesine veri aktarın
@@ -148,7 +148,7 @@ pdf1.Save(dataDir + @"Exceldata_toPdf_table.pdf");
 
 Çıktı PDF dosyası için "BELGE DİZİNİNİZİ" istenen dizin yolu ve dosya adıyla değiştirdiğinizden emin olun.
 
-### Aspose.Words for .NET kullanarak Excel Çalışma Sayfası Verilerini Tabloya Dışa Aktarma için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak Excel Çalışma Sayfası Verilerini Tabloya Dışa Aktarma için örnek kaynak kodu
 
 ```csharp
 // Belgeler dizininin yolu.
@@ -190,7 +190,7 @@ foreach (Aspose.Pdf.Cell curCell in row1.Cells)
 	curCell.BackgroundColor = Color.Blue;
 	// Tablodaki 1. satırdaki hücreler için yazı tipi yüzünü ayarlayın.
 	curCell.DefaultCellTextState.Font = Aspose.Pdf.Text.FontRepository.FindFont("Helvetica-Oblique");
-	//Tablonun 1. satırındaki tüm hücrelerin yazı tipi rengini ayarlayın.
+	// Tablonun 1. satırındaki tüm hücrelerin yazı tipi rengini ayarlayın.
 	curCell.DefaultCellTextState.ForegroundColor = Color.Yellow;
 	// 1. sıradaki hücreler için metin hizalamasını Orta olarak ayarlayın.
 	curCell.DefaultCellTextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;

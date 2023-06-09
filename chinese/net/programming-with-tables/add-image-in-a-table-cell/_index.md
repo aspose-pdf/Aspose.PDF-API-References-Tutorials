@@ -115,13 +115,13 @@ row1.Cells[2].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
 最后，我们可以使用`Save`方法。
 
 ```csharp
-//保存文档
+//保存文件
 pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 ```
 
 恭喜！您已经成功学习了如何使用 Aspose.PDF for .NET 将图像添加到表格单元格。随意探索更多自定义选项并将此功能集成到您的项目中。
 
-### 使用 Aspose.Words for .NET 在表格单元格中添加图像的示例源代码
+### 使用 Aspose.PDF for .NET 在表格单元格中添加图像的示例源代码
 
 ```csharp
 //文档目录的路径。
@@ -150,10 +150,10 @@ Aspose.Pdf.Cell cell2 = row1.Cells.Add();
 cell2.Paragraphs.Add(img);
 row1.Cells.Add("Previous cell with image");
 row1.Cells[2].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
-//保存文档
+//保存文件
 pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 ```
 
 ## 结论
 
-在本教程中，我们介绍了如何使用 Aspose.PDF for .NET 将图像添加到表格单元格的分步指南。我们从设置文档、创建页面和添加表格开始。然后，我们设置默认的单元格边框和列宽。我们演示了如何将图像添加到表格单元格并调整单元格的垂直对齐方式。最后，我们保存修改后的文件。通过执行这些步骤，您可以使用表格单元格中的图像有效地增强 PDF 文档。
+在本教程中，我们介绍了如何使用 Aspose.PDF for .NET 将图像添加到表格单元格的分步指南。我们从设置文档、创建页面和添加表格开始。然后，我们设置默认的单元格边框和列宽。我们演示了如何将图像添加到表格单元格并调整单元格的垂直对齐方式。最后，我们保存修改后的文档。通过执行这些步骤，您可以使用表格单元格中的图像有效地增强 PDF 文档。

@@ -71,7 +71,7 @@ doc.Save(dataDir + "DataIntegrated_out.pdf");
 
 恭喜！您现在知道如何使用 Aspose.PDF for .NET 将数据库数据嵌入到 PDF 文档中。
 
-### 使用 Aspose.Words for .NET 与数据库集成的示例源代码
+### 使用 Aspose.PDF for .NET 与数据库集成的示例源代码
 
 ```csharp
 //文档目录的路径。

@@ -13,7 +13,7 @@ Siga los pasos a continuación para Eliminar todas las anotaciones de la página
 
 ## Paso 1: Instale Aspose.PDF para .NET
 
- Para usar Aspose.PDF para .NET, primero debe instalar la biblioteca. Puede[descargar](https://releases.aspose.com/pdf/net/)la biblioteca de las versiones de Aspose e instálela en su computadora. Después de la instalación, debe agregar una referencia a la biblioteca en su proyecto.
+ Para usar Aspose.PDF para .NET, primero debe instalar la biblioteca. Puede[descargar](https://releases.aspose.com/pdf/net/) la biblioteca de las versiones de Aspose e instálela en su computadora. Después de la instalación, debe agregar una referencia a la biblioteca en su proyecto.
 
 ## Paso 2: Cree una nueva aplicación de consola
 
@@ -64,4 +64,4 @@ pdfDocument.Save(dataDir);
 
 ## Conclusión
 
-En este artículo, proporcionamos una guía paso a paso para ayudarlo a comprender cómo eliminar todas las anotaciones de una página específica de un documento PDF usando Aspose.PDF para .NET. Siguiendo los pasos descritos en esta guía, puede implementar fácilmente esta función en su propio proyecto.
+En este artículo, proporcionamos una guía paso a paso para ayudarlo a comprender cómo eliminar todas las anotaciones de una página específica de un documento PDF usando Aspose.PDF para .NET. Siguiendo los pasos descritos en esta guía, puede implementar fácilmente esta característica en su propio proyecto.

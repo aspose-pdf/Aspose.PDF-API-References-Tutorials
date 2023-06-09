@@ -33,7 +33,7 @@ Color alphaColor = Color.FromArgb(alpha, red, green, blue);
 
 ## Paso 3: crea un documento PDF
 
-continuación, crearemos una nueva instancia de la clase Aspose.Pdf.Document, que representa un documento PDF. Aquí está el fragmento de código:
+A continuación, crearemos una nueva instancia de la clase Aspose.Pdf.Document, que representa un documento PDF. Aquí está el fragmento de código:
 
 ```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();

@@ -7,7 +7,7 @@ type: docs
 weight: 20
 url: /es/net/programming-with-pdf-pages/concatenate-pdf-files/
 ---
-En este tutorial, lo guiaremos a través del proceso paso a paso para concatenar archivos PDF usando Aspose.PDF para .NET. Explicaremos el código fuente de C# incluido y le proporcionaremos una guía completa para ayudarlo a comprender e implementar esta función en sus propios proyectos. Al final de este tutorial, sabrá cómo concatenar archivos PDF utilizando Aspose.PDF para .NET.
+En este tutorial, lo guiaremos a través del proceso paso a paso para concatenar archivos PDF usando Aspose.PDF para .NET. Explicaremos el código fuente de C# incluido y le proporcionaremos una guía completa para ayudarlo a comprender e implementar esta característica en sus propios proyectos. Al final de este tutorial, sabrá cómo concatenar archivos PDF utilizando Aspose.PDF para .NET.
 
 ## requisitos previos
 Antes de comenzar, asegúrese de tener lo siguiente:
@@ -16,7 +16,7 @@ Antes de comenzar, asegúrese de tener lo siguiente:
 - Aspose.PDF para .NET instalado en su entorno de desarrollo
 
 ## Paso 1: Definir el directorio de documentos
-Primero, debe establecer la ruta a su directorio de documentos. Aquí es donde se encuentran sus archivos PDF para concatenar. Reemplace "SU DIRECTORIO DE DOCUMENTOS" con la ruta adecuada.
+Primero, debe establecer la ruta a su directorio de documentos. Aquí es donde se encuentran sus archivos PDF para concatenar. Reemplace "SU DIRECTORIO DE DOCUMENTOS" con la ruta apropiada.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -58,7 +58,7 @@ Document pdfDocument2 = new Document(dataDir + "Concat2.pdf");
 // Agregar páginas del segundo documento al primero
 pdfDocument1.Pages.Add(pdfDocument2.Pages);
 dataDir = dataDir + "ConcatenatePdfFiles_out.pdf";
-//Guardar archivo de salida concatenado
+// Guardar archivo de salida concatenado
 pdfDocument1.Save(dataDir);
 System.Console.WriteLine("\nPDFs are concatenated successfully.\nFile saved at " + dataDir);
 

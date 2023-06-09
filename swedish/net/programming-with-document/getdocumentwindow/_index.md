@@ -26,7 +26,7 @@ Det första steget i att använda den här funktionen är att ladda PDF-dokument
 // Sökvägen till PDF-dokumentet
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Öppna PDF-dokumentet
+// Öppna PDF-dokumentet
 Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
 ```
 

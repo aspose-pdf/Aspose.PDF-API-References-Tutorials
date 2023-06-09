@@ -51,7 +51,7 @@ pdfDocument.Save(dataDir);
 
 代替`"YOUR DOCUMENTS DIRECTORY"`使用要保存输出 PDF/A-3b 文件的所需目录。
 
-### 使用 Aspose.Words for .NET 将 PDF 转换为 PDFA3b 的示例源代码
+### 使用 Aspose.PDF for .NET 将 PDF 转换为 PDFA3b 的示例源代码
 
 ```csharp
 //文档目录的路径。
@@ -63,7 +63,7 @@ Document pdfDocument = new Document(dataDir + "input.pdf");
 pdfDocument.Convert(new MemoryStream(), PdfFormat.PDF_A_3B, ConvertErrorAction.Delete);
 
 dataDir = dataDir + "PDFToPDFA3b_out.pdf";
-//保存输出文档
+//保存输出文件
 pdfDocument.Save(dataDir);
 
 Console.WriteLine("\nPDF file converted to PDF/A-3B format.\nFile saved at " + dataDir);

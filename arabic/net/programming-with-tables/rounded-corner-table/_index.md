@@ -28,7 +28,7 @@ tab1.CornerStyle = Aspose.Pdf.BorderCornerStyle.Round;
 لإعطاء الجدول حد زاوية مستدير ، نحتاج إلى إنشاء كائن BorderInfo وتكوينه بالمعلمات المناسبة:
 
 ```csharp
-// قم بإنشاء كائن GraphInfo لتعيين لون الحد
+//قم بإنشاء كائن GraphInfo لتعيين لون الحد
 GraphInfo graph = new GraphInfo();
 graph.Color = Aspose.Pdf.Color.Red;
 
@@ -42,7 +42,7 @@ bInfo.RoundedBorderRadius = 15;
 tab1.Border = bInfo;
 ```
 
-### مثال على كود مصدر Rounded Corner Table باستخدام Aspose.Words for .NET
+### مثال على كود مصدر Rounded Corner Table باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 // المسار إلى دليل المستندات.

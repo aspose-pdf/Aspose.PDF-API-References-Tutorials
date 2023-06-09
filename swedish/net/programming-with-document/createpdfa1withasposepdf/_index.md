@@ -10,7 +10,7 @@ url: /sv/net/programming-with-document/createpdfa1withasposepdf/
 
 I denna steg-för-steg-guide kommer vi att förklara hur man använder Aspose.PDF för .NET för att skapa ett PDF A1-dokument. Vi kommer att förse dig med nödvändig C#-källkod och instruktioner för att utföra denna uppgift.
 
-## Steg 1: Definiera variabler och importera namnområden
+## Steg 1: Definiera variabler och importera namnrymder
 
  Definiera först variabeln`dataDir` för att representera katalogen där dina dokument lagras. Detta kommer att användas för att specificera utdatafilens sökväg.
 
@@ -24,7 +24,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 ```
 
-## Steg 2: Lägg till innehåll i PDF-filen
+## Steg 2: Lägg till innehåll i PDF:en
 
 det här steget kommer vi att lägga till en sida i PDF-dokumentet och infoga ett textfragment som innehåller texten "Hello World!".
 

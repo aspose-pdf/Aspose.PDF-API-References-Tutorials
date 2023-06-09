@@ -8,7 +8,7 @@ weight: 110
 url: /sv/net/programming-with-tables/insert-page-break/
 ---
 
-den här handledningen kommer vi att lära oss hur man infogar en sidbrytning i ett PDF-dokument med Aspose.PDF för .NET. Vi kommer att förklara källkoden i C# steg för steg. I slutet av denna handledning kommer du att veta hur du lägger till en sidbrytning efter ett visst antal rader i en tabell i ett PDF-dokument. Låt oss börja!
+I den här handledningen kommer vi att lära oss hur man infogar en sidbrytning i ett PDF-dokument med Aspose.PDF för .NET. Vi kommer att förklara källkoden i C# steg för steg. I slutet av denna handledning kommer du att veta hur du lägger till en sidbrytning efter ett visst antal rader i en tabell i ett PDF-dokument. Låt oss börja!
 
 ## Steg 1: Sätta upp miljön
 Se till att du har konfigurerat din C#-utvecklingsmiljö med Aspose.PDF för .NET. Lägg till referensen till biblioteket och importera de nödvändiga namnrymden.
@@ -63,7 +63,7 @@ Vi sparar PDF-dokumentet med sidbrytningen inlagd.
 doc.Save(dataDir + "InsertPageBreak_out.pdf");
 ```
 
-### Exempel på källkod för Insert Page Break med Aspose.Words för .NET
+### Exempel på källkod för Insert Page Break med Aspose.PDF för .NET
 
 ```csharp
 // Sökvägen till dokumentkatalogen.

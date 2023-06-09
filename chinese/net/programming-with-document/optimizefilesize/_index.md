@@ -58,7 +58,7 @@ pdfDocument.OptimizeResources(optimizationOptions);
 
 ```csharp
 dataDir = dataDir + "OptimizeFileSize_out.pdf";
-//保存输出文档
+//保存输出文件
 pdfDocument.Save(dataDir);
 ```
 
@@ -80,6 +80,6 @@ optimizationOptions.ImageCompressionOptions.ImageQuality = 10;
 //通过删除未使用的对象来优化文件大小
 pdfDocument.OptimizeResources(optimizationOptions);
 dataDir = dataDir + "OptimizeFileSize_out.pdf";
-//保存输出文档
+//保存输出文件
 pdfDocument.Save(dataDir);
 ```

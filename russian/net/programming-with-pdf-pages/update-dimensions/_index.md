@@ -51,7 +51,7 @@ pdfPage.SetPageSize(597.6, 842.4);
 ```
 
 ## Шаг 6: Сохраните обновленный документ
-Наконец, вы можете сохранить обновленный PDF-документ в файл, используя`Save()` метод`Document` сорт. Обязательно укажите правильный путь и имя файла.
+Наконец, вы можете сохранить обновленный PDF-документ в файл, используя`Save()` метод`Document`сорт. Обязательно укажите правильный путь и имя файла.
 
 ```csharp
 dataDir = dataDir + "UpdateDimensions_out.pdf";
@@ -70,7 +70,7 @@ Document pdfDocument = new Document(dataDir + "UpdateDimensions.pdf");
 PageCollection pageCollection = pdfDocument.Pages;
 // Получить конкретную страницу
 Page pdfPage = pageCollection[1];
-// Установите размер страницы как A4 (11,7 x 8,3 дюйма) и в Aspose.Pdf, 1 дюйм = 72 пункта
+// Установите размер страницы как A4 (11,7 x 8,3 дюйма) и в Aspose.Pdf, 1 дюйм = 72 точки
 // Таким образом, размеры формата А4 в пунктах будут (842,4, 597,6)
 pdfPage.SetPageSize(597.6, 842.4);
 dataDir = dataDir + "UpdateDimensions_out.pdf";

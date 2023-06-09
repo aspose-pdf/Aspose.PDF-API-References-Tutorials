@@ -43,7 +43,7 @@ doc.Save(dataDir + "PCLToPDF_out.pdf");
 
  يحول الكود أعلاه ملف PCL إلى تنسيق PDF ويحفظه كاسم ملف`"PCLToPDF_out.pdf"`.
 
-### مثال على شفرة المصدر لـ PCL إلى PDF باستخدام Aspose.Words for .NET
+### مثال على كود المصدر لـ PCL إلى PDF باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 try

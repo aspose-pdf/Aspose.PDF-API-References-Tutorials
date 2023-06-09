@@ -48,7 +48,7 @@ pdfDocument.Save("PDFToXLS_out.xls", excelsave);
 
 上面的代码将转换后的 PDF 文件保存为 XLS 格式，文件名`"PDFToXLS_out.xls"`.
 
-### 使用 Aspose.Words for .NET 将 PDF 转换为 XLS 的示例源代码
+### 使用 Aspose.PDF for .NET 将 PDF 转换为 XLS 的示例源代码
 
 ```csharp
 //文档目录的路径。
@@ -65,4 +65,4 @@ pdfDocument.Save("PDFToXLS_out.xls", excelsave);
 ```
 
 ## 结论
-在本教程中，我们介绍了使用 Aspose.PDF for .NET 将 PDF 文件转换为 XLS 格式的分步过程。按照上述说明，您现在应该能够将 PDF 文件转换为 XLS 格式。当您想从 PDF 文件中提取表格数据并在 Microsoft Excel 中使用时，此功能非常有用。
+在本教程中，我们介绍了使用 Aspose.PDF for .NET 将 PDF 文件转换为 XLS 格式的分步过程。按照上述说明，您现在应该能够将 PDF 文件转换为 XLS 格式。当您想从 PDF 文件中提取表格数据并在 Microsoft Excel 中使用时，此功能很有用。

@@ -7,7 +7,7 @@ type: docs
 weight: 30
 url: /sv/net/programming-with-graphs/add-line-object/
 ---
-den här handledningen går vi igenom följande C#-källkod steg för steg för att lägga till ett linjeobjekt med Aspose.PDF för .NET.
+I den här handledningen går vi igenom följande C#-källkod steg för steg för att lägga till ett linjeobjekt med Aspose.PDF för .NET.
 
 Se till att du har installerat Aspose.PDF-biblioteket och ställt in din utvecklingsmiljö innan du börjar. Har även grundläggande kunskaper i C#-programmering.
 
@@ -63,7 +63,7 @@ Slutligen sparar vi den resulterande PDF-filen med namnet "AddLineObject_out.pdf
 doc.Save(dataDir + "AddLineObject_out.pdf");
 ```
 
-### Exempel på källkod för Add Line Object med Aspose.Words för .NET 
+### Exempel på källkod för Lägg till linjeobjekt med Aspose.PDF för .NET 
 
 ```csharp
 
@@ -93,4 +93,4 @@ Console.WriteLine("\nLine object added successfully to pdf.\nFile saved at " + d
 
 ## Slutsats
 
-den här handledningen har vi förklarat steg för steg hur man lägger till ett linjeobjekt med Aspose.PDF för .NET. Du kan nu använda denna kunskap för att skapa PDF-dokument med anpassade linjer i dina applikationer.
+I den här handledningen har vi förklarat steg för steg hur man lägger till ett linjeobjekt med Aspose.PDF för .NET. Du kan nu använda denna kunskap för att skapa PDF-dokument med anpassade linjer i dina applikationer.

@@ -39,7 +39,7 @@ border.Top.IsDoubled = true;
 border.Bottom.IsDoubled = true;
 ```
 
-## Paso 5: Crear una instancia del objeto Tabla
+## Paso 5: Crear una instancia del objeto Table
 Ahora vamos a crear una instancia de un objeto Tabla:
 
 ```csharp
@@ -91,7 +91,7 @@ doc.Save(dataDir);
 Console.WriteLine("\nBorder setup successfully.\nFile saved at " + dataDir);
 ```
 
-### Ejemplo de código fuente para Establecer borde usando Aspose.Words para .NET
+### Ejemplo de código fuente para Establecer borde usando Aspose.PDF para .NET
 
 ```csharp
 // La ruta al directorio de documentos.
@@ -117,7 +117,7 @@ Aspose.Pdf.Row row = table.Rows.Add();
 Aspose.Pdf.Cell cell = row.Cells.Add("some text");
 // Establecer el borde para el objeto de celda (doble borde)
 cell.Border = border;
-//Agregar tabla a la colección de párrafos de la página
+// Agregar tabla a la colección de párrafos de la página
 page.Paragraphs.Add(table);
 dataDir = dataDir + "TableBorderTest_out.pdf";
 // Guardar el documento PDF

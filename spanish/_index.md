@@ -10,7 +10,7 @@ is_root: true
 
 ## Aspose.PDF para .NET
 {{% alert color="primary" %}}
-Tutoriales y fragmentos de código de Aspose.PDF para .NET para crear, editar, convertir, imprimir y muchas más funciones para documentos PDF en su aplicación. 
+Tutoriales de Aspose.PDF para .NET y fragmentos de código para crear, editar, convertir, imprimir y muchas más funciones para documentos PDF en su aplicación. 
 {{% /alert %}}
 
 Estos son enlaces a algunos recursos útiles:

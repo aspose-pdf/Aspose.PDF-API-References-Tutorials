@@ -66,7 +66,7 @@ pdf.Save(fileNew.FullName);
 
 Ortaya çıkan PDF dosyası için doğru hedef yolu ayarladığınızdan emin olmanızı sağlar.
 
-### Aspose.Words for .NET kullanarak Eksik Yazı Tiplerini Değiştirmek için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak Eksik Yazı Tiplerini Değiştirme için örnek kaynak kodu
 
 ```csharp
 // Belgeler dizininin yolu.

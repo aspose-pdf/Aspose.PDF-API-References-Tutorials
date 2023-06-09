@@ -61,7 +61,7 @@ for (int i = 1; i < doc.Pages.Count; i++)
     heading2.Top = doc.Pages[i + 1].Rect.Height;
     // Координата пункта назначения
     segment2.Text = "Page " + i.ToString();
-    // Добавить заголовок на страницу, содержащую оглавление
+    //Добавить заголовок на страницу, содержащую оглавление
     tocPage.Paragraphs.Add(heading2);
 }
 ```
@@ -80,7 +80,7 @@ doc.Save(outFile);
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string inFile = dataDir + "42824.pdf";
 string outFile = dataDir + "42824_out.pdf";
-//Загрузите существующие файлы PDF
+// Загрузите существующие файлы PDF
 Document doc = new Document(inFile);
 // Получить доступ к первой странице файла PDF
 Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
@@ -106,7 +106,7 @@ for (int i = 1; i<doc.Pages.Count; i++)
 	heading2.Top = doc.Pages[i + 1].Rect.Height;
 	// Координата пункта назначения
 	segment2.Text = "Page " + i.ToString();
-	// Добавить заголовок на страницу, содержащую оглавление
+	//Добавить заголовок на страницу, содержащую оглавление
 	tocPage.Paragraphs.Add(heading2);
 }
 

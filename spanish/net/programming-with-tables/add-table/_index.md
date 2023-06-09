@@ -83,13 +83,13 @@ Console.WriteLine("\nText added successfully to an existing pdf file.\nFile save
 
 Finalmente, agregamos el objeto de tabla a la primera página del documento PDF usando la colección Paragraphs de la página correspondiente.
 
-### Código fuente de ejemplo para agregar tabla usando Aspose.Words para .NET
+### Código fuente de ejemplo para agregar tabla usando Aspose.PDF para .NET
 
 ```csharp
 // La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Cargar documento PDF de origen
+// Cargar documento PDF de origen
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir+ "AddTable.pdf");
 // Inicializa una nueva instancia de la tabla.
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();

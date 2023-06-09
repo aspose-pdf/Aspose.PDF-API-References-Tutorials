@@ -7,7 +7,7 @@ type: docs
 weight: 70
 url: /sv/net/programming-with-graphs/dash-length/
 ---
-den här handledningen går vi igenom följande C#-källkod steg för steg för att ställa in längden på streck med Aspose.PDF för .NET.
+I den här handledningen går vi igenom följande C#-källkod steg för steg för att ställa in längden på streck med Aspose.PDF för .NET.
 
 Se till att du har installerat Aspose.PDF-biblioteket och ställt in din utvecklingsmiljö innan du börjar. Har även grundläggande kunskaper i C#-programmering.
 
@@ -64,7 +64,7 @@ Slutligen sparar vi den resulterande PDF-filen med namnet "DashLength_out.pdf" i
 doc.Save(dataDir + "DashLength_out.pdf");
 ```
 
-### Exempel på källkod för Dash Length med Aspose.Words för .NET 
+### Exempel på källkod för Dash Length med Aspose.PDF för .NET 
 
 ```csharp
 
@@ -97,4 +97,4 @@ Console.WriteLine("\nLength dashed successfully in black and white.\nFile saved 
 
 ## Slutsats
 
-den här handledningen förklarade vi hur man ställer in längden på streck med Aspose.PDF för .NET. Nu kan du använda denna kunskap för att skapa linjer med anpassade streckmönster i dina PDF-filer.
+I den här handledningen förklarade vi hur man ställer in längden på streck med Aspose.PDF för .NET. Nu kan du använda denna kunskap för att skapa linjer med anpassade streckmönster i dina PDF-filer.

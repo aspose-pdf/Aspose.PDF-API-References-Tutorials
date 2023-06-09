@@ -38,7 +38,7 @@ Console.WriteLine("Value: {0}", formField.Value);
 }
 ```
 
-### Пример исходного кода для получения значений из всех полей с использованием Aspose.Words для .NET 
+### Пример исходного кода для получения значений из всех полей с использованием Aspose.PDF для .NET 
 ```csharp
 // Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

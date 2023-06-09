@@ -56,7 +56,7 @@ pdfDocument.Save(dataDir + "PDFToEPUB_out.epub", options);
 
  Remplacer`"YOUR DOCUMENTS DIRECTORY"` avec le répertoire souhaité dans lequel vous souhaitez enregistrer le fichier EPUB de sortie.
 
-### Exemple de code source pour PDF vers EPUB en utilisant Aspose.Words pour .NET
+### Exemple de code source pour PDF vers EPUB en utilisant Aspose.PDF pour .NET
 
 ```csharp
 // Chemin d'accès au répertoire des documents.

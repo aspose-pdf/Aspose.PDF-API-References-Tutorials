@@ -63,7 +63,7 @@ doc.Pages[1].Paragraphs.Add(tab);
 doc.Save(dataDir + "InsertPageBreak_out.pdf");
 ```
 
-### Пример исходного кода для вставки разрыва страницы с использованием Aspose.Words для .NET
+### Пример исходного кода для вставки разрыва страницы с использованием Aspose.PDF для .NET
 
 ```csharp
 // Путь к каталогу документов.

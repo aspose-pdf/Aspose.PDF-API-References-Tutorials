@@ -62,7 +62,7 @@ pngDevice.Process(pdfDocument.Pages[1], imageStream);
 
  Doğru sayfa numarasını belirttiğinizden emin olun.`pdfDocument.Pages[1]`.
 
-### Aspose.Words for .NET kullanarak Set Default Font Name için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak Varsayılan Yazı Tipi Adını Ayarlamak için örnek kaynak kodu
 
 ```csharp
 // Belgeler dizininin yolu.

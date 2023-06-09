@@ -23,7 +23,7 @@ Document doc = new Document();
 
 ## الخطوة 2: أضف صفحة إلى المستند
 
- بعد ذلك ، أضف صفحة إلى المستند باستخدام ملف`Add` طريقة`Pages` جمع في`Document` فصل.
+بعد ذلك ، أضف صفحة إلى المستند باستخدام ملف`Add` طريقة`Pages` جمع في`Document` فصل.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -61,7 +61,7 @@ page.Layers.Add(layer);
 
 ## الخطوة 4: احفظ ملف PDF
 
-احفظ ملف PDF المعدل باستخدام امتداد`Save` طريقة`Document` فصل.
+ احفظ ملف PDF المعدل باستخدام امتداد`Save` طريقة`Document` فصل.
 
 ```csharp
 dataDir = dataDir + "AddLayers_out.pdf";

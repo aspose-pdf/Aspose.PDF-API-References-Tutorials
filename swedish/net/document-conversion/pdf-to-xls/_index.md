@@ -48,7 +48,7 @@ pdfDocument.Save("PDFToXLS_out.xls", excelsave);
 
  Ovanstående kod sparar den konverterade PDF-filen i XLS-format med filnamnet`"PDFToXLS_out.xls"`.
 
-### Exempel på källkod för PDF till XLS med Aspose.Words för .NET
+### Exempel på källkod för PDF till XLS med Aspose.PDF för .NET
 
 ```csharp
 // Sökvägen till dokumentkatalogen.

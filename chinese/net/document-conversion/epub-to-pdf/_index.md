@@ -46,7 +46,7 @@ pdf. Save(dataDir + "EPUBToPDF_out.pdf");
 
 代替`"YOUR DOCUMENTS DIRECTORY"`使用要保存输出 PDF 文件的所需目录。
 
-### 使用 Aspose.Words for .NET 将 EPUB 转换为 PDF 的示例源代码
+### 使用 Aspose.PDF for .NET 将 EPUB 转换为 PDF 的示例源代码
 
 ```csharp
 try

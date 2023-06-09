@@ -63,7 +63,7 @@ foreach(AbsorbedTable table in tables)
 pdfDocument.Save(dataDir + "Table2_out.pdf");
 ```
 
-### Пример исходного кода для удаления нескольких таблиц с использованием Aspose.Words для .NET
+### Пример исходного кода для удаления нескольких таблиц с использованием Aspose.PDF для .NET
 
 ```csharp
 // Путь к каталогу документов.

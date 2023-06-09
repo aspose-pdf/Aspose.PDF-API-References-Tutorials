@@ -64,7 +64,7 @@ canvas.Shapes.Add(line);
 doc.Save(dataDir + "DashLength_out.pdf");
 ```
 
-### نموذج التعليمات البرمجية المصدر لطول داش باستخدام Aspose.Words for .NET 
+### نموذج التعليمات البرمجية المصدر لطول داش باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
 

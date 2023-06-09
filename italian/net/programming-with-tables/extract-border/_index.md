@@ -108,7 +108,7 @@ bitmap.Save(dataDir, ImageFormat.Png);
 
 Assicurati di specificare la directory e il nome file corretti per salvare l'immagine di output.
 
-### Esempio di codice sorgente per Estrai bordo utilizzando Aspose.Words per .NET
+### Esempio di codice sorgente per Estrai bordo utilizzando Aspose.PDF per .NET
 
 ```csharp
 // Il percorso della directory dei documenti.
@@ -121,7 +121,7 @@ System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap((int)doc.Pages[1].PageI
 System.Drawing.Drawing2D.GraphicsPath graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
 // Il valore predefinito della matrice ctm è 1,0,0,1,0,0
 System.Drawing.Drawing2D.Matrix lastCTM = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, 0);
-//Il sistema di coordinate System.Drawing è in alto a sinistra, mentre il sistema di coordinate pdf è in basso a sinistra, quindi dobbiamo applicare la matrice di inversione
+// Il sistema di coordinate System.Drawing è in alto a sinistra, mentre il sistema di coordinate pdf è in basso a sinistra, quindi dobbiamo applicare la matrice di inversione
 System.Drawing.Drawing2D.Matrix inversionMatrix = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, (float)doc.Pages[1].PageInfo.Height);
 System.Drawing.PointF lastPoint = new System.Drawing.PointF(0, 0);
 System.Drawing.Color fillColor = System.Drawing.Color.FromArgb(0, 0, 0);
@@ -150,7 +150,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 
 		if (opSaveState != null)
 		{
-			// Salva lo stato precedente e sposta lo stato corrente in cima allo stack
+			//Salva lo stato precedente e sposta lo stato corrente in cima allo stack
 			graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
 			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 		}

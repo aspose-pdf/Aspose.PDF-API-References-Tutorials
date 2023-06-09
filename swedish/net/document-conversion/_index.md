@@ -31,7 +31,7 @@ Du lär dig hur du anger konverteringsinställningar, extraherar text och bilder
 | [Tips om teckensnitt från PDF till PNG](./pdf-to-png-font-hinting/) | Steg för steg guide för att konvertera PDF till PNG med teckensnittstips med Aspose.PDF för .NET. |  
 | [PDF till PPT](./pdf-to-ppt/) | Steg för steg guide för att konvertera PDF till PPT med Aspose.PDF för .NET. |  
 | [PDF till SVG](./pdf-to-svg/) | Steg för steg guide för att konvertera PDF till SVG med Aspose.PDF för .NET. |  
-| [PDF till Te X](./pdf-to-te-x/) | Steg för steg guide för att konvertera PDF till Te X med Aspose.PDF för .NET. |  
+| [PDF till TeX](./pdf-to-tex/) | Steg för steg guide för att konvertera PDF till Te X med Aspose.PDF för .NET. |  
 | [PDF till XLS](./pdf-to-xls/) | Steg för steg guide för att konvertera PDF till XLS med Aspose.PDF för .NET. |  
 | [PDF till XML](./pdf-to-xml/) | Steg för steg guide för att konvertera PDF till XML med Aspose.PDF för .NET. |  
 | [PDF till XPS](./pdf-to-xps/) | Steg för steg guide för att konvertera PDF till XPS med Aspose.PDF för .NET. |  

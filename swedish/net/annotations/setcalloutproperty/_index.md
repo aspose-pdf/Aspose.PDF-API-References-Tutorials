@@ -15,7 +15,7 @@ I den här handledningen kommer vi att guida dig genom processen att ställa in 
 
  Om du inte redan har gjort det måste du göra det[ladda ner](https://releases.aspose.com/pdf/net/) och installera Aspose.PDF för .NET från Aspose-versionerna eller via NuGet-pakethanteraren.
 
-## Skapa ett nytt PDF-dokument
+## Steg 1: Skapa ett nytt PDF-dokument
 
  Skapa ett nytt PDF-dokument med hjälp av`Document` klass tillhandahållen av Aspose.PDF för .NET.
 
@@ -25,7 +25,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 ```
 
-## Lägg till en ny sida i dokumentet
+## Steg 2: Lägg till en ny sida i dokumentet
 
  Lägg till en ny sida i dokumentet med hjälp av`Pages` samling av`Document` klass.
 
@@ -33,7 +33,7 @@ Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Ställ in standardutseende
+## Steg 3: Ställ in standardutseende
 
  Ställ in standardutseendet för fritextkommentaren genom att skapa en ny`DefaultAppearance` objekt och ställa in dess egenskaper som t.ex`TextColor` och`FontSize`.
 
@@ -43,7 +43,7 @@ da.TextColor = System.Drawing.Color.Red;
 da.FontSize = 10;
 ```
 
-## Skapa en fritextkommentar med bildtext
+## Steg 4: Skapa en fritextkommentar med bildtext
 
  Skapa en ny fritextkommentar med bildtext genom att använda`FreeTextAnnotation` klass. Ställ in`Intent` egendom till`FreeTextIntent.FreeTextCallout` för att ange att detta är en förklaringskommentar. Ställ in`EndingStyle` egendom till`LineEnding.OpenArrow` för att ange stilen för pilen i slutet av bildtexten. Ställ in`Callout` egendom till en mängd`Point` objekt som representerar punkterna på sidan där bildtextlinjen ska dras.
 
@@ -57,7 +57,7 @@ fta.Callout = new Point[]
 };
 ```
 
-## Lägg till fritextkommentaren på sidan
+## Steg 5: Lägg till fritextkommentaren på sidan
 
  Lägg till fritextkommentaren på sidan genom att använda`Annotations` samling av`Page` klass.
 
@@ -65,15 +65,15 @@ fta.Callout = new Point[]
 page.Annotations.Add(fta);
 ```
 
-## Lägg till text i anteckningen
+## Steg 6: Lägg till text i kommentaren
 
- Lägg till text i kommentaren genom att ställa in`RichText`egenskap till en sträng av formaterad XML. I den här handledningen ställer vi in textfärgen till röd och teckenstorleken till 9.
+Lägg till text i kommentaren genom att ställa in`RichText` egenskap till en sträng av formaterad XML. I den här handledningen ställer vi in textfärgen till röd och teckenstorleken till 9.
 
 ```csharp
 fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"färg:#FF
 ```
 
-## 8. spara dokumentet
+## Steg 7: spara dokumentet
 
 Spara nu dokumentet genom att använda följande kod:
 

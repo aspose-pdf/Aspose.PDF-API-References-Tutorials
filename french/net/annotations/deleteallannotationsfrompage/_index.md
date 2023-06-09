@@ -13,7 +13,7 @@ Suivez les étapes ci-dessous pour supprimer toutes les annotations de la page �
 
 ## Étape 1 : Installer Aspose.PDF pour .NET
 
- Pour utiliser Aspose.PDF pour .NET, vous devez d'abord installer la bibliothèque. Tu peux[télécharger](https://releases.aspose.com/pdf/net/)la bibliothèque des versions d'Aspose et installez-la sur votre ordinateur. Après l'installation, vous devez ajouter une référence à la bibliothèque dans votre projet.
+ Pour utiliser Aspose.PDF pour .NET, vous devez d'abord installer la bibliothèque. Tu peux[télécharger](https://releases.aspose.com/pdf/net/) la bibliothèque des versions d'Aspose et installez-la sur votre ordinateur. Après l'installation, vous devez ajouter une référence à la bibliothèque dans votre projet.
 
 ## Étape 2 : Créer une nouvelle application de console
 

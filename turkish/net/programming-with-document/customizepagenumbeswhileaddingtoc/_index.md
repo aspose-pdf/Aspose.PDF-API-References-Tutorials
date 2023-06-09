@@ -61,7 +61,7 @@ for (int i = 1; i < doc.Pages.Count; i++)
     heading2.Top = doc.Pages[i + 1].Rect.Height;
     // hedef koordinat
     segment2.Text = "Page " + i.ToString();
-    // İçindekiler içeren sayfaya başlık ekle
+    //İçindekiler içeren sayfaya başlık ekle
     tocPage.Paragraphs.Add(heading2);
 }
 ```
@@ -80,7 +80,7 @@ doc.Save(outFile);
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string inFile = dataDir + "42824.pdf";
 string outFile = dataDir + "42824_out.pdf";
-//Mevcut bir PDF dosyasını yükleyin
+// Mevcut bir PDF dosyasını yükleyin
 Document doc = new Document(inFile);
 // PDF dosyasının ilk sayfasına erişin
 Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
@@ -106,7 +106,7 @@ for (int i = 1; i<doc.Pages.Count; i++)
 	heading2.Top = doc.Pages[i + 1].Rect.Height;
 	// hedef koordinat
 	segment2.Text = "Page " + i.ToString();
-	// İçindekiler içeren sayfaya başlık ekle
+	//İçindekiler içeren sayfaya başlık ekle
 	tocPage.Paragraphs.Add(heading2);
 }
 

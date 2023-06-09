@@ -23,7 +23,7 @@ Document doc = new Document();
 
 ## Paso 2: agregue una página al documento
 
- A continuación, agregue una página al documento usando el`Add` metodo de la`Pages` colección en el`Document` clase.
+ continuación, agregue una página al documento usando el`Add` metodo de la`Pages` colección en el`Document` clase.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -61,7 +61,7 @@ En este tutorial, hemos agregado tres capas con diferentes colores y nombres a l
 
 ## Paso 4: Guarde el archivo PDF
 
-Guarde el archivo PDF modificado usando el`Save` metodo de la`Document` clase.
+ Guarde el archivo PDF modificado usando el`Save` metodo de la`Document` clase.
 
 ```csharp
 dataDir = dataDir + "AddLayers_out.pdf";

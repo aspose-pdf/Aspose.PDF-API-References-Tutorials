@@ -37,7 +37,7 @@ GoToAction action = doc.OpenAction as GoToAction;
 
 ## الخطوة 3: احصل على عامل التكبير لملف PDF
 
-الخطوة الثالثة هي الحصول على عامل التكبير لملف PDF. يمكننا الحصول على عامل التكبير / التصغير لملف PDF من خلال الوصول إلى ملف`Destination` ممتلكات`GoToAction` كائن ثم تحويله إلى`XYZExplicitDestination` . ال`XYZExplicitDestination` تمثل class وجهة في مستند PDF تحدد الإحداثيات وعامل التكبير / التصغير للانتقال إليه.
+الخطوة الثالثة هي الحصول على عامل التكبير لملف PDF. يمكننا الحصول على عامل التكبير / التصغير لملف PDF من خلال الوصول إلى ملف`Destination` ممتلكات`GoToAction` الكائن ثم تحويله إليه`XYZExplicitDestination` . ال`XYZExplicitDestination` تمثل class وجهة في مستند PDF تحدد الإحداثيات وعامل التكبير / التصغير للانتقال إليه.
 
 ```csharp
 // احصل على عامل التكبير لملف PDF

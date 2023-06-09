@@ -26,7 +26,7 @@ La première étape de l'utilisation de cette fonctionnalité consiste à charge
 // Le chemin d'accès au document PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Ouvrir le document PDF
+// Ouvrir le document PDF
 Document pdfDocument = new Document(dataDir + "GetFileInfo.pdf");
 ```
 
@@ -59,7 +59,7 @@ Dans le code ci-dessus, chaque ligne récupère une propriété de métadonnées
 // Le chemin d'accès au document PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Ouvrir le document PDF
+// Ouvrir le document PDF
 Document pdfDocument = new Document(dataDir + "GetFileInfo.pdf");
 
 // Obtenir des informations sur les documents

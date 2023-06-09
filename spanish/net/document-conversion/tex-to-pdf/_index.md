@@ -8,7 +8,7 @@ weight: 290
 url: /es/net/document-conversion/tex-to-pdf/
 ---
 
-Este tutorial lo guiará a través de los pasos para convertir un archivo TeX a un archivo PDF usando Aspose.PDF para .NET. Aspose.PDF ofrece una solución simple y efectiva para convertir archivos TeX a PDF mientras conserva la calidad y el diseño del contenido. Siga los pasos a continuación para realizar esta conversión.
+Este tutorial lo guiará a través de los pasos para convertir un archivo TeX a un archivo PDF utilizando Aspose.PDF para .NET. Aspose.PDF ofrece una solución simple y efectiva para convertir archivos TeX a PDF mientras conserva la calidad y el diseño del contenido. Siga los pasos a continuación para realizar esta conversión.
 
 ## requisitos previos
 Antes de comenzar, asegúrese de cumplir con los siguientes requisitos previos:
@@ -43,7 +43,7 @@ doc.Save(dataDir + "TeXToPDF_out.pdf");
 
 Asegúrese de especificar la ruta y el nombre de archivo deseados para el archivo PDF resultante.
 
-### Código fuente de ejemplo para TeX a PDF usando Aspose.Words para .NET
+### Código fuente de ejemplo para TeX a PDF usando Aspose.PDF para .NET
 
 ```csharp
 try

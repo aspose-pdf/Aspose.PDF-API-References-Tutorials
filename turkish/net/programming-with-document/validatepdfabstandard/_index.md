@@ -7,7 +7,7 @@ type: docs
 weight: 380
 url: /tr/net/programming-with-document/validatepdfabstandard/
 ---
-.NET'te PDF belgeleriyle çalışıyorsanız, PDF'yi PDF/A gibi bir standarda göre doğrulamanız gerekebilir. Aspose.PDF for .NET, bir PDF belgesini PDF/A-1a standardına göre doğrulamak için kullanımı kolay bir yöntem sağlar. Bu makalede, Aspose.PDF for .NET kullanarak PDF/A-1a standardını alma ve doğrulamaya yönelik aşağıdaki C# kaynak kodunu açıklayan adım adım bir kılavuz sağlayacağız.
+.NET'te PDF belgeleriyle çalışıyorsanız, PDF'yi PDF/A gibi bir standarda göre doğrulamanız gerekebilir. Aspose.PDF for .NET, bir PDF belgesini PDF/A-1a standardına göre doğrulamak için kullanımı kolay bir yöntem sunar. Bu makalede, Aspose.PDF for .NET kullanarak PDF/A-1a standardını alma ve doğrulamaya yönelik aşağıdaki C# kaynak kodunu açıklayan adım adım bir kılavuz sağlayacağız.
 
 ## 1. Adım: Belge dizinine giden yolu ayarlayın
 

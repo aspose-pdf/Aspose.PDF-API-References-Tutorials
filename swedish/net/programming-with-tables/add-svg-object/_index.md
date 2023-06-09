@@ -27,7 +27,7 @@ Låt oss först ställa in miljön genom att skapa ett nytt C#-projekt i Visual 
 
 ## Steg 2: Skapa dokument- och bildobjekt
 
-I det här steget kommer vi att skapa de nödvändiga objekten för vårt PDF-dokument och SVG-bild. Öppna C#-filen för ditt projekt och lägg till följande kod:
+det här steget kommer vi att skapa de nödvändiga objekten för vårt PDF-dokument och SVG-bild. Öppna C#-filen för ditt projekt och lägg till följande kod:
 
 ```csharp
 // Sökvägen till dokumentkatalogen.
@@ -70,7 +70,7 @@ table. ColumnWidths = "100 100";
 I det här steget kommer vi att lägga till en rad och celler i tabellen. Varje rad representerar en horisontell rad i tabellen och celler läggs till i raderna. Lägg till följande kod:
 
 ```csharp
-// Skapa radobjekt och lägg till det i tabellinstansen
+//Skapa radobjekt och lägg till det i tabellinstansen
 Aspose.Pdf.Row row = table.Rows.Add();
 // Skapa cellobjekt och lägg till det i radinstansen
 Aspose.Pdf.Cell cell = row.Cells.Add();
@@ -112,7 +112,7 @@ doc.Save(dataDir);
 Console.WriteLine("\nSVG image added successfully inside a table cell.\nFile saved at " + dataDir);
 ```
 
-### Exempel på källkod för add SVG-objekt med Aspose.Words för .NET
+### Exempel på källkod för add SVG-objekt med Aspose.PDF för .NET
 
 ```csharp
 // Sökvägen till dokumentkatalogen.
@@ -134,7 +134,7 @@ img.FixHeight = 50;
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
 // Ställ in bredd för tabellceller
 table.ColumnWidths = "100 100";
-// Skapa radobjekt och lägg till det i tabellinstansen
+//Skapa radobjekt och lägg till det i tabellinstansen
 Aspose.Pdf.Row row = table.Rows.Add();
 // Skapa cellobjekt och lägg till det i radinstansen
 Aspose.Pdf.Cell cell = row.Cells.Add();

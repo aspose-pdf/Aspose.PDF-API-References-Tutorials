@@ -80,7 +80,7 @@ Son olarak ortaya çıkan PDF dosyasını "CreateRectangleWithAlphaColor_out.pdf
 doc.Save(dataDir + "CreateRectangleWithAlphaColor_out.pdf");
 ```
 
-### Aspose.Words for .NET kullanarak Create Rectangle With Alpha Color için örnek kaynak kodu 
+### Aspose.PDF for .NET kullanarak Alpha Color ile Dikdörtgen Oluştur için örnek kaynak kodu 
 
 ```csharp
 
@@ -96,7 +96,7 @@ Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 200, 100);
 // 32 bit ARGB değerinden System.Drawing.Color yapısından grafik dolgu rengini ayarlayın
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
-// Grafik örneğinin şekiller koleksiyonuna dikdörtgen nesnesi ekleyin
+//Grafik örneğinin şekiller koleksiyonuna dikdörtgen nesnesi ekleyin
 canvas.Shapes.Add(rect);
 // İkinci dikdörtgen nesnesi oluştur
 Aspose.Pdf.Drawing.Rectangle rect1 = new Aspose.Pdf.Drawing.Rectangle(200, 150, 200, 100);

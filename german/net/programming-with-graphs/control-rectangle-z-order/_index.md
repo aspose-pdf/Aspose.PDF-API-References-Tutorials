@@ -63,7 +63,7 @@ Abschließend speichern wir die resultierende PDF-Datei mit dem Namen „Control
 ```csharp
 doc1.Save(dataDir);
 ```
-### Beispielquellcode für die Z-Reihenfolge des Steuerrechtecks mit Aspose.Words für .NET 
+### Beispielquellcode für die Z-Reihenfolge des Steuerrechtecks mit Aspose.PDF für .NET 
 
 ```csharp
 
@@ -75,7 +75,7 @@ Document doc1 = new Document();
 Aspose.Pdf.Page page1 = doc1.Pages.Add();
 // Legen Sie die Größe der PDF-Seite fest
 page1.SetPageSize(375, 300);
-// Legen Sie den linken Rand für das Seitenobjekt auf 0 fest
+//Legen Sie den linken Rand für das Seitenobjekt auf 0 fest
 page1.PageInfo.Margin.Left = 0;
 // Legen Sie den oberen Rand des Seitenobjekts auf 0 fest
 page1.PageInfo.Margin.Top = 0;

@@ -83,7 +83,7 @@ Console.WriteLine("\nFont embedded successfully in a PDF file.\nFile saved at " 
 // Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Mevcut bir PDF dosyasını yükleyin
+// Mevcut bir PDF dosyasını yükleyin
 Document doc = new Document(dataDir + "input.pdf");
 
 // Tüm sayfaları yineleyin

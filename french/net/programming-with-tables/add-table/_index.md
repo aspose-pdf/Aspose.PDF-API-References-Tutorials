@@ -83,13 +83,13 @@ Console.WriteLine("\nText added successfully to an existing pdf file.\nFile save
 
 Enfin, nous ajoutons l'objet table à la première page du document PDF en utilisant la collection Paragraphs de la page correspondante.
 
-### Exemple de code source pour ajouter une table à l'aide de Aspose.Words pour .NET
+### Exemple de code source pour ajouter une table à l'aide d'Aspose.PDF pour .NET
 
 ```csharp
 // Chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Charger le document PDF source
+// Charger le document PDF source
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir+ "AddTable.pdf");
 // Initialise une nouvelle instance de la table
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();

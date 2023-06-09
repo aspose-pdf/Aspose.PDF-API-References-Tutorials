@@ -16,7 +16,7 @@ Antes de comenzar, asegúrese de tener lo siguiente:
 - Aspose.PDF para .NET instalado en su entorno de desarrollo
 
 ## Paso 1: Definir el directorio de documentos
-Primero, debe establecer la ruta a su directorio de documentos. Esta es la ubicación donde desea guardar su documento PDF editado. Reemplace "SU DIRECTORIO DE DOCUMENTOS" con la ruta apropiada.
+Primero, debe establecer la ruta a su directorio de documentos. Esta es la ubicación donde desea guardar su documento PDF editado. Reemplace "SU DIRECTORIO DE DOCUMENTOS" con la ruta adecuada.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -52,7 +52,7 @@ page. Artifacts. Add(background);
 ```
 
 ## Paso 6: Guarde el documento PDF
- Finalmente, puede guardar el documento PDF en un archivo usando el`Save()` metodo de la`Document` clase. Asegúrese de especificar la ruta y el nombre de archivo correctos.
+ Finalmente, puede guardar el documento PDF en un archivo usando el`Save()` metodo de la`Document`clase. Asegúrese de especificar la ruta y el nombre de archivo correctos.
 
 ```csharp
 doc.Save(dataDir + "ImageAsBackground_out.pdf");

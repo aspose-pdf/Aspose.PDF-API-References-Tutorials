@@ -30,7 +30,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ## 2. Adım: Giriş PDF dosyasını yükleme
 
- Bu adımda, giriş PDF dosyasını kullanarak yükleyeceğiz.`Document` Aspose.PDF sınıfı.
+ Bu adımda, giriş PDF dosyasını kullanarak yükleyeceğiz.`Document`Aspose.PDF sınıfı.
 
 ```csharp
 // Giriş PDF dosyasını yükle
@@ -83,7 +83,7 @@ doc.Save(dataDir);
 Ortaya çıkan PDF için tam yolu ve dosya adını belirttiğinizden emin olun.
 
 
-### Aspose.Words for .NET kullanarak Set Java Script için örnek kaynak kodu 
+### Aspose.PDF for .NET kullanarak Set Java Script için örnek kaynak kodu 
 ```csharp
 // Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

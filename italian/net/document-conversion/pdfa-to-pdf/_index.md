@@ -48,7 +48,7 @@ doc.Save(dataDir + "PDFAToPDF_out.pdf");
 
 Il codice sopra salva il file PDFA convertito in formato PDF con il nome del file`"PDFAToPDF_out.pdf"`.
 
-### Esempio di codice sorgente per PDFA in PDF utilizzando Aspose.Words per .NET
+### Esempio di codice sorgente per PDFA in PDF utilizzando Aspose.PDF per .NET
 
 
 ```csharp

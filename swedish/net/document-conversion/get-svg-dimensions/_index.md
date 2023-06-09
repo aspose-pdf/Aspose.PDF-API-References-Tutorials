@@ -53,7 +53,7 @@ svgDoc.Save(dataDir + "GetSVGDimensions_out.pdf");
 
  Byta ut`"YOUR DOCUMENTS DIRECTORY"` med den önskade katalogen där du vill spara den utgående PDF-filen.
   
-### Exempel på källkod för Get SVG Dimensions med Aspose.Words för .NET
+### Exempel på källkod för Get SVG Dimensions med Aspose.PDF för .NET
 
 ```csharp
 // Sökvägen till dokumentkatalogen.

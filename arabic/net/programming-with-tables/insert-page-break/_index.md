@@ -63,7 +63,7 @@ doc.Pages[1].Paragraphs.Add(tab);
 doc.Save(dataDir + "InsertPageBreak_out.pdf");
 ```
 
-### مثال على شفرة المصدر لإدراج فاصل صفحة باستخدام Aspose.Words for .NET
+### مثال على التعليمات البرمجية المصدر لإدراج فاصل صفحة باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 // المسار إلى دليل المستندات.

@@ -52,7 +52,7 @@ pdfDocument.Save(dataDir);
 
  Ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem gewünschten Verzeichnis, in dem Sie die ausgegebene PDF/A-Datei speichern möchten.
 
-### Beispielquellcode für PDF zu HTML mit Aspose.Words für .NET
+### Beispielquellcode für PDF zu HTML mit Aspose.PDF für .NET
 
 ```csharp
 // Der Pfad zum Dokumentenverzeichnis.

@@ -59,7 +59,7 @@ dataDir = dataDir + "ModifyFormField_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Beispielquellcode für „Formularfeld ändern“ mit Aspose.Words für .NET 
+### Beispielquellcode für „Formularfeld ändern“ mit Aspose.PDF für .NET 
 ```csharp
 // Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

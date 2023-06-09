@@ -63,7 +63,7 @@ line.GraphInfo.DashPhase = 1;
 doc.Save(dataDir + "AddLineObject_out.pdf");
 ```
 
-### نموذج التعليمات البرمجية المصدر لـ Add Line Object باستخدام Aspose.Words for .NET 
+### نموذج التعليمات البرمجية المصدر لـ Add Line Object باستخدام Aspose.PDF for .NET 
 
 ```csharp
 

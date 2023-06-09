@@ -48,7 +48,7 @@ Nachdem wir die HTML-Datei geladen und die Ladeoptionen festgelegt haben, könne
 pdfDocument.Save("HTMLToPDF_out.pdf");
 ```
 
-### Beispielquellcode für HTML in PDF mit Aspose.Words für .NET
+### Beispielquellcode für HTML zu PDF mit Aspose.PDF für .NET
 
 ```csharp
 try

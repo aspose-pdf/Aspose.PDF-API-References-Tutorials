@@ -108,7 +108,7 @@ dataDir = dataDir + "RadioButtonWithOptions_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Пример исходного кода для радиокнопки с параметрами с использованием Aspose.Words для .NET 
+### Пример исходного кода для радиокнопки с параметрами с использованием Aspose.PDF для .NET 
 ```csharp
 try
 {

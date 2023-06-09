@@ -48,7 +48,7 @@ doc.Save(dataDir + "PDFToPPT_out.pptx", pptx_save);
 
 上面的代码将转换后的 PDF 文件保存为 PPTX 格式，文件名`"PDFToPPT_out.pptx"`.
 
-### 使用 Aspose.Words for .NET 将 PDF 转换为 PPT 的示例源代码
+### 使用 Aspose.PDF for .NET 将 PDF 转换为 PPT 的示例源代码
 
 ```csharp
 //文档目录的路径。

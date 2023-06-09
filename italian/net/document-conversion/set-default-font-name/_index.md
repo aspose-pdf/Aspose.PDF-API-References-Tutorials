@@ -62,7 +62,7 @@ pngDevice.Process(pdfDocument.Pages[1], imageStream);
 
  Assicurati di specificare il numero di pagina corretto in`pdfDocument.Pages[1]`.
 
-### Codice sorgente di esempio per Imposta nome carattere predefinito utilizzando Aspose.Words per .NET
+### Esempio di codice sorgente per Imposta nome carattere predefinito utilizzando Aspose.PDF per .NET
 
 ```csharp
 // Il percorso della directory dei documenti.

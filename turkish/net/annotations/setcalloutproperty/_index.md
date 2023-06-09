@@ -15,7 +15,7 @@ Bu eğitimde, C# dilinde Aspose.PDF for .NET kullanarak serbest metin ek açıkl
 
  Henüz yapmadıysanız, yapmanız gerekecek[indirmek](https://releases.aspose.com/pdf/net/) ve Aspose Releases'ten veya NuGet paket yöneticisi aracılığıyla Aspose.PDF for .NET'i kurun.
 
-## Yeni bir PDF belgesi oluştur
+## 1. Adım: Yeni bir PDF belgesi oluşturun
 
  kullanarak yeni bir PDF belgesi oluşturun.`Document` Aspose.PDF for .NET tarafından sağlanan sınıf.
 
@@ -25,7 +25,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 ```
 
-## Belgeye yeni bir sayfa ekleyin
+## 2. Adım: Belgeye yeni bir sayfa ekleyin
 
  kullanarak belgeye yeni bir sayfa ekleyin.`Pages` koleksiyonu`Document` sınıf.
 
@@ -33,7 +33,7 @@ Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Varsayılan görünümü ayarla
+## 3. Adım: Varsayılan görünümü ayarlayın
 
  Yeni bir tane oluşturarak serbest metin notu için varsayılan görünümü ayarlayın.`DefaultAppearance` nesne ve onun gibi özelliklerini ayarlama`TextColor` Ve`FontSize`.
 
@@ -43,7 +43,7 @@ da.TextColor = System.Drawing.Color.Red;
 da.FontSize = 10;
 ```
 
-## Belirtme çizgisiyle ücretsiz bir metin notu oluşturun
+## 4. Adım: Belirtme çizgisiyle ücretsiz bir metin ek açıklaması oluşturun
 
  kullanarak belirtme çizgisiyle yeni bir serbest metin ek açıklaması oluşturun.`FreeTextAnnotation` sınıf. Yı kur`Intent` mülkiyet`FreeTextIntent.FreeTextCallout` bunun bir ek açıklama olduğunu belirtmek için. Yı kur`EndingStyle` mülkiyet`LineEnding.OpenArrow` belirtme çizgisinin sonundaki okun stilini belirtmek için. Yı kur`Callout` bir dizi özelliği`Point` sayfada belirtme çizgisinin çizilmesi gereken noktaları temsil eden nesneler.
 
@@ -57,7 +57,7 @@ fta.Callout = new Point[]
 };
 ```
 
-## Sayfaya serbest metin açıklamasını ekleyin
+## 5. Adım: Sayfaya serbest metin notu ekleyin
 
  kullanarak sayfaya serbest metin notu ekleyin.`Annotations` koleksiyonu`Page` sınıf.
 
@@ -65,15 +65,15 @@ fta.Callout = new Point[]
 page.Annotations.Add(fta);
 ```
 
-## Ek açıklamaya metin ekleyin
+## 6. Adım: Açıklamaya metin ekleyin
 
- ayarlayarak ek açıklamaya metin ekleyin.`RichText`özelliğini biçimlendirilmiş bir XML dizisine dönüştürür. Bu eğitimde, metin rengini kırmızıya ve yazı tipi boyutunu 9'a ayarlıyoruz.
+ayarlayarak ek açıklamaya metin ekleyin.`RichText` özelliğini biçimlendirilmiş bir XML dizisine dönüştürür. Bu eğitimde, metin rengini kırmızıya ve yazı tipi boyutunu 9'a ayarlıyoruz.
 
 ```csharp
 fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"color:#FF
 ```
 
-## 8. belgeyi kaydedin
+## 7. Adım: belgeyi kaydedin
 
 Şimdi aşağıdaki kodu kullanarak belgeyi kaydedin:
 

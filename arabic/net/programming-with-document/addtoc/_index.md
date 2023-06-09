@@ -13,7 +13,7 @@ url: /ar/net/programming-with-document/addtoc/
 
 ## الخطوة 1: قم بتحميل ملف PDF الحالي
 
-للبدء ، نحتاج إلى تحميل ملف PDF موجود. يستبدل`"YOUR DOCUMENT DIRECTORY"` في الكود التالي بالمسار الفعلي لملف PDF الخاص بك:
+ للبدء ، نحتاج إلى تحميل ملف PDF موجود. يستبدل`"YOUR DOCUMENT DIRECTORY"` في الكود التالي بالمسار الفعلي لملف PDF الخاص بك:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -85,7 +85,7 @@ Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at "
 // المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//قم بتحميل ملفات PDF موجودة
+// قم بتحميل ملفات PDF موجودة
 Document doc = new Document(dataDir + "AddTOC.pdf");
 
 // احصل على الوصول إلى الصفحة الأولى من ملف PDF
@@ -124,7 +124,7 @@ for (int i = 0; i < 2; i++)
 	// تنسيق الوجهة
 	segment2.Text = titles[i];
 
-	// أضف عنوانًا إلى الصفحة التي تحتوي على جدول المحتويات
+	//أضف عنوانًا إلى الصفحة التي تحتوي على جدول المحتويات
 	tocPage.Paragraphs.Add(heading2);
 }
 dataDir = dataDir + "TOC_out.pdf";

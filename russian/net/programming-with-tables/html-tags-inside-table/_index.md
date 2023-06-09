@@ -70,7 +70,7 @@ doc.Pages[1].Paragraphs.Add(tableProvider);
 doc.Save(dataDir + "HTMLInsideTableCell_out.pdf");
 ```
 
-### Пример исходного кода HTML-тегов внутри таблицы с использованием Aspose.Words для .NET
+### Пример исходного кода HTML-тегов внутри таблицы с использованием Aspose.PDF для .NET
 
 ```csharp
 // Путь к каталогу документов.

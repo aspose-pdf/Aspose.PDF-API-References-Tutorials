@@ -11,7 +11,7 @@ Aspose.PDF para .NET es una biblioteca que permite a los desarrolladores crear, 
 
 ## Paso 1: Cargue el documento PDF
 
- El primer paso para optimizar el tamaño de archivo de un documento PDF es cargar el documento en su aplicación. Puedes hacer esto usando el`Document`clase proporcionada por la biblioteca Aspose.PDF para .NET. Aquí hay un ejemplo de cómo cargar un documento PDF:
+ El primer paso para optimizar el tamaño de archivo de un documento PDF es cargar el documento en su aplicación. Puedes hacer esto usando el`Document` clase proporcionada por la biblioteca Aspose.PDF para .NET. Aquí hay un ejemplo de cómo cargar un documento PDF:
 
 ```csharp
 // La ruta al directorio de documentos.
@@ -25,7 +25,7 @@ Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 
 ## Paso 2: Establecer opciones de optimización
 
- Una vez que haya cargado el documento PDF, puede configurar las opciones de optimización para especificar qué partes del documento desea optimizar. El`OptimizationOptions` La clase proporcionada por la biblioteca Aspose.PDF para .NET le permite especificar una variedad de opciones para optimizar el tamaño de archivo del documento PDF. Aquí hay un ejemplo de cómo configurar algunas opciones de optimización:
+Una vez que haya cargado el documento PDF, puede configurar las opciones de optimización para especificar qué partes del documento desea optimizar. El`OptimizationOptions` La clase proporcionada por la biblioteca Aspose.PDF para .NET le permite especificar una variedad de opciones para optimizar el tamaño de archivo del documento PDF. Aquí hay un ejemplo de cómo configurar algunas opciones de optimización:
 
 ```csharp
 OptimizationOptions optimizationOptions = new OptimizationOptions();
@@ -39,9 +39,9 @@ optimizationOptions.ImageCompressionOptions.ImageQuality = 10;
 En este ejemplo, estamos configurando las siguientes opciones:
 - `LinkDuplcateStreams`: esta opción habilita la eliminación de secuencias duplicadas en el documento PDF, lo que puede ayudar a reducir el tamaño del archivo.
 - `RemoveUnusedObjects`: esta opción permite la eliminación de cualquier objeto no utilizado en el documento PDF, lo que también puede ayudar a reducir el tamaño del archivo.
-- `RemoveUnusedStreams`esta opción permite la eliminación de cualquier secuencia no utilizada en el documento PDF, lo que puede reducir aún más el tamaño del archivo.
+- `RemoveUnusedStreams`: esta opción permite la eliminación de cualquier secuencia no utilizada en el documento PDF, lo que puede reducir aún más el tamaño del archivo.
 - `CompressImages`: esta opción permite la compresión de imágenes en el documento PDF, lo que puede reducir significativamente el tamaño del archivo.
-- `ImageQuality`: Esta opción establece la calidad de las imágenes comprimidas. Una configuración de menor calidad dará como resultado un tamaño de archivo más pequeño, pero también puede resultar en una imagen de menor calidad.
+- `ImageQuality`Esta opción establece la calidad de las imágenes comprimidas. Una configuración de menor calidad dará como resultado un tamaño de archivo más pequeño, pero también puede resultar en una imagen de menor calidad.
 
 ## Paso 4: Optimice el documento PDF
 

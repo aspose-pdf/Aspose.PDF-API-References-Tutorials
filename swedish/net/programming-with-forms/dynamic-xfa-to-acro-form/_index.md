@@ -43,7 +43,7 @@ dataDir = dataDir + "Standard_AcroForm_out.pdf";
 document. Save(dataDir);
 ```
 
-### Exempel på källkod för Dynamic XFA To Acro Form med Aspose.Words för .NET 
+### Exempel på källkod för Dynamic XFA To Acro Form med Aspose.PDF för .NET 
 ```csharp
 // Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

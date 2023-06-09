@@ -108,7 +108,7 @@ bitmap.Save(dataDir, ImageFormat.Png);
 
 Обязательно укажите правильный каталог и имя файла для сохранения выходного изображения.
 
-### Пример исходного кода для извлечения границы с использованием Aspose.Words для .NET
+### Пример исходного кода для извлечения границы с использованием Aspose.PDF для .NET
 
 ```csharp
 // Путь к каталогу документов.
@@ -121,7 +121,7 @@ System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap((int)doc.Pages[1].PageI
 System.Drawing.Drawing2D.GraphicsPath graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
 // Значение матрицы ctm по умолчанию: 1,0,0,1,0,0.
 System.Drawing.Drawing2D.Matrix lastCTM = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, 0);
-//Система координат System.Drawing основана на верхнем левом углу, в то время как система координат pdf основана на нижнем левом углу, поэтому мы должны применить матрицу инверсии.
+// Система координат System.Drawing основана на верхнем левом углу, в то время как система координат pdf основана на нижнем левом углу, поэтому мы должны применить матрицу инверсии.
 System.Drawing.Drawing2D.Matrix inversionMatrix = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, (float)doc.Pages[1].PageInfo.Height);
 System.Drawing.PointF lastPoint = new System.Drawing.PointF(0, 0);
 System.Drawing.Color fillColor = System.Drawing.Color.FromArgb(0, 0, 0);
@@ -150,7 +150,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 
 		if (opSaveState != null)
 		{
-			// Сохранить предыдущее состояние и поместить текущее состояние на вершину стека
+			//Сохранить предыдущее состояние и поместить текущее состояние на вершину стека
 			graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
 			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 		}

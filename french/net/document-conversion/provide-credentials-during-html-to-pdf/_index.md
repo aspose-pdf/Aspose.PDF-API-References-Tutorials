@@ -67,7 +67,7 @@ pdfDocument.Save(dataDir + "ProvideCredentialsDuringHTMLToPDF_out.pdf");
 
  Le code ci-dessus enregistre le fichier PDF résultant avec le nom de fichier`"ProvideCredentialsDuringHTMLToPDF_out.pdf"`.
 
-### Exemple de code source pour Fournir des informations d'identification pendant HTML en PDF à l'aide d'Aspose.Words pour .NET
+### Exemple de code source pour Fournir des informations d'identification pendant HTML en PDF à l'aide d'Aspose.PDF pour .NET
 
 ```csharp
 try

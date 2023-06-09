@@ -62,7 +62,7 @@ Finalmente, guardamos el archivo PDF resultante con el nombre "CreateFilledRecta
 doc.Save(dataDir + "CreateFilledRectangle_out.pdf");
 ```
 
-### Ejemplo de código fuente para crear un rectángulo relleno con Aspose.Words para .NET 
+### Ejemplo de código fuente para crear un rectángulo relleno con Aspose.PDF para .NET 
 
 ```csharp
 

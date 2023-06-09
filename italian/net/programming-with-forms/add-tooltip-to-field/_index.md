@@ -59,7 +59,7 @@ Console.WriteLine("\nTooltip added successfully.\nFile saved at " + dataDir);
 
 Assicurati di fornire il nome e il percorso del file di output desiderato. Dopo aver eseguito questo codice, il modulo PDF modificato con il suggerimento aggiunto verrà salvato nella posizione specificata.
 
-### Esempio di codice sorgente per Aggiungi descrizione comando al campo utilizzando Aspose.Words per .NET 
+### Esempio di codice sorgente per Aggiungi descrizione comando al campo utilizzando Aspose.PDF per .NET 
 
 ```csharp
 // Il percorso della directory dei documenti.

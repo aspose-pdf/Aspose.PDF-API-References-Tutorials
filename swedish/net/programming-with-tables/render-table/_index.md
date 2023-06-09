@@ -9,7 +9,7 @@ weight: 170
 url: /sv/net/programming-with-tables/render-table/
 ---
 
-den här handledningen guidar vi dig steg för steg för att visa en tabell i ett PDF-dokument med Aspose.PDF för .NET. Vi kommer att förklara den medföljande C#-källkoden och visa dig hur du implementerar den.
+I den här handledningen guidar vi dig steg för steg för att visa en tabell i ett PDF-dokument med Aspose.PDF för .NET. Vi kommer att förklara den medföljande C#-källkoden och visa dig hur du implementerar den.
 
 ## Steg 1: Skapa dokumentet
 Först skapar vi ett nytt PDF-dokument:
@@ -97,7 +97,7 @@ doc.Save(dataDir);
 Console.WriteLine("\nTable displayed successfully on a page.\nFile saved at location: " + dataDir);
 ```
 
-### Exempel på källkod för Render Table med Aspose.Words för .NET
+### Exempel på källkod för Render Table med Aspose.PDF för .NET
 
 ```csharp
 // Sökvägen till dokumentkatalogen.

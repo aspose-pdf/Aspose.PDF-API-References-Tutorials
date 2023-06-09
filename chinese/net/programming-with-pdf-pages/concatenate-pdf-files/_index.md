@@ -53,7 +53,7 @@ pdfDocument1.Save(dataDir);
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 //打开第一个文档
 Document pdfDocument1 = new Document(dataDir + "Concat1.pdf");
-//打开第二个文件
+//打开第二个文档
 Document pdfDocument2 = new Document(dataDir + "Concat2.pdf");
 //将第二个文档的页面添加到第一个
 pdfDocument1.Pages.Add(pdfDocument2.Pages);

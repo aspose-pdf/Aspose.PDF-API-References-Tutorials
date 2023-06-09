@@ -72,7 +72,7 @@ pg.Paragraphs.Add(graph);
 pDoc.Save(dataDir + "DrawingLine_out.pdf");
 ```
 
-### Пример исходного кода для рисования линии с использованием Aspose.Words для .NET 
+### Пример исходного кода для рисования линий с использованием Aspose.PDF для .NET 
 
 ```csharp
 
@@ -84,7 +84,7 @@ Document pDoc = new Document();
 Page pg = pDoc.Pages.Add();
 // Установить поля страницы со всех сторон равными 0
 pg.PageInfo.Margin.Left = pg.PageInfo.Margin.Right = pg.PageInfo.Margin.Bottom = pg.PageInfo.Margin.Top = 0;
-// Создайте объект Graph с шириной и высотой, равными размерам страницы
+//Создайте объект Graph с шириной и высотой, равными размерам страницы
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph((float)pg.PageInfo.Width , (float)pg.PageInfo.Height);
 // Создайте объект первой строки, начиная с нижнего левого до верхнего правого угла страницы
 Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { (float)pg.Rect.LLX, 0, (float)pg.PageInfo.Width, (float)pg.Rect.URY });

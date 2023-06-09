@@ -67,7 +67,7 @@ dataDir = dataDir + "HorizontallyAndVerticallyRadioButtons_out.pdf";
 formEditor.Save(dataDir);
 ```
 
-### عينة من التعليمات البرمجية المصدر لأزرار الراديو الأفقية والرأسية باستخدام Aspose.Words for .NET 
+### عينة من التعليمات البرمجية المصدر لأزرار الراديو الأفقية والرأسية باستخدام Aspose.PDF لـ .NET 
 ```csharp
 try
 {

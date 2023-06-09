@@ -63,7 +63,7 @@ Wir speichern das PDF-Dokument mit eingefügtem Seitenumbruch.
 doc.Save(dataDir + "InsertPageBreak_out.pdf");
 ```
 
-### Beispielquellcode für „Seitenumbruch einfügen“ mit Aspose.Words für .NET
+### Beispielquellcode für „Seitenumbruch einfügen“ mit Aspose.PDF für .NET
 
 ```csharp
 // Der Pfad zum Dokumentenverzeichnis.

@@ -58,7 +58,7 @@ Don't forget to close the `FileStream` object when you're done:
 fs. Close();
 ```
 
-### Sample source code for Preserve Rights using Aspose.Words for .NET 
+### Sample source code for Preserve Rights using Aspose.PDF for .NET 
 ```csharp
 // The path to the documents directory.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

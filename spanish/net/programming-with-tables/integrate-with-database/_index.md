@@ -2,7 +2,7 @@
 title: Integrar con base de datos
 linktitle: Integrar con base de datos
 second_title: Referencia de API de Aspose.PDF para .NET
-description: Incruste datos de una base de datos en un documento PDF usando Aspose.PDF para .NET.
+description: Incruste datos de una base de datos en un documento PDF utilizando Aspose.PDF para .NET.
 type: docs
 weight: 120
 url: /es/net/programming-with-tables/integrate-with-database/
@@ -71,7 +71,7 @@ doc.Save(dataDir + "DataIntegrated_out.pdf");
 
 ¡Felicidades! Ahora sabe cómo incrustar datos de bases de datos en un documento PDF utilizando Aspose.PDF para .NET.
 
-### Código fuente de ejemplo para Integrar con base de datos usando Aspose.Words para .NET
+### Código fuente de ejemplo para Integrar con base de datos usando Aspose.PDF para .NET
 
 ```csharp
 // La ruta al directorio de documentos.
@@ -81,7 +81,7 @@ DataTable dt = new DataTable("Employee");
 dt.Columns.Add("Employee_ID", typeof(Int32));
 dt.Columns.Add("Employee_Name", typeof(string));
 dt.Columns.Add("Gender", typeof(string));
-//Agregue 2 filas en el objeto DataTable mediante programación
+// Agregue 2 filas en el objeto DataTable mediante programación
 DataRow dr = dt.NewRow();
 dr[0] = 1;
 dr[1] = "John Smith";

@@ -26,7 +26,7 @@ url: /ar/net/programming-with-document/getxmpmetadata/
 // المسار إلى وثيقة PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//افتح مستند PDF
+// افتح مستند PDF
 Document pdfDocument = new Document(dataDir + "GetXMPMetadata.pdf");
 ```
 
@@ -52,7 +52,7 @@ Console.WriteLine(pdfDocument.Metadata["xmp:CustomProperty"]);
 // المسار إلى وثيقة PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//افتح مستند PDF
+// افتح مستند PDF
 Document pdfDocument = new Document(dataDir + "GetXMPMetadata.pdf");
 
 // استخراج بيانات تعريف XMP

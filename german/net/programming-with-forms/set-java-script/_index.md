@@ -30,7 +30,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ## Schritt 2: Laden der Eingabe-PDF-Datei
 
- In diesem Schritt laden wir die Eingabe-PDF-Datei mit`Document` Klasse von Aspose.PDF.
+ In diesem Schritt laden wir die Eingabe-PDF-Datei mit`Document`Klasse von Aspose.PDF.
 
 ```csharp
 // Laden Sie die Eingabe-PDF-Datei
@@ -83,7 +83,7 @@ doc.Save(dataDir);
 Geben Sie unbedingt den vollständigen Pfad und Dateinamen für die resultierende PDF-Datei an.
 
 
-### Beispielquellcode für Set Java Script mit Aspose.Words für .NET 
+### Beispielquellcode für Set Java Script mit Aspose.PDF für .NET 
 ```csharp
 // Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

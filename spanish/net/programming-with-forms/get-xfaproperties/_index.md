@@ -61,7 +61,7 @@ dataDir = dataDir + "Filled_XFA_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Ejemplo de código fuente para Obtener XFAProperties usando Aspose.Words para .NET 
+### Ejemplo de código fuente para Obtener XFAProperties usando Aspose.PDF para .NET 
 ```csharp
 // La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

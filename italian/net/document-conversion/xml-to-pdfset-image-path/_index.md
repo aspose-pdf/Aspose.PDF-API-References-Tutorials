@@ -44,7 +44,7 @@ doc.Save(outFile);
 ```
 Salva il file PDF risultante nella directory specificata.
 
-### Codice sorgente di esempio per il percorso dell'immagine da XML a PDFSet utilizzando Aspose.Words per .NET
+### Codice sorgente di esempio per il percorso dell'immagine da XML a PDFSet utilizzando Aspose.PDF per .NET
 
 ```csharp
 try

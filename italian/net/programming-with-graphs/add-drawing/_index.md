@@ -122,7 +122,7 @@ document. Save(dataDir);
 Console.WriteLine("\nSuccessfully added drawing with transparent color.\nFile saved to location: " + dataDir);
 ```
 
-### Esempio di codice sorgente per Aggiungi disegno utilizzando Aspose.Words per .NET 
+### Esempio di codice sorgente per Aggiungi disegno utilizzando Aspose.PDF per .NET 
 
 ```csharp
 
@@ -163,4 +163,4 @@ Console.WriteLine("\nDrawing added successfully with transparent color.\nFile sa
 
 ## Conclusione
 
-In questo articolo, abbiamo imparato come aggiungere il disegno alla programmazione con la grafica usando Aspose.PDF per .NET. Abbiamo seguito una guida passo passo per comprendere il codice sorgente e i vari passaggi necessari per aggiungere un disegno a un file PDF. Utilizzando le potenti funzionalità di Aspose.PDF, puoi creare documenti PDF attraenti e interattivi nelle tue applicazioni .NET.
+In questo articolo, abbiamo imparato come aggiungere il disegno alla programmazione con la grafica utilizzando Aspose.PDF per .NET. Abbiamo seguito una guida passo passo per comprendere il codice sorgente e i vari passaggi necessari per aggiungere un disegno a un file PDF. Utilizzando le potenti funzionalità di Aspose.PDF, puoi creare documenti PDF attraenti e interattivi nelle tue applicazioni .NET.

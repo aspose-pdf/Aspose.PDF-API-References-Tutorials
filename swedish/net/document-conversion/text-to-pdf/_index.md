@@ -62,7 +62,7 @@ doc.Save(dataDir + "TexttoPDF_out.pdf");
 
 Var noga med att ange önskad sökväg och filnamn för den resulterande PDF-filen.
 
-### Exempel på källkod för text till PDF med Aspose.Words för .NET
+### Exempel på källkod för text till PDF med Aspose.PDF för .NET
 
 ```csharp
 try
@@ -76,7 +76,7 @@ try
 	// Instantiera ett dokumentobjekt genom att anropa dess tomma konstruktor
 	Document doc = new Document();
 
-	// Lägg till en ny sida i Pages-samlingen av dokument
+	// Lägg till en ny sida i Pages-samlingen av Document
 	Page page = doc.Pages.Add();
 
 	// Skapa en instans av TextFragmet och skicka texten från läsarobjektet till dess konstruktor som argument

@@ -8,7 +8,7 @@ weight: 130
 url: /sv/net/programming-with-tables/manipulate-table/
 ---
 
-I den här handledningen kommer vi att gå igenom processen steg-för-steg för att manipulera tabeller i ett PDF-dokument med Aspose.PDF för .NET. Tabeller är ett vanligt inslag i PDF-dokument, och att kunna modifiera deras innehåll programmatiskt kan vara mycket fördelaktigt i olika scenarier. Vi kommer att använda C#-källkoden som tillhandahålls för att demonstrera processen.
+den här handledningen kommer vi att gå igenom processen steg-för-steg för att manipulera tabeller i ett PDF-dokument med Aspose.PDF för .NET. Tabeller är ett vanligt inslag i PDF-dokument, och att kunna modifiera deras innehåll programmatiskt kan vara mycket fördelaktigt i olika scenarier. Vi kommer att använda C#-källkoden som tillhandahålls för att demonstrera processen.
 
 ## Krav
 
@@ -73,7 +73,7 @@ pdfDocument.Save(dataDir);
 Se till att du anger sökvägen och filnamnet för det ändrade dokumentet.
 
 
-### Exempel på källkod för manipulera tabell med Aspose.Words för .NET
+### Exempel på källkod för manipulera tabell med Aspose.PDF för .NET
 
 ```csharp
 try
@@ -108,4 +108,4 @@ catch (Exception ex)
 
 ## Slutsats
 
-den här handledningen har vi lärt oss hur man manipulerar tabeller i ett PDF-dokument med Aspose.PDF för .NET. Genom att följa steg-för-steg-guiden kan du enkelt ladda ett PDF-dokument, hitta tabeller, komma åt celler och textfragment, ändra tabellinnehåll och spara det ändrade dokumentet. Detta tillvägagångssätt ger flexibilitet och effektivitet vid hantering av tabellmanipulation i PDF-dokument.
+I den här handledningen har vi lärt oss hur man manipulerar tabeller i ett PDF-dokument med Aspose.PDF för .NET. Genom att följa steg-för-steg-guiden kan du enkelt ladda ett PDF-dokument, hitta tabeller, komma åt celler och textfragment, ändra tabellinnehåll och spara det ändrade dokumentet. Detta tillvägagångssätt ger flexibilitet och effektivitet vid hantering av tabellmanipulation i PDF-dokument.

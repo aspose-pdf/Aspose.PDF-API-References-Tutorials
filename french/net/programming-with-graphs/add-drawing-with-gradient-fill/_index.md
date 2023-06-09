@@ -71,7 +71,7 @@ Enfin, nous enregistrons le fichier PDF résultant sous le nom "AddDrawingWithGr
 doc.Save(dataDir + "AddDrawingWithGradientFill_out.pdf");
 ```
 
-### Exemple de code source pour Ajouter un dessin avec un remplissage dégradé à l'aide de Aspose.Words pour .NET 
+### Exemple de code source pour Ajouter un dessin avec un remplissage dégradé à l'aide d'Aspose.PDF pour .NET 
 
 ```csharp
 

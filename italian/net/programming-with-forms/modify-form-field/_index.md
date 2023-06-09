@@ -59,7 +59,7 @@ dataDir = dataDir + "ModifyFormField_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Esempio di codice sorgente per Modifica campo modulo utilizzando Aspose.Words per .NET 
+### Esempio di codice sorgente per Modifica campo modulo utilizzando Aspose.PDF per .NET 
 ```csharp
 // Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

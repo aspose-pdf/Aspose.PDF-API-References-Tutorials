@@ -30,7 +30,7 @@ Document pdfDocument = new Document(dataDir + "GetNumberofPages.pdf");
 ```
 
 ## Étape 3 : Obtenir le nombre de pages
- Vous pouvez maintenant obtenir le nombre de pages du document à l'aide de la`Count`propriété du document`s `Collection de pages. Cela vous donnera le nombre total de pages dans le fichier PDF.
+ Vous pouvez maintenant obtenir le nombre de pages du document à l'aide de la`Count` propriété du document`s `Collection de pages. Cela vous donnera le nombre total de pages dans le fichier PDF.
 
 ```csharp
 System.Console.WriteLine("Number of pages: {0}", pdfDocument.Pages.Count);

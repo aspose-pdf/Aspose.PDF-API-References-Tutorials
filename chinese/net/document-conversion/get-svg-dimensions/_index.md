@@ -53,7 +53,7 @@ svgDoc.Save(dataDir + "GetSVGDimensions_out.pdf");
 
 代替`"YOUR DOCUMENTS DIRECTORY"`使用要保存输出 PDF 文件的所需目录。
   
-### 使用 Aspose.Words for .NET 获取 SVG 维度的示例源代码
+### 使用 Aspose.PDF for .NET 获取 SVG 尺寸的示例源代码
 
 ```csharp
 //文档目录的路径。

@@ -71,7 +71,7 @@ Console.WriteLine(ex.Message);
 ```
 Cattura eventuali eccezioni che possono verificarsi durante il processo di conversione e visualizza il messaggio di errore.
 
-### Codice sorgente di esempio per la pagina Web in PDF utilizzando Aspose.Words per .NET
+### Codice sorgente di esempio per la pagina Web in PDF utilizzando Aspose.PDF per .NET
 
 ```csharp
 try

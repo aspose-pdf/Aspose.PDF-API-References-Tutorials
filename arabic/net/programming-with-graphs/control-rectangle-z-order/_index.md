@@ -63,7 +63,7 @@ AddRectangle(page1, 40, 40, 60, 30, Aspose.Pdf.Color.Green, 0);
 ```csharp
 doc1.Save(dataDir);
 ```
-### عينة من التعليمات البرمجية المصدر لـ Control Rectangle Z Order باستخدام Aspose.Words for .NET 
+### نموذج التعليمات البرمجية المصدر لـ Control Rectangle Z Order باستخدام Aspose.PDF for .NET 
 
 ```csharp
 
@@ -75,7 +75,7 @@ Document doc1 = new Document();
 Aspose.Pdf.Page page1 = doc1.Pages.Add();
 // ضبط حجم صفحة PDF
 page1.SetPageSize(375, 300);
-// قم بتعيين الهامش الأيسر لكائن الصفحة على 0
+//قم بتعيين الهامش الأيسر لكائن الصفحة على 0
 page1.PageInfo.Margin.Left = 0;
 // قم بتعيين الهامش العلوي لكائن الصفحة على 0
 page1.PageInfo.Margin.Top = 0;

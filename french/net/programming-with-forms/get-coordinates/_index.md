@@ -55,7 +55,7 @@ Console.WriteLine(option.Rect);
 }
 ```
 
-### Exemple de code source pour Get Coordinates en utilisant Aspose.Words pour .NET 
+### Exemple de code source pour Get Coordinates à l'aide d'Aspose.PDF pour .NET 
 ```csharp
 try
 {

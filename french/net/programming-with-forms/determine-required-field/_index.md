@@ -51,7 +51,7 @@ Console.WriteLine("The field " + field.FullName + " is required");
 }
 ```
 
-### Exemple de code source pour déterminer le champ requis à l'aide de Aspose.Words pour .NET 
+### Exemple de code source pour déterminer le champ requis à l'aide d'Aspose.PDF pour .NET 
 ```csharp
 // Chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

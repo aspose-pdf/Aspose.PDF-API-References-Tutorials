@@ -9,7 +9,7 @@ url: /sv/net/annotations/strikeoutwords/
 ---
 Aspose.PDF för .NET är ett bibliotek för manipulering och bearbetning av PDF-dokument som tillhandahåller olika funktioner för att skapa, ändra och konvertera PDF-filer. En av de användbara funktionerna som Aspose.PDF tillhandahåller är möjligheten att stryka ut ord eller fraser i ett PDF-dokument med hjälp av C#-källkoden. I den här artikeln kommer vi att ge en steg-för-steg-guide om hur man stryker ut ord med Aspose.PDF för .NET.
 
-## Laddar PDF-dokumentet
+## Steg 1: Laddar PDF-dokumentet
 Det första steget är att ladda PDF-dokumentet som du vill ändra. I den här handledningen kommer vi att ladda ett PDF-dokument med namnet "input.pdf" från mappen "DIN DOKUMENTKABEL". 
 
 ```csharp
@@ -17,7 +17,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document document = new Document(dataDir + "input.pdf");
 ```
 
-## Söker efter textfragment
+## Steg 2: Söka efter textfragment
 För att stryka specifika ord eller fraser i PDF-dokumentet måste du först söka efter dem. Aspose.PDF tillhandahåller en TextFragmentAbsorber-klass som kan användas för att söka efter ett specifikt textfragment i PDF-dokumentet.
 
 ```csharp
@@ -26,7 +26,7 @@ Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.
 
 koden ovan söker vi efter textfragmentet "Estoque" i PDF-dokumentet. Du kan ändra detta för att söka efter andra ord eller fraser som du vill stryka.
 
-## Att stryka ut textfragmenten
+## Steg 3: Stryk ut textfragmenten
 Efter att ha hittat textfragmenten är nästa steg att stryka ut dem. Aspose.PDF tillhandahåller en StrikeOutAnnotation-klass som kan användas för att skapa en överstruken kommentar för textfragmentet. 
 
 ```csharp
@@ -41,7 +41,7 @@ textFragment.Page.Annotations.Add(strikeOut);
 
 I koden ovan skapar vi en överstruken kommentar för varje textfragment som vi hittade. Vi ställer också in opacitet, ram och färg för den genomstrukna annoteringen.
 
-## Sparar det ändrade PDF-dokumentet
+## Steg 4: Spara det ändrade PDF-dokumentet
 Efter att ha strykit ut textfragmenten sparar du det ändrade dokumentet.
 
 ```csharp

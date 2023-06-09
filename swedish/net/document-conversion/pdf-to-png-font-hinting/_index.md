@@ -66,7 +66,7 @@ for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 
 Koden ovan konverterar varje sida i PDF-filen till en PNG-bild med teckensnittstips och sparar varje bild som en separat PNG-fil.
 
-### Exempel på källkod för PDF till PNGFont Hinting med Aspose.Words för .NET
+### Exempel på källkod för PDF till PNGFont Hinting med Aspose.PDF för .NET
 
 ```csharp
 try

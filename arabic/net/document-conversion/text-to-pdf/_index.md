@@ -62,7 +62,7 @@ doc.Save(dataDir + "TexttoPDF_out.pdf");
 
 تأكد من تحديد المسار المطلوب واسم الملف لملف PDF الناتج.
 
-### مثال على شفرة المصدر لـ Text to PDF باستخدام Aspose.Words for .NET
+### مثال على كود المصدر لـ Text to PDF باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 try

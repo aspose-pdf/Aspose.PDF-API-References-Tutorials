@@ -42,9 +42,9 @@ Cree una instancia de un objeto RadioButtonField con el número de página como 
 RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
 ```
 
-## Paso 5: Agregar opciones de botón de opción
+## Paso 5: Agregar opciones de botón de radio
 
-Agregue opciones de botón de radio usando el objeto RadioButtonOptionField y especifique su posición usando el objeto Rectangle:
+Agregue opciones de botones de radio usando el objeto RadioButtonOptionField y especifique su posición usando el objeto Rectangle:
 
 ```csharp
 RadioButtonOptionField opt1 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(0, 0, 20, 20));
@@ -87,7 +87,7 @@ dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Ejemplo de código fuente para casillas de verificación agrupadas usando Aspose.Words para .NET 
+### Ejemplo de código fuente para casillas de verificación agrupadas usando Aspose.PDF para .NET 
 ```csharp
 try
 {

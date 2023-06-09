@@ -42,7 +42,7 @@ bInfo.RoundedBorderRadius = 15;
 tab1.Border = bInfo;
 ```
 
-### Example source code for Rounded Corner Table using Aspose.Words for .NET
+### Example source code for Rounded Corner Table using Aspose.PDF for .NET
 
 ```csharp
 // The path to the documents directory.

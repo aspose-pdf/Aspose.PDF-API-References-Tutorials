@@ -71,7 +71,7 @@ Infine, salviamo il file PDF risultante con il nome "AddDrawingWithGradientFill_
 doc.Save(dataDir + "AddDrawingWithGradientFill_out.pdf");
 ```
 
-### Esempio di codice sorgente per Aggiungi disegno con riempimento sfumato utilizzando Aspose.Words per .NET 
+### Esempio di codice sorgente per Aggiungi disegno con riempimento sfumato utilizzando Aspose.PDF per .NET 
 
 ```csharp
 

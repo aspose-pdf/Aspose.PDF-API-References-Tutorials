@@ -11,7 +11,7 @@ url: /zh/net/programming-with-document/removeunusedobjects/
 
 ## 第一步：设置目录路径
 
-首先，您需要通过将“您的文档目录”替换为适当的路径来设置文档目录的路径。
+首先，您需要通过将“YOUR DOCUMENT DIRECTORY”替换为适当的路径来设置文档目录的路径。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";

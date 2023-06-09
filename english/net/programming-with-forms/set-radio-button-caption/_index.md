@@ -76,7 +76,7 @@ PDF_Template_PDF_HTML.Save(dataDir + "RadioButtonField_out.pdf");
 
 Be sure to specify the full path and filename for the resulting PDF.
 
-### Sample source code for Set Radio Button Caption using Aspose.Words for .NET 
+### Sample source code for Set Radio Button Caption using Aspose.PDF for .NET 
 ```csharp
 // The path to the documents directory.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

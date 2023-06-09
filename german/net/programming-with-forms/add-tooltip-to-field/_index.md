@@ -59,7 +59,7 @@ Console.WriteLine("\nTooltip added successfully.\nFile saved at " + dataDir);
 
 Stellen Sie sicher, dass Sie den gewünschten Namen und Pfad der Ausgabedatei angeben. Nach der Ausführung dieses Codes wird das geänderte PDF-Formular mit dem hinzugefügten Tooltip am angegebenen Speicherort gespeichert.
 
-### Beispielquellcode für „Tooltip zu Feld hinzufügen“ mit Aspose.Words für .NET 
+### Beispielquellcode für „Tooltip zu Feld hinzufügen“ mit Aspose.PDF für .NET 
 
 ```csharp
 // Der Pfad zum Dokumentenverzeichnis.

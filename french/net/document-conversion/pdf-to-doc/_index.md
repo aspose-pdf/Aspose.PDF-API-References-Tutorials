@@ -42,7 +42,7 @@ pdfDocument.Save(dataDir + "PDFToDOC_out.doc", SaveFormat.Doc);
 
  Remplacer`"YOUR DOCUMENTS DIRECTORY"` avec le répertoire souhaité dans lequel vous souhaitez enregistrer le fichier DOC de sortie.
 
-### Exemple de code source pour PDF vers DOC en utilisant Aspose.Words pour .NET
+### Exemple de code source pour PDF vers DOC en utilisant Aspose.PDF pour .NET
 
 ```csharp
 // Chemin d'accès au répertoire des documents.

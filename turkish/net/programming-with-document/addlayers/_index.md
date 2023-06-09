@@ -23,7 +23,7 @@ Document doc = new Document();
 
 ## Adım 2: Belgeye Sayfa Ekleyin
 
- Ardından, kullanarak belgeye bir sayfa ekleyin.`Add` yöntemi`Pages` koleksiyonunda`Document` sınıf.
+Ardından, kullanarak belgeye bir sayfa ekleyin.`Add` yöntemi`Pages` koleksiyonunda`Document` sınıf.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -61,7 +61,7 @@ Bu eğitimde, sayfaya farklı renk ve adlara sahip üç katman ekledik.
 
 ## 4. Adım: PDF Dosyasını Kaydedin
 
-Değiştirilen PDF dosyasını kullanarak kaydedin.`Save` yöntemi`Document` sınıf.
+ Değiştirilen PDF dosyasını kullanarak kaydedin.`Save` yöntemi`Document` sınıf.
 
 ```csharp
 dataDir = dataDir + "AddLayers_out.pdf";

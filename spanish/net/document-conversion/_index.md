@@ -31,7 +31,7 @@ Aprenderá a especificar la configuración de conversión, extraer texto e imág
 | [Sugerencia de fuentes de PDF a PNG](./pdf-to-png-font-hinting/) | Guía paso a paso para convertir PDF a PNG con sugerencias de fuente usando Aspose.PDF para .NET. |  
 | [PDF a PPT](./pdf-to-ppt/) | Guía paso a paso para convertir PDF a PPT usando Aspose.PDF para .NET. |  
 | [PDF a SVG](./pdf-to-svg/) | Guía paso a paso para convertir PDF a SVG usando Aspose.PDF para .NET. |  
-| [PDF a Te X](./pdf-to-te-x/) | Guía paso a paso para convertir PDF a Te X usando Aspose.PDF para .NET. |  
+| [PDF a TeX](./pdf-to-tex/) | Guía paso a paso para convertir PDF a Te X usando Aspose.PDF para .NET. |  
 | [PDF a XLS](./pdf-to-xls/) | Guía paso a paso para convertir PDF a XLS usando Aspose.PDF para .NET. |  
 | [PDF a XML](./pdf-to-xml/) | Guía paso a paso para convertir PDF a XML utilizando Aspose.PDF para .NET. |  
 | [PDF a XPS](./pdf-to-xps/) | Guía paso a paso para convertir PDF a XPS utilizando Aspose.PDF para .NET. |  

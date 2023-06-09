@@ -108,7 +108,7 @@ bitmap.Save(dataDir, ImageFormat.Png);
 
 Çıktı görüntüsünü kaydetmek için doğru dizini ve dosya adını belirttiğinizden emin olun.
 
-### Aspose.Words for .NET kullanarak Kenar Çıkarma için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak Kenar Çıkarma için örnek kaynak kodu
 
 ```csharp
 // Belgeler dizininin yolu.
@@ -121,7 +121,7 @@ System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap((int)doc.Pages[1].PageI
 System.Drawing.Drawing2D.GraphicsPath graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
 // Varsayılan ctm matris değeri 1,0,0,1,0,0'dır.
 System.Drawing.Drawing2D.Matrix lastCTM = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, 0);
-//System.Drawing koordinat sistemi sol üst tabanlı, pdf koordinat sistemi ise sol alt tabanlıdır, bu nedenle inversiyon matrisini uygulamamız gerekir
+// System.Drawing koordinat sistemi sol üst tabanlı, pdf koordinat sistemi ise sol alt tabanlıdır, bu nedenle inversiyon matrisini uygulamamız gerekir
 System.Drawing.Drawing2D.Matrix inversionMatrix = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, (float)doc.Pages[1].PageInfo.Height);
 System.Drawing.PointF lastPoint = new System.Drawing.PointF(0, 0);
 System.Drawing.Color fillColor = System.Drawing.Color.FromArgb(0, 0, 0);
@@ -150,7 +150,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 
 		if (opSaveState != null)
 		{
-			// Önceki durumu kaydedin ve mevcut durumu yığının en üstüne itin
+			//Önceki durumu kaydedin ve mevcut durumu yığının en üstüne itin
 			graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
 			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 		}

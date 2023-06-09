@@ -63,7 +63,7 @@ doc.Pages[1].Paragraphs.Add(tab);
 doc.Save(dataDir + "InsertPageBreak_out.pdf");
 ```
 
-### 使用 Aspose.Words for .NET 插入分页符的示例源代码
+### 使用 Aspose.PDF for .NET 插入分页符的示例源代码
 
 ```csharp
 //文档目录的路径。

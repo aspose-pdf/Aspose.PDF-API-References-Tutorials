@@ -58,7 +58,7 @@ Document pdfDocument2 = new Document(dataDir + "Concat2.pdf");
 // Fügen Sie Seiten des zweiten Dokuments zum ersten hinzu
 pdfDocument1.Pages.Add(pdfDocument2.Pages);
 dataDir = dataDir + "ConcatenatePdfFiles_out.pdf";
-//Verkettete Ausgabedatei speichern
+// Verkettete Ausgabedatei speichern
 pdfDocument1.Save(dataDir);
 System.Console.WriteLine("\nPDFs are concatenated successfully.\nFile saved at " + dataDir);
 

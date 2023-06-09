@@ -63,7 +63,7 @@ AddRectangle(page1, 40, 40, 60, 30, Aspose.Pdf.Color.Green, 0);
 ```csharp
 doc1.Save(dataDir);
 ```
-### 使用 Aspose.Words for .NET 的控制矩形 Z 顺序的示例源代码 
+### 使用 Aspose.PDF for .NET 的控制矩形 Z 顺序的示例源代码 
 
 ```csharp
 

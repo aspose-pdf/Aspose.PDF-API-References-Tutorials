@@ -66,7 +66,7 @@ for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 
 The code above converts each page of the PDF to a PNG image with font hinting and saves each image as a separate PNG file.
 
-### Example source code for PDF to PNGFont Hinting using Aspose.Words for .NET
+### Example source code for PDF to PNGFont Hinting using Aspose.PDF for .NET
 
 ```csharp
 try

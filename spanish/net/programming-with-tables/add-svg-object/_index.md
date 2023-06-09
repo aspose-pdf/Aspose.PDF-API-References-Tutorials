@@ -70,7 +70,7 @@ table. ColumnWidths = "100 100";
 En este paso, agregaremos una fila y celdas a la tabla. Cada fila representa una fila horizontal en la tabla y las celdas se agregan a las filas. Agrega el siguiente código:
 
 ```csharp
-// Cree un objeto de fila y agréguelo a la instancia de la tabla
+//Cree un objeto de fila y agréguelo a la instancia de la tabla
 Aspose.Pdf.Row row = table.Rows.Add();
 // Cree un objeto de celda y agréguelo a la instancia de fila
 Aspose.Pdf.Cell cell = row.Cells.Add();
@@ -112,7 +112,7 @@ doc.Save(dataDir);
 Console.WriteLine("\nSVG image added successfully inside a table cell.\nFile saved at " + dataDir);
 ```
 
-### Ejemplo de código fuente para agregar un objeto SVG usando Aspose.Words para .NET
+### Ejemplo de código fuente para agregar un objeto SVG usando Aspose.PDF para .NET
 
 ```csharp
 // La ruta al directorio de documentos.
@@ -134,7 +134,7 @@ img.FixHeight = 50;
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
 // Establecer el ancho de las celdas de la tabla
 table.ColumnWidths = "100 100";
-// Cree un objeto de fila y agréguelo a la instancia de la tabla
+//Cree un objeto de fila y agréguelo a la instancia de la tabla
 Aspose.Pdf.Row row = table.Rows.Add();
 // Cree un objeto de celda y agréguelo a la instancia de fila
 Aspose.Pdf.Cell cell = row.Cells.Add();

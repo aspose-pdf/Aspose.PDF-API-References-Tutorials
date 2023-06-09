@@ -12,7 +12,7 @@ Um JavaScript aus PDF-Dokumenten hinzuzufügen und zu entfernen, verwenden wir d
 
 ## Schritt 1: Erstellen Sie ein neues PDF-Dokument
 
- Beginnen Sie mit der Erstellung einer neuen Instanz von`Document`Von Aspose.PDF für .NET bereitgestellte Klasse. Dies dient als PDF-Dokument, in das wir das JavaScript einfügen.
+ Beginnen Sie mit der Erstellung einer neuen Instanz von`Document` Von Aspose.PDF für .NET bereitgestellte Klasse. Dies dient als PDF-Dokument, in das wir das JavaScript einfügen.
 
 ```csharp
 // Der Pfad zum Dokumentenverzeichnis.
@@ -36,7 +36,7 @@ doc.Save(dataDir + "AddJavascript.pdf");
 
 ## Schritt 3: Entfernen Sie JavaScript auf Dokumentebene
 
- Um JavaScript auf Dokumentebene zu entfernen, laden Sie das PDF-Dokument und greifen Sie auf zu`JavaScript` Wörterbuch. Durchlaufen Sie die Schlüssel und entfernen Sie die gewünschte JavaScript-Funktion.
+ Um JavaScript auf Dokumentebene zu entfernen, laden Sie das PDF-Dokument und greifen Sie auf zu`JavaScript`Wörterbuch. Durchlaufen Sie die Schlüssel und entfernen Sie die gewünschte JavaScript-Funktion.
 
 ```csharp
 Document doc1 = new Document(dataDir + "AddJavascript.pdf");

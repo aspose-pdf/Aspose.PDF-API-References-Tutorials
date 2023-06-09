@@ -23,7 +23,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ## 2. Adım: Kaynak PDF formunu yükleme
 
- Bu adımda, kaynak PDF formunu kullanarak yükleyeceğiz.`Aspose.Pdf.Facades.Form` Aspose.PDF sınıfı.
+ Bu adımda, kaynak PDF formunu kullanarak yükleyeceğiz.`Aspose.Pdf.Facades.Form`Aspose.PDF sınıfı.
 
 ```csharp
 Aspose.Pdf.Facades.Form form1 = new Aspose.Pdf.Facades.Form(dataDir + "RadioButtonField.pdf");
@@ -76,7 +76,7 @@ PDF_Template_PDF_HTML.Save(dataDir + "RadioButtonField_out.pdf");
 
 Ortaya çıkan PDF için tam yolu ve dosya adını belirttiğinizden emin olun.
 
-### Aspose.Words for .NET kullanarak Set Radio Button Caption için örnek kaynak kodu 
+### Aspose.PDF for .NET kullanarak Set Radio Button Caption için örnek kaynak kodu 
 ```csharp
 // Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

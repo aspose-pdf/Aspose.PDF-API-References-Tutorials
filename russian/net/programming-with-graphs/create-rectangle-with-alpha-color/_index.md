@@ -80,7 +80,7 @@ page.Paragraphs.Add(canvas);
 doc.Save(dataDir + "CreateRectangleWithAlphaColor_out.pdf");
 ```
 
-### Пример исходного кода для создания прямоугольника с альфа-цветом с использованием Aspose.Words для .NET 
+### Пример исходного кода для создания прямоугольника с альфа-цветом с использованием Aspose.PDF для .NET 
 
 ```csharp
 
@@ -96,7 +96,7 @@ Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 200, 100);
 // Установите цвет заливки графика из структуры System.Drawing.Color из 32-битного значения ARGB.
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
-// Добавить прямоугольный объект в коллекцию фигур экземпляра Graph
+//Добавить прямоугольный объект в коллекцию фигур экземпляра Graph
 canvas.Shapes.Add(rect);
 // Создайте второй прямоугольный объект
 Aspose.Pdf.Drawing.Rectangle rect1 = new Aspose.Pdf.Drawing.Rectangle(200, 150, 200, 100);

@@ -8,7 +8,7 @@ weight: 80
 url: /sv/net/programming-with-document/createmultilayerpdfsecondapproach/
 ---
 
-den här handledningen kommer vi att utforska hur man skapar en PDF med flera lager med den andra metoden i Aspose.PDF för .NET. Vi kommer att tillhandahålla en steg-för-steg-guide med detaljerade förklaringar och inkludera hela källkoden. Genom att följa denna handledning kommer du att kunna generera PDF-dokument med flera lager med hjälp av Aspose.PDF-biblioteket i dina .NET-applikationer.
+I den här handledningen kommer vi att utforska hur man skapar en PDF med flera lager med den andra metoden i Aspose.PDF för .NET. Vi kommer att tillhandahålla en steg-för-steg-guide med detaljerade förklaringar och inkludera hela källkoden. Genom att följa denna handledning kommer du att kunna generera PDF-dokument med flera lager med hjälp av Aspose.PDF-biblioteket i dina .NET-applikationer.
 
 Låt oss nu komma igång med steg-för-steg-guiden.
 
@@ -18,7 +18,7 @@ Till att börja med, öppna Visual Studio och skapa ett nytt C#-projekt. Se till
 
 ## Steg 2: Initiera variabler
 
-I detta steg kommer vi att initiera de nödvändiga variablerna. Vi måste ställa in sökvägen till dokumentkatalogen och definiera färgvariabler för PDF-lagren. Här är kodavsnittet:
+detta steg kommer vi att initiera de nödvändiga variablerna. Vi måste ställa in sökvägen till dokumentkatalogen och definiera färgvariabler för PDF-lagren. Här är kodavsnittet:
 
 ```csharp
 // Sökvägen till dokumentkatalogen.
@@ -49,7 +49,7 @@ Aspose.Pdf.Page page = doc.Pages.Add();
 
 ## Steg 5: Lägg till text på sidan
 
-Nu kommer vi att lägga till ett textfragment på sidan. Texten kommer att visas som ett stycke 3-segment med en röd färg. Här är kodavsnittet:
+Nu lägger vi till ett textfragment på sidan. Texten kommer att visas som ett stycke 3-segment med en röd färg. Här är kodavsnittet:
 
 ```csharp
 Aspose.Pdf.Text.TextFragment t1 = new Aspose.Pdf.Text.TextFragment("paragraph 3 segment");
@@ -128,4 +128,4 @@ doc.Save(dataDir + @"Multilayer-2ndApproach_out.pdf");
 
 ## Slutsats
 
-den här artikeln har vi lärt oss hur man skapar en PDF med flera lager med den andra metoden av Aspose.PDF för .NET. Vi har försett dig med steg-för-steg-instruktioner och den fullständiga källkoden som krävs för att skapa en PDF med flera lager.
+I den här artikeln har vi lärt oss hur man skapar en PDF med flera lager med den andra metoden av Aspose.PDF för .NET. Vi har försett dig med steg-för-steg-instruktioner och den fullständiga källkoden som krävs för att skapa en PDF med flera lager.

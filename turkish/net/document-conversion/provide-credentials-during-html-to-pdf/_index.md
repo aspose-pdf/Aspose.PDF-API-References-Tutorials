@@ -67,7 +67,7 @@ pdfDocument.Save(dataDir + "ProvideCredentialsDuringHTMLToPDF_out.pdf");
 
  Yukarıdaki kod, ortaya çıkan PDF dosyasını dosya adıyla kaydeder.`"ProvideCredentialsDuringHTMLToPDF_out.pdf"`.
 
-### Aspose.Words for .NET kullanarak HTML'den PDF'e Kimlik Bilgilerini Sağlamak için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak HTML'den PDF'e Kimlik Bilgilerini Sağlamak için örnek kaynak kodu
 
 ```csharp
 try

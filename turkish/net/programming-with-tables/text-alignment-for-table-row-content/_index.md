@@ -85,7 +85,7 @@ Son olarak, PDF belgesini kaydedeceğiz:
 doc.Save(dataDir + "43620_ByWords_out.pdf");
 ```
 
-### Aspose.Words for .NET kullanan Tablo Satır İçeriği İçin Metin Hizalama için örnek kaynak kodu
+### Aspose.PDF for .NET kullanan Tablo Satır İçeriği İçin Metin Hizalama için örnek kaynak kodu
 
 ```csharp
 var dataDir = "YOUR DOCUMENT DIRECTORY";

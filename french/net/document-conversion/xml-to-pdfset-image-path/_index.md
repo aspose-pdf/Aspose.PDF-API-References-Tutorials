@@ -44,7 +44,7 @@ doc.Save(outFile);
 ```
 Enregistrez le fichier PDF résultant dans le répertoire spécifié.
 
-### Exemple de code source pour XML vers PDFDéfinir le chemin de l'image à l'aide d'Aspose.Words pour .NET
+### Exemple de code source pour XML vers PDFDéfinir le chemin de l'image à l'aide d'Aspose.PDF pour .NET
 
 ```csharp
 try

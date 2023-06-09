@@ -92,7 +92,7 @@ dataDir = dataDir + "CreateDoc_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Aspose.Words for .NET kullanarak Create Doc için örnek kaynak kodu 
+### Aspose.PDF for .NET kullanarak Create Doc için örnek kaynak kodu 
 ```csharp
 try
 {

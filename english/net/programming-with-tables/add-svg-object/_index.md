@@ -112,7 +112,7 @@ doc.Save(dataDir);
 Console.WriteLine("\nSVG image added successfully inside a table cell.\nFile saved at " + dataDir);
 ```
 
-### Example source code for add SVG object using Aspose.Words for .NET
+### Example source code for add SVG object using Aspose.PDF for .NET
 
 ```csharp
 // The path to the documents directory.

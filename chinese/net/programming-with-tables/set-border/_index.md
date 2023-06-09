@@ -91,7 +91,7 @@ doc.Save(dataDir);
 Console.WriteLine("\nBorder setup successfully.\nFile saved at " + dataDir);
 ```
 
-### 使用 Aspose.Words for .NET 设置边框的示例源代码
+### 使用 Aspose.PDF for .NET 设置边框的示例源代码
 
 ```csharp
 //文档目录的路径。

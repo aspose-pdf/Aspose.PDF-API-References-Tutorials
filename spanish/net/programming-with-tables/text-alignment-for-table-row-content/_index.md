@@ -85,7 +85,7 @@ Finalmente, guardaremos el documento PDF:
 doc.Save(dataDir + "43620_ByWords_out.pdf");
 ```
 
-### Ejemplo de código fuente para la alineación de texto para el contenido de la fila de la tabla usando Aspose.Words para .NET
+### Código fuente de ejemplo para Alineación de texto para contenido de fila de tabla usando Aspose.PDF para .NET
 
 ```csharp
 var dataDir = "YOUR DOCUMENT DIRECTORY";

@@ -47,7 +47,7 @@ Tablonun genişliğini elde etmek için "GetWidth()" yöntemini kullanıyoruz.
 Console.WriteLine(table.GetWidth());
 ```
 
-### Aspose.Words for .NET kullanarak Tablo Genişliği almak için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak Tablo Genişliği almak için örnek kaynak kodu
 
 ```csharp
 // Yeni bir belge oluştur

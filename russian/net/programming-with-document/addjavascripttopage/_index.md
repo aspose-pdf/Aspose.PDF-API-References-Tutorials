@@ -18,7 +18,7 @@ url: /ru/net/programming-with-document/addjavascripttopage/
 // Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Загрузите существующие файлы PDF
+// Загрузите существующие файлы PDF
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
@@ -39,7 +39,7 @@ doc.OpenAction = javaScript;
 
 ## Шаг 3. Добавьте JavaScript на уровне страницы
 
- Чтобы добавить JavaScript на уровне страницы, мы будем использовать`JavascriptAction` класс и`Actions` свойство, предоставленное Aspose.PDF для .NET. Это свойство позволяет указать операторы JavaScript, которые будут выполняться при открытии или закрытии страницы.
+ Чтобы добавить JavaScript на уровне страницы, мы будем использовать`JavascriptAction` класс и`Actions`свойство, предоставленное Aspose.PDF для .NET. Это свойство позволяет указать операторы JavaScript, которые будут выполняться при открытии или закрытии страницы.
 
 ```csharp
 // Добавление JavaScript на уровне страницы
@@ -70,7 +70,7 @@ Console.WriteLine("\nJavascript added successfully to a page.\nFile saved at " +
 // Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Загрузите существующие файлы PDF
+// Загрузите существующие файлы PDF
 Document doc = new Document(dataDir + "input.pdf");
 
 // Добавление JavaScript на уровне документа

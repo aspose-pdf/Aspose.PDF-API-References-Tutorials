@@ -9,7 +9,7 @@ url: /net/annotations/strikeoutwords/
 ---
 Aspose.PDF for .NET is a PDF document manipulation and processing library that provides various features to create, modify, and convert PDF files. One of the useful features that Aspose.PDF provides is the ability to strike out words or phrases in a PDF document using C# source code. In this article, we will provide a step-by-step guide on how to strike out words using Aspose.PDF for .NET.
 
-## Loading the PDF document
+## Step 1: Loading the PDF document
 The first step is to load the PDF document that you want to modify. In this tutorial, we will load a PDF document named "input.pdf" from the "YOUR DOCUMENT DIRECTORY" folder. 
 
 ```csharp
@@ -17,7 +17,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document document = new Document(dataDir + "input.pdf");
 ```
 
-## Searching for text fragments
+## Step 2: Searching for text fragments
 To strike out specific words or phrases in the PDF document, you first need to search for them. Aspose.PDF provides a TextFragmentAbsorber class that can be used to search for a specific text fragment in the PDF document.
 
 ```csharp
@@ -26,7 +26,7 @@ Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.
 
 In the above code, we are searching for the text fragment "Estoque" in the PDF document. You can modify this to search for any other word or phrase that you want to strike out.
 
-## Striking out the text fragments
+## Step 3: Striking out the text fragments
 After finding the text fragments, the next step is to strike them out. Aspose.PDF provides a StrikeOutAnnotation class that can be used to create a strike-out annotation for the text fragment. 
 
 ```csharp
@@ -41,7 +41,7 @@ textFragment.Page.Annotations.Add(strikeOut);
 
 In the above code, we are creating a strike-out annotation for each text fragment that we found. We are setting the opacity, border, and color of the strike-out annotation as well.
 
-## Saving the modified PDF document
+## Step 4: Saving the modified PDF document
 After striking out the text fragments, the save the modified document.
 
 ```csharp

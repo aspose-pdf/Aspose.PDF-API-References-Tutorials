@@ -71,7 +71,7 @@ doc.Save(dataDir + "DataIntegrated_out.pdf");
 
 Glückwunsch! Sie wissen jetzt, wie Sie Datenbankdaten mit Aspose.PDF für .NET in ein PDF-Dokument einbetten.
 
-### Beispielquellcode für „In Datenbank integrieren“ mit Aspose.Words für .NET
+### Beispielquellcode für „In Datenbank integrieren“ mit Aspose.PDF für .NET
 
 ```csharp
 // Der Pfad zum Dokumentenverzeichnis.
@@ -81,7 +81,7 @@ DataTable dt = new DataTable("Employee");
 dt.Columns.Add("Employee_ID", typeof(Int32));
 dt.Columns.Add("Employee_Name", typeof(string));
 dt.Columns.Add("Gender", typeof(string));
-//Fügen Sie dem DataTable-Objekt programmgesteuert zwei Zeilen hinzu
+// Fügen Sie dem DataTable-Objekt programmgesteuert zwei Zeilen hinzu
 DataRow dr = dt.NewRow();
 dr[0] = 1;
 dr[1] = "John Smith";

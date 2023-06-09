@@ -92,7 +92,7 @@ dataDir = dataDir + "AutoFitToWindow_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Aspose.Words for .NET kullanan Otomatik Pencereye Sığdır için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak Otomatik Pencereye Sığdır için örnek kaynak kodu
 
 ```csharp
 // Belgeler dizininin yolu.

@@ -11,7 +11,7 @@ Aspose.PDF für .NET ist eine Bibliothek, die es Entwicklern ermöglicht, PDF-Da
 
 ## Schritt 1: Laden Sie das PDF-Dokument
 
- Der erste Schritt zur Optimierung der Dateigröße eines PDF-Dokuments besteht darin, das Dokument in Ihre Anwendung zu laden. Sie können dies mit dem tun`Document`Klasse, die von der Aspose.PDF für .NET-Bibliothek bereitgestellt wird. Hier ist ein Beispiel für das Laden eines PDF-Dokuments:
+ Der erste Schritt zur Optimierung der Dateigröße eines PDF-Dokuments besteht darin, das Dokument in Ihre Anwendung zu laden. Sie können dies mit dem tun`Document` Klasse, die von der Aspose.PDF für .NET-Bibliothek bereitgestellt wird. Hier ist ein Beispiel für das Laden eines PDF-Dokuments:
 
 ```csharp
 // Der Pfad zum Dokumentenverzeichnis.
@@ -25,7 +25,7 @@ Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 
 ## Schritt 2: Optimierungsoptionen festlegen
 
- Sobald Sie das PDF-Dokument geladen haben, können Sie die Optimierungsoptionen festlegen, um festzulegen, welche Teile des Dokuments Sie optimieren möchten. Der`OptimizationOptions` Mit der von der Aspose.PDF for .NET-Bibliothek bereitgestellten Klasse können Sie verschiedene Optionen zum Optimieren der Dateigröße des PDF-Dokuments angeben. Hier ist ein Beispiel für das Festlegen einiger Optimierungsoptionen:
+Sobald Sie das PDF-Dokument geladen haben, können Sie die Optimierungsoptionen festlegen, um festzulegen, welche Teile des Dokuments Sie optimieren möchten. Der`OptimizationOptions` Mit der von der Aspose.PDF for .NET-Bibliothek bereitgestellten Klasse können Sie verschiedene Optionen zum Optimieren der Dateigröße des PDF-Dokuments angeben. Hier ist ein Beispiel für das Festlegen einiger Optimierungsoptionen:
 
 ```csharp
 OptimizationOptions optimizationOptions = new OptimizationOptions();
@@ -39,9 +39,9 @@ optimizationOptions.ImageCompressionOptions.ImageQuality = 10;
 In diesem Beispiel legen wir die folgenden Optionen fest:
 - `LinkDuplcateStreams`: Diese Option ermöglicht das Entfernen doppelter Streams im PDF-Dokument, was zur Reduzierung der Dateigröße beitragen kann.
 - `RemoveUnusedObjects`: Diese Option ermöglicht das Entfernen aller nicht verwendeten Objekte im PDF-Dokument, was auch zur Reduzierung der Dateigröße beitragen kann.
-- `RemoveUnusedStreams`Diese Option ermöglicht das Entfernen aller nicht verwendeten Streams im PDF-Dokument, wodurch die Dateigröße weiter reduziert werden kann.
+- `RemoveUnusedStreams`: Diese Option ermöglicht das Entfernen aller nicht verwendeten Streams im PDF-Dokument, wodurch die Dateigröße weiter reduziert werden kann.
 - `CompressImages`: Diese Option ermöglicht die Komprimierung von Bildern im PDF-Dokument, wodurch die Dateigröße deutlich reduziert werden kann.
-- `ImageQuality`: Diese Option legt die Qualität der komprimierten Bilder fest. Eine niedrigere Qualitätseinstellung führt zu einer kleineren Dateigröße, kann aber auch zu einer geringeren Bildqualität führen.
+- `ImageQuality`Diese Option legt die Qualität der komprimierten Bilder fest. Eine niedrigere Qualitätseinstellung führt zu einer kleineren Dateigröße, kann aber auch zu einer geringeren Bildqualität führen.
 
 ## Schritt 4: Optimieren Sie das PDF-Dokument
 

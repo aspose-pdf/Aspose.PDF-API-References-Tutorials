@@ -40,7 +40,7 @@ doc.Save(dataDir + "TECHDRAW_out.pdf");
 
  في الكود أعلاه ، تأكد من استبداله`"YOUR DOCUMENTS DIRECTORY"` بالمسار الفعلي للدليل حيث يوجد ملف CGM المراد تحويله. يقوم هذا الرمز بتحميل ملف CGM باستخدام امتداد`CgmLoadOptions` class ، ثم يقوم بإنشاء مستند PDF باستخدام`Document` هدف. أخيرًا ، يتم حفظ مستند PDF الناتج.
 
-### مثال على شفرة المصدر لـ CGM إلى PDF باستخدام Aspose.Words for .NET
+### مثال على كود المصدر لـ CGM إلى PDF باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 // المسار إلى دليل المستندات.

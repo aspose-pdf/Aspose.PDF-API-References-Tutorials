@@ -72,7 +72,7 @@ Finally, we save the resulting PDF file with the name "DrawingLine_out.pdf" in t
 pDoc.Save(dataDir + "DrawingLine_out.pdf");
 ```
 
-### Sample source code for Drawing Line using Aspose.Words for .NET 
+### Sample source code for Drawing Line using Aspose.PDF for .NET 
 
 ```csharp
 

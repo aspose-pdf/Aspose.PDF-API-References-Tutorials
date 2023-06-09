@@ -91,7 +91,7 @@ doc.Save(dataDir);
 Console.WriteLine("\nBorder setup successfully.\nFile saved at " + dataDir);
 ```
 
-### Пример исходного кода для установки границы с использованием Aspose.Words для .NET
+### Пример исходного кода для установки границы с использованием Aspose.PDF для .NET
 
 ```csharp
 // Путь к каталогу документов.
@@ -117,7 +117,7 @@ Aspose.Pdf.Row row = table.Rows.Add();
 Aspose.Pdf.Cell cell = row.Cells.Add("some text");
 // Установите границу для объекта ячейки (двойная граница)
 cell.Border = border;
-//Добавить таблицу в коллекцию абзацев страницы
+// Добавить таблицу в коллекцию абзацев страницы
 page.Paragraphs.Add(table);
 dataDir = dataDir + "TableBorderTest_out.pdf";
 // Сохраните PDF-документ

@@ -8,7 +8,7 @@ weight: 20
 url: /it/net/programming-with-forms/arabic-text-filling/
 ---
 
-In questo tutorial, impareremo come popolare un campo modulo PDF con testo arabo utilizzando Aspose.PDF per .NET. Aspose.PDF è una potente libreria che consente agli sviluppatori di manipolare a livello di codice i documenti PDF. Ti guideremo attraverso il processo passo dopo passo, spiegando il codice sorgente C# necessario per eseguire questa operazione.
+In questo tutorial, impareremo come popolare un campo modulo PDF con testo arabo utilizzando Aspose.PDF per .NET. Aspose.PDF è una potente libreria che consente agli sviluppatori di manipolare a livello di codice i documenti PDF. Ti guideremo attraverso il processo passo dopo passo, spiegando il codice sorgente C# necessario per eseguire questa attività.
 
 ## Passaggio 1: caricare il contenuto del modulo PDF
 
@@ -61,7 +61,7 @@ Visualizziamo anche un messaggio per indicare il successo della compilazione del
 Console.WriteLine("\nArabic text successfully filled in the form field.\nFile saved in the following location: " + dataDir);
 ```
 
-### Codice sorgente di esempio per il riempimento del testo arabo utilizzando Aspose.Words per .NET 
+### Esempio di codice sorgente per il riempimento del testo arabo utilizzando Aspose.PDF per .NET 
 ```csharp
 // Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

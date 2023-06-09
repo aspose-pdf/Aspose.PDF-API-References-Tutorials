@@ -13,7 +13,7 @@ Führen Sie die folgenden Schritte aus, um mit Aspose.PDF für .NET alle Anmerku
 
 ## Schritt 1: Installieren Sie Aspose.PDF für .NET
 
- Um Aspose.PDF für .NET verwenden zu können, müssen Sie zunächst die Bibliothek installieren. Du kannst[herunterladen](https://releases.aspose.com/pdf/net/)Laden Sie die Bibliothek aus den Aspose-Versionen herunter und installieren Sie sie auf Ihrem Computer. Nach der Installation müssen Sie in Ihrem Projekt einen Verweis auf die Bibliothek hinzufügen.
+ Um Aspose.PDF für .NET verwenden zu können, müssen Sie zunächst die Bibliothek installieren. Du kannst[herunterladen](https://releases.aspose.com/pdf/net/) Laden Sie die Bibliothek aus den Aspose-Versionen herunter und installieren Sie sie auf Ihrem Computer. Nach der Installation müssen Sie in Ihrem Projekt einen Verweis auf die Bibliothek hinzufügen.
 
 ## Schritt 2: Erstellen Sie eine neue Konsolenanwendung
 

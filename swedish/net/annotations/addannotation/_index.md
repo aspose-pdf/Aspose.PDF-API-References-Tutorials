@@ -45,7 +45,7 @@ textAnnotation.Open = true;
 textAnnotation.Icon = TextIcon.Key;
 ```
 
-I den här koden skapar vi en ny textkommentar på den andra sidan av PDF-dokumentet. Vi ställer också in egenskaperna för titel, ämne, status, innehåll, öppen och ikon för annoteringen.
+den här koden skapar vi en ny textkommentar på den andra sidan av PDF-dokumentet. Vi ställer också in egenskaperna för titel, ämne, status, innehåll, öppen och ikon för annoteringen.
 
 ## Steg 4: Anpassa anteckningen
 
@@ -59,7 +59,7 @@ textAnnotation.Border = border;
 textAnnotation.Rect = new Aspose.Pdf.Rectangle(200, 400, 400, 600);
 ```
 
- I den här koden skapar vi en ny`Border` objekt och ställ in dess egenskaper för bredd och streck. Vi ställer sedan in`Border` egenskapen för anteckningen till den nya`Border`objekt. Slutligen ställer vi in`Rect` egenskapen för anteckningen för att specificera dess position och storlek.
+ I den här koden skapar vi en ny`Border` objekt och ställ in dess egenskaper för bredd och streck. Vi ställer sedan in`Border` egenskapen för anteckningen till den nya`Border` objekt. Slutligen ställer vi in`Rect` egenskapen för anteckningen för att specificera dess position och storlek.
 
 ## Steg 5: Lägg till anteckningen i PDF-dokumentet
 

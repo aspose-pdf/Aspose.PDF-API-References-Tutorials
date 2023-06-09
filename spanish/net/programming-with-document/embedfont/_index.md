@@ -83,7 +83,7 @@ Aquí está el código fuente completo para incrustar una fuente usando Aspose.P
 // La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Cargue un archivo PDF existente
+// Cargue un archivo PDF existente
 Document doc = new Document(dataDir + "input.pdf");
 
 // Iterar a través de todas las páginas

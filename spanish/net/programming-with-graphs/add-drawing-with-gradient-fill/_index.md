@@ -71,7 +71,7 @@ Finalmente, guardamos el archivo PDF resultante con el nombre "AddDrawingWithGra
 doc.Save(dataDir + "AddDrawingWithGradientFill_out.pdf");
 ```
 
-### Ejemplo de código fuente para Agregar dibujo con relleno degradado usando Aspose.Words para .NET 
+### Ejemplo de código fuente para Agregar dibujo con relleno degradado usando Aspose.PDF para .NET 
 
 ```csharp
 

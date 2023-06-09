@@ -40,7 +40,7 @@ table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .
 ```
 
 ## Étape 5 : boucler pour ajouter 10 lignes au tableau
-Nous allons maintenant utiliser une boucle pour ajouter 10 lignes au tableau :
+Nous allons maintenant utiliser une boucle pour ajouter 10 lignes au tableau :
 
 ```csharp
 for (int row_count = 0; row_count < 10; row_count++)
@@ -85,7 +85,7 @@ Enfin, nous enregistrerons le document PDF :
 doc.Save(dataDir + "43620_ByWords_out.pdf");
 ```
 
-### Exemple de code source pour l'alignement du texte pour le contenu des lignes de tableau à l'aide de Aspose.Words pour .NET
+### Exemple de code source pour l'alignement du texte pour le contenu des lignes de tableau à l'aide d'Aspose.PDF pour .NET
 
 ```csharp
 var dataDir = "YOUR DOCUMENT DIRECTORY";

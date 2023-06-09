@@ -7,7 +7,7 @@ type: docs
 weight: 50
 url: /sv/net/programming-with-graphs/create-filled-rectangle/
 ---
-den här handledningen går vi igenom följande C#-källkod steg för steg för att skapa en fylld rektangel med Aspose.PDF för .NET.
+I den här handledningen går vi igenom följande C#-källkod steg för steg för att skapa en fylld rektangel med Aspose.PDF för .NET.
 
 Se till att du har installerat Aspose.PDF-biblioteket och ställt in din utvecklingsmiljö innan du börjar. Har även grundläggande kunskaper i C#-programmering.
 
@@ -62,7 +62,7 @@ Slutligen sparar vi den resulterande PDF-filen med namnet "CreateFilledRectangle
 doc.Save(dataDir + "CreateFilledRectangle_out.pdf");
 ```
 
-### Exempel på källkod för Skapa fylld rektangel med Aspose.Words för .NET 
+### Exempel på källkod för Skapa fylld rektangel med Aspose.PDF för .NET 
 
 ```csharp
 

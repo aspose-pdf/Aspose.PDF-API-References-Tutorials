@@ -85,7 +85,7 @@ Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dat
 
 Doğru belge dizinini belirttiğinizden emin olun. Ortaya çıkan PDF dosyası, belirlenen tablo sonları ile kaydedilecektir.
 
-### Aspose.Words for .NET kullanarak Tablo Sonunu Belirleme için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak Tablo Sonunu Belirlemek için örnek kaynak kodu
 
 ```csharp
 // Belgeler dizininin yolu.
@@ -134,11 +134,11 @@ float TotalObjectsHeight = (float)page.PageInfo.Margin.Top + (float)page.PageInf
 // Ve Alt kenar boşluğu bilgisi
 Console.WriteLine("PDF document Height = " + pdf.PageInfo.Height.ToString() + "\nTop Margin Info = " + page.PageInfo.Margin.Top.ToString() + "\nBottom Margin Info = " + page.PageInfo.Margin.Bottom.ToString() + "\n\nTable-Top Margin Info = " + table1.Margin.Top.ToString() + "\nAverage Row Height = " + table1.Rows[0].MinRowHeight.ToString() + " \nTable height " + table1.GetHeight().ToString() + "\n ----------------------------------------" + "\nTotal Page Height =" + PageHeight.ToString() + "\nCummulative height including Table =" + TotalObjectsHeight.ToString());
 
-//Sayfa üst kenar boşluğu + Sayfa Alt kenar boşluğu toplamını çıkarıp çıkarmadığımızı kontrol edin
+// Sayfa üst kenar boşluğu + Sayfa Alt kenar boşluğu toplamını çıkarıp çıkarmadığımızı kontrol edin
 // + Tablo Üstü marjı ve Sayfa yüksekliğinden tablo yüksekliği ve daha az
 // 10'dan fazla (ortalama bir satır 10'dan büyük olabilir)
 if ((PageHeight - TotalObjectsHeight) <= 10)
-	// Değer 10'dan küçükse mesajı görüntüleyin.
+	//Değer 10'dan küçükse mesajı görüntüleyin.
 	// Bu, başka bir satırın yerleştirilemeyeceğini gösterir ve eğer yeni eklersek
 	// Satır, masa kırılır. Satır yüksekliği değerine bağlıdır.
 	Console.WriteLine("Page Height - Objects Height < 10, so table will break");

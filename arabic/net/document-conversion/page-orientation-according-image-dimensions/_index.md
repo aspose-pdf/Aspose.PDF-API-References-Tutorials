@@ -84,7 +84,7 @@ doc.Save(dataDir + "SetPageOrientation_out.pdf");
 
  يستبدل`"YOUR DOCUMENTS DIRECTORY"` مع الدليل المطلوب حيث تريد حفظ ملف PDF الناتج.
 
-### مثال على شفرة المصدر لاتجاه الصفحة وفقًا لأبعاد الصورة باستخدام Aspose.Words for .NET
+### مثال على الكود المصدري لاتجاه الصفحة وفقًا لأبعاد الصورة باستخدام Aspose.PDF for .NET
 
 ```csharp
 

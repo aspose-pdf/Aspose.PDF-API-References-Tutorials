@@ -43,7 +43,7 @@ dataDir = dataDir + "DeleteFormField_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Aspose.Words for .NET kullanarak Form Alanını Sil için örnek kaynak kodu 
+### Aspose.PDF for .NET kullanarak Form Alanını Sil için örnek kaynak kodu 
 ```csharp
 // Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

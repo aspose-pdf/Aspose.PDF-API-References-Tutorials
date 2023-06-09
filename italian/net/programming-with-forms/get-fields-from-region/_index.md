@@ -61,7 +61,7 @@ Console.Out.WriteLine("Field name: " + field.FullName + "-" + "Field value: " + 
 }
 ```
 
-### Esempio di codice sorgente per Ottieni campi dalla regione utilizzando Aspose.Words per .NET 
+### Esempio di codice sorgente per Ottieni campi dalla regione utilizzando Aspose.PDF per .NET 
 ```csharp
 // Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

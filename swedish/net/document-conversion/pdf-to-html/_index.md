@@ -42,7 +42,7 @@ pdfDocument.Save(dataDir + "output_out.html", SaveFormat.Html);
 
  Byta ut`"YOUR DOCUMENTS DIRECTORY"`med önskad katalog där du vill spara HTML-utdatafilen.
 
-### Exempel på källkod för PDF till HTML med Aspose.Words för .NET
+### Exempel på källkod för PDF till HTML med Aspose.PDF för .NET
 
 ```csharp
 // Sökvägen till dokumentkatalogen.

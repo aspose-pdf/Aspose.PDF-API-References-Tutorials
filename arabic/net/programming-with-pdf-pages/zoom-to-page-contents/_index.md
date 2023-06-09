@@ -49,7 +49,7 @@ ppe.PageSize = new Aspose.Pdf.PageSize((float)rect.Height, (float)rect.Width);
 ```
 
 ## الخطوة 4: احفظ ملف PDF الناتج
- أخيرًا ، يمكنك حفظ ملف PDF المعدل باستخدام امتداد`Save()` طريقة`Document` فصل. تأكد من تحديد المسار الصحيح واسم الملف.
+ أخيرًا ، يمكنك حفظ ملف PDF المعدل باستخدام امتداد`Save()` طريقة`Document`فصل. تأكد من تحديد المسار الصحيح واسم الملف.
 
 ```csharp
 dataDir = dataDir + "ZoomToPageContents_out.pdf";

@@ -41,7 +41,7 @@ radioField. Selected = 2;
 dataDir = dataDir + "SelectRadioButton_out.pdf";
 ```
 
-## الخطوة 6: احفظ ملف PDF المعدل.
+## الخطوة السادسة: احفظ ملف PDF المعدل.
 
 ```csharp
 pdfDocument.Save(dataDir);
@@ -53,7 +53,7 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nRadio button successfully selected in group.\nFile saved to location: " + dataDir);
 ```
 
-### عينة من التعليمات البرمجية المصدر لتحديد زر الراديو باستخدام Aspose.Words for .NET 
+### نموذج التعليمات البرمجية المصدر لتحديد زر الراديو باستخدام Aspose.PDF لـ .NET 
 ```csharp
 try
 {

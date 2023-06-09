@@ -80,7 +80,7 @@ Infine, salviamo il file PDF risultante con il nome "CreateRectangleWithAlphaCol
 doc.Save(dataDir + "CreateRectangleWithAlphaColor_out.pdf");
 ```
 
-### Esempio di codice sorgente per Crea rettangolo con colore alfa utilizzando Aspose.Words per .NET 
+### Esempio di codice sorgente per Crea rettangolo con colore alfa utilizzando Aspose.PDF per .NET 
 
 ```csharp
 
@@ -96,7 +96,7 @@ Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 200, 100);
 // Imposta il colore di riempimento del grafico dalla struttura System.Drawing.Color da un valore ARGB a 32 bit
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
-// Aggiungi un oggetto rettangolo alla raccolta di forme dell'istanza Graph
+//Aggiungi un oggetto rettangolo alla raccolta di forme dell'istanza Graph
 canvas.Shapes.Add(rect);
 // Crea il secondo oggetto rettangolo
 Aspose.Pdf.Drawing.Rectangle rect1 = new Aspose.Pdf.Drawing.Rectangle(200, 150, 200, 100);

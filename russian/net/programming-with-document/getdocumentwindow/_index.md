@@ -26,7 +26,7 @@ url: /ru/net/programming-with-document/getdocumentwindow/
 // Путь к PDF-документу
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Откройте PDF-документ
+// Откройте PDF-документ
 Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
 ```
 

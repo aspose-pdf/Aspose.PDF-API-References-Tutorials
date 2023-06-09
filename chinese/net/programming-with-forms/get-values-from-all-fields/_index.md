@@ -38,7 +38,7 @@ Console.WriteLine("Value: {0}", formField.Value);
 }
 ```
 
-### 使用 Aspose.Words for .NET 从所有字段中获取值的示例源代码 
+### 使用 Aspose.PDF for .NET 从所有字段中获取值的示例源代码 
 ```csharp
 //文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";

@@ -8,7 +8,7 @@ weight: 80
 url: /sv/net/programming-with-graphs/drawing-line/
 ---
 
-I den här handledningen går vi igenom följande C#-källkod steg för steg för att rita en linje med Aspose.PDF för .NET.
+den här handledningen går vi igenom följande C#-källkod steg för steg för att rita en linje med Aspose.PDF för .NET.
 
 Se till att du har installerat Aspose.PDF-biblioteket och ställt in din utvecklingsmiljö innan du börjar. Har även grundläggande kunskaper i C#-programmering.
 
@@ -72,7 +72,7 @@ Slutligen sparar vi den resulterande PDF-filen med namnet "DrawingLine_out.pdf" 
 pDoc.Save(dataDir + "DrawingLine_out.pdf");
 ```
 
-### Exempel på källkod för Drawing Line med Aspose.Words för .NET 
+### Exempel på källkod för Drawing Line med Aspose.PDF för .NET 
 
 ```csharp
 
@@ -84,7 +84,7 @@ Document pDoc = new Document();
 Page pg = pDoc.Pages.Add();
 // Ställ in sidmarginalen på alla sidor som 0
 pg.PageInfo.Margin.Left = pg.PageInfo.Margin.Right = pg.PageInfo.Margin.Bottom = pg.PageInfo.Margin.Top = 0;
-// Skapa grafobjekt med bredd och höjd lika med sidmåtten
+//Skapa grafobjekt med bredd och höjd lika med sidmåtten
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph((float)pg.PageInfo.Width , (float)pg.PageInfo.Height);
 // Skapa första radens objekt från Nedre vänstra till övre högra hörnet på sidan
 Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { (float)pg.Rect.LLX, 0, (float)pg.PageInfo.Width, (float)pg.Rect.URY });

@@ -85,7 +85,7 @@ Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dat
 
 Assicurati di specificare la directory del documento corretta. Il file PDF risultante verrà salvato con le interruzioni di tabella determinate.
 
-### Codice sorgente di esempio per determinare l'interruzione della tabella utilizzando Aspose.Words per .NET
+### Codice sorgente di esempio per determinare l'interruzione della tabella utilizzando Aspose.PDF per .NET
 
 ```csharp
 // Il percorso della directory dei documenti.
@@ -134,11 +134,11 @@ float TotalObjectsHeight = (float)page.PageInfo.Margin.Top + (float)page.PageInf
 // E informazioni sul margine inferiore
 Console.WriteLine("PDF document Height = " + pdf.PageInfo.Height.ToString() + "\nTop Margin Info = " + page.PageInfo.Margin.Top.ToString() + "\nBottom Margin Info = " + page.PageInfo.Margin.Bottom.ToString() + "\n\nTable-Top Margin Info = " + table1.Margin.Top.ToString() + "\nAverage Row Height = " + table1.Rows[0].MinRowHeight.ToString() + " \nTable height " + table1.GetHeight().ToString() + "\n ----------------------------------------" + "\nTotal Page Height =" + PageHeight.ToString() + "\nCummulative height including Table =" + TotalObjectsHeight.ToString());
 
-//Controlla se deduciamo la somma del margine superiore della pagina + margine inferiore della pagina
+// Controlla se deduciamo la somma del margine superiore della pagina + margine inferiore della pagina
 // + Margine superiore del tavolo e altezza del tavolo dall'altezza della pagina e dal suo valore inferiore
 // Di 10 (una riga media può essere maggiore di 10)
 if ((PageHeight - TotalObjectsHeight) <= 10)
-	// Se il valore è inferiore a 10, visualizzare il messaggio.
+	//Se il valore è inferiore a 10, visualizzare il messaggio.
 	// Il che dimostra che non è possibile posizionare un'altra riga e se ne aggiungiamo di nuove
 	// Riga, il tavolo si romperà. Dipende dal valore dell'altezza della riga.
 	Console.WriteLine("Page Height - Objects Height < 10, so table will break");

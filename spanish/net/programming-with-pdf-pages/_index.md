@@ -19,7 +19,7 @@ Los tutoriales incluyen instrucciones paso a paso, ejemplos de código detallado
 | [Determinar el color de la página](./determine-page-color/) | Guía paso a paso para determinar el color de la página PDF con Aspose.PDF para .NET. Analice y muestre el tipo de color de cada página. Fácil de implementar. |  
 | [Ajustar contenido de la página](./fit-page-contents/) | Guía detallada paso a paso para ajustar el contenido de la página PDF usando Aspose.PDF para .NET. Fácil implementación y conclusión gratificante. |  
 | [Obtener dimensiones](./get-dimensions/) | En este tutorial, explicamos cómo obtener las dimensiones de una página PDF y realizar manipulaciones con Aspose.PDF para .NET. Se proporcionan pasos detallados para guiarlo a través del proceso. |  
-| [Obtener número de páginas](./get-number-of-pages/) | Guía paso a paso para obtener el recuento de páginas de un PDF usando Aspose.PDF para .NET. Simple de implementar, ideal para sus proyectos. |  
+| [Obtener número de páginas](./get-number-of-pages/) | Guía paso a paso para obtener el recuento de páginas de un PDF utilizando Aspose.PDF para .NET. Simple de implementar, ideal para sus proyectos. |  
 | [Obtener recuento de páginas](./get-page-count/) | Guía paso a paso para obtener el recuento de páginas de un archivo PDF utilizando Aspose.PDF para .NET. Fácil de seguir e implementar en tus proyectos. |  
 | [Obtener página particular](./get-particular-page/) | Guía paso a paso para extraer una página específica de un archivo PDF utilizando Aspose.PDF para .NET. Fácil de seguir e implementar en tus proyectos. |  
 | [Obtener propiedades](./get-properties/) | Guía paso a paso para obtener propiedades de PDF como dimensiones de caja y rotación usando Aspose.PDF para .NET. |  

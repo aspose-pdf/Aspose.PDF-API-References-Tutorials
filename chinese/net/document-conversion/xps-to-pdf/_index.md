@@ -34,7 +34,7 @@ document.Save(dataDir + "XPSToPDF_out.pdf");
 ```
 将生成的 PDF 文档保存到指定目录。
 
-### 使用 Aspose.Words for .NET 的 XPS 到 PDF 的示例源代码
+### 使用 Aspose.PDF for .NET 的 XPS 到 PDF 的示例源代码
 
 ```csharp
 try

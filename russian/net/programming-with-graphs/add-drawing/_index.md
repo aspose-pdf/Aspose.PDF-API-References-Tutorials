@@ -122,7 +122,7 @@ document. Save(dataDir);
 Console.WriteLine("\nSuccessfully added drawing with transparent color.\nFile saved to location: " + dataDir);
 ```
 
-### Пример исходного кода для добавления чертежа с использованием Aspose.Words для .NET 
+### Пример исходного кода для добавления чертежа с использованием Aspose.PDF для .NET 
 
 ```csharp
 

@@ -50,7 +50,7 @@ doc.Save(dataDir + "PDFToSVG_out.svg", saveOptions);
 
  يحفظ الكود أعلاه ملف PDF المحول إلى تنسيق SVG باسم الملف`"PDFToSVG_out.svg"`.
 
-### مثال على شفرة المصدر لـ PDF إلى SVG باستخدام Aspose.Words for .NET
+### مثال على كود المصدر لـ PDF إلى SVG باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 // المسار إلى دليل المستندات.

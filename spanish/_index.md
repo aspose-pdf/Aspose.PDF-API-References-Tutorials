@@ -10,16 +10,16 @@ is_root: true
 
 ## Aspose.PDF para .NET
 {{% alert color="primary" %}}
-Tutoriales y fragmentos de código de Aspose.PDF para .NET para crear, editar, convertir, imprimir y muchas más funciones para documentos PDF en su aplicación. 
+Tutoriales de Aspose.PDF para .NET y fragmentos de código para crear, editar, convertir, imprimir y muchas más funciones para documentos PDF en su aplicación. 
 {{% /alert %}}
 
 Estos son enlaces a algunos recursos útiles:
-- [Programación con Documento](./programming-with-document/)
-- [Programación con anotaciones](./annotations/)  
-- [Conversión de documentos](./document-conversion/)
-- [Programación con Formularios](./programming-with-forms/)
-- [Programación con Tablas](./programming-with-tables/) 
-- [Programación con páginas PDF](./programming-with-pdf-pages/)
-- [Programación con Gráficos](./programming-with-graphs/)
+- [Programación con Documento](./net/programming-with-document/)
+- [Programación con anotaciones](./net/annotations/)  
+- [Conversión de documentos](./net/document-conversion/)
+- [Programación con Formularios](./net/programming-with-forms/)
+- [Programación con Tablas](./net/programming-with-tables/) 
+- [Programación con páginas PDF](./net/programming-with-pdf-pages/)
+- [Programación con Gráficos](./net/programming-with-graphs/)
  
 

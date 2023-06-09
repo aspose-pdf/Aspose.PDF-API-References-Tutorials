@@ -87,7 +87,7 @@ dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### نموذج التعليمات البرمجية المصدر لخانات الاختيار المجمعة باستخدام Aspose.Words for .NET 
+### نموذج التعليمات البرمجية المصدر لخانات الاختيار المجمعة باستخدام Aspose.PDF لـ .NET 
 ```csharp
 try
 {

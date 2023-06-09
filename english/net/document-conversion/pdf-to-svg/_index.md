@@ -50,7 +50,7 @@ doc.Save(dataDir + "PDFToSVG_out.svg", saveOptions);
 
 The code above saves the converted PDF to SVG format with the filename `"PDFToSVG_out.svg"`.
 
-### Example source code for PDF to SVG using Aspose.Words for .NET
+### Example source code for PDF to SVG using Aspose.PDF for .NET
 
 ```csharp
 // The path to the documents directory.

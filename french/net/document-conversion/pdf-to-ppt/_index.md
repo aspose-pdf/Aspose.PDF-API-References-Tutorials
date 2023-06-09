@@ -48,7 +48,7 @@ doc.Save(dataDir + "PDFToPPT_out.pptx", pptx_save);
 
  Le code ci-dessus enregistre le fichier PDF converti au format PPTX avec le nom de fichier`"PDFToPPT_out.pptx"`.
 
-### Exemple de code source pour PDF vers PPT en utilisant Aspose.Words pour .NET
+### Exemple de code source pour PDF vers PPT en utilisant Aspose.PDF pour .NET
 
 ```csharp
 // Chemin d'accès au répertoire des documents.

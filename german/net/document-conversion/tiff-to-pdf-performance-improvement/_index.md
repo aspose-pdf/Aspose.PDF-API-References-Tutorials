@@ -65,7 +65,7 @@ doc.Save(dataDir + "PerformaceImprovement_out.pdf");
 ```
 Speichern Sie das resultierende PDF-Dokument im angegebenen Verzeichnis.
 
-### Beispielquellcode für die Leistungsverbesserung von TIFF zu PDF mit Aspose.Words für .NET
+### Beispielquellcode für die Leistungsverbesserung von TIFF zu PDF mit Aspose.PDF für .NET
 
 ```csharp
 // Der Pfad zum Dokumentenverzeichnis.

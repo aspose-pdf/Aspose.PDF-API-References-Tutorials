@@ -61,7 +61,7 @@ También mostramos un mensaje para indicar el éxito de completar el texto en á
 Console.WriteLine("\nArabic text successfully filled in the form field.\nFile saved in the following location: " + dataDir);
 ```
 
-### Ejemplo de código fuente para el relleno de texto en árabe con Aspose.Words para .NET 
+### Ejemplo de código fuente para el relleno de texto en árabe con Aspose.PDF para .NET 
 ```csharp
 // La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

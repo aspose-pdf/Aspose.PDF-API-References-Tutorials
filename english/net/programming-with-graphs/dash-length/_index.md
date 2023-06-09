@@ -64,7 +64,7 @@ Finally, we save the resulting PDF file with the name "DashLength_out.pdf" in th
 doc.Save(dataDir + "DashLength_out.pdf");
 ```
 
-### Sample source code for Dash Length using Aspose.Words for .NET 
+### Sample source code for Dash Length using Aspose.PDF for .NET 
 
 ```csharp
 

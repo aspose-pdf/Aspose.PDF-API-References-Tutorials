@@ -80,7 +80,7 @@ Abschließend speichern wir die resultierende PDF-Datei mit dem Namen „CreateR
 doc.Save(dataDir + "CreateRectangleWithAlphaColor_out.pdf");
 ```
 
-### Beispielquellcode für „Rechteck mit Alphafarbe erstellen“ mit Aspose.Words für .NET 
+### Beispielquellcode für „Rechteck mit Alphafarbe erstellen“ mit Aspose.PDF für .NET 
 
 ```csharp
 
@@ -96,7 +96,7 @@ Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 200, 100);
 // Legen Sie die Füllfarbe des Diagramms aus der System.Drawing.Color-Struktur anhand eines 32-Bit-ARGB-Werts fest
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
-// Fügen Sie ein rechteckiges Objekt zur Formensammlung der Graph-Instanz hinzu
+//Fügen Sie ein rechteckiges Objekt zur Formensammlung der Graph-Instanz hinzu
 canvas.Shapes.Add(rect);
 // Erstellen Sie ein zweites Rechteckobjekt
 Aspose.Pdf.Drawing.Rectangle rect1 = new Aspose.Pdf.Drawing.Rectangle(200, 150, 200, 100);

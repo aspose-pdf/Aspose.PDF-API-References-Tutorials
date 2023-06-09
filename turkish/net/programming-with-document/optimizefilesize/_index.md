@@ -11,7 +11,7 @@ Aspose.PDF for .NET, geliştiricilerin kendi .NET uygulamalarında PDF dosyalar�
 
 ## 1. Adım: PDF Belgesini Yükleyin
 
- Bir PDF belgesinin dosya boyutunu optimize etmenin ilk adımı, belgeyi uygulamanıza yüklemektir. Bunu kullanarak yapabilirsiniz`Document`Aspose.PDF for .NET kitaplığı tarafından sağlanan sınıf. İşte bir PDF belgesinin nasıl yükleneceği ile ilgili bir örnek:
+ Bir PDF belgesinin dosya boyutunu optimize etmenin ilk adımı, belgeyi uygulamanıza yüklemektir. Bunu kullanarak yapabilirsiniz`Document` Aspose.PDF for .NET kitaplığı tarafından sağlanan sınıf. İşte bir PDF belgesinin nasıl yükleneceği ile ilgili bir örnek:
 
 ```csharp
 // Belgeler dizininin yolu.
@@ -25,7 +25,7 @@ Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 
 ## 2. Adım: Optimizasyon Seçeneklerini Ayarlayın
 
- PDF belgesini yükledikten sonra, belgenin hangi bölümlerini optimize etmek istediğinizi belirtmek için optimizasyon seçeneklerini ayarlayabilirsiniz. bu`OptimizationOptions` Aspose.PDF for .NET kitaplığı tarafından sağlanan sınıf, PDF belgesinin dosya boyutunu optimize etmek için çeşitli seçenekler belirtmenize izin verir. İşte bazı optimizasyon seçeneklerinin nasıl ayarlanacağına dair bir örnek:
+PDF belgesini yükledikten sonra, belgenin hangi bölümlerini optimize etmek istediğinizi belirtmek için optimizasyon seçeneklerini ayarlayabilirsiniz. bu`OptimizationOptions` Aspose.PDF for .NET kitaplığı tarafından sağlanan sınıf, PDF belgesinin dosya boyutunu optimize etmek için çeşitli seçenekler belirtmenize izin verir. İşte bazı optimizasyon seçeneklerinin nasıl ayarlanacağına dair bir örnek:
 
 ```csharp
 OptimizationOptions optimizationOptions = new OptimizationOptions();
@@ -39,9 +39,9 @@ optimizationOptions.ImageCompressionOptions.ImageQuality = 10;
 Bu örnekte, aşağıdaki seçenekleri ayarlıyoruz:
 - `LinkDuplcateStreams`: Bu seçenek, PDF belgesindeki yinelenen akışların kaldırılmasını sağlar ve bu da dosya boyutunun küçültülmesine yardımcı olabilir.
 - `RemoveUnusedObjects`: Bu seçenek, PDF belgesindeki kullanılmayan nesnelerin kaldırılmasını sağlar ve bu da dosya boyutunun küçültülmesine yardımcı olabilir.
-- `RemoveUnusedStreams`Bu seçenek, dosya boyutunu daha da azaltabilen PDF belgesindeki kullanılmayan akışların kaldırılmasını sağlar.
+- `RemoveUnusedStreams`: Bu seçenek, dosya boyutunu daha da azaltabilen PDF belgesindeki kullanılmayan akışların kaldırılmasını sağlar.
 - `CompressImages`: Bu seçenek, dosya boyutunu önemli ölçüde azaltabilen PDF belgesindeki görüntülerin sıkıştırılmasını sağlar.
-- `ImageQuality`: Bu seçenek, sıkıştırılmış görüntülerin kalitesini ayarlar. Daha düşük bir kalite ayarı daha küçük bir dosya boyutuna neden olur, ancak daha düşük kaliteli bir görüntüye de neden olabilir.
+- `ImageQuality`Bu seçenek, sıkıştırılmış görüntülerin kalitesini ayarlar. Daha düşük bir kalite ayarı daha küçük bir dosya boyutuna neden olur, ancak daha düşük kaliteli bir görüntüye de neden olabilir.
 
 ## 4. Adım: PDF Belgesini Optimize Edin
 

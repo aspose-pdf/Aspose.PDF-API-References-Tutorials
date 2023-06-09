@@ -65,7 +65,7 @@ doc.Save(dataDir + "PerformaceImprovement_out.pdf");
 ```
 Ortaya çıkan PDF belgesini belirtilen dizine kaydedin.
 
-### Aspose.Words for .NET kullanarak TIFF'den PDF'e Performans Geliştirme için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak TIFF'den PDF'e Performans Geliştirme için örnek kaynak kodu
 
 ```csharp
 // Belgeler dizininin yolu.

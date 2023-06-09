@@ -50,7 +50,7 @@ mytable.RepeatingColumnsCount = 5;
 page.Paragraphs.Add(mytable);
 ```
 
-Önce ana tabloyu ekliyoruz (`outerTable`PDF belgesine. Ardından, iç içe tabloyu ekliyoruz (`mytable` ) ana tablodaki bir hücrede paragraf olarak. için tekrarlanan sütunların sayısını da belirtiyoruz.`mytable` (bu örnekte 5 sütun).
+Önce ana tabloyu ekliyoruz (`outerTable`) PDF belgesine. Ardından, iç içe tabloyu ekliyoruz (`mytable` ) ana tablodaki bir hücrede paragraf olarak. için tekrarlanan sütunların sayısını da belirtiyoruz.`mytable` (bu örnekte 5 sütun).
 
 ## 5. Adım: Başlık ve satır ekleme
 Şimdi başlıkları ve satırları tabloya ekliyoruz.
@@ -70,7 +70,7 @@ for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
      row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
      row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
      // ...
-     // Diğer sütunları buraya ekleyin
+     //Diğer sütunları buraya ekleyin
 }
 ```
 
@@ -86,7 +86,7 @@ doc.Save(outFile);
 
 Çıktı PDF dosyasını kaydetmek için doğru dizini ve dosya adını belirttiğinizden emin olun.
 
-### Aspose.Words for .NET kullanarak yinelenen sütun eklemek için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak yinelenen sütun eklemek için örnek kaynak kodu
 
 ```csharp
 // Belgeler dizininin yolu.
@@ -108,7 +108,7 @@ mytable.Broken = TableBroken.VerticalInSamePage;
 mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;
 
 // outerTable'ı sayfa paragraflarına ekleyin
-//mytable'ı outerTable'a ekle
+// mytable'ı outerTable'a ekle
 page.Paragraphs.Add(outerTable);
 var bodyRow = outerTable.Rows.Add();
 var bodyCell = bodyRow.Cells.Add();

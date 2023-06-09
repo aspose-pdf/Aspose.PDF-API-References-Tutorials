@@ -81,7 +81,7 @@ docInfo.Subject = "PDF Information";
 docInfo.Title = "Setting PDF Document Information";
 
 dataDir = dataDir + "SetFileInfo_out.pdf";
-//保存输出文档
+//保存输出文件
 pdfDocument.Save(dataDir);
 
 Console.WriteLine("\nFile informations setup successfully.\nFile saved at " + dataDir);

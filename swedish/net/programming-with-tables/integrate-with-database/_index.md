@@ -8,7 +8,7 @@ weight: 120
 url: /sv/net/programming-with-tables/integrate-with-database/
 ---
 
-I den här handledningen kommer vi att lära oss hur man bäddar in data från en databas i ett PDF-dokument med Aspose.PDF för .NET. Vi kommer att förklara källkoden i C# steg för steg. I slutet av denna handledning kommer du att veta hur du importerar tabelldata från en databas till ett PDF-dokument. Låt oss börja!
+den här handledningen kommer vi att lära oss hur man bäddar in data från en databas i ett PDF-dokument med Aspose.PDF för .NET. Vi kommer att förklara källkoden i C# steg för steg. I slutet av denna handledning kommer du att veta hur du importerar tabelldata från en databas till ett PDF-dokument. Låt oss börja!
 
 ## Steg 1: Sätta upp miljön
 Se till att du har konfigurerat din C#-utvecklingsmiljö med Aspose.PDF för .NET. Lägg till referensen till biblioteket och importera de nödvändiga namnrymden.
@@ -71,7 +71,7 @@ doc.Save(dataDir + "DataIntegrated_out.pdf");
 
 Grattis! Du vet nu hur du bäddar in databasdata i ett PDF-dokument med Aspose.PDF för .NET.
 
-### Exempel på källkod för Integrate With Database med Aspose.Words för .NET
+### Exempel på källkod för Integrate With Database med Aspose.PDF för .NET
 
 ```csharp
 // Sökvägen till dokumentkatalogen.
@@ -81,7 +81,7 @@ DataTable dt = new DataTable("Employee");
 dt.Columns.Add("Employee_ID", typeof(Int32));
 dt.Columns.Add("Employee_Name", typeof(string));
 dt.Columns.Add("Gender", typeof(string));
-//Lägg till 2 rader i DataTable-objektet programmatiskt
+// Lägg till 2 rader i DataTable-objektet programmatiskt
 DataRow dr = dt.NewRow();
 dr[0] = 1;
 dr[1] = "John Smith";

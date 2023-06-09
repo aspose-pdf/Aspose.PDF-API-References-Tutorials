@@ -66,7 +66,7 @@ pdf.Save(fileNew.FullName);
 
 Stellen Sie sicher, dass Sie den richtigen Zielpfad für die resultierende PDF-Datei festgelegt haben.
 
-### Beispielquellcode zum Ersetzen fehlender Schriftarten mit Aspose.Words für .NET
+### Beispielquellcode zum Ersetzen fehlender Schriftarten mit Aspose.PDF für .NET
 
 ```csharp
 // Der Pfad zum Dokumentenverzeichnis.

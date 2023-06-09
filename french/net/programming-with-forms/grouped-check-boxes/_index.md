@@ -87,7 +87,7 @@ dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Exemple de code source pour les cases à cocher groupées à l'aide d'Aspose.Words pour .NET 
+### Exemple de code source pour les cases à cocher groupées à l'aide d'Aspose.PDF pour .NET 
 ```csharp
 try
 {

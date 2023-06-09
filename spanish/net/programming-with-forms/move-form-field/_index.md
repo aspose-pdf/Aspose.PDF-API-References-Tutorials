@@ -51,7 +51,7 @@ dataDir = dataDir + "MoveFormField_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Ejemplo de código fuente para Mover campo de formulario usando Aspose.Words para .NET 
+### Ejemplo de código fuente para Mover campo de formulario usando Aspose.PDF para .NET 
 ```csharp
 // La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -69,4 +69,4 @@ Console.WriteLine("\nForm field moved successfully to a new location.\nFile save
 
 ## Conclusión
 
-En este tutorial, aprendimos cómo mover un campo de formulario en un documento PDF usando Aspose.PDF para .NET. Siguiendo estos pasos, puede navegar fácilmente a un campo específico y cambiar su ubicación según sea necesario.
+En este tutorial, aprendimos cómo mover un campo de formulario en un documento PDF utilizando Aspose.PDF para .NET. Siguiendo estos pasos, puede navegar fácilmente a un campo específico y cambiar su ubicación según sea necesario.

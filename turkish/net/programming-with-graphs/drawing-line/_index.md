@@ -72,7 +72,7 @@ Son olarak ortaya çıkan PDF dosyasını belirtilen dizine "DrawingLine_out.pdf
 pDoc.Save(dataDir + "DrawingLine_out.pdf");
 ```
 
-### Aspose.Words for .NET kullanan Çizim Çizgisi için örnek kaynak kodu 
+### Aspose.PDF for .NET kullanan Çizim Çizgisi için örnek kaynak kodu 
 
 ```csharp
 
@@ -84,7 +84,7 @@ Document pDoc = new Document();
 Page pg = pDoc.Pages.Add();
 // Tüm kenarlarda sayfa kenar boşluğunu 0 olarak ayarla
 pg.PageInfo.Margin.Left = pg.PageInfo.Margin.Right = pg.PageInfo.Margin.Bottom = pg.PageInfo.Margin.Top = 0;
-// Sayfa boyutlarına eşit Genişlik ve Yüksekliğe sahip Grafik nesnesi oluşturun
+//Sayfa boyutlarına eşit Genişlik ve Yüksekliğe sahip Grafik nesnesi oluşturun
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph((float)pg.PageInfo.Width , (float)pg.PageInfo.Height);
 // Sayfanın Sol Alt köşesinden Sağ Üst köşesine başlayarak ilk satır nesnesini oluştur
 Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { (float)pg.Rect.LLX, 0, (float)pg.PageInfo.Width, (float)pg.Rect.URY });

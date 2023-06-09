@@ -85,7 +85,7 @@ Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dat
 
 Stellen Sie sicher, dass Sie das richtige Dokumentverzeichnis angeben. Die resultierende PDF-Datei wird mit den ermittelten Tabellenumbrüchen gespeichert.
 
-### Beispielquellcode für „Determine Table Break“ mit Aspose.Words für .NET
+### Beispielquellcode für „Determine Table Break“ mit Aspose.PDF für .NET
 
 ```csharp
 // Der Pfad zum Dokumentenverzeichnis.
@@ -134,11 +134,11 @@ float TotalObjectsHeight = (float)page.PageInfo.Margin.Top + (float)page.PageInf
 // Und Informationen zum unteren Rand
 Console.WriteLine("PDF document Height = " + pdf.PageInfo.Height.ToString() + "\nTop Margin Info = " + page.PageInfo.Margin.Top.ToString() + "\nBottom Margin Info = " + page.PageInfo.Margin.Bottom.ToString() + "\n\nTable-Top Margin Info = " + table1.Margin.Top.ToString() + "\nAverage Row Height = " + table1.Rows[0].MinRowHeight.ToString() + " \nTable height " + table1.GetHeight().ToString() + "\n ----------------------------------------" + "\nTotal Page Height =" + PageHeight.ToString() + "\nCummulative height including Table =" + TotalObjectsHeight.ToString());
 
-//Überprüfen Sie, ob wir die Summe aus oberem Seitenrand + unterem Seitenrand abziehen
+// Überprüfen Sie, ob wir die Summe aus oberem Seitenrand und unterem Seitenrand abziehen
 // + Tabellenoberseitenrand und Tabellenhöhe von Seitenhöhe und weniger
 // Als 10 (eine durchschnittliche Zeile kann größer als 10 sein)
 if ((PageHeight - TotalObjectsHeight) <= 10)
-	// Wenn der Wert kleiner als 10 ist, wird die Meldung angezeigt.
+	//Wenn der Wert kleiner als 10 ist, wird die Meldung angezeigt.
 	// Das zeigt, dass keine weitere Zeile platziert werden kann und wenn wir eine neue hinzufügen
 	// Zeile, Tabelle wird kaputt gehen. Dies hängt vom Wert der Zeilenhöhe ab.
 	Console.WriteLine("Page Height - Objects Height < 10, so table will break");

@@ -43,7 +43,7 @@ doc.Save(dataDir + "TeXToPDF_out.pdf");
 
 تأكد من تحديد المسار المطلوب واسم الملف لملف PDF الناتج.
 
-### مثال على شفرة المصدر لـ TeX إلى PDF باستخدام Aspose.Words for .NET
+### مثال على كود المصدر لـ TeX إلى PDF باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 try

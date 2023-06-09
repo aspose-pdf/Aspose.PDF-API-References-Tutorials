@@ -31,7 +31,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Steg 4: Iterera genom alla sidor
+## Steg 4: Iterera igenom alla sidor
 När du har laddat in PDF-filen måste du iterera igenom alla sidor i dokumentet. För varje sida måste du kontrollera om några typsnitt används, och i så fall måste du bädda in dessa typsnitt. Följande kod visar hur man itererar genom alla sidor i PDF-filen och bäddar in typsnitten:
 
 ```csharp
@@ -83,7 +83,7 @@ Här är den fullständiga källkoden för att bädda in ett teckensnitt med Asp
 // Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Ladda en befintlig PDF-fil
+// Ladda en befintlig PDF-fil
 Document doc = new Document(dataDir + "input.pdf");
 
 // Gå igenom alla sidorna

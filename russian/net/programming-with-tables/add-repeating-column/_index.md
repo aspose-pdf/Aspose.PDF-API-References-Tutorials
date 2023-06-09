@@ -50,7 +50,7 @@ mytable.RepeatingColumnsCount = 5;
 page.Paragraphs.Add(mytable);
 ```
 
-Сначала добавляем основную таблицу (`outerTable`в документ PDF. Далее добавляем вложенную таблицу (`mytable` ) как абзац в ячейке основной таблицы. Мы также указываем количество повторяющихся столбцов для`mytable` (в данном примере 5 столбцов).
+Сначала добавляем основную таблицу (`outerTable`) в документ PDF. Далее добавляем вложенную таблицу (`mytable` ) как абзац в ячейке основной таблицы. Мы также указываем количество повторяющихся столбцов для`mytable` (в данном примере 5 столбцов).
 
 ## Шаг 5: Добавление заголовков и строк
 Теперь мы добавляем заголовки и строки в таблицу.
@@ -70,7 +70,7 @@ for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
      row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
      row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
      // ...
-     // Добавьте сюда другие столбцы
+     //Добавьте сюда другие столбцы
 }
 ```
 
@@ -86,7 +86,7 @@ doc.Save(outFile);
 
 Обязательно укажите правильный каталог и имя файла для сохранения выходного PDF-файла.
 
-### Пример исходного кода для добавления повторяющегося столбца с использованием Aspose.Words для .NET
+### Пример исходного кода для добавления повторяющегося столбца с использованием Aspose.PDF для .NET
 
 ```csharp
 // Путь к каталогу документов.
@@ -108,7 +108,7 @@ mytable.Broken = TableBroken.VerticalInSamePage;
 mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;
 
 // Добавьте externalTable к абзацам страницы
-//Добавить mytable в externalTable
+// Добавить mytable в externalTable
 page.Paragraphs.Add(outerTable);
 var bodyRow = outerTable.Rows.Add();
 var bodyCell = bodyRow.Cells.Add();

@@ -66,7 +66,7 @@ for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 
 Il codice sopra converte ogni pagina del PDF in un'immagine PNG con suggerimenti sui caratteri e salva ogni immagine come file PNG separato.
 
-### Esempio di codice sorgente per PDF in PNGFont Suggerimenti utilizzando Aspose.Words per .NET
+### Esempio di codice sorgente per PDF in PNGFont Suggerimenti utilizzando Aspose.PDF per .NET
 
 ```csharp
 try

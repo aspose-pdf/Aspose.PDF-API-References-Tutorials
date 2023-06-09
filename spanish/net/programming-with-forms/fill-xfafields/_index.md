@@ -52,7 +52,7 @@ dataDir = dataDir + "Filled_XFA_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Ejemplo de código fuente para llenar XFAFields usando Aspose.Words para .NET 
+### Ejemplo de código fuente para llenar XFAFields usando Aspose.PDF para .NET 
 ```csharp
 // La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -71,4 +71,4 @@ Console.WriteLine("\nXFA fields filled successfully.\nFile saved at " + dataDir)
 
 ## Conclusión
 
-En este tutorial, aprendimos cómo llenar campos XFA usando Aspose.PDF para .NET. Siguiendo estos pasos, puede cambiar fácilmente los valores de los campos XFA en sus documentos PDF utilizando Aspose.PDF.
+En este tutorial, aprendimos cómo llenar campos XFA usando Aspose.PDF para .NET. Siguiendo estos pasos, puede cambiar fácilmente los valores de los campos XFA en sus documentos PDF usando Aspose.PDF.

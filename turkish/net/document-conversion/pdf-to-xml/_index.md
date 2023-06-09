@@ -40,7 +40,7 @@ doc.Save(dataDir + "PDFToXML_out.xml", SaveFormat.MobiXml);
 
  Yukarıdaki kod, dönüştürülen PDF dosyasını dosya adıyla XML biçiminde kaydeder.`"PDFToXML_out.xml"`.
 
-### Aspose.Words for .NET kullanarak PDF'den XML'e dönüştürme için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak PDF to XML için örnek kaynak kodu
 
 ```csharp
 // Belgeler dizininin yolu.

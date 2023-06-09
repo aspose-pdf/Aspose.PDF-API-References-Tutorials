@@ -62,7 +62,7 @@ doc.Save(dataDir + "TexttoPDF_out.pdf");
 
 Ortaya çıkan PDF dosyası için istenen yolu ve dosya adını belirttiğinizden emin olun.
 
-### Aspose.Words for .NET kullanan Text to PDF için örnek kaynak kodu
+### Aspose.PDF for .NET kullanan Text to PDF için örnek kaynak kodu
 
 ```csharp
 try

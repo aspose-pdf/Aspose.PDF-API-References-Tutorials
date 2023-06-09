@@ -46,7 +46,7 @@ pdf. Save(dataDir + "EPUBToPDF_out.pdf");
 
  Byta ut`"YOUR DOCUMENTS DIRECTORY"` med den önskade katalogen där du vill spara den utgående PDF-filen.
 
-### Exempel på källkod för EPUB till PDF med Aspose.Words för .NET
+### Exempel på källkod för EPUB till PDF med Aspose.PDF för .NET
 
 ```csharp
 try

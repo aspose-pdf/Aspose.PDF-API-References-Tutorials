@@ -23,7 +23,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ## Шаг 2. Загрузка исходной PDF-формы
 
- На этом шаге мы загрузим исходную форму PDF, используя`Aspose.Pdf.Facades.Form` класс Aspose.PDF.
+ На этом шаге мы загрузим исходную форму PDF, используя`Aspose.Pdf.Facades.Form`класс Aspose.PDF.
 
 ```csharp
 Aspose.Pdf.Facades.Form form1 = new Aspose.Pdf.Facades.Form(dataDir + "RadioButtonField.pdf");
@@ -76,7 +76,7 @@ PDF_Template_PDF_HTML.Save(dataDir + "RadioButtonField_out.pdf");
 
 Обязательно укажите полный путь и имя файла для полученного PDF-файла.
 
-### Пример исходного кода для установки заголовка радиокнопки с использованием Aspose.Words для .NET 
+### Пример исходного кода для установки заголовка радиокнопки с использованием Aspose.PDF для .NET 
 ```csharp
 // Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

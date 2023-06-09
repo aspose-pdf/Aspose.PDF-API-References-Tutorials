@@ -61,7 +61,7 @@ Console.Out.WriteLine("Field name: " + field.FullName + "-" + "Field value: " + 
 }
 ```
 
-### Beispielquellcode für „Felder aus Region abrufen“ mit Aspose.Words für .NET 
+### Beispielquellcode für „Felder aus Region abrufen“ mit Aspose.PDF für .NET 
 ```csharp
 // Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

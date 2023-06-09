@@ -64,7 +64,7 @@ Son olarak ortaya çıkan PDF dosyasını belirtilen dizine "DashLength_out.pdf"
 doc.Save(dataDir + "DashLength_out.pdf");
 ```
 
-### Aspose.Words for .NET kullanan Tire Uzunluğu için örnek kaynak kodu 
+### Aspose.PDF for .NET kullanan Tire Uzunluğu için örnek kaynak kodu 
 
 ```csharp
 

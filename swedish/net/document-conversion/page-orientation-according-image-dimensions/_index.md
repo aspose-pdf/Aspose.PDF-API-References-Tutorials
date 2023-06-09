@@ -84,7 +84,7 @@ doc.Save(dataDir + "SetPageOrientation_out.pdf");
 
  Byta ut`"YOUR DOCUMENTS DIRECTORY"` med den önskade katalogen där du vill spara den utgående PDF-filen.
 
-### Exempel på källkod för sidorientering enligt bildmått med Aspose.Words för .NET
+### Exempel på källkod för sidorientering enligt bildmått med Aspose.PDF för .NET
 
 ```csharp
 

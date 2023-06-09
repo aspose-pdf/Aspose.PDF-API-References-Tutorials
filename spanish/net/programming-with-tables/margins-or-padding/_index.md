@@ -23,7 +23,7 @@ Page page = doc.Pages.Add();
 ```
 
 ## Paso 2: crear una tabla
-continuación, crearemos un objeto de tabla usando la clase Aspose.Pdf.Table:
+A continuación, crearemos un objeto de tabla usando la clase Aspose.Pdf.Table:
 
 ```csharp
 // Crear una instancia de un objeto de tabla
@@ -91,7 +91,7 @@ doc.Save(dataDir);
 Console.WriteLine("\nCell and table border width setup successfully.\nFile saved at " + dataDir);
 ```
 
-### Ejemplo de código fuente para márgenes o relleno usando Aspose.Words para .NET
+### Ejemplo de código fuente para márgenes o relleno usando Aspose.PDF para .NET
 
 ```csharp
 // La ruta al directorio de documentos.

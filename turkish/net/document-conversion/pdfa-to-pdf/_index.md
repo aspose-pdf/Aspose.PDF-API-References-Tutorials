@@ -48,7 +48,7 @@ doc.Save(dataDir + "PDFAToPDF_out.pdf");
 
 Yukarıdaki kod, dönüştürülen PDFA dosyasını dosya adıyla PDF formatına kaydeder.`"PDFAToPDF_out.pdf"`.
 
-### Aspose.Words for .NET kullanarak PDFA'dan PDF'ye örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak PDFA'dan PDF'ye örnek kaynak kodu
 
 
 ```csharp

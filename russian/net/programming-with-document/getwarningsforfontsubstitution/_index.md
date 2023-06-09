@@ -26,7 +26,7 @@ url: /ru/net/programming-with-document/getwarningsforfontsubstitution/
 // Путь к PDF-документу
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Откройте PDF-документ
+// Откройте PDF-документ
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
@@ -61,7 +61,7 @@ private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArg
 // Путь к PDF-документу
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Откройте PDF-документ
+// Откройте PDF-документ
 Document doc = new Document(dataDir + "input.pdf");
 
 // Обнаружение предупреждений о замене шрифта

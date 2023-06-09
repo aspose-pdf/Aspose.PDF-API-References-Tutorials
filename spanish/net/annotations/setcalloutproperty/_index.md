@@ -15,7 +15,7 @@ En este tutorial, lo guiaremos a través del proceso de configuración de propie
 
  Si aún no lo ha hecho, deberá[descargar](https://releases.aspose.com/pdf/net/) e instale Aspose.PDF para .NET desde Aspose Releases o a través del administrador de paquetes NuGet.
 
-## Crear un nuevo documento PDF
+## Paso 1: Crea un nuevo documento PDF
 
  Cree un nuevo documento PDF usando el`Document` clase proporcionada por Aspose.PDF para .NET.
 
@@ -25,7 +25,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 ```
 
-## Agregar una nueva página al documento
+## Paso 2: Agregar una nueva página al documento
 
  Agregue una nueva página al documento usando el`Pages` colección de la`Document` clase.
 
@@ -33,7 +33,7 @@ Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Establecer apariencia predeterminada
+## Paso 3: establecer la apariencia predeterminada
 
  Establezca la apariencia predeterminada para la anotación de texto libre creando una nueva`DefaultAppearance` objeto y establecer sus propiedades tales como`TextColor` y`FontSize`.
 
@@ -43,7 +43,7 @@ da.TextColor = System.Drawing.Color.Red;
 da.FontSize = 10;
 ```
 
-## Crear una anotación de texto libre con llamada
+## Paso 4: Cree una anotación de texto libre con llamada
 
  Cree una nueva anotación de texto libre con llamada usando el`FreeTextAnnotation` clase. Selecciona el`Intent` propiedad a`FreeTextIntent.FreeTextCallout` para especificar que se trata de una anotación de llamada. Selecciona el`EndingStyle` propiedad a`LineEnding.OpenArrow` para especificar el estilo de la flecha al final de la llamada. Selecciona el`Callout` propiedad a una matriz de`Point` objetos que representan los puntos de la página donde se debe dibujar la línea de llamada.
 
@@ -57,7 +57,7 @@ fta.Callout = new Point[]
 };
 ```
 
-## Agregar la anotación de texto libre a la página
+## Paso 5: agregue la anotación de texto libre a la página
 
  Agregue la anotación de texto libre a la página usando el`Annotations` colección de la`Page` clase.
 
@@ -65,15 +65,15 @@ fta.Callout = new Point[]
 page.Annotations.Add(fta);
 ```
 
-## Agregar texto a la anotación
+## Paso 6: Agrega texto a la anotación
 
- Agregue texto a la anotación configurando el`RichText`propiedad a una cadena de XML formateado. En este tutorial, estamos configurando el color del texto en rojo y el tamaño de fuente en 9.
+Agregue texto a la anotación configurando el`RichText` propiedad a una cadena de XML formateado. En este tutorial, estamos configurando el color del texto en rojo y el tamaño de fuente en 9.
 
 ```csharp
 fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"color:#FF
 ```
 
-## 8. guardar el documento
+## Paso 7: guarda el documento
 
 Ahora guarde el documento usando el siguiente código:
 

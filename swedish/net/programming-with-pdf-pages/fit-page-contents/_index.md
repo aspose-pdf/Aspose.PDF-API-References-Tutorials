@@ -61,4 +61,4 @@ foreach (Page page in doc.Pages)
 ```
 
 ## Slutsats
-I den här handledningen lärde vi oss hur man justerar PDF-sidans innehåll med Aspose.PDF för .NET. Genom att följa stegen ovan kan du enkelt implementera denna funktion i dina egna projekt. Utforska gärna Aspose.PDF-dokumentationen ytterligare för att upptäcka andra användbara funktioner för att arbeta med PDF-filer.
+den här handledningen lärde vi oss hur man justerar PDF-sidans innehåll med Aspose.PDF för .NET. Genom att följa stegen ovan kan du enkelt implementera denna funktion i dina egna projekt. Utforska gärna Aspose.PDF-dokumentationen ytterligare för att upptäcka andra användbara funktioner för att arbeta med PDF-filer.

@@ -51,7 +51,7 @@ pdfPage.SetPageSize(597.6, 842.4);
 ```
 
 ## Steg 6: Spara det uppdaterade dokumentet
-Slutligen kan du spara det uppdaterade PDF-dokumentet till en fil med hjälp av`Save()` metod för`Document` klass. Var noga med att ange rätt sökväg och filnamn.
+Slutligen kan du spara det uppdaterade PDF-dokumentet till en fil med hjälp av`Save()` metod för`Document`klass. Var noga med att ange rätt sökväg och filnamn.
 
 ```csharp
 dataDir = dataDir + "UpdateDimensions_out.pdf";

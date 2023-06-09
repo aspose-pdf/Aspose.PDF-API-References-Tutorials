@@ -72,7 +72,7 @@ doc.Save(dataDir + "RemoveHyperlinksFromText_out.pdf");
 
  يحفظ الكود أعلاه ملف PDF الناتج باسم الملف`"RemoveHyperlinksFromText_out.pdf"`.
 
-### مثال على شفرة المصدر لإزالة الارتباطات التشعبية بعد التحويل من Html باستخدام Aspose.Words for .NET
+### مثال على التعليمات البرمجية المصدر لإزالة الارتباطات التشعبية بعد التحويل من Html باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 // المسار إلى دليل المستندات.

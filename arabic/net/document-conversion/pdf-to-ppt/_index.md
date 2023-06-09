@@ -48,7 +48,7 @@ doc.Save(dataDir + "PDFToPPT_out.pptx", pptx_save);
 
  يحفظ الكود أعلاه ملف PDF المحول بتنسيق PPTX باسم الملف`"PDFToPPT_out.pptx"`.
 
-### مثال على شفرة المصدر لـ PDF إلى PPT باستخدام Aspose.Words for .NET
+### مثال على كود المصدر لـ PDF إلى PPT باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 // المسار إلى دليل المستندات.

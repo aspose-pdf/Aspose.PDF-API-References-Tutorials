@@ -15,7 +15,7 @@ I den här guiden kommer vi att förklara steg för steg hur man använder Aspos
 Innan du börjar, se till att du har följande:
 
 - En .NET-utvecklingsmiljö installerad på ditt system.
-- Aspose.PDF-biblioteket för .NET. Du kan ladda ner den från Asposes officiella hemsida.
+- Aspose.PDF-biblioteket för .NET. Du kan ladda ner den från Asposes officiella webbplats.
 
 ## Steg 1: Konfigurera dokumentkatalogen
 
@@ -30,7 +30,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ## Steg 2: Ladda in PDF-filen
 
- I det här steget laddar vi in PDF-filen med hjälp av`Document` klass av Aspose.PDF.
+ I det här steget laddar vi in PDF-filen med hjälp av`Document`klass av Aspose.PDF.
 
 ```csharp
 // Ladda inmatad PDF-fil
@@ -83,7 +83,7 @@ doc.Save(dataDir);
 Var noga med att ange den fullständiga sökvägen och filnamnet för den resulterande PDF-filen.
 
 
-### Exempel på källkod för Set Java Script med Aspose.Words för .NET 
+### Exempel på källkod för Set Java Script med Aspose.PDF för .NET 
 ```csharp
 // Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

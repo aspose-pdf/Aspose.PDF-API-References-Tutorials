@@ -7,7 +7,7 @@ type: docs
 weight: 80
 url: /sv/net/programming-with-pdf-pages/get-page-count/
 ---
-I den här handledningen går vi igenom steg-för-steg-processen för att få sidantal för en PDF-fil med Aspose.PDF för .NET. Vi kommer att förklara den medföljande C#-källkoden och förse dig med en omfattande guide som hjälper dig att förstå och implementera den här funktionen i dina egna projekt. I slutet av denna handledning kommer du att veta hur du får sidräkningen för en PDF-fil med Aspose.PDF för .NET.
+den här handledningen går vi igenom steg-för-steg-processen för att få sidantal för en PDF-fil med Aspose.PDF för .NET. Vi kommer att förklara den medföljande C#-källkoden och förse dig med en omfattande guide som hjälper dig att förstå och implementera den här funktionen i dina egna projekt. I slutet av denna handledning kommer du att veta hur du får sidräkningen för en PDF-fil med Aspose.PDF för .NET.
 
 ## Förutsättningar
 Innan du börjar, se till att du har följande:
@@ -71,4 +71,4 @@ Console.WriteLine("Number of pages in document = " + doc.Pages.Count);
 ```
 
 ## Slutsats
-I den här handledningen lärde vi oss hur man får sidantalet för en PDF-fil med Aspose.PDF för .NET. Genom att följa stegen ovan kan du enkelt implementera denna funktion i dina egna projekt. Utforska gärna Aspose.PDF-dokumentationen ytterligare för att upptäcka andra användbara funktioner för att arbeta med PDF-filer.
+den här handledningen lärde vi oss hur man får sidantalet för en PDF-fil med Aspose.PDF för .NET. Genom att följa stegen ovan kan du enkelt implementera denna funktion i dina egna projekt. Utforska gärna Aspose.PDF-dokumentationen ytterligare för att upptäcka andra användbara funktioner för att arbeta med PDF-filer.

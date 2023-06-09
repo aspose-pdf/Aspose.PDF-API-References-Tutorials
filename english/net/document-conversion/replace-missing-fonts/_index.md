@@ -66,7 +66,7 @@ pdf.Save(fileNew.FullName);
 
 Ensures make sure you have set the correct destination path for the resulting PDF file.
 
-### Example source code for Replace Missing Fonts using Aspose.Words for .NET
+### Example source code for Replace Missing Fonts using Aspose.PDF for .NET
 
 ```csharp
 // The path to the documents directory.

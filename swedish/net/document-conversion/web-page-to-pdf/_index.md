@@ -71,7 +71,7 @@ Console.WriteLine(ex.Message);
 ```
 Fånga eventuella undantag som kan inträffa under konverteringsprocessen och visa felmeddelandet.
 
-### Exempel på källkod för webbsida till PDF med Aspose.Words för .NET
+### Exempel på källkod för webbsida till PDF med Aspose.PDF för .NET
 
 ```csharp
 try

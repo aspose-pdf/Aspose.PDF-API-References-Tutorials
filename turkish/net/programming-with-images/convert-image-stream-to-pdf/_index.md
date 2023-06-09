@@ -1,0 +1,124 @@
+---
+title: Görüntü Akışını PDF'ye Dönüştür
+linktitle: Görüntü Akışını PDF'ye Dönüştür
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET ile bir görüntü akışını kolayca bir PDF dosyasına dönüştürün.
+type: docs
+weight: 70
+url: /tr/net/programming-with-images/convert-image-stream-to-pdf/
+---
+
+Bu kılavuz, Aspose.PDF for .NET kullanarak bir görüntü akışını bir PDF dosyasına nasıl dönüştüreceğinizi adım adım gösterecek. Ortamınızı zaten kurduğunuzdan emin olun ve aşağıdaki adımları izleyin:
+
+## 1. Adım: Belge dizinini tanımlayın
+
+ Başlamadan önce, belgeler için doğru dizini ayarladığınızdan emin olun. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` resminizin bulunduğu dizine giden yolu içeren kodda.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+## 2. Adım: Bir Document nesnesinin örneğini oluşturun
+
+ Bu adımda, bir örneği başlatacağız`Document` boş yapıcısını kullanan nesne`Aspose.Pdf.Document` sınıf.
+
+```csharp
+Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
+```
+
+## 3. Adım: PDF belgesine bir sayfa ekleyin
+
+ kullanarak PDF belgesine bir sayfa ekleyin.`Add` yöntemi`Pages` Nesnesi`pdf1`.
+
+```csharp
+Aspose.Pdf.Page sec = pdf1.Pages.Add();
+```
+
+## 4. Adım: Görüntü akışını okuyun
+
+ Bu adımda bir oluşturacağız`FileStream` görüntü dosyasını akıştan okumak için nesne.
+
+```csharp
+FileStream fs = File.OpenRead(dataDir + "aspose.jpg");
+```
+
+## Adım 5: Görüntüyü bir bayt dizisine okuyun
+
+ Görüntüyü akıştan okuyun ve kullanarak bir bayt dizisinde saklayın.`Read` yöntemi`fs` nesne.
+
+```csharp
+byte[] data = new byte[fs.Length];
+fs.Read(data, 0, data.Length);
+```
+
+## Adım 6: Bayt dizisinden bir MemoryStream nesnesi oluşturun
+
+ Oluşturmak`MemoryStream` görüntüyü içeren bayt dizisinden nesne.
+
+```csharp
+MemoryStream ms = new MemoryStream(data);
+```
+
+## 7. Adım: Bir Görüntü Nesnesi Oluşturun
+
+ Bu adımda, bir oluşturacağız`Image` kullanarak nesne`Aspose.Pdf.Image` sınıf. kullanarak görüntünün akışını belirtin.`ImageStream` mülkiyet ve geçmek`ms` daha önce oluşturduğumuz nesne.
+
+```csharp
+Aspose.Pdf.Image imageht = new Aspose.Pdf.Image();
+imageht. ImageStream = ms;
+```
+
+## 8. Adım: Image nesnesini Paragraphs koleksiyonuna ekleyin
+
+ Ekle`imageht` itiraz etmek`Paragraphs` koleksiyonu`sec` bölüm.
+
+```csharp
+sec.Paragraphs.Add(imageht);
+```
+
+## 9. Adım: PDF belgesini kaydedin
+
+ kullanarak PDF belgesini kaydedin.`Save` yöntemi`pdf1` nesne. PDF dosyasının çıktı yolunu belirtin.
+
+```csharp
+pdf1.Save(dataDir + "ConvertMemoryStreamImageToPdf_out.pdf");
+```
+
+## 10. Adım: MemoryStream nesnesini kapatın
+
+ Kapat`ms` kullanarak nesne`Close` kaynakları serbest bırakma yöntemi.
+
+```csharp
+ms. Close();
+```
+
+### Aspose.PDF for .NET kullanarak Görüntü Akışını PDF'ye Dönüştürmek için örnek kaynak kodu 
+```csharp
+// Belgeler dizininin yolu.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+//Boş oluşturucusunu çağırarak Belge örneğini oluşturun
+Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
+// Pdf belgesine bir Sayfa ekleyin
+Aspose.Pdf.Page sec = pdf1.Pages.Add();
+// İmaj dosyasını okumak için bir FileStream nesnesi oluşturun
+FileStream fs = File.OpenRead(dataDir + "aspose.jpg");
+// Resmi Bayt dizisine oku
+byte[] data = new byte[fs.Length];
+fs.Read(data, 0, data.Length);
+// Görüntü Byte dizisinden bir MemoryStream nesnesi oluşturun
+MemoryStream ms = new MemoryStream(data);
+// Bir görüntü nesnesi oluşturun
+Aspose.Pdf.Image imageht = new Aspose.Pdf.Image();
+// Görüntü kaynağını MemoryStream olarak belirtin
+imageht.ImageStream = ms;
+// Bölümün Paragraflar koleksiyonuna resim nesnesi ekleyin
+sec.Paragraphs.Add(imageht);
+// Pdf'i kaydet
+pdf1.Save(dataDir + "ConvertMemoryStreamImageToPdf_out.pdf");
+// MemoryStream Nesnesini Kapatın
+ms.Close();
+```
+
+## Çözüm
+
+Tebrikler! Aspose.PDF for .NET'i kullanarak bir görüntü akışını başarıyla bir PDF dosyasına dönüştürdünüz. Oluşturulan PDF dosyası belirtilen dizine kaydedilir. Artık bu PDF dosyasını projelerinizde veya uygulamalarınızda kullanabilirsiniz.

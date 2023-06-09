@@ -34,7 +34,7 @@ document.Save(dataDir + "XPSToPDF_out.pdf");
 ```
 احفظ مستند PDF الناتج في الدليل المحدد.
 
-### مثال على شفرة المصدر لـ XPS إلى PDF باستخدام Aspose.Words for .NET
+### مثال على التعليمات البرمجية المصدر لـ XPS إلى PDF باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 try

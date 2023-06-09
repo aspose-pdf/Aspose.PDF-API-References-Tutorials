@@ -18,7 +18,7 @@ Se till att du har importerat de nödvändiga biblioteken och ställ in sökväg
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Steg 2: Ladda ut dokumentet
+## Steg 2: Ladda utdokumentet
 
 Ladda ut PDF-dokumentet:
 
@@ -55,7 +55,7 @@ Console.WriteLine(option.Rect);
 }
 ```
 
-### Exempel på källkod för Get Coordinates med Aspose.Words för .NET 
+### Exempel på källkod för Get Coordinates med Aspose.PDF för .NET 
 ```csharp
 try
 {

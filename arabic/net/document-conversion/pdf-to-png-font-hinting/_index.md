@@ -39,7 +39,7 @@ opts. UseFontHinting = true;
 ```
 
 ## الخطوة 3: التحويل إلى صور PNG
-الآن سنقوم بتحويل كل صفحة من صفحات PDF إلى صورة PNG مع تلميح الخط. استخدم الكود التالي:
+سنقوم الآن بتحويل كل صفحة من صفحات PDF إلى صورة PNG مع تلميح الخط. استخدم الكود التالي:
 
 ```csharp
 for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
@@ -66,7 +66,7 @@ for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 
 يحول الكود أعلاه كل صفحة من PDF إلى صورة PNG مع تلميح الخط ويحفظ كل صورة كملف PNG منفصل.
 
-### مثال على شفرة المصدر لـ PDF إلى PNGFont Hinting باستخدام Aspose.Words for .NET
+### مثال على كود المصدر لـ PDF إلى PNGFont Hinting باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 try

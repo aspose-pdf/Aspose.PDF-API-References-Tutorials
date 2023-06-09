@@ -31,7 +31,7 @@ description: تحقق من دروس تحويل المستندات باستخدا
 | [PDF إلى تلميح خط PNG](./pdf-to-png-font-hinting/) | دليل خطوة بخطوة لتحويل PDF إلى PNG باستخدام تلميحات الخط باستخدام Aspose.PDF for .NET. |  
 | [PDF إلى PPT](./pdf-to-ppt/) | دليل خطوة بخطوة لتحويل PDF إلى PPT باستخدام Aspose.PDF for .NET. |  
 | [PDF إلى SVG](./pdf-to-svg/) | دليل خطوة بخطوة لتحويل PDF إلى SVG باستخدام Aspose.PDF for .NET. |  
-| [PDF إلى Te X](./pdf-to-te-x/) | دليل خطوة بخطوة لتحويل PDF إلى Te X باستخدام Aspose.PDF for .NET. |  
+| [PDF إلى TeX](./pdf-to-tex/) | دليل خطوة بخطوة لتحويل PDF إلى Te X باستخدام Aspose.PDF for .NET. |  
 | [PDF إلى XLS](./pdf-to-xls/) | دليل خطوة بخطوة لتحويل PDF إلى XLS باستخدام Aspose.PDF for .NET. |  
 | [PDF إلى XML](./pdf-to-xml/) | دليل خطوة بخطوة لتحويل PDF إلى XML باستخدام Aspose.PDF for .NET. |  
 | [PDF إلى XPS](./pdf-to-xps/) | دليل خطوة بخطوة لتحويل PDF إلى XPS باستخدام Aspose.PDF for .NET. |  

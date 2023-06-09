@@ -60,7 +60,7 @@ pdfDocument.Save(dataDir);
 ```
 
 
-### Пример исходного кода для шрифта поля формы 14 с использованием Aspose.Words для .NET 
+### Пример исходного кода для шрифта поля формы 14 с использованием Aspose.PDF для .NET 
 ```csharp
 // Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

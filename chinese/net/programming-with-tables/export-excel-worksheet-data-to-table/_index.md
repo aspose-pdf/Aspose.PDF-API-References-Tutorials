@@ -111,7 +111,7 @@ Aspose.Pdf.Row row1 = tab1.Rows[0];
 //格式化第一行
 foreach(Aspose.Pdf.Cell curCell in row1.Cells)
 {
-     //设置第一行单元格的背景色
+     //设置第一行单元格的背景颜色
      curCell.BackgroundColor = Color.Blue;//设置第一行单元格的面
      curCell.DefaultCellTextState.Font = Aspose.Pdf.Text.FontRepository.FindFont("Helvetica-Oblique");
     
@@ -148,7 +148,7 @@ pdf1.Save(dataDir + @"Exceldata_toPdf_table.pdf");
 
 确保将“您的文档目录”替换为输出 PDF 文件所需的目录路径和文件名。
 
-### 使用 Aspose.Words for .NET 将 Excel 工作表数据导出到表的示例源代码
+### 使用 Aspose.PDF for .NET 将 Excel 工作表数据导出到表的示例源代码
 
 ```csharp
 //文档目录的路径。

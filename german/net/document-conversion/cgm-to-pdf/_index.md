@@ -40,7 +40,7 @@ doc.Save(dataDir + "TECHDRAW_out.pdf");
 
  Stellen Sie sicher, dass Sie im obigen Code ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Pfad zu dem Verzeichnis, in dem sich Ihre zu konvertierende CGM-Datei befindet. Dieser Code lädt die CGM-Datei mit`CgmLoadOptions` Klasse und erstellt dann ein PDF-Dokument mit der`Document` Objekt. Abschließend wird das resultierende PDF-Dokument gespeichert.
 
-### Beispielquellcode für CGM in PDF mit Aspose.Words für .NET
+### Beispielquellcode für CGM zu PDF mit Aspose.PDF für .NET
 
 ```csharp
 // Der Pfad zum Dokumentenverzeichnis.

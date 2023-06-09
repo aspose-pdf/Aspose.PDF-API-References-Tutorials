@@ -66,7 +66,7 @@ pdf.Save(fileNew.FullName);
 
 Assicura di aver impostato il percorso di destinazione corretto per il file PDF risultante.
 
-### Codice sorgente di esempio per sostituire i caratteri mancanti utilizzando Aspose.Words per .NET
+### Codice sorgente di esempio per sostituire i caratteri mancanti utilizzando Aspose.PDF per .NET
 
 ```csharp
 // Il percorso della directory dei documenti.

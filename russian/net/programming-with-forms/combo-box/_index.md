@@ -70,7 +70,7 @@ dataDir = dataDir + "ComboBox_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Пример исходного кода для поля со списком с использованием Aspose.Words для .NET 
+### Пример исходного кода для поля со списком с использованием Aspose.PDF для .NET 
 ```csharp
 try
 {

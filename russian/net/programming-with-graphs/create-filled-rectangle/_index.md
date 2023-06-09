@@ -62,7 +62,7 @@ rect.GraphInfo.FillColor = Aspose.Pdf.Color.Red;
 doc.Save(dataDir + "CreateFilledRectangle_out.pdf");
 ```
 
-### Пример исходного кода для создания заполненного прямоугольника с использованием Aspose.Words для .NET 
+### Пример исходного кода для создания заполненного прямоугольника с использованием Aspose.PDF для .NET 
 
 ```csharp
 

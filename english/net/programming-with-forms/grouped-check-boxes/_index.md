@@ -87,7 +87,7 @@ dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Grouped Check Boxes using Aspose.Words for .NET 
+### Sample source code for Grouped Check Boxes using Aspose.PDF for .NET 
 ```csharp
 try
 {

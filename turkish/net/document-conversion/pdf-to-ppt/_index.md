@@ -48,7 +48,7 @@ doc.Save(dataDir + "PDFToPPT_out.pptx", pptx_save);
 
  Yukarıdaki kod, dönüştürülen PDF dosyasını dosya adıyla PPTX formatında kaydeder.`"PDFToPPT_out.pptx"`.
 
-### Aspose.Words for .NET kullanarak PDF'den PPT'ye dönüştürme için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak PDF'den PPT'ye dönüştürme için örnek kaynak kodu
 
 ```csharp
 // Belgeler dizininin yolu.

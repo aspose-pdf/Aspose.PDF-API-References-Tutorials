@@ -68,7 +68,7 @@ dataDir = dataDir + "RadioButton_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### 使用 Aspose.Words for .NET 的单选按钮示例源代码 
+### 使用 Aspose.PDF for .NET 的单选按钮示例源代码 
 ```csharp
 try
 {

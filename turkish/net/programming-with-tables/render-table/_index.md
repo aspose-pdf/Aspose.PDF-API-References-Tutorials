@@ -97,7 +97,7 @@ doc.Save(dataDir);
 Console.WriteLine("\nTable displayed successfully on a page.\nFile saved at location: " + dataDir);
 ```
 
-### Aspose.Words for .NET kullanan Render Table için örnek kaynak kodu
+### Aspose.PDF for .NET kullanan Render Table için örnek kaynak kodu
 
 ```csharp
 // Belgeler dizininin yolu.

@@ -108,7 +108,7 @@ bitmap.Save(dataDir, ImageFormat.Png);
 
 请务必指定正确的目录和文件名以保存输出图像。
 
-### 使用 Aspose.Words for .NET 提取边框的示例源代码
+### 使用 Aspose.PDF for .NET 提取边框的示例源代码
 
 ```csharp
 //文档目录的路径。
@@ -121,7 +121,7 @@ System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap((int)doc.Pages[1].PageI
 System.Drawing.Drawing2D.GraphicsPath graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
 //默认 ctm 矩阵值为 1,0,0,1,0,0
 System.Drawing.Drawing2D.Matrix lastCTM = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, 0);
-//System.Drawing坐标系是基于左上角的，而pdf坐标系是基于左下角的，所以我们必须应用逆矩阵
+// System.Drawing坐标系是基于左上角的，而pdf坐标系是基于左下角的，所以我们必须应用逆矩阵
 System.Drawing.Drawing2D.Matrix inversionMatrix = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, (float)doc.Pages[1].PageInfo.Height);
 System.Drawing.PointF lastPoint = new System.Drawing.PointF(0, 0);
 System.Drawing.Color fillColor = System.Drawing.Color.FromArgb(0, 0, 0);

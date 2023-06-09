@@ -12,7 +12,7 @@ url: /zh/net/programming-with-document/addremovejavascripttodoc/
 
 ## 步骤 1：创建一个新的 PDF 文档
 
-首先创建一个新的实例`Document`Aspose.PDF for .NET 提供的类。这将用作我们将在其中添加 JavaScript 的 PDF 文档。
+首先创建一个新的实例`Document` Aspose.PDF for .NET 提供的类。这将用作我们将在其中添加 JavaScript 的 PDF 文档。
 
 ```csharp
 //文档目录的路径。

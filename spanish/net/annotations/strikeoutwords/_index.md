@@ -9,7 +9,7 @@ url: /es/net/annotations/strikeoutwords/
 ---
 Aspose.PDF para .NET es una biblioteca de manipulación y procesamiento de documentos PDF que proporciona varias funciones para crear, modificar y convertir archivos PDF. Una de las características útiles que proporciona Aspose.PDF es la capacidad de tachar palabras o frases en un documento PDF utilizando el código fuente de C#. En este artículo, proporcionaremos una guía paso a paso sobre cómo tachar palabras usando Aspose.PDF para .NET.
 
-## Cargando el documento PDF
+## Paso 1: Cargar el documento PDF
 El primer paso es cargar el documento PDF que desea modificar. En este tutorial, cargaremos un documento PDF llamado "input.pdf" desde la carpeta "SU DIRECTORIO DE DOCUMENTOS". 
 
 ```csharp
@@ -17,7 +17,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document document = new Document(dataDir + "input.pdf");
 ```
 
-## Buscando fragmentos de texto
+## Paso 2: Buscar fragmentos de texto
 Para tachar palabras o frases específicas en el documento PDF, primero debe buscarlas. Aspose.PDF proporciona una clase TextFragmentAbsorber que se puede usar para buscar un fragmento de texto específico en el documento PDF.
 
 ```csharp
@@ -26,7 +26,7 @@ Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.
 
 En el código anterior, estamos buscando el fragmento de texto "Estoque" en el documento PDF. Puede modificar esto para buscar cualquier otra palabra o frase que desee tachar.
 
-## Tachar los fragmentos de texto
+## Paso 3: tachar los fragmentos de texto
 Después de encontrar los fragmentos de texto, el siguiente paso es tacharlos. Aspose.PDF proporciona una clase StrikeOutAnnotation que se puede usar para crear una anotación tachada para el fragmento de texto. 
 
 ```csharp
@@ -41,7 +41,7 @@ textFragment.Page.Annotations.Add(strikeOut);
 
 En el código anterior, estamos creando una anotación tachada para cada fragmento de texto que encontramos. También estamos configurando la opacidad, el borde y el color de la anotación tachada.
 
-## Guardar el documento PDF modificado
+## Paso 4: Guardar el documento PDF modificado
 Después de tachar los fragmentos de texto, guarde el documento modificado.
 
 ```csharp

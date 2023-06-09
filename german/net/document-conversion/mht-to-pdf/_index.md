@@ -42,7 +42,7 @@ document.Save(dataDir + "MHTToPDF_out.pdf");
 
  Der obige Code konvertiert die MHT-Datei in das PDF-Format und speichert sie unter dem Dateinamen`"MHTToPDF_out.pdf"`.
 
-### Beispielquellcode für MHT in PDF mit Aspose.Words für .NET
+### Beispielquellcode für MHT in PDF mit Aspose.PDF für .NET
 
 ```csharp
 // Der Pfad zum Dokumentenverzeichnis.

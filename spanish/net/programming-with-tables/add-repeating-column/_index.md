@@ -50,7 +50,7 @@ mytable.RepeatingColumnsCount = 5;
 page.Paragraphs.Add(mytable);
 ```
 
-Primero agregamos la tabla principal (`outerTable`al documento PDF. A continuación, agregamos la tabla anidada (`mytable` ) como un párrafo en una celda de la tabla principal. También especificamos el número de columnas repetidas para`mytable` (en este ejemplo, 5 columnas).
+Primero agregamos la tabla principal (`outerTable`) al documento PDF. A continuación, agregamos la tabla anidada (`mytable` ) como un párrafo en una celda de la tabla principal. También especificamos el número de columnas repetidas para`mytable` (en este ejemplo, 5 columnas).
 
 ## Paso 5: agregar encabezados y líneas
 Ahora agregamos los encabezados y las filas a la tabla.
@@ -70,7 +70,7 @@ for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
      row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
      row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
      // ...
-     // Agregue las otras columnas aquí
+     //Agregue las otras columnas aquí
 }
 ```
 
@@ -86,7 +86,7 @@ doc.Save(outFile);
 
 Asegúrese de especificar el directorio y el nombre de archivo correctos para guardar el archivo PDF de salida.
 
-### Ejemplo de código fuente para agregar una columna repetida usando Aspose.Words para .NET
+### Ejemplo de código fuente para agregar una columna repetida usando Aspose.PDF para .NET
 
 ```csharp
 // La ruta al directorio de documentos.
@@ -108,7 +108,7 @@ mytable.Broken = TableBroken.VerticalInSamePage;
 mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;
 
 // Agregue la tabla exterior a los párrafos de la página.
-//Agregar mitabla a tablaexterna
+// Agregar mitabla a tablaexterna
 page.Paragraphs.Add(outerTable);
 var bodyRow = outerTable.Rows.Add();
 var bodyCell = bodyRow.Cells.Add();

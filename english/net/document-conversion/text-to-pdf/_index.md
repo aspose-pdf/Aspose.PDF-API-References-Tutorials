@@ -62,7 +62,7 @@ doc.Save(dataDir + "TexttoPDF_out.pdf");
 
 Be sure to specify the desired path and filename for the resulting PDF file.
 
-### Example source code for Text to PDF using Aspose.Words for .NET
+### Example source code for Text to PDF using Aspose.PDF for .NET
 
 ```csharp
 try

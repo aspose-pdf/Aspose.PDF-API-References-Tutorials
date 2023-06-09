@@ -78,7 +78,7 @@ Denna kod kommer att spara det uppdaterade PDF-dokumentet med anteckningen som "
 // Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Öppna PDF-dokumentet
+// Öppna PDF-dokumentet
 Document doc = new Document(dataDir + "AddSwfFileAsAnnotation.pdf");
 
 // Få referens till sidan som du behöver lägga till anteckningen på

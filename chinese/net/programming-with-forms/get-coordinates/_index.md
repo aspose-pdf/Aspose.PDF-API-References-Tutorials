@@ -55,7 +55,7 @@ Console.WriteLine(option.Rect);
 }
 ```
 
-### 使用 Aspose.Words for .NET 获取坐标的示例源代码 
+### 使用 Aspose.PDF for .NET 获取坐标的示例源代码 
 ```csharp
 try
 {

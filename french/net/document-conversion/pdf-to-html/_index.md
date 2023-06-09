@@ -42,7 +42,7 @@ pdfDocument.Save(dataDir + "output_out.html", SaveFormat.Html);
 
  Remplacer`"YOUR DOCUMENTS DIRECTORY"`avec le répertoire souhaité dans lequel vous souhaitez enregistrer le fichier HTML de sortie.
 
-### Exemple de code source pour PDF vers HTML en utilisant Aspose.Words pour .NET
+### Exemple de code source pour PDF vers HTML en utilisant Aspose.PDF pour .NET
 
 ```csharp
 // Chemin d'accès au répertoire des documents.

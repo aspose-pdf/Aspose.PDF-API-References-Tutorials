@@ -97,7 +97,7 @@ doc.Save(dataDir);
 Console.WriteLine("\nTable displayed successfully on a page.\nFile saved at location: " + dataDir);
 ```
 
-### Ejemplo de código fuente para Render Table usando Aspose.Words para .NET
+### Ejemplo de código fuente para Render Table usando Aspose.PDF para .NET
 
 ```csharp
 // La ruta al directorio de documentos.

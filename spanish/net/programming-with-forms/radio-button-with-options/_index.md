@@ -47,7 +47,7 @@ rf. PartialName = "radio";
 doc.Form.Add(rf, 1);
 ```
 
-## Paso 5: Agregar opciones de botón de opción
+## Paso 5: Agregar opciones de botón de radio
 
 Agregue las opciones del botón de radio al objeto RadioButtonField:
 
@@ -108,7 +108,7 @@ dataDir = dataDir + "RadioButtonWithOptions_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Ejemplo de código fuente para botón de radio con opciones usando Aspose.Words para .NET 
+### Ejemplo de código fuente para botón de radio con opciones usando Aspose.PDF para .NET 
 ```csharp
 try
 {

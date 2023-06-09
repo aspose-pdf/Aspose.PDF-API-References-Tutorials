@@ -67,7 +67,7 @@ dataDir = dataDir + "HorizontallyAndVerticallyRadioButtons_out.pdf";
 formEditor.Save(dataDir);
 ```
 
-### 使用 Aspose.Words for .NET 的水平和垂直单选按钮的示例源代码 
+### 使用 Aspose.PDF for .NET 的水平和垂直单选按钮的示例源代码 
 ```csharp
 try
 {

@@ -30,7 +30,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document pdfDocument = new Document(dataDir + "GetProperties.pdf");
 ```
 
-## الخطوة 3: قم بالوصول إلى مجموعة الصفحات
+## الخطوة 3: الوصول إلى مجموعة الصفحات
  يمكنك الآن الوصول إلى مجموعة صفحات المستند باستخدام امتداد`Pages` ممتلكات`pdfDocument` هدف.
 
 ```csharp

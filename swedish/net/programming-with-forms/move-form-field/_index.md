@@ -51,7 +51,7 @@ dataDir = dataDir + "MoveFormField_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Exempel på källkod för Move Form Field med Aspose.Words för .NET 
+### Exempel på källkod för Move Form Field med Aspose.PDF för .NET 
 ```csharp
 // Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

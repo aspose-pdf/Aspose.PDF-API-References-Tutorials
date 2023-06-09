@@ -1,6 +1,6 @@
 ---
-title: Nascondi i numeri di pagina nel sommario
-linktitle: Nascondi i numeri di pagina nel sommario
+title: Nascondi i numeri di pagina nel TOC
+linktitle: Nascondi i numeri di pagina nel TOC
 second_title: Aspose.PDF per riferimento API .NET
 description: Scopri come nascondere i numeri di pagina in un sommario utilizzando Aspose.PDF per .NET con questa guida dettagliata.
 type: docs
@@ -11,7 +11,7 @@ In questo articolo, discuteremo l'implementazione della funzione Nascondi i nume
 
 ## Introduzione a Aspose.PDF per .NET
 
-Aspose.PDF per .NET è un potente componente di manipolazione PDF che consente agli sviluppatori di creare, modificare e manipolare file PDF a livello di codice. Fornisce una vasta gamma di caratteristiche e funzionalità che semplificano il lavoro con i documenti PDF. Aspose.PDF per .NET supporta entrambi i sistemi operativi a 32 e 64 bit e può essere utilizzato con le piattaforme .NET Framework, .NET Core e Xamarin. 
+Aspose.PDF per .NET è un potente componente di manipolazione PDF che consente agli sviluppatori di creare, modificare e manipolare file PDF a livello di programmazione. Fornisce una vasta gamma di caratteristiche e funzionalità che semplificano il lavoro con i documenti PDF. Aspose.PDF per .NET supporta entrambi i sistemi operativi a 32 e 64 bit e può essere utilizzato con le piattaforme .NET Framework, .NET Core e Xamarin. 
 
 ## Cos'è la funzione Nascondi i numeri di pagina nel sommario?
 
@@ -120,7 +120,7 @@ tocInfo.Title = title;
 //Aggiungi la sezione dell'elenco alla raccolta delle sezioni del documento Pdf
 tocPage.TocInfo = tocInfo;
 //Definire il formato dell'elenco a quattro livelli impostando i margini sinistri e
-//impostazioni del formato di testo di ciascun livello
+//impostazioni del formato di testo di ogni livello
 
 tocInfo.IsShowPageNumbers = false;
 tocInfo.FormatArrayLength = 4;

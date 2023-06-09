@@ -92,7 +92,7 @@ dataDir = dataDir + "CreateDoc_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Exempel på källkod för Create Doc med Aspose.Words för .NET 
+### Exempel på källkod för Skapa dokument med Aspose.PDF för .NET 
 ```csharp
 try
 {
@@ -101,7 +101,7 @@ try
 	// Skapa ett nytt dokument
 	Document doc = new Document();
 	Page page = doc.Pages.Add();
-	// Lägg till alternativknappfält
+	// Lägg till alternativknappsfält
 	RadioButtonField field = new RadioButtonField(page);
 	field.Rect = new Aspose.Pdf.Rectangle(40, 650, 100, 720);
 	field.PartialName = "NewField";

@@ -52,7 +52,7 @@ pdfDocument.Save(dataDir);
 
 代替`"YOUR DOCUMENTS DIRECTORY"`使用要保存输出 PDF/A 文件的所需目录。
 
-### 使用 Aspose.Words for .NET 将 PDF 转换为 HTML 的示例源代码
+### 使用 Aspose.PDF for .NET 将 PDF 转换为 HTML 的示例源代码
 
 ```csharp
 //文档目录的路径。
@@ -66,7 +66,7 @@ Document pdfDocument = new Document(dataDir + "PDFToPDFA.pdf");
 pdfDocument.Convert(dataDir + "log.xml", PdfFormat.PDF_A_1B, ConvertErrorAction.Delete);
 
 dataDir = dataDir + "PDFToPDFA_out.pdf";
-//保存输出文档
+//保存输出文件
 pdfDocument.Save(dataDir);
 
 Console.WriteLine("\nPDF file converted to PDF/A-1b compliant PDF.\nFile saved at " + dataDir);

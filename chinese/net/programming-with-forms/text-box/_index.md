@@ -76,7 +76,7 @@ pdfDocument.Save(dataDir);
 
 请务必指定已编辑 PDF 的完整路径和文件名。
 
-### 使用 Aspose.Words for .NET 的文本框示例源代码 
+### 使用 Aspose.PDF for .NET 的文本框示例源代码 
 ```csharp
 //文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";

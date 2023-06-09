@@ -47,7 +47,7 @@ Wir verwenden die Methode „GetWidth()“, um die Breite der Tabelle zu ermitte
 Console.WriteLine(table.GetWidth());
 ```
 
-### Beispielquellcode zum Abrufen der Tabellenbreite mit Aspose.Words für .NET
+### Beispielquellcode zum Abrufen der Tabellenbreite mit Aspose.PDF für .NET
 
 ```csharp
 // Erstellen Sie ein neues Dokument

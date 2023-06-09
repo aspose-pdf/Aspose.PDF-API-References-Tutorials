@@ -26,7 +26,7 @@ url: /ar/net/programming-with-document/getfileinfo/
 // المسار إلى وثيقة PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//افتح مستند PDF
+// افتح مستند PDF
 Document pdfDocument = new Document(dataDir + "GetFileInfo.pdf");
 ```
 
@@ -59,7 +59,7 @@ Console.WriteLine("Title: {0}", docInfo.Title);
 // المسار إلى وثيقة PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//افتح مستند PDF
+// افتح مستند PDF
 Document pdfDocument = new Document(dataDir + "GetFileInfo.pdf");
 
 // احصل على معلومات الوثيقة

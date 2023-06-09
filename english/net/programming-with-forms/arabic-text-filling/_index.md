@@ -61,7 +61,7 @@ We also display a message to indicate the success of filling in the Arabic text:
 Console.WriteLine("\nArabic text successfully filled in the form field.\nFile saved in the following location: " + dataDir);
 ```
 
-### Sample source code for Arabic Text Filling using Aspose.Words for .NET 
+### Sample source code for Arabic Text Filling using Aspose.PDF for .NET 
 ```csharp
 // The path to the documents directory.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

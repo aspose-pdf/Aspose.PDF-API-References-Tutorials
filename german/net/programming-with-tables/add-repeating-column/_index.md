@@ -50,7 +50,7 @@ mytable.RepeatingColumnsCount = 5;
 page.Paragraphs.Add(mytable);
 ```
 
-Wir fügen zuerst die Haupttabelle hinzu (`outerTable`zum PDF-Dokument. Als nächstes fügen wir die verschachtelte Tabelle hinzu (`mytable` ) als Absatz in einer Zelle in der Haupttabelle. Wir geben auch die Anzahl der wiederholten Spalten an`mytable` (in diesem Beispiel 5 Spalten).
+Wir fügen zuerst die Haupttabelle hinzu (`outerTable`) zum PDF-Dokument. Als nächstes fügen wir die verschachtelte Tabelle hinzu (`mytable` ) als Absatz in einer Zelle in der Haupttabelle. Wir geben auch die Anzahl der wiederholten Spalten an`mytable` (in diesem Beispiel 5 Spalten).
 
 ## Schritt 5: Überschriften und Zeilen hinzufügen
 Jetzt fügen wir die Überschriften und Zeilen zur Tabelle hinzu.
@@ -70,7 +70,7 @@ for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
      row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
      row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
      // ...
-     // Fügen Sie hier die anderen Spalten hinzu
+     //Fügen Sie hier die anderen Spalten hinzu
 }
 ```
 
@@ -86,7 +86,7 @@ doc.Save(outFile);
 
 Stellen Sie sicher, dass Sie das richtige Verzeichnis und den richtigen Dateinamen angeben, um die ausgegebene PDF-Datei zu speichern.
 
-### Beispielquellcode zum Hinzufügen einer sich wiederholenden Spalte mit Aspose.Words für .NET
+### Beispielquellcode zum Hinzufügen einer sich wiederholenden Spalte mit Aspose.PDF für .NET
 
 ```csharp
 // Der Pfad zum Dokumentenverzeichnis.
@@ -108,7 +108,7 @@ mytable.Broken = TableBroken.VerticalInSamePage;
 mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;
 
 // Fügen Sie die äußere Tabelle zu den Seitenabsätzen hinzu
-//Mytable zur OuterTable hinzufügen
+// Mytable zur OuterTable hinzufügen
 page.Paragraphs.Add(outerTable);
 var bodyRow = outerTable.Rows.Add();
 var bodyCell = bodyRow.Cells.Add();

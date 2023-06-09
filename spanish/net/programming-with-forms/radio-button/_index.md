@@ -42,7 +42,7 @@ Cree una instancia de un objeto RadioButtonField especificando el número de pá
 RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
 ```
 
-## Paso 5: Agregar opciones de botón de opción
+## Paso 5: Agregar opciones de botón de radio
 
 Agregue opciones de botón de opción al objeto RadioButtonField especificando las coordenadas de cada opción con un objeto Rectangle:
 
@@ -68,7 +68,7 @@ dataDir = dataDir + "RadioButton_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Ejemplo de código fuente para Radio Button usando Aspose.Words para .NET 
+### Ejemplo de código fuente para Radio Button usando Aspose.PDF para .NET 
 ```csharp
 try
 {

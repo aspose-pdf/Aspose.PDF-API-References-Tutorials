@@ -26,7 +26,7 @@ url: /ar/net/programming-with-document/getdocumentwindow/
 // المسار إلى وثيقة PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//افتح مستند PDF
+// افتح مستند PDF
 Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
 ```
 

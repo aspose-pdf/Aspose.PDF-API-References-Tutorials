@@ -50,7 +50,7 @@ mytable.RepeatingColumnsCount = 5;
 page.Paragraphs.Add(mytable);
 ```
 
-Nous ajoutons d'abord la table principale (`outerTable`au document PDF. Ensuite, nous ajoutons la table imbriquée (`mytable` ) sous forme de paragraphe dans une cellule du tableau principal. Nous spécifions également le nombre de colonnes répétées pour`mytable` (dans cet exemple, 5 colonnes).
+Nous ajoutons d'abord la table principale (`outerTable`) au document PDF. Ensuite, nous ajoutons la table imbriquée (`mytable` ) sous forme de paragraphe dans une cellule du tableau principal. Nous spécifions également le nombre de colonnes répétées pour`mytable` (dans cet exemple, 5 colonnes).
 
 ## Étape 5 : Ajouter des en-têtes et des lignes
 Nous ajoutons maintenant les en-têtes et les lignes au tableau.
@@ -70,7 +70,7 @@ for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
      row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
      row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
      // ...
-     // Ajouter les autres colonnes ici
+     //Ajouter les autres colonnes ici
 }
 ```
 
@@ -86,7 +86,7 @@ doc.Save(outFile);
 
 Assurez-vous de spécifier le répertoire et le nom de fichier corrects pour enregistrer le fichier PDF de sortie.
 
-### Exemple de code source pour ajouter une colonne répétitive à l'aide de Aspose.Words pour .NET
+### Exemple de code source pour ajouter une colonne répétitive à l'aide d'Aspose.PDF pour .NET
 
 ```csharp
 // Chemin d'accès au répertoire des documents.
@@ -108,7 +108,7 @@ mytable.Broken = TableBroken.VerticalInSamePage;
 mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;
 
 // Ajouter l'outerTable aux paragraphes de la page
-//Ajouter mytable à outerTable
+// Ajouter mytable à outerTable
 page.Paragraphs.Add(outerTable);
 var bodyRow = outerTable.Rows.Add();
 var bodyCell = bodyRow.Cells.Add();

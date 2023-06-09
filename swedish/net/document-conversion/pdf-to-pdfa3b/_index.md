@@ -51,7 +51,7 @@ pdfDocument.Save(dataDir);
 
  Byta ut`"YOUR DOCUMENTS DIRECTORY"` med önskad katalog där du vill spara den utgående PDF/A-3b-filen.
 
-### Exempel på källkod för PDF till PDFA3b med Aspose.Words för .NET
+### Exempel på källkod för PDF till PDFA3b med Aspose.PDF för .NET
 
 ```csharp
 // Sökvägen till dokumentkatalogen.

@@ -30,14 +30,14 @@ Document pdfDocument = new Document(dataDir + "UpdateDimensions.pdf");
 ```
 
 ## Étape 3 : Ajoutez une page vierge (si nécessaire)
- Si le document PDF contient déjà des pages, vous pouvez accéder à une page existante à l'aide de l'index`1` (la première page a un index de 1). Sinon, vous pouvez ajouter une nouvelle page au document.
+Si le document PDF contient déjà des pages, vous pouvez accéder à une page existante à l'aide de l'index`1` (la première page a un index de 1). Sinon, vous pouvez ajouter une nouvelle page au document.
 
 ```csharp
 Page page = pdfDocument.Pages.Count > 0? pdfDocument.Pages[1] : pdfDocument.Pages.Add();
 ```
 
 ## Étape 4 : Obtenir les dimensions de la page
- Vous pouvez maintenant obtenir les dimensions de la page en utilisant le`GetPageRect()` méthode de la`Page` objet. Cette méthode renvoie un`Rectangle`objet contenant les dimensions de la page. Vous pouvez accéder à la largeur et à la hauteur à l'aide de la`Width` et`Height` propriétés.
+ Vous pouvez maintenant obtenir les dimensions de la page en utilisant le`GetPageRect()` méthode de la`Page` objet. Cette méthode renvoie un`Rectangle` objet contenant les dimensions de la page. Vous pouvez accéder à la largeur et à la hauteur à l'aide de la`Width` et`Height` propriétés.
 
 ```csharp
 Console.WriteLine(page.GetPageRect(true).Width.ToString() + ":" + page.GetPageRect(true).Height);

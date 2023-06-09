@@ -1,0 +1,181 @@
+---
+title: Таблица в нижнем колонтитуле
+linktitle: Таблица в нижнем колонтитуле
+second_title: Aspose.PDF для справочника API .NET
+description: Узнайте, как добавить таблицу в верхний/нижний колонтитул документа PDF с помощью Aspose.PDF для .NET.
+type: docs
+weight: 170
+url: /ru/net/programming-with-stamps-and-watermarks/table-in-header-footer-section/
+---
+В этом руководстве мы шаг за шагом расскажем, как добавить таблицу в верхний или нижний колонтитул документа PDF с помощью Aspose.PDF для .NET. В предоставленном исходном коде C# показано, как создать пустой документ PDF, добавить страницу, настроить раздел заголовка, создать таблицу, добавить строки и ячейки в таблицу и, наконец, сохранить документ PDF.
+
+## Шаг 1. Настройка среды
+
+Прежде чем начать, убедитесь, что у вас есть следующее:
+
+- Установленная среда разработки .NET.
+- Библиотека Aspose.PDF для .NET загружена и указана в вашем проекте.
+
+## Шаг 2: Создание PDF-документа и страницы
+
+ Первым шагом является создание экземпляра`Document` класс и добавить страницу в документ. Вот как:
+
+```csharp
+// Путь к каталогу документов.
+string dataDir = "YOUR DOCUMENTS DIRECTORY";
+
+// Создание экземпляра объекта Document
+Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document();
+
+// Создайте страницу в документе PDF
+Aspose.Pdf.Page page = pdfDocument.Pages.Add();
+```
+
+Обязательно замените «КАТАЛОГ ВАШИХ ДОКУМЕНТОВ» на фактический путь к каталогу, в котором вы хотите сохранить PDF-документ.
+
+## Шаг 3: Настройка раздела заголовка
+
+ Теперь мы настроим раздел заголовка PDF-документа, создав экземпляр`HeaderFooter` сорт. Вот как:
+
+```csharp
+// Создайте раздел заголовка для файла PDF
+Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
+
+// Определите раздел заголовка для страницы
+page. Header = header;
+
+// Установите верхнее поле раздела заголовка
+header. Margin. Top = 20;
+```
+
+## Шаг 4: Создание таблицы
+
+ Теперь мы собираемся создать таблицу, используя`Table`class и добавьте его в коллекцию абзацев раздела заголовка. Вот как:
+
+```csharp
+// Создать экземпляр объекта таблицы
+Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
+
+// Добавьте таблицу в коллекцию абзацев раздела заголовка.
+header.Paragraphs.Add(tab1);
+
+// Определить ширину столбцов таблицы
+tab1.ColumnWidths = "60,300";
+```
+
+Приведенный выше код создает таблицу с двумя столбцами заданной ширины.
+
+## Шаг 5: Добавьте строки и ячейки в таблицу
+
+ Теперь мы добавим строки и ячейки в таблицу с помощью`Row` класс и`Cell` сорт. Вот как:
+
+```csharp
+// Создайте строку в таблице и добавьте ячейки
+Aspose.Pdf.Row row1 = tab1.Rows.Add();
+row1.Cells.Add("Table in header section");
+row1.BackgroundColor = Color.Gray;
+
+// Объединить первую ячейку первой строки
+tab1.Rows[0].Cells[0].ColSpan = 2;
+tab1.Rows[0].Cells[0].DefaultCellTextState.ForegroundColor = Color.Cyan;
+tab1.Rows[0].Cells[0].DefaultCellTextState.Font = FontRepository.FindFont("Helvetica");
+
+// Создайте еще одну строку в таблице и добавьте ячейку с изображением
+Aspose.Pdf.Row row2 = tab1.Rows.Add();
+row2.BackgroundColor = Color.White;
+Aspose.Pdf.Cell cell2 = row2.Cells.Add();
+Aspose.Pdf.Image img = new Aspose.Pdf.Image();
+img.File = dataDir + "aspose-logo.jpg";
+img. FixWidth = 60;
+cell2.Paragraphs.Add(img);
+row2.Cells.Add("The logo is beautiful!");
+row2.Cells[1].DefaultCellTextState.Font = FontRepository.FindFont("Helvetica");
+row2.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
+row2.Cells[1].Alignment = Aspose.Pdf.HorizontalAlignment.Center;
+```
+
+## Шаг 6: Сохранение PDF-документа
+
+После добавления таблицы в раздел заголовка мы можем сохранить PDF-документ. Вот как:
+
+```csharp
+// Сохраните PDF-файл
+pdfDocument.Save(dataDir + "TableInHeaderFooterSection_out.pdf");
+```
+
+Обязательно замените «КАТАЛОГ ВАШИХ ДОКУМЕНТОВ» на фактический путь к каталогу, в котором вы хотите сохранить PDF-документ.
+
+### Пример исходного кода для таблицы в разделе нижнего колонтитула верхнего колонтитула с использованием Aspose.PDF для .NET 
+```csharp
+
+// Путь к каталогу документов.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+
+// Создайте экземпляр документа, вызвав пустой конструктор
+Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document();
+
+// Создать страницу в pdf документе
+Aspose.Pdf.Page page = pdfDocument.Pages.Add();
+
+// Создайте раздел заголовка PDF-файла
+Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
+
+// Установите нечетный заголовок для файла PDF
+page.Header = header;
+
+//Установите верхнее поле для раздела заголовка
+header.Margin.Top = 20;
+
+// Создать экземпляр табличного объекта
+Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
+
+// Добавьте таблицу в коллекцию абзацев нужного раздела
+header.Paragraphs.Add(tab1);
+
+// Установите границу ячейки по умолчанию, используя объект BorderInfo
+tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
+
+// Задайте ширину столбцов таблицы
+tab1.ColumnWidths = "60 300";
+Aspose.Pdf.Image img = new Aspose.Pdf.Image();
+img.File = dataDir + "aspose-logo.jpg";
+
+// Создайте строки в таблице, а затем ячейки в строках
+Aspose.Pdf.Row row1 = tab1.Rows.Add();
+row1.Cells.Add("Table in Header Section");
+row1.BackgroundColor = Color.Gray;
+
+// Установите значение диапазона строк для первой строки как 2
+tab1.Rows[0].Cells[0].ColSpan = 2;
+tab1.Rows[0].Cells[0].DefaultCellTextState.ForegroundColor = Color.Cyan;
+tab1.Rows[0].Cells[0].DefaultCellTextState.Font = FontRepository.FindFont("Helvetica");
+
+// Создайте строки в таблице, а затем ячейки в строках
+Aspose.Pdf.Row row2 = tab1.Rows.Add();
+
+// Установите цвет фона для Row2
+row2.BackgroundColor = Color.White;
+
+// Добавьте ячейку, содержащую изображение
+Aspose.Pdf.Cell cell2 = row2.Cells.Add();
+
+// Установите ширину изображения на 60
+img.FixWidth = 60;
+
+// Добавьте изображение в ячейку таблицы
+cell2.Paragraphs.Add(img);
+row2.Cells.Add("Logo is looking fine !");
+row2.Cells[1].DefaultCellTextState.Font = FontRepository.FindFont("Helvetica");
+
+// Установите вертикальное выравнивание текста по центру
+row2.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
+row2.Cells[1].Alignment = Aspose.Pdf.HorizontalAlignment.Center;
+
+// Сохраните PDF-файл
+pdfDocument.Save(dataDir + "TableInHeaderFooterSection_out.pdf");
+
+```
+
+## Заключение
+
+Поздравляем! Вы узнали, как добавить таблицу в верхний или нижний колонтитул документа PDF с помощью Aspose.PDF для .NET. Теперь вы можете настраивать верхние и нижние колонтитулы, добавляя таблицы для отображения дополнительной информации в документах PDF.

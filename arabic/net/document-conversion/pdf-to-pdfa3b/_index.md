@@ -51,7 +51,7 @@ pdfDocument.Save(dataDir);
 
  يستبدل`"YOUR DOCUMENTS DIRECTORY"` مع الدليل المطلوب حيث تريد حفظ ملف PDF / A-3b الناتج.
 
-### مثال على شفرة المصدر لـ PDF إلى PDFA3b باستخدام Aspose.Words for .NET
+### مثال على كود المصدر لـ PDF إلى PDFA3b باستخدام Aspose.PDF for .NET
 
 ```csharp
 // المسار إلى دليل المستندات.

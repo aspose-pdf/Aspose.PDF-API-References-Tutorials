@@ -85,7 +85,7 @@ Slutligen kommer vi att spara PDF-dokumentet:
 doc.Save(dataDir + "43620_ByWords_out.pdf");
 ```
 
-### Exempel på källkod för textjustering för innehåll i tabellrader med Aspose.Words för .NET
+### Exempel på källkod för textjustering för tabellradsinnehåll med Aspose.PDF för .NET
 
 ```csharp
 var dataDir = "YOUR DOCUMENT DIRECTORY";

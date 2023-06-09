@@ -43,7 +43,7 @@ dataDir = dataDir + "DeleteFormField_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Ejemplo de código fuente para Eliminar campo de formulario usando Aspose.Words para .NET 
+### Ejemplo de código fuente para Eliminar campo de formulario usando Aspose.PDF para .NET 
 ```csharp
 // La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

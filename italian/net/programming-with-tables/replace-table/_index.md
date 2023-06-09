@@ -33,7 +33,7 @@ TableAbsorber absorber = new TableAbsorber();
 Visiteremo ora la prima pagina del documento PDF utilizzando l'assorbitore:
 
 ```csharp
-//Visita la prima pagina con l'assorbitore
+// Visita la prima pagina con l'assorbitore
 absorb.Visit(pdfDocument.Pages[1]);
 ```
 
@@ -74,7 +74,7 @@ Infine, salviamo il documento PDF modificato:
 pdfDocument.Save(dataDir + "TableReplaced_out.pdf");
 ```
 
-### Esempio di codice sorgente per Sostituisci tabella utilizzando Aspose.Words per .NET
+### Esempio di codice sorgente per Sostituisci tabella utilizzando Aspose.PDF per .NET
 
 ```csharp
 // Il percorso della directory dei documenti.

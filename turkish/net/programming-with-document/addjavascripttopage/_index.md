@@ -18,7 +18,7 @@ Bir PDF dosyasına JavaScript eklemek için Aspose.PDF for .NET'i kullanacağız
 // Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Mevcut bir PDF dosyasını yükleyin
+// Mevcut bir PDF dosyasını yükleyin
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
@@ -39,7 +39,7 @@ Bu eğitimde, belge açıldığında PDF dosyasını belirtilen seçeneklerle ya
 
 ## 3. Adım: Sayfa Düzeyinde JavaScript ekleyin
 
- Sayfa düzeyinde JavaScript eklemek için kullanacağız`JavascriptAction` sınıf ve`Actions` Aspose.PDF for .NET tarafından sağlanan özellik. Bu özellik, sayfa açıldığında veya kapatıldığında yürütülecek JavaScript deyimlerini belirtmenize olanak tanır.
+ Sayfa düzeyinde JavaScript eklemek için kullanacağız`JavascriptAction` sınıf ve`Actions`Aspose.PDF for .NET tarafından sağlanan özellik. Bu özellik, sayfa açıldığında veya kapatıldığında yürütülecek JavaScript deyimlerini belirtmenize olanak tanır.
 
 ```csharp
 // Sayfa Düzeyinde JavaScript Ekleme
@@ -70,7 +70,7 @@ Bu kod, değiştirilen PDF dosyasını belirtilen dizine kaydedecektir.
 // Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Mevcut bir PDF dosyasını yükleyin
+// Mevcut bir PDF dosyasını yükleyin
 Document doc = new Document(dataDir + "input.pdf");
 
 // Belge Düzeyinde JavaScript Ekleme

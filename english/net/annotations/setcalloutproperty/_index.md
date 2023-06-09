@@ -15,7 +15,7 @@ In this tutorial, we will guide you through the process of setting callout prope
 
 If you haven't already done so, you will need to [download](https://releases.aspose.com/pdf/net/) and install Aspose.PDF for .NET from the Aspose Releases or via NuGet package manager.
 
-## Create a new PDF document
+## Step 1: Create a new PDF document
 
 Create a new PDF document using the `Document` class provided by Aspose.PDF for .NET.
 
@@ -25,7 +25,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 ```
 
-## Add a new page to the document
+## Step 2: Add a new page to the document
 
 Add a new page to the document using the `Pages` collection of the `Document` class.
 
@@ -33,7 +33,7 @@ Add a new page to the document using the `Pages` collection of the `Document` cl
 Page page = doc.Pages.Add();
 ```
 
-## Set default appearance
+## Step 3: Set default appearance
 
 Set the default appearance for the free text annotation by creating a new `DefaultAppearance` object and setting its properties such as `TextColor` and `FontSize`.
 
@@ -43,7 +43,7 @@ da.TextColor = System.Drawing.Color.Red;
 da.FontSize = 10;
 ```
 
-## Create a free text annotation with callout
+## Step 4: Create a free text annotation with callout
 
 Create a new free text annotation with callout by using the `FreeTextAnnotation` class. Set the `Intent` property to `FreeTextIntent.FreeTextCallout` to specify that this is a callout annotation. Set the `EndingStyle` property to `LineEnding.OpenArrow` to specify the style of the arrow at the end of the callout. Set the `Callout` property to an array of `Point` objects that represent the points on the page where the callout line should be drawn.
 
@@ -57,7 +57,7 @@ fta.Callout = new Point[]
 };
 ```
 
-## Add the free text annotation to the page
+## Step 5: Add the free text annotation to the page
 
 Add the free text annotation to the page by using the `Annotations` collection of the `Page` class.
 
@@ -65,7 +65,7 @@ Add the free text annotation to the page by using the `Annotations` collection o
 page.Annotations.Add(fta);
 ```
 
-## Add text to the annotation
+## Step 6: Add text to the annotation
 
 Add text to the annotation by setting the `RichText` property to a string of formatted XML. In this tutorial, we're setting the text color to red and the font size to 9.
 
@@ -73,7 +73,7 @@ Add text to the annotation by setting the `RichText` property to a string of for
 fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\"  style=\"color:#FF
 ```
 
-## 8. save the document
+## Step 7: save the document
 
 Now save the document by using the following code:
 

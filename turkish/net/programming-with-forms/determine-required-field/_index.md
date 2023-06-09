@@ -51,7 +51,7 @@ Console.WriteLine("The field " + field.FullName + " is required");
 }
 ```
 
-### Aspose.Words for .NET kullanarak Zorunlu Alanı Belirle için örnek kaynak kodu 
+### Aspose.PDF for .NET kullanarak Zorunlu Alanı Belirle için örnek kaynak kodu 
 ```csharp
 // Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

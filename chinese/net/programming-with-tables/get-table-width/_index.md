@@ -47,7 +47,7 @@ cell = row.Cells.Add("Text from cell 2");
 Console.WriteLine(table.GetWidth());
 ```
 
-### 使用 Aspose.Words for .NET 获取表格宽度的示例源代码
+### 使用 Aspose.PDF for .NET 获取表格宽度的示例源代码
 
 ```csharp
 //创建一个新文档

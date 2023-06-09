@@ -33,7 +33,7 @@ string[] fileEntries = Directory.GetFiles(dataDir, "*.JPG");
 
  değiştirdiğinizden emin olun`"YOUR DOCUMENTS DIRECTORY"` JPG resimlerinizin bulunduğu gerçek dizinle.
 
-## 2. Adım: Sayfanın ve görselin oluşturulması
+## Adım 2: Sayfanın ve görselin oluşturulması
 JPG dosyalarına göz attıktan sonra her dosya için bir sayfa ve bir görsel oluşturacağız. Aşağıdaki kodu kullanın:
 
 ```csharp
@@ -84,7 +84,7 @@ doc.Save(dataDir + "SetPageOrientation_out.pdf");
 
  Yer değiştirmek`"YOUR DOCUMENTS DIRECTORY"` Çıktı PDF dosyasını kaydetmek istediğiniz istediğiniz dizinle.
 
-### Aspose.Words for .NET kullanan Görüntü Boyutlarına Göre Sayfa Yönlendirme için örnek kaynak kodu
+### Aspose.PDF for .NET kullanan Görüntü Boyutlarına Göre Sayfa Yönlendirme için örnek kaynak kodu
 
 ```csharp
 

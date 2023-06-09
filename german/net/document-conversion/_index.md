@@ -31,7 +31,7 @@ Sie erfahren, wie Sie Konvertierungseinstellungen festlegen, Text und Bilder ext
 | [Hinweise zu PDF-zu-PNG-Schriftarten](./pdf-to-png-font-hinting/) | Schritt-für-Schritt-Anleitung zum Konvertieren von PDF in PNG mit Schriftarthinweisen mithilfe von Aspose.PDF für .NET. |  
 | [PDF zu PPT](./pdf-to-ppt/) | Schritt-für-Schritt-Anleitung zum Konvertieren von PDF in PPT mit Aspose.PDF für .NET. |  
 | [PDF zu SVG](./pdf-to-svg/) | Schritt-für-Schritt-Anleitung zum Konvertieren von PDF in SVG mit Aspose.PDF für .NET. |  
-| [PDF zu Te X](./pdf-to-te-x/) | Schritt-für-Schritt-Anleitung zum Konvertieren von PDF in Te X mit Aspose.PDF für .NET. |  
+| [PDF zu TeX](./pdf-to-tex/) | Schritt-für-Schritt-Anleitung zum Konvertieren von PDF in Te X mit Aspose.PDF für .NET. |  
 | [PDF zu XLS](./pdf-to-xls/) | Schritt-für-Schritt-Anleitung zum Konvertieren von PDF in XLS mit Aspose.PDF für .NET. |  
 | [PDF zu XML](./pdf-to-xml/) | Schritt-für-Schritt-Anleitung zum Konvertieren von PDF in XML mit Aspose.PDF für .NET. |  
 | [PDF zu XPS](./pdf-to-xps/) | Schritt-für-Schritt-Anleitung zum Konvertieren von PDF in XPS mit Aspose.PDF für .NET. |  

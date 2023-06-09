@@ -13,7 +13,7 @@ In diesem Tutorial erfahren Sie, wie Sie mit der Funktion „Inhaltsverzeichnis 
 
 ## Schritt 1: Laden Sie die vorhandene PDF-Datei
 
-Um zu beginnen, müssen wir eine vorhandene PDF-Datei laden. Ersetzen`"YOUR DOCUMENT DIRECTORY"` Geben Sie im folgenden Code den tatsächlichen Pfad zu Ihrer PDF-Datei ein:
+ Um zu beginnen, müssen wir eine vorhandene PDF-Datei laden. Ersetzen`"YOUR DOCUMENT DIRECTORY"` Geben Sie im folgenden Code den tatsächlichen Pfad zu Ihrer PDF-Datei ein:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -85,7 +85,7 @@ Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at "
 // Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Laden Sie eine vorhandene PDF-Datei
+// Laden Sie eine vorhandene PDF-Datei
 Document doc = new Document(dataDir + "AddTOC.pdf");
 
 // Erhalten Sie Zugriff auf die erste Seite der PDF-Datei
@@ -124,7 +124,7 @@ for (int i = 0; i < 2; i++)
 	// Zielkoordinate
 	segment2.Text = titles[i];
 
-	// Fügen Sie der Seite mit dem Inhaltsverzeichnis eine Überschrift hinzu
+	//Fügen Sie der Seite mit dem Inhaltsverzeichnis eine Überschrift hinzu
 	tocPage.Paragraphs.Add(heading2);
 }
 dataDir = dataDir + "TOC_out.pdf";

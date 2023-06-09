@@ -78,7 +78,7 @@ Bu kod, güncellenmiş PDF belgesini açıklamayla birlikte belge dizinine "AddS
 // Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//PDF belgesini aç
+// PDF belgesini aç
 Document doc = new Document(dataDir + "AddSwfFileAsAnnotation.pdf");
 
 // Ek açıklamayı eklemeniz gereken sayfanın referansını alın

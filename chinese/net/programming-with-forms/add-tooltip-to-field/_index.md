@@ -59,7 +59,7 @@ Console.WriteLine("\nTooltip added successfully.\nFile saved at " + dataDir);
 
 确保提供所需的输出文件名和路径。执行这段代码后，修改后的添加了tooltip的PDF表单将保存到指定位置。
 
-### 使用 Aspose.Words for .NET 将工具提示添加到字段的示例源代码 
+### 使用 Aspose.PDF for .NET 将工具提示添加到字段的示例源代码 
 
 ```csharp
 //文档目录的路径。

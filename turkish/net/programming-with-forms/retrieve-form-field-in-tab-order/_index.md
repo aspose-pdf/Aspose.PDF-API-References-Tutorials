@@ -78,7 +78,7 @@ doc.Save(dataDir + "39522_out.pdf");
 
  Burada,`"39522_out.pdf"` değiştirilen belgenin kaydedileceği çıktı dosyasının adıdır. Çıktı dosyası için istediğiniz adı ve konumu belirtin.
 
-### Aspose.Words for .NET kullanarak Form Alanını Sekme Sırasında Al için örnek kaynak kodu 
+### Aspose.PDF for .NET kullanarak Form Alanını Sekme Sırasında Al için örnek kaynak kodu 
 ```csharp
 // Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -109,4 +109,4 @@ foreach (Field field in doc1.Form)
 
 ## Çözüm
 
-Bu öğreticide, Aspose.PDF for .NET kullanarak form alanlarını sekme sırasına göre nasıl alacağımızı öğrendik. Bir PDF belgesi yükleme, form alanlarını sekme sırasına göre alma, sekme sırasını değiştirme ve değiştirilen belgeyi kaydetme ile ilgili adımları ele aldık. Bu adımları izleyerek, form alanlarıyla verimli bir şekilde çalışabilir ve sekme sırasını ihtiyaçlarınıza göre özelleştirebilirsiniz.
+Bu öğreticide, Aspose.PDF for .NET kullanarak form alanlarını sekme sırasına göre nasıl alacağımızı öğrendik. Bir PDF belgesi yükleme, form alanlarını sekme sırasına göre alma, sekme sırasını değiştirme ve değiştirilen belgeyi kaydetme ile ilgili adımları ele aldık. Bu adımları izleyerek, form alanlarıyla verimli bir şekilde çalışabilir ve sekme sırasını gereksinimlerinize göre özelleştirebilirsiniz.

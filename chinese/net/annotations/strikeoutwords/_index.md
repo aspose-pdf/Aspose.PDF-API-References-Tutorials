@@ -9,7 +9,7 @@ url: /zh/net/annotations/strikeoutwords/
 ---
 Aspose.PDF for .NET 是一个 PDF 文档操作和处理库，它提供了创建、修改和转换 PDF 文件的各种功能。 Aspose.PDF 提供的有用功能之一是能够使用 C# 源代码删除 PDF 文档中的单词或短语。在本文中，我们将提供有关如何使用 Aspose.PDF for .NET 删除单词的分步指南。
 
-## 加载 PDF 文档
+## 第 1 步：加载 PDF 文档
 第一步是加载要修改的 PDF 文档。在本教程中，我们将从“您的文档目录”文件夹中加载一个名为“input.pdf”的 PDF 文档。 
 
 ```csharp
@@ -17,7 +17,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document document = new Document(dataDir + "input.pdf");
 ```
 
-## 搜索文本片段
+## 第 2 步：搜索文本片段
 要删除 PDF 文档中的特定单词或短语，您首先需要搜索它们。 Aspose.PDF 提供了一个TextFragmentAbsorber 类，可用于在PDF 文档中搜索特定的文本片段。
 
 ```csharp
@@ -26,7 +26,7 @@ Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.
 
 在上面的代码中，我们在 PDF 文档中搜索文本片段“Estoque”。您可以修改它以搜索您想要删除的任何其他单词或短语。
 
-## 删除文本片段
+## 第 3 步：删除文本片段
 找到文字片段后，下一步就是将它们划掉。 Aspose.PDF 提供了一个 StrikeOutAnnotation 类，可用于为文本片段创建删除线注释。 
 
 ```csharp
@@ -41,8 +41,8 @@ textFragment.Page.Annotations.Add(strikeOut);
 
 在上面的代码中，我们为找到的每个文本片段创建了一个删除线注释。我们还设置了删除线注释的不透明度、边框和颜色。
 
-## 保存修改后的 PDF 文档
-删除文本片段后，保存修改后的文档。
+## 第 4 步：保存修改后的 PDF 文档
+删除文本片段后，保存修改后的文件。
 
 ```csharp
 dataDir = dataDir + "StrikeOutWords_out.pdf";

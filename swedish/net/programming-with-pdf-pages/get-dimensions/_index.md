@@ -2,7 +2,7 @@
 title: Skaffa dimensioner
 linktitle: Skaffa dimensioner
 second_title: Aspose.PDF för .NET API Referens
-description: den här handledningen förklarar vi hur man får PDF-sidadimensioner och utför manipulationer med Aspose.PDF för .NET. Detaljerade steg tillhandahålls för att guida dig genom processen.
+description: I den här handledningen förklarar vi hur man får PDF-sidadimensioner och utför manipulationer med Aspose.PDF för .NET. Detaljerade steg tillhandahålls för att guida dig genom processen.
 type: docs
 weight: 60
 url: /sv/net/programming-with-pdf-pages/get-dimensions/
@@ -30,14 +30,14 @@ Document pdfDocument = new Document(dataDir + "UpdateDimensions.pdf");
 ```
 
 ## Steg 3: Lägg till en tom sida (om det behövs)
- Om PDF-dokumentet redan innehåller sidor kan du hoppa till en befintlig sida med hjälp av indexet`1` (första sidan har ett index på 1). Annars kan du lägga till en ny sida i dokumentet.
+Om PDF-dokumentet redan innehåller sidor kan du hoppa till en befintlig sida med hjälp av indexet`1` (första sidan har ett index på 1). Annars kan du lägga till en ny sida i dokumentet.
 
 ```csharp
 Page page = pdfDocument.Pages.Count > 0? pdfDocument.Pages[1] : pdfDocument.Pages.Add();
 ```
 
 ## Steg 4: Få sidmått
- Du kan nu få sidmåtten med hjälp av`GetPageRect()` metod för`Page` objekt. Denna metod returnerar en`Rectangle`objekt som innehåller sidans dimensioner. Du kan komma åt bredd och höjd med hjälp av`Width` och`Height` egenskaper.
+ Du kan nu få sidmåtten med hjälp av`GetPageRect()` metod för`Page` objekt. Denna metod returnerar en`Rectangle` objekt som innehåller sidans dimensioner. Du kan komma åt bredd och höjd med hjälp av`Width` och`Height` egenskaper.
 
 ```csharp
 Console.WriteLine(page.GetPageRect(true).Width.ToString() + ":" + page.GetPageRect(true).Height);
@@ -77,6 +77,6 @@ Console.WriteLine(page.GetPageRect(true).Width.ToString() + ":" + page.GetPageRe
 ```
 
 ## Slutsats
-I den här handledningen lärde vi oss hur man får dimensionerna på en sida i en PDF-fil med Aspose.PDF för .NET. Genom att följa de angivna stegen kan du enkelt extrahera siddimensioner och utföra andra PDF-manipuleringsoperationer. Aspose.PDF för .NET erbjuder stor flexibilitet för att arbeta med PDF-filer och låter dig utveckla kraftfulla och skräddarsydda lösningar.
+den här handledningen lärde vi oss hur man får dimensionerna på en sida i en PDF-fil med Aspose.PDF för .NET. Genom att följa de angivna stegen kan du enkelt extrahera siddimensioner och utföra andra PDF-manipuleringsoperationer. Aspose.PDF för .NET erbjuder stor flexibilitet för att arbeta med PDF-filer och låter dig utveckla kraftfulla och skräddarsydda lösningar.
 
 Utforska gärna dokumentationen för Aspose.PDF ytterligare för att upptäcka alla funktioner som erbjuds av detta bibliotek.

@@ -70,7 +70,7 @@ table. ColumnWidths = "100 100";
 في هذه الخطوة ، سنضيف صفًا وخلايا إلى الجدول. يمثل كل صف صفًا أفقيًا في الجدول ، ويتم إضافة خلايا إلى الصفوف. أضف الكود التالي:
 
 ```csharp
-// إنشاء كائن صف وإضافته إلى مثيل الجدول
+//إنشاء كائن صف وإضافته إلى مثيل الجدول
 Aspose.Pdf.Row row = table.Rows.Add();
 // قم بإنشاء كائن خلية وإضافته إلى مثيل الصف
 Aspose.Pdf.Cell cell = row.Cells.Add();
@@ -112,7 +112,7 @@ doc.Save(dataDir);
 Console.WriteLine("\nSVG image added successfully inside a table cell.\nFile saved at " + dataDir);
 ```
 
-### مثال على شفرة المصدر لإضافة كائن SVG باستخدام Aspose.Words for .NET
+### مثال على التعليمات البرمجية المصدر لإضافة كائن SVG باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 // المسار إلى دليل المستندات.
@@ -134,7 +134,7 @@ img.FixHeight = 50;
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
 // تعيين العرض لخلايا الجدول
 table.ColumnWidths = "100 100";
-// إنشاء كائن صف وإضافته إلى مثيل الجدول
+//إنشاء كائن صف وإضافته إلى مثيل الجدول
 Aspose.Pdf.Row row = table.Rows.Add();
 // قم بإنشاء كائن خلية وإضافته إلى مثيل الصف
 Aspose.Pdf.Cell cell = row.Cells.Add();

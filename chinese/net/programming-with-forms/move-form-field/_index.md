@@ -51,7 +51,7 @@ dataDir = dataDir + "MoveFormField_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### 使用 Aspose.Words for .NET 移动表单字段的示例源代码 
+### 使用 Aspose.PDF for .NET 移动表单字段的示例源代码 
 ```csharp
 //文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -62,7 +62,7 @@ TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
 //修改字段位置
 textBoxField.Rect = new Aspose.Pdf.Rectangle(300, 400, 600, 500);
 dataDir = dataDir + "MoveFormField_out.pdf";
-//保存修改后的文件
+//保存修改后的文档
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nForm field moved successfully to a new location.\nFile saved at " + dataDir);
 ```

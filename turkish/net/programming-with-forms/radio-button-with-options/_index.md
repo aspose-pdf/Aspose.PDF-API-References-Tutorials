@@ -108,7 +108,7 @@ dataDir = dataDir + "RadioButtonWithOptions_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Aspose.Words for .NET kullanan Radio Button With Options için örnek kaynak kodu 
+### Aspose.PDF for .NET kullanan Radio Button With Options için örnek kaynak kodu 
 ```csharp
 try
 {

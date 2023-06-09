@@ -46,7 +46,7 @@ dataDir = dataDir + "GetParticularPage_out.pdf";
 newDocument.Save(dataDir);
 ```
 
-### Пример исходного кода для получения определенной страницы с использованием Aspose.PDF для .NET 
+### Пример исходного кода для получения конкретной страницы с использованием Aspose.PDF для .NET 
 
 ```csharp
 

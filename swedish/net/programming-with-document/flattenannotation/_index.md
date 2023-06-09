@@ -29,7 +29,7 @@ using Aspose.Pdf;
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 ```
 
-## Steg 4: Platta ut anteckningarna
+## Steg 4: Platta ut kommentarerna
 Platta ut kommentarerna i PDF-dokumentet:
 
 ```csharp

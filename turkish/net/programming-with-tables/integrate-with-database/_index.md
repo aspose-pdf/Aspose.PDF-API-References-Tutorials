@@ -35,7 +35,7 @@ dr[2] = "Female";
 dt.Rows.Add(dr);
 ```
 
-## 3. Adım: PDF Belgesini ve Tablosunu Oluşturma
+## 3. Adım: PDF Belgesi ve Tablosunun Oluşturulması
 Document örneğini oluşturuyoruz ve bu belgeye bir sayfa ekliyoruz. Ardından, tablomuzu PDF belgesinde temsil edecek bir Tablo örneği oluşturuyoruz. Tablo sütun genişliklerini ve kenarlık stillerini tanımlıyoruz.
 
 ```csharp
@@ -71,7 +71,7 @@ doc.Save(dataDir + "DataIntegrated_out.pdf");
 
 Tebrikler! Artık Aspose.PDF for .NET kullanarak veritabanı verilerini bir PDF belgesine nasıl gömeceğinizi biliyorsunuz.
 
-### Aspose.Words for .NET kullanarak Veritabanıyla Entegre Etme için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak Veritabanıyla Entegre Etme için örnek kaynak kodu
 
 ```csharp
 // Belgeler dizininin yolu.
@@ -81,7 +81,7 @@ DataTable dt = new DataTable("Employee");
 dt.Columns.Add("Employee_ID", typeof(Int32));
 dt.Columns.Add("Employee_Name", typeof(string));
 dt.Columns.Add("Gender", typeof(string));
-//DataTable nesnesine programlı olarak 2 satır ekleyin
+// DataTable nesnesine programlı olarak 2 satır ekleyin
 DataRow dr = dt.NewRow();
 dr[0] = 1;
 dr[1] = "John Smith";

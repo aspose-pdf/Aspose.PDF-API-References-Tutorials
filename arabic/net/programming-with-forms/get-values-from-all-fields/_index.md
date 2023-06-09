@@ -38,7 +38,7 @@ Console.WriteLine("Value: {0}", formField.Value);
 }
 ```
 
-### نموذج التعليمات البرمجية المصدر للحصول على قيم من كافة الحقول باستخدام Aspose.Words for .NET 
+### نموذج التعليمات البرمجية المصدر للحصول على قيم من كافة الحقول باستخدام Aspose.PDF لـ .NET 
 ```csharp
 // المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

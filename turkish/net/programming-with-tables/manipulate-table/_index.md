@@ -73,7 +73,7 @@ pdfDocument.Save(dataDir);
 Değiştirilen belge için yol ve dosya adını sağladığınızdan emin olun.
 
 
-### Aspose.Words for .NET kullanarak Tabloyu Yönetmek için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak Tabloyu Yönetmek için örnek kaynak kodu
 
 ```csharp
 try

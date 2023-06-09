@@ -87,7 +87,7 @@ dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Exempel på källkod för grupperade kryssrutor med Aspose.Words för .NET 
+### Exempel på källkod för grupperade kryssrutor med Aspose.PDF för .NET 
 ```csharp
 try
 {

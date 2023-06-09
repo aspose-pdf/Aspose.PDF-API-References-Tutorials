@@ -26,7 +26,7 @@ Il primo passaggio per utilizzare questa funzione è caricare il documento PDF d
 // Il percorso del documento PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Apri il documento PDF
+// Apri il documento PDF
 Document pdfDocument = new Document(dataDir + "GetXMPMetadata.pdf");
 ```
 
@@ -52,7 +52,7 @@ Console.WriteLine(pdfDocument.Metadata["xmp:CustomProperty"]);
 // Il percorso del documento PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Apri il documento PDF
+// Apri il documento PDF
 Document pdfDocument = new Document(dataDir + "GetXMPMetadata.pdf");
 
 // Estrai i metadati XMP

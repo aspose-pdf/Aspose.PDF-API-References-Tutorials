@@ -61,7 +61,7 @@ Console.Out.WriteLine("Field name: " + field.FullName + "-" + "Field value: " + 
 }
 ```
 
-### Пример исходного кода для получения полей из региона с использованием Aspose.Words для .NET 
+### Пример исходного кода для получения полей из региона с использованием Aspose.PDF для .NET 
 ```csharp
 // Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -76,7 +76,7 @@ Aspose.Pdf.Forms.Field[] fields = form.GetFieldsInRect(rectangle);
 // Отображение имен и значений полей
 foreach (Field field in fields)
 {
-	// Показать свойства размещения изображений для всех мест размещения
+	// Показать свойства размещения изображения для всех мест размещения
 	Console.Out.WriteLine("Field Name: " + field.FullName + "-" + "Field Value: " + field.Value);
 }
 ```

@@ -68,7 +68,7 @@ dataDir = dataDir + "RadioButton_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Exempel på källkod för radioknapp med Aspose.Words för .NET 
+### Exempel på källkod för radioknapp med Aspose.PDF för .NET 
 ```csharp
 try
 {
@@ -82,7 +82,7 @@ try
 	RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
 	// Lägg till första alternativknappsalternativet och ange även dess ursprung med Rectangle-objektet
 	radio.AddOption("Test", new Rectangle(0, 0, 20, 20));
-	// Lägg till andra alternativknapp
+	// Lägg till ett andra alternativ för alternativknapp
 	radio.AddOption("Test1", new Rectangle(20, 20, 40, 40));
 	// Lägg till alternativknapp för att bilda objekt av dokumentobjekt
 	pdfDocument.Form.Add(radio);

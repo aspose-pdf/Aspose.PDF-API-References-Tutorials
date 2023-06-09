@@ -51,7 +51,7 @@ dataDir = dataDir + "MoveFormField_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Esempio di codice sorgente per Move Form Field utilizzando Aspose.Words per .NET 
+### Esempio di codice sorgente per Move Form Field utilizzando Aspose.PDF per .NET 
 ```csharp
 // Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

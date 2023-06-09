@@ -71,7 +71,7 @@ Console.WriteLine(ex.Message);
 ```
 Erfassen Sie alle Ausnahmen, die während des Konvertierungsprozesses auftreten können, und zeigen Sie die Fehlermeldung an.
 
-### Beispielquellcode für die Umwandlung einer Webseite in PDF mit Aspose.Words für .NET
+### Beispielquellcode für die Umwandlung einer Webseite in PDF mit Aspose.PDF für .NET
 
 ```csharp
 try

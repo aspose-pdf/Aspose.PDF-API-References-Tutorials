@@ -85,7 +85,7 @@ Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dat
 
 Asegúrese de especificar el directorio de documentos correcto. El archivo PDF resultante se guardará con los saltos de tabla determinados.
 
-### Ejemplo de código fuente para Determinar salto de tabla usando Aspose.Words para .NET
+### Ejemplo de código fuente para Determinar salto de tabla usando Aspose.PDF para .NET
 
 ```csharp
 // La ruta al directorio de documentos.
@@ -134,11 +134,11 @@ float TotalObjectsHeight = (float)page.PageInfo.Margin.Top + (float)page.PageInf
 // Y la información del margen inferior
 Console.WriteLine("PDF document Height = " + pdf.PageInfo.Height.ToString() + "\nTop Margin Info = " + page.PageInfo.Margin.Top.ToString() + "\nBottom Margin Info = " + page.PageInfo.Margin.Bottom.ToString() + "\n\nTable-Top Margin Info = " + table1.Margin.Top.ToString() + "\nAverage Row Height = " + table1.Rows[0].MinRowHeight.ToString() + " \nTable height " + table1.GetHeight().ToString() + "\n ----------------------------------------" + "\nTotal Page Height =" + PageHeight.ToString() + "\nCummulative height including Table =" + TotalObjectsHeight.ToString());
 
-//Compruebe si deducimos la suma del margen superior de la página + el margen inferior de la página
+// Compruebe si deducimos la suma del margen superior de la página + el margen inferior de la página
 // + Margen superior de la mesa y altura de la mesa desde la altura de la página y su menor
 // Que 10 (una fila promedio puede ser mayor que 10)
 if ((PageHeight - TotalObjectsHeight) <= 10)
-	// Si el valor es inferior a 10, muestra el mensaje.
+	//Si el valor es inferior a 10, muestra el mensaje.
 	// Lo que demuestra que no se puede colocar otra fila y si agregamos nuevas
 	// Fila, la mesa se romperá. Depende del valor de la altura de la fila.
 	Console.WriteLine("Page Height - Objects Height < 10, so table will break");

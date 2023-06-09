@@ -76,7 +76,7 @@ pdfDocument.Save(dataDir);
 
 Be sure to specify the full path and filename for the edited PDF.
 
-### Sample source code for Text Box using Aspose.Words for .NET 
+### Sample source code for Text Box using Aspose.PDF for .NET 
 ```csharp
 // The path to the documents directory.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

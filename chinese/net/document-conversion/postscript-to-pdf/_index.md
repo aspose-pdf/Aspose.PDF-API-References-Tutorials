@@ -43,7 +43,7 @@ pdfDocument.Save(dataDir + "PSToPDF.pdf");
 
 上面的代码将转换后的 PostScript 文件保存为 PDF 格式，文件名`"PSToPDF.pdf"`.
 
-### 使用 Aspose.Words for .NET 的 Postscript to PDF 示例源代码
+### 使用 Aspose.PDF for .NET 的 Postscript to PDF 示例源代码
 
 ```csharp
 //文档目录的路径。
@@ -52,7 +52,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 LoadOptions options = new PsLoadOptions();
 //使用创建的加载选项打开 .ps 文档
 Document pdfDocument = new Document(dataDir + "input.ps", options);
-//保存文件
+//保存文档
 pdfDocument.Save(dataDir + "PSToPDF.pdf");
 ```
 

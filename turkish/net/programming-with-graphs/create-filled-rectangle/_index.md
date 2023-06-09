@@ -62,7 +62,7 @@ Son olarak ortaya çıkan PDF dosyasını "CreateFilledRectangle_out.pdf" ismiyl
 doc.Save(dataDir + "CreateFilledRectangle_out.pdf");
 ```
 
-### Aspose.Words for .NET kullanarak Create Filled Rectangle için örnek kaynak kodu 
+### Aspose.PDF for .NET kullanarak Dolu Dikdörtgen Oluşturma için örnek kaynak kodu 
 
 ```csharp
 

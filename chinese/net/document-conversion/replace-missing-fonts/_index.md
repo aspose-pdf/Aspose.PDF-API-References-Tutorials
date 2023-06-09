@@ -66,7 +66,7 @@ pdf.Save(fileNew.FullName);
 
 确保已为生成的 PDF 文件设置正确的目标路径。
 
-### 使用 Aspose.Words for .NET 替换缺失字体的示例源代码
+### 使用 Aspose.PDF for .NET 替换缺失字体的示例源代码
 
 ```csharp
 //文档目录的路径。
@@ -89,4 +89,4 @@ pdf.Save(fileNew.FullName);
 ```
 
 ## 结论
-在本教程中，我们介绍了使用 Aspose.PDF for .NET 替换 PDF 文件中缺失字体的分步过程。按照上述说明，您将能够成功替换 PDF 文件中丢失的字体。
+在本教程中，我们介绍了使用 Aspose.PDF for .NET 替换 PDF 文件中缺失字体的分步过程。按照上述说明，您将能够成功替换 PDF 文件中缺失的字体。

@@ -56,7 +56,7 @@ Dans cet exemple, nous exportons toutes les lignes et colonnes à partir de la p
 Maintenant, nous allons créer un nouveau document PDF en utilisant la bibliothèque Aspose.PDF.
 
 ```csharp
-//Instancier une instance Document
+// Instancier une instance Document
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 ```
 
@@ -92,7 +92,7 @@ tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.
 Dans cet exemple, nous avons défini les largeurs de colonne sur 40, 100 et 100 unités. Ajustez les valeurs en fonction de vos données. Nous définissons également la bordure de cellule par défaut pour afficher les bordures sur tous les côtés de chaque cellule.
 
 ## Étape 8 : Importer des données dans la table
-Maintenant, nous allons importer les données du`DataTable` objet dans le tableau à l'aide de la`ImportDataTable` méthode.
+ Maintenant, nous allons importer les données du`DataTable` objet dans le tableau à l'aide de la`ImportDataTable` méthode.
 
 ```csharp
 // Importer des données dans l'objet Table à partir du DataTable créé ci-dessus
@@ -148,7 +148,7 @@ pdf1.Save(dataDir + @"Exceldata_toPdf_table.pdf");
 
 Assurez-vous de remplacer "VOTRE RÉPERTOIRE DE DOCUMENTS" par le chemin d'accès au répertoire et le nom de fichier souhaités pour le fichier PDF de sortie.
 
-### Exemple de code source pour exporter des données de feuille de calcul Excel vers une table à l'aide d'Aspose.Words pour .NET
+### Exemple de code source pour exporter des données de feuille de calcul Excel vers un tableau à l'aide d'Aspose.PDF pour .NET
 
 ```csharp
 // Chemin d'accès au répertoire des documents.
@@ -190,7 +190,7 @@ foreach (Aspose.Pdf.Cell curCell in row1.Cells)
 	curCell.BackgroundColor = Color.Blue;
 	// Définissez la police pour les cellules de la 1ère ligne du tableau.
 	curCell.DefaultCellTextState.Font = Aspose.Pdf.Text.FontRepository.FindFont("Helvetica-Oblique");
-	//Définissez la couleur de police de toutes les cellules de la 1ère ligne du tableau.
+	// Définissez la couleur de police de toutes les cellules de la 1ère ligne du tableau.
 	curCell.DefaultCellTextState.ForegroundColor = Color.Yellow;
 	// Définissez l'alignement du texte pour les cellules de la 1ère ligne sur Centre.
 	curCell.DefaultCellTextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;

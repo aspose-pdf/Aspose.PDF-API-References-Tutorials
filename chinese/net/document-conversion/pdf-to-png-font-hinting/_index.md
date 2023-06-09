@@ -66,7 +66,7 @@ for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 
 上面的代码将 PDF 的每一页转换为带有字体提示的 PNG 图像，并将每个图像保存为单独的 PNG 文件。
 
-### 使用 Aspose.Words for .NET 的 PDF 到 PNGFont 提示的示例源代码
+### 使用 Aspose.PDF for .NET 的 PDF 到 PNGFont 提示的示例源代码
 
 ```csharp
 try

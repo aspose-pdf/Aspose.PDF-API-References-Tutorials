@@ -42,7 +42,7 @@ bInfo.RoundedBorderRadius = 15;
 tab1.Border = bInfo;
 ```
 
-### 使用 Aspose.Words for .NET 的圆角表示例源代码
+### 使用 Aspose.PDF for .NET 的圆角表示例源代码
 
 ```csharp
 //文档目录的路径。

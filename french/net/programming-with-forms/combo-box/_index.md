@@ -34,7 +34,7 @@ Ajouter une page au document :
 doc.Pages.Add();
 ```
 
-## Étape 4 : instancier un objet ComboBoxField
+## Étape 4 : instancier un objet ComboBoxField
 
 Instanciez un objet ComboBoxField avec les dimensions souhaitées :
 
@@ -70,7 +70,7 @@ dataDir = dataDir + "ComboBox_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Exemple de code source pour Combo Box utilisant Aspose.Words pour .NET 
+### Exemple de code source pour Combo Box utilisant Aspose.PDF pour .NET 
 ```csharp
 try
 {

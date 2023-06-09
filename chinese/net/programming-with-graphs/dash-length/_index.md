@@ -64,7 +64,7 @@ canvas.Shapes.Add(line);
 doc.Save(dataDir + "DashLength_out.pdf");
 ```
 
-### 使用 Aspose.Words for .NET 的 Dash Length 示例源代码 
+### 使用 Aspose.PDF for .NET 的 Dash Length 示例源代码 
 
 ```csharp
 

@@ -61,7 +61,7 @@ Console.Out.WriteLine("Field name: " + field.FullName + "-" + "Field value: " + 
 }
 ```
 
-### Exempel på källkod för Get Fields From Region med Aspose.Words för .NET 
+### Exempel på källkod för Get Fields From Region med Aspose.PDF för .NET 
 ```csharp
 // Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

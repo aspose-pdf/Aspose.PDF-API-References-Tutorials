@@ -28,7 +28,7 @@ tab1.CornerStyle = Aspose.Pdf.BorderCornerStyle.Round;
 Pour donner au tableau une bordure à coins arrondis, nous devons créer un objet BorderInfo et le configurer avec les paramètres appropriés :
 
 ```csharp
-// Créer un objet GraphInfo pour définir la couleur de la bordure
+//Créer un objet GraphInfo pour définir la couleur de la bordure
 GraphInfo graph = new GraphInfo();
 graph.Color = Aspose.Pdf.Color.Red;
 
@@ -42,7 +42,7 @@ bInfo.RoundedBorderRadius = 15;
 tab1.Border = bInfo;
 ```
 
-### Exemple de code source pour Rounded Corner Table utilisant Aspose.Words pour .NET
+### Exemple de code source pour Rounded Corner Table utilisant Aspose.PDF pour .NET
 
 ```csharp
 // Chemin d'accès au répertoire des documents.

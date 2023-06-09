@@ -71,7 +71,7 @@ Console.WriteLine(ex.Message);
 ```
 捕获转换过程中可能发生的任何异常并显示错误消息。
 
-### 使用 Aspose.Words for .NET 将网页转为 PDF 的示例源代码
+### 使用 Aspose.PDF for .NET 将网页转为 PDF 的示例源代码
 
 ```csharp
 try

@@ -28,9 +28,9 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document doc = new Document(dataDir + "sample.md", new MdLoadOptions());
 ```
 
- تأكد من استبدال`"YOUR DOCUMENTS DIRECTORY"`مع الدليل الفعلي حيث يوجد ملف Markdown الخاص بك.
+ تأكد من استبدال`"YOUR DOCUMENTS DIRECTORY"` مع الدليل الفعلي حيث يوجد ملف Markdown الخاص بك.
 
-## الخطوة 2: تخفيض السعر إلى تحويل PDF
+## الخطوة 2: Markdown لتحويل PDF
 بعد تحميل ملف Markdown ، يمكننا متابعة التحويل إلى PDF. استخدم الكود التالي:
 
 ```csharp
@@ -40,7 +40,7 @@ doc.Save(dataDir + "MarkdownToPDF.pdf");
 
  يحول الكود أعلاه ملف Markdown إلى تنسيق PDF ويحفظه كاسم ملف`"MarkdownToPDF.pdf"`.
 
-### مثال على شفرة المصدر لـ Markdown إلى PDF باستخدام Aspose.Words for .NET
+### مثال على شفرة المصدر لـ Markdown إلى PDF باستخدام Aspose.PDF لـ .NET
 
 
 ```csharp

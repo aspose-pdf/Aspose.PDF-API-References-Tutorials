@@ -61,7 +61,7 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nArabic text successfully filled in the form field.\nFile saved in the following location: " + dataDir);
 ```
 
-### Пример исходного кода для заполнения арабского текста с использованием Aspose.Words для .NET 
+### Пример исходного кода для заполнения арабского текста с использованием Aspose.PDF для .NET 
 ```csharp
 // Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

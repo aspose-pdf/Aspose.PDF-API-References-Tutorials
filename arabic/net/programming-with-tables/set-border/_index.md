@@ -91,7 +91,7 @@ doc.Save(dataDir);
 Console.WriteLine("\nBorder setup successfully.\nFile saved at " + dataDir);
 ```
 
-### مثال على شفرة المصدر لـ Set Border باستخدام Aspose.Words for .NET
+### مثال على التعليمات البرمجية المصدر لـ Set Border باستخدام Aspose.PDF for .NET
 
 ```csharp
 // المسار إلى دليل المستندات.
@@ -117,7 +117,7 @@ Aspose.Pdf.Row row = table.Rows.Add();
 Aspose.Pdf.Cell cell = row.Cells.Add("some text");
 // تعيين حد كائن الخلية (حد مزدوج)
 cell.Border = border;
-//أضف جدولاً إلى مجموعة فقرات الصفحة
+// أضف جدولاً إلى مجموعة فقرات الصفحة
 page.Paragraphs.Add(table);
 dataDir = dataDir + "TableBorderTest_out.pdf";
 // احفظ مستند PDF

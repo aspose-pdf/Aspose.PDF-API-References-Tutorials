@@ -49,7 +49,7 @@ ppe.PageSize = new Aspose.Pdf.PageSize((float)rect.Height, (float)rect.Width);
 ```
 
 ## 4. Adım: Çıktı PDF dosyasını kaydedin
- Son olarak, değiştirilen PDF dosyasını kullanarak kaydedebilirsiniz.`Save()` yöntemi`Document` sınıf. Doğru yolu ve dosya adını belirttiğinizden emin olun.
+ Son olarak, değiştirilen PDF dosyasını kullanarak kaydedebilirsiniz.`Save()` yöntemi`Document`sınıf. Doğru yolu ve dosya adını belirttiğinizden emin olun.
 
 ```csharp
 dataDir = dataDir + "ZoomToPageContents_out.pdf";

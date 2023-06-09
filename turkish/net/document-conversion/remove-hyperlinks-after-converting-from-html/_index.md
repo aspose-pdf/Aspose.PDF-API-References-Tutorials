@@ -72,7 +72,7 @@ doc.Save(dataDir + "RemoveHyperlinksFromText_out.pdf");
 
  Yukarıdaki kod, ortaya çıkan PDF dosyasını dosya adıyla kaydeder.`"RemoveHyperlinksFromText_out.pdf"`.
 
-### Aspose.Words for .NET kullanarak Html'den Dönüştürdükten Sonra Köprüleri Kaldır için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak Html'den Dönüştürdükten Sonra Köprüleri Kaldır için örnek kaynak kodu
 
 ```csharp
 // Belgeler dizininin yolu.

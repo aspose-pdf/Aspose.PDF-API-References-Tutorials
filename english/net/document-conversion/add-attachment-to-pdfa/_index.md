@@ -85,7 +85,7 @@ doc.Save(dataDir + "AddAttachmentToPDFA_out.pdf");
 
 In the code above, we use the `Save` method to save the document with the file name `"AddAttachmentToPDFA_out.pdf"`. Be sure to specify the appropriate path where you want to save the resulting file.
 
-### Example source code for add attachment to PDFA using Aspose.Words for .NET
+### Example source code for add attachment to PDFA using Aspose.PDF for .NET
 
 ```csharp
 // The path to the documents directory.

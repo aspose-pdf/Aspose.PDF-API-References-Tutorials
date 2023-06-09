@@ -58,6 +58,6 @@ pdfDocument.Optimize();
 
 dataDir = dataDir + "OptimizeDocument_out.pdf";
 
-//保存输出文档
+//保存输出文件
 pdfDocument.Save(dataDir);
 ```

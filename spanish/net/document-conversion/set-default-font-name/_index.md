@@ -62,7 +62,7 @@ pngDevice.Process(pdfDocument.Pages[1], imageStream);
 
  Asegúrese de especificar el número de página correcto en`pdfDocument.Pages[1]`.
 
-### Ejemplo de código fuente para establecer el nombre de fuente predeterminado usando Aspose.Words para .NET
+### Ejemplo de código fuente para establecer el nombre de fuente predeterminado usando Aspose.PDF para .NET
 
 ```csharp
 // La ruta al directorio de documentos.

@@ -63,7 +63,7 @@ Salviamo il documento PDF con l'interruzione di pagina inserita.
 doc.Save(dataDir + "InsertPageBreak_out.pdf");
 ```
 
-### Esempio di codice sorgente per Inserisci interruzione di pagina utilizzando Aspose.Words per .NET
+### Esempio di codice sorgente per Inserisci interruzione di pagina utilizzando Aspose.PDF per .NET
 
 ```csharp
 // Il percorso della directory dei documenti.

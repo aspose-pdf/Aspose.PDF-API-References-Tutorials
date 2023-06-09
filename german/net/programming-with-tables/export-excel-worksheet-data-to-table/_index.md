@@ -56,7 +56,7 @@ In diesem Beispiel exportieren wir alle Zeilen und Spalten von der ersten Zelle 
 Jetzt erstellen wir ein neues PDF-Dokument mit der Aspose.PDF-Bibliothek.
 
 ```csharp
-//Instanziieren Sie eine Dokumentinstanz
+// Instanziieren Sie eine Dokumentinstanz
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 ```
 
@@ -92,7 +92,7 @@ tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.
 In diesem Beispiel legen wir die Spaltenbreiten auf 40, 100 und 100 Einheiten fest. Passen Sie die Werte basierend auf Ihren Daten an. Außerdem legen wir den Standard-Zellenrahmen so fest, dass auf allen Seiten jeder Zelle Ränder angezeigt werden.
 
 ## Schritt 8: Daten in die Tabelle importieren
-Jetzt importieren wir die Daten aus dem`DataTable` Objekt in die Tabelle mit dem`ImportDataTable` Methode.
+ Jetzt importieren wir die Daten aus dem`DataTable` Objekt in die Tabelle mit dem`ImportDataTable` Methode.
 
 ```csharp
 // Importieren Sie Daten aus der oben erstellten DataTable in das Table-Objekt
@@ -148,7 +148,7 @@ pdf1.Save(dataDir + @"Exceldata_toPdf_table.pdf");
 
 Stellen Sie sicher, dass Sie „IHR DOKUMENTVERZEICHNIS“ durch den gewünschten Verzeichnispfad und Dateinamen für die Ausgabe-PDF-Datei ersetzen.
 
-### Beispielquellcode für den Export von Excel-Arbeitsblattdaten in eine Tabelle mit Aspose.Words für .NET
+### Beispielquellcode für den Export von Excel-Arbeitsblattdaten in eine Tabelle mit Aspose.PDF für .NET
 
 ```csharp
 // Der Pfad zum Dokumentenverzeichnis.
@@ -190,7 +190,7 @@ foreach (Aspose.Pdf.Cell curCell in row1.Cells)
 	curCell.BackgroundColor = Color.Blue;
 	// Legen Sie die Schriftart für die Zellen der ersten Zeile in der Tabelle fest.
 	curCell.DefaultCellTextState.Font = Aspose.Pdf.Text.FontRepository.FindFont("Helvetica-Oblique");
-	//Legen Sie die Schriftfarbe aller Zellen in der 1. Zeile der Tabelle fest.
+	// Legen Sie die Schriftfarbe aller Zellen in der 1. Zeile der Tabelle fest.
 	curCell.DefaultCellTextState.ForegroundColor = Color.Yellow;
 	// Legen Sie die Textausrichtung für die Zellen der 1. Zeile auf „Mitte“ fest.
 	curCell.DefaultCellTextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;

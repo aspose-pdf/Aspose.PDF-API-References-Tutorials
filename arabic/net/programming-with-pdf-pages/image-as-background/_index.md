@@ -52,7 +52,7 @@ page. Artifacts. Add(background);
 ```
 
 ## الخطوة 6: احفظ مستند PDF
- أخيرًا ، يمكنك حفظ مستند PDF في ملف باستخدام امتداد`Save()` طريقة`Document` فصل. تأكد من تحديد المسار الصحيح واسم الملف.
+ أخيرًا ، يمكنك حفظ مستند PDF في ملف باستخدام امتداد`Save()` طريقة`Document`فصل. تأكد من تحديد المسار الصحيح واسم الملف.
 
 ```csharp
 doc.Save(dataDir + "ImageAsBackground_out.pdf");

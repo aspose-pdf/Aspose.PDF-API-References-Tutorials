@@ -71,7 +71,7 @@ End = new Point(300, 300)
 doc.Save(dataDir + "AddDrawingWithGradientFill_out.pdf");
 ```
 
-### نموذج التعليمات البرمجية المصدر لـ Add Drawing With Gradient Fill باستخدام Aspose.Words for .NET 
+### نموذج التعليمات البرمجية المصدر لـ Add Drawing With Gradient Fill باستخدام Aspose.PDF for .NET 
 
 ```csharp
 

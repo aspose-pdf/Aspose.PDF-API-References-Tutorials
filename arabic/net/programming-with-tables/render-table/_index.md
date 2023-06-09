@@ -97,7 +97,7 @@ doc.Save(dataDir);
 Console.WriteLine("\nTable displayed successfully on a page.\nFile saved at location: " + dataDir);
 ```
 
-### مثال على الكود المصدري لجدول العرض باستخدام Aspose.Words for .NET
+### مثال على التعليمات البرمجية المصدر لجدول العرض باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 // المسار إلى دليل المستندات.

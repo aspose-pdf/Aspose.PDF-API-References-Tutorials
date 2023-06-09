@@ -70,7 +70,7 @@ Guardamos el documento PDF con la tabla que contiene contenido HTML.
 doc.Save(dataDir + "HTMLInsideTableCell_out.pdf");
 ```
 
-### Ejemplo de código fuente para etiquetas HTML dentro de la tabla usando Aspose.Words para .NET
+### Ejemplo de código fuente para etiquetas HTML dentro de la tabla usando Aspose.PDF para .NET
 
 ```csharp
 // La ruta al directorio de documentos.

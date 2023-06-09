@@ -8,7 +8,7 @@ weight: 100
 url: /es/net/annotations/invisibleannotation/
 ---
 
-Las anotaciones en documentos PDF son una característica poderosa que le permite agregar información adicional o notas a un documento sin cambiar el contenido real. Se pueden usar para resaltar texto, llamar la atención sobre áreas específicas de un documento o agregar comentarios o sugerencias.
+Las anotaciones en documentos PDF son una característica poderosa que le permite agregar información adicional o notas a un documento sin cambiar el contenido real. Se pueden usar para resaltar texto, llamar la atención sobre áreas específicas de un documento o agregar comentarios o comentarios.
 
 Hay muchos tipos diferentes de anotaciones que puede usar en documentos PDF, que incluyen:
 

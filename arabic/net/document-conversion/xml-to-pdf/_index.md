@@ -47,7 +47,7 @@ doc.Save(dataDir + "XMLToPDF_out.pdf");
 ```
 احفظ ملف PDF الناتج في الدليل المحدد.
 
-### مثال على شفرة المصدر لـ XML إلى PDF باستخدام Aspose.Words for .NET
+### مثال على كود المصدر لـ XML إلى PDF باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 // المسار إلى دليل المستندات.

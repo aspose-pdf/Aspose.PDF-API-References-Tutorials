@@ -43,7 +43,7 @@ pdfDocument.Save(dataDir + "PSToPDF.pdf");
 
  Il codice precedente salva il file PostScript convertito in formato PDF con il nome del file`"PSToPDF.pdf"`.
 
-### Esempio di codice sorgente per Postscript in PDF utilizzando Aspose.Words per .NET
+### Esempio di codice sorgente per Postscript in PDF utilizzando Aspose.PDF per .NET
 
 ```csharp
 // Il percorso della directory dei documenti.

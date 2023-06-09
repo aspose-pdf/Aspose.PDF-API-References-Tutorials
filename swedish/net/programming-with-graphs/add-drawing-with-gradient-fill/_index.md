@@ -71,7 +71,7 @@ Slutligen sparar vi den resulterande PDF-filen med namnet "AddDrawingWithGradien
 doc.Save(dataDir + "AddDrawingWithGradientFill_out.pdf");
 ```
 
-### Exempel på källkod för Lägg till ritning med gradientfyllning med Aspose.Words för .NET 
+### Exempel på källkod för Lägg till ritning med gradientfyllning med Aspose.PDF för .NET 
 
 ```csharp
 

@@ -67,7 +67,7 @@ pdfDocument.Save(dataDir + "ProvideCredentialsDuringHTMLToPDF_out.pdf");
 
  Приведенный выше код сохраняет полученный PDF-файл с именем файла`"ProvideCredentialsDuringHTMLToPDF_out.pdf"`.
 
-### Пример исходного кода для предоставления учетных данных во время преобразования HTML в PDF с использованием Aspose.Words для .NET
+### Пример исходного кода для предоставления учетных данных во время преобразования HTML в PDF с использованием Aspose.PDF для .NET
 
 ```csharp
 try

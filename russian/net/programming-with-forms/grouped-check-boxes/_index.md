@@ -87,7 +87,7 @@ dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Пример исходного кода для сгруппированных флажков с использованием Aspose.Words для .NET 
+### Пример исходного кода для сгруппированных флажков с использованием Aspose.PDF для .NET 
 ```csharp
 try
 {

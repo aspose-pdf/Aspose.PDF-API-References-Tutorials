@@ -97,7 +97,7 @@ doc.Save(dataDir);
 Console.WriteLine("\nTable displayed successfully on a page.\nFile saved at location: " + dataDir);
 ```
 
-### 使用 Aspose.Words for .NET 渲染表的示例源代码
+### 使用 Aspose.PDF for .NET 渲染表的示例源代码
 
 ```csharp
 //文档目录的路径。

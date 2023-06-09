@@ -9,7 +9,7 @@ url: /tr/net/annotations/strikeoutwords/
 ---
 Aspose.PDF for .NET, PDF dosyalarını oluşturmak, değiştirmek ve dönüştürmek için çeşitli özellikler sağlayan bir PDF belge işleme ve işleme kitaplığıdır. Aspose.PDF'nin sağladığı kullanışlı özelliklerden biri, C# kaynak kodunu kullanarak bir PDF belgesindeki sözcüklerin veya tümcelerin üstünü çizebilme yeteneğidir. Bu yazıda, Aspose.PDF for .NET kullanarak kelimelerin üstünün nasıl çizileceğine dair adım adım bir kılavuz sunacağız.
 
-## PDF belgesini yükleme
+## 1. Adım: PDF belgesini yükleme
 İlk adım, değiştirmek istediğiniz PDF belgesini yüklemektir. Bu eğitimde, "BELGE DİZİNİNİZ" klasöründen "input.pdf" adlı bir PDF belgesi yükleyeceğiz. 
 
 ```csharp
@@ -17,7 +17,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document document = new Document(dataDir + "input.pdf");
 ```
 
-## Metin parçalarını arama
+## 2. Adım: Metin parçalarını arama
 PDF belgesindeki belirli sözcüklerin veya tümceciklerin üstünü çizmek için önce bunları aramanız gerekir. Aspose.PDF, PDF belgesinde belirli bir metin parçasını aramak için kullanılabilecek bir TextFragmentAbsorber sınıfı sağlar.
 
 ```csharp
@@ -26,7 +26,7 @@ Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.
 
 Yukarıdaki kodda, PDF belgesindeki "Estoque" metin parçasını arıyoruz. Üstünü çizmek istediğiniz başka bir kelimeyi veya tümceciği aramak için bunu değiştirebilirsiniz.
 
-## Metin parçalarının üzerinin çizilmesi
+## 3. Adım: Metin parçalarının üzerinin çizilmesi
 Metin parçalarını bulduktan sonraki adım, bunların üstünü çizmek. Aspose.PDF, metin parçası için üzeri çizili not oluşturmak için kullanılabilecek bir StrikeOutAnnotation sınıfı sağlar. 
 
 ```csharp
@@ -41,7 +41,7 @@ textFragment.Page.Annotations.Add(strikeOut);
 
 Yukarıdaki kodda, bulduğumuz her metin parçası için üstü çizili bir not oluşturuyoruz. Üstü çizili ek açıklamanın opaklığını, kenarlığını ve rengini de ayarlıyoruz.
 
-## Değiştirilen PDF belgesini kaydetme
+## 4. Adım: Değiştirilen PDF belgesini kaydetme
 Metin parçalarının üzerini çizdikten sonra değiştirilen belgeyi kaydedin.
 
 ```csharp

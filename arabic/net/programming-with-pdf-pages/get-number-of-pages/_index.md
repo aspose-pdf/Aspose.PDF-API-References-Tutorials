@@ -30,7 +30,7 @@ Document pdfDocument = new Document(dataDir + "GetNumberofPages.pdf");
 ```
 
 ## الخطوة 3: احصل على عدد الصفحات
- يمكنك الآن الحصول على عدد الصفحات في المستند باستخدام امتداد`Count`ملكية المستند`s `مجموعة الصفحات. سيعطيك هذا العدد الإجمالي للصفحات في ملف PDF.
+ يمكنك الآن الحصول على عدد الصفحات في المستند باستخدام امتداد`Count` ملكية المستند`s `مجموعة الصفحات. سيعطيك هذا العدد الإجمالي للصفحات في ملف PDF.
 
 ```csharp
 System.Console.WriteLine("Number of pages: {0}", pdfDocument.Pages.Count);

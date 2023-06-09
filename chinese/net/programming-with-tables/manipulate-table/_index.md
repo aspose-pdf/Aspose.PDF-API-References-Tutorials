@@ -1,6 +1,6 @@
 ---
-title: 操作表格
-linktitle: 操作表格
+title: 操作表
+linktitle: 操作表
 second_title: Aspose.PDF for .NET API 参考
 description: 使用 Aspose.PDF for .NET 轻松操作 PDF 文档中的表格。
 type: docs
@@ -73,7 +73,7 @@ pdfDocument.Save(dataDir);
 确保提供修改文档的路径和文件名。
 
 
-### 使用 Aspose.Words for .NET 操作表的示例源代码
+### 使用 Aspose.PDF for .NET 操作表的示例源代码
 
 ```csharp
 try

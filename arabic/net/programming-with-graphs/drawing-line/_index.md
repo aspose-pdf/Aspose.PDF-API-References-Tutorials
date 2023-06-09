@@ -72,7 +72,7 @@ pg.Paragraphs.Add(graph);
 pDoc.Save(dataDir + "DrawingLine_out.pdf");
 ```
 
-### نموذج التعليمات البرمجية المصدر لـ Drawing Line باستخدام Aspose.Words for .NET 
+### نموذج التعليمات البرمجية المصدر لـ Drawing Line باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
 
@@ -84,7 +84,7 @@ Document pDoc = new Document();
 Page pg = pDoc.Pages.Add();
 // اضبط هامش الصفحة من جميع الجوانب على 0
 pg.PageInfo.Margin.Left = pg.PageInfo.Margin.Right = pg.PageInfo.Margin.Bottom = pg.PageInfo.Margin.Top = 0;
-// قم بإنشاء كائن رسم بياني مع تساوي العرض والارتفاع أبعاد الصفحة
+//قم بإنشاء كائن رسم بياني مع تساوي العرض والارتفاع أبعاد الصفحة
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph((float)pg.PageInfo.Width , (float)pg.PageInfo.Height);
 // قم بإنشاء كائن سطر أول بدءًا من الزاوية السفلية اليسرى إلى الزاوية العلوية اليمنى من الصفحة
 Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { (float)pg.Rect.LLX, 0, (float)pg.PageInfo.Width, (float)pg.Rect.URY });

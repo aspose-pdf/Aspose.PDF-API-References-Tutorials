@@ -7,7 +7,7 @@ type: docs
 weight: 30
 url: /es/net/programming-with-pdf-pages/delete-particular-page/
 ---
-En este tutorial, lo guiaremos a través del proceso paso a paso para eliminar una página específica de un archivo PDF usando Aspose.PDF para .NET. Explicaremos el código fuente de C# incluido y le proporcionaremos una guía completa para ayudarlo a comprender e implementar esta característica en sus propios proyectos. Al final de este tutorial, sabrá cómo eliminar una página específica de un archivo PDF usando Aspose.PDF para .NET.
+En este tutorial, lo guiaremos a través del proceso paso a paso para eliminar una página específica de un archivo PDF usando Aspose.PDF para .NET. Explicaremos el código fuente de C# incluido y le proporcionaremos una guía completa para ayudarlo a comprender e implementar esta función en sus propios proyectos. Al final de este tutorial, sabrá cómo eliminar una página específica de un archivo PDF usando Aspose.PDF para .NET.
 
 ## requisitos previos
 Antes de comenzar, asegúrese de tener lo siguiente:

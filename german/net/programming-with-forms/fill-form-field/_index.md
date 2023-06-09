@@ -51,7 +51,7 @@ dataDir = dataDir + "FillFormField_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Beispielquellcode für „Formularfeld ausfüllen“ mit Aspose.Words für .NET 
+### Beispielquellcode für „Formularfeld ausfüllen“ mit Aspose.PDF für .NET 
 ```csharp
 // Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

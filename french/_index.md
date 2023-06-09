@@ -14,12 +14,12 @@ Aspose.PDF pour les didacticiels .NET et les extraits de code pour la création,
 {{% /alert %}}
 
 Voici des liens vers des ressources utiles :
-- [Programmation avec document](./programming-with-document/)
-- [Programmation avec annotations](./annotations/)  
-- [Conversion de documents](./document-conversion/)
-- [Programmation avec des formulaires](./programming-with-forms/)
-- [Programmation avec des tableaux](./programming-with-tables/) 
-- [Programmation avec des pages PDF](./programming-with-pdf-pages/)
-- [Programmation avec des graphiques](./programming-with-graphs/)
+- [Programmation avec document](./net/programming-with-document/)
+- [Programmation avec annotations](./net/annotations/)  
+- [Conversion de documents](./net/document-conversion/)
+- [Programmation avec des formulaires](./net/programming-with-forms/)
+- [Programmation avec des tableaux](./net/programming-with-tables/) 
+- [Programmation avec des pages PDF](./net/programming-with-pdf-pages/)
+- [Programmation avec des graphiques](./net/programming-with-graphs/)
  
 

@@ -70,7 +70,7 @@ table. ColumnWidths = "100 100";
 Bu adımda tabloya bir satır ve hücreler ekleyeceğiz. Tablodaki her satır yatay bir satırı temsil eder ve satırlara hücreler eklenir. Aşağıdaki kodu ekleyin:
 
 ```csharp
-// Satır nesnesi oluşturun ve bunu tablo örneğine ekleyin
+//Satır nesnesi oluşturun ve bunu tablo örneğine ekleyin
 Aspose.Pdf.Row row = table.Rows.Add();
 // Hücre nesnesi oluşturun ve bunu satır örneğine ekleyin
 Aspose.Pdf.Cell cell = row.Cells.Add();
@@ -112,7 +112,7 @@ doc.Save(dataDir);
 Console.WriteLine("\nSVG image added successfully inside a table cell.\nFile saved at " + dataDir);
 ```
 
-### Aspose.Words for .NET kullanarak SVG nesnesi eklemek için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak SVG nesnesi eklemek için örnek kaynak kodu
 
 ```csharp
 // Belgeler dizininin yolu.
@@ -134,7 +134,7 @@ img.FixHeight = 50;
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
 // Tablo hücreleri için genişliği ayarla
 table.ColumnWidths = "100 100";
-// Satır nesnesi oluşturun ve bunu tablo örneğine ekleyin
+//Satır nesnesi oluşturun ve bunu tablo örneğine ekleyin
 Aspose.Pdf.Row row = table.Rows.Add();
 // Hücre nesnesi oluşturun ve bunu satır örneğine ekleyin
 Aspose.Pdf.Cell cell = row.Cells.Add();

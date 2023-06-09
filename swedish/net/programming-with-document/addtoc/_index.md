@@ -13,7 +13,7 @@ I den här handledningen kommer vi att utforska hur du använder funktionen Läg
 
 ## Steg 1: Ladda den befintliga PDF-filen
 
-För att komma igång måste vi ladda en befintlig PDF-fil. Byta ut`"YOUR DOCUMENT DIRECTORY"` i följande kod med den faktiska sökvägen till din PDF-fil:
+ För att komma igång måste vi ladda en befintlig PDF-fil. Byta ut`"YOUR DOCUMENT DIRECTORY"` i följande kod med den faktiska sökvägen till din PDF-fil:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -85,7 +85,7 @@ Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at "
 // Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Ladda en befintlig PDF-fil
+// Ladda en befintlig PDF-fil
 Document doc = new Document(dataDir + "AddTOC.pdf");
 
 // Få tillgång till första sidan av PDF-filen
@@ -124,7 +124,7 @@ for (int i = 0; i < 2; i++)
 	// Destinationskoordinat
 	segment2.Text = titles[i];
 
-	// Lägg till rubrik på sidan som innehåller innehållsförteckningen
+	//Lägg till rubrik på sidan som innehåller innehållsförteckningen
 	tocPage.Paragraphs.Add(heading2);
 }
 dataDir = dataDir + "TOC_out.pdf";

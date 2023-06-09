@@ -61,7 +61,7 @@ Console.Out.WriteLine("Field name: " + field.FullName + "-" + "Field value: " + 
 }
 ```
 
-### 使用 Aspose.Words for .NET 从区域获取字段的示例源代码 
+### 使用 Aspose.PDF for .NET 从区域获取字段的示例源代码 
 ```csharp
 //文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";

@@ -43,14 +43,14 @@ pdfDocument.Save(dataDir + "PSToPDF.pdf");
 
  يحفظ الكود أعلاه ملف PostScript المحول بتنسيق PDF باسم الملف`"PSToPDF.pdf"`.
 
-### مثال على شفرة المصدر لـ Postscript إلى PDF باستخدام Aspose.Words for .NET
+### مثال على شفرة المصدر لـ Postscript إلى PDF باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 // المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // قم بإنشاء مثيل جديد من PsLoadOptions
 LoadOptions options = new PsLoadOptions();
-//افتح مستند .ps مع خيارات التحميل التي تم إنشاؤها
+//افتح مستند .ps بخيارات التحميل التي تم إنشاؤها
 Document pdfDocument = new Document(dataDir + "input.ps", options);
 // احفظ المستند
 pdfDocument.Save(dataDir + "PSToPDF.pdf");

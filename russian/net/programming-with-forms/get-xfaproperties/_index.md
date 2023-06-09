@@ -8,7 +8,7 @@ weight: 160
 url: /ru/net/programming-with-forms/get-xfaproperties/
 ---
 
-В этом руководстве мы покажем вам, как получить свойства XFA полей формы в документе PDF, используя Aspose.PDF для .NET. Мы объясним исходный код C# шаг за шагом, чтобы помочь вам в этом процессе.
+В этом руководстве мы покажем вам, как получить свойства XFA полей формы в документе PDF с помощью Aspose.PDF для .NET. Мы объясним исходный код C# шаг за шагом, чтобы помочь вам в этом процессе.
 
 ## Шаг 1: Подготовка
 
@@ -61,7 +61,7 @@ dataDir = dataDir + "Filled_XFA_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Пример исходного кода для получения XFAProperties с использованием Aspose.Words для .NET 
+### Пример исходного кода для получения XFAProperties с использованием Aspose.PDF для .NET 
 ```csharp
 // Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

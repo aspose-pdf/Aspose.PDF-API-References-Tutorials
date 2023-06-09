@@ -43,7 +43,7 @@ doc.Save(dataDir + "SVGToPDF_out.pdf");
 
 Asegúrese de especificar la ruta y el nombre de archivo deseados para el archivo PDF resultante.
 
-### Código fuente de ejemplo para SVG a PDF usando Aspose.Words para .NET
+### Código fuente de ejemplo para SVG a PDF usando Aspose.PDF para .NET
 
 ```csharp
 // La ruta al directorio de documentos.

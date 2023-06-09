@@ -23,7 +23,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ## Steg 2: Laddar käll-PDF-formuläret
 
- I det här steget kommer vi att ladda käll-PDF-formuläret med hjälp av`Aspose.Pdf.Facades.Form` klass av Aspose.PDF.
+ I det här steget kommer vi att ladda käll-PDF-formuläret med hjälp av`Aspose.Pdf.Facades.Form`klass av Aspose.PDF.
 
 ```csharp
 Aspose.Pdf.Facades.Form form1 = new Aspose.Pdf.Facades.Form(dataDir + "RadioButtonField.pdf");
@@ -31,7 +31,7 @@ Aspose.Pdf.Facades.Form form1 = new Aspose.Pdf.Facades.Form(dataDir + "RadioButt
 
 Se till att PDF-filen som innehåller formuläret finns i den angivna dokumentkatalogen.
 
-## Steg 3: Redigera alternativknappstexten
+## Steg 3: Redigera alternativknapptexten
 
 Vi går igenom formulärfältens namn och söker efter alternativknappsfält. Om ett matchande fält hittas skapar vi ett nytt alternativ med en anpassad bildtext och lägger till det i det befintliga fältet.
 
@@ -76,7 +76,7 @@ PDF_Template_PDF_HTML.Save(dataDir + "RadioButtonField_out.pdf");
 
 Var noga med att ange den fullständiga sökvägen och filnamnet för den resulterande PDF-filen.
 
-### Exempel på källkod för Set Radio Button Caption med Aspose.Words för .NET 
+### Exempel på källkod för Set Radio Button Caption med Aspose.PDF för .NET 
 ```csharp
 // Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

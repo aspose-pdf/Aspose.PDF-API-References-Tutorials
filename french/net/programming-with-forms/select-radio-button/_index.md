@@ -53,7 +53,7 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nRadio button successfully selected in group.\nFile saved to location: " + dataDir);
 ```
 
-### Exemple de code source pour Select Radio Button en utilisant Aspose.Words pour .NET 
+### Exemple de code source pour Select Radio Button en utilisant Aspose.PDF pour .NET 
 ```csharp
 try
 {

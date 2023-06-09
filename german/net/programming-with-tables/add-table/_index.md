@@ -16,7 +16,7 @@ PDF-Dokumente werden häufig zum Teilen und Speichern von Informationen in einem
 
 ## Was ist Aspose.PDF für .NET?
 
-Aspose.PDF für .NET ist eine leistungsstarke und funktionsreiche Bibliothek, die es .NET-Entwicklern ermöglicht, PDF-Dokumente programmgesteuert zu erstellen, zu bearbeiten und zu konvertieren. Es bietet eine breite Palette an Funktionen, darunter das Erstellen von PDF-Dateien von Grund auf, das Ändern vorhandener PDF-Dokumente, das Zusammenführen oder Teilen von PDF-Dateien, das Hinzufügen von Text, Bildern und Tabellen, das Extrahieren von Daten aus PDFs und vieles mehr. Mit Aspose.PDF für .NET können Entwickler komplexe PDF-bezogene Aufgaben automatisieren und hochwertige PDF-Lösungen liefern.
+Aspose.PDF für .NET ist eine leistungsstarke und funktionsreiche Bibliothek, die es .NET-Entwicklern ermöglicht, PDF-Dokumente programmgesteuert zu erstellen, zu bearbeiten und zu konvertieren. Es bietet eine breite Palette an Funktionen, darunter das Erstellen von PDF-Dateien von Grund auf, das Ändern vorhandener PDF-Dokumente, das Zusammenführen oder Teilen von PDF-Dateien, das Hinzufügen von Text, Bildern und Tabellen, das Extrahieren von Daten aus PDFs und vieles mehr. Mit Aspose.PDF für .NET können Entwickler komplexe PDF-bezogene Aufgaben automatisieren und hochwertige PDF-Lösungen bereitstellen.
 
 ## Hinzufügen einer Tabelle zu einem PDF-Dokument
 
@@ -83,13 +83,13 @@ Console.WriteLine("\nText added successfully to an existing pdf file.\nFile save
 
 Schließlich fügen wir das Tabellenobjekt zur ersten Seite des PDF-Dokuments hinzu, indem wir die Paragraphs-Sammlung der entsprechenden Seite verwenden.
 
-### Beispielquellcode für das Hinzufügen einer Tabelle mit Aspose.Words für .NET
+### Beispielquellcode für das Hinzufügen einer Tabelle mit Aspose.PDF für .NET
 
 ```csharp
 // Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Laden Sie das PDF-Quelldokument
+// Laden Sie das PDF-Quelldokument
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir+ "AddTable.pdf");
 // Initialisiert eine neue Instanz der Tabelle
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();

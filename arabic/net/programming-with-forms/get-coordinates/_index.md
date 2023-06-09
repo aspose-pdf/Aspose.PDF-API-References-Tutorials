@@ -55,7 +55,7 @@ Console.WriteLine(option.Rect);
 }
 ```
 
-### نموذج التعليمات البرمجية المصدر للحصول على إحداثيات باستخدام Aspose.Words for .NET 
+### نموذج التعليمات البرمجية المصدر للحصول على إحداثيات باستخدام Aspose.PDF لـ .NET 
 ```csharp
 try
 {

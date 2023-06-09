@@ -59,7 +59,7 @@ Console.WriteLine("\nTooltip added successfully.\nFile saved at " + dataDir);
 
 Asegúrese de proporcionar el nombre y la ruta del archivo de salida deseados. Después de ejecutar este código, el formulario PDF modificado con la información sobre herramientas agregada se guardará en la ubicación especificada.
 
-### Ejemplo de código fuente para Agregar información sobre herramientas al campo usando Aspose.Words para .NET 
+### Ejemplo de código fuente para Agregar información sobre herramientas al campo usando Aspose.PDF para .NET 
 
 ```csharp
 // La ruta al directorio de documentos.

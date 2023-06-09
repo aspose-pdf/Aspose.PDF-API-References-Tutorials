@@ -63,7 +63,7 @@ We save the PDF document with the page break inserted.
 doc.Save(dataDir + "InsertPageBreak_out.pdf");
 ```
 
-### Example source code for Insert Page Break using Aspose.Words for .NET
+### Example source code for Insert Page Break using Aspose.PDF for .NET
 
 ```csharp
 // The path to the documents directory.

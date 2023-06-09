@@ -38,7 +38,7 @@ Console.WriteLine("Value: {0}", formField.Value);
 }
 ```
 
-### Aspose.Words for .NET kullanarak Tüm Alanlardan Değer Al için örnek kaynak kodu 
+### Aspose.PDF for .NET kullanarak Tüm Alanlardan Değer Al için örnek kaynak kodu 
 ```csharp
 // Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

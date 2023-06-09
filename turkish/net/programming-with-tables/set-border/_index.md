@@ -91,7 +91,7 @@ doc.Save(dataDir);
 Console.WriteLine("\nBorder setup successfully.\nFile saved at " + dataDir);
 ```
 
-### Aspose.Words for .NET kullanarak Set Border için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak Set Border için örnek kaynak kodu
 
 ```csharp
 // Belgeler dizininin yolu.
@@ -117,7 +117,7 @@ Aspose.Pdf.Row row = table.Rows.Add();
 Aspose.Pdf.Cell cell = row.Cells.Add("some text");
 // Hücre nesnesi için kenarlığı ayarla (çift kenarlık)
 cell.Border = border;
-//Sayfanın paragraf koleksiyonuna tablo ekleme
+// Sayfanın paragraf koleksiyonuna tablo ekleme
 page.Paragraphs.Add(table);
 dataDir = dataDir + "TableBorderTest_out.pdf";
 // PDF belgesini kaydedin

@@ -66,7 +66,7 @@ for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 
 Yukarıdaki kod, PDF'nin her sayfasını yazı tipi ipucu içeren bir PNG görüntüsüne dönüştürür ve her görüntüyü ayrı bir PNG dosyası olarak kaydeder.
 
-### Aspose.Words for .NET kullanarak PDF'den PNGFont'a İpucu verme için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak PDF'den PNGFont'a Hinting için örnek kaynak kodu
 
 ```csharp
 try

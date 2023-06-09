@@ -7,7 +7,7 @@ type: docs
 weight: 20
 url: /sv/net/programming-with-pdf-pages/concatenate-pdf-files/
 ---
-I den här handledningen går vi igenom steg-för-steg-processen för att sammanfoga PDF-filer med Aspose.PDF för .NET. Vi kommer att förklara den medföljande C#-källkoden och förse dig med en omfattande guide som hjälper dig att förstå och implementera den här funktionen i dina egna projekt. I slutet av denna handledning kommer du att veta hur du sammanfogar PDF-filer med Aspose.PDF för .NET.
+den här handledningen går vi igenom steg-för-steg-processen för att sammanfoga PDF-filer med Aspose.PDF för .NET. Vi kommer att förklara den medföljande C#-källkoden och förse dig med en omfattande guide som hjälper dig att förstå och implementera den här funktionen i dina egna projekt. I slutet av denna handledning kommer du att veta hur du sammanfogar PDF-filer med Aspose.PDF för .NET.
 
 ## Förutsättningar
 Innan du börjar, se till att du har följande:
@@ -58,7 +58,7 @@ Document pdfDocument2 = new Document(dataDir + "Concat2.pdf");
 // Lägg till sidor i det andra dokumentet till det första
 pdfDocument1.Pages.Add(pdfDocument2.Pages);
 dataDir = dataDir + "ConcatenatePdfFiles_out.pdf";
-//Spara sammanlänkade utdatafil
+// Spara sammanlänkade utdatafil
 pdfDocument1.Save(dataDir);
 System.Console.WriteLine("\nPDFs are concatenated successfully.\nFile saved at " + dataDir);
 

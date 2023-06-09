@@ -51,7 +51,7 @@ Console.WriteLine("The field " + field.FullName + " is required");
 }
 ```
 
-### Exempel på källkod för Bestäm obligatoriskt fält med Aspose.Words för .NET 
+### Exempel på källkod för Bestäm obligatoriskt fält med Aspose.PDF för .NET 
 ```csharp
 // Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

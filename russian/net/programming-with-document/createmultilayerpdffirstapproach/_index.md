@@ -23,7 +23,7 @@ Aspose.Pdf.Document pdf = new Aspose.Pdf.Document();
 Aspose.Pdf.Page sec1 = pdf.Pages.Add();
 ```
 
-## Шаг 3: Добавьте фрагмент текста на страницу
+## Шаг 3: Добавьте текстовый фрагмент на страницу
 
 ```csharp
 Aspose.Pdf.Text.TextFragment t1 = new Aspose.Pdf.Text.TextFragment("paragraph 3 segment");

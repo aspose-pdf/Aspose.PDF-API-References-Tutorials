@@ -71,7 +71,7 @@ doc.Save(dataDir + "DataIntegrated_out.pdf");
 
 تهانينا! أنت تعرف الآن كيفية تضمين بيانات قاعدة البيانات في مستند PDF باستخدام Aspose.PDF لـ .NET.
 
-### مثال على شفرة المصدر للتكامل مع قاعدة البيانات باستخدام Aspose.Words for .NET
+### مثال على التعليمات البرمجية المصدر للتكامل مع قاعدة البيانات باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 // المسار إلى دليل المستندات.
@@ -81,7 +81,7 @@ DataTable dt = new DataTable("Employee");
 dt.Columns.Add("Employee_ID", typeof(Int32));
 dt.Columns.Add("Employee_Name", typeof(string));
 dt.Columns.Add("Gender", typeof(string));
-//أضف صفين إلى كائن DataTable برمجيًا
+// أضف صفين إلى كائن DataTable برمجيًا
 DataRow dr = dt.NewRow();
 dr[0] = 1;
 dr[1] = "John Smith";

@@ -52,7 +52,7 @@ page. Artifacts. Add(background);
 ```
 
 ## 6. Adım: PDF belgesini kaydedin
- Son olarak, PDF belgesini kullanarak bir dosyaya kaydedebilirsiniz.`Save()` yöntemi`Document` sınıf. Doğru yolu ve dosya adını belirttiğinizden emin olun.
+ Son olarak, PDF belgesini kullanarak bir dosyaya kaydedebilirsiniz.`Save()` yöntemi`Document`sınıf. Doğru yolu ve dosya adını belirttiğinizden emin olun.
 
 ```csharp
 doc.Save(dataDir + "ImageAsBackground_out.pdf");

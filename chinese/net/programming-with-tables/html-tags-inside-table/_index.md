@@ -70,7 +70,7 @@ doc.Pages[1].Paragraphs.Add(tableProvider);
 doc.Save(dataDir + "HTMLInsideTableCell_out.pdf");
 ```
 
-### 使用 Aspose.Words for .NET 的表内 HTML 标签示例源代码
+### 使用 Aspose.PDF for .NET 的表内 HTML 标签示例源代码
 
 ```csharp
 //文档目录的路径。

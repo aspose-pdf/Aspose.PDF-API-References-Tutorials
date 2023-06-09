@@ -62,7 +62,7 @@ rect.GraphInfo.FillColor = Aspose.Pdf.Color.Red;
 doc.Save(dataDir + "CreateFilledRectangle_out.pdf");
 ```
 
-### نموذج التعليمات البرمجية المصدر لـ Create Filled Rectangle باستخدام Aspose.Words for .NET 
+### نموذج التعليمات البرمجية المصدر لـ Create Filled Rectangle باستخدام Aspose.PDF for .NET 
 
 ```csharp
 

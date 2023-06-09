@@ -69,7 +69,7 @@ for (int row_count = 1; row_count < 10; row_count++)
 }
 ```
 
-I det här steget skapar vi en slinga för att lägga till 10 rader i tabellen. Inom varje rad lägger vi till tre celler med exempeldata. Du kan ändra koden för att lägga till rader och celler enligt dina specifika krav.
+det här steget skapar vi en slinga för att lägga till 10 rader i tabellen. Inom varje rad lägger vi till tre celler med exempeldata. Du kan ändra koden för att lägga till rader och celler enligt dina specifika krav.
 
 ## Steg 6: Lägga till tabellobjektet i dokumentet
 
@@ -83,13 +83,13 @@ Console.WriteLine("\nText added successfully to an existing pdf file.\nFile save
 
 Slutligen lägger vi till tabellobjektet på första sidan i PDF-dokumentet med hjälp av Paragraphs-samlingen på motsvarande sida.
 
-### Exempel på källkod för add-tabell med Aspose.Words för .NET
+### Exempel på källkod för tilläggstabell med Aspose.PDF för .NET
 
 ```csharp
 // Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Ladda käll-PDF-dokument
+// Ladda käll-PDF-dokument
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir+ "AddTable.pdf");
 // Initierar en ny instans av tabellen
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
@@ -118,4 +118,4 @@ Console.WriteLine("\nText added successfully to an existing pdf file.\nFile save
 
 ## Slutsats
 
-I den här handledningen har vi förklarat steg-för-steg-processen för att lägga till en tabell i ett PDF-dokument med Aspose.PDF för .NET. Vi täckte inläsning av PDF-källdokumentet, initialisering av en ny instans av klassen Tabell, inställning av tabellkantfärg och cellkanter, tillägg av rader och celler i tabellen och tillägg av tabellobjekt till dokumentet. Genom att följa den här guiden kan du enkelt integrera tabeller i dina PDF-dokument programmatiskt och anpassa dem efter dina specifika behov.
+den här handledningen har vi förklarat steg-för-steg-processen för att lägga till en tabell i ett PDF-dokument med Aspose.PDF för .NET. Vi täckte inläsning av PDF-källdokumentet, initialisering av en ny instans av klassen Tabell, inställning av tabellkantfärg och cellkanter, tillägg av rader och celler i tabellen och tillägg av tabellobjekt till dokumentet. Genom att följa den här guiden kan du enkelt integrera tabeller i dina PDF-dokument programmatiskt och anpassa dem efter dina specifika behov.

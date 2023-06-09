@@ -85,7 +85,7 @@ doc.Save(dataDir + "AddAttachmentToPDFA_out.pdf");
 
  I koden ovan använder vi`Save` metod för att spara dokumentet med filnamnet`"AddAttachmentToPDFA_out.pdf"`. Var noga med att ange rätt sökväg där du vill spara den resulterande filen.
 
-### Exempel på källkod för att lägga till bilaga till PDFA med Aspose.Words för .NET
+### Exempel på källkod för att lägga till bilaga till PDFA med Aspose.PDF för .NET
 
 ```csharp
 // Sökvägen till dokumentkatalogen.

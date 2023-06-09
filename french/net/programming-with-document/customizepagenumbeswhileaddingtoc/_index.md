@@ -61,7 +61,7 @@ for (int i = 1; i < doc.Pages.Count; i++)
     heading2.Top = doc.Pages[i + 1].Rect.Height;
     // Coordonnée de destination
     segment2.Text = "Page " + i.ToString();
-    // Ajouter un titre à la page contenant la table des matières
+    //Ajouter un titre à la page contenant la table des matières
     tocPage.Paragraphs.Add(heading2);
 }
 ```
@@ -80,7 +80,7 @@ doc.Save(outFile);
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string inFile = dataDir + "42824.pdf";
 string outFile = dataDir + "42824_out.pdf";
-//Charger un fichier PDF existant
+// Charger un fichier PDF existant
 Document doc = new Document(inFile);
 // Accéder à la première page du fichier PDF
 Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
@@ -106,7 +106,7 @@ for (int i = 1; i<doc.Pages.Count; i++)
 	heading2.Top = doc.Pages[i + 1].Rect.Height;
 	// Coordonnée de destination
 	segment2.Text = "Page " + i.ToString();
-	// Ajouter un titre à la page contenant la table des matières
+	//Ajouter un titre à la page contenant la table des matières
 	tocPage.Paragraphs.Add(heading2);
 }
 

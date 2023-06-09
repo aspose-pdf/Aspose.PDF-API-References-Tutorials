@@ -26,7 +26,7 @@ Der erste Schritt bei der Verwendung dieser Funktion besteht darin, das PDF-Doku
 // Der Pfad zum PDF-Dokument
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Öffnen Sie das PDF-Dokument
+// Öffnen Sie das PDF-Dokument
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
@@ -61,7 +61,7 @@ private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArg
 // Der Pfad zum PDF-Dokument
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Öffnen Sie das PDF-Dokument
+// Öffnen Sie das PDF-Dokument
 Document doc = new Document(dataDir + "input.pdf");
 
 // Erkennen Sie Warnungen zur Schriftartersetzung

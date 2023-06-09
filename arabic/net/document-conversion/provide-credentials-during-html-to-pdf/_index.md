@@ -67,7 +67,7 @@ pdfDocument.Save(dataDir + "ProvideCredentialsDuringHTMLToPDF_out.pdf");
 
  يحفظ الكود أعلاه ملف PDF الناتج باسم الملف`"ProvideCredentialsDuringHTMLToPDF_out.pdf"`.
 
-### مثال على كود المصدر لتوفير بيانات الاعتماد أثناء HTML إلى PDF باستخدام Aspose.Words for .NET
+### مثال على كود المصدر لتوفير بيانات الاعتماد أثناء HTML إلى PDF باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 try

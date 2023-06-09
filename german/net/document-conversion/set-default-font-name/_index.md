@@ -62,7 +62,7 @@ pngDevice.Process(pdfDocument.Pages[1], imageStream);
 
  Stellen Sie sicher, dass Sie die richtige Seitenzahl angeben`pdfDocument.Pages[1]`.
 
-### Beispielquellcode für „Standardschriftnamen festlegen“ mit Aspose.Words für .NET
+### Beispielquellcode für „Standardschriftnamen festlegen“ mit Aspose.PDF für .NET
 
 ```csharp
 // Der Pfad zum Dokumentenverzeichnis.

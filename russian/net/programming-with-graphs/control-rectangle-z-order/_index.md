@@ -63,7 +63,7 @@ AddRectangle(page1, 40, 40, 60, 30, Aspose.Pdf.Color.Green, 0);
 ```csharp
 doc1.Save(dataDir);
 ```
-### Пример исходного кода для управления порядком Z прямоугольника с использованием Aspose.Words для .NET 
+### Пример исходного кода для управления порядком Z прямоугольника с использованием Aspose.PDF для .NET 
 
 ```csharp
 
@@ -75,7 +75,7 @@ Document doc1 = new Document();
 Aspose.Pdf.Page page1 = doc1.Pages.Add();
 // Установить размер страницы PDF
 page1.SetPageSize(375, 300);
-// Установите левое поле для объекта страницы как 0
+//Установите левое поле для объекта страницы как 0
 page1.PageInfo.Margin.Left = 0;
 // Установите верхнее поле объекта страницы как 0
 page1.PageInfo.Margin.Top = 0;

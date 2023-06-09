@@ -69,5 +69,5 @@ doc.Save(dataDir + "Output_out.pdf");
 ```
 
 ## Çözüm
-Bu makalede, Aspose.PDF for .NET kullanarak bir alt küme stratejisiyle bir PDF dosyasına yazı tiplerinin nasıl gömüleceğini tartıştık. Aspose.PDF for .NET, farklı stratejilerle yazı tipi ekleme ve gömme de dahil olmak üzere PDF belgeleriyle çalışmak için basit ve kullanımı kolay bir API sağlar. Yazı tiplerini bir PDF dosyasına gömmek, belgenin farklı cihazlarda doğru şekilde görüntülenmesini sağlamak için önemli bir adımdır ve alt küme stratejisi, PDF belgesinin dosya boyutunu küçültmek için kullanışlı bir özelliktir.
+Bu makalede, Aspose.PDF for .NET kullanarak bir alt küme stratejisiyle bir PDF dosyasına yazı tiplerinin nasıl gömüleceğini tartıştık. Aspose.PDF for .NET, farklı stratejilerle yazı tipi ekleme ve gömme de dahil olmak üzere PDF belgeleriyle çalışmak için basit ve kullanımı kolay bir API sağlar. Yazı tiplerini bir PDF dosyasına gömmek, belgenin farklı cihazlarda doğru şekilde görüntülenmesini sağlamak için önemli bir adımdır ve alt küme stratejisi, PDF belgesinin dosya boyutunu küçültmek için yararlı bir özelliktir.
 

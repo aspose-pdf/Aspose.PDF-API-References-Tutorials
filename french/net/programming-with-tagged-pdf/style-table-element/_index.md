@@ -1,0 +1,246 @@
+---
+title: Élément de tableau de styles
+linktitle: Élément de tableau de styles
+second_title: Référence de l'API Aspose.PDF pour .NET
+description: Apprenez à formater un élément de tableau avec Aspose.PDF pour .NET. Guide étape par étape pour personnaliser les styles et les propriétés.
+type: docs
+weight: 170
+url: /fr/net/programming-with-tagged-pdf/style-table-element/
+---
+Dans ce didacticiel détaillé, nous vous guiderons pas à pas dans le code source C # fourni pour formater l'élément de tableau à l'aide de Aspose.PDF pour .NET. Suivez les instructions ci-dessous pour comprendre comment personnaliser les styles et les propriétés de l'élément de tableau.
+
+## Étape 1 : Configurer l'environnement
+
+Avant de commencer, assurez-vous d'avoir configuré votre environnement de développement pour utiliser Aspose.PDF pour .NET. Cela inclut l'installation de la bibliothèque Aspose.PDF et la configuration de votre projet pour le référencer.
+
+## Étape 2 : création d'un document
+
+Dans cette étape, nous allons créer un nouvel objet de document Aspose.PDF.
+
+```csharp
+// Chemin d'accès au répertoire des documents.
+string dataDir = "YOUR DOCUMENTS DIRECTORY";
+
+// création de documents
+Document document = new Document();
+ITaggedContent taggedContent = document.TaggedContent;
+taggedContent.SetTitle("Example of table formatting");
+taggedContent.SetLanguage("fr-FR");
+```
+
+Nous avons créé un nouveau document et défini le titre et la langue du document.
+
+## Etape 3 : Obtention de l'élément de structure racine
+
+Dans cette étape, nous obtiendrons l'élément de structure racine de notre document.
+
+```csharp
+// Obtenir l'élément de structure racine
+StructureElement rootElement = taggedContent.RootElement;
+```
+
+Nous avons obtenu l'élément de structure racine qui servira de conteneur pour l'élément de tableau.
+
+## Étape 4 : Création de l'élément de structure de tableau
+
+Créons maintenant un nouvel élément de structure de table pour notre document.
+
+```csharp
+// Créer l'élément de structure de tableau
+TableElement tableElement = taggedContent.CreateTableElement();
+rootElement.AppendChild(tableElement);
+```
+
+Nous avons créé un nouvel élément de structure de tableau et l'avons ajouté à l'élément de structure racine.
+
+## Étape 5 : Personnalisation des styles et des propriétés des éléments de tableau
+
+Dans cette étape, nous personnaliserons les styles et les propriétés de l'élément de tableau.
+
+```csharp
+// Personnaliser les styles et les propriétés de l'élément de tableau
+tableElement.BackgroundColor = Color.Beige;
+tableElement.Border = new BorderInfo(BorderSide.All, 0.80F, Color.Gray);
+tableElement. Alignment = HorizontalAlignment. Center;
+tableElement.Broken = TableBroken.Vertical;
+tableElement.ColumnAdjustment = ColumnAdjustment.AutoFitToWindow;
+tableElement. ColumnWidths = "80 80 80 80 80";
+tableElement.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.50F, Color.DarkBlue);
+tableElement. DefaultCellPadding = new MarginInfo(16.0, 2.0, 8.0, 2.0);
+tableElement.DefaultCellTextState.ForegroundColor = Color.DarkCyan;
+tableElement.DefaultCellTextState.FontSize = 8F;
+tableElement. DefaultColumnWidth = "70";
+tableElement. IsBroken = false;
+tableElement.IsBordersIncluded = true;
+tableElement. Left = 0F;
+tableElement. Top = 40F;
+tableElement.RepeatingColumnsCount = 2;
+tableElement.RepeatingRowsCount = 3;
+
+// Personnaliser le style des lignes répétées
+TextState rowStyle = new TextState();
+rowStyle.BackgroundColor = Color.LightCoral;
+tableElement.RepeatingRowsStyle = rowStyle;
+```
+
+Nous avons utilisé diverses propriétés pour personnaliser l'élément de tableau, telles que la couleur d'arrière-plan, les bordures, l'alignement, le style de cellule par défaut, les marges, la largeur de colonne, etc.
+
+## Étape 6 : Ajoutez des en-têtes, un corps et un pied de page au tableau
+
+Ajoutons maintenant les en-têtes, le corps et le pied de page du tableau à l'élément table.
+```csharp
+// Ajouter des en-têtes de tableau
+TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
+TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
+TableTFootElement tableTFootElement = tableElement.CreateTFoot();
+
+// Nombre de lignes et de colonnes dans le tableau
+int rowCount = 10;
+int colCount = 5;
+int rowIndex;
+int colIndex;
+
+// Créer la ligne d'en-tête du tableau
+TableTRElement headTrElement = tableTHeadElement.CreateTR();
+headTrElement.AlternativeText = "Header Row";
+
+for (colIndex = 0; colIndex < colCount; colIndex++)
+{
+     TableTHElement theElement = headTrElement.CreateTH();
+     theElement.SetText(string.Format("Header {0}", colIndex));
+}
+
+//Ajouter les lignes du corps du tableau
+for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
+{
+     TableTRElement trElement = tableTBodyElement.CreateTR();
+     trElement.AlternativeText = string.Format("Row {0}", rowIndex);
+
+     for (colIndex = 0; colIndex < colCount; colIndex++)
+     {
+         TableTDElement tdelement = trElement.CreateTD();
+         tdElement.SetText(string.Format("Cell [{0}, {1}]", rowIndex, colIndex));
+     }
+}
+
+// Ajouter la ligne de pied de la table
+TableTRElement footTrElement = tableTFootElement.CreateTR();
+footTrElement.AlternativeText = "Footline";
+
+for (colIndex = 0; colIndex < colCount; colIndex++)
+{
+     TableTDElement tdElement = footTrElement.CreateTD();
+     tdElement.SetText(string.Format("Foot {0}", colIndex));
+}
+```
+
+Nous avons ajouté les en-têtes, les lignes du corps et la ligne de pied de page au tableau en utilisant les éléments correspondants.
+
+## Étape 7 : Enregistrer le document PDF balisé
+
+Maintenant que nous avons créé notre document avec l'élément de tableau stylisé, nous allons l'enregistrer en tant que document PDF balisé.
+
+```csharp
+// Enregistrer le document PDF balisé
+document.Save(dataDir + "StyleTableElement.pdf");
+```
+
+Nous avons enregistré le document PDF balisé dans le répertoire spécifié.
+
+## Étape 8 : Validation de la conformité PDF/UA
+
+Ensuite, nous validerons la conformité PDF/UA de notre document.
+
+```csharp
+// Contrôle de conformité PDF/UA
+document = new Document(dataDir + "StyleTableElement.pdf");
+bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableElement.xml", PdfFormat.PDF_UA_1);
+Console.WriteLine(string.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
+```
+
+Nous avons téléchargé le document PDF balisé et validé sa conformité PDF/UA en générant un rapport XML.
+
+### Exemple de code source pour l'élément de table de style à l'aide d'Aspose.PDF pour .NET 
+
+```csharp
+
+// Chemin d'accès au répertoire des documents.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+
+// Créer un document
+Document document = new Document();
+ITaggedContent taggedContent = document.TaggedContent;
+taggedContent.SetTitle("Example table style");
+taggedContent.SetLanguage("en-US");
+
+// Obtenir l'élément de structure racine
+StructureElement rootElement = taggedContent.RootElement;
+
+// Créer un élément de structure de table
+TableElement tableElement = taggedContent.CreateTableElement();
+rootElement.AppendChild(tableElement);
+tableElement.BackgroundColor = Color.Beige;
+tableElement.Border = new BorderInfo(BorderSide.All, 0.80F, Color.Gray);
+tableElement.Alignment = HorizontalAlignment.Center;
+tableElement.Broken = TableBroken.Vertical;
+tableElement.ColumnAdjustment = ColumnAdjustment.AutoFitToWindow;
+tableElement.ColumnWidths = "80 80 80 80 80";
+tableElement.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.50F, Color.DarkBlue);
+tableElement.DefaultCellPadding = new MarginInfo(16.0, 2.0, 8.0, 2.0);
+tableElement.DefaultCellTextState.ForegroundColor = Color.DarkCyan;
+tableElement.DefaultCellTextState.FontSize = 8F;
+tableElement.DefaultColumnWidth = "70";
+tableElement.IsBroken = false;
+tableElement.IsBordersIncluded = true;
+tableElement.Left = 0F;
+tableElement.Top = 40F;
+tableElement.RepeatingColumnsCount = 2;
+tableElement.RepeatingRowsCount = 3;
+TextState rowStyle = new TextState();
+rowStyle.BackgroundColor = Color.LightCoral;
+tableElement.RepeatingRowsStyle = rowStyle;
+TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
+TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
+TableTFootElement tableTFootElement = tableElement.CreateTFoot();
+int rowCount = 10;
+int colCount = 5;
+int rowIndex;
+int colIndex;
+TableTRElement headTrElement = tableTHeadElement.CreateTR();
+headTrElement.AlternativeText = "Head Row";
+for (colIndex = 0; colIndex < colCount; colIndex++)
+{
+	TableTHElement thElement = headTrElement.CreateTH();
+	thElement.SetText(String.Format("Head {0}", colIndex));
+}
+for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
+{
+	TableTRElement trElement = tableTBodyElement.CreateTR();
+	trElement.AlternativeText = String.Format("Row {0}", rowIndex);
+	for (colIndex = 0; colIndex < colCount; colIndex++)
+	{
+		TableTDElement tdElement = trElement.CreateTD();
+		tdElement.SetText(String.Format("Cell [{0}, {1}]", rowIndex, colIndex));
+	}
+}
+TableTRElement footTrElement = tableTFootElement.CreateTR();
+footTrElement.AlternativeText = "Foot Row";
+for (colIndex = 0; colIndex < colCount; colIndex++)
+{
+	TableTDElement tdElement = footTrElement.CreateTD();
+	tdElement.SetText(String.Format("Foot {0}", colIndex));
+}
+
+// Enregistrer le document PDF balisé
+document.Save(dataDir + "StyleTableElement.pdf");
+
+// Vérification de la conformité PDF/UA
+document = new Document(dataDir + "StyleTableElement.pdf");
+bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableElement.xml", PdfFormat.PDF_UA_1);
+Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
+
+```
+
+## Conclusion
+
+Dans ce didacticiel, nous avons appris à formater l'élément de tableau avec Aspose.PDF pour .NET. Nous avons personnalisé les styles et les propriétés de l'élément de tableau, ajouté des en-têtes, des lignes de corps et un pied de page, enregistré le document PDF balisé et validé sa conformité PDF/UA.

@@ -108,7 +108,7 @@ dataDir = dataDir + "RadioButtonWithOptions_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Exempel på källkod för radioknapp med alternativ med Aspose.Words för .NET 
+### Exempel på källkod för radioknapp med alternativ med Aspose.PDF för .NET 
 ```csharp
 try
 {

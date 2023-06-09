@@ -71,7 +71,7 @@ doc.Save(dataDir + "DataIntegrated_out.pdf");
 
 Congratulations! You now know how to embed database data into a PDF document using Aspose.PDF for .NET.
 
-### Example source code for Integrate With Database using Aspose.Words for .NET
+### Example source code for Integrate With Database using Aspose.PDF for .NET
 
 ```csharp
 // The path to the documents directory.

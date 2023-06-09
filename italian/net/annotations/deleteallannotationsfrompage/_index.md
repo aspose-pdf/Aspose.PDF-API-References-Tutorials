@@ -13,7 +13,7 @@ Seguire i passaggi seguenti per eliminare tutte le annotazioni dalla pagina util
 
 ## Passo 1: Installa Aspose.PDF per .NET
 
- Per utilizzare Aspose.PDF per .NET, è necessario installare prima la libreria. Puoi[scaricamento](https://releases.aspose.com/pdf/net/)la libreria delle versioni di Aspose e installala sul tuo computer. Dopo l'installazione, è necessario aggiungere un riferimento alla libreria nel progetto.
+ Per utilizzare Aspose.PDF per .NET, è necessario installare prima la libreria. Puoi[scaricamento](https://releases.aspose.com/pdf/net/) la libreria delle versioni di Aspose e installala sul tuo computer. Dopo l'installazione, è necessario aggiungere un riferimento alla libreria nel progetto.
 
 ## Passaggio 2: creare una nuova applicazione console
 

@@ -47,7 +47,7 @@ annotation.Characteristics.Border = System.Drawing.Color.Red;
 
 ## 第 3 步：设置注释标志
 
-在创建注解并设置其特征后，我们可以指定注解标志。在本教程中，我们希望注释可打印，但不可查看。
+创建注解并设置其特征后，我们可以指定注解标志。在本教程中，我们希望注释可打印，但不可查看。
 
 ```csharp
 annotation.Flags = AnnotationFlags.Print | AnnotationFlags.NoView;

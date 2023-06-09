@@ -26,7 +26,7 @@ url: /ar/net/programming-with-document/getwarningsforfontsubstitution/
 // المسار إلى وثيقة PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//افتح مستند PDF
+// افتح مستند PDF
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
@@ -61,7 +61,7 @@ private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArg
 // المسار إلى وثيقة PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//افتح مستند PDF
+// افتح مستند PDF
 Document doc = new Document(dataDir + "input.pdf");
 
 // كشف تحذيرات استبدال الخط

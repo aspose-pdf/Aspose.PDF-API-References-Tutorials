@@ -14,7 +14,7 @@ Antes de sumergirnos en el código, asegúrese de tener la biblioteca Aspose.PDF
 
 ## Paso 1: configurar el documento
 
- Para comenzar, necesitamos crear una nueva instancia del`Document` clase del espacio de nombres Aspose.Pdf. Esta clase representa un documento PDF.
+ Para comenzar, necesitamos crear una nueva instancia del`Document`clase del espacio de nombres Aspose.Pdf. Esta clase representa un documento PDF.
 
 ```csharp
 // La ruta al directorio de documentos.
@@ -35,7 +35,7 @@ Page sec1 = pdfDocument.Pages.Add();
 
 ## Paso 3: agregar una tabla
 
-En este paso, crearemos una tabla instanciando el`Table` clase del espacio de nombres Aspose.Pdf.
+ En este paso, crearemos una tabla instanciando el`Table` clase del espacio de nombres Aspose.Pdf.
 
 ```csharp
 // Crear una instancia de un objeto de tabla
@@ -121,7 +121,7 @@ pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 
 ¡Felicidades! Ha aprendido con éxito cómo agregar una imagen a una celda de tabla usando Aspose.PDF para .NET. Siéntase libre de explorar más opciones de personalización e integrar esta funcionalidad en sus proyectos.
 
-### Ejemplo de código fuente para agregar una imagen en una celda de tabla usando Aspose.Words para .NET
+### Ejemplo de código fuente para agregar una imagen en una celda de tabla usando Aspose.PDF para .NET
 
 ```csharp
 // La ruta al directorio de documentos.
@@ -133,7 +133,7 @@ Document pdfDocument = new Document();
 Page sec1 = pdfDocument.Pages.Add();
 // Crear una instancia de un objeto de tabla
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
-// Agregue la tabla en la colección de párrafos de la página deseada
+//Agregue la tabla en la colección de párrafos de la página deseada
 sec1.Paragraphs.Add(tab1);
 // Establecer borde de celda predeterminado usando el objeto BorderInfo
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);

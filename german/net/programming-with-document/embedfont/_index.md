@@ -83,7 +83,7 @@ Hier ist der vollständige Quellcode zum Einbetten einer Schriftart mit Aspose.P
 // Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Laden Sie eine vorhandene PDF-Datei
+// Laden Sie eine vorhandene PDF-Datei
 Document doc = new Document(dataDir + "input.pdf");
 
 // Durchlaufen Sie alle Seiten

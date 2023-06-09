@@ -85,7 +85,7 @@ tocPage.Paragraphs.Add(table);
 doc.Save(dataDir + "43620_ByWords_out.pdf");
 ```
 
-### مثال على شفرة المصدر لمحاذاة النص لمحتوى صف الجدول باستخدام Aspose.Words for .NET
+### مثال على التعليمات البرمجية المصدر لمحاذاة النص لمحتوى صف الجدول باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 var dataDir = "YOUR DOCUMENT DIRECTORY";

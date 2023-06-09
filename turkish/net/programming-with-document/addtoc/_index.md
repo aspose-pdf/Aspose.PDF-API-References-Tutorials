@@ -13,7 +13,7 @@ Bu eğitimde, Aspose.PDF for .NET'in TOC (İçindekiler) özelliğinin PDF belge
 
 ## 1. Adım: Mevcut PDF dosyasını yükleyin
 
-Başlamak için mevcut bir PDF dosyasını yüklememiz gerekiyor. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` PDF dosyanızın gerçek yolu ile aşağıdaki kodda:
+ Başlamak için mevcut bir PDF dosyasını yüklememiz gerekiyor. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` PDF dosyanızın gerçek yolu ile aşağıdaki kodda:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -85,7 +85,7 @@ Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at "
 // Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Mevcut bir PDF dosyasını yükleyin
+// Mevcut bir PDF dosyasını yükleyin
 Document doc = new Document(dataDir + "AddTOC.pdf");
 
 // PDF dosyasının ilk sayfasına erişin
@@ -124,7 +124,7 @@ for (int i = 0; i < 2; i++)
 	// hedef koordinat
 	segment2.Text = titles[i];
 
-	// İçindekiler içeren sayfaya başlık ekle
+	//İçindekiler içeren sayfaya başlık ekle
 	tocPage.Paragraphs.Add(heading2);
 }
 dataDir = dataDir + "TOC_out.pdf";

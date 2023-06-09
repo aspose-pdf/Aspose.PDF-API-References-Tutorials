@@ -71,7 +71,7 @@ End = new Point(300, 300)
 doc.Save(dataDir + "AddDrawingWithGradientFill_out.pdf");
 ```
 
-### 使用 Aspose.Words for .NET 添加带有渐变填充的绘图的示例源代码 
+### 使用 Aspose.PDF for .NET 添加带有渐变填充的绘图的示例源代码 
 
 ```csharp
 

@@ -40,9 +40,9 @@ Document doc = new Document(dataDir + "Test2.pdf");
 
 这里，`"Test2.pdf"`是您要加载的 PDF 文档的名称。确保文档存在于指定的文档目录中。
 
-## 第 3 步：按 Tab 键顺序检索表单字段
+## 第 3 步：按 Tab 键顺序检索表单域
 
-要按 Tab 键顺序检索表单字段，我们需要访问`FieldsInTabOrder`的财产`Page`班级。此属性返回按 Tab 键顺序排序的表单域列表。
+要按 Tab 键顺序检索表单字段，我们需要访问`FieldsInTabOrder`的财产`Page`班级。此属性返回按 Tab 键顺序排序的表单字段列表。
 
 ```csharp
 Page page = doc.Pages[1];
@@ -78,7 +78,7 @@ doc.Save(dataDir + "39522_out.pdf");
 
 这里，`"39522_out.pdf"`是将保存修改文档的输出文件的名称。为输出文件指定所需的名称和位置。
 
-### 使用 Aspose.Words for .NET 以 Tab 顺序检索表单字段的示例源代码 
+### 使用 Aspose.PDF for .NET 按 Tab 键顺序检索表单字段的示例源代码 
 ```csharp
 //文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";

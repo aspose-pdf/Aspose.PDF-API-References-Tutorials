@@ -13,7 +13,7 @@ Dans ce didacticiel, nous allons explorer comment utiliser la fonctionnalité Aj
 
 ## Étape 1 : Chargez le fichier PDF existant
 
-Pour commencer, nous devons charger un fichier PDF existant. Remplacer`"YOUR DOCUMENT DIRECTORY"` dans le code suivant avec le chemin d'accès réel à votre fichier PDF :
+ Pour commencer, nous devons charger un fichier PDF existant. Remplacer`"YOUR DOCUMENT DIRECTORY"` dans le code suivant avec le chemin d'accès réel à votre fichier PDF :
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -85,7 +85,7 @@ Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at "
 // Chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Charger un fichier PDF existant
+// Charger un fichier PDF existant
 Document doc = new Document(dataDir + "AddTOC.pdf");
 
 // Accéder à la première page du fichier PDF
@@ -124,7 +124,7 @@ for (int i = 0; i < 2; i++)
 	// Coordonnée de destination
 	segment2.Text = titles[i];
 
-	// Ajouter un titre à la page contenant la table des matières
+	//Ajouter un titre à la page contenant la table des matières
 	tocPage.Paragraphs.Add(heading2);
 }
 dataDir = dataDir + "TOC_out.pdf";

@@ -67,7 +67,7 @@ pdfDocument.Save(dataDir + "ProvideCredentialsDuringHTMLToPDF_out.pdf");
 
  Der obige Code speichert die resultierende PDF-Datei unter dem Dateinamen`"ProvideCredentialsDuringHTMLToPDF_out.pdf"`.
 
-### Beispielquellcode für die Bereitstellung von Anmeldeinformationen bei der Umwandlung von HTML in PDF mit Aspose.Words für .NET
+### Beispielquellcode für die Bereitstellung von Anmeldeinformationen bei der Umwandlung von HTML in PDF mit Aspose.PDF für .NET
 
 ```csharp
 try

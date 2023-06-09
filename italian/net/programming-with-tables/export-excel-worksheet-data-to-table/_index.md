@@ -56,7 +56,7 @@ In questo esempio, esportiamo tutte le righe e le colonne a partire dalla prima 
 Ora creeremo un nuovo documento PDF utilizzando la libreria Aspose.PDF.
 
 ```csharp
-//Crea un'istanza di un documento
+// Crea un'istanza di un documento
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 ```
 
@@ -89,10 +89,10 @@ tab1.ColumnWidths = "40 100 100";
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 ```
 
-In questo esempio, impostiamo la larghezza delle colonne a 40, 100 e 100 unità. Regola i valori in base ai tuoi dati. Impostiamo anche il bordo della cella predefinito per visualizzare i bordi su tutti i lati di ogni cella.
+In questo esempio, impostiamo la larghezza delle colonne su 40, 100 e 100 unità. Regola i valori in base ai tuoi dati. Impostiamo anche il bordo della cella predefinito per visualizzare i bordi su tutti i lati di ogni cella.
 
 ## Passaggio 8: importazione dei dati nella tabella
-Ora importeremo i dati dal file`DataTable` oggetto nella tabella utilizzando il`ImportDataTable` metodo.
+ Ora importeremo i dati dal file`DataTable` oggetto nella tabella utilizzando il`ImportDataTable` metodo.
 
 ```csharp
 // Importa i dati nell'oggetto Table dal DataTable creato in precedenza
@@ -148,7 +148,7 @@ pdf1.Save(dataDir + @"Exceldata_toPdf_table.pdf");
 
 Assicurati di sostituire "YOUR DOCUMENT DIRECTORY" con il percorso della directory e il nome file desiderati per il file PDF di output.
 
-### Esempio di codice sorgente per l'esportazione dei dati del foglio di lavoro Excel nella tabella utilizzando Aspose.Words per .NET
+### Esempio di codice sorgente per l'esportazione dei dati del foglio di lavoro Excel nella tabella utilizzando Aspose.PDF per .NET
 
 ```csharp
 // Il percorso della directory dei documenti.
@@ -190,7 +190,7 @@ foreach (Aspose.Pdf.Cell curCell in row1.Cells)
 	curCell.BackgroundColor = Color.Blue;
 	// Imposta il tipo di carattere per le celle della prima riga nella tabella.
 	curCell.DefaultCellTextState.Font = Aspose.Pdf.Text.FontRepository.FindFont("Helvetica-Oblique");
-	//Imposta il colore del carattere di tutte le celle nella prima riga della tabella.
+	// Imposta il colore del carattere di tutte le celle nella prima riga della tabella.
 	curCell.DefaultCellTextState.ForegroundColor = Color.Yellow;
 	// Imposta l'allineamento del testo per le celle della prima riga come Centro.
 	curCell.DefaultCellTextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;

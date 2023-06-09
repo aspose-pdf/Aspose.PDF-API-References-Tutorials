@@ -68,7 +68,7 @@ dataDir = dataDir + "RadioButton_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Пример исходного кода для радиокнопки с использованием Aspose.Words для .NET 
+### Пример исходного кода для радиокнопки с использованием Aspose.PDF для .NET 
 ```csharp
 try
 {

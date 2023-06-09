@@ -68,7 +68,7 @@ dataDir = dataDir + "RadioButton_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Radio Button using Aspose.Words for .NET 
+### Sample source code for Radio Button using Aspose.PDF for .NET 
 ```csharp
 try
 {

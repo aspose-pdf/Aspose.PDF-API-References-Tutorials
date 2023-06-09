@@ -23,7 +23,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ## Étape 2 : Ouvrir le document PDF
 
- Dans cette étape, nous allons ouvrir le document PDF en utilisant le`Document` classe de Aspose.PDF.
+ Dans cette étape, nous allons ouvrir le document PDF en utilisant le`Document`classe de Aspose.PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "TextField.pdf");
@@ -76,7 +76,7 @@ pdfDocument.Save(dataDir);
 
 Assurez-vous de spécifier le chemin d'accès complet et le nom de fichier du PDF modifié.
 
-### Exemple de code source pour Text Box utilisant Aspose.Words pour .NET 
+### Exemple de code source pour la zone de texte utilisant Aspose.PDF pour .NET 
 ```csharp
 // Chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

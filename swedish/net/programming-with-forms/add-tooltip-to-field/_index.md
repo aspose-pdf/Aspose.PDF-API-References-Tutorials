@@ -59,7 +59,7 @@ Console.WriteLine("\nTooltip added successfully.\nFile saved at " + dataDir);
 
 Se till att ange önskat utdatafilnamn och sökväg. Efter exekvering av den här koden kommer det modifierade PDF-formuläret med det tillagda verktygstipset att sparas på den angivna platsen.
 
-### Exempel på källkod för Lägg till verktygstips i fält med Aspose.Words för .NET 
+### Exempel på källkod för Lägg till verktygstips i fält med Aspose.PDF för .NET 
 
 ```csharp
 // Sökvägen till dokumentkatalogen.

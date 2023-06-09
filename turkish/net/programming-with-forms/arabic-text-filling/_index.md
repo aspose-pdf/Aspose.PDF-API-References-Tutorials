@@ -61,7 +61,7 @@ Arapça metni doldurmanın başarılı olduğunu belirtmek için bir mesaj da g�
 Console.WriteLine("\nArabic text successfully filled in the form field.\nFile saved in the following location: " + dataDir);
 ```
 
-### Aspose.Words for .NET kullanarak Arapça Metin Doldurma için örnek kaynak kodu 
+### Aspose.PDF for .NET kullanarak Arapça Metin Doldurma için örnek kaynak kodu 
 ```csharp
 // Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

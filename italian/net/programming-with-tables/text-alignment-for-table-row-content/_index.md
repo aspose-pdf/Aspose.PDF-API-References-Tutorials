@@ -85,7 +85,7 @@ Infine, salveremo il documento PDF:
 doc.Save(dataDir + "43620_ByWords_out.pdf");
 ```
 
-### Codice sorgente di esempio per l'allineamento del testo per il contenuto della riga della tabella utilizzando Aspose.Words per .NET
+### Codice sorgente di esempio per l'allineamento del testo per il contenuto della riga della tabella utilizzando Aspose.PDF per .NET
 
 ```csharp
 var dataDir = "YOUR DOCUMENT DIRECTORY";

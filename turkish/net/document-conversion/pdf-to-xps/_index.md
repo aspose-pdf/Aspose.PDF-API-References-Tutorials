@@ -49,7 +49,7 @@ pdfDocument.Save("PDFToXPS_out.xps", saveOptions);
  Yukarıdaki kod, dönüştürülen PDF dosyasını dosya adıyla XPS formatında kaydeder.`"PDFToXPS_out.xps"`.
 
 
-### Aspose.Words for .NET kullanarak PDF'den XPS'e dönüştürme için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak PDF to XPS için örnek kaynak kodu
 
 ```csharp
 // Belgeler dizininin yolu.

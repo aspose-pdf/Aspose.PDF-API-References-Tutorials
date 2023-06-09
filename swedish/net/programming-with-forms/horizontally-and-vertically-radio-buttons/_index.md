@@ -67,7 +67,7 @@ dataDir = dataDir + "HorizontallyAndVerticallyRadioButtons_out.pdf";
 formEditor.Save(dataDir);
 ```
 
-### Exempel på källkod för radioknappar horisontellt och vertikalt med Aspose.Words för .NET 
+### Exempel på källkod för radioknappar horisontellt och vertikalt med Aspose.PDF för .NET 
 ```csharp
 try
 {

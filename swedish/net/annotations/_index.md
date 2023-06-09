@@ -21,7 +21,7 @@ En omfattande samling självstudier som visar hur man arbetar med kommentarer i 
 | [Få särskild anteckning](./getparticularannotation/) | Lär dig hur du använder Aspose.PDF för .NET för att få speciell anteckning i ett PDF-dokument med denna steg-för-steg-guide.  |  
 | [Hämta Resource Of Annotation](./getresourceofannotation/) | Lär dig hur du hämtar resursen för en anteckning med Aspose.PDF för .NET med denna steg-för-steg-guide.  |  
 | [Osynlig anteckning](./invisibleannotation/) | Lär dig hur du osynligt kommenterar PDF-filer med C#-källkod med Aspose.PDF för .NET. Steg-för-steg guide. |  
-| [lnk Anteckningslinjebredd](./lnkannotationlinewidth/) | Den här artikeln ger en steg-för-steg-guide för att ställa in linjebredden för lnk-anteckningen med Aspose.PDF för .NET. |  
+| [lnk Annotation Line Width](./lnkannotationlinewidth/) | Den här artikeln ger en steg-för-steg-guide för att ställa in linjebredden för lnk-anteckningen med Aspose.PDF för .NET. |  
 | [Redigera sida](./redactpage/) | Den här artikeln förklarar hur man redigerar en PDF-sida med Aspose.PDF för .NET, inklusive steg-för-steg-instruktioner och exempel på källkod. |  
 | [Ställ in bildtextegenskap](./setcalloutproperty/) | Lär dig hur du ställer in bildtextegenskap med Aspose.PDF för .NET. Anpassa kommentarer med textlinjer, textfärg och avslutningsstilar. |  
 | [Ställ in formatering av fritextkommentarer](./setfreetextannotationformatting/) | Den här artikeln ger en steg-för-steg-guide om hur du skapar en fritextkommentar och anger dess innehåll med Aspose.PDF för .NET. |  

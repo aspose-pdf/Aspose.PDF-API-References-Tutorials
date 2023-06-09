@@ -51,7 +51,7 @@ Console.WriteLine("The field " + field.FullName + " is required");
 }
 ```
 
-### Пример исходного кода для определения обязательного поля с использованием Aspose.Words для .NET 
+### Пример исходного кода для определения обязательного поля с использованием Aspose.PDF для .NET 
 ```csharp
 // Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

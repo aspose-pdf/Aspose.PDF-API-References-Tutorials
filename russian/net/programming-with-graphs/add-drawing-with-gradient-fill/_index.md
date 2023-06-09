@@ -71,7 +71,7 @@ End = new Point(300, 300)
 doc.Save(dataDir + "AddDrawingWithGradientFill_out.pdf");
 ```
 
-### Пример исходного кода для добавления рисунка с градиентной заливкой с использованием Aspose.Words для .NET 
+### Пример исходного кода для добавления рисунка с градиентной заливкой с использованием Aspose.PDF для .NET 
 
 ```csharp
 

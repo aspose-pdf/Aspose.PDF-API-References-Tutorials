@@ -26,7 +26,7 @@ Bu özelliği kullanmanın ilk adımı, hakkında bilgi almak istediğiniz PDF b
 // PDF belgesine giden yol
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//PDF belgesini aç
+// PDF belgesini aç
 Document pdfDocument = new Document(dataDir + "GetFileInfo.pdf");
 ```
 
@@ -59,7 +59,7 @@ Yukarıdaki kodda, her satır PDF belgesinin farklı bir meta veri özelliğini 
 // PDF belgesine giden yol
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//PDF belgesini aç
+// PDF belgesini aç
 Document pdfDocument = new Document(dataDir + "GetFileInfo.pdf");
 
 // Belge bilgilerini al

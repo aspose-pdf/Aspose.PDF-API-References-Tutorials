@@ -23,7 +23,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ## الخطوة 2: فتح مستند PDF
 
- في هذه الخطوة ، سنفتح مستند PDF باستخدام امتداد`Document` فئة Aspose.PDF.
+ في هذه الخطوة ، سنفتح مستند PDF باستخدام امتداد`Document`فئة Aspose.PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "TextField.pdf");
@@ -76,7 +76,7 @@ pdfDocument.Save(dataDir);
 
 تأكد من تحديد المسار الكامل واسم الملف لملف PDF المحرر.
 
-### نموذج التعليمات البرمجية المصدر لـ Text Box باستخدام Aspose.Words for .NET 
+### نموذج التعليمات البرمجية المصدر لـ Text Box باستخدام Aspose.PDF لـ .NET 
 ```csharp
 // المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

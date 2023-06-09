@@ -28,7 +28,7 @@ tab1.CornerStyle = Aspose.Pdf.BorderCornerStyle.Round;
 Чтобы придать таблице границу с закругленными углами, нам нужно создать объект BorderInfo и настроить его с соответствующими параметрами:
 
 ```csharp
-// Создайте объект GraphInfo, чтобы установить цвет границы
+//Создайте объект GraphInfo, чтобы установить цвет границы
 GraphInfo graph = new GraphInfo();
 graph.Color = Aspose.Pdf.Color.Red;
 
@@ -42,7 +42,7 @@ bInfo.RoundedBorderRadius = 15;
 tab1.Border = bInfo;
 ```
 
-### Пример исходного кода для таблицы со скругленными углами с использованием Aspose.Words для .NET
+### Пример исходного кода для таблицы со скругленными углами с использованием Aspose.PDF для .NET
 
 ```csharp
 // Путь к каталогу документов.

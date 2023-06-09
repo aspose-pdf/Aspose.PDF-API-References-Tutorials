@@ -67,7 +67,7 @@ dataDir = dataDir + "HorizontallyAndVerticallyRadioButtons_out.pdf";
 formEditor.Save(dataDir);
 ```
 
-### Sample source code for Horizontally And Vertically Radio Buttons using Aspose.Words for .NET 
+### Sample source code for Horizontally And Vertically Radio Buttons using Aspose.PDF for .NET 
 ```csharp
 try
 {

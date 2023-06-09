@@ -43,7 +43,7 @@ dataDir = dataDir + "DeleteFormField_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Exempel på källkod för Ta bort formulärfält med Aspose.Words för .NET 
+### Exempel på källkod för Ta bort formulärfält med Aspose.PDF för .NET 
 ```csharp
 // Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

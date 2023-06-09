@@ -63,7 +63,7 @@ foreach(AbsorbedTable table in tables)
 pdfDocument.Save(dataDir + "Table2_out.pdf");
 ```
 
-### مثال على شفرة المصدر لإزالة الجداول المتعددة باستخدام Aspose.Words for .NET
+### مثال على التعليمات البرمجية المصدر لـ Remove Multiple Tables باستخدام Aspose.PDF for .NET
 
 ```csharp
 // المسار إلى دليل المستندات.

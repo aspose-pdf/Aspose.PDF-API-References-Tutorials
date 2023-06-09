@@ -83,13 +83,13 @@ Console.WriteLine("\nText added successfully to an existing pdf file.\nFile save
 
 أخيرًا ، نضيف كائن الجدول إلى الصفحة الأولى من مستند PDF باستخدام مجموعة الفقرات في الصفحة المقابلة.
 
-### مثال على شفرة المصدر لإضافة جدول باستخدام Aspose.Words for .NET
+### مثال على التعليمات البرمجية المصدر لإضافة جدول باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 // المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//تحميل مستند PDF المصدر
+// تحميل مستند PDF المصدر
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir+ "AddTable.pdf");
 // يقوم بتهيئة مثيل جديد للجدول
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();

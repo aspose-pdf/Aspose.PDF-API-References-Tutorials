@@ -72,7 +72,7 @@ doc.Save(dataDir + "RemoveHyperlinksFromText_out.pdf");
 
  Il codice sopra salva il file PDF risultante con il nome del file`"RemoveHyperlinksFromText_out.pdf"`.
 
-### Codice sorgente di esempio per Rimuovi collegamenti ipertestuali dopo la conversione da Html utilizzando Aspose.Words per .NET
+### Codice sorgente di esempio per Rimuovi collegamenti ipertestuali dopo la conversione da Html utilizzando Aspose.PDF per .NET
 
 ```csharp
 // Il percorso della directory dei documenti.

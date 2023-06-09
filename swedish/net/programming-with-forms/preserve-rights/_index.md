@@ -58,7 +58,7 @@ pdfDocument.Save();
 fs. Close();
 ```
 
-### Exempel på källkod för att bevara rättigheterna med Aspose.Words för .NET 
+### Exempel på källkod för att bevara rättigheterna med Aspose.PDF för .NET 
 ```csharp
 // Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

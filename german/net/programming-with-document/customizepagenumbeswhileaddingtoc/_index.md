@@ -12,7 +12,7 @@ In diesem Tutorial erfahren Sie, wie Sie mit Aspose.PDF für .NET Seitenzahlen a
 
 ## Schritt 1: Laden einer vorhandenen PDF-Datei
 
-Zuerst müssen wir eine vorhandene PDF-Datei laden. Für dieses Tutorial verwenden wir die Datei „42824.pdf“, die sich im Verzeichnis „IHR DOKUMENTVERZEICHNIS“ befindet. Ersetzen Sie diesen Verzeichnispfad durch den tatsächlichen Pfad zu Ihrem Dokumentverzeichnis.
+Zuerst müssen wir eine vorhandene PDF-Datei laden. Für dieses Tutorial verwenden wir die Datei „42824.pdf“, die sich im Verzeichnis „IHR DOKUMENTENVERZEICHNIS“ befindet. Ersetzen Sie diesen Verzeichnispfad durch den tatsächlichen Pfad zu Ihrem Dokumentverzeichnis.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -61,7 +61,7 @@ for (int i = 1; i < doc.Pages.Count; i++)
     heading2.Top = doc.Pages[i + 1].Rect.Height;
     // Zielkoordinate
     segment2.Text = "Page " + i.ToString();
-    // Fügen Sie der Seite mit dem Inhaltsverzeichnis eine Überschrift hinzu
+    //Fügen Sie der Seite mit dem Inhaltsverzeichnis eine Überschrift hinzu
     tocPage.Paragraphs.Add(heading2);
 }
 ```
@@ -80,7 +80,7 @@ doc.Save(outFile);
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string inFile = dataDir + "42824.pdf";
 string outFile = dataDir + "42824_out.pdf";
-//Laden Sie eine vorhandene PDF-Datei
+// Laden Sie eine vorhandene PDF-Datei
 Document doc = new Document(inFile);
 // Erhalten Sie Zugriff auf die erste Seite der PDF-Datei
 Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
@@ -106,7 +106,7 @@ for (int i = 1; i<doc.Pages.Count; i++)
 	heading2.Top = doc.Pages[i + 1].Rect.Height;
 	// Zielkoordinate
 	segment2.Text = "Page " + i.ToString();
-	// Fügen Sie der Seite mit dem Inhaltsverzeichnis eine Überschrift hinzu
+	//Fügen Sie der Seite mit dem Inhaltsverzeichnis eine Überschrift hinzu
 	tocPage.Paragraphs.Add(heading2);
 }
 

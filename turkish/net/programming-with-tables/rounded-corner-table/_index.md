@@ -28,7 +28,7 @@ tab1.CornerStyle = Aspose.Pdf.BorderCornerStyle.Round;
 Tabloya yuvarlatılmış köşe kenarlığı vermek için, bir BorderInfo nesnesi oluşturmamız ve onu uygun parametrelerle yapılandırmamız gerekir:
 
 ```csharp
-// Kenarlık rengini ayarlamak için bir GraphInfo nesnesi oluşturun
+//Kenarlık rengini ayarlamak için bir GraphInfo nesnesi oluşturun
 GraphInfo graph = new GraphInfo();
 graph.Color = Aspose.Pdf.Color.Red;
 
@@ -42,7 +42,7 @@ bInfo.RoundedBorderRadius = 15;
 tab1.Border = bInfo;
 ```
 
-### Aspose.Words for .NET kullanan Yuvarlatılmış Köşe Tablosu için örnek kaynak kodu
+### Aspose.PDF for .NET kullanan Yuvarlatılmış Köşe Tablosu için örnek kaynak kodu
 
 ```csharp
 // Belgeler dizininin yolu.

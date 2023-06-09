@@ -7,7 +7,7 @@ type: docs
 weight: 160
 url: /es/net/programming-with-pdf-pages/zoom-to-page-contents/
 ---
-En este tutorial, lo guiaremos a través del proceso paso a paso para acercar el contenido de la página de un archivo PDF usando Aspose.PDF para .NET. Explicaremos el código fuente de C# incluido y le proporcionaremos una guía completa para ayudarlo a comprender e implementar esta función en sus propios proyectos. Al final de este tutorial, sabrá cómo hacer zoom en el contenido de la página de un archivo PDF utilizando Aspose.PDF para .NET.
+En este tutorial, lo guiaremos a través del proceso paso a paso para acercar el contenido de la página de un archivo PDF usando Aspose.PDF para .NET. Explicaremos el código fuente de C# incluido y le proporcionaremos una guía completa para ayudarlo a comprender e implementar esta característica en sus propios proyectos. Al final de este tutorial, sabrá cómo hacer zoom en el contenido de la página de un archivo PDF utilizando Aspose.PDF para .NET.
 
 ## requisitos previos
 Antes de comenzar, asegúrese de tener lo siguiente:
@@ -49,7 +49,7 @@ ppe.PageSize = new Aspose.Pdf.PageSize((float)rect.Height, (float)rect.Width);
 ```
 
 ## Paso 4: Guarde el archivo PDF de salida
- Finalmente, puede guardar el archivo PDF modificado usando el`Save()` metodo de la`Document` clase. Asegúrese de especificar la ruta y el nombre de archivo correctos.
+ Finalmente, puede guardar el archivo PDF modificado usando el`Save()` metodo de la`Document`clase. Asegúrese de especificar la ruta y el nombre de archivo correctos.
 
 ```csharp
 dataDir = dataDir + "ZoomToPageContents_out.pdf";

@@ -63,7 +63,7 @@ Enfin, nous enregistrons le fichier PDF résultant sous le nom "ControlRectangle
 ```csharp
 doc1.Save(dataDir);
 ```
-### Exemple de code source pour Control Rectangle Z Order en utilisant Aspose.Words pour .NET 
+### Exemple de code source pour Control Rectangle Z Order utilisant Aspose.PDF pour .NET 
 
 ```csharp
 
@@ -75,7 +75,7 @@ Document doc1 = new Document();
 Aspose.Pdf.Page page1 = doc1.Pages.Add();
 // Définir la taille de la page PDF
 page1.SetPageSize(375, 300);
-// Définir la marge de gauche pour l'objet de la page sur 0
+//Définir la marge de gauche pour l'objet de la page sur 0
 page1.PageInfo.Margin.Left = 0;
 // Définir la marge supérieure de l'objet de la page sur 0
 page1.PageInfo.Margin.Top = 0;

@@ -83,7 +83,7 @@ Ecco il codice sorgente completo per incorporare un font utilizzando Aspose.PDF 
 // Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Carica un file PDF esistente
+// Carica un file PDF esistente
 Document doc = new Document(dataDir + "input.pdf");
 
 // Scorri tutte le pagine

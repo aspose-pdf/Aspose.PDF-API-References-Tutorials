@@ -14,7 +14,7 @@ Bevor wir uns mit dem Code befassen, stellen Sie sicher, dass die Aspose.PDF fü
 
 ## Schritt 1: Einrichten des Dokuments
 
- Zunächst müssen wir eine neue Instanz von erstellen`Document` Klasse aus dem Aspose.Pdf-Namespace. Diese Klasse repräsentiert ein PDF-Dokument.
+ Zunächst müssen wir eine neue Instanz von erstellen`Document`Klasse aus dem Aspose.Pdf-Namespace. Diese Klasse repräsentiert ein PDF-Dokument.
 
 ```csharp
 // Der Pfad zum Dokumentenverzeichnis.
@@ -35,7 +35,7 @@ Page sec1 = pdfDocument.Pages.Add();
 
 ## Schritt 3: Hinzufügen einer Tabelle
 
-In diesem Schritt erstellen wir eine Tabelle, indem wir die instanziieren`Table` Klasse aus dem Aspose.Pdf-Namespace.
+ In diesem Schritt erstellen wir eine Tabelle, indem wir die instanziieren`Table` Klasse aus dem Aspose.Pdf-Namespace.
 
 ```csharp
 // Instanziieren Sie ein Tabellenobjekt
@@ -121,7 +121,7 @@ pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 
 Glückwunsch! Sie haben erfolgreich gelernt, wie Sie mit Aspose.PDF für .NET ein Bild zu einer Tabellenzelle hinzufügen. Entdecken Sie gerne weitere Anpassungsmöglichkeiten und integrieren Sie diese Funktionalität in Ihre Projekte.
 
-### Beispielquellcode zum Hinzufügen eines Bildes in einer Tabellenzelle mit Aspose.Words für .NET
+### Beispielquellcode zum Hinzufügen eines Bildes in einer Tabellenzelle mit Aspose.PDF für .NET
 
 ```csharp
 // Der Pfad zum Dokumentenverzeichnis.
@@ -133,7 +133,7 @@ Document pdfDocument = new Document();
 Page sec1 = pdfDocument.Pages.Add();
 // Instanziieren Sie ein Tabellenobjekt
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
-// Fügen Sie die Tabelle in der Absatzsammlung der gewünschten Seite hinzu
+//Fügen Sie die Tabelle in der Absatzsammlung der gewünschten Seite hinzu
 sec1.Paragraphs.Add(tab1);
 // Legen Sie den Standardzellenrahmen mithilfe des BorderInfo-Objekts fest
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);

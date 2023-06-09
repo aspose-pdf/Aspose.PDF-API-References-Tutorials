@@ -78,7 +78,7 @@ doc.Save(dataDir + "39522_out.pdf");
 
  Här,`"39522_out.pdf"` är namnet på utdatafilen där det ändrade dokumentet kommer att sparas. Ange önskat namn och plats för utdatafilen.
 
-### Exempel på källkod för Hämta formulärfält i flikordning med Aspose.Words för .NET 
+### Exempel på källkod för Hämta formulärfält i flikordning med Aspose.PDF för .NET 
 ```csharp
 // Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

@@ -72,7 +72,7 @@ doc.Save(dataDir + "RemoveHyperlinksFromText_out.pdf");
 
 上面的代码使用文件名保存生成的 PDF 文件`"RemoveHyperlinksFromText_out.pdf"`.
 
-### 使用 Aspose.Words for .NET 从 Html 转换后删除超链接的示例源代码
+### 使用 Aspose.PDF for .NET 从 Html 转换后删除超链接的示例源代码
 
 ```csharp
 //文档目录的路径。

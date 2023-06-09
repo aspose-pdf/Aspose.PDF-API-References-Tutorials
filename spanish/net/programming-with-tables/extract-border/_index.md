@@ -108,7 +108,7 @@ bitmap.Save(dataDir, ImageFormat.Png);
 
 Asegúrese de especificar el directorio y el nombre de archivo correctos para guardar la imagen de salida.
 
-### Ejemplo de código fuente para Extraer borde usando Aspose.Words para .NET
+### Ejemplo de código fuente para Extraer borde usando Aspose.PDF para .NET
 
 ```csharp
 // La ruta al directorio de documentos.
@@ -121,7 +121,7 @@ System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap((int)doc.Pages[1].PageI
 System.Drawing.Drawing2D.GraphicsPath graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
 // El valor predeterminado de la matriz ctm es 1,0,0,1,0,0
 System.Drawing.Drawing2D.Matrix lastCTM = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, 0);
-//Sistema. El sistema de coordenadas de dibujo se basa en la parte superior izquierda, mientras que el sistema de coordenadas pdf se basa en la parte inferior izquierda, por lo que tenemos que aplicar la matriz de inversión
+// Sistema. El sistema de coordenadas de dibujo se basa en la parte superior izquierda, mientras que el sistema de coordenadas pdf se basa en la parte inferior izquierda, por lo que tenemos que aplicar la matriz de inversión
 System.Drawing.Drawing2D.Matrix inversionMatrix = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, (float)doc.Pages[1].PageInfo.Height);
 System.Drawing.PointF lastPoint = new System.Drawing.PointF(0, 0);
 System.Drawing.Color fillColor = System.Drawing.Color.FromArgb(0, 0, 0);
@@ -150,7 +150,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 
 		if (opSaveState != null)
 		{
-			// Guarde el estado anterior y coloque el estado actual en la parte superior de la pila
+			//Guarde el estado anterior y coloque el estado actual en la parte superior de la pila
 			graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
 			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 		}

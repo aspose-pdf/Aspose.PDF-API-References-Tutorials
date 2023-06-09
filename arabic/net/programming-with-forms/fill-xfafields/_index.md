@@ -52,7 +52,7 @@ dataDir = dataDir + "Filled_XFA_out.pdf";
 doc.Save(dataDir);
 ```
 
-### عينة من التعليمات البرمجية المصدر لـ Fill XFAFields باستخدام Aspose.Words for .NET 
+### نموذج التعليمات البرمجية المصدر لملء XFAFields باستخدام Aspose.PDF لـ .NET 
 ```csharp
 // المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

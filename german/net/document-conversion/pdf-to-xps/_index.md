@@ -49,7 +49,7 @@ pdfDocument.Save("PDFToXPS_out.xps", saveOptions);
  Der obige Code speichert die konvertierte PDF-Datei im XPS-Format unter dem Dateinamen`"PDFToXPS_out.xps"`.
 
 
-### Beispielquellcode für PDF zu XPS mit Aspose.Words für .NET
+### Beispielquellcode für PDF zu XPS mit Aspose.PDF für .NET
 
 ```csharp
 // Der Pfad zum Dokumentenverzeichnis.

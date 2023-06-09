@@ -13,7 +13,7 @@ In questo tutorial, esploreremo come utilizzare la funzione Aggiungi TOC (Table 
 
 ## Passaggio 1: carica il file PDF esistente
 
-Per iniziare, dobbiamo caricare un file PDF esistente. Sostituire`"YOUR DOCUMENT DIRECTORY"` nel codice seguente con il percorso effettivo del file PDF:
+ Per iniziare, dobbiamo caricare un file PDF esistente. Sostituire`"YOUR DOCUMENT DIRECTORY"` nel codice seguente con il percorso effettivo del file PDF:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -85,7 +85,7 @@ Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at "
 // Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Carica un file PDF esistente
+// Carica un file PDF esistente
 Document doc = new Document(dataDir + "AddTOC.pdf");
 
 // Ottieni l'accesso alla prima pagina del file PDF
@@ -124,7 +124,7 @@ for (int i = 0; i < 2; i++)
 	// Coordinate di destinazione
 	segment2.Text = titles[i];
 
-	// Aggiungi un'intestazione alla pagina contenente il TOC
+	//Aggiungi un'intestazione alla pagina contenente il sommario
 	tocPage.Paragraphs.Add(heading2);
 }
 dataDir = dataDir + "TOC_out.pdf";

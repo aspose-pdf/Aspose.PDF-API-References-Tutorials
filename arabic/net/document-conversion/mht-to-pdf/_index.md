@@ -42,7 +42,7 @@ document.Save(dataDir + "MHTToPDF_out.pdf");
 
  يحول الكود أعلاه ملف MHT إلى تنسيق PDF ويحفظه كاسم ملف`"MHTToPDF_out.pdf"`.
 
-### مثال على شفرة المصدر لـ MHT إلى PDF باستخدام Aspose.Words for .NET
+### مثال على كود المصدر لـ MHT إلى PDF باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 // المسار إلى دليل المستندات.

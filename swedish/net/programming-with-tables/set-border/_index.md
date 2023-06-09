@@ -8,7 +8,7 @@ weight: 200
 url: /sv/net/programming-with-tables/set-border/
 ---
 
-I den här handledningen guidar vi dig steg för steg för att sätta en ram i en tabell för ett PDF-dokument med Aspose.PDF för .NET. Vi kommer att förklara den medföljande C#-källkoden och visa dig hur du implementerar den.
+den här handledningen guidar vi dig steg för steg för att sätta en ram i en tabell för ett PDF-dokument med Aspose.PDF för .NET. Vi kommer att förklara den medföljande C#-källkoden och visa dig hur du implementerar den.
 
 ## Steg 1: Instantiera dokumentobjektet
 Först instansierar vi ett dokumentobjekt:
@@ -91,7 +91,7 @@ doc.Save(dataDir);
 Console.WriteLine("\nBorder setup successfully.\nFile saved at " + dataDir);
 ```
 
-### Exempel på källkod för Set Border med Aspose.Words för .NET
+### Exempel på källkod för Set Border med Aspose.PDF för .NET
 
 ```csharp
 // Sökvägen till dokumentkatalogen.
@@ -117,7 +117,7 @@ Aspose.Pdf.Row row = table.Rows.Add();
 Aspose.Pdf.Cell cell = row.Cells.Add("some text");
 // Ställ in ram för cellobjekt (dubbel kant)
 cell.Border = border;
-//Lägg till tabell i styckesamlingen på sidan
+// Lägg till tabell till styckesamlingen på sidan
 page.Paragraphs.Add(table);
 dataDir = dataDir + "TableBorderTest_out.pdf";
 // Spara PDF-dokumentet

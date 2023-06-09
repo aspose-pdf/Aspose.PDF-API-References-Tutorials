@@ -70,7 +70,7 @@ HTML içeriğini içeren tablo ile PDF belgesini kaydediyoruz.
 doc.Save(dataDir + "HTMLInsideTableCell_out.pdf");
 ```
 
-### Aspose.Words for .NET kullanan Tablo İçi HTML Etiketleri için örnek kaynak kodu
+### Aspose.PDF for .NET kullanan Tablo İçi HTML Etiketleri için örnek kaynak kodu
 
 ```csharp
 // Belgeler dizininin yolu.

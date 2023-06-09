@@ -37,7 +37,7 @@ request.Credentials = CredentialCache.DefaultCredentials;
 ```csharp
 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 ```
-Отправьте веб-запрос и получите ответ от сервера.
+Отправьте веб-запрос и получите ответ с сервера.
 
 ## Шаг 4: Прочтите веб-контент
 ```csharp
@@ -71,7 +71,7 @@ Console.WriteLine(ex.Message);
 ```
 Перехватите любые исключения, которые могут возникнуть в процессе преобразования, и отобразите сообщение об ошибке.
 
-### Пример исходного кода для преобразования веб-страницы в PDF с использованием Aspose.Words для .NET
+### Пример исходного кода для преобразования веб-страницы в PDF с использованием Aspose.PDF для .NET
 
 ```csharp
 try

@@ -23,7 +23,7 @@ Aspose.PDF for .NET“Programming with Forms”教程是寻求创建和操作交
 | [填写表单域](./fill-form-field/) | 使用 Aspose.PDF for .NET 轻松填写 PDF 文档中的表单域。 |  
 | [填充 XFA 字段](./fill-xfafields/) | 使用 Aspose.PDF for .NET 轻松填写 PDF 文档中的 XFA 字段。 |  
 | [展平表格](./flatten-forms/) | 使用 Aspose.PDF for .NET 轻松展平 PDF 文档中的表单。 |  
-| [表单字段字体 14](./form-field-font-14/) | 使用 Aspose.PDF for .NET 轻松配置 PDF 文档中表单字段的字体。 |  
+| [表单字段字体 14](./form-field-font-14/) | 使用 Aspose.PDF for .NET 轻松配置 PDF 文档中表单域的字体。 |  
 | [获取坐标](./get-coordinates/) | 使用 Aspose.PDF for .NET 轻松获取 PDF 文档中的表单域坐标。 |  
 | [从区域获取字段](./get-fields-from-region/) | 使用 Aspose.PDF for .NET 轻松地将特定区域的字段添加到您的 PDF 文档中。 |  
 | [从现场获取价值](./get-value-from-field/) | 使用 Aspose.PDF for .NET 轻松获取 PDF 文档中表单字段的值。 |  

@@ -86,7 +86,7 @@ doc.Save(outFile);
 
 Make sure to specify the correct directory and filename to save the output PDF file.
 
-### Example source code for add repeating column using Aspose.Words for .NET
+### Example source code for add repeating column using Aspose.PDF for .NET
 
 ```csharp
 // The path to the documents directory.

@@ -30,7 +30,7 @@ Document pdfDocument = new Document(dataDir + "GetNumberofPages.pdf");
 ```
 
 ## Schritt 3: Ermitteln Sie die Anzahl der Seiten
- Jetzt können Sie die Anzahl der Seiten im Dokument mithilfe von ermitteln`Count`Eigentum des Dokuments`s `Seitensammlung. Dadurch erhalten Sie die Gesamtzahl der Seiten in der PDF-Datei.
+ Jetzt können Sie die Anzahl der Seiten im Dokument mithilfe von ermitteln`Count` Eigentum des Dokuments`s `Seitensammlung. Dadurch erhalten Sie die Gesamtzahl der Seiten in der PDF-Datei.
 
 ```csharp
 System.Console.WriteLine("Number of pages: {0}", pdfDocument.Pages.Count);
@@ -44,7 +44,7 @@ System.Console.WriteLine("Number of pages: {0}", pdfDocument.Pages.Count);
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Dokument öffnen
 Document pdfDocument = new Document(dataDir + "GetNumberofPages.pdf");
-// Ermitteln Sie die Seitenzahl
+// Ermitteln Sie die Seitenanzahl
 System.Console.WriteLine("Page Count : {0}", pdfDocument.Pages.Count);
 
 ```

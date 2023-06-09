@@ -87,7 +87,7 @@ dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Aspose.Words for .NET kullanan Gruplanmış Onay Kutuları için örnek kaynak kodu 
+### Aspose.PDF for .NET kullanan Gruplanmış Onay Kutuları için örnek kaynak kodu 
 ```csharp
 try
 {

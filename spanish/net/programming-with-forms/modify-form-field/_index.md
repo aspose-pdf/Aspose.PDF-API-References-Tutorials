@@ -59,7 +59,7 @@ dataDir = dataDir + "ModifyFormField_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Ejemplo de código fuente para Modificar campo de formulario usando Aspose.Words para .NET 
+### Ejemplo de código fuente para Modificar campo de formulario usando Aspose.PDF para .NET 
 ```csharp
 // La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -78,4 +78,4 @@ Console.WriteLine("\nForm field modified successfully.\nFile saved at " + dataDi
 
 ## Conclusión
 
-En este tutorial, aprendimos a editar un campo de formulario en un documento PDF usando Aspose.PDF para .NET. Siguiendo estos pasos, puede navegar fácilmente a un campo específico, cambiar su valor y ajustar sus propiedades según sea necesario.
+En este tutorial, aprendimos a editar un campo de formulario en un documento PDF utilizando Aspose.PDF para .NET. Siguiendo estos pasos, puede navegar fácilmente a un campo específico, cambiar su valor y ajustar sus propiedades según sea necesario.

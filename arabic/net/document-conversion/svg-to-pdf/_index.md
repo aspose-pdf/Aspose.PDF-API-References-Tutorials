@@ -43,7 +43,7 @@ doc.Save(dataDir + "SVGToPDF_out.pdf");
 
 تأكد من تحديد المسار المطلوب واسم الملف لملف PDF الناتج.
 
-### مثال على شفرة المصدر لـ SVG إلى PDF باستخدام Aspose.Words for .NET
+### مثال على كود المصدر لـ SVG إلى PDF باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 // المسار إلى دليل المستندات.

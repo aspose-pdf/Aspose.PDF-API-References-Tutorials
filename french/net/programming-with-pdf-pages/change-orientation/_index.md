@@ -47,7 +47,7 @@ page. Rotate = Rotate. on90;
 ```
 
 ## Étape 4 : Enregistrez le document PDF modifié
- Enfin, vous pouvez enregistrer le document PDF modifié dans un fichier de sortie à l'aide de la`Save()` méthode de la`Document` classe. Assurez-vous de spécifier le chemin d'accès et le nom de fichier corrects.
+ Enfin, vous pouvez enregistrer le document PDF modifié dans un fichier de sortie à l'aide de la`Save()` méthode de la`Document`classe. Assurez-vous de spécifier le chemin d'accès et le nom de fichier corrects.
 
 ```csharp
 dataDir = dataDir + "ChangeOrientation_out.pdf";

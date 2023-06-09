@@ -73,7 +73,7 @@ pdfDocument.Save(dataDir);
 تأكد من توفير المسار واسم الملف للمستند المعدل.
 
 
-### مثال على شفرة المصدر لـ Manipulate Table باستخدام Aspose.Words for .NET
+### مثال على التعليمات البرمجية المصدر لـ Manipulate Table باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 try

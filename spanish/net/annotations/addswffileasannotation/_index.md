@@ -23,7 +23,7 @@ Reemplace "SU DIRECTORIO DE DOCUMENTOS" con la ruta a su directorio de documento
 
 ## Paso 2: Cargue el documento PDF
 
-A continuación, necesitamos cargar el documento PDF usando el siguiente código:
+continuación, necesitamos cargar el documento PDF usando el siguiente código:
 
 ```csharp
 Document doc = new Document(dataDir + "AddSwfFileAsAnnotation.pdf");
@@ -78,7 +78,7 @@ Este código guardará el documento PDF actualizado con la anotación "AddSwfFil
 // La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Abre el documento PDF
+// Abre el documento PDF
 Document doc = new Document(dataDir + "AddSwfFileAsAnnotation.pdf");
 
 // Obtenga la referencia de la página a la que necesita agregar la anotación

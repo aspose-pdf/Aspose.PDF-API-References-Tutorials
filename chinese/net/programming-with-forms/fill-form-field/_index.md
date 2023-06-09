@@ -51,7 +51,7 @@ dataDir = dataDir + "FillFormField_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### 使用 Aspose.Words for .NET 填写表单字段的示例源代码 
+### 使用 Aspose.PDF for .NET 填写表单字段的示例源代码 
 ```csharp
 //文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -69,4 +69,4 @@ Console.WriteLine("\nForm field filled successfully.\nFile saved at " + dataDir)
 
 ## 结论
 
-在本教程中，我们学习了如何使用 Aspose.PDF for .NET 填充表单字段。按照这些步骤，您可以使用 Aspose.PDF 轻松更改 PDF 文档中的表单域值。
+在本教程中，我们学习了如何使用 Aspose.PDF for .NET 填充表单域。按照这些步骤，您可以使用 Aspose.PDF 轻松更改 PDF 文档中的表单域值。

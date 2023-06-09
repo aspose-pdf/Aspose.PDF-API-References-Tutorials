@@ -55,7 +55,7 @@ Console.WriteLine(option.Rect);
 }
 ```
 
-### Beispielquellcode für „Koordinaten abrufen“ mit Aspose.Words für .NET 
+### Beispielquellcode für „Koordinaten abrufen“ mit Aspose.PDF für .NET 
 ```csharp
 try
 {

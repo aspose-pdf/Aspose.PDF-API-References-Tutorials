@@ -7,7 +7,7 @@ type: docs
 weight: 60
 url: /es/net/programming-with-pdf-pages/get-dimensions/
 ---
-En este tutorial, lo guiaremos a través del proceso paso a paso para obtener las dimensiones de la página en un archivo PDF usando Aspose.PDF para .NET. Explicaremos el código fuente de C# incluido y le proporcionaremos una guía completa para ayudarlo a comprender e implementar esta característica en sus propios proyectos. Al final de este tutorial, sabrá cómo obtener las dimensiones de una página en un archivo PDF usando Aspose.PDF para .NET.
+En este tutorial, lo guiaremos a través del proceso paso a paso para obtener las dimensiones de la página en un archivo PDF usando Aspose.PDF para .NET. Explicaremos el código fuente de C# incluido y le proporcionaremos una guía completa para ayudarlo a comprender e implementar esta función en sus propios proyectos. Al final de este tutorial, sabrá cómo obtener las dimensiones de una página en un archivo PDF usando Aspose.PDF para .NET.
 
 ## requisitos previos
 Antes de comenzar, asegúrese de tener lo siguiente:
@@ -30,14 +30,14 @@ Document pdfDocument = new Document(dataDir + "UpdateDimensions.pdf");
 ```
 
 ## Paso 3: agregue una página en blanco (si es necesario)
- Si el documento PDF ya contiene páginas, puede saltar a una página existente usando el índice`1` (la primera página tiene un índice de 1). De lo contrario, puede agregar una nueva página al documento.
+Si el documento PDF ya contiene páginas, puede saltar a una página existente usando el índice`1` (la primera página tiene un índice de 1). De lo contrario, puede agregar una nueva página al documento.
 
 ```csharp
 Page page = pdfDocument.Pages.Count > 0? pdfDocument.Pages[1] : pdfDocument.Pages.Add();
 ```
 
 ## Paso 4: Obtenga las dimensiones de la página
- Ahora puede obtener las dimensiones de la página usando el`GetPageRect()` metodo de la`Page` objeto. Este método devuelve un`Rectangle`objeto que contiene las dimensiones de la página. Puede acceder al ancho y alto usando el`Width` y`Height` propiedades.
+ Ahora puede obtener las dimensiones de la página usando el`GetPageRect()` metodo de la`Page` objeto. Este método devuelve un`Rectangle` objeto que contiene las dimensiones de la página. Puede acceder al ancho y alto usando el`Width` y`Height` propiedades.
 
 ```csharp
 Console.WriteLine(page.GetPageRect(true).Width.ToString() + ":" + page.GetPageRect(true).Height);

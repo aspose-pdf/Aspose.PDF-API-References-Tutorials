@@ -91,7 +91,7 @@ doc.Save(dataDir);
 Console.WriteLine("\nBorder setup successfully.\nFile saved at " + dataDir);
 ```
 
-### Exemple de code source pour Set Border en utilisant Aspose.Words pour .NET
+### Exemple de code source pour Set Border en utilisant Aspose.PDF pour .NET
 
 ```csharp
 // Chemin d'accès au répertoire des documents.
@@ -117,7 +117,7 @@ Aspose.Pdf.Row row = table.Rows.Add();
 Aspose.Pdf.Cell cell = row.Cells.Add("some text");
 // Définir la bordure de l'objet cellule (double bordure)
 cell.Border = border;
-//Ajouter un tableau à la collection de paragraphes de la page
+// Ajouter un tableau à la collection de paragraphes de la page
 page.Paragraphs.Add(table);
 dataDir = dataDir + "TableBorderTest_out.pdf";
 // Enregistrez le document PDF

@@ -24,7 +24,7 @@ Page page = doc.Pages.Add();
 لقد قمنا بإنشاء مستند PDF فارغ حيث يمكننا إضافة المحتوى.
 
 ## الخطوة الثالثة: إنشاء الجداول
-في هذه الخطوة نقوم بإنشاء جدول رئيسي (`outerTable`) وجدول متداخل (`mytable`) والتي سوف تتكرر في العمود.
+في هذه الخطوة نقوم بإنشاء جدول رئيسي (`outerTable`) وجدول متداخل (`mytable`) والتي ستتكرر في العمود.
 
 ```csharp
 Table outerTable = new Table();
@@ -50,7 +50,7 @@ mytable.RepeatingColumnsCount = 5;
 page.Paragraphs.Add(mytable);
 ```
 
-نضيف أولاً الجدول الرئيسي (`outerTable`إلى مستند PDF. بعد ذلك ، نضيف الجدول المتداخل (`mytable` ) كفقرة في خلية في الجدول الرئيسي. نحدد أيضًا عدد الأعمدة المكررة لـ`mytable` (في هذا المثال ، 5 أعمدة).
+نضيف أولاً الجدول الرئيسي (`outerTable`) إلى مستند PDF. بعد ذلك ، نضيف الجدول المتداخل (`mytable` ) كفقرة في خلية في الجدول الرئيسي. نحدد أيضًا عدد الأعمدة المكررة لـ`mytable` (في هذا المثال ، 5 أعمدة).
 
 ## الخطوة 5: إضافة رؤوس وخطوط
 الآن نضيف الرؤوس والصفوف إلى الجدول.
@@ -70,7 +70,7 @@ for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
      row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
      row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
      // ...
-     // أضف الأعمدة الأخرى هنا
+     //أضف الأعمدة الأخرى هنا
 }
 ```
 
@@ -86,7 +86,7 @@ doc.Save(outFile);
 
 تأكد من تحديد الدليل الصحيح واسم الملف لحفظ ملف PDF الناتج.
 
-### مثال على شفرة المصدر لإضافة عمود مكرر باستخدام Aspose.Words for .NET
+### مثال على كود المصدر لإضافة عمود مكرر باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 // المسار إلى دليل المستندات.
@@ -108,7 +108,7 @@ mytable.Broken = TableBroken.VerticalInSamePage;
 mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;
 
 // قم بإضافة الجزء الخارجي إلى فقرات الصفحة
-//أضف mytable إلى OuterTable
+// أضف mytable إلى OuterTable
 page.Paragraphs.Add(outerTable);
 var bodyRow = outerTable.Rows.Add();
 var bodyCell = bodyRow.Cells.Add();

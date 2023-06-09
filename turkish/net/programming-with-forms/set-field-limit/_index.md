@@ -8,7 +8,7 @@ weight: 260
 url: /tr/net/programming-with-forms/set-field-limit/
 ---
 
-İşte Aspose.PDF for .NET kullanarak bir alan sınırının nasıl ayarlanacağına dair ayrıntılı bir eğitim. Bu adımları takip et:
+İşte Aspose.PDF for .NET kullanarak bir alan sınırının nasıl ayarlanacağına dair ayrıntılı bir öğretici. Bu adımları takip et:
 
 ##  Adım 1: Belgelerinizin dizinini tanımlayarak başlayın.`dataDir` variable.
 
@@ -43,7 +43,7 @@ form.Save(dataDir);
 Console.WriteLine("\nField added successfully with limit.\nFile saved to location: " + dataDir);
 ```
 
-### Aspose.Words for .NET kullanarak Set Field Limit için örnek kaynak kodu 
+### Aspose.PDF for .NET kullanarak Set Field Limit için örnek kaynak kodu 
 ```csharp
 // Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

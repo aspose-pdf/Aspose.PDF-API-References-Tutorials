@@ -70,7 +70,7 @@ We save the PDF document with the table containing HTML content.
 doc.Save(dataDir + "HTMLInsideTableCell_out.pdf");
 ```
 
-### Example source code for HTML Tags Inside Table using Aspose.Words for .NET
+### Example source code for HTML Tags Inside Table using Aspose.PDF for .NET
 
 ```csharp
 // The path to the documents directory.

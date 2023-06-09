@@ -61,7 +61,7 @@ Finally, we save the modified PDF document:
 pdfDocument.Save(dataDir + "Table_out.pdf");
 ```
 
-### Example source code for Remove Table using Aspose.Words for .NET
+### Example source code for Remove Table using Aspose.PDF for .NET
 
 ```csharp
 // The path to the documents directory.

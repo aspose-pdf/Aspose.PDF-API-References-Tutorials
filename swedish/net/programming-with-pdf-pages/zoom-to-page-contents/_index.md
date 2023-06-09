@@ -49,7 +49,7 @@ ppe.PageSize = new Aspose.Pdf.PageSize((float)rect.Height, (float)rect.Width);
 ```
 
 ## Steg 4: Spara den utgående PDF-filen
- Slutligen kan du spara den ändrade PDF-filen med hjälp av`Save()` metod för`Document` klass. Var noga med att ange rätt sökväg och filnamn.
+ Slutligen kan du spara den ändrade PDF-filen med hjälp av`Save()` metod för`Document`klass. Var noga med att ange rätt sökväg och filnamn.
 
 ```csharp
 dataDir = dataDir + "ZoomToPageContents_out.pdf";

@@ -70,7 +70,7 @@ dataDir = dataDir + "ComboBox_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Beispielquellcode für Combo Box mit Aspose.Words für .NET 
+### Beispielquellcode für Combo Box mit Aspose.PDF für .NET 
 ```csharp
 try
 {

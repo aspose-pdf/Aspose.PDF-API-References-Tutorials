@@ -92,7 +92,7 @@ dataDir = dataDir + "AutoFitToWindow_out.pdf";
 doc.Save(dataDir);
 ```
 
-### مثال على شفرة المصدر لـ Auto Fit To Window باستخدام Aspose.Words for .NET
+### مثال على كود المصدر لـ Auto Fit To Window باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 // المسار إلى دليل المستندات.

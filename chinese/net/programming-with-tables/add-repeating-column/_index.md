@@ -50,7 +50,7 @@ mytable.RepeatingColumnsCount = 5;
 page.Paragraphs.Add(mytable);
 ```
 
-我们首先添加主表（`outerTable`到 PDF 文档。接下来，我们添加嵌套表 (`mytable` ) 作为主表单元格中的一个段落。我们还指定了重复列的数量`mytable`（在这个例子中，5 列）。
+我们首先添加主表（`outerTable`) 到 PDF 文档。接下来，我们添加嵌套表 (`mytable` ) 作为主表单元格中的一个段落。我们还指定了重复列的数量`mytable`（在这个例子中，5 列）。
 
 ## 第 5 步：添加标题和行
 现在我们将标题和行添加到表中。
@@ -86,7 +86,7 @@ doc.Save(outFile);
 
 确保指定正确的目录和文件名以保存输出的 PDF 文件。
 
-### 使用 Aspose.Words for .NET 添加重复列的示例源代码
+### 使用 Aspose.PDF for .NET 添加重复列的示例源代码
 
 ```csharp
 //文档目录的路径。

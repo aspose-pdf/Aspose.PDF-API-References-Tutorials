@@ -43,7 +43,7 @@ doc.Save(dataDir + "TeXToPDF_out.pdf");
 
 Ortaya çıkan PDF dosyası için istenen yolu ve dosya adını belirttiğinizden emin olun.
 
-### Aspose.Words for .NET kullanarak TeX to PDF için örnek kaynak kodu
+### Aspose.PDF for .NET kullanarak TeX to PDF için örnek kaynak kodu
 
 ```csharp
 try

@@ -1,6 +1,6 @@
 ---
 title: Add HTML Using DOM And Overwrite
-linktitle: Add HTMLUsing DOMAnd Overwrite
+linktitle: Add HTML Using DOMAnd Overwrite
 second_title: Aspose.PDF for .NET API Reference
 description: Learn how to add HTML content using DOM in Aspose.PDF for .NET.
 type: docs

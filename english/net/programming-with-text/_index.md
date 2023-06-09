@@ -14,7 +14,7 @@ Aspose.PDF's "Programming with Text" tutorials for .NET offer a comprehensive ra
 | [Add And Search Hidden Text](./add-and-search-hidden-text/) | Step-by-step guide to add and search hidden text in a PDF document using Aspose.PDF for .NET. |  
 | [Add HTML Ordered List Into Documents](./add-html-ordered-list-into-documents/) | Learn how to add an HTML ordered list to a document using Aspose.PDF for .NET. |  
 | [Add HTML Using DOM](./add-html-using-dom/) | Learn how to add HTML content using DOM in Aspose.PDF for .NET. |  
-| [Add HTMLUsing DOM And Overwrite](./add-htmlusing-dom-and-overwrite/) | Learn how to add HTML content using DOM in Aspose.PDF for .NET. |  
+| [Add HTML Using DOM And Overwrite](./add-html-using-dom-and-overwrite/) | Learn how to add HTML content using DOM in Aspose.PDF for .NET. |  
 | [Add Subsequent Lines Indent](./add-subsequent-lines-indent/) | Learn how to add subsequent lines indent to text using Aspose.PDF for .NET. |  
 | [Add Text Border](./add-text-border/) | Learn how to add a text border to a PDF document using Aspose.PDF for .NET. |  
 | [Add Text With Shading Colors](./add-text-with-shading-colors/) | Learn how to add text with shading colors to a PDF document using Aspose.PDF for .NET. |  

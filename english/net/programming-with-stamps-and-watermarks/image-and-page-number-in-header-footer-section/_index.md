@@ -5,7 +5,7 @@ second_title: Aspose.PDF for .NET API Reference
 description: Find out how to add an image and a page number in the header and footer of a PDF document with Aspose.
 type: docs
 weight: 110
-url: /net/programming-with-stamps-and-watermarks/imageand-page-numberin-header-footersection/
+url: /net/programming-with-stamps-and-watermarks/image-and-page-number-in-header-footer-section/
 ---
 In this tutorial, we will guide you step by step on how to add an image and page number in the header and footer section of a PDF document using Aspose.PDF for .NET. We will show you how to use provided C# source code to create a page, set header and footer, add image to header and text with page number to document footer PDF.
 

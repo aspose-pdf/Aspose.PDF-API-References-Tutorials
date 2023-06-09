@@ -1,6 +1,6 @@
 ---
 title: Add HTML Using DOM
-linktitle: Add HTMLUsing DOM
+linktitle: Add HTML Using DOM
 second_title: Aspose.PDF for .NET API Reference
 description: Learn how to add HTML content using DOM in Aspose.PDF for .NET.
 type: docs

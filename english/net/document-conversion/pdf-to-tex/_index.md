@@ -1,11 +1,11 @@
 ---
-title: PDF to Te X
-linktitle: PDF to Te X
+title: PDF to TeX
+linktitle: PDF to TeX
 second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to convert PDF to Te X using Aspose.PDF for .NET.
+description: Step by step guide to convert PDF to TeX using Aspose.PDF for .NET.
 type: docs
 weight: 190
-url: /net/document-conversion/pdf-to-te-x/
+url: /net/document-conversion/pdf-to-tex/
 ---
 
 In this tutorial, we'll walk you through the process of converting a PDF file to TeX format using Aspose.PDF for .NET. TeX is a typesetting language used for creating scientific and mathematical documents. By following the steps below, you will be able to convert a PDF file to TeX format.
@@ -61,7 +61,7 @@ doc.Save(dataDir + "PDFToTeX_out.tex", saveOptions);
 
 The code above saves the converted PDF file in TeX format with the filename `"PDFToTeX_out.tex"`.
 
-### Example source code for PDF to Te X using Aspose.PDF for .NET
+### Example source code for PDF to TeX using Aspose.PDF for .NET
 
 ```csharp
 // The path to the documents directory.

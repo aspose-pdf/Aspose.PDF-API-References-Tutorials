@@ -100,6 +100,6 @@ for (int passwordcount = 0; passwordcount < passwords.Length; passwordcount++)
 }
 ```
 
-## 7. Conclusion
+## Conclusion
 
 Congratulation ! You have successfully determined the correct password for a PDF file using Aspose.PDF for .NET. This tutorial covered the step-by-step process, from verifying file encryption to finding the correct password from a predefined list. Now you can use this feature to check and find the correct password of your PDF files.

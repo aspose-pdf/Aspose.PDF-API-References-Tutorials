@@ -14,12 +14,12 @@ is_root: true
 {{% /alert %}}
 
 Это ссылки на некоторые полезные ресурсы:
-- [Программирование с документом](./programming-with-document/)
-- [Программирование с аннотациями](./annotations/)  
-- [Преобразование документа](./document-conversion/)
-- [Программирование с формами](./programming-with-forms/)
-- [Программирование с таблицами](./programming-with-tables/) 
-- [Программирование со страницами PDF](./programming-with-pdf-pages/)
-- [Программирование с помощью графиков](./programming-with-graphs/)
+- [Программирование с документом](./net/programming-with-document/)
+- [Программирование с аннотациями](./net/annotations/)  
+- [Преобразование документа](./net/document-conversion/)
+- [Программирование с формами](./net/programming-with-forms/)
+- [Программирование с таблицами](./net/programming-with-tables/) 
+- [Программирование со страницами PDF](./net/programming-with-pdf-pages/)
+- [Программирование с помощью графиков](./net/programming-with-graphs/)
  
 

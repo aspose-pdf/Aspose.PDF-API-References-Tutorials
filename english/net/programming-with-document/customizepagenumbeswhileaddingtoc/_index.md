@@ -7,7 +7,6 @@ type: docs
 weight: 100
 url: /net/programming-with-document/customizepagenumbeswhileaddingtoc/
 ---
-
 In this tutoria, we will explore how to customize page numbers while adding a table of contents (TOC) using Aspose.PDF for .NET. We will provide step-by-step guidance, along with a code example, to help you achieve this.
 
 ## Step 1: Loading an existing PDF file
@@ -118,4 +117,25 @@ doc.Save(outFile);
 
 In this tutorial, we have provided step-by-step guidance on how to customize page numbers while adding a TOC using Aspose.PDF for .NET. We have also provided a code example that you can use as a reference when implementing this feature in your
 
+### FAQ's
+
+#### Q: What is a table of contents (TOC) in a PDF document?
+
+A: A table of contents (TOC) in a PDF document is a navigational aid that provides an organized list of document sections or chapters along with their corresponding page numbers. It allows readers to quickly navigate to specific sections within the document.
+
+#### Q:Why would I want to customize page numbers in a TOC?
+
+A: Customizing page numbers in a TOC can be useful when you want to use a specific page numbering format or include additional information along with the page numbers. It allows you to create a more personalized and informative table of contents.
+
+#### Q: Can I include hyperlinks in the TOC to link to specific sections or pages within the PDF document?
+
+A: Yes, Aspose.PDF for .NET allows you to create hyperlinks in the TOC that link to specific sections or pages within the PDF document. This enhances the interactivity and navigation of the PDF document.
+
+#### Q: Is Aspose.PDF for .NET compatible with PDF/A standards?
+
+A: Yes, Aspose.PDF for .NET supports PDF/A standards, including PDF/A-1, PDF/A-2, and PDF/A-3. It allows you to create PDF documents that comply with archiving and long-term preservation requirements.
+
+#### Q: Can I add more formatting to the TOC entries, such as font styles or colors?
+
+A: Yes, you can add additional formatting to the TOC entries, such as font styles, colors, and font sizes, using Aspose.PDF for .NET. This allows you to customize the appearance of the TOC as per your requirements.
 

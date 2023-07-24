@@ -147,3 +147,20 @@ for (int Level = 1; Level != 5; Level++)
 doc.Save(outFile);
 ```
 
+## Conclusion
+
+In this tutorial, we explored how to work with XMP metadata in a PDF document using Aspose.PDF for .NET. XMP metadata provides valuable information about the PDF document, including its title, author, creation date, and more. Aspose.PDF for .NET allows developers to access and manipulate this metadata, providing a flexible and powerful API for working with PDF documents.
+
+### FAQ's
+
+#### Q: What is XMP metadata in a PDF document?
+
+A: XMP (Extensible Metadata Platform) metadata in a PDF document is a standard format for storing metadata information about the document. It includes details such as document title, author, creation date, keywords, and more. XMP metadata provides a structured and standardized way to store and share information about the PDF document.
+
+#### Q: Can I modify the XMP metadata of a PDF document using Aspose.PDF for .NET?
+
+A: Yes, you can modify the XMP metadata of a PDF document programmatically using Aspose.PDF for .NET. You can access the `Info` property of the `Document` object, which gives you access to the XMP metadata properties. You can then update the values of these properties to modify the XMP metadata of the PDF document.
+
+#### Q: Can I extract custom XMP metadata properties from a PDF document using Aspose.PDF for .NET?
+
+A: Yes, you can extract custom XMP metadata properties from a PDF document using Aspose.PDF for .NET. You can use the `Metadata` property of the `Document` object, which provides access to all the XMP metadata properties of the PDF document. You can then extract custom properties and use their values as needed.

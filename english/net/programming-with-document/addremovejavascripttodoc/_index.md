@@ -1,14 +1,13 @@
 ---
-title: Add Remove Javascript To Doc
+title: Add Remove Javascript To PDF Document
 linktitle: Add Remove Javascript To Doc
 second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add and remove JavaScript from PDF documents using Aspose.PDF for .NET. Step-by-step guide with code tutorials for document-level scripting.
+description: Learn how to add and remove JavaScript to PDF document using Aspose.PDF for .NET. Step-by-step guide with code tutorials for document-level scripting.
 type: docs
 weight: 30
 url: /net/programming-with-document/addremovejavascripttodoc/
 ---
-
-To add and remove JavaScript from PDF documents, we will utilize the Aspose.PDF for .NET library. This powerful library allows us to manipulate PDF files in .NET applications. Follow the step-by-step instructions below to add and remove JavaScript using Aspose.PDF for .NET.
+To add and remove JavaScript to PDF document, we will utilize the Aspose.PDF for .NET library. This powerful library allows us to manipulate PDF files in .NET applications. Follow the step-by-step instructions below to add and remove JavaScript using Aspose.PDF for .NET.
 
 ## Step 1: Create a New PDF Document
 
@@ -94,3 +93,26 @@ Console.WriteLine("\nJavascript added/removed successfully to a document.");
 ## Conclusion
 
 In this article, we have provided a step-by-step guide to adding and removing JavaScript from PDF documents using Aspose.PDF for .NET. By following the instructions and utilizing the provided code tutorials, you can easily incorporate JavaScript into your PDF documents and remove it when needed. JavaScript enables dynamic functionality and interactivity in your PDF files, enhancing the user experience.
+
+
+### FAQ's for add remove javascript to PDF document
+
+#### Q: What is Aspose.PDF for .NET?
+
+A: Aspose.PDF for .NET is a powerful library that allows developers to manipulate PDF files in .NET applications effectively. It provides extensive features for working with PDF documents programmatically.
+
+#### Q: How can I add JavaScript to a PDF document using Aspose.PDF for .NET?
+
+A: You can add JavaScript at the document level using the `JavaScript` property of the `Document` class. Simply assign JavaScript functions to keys in the JavaScript dictionary.
+
+#### Q: Can I remove JavaScript from a PDF document using Aspose.PDF for .NET?
+
+A: Yes, you can remove JavaScript from a PDF document by accessing the `JavaScript` dictionary and removing the desired JavaScript function.
+
+#### Q: Is Aspose.PDF for .NET suitable for professional projects?
+
+A: Absolutely, Aspose.PDF for .NET is widely used in professional projects for PDF manipulation and generation tasks. It offers high performance and reliable functionality.
+
+#### Q: What benefits does adding JavaScript to a PDF document provide?
+
+A: Adding JavaScript to a PDF document enables you to create interactive and dynamic PDF files. You can implement form validation, perform calculations, and add various interactivity features to enhance user experience.

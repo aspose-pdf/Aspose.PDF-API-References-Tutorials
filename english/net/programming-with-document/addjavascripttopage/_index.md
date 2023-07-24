@@ -1,13 +1,12 @@
 ---
-title: Add Java Script To Page
-linktitle: Add Java Script To Page
+title: Add Java Script To PDF File
+linktitle: Add Java Script PDF File
 second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add JavaScript to PDF files using Aspose.PDF for .NET. Step-by-step guide with code tutorials for document and page level scripting.
+description: Learn how to add JavaScript to PDF file using Aspose.PDF for .NET. Step-by-step guide with code tutorials for document and page level scripting.
 type: docs
 weight: 10
 url: /net/programming-with-document/addjavascripttopage/
 ---
-
 To add JavaScript to a PDF file, we will use Aspose.PDF for .NET. This library provides a simple and efficient way to work with PDF files in .NET applications. The following steps will guide you through the process of adding JavaScript to a PDF file using Aspose.PDF for .NET.
 
 ## Step 1: Load the PDF File
@@ -95,5 +94,27 @@ Console.WriteLine("\nJavascript added successfully to a page.\nFile saved at " +
 
 In this article, we have explained how to add JavaScript to a PDF file at both the document level and the page level using Aspose.PDF for .NET. We have provided step-by-step instructions and included the full source code for each example. With this knowledge, you can add JavaScript to your PDF files and customize their behavior according to your needs.
 
+
+### FAQ's for add java script to PDF file
+
+#### Q: What is Aspose.PDF for .NET?
+
+A: Aspose.PDF for .NET is a powerful library that enables developers to work with PDF files in .NET applications. It provides a wide range of features for creating, modifying, and manipulating PDF documents.
+
+#### Q: Can I add JavaScript to a PDF document using Aspose.PDF for .NET?
+
+A: Yes, Aspose.PDF for .NET allows you to add JavaScript to both the document level and the page level of a PDF file, enabling you to create dynamic and interactive PDF documents.
+
+#### Q: How do I load an existing PDF file using Aspose.PDF for .NET?
+
+A: You can load an existing PDF file using the `Document` class and its methods, as shown in the step-by-step guide.
+
+#### Q: What types of JavaScript actions can I add to a PDF document?
+
+A: With Aspose.PDF for .NET, you can add a wide variety of JavaScript actions, such as printing, alert messages, form field manipulation, and more.
+
+#### Q: Is Aspose.PDF for .NET suitable for commercial projects?
+
+A: Yes, Aspose.PDF for .NET is a reliable and robust library that is commonly used in commercial projects for PDF manipulation and generation tasks.
 
 

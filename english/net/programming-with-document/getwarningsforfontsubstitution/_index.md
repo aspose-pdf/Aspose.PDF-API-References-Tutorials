@@ -7,7 +7,6 @@ type: docs
 weight: 190
 url: /net/programming-with-document/getwarningsforfontsubstitution/
 ---
-
 Aspose.PDF for .NET is a popular PDF manipulation library that enables developers to create, edit, and convert PDF files in their .NET applications. One of the features offered by this library is the ability to detect font substitution warnings when a PDF document is opened. This tutorial will guide you through the steps of using the `GetWarningsForFontSubstitution` feature of Aspose.PDF for .NET to detect font substitution warnings when opening a PDF document.
 
 ## Step 1: Install Aspose.PDF for .NET
@@ -73,3 +72,25 @@ private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArg
     Console.WriteLine("Font substitution: {0} => {1}", e.OriginalFontName, e.SubstitutedFontName);
 }
 ```
+
+## Conclusion
+
+In this tutorial, we have discussed how to use Aspose.PDF for .NET to detect font substitution warnings when opening a PDF document. By subscribing to the `FontSubstitution` event, developers can detect font substitution situations and handle them according to their application's needs. Aspose.PDF for .NET provides a straightforward API to detect and handle font substitution warnings, helping developers ensure the visual fidelity and consistency of PDF documents across different systems.
+
+### FAQ's
+
+#### Q: What is font substitution in a PDF document?
+
+A: Font substitution in a PDF document occurs when a font used in the document is not available or embedded in the file. In such cases, the viewer or printer substitutes the missing font with a similar one that is available on the system. Font substitution can affect the appearance and layout of the document.
+
+#### Q: Why is font substitution important to detect?
+
+A: Font substitution is important to detect because it can impact the visual fidelity and layout of the PDF document. Detecting font substitution warnings allows developers to identify situations where fonts are being substituted and take appropriate actions to ensure the document's visual appearance is consistent across different systems.
+
+#### Q: How can I handle font substitution warnings?
+
+A: You can handle font substitution warnings by subscribing to the `FontSubstitution` event of the `Document` class and providing a custom method to handle the event. In this custom method, you can log the font substitution warnings, notify users, or take other actions based on your application's requirements.
+
+#### Q: Can I customize the handling of font substitution warnings?
+
+A: Yes, you can customize the handling of font substitution warnings by providing a custom method to handle the `FontSubstitution` event. In this custom method, you can log the font substitution warnings, notify users, or take any other appropriate actions based on your application's requirements.

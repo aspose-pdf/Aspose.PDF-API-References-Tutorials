@@ -1,8 +1,8 @@
 ---
-title: Set Callout Property
-linktitle: Set Callout Property
+title: Set Callout Property In PDF File
+linktitle: Set Callout Property In PDF File
 second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set Callout Property using Aspose.PDF for .NET. Customize annotations with callout lines, text color, and ending styles.
+description: Learn how to set Callout Property in PDF File using Aspose.PDF for .NET. Customize annotations with callout lines, text color, and ending styles.
 type: docs
 weight: 130
 url: /net/annotations/setcalloutproperty/
@@ -104,3 +104,24 @@ fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://
 doc.Save(dataDir + "SetCalloutProperty.pdf");
 ```
 
+## Conclusion
+
+In this tutorial, we explored how to set callout properties for a free text annotation in a PDF document using Aspose.PDF for .NET. Callout annotations are useful for providing additional information or explanations related to specific areas in a document. Aspose.PDF for .NET provides a wide range of features and capabilities to work with PDF files, including creating and customizing annotations, such as callouts. By following the step-by-step guide and using the provided C# source code, developers can easily implement callout annotations in their PDF documents, enhancing the usability and clarity of their documents. Aspose.PDF for .NET is a versatile and reliable library for PDF operations in .NET applications, offering powerful tools to handle various PDF-related tasks efficiently.
+
+### FAQ's for set callout property in PDF file
+
+#### Q: What is a callout annotation in a PDF document?
+
+A: A callout annotation in a PDF document is a type of annotation that allows you to create a text box with a leader line pointing to a specific area in the document. It is commonly used to provide additional information or comments related to a particular section or element in the document.
+
+#### Q: Can I customize the appearance of the callout annotation using Aspose.PDF for .NET?
+
+A: Yes, you can customize various properties of the callout annotation, such as the color, font size, text alignment, line style, arrow style, and more.
+
+#### Q: How do I add text to the callout annotation?
+
+A: To add text to the callout annotation, you can set the `RichText` property of the `FreeTextAnnotation` object. The `RichText` property takes a string of formatted XML that represents the text to be displayed in the callout annotation.
+
+#### Q: Can I add multiple callout annotations to a PDF document using Aspose.PDF for .NET?
+
+A: Yes, you can create multiple callout annotations in a PDF document by creating multiple instances of the `FreeTextAnnotation` object and adding them to different pages or locations in the document.

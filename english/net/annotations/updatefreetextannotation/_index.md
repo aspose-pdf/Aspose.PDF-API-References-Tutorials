@@ -1,8 +1,8 @@
 ---
-title: Update Free Text Annotation
-linktitle: Update Free Text Annotation
+title: Update Free Text PDF Annotation
+linktitle: Update Free Text PDF Annotation
 second_title: Aspose.PDF for .NET API Reference
-description: Learn how to update free text annotation feature of Aspose.PDF for .NET using C# source code.
+description: Learn how to update free text PDF annotation feature of Aspose.PDF for .NET using C# source code.
 type: docs
 weight: 160
 url: /net/annotations/updatefreetextannotation/
@@ -74,3 +74,21 @@ catch (Exception ex)
 ## Conclusion
 
 In this article, we have provided a step-by-step guide to explain the C# source code of the Update Free Text Annotation feature of Aspose.PDF for .NET. By following these steps, you can easily update the font size and color of free text annotations in your PDF documents using Aspose.PDF for .NET.
+
+### FAQ's
+
+#### Q: What is Aspose.PDF for .NET?
+
+A: Aspose.PDF for .NET is a robust PDF manipulation and processing library for .NET applications. It allows developers to create, edit, convert, and manipulate PDF documents programmatically.
+
+#### Q: Can I update the properties of a free text annotation in a PDF document using Aspose.PDF for .NET?
+
+A: Yes, Aspose.PDF for .NET provides functionality to update the properties of free text annotations in a PDF document. This includes changing the font size, font color, and other text styling options.
+
+#### Q: How do I specify the annotation I want to update in the PDF document?
+
+A: To update the properties of a specific annotation in the PDF document, you can access the annotation object using its index in the `Annotations` collection of a particular page. Then, you can modify its properties as needed.
+
+#### Q: What happens if an error occurs during the update process?
+
+A: If an error occurs during the update process, the code uses a `try-catch` block to handle the exception and prints the error message to the console. This helps to identify and troubleshoot any issues that may arise.

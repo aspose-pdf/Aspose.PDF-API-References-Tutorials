@@ -7,7 +7,6 @@ type: docs
 weight: 140
 url: /net/annotations/setfreetextannotationformatting/
 ---
-
 Aspose.PDF for .NET is a powerful and easy-to-use PDF document manipulation API that allows you to work with PDF files programmatically in your .NET applications. One of the features provided by Aspose.PDF for .NET is the ability to set free text annotation formatting in PDF documents. In this article, we will walk you through the step-by-step process of setting free text annotation formatting using Aspose.PDF for .NET.
 
 ## Prerequisites
@@ -98,3 +97,24 @@ dataDir = dataDir + "SetFreeTextAnnotationFormatting_out.pdf";
 pdfDocument.Save(dataDir);            
 ```
 
+## Conclusion
+
+In this tutorial, we learned how to set free text annotation formatting in a PDF document using Aspose.PDF for .NET. The library provides a straightforward and efficient way to work with PDF documents programmatically, allowing developers to create and customize various types of annotations, including free text annotations. By following the step-by-step guide and using the provided C# source code, you can easily set up the environment, open a PDF document, and create a free text annotation with custom formatting. Aspose.PDF for .NET is a robust and reliable API that simplifies PDF document manipulation tasks, making it a valuable tool for .NET developers working with PDF files.
+
+### FAQ's
+
+#### Q: What is a free text annotation in a PDF document?
+
+A: A free text annotation in a PDF document is a type of annotation that allows you to add text to the document without being tied to a specific location or structure. It is commonly used to provide comments, notes, or other additional information in the document.
+
+#### Q: Can I customize the appearance of the free text annotation using Aspose.PDF for .NET?
+
+A: Yes, you can customize various properties of the free text annotation, such as the font, font size, color, position, and more.
+
+#### Q: How do I specify the contents of the free text annotation?
+
+A: To specify the contents of the free text annotation, you can set the `Contents` property of the `FreeTextAnnotation` object to the desired text.
+
+#### Q: Can I add multiple free text annotations to a PDF document using Aspose.PDF for .NET?
+
+A: Yes, you can create multiple free text annotations in a PDF document by creating multiple instances of the `FreeTextAnnotation` object and adding them to different pages or locations in the document.

@@ -1,17 +1,17 @@
 ---
-title: Extract Highlighted Text
-linktitle: Extract Highlighted Text
+title: Extract Highlighted Text In PDF File
+linktitle: Extract Highlighted Text In PDF File
 second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract highlighted text using Aspose.PDF for .NET with this step-by-step guide.
+description: Learn how to extract highlighted text in PDF file using Aspose.PDF for .NET with this step-by-step guide.
 type: docs
 weight: 60
 url: /net/annotations/extracthighlightedtext/
 ---
-To extract highlighted text from a PDF document, you can use the Aspose.PDF for .NET API. This API provides a simple way to retrieve all the text that has been highlighted in a document.
+To extract highlighted text in PDF file, you can use the Aspose.PDF for .NET API. This API provides a simple way to retrieve all the text that has been highlighted in a document.
 
 ## Step 1: Load the PDF document
 
-The first step in extracting highlighted text from a PDF document is to load the document using the Aspose.PDF for .NET API. You can do this by creating a new instance of the `Document` class and passing the path to the PDF document as a parameter. 
+The first step in extracting highlighted text in PDF file is to load the document using the Aspose.PDF for .NET API. You can do this by creating a new instance of the `Document` class and passing the path to the PDF document as a parameter. 
 
 ```csharp
 // The path to the documents directory.
@@ -82,4 +82,29 @@ foreach (Annotation annotation in doc.Pages[1].Annotations)
 }
 ```
 
+## Conclusion
+
+In this tutorial, we explored how to extract highlighted text from a PDF document using Aspose.PDF for .NET. By following the step-by-step guide and using the provided C# source code, developers can easily extract and manage highlighted text in their PDF documents.
+
+### FAQ's for extract highlighted text in PDF file
+
+#### Q: What are text markup annotations in a PDF document?
+
+A: Text markup annotations are annotations that highlight or mark specific text in a PDF document. Examples of text markup annotations include highlights, underlines, and strikethroughs.
+
+#### Q: Can I extract text from other types of annotations using Aspose.PDF for .NET?
+
+A: Yes, Aspose.PDF for .NET provides various methods to extract text from different types of annotations, including text markup annotations, free text annotations, and more.
+
+#### Q: Does Aspose.PDF for .NET support extracting text from password-protected PDF files?
+
+A: Yes, Aspose.PDF for .NET supports extracting text from password-protected PDF files. You need to provide the correct password when loading the PDF document using the `Document` class.
+
+#### Q: Can I filter highlighted text based on other criteria, such as color or author?
+
+A: Yes, you can filter highlighted text based on other criteria, such as color, author, or creation date. Aspose.PDF for .NET provides methods to access and filter annotations based on their properties.
+
+#### Q: Is it possible to save the extracted highlighted text to a separate file?
+
+A: Yes, you can save the extracted highlighted text to a separate file or store it in a data structure for further processing or analysis.
 

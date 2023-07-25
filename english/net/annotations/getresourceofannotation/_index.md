@@ -7,7 +7,6 @@ type: docs
 weight: 90
 url: /net/annotations/getresourceofannotation/
 ---
-
 The example shows how to get resource of annotation with Aspose.PDF for .NET. To get the resource of an annotation using Aspose.PDF for .NET, follow these steps:
 
 ## Step 1: Set the path of the directory where the document is located.
@@ -126,3 +125,29 @@ ms.Write(buffer, 0, read);
 Console.WriteLine(rendition.Name);
 Console.WriteLine(action.RenditionOperation);
 ```
+
+## Conclusion
+
+In this tutorial, we explored how to get the resource of a particular annotation from a PDF document using Aspose.PDF for .NET. By following the step-by-step guide and using the provided C# source code, developers can easily access and manage annotations, including rendition annotations, in their PDF documents.
+
+### FAQ's
+
+#### Q: What is a rendition in the context of PDF annotations?
+
+A: In the context of PDF annotations, a rendition is a multimedia content presentation. It allows for embedding multimedia, such as audio or video, within the PDF document. The rendition annotation specifies the media to be presented and how it should be played.
+
+#### Q: Can I get the name of the media file associated with a rendition annotation?
+
+A: Yes, you can get the name of the media file associated with a rendition annotation using Aspose.PDF for .NET. The media file name can be accessed through the `FileSpecification` of the `MediaClip` object.
+
+#### Q: Can Aspose.PDF for .NET extract media files from a rendition annotation?
+
+A: Yes, Aspose.PDF for .NET can extract the media data from a rendition annotation, which includes audio or video content, and save it as a separate file.
+
+#### Q: How can I access the media data of a rendition annotation?
+
+A: The media data of a rendition annotation can be accessed through the `FileSpecification.Contents` property of the `MediaClipData` object.
+
+#### Q: Can I modify the media associated with a rendition annotation using Aspose.PDF for .NET?
+
+A: Aspose.PDF for .NET provides methods to access and modify the media data associated with a rendition annotation. You can update or replace the media file used by a rendition annotation.

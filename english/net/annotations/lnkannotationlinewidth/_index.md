@@ -116,3 +116,28 @@ dataDir = dataDir + "lnkAnnotationLineWidth_out.pdf";
 doc.Save(dataDir);
 ```
 
+## Conclusion
+
+In this tutorial, we learned how to set the line width of a link annotation in a PDF document using Aspose.PDF for .NET. Aspose.PDF for .NET provides a wide range of tools and features for working with PDF documents, including the ability to create and customize link annotations. By following the step-by-step guide and using the provided C# source code, developers can easily add interactive links to their PDF documents, enhancing the user experience and interactivity of their applications. Aspose.PDF for .NET is a versatile library that empowers .NET developers to work with PDF files efficiently and effectively.
+
+### FAQ's
+
+#### Q: What is a link annotation in a PDF document?
+
+A: A link annotation in a PDF document is an interactive element that allows you to create hyperlinks or actions that direct the user to another location within the same document, an external website, or a different PDF document.
+
+#### Q: How can I set the line width of a link annotation using Aspose.PDF for .NET?
+
+A: To set the line width of a link annotation using Aspose.PDF for .NET, you can create an `InkAnnotation` object and specify the line width property.
+
+#### Q: What properties can be customized for a link annotation in Aspose.PDF for .NET?
+
+A: You can customize various properties of a link annotation in Aspose.PDF for .NET, such as its location, size, color, border properties (width, style, dash pattern, and effect), subject, title, and visibility.
+
+#### Q: Can I create a link annotation that contains multiple ink gestures?
+
+A: Yes, you can create a link annotation that contains multiple ink gestures by adding multiple `Point` arrays to the `InkAnnotation` object.
+
+#### Q: How can I add a link annotation to a specific page of the PDF document?
+
+A: To add a link annotation to a specific page of the PDF document, you need to specify the page number when creating the `InkAnnotation` object. For example, `new InkAnnotation(doc.Pages[1], ...)` adds the link annotation to the first page.

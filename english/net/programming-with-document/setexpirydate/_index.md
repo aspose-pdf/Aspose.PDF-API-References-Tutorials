@@ -1,8 +1,8 @@
 ---
-title: Set Expiry Date
-linktitle: Set Expiry Date
+title: Set Expiry Date In PDF File
+linktitle: Set Expiry Date In PDF File
 second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set expiry date in PDF documents using Aspose.PDF for .NET with this step-by-step guide.
+description: Learn how to set expiry date in PDF file using Aspose.PDF for .NET with this step-by-step guide.
 type: docs
 weight: 300
 url: /net/programming-with-document/setexpirydate/
@@ -100,3 +100,20 @@ dataDir = dataDir + "SetExpiryDate_out.pdf";
 doc.Save(dataDir);
 ```
 
+## Conclusion
+
+Setting an expiry date for a PDF document using Aspose.PDF for .NET is a useful feature to ensure that the document is only valid for a specified period. By following the step-by-step guide and using the provided C# source code, developers can easily set the expiry date and create PDFs with time-limited validity. This feature can be particularly helpful for documents that need to be accessed or distributed for a limited duration.
+
+### FAQ's for set expiry date in PDF file
+
+#### Q: Can I set a different expiry date for the PDF document?
+
+A: Yes, you can set a different expiry date for the PDF document by modifying the JavaScript code in Step 5. In the provided example, the expiry date is set to May 2017. To set a different expiry date, you need to modify the `year` and `month` variables in the JavaScript code to the desired year and month.
+
+#### Q: What happens when the PDF document has expired?
+
+A: When the PDF document has expired, as specified in the JavaScript code, the viewer will display an alert message indicating that the file is expired and that the user needs a new one. This alert message will be shown when the PDF is opened.
+
+#### Q: Can I use a specific time for the expiry date instead of just the date?
+
+A: Yes, you can set a specific time for the expiry date in the JavaScript code. By modifying the `expiry` variable in the JavaScript code to include the desired time, you can set a specific time for the expiry date.

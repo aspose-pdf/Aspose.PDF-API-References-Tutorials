@@ -1,8 +1,8 @@
 ---
-title: Set File Info
-linktitle: Set File Info
+title: Set File Info In PDF File
+linktitle: Set File Info In PDF File
 second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use Aspose.PDF for .NET to set file info in your PDF documents with this step-by-step guide.
+description: Learn how to use Aspose.PDF for .NET to set file info in PDF file with this step-by-step guide.
 type: docs
 weight: 310
 url: /net/programming-with-document/setfileinfo/
@@ -90,3 +90,17 @@ Console.WriteLine("\nFile informations setup successfully.\nFile saved at " + da
 ## Conclusion
 
 In conclusion, Aspose.PDF for .NET provides a simple and effective way of setting file information for PDF documents. By following the above-mentioned steps, you can easily set the desired file information values for your PDF documents using C# source code.
+
+### FAQ's for set file info in PDF file
+
+#### Q: Can I set additional file information properties not mentioned in the example?
+
+A: Yes, you can set additional file information properties using the `DocumentInfo` object in Aspose.PDF for .NET. The `DocumentInfo` class provides various properties that allow you to set additional information such as the producer, version, and custom properties.
+
+#### Q: Is it possible to retrieve the file information from an existing PDF document?
+
+A: Yes, you can retrieve the file information from an existing PDF document using Aspose.PDF for .NET. To do this, you can use the `DocumentInfo` object to access the file information properties and read the information stored in the PDF document.
+
+#### Q: Does setting the file information modify the original PDF document?
+
+A: No, setting the file information using Aspose.PDF for .NET does not modify the original PDF document. Instead, it creates a new PDF document with the updated file information. The original PDF document remains unchanged.

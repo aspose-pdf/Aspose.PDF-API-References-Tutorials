@@ -1,6 +1,6 @@
 ---
-title: Unembed Fonts
-linktitle: Unembed Fonts
+title: Unembed Fonts And Optimize PDF Files
+linktitle: Unembed Fonts And Optimize PDF Files
 second_title: Aspose.PDF for .NET API Reference
 description: Learn how to use Aspose.PDF for .NET to get Unembed Fonts and optimize PDF files. A step-by-step guide.
 type: docs
@@ -96,3 +96,41 @@ var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
 Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
 ```
 
+## Conclusion
+
+In this tutorial, we demonstrated how to use Aspose.PDF for .NET to get unembed fonts from a PDF document. By following the step-by-step guide, you can easily implement this feature in your C# applications. Unembedding fonts can be advantageous when you need to work with the extracted fonts separately or ensure consistent font usage across various platforms.
+
+## FAQ's
+
+#### Q: What is the purpose of unembedding fonts from a PDF document?
+
+A: Unembedding fonts from a PDF document allows you to extract the embedded fonts and use them in other applications. This can be useful for ensuring consistent font rendering and preserving the document's visual appearance.
+
+#### Q: How do I specify the path to the document directory in the C# code?
+
+A: To specify the path to the document directory, replace `"YOUR DOCUMENT DIRECTORY"` in the code with the actual path to the directory where your PDF document is located.
+
+#### Q: What does the `UnembedFonts` option do, and where is it set?
+
+A: The `UnembedFonts` option, available in the `OptimizationOptions` class, enables or disables the unembedding of fonts from the PDF document. To set this option to `true`, use the following code:
+
+```csharp
+var optimizeOptions = new Pdf.Optimization.OptimizationOptions
+{
+	UnembedFonts = true
+};
+```
+
+#### Q: Can I revert the changes made during the optimization process?
+
+A: Aspose.PDF for .NET does not make permanent changes to the original PDF document during optimization. The optimization process is performed on a copy of the document, leaving the original intact.
+
+#### Q: How can I check the original and reduced file size after optimization?
+
+A: You can use the `FileInfo` class of `System.IO` to get the original and reduced file size. Here's an example code snippet to achieve this:
+
+```csharp
+var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
+var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
+Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
+```

@@ -1,13 +1,12 @@
 ---
-title: PDF to EPUB
-linktitle: PDF to EPUB
+title: PDF To EPUB
+linktitle: PDF To EPUB
 second_title: Aspose.PDF for .NET API Reference
 description: Step by step guide to convert PDF to EPUB using Aspose.PDF for .NET.
 type: docs
 weight: 120
 url: /net/document-conversion/pdf-to-epub/
 ---
-
 In this tutorial, we will guide you through the process of converting a PDF file to EPUB format using Aspose.PDF for .NET. The PDF format is commonly used to display documents, while the EPUB format is specially designed for e-books. By following the steps below, you will be able to convert PDF files to EPUB format.
 
 ## Prerequisites
@@ -77,3 +76,21 @@ pdfDocument.Save(dataDir + "PDFToEPUB_out.epub", options);
 
 ## Conclusion
 In this tutorial, we have covered the step-by-step process of converting a PDF file in EPUB format using Aspose.PDF for .NET. By following the instructions above, you can easily convert PDF files to EPUB format. This feature is especially useful for converting PDF documents into readable e-books on different devices.
+
+### FAQ's
+
+#### Q: Can I convert password-protected PDF files to EPUB format using Aspose.PDF for .NET?
+
+A: As of the current version, Aspose.PDF for .NET does not provide direct support for converting password-protected PDF files to EPUB format. To convert password-protected PDFs, you would need to remove the password from the PDF file first using Aspose.PDF or other means, and then proceed with the conversion to EPUB format.
+
+#### Q: What is the difference between "EpubSaveOptions.RecognitionMode.Flow" and "EpubSaveOptions.RecognitionMode.PreserveLayout"?
+
+A: The "EpubSaveOptions.RecognitionMode.Flow" specifies that the content in the EPUB book will flow and adjust dynamically based on the device or screen size. This mode is suitable for reflowable EPUBs, where the content adapts to different reading environments. On the other hand, "EpubSaveOptions.RecognitionMode.PreserveLayout" preserves the layout of the content as it appears in the source PDF, which is more suitable for fixed-layout EPUBs.
+
+#### Q: Can I customize the EPUB output using Aspose.PDF for .NET?
+
+A: Yes, Aspose.PDF for .NET provides various options for customizing the EPUB output. You can set metadata, configure the appearance, add cover images, define table of contents, and more. Additionally, you can control the recognition mode, as shown in the example, to adapt the content layout in the EPUB output.
+
+#### Q: Are there any limitations when converting complex PDFs to EPUB format?
+
+A: While Aspose.PDF for .NET offers robust PDF to EPUB conversion capabilities, there might be certain complex PDFs with intricate layouts, graphics, or non-standard fonts that could have limitations during the conversion process. It's recommended to test your specific PDF files to ensure the output EPUB format meets your requirements.

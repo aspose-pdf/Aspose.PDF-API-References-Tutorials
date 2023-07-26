@@ -1,13 +1,12 @@
 ---
-title: Markdown to PDF
-linktitle: Markdown to PDF
+title: Markdown To PDF
+linktitle: Markdown To PDF
 second_title: Aspose.PDF for .NET API Reference
 description: Step by step guide to convert Markdown to PDF using Aspose.PDF for .NET.
 type: docs
 weight: 60
 url: /net/document-conversion/markdown-to-pdf/
 ---
-
 In this tutorial, we'll walk you through the process of converting a Markdown file to PDF using Aspose.PDF for .NET. Markdown is a lightweight markup language used to format plain text in a structured way. By following the steps below, you will be able to convert Markdown files to PDF format.
 
 ## Prerequisites
@@ -54,3 +53,21 @@ doc.Save(dataDir + "MarkdownToPDF.pdf");
 
 ## Conclusion
 In this tutorial, we covered the step-by-step process of converting a Markdown file to PDF using Aspose.PDF for .NET. By following the instructions outlined above, you should now be able to convert Markdown files to PDF format. This feature can be useful when you need to generate PDF documents from Markdown content.
+
+### FAQ's
+
+#### Q: Can Aspose.PDF for .NET handle complex Markdown files with advanced formatting?
+
+A: Yes, Aspose.PDF for .NET can handle complex Markdown files with advanced formatting. The library's Markdown processing engine supports various Markdown elements, including headings, lists, tables, code blocks, and more. It can accurately render Markdown content in PDF format while preserving the formatting.
+
+#### Q: Is it possible to customize the appearance of the generated PDF?
+
+A: Yes, Aspose.PDF for .NET provides options to customize the appearance of the generated PDF. You can set fonts, styles, colors, and other properties to match the desired look and feel of the PDF document.
+
+#### Q: Can I add additional elements like headers, footers, or watermarks to the resulting PDF?
+
+A: Yes, Aspose.PDF for .NET allows you to add headers, footers, watermarks, and other elements to the generated PDF documents. The library offers a comprehensive API for working with PDF elements and layout customization.
+
+#### Q: Does Aspose.PDF for .NET support converting Markdown files with images to PDF?
+
+A: Yes, Aspose.PDF for .NET supports converting Markdown files that contain images to PDF. The library can handle inline images and include them in the resulting PDF document.

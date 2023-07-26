@@ -7,7 +7,6 @@ type: docs
 weight: 80
 url: /net/document-conversion/page-orientation-according-image-dimensions/
 ---
-
 In this tutorial, we'll walk you through the process of setting page orientation based on an image's dimensions using Aspose.PDF for .NET. We will loop through a list of JPG images in a given directory and automatically adjust the page orientation based on the width of each image. Follow the steps below to achieve this.
 
 ## Prerequisites
@@ -124,3 +123,21 @@ doc.Save(dataDir + "SetPageOrientation_out.pdf");
 
 ## Conclusion
 In this tutorial, we've covered the step-by-step process of setting page orientation based on an image's dimensions using Aspose.PDF for .NET. By following the instructions outlined above, you should now be able to create a PDF document with the correct page orientation for each image. This feature is useful when you have images of different sizes and want to embed them into a PDF document.
+
+### FAQ's
+
+#### Q: Can I use other image formats instead of JPG for setting page orientation based on image dimensions?
+
+A: Yes, you can use other image formats such as PNG, BMP, or GIF in addition to JPG for setting page orientation based on image dimensions. The provided code loops through all image files with the ".JPG" extension, but you can modify it to include other image formats as well.
+
+#### Q: What happens if an image's dimensions are exactly equal to the page width?
+
+A: If an image's width is exactly equal to the page width, the page orientation will be set to portrait. In the code provided, the page orientation is set to landscape only if the image's width is greater than the page width.
+
+#### Q: Can I customize the page orientation logic based on specific requirements?
+
+A: Yes, you can customize the page orientation logic based on specific requirements. For example, you can set a threshold value to determine when the page orientation should be set to landscape or portrait. Additionally, you can consider factors such as image height or aspect ratio to determine the page orientation.
+
+#### Q: Can I add other content, such as text or tables, to the PDF document along with the images?
+
+A: Yes, you can add other content, such as text or tables, to the PDF document along with the images. Aspose.PDF for .NET provides a rich set of features to manipulate PDF documents, including adding text, images, tables, and other elements to the pages.

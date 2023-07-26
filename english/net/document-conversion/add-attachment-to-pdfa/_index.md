@@ -7,7 +7,6 @@ type: docs
 weight: 10
 url: /net/document-conversion/add-attachment-to-pdfa/
 ---
-
 In this tutorial, we will guide you step by step on how to add an attachment to a PDF/A file using Aspose.PDF for .NET. We'll explain each step using C# code examples and provide step-by-step instructions to help you follow along easily.
 
 ## Introduction
@@ -109,4 +108,21 @@ Console.WriteLine("\nAttachment added successfully to PDF/A file.\nFile saved at
 
 In this tutorial, you learned how to add an attachment to a PDF/A file using Aspose.PDF for .NET. We've covered every step of the process, from loading the existing document to converting and saving the resulting file. Using the provided code examples, you can easily integrate this functionality into your own projects. Experiment with Aspose.PDF for .NET and discover the possibilities it offers for advanced manipulation of PDF files.
 
+### FAQ's
+
+#### Q: What is Aspose.PDF for .NET?
+
+A: Aspose.PDF for .NET is a powerful PDF manipulation and processing library for .NET applications. It allows developers to create, edit, convert, and manipulate PDF files programmatically.
+
+#### Q: What is the purpose of adding attachments to PDF files?
+
+A: Adding attachments to PDF files allows you to include additional files, such as images, documents, or media, within the PDF document. This can be useful for providing supplementary information or related resources.
+
+#### Q: Can I add multiple attachments to a PDF document using Aspose.PDF for .NET?
+
+A: Yes, you can add multiple attachments to a PDF document using Aspose.PDF for .NET. Simply create multiple `FileSpecification` objects, each representing a different attachment, and add them to the `EmbeddedFiles` collection of the document.
+
+#### Q: How does the conversion to PDF/A_3a format impact the attachment?
+
+A: The conversion to PDF/A_3a format ensures that the attachment is included in the resulting PDF/A document. PDF/A_3a is a standard for long-term archiving of electronic documents, and by converting to this format, the attachment becomes a permanent part of the PDF document.
 

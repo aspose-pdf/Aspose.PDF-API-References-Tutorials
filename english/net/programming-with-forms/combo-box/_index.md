@@ -7,7 +7,6 @@ type: docs
 weight: 30
 url: /net/programming-with-forms/combo-box/
 ---
-
 In this tutorial, we will show you how to create a combo box list using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
 
 ## Step 1: Preparation
@@ -103,3 +102,25 @@ catch (Exception ex)
 ## Conclusion
 
 In this tutorial, we learned how to create a combo box list using Aspose.PDF for .NET. By following these steps, you can easily add a combo box list to your PDF documents using Aspose.PDF.
+
+### FAQ's
+
+#### Q: Can I customize the appearance of the combo box list using Aspose.PDF for .NET?
+
+A: Yes, you can customize the appearance of the combo box list using Aspose.PDF for .NET. You can set properties such as font size, color, background color, border style, and more to match your desired look and feel.
+
+#### Q: Can I set default selected options in the combo box list?
+
+A: Yes, you can set default selected options in the combo box list using Aspose.PDF for .NET. You can use the `Selected` property of the `ComboBoxField` object to mark one or more options as selected by default.
+
+#### Q: How can I retrieve the selected value from the combo box list after the user makes a selection?
+
+A: You can retrieve the selected value from the combo box list using Aspose.PDF for .NET. After the user makes a selection, you can access the `Value` property of the `ComboBoxField` object to obtain the selected value.
+
+#### Q: Is it possible to add event handlers or actions to the combo box list?
+
+A: Yes, Aspose.PDF for .NET allows you to add event handlers or actions to the combo box list. You can associate JavaScript actions, such as `OnValueChanged`, to the combo box list to perform specific actions when the user selects an option.
+
+#### Q: Can I add tooltips or descriptions to the options in the combo box list?
+
+A: Yes, you can add tooltips or descriptions to the options in the combo box list using Aspose.PDF for .NET. You can set the `AlternateName` property of each option to provide a tooltip or description that will be displayed when the user hovers over the option.

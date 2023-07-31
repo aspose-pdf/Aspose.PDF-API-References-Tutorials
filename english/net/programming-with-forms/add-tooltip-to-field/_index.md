@@ -7,7 +7,6 @@ type: docs
 weight: 10
 url: /net/programming-with-forms/add-tooltip-to-field/
 ---
-
 Aspose.PDF for .NET is a powerful library that allows developers to manipulate PDF documents programmatically. In this tutorial, we will walk through the process of adding a tooltip to a field using Aspose.PDF for .NET. We will provide a step-by-step guide to help you understand and implement this functionality in your C# code.
 
 ## Step 1: Setting up the project and including Aspose.PDF for .NET
@@ -77,3 +76,25 @@ Console.WriteLine("\nTooltip added successfully.\nFile saved at " + dataDir);
 ## Conclusion
 
 Congratulations! You have successfully learned how to add a tooltip to a field using Aspose.PDF for .NET. By following the step-by-step guide in this tutorial, you can enhance your PDF forms with tooltips to provide additional information or guidance to the users. Remember to explore the documentation and examples provided by Aspose.PDF for .NET to discover more advanced features and functionalities offered by the library.
+
+### FAQ's
+
+#### Q: What is a tooltip in a PDF form, and why would I use it?
+
+A: A tooltip in a PDF form is a small pop-up box that appears when the user hovers their mouse over a specific field. It provides additional information or instructions related to that field. Tooltips are helpful for guiding users, providing explanations, or offering context-specific help in PDF forms.
+
+#### Q: Can I customize the appearance and behavior of the tooltip?
+
+A: Yes, with Aspose.PDF for .NET, you can customize the appearance and behavior of the tooltip. You can set the tooltip text, font, color, and other attributes to match your application's design and requirements.
+
+#### Q: Is Aspose.PDF for .NET compatible with other programming languages besides C#?
+
+A: Yes, Aspose.PDF for .NET is designed to work with other .NET languages such as VB.NET, F#, and more. The library provides consistent functionality across these languages.
+
+#### Q: Can I add tooltips to other types of form fields, such as checkboxes or radio buttons?
+
+A: Yes, you can add tooltips to various types of form fields, including text fields, checkboxes, radio buttons, combo boxes, and more. The process is similar, and you can access different types of form fields using their names or IDs.
+
+#### Q: Can I remove or modify the tooltip after it has been added to the field?
+
+A: Yes, you can modify or remove the tooltip from a field even after it has been added using Aspose.PDF for .NET. Simply access the field and update its `AlternateName` property with the new tooltip text or set it to an empty string to remove the tooltip.

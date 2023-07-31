@@ -7,7 +7,6 @@ type: docs
 weight: 20
 url: /net/programming-with-forms/arabic-text-filling/
 ---
-
 In this tutorial, we are going to learn how to populate a PDF form field with Arabic text using Aspose.PDF for .NET. Aspose.PDF is a powerful library that allows developers to programmatically manipulate PDF documents. We'll walk you through the process step by step, explaining the C# source code required to accomplish this task.
 
 ## Step 1: Load PDF Form Content
@@ -82,3 +81,25 @@ Console.WriteLine("\nArabic text filled successfully in form field.\nFile saved 
 ## Conclusion
 
 In this tutorial, we explored how to populate a PDF form field with Arabic text using Aspose.PDF for .NET. We walked through the process step by step and explained the relevant C# source code. By following these instructions, you can easily integrate Arabic text fill functionality into your .NET applications. If you have any further questions or need more information, feel free to contact the Aspose.PDF support team or check out the additional resources below.
+
+### FAQ's
+
+#### Q: Can I fill other types of form fields with Arabic text using Aspose.PDF for .NET?
+
+A: Yes, you can use Aspose.PDF for .NET to fill other types of form fields with Arabic text, such as checkboxes, radio buttons, combo boxes, and more. The process is similar to filling a `TextBoxField`. Simply access the specific field using its name or ID and set its `Value` property to the desired Arabic text.
+
+#### Q: Is Aspose.PDF for .NET compatible with Arabic text and right-to-left (RTL) writing?
+
+A: Yes, Aspose.PDF for .NET fully supports Arabic text and RTL writing. It handles Arabic characters and text alignment correctly, ensuring that the generated PDF documents preserve the correct visual layout for right-to-left languages.
+
+#### Q: Can I use Aspose.PDF for .NET to extract Arabic text from existing PDF files?
+
+A: Yes, Aspose.PDF for .NET provides text extraction capabilities, allowing you to extract Arabic text from existing PDF files. You can programmatically extract text from specific pages or the entire document, including Arabic text, using the library.
+
+#### Q: Can I customize the appearance of the filled Arabic text in the form field?
+
+A: Yes, you can customize the appearance of the filled Arabic text in the form field using Aspose.PDF for .NET. You have control over font styles, sizes, colors, and other text formatting options. You can ensure that the filled Arabic text matches your desired appearance in the PDF form.
+
+#### Q: How can I obtain support or find additional resources for Aspose.PDF for .NET?
+
+A: You can get support for Aspose.PDF for .NET by visiting the official Aspose support forum or contacting their support team directly. Additionally, you can find helpful documentation, examples, and API references on the Aspose website to assist you in implementing various PDF-related tasks.

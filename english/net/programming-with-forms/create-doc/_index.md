@@ -1,13 +1,12 @@
 ---
-title: Create Doc
-linktitle: Create Doc
+title: Create Document
+linktitle: Create Document
 second_title: Aspose.PDF for .NET API Reference
 description: Easily create a document with radio buttons using Aspose.PDF for .NET.
 type: docs
 weight: 40
 url: /net/programming-with-forms/create-doc/
 ---
-
 In this tutorial, we will show you how to create a document with radio buttons using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
 
 ##Step 1: Preparation
@@ -144,3 +143,25 @@ catch (Exception ex)
 ## Conclusion
 
 In this tutorial, we learned how to create a document with radio buttons using Aspose.PDF for .NET. By following these steps, you can easily add radio buttons to your PDF documents using Aspose.PDF.
+
+### FAQ's
+
+#### Q: Can I customize the appearance of the radio buttons in the document using Aspose.PDF for .NET?
+
+A: Yes, you can customize the appearance of the radio buttons in the document using Aspose.PDF for .NET. You can set properties such as size, color, border style, and more to customize the appearance of the radio buttons.
+
+#### Q: How can I add radio button groups with mutually exclusive options?
+
+A: In order to create mutually exclusive options, you can add multiple radio button fields with the same name. This will ensure that when one option is selected, the other options with the same name will be automatically deselected.
+
+#### Q: Is it possible to set a default selected option for the radio buttons?
+
+A: Yes, you can set a default selected option for the radio buttons using Aspose.PDF for .NET. You can use the `Selected` property of the `RadioButtonOptionField` object to mark an option as selected by default.
+
+#### Q: Can I add event handlers to the radio buttons?
+
+A: Yes, you can add event handlers to the radio buttons using Aspose.PDF for .NET. You can associate JavaScript actions, such as `OnValueChanged`, to the radio buttons to perform specific actions when the user selects an option.
+
+#### Q: How can I retrieve the selected option from the radio button group after the user makes a selection?
+
+A: You can retrieve the selected option from the radio button group using Aspose.PDF for .NET. After the user makes a selection, you can access the `Selected` property of the `RadioButtonOptionField` object to check which option is selected.

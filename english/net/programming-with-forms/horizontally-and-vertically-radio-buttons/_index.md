@@ -7,7 +7,6 @@ type: docs
 weight: 180
 url: /net/programming-with-forms/horizontally-and-vertically-radio-buttons/
 ---
-
 In this tutorial, we will show you how to create horizontally and vertically arranged radio buttons in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
 
 ## Step 1: Preparation
@@ -104,3 +103,25 @@ catch (Exception ex)
 ## Conclusion
 
 In this tutorial, we learned how to create horizontally and vertically arranged radio buttons in a PDF document using Aspose.PDF for .NET. By following these steps, you can easily customize the layout of radio buttons and add them to your PDF documents using Aspose.PDF.
+
+### FAQ's
+
+#### Q: What are horizontally and vertically arranged radio buttons in a PDF document?
+
+A: Horizontally and vertically arranged radio buttons in a PDF document refer to the layout orientation of radio button options. Horizontal layout places the radio button options side by side, allowing users to make a selection from left to right. Vertical layout, on the other hand, stacks the radio button options on top of each other, enabling users to make a selection from top to bottom.
+
+#### Q: How do I customize the appearance of radio button options in Aspose.PDF for .NET?
+
+A: You can customize the appearance of radio button options in Aspose.PDF for .NET by adjusting several properties. The API provides options to set the distance between two radio button options (`RadioGap`), the layout orientation (`RadioHoriz`), the size of radio button items (`RadioButtonItemSize`), the border width and color of radio buttons, and more.
+
+#### Q: Can I add both horizontal and vertical radio buttons to the same PDF document?
+
+A: Yes, you can add both horizontal and vertical radio buttons to the same PDF document using Aspose.PDF for .NET. The sample source code provided in the tutorial demonstrates how to first add radio buttons arranged horizontally and then add another set of radio buttons arranged vertically to the same PDF document.
+
+#### Q: Can I set different radio button options for each group of radio buttons?
+
+A: Yes, you can set different radio button options for each group of radio buttons. Each group should have a unique `RadioButtonField` object, and the `RadioButtonOptionField` objects within each group should share the same page and unique names for their options. This ensures that the radio buttons within each group function correctly, and the selections are mutually exclusive.
+
+#### Q: Are the layout and appearance settings of radio buttons supported in all PDF viewers and applications?
+
+A: Yes, the layout and appearance settings of radio buttons are supported in all standard-compliant PDF viewers and applications. The PDF specification defines radio buttons and their various attributes, making them universally recognized in the PDF format. However, it's essential to test the appearance and behavior of radio buttons in different PDF viewers to ensure consistent rendering across various platforms.

@@ -1,13 +1,12 @@
 ---
-title: Grouped Check Boxes
-linktitle: Grouped Check Boxes
+title: Grouped Check Boxes In PDF Document
+linktitle: Grouped Check Boxes In PDF Document
 second_title: Aspose.PDF for .NET API Reference
-description: Easily create grouped checkboxes in your PDF documents with Aspose.PDF for .NET.
+description: Easily create grouped checkboxes in PDF document with Aspose.PDF for .NET.
 type: docs
 weight: 170
 url: /net/programming-with-forms/grouped-check-boxes/
 ---
-
 In this tutorial, we will show you how to create grouped checkboxes in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
 
 ## Step 1: Preparation
@@ -134,3 +133,25 @@ catch (Exception ex)
 ## Conclusion
 
 In this tutorial, we learned how to create grouped checkboxes in a PDF document using Aspose.PDF for .NET. By following these steps, you can easily add custom radio button options and bundle them in your PDF documents using Aspose.PDF.
+
+### FAQ's
+
+#### Q: What are grouped checkboxes in a PDF document?
+
+A: Grouped checkboxes in a PDF document refer to a set of radio button options that are grouped together. Radio buttons allow users to select only one option from a group of mutually exclusive choices. When one radio button is selected, the others in the same group are automatically deselected. This grouping behavior is useful when you want to present users with multiple options but limit their selection to one choice only.
+
+#### Q: Can I customize the appearance of grouped checkboxes in Aspose.PDF for .NET?
+
+A: Yes, you can customize the appearance of grouped checkboxes in Aspose.PDF for .NET. The API provides various options to set the style, border, and appearance of radio button options. You can define the position of each option, choose between different box styles (e.g., square, circle, cross), and adjust the border properties to achieve the desired visual representation.
+
+#### Q: How do I add grouped checkboxes to a specific page in a PDF document?
+
+A: To add grouped checkboxes to a specific page in a PDF document, you need to instantiate a `RadioButtonField` object with the desired page number as an argument. Then, create `RadioButtonOptionField` objects representing each radio button option and specify their position using the `Rectangle` object. Finally, add these options to the `RadioButtonField` and customize their appearance as needed before adding the `RadioButtonField` to the document form.
+
+#### Q: Can I add multiple groups of checkboxes to a single PDF document?
+
+A: Yes, you can add multiple groups of checkboxes to a single PDF document. Each group should have a unique `RadioButtonField` object, and the `RadioButtonOptionField` objects within each group should share the same page and unique names for their options. This ensures that the radio buttons within each group function correctly, and the selections are mutually exclusive.
+
+#### Q: Are grouped checkboxes supported in all PDF viewers and applications?
+
+A: Yes, grouped checkboxes are supported in all standard-compliant PDF viewers and applications. The PDF specification defines radio buttons and their grouping behavior, making them universally recognized in the PDF format. However, it's essential to test the functionality in different PDF viewers to ensure consistent behavior across various platforms.

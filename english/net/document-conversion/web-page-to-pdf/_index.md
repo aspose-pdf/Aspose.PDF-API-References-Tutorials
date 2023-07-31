@@ -1,13 +1,12 @@
 ---
-title: Web Page to PDF
-linktitle: Web Page to PDF
+title: Web Page To PDF
+linktitle: Web Page To PDF
 second_title: Aspose.PDF for .NET API Reference
 description: Step by step guide to convert web page to PDF using Aspose.PDF for .NET.
 type: docs
 weight: 320
 url: /net/document-conversion/web-page-to-pdf/
 ---
-
 In this tutorial, we will guide you step by step on how to convert a web page to PDF using the Aspose.PDF for .NET library. We will explain the provided C# source code and show you how to implement it in your own projects. By the end of this tutorial, you will be able to convert web pages to PDF documents effortlessly.
 
 ## Introduction
@@ -120,3 +119,25 @@ catch (Exception ex)
 
 ## Conclusion
 In this tutorial, we have learned how to convert a web page to PDF using the Aspose.PDF for .NET library. We went through the step-by-step guide explaining the provided C# source code. By following these instructions, you can easily integrate web page to PDF conversion functionality into your own .NET applications.
+
+### FAQ's
+
+#### Q: What is Aspose.PDF for .NET?
+
+A: Aspose.PDF for .NET is a powerful library that allows developers to work with PDF documents in C# applications. It provides various functionalities, including converting web pages to PDF.
+
+#### Q: Why would I want to convert a web page to PDF?
+
+A: Converting web pages to PDF is useful for preserving the layout, formatting, and images of the original web content. It allows you to create a snapshot of the web page for offline viewing or sharing with others.
+
+#### Q: What are the prerequisites for this tutorial?
+
+A: To follow this tutorial, you need to have Visual Studio installed on your machine, the Aspose.PDF for .NET library, and a basic understanding of C# programming.
+
+#### Q: Can I convert any web page to PDF?
+
+A: Yes, you can convert any web page to PDF by providing the URL of the web page in the code. Aspose.PDF for .NET will retrieve the web content and convert it to PDF format.
+
+#### Q: How can I customize the PDF output, such as page orientation?
+
+A: You can customize the PDF output by using options like `IsLandscape` to set the page orientation. In the provided code, `options.PageInfo.IsLandscape = true` is used to create the PDF in landscape orientation.

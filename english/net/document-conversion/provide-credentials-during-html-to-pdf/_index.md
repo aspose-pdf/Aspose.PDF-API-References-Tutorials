@@ -1,13 +1,12 @@
 ---
-title: Provide Credentials During HTML to PDF
-linktitle: Provide Credentials During HTML to PDF
+title: Provide Credentials During HTML To PDF
+linktitle: Provide Credentials During HTML To PDF
 second_title: Aspose.PDF for .NET API Reference
 description: Step by step guide to convert HTML to PDF by providing credentials with Aspose.PDF for .NET.
 type: docs
 weight: 240
 url: /net/document-conversion/provide-credentials-during-html-to-pdf/
 ---
-
 In this tutorial, we will walk you through the process of converting an HTML file to PDF while providing credentials when accessing a secure URL using Aspose.PDF for .NET. By following the steps below, you will be able to convert HTML content to PDF using the appropriate credentials.
 
 ## Prerequisites
@@ -112,3 +111,29 @@ catch (Exception ex)
 
 ## Conclusion
 In this tutorial, we covered the step-by-step process of converting an HTML file to PDF while providing credentials when accessing a secure URL using Aspose.PDF for .NET. By following the instructions outlined above, you will be able to successfully convert HTML content to PDF while providing the correct credentials.
+
+### FAQ's
+
+#### Q: What is Aspose.PDF for .NET?
+
+A: Aspose.PDF for .NET is a robust library that empowers developers to work with PDF documents in C# applications. It offers a wide range of functionalities, including HTML to PDF conversion.
+
+#### Q: How can I fetch secure HTML content from a URL?
+
+A: To fetch secure HTML content from a URL, you can use the `WebRequest` class in C#. Make sure to set the appropriate credentials using the `Credentials` property.
+
+#### Q: What are the prerequisites for this tutorial?
+
+A: Before proceeding with the tutorial, ensure that you have the following prerequisites:
+
+- Basic knowledge of the C# programming language.
+- Aspose.PDF library for .NET installed on your system.
+- A development environment such as Visual Studio.
+
+#### Q: How does Aspose.PDF for .NET handle external resources while converting HTML to PDF?
+
+A: Aspose.PDF for .NET provides the `HtmlLoadOptions` class to handle external resources during HTML to PDF conversion. You can set the external resource credentials using the `ExternalResourcesCredentials` property.
+
+#### Q: Can I customize the filename for the resulting PDF file?
+
+A: Yes, you can customize the filename for the resulting PDF file by modifying the code that saves the PDF document. Simply change the desired filename in the `pdfDocument.Save()` method.

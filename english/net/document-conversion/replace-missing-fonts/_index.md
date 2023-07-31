@@ -7,7 +7,6 @@ type: docs
 weight: 260
 url: /net/document-conversion/replace-missing-fonts/
 ---
-
 In this tutorial, we will walk you through the process of replacing missing fonts in a PDF file using Aspose.PDF for .NET. When you open a PDF file on a machine where a specific font is missing, there may be font display issues. In such cases, it is possible to substitute the missing font with another font available on the machine. By following the steps below, you will be able to replace missing fonts in a PDF file.
 
 ## Prerequisites
@@ -90,3 +89,25 @@ pdf.Save(fileNew.FullName);
 
 ## Conclusion
 In this tutorial, we covered the step-by-step process of replacing missing fonts in a PDF file using Aspose.PDF for .NET. By following the instructions outlined above, you will be able to successfully replace missing fonts in your PDF file.
+
+### FAQ's
+
+#### Q: What is Aspose.PDF for .NET?
+
+A: Aspose.PDF for .NET is a powerful library that enables developers to work with PDF documents in C# applications. It offers various functionalities, including the ability to replace missing fonts in PDF files.
+
+#### Q: Why would I encounter missing fonts in a PDF file?
+
+A: Missing fonts in a PDF file can occur when the file is opened on a machine that does not have the necessary fonts installed. This can lead to font substitution, affecting the visual appearance of the document.
+
+#### Q: How can I find and replace missing fonts in a PDF file using Aspose.PDF for .NET?
+
+A: To find and replace missing fonts, you can use the `FontRepository.FindFont` method to check for the presence of the required font. If the font is missing, you can add a font substitution using the `FontRepository.Substitutions` property.
+
+#### Q: Can I customize the font substitution process?
+
+A: Yes, you can customize the font substitution process by specifying a different font for the substitution. In the code provided, we used Arial as the substitute for the missing "AgencyFB" font, but you can choose a different font according to your preferences.
+
+#### Q: How can I ensure the accuracy of font rendering after substitution?
+
+A: Aspose.PDF for .NET provides robust font handling capabilities, ensuring accurate font rendering after substitution. You can preview the resulting PDF file to verify the font replacement.

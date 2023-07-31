@@ -1,13 +1,12 @@
 ---
-title: Text to PDF
-linktitle: Text to PDF
+title: Text To PDF
+linktitle: Text To PDF
 second_title: Aspose.PDF for .NET API Reference
 description: Simple and efficient conversion of text files to PDF using Aspose.PDF for .NET.
 type: docs
 weight: 300
 url: /net/document-conversion/text-to-pdf/
 ---
-
 This tutorial will walk you through the steps to convert a text file to a PDF file using Aspose.PDF for .NET. Aspose.PDF offers a simple and effective solution for converting plain text to PDF while preserving text formatting and presentation. Follow the steps below to perform this conversion.
 
 ## Prerequisites
@@ -98,3 +97,25 @@ catch (Exception ex)
 
 ## Conclusion
 In this tutorial, we learned how to convert a text file to a PDF file using Aspose.PDF for .NET. By following the steps given above, you can easily perform this conversion. Use this method to convert your text files to PDF and enjoy the flexibility and quality of Aspose.PDF.
+
+### FAQ's
+
+#### Q: What is Aspose.PDF for .NET?
+
+A: Aspose.PDF for .NET is a powerful library that enables developers to work with PDF documents in C# applications. It offers various functionalities, including converting plain text to PDF.
+
+#### Q: Why would I want to convert a text file to a PDF?
+
+A: Converting text files to PDF format allows for better document management, sharing, and distribution. PDF files offer consistent formatting across different devices and operating systems.
+
+#### Q: How can I load a text file and convert it to a PDF using Aspose.PDF for .NET?
+
+A: To load a text file, you can use the `StreamReader` class to read the contents of the file. Then, create a `Document` object to represent the PDF document. Add a new page and a `TextFragment` containing the text from the text file. Finally, save the resulting PDF using the `Save` method of the `Document` object.
+
+#### Q: Can I customize the appearance of the text in the PDF?
+
+A: Yes, Aspose.PDF for .NET provides various options to customize the appearance of text in the resulting PDF, such as font style, size, color, and alignment.
+
+#### Q: Is the text formatting preserved in the resulting PDF?
+
+A: Yes, Aspose.PDF for .NET preserves the text formatting and layout during the text to PDF conversion, ensuring accurate representation of the original content.

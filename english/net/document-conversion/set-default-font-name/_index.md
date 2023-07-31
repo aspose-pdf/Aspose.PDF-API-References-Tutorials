@@ -7,7 +7,6 @@ type: docs
 weight: 270
 url: /net/document-conversion/set-default-font-name/
 ---
-
 In this tutorial, we will show you how to set the default font name in a PDF file using Aspose.PDF for .NET. Sometimes when you extract images from a PDF file, you may encounter missing font issues. By specifying a default font name, you can ensure that extracted text will be displayed correctly. Follow the steps below to set the default font name in a PDF file.
 
 ## Prerequisites
@@ -84,3 +83,25 @@ using (Document pdfDocument = new Document(dataDir + "input.pdf"))
 
 ## Conclusion
 In this tutorial, we learned how to set the default font name in a PDF file using Aspose.PDF for .NET. By specifying a default font name, you can ensure that extracted text will be displayed correctly. Use this method to resolve missing font issues when extracting images from PDF files.
+
+### FAQ's
+
+#### Q: What is Aspose.PDF for .NET?
+
+A: Aspose.PDF for .NET is a powerful library that enables developers to work with PDF documents in C# applications. It offers various functionalities, including setting the default font name in a PDF file.
+
+#### Q: Why would I need to set the default font name in a PDF file?
+
+A: Setting the default font name is useful when extracting text from a PDF document. If the PDF contains text with fonts that are not available on the extraction machine, specifying a default font name ensures correct text display.
+
+#### Q: How can I load a PDF document and set the default font name using Aspose.PDF for .NET?
+
+A: To load a PDF document and set the default font name, you can use the `Document` class to load the PDF file and the `RenderingOptions.DefaultFontName` property to specify the desired default font name.
+
+#### Q: Can I choose any font as the default font name?
+
+A:Yes, you can choose any font that is available on the extraction machine as the default font name. Use a font that closely matches the missing fonts in the original PDF to ensure accurate text rendering.
+
+#### Q: Is setting the default font name a permanent change to the PDF file?
+
+A: No, setting the default font name using Aspose.PDF for .NET is a temporary change made during text extraction. It does not modify the original PDF file.

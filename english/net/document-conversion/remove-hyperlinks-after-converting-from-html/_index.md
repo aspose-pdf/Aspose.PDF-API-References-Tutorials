@@ -7,7 +7,6 @@ type: docs
 weight: 250
 url: /net/document-conversion/remove-hyperlinks-after-converting-from-html/
 ---
-
 In this tutorial, we'll walk you through the process of removing hyperlinks from a PDF file generated from an HTML file using Aspose.PDF for .NET. Hyperlinks are clickable links that may redirect to other pages or websites. By following the steps below, you will be able to remove hyperlinks from the resulting PDF file.
 
 ## Prerequisites
@@ -106,3 +105,25 @@ doc.Save(dataDir + "RemoveHyperlinksFromText_out.pdf");
 
 ## Conclusion
 In this tutorial, we covered the step-by-step process of removing hyperlinks from a PDF file generated from an HTML file using Aspose.PDF for .NET. By following the instructions described above, you will be able to successfully remove hyperlinks from the resulting PDF file.
+
+### FAQ's
+
+#### Q: What is Aspose.PDF for .NET?
+
+A: Aspose.PDF for .NET is a powerful library that enables developers to work with PDF documents in C# applications. It offers a wide range of functionalities, including the ability to convert HTML files to PDF and manipulate PDF content.
+
+#### Q: Why would I want to remove hyperlinks from a PDF file?
+
+A: There are various reasons for removing hyperlinks from a PDF file. For example, you might want to eliminate external links for printing or archiving purposes or ensure that the PDF content is not navigable via hyperlinks.
+
+#### Q: How can I load an HTML file and remove hyperlinks using Aspose.PDF for .NET?
+
+A: To load an HTML file and remove hyperlinks, you can use Aspose.PDF for .NET's `HtmlLoadOptions` class. Iterate through the annotations of the PDF pages to find link annotations and modify their attributes.
+
+#### Q: Can I customize the output filename for the resulting PDF?
+
+A: Yes, you can customize the output filename for the resulting PDF file by modifying the code that saves the PDF document. Simply change the desired filename in the `doc.Save()` method.
+
+#### Q: Is it possible to selectively remove hyperlinks based on certain criteria?
+
+A: Yes, you can selectively remove hyperlinks based on specific criteria. For example, you can choose to remove only external links or links pointing to specific URLs.

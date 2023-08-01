@@ -7,7 +7,6 @@ type: docs
 weight: 70
 url: /net/programming-with-tables/export-excel-worksheet-data-to-table/
 ---
-
 In this tutorial, we will learn how to export data from an Excel worksheet and create a table in a PDF document using the Aspose.PDF for .NET library. We will walk through the source code step by step and explain each section in detail. By the end of this tutorial, you will be able to generate PDF files with tables containing data from Excel worksheets. Let's get started!
 
 ## Requirements
@@ -214,3 +213,25 @@ pdf1.Save(dataDir + @"Exceldata_toPdf_table.pdf");
 
 ## Conclusion
 In this tutorial, we learned how to export data from an Excel worksheet to a PDF table using the Aspose.PDF for .NET library. We covered the step-by-step process of loading the Excel worksheet, creating a PDF document, adding a table, importing data, andformatting the table. You can now generate PDF files with tables containing Excel data programmatically.
+
+### FAQ's
+
+#### Q: What is the purpose of exporting Excel worksheet data to a PDF table?
+
+A: Exporting Excel worksheet data to a PDF table allows you to present the data in a structured and organized format. It enables you to generate PDF files with tables that contain data from Excel worksheets, making it easier to share and preserve information in a portable document format.
+
+#### Q: Can I customize the appearance of the PDF table?
+
+A: Yes, you can customize the appearance of the PDF table using various properties provided by Aspose.PDF for .NET. In the provided C# source code, you can modify the column widths, cell borders, text alignment, font style, and more to suit your specific requirements.
+
+#### Q: How do I handle Excel files with multiple worksheets?
+
+A: In the provided C# code, we accessed the first worksheet in the Excel file using the index `[0]`. If your Excel file contains multiple worksheets, you can access them by changing the index value accordingly, such as `[1]` for the second worksheet or `[2]` for the third worksheet.
+
+#### Q: Can I apply different formatting to specific rows or cells in the PDF table?
+
+A: Yes, you can apply different formatting to specific rows or cells in the PDF table. In the provided C# source code, we demonstrated how to format the first row and alternate rows differently by changing their background color, font style, and font color. You can apply similar formatting techniques to any specific rows or cells as needed.
+
+#### Q: Is Aspose.PDF for .NET the only library that allows exporting Excel data to a PDF table?
+
+A: Aspose.PDF for .NET is a powerful library for working with PDF documents in .NET applications. While there might be other libraries available, Aspose.PDF for .NET offers a wide range of features and capabilities for generating, manipulating, and exporting PDF files with tables from Excel data, making it a popular choice for such tasks.

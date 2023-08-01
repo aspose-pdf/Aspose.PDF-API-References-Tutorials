@@ -1,13 +1,12 @@
 ---
-title: Set Border
-linktitle: Set Border
+title: Set Border In PDF To Table
+linktitle: Set Border In PDF To Table
 second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set a border in a PDF table with Aspose.PDF for .NET.
+description: Learn how to set a border in PDF to table with Aspose.PDF for .NET.
 type: docs
 weight: 200
 url: /net/programming-with-tables/set-border/
 ---
-
 In this tutorial, we will guide you step by step to set a border in a table of a PDF document using Aspose.PDF for .NET. We'll explain the provided C# source code and show you how to implement it.
 
 ## Step 1: Instantiating the Document object
@@ -128,3 +127,25 @@ Console.WriteLine("\nBorder setup successfully.\nFile saved at " + dataDir);
 
 ## Conclusion
 Congratulation ! You have now learned how to set a border in a table of a PDF document using Aspose.PDF for .NET. This step-by-step guide showed you how to create a document, add a page, configure the table border, and save the PDF document. Now you can apply this knowledge to your own projects.
+
+### FAQ's
+
+#### Q: Can I set different border styles (e.g., dashed or dotted) for the table's top and bottom borders?
+
+A: Yes, you can set different border styles for the table's top and bottom borders by modifying the `border.Top.Style` and `border.Bottom.Style` properties in the provided C# source code. Aspose.PDF for .NET allows you to choose from various border styles, including Solid, Dashed, Dotted, Double, and more.
+
+#### Q: How can I set the color of the table's border?
+
+A: You can set the color of the table's border by modifying the `border.Color` property in the C# source code. Simply provide the desired color, such as `Aspose.Pdf.Color.Red` or any other valid color representation, to customize the border color.
+
+#### Q: Is it possible to apply borders to individual cells within the table with different settings (e.g., different colors or border styles)?
+
+A: Yes, you can apply borders to individual cells within the table with different settings by configuring the `cell.Border` property for each cell individually. This allows you to have cell-specific border styles and colors based on your requirements.
+
+#### Q: Can I remove the border from specific sides of the table (e.g., left and right borders)?
+
+A: Yes, you can remove the border from specific sides of the table by modifying the `border.Left`, `border.Right`, `border.Top`, and `border.Bottom` properties in the C# source code. Setting these properties to `null` will remove the border from the corresponding sides of the table.
+
+#### Q: How can I adjust the thickness of the table's border?
+
+A: You can adjust the thickness of the table's border by modifying the `border.Width` property in the C# source code. Simply set the desired border width (in points) to achieve the desired thickness.

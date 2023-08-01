@@ -1,14 +1,13 @@
 ---
-title: Manipulate Table
-linktitle: Manipulate Table
+title: Manipulate Table In PDF File
+linktitle: Manipulate Table In PDF File
 second_title: Aspose.PDF for .NET API Reference
-description: Easily manipulate tables in PDF documents with Aspose.PDF for .NET.
+description: Easily manipulate tables in PDF file with Aspose.PDF for .NET.
 type: docs
 weight: 130
 url: /net/programming-with-tables/manipulate-table/
 ---
-
-In this tutorial, we will walk you through the step-by-step process of manipulating tables in a PDF document using Aspose.PDF for .NET. Tables are a common element in PDF documents, and being able to modify their content programmatically can be highly beneficial in various scenarios. We will use the C# source code provided to demonstrate the process.
+In this tutorial, we will walk you through the step-by-step process of manipulating tables in PDF file using Aspose.PDF for .NET. Tables are a common element in PDF documents, and being able to modify their content programmatically can be highly beneficial in various scenarios. We will use the C# source code provided to demonstrate the process.
 
 ## Requirements
 
@@ -109,3 +108,25 @@ catch (Exception ex)
 ## Conclusion
 
 In this tutorial, we have learned how to manipulate tables in a PDF document using Aspose.PDF for .NET. By following the step-by-step guide, you can easily load a PDF document, find tables, access cells and text fragments, modify table content, and save the modified document. This approach provides flexibility and efficiency when dealing with table manipulation in PDF documents.
+
+### FAQ's for manipulate table in PDF file
+
+#### Q: Can I manipulate tables in multi-page PDF documents?
+
+A: Yes, you can manipulate tables in multi-page PDF documents using Aspose.PDF for .NET. In the provided example, we visited the first page of the document (`pdfDocument.Pages[1]`), but you can loop through all the pages and manipulate tables on each page as needed.
+
+#### Q: How can I add new rows or columns to an existing table?
+
+A: To add new rows or columns to an existing table, you can use the APIs provided by Aspose.PDF for .NET. You can access the `RowList` and `CellList` properties of the `TableAbsorber.TableList` to add new rows and cells programmatically. Refer to the Aspose.PDF for .NET documentation for detailed information and code examples.
+
+#### Q: Is it possible to remove a table from a PDF document?
+
+A: Yes, you can remove a table from a PDF document using Aspose.PDF for .NET. To achieve this, you can remove the specific `Table` object from the `Page.Paragraphs` collection. You can identify the table to remove by using properties like `Table.NumberOfColumns`, `Table.NumberOfRows`, and other unique identifiers.
+
+#### Q: Can I change the formatting (font, color, alignment) of the table text?
+
+A: Yes, you can change the formatting of the table text using Aspose.PDF for .NET. You can access the `TextState` property of the `TextFragment` object to modify the font, font size, color, and alignment of the text.
+
+#### Q: Does Aspose.PDF for .NET support working with tables in PDF forms (AcroForms)?
+
+A: Yes, Aspose.PDF for .NET supports working with tables in PDF forms (AcroForms). You can access and manipulate table elements in PDF forms similar to the approach demonstrated in this tutorial. Aspose.PDF for .NET provides extensive support for working with AcroForms and form fields.

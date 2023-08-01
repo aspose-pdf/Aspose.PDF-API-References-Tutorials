@@ -1,13 +1,12 @@
 ---
-title: HTML Tags Inside Table
-linktitle: HTML Tags Inside Table
+title: HTML Tags Inside Table In PDF File
+linktitle: HTML Tags Inside Table In PDF File
 second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use HTML tags inside a table in a PDF document with Aspose.PDF for .NET.
+description: Learn how to use HTML tags inside a table in PDF file with Aspose.PDF for .NET.
 type: docs
 weight: 100
 url: /net/programming-with-tables/html-tags-inside-table/
 ---
-
 In this tutorial, we are going to learn how to use HTML tags inside a table in a PDF document using Aspose.PDF for .NET. We will explain the source code in C# step by step. At the end of this tutorial, you will know how to insert HTML content into a table in a PDF document. Let's start!
 
 ## Step 1: Setting up the environment
@@ -113,3 +112,25 @@ doc.Save(dataDir + "HTMLInsideTableCell_out.pdf");
 
 ## Conclusion
 In this tutorial, we learned how to use HTML tags inside a table in a PDF document using Aspose.PDF for .NET. You can use this step-by-step guide to insert HTML content into table cells in a PDF document using C#.
+
+### FAQs for HTML tags inside table in PDF file
+
+#### Q: Can I use other HTML tags and attributes inside the table cells?
+
+A: Yes, you can use various HTML tags and attributes inside the table cells, such as `<b>`, `<i>`, `<a>`, and many more. Aspose.PDF for .NET supports a wide range of HTML elements and styles that you can use to format the content within the table cells.
+
+#### Q: Can I apply CSS styles to the HTML content inside the table cells?
+
+A: Yes, you can apply CSS styles to the HTML content inside the table cells. Aspose.PDF for .NET provides support for basic CSS styles that can be applied to the HTML elements.
+
+#### Q: Is it possible to add images along with HTML content inside the table cells?
+
+A: Yes, you can add images along with HTML content inside the table cells. You can use HTML `<img>` tags to include images from various sources, such as local files or URLs.
+
+#### Q: How can I specify different column widths for the table?
+
+A: You can specify different column widths for the table using the `ColumnWidths` property of the table. The property takes a string containing space-separated values, where each value represents the width of a column in points.
+
+#### Q: Can I use nested tables inside a cell with HTML content?
+
+A: Yes, you can use nested tables inside a cell with HTML content. You can create separate table instances and add them as part of the HTML content inside a cell to achieve the nesting effect.

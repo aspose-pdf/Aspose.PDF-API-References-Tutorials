@@ -1,14 +1,13 @@
 ---
-title: Add Table
-linktitle: Add Table
+title: Add Table In PDF File
+linktitle: Add Table In PDF File
 second_title: Aspose.PDF for .NET API Reference
-description: Easily add tables to your PDF documents using Aspose.PDF for .NET.
+description: Easily add tables in PDF file using Aspose.PDF for .NET.
 type: docs
 weight: 40
 url: /net/programming-with-tables/add-table/
 ---
-
-Aspose.PDF for .NET is a powerful library that allows developers to create, manipulate, and transform PDF documents programmatically. In this tutorial, we will guide you through the process of adding a table to a PDF document using Aspose.PDF for .NET. We will explain each step of the code snippet provided and provide a comprehensive guide to help you understand and implement the functionality in your own projects.
+Aspose.PDF for .NET is a powerful library that allows developers to create, manipulate, and transform PDF documents programmatically. In this tutorial, we will guide you through the process of adding a table in PDF file using Aspose.PDF for .NET. We will explain each step of the code snippet provided and provide a comprehensive guide to help you understand and implement the functionality in your own projects.
 
 ## Introduction
 
@@ -119,3 +118,25 @@ Console.WriteLine("\nText added successfully to an existing pdf file.\nFile save
 ## Conclusion
 
 In this tutorial, we have explained the step-by-step process of adding a table to a PDF document using Aspose.PDF for .NET. We covered loading the source PDF document, initializing a new instance of the Table class, setting the table border color and cell borders, adding rows and cells to the table, and adding the table object to the document. By following this guide, you can easily incorporate tables into your PDF documents programmatically and customize them according to your specific needs.
+
+### FAQ's for add table in PDF file
+
+#### Q: Can I add more columns to the table?
+
+A: Yes, you can add more columns to the table by increasing the number of cells added to each row. In the provided example, each row has three cells representing three columns. You can add more cells to each row to add additional columns.
+
+#### Q: How can I change the appearance of the table, such as font size and style?
+
+A: You can customize the appearance of the table, including font size and style, by setting properties on the `Aspose.Pdf.Table` and `Aspose.Pdf.TextFragment` objects. For example, you can set the `DefaultCellTextState` property to change the font properties of the text in the table cells.
+
+#### Q: Is it possible to merge cells in the table?
+
+A: Yes, you can merge cells in the table using the `MergeCells` method of the `Aspose.Pdf.Row` class. This allows you to create cells that span multiple rows and columns.
+
+#### Q: Can I add images or other content to the table cells?
+
+A: Yes, you can add various types of content to the table cells, including images, text, hyperlinks, and more. You can use the appropriate classes from Aspose.PDF for .NET to add different types of content to the cells.
+
+#### Q: Is Aspose.PDF for .NET compatible with .NET 5.0 or later versions?
+
+A: Yes, Aspose.PDF for .NET is compatible with .NET 5.0 and later versions. It supports various .NET platforms, including .NET Framework, .NET Core, and .NET 5.0+.

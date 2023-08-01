@@ -7,7 +7,6 @@ type: docs
 weight: 210
 url: /net/programming-with-tables/text-alignment-for-table-row-content/
 ---
-
 In this tutorial, we will guide you step by step to align the contents of a row in a table of a PDF document using Aspose.PDF for .NET. We'll explain the provided C# source code and show you how to implement it.
 
 ## Step 1: Creating the PDF document
@@ -118,3 +117,25 @@ doc.Save(dataDir + "43620_ByWords_out.pdf");
 
 ## Conclusion
 Congratulation ! You have now learned how to align the contents of a row in a table in a PDF document using Aspose.PDF for .NET. This step-by-step guide showed you how to create a document, initialize a table, configure border and alignment, add content, and save the PDF document. Now you can apply this knowledge to your own projects.
+
+### FAQ's
+
+#### Q: How can I align the contents of the table cells horizontally?
+
+A: You can align the contents of the table cells horizontally by setting the `HorizontalAlign` property of the cell's `TextState` object. For example, to center-align the text, use `cell.TextState.HorizontalAlignment = HorizontalAlignment.Center`. You can also set it to `HorizontalAlignment.Left` or `HorizontalAlignment.Right` for left and right alignment, respectively.
+
+#### Q: Can I apply different border styles and colors to individual cells within the table?
+
+A: Yes, you can apply different border styles and colors to individual cells within the table. To customize the border for a specific cell, set the `cell.Border` property to a new `BorderInfo` object with the desired settings, such as border sides, width, and color.
+
+#### Q: How can I adjust the vertical alignment of the table content within the cells?
+
+A: You can adjust the vertical alignment of the table content within the cells by setting the `VerticalAlignment` property of the row to `VerticalAlignment.Center`, `VerticalAlignment.Top`, or `VerticalAlignment.Bottom`. This property controls the vertical alignment of all cells in that row.
+
+#### Q: Is it possible to add more columns or rows to the table dynamically?
+
+A: Yes, you can add more columns and rows to the table dynamically by using the `table.Rows.Add()` method to add new rows and the `row.Cells.Add()` method to add new cells to the rows. You can do this inside loops or based on your specific requirements.
+
+#### Q: How can I set a background color for specific cells or the entire table?
+
+A: To set a background color for specific cells or the entire table, use the `BackgroundColor` property of the `Cell` or `Table` object. For example, to set the background color of a cell, use `cell.BackgroundColor = Aspose.Pdf.Color.LightBlue`.

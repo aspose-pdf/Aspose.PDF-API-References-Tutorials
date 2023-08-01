@@ -7,7 +7,6 @@ type: docs
 weight: 10
 url: /net/programming-with-tables/add-image-in-a-table-cell/
 ---
-
 In this tutorial, we will guide you through the process of adding an image to a table cell using Aspose.PDF for .NET. The provided C# source code demonstrates how to achieve this functionality. By following the steps outlined below, you will be able to incorporate images into your table cells effectively.
 
 Before we dive into the code, make sure you have the Aspose.PDF for .NET library installed and referenced in your project.
@@ -157,3 +156,25 @@ pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 ## Conclusion
 
 In this tutorial, we covered a step-by-step guide on how to add an image to a table cell using Aspose.PDF for .NET. We started by setting up the document, creating a page, and adding a table. Then, we set the default cell border and column widths. We demonstrated how to add an image to a table cell and adjust the cell's vertical alignment. Finally, we saved the modified document. By following these steps, you can enhance your PDF documents with images in table cells efficiently.
+
+### FAQ's
+
+#### Q: Can I add multiple images to different cells within the same table using Aspose.PDF for .NET?
+
+A: Yes, you can add multiple images to different cells within the same table using Aspose.PDF for .NET. Simply follow the same process demonstrated in the tutorial for each image you want to add to the table.
+
+#### Q: Can I customize the image size and position within the table cell?
+
+A: Yes, you can customize the image size and position within the table cell by adjusting the properties of the `Image` object. You can set the image width and height, as well as the alignment within the cell.
+
+#### Q: Can I add images to a table with a dynamic number of rows and columns?
+
+A: Yes, you can add images to a table with a dynamic number of rows and columns. Aspose.PDF for .NET provides flexibility in creating tables with varying dimensions. You can add rows and cells as needed, and then add images to specific cells accordingly.
+
+#### Q: What image formats are supported by Aspose.PDF for .NET for adding images to table cells?
+
+A: Aspose.PDF for .NET supports a wide range of image formats, including JPEG, PNG, GIF, BMP, and TIFF. You can use images of any of these formats to add them to table cells.
+
+#### Q: Can I add images to tables in an existing PDF document?
+
+A: Yes, you can add images to tables in an existing PDF document using Aspose.PDF for .NET. Simply load the existing document and follow the same steps to add images to the table as demonstrated in the tutorial.

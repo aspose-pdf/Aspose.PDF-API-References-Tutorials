@@ -1,14 +1,13 @@
 ---
-title: Add Repeating Column
-linktitle: Add Repeating Column
+title: Add Repeating Column In PDF Document
+linktitle: Add Repeating Column In PDF Document
 second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add a repeating column in a PDF document using Aspose.PDF for .NET.
+description: Learn how to add a repeating column in PDF document using Aspose.PDF for .NET.
 type: docs
 weight: 20
 url: /net/programming-with-tables/add-repeating-column/
 ---
-
-In this tutorial, we are going to learn how to add a repeating column in a PDF document using Aspose.PDF for .NET. We will explain the source code in C# step by step. At the end of this tutorial, you will know how to create a table with a repeating column in a PDF document. Let's start!
+In this tutorial, we are going to learn how to add a repeating column in PDF document using Aspose.PDF for .NET. We will explain the source code in C# step by step. At the end of this tutorial, you will know how to create a table with a repeating column in a PDF document. Let's start!
 
 ## Step 1: Setting up the environment
 First, make sure you've set up your C# development environment with Aspose.PDF for .NET. Add the reference to the library and import the necessary namespaces.
@@ -158,3 +157,25 @@ doc.Save(outFile);
 
 ## Conclusion
 In this tutorial, we learned how to add a repeating column in a PDF document using Aspose.PDF for .NET. You can use this step-by-step guide to create tables with repeating columns in your own C# projects.
+
+### FAQ's for add repeating column in PDF document
+
+#### Q: Can I customize the number of repeated columns in the nested table?
+
+A: Yes, you can customize the number of repeated columns in the nested table. In the provided example, we set `mytable.RepeatingColumnsCount = 5;`, which means there will be 5 repeated columns. You can change this value to any desired number.
+
+#### Q: Is it possible to add more rows to the nested table dynamically?
+
+A: Yes, you can dynamically add more rows to the nested table in the same way as shown in the tutorial. You can use loops or any other logic to add rows based on your data.
+
+#### Q: Can I apply styles and formatting to the table and its cells?
+
+A: Yes, you can apply styles and formatting to the table and its cells using Aspose.PDF for .NET. The library provides various properties and methods to customize the appearance of the table and its contents.
+
+#### Q: Is Aspose.PDF for .NET compatible with .NET Core?
+
+A: Yes, Aspose.PDF for .NET is compatible with .NET Core. You can use it in both .NET Framework and .NET Core applications.
+
+#### Q: Can I use this approach to add repeating columns in an existing PDF document?
+
+A: Yes, you can use this approach to add repeating columns in an existing PDF document. Simply load the existing document using Aspose.PDF for .NET and follow the same steps to create and add the repeating column.

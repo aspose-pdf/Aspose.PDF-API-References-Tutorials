@@ -1,14 +1,13 @@
 ---
-title: Add SVG Object
-linktitle: Add SVG Object
+title: Add SVG Object In PDF File
+linktitle: Add SVG Object In PDF File
 second_title: Aspose.PDF for .NET API Reference
-description: Easily add SVG objects to your PDF files using Aspose.PDF for .NET.
+description: Easily add SVG objects in PDF file using Aspose.PDF for .NET.
 type: docs
 weight: 30
 url: /net/programming-with-tables/add-svg-object/
 ---
-
-In this tutorial, we will learn how to add an SVG object to a PDF file using the Aspose.PDF for .NET library. SVG (Scalable Vector Graphics) is a popular format for vector graphics that can be easily scaled without losing quality. With Aspose.PDF, you can add SVG objects to your PDF documents programmatically.
+In this tutorial, we will learn how to add an SVG object in PDF file using the Aspose.PDF for .NET library. SVG (Scalable Vector Graphics) is a popular format for vector graphics that can be easily scaled without losing quality. With Aspose.PDF, you can add SVG objects to your PDF documents programmatically.
 
 ## Requirements
 
@@ -159,3 +158,25 @@ Console.WriteLine("\nSVG image added successfully inside a table cell.\nFile sav
 ## Conclusion
 
 In this tutorial, we have learned how to add an SVG object to a PDF file using the Aspose.PDF for .NET library. We covered the step-by-step process of creating a document, setting up the environment, adding an SVG image to a table cell, and saving the PDF file. Now you can incorporate SVG objects into your PDF documents programmatically.
+
+### FAQ's for add SVG object in PDF file
+
+#### Q: Can I add multiple SVG objects to the PDF document?
+
+A: Yes, you can add multiple SVG objects to the PDF document. Simply create and configure additional `Aspose.Pdf.Image` instances for each SVG image you want to add and then add them to the desired table cells or paragraphs in the PDF document.
+
+#### Q: How can I adjust the size and position of the SVG image in the table cell?
+
+A: To adjust the size and position of the SVG image in the table cell, you can modify the `FixWidth` and `FixHeight` properties of the `Aspose.Pdf.Image` instance. You can also use other properties like `HorizontalAlignment` and `VerticalAlignment` of the table cell to control the positioning.
+
+#### Q: Is it possible to add text alongside the SVG image in the same table cell?
+
+A: Yes, it is possible to add text alongside the SVG image in the same table cell. You can use the `cell.Paragraphs.Add(new TextFragment("Your Text Here"));` method to add text to the cell along with the SVG image.
+
+#### Q: Can I add hyperlinks to the SVG image?
+
+A: Yes, you can add hyperlinks to the SVG image by using the `Hyperlink` property of the `Aspose.Pdf.Image` instance. Set the hyperlink URL or action to make the image clickable.
+
+#### Q: Is Aspose.PDF for .NET compatible with .NET Core 3.1 or later versions?
+
+A: Yes, Aspose.PDF for .NET is compatible with .NET Core 3.1 and later versions. You can use it in both .NET Framework and .NET Core applications.

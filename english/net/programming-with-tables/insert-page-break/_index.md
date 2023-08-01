@@ -1,14 +1,13 @@
 ---
-title: Insert Page Break
-linktitle: Insert Page Break
+title: Insert Page Break In PDF File
+linktitle: Insert Page Break In PDF File
 second_title: Aspose.PDF for .NET API Reference
-description: Learn how to insert a page break in a PDF document using Aspose.PDF for .NET.
+description: Learn how to insert a page break in PDF file using Aspose.PDF for .NET.
 type: docs
 weight: 110
 url: /net/programming-with-tables/insert-page-break/
 ---
-
-In this tutorial, we will learn how to insert a page break in a PDF document using Aspose.PDF for .NET. We will explain the source code in C# step by step. At the end of this tutorial, you will know how to add a page break after a certain number of lines in a table of a PDF document. Let's start!
+In this tutorial, we will learn how to insert a page break in PDF file using Aspose.PDF for .NET. We will explain the source code in C# step by step. At the end of this tutorial, you will know how to add a page break after a certain number of lines in a table of a PDF document. Let's start!
 
 ## Step 1: Setting up the environment
 Make sure you have configured your C# development environment with Aspose.PDF for .NET. Add the reference to the library and import the necessary namespaces.
@@ -106,3 +105,51 @@ Console.WriteLine("\nPage break inserted successfully.\nFile saved at " + dataDi
 
 ## Conclusion
 In this tutorial, we learned how to insert a page break in a PDF document using Aspose.PDF for .NET. You can use this step-by-step guide to add a page break after a certain number of lines in a table in a PDF document using C#.
+
+### FAQ's for insert page break in PDF file
+
+#### Q: How can I change the page size for the new pages created after the page break?
+
+A: To change the page size for the new pages created after the page break, you can set the `PageSize` property of the `Page` object. For example, you can use the following code to set the page size to A4:
+
+```csharp
+// Set the page size to A4
+doc.Pages[1].SetPageSize(PageSize.A4);
+```
+
+#### Q: Can I control the page margins for the new pages after the page break?
+
+A: Yes, you can control the page margins for the new pages after the page break. Use the `Margin` property of the `Page` object to set the page margins. For example, to set all margins to 10 points, you can use the following code:
+
+```csharp
+// Set all margins to 10 points
+doc.Pages[1].Margin = new MarginInfo(10, 10, 10, 10);
+```
+
+#### Q: Is it possible to add headers and footers to the new pages after the page break?
+
+A: Yes, you can add headers and footers to the new pages after the page break. Use the `Page.Header` and `Page.Footer` properties to add content to the header and footer sections of the page. For example:
+
+```csharp
+// Add header to the new pages
+doc.Pages[1].Header = new HeaderFooter()
+{
+    Margin = new MarginInfo(10, 10, 10, 10),
+    Paragraphs = { new TextFragment("Header content") }
+};
+
+// Add footer to the new pages
+doc.Pages[1].Footer = new HeaderFooter()
+{
+    Margin = new MarginInfo(10, 10, 10, 10),
+    Paragraphs = { new TextFragment("Footer content") }
+};
+```
+
+#### Q: Can I insert page breaks at specific locations other than after a certain number of rows?
+
+A: Yes, you can insert page breaks at specific locations other than after a certain number of rows. You can set the `IsInNewPage` property of a row to `true` to force the table to start a new page after that row.
+
+#### Q: How can I adjust the page break behavior based on content height?
+
+A: You can use the `IsBroken` property of the table to enable or disable automatic row breaking across pages. When set to `true`, it allows rows to break across pages based on content height.

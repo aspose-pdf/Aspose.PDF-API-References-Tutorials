@@ -7,7 +7,6 @@ type: docs
 weight: 50
 url: /net/programming-with-tables/auto-fit-to-window/
 ---
-
 The following article is a step-by-step guide on how to use the provided C# source code to achieve Auto Fit To Window functionality using the Aspose.PDF library for .NET. The Auto Fit To Window function allows you to generate PDF files with a layout adapted to the viewing window. This feature is particularly useful when you want your PDF document to automatically adjust to the size of the PDF reader window used by the user.
 
 ## Step 1: Setting up the Environment
@@ -145,3 +144,25 @@ doc.Save(dataDir);
 ## Conclusion
 
 In this tutorial, we learned how to use Aspose.PDF for .NET to generate a PDF file with Auto Fit To Window feature. This feature is extremely useful when you want your PDF document to automatically adjust to the size of the viewing window. Aspose.PDF for .NET offers many other powerful features for generating and manipulating PDF files. I encourage you to explore this library further to discover all of its capabilities.
+
+### FAQ's
+
+#### Q: What is the purpose of the Auto Fit To Window feature in PDF generation?
+
+A: The Auto Fit To Window feature in PDF generation ensures that the layout of the PDF document automatically adjusts to the size of the PDF reader window used by the user. This allows for better viewing and ensures that the content fits perfectly within the available viewing area.
+
+#### Q: Can I customize the appearance of the table, such as font size and colors?
+
+A: Yes, you can customize the appearance of the table in the PDF document using Aspose.PDF for .NET. The provided code snippet demonstrates how to set properties like cell borders, margins, and column widths. You can further customize the font size, colors, and other styling aspects of the table and its content.
+
+#### Q: How do I integrate Aspose.PDF for .NET into my C# project?
+
+A: To use Aspose.PDF for .NET in your C# project, you need to first install the Aspose.PDF library for .NET on your machine. Then, you can add a reference to the library in your C# project. Finally, import the necessary namespaces to access the classes and methods provided by Aspose.PDF for .NET.
+
+#### Q: Is Aspose.PDF for .NET compatible with .NET Core applications?
+
+A: Yes, Aspose.PDF for .NET is compatible with .NET Core applications. It supports various .NET platforms, including .NET Framework, .NET Core, and .NET 5.0+.
+
+#### Q: Can I add more tables to the PDF document?
+
+A: Yes, you can add multiple tables to a PDF document by following similar steps as demonstrated in the code snippet. Simply create new instances of the `Aspose.Pdf.Table` class and add them to different sections or pages of the PDF document.

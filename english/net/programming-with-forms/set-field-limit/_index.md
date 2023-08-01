@@ -7,7 +7,6 @@ type: docs
 weight: 260
 url: /net/programming-with-forms/set-field-limit/
 ---
-
 Here is a detailed tutorial on how to set a field boundary using Aspose.PDF for .NET. Follow these steps:
 
 ## Step 1: Start by defining the directory of your documents by specifying the path in the `dataDir` variable.
@@ -59,3 +58,26 @@ Console.WriteLine("\nField added successfully with limit.\nFile saved at " + dat
 ## Conclusion
 
 In this tutorial, we learned how to set a field boundary using Aspose.PDF for .NET. By following the steps outlined above, you can manipulate and set limits for form fields in your PDF documents using Aspose.PDF for .NET.
+
+
+### FAQ's
+
+#### Q: Can I set different limits for different form fields in the same PDF document?
+
+A: Yes, you can set different limits for different form fields in the same PDF document using Aspose.PDF for .NET. Simply specify the desired field name and the corresponding limit for each form field in your code.
+
+#### Q: How do I remove a field boundary or limit using Aspose.PDF for .NET?
+
+A: To remove a field boundary or limit, you can use the `RemoveFieldLimit` method of the `FormEditor` class and specify the name of the form field from which you want to remove the limit.
+
+#### Q: Does Aspose.PDF for .NET support setting field limits for checkboxes and radio buttons?
+
+A: No, field limits are applicable to text fields only. Aspose.PDF for .NET does not support setting field limits for checkboxes and radio buttons.
+
+#### Q: Can I customize the appearance of the field boundary using Aspose.PDF for .NET?
+
+A: No, field limits set using Aspose.PDF for .NET are not visible in the PDF document's visual representation. They are used to control the input length and data entry for text fields, but they do not affect the appearance of the form fields.
+
+#### Q: Is it possible to set field limits for multiple fields simultaneously using Aspose.PDF for .NET?
+
+A: Yes, you can set field limits for multiple fields simultaneously by iterating through each form field and using the `SetFieldLimit` method for each field with the desired limit.

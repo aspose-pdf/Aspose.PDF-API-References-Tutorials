@@ -7,7 +7,6 @@ type: docs
 weight: 270
 url: /net/programming-with-forms/set-java-script/
 ---
-
 In this guide, we are going to explain step by step how to use the Aspose.PDF library for .NET to define JavaScript in a form field of a PDF document. We'll show you how to configure JavaScript actions to perform specific operations on the text field.
 
 ## Prerequisites
@@ -107,3 +106,26 @@ Console.WriteLine("\nJavaScript on form field setup successfully.\nFile saved at
 ## Conclusion
 
 In this guide, we learned how to use the Aspose.PDF library for .NET to set JavaScript in a form field of a PDF document. By following the steps outlined, you can customize JavaScript actions to perform various operations on text fields. Feel free to further explore the features of Aspose.PDF for .NET to expand the possibilities of manipulating PDF files.
+
+
+### FAQ's
+
+#### Q: Can I use Aspose.PDF for .NET to add JavaScript to other form elements, such as checkboxes and radio buttons?
+
+A: Yes, Aspose.PDF for .NET allows you to add JavaScript to various form elements, including checkboxes, radio buttons, and dropdown lists. You can use the `JavascriptAction` class to define JavaScript actions for different form elements.
+
+#### Q: Is it possible to validate user input using JavaScript in form fields?
+
+A: Yes, you can use JavaScript to validate user input in form fields. By defining JavaScript actions like `OnBlur` or `OnKeystroke` for a form field, you can validate the entered data and display error messages if necessary.
+
+#### Q: Can I execute complex JavaScript functions using Aspose.PDF for .NET?
+
+A: Yes, you can execute complex JavaScript functions using Aspose.PDF for .NET. You have the flexibility to define custom JavaScript functions and call them within the `JavascriptAction`.
+
+#### Q: Does Aspose.PDF for .NET support JavaScript events other than those mentioned in this tutorial?
+
+A: Yes, Aspose.PDF for .NET supports a wide range of JavaScript events, including `OnMouseEnter`, `OnMouseExit`, `OnMouseDown`, and `OnMouseUp`, among others. You can use these events to trigger JavaScript actions based on user interactions.
+
+#### Q: Can I use Aspose.PDF for .NET to extract JavaScript code from existing PDF documents?
+
+A: Aspose.PDF for .NET provides the ability to extract JavaScript code from existing PDF documents. You can use the `JavascriptAction` class and other relevant methods to access and analyze JavaScript actions in a PDF form.

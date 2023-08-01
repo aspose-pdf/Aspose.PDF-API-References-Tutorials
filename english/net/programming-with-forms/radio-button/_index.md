@@ -7,7 +7,6 @@ type: docs
 weight: 220
 url: /net/programming-with-forms/radio-button/
 ---
-
 In this tutorial, we will show you how to add a radio button in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
 
 ## Step 1: Preparation
@@ -100,3 +99,26 @@ catch (Exception ex)
 ## Conclusion
 
 In this tutorial, we learned how to add a radio button in a PDF document using Aspose.PDF for .NET. By following these steps, you can easily create a radio button and place it on a specific page in your PDF document.
+
+
+### FAQ's
+
+#### Q: Can I customize the appearance of the radio button, such as its size and color?
+
+A: Yes, you can customize the appearance of the radio button using the `Rectangle` object's coordinates to define its size and position. Aspose.PDF for .NET allows you to adjust the radio button's appearance to suit your needs.
+
+#### Q: Can I add multiple radio buttons with different groups on the same page?
+
+A: Yes, you can add multiple radio buttons with different groups on the same page. Each group of radio buttons can have a unique name, and only one option within each group can be selected at a time.
+
+#### Q: How can I add a label or text description to the radio button options?
+
+A: To add a label or text description to the radio button options, you can use the `TextStamp` class from Aspose.PDF for .NET to overlay text on the PDF document at specific coordinates.
+
+#### Q: Is Aspose.PDF for .NET compatible with all versions of .NET Framework?
+
+A: Yes, Aspose.PDF for .NET is compatible with all versions of .NET Framework, including .NET Core and .NET Standard.
+
+#### Q: Can I programmatically control the selection of a radio button option in the PDF document?
+
+A: Yes, you can programmatically control the selection of a radio button option using the `IsSelected` property of the `RadioButtonOption` class. This property allows you to set a specific option as selected.

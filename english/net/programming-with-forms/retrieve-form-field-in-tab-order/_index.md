@@ -7,7 +7,6 @@ type: docs
 weight: 240
 url: /net/programming-with-forms/retrieve-form-field-in-tab-order/
 ---
-
 When working with PDF documents in C# using Aspose.PDF for .NET, you may come across a scenario where you need to retrieve form fields in a specific tab order. This can be useful when you want to perform operations on form fields based on their tab sequence. In this tutorial, we will guide you step by step on how to retrieve form fields in tab order using Aspose.PDF for .NET.
 
 ## Requirements
@@ -110,3 +109,26 @@ foreach (Field field in doc1.Form)
 ## Conclusion
 
 In this tutorial, we learned how to retrieve form fields in tab order using Aspose.PDF for .NET. We covered the steps involved in loading a PDF document, retrieving form fields in tab order, modifying the tab order, and saving the modified document. By following these steps, you can efficiently work with form fields and customize their tab sequence as per your requirements.
+
+
+### FAQ's
+
+#### Q: How can I use the retrieved form fields in my C# code for further processing?
+
+A: You can use the retrieved form fields in your C# code by accessing their properties such as `Value`, `Name`, `Rect`, etc. These properties allow you to read and modify the form field data as needed.
+
+#### Q: Can I retrieve form fields from all pages of the PDF document in tab order?
+
+A: Yes, you can retrieve form fields from all pages of the PDF document by iterating through each page and accessing the `FieldsInTabOrder` property as shown in the tutorial. This will give you form fields sorted by their tab sequence across all pages.
+
+#### Q: Is it possible to retrieve only specific types of form fields, such as text fields or checkboxes, in tab order?
+
+A: Yes, you can filter form fields based on their types, such as text fields or checkboxes, after retrieving them in tab order. You can use conditional statements to check the type of each form field and process them accordingly.
+
+#### Q: Can I retrieve form fields based on their names instead of tab order?
+
+A: Yes, you can retrieve form fields based on their names by using the `doc.Form` collection and specifying the field name as an index. For example, `doc.Form["fieldName"]` will retrieve the form field with the specified name.
+
+#### Q: Does Aspose.PDF for .NET support working with encrypted PDF documents?
+
+A: Yes, Aspose.PDF for .NET provides support for working with encrypted PDF documents. You can load and manipulate encrypted PDF files using appropriate password parameters.

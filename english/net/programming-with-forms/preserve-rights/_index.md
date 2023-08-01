@@ -7,7 +7,6 @@ type: docs
 weight: 210
 url: /net/programming-with-forms/preserve-rights/
 ---
-
 In this tutorial, we will show you how to preserve form rights in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
 
 ## Step 1: Preparation
@@ -90,3 +89,25 @@ fs.Close();
 
 In this tutorial, we learned how to preserve the rights of a form in a PDF document using Aspose.PDF for .NET. By following these steps, you can easily access form fields and make specific changes while preserving access and write permissions.
 
+
+### FAQ's
+
+#### Q: Can I preserve the rights of specific form fields without affecting others in the PDF document?
+
+A: Yes, by using the `FullName` property of the form fields, you can target specific form fields for preservation while leaving others unaffected.
+
+#### Q: Can I preserve the rights of a form in a password-protected PDF document?
+
+A: Yes, Aspose.PDF for .NET allows you to preserve the rights of a form even in password-protected PDF documents, as long as you provide the correct password to access and modify the file.
+
+#### Q: What happens if I attempt to modify form fields without the appropriate access rights?
+
+A: If you attempt to modify form fields without the appropriate access rights, the changes will not be saved in the PDF document, and you may receive an exception or an error message.
+
+#### Q: Is Aspose.PDF for .NET compatible with all versions of .NET Framework?
+
+A: Yes, Aspose.PDF for .NET is compatible with all versions of .NET Framework, including .NET Core and .NET Standard.
+
+#### Q: Can I preserve form rights in a PDF document programmatically in other programming languages besides C#?
+
+A: Yes, Aspose.PDF for .NET supports various programming languages, such as VB.NET and ASP.NET, in addition to C#.

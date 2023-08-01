@@ -7,7 +7,6 @@ type: docs
 weight: 290
 url: /net/programming-with-forms/text-box/
 ---
-
 In this guide, we will explain step by step how to use the Aspose.PDF library for .NET to create a text field in a PDF document. We'll show you how to open the document, create the text field, customize its properties, and save the edited PDF.
 
 ## Step 1: Configuring the document directory
@@ -103,3 +102,25 @@ Console.WriteLine("\nTextbox field added successfully.\nFile saved at " + dataDi
 ## Conclusion
 
 In this guide, we learned how to use the Aspose.PDF library for .NET to create a text field in a PDF document. By following the described steps, you can customize the properties of the text field and add it to the document as needed. Feel free to further explore the features of Aspose.PDF for .NET to expand the possibilities of manipulating PDF files.
+
+### FAQ's
+
+#### Q: Can I use Aspose.PDF for .NET to create multiple text fields in a single PDF document?
+
+A: Yes, you can create multiple text fields in a single PDF document using Aspose.PDF for .NET. Simply repeat the process of creating and customizing text fields for each desired location in the document.
+
+#### Q: How can I customize the appearance of the text field, such as font size and color?
+
+A: You can customize the appearance of the text field by adjusting its properties, such as font size, font style, color, border style, background color, and more. In the sample source code provided, the border width, border dash pattern, and text color are customized.
+
+#### Q: Is it possible to extract the user-entered text from the created text field?
+
+A: Yes, you can extract the user-entered text from the created text field. After users fill in the text field in the PDF document, you can programmatically retrieve the field value using Aspose.PDF for .NET.
+
+#### Q: Can I add text fields to an existing PDF document without creating a new one?
+
+A: Yes, you can add text fields to an existing PDF document without creating a new one. Aspose.PDF for .NET provides the ability to modify existing PDF documents, including adding text fields, checkboxes, and other form elements.
+
+#### Q: Does Aspose.PDF for .NET support other types of form fields, such as checkboxes and radio buttons?
+
+A: Yes, Aspose.PDF for .NET supports various types of form fields, including checkboxes, radio buttons, dropdown lists, and more. You can use the library to work with different types of form elements in PDF documents.

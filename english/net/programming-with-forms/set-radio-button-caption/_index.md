@@ -7,7 +7,6 @@ type: docs
 weight: 280
 url: /net/programming-with-forms/set-radio-button-caption/
 ---
-
 In this guide, we will explain step by step how to use the Aspose.PDF library for .NET to define the caption of a radio button in a PDF form. We'll show you how to access the radio button field, create a new radio button option, and customize the button caption.
 
 ## Step 1: Configuring the document directory
@@ -117,3 +116,25 @@ PDF_Template_PDF_HTML.Save(dataDir + "RadioButtonField_out.pdf");
 ## Conclusion
 
 In this guide, we learned how to use the Aspose.PDF library for .NET to set the caption for a radio button in a PDF form. By following the described steps, you can customize the radio button options and change the caption as needed. Feel free to further explore the features of Aspose.PDF for .NET to expand the possibilities of manipulating PDF files.
+
+### FAQ's
+
+#### Q: Can I use Aspose.PDF for .NET to set captions for radio buttons in a PDF form?
+
+A: Yes, you can use Aspose.PDF for .NET to set captions for radio buttons in a PDF form. The provided sample source code demonstrates how to access the radio button field, create a new radio button option with a custom caption, and update the existing field.
+
+#### Q: How can I customize the appearance of the radio button caption, such as font size and color?
+
+A: You can customize the appearance of the radio button caption by adjusting the properties of the `TextFragment` used for the caption. For example, you can set the font, font size, color, line spacing, and other text formatting options.
+
+#### Q: Is it possible to add multiple radio button options with different captions to a single radio button group?
+
+A: Yes, you can add multiple radio button options with different captions to a single radio button group. Each option will represent a different choice, and users can select only one option from the group.
+
+#### Q: Can I use Aspose.PDF for .NET to modify other form fields in a PDF document?
+
+A: Yes, Aspose.PDF for .NET provides a comprehensive set of features to manipulate various form fields in a PDF document, such as text fields, checkboxes, dropdown lists, and more. You can use the library to set values, modify appearances, and add interactivity to form fields.
+
+#### Q: Does Aspose.PDF for .NET support working with PDFs generated from other sources, such as scanned documents?
+
+A: Yes, Aspose.PDF for .NET supports working with PDFs generated from various sources, including scanned documents. The library provides OCR (Optical Character Recognition) capabilities to extract text from scanned PDFs and manipulate the content programmatically.

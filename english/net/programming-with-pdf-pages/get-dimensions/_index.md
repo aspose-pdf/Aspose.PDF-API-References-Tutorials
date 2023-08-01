@@ -1,6 +1,6 @@
 ---
-title: Get Dimensions
-linktitle: Get Dimensions
+title: Get PDF Page Dimensions
+linktitle: Get PDF Page Dimensions
 second_title: Aspose.PDF for .NET API Reference
 description: In this tutorial, we explain how to get PDF page dimensions and perform manipulations using Aspose.PDF for .NET. Detailed steps are provided to guide you through the process.
 type: docs
@@ -81,3 +81,24 @@ In this tutorial, we learned how to get the dimensions of a page in a PDF file u
 
 Feel free to further explore the documentation of Aspose.PDF to discover all the features offered by this library.
 
+### FAQs for get PDF page dimensions
+
+#### Q: How can I get the dimensions of a specific page in a PDF file?
+
+A: To get the dimensions of a specific page in a PDF file, you can use the `GetPageRect()` method of the `Page` object in Aspose.PDF for .NET. This method returns a `Rectangle` object containing the dimensions (width and height) of the page.
+
+#### Q: What does the `GetPageRect(true)` method do in the provided C# source code?
+
+A: The `GetPageRect(true)` method in the provided C# source code returns the dimensions of the page after applying any rotations. If the page is rotated, the method will return the dimensions of the rotated page, which could be different from the original dimensions.
+
+#### Q: Can I get the dimensions of all pages in the PDF document using Aspose.PDF for .NET?
+
+A: Yes, you can get the dimensions of all pages in the PDF document by iterating through the `Pages` collection of the `Document` object and using the `GetPageRect(true)` method for each page.
+
+#### Q: How can I determine the orientation of a page (portrait or landscape) based on its dimensions?
+
+A: To determine the orientation of a page based on its dimensions, you can compare the width and height of the page. If the width is greater than the height, the page is in landscape orientation, and if the height is greater than the width, the page is in portrait orientation.
+
+#### Q: Can I modify the dimensions of a page using Aspose.PDF for .NET?
+
+A: Yes, you can modify the dimensions of a page in Aspose.PDF for .NET. After getting the `Rectangle` object representing the page dimensions, you can adjust the width and height as per your requirements and then apply the changes to the page.

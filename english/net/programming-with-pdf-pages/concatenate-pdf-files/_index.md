@@ -1,6 +1,6 @@
 ---
-title: Concatenate Pdf Files
-linktitle: Concatenate Pdf Files
+title: Concatenate PDF Files
+linktitle: Concatenate PDF Files
 second_title: Aspose.PDF for .NET API Reference
 description: Step by step guide to concatenate PDF files using Aspose.PDF for .NET. Easy to follow and implement in your projects.
 type: docs
@@ -67,3 +67,24 @@ System.Console.WriteLine("\nPDFs are concatenated successfully.\nFile saved at "
 ## Conclusion
 In this tutorial, we learned how to concatenate PDF files using Aspose.PDF for .NET. By following the steps outlined above, you can easily implement this functionality in your own projects. Feel free to explore the Aspose.PDF documentation further to discover other useful features for working with PDF files.
 
+### FAQ's for concatenate PDF files
+
+#### Q: What is the purpose of concatenating PDF files?
+
+A: Concatenating PDF files means merging multiple PDF documents into a single PDF document. This can be useful when you have several PDF files that you want to combine or join together to create a comprehensive report, presentation, or any other document.
+
+#### Q: Can I concatenate more than two PDF files using Aspose.PDF for .NET?
+
+A: Yes, you can concatenate more than two PDF files using Aspose.PDF for .NET. The provided C# source code demonstrates how to concatenate two PDF files, but you can extend the logic to concatenate any number of PDF files by repeating the process for each additional PDF document.
+
+#### Q: Does concatenating PDF files modify the original files?
+
+A: No, concatenating PDF files using Aspose.PDF for .NET does not modify the original files. The method `pdfDocument1.Pages.Add(pdfDocument2.Pages)` in the source code adds the pages from the second document to the first document, but it does not alter the original PDF files. The concatenated result is saved as a new PDF file.
+
+#### Q: What happens if the PDF files being concatenated have different page sizes or orientations?
+
+A: When concatenating PDF files with different page sizes or orientations, the pages from each PDF will be combined in the order they are added. As a result, the output PDF will have pages with different sizes or orientations as per the source files. The content layout might be affected, and you may need to adjust it accordingly.
+
+#### Q: Can I control the order of pages in the concatenated PDF?
+
+A: Yes, you can control the order of pages in the concatenated PDF by manipulating the sequence in which you add the pages from different PDF documents. The order of adding pages determines their order in the final concatenated document.

@@ -86,3 +86,40 @@ if (fileSpecification.Params != null)
 
 In this tutorial, we explained how to get the information about a specific attachment of a PDF file using Aspose.PDF for .NET. You can now use this knowledge to extract and view attachment information from your PDF files.
 
+### FAQ's for get attachment info 
+
+#### Q: Why would I need to retrieve information about specific attachments in a PDF document?
+
+A: Retrieving attachment information allows you to understand and analyze the details of embedded files within a PDF, helping you manage and work with attachments effectively.
+
+#### Q: What type of information can I gather about a specific attachment using this tutorial?
+
+A: This tutorial demonstrates how to retrieve and display attachment properties such as name, description, MIME type, control hash, creation date, modification date, and size.
+
+#### Q: How does this tutorial help me gather attachment information using Aspose.PDF for .NET?
+
+A: This tutorial provides step-by-step instructions and C# source code to access and display information about a specific attachment within a PDF document.
+
+#### Q: Can I retrieve information about all attachments instead of a specific attachment using this tutorial?
+
+A: This tutorial is focused on obtaining information about a specific attachment, but you can adapt the code to loop through all attachments and gather their information.
+
+#### Q: What is the purpose of the "Check Hash" property displayed in the attachment information?
+
+A: The "Check Hash" property represents the control hash value of the attachment, which can be used to verify the integrity of the attachment.
+
+#### Q: How can I modify this code to retrieve information about attachments with different indices?
+
+A: You can change the index value (e.g., `pdfDocument.EmbeddedFiles[1]`) to retrieve information about attachments at different indices within the PDF document.
+
+#### Q: Can I use this knowledge to gather information from password-protected PDF files?
+
+A: Yes, you can apply similar principles to gather attachment information from password-protected PDF files using Aspose.PDF for .NET.
+
+#### Q: How does Aspose.PDF for .NET simplify the process of obtaining attachment information?
+
+A: Aspose.PDF for .NET provides an intuitive API that allows you to access and manipulate attachment properties in PDF documents with ease.
+
+#### Q: Are there specific scenarios where gathering attachment information is recommended?
+
+A: Gathering attachment information is valuable when you need to understand the details of embedded files, such as verifying their properties or auditing attachments in a document.

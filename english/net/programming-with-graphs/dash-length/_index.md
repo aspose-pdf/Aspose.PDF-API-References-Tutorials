@@ -99,3 +99,28 @@ Console.WriteLine("\nLength dashed successfully in black and white.\nFile saved 
 
 In this tutorial, we explained how to set the length of dashes using Aspose.PDF for .NET. Now you can use this knowledge to create lines with custom dash patterns in your PDF files.
 
+## FAQs
+
+#### Q: What is the purpose of this tutorial?
+
+A: This tutorial's purpose is to guide you through the process of setting the length of dashes for lines using Aspose.PDF for .NET. You'll learn how to create lines with custom dash patterns in your PDF files.
+
+#### Q: What prerequisites are required before starting?
+
+A: Before you start, ensure that you have installed the Aspose.PDF library and set up your development environment. A basic understanding of C# programming is also recommended.
+
+#### Q: How do I specify the directory for saving the PDF file?
+
+A: Modify the "dataDir" variable in the provided source code to indicate the directory where you want to save the resulting PDF file.
+
+#### Q: How do I create a line with custom dash patterns?
+
+A: The tutorial demonstrates creating a Line object and configuring its color, dash array, and dash phase using the `GraphInfo` object. Modify these settings to achieve the desired dash pattern.
+
+#### Q: Can I customize the color of the line?
+
+A: Yes, you can customize the color of the line by setting the `Color` property of the `GraphInfo` object associated with the Line.
+
+#### Q: How do I save the PDF document after setting the dash length?
+
+A: After configuring the Line object with the desired dash pattern, you can save the resulting PDF document using the `doc.Save(dataDir + "DashLength_out.pdf");` line in the provided source code.

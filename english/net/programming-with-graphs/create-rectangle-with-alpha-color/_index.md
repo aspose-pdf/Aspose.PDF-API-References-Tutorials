@@ -7,7 +7,6 @@ type: docs
 weight: 60
 url: /net/programming-with-graphs/create-rectangle-with-alpha-color/
 ---
-
 In this tutorial, we will walk you through the following C# source code step by step to create a rectangle with alpha color using Aspose.PDF for .NET.
 
 Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
@@ -115,3 +114,32 @@ Console.WriteLine("\nRectangle object created successfully with alpha color.\nFi
 
 In this tutorial, we explained how to create a rectangle with alpha color using Aspose.PDF for .NET. You can now use this knowledge to create geometric shapes with transparent colors in your PDF files.
 
+## FAQ's
+
+#### Q: What is the purpose of this tutorial?
+
+A: This tutorial aims to guide you through the process of creating a rectangle with alpha color using Aspose.PDF for .NET. You'll learn how to add geometric shapes with transparent colors to your PDF files.
+
+#### Q: What prerequisites are required before starting?
+
+A: Before you begin, ensure that you have installed the Aspose.PDF library and set up your development environment. Additionally, having a basic understanding of C# programming is recommended.
+
+#### Q: How do I specify the directory for saving the PDF file?
+
+A: In the provided source code, you can modify the "dataDir" variable to indicate the directory where you want to save the resulting PDF file.
+
+#### Q: What is the purpose of the Graph object and Rectangle?
+
+A: The Graph object acts as a container for drawing elements, while the Rectangle represents the geometric shape that you'll be adding to the PDF.
+
+#### Q: How can I set up an alpha color for the rectangle?
+
+A: You can specify an alpha color for the rectangle using the `FillColor` property of the `GraphInfo` object and the `Color.FromRgb` method with an ARGB value.
+
+#### Q: Can I create multiple rectangles with different alpha colors?
+
+A: Yes, you can create multiple rectangles with different alpha colors by following similar steps as demonstrated in the tutorial.
+
+#### Q: How do I save the resulting PDF file after creating rectangles with alpha colors?
+
+A: After creating the rectangles with alpha colors, you can save the resulting PDF file using the `doc.Save(dataDir + "CreateRectangleWithAlphaColor_out.pdf");` line in the provided source code.

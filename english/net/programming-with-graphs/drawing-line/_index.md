@@ -7,7 +7,6 @@ type: docs
 weight: 80
 url: /net/programming-with-graphs/drawing-line/
 ---
-
 In this tutorial, we will walk you through the following C# source code step by step to draw a line using Aspose.PDF for .NET.
 
 Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
@@ -107,3 +106,32 @@ Console.WriteLine("\nLine drawn successfully across the page.\nFile saved at " +
 
 In this tutorial, we explained how to draw a line using Aspose.PDF for .NET. You can now use this knowledge to create geometric shapes with custom lines in your PDF files.
 
+### FAQ's
+
+#### Q: What is the purpose of this tutorial?
+
+A: This tutorial's purpose is to guide you through the process of drawing lines using Aspose.PDF for .NET. You'll learn how to create lines on a PDF page and customize their appearance.
+
+#### Q: What prerequisites are required before starting?
+
+A: Before you begin, ensure you have installed the Aspose.PDF library and set up your development environment. Basic knowledge of C# programming is also recommended.
+
+#### Q: How do I specify the directory for saving the PDF file?
+
+A: Modify the "dataDir" variable in the provided source code to indicate the directory where you want to save the resulting PDF file.
+
+#### Q: How do I create lines on a PDF page?
+
+A: The tutorial demonstrates creating a Graph object with the dimensions of the page and then adding Line objects to it. Modify the coordinates and properties of the Line objects to create the desired lines.
+
+#### Q: Can I customize the appearance of the lines?
+
+A: Yes, you can customize the appearance of the lines by modifying the properties of the Line objects. This includes changing their coordinates, color, thickness, and other graphical attributes.
+
+#### Q: How do I save the PDF document after drawing the lines?
+
+A: After adding the Graph object with Line objects to the page, you can save the resulting PDF document using the `pDoc.Save(dataDir + "DrawingLine_out.pdf");` line in the provided source code.
+
+#### Q: Can I draw lines with different angles and orientations?
+
+A: Yes, you can draw lines with different angles and orientations by adjusting the coordinates and properties of the Line objects within the Graph.

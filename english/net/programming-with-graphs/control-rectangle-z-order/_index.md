@@ -1,13 +1,12 @@
 ---
-title: Control Rectangle Z Order
-linktitle: Control Rectangle Z Order
+title: Control Rectangle Z Order In PDF File
+linktitle: Control Rectangle Z Order In PDF File
 second_title: Aspose.PDF for .NET API Reference
 description: Learn how to control the Z-order of rectangles in a PDF file using Aspose.PDF for .NET. 
 type: docs
 weight: 40
 url: /net/programming-with-graphs/control-rectangle-z-order/
 ---
-
 In this tutorial, we will walk you through the following C# source code step by step to control the Z-order of rectangles using Aspose.PDF for .NET.
 
 Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
@@ -95,3 +94,36 @@ doc1.Save(dataDir);
 
 In this tutorial, we explained how to control the Z-order of rectangles using Aspose.PDF for .NET. You can now use this knowledge to arrange and layer rectangles in your PDF files with precision.
 
+### FAQ's control rectangle z order in PDF file
+
+#### Q: What is the purpose of this tutorial?
+
+A: This tutorial aims to guide you through the process of controlling the Z-order of rectangles using Aspose.PDF for .NET, allowing you to arrange and layer rectangles in your PDF files.
+
+#### Q: What prerequisites are required before starting?
+
+A: Before you begin, ensure that you have installed the Aspose.PDF library and set up your development environment. Additionally, having a basic understanding of C# programming is recommended.
+
+#### Q: How do I specify the directory for saving the PDF file?
+
+A: In the provided source code, you can modify the "dataDir" variable to indicate the directory where you want to save the resulting PDF file.
+
+#### Q: What is the purpose of setting page size and margins?
+
+A: Setting the page size and margins helps configure the layout of the PDF page and provides a canvas on which you can arrange the rectangles.
+
+#### Q: How do I add rectangles with specified Z order?
+
+A: You can create and add rectangles to the page using the `AddRectangle` method, specifying the position, dimensions, color, and Z order for each rectangle.
+
+#### Q: What is Z-order, and why is it important?
+
+A: Z-order determines the stacking order of objects on a page. Objects with higher Z-order values are positioned on top of objects with lower Z-order values, affecting their visibility and layering.
+
+#### Q: Can I customize the colors and dimensions of the rectangles?
+
+A: Yes, you can customize the colors, positions, and dimensions of the rectangles by modifying the parameters passed to the `AddRectangle` method.
+
+#### Q: How do I save the resulting PDF file after arranging the rectangles?
+
+A: After arranging the rectangles, you can save the resulting PDF file using the `doc1.Save(dataDir);` line in the provided source code.

@@ -11,16 +11,16 @@ The "Programming with Links and Actions" tutorial page on Aspose.PDF for .NET of
 ## Tutorials
 | Title | Description |
 | --- | --- | 
-| [Add Hyperlink](./add-hyperlink/) | asily add interactive hyperlinks in your PDF files with Aspose.PDF for .NET. |  
-| [Create Application Link](./create-application-link/) | Easily create application links in your PDF files with Aspose.PDF for .NET. |  
+| [Add Hyperlink In PDF File](./add-hyperlink/) | asily add interactive hyperlinks in PDF file with Aspose.PDF for .NET. |  
+| [Create Application Link In PDF File](./create-application-link/) | Easily create application links in PDF file with Aspose.PDF for .NET. |  
 | [Create Document Link](./create-document-link/) | Easily create links to other PDF documents with Aspose.PDF for .NET. |  
-| [Create Local Hyperlink](./create-local-hyperlink/) | Easily create local hyperlinks in a PDF file using Aspose.PDF for .NET. |  
-| [Extract Links](./extract-links/) | Easily extract links from a PDF document using Aspose.PDF for .NET. |  
-| [Get Hyperlink Destinations](./get-hyperlink-destinations/) | Learn how to extract hyperlink destinations from a PDF file using Aspose.PDF for .NET. |  
-| [Get Hyperlink Text](./get-hyperlink-text/) | Learn how to extract hyperlink text from a PDF file using Aspose.PDF for .NET. |  
+| [Create Local Hyperlink In PDF File](./create-local-hyperlink/) | Easily create local hyperlinks in PDF file using Aspose.PDF for .NET. |  
+| [Extract Links In PDF File](./extract-links/) | Easily extract links in PDF file using Aspose.PDF for .NET. |  
+| [Get Hyperlink Destinations In PDF File](./get-hyperlink-destinations/) | Learn how to extract hyperlink destinations in PDF file using Aspose.PDF for .NET. |  
+| [Get Hyperlink Text In PDF File](./get-hyperlink-text/) | Learn how to extract hyperlink text in PDF file using Aspose.PDF for .NET. |  
 | [Remove Open Action](./remove-open-action/) | Learn how to remove the open action from a PDF using Aspose.PDF for .NET. |  
-| [Set Destination Link](./set-destination-link/) | Learn how to set a destination link in a PDF file using Aspose.PDF for .NET. |  
-| [Set Target Link](./set-target-link/) | Learn how to set a target link in a PDF file using Aspose.PDF for .NET. |  
+| [Set Destination Link In PDF File](./set-destination-link/) | Learn how to set a destination link in PDF file using Aspose.PDF for .NET. |  
+| [Set Target Link In PDF File](./set-target-link/) | Learn how to set a target link in PDF file using Aspose.PDF for .NET. |  
 | [Specify Page When Viewing](./specify-page-when-viewing/) | Learn how to specify a page when viewing a PDF using Aspose.PDF for .NET. |  
-| [Update Links](./update-links/) | Learn how to update links in a PDF file with Aspose.PDF for .NET. |  
-| [Update Link Text Color](./update-link-text-color/) | Learn how to update the text color of links in a PDF file with Aspose.PDF for .NET. |  
+| [Update Links In PDF File](./update-links/) | Learn how to update links in PDF file with Aspose.PDF for .NET. |  
+| [Update Link Text Color In PDF File](./update-link-text-color/) | Learn how to update the text color of links in PDF file with Aspose.PDF for .NET. |  

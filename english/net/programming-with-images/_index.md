@@ -12,13 +12,13 @@ Aspose.PDF for .NET's "Programming with Images" tutorials walk you through the s
 ## Tutorials
 | Title | Description |
 | --- | --- | 
-| [Add Image](./add-image/) | Easily add an image to a PDF document using Aspose.PDF for .NET. |  
+| [Add Image In PDF File](./add-image/) | Easily add an image to a PDF document using Aspose.PDF for .NET. |  
 | [All Pages To TIFF](./all-pages-to-tiff/) | Convert all pages of a PDF document to TIFF file with Aspose.PDF for .NET. |  
 | [Bradley Algorithm](./bradley-algorithm/) | Convert a PDF document using the Bradley algorithm with Aspose.PDF for .NET. |  
 | [CGM Image to PDF](./cgm-image-to-pdf/) | Easily convert CGM image to PDF with Aspose.PDF for .NET. |  
 | [Convert All Pages To EMF](./convert-all-pages-to-emf/) | Easily convert all pages of a PDF document to EMF files with Aspose.PDF for .NET. |  
 | [Convert All Pages To PNG](./convert-all-pages-to-png/) | Easily convert all pages of a PDF document to PNG files with Aspose.PDF for .NET. |  
-| [Convert Image Stream to PDF](./convert-image-stream-to-pdf/) | Easily convert an image stream to a PDF file with Aspose.PDF for .NET. |  
+| [Convert Image Stream to PDF File](./convert-image-stream-to-pdf/) | Easily convert an image stream to PDF file with Aspose.PDF for .NET. |  
 | [Convert Page Region To DOM](./convert-page-region-to-dom/) | Easily convert a specific region of a PDF page to a Document Object Model (DOM) with Aspose.PDF for .NET. |  
 | [Convert To BMP](./convert-to-bmp/) | Easily convert PDF to individual BMP images with Aspose.PDF for .NET. |  
 | [Create Thumbnail Images](./create-thumbnail-images/) | Easily create image thumbnails from PDF files with Aspose.PDF for .NET. |  

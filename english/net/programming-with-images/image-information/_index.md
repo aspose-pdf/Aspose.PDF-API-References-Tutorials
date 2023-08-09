@@ -1,14 +1,13 @@
 ---
-title: Image Information
-linktitle: Image Information
+title: Image Information In PDF File
+linktitle: Image Information In PDF File
 second_title: Aspose.PDF for .NET API Reference
-description: Extract image information in a PDF file using Aspose.PDF for .NET.
+description: Extract image information in PDF file using Aspose.PDF for .NET.
 type: docs
 weight: 160
 url: /net/programming-with-images/image-information/
 ---
-
-This guide will take you step by step how to extract information about images in a PDF file using Aspose.PDF for .NET. Make sure you have already set up your environment and follow the steps below:
+This guide will take you step by step how to extract information about images in PDF file using Aspose.PDF for .NET. Make sure you have already set up your environment and follow the steps below:
 
 ## Step 1: Define the document directory
 
@@ -185,3 +184,45 @@ foreach (Operator op in doc.Pages[1].Contents)
 ## Conclusion
 
 Congratulation ! You have now learned how to extract image information in a PDF file using Aspose.PDF for .NET. You can use this information for various image processing tasks in your applications.
+
+### FAQ's for image information in PDF file
+
+#### Q: What is the purpose of extracting image information from a PDF document using Aspose.PDF for .NET?
+
+A: Extracting image information from a PDF document provides insights into the dimensions, resolution, and other attributes of images within the document. This information can be used for image processing, analysis, or optimization tasks.
+
+#### Q: How does Aspose.PDF for .NET assist in extracting image information from a PDF document?
+
+A: Aspose.PDF for .NET provides tools to access and analyze the content of a PDF document, including its images. The provided code demonstrates how to extract and display image information using various operators.
+
+#### Q: What kind of image information can be extracted using this method?
+
+A: This method allows you to extract and display information such as scaled dimensions, resolution, and image names for images within a PDF document.
+
+#### Q: How does the code identify and process image-related operators within a PDF document?
+
+A: The code iterates through the operators on a specified page of the PDF document. It identifies and processes operators related to image operations, transformations, and rendering.
+
+#### Q: What is the significance of default resolution, and how is it used in the code?
+
+A: Default resolution is used as a reference point to calculate the actual resolution of images. The code computes the resolution of each image based on its dimensions and the default resolution setting.
+
+#### Q: How can the extracted image information be utilized in real-world scenarios?
+
+A: The extracted image information can be used for tasks such as image quality assessment, image optimization, generating image thumbnails, and facilitating image-related decision-making processes.
+
+#### Q: Can I modify the code to extract additional image-related attributes?
+
+A: Yes, you can customize the code to extract additional attributes of images, such as color space, pixel depth, or image type.
+
+#### Q: Is the image information extraction process resource-intensive or time-consuming?
+
+A: The image information extraction process is efficient and optimized for performance, ensuring minimal impact on resource usage and processing time.
+
+#### Q: How can developers benefit from identifying and extracting image information from PDF documents?
+
+A: Developers can gain insights into the characteristics of images within PDF documents, enabling them to make informed decisions regarding image manipulation, processing, and optimization.
+
+#### Q: Can this method be used for batch processing of PDF documents containing images?
+
+A: Yes, this method can be extended for batch processing by iterating through multiple pages or documents, extracting image information, and performing image-related tasks.

@@ -1,14 +1,13 @@
 ---
-title: Search And Get Images
-linktitle: Search And Get Images
+title: Search And Get Images In PDF File
+linktitle: Search And Get Images In PDF File
 second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to search and get images in a PDF document using Aspose.PDF for .NET.
+description: Step by step guide to search and get images in PDF file using Aspose.PDF for .NET.
 type: docs
 weight: 260
 url: /net/programming-with-images/search-and-get-images/
 ---
-
-In this tutorial, we will walk you through how to search and get images in a PDF document using Aspose.PDF for .NET. Follow these steps to perform this operation easily.
+In this tutorial, we will walk you through how to search and get images in PDF file using Aspose.PDF for .NET. Follow these steps to perform this operation easily.
 
 ## Prerequisites
 
@@ -94,3 +93,41 @@ foreach (ImagePlacement imagePlacement in abs.ImagePlacements)
 ## Conclusion
 
 Congratulation ! You have successfully searched and obtained images in a PDF document using Aspose.PDF for .NET. Now you can apply this method to your own projects to extract images and get their properties from PDF files.
+
+### FAQ's for search and get images in PDF file
+
+#### Q: What is the purpose of searching and obtaining images in a PDF document using Aspose.PDF for .NET?
+
+A: Searching and obtaining images in a PDF document allows you to locate and extract images within the PDF file. This can be useful for various purposes such as analyzing the content, verifying image properties, or further processing the images.
+
+#### Q: How does the process of searching for images in a PDF document work?
+
+A: The process involves using the `ImagePlacementAbsorber` object to perform a search for image placements on all pages of the PDF document. The absorber collects information about the location, size, and resolution of each image within the document.
+
+#### Q: What is the purpose of the `ImagePlacement` object in the code?
+
+A: The `ImagePlacement` object represents the placement of an image within the PDF document. It provides properties that allow you to access details such as the image's dimensions, coordinates, and resolution.
+
+#### Q: Can I filter the images that are searched and obtained based on specific criteria?
+
+A: The provided code collects information about all images within the PDF document. If you want to filter images based on specific criteria (e.g., image type, dimensions, resolution), you may need to modify the code to include appropriate filtering conditions.
+
+#### Q: How can I access the actual image content after obtaining its placement information?
+
+A: The `XImage` object obtained from the `ImagePlacement` object represents the actual image content. You can further process this `XImage` object, such as saving it to a file or displaying it in your application.
+
+#### Q: What can I do with the obtained image properties?
+
+A: The obtained image properties, such as width, height, coordinates, and resolution, can be used for various purposes. You can analyze the properties, display them to the user, or use them as input for further processing.
+
+#### Q: Can I modify or edit the images within the PDF document using this method?
+
+A: The provided code focuses on searching for and obtaining image placement information. To modify or edit images, you may need to integrate additional functionality, such as image manipulation, using the Aspose.PDF library.
+
+#### Q: How can I integrate this method into my own projects?
+
+A: To integrate this method into your projects, follow the outlined steps and modify the code as needed. You can use the obtained image placement information and properties according to the requirements of your application.
+
+#### Q: Does Aspose.PDF for .NET offer other features related to image manipulation in PDF documents?
+
+A: Yes, Aspose.PDF for .NET provides a range of features for working with images in PDF documents, including image insertion, resizing, rotation, extraction, and more. You can explore the library's documentation and examples to discover its full capabilities.

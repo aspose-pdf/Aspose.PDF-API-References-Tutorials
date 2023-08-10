@@ -180,3 +180,42 @@ pdfDocument.Save(dataDir + "TableInHeaderFooterSection_out.pdf");
 
 Congratulation ! You have learned how to add a table in the header or footer section of a PDF document using Aspose.PDF for .NET. You can now customize your headers and footers by adding tables to display additional information in your PDF documents.
 
+### FAQ's for table in header footer section
+
+#### Q: What is the purpose of adding a table in the header or footer section of a PDF document?
+
+A: Adding a table in the header or footer section of a PDF document allows you to display structured and organized information such as titles, subtitles, logos, or any other content that you want to appear consistently on each page of the document.
+
+#### Q: How does the provided C# source code achieve the addition of a table in the header or footer section of a PDF document?
+
+A: The code demonstrates the process of creating an empty PDF document, adding a page, configuring the header section, creating a table with rows and cells, and finally saving the PDF document. The result is a table displayed in the header section of the PDF document.
+
+#### Q: Can I customize the appearance of the table cells, such as borders, background color, and text style?
+
+A: Yes, you can customize the appearance of the table cells by setting properties like cell borders, background color, text style, font, font size, and more.
+
+#### Q: How is the table added to the header section of the PDF document?
+
+A: The code adds the table to the paragraphs collection of the header section, which ensures that the table is displayed in the header of each page.
+
+#### Q: Can I add more rows and cells to the table as needed?
+
+A: Absolutely, you can add more rows and cells to the table by using the `Rows.Add()` and `Cells.Add()` methods. This allows you to structure the table content as desired.
+
+#### Q: Is it possible to adjust the width of the table columns?
+A: Yes, you can adjust the width of the table columns using the `ColumnWidths` property. This enables you to control the layout of the table.
+
+#### Q: How can I span cells across multiple columns or rows within the table?
+A: To span cells across multiple columns, you can use the `ColSpan` property of the corresponding cell. Similarly, you can use the `RowSpan` property to span cells across multiple rows.
+
+#### Q: What happens if I want to add a table to both the header and footer sections of the PDF document?
+
+A: You can follow a similar approach for both the header and footer sections. Simply create a `HeaderFooter` instance for the footer, configure it, and add the table to its paragraphs collection.
+
+#### Q: Can I use images within the table cells, and how is that achieved?
+
+A: Yes, you can add images within table cells. The code example demonstrates adding an image to a cell by creating an `Image` object, setting its file path and dimensions, and then adding it to a cell's paragraphs.
+
+#### Q: How do I ensure the table appears consistently across all pages in the PDF document?
+
+A: When you add the table to the header or footer section using the `HeaderFooter` instance, Aspose.PDF ensures that the table appears consistently on each page, providing a uniform layout.

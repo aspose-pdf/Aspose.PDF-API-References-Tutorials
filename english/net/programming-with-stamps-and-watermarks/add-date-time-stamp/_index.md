@@ -1,13 +1,13 @@
 ---
-title: Add Date Time Stamp
-linktitle: Add Date Time Stamp
+title: Add Date Time Stamp In PDF File
+linktitle: Add Date Time Stamp In PDF File
 second_title: Aspose.PDF for .NET API Reference
-description: Learn how to easily add a date and time stamp to your PDF documents with Aspose.PDF for .NET.
+description: Learn how to easily add a date and time stamp in PDF file with Aspose.PDF for .NET.
 type: docs
 weight: 10
 url: /net/programming-with-stamps-and-watermarks/add-date-time-stamp/
 ---
-In this article, we will take you step by step on how to add a date and time stamp using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to add a date and time stamp to an existing PDF document.
+In this article, we will take you step by step on how to add a date and time stamp in PDF file using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to add a date and time stamp to an existing PDF file.
 
 ## Requirements
 
@@ -140,3 +140,40 @@ Console.WriteLine("\nDate time stamp added successfully.\nFile saved at " + data
 
 Congratulation ! You have learned how to add a date and time stamp using Aspose.PDF for .NET. Now you can apply this knowledge to your own projects to add date and time stamps to PDF documents.
 
+### FAQ's for add date time stamp in PDF file
+
+#### Q: What is the purpose of adding a date and time stamp to a PDF document using Aspose.PDF for .NET?
+
+A: Adding a date and time stamp to a PDF document enhances its informational value by indicating when the document was modified or created. This feature is useful for tracking document changes and providing a reference point for document history.
+
+#### Q: Can I customize the format of the date and time stamp to match specific requirements?
+
+A: Yes, you can customize the format of the date and time stamp according to your preferences. The provided C# source code uses the `DateTime.Now.ToString()` method to generate the timestamp in a specific format. You can modify this code to format the timestamp as needed.
+
+#### Q: Is it possible to add the date and time stamp to a specific location on a PDF page?
+
+A: Absolutely, you can adjust the placement of the date and time stamp on the PDF page by modifying the properties of the `TextStamp` object. The code provided in the tutorial demonstrates how to set properties such as margin, alignment, and vertical positioning.
+
+#### Q: Can I add multiple date and time stamps to different pages of the same PDF document?
+
+A: Yes, you can add multiple date and time stamps to different pages of the same PDF document. Simply repeat the process of creating a `TextStamp` object and configuring its properties for each desired page.
+
+#### Q: How can I change the font, size, or color of the date and time stamp text?
+
+A: To modify the font, size, or color of the date and time stamp text, you can customize the properties of the `DefaultAppearance` object used to create the `TextStamp`. Adjust the font name, size, and color values to achieve the desired appearance.
+
+#### Q: Is it possible to add other types of annotations or stamps to a PDF document using Aspose.PDF for .NET?
+
+A: Yes, Aspose.PDF for .NET provides a wide range of annotation types that you can add to PDF documents, including text annotations, stamps, lines, shapes, and more. You can explore the Aspose.PDF documentation for further details on working with annotations.
+
+#### Q: Are there any limitations or considerations when adding a date and time stamp to a PDF document?
+
+A: While adding a date and time stamp is straightforward, consider factors such as the document's layout and existing content. Make sure the placement of the stamp does not obscure important information or affect the readability of the document.
+
+#### Q: How can I integrate this method into my own projects to add date and time stamps to PDF documents?
+
+A: To integrate this method, follow the provided steps and adjust the code to fit your project's structure. You can add date and time stamps to existing PDF documents to enhance their usefulness and provide a clear timeline of changes.
+
+#### Q: Can I automate the process of adding date and time stamps to multiple PDF documents?
+
+A: Yes, you can automate the process of adding date and time stamps to multiple PDF documents by creating a script or program that iterates through a list of documents and applies the same stamping process to each one.

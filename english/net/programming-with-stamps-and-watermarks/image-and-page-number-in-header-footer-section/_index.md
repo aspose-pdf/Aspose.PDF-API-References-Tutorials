@@ -135,3 +135,44 @@ doc.Save(dataDir + "ImageAndPageNumberInHeaderFooter_out.pdf");
 
 Congratulation ! You have learned how to add an image and page number in the header and footer section of a PDF document using Aspose.PDF for .NET. Now you can use this method to customize header and footer in your PDF documents.
 
+### FAQ's
+
+#### Q: What is the purpose of adding an image and page number in the header and footer section of a PDF document?
+
+A: Adding an image and page number in the header and footer section of a PDF document can enhance its visual appeal, branding, and navigational elements. An image can represent a logo, watermark, or any graphical element, while a page number helps users track their progress and locate specific pages.
+
+#### Q: How does the provided C# source code help in adding an image and page number to the header and footer of a PDF document?
+
+A: The provided code demonstrates how to create a PDF document, add a page, and then customize the header and footer sections. It shows how to add an image to the header and a text fragment with page numbering to the footer.
+
+#### Q: Can I use any image format for the header, and how do I specify its path?
+
+A: Yes, you can use various image formats (such as JPEG, PNG, GIF, etc.) for the header image. The image's path is specified using the `File` property of the `Aspose.Pdf.Image` object.
+
+#### Q: How do I customize the appearance and positioning of the image in the header section?
+
+A: You can customize the appearance and positioning of the image by adjusting the properties of the `Aspose.Pdf.Image` object before adding it to the header section. For example, you can set the image's dimensions, alignment, rotation, opacity, etc.
+
+#### Q: What is the purpose of the `TextFragment` object used for the footer?
+
+A: The `TextFragment` object is used to create and format text that will be displayed in the footer section. In the provided code, it is used to display the page number and total page count.
+
+#### Q: Can I modify the footer text to include additional information or formatting?
+
+A: Yes, you can modify the footer text by modifying the contents of the `TextFragment` object. You can add additional text, change fonts, colors, and formatting according to your requirements.
+
+#### Q: Can I apply different header and footer contents to different pages of the PDF document?
+
+A: Yes, you can apply different header and footer contents to different pages by creating separate `HeaderFooter` objects and assigning them to specific pages using the `Header` and `Footer` properties of the `Aspose.Pdf.Page` object.
+
+#### Q: How can I further customize the header and footer, such as changing font styles or adding additional elements?
+
+A: You can customize the header and footer by using various classes and properties provided by Aspose.PDF for .NET. For example, you can use different text formatting options, add more paragraphs, images, or even tables to the header and footer sections.
+
+#### Q: Can I remove or clear the header and footer sections if needed?
+
+A: Yes, you can remove or clear the header and footer sections by setting the `Header` and `Footer` properties of the `Aspose.Pdf.Page` object to `null`.
+
+#### Q: How can I ensure that the added image and page number remain consistent across different devices and viewers?
+
+A: Aspose.PDF for .NET provides functionality to create standardized and consistent PDF documents, ensuring that the added image and page number will appear consistently across different devices and PDF viewers.

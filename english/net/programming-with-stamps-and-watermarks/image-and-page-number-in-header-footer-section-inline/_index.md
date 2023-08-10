@@ -141,3 +141,44 @@ pdf1.Save(dataDir + "ImageAndPageNumberInHeaderFooter_UsingInlineParagraph_out.p
 
 Congratulation ! You have learned how to add an image and page number in the header and footer section of a PDF document using inline paragraphs with Aspose.PDF for .NET. You can now customize the header and footer of your PDF documents flexibly.
 
+### FAQ's
+
+#### Q: What is the advantage of using inline paragraphs for adding an image and text to the header of a PDF document?
+
+A: Using inline paragraphs allows you to seamlessly integrate images and text within the same paragraph, providing precise control over their placement and formatting. This method is especially useful for creating customized headers with visual elements.
+
+#### Q: How does the provided C# source code achieve inline paragraphs for the header in a PDF document?
+
+A: The provided code demonstrates how to create a PDF document, add a page, and customize the header using inline paragraphs. It adds a TextFragment with inline text, an inline image, and another inline TextFragment.
+
+#### Q: How do I specify the color of the inline text in the header?
+
+A: The color of the inline text is specified using the `ForegroundColor` property of the `TextState` of the `TextFragment` object.
+
+#### Q: Can I adjust the dimensions of the inline image in the header?
+
+A: Yes, you can adjust the dimensions of the inline image using the `FixWidth` and `FixHeight` properties of the `Image` object. This allows you to control the width and height of the image within the header.
+
+#### Q: Can I include additional inline elements, such as hyperlinks or different font styles, in the header?
+
+A: Yes, you can include additional inline elements in the header by creating more `TextFragment` or `Image` objects with the desired properties. This allows you to customize the header further, including hyperlinks, different font styles, or other visual elements.
+
+#### Q: How can I ensure that the inline image and text remain properly aligned and formatted across different devices and viewers?
+
+A: Aspose.PDF for .NET ensures that inline images and text are properly aligned and formatted, resulting in consistent appearance across different devices and PDF viewers.
+
+#### Q: Can I apply inline paragraphs to the footer section as well?
+
+A: Yes, you can apply the same technique of using inline paragraphs to the footer section by creating a `Footer` object and adding inline elements such as text and images to it.
+
+#### Q: Is it possible to combine inline paragraphs with other header or footer customization methods?
+
+A: Yes, you can combine inline paragraphs with other header or footer customization methods provided by Aspose.PDF for .NET to create more complex and tailored header or footer designs.
+
+#### Q: Can I remove or clear the inline elements from the header if needed?
+
+A: Yes, you can remove or clear the inline elements by modifying the contents of the `HeaderFooter` object and removing the respective inline paragraphs.
+
+#### Q: How can I apply inline paragraphs to specific pages of the PDF document?
+
+A: To apply inline paragraphs to specific pages, you can create separate `HeaderFooter` objects for each page and assign them using the `Header` property of the respective `Aspose.Pdf.Page` objects.

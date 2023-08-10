@@ -1,13 +1,13 @@
 ---
-title: Page Number Stamps
-linktitle: Page Number Stamps
+title: Page Number Stamps In PDF File
+linktitle: Page Number Stamps In PDF File
 second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add page number stamps to a PDF document with Aspose.PDF for .NET.
+description: Learn how to add page number stamps in PDF file with Aspose.PDF for .NET.
 type: docs
 weight: 160
 url: /net/programming-with-stamps-and-watermarks/page-number-stamps/
 ---
-In this tutorial, we will guide you step by step on how to add page number stamps to a PDF document using Aspose.PDF for .NET. We'll use the provided C# source code to open an existing PDF document, create a page number stamp, set its properties, and add it to a specific page in the PDF document.
+In this tutorial, we will guide you step by step on how to add page number stamps in PDF file using Aspose.PDF for .NET. We'll use the provided C# source code to open an existing PDF document, create a page number stamp, set its properties, and add it to a specific page in the PDF file.
 
 ## Step 1: Setting up the environment
 
@@ -125,3 +125,44 @@ Console.WriteLine("\nPage number stamp added successfully.\nFile saved at " + da
 
 Congratulation ! You have learned how to add page number stamps to a PDF document using Aspose.PDF for .NET. You can now personalize your PDF documents by adding clear and informative page numbers.
 
+### FAQ's for page number stamps in PDF file
+
+#### Q: What is a Page Number Stamp, and how is it used to add page numbers to a PDF file?
+
+A: A Page Number Stamp is a feature in Aspose.PDF that allows you to add dynamic page numbers to specific pages of a PDF document. In this tutorial, it's achieved by creating a PageNumberStamp object, configuring its properties, and adding it to a designated page.
+
+#### Q: How does the provided C# source code accomplish adding page number stamps to a PDF file?
+
+A: The code demonstrates how to load an existing PDF document, create a PageNumberStamp, set various properties (such as format, font, alignment, etc.), and then add the stamp to a specific page. The stamp automatically calculates the total page count and inserts the correct page numbers.
+
+#### Q: Can I customize the appearance of the page number, such as font style, color, and size?
+
+A: Absolutely, you can customize the appearance of the page number stamp by adjusting properties like font, font size, font style (bold, italic, etc.), and text color.
+
+#### Q: Is it possible to add page number stamps to multiple pages within a PDF document?
+
+A: Yes, you can add page number stamps to multiple pages by creating multiple PageNumberStamp objects and adding each one to the desired pages.
+
+#### Q: Can I choose whether the page number stamp appears as part of the page's content or as a background element?
+
+A: Yes, you can control whether the page number stamp appears as part of the page's content or as a background element by setting the `Background` property of the PageNumberStamp.
+
+#### Q: How do I specify the format of the page number, including the total page count?
+
+A: The code uses the `Format` property of the PageNumberStamp to specify the format of the page number. The macro "# of" is used to represent the total page count.
+
+#### Q: What happens if I add the same page number stamp to multiple pages?
+
+A: Adding the same PageNumberStamp instance to multiple pages will display the correct page numbers for each page. The stamp automatically adjusts the page number and total page count.
+
+#### Q: Can I add page number stamps to header or footer sections of a PDF document?
+
+A: While PageNumberStamps are typically added directly to the page's content, you can use FloatingBox or other techniques to position them in header or footer sections.
+
+#### Q: How do I specify the position of the page number stamp on the page?
+
+A: The `BottomMargin` and `HorizontalAlignment` properties of the PageNumberStamp allow you to control the position of the stamp within the page.
+
+#### Q: What if I want to start page numbering from a different number rather than 1?
+
+A: You can set the `StartingNumber` property of the PageNumberStamp to specify the starting page number.

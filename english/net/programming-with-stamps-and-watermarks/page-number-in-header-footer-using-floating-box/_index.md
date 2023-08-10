@@ -1,6 +1,6 @@
 ---
-title: Page Number in Header Footer Using Floating Box
-linktitle: Page Number in Header Footer Using Floating Box
+title: Page Number In Header Footer Using Floating Box
+linktitle: Page Number In Header Footer Using Floating Box
 second_title: Aspose.PDF for .NET API Reference
 description: Learn how to add the page number in the header and footer of a PDF document with Aspose.PDF for .NET.
 type: docs
@@ -103,3 +103,39 @@ pdf.Save(dataDir + "PageNumberinHeaderFooterUsingFloatingBox_out.pdf");
 
 Congratulation ! You have learned how to add page number in header and footer of PDF document using FloatingBox with Aspose.PDF for .NET. You can now customize your headers and footers by adding dynamic information such as page number.
 
+### FAQ's
+
+#### Q: What is a FloatingBox, and how is it used to add page numbers in the header or footer of a PDF document?
+
+A: A FloatingBox is a versatile layout element in Aspose.PDF that can hold various content, including text and images. In this tutorial, it's used to create a container for the page number, allowing you to dynamically insert the current page number and total page count into the header or footer.
+
+#### Q: How does the provided C# source code achieve adding page numbers using a FloatingBox?
+
+A: The code snippet demonstrates how to create a PDF document, add a page, create a FloatingBox, set its position within the page, and insert the page number using a TextFragment. The syntax "($p/ $P )" in the TextFragment is replaced with the current page number and total page count.
+
+#### Q: Can I customize the appearance and formatting of the page number added using the FloatingBox?
+
+A: Yes, you can customize the appearance of the page number by modifying the properties of the TextFragment within the FloatingBox. You can change font size, color, style, alignment, and other formatting options.
+
+#### Q: Is it possible to add different dynamic elements, such as date and time, to the header or footer using a similar approach?
+
+A: Absolutely, you can add different dynamic elements like date, time, document metadata, or custom text by modifying the TextFragment content within the FloatingBox. You can use macros like "($p/ $P )" for page numbers or "($date)" for the current date.
+
+#### Q: How do I specify the position of the FloatingBox within the header or footer section?
+A: The provided code sets the position of the FloatingBox using the `Left` and `Top` properties. You can adjust these values to position the FloatingBox as desired within the header or footer section.
+
+#### Q: Can I use a different font or style for the page number in the header or footer?
+
+A: Yes, you can customize the font, style, and other formatting properties of the page number text by modifying the TextFragment properties within the FloatingBox.
+
+#### Q: What happens if the content in the FloatingBox exceeds its dimensions?
+
+A: If the content within the FloatingBox exceeds its dimensions, it may be cut off or layout issues may arise. Ensure that the dimensions of the FloatingBox are suitable for accommodating the content, and consider adjusting the page layout if needed.
+
+#### Q: Is it possible to add multiple FloatingBoxes with different content to the header or footer of the same page?
+
+A: Yes, you can add multiple FloatingBoxes with different content to the header or footer of the same page by creating separate FloatingBox instances and adding them to the page's Paragraphs collection.
+
+#### Q: Can I use the FloatingBox approach to add content to other sections of the PDF document, such as the body or margins?
+
+A: While FloatingBoxes are commonly used for headers and footers, you can also use them to add content to other sections of the PDF document, such as the body or margins, by positioning them accordingly within the page.

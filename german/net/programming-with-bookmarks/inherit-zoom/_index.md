@@ -1,14 +1,13 @@
 ---
-title: Zoom erben
-linktitle: Zoom erben
+title: Vergrößern der PDF-Datei übernehmen
+linktitle: Vergrößern der PDF-Datei übernehmen
 second_title: Aspose.PDF für .NET API-Referenz
-description: Mit Aspose.PDF für .NET können Sie ganz einfach den Lesezeichen-Zoom in Ihren PDF-Dateien übernehmen.
+description: Mit Aspose.PDF für .NET können Sie ganz einfach den Lesezeichen-Zoom in einer PDF-Datei übernehmen.
 type: docs
 weight: 90
 url: /de/net/programming-with-bookmarks/inherit-zoom/
 ---
-
-Durch die Zoomvererbung in einem PDF-Dokument können Sie eine Standardzoomstufe für Lesezeichen festlegen. Mit Aspose.PDF für .NET können Sie Zoom ganz einfach erben, indem Sie dem folgenden Quellcode folgen:
+Mit der Zoomvererbung in einer PDF-Datei können Sie eine Standardzoomstufe für Lesezeichen festlegen. Mit Aspose.PDF für .NET können Sie Zoom ganz einfach erben, indem Sie dem folgenden Quellcode folgen:
 
 ## Schritt 1: Erforderliche Bibliotheken importieren
 
@@ -21,7 +20,7 @@ using Aspose.Pdf.InteractiveFeatures;
 
 ## Schritt 2: Legen Sie den Pfad zum Dokumentenordner fest
 
-In diesem Schritt müssen Sie den Pfad zu dem Ordner angeben, der die PDF-Datei enthält, von der Sie den Zoom übernehmen möchten. Ersetzen`"YOUR DOCUMENT DIRECTORY"` Geben Sie im folgenden Code den tatsächlichen Pfad zu Ihrem Dokumentenordner ein:
+ In diesem Schritt müssen Sie den Pfad zu dem Ordner angeben, der die PDF-Datei enthält, von der Sie den Zoom übernehmen möchten. Ersetzen`"YOUR DOCUMENT DIRECTORY"`Geben Sie im folgenden Code den tatsächlichen Pfad zu Ihrem Dokumentenordner ein:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -69,7 +68,7 @@ doc. Outlines. Add(item);
 
 ## Schritt 8: Speichern Sie die aktualisierte Datei
 
-Speichern wir nun die aktualisierte PDF-Datei mit`Save` Methode der`doc` Objekt. Hier ist der entsprechende Code:
+ Speichern wir nun die aktualisierte PDF-Datei mit`Save` Methode der`doc` Objekt. Hier ist der entsprechende Code:
 
 ```csharp
 dataDir = dataDir + "InheritZoom_out.pdf";
@@ -101,3 +100,79 @@ Console.WriteLine("\nBookmarks updated successfully.\nFile saved at " + dataDir)
 Herzlichen Glückwunsch! Jetzt haben Sie eine Schritt-für-Schritt-Anleitung zum Erben von Zoom mit Aspose.PDF für .NET. Mit diesem Code können Sie eine Standardzoomstufe für Lesezeichen in Ihren PDF-Dokumenten festlegen.
 
 Weitere Informationen zu erweiterten Funktionen zur Lesezeichenmanipulation finden Sie unbedingt in der offiziellen Aspose.PDF-Dokumentation.
+
+### FAQs zum Vererben des Zooms in PDF-Dateien
+
+#### F: Was ist Zoom-Vererbung in einer PDF-Datei?
+
+A: Unter Zoomvererbung versteht man die Möglichkeit, eine Standardzoomstufe für Lesezeichen in einem PDF-Dokument anzugeben. Dies ermöglicht eine konsistente und benutzerfreundliche Navigation, wenn Benutzer mit den Lesezeichen interagieren.
+
+#### F: Warum sollte ich Zoomstufen für Lesezeichen erben wollen?
+
+A: Durch die Übernahme von Zoomstufen wird sichergestellt, dass Benutzer beim Navigieren durch Lesezeichen in einem PDF-Dokument ein einheitliches Anzeigeerlebnis haben. Dies kann besonders nützlich sein, wenn Sie eine bestimmte Ansicht für verschiedene Abschnitte eines Dokuments bereitstellen möchten.
+
+#### F: Wie importiere ich die erforderlichen Bibliotheken für mein C#-Projekt?
+
+A: Um die erforderlichen Bibliotheken für Ihr C#-Projekt zu importieren, schließen Sie die folgenden Importanweisungen ein:
+
+```csharp
+using Aspose.Pdf;
+using Aspose.Pdf.InteractiveFeatures;
+```
+
+Mit diesen Anweisungen können Sie auf die Klassen und Methoden zugreifen, die zum Arbeiten mit PDF-Dokumenten und Lesezeichen erforderlich sind.
+
+#### F: Wie lege ich den Pfad zum Dokumentenordner fest?
+
+ A: Ersetzen Sie im bereitgestellten Quellcode`"YOUR DOCUMENT DIRECTORY"` mit dem tatsächlichen Pfad zu dem Ordner, der die PDF-Datei enthält, für die Sie die Zoomstufen erben möchten.
+
+#### F: Wie öffne ich ein PDF-Dokument, um Zoomstufen zu übernehmen?
+
+A: Um ein PDF-Dokument zum Erben von Zoomstufen zu öffnen, verwenden Sie den folgenden Code:
+
+```csharp
+Document doc = new Document(dataDir + "input.pdf");
+```
+
+ Ersetzen`"input.pdf"` mit dem tatsächlichen Dateinamen.
+
+#### F: Wie stelle ich die Zoomstufe für Lesezeichen ein?
+
+ A: Um die Zoomstufe festzulegen, erstellen Sie ein`XYZExplicitDestination` Objekt mit den gewünschten Koordinaten und dem gewünschten Zoomfaktor. Hier ist ein Beispiel:
+
+```csharp
+XYZExplicitDestination dest = new XYZExplicitDestination(2, 100, 100, 0);
+```
+
+Dadurch wird die Zoomstufe bei den Koordinaten (100, 100) auf 2 gesetzt.
+
+#### F: Wie füge ich die Zoomstufe zu Lesezeichen hinzu?
+
+ A: Fügen Sie das hinzu`XYZExplicitDestination` Objekt als Aktion für die Lesezeichensammlung:
+
+```csharp
+item.Action = new GoToAction(dest);
+```
+
+ Wo`item` ist ein`OutlineItemCollection` stellt ein Lesezeichen dar.
+
+#### F: Wie speichere ich die aktualisierte PDF-Datei?
+
+ A: Speichern Sie die aktualisierte PDF-Datei mit`Save` Methode der`doc` Objekt:
+
+```csharp
+dataDir = dataDir + "InheritZoom_out.pdf";
+doc.Save(dataDir);
+```
+
+#### F: Kann ich die Zoomstufen für verschiedene Lesezeichen anpassen?
+
+ A: Ja, Sie können die Zoomstufen für verschiedene Lesezeichen anpassen, indem Sie mehrere erstellen`XYZExplicitDestination` Objekte mit unterschiedlichen Koordinaten und Zoomfaktoren.
+
+#### F: Gibt es eine Begrenzung für die Anzahl der Lesezeichen, auf die ich die Zoom-Vererbung anwenden kann?
+
+A: Normalerweise gibt es keine strenge Begrenzung für die Anzahl der Lesezeichen, auf die Sie die Zoom-Vererbung anwenden können. Allerdings erfordern sehr große Dokumente mit einer übermäßigen Anzahl an Lesezeichen möglicherweise eine effiziente Speicherverwaltung.
+
+#### F: Wie kann ich bestätigen, dass die Zoom-Vererbung angewendet wurde?
+
+A: Öffnen Sie die generierte PDF-Datei, um zu überprüfen, ob die angegebenen Zoomstufen von den Lesezeichen übernommen wurden.

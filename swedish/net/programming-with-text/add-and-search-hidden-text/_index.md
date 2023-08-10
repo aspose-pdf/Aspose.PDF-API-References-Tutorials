@@ -8,7 +8,7 @@ weight: 20
 url: /sv/net/programming-with-text/add-and-search-hidden-text/
 ---
 
-den här handledningen går vi igenom hur du lägger till och söker efter dold text i ett PDF-dokument med Aspose.PDF för .NET. Följ dessa steg för att enkelt utföra denna operation.
+I den här handledningen går vi igenom hur du lägger till och söker efter dold text i ett PDF-dokument med Aspose.PDF för .NET. Följ dessa steg för att enkelt utföra denna operation.
 
 ## 1. Förutsättningar
 
@@ -16,7 +16,7 @@ Innan du börjar, se till att du har följande:
 
 - Visual Studio eller någon annan utvecklingsmiljö installerad och konfigurerad.
 - Grundläggande kunskaper i programmeringsspråket C#.
-- Aspose.PDF-bibliotek för .NET installerat. Du kan ladda ner den från Asposes officiella webbplats.
+- Aspose.PDF-bibliotek för .NET installerat. Du kan ladda ner den från Asposes officiella hemsida.
 
 ## 2. Skapa PDF-dokumentet med dold text
 
@@ -49,7 +49,7 @@ TextFragmentAbsorber absorb = new TextFragmentAbsorber();
 absorb.Visit(doc.Pages[1]);
 foreach(TextFragment fragment in absorber.TextFragments)
 {
-// Gör något med fragmenten
+//Gör något med fragmenten
 Console.WriteLine("Text '{0}' at position {1}, invisibility: {2} ",
 fragment.Text, fragment.Position.ToString(), fragment.TextState.Invisible);
 }

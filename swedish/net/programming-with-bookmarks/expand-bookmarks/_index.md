@@ -1,14 +1,13 @@
 ---
-title: Expandera Bokmärken
-linktitle: Expandera Bokmärken
+title: Expandera bokmärken i PDF-fil
+linktitle: Expandera bokmärken i PDF-fil
 second_title: Aspose.PDF för .NET API Referens
-description: Expandera enkelt bokmärken för dina PDF-filer för förbättrad navigering med Aspose.PDF för .NET.
+description: Expandera enkelt bokmärken i PDF-fil för förbättrad navigering med Aspose.PDF för .NET.
 type: docs
 weight: 50
 url: /sv/net/programming-with-bookmarks/expand-bookmarks/
 ---
-
-Om du expanderar bokmärken i ett PDF-dokument visas alla öppna bokmärken som standard. Med Aspose.PDF för .NET kan du enkelt utöka bokmärken genom att följa följande källkod:
+Om du expanderar bokmärken i PDF-filen visas alla öppna bokmärken som standard. Med Aspose.PDF för .NET kan du enkelt utöka bokmärken genom att följa följande källkod:
 
 ## Steg 1: Importera nödvändiga bibliotek
 
@@ -20,7 +19,7 @@ using Aspose.Pdf;
 
 ## Steg 2: Ange sökväg till dokumentmappen
 
- I det här steget måste du ange sökvägen till mappen som innehåller PDF-filen vars bokmärken du vill expandera. Byta ut`"YOUR DOCUMENT DIRECTORY"` i följande kod med den faktiska sökvägen till din dokumentmapp:
+ I det här steget måste du ange sökvägen till mappen som innehåller PDF-filen vars bokmärken du vill expandera. Byta ut`"YOUR DOCUMENT DIRECTORY"` följande kod med den faktiska sökvägen till din dokumentmapp:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -36,7 +35,7 @@ Document doc = new Document(dataDir + "input.pdf");
 
 ## Steg 4: Ställ in sidvisningsläge
 
- I det här steget kommer vi att ställa in sidvisningsläget för att visa bokmärken som standard. Vi använder`PageMode` egendom av`doc`objekt för att ställa in önskat sidläge. Här är motsvarande kod:
+ det här steget kommer vi att ställa in sidvisningsläget för att visa bokmärken som standard. Vi använder`PageMode` egendom av`doc` objekt för att ställa in önskat sidläge. Här är motsvarande kod:
 
 ```csharp
 doc.PageMode = PageMode.UseOutlines;
@@ -87,3 +86,73 @@ Console.WriteLine("\nBookmarks expanded successfully.\nFile saved at " + dataDir
 Grattis! Du har nu en steg-för-steg-guide för att utveckla bokmärken med Aspose.PDF för .NET. Du kan använda den här koden för att visa alla standardbokmärken i dina PDF-dokument.
 
 Se till att kolla in den officiella Aspose.PDF-dokumentationen för mer information om avancerade bokmärkesmanipuleringsfunktioner.
+
+### Vanliga frågor för att expandera bokmärken i PDF-fil
+
+#### F: Vad är bokmärken i en PDF-fil?
+
+S: Bokmärken i en PDF-fil är navigeringshjälpmedel som gör att användare snabbt kan hoppa till specifika avsnitt eller sidor i dokumentet. De ger ett bekvämt sätt att komma åt olika delar av ett dokument.
+
+#### F: Varför skulle jag vilja expandera bokmärken i en PDF-fil?
+
+S: Att expandera bokmärken kan förbättra användarupplevelsen genom att visa alla bokmärken i utökat tillstånd som standard. Detta ger användarna en tydlig överblick över dokumentets struktur och gör att de enkelt kan navigera till olika avsnitt.
+
+#### F: Hur importerar jag de nödvändiga biblioteken för mitt C#-projekt?
+
+S: För att importera det nödvändiga biblioteket för ditt C#-projekt, använd följande importdirektiv:
+
+```csharp
+using Aspose.Pdf;
+```
+
+Detta direktiv låter dig använda klasserna och metoderna som tillhandahålls av Aspose.PDF för .NET.
+
+#### F: Hur anger jag sökvägen till dokumentmappen?
+
+ S: I den medföljande källkoden, ersätt`"YOUR DOCUMENT DIRECTORY"` med den faktiska sökvägen till mappen som innehåller PDF-filen som du vill arbeta med. Detta säkerställer att koden kan hitta mål-PDF-filen.
+
+#### F: Hur öppnar jag ett PDF-dokument för att utöka dess bokmärken?
+
+S: För att öppna ett PDF-dokument för att expandera bokmärken, använd följande kod:
+
+```csharp
+Document doc = new Document(dataDir + "input.pdf");
+```
+
+ Byta ut`"input.pdf"` med det faktiska filnamnet.
+
+#### F: Hur ställer jag in sidvisningsläget så att bokmärken visas som standard?
+
+S: För att ställa in sidvisningsläget för att visa bokmärken som standard, använd`PageMode` egendom av`doc` objekt:
+
+```csharp
+doc.PageMode = PageMode.UseOutlines;
+```
+
+#### F: Hur utökar jag alla bokmärken i PDF-dokumentet?
+
+ S: För att utöka alla bokmärken, gå igenom varje bokmärkesobjekt i dokumentets kontursamling och ställ in`Open` egendom till`true`:
+
+```csharp
+foreach (OutlineItemCollection item in doc.Outlines)
+{
+    item.Open = true;
+}
+```
+
+#### F: Vad händer om ett bokmärke har kapslade underordnade bokmärken?
+
+S: Om ett bokmärke har kapslade underordnade bokmärken, expanderar det överordnade bokmärket också dess underordnade bokmärken, vilket ger en heltäckande bild av dokumentets struktur.
+
+#### F: Hur sparar jag den uppdaterade PDF-filen efter att ha expanderat bokmärken?
+
+S: För att spara den uppdaterade PDF-filen efter att ha expanderat bokmärken, använd följande kod:
+
+```csharp
+dataDir = dataDir + "ExpandBookmarks_out.pdf";
+doc.Save(dataDir);
+```
+
+#### F: Kan jag anpassa utseendet på utökade bokmärken?
+
+S: Även om den här handledningen fokuserar på att expandera bokmärken som standard, kan du anpassa utseendet på bokmärken med Aspose.PDFs andra funktioner och egenskaper.

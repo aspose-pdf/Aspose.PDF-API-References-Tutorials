@@ -7,7 +7,6 @@ type: docs
 weight: 260
 url: /tr/net/document-conversion/replace-missing-fonts/
 ---
-
 Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF dosyasındaki eksik yazı tiplerini değiştirme sürecinde size yol göstereceğiz. Belirli bir yazı tipinin eksik olduğu bir makinede bir PDF dosyasını açtığınızda, yazı tipi görüntüleme sorunları olabilir. Bu gibi durumlarda, eksik yazı tipini makinede bulunan başka bir yazı tipiyle değiştirmek mümkündür. Aşağıdaki adımları izleyerek, bir PDF dosyasındaki eksik yazı tiplerini değiştirebileceksiniz.
 
 ## Önkoşullar
@@ -90,3 +89,25 @@ pdf.Save(fileNew.FullName);
 
 ## Çözüm
 Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF dosyasındaki eksik yazı tiplerini değiştirme sürecini adım adım ele aldık. Yukarıda özetlenen talimatları izleyerek, PDF dosyanızdaki eksik yazı tiplerini başarıyla değiştirebileceksiniz.
+
+### SSS
+
+#### S: Aspose.PDF for .NET nedir?
+
+Y: Aspose.PDF for .NET, geliştiricilerin C# uygulamalarında PDF belgeleriyle çalışmasını sağlayan güçlü bir kitaplıktır. PDF dosyalarındaki eksik yazı tiplerini değiştirme yeteneği de dahil olmak üzere çeşitli işlevler sunar.
+
+#### S: Bir PDF dosyasında neden eksik yazı tipleriyle karşılaşayım?
+
+Y: Bir PDF dosyasında eksik yazı tipleri, dosya gerekli yazı tiplerinin yüklü olmadığı bir makinede açıldığında ortaya çıkabilir. Bu, belgenin görsel görünümünü etkileyen yazı tipi değişikliğine yol açabilir.
+
+#### S: Aspose.PDF for .NET kullanarak bir PDF dosyasındaki eksik yazı tiplerini nasıl bulabilir ve değiştirebilirim?
+
+ A: Eksik yazı tiplerini bulmak ve değiştirmek için`FontRepository.FindFont` gerekli yazı tipinin varlığını kontrol etme yöntemi. Yazı tipi eksikse, kullanarak bir yazı tipi değişikliği ekleyebilirsiniz.`FontRepository.Substitutions` mülk.
+
+#### S: Yazı tipi değiştirme işlemini özelleştirebilir miyim?
+
+C: Evet, değiştirme için farklı bir yazı tipi belirterek yazı tipi değiştirme işlemini özelleştirebilirsiniz. Sağlanan kodda, eksik olan "AgencyFB" yazı tipinin yerine Arial kullandık, ancak tercihlerinize göre farklı bir yazı tipi seçebilirsiniz.
+
+#### S: Değiştirme işleminden sonra yazı tipi oluşturmanın doğruluğunu nasıl sağlayabilirim?
+
+Y: Aspose.PDF for .NET, sağlam yazı tipi işleme yetenekleri sunarak değiştirmeden sonra doğru yazı tipi oluşturmayı garanti eder. Yazı tipi değişimini doğrulamak için ortaya çıkan PDF dosyasını önizleyebilirsiniz.

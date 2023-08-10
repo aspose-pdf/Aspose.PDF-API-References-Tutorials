@@ -7,7 +7,6 @@ type: docs
 weight: 30
 url: /fr/net/programming-with-forms/combo-box/
 ---
-
 Dans ce didacticiel, nous allons vous montrer comment créer une liste déroulante à l'aide d'Aspose.PDF pour .NET. Nous expliquerons étape par étape le code source C # pour vous guider tout au long de ce processus.
 
 ## Étape 1 : Préparation
@@ -103,3 +102,25 @@ catch (Exception ex)
 ## Conclusion
 
 Dans ce didacticiel, nous avons appris à créer une liste de zones de liste déroulante à l'aide d'Aspose.PDF pour .NET. En suivant ces étapes, vous pouvez facilement ajouter une liste de zones de liste déroulante à vos documents PDF à l'aide d'Aspose.PDF.
+
+### FAQ
+
+#### Q : Puis-je personnaliser l'apparence de la liste déroulante à l'aide d'Aspose.PDF pour .NET ?
+
+R : Oui, vous pouvez personnaliser l'apparence de la liste déroulante à l'aide d'Aspose.PDF pour .NET. Vous pouvez définir des propriétés telles que la taille de la police, la couleur, la couleur d'arrière-plan, le style de bordure, etc., pour correspondre à l'apparence souhaitée.
+
+#### Q : Puis-je définir les options sélectionnées par défaut dans la liste déroulante ?
+
+ R : Oui, vous pouvez définir les options sélectionnées par défaut dans la liste déroulante à l'aide d'Aspose.PDF pour .NET. Vous pouvez utiliser le`Selected` propriété de la`ComboBoxField` objet pour marquer une ou plusieurs options comme sélectionnées par défaut.
+
+#### Q : Comment puis-je récupérer la valeur sélectionnée dans la liste déroulante après que l'utilisateur a effectué une sélection ?
+
+ R : Vous pouvez récupérer la valeur sélectionnée dans la liste déroulante à l'aide d'Aspose.PDF pour .NET. Une fois que l'utilisateur a effectué une sélection, vous pouvez accéder à la`Value` propriété de la`ComboBoxField`objet pour obtenir la valeur sélectionnée.
+
+#### Q : Est-il possible d'ajouter des gestionnaires d'événements ou des actions à la liste déroulante ?
+
+ R : Oui, Aspose.PDF pour .NET vous permet d'ajouter des gestionnaires d'événements ou des actions à la liste déroulante. Vous pouvez associer des actions JavaScript, telles que`OnValueChanged`, à la liste déroulante pour effectuer des actions spécifiques lorsque l'utilisateur sélectionne une option.
+
+#### Q : Puis-je ajouter des info-bulles ou des descriptions aux options de la liste déroulante ?
+
+ R : Oui, vous pouvez ajouter des info-bulles ou des descriptions aux options de la liste déroulante à l'aide d'Aspose.PDF pour .NET. Vous pouvez régler le`AlternateName` propriété de chaque option pour fournir une info-bulle ou une description qui s'affichera lorsque l'utilisateur survolera l'option.

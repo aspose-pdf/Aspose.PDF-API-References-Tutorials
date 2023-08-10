@@ -21,7 +21,7 @@ Innan du börjar, se till att du har följande:
 2. Lägg till en referens till Aspose.PDF för .NET-biblioteket.
 
 ## Steg 2: Importera nödvändiga namnrymder
-I kodfilen där du vill lägga till verktygstips till text, lägg till följande med hjälp av direktiv överst i filen:
+kodfilen där du vill lägga till verktygstips till text, lägg till följande med hjälp av direktiv överst i filen:
 
 ```csharp
 using Aspose.Pdf;
@@ -108,7 +108,7 @@ TextFragmentCollection textFragments = absorber.TextFragments;
 // Gå igenom fragmenten
 foreach (TextFragment fragment in textFragments)
 {
-	//Skapa osynlig knapp på textfragmentposition
+	// Skapa osynlig knapp på textfragmentposition
 	ButtonField field = new ButtonField(fragment.Page, fragment.Rectangle);
 	// AlternateName-värdet kommer att visas som verktygstips av en visningsprogram
 	field.AlternateName = "Tooltip for text.";

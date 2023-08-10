@@ -14,7 +14,7 @@ description: تحقق من دروس تحويل المستندات باستخدا
 | عنوان | وصف |
 | --- | --- | 
 | [أضف مرفقًا إلى PDFA](./add-attachment-to-pdfa/) | أضف المرفقات بسهولة إلى ملفات PDF / A الخاصة بك باستخدام Aspose.PDF for .NET. |  
-| [CGM إلى PDF](./cgm-to-pdf/) | قم بتحويل ملفات CGM بسهولة إلى PDF باستخدام Aspose.PDF لـ .NET. |  
+| [CGM إلى ملفات PDF](./cgm-to-pdf/) | قم بتحويل ملفات CGM بسهولة إلى PDF باستخدام Aspose.PDF لـ .NET. |  
 | [EPUB إلى PDF](./epub-to-pdf/) | دليل خطوة بخطوة لتحويل EPUB إلى PDF باستخدام Aspose.PDF for .NET. |  
 | [احصل على أبعاد SVG](./get-svg-dimensions/) | دليل خطوة بخطوة للحصول على أبعاد SVG باستخدام Aspose.PDF for .NET. |  
 | [HTML إلى PDF](./html-to-pdf/) | دليل خطوة بخطوة لتحويل HTML إلى PDF باستخدام Aspose.PDF for .NET. |  
@@ -27,7 +27,7 @@ description: تحقق من دروس تحويل المستندات باستخدا
 | [PDF إلى EPUB](./pdf-to-epub/) | دليل خطوة بخطوة لتحويل PDF إلى EPUB باستخدام Aspose.PDF for .NET. |  
 | [PDF إلى HTML](./pdf-to-html/) | دليل خطوة بخطوة لتحويل PDF إلى HTML باستخدام Aspose.PDF for .NET. |  
 | [PDF إلى PDF](./pdf-to-pdfa/) | دليل خطوة بخطوة لتحويل PDF إلى PDFA باستخدام Aspose.PDF for .NET. |  
-| [PDF إلى PDFA3b](./pdf-to-pdfa3b/) | دليل خطوة بخطوة لتحويل PDF إلى PDF / A-3b باستخدام Aspose.PDF for .NET. |  
+| [PDF إلى PDF](./pdf-to-pdfa3b/) | دليل خطوة بخطوة لتحويل PDF إلى PDF / A-3b باستخدام Aspose.PDF for .NET. |  
 | [PDF إلى تلميح خط PNG](./pdf-to-png-font-hinting/) | دليل خطوة بخطوة لتحويل PDF إلى PNG باستخدام تلميحات الخط باستخدام Aspose.PDF for .NET. |  
 | [PDF إلى PPT](./pdf-to-ppt/) | دليل خطوة بخطوة لتحويل PDF إلى PPT باستخدام Aspose.PDF for .NET. |  
 | [PDF إلى SVG](./pdf-to-svg/) | دليل خطوة بخطوة لتحويل PDF إلى SVG باستخدام Aspose.PDF for .NET. |  
@@ -36,14 +36,14 @@ description: تحقق من دروس تحويل المستندات باستخدا
 | [PDF إلى XML](./pdf-to-xml/) | دليل خطوة بخطوة لتحويل PDF إلى XML باستخدام Aspose.PDF for .NET. |  
 | [PDF إلى XPS](./pdf-to-xps/) | دليل خطوة بخطوة لتحويل PDF إلى XPS باستخدام Aspose.PDF for .NET. |  
 | [بوستسكريبت إلى PDF](./postscript-to-pdf/) | دليل خطوة بخطوة لتحويل PostScript إلى PDF باستخدام Aspose.PDF for .NET. |  
-| [قم بتوفير بيانات الاعتماد أثناء HTML إلى PDF](./provide-credentials-during-html-to-pdf/) | دليل خطوة بخطوة لتحويل HTML إلى PDF من خلال توفير بيانات الاعتماد باستخدام Aspose.PDF for .NET. |  
+| [قم بتوفير أوراق الاعتماد أثناء HTML إلى PDF](./provide-credentials-during-html-to-pdf/) | دليل خطوة بخطوة لتحويل HTML إلى PDF من خلال توفير بيانات الاعتماد باستخدام Aspose.PDF for .NET. |  
 | [قم بإزالة الارتباطات التشعبية بعد التحويل من Html](./remove-hyperlinks-after-converting-from-html/) | دليل خطوة بخطوة لإزالة الارتباطات التشعبية بعد تحويل HTML إلى PDF باستخدام Aspose.PDF for .NET. |  
 | [استبدال الخطوط المفقودة](./replace-missing-fonts/) | دليل خطوة بخطوة لاستبدال الخطوط المفقودة في ملف PDF باستخدام Aspose.PDF for .NET. |  
 | [تعيين اسم الخط الافتراضي](./set-default-font-name/) | دليل خطوة بخطوة لتعيين اسم الخط الافتراضي في ملف PDF باستخدام Aspose.PDF for .NET. |  
 | [SVG إلى PDF](./svg-to-pdf/) | تحويل SVG إلى PDF سهل وسريع باستخدام Aspose.PDF لـ .NET. |  
-| [من TeX إلى PDF](./tex-to-pdf/) | تحويل سهل ودقيق لملفات TeX إلى PDF باستخدام Aspose.PDF لـ .NET. |  
+| [TeX إلى PDF](./tex-to-pdf/) | تحويل سهل ودقيق لملفات TeX إلى PDF باستخدام Aspose.PDF لـ .NET. |  
 | [نص إلى PDF](./text-to-pdf/) | تحويل بسيط وفعال للملفات النصية إلى PDF باستخدام Aspose.PDF لـ .NET. |  
-| [تحسين أداء TIFF إلى PDF](./tiff-to-pdf-performance-improvement/) | دليل خطوة بخطوة لتحسين أداء تحويل TIFF إلى PDF باستخدام Aspose.PDF for .NET. |  
+| [TIFF إلى تحسين أداء PDF](./tiff-to-pdf-performance-improvement/) | دليل خطوة بخطوة لتحسين أداء تحويل TIFF إلى PDF باستخدام Aspose.PDF for .NET. |  
 | [صفحة الويب إلى PDF](./web-page-to-pdf/) | دليل خطوة بخطوة لتحويل صفحة الويب إلى PDF باستخدام Aspose.PDF for .NET. |  
 | [XML إلى PDF](./xml-to-pdf/) | دليل خطوة بخطوة لتحويل ملف XML إلى PDF باستخدام Aspose.PDF for .NET. |  
 | [XML إلى PDFSet Image Path](./xml-to-pdfset-image-path/) | دليل خطوة بخطوة لتعيين مسار الصورة عند تحويل XML إلى PDF باستخدام Aspose.PDF for .NET. |  

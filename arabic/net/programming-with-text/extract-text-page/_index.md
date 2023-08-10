@@ -71,7 +71,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");
 // إنشاء كائن TextAbsorber لاستخراج النص
 TextAbsorber textAbsorber = new TextAbsorber();
-// تقبل الممتص لصفحة معينة
+//تقبل الممتص لصفحة معينة
 pdfDocument.Pages[1].Accept(textAbsorber);
 // احصل على النص المستخرج
 string extractedText = textAbsorber.Text;

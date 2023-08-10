@@ -1,13 +1,13 @@
 ---
-title: Tampons de numéro de page
-linktitle: Tampons de numéro de page
+title: Timbres de numéro de page dans un fichier PDF
+linktitle: Timbres de numéro de page dans un fichier PDF
 second_title: Référence de l'API Aspose.PDF pour .NET
-description: Apprenez à ajouter des tampons de numéro de page à un document PDF avec Aspose.PDF pour .NET.
+description: Apprenez à ajouter des tampons de numéro de page dans un fichier PDF avec Aspose.PDF pour .NET.
 type: docs
 weight: 160
 url: /fr/net/programming-with-stamps-and-watermarks/page-number-stamps/
 ---
-Dans ce tutoriel, nous vous guiderons étape par étape sur la façon d'ajouter des tampons de numéro de page à un document PDF en utilisant Aspose.PDF pour .NET. Nous utiliserons le code source C# fourni pour ouvrir un document PDF existant, créer un tampon de numéro de page, définir ses propriétés et l'ajouter à une page spécifique du document PDF.
+Dans ce didacticiel, nous vous guiderons étape par étape sur la façon d'ajouter des tampons de numéro de page dans un fichier PDF à l'aide d'Aspose.PDF pour .NET. Nous utiliserons le code source C# fourni pour ouvrir un document PDF existant, créer un tampon de numéro de page, définir ses propriétés et l'ajouter à une page spécifique du fichier PDF.
 
 ## Étape 1 : Configurer l'environnement
 
@@ -124,3 +124,45 @@ Console.WriteLine("\nPage number stamp added successfully.\nFile saved at " + da
 ## Conclusion
 
 Félicitation ! Vous avez appris à ajouter des tampons de numéro de page à un document PDF à l'aide d'Aspose.PDF pour .NET. Vous pouvez maintenant personnaliser vos documents PDF en ajoutant des numéros de page clairs et informatifs.
+
+### FAQ pour les tampons de numéro de page dans le fichier PDF
+
+#### Q : Qu'est-ce qu'un tampon de numéro de page et comment est-il utilisé pour ajouter des numéros de page à un fichier PDF ?
+
+R : Un tampon de numéro de page est une fonctionnalité d'Aspose.PDF qui vous permet d'ajouter des numéros de page dynamiques à des pages spécifiques d'un document PDF. Dans ce didacticiel, il est réalisé en créant un objet PageNumberStamp, en configurant ses propriétés et en l'ajoutant à une page désignée.
+
+#### Q : Comment le code source C# fourni permet-il d'ajouter des tampons de numéro de page à un fichier PDF ?
+
+R : Le code montre comment charger un document PDF existant, créer un PageNumberStamp, définir diverses propriétés (telles que le format, la police, l'alignement, etc.), puis ajouter le tampon à une page spécifique. Le tampon calcule automatiquement le nombre total de pages et insère les bons numéros de page.
+
+#### Q : Puis-je personnaliser l'apparence du numéro de page, comme le style de police, la couleur et la taille ?
+
+R : Absolument, vous pouvez personnaliser l'apparence du tampon de numéro de page en ajustant des propriétés telles que la police, la taille de la police, le style de police (gras, italique, etc.) et la couleur du texte.
+
+#### Q : Est-il possible d'ajouter des tampons de numéro de page à plusieurs pages d'un document PDF ?
+
+R : Oui, vous pouvez ajouter des tampons de numéro de page à plusieurs pages en créant plusieurs objets PageNumberStamp et en ajoutant chacun aux pages souhaitées.
+
+#### Q : Puis-je choisir si le tampon du numéro de page apparaît dans le contenu de la page ou comme élément d'arrière-plan ?
+
+ R : Oui, vous pouvez contrôler si le tampon du numéro de page apparaît dans le cadre du contenu de la page ou comme élément d'arrière-plan en définissant le paramètre`Background` propriété du PageNumberStamp.
+
+#### Q : Comment spécifier le format du numéro de page, y compris le nombre total de pages ?
+
+ R : Le code utilise le`Format`propriété de PageNumberStamp pour spécifier le format du numéro de page. La macro "# de" est utilisée pour représenter le nombre total de pages.
+
+#### Q : Que se passe-t-il si j'ajoute le même tampon de numéro de page sur plusieurs pages ?
+
+R : L'ajout de la même instance de PageNumberStamp à plusieurs pages affichera les numéros de page corrects pour chaque page. Le tampon ajuste automatiquement le numéro de page et le nombre total de pages.
+
+#### Q : Puis-je ajouter des tampons de numéro de page aux sections d'en-tête ou de pied de page d'un document PDF ?
+
+R : Bien que les PageNumberStamps soient généralement ajoutés directement au contenu de la page, vous pouvez utiliser FloatingBox ou d'autres techniques pour les positionner dans les sections d'en-tête ou de pied de page.
+
+#### Q : Comment spécifier la position du tampon de numéro de page sur la page ?
+
+ R : Le`BottomMargin` et`HorizontalAlignment` Les propriétés de PageNumberStamp vous permettent de contrôler la position du tampon dans la page.
+
+#### Q : Que se passe-t-il si je souhaite commencer la numérotation des pages à partir d'un numéro différent plutôt que de 1 ?
+
+ R : Vous pouvez définir le`StartingNumber`propriété de PageNumberStamp pour spécifier le numéro de la page de départ.

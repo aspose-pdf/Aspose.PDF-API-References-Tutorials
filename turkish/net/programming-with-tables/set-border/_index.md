@@ -1,13 +1,12 @@
 ---
-title: Kenarlığı Ayarla
-linktitle: Kenarlığı Ayarla
+title: PDF'de Kenarlığı Tabloya Ayarla
+linktitle: PDF'de Kenarlığı Tabloya Ayarla
 second_title: Aspose.PDF for .NET API Referansı
-description: Aspose.PDF for .NET ile bir PDF tablosunda kenarlık belirlemeyi öğrenin.
+description: Aspose.PDF for .NET ile PDF'de tabloya kenarlık ayarlamayı öğrenin.
 type: docs
 weight: 200
 url: /tr/net/programming-with-tables/set-border/
 ---
-
 Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF belgesinin tablosunda kenarlık belirlemeniz için size adım adım rehberlik edeceğiz. Sağlanan C# kaynak kodunu açıklayacağız ve nasıl uygulayacağınızı göstereceğiz.
 
 ## 1. Adım: Document nesnesinin örneğini oluşturma
@@ -103,7 +102,7 @@ Document doc = new Document();
 Page page = doc.Pages.Add();
 // BorderInfo nesnesi oluştur
 Aspose.Pdf.BorderInfo border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All);
-// Üst kenarlığın çift olacağını belirtin
+//Üst kenarlığın çift olacağını belirtin
 border.Top.IsDoubled = true;
 // Alt kenarlığın çift olacağını belirtin
 border.Bottom.IsDoubled = true;
@@ -128,3 +127,25 @@ Console.WriteLine("\nBorder setup successfully.\nFile saved at " + dataDir);
 
 ## Çözüm
 Tebrikler! Artık Aspose.PDF for .NET kullanarak bir PDF belgesinin tablosunda kenarlık belirlemeyi öğrendiniz. Bu adım adım kılavuz size belge oluşturmayı, sayfa eklemeyi, tablo kenarlığını yapılandırmayı ve PDF belgesini kaydetmeyi gösterdi. Artık bu bilgiyi kendi projelerinize uygulayabilirsiniz.
+
+### SSS
+
+#### S: Tablonun üst ve alt kenarlıkları için farklı kenarlık stilleri (örn. kesikli veya noktalı) ayarlayabilir miyim?
+
+ C: Evet, tablonun üst ve alt kenarları için farklı kenarlık stilleri belirleyebilirsiniz.`border.Top.Style` Ve`border.Bottom.Style`sağlanan C# kaynak kodundaki özellikler. Aspose.PDF for .NET, Düz, Kesikli, Noktalı, Çift ve daha fazlasını içeren çeşitli kenarlık stilleri arasından seçim yapmanızı sağlar.
+
+#### S: Tablo kenarlığının rengini nasıl ayarlayabilirim?
+
+ A: Tablo kenarlığının rengini değiştirerek ayarlayabilirsiniz.`border.Color` C# kaynak kodundaki özellik. Sadece istediğiniz rengi sağlayın, örneğin`Aspose.Pdf.Color.Red` veya kenarlık rengini özelleştirmek için geçerli başka bir renk gösterimi.
+
+#### S: Tablodaki tek tek hücrelere farklı ayarlarla (örneğin, farklı renkler veya kenarlık stilleri) kenarlık uygulamak mümkün müdür?
+
+ C: Evet, tablodaki tek tek hücrelere farklı ayarlarla kenarlıklar uygulayabilirsiniz.`cell.Border` her hücre için ayrı ayrı özellik. Bu, gereksinimlerinize göre hücreye özgü kenarlık stillerine ve renklerine sahip olmanızı sağlar.
+
+#### S: Tablonun belirli kenarlarından (örn. sol ve sağ kenarlar) kenarlığı kaldırabilir miyim?
+
+ C: Evet, kenarlığı değiştirerek tablonun belirli kenarlarından kaldırabilirsiniz.`border.Left`, `border.Right`, `border.Top` , Ve`border.Bottom`C# kaynak kodundaki özellikler. Bu özelliklerin ayarlanması`null` tablonun karşılık gelen kenarlarından kenarlığı kaldıracaktır.
+
+#### S: Tablo kenarlığının kalınlığını nasıl ayarlayabilirim?
+
+ A: Tablo kenarlığının kalınlığını değiştirerek ayarlayabilirsiniz.`border.Width` C# kaynak kodundaki özellik. İstenen kalınlığı elde etmek için istenen sınır genişliğini (nokta olarak) ayarlamanız yeterlidir.

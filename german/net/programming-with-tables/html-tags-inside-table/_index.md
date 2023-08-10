@@ -1,13 +1,12 @@
 ---
-title: HTML-Tags in der Tabelle
-linktitle: HTML-Tags in der Tabelle
+title: HTML-Tags in der Tabelle in einer PDF-Datei
+linktitle: HTML-Tags in der Tabelle in einer PDF-Datei
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET HTML-Tags in einer Tabelle in einem PDF-Dokument verwenden.
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET HTML-Tags in einer Tabelle in einer PDF-Datei verwenden.
 type: docs
 weight: 100
 url: /de/net/programming-with-tables/html-tags-inside-table/
 ---
-
 In diesem Tutorial lernen wir, wie man mit Aspose.PDF für .NET HTML-Tags in einer Tabelle in einem PDF-Dokument verwendet. Wir erklären Ihnen Schritt für Schritt den Quellcode in C#. Am Ende dieses Tutorials erfahren Sie, wie Sie HTML-Inhalte in eine Tabelle in einem PDF-Dokument einfügen. Lasst uns beginnen!
 
 ## Schritt 1: Einrichten der Umgebung
@@ -113,3 +112,25 @@ doc.Save(dataDir + "HTMLInsideTableCell_out.pdf");
 
 ## Abschluss
 In diesem Tutorial haben wir gelernt, wie man mit Aspose.PDF für .NET HTML-Tags in einer Tabelle in einem PDF-Dokument verwendet. Mit dieser Schritt-für-Schritt-Anleitung können Sie mithilfe von C# HTML-Inhalte in Tabellenzellen in einem PDF-Dokument einfügen.
+
+### FAQs zu HTML-Tags in Tabellen in PDF-Dateien
+
+#### F: Kann ich andere HTML-Tags und -Attribute in den Tabellenzellen verwenden?
+
+ A: Ja, Sie können in den Tabellenzellen verschiedene HTML-Tags und -Attribute verwenden, z`<b>`, `<i>`, `<a>`und viele mehr. Aspose.PDF für .NET unterstützt eine Vielzahl von HTML-Elementen und -Stilen, die Sie zum Formatieren des Inhalts in den Tabellenzellen verwenden können.
+
+#### F: Kann ich CSS-Stile auf den HTML-Inhalt in den Tabellenzellen anwenden?
+
+A: Ja, Sie können CSS-Stile auf den HTML-Inhalt in den Tabellenzellen anwenden. Aspose.PDF für .NET bietet Unterstützung für grundlegende CSS-Stile, die auf die HTML-Elemente angewendet werden können.
+
+#### F: Ist es möglich, Bilder zusammen mit HTML-Inhalten in die Tabellenzellen einzufügen?
+
+ A: Ja, Sie können Bilder zusammen mit HTML-Inhalten in die Tabellenzellen einfügen. Sie können HTML verwenden`<img>` Tags, um Bilder aus verschiedenen Quellen einzuschließen, z. B. lokale Dateien oder URLs.
+
+#### F: Wie kann ich unterschiedliche Spaltenbreiten für die Tabelle festlegen?
+
+ A: Mit können Sie unterschiedliche Spaltenbreiten für die Tabelle festlegen`ColumnWidths` Eigenschaft der Tabelle. Die Eigenschaft akzeptiert eine Zeichenfolge mit durch Leerzeichen getrennten Werten, wobei jeder Wert die Breite einer Spalte in Punkten darstellt.
+
+#### F: Kann ich verschachtelte Tabellen innerhalb einer Zelle mit HTML-Inhalt verwenden?
+
+A: Ja, Sie können verschachtelte Tabellen innerhalb einer Zelle mit HTML-Inhalt verwenden. Sie können separate Tabelleninstanzen erstellen und diese als Teil des HTML-Inhalts in einer Zelle hinzufügen, um den Verschachtelungseffekt zu erzielen.

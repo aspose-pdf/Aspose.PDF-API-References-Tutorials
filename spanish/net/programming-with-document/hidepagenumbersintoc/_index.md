@@ -146,3 +146,21 @@ for (int Level = 1; Level != 5; Level++)
 	}
 doc.Save(outFile);
 ```
+
+## Conclusión
+
+En este tutorial, exploramos cómo trabajar con metadatos XMP en un documento PDF usando Aspose.PDF para .NET. Los metadatos XMP proporcionan información valiosa sobre el documento PDF, incluido su título, autor, fecha de creación y más. Aspose.PDF para .NET permite a los desarrolladores acceder y manipular estos metadatos, proporcionando una API flexible y potente para trabajar con documentos PDF.
+
+### Preguntas frecuentes
+
+#### P: ¿Qué son los metadatos XMP en un documento PDF?
+
+R: Los metadatos XMP (Plataforma de metadatos extensibles) en un documento PDF son un formato estándar para almacenar información de metadatos sobre el documento. Incluye detalles como el título del documento, el autor, la fecha de creación, las palabras clave y más. Los metadatos XMP proporcionan una forma estructurada y estandarizada de almacenar y compartir información sobre el documento PDF.
+
+#### P: ¿Puedo modificar los metadatos XMP de un documento PDF usando Aspose.PDF para .NET?
+
+ R: Sí, puede modificar los metadatos XMP de un documento PDF mediante programación usando Aspose.PDF para .NET. Puedes acceder a la`Info` propiedad de la`Document` objeto, que le da acceso a las propiedades de metadatos XMP. Luego puede actualizar los valores de estas propiedades para modificar los metadatos XMP del documento PDF.
+
+#### P: ¿Puedo extraer propiedades de metadatos XMP personalizadas de un documento PDF usando Aspose.PDF para .NET?
+
+ R: Sí, puede extraer propiedades de metadatos XMP personalizadas de un documento PDF utilizando Aspose.PDF para .NET. Puedes usar el`Metadata` propiedad de la`Document`objeto, que proporciona acceso a todas las propiedades de metadatos XMP del documento PDF. A continuación, puede extraer propiedades personalizadas y utilizar sus valores según sea necesario.

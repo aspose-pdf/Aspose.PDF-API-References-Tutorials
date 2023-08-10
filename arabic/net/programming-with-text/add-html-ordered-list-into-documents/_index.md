@@ -41,7 +41,7 @@ Document doc = new Document();
 ```
 
 ## الخطوة 5: قم بإنشاء كائن HtmlFragment بمحتوى HTML
- تجسيد`HtmlFragment` مع محتوى HTML الذي تريد إضافته إلى المستند. في الكود المقدم ، يتم تعيين محتوى HTML للمتغير`t`. يمكنك تعديل محتوى HTML حسب الحاجة.
+تجسيد`HtmlFragment` مع محتوى HTML الذي تريد إضافته إلى المستند. في الكود المقدم ، يتم تعيين محتوى HTML للمتغير`t`. يمكنك تعديل محتوى HTML حسب الحاجة.
 
 ```csharp
 HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>First</li><li>Second</li><li>Third</li><li >Fourth</li><li>Fifth</li></ul>Text after the list.<br/>Next line<br/>Last line</body>`");

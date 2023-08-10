@@ -1,8 +1,8 @@
 ---
-title: Establecer fuente predeterminada
-linktitle: Establecer fuente predeterminada
+title: Establecer fuente predeterminada en archivo PDF
+linktitle: Establecer fuente predeterminada en archivo PDF
 second_title: Referencia de API de Aspose.PDF para .NET
-description: Aprenda a configurar la fuente predeterminada para un documento PDF usando Aspose.PDF para .NET con esta guía paso a paso.
+description: Aprenda a configurar la fuente predeterminada en un archivo PDF usando Aspose.PDF para .NET con esta guía paso a paso.
 type: docs
 weight: 280
 url: /es/net/programming-with-document/setdefaultfont/
@@ -42,7 +42,7 @@ pdfSaveOptions.DefaultFontName = "Arial";
 
 ## Paso 4: Guarde el documento actualizado
 
-Finalmente, guardaremos el documento actualizado en un nuevo archivo. En este ejemplo, guardaremos el documento actualizado en un archivo llamado "output_out.pdf" en el mismo directorio que el archivo de entrada.
+Finalmente, guardaremos el documento actualizado en un archivo nuevo. En este ejemplo, guardaremos el documento actualizado en un archivo llamado "output_out.pdf" en el mismo directorio que el archivo de entrada.
 
 ```csharp
 document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
@@ -65,3 +65,21 @@ using (Document document = new Document(fs))
 	document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
 }
 ```
+
+## Conclusión
+
+Establecer una fuente predeterminada en documentos PDF usando Aspose.PDF para .NET es una forma simple y efectiva de garantizar que el texto se muestre correctamente, incluso si las fuentes originales no están disponibles. Al seguir la guía paso a paso y usar el código fuente de C# proporcionado, los desarrolladores pueden configurar fácilmente la fuente predeterminada y crear archivos PDF que ofrezcan una experiencia de visualización consistente y confiable en diferentes entornos. Esta característica es particularmente útil en escenarios donde los archivos PDF se verán o imprimirán en varios sistemas que pueden tener instalados diferentes conjuntos de fuentes.
+
+### Preguntas frecuentes para establecer la fuente predeterminada en el archivo PDF
+
+#### P: ¿Por qué es importante establecer una fuente predeterminada en los documentos PDF?
+
+R: La configuración de una fuente predeterminada en los documentos PDF es importante porque garantiza que el texto se muestre correctamente incluso si las fuentes originales no están disponibles en el sistema donde se visualiza o imprime el PDF. Ayuda a evitar problemas como texto faltante o ilegible, lo que garantiza una experiencia de visualización consistente y confiable.
+
+#### P: ¿Puedo elegir cualquier fuente como fuente predeterminada usando Aspose.PDF para .NET?
+
+ R: Sí, puede elegir cualquier fuente que esté disponible en el sistema como fuente predeterminada utilizando Aspose.PDF para .NET. Simplemente especifique el nombre de la fuente en el`DefaultFontName` propiedad de la`PdfSaveOptions` clase.
+
+#### P: ¿Qué sucede si la fuente predeterminada especificada no está disponible en el sistema?
+
+R: Si la fuente predeterminada especificada no está disponible en el sistema, el visor de PDF utilizará una fuente alternativa para mostrar el texto. Es recomendable elegir una fuente comúnmente disponible como Arial o Times New Roman para garantizar la compatibilidad entre diferentes sistemas.

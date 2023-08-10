@@ -19,7 +19,7 @@ Başlamadan önce, aşağıdakilere sahip olduğunuzdan emin olun:
 
 ## 1. Adım: Belge Dizinini kurun
 
- Öncelikle, giriş PDF dosyasının bulunduğu dizine giden yolu ayarlamanız gerekir. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` PDF dosyanızın yolu ile değişken.
+ Öncelikle, giriş PDF dosyasının bulunduğu dizine giden yolu ayarlamanız gerekir. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir`PDF dosyanızın yolu ile değişken.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -78,7 +78,7 @@ try
 	TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));
 	// Tüm sayfalar için emiciyi kabul edin
 	pdfDocument.Pages.Accept(absorber);
-	//Tüm TextFragments'ta gezinin
+	// Tüm TextFragments'ta gezinin
 	foreach (TextFragment textFragment in absorber.TextFragments)
 	{
 		// Yazı tipi adı ArialMT ise, yazı tipi adını Arial ile değiştirin

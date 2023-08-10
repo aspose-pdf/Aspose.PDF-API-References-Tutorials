@@ -98,3 +98,29 @@ Console.WriteLine("\nLength dashed successfully in black and white.\nFile saved 
 ## Çözüm
 
 Bu eğitimde, Aspose.PDF for .NET kullanarak kısa çizgilerin uzunluğunun nasıl ayarlanacağını açıkladık. Artık bu bilgiyi, PDF dosyalarınızda özel çizgi desenleriyle çizgiler oluşturmak için kullanabilirsiniz.
+
+## SSS
+
+#### S: Bu eğitimin amacı nedir?
+
+C: Bu eğitimin amacı, Aspose.PDF for .NET kullanarak çizgiler için kısa çizgilerin uzunluğunu ayarlama sürecinde size rehberlik etmektir. PDF dosyalarınızda özel çizgi desenleriyle nasıl çizgi oluşturacağınızı öğreneceksiniz.
+
+#### S: Başlamadan önce hangi ön koşullar gereklidir?
+
+C: Başlamadan önce Aspose.PDF kütüphanesini kurduğunuzdan ve geliştirme ortamınızı kurduğunuzdan emin olun. Temel bir C# programlama anlayışı da önerilir.
+
+#### S: PDF dosyasının kaydedileceği dizini nasıl belirleyebilirim?
+
+A: Ortaya çıkan PDF dosyasını kaydetmek istediğiniz dizini belirtmek için sağlanan kaynak kodundaki "dataDir" değişkenini değiştirin.
+
+#### S: Özel tire desenleriyle nasıl bir çizgi oluşturabilirim?
+
+ C: Öğretici, bir Line nesnesi oluşturmayı ve rengini, tire dizisini ve tire fazını yapılandırmayı gösterir.`GraphInfo` nesne. İstenen tire desenini elde etmek için bu ayarları değiştirin.
+
+#### S: Çizginin rengini özelleştirebilir miyim?
+
+ C: Evet, çizginin rengini ayarlayarak özelleştirebilirsiniz.`Color` mülkiyeti`GraphInfo` Line ile ilişkili nesne.
+
+#### S: Çizgi uzunluğunu ayarladıktan sonra PDF belgesini nasıl kaydedebilirim?
+
+ C: Çizgi nesnesini istenen çizgi deseniyle yapılandırdıktan sonra, ortaya çıkan PDF belgesini kullanarak kaydedebilirsiniz.`doc.Save(dataDir + "DashLength_out.pdf");` Sağlanan kaynak kodundaki satır.

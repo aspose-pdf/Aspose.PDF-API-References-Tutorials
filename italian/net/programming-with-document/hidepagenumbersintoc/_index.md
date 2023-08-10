@@ -1,6 +1,6 @@
 ---
-title: Nascondi i numeri di pagina nel TOC
-linktitle: Nascondi i numeri di pagina nel TOC
+title: Nascondi i numeri di pagina nel sommario
+linktitle: Nascondi i numeri di pagina nel sommario
 second_title: Aspose.PDF per riferimento API .NET
 description: Scopri come nascondere i numeri di pagina in un sommario utilizzando Aspose.PDF per .NET con questa guida dettagliata.
 type: docs
@@ -15,7 +15,7 @@ Aspose.PDF per .NET è un potente componente di manipolazione PDF che consente a
 
 ## Cos'è la funzione Nascondi i numeri di pagina nel sommario?
 
-Il sommario (TOC) è una parte essenziale di un documento PDF che fornisce agli utenti una rapida panoramica del contenuto. A volte, gli utenti potrebbero voler nascondere i numeri di pagina nel sommario per renderlo più intuitivo. Aspose.PDF per .NET fornisce una funzionalità integrata per nascondere i numeri di pagina nel TOC. Questa funzione può essere utilizzata per creare documenti PDF più intuitivi. 
+Il sommario (TOC) è una parte essenziale di un documento PDF che fornisce agli utenti una rapida panoramica del contenuto. A volte, gli utenti potrebbero voler nascondere i numeri di pagina nel sommario per renderlo più intuitivo. Aspose.PDF per .NET fornisce una funzionalità integrata per nascondere i numeri di pagina nel sommario. Questa funzione può essere utilizzata per creare documenti PDF più intuitivi. 
 
 ## Prerequisiti
 
@@ -146,3 +146,21 @@ for (int Level = 1; Level != 5; Level++)
 	}
 doc.Save(outFile);
 ```
+
+## Conclusione
+
+In questo tutorial, abbiamo esplorato come lavorare con i metadati XMP in un documento PDF utilizzando Aspose.PDF per .NET. I metadati XMP forniscono preziose informazioni sul documento PDF, inclusi titolo, autore, data di creazione e altro. Aspose.PDF per .NET consente agli sviluppatori di accedere e manipolare questi metadati, fornendo un'API flessibile e potente per lavorare con i documenti PDF.
+
+### FAQ
+
+#### D: Cosa sono i metadati XMP in un documento PDF?
+
+R: I metadati XMP (Extensible Metadata Platform) in un documento PDF sono un formato standard per l'archiviazione delle informazioni sui metadati del documento. Include dettagli come titolo del documento, autore, data di creazione, parole chiave e altro. I metadati XMP forniscono un modo strutturato e standardizzato per archiviare e condividere informazioni sul documento PDF.
+
+#### D: Posso modificare i metadati XMP di un documento PDF utilizzando Aspose.PDF per .NET?
+
+ R: Sì, puoi modificare i metadati XMP di un documento PDF in modo programmatico utilizzando Aspose.PDF per .NET. Puoi accedere al`Info` proprietà del`Document` oggetto, che consente di accedere alle proprietà dei metadati XMP. È quindi possibile aggiornare i valori di queste proprietà per modificare i metadati XMP del documento PDF.
+
+#### D: Posso estrarre proprietà di metadati XMP personalizzate da un documento PDF utilizzando Aspose.PDF per .NET?
+
+ R: Sì, puoi estrarre proprietà di metadati XMP personalizzate da un documento PDF utilizzando Aspose.PDF per .NET. Puoi usare il`Metadata` proprietà del`Document`oggetto, che fornisce l'accesso a tutte le proprietà dei metadati XMP del documento PDF. È quindi possibile estrarre le proprietà personalizzate e utilizzarne i valori in base alle esigenze.

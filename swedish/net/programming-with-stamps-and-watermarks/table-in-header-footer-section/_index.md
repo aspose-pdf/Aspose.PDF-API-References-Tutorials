@@ -44,13 +44,13 @@ Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 // Definiera sidhuvudsektionen för sidan
 page. Header = header;
 
-// Ställ in den övre marginalen på rubriksektionen
+//Ställ in den övre marginalen på rubriksektionen
 header. Margin. Top = 20;
 ```
 
 ## Steg 4: Skapa tabellen
 
- Nu ska vi skapa en tabell med hjälp av`Table`klass och lägg till den i rubriksektionens styckesamling. Här är hur:
+ Nu ska vi skapa en tabell med hjälp av`Table` klass och lägg till den i rubriksektionens styckesamling. Här är hur:
 
 ```csharp
 // Instantiera ett tabellobjekt
@@ -99,7 +99,7 @@ row2.Cells[1].Alignment = Aspose.Pdf.HorizontalAlignment.Center;
 När tabellen har lagts till i rubriken kan vi spara PDF-dokumentet. Här är hur:
 
 ```csharp
-// Spara PDF-filen
+//Spara PDF-filen
 pdfDocument.Save(dataDir + "TableInHeaderFooterSection_out.pdf");
 ```
 
@@ -114,7 +114,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Instantiera Document-instansen genom att anropa den tomma konstruktorn
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document();
 
-// Skapa en sida i pdf-dokumentet
+//Skapa en sida i pdf-dokumentet
 Aspose.Pdf.Page page = pdfDocument.Pages.Add();
 
 // Skapa en rubriksektion av PDF-filen
@@ -123,7 +123,7 @@ Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 // Ställ in udda rubrik för PDF-filen
 page.Header = header;
 
-//Ställ in den övre marginalen för rubriksektionen
+// Ställ in den övre marginalen för rubriksektionen
 header.Margin.Top = 20;
 
 // Instantiera ett tabellobjekt
@@ -132,7 +132,7 @@ Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 // Lägg till tabellen i styckesamlingen av önskat avsnitt
 header.Paragraphs.Add(tab1);
 
-// Ställ in standardcellkant med BorderInfo-objekt
+// Ställ in standardcellkant med hjälp av BorderInfo-objektet
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 
 // Ställ in med tabellens kolumnbredder
@@ -179,3 +179,43 @@ pdfDocument.Save(dataDir + "TableInHeaderFooterSection_out.pdf");
 ## Slutsats
 
 Grattis! Du har lärt dig hur du lägger till en tabell i sidhuvudet eller sidfoten i ett PDF-dokument med Aspose.PDF för .NET. Du kan nu anpassa dina sidhuvuden och sidfötter genom att lägga till tabeller för att visa ytterligare information i dina PDF-dokument.
+
+### Vanliga frågor för tabeller i sidhuvudet
+
+#### F: Vad är syftet med att lägga till en tabell i sidhuvudet eller sidfoten i ett PDF-dokument?
+
+S: Genom att lägga till en tabell i sidhuvudet eller sidfoten i ett PDF-dokument kan du visa strukturerad och organiserad information som titlar, undertexter, logotyper eller annat innehåll som du vill ska visas konsekvent på varje sida i dokumentet.
+
+#### F: Hur kan den medföljande C#-källkoden lägga till en tabell i sidhuvudet eller sidfoten i ett PDF-dokument?
+
+S: Koden visar processen att skapa ett tomt PDF-dokument, lägga till en sida, konfigurera rubriksektionen, skapa en tabell med rader och celler och slutligen spara PDF-dokumentet. Resultatet är en tabell som visas i rubriken i PDF-dokumentet.
+
+#### F: Kan jag anpassa utseendet på tabellcellerna, som kanter, bakgrundsfärg och textstil?
+
+S: Ja, du kan anpassa utseendet på tabellcellerna genom att ställa in egenskaper som cellkanter, bakgrundsfärg, textstil, teckensnitt, teckenstorlek och mer.
+
+#### F: Hur läggs tabellen till i rubriken i PDF-dokumentet?
+
+S: Koden lägger till tabellen till styckesamlingen i rubriksektionen, vilket säkerställer att tabellen visas i rubriken på varje sida.
+
+#### F: Kan jag lägga till fler rader och celler i tabellen efter behov?
+
+ S: Absolut, du kan lägga till fler rader och celler i tabellen genom att använda`Rows.Add()` och`Cells.Add()` metoder. Detta gör att du kan strukturera tabellinnehållet efter önskemål.
+
+#### F: Är det möjligt att justera bredden på tabellkolumnerna?
+ S: Ja, du kan justera bredden på tabellkolumnerna med hjälp av`ColumnWidths` fast egendom. Detta gör att du kan styra tabellens layout.
+
+#### F: Hur kan jag spänna över celler över flera kolumner eller rader i tabellen?
+ S: För att spänna över celler över flera kolumner kan du använda`ColSpan`egenskap hos motsvarande cell. På samma sätt kan du använda`RowSpan` egenskap som spänner över celler över flera rader.
+
+#### F: Vad händer om jag vill lägga till en tabell i både sidhuvudet och sidfoten i PDF-dokumentet?
+
+ S: Du kan följa ett liknande tillvägagångssätt för både sidhuvuds- och sidfotssektionerna. Skapa helt enkelt en`HeaderFooter` instans för sidfoten, konfigurera den och lägg till tabellen i dess styckesamling.
+
+#### F: Kan jag använda bilder i tabellcellerna, och hur uppnås det?
+
+ S: Ja, du kan lägga till bilder i tabellceller. Kodexemplet visar hur man lägger till en bild i en cell genom att skapa en`Image` objekt, ange dess sökväg och dimensioner och sedan lägga till det i en cells stycken.
+
+#### F: Hur säkerställer jag att tabellen visas konsekvent på alla sidor i PDF-dokumentet?
+
+ S: När du lägger till tabellen i sidhuvudet eller sidfoten med hjälp av`HeaderFooter` Aspose.PDF säkerställer till exempel att tabellen visas konsekvent på varje sida, vilket ger en enhetlig layout.

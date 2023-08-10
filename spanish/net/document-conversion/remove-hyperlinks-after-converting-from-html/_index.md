@@ -7,7 +7,6 @@ type: docs
 weight: 250
 url: /es/net/document-conversion/remove-hyperlinks-after-converting-from-html/
 ---
-
 En este tutorial, lo guiaremos a través del proceso de eliminación de hipervínculos de un archivo PDF generado a partir de un archivo HTML usando Aspose.PDF para .NET. Los hipervínculos son enlaces en los que se puede hacer clic que pueden redirigir a otras páginas o sitios web. Siguiendo los pasos a continuación, podrá eliminar los hipervínculos del archivo PDF resultante.
 
 ## requisitos previos
@@ -106,3 +105,25 @@ doc.Save(dataDir + "RemoveHyperlinksFromText_out.pdf");
 
 ## Conclusión
 En este tutorial, cubrimos el proceso paso a paso para eliminar hipervínculos de un archivo PDF generado a partir de un archivo HTML usando Aspose.PDF para .NET. Siguiendo las instrucciones descritas anteriormente, podrá eliminar con éxito los hipervínculos del archivo PDF resultante.
+
+### Preguntas frecuentes
+
+#### P: ¿Qué es Aspose.PDF para .NET?
+
+R: Aspose.PDF para .NET es una potente biblioteca que permite a los desarrolladores trabajar con documentos PDF en aplicaciones C#. Ofrece una amplia gama de funcionalidades, incluida la capacidad de convertir archivos HTML a PDF y manipular contenido PDF.
+
+#### P: ¿Por qué querría eliminar los hipervínculos de un archivo PDF?
+
+R: Hay varias razones para eliminar los hipervínculos de un archivo PDF. Por ejemplo, es posible que desee eliminar los enlaces externos para imprimir o archivar o asegurarse de que el contenido del PDF no sea navegable a través de hipervínculos.
+
+#### P: ¿Cómo puedo cargar un archivo HTML y eliminar hipervínculos usando Aspose.PDF para .NET?
+
+ R: Para cargar un archivo HTML y eliminar hipervínculos, puede usar Aspose.PDF para .NET.`HtmlLoadOptions` clase. Recorra las anotaciones de las páginas PDF para encontrar anotaciones de enlaces y modificar sus atributos.
+
+#### P: ¿Puedo personalizar el nombre del archivo de salida para el PDF resultante?
+
+R: Sí, puede personalizar el nombre del archivo de salida para el archivo PDF resultante modificando el código que guarda el documento PDF. Simplemente cambie el nombre de archivo deseado en el`doc.Save()` método.
+
+#### P: ¿Es posible eliminar hipervínculos de forma selectiva en función de determinados criterios?
+
+R: Sí, puede eliminar hipervínculos de forma selectiva en función de criterios específicos. Por ejemplo, puede optar por eliminar solo los enlaces externos o los enlaces que apuntan a direcciones URL específicas.

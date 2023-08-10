@@ -1,6 +1,6 @@
 ---
-title: Metin Aygıtını Kullanarak Metin Çıkarma
-linktitle: Metin Aygıtını Kullanarak Metin Çıkarma
+title: Metin Aygıtını Kullanarak Metin Çıkarın
+linktitle: Metin Aygıtını Kullanarak Metin Çıkarın
 second_title: Aspose.PDF for .NET API Referansı
 description: Aspose.PDF for .NET'te Metin Aygıtını kullanarak bir PDF belgesinden nasıl metin çıkaracağınızı öğrenin.
 type: docs
@@ -84,7 +84,7 @@ foreach (Page pdfPage in pdfDocument.Pages)
 	{
 		// Metin cihazı oluştur
 		TextDevice textDevice = new TextDevice();
-		// Metin çıkarma seçeneklerini ayarlayın - metin çıkarma modunu ayarlayın (Ham veya Saf)
+		//Metin çıkarma seçeneklerini ayarlayın - metin çıkarma modunu ayarlayın (Ham veya Saf)
 		TextExtractionOptions textExtOptions = new
 		TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure);
 		textDevice.ExtractionOptions = textExtOptions;

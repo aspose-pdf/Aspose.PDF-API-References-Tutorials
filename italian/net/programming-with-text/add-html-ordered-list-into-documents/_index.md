@@ -41,7 +41,7 @@ Document doc = new Document();
 ```
 
 ## Passaggio 5: creare un oggetto HtmlFragment con il contenuto HTML
- Istanziare un`HtmlFragment` oggetto con il contenuto HTML che desideri aggiungere al documento. Nel codice fornito, il contenuto HTML è assegnato alla variabile`t`. È possibile modificare il contenuto HTML secondo necessità.
+Istanziare un`HtmlFragment` oggetto con il contenuto HTML che desideri aggiungere al documento. Nel codice fornito, il contenuto HTML è assegnato alla variabile`t`. È possibile modificare il contenuto HTML secondo necessità.
 
 ```csharp
 HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>First</li><li>Second</li><li>Third</li><li >Fourth</li><li>Fifth</li></ul>Text after the list.<br/>Next line<br/>Last line</body>`");

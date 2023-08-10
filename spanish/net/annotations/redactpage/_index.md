@@ -95,9 +95,35 @@ annot.TextAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 annot.Repeat = true;
 // Agregar anotación a la colección de anotaciones de la primera página
 doc.Pages[1].Annotations.Add(annot);
-//Aplana la anotación y redacta el contenido de la página (es decir, elimina el texto y la imagen
+// Aplana la anotación y redacta el contenido de la página (es decir, elimina el texto y la imagen
 // Bajo anotación redactada)
 annot.Redact();
 dataDir = dataDir + "RedactPage_out.pdf";
 doc.Save(dataDir);
 ```
+
+## Conclusión
+
+En este tutorial, exploramos cómo redactar una página en un documento PDF utilizando Aspose.PDF para .NET. La redacción es una función esencial para eliminar de forma segura la información confidencial de los documentos PDF, lo que garantiza la privacidad y la seguridad de los datos. Al seguir la guía paso a paso y usar el código fuente de C# provisto, los desarrolladores pueden agregar fácilmente la funcionalidad de redacción a sus aplicaciones, mejorando la seguridad de los datos y el cumplimiento de sus documentos PDF. Aspose.PDF para .NET ofrece un sólido conjunto de herramientas para trabajar con archivos PDF, proporcionando capacidades de redacción eficientes y efectivas junto con otras operaciones de PDF.
+
+### Preguntas frecuentes
+
+#### P: ¿Qué es la redacción en un documento PDF?
+
+R: La redacción en un documento PDF es el proceso de eliminar u ocultar permanentemente información sensible o confidencial del documento. Esto garantiza que no se pueda acceder ni ver la información redactada, lo que brinda seguridad y privacidad a los datos.
+
+#### P: ¿Puedo redactar varias áreas de una página en un documento PDF?
+
+R: Sí, con Aspose.PDF para .NET, puede crear múltiples`RedactionAnnotation` instancias para redactar múltiples áreas de una página en un documento PDF. Cada`RedactionAnnotation` se puede personalizar con diferentes colores de relleno, colores de borde, textos superpuestos y otras propiedades.
+
+#### P: ¿La redacción en Aspose.PDF para .NET elimina de forma permanente la información redactada?
+
+R: Sí, la redacción en Aspose.PDF para .NET elimina de forma permanente la información redactada del documento PDF. Una vez que se realiza la redacción y se guarda el documento, la información redactada no se puede recuperar.
+
+#### P: ¿Puedo censurar texto e imágenes debajo del área censurada en un documento PDF?
+
+ R: Sí, cuando llamas al`Redact()` método en el`RedactionAnnotation` objeto, no solo agregará una superposición de redacción al área especificada, sino que también eliminará el texto y las imágenes subyacentes de esa área.
+
+#### P: ¿Puede Aspose.PDF para .NET redactar varias páginas en un documento PDF?
+
+ R: Sí, puedes crear`RedactionAnnotation` instancias de varias páginas en un documento PDF para redactar información confidencial de varias páginas.

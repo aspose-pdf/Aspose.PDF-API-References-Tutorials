@@ -7,7 +7,6 @@ type: docs
 weight: 90
 url: /de/net/annotations/getresourceofannotation/
 ---
-
 Das Beispiel zeigt, wie man mit Aspose.PDF für .NET eine Annotationsressource erhält. Um die Ressource einer Anmerkung mit Aspose.PDF für .NET abzurufen, führen Sie die folgenden Schritte aus:
 
 ## Schritt 1: Legen Sie den Pfad des Verzeichnisses fest, in dem sich das Dokument befindet.
@@ -126,3 +125,29 @@ ms.Write(buffer, 0, read);
 Console.WriteLine(rendition.Name);
 Console.WriteLine(action.RenditionOperation);
 ```
+
+## Abschluss
+
+In diesem Tutorial haben wir untersucht, wie Sie mit Aspose.PDF für .NET die Ressource einer bestimmten Anmerkung aus einem PDF-Dokument abrufen. Durch Befolgen der Schritt-für-Schritt-Anleitung und Verwendung des bereitgestellten C#-Quellcodes können Entwickler problemlos auf Anmerkungen, einschließlich Wiedergabeanmerkungen, in ihren PDF-Dokumenten zugreifen und diese verwalten.
+
+### FAQs
+
+#### F: Was ist eine Wiedergabe im Kontext von PDF-Anmerkungen?
+
+A: Im Kontext von PDF-Anmerkungen ist eine Wiedergabe eine multimediale Inhaltspräsentation. Es ermöglicht das Einbetten von Multimedia-Inhalten wie Audio oder Video in das PDF-Dokument. Die Wiedergabeanmerkung gibt an, welches Medium präsentiert werden soll und wie es abgespielt werden soll.
+
+#### F: Kann ich den Namen der Mediendatei abrufen, die einer Wiedergabeanmerkung zugeordnet ist?
+
+ A: Ja, Sie können den Namen der Mediendatei abrufen, die einer Wiedergabeanmerkung zugeordnet ist, indem Sie Aspose.PDF für .NET verwenden. Auf den Mediendateinamen kann über zugegriffen werden`FileSpecification` des`MediaClip` Objekt.
+
+#### F: Kann Aspose.PDF für .NET Mediendateien aus einer Wiedergabeanmerkung extrahieren?
+
+A: Ja, Aspose.PDF für .NET kann die Mediendaten aus einer Wiedergabeanmerkung, die Audio- oder Videoinhalte enthält, extrahieren und als separate Datei speichern.
+
+#### F: Wie kann ich auf die Mediendaten einer Wiedergabeanmerkung zugreifen?
+
+ A: Auf die Mediendaten einer Wiedergabeanmerkung kann über zugegriffen werden`FileSpecification.Contents` Eigentum der`MediaClipData` Objekt.
+
+#### F: Kann ich die mit einer Wiedergabeanmerkung verknüpften Medien mit Aspose.PDF für .NET ändern?
+
+A: Aspose.PDF für .NET bietet Methoden zum Zugreifen auf und Ändern der Mediendaten, die einer Wiedergabeanmerkung zugeordnet sind. Sie können die von einer Wiedergabeanmerkung verwendete Mediendatei aktualisieren oder ersetzen.

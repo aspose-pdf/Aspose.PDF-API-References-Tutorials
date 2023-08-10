@@ -7,8 +7,7 @@ type: docs
 weight: 220
 url: /sv/net/programming-with-forms/radio-button/
 ---
-
-den här handledningen kommer vi att visa dig hur du lägger till en alternativknapp i ett PDF-dokument med Aspose.PDF för .NET. Vi kommer att förklara C#-källkoden steg för steg för att guida dig genom denna process.
+I den här handledningen kommer vi att visa dig hur du lägger till en alternativknapp i ett PDF-dokument med Aspose.PDF för .NET. Vi kommer att förklara C#-källkoden steg för steg för att guida dig genom denna process.
 
 ## Steg 1: Förberedelser
 
@@ -82,12 +81,12 @@ try
 	RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
 	// Lägg till första alternativknappsalternativet och ange även dess ursprung med Rectangle-objektet
 	radio.AddOption("Test", new Rectangle(0, 0, 20, 20));
-	// Lägg till ett andra alternativ för alternativknapp
+	// Lägg till andra alternativknapp
 	radio.AddOption("Test1", new Rectangle(20, 20, 40, 40));
 	// Lägg till alternativknapp för att bilda objekt av dokumentobjekt
 	pdfDocument.Form.Add(radio);
 	dataDir = dataDir + "RadioButton_out.pdf";
-	// Spara PDF-filen
+	//Spara PDF-filen
 	pdfDocument.Save(dataDir);
 	Console.WriteLine("\nRadio button field added successfully.\nFile saved at " + dataDir);
 }
@@ -99,4 +98,27 @@ catch (Exception ex)
 
 ## Slutsats
 
-I den här handledningen lärde vi oss hur man lägger till en alternativknapp i ett PDF-dokument med Aspose.PDF för .NET. Genom att följa dessa steg kan du enkelt skapa en alternativknapp och placera den på en specifik sida i ditt PDF-dokument.
+den här handledningen lärde vi oss hur man lägger till en alternativknapp i ett PDF-dokument med Aspose.PDF för .NET. Genom att följa dessa steg kan du enkelt skapa en alternativknapp och placera den på en specifik sida i ditt PDF-dokument.
+
+
+### FAQ's
+
+#### F: Kan jag anpassa utseendet på alternativknappen, som dess storlek och färg?
+
+ S: Ja, du kan anpassa utseendet på alternativknappen med hjälp av`Rectangle` objektets koordinater för att definiera dess storlek och position. Aspose.PDF för .NET låter dig justera alternativknappens utseende för att passa dina behov.
+
+#### F: Kan jag lägga till flera alternativknappar med olika grupper på samma sida?
+
+S: Ja, du kan lägga till flera alternativknappar med olika grupper på samma sida. Varje grupp av radioknappar kan ha ett unikt namn, och endast ett alternativ inom varje grupp kan väljas åt gången.
+
+#### F: Hur kan jag lägga till en etikett eller textbeskrivning till alternativen för alternativknappar?
+
+ S: För att lägga till en etikett eller textbeskrivning till alternativen för alternativknappar kan du använda`TextStamp`klass från Aspose.PDF för .NET för att lägga över text på PDF-dokumentet vid specifika koordinater.
+
+#### F: Är Aspose.PDF för .NET kompatibel med alla versioner av .NET Framework?
+
+S: Ja, Aspose.PDF för .NET är kompatibel med alla versioner av .NET Framework, inklusive .NET Core och .NET Standard.
+
+#### F: Kan jag programstyra valet av alternativknappsalternativ i PDF-dokumentet?
+
+ S: Ja, du kan programmera styra valet av alternativknappsalternativ med hjälp av`IsSelected` egendom av`RadioButtonOption` klass. Den här egenskapen låter dig ställa in ett specifikt alternativ som valt.

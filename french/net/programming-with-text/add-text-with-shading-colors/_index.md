@@ -42,7 +42,7 @@ using(Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 }
 ```
 
-## Étape 5 : Trouver le texte à modifier
+## Étape 5 : Rechercher le texte à modifier
  Utiliser`TextFragmentAbsorber` pour trouver le texte souhaité dans le document. Dans le code fourni, il recherche le texte "Lorem ipsum".
 
 ```csharp
@@ -52,7 +52,7 @@ TextFragment textFragment = absorb.TextFragments[1];
 ```
 
 ## Étape 6 : Définir la couleur d'ombrage du texte
- Créer un nouveau`Color` objet avec un espace colorimétrique de motif et spécifiez les couleurs d'ombrage du dégradé. Attribuez cette couleur au`ForegroundColor` propriété de la`TextState` de la`TextFragment` objet.
+ Créer un nouveau`Color`objet avec un espace colorimétrique de motif et spécifiez les couleurs d'ombrage du dégradé. Attribuez cette couleur au`ForegroundColor` propriété de la`TextState` de la`TextFragment` objet.
 
 ```csharp
 textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()

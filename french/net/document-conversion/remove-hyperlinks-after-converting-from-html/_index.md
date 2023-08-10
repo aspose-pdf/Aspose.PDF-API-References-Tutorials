@@ -7,7 +7,6 @@ type: docs
 weight: 250
 url: /fr/net/document-conversion/remove-hyperlinks-after-converting-from-html/
 ---
-
 Dans ce didacticiel, nous vous expliquerons le processus de suppression des liens hypertexte d'un fichier PDF généré à partir d'un fichier HTML à l'aide d'Aspose.PDF pour .NET. Les hyperliens sont des liens cliquables qui peuvent rediriger vers d'autres pages ou sites Web. En suivant les étapes ci-dessous, vous pourrez supprimer les hyperliens du fichier PDF résultant.
 
 ## Conditions préalables
@@ -106,3 +105,25 @@ doc.Save(dataDir + "RemoveHyperlinksFromText_out.pdf");
 
 ## Conclusion
 Dans ce didacticiel, nous avons couvert le processus étape par étape de suppression des liens hypertexte d'un fichier PDF généré à partir d'un fichier HTML à l'aide de Aspose.PDF pour .NET. En suivant les instructions décrites ci-dessus, vous pourrez supprimer avec succès les hyperliens du fichier PDF résultant.
+
+### FAQ
+
+#### Q : Qu'est-ce qu'Aspose.PDF pour .NET ?
+
+: Aspose.PDF pour .NET est une bibliothèque puissante qui permet aux développeurs de travailler avec des documents PDF dans des applications C#. Il offre un large éventail de fonctionnalités, notamment la possibilité de convertir des fichiers HTML en PDF et de manipuler le contenu PDF.
+
+#### Q : Pourquoi voudrais-je supprimer les liens hypertexte d'un fichier PDF ?
+
+R : Il existe plusieurs raisons pour supprimer les hyperliens d'un fichier PDF. Par exemple, vous souhaiterez peut-être éliminer les liens externes à des fins d'impression ou d'archivage ou vous assurer que le contenu PDF n'est pas navigable via des hyperliens.
+
+#### Q : Comment puis-je charger un fichier HTML et supprimer des liens hypertexte à l'aide d'Aspose.PDF pour .NET ?
+
+ R : Pour charger un fichier HTML et supprimer des liens hypertexte, vous pouvez utiliser Aspose.PDF pour .NET.`HtmlLoadOptions` classe. Parcourez les annotations des pages PDF pour trouver des annotations de lien et modifier leurs attributs.
+
+#### Q : Puis-je personnaliser le nom du fichier de sortie pour le PDF obtenu ?
+
+ : Oui, vous pouvez personnaliser le nom du fichier de sortie pour le fichier PDF résultant en modifiant le code qui enregistre le document PDF. Modifiez simplement le nom de fichier souhaité dans le`doc.Save()` méthode.
+
+#### Q : Est-il possible de supprimer sélectivement des hyperliens en fonction de certains critères ?
+
+R : Oui, vous pouvez supprimer des liens hypertexte de manière sélective en fonction de critères spécifiques. Par exemple, vous pouvez choisir de supprimer uniquement les liens externes ou les liens pointant vers des URL spécifiques.

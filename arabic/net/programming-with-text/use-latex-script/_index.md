@@ -82,9 +82,9 @@ doc.Save(dataDir + "LatextScriptInPdf_out.pdf");
 ```csharp
 // المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-//قم بإنشاء كائن مستند جديد
+// قم بإنشاء كائن مستند جديد
 Document doc = new Document();
-// أضف صفحة في مجموعة الصفحات
+//أضف صفحة في مجموعة الصفحات
 Page page = doc.Pages.Add();
 // قم بإنشاء جدول
 Table table = new Table();

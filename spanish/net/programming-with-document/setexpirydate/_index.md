@@ -1,8 +1,8 @@
 ---
-title: Establecer fecha de caducidad
-linktitle: Establecer fecha de caducidad
+title: Establecer fecha de caducidad en archivo PDF
+linktitle: Establecer fecha de caducidad en archivo PDF
 second_title: Referencia de API de Aspose.PDF para .NET
-description: Aprenda a establecer la fecha de caducidad en documentos PDF utilizando Aspose.PDF para .NET con esta guía paso a paso.
+description: Aprenda cómo establecer la fecha de caducidad en un archivo PDF usando Aspose.PDF para .NET con esta guía paso a paso.
 type: docs
 weight: 300
 url: /es/net/programming-with-document/setexpirydate/
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Paso 2: Creación de un nuevo documento PDF
 
-Para crear un nuevo documento PDF, necesitamos instanciar un nuevo`Aspose.Pdf.Document` objeto. Esto lo podemos hacer usando el siguiente código:
+ Para crear un nuevo documento PDF, necesitamos instanciar un nuevo`Aspose.Pdf.Document` objeto. Esto lo podemos hacer usando el siguiente código:
 
 ```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
@@ -35,7 +35,7 @@ doc.Pages.Add();
 
 ## Paso 4: agregar texto al documento PDF
 
- Después de agregar una página al documento PDF, podemos agregarle texto usando el`Paragraphs` recopilación. Esto lo podemos hacer usando el siguiente código:
+Después de agregar una página al documento PDF, podemos agregarle texto usando el`Paragraphs` recopilación. Esto lo podemos hacer usando el siguiente código:
 
 ```csharp
 doc.Pages[1].Paragraphs.Add(new TextFragment("Hello World..."));
@@ -99,3 +99,21 @@ dataDir = dataDir + "SetExpiryDate_out.pdf";
 // Guardar documento PDF
 doc.Save(dataDir);
 ```
+
+## Conclusión
+
+Establecer una fecha de caducidad para un documento PDF usando Aspose.PDF para .NET es una función útil para garantizar que el documento solo sea válido durante un período específico. Siguiendo la guía paso a paso y utilizando el código fuente de C# proporcionado, los desarrolladores pueden establecer fácilmente la fecha de caducidad y crear archivos PDF con validez limitada en el tiempo. Esta característica puede ser particularmente útil para documentos a los que se debe acceder o distribuir por un tiempo limitado.
+
+### Preguntas frecuentes para establecer la fecha de caducidad en un archivo PDF
+
+#### P: ¿Puedo establecer una fecha de caducidad diferente para el documento PDF?
+
+ R: Sí, puede establecer una fecha de caducidad diferente para el documento PDF modificando el código JavaScript en el Paso 5. En el ejemplo proporcionado, la fecha de caducidad se establece en mayo de 2017. Para establecer una fecha de caducidad diferente, debe modificar la`year` y`month` variables en el código JavaScript al año y mes deseados.
+
+#### P: ¿Qué sucede cuando el documento PDF ha caducado?
+
+R: Cuando el documento PDF haya caducado, como se especifica en el código JavaScript, el visor mostrará un mensaje de alerta que indica que el archivo ha caducado y que el usuario necesita uno nuevo. Este mensaje de alerta se mostrará cuando se abra el PDF.
+
+#### P: ¿Puedo usar una hora específica para la fecha de vencimiento en lugar de solo la fecha?
+
+ R: Sí, puede establecer una hora específica para la fecha de vencimiento en el código JavaScript. Al modificar el`expiry` variable en el código JavaScript para incluir la hora deseada, puede establecer una hora específica para la fecha de caducidad.

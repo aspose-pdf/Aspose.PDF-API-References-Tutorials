@@ -7,7 +7,6 @@ type: docs
 weight: 210
 url: /sv/net/programming-with-forms/preserve-rights/
 ---
-
 I den här handledningen kommer vi att visa dig hur du bevarar formulärrättigheter i ett PDF-dokument med Aspose.PDF för .NET. Vi kommer att förklara C#-källkoden steg för steg för att guida dig genom denna process.
 
 ## Steg 1: Förberedelser
@@ -89,3 +88,26 @@ fs.Close();
 ## Slutsats
 
 I den här handledningen lärde vi oss hur man bevarar rättigheterna för ett formulär i ett PDF-dokument med Aspose.PDF för .NET. Genom att följa dessa steg kan du enkelt komma åt formulärfält och göra specifika ändringar samtidigt som du behåller åtkomst- och skrivbehörigheter.
+
+
+### FAQ's
+
+#### F: Kan jag bevara rättigheterna för specifika formulärfält utan att påverka andra i PDF-dokumentet?
+
+ S: Ja, genom att använda`FullName` egenskapen för formulärfälten kan du rikta in dig på specifika formulärfält för bevarande samtidigt som du lämnar andra opåverkade.
+
+#### F: Kan jag bevara rättigheterna för ett formulär i ett lösenordsskyddat PDF-dokument?
+
+S: Ja, Aspose.PDF för .NET tillåter dig att bevara rättigheterna till ett formulär även i lösenordsskyddade PDF-dokument, så länge du anger rätt lösenord för att komma åt och ändra filen.
+
+#### F: Vad händer om jag försöker ändra formulärfält utan lämpliga åtkomsträttigheter?
+
+S: Om du försöker ändra formulärfält utan lämpliga åtkomsträttigheter kommer ändringarna inte att sparas i PDF-dokumentet och du kan få ett undantag eller ett felmeddelande.
+
+#### F: Är Aspose.PDF för .NET kompatibel med alla versioner av .NET Framework?
+
+S: Ja, Aspose.PDF för .NET är kompatibel med alla versioner av .NET Framework, inklusive .NET Core och .NET Standard.
+
+#### F: Kan jag bevara formulärrättigheter i ett PDF-dokument programmatiskt på andra programmeringsspråk än C#?
+
+S: Ja, Aspose.PDF för .NET stöder olika programmeringsspråk, såsom VB.NET och ASP.NET, förutom C#.

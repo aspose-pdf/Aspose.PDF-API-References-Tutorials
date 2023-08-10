@@ -24,7 +24,7 @@ Başlamadan önce, aşağıdakilere sahip olduğunuzdan emin olun:
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` belgelerinizin bulunduğu dizinin yolu ile. Bu, oluşturulan herhangi bir PDF dosyasını depolamak için kullanılacaktır.
+ Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"`belgelerinizin bulunduğu dizinin yolu ile. Bu, oluşturulan herhangi bir PDF dosyasını depolamak için kullanılacaktır.
 
 ## 2. Adım: Yazı Tipini Bulun
 

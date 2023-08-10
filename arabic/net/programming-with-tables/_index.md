@@ -14,23 +14,23 @@ description: تعرف على كيفية البرمجة باستخدام الجد
 | عنوان | وصف |
 | --- | --- | 
 | [أضف صورة في خلية جدول](./add-image-in-a-table-cell/) | أضف صورة في خلية جدول باستخدام Aspose.PDF for .NET دليل تفصيلي للمعالجة الدقيقة للصور في مستندات PDF. |  
-| [أضف عمود مكرر](./add-repeating-column/) | تعرف على كيفية إضافة عمود مكرر في مستند PDF باستخدام Aspose.PDF for .NET. |  
-| [أضف كائن SVG](./add-svg-object/) | قم بإضافة كائنات SVG بسهولة إلى ملفات PDF الخاصة بك باستخدام Aspose.PDF for .NET. |  
-| [أضف الجدول](./add-table/) | أضف الجداول بسهولة إلى مستندات PDF الخاصة بك باستخدام Aspose.PDF for .NET. |  
+| [إضافة عمود مكرر في مستند PDF](./add-repeating-column/) | تعرف على كيفية إضافة عمود مكرر في مستند PDF باستخدام Aspose.PDF for .NET. |  
+| [أضف كائن SVG إلى ملف PDF](./add-svg-object/) | أضف كائنات SVG بسهولة في ملف PDF باستخدام Aspose.PDF لـ .NET. |  
+| [أضف الجدول في ملف PDF](./add-table/) | أضف الجداول بسهولة في ملف PDF باستخدام Aspose.PDF لـ .NET. |  
 | [احتواء تلقائي للنافذة](./auto-fit-to-window/) | دليل تفصيلي خطوة بخطوة لاستخدام Aspose.PDF لـ .NET وتحقيق التوافق التلقائي مع النافذة في إنشاء PDF. |  
-| [تحديد فاصل الجدول](./determine-table-break/) | تعرف على كيفية تحديد فواصل الجدول في مستند PDF باستخدام Aspose.PDF for .NET. |  
+| [تحديد فاصل الجدول في ملف PDF](./determine-table-break/) | تعرف على كيفية تحديد فواصل الجدول في ملف PDF باستخدام Aspose.PDF for .NET. |  
 | [تصدير بيانات ورقة عمل Excel إلى جدول](./export-excel-worksheet-data-to-table/) | قم بتصدير البيانات من ورقة Excel إلى جدول PDF باستخدام Aspose.PDF for .NET. |  
-| [استخراج الحدود](./extract-border/) | تعرف على كيفية استخراج الحدود من مستند PDF باستخدام Aspose.PDF for .NET. |  
-| [احصل على عرض الجدول](./get-table-width/) | تعرف على كيفية الحصول على عرض الجدول في مستند PDF باستخدام Aspose.PDF for .NET. |  
-| [علامات HTML داخل الجدول](./html-tags-inside-table/) | تعرف على كيفية استخدام علامات HTML داخل جدول في مستند PDF باستخدام Aspose.PDF for .NET. |  
-| [إدراج فاصل صفحة](./insert-page-break/) | تعرف على كيفية إدراج فاصل صفحات في مستند PDF باستخدام Aspose.PDF for .NET. |  
-| [التكامل مع قاعدة البيانات](./integrate-with-database/) | يمكنك تضمين بيانات من قاعدة بيانات في مستند PDF باستخدام Aspose.PDF لـ .NET. |  
-| [التلاعب بالجدول](./manipulate-table/) | تعامل بسهولة مع الجداول في مستندات PDF باستخدام Aspose.PDF for .NET. |  
+| [استخراج الحدود في ملف PDF](./extract-border/) | تعرف على كيفية استخراج الحدود في ملف PDF باستخدام Aspose.PDF for .NET. |  
+| [احصل على عرض الجدول في ملف PDF](./get-table-width/) | تعرف على كيفية الحصول على عرض الجدول في ملف PDF باستخدام Aspose.PDF for .NET. |  
+| [علامات HTML داخل الجدول في ملف PDF](./html-tags-inside-table/) | تعرف على كيفية استخدام علامات HTML داخل جدول في ملف PDF باستخدام Aspose.PDF for .NET. |  
+| [إدراج فاصل صفحة في ملف PDF](./insert-page-break/) | تعرف على كيفية إدراج فاصل صفحات في ملف PDF باستخدام Aspose.PDF for .NET. |  
+| [التكامل مع قاعدة البيانات في ملف PDF](./integrate-with-database/) | قم بتضمين البيانات من قاعدة بيانات في ملف PDF باستخدام Aspose.PDF لـ .NET. |  
+| [معالجة الجدول في ملف PDF](./manipulate-table/) | تعامل بسهولة مع الجدول في ملف PDF باستخدام Aspose.PDF for .NET. |  
 | [الهوامش أو الحشو](./margins-or-padding/) | تعرف على كيفية تعيين الهوامش أو الحشو في جدول باستخدام Aspose.PDF لـ .NET. |  
-| [إزالة جداول متعددة](./remove-multiple-tables/) | تعرف على كيفية إزالة جداول متعددة في مستند PDF باستخدام Aspose.PDF for .NET. |  
-| [إزالة الجدول](./remove-table/) | تعرف على كيفية إزالة جدول في مستند PDF باستخدام Aspose.PDF for .NET. |  
-| [تقديم الجدول](./render-table/) | تعرف على كيفية عرض جدول في مستند PDF باستخدام Aspose.PDF for .NET. |  
-| [استبدال الجدول](./replace-table/) | تعرف على كيفية استبدال جدول في مستند PDF باستخدام Aspose.PDF for .NET. |  
-| [طاولة زاوية مستديرة](./rounded-corner-table/) | تعرف على كيفية إنشاء جدول زاوية مستدير في مستند PDF باستخدام Aspose.PDF for .NET. |  
-| [تعيين الحدود](./set-border/) | تعرف على كيفية تعيين حد في جدول PDF باستخدام Aspose.PDF for .NET. |  
+| [أزل عدة جداول من مستند PDF](./remove-multiple-tables/) | تعرف على كيفية إزالة جداول متعددة في مستند PDF باستخدام Aspose.PDF for .NET. |  
+| [إزالة الجدول في مستند PDF](./remove-table/) | تعرف على كيفية إزالة جدول في مستند PDF باستخدام Aspose.PDF for .NET. |  
+| [عرض الجدول في مستند PDF](./render-table/) | تعرف على كيفية عرض جدول في مستند PDF باستخدام Aspose.PDF for .NET. |  
+| [استبدال الجدول في وثيقة PDF](./replace-table/) | تعرف على كيفية استبدال جدول في مستند PDF باستخدام Aspose.PDF for .NET. |  
+| [طاولة زاوية مستديرة في مستند PDF](./rounded-corner-table/) | تعرف على كيفية إنشاء جدول زاوية مستدير في مستند PDF باستخدام Aspose.PDF for .NET. |  
+| [تعيين الحدود في PDF على الجدول](./set-border/) | تعرف على كيفية تعيين حد في PDF للجدول باستخدام Aspose.PDF for .NET. |  
 | [محاذاة النص لمحتوى صف الجدول](./text-alignment-for-table-row-content/) | تعرف على كيفية محاذاة محتوى الصف في جدول PDF باستخدام Aspose.PDF for .NET. |  

@@ -71,12 +71,12 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");
 // Skapa TextAbsorber-objekt för att extrahera text
 TextAbsorber textAbsorber = new TextAbsorber();
-// Acceptera absorbenten för en viss sida
+//Acceptera absorbenten för en viss sida
 pdfDocument.Pages[1].Accept(textAbsorber);
 // Hämta den extraherade texten
 string extractedText = textAbsorber.Text;
 dataDir = dataDir + "extracted-text_out.txt";
-// Skapa en författare och öppna filen
+// Skapa en skribent och öppna filen
 TextWriter tw = new StreamWriter(dataDir);
 // Skriv en textrad till filen
 tw.WriteLine(extractedText);

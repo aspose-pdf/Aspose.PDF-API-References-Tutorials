@@ -1,13 +1,12 @@
 ---
-title: إضافة Java Script إلى الصفحة
-linktitle: إضافة Java Script إلى الصفحة
+title: إضافة Java Script إلى ملف PDF
+linktitle: أضف ملف Java Script PDF
 second_title: Aspose.PDF لمرجع .NET API
-description: تعرف على كيفية إضافة JavaScript إلى ملفات PDF باستخدام Aspose.PDF for .NET. دليل خطوة بخطوة مع البرامج التعليمية للكود للبرمجة النصية على مستوى الصفحة والمستندات.
+description: تعرف على كيفية إضافة JavaScript إلى ملف PDF باستخدام Aspose.PDF for .NET. دليل خطوة بخطوة مع البرامج التعليمية للكود للبرمجة النصية على مستوى الصفحة والمستندات.
 type: docs
 weight: 10
 url: /ar/net/programming-with-document/addjavascripttopage/
 ---
-
 لإضافة JavaScript إلى ملف PDF ، سنستخدم Aspose.PDF لـ .NET. توفر هذه المكتبة طريقة بسيطة وفعالة للعمل مع ملفات PDF في تطبيقات .NET. ستوجهك الخطوات التالية خلال عملية إضافة JavaScript إلى ملف PDF باستخدام Aspose.PDF for .NET.
 
 ## الخطوة 1: قم بتحميل ملف PDF
@@ -24,7 +23,7 @@ Document doc = new Document(dataDir + "input.pdf");
 
 ## الخطوة 2: أضف JavaScript على مستوى المستند
 
- لإضافة JavaScript على مستوى المستند ، سنستخدم الامتداد`JavascriptAction` فئة مقدمة من Aspose.PDF لـ .NET. تسمح لك هذه الفئة بتحديد عبارة JavaScript التي تريد إضافتها إلى ملف PDF.
+لإضافة JavaScript على مستوى المستند ، سنستخدم الامتداد`JavascriptAction` فئة مقدمة من Aspose.PDF لـ .NET. تسمح لك هذه الفئة بتحديد عبارة JavaScript التي تريد إضافتها إلى ملف PDF.
 
 ```csharp
 // إضافة JavaScript على مستوى المستند
@@ -39,7 +38,7 @@ doc.OpenAction = javaScript;
 
 ## الخطوة 3: أضف JavaScript على مستوى الصفحة
 
- لإضافة JavaScript على مستوى الصفحة ، سنستخدم الامتداد`JavascriptAction` الطبقة و`Actions`الخاصية المقدمة من Aspose.PDF لـ .NET. تتيح لك هذه الخاصية تحديد عبارات JavaScript التي سيتم تنفيذها عند فتح الصفحة أو إغلاقها.
+ لإضافة JavaScript على مستوى الصفحة ، سنستخدم الامتداد`JavascriptAction` الطبقة و`Actions` الخاصية المقدمة من Aspose.PDF لـ .NET. تتيح لك هذه الخاصية تحديد عبارات JavaScript التي سيتم تنفيذها عند فتح الصفحة أو إغلاقها.
 
 ```csharp
 // إضافة JavaScript على مستوى الصفحة
@@ -51,7 +50,7 @@ doc.Pages[2].Actions.OnClose = new JavascriptAction("app.alert('page 1 closed')"
 
 ## الخطوة 4: احفظ ملف PDF
 
- بعد إضافة JavaScript إلى ملف PDF ، تحتاج إلى حفظ الملف المعدل. يمكنك القيام بذلك باستخدام ملف`Save` الطريقة التي يوفرها`Document` فصل.
+بعد إضافة JavaScript إلى ملف PDF ، تحتاج إلى حفظ الملف المعدل. يمكنك القيام بذلك باستخدام ملف`Save` الطريقة التي يوفرها`Document` فصل.
 
 ```csharp
 dataDir = dataDir + "JavaScript-Added_out.pdf";
@@ -95,4 +94,26 @@ Console.WriteLine("\nJavascript added successfully to a page.\nFile saved at " +
 
 في هذه المقالة ، شرحنا كيفية إضافة JavaScript إلى ملف PDF على كل من مستوى المستند ومستوى الصفحة باستخدام Aspose.PDF for .NET. لقد قدمنا إرشادات خطوة بخطوة وقمنا بتضمين شفرة المصدر الكاملة لكل مثال. باستخدام هذه المعرفة ، يمكنك إضافة JavaScript إلى ملفات PDF الخاصة بك وتخصيص سلوكها وفقًا لاحتياجاتك.
 
+
+### الأسئلة الشائعة حول إضافة نص جافا إلى ملف PDF
+
+#### س: ما هو Aspose.PDF لـ .NET؟
+
+ج: Aspose.PDF for .NET مكتبة قوية تمكن المطورين من العمل مع ملفات PDF في تطبيقات .NET. يوفر مجموعة كبيرة من الميزات لإنشاء مستندات PDF وتعديلها ومعالجتها.
+
+#### س: هل يمكنني إضافة JavaScript إلى مستند PDF باستخدام Aspose.PDF لـ .NET؟
+
+ج: نعم ، يتيح لك Aspose.PDF for .NET إضافة JavaScript إلى كل من مستوى المستند ومستوى الصفحة لملف PDF ، مما يتيح لك إنشاء مستندات PDF ديناميكية وتفاعلية.
+
+#### س: كيف يمكنني تحميل ملف PDF موجود باستخدام Aspose.PDF for .NET؟
+
+ ج: يمكنك تحميل ملف PDF موجود باستخدام امتداد`Document` الفصل وطرقه ، كما هو موضح في الدليل التفصيلي.
+
+#### س: ما أنواع إجراءات JavaScript التي يمكنني إضافتها إلى مستند PDF؟
+
+ج: باستخدام Aspose.PDF for .NET ، يمكنك إضافة مجموعة متنوعة من إجراءات JavaScript ، مثل الطباعة ورسائل التنبيه ومعالجة حقل النموذج والمزيد.
+
+#### س: هل Aspose.PDF for .NET مناسب للمشاريع التجارية؟
+
+ج: نعم ، Aspose.PDF for .NET مكتبة موثوقة وقوية تُستخدم بشكل شائع في المشاريع التجارية لمهام التلاعب والتوليد في PDF.
 

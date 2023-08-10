@@ -19,7 +19,7 @@ Innan du börjar, se till att du har följande:
 
 ## Steg 1: Konfigurera dokumentkatalogen
 
- Först måste du ställa in sökvägen till katalogen där du har indata-PDF-filen. Byta ut`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till din PDF-fil.
+ Först måste du ställa in sökvägen till katalogen där du har indata-PDF-filen. Byta ut`"YOUR DOCUMENT DIRECTORY"` i`dataDir`variabel med sökvägen till din PDF-fil.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -78,7 +78,7 @@ try
 	TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));
 	// Acceptera absorbenten för alla sidor
 	pdfDocument.Pages.Accept(absorber);
-	//Gå igenom alla textfragment
+	// Gå igenom alla textfragment
 	foreach (TextFragment textFragment in absorber.TextFragments)
 	{
 		// Om teckensnittsnamnet är ArialMT, ersätt teckensnittsnamnet med Arial

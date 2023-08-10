@@ -7,7 +7,6 @@ type: docs
 weight: 40
 url: /zh/net/programming-with-forms/create-doc/
 ---
-
 在本教程中，我们将向您展示如何使用 Aspose.PDF for .NET 创建带有单选按钮的文档。我们将逐步解释 C# 源代码，以指导您完成此过程。
 
 ##第一步：准备
@@ -18,7 +17,7 @@ url: /zh/net/programming-with-forms/create-doc/
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## 第 2 步：创建新文档
+## 第 2 步：创建一个新文档
 
 创建一个新的 Document 对象来保存 PDF 文档：
 
@@ -26,7 +25,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 ```
 
-## 第三步：添加页面
+## 第 3 步：添加页面
 
 向文档添加新页面：
 
@@ -75,7 +74,7 @@ field. Add(opt2);
 field. Add(opt3);
 ```
 
-## 第 6 步：将单选按钮字段添加到表单
+## 步骤 6：将单选按钮字段添加到表单中
 
 将单选按钮字段添加到文档表单字段集合：
 
@@ -143,4 +142,26 @@ catch (Exception ex)
 
 ## 结论
 
-在本教程中，我们学习了如何使用 Aspose.PDF for .NET 创建带有单选按钮的文档。按照这些步骤，您可以使用 Aspose.PDF 轻松地将单选按钮添加到您的 PDF 文档。
+在本教程中，我们学习了如何使用 Aspose.PDF for .NET 创建带有单选按钮的文档。通过执行以下步骤，您可以使用 Aspose.PDF 轻松地将单选按钮添加到 PDF 文档中。
+
+### 常见问题解答
+
+#### 问：我可以使用 Aspose.PDF for .NET 自定义文档中单选按钮的外观吗？
+
+答：是的，您可以使用 Aspose.PDF for .NET 自定义文档中单选按钮的外观。您可以设置大小、颜色、边框样式等属性来自定义单选按钮的外观。
+
+#### 问：如何添加具有互斥选项的单选按钮组？
+
+答：为了创建互斥的选项，您可以添加多个同名的单选按钮字段。这将确保当选择一个选项时，将自动取消选择其他同名选项。
+
+#### 问：是否可以为单选按钮设置默认选择的选项？
+
+答：是的，您可以使用 Aspose.PDF for .NET 为单选按钮设置默认选择的选项。您可以使用`Selected`的财产`RadioButtonOptionField`对象将选项标记为默认选中。
+
+#### 问：我可以向单选按钮添加事件处理程序吗？
+
+答：是的，您可以使用 Aspose.PDF for .NET 将事件处理程序添加到单选按钮。您可以关联 JavaScript 操作，例如`OnValueChanged`，添加到单选按钮以在用户选择选项时执行特定操作。
+
+#### 问：用户做出选择后，如何从单选按钮组中检索所选选项？
+
+答：您可以使用 Aspose.PDF for .NET 从单选按钮组中检索所选选项。用户做出选择后，您可以访问`Selected`的财产`RadioButtonOptionField`对象来检查选择了哪个选项。

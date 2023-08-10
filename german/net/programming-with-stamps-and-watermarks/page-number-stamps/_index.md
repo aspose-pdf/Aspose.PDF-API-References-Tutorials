@@ -1,13 +1,13 @@
 ---
-title: Seitenzahlenstempel
-linktitle: Seitenzahlenstempel
+title: Seitenzahlenstempel in PDF-Datei
+linktitle: Seitenzahlenstempel in PDF-Datei
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET Seitenzahlenstempel zu einem PDF-Dokument hinzufügen.
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET Seitenzahlenstempel in eine PDF-Datei einfügen.
 type: docs
 weight: 160
 url: /de/net/programming-with-stamps-and-watermarks/page-number-stamps/
 ---
-In diesem Tutorial führen wir Sie Schritt für Schritt durch das Hinzufügen von Seitenzahlstempeln zu einem PDF-Dokument mit Aspose.PDF für .NET. Wir verwenden den bereitgestellten C#-Quellcode, um ein vorhandenes PDF-Dokument zu öffnen, einen Seitenzahlstempel zu erstellen, seine Eigenschaften festzulegen und ihn einer bestimmten Seite im PDF-Dokument hinzuzufügen.
+In diesem Tutorial führen wir Sie Schritt für Schritt durch das Hinzufügen von Seitenzahlstempeln in einer PDF-Datei mit Aspose.PDF für .NET. Wir verwenden den bereitgestellten C#-Quellcode, um ein vorhandenes PDF-Dokument zu öffnen, einen Seitenzahlstempel zu erstellen, seine Eigenschaften festzulegen und ihn einer bestimmten Seite in der PDF-Datei hinzuzufügen.
 
 ## Schritt 1: Einrichten der Umgebung
 
@@ -124,3 +124,45 @@ Console.WriteLine("\nPage number stamp added successfully.\nFile saved at " + da
 ## Abschluss
 
 Herzlichen Glückwunsch! Sie haben gelernt, wie Sie mit Aspose.PDF für .NET Seitenzahlenstempel zu einem PDF-Dokument hinzufügen. Sie können Ihre PDF-Dokumente jetzt personalisieren, indem Sie klare und informative Seitenzahlen hinzufügen.
+
+### FAQs zu Seitenzahlstempeln in PDF-Dateien
+
+#### F: Was ist ein Seitenzahlenstempel und wie wird er zum Hinzufügen von Seitenzahlen zu einer PDF-Datei verwendet?
+
+A: Ein Seitenzahlstempel ist eine Funktion in Aspose.PDF, mit der Sie dynamische Seitenzahlen zu bestimmten Seiten eines PDF-Dokuments hinzufügen können. In diesem Tutorial wird dies erreicht, indem ein PageNumberStamp-Objekt erstellt, seine Eigenschaften konfiguriert und es einer bestimmten Seite hinzugefügt wird.
+
+#### F: Wie ermöglicht der bereitgestellte C#-Quellcode das Hinzufügen von Seitenzahlstempeln zu einer PDF-Datei?
+
+A: Der Code zeigt, wie man ein vorhandenes PDF-Dokument lädt, einen PageNumberStamp erstellt, verschiedene Eigenschaften festlegt (z. B. Format, Schriftart, Ausrichtung usw.) und dann den Stempel einer bestimmten Seite hinzufügt. Der Stempel berechnet automatisch die Gesamtseitenzahl und fügt die richtigen Seitenzahlen ein.
+
+#### F: Kann ich das Erscheinungsbild der Seitenzahl anpassen, z. B. Schriftart, Farbe und Größe?
+
+A: Auf jeden Fall können Sie das Erscheinungsbild des Seitenzahlenstempels anpassen, indem Sie Eigenschaften wie Schriftart, Schriftgröße, Schriftstil (fett, kursiv usw.) und Textfarbe anpassen.
+
+#### F: Ist es möglich, Seitenzahlstempel auf mehreren Seiten innerhalb eines PDF-Dokuments hinzuzufügen?
+
+A: Ja, Sie können Seitenzahlstempel zu mehreren Seiten hinzufügen, indem Sie mehrere PageNumberStamp-Objekte erstellen und jedes einzelne den gewünschten Seiten hinzufügen.
+
+#### F: Kann ich wählen, ob der Seitenzahlstempel als Teil des Seiteninhalts oder als Hintergrundelement angezeigt wird?
+
+ A: Ja, Sie können steuern, ob der Seitenzahlstempel als Teil des Seiteninhalts oder als Hintergrundelement angezeigt wird, indem Sie festlegen`Background` Eigenschaft des PageNumberStamp.
+
+#### F: Wie lege ich das Format der Seitenzahl fest, einschließlich der Gesamtseitenzahl?
+
+ A: Der Code verwendet die`Format`-Eigenschaft des PageNumberStamp, um das Format der Seitenzahl anzugeben. Das Makro „# of“ wird verwendet, um die Gesamtseitenzahl darzustellen.
+
+#### F: Was passiert, wenn ich den gleichen Seitenzahlenstempel auf mehreren Seiten anbringe?
+
+A: Durch das Hinzufügen derselben PageNumberStamp-Instanz zu mehreren Seiten werden für jede Seite die richtigen Seitenzahlen angezeigt. Der Stempel passt die Seitenzahl und die Gesamtseitenzahl automatisch an.
+
+#### F: Kann ich den Kopf- oder Fußzeilenabschnitten eines PDF-Dokuments Seitenzahlenstempel hinzufügen?
+
+A: Während PageNumberStamps normalerweise direkt zum Inhalt der Seite hinzugefügt werden, können Sie FloatingBox oder andere Techniken verwenden, um sie in Kopf- oder Fußzeilenabschnitten zu positionieren.
+
+#### F: Wie lege ich die Position des Seitenzahlstempels auf der Seite fest?
+
+ A: Die`BottomMargin` Und`HorizontalAlignment` Mit den Eigenschaften von PageNumberStamp können Sie die Position des Stempels innerhalb der Seite steuern.
+
+#### F: Was passiert, wenn ich die Seitennummerierung mit einer anderen Nummer als mit 1 beginnen möchte?
+
+ A: Sie können das einstellen`StartingNumber`Eigenschaft des PageNumberStamp, um die erste Seitenzahl anzugeben.

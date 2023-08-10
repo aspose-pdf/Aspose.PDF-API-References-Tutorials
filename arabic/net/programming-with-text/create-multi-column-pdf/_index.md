@@ -65,7 +65,7 @@ page.Paragraphs.Add(graph1);
 ```
 
 ## الخطوة 8: أضف نص العنوان بتنسيق HTML
- يخترع`HtmlFragment`الكائن وتعيين محتواه على نص HTML المطلوب. ثم أضف الجزء إلى ملف`Paragraphs` مجموعة من الصفحة.
+ يخترع`HtmlFragment` الكائن وتعيين محتواه على نص HTML المطلوب. ثم أضف الجزء إلى ملف`Paragraphs` مجموعة من الصفحة.
 
 ```csharp
 string s = "<font face=\"Times New Roman\" size=4>" +
@@ -115,7 +115,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 // حدد معلومات الهامش الأيسر لملف PDF
 doc.PageInfo.Margin.Left = 40;
-// حدد معلومات الهامش الأيمن لملف PDF
+//حدد معلومات الهامش الأيمن لملف PDF
 doc.PageInfo.Margin.Right = 40;
 Page page = doc.Pages.Add();
 Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500, 2);

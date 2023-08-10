@@ -72,7 +72,7 @@ row1.Cells[0].Paragraphs.Add(logo);
 
 ## Шаг 6: Добавьте текст вокруг изображения
 
- Мы создаем строковые переменные, содержащие текст в формате HTML, и создаем`HtmlFragment` объект. Затем мы добавляем текст HTML в ячейку таблицы, содержащую изображение.
+Мы создаем строковые переменные, содержащие текст в формате HTML, и создаем`HtmlFragment` объект. Затем мы добавляем текст HTML в ячейку таблицы, содержащую изображение.
 
 ```csharp
 string TitleString = "<font face=\"Arial\" size=6 color=\"#101090\"><b>Aspose.Pdf for .NET</b></font>";
@@ -111,7 +111,7 @@ Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 Aspose.Pdf.Page page = doc.Pages.Add();
 // Создать экземпляр табличного объекта
 Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
-//Добавьте таблицу в коллекцию абзацев нужного раздела
+// Добавьте таблицу в коллекцию абзацев нужного раздела
 page.Paragraphs.Add(table1);
 // Задайте ширину столбцов таблицы
 table1.ColumnWidths = "120 270";
@@ -136,7 +136,7 @@ logo.FixWidth = 110;
 row1.Cells.Add();
 // Добавьте изображение в коллекцию абзацев ячейки таблицы
 row1.Cells[0].Paragraphs.Add(logo);
-// Создайте строковые переменные с текстом, содержащим html-теги
+//Создайте строковые переменные с текстом, содержащим html-теги
 string TitleString = "<font face=\"Arial\" size=6 color=\"#101090\"><b> Aspose.Pdf for .NET</b></font>";
 string BodyString1 = "<font face=\"Arial\" size=2><br/>Aspose.Pdf for .NET is a non-graphical PDF� document reporting component that enables .NET applications to <b> create PDF documents from scratch </b> without utilizing Adobe Acrobat�. Aspose.Pdf for .NET is very affordably priced and offers a wealth of strong features including: compression, tables, graphs, images, hyperlinks, security and custom fonts. </font>";
 // Создайте текстовый объект, который будет добавлен справа от изображения

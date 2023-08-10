@@ -1,13 +1,12 @@
 ---
-title: Bädda in teckensnitt medan du skapar dokument
-linktitle: Bädda in teckensnitt medan du skapar dokument
+title: Bädda in teckensnitt medan du skapar PDF-dokument
+linktitle: Bädda in teckensnitt medan du skapar PDF-dokument
 second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du bäddar in ett teckensnitt samtidigt som du skapar ett PDF-dokument med Aspose.PDF för .NET. Säkerställ korrekt visning på olika enheter.
 type: docs
 weight: 140
 url: /sv/net/programming-with-document/embedfontwhiledoccreation/
 ---
-
 den här handledningen kommer vi att diskutera hur man bäddar in ett teckensnitt samtidigt som man skapar ett PDF-dokument med Aspose.PDF för .NET. Aspose.PDF för .NET är ett kraftfullt bibliotek som låter utvecklare skapa, redigera och manipulera PDF-dokument programmatiskt. Det här biblioteket erbjuder ett brett utbud av funktioner för att arbeta med PDF-dokument, inklusive att lägga till text, bilder, tabeller och mycket mer. Att bädda in typsnitt när man skapar ett PDF-dokument är ett vanligt krav för utvecklare som vill säkerställa att PDF-dokumentet visas korrekt på olika enheter, oavsett om de nödvändiga typsnitten är installerade på dessa enheter eller inte.
 
 ## Steg 1: Skapa en ny C# Console Application
@@ -93,3 +92,24 @@ doc.Save(dataDir);
 ## Slutsats
 I den här handledningen har vi diskuterat hur man bäddar in ett teckensnitt samtidigt som man skapar ett PDF-dokument med Aspose.PDF för .NET. Aspose.PDF för .NET tillhandahåller ett enkelt och lättanvänt API för att arbeta med PDF-dokument, inklusive att lägga till och bädda in teckensnitt. Att bädda in teckensnitt när du skapar ett PDF-dokument är ett viktigt steg för att säkerställa att dokumentet visas korrekt på olika enheter, oavsett om de nödvändiga typsnitten är installerade på dessa enheter eller inte.
 
+### Vanliga frågor för inbäddning av teckensnitt när PDF-dokument skapas
+
+#### F: Varför är det viktigt att bädda in teckensnitt när man skapar ett PDF-dokument?
+
+S: Det är viktigt att bädda in teckensnitt när du skapar ett PDF-dokument för att säkerställa att dokumentet visas korrekt på olika enheter, även om de nödvändiga teckensnitten inte är installerade på dessa enheter. Detta hjälper till att behålla dokumentets avsedda utseende och förhindrar problem med teckensnittsersättning.
+
+#### F: Hur kan jag bädda in typsnitt när jag skapar ett PDF-dokument med Aspose.PDF för .NET?
+
+ S: Du kan bädda in teckensnitt samtidigt som du skapar ett PDF-dokument med Aspose.PDF för .NET genom att ange typsnittet och ställa in`IsEmbedded` egendom till`true`. Detta säkerställer att teckensnittsdata är inbäddade i PDF-filen.
+
+#### F: Kan jag ange ett anpassat teckensnitt när jag bäddar in det i ett PDF-dokument?
+
+S: Ja, du kan ange ett anpassat teckensnitt medan du bäddar in det i ett PDF-dokument med Aspose.PDF för .NET. Detta gör att du kan använda specifika typsnitt som passar dina designkrav.
+
+#### F: Är Aspose.PDF för .NET kompatibelt med olika teckensnittsformat?
+
+S: Ja, Aspose.PDF för .NET är kompatibel med olika teckensnittsformat, inklusive TrueType, OpenType och Type 1-teckensnitt. Det kan bädda in teckensnitt i ett PDF-dokument oavsett format.
+
+#### F: Kan jag anpassa teckensnittsinbäddningsprocessen?
+
+ S: Ja, du kan anpassa teckensnittsinbäddningsprocessen med Aspose.PDF för .NET. Du kan ange typsnitt och ställa in egenskaper som t.ex`IsEmbedded` för att styra hur typsnittet bäddas in i PDF-dokumentet.

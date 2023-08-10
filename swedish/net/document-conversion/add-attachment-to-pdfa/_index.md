@@ -7,7 +7,6 @@ type: docs
 weight: 10
 url: /sv/net/document-conversion/add-attachment-to-pdfa/
 ---
-
 I den här handledningen guidar vi dig steg för steg om hur du lägger till en bilaga till en PDF/A-fil med Aspose.PDF för .NET. Vi kommer att förklara varje steg med hjälp av C#-kodexempel och tillhandahålla steg-för-steg-instruktioner som hjälper dig att följa med enkelt.
 
 ## Introduktion
@@ -34,7 +33,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Aspose.Pdf.Document doc = new Document(dataDir + "input.pdf");
 ```
 
- I koden ovan, ersätt`"YOUR DOCUMENTS DIRECTORY"` med den faktiska sökvägen till katalogen där ditt inmatade PDF-dokument finns. Denna kod initierar en ny instans av`Document` klass och laddar den befintliga PDF-filen.
+ I koden ovan, ersätt`"YOUR DOCUMENTS DIRECTORY"`med den faktiska sökvägen till katalogen där ditt inmatade PDF-dokument finns. Denna kod initierar en ny instans av`Document` klass och laddar den befintliga PDF-filen.
 
 ## Steg 2: Skapa filspecifikationen för bilagan
 
@@ -72,7 +71,7 @@ För att bilagan ska inkluderas i den resulterande filen måste vi konvertera ti
 doc.Convert(dataDir + "log.txt", Aspose.Pdf.PdfFormat.PDF_A_3A, ConvertErrorAction.Delete);
 ```
 
- I koden ovan använder vi`Convert`metod för att konvertera dokumentet med hjälp av`"log.txt"` loggfil. Vi anger utdataformatet med hjälp av`PdfFormat.PDF_A_3A` enum och ange åtgärden som ska utföras vid konverteringsfel med`ConvertErrorAction.Delete`.
+ I koden ovan använder vi`Convert` metod för att konvertera dokumentet med hjälp av`"log.txt"` loggfil. Vi anger utdataformatet med hjälp av`PdfFormat.PDF_A_3A` enum och ange åtgärden som ska utföras vid konverteringsfel med`ConvertErrorAction.Delete`.
 
 ## Steg 5: Spara den resulterande filen
 
@@ -95,7 +94,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document doc = new Document(dataDir + "input.pdf");
 // Konfigurera ny fil som ska läggas till som bilaga
 FileSpecification fileSpecification = new FileSpecification(dataDir + "aspose-logo.jpg", "Large Image file");
-// Lägg till bilaga till dokumentets bilagasamling
+//Lägg till bilaga till dokumentets bilagasamling
 doc.EmbeddedFiles.Add(fileSpecification);
 // Utför konvertering till PDF/A_3a så att bilagan ingår i resultnat-filen
 doc.Convert(dataDir + "log.txt", Aspose.Pdf.PdfFormat.PDF_A_3A, ConvertErrorAction.Delete);
@@ -107,5 +106,22 @@ Console.WriteLine("\nAttachment added successfully to PDF/A file.\nFile saved at
 
 ## Slutsats
 
-den här handledningen lärde du dig hur du lägger till en bilaga till en PDF/A-fil med Aspose.PDF för .NET. Vi har täckt varje steg i processen, från att ladda det befintliga dokumentet till att konvertera och spara den resulterande filen. Med hjälp av de medföljande kodexemplen kan du enkelt integrera denna funktionalitet i dina egna projekt. Experimentera med Aspose.PDF för .NET och upptäck möjligheterna det erbjuder för avancerad manipulering av PDF-filer.
+I den här handledningen lärde du dig hur du lägger till en bilaga till en PDF/A-fil med Aspose.PDF för .NET. Vi har täckt varje steg i processen, från att ladda det befintliga dokumentet till att konvertera och spara den resulterande filen. Med hjälp av de medföljande kodexemplen kan du enkelt integrera denna funktionalitet i dina egna projekt. Experimentera med Aspose.PDF för .NET och upptäck möjligheterna det erbjuder för avancerad manipulering av PDF-filer.
 
+### FAQ's
+
+#### F: Vad är Aspose.PDF för .NET?
+
+S: Aspose.PDF för .NET är ett kraftfullt PDF-manipulerings- och bearbetningsbibliotek för .NET-applikationer. Det låter utvecklare skapa, redigera, konvertera och manipulera PDF-filer programmatiskt.
+
+#### F: Vad är syftet med att lägga till bilagor till PDF-filer?
+
+S: Genom att lägga till bilagor till PDF-filer kan du inkludera ytterligare filer, såsom bilder, dokument eller media, i PDF-dokumentet. Detta kan vara användbart för att tillhandahålla kompletterande information eller relaterade resurser.
+
+#### F: Kan jag lägga till flera bilagor till ett PDF-dokument med Aspose.PDF för .NET?
+
+ S: Ja, du kan lägga till flera bilagor till ett PDF-dokument med Aspose.PDF för .NET. Skapa helt enkelt flera`FileSpecification` objekt, som var och en representerar olika bilagor, och lägg till dem i`EmbeddedFiles` insamling av dokumentet.
+
+#### F: Hur påverkar konverteringen till PDF/A_3a-format bilagan?
+
+S: Konverteringen till PDF/A_3a-format säkerställer att bilagan ingår i det resulterande PDF/A-dokumentet. PDF/A_3a är en standard för långtidsarkivering av elektroniska dokument och genom att konvertera till detta format blir bilagan en permanent del av PDF-dokumentet.

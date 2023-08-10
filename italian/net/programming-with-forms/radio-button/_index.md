@@ -7,7 +7,6 @@ type: docs
 weight: 220
 url: /it/net/programming-with-forms/radio-button/
 ---
-
 In questo tutorial, ti mostreremo come aggiungere un pulsante di opzione in un documento PDF utilizzando Aspose.PDF per .NET. Spiegheremo il codice sorgente C# passo dopo passo per guidarti attraverso questo processo.
 
 ## Passaggio 1: preparazione
@@ -87,7 +86,7 @@ try
 	// Aggiungi pulsante di opzione all'oggetto modulo dell'oggetto Documento
 	pdfDocument.Form.Add(radio);
 	dataDir = dataDir + "RadioButton_out.pdf";
-	// Salva il file PDF
+	//Salva il file PDF
 	pdfDocument.Save(dataDir);
 	Console.WriteLine("\nRadio button field added successfully.\nFile saved at " + dataDir);
 }
@@ -100,3 +99,26 @@ catch (Exception ex)
 ## Conclusione
 
 In questo tutorial, abbiamo imparato come aggiungere un pulsante di opzione in un documento PDF utilizzando Aspose.PDF per .NET. Seguendo questi passaggi, puoi facilmente creare un pulsante di opzione e posizionarlo su una pagina specifica nel tuo documento PDF.
+
+
+### FAQ
+
+#### D: Posso personalizzare l'aspetto del pulsante di opzione, ad esempio le dimensioni e il colore?
+
+ R: Sì, puoi personalizzare l'aspetto del pulsante di opzione utilizzando il`Rectangle` le coordinate dell'oggetto per definirne le dimensioni e la posizione. Aspose.PDF per .NET ti consente di regolare l'aspetto del pulsante di opzione in base alle tue esigenze.
+
+#### D: Posso aggiungere più pulsanti di opzione con gruppi diversi sulla stessa pagina?
+
+R: Sì, puoi aggiungere più pulsanti di opzione con gruppi diversi sulla stessa pagina. Ciascun gruppo di pulsanti di opzione può avere un nome univoco ed è possibile selezionare solo un'opzione alla volta all'interno di ciascun gruppo.
+
+#### D: Come posso aggiungere un'etichetta o una descrizione di testo alle opzioni del pulsante di opzione?
+
+ R: Per aggiungere un'etichetta o una descrizione di testo alle opzioni del pulsante di opzione, puoi utilizzare il`TextStamp`class da Aspose.PDF per .NET per sovrapporre il testo sul documento PDF a coordinate specifiche.
+
+#### D: Aspose.PDF per .NET è compatibile con tutte le versioni di .NET Framework?
+
+R: Sì, Aspose.PDF per .NET è compatibile con tutte le versioni di .NET Framework, inclusi .NET Core e .NET Standard.
+
+#### D: Posso controllare a livello di codice la selezione di un'opzione del pulsante di opzione nel documento PDF?
+
+ R: Sì, puoi controllare a livello di programmazione la selezione di un'opzione del pulsante di opzione utilizzando il`IsSelected` proprietà del`RadioButtonOption` classe. Questa proprietà consente di impostare un'opzione specifica come selezionata.

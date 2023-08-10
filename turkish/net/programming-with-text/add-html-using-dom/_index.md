@@ -45,7 +45,7 @@ Page page = doc.Pages.Add();
 ```
 
 ## 6. Adım: HTML içeriğiyle bir HtmlFragment oluşturun
- Bir örneğini oluşturun`HtmlFragment` nesne ve istenen HTML içeriğini sağlayın. Sağlanan kodda, HTML içeriği değişkene atanır.`titel`. HTML içeriğini gerektiği gibi değiştirebilirsiniz.
+Bir örneğini oluşturun`HtmlFragment` nesne ve istenen HTML içeriğini sağlayın. Sağlanan kodda, HTML içeriği değişkene atanır.`titel`. HTML içeriğini gerektiği gibi değiştirebilirsiniz.
 
 ```csharp
 HtmlFragment titel = new HtmlFragment("<fontsize=10><b><i>Table</i></b></fontsize>");

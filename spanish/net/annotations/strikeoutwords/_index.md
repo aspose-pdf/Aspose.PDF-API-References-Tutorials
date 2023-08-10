@@ -101,3 +101,25 @@ for (int j = 1; j <= textFragmentCollection.Count; j++)
 dataDir = dataDir + "StrikeOutWords_out.pdf";
 document.Save(dataDir);
 ```
+
+## Conclusión
+
+En este tutorial, aprendimos a usar Aspose.PDF para .NET para tachar palabras específicas en un documento PDF. Al seguir la guía paso a paso y usar el código fuente de C# provisto, puede cargar fácilmente un documento PDF, buscar fragmentos de texto específicos y crear anotaciones tachadas para marcar y tachar visualmente esas palabras. Aspose.PDF para .NET ofrece una forma sencilla y eficaz de manipular documentos PDF mediante programación, lo que la convierte en una herramienta valiosa para los desarrolladores que trabajan con archivos PDF en aplicaciones .NET.
+
+### Preguntas frecuentes
+
+#### P: ¿Qué es Aspose.PDF para .NET?
+
+R: Aspose.PDF para .NET es una potente biblioteca que permite a los desarrolladores crear, editar y manipular documentos PDF mediante programación en aplicaciones .NET. Proporciona una amplia gama de funciones para trabajar con archivos PDF, incluida la extracción de texto, el manejo de anotaciones, el llenado de formularios y mucho más.
+
+#### P: ¿Puedo usar Aspose.PDF para .NET para tachar palabras específicas en un documento PDF?
+
+R: Sí, Aspose.PDF para .NET proporciona funcionalidad para buscar fragmentos de texto específicos en un documento PDF y luego crear anotaciones tachadas para marcar y tachar visualmente esas palabras.
+
+#### P: ¿Cómo especifico el texto que quiero tachar en el documento PDF?
+
+ R: Para especificar el texto que desea tachar, puede usar el`TextFragmentAbsorber` clase proporcionada por Aspose.PDF para .NET. Le permite buscar un fragmento de texto específico en el documento PDF según los criterios que desee.
+
+#### P: ¿Puedo personalizar la apariencia de la anotación tachada?
+
+R: Sí, puede personalizar varias propiedades de la anotación tachada, como la opacidad, el estilo del borde y el color. Esto le permite adaptar la apariencia de la anotación tachada a sus requisitos específicos.

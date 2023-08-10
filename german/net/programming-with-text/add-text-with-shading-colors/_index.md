@@ -52,7 +52,7 @@ TextFragment textFragment = absorb.TextFragments[1];
 ```
 
 ## Schritt 6: Schattierungsfarbe für den Text festlegen
- Erstelle eine neue`Color` Objekt mit einem Musterfarbraum und geben Sie die Verlaufsschattierungsfarben an. Weisen Sie dem diese Farbe zu`ForegroundColor` Eigentum der`TextState` des`TextFragment` Objekt.
+ Erstelle eine neue`Color`Objekt mit einem Musterfarbraum und geben Sie die Verlaufsschattierungsfarben an. Weisen Sie dem diese Farbe zu`ForegroundColor` Eigentum der`TextState` des`TextFragment` Objekt.
 
 ```csharp
 textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()

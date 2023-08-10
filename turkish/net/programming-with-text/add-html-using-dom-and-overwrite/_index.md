@@ -50,14 +50,14 @@ Page page = doc.Pages.Add();
 ```
 
 ## 6. Adım: HTML içeriğiyle bir HtmlFragment oluşturun
- Bir örneğini oluşturun`HtmlFragment` nesne ve istenen HTML içeriğini sağlayın. Sağlanan kodda, HTML içeriği değişkene atanır.`title`. HTML içeriğini gerektiği gibi değiştirebilirsiniz.
+Bir örneğini oluşturun`HtmlFragment` nesne ve istenen HTML içeriğini sağlayın. Sağlanan kodda, HTML içeriği değişkene atanır.`title`. HTML içeriğini gerektiği gibi değiştirebilirsiniz.
 
 ```csharp
 HtmlFragment title = new HtmlFragment("<p style='font-family: Verdana'><b><i>Table contains text</i></b></p>");
 ```
 
 ## 7. Adım: HTML içeriği için stillerin üzerine yazın
- HTML içeriğinin stillerinin üzerine yazmak için`TextState` özellikleri`HtmlFragment`nesne. Verilen kodda yazı tipi ailesi "Arial" olarak değiştirilmiş ve yazı tipi boyutu 20 olarak ayarlanmıştır.
+ HTML içeriğinin stillerinin üzerine yazmak için`TextState` özellikleri`HtmlFragment` nesne. Verilen kodda yazı tipi ailesi "Arial" olarak değiştirilmiş ve yazı tipi boyutu 20 olarak ayarlanmıştır.
 
 ```csharp
 title. TextState = new TextState("Arial");

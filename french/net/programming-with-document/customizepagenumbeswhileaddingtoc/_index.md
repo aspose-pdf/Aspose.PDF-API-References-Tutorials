@@ -7,7 +7,6 @@ type: docs
 weight: 100
 url: /fr/net/programming-with-document/customizepagenumbeswhileaddingtoc/
 ---
-
 Dans ce didacticiel, nous explorerons comment personnaliser les numéros de page tout en ajoutant une table des matières (TOC) à l'aide d'Aspose.PDF pour .NET. Nous vous fournirons des conseils étape par étape, ainsi qu'un exemple de code, pour vous aider à y parvenir.
 
 ## Étape 1 : Charger un fichier PDF existant
@@ -31,7 +30,7 @@ Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
 
 ## Étape 3 : Création d'un objet TOC
 
- Pour créer un objet TOC, nous devons d'abord créer un`TocInfo`objet et définissez ses propriétés. Dans ce didacticiel, nous allons définir le titre de la table des matières sur "Table des matières" et le préfixe du numéro de page sur "P".
+ Pour créer un objet TOC, nous devons d'abord créer un`TocInfo` objet et définissez ses propriétés. Dans ce didacticiel, nous allons définir le titre de la table des matières sur "Table des matières" et le préfixe du numéro de page sur "P".
 
 ```csharp
 TocInfo tocInfo = new TocInfo();
@@ -61,14 +60,14 @@ for (int i = 1; i < doc.Pages.Count; i++)
     heading2.Top = doc.Pages[i + 1].Rect.Height;
     // Coordonnée de destination
     segment2.Text = "Page " + i.ToString();
-    //Ajouter un titre à la page contenant la table des matières
+    // Ajouter un titre à la page contenant la table des matières
     tocPage.Paragraphs.Add(heading2);
 }
 ```
 
 ## Étape 5 : Enregistrer le document mis à jour
 
- Enfin, nous devons enregistrer le document mis à jour dans un nouveau fichier. Nous pouvons y parvenir en utilisant le`Save()` méthode de la`Document` objet.
+Enfin, nous devons enregistrer le document mis à jour dans un nouveau fichier. Nous pouvons y parvenir en utilisant le`Save()` méthode de la`Document` objet.
 
 ```csharp
 doc.Save(outFile);
@@ -106,7 +105,7 @@ for (int i = 1; i<doc.Pages.Count; i++)
 	heading2.Top = doc.Pages[i + 1].Rect.Height;
 	// Coordonnée de destination
 	segment2.Text = "Page " + i.ToString();
-	//Ajouter un titre à la page contenant la table des matières
+	// Ajouter un titre à la page contenant la table des matières
 	tocPage.Paragraphs.Add(heading2);
 }
 
@@ -118,3 +117,24 @@ doc.Save(outFile);
 
 Dans ce didacticiel, nous avons fourni des instructions étape par étape sur la façon de personnaliser les numéros de page tout en ajoutant une table des matières à l'aide d'Aspose.PDF pour .NET. Nous avons également fourni un exemple de code que vous pouvez utiliser comme référence lors de l'implémentation de cette fonctionnalité dans votre
 
+### FAQ
+
+#### Q : Qu'est-ce qu'une table des matières (TOC) dans un document PDF ?
+
+R : Une table des matières (TOC) dans un document PDF est une aide à la navigation qui fournit une liste organisée des sections ou chapitres du document avec leurs numéros de page correspondants. Il permet aux lecteurs de naviguer rapidement vers des sections spécifiques du document.
+
+#### Q :Pourquoi voudrais-je personnaliser les numéros de page dans une table des matières ?
+
+: La personnalisation des numéros de page dans une table des matières peut être utile lorsque vous souhaitez utiliser un format de numérotation de page spécifique ou inclure des informations supplémentaires avec les numéros de page. Il vous permet de créer une table des matières plus personnalisée et informative.
+
+#### Q : Puis-je inclure des hyperliens dans la table des matières pour créer des liens vers des sections ou des pages spécifiques du document PDF ?
+
+R : Oui, Aspose.PDF pour .NET vous permet de créer des liens hypertexte dans la table des matières qui renvoient à des sections ou pages spécifiques du document PDF. Cela améliore l'interactivité et la navigation du document PDF.
+
+#### Q : Aspose.PDF pour .NET est-il compatible avec les normes PDF/A ?
+
+R : Oui, Aspose.PDF pour .NET prend en charge les normes PDF/A, y compris PDF/A-1, PDF/A-2 et PDF/A-3. Il vous permet de créer des documents PDF conformes aux exigences d'archivage et de conservation à long terme.
+
+#### Q : Puis-je ajouter davantage de formatage aux entrées de la table des matières, telles que les styles de police ou les couleurs ?
+
+R : Oui, vous pouvez ajouter une mise en forme supplémentaire aux entrées de la table des matières, telles que les styles de police, les couleurs et les tailles de police, à l'aide d'Aspose.PDF pour .NET. Cela vous permet de personnaliser l'apparence de la table des matières selon vos besoins.

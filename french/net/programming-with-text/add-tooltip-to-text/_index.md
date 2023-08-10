@@ -108,7 +108,7 @@ TextFragmentCollection textFragments = absorber.TextFragments;
 // Boucle à travers les fragments
 foreach (TextFragment fragment in textFragments)
 {
-	//Créer un bouton invisible sur la position du fragment de texte
+	// Créer un bouton invisible sur la position du fragment de texte
 	ButtonField field = new ButtonField(fragment.Page, fragment.Rectangle);
 	// La valeur AlternateName sera affichée sous forme d'info-bulle par une application de visualisation
 	field.AlternateName = "Tooltip for text.";
@@ -138,4 +138,4 @@ document.Save(outputFile);
 ```
 
 ## Conclusion
-Vous avez ajouté avec succès des info-bulles au texte d'un document PDF à l'aide d'Aspose.PDF pour .NET. Le fichier PDF résultant se trouve maintenant dans le chemin du fichier de sortie spécifié.
+Vous avez ajouté avec succès des info-bulles au texte d'un document PDF à l'aide d'Aspose.PDF pour .NET. Le fichier PDF résultant peut maintenant être trouvé dans le chemin du fichier de sortie spécifié.

@@ -7,7 +7,6 @@ type: docs
 weight: 150
 url: /tr/net/document-conversion/pdf-to-pdfa3b/
 ---
-
 Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF dosyasını PDF/A-3b formatına dönüştürme sürecinde size yol göstereceğiz. PDF/A-3b, dosyaları ve verileri bir PDF belgesine gömmek için bir ISO standardıdır. Aşağıdaki adımları izleyerek PDF dosyalarını PDF/A-3b formatına dönüştürebileceksiniz.
 
 ## Önkoşullar
@@ -71,3 +70,21 @@ Console.WriteLine("\nPDF file converted to PDF/A-3B format.\nFile saved at " + d
 
 ## Çözüm
 Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF dosyasını PDF/A-3b formatına dönüştürme sürecini adım adım ele aldık. Yukarıda özetlenen talimatları izleyerek, artık PDF dosyalarını PDF/A-3b formatına dönüştürebilmelisiniz. Bu özellik, PDF/A-3b standardına uygun bir PDF belgesine ek dosya ve veri gömmek istediğinizde kullanışlıdır.
+
+### SSS
+
+#### S: PDF/A-3b nedir ve diğer PDF/A standartlarından farkı nedir?
+
+Y: PDF/A-3b, dosyaların ve verilerin bir PDF belgesine gömülmesine izin vererek belgeyi bağımsız hale getiren ve uzun süreli koruma sağlayan bir ISO standardıdır. PDF/A-1 ve PDF/A-2 gibi diğer PDF/A standartlarının aksine, PDF/A-3b, PDF belgesine ek dosyaların ve verilerin dahil edilmesini sağlar. Bu özellik, onu karmaşık ve etkileşimli belgelerin arşivlenmesi ve değiş tokuşu için uygun hale getirir.
+
+#### S: Bir PDF/A-3b belgesine birden fazla dosya ve veri ekleyebilir miyim?
+
+C: Evet, PDF/A-3b'nin ana avantajlarından biri, PDF belgesine birden fazla dosya ve veri dahil edebilmesidir. Ana PDF içeriğiyle birlikte XML, elektronik tablolar, resimler veya diğer PDF dosyaları gibi çeşitli dosya türlerini gömebilirsiniz. Sonuç olarak, PDF/A-3b belgesi gerekli tüm öğeleri içeren bağımsız bir paket haline gelir.
+
+#### S: PDF'den PDF/A-3b'ye dönüştürme işlemi sırasında hatalar olursa ne olur?
+
+ C: Aspose.PDF for .NET kullanarak bir PDF'yi PDF/A-3b formatına dönüştürürken, hataların nasıl ele alınacağı konusunda kontrole sahipsiniz. bu`Convert` yöntemin`ConvertErrorAction` parametresi, hatalarla karşılaşıldığında yapılacak eylemi belirler. Sağlanan kod örneğinde,`ConvertErrorAction.Delete` parametresi kullanılır, yani dönüşüm sırasında karşılaşılan herhangi bir hata, hatalı sayfaların silinmesine neden olur.
+
+#### S: PDF/A-3b, belgelerin uzun süreli saklanması için uygun mudur?
+
+C: Evet, PDF/A-3b özellikle elektronik belgelerin uzun süreli korunması için tasarlanmıştır. Ek dosyaları ve verileri gömerek, gerekli tüm bileşenlerin PDF belgesinin kendisine dahil edilmesini sağlayarak bilgi kaybı veya zaman içinde dışa bağımlılık riskini azaltır. Bu özellik, belgeleri uzun vadeli erişilebilirlik ve tutarlılığı garanti edecek şekilde arşivlemeye uygun hale getirir.

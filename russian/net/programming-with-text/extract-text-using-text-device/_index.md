@@ -84,7 +84,7 @@ foreach (Page pdfPage in pdfDocument.Pages)
 	{
 		// Создать текстовое устройство
 		TextDevice textDevice = new TextDevice();
-		// Установить параметры извлечения текста — установить режим извлечения текста (Raw или Pure).
+		//Установить параметры извлечения текста — установить режим извлечения текста (Raw или Pure).
 		TextExtractionOptions textExtOptions = new
 		TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure);
 		textDevice.ExtractionOptions = textExtOptions;

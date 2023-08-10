@@ -50,14 +50,14 @@ Page page = doc.Pages.Add();
 ```
 
 ## Étape 6 : Créer un HtmlFragment avec le contenu HTML
- Instancier un`HtmlFragment` objet et fournissez le contenu HTML souhaité. Dans le code fourni, le contenu HTML est affecté à la variable`title`. Vous pouvez modifier le contenu HTML selon vos besoins.
+Instancier un`HtmlFragment` objet et fournissez le contenu HTML souhaité. Dans le code fourni, le contenu HTML est affecté à la variable`title`. Vous pouvez modifier le contenu HTML selon vos besoins.
 
 ```csharp
 HtmlFragment title = new HtmlFragment("<p style='font-family: Verdana'><b><i>Table contains text</i></b></p>");
 ```
 
 ## Étape 7 : remplacer les styles du contenu HTML
- Pour écraser les styles du contenu HTML, vous pouvez modifier le`TextState` propriétés de la`HtmlFragment`objet. Dans le code fourni, la famille de polices est remplacée par "Arial" et la taille de police est définie sur 20.
+ Pour écraser les styles du contenu HTML, vous pouvez modifier le`TextState` propriétés de la`HtmlFragment` objet. Dans le code fourni, la famille de polices est remplacée par "Arial" et la taille de police est définie sur 20.
 
 ```csharp
 title. TextState = new TextState("Arial");

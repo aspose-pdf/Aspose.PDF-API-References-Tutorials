@@ -52,7 +52,7 @@ TextFragment textFragment = absorb.TextFragments[1];
 ```
 
 ## 6. Adım: Metin için gölgelendirme rengini ayarlayın
- Yeni bir tane oluştur`Color` desen renk uzayına sahip nesneyi seçin ve degrade gölgelendirme renklerini belirtin. Bu rengi şuraya atayın:`ForegroundColor` mülkiyeti`TextState` arasında`TextFragment` nesne.
+ Yeni bir tane oluştur`Color`desen renk uzayına sahip nesneyi seçin ve degrade gölgeleme renklerini belirtin. Bu rengi şuraya atayın:`ForegroundColor` mülkiyeti`TextState` arasında`TextFragment` nesne.
 
 ```csharp
 textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()

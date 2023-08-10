@@ -85,4 +85,42 @@ document.Save(dataDir + "TaggedPDFContent.pdf");
 ```
 ## Conclusión
 
-En este tutorial, aprendimos a trabajar con contenido marcado en un documento PDF utilizando Aspose.PDF para .NET. Ahora puede usar Aspose.PDF para crear documentos PDF con contenido etiquetado adecuado.
+En este tutorial, aprendimos a trabajar con contenido marcado en un documento PDF usando Aspose.PDF para .NET. Ahora puede usar Aspose.PDF para crear documentos PDF con contenido etiquetado apropiado.
+
+### Preguntas frecuentes
+
+#### P: ¿Cuál es el enfoque principal de este tutorial sobre cómo trabajar con contenido PDF etiquetado usando Aspose.PDF para .NET?
+
+R: Este tutorial se centra principalmente en guiarlo a través del proceso de trabajo con contenido marcado dentro de un documento PDF utilizando Aspose.PDF para .NET. El tutorial proporciona instrucciones paso a paso y ejemplos de código fuente de C# para ayudarlo a comprender cómo usar etiquetas para definir y manipular el contenido de un documento PDF.
+
+#### P: ¿Cuáles son los requisitos previos para seguir este tutorial sobre la manipulación de contenido PDF etiquetado con Aspose.PDF para .NET?
+
+R: Antes de comenzar, asegúrese de haber configurado su entorno de desarrollo para usar Aspose.PDF para .NET. Esto implica instalar la biblioteca Aspose.PDF y configurar su proyecto para hacer referencia a él.
+
+#### P: ¿Cómo puedo crear un nuevo documento PDF y trabajar con su contenido etiquetado usando Aspose.PDF para .NET?
+
+R: El tutorial proporciona ejemplos de código fuente de C# que demuestran cómo crear un nuevo documento PDF y acceder a su contenido etiquetado para una mayor manipulación.
+
+#### P: ¿Cuál es la importancia de trabajar con contenido etiquetado en un documento PDF?
+
+R: Trabajar con contenido etiquetado en un documento PDF implica el uso de etiquetas estructuradas para definir el significado semántico de los elementos del documento. Esto es especialmente importante para la accesibilidad y la extracción de contenido, ya que permite que los lectores de pantalla y otras tecnologías interpreten correctamente el contenido del documento.
+
+#### P: ¿Cómo puedo establecer el título y el idioma de un documento PDF etiquetado con Aspose.PDF para .NET?
+
+R: El tutorial incluye ejemplos de código fuente de C# que ilustran cómo configurar el título y el idioma de un documento PDF etiquetado mediante Aspose.PDF para .NET.
+
+#### P: ¿Cuál es el proceso de guardar un documento PDF etiquetado después de trabajar con su contenido etiquetado?
+
+ R: Después de realizar modificaciones en el contenido etiquetado de un documento PDF, puede usar los ejemplos de código fuente de C# provistos para guardar el documento modificado usando el`Save()` método.
+
+#### P: ¿Cómo ayuda el código fuente de muestra proporcionado en el tutorial para trabajar con contenido PDF etiquetado?
+
+R: El código fuente de muestra sirve como referencia práctica para implementar la manipulación de contenido etiquetado mediante Aspose.PDF para .NET. Puede utilizar este código como punto de partida y modificarlo según sus requisitos específicos.
+
+#### P: ¿Puedo aplicar técnicas similares a otros tipos de elementos en un documento PDF, no solo a la configuración de texto e idioma?
+
+R: Sí, las técnicas demostradas en este tutorial se pueden adaptar para trabajar con varios tipos de elementos dentro de un documento PDF. Puede usar principios similares para manipular texto, imágenes, tablas y más, mientras utiliza etiquetas para definir sus roles y atributos.
+
+#### P: ¿Cómo puedo usar Aspose.PDF para .NET para mejorar y personalizar aún más los documentos PDF más allá del contenido etiquetado?
+
+R: Aspose.PDF para .NET ofrece una amplia gama de funciones para la manipulación de documentos PDF, incluida la adición de texto, imágenes, tablas, hipervínculos, anotaciones, campos de formulario, marcas de agua, firmas digitales y más. Puede explorar la documentación y los recursos oficiales para obtener una comprensión integral de las capacidades de la biblioteca.

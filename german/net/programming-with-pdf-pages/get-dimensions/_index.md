@@ -1,6 +1,6 @@
 ---
-title: Dimensionen abrufen
-linktitle: Dimensionen abrufen
+title: Holen Sie sich PDF-Seitenabmessungen
+linktitle: Holen Sie sich PDF-Seitenabmessungen
 second_title: Aspose.PDF für .NET API-Referenz
 description: In diesem Tutorial erklären wir, wie Sie mit Aspose.PDF für .NET PDF-Seitenabmessungen erhalten und Manipulationen durchführen. Es werden detaillierte Schritte bereitgestellt, die Sie durch den Prozess führen.
 type: docs
@@ -30,7 +30,7 @@ Document pdfDocument = new Document(dataDir + "UpdateDimensions.pdf");
 ```
 
 ## Schritt 3: Fügen Sie eine leere Seite hinzu (falls erforderlich)
-Wenn das PDF-Dokument bereits Seiten enthält, können Sie über den Index zu einer vorhandenen Seite springen`1` (Die erste Seite hat einen Index von 1). Andernfalls können Sie dem Dokument eine neue Seite hinzufügen.
+ Wenn das PDF-Dokument bereits Seiten enthält, können Sie über den Index zu einer vorhandenen Seite springen`1` (Die erste Seite hat einen Index von 1). Andernfalls können Sie dem Dokument eine neue Seite hinzufügen.
 
 ```csharp
 Page page = pdfDocument.Pages.Count > 0? pdfDocument.Pages[1] : pdfDocument.Pages.Add();
@@ -44,7 +44,7 @@ Console.WriteLine(page.GetPageRect(true).Width.ToString() + ":" + page.GetPageRe
 ```
 
 ## Schritt 5: Drehen Sie die Seite
- Wenn Sie die Seite drehen möchten, können Sie die verwenden`Rotate` Eigentum der`Page` Objekt. In diesem Beispiel wird die Seite um 90 Grad gedreht.
+ Wenn Sie die Seite drehen möchten, können Sie die verwenden`Rotate` Eigentum der`Page`Objekt. In diesem Beispiel wird die Seite um 90 Grad gedreht.
 
 ```csharp
 page. Rotate = Rotate. on90;
@@ -80,3 +80,25 @@ Console.WriteLine(page.GetPageRect(true).Width.ToString() + ":" + page.GetPageRe
 In diesem Tutorial haben wir gelernt, wie man mit Aspose.PDF für .NET die Abmessungen einer Seite in einer PDF-Datei ermittelt. Wenn Sie die bereitgestellten Schritte befolgen, können Sie ganz einfach Seitenabmessungen extrahieren und andere PDF-Manipulationsvorgänge durchführen. Aspose.PDF für .NET bietet große Flexibilität für die Arbeit mit PDF-Dateien und ermöglicht Ihnen die Entwicklung leistungsstarker und maßgeschneiderter Lösungen.
 
 Erkunden Sie gerne die Dokumentation von Aspose.PDF weiter, um alle Funktionen dieser Bibliothek zu entdecken.
+
+### FAQs zum Abrufen von PDF-Seitenabmessungen
+
+#### F: Wie kann ich die Abmessungen einer bestimmten Seite in einer PDF-Datei ermitteln?
+
+A: Um die Abmessungen einer bestimmten Seite in einer PDF-Datei zu erhalten, können Sie die verwenden`GetPageRect()` Methode der`Page` Objekt in Aspose.PDF für .NET. Diese Methode gibt a zurück`Rectangle` Objekt, das die Abmessungen (Breite und Höhe) der Seite enthält.
+
+####  F: Was bedeutet das?`GetPageRect(true)` method do in the provided C# source code?
+
+ A: Die`GetPageRect(true)` Die Methode im bereitgestellten C#-Quellcode gibt die Abmessungen der Seite nach Anwendung etwaiger Drehungen zurück. Wenn die Seite gedreht wird, gibt die Methode die Abmessungen der gedrehten Seite zurück, die von den ursprünglichen Abmessungen abweichen können.
+
+#### F: Kann ich mit Aspose.PDF für .NET die Abmessungen aller Seiten im PDF-Dokument abrufen?
+
+ A: Ja, Sie können die Abmessungen aller Seiten im PDF-Dokument ermitteln, indem Sie die durchlaufen`Pages` Sammlung der`Document` Objekt und Verwendung der`GetPageRect(true)` Methode für jede Seite.
+
+#### F: Wie kann ich die Ausrichtung einer Seite (Hoch- oder Querformat) anhand ihrer Abmessungen bestimmen?
+
+A: Um die Ausrichtung einer Seite anhand ihrer Abmessungen zu bestimmen, können Sie die Breite und Höhe der Seite vergleichen. Wenn die Breite größer als die Höhe ist, befindet sich die Seite im Querformat. Wenn die Höhe größer als die Breite ist, befindet sich die Seite im Hochformat.
+
+#### F: Kann ich die Abmessungen einer Seite mit Aspose.PDF für .NET ändern?
+
+ A: Ja, Sie können die Abmessungen einer Seite in Aspose.PDF für .NET ändern. Nach Erhalt der`Rectangle` Wenn Sie ein Objekt haben, das die Seitenabmessungen darstellt, können Sie die Breite und Höhe entsprechend Ihren Anforderungen anpassen und die Änderungen dann auf die Seite anwenden.

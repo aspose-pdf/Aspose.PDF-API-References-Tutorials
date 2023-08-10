@@ -7,7 +7,6 @@ type: docs
 weight: 220
 url: /tr/net/programming-with-forms/radio-button/
 ---
-
 Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF belgesine nasıl radyo düğmesi ekleyeceğinizi göstereceğiz. Bu süreçte size yol göstermesi için C# kaynak kodunu adım adım açıklayacağız.
 
 ## Adım 1: Hazırlık
@@ -87,7 +86,7 @@ try
 	// Belge nesnesinin nesnesini oluşturmak için radyo düğmesi ekle
 	pdfDocument.Form.Add(radio);
 	dataDir = dataDir + "RadioButton_out.pdf";
-	// PDF dosyasını kaydedin
+	//PDF dosyasını kaydedin
 	pdfDocument.Save(dataDir);
 	Console.WriteLine("\nRadio button field added successfully.\nFile saved at " + dataDir);
 }
@@ -100,3 +99,26 @@ catch (Exception ex)
 ## Çözüm
 
 Bu öğreticide, Aspose.PDF for .NET kullanarak bir PDF belgesine radyo düğmesi eklemeyi öğrendik. Bu adımları izleyerek kolayca bir radyo düğmesi oluşturabilir ve bunu PDF belgenizdeki belirli bir sayfaya yerleştirebilirsiniz.
+
+
+### SSS
+
+#### S: Radyo düğmesinin boyutunu ve rengini özelleştirebilir miyim?
+
+ C: Evet, radyo düğmesinin görünümünü aşağıdakileri kullanarak özelleştirebilirsiniz:`Rectangle` boyutunu ve konumunu tanımlamak için nesnenin koordinatları. Aspose.PDF for .NET, radyo düğmesinin görünümünü ihtiyaçlarınıza göre ayarlamanıza olanak tanır.
+
+#### S: Aynı sayfaya farklı gruplarla birden çok radyo düğmesi ekleyebilir miyim?
+
+C: Evet, aynı sayfada farklı gruplarla birden çok radyo düğmesi ekleyebilirsiniz. Her bir radyo düğmesi grubu benzersiz bir ada sahip olabilir ve aynı anda her grup içinde yalnızca bir seçenek seçilebilir.
+
+#### S: Radyo düğmesi seçeneklerine nasıl etiket veya metin açıklaması ekleyebilirim?
+
+ C: Radyo düğmesi seçeneklerine bir etiket veya metin açıklaması eklemek için`TextStamp`Aspose.PDF for .NET'ten, metni belirli koordinatlarda PDF belgesine bindirmek için sınıf.
+
+#### S: Aspose.PDF for .NET, .NET Framework'ün tüm sürümleriyle uyumlu mu?
+
+C: Evet, Aspose.PDF for .NET, .NET Core ve .NET Standard dahil olmak üzere tüm .NET Framework sürümleriyle uyumludur.
+
+#### S: PDF belgesindeki bir radyo düğmesi seçeneğinin seçimini programlı olarak kontrol edebilir miyim?
+
+ A: Evet, kullanarak bir radyo düğmesi seçeneğinin seçimini programlı olarak kontrol edebilirsiniz.`IsSelected` mülkiyeti`RadioButtonOption` sınıf. Bu özellik, belirli bir seçeneği seçili olarak ayarlamanıza izin verir.

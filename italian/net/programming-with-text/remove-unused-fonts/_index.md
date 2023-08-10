@@ -35,7 +35,7 @@ Document doc = new Document(dataDir + "ReplaceTextPage.pdf");
 
 ## Passaggio 3: identificare e rimuovere i caratteri inutilizzati
 
- Creiamo un`TextFragmentAbsorber` oggetto con il`TextEditOptions` parametro impostato su`TextEditOptions.FontReplace.RemoveUnusedFonts` . Questa opzione ci consente di identificare e rimuovere i caratteri inutilizzati nel documento PDF. Quindi iteriamo attraverso tutti i file`TextFragments` e impostare il carattere su un carattere desiderato.
+ Creiamo un`TextFragmentAbsorber` oggetto con il`TextEditOptions` parametro impostato su`TextEditOptions.FontReplace.RemoveUnusedFonts` Questa opzione ci consente di identificare e rimuovere i caratteri inutilizzati nel documento PDF. Quindi iteriamo attraverso tutti i file`TextFragments` e impostare il carattere su un carattere desiderato.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));

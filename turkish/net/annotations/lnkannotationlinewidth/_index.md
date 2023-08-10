@@ -33,7 +33,7 @@ lineInfo.Visibility = true;
 lineInfo.LineColor = System.Drawing.Color.Red;
 lineInfo.LineWidth = 2;
 ```
-## 5. Adım: Yeni bir tane oluşturun`Aspose.Pdf.Point` array that represents the gesture from the `LineInfo` object.
+##  5. Adım: Yeni bir tane oluşturun`Aspose.Pdf.Point` array that represents the gesture from the `LineInfo` object.
 ```csharp
 int length = lineInfo.VerticeCoordinate.Length / 2;
 Aspose.Pdf.Point[] gesture = new Aspose.Pdf.Point[length];
@@ -115,3 +115,29 @@ dataDir = dataDir + "lnkAnnotationLineWidth_out.pdf";
 // Çıktı dosyasını kaydet
 doc.Save(dataDir);
 ```
+
+## Çözüm
+
+Bu öğreticide, Aspose.PDF for .NET kullanarak bir PDF belgesindeki bağlantı notunun çizgi genişliğini nasıl ayarlayacağımızı öğrendik. Aspose.PDF for .NET, bağlantı ek açıklamaları oluşturma ve özelleştirme yeteneği de dahil olmak üzere, PDF belgeleriyle çalışmak için çok çeşitli araçlar ve özellikler sağlar. Geliştiriciler, adım adım kılavuzu izleyerek ve sağlanan C# kaynak kodunu kullanarak PDF belgelerine kolayca etkileşimli bağlantılar ekleyerek uygulamalarının kullanıcı deneyimini ve etkileşimini geliştirebilir. Aspose.PDF for .NET, .NET geliştiricilerinin PDF dosyalarıyla verimli ve etkili bir şekilde çalışmasını sağlayan çok yönlü bir kitaplıktır.
+
+### SSS
+
+#### S: PDF belgesindeki bağlantı ek açıklaması nedir?
+
+Y: Bir PDF belgesindeki bağlantı ek açıklaması, kullanıcıyı aynı belgede, harici bir web sitesinde veya farklı bir PDF belgesinde başka bir konuma yönlendiren köprüler veya eylemler oluşturmanıza olanak tanıyan etkileşimli bir öğedir.
+
+#### S: Aspose.PDF for .NET kullanarak bir bağlantı açıklamasının çizgi genişliğini nasıl ayarlayabilirim?
+
+C: Aspose.PDF for .NET kullanarak bir bağlantı notunun çizgi genişliğini ayarlamak için bir`InkAnnotation` nesne ve çizgi genişliği özelliğini belirtin.
+
+#### S: Aspose.PDF for .NET'te bir bağlantı notu için hangi özellikler özelleştirilebilir?
+
+C: Aspose.PDF for .NET'te bir bağlantı notunun konumu, boyutu, rengi, kenarlık özellikleri (genişlik, stil, kısa çizgi deseni ve efekti), konusu, başlığı ve görünürlüğü gibi çeşitli özelliklerini özelleştirebilirsiniz.
+
+#### S: Birden çok mürekkep hareketi içeren bir bağlantı notu oluşturabilir miyim?
+
+ C: Evet, birden çok mürekkep hareketi içeren bir bağlantı açıklaması oluşturabilirsiniz.`Point` diziler`InkAnnotation` nesne.
+
+#### S: PDF belgesinin belirli bir sayfasına nasıl bağlantı notu ekleyebilirim?
+
+ Y: PDF belgesinin belirli bir sayfasına bağlantı ek açıklaması eklemek için, belgeyi oluştururken sayfa numarasını belirtmeniz gerekir.`InkAnnotation` nesne. Örneğin,`new InkAnnotation(doc.Pages[1], ...)` bağlantı ek açıklamasını ilk sayfaya ekler.

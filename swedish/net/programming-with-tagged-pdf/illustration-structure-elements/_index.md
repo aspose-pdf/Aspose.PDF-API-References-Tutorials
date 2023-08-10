@@ -112,3 +112,45 @@ document.Save(dataDir + "IllustrationStructureElements.pdf");
 ## Slutsats
 
 Grattis! Du har lärt dig hur du använder illustrationsstrukturelement med Aspose.PDF för .NET. Du kan nu lägga till bilder och figurer i ditt PDF-dokument för att förbättra dess visuella presentation. Utforska fler funktioner i Aspose.PDF för att upptäcka dess fulla potential.
+
+### FAQ's
+
+#### F: Vad är illustrationsstrukturelement i ett PDF-dokument och hur förbättrar de visuell presentation?
+
+S: Illustrationsstrukturelement i ett PDF-dokument låter dig infoga visuellt innehåll som bilder och figurer. Genom att använda illustrationsstrukturelement med Aspose.PDF för .NET kan du förbättra den visuella presentationen av dina PDF-dokument, vilket gör dem mer engagerande och informativa.
+
+#### F: Hur underlättar Aspose.PDF för .NET användningen av illustrationsstrukturelement?
+
+S: Aspose.PDF för .NET tillhandahåller en uppsättning klasser och metoder som gör att du kan skapa, manipulera och lägga till illustrationsstrukturelement till dina PDF-dokument. Dessa element kan inkludera bilder, figurer och annat visuellt innehåll.
+
+####  F: Vilken roll spelar`taggedContent` object play in using illustration structure elements?
+
+ A: Den`taggedContent` föremål, erhållet från dokumentets`TaggedContent`egenskap, låter dig arbeta med strukturerade element i PDF-dokumentet. Du kan skapa, organisera och lägga till illustrationsstrukturelement för att förbättra dokumentets visuella representation.
+
+#### F: Hur förbättrar illustrationsstrukturelement förståelsen av PDF-dokumentets innehåll?
+
+S: Illustrationsstrukturelement ger visuell kontext och stöd till textinnehållet i ett PDF-dokument. De hjälper till att förmedla komplex information, data eller koncept genom bilder och figurer, vilket gör innehållet lättare att förstå och komma ihåg.
+
+#### F: Vilka typer av visuellt innehåll kan läggas till med hjälp av illustrationsstrukturelement?
+
+S: Illustrationsstrukturelement kan användas för att lägga till en mängd olika visuella innehåll, inklusive bilder, diagram, grafer, diagram och andra typer av konstverk som förbättrar dokumentets visuella tilltalande och berättande.
+
+#### F: Hur skapar och lägger jag till en bild i ett PDF-dokument med hjälp av illustrationsstrukturelement i Aspose.PDF för .NET?
+
+S: Du kan skapa ett illustrationsstrukturelement med hjälp av`CreateFigureElement` tilldela alternativ text, titel och anpassade taggar till den och associera en bildfil med hjälp av`SetImage` metod. Det medföljande kodexemplet visar denna process.
+
+#### F: Kan jag anpassa utseendet och attributen för illustrationsstrukturelement?
+
+S: Ja, du kan anpassa utseendet och attributen för illustrationsstrukturelement genom att ställa in egenskaper som alt-text, titel, anpassade taggar, bildkällor och mer. Detta gör att du kan skräddarsy den visuella representationen efter ditt dokuments behov.
+
+#### F: Hur kan jag säkerställa att bilderna och figurerna jag lägger till med hjälp av illustrationsstrukturelement är tillgängliga?
+
+S: För att säkerställa tillgänglighet, tillhandahåll meningsfull alt-text som korrekt beskriver innehållet i bilderna eller figurerna. Denna alt-text läses av skärmläsare och andra hjälpmedel, vilket gör det visuella innehållet tillgängligt för alla användare.
+
+#### F: Kan jag använda illustrationsstrukturelement i kombination med andra PDF-manipuleringsfunktioner som erbjuds av Aspose.PDF för .NET?
+
+A: Absolut! Du kan kombinera illustrationsstrukturelement med andra funktioner i Aspose.PDF för .NET, som att lägga till text, skapa tabeller, infoga hyperlänkar och mer. Detta gör att du kan skapa visuellt tilltalande och informativa PDF-dokument.
+
+#### F: Hur kan jag ytterligare utforska och använda illustrationsstrukturelement för avancerad dokumentdesign och visuellt berättande?
+
+S: För att fördjupa dig kan du utforska avancerade funktioner i Aspose.PDF för .NET, som att skapa interaktiva element, bädda in multimedia, använda olika bildformat och optimera visuellt innehåll för olika enheter. Bibliotekets dokumentation och exempel ger vägledning för dessa avancerade scenarier.

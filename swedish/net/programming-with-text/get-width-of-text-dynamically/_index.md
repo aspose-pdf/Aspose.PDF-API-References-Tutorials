@@ -8,7 +8,7 @@ weight: 220
 url: /sv/net/programming-with-text/get-width-of-text-dynamically/
 ---
 
-den här handledningen kommer vi att förklara hur man använder Aspose.PDF för .NET för att dynamiskt mäta bredden på text i C#. Detta kan vara användbart när du behöver bestämma storleken på en textsträng innan du renderar den på ett PDF-dokument. Vi guidar dig genom den medföljande C#-källkoden steg för steg.
+I den här handledningen kommer vi att förklara hur man använder Aspose.PDF för .NET för att dynamiskt mäta bredden på text i C#. Detta kan vara användbart när du behöver bestämma storleken på en textsträng innan du renderar den på ett PDF-dokument. Vi guidar dig genom den medföljande C#-källkoden steg för steg.
 
 ## Förutsättningar
 
@@ -24,7 +24,7 @@ Innan du börjar, se till att du har följande:
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- Byta ut`"YOUR DOCUMENT DIRECTORY"` med sökvägen till katalogen där dina dokument finns. Detta kommer att användas för att lagra alla genererade PDF-filer.
+ Byta ut`"YOUR DOCUMENT DIRECTORY"`med sökvägen till katalogen där dina dokument finns. Detta kommer att användas för att lagra alla genererade PDF-filer.
 
 ## Steg 2: Hitta teckensnittet
 
@@ -32,7 +32,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Text.Font font = FontRepository.FindFont("Arial");
 ```
 
- Koden ovan hittar Arial-fonten med hjälp av`FindFont` metod från`FontRepository` klass. Om du vill använda ett annat teckensnitt, byt ut`"Arial"` med önskat teckensnittsnamn.
+ Koden ovan hittar Arial-teckensnittet med hjälp av`FindFont` metod från`FontRepository` klass. Om du vill använda ett annat teckensnitt, byt ut`"Arial"` med önskat teckensnittsnamn.
 
 ## Steg 3: Ställ in texttillstånd
 

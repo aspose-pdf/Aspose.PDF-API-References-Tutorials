@@ -1,14 +1,13 @@
 ---
-title: Få koordinater
-linktitle: Få koordinater
+title: Få PDF-formulärfältkoordinater
+linktitle: Få PDF-formulärfältkoordinater
 second_title: Aspose.PDF för .NET API Referens
-description: Få enkelt formulärfältskoordinater i dina PDF-dokument med Aspose.PDF för .NET.
+description: Få enkelt PDF-formulärfältkoordinater i dina PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 120
 url: /sv/net/programming-with-forms/get-coordinates/
 ---
-
-I den här handledningen kommer vi att visa dig hur du får formulärfältskoordinater med Aspose.PDF för .NET. Vi kommer att förklara C#-källkoden steg för steg för att guida dig genom denna process.
+I den här handledningen kommer vi att visa dig hur du får PDF-formulärfältkoordinater med Aspose.PDF för .NET. Vi kommer att förklara C#-källkoden steg för steg för att guida dig genom denna process.
 
 ## Steg 1: Förberedelser
 
@@ -18,7 +17,7 @@ Se till att du har importerat de nödvändiga biblioteken och ställ in sökväg
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Steg 2: Ladda utdokumentet
+## Steg 2: Ladda ut dokumentet
 
 Ladda ut PDF-dokumentet:
 
@@ -90,3 +89,25 @@ catch (Exception ex)
 ## Slutsats
 
 I den här handledningen lärde vi oss hur man får formulärfältskoordinater med Aspose.PDF för .NET. Genom att följa dessa steg kan du enkelt hämta koordinaterna för dina formulärfälts underelement i dina PDF-dokument med Aspose.PDF.
+
+### FAQ's
+
+#### F: Kan jag använda den här metoden för att få koordinater för alla typer av formulärfält i Aspose.PDF för .NET?
+
+S: Ja, du kan använda den här metoden för att få koordinater för olika typer av formulärfält i Aspose.PDF för .NET. Den medföljande C#-källkoden visar hur man får koordinater för RadioButton-fält, men du kan anpassa samma tillvägagångssätt för andra formulärfältstyper, såsom TextBox, CheckBox, ListBox och mer.
+
+#### F: Hur kan jag ändra eller justera formulärfältets koordinater?
+
+S: Formulärfältskoordinater är baserade på PDF-dokumentets koordinatsystem, där ursprunget (0,0) finns i det nedre vänstra hörnet på sidan. För att ändra eller justera formulärfältets koordinater kan du uppdatera`Rect` egenskapen för respektive formulärfält eller dess underobjekt, såsom RadioButtonOptionField.
+
+#### F: Kan jag lägga till koordinaterna för formulärfält programmatiskt till ett PDF-dokument?
+
+S: Ja, du kan få koordinaterna för formulärfält som lades till programmatiskt till ett PDF-dokument. Aspose.PDF för .NET låter dig lägga till formulärfält dynamiskt, och när de väl har lagts till kan du hämta deras koordinater med det tillvägagångssätt som visas i denna handledning.
+
+#### F: Vad är syftet med att hämta formulärfältskoordinater?
+
+S: Att hämta formulärfältskoordinater kan vara till hjälp när du behöver utföra specifika layoutrelaterade operationer eller valideringar på formulärfält i ett PDF-dokument. Det låter dig positionera och justera formulärfält exakt baserat på deras koordinater, vilket säkerställer att de visas korrekt i dokumentet och ger en sömlös användarupplevelse.
+
+#### F: Är formulärfältets koordinater uttryckta i punkter eller en annan enhet?
+
+S: Formulärfältets koordinater i Aspose.PDF för .NET uttrycks i punkter. En punkt motsvarar 1/72 tum, vilket gör den till en standardmåttenhet i PDF-format.

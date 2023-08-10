@@ -92,3 +92,45 @@ document.Save( dataDir + "PDFwithTaggedText.pdf");
 ## Conclusion
 
 Dans ce didacticiel, vous avez appris à créer un document PDF avec du texte balisé à l'aide d'Aspose.PDF pour .NET. Les fonctionnalités de structure de contenu marqué d'Aspose.PDF vous permettent de structurer et d'organiser votre texte pour une meilleure accessibilité et sémantique.
+
+### FAQ
+
+#### Q : Quel est le but de la création d'un document PDF avec du texte balisé à l'aide d'Aspose.PDF pour .NET ?
+
+R : La création d'un document PDF avec du texte balisé à l'aide d'Aspose.PDF pour .NET vous permet de structurer et d'organiser votre contenu textuel dans le document PDF. Le texte balisé ajoute une signification sémantique et améliore l'accessibilité pour les utilisateurs, en particulier ceux qui utilisent des technologies d'assistance.
+
+#### Q : Comment Aspose.PDF aide-t-il à créer un document PDF avec du texte balisé ?
+
+R : Aspose.PDF pour .NET est une bibliothèque puissante qui fournit des fonctionnalités pour créer, manipuler et convertir des documents PDF par programmation. Dans ce didacticiel, les fonctionnalités de structure de contenu balisé de la bibliothèque sont utilisées pour ajouter du texte structuré et sémantiquement significatif au document PDF.
+
+#### Q : Quelles sont les conditions préalables à la création d'un document PDF avec du texte balisé à l'aide d'Aspose.PDF pour .NET ?
+
+R : Avant de commencer, assurez-vous que Visual Studio est installé avec le framework .NET et que la bibliothèque Aspose.PDF pour .NET est référencée dans votre projet.
+
+#### Q : Comment le code C# fourni crée-t-il un document PDF avec du texte balisé ?
+
+R : L'exemple de code montre comment créer un document PDF, définir divers éléments de texte balisé (tels que des en-têtes et des paragraphes) et les ajouter au contenu du document. Ceci est réalisé en utilisant les fonctionnalités de structure de contenu balisé fournies par Aspose.PDF.
+
+#### Q : Comment puis-je personnaliser les éléments de texte balisés, tels que les en-têtes et les paragraphes ?
+
+ R : Vous pouvez personnaliser les éléments de texte balisés en utilisant les méthodes appropriées, telles que`CreateHeaderElement` et`CreateParagraphElement` , et définir des propriétés telles que`ActualText` pour fournir un texte et une sémantique significatifs.
+
+#### Q : Puis-je ajouter d'autres éléments de texte balisés, tels que des listes ou des liens, en utilisant des techniques similaires ?
+
+R : Oui, vous pouvez ajouter d'autres éléments de texte balisés tels que des listes, des liens ou d'autres structures personnalisées à l'aide de techniques similaires. Aspose.PDF fournit diverses méthodes pour créer différents types de contenu balisé, vous permettant d'améliorer la sémantique du document.
+
+####  Q : Comment fonctionne le`SetTitle` method contribute to the PDF document's tagged text?
+
+ R : Le`SetTitle` définit le titre du contenu balisé du document PDF, fournissant une brève description de l'objectif ou du sujet du document. Ces informations aident les utilisateurs à comprendre le contexte du texte balisé.
+
+#### Q : Comment l'utilisation de texte balisé améliore-t-elle l'accessibilité dans les documents PDF ?
+
+R : Le texte balisé ajoute une signification sémantique au document, le rendant plus accessible aux utilisateurs handicapés ou à ceux qui utilisent des technologies d'assistance. Les lecteurs d'écran et autres dispositifs d'assistance peuvent interpréter et présenter le texte balisé pour une meilleure expérience utilisateur.
+
+####  Q : Comment fonctionne le`SetLanguage` method enhance the tagged text in a PDF document?
+
+ R : Le`SetLanguage`La méthode définit l'attribut de langue du contenu balisé du document PDF. Cela permet d'indiquer la langue dans laquelle le texte balisé est écrit, améliorant l'accessibilité et permettant un rendu propre à la langue.
+
+#### Q : Est-il possible d'ajouter d'autres éléments, tels que des images ou du multimédia, à côté du texte balisé en utilisant des techniques similaires ?
+
+R : Oui, vous pouvez ajouter d'autres éléments comme des images, du multimédia ou des annotations à côté du texte balisé en utilisant des techniques similaires. Aspose.PDF offre un large éventail de fonctionnalités pour combiner différents types de contenu dans le document.

@@ -1,14 +1,13 @@
 ---
-title: Ajouter une table des matières
-linktitle: Ajouter une table des matières
+title: Ajouter la table des matières au fichier PDF
+linktitle: Ajouter la table des matières au fichier PDF
 second_title: Référence de l'API Aspose.PDF pour .NET
-description: Apprenez à ajouter une table des matières aux documents PDF à l'aide d'Aspose.PDF pour .NET. Guide étape par étape avec exemple de code source. Boostez la navigation dans les documents !
+description: Apprenez à ajouter une table des matières à un fichier PDF en utilisant Aspose.PDF pour .NET. Guide étape par étape avec exemple de code source. Boostez la navigation dans les documents !
 type: docs
 weight: 40
 url: /fr/net/programming-with-document/addtoc/
 ---
-
-Dans ce didacticiel, nous allons explorer comment utiliser la fonctionnalité Ajouter une table des matières (Add TOC) d'Aspose.PDF pour .NET pour ajouter une table des matières aux documents PDF. Nous fournirons un guide étape par étape et expliquerons le code source C # requis pour y parvenir. À la fin de ce didacticiel, vous serez en mesure de générer un document PDF avec une table des matières à l'aide d'Aspose.PDF pour .NET.
+Dans ce didacticiel, nous allons explorer comment utiliser la fonctionnalité Ajouter une table des matières (table des matières) au fichier PDF d'Aspose.PDF pour .NET pour ajouter une table des matières aux documents PDF. Nous fournirons un guide étape par étape et expliquerons le code source C # requis pour y parvenir. À la fin de ce didacticiel, vous serez en mesure de générer un document PDF avec une table des matières à l'aide d'Aspose.PDF pour .NET.
 
 
 ## Étape 1 : Chargez le fichier PDF existant
@@ -101,7 +100,7 @@ title.TextState.FontStyle = FontStyles.Bold;
 tocInfo.Title = title;
 tocPage.TocInfo = tocInfo;
 
-// Créer des objets de chaîne qui seront utilisés comme éléments TOC
+//Créer des objets de chaîne qui seront utilisés comme éléments TOC
 string[] titles = new string[4];
 titles[0] = "First page";
 titles[1] = "Second page";
@@ -124,7 +123,7 @@ for (int i = 0; i < 2; i++)
 	// Coordonnée de destination
 	segment2.Text = titles[i];
 
-	//Ajouter un titre à la page contenant la table des matières
+	// Ajouter un titre à la page contenant la table des matières
 	tocPage.Paragraphs.Add(heading2);
 }
 dataDir = dataDir + "TOC_out.pdf";
@@ -133,3 +132,29 @@ doc.Save(dataDir);
 
 Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at " + dataDir);
 ```
+
+## Conclusion
+
+Dans ce didacticiel, nous avons exploré comment ajouter une table des matières (TOC) aux documents PDF à l'aide d'Aspose.PDF pour .NET. En suivant le guide étape par étape et en utilisant le code source C# fourni, vous pouvez facilement générer un document PDF avec une table des matières. La table des matières améliore la convivialité du document, permettant aux utilisateurs de naviguer plus efficacement vers des sections ou des pages spécifiques. Aspose.PDF pour .NET fournit une solution robuste et conviviale pour travailler avec des fichiers PDF dans des applications .NET, vous permettant de créer facilement des documents PDF dynamiques et interactifs.
+
+### FAQ pour ajouter la table des matières au fichier PDF
+
+#### Q : Qu'est-ce qu'Aspose.PDF pour .NET ?
+
+: Aspose.PDF pour .NET est une bibliothèque puissante qui permet aux développeurs de travailler efficacement avec des fichiers PDF dans des applications .NET. Il fournit un large éventail de fonctionnalités pour créer, manipuler et gérer des documents PDF par programmation.
+
+#### Q : À quoi sert l'ajout d'une table des matières (TOC) à un document PDF ?
+
+R : La table des matières (TOC) fournit une aide à la navigation pour les utilisateurs, leur permettant d'accéder rapidement à des sections ou pages spécifiques du document PDF. Il améliore la convivialité du document et l'expérience utilisateur.
+
+#### Q : Comment ajouter une table des matières à un document PDF à l'aide d'Aspose.PDF pour .NET ?
+
+R : Pour ajouter une table des matières à un document PDF à l'aide d'Aspose.PDF pour .NET, vous devez créer une nouvelle page pour contenir la table des matières, définir les informations de la table des matières, puis créer des éléments de table des matières qui correspondent à des pages ou rubriques du document.
+
+#### Q : Puis-je personnaliser l'apparence de la table des matières ?
+
+R : Oui, vous pouvez personnaliser l'apparence de la table des matières en définissant diverses propriétés des éléments de la table des matières, telles que la taille de la police, le style de police et l'alignement. Aspose.PDF pour .NET offre une flexibilité dans la conception de la table des matières pour correspondre à l'aspect et à la convivialité souhaités.
+
+#### Q : Aspose.PDF pour .NET est-il adapté pour ajouter des fonctionnalités avancées aux documents PDF ?
+
+R : Absolument, Aspose.PDF pour .NET est une bibliothèque riche en fonctionnalités qui vous permet d'ajouter des fonctionnalités avancées aux documents PDF, notamment des éléments interactifs, des champs de formulaire, des signatures numériques, etc.

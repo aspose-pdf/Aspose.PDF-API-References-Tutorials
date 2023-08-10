@@ -68,7 +68,7 @@ try
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
 	// Charger le fichier PDF source
 	Document doc = new Document(dataDir + "ExtractTextPage.pdf");
-	// Créer un objet TextFragment Absorber avec une expression régulière
+	//Créer un objet TextFragment Absorber avec une expression régulière
 	TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("[TextFragmentAbsorber,companyname,Textbox,50]");
 	doc.Pages.Accept(textFragmentAbsorber);
 	// Remplacer chaque TextFragment

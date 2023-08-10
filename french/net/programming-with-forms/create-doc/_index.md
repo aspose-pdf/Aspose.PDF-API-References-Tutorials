@@ -7,7 +7,6 @@ type: docs
 weight: 40
 url: /fr/net/programming-with-forms/create-doc/
 ---
-
 Dans ce tutoriel, nous allons vous montrer comment créer un document avec des boutons radio en utilisant Aspose.PDF pour .NET. Nous expliquerons étape par étape le code source C # pour vous guider tout au long de ce processus.
 
 ##Étape 1 : Préparation
@@ -144,3 +143,25 @@ catch (Exception ex)
 ## Conclusion
 
 Dans ce tutoriel, nous avons appris à créer un document avec des boutons radio en utilisant Aspose.PDF pour .NET. En suivant ces étapes, vous pouvez facilement ajouter des boutons radio à vos documents PDF en utilisant Aspose.PDF.
+
+### FAQ
+
+#### Q : Puis-je personnaliser l'apparence des boutons radio dans le document à l'aide d'Aspose.PDF pour .NET ?
+
+R : Oui, vous pouvez personnaliser l'apparence des boutons radio dans le document à l'aide d'Aspose.PDF pour .NET. Vous pouvez définir des propriétés telles que la taille, la couleur, le style de bordure, etc. pour personnaliser l'apparence des boutons radio.
+
+#### Q : Comment puis-je ajouter des groupes de boutons radio avec des options mutuellement exclusives ?
+
+R : Afin de créer des options mutuellement exclusives, vous pouvez ajouter plusieurs champs de bouton radio avec le même nom. Cela garantira que lorsqu'une option est sélectionnée, les autres options portant le même nom seront automatiquement désélectionnées.
+
+#### Q : Est-il possible de définir une option sélectionnée par défaut pour les boutons radio ?
+
+R : Oui, vous pouvez définir une option sélectionnée par défaut pour les boutons radio à l'aide d'Aspose.PDF pour .NET. Vous pouvez utiliser le`Selected` propriété de la`RadioButtonOptionField` objet pour marquer une option comme sélectionnée par défaut.
+
+#### Q : Puis-je ajouter des gestionnaires d'événements aux boutons radio ?
+
+ R : Oui, vous pouvez ajouter des gestionnaires d'événements aux boutons radio en utilisant Aspose.PDF pour .NET. Vous pouvez associer des actions JavaScript, telles que`OnValueChanged`, aux boutons radio pour effectuer des actions spécifiques lorsque l'utilisateur sélectionne une option.
+
+#### Q : Comment puis-je récupérer l'option sélectionnée dans le groupe de boutons radio une fois que l'utilisateur a effectué une sélection ?
+
+ R : Vous pouvez récupérer l'option sélectionnée dans le groupe de boutons radio à l'aide d'Aspose.PDF pour .NET. Une fois que l'utilisateur a effectué une sélection, vous pouvez accéder à la`Selected` propriété de la`RadioButtonOptionField` objet pour vérifier quelle option est sélectionnée.

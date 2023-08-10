@@ -7,7 +7,6 @@ type: docs
 weight: 320
 url: /es/net/document-conversion/web-page-to-pdf/
 ---
-
 En este tutorial, lo guiaremos paso a paso sobre cómo convertir una página web a PDF utilizando la biblioteca Aspose.PDF para .NET. Explicaremos el código fuente de C# provisto y le mostraremos cómo implementarlo en sus propios proyectos. Al final de este tutorial, podrá convertir páginas web a documentos PDF sin esfuerzo.
 
 ## Introducción
@@ -120,3 +119,25 @@ catch (Exception ex)
 
 ## Conclusión
 En este tutorial, hemos aprendido cómo convertir una página web a PDF utilizando la biblioteca Aspose.PDF para .NET. Revisamos la guía paso a paso que explica el código fuente de C# provisto. Siguiendo estas instrucciones, puede integrar fácilmente la funcionalidad de conversión de página web a PDF en sus propias aplicaciones .NET.
+
+### Preguntas frecuentes
+
+#### P: ¿Qué es Aspose.PDF para .NET?
+
+R: Aspose.PDF para .NET es una potente biblioteca que permite a los desarrolladores trabajar con documentos PDF en aplicaciones C#. Proporciona varias funcionalidades, incluida la conversión de páginas web a PDF.
+
+#### P: ¿Por qué querría convertir una página web a PDF?
+
+R: La conversión de páginas web a PDF es útil para conservar el diseño, el formato y las imágenes del contenido web original. Le permite crear una instantánea de la página web para verla sin conexión o compartirla con otros.
+
+#### P: ¿Cuáles son los requisitos previos para este tutorial?
+
+R: Para seguir este tutorial, debe tener Visual Studio instalado en su máquina, la biblioteca Aspose.PDF para .NET y conocimientos básicos de programación en C#.
+
+#### P: ¿Puedo convertir cualquier página web a PDF?
+
+R: Sí, puede convertir cualquier página web a PDF proporcionando la URL de la página web en el código. Aspose.PDF para .NET recuperará el contenido web y lo convertirá a formato PDF.
+
+#### P: ¿Cómo puedo personalizar la salida del PDF, como la orientación de la página?
+
+ R: Puede personalizar la salida del PDF usando opciones como`IsLandscape` para establecer la orientación de la página. En el código proporcionado,`options.PageInfo.IsLandscape = true` se utiliza para crear el PDF en orientación horizontal.

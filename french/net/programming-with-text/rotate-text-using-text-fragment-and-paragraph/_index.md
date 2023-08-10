@@ -126,4 +126,4 @@ pdfDocument.Save(dataDir + "TextFragmentTests_Rotated3_out.pdf");
 
 ## Conclusion
 
-Toutes nos félicitations! Vous avez appris avec succès à faire pivoter du texte à l'aide de fragments de texte et de paragraphes dans un document PDF à l'aide d'Aspose.PDF pour .NET. Ce didacticiel a fourni un guide étape par étape, de la création du document à l'enregistrement de la version modifiée. Vous pouvez désormais incorporer ce code dans vos propres projets C# pour manipuler la rotation du texte dans les fichiers PDF.
+Toutes nos félicitations! Vous avez appris à faire pivoter du texte à l'aide de fragments de texte et de paragraphes dans un document PDF à l'aide d'Aspose.PDF pour .NET. Ce didacticiel a fourni un guide étape par étape, de la création du document à l'enregistrement de la version modifiée. Vous pouvez désormais incorporer ce code dans vos propres projets C# pour manipuler la rotation du texte dans les fichiers PDF.

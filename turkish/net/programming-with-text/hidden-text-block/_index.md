@@ -57,7 +57,7 @@ TextFragment fragment = textFragments[1];
 
 ## 5. Adım: Gizli Metin Alanını Oluşturun
 
- biz bir yaratırız`TextBoxField`gizli metin alanını temsil eden nesne. Bu alan, fare imleci tetikleyici metnin üzerine geldiğinde görünür hale gelen metni içerecektir.
+ biz bir yaratırız`TextBoxField` gizli metin alanını temsil eden nesne. Bu alan, fare imleci tetikleyici metnin üzerine geldiğinde görünür hale gelen metni içerecektir.
 
 ```csharp
 TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
@@ -126,7 +126,7 @@ floatingField.Value = "This is the \"floating text field\".";
 floatingField.ReadOnly = true;
 // Belge açılışında alanı görünmez yapmak için 'gizli' bayrağını ayarlayın
 floatingField.Flags |= AnnotationFlags.Hidden;
-//Benzersiz bir alan adı ayarlamak gerekli değildir ancak buna izin verilir
+// Benzersiz bir alan adı ayarlamak gerekli değildir ancak buna izin verilir
 floatingField.PartialName = "FloatingField_1";
 // Alan görünümünün özelliklerini ayarlamak gerekli değildir, ancak daha iyi hale getirir
 floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, System.Drawing.Color.Blue);
@@ -137,10 +137,10 @@ floatingField.Border.Width = 1;
 floatingField.Multiline = true;
 // Belgeye metin alanı ekleyin
 document.Form.Add(floatingField);
-//Metin parçası konumunda görünmez düğme oluştur
+// Metin parçası konumunda görünmez düğme oluştur
 ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
 // Belirtilen alan (açıklama) ve görünmezlik bayrağı için yeni gizleme eylemi oluşturun.
-// (Yukarıda belirttiyseniz, kayan alana da ada göre başvurabilirsiniz.)
+//(Yukarıda belirttiyseniz, kayan alana da ada göre başvurabilirsiniz.)
 // Görünmez düğme alanına fare giriş/çıkış işlemleri ekleyin
 buttonField.Actions.OnEnter = new HideAction(floatingField, false);
 buttonField.Actions.OnExit = new HideAction(floatingField);

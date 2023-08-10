@@ -1,13 +1,12 @@
 ---
-title: Définir la bordure
-linktitle: Définir la bordure
+title: Définir la bordure du PDF sur le tableau
+linktitle: Définir la bordure du PDF sur le tableau
 second_title: Référence de l'API Aspose.PDF pour .NET
-description: Apprenez à définir une bordure dans un tableau PDF avec Aspose.PDF pour .NET.
+description: Apprenez à définir une bordure dans un PDF sur un tableau avec Aspose.PDF pour .NET.
 type: docs
 weight: 200
 url: /fr/net/programming-with-tables/set-border/
 ---
-
 Dans ce didacticiel, nous vous guiderons pas à pas pour définir une bordure dans un tableau d'un document PDF à l'aide d'Aspose.PDF pour .NET. Nous expliquerons le code source C# fourni et vous montrerons comment l'implémenter.
 
 ## Étape 1 : Instanciation de l'objet Document
@@ -103,7 +102,7 @@ Document doc = new Document();
 Page page = doc.Pages.Add();
 // Créer un objet BorderInfo
 Aspose.Pdf.BorderInfo border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All);
-// Spécifiez que la bordure supérieure sera double
+//Spécifiez que la bordure supérieure sera double
 border.Top.IsDoubled = true;
 // Spécifiez que la bordure inférieure sera double
 border.Bottom.IsDoubled = true;
@@ -128,3 +127,25 @@ Console.WriteLine("\nBorder setup successfully.\nFile saved at " + dataDir);
 
 ## Conclusion
 Félicitation ! Vous avez maintenant appris à définir une bordure dans un tableau d'un document PDF à l'aide d'Aspose.PDF pour .NET. Ce guide étape par étape vous a montré comment créer un document, ajouter une page, configurer la bordure du tableau et enregistrer le document PDF. Vous pouvez maintenant appliquer ces connaissances à vos propres projets.
+
+### FAQ
+
+#### Q : Puis-je définir différents styles de bordure (par exemple, en pointillés ou en pointillés) pour les bordures supérieure et inférieure du tableau ?
+
+ R : Oui, vous pouvez définir différents styles de bordure pour les bordures supérieure et inférieure du tableau en modifiant le`border.Top.Style` et`border.Bottom.Style`properties dans le code source C# fourni. Aspose.PDF pour .NET vous permet de choisir parmi différents styles de bordure, notamment solide, en pointillé, en pointillé, double, etc.
+
+#### Q : Comment définir la couleur de la bordure du tableau ?
+
+ R : Vous pouvez définir la couleur de la bordure du tableau en modifiant le`border.Color` propriété dans le code source C#. Fournissez simplement la couleur souhaitée, telle que`Aspose.Pdf.Color.Red` ou toute autre représentation de couleur valide, pour personnaliser la couleur de la bordure.
+
+#### Q : Est-il possible d'appliquer des bordures à des cellules individuelles du tableau avec différents paramètres (par exemple, différentes couleurs ou styles de bordure) ?
+
+ R : Oui, vous pouvez appliquer des bordures à des cellules individuelles du tableau avec différents paramètres en configurant`cell.Border` propriété pour chaque cellule individuellement. Cela vous permet d'avoir des styles et des couleurs de bordure spécifiques aux cellules en fonction de vos besoins.
+
+#### Q : Puis-je supprimer la bordure de certains côtés du tableau (par exemple, les bordures gauche et droite) ?
+
+ R : Oui, vous pouvez supprimer la bordure de certains côtés du tableau en modifiant le`border.Left`, `border.Right`, `border.Top` , et`border.Bottom`propriétés dans le code source C#. Définir ces propriétés sur`null` supprimera la bordure des côtés correspondants du tableau.
+
+#### Q : Comment puis-je ajuster l'épaisseur de la bordure du tableau ?
+
+ R : Vous pouvez ajuster l'épaisseur de la bordure du tableau en modifiant le`border.Width` propriété dans le code source C#. Définissez simplement la largeur de bordure souhaitée (en points) pour obtenir l'épaisseur souhaitée.

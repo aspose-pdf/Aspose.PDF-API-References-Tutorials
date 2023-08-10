@@ -92,3 +92,45 @@ document.Save( dataDir + "PDFwithTaggedText.pdf");
 ## Abschluss
 
 In diesem Tutorial haben Sie gelernt, wie Sie mit Aspose.PDF für .NET ein PDF-Dokument mit getaggtem Text erstellen. Mit den markierten Inhaltsstrukturfunktionen von Aspose.PDF können Sie Ihren Text für eine bessere Zugänglichkeit und Semantik strukturieren und organisieren.
+
+### FAQs
+
+#### F: Was ist der Zweck der Erstellung eines PDF-Dokuments mit getaggtem Text mit Aspose.PDF für .NET?
+
+A: Durch das Erstellen eines PDF-Dokuments mit getaggtem Text mit Aspose.PDF für .NET können Sie Ihren Textinhalt innerhalb des PDF-Dokuments strukturieren und organisieren. Mit Tags versehener Text fügt semantische Bedeutung hinzu und verbessert die Zugänglichkeit für Benutzer, insbesondere für diejenigen, die unterstützende Technologien verwenden.
+
+#### F: Wie hilft Aspose.PDF beim Erstellen eines PDF-Dokuments mit getaggtem Text?
+
+A: Aspose.PDF für .NET ist eine leistungsstarke Bibliothek, die Funktionen zum programmgesteuerten Erstellen, Bearbeiten und Konvertieren von PDF-Dokumenten bietet. In diesem Tutorial werden die mit Tags versehenen Inhaltsstrukturfunktionen der Bibliothek verwendet, um dem PDF-Dokument strukturierten und semantisch bedeutsamen Text hinzuzufügen.
+
+#### F: Was sind die Voraussetzungen für die Erstellung eines PDF-Dokuments mit getaggtem Text mit Aspose.PDF für .NET?
+
+A: Bevor Sie beginnen, stellen Sie sicher, dass Visual Studio mit dem .NET Framework installiert ist und dass in Ihrem Projekt auf die Aspose.PDF-Bibliothek für .NET verwiesen wird.
+
+#### F: Wie erstellt der bereitgestellte C#-Code ein PDF-Dokument mit getaggtem Text?
+
+A: Das Codebeispiel zeigt, wie man ein PDF-Dokument erstellt, verschiedene getaggte Textelemente (z. B. Überschriften und Absätze) definiert und sie dem Inhalt des Dokuments hinzufügt. Dies wird mithilfe der von Aspose.PDF bereitgestellten Funktionen zur getaggten Inhaltsstruktur erreicht.
+
+#### F: Wie kann ich die getaggten Textelemente wie Überschriften und Absätze anpassen?
+
+ A: Sie können die getaggten Textelemente mithilfe geeigneter Methoden anpassen, z`CreateHeaderElement` Und`CreateParagraphElement` und das Festlegen von Eigenschaften wie`ActualText` um aussagekräftigen Text und Semantik bereitzustellen.
+
+#### F: Kann ich mit ähnlichen Techniken andere getaggte Textelemente wie Listen oder Links hinzufügen?
+
+A: Ja, Sie können mit ähnlichen Techniken andere getaggte Textelemente wie Listen, Links oder andere benutzerdefinierte Strukturen hinzufügen. Aspose.PDF bietet verschiedene Methoden zum Erstellen verschiedener Arten von getaggten Inhalten, sodass Sie die Dokumentsemantik verbessern können.
+
+####  F: Wie funktioniert das?`SetTitle` method contribute to the PDF document's tagged text?
+
+ A: Die`SetTitle` Die Methode legt den Titel des getaggten Inhalts des PDF-Dokuments fest und liefert eine kurze Beschreibung des Zwecks oder Themas des Dokuments. Diese Informationen helfen Benutzern, den Kontext des markierten Textes zu verstehen.
+
+#### F: Wie verbessert die Verwendung von getaggtem Text die Barrierefreiheit in PDF-Dokumenten?
+
+A: Mit Tags versehener Text verleiht dem Dokument eine semantische Bedeutung und macht es für Benutzer mit Behinderungen oder Menschen, die unterstützende Technologien verwenden, leichter zugänglich. Bildschirmlesegeräte und andere Hilfsgeräte können getaggten Text interpretieren und darstellen, um die Benutzererfahrung zu verbessern.
+
+####  F: Wie funktioniert das?`SetLanguage` method enhance the tagged text in a PDF document?
+
+ A: Die`SetLanguage`Die Methode legt das Sprachattribut des getaggten Inhalts des PDF-Dokuments fest. Dies hilft dabei, die Sprache anzugeben, in der der getaggte Text geschrieben ist, was die Zugänglichkeit verbessert und eine ordnungsgemäße sprachspezifische Wiedergabe ermöglicht.
+
+#### F: Ist es mit ähnlichen Techniken möglich, neben getaggtem Text auch andere Elemente wie Bilder oder Multimedia hinzuzufügen?
+
+A: Ja, Sie können mit ähnlichen Techniken neben getaggtem Text auch andere Elemente wie Bilder, Multimedia oder Anmerkungen hinzufügen. Aspose.PDF bietet zahlreiche Funktionen, um verschiedene Arten von Inhalten innerhalb des Dokuments zu kombinieren.

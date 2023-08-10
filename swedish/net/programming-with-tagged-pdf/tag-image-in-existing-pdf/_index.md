@@ -15,7 +15,7 @@ Innan du börjar, se till att du har konfigurerat din utvecklingsmiljö för att
 
 ## Steg 2: Öppna det befintliga PDF-dokumentet
 
-I det här steget kommer vi att öppna ett befintligt PDF-dokument med Aspose.PDF.
+det här steget kommer vi att öppna ett befintligt PDF-dokument med Aspose.PDF.
 
 ```csharp
 // Sökvägen till dokumentkatalogen.
@@ -49,7 +49,7 @@ Vi fick det taggade innehållet i PDF-dokumentet och motsvarande rotstrukturelem
 Låt oss nu ställa in titeln för det taggade PDF-dokumentet.
 
 ```csharp
-//Definiera titeln för det taggade PDF-dokumentet
+// Definiera titeln för det taggade PDF-dokumentet
 taggedContent.SetTitle("Document with images");
 ```
 
@@ -144,7 +144,7 @@ spanElement.ChangeParentElement(paragraph);
 // Spara dokument
 document.Save(outFile);
 
-// Kontrollerar PDF/UA-efterlevnad för dokument
+//Kontrollerar PDF/UA-efterlevnad för dokument
 document = new Document(outFile);
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
@@ -154,3 +154,49 @@ Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 ## Slutsats
 
 I den här handledningen lärde vi oss hur man markerar en bild i en befintlig PDF med Aspose.PDF för .NET. Du kan nu använda Aspose.PDF för att lägga till taggar och göra redigeringar av bilder i dina PDF-dokument.
+
+### FAQ's
+
+#### F: Vad är huvudsyftet med denna handledning om att tagga bilder i en befintlig PDF med Aspose.PDF för .NET?
+
+S: Det primära målet med denna handledning är att guida dig genom processen att markera en bild i ett befintligt PDF-dokument med Aspose.PDF för .NET. Handledningen innehåller steg-för-steg-instruktioner och exempel på C#-källkod för att hjälpa dig förstå hur du tilldelar alternativ text och begränsningsrutor till bilder, flyttar element i dokumentet och lägger till taggar till bilder.
+
+#### F: Vilka är förutsättningarna för att följa denna handledning om att tagga bilder i en PDF med Aspose.PDF för .NET?
+
+S: Innan du börjar, se till att du har ställt in din utvecklingsmiljö för att använda Aspose.PDF för .NET. Detta innebär att du installerar Aspose.PDF-biblioteket och konfigurerar ditt projekt för att referera till det.
+
+#### F: Hur kan jag öppna ett befintligt PDF-dokument och komma åt dess taggade innehåll med Aspose.PDF för .NET?
+
+S: Handledningen ger C#-källkodsexempel som visar hur man öppnar ett befintligt PDF-dokument med Aspose.PDF för .NET och får åtkomst till dess taggade innehåll för vidare manipulation.
+
+#### F: Vad är syftet med att tilldela alternativ text och begränsningsrutor till bilder i ett PDF-dokument?
+
+S: Att tilldela alternativ text och begränsningsrutor till bilder förbättrar tillgängligheten genom att tillhandahålla beskrivande text för bilder och definiera deras layout och position i dokumentet. Denna information är avgörande för skärmläsare och andra hjälpmedel.
+
+#### F: Hur kan jag ställa in titeln för ett taggat PDF-dokument med Aspose.PDF för .NET?
+
+S: Handledningen innehåller C#-källkodsexempel som illustrerar hur man ställer in titeln för ett taggat PDF-dokument med Aspose.PDF för .NET.
+
+#### F: Vad innebär processen att flytta element i ett PDF-dokument?
+
+S: Flytta element i ett PDF-dokument innebär att det överordnade elementet för ett visst element ändras. I den här handledningen lär du dig hur du flyttar ett Span-element till ett specificerat Paragraph-element i en tabell.
+
+#### F: Hur sparar jag det modifierade PDF-dokumentet efter att ha lagt till taggar och gjort redigeringar i bilder?
+
+ S: När du har lagt till taggar, tilldelat alternativ text, satt begränsningsrutor och gjort ändringar i PDF-dokumentet, kan du använda de medföljande C#-källkodsexemplen för att spara det modifierade PDF-dokumentet med`Save()` metod.
+
+#### F: Vad är syftet med exempelkällkoden som tillhandahålls i handledningen?
+
+S: Exempelkällkoden fungerar som en praktisk referens för implementering av bildtaggning och manipulering med Aspose.PDF för .NET. Du kan använda den här koden som utgångspunkt och modifiera den för att passa dina specifika krav.
+
+#### F: Kan jag tillämpa dessa tekniker på andra typer av element i ett PDF-dokument, inte bara bilder?
+
+S: Ja, teknikerna som visas i denna handledning kan anpassas för att fungera med olika typer av element i ett PDF-dokument. Du kan tillämpa liknande principer för att tagga och manipulera andra element som text, tabeller och mer.
+
+#### F: Hur kan jag validera PDF/UA-kompatibiliteten för det modifierade PDF-dokumentet?
+
+ S: Handledningen ger C#-källkodsexempel som visar hur man validerar PDF/UA-kompatibiliteten för det modifierade PDF-dokumentet genom att använda`Validate()` metod och generera en XML-rapport.
+
+#### F: Vilka andra funktioner erbjuder Aspose.PDF för .NET för att arbeta med PDF-dokument?
+
+S: Aspose.PDF för .NET erbjuder ett brett utbud av funktioner för att arbeta med PDF-dokument, inklusive textmanipulering, bildinfogning, tabellskapande, formulärfältshantering, digitala signaturer, anteckningar och mer. Se den officiella dokumentationen och resurserna för vidare utforskning.

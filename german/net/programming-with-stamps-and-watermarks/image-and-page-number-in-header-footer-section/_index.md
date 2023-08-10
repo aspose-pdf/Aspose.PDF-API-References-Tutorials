@@ -108,7 +108,7 @@ page.Header = header;
 // Erstellen Sie ein Bildobjekt auf der Seite
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 
-// Legen Sie den Pfad der Bilddatei fest
+//Legen Sie den Pfad der Bilddatei fest
 image1.File = dataDir + "aspose-logo.jpg";
 
 // Bild zur Kopfzeile der PDF-Datei hinzufügen
@@ -134,3 +134,45 @@ doc.Save(dataDir + "ImageAndPageNumberInHeaderFooter_out.pdf");
 ## Abschluss
 
 Herzlichen Glückwunsch! Sie haben gelernt, wie Sie mit Aspose.PDF für .NET ein Bild und eine Seitenzahl in den Kopf- und Fußzeilenbereich eines PDF-Dokuments einfügen. Jetzt können Sie diese Methode verwenden, um Kopf- und Fußzeilen in Ihren PDF-Dokumenten anzupassen.
+
+### FAQs
+
+#### F: Welchen Zweck hat das Hinzufügen eines Bildes und einer Seitenzahl im Kopf- und Fußzeilenbereich eines PDF-Dokuments?
+
+A: Das Hinzufügen eines Bildes und einer Seitenzahl im Kopf- und Fußzeilenbereich eines PDF-Dokuments kann seine visuelle Attraktivität, sein Branding und seine Navigationselemente verbessern. Ein Bild kann ein Logo, ein Wasserzeichen oder ein beliebiges grafisches Element darstellen, während eine Seitenzahl Benutzern hilft, ihren Fortschritt zu verfolgen und bestimmte Seiten zu finden.
+
+#### F: Wie hilft der bereitgestellte C#-Quellcode beim Hinzufügen eines Bildes und einer Seitenzahl zur Kopf- und Fußzeile eines PDF-Dokuments?
+
+A: Der bereitgestellte Code zeigt, wie man ein PDF-Dokument erstellt, eine Seite hinzufügt und dann die Kopf- und Fußzeilenabschnitte anpasst. Es zeigt, wie man ein Bild zur Kopfzeile und ein Textfragment mit Seitennummerierung zur Fußzeile hinzufügt.
+
+#### F: Kann ich ein beliebiges Bildformat für den Header verwenden und wie gebe ich dessen Pfad an?
+
+ A: Ja, Sie können für das Headerbild verschiedene Bildformate (z. B. JPEG, PNG, GIF usw.) verwenden. Der Pfad des Bildes wird mit angegeben`File` Eigentum der`Aspose.Pdf.Image` Objekt.
+
+#### F: Wie kann ich das Erscheinungsbild und die Positionierung des Bildes im Kopfbereich anpassen?
+
+ A: Sie können das Erscheinungsbild und die Positionierung des Bildes anpassen, indem Sie die Eigenschaften anpassen`Aspose.Pdf.Image` Objekt, bevor Sie es zum Header-Abschnitt hinzufügen. Sie können beispielsweise die Abmessungen, die Ausrichtung, die Drehung, die Deckkraft usw. des Bildes festlegen.
+
+####  F: Was ist der Zweck des`TextFragment` object used for the footer?
+
+ A: Die`TextFragment`Das Objekt wird zum Erstellen und Formatieren von Text verwendet, der im Fußzeilenbereich angezeigt wird. Im bereitgestellten Code wird es verwendet, um die Seitenzahl und die Gesamtseitenzahl anzuzeigen.
+
+#### F: Kann ich den Fußzeilentext ändern, um zusätzliche Informationen oder Formatierungen hinzuzufügen?
+
+ A: Ja, Sie können den Fußzeilentext ändern, indem Sie den Inhalt des ändern`TextFragment` Objekt. Sie können zusätzlichen Text hinzufügen, Schriftarten, Farben und Formatierungen entsprechend Ihren Anforderungen ändern.
+
+#### F: Kann ich unterschiedliche Kopf- und Fußzeileninhalte auf verschiedene Seiten des PDF-Dokuments anwenden?
+
+ A: Ja, Sie können unterschiedliche Kopf- und Fußzeileninhalte auf verschiedene Seiten anwenden, indem Sie separate Seiten erstellen`HeaderFooter` Objekte und deren Zuordnung zu bestimmten Seiten mithilfe der`Header` Und`Footer` Eigenschaften der`Aspose.Pdf.Page` Objekt.
+
+#### F: Wie kann ich die Kopf- und Fußzeile weiter anpassen, z. B. den Schriftstil ändern oder zusätzliche Elemente hinzufügen?
+
+A: Sie können die Kopf- und Fußzeile anpassen, indem Sie verschiedene Klassen und Eigenschaften verwenden, die von Aspose.PDF für .NET bereitgestellt werden. Sie können beispielsweise verschiedene Textformatierungsoptionen verwenden und den Kopf- und Fußzeilenabschnitten weitere Absätze, Bilder oder sogar Tabellen hinzufügen.
+
+#### F: Kann ich bei Bedarf die Kopf- und Fußzeilenabschnitte entfernen oder löschen?
+
+ A: Ja, Sie können die Kopf- und Fußzeilenabschnitte entfernen oder löschen, indem Sie festlegen`Header` Und`Footer` Eigenschaften der`Aspose.Pdf.Page` widersprechen`null`.
+
+#### F: Wie kann ich sicherstellen, dass das hinzugefügte Bild und die Seitenzahl auf verschiedenen Geräten und Betrachtern konsistent bleiben?
+
+A: Aspose.PDF für .NET bietet Funktionen zum Erstellen standardisierter und konsistenter PDF-Dokumente und stellt sicher, dass das hinzugefügte Bild und die Seitenzahl auf verschiedenen Geräten und PDF-Viewern konsistent angezeigt werden.

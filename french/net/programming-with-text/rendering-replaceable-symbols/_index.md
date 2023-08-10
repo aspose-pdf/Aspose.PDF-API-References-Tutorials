@@ -27,7 +27,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Étape 2 : créer un document PDF et une page
 
-Ensuite, nous créons un nouveau document PDF et y ajoutons une page en utilisant le`Document` classe et`Page` classe de la bibliothèque Aspose.PDF.
+ Ensuite, nous créons un nouveau document PDF et y ajoutons une page en utilisant le`Document` classe et`Page` classe de la bibliothèque Aspose.PDF.
 
 ```csharp
 Aspose.Pdf.Document pdfApplicationDoc = new Aspose.Pdf.Document();
@@ -65,7 +65,7 @@ par.Position = new Aspose.Pdf.Text.Position(100, 600);
 
 ## Étape 6 : Ajouter un paragraphe de texte à la page
 
- Nous créons un`TextBuilder` objet avec la page et ajoutez le paragraphe de texte au générateur de texte.
+ Nous créons un`TextBuilder`objet avec la page et ajoutez le paragraphe de texte au générateur de texte.
 
 ```csharp
 TextBuilder textBuilder = new TextBuilder(applicationFirstPage);

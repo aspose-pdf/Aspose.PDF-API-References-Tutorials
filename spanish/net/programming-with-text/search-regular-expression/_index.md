@@ -70,7 +70,7 @@ pdfDocument.Pages.Accept(textFragmentAbsorber);
 
 ## Paso 7: recuperar fragmentos de texto extraídos
 
- Obtenga los fragmentos de texto extraídos usando el`TextFragments` propiedad de la`TextFragmentAbsorber` objeto:
+Obtenga los fragmentos de texto extraídos usando el`TextFragments` propiedad de la`TextFragmentAbsorber` objeto:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;

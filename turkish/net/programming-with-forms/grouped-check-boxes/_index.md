@@ -1,14 +1,13 @@
 ---
-title: Gruplanmış Onay Kutuları
-linktitle: Gruplanmış Onay Kutuları
+title: PDF Belgesinde Gruplanmış Onay Kutuları
+linktitle: PDF Belgesinde Gruplanmış Onay Kutuları
 second_title: Aspose.PDF for .NET API Referansı
-description: Aspose.PDF for .NET ile PDF belgelerinizde kolayca gruplandırılmış onay kutuları oluşturun.
+description: Aspose.PDF for .NET ile PDF belgesinde kolayca gruplandırılmış onay kutuları oluşturun.
 type: docs
 weight: 170
 url: /tr/net/programming-with-forms/grouped-check-boxes/
 ---
-
-Bu öğreticide, Aspose.PDF for .NET kullanarak bir PDF belgesinde gruplandırılmış onay kutularının nasıl oluşturulacağını göstereceğiz. Bu süreçte size yol göstermesi için C# kaynak kodunu adım adım açıklayacağız.
+Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF belgesinde gruplandırılmış onay kutularının nasıl oluşturulacağını göstereceğiz. Bu süreçte size yol göstermesi için C# kaynak kodunu adım adım açıklayacağız.
 
 ## Adım 1: Hazırlık
 
@@ -134,3 +133,25 @@ catch (Exception ex)
 ## Çözüm
 
 Bu öğreticide, Aspose.PDF for .NET kullanarak bir PDF belgesinde gruplandırılmış onay kutuları oluşturmayı öğrendik. Bu adımları izleyerek özel radyo düğmesi seçeneklerini kolayca ekleyebilir ve Aspose.PDF kullanarak bunları PDF belgelerinizde gruplandırabilirsiniz.
+
+### SSS
+
+#### S: Bir PDF belgesindeki gruplandırılmış onay kutuları nelerdir?
+
+A: Bir PDF belgesindeki gruplandırılmış onay kutuları, birlikte gruplandırılmış bir dizi radyo düğmesi seçeneğine atıfta bulunur. Radyo düğmeleri, kullanıcıların birbirini dışlayan seçenekler grubundan yalnızca bir seçeneği belirlemesine olanak tanır. Bir radyo düğmesi seçildiğinde, aynı gruptaki diğerlerinin seçimi otomatik olarak kaldırılır. Bu gruplama davranışı, kullanıcılara birden çok seçenek sunmak, ancak seçimlerini yalnızca bir seçenekle sınırlamak istediğinizde kullanışlıdır.
+
+#### S: Aspose.PDF for .NET'te gruplanmış onay kutularının görünümünü özelleştirebilir miyim?
+
+C: Evet, Aspose.PDF for .NET'te gruplandırılmış onay kutularının görünümünü özelleştirebilirsiniz. API, radyo düğmesi seçeneklerinin stilini, kenarlığını ve görünümünü ayarlamak için çeşitli seçenekler sunar. Her bir seçeneğin konumunu tanımlayabilir, farklı kutu stilleri arasından seçim yapabilir (örn. kare, daire, çapraz) ve istenen görsel temsili elde etmek için kenarlık özelliklerini ayarlayabilirsiniz.
+
+#### S: Gruplanmış onay kutularını bir PDF belgesindeki belirli bir sayfaya nasıl eklerim?
+
+Y: Bir PDF belgesindeki belirli bir sayfaya gruplandırılmış onay kutuları eklemek için,`RadioButtonField` Argüman olarak istenen sayfa numarasına sahip nesne. Ardından, oluştur`RadioButtonOptionField` her bir radyo düğmesi seçeneğini temsil eden nesneler ve`Rectangle` nesne. Son olarak, bu seçenekleri`RadioButtonField` eklemeden önce görünümlerini gerektiği gibi özelleştirin.`RadioButtonField` belge formuna.
+
+#### S: Tek bir PDF belgesine birden çok onay kutusu grubu ekleyebilir miyim?
+
+ C: Evet, tek bir PDF belgesine birden çok onay kutusu grubu ekleyebilirsiniz. Her grubun benzersiz bir`RadioButtonField` nesne ve`RadioButtonOptionField` her grup içindeki nesneler, seçenekleri için aynı sayfayı ve benzersiz adları paylaşmalıdır. Bu, her gruptaki radyo düğmelerinin düzgün çalışmasını ve seçimlerin birbirini dışlamasını sağlar.
+
+#### S: Gruplanmış onay kutuları tüm PDF görüntüleyicilerde ve uygulamalarda destekleniyor mu?
+
+Y: Evet, gruplandırılmış onay kutuları standart uyumlu tüm PDF görüntüleyicilerde ve uygulamalarda desteklenir. PDF spesifikasyonu, radyo düğmelerini ve bunların gruplama davranışlarını tanımlayarak, bunların evrensel olarak PDF formatında tanınmasını sağlar. Ancak, çeşitli platformlarda tutarlı davranış sağlamak için farklı PDF görüntüleyicilerde işlevselliği test etmek önemlidir.

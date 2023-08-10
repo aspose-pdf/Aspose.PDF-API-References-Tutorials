@@ -35,7 +35,7 @@ Document doc = new Document(dataDir + "ReplaceTextPage.pdf");
 
 ## Шаг 3. Определите и удалите неиспользуемые шрифты
 
- Мы создаем`TextFragmentAbsorber` объект с`TextEditOptions` параметр установлен на`TextEditOptions.FontReplace.RemoveUnusedFonts` . Эта опция позволяет нам идентифицировать и удалять неиспользуемые шрифты в документе PDF. Затем мы перебираем все`TextFragments` и установите шрифт на желаемый шрифт.
+ Мы создаем`TextFragmentAbsorber` объект с`TextEditOptions` параметр установлен на`TextEditOptions.FontReplace.RemoveUnusedFonts` Эта опция позволяет нам идентифицировать и удалять неиспользуемые шрифты в документе PDF. Затем мы перебираем все`TextFragments` и установите шрифт на желаемый шрифт.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));

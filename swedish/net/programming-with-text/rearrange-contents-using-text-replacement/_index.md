@@ -8,7 +8,7 @@ weight: 270
 url: /sv/net/programming-with-text/rearrange-contents-using-text-replacement/
 ---
 
-I den här handledningen kommer vi att förklara hur man ordnar om innehållet i ett PDF-dokument genom att använda textersättning med Aspose.PDF-biblioteket för .NET. Vi kommer att gå igenom steg-för-steg-processen att ladda en PDF-fil, söka efter specifika textfragment, ersätta texten och spara den modifierade PDF-filen med den medföljande C#-källkoden.
+den här handledningen kommer vi att förklara hur man ordnar om innehållet i ett PDF-dokument genom att använda textersättning med Aspose.PDF-biblioteket för .NET. Vi kommer att gå igenom steg-för-steg-processen att ladda en PDF-fil, söka efter specifika textfragment, ersätta texten och spara den modifierade PDF-filen med den medföljande C#-källkoden.
 
 ## Krav
 
@@ -68,13 +68,13 @@ try
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
 	// Ladda käll-PDF-fil
 	Document doc = new Document(dataDir + "ExtractTextPage.pdf");
-	// Skapa TextFragment Absorber-objekt med reguljärt uttryck
+	//Skapa TextFragment Absorber-objekt med reguljärt uttryck
 	TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("[TextFragmentAbsorber,companyname,Textbox,50]");
 	doc.Pages.Accept(textFragmentAbsorber);
-	// Ersätt varje TextFragment
+	// Byt ut varje TextFragment
 	foreach (TextFragment textFragment in textFragmentAbsorber.TextFragments)
 	{
-		// Ange teckensnitt för textfragment som ersätts
+		// Ställ in teckensnitt för textfragment som ersätts
 		textFragment.TextState.Font = FontRepository.FindFont("Arial");
 		// Ställ in teckenstorlek
 		textFragment.TextState.FontSize = 12;

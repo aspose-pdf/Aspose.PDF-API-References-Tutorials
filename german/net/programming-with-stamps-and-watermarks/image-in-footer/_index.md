@@ -43,7 +43,7 @@ imageStamp.BottomMargin = 10;
 imageStamp.HorizontalAlignment = HorizontalAlignment.Center;
 imageStamp.VerticalAlignment = VerticalAlignment.Bottom;
 
-//Bildpuffer zu allen Seiten hinzufügen
+// Bildpuffer zu allen Seiten hinzufügen
 foreach(Page page in pdfDocument.Pages)
 {
      page.AddStamp(imageStamp);
@@ -95,3 +95,45 @@ Console.WriteLine("\nImage in footer added successfully.\nFile saved at " + data
 ## Abschluss
 
 Herzlichen Glückwunsch! Sie haben gelernt, wie Sie mit Aspose.PDF für .NET ein Bild in den Fußzeilenbereich eines PDF-Dokuments einfügen. Sie können jetzt die Fußzeilen Ihrer PDF-Dokumente anpassen, indem Sie Bilder hinzufügen.
+
+### FAQs zum Bild in der Fußzeile
+
+#### F: Welchen Zweck hat das Hinzufügen eines Bildes zum Fußzeilenbereich eines PDF-Dokuments?
+
+A: Durch das Hinzufügen eines Bildes zum Fußzeilenbereich eines PDF-Dokuments können Sie am unteren Rand jeder Seite visuelle Elemente wie ein Logo oder ein Wasserzeichen einfügen. Dies kann das Branding und die Ästhetik des PDF-Inhalts verbessern.
+
+#### F: Wie ermöglicht der bereitgestellte C#-Quellcode das Hinzufügen eines Bildes zum Fußzeilenbereich eines PDF-Dokuments?
+
+ A: Der bereitgestellte Code zeigt, wie man ein vorhandenes PDF-Dokument lädt und erstellt`ImageStamp` Objekt aus einer Bilddatei, legen Sie Eigenschaften wie den unteren Rand und die Ausrichtung fest und fügen Sie dann den Bildstempel zur Fußzeile aller Seiten hinzu.
+
+#### F: Kann ich die Position und Ausrichtung des Bildes im Fußzeilenbereich anpassen?
+
+ A: Ja, Sie können die Position und Ausrichtung des Bildes im Fußzeilenbereich anpassen, indem Sie die Eigenschaften des ändern`ImageStamp` Objekt. Das Code-Snippet legt Eigenschaften fest wie`BottomMargin`, `HorizontalAlignment` , Und`VerticalAlignment`.
+
+#### F: Ist es möglich, auf verschiedenen Seiten des PDF-Dokuments unterschiedliche Bilder zum Fußzeilenbereich hinzuzufügen?
+
+ A: Ja, Sie können dem Fußzeilenbereich auf verschiedenen Seiten unterschiedliche Bilder hinzufügen, indem Sie separate Bilder erstellen`ImageStamp` Objekte mit unterschiedlichen Bilddateien und Eigenschaften erstellen und sie dann zu bestimmten Seiten hinzufügen.
+
+#### F: Wie stellt der Code sicher, dass das Bild allen Seiten des PDF-Dokuments hinzugefügt wird?
+
+ A: Der bereitgestellte Code verwendet a`foreach` Schleife, um alle Seiten des PDF-Dokuments zu durchlaufen und diese hinzuzufügen`ImageStamp` zum Fußzeilenbereich jeder Seite.
+
+#### F: Kann ich auf ähnliche Weise andere Elemente wie Text oder Formen zum Fußzeilenbereich hinzufügen?
+
+A: Ja, Sie können dem Fußzeilenbereich auf ähnliche Weise andere Elemente wie Text oder Formen hinzufügen, indem Sie die entsprechenden Stempelobjekte erstellen (z. B.`TextStamp`) und legen ihre Eigenschaften entsprechend fest.
+
+#### F: Wie gebe ich den Pfad zur Bilddatei an, die ich zur Fußzeile hinzufügen möchte?
+
+ A: Der Pfad zur Bilddatei wird beim Erstellen angegeben`ImageStamp` Objekt, wie im Code gezeigt. Stellen Sie sicher, dass Sie den richtigen Pfad zur Bilddatei angeben.
+
+#### F: Kann ich die Größe des Bildes im Fußzeilenbereich anpassen?
+
+ A: Ja, Sie können die Größe des Bildes im Fußzeilenbereich anpassen, indem Sie die Abmessungen anpassen`ImageStamp` Verwenden von Eigenschaften wie`Width` Und`Height`.
+
+#### F: Ist es möglich, das Bild im Fußzeilenbereich zu entfernen oder zu ersetzen, nachdem es hinzugefügt wurde?
+
+ A: Ja, Sie können das Bild im Fußzeilenbereich entfernen oder ersetzen, indem Sie den Inhalt des ändern`ImageStamp` Einspruch erheben oder den Stempel von bestimmten Seiten entfernen.
+
+#### F: Wie geht der Code mit Situationen um, in denen die Abmessungen des Bildes den verfügbaren Platz in der Fußzeile überschreiten?
+
+ A: Der Code legt Eigenschaften wie fest`BottomMargin`, `HorizontalAlignment` , Und`VerticalAlignment` um die Positionierung und Ausrichtung des Bildes zu steuern. Stellen Sie sicher, dass diese Eigenschaften angepasst sind, um Überlappungen oder Layoutprobleme zu vermeiden.

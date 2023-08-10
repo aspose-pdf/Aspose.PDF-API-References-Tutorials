@@ -65,7 +65,7 @@ page.Paragraphs.Add(graph1);
 ```
 
 ## Шаг 8: Добавьте текст заголовка с форматированием HTML
- Создать`HtmlFragment`объект и установите его содержимое в желаемый текст HTML. Затем добавьте фрагмент в`Paragraphs` коллекция страницы.
+ Создать`HtmlFragment` объект и установите его содержимое в желаемый текст HTML. Затем добавьте фрагмент в`Paragraphs` коллекция страницы.
 
 ```csharp
 string s = "<font face=\"Times New Roman\" size=4>" +
@@ -115,7 +115,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 // Укажите информацию о левом поле для файла PDF
 doc.PageInfo.Margin.Left = 40;
-// Укажите информацию о правом поле для файла PDF.
+//Укажите информацию о правом поле для файла PDF.
 doc.PageInfo.Margin.Right = 40;
 Page page = doc.Pages.Add();
 Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500, 2);

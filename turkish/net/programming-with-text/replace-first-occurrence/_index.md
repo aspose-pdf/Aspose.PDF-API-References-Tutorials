@@ -19,7 +19,7 @@ Başlamadan önce, aşağıdakilere sahip olduğunuzdan emin olun:
 
 ## 1. Adım: Belge Dizinini kurun
 
- Öncelikle, giriş PDF dosyasının bulunduğu dizine giden yolu ayarlamanız gerekir. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` PDF dosyanızın yolu ile değişken.
+ Öncelikle, giriş PDF dosyasının bulunduğu dizine giden yolu ayarlamanız gerekir. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir`PDF dosyanızın yolu ile değişken.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -35,7 +35,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 ## 3. Adım: Arama İfadesinin İlk Oluşumunu Bulun
 
- biz bir yaratırız`TextFragmentAbsorber`arama ifadesinin tüm örneklerini bulmak için PDF belgesinin tüm sayfaları için nesneyi seçin ve kabul edin.
+ biz bir yaratırız`TextFragmentAbsorber` arama ifadesinin tüm örneklerini bulmak için PDF belgesinin tüm sayfaları için nesneyi seçin ve kabul edin.
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
@@ -74,7 +74,7 @@ Console.WriteLine("\nText replaced successfully.\nFile saved at " + dataDir);
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Belgeyi aç
 Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
-// Giriş arama ifadesinin tüm örneklerini bulmak için TextAbsorber nesnesi oluşturun
+//Giriş arama ifadesinin tüm örneklerini bulmak için TextAbsorber nesnesi oluşturun
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
 // Tüm sayfalar için emiciyi kabul edin
 pdfDocument.Pages.Accept(textFragmentAbsorber);

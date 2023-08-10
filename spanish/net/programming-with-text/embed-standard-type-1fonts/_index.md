@@ -70,7 +70,7 @@ foreach(Page page in pdfDocument.Pages)
 pdfDocument.Save(dataDir + "EmbeddedFonts-updated_out.pdf");
 ```
 
-### Ejemplo de código fuente para fuentes tipo 1 estándar incrustadas mediante Aspose.PDF para .NET 
+### Ejemplo de código fuente para incrustar fuentes tipo 1 estándar mediante Aspose.PDF para .NET 
 ```csharp
 // La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

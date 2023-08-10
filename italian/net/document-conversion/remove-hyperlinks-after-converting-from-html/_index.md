@@ -7,7 +7,6 @@ type: docs
 weight: 250
 url: /it/net/document-conversion/remove-hyperlinks-after-converting-from-html/
 ---
-
 In questo tutorial, ti guideremo attraverso il processo di rimozione dei collegamenti ipertestuali da un file PDF generato da un file HTML utilizzando Aspose.PDF per .NET. I collegamenti ipertestuali sono collegamenti cliccabili che possono reindirizzare ad altre pagine o siti web. Seguendo i passaggi seguenti, sarai in grado di rimuovere i collegamenti ipertestuali dal file PDF risultante.
 
 ## Prerequisiti
@@ -18,7 +17,7 @@ Prima di iniziare, assicurati di soddisfare i seguenti prerequisiti:
 - Un ambiente di sviluppo come Visual Studio.
 
 ## Passaggio 1: caricamento del file HTML e rimozione dei collegamenti ipertestuali
-A questo punto, caricheremo il file HTML e rimuoveremo i collegamenti ipertestuali dal documento PDF risultante. Usa il seguente codice:
+questo punto, caricheremo il file HTML e rimuoveremo i collegamenti ipertestuali dal documento PDF risultante. Usa il seguente codice:
 
 ```csharp
 // Percorso della directory dei documenti.
@@ -106,3 +105,25 @@ doc.Save(dataDir + "RemoveHyperlinksFromText_out.pdf");
 
 ## Conclusione
 In questo tutorial, abbiamo coperto il processo passo-passo di rimozione dei collegamenti ipertestuali da un file PDF generato da un file HTML utilizzando Aspose.PDF per .NET. Seguendo le istruzioni sopra descritte, sarai in grado di rimuovere con successo i collegamenti ipertestuali dal file PDF risultante.
+
+### FAQ
+
+#### D: Cos'è Aspose.PDF per .NET?
+
+R: Aspose.PDF per .NET è una potente libreria che consente agli sviluppatori di lavorare con documenti PDF in applicazioni C#. Offre una vasta gamma di funzionalità, inclusa la possibilità di convertire file HTML in PDF e manipolare il contenuto PDF.
+
+#### D: Perché dovrei rimuovere i collegamenti ipertestuali da un file PDF?
+
+R: Ci sono vari motivi per rimuovere i collegamenti ipertestuali da un file PDF. Ad esempio, potresti voler eliminare i collegamenti esterni per scopi di stampa o archiviazione o assicurarti che il contenuto PDF non sia navigabile tramite collegamenti ipertestuali.
+
+#### D: Come posso caricare un file HTML e rimuovere i collegamenti ipertestuali utilizzando Aspose.PDF per .NET?
+
+ A: Per caricare un file HTML e rimuovere i collegamenti ipertestuali, è possibile utilizzare Aspose.PDF per .NET`HtmlLoadOptions` classe. Scorri le annotazioni delle pagine PDF per trovare le annotazioni dei collegamenti e modificarne gli attributi.
+
+#### D: Posso personalizzare il nome del file di output per il PDF risultante?
+
+R: Sì, puoi personalizzare il nome del file di output per il file PDF risultante modificando il codice che salva il documento PDF. Basta cambiare il nome del file desiderato nel file`doc.Save()` metodo.
+
+#### D: È possibile rimuovere selettivamente i collegamenti ipertestuali in base a determinati criteri?
+
+R: Sì, puoi rimuovere selettivamente i collegamenti ipertestuali in base a criteri specifici. Ad esempio, puoi scegliere di rimuovere solo i collegamenti esterni o i collegamenti che puntano a URL specifici.

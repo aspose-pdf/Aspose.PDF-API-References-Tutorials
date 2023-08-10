@@ -1,17 +1,17 @@
 ---
-title: Extraire le texte en surbrillance
-linktitle: Extraire le texte en surbrillance
+title: Extraire le texte en surbrillance dans un fichier PDF
+linktitle: Extraire le texte en surbrillance dans un fichier PDF
 second_title: Référence de l'API Aspose.PDF pour .NET
-description: Apprenez à extraire le texte en surbrillance à l'aide d'Aspose.PDF pour .NET avec ce guide étape par étape.
+description: Apprenez à extraire le texte en surbrillance dans un fichier PDF à l'aide d'Aspose.PDF pour .NET avec ce guide étape par étape.
 type: docs
 weight: 60
 url: /fr/net/annotations/extracthighlightedtext/
 ---
-Pour extraire le texte en surbrillance d'un document PDF, vous pouvez utiliser l'API Aspose.PDF pour .NET. Cette API fournit un moyen simple de récupérer tout le texte mis en surbrillance dans un document.
+Pour extraire le texte en surbrillance dans un fichier PDF, vous pouvez utiliser l'API Aspose.PDF pour .NET. Cette API fournit un moyen simple de récupérer tout le texte mis en surbrillance dans un document.
 
 ## Étape 1 : Chargez le document PDF
 
- La première étape de l'extraction du texte en surbrillance d'un document PDF consiste à charger le document à l'aide de l'API Aspose.PDF pour .NET. Vous pouvez le faire en créant une nouvelle instance de`Document` class et en transmettant le chemin d'accès au document PDF en tant que paramètre. 
+ La première étape de l'extraction du texte en surbrillance dans un fichier PDF consiste à charger le document à l'aide de l'API Aspose.PDF pour .NET. Vous pouvez le faire en créant une nouvelle instance de`Document` class et en transmettant le chemin d'accès au document PDF en tant que paramètre. 
 
 ```csharp
 // Chemin d'accès au répertoire des documents.
@@ -82,3 +82,28 @@ foreach (Annotation annotation in doc.Pages[1].Annotations)
 }
 ```
 
+## Conclusion
+
+Dans ce didacticiel, nous avons exploré comment extraire le texte en surbrillance d'un document PDF à l'aide d'Aspose.PDF pour .NET. En suivant le guide étape par étape et en utilisant le code source C# fourni, les développeurs peuvent facilement extraire et gérer le texte en surbrillance dans leurs documents PDF.
+
+### FAQ pour extraire le texte en surbrillance dans un fichier PDF
+
+#### Q : Que sont les annotations de balisage de texte dans un document PDF ?
+
+R : Les annotations de balisage de texte sont des annotations qui mettent en surbrillance ou marquent un texte spécifique dans un document PDF. Des exemples d'annotations de balisage de texte incluent les surlignages, les soulignements et les barrés.
+
+#### Q : Puis-je extraire du texte d'autres types d'annotations à l'aide d'Aspose.PDF pour .NET ?
+
+R : Oui, Aspose.PDF pour .NET fournit diverses méthodes pour extraire du texte à partir de différents types d'annotations, notamment des annotations de balisage de texte, des annotations de texte libre, etc.
+
+#### Q : Aspose.PDF pour .NET prend-il en charge l'extraction de texte à partir de fichiers PDF protégés par mot de passe ?
+
+ : Oui, Aspose.PDF pour .NET prend en charge l'extraction de texte à partir de fichiers PDF protégés par mot de passe. Vous devez fournir le mot de passe correct lors du chargement du document PDF à l'aide du`Document` classe.
+
+#### Q : Puis-je filtrer le texte en surbrillance en fonction d'autres critères, tels que la couleur ou l'auteur ?
+
+R : Oui, vous pouvez filtrer le texte en surbrillance en fonction d'autres critères, tels que la couleur, l'auteur ou la date de création. Aspose.PDF pour .NET fournit des méthodes pour accéder et filtrer les annotations en fonction de leurs propriétés.
+
+#### Q : Est-il possible d'enregistrer le texte en surbrillance extrait dans un fichier séparé ?
+
+R : Oui, vous pouvez enregistrer le texte en surbrillance extrait dans un fichier séparé ou le stocker dans une structure de données pour un traitement ou une analyse ultérieur(e).

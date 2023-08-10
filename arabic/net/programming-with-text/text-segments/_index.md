@@ -66,7 +66,7 @@ textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
 textFragmentAbsorber = new TextFragmentAbsorber(@"(?i)the ((.)*)");
 ```
 
-- للعثور على نص يتبع تطابق regex: 
+- للعثور على نص بعد تطابق regex: 
 
 ```csharp
 textFragmentAbsorber = new TextFragmentAbsorber(@"(?<=word).*");
@@ -97,7 +97,7 @@ textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
 textFragmentAbsorber = new TextFragmentAbsorber(@"(?i)the ((.)*)");
 // الرجاء استخدام التعبير العادي التالي للعثور على النص التالي لمطابقة regex.
 textFragmentAbsorber = new TextFragmentAbsorber(@"(?<=word).*");
-// من أجل البحث داخل مستند PDF للارتباط التشعبي / URL ، يرجى محاولة استخدام التعبير العادي التالي.
+// من أجل البحث في مستند PDF الموجود داخل الارتباط التشعبي / URL ، يرجى محاولة استخدام التعبير العادي التالي.
 textFragmentAbsorber = new TextFragmentAbsorber(@"(http|ftp|https):\/\/([\w\-_]+(?:(?:\.[\w\-_]+)+))([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?");
 ```
 

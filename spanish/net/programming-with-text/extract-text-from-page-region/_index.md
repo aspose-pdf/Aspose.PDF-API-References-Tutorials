@@ -39,7 +39,7 @@ Document pdfDocument = new Document(dataDir + "ExtractTextAll.pdf");
 ```
 
 ## Paso 5: extraer texto de una región de página
- Crear un`TextAbsorber` objeto para extraer texto del documento. Configurar el`TextSearchOptions` para limitar la búsqueda a una región de página específica definida por un rectángulo.
+ Crear un`TextAbsorber`objeto para extraer texto del documento. Configurar el`TextSearchOptions` para limitar la búsqueda a una región de página específica definida por un rectángulo.
 
 ```csharp
 TextAbsorber absorb = new TextAbsorber();
@@ -56,7 +56,7 @@ string extractedText = absorb.Text;
 ```
 
 ## Paso 7: Guarda el texto extraído
- Crear un`TextWriter` y abra el archivo donde desea guardar el texto extraído. Escriba el texto extraído en el archivo y cierre la transmisión.
+ Crear un`TextWriter` y abra el archivo donde desea guardar el texto extraído. Escriba el texto extraído en el archivo y cierre la secuencia.
 
 ```csharp
 TextWriter tw = new StreamWriter(dataDir + "extracted-text.txt");

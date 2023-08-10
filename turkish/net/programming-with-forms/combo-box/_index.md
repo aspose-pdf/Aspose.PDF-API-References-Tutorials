@@ -7,7 +7,6 @@ type: docs
 weight: 30
 url: /tr/net/programming-with-forms/combo-box/
 ---
-
 Bu eğitimde size Aspose.PDF for .NET kullanarak birleşik giriş listesi oluşturmayı göstereceğiz. Bu süreçte size yol göstermesi için C# kaynak kodunu adım adım açıklayacağız.
 
 ## Adım 1: Hazırlık
@@ -103,3 +102,25 @@ catch (Exception ex)
 ## Çözüm
 
 Bu eğitimde, Aspose.PDF for .NET kullanarak birleşik giriş listesi oluşturmayı öğrendik. Bu adımları takip ederek, Aspose.PDF kullanarak PDF belgelerinize kolaylıkla bir açılan kutu listesi ekleyebilirsiniz.
+
+### SSS
+
+#### S: Aspose.PDF for .NET kullanarak açılan kutu listesinin görünümünü özelleştirebilir miyim?
+
+C: Evet, açılan kutu listesinin görünümünü Aspose.PDF for .NET kullanarak özelleştirebilirsiniz. Yazı tipi boyutu, renk, arka plan rengi, kenarlık stili gibi özellikleri ve daha fazlasını istediğiniz görünüm ve hisse uyacak şekilde ayarlayabilirsiniz.
+
+#### S: Açılan kutu listesinde varsayılan seçili seçenekleri ayarlayabilir miyim?
+
+ C: Evet, Aspose.PDF for .NET'i kullanarak açılan kutu listesindeki varsayılan seçili seçenekleri ayarlayabilirsiniz. kullanabilirsiniz`Selected` mülkiyeti`ComboBoxField` bir veya daha fazla seçeneği varsayılan olarak seçili olarak işaretlemek için nesne.
+
+#### S: Kullanıcı bir seçim yaptıktan sonra seçilen değeri açılan kutu listesinden nasıl alabilirim?
+
+ C: Aspose.PDF for .NET'i kullanarak açılan kutu listesinden seçilen değeri alabilirsiniz. Kullanıcı bir seçim yaptıktan sonra,`Value` mülkiyeti`ComboBoxField`Seçilen değeri elde etmek için nesne.
+
+#### S: Birleşik giriş kutusu listesine olay işleyicileri veya eylemler eklemek mümkün müdür?
+
+ C: Evet, Aspose.PDF for .NET, birleşik giriş kutusu listesine olay işleyicileri veya eylemler eklemenizi sağlar. gibi JavaScript eylemlerini ilişkilendirebilirsiniz.`OnValueChanged`, kullanıcı bir seçeneği belirlediğinde belirli eylemleri gerçekleştirmek için birleşik giriş kutusu listesine.
+
+#### S: Birleşik giriş kutusu listesindeki seçeneklere araç ipuçları veya açıklamalar ekleyebilir miyim?
+
+ C: Evet, Aspose.PDF for .NET'i kullanarak açılan kutu listesindeki seçeneklere araç ipuçları veya açıklamalar ekleyebilirsiniz. ayarlayabilirsiniz`AlternateName` Kullanıcı seçeneğin üzerine geldiğinde görüntülenecek bir araç ipucu veya açıklama sağlamak için her seçeneğin özelliği.

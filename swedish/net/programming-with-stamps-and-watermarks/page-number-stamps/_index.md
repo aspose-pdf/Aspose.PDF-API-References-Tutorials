@@ -1,13 +1,13 @@
 ---
-title: Sidnummerstämplar
-linktitle: Sidnummerstämplar
+title: Sidnummerstämplar i PDF-fil
+linktitle: Sidnummerstämplar i PDF-fil
 second_title: Aspose.PDF för .NET API Referens
-description: Lär dig hur du lägger till sidnummerstämplar i ett PDF-dokument med Aspose.PDF för .NET.
+description: Lär dig hur du lägger till sidnummerstämplar i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 160
 url: /sv/net/programming-with-stamps-and-watermarks/page-number-stamps/
 ---
-den här handledningen guidar vi dig steg för steg om hur du lägger till sidnummerstämplar i ett PDF-dokument med Aspose.PDF för .NET. Vi använder den medföljande C#-källkoden för att öppna ett befintligt PDF-dokument, skapa en sidnummerstämpel, ställa in dess egenskaper och lägga till den på en specifik sida i PDF-dokumentet.
+I den här handledningen guidar vi dig steg för steg om hur du lägger till sidnummerstämplar i PDF-fil med Aspose.PDF för .NET. Vi använder den medföljande C#-källkoden för att öppna ett befintligt PDF-dokument, skapa en sidnummerstämpel, ställa in dess egenskaper och lägga till den på en specifik sida i PDF-filen.
 
 ## Steg 1: Sätta upp miljön
 
@@ -124,3 +124,45 @@ Console.WriteLine("\nPage number stamp added successfully.\nFile saved at " + da
 ## Slutsats
 
 Grattis! Du har lärt dig hur du lägger till sidnummerstämplar i ett PDF-dokument med Aspose.PDF för .NET. Du kan nu anpassa dina PDF-dokument genom att lägga till tydliga och informativa sidnummer.
+
+### Vanliga frågor för sidnummerstämplar i PDF-fil
+
+#### F: Vad är en sidnummerstämpel och hur används den för att lägga till sidnummer i en PDF-fil?
+
+S: En sidnummerstämpel är en funktion i Aspose.PDF som låter dig lägga till dynamiska sidnummer på specifika sidor i ett PDF-dokument. I den här handledningen uppnås det genom att skapa ett PageNumberStamp-objekt, konfigurera dess egenskaper och lägga till det på en angiven sida.
+
+#### F: Hur kan den medföljande C#-källkoden lägga till sidnummerstämplar i en PDF-fil?
+
+S: Koden visar hur man laddar ett befintligt PDF-dokument, skapar en sidnummerstämpel, ställer in olika egenskaper (som format, teckensnitt, justering, etc.) och sedan lägger till stämpeln på en specifik sida. Stämpeln beräknar automatiskt det totala sidantal och infogar de korrekta sidnumren.
+
+#### F: Kan jag anpassa utseendet på sidnumret, som typsnitt, färg och storlek?
+
+S: Absolut, du kan anpassa utseendet på sidnummerstämpeln genom att justera egenskaper som teckensnitt, teckenstorlek, teckensnitt (fet, kursiv, etc.) och textfärg.
+
+#### F: Är det möjligt att lägga till sidnummerstämplar på flera sidor i ett PDF-dokument?
+
+S: Ja, du kan lägga till sidnummerstämplar på flera sidor genom att skapa flera PageNumberStamp-objekt och lägga till var och en på önskade sidor.
+
+#### F: Kan jag välja om sidnummerstämpeln ska visas som en del av sidans innehåll eller som ett bakgrundselement?
+
+ S: Ja, du kan styra om sidnummerstämpeln ska visas som en del av sidans innehåll eller som ett bakgrundselement genom att ställa in`Background` egenskapen för PageNumberStamp.
+
+#### F: Hur anger jag formatet på sidnumret, inklusive det totala antalet sidor?
+
+ S: Koden använder`Format`egenskapen för PageNumberStamp för att ange formatet för sidnumret. Makrot "# av" används för att representera det totala antalet sidor.
+
+#### F: Vad händer om jag lägger till samma sidnummerstämpel på flera sidor?
+
+S: Om du lägger till samma PageNumberStamp-instans på flera sidor visas rätt sidnummer för varje sida. Stämpeln justerar automatiskt sidnumret och det totala antalet sidor.
+
+#### F: Kan jag lägga till sidnummerstämplar i sidhuvuds- eller sidfotsavsnitt i ett PDF-dokument?
+
+S: Även om PageNumberStamps vanligtvis läggs till direkt i sidans innehåll, kan du använda FloatingBox eller andra tekniker för att placera dem i sidhuvuds- eller sidfotsavsnitt.
+
+#### F: Hur anger jag positionen för sidnummerstämpeln på sidan?
+
+ A: Den`BottomMargin` och`HorizontalAlignment` Egenskaperna för sidnummerstämpeln låter dig styra stämpelns position på sidan.
+
+#### F: Vad händer om jag vill börja sidnumreringen från ett annat nummer istället för 1?
+
+ S: Du kan ställa in`StartingNumber`egenskapen för PageNumberStamp för att ange startsidans nummer.

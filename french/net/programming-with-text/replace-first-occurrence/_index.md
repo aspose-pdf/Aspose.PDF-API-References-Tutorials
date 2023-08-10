@@ -19,7 +19,7 @@ Avant de commencer, assurez-vous que vous disposez des éléments suivants :
 
 ## Étape 1 : Configurer le répertoire de documents
 
- Tout d'abord, vous devez définir le chemin d'accès au répertoire dans lequel vous avez le fichier PDF d'entrée. Remplacer`"YOUR DOCUMENT DIRECTORY"` dans le`dataDir` variable avec le chemin d'accès à votre fichier PDF.
+ Tout d'abord, vous devez définir le chemin d'accès au répertoire dans lequel vous avez le fichier PDF d'entrée. Remplacer`"YOUR DOCUMENT DIRECTORY"` dans le`dataDir`variable avec le chemin d'accès à votre fichier PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -35,7 +35,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 ## Étape 3 : Trouver la première occurrence de la phrase de recherche
 
- Nous créons un`TextFragmentAbsorber`objet et acceptez-le pour toutes les pages du document PDF afin de trouver toutes les instances de la phrase de recherche.
+ Nous créons un`TextFragmentAbsorber` objet et acceptez-le pour toutes les pages du document PDF afin de trouver toutes les instances de la phrase de recherche.
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
@@ -74,7 +74,7 @@ Console.WriteLine("\nText replaced successfully.\nFile saved at " + dataDir);
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Ouvrir le document
 Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
-// Créer un objet TextAbsorber pour trouver toutes les instances de la phrase de recherche d'entrée
+//Créer un objet TextAbsorber pour trouver toutes les instances de la phrase de recherche d'entrée
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
 // Accepter l'absorbeur pour toutes les pages
 pdfDocument.Pages.Accept(textFragmentAbsorber);

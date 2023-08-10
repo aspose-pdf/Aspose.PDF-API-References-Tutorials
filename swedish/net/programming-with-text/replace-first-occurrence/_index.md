@@ -8,7 +8,7 @@ weight: 330
 url: /sv/net/programming-with-text/replace-first-occurrence/
 ---
 
-I den här handledningen kommer vi att förklara hur man ersätter den första förekomsten av en specifik text i ett PDF-dokument med Aspose.PDF-biblioteket för .NET. Vi kommer att gå igenom steg-för-steg-processen för att öppna ett PDF-dokument, hitta den första förekomsten av sökfrasen, ersätta texten, uppdatera egenskaper och spara den modifierade PDF-filen med den medföljande C#-källkoden.
+den här handledningen kommer vi att förklara hur man ersätter den första förekomsten av en specifik text i ett PDF-dokument med Aspose.PDF-biblioteket för .NET. Vi kommer att gå igenom steg-för-steg-processen för att öppna ett PDF-dokument, hitta den första förekomsten av sökfrasen, ersätta texten, uppdatera egenskaper och spara den modifierade PDF-filen med den medföljande C#-källkoden.
 
 ## Förutsättningar
 
@@ -19,7 +19,7 @@ Innan du börjar, se till att du har följande:
 
 ## Steg 1: Konfigurera dokumentkatalogen
 
- Först måste du ställa in sökvägen till katalogen där du har indata-PDF-filen. Byta ut`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till din PDF-fil.
+ Först måste du ställa in sökvägen till katalogen där du har indata-PDF-filen. Byta ut`"YOUR DOCUMENT DIRECTORY"` i`dataDir`variabel med sökvägen till din PDF-fil.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -35,7 +35,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 ## Steg 3: Hitta den första förekomsten av sökfrasen
 
- Vi skapar en`TextFragmentAbsorber`objekt och acceptera det för alla sidor i PDF-dokumentet för att hitta alla instanser av sökfrasen.
+ Vi skapar en`TextFragmentAbsorber` objekt och acceptera det för alla sidor i PDF-dokumentet för att hitta alla instanser av sökfrasen.
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
@@ -74,7 +74,7 @@ Console.WriteLine("\nText replaced successfully.\nFile saved at " + dataDir);
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Öppna dokumentet
 Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
-// Skapa TextAbsorber-objekt för att hitta alla instanser av den inmatade sökfrasen
+//Skapa TextAbsorber-objekt för att hitta alla instanser av den inmatade sökfrasen
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
 // Acceptera absorbenten för alla sidor
 pdfDocument.Pages.Accept(textFragmentAbsorber);

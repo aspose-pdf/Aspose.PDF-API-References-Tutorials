@@ -37,7 +37,7 @@ pdfDocument1.Pages.Add();
 ```
 
 ## 4. Adım: Değiştirilen belgeyi kaydedin
- Son olarak, değiştirilmiş PDF belgesini kullanarak bir dosyaya kaydedebilirsiniz.`Save()` yöntemi`Document` sınıf. Çıktı dosyası için doğru yolu ve dosya adını belirttiğinizden emin olun.
+Son olarak, değiştirilmiş PDF belgesini kullanarak bir dosyaya kaydedebilirsiniz.`Save()` yöntemi`Document` sınıf. Çıktı dosyası için doğru yolu ve dosya adını belirttiğinizden emin olun.
 
 ```csharp
 dataDir = dataDir + "InsertEmptyPageAtEnd_out.pdf";
@@ -63,3 +63,30 @@ System.Console.WriteLine("\nEmpty page inserted successfully at the end of docum
 
 ## Çözüm
 Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF belgesinin sonuna nasıl boş sayfa ekleneceğini öğrendik. Bu adım adım kılavuzu izleyerek, PDF belgenizin sonuna kolayca boş bir sayfa ekleyebilirsiniz. Aspose.PDF, PDF dosyalarıyla çalışmak için güçlü ve esnek bir API sunarak, PDF belgelerini özel ihtiyaçlarınıza göre değiştirmenize, değiştirmenize ve oluşturmanıza olanak tanır.
+
+### SSS
+
+#### S: Aspose.PDF for .NET kullanarak bir PDF belgesinin sonuna nasıl boş sayfa ekleyebilirim?
+
+C: Aspose.PDF for .NET kullanarak bir PDF belgesinin sonuna boş bir sayfa eklemek için şu adımları takip edebilirsiniz:
+
+1. Orijinal PDF dosyanızın bulunduğu yolu ve değiştirilen PDF dosyasını nereye kaydetmek istediğinizi belirterek belge dizinini ayarlayın. "BELGELER DİZİNİNİZİ" uygun yolla değiştirin.
+2.  kullanarak PDF belgesini açın.`Document` Aspose.PDF sınıfı. Orijinal PDF belgesine giden doğru yolu belirttiğinizden emin olun.
+3.  kullanarak PDF belgesinin sonuna boş bir sayfa ekleyin.`Add()` yöntemi`Pages` mülkiyeti`pdfDocument1` nesne.
+4.  Değiştirilen PDF belgesini kullanarak bir dosyaya kaydedin.`Save()` yöntemi`Document` sınıf. Çıktı dosyası için doğru yolu ve dosya adını belirttiğinizden emin olun.
+
+#### S: PDF belgesinde belirli bir konuma boş bir sayfa ekleyebilir miyim?
+
+ Y: Evet, PDF belgesindeki herhangi bir belirli konuma boş bir sayfa ekleyebilirsiniz.`Insert()` yöntemi`Pages` koleksiyonu`pdfDocument1` nesne. Eklenecek sayfanın dizinini belirtin. Örneğin, dizin 2'ye boş bir sayfa eklemek için şunu kullanabilirsiniz:`pdfDocument1.Pages.Insert(2);`.
+
+#### S: Boş bir sayfa eklemek, PDF dosyasındaki mevcut içeriğin üzerine yazılır mı?
+
+C: Hayır, PDF belgesinin sonuna boş bir sayfa eklemek mevcut içeriğin üzerine yazmayacaktır. Sonuna boş bir sayfa ekler ve içeriğin geri kalanını değiştirmeden bırakır.
+
+#### S: PDF belgesinin sonuna birden fazla boş sayfa ekleyebilir miyim?
+
+C: Evet, eklemek istediğiniz her ek sayfa için boş sayfa ekleme adımını tekrarlayarak PDF belgesinin sonuna birden fazla boş sayfa ekleyebilirsiniz.
+
+#### S: Boş bir sayfa eklemek yerine PDF belgesinin sonundan bir sayfayı çıkarmak mümkün müdür?
+
+ C: Evet, PDF belgesinin sonundan bir sayfayı kaldırabilirsiniz.`RemoveAt()` yöntemi`Pages`Toplamak. Örneğin, son sayfayı kaldırmak için şunu kullanabilirsiniz:`pdfDocument1.Pages.RemoveAt(pdfDocument1.Pages.Count);`.

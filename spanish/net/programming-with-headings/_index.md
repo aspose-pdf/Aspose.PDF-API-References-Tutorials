@@ -8,9 +8,9 @@ description: Los tutoriales de Aspose.PDF para .NET lo guiarán a través del us
 ---
 Los tutoriales de Aspose.PDF para .NET lo llevan paso a paso para dominar la programación con encabezados en sus documentos PDF. Aprenda a agregar, diseñar y manipular encabezados para mejorar la estructura de sus archivos PDF.
 
-Explore las características de Aspose.PDF para .NET con tutoriales dedicados. Aprende a trabajar con encabezados en tus documentos PDF, usando ejemplos prácticos y explicaciones paso a paso. Mejore la legibilidad y la navegación de sus archivos PDF con estos recursos completos.
+Explore las características de Aspose.PDF para .NET con tutoriales dedicados. Aprende a trabajar con encabezados en tus documentos PDF, usando ejemplos prácticos y explicaciones paso a paso. Mejore la legibilidad y la navegación de sus archivos PDF con estos recursos integrales.
 
 ## Tutoriales
 | Título | Descripción |
 | --- | --- | 
-| [Aplicar estilo de número](./apply-number-style/) | Aprenda a aplicar un estilo de numeración a los títulos de un documento PDF con Aspose.PDF para .NET. Guía paso por paso. |   
+| [Aplicar estilo de número en archivo PDF](./apply-number-style/) | Aprenda a aplicar un estilo de numeración a los encabezados en un archivo PDF usando Aspose.PDF para .NET. Guía paso por paso. |   

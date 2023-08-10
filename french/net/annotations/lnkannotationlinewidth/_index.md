@@ -33,7 +33,7 @@ lineInfo.Visibility = true;
 lineInfo.LineColor = System.Drawing.Color.Red;
 lineInfo.LineWidth = 2;
 ```
-## Étape 5 : Créer un nouveau`Aspose.Pdf.Point` array that represents the gesture from the `LineInfo` object.
+##  Étape 5 : Créer un nouveau`Aspose.Pdf.Point` array that represents the gesture from the `LineInfo` object.
 ```csharp
 int length = lineInfo.VerticeCoordinate.Length / 2;
 Aspose.Pdf.Point[] gesture = new Aspose.Pdf.Point[length];
@@ -115,3 +115,29 @@ dataDir = dataDir + "lnkAnnotationLineWidth_out.pdf";
 // Enregistrer le fichier de sortie
 doc.Save(dataDir);
 ```
+
+## Conclusion
+
+Dans ce didacticiel, nous avons appris à définir la largeur de ligne d'une annotation de lien dans un document PDF à l'aide d'Aspose.PDF pour .NET. Aspose.PDF pour .NET fournit une large gamme d'outils et de fonctionnalités pour travailler avec des documents PDF, y compris la possibilité de créer et de personnaliser des annotations de lien. En suivant le guide étape par étape et en utilisant le code source C# fourni, les développeurs peuvent facilement ajouter des liens interactifs à leurs documents PDF, améliorant ainsi l'expérience utilisateur et l'interactivité de leurs applications. Aspose.PDF pour .NET est une bibliothèque polyvalente qui permet aux développeurs .NET de travailler avec des fichiers PDF de manière efficace et efficiente.
+
+### FAQ
+
+#### Q : Qu'est-ce qu'une annotation de lien dans un document PDF ?
+
+R : Une annotation de lien dans un document PDF est un élément interactif qui vous permet de créer des liens hypertexte ou des actions qui dirigent l'utilisateur vers un autre emplacement dans le même document, un site Web externe ou un document PDF différent.
+
+#### Q : Comment puis-je définir la largeur de ligne d'une annotation de lien à l'aide d'Aspose.PDF pour .NET ?
+
+ : Pour définir la largeur de ligne d'une annotation de lien à l'aide d'Aspose.PDF pour .NET, vous pouvez créer un`InkAnnotation` objet et spécifiez la propriété d'épaisseur de ligne.
+
+#### Q : Quelles propriétés peuvent être personnalisées pour une annotation de lien dans Aspose.PDF pour .NET ?
+
+R : Vous pouvez personnaliser diverses propriétés d'une annotation de lien dans Aspose.PDF pour .NET, telles que son emplacement, sa taille, sa couleur, ses propriétés de bordure (largeur, style, motif de tiret et effet), son sujet, son titre et sa visibilité.
+
+#### Q : Puis-je créer une annotation de lien contenant plusieurs gestes manuscrits ?
+
+ R : Oui, vous pouvez créer une annotation de lien contenant plusieurs gestes manuscrits en ajoutant plusieurs`Point` tableaux aux`InkAnnotation` objet.
+
+#### Q : Comment puis-je ajouter une annotation de lien à une page spécifique du document PDF ?
+
+ R : Pour ajouter une annotation de lien à une page spécifique du document PDF, vous devez spécifier le numéro de page lors de la création du`InkAnnotation` objet. Par exemple,`new InkAnnotation(doc.Pages[1], ...)` ajoute l'annotation de lien à la première page.

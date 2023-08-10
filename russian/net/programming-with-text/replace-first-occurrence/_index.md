@@ -19,7 +19,7 @@ url: /ru/net/programming-with-text/replace-first-occurrence/
 
 ## Шаг 1. Настройте каталог документов
 
- Во-первых, вам нужно указать путь к каталогу, в котором находится входной PDF-файл. Заменять`"YOUR DOCUMENT DIRECTORY"` в`dataDir` переменная с путем к вашему файлу PDF.
+ Во-первых, вам нужно указать путь к каталогу, в котором находится входной PDF-файл. Заменять`"YOUR DOCUMENT DIRECTORY"` в`dataDir`переменная с путем к вашему файлу PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -35,7 +35,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 ## Шаг 3. Найдите первое вхождение искомой фразы
 
- Мы создаем`TextFragmentAbsorber`объект и принять его для всех страниц PDF-документа, чтобы найти все экземпляры поисковой фразы.
+ Мы создаем`TextFragmentAbsorber` объект и принять его для всех страниц PDF-документа, чтобы найти все экземпляры поисковой фразы.
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
@@ -44,7 +44,7 @@ pdfDocument.Pages.Accept(textFragmentAbsorber);
 
 ## Шаг 4: Замените текст
 
-Если искомая фраза найдена в документе PDF, мы извлекаем первое вхождение фрагмента текста и обновляем его свойства новым текстом и форматированием.
+Если искомая фраза найдена в документе PDF, мы извлекаем первое вхождение текстового фрагмента и обновляем его свойства новым текстом и форматированием.
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -74,7 +74,7 @@ Console.WriteLine("\nText replaced successfully.\nFile saved at " + dataDir);
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Открыть документ
 Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
-// Создайте объект TextAbsorber, чтобы найти все экземпляры входной поисковой фразы.
+//Создайте объект TextAbsorber, чтобы найти все экземпляры входной поисковой фразы.
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
 // Примите поглотитель для всех страниц
 pdfDocument.Pages.Accept(textFragmentAbsorber);

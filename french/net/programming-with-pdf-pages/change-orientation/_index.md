@@ -87,3 +87,25 @@ System.Console.WriteLine("\nPage orientation changed successfully.\nFile saved a
 
 ## Conclusion
 Dans ce didacticiel, nous avons appris à modifier l'orientation de la page d'un document PDF à l'aide d'Aspose.PDF pour .NET. En suivant les étapes décrites ci-dessus, vous pouvez facilement implémenter cette fonctionnalité dans vos propres projets. N'hésitez pas à explorer davantage la documentation Aspose.PDF pour découvrir d'autres fonctionnalités utiles pour travailler avec des fichiers PDF.
+
+### FAQ
+
+#### Q : Quel est l'intérêt de modifier l'orientation de la page dans un document PDF ?
+
+R : La modification de l'orientation de la page dans un document PDF vous permet de faire pivoter le contenu de la page de 90 degrés. Cela peut être utile dans les scénarios où le contenu d'origine doit être affiché ou imprimé dans une orientation différente, comme le passage du mode portrait au mode paysage ou vice versa.
+
+#### Q : Puis-je modifier l'orientation de pages spécifiques dans le document PDF ?
+
+ R : Oui, vous pouvez modifier l'orientation de pages spécifiques dans le document PDF. Dans le code source C# fourni, le`foreach` loop est utilisé pour parcourir chaque page du document et changer son orientation. Si vous souhaitez uniquement modifier l'orientation de pages spécifiques, vous pouvez modifier la boucle pour cibler ces pages en fonction de leurs numéros de page ou d'autres critères.
+
+#### Q : La modification de l'orientation de la page affecte-t-elle la mise en page du contenu de la page ?
+
+R : Oui, la modification de l'orientation de la page affectera la mise en page du contenu de la page. Le contenu sera pivoté de 90 degrés et la largeur et la hauteur de la page seront permutées. Par conséquent, le placement et l'alignement du contenu sur la page peuvent changer.
+
+#### Q : Puis-je faire pivoter la page d'un angle autre que 90 degrés ?
+
+ R : Dans le code source C# fourni, la rotation de la page est définie sur 90 degrés à l'aide de`page.Rotate = Rotate.on90;` . Cependant, vous pouvez changer l'angle de rotation en d'autres valeurs si nécessaire. Par exemple, vous pouvez utiliser`Rotate.on180` pour faire pivoter la page de 180 degrés ou`Rotate.on270` pour le faire pivoter de 270 degrés.
+
+#### Q : Comment gérer le contenu de la page qui déborde après avoir changé l'orientation ?
+
+R : Lorsque vous modifiez l'orientation de la page, les dimensions de la page peuvent changer, ce qui peut entraîner un débordement de contenu. Pour gérer cela, vous devrez peut-être ajuster la mise en page et la mise en forme du contenu de la page. Vous pouvez utiliser les fonctionnalités fournies par Aspose.PDF pour .NET, telles que le redimensionnement des éléments, l'ajustement des marges ou la réorganisation du contenu, pour vous assurer que le contenu de la page s'adapte correctement après le changement d'orientation.

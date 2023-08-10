@@ -43,7 +43,7 @@ imageStamp.BottomMargin = 10;
 imageStamp.HorizontalAlignment = HorizontalAlignment.Center;
 imageStamp.VerticalAlignment = VerticalAlignment.Bottom;
 
-//Ajouter un tampon d'image à toutes les pages
+// Ajouter un tampon d'image à toutes les pages
 foreach(Page page in pdfDocument.Pages)
 {
      page.AddStamp(imageStamp);
@@ -95,3 +95,45 @@ Console.WriteLine("\nImage in footer added successfully.\nFile saved at " + data
 ## Conclusion
 
 Félicitation ! Vous avez appris à ajouter une image dans la section pied de page d'un document PDF à l'aide d'Aspose.PDF pour .NET. Vous pouvez désormais personnaliser les pieds de page de vos documents PDF en ajoutant des images.
+
+### FAQ pour l'image dans le pied de page
+
+#### Q : À quoi sert l'ajout d'une image dans la section de pied de page d'un document PDF ?
+
+R : L'ajout d'une image dans la section de pied de page d'un document PDF vous permet d'inclure des éléments visuels, tels qu'un logo ou un filigrane, au bas de chaque page. Cela peut améliorer l'image de marque et l'esthétique du contenu PDF.
+
+#### Q : Comment le code source C# fourni permet-il d'ajouter une image à la section de pied de page d'un document PDF ?
+
+ R : Le code fourni montre comment charger un document PDF existant, créer un`ImageStamp` objet à partir d'un fichier image, définissez des propriétés telles que la marge inférieure et l'alignement, puis ajoutez le tampon d'image au pied de page de toutes les pages.
+
+#### Q : Puis-je ajuster la position et l'alignement de l'image dans la section de pied de page ?
+
+ R : Oui, vous pouvez ajuster la position et l'alignement de l'image dans la section de pied de page en modifiant les propriétés du`ImageStamp` objet. L'extrait de code définit des propriétés telles que`BottomMargin`, `HorizontalAlignment` , et`VerticalAlignment`.
+
+#### Q : Est-il possible d'ajouter différentes images à la section de pied de page sur différentes pages du document PDF ?
+
+ R : Oui, vous pouvez ajouter différentes images à la section de pied de page sur différentes pages en créant des`ImageStamp` objets avec différents fichiers image et propriétés, puis en les ajoutant à des pages spécifiques.
+
+#### Q : Comment le code garantit-il que l'image est ajoutée à toutes les pages du document PDF ?
+
+ R : Le code fourni utilise un`foreach` boucle pour parcourir toutes les pages du document PDF et ajoute le même`ImageStamp` à la section de pied de page de chaque page.
+
+#### Q : Puis-je ajouter d'autres éléments, tels que du texte ou des formes, à la section de pied de page en utilisant une approche similaire ?
+
+R : Oui, vous pouvez ajouter d'autres éléments tels que du texte ou des formes à la section de pied de page en utilisant une approche similaire en créant les objets de tampon appropriés (par exemple,`TextStamp`) et en définissant leurs propriétés en conséquence.
+
+#### Q : Comment spécifier le chemin d'accès au fichier image que je souhaite ajouter au pied de page ?
+
+ R : Le chemin d'accès au fichier image est spécifié lors de la création du`ImageStamp` objet, comme indiqué dans le code. Assurez-vous de fournir le chemin d'accès correct au fichier image.
+
+#### Q : Puis-je personnaliser la taille de l'image dans la section de pied de page ?
+
+ R : Oui, vous pouvez personnaliser la taille de l'image dans la section de pied de page en ajustant les dimensions du`ImageStamp` en utilisant des propriétés comme`Width` et`Height`.
+
+#### Q : Est-il possible de supprimer ou de remplacer l'image dans la section de pied de page après l'avoir ajoutée ?
+
+ R : Oui, vous pouvez supprimer ou remplacer l'image dans la section de pied de page en modifiant le contenu du`ImageStamp` objet ou en supprimant le tampon de pages spécifiques.
+
+#### Q : Comment le code gère-t-il les scénarios où les dimensions de l'image dépassent l'espace disponible dans le pied de page ?
+
+ R : Le code définit des propriétés telles que`BottomMargin`, `HorizontalAlignment` , et`VerticalAlignment` pour contrôler le positionnement et l'alignement de l'image. Assurez-vous que ces propriétés sont ajustées pour éviter tout problème de chevauchement ou de mise en page.

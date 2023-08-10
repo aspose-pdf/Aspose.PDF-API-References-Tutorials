@@ -103,7 +103,7 @@ NoteElement note3 = taggedContent.CreateNoteElement();
 paragraph.AppendChild(note3);
 note3.SetText("Note with ID = 'note_003'. ");
 note3.SetId("note_003");
-//Doit lever une exception - Aspose.Pdf.Tagged.TaggedException : l'élément de structure avec ID='note_002' existe déjà
+// Doit lever une exception - Aspose.Pdf.Tagged.TaggedException : l'élément de structure avec ID='note_002' existe déjà
 //note3.SetId("note_002");
 // Le document résultant n'est pas conforme au PDF/UA Si ClearId() est utilisé pour l'élément de structure de note
 //note3.ClearId();
@@ -119,3 +119,45 @@ Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 ## Conclusion
 
 Dans ce didacticiel, vous avez appris à créer des éléments de structure de note dans un document PDF à l'aide d'Aspose.PDF pour .NET. Les éléments de note structurés vous permettent d'ajouter des informations structurées supplémentaires à votre document PDF.
+
+### FAQ
+
+#### : Quel est le but de la création d'éléments de structure de note dans un document PDF à l'aide d'Aspose.PDF pour .NET ?
+
+R : La création d'éléments de structure de note dans un document PDF à l'aide d'Aspose.PDF pour .NET vous permet d'ajouter des notes structurées au contenu du document. Ces notes peuvent fournir un contexte supplémentaire, des explications ou des références à des parties spécifiques du contenu.
+
+#### Q : Comment la bibliothèque Aspose.PDF aide-t-elle à créer des éléments de structure de note dans un document PDF ?
+
+R : Aspose.PDF pour .NET est une bibliothèque puissante qui fournit des fonctionnalités pour créer, manipuler et convertir des documents PDF par programme. Dans ce didacticiel, les fonctionnalités de structure de contenu marqué de la bibliothèque sont utilisées pour créer des éléments de note structurés dans le contenu du document PDF.
+
+#### Q : Quelles sont les conditions préalables à la création d'éléments de structure de note dans un document PDF à l'aide d'Aspose.PDF pour .NET ?
+
+R : Avant de commencer, assurez-vous que Visual Studio est installé avec le framework .NET et que la bibliothèque Aspose.PDF pour .NET est référencée dans votre projet.
+
+#### Q : Comment le code C# fourni crée-t-il des éléments de structure de note dans le contenu du document PDF ?
+
+R : Le code montre comment créer un document PDF, définir des éléments structurés de note et les ajouter à un paragraphe. Chaque note est créée à l'aide des méthodes fournies par Aspose.PDF, vous permettant d'incorporer des notes structurées dans le contenu.
+
+#### Q : Puis-je personnaliser le contenu et les propriétés des éléments de structure de note que je crée ?
+
+R : Oui, vous pouvez personnaliser le contenu et les propriétés des éléments de structure de note en utilisant les méthodes et les propriétés fournies par la bibliothèque Aspose.PDF. Le code montre comment définir le texte et l'ID des éléments de note, mais vous pouvez les personnaliser davantage selon vos besoins.
+
+#### Q : Comment la relation hiérarchique est-elle établie entre les éléments de la structure de la note et le contenu du document ?
+
+ R : La relation hiérarchique est établie en ajoutant des éléments de structure de note en tant qu'enfants d'autres éléments structurés, tels que des paragraphes. Dans le code, les éléments de note sont ajoutés à un élément de paragraphe à l'aide de la`AppendChild` méthode.
+
+#### Q : Puis-je attribuer des identifiants uniques aux éléments de structure de notes ?
+
+ : Oui, vous pouvez attribuer des identifiants uniques aux éléments de la structure des notes à l'aide de la`SetId` méthode. Le code montre comment définir les ID des éléments de note sur des valeurs uniques.
+
+#### Q : Que se passe-t-il si j'essaie d'attribuer un ID en double à un élément de structure de note ?
+
+R : Toute tentative d'attribution d'un ID en double à un élément de structure de note entraînera une exception. Le code fourni dans le didacticiel inclut un commentaire illustrant ce scénario.
+
+#### Q : Comment puis-je garantir la conformité PDF/UA lors de la création d'éléments de structure de note ?
+
+ R : Le code fourni dans le didacticiel montre comment valider la conformité PDF/UA à l'aide du`Validate` méthode. En validant le document par rapport à la norme PDF/UA, vous pouvez vous assurer que les éléments de structure de note ajoutés respectent les directives d'accessibilité.
+
+#### Q : Puis-je utiliser cette approche pour ajouter des éléments de structure de note à un document PDF existant ?
+
+: Oui, vous pouvez modifier l'approche fournie pour ajouter des éléments de structure de note à un document PDF existant. Au lieu de créer un nouveau document, chargez le document existant à l'aide de Aspose.PDF, puis suivez des étapes similaires pour ajouter des éléments de note.

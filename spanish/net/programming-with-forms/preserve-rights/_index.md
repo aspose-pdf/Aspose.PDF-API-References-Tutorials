@@ -7,7 +7,6 @@ type: docs
 weight: 210
 url: /es/net/programming-with-forms/preserve-rights/
 ---
-
 En este tutorial, le mostraremos cómo conservar los derechos de formulario en un documento PDF utilizando Aspose.PDF para .NET. Explicaremos el código fuente de C# paso a paso para guiarlo a través de este proceso.
 
 ## Paso 1: Preparación
@@ -89,3 +88,26 @@ fs.Close();
 ## Conclusión
 
 En este tutorial, aprendimos cómo conservar los derechos de un formulario en un documento PDF usando Aspose.PDF para .NET. Siguiendo estos pasos, puede acceder fácilmente a los campos del formulario y realizar cambios específicos mientras conserva los permisos de acceso y escritura.
+
+
+### Preguntas frecuentes
+
+#### P: ¿Puedo conservar los derechos de campos de formulario específicos sin afectar a otros en el documento PDF?
+
+ R: Sí, usando el`FullName` propiedad de los campos de formulario, puede apuntar a campos de formulario específicos para su conservación sin afectar a otros.
+
+#### P: ¿Puedo conservar los derechos de un formulario en un documento PDF protegido con contraseña?
+
+R: Sí, Aspose.PDF para .NET le permite conservar los derechos de un formulario incluso en documentos PDF protegidos con contraseña, siempre que proporcione la contraseña correcta para acceder y modificar el archivo.
+
+#### P: ¿Qué sucede si intento modificar los campos del formulario sin los derechos de acceso adecuados?
+
+R: Si intenta modificar los campos del formulario sin los derechos de acceso adecuados, los cambios no se guardarán en el documento PDF y es posible que reciba una excepción o un mensaje de error.
+
+#### P: ¿Es Aspose.PDF para .NET compatible con todas las versiones de .NET Framework?
+
+R: Sí, Aspose.PDF para .NET es compatible con todas las versiones de .NET Framework, incluidos .NET Core y .NET Standard.
+
+#### P: ¿Puedo conservar los derechos de formulario en un documento PDF mediante programación en otros lenguajes de programación además de C#?
+
+R: Sí, Aspose.PDF para .NET admite varios lenguajes de programación, como VB.NET y ASP.NET, además de C#.

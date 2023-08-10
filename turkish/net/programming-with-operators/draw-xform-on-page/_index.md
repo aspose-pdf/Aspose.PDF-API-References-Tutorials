@@ -52,7 +52,7 @@ Giriş PDF dosyasını yüklemek için aşağıdaki kodu kullanın:
 using (Document doc = new Document(inFile))
 {
 OperatorCollection pageContents = doc.Pages[1].Contents;
-//Aşağıdaki kod, GSave/GRestore işleçlerini kullanır
+// Aşağıdaki kod, GSave/GRestore işleçlerini kullanır
 // Kod, XForm'u konumlandırmak için ContatenateMatrix operatörünü kullanır.
 // Kod, XForm'u sayfada çizmek için Do operatörünü kullanır.
 // GSave/GRestore operatörleri mevcut içeriği kaydırır
@@ -79,7 +79,7 @@ form.Contents.Add(new Do(ximage.Name));
 form.Contents.Add(new GRestore());
 
 pageContents. Add(new GSave());
-// XForm'u x=100 ve y=500 koordinatlarında konumlandırın
+//XForm'u x=100 ve y=500 koordinatlarında konumlandırın
 pageContents. Add(new ConcatenateMatrix(1, 0, 0, 1, 100, 500));
 // XForm'u Do operatörüyle çizin
 pageContents.Add(new Do(form.Name));
@@ -132,7 +132,7 @@ using (Document doc = new Document(inFile))
 	form.Contents.Add(new Aspose.Pdf.Operators.ConcatenateMatrix(200, 0, 0, 200, 0, 0));
 	// Görüntüyü akışa yükle
 	Stream imageStream = new FileStream(imageFile, FileMode.Open);
-	// XForm Resources'ın Görüntüler koleksiyonuna görüntü ekleyin
+	//XForm Resources'ın Görüntüler koleksiyonuna görüntü ekleyin
 	form.Resources.Images.Add(imageStream);
 	XImage ximage = form.Resources.Images[form.Resources.Images.Count];
 	// Do işlecini kullanma: bu işleç görüntüyü çizer
@@ -161,3 +161,59 @@ using (Document doc = new Document(inFile))
 ## Çözüm
 
 Bu öğreticide, Aspose.PDF for .NET kullanarak bir PDF sayfasında bir XForm formunun nasıl çizileceğini öğrendiniz. Açıklanan adımları izleyerek, bir XForm formunu mevcut bir sayfaya ekleyip konumlandırabilecek ve böylece PDF belgelerinize daha fazla esneklik kazandırabileceksiniz.
+
+### Sayfada XForm çizmek için SSS
+
+#### S: Aspose.PDF'de XForm nedir?
+
+Y: Bir XForm, bir PDF belgesindeki yeniden kullanılabilir bir grafik nesnedir. Farklı sayfalarda birden çok kez yeniden kullanılabilen karmaşık grafikler, resimler veya metinler tanımlamanıza ve çizmenize olanak tanır.
+
+#### S: Aspose.PDF için gerekli ad alanlarını nasıl içe aktarırım?
+
+ A: C# kod dosyanızda,`using` Aspose.PDF tarafından sağlanan sınıflara ve yöntemlere erişim için gerekli ad alanlarını içe aktarma yönergesi:
+```csharp
+using System;
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Operators;
+```
+
+#### S: GSave ve GRestore operatörlerinin amacı nedir?
+
+ C:`GSave` Ve`GRestore`Aspose.PDF'deki operatörler, grafik durumunu kaydetmek ve geri yüklemek için kullanılır. İçeriğin bir bölümüne uygulanan dönüşümlerin ve ayarların sonraki bölümleri etkilememesini sağlamaya yardımcı olurlar.
+
+#### S: Aspose.PDF kullanarak bir XForm'u nasıl tanımlarım?
+
+ C: Bir XForm oluşturmak için`XForm.CreateNewForm` yöntemine ekleyin ve`Resources.Forms` Belirli bir sayfanın toplanması. Daha sonra XForm'lara içerik ekleyebilirsiniz.`Contents` mülk.
+
+#### S: Bir XForm içinde nasıl resim çizebilirim?
+
+ A: Görüntüyü bir akışa yükleyin ve`Resources.Images` XForm koleksiyonu. Kullan`Do` XForm içindeki operatör`Contents` görüntüyü çizmek için
+
+#### S: Bir XForm'u bir PDF sayfasında nasıl konumlandırırım?
+
+ C: XForm'u bir sayfada konumlandırmak için`ConcatenateMatrix` sayfanın içindeki operatör`Contents`. XForm'un çevirisini (konumunu) ve ölçeklendirmesini belirtmek için matris parametrelerini ayarlayın.
+
+#### S: Aynı sayfada birden çok XForm çizebilir miyim?
+
+ C: Evet, aynı sayfada birden fazla XForm çizebilirsiniz.`ConcatenateMatrix`her bir XForm'u farklı koordinatlarda konumlandırmak için parametreler.
+
+#### S: Oluşturulduktan sonra bir XForm'un içeriğini değiştirebilir miyim?
+
+ C: Evet, bir XForm'un içeriğini oluşturduktan sonra, içeriğine ek işleçler ekleyerek değiştirebilirsiniz.`Contents` mülk.
+
+#### S: GSave ve GRestore operatörlerini atlarsam ne olur?
+
+Y: GSave ve GRestore işleçlerinin atlanması, sonraki içeriğe istenmeyen dönüşümlerin veya ayarların uygulanmasına yol açabilir. Bunları kullanmak, temiz bir grafik durumunun korunmasına yardımcı olur.
+
+#### S: XForms'u PDF belgesinin farklı sayfalarında yeniden kullanabilir miyim?
+
+ C: Evet, XForm'u birden çok sayfada yeniden kullanabilirsiniz.`Resources.Forms` farklı sayfaların toplanması.
+
+#### S: Oluşturabileceğim XForms sayısında bir sınır var mı?
+
+C: Oluşturabileceğiniz XForm sayısıyla ilgili kesin bir sınır olmamakla birlikte, çok fazla XForm'un performansı ve bellek kullanımını etkileyebileceğini unutmayın. Bunları akıllıca kullanın.
+
+#### S: Bir XForm'u döndürebilir miyim veya başka dönüşümler uygulayabilir miyim?
+
+ C: Evet, kullanabilirsiniz`ConcatenateMatrix`XForm'a döndürme, ölçekleme ve öteleme gibi dönüşümleri uygulamak için işleç.

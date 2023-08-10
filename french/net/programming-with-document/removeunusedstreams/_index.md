@@ -1,13 +1,13 @@
 ---
-title: Supprimer les flux inutilisés
-linktitle: Supprimer les flux inutilisés
+title: Supprimer les flux inutilisés dans le fichier PDF
+linktitle: Supprimer les flux inutilisés dans le fichier PDF
 second_title: Référence de l'API Aspose.PDF pour .NET
-description: Apprenez à supprimer les flux inutilisés des fichiers PDF à l'aide d'Aspose.PDF pour .NET. Notre guide étape par étape.
+description: Apprenez à supprimer les flux inutilisés dans les fichiers PDF à l'aide d'Aspose.PDF pour .NET. Notre guide étape par étape.
 type: docs
 weight: 270
 url: /fr/net/programming-with-document/removeunusedstreams/
 ---
-Dans cet exemple, nous expliquerons comment supprimer les flux inutilisés des documents PDF à l'aide d'Aspose.PDF pour .NET. Nous fournirons un guide étape par étape sur la façon de procéder, y compris le code source complet avec des explications.
+Dans cet exemple, nous expliquerons comment supprimer les flux inutilisés dans les fichiers PDF à l'aide d'Aspose.PDF pour .NET. Nous fournirons un guide étape par étape sur la façon de procéder, y compris le code source complet avec des explications.
 
 ## Étape 1 : Le chemin d'accès au répertoire des documents
 
@@ -73,3 +73,21 @@ dataDir = dataDir + "OptimizeDocument_out.pdf";
 // Enregistrer le document mis à jour
 pdfDocument.Save(dataDir);
 ```
+
+## Conclusion
+
+ L'optimisation des documents PDF en supprimant les flux inutilisés est essentielle pour améliorer les performances et réduire la taille des fichiers. Aspose.PDF pour .NET simplifie ce processus en fournissant une méthode pratique pour supprimer les flux inutilisés à l'aide de la`OptimizationOptions`. Le guide étape par étape et le code source C# fourni permettent aux développeurs d'implémenter facilement cette fonctionnalité dans leurs applications .NET. En suivant ces instructions, les développeurs peuvent optimiser efficacement leurs fichiers PDF et améliorer le traitement PDF global dans leurs projets .NET.
+
+### FAQ pour supprimer les flux inutilisés dans le fichier PDF
+
+#### Q : Que sont les flux inutilisés dans un document PDF ?
+
+: Les flux inutilisés dans un document PDF sont des parties du fichier qui ne sont pas référencées ou utilisées dans le contenu du document. Ces flux peuvent inclure des images, des polices ou d'autres ressources qui ne sont plus nécessaires mais qui existent toujours dans le fichier PDF.
+
+#### Q : Comment la suppression des flux inutilisés profite-t-elle aux documents PDF ?
+
+R : La suppression des flux inutilisés d'un document PDF réduit sa taille de fichier, ce qui accélère les temps de chargement et améliore les performances. Il aide à optimiser le fichier PDF pour une meilleure expérience utilisateur et un stockage efficace.
+
+#### Q : Les développeurs peuvent-ils spécifier les flux à supprimer à l'aide d'Aspose.PDF pour .NET ?
+
+ R : Oui, les développeurs peuvent contrôler la suppression des flux inutilisés en définissant le`RemoveUnusedStreams` possibilité dans le`OptimizationOptions`. Cela leur donne la possibilité de choisir les flux à supprimer en fonction de leurs besoins spécifiques.

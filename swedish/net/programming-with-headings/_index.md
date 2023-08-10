@@ -13,4 +13,4 @@ Utforska funktionerna i Aspose.PDF för .NET med dedikerade handledningar. Lär 
 ## Handledningar
 | Titel | Beskrivning |
 | --- | --- | 
-| [Använd nummerstil](./apply-number-style/) | Lär dig hur du tillämpar en numreringsstil på rubriker i ett PDF-dokument med Aspose.PDF för .NET. Steg för steg guide. |   
+| [Använd nummerstil i PDF-fil](./apply-number-style/) | Lär dig hur du tillämpar en numreringsstil på rubriker i PDF-fil med Aspose.PDF för .NET. Steg för steg guide. |   

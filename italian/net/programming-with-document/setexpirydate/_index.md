@@ -1,8 +1,8 @@
 ---
-title: Imposta data di scadenza
-linktitle: Imposta data di scadenza
+title: Imposta la data di scadenza nel file PDF
+linktitle: Imposta la data di scadenza nel file PDF
 second_title: Aspose.PDF per riferimento API .NET
-description: Scopri come impostare la data di scadenza nei documenti PDF utilizzando Aspose.PDF per .NET con questa guida dettagliata.
+description: Scopri come impostare la data di scadenza nel file PDF utilizzando Aspose.PDF per .NET con questa guida dettagliata.
 type: docs
 weight: 300
 url: /it/net/programming-with-document/setexpirydate/
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Passaggio 2: creazione di un nuovo documento PDF
 
-Per creare un nuovo documento PDF, dobbiamo istanziare un nuovo file`Aspose.Pdf.Document` oggetto. Possiamo farlo usando il seguente codice:
+ Per creare un nuovo documento PDF, dobbiamo istanziare un nuovo file`Aspose.Pdf.Document` oggetto. Possiamo farlo usando il seguente codice:
 
 ```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
@@ -35,7 +35,7 @@ doc.Pages.Add();
 
 ## Passaggio 4: aggiunta di testo al documento PDF
 
- Dopo aver aggiunto una pagina al documento PDF, possiamo aggiungere del testo usando il file`Paragraphs` collezione. Possiamo farlo usando il seguente codice:
+Dopo aver aggiunto una pagina al documento PDF, possiamo aggiungere del testo usando il file`Paragraphs` collezione. Possiamo farlo usando il seguente codice:
 
 ```csharp
 doc.Pages[1].Paragraphs.Add(new TextFragment("Hello World..."));
@@ -99,3 +99,21 @@ dataDir = dataDir + "SetExpiryDate_out.pdf";
 // Salva documento PDF
 doc.Save(dataDir);
 ```
+
+## Conclusione
+
+L'impostazione di una data di scadenza per un documento PDF utilizzando Aspose.PDF per .NET è una funzione utile per garantire che il documento sia valido solo per un determinato periodo. Seguendo la guida dettagliata e utilizzando il codice sorgente C# fornito, gli sviluppatori possono facilmente impostare la data di scadenza e creare PDF con validità limitata nel tempo. Questa funzione può essere particolarmente utile per i documenti che devono essere consultati o distribuiti per una durata limitata.
+
+### Domande frequenti per impostare la data di scadenza nel file PDF
+
+#### D: Posso impostare una data di scadenza diversa per il documento PDF?
+
+ R: Sì, è possibile impostare una data di scadenza diversa per il documento PDF modificando il codice JavaScript nel passaggio 5. Nell'esempio fornito, la data di scadenza è impostata su maggio 2017. Per impostare una data di scadenza diversa, è necessario modificare il`year` E`month` variabili nel codice JavaScript all'anno e al mese desiderati.
+
+#### D: Cosa succede quando il documento PDF è scaduto?
+
+R: Quando il documento PDF è scaduto, come specificato nel codice JavaScript, il visualizzatore visualizzerà un messaggio di avviso che indica che il file è scaduto e che l'utente ne ha bisogno di uno nuovo. Questo messaggio di avviso verrà visualizzato all'apertura del PDF.
+
+#### D: Posso utilizzare un'ora specifica per la data di scadenza anziché solo la data?
+
+ R: Sì, puoi impostare un'ora specifica per la data di scadenza nel codice JavaScript. Modificando il`expiry` variabile nel codice JavaScript per includere l'ora desiderata, è possibile impostare un'ora specifica per la data di scadenza.

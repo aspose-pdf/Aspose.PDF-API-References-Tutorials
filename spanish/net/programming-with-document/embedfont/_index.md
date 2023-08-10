@@ -1,13 +1,12 @@
 ---
-title: Fuente incrustada
-linktitle: Fuente incrustada
+title: Incrustar fuente en archivo PDF
+linktitle: Incrustar fuente en archivo PDF
 second_title: Referencia de API de Aspose.PDF para .NET
 description: Aprenda a incrustar fuentes en un archivo PDF usando Aspose.PDF para .NET con esta guía paso a paso. Asegúrese de que sus documentos se muestren correctamente en cualquier dispositivo.
 type: docs
 weight: 120
 url: /es/net/programming-with-document/embedfont/
 ---
-
 En este tutorial, discutiremos cómo incrustar fuentes en un archivo PDF usando Aspose.PDF para .NET. Aspose.PDF para .NET es una potente biblioteca que permite a los desarrolladores crear, editar y manipular documentos PDF mediante programación. Esta biblioteca proporciona una amplia gama de funciones para trabajar con documentos PDF, incluida la adición de texto, imágenes, tablas y mucho más. Incrustar fuentes en un archivo PDF es un requisito común para los desarrolladores que desean asegurarse de que el archivo PDF se muestre correctamente en diferentes dispositivos, independientemente de si las fuentes requeridas están instaladas en esos dispositivos o no.
 
 ## Paso 1: Cree una nueva aplicación de consola C#
@@ -121,5 +120,27 @@ Console.WriteLine("\nFont embedded successfully in a PDF file.\nFile saved at " 
 ```
 
 
-## Conclusión
+## Conclusión incrustar fuente en archivo PDF
 En este artículo, hemos discutido cómo incrustar fuentes en un archivo PDF usando Aspose.PDF para .NET. Aspose.PDF para .NET proporciona una API simple y fácil de usar para trabajar con documentos PDF, lo que incluye agregar e incrustar fuentes. Incrustar fuentes en un archivo PDF es un paso importante para garantizar que el documento se muestre correctamente en diferentes dispositivos, independientemente de si las fuentes requeridas están instaladas en esos dispositivos.
+
+### Preguntas frecuentes
+
+#### P: ¿Por qué es importante incrustar fuentes en un archivo PDF?
+
+R: Incrustar fuentes en un archivo PDF es esencial para garantizar que el documento se vea correctamente en diferentes dispositivos y sistemas. Cuando las fuentes están incrustadas, se convierten en parte del archivo PDF, eliminando la dependencia de fuentes externas instaladas en el dispositivo de visualización.
+
+#### P: ¿Puedo incrustar todas las fuentes utilizadas en un archivo PDF?
+
+R: Sí, puede incrustar todas las fuentes utilizadas en un archivo PDF. Aspose.PDF para .NET proporciona un enfoque sencillo para iterar todas las fuentes utilizadas en un archivo PDF e incrustarlos para garantizar una representación precisa en varios dispositivos.
+
+#### P: ¿Es Aspose.PDF para .NET compatible con diferentes formatos de fuente?
+
+R: Sí, Aspose.PDF para .NET admite varios formatos de fuentes, incluidas las fuentes TrueType, OpenType, Type 1 y CFF. Puede incrustar fuentes en el archivo PDF independientemente de su formato.
+
+#### P: ¿Incrustar fuentes aumenta el tamaño del archivo del documento PDF?
+
+R: Sí, incrustar fuentes en un documento PDF puede aumentar el tamaño del archivo, ya que los datos de la fuente se incluyen dentro del propio archivo PDF. Sin embargo, esto garantiza que la apariencia del documento permanezca uniforme, independientemente de la disponibilidad de fuentes en el dispositivo de visualización.
+
+#### P: ¿Puedo personalizar el proceso de incrustación de fuentes?
+
+R: Sí, Aspose.PDF para .NET le permite personalizar el proceso de incrustación de fuentes. Puede elegir qué fuentes incrustar, excluir fuentes específicas o incrustar solo subconjuntos específicos de una fuente para optimizar el tamaño del archivo.

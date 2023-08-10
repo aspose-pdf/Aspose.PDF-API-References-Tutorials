@@ -7,12 +7,11 @@ type: docs
 weight: 280
 url: /es/net/programming-with-forms/set-radio-button-caption/
 ---
-
 En esta guía, explicaremos paso a paso cómo usar la biblioteca Aspose.PDF para .NET para definir el título de un botón de opción en un formulario PDF. Le mostraremos cómo acceder al campo del botón de opción, crear una nueva opción de botón de opción y personalizar el título del botón.
 
 ## Paso 1: Configuración del directorio de documentos
 
- El primer paso es configurar el directorio del documento donde se encuentra el formulario PDF en el que desea trabajar. Puedes usar el`dataDir`variable para especificar la ruta del directorio.
+ El primer paso es configurar el directorio del documento donde se encuentra el formulario PDF en el que desea trabajar. Puedes usar el`dataDir` variable para especificar la ruta del directorio.
 
 ```csharp
 // La ruta al directorio de documentos.
@@ -23,7 +22,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ## Paso 2: Cargar el formulario PDF de origen
 
- En este paso, cargaremos el formulario PDF de origen usando el`Aspose.Pdf.Facades.Form`clase de Aspose.PDF.
+ En este paso, cargaremos el formulario PDF de origen usando el`Aspose.Pdf.Facades.Form` clase de Aspose.PDF.
 
 ```csharp
 Aspose.Pdf.Facades.Form form1 = new Aspose.Pdf.Facades.Form(dataDir + "RadioButtonField.pdf");
@@ -117,3 +116,25 @@ PDF_Template_PDF_HTML.Save(dataDir + "RadioButtonField_out.pdf");
 ## Conclusión
 
 En esta guía, aprendimos a usar la biblioteca Aspose.PDF para .NET para configurar el título de un botón de opción en un formulario PDF. Siguiendo los pasos descritos, puede personalizar las opciones del botón de radio y cambiar el título según sea necesario. Siéntase libre de explorar más a fondo las funciones de Aspose.PDF para .NET para ampliar las posibilidades de manipular archivos PDF.
+
+### Preguntas frecuentes
+
+#### P: ¿Puedo usar Aspose.PDF para .NET para establecer subtítulos para botones de opción en un formulario PDF?
+
+R: Sí, puede usar Aspose.PDF para .NET para establecer subtítulos para botones de opción en un formulario PDF. El código fuente de muestra proporcionado muestra cómo acceder al campo del botón de opción, crear una nueva opción de botón de opción con un título personalizado y actualizar el campo existente.
+
+#### P: ¿Cómo puedo personalizar la apariencia del título del botón de opción, como el tamaño y el color de la fuente?
+
+ R: Puede personalizar la apariencia del título del botón de radio ajustando las propiedades del`TextFragment` utilizado para el subtítulo. Por ejemplo, puede configurar la fuente, el tamaño de fuente, el color, el espaciado entre líneas y otras opciones de formato de texto.
+
+#### P: ¿Es posible agregar múltiples opciones de botones de radio con diferentes subtítulos a un solo grupo de botones de radio?
+
+R: Sí, puede agregar múltiples opciones de botones de radio con diferentes subtítulos a un solo grupo de botones de radio. Cada opción representará una opción diferente y los usuarios pueden seleccionar solo una opción del grupo.
+
+#### P: ¿Puedo usar Aspose.PDF para .NET para modificar otros campos de formulario en un documento PDF?
+
+R: Sí, Aspose.PDF para .NET proporciona un conjunto completo de funciones para manipular varios campos de formulario en un documento PDF, como campos de texto, casillas de verificación, listas desplegables y más. Puede usar la biblioteca para establecer valores, modificar apariencias y agregar interactividad a los campos de formulario.
+
+#### P: ¿Aspose.PDF para .NET admite el trabajo con archivos PDF generados a partir de otras fuentes, como documentos escaneados?
+
+R: Sí, Aspose.PDF para .NET admite el trabajo con archivos PDF generados a partir de varias fuentes, incluidos los documentos escaneados. La biblioteca proporciona capacidades de OCR (reconocimiento óptico de caracteres) para extraer texto de archivos PDF escaneados y manipular el contenido mediante programación.

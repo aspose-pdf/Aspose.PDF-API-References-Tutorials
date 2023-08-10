@@ -112,3 +112,45 @@ document.Save(dataDir + "IllustrationStructureElements.pdf");
 ## Abschluss
 
 Herzlichen Glückwunsch! Sie haben gelernt, wie Sie Illustrationsstrukturelemente mit Aspose.PDF für .NET verwenden. Sie können Ihrem PDF-Dokument jetzt Bilder und Abbildungen hinzufügen, um seine visuelle Präsentation zu verbessern. Entdecken Sie weitere Funktionen von Aspose.PDF, um sein volles Potenzial zu entdecken.
+
+### FAQs
+
+#### F: Was sind Illustrationsstrukturelemente in einem PDF-Dokument und wie verbessern sie die visuelle Präsentation?
+
+A: Mithilfe von Illustrationsstrukturelementen in einem PDF-Dokument können Sie visuelle Inhalte wie Bilder und Abbildungen integrieren. Durch die Verwendung von Illustrationsstrukturelementen mit Aspose.PDF für .NET können Sie die visuelle Präsentation Ihrer PDF-Dokumente verbessern und sie ansprechender und informativer machen.
+
+#### F: Wie erleichtert Aspose.PDF für .NET die Verwendung von Illustrationsstrukturelementen?
+
+A: Aspose.PDF für .NET bietet eine Reihe von Klassen und Methoden, mit denen Sie Illustrationsstrukturelemente erstellen, bearbeiten und zu Ihren PDF-Dokumenten hinzufügen können. Zu diesen Elementen können Bilder, Figuren und andere visuelle Inhalte gehören.
+
+####  F: Welche Rolle spielt das?`taggedContent` object play in using illustration structure elements?
+
+ A: Die`taggedContent` Objekt, das aus dem Dokument stammt`TaggedContent`Mit dieser Eigenschaft können Sie mit strukturierten Elementen im PDF-Dokument arbeiten. Sie können Illustrationsstrukturelemente erstellen, organisieren und hinzufügen, um die visuelle Darstellung des Dokuments zu verbessern.
+
+#### F: Wie verbessern Illustrationsstrukturelemente das Verständnis des Inhalts des PDF-Dokuments?
+
+A: Illustrationsstrukturelemente bieten visuellen Kontext und unterstützen den Textinhalt eines PDF-Dokuments. Sie helfen dabei, komplexe Informationen, Daten oder Konzepte durch Bilder und Zahlen zu vermitteln und so den Inhalt leichter zu verstehen und zu merken.
+
+#### F: Welche Arten von visuellen Inhalten können mithilfe von Illustrationsstrukturelementen hinzugefügt werden?
+
+A: Elemente der Illustrationsstruktur können verwendet werden, um eine Vielzahl visueller Inhalte hinzuzufügen, darunter Bilder, Diagramme, Diagramme und andere Arten von Grafiken, die die visuelle Attraktivität und das Storytelling des Dokuments verbessern.
+
+#### F: Wie erstelle ich ein Bild und füge es einem PDF-Dokument hinzu, indem ich Illustrationsstrukturelemente in Aspose.PDF für .NET verwende?
+
+A: Sie können ein Illustrationsstrukturelement mit erstellen`CreateFigureElement` Methode, weisen Sie ihr Alternativtext, Titel und benutzerdefinierte Tags zu und verknüpfen Sie eine Bilddatei mit der`SetImage` Methode. Das bereitgestellte Codebeispiel veranschaulicht diesen Prozess.
+
+#### F: Kann ich das Erscheinungsbild und die Attribute von Illustrationsstrukturelementen anpassen?
+
+A: Ja, Sie können das Erscheinungsbild und die Attribute von Illustrationsstrukturelementen anpassen, indem Sie Eigenschaften wie Alternativtext, Titel, benutzerdefinierte Tags, Bildquellen und mehr festlegen. Dadurch können Sie die visuelle Darstellung an die Anforderungen Ihres Dokuments anpassen.
+
+#### F: Wie kann ich sicherstellen, dass die Bilder und Abbildungen, die ich mithilfe von Illustrationsstrukturelementen hinzufüge, barrierefrei sind?
+
+A: Um die Barrierefreiheit zu gewährleisten, stellen Sie aussagekräftigen Alternativtext bereit, der den Inhalt der Bilder oder Abbildungen genau beschreibt. Dieser Alternativtext wird von Screenreadern und anderen unterstützenden Technologien gelesen und macht den visuellen Inhalt für alle Benutzer zugänglich.
+
+#### F: Kann ich Illustrationsstrukturelemente in Kombination mit anderen PDF-Manipulationsfunktionen verwenden, die Aspose.PDF für .NET bietet?
+
+A: Auf jeden Fall! Sie können Illustrationsstrukturelemente mit anderen Funktionen von Aspose.PDF für .NET kombinieren, z. B. dem Hinzufügen von Text, dem Erstellen von Tabellen, dem Einfügen von Hyperlinks und mehr. Dadurch können Sie optisch ansprechende und informative PDF-Dokumente erstellen.
+
+#### F: Wie kann ich Illustrationsstrukturelemente für erweitertes Dokumentdesign und visuelles Storytelling weiter erforschen und nutzen?
+
+A: Um tiefer einzutauchen, können Sie die erweiterten Funktionen von Aspose.PDF für .NET erkunden, z. B. das Erstellen interaktiver Elemente, das Einbetten von Multimedia, die Verwendung verschiedener Bildformate und die Optimierung visueller Inhalte für verschiedene Geräte. Die Dokumentation und Beispiele der Bibliothek bieten Anleitungen für diese erweiterten Szenarios.

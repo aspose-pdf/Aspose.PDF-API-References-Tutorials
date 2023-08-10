@@ -74,7 +74,7 @@ TextAbsorber textAbsorber = new TextAbsorber();
 pdfDocument.Pages.Accept(textAbsorber);
 // Hämta den extraherade texten
 string extractedText = textAbsorber.Text;
-// Skapa en författare och öppna filen
+// Skapa en skribent och öppna filen
 TextWriter tw = new StreamWriter(dataDir + "extracted-text.txt");
 // Skriv en textrad till filen
 tw.WriteLine(extractedText);

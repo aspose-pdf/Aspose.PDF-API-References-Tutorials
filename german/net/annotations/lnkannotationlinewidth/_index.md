@@ -33,7 +33,7 @@ lineInfo.Visibility = true;
 lineInfo.LineColor = System.Drawing.Color.Red;
 lineInfo.LineWidth = 2;
 ```
-## Schritt 5: Erstellen Sie ein neues`Aspose.Pdf.Point` array that represents the gesture from the `LineInfo` object.
+##  Schritt 5: Erstellen Sie ein neues`Aspose.Pdf.Point` array that represents the gesture from the `LineInfo` object.
 ```csharp
 int length = lineInfo.VerticeCoordinate.Length / 2;
 Aspose.Pdf.Point[] gesture = new Aspose.Pdf.Point[length];
@@ -115,3 +115,29 @@ dataDir = dataDir + "lnkAnnotationLineWidth_out.pdf";
 // Ausgabedatei speichern
 doc.Save(dataDir);
 ```
+
+## Abschluss
+
+In diesem Tutorial haben wir gelernt, wie man mit Aspose.PDF für .NET die Linienbreite einer Linkanmerkung in einem PDF-Dokument festlegt. Aspose.PDF für .NET bietet eine breite Palette an Tools und Funktionen für die Arbeit mit PDF-Dokumenten, einschließlich der Möglichkeit, Linkanmerkungen zu erstellen und anzupassen. Durch Befolgen der Schritt-für-Schritt-Anleitung und Verwendung des bereitgestellten C#-Quellcodes können Entwickler ganz einfach interaktive Links zu ihren PDF-Dokumenten hinzufügen und so das Benutzererlebnis und die Interaktivität ihrer Anwendungen verbessern. Aspose.PDF für .NET ist eine vielseitige Bibliothek, die .NET-Entwicklern die effiziente und effektive Arbeit mit PDF-Dateien ermöglicht.
+
+### FAQs
+
+#### F: Was ist eine Linkanmerkung in einem PDF-Dokument?
+
+A: Eine Linkanmerkung in einem PDF-Dokument ist ein interaktives Element, mit dem Sie Hyperlinks oder Aktionen erstellen können, die den Benutzer zu einer anderen Stelle innerhalb desselben Dokuments, einer externen Website oder eines anderen PDF-Dokuments weiterleiten.
+
+#### F: Wie kann ich die Linienbreite einer Linkanmerkung mit Aspose.PDF für .NET festlegen?
+
+A: Um die Linienbreite einer Linkanmerkung mit Aspose.PDF für .NET festzulegen, können Sie eine erstellen`InkAnnotation` Objekt und geben Sie die Eigenschaft „Linienbreite“ an.
+
+#### F: Welche Eigenschaften können für eine Linkanmerkung in Aspose.PDF für .NET angepasst werden?
+
+A: Sie können verschiedene Eigenschaften einer Linkanmerkung in Aspose.PDF für .NET anpassen, z. B. Position, Größe, Farbe, Rahmeneigenschaften (Breite, Stil, Strichmuster und Effekt), Betreff, Titel und Sichtbarkeit.
+
+#### F: Kann ich eine Linkanmerkung erstellen, die mehrere Freihandgesten enthält?
+
+ A: Ja, Sie können eine Linkanmerkung erstellen, die mehrere Freihandgesten enthält, indem Sie mehrere hinzufügen`Point` Arrays zum`InkAnnotation` Objekt.
+
+#### F: Wie kann ich einer bestimmten Seite des PDF-Dokuments eine Linkanmerkung hinzufügen?
+
+ A: Um eine Linkanmerkung zu einer bestimmten Seite des PDF-Dokuments hinzuzufügen, müssen Sie beim Erstellen die Seitenzahl angeben`InkAnnotation` Objekt. Zum Beispiel,`new InkAnnotation(doc.Pages[1], ...)` Fügt die Linkanmerkung zur ersten Seite hinzu.

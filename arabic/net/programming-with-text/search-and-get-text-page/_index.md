@@ -61,7 +61,7 @@ pdfDocument.Pages.Accept(textFragmentAbsorber);
 
 ## الخطوة 6: الحصول على أجزاء نصية مستخرجة
 
- احصل على أجزاء النص المستخرجة باستخدام ملحق`TextFragments` ممتلكات`TextFragmentAbsorber` هدف:
+احصل على أجزاء النص المستخرجة باستخدام ملحق`TextFragments` ممتلكات`TextFragmentAbsorber` هدف:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -98,7 +98,7 @@ foreach (TextFragment textFragment in textFragmentCollection)
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // افتح المستند
 Document pdfDocument = new Document(dataDir + "SearchAndGetTextPage.pdf");
-// قم بإنشاء كائن TextAbsorber للعثور على جميع مثيلات عبارة البحث المدخلة
+//قم بإنشاء كائن TextAbsorber للعثور على جميع مثيلات عبارة البحث المدخلة
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("Figure");
 // تقبل الممتص لجميع الصفحات
 pdfDocument.Pages.Accept(textFragmentAbsorber);

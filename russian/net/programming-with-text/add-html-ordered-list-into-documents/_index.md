@@ -41,7 +41,7 @@ Document doc = new Document();
 ```
 
 ## Шаг 5. Создайте объект HtmlFragment с содержимым HTML.
- Создать экземпляр`HtmlFragment` объект с содержимым HTML, которое вы хотите добавить в документ. В предоставленном коде содержимое HTML присваивается переменной`t`. При необходимости вы можете изменить HTML-контент.
+Создать экземпляр`HtmlFragment` объект с содержимым HTML, которое вы хотите добавить в документ. В предоставленном коде содержимое HTML присваивается переменной`t`. При необходимости вы можете изменить HTML-контент.
 
 ```csharp
 HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>First</li><li>Second</li><li>Third</li><li >Fourth</li><li>Fifth</li></ul>Text after the list.<br/>Next line<br/>Last line</body>`");

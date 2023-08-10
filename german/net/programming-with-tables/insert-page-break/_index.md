@@ -1,14 +1,13 @@
 ---
-title: Seitenumbruch einfügen
-linktitle: Seitenumbruch einfügen
+title: Seitenumbruch in PDF-Datei einfügen
+linktitle: Seitenumbruch in PDF-Datei einfügen
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET einen Seitenumbruch in ein PDF-Dokument einfügen.
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET einen Seitenumbruch in eine PDF-Datei einfügen.
 type: docs
 weight: 110
 url: /de/net/programming-with-tables/insert-page-break/
 ---
-
-In diesem Tutorial erfahren Sie, wie Sie mit Aspose.PDF für .NET einen Seitenumbruch in ein PDF-Dokument einfügen. Wir erklären Ihnen Schritt für Schritt den Quellcode in C#. Am Ende dieses Tutorials erfahren Sie, wie Sie nach einer bestimmten Anzahl von Zeilen in einer Tabelle eines PDF-Dokuments einen Seitenumbruch einfügen. Lasst uns beginnen!
+In diesem Tutorial erfahren Sie, wie Sie mit Aspose.PDF für .NET einen Seitenumbruch in eine PDF-Datei einfügen. Wir erklären Ihnen Schritt für Schritt den Quellcode in C#. Am Ende dieses Tutorials erfahren Sie, wie Sie nach einer bestimmten Anzahl von Zeilen in einer Tabelle eines PDF-Dokuments einen Seitenumbruch einfügen. Lasst uns beginnen!
 
 ## Schritt 1: Einrichten der Umgebung
 Stellen Sie sicher, dass Sie Ihre C#-Entwicklungsumgebung mit Aspose.PDF für .NET konfiguriert haben. Fügen Sie den Verweis zur Bibliothek hinzu und importieren Sie die erforderlichen Namespaces.
@@ -106,3 +105,51 @@ Console.WriteLine("\nPage break inserted successfully.\nFile saved at " + dataDi
 
 ## Abschluss
 In diesem Tutorial haben wir gelernt, wie man mit Aspose.PDF für .NET einen Seitenumbruch in ein PDF-Dokument einfügt. Mit dieser Schritt-für-Schritt-Anleitung können Sie mit C# nach einer bestimmten Anzahl von Zeilen in einer Tabelle in einem PDF-Dokument einen Seitenumbruch einfügen.
+
+### FAQs zum Einfügen von Seitenumbrüchen in PDF-Dateien
+
+#### F: Wie kann ich die Seitengröße für die neuen Seiten ändern, die nach dem Seitenumbruch erstellt werden?
+
+ A: Um die Seitengröße für die neuen Seiten zu ändern, die nach dem Seitenumbruch erstellt werden, können Sie Folgendes festlegen`PageSize` Eigentum der`Page` Objekt. Sie können beispielsweise den folgenden Code verwenden, um die Seitengröße auf A4 festzulegen:
+
+```csharp
+// Stellen Sie die Seitengröße auf A4 ein
+doc.Pages[1].SetPageSize(PageSize.A4);
+```
+
+#### F: Kann ich die Seitenränder für die neuen Seiten nach dem Seitenumbruch steuern?
+
+ A: Ja, Sie können die Seitenränder für die neuen Seiten nach dem Seitenumbruch steuern. Benutzen Sie die`Margin` Eigentum der`Page` Objekt zum Festlegen der Seitenränder. Um beispielsweise alle Ränder auf 10 Punkte festzulegen, können Sie den folgenden Code verwenden:
+
+```csharp
+// Stellen Sie alle Ränder auf 10 Punkte ein
+doc.Pages[1].Margin = new MarginInfo(10, 10, 10, 10);
+```
+
+#### F: Ist es möglich, den neuen Seiten nach dem Seitenumbruch Kopf- und Fußzeilen hinzuzufügen?
+
+ A: Ja, Sie können den neuen Seiten nach dem Seitenumbruch Kopf- und Fußzeilen hinzufügen. Benutzen Sie die`Page.Header` Und`Page.Footer` Eigenschaften zum Hinzufügen von Inhalten zu den Kopf- und Fußzeilenabschnitten der Seite. Zum Beispiel:
+
+```csharp
+// Kopfzeile zu den neuen Seiten hinzufügen
+doc.Pages[1].Header = new HeaderFooter()
+{
+    Margin = new MarginInfo(10, 10, 10, 10),
+    Paragraphs = { new TextFragment("Header content") }
+};
+
+// Fußzeile zu den neuen Seiten hinzufügen
+doc.Pages[1].Footer = new HeaderFooter()
+{
+    Margin = new MarginInfo(10, 10, 10, 10),
+    Paragraphs = { new TextFragment("Footer content") }
+};
+```
+
+#### F: Kann ich Seitenumbrüche an bestimmten Stellen außer nach einer bestimmten Anzahl von Zeilen einfügen?
+
+ A: Ja, Sie können Seitenumbrüche an bestimmten Stellen einfügen, außer nach einer bestimmten Anzahl von Zeilen. Sie können das einstellen`IsInNewPage` Eigenschaft einer Zeile zu`true` um die Tabelle zu zwingen, nach dieser Zeile eine neue Seite zu beginnen.
+
+#### F: Wie kann ich das Seitenumbruchverhalten basierend auf der Inhaltshöhe anpassen?
+
+A: Sie können das verwenden`IsBroken` Eigenschaft der Tabelle, um den automatischen Zeilenumbruch über Seiten hinweg zu aktivieren oder zu deaktivieren. Wenn eingestellt auf`true`ermöglicht es, Zeilen je nach Inhaltshöhe seitenübergreifend zu unterbrechen.

@@ -8,7 +8,7 @@ weight: 230
 url: /es/net/programming-with-text/hidden-text-block/
 ---
 
-En este tutorial, explicaremos cómo crear un bloque de texto oculto utilizando la biblioteca Aspose.PDF para .NET. Un bloque de texto oculto es un texto flotante que se vuelve visible cuando el cursor del mouse pasa sobre un área específica. Pasaremos por el proceso paso a paso de crear el bloque de texto oculto utilizando el código fuente de C# provisto.
+En este tutorial, explicaremos cómo crear un bloque de texto oculto utilizando la biblioteca Aspose.PDF para .NET. Un bloque de texto oculto es un texto flotante que se vuelve visible cuando el cursor del mouse pasa sobre un área específica. Pasaremos por el proceso paso a paso de crear el bloque de texto oculto utilizando el código fuente de C# proporcionado.
 
 ## Requisitos
 
@@ -57,7 +57,7 @@ TextFragment fragment = textFragments[1];
 
 ## Paso 5: crea el campo de texto oculto
 
- Creamos un`TextBoxField`objeto para representar el campo de texto oculto. Este campo contendrá el texto que se vuelve visible cuando el cursor del mouse pasa sobre el texto del disparador.
+ Creamos un`TextBoxField` objeto para representar el campo de texto oculto. Este campo contendrá el texto que se vuelve visible cuando el cursor del mouse pasa sobre el texto del disparador.
 
 ```csharp
 TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
@@ -126,7 +126,7 @@ floatingField.Value = "This is the \"floating text field\".";
 floatingField.ReadOnly = true;
 // Establezca la bandera 'oculta' para hacer que el campo sea invisible al abrir el documento
 floatingField.Flags |= AnnotationFlags.Hidden;
-//Establecer un nombre de campo único no es necesario pero está permitido
+// Establecer un nombre de campo único no es necesario pero está permitido
 floatingField.PartialName = "FloatingField_1";
 // No es necesario establecer las características de la apariencia del campo, pero lo hace mejor
 floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, System.Drawing.Color.Blue);
@@ -137,10 +137,10 @@ floatingField.Border.Width = 1;
 floatingField.Multiline = true;
 // Agregar campo de texto al documento
 document.Form.Add(floatingField);
-//Crear botón invisible en la posición del fragmento de texto
+// Crear botón invisible en la posición del fragmento de texto
 ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
 // Cree una nueva acción de ocultación para el campo especificado (anotación) y el indicador de invisibilidad.
-// (También puede hacer referencia al campo flotante por el nombre si lo especificó anteriormente).
+//(También puede hacer referencia al campo flotante por el nombre si lo especificó anteriormente).
 // Agregue acciones al ingresar/salir del mouse en el campo del botón invisible
 buttonField.Actions.OnEnter = new HideAction(floatingField, false);
 buttonField.Actions.OnExit = new HideAction(floatingField);

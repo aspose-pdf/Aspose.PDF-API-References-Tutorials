@@ -7,7 +7,6 @@ type: docs
 weight: 120
 url: /es/net/document-conversion/pdf-to-epub/
 ---
-
 En este tutorial, lo guiaremos a través del proceso de conversión de un archivo PDF a formato EPUB usando Aspose.PDF para .NET. El formato PDF se usa comúnmente para mostrar documentos, mientras que el formato EPUB está especialmente diseñado para libros electrónicos. Siguiendo los pasos a continuación, podrá convertir archivos PDF a formato EPUB.
 
 ## requisitos previos
@@ -54,7 +53,7 @@ Una vez que hemos configurado las opciones de guardado, ya podemos guardar el ar
 pdfDocument.Save(dataDir + "PDFToEPUB_out.epub", options);
 ```
 
- Reemplazar`"YOUR DOCUMENTS DIRECTORY"` con el directorio deseado donde desea guardar el archivo EPUB de salida.
+ Reemplazar`"YOUR DOCUMENTS DIRECTORY"`con el directorio deseado donde desea guardar el archivo EPUB de salida.
 
 ### Código fuente de ejemplo para PDF a EPUB usando Aspose.PDF para .NET
 
@@ -76,4 +75,22 @@ pdfDocument.Save(dataDir + "PDFToEPUB_out.epub", options);
 ```
 
 ## Conclusión
-En este tutorial, hemos cubierto el proceso paso a paso de convertir un archivo PDF en formato EPUB usando Aspose.PDF para .NET. Siguiendo las instrucciones anteriores, puede convertir fácilmente archivos PDF a formato EPUB. Esta función es especialmente útil para convertir documentos PDF en libros electrónicos legibles en diferentes dispositivos.
+En este tutorial, hemos cubierto el proceso paso a paso de convertir un archivo PDF en formato EPUB utilizando Aspose.PDF para .NET. Siguiendo las instrucciones anteriores, puede convertir fácilmente archivos PDF a formato EPUB. Esta función es especialmente útil para convertir documentos PDF en libros electrónicos legibles en diferentes dispositivos.
+
+### Preguntas frecuentes
+
+#### P: ¿Puedo convertir archivos PDF protegidos con contraseña a formato EPUB usando Aspose.PDF para .NET?
+
+R: A partir de la versión actual, Aspose.PDF para .NET no brinda soporte directo para convertir archivos PDF protegidos con contraseña a formato EPUB. Para convertir archivos PDF protegidos con contraseña, primero deberá eliminar la contraseña del archivo PDF usando Aspose.PDF u otros medios, y luego continuar con la conversión al formato EPUB.
+
+#### P: ¿Cuál es la diferencia entre "EpubSaveOptions.RecognitionMode.Flow" y "EpubSaveOptions.RecognitionMode.PreserveLayout"?
+
+R: "EpubSaveOptions.RecognitionMode.Flow" especifica que el contenido del libro EPUB fluirá y se ajustará dinámicamente según el dispositivo o el tamaño de la pantalla. Este modo es adecuado para EPUB ajustables, donde el contenido se adapta a diferentes entornos de lectura. Por otro lado, "EpubSaveOptions.RecognitionMode.PreserveLayout" conserva el diseño del contenido tal como aparece en el PDF de origen, que es más adecuado para EPUB de diseño fijo.
+
+#### P: ¿Puedo personalizar la salida de EPUB usando Aspose.PDF para .NET?
+
+R: Sí, Aspose.PDF para .NET ofrece varias opciones para personalizar la salida EPUB. Puede establecer metadatos, configurar la apariencia, agregar imágenes de portada, definir la tabla de contenido y más. Además, puede controlar el modo de reconocimiento, como se muestra en el ejemplo, para adaptar el diseño del contenido en la salida EPUB.
+
+#### P: ¿Existen limitaciones al convertir archivos PDF complejos a formato EPUB?
+
+R: Si bien Aspose.PDF para .NET ofrece sólidas capacidades de conversión de PDF a EPUB, puede haber ciertos PDF complejos con diseños intrincados, gráficos o fuentes no estándar que podrían tener limitaciones durante el proceso de conversión. Se recomienda probar sus archivos PDF específicos para asegurarse de que el formato EPUB de salida cumpla con sus requisitos.

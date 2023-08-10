@@ -53,7 +53,7 @@ Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
 ```
 
 ## الخطوة 7: قم بإنشاء مستطيل بالشفافية
-قم بإنشاء مستطيل بأبعاد محددة واضبط لون التعبئة على لون شفاف باستخدام`Color.FromRgb` طريقة.
+ قم بإنشاء مستطيل بأبعاد محددة واضبط لون التعبئة على لون شفاف باستخدام`Color.FromRgb` طريقة.
 
 ```csharp
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 400, 400);
@@ -118,7 +118,7 @@ canvas.IsChangePosition = false;
 TextFragment text = new TextFragment("transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text ");
 // إنشاء كائن لون من قناة ألفا
 Aspose.Pdf.Color color = Aspose.Pdf.Color.FromArgb(30, 0, 255, 0);
-//تعيين معلومات اللون لمثيل النص
+// تعيين معلومات اللون لمثيل النص
 text.TextState.ForegroundColor = color;
 // إضافة نص إلى مجموعة فقرات نسخة الصفحة
 page.Paragraphs.Add(text);

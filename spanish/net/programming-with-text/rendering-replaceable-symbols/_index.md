@@ -8,7 +8,7 @@ weight: 310
 url: /es/net/programming-with-text/rendering-replaceable-symbols/
 ---
 
-En este tutorial, explicaremos cómo representar símbolos reemplazables en un documento PDF utilizando la biblioteca Aspose.PDF para .NET. Pasaremos por el proceso paso a paso de crear un PDF, agregar un fragmento de texto con marcadores de nueva línea, configurar las propiedades del texto, colocar el texto y guardar el PDF usando el código fuente de C# proporcionado.
+En este tutorial, explicaremos cómo representar símbolos reemplazables en un documento PDF utilizando la biblioteca Aspose.PDF para .NET. Pasaremos por el proceso paso a paso de crear un PDF, agregar un fragmento de texto con marcadores de nueva línea, configurar las propiedades del texto, colocar el texto y guardar el PDF usando el código fuente de C# provisto.
 
 ## requisitos previos
 
@@ -27,7 +27,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Paso 2: Cree un documento PDF y una página
 
- continuación, creamos un nuevo documento PDF y le agregamos una página usando el`Document` clase y`Page` clase de la biblioteca Aspose.PDF.
+ A continuación, creamos un nuevo documento PDF y le agregamos una página usando el`Document` clase y`Page` clase de la biblioteca Aspose.PDF.
 
 ```csharp
 Aspose.Pdf.Document pdfApplicationDoc = new Aspose.Pdf.Document();
@@ -65,7 +65,7 @@ par.Position = new Aspose.Pdf.Text.Position(100, 600);
 
 ## Paso 6: agregue un párrafo de texto a la página
 
- Creamos un`TextBuilder` objeto con la página y agregue el párrafo de texto al generador de texto.
+ Creamos un`TextBuilder`objeto con la página y agregue el párrafo de texto al generador de texto.
 
 ```csharp
 TextBuilder textBuilder = new TextBuilder(applicationFirstPage);

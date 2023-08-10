@@ -1,13 +1,13 @@
 ---
-title: Tarih Saat Damgası Ekle
-linktitle: Tarih Saat Damgası Ekle
+title: PDF Dosyasına Tarih Saat Damgası Ekleyin
+linktitle: PDF Dosyasına Tarih Saat Damgası Ekleyin
 second_title: Aspose.PDF for .NET API Referansı
-description: Aspose.PDF for .NET ile PDF belgelerinize nasıl kolayca tarih ve saat damgası ekleyeceğinizi öğrenin.
+description: Aspose.PDF for .NET ile PDF dosyasına nasıl kolayca tarih ve saat damgası ekleyeceğinizi öğrenin.
 type: docs
 weight: 10
 url: /tr/net/programming-with-stamps-and-watermarks/add-date-time-stamp/
 ---
-Bu yazıda, Aspose.PDF for .NET kullanarak nasıl tarih ve saat damgası ekleyeceğinizi adım adım anlatacağız. Mevcut bir PDF belgesine tarih ve saat damgası eklemek için sağlanan C# kaynak kodunu nasıl kullanacağınızı göstereceğiz.
+Bu yazıda, Aspose.PDF for .NET kullanarak PDF dosyasına nasıl tarih ve saat damgası ekleyeceğinizi adım adım anlatacağız. Mevcut bir PDF dosyasına tarih ve saat damgası eklemek için sağlanan C# kaynak kodunu nasıl kullanacağınızı göstereceğiz.
 
 ## Gereksinimler
 
@@ -139,3 +139,41 @@ Console.WriteLine("\nDate time stamp added successfully.\nFile saved at " + data
 ## Çözüm
 
 Tebrikler! Aspose.PDF for .NET kullanarak nasıl tarih ve saat damgası ekleyeceğinizi öğrendiniz. Artık PDF belgelerine tarih ve saat damgaları eklemek için bu bilgiyi kendi projelerinize uygulayabilirsiniz.
+
+### PDF dosyasına tarih ve saat damgası eklemek için SSS
+
+#### S: Aspose.PDF for .NET kullanarak bir PDF belgesine tarih ve saat damgası eklemenin amacı nedir?
+
+Y: Bir PDF belgesine tarih ve saat damgası eklemek, belgenin ne zaman değiştirildiğini veya oluşturulduğunu belirterek bilgi değerini artırır. Bu özellik, belge değişikliklerini izlemek ve belge geçmişi için bir referans noktası sağlamak için kullanışlıdır.
+
+#### S: Belirli gereksinimleri karşılamak için tarih ve saat damgasının biçimini özelleştirebilir miyim?
+
+ C: Evet, tarih ve saat damgasının biçimini tercihlerinize göre özelleştirebilirsiniz. Sağlanan C# kaynak kodu,`DateTime.Now.ToString()` zaman damgasını belirli bir biçimde oluşturma yöntemi. Zaman damgasını gerektiği gibi biçimlendirmek için bu kodu değiştirebilirsiniz.
+
+#### S: PDF sayfasındaki belirli bir konuma tarih ve saat damgası eklemek mümkün müdür?
+
+ C: Kesinlikle, PDF sayfasındaki tarih ve saat damgasının yerleşimini ayarlayabilirsiniz.`TextStamp` nesne. Öğreticide sağlanan kod, kenar boşluğu, hizalama ve dikey konumlandırma gibi özelliklerin nasıl ayarlanacağını gösterir.
+
+#### S: Aynı PDF belgesinin farklı sayfalarına birden çok tarih ve saat damgası ekleyebilir miyim?
+
+ C: Evet, aynı PDF belgesinin farklı sayfalarına birden çok tarih ve saat damgası ekleyebilirsiniz. oluşturma işlemini tekrarlamanız yeterlidir.`TextStamp` nesne ve istenen her sayfa için özelliklerini yapılandırma.
+
+#### S: Tarih ve zaman damgası metninin yazı tipini, boyutunu veya rengini nasıl değiştirebilirim?
+
+ C: Tarih ve zaman damgası metninin yazı tipini, boyutunu veya rengini değiştirmek için, damganın özelliklerini özelleştirebilirsiniz.`DefaultAppearance` oluşturmak için kullanılan nesne`TextStamp`. İstenen görünümü elde etmek için yazı tipi adını, boyutunu ve renk değerlerini ayarlayın.
+
+#### S: Aspose.PDF for .NET kullanarak bir PDF belgesine başka türden notlar veya damgalar eklemek mümkün müdür?
+
+C: Evet, Aspose.PDF for .NET, PDF belgelerine ekleyebileceğiniz metin açıklamaları, damgalar, çizgiler, şekiller ve daha fazlasını içeren çok çeşitli açıklama türleri sağlar. Ek açıklamalarla çalışma hakkında daha fazla ayrıntı için Aspose.PDF belgelerini inceleyebilirsiniz.
+
+#### S: Bir PDF belgesine tarih ve saat damgası eklerken herhangi bir sınırlama veya dikkat edilmesi gereken nokta var mı?
+
+C: Tarih ve saat damgası eklemek kolay olsa da, belgenin düzeni ve mevcut içerik gibi faktörleri göz önünde bulundurun. Damganın yerleşiminin önemli bilgileri gizlemediğinden veya belgenin okunabilirliğini etkilemediğinden emin olun.
+
+#### S: PDF belgelerine tarih ve saat damgaları eklemek için bu yöntemi kendi projelerime nasıl entegre edebilirim?
+
+C: Bu yöntemi entegre etmek için verilen adımları izleyin ve kodu projenizin yapısına uyacak şekilde ayarlayın. Kullanışlılıklarını artırmak ve değişikliklerin net bir zaman çizelgesini sağlamak için mevcut PDF belgelerine tarih ve saat damgaları ekleyebilirsiniz.
+
+#### S: Birden çok PDF belgesine tarih ve saat damgası ekleme sürecini otomatikleştirebilir miyim?
+
+Y: Evet, bir belge listesi içinde yinelenen ve her birine aynı damgalama işlemini uygulayan bir komut dosyası veya program oluşturarak birden çok PDF belgesine tarih ve saat damgası ekleme işlemini otomatikleştirebilirsiniz.

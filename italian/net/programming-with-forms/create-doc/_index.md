@@ -7,7 +7,6 @@ type: docs
 weight: 40
 url: /it/net/programming-with-forms/create-doc/
 ---
-
 In questo tutorial, ti mostreremo come creare un documento con pulsanti di opzione utilizzando Aspose.PDF per .NET. Spiegheremo il codice sorgente C# passo dopo passo per guidarti attraverso questo processo.
 
 ##Fase 1: Preparazione
@@ -144,3 +143,25 @@ catch (Exception ex)
 ## Conclusione
 
 In questo tutorial, abbiamo imparato come creare un documento con pulsanti di opzione utilizzando Aspose.PDF per .NET. Seguendo questi passaggi, puoi facilmente aggiungere pulsanti di opzione ai tuoi documenti PDF utilizzando Aspose.PDF.
+
+### FAQ
+
+#### D: Posso personalizzare l'aspetto dei pulsanti di opzione nel documento utilizzando Aspose.PDF per .NET?
+
+A: Sì, è possibile personalizzare l'aspetto dei pulsanti di opzione nel documento utilizzando Aspose.PDF per .NET. Puoi impostare proprietà come dimensione, colore, stile del bordo e altro per personalizzare l'aspetto dei pulsanti di opzione.
+
+#### D: Come posso aggiungere gruppi di pulsanti di opzione con opzioni che si escludono a vicenda?
+
+R: Per creare opzioni che si escludono a vicenda, puoi aggiungere più campi pulsante di opzione con lo stesso nome. Ciò assicurerà che quando viene selezionata un'opzione, le altre opzioni con lo stesso nome verranno automaticamente deselezionate.
+
+#### D: È possibile impostare un'opzione selezionata predefinita per i pulsanti di opzione?
+
+A: Sì, è possibile impostare un'opzione selezionata predefinita per i pulsanti di opzione utilizzando Aspose.PDF per .NET. Puoi usare il`Selected` proprietà del`RadioButtonOptionField` oggetto per contrassegnare un'opzione come selezionata per impostazione predefinita.
+
+#### D: Posso aggiungere gestori di eventi ai pulsanti di opzione?
+
+ A: Sì, puoi aggiungere gestori di eventi ai pulsanti di opzione utilizzando Aspose.PDF per .NET. Puoi associare azioni JavaScript, ad esempio`OnValueChanged`, ai pulsanti di opzione per eseguire azioni specifiche quando l'utente seleziona un'opzione.
+
+#### D: Come posso recuperare l'opzione selezionata dal gruppo di pulsanti di opzione dopo che l'utente ha effettuato una selezione?
+
+ R: È possibile recuperare l'opzione selezionata dal gruppo di pulsanti di opzione utilizzando Aspose.PDF per .NET. Dopo che l'utente ha effettuato una selezione, è possibile accedere al file`Selected` proprietà del`RadioButtonOptionField` oggetto per verificare quale opzione è selezionata.

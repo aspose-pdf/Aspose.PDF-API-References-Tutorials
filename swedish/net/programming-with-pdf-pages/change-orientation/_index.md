@@ -87,3 +87,25 @@ System.Console.WriteLine("\nPage orientation changed successfully.\nFile saved a
 
 ## Slutsats
 I den här handledningen lärde vi oss hur man ändrar sidriktningen för ett PDF-dokument med Aspose.PDF för .NET. Genom att följa stegen ovan kan du enkelt implementera denna funktion i dina egna projekt. Utforska gärna Aspose.PDF-dokumentationen ytterligare för att upptäcka andra användbara funktioner för att arbeta med PDF-filer.
+
+### FAQ's
+
+#### F: Vad är syftet med att ändra sidorienteringen i ett PDF-dokument?
+
+S: Genom att ändra sidriktningen i ett PDF-dokument kan du rotera sidans innehåll 90 grader. Detta kan vara användbart i scenarier där det ursprungliga innehållet måste visas eller skrivas ut i en annan orientering, som att byta från stående till liggande läge eller vice versa.
+
+#### F: Kan jag ändra orienteringen på specifika sidor i PDF-dokumentet?
+
+ S: Ja, du kan ändra orienteringen på specifika sidor i PDF-dokumentet. I den medföljande C#-källkoden,`foreach` loop används för att gå igenom varje sida i dokumentet och ändra dess orientering. Om du bara vill ändra orienteringen på specifika sidor kan du ändra slingan så att den riktar in sig på dessa sidor baserat på deras sidnummer eller andra kriterier.
+
+#### F: Påverkar ändring av sidorienteringen layouten för innehållet på sidan?
+
+S: Ja, om du ändrar sidorienteringen kommer det att påverka layouten för innehållet på sidan. Innehållet kommer att roteras 90 grader och sidans bredd och höjd kommer att bytas ut. Som ett resultat kan placeringen och justeringen av innehållet på sidan ändras.
+
+#### F: Kan jag rotera sidan med en annan vinkel än 90 grader?
+
+ S: I den medföljande C#-källkoden är sidrotationen inställd på 90 grader med`page.Rotate = Rotate.on90;` . Du kan dock ändra rotationsvinkeln till andra värden om det behövs. Du kan till exempel använda`Rotate.on180` för att rotera sidan 180 grader eller`Rotate.on270` för att rotera den 270 grader.
+
+#### F: Hur hanterar jag sidinnehållet som svämmar över efter att ha ändrat orienteringen?
+
+S: När du ändrar sidorienteringen kan sidans dimensioner ändras, vilket kan leda till att innehållet rinner över. För att hantera detta kan du behöva justera layouten och formateringen av innehållet på sidan. Du kan använda funktioner som tillhandahålls av Aspose.PDF för .NET, som att ändra storlek på element, justera marginaler eller omorganisera innehåll, för att säkerställa att sidinnehållet passar korrekt efter orienteringsändringen.

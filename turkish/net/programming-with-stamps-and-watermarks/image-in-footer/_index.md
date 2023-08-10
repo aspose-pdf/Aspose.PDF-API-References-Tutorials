@@ -43,7 +43,7 @@ imageStamp.BottomMargin = 10;
 imageStamp.HorizontalAlignment = HorizontalAlignment.Center;
 imageStamp.VerticalAlignment = VerticalAlignment.Bottom;
 
-//Tüm sayfalara resim arabelleği ekle
+// Tüm sayfalara resim arabelleği ekle
 foreach(Page page in pdfDocument.Pages)
 {
      page.AddStamp(imageStamp);
@@ -95,3 +95,45 @@ Console.WriteLine("\nImage in footer added successfully.\nFile saved at " + data
 ## Çözüm
 
 Tebrikler! Aspose.PDF for .NET kullanarak bir PDF belgesinin alt bilgi bölümüne nasıl resim ekleyeceğinizi öğrendiniz. Artık resimler ekleyerek PDF belgelerinizin altbilgilerini özelleştirebilirsiniz.
+
+### Altbilgideki resim için SSS
+
+#### S: Bir PDF belgesinin alt bilgi bölümüne resim eklemenin amacı nedir?
+
+Y: Bir PDF belgesinin altbilgi bölümüne bir resim eklemek, her sayfanın altına logo veya filigran gibi görsel öğeler eklemenizi sağlar. Bu, PDF içeriğinin markasını ve estetiğini geliştirebilir.
+
+#### S: Sağlanan C# kaynak kodu, bir PDF belgesinin alt bilgi bölümüne resim eklemeyi nasıl başarıyor?
+
+ A: Sağlanan kod, mevcut bir PDF belgesinin nasıl yükleneceğini, nasıl oluşturulacağını gösterir.`ImageStamp` bir görüntü dosyasından nesneyi seçin, alt kenar boşluğu ve hizalama gibi özellikleri ayarlayın ve ardından görüntü damgasını tüm sayfaların alt bilgisine ekleyin.
+
+#### S: Alt bilgi bölümünde görüntünün konumunu ve hizalamasını ayarlayabilir miyim?
+
+ C: Evet, alt bilgi bölümündeki görüntünün konumunu ve hizalamasını, altbilgi bölümünün özelliklerini değiştirerek ayarlayabilirsiniz.`ImageStamp` nesne. Kod parçacığı, aşağıdaki gibi özellikleri ayarlar`BottomMargin`, `HorizontalAlignment` , Ve`VerticalAlignment`.
+
+#### S: PDF belgesinin farklı sayfalarındaki altbilgi bölümüne farklı görseller eklemek mümkün müdür?
+
+ C: Evet, farklı sayfalarda alt bilgi bölümüne ayrı görseller oluşturarak farklı görseller ekleyebilirsiniz.`ImageStamp` farklı görüntü dosyalarına ve özelliklere sahip nesneler ve ardından bunları belirli sayfalara ekleme.
+
+#### S: Kod, görüntünün PDF belgesinin tüm sayfalarına eklenmesini nasıl sağlar?
+
+ C: Sağlanan kod bir`foreach` PDF belgesinin tüm sayfalarını yinelemek ve aynısını eklemek için döngü`ImageStamp` her sayfanın alt bilgi bölümüne.
+
+#### S: Altbilgi bölümüne benzer bir yaklaşım kullanarak metin veya şekiller gibi başka öğeler ekleyebilir miyim?
+
+C: Evet, uygun damga nesneleri oluşturarak benzer bir yaklaşım kullanarak altbilgi bölümüne metin veya şekiller gibi başka öğeler ekleyebilirsiniz (örn.`TextStamp`) ve özelliklerini buna göre ayarlama.
+
+#### S: Alt bilgiye eklemek istediğim resim dosyasının yolunu nasıl belirtebilirim?
+
+ C: Görüntü dosyasının yolu, dosya oluşturulurken belirtilir.`ImageStamp` nesne, kodda gösterildiği gibi. Görüntü dosyasına giden doğru yolu sağladığınızdan emin olun.
+
+#### S: Görüntünün boyutunu alt bilgi bölümünden özelleştirebilir miyim?
+
+ C: Evet, altbilgi bölümünde görüntünün boyutunu ayarlayarak özelleştirebilirsiniz.`ImageStamp` gibi özellikleri kullanarak`Width` Ve`Height`.
+
+#### S: Altbilgi bölümündeki görseli ekledikten sonra kaldırmak veya değiştirmek mümkün müdür?
+
+ C: Evet, altbilgi bölümündeki görüntüyü, içeriğini değiştirerek kaldırabilir veya değiştirebilirsiniz.`ImageStamp` nesne veya belirli sayfalardan damgayı kaldırma.
+
+#### S: Kod, görüntünün boyutlarının altbilgideki kullanılabilir alanı aştığı senaryoları nasıl ele alıyor?
+
+ A: Kod, aşağıdaki gibi özellikleri ayarlar`BottomMargin`, `HorizontalAlignment` , Ve`VerticalAlignment` görüntünün konumunu ve hizalamasını kontrol etmek için. Herhangi bir çakışma veya düzen sorununu önlemek için bu özelliklerin ayarlandığından emin olun.

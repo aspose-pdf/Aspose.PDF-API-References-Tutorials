@@ -1,13 +1,12 @@
 ---
-title: Gruppierte Kontrollkästchen
-linktitle: Gruppierte Kontrollkästchen
+title: Gruppierte Kontrollkästchen im PDF-Dokument
+linktitle: Gruppierte Kontrollkästchen im PDF-Dokument
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erstellen Sie mit Aspose.PDF für .NET ganz einfach gruppierte Kontrollkästchen in Ihren PDF-Dokumenten.
+description: Erstellen Sie mit Aspose.PDF für .NET ganz einfach gruppierte Kontrollkästchen in PDF-Dokumenten.
 type: docs
 weight: 170
 url: /de/net/programming-with-forms/grouped-check-boxes/
 ---
-
 In diesem Tutorial zeigen wir Ihnen, wie Sie mit Aspose.PDF für .NET gruppierte Kontrollkästchen in einem PDF-Dokument erstellen. Wir erklären Ihnen Schritt für Schritt den C#-Quellcode, um Sie durch diesen Prozess zu führen.
 
 ## Schritt 1: Vorbereitung
@@ -134,3 +133,25 @@ catch (Exception ex)
 ## Abschluss
 
 In diesem Tutorial haben wir gelernt, wie man mit Aspose.PDF für .NET gruppierte Kontrollkästchen in einem PDF-Dokument erstellt. Wenn Sie diese Schritte befolgen, können Sie ganz einfach benutzerdefinierte Optionsfeldoptionen hinzufügen und diese mit Aspose.PDF in Ihren PDF-Dokumenten bündeln.
+
+### FAQs
+
+#### F: Was sind gruppierte Kontrollkästchen in einem PDF-Dokument?
+
+A: Gruppierte Kontrollkästchen in einem PDF-Dokument beziehen sich auf eine Reihe von Optionsfeldern, die gruppiert sind. Mit Optionsschaltflächen können Benutzer nur eine Option aus einer Gruppe sich gegenseitig ausschließender Optionen auswählen. Wenn ein Optionsfeld ausgewählt ist, werden die anderen in derselben Gruppe automatisch deaktiviert. Dieses Gruppierungsverhalten ist nützlich, wenn Sie Benutzern mehrere Optionen anbieten möchten, ihre Auswahl jedoch auf nur eine Option beschränken möchten.
+
+#### F: Kann ich das Erscheinungsbild gruppierter Kontrollkästchen in Aspose.PDF für .NET anpassen?
+
+A: Ja, Sie können das Erscheinungsbild gruppierter Kontrollkästchen in Aspose.PDF für .NET anpassen. Die API bietet verschiedene Optionen zum Festlegen des Stils, des Rahmens und des Erscheinungsbilds von Optionsfeldoptionen. Sie können die Position jeder Option definieren, zwischen verschiedenen Boxstilen (z. B. Quadrat, Kreis, Kreuz) wählen und die Rahmeneigenschaften anpassen, um die gewünschte visuelle Darstellung zu erzielen.
+
+#### F: Wie füge ich gruppierte Kontrollkästchen zu einer bestimmten Seite in einem PDF-Dokument hinzu?
+
+A: Um gruppierte Kontrollkästchen zu einer bestimmten Seite in einem PDF-Dokument hinzuzufügen, müssen Sie ein instanziieren`RadioButtonField` Objekt mit der gewünschten Seitenzahl als Argument. Dann erstellen Sie`RadioButtonOptionField` Objekte, die jede Optionsfeldoption darstellen, und geben ihre Position mithilfe von an`Rectangle` Objekt. Fügen Sie abschließend diese Optionen hinzu`RadioButtonField` und passen Sie ihr Erscheinungsbild nach Bedarf an, bevor Sie das hinzufügen`RadioButtonField` zum Dokumentformular.
+
+#### F: Kann ich einem einzelnen PDF-Dokument mehrere Gruppen von Kontrollkästchen hinzufügen?
+
+ A: Ja, Sie können einem einzelnen PDF-Dokument mehrere Gruppen von Kontrollkästchen hinzufügen. Jede Gruppe sollte ein Unikat haben`RadioButtonField` Objekt und das`RadioButtonOptionField` Objekte innerhalb jeder Gruppe sollten dieselbe Seite und eindeutige Namen für ihre Optionen haben. Dadurch wird sichergestellt, dass die Optionsfelder innerhalb jeder Gruppe ordnungsgemäß funktionieren und sich die Auswahlmöglichkeiten gegenseitig ausschließen.
+
+#### F: Werden gruppierte Kontrollkästchen in allen PDF-Viewern und -Anwendungen unterstützt?
+
+A: Ja, gruppierte Kontrollkästchen werden in allen standardkonformen PDF-Viewern und -Anwendungen unterstützt. Die PDF-Spezifikation definiert Optionsfelder und ihr Gruppierungsverhalten, wodurch sie im PDF-Format allgemein anerkannt werden. Es ist jedoch wichtig, die Funktionalität in verschiedenen PDF-Viewern zu testen, um ein konsistentes Verhalten auf verschiedenen Plattformen sicherzustellen.

@@ -1,13 +1,12 @@
 ---
-title: Anmerkung hinzufügen
+title: PDF-Anmerkung hinzufügen
 linktitle: Anmerkung hinzufügen
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erfahren Sie, wie Sie mithilfe dieses C#-Quellcodes Textanmerkungen mit Aspose.PDF für .NET hinzufügen. Passen Sie Ihre Anmerkungen mit spezifischen Details und Symbolen an.
+description: Erfahren Sie, wie Sie mithilfe dieses C#-Quellcodes Text-PDF-Anmerkungen mit Aspose.PDF für .NET hinzufügen. Passen Sie Ihre Anmerkungen mit spezifischen Details und Symbolen an.
 type: docs
 weight: 10
 url: /de/net/annotations/addannotation/
 ---
-
 Das Hinzufügen von Anmerkungen zu PDF-Dokumenten ist eine leistungsstarke Funktion, die die Zusammenarbeit und Überprüfungsprozesse verbessern kann. Aspose.PDF für .NET erleichtert das programmgesteuerte Hinzufügen von Anmerkungen zu PDF-Dokumenten mit C#. In dieser Anleitung erklären wir Ihnen Schritt für Schritt, wie Sie mit Aspose.PDF für .NET Anmerkungen zu einem PDF-Dokument hinzufügen.
 
 ## Schritt 1: Erstellen Sie ein neues Projekt und installieren Sie Aspose.PDF für .NET
@@ -59,7 +58,7 @@ textAnnotation.Border = border;
 textAnnotation.Rect = new Aspose.Pdf.Rectangle(200, 400, 400, 600);
 ```
 
- In diesem Code erstellen wir einen neuen`Border` Objekt und legen Sie seine Breiten- und Stricheigenschaften fest. Wir stellen dann die ein`Border` Eigenschaft der Annotation zum Neuen`Border` Objekt. Zum Schluss legen wir fest`Rect` Eigenschaft der Anmerkung, um ihre Position und Größe anzugeben.
+ In diesem Code erstellen wir einen neuen`Border`Objekt und legen Sie seine Breiten- und Stricheigenschaften fest. Wir stellen dann die ein`Border` Eigenschaft der Annotation zum Neuen`Border` Objekt. Zum Schluss legen wir fest`Rect` Eigenschaft der Anmerkung, um ihre Position und Größe anzugeben.
 
 ## Schritt 5: Fügen Sie die Anmerkung zum PDF-Dokument hinzu
 
@@ -111,3 +110,29 @@ dataDir = dataDir + "AddAnnotation_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 Dieser Code zeigt, wie Sie mit Aspose.PDF für .NET eine Textanmerkung mit einem bestimmten Titel, Betreff, Status, Inhalt und Symbol zu einer PDF-Seite hinzufügen. Sie können diesen Code entsprechend Ihren Anforderungen zum Hinzufügen von Anmerkungen zu Ihren PDF-Dokumenten ändern. Denken Sie daran, IHR DATENVERZEICHNIS durch den tatsächlichen Verzeichnispfad zu ersetzen, in dem sich Ihre PDF-Datei befindet und in dem Sie die Ausgabedatei speichern möchten.
+
+## Abschluss
+
+Das Hinzufügen von Anmerkungen zu PDF-Dokumenten mit Aspose.PDF für .NET bietet ein wertvolles Tool zur Verbesserung der Dokumentenzusammenarbeit und der Überprüfungsprozesse. Durch Befolgen der Schritt-für-Schritt-Anleitung in diesem Artikel können Entwickler Annotationsfunktionen nahtlos in ihre C#-Anwendungen integrieren.
+
+### FAQs
+
+#### F: Welche Arten von Anmerkungen können mit Aspose.PDF für .NET hinzugefügt werden?
+
+A: Aspose.PDF für .NET unterstützt verschiedene Arten von Anmerkungen, darunter Textanmerkungen, Stempel, Links, Formen und mehr. Entwickler können das Erscheinungsbild und die Eigenschaften dieser Anmerkungen an ihre spezifischen Anforderungen anpassen.
+
+#### F: Kann ich Anmerkungen zu bestimmten Seiten in einem mehrseitigen PDF-Dokument hinzufügen?
+
+A: Ja, mit Aspose.PDF für .NET können Sie die Seite angeben, auf der Sie die Anmerkung hinzufügen möchten. Sie können eine bestimmte Seite auswählen oder nach Bedarf Anmerkungen zu mehreren Seiten hinzufügen.
+
+#### F: Wie kann ich das Erscheinungsbild von Anmerkungen anpassen?
+
+A: Anmerkungen können mithilfe von Eigenschaften wie Rahmenbreite, Farbe, Strichstil, Textstil und mehr angepasst werden. Aspose.PDF für .NET bietet zahlreiche Optionen zum Anpassen des Erscheinungsbilds von Anmerkungen.
+
+#### F: Ist es möglich, mit Aspose.PDF für .NET Hyperlinks als Anmerkungen hinzuzufügen?
+
+A: Ja, Sie können mit Aspose.PDF für .NET Hyperlinks als Anmerkungen zu PDF-Dokumenten hinzufügen. Hyperlink-Anmerkungen können verwendet werden, um auf externe URLs oder bestimmte Stellen innerhalb desselben Dokuments zu verlinken.
+
+#### F: Können Anmerkungen zu vorhandenen PDF-Dokumenten hinzugefügt werden, ohne den ursprünglichen Inhalt zu ändern?
+
+A: Ja, Aspose.PDF für .NET fügt Anmerkungen als zusätzliche Elemente hinzu, ohne den ursprünglichen Inhalt des PDF-Dokuments zu verändern. Der ursprüngliche PDF-Inhalt bleibt erhalten.

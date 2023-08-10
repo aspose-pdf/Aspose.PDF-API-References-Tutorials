@@ -1,17 +1,17 @@
 ---
-title: Vurgulanan Metni Çıkar
-linktitle: Vurgulanan Metni Çıkar
+title: PDF Dosyasında Vurgulanan Metni Çıkarın
+linktitle: PDF Dosyasında Vurgulanan Metni Çıkarın
 second_title: Aspose.PDF for .NET API Referansı
-description: Bu adım adım kılavuz ile Aspose.PDF for .NET kullanarak vurgulanan metni nasıl çıkaracağınızı öğrenin.
+description: Bu adım adım kılavuz ile Aspose.PDF for .NET kullanarak PDF dosyasındaki vurgulanmış metni nasıl çıkaracağınızı öğrenin.
 type: docs
 weight: 60
 url: /tr/net/annotations/extracthighlightedtext/
 ---
-Bir PDF belgesinden vurgulanan metni çıkarmak için Aspose.PDF for .NET API'sini kullanabilirsiniz. Bu API, bir belgede vurgulanan tüm metni almanın basit bir yolunu sağlar.
+Vurgulanan metni PDF dosyasına çıkarmak için Aspose.PDF for .NET API'sini kullanabilirsiniz. Bu API, bir belgede vurgulanan tüm metni almanın basit bir yolunu sağlar.
 
 ## 1. Adım: PDF belgesini yükleyin
 
- Bir PDF belgesinden vurgulanan metni çıkarmanın ilk adımı, belgeyi Aspose.PDF for .NET API kullanarak yüklemektir. Bunu, yeni bir örnek oluşturarak yapabilirsiniz.`Document` sınıfı ve yolu bir parametre olarak PDF belgesine geçirme. 
+ PDF dosyasında vurgulanan metni çıkarmanın ilk adımı, belgeyi Aspose.PDF for .NET API kullanarak yüklemektir. Bunu, yeni bir örnek oluşturarak yapabilirsiniz.`Document` sınıfı ve yolu bir parametre olarak PDF belgesine geçirme. 
 
 ```csharp
 // Belgeler dizininin yolu.
@@ -82,3 +82,28 @@ foreach (Annotation annotation in doc.Pages[1].Annotations)
 }
 ```
 
+## Çözüm
+
+Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF belgesinden vurgulanmış metnin nasıl çıkarılacağını araştırdık. Geliştiriciler, adım adım kılavuzu izleyerek ve sağlanan C# kaynak kodunu kullanarak PDF belgelerindeki vurgulanan metni kolayca çıkarabilir ve yönetebilir.
+
+### PDF dosyasında vurgulanan metni çıkarmak için SSS
+
+#### S: Bir PDF belgesindeki metin biçimlendirme ek açıklamaları nelerdir?
+
+A: Metin işaretleme ek açıklamaları, bir PDF belgesindeki belirli metni vurgulayan veya işaretleyen ek açıklamalardır. Metin biçimlendirme ek açıklamalarına örnek olarak vurgular, alt çizgiler ve üstleri çizilir.
+
+#### S: Aspose.PDF for .NET kullanarak diğer açıklama türlerinden metin çıkarabilir miyim?
+
+C: Evet, Aspose.PDF for .NET, metin biçimlendirme açıklamaları, serbest metin açıklamaları ve daha fazlası dahil olmak üzere farklı açıklama türlerinden metin çıkarmak için çeşitli yöntemler sunar.
+
+#### S: Aspose.PDF for .NET, parola korumalı PDF dosyalarından metin çıkarmayı destekliyor mu?
+
+C: Evet, Aspose.PDF for .NET, parola korumalı PDF dosyalarından metin çıkarmayı destekler. kullanarak PDF belgesini yüklerken doğru parolayı girmeniz gerekir.`Document` sınıf.
+
+#### S: Vurgulanan metni renk veya yazar gibi diğer ölçütlere göre filtreleyebilir miyim?
+
+C: Evet, vurgulanan metni renk, yazar veya oluşturma tarihi gibi diğer ölçütlere göre filtreleyebilirsiniz. Aspose.PDF for .NET, ek açıklamalara özelliklerine göre erişmek ve bunları filtrelemek için yöntemler sağlar.
+
+#### S: Ayıklanan vurgulanmış metni ayrı bir dosyaya kaydetmek mümkün müdür?
+
+C: Evet, ayıklanan vurgulanmış metni ayrı bir dosyaya kaydedebilir veya daha fazla işleme veya analiz için bir veri yapısında saklayabilirsiniz.

@@ -7,7 +7,7 @@ type: docs
 weight: 20
 url: /tr/net/programming-with-graphs/add-drawing-with-gradient-fill/
 ---
-Bu eğitimde, Aspose.PDF for .NET kullanarak grafiklerle programlamaya gradyan dolgulu bir çizim eklemek için aşağıdaki C# kaynak kodunda adım adım yol göstereceğiz.
+Bu öğreticide, Aspose.PDF for .NET kullanarak grafiklerle programlamaya degrade dolgulu bir çizim eklemek için aşağıdaki C# kaynak kodunda adım adım yol göstereceğiz.
 
 Başlamadan önce Aspose.PDF kitaplığını kurduğunuzdan ve geliştirme ortamınızı kurduğunuzdan emin olun. Ayrıca temel C# programlama bilgisine sahip olmak.
 
@@ -97,3 +97,41 @@ doc.Save(dataDir + "AddDrawingWithGradientFill_out.pdf");
 ## Çözüm
 
 Bu eğitimde, Aspose.PDF for .NET kullanarak grafiklerle programlamaya degrade dolgulu bir çizimin nasıl ekleneceğini adım adım açıkladık. Artık bu bilgiyi, özel tasarımlara ve degrade dolgulara sahip çekici PDF belgeleri oluşturmak için kullanabilirsiniz.
+
+### SSS
+
+#### S: Bu eğitimin amacı nedir?
+
+C: Bu eğitim, Aspose.PDF for .NET kullanarak grafiklerle programlamaya degrade dolgulu bir çizim ekleme sürecinde size rehberlik etmeyi amaçlamaktadır.
+
+#### S: Başlamadan önce hangi ön koşullar gereklidir?
+
+C: Başlamadan önce Aspose.PDF kütüphanesini kurduğunuzdan ve geliştirme ortamınızı kurduğunuzdan emin olun. Ek olarak, temel bir C# programlama anlayışına sahip olunması önerilir.
+
+#### S: PDF dosyasının kaydedileceği dizini nasıl belirleyebilirim?
+
+Y: Sağlanan kaynak kodunda, elde edilen PDF dosyasını kaydetmek istediğiniz dizini belirtmek için "dataDir" değişkeninin değerini değiştirebilirsiniz.
+
+#### S: Grafik nesnesinin amacı nedir?
+
+C: Grafik nesnesi, çizim öğeleri için bir kap görevi görür. Belirtilen boyutlarda oluşturulur ve sayfanın paragraf koleksiyonuna eklenir.
+
+#### S: Bir şekil için degrade dolguyu nasıl yapılandırabilirim?
+
+C: Degrade dolguyu yapılandırmak için GradientAxialShading sınıfını kullanarak bir şeklin GraphInfo özelliğinin FillColor özelliğini ayarlayabilirsiniz. Bu, degradenin başlangıç ve bitiş noktalarını ve aralarında geçiş yapılacak renkleri tanımlamanıza olanak tanır.
+
+#### S: Degrade dolgunun renklerini ve yönünü özelleştirebilir miyim?
+
+C: Evet, Color nesnelerini ayarlayarak ve GradientAxialShading'in başlangıç ve bitiş noktalarını belirleyerek degrade dolgunun renklerini ve yönünü özelleştirebilirsiniz.
+
+#### S: Eğitimin son adımı nedir?
+
+C: Son adım, ortaya çıkan PDF dosyasını "AddDrawingWithGradientFill_out.pdf" adıyla belirtilen dizine kaydetmeyi içerir.
+
+#### S: Örnek bir kaynak kodu var mı?
+
+Y: Evet, öğretici, açıklanan adımları uygulamak için referans olarak kullanabileceğiniz örnek bir kaynak kodu sağlar.
+
+#### S: Degrade dolguyu dikdörtgenlerin yanı sıra başka şekillere de uygulayabilir miyim?
+
+C: Evet, diğer şekillere de degrade dolgu uygulayabilirsiniz. İşlem, GradientAxialShading sınıfını kullanarak şeklin GraphInfo özelliğinin FillColor özelliğini yapılandırmayı içerir.

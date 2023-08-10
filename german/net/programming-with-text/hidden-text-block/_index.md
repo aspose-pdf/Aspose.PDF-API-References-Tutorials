@@ -57,7 +57,7 @@ TextFragment fragment = textFragments[1];
 
 ## Schritt 5: Erstellen Sie das ausgeblendete Textfeld
 
- Wir erstellen ein`TextBoxField`Objekt zur Darstellung des ausgeblendeten Textfelds. Dieses Feld enthält den Text, der sichtbar wird, wenn sich der Mauszeiger über dem Auslösetext befindet.
+ Wir erstellen ein`TextBoxField` Objekt zur Darstellung des ausgeblendeten Textfelds. Dieses Feld enthält den Text, der sichtbar wird, wenn sich der Mauszeiger über dem Auslösetext befindet.
 
 ```csharp
 TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
@@ -126,7 +126,7 @@ floatingField.Value = "This is the \"floating text field\".";
 floatingField.ReadOnly = true;
 // Setzen Sie die Markierung „versteckt“, um das Feld beim Öffnen des Dokuments unsichtbar zu machen
 floatingField.Flags |= AnnotationFlags.Hidden;
-//Das Festlegen eines eindeutigen Feldnamens ist nicht erforderlich, aber zulässig
+// Das Festlegen eines eindeutigen Feldnamens ist nicht erforderlich, aber zulässig
 floatingField.PartialName = "FloatingField_1";
 // Das Festlegen von Eigenschaften der Felddarstellung ist nicht notwendig, macht es aber besser
 floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, System.Drawing.Color.Blue);
@@ -137,10 +137,10 @@ floatingField.Border.Width = 1;
 floatingField.Multiline = true;
 // Fügen Sie dem Dokument ein Textfeld hinzu
 document.Form.Add(floatingField);
-//Erstellen Sie eine unsichtbare Schaltfläche an der Position des Textfragments
+// Erstellen Sie eine unsichtbare Schaltfläche an der Position des Textfragments
 ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
 // Erstellen Sie eine neue Ausblenden-Aktion für das angegebene Feld (Anmerkung) und die Unsichtbarkeitsmarkierung.
-// (Sie können das Floating-Feld auch anhand des Namens referenzieren, wenn Sie ihn oben angegeben haben.)
+//(Sie können das Floating-Feld auch anhand des Namens referenzieren, wenn Sie ihn oben angegeben haben.)
 // Fügen Sie Aktionen beim Betreten/Verlassen der Maus im unsichtbaren Schaltflächenfeld hinzu
 buttonField.Actions.OnEnter = new HideAction(floatingField, false);
 buttonField.Actions.OnExit = new HideAction(floatingField);

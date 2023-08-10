@@ -101,3 +101,25 @@ for (int j = 1; j <= textFragmentCollection.Count; j++)
 dataDir = dataDir + "StrikeOutWords_out.pdf";
 document.Save(dataDir);
 ```
+
+## Slutsats
+
+I den här handledningen lärde vi oss hur man använder Aspose.PDF för .NET för att stryka ut specifika ord i ett PDF-dokument. Genom att följa den steg-för-steg-guide och använda den medföljande C#-källkoden kan du enkelt ladda ett PDF-dokument, söka efter specifika textfragment och skapa genomstrukna kommentarer för att visuellt markera och stryka ut dessa ord. Aspose.PDF för .NET ger ett enkelt och effektivt sätt att manipulera PDF-dokument programmatiskt, vilket gör det till ett värdefullt verktyg för utvecklare som arbetar med PDF-filer i .NET-applikationer.
+
+### FAQ's
+
+#### F: Vad är Aspose.PDF för .NET?
+
+S: Aspose.PDF för .NET är ett kraftfullt bibliotek som låter utvecklare skapa, redigera och manipulera PDF-dokument programmatiskt i .NET-applikationer. Den tillhandahåller ett brett utbud av funktioner för att arbeta med PDF-filer, inklusive textextraktion, anteckningshantering, formulärfyllning och mycket mer.
+
+#### F: Kan jag använda Aspose.PDF för .NET för att stryka ut specifika ord i ett PDF-dokument?
+
+S: Ja, Aspose.PDF för .NET tillhandahåller funktionalitet för att söka efter specifika textfragment i ett PDF-dokument och sedan skapa överstrukna kommentarer för att visuellt markera och stryka ut dessa ord.
+
+#### F: Hur anger jag texten jag vill stryka i PDF-dokumentet?
+
+ S: För att ange texten du vill stryka kan du använda`TextFragmentAbsorber` klass tillhandahållen av Aspose.PDF för .NET. Det låter dig söka efter ett specifikt textfragment i PDF-dokumentet baserat på dina önskade kriterier.
+
+#### F: Kan jag anpassa utseendet på den genomstrukna kommentaren?
+
+S: Ja, du kan anpassa olika egenskaper för den genomstrukna annoteringen, såsom opacitet, kantstil och färg. Detta gör att du kan skräddarsy utseendet på den genomstrukna kommentaren efter dina specifika krav.

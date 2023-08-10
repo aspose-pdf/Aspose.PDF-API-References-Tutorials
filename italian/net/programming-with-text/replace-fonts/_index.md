@@ -19,7 +19,7 @@ Prima di iniziare, assicurati di disporre di quanto segue:
 
 ## Passaggio 1: impostare la directory dei documenti
 
- Innanzitutto, devi impostare il percorso della directory in cui hai il file PDF di input. Sostituire`"YOUR DOCUMENT DIRECTORY"` nel`dataDir` variabile con il percorso del file PDF.
+ Innanzitutto, devi impostare il percorso della directory in cui hai il file PDF di input. Sostituire`"YOUR DOCUMENT DIRECTORY"` nel`dataDir`variabile con il percorso del file PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -78,7 +78,7 @@ try
 	TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));
 	// Accetta l'assorbitore per tutte le pagine
 	pdfDocument.Pages.Accept(absorber);
-	//Attraversa tutti i TextFragments
+	// Attraversa tutti i TextFragments
 	foreach (TextFragment textFragment in absorber.TextFragments)
 	{
 		// Se il nome del carattere è ArialMT, sostituire il nome del carattere con Arial

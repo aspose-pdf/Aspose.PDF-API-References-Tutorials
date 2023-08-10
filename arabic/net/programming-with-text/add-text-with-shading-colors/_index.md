@@ -52,7 +52,7 @@ TextFragment textFragment = absorb.TextFragments[1];
 ```
 
 ## الخطوة 6: تعيين لون التظليل للنص
- إنشاء ملف`Color` كائن مع مساحة ألوان نمط وحدد ألوان تظليل التدرج. قم بتعيين هذا اللون لملف`ForegroundColor` ممتلكات`TextState` التابع`TextFragment` هدف.
+ إنشاء ملف`Color`كائن مع مساحة ألوان نمط وحدد ألوان تظليل التدرج. قم بتعيين هذا اللون لملف`ForegroundColor` ممتلكات`TextState` التابع`TextFragment` هدف.
 
 ```csharp
 textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()

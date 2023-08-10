@@ -92,3 +92,45 @@ document.Save( dataDir + "PDFwithTaggedText.pdf");
 ## Conclusión
 
 En este tutorial, aprendió a crear un documento PDF con texto etiquetado usando Aspose.PDF para .NET. Las funciones de estructura de contenido marcado de Aspose.PDF le permiten estructurar y organizar su texto para una mejor accesibilidad y semántica.
+
+### Preguntas frecuentes
+
+#### P: ¿Cuál es el propósito de crear un documento PDF con texto etiquetado usando Aspose.PDF para .NET?
+
+R: La creación de un documento PDF con texto etiquetado con Aspose.PDF para .NET le permite estructurar y organizar su contenido de texto dentro del documento PDF. El texto etiquetado agrega significado semántico y mejora la accesibilidad para los usuarios, especialmente para aquellos que utilizan tecnologías de asistencia.
+
+#### P: ¿Cómo ayuda Aspose.PDF a crear un documento PDF con texto etiquetado?
+
+R: Aspose.PDF para .NET es una potente biblioteca que proporciona funcionalidades para crear, manipular y convertir documentos PDF mediante programación. En este tutorial, las funciones de estructura de contenido etiquetado de la biblioteca se utilizan para agregar texto estructurado y semánticamente significativo al documento PDF.
+
+#### P: ¿Cuáles son los requisitos previos para crear un documento PDF con texto etiquetado con Aspose.PDF para .NET?
+
+R: Antes de comenzar, asegúrese de tener Visual Studio instalado con .NET Framework y de tener referenciada la biblioteca Aspose.PDF para .NET en su proyecto.
+
+#### P: ¿Cómo crea el código C# proporcionado un documento PDF con texto etiquetado?
+
+R: El ejemplo de código muestra cómo crear un documento PDF, definir varios elementos de texto etiquetados (como encabezados y párrafos) y agregarlos al contenido del documento. Esto se logra utilizando las funciones de estructura de contenido etiquetado proporcionadas por Aspose.PDF.
+
+#### P: ¿Cómo puedo personalizar los elementos de texto etiquetados, como encabezados y párrafos?
+
+ R: Puede personalizar los elementos de texto etiquetados utilizando los métodos apropiados, como`CreateHeaderElement` y`CreateParagraphElement` , y establecer propiedades como`ActualText` para proporcionar texto significativo y semántica.
+
+#### P: ¿Puedo agregar otros elementos de texto etiquetados, como listas o enlaces, usando técnicas similares?
+
+R: Sí, puede agregar otros elementos de texto etiquetados como listas, enlaces u otras estructuras personalizadas usando técnicas similares. Aspose.PDF proporciona varios métodos para crear diferentes tipos de contenido etiquetado, lo que le permite mejorar la semántica del documento.
+
+####  P: ¿Cómo funciona el`SetTitle` method contribute to the PDF document's tagged text?
+
+ R: El`SetTitle` El método establece el título del contenido etiquetado del documento PDF, proporcionando una breve descripción del propósito o tema del documento. Esta información ayuda a los usuarios a comprender el contexto del texto etiquetado.
+
+#### P: ¿Cómo mejora la accesibilidad en los documentos PDF el uso de texto etiquetado?
+
+R: El texto etiquetado agrega significado semántico al documento, haciéndolo más accesible para los usuarios con discapacidades o aquellos que usan tecnologías de asistencia. Los lectores de pantalla y otros dispositivos de asistencia pueden interpretar y presentar texto etiquetado para mejorar la experiencia del usuario.
+
+####  P: ¿Cómo funciona el`SetLanguage` method enhance the tagged text in a PDF document?
+
+ R: El`SetLanguage`El método establece el atributo de idioma del contenido etiquetado del documento PDF. Esto ayuda a indicar el idioma en el que está escrito el texto etiquetado, lo que mejora la accesibilidad y permite una representación adecuada del idioma específico.
+
+#### P: ¿Es posible agregar otros elementos, como imágenes o multimedia, junto con el texto etiquetado usando técnicas similares?
+
+R: Sí, puede agregar otros elementos como imágenes, multimedia o anotaciones junto con el texto etiquetado utilizando técnicas similares. Aspose.PDF ofrece una amplia gama de funciones para combinar diferentes tipos de contenido dentro del documento.

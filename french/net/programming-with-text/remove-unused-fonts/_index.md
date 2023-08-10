@@ -35,7 +35,7 @@ Document doc = new Document(dataDir + "ReplaceTextPage.pdf");
 
 ## Étape 3 : identifier et supprimer les polices inutilisées
 
- Nous créons un`TextFragmentAbsorber` objet avec le`TextEditOptions` paramètre réglé sur`TextEditOptions.FontReplace.RemoveUnusedFonts` . Cette option nous permet d'identifier et de supprimer les polices inutilisées dans le document PDF. Nous parcourons ensuite tous les`TextFragments` et définissez la police sur la police souhaitée.
+ Nous créons un`TextFragmentAbsorber` objet avec le`TextEditOptions` paramètre réglé sur`TextEditOptions.FontReplace.RemoveUnusedFonts` Cette option nous permet d'identifier et de supprimer les polices inutilisées dans le document PDF. Nous parcourons ensuite tous les`TextFragments` et définissez la police sur la police souhaitée.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));

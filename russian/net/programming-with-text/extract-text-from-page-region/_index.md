@@ -39,7 +39,7 @@ Document pdfDocument = new Document(dataDir + "ExtractTextAll.pdf");
 ```
 
 ## Шаг 5. Извлеките текст из области страницы
- Создать`TextAbsorber` объект для извлечения текста из документа. Настройте`TextSearchOptions` чтобы ограничить поиск определенной областью страницы, обозначенной прямоугольником.
+ Создать`TextAbsorber`объект для извлечения текста из документа. Настройте`TextSearchOptions` чтобы ограничить поиск определенной областью страницы, обозначенной прямоугольником.
 
 ```csharp
 TextAbsorber absorb = new TextAbsorber();

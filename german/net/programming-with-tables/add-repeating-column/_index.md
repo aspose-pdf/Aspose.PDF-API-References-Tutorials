@@ -1,13 +1,12 @@
 ---
-title: Wiederholte Spalte hinzufügen
-linktitle: Wiederholte Spalte hinzufügen
+title: Wiederholende Spalte im PDF-Dokument hinzufügen
+linktitle: Wiederholende Spalte im PDF-Dokument hinzufügen
 second_title: Aspose.PDF für .NET API-Referenz
 description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET eine sich wiederholende Spalte in ein PDF-Dokument einfügen.
 type: docs
 weight: 20
 url: /de/net/programming-with-tables/add-repeating-column/
 ---
-
 In diesem Tutorial lernen wir, wie man mit Aspose.PDF für .NET eine sich wiederholende Spalte in ein PDF-Dokument einfügt. Wir erklären Ihnen Schritt für Schritt den Quellcode in C#. Am Ende dieses Tutorials erfahren Sie, wie Sie eine Tabelle mit einer sich wiederholenden Spalte in einem PDF-Dokument erstellen. Lasst uns beginnen!
 
 ## Schritt 1: Einrichten der Umgebung
@@ -70,7 +69,7 @@ for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
      row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
      row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
      // ...
-     //Fügen Sie hier die anderen Spalten hinzu
+     // Fügen Sie hier die anderen Spalten hinzu
 }
 ```
 
@@ -102,7 +101,7 @@ Aspose.Pdf.Table outerTable = new Aspose.Pdf.Table();
 outerTable.ColumnWidths = "100%";
 outerTable.HorizontalAlignment = HorizontalAlignment.Left;
 
-// Instanziieren Sie ein Tabellenobjekt, das in „outerTable“ verschachtelt wird und innerhalb derselben Seite umgebrochen wird
+//Instanziieren Sie ein Tabellenobjekt, das in „outerTable“ verschachtelt wird und innerhalb derselben Seite umgebrochen wird
 Aspose.Pdf.Table mytable = new Aspose.Pdf.Table();
 mytable.Broken = TableBroken.VerticalInSamePage;
 mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;
@@ -158,3 +157,25 @@ doc.Save(outFile);
 
 ## Abschluss
 In diesem Tutorial haben wir gelernt, wie man mit Aspose.PDF für .NET eine sich wiederholende Spalte in ein PDF-Dokument einfügt. Mit dieser Schritt-für-Schritt-Anleitung können Sie Tabellen mit sich wiederholenden Spalten in Ihren eigenen C#-Projekten erstellen.
+
+### FAQs zum Hinzufügen einer sich wiederholenden Spalte in einem PDF-Dokument
+
+#### F: Kann ich die Anzahl der wiederholten Spalten in der verschachtelten Tabelle anpassen?
+
+ A: Ja, Sie können die Anzahl der wiederholten Spalten in der verschachtelten Tabelle anpassen. Im bereitgestellten Beispiel legen wir fest`mytable.RepeatingColumnsCount = 5;`, was bedeutet, dass es 5 wiederholte Spalten gibt. Sie können diesen Wert auf eine beliebige Zahl ändern.
+
+#### F: Ist es möglich, der verschachtelten Tabelle dynamisch weitere Zeilen hinzuzufügen?
+
+A: Ja, Sie können der verschachtelten Tabelle auf die gleiche Weise wie im Tutorial gezeigt dynamisch weitere Zeilen hinzufügen. Sie können Schleifen oder jede andere Logik verwenden, um Zeilen basierend auf Ihren Daten hinzuzufügen.
+
+#### F: Kann ich Stile und Formatierungen auf die Tabelle und ihre Zellen anwenden?
+
+A: Ja, Sie können mit Aspose.PDF für .NET Stile und Formatierungen auf die Tabelle und ihre Zellen anwenden. Die Bibliothek stellt verschiedene Eigenschaften und Methoden zur Verfügung, um das Erscheinungsbild der Tabelle und ihres Inhalts anzupassen.
+
+#### F: Ist Aspose.PDF für .NET mit .NET Core kompatibel?
+
+A: Ja, Aspose.PDF für .NET ist mit .NET Core kompatibel. Sie können es sowohl in .NET Framework- als auch in .NET Core-Anwendungen verwenden.
+
+#### F: Kann ich diesen Ansatz verwenden, um sich wiederholende Spalten in einem vorhandenen PDF-Dokument hinzuzufügen?
+
+A: Ja, Sie können diesen Ansatz verwenden, um sich wiederholende Spalten in einem vorhandenen PDF-Dokument hinzuzufügen. Laden Sie einfach das vorhandene Dokument mit Aspose.PDF für .NET und befolgen Sie die gleichen Schritte, um die Wiederholungsspalte zu erstellen und hinzuzufügen.

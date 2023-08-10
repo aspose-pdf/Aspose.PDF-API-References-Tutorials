@@ -82,9 +82,9 @@ doc.Save(dataDir + "LatextScriptInPdf_out.pdf");
 ```csharp
 // Chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-//Créer un nouvel objet document
+// Créer un nouvel objet document
 Document doc = new Document();
-// Ajouter une page dans la collection de pages
+//Ajouter une page dans la collection de pages
 Page page = doc.Pages.Add();
 // Créer un tableau
 Table table = new Table();

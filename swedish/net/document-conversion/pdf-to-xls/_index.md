@@ -7,8 +7,7 @@ type: docs
 weight: 200
 url: /sv/net/document-conversion/pdf-to-xls/
 ---
-
-den här handledningen går vi igenom processen att konvertera en PDF-fil till XLS-format (Microsoft Excel) med Aspose.PDF för .NET. Genom att följa stegen nedan kommer du att kunna konvertera en PDF-fil till XLS-format.
+I den här handledningen går vi igenom processen att konvertera en PDF-fil till XLS-format (Microsoft Excel) med Aspose.PDF för .NET. Genom att följa stegen nedan kommer du att kunna konvertera en PDF-fil till XLS-format.
 
 ## Förutsättningar
 Innan du börjar, se till att du uppfyller följande förutsättningar:
@@ -65,4 +64,22 @@ pdfDocument.Save("PDFToXLS_out.xls", excelsave);
 ```
 
 ## Slutsats
-den här handledningen täckte vi steg-för-steg-processen för att konvertera en PDF-fil till XLS-format med Aspose.PDF för .NET. Genom att följa instruktionerna ovan bör du nu kunna konvertera en PDF-fil till XLS-format. Den här funktionen är användbar när du vill extrahera tabelldata från en PDF-fil och använda den i Microsoft Excel.
+I den här handledningen täckte vi steg-för-steg-processen för att konvertera en PDF-fil till XLS-format med Aspose.PDF för .NET. Genom att följa instruktionerna ovan bör du nu kunna konvertera en PDF-fil till XLS-format. Den här funktionen är användbar när du vill extrahera tabelldata från en PDF-fil och använda den i Microsoft Excel.
+
+### FAQ's
+
+#### F: Kan Aspose.PDF för .NET konvertera PDF-filer med komplexa tabeller och formatering till XLS-format?
+
+S: Ja, Aspose.PDF för .NET är designat för att hantera PDF-filer med komplexa tabeller och formatering. Under konverteringsprocessen till XLS-format försöker Aspose.PDF för .NET att bevara layouten och strukturen för tabeller så exakt som möjligt, vilket säkerställer att tabelldata extraheras effektivt.
+
+#### F: Vad händer om PDF-filen innehåller bilder eller icke-tabellinnehåll?
+
+S: När du konverterar en PDF till XLS-format fokuserar Aspose.PDF för .NET främst på att extrahera tabelldata. Icke-tabellinnehåll, som bilder, kommentarer eller text i fritt format, kanske inte bevaras i XLS-filen. Den resulterande XLS-filen kommer i första hand att innehålla tabelldata som extraherats från PDF:en.
+
+#### F: Är det möjligt att anpassa utseendet och layouten för XLS-filen under konverteringen?
+
+ S: Aspose.PDF för .NET ger alternativ för att anpassa utseendet och layouten för den resulterande XLS-filen. Du kan justera olika inställningar med hjälp av egenskaperna för`ExcelSaveOptions` klass, som att ange startcellen för tabellen, ställa in textkodning och styra andra utdatarelaterade alternativ.
+
+#### F: Kan jag konvertera lösenordsskyddade PDF-filer till XLS-format med Aspose.PDF för .NET?
+
+ S: Ja, Aspose.PDF för .NET stöder konvertering av lösenordsskyddade PDF-filer till XLS-format. När du laddar en lösenordsskyddad PDF kan du ange lösenordet med hjälp av`Document` klasskonstruktör eller genom att ställa in`Password` egendom innan PDF-filen laddas.

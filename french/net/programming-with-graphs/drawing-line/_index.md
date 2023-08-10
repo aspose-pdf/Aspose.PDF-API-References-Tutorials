@@ -7,7 +7,6 @@ type: docs
 weight: 80
 url: /fr/net/programming-with-graphs/drawing-line/
 ---
-
 Dans ce didacticiel, nous vous guiderons pas à pas dans le code source C # suivant pour tracer une ligne à l'aide de Aspose.PDF pour .NET.
 
 Assurez-vous d'avoir installé la bibliothèque Aspose.PDF et configuré votre environnement de développement avant de commencer. Avoir également des connaissances de base en programmation C#.
@@ -84,7 +83,7 @@ Document pDoc = new Document();
 Page pg = pDoc.Pages.Add();
 // Définir la marge de la page sur tous les côtés à 0
 pg.PageInfo.Margin.Left = pg.PageInfo.Margin.Right = pg.PageInfo.Margin.Bottom = pg.PageInfo.Margin.Top = 0;
-//Créer un objet graphique avec une largeur et une hauteur égales aux dimensions de la page
+// Créer un objet graphique avec une largeur et une hauteur égales aux dimensions de la page
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph((float)pg.PageInfo.Width , (float)pg.PageInfo.Height);
 // Créer un objet de première ligne en partant du coin inférieur gauche vers le coin supérieur droit de la page
 Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { (float)pg.Rect.LLX, 0, (float)pg.PageInfo.Width, (float)pg.Rect.URY });
@@ -106,3 +105,33 @@ Console.WriteLine("\nLine drawn successfully across the page.\nFile saved at " +
 ## Conclusion
 
 Dans ce didacticiel, nous avons expliqué comment tracer une ligne à l'aide d'Aspose.PDF pour .NET. Vous pouvez désormais utiliser ces connaissances pour créer des formes géométriques avec des lignes personnalisées dans vos fichiers PDF.
+
+### FAQ
+
+#### Q : Quel est l'objectif de ce didacticiel ?
+
+R : Le but de ce didacticiel est de vous guider tout au long du processus de dessin de lignes à l'aide d'Aspose.PDF pour .NET. Vous apprendrez à créer des lignes sur une page PDF et à personnaliser leur apparence.
+
+#### Q : Quels sont les prérequis requis avant de commencer ?
+
+R : Avant de commencer, assurez-vous d'avoir installé la bibliothèque Aspose.PDF et configuré votre environnement de développement. Des connaissances de base en programmation C# sont également recommandées.
+
+#### Q : Comment spécifier le répertoire d'enregistrement du fichier PDF ?
+
+R : Modifiez la variable "dataDir" dans le code source fourni pour indiquer le répertoire dans lequel vous souhaitez enregistrer le fichier PDF résultant.
+
+#### Q : Comment créer des lignes sur une page PDF ?
+
+R : Le didacticiel montre comment créer un objet Graph avec les dimensions de la page, puis y ajouter des objets Line. Modifiez les coordonnées et les propriétés des objets Ligne pour créer les lignes souhaitées.
+
+#### Q : Puis-je personnaliser l'apparence des lignes ?
+
+R : Oui, vous pouvez personnaliser l'apparence des lignes en modifiant les propriétés des objets Ligne. Cela inclut la modification de leurs coordonnées, de leur couleur, de leur épaisseur et d'autres attributs graphiques.
+
+#### Q : Comment enregistrer le document PDF après avoir tracé les lignes ?
+
+R : Après avoir ajouté l'objet Graphique avec des objets Ligne à la page, vous pouvez enregistrer le document PDF obtenu à l'aide de la`pDoc.Save(dataDir + "DrawingLine_out.pdf");` ligne dans le code source fourni.
+
+#### Q : Puis-je tracer des lignes avec différents angles et orientations ?
+
+R : Oui, vous pouvez tracer des lignes avec différents angles et orientations en ajustant les coordonnées et les propriétés des objets Ligne dans le graphique.

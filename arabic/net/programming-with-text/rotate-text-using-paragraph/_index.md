@@ -63,7 +63,7 @@ paragraph.Position = new Position(200, 600);
 
 ## الخطوة 6: إنشاء وتكوين أجزاء النص
 
- إنشاء ملفات متعددة`TextFragment`الكائنات وتعيين نصها وخصائصها:
+ إنشاء ملفات متعددة`TextFragment`الكائنات وتعيين نصوصها وخصائصها:
 
 ```csharp
 TextFragment textFragment1 = new TextFragment("rotated text");

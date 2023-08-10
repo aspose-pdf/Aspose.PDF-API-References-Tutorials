@@ -1,8 +1,8 @@
 ---
-title: Açıklama Özelliğini Ayarla
-linktitle: Açıklama Özelliğini Ayarla
+title: PDF Dosyasında Açıklama Özelliğini Ayarlama
+linktitle: PDF Dosyasında Açıklama Özelliğini Ayarlama
 second_title: Aspose.PDF for .NET API Referansı
-description: Aspose.PDF for .NET kullanarak Bilgi Özelliğini nasıl ayarlayacağınızı öğrenin. Ek açıklamaları belirtme çizgileri, metin rengi ve bitiş stilleriyle özelleştirin.
+description: Aspose.PDF for .NET kullanarak PDF Dosyasında Bilgi Özelliğini nasıl ayarlayacağınızı öğrenin. Ek açıklamaları belirtme çizgileri, metin rengi ve bitiş stilleriyle özelleştirin.
 type: docs
 weight: 130
 url: /tr/net/annotations/setcalloutproperty/
@@ -17,7 +17,7 @@ Bu eğitimde, C# dilinde Aspose.PDF for .NET kullanarak serbest metin ek açıkl
 
 ## 1. Adım: Yeni bir PDF belgesi oluşturun
 
- kullanarak yeni bir PDF belgesi oluşturun.`Document` Aspose.PDF for .NET tarafından sağlanan sınıf.
+ kullanarak yeni bir PDF belgesi oluşturun.`Document`Aspose.PDF for .NET tarafından sağlanan sınıf.
 
 ```csharp
 // Belgeler dizininin yolu.
@@ -67,7 +67,7 @@ page.Annotations.Add(fta);
 
 ## 6. Adım: Açıklamaya metin ekleyin
 
-ayarlayarak ek açıklamaya metin ekleyin.`RichText` özelliğini biçimlendirilmiş bir XML dizisine dönüştürür. Bu eğitimde, metin rengini kırmızıya ve yazı tipi boyutunu 9'a ayarlıyoruz.
+ ayarlayarak ek açıklamaya metin ekleyin.`RichText`özelliğini biçimlendirilmiş bir XML dizisine dönüştürür. Bu eğitimde, metin rengini kırmızıya ve yazı tipi boyutunu 9'a ayarlıyoruz.
 
 ```csharp
 fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"color:#FF
@@ -103,3 +103,25 @@ page.Annotations.Add(fta);
 fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"color:#FF0000;font-weight:normal;font-style:normal;font-stretch:normal\"><p dir=\"ltr\"> <span style=\"font-size:9.0pt;font-family:Helvetica\">Bu bir örnektir</span></p></body>";
 doc.Save(dataDir + "SetCalloutProperty.pdf");
 ```
+
+## Çözüm
+
+Bu öğreticide, Aspose.PDF for .NET kullanarak bir PDF belgesinde serbest metin notu için belirtme çizgisi özelliklerini nasıl ayarlayacağımızı inceledik. Belirtme notları, bir belgedeki belirli alanlarla ilgili ek bilgiler veya açıklamalar sağlamak için kullanışlıdır. Aspose.PDF for .NET, belirtme çizgileri gibi ek açıklamalar oluşturma ve özelleştirme dahil olmak üzere PDF dosyalarıyla çalışmak için çok çeşitli özellikler ve yetenekler sağlar. Geliştiriciler, adım adım kılavuzu izleyerek ve sağlanan C# kaynak kodunu kullanarak PDF belgelerine belirtme notlarını kolayca uygulayabilir ve belgelerinin kullanılabilirliğini ve netliğini artırabilir. Aspose.PDF for .NET, .NET uygulamalarında PDF işlemleri için çok yönlü ve güvenilir bir kitaplıktır ve PDF ile ilgili çeşitli görevleri verimli bir şekilde yürütmek için güçlü araçlar sunar.
+
+### PDF dosyasında belirtme çizgisi özelliğini ayarlamak için SSS
+
+#### S: Bir PDF belgesindeki ek açıklama nedir?
+
+Y: Bir PDF belgesindeki belirtme çizgisi notu, belgede belirli bir alanı işaret eden bir lider çizgisi olan bir metin kutusu oluşturmanıza olanak sağlayan bir not türüdür. Belgedeki belirli bir bölüm veya öğeyle ilgili ek bilgi veya yorum sağlamak için yaygın olarak kullanılır.
+
+#### S: Aspose.PDF for .NET kullanarak belirtme çizgisi notunun görünümünü özelleştirebilir miyim?
+
+C: Evet, renk, yazı tipi boyutu, metin hizalaması, çizgi stili, ok stili ve daha fazlası gibi belirtme çizgisi notunun çeşitli özelliklerini özelleştirebilirsiniz.
+
+#### S: Belirtme ek açıklamasına nasıl metin eklerim?
+
+ C: Belirtme bilgi notuna metin eklemek için`RichText` mülkiyeti`FreeTextAnnotation` nesne. bu`RichText` özelliği, belirtme notunda görüntülenecek metni temsil eden bir biçimlendirilmiş XML dizesi alır.
+
+#### S: Aspose.PDF for .NET kullanarak bir PDF belgesine birden fazla ek açıklama ekleyebilir miyim?
+
+ C: Evet, bir PDF belgesinde birden çok ek açıklama oluşturabilirsiniz.`FreeTextAnnotation`nesne ve bunları belgedeki farklı sayfalara veya konumlara ekleme.

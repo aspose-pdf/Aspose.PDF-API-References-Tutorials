@@ -19,7 +19,7 @@ url: /ar/net/programming-with-text/multicolumn-paragraphs/
 
 ## الخطوة 1: قم بإعداد دليل المستندات
 
- أولاً ، تحتاج إلى تعيين المسار إلى الدليل حيث يوجد ملف PDF الخاص بك. يستبدل`"YOUR DOCUMENT DIRECTORY"` في ال`dataDir` متغير مع المسار إلى ملف PDF الخاص بك.
+ أولاً ، تحتاج إلى تعيين المسار إلى الدليل حيث يوجد ملف PDF الخاص بك. يستبدل`"YOUR DOCUMENT DIRECTORY"` في ال`dataDir`متغير مع المسار إلى ملف PDF الخاص بك.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -35,7 +35,7 @@ Document doc = new Document(dataDir + "MultiColumnPdf.pdf");
 
 ## الخطوة 3: الوصول إلى فقرات متعددة الأعمدة
 
- نحن نستخدم ال`ParagraphAbsorber` فئة لاستيعاب وزيارة الفقرات في مستند PDF. ثم نقوم باسترداد ترميز الصفحة والوصول إلى الفقرات متعددة الأعمدة.
+ نحن نستخدم ال`ParagraphAbsorber`فئة لاستيعاب وزيارة الفقرات في مستند PDF. ثم نقوم باسترداد ترميز الصفحة والوصول إلى الفقرات متعددة الأعمدة.
 
 ```csharp
 ParagraphAbsorber absorb = new ParagraphAbsorber();

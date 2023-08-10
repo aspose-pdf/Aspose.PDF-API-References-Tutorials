@@ -46,7 +46,7 @@ Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
 ## Passaggio 6: creare un frammento di testo
- Creare un`TextFragment` oggetto e fornire il testo desiderato. Impostare la posizione del frammento di testo utilizzando il`Position` proprietà. Nel codice fornito, il testo è impostato su "testo principale" e posizionato a (100, 600) nella pagina.
+ Creare un`TextFragment`oggetto e fornire il testo desiderato. Impostare la posizione del frammento di testo utilizzando il`Position` proprietà. Nel codice fornito, il testo è impostato su "testo principale" e posizionato a (100, 600) nella pagina.
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");

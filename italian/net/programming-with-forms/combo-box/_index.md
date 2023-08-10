@@ -7,7 +7,6 @@ type: docs
 weight: 30
 url: /it/net/programming-with-forms/combo-box/
 ---
-
 In questo tutorial, ti mostreremo come creare un elenco di caselle combinate utilizzando Aspose.PDF per .NET. Spiegheremo il codice sorgente C# passo dopo passo per guidarti attraverso questo processo.
 
 ## Passaggio 1: preparazione
@@ -103,3 +102,25 @@ catch (Exception ex)
 ## Conclusione
 
 In questo tutorial, abbiamo imparato come creare un elenco di caselle combinate utilizzando Aspose.PDF per .NET. Seguendo questi passaggi, puoi aggiungere facilmente un elenco di caselle combinate ai tuoi documenti PDF utilizzando Aspose.PDF.
+
+### FAQ
+
+#### D: Posso personalizzare l'aspetto dell'elenco delle caselle combinate utilizzando Aspose.PDF per .NET?
+
+R: Sì, puoi personalizzare l'aspetto dell'elenco delle caselle combinate utilizzando Aspose.PDF per .NET. Puoi impostare proprietà come la dimensione del carattere, il colore, il colore di sfondo, lo stile del bordo e altro in modo che corrispondano all'aspetto desiderato.
+
+#### D: Posso impostare le opzioni selezionate predefinite nell'elenco della casella combinata?
+
+ A: Sì, è possibile impostare le opzioni predefinite selezionate nell'elenco delle caselle combinate utilizzando Aspose.PDF per .NET. Puoi usare il`Selected` proprietà del`ComboBoxField` oggetto per contrassegnare una o più opzioni come selezionate per impostazione predefinita.
+
+#### D: Come posso recuperare il valore selezionato dall'elenco della casella combinata dopo che l'utente ha effettuato una selezione?
+
+ A: È possibile recuperare il valore selezionato dall'elenco delle caselle combinate utilizzando Aspose.PDF per .NET. Dopo che l'utente ha effettuato una selezione, è possibile accedere al file`Value` proprietà del`ComboBoxField`oggetto per ottenere il valore selezionato.
+
+#### D: È possibile aggiungere gestori di eventi o azioni all'elenco della casella combinata?
+
+ R: Sì, Aspose.PDF per .NET consente di aggiungere gestori di eventi o azioni all'elenco della casella combinata. Puoi associare azioni JavaScript, ad esempio`OnValueChanged`, all'elenco della casella combinata per eseguire azioni specifiche quando l'utente seleziona un'opzione.
+
+#### D: Posso aggiungere suggerimenti o descrizioni alle opzioni nell'elenco della casella combinata?
+
+ R: Sì, puoi aggiungere suggerimenti o descrizioni alle opzioni nell'elenco delle caselle combinate utilizzando Aspose.PDF per .NET. Puoi impostare il`AlternateName` proprietà di ciascuna opzione per fornire un suggerimento o una descrizione che verrà visualizzata quando l'utente passa sopra l'opzione.

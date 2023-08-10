@@ -101,3 +101,25 @@ for (int j = 1; j <= textFragmentCollection.Count; j++)
 dataDir = dataDir + "StrikeOutWords_out.pdf";
 document.Save(dataDir);
 ```
+
+## Conclusione
+
+In questo tutorial, abbiamo imparato come utilizzare Aspose.PDF per .NET per eliminare parole specifiche in un documento PDF. Seguendo la guida dettagliata e utilizzando il codice sorgente C# fornito, puoi caricare facilmente un documento PDF, cercare frammenti di testo specifici e creare annotazioni barrate per contrassegnare visivamente e barrare quelle parole. Aspose.PDF per .NET fornisce un modo semplice ed efficace per manipolare i documenti PDF a livello di programmazione, rendendolo uno strumento prezioso per gli sviluppatori che lavorano con i file PDF nelle applicazioni .NET.
+
+### FAQ
+
+#### D: Cos'è Aspose.PDF per .NET?
+
+R: Aspose.PDF per .NET è una potente libreria che consente agli sviluppatori di creare, modificare e manipolare documenti PDF in modo programmatico nelle applicazioni .NET. Fornisce una vasta gamma di funzionalità per lavorare con i file PDF, tra cui l'estrazione del testo, la gestione delle annotazioni, la compilazione dei moduli e molto altro.
+
+#### D: Posso usare Aspose.PDF per .NET per cancellare parole specifiche in un documento PDF?
+
+R: Sì, Aspose.PDF per .NET fornisce funzionalità per cercare frammenti di testo specifici in un documento PDF e quindi creare annotazioni barrate per contrassegnare visivamente e barrare quelle parole.
+
+#### D: Come faccio a specificare il testo che voglio barrare nel documento PDF?
+
+ R: Per specificare il testo che vuoi barrare, puoi usare il`TextFragmentAbsorber` classe fornita da Aspose.PDF per .NET. Ti consente di cercare un frammento di testo specifico nel documento PDF in base ai criteri desiderati.
+
+#### D: Posso personalizzare l'aspetto dell'annotazione barrata?
+
+R: Sì, puoi personalizzare varie proprietà dell'annotazione barrata, come l'opacità, lo stile del bordo e il colore. Ciò consente di adattare l'aspetto dell'annotazione barrata alle proprie esigenze specifiche.

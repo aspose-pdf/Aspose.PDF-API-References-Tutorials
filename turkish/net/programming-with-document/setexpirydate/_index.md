@@ -1,8 +1,8 @@
 ---
-title: Bitiş Tarihini Ayarla
-linktitle: Bitiş Tarihini Ayarla
+title: PDF Dosyasında Son Kullanma Tarihini Ayarla
+linktitle: PDF Dosyasında Son Kullanma Tarihini Ayarla
 second_title: Aspose.PDF for .NET API Referansı
-description: Bu adım adım kılavuz ile Aspose.PDF for .NET kullanarak PDF belgelerinde son kullanma tarihini nasıl belirleyeceğinizi öğrenin.
+description: Bu adım adım kılavuz ile Aspose.PDF for .NET kullanarak PDF dosyasında son kullanma tarihini nasıl ayarlayacağınızı öğrenin.
 type: docs
 weight: 300
 url: /tr/net/programming-with-document/setexpirydate/
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## 2. Adım: Yeni bir PDF belgesi oluşturma
 
-Yeni bir PDF belgesi oluşturmak için yeni bir PDF belgesi oluşturmamız gerekir.`Aspose.Pdf.Document` nesne. Bunu aşağıdaki kodu kullanarak yapabiliriz:
+ Yeni bir PDF belgesi oluşturmak için yeni bir PDF belgesi oluşturmamız gerekir.`Aspose.Pdf.Document` nesne. Bunu aşağıdaki kodu kullanarak yapabiliriz:
 
 ```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
@@ -35,7 +35,7 @@ doc.Pages.Add();
 
 ## 4. Adım: PDF Belgesine Metin Ekleme
 
- PDF belgesine bir sayfa ekledikten sonra, onu kullanarak metin ekleyebiliriz.`Paragraphs` Toplamak. Bunu aşağıdaki kodu kullanarak yapabiliriz:
+PDF belgesine bir sayfa ekledikten sonra, onu kullanarak metin ekleyebiliriz.`Paragraphs` Toplamak. Bunu aşağıdaki kodu kullanarak yapabiliriz:
 
 ```csharp
 doc.Pages[1].Paragraphs.Add(new TextFragment("Hello World..."));
@@ -99,3 +99,21 @@ dataDir = dataDir + "SetExpiryDate_out.pdf";
 // PDF Belgesini Kaydet
 doc.Save(dataDir);
 ```
+
+## Çözüm
+
+Aspose.PDF for .NET kullanarak bir PDF belgesi için son kullanma tarihi belirlemek, belgenin yalnızca belirli bir süre boyunca geçerli olmasını sağlamak için yararlı bir özelliktir. Geliştiriciler, adım adım kılavuzu izleyerek ve sağlanan C# kaynak kodunu kullanarak son kullanma tarihini kolayca ayarlayabilir ve zaman sınırlı geçerliliği olan PDF'ler oluşturabilir. Bu özellik, sınırlı bir süre için erişilmesi veya dağıtılması gereken belgeler için özellikle yararlı olabilir.
+
+### PDF dosyasında son kullanma tarihi belirlemek için SSS
+
+#### S: PDF belgesi için farklı bir son kullanma tarihi belirleyebilir miyim?
+
+ C: Evet, 5. Adımda JavaScript kodunu değiştirerek PDF belgesi için farklı bir son kullanma tarihi belirleyebilirsiniz. Sağlanan örnekte, son kullanma tarihi Mayıs 2017 olarak ayarlanmıştır. Farklı bir son kullanma tarihi ayarlamak için,`year` Ve`month` JavaScript kodundaki değişkenleri istenen yıl ve aya ayarlayın.
+
+#### S: PDF belgesinin süresi dolduğunda ne olur?
+
+Y: JavaScript kodunda belirtildiği gibi PDF belgesinin süresi dolduğunda, görüntüleyici dosyanın süresinin dolduğunu ve kullanıcının yeni bir belgeye ihtiyacı olduğunu belirten bir uyarı mesajı görüntüler. Bu uyarı mesajı, PDF açıldığında gösterilecektir.
+
+#### S: Son kullanma tarihi için sadece tarih yerine belirli bir zaman kullanabilir miyim?
+
+ C: Evet, JavaScript kodunda son kullanma tarihi için belirli bir zaman belirleyebilirsiniz. değiştirerek`expiry` JavaScript kodundaki değişkene istediğiniz süreyi dahil etmek için, son kullanma tarihi için belirli bir saat ayarlayabilirsiniz.

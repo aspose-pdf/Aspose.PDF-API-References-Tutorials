@@ -19,7 +19,7 @@ Antes de comenzar, asegúrese de tener lo siguiente:
 
 ## Paso 1: configurar el directorio de documentos
 
- Establezca la ruta al directorio donde tiene el archivo PDF de entrada. Reemplazar`"YOUR DOCUMENT DIRECTORY"` en el`dataDir` variable con la ruta a su archivo PDF.
+ Establezca la ruta al directorio donde tiene el archivo PDF de entrada. Reemplazar`"YOUR DOCUMENT DIRECTORY"` en el`dataDir`variable con la ruta a su archivo PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -35,7 +35,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextAll.pdf");
 
 ## Paso 3: buscar y reemplazar texto
 
- Crear un`TextFragmentAbsorber`objeto para encontrar todas las instancias de la frase de búsqueda de entrada. Acepte el absorbedor para todas las páginas del documento PDF para extraer los fragmentos de texto.
+ Crear un`TextFragmentAbsorber` objeto para encontrar todas las instancias de la frase de búsqueda de entrada. Acepte el absorbedor para todas las páginas del documento PDF para extraer los fragmentos de texto.
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
@@ -73,7 +73,7 @@ Console.WriteLine("\nText replaced successfully.\nFile saved at " + dataDir);
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Abrir documento
 Document pdfDocument = new Document(dataDir + "ReplaceTextAll.pdf");
-// Cree un objeto TextAbsorber para encontrar todas las instancias de la frase de búsqueda de entrada
+//Cree un objeto TextAbsorber para encontrar todas las instancias de la frase de búsqueda de entrada
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
 // Aceptar el absorbedor para todas las páginas.
 pdfDocument.Pages.Accept(textFragmentAbsorber);

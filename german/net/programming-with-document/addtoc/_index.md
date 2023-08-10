@@ -1,14 +1,13 @@
 ---
-title: Inhaltsverzeichnis hinzufügen
-linktitle: Inhaltsverzeichnis hinzufügen
+title: Inhaltsverzeichnis zur PDF-Datei hinzufügen
+linktitle: Inhaltsverzeichnis zur PDF-Datei hinzufügen
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET ein Inhaltsverzeichnis zu PDF-Dokumenten hinzufügen. Schritt-für-Schritt-Anleitung mit Beispiel-Quellcode. Beschleunigen Sie die Dokumentennavigation!
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET ein Inhaltsverzeichnis zu einer PDF-Datei hinzufügen. Schritt-für-Schritt-Anleitung mit Beispiel-Quellcode. Beschleunigen Sie die Dokumentennavigation!
 type: docs
 weight: 40
 url: /de/net/programming-with-document/addtoc/
 ---
-
-In diesem Tutorial erfahren Sie, wie Sie mit der Funktion „Inhaltsverzeichnis hinzufügen“ von Aspose.PDF für .NET ein Inhaltsverzeichnis zu PDF-Dokumenten hinzufügen. Wir stellen Ihnen eine Schritt-für-Schritt-Anleitung zur Verfügung und erläutern den dafür erforderlichen C#-Quellcode. Am Ende dieses Tutorials werden Sie in der Lage sein, mit Aspose.PDF für .NET ein PDF-Dokument mit einem Inhaltsverzeichnis zu erstellen.
+In diesem Tutorial erfahren Sie, wie Sie die Funktion „Inhaltsverzeichnis (Inhaltsverzeichnis) zu PDF-Datei hinzufügen“ von Aspose.PDF für .NET verwenden, um PDF-Dokumenten ein Inhaltsverzeichnis hinzuzufügen. Wir stellen Ihnen eine Schritt-für-Schritt-Anleitung zur Verfügung und erläutern den dafür erforderlichen C#-Quellcode. Am Ende dieses Tutorials werden Sie in der Lage sein, mit Aspose.PDF für .NET ein PDF-Dokument mit einem Inhaltsverzeichnis zu erstellen.
 
 
 ## Schritt 1: Laden Sie die vorhandene PDF-Datei
@@ -101,7 +100,7 @@ title.TextState.FontStyle = FontStyles.Bold;
 tocInfo.Title = title;
 tocPage.TocInfo = tocInfo;
 
-// Erstellen Sie String-Objekte, die als TOC-Elemente verwendet werden
+//Erstellen Sie String-Objekte, die als TOC-Elemente verwendet werden
 string[] titles = new string[4];
 titles[0] = "First page";
 titles[1] = "Second page";
@@ -124,7 +123,7 @@ for (int i = 0; i < 2; i++)
 	// Zielkoordinate
 	segment2.Text = titles[i];
 
-	//Fügen Sie der Seite mit dem Inhaltsverzeichnis eine Überschrift hinzu
+	// Fügen Sie der Seite mit dem Inhaltsverzeichnis eine Überschrift hinzu
 	tocPage.Paragraphs.Add(heading2);
 }
 dataDir = dataDir + "TOC_out.pdf";
@@ -133,3 +132,29 @@ doc.Save(dataDir);
 
 Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at " + dataDir);
 ```
+
+## Abschluss
+
+In diesem Tutorial haben wir untersucht, wie man mit Aspose.PDF für .NET ein Inhaltsverzeichnis (TOC) zu PDF-Dokumenten hinzufügt. Indem Sie der Schritt-für-Schritt-Anleitung folgen und den bereitgestellten C#-Quellcode verwenden, können Sie ganz einfach ein PDF-Dokument mit einem Inhaltsverzeichnis erstellen. Das Inhaltsverzeichnis verbessert die Benutzerfreundlichkeit des Dokuments und ermöglicht Benutzern eine effizientere Navigation zu bestimmten Abschnitten oder Seiten. Aspose.PDF für .NET bietet eine robuste und benutzerfreundliche Lösung für die Arbeit mit PDF-Dateien in .NET-Anwendungen und ermöglicht Ihnen die einfache Erstellung dynamischer und interaktiver PDF-Dokumente.
+
+### FAQs zum Hinzufügen von Inhaltsverzeichnissen zu PDF-Dateien
+
+#### F: Was ist Aspose.PDF für .NET?
+
+A: Aspose.PDF für .NET ist eine leistungsstarke Bibliothek, die es Entwicklern ermöglicht, effektiv mit PDF-Dateien in .NET-Anwendungen zu arbeiten. Es bietet eine breite Palette von Funktionen zum programmgesteuerten Erstellen, Bearbeiten und Verwalten von PDF-Dokumenten.
+
+#### F: Welchen Zweck hat das Hinzufügen eines Inhaltsverzeichnisses (TOC) zu einem PDF-Dokument?
+
+A: Das Inhaltsverzeichnis (TOC) bietet Benutzern eine Navigationshilfe, die es ihnen ermöglicht, schnell zu bestimmten Abschnitten oder Seiten innerhalb des PDF-Dokuments zu springen. Es verbessert die Benutzerfreundlichkeit und Benutzererfahrung des Dokuments.
+
+#### F: Wie füge ich mit Aspose.PDF für .NET ein Inhaltsverzeichnis zu einem PDF-Dokument hinzu?
+
+A: Um mit Aspose.PDF für .NET ein Inhaltsverzeichnis zu einem PDF-Dokument hinzuzufügen, müssen Sie eine neue Seite erstellen, die das Inhaltsverzeichnis enthält, die Informationen zum Inhaltsverzeichnis definieren und dann Inhaltsverzeichniselemente erstellen, die bestimmten Seiten oder Seiten entsprechen Abschnitte im Dokument.
+
+#### F: Kann ich das Erscheinungsbild des Inhaltsverzeichnisses anpassen?
+
+A: Ja, Sie können das Erscheinungsbild des Inhaltsverzeichnisses anpassen, indem Sie verschiedene Eigenschaften der Inhaltsverzeichniselemente festlegen, wie z. B. Schriftgröße, Schriftstil und Ausrichtung. Aspose.PDF für .NET bietet Flexibilität bei der Gestaltung des Inhaltsverzeichnisses, um es an Ihr gewünschtes Erscheinungsbild anzupassen.
+
+#### F: Ist Aspose.PDF für .NET zum Hinzufügen erweiterter Funktionen zu PDF-Dokumenten geeignet?
+
+A: Absolut, Aspose.PDF für .NET ist eine funktionsreiche Bibliothek, mit der Sie PDF-Dokumenten erweiterte Funktionen hinzufügen können, darunter interaktive Elemente, Formularfelder, digitale Signaturen und mehr.

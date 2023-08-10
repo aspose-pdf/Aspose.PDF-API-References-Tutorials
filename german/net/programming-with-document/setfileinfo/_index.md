@@ -1,8 +1,8 @@
 ---
-title: Dateiinformationen festlegen
-linktitle: Dateiinformationen festlegen
+title: Legen Sie die Dateiinformationen in der PDF-Datei fest
+linktitle: Legen Sie die Dateiinformationen in der PDF-Datei fest
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erfahren Sie in dieser Schritt-für-Schritt-Anleitung, wie Sie mit Aspose.PDF für .NET Dateiinformationen in Ihren PDF-Dokumenten festlegen.
+description: Erfahren Sie in dieser Schritt-für-Schritt-Anleitung, wie Sie mit Aspose.PDF für .NET Dateiinformationen in einer PDF-Datei festlegen.
 type: docs
 weight: 310
 url: /de/net/programming-with-document/setfileinfo/
@@ -90,3 +90,17 @@ Console.WriteLine("\nFile informations setup successfully.\nFile saved at " + da
 ## Abschluss
 
 Zusammenfassend bietet Aspose.PDF für .NET eine einfache und effektive Möglichkeit, Dateiinformationen für PDF-Dokumente festzulegen. Indem Sie die oben genannten Schritte befolgen, können Sie mithilfe des C#-Quellcodes ganz einfach die gewünschten Dateiinformationswerte für Ihre PDF-Dokumente festlegen.
+
+### FAQs zum Festlegen von Dateiinformationen in einer PDF-Datei
+
+#### F: Kann ich zusätzliche Dateiinformationseigenschaften festlegen, die im Beispiel nicht erwähnt werden?
+
+ A: Ja, Sie können mithilfe von zusätzliche Dateiinformationseigenschaften festlegen`DocumentInfo` Objekt in Aspose.PDF für .NET. Der`DocumentInfo`Die Klasse stellt verschiedene Eigenschaften bereit, mit denen Sie zusätzliche Informationen festlegen können, z. B. den Hersteller, die Version und benutzerdefinierte Eigenschaften.
+
+#### F: Ist es möglich, die Dateiinformationen aus einem vorhandenen PDF-Dokument abzurufen?
+
+ A: Ja, Sie können die Dateiinformationen mit Aspose.PDF für .NET aus einem vorhandenen PDF-Dokument abrufen. Dazu können Sie die verwenden`DocumentInfo` -Objekt, um auf die Dateiinformationseigenschaften zuzugreifen und die im PDF-Dokument gespeicherten Informationen zu lesen.
+
+#### F: Ändert das Festlegen der Dateiinformationen das ursprüngliche PDF-Dokument?
+
+A: Nein, das Festlegen der Dateiinformationen mit Aspose.PDF für .NET verändert das ursprüngliche PDF-Dokument nicht. Stattdessen wird ein neues PDF-Dokument mit den aktualisierten Dateiinformationen erstellt. Das ursprüngliche PDF-Dokument bleibt unverändert.

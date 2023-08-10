@@ -1,14 +1,13 @@
 ---
-title: SVG Nesnesi Ekle
-linktitle: SVG Nesnesi Ekle
+title: PDF Dosyasına SVG Nesnesi Ekle
+linktitle: PDF Dosyasına SVG Nesnesi Ekle
 second_title: Aspose.PDF for .NET API Referansı
-description: Aspose.PDF for .NET'i kullanarak PDF dosyalarınıza kolayca SVG nesneleri ekleyin.
+description: Aspose.PDF for .NET kullanarak PDF dosyasına kolayca SVG nesneleri ekleyin.
 type: docs
 weight: 30
 url: /tr/net/programming-with-tables/add-svg-object/
 ---
-
-Bu öğreticide, Aspose.PDF for .NET kitaplığını kullanarak bir PDF dosyasına nasıl SVG nesnesi ekleyeceğimizi öğreneceğiz. SVG (Scalable Vector Graphics), kaliteden ödün vermeden kolayca ölçeklenebilen popüler bir vektör grafik formatıdır. Aspose.PDF ile PDF belgelerinize programlı olarak SVG nesneleri ekleyebilirsiniz.
+Bu öğreticide, Aspose.PDF for .NET kitaplığını kullanarak PDF dosyasına bir SVG nesnesinin nasıl ekleneceğini öğreneceğiz. SVG (Scalable Vector Graphics), kaliteden ödün vermeden kolayca ölçeklenebilen popüler bir vektör grafik formatıdır. Aspose.PDF ile PDF belgelerinize programlı olarak SVG nesneleri ekleyebilirsiniz.
 
 ## Gereksinimler
 
@@ -159,3 +158,25 @@ Console.WriteLine("\nSVG image added successfully inside a table cell.\nFile sav
 ## Çözüm
 
 Bu öğreticide, Aspose.PDF for .NET kitaplığını kullanarak bir PDF dosyasına SVG nesnesi eklemeyi öğrendik. Belge oluşturma, ortamı ayarlama, tablo hücresine SVG görüntüsü ekleme ve PDF dosyasını kaydetme sürecini adım adım ele aldık. Artık SVG nesnelerini programlı olarak PDF belgelerinize dahil edebilirsiniz.
+
+### PDF dosyasına SVG nesnesi eklemek için SSS
+
+#### S: PDF belgesine birden çok SVG nesnesi ekleyebilir miyim?
+
+ C: Evet, PDF belgesine birden çok SVG nesnesi ekleyebilirsiniz. Ek oluşturmanız ve yapılandırmanız yeterlidir`Aspose.Pdf.Image` eklemek istediğiniz her SVG görüntüsü için örnekler ve ardından bunları PDF belgesindeki istediğiniz tablo hücrelerine veya paragraflara ekleyin.
+
+#### S: Tablo hücresindeki SVG görüntüsünün boyutunu ve konumunu nasıl ayarlayabilirim?
+
+ A: Tablo hücresindeki SVG görüntüsünün boyutunu ve konumunu ayarlamak için`FixWidth` Ve`FixHeight` özellikleri`Aspose.Pdf.Image`misal. gibi diğer özellikleri de kullanabilirsiniz.`HorizontalAlignment` Ve`VerticalAlignment` konumlandırmayı kontrol etmek için tablo hücresinin.
+
+#### S: Aynı tablo hücresinde SVG görüntüsünün yanına metin eklemek mümkün müdür?
+
+ C: Evet, aynı tablo hücresinde SVG görüntüsünün yanına metin eklemek mümkündür. kullanabilirsiniz`cell.Paragraphs.Add(new TextFragment("Your Text Here"));` SVG görüntüsüyle birlikte hücreye metin ekleme yöntemi.
+
+#### S: SVG görüntüsüne köprüler ekleyebilir miyim?
+
+ A: Evet, kullanarak SVG görüntüsüne köprüler ekleyebilirsiniz.`Hyperlink` mülkiyeti`Aspose.Pdf.Image` misal. Görüntüyü tıklanabilir yapmak için köprü URL'sini veya eylemi ayarlayın.
+
+#### S: Aspose.PDF for .NET, .NET Core 3.1 veya sonraki sürümlerle uyumlu mu?
+
+C: Evet, Aspose.PDF for .NET, .NET Core 3.1 ve sonraki sürümlerle uyumludur. Hem .NET Framework hem de .NET Core uygulamalarında kullanabilirsiniz.

@@ -98,3 +98,29 @@ Console.WriteLine("\nLength dashed successfully in black and white.\nFile saved 
 ## Abschluss
 
 In diesem Tutorial haben wir erklärt, wie Sie die Länge von Bindestrichen mit Aspose.PDF für .NET festlegen. Jetzt können Sie dieses Wissen nutzen, um Linien mit benutzerdefinierten Strichmustern in Ihren PDF-Dateien zu erstellen.
+
+## FAQs
+
+#### F: Was ist der Zweck dieses Tutorials?
+
+A: Der Zweck dieses Tutorials besteht darin, Sie durch den Prozess zum Festlegen der Länge von Strichen für Linien mit Aspose.PDF für .NET zu führen. Sie erfahren, wie Sie in Ihren PDF-Dateien Linien mit benutzerdefinierten Strichmustern erstellen.
+
+#### F: Welche Voraussetzungen sind vor dem Start erforderlich?
+
+A: Bevor Sie beginnen, stellen Sie sicher, dass Sie die Aspose.PDF-Bibliothek installiert und Ihre Entwicklungsumgebung eingerichtet haben. Ein grundlegendes Verständnis der C#-Programmierung wird ebenfalls empfohlen.
+
+#### F: Wie lege ich das Verzeichnis zum Speichern der PDF-Datei fest?
+
+A: Ändern Sie die Variable „dataDir“ im bereitgestellten Quellcode, um das Verzeichnis anzugeben, in dem Sie die resultierende PDF-Datei speichern möchten.
+
+#### F: Wie erstelle ich eine Linie mit benutzerdefinierten Strichmustern?
+
+ A: Das Tutorial zeigt das Erstellen eines Linienobjekts und das Konfigurieren seiner Farbe, seines Stricharrays und seiner Strichphase mithilfe von`GraphInfo` Objekt. Ändern Sie diese Einstellungen, um das gewünschte Strichmuster zu erzielen.
+
+#### F: Kann ich die Farbe der Linie anpassen?
+
+ A: Ja, Sie können die Farbe der Linie anpassen, indem Sie festlegen`Color` Eigentum der`GraphInfo` Objekt, das der Linie zugeordnet ist.
+
+#### F: Wie speichere ich das PDF-Dokument, nachdem ich die Strichlänge festgelegt habe?
+
+ A: Nachdem Sie das Linienobjekt mit dem gewünschten Strichmuster konfiguriert haben, können Sie das resultierende PDF-Dokument mit speichern`doc.Save(dataDir + "DashLength_out.pdf");` Zeile im bereitgestellten Quellcode.

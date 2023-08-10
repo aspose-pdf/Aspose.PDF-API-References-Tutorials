@@ -1,13 +1,12 @@
 ---
-title: Skaffa egenskaper
-linktitle: Skaffa egenskaper
+title: Hämta PDF-egenskaper
+linktitle: Hämta PDF-egenskaper
 second_title: Aspose.PDF för .NET API Referens
 description: Steg-för-steg guide för att få PDF-egenskaper som boxdimensioner och rotation med Aspose.PDF för .NET.
 type: docs
 weight: 100
 url: /sv/net/programming-with-pdf-pages/get-properties/
 ---
-
 den här handledningen går vi igenom processen steg-för-steg för att få egenskaperna för en PDF med Aspose.PDF för .NET. Vi kommer att förklara den medföljande C#-källkoden och förse dig med en omfattande guide som hjälper dig att förstå och implementera den här funktionen i dina egna projekt. I slutet av den här handledningen kommer du att veta hur du får åtkomst till olika egenskaper för en PDF-sida som konstlåda, beskärningsruta, beskärningslåda, etc., med Aspose.PDF för .NET.
 
 ## Förutsättningar
@@ -88,3 +87,40 @@ System.Console.WriteLine("Rotate : {0}", pdfPage.Rotate);
 Grattis! Du har framgångsrikt erhållit egenskaperna för en PDF med Aspose.PDF för .NET. Du lärde dig hur du öppnar ett PDF-dokument, navigerar till en specifik sida och får olika sidegenskaper, såsom dimensionsrutor och rotation. Du kan nu använda denna information för att anpassa hanteringen av dina PDF-filer baserat på deras egenskaper.
 
 Se till att kolla in den officiella Aspose.PDF för .NET-dokumentationen för mer information om avancerade funktioner och anpassningsmöjligheter.
+
+### FAQ's
+
+#### F: Hur kan jag få egenskaperna för en PDF med Aspose.PDF för .NET?
+
+S: För att få egenskaperna för en PDF med Aspose.PDF för .NET kan du följa dessa steg:
+
+1. Ställ in dokumentkatalogen genom att ange sökvägen till PDF-filen vars egenskaper du vill hämta.
+2.  Öppna PDF-dokumentet med hjälp av`Document` klass av Aspose.PDF, vilket ger rätt sökväg till PDF-filen.
+3.  Få tillgång till dokumentets sidsamling med hjälp av`Pages` egendom av`pdfDocument` objekt.
+4. Hoppa till en specifik sida med hjälp av indexet för sidan i samlingen (indexeringen börjar från 1).
+5.  Få de olika egenskaperna för PDF-sidan, såsom ArtBox, BleedBox, CropBox, MediaBox, TrimBox, Rect, Page Number och Rotation, genom att använda motsvarande egenskaper för`pdfPage` objekt.
+
+#### F: Vilka är de olika egenskaperna för en PDF-sida som jag kan hämta med Aspose.PDF för .NET?
+
+S: Du kan hämta olika egenskaper för en PDF-sida med Aspose.PDF för .NET, till exempel:
+
+- ArtBox: Representerar måtten på sidans konstverk.
+- BleedBox: Representerar måtten på sidans utfall.
+- CropBox: Representerar måtten på sidans synliga innehåll efter beskärning.
+- MediaBox: Representerar dimensionerna på sidans fysiska media.
+- TrimBox: Representerar måtten på sidans beskurna innehåll.
+- Rect: Representerar måtten på sidans begränsningsram.
+- Sidnummer: Representerar sidnumret i dokumentet.
+- Rotera: Representerar sidans rotationsvinkel.
+
+#### F: Hur kommer jag åt en specifik sida i PDF-dokumentet för att hämta dess egenskaper?
+
+ S: För att komma åt en specifik sida i PDF-dokumentet och hämta dess egenskaper kan du använda`Pages` egendom av`pdfDocument` objekt för att komma åt dokumentets sidsamling. Sedan kan du använda indexet för sidan i samlingen för att hoppa till önskad sida. Till exempel, för att komma åt den andra sidan, kan du använda`pdfDocument.Pages[1]` (indexeringen börjar från 1).
+
+#### F: Kan jag utföra operationer på de hämtade egenskaperna, som att ändra eller ändra storlek på sidrutorna?
+
+S: Ja, när du har hämtat egenskaperna för en PDF-sida med Aspose.PDF för .NET kan du utföra olika operationer på dem. Du kan till exempel ändra sidrutornas dimensioner, rotera sidan eller använda den hämtade informationen för anpassad bearbetning och manipulering av PDF-dokumentet.
+
+#### F: Stöder Aspose.PDF för .NET extrahering av egenskaper från krypterade eller lösenordsskyddade PDF-filer?
+
+S: Ja, Aspose.PDF för .NET stöder extrahering av egenskaper från krypterade eller lösenordsskyddade PDF-filer. Så länge du anger rätt lösenord för att öppna PDF-dokumentet kan du komma åt och hämta dess egenskaper med samma tillvägagångssätt som visas i handledningen.

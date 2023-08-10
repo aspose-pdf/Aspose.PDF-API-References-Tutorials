@@ -39,7 +39,7 @@ Document pdfDocument = new Document(dataDir + "ExtractTextAll.pdf");
 ```
 
 ## Schritt 5: Extrahieren Sie Text aus einem Seitenbereich
- Ein ... kreieren`TextAbsorber` Objekt zum Extrahieren von Text aus dem Dokument. Konfigurieren Sie die`TextSearchOptions` um die Suche auf einen bestimmten Seitenbereich zu beschränken, der durch ein Rechteck definiert ist.
+ Ein ... kreieren`TextAbsorber`Objekt zum Extrahieren von Text aus dem Dokument. Konfigurieren Sie die`TextSearchOptions` um die Suche auf einen bestimmten Seitenbereich zu beschränken, der durch ein Rechteck definiert ist.
 
 ```csharp
 TextAbsorber absorb = new TextAbsorber();

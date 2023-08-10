@@ -1,13 +1,12 @@
 ---
-title: PDF'den EPUB'a dönüştürme
-linktitle: PDF'den EPUB'a dönüştürme
+title: PDF'den EPUB'a
+linktitle: PDF'den EPUB'a
 second_title: Aspose.PDF for .NET API Referansı
 description: Aspose.PDF for .NET kullanarak PDF'yi EPUB'a dönüştürmek için adım adım kılavuz.
 type: docs
 weight: 120
 url: /tr/net/document-conversion/pdf-to-epub/
 ---
-
 Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF dosyasını EPUB formatına dönüştürme sürecinde size rehberlik edeceğiz. PDF formatı genellikle belgeleri görüntülemek için kullanılırken, EPUB formatı e-kitaplar için özel olarak tasarlanmıştır. Aşağıdaki adımları izleyerek PDF dosyalarını EPUB formatına dönüştürebileceksiniz.
 
 ## Önkoşullar
@@ -54,7 +53,7 @@ Kaydetme seçeneklerini yapılandırdıktan sonra, artık ortaya çıkan EPUB do
 pdfDocument.Save(dataDir + "PDFToEPUB_out.epub", options);
 ```
 
- Yer değiştirmek`"YOUR DOCUMENTS DIRECTORY"` Çıktı EPUB dosyasını kaydetmek istediğiniz istediğiniz dizin ile.
+ Yer değiştirmek`"YOUR DOCUMENTS DIRECTORY"`Çıktı EPUB dosyasını kaydetmek istediğiniz istediğiniz dizin ile.
 
 ### Aspose.PDF for .NET kullanarak PDF'den EPUB'a dönüştürme için örnek kaynak kodu
 
@@ -77,3 +76,21 @@ pdfDocument.Save(dataDir + "PDFToEPUB_out.epub", options);
 
 ## Çözüm
 Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF dosyasını EPUB formatında dönüştürme sürecini adım adım ele aldık. Yukarıdaki talimatları izleyerek, PDF dosyalarını kolayca EPUB biçimine dönüştürebilirsiniz. Bu özellik, özellikle PDF belgelerini farklı cihazlarda okunabilir e-kitaplara dönüştürmek için kullanışlıdır.
+
+### SSS
+
+#### S: Parola korumalı PDF dosyalarını Aspose.PDF for .NET kullanarak EPUB formatına dönüştürebilir miyim?
+
+Y: Mevcut sürüm itibariyle Aspose.PDF for .NET, parola korumalı PDF dosyalarını EPUB formatına dönüştürmek için doğrudan destek sağlamamaktadır. Parola korumalı PDF'leri dönüştürmek için, önce Aspose.PDF veya başka bir araç kullanarak parolayı PDF dosyasından kaldırmanız ve ardından EPUB formatına dönüştürme işlemine devam etmeniz gerekir.
+
+#### S: "EpubSaveOptions.RecognitionMode.Flow" ile "EpubSaveOptions.RecognitionMode.PreserveLayout" arasındaki fark nedir?
+
+C: "EpubSaveOptions.RecognitionMode.Flow", EPUB kitabındaki içeriğin cihaza veya ekran boyutuna göre dinamik olarak akacağını ve ayarlanacağını belirtir. Bu mod, içeriğin farklı okuma ortamlarına uyarlandığı yeniden akıtılabilir EPUB'lar için uygundur. Öte yandan, "EpubSaveOptions.RecognitionMode.PreserveLayout", sabit yerleşimli EPUB'lar için daha uygun olan, kaynak PDF'de göründüğü şekliyle içeriğin düzenini korur.
+
+#### S: Aspose.PDF for .NET kullanarak EPUB çıktısını özelleştirebilir miyim?
+
+C: Evet, Aspose.PDF for .NET, EPUB çıktısını özelleştirmek için çeşitli seçenekler sunar. Meta verileri ayarlayabilir, görünümü yapılandırabilir, kapak resimleri ekleyebilir, içindekiler tablosunu tanımlayabilir ve daha fazlasını yapabilirsiniz. Ek olarak, EPUB çıktısındaki içerik düzenini uyarlamak için örnekte gösterildiği gibi tanıma modunu kontrol edebilirsiniz.
+
+#### S: Karmaşık PDF'leri EPUB biçimine dönüştürürken herhangi bir sınırlama var mı?
+
+Y: Aspose.PDF for .NET güçlü PDF'den EPUB'a dönüştürme yetenekleri sunarken, karmaşık mizanpajlara, grafiklere veya standart olmayan yazı tiplerine sahip bazı karmaşık PDF'ler dönüştürme işlemi sırasında sınırlamalara sahip olabilir. Çıkış EPUB biçiminin gereksinimlerinizi karşıladığından emin olmak için belirli PDF dosyalarınızı test etmeniz önerilir.

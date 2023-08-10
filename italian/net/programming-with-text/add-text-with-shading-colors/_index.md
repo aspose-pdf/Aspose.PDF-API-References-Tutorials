@@ -52,7 +52,7 @@ TextFragment textFragment = absorb.TextFragments[1];
 ```
 
 ## Passaggio 6: imposta il colore dell'ombreggiatura per il testo
- Crea un nuovo`Color` oggetto con uno spazio colore modello e specificare i colori di sfumatura sfumatura. Assegna questo colore al`ForegroundColor` proprietà del`TextState` del`TextFragment` oggetto.
+ Crea un nuovo`Color`oggetto con uno spazio colore modello e specificare i colori di sfumatura sfumatura. Assegna questo colore al`ForegroundColor` proprietà del`TextState` del`TextFragment` oggetto.
 
 ```csharp
 textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()

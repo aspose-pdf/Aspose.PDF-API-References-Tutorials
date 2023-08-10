@@ -108,7 +108,7 @@ TextFragmentCollection textFragments = absorber.TextFragments;
 // Durchlaufe die Fragmente
 foreach (TextFragment fragment in textFragments)
 {
-	//Erstellen Sie eine unsichtbare Schaltfläche an der Position des Textfragments
+	// Erstellen Sie eine unsichtbare Schaltfläche an der Position des Textfragments
 	ButtonField field = new ButtonField(fragment.Page, fragment.Rectangle);
 	// Der AlternateName-Wert wird von einer Viewer-Anwendung als Tooltip angezeigt
 	field.AlternateName = "Tooltip for text.";

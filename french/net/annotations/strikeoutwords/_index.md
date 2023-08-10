@@ -101,3 +101,25 @@ for (int j = 1; j <= textFragmentCollection.Count; j++)
 dataDir = dataDir + "StrikeOutWords_out.pdf";
 document.Save(dataDir);
 ```
+
+## Conclusion
+
+Dans ce didacticiel, nous avons appris à utiliser Aspose.PDF pour .NET pour supprimer des mots spécifiques dans un document PDF. En suivant le guide étape par étape et en utilisant le code source C# fourni, vous pouvez facilement charger un document PDF, rechercher des fragments de texte spécifiques et créer des annotations barrées pour marquer et barrer visuellement ces mots. Aspose.PDF pour .NET fournit un moyen simple et efficace de manipuler des documents PDF par programmation, ce qui en fait un outil précieux pour les développeurs travaillant avec des fichiers PDF dans des applications .NET.
+
+### FAQ
+
+#### Q : Qu'est-ce qu'Aspose.PDF pour .NET ?
+
+R : Aspose.PDF pour .NET est une bibliothèque puissante qui permet aux développeurs de créer, de modifier et de manipuler des documents PDF par programmation dans des applications .NET. Il fournit un large éventail de fonctionnalités pour travailler avec des fichiers PDF, y compris l'extraction de texte, la gestion des annotations, le remplissage de formulaires, et bien plus encore.
+
+#### Q : Puis-je utiliser Aspose.PDF pour .NET pour supprimer des mots spécifiques dans un document PDF ?
+
+R : Oui, Aspose.PDF pour .NET fournit une fonctionnalité permettant de rechercher des fragments de texte spécifiques dans un document PDF, puis de créer des annotations barrées pour marquer et barrer visuellement ces mots.
+
+#### Q : Comment spécifier le texte que je souhaite rayer dans le document PDF ?
+
+ R : Pour spécifier le texte que vous souhaitez barrer, vous pouvez utiliser le`TextFragmentAbsorber` classe fournie par Aspose.PDF pour .NET. Il vous permet de rechercher un fragment de texte spécifique dans le document PDF en fonction des critères souhaités.
+
+#### Q : Puis-je personnaliser l'apparence de l'annotation barrée ?
+
+: Oui, vous pouvez personnaliser diverses propriétés de l'annotation barrée, telles que l'opacité, le style de bordure et la couleur. Cela vous permet d'adapter l'apparence de l'annotation barrée à vos besoins spécifiques.

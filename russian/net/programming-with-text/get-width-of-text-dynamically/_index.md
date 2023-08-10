@@ -24,7 +24,7 @@ url: /ru/net/programming-with-text/get-width-of-text-dynamically/
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- Заменять`"YOUR DOCUMENT DIRECTORY"` с указанием пути к каталогу, в котором находятся ваши документы. Это будет использоваться для хранения любых сгенерированных файлов PDF.
+ Заменять`"YOUR DOCUMENT DIRECTORY"`с указанием пути к каталогу, в котором находятся ваши документы. Это будет использоваться для хранения любых сгенерированных файлов PDF.
 
 ## Шаг 2: Найдите шрифт
 

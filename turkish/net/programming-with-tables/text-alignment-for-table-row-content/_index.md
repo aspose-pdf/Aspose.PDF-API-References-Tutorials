@@ -7,7 +7,6 @@ type: docs
 weight: 210
 url: /tr/net/programming-with-tables/text-alignment-for-table-row-content/
 ---
-
 Bu öğreticide, Aspose.PDF for .NET kullanarak bir PDF belgesinin tablosundaki bir satırın içeriğini hizalamanız için size adım adım rehberlik edeceğiz. Sağlanan C# kaynak kodunu açıklayacağız ve nasıl uygulayacağınızı göstereceğiz.
 
 ## 1. Adım: PDF belgesini oluşturma
@@ -118,3 +117,25 @@ doc.Save(dataDir + "43620_ByWords_out.pdf");
 
 ## Çözüm
 Tebrikler! Aspose.PDF for .NET kullanarak bir PDF belgesindeki bir tablodaki bir satırın içeriğini nasıl hizalayacağınızı artık öğrendiniz. Bu adım adım kılavuz size belge oluşturmayı, tablo başlatmayı, kenarlığı ve hizalamayı yapılandırmayı, içerik eklemeyi ve PDF belgesini kaydetmeyi gösterdi. Artık bu bilgiyi kendi projelerinize uygulayabilirsiniz.
+
+### SSS
+
+#### S: Tablo hücrelerinin içeriğini yatay olarak nasıl hizalayabilirim?
+
+ A: Tablo hücrelerinin içeriğini ayarlayarak yatay olarak hizalayabilirsiniz.`HorizontalAlign` hücrenin özelliği`TextState` nesne. Örneğin, metni ortaya hizalamak için şunu kullanın:`cell.TextState.HorizontalAlignment = HorizontalAlignment.Center` . olarak da ayarlayabilirsiniz.`HorizontalAlignment.Left` veya`HorizontalAlignment.Right` sırasıyla sol ve sağ hizalama için.
+
+#### S: Tablodaki tek tek hücrelere farklı kenarlık stilleri ve renkleri uygulayabilir miyim?
+
+ C: Evet, tablodaki tek tek hücrelere farklı kenarlık stilleri ve renkleri uygulayabilirsiniz. Belirli bir hücrenin kenarlığını özelleştirmek için,`cell.Border` mülkiyet yeni`BorderInfo`Kenarlık kenarları, genişlik ve renk gibi istenen ayarlarla nesne.
+
+#### S: Hücrelerdeki tablo içeriğinin dikey hizalamasını nasıl ayarlayabilirim?
+
+ C: Hücrelerdeki tablo içeriğinin dikey hizalamasını ayarlayarak ayarlayabilirsiniz.`VerticalAlignment` satırın özelliği`VerticalAlignment.Center`, `VerticalAlignment.Top` , veya`VerticalAlignment.Bottom`. Bu özellik, o satırdaki tüm hücrelerin dikey hizalamasını kontrol eder.
+
+#### S: Tabloya dinamik olarak daha fazla sütun veya satır eklemek mümkün müdür?
+
+ C: Evet, kullanarak tabloya dinamik olarak daha fazla sütun ve satır ekleyebilirsiniz.`table.Rows.Add()` yeni satırlar ekleme yöntemi ve`row.Cells.Add()` satırlara yeni hücreler ekleme yöntemi. Bunu döngülerin içinde veya özel gereksinimlerinize göre yapabilirsiniz.
+
+#### S: Belirli hücreler veya tüm tablo için arka plan rengini nasıl ayarlayabilirim?
+
+ C: Belirli hücreler veya tüm tablo için bir arka plan rengi ayarlamak üzere`BackgroundColor` mülkiyeti`Cell` veya`Table` nesne. Örneğin, bir hücrenin arka plan rengini ayarlamak için şunu kullanın:`cell.BackgroundColor = Aspose.Pdf.Color.LightBlue`.

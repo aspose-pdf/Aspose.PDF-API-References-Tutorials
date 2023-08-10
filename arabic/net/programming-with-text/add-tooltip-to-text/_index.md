@@ -108,7 +108,7 @@ TextFragmentCollection textFragments = absorber.TextFragments;
 // حلقة من خلال الأجزاء
 foreach (TextFragment fragment in textFragments)
 {
-	//إنشاء زر غير مرئي في موضع جزء النص
+	// إنشاء زر غير مرئي في موضع جزء النص
 	ButtonField field = new ButtonField(fragment.Page, fragment.Rectangle);
 	// سيتم عرض قيمة AlternateName كتلميح أداة بواسطة تطبيق عارض
 	field.AlternateName = "Tooltip for text.";

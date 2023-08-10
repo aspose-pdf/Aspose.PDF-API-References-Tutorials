@@ -19,7 +19,7 @@ url: /ru/net/programming-with-text/multicolumn-paragraphs/
 
 ## Шаг 1. Настройте каталог документов
 
- Во-первых, вам нужно указать путь к каталогу, в котором находится ваш входной PDF-файл. Заменять`"YOUR DOCUMENT DIRECTORY"` в`dataDir` переменная с путем к вашему файлу PDF.
+ Во-первых, вам нужно указать путь к каталогу, в котором находится ваш входной PDF-файл. Заменять`"YOUR DOCUMENT DIRECTORY"` в`dataDir`переменная с путем к вашему файлу PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -35,7 +35,7 @@ Document doc = new Document(dataDir + "MultiColumnPdf.pdf");
 
 ## Шаг 3: Доступ к абзацам с несколькими столбцами
 
- Мы используем`ParagraphAbsorber` класс, чтобы поглощать и посещать параграфы в документе PDF. Затем мы извлекаем разметку страницы и получаем доступ к многоколоночным абзацам.
+ Мы используем`ParagraphAbsorber`класс, чтобы поглощать и посещать параграфы в документе PDF. Затем мы извлекаем разметку страницы и получаем доступ к многоколоночным абзацам.
 
 ```csharp
 ParagraphAbsorber absorb = new ParagraphAbsorber();

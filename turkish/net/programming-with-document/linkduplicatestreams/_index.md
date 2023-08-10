@@ -77,3 +77,21 @@ dataDir = dataDir + "OptimizeDocument_out.pdf";
 // Güncellenen belgeyi kaydet
 pdfDocument.Save(dataDir);
 ```
+
+## Çözüm
+
+Aspose.PDF for .NET'in Duplicate Streams'i Bağla özelliği, boyutlarını küçülterek PDF dosyalarını optimize etmenin etkili bir yolunu sunar. Kitaplık, yinelenen akışları belirleyip bağlayarak, veri bütünlüğünden veya görsel kaliteden ödün vermeden daha verimli PDF belgeleri oluşturmaya yardımcı olur. Geliştiriciler, sağlanan adımları ve kaynak kodu örneğini kullanarak bu özelliği kolayca uygulayarak PDF dosyalarının performansını ve depolama verimliliğini artırabilir.
+
+### SSS
+
+#### S: Aspose.PDF for .NET'teki Yinelenen Akışları Bağla özelliğinin amacı nedir?
+
+C: Aspose.PDF for .NET'teki Yinelenen Akışları Bağla özelliği, belge içindeki yinelenen akışları belirleyip bağlayarak PDF dosyalarını optimize etmek için kullanılır. Bir PDF dosyasında, gereksiz yer kaplayan yinelenen akışlar (resimler veya yazı tipleri gibi) olabilir. Bu yinelenen akışları birbirine bağlayarak, dosya boyutu küçültülerek daha verimli ve daha küçük bir PDF belgesi elde edilebilir.
+
+#### S: Yinelenen Akışları Bağla özelliği nasıl çalışır?
+
+C: Yinelenen Akışları Bağla özelliği, PDF belgesinin içerik akışlarını analiz ederek ve aynı içeriğe sahip yinelenen akışları belirleyerek çalışır. Özellik, bu yinelenen akışları ayrı ayrı depolamak yerine, aralarında bir bağlantı oluşturarak aynı içeriği etkili bir şekilde paylaşır. Bu optimizasyon tekniği, görsel görünümünü veya işlevselliğini etkilemeden PDF belgesinin genel boyutunu küçültür.
+
+#### S: Yinelenen Akışları Bağla özelliği, PDF belgesinde herhangi bir veri veya kalite kaybına neden olabilir mi?
+
+C: Hayır, Yinelenen Akışları Bağla özelliği, PDF belgesinde herhangi bir veri veya kalite kaybına neden olmaz. Belgenin içeriğini veya görsel görünümünü değiştirmeden yalnızca yinelenen akışları birbirine bağlayarak dosya boyutunu optimize eder. Bu özellik, PDF belgesinin bozulmadan kalmasını ve orijinal kalitesini korumasını sağlamak için tasarlanmıştır.

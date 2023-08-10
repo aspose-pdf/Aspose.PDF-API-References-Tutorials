@@ -84,7 +84,7 @@ foreach (Page pdfPage in pdfDocument.Pages)
 	{
 		// إنشاء جهاز نصي
 		TextDevice textDevice = new TextDevice();
-		// تعيين خيارات استخراج النص - تعيين وضع استخراج النص (Raw أو Pure)
+		//تعيين خيارات استخراج النص - تعيين وضع استخراج النص (Raw أو Pure)
 		TextExtractionOptions textExtOptions = new
 		TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure);
 		textDevice.ExtractionOptions = textExtOptions;

@@ -1,13 +1,12 @@
 ---
-title: Doküman Oluşturma Sırasında Yazı Tipini Göm
-linktitle: Doküman Oluşturma Sırasında Yazı Tipini Göm
+title: PDF Belgesi Oluşturulurken Yazı Tipini Göm
+linktitle: PDF Belgesi Oluşturulurken Yazı Tipini Göm
 second_title: Aspose.PDF for .NET API Referansı
 description: Aspose.PDF for .NET kullanarak bir PDF belgesi oluştururken bir yazı tipini nasıl gömeceğinizi öğrenin. Farklı cihazlarda doğru görüntülemeyi sağlayın.
 type: docs
 weight: 140
 url: /tr/net/programming-with-document/embedfontwhiledoccreation/
 ---
-
 Bu öğreticide, Aspose.PDF for .NET kullanarak bir PDF belgesi oluştururken bir yazı tipinin nasıl gömüleceğini tartışacağız. Aspose.PDF for .NET, geliştiricilerin PDF belgelerini program aracılığıyla oluşturmasına, düzenlemesine ve işlemesine olanak sağlayan güçlü bir kitaplıktır. Bu kitaplık, metin, resim, tablo ve çok daha fazlasını ekleme dahil olmak üzere PDF belgeleriyle çalışmak için çok çeşitli özellikler sağlar. Bir PDF belgesi oluştururken yazı tiplerini gömmek, gerekli yazı tiplerinin bu aygıtlarda yüklü olup olmadığına bakılmaksızın, PDF belgesinin farklı aygıtlarda doğru şekilde görüntülendiğinden emin olmak isteyen geliştiriciler için ortak bir gerekliliktir.
 
 ## 1. Adım: Yeni bir C# Konsol Uygulaması oluşturun
@@ -93,3 +92,24 @@ doc.Save(dataDir);
 ## Çözüm
 Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF belgesi oluştururken bir yazı tipinin nasıl gömüleceğini ele aldık. Aspose.PDF for .NET, yazı tipi ekleme ve gömme de dahil olmak üzere PDF belgeleriyle çalışmak için basit ve kullanımı kolay bir API sağlar. Bir PDF belgesi oluştururken yazı tiplerini gömmek, bu cihazlarda gerekli yazı tiplerinin kurulu olup olmadığına bakılmaksızın, belgenin farklı cihazlarda doğru şekilde görüntülenmesini sağlamak için önemli bir adımdır.
 
+### PDF dokümanı oluşturulurken gömme yazı tipiyle ilgili SSS
+
+#### S: PDF belgesi oluştururken yazı tiplerini gömmek neden önemlidir?
+
+C: Bir PDF belgesi oluştururken yazı tiplerini gömmek, belgenin farklı cihazlarda doğru şekilde görüntülenmesini sağlamak için önemlidir, gerekli yazı tipleri bu cihazlarda yüklü olmasa bile. Bu, belgenin amaçlanan görünümünün korunmasına yardımcı olur ve yazı tipi değiştirme sorunlarını önler.
+
+#### S: Aspose.PDF for .NET kullanarak bir PDF belgesi oluştururken yazı tiplerini nasıl gömebilirim?
+
+ C: Aspose.PDF for .NET kullanarak bir PDF belgesi oluştururken yazı tipini belirleyip ayarlayarak yazı tiplerini gömebilirsiniz.`IsEmbedded` mülkiyet`true`. Bu, yazı tipi verilerinin PDF dosyasına gömülmesini sağlar.
+
+#### S: Bir PDF belgesine gömerken özel bir yazı tipi belirtebilir miyim?
+
+C: Evet, Aspose.PDF for .NET kullanarak bir PDF belgesine gömerken özel bir yazı tipi belirtebilirsiniz. Bu, tasarım gereksinimlerinize uyan belirli yazı tiplerini kullanmanıza olanak tanır.
+
+#### S: Aspose.PDF for .NET, çeşitli yazı tipi biçimleriyle uyumlu mu?
+
+C: Evet, Aspose.PDF for .NET, TrueType, OpenType ve Type 1 yazı tipleri dahil olmak üzere çeşitli yazı tipi biçimleriyle uyumludur. Biçimlerinden bağımsız olarak yazı tiplerini bir PDF belgesine gömebilir.
+
+#### S: Yazı tipi gömme işlemini özelleştirebilir miyim?
+
+ C: Evet, yazı tipi gömme işlemini Aspose.PDF for .NET kullanarak özelleştirebilirsiniz. Yazı tipini belirtebilir ve aşağıdaki gibi özellikleri ayarlayabilirsiniz.`IsEmbedded` yazı tipinin PDF belgesine nasıl gömüleceğini kontrol etmek için.

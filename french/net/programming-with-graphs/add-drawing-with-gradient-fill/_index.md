@@ -97,3 +97,41 @@ doc.Save(dataDir + "AddDrawingWithGradientFill_out.pdf");
 ## Conclusion
 
 Dans ce didacticiel, nous avons expliqué étape par étape comment ajouter un dessin avec un remplissage dégradé à la programmation avec des graphiques à l'aide d'Aspose.PDF pour .NET. Vous pouvez désormais utiliser ces connaissances pour créer des documents PDF attrayants avec des conceptions personnalisées et des remplissages dégradés.
+
+### FAQ
+
+#### Q : Quel est l'objectif de ce didacticiel ?
+
+R : Ce didacticiel vise à vous guider tout au long du processus d'ajout d'un dessin avec un remplissage dégradé à la programmation avec des graphiques à l'aide d'Aspose.PDF pour .NET.
+
+#### Q : Quels sont les prérequis requis avant de commencer ?
+
+R : Avant de commencer, assurez-vous d'avoir installé la bibliothèque Aspose.PDF et configuré votre environnement de développement. De plus, il est recommandé d'avoir une compréhension de base de la programmation C#.
+
+#### Q : Comment spécifier le répertoire d'enregistrement du fichier PDF ?
+
+R : Dans le code source fourni, vous pouvez modifier la valeur de la variable "dataDir" pour indiquer le répertoire dans lequel vous souhaitez enregistrer le fichier PDF résultant.
+
+#### Q : À quoi sert l'objet Graph ?
+
+R : L'objet Graph sert de conteneur pour les éléments de dessin. Il est créé avec des dimensions spécifiées et ajouté à la collection de paragraphes de la page.
+
+#### Q : Comment puis-je configurer le remplissage dégradé pour une forme ?
+
+R : Pour configurer le remplissage dégradé, vous pouvez définir la propriété FillColor du GraphInfo d'une forme à l'aide de la classe GradientAxialShading. Cela vous permet de définir les points de début et de fin du dégradé et les couleurs entre lesquelles effectuer la transition.
+
+#### Q : Puis-je personnaliser les couleurs et la direction du remplissage dégradé ?
+
+R : Oui, vous pouvez personnaliser les couleurs et la direction du remplissage dégradé en ajustant les objets Color et en spécifiant les points de début et de fin du GradientAxialShading.
+
+#### Q : Quelle est la dernière étape du didacticiel ?
+
+R : La dernière étape consiste à enregistrer le fichier PDF résultant sous le nom "AddDrawingWithGradientFill_out.pdf" dans le répertoire spécifié.
+
+#### Q : Un exemple de code source est-il disponible ?
+
+R : Oui, le didacticiel fournit un exemple de code source que vous pouvez utiliser comme référence pour implémenter les étapes décrites.
+
+#### Q : Puis-je appliquer un remplissage dégradé à d'autres formes que les rectangles ?
+
+R : Oui, vous pouvez également appliquer un remplissage dégradé à d'autres formes. Le processus implique la configuration de la propriété FillColor du GraphInfo de la forme à l'aide de la classe GradientAxialShading.

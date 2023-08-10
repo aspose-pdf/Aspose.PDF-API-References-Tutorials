@@ -43,7 +43,7 @@ imageStamp.TopMargin = 10;
 imageStamp.HorizontalAlignment = HorizontalAlignment.Center;
 imageStamp.VerticalAlignment = VerticalAlignment.Top;
 
-//Agregar búfer de imagen a todas las páginas
+// Agregar búfer de imagen a todas las páginas
 foreach(Page page in pdfDocument.Pages)
 {
      page.AddStamp(imageStamp);
@@ -97,3 +97,45 @@ Console.WriteLine("\nImage in header added successfully.\nFile saved at " + data
 ## Conclusión
 
 ¡Felicidades! Ha aprendido a agregar una imagen en la sección de encabezado de un documento PDF utilizando Aspose.PDF para .NET. Ahora puede personalizar los encabezados de sus documentos PDF agregando imágenes.
+
+### Preguntas frecuentes sobre la imagen en el encabezado
+
+#### P: ¿Cuál es el propósito de agregar una imagen en la sección de encabezado de un documento PDF?
+
+R: Agregar una imagen en la sección de encabezado de un documento PDF le permite incluir elementos visuales, como un logotipo o una marca, en la parte superior de cada página. Esto puede mejorar la apariencia general del contenido del PDF.
+
+#### P: ¿Cómo logra el código fuente de C# proporcionado agregar una imagen a la sección de encabezado de un documento PDF?
+
+ R: El código proporcionado muestra cómo cargar un documento PDF existente, crear un`ImageStamp` objeto de un archivo de imagen, establezca propiedades como el margen superior y la alineación, y luego agregue el sello de imagen al encabezado de todas las páginas.
+
+#### P: ¿Puedo ajustar la posición y la alineación de la imagen dentro de la sección del encabezado?
+
+ R: Sí, puede ajustar la posición y la alineación de la imagen dentro de la sección del encabezado modificando las propiedades de la`ImageStamp` objeto. El fragmento de código establece propiedades como`TopMargin`, `HorizontalAlignment` , y`VerticalAlignment`.
+
+#### P: ¿Es posible agregar diferentes imágenes a la sección del encabezado en diferentes páginas del documento PDF?
+
+ R: Sí, puede agregar diferentes imágenes a la sección de encabezado en diferentes páginas creando imágenes separadas.`ImageStamp` objetos con diferentes archivos de imagen y propiedades, y luego agregarlos a páginas específicas.
+
+#### P: ¿Cómo garantiza el código que la imagen se agregue a todas las páginas de la sección de encabezado del documento PDF?
+
+ R: El código proporcionado utiliza un`foreach` bucle para iterar a través de todas las páginas del documento PDF y agrega el mismo`ImageStamp` a la sección de encabezado de cada página.
+
+#### P: ¿Puedo agregar otros elementos, como texto o formas, a la sección del encabezado usando un enfoque similar?
+
+R: Sí, puede agregar otros elementos como texto o formas a la sección del encabezado utilizando un enfoque similar al crear los objetos de sello apropiados (p. ej.,`TextStamp`) y configurando sus propiedades en consecuencia.
+
+#### P: ¿Cómo especifico la ruta al archivo de imagen que quiero agregar al encabezado?
+
+ R: La ruta al archivo de imagen se especifica al crear el`ImageStamp` objeto, como se muestra en el código. Asegúrese de proporcionar la ruta correcta al archivo de imagen.
+
+#### P: ¿Puedo personalizar el tamaño de la imagen dentro de la sección del encabezado?
+
+ R: Sí, puede personalizar el tamaño de la imagen dentro de la sección del encabezado ajustando las dimensiones de la`ImageStamp` utilizando propiedades como`Width` y`Height`.
+
+#### P: ¿Es posible eliminar o reemplazar la imagen en la sección del encabezado después de agregarla?
+
+ R: Sí, puede eliminar o reemplazar la imagen en la sección del encabezado modificando el contenido de la`ImageStamp` objeto o quitar el sello de páginas específicas.
+
+#### P: ¿Cómo maneja el código los escenarios en los que las dimensiones de la imagen superan el espacio disponible en el encabezado?
+
+ R: El código establece propiedades como`TopMargin`, `HorizontalAlignment` , y`VerticalAlignment` para controlar el posicionamiento y la alineación de la imagen. Asegúrese de que estas propiedades estén ajustadas para evitar superposiciones o problemas de diseño.

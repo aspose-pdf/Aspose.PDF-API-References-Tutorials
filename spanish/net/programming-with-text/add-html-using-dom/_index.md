@@ -45,7 +45,7 @@ Page page = doc.Pages.Add();
 ```
 
 ## Paso 6: Cree un HtmlFragment con el contenido HTML
- Instanciar un`HtmlFragment` objeto y proporcionar el contenido HTML deseado. En el código proporcionado, el contenido HTML se asigna a la variable`titel`. Puede modificar el contenido HTML según sea necesario.
+Instanciar un`HtmlFragment` objeto y proporcionar el contenido HTML deseado. En el código proporcionado, el contenido HTML se asigna a la variable`titel`. Puede modificar el contenido HTML según sea necesario.
 
 ```csharp
 HtmlFragment titel = new HtmlFragment("<fontsize=10><b><i>Table</i></b></fontsize>");
@@ -68,7 +68,7 @@ dataDir = dataDir + "AddHTMLUsingDOM_out.pdf";
 ```
 
 ## Paso 9: Guarde el documento PDF
- Guarde el documento PDF usando el`Save` metodo de la`Document` objeto. Especifique la ruta del archivo de salida que configuró en el Paso 3.
+ Guarde el documento PDF usando el`Save` metodo de la`Document` objeto. Especifique la ruta del archivo de salida que configuró en el paso 3.
 
 ```csharp
 doc.Save(dataDir);

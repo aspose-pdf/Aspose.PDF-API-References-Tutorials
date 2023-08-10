@@ -1,8 +1,8 @@
 ---
-title: Establecer información de archivo
-linktitle: Establecer información de archivo
+title: Establecer información de archivo en archivo PDF
+linktitle: Establecer información de archivo en archivo PDF
 second_title: Referencia de API de Aspose.PDF para .NET
-description: Aprenda a usar Aspose.PDF para .NET para configurar la información del archivo en sus documentos PDF con esta guía paso a paso.
+description: Aprenda a usar Aspose.PDF para .NET para configurar la información del archivo en un archivo PDF con esta guía paso a paso.
 type: docs
 weight: 310
 url: /es/net/programming-with-document/setfileinfo/
@@ -90,3 +90,17 @@ Console.WriteLine("\nFile informations setup successfully.\nFile saved at " + da
 ## Conclusión
 
 En conclusión, Aspose.PDF para .NET proporciona una forma simple y efectiva de configurar la información de archivo para documentos PDF. Siguiendo los pasos mencionados anteriormente, puede configurar fácilmente los valores de información de archivo deseados para sus documentos PDF utilizando el código fuente de C#.
+
+### Preguntas frecuentes para configurar la información del archivo en un archivo PDF
+
+#### P: ¿Puedo configurar propiedades de información de archivos adicionales que no se mencionan en el ejemplo?
+
+ R: Sí, puede establecer propiedades de información de archivo adicionales usando el`DocumentInfo` objeto en Aspose.PDF para .NET. El`DocumentInfo`class proporciona varias propiedades que le permiten establecer información adicional, como el productor, la versión y las propiedades personalizadas.
+
+#### P: ¿Es posible recuperar la información del archivo de un documento PDF existente?
+
+ R: Sí, puede recuperar la información del archivo de un documento PDF existente utilizando Aspose.PDF para .NET. Para ello, puede utilizar el`DocumentInfo` objeto para acceder a las propiedades de información del archivo y leer la información almacenada en el documento PDF.
+
+#### P: ¿La configuración de la información del archivo modifica el documento PDF original?
+
+R: No, configurar la información del archivo con Aspose.PDF para .NET no modifica el documento PDF original. En su lugar, crea un nuevo documento PDF con la información del archivo actualizada. El documento PDF original permanece sin cambios.

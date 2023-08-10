@@ -1,14 +1,13 @@
 ---
-title: Ställ in gräns
-linktitle: Ställ in gräns
+title: Ställ in kant i PDF till tabell
+linktitle: Ställ in kant i PDF till tabell
 second_title: Aspose.PDF för .NET API Referens
-description: Lär dig hur du ställer in en ram i en PDF-tabell med Aspose.PDF för .NET.
+description: Lär dig hur du ställer in en ram i PDF till tabell med Aspose.PDF för .NET.
 type: docs
 weight: 200
 url: /sv/net/programming-with-tables/set-border/
 ---
-
-den här handledningen guidar vi dig steg för steg för att sätta en ram i en tabell för ett PDF-dokument med Aspose.PDF för .NET. Vi kommer att förklara den medföljande C#-källkoden och visa dig hur du implementerar den.
+I den här handledningen guidar vi dig steg för steg för att sätta en ram i en tabell för ett PDF-dokument med Aspose.PDF för .NET. Vi kommer att förklara den medföljande C#-källkoden och visa dig hur du implementerar den.
 
 ## Steg 1: Instantiera dokumentobjektet
 Först instansierar vi ett dokumentobjekt:
@@ -67,7 +66,7 @@ Därefter lägger vi till en cell i raden:
 Aspose.Pdf.Cell cell = row.Cells.Add("some text");
 ```
 
-## Steg 9: Ställ in cellkanten
+## Steg 9: Ställa in cellkanten
 Vi kommer att definiera cellens kant (dubbel kant):
 
 ```csharp
@@ -103,7 +102,7 @@ Document doc = new Document();
 Page page = doc.Pages.Add();
 // Skapa BorderInfo-objekt
 Aspose.Pdf.BorderInfo border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All);
-// Ange att den övre kanten ska vara dubbel
+//Ange att den övre kanten ska vara dubbel
 border.Top.IsDoubled = true;
 // Ange att den nedre kanten ska vara dubbel
 border.Bottom.IsDoubled = true;
@@ -115,9 +114,9 @@ table.ColumnWidths = "100";
 Aspose.Pdf.Row row = table.Rows.Add();
 // Lägg till en tabellcell till cellsamlingen av rad
 Aspose.Pdf.Cell cell = row.Cells.Add("some text");
-// Ställ in ram för cellobjekt (dubbel kant)
+// Ställ in ram för cellobjekt (dubbel ram)
 cell.Border = border;
-// Lägg till tabell till styckesamlingen på sidan
+// Lägg till tabell i styckesamlingen på sidan
 page.Paragraphs.Add(table);
 dataDir = dataDir + "TableBorderTest_out.pdf";
 // Spara PDF-dokumentet
@@ -128,3 +127,25 @@ Console.WriteLine("\nBorder setup successfully.\nFile saved at " + dataDir);
 
 ## Slutsats
 Grattis! Du har nu lärt dig hur du ställer in en ram i en tabell i ett PDF-dokument med Aspose.PDF för .NET. Den här steg-för-steg-guiden visade hur du skapar ett dokument, lägger till en sida, konfigurerar tabellkanten och sparar PDF-dokumentet. Nu kan du tillämpa denna kunskap i dina egna projekt.
+
+### FAQ's
+
+#### F: Kan jag ställa in olika kantstilar (t.ex. streckade eller prickade) för tabellens övre och nedre kanter?
+
+ S: Ja, du kan ställa in olika kantstilar för tabellens övre och nedre kanter genom att ändra`border.Top.Style` och`border.Bottom.Style`egenskaper i den medföljande C#-källkoden. Aspose.PDF för .NET låter dig välja mellan olika kantstilar, inklusive Solid, Streckad, Dotted, Double och mer.
+
+#### F: Hur kan jag ställa in färgen på bordets kant?
+
+ S: Du kan ställa in färgen på tabellens kant genom att ändra`border.Color` egenskapen i C#-källkoden. Ange helt enkelt önskad färg, som t.ex`Aspose.Pdf.Color.Red` eller någon annan giltig färgrepresentation, för att anpassa kantfärgen.
+
+#### F: Är det möjligt att tillämpa ramar på enskilda celler i tabellen med olika inställningar (t.ex. olika färger eller kantstilar)?
+
+ S: Ja, du kan tillämpa ramar på enskilda celler i tabellen med olika inställningar genom att konfigurera`cell.Border` egenskap för varje cell individuellt. Detta gör att du kan ha cellspecifika kantstilar och färger baserat på dina krav.
+
+#### F: Kan jag ta bort kanten från specifika sidor av bordet (t.ex. vänster och höger kant)?
+
+ S: Ja, du kan ta bort gränsen från specifika sidor av tabellen genom att ändra`border.Left`, `border.Right`, `border.Top` , och`border.Bottom`egenskaper i C#-källkoden. Ställer in dessa egenskaper till`null` kommer att ta bort gränsen från motsvarande sidor av bordet.
+
+#### F: Hur kan jag justera tjockleken på bordets kant?
+
+ S: Du kan justera tjockleken på bordets kant genom att ändra`border.Width` egenskapen i C#-källkoden. Ställ bara in önskad kantbredd (i punkter) för att uppnå önskad tjocklek.

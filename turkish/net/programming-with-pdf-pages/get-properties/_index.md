@@ -1,13 +1,12 @@
 ---
-title: Özellikleri Al
-linktitle: Özellikleri Al
+title: PDF Özelliklerini Alın
+linktitle: PDF Özelliklerini Alın
 second_title: Aspose.PDF for .NET API Referansı
 description: Aspose.PDF for .NET kullanarak kutu boyutları ve döndürme gibi PDF özelliklerini elde etmek için adım adım kılavuz.
 type: docs
 weight: 100
 url: /tr/net/programming-with-pdf-pages/get-properties/
 ---
-
 Bu eğitici yazıda, Aspose.PDF for .NET kullanarak bir PDF'nin özelliklerini edinme sürecini adım adım anlatacağız. Birlikte verilen C# kaynak kodunu açıklayacağız ve bu özelliği anlamanıza ve kendi projelerinizde uygulamanıza yardımcı olacak kapsamlı bir kılavuz sağlayacağız. Bu eğitimin sonunda, Aspose.PDF for .NET kullanarak bir PDF sayfasının sanat kutusu, kırpma kutusu, kırpma kutusu vb. gibi farklı özelliklerine nasıl erişeceğinizi öğreneceksiniz.
 
 ## Önkoşullar
@@ -88,3 +87,40 @@ System.Console.WriteLine("Rotate : {0}", pdfPage.Rotate);
 Tebrikler! Aspose.PDF for .NET kullanarak bir PDF'nin özelliklerini başarıyla elde ettiniz. Bir PDF belgesini nasıl açacağınızı, belirli bir sayfaya gitmeyi ve boyut kutuları ve döndürme gibi çeşitli sayfa özelliklerini nasıl alacağınızı öğrendiniz. Artık bu bilgileri, özelliklerine göre PDF dosyalarınızın işlenmesini özelleştirmek için kullanabilirsiniz.
 
 Gelişmiş özellikler ve özelleştirme olanakları hakkında daha fazla bilgi için resmi Aspose.PDF for .NET belgelerine baktığınızdan emin olun.
+
+### SSS
+
+#### S: Aspose.PDF for .NET kullanarak bir PDF'nin özelliklerini nasıl edinebilirim?
+
+C: Aspose.PDF for .NET kullanarak bir PDF'nin özelliklerini elde etmek için şu adımları takip edebilirsiniz:
+
+1. Özelliklerini almak istediğiniz PDF dosyasının yolunu belirterek belge dizinini ayarlayın.
+2.  kullanarak PDF belgesini açın.`Document` Aspose.PDF sınıfı, PDF dosyasına doğru yolu sağlar.
+3.  kullanarak belgenin sayfa koleksiyonuna erişin.`Pages` mülkiyeti`pdfDocument` nesne.
+4. Koleksiyondaki sayfanın dizinini kullanarak belirli bir sayfaya atlayın (dizinleme 1'den başlar).
+5.  İlgili özellikleri kullanarak PDF sayfasının ArtBox, BleedBox, CropBox, MediaBox, TrimBox, Rect, Page Number ve Rotation gibi farklı özelliklerini alın.`pdfPage` nesne.
+
+#### S: Aspose.PDF for .NET kullanarak alabildiğim bir PDF sayfasının farklı özellikleri nelerdir?
+
+C: Aspose.PDF for .NET kullanarak bir PDF sayfasının çeşitli özelliklerini alabilirsiniz, örneğin:
+
+- ArtBox: Sayfa resminin boyutlarını temsil eder.
+- Taşma Kutusu: Sayfanın taşma boyutunu temsil eder.
+- CropBox: Kırpma işleminden sonra sayfanın görünen içeriğinin boyutlarını temsil eder.
+- MediaBox: Sayfanın fiziksel ortamının boyutlarını temsil eder.
+- TrimBox: Sayfanın kırpılan içeriğinin boyutlarını temsil eder.
+- Rect: Sayfanın sınırlayıcı kutusunun boyutlarını temsil eder.
+- Sayfa Numarası: Belgedeki sayfa numarasını gösterir.
+- Döndür: Sayfanın dönüş açısını temsil eder.
+
+#### S: Özelliklerini almak için PDF belgesindeki belirli bir sayfaya nasıl erişebilirim?
+
+ A: PDF belgesindeki belirli bir sayfaya erişmek ve özelliklerini almak için`Pages` mülkiyeti`pdfDocument` belgenin sayfalar koleksiyonuna erişmek için nesne. Ardından, istediğiniz sayfaya atlamak için koleksiyondaki sayfanın dizinini kullanabilirsiniz. Örneğin, ikinci sayfaya erişmek için şunu kullanabilirsiniz:`pdfDocument.Pages[1]` (indeksleme 1'den başlar).
+
+#### S: Sayfa kutularını değiştirmek veya yeniden boyutlandırmak gibi, alınan özellikler üzerinde işlemler yapabilir miyim?
+
+C: Evet, Aspose.PDF for .NET'i kullanarak bir PDF sayfasının özelliklerini aldıktan sonra bunlar üzerinde çeşitli işlemler gerçekleştirebilirsiniz. Örneğin, sayfa kutularının boyutlarını değiştirebilir, sayfayı döndürebilir veya alınan bilgileri PDF belgesinin özel olarak işlenmesi ve işlenmesi için kullanabilirsiniz.
+
+#### S: Aspose.PDF for .NET, şifrelenmiş veya parola korumalı PDF dosyalarından özelliklerin çıkarılmasını destekliyor mu?
+
+C: Evet, Aspose.PDF for .NET, şifrelenmiş veya parola korumalı PDF dosyalarından özelliklerin çıkarılmasını destekler. PDF belgesini açmak için doğru parolayı girdiğiniz sürece, öğreticide gösterilen yaklaşımı kullanarak özelliklerine erişebilir ve özelliklerini alabilirsiniz.

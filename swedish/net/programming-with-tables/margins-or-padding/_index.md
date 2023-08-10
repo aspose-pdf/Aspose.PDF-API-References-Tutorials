@@ -7,7 +7,6 @@ type: docs
 weight: 140
 url: /sv/net/programming-with-tables/margins-or-padding/
 ---
-
 I den här handledningen kommer vi att guida dig genom steg-för-steg-processen för att använda Aspose.PDF för .NET för att ställa in marginaler eller utfyllnad i en tabell. Vi kommer att tillhandahålla förklaringar och kodavsnitt för att hjälpa dig att förstå och implementera denna funktionalitet i din C#-källkod.
 
 ## Steg 1: Konfigurera dokumentet och sidan
@@ -106,7 +105,7 @@ Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 page.Paragraphs.Add(tab1);
 // Ställ in med tabellens kolumnbredder
 tab1.ColumnWidths = "50 50 50";
-// Ställ in standardcellkant med BorderInfo-objekt
+// Ställ in standardcellkant med hjälp av BorderInfo-objektet
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 // Ställ in tabellkanten med ett annat anpassat BorderInfo-objekt
 tab1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
@@ -141,3 +140,25 @@ Console.WriteLine("\nCell and table border width setup successfully.\nFile saved
 
 ## Slutsats
 Grattis! Du har framgångsrikt lärt dig hur man ställer in marginaler eller utfyllnad i en tabell med Aspose.PDF för .NET. Denna kunskap hjälper dig att förbättra dina dokumentformateringsmöjligheter och göra dina tabeller visuellt tilltalande.
+
+### FAQ's
+
+#### F: Kan jag ställa in olika marginaler eller utfyllnad för enskilda celler i en tabell?
+
+S: Ja, du kan ställa in olika marginaler eller utfyllnad för enskilda celler i en tabell med Aspose.PDF för .NET. I det medföljande exemplet ställer vi in standardcellutfyllningen för hela tabellen med hjälp av`DefaultCellPadding` fast egendom. För att ställa in olika utfyllnad för specifika celler kan du komma åt`MarginInfo` av varje cell individuellt och ändra deras marginaler.
+
+#### F: Hur kan jag ändra kantfärg eller stil på bordet?
+
+ S: För att ändra kantfärg eller stil på tabellen kan du ändra`Color` och`Width` egenskaper hos`BorderInfo` objekt. I det givna exemplet ställer vi in kantfärgen till svart och en bredd på 1F (en punkt) med hjälp av`tab1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);`. Du kan justera färg och bredd enligt dina önskemål.
+
+#### F: Är det möjligt att lägga till sidhuvuden eller sidfötter i tabellen?
+
+S: Ja, du kan lägga till sidhuvuden eller sidfötter i tabellen med Aspose.PDF för .NET. Rubriker och sidfötter är vanligtvis separata rader som innehåller ytterligare information som kolumnetiketter, tabelltitlar eller sammanfattningsdata. Du kan skapa ytterligare rader, utforma dem på ett annat sätt och lägga till dem ovanför eller under tabellinnehållet.
+
+#### F: Hur justerar jag textjusteringen i en tabellcell?
+
+ S: För att justera textjusteringen i en tabellcell kan du använda`HorizontalAlignment` och`VerticalAlignment` egenskaper hos`TextFragment` objekt. Till exempel, för att centrera texten horisontellt kan du ställa in`mytext.HorizontalAlignment = HorizontalAlignment.Center;` . På samma sätt kan du ställa in`mytext.VerticalAlignment` för att kontrollera den vertikala inriktningen.
+
+#### F: Kan jag lägga till bilder i tabellcellerna istället för text?
+
+ S: Ja, du kan lägga till bilder i tabellcellerna med Aspose.PDF för .NET. Istället för att skapa en`TextFragment` objekt kan du skapa ett`Image` objekt, ladda bildfilen och lägg till den i önskad cell med hjälp av`cell.Paragraphs.Add(image);` metod. Detta gör att du kan infoga bilder i tabellen tillsammans med textinnehåll.

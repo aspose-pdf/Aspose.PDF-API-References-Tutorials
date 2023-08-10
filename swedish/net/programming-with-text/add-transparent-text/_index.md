@@ -53,7 +53,7 @@ Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
 ```
 
 ## Steg 7: Skapa en rektangel med genomskinlighet
-Skapa en rektangel med specifika mått och ställ in dess fyllningsfärg till en transparent färg med hjälp av`Color.FromRgb` metod.
+ Skapa en rektangel med specifika mått och ställ in dess fyllningsfärg till en transparent färg med hjälp av`Color.FromRgb` metod.
 
 ```csharp
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 400, 400);
@@ -102,7 +102,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 // Skapa sida till sida-samling av PDF-fil
 Aspose.Pdf.Page page = doc.Pages.Add();
-// Skapa grafobjekt
+// Skapa Graph-objekt
 Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
 // Skapa rektangelinstans med vissa dimensioner
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 400, 400);
@@ -118,7 +118,7 @@ canvas.IsChangePosition = false;
 TextFragment text = new TextFragment("transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text ");
 // Skapa färgobjekt från alfakanalen
 Aspose.Pdf.Color color = Aspose.Pdf.Color.FromArgb(30, 0, 255, 0);
-//Ställ in färginformation för textinstans
+// Ställ in färginformation för textinstans
 text.TextState.ForegroundColor = color;
 // Lägg till text till styckesamling av sidinstanser
 page.Paragraphs.Add(text);

@@ -52,7 +52,7 @@ TextFragment textFragment = absorb.TextFragments[1];
 ```
 
 ## Paso 6: establece el color de sombreado para el texto
- Crear un nuevo`Color` objeto con un espacio de color de patrón y especifique los colores de sombreado del degradado. Asigne este color a la`ForegroundColor` propiedad de la`TextState` del`TextFragment` objeto.
+ Crear un nuevo`Color`objeto con un espacio de color de patrón y especifique los colores de sombreado del degradado. Asigne este color a la`ForegroundColor` propiedad de la`TextState` del`TextFragment` objeto.
 
 ```csharp
 textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()

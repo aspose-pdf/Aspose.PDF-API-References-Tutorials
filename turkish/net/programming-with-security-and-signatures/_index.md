@@ -13,15 +13,15 @@ Güvenlik ve İmzalarla Programlama öğreticisi, PDF belgeleri için güvenlik 
 ## Öğreticiler
 | Başlık | Tanım |
 | --- | --- | 
-| [Şifre değiştir](./change-password/) | Aspose.PDF for .NET kullanarak bir PDF belgesinin şifresini nasıl değiştireceğinizi öğrenin. |  
-| [şifresini çöz](./decrypt/) | Aspose.PDF for .NET kullanarak PDF dosyalarının şifresini nasıl çözeceğinizi öğrenin. |  
-| [Doğru Parolayı Belirleyin](./determine-correct-password/) | Aspose.PDF for .NET ile bir PDF dosyası için doğru parolayı nasıl belirleyeceğinizi öğrenin. |  
-| [Dijital Olarak İmzalayın](./digitally-sign/) | Aspose.PDF for .NET ile bir PDF dosyasını dijital olarak nasıl imzalayacağınızı öğrenin. |  
-| [Zaman Damgasıyla Dijital Olarak İmzalayın](./digitally-sign-with-time-stamp/) | Aspose.PDF for .NET kullanarak bir PDF dosyasında zaman damgalı bir dijital imzayı nasıl gerçekleştireceğinizi öğrenin. |  
-| [Şifrele](./encrypt/) | Aspose.PDF for .NET ile PDF dosyalarınızı güvenli bir şekilde şifreleyin. |  
+| [PDF Dosyasında Şifreyi Değiştir](./change-password/) | Aspose.PDF for .NET kullanarak PDF dosyasındaki parolayı nasıl değiştireceğinizi öğrenin. |  
+| [PDF Dosyasının Şifresini Çöz](./decrypt/) | Aspose.PDF for .NET kullanarak PDF dosyasının şifresini nasıl çözeceğinizi öğrenin. |  
+| [PDF Dosyasında Doğru Parolayı Belirleyin](./determine-correct-password/) | Aspose.PDF for .NET ile PDF dosyasında doğru parolayı nasıl belirleyeceğinizi öğrenin. |  
+| [PDF Dosyasında Dijital Olarak Oturum Açın](./digitally-sign/) | Aspose.PDF for .NET ile PDF dosyasında dijital olarak nasıl oturum açacağınızı öğrenin. |  
+| [PDF Dosyasında Zaman Damgasıyla Dijital Olarak İmzalayın](./digitally-sign-with-time-stamp/) | Aspose.PDF for .NET kullanarak PDF dosyasında zaman damgalı bir dijital imzayı nasıl gerçekleştireceğinizi öğrenin. |  
+| [PDF Dosyasını Şifrele](./encrypt/) | Aspose.PDF for .NET ile PDF dosyalarınızı güvenli bir şekilde şifreleyin. |  
 | [Görüntü Çıkarılıyor](./extracting-image/) | Aspose.PDF for .NET ile PDF belgelerinden görüntüleri kolayca çıkarın. |  
 | [İmza Bilgilerini Çıkarın](./extract-signature-info/) | Aspose.PDF for .NET kullanarak imza bilgilerini çıkarma. |  
 | [Parola Korumalı mı](./is-password-protected/) | Aspose.PDF for .NET ile bir PDF belgesinin parola korumalı olup olmadığını kolayca kontrol edin. |  
-| [Ayrıcalıklar Belirle](./set-privileges/) | Aspose.PDF for .NET ile PDF dosyalarınız için erişim ayrıcalıklarını kolayca ayarlayın. |  
+| [PDF Dosyasında Ayrıcalıklar Belirleyin](./set-privileges/) | Aspose.PDF for .NET ile PDF dosyasında erişim ayrıcalıklarını kolayca ayarlayın. |  
 | [Pdf Dosya İmzasını Kullanarak Akıllı Kartla İmzalayın](./sign-with-smart-card-using-pdf-file-signature/) | Aspose.PDF for .NET kullanarak PDF dosyalarınızı bir akıllı kartla güvenli bir şekilde imzalayın. |  
 | [İmza Alanını Kullanarak Akıllı Kartla İmzalayın](./sign-with-smart-card-using-signature-field/) | Aspose.PDF for .NET kullanarak PDF dosyalarınızı bir akıllı kartla güvenli bir şekilde imzalayın. |  

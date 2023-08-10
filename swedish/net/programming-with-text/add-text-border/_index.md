@@ -46,7 +46,7 @@ Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
 ## Steg 6: Skapa ett TextFragment
- Skapa en`TextFragment` objekt och ge önskad text. Ställ in positionen för textfragmentet med hjälp av`Position` fast egendom. I den medföljande koden är texten inställd på "huvudtext" och placerad vid (100, 600) på sidan.
+ Skapa en`TextFragment`objekt och ge önskad text. Ställ in positionen för textfragmentet med hjälp av`Position` fast egendom. I den medföljande koden är texten inställd på "huvudtext" och placerad vid (100, 600) på sidan.
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");

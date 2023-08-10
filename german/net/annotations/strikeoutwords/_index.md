@@ -101,3 +101,25 @@ for (int j = 1; j <= textFragmentCollection.Count; j++)
 dataDir = dataDir + "StrikeOutWords_out.pdf";
 document.Save(dataDir);
 ```
+
+## Abschluss
+
+In diesem Tutorial haben wir gelernt, wie man Aspose.PDF für .NET verwendet, um bestimmte Wörter in einem PDF-Dokument durchzustreichen. Indem Sie der Schritt-für-Schritt-Anleitung folgen und den bereitgestellten C#-Quellcode verwenden, können Sie ganz einfach ein PDF-Dokument laden, nach bestimmten Textfragmenten suchen und durchgestrichene Anmerkungen erstellen, um diese Wörter visuell zu markieren und durchzustreichen. Aspose.PDF für .NET bietet eine einfache und effektive Möglichkeit, PDF-Dokumente programmgesteuert zu bearbeiten, was es zu einem wertvollen Werkzeug für Entwickler macht, die mit PDF-Dateien in .NET-Anwendungen arbeiten.
+
+### FAQs
+
+#### F: Was ist Aspose.PDF für .NET?
+
+A: Aspose.PDF für .NET ist eine leistungsstarke Bibliothek, die es Entwicklern ermöglicht, PDF-Dokumente programmgesteuert in .NET-Anwendungen zu erstellen, zu bearbeiten und zu bearbeiten. Es bietet eine breite Palette von Funktionen für die Arbeit mit PDF-Dateien, darunter Textextraktion, Anmerkungsverarbeitung, Formularausfüllung und vieles mehr.
+
+#### F: Kann ich Aspose.PDF für .NET verwenden, um bestimmte Wörter in einem PDF-Dokument durchzustreichen?
+
+A: Ja, Aspose.PDF für .NET bietet Funktionen zum Suchen nach bestimmten Textfragmenten in einem PDF-Dokument und zum anschließenden Erstellen von Durchstreichungsanmerkungen, um diese Wörter visuell zu markieren und durchzustreichen.
+
+#### F: Wie gebe ich den Text an, den ich im PDF-Dokument durchstreichen möchte?
+
+ A: Um den Text anzugeben, den Sie durchstreichen möchten, können Sie die verwenden`TextFragmentAbsorber` Von Aspose.PDF für .NET bereitgestellte Klasse. Es ermöglicht Ihnen, anhand Ihrer gewünschten Kriterien nach einem bestimmten Textfragment im PDF-Dokument zu suchen.
+
+#### F: Kann ich das Erscheinungsbild der durchgestrichenen Anmerkung anpassen?
+
+A: Ja, Sie können verschiedene Eigenschaften der durchgestrichenen Anmerkung anpassen, z. B. die Deckkraft, den Rahmenstil und die Farbe. Dadurch können Sie das Erscheinungsbild der durchgestrichenen Anmerkung an Ihre spezifischen Anforderungen anpassen.

@@ -108,7 +108,7 @@ page.Header = header;
 // Sayfada bir resim nesnesi oluşturun
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 
-// Görüntü dosyasının yolunu ayarla
+//Görüntü dosyasının yolunu ayarla
 image1.File = dataDir + "aspose-logo.jpg";
 
 // Pdf dosyasının Başlık sayfasına resim ekleyin
@@ -134,3 +134,45 @@ doc.Save(dataDir + "ImageAndPageNumberInHeaderFooter_out.pdf");
 ## Çözüm
 
 Tebrikler! Aspose.PDF for .NET kullanarak bir PDF belgesinin üst bilgi ve alt bilgi bölümüne nasıl resim ve sayfa numarası ekleyeceğinizi öğrendiniz. Artık PDF belgelerinizdeki üstbilgi ve altbilgiyi özelleştirmek için bu yöntemi kullanabilirsiniz.
+
+### SSS
+
+#### S: Bir PDF belgesinin üst bilgi ve alt bilgi bölümüne resim ve sayfa numarası eklemenin amacı nedir?
+
+Y: Bir PDF belgesinin üst bilgi ve alt bilgi bölümüne bir resim ve sayfa numarası eklemek, görsel çekiciliğini, marka bilincini ve gezinme öğelerini geliştirebilir. Bir resim bir logoyu, filigranı veya herhangi bir grafik öğeyi temsil edebilirken, sayfa numarası kullanıcıların ilerlemelerini takip etmelerine ve belirli sayfaları bulmalarına yardımcı olur.
+
+#### S: Sağlanan C# kaynak kodu, bir PDF belgesinin üstbilgisine ve altbilgisine görüntü ve sayfa numarası eklenmesine nasıl yardımcı olur?
+
+A: Sağlanan kod, bir PDF belgesinin nasıl oluşturulacağını, bir sayfanın nasıl ekleneceğini ve ardından üst bilgi ve alt bilgi bölümlerinin nasıl özelleştirileceğini gösterir. Başlığa nasıl resim ve alt bilgiye sayfa numaralandırmalı bir metin parçasının nasıl ekleneceğini gösterir.
+
+#### S: Başlık için herhangi bir resim formatı kullanabilir miyim ve yolunu nasıl belirtebilirim?
+
+ C: Evet, başlık resmi için çeşitli resim formatlarını (JPEG, PNG, GIF vb.) kullanabilirsiniz. Resmin yolu kullanılarak belirtilir.`File` mülkiyeti`Aspose.Pdf.Image` nesne.
+
+#### S: Başlık bölümündeki görüntünün görünümünü ve konumunu nasıl özelleştirebilirim?
+
+ A: Görüntünün özelliklerini ayarlayarak görüntünün görünümünü ve konumunu özelleştirebilirsiniz.`Aspose.Pdf.Image` başlık bölümüne eklemeden önce nesne. Örneğin, görüntünün boyutlarını, hizalamasını, döndürmesini, opaklığını vb. ayarlayabilirsiniz.
+
+####  S: Amacı nedir?`TextFragment` object used for the footer?
+
+ C:`TextFragment`nesne, alt bilgi bölümünde görüntülenecek metni oluşturmak ve biçimlendirmek için kullanılır. Verilen kodda sayfa numarası ve toplam sayfa sayısını görüntülemek için kullanılır.
+
+#### S: Ek bilgi veya biçimlendirme eklemek için altbilgi metnini değiştirebilir miyim?
+
+ C: Evet, altbilgi metnini, içeriğini değiştirerek değiştirebilirsiniz.`TextFragment` nesne. Gereksinimlerinize göre ek metin ekleyebilir, yazı tiplerini, renkleri ve biçimlendirmeyi değiştirebilirsiniz.
+
+#### S: PDF belgesinin farklı sayfalarına farklı üstbilgi ve altbilgi içerikleri uygulayabilir miyim?
+
+ C: Evet, farklı üstbilgi ve altbilgi içeriklerini farklı sayfalar oluşturarak farklı sayfalara uygulayabilirsiniz.`HeaderFooter` kullanarak bunları belirli sayfalara atama`Header` Ve`Footer` özellikleri`Aspose.Pdf.Page` nesne.
+
+#### S: Yazı tipi stillerini değiştirmek veya ek öğeler eklemek gibi üstbilgi ve altbilgiyi nasıl daha fazla özelleştirebilirim?
+
+C: Aspose.PDF for .NET tarafından sağlanan çeşitli sınıfları ve özellikleri kullanarak üstbilgi ve altbilgiyi özelleştirebilirsiniz. Örneğin, farklı metin biçimlendirme seçenekleri kullanabilir, üst bilgi ve alt bilgi bölümlerine daha fazla paragraf, resim ve hatta tablo ekleyebilirsiniz.
+
+#### S: Gerekirse üst bilgi ve alt bilgi bölümlerini kaldırabilir veya temizleyebilir miyim?
+
+ C: Evet, üst bilgi ve alt bilgi bölümlerini ayarlayarak kaldırabilir veya temizleyebilirsiniz.`Header` Ve`Footer` özellikleri`Aspose.Pdf.Page` itiraz etmek`null`.
+
+#### S: Eklenen resim ve sayfa numarasının farklı cihazlarda ve görüntüleyicilerde tutarlı kalmasını nasıl sağlayabilirim?
+
+Y: Aspose.PDF for .NET, standartlaştırılmış ve tutarlı PDF belgeleri oluşturmak için işlevsellik sağlayarak, eklenen görüntü ve sayfa numarasının farklı cihazlarda ve PDF görüntüleyicilerde tutarlı bir şekilde görünmesini sağlar.

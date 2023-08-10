@@ -35,7 +35,7 @@ Document pdfDocument = new Document(dataDir + "RemoveAllText.pdf");
 
 ## Passaggio 3: rimuovi il testo da ogni pagina
 
- Passiamo in rassegna tutte le pagine del documento PDF e utilizziamo un file`OperatorSelector` per selezionare tutto il testo su ciascuna pagina. Quindi, eliminiamo il testo selezionato.
+ Passiamo in rassegna tutte le pagine del documento PDF e utilizziamo un file`OperatorSelector` per selezionare tutto il testo su ogni pagina. Quindi, eliminiamo il testo selezionato.
 
 ```csharp
 for (int i = 1; i <= pdfDocument.Pages.Count; i++)

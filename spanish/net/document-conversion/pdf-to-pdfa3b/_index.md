@@ -7,7 +7,6 @@ type: docs
 weight: 150
 url: /es/net/document-conversion/pdf-to-pdfa3b/
 ---
-
 En este tutorial, lo guiaremos a través del proceso de conversión de un archivo PDF a formato PDF/A-3b usando Aspose.PDF para .NET. PDF/A-3b es un estándar ISO para incrustar archivos y datos en un documento PDF. Siguiendo los pasos a continuación, podrá convertir archivos PDF a formato PDF/A-3b.
 
 ## requisitos previos
@@ -71,3 +70,21 @@ Console.WriteLine("\nPDF file converted to PDF/A-3B format.\nFile saved at " + d
 
 ## Conclusión
 En este tutorial, cubrimos el proceso paso a paso de convertir un archivo PDF a formato PDF/A-3b usando Aspose.PDF para .NET. Siguiendo las instrucciones descritas anteriormente, ahora debería poder convertir archivos PDF a formato PDF/A-3b. Esta característica es útil cuando desea incrustar archivos y datos adicionales en un documento PDF que cumple con el estándar PDF/A-3b.
+
+### Preguntas frecuentes
+
+#### P: ¿Qué es PDF/A-3b y en qué se diferencia de otros estándares PDF/A?
+
+R: PDF/A-3b es un estándar ISO que permite incrustar archivos y datos en un documento PDF, haciéndolo autónomo y asegurando la conservación a largo plazo. A diferencia de otros estándares PDF/A, como PDF/A-1 y PDF/A-2, PDF/A-3b permite la inclusión de archivos y datos adicionales dentro del documento PDF. Esta característica lo hace adecuado para archivar e intercambiar documentos complejos e interactivos.
+
+#### P: ¿Puedo incluir varios archivos y datos en un documento PDF/A-3b?
+
+R: Sí, una de las principales ventajas de PDF/A-3b es su capacidad para incluir múltiples archivos y datos dentro del documento PDF. Puede incrustar varios tipos de archivos, como XML, hojas de cálculo, imágenes u otros archivos PDF, junto con el contenido PDF principal. Como resultado, el documento PDF/A-3b se convierte en un paquete autónomo que contiene todos los elementos necesarios.
+
+#### P: ¿Qué sucede si hay errores durante el proceso de conversión de PDF a PDF/A-3b?
+
+ R: Al convertir un PDF a formato PDF/A-3b con Aspose.PDF para .NET, tiene control sobre cómo se manejan los errores. El`Convert` métodos`ConvertErrorAction` El parámetro determina la acción a tomar cuando se encuentran errores. En el ejemplo de código proporcionado, el`ConvertErrorAction.Delete` se utiliza el parámetro, lo que significa que cualquier error encontrado durante la conversión resultará en la eliminación de las páginas con errores.
+
+#### P: ¿Es PDF/A-3b adecuado para la conservación de documentos a largo plazo?
+
+R: Sí, PDF/A-3b está diseñado específicamente para la conservación a largo plazo de documentos electrónicos. Al incorporar archivos y datos adicionales, garantiza que todos los componentes necesarios se incluyan en el propio documento PDF, lo que reduce el riesgo de pérdida de información o dependencias externas con el tiempo. Esta característica lo hace adecuado para archivar documentos de una manera que garantiza la accesibilidad y la consistencia a largo plazo.

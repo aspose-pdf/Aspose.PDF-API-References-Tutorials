@@ -27,7 +27,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## الخطوة 2: قم بإنشاء مستند وصفحة PDF
 
-بعد ذلك ، نقوم بإنشاء مستند PDF جديد وإضافة صفحة إليه باستخدام ملف`Document` فئة و`Page` فئة من مكتبة Aspose.PDF.
+ بعد ذلك ، نقوم بإنشاء مستند PDF جديد وإضافة صفحة إليه باستخدام ملف`Document` فئة و`Page` فئة من مكتبة Aspose.PDF.
 
 ```csharp
 Document doc = new Document();
@@ -111,7 +111,7 @@ marginInfo.Top = 90;
 marginInfo.Bottom = 50;
 marginInfo.Left = 50;
 marginInfo.Right = 50;
-//قم بتعيين مثيل marginInfo لخاصية الهامش sec1.PageInfo
+// قم بتعيين مثيل marginInfo لخاصية الهامش sec1.PageInfo
 page.PageInfo.Margin = marginInfo;
 HeaderFooter hfFirst = new HeaderFooter();
 page.Header = hfFirst;

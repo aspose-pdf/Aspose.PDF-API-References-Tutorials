@@ -68,7 +68,7 @@ FileSpecification fileSpecification = pdfDocument.EmbeddedFiles[1];
 Console.WriteLine("Name: {0}", fileSpecification.Name);
 Console.WriteLine("Description: {0}", fileSpecification.Description);
 Console.WriteLine("Mime Type: {0}", fileSpecification.MIMEType);
-// Comprobar si el objeto de parámetro contiene los parámetros
+//Comprobar si el objeto de parámetro contiene los parámetros
 if (fileSpecification.Params != null)
 {
 	Console.WriteLine("CheckSum: {0}",
@@ -85,3 +85,41 @@ if (fileSpecification.Params != null)
 ## Conclusión
 
 En este tutorial, explicamos cómo obtener información sobre un adjunto específico de un archivo PDF utilizando Aspose.PDF para .NET. Ahora puede usar este conocimiento para extraer y ver información adjunta de sus archivos PDF.
+
+### Preguntas frecuentes para obtener información de archivos adjuntos 
+
+#### P: ¿Por qué necesito recuperar información sobre archivos adjuntos específicos en un documento PDF?
+
+R: La recuperación de la información de los archivos adjuntos le permite comprender y analizar los detalles de los archivos incrustados en un PDF, lo que le ayuda a administrar y trabajar con los archivos adjuntos de manera efectiva.
+
+#### P: ¿Qué tipo de información puedo recopilar sobre un archivo adjunto específico usando este tutorial?
+
+R: Este tutorial demuestra cómo recuperar y mostrar las propiedades de los archivos adjuntos, como el nombre, la descripción, el tipo MIME, el hash de control, la fecha de creación, la fecha de modificación y el tamaño.
+
+#### P: ¿Cómo me ayuda este tutorial a recopilar información de archivos adjuntos usando Aspose.PDF para .NET?
+
+R: Este tutorial proporciona instrucciones paso a paso y el código fuente de C# para acceder y mostrar información sobre un archivo adjunto específico dentro de un documento PDF.
+
+#### P: ¿Puedo recuperar información sobre todos los archivos adjuntos en lugar de un archivo adjunto específico usando este tutorial?
+
+R: Este tutorial se centra en obtener información sobre un archivo adjunto específico, pero puede adaptar el código para recorrer todos los archivos adjuntos y recopilar su información.
+
+#### P: ¿Cuál es el propósito de la propiedad "Comprobar hash" que se muestra en la información del archivo adjunto?
+
+R: La propiedad "Comprobar hash" representa el valor hash de control del archivo adjunto, que se puede utilizar para verificar la integridad del archivo adjunto.
+
+#### P: ¿Cómo puedo modificar este código para recuperar información sobre archivos adjuntos con diferentes índices?
+
+ R: Puede cambiar el valor del índice (p. ej.,`pdfDocument.EmbeddedFiles[1]`) para recuperar información sobre archivos adjuntos en diferentes índices dentro del documento PDF.
+
+#### P: ¿Puedo usar este conocimiento para recopilar información de archivos PDF protegidos con contraseña?
+
+R: Sí, puede aplicar principios similares para recopilar información de archivos adjuntos de archivos PDF protegidos con contraseña utilizando Aspose.PDF para .NET.
+
+#### P: ¿Cómo simplifica Aspose.PDF para .NET el proceso de obtención de información de archivos adjuntos?
+
+R: Aspose.PDF para .NET proporciona una API intuitiva que le permite acceder y manipular propiedades de archivos adjuntos en documentos PDF con facilidad.
+
+#### P: ¿Existen escenarios específicos en los que se recomienda recopilar información de archivos adjuntos?
+
+R: La recopilación de información de archivos adjuntos es valiosa cuando necesita comprender los detalles de los archivos incrustados, como verificar sus propiedades o auditar los archivos adjuntos en un documento.

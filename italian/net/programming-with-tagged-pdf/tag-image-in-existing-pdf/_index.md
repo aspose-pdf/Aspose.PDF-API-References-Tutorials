@@ -49,7 +49,7 @@ Abbiamo ottenuto il contenuto con tag del documento PDF e il corrispondente elem
 Ora impostiamo il titolo per il documento PDF con tag.
 
 ```csharp
-//Definire il titolo per il documento PDF con tag
+// Definire il titolo per il documento PDF con tag
 taggedContent.SetTitle("Document with images");
 ```
 
@@ -115,7 +115,7 @@ string logFile = dataDir + "TH_out.xml";
 // Apri documento
 Document document = new Document(inFile);
 
-// Ottiene il contenuto con tag e l'elemento della struttura principale
+// Ottiene il contenuto con tag e l'elemento della struttura radice
 ITaggedContent taggedContent = document.TaggedContent;
 StructureElement rootElement = taggedContent.RootElement;
 
@@ -144,7 +144,7 @@ spanElement.ChangeParentElement(paragraph);
 // Salva documento
 document.Save(outFile);
 
-// Controllo della conformità PDF/UA per il nostro documento
+//Controllo della conformità PDF/UA per il nostro documento
 document = new Document(outFile);
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
@@ -154,3 +154,49 @@ Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 ## Conclusione
 
 In questo tutorial, abbiamo imparato come contrassegnare un'immagine in un PDF esistente utilizzando Aspose.PDF per .NET. Ora puoi utilizzare Aspose.PDF per aggiungere tag e apportare modifiche alle immagini nei tuoi documenti PDF.
+
+### FAQ
+
+#### D: Qual è l'obiettivo principale di questo tutorial sull'etichettatura delle immagini in un PDF esistente utilizzando Aspose.PDF per .NET?
+
+A: L'obiettivo principale di questo tutorial è guidarti attraverso il processo di contrassegno di un'immagine all'interno di un documento PDF esistente utilizzando Aspose.PDF per .NET. L'esercitazione fornisce istruzioni dettagliate ed esempi di codice sorgente C# per aiutarti a comprendere come assegnare testo alternativo e riquadri di delimitazione alle immagini, spostare elementi all'interno del documento e aggiungere tag alle immagini.
+
+#### D: Quali sono i prerequisiti per seguire questo tutorial sull'etichettatura delle immagini in un PDF utilizzando Aspose.PDF per .NET?
+
+R: Prima di iniziare, assicurati di aver impostato il tuo ambiente di sviluppo per utilizzare Aspose.PDF per .NET. Ciò comporta l'installazione della libreria Aspose.PDF e la configurazione del progetto per farvi riferimento.
+
+#### D: Come posso aprire un documento PDF esistente e accedere al suo contenuto con tag utilizzando Aspose.PDF per .NET?
+
+R: Il tutorial fornisce esempi di codice sorgente C# che dimostrano come aprire un documento PDF esistente utilizzando Aspose.PDF per .NET e accedere al suo contenuto con tag per ulteriori manipolazioni.
+
+#### D: Qual è lo scopo dell'assegnazione di testo alternativo e riquadri di delimitazione alle immagini in un documento PDF?
+
+R: L'assegnazione di testo alternativo e riquadri di delimitazione alle immagini migliora l'accessibilità fornendo testo descrittivo per le immagini e definendone il layout e la posizione all'interno del documento. Queste informazioni sono fondamentali per gli screen reader e altre tecnologie assistive.
+
+#### D: Come posso impostare il titolo per un documento PDF con tag utilizzando Aspose.PDF per .NET?
+
+R: Il tutorial include esempi di codice sorgente C# che illustrano come impostare il titolo per un documento PDF con tag utilizzando Aspose.PDF per .NET.
+
+#### D: In cosa consiste il processo di spostamento degli elementi all'interno di un documento PDF?
+
+R: Lo spostamento di elementi all'interno di un documento PDF comporta la modifica dell'elemento principale di un particolare elemento. In questo tutorial imparerai come spostare un elemento Span in un elemento Paragraph specificato all'interno di una tabella.
+
+#### D: Come faccio a salvare il documento PDF modificato dopo aver aggiunto tag e apportato modifiche alle immagini?
+
+ R: Dopo aver aggiunto tag, assegnato testo alternativo, impostato riquadri di delimitazione e apportato modifiche al documento PDF, è possibile utilizzare gli esempi di codice sorgente C# forniti per salvare il documento PDF modificato utilizzando il`Save()` metodo.
+
+#### D: Qual è lo scopo del codice sorgente di esempio fornito nel tutorial?
+
+R: Il codice sorgente di esempio funge da riferimento pratico per l'implementazione del tagging e della manipolazione delle immagini utilizzando Aspose.PDF per .NET. È possibile utilizzare questo codice come punto di partenza e modificarlo in base alle proprie esigenze specifiche.
+
+#### D: Posso applicare queste tecniche ad altri tipi di elementi in un documento PDF, non solo alle immagini?
+
+R: Sì, le tecniche dimostrate in questo tutorial possono essere adattate per funzionare con vari tipi di elementi all'interno di un documento PDF. Puoi applicare principi simili per etichettare e manipolare altri elementi come testo, tabelle e altro.
+
+#### D: Come posso convalidare la conformità PDF/UA del documento PDF modificato?
+
+ R: L'esercitazione fornisce esempi di codice sorgente C# che mostrano come convalidare la conformità PDF/UA del documento PDF modificato utilizzando il`Validate()` metodo e generando un report XML.
+
+#### D: Quali altre funzionalità offre Aspose.PDF per .NET per lavorare con i documenti PDF?
+
+R: Aspose.PDF per .NET offre una vasta gamma di funzionalità per lavorare con documenti PDF, tra cui la manipolazione del testo, l'inserimento di immagini, la creazione di tabelle, la gestione dei campi modulo, le firme digitali, le annotazioni e altro ancora. Consulta la documentazione e le risorse ufficiali per ulteriori esplorazioni.

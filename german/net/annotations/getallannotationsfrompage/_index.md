@@ -81,3 +81,29 @@ foreach (MarkupAnnotation annotation in pdfDocument.Pages[1].Annotations)
 	Console.WriteLine("Contents : {0} ", annotation.Contents);                
 }
 ```
+
+## Abschluss
+
+In diesem Tutorial haben wir untersucht, wie Sie mit Aspose.PDF für .NET alle Anmerkungen von einer bestimmten Seite eines PDF-Dokuments abrufen. Durch Befolgen der Schritt-für-Schritt-Anleitung und Verwendung des bereitgestellten C#-Quellcodes können Entwickler problemlos Anmerkungen aus ihren PDF-Dokumenten extrahieren und verwalten.
+
+### FAQs
+
+#### F: Was sind Anmerkungen in einem PDF-Dokument?
+
+A: Anmerkungen in einem PDF-Dokument sind interaktive Elemente, die zusätzliche Informationen, Kommentare oder Notizen zu bestimmten Teilen des Dokuments bereitstellen. Anmerkungen können Textnotizen, Kommentare, Hervorhebungen und andere interaktive Elemente umfassen.
+
+#### F: Kann ich Anmerkungen nur von bestimmten Seiten erhalten?
+
+A: Ja, mit Aspose.PDF für .NET können Sie je nach Ihren Anforderungen Anmerkungen von bestimmten Seiten oder sogar vom gesamten Dokument abrufen.
+
+#### F: Unterstützt Aspose.PDF für .NET das Extrahieren von Anmerkungen aus passwortgeschützten PDF-Dateien?
+
+ A: Ja, Aspose.PDF für .NET unterstützt das Extrahieren von Anmerkungen aus passwortgeschützten PDF-Dateien. Sie müssen das richtige Passwort angeben, wenn Sie das PDF-Dokument mit laden`Document` Klasse.
+
+#### F: Kann ich Anmerkungen nach ihren Eigenschaften filtern, z. B. nach Inhalt oder Autor?
+
+A: Ja, Aspose.PDF für .NET bietet Methoden für den Zugriff auf und das Filtern von Anmerkungen basierend auf ihren Eigenschaften, wie z. B. Inhalt, Autor oder Erstellungsdatum. Sie können alle Anmerkungen durchlaufen und nach den spezifischen Eigenschaften suchen, die Sie filtern möchten.
+
+#### F: Unterstützt Aspose.PDF für .NET das Extrahieren von Anmerkungen aus verschiedenen Arten von PDF-Dokumenten?
+
+A: Ja, Aspose.PDF für .NET bietet verschiedene Methoden zum Extrahieren von Anmerkungen aus verschiedenen Arten von PDF-Dokumenten, einschließlich Textmarkierungsanmerkungen, Freitextanmerkungen und mehr.

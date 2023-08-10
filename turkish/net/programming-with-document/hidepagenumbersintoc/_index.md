@@ -146,3 +146,21 @@ for (int Level = 1; Level != 5; Level++)
 	}
 doc.Save(outFile);
 ```
+
+## Çözüm
+
+Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF belgesinde XMP meta verileriyle nasıl çalışılacağını inceledik. XMP meta verileri, PDF belgesi hakkında başlığı, yazarı, oluşturulma tarihi ve daha fazlası dahil olmak üzere değerli bilgiler sağlar. Aspose.PDF for .NET, PDF belgeleriyle çalışmak için esnek ve güçlü bir API sağlayarak, geliştiricilerin bu meta verilere erişmesine ve bunları kullanmasına izin verir.
+
+### SSS
+
+#### S: Bir PDF belgesindeki XMP meta verileri nedir?
+
+Y: Bir PDF belgesindeki XMP (Genişletilebilir Meta Veri Platformu) meta verileri, belgeyle ilgili meta veri bilgilerini depolamak için standart bir biçimdir. Belge başlığı, yazar, oluşturma tarihi, anahtar sözcükler ve daha fazlası gibi ayrıntıları içerir. XMP meta verileri, PDF belgesiyle ilgili bilgileri depolamak ve paylaşmak için yapılandırılmış ve standartlaştırılmış bir yol sağlar.
+
+#### S: Aspose.PDF for .NET kullanarak bir PDF belgesinin XMP meta verilerini değiştirebilir miyim?
+
+ C: Evet, Aspose.PDF for .NET kullanarak bir PDF belgesinin XMP meta verilerini programlı olarak değiştirebilirsiniz. Şuraya erişebilirsiniz:`Info` mülkiyeti`Document` XMP meta veri özelliklerine erişmenizi sağlayan nesne. Ardından, PDF belgesinin XMP meta verilerini değiştirmek için bu özelliklerin değerlerini güncelleyebilirsiniz.
+
+#### S: Aspose.PDF for .NET kullanarak bir PDF belgesinden özel XMP meta veri özelliklerini çıkarabilir miyim?
+
+ C: Evet, Aspose.PDF for .NET kullanarak bir PDF belgesinden özel XMP meta veri özelliklerini çıkarabilirsiniz. kullanabilirsiniz`Metadata` mülkiyeti`Document`PDF belgesinin tüm XMP meta veri özelliklerine erişim sağlayan nesne. Daha sonra özel özellikleri çıkarabilir ve değerlerini gerektiği gibi kullanabilirsiniz.

@@ -19,7 +19,7 @@ Başlamadan önce, aşağıdakilere sahip olduğunuzdan emin olun:
 
 ## 1. Adım: Belge Dizinini kurun
 
- Giriş PDF dosyasının bulunduğu dizine giden yolu ayarlayın. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` PDF dosyanızın yolu ile değişken.
+ Giriş PDF dosyasının bulunduğu dizine giden yolu ayarlayın. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir`PDF dosyanızın yolu ile değişken.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";

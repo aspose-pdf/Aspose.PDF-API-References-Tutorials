@@ -92,3 +92,45 @@ document.Save( dataDir + "PDFwithTaggedText.pdf");
 ## Conclusione
 
 In questo tutorial, hai imparato come creare un documento PDF con testo con tag utilizzando Aspose.PDF per .NET. Le caratteristiche della struttura del contenuto contrassegnato di Aspose.PDF ti consentono di strutturare e organizzare il tuo testo per una migliore accessibilità e semantica.
+
+### FAQ
+
+#### D: Qual è lo scopo della creazione di un documento PDF con testo con tag utilizzando Aspose.PDF per .NET?
+
+R: La creazione di un documento PDF con testo con tag utilizzando Aspose.PDF per .NET consente di strutturare e organizzare il contenuto del testo all'interno del documento PDF. Il testo con tag aggiunge significato semantico e migliora l'accessibilità per gli utenti, in particolare quelli che utilizzano tecnologie assistive.
+
+#### D: In che modo Aspose.PDF aiuta a creare un documento PDF con testo con tag?
+
+R: Aspose.PDF per .NET è una potente libreria che fornisce funzionalità per creare, manipolare e convertire documenti PDF in modo programmatico. In questa esercitazione, le funzionalità della struttura del contenuto con tag della libreria vengono utilizzate per aggiungere testo strutturato e semanticamente significativo al documento PDF.
+
+#### D: Quali sono i prerequisiti per la creazione di un documento PDF con testo con tag utilizzando Aspose.PDF per .NET?
+
+R: Prima di iniziare, assicurati di aver installato Visual Studio con il framework .NET e di aver fatto riferimento alla libreria Aspose.PDF per .NET nel tuo progetto.
+
+#### D: In che modo il codice C# fornito crea un documento PDF con testo con tag?
+
+R: L'esempio di codice mostra come creare un documento PDF, definire vari elementi di testo con tag (come intestazioni e paragrafi) e aggiungerli al contenuto del documento. Ciò si ottiene utilizzando le funzionalità della struttura del contenuto con tag fornite da Aspose.PDF.
+
+#### D: Come posso personalizzare gli elementi di testo con tag, come intestazioni e paragrafi?
+
+ R: Puoi personalizzare gli elementi di testo con tag utilizzando metodi appropriati, ad esempio`CreateHeaderElement` E`CreateParagraphElement` e impostando proprietà come`ActualText` fornire testo e semantica significativi.
+
+#### D: Posso aggiungere altri elementi di testo con tag, come elenchi o collegamenti, utilizzando tecniche simili?
+
+R: Sì, puoi aggiungere altri elementi di testo con tag come elenchi, collegamenti o altre strutture personalizzate utilizzando tecniche simili. Aspose.PDF fornisce vari metodi per creare diversi tipi di contenuto con tag, consentendo di migliorare la semantica del documento.
+
+####  D: Come funziona il`SetTitle` method contribute to the PDF document's tagged text?
+
+ R: Il`SetTitle` metodo imposta il titolo del contenuto con tag del documento PDF, fornendo una breve descrizione dello scopo o dell'oggetto del documento. Queste informazioni aiutano gli utenti a comprendere il contesto del testo con tag.
+
+#### D: In che modo l'utilizzo del testo con tag migliora l'accessibilità nei documenti PDF?
+
+R: Il testo con tag aggiunge significato semantico al documento, rendendolo più accessibile agli utenti con disabilità oa coloro che utilizzano tecnologie assistive. I lettori di schermo e altri dispositivi di assistenza possono interpretare e presentare testo con tag per migliorare l'esperienza dell'utente.
+
+####  D: Come funziona il`SetLanguage` method enhance the tagged text in a PDF document?
+
+ R: Il`SetLanguage`metodo imposta l'attributo della lingua del contenuto con tag del documento PDF. Questo aiuta a indicare la lingua in cui è scritto il testo con tag, migliorando l'accessibilità e consentendo una corretta resa specifica della lingua.
+
+#### D: È possibile aggiungere altri elementi, come immagini o contenuti multimediali, accanto al testo con tag utilizzando tecniche simili?
+
+R: Sì, puoi aggiungere altri elementi come immagini, contenuti multimediali o annotazioni accanto al testo con tag utilizzando tecniche simili. Aspose.PDF offre una vasta gamma di funzionalità per combinare diversi tipi di contenuto all'interno del documento.

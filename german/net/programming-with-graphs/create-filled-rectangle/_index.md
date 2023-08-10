@@ -92,3 +92,33 @@ Console.WriteLine("\nFilled rectangle object created successfully.\nFile saved a
 ## Abschluss
 
 In diesem Tutorial haben wir erklärt, wie man mit Aspose.PDF für .NET ein gefülltes Rechteck erstellt. Sie können dieses Wissen nun nutzen, um geometrische Formen mit benutzerdefinierten Füllfarben in Ihren PDF-Dateien zu erstellen.
+
+## FAQs
+
+#### F: Was ist der Zweck dieses Tutorials?
+
+A: Der Zweck dieses Tutorials besteht darin, Sie durch den Prozess der Erstellung eines gefüllten Rechtecks mit Aspose.PDF für .NET zu führen, sodass Sie Ihren PDF-Dateien benutzerdefinierte geometrische Formen mit Füllfarben hinzufügen können.
+
+#### F: Welche Voraussetzungen sind vor dem Start erforderlich?
+
+A: Bevor Sie beginnen, stellen Sie sicher, dass Sie die Aspose.PDF-Bibliothek installiert und Ihre Entwicklungsumgebung eingerichtet haben. Darüber hinaus werden grundlegende Kenntnisse der C#-Programmierung empfohlen.
+
+#### F: Wie lege ich das Verzeichnis zum Speichern der PDF-Datei fest?
+
+A: Im bereitgestellten Quellcode können Sie die Variable „dataDir“ ändern, um das Verzeichnis anzugeben, in dem Sie die resultierende PDF-Datei speichern möchten.
+
+#### F: Was ist der Zweck des Graph-Objekts?
+
+A: Das Graph-Objekt fungiert als Container für Zeichnungselemente. Es wird mit den angegebenen Abmessungen erstellt und der Absatzsammlung der Seite hinzugefügt.
+
+#### F: Wie kann ich dem PDF-Dokument ein gefülltes Rechteck hinzufügen?
+
+A: Um ein gefülltes Rechteck hinzuzufügen, erstellen Sie eine Instanz der Rechteckklasse mit angegebenen Abmessungen und Füllfarbe und fügen Sie sie der Formensammlung des Diagramms hinzu.
+
+#### F: Kann ich die Abmessungen und die Füllfarbe des Rechtecks anpassen?
+
+ A: Ja, Sie können die Abmessungen und die Füllfarbe des Rechtecks anpassen, indem Sie die an übergebenen Parameter ändern`Aspose.Pdf.Drawing.Rectangle` Konstruktor und Festlegen der FillColor-Eigenschaft.
+
+#### F: Wie speichere ich die resultierende PDF-Datei, nachdem ich das gefüllte Rechteck erstellt habe?
+
+ A: Nachdem Sie das gefüllte Rechteck erstellt haben, können Sie die resultierende PDF-Datei mit speichern`doc.Save(dataDir + "CreateFilledRectangle_out.pdf");` Zeile im bereitgestellten Quellcode.

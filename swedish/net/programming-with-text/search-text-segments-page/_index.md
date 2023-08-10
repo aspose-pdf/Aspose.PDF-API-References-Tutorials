@@ -109,7 +109,7 @@ foreach (TextFragment textFragment in textFragmentCollection)
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Öppna dokumentet
 Document pdfDocument = new Document(dataDir + "SearchTextSegmentsPage.pdf");
-// Skapa TextAbsorber-objekt för att hitta alla instanser av den inmatade sökfrasen
+//Skapa TextAbsorber-objekt för att hitta alla instanser av den inmatade sökfrasen
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
 // Acceptera absorbenten för alla sidor
 pdfDocument.Pages[2].Accept(textFragmentAbsorber);

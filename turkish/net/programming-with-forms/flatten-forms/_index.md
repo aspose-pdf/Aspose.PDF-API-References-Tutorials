@@ -1,13 +1,12 @@
 ---
-title: Formları Düzleştir
-linktitle: Formları Düzleştir
+title: PDF Belgesinde Formları Düzleştirin
+linktitle: PDF Belgesinde Formları Düzleştirin
 second_title: Aspose.PDF for .NET API Referansı
-description: Aspose.PDF for .NET kullanarak PDF belgelerinizdeki formları kolayca düzleştirin.
+description: Aspose.PDF for .NET kullanarak PDF belgesindeki formları kolayca düzleştirin.
 type: docs
 weight: 100
 url: /tr/net/programming-with-forms/flatten-forms/
 ---
-
 Bu eğitimde size Aspose.PDF for .NET kullanarak formları nasıl düzleştireceğinizi göstereceğiz. Bu süreçte size yol göstermesi için C# kaynak kodunu adım adım açıklayacağız.
 
 ## Adım 1: Hazırlık
@@ -72,3 +71,25 @@ Console.WriteLine("\nForms flattened successfully.\nFile saved at " + dataDir);
 ## Çözüm
 
 Bu eğitimde, Aspose.PDF for .NET kullanarak formları nasıl düzleştireceğimizi öğrendik. Bu adımları izleyerek, PDF belgelerinizdeki formları kolayca düzleştirebilir, alanları düzenlenemez hale getirebilir ve açıklamaları belge içeriğiyle birleştirebilirsiniz.
+
+### SSS
+
+#### S: Aspose.PDF for .NET'te "formları düzleştirme" ne anlama geliyor?
+
+C: Aspose.PDF for .NET'te formları düzleştirme, bir PDF belgesindeki form alanlarını düzenlenemez hale getirme ve açıklamaları (form alanları, notlar ve dijital imzalar gibi) belgenin içeriğiyle birleştirme sürecini ifade eder. Formlar düzleştirildikten sonra, kullanıcılar form alanlarını değiştiremez ve form alanlarının görsel görünümü, PDF belgesinin statik içeriğinin bir parçası haline gelir.
+
+#### S: Düzleştirme işlemini tersine çevirebilir ve form alanlarını tekrar düzenlenebilir hale getirebilir miyim?
+
+C: Hayır, form alanları bir kez düzleştirildiğinde, Aspose.PDF for .NET kullanılarak işlem geri alınamaz. Düzleştirme, form alanlarının görünümünü PDF içeriğiyle kalıcı olarak birleştirir ve tek tek form alanı öğelerine artık erişilemez veya düzenlenemez.
+
+#### S: Bir PDF belgesindeki formları ne zaman düzleştirmeliyim?
+
+Y: Formları düzleştirme, bir PDF belgesindeki form alanlarının ve açıklamaların görsel görünümünü korurken kullanıcıların verileri değiştirmesini engellemek istediğinizde kullanışlıdır. Bu genellikle, alıcılar tarafından değiştirilmemesi gereken önceden doldurulmuş form verileri veya ek açıklamalar içeren bir PDF belgesini paylaşmak istediğinizde yapılır.
+
+#### S: Düzleştirme formları, dijital imzalar gibi diğer ek açıklamaları etkiler mi?
+
+Y: Evet, düzleştirme formları, dijital imzalar da dahil olmak üzere tüm ek açıklamaları PDF içeriğiyle birleştirecektir. Formlar düzleştirildiğinde, mevcut tüm dijital imzalar belgenin kalıcı bir parçası haline gelir ve kullanıcılar bunları değiştiremez veya kaldıramaz.
+
+#### S: Belirli form alanlarını seçerek düzleştirebilir ve diğerlerini düzenlenebilir bırakabilir miyim?
+
+C: Evet, bir PDF belgesindeki belirli form alanlarını seçerek düzleştirirken diğerlerini düzenlenebilir durumda bırakabilirsiniz. Kodu tüm form alanlarını düzleştirmek için kullanmak yerine, adlarına veya diğer ölçütlere göre yalnızca istenen form alanlarını düzleştirmeyi seçebilirsiniz.

@@ -82,9 +82,9 @@ doc.Save(dataDir + "LatextScriptInPdf_out.pdf");
 ```csharp
 // Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-//Yeni bir Belge Nesnesi oluşturun
+// Yeni bir Belge Nesnesi oluşturun
 Document doc = new Document();
-// Sayfa Koleksiyonuna Sayfa Ekle
+//Sayfa Koleksiyonuna Sayfa Ekle
 Page page = doc.Pages.Add();
 // Tablo Oluştur
 Table table = new Table();

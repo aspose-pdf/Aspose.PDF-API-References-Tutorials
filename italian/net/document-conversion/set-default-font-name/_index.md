@@ -7,7 +7,6 @@ type: docs
 weight: 270
 url: /it/net/document-conversion/set-default-font-name/
 ---
-
 In questo tutorial, ti mostreremo come impostare il nome del carattere predefinito in un file PDF utilizzando Aspose.PDF per .NET. A volte, quando estrai immagini da un file PDF, potresti riscontrare problemi con i caratteri mancanti. Specificando un nome di carattere predefinito, puoi assicurarti che il testo estratto venga visualizzato correttamente. Seguire i passaggi seguenti per impostare il nome del carattere predefinito in un file PDF.
 
 ## Prerequisiti
@@ -84,3 +83,25 @@ using (Document pdfDocument = new Document(dataDir + "input.pdf"))
 
 ## Conclusione
 In questo tutorial, abbiamo imparato come impostare il nome del carattere predefinito in un file PDF utilizzando Aspose.PDF per .NET. Specificando un nome di carattere predefinito, puoi assicurarti che il testo estratto venga visualizzato correttamente. Utilizzare questo metodo per risolvere i problemi relativi ai caratteri mancanti durante l'estrazione di immagini da file PDF.
+
+### FAQ
+
+#### D: Cos'è Aspose.PDF per .NET?
+
+R: Aspose.PDF per .NET è una potente libreria che consente agli sviluppatori di lavorare con documenti PDF in applicazioni C#. Offre varie funzionalità, inclusa l'impostazione del nome del carattere predefinito in un file PDF.
+
+#### D: Perché dovrei impostare il nome del carattere predefinito in un file PDF?
+
+R: L'impostazione del nome del carattere predefinito è utile quando si estrae il testo da un documento PDF. Se il PDF contiene testo con caratteri che non sono disponibili sulla macchina di estrazione, specificando un nome di carattere predefinito si garantisce la corretta visualizzazione del testo.
+
+#### D: Come posso caricare un documento PDF e impostare il nome del carattere predefinito utilizzando Aspose.PDF per .NET?
+
+ R: Per caricare un documento PDF e impostare il nome del carattere predefinito, puoi utilizzare il file`Document`class per caricare il file PDF e il file`RenderingOptions.DefaultFontName` proprietà per specificare il nome del carattere predefinito desiderato.
+
+#### D: Posso scegliere qualsiasi font come nome del font predefinito?
+
+R: Sì, puoi scegliere qualsiasi carattere disponibile sulla macchina di estrazione come nome predefinito del carattere. Utilizza un carattere che corrisponda molto attentamente ai caratteri mancanti nel PDF originale per garantire un rendering accurato del testo.
+
+#### D: L'impostazione del nome del carattere predefinito è una modifica permanente al file PDF?
+
+R: No, l'impostazione del nome del carattere predefinito utilizzando Aspose.PDF per .NET è una modifica temporanea apportata durante l'estrazione del testo. Non modifica il file PDF originale.

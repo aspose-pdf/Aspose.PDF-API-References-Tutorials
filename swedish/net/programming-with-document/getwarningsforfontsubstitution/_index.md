@@ -7,7 +7,6 @@ type: docs
 weight: 190
 url: /sv/net/programming-with-document/getwarningsforfontsubstitution/
 ---
-
  Aspose.PDF för .NET är ett populärt PDF-manipuleringsbibliotek som gör det möjligt för utvecklare att skapa, redigera och konvertera PDF-filer i sina .NET-applikationer. En av funktionerna som erbjuds av detta bibliotek är möjligheten att upptäcka varningar för teckensnittsersättning när ett PDF-dokument öppnas. Denna handledning guidar dig genom stegen för att använda`GetWarningsForFontSubstitution` funktion i Aspose.PDF för .NET för att upptäcka varningar för teckensnittsbyte när du öppnar ett PDF-dokument.
 
 ## Steg 1: Installera Aspose.PDF för .NET
@@ -26,11 +25,11 @@ Det första steget i att använda den här funktionen är att ladda PDF-dokument
 // Sökvägen till PDF-dokumentet
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Öppna PDF-dokumentet
+//Öppna PDF-dokumentet
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
- I koden ovan, ersätt`"YOUR DOCUMENT DIRECTORY"` med sökvägen till katalogen där ditt PDF-dokument finns. Denna kod kommer att ladda PDF-dokumentet i en`Document` objekt, som du sedan kan använda för att upptäcka varningar för teckensnittsersättning.
+ I koden ovan, ersätt`"YOUR DOCUMENT DIRECTORY"`med sökvägen till katalogen där ditt PDF-dokument finns. Denna kod kommer att ladda PDF-dokumentet i en`Document` objekt, som du sedan kan använda för att upptäcka varningar för teckensnittsersättning.
 
 ## Steg 3: Upptäck varningar för teckensnittsersättning
 
@@ -61,7 +60,7 @@ private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArg
 // Sökvägen till PDF-dokumentet
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Öppna PDF-dokumentet
+//Öppna PDF-dokumentet
 Document doc = new Document(dataDir + "input.pdf");
 
 // Upptäck varningar för teckensnittsersättning
@@ -73,3 +72,25 @@ private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArg
     Console.WriteLine("Font substitution: {0} => {1}", e.OriginalFontName, e.SubstitutedFontName);
 }
 ```
+
+## Slutsats
+
+ den här handledningen har vi diskuterat hur man använder Aspose.PDF för .NET för att upptäcka varningar för teckensnittsersättning när man öppnar ett PDF-dokument. Genom att prenumerera på`FontSubstitution` händelse, kan utvecklare upptäcka teckensnittsersättningssituationer och hantera dem enligt deras applikations behov. Aspose.PDF för .NET tillhandahåller ett enkelt API för att upptäcka och hantera varningar för teckensnittsersättning, vilket hjälper utvecklare att säkerställa den visuella troheten och konsistensen hos PDF-dokument i olika system.
+
+### FAQ's
+
+#### F: Vad är teckensnittsersättning i ett PDF-dokument?
+
+S: Teckensnittsersättning i ett PDF-dokument sker när ett teckensnitt som används i dokumentet inte är tillgängligt eller inbäddat i filen. I sådana fall ersätter tittaren eller skrivaren det saknade teckensnittet med ett liknande som finns tillgängligt i systemet. Teckensnittsersättning kan påverka dokumentets utseende och layout.
+
+#### F: Varför är teckensnittsersättning viktigt att upptäcka?
+
+S: Teckensnittsersättning är viktig att upptäcka eftersom det kan påverka den visuella tillförlitligheten och layouten för PDF-dokumentet. Genom att upptäcka varningar för teckensnittsbyte kan utvecklare identifiera situationer där teckensnitt byts ut och vidta lämpliga åtgärder för att säkerställa att dokumentets visuella utseende är konsekvent i olika system.
+
+#### F: Hur kan jag hantera varningar för teckensnittsersättning?
+
+ S: Du kan hantera varningar för teckensnittsersättning genom att prenumerera på`FontSubstitution` händelse av`Document` klass och tillhandahåller en anpassad metod för att hantera händelsen. I den här anpassade metoden kan du logga varningarna för teckensnittsersättning, meddela användare eller vidta andra åtgärder baserat på din applikations krav.
+
+#### F: Kan jag anpassa hanteringen av varningar för teckensnittsersättning?
+
+ S: Ja, du kan anpassa hanteringen av varningar för teckensnittsersättning genom att tillhandahålla en anpassad metod för att hantera`FontSubstitution`händelse. Med den här anpassade metoden kan du logga varningarna för teckensnittsersättning, meddela användare eller vidta andra lämpliga åtgärder baserat på din applikations krav.

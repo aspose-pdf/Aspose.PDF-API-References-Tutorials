@@ -1,6 +1,6 @@
 ---
-title: Boyutları Al
-linktitle: Boyutları Al
+title: PDF Sayfa Boyutlarını Alın
+linktitle: PDF Sayfa Boyutlarını Alın
 second_title: Aspose.PDF for .NET API Referansı
 description: Bu eğitimde, Aspose.PDF for .NET kullanarak PDF sayfa boyutlarının nasıl alınacağını ve manipülasyonların nasıl gerçekleştirileceğini açıklıyoruz. Süreç boyunca size rehberlik etmek için ayrıntılı adımlar sağlanmıştır.
 type: docs
@@ -30,7 +30,7 @@ Document pdfDocument = new Document(dataDir + "UpdateDimensions.pdf");
 ```
 
 ## 3. Adım: Boş bir sayfa ekleyin (gerekirse)
-PDF belgesinde zaten sayfalar varsa, dizini kullanarak mevcut bir sayfaya atlayabilirsiniz.`1` (ilk sayfanın indeksi 1'dir). Aksi takdirde, belgeye yeni bir sayfa ekleyebilirsiniz.
+ PDF belgesinde zaten sayfalar varsa, dizini kullanarak mevcut bir sayfaya atlayabilirsiniz.`1` (ilk sayfanın indeksi 1'dir). Aksi takdirde, belgeye yeni bir sayfa ekleyebilirsiniz.
 
 ```csharp
 Page page = pdfDocument.Pages.Count > 0? pdfDocument.Pages[1] : pdfDocument.Pages.Add();
@@ -44,7 +44,7 @@ Console.WriteLine(page.GetPageRect(true).Width.ToString() + ":" + page.GetPageRe
 ```
 
 ## 5. Adım: Sayfayı döndürün
- Sayfayı döndürmek isterseniz,`Rotate` mülkiyeti`Page` nesne. Bu örnekte, sayfa 90 derece döndürülmüştür.
+ Sayfayı döndürmek isterseniz,`Rotate` mülkiyeti`Page`nesne. Bu örnekte, sayfa 90 derece döndürülmüştür.
 
 ```csharp
 page. Rotate = Rotate. on90;
@@ -80,3 +80,25 @@ Console.WriteLine(page.GetPageRect(true).Width.ToString() + ":" + page.GetPageRe
 Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF dosyasındaki sayfanın boyutlarını nasıl alacağımızı öğrendik. Sağlanan adımları izleyerek sayfa boyutlarını kolayca çıkarabilir ve diğer PDF işleme işlemlerini gerçekleştirebilirsiniz. Aspose.PDF for .NET, PDF dosyalarıyla çalışmak için büyük esneklik sunar ve güçlü ve özelleştirilmiş çözümler geliştirmenize olanak tanır.
 
 Bu kitaplığın sunduğu tüm özellikleri keşfetmek için Aspose.PDF belgelerini daha fazla keşfetmekten çekinmeyin.
+
+### PDF sayfası boyutlarını almayla ilgili SSS
+
+#### S: Bir PDF dosyasındaki belirli bir sayfanın boyutlarını nasıl alabilirim?
+
+A: Bir PDF dosyasındaki belirli bir sayfanın boyutlarını almak için`GetPageRect()` yöntemi`Page` Aspose.PDF for .NET'te nesne. Bu yöntem bir döndürür`Rectangle` sayfanın boyutlarını (genişlik ve yükseklik) içeren nesne.
+
+####  S: ne yapar`GetPageRect(true)` method do in the provided C# source code?
+
+ C:`GetPageRect(true)` sağlanan C# kaynak kodundaki yöntem, herhangi bir döndürme uygulandıktan sonra sayfanın boyutlarını döndürür. Sayfa döndürülürse, yöntem döndürülen sayfanın orijinal boyutlarından farklı olabilecek boyutlarını döndürür.
+
+#### S: Aspose.PDF for .NET kullanarak PDF belgesindeki tüm sayfaların boyutlarını alabilir miyim?
+
+ C: Evet, PDF belgesindeki tüm sayfaların boyutlarını,`Pages` koleksiyonu`Document` nesne ve kullanarak`GetPageRect(true)` Her sayfa için yöntem.
+
+#### S: Boyutlarına göre bir sayfanın yönünü (dikey veya yatay) nasıl belirleyebilirim?
+
+C: Boyutlarına göre bir sayfanın yönünü belirlemek için sayfanın genişliğini ve yüksekliğini karşılaştırabilirsiniz. Genişlik yükseklikten büyükse sayfa yatay yöndedir ve yükseklik genişlikten büyükse sayfa dikey yöndedir.
+
+#### S: Aspose.PDF for .NET kullanarak bir sayfanın boyutlarını değiştirebilir miyim?
+
+ C: Evet, bir sayfanın boyutlarını Aspose.PDF for .NET'te değiştirebilirsiniz. aldıktan sonra`Rectangle` sayfa boyutlarını temsil eden bir nesne, gereksinimlerinize göre genişlik ve yüksekliği ayarlayabilir ve ardından değişiklikleri sayfaya uygulayabilirsiniz.

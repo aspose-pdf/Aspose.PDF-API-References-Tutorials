@@ -8,7 +8,7 @@ weight: 240
 url: /sv/net/programming-with-text/highlight-character-in-pdf/
 ---
 
-den här handledningen kommer vi att förklara hur man markerar tecken i ett PDF-dokument med hjälp av Aspose.PDF-biblioteket för .NET. Vi kommer att gå igenom steg-för-steg-processen för att markera tecken i en PDF-fil med den medföljande C#-källkoden.
+I den här handledningen kommer vi att förklara hur man markerar tecken i ett PDF-dokument med hjälp av Aspose.PDF-biblioteket för .NET. Vi kommer att gå igenom steg-för-steg-processen för att markera tecken i en PDF-fil med den medföljande C#-källkoden.
 
 ## Krav
 
@@ -19,7 +19,7 @@ Innan du börjar, se till att du har följande:
 
 ## Steg 1: Konfigurera dokumentkatalogen
 
- Först måste du ställa in sökvägen till katalogen där din indata-PDF-fil finns. Byta ut`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till din PDF-fil.
+ Först måste du ställa in sökvägen till katalogen där din indata-PDF-fil finns. Byta ut`"YOUR DOCUMENT DIRECTORY"` i`dataDir`variabel med sökvägen till din PDF-fil.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -74,7 +74,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
          {
              if (i == 0)
              {
-                 //Markera tecken
+                 // Markera tecken
                  gr.DrawRectangle(
                      Think.Yellow,
                      (float)textFragment.Position.XIndent,

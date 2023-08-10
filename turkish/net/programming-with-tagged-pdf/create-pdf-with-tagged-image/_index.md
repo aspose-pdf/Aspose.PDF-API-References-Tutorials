@@ -85,3 +85,45 @@ document.Save(dataDir + "PDFwithTaggedImage.pdf");
 ## Çözüm
 
 Bu öğreticide, Aspose.PDF for .NET kullanarak etiketli bir görüntü ile PDF belgesi oluşturmayı öğrendiniz. Etiketli görüntüler, PDF belgenize ek, yapılandırılmış bilgiler ekler.
+
+### SSS
+
+#### S: Aspose.PDF for .NET kullanarak etiketli bir görüntü ile bir PDF belgesi oluşturmanın amacı nedir?
+
+C: Aspose.PDF for .NET kullanarak etiketli görüntü içeren bir PDF belgesi oluşturmak, belgenin içeriğine etiketli görüntüler eklemenizi sağlar. Etiketli resimler, alternatif metin ve başlıklar gibi yapılandırılmış bilgiler sağlayarak erişilebilirliği ve düzeni geliştirir.
+
+#### S: Aspose.PDF kitaplığı, etiketli bir görüntü ile bir PDF belgesi oluşturmaya nasıl yardımcı olur?
+
+Y: Aspose.PDF for .NET, PDF belgelerini program aracılığıyla oluşturmak, değiştirmek ve dönüştürmek için işlevsellikler sağlayan güçlü bir kitaplıktır. Bu öğreticide, kitaplığın etiketli içerik yapısı özellikleri, PDF belgesine etiketli bir görüntü eklemek için kullanılır.
+
+#### S: Aspose.PDF for .NET kullanarak etiketli görsel içeren bir PDF belgesi oluşturmak için ön koşullar nelerdir?
+
+C: Başlamadan önce, Visual Studio'nun .NET çerçevesiyle kurulu olduğundan ve projenizde Aspose.PDF for .NET kitaplığına referans verildiğinden emin olun.
+
+#### S: Sağlanan C# kodu, etiketli görüntü içeren bir PDF belgesini nasıl oluşturur?
+
+C: Kod, bir PDF belgesinin nasıl oluşturulacağını, etiketli bir görüntü öğesinin nasıl tanımlanacağını ve bunun belgenin içeriğine nasıl ekleneceğini gösterir. Etiketlenen görüntü, Aspose.PDF tarafından sağlanan yöntemleri kullanan alternatif metin, başlık ve etiket içerir.
+
+#### S: Etiketli görsel için farklı görsel formatları kullanabilir miyim?
+
+C: Evet, etiketli görüntü için JPEG, PNG, GIF vb. tercih ettiğiniz biçim.
+
+#### S: Etiketli görsellerde alternatif metin (alt metin) nasıl kullanılır?
+
+ C: Alternatif metin, görselin görme engelli kullanıcılar için ekran okuyucular tarafından yüksek sesle okunan metinsel bir açıklamasını sağlar. Sağlanan kodda, alternatif metin kullanılarak ayarlanır`AlternativeText` mülkiyeti`IllustrationElement` etiketli görseli temsil eder.
+
+####  S: nasıl`SetTitle` method contribute to the PDF document's tagged image?
+
+ C:`SetTitle` yöntemi, PDF belgesinin etiketli içeriğinin başlığını ayarlar ve etiketli görüntü için ek bağlam sağlar. Bu başlık, etiketlenen içeriğin amacını veya konusunu belirlemeye yardımcı olabilir.
+
+#### S: Etiketlenen görüntünün etiketini ve başlığını özelleştirebilir miyim?
+
+ C: Evet, etiketli görüntünün etiketini ve başlığını kullanarak özelleştirebilirsiniz.`SetTag` Ve`Title` yöntemleri`IllustrationElement`. Kod örneği, etiketin "Şek" ve başlığın "Resim 1" olarak nasıl ayarlanacağını gösterir.
+
+#### S: Etiketlenen görüntünün erişilebilir ve erişilebilirlik standartlarına uygun olduğundan nasıl emin olabilirim?
+
+C: Aspose.PDF'nin etiketli içerik yapısı özelliklerini kullanarak ve alternatif metin ve diğer ilgili bilgileri sağlayarak, etiketli görselin erişilebilirliğine katkıda bulunuyorsunuz. Erişilebilirlik standartlarına uygunluğun sağlanması, alternatif metin ve belge yapısı için en iyi uygulamaların izlenmesini içerir.
+
+#### S: Benzer teknikler kullanılarak aynı PDF belgesine birden çok etiketli görüntü eklemek mümkün müdür?
+
+ C: Evet, benzer teknikleri kullanarak aynı PDF belgesine birden çok etiketli görüntü ekleyebilirsiniz. Ek oluşturursunuz`IllustrationElement` her etiketli görüntü için örnekler ve bunların özelliklerini gerektiği gibi özelleştirin.

@@ -109,7 +109,7 @@ foreach (TextFragment textFragment in textFragmentCollection)
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Dokument öffnen
 Document pdfDocument = new Document(dataDir + "SearchTextSegmentsPage.pdf");
-// Erstellen Sie ein TextAbsorber-Objekt, um alle Instanzen der eingegebenen Suchphrase zu finden
+//Erstellen Sie ein TextAbsorber-Objekt, um alle Instanzen der eingegebenen Suchphrase zu finden
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
 // Akzeptieren Sie den Absorber für alle Seiten
 pdfDocument.Pages[2].Accept(textFragmentAbsorber);

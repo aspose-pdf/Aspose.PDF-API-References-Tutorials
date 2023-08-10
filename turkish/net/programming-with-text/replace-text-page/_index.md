@@ -63,7 +63,7 @@ pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 
 ## 6. Adım: Ayıklanan metin parçalarını alın
 
- Ayıklanan metin parçalarını kullanarak alın`TextFragments` mülkiyeti`TextFragmentAbsorber` nesne:
+Ayıklanan metin parçalarını kullanarak alın`TextFragments` mülkiyeti`TextFragmentAbsorber` nesne:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -84,7 +84,7 @@ foreach (TextFragment textFragment in textFragmentCollection)
 }
 ```
 
- Yukarıdaki kod parçacığında değiştirin`"New Phrase"`kullanmak istediğiniz değiştirme metniyle birlikte. Yazı tipi, yazı tipi boyutu, ön plan rengi ve arka plan rengi gibi diğer özellikleri de özelleştirebilirsiniz.
+ Yukarıdaki kod parçacığında değiştirin`"New Phrase"` kullanmak istediğiniz değiştirme metniyle birlikte. Yazı tipi, yazı tipi boyutu, ön plan rengi ve arka plan rengi gibi diğer özellikleri de özelleştirebilirsiniz.
 
 ## 8. Adım: Değiştirilen PDF'yi kaydedin
 
@@ -102,9 +102,9 @@ pdfDocument.Save(dataDir + "ReplaceTextPage_out.pdf");
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Belgeyi aç
 Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
-// Giriş arama ifadesinin tüm örneklerini bulmak için TextAbsorber nesnesi oluşturun
+//Giriş arama ifadesinin tüm örneklerini bulmak için TextAbsorber nesnesi oluşturun
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
-// Belirli bir sayfa için emiciyi kabul edin
+//Belirli bir sayfa için emiciyi kabul edin
 pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 // Ayıklanan metin parçalarını alın
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;

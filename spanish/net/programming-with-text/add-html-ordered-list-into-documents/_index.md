@@ -21,7 +21,7 @@ Antes de comenzar, asegúrese de tener lo siguiente:
 2. Agregue una referencia a la biblioteca Aspose.PDF para .NET.
 
 ## Paso 2: importa los espacios de nombres requeridos
-En el archivo de código donde desea agregar la lista ordenada de HTML, agregue las siguientes directivas de uso en la parte superior del archivo:
+En el archivo de código donde desea agregar la lista ordenada de HTML, agregue las siguientes directivas using en la parte superior del archivo:
 
 ```csharp
 using Aspose.Pdf;
@@ -41,7 +41,7 @@ Document doc = new Document();
 ```
 
 ## Paso 5: Cree un objeto HtmlFragment con el contenido HTML
- Instanciar un`HtmlFragment` objeto con el contenido HTML que desea agregar al documento. En el código proporcionado, el contenido HTML se asigna a la variable`t`. Puede modificar el contenido HTML según sea necesario.
+Instanciar un`HtmlFragment` objeto con el contenido HTML que desea agregar al documento. En el código proporcionado, el contenido HTML se asigna a la variable`t`. Puede modificar el contenido HTML según sea necesario.
 
 ```csharp
 HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>First</li><li>Second</li><li>Third</li><li >Fourth</li><li>Fifth</li></ul>Text after the list.<br/>Next line<br/>Last line</body>`");
@@ -62,7 +62,7 @@ page.Paragraphs.Add(t);
 ```
 
 ## Paso 8: Guarde el documento PDF
- Guarde el archivo PDF resultante usando el`Save` metodo de la`Document` objeto. Especifique la ruta del archivo de salida que configuró en el Paso 3.
+ Guarde el archivo PDF resultante usando el`Save` metodo de la`Document` objeto. Especifique la ruta del archivo de salida que configuró en el paso 3.
 
 ```csharp
 doc.Save(outFile);

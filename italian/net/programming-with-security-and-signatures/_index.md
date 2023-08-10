@@ -13,15 +13,15 @@ Il tutorial offre una panoramica dettagliata dei metodi e delle tecniche per gar
 ## Tutorial
 | Titolo | Descrizione |
 | --- | --- | 
-| [Cambiare la password](./change-password/) | Ulteriori informazioni su come modificare la password di un documento PDF utilizzando Aspose.PDF per .NET. |  
-| [Decrittare](./decrypt/) | Scopri come decrittografare i file PDF utilizzando Aspose.PDF per .NET. |  
-| [Determina la password corretta](./determine-correct-password/) | Scopri come determinare la password corretta per un file PDF con Aspose.PDF per .NET. |  
-| [Firma digitale](./digitally-sign/) | Scopri come firmare digitalmente un file PDF con Aspose.PDF per .NET. |  
-| [Firma digitale con timestamp](./digitally-sign-with-time-stamp/) | Scopri come eseguire una firma digitale con timestamp su un file PDF utilizzando Aspose.PDF per .NET. |  
-| [Crittografare](./encrypt/) | Crittografa in modo sicuro i tuoi file PDF con Aspose.PDF per .NET. |  
+| [Cambia password nel file PDF](./change-password/) | Ulteriori informazioni su come modificare la password nel file PDF utilizzando Aspose.PDF per .NET. |  
+| [Decrittografare il file PDF](./decrypt/) | Ulteriori informazioni su come decrittografare file PDF utilizzando Aspose.PDF per .NET. |  
+| [Determina la password corretta nel file PDF](./determine-correct-password/) | Scopri come determinare la password corretta nel file PDF con Aspose.PDF per .NET. |  
+| [Accedi digitalmente al file PDF](./digitally-sign/) | Scopri come accedere digitalmente al file PDF con Aspose.PDF per .NET. |  
+| [Firma digitalmente con timestamp nel file PDF](./digitally-sign-with-time-stamp/) | Scopri come eseguire una firma digitale con timestamp nel file PDF utilizzando Aspose.PDF per .NET. |  
+| [Crittografa il file PDF](./encrypt/) | Crittografa in modo sicuro i tuoi file PDF con Aspose.PDF per .NET. |  
 | [Estrazione immagine](./extracting-image/) | Estrai facilmente immagini da documenti PDF con Aspose.PDF per .NET. |  
 | [Estrai le informazioni sulla firma](./extract-signature-info/) | Estrazione delle informazioni sulla firma utilizzando Aspose.PDF per .NET. |  
 | [È protetto da password](./is-password-protected/) | Controlla facilmente se un documento PDF è protetto da password con Aspose.PDF per .NET. |  
-| [Imposta privilegi](./set-privileges/) | Imposta facilmente i privilegi di accesso per i tuoi file PDF con Aspose.PDF per .NET. |  
+| [Imposta i privilegi nel file PDF](./set-privileges/) | Imposta facilmente i privilegi di accesso nel file PDF con Aspose.PDF per .NET. |  
 | [Firma con Smart Card utilizzando la firma del file Pdf](./sign-with-smart-card-using-pdf-file-signature/) | Firma i tuoi file PDF in modo sicuro con una smart card utilizzando Aspose.PDF per .NET. |  
 | [Firma con smart card utilizzando il campo firma](./sign-with-smart-card-using-signature-field/) | Firma i tuoi file PDF in modo sicuro con una smart card utilizzando Aspose.PDF per .NET. |  

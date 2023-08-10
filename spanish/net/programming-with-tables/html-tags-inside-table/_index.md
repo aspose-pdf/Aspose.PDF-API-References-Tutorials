@@ -1,13 +1,12 @@
 ---
-title: Etiquetas HTML dentro de la tabla
-linktitle: Etiquetas HTML dentro de la tabla
+title: Etiquetas HTML dentro de la tabla en archivo PDF
+linktitle: Etiquetas HTML dentro de la tabla en archivo PDF
 second_title: Referencia de API de Aspose.PDF para .NET
-description: Aprenda a usar etiquetas HTML dentro de una tabla en un documento PDF con Aspose.PDF para .NET.
+description: Aprenda a usar etiquetas HTML dentro de una tabla en un archivo PDF con Aspose.PDF para .NET.
 type: docs
 weight: 100
 url: /es/net/programming-with-tables/html-tags-inside-table/
 ---
-
 En este tutorial, aprenderemos a usar etiquetas HTML dentro de una tabla en un documento PDF usando Aspose.PDF para .NET. Explicaremos el código fuente en C# paso a paso. Al final de este tutorial, sabrá cómo insertar contenido HTML en una tabla en un documento PDF. ¡Empecemos!
 
 ## Paso 1: Configuración del entorno
@@ -113,3 +112,25 @@ doc.Save(dataDir + "HTMLInsideTableCell_out.pdf");
 
 ## Conclusión
 En este tutorial, aprendimos a usar etiquetas HTML dentro de una tabla en un documento PDF usando Aspose.PDF para .NET. Puede usar esta guía paso a paso para insertar contenido HTML en las celdas de una tabla en un documento PDF usando C#.
+
+### Preguntas frecuentes sobre etiquetas HTML dentro de la tabla en un archivo PDF
+
+#### P: ¿Puedo usar otras etiquetas y atributos HTML dentro de las celdas de la tabla?
+
+ R: Sí, puede usar varias etiquetas y atributos HTML dentro de las celdas de la tabla, como`<b>`, `<i>`, `<a>`y muchos más. Aspose.PDF para .NET es compatible con una amplia variedad de elementos y estilos HTML que puede usar para formatear el contenido dentro de las celdas de la tabla.
+
+#### P: ¿Puedo aplicar estilos CSS al contenido HTML dentro de las celdas de la tabla?
+
+R: Sí, puede aplicar estilos CSS al contenido HTML dentro de las celdas de la tabla. Aspose.PDF para .NET brinda soporte para estilos CSS básicos que se pueden aplicar a los elementos HTML.
+
+#### P: ¿Es posible agregar imágenes junto con contenido HTML dentro de las celdas de la tabla?
+
+ R: Sí, puede agregar imágenes junto con contenido HTML dentro de las celdas de la tabla. Puedes usar HTML`<img>` etiquetas para incluir imágenes de varias fuentes, como archivos locales o URL.
+
+#### P: ¿Cómo puedo especificar diferentes anchos de columna para la tabla?
+
+ R: Puede especificar diferentes anchos de columna para la tabla usando el`ColumnWidths` propiedad de la tabla. La propiedad toma una cadena que contiene valores separados por espacios, donde cada valor representa el ancho de una columna en puntos.
+
+#### P: ¿Puedo usar tablas anidadas dentro de una celda con contenido HTML?
+
+R: Sí, puede usar tablas anidadas dentro de una celda con contenido HTML. Puede crear instancias de tablas separadas y agregarlas como parte del contenido HTML dentro de una celda para lograr el efecto de anidamiento.

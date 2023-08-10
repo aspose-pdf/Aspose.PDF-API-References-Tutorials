@@ -7,7 +7,6 @@ type: docs
 weight: 220
 url: /es/net/programming-with-forms/radio-button/
 ---
-
 En este tutorial, le mostraremos cómo agregar un botón de opción en un documento PDF usando Aspose.PDF para .NET. Explicaremos el código fuente de C# paso a paso para guiarlo a través de este proceso.
 
 ## Paso 1: Preparación
@@ -42,7 +41,7 @@ Cree una instancia de un objeto RadioButtonField especificando el número de pá
 RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
 ```
 
-## Paso 5: Agregar opciones de botón de radio
+## Paso 5: Agregar opciones de botón de opción
 
 Agregue opciones de botón de opción al objeto RadioButtonField especificando las coordenadas de cada opción con un objeto Rectangle:
 
@@ -87,7 +86,7 @@ try
 	// Agregar botón de opción para formar objeto de objeto Documento
 	pdfDocument.Form.Add(radio);
 	dataDir = dataDir + "RadioButton_out.pdf";
-	// Guarde el archivo PDF
+	//Guarde el archivo PDF
 	pdfDocument.Save(dataDir);
 	Console.WriteLine("\nRadio button field added successfully.\nFile saved at " + dataDir);
 }
@@ -100,3 +99,26 @@ catch (Exception ex)
 ## Conclusión
 
 En este tutorial, aprendimos cómo agregar un botón de opción en un documento PDF usando Aspose.PDF para .NET. Siguiendo estos pasos, puede crear fácilmente un botón de opción y colocarlo en una página específica de su documento PDF.
+
+
+### Preguntas frecuentes
+
+#### P: ¿Puedo personalizar la apariencia del botón de radio, como su tamaño y color?
+
+ R: Sí, puede personalizar la apariencia del botón de radio usando el`Rectangle` coordenadas del objeto para definir su tamaño y posición. Aspose.PDF para .NET le permite ajustar la apariencia del botón de opción para satisfacer sus necesidades.
+
+#### P: ¿Puedo agregar varios botones de radio con diferentes grupos en la misma página?
+
+R: Sí, puede agregar varios botones de radio con diferentes grupos en la misma página. Cada grupo de botones de radio puede tener un nombre único y solo se puede seleccionar una opción dentro de cada grupo a la vez.
+
+#### P: ¿Cómo puedo agregar una etiqueta o una descripción de texto a las opciones del botón de opción?
+
+ R: Para agregar una etiqueta o una descripción de texto a las opciones del botón de opción, puede usar el`TextStamp`class de Aspose.PDF para .NET para superponer texto en el documento PDF en coordenadas específicas.
+
+#### P: ¿Es Aspose.PDF para .NET compatible con todas las versiones de .NET Framework?
+
+R: Sí, Aspose.PDF para .NET es compatible con todas las versiones de .NET Framework, incluidos .NET Core y .NET Standard.
+
+#### P: ¿Puedo controlar mediante programación la selección de una opción de botón de radio en el documento PDF?
+
+ R: Sí, puede controlar mediante programación la selección de una opción de botón de radio usando el`IsSelected` propiedad de la`RadioButtonOption` clase. Esta propiedad le permite establecer una opción específica como seleccionada.

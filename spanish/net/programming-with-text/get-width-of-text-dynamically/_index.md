@@ -24,7 +24,7 @@ Antes de comenzar, asegúrese de tener lo siguiente:
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- Reemplazar`"YOUR DOCUMENT DIRECTORY"` con la ruta al directorio donde se encuentran sus documentos. Esto se usará para almacenar cualquier archivo PDF generado.
+ Reemplazar`"YOUR DOCUMENT DIRECTORY"`con la ruta al directorio donde se encuentran sus documentos. Esto se usará para almacenar cualquier archivo PDF generado.
 
 ## Paso 2: encuentra la fuente
 

@@ -1,8 +1,8 @@
 ---
-title: Définir les informations sur le fichier
-linktitle: Définir les informations sur le fichier
+title: Définir les informations de fichier dans le fichier PDF
+linktitle: Définir les informations de fichier dans le fichier PDF
 second_title: Référence de l'API Aspose.PDF pour .NET
-description: Apprenez à utiliser Aspose.PDF pour .NET pour définir les informations de fichier dans vos documents PDF avec ce guide étape par étape.
+description: Apprenez à utiliser Aspose.PDF pour .NET pour définir les informations de fichier dans un fichier PDF avec ce guide étape par étape.
 type: docs
 weight: 310
 url: /fr/net/programming-with-document/setfileinfo/
@@ -90,3 +90,17 @@ Console.WriteLine("\nFile informations setup successfully.\nFile saved at " + da
 ## Conclusion
 
 En conclusion, Aspose.PDF pour .NET fournit un moyen simple et efficace de définir les informations de fichier pour les documents PDF. En suivant les étapes mentionnées ci-dessus, vous pouvez facilement définir les valeurs d'informations de fichier souhaitées pour vos documents PDF à l'aide du code source C#.
+
+### FAQ pour définir les informations de fichier dans le fichier PDF
+
+#### Q : Puis-je définir des propriétés d'informations de fichier supplémentaires non mentionnées dans l'exemple ?
+
+ R : Oui, vous pouvez définir des propriétés d'informations supplémentaires sur les fichiers à l'aide de`DocumentInfo` objet dans Aspose.PDF pour .NET. Le`DocumentInfo`La classe fournit diverses propriétés qui vous permettent de définir des informations supplémentaires telles que le producteur, la version et les propriétés personnalisées.
+
+#### Q : Est-il possible de récupérer les informations du fichier à partir d'un document PDF existant ?
+
+ R : Oui, vous pouvez récupérer les informations de fichier à partir d'un document PDF existant à l'aide d'Aspose.PDF pour .NET. Pour ce faire, vous pouvez utiliser le`DocumentInfo` objet pour accéder aux propriétés des informations du fichier et lire les informations stockées dans le document PDF.
+
+#### Q : La définition des informations sur le fichier modifie-t-elle le document PDF d'origine ?
+
+R : Non, la définition des informations de fichier à l'aide d'Aspose.PDF pour .NET ne modifie pas le document PDF d'origine. Au lieu de cela, il crée un nouveau document PDF avec les informations de fichier mises à jour. Le document PDF d'origine reste inchangé.

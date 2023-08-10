@@ -1,13 +1,12 @@
 ---
-title: Tablo İçi HTML Etiketleri
-linktitle: Tablo İçi HTML Etiketleri
+title: PDF Dosyasında Tablo İçi HTML Etiketleri
+linktitle: PDF Dosyasında Tablo İçi HTML Etiketleri
 second_title: Aspose.PDF for .NET API Referansı
-description: Aspose.PDF for .NET ile bir PDF belgesindeki bir tablonun içindeki HTML etiketlerini nasıl kullanacağınızı öğrenin.
+description: Aspose.PDF for .NET ile PDF dosyasındaki bir tablonun içindeki HTML etiketlerini nasıl kullanacağınızı öğrenin.
 type: docs
 weight: 100
 url: /tr/net/programming-with-tables/html-tags-inside-table/
 ---
-
 Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF belgesindeki tablo içindeki HTML etiketlerini nasıl kullanacağımızı öğreneceğiz. C#'ta kaynak kodunu adım adım anlatacağız. Bu eğitimin sonunda, HTML içeriğini bir PDF belgesindeki bir tabloya nasıl ekleyeceğinizi öğreneceksiniz. Hadi başlayalım!
 
 ## 1. Adım: Ortamı ayarlama
@@ -113,3 +112,25 @@ doc.Save(dataDir + "HTMLInsideTableCell_out.pdf");
 
 ## Çözüm
 Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF belgesindeki tablo içinde HTML etiketlerinin nasıl kullanılacağını öğrendik. C# kullanarak bir PDF belgesindeki tablo hücrelerine HTML içeriği eklemek için bu adım adım kılavuzu kullanabilirsiniz.
+
+### PDF dosyasındaki tablo içindeki HTML etiketleri hakkında SSS
+
+#### S: Tablo hücrelerinin içinde diğer HTML etiketlerini ve niteliklerini kullanabilir miyim?
+
+ C: Evet, tablo hücrelerinin içinde çeşitli HTML etiketlerini ve niteliklerini kullanabilirsiniz, örneğin`<b>`, `<i>`, `<a>`ve daha fazlası. Aspose.PDF for .NET, tablo hücreleri içindeki içeriği biçimlendirmek için kullanabileceğiniz çok çeşitli HTML öğelerini ve stillerini destekler.
+
+#### S: Tablo hücrelerinin içindeki HTML içeriğine CSS stilleri uygulayabilir miyim?
+
+C: Evet, tablo hücrelerinin içindeki HTML içeriğine CSS stilleri uygulayabilirsiniz. Aspose.PDF for .NET, HTML öğelerine uygulanabilen temel CSS stilleri için destek sağlar.
+
+#### S: Tablo hücrelerinin içine HTML içeriğiyle birlikte resimler eklemek mümkün müdür?
+
+ C: Evet, tablo hücrelerinin içine HTML içeriğiyle birlikte resimler ekleyebilirsiniz. HTML'yi kullanabilirsiniz`<img>` yerel dosyalar veya URL'ler gibi çeşitli kaynaklardan görüntüleri dahil etmek için etiketler.
+
+#### S: Tablo için farklı sütun genişliklerini nasıl belirleyebilirim?
+
+ A: kullanarak tablo için farklı sütun genişlikleri belirleyebilirsiniz.`ColumnWidths` tablonun özelliği. Özellik, boşlukla ayrılmış değerler içeren bir dize alır; burada her değer, nokta cinsinden bir sütunun genişliğini temsil eder.
+
+#### S: İç içe geçmiş tabloları HTML içeriği olan bir hücrede kullanabilir miyim?
+
+A: Evet, iç içe geçmiş tabloları HTML içeriği olan bir hücrede kullanabilirsiniz. İç içe geçme efekti elde etmek için ayrı tablo örnekleri oluşturabilir ve bunları bir hücrenin içindeki HTML içeriğinin bir parçası olarak ekleyebilirsiniz.

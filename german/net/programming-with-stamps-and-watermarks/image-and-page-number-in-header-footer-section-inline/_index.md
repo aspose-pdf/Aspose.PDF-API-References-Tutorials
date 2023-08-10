@@ -51,7 +51,7 @@ Aspose.Pdf.Text.TextFragment txt1 = new Aspose.Pdf.Text.TextFragment("Aspose.Pdf
 txt1.TextState.ForegroundColor = Color.Blue;
 txt1.IsInLineParagraph = true;
 
-//Erstellen Sie ein Image-Objekt für das Bild
+// Erstellen Sie ein Image-Objekt für das Bild
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 
 // Bildpfad festlegen
@@ -116,7 +116,7 @@ txt1.IsInLineParagraph = true;
 // Erstellen Sie im Abschnitt ein Bildobjekt
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 
-// Legen Sie den Pfad der Bilddatei fest
+//Legen Sie den Pfad der Bilddatei fest
 image1.File = dataDir + "aspose-logo.jpg";
 
 // Legen Sie die Informationen zur Bildbreite fest
@@ -140,3 +140,45 @@ pdf1.Save(dataDir + "ImageAndPageNumberInHeaderFooter_UsingInlineParagraph_out.p
 ## Abschluss
 
 Herzlichen Glückwunsch! Sie haben gelernt, wie Sie mit Aspose.PDF für .NET mithilfe von Inline-Absätzen ein Bild und eine Seitenzahl in den Kopf- und Fußzeilenbereich eines PDF-Dokuments einfügen. Sie können die Kopf- und Fußzeile Ihrer PDF-Dokumente jetzt flexibel anpassen.
+
+### FAQs
+
+#### F: Welchen Vorteil bietet die Verwendung von Inline-Absätzen zum Hinzufügen eines Bildes und Textes zur Kopfzeile eines PDF-Dokuments?
+
+A: Mithilfe von Inline-Absätzen können Sie Bilder und Text nahtlos in denselben Absatz integrieren und so deren Platzierung und Formatierung präzise steuern. Diese Methode eignet sich besonders zum Erstellen benutzerdefinierter Header mit visuellen Elementen.
+
+#### F: Wie erreicht der bereitgestellte C#-Quellcode Inline-Absätze für die Kopfzeile in einem PDF-Dokument?
+
+A: Der bereitgestellte Code zeigt, wie Sie ein PDF-Dokument erstellen, eine Seite hinzufügen und die Kopfzeile mithilfe von Inline-Absätzen anpassen. Es fügt ein TextFragment mit Inline-Text, ein Inline-Bild und ein weiteres Inline-TextFragment hinzu.
+
+#### F: Wie lege ich die Farbe des Inline-Textes in der Kopfzeile fest?
+
+ A: Die Farbe des Inline-Textes wird mit angegeben`ForegroundColor` Eigentum der`TextState` des`TextFragment` Objekt.
+
+#### F: Kann ich die Abmessungen des Inline-Bildes in der Kopfzeile anpassen?
+
+ A: Ja, Sie können die Abmessungen des Inline-Bildes mithilfe von anpassen`FixWidth` Und`FixHeight` Eigenschaften der`Image` Objekt. Dadurch können Sie die Breite und Höhe des Bildes innerhalb der Kopfzeile steuern.
+
+#### F: Kann ich zusätzliche Inline-Elemente wie Hyperlinks oder verschiedene Schriftarten in die Kopfzeile einfügen?
+
+ A: Ja, Sie können zusätzliche Inline-Elemente in den Header einfügen, indem Sie weitere erstellen`TextFragment` oder`Image` Objekte mit den gewünschten Eigenschaften. Dadurch können Sie die Kopfzeile weiter anpassen, einschließlich Hyperlinks, verschiedenen Schriftarten oder anderen visuellen Elementen.
+
+#### F: Wie kann ich sicherstellen, dass das Inline-Bild und der Text auf verschiedenen Geräten und Viewern richtig ausgerichtet und formatiert bleiben?
+
+A: Aspose.PDF für .NET stellt sicher, dass Inline-Bilder und -Text richtig ausgerichtet und formatiert sind, was zu einem einheitlichen Erscheinungsbild auf verschiedenen Geräten und PDF-Viewern führt.
+
+#### F: Kann ich Inline-Absätze auch auf den Fußzeilenbereich anwenden?
+
+ A: Ja, Sie können die gleiche Technik der Verwendung von Inline-Absätzen auf den Fußzeilenabschnitt anwenden, indem Sie einen erstellen`Footer` Objekt und fügen Inline-Elemente wie Text und Bilder hinzu.
+
+#### F: Ist es möglich, Inline-Absätze mit anderen Methoden zur Anpassung von Kopf- oder Fußzeilen zu kombinieren?
+
+A: Ja, Sie können Inline-Absätze mit anderen von Aspose.PDF für .NET bereitgestellten Anpassungsmethoden für Kopf- oder Fußzeilen kombinieren, um komplexere und maßgeschneiderte Kopf- oder Fußzeilendesigns zu erstellen.
+
+#### F: Kann ich bei Bedarf die Inline-Elemente aus der Kopfzeile entfernen oder löschen?
+
+ A: Ja, Sie können die Inline-Elemente entfernen oder löschen, indem Sie den Inhalt ändern`HeaderFooter` Objekt und Entfernen der entsprechenden Inline-Absätze.
+
+#### F: Wie kann ich Inline-Absätze auf bestimmte Seiten des PDF-Dokuments anwenden?
+
+ A: Um Inline-Absätze auf bestimmte Seiten anzuwenden, können Sie separate Absätze erstellen`HeaderFooter` Objekte für jede Seite und weisen Sie sie mithilfe der zu`Header` Eigentum des jeweiligen`Aspose.Pdf.Page` Objekte.

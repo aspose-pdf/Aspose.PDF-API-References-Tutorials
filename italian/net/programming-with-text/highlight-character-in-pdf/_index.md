@@ -19,7 +19,7 @@ Prima di iniziare, assicurati di disporre di quanto segue:
 
 ## Passaggio 1: impostare la directory dei documenti
 
- Innanzitutto, è necessario impostare il percorso della directory in cui si trova il file PDF di input. Sostituire`"YOUR DOCUMENT DIRECTORY"` nel`dataDir` variabile con il percorso del file PDF.
+ Innanzitutto, è necessario impostare il percorso della directory in cui si trova il file PDF di input. Sostituire`"YOUR DOCUMENT DIRECTORY"` nel`dataDir`variabile con il percorso del file PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -74,7 +74,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
          {
              if (i == 0)
              {
-                 //Evidenziare i caratteri
+                 // Evidenziare i caratteri
                  gr.DrawRectangle(
                      Think.Yellow,
                      (float)textFragment.Position.XIndent,

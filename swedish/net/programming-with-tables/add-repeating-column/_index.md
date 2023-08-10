@@ -1,14 +1,13 @@
 ---
-title: Lägg till upprepande kolumn
-linktitle: Lägg till upprepande kolumn
+title: Lägg till upprepande kolumn i PDF-dokument
+linktitle: Lägg till upprepande kolumn i PDF-dokument
 second_title: Aspose.PDF för .NET API Referens
-description: Lär dig hur du lägger till en upprepad kolumn i ett PDF-dokument med Aspose.PDF för .NET.
+description: Lär dig hur du lägger till en upprepad kolumn i PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 20
 url: /sv/net/programming-with-tables/add-repeating-column/
 ---
-
-I den här handledningen ska vi lära oss hur man lägger till en upprepad kolumn i ett PDF-dokument med Aspose.PDF för .NET. Vi kommer att förklara källkoden i C# steg för steg. I slutet av denna handledning vet du hur du skapar en tabell med en upprepad kolumn i ett PDF-dokument. Låt oss börja!
+I den här handledningen ska vi lära oss hur man lägger till en upprepad kolumn i PDF-dokument med Aspose.PDF för .NET. Vi kommer att förklara källkoden i C# steg för steg. I slutet av denna handledning vet du hur du skapar en tabell med en upprepad kolumn i ett PDF-dokument. Låt oss börja!
 
 ## Steg 1: Sätta upp miljön
 Se först till att du har ställt in din C#-utvecklingsmiljö med Aspose.PDF för .NET. Lägg till referensen till biblioteket och importera de nödvändiga namnrymden.
@@ -70,7 +69,7 @@ for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
      row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
      row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
      // ...
-     //Lägg till de andra kolumnerna här
+     // Lägg till de andra kolumnerna här
 }
 ```
 
@@ -102,7 +101,7 @@ Aspose.Pdf.Table outerTable = new Aspose.Pdf.Table();
 outerTable.ColumnWidths = "100%";
 outerTable.HorizontalAlignment = HorizontalAlignment.Left;
 
-// Instantiera ett tabellobjekt som kommer att kapslas inuti outerTable som kommer att bryta inuti samma sida
+//Instantiera ett tabellobjekt som kommer att kapslas inuti outerTable som kommer att bryta inuti samma sida
 Aspose.Pdf.Table mytable = new Aspose.Pdf.Table();
 mytable.Broken = TableBroken.VerticalInSamePage;
 mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;
@@ -158,3 +157,25 @@ doc.Save(outFile);
 
 ## Slutsats
 I den här handledningen lärde vi oss hur man lägger till en upprepad kolumn i ett PDF-dokument med Aspose.PDF för .NET. Du kan använda den här steg-för-steg-guiden för att skapa tabeller med upprepade kolumner i dina egna C#-projekt.
+
+### Vanliga frågor för att lägga till upprepad kolumn i PDF-dokument
+
+#### F: Kan jag anpassa antalet upprepade kolumner i den kapslade tabellen?
+
+ S: Ja, du kan anpassa antalet upprepade kolumner i den kapslade tabellen. I det angivna exemplet sätter vi`mytable.RepeatingColumnsCount = 5;`, vilket innebär att det kommer att finnas 5 upprepade kolumner. Du kan ändra detta värde till valfritt antal.
+
+#### F: Är det möjligt att lägga till fler rader till den kapslade tabellen dynamiskt?
+
+S: Ja, du kan dynamiskt lägga till fler rader i den kapslade tabellen på samma sätt som visas i handledningen. Du kan använda loopar eller någon annan logik för att lägga till rader baserat på dina data.
+
+#### F: Kan jag använda stilar och formatering på tabellen och dess celler?
+
+S: Ja, du kan använda stilar och formatering på tabellen och dess celler med Aspose.PDF för .NET. Biblioteket tillhandahåller olika egenskaper och metoder för att anpassa utseendet på tabellen och dess innehåll.
+
+#### F: Är Aspose.PDF för .NET kompatibelt med .NET Core?
+
+S: Ja, Aspose.PDF för .NET är kompatibelt med .NET Core. Du kan använda den i både .NET Framework och .NET Core-applikationer.
+
+#### F: Kan jag använda den här metoden för att lägga till upprepade kolumner i ett befintligt PDF-dokument?
+
+S: Ja, du kan använda den här metoden för att lägga till upprepade kolumner i ett befintligt PDF-dokument. Ladda helt enkelt det befintliga dokumentet med Aspose.PDF för .NET och följ samma steg för att skapa och lägga till den upprepande kolumnen.

@@ -6,7 +6,7 @@ weight: 25
 url: /it/net/programming-with-text/
 description: Dai un'occhiata a Aspose.PDF per le esercitazioni di programmazione con testo di .NET, che ti guidano attraverso la manipolazione avanzata del testo nei tuoi documenti PDF.
 ---
-I tutorial "Programmazione con testo" di Aspose.PDF per .NET offrono una gamma completa di istruzioni per lavorare con il testo nei documenti PDF. Imparerai come aggiungere testo, formattarlo con caratteri e stili, modificare il contenuto esistente ed estrarre informazioni testuali. I tutorial trattano anche argomenti avanzati come la gestione degli allineamenti, le tabelle di testo e la ricerca di parole chiave. Queste risorse dettagliate ti aiuteranno a padroneggiare tutti gli aspetti della manipolazione del testo con Aspose.PDF per .NET.
+tutorial "Programmazione con testo" di Aspose.PDF per .NET offrono una gamma completa di istruzioni per lavorare con il testo nei documenti PDF. Imparerai come aggiungere testo, formattarlo con caratteri e stili, modificare il contenuto esistente ed estrarre informazioni testuali. I tutorial trattano anche argomenti avanzati come la gestione degli allineamenti, le tabelle di testo e la ricerca di parole chiave. Queste risorse dettagliate ti aiuteranno a padroneggiare tutti gli aspetti della manipolazione del testo con Aspose.PDF per .NET.
 
 ## Tutorial
 | Titolo | Descrizione |

@@ -7,7 +7,6 @@ type: docs
 weight: 150
 url: /fr/net/document-conversion/pdf-to-pdfa3b/
 ---
-
 Dans ce didacticiel, nous vous guiderons tout au long du processus de conversion d'un fichier PDF au format PDF/A-3b à l'aide d'Aspose.PDF pour .NET. PDF/A-3b est une norme ISO pour l'intégration de fichiers et de données dans un document PDF. En suivant les étapes ci-dessous, vous pourrez convertir des fichiers PDF au format PDF/A-3b.
 
 ## Conditions préalables
@@ -71,3 +70,21 @@ Console.WriteLine("\nPDF file converted to PDF/A-3B format.\nFile saved at " + d
 
 ## Conclusion
 Dans ce didacticiel, nous avons couvert le processus étape par étape de conversion d'un fichier PDF au format PDF/A-3b à l'aide d'Aspose.PDF pour .NET. En suivant les instructions décrites ci-dessus, vous devriez maintenant être en mesure de convertir des fichiers PDF au format PDF/A-3b. Cette fonctionnalité est utile lorsque vous souhaitez incorporer des fichiers et des données supplémentaires dans un document PDF conforme à la norme PDF/A-3b.
+
+### FAQ
+
+#### Q : Qu'est-ce que PDF/A-3b et en quoi diffère-t-il des autres normes PDF/A ?
+
+R : PDF/A-3b est une norme ISO qui permet d'intégrer des fichiers et des données dans un document PDF, ce qui le rend autonome et garantit sa conservation à long terme. Contrairement à d'autres normes PDF/A, telles que PDF/A-1 et PDF/A-2, PDF/A-3b permet l'inclusion de fichiers et de données supplémentaires dans le document PDF. Cette fonctionnalité le rend adapté à l'archivage et à l'échange de documents complexes et interactifs.
+
+#### Q : Puis-je inclure plusieurs fichiers et données dans un document PDF/A-3b ?
+
+: Oui, l'un des principaux avantages de PDF/A-3b est sa capacité à inclure plusieurs fichiers et données dans le document PDF. Vous pouvez intégrer différents types de fichiers, tels que XML, des feuilles de calcul, des images ou d'autres fichiers PDF, ainsi que le contenu PDF principal. En conséquence, le document PDF/A-3b devient un package autonome contenant tous les éléments nécessaires.
+
+#### Q : Que se passe-t-il s'il y a des erreurs lors du processus de conversion PDF vers PDF/A-3b ?
+
+ R : Lors de la conversion d'un PDF au format PDF/A-3b à l'aide d'Aspose.PDF pour .NET, vous contrôlez la manière dont les erreurs sont gérées. Le`Convert` la méthode`ConvertErrorAction` Le paramètre détermine l'action à entreprendre en cas d'erreur. Dans l'exemple de code fourni, le`ConvertErrorAction.Delete` est utilisé, ce qui signifie que toute erreur rencontrée lors de la conversion entraînera la suppression des pages contenant des erreurs.
+
+#### Q : Le format PDF/A-3b convient-il à la conservation de documents à long terme ?
+
+: Oui, PDF/A-3b est conçu spécifiquement pour la conservation à long terme des documents électroniques. En incorporant des fichiers et des données supplémentaires, il garantit que tous les composants nécessaires sont inclus dans le document PDF lui-même, réduisant ainsi le risque de perte d'informations ou de dépendances externes au fil du temps. Cette caractéristique le rend adapté à l'archivage de documents d'une manière qui garantit l'accessibilité et la cohérence à long terme.

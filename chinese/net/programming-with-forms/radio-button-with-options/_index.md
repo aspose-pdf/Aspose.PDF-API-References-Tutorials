@@ -2,15 +2,15 @@
 title: 带选项的单选按钮
 linktitle: 带选项的单选按钮
 second_title: Aspose.PDF for .NET API 参考
-description: 使用 Aspose.PDF for .NET 轻松地将带有选项的单选按钮添加到 PDF 文档。
+description: 使用 Aspose.PDF for .NET 轻松向 PDF 文档添加带有选项的单选按钮。
 type: docs
 weight: 230
 url: /zh/net/programming-with-forms/radio-button-with-options/
 ---
 
-在本教程中，我们将向您展示如何使用 Aspose.PDF for .NET 向 PDF 文档添加带有选项的单选按钮。我们将逐步解释 C# 源代码，以指导您完成此过程。
+在本教程中，我们将向您展示如何使用 Aspose.PDF for .NET 将带有选项的单选按钮添加到 PDF 文档。我们将逐步解释 C# 源代码，以指导您完成此过程。
 
-## 第一步：准备
+## 第 1 步：准备
 
 确保您已导入必要的库并设置文档目录的路径：
 
@@ -28,7 +28,7 @@ Document doc = new Document();
 
 ## 第三步：添加页面和表格
 
-向文档添加一个页面并创建一个表来保存单选按钮选项：
+向文档添加页面并创建一个表格来保存单选按钮选项：
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -85,7 +85,7 @@ opt1.Caption = new TextFragment("Item1");
 
 ```
 
-## 第 7 步：将单选按钮选项添加到表中
+## 步骤 7：将单选按钮选项添加到表中
 
 将单选按钮选项添加到表中以显示它们：
 
@@ -108,7 +108,7 @@ dataDir = dataDir + "RadioButtonWithOptions_out.pdf";
 doc.Save(dataDir);
 ```
 
-### 使用 Aspose.PDF for .NET 的带有选项的单选按钮示例源代码 
+### 使用 Aspose.PDF for .NET 的单选按钮示例源代码 
 ```csharp
 try
 {
@@ -175,4 +175,4 @@ catch (Exception ex)
 
 ## 结论
 
-恭喜！您已经使用 Aspose.PDF for .NET 成功地将带有选项的单选按钮添加到 PDF 文档。您现在可以使用此方法在 PDF 文档中创建交互式表单。
+恭喜！您已使用 Aspose.PDF for .NET 成功向 PDF 文档添加了带有选项的单选按钮。您现在可以使用此方法在 PDF 文档中创建交互式表单。

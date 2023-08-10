@@ -57,7 +57,7 @@ TextFragment fragment = textFragments[1];
 
 ## الخطوة 5: إنشاء حقل النص المخفي
 
- نقوم بإنشاء ملف`TextBoxField`كائن لتمثيل حقل النص المخفي. سيحتوي هذا الحقل على النص الذي يصبح مرئيًا عندما يحوم مؤشر الماوس فوق نص المشغل.
+ نقوم بإنشاء ملف`TextBoxField` كائن لتمثيل حقل النص المخفي. سيحتوي هذا الحقل على النص الذي يصبح مرئيًا عندما يحوم مؤشر الماوس فوق نص المشغل.
 
 ```csharp
 TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
@@ -81,7 +81,7 @@ floatingField. Multiline = true;
 document.Form.Add(floatingField);
 ```
 
-## الخطوة 7: إنشاء الزر غير المرئي
+## الخطوة السابعة: إنشاء الزر غير المرئي
 
 نقوم بإنشاء حقل زر غير مرئي سيتم وضعه أعلى جزء النص المشغل. سيحتوي حقل الزر هذا على إجراءات مرتبطة بأحداث الدخول والخروج بالماوس.
 
@@ -126,7 +126,7 @@ floatingField.Value = "This is the \"floating text field\".";
 floatingField.ReadOnly = true;
 // قم بتعيين العلم "المخفي" لجعل الحقل غير مرئي عند فتح المستند
 floatingField.Flags |= AnnotationFlags.Hidden;
-//تعيين اسم حقل فريد ليس ضروريًا ولكنه مسموح به
+// تعيين اسم حقل فريد ليس ضروريًا ولكنه مسموح به
 floatingField.PartialName = "FloatingField_1";
 // تحديد خصائص المظهر الميداني ليس ضروريًا ولكنه يجعله أفضل
 floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, System.Drawing.Color.Blue);
@@ -137,10 +137,10 @@ floatingField.Border.Width = 1;
 floatingField.Multiline = true;
 // أضف حقل نص إلى المستند
 document.Form.Add(floatingField);
-//إنشاء زر غير مرئي في موضع جزء النص
+// إنشاء زر غير مرئي في موضع جزء النص
 ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
 // قم بإنشاء إجراء إخفاء جديد لحقل محدد (تعليق توضيحي) وعلامة إخفاء.
-// (يمكنك أيضًا إعادة تسمية الحقل العائم بالاسم إذا حددته أعلاه.)
+//(يمكنك أيضًا إعادة تسمية الحقل العائم بالاسم إذا حددته أعلاه.)
 // أضف إجراءات عند الدخول / الخروج من الماوس في حقل الزر غير المرئي
 buttonField.Actions.OnEnter = new HideAction(floatingField, false);
 buttonField.Actions.OnExit = new HideAction(floatingField);
@@ -152,4 +152,4 @@ document.Save(outputFile);
 
 ## خاتمة
 
-في هذا البرنامج التعليمي ، تعلمت كيفية إنشاء كتلة نص مخفية باستخدام Aspose.PDF لمكتبة .NET. باتباع الدليل التفصيلي خطوة بخطوة ، يمكنك إنشاء مستند PDF مع حقل نص مخفي يصبح مرئيًا عندما يحوم مؤشر الماوس فوق منطقة معينة. يمكنك تخصيص مظهر وسلوك كتلة النص المخفي وفقًا لمتطلباتك.
+في هذا البرنامج التعليمي ، تعلمت كيفية إنشاء كتلة نصية مخفية باستخدام Aspose.PDF لمكتبة .NET. باتباع الدليل التفصيلي خطوة بخطوة ، يمكنك إنشاء مستند PDF مع حقل نص مخفي يصبح مرئيًا عندما يحوم مؤشر الماوس فوق منطقة معينة. يمكنك تخصيص مظهر وسلوك كتلة النص المخفي وفقًا لمتطلباتك.

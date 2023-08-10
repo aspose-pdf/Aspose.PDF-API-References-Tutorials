@@ -8,7 +8,7 @@ weight: 250
 url: /sv/net/programming-with-text/multicolumn-paragraphs/
 ---
 
-den här handledningen kommer vi att förklara hur man arbetar med stycken med flera kolumner i ett PDF-dokument med hjälp av Aspose.PDF-biblioteket för .NET. Vi kommer att gå igenom steg-för-steg-processen för att manipulera och komma åt stycken med flera kolumner med hjälp av den medföljande C#-källkoden.
+I den här handledningen kommer vi att förklara hur man arbetar med stycken med flera kolumner i ett PDF-dokument med hjälp av Aspose.PDF-biblioteket för .NET. Vi kommer att gå igenom steg-för-steg-processen för att manipulera och komma åt stycken med flera kolumner med hjälp av den medföljande C#-källkoden.
 
 ## Krav
 
@@ -19,7 +19,7 @@ Innan du börjar, se till att du har följande:
 
 ## Steg 1: Konfigurera dokumentkatalogen
 
- Först måste du ställa in sökvägen till katalogen där din indata-PDF-fil finns. Byta ut`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till din PDF-fil.
+ Först måste du ställa in sökvägen till katalogen där din indata-PDF-fil finns. Byta ut`"YOUR DOCUMENT DIRECTORY"` i`dataDir`variabel med sökvägen till din PDF-fil.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -35,7 +35,7 @@ Document doc = new Document(dataDir + "MultiColumnPdf.pdf");
 
 ## Steg 3: Få åtkomst till stycken med flera kolumner
 
- Vi använder`ParagraphAbsorber` klass för att ta till sig och besöka styckena i PDF-dokumentet. Vi hämtar sedan sidmarkeringarna och kommer åt styckena med flera kolumner.
+ Vi använder`ParagraphAbsorber`klass för att ta till sig och besöka styckena i PDF-dokumentet. Vi hämtar sedan sidmarkeringarna och kommer åt styckena med flera kolumner.
 
 ```csharp
 ParagraphAbsorber absorb = new ParagraphAbsorber();

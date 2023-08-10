@@ -1,14 +1,13 @@
 ---
-title: Tabellenbreite ermitteln
-linktitle: Tabellenbreite ermitteln
+title: Tabellenbreite in PDF-Datei abrufen
+linktitle: Tabellenbreite in PDF-Datei abrufen
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET die Breite einer Tabelle in einem PDF-Dokument ermitteln.
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET die Breite einer Tabelle in einer PDF-Datei ermitteln.
 type: docs
 weight: 90
 url: /de/net/programming-with-tables/get-table-width/
 ---
-
-In diesem Tutorial erfahren Sie, wie Sie mit Aspose.PDF für .NET die Breite einer Tabelle in einem PDF-Dokument ermitteln. Wir erklären Ihnen Schritt für Schritt den Quellcode in C#. Am Ende dieses Tutorials erfahren Sie, wie Sie die Breite einer Tabelle in einem PDF-Dokument ermitteln. Lasst uns beginnen!
+In diesem Tutorial erfahren Sie, wie Sie mit Aspose.PDF für .NET die Breite einer Tabelle in einer PDF-Datei ermitteln. Wir erklären Ihnen Schritt für Schritt den Quellcode in C#. Am Ende dieses Tutorials erfahren Sie, wie Sie die Breite einer Tabelle in einem PDF-Dokument ermitteln. Lasst uns beginnen!
 
 ## Schritt 1: Einrichten der Umgebung
 Stellen Sie zunächst sicher, dass Sie Ihre C#-Entwicklungsumgebung mit Aspose.PDF für .NET eingerichtet haben. Fügen Sie den Verweis zur Bibliothek hinzu und importieren Sie die erforderlichen Namespaces.
@@ -72,3 +71,25 @@ System.Console.WriteLine("Extracted table width succesfully!");
 
 ## Abschluss
 In diesem Tutorial haben wir gelernt, wie man mit Aspose.PDF für .NET die Breite einer Tabelle in einem PDF-Dokument ermittelt. Mit dieser Schritt-für-Schritt-Anleitung können Sie Tabellenbreiten in Ihren eigenen C#-Projekten ermitteln.
+
+### FAQs zum Abrufen der Tabellenbreite in einer PDF-Datei
+
+#### F: Kann ich die Spaltenanpassung der Tabelle auf eine feste Breite anstelle von AutoFitToContent ändern?
+
+ A: Ja, Sie können die Spaltenbreite auf einen festen Wert einstellen, indem Sie festlegen`ColumnAdjustment` Eigentum zu`ColumnAdjustment.FixedColumnWidth` . Nachdem Sie diese Eigenschaft festgelegt haben, können Sie mithilfe von die gewünschte Breite für jede Spalte festlegen`ColumnWidths` Eigenschaft der Tabelle.
+
+####  F: Was passiert, wenn sich die Tabelle über mehrere Seiten erstreckt? Werden die`GetWidth()` method still provide accurate results?
+
+ A: Die`GetWidth()` Die Methode berechnet die Breite der Tabelle basierend auf ihrem Inhalt auf der aktuellen Seite. Wenn sich die Tabelle über mehrere Seiten erstreckt, müssen Sie möglicherweise jede Seite durchlaufen und die Breiten der Tabelle auf jeder Seite summieren, um die Gesamtbreite der gesamten Tabelle zu erhalten.
+
+#### F: Kann ich mit Aspose.PDF für .NET die einzelnen Spaltenbreiten der Tabelle ermitteln?
+
+A: Ja, Sie können die einzelnen Spaltenbreiten der Tabelle mit abrufen`ColumnWidths` Eigentum. Es wird eine Zeichenfolge zurückgegeben, die die Breite jeder durch Leerzeichen getrennten Spalte darstellt. Anschließend können Sie diese Zeichenfolge analysieren, um die Breite jeder Spalte zu ermitteln.
+
+#### F: Ist es möglich, die Höhe der Tabelle mit Aspose.PDF für .NET zu ermitteln?
+
+ A: Ja, Sie können die Höhe des Tisches mithilfe von ermitteln`GetHeight()` Methode der Tabelle. Diese Methode gibt die Gesamthöhe der Tabelle basierend auf Inhalt und Layout zurück.
+
+#### F: Kann ich die Tabellenbreite basierend auf dem spezifischen Inhalt jeder Zelle anpassen?
+
+ A: Ja, Sie können die Tabellenbreite basierend auf dem spezifischen Inhalt in jeder Zelle anpassen, indem Sie festlegen`ColumnAdjustment` Eigentum zu`ColumnAdjustment.AutoFitToContent`. Aspose.PDF für .NET passt die Spaltenbreiten automatisch an den Inhalt jeder Zelle an.

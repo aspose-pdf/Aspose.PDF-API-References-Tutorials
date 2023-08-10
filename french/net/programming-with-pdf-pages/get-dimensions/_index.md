@@ -1,6 +1,6 @@
 ---
-title: Obtenir des cotes
-linktitle: Obtenir des cotes
+title: Obtenir les dimensions de la page PDF
+linktitle: Obtenir les dimensions de la page PDF
 second_title: Référence de l'API Aspose.PDF pour .NET
 description: Dans ce didacticiel, nous expliquons comment obtenir les dimensions d'une page PDF et effectuer des manipulations à l'aide d'Aspose.PDF pour .NET. Des étapes détaillées sont fournies pour vous guider tout au long du processus.
 type: docs
@@ -30,7 +30,7 @@ Document pdfDocument = new Document(dataDir + "UpdateDimensions.pdf");
 ```
 
 ## Étape 3 : Ajoutez une page vierge (si nécessaire)
-Si le document PDF contient déjà des pages, vous pouvez accéder à une page existante à l'aide de l'index`1` (la première page a un index de 1). Sinon, vous pouvez ajouter une nouvelle page au document.
+ Si le document PDF contient déjà des pages, vous pouvez accéder à une page existante à l'aide de l'index`1` (la première page a un index de 1). Sinon, vous pouvez ajouter une nouvelle page au document.
 
 ```csharp
 Page page = pdfDocument.Pages.Count > 0? pdfDocument.Pages[1] : pdfDocument.Pages.Add();
@@ -44,7 +44,7 @@ Console.WriteLine(page.GetPageRect(true).Width.ToString() + ":" + page.GetPageRe
 ```
 
 ## Étape 5 : Faire pivoter la page
- Si vous voulez faire pivoter la page, vous pouvez utiliser le`Rotate` propriété de la`Page` objet. Dans cet exemple, la page est pivotée de 90 degrés.
+ Si vous voulez faire pivoter la page, vous pouvez utiliser le`Rotate` propriété de la`Page`objet. Dans cet exemple, la page est pivotée de 90 degrés.
 
 ```csharp
 page. Rotate = Rotate. on90;
@@ -80,3 +80,25 @@ Console.WriteLine(page.GetPageRect(true).Width.ToString() + ":" + page.GetPageRe
 Dans ce didacticiel, nous avons appris à obtenir les dimensions d'une page dans un fichier PDF à l'aide d'Aspose.PDF pour .NET. En suivant les étapes fournies, vous pouvez facilement extraire les dimensions de la page et effectuer d'autres opérations de manipulation de PDF. Aspose.PDF pour .NET offre une grande flexibilité pour travailler avec des fichiers PDF et vous permet de développer des solutions puissantes et personnalisées.
 
 N'hésitez pas à explorer davantage la documentation d'Aspose.PDF pour découvrir toutes les fonctionnalités offertes par cette bibliothèque.
+
+### FAQ pour obtenir les dimensions de la page PDF
+
+#### Q : Comment puis-je obtenir les dimensions d'une page spécifique dans un fichier PDF ?
+
+ : Pour obtenir les dimensions d'une page spécifique dans un fichier PDF, vous pouvez utiliser le`GetPageRect()` méthode de la`Page` objet dans Aspose.PDF pour .NET. Cette méthode renvoie un`Rectangle` objet contenant les dimensions (largeur et hauteur) de la page.
+
+####  Q : Qu'est-ce que le`GetPageRect(true)` method do in the provided C# source code?
+
+ R : Le`GetPageRect(true)` La méthode dans le code source C# fourni renvoie les dimensions de la page après avoir appliqué des rotations. Si la page est pivotée, la méthode renvoie les dimensions de la page pivotée, qui peuvent être différentes des dimensions d'origine.
+
+#### Q : Puis-je obtenir les dimensions de toutes les pages du document PDF à l'aide d'Aspose.PDF pour .NET ?
+
+ R : Oui, vous pouvez obtenir les dimensions de toutes les pages du document PDF en parcourant les`Pages` collecte de la`Document` objet et en utilisant le`GetPageRect(true)` méthode pour chaque page.
+
+#### Q : Comment puis-je déterminer l'orientation d'une page (portrait ou paysage) en fonction de ses dimensions ?
+
+R : Pour déterminer l'orientation d'une page en fonction de ses dimensions, vous pouvez comparer la largeur et la hauteur de la page. Si la largeur est supérieure à la hauteur, la page est en orientation paysage, et si la hauteur est supérieure à la largeur, la page est en orientation portrait.
+
+#### Q : Puis-je modifier les dimensions d'une page à l'aide d'Aspose.PDF pour .NET ?
+
+ R : Oui, vous pouvez modifier les dimensions d'une page dans Aspose.PDF pour .NET. Après avoir obtenu le`Rectangle` objet représentant les dimensions de la page, vous pouvez ajuster la largeur et la hauteur selon vos besoins, puis appliquer les modifications à la page.

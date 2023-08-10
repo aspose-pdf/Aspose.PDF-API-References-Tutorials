@@ -35,7 +35,7 @@ Document pdfDocument = new Document(dataDir + "RemoveAllText.pdf");
 
 ## 3. Adım: Tüm Metni Kaldır
 
- bir başlatıyoruz`TextFragmentAbsorber` nesneyi seçin ve PDF belgesinden emilen tüm metni kaldırmak için kullanın.
+ bir başlatıyoruz`TextFragmentAbsorber`nesneyi seçin ve PDF belgesinden emilen tüm metni kaldırmak için kullanın.
 
 ```csharp
 TextFragmentAbsorber absorb = new TextFragmentAbsorber();
@@ -66,4 +66,4 @@ pdfDocument.Save(dataDir + "RemoveAllText_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 
 ## Çözüm
 
-Bu öğreticide, Aspose.PDF kitaplığını .NET kullanarak bir PDF belgesindeki tüm metni nasıl kaldıracağınızı öğrendiniz. Adım adım kılavuzu izleyerek ve verilen C# kodunu çalıştırarak bir PDF açabilir, bir PDF dosyası kullanarak tüm metni kaldırabilirsiniz.`TextFragmentAbsorber`, ve değiştirilen PDF'yi kaydedin.
+ Bu öğreticide, Aspose.PDF kitaplığını .NET kullanarak bir PDF belgesindeki tüm metni nasıl kaldıracağınızı öğrendiniz. Adım adım kılavuzu izleyerek ve verilen C# kodunu çalıştırarak bir PDF açabilir, bir PDF dosyası kullanarak tüm metni kaldırabilirsiniz.`TextFragmentAbsorber`, ve değiştirilen PDF'yi kaydedin.

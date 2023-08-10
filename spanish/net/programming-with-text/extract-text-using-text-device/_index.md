@@ -84,7 +84,7 @@ foreach (Page pdfPage in pdfDocument.Pages)
 	{
 		// Crear dispositivo de texto
 		TextDevice textDevice = new TextDevice();
-		// Establecer opciones de extracción de texto: establecer el modo de extracción de texto (sin formato o puro)
+		//Establecer opciones de extracción de texto: establecer el modo de extracción de texto (sin formato o puro)
 		TextExtractionOptions textExtOptions = new
 		TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure);
 		textDevice.ExtractionOptions = textExtOptions;

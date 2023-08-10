@@ -65,7 +65,7 @@ page.Paragraphs.Add(graph1);
 ```
 
 ## 8. Adım: HTML biçimlendirmesiyle başlık metni ekleyin
- Oluşturduğunuz bir`HtmlFragment`nesne ve içeriğini istenen HTML metnine ayarlayın. Ardından, parçayı şuraya ekleyin:`Paragraphs` sayfanın toplanması.
+ Oluşturduğunuz bir`HtmlFragment` nesne ve içeriğini istenen HTML metnine ayarlayın. Ardından, parçayı şuraya ekleyin:`Paragraphs` sayfanın toplanması.
 
 ```csharp
 string s = "<font face=\"Times New Roman\" size=4>" +
@@ -115,7 +115,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 // PDF dosyası için sol kenar boşluğu bilgisini belirtin
 doc.PageInfo.Margin.Left = 40;
-// PDF dosyası için Sağ kenar boşluğu bilgisini belirtin
+//PDF dosyası için Sağ kenar boşluğu bilgisini belirtin
 doc.PageInfo.Margin.Right = 40;
 Page page = doc.Pages.Add();
 Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500, 2);

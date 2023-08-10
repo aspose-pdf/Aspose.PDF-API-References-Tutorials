@@ -39,7 +39,7 @@ Document pdfDocument = new Document(dataDir + "ExtractTextAll.pdf");
 ```
 
 ## Étape 5 : Extraire le texte d'une zone de page
- Créer un`TextAbsorber` objet pour extraire le texte du document. Configurez le`TextSearchOptions` pour limiter la recherche à une zone de page spécifique définie par un rectangle.
+ Créer un`TextAbsorber`objet pour extraire le texte du document. Configurez le`TextSearchOptions` pour limiter la recherche à une zone de page spécifique définie par un rectangle.
 
 ```csharp
 TextAbsorber absorb = new TextAbsorber();

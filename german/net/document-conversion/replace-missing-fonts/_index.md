@@ -7,7 +7,6 @@ type: docs
 weight: 260
 url: /de/net/document-conversion/replace-missing-fonts/
 ---
-
 In diesem Tutorial führen wir Sie durch den Prozess des Ersetzens fehlender Schriftarten in einer PDF-Datei mit Aspose.PDF für .NET. Wenn Sie eine PDF-Datei auf einem Computer öffnen, auf dem eine bestimmte Schriftart fehlt, kann es zu Problemen bei der Schriftartenanzeige kommen. In solchen Fällen besteht die Möglichkeit, die fehlende Schriftart durch eine andere auf dem Gerät verfügbare Schriftart zu ersetzen. Wenn Sie die folgenden Schritte ausführen, können Sie fehlende Schriftarten in einer PDF-Datei ersetzen.
 
 ## Voraussetzungen
@@ -90,3 +89,25 @@ pdf.Save(fileNew.FullName);
 
 ## Abschluss
 In diesem Tutorial haben wir den Schritt-für-Schritt-Prozess zum Ersetzen fehlender Schriftarten in einer PDF-Datei mit Aspose.PDF für .NET behandelt. Wenn Sie die oben beschriebenen Anweisungen befolgen, können Sie fehlende Schriftarten in Ihrer PDF-Datei erfolgreich ersetzen.
+
+### FAQs
+
+#### F: Was ist Aspose.PDF für .NET?
+
+A: Aspose.PDF für .NET ist eine leistungsstarke Bibliothek, die Entwicklern die Arbeit mit PDF-Dokumenten in C#-Anwendungen ermöglicht. Es bietet verschiedene Funktionalitäten, darunter die Möglichkeit, fehlende Schriftarten in PDF-Dateien zu ersetzen.
+
+#### F: Warum sollte ich in einer PDF-Datei auf fehlende Schriftarten stoßen?
+
+A: In einer PDF-Datei können Schriftarten fehlen, wenn die Datei auf einem Computer geöffnet wird, auf dem die erforderlichen Schriftarten nicht installiert sind. Dies kann zu einer Schriftartersetzung führen, die sich auf das visuelle Erscheinungsbild des Dokuments auswirkt.
+
+#### F: Wie kann ich mit Aspose.PDF für .NET fehlende Schriftarten in einer PDF-Datei finden und ersetzen?
+
+ A: Um fehlende Schriftarten zu finden und zu ersetzen, können Sie die verwenden`FontRepository.FindFont` Methode, um zu prüfen, ob die erforderliche Schriftart vorhanden ist. Wenn die Schriftart fehlt, können Sie mithilfe von eine Schriftartenersetzung hinzufügen`FontRepository.Substitutions` Eigentum.
+
+#### F: Kann ich den Schriftersetzungsprozess anpassen?
+
+A: Ja, Sie können den Schriftersetzungsprozess anpassen, indem Sie eine andere Schriftart für die Ersetzung angeben. Im bereitgestellten Code haben wir Arial als Ersatz für die fehlende Schriftart „AgencyFB“ verwendet, Sie können jedoch je nach Ihren Vorlieben eine andere Schriftart auswählen.
+
+#### F: Wie kann ich die Genauigkeit der Schriftwiedergabe nach der Ersetzung sicherstellen?
+
+A: Aspose.PDF für .NET bietet robuste Funktionen zur Schriftartenverarbeitung und gewährleistet eine genaue Schriftartenwiedergabe nach der Ersetzung. Sie können eine Vorschau der resultierenden PDF-Datei anzeigen, um die Schriftartersetzung zu überprüfen.

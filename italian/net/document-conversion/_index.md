@@ -14,7 +14,7 @@ Imparerai come specificare le impostazioni di conversione, estrarre testo e imma
 | Titolo | Descrizione |
 | --- | --- | 
 | [Aggiungi allegato a PDFA](./add-attachment-to-pdfa/) | Aggiungi facilmente allegati ai tuoi file PDF/A utilizzando Aspose.PDF per .NET. |  
-| [CGM in PDF](./cgm-to-pdf/) | Converti facilmente i file CGM in PDF utilizzando Aspose.PDF per .NET. |  
+| [CGM in file PDF](./cgm-to-pdf/) | Converti facilmente i file CGM in PDF utilizzando Aspose.PDF per .NET. |  
 | [Da EPUB a PDF](./epub-to-pdf/) | Guida passo passo per convertire EPUB in PDF utilizzando Aspose.PDF per .NET. |  
 | [Ottieni dimensioni SVG](./get-svg-dimensions/) | Guida passo passo per ottenere le dimensioni SVG utilizzando Aspose.PDF per .NET. |  
 | [Da HTML a PDF](./html-to-pdf/) | Guida passo passo per convertire HTML in PDF utilizzando Aspose.PDF per .NET. |  
@@ -25,7 +25,7 @@ Imparerai come specificare le impostazioni di conversione, estrarre testo e imma
 | [Da PDFA a PDF](./pdfa-to-pdf/) | Guida passo passo per convertire PDFA in PDF utilizzando Aspose.PDF per .NET. |  
 | [Da PDF a DOC](./pdf-to-doc/) | Guida passo passo per convertire PDF in DOC utilizzando Aspose.PDF per .NET.  |  
 | [Da PDF a EPUB](./pdf-to-epub/) | Guida passo passo per convertire PDF in EPUB utilizzando Aspose.PDF per .NET. |  
-| [PDF in HTML](./pdf-to-html/) | Guida passo passo per convertire PDF in HTML utilizzando Aspose.PDF per .NET. |  
+| [Da PDF a HTML](./pdf-to-html/) | Guida passo passo per convertire PDF in HTML utilizzando Aspose.PDF per .NET. |  
 | [Da PDF a PDFA](./pdf-to-pdfa/) | Guida passo passo per convertire PDF in PDFA utilizzando Aspose.PDF per .NET. |  
 | [Da PDF a PDFA3b](./pdf-to-pdfa3b/) | Guida passo passo per convertire PDF in PDF/A-3b utilizzando Aspose.PDF per .NET. |  
 | [Suggerimenti sui caratteri da PDF a PNG](./pdf-to-png-font-hinting/) | Guida passo passo per convertire PDF in PNG con suggerimenti sui caratteri utilizzando Aspose.PDF per .NET. |  
@@ -40,8 +40,8 @@ Imparerai come specificare le impostazioni di conversione, estrarre testo e imma
 | [Rimuovi i collegamenti ipertestuali dopo la conversione da Html](./remove-hyperlinks-after-converting-from-html/) | Guida passo passo per rimuovere i collegamenti ipertestuali dopo aver convertito HTML in PDF utilizzando Aspose.PDF per .NET. |  
 | [Sostituisci i caratteri mancanti](./replace-missing-fonts/) | Guida dettagliata per sostituire i caratteri mancanti in un file PDF utilizzando Aspose.PDF per .NET. |  
 | [Imposta il nome del carattere predefinito](./set-default-font-name/) | Guida passo passo per impostare il nome del carattere predefinito nel file PDF utilizzando Aspose.PDF per .NET. |  
-| [SVG in PDF](./svg-to-pdf/) | Facile e veloce conversione da SVG a PDF utilizzando Aspose.PDF per .NET. |  
-| [TeX in PDF](./tex-to-pdf/) | Conversione semplice e accurata dei file TeX in PDF utilizzando Aspose.PDF per .NET. |  
+| [Da SVG a PDF](./svg-to-pdf/) | Facile e veloce conversione da SVG a PDF utilizzando Aspose.PDF per .NET. |  
+| [Da TeX a PDF](./tex-to-pdf/) | Conversione semplice e accurata dei file TeX in PDF utilizzando Aspose.PDF per .NET. |  
 | [Testo in PDF](./text-to-pdf/) | Conversione semplice ed efficiente di file di testo in PDF utilizzando Aspose.PDF per .NET. |  
 | [Miglioramento delle prestazioni da TIFF a PDF](./tiff-to-pdf-performance-improvement/) | Guida dettagliata per migliorare le prestazioni di conversione da TIFF a PDF con Aspose.PDF per .NET. |  
 | [Pagina Web in PDF](./web-page-to-pdf/) | Guida passo passo per convertire la pagina Web in PDF utilizzando Aspose.PDF per .NET. |  

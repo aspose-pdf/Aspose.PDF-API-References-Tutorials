@@ -39,7 +39,7 @@ Document pdfDocument = new Document(dataDir + "ExtractTextAll.pdf");
 ```
 
 ## Passaggio 5: estrarre il testo da un'area della pagina
- Creare un`TextAbsorber` oggetto per estrarre il testo dal documento. Configura il`TextSearchOptions` per limitare la ricerca a un'area specifica della pagina definita da un rettangolo.
+ Creare un`TextAbsorber`oggetto per estrarre il testo dal documento. Configura il`TextSearchOptions` per limitare la ricerca a un'area specifica della pagina definita da un rettangolo.
 
 ```csharp
 TextAbsorber absorb = new TextAbsorber();

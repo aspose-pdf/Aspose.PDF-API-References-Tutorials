@@ -27,7 +27,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Schritt 2: Erstellen Sie ein PDF-Dokument und eine Seite
 
-Als nächstes erstellen wir ein neues PDF-Dokument und fügen ihm mithilfe von eine Seite hinzu`Document` Klasse und`Page` Klasse aus der Aspose.PDF-Bibliothek.
+ Als nächstes erstellen wir ein neues PDF-Dokument und fügen ihm mithilfe von eine Seite hinzu`Document` Klasse und`Page` Klasse aus der Aspose.PDF-Bibliothek.
 
 ```csharp
 Document doc = new Document();
@@ -111,7 +111,7 @@ marginInfo.Top = 90;
 marginInfo.Bottom = 50;
 marginInfo.Left = 50;
 marginInfo.Right = 50;
-//Weisen Sie die marginInfo-Instanz der Margin-Eigenschaft von sec1.PageInfo zu
+// Weisen Sie die marginInfo-Instanz der Margin-Eigenschaft von sec1.PageInfo zu
 page.PageInfo.Margin = marginInfo;
 HeaderFooter hfFirst = new HeaderFooter();
 page.Header = hfFirst;

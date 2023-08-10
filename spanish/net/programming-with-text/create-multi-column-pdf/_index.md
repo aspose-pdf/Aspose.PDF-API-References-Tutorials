@@ -65,7 +65,7 @@ page.Paragraphs.Add(graph1);
 ```
 
 ## Paso 8: agregue texto de encabezado con formato HTML
- Crear un`HtmlFragment`objeto y establezca su contenido en el texto HTML deseado. Luego, agregue el fragmento a la`Paragraphs` colección de la página.
+ Crear un`HtmlFragment` objeto y establezca su contenido en el texto HTML deseado. Luego, agregue el fragmento a la`Paragraphs` colección de la página.
 
 ```csharp
 string s = "<font face=\"Times New Roman\" size=4>" +
@@ -115,7 +115,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 // Especifique la información del margen izquierdo para el archivo PDF
 doc.PageInfo.Margin.Left = 40;
-// Especifique la información del margen derecho para el archivo PDF
+//Especifique la información del margen derecho para el archivo PDF
 doc.PageInfo.Margin.Right = 40;
 Page page = doc.Pages.Add();
 Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500, 2);

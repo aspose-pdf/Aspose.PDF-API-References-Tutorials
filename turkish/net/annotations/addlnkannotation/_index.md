@@ -103,3 +103,29 @@ dataDir = dataDir + "AddlnkAnnotation_out.pdf";
 // Çıktı dosyasını kaydet
 doc.Save(dataDir);
 ```
+
+## Çözüm
+
+Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF belgesine Mürekkep Ek Açıklamalarının nasıl ekleneceğini inceledik. Geliştiriciler, sağlanan adım adım kılavuzu ve C# kaynak kodunu izleyerek Mürekkep Ek Açıklama işlevini PDF işleme uygulamalarında kolayca uygulayabilir.
+
+### SSS
+
+#### S: PDF belgesindeki Mürekkep Açıklaması nedir?
+
+Y: Bir PDF belgesindeki Mürekkep Açıklaması, kullanıcıların kalem veya fare kullanarak serbest biçimli mürekkep açıklamaları çizmesine olanak tanır. Bir PDF'ye elle çizilmiş eskizler, diyagramlar veya diğer serbest el açıklamaları eklemek için yaygın olarak kullanılır.
+
+#### S: Mürekkep Açıklamasının görünümünü özelleştirebilir miyim?
+
+C: Evet, Aspose.PDF for .NET, Mürekkep Açıklamasının görünümünü özelleştirmek için renk, opaklık, kapak stili, kenarlık genişliği ve daha fazlası gibi çeşitli özellikler sağlar. Geliştiriciler, bu özellikleri kendi özel gereksinimlerini karşılayacak şekilde ayarlayabilir.
+
+#### S: Tek bir PDF sayfasına birden fazla Mürekkep Ek Açıklama eklemek mümkün müdür?
+
+C: Evet, Aspose.PDF for .NET'i kullanarak tek bir PDF sayfasına birden fazla Mürekkep Açıklaması ekleyebilirsiniz. Her Mürekkep Açıklamasının kendi noktaları ve özelleştirilmiş görünümü olabilir.
+
+#### S: Mevcut PDF belgelerine Mürekkep Açıklamaları ekleyebilir miyim?
+
+C: Evet, Aspose.PDF for .NET hem yeni oluşturulan PDF belgelerine hem de mevcut PDF dosyalarına Mürekkep Ek Açıklamaları eklemenizi sağlar. Mevcut bir PDF'yi açabilir, Mürekkep Ek Açıklamaları ekleyebilir ve güncellenen belgeyi kaydedebilirsiniz.
+
+#### S: PDF belgelerinde Mürekkep Ek Açıklamaları için bazı genel kullanım durumları nelerdir?
+
+C: Mürekkep Ek Açıklamaları, PDF formlarına imza veya el yazısı notlar ekleme, mimari planlara veya mühendislik çizimlerine açıklama ekleme ve ortak inceleme için belgeleri işaretleme dahil olmak üzere çok çeşitli uygulamalar için kullanışlıdır.

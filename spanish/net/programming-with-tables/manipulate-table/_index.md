@@ -1,14 +1,13 @@
 ---
-title: Manipular tabla
-linktitle: Manipular tabla
+title: Manipular tabla en archivo PDF
+linktitle: Manipular tabla en archivo PDF
 second_title: Referencia de API de Aspose.PDF para .NET
-description: Manipule fácilmente tablas en documentos PDF con Aspose.PDF para .NET.
+description: Manipule fácilmente tablas en archivos PDF con Aspose.PDF para .NET.
 type: docs
 weight: 130
 url: /es/net/programming-with-tables/manipulate-table/
 ---
-
-En este tutorial, lo guiaremos a través del proceso paso a paso para manipular tablas en un documento PDF usando Aspose.PDF para .NET. Las tablas son un elemento común en los documentos PDF, y poder modificar su contenido mediante programación puede ser muy beneficioso en varios escenarios. Usaremos el código fuente de C# provisto para demostrar el proceso.
+En este tutorial, lo guiaremos a través del proceso paso a paso para manipular tablas en un archivo PDF usando Aspose.PDF para .NET. Las tablas son un elemento común en los documentos PDF, y poder modificar su contenido mediante programación puede ser muy beneficioso en varios escenarios. Usaremos el código fuente de C# provisto para demostrar el proceso.
 
 ## Requisitos
 
@@ -109,3 +108,25 @@ catch (Exception ex)
 ## Conclusión
 
 En este tutorial, hemos aprendido a manipular tablas en un documento PDF utilizando Aspose.PDF para .NET. Siguiendo la guía paso a paso, puede cargar fácilmente un documento PDF, buscar tablas, acceder a celdas y fragmentos de texto, modificar el contenido de la tabla y guardar el documento modificado. Este enfoque brinda flexibilidad y eficiencia cuando se trata de la manipulación de tablas en documentos PDF.
+
+### Preguntas frecuentes sobre la tabla de manipulación en un archivo PDF
+
+#### P: ¿Puedo manipular tablas en documentos PDF de varias páginas?
+
+R: Sí, puede manipular tablas en documentos PDF de varias páginas con Aspose.PDF para .NET. En el ejemplo proporcionado, visitamos la primera página del documento (`pdfDocument.Pages[1]`), pero puede recorrer todas las páginas y manipular tablas en cada página según sea necesario.
+
+#### P: ¿Cómo puedo agregar nuevas filas o columnas a una tabla existente?
+
+ R: Para agregar nuevas filas o columnas a una tabla existente, puede usar las API proporcionadas por Aspose.PDF para .NET. Puedes acceder a la`RowList` y`CellList` propiedades de la`TableAbsorber.TableList` para agregar nuevas filas y celdas mediante programación. Consulte la documentación de Aspose.PDF para .NET para obtener información detallada y ejemplos de código.
+
+#### P: ¿Es posible eliminar una tabla de un documento PDF?
+
+ R: Sí, puede eliminar una tabla de un documento PDF utilizando Aspose.PDF para .NET. Para lograr esto, puede eliminar el`Table` objeto de la`Page.Paragraphs` recopilación. Puede identificar la tabla que desea eliminar mediante el uso de propiedades como`Table.NumberOfColumns`, `Table.NumberOfRows`y otros identificadores únicos.
+
+#### P: ¿Puedo cambiar el formato (fuente, color, alineación) del texto de la tabla?
+
+ R: Sí, puede cambiar el formato del texto de la tabla con Aspose.PDF para .NET. Puedes acceder a la`TextState` propiedad de la`TextFragment` objeto para modificar la fuente, el tamaño de fuente, el color y la alineación del texto.
+
+#### P: ¿Admite Aspose.PDF para .NET trabajar con tablas en formularios PDF (AcroForms)?
+
+R: Sí, Aspose.PDF para .NET admite el trabajo con tablas en formularios PDF (AcroForms). Puede acceder a los elementos de la tabla y manipularlos en formularios PDF de manera similar al enfoque que se muestra en este tutorial. Aspose.PDF para .NET ofrece una amplia compatibilidad para trabajar con AcroForms y campos de formulario.

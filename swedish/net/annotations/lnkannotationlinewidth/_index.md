@@ -33,7 +33,7 @@ lineInfo.Visibility = true;
 lineInfo.LineColor = System.Drawing.Color.Red;
 lineInfo.LineWidth = 2;
 ```
-## Steg 5: Skapa en ny`Aspose.Pdf.Point` array that represents the gesture from the `LineInfo` object.
+##  Steg 5: Skapa en ny`Aspose.Pdf.Point` array that represents the gesture from the `LineInfo` object.
 ```csharp
 int length = lineInfo.VerticeCoordinate.Length / 2;
 Aspose.Pdf.Point[] gesture = new Aspose.Pdf.Point[length];
@@ -115,3 +115,29 @@ dataDir = dataDir + "lnkAnnotationLineWidth_out.pdf";
 // Spara utdatafil
 doc.Save(dataDir);
 ```
+
+## Slutsats
+
+den här handledningen lärde vi oss hur man ställer in radbredden för en länkkommentar i ett PDF-dokument med Aspose.PDF för .NET. Aspose.PDF för .NET tillhandahåller ett brett utbud av verktyg och funktioner för att arbeta med PDF-dokument, inklusive möjligheten att skapa och anpassa länkkommentarer. Genom att följa den steg-för-steg-guide och använda den medföljande C#-källkoden, kan utvecklare enkelt lägga till interaktiva länkar till sina PDF-dokument, vilket förbättrar användarupplevelsen och interaktiviteten i sina applikationer. Aspose.PDF för .NET är ett mångsidigt bibliotek som ger .NET-utvecklare möjlighet att arbeta med PDF-filer effektivt och effektivt.
+
+### FAQ's
+
+#### F: Vad är en länkkommentar i ett PDF-dokument?
+
+S: En länkkommentar i ett PDF-dokument är ett interaktivt element som låter dig skapa hyperlänkar eller åtgärder som leder användaren till en annan plats i samma dokument, en extern webbplats eller ett annat PDF-dokument.
+
+#### F: Hur kan jag ställa in linjebredden för en länkanteckning med Aspose.PDF för .NET?
+
+S: För att ställa in linjebredden för en länkkommentar med Aspose.PDF för .NET, kan du skapa en`InkAnnotation` objekt och ange egenskapen linjebredd.
+
+#### F: Vilka egenskaper kan anpassas för en länkkommentar i Aspose.PDF för .NET?
+
+S: Du kan anpassa olika egenskaper för en länkkommentar i Aspose.PDF för .NET, såsom dess plats, storlek, färg, kantegenskaper (bredd, stil, streckmönster och effekt), ämne, titel och synlighet.
+
+#### F: Kan jag skapa en länkkommentar som innehåller flera bläckgester?
+
+ S: Ja, du kan skapa en länkkommentar som innehåller flera bläckgester genom att lägga till flera`Point` matriser till`InkAnnotation` objekt.
+
+#### F: Hur kan jag lägga till en länkkommentar till en specifik sida i PDF-dokumentet?
+
+ S: För att lägga till en länkkommentar till en specifik sida i PDF-dokumentet måste du ange sidnumret när du skapar`InkAnnotation` objekt. Till exempel,`new InkAnnotation(doc.Pages[1], ...)` lägger till länkkommentaren på första sidan.

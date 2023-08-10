@@ -1,14 +1,13 @@
 ---
-title: Bildgröße festlegen
-linktitle: Bildgröße festlegen
+title: Bildgröße in der PDF-Datei festlegen
+linktitle: Bildgröße in der PDF-Datei festlegen
 second_title: Aspose.PDF für .NET API-Referenz
-description: Schritt-für-Schritt-Anleitung zum Festlegen der Größe eines Bildes in einem PDF-Dokument mit Aspose.PDF für .NET.
+description: Schritt-für-Schritt-Anleitung zum Festlegen der Größe eines Bildes in einer PDF-Datei mit Aspose.PDF für .NET.
 type: docs
 weight: 270
 url: /de/net/programming-with-images/set-image-size/
 ---
-
-In diesem Tutorial zeigen wir Ihnen, wie Sie mit Aspose.PDF für .NET die Größe eines Bildes in einem PDF-Dokument festlegen. Befolgen Sie diese Schritte, um diesen Vorgang einfach durchzuführen.
+In diesem Tutorial zeigen wir Ihnen, wie Sie mit Aspose.PDF für .NET die Größe eines Bildes in einer PDF-Datei festlegen. Befolgen Sie diese Schritte, um diesen Vorgang einfach durchzuführen.
 
 ## Voraussetzungen
 
@@ -46,7 +45,7 @@ img. FixHeight = 100;
 // Bildtyp auf unbekannt (Unbekannt) setzen
 img.FileType = Aspose.Pdf.ImageFileType.Unknown;
 
-// Pfad zur Bildquelldatei
+//Pfad zur Bildquelldatei
 img.File = dataDir + "aspose-logo.jpg";
 
 // Fügen Sie das Bild zur Absatzsammlung der Seite hinzu
@@ -71,7 +70,7 @@ page.PageInfo.Height = 800;
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Dokumentobjekt instanziieren
 Document doc = new Document();
-//Seite zur Seitensammlung der PDF-Datei hinzufügen
+// Seite zur Seitensammlung der PDF-Datei hinzufügen
 Aspose.Pdf.Page page = doc.Pages.Add();
 // Erstellen Sie eine Image-Instanz
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
@@ -95,3 +94,41 @@ Console.WriteLine("\nImage size added successfully.\nFile saved at " + dataDir);
 ## Abschluss
 
 Herzlichen Glückwunsch! Sie haben die Größe eines Bildes in einem PDF-Dokument mit Aspose.PDF für .NET erfolgreich festgelegt. Sie können diese Methode jetzt auf Ihre eigenen Projekte anwenden, um die Größe von Bildern in PDF-Dateien anzupassen.
+
+### FAQs zum Festlegen der Bildgröße in einer PDF-Datei
+
+#### F: Was ist der Zweck, die Größe eines Bildes in einem PDF-Dokument mit Aspose.PDF für .NET festzulegen?
+
+A: Der Zweck des Festlegens der Größe eines Bildes in einem PDF-Dokument besteht darin, die Abmessungen des Bildes zu steuern, wenn es dem PDF hinzugefügt wird. Dadurch können Sie das Erscheinungsbild und Layout von Bildern in Ihren PDF-Dateien anpassen.
+
+#### F: Wie funktioniert das Festlegen der Bildgröße in einem PDF-Dokument?
+
+ A: Der Prozess umfasst die Erstellung eines`Aspose.Pdf.Image` Geben Sie beispielsweise seine Breite und Höhe mithilfe von an`FixWidth` Und`FixHeight` Eigenschaften und fügen Sie dann das Bild dem PDF-Dokument hinzu. Darüber hinaus können Sie die Abmessungen der Seite selbst anpassen, um sie an das Bild anzupassen.
+
+#### F: Kann ich die Größe eines Bildes auf einen bestimmten Prozentsatz der Seitenabmessungen einstellen?
+
+A: Der bereitgestellte Code legt die absolute Breite und Höhe des Bildes in Punkten fest. Wenn Sie die Größe eines Bildes anhand eines Prozentsatzes der Seitenabmessungen festlegen möchten, müssen Sie die Abmessungen entsprechend berechnen und den Code entsprechend anpassen.
+
+####  F: Welche Bedeutung hat das?`FileType` property when adding an image to the PDF document?
+
+ A: Die`FileType`Die Eigenschaft gibt den Typ des Bildes an, das dem PDF-Dokument hinzugefügt wird. Im bereitgestellten Code der Wert`Unknown` zeigt an, dass der Bildtyp unbekannt ist und Aspose.PDF versucht, den Bildtyp anhand der Dateierweiterung zu ermitteln.
+
+#### F: Kann ich mit dieser Methode mehrere Bilder zu einer einzelnen Seite hinzufügen?
+
+ A: Ja, Sie können mehrere Bilder zu einer einzelnen Seite hinzufügen, indem Sie mehrere erstellen`Aspose.Pdf.Image` Instanzen und fügen Sie sie der Absatzsammlung der Seite hinzu. Stellen Sie sicher, dass Sie die Positionierung und das Layout der Bilder nach Bedarf anpassen.
+
+#### F: Wie kann ich die Platzierung und Ausrichtung des hinzugefügten Bildes auf der Seite steuern?
+
+ A: Die Platzierung und Ausrichtung des hinzugefügten Bildes kann durch Anpassen der Koordinaten und des Layouts des Bildes mithilfe von Eigenschaften wie gesteuert werden`img.Left`, `img.Top`und Absatzformatierungseigenschaften.
+
+####  F: Zu welchem Zweck werden die Seiteneigenschaften festgelegt?`page.PageInfo.Width` and `page.PageInfo.Height`?
+
+A: Durch Festlegen der Seiteneigenschaften können Sie die Abmessungen der Seite selbst definieren. Dadurch wird sichergestellt, dass die Seitenabmessungen dem hinzugefügten Bild und allen anderen Inhalten, die Sie möglicherweise auf der Seite haben, gerecht werden.
+
+#### F: Kann ich für verschiedene Bilder innerhalb desselben PDF-Dokuments unterschiedliche Größen festlegen?
+
+ A: Ja, Sie können unterschiedliche Größen für verschiedene Bilder festlegen, indem Sie separate Bilder erstellen`Aspose.Pdf.Image` Instanzen und Anpassen der`FixWidth`, `FixHeight`und Platzierungseigenschaften für jedes Bild.
+
+#### F: Wie kann ich diese Methode in meine eigenen Projekte integrieren, um Bildgrößen in PDF-Dateien festzulegen?
+
+A: Um diese Methode in Ihre Projekte zu integrieren, befolgen Sie die beschriebenen Schritte und ändern Sie den Code nach Bedarf. Mit dieser Methode können Sie je nach den Anforderungen Ihrer Anwendung Bilder in bestimmten Größen zu Ihren PDF-Dokumenten hinzufügen.

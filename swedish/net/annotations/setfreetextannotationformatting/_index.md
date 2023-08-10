@@ -7,7 +7,6 @@ type: docs
 weight: 140
 url: /sv/net/annotations/setfreetextannotationformatting/
 ---
-
 Aspose.PDF för .NET är ett kraftfullt och lättanvänt API för PDF-dokumentmanipulation som låter dig arbeta med PDF-filer programmatiskt i dina .NET-applikationer. En av funktionerna som tillhandahålls av Aspose.PDF för .NET är möjligheten att ställa in fritextanteckningsformatering i PDF-dokument. I den här artikeln går vi igenom steg-för-steg-processen för att ställa in fritextanteckningsformatering med Aspose.PDF för .NET.
 
 ## Förutsättningar
@@ -97,3 +96,25 @@ dataDir = dataDir + "SetFreeTextAnnotationFormatting_out.pdf";
 // Spara det uppdaterade dokumentet
 pdfDocument.Save(dataDir);            
 ```
+
+## Slutsats
+
+den här handledningen lärde vi oss hur man ställer in fritextkommentarformatering i ett PDF-dokument med Aspose.PDF för .NET. Biblioteket erbjuder ett enkelt och effektivt sätt att arbeta med PDF-dokument programmatiskt, vilket gör att utvecklare kan skapa och anpassa olika typer av kommentarer, inklusive fritextkommentarer. Genom att följa steg-för-steg-guiden och använda den medföljande C#-källkoden kan du enkelt ställa in miljön, öppna ett PDF-dokument och skapa en fritextkommentar med anpassad formatering. Aspose.PDF för .NET är ett robust och pålitligt API som förenklar PDF-dokumentmanipuleringsuppgifter, vilket gör det till ett värdefullt verktyg för .NET-utvecklare som arbetar med PDF-filer.
+
+### FAQ's
+
+#### F: Vad är en fritextkommentar i ett PDF-dokument?
+
+S: En fritextkommentar i ett PDF-dokument är en typ av anteckning som låter dig lägga till text i dokumentet utan att vara bunden till en specifik plats eller struktur. Det används vanligtvis för att ge kommentarer, anteckningar eller annan ytterligare information i dokumentet.
+
+#### F: Kan jag anpassa utseendet på fritextkommentaren med Aspose.PDF för .NET?
+
+S: Ja, du kan anpassa olika egenskaper för fritextkommentaren, som typsnitt, teckenstorlek, färg, position med mera.
+
+#### F: Hur anger jag innehållet i fritextkommentaren?
+
+ S: För att specificera innehållet i fritextkommentaren kan du ställa in`Contents` egendom av`FreeTextAnnotation` invända mot önskad text.
+
+#### F: Kan jag lägga till flera fritextkommentarer till ett PDF-dokument med Aspose.PDF för .NET?
+
+ S: Ja, du kan skapa flera fritextkommentarer i ett PDF-dokument genom att skapa flera instanser av`FreeTextAnnotation`objekt och lägga till dem på olika sidor eller platser i dokumentet.

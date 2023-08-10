@@ -1,8 +1,8 @@
 ---
-title: Legen Sie die Callout-Eigenschaft fest
-linktitle: Legen Sie die Callout-Eigenschaft fest
+title: Legen Sie die Callout-Eigenschaft in der PDF-Datei fest
+linktitle: Legen Sie die Callout-Eigenschaft in der PDF-Datei fest
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erfahren Sie, wie Sie die Callout-Eigenschaft mit Aspose.PDF für .NET festlegen. Passen Sie Anmerkungen mit Beschriftungslinien, Textfarben und Endstilen an.
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET die Callout-Eigenschaft in einer PDF-Datei festlegen. Passen Sie Anmerkungen mit Beschriftungslinien, Textfarben und Endstilen an.
 type: docs
 weight: 130
 url: /de/net/annotations/setcalloutproperty/
@@ -17,7 +17,7 @@ In diesem Tutorial führen wir Sie durch den Prozess des Festlegens von Callout-
 
 ## Schritt 1: Erstellen Sie ein neues PDF-Dokument
 
- Erstellen Sie ein neues PDF-Dokument mit`Document` Von Aspose.PDF für .NET bereitgestellte Klasse.
+ Erstellen Sie ein neues PDF-Dokument mit`Document`Von Aspose.PDF für .NET bereitgestellte Klasse.
 
 ```csharp
 // Der Pfad zum Dokumentenverzeichnis.
@@ -67,7 +67,7 @@ page.Annotations.Add(fta);
 
 ## Schritt 6: Fügen Sie der Anmerkung Text hinzu
 
-Fügen Sie der Anmerkung Text hinzu, indem Sie festlegen`RichText` -Eigenschaft auf eine Zeichenfolge aus formatiertem XML umstellen. In diesem Tutorial stellen wir die Textfarbe auf Rot und die Schriftgröße auf 9 ein.
+ Fügen Sie der Anmerkung Text hinzu, indem Sie festlegen`RichText`-Eigenschaft auf eine Zeichenfolge aus formatiertem XML umstellen. In diesem Tutorial stellen wir die Textfarbe auf Rot und die Schriftgröße auf 9 ein.
 
 ```csharp
 fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"color:#FF
@@ -103,3 +103,25 @@ page.Annotations.Add(fta);
 fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"color:#FF0000;font-weight:normal;font-style:normal;font-stretch:normal\"><p dir=\"ltr\"> <span style=\"font-size:9.0pt;font-family:Helvetica\">Dies ist ein Beispiel</span></p></body>";
 doc.Save(dataDir + "SetCalloutProperty.pdf");
 ```
+
+## Abschluss
+
+In diesem Tutorial haben wir untersucht, wie man mithilfe von Aspose.PDF für .NET Callout-Eigenschaften für eine Freitextanmerkung in einem PDF-Dokument festlegt. Legendenanmerkungen sind nützlich, um zusätzliche Informationen oder Erklärungen zu bestimmten Bereichen in einem Dokument bereitzustellen. Aspose.PDF für .NET bietet eine breite Palette an Funktionen und Möglichkeiten für die Arbeit mit PDF-Dateien, einschließlich der Erstellung und Anpassung von Anmerkungen wie Legenden. Durch Befolgen der Schritt-für-Schritt-Anleitung und Verwendung des bereitgestellten C#-Quellcodes können Entwickler problemlos Callout-Anmerkungen in ihre PDF-Dokumente implementieren und so die Benutzerfreundlichkeit und Klarheit ihrer Dokumente verbessern. Aspose.PDF für .NET ist eine vielseitige und zuverlässige Bibliothek für PDF-Vorgänge in .NET-Anwendungen und bietet leistungsstarke Tools zur effizienten Bearbeitung verschiedener PDF-bezogener Aufgaben.
+
+### FAQs zum Festlegen der Callout-Eigenschaft in einer PDF-Datei
+
+#### F: Was ist eine Callout-Anmerkung in einem PDF-Dokument?
+
+A: Eine Callout-Anmerkung in einem PDF-Dokument ist eine Art Anmerkung, die es Ihnen ermöglicht, ein Textfeld mit einer Führungslinie zu erstellen, die auf einen bestimmten Bereich im Dokument zeigt. Es wird häufig verwendet, um zusätzliche Informationen oder Kommentare zu einem bestimmten Abschnitt oder Element im Dokument bereitzustellen.
+
+#### F: Kann ich das Erscheinungsbild der Callout-Anmerkung mit Aspose.PDF für .NET anpassen?
+
+A: Ja, Sie können verschiedene Eigenschaften der Beschriftungsanmerkung anpassen, z. B. Farbe, Schriftgröße, Textausrichtung, Linienstil, Pfeilstil und mehr.
+
+#### F: Wie füge ich der Callout-Anmerkung Text hinzu?
+
+ A: Um der Callout-Anmerkung Text hinzuzufügen, können Sie Folgendes festlegen`RichText` Eigentum der`FreeTextAnnotation` Objekt. Der`RichText` -Eigenschaft akzeptiert eine Zeichenfolge aus formatiertem XML, die den Text darstellt, der in der Callout-Anmerkung angezeigt werden soll.
+
+#### F: Kann ich mit Aspose.PDF für .NET mehrere Callout-Anmerkungen zu einem PDF-Dokument hinzufügen?
+
+ A: Ja, Sie können mehrere Callout-Anmerkungen in einem PDF-Dokument erstellen, indem Sie mehrere Instanzen davon erstellen`FreeTextAnnotation`Objekt und fügen Sie sie an verschiedenen Seiten oder Stellen im Dokument hinzu.

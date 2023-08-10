@@ -53,7 +53,7 @@ Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
 ```
 
 ## Étape 7 : Créer un rectangle avec transparence
-Créez un rectangle avec des dimensions spécifiques et définissez sa couleur de remplissage sur une couleur transparente à l'aide de la`Color.FromRgb` méthode.
+ Créez un rectangle avec des dimensions spécifiques et définissez sa couleur de remplissage sur une couleur transparente à l'aide de la`Color.FromRgb` méthode.
 
 ```csharp
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 400, 400);
@@ -118,7 +118,7 @@ canvas.IsChangePosition = false;
 TextFragment text = new TextFragment("transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text ");
 // Créer un objet couleur à partir du canal Alpha
 Aspose.Pdf.Color color = Aspose.Pdf.Color.FromArgb(30, 0, 255, 0);
-//Définir les informations de couleur pour l'instance de texte
+// Définir les informations de couleur pour l'instance de texte
 text.TextState.ForegroundColor = color;
 // Ajouter du texte à la collection de paragraphes de l'instance de page
 page.Paragraphs.Add(text);
@@ -129,4 +129,4 @@ Console.WriteLine("\nTransparent text added successfully.\nFile saved at " + dat
 
 
 ## Conclusion
-Vous avez ajouté avec succès du texte transparent à votre document PDF en utilisant Aspose.PDF pour .NET. Le fichier PDF résultant se trouve maintenant dans le chemin du fichier de sortie spécifié.
+Vous avez ajouté avec succès du texte transparent à votre document PDF en utilisant Aspose.PDF pour .NET. Le fichier PDF résultant peut maintenant être trouvé dans le chemin du fichier de sortie spécifié.

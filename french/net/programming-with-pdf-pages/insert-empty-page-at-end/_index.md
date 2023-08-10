@@ -37,7 +37,7 @@ pdfDocument1.Pages.Add();
 ```
 
 ## Étape 4 : Enregistrer le document modifié
- Enfin, vous pouvez enregistrer le document PDF modifié dans un fichier à l'aide de la`Save()` méthode de la`Document` classe. Assurez-vous de spécifier le chemin d'accès et le nom de fichier corrects pour le fichier de sortie.
+Enfin, vous pouvez enregistrer le document PDF modifié dans un fichier à l'aide de la`Save()` méthode de la`Document` classe. Assurez-vous de spécifier le chemin d'accès et le nom de fichier corrects pour le fichier de sortie.
 
 ```csharp
 dataDir = dataDir + "InsertEmptyPageAtEnd_out.pdf";
@@ -63,3 +63,30 @@ System.Console.WriteLine("\nEmpty page inserted successfully at the end of docum
 
 ## Conclusion
 Dans ce didacticiel, nous avons appris à insérer une page vierge à la fin d'un document PDF à l'aide d'Aspose.PDF pour .NET. En suivant ce guide étape par étape, vous pouvez facilement ajouter une page vierge à la fin de votre document PDF. Aspose.PDF offre une API puissante et flexible pour travailler avec des fichiers PDF, vous permettant de manipuler, modifier et générer des documents PDF en fonction de vos besoins spécifiques.
+
+### FAQ
+
+#### Q : Comment puis-je insérer une page vierge à la fin d'un document PDF en utilisant Aspose.PDF pour .NET ?
+
+R : Pour insérer une page vierge à la fin d'un document PDF à l'aide d'Aspose.PDF pour .NET, vous pouvez suivre ces étapes :
+
+1. Définissez le répertoire du document en spécifiant le chemin où se trouve votre fichier PDF d'origine et où vous souhaitez enregistrer le fichier PDF modifié. Remplacez "VOTRE RÉPERTOIRE DE DOCUMENTS" par le chemin approprié.
+2.  Ouvrez le document PDF à l'aide de la`Document` classe de Aspose.PDF. Assurez-vous de spécifier le chemin d'accès correct au document PDF d'origine.
+3.  Insérez une page vierge à la fin du document PDF à l'aide de la`Add()` méthode de la`Pages` propriété de la`pdfDocument1` objet.
+4.  Enregistrez le document PDF modifié dans un fichier à l'aide de la`Save()` méthode de la`Document` classe. Assurez-vous de spécifier le chemin d'accès et le nom de fichier corrects pour le fichier de sortie.
+
+#### Q : Puis-je insérer une page vierge à un emplacement spécifique dans le document PDF ?
+
+ R : Oui, vous pouvez insérer une page vierge à n'importe quel endroit spécifique du document PDF en utilisant le`Insert()` méthode de la`Pages` collecte de la`pdfDocument1` objet. Spécifiez l'index de la page à insérer. Par exemple, pour insérer une page vierge à l'index 2, vous pouvez utiliser`pdfDocument1.Pages.Insert(2);`.
+
+#### Q : L'insertion d'une page vierge écrasera-t-elle le contenu existant dans le fichier PDF ?
+
+R : Non, l'insertion d'une page vierge à la fin du document PDF n'écrasera pas le contenu existant. Il ajoute simplement une page vide à la fin, laissant le reste du contenu inchangé.
+
+#### Q : Puis-je insérer plusieurs pages vierges à la fin du document PDF ?
+
+R : Oui, vous pouvez insérer plusieurs pages vierges à la fin du document PDF en répétant l'étape pour insérer la page vierge pour chaque page supplémentaire que vous souhaitez ajouter.
+
+#### Q : Est-il possible de supprimer une page à la fin du document PDF au lieu d'ajouter une page vierge ?
+
+ R : Oui, vous pouvez supprimer une page à la fin du document PDF à l'aide de la`RemoveAt()` méthode de la`Pages`collection. Par exemple, pour supprimer la dernière page, vous pouvez utiliser`pdfDocument1.Pages.RemoveAt(pdfDocument1.Pages.Count);`.

@@ -68,7 +68,7 @@ FileSpecification fileSpecification = pdfDocument.EmbeddedFiles[1];
 Console.WriteLine("Name: {0}", fileSpecification.Name);
 Console.WriteLine("Description: {0}", fileSpecification.Description);
 Console.WriteLine("Mime Type: {0}", fileSpecification.MIMEType);
-// Parametre nesnesinin parametreleri içerip içermediğini kontrol edin
+//Parametre nesnesinin parametreleri içerip içermediğini kontrol edin
 if (fileSpecification.Params != null)
 {
 	Console.WriteLine("CheckSum: {0}",
@@ -85,3 +85,41 @@ if (fileSpecification.Params != null)
 ## Çözüm
 
 Bu eğitimde, Aspose.PDF for .NET kullanılarak bir PDF dosyasının belirli bir eki hakkında nasıl bilgi alınacağını açıkladık. Artık bu bilgiyi PDF dosyalarınızdan ek bilgileri ayıklamak ve görüntülemek için kullanabilirsiniz.
+
+### Ek bilgilerini almak için SSS 
+
+#### S: Neden bir PDF belgesindeki belirli ekler hakkında bilgi almam gerekiyor?
+
+Y: Ek bilgilerinin alınması, bir PDF içindeki gömülü dosyaların ayrıntılarını anlamanıza ve analiz etmenize olanak tanıyarak ekleri etkili bir şekilde yönetmenize ve onlarla çalışmanıza yardımcı olur.
+
+#### S: Bu öğreticiyi kullanarak belirli bir ek hakkında ne tür bilgiler toplayabilirim?
+
+A: Bu öğretici, ad, açıklama, MIME türü, kontrol karması, oluşturma tarihi, değişiklik tarihi ve boyut gibi ek özelliklerinin nasıl alınacağını ve görüntüleneceğini gösterir.
+
+#### S: Bu eğitim, Aspose.PDF for .NET kullanarak ek bilgileri toplamama nasıl yardımcı oluyor?
+
+A: Bu öğretici, bir PDF belgesindeki belirli bir eke ilişkin bilgilere erişmek ve bunları görüntülemek için adım adım yönergeler ve C# kaynak kodu sağlar.
+
+#### S: Bu öğreticiyi kullanarak belirli bir ek yerine tüm ekler hakkında bilgi alabilir miyim?
+
+C: Bu öğretici, belirli bir ek hakkında bilgi edinmeye odaklanmıştır, ancak kodu tüm ekler arasında döngü yapacak ve bilgilerini toplayacak şekilde uyarlayabilirsiniz.
+
+#### S: Ek bilgilerinde görüntülenen "Karmayı Kontrol Et" özelliğinin amacı nedir?
+
+Y: "Karmayı Kontrol Et" özelliği, ekin bütünlüğünü doğrulamak için kullanılabilen ekin kontrol karma değerini temsil eder.
+
+#### S: Farklı dizinlere sahip ekler hakkında bilgi almak için bu kodu nasıl değiştirebilirim?
+
+ A: İndeks değerini değiştirebilirsiniz (örn.`pdfDocument.EmbeddedFiles[1]`) PDF belgesindeki farklı dizinlerdeki ekler hakkında bilgi almak için.
+
+#### S: Bu bilgiyi parola korumalı PDF dosyalarından bilgi toplamak için kullanabilir miyim?
+
+C: Evet, Aspose.PDF for .NET kullanarak parola korumalı PDF dosyalarından ek bilgileri toplamak için benzer ilkeleri uygulayabilirsiniz.
+
+#### S: Aspose.PDF for .NET, ek bilgilerinin alınması sürecini nasıl kolaylaştırıyor?
+
+Y: Aspose.PDF for .NET, PDF belgelerindeki ek özelliklerine kolayca erişmenize ve bu özellikleri değiştirmenize olanak tanıyan sezgisel bir API sağlar.
+
+#### S: Ek bilgilerinin toplanmasının önerildiği belirli senaryolar var mı?
+
+C: Ek bilgilerini toplamak, özelliklerini doğrulamak veya bir belgedeki ekleri denetlemek gibi gömülü dosyaların ayrıntılarını anlamanız gerektiğinde değerlidir.

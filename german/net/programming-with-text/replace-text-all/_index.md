@@ -19,7 +19,7 @@ Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
 ## Schritt 1: Richten Sie das Dokumentenverzeichnis ein
 
- Legen Sie den Pfad zu dem Verzeichnis fest, in dem Sie die Eingabe-PDF-Datei haben. Ersetzen`"YOUR DOCUMENT DIRECTORY"` im`dataDir` Variable mit dem Pfad zu Ihrer PDF-Datei.
+ Legen Sie den Pfad zu dem Verzeichnis fest, in dem Sie die Eingabe-PDF-Datei haben. Ersetzen`"YOUR DOCUMENT DIRECTORY"` im`dataDir`Variable mit dem Pfad zu Ihrer PDF-Datei.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -35,7 +35,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextAll.pdf");
 
 ## Schritt 3: Text suchen und ersetzen
 
- Ein ... kreieren`TextFragmentAbsorber`-Objekt, um alle Instanzen der eingegebenen Suchphrase zu finden. Akzeptieren Sie den Absorber für alle Seiten des PDF-Dokuments, um die Textfragmente zu extrahieren.
+ Ein ... kreieren`TextFragmentAbsorber` -Objekt, um alle Instanzen der eingegebenen Suchphrase zu finden. Akzeptieren Sie den Absorber für alle Seiten des PDF-Dokuments, um die Textfragmente zu extrahieren.
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
@@ -73,7 +73,7 @@ Console.WriteLine("\nText replaced successfully.\nFile saved at " + dataDir);
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Dokument öffnen
 Document pdfDocument = new Document(dataDir + "ReplaceTextAll.pdf");
-// Erstellen Sie ein TextAbsorber-Objekt, um alle Instanzen der eingegebenen Suchphrase zu finden
+//Erstellen Sie ein TextAbsorber-Objekt, um alle Instanzen der eingegebenen Suchphrase zu finden
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
 // Akzeptieren Sie den Absorber für alle Seiten
 pdfDocument.Pages.Accept(textFragmentAbsorber);

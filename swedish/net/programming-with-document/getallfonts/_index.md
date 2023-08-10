@@ -1,16 +1,15 @@
 ---
-title: Hämta alla teckensnitt
-linktitle: Hämta alla teckensnitt
+title: Hämta alla teckensnitt i PDF-fil
+linktitle: Hämta alla teckensnitt i PDF-fil
 second_title: Aspose.PDF för .NET API Referens
-description: Lär dig hur du använder Aspose.PDF för .NET för att få alla teckensnitt som används i ett PDF-dokument programmatiskt med denna steg-för-steg-guide och exempelkod.
+description: Lär dig hur du använder Aspose.PDF för .NET för att få alla teckensnitt som används i en PDF-fil programmatiskt med denna steg-för-steg-guide och exempelkod.
 type: docs
 weight: 160
 url: /sv/net/programming-with-document/getallfonts/
 ---
+Aspose.PDF för .NET är ett kraftfullt bibliotek som gör det möjligt för utvecklare att arbeta med PDF-filer programmatiskt. En av funktionerna som det ger är möjligheten att få alla teckensnitt som används i en PDF-fil. Detta kan vara användbart om du behöver programmera analysera eller manipulera teckensnitten i en PDF-fil.
 
-Aspose.PDF för .NET är ett kraftfullt bibliotek som gör det möjligt för utvecklare att arbeta med PDF-dokument programmatiskt. En av funktionerna som det ger är möjligheten att få alla teckensnitt som används i ett PDF-dokument. Detta kan vara användbart om du behöver programmera analysera eller manipulera teckensnitten i ett PDF-dokument.
-
-den här handledningen kommer vi att diskutera hur man använder Aspose.PDF för .NET för att få alla teckensnitt som används i ett PDF-dokument. Vi kommer att tillhandahålla en steg-för-steg-guide om hur du gör detta, tillsammans med exempel på källkod.
+I den här handledningen kommer vi att diskutera hur man använder Aspose.PDF för .NET för att få alla teckensnitt som används i ett PDF-dokument. Vi kommer att tillhandahålla en steg-för-steg-guide om hur du gör detta, tillsammans med exempel på källkod.
 
 ## Steg 1: Skapa en ny C# Console Application
 För att komma igång, skapa en ny C# Console Application i Visual Studio. Du kan namnge det vad du vill. När projektet har skapats måste du lägga till en referens till Aspose.PDF för .NET-biblioteket.
@@ -59,6 +58,22 @@ foreach (Aspose.Pdf.Text.Font font in fonts)
 ```
 
 ## Slutsats
-I den här handledningen har vi diskuterat hur man får alla teckensnitt som används i ett PDF-dokument med Aspose.PDF för .NET. Att få alla teckensnitt som används i ett PDF-dokument kan vara användbart om du behöver programmera analysera eller manipulera teckensnitten i ett PDF-dokument. Aspose.PDF för .NET tillhandahåller ett enkelt och lättanvänt API för att arbeta med PDF-dokument, inklusive att hämta alla teckensnitt som används i ett PDF-dokument.
+den här handledningen har vi diskuterat hur man får alla teckensnitt som används i ett PDF-dokument med Aspose.PDF för .NET. Att få alla teckensnitt som används i ett PDF-dokument kan vara användbart om du behöver programmera analysera eller manipulera teckensnitten i ett PDF-dokument. Aspose.PDF för .NET tillhandahåller ett enkelt och lättanvänt API för att arbeta med PDF-dokument, inklusive att hämta alla teckensnitt som används i ett PDF-dokument.
 
+### FAQ's
 
+#### F: Varför skulle jag behöva få alla teckensnitt som används i ett PDF-dokument?
+
+S: Att få alla teckensnitt som används i ett PDF-dokument kan vara användbart om du behöver programmera analysera eller manipulera teckensnitten för olika ändamål, till exempel typsnittsersättning eller teckensnittsanpassning.
+
+#### F: Hur kan jag få alla teckensnitt som används i ett PDF-dokument med Aspose.PDF för .NET?
+
+ S: Du kan få alla teckensnitt som används i ett PDF-dokument med Aspose.PDF för .NET genom att anropa`GetAllFonts` metod för`FontUtilities` klass. Denna metod returnerar en array av`Aspose.Pdf.Text.Font` objekt, som representerar de typsnitt som används i PDF-dokumentet.
+
+#### F: Kan jag filtrera typsnitt baserat på vissa kriterier?
+
+S: Ja, du kan filtrera typsnitt baserat på vissa kriterier med Aspose.PDF för .NET. Efter att ha fått alla teckensnitt kan du programmera analysera teckensnitten och tillämpa filtreringslogik efter behov.
+
+#### F: Är Aspose.PDF för .NET kompatibelt med olika teckensnittsformat?
+
+S: Ja, Aspose.PDF för .NET är kompatibel med olika teckensnittsformat, inklusive TrueType, OpenType och Type 1-teckensnitt. Det kan fungera med olika teckensnittsformat och hantera dem under manipulering av PDF-dokument.

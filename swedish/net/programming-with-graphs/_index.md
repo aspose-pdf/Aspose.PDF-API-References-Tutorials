@@ -13,9 +13,9 @@ Programmeringshandledningar med grafik från Aspose.PDF för .NET är designade 
 ## Handledningar
 | Titel | Beskrivning |
 | --- | --- | 
-| [Lägg till ritning](./add-drawing/) | Lär dig hur du lägger till ritningar med Aspose.PDF för .NET. Följ den här steg-för-steg-guiden för att skapa attraktiva PDF-dokument med ritfunktioner. |  
+| [Lägg till ritning i PDF-fil](./add-drawing/) | Lär dig hur du lägger till ritning i PDF-fil med Aspose.PDF för .NET. Följ den här steg-för-steg-guiden för att skapa attraktiva PDF-dokument med ritfunktioner. |  
 | [Lägg till ritning med gradientfyllning](./add-drawing-with-gradient-fill/) | Lär dig hur du lägger till en ritning med gradientfyllning med Aspose.PDF för .NET. Steg för steg handledning för att skapa attraktiva PDF-dokument. |  
-| [Lägg till linjeobjekt](./add-line-object/) | Lär dig hur du lägger till ett anpassat linjeobjekt i en PDF-fil med Aspose.PDF för .NET. |  
+| [Lägg till linjeobjekt i PDF-fil](./add-line-object/) | Lär dig hur du lägger till ett anpassat linjeobjekt i en PDF-fil med Aspose.PDF för .NET. |  
 | [Kontroll Rectangle Z Order](./control-rectangle-z-order/) | Lär dig hur du styr Z-ordningen av rektanglar i en PDF-fil med Aspose.PDF för .NET.  |  
 | [Skapa fylld rektangel](./create-filled-rectangle/) | Lär dig hur du skapar en fylld rektangel med Aspose.PDF för .NET. Steg för steg guide för att anpassa fyllningsfärgen. |  
 | [Skapa rektangel med alfafärg](./create-rectangle-with-alpha-color/) | Lär dig hur du skapar en rektangel med transparent färg med Aspose.PDF för .NET. Steg-för-steg-guide för att anpassa transparens. |  

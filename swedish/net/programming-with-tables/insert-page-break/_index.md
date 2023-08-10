@@ -1,14 +1,13 @@
 ---
-title: Infoga sidbrytning
-linktitle: Infoga sidbrytning
+title: Infoga sidbrytning i PDF-fil
+linktitle: Infoga sidbrytning i PDF-fil
 second_title: Aspose.PDF för .NET API Referens
-description: Lär dig hur du infogar en sidbrytning i ett PDF-dokument med Aspose.PDF för .NET.
+description: Lär dig hur du infogar en sidbrytning i PDF-filen med Aspose.PDF för .NET.
 type: docs
 weight: 110
 url: /sv/net/programming-with-tables/insert-page-break/
 ---
-
-I den här handledningen kommer vi att lära oss hur man infogar en sidbrytning i ett PDF-dokument med Aspose.PDF för .NET. Vi kommer att förklara källkoden i C# steg för steg. I slutet av denna handledning kommer du att veta hur du lägger till en sidbrytning efter ett visst antal rader i en tabell i ett PDF-dokument. Låt oss börja!
+I den här handledningen kommer vi att lära oss hur man infogar en sidbrytning i PDF-filen med Aspose.PDF för .NET. Vi kommer att förklara källkoden i C# steg för steg. I slutet av denna handledning kommer du att veta hur du lägger till en sidbrytning efter ett visst antal rader i en tabell i ett PDF-dokument. Låt oss börja!
 
 ## Steg 1: Sätta upp miljön
 Se till att du har konfigurerat din C#-utvecklingsmiljö med Aspose.PDF för .NET. Lägg till referensen till biblioteket och importera de nödvändiga namnrymden.
@@ -106,3 +105,51 @@ Console.WriteLine("\nPage break inserted successfully.\nFile saved at " + dataDi
 
 ## Slutsats
 I den här handledningen lärde vi oss hur man infogar en sidbrytning i ett PDF-dokument med Aspose.PDF för .NET. Du kan använda den här steg-för-steg-guiden för att lägga till en sidbrytning efter ett visst antal rader i en tabell i ett PDF-dokument med C#.
+
+### Vanliga frågor för att infoga sidbrytning i PDF-fil
+
+#### F: Hur kan jag ändra sidstorleken för de nya sidorna som skapats efter sidbrytningen?
+
+ S: För att ändra sidstorleken för de nya sidorna som skapats efter sidbrytningen kan du ställa in`PageSize` egendom av`Page` objekt. Du kan till exempel använda följande kod för att ställa in sidstorleken till A4:
+
+```csharp
+// Ställ in sidstorleken till A4
+doc.Pages[1].SetPageSize(PageSize.A4);
+```
+
+#### F: Kan jag kontrollera sidmarginalerna för de nya sidorna efter sidbrytningen?
+
+ S: Ja, du kan styra sidmarginalerna för de nya sidorna efter sidbrytningen. Använd`Margin` egendom av`Page` objekt för att ställa in sidmarginalerna. Till exempel, för att ställa in alla marginaler till 10 poäng, kan du använda följande kod:
+
+```csharp
+// Ställ in alla marginaler till 10 poäng
+doc.Pages[1].Margin = new MarginInfo(10, 10, 10, 10);
+```
+
+#### F: Är det möjligt att lägga till sidhuvuden och sidfötter på de nya sidorna efter sidbrytningen?
+
+ S: Ja, du kan lägga till sidhuvuden och sidfötter på de nya sidorna efter sidbrytningen. Använd`Page.Header` och`Page.Footer` egenskaper för att lägga till innehåll i sidhuvudet och sidfoten på sidan. Till exempel:
+
+```csharp
+// Lägg till rubrik på de nya sidorna
+doc.Pages[1].Header = new HeaderFooter()
+{
+    Margin = new MarginInfo(10, 10, 10, 10),
+    Paragraphs = { new TextFragment("Header content") }
+};
+
+// Lägg till sidfot på de nya sidorna
+doc.Pages[1].Footer = new HeaderFooter()
+{
+    Margin = new MarginInfo(10, 10, 10, 10),
+    Paragraphs = { new TextFragment("Footer content") }
+};
+```
+
+#### F: Kan jag infoga sidbrytningar på specifika platser andra än efter ett visst antal rader?
+
+ S: Ja, du kan infoga sidbrytningar på specifika platser andra än efter ett visst antal rader. Du kan ställa in`IsInNewPage` egenskap hos en rad till`true` för att tvinga tabellen att starta en ny sida efter den raden.
+
+#### F: Hur kan jag justera sidbrytningsbeteendet baserat på innehållets höjd?
+
+S: Du kan använda`IsBroken` egenskapen för tabellen för att aktivera eller inaktivera automatisk radbrytning över sidor. När inställd på`true`, gör det att rader kan delas över sidor baserat på innehållets höjd.

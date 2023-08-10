@@ -1,14 +1,13 @@
 ---
-title: Tabloyu Yönet
-linktitle: Tabloyu Yönet
+title: Tabloyu PDF Dosyasında Yönetin
+linktitle: Tabloyu PDF Dosyasında Yönetin
 second_title: Aspose.PDF for .NET API Referansı
-description: Aspose.PDF for .NET ile PDF belgelerindeki tabloları kolayca değiştirin.
+description: Aspose.PDF for .NET ile PDF dosyasındaki tabloları kolayca değiştirin.
 type: docs
 weight: 130
 url: /tr/net/programming-with-tables/manipulate-table/
 ---
-
-Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF belgesindeki tabloları işlemek için adım adım ilerleyeceksiniz. Tablolar, PDF belgelerinde ortak bir öğedir ve içeriklerini programlı olarak değiştirebilmek, çeşitli senaryolarda oldukça faydalı olabilir. Süreci göstermek için sağlanan C# kaynak kodunu kullanacağız.
+Bu öğreticide, Aspose.PDF for .NET kullanarak PDF dosyasındaki tabloları işlemek için adım adım yol göstereceğiz. Tablolar, PDF belgelerinde ortak bir öğedir ve içeriklerini programlı olarak değiştirebilmek, çeşitli senaryolarda oldukça faydalı olabilir. Süreci göstermek için sağlanan C# kaynak kodunu kullanacağız.
 
 ## Gereksinimler
 
@@ -109,3 +108,25 @@ catch (Exception ex)
 ## Çözüm
 
 Bu öğreticide, Aspose.PDF for .NET kullanarak bir PDF belgesindeki tabloları nasıl değiştireceğimizi öğrendik. Adım adım kılavuzu izleyerek bir PDF belgesini kolayca yükleyebilir, tabloları bulabilir, hücrelere ve metin parçalarına erişebilir, tablo içeriğini değiştirebilir ve değiştirilen belgeyi kaydedebilirsiniz. Bu yaklaşım, PDF belgelerinde tablo manipülasyonu ile uğraşırken esneklik ve verimlilik sağlar.
+
+### PDF dosyasındaki tabloyu işlemek için SSS'ler
+
+#### S: Çok sayfalı PDF belgelerindeki tabloları değiştirebilir miyim?
+
+C: Evet, Aspose.PDF for .NET kullanarak çok sayfalı PDF belgelerindeki tabloları değiştirebilirsiniz. Sağlanan örnekte, belgenin ilk sayfasını ziyaret ettik (`pdfDocument.Pages[1]`), ancak tüm sayfalar arasında dolaşabilir ve her sayfadaki tabloları gerektiği gibi değiştirebilirsiniz.
+
+#### S: Mevcut bir tabloya nasıl yeni satırlar veya sütunlar ekleyebilirim?
+
+ C: Mevcut bir tabloya yeni satırlar veya sütunlar eklemek için Aspose.PDF for .NET tarafından sağlanan API'leri kullanabilirsiniz. Şuraya erişebilirsiniz:`RowList` Ve`CellList` özellikleri`TableAbsorber.TableList` programlı olarak yeni satırlar ve hücreler eklemek için. Ayrıntılı bilgi ve kod örnekleri için Aspose.PDF for .NET belgelerine bakın.
+
+#### S: Bir PDF belgesinden tablo kaldırmak mümkün mü?
+
+ C: Evet, Aspose.PDF for .NET'i kullanarak bir PDF belgesinden tablo kaldırabilirsiniz. Bunu başarmak için, belirli`Table` gelen nesne`Page.Paragraphs` Toplamak. gibi özellikleri kullanarak kaldırılacak tabloyu belirleyebilirsiniz.`Table.NumberOfColumns`, `Table.NumberOfRows`ve diğer benzersiz tanımlayıcılar.
+
+#### S: Tablo metninin biçimlendirmesini (yazı tipi, renk, hizalama) değiştirebilir miyim?
+
+ C: Evet, tablo metninin biçimlendirmesini Aspose.PDF for .NET kullanarak değiştirebilirsiniz. Şuraya erişebilirsiniz:`TextState` mülkiyeti`TextFragment` Metnin yazı tipini, yazı tipi boyutunu, rengini ve hizalamasını değiştirmek için nesne.
+
+#### S: Aspose.PDF for .NET, PDF formlarındaki (AcroForms) tablolarla çalışmayı destekliyor mu?
+
+C: Evet, Aspose.PDF for .NET, PDF formlarındaki (AcroForms) tablolarla çalışmayı destekler. Bu eğitimde gösterilen yaklaşıma benzer şekilde, PDF formlarındaki tablo öğelerine erişebilir ve bu öğeleri değiştirebilirsiniz. Aspose.PDF for .NET, AcroForms ve form alanlarıyla çalışmak için kapsamlı destek sağlar.

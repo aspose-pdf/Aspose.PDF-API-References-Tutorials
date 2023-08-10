@@ -35,7 +35,7 @@ Document doc = new Document(dataDir + "ReplaceTextPage.pdf");
 
 ## 3. Adım: Kullanılmayan Yazı Tiplerini Belirleyin ve Kaldırın
 
- biz bir yaratırız`TextFragmentAbsorber` ile nesne`TextEditOptions` parametre ayarlandı`TextEditOptions.FontReplace.RemoveUnusedFonts` . Bu seçenek, PDF belgesindeki kullanılmayan yazı tiplerini belirlememize ve kaldırmamıza olanak tanır. Daha sonra tüm işlemleri yineliyoruz.`TextFragments` ve yazı tipini istediğiniz yazı tipine ayarlayın.
+ biz bir yaratırız`TextFragmentAbsorber` ile nesne`TextEditOptions` parametre ayarlandı`TextEditOptions.FontReplace.RemoveUnusedFonts` Bu seçenek, PDF belgesindeki kullanılmayan yazı tiplerini belirlememize ve kaldırmamıza olanak tanır. Daha sonra tüm işlemleri yineliyoruz.`TextFragments` ve yazı tipini istediğiniz yazı tipine ayarlayın.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));

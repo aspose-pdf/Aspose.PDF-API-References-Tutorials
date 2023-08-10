@@ -7,7 +7,6 @@ type: docs
 weight: 270
 url: /es/net/document-conversion/set-default-font-name/
 ---
-
 En este tutorial, le mostraremos cómo configurar el nombre de fuente predeterminado en un archivo PDF usando Aspose.PDF para .NET. A veces, cuando extrae imágenes de un archivo PDF, es posible que encuentre problemas de fuentes faltantes. Al especificar un nombre de fuente predeterminado, puede asegurarse de que el texto extraído se muestre correctamente. Siga los pasos a continuación para establecer el nombre de fuente predeterminado en un archivo PDF.
 
 ## requisitos previos
@@ -84,3 +83,25 @@ using (Document pdfDocument = new Document(dataDir + "input.pdf"))
 
 ## Conclusión
 En este tutorial, aprendimos cómo establecer el nombre de fuente predeterminado en un archivo PDF usando Aspose.PDF para .NET. Al especificar un nombre de fuente predeterminado, puede asegurarse de que el texto extraído se muestre correctamente. Utilice este método para resolver problemas de fuentes faltantes al extraer imágenes de archivos PDF.
+
+### Preguntas frecuentes
+
+#### P: ¿Qué es Aspose.PDF para .NET?
+
+R: Aspose.PDF para .NET es una potente biblioteca que permite a los desarrolladores trabajar con documentos PDF en aplicaciones C#. Ofrece varias funcionalidades, incluida la configuración del nombre de fuente predeterminado en un archivo PDF.
+
+#### P: ¿Por qué tendría que establecer el nombre de fuente predeterminado en un archivo PDF?
+
+R: Establecer el nombre de fuente predeterminado es útil al extraer texto de un documento PDF. Si el PDF contiene texto con fuentes que no están disponibles en la máquina de extracción, especificar un nombre de fuente predeterminado garantiza la visualización correcta del texto.
+
+#### P: ¿Cómo puedo cargar un documento PDF y establecer el nombre de fuente predeterminado usando Aspose.PDF para .NET?
+
+ R: Para cargar un documento PDF y establecer el nombre de fuente predeterminado, puede usar el`Document`clase para cargar el archivo PDF y el`RenderingOptions.DefaultFontName` propiedad para especificar el nombre de fuente predeterminado deseado.
+
+#### P: ¿Puedo elegir cualquier fuente como nombre de fuente predeterminado?
+
+R: Sí, puede elegir cualquier fuente que esté disponible en la máquina de extracción como nombre de fuente predeterminado. Utilice una fuente que coincida con las fuentes que faltan en el PDF original para garantizar una representación precisa del texto.
+
+#### P: ¿Establecer el nombre de fuente predeterminado es un cambio permanente en el archivo PDF?
+
+R: No, establecer el nombre de fuente predeterminado con Aspose.PDF para .NET es un cambio temporal realizado durante la extracción de texto. No modifica el archivo PDF original.

@@ -1,13 +1,12 @@
 ---
-title: Establecer borde
-linktitle: Establecer borde
+title: Establecer borde en PDF a tabla
+linktitle: Establecer borde en PDF a tabla
 second_title: Referencia de API de Aspose.PDF para .NET
-description: Aprenda a establecer un borde en una tabla PDF con Aspose.PDF para .NET.
+description: Aprenda a establecer un borde de PDF a tabla con Aspose.PDF para .NET.
 type: docs
 weight: 200
 url: /es/net/programming-with-tables/set-border/
 ---
-
 En este tutorial, lo guiaremos paso a paso para establecer un borde en una tabla de un documento PDF utilizando Aspose.PDF para .NET. Explicaremos el código fuente de C# provisto y le mostraremos cómo implementarlo.
 
 ## Paso 1: Crear una instancia del objeto Documento
@@ -18,7 +17,7 @@ Document doc = new Document();
 ```
 
 ## Paso 2: agregar una página al documento PDF
-A continuación, agregaremos una página al documento PDF:
+continuación, agregaremos una página al documento PDF:
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -39,7 +38,7 @@ border.Top.IsDoubled = true;
 border.Bottom.IsDoubled = true;
 ```
 
-## Paso 5: Crear una instancia del objeto Table
+## Paso 5: Crear una instancia del objeto Tabla
 Ahora vamos a crear una instancia de un objeto Tabla:
 
 ```csharp
@@ -103,7 +102,7 @@ Document doc = new Document();
 Page page = doc.Pages.Add();
 // Crear objeto BorderInfo
 Aspose.Pdf.BorderInfo border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All);
-// Especifique que el borde superior será doble
+//Especifique que el borde superior será doble
 border.Top.IsDoubled = true;
 // Especificar que el borde inferior será doble
 border.Bottom.IsDoubled = true;
@@ -128,3 +127,25 @@ Console.WriteLine("\nBorder setup successfully.\nFile saved at " + dataDir);
 
 ## Conclusión
 ¡Felicidades! Ahora ha aprendido cómo establecer un borde en una tabla de un documento PDF usando Aspose.PDF para .NET. Esta guía paso a paso le mostró cómo crear un documento, agregar una página, configurar el borde de la tabla y guardar el documento PDF. Ahora puedes aplicar este conocimiento a tus propios proyectos.
+
+### Preguntas frecuentes
+
+#### P: ¿Puedo establecer diferentes estilos de borde (p. ej., discontinuos o punteados) para los bordes superior e inferior de la tabla?
+
+ R: Sí, puede establecer diferentes estilos de borde para los bordes superior e inferior de la tabla modificando el`border.Top.Style` y`border.Bottom.Style`properties en el código fuente de C# proporcionado. Aspose.PDF para .NET le permite elegir entre varios estilos de borde, incluidos Sólido, Discontinuo, Punteado, Doble y más.
+
+#### P: ¿Cómo puedo establecer el color del borde de la tabla?
+
+ R: Puede establecer el color del borde de la tabla modificando el`border.Color` propiedad en el código fuente de C#. Simplemente proporcione el color deseado, como`Aspose.Pdf.Color.Red` o cualquier otra representación de color válida, para personalizar el color del borde.
+
+#### P: ¿Es posible aplicar bordes a celdas individuales dentro de la tabla con diferentes configuraciones (por ejemplo, diferentes colores o estilos de borde)?
+
+ R: Sí, puede aplicar bordes a celdas individuales dentro de la tabla con diferentes configuraciones configurando el`cell.Border` propiedad para cada celda individualmente. Esto le permite tener estilos y colores de borde específicos de celda según sus requisitos.
+
+#### P: ¿Puedo eliminar el borde de lados específicos de la mesa (por ejemplo, los bordes izquierdo y derecho)?
+
+ R: Sí, puede eliminar el borde de lados específicos de la mesa modificando el`border.Left`, `border.Right`, `border.Top` , y`border.Bottom`propiedades en el código fuente de C#. Establecer estas propiedades en`null` eliminará el borde de los lados correspondientes de la mesa.
+
+#### P: ¿Cómo puedo ajustar el grosor del borde de la mesa?
+
+ R: Puede ajustar el grosor del borde de la tabla modificando el`border.Width` propiedad en el código fuente de C#. Simplemente configure el ancho de borde deseado (en puntos) para lograr el grosor deseado.

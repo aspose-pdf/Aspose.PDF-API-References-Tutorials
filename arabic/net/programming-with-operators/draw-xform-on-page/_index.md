@@ -52,10 +52,10 @@ string outFile = dataDir + "blank-sample2_out.pdf";
 using (Document doc = new Document(inFile))
 {
 OperatorCollection pageContents = doc.Pages[1].Contents;
-//يستخدم الكود التالي عوامل تشغيل GSave / GRestore
+// يستخدم الكود التالي عوامل تشغيل GSave / GRestore
 // يستخدم الكود عامل التشغيل ContatenateMatrix لوضع XForm
 // يستخدم الكود عامل التشغيل Do لرسم XForm على الصفحة
-// يقوم مشغلو GSave / GRestore بتغليف المحتوى الموجود
+// يلتف مشغلو GSave / GRestore المحتوى الموجود
 // يتم ذلك للحصول على حالة الرسومات الأولية في نهاية المحتوى الحالي
 // وإلا فقد تكون هناك تحويلات غير مرغوب فيها في نهاية سلسلة المشغلين الحاليين
 pageContents. Insert(1, new GSave());
@@ -79,7 +79,7 @@ form.Contents.Add(new Do(ximage.Name));
 form.Contents.Add(new GRestore());
 
 pageContents. Add(new GSave());
-// ضع XForm عند الإحداثيات x = 100 و y = 500
+//ضع XForm عند الإحداثيات x = 100 و y = 500
 pageContents. Add(new ConcatenateMatrix(1, 0, 0, 1, 100, 500));
 // ارسم XForm باستخدام عامل التشغيل Do
 pageContents.Add(new Do(form.Name));
@@ -132,7 +132,7 @@ using (Document doc = new Document(inFile))
 	form.Contents.Add(new Aspose.Pdf.Operators.ConcatenateMatrix(200, 0, 0, 200, 0, 0));
 	// تحميل الصورة في تيار
 	Stream imageStream = new FileStream(imageFile, FileMode.Open);
-	// أضف صورة إلى مجموعة الصور لموارد XForm
+	//أضف صورة إلى مجموعة الصور لموارد XForm
 	form.Resources.Images.Add(imageStream);
 	XImage ximage = form.Resources.Images[form.Resources.Images.Count];
 	// باستخدام عامل التشغيل: يقوم هذا العامل برسم الصورة
@@ -160,4 +160,60 @@ using (Document doc = new Document(inFile))
 
 ## خاتمة
 
-في هذا البرنامج التعليمي ، تعلمت كيفية رسم نموذج XForm على صفحة PDF باستخدام Aspose.PDF for .NET. باتباع الخطوات الموضحة ، ستتمكن من إضافة نموذج XForm ووضعه في صفحة موجودة ، مما يمنحك مزيدًا من المرونة لمستندات PDF الخاصة بك.
+في هذا البرنامج التعليمي ، تعلمت كيفية رسم نموذج XForm على صفحة PDF باستخدام Aspose.PDF for .NET. باتباع الخطوات الموضحة ، ستتمكن من إضافة نموذج XForm ووضعه على صفحة موجودة ، مما يمنحك مزيدًا من المرونة لمستندات PDF الخاصة بك.
+
+### الأسئلة الشائعة لرسم XForm على الصفحة
+
+#### س: ما هو XForm في Aspose.PDF؟
+
+ج: XForm هو كائن رسومي يمكن إعادة استخدامه في مستند PDF. يتيح لك تحديد ورسم رسومات أو صور أو نصوص معقدة يمكن إعادة استخدامها عدة مرات على صفحات مختلفة.
+
+#### س: كيف يمكنني استيراد مساحات الأسماء الضرورية لـ Aspose.PDF؟
+
+ ج: في ملف كود C # ، استخدم الامتداد`using` توجيه لاستيراد مساحات الأسماء المطلوبة للوصول إلى الفئات والطرق التي يوفرها Aspose.PDF:
+```csharp
+using System;
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Operators;
+```
+
+#### س: ما هو الغرض من مشغلي GSave و GRestore؟
+
+ ج: إن`GSave` و`GRestore`يتم استخدام العوامل في Aspose.PDF لحفظ واستعادة حالة الرسومات. إنها تساعد على ضمان أن التحويلات والإعدادات المطبقة على قسم واحد من المحتوى لا تؤثر على الأقسام التالية.
+
+#### س: كيف يمكنني تعريف XForm باستخدام Aspose.PDF؟
+
+ ج: لإنشاء XForm ، استخدم ملف`XForm.CreateNewForm` الطريقة وإضافته إلى ملف`Resources.Forms` مجموعة من صفحة معينة. يمكنك بعد ذلك إضافة محتوى إلى XForm's`Contents` ملكية.
+
+#### س: كيف يمكنني رسم صورة داخل XForm؟
+
+ ج: قم بتحميل الصورة في دفق وأضفها إلى ملف`Resources.Images` جمع XForm. استخدم ال`Do` عامل داخل XForm`Contents` لرسم الصورة.
+
+#### س: كيف يمكنني وضع XForm على صفحة PDF؟
+
+ ج: لوضع XForm على الصفحة ، استخدم ملف`ConcatenateMatrix` عامل داخل الصفحة`Contents`. اضبط معلمات المصفوفة لتحديد الترجمة (الموضع) وقياس XForm.
+
+#### س: هل يمكنني رسم عدة XForms على نفس الصفحة؟
+
+ ج: نعم ، يمكنك رسم عدة أشكال XForms على نفس الصفحة عن طريق ضبط ملف`ConcatenateMatrix`معلمات لوضع كل XForm في إحداثيات مختلفة.
+
+#### س: هل يمكنني تعديل محتوى XForm بعد إنشائه؟
+
+ ج: نعم ، يمكنك تعديل محتويات XForm بعد الإنشاء عن طريق إضافة عوامل تشغيل إضافية إليه`Contents` ملكية.
+
+#### س: ماذا يحدث إذا حذفت مشغلي GSave و GRestore؟
+
+ج: قد يؤدي حذف مشغلي GSave و GRestore إلى تطبيق تحويلات أو إعدادات غير مرغوب فيها على المحتوى اللاحق. يساعد استخدامها في الحفاظ على حالة رسومات نظيفة.
+
+#### س: هل يمكنني إعادة استخدام XForms عبر صفحات مختلفة من مستند PDF؟
+
+ ج: نعم ، يمكنك إعادة استخدام XForms على صفحات متعددة عن طريق إضافة نفس XForm إلى ملف`Resources.Forms` مجموعة من الصفحات المختلفة.
+
+#### س: هل هناك حد لعدد XForms التي يمكنني إنشاؤها؟
+
+ج: بينما لا يوجد حد صارم لعدد XForms التي يمكنك إنشاؤها ، ضع في اعتبارك أن عددًا كبيرًا جدًا من XForms قد يؤثر على الأداء واستخدام الذاكرة. استخدمها بحكمة.
+
+#### س: هل يمكنني تدوير XForm أو تطبيق تحويلات أخرى؟
+
+ ج: نعم ، يمكنك استخدام ملف`ConcatenateMatrix`المشغل لتطبيق تحويلات مثل التدوير والقياس والترجمة إلى XForm.

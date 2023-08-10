@@ -43,7 +43,7 @@ imageStamp.TopMargin = 10;
 imageStamp.HorizontalAlignment = HorizontalAlignment.Center;
 imageStamp.VerticalAlignment = VerticalAlignment.Top;
 
-//Tüm sayfalara resim arabelleği ekle
+// Tüm sayfalara resim arabelleği ekle
 foreach(Page page in pdfDocument.Pages)
 {
      page.AddStamp(imageStamp);
@@ -97,3 +97,45 @@ Console.WriteLine("\nImage in header added successfully.\nFile saved at " + data
 ## Çözüm
 
 Tebrikler! Aspose.PDF for .NET kullanarak bir PDF belgesinin başlık bölümüne nasıl resim ekleyeceğinizi öğrendiniz. Artık resimler ekleyerek PDF belgelerinizin başlıklarını özelleştirebilirsiniz.
+
+### Başlıktaki resim için SSS
+
+#### S: Bir PDF belgesinin başlık bölümüne resim eklemenin amacı nedir?
+
+C: Bir PDF belgesinin başlık bölümüne resim eklemek, her sayfanın başına logo veya marka gibi görsel öğeler eklemenize olanak tanır. Bu, PDF içeriğinin genel görünümünü ve hissini geliştirebilir.
+
+#### S: Sağlanan C# kaynak kodu, bir PDF belgesinin başlık bölümüne resim eklemeyi nasıl başarıyor?
+
+ A: Sağlanan kod, mevcut bir PDF belgesinin nasıl yükleneceğini, nasıl oluşturulacağını gösterir.`ImageStamp` bir görüntü dosyasından nesne, üst kenar boşluğu ve hizalama gibi özellikleri ayarlayın ve ardından görüntü damgasını tüm sayfaların başlığına ekleyin.
+
+#### S: Başlık bölümünde görüntünün konumunu ve hizalamasını ayarlayabilir miyim?
+
+ C: Evet, başlık bölümündeki görüntünün konumunu ve hizalamasını, özelliklerini değiştirerek ayarlayabilirsiniz.`ImageStamp` nesne. Kod parçacığı, aşağıdaki gibi özellikleri ayarlar`TopMargin`, `HorizontalAlignment` , Ve`VerticalAlignment`.
+
+#### S: PDF belgesinin farklı sayfalarındaki başlık bölümüne farklı görseller eklemek mümkün müdür?
+
+ C: Evet, farklı sayfalardaki başlık bölümüne ayrı görseller oluşturarak farklı görseller ekleyebilirsiniz.`ImageStamp` farklı görüntü dosyalarına ve özelliklere sahip nesneler ve ardından bunları belirli sayfalara ekleme.
+
+#### S: Kod, görüntünün PDF belgesinin başlık bölümünün tüm sayfalarına eklenmesini nasıl sağlıyor?
+
+ C: Sağlanan kod bir`foreach` PDF belgesinin tüm sayfalarını yinelemek ve aynısını eklemek için döngü`ImageStamp` her sayfanın başlık bölümüne.
+
+#### S: Benzer bir yaklaşım kullanarak başlık bölümüne metin veya şekiller gibi başka öğeler ekleyebilir miyim?
+
+C: Evet, benzer bir yaklaşım kullanarak uygun damga nesneleri (örn.`TextStamp`) ve özelliklerini buna göre ayarlama.
+
+#### S: Başlığa eklemek istediğim resim dosyasının yolunu nasıl belirtebilirim?
+
+ C: Görüntü dosyasının yolu, dosya oluşturulurken belirtilir.`ImageStamp` nesne, kodda gösterildiği gibi. Görüntü dosyasına giden doğru yolu sağladığınızdan emin olun.
+
+#### S: Başlık bölümünde görüntünün boyutunu özelleştirebilir miyim?
+
+ C: Evet, başlık bölümündeki resmin boyutunu ayarlayarak özelleştirebilirsiniz.`ImageStamp` gibi özellikleri kullanarak`Width` Ve`Height`.
+
+#### S: Başlık bölümündeki görseli ekledikten sonra kaldırmak veya değiştirmek mümkün müdür?
+
+ C: Evet, başlık bölümündeki resmi içeriğini değiştirerek kaldırabilir veya değiştirebilirsiniz.`ImageStamp` nesne veya belirli sayfalardan damgayı kaldırma.
+
+#### S: Kod, görüntünün boyutlarının başlıktaki kullanılabilir alanı aştığı senaryoları nasıl ele alıyor?
+
+ A: Kod, aşağıdaki gibi özellikleri ayarlar`TopMargin`, `HorizontalAlignment` , Ve`VerticalAlignment` görüntünün konumunu ve hizalamasını kontrol etmek için. Herhangi bir çakışma veya düzen sorununu önlemek için bu özelliklerin ayarlandığından emin olun.

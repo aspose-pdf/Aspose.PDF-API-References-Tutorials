@@ -7,8 +7,7 @@ type: docs
 weight: 170
 url: /it/net/programming-with-document/getdocumentwindow/
 ---
-
- Aspose.PDF per .NET è una potente libreria di manipolazione PDF che consente agli sviluppatori di creare, modificare e convertire file PDF nelle loro applicazioni .NET. Una delle funzionalità offerte da questa libreria è la capacità di recuperare informazioni sulle proprietà della finestra di un documento. Questo tutorial ti guiderà attraverso le fasi di utilizzo del`GetDocumentWindow` caratteristica di Aspose.PDF per. NET per recuperare informazioni sulle proprietà della finestra di un documento PDF.
+ Aspose.PDF per .NET è una potente libreria di manipolazione PDF che consente agli sviluppatori di creare, modificare e convertire file PDF nelle loro applicazioni .NET. Una delle funzionalità offerte da questa libreria è la capacità di recuperare informazioni sulle proprietà della finestra di un documento. Questo tutorial ti guiderà attraverso le fasi di utilizzo del`GetDocumentWindow`caratteristica di Aspose.PDF per. NET per recuperare informazioni sulle proprietà della finestra di un documento PDF.
 
 ## Passo 1: Installa Aspose.PDF per .NET
 
@@ -26,11 +25,11 @@ Il primo passaggio per utilizzare questa funzione è caricare il documento PDF d
 // Il percorso del documento PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Apri il documento PDF
+//Apri il documento PDF
 Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
 ```
 
- Nel codice sopra, sostituisci`"YOUR DOCUMENT DIRECTORY"` con il percorso della directory in cui si trova il documento PDF. Questo codice caricherà il documento PDF in un file`Document` oggetto, che è quindi possibile utilizzare per recuperare informazioni sulle proprietà della finestra del documento.
+ Nel codice sopra, sostituisci`"YOUR DOCUMENT DIRECTORY"`con il percorso della directory in cui si trova il documento PDF. Questo codice caricherà il documento PDF in un file`Document` oggetto, che è quindi possibile utilizzare per recuperare informazioni sulle proprietà della finestra del documento.
 
 ## Passaggio 3: recuperare le proprietà della finestra del documento
 
@@ -67,7 +66,7 @@ Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
 // Posizione della finestra del documento - Predefinito: false
 Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
 
-// Ordine di lettura predominante; determina la posizione della pagina
+//Ordine di lettura predominante; determina la posizione della pagina
 // Se visualizzati fianco a fianco - Predefinito: L2R
 Console.WriteLine("Direction : {0}", pdfDocument.Direction);
 
@@ -79,10 +78,10 @@ Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
 // Prima pagina visualizzata - Predefinito: falso
 Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
 
-// Se nascondere la barra dei menu dell'applicazione visualizzatore - Predefinito: false
+// Se nascondere la barra dei menu dell'applicazione visualizzatore - Predefinito: falso
 Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
 
-//Se nascondere la barra degli strumenti dell'applicazione visualizzatore - Predefinito: false
+// Se nascondere la barra degli strumenti dell'applicazione visualizzatore - Predefinito: false
 Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
 
 // Se nascondere gli elementi dell'interfaccia utente come le barre di scorrimento
@@ -99,3 +98,25 @@ Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
 // Cioè mostra le miniature, a schermo intero, mostra il pannello degli allegati
 Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
 ```
+
+## Conclusione
+
+In questo tutorial, abbiamo imparato come utilizzare Aspose.PDF per .NET per recuperare informazioni sulle proprietà della finestra di un documento PDF. Caricando un documento PDF e accedendo alle sue proprietà della finestra, è possibile raccogliere informazioni su come deve essere visualizzato il documento quando viene aperto in un'applicazione di visualizzazione. Aspose.PDF per .NET offre un potente set di funzionalità per lavorare con i file PDF a livello di programmazione, rendendolo uno strumento prezioso per la manipolazione dei PDF nelle applicazioni .NET.
+
+### FAQ
+
+#### D: Qual è lo scopo del recupero delle proprietà della finestra di un documento PDF?
+
+R: Il recupero delle proprietà della finestra di un documento PDF consente di raccogliere informazioni sulla modalità di visualizzazione del documento PDF quando viene aperto in un'applicazione di visualizzazione. Queste proprietà controllano vari aspetti come la posizione della finestra, la modalità di visualizzazione e la visibilità degli elementi dell'interfaccia utente.
+
+#### D: Come posso installare Aspose.PDF per .NET nel mio progetto .NET?
+
+ R: Per installare Aspose.PDF per .NET, è necessario scaricare la libreria dal file[Pagina di download di Aspose.PDF per .NET](https://releases.aspose.com/pdf/net)Dopo il download, estrai il contenuto del file ZIP e aggiungi un riferimento a Aspose.PDF per .NET DLL nel tuo progetto .NET.
+
+#### D: Posso personalizzare il codice per recuperare solo proprietà specifiche della finestra?
+
+R: Sì, puoi personalizzare il codice per recuperare proprietà specifiche della finestra commentando le righe che non ti servono. Ogni riga del codice corrisponde a una specifica proprietà della finestra, quindi puoi includere o escludere proprietà in base alle tue esigenze.
+
+#### D: Quali tipi di proprietà della finestra posso recuperare utilizzando Aspose.PDF per .NET?
+
+R: Utilizzando Aspose.PDF per .NET, è possibile recuperare varie proprietà della finestra di un documento PDF, tra cui centrare la finestra, impostare il layout della pagina, controllare la visualizzazione delle barre degli strumenti e delle barre dei menu e altro ancora.

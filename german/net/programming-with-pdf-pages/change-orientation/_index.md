@@ -87,3 +87,25 @@ System.Console.WriteLine("\nPage orientation changed successfully.\nFile saved a
 
 ## Abschluss
 In diesem Tutorial haben wir gelernt, wie man die Seitenausrichtung eines PDF-Dokuments mit Aspose.PDF für .NET ändert. Wenn Sie die oben beschriebenen Schritte befolgen, können Sie diese Funktionalität problemlos in Ihre eigenen Projekte implementieren. Sehen Sie sich gerne die Aspose.PDF-Dokumentation weiter an, um weitere nützliche Funktionen für die Arbeit mit PDF-Dateien zu entdecken.
+
+### FAQs
+
+#### F: Welchen Zweck hat die Änderung der Seitenausrichtung in einem PDF-Dokument?
+
+A: Durch Ändern der Seitenausrichtung in einem PDF-Dokument können Sie den Inhalt der Seite um 90 Grad drehen. Dies kann in Szenarien nützlich sein, in denen der Originalinhalt in einer anderen Ausrichtung angezeigt oder gedruckt werden muss, beispielsweise beim Wechsel vom Hoch- in den Querformatmodus oder umgekehrt.
+
+#### F: Kann ich die Ausrichtung bestimmter Seiten im PDF-Dokument ändern?
+
+ A: Ja, Sie können die Ausrichtung bestimmter Seiten im PDF-Dokument ändern. Im bereitgestellten C#-Quellcode ist die`foreach` Die Schleife wird verwendet, um jede Seite des Dokuments durchzugehen und ihre Ausrichtung zu ändern. Wenn Sie nur die Ausrichtung bestimmter Seiten ändern möchten, können Sie die Schleife so ändern, dass diese Seiten anhand ihrer Seitenzahlen oder anderer Kriterien als Ziel ausgewählt werden.
+
+#### F: Hat die Änderung der Seitenausrichtung Auswirkungen auf das Layout des Inhalts auf der Seite?
+
+A: Ja, das Ändern der Seitenausrichtung wirkt sich auf das Layout des Inhalts auf der Seite aus. Der Inhalt wird um 90 Grad gedreht und die Breite und Höhe der Seite werden vertauscht. Dadurch kann sich die Platzierung und Ausrichtung des Inhalts auf der Seite ändern.
+
+#### F: Kann ich die Seite um einen anderen Winkel als 90 Grad drehen?
+
+ A: Im bereitgestellten C#-Quellcode ist die Seitendrehung mit auf 90 Grad eingestellt`page.Rotate = Rotate.on90;` . Sie können den Drehwinkel jedoch bei Bedarf auf andere Werte ändern. Sie können zum Beispiel verwenden`Rotate.on180` um die Seite um 180 Grad zu drehen oder`Rotate.on270` um es um 270 Grad zu drehen.
+
+#### F: Wie gehe ich mit dem Seiteninhalt um, der nach dem Ändern der Ausrichtung überläuft?
+
+A: Wenn Sie die Seitenausrichtung ändern, können sich die Abmessungen der Seite ändern, was zu einem Überlaufen des Inhalts führen kann. Um dies zu bewältigen, müssen Sie möglicherweise das Layout und die Formatierung des Inhalts auf der Seite anpassen. Sie können die von Aspose.PDF für .NET bereitgestellten Funktionen verwenden, z. B. die Größenänderung von Elementen, das Anpassen von Rändern oder das Neuorganisieren von Inhalten, um sicherzustellen, dass der Seiteninhalt nach der Änderung der Ausrichtung richtig passt.

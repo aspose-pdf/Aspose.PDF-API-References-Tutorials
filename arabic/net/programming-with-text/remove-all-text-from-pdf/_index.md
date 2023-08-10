@@ -35,7 +35,7 @@ Document pdfDocument = new Document(dataDir + "RemoveAllText.pdf");
 
 ## الخطوة 3: إزالة كل النص
 
- نقوم بتهيئة ملف`TextFragmentAbsorber` كائن واستخدمه لإزالة كل النص الممتص من مستند PDF.
+ نقوم بتهيئة ملف`TextFragmentAbsorber`كائن واستخدمه لإزالة كل النص الممتص من مستند PDF.
 
 ```csharp
 TextFragmentAbsorber absorb = new TextFragmentAbsorber();
@@ -66,4 +66,4 @@ pdfDocument.Save(dataDir + "RemoveAllText_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 
 ## خاتمة
 
-في هذا البرنامج التعليمي ، تعلمت كيفية إزالة كل النص من مستند PDF باستخدام مكتبة Aspose.PDF لـ .NET. باتباع الدليل خطوة بخطوة وتنفيذ كود C # المقدم ، يمكنك فتح ملف PDF وإزالة كل النص باستخدام`TextFragmentAbsorber`، وحفظ ملف PDF المعدل.
+ في هذا البرنامج التعليمي ، تعلمت كيفية إزالة كل النص من مستند PDF باستخدام مكتبة Aspose.PDF لـ .NET. باتباع الدليل خطوة بخطوة وتنفيذ كود C # المقدم ، يمكنك فتح ملف PDF وإزالة كل النص باستخدام`TextFragmentAbsorber`، وحفظ ملف PDF المعدل.

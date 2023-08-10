@@ -1,8 +1,8 @@
 ---
-title: Serbest Metin Açıklamasını Güncelle
-linktitle: Serbest Metin Açıklamasını Güncelle
+title: Serbest Metin PDF Açıklamasını Güncelle
+linktitle: Serbest Metin PDF Açıklamasını Güncelle
 second_title: Aspose.PDF for .NET API Referansı
-description: Aspose.PDF for .NET'in ücretsiz metin açıklaması özelliğini C# kaynak kodunu kullanarak nasıl güncelleyeceğinizi öğrenin.
+description: Aspose.PDF for .NET'in serbest metin PDF açıklama özelliğini C# kaynak kodunu kullanarak nasıl güncelleyeceğinizi öğrenin.
 type: docs
 weight: 160
 url: /tr/net/annotations/updatefreetextannotation/
@@ -25,7 +25,7 @@ Bu satırda güncellemek istediğimiz PDF belgesinin bulunduğu dizine giden yol
 Document doc1 = new Document(dataDir + "input.pdf");
 ```
 
-Burada Aspose.PDF'leri kullanarak PDF belgesini açıyoruz.`Document` sınıfı ve giriş PDF dosyasının yolunu belirtme.
+ Burada Aspose.PDF'leri kullanarak PDF belgesini açıyoruz.`Document`sınıfı ve giriş PDF dosyasının yolunu belirtme.
 
 ## 3. Adım: Serbest metin açıklamasının yazı tipi boyutunu ve rengini güncelleme
 
@@ -74,3 +74,21 @@ catch (Exception ex)
 ## Çözüm
 
 Bu makalede, Aspose.PDF for .NET'in Serbest Metin Ek Açıklamasını Güncelle özelliğinin C# kaynak kodunu açıklayan adım adım bir kılavuz sağladık. Bu adımları izleyerek, Aspose.PDF for .NET kullanarak PDF belgelerinizdeki serbest metin notlarının yazı tipi boyutunu ve rengini kolayca güncelleyebilirsiniz.
+
+### SSS
+
+#### S: Aspose.PDF for .NET nedir?
+
+Y: Aspose.PDF for .NET, .NET uygulamaları için güçlü bir PDF işleme ve işleme kitaplığıdır. Geliştiricilerin PDF belgelerini programlı olarak oluşturmasına, düzenlemesine, dönüştürmesine ve değiştirmesine olanak tanır.
+
+#### S: Aspose.PDF for .NET kullanarak bir PDF belgesindeki serbest metin açıklamasının özelliklerini güncelleyebilir miyim?
+
+C: Evet, Aspose.PDF for .NET, bir PDF belgesindeki serbest metin ek açıklamalarının özelliklerini güncellemek için işlevsellik sağlar. Buna yazı tipi boyutunun, yazı tipi renginin ve diğer metin stili seçeneklerinin değiştirilmesi dahildir.
+
+#### S: PDF belgesinde güncellemek istediğim ek açıklamayı nasıl belirtebilirim?
+
+Y: PDF belgesindeki belirli bir açıklamanın özelliklerini güncellemek için, açıklama nesnesine dizinindeki dizinini kullanarak erişebilirsiniz.`Annotations` Belirli bir sayfanın toplanması. Ardından, özelliklerini gerektiği gibi değiştirebilirsiniz.
+
+#### S: Güncelleme işlemi sırasında bir hata oluşursa ne olur?
+
+ Y: Güncelleme işlemi sırasında bir hata oluşursa, kod bir`try-catch` istisnayı işlemek için blok ve hata mesajını konsola yazdırır. Bu, ortaya çıkabilecek sorunları belirlemeye ve gidermeye yardımcı olur.

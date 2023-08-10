@@ -46,7 +46,7 @@ Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
 ## 6. Adım: Bir TextFragment Oluşturun
- Oluşturmak`TextFragment` nesne ve istenen metni sağlayın. kullanarak metin parçasının konumunu ayarlayın.`Position` mülk. Sağlanan kodda, metin "ana metin" olarak ayarlanır ve sayfada (100, 600) konumuna getirilir.
+ Oluşturmak`TextFragment`nesne ve istenen metni sağlayın. kullanarak metin parçasının konumunu ayarlayın.`Position` mülk. Sağlanan kodda, metin "ana metin" olarak ayarlanır ve sayfada (100, 600) konumuna getirilir.
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");

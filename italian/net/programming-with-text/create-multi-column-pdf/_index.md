@@ -65,7 +65,7 @@ page.Paragraphs.Add(graph1);
 ```
 
 ## Passaggio 8: aggiungi il testo dell'intestazione con la formattazione HTML
- Creare un`HtmlFragment`oggetto e impostarne il contenuto sul testo HTML desiderato. Quindi, aggiungi il frammento al file`Paragraphs` raccolta della pagina.
+ Creare un`HtmlFragment` oggetto e impostarne il contenuto sul testo HTML desiderato. Quindi, aggiungi il frammento al file`Paragraphs` raccolta della pagina.
 
 ```csharp
 string s = "<font face=\"Times New Roman\" size=4>" +
@@ -115,7 +115,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 // Specifica le informazioni sul margine sinistro per il file PDF
 doc.PageInfo.Margin.Left = 40;
-// Specificare le informazioni sul margine destro per il file PDF
+//Specificare le informazioni sul margine destro per il file PDF
 doc.PageInfo.Margin.Right = 40;
 Page page = doc.Pages.Add();
 Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500, 2);

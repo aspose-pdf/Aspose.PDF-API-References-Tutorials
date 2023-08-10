@@ -14,4 +14,4 @@ Aspose.PDF per i tutorial "Programmazione con operatori" di .NET ti guidano attr
 | --- | --- | 
 | [Disegna XForm sulla pagina](./draw-xform-on-page/) | Guida dettagliata per disegnare un modulo XForm su una pagina PDF utilizzando Aspose.PDF per .NET. Aggiungi e posiziona il modulo sulla pagina. |  
 | [Operatori PDF](./pdf-operators/) | Guida dettagliata all'utilizzo degli operatori PDF con Aspose.PDF per .NET. Aggiungi un'immagine a una pagina PDF e specificane la posizione. |  
-| [Rimuovi oggetti grafici](./remove-graphics-objects/) | Guida passo passo per rimuovere oggetti grafici da un documento PDF utilizzando Aspose.PDF per .NET. Personalizza e ripulisci i tuoi PDF. |  
+| [Rimuovi oggetti grafici nel file PDF](./remove-graphics-objects/) | Guida dettagliata per rimuovere oggetti grafici nel file PDF utilizzando Aspose.PDF per .NET. Personalizza e ripulisci i tuoi PDF. |  

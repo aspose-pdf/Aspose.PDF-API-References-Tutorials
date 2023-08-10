@@ -21,7 +21,7 @@ Innan du börjar, se till att du har följande:
 2. Lägg till en referens till Aspose.PDF för .NET-biblioteket.
 
 ## Steg 2: Importera nödvändiga namnrymder
-I kodfilen där du vill skapa anpassade tabbstopp, lägg till följande med hjälp av direktiv överst i filen:
+kodfilen där du vill skapa anpassade tabbstopp, lägg till följande med hjälp av direktiv överst i filen:
 
 ```csharp
 using Aspose.Pdf;

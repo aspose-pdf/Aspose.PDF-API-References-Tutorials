@@ -53,7 +53,7 @@ doc.PageInfo.Margin.Right = 40;
 Page page = doc.Pages.Add();
 ```
 
-## Steg 7: Skapa ett grafobjekt och lägg till en linje
+## Steg 7: Skapa ett Graph-objekt och lägg till en linje
  Skapa en ny`Graph` objekt med specifika dimensioner och lägg till en linje till det. Lägg sedan till`Graph` invända mot`Paragraphs` samling av sidan.
 
 ```csharp
@@ -65,7 +65,7 @@ page.Paragraphs.Add(graph1);
 ```
 
 ## Steg 8: Lägg till rubriktext med HTML-formatering
- Skapa en`HtmlFragment`objekt och ställ in dess innehåll till önskad HTML-text. Lägg sedan till fragmentet i`Paragraphs` samling av sidan.
+ Skapa en`HtmlFragment` objekt och ställ in dess innehåll till önskad HTML-text. Lägg sedan till fragmentet i`Paragraphs` samling av sidan.
 
 ```csharp
 string s = "<font face=\"Times New Roman\" size=4>" +
@@ -115,7 +115,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 // Ange information om vänstermarginalen för PDF-filen
 doc.PageInfo.Margin.Left = 40;
-// Ange information om högermarginalen för PDF-filen
+//Ange information om högermarginalen för PDF-filen
 doc.PageInfo.Margin.Right = 40;
 Page page = doc.Pages.Add();
 Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500, 2);

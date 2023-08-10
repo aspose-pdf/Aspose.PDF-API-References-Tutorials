@@ -39,7 +39,7 @@ Document pdfDocument = new Document(dataDir + "ExtractTextAll.pdf");
 ```
 
 ## 5. Adım: Metni bir sayfa bölgesinden çıkarın
- Oluşturmak`TextAbsorber` belgeden metin ayıklamak için nesne. yapılandırın`TextSearchOptions` aramayı bir dikdörtgenle tanımlanan belirli bir sayfa bölgesiyle sınırlamak için.
+ Oluşturmak`TextAbsorber`belgeden metin ayıklamak için nesne. yapılandırın`TextSearchOptions` aramayı bir dikdörtgenle tanımlanan belirli bir sayfa bölgesiyle sınırlamak için.
 
 ```csharp
 TextAbsorber absorb = new TextAbsorber();

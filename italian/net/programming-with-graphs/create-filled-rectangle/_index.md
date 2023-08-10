@@ -92,3 +92,33 @@ Console.WriteLine("\nFilled rectangle object created successfully.\nFile saved a
 ## Conclusione
 
 In questo tutorial, abbiamo spiegato come creare un rettangolo pieno usando Aspose.PDF per .NET. Ora puoi usare questa conoscenza per creare forme geometriche con colori di riempimento personalizzati nei tuoi file PDF.
+
+## FAQ
+
+#### D: Qual è lo scopo di questo tutorial?
+
+R: Lo scopo di questo tutorial è guidarti attraverso il processo di creazione di un rettangolo pieno utilizzando Aspose.PDF per .NET, consentendoti di aggiungere forme geometriche personalizzate con colori di riempimento ai tuoi file PDF.
+
+#### D: Quali prerequisiti sono richiesti prima di iniziare?
+
+A: Prima di iniziare, assicurati di aver installato la libreria Aspose.PDF e di aver impostato il tuo ambiente di sviluppo. Inoltre, è consigliabile avere una conoscenza di base della programmazione C#.
+
+#### D: Come faccio a specificare la directory per salvare il file PDF?
+
+R: Nel codice sorgente fornito, è possibile modificare la variabile "dataDir" per indicare la directory in cui si desidera salvare il file PDF risultante.
+
+#### D: Qual è lo scopo dell'oggetto Graph?
+
+R: L'oggetto Graph funge da contenitore per gli elementi di disegno. Viene creato con dimensioni specificate e aggiunto alla raccolta di paragrafi della pagina.
+
+#### D: Come posso aggiungere un rettangolo pieno al documento PDF?
+
+R: Per aggiungere un rettangolo pieno, crea un'istanza della classe Rectangle con dimensioni e colore di riempimento specificati e aggiungila alla raccolta di forme del grafico.
+
+#### D: Posso personalizzare le dimensioni e il colore di riempimento del rettangolo?
+
+ R: Sì, puoi personalizzare le dimensioni e il colore di riempimento del rettangolo modificando i parametri passati al`Aspose.Pdf.Drawing.Rectangle` costruttore e impostando la proprietà FillColor.
+
+#### D: Come faccio a salvare il file PDF risultante dopo aver creato il rettangolo pieno?
+
+ R: Dopo aver creato il rettangolo pieno, puoi salvare il file PDF risultante utilizzando il file`doc.Save(dataDir + "CreateFilledRectangle_out.pdf");` riga nel codice sorgente fornito.

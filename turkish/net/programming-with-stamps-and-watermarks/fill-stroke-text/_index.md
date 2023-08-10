@@ -1,13 +1,13 @@
 ---
-title: Konturlu Metni Doldur
-linktitle: Konturlu Metni Doldur
+title: PDF Dosyasında Kontur Metni Doldur
+linktitle: PDF Dosyasında Kontur Metni Doldur
 second_title: Aspose.PDF for .NET API Referansı
-description: Aspose.PDF for .NET ile PDF belgelerinizdeki metni kolayca nasıl dolduracağınızı ve ana hatları çizeceğinizi öğrenin.
+description: Aspose.PDF for .NET ile PDF dosyasındaki metni nasıl kolayca dolduracağınızı ve ana hatları çizeceğinizi öğrenin.
 type: docs
 weight: 90
 url: /tr/net/programming-with-stamps-and-watermarks/fill-stroke-text/
 ---
-Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF belgesindeki metni nasıl dolduracağınızı ve ana hatları çizeceğinizi adım adım göstereceğiz. PDF belgesindeki metne dolgu ve anahat renkleri uygulamak için sağlanan C# kaynak kodunu nasıl kullanacağınızı size göstereceğiz.
+Bu eğitimde, Aspose.PDF for .NET kullanarak PDF dosyasındaki metni nasıl dolduracağınızı ve ana hatları çizeceğinizi adım adım göstereceğiz. PDF dosyasındaki metne dolgu ve anahat renkleri uygulamak için sağlanan C# kaynak kodunu nasıl kullanacağınızı size göstereceğiz.
 
 ## 1. Adım: Ortamı ayarlama
 
@@ -96,7 +96,7 @@ ts.StrokingColor = Color.Gray;
 // Metin oluşturma modunu ayarla
 ts.RenderingMode = TextRenderingMode.StrokeText;
 
-//Bir giriş PDF belgesi yükleyin
+// Bir giriş PDF belgesi yükleyin
 Facades.PdfFileStamp fileStamp = new Facades.PdfFileStamp(new Aspose.Pdf.Document(dataDir + "input.pdf"));
 Aspose.Pdf.Facades.Stamp stamp = new Aspose.Pdf.Facades.Stamp();
 stamp.BindLogo(new Facades.FormattedText("PAID IN FULL", System.Drawing.Color.Gray, "Arial", Facades.EncodingType.Winansi, true, 78));
@@ -121,3 +121,45 @@ fileStamp.Close();
 ## Çözüm
 
 Tebrikler! Aspose.PDF for .NET kullanarak bir PDF belgesindeki metni nasıl dolduracağınızı ve ana hatları çizeceğinizi öğrendiniz. Artık bu bilgiyi PDF belgelerinizdeki dolgu ve anahat renklerini özelleştirmek için uygulayabilirsiniz.
+
+### PDF dosyasındaki dolgu konturu metni hakkında SSS
+
+#### S: Bir PDF belgesinde metni doldurmak ve ana hatlarını çizmek ne anlama gelir ve bunu ne zaman yapmam gerekebilir?
+
+Y: Bir PDF belgesindeki metni doldurmak ve ana hatları çizmek, metin karakterlerinin iç kısmına (doldurma) ve metnin etrafındaki kenarlıklara (anahat) renk uygulamayı içerir. Bu, metnin görsel görünümünü iyileştirmek, vurgu oluşturmak veya PDF içindeki belirli içeriği vurgulamak için kullanılabilir.
+
+#### S: Sağlanan C# kaynak kodu, bir PDF dosyasındaki metni doldurmayı ve ana hatları çizmeyi nasıl başarıyor?
+
+ C: Sağlanan kaynak kodu, nasıl oluşturulacağını gösterir.`TextState` anahat rengi ve oluşturma modu gibi gelişmiş metin özelliklerini tanımlamak için nesne. Daha sonra Aspose.PDF.Facades'i kullanarak mevcut bir PDF belgesini yükleyin, belirtilen dolgu ve kontur özelliklerine sahip metni içeren bir damga oluşturun ve damgayı belgeye ekleyin.
+
+####  S: Amacı nedir?`TextState` object in the code?
+
+ C:`TextState`nesne, metin anahattının rengi (kontur) ve oluşturma modu dahil olmak üzere gelişmiş metin özelliklerini tanımlamak için kullanılır. Metnin kontur ve dolgu açısından nasıl görüneceğini özelleştirmenize olanak tanır.
+
+#### S: Aynı metnin farklı bölümlerine farklı dolgu ve anahat renkleri uygulayabilir miyim?
+
+ C: Evet, farklı oluşturmak için kodu değiştirebilirsiniz.`TextState` farklı dolgu ve anahat renklerine sahip nesneler ve bunları ayrı kullanarak metnin belirli bölümlerine uygulayın`Stamp` nesneler.
+
+#### S: PDF belgesinde zaten mevcut olan metne dolgu ve anahat renkleri uygulayabilir miyim?
+
+ C: Evet, benzer ilkeleri kullanarak PDF belgesindeki mevcut metne dolgu ve anahat renkleri uygulayabilirsiniz.`TextState` özellikler.
+
+#### S: Doldurulmuş ve çerçevelenmiş metnin opaklığını ve karışımını nasıl ayarlayabilirim?
+
+ A: Sağlanan kod, damganın opaklığını ve karıştırma özelliklerini ayarlamanıza izin verir.`Opacity` Ve`BlendingSpace`sırasıyla özellikler. İstenen görsel efekti elde etmek için bu değerleri ayarlayabilirsiniz.
+
+#### S: Aynı PDF belgesindeki birden çok damgaya farklı dolgu ve dış hat renkleri nasıl uygulayabilirim?
+
+ C: Birden çok oluşturabilirsiniz`TextState` farklı dolgu ve anahat renklerine sahip nesneleri seçin ve ardından ayrı ayrı oluşturun`Stamp` her metin kümesi için farklı renklere sahip nesneler. kullanarak bu damgaları aynı PDF belgesine ekleyin.`PdfFileStamp` sınıf.
+
+#### S: Ana hatları çizilen ve doldurulmuş metin için Arial dışında yazı tipleri kullanabilir miyim?
+
+ A: Evet, yazı tipini, içindeki yazı tipi adı parametresini değiştirerek değiştirebilirsiniz.`FormattedText` damga oluştururken yapıcı. Sisteminizde bulunan herhangi bir yazı tipini kullanabilirsiniz.
+
+#### S: Ana hatları çizilen ve doldurulmuş metnin dönüş açısını nasıl değiştirebilirim?
+
+ A: Sağlanan kod, damganın dönüş açısını kullanarak ayarlamanıza izin verir.`Rotation` mülk. Metin için istenen döndürme açısını belirtmek için bu özelliği ayarlayabilirsiniz.
+
+#### S: Sayfadaki ana hatları çizilen ve doldurulmuş metnin konumunu ve boyutunu nasıl kontrol edebilirim?
+
+C: Şunu kullanabilirsiniz:`SetOrigin` yöntemi`Stamp` damganın sayfadaki konumunun X ve Y koordinatlarını ayarlamak için nesne. Ek olarak, yazı tipi boyutunu da ayarlayabilirsiniz.`FormattedText` metnin boyutunu kontrol etmek için yapıcı.

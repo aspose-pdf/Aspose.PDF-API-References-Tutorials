@@ -1,14 +1,13 @@
 ---
-title: HTML-taggar inuti tabellen
-linktitle: HTML-taggar inuti tabellen
+title: HTML-taggar inuti tabellen i PDF-fil
+linktitle: HTML-taggar inuti tabellen i PDF-fil
 second_title: Aspose.PDF för .NET API Referens
-description: Lär dig hur du använder HTML-taggar i en tabell i ett PDF-dokument med Aspose.PDF för .NET.
+description: Lär dig hur du använder HTML-taggar i en tabell i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 100
 url: /sv/net/programming-with-tables/html-tags-inside-table/
 ---
-
-I den här handledningen ska vi lära oss hur man använder HTML-taggar i en tabell i ett PDF-dokument med Aspose.PDF för .NET. Vi kommer att förklara källkoden i C# steg för steg. I slutet av denna handledning kommer du att veta hur du infogar HTML-innehåll i en tabell i ett PDF-dokument. Låt oss börja!
+den här handledningen ska vi lära oss hur man använder HTML-taggar i en tabell i ett PDF-dokument med Aspose.PDF för .NET. Vi kommer att förklara källkoden i C# steg för steg. I slutet av denna handledning kommer du att veta hur du infogar HTML-innehåll i en tabell i ett PDF-dokument. Låt oss börja!
 
 ## Steg 1: Sätta upp miljön
 Se till att du har konfigurerat din C#-utvecklingsmiljö med Aspose.PDF för .NET. Lägg till referensen till biblioteket och importera de nödvändiga namnrymden.
@@ -113,3 +112,25 @@ doc.Save(dataDir + "HTMLInsideTableCell_out.pdf");
 
 ## Slutsats
 I den här handledningen lärde vi oss hur man använder HTML-taggar i en tabell i ett PDF-dokument med Aspose.PDF för .NET. Du kan använda den här steg-för-steg-guiden för att infoga HTML-innehåll i tabellceller i ett PDF-dokument med C#.
+
+### Vanliga frågor om HTML-taggar i tabell i PDF-fil
+
+#### F: Kan jag använda andra HTML-taggar och attribut i tabellcellerna?
+
+ S: Ja, du kan använda olika HTML-taggar och attribut inuti tabellcellerna, som t.ex`<b>`, `<i>`, `<a>`och många fler. Aspose.PDF för .NET stöder ett brett utbud av HTML-element och stilar som du kan använda för att formatera innehållet i tabellcellerna.
+
+#### F: Kan jag tillämpa CSS-stilar på HTML-innehållet i tabellcellerna?
+
+S: Ja, du kan använda CSS-stilar på HTML-innehållet i tabellcellerna. Aspose.PDF för .NET ger stöd för grundläggande CSS-stilar som kan appliceras på HTML-elementen.
+
+#### F: Är det möjligt att lägga till bilder tillsammans med HTML-innehåll i tabellcellerna?
+
+ S: Ja, du kan lägga till bilder tillsammans med HTML-innehåll i tabellcellerna. Du kan använda HTML`<img>` taggar för att inkludera bilder från olika källor, till exempel lokala filer eller webbadresser.
+
+#### F: Hur kan jag ange olika kolumnbredder för tabellen?
+
+ S: Du kan ange olika kolumnbredder för tabellen med hjälp av`ColumnWidths` tabellens egendom. Egenskapen tar en sträng som innehåller mellanslagsseparerade värden, där varje värde representerar bredden på en kolumn i punkter.
+
+#### F: Kan jag använda kapslade tabeller inuti en cell med HTML-innehåll?
+
+S: Ja, du kan använda kapslade tabeller inuti en cell med HTML-innehåll. Du kan skapa separata tabellinstanser och lägga till dem som en del av HTML-innehållet i en cell för att uppnå kapslingseffekten.

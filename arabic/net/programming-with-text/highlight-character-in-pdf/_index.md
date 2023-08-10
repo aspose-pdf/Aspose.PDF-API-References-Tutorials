@@ -19,7 +19,7 @@ url: /ar/net/programming-with-text/highlight-character-in-pdf/
 
 ## الخطوة 1: قم بإعداد دليل المستندات
 
- أولاً ، تحتاج إلى تعيين المسار إلى الدليل حيث يوجد ملف PDF الخاص بك. يستبدل`"YOUR DOCUMENT DIRECTORY"` في ال`dataDir` متغير مع المسار إلى ملف PDF الخاص بك.
+ أولاً ، تحتاج إلى تعيين المسار إلى الدليل حيث يوجد ملف PDF الخاص بك. يستبدل`"YOUR DOCUMENT DIRECTORY"` في ال`dataDir`متغير مع المسار إلى ملف PDF الخاص بك.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -74,7 +74,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
          {
              if (i == 0)
              {
-                 //تسليط الضوء على الشخصيات
+                 // تسليط الضوء على الشخصيات
                  gr.DrawRectangle(
                      Think.Yellow,
                      (float)textFragment.Position.XIndent,

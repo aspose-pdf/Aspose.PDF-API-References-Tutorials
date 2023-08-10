@@ -77,3 +77,21 @@ dataDir = dataDir + "OptimizeDocument_out.pdf";
 // Spara uppdaterat dokument
 pdfDocument.Save(dataDir);
 ```
+
+## Slutsats
+
+Funktionen Link Duplicate Streams i Aspose.PDF för .NET ger ett effektivt sätt att optimera PDF-filer genom att minska deras storlek. Genom att identifiera och länka dubbletter av strömmar hjälper biblioteket till att skapa effektivare PDF-dokument utan att offra dataintegritet eller visuell kvalitet. Utvecklare kan enkelt implementera den här funktionen med hjälp av de medföljande stegen och källkodsexemplet, vilket förbättrar prestanda och lagringseffektivitet för sina PDF-filer.
+
+### FAQ's
+
+#### F: Vad är syftet med funktionen Link Duplicate Streams i Aspose.PDF för .NET?
+
+S: Funktionen Link Duplicate Streams i Aspose.PDF för .NET används för att optimera PDF-filer genom att identifiera och länka duplicate streams i dokumentet. I en PDF-fil kan det finnas dubbletter av strömmar (som bilder eller typsnitt) som tar onödigt utrymme. Genom att länka dessa duplicerade strömmar kan filstorleken minskas, vilket resulterar i ett effektivare och mindre PDF-dokument.
+
+#### F: Hur fungerar funktionen Link Duplicate Streams?
+
+S: Funktionen Link Duplicate Streams fungerar genom att analysera innehållsströmmarna i PDF-dokumentet och identifiera dubbletter av strömmar som har samma innehåll. Istället för att lagra dessa dubbletter av strömmar separat skapar funktionen en länk mellan dem och delar effektivt samma innehåll. Denna optimeringsteknik minskar PDF-dokumentets totala storlek utan att påverka dess visuella utseende eller funktionalitet.
+
+#### F: Kan funktionen Link Duplicate Streams orsaka förlust av data eller kvalitet i PDF-dokumentet?
+
+S: Nej, funktionen Link Duplicate Streams orsakar ingen förlust av data eller kvalitet i PDF-dokumentet. Den optimerar bara filstorleken genom att länka dubbletter av strömmar, utan att ändra innehållet eller det visuella utseendet på dokumentet. Funktionen är utformad för att säkerställa att PDF-dokumentet förblir intakt och bibehåller sin ursprungliga kvalitet.

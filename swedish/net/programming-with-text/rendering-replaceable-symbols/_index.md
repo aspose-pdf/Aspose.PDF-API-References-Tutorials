@@ -8,7 +8,7 @@ weight: 310
 url: /sv/net/programming-with-text/rendering-replaceable-symbols/
 ---
 
-I den här handledningen kommer vi att förklara hur man renderar utbytbara symboler i ett PDF-dokument med hjälp av Aspose.PDF-biblioteket för .NET. Vi kommer att gå igenom steg-för-steg-processen för att skapa en PDF, lägga till ett textfragment med nyradsmarkörer, ställa in textegenskaper, placera texten och spara PDF:en med den medföljande C#-källkoden.
+den här handledningen kommer vi att förklara hur man renderar utbytbara symboler i ett PDF-dokument med hjälp av Aspose.PDF-biblioteket för .NET. Vi kommer att gå igenom steg-för-steg-processen för att skapa en PDF, lägga till ett textfragment med nyradsmarkörer, ställa in textegenskaper, placera texten och spara PDF:en med den medföljande C#-källkoden.
 
 ## Förutsättningar
 
@@ -27,7 +27,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Steg 2: Skapa ett PDF-dokument och en sida
 
-Därefter skapar vi ett nytt PDF-dokument och lägger till en sida till det med hjälp av`Document` klass och`Page` klass från Aspose.PDF-biblioteket.
+ Därefter skapar vi ett nytt PDF-dokument och lägger till en sida till det med hjälp av`Document` klass och`Page` klass från Aspose.PDF-biblioteket.
 
 ```csharp
 Aspose.Pdf.Document pdfApplicationDoc = new Aspose.Pdf.Document();
@@ -65,7 +65,7 @@ par.Position = new Aspose.Pdf.Text.Position(100, 600);
 
 ## Steg 6: Lägg till textstycke på sidan
 
- Vi skapar en`TextBuilder` objekt med sidan och lägg till textstycket i textbyggaren.
+ Vi skapar en`TextBuilder`objekt med sidan och lägg till textstycket i textbyggaren.
 
 ```csharp
 TextBuilder textBuilder = new TextBuilder(applicationFirstPage);
@@ -112,4 +112,4 @@ Console.WriteLine("\nReplaceable symbols render successfully duing pdf creation.
 
 ## Slutsats
 
-den här handledningen har du lärt dig hur du renderar utbytbara symboler i ett PDF-dokument med Aspose.PDF-biblioteket för .NET. Genom att följa den steg-för-steg-guide och köra den medföljande C#-koden kan du skapa en PDF, lägga till text med nyradsmarkörer, ställa in textegenskaper, placera texten på sidan och spara PDF:en.
+I den här handledningen har du lärt dig hur du renderar utbytbara symboler i ett PDF-dokument med Aspose.PDF-biblioteket för .NET. Genom att följa den steg-för-steg-guide och köra den medföljande C#-koden kan du skapa en PDF, lägga till text med nyradsmarkörer, ställa in textegenskaper, placera texten på sidan och spara PDF:en.

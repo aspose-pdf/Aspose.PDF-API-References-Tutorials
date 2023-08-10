@@ -46,7 +46,7 @@ Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
 ## Étape 6 : créer un fragment de texte
- Créer un`TextFragment` objet et fournissez le texte souhaité. Définissez la position du fragment de texte à l'aide de la`Position` propriété. Dans le code fourni, le texte est défini sur "texte principal" et positionné à (100, 600) sur la page.
+ Créer un`TextFragment`objet et fournissez le texte souhaité. Définissez la position du fragment de texte à l'aide de la`Position` propriété. Dans le code fourni, le texte est défini sur "texte principal" et positionné à (100, 600) sur la page.
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
@@ -65,7 +65,7 @@ textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
 ```
 
 ## Étape 8 : Activer la bordure de texte
- Pour activer la bordure de texte, définissez le`DrawTextRectangleBorder` propriété du fragment de texte`TextState` pour`true`.
+ Pour activer la bordure de texte, définissez le`DrawTextRectangleBorder` propriété du fragment de texte`TextState` à`true`.
 
 ```csharp
 textFragment.TextState.DrawTextRectangleBorder = true;
@@ -113,4 +113,4 @@ pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
 ```
 
 ## Conclusion
-Vous avez ajouté avec succès une bordure de texte à votre document PDF en utilisant Aspose.PDF pour .NET. Le fichier PDF résultant se trouve maintenant dans le chemin du fichier de sortie spécifié.
+Vous avez ajouté avec succès une bordure de texte à votre document PDF en utilisant Aspose.PDF pour .NET. Le fichier PDF résultant peut maintenant être trouvé dans le chemin du fichier de sortie spécifié.

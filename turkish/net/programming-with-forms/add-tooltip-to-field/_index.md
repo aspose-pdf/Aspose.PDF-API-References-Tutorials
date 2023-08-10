@@ -7,7 +7,6 @@ type: docs
 weight: 10
 url: /tr/net/programming-with-forms/add-tooltip-to-field/
 ---
-
 Aspose.PDF for .NET, geliştiricilerin PDF belgelerini programlı olarak değiştirmesine olanak tanıyan güçlü bir kitaplıktır. Bu öğreticide, Aspose.PDF for .NET kullanarak bir alana araç ipucu ekleme sürecini adım adım anlatacağız. Bu işlevi anlamanıza ve C# kodunuza uygulamanıza yardımcı olacak adım adım bir kılavuz sağlayacağız.
 
 ## Adım 1: Projeyi kurma ve Aspose.PDF for .NET'i dahil etme
@@ -77,3 +76,25 @@ Console.WriteLine("\nTooltip added successfully.\nFile saved at " + dataDir);
 ## Çözüm
 
 Tebrikler! Aspose.PDF for .NET kullanarak bir alana araç ipucu eklemeyi başarıyla öğrendiniz. Bu eğitimdeki adım adım kılavuzu izleyerek, kullanıcılara ek bilgi veya rehberlik sağlamak için PDF formlarınızı araç ipuçlarıyla geliştirebilirsiniz. Kitaplığın sunduğu daha gelişmiş özellikleri ve işlevleri keşfetmek için Aspose.PDF for .NET tarafından sağlanan belgeleri ve örnekleri keşfetmeyi unutmayın.
+
+### SSS
+
+#### S: PDF formundaki araç ipucu nedir ve neden kullanmalıyım?
+
+C: PDF formundaki araç ipucu, kullanıcı faresini belirli bir alanın üzerine getirdiğinde görünen küçük bir açılır kutudur. Bu alanla ilgili ek bilgiler veya talimatlar sağlar. Araç ipuçları, kullanıcılara rehberlik etmek, açıklamalar sağlamak veya PDF formlarında bağlama özel yardım sunmak için yararlıdır.
+
+#### S: Araç ipucunun görünümünü ve davranışını özelleştirebilir miyim?
+
+C: Evet, Aspose.PDF for .NET ile araç ipucunun görünümünü ve davranışını özelleştirebilirsiniz. Araç ipucu metnini, yazı tipini, rengi ve diğer nitelikleri uygulamanızın tasarımına ve gereksinimlerine uyacak şekilde ayarlayabilirsiniz.
+
+#### S: Aspose.PDF for .NET, C# dışındaki diğer programlama dilleriyle uyumlu mu?
+
+C: Evet, Aspose.PDF for .NET, VB.NET, F# ve daha fazlası gibi diğer .NET dilleriyle çalışacak şekilde tasarlanmıştır. Kitaplık, bu dillerde tutarlı işlevsellik sağlar.
+
+#### S: Onay kutuları veya radyo düğmeleri gibi diğer form alanı türlerine araç ipuçları ekleyebilir miyim?
+
+C: Evet, metin alanları, onay kutuları, radyo düğmeleri, açılır kutular ve daha fazlası dahil olmak üzere çeşitli form alanı türlerine araç ipuçları ekleyebilirsiniz. İşlem benzerdir ve adlarını veya kimliklerini kullanarak farklı türdeki form alanlarına erişebilirsiniz.
+
+#### S: Araç ipucunu alana eklendikten sonra kaldırabilir veya değiştirebilir miyim?
+
+ C: Evet, araç ipucunu Aspose.PDF for .NET kullanılarak eklendikten sonra bile bir alandan değiştirebilir veya kaldırabilirsiniz. Sadece alana erişin ve güncelleyin`AlternateName` özelliğini yeni araç ipucu metniyle değiştirin veya araç ipucunu kaldırmak için boş bir dizeye ayarlayın.

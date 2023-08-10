@@ -19,7 +19,7 @@ Prima di iniziare, assicurati di disporre di quanto segue:
 
 ## Passaggio 1: impostare la directory dei documenti
 
- Innanzitutto, devi impostare il percorso della directory in cui hai il file PDF di input. Sostituire`"YOUR DOCUMENT DIRECTORY"` nel`dataDir` variabile con il percorso del file PDF.
+ Innanzitutto, devi impostare il percorso della directory in cui hai il file PDF di input. Sostituire`"YOUR DOCUMENT DIRECTORY"` nel`dataDir`variabile con il percorso del file PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -35,7 +35,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 ## Passaggio 3: trova la prima occorrenza della frase di ricerca
 
- Creiamo un`TextFragmentAbsorber`oggetto e accettarlo per tutte le pagine del documento PDF per trovare tutte le occorrenze della frase di ricerca.
+ Creiamo un`TextFragmentAbsorber` oggetto e accettarlo per tutte le pagine del documento PDF per trovare tutte le occorrenze della frase di ricerca.
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
@@ -74,7 +74,7 @@ Console.WriteLine("\nText replaced successfully.\nFile saved at " + dataDir);
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Apri documento
 Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
-// Crea un oggetto TextAbsorber per trovare tutte le istanze della frase di ricerca di input
+//Crea un oggetto TextAbsorber per trovare tutte le istanze della frase di ricerca di input
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
 // Accetta l'assorbitore per tutte le pagine
 pdfDocument.Pages.Accept(textFragmentAbsorber);

@@ -41,7 +41,7 @@ Document doc = new Document();
 ```
 
 ## Adım 5: HTML içeriğiyle bir HtmlFragment nesnesi oluşturun
- Bir örneğini oluşturun`HtmlFragment` belgeye eklemek istediğiniz HTML içeriğine sahip nesne. Sağlanan kodda, HTML içeriği değişkene atanır.`t`. HTML içeriğini gerektiği gibi değiştirebilirsiniz.
+Bir örneğini oluşturun`HtmlFragment` belgeye eklemek istediğiniz HTML içeriğine sahip nesne. Sağlanan kodda, HTML içeriği değişkene atanır.`t`. HTML içeriğini gerektiği gibi değiştirebilirsiniz.
 
 ```csharp
 HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>First</li><li>Second</li><li>Third</li><li >Fourth</li><li>Fifth</li></ul>Text after the list.<br/>Next line<br/>Last line</body>`");

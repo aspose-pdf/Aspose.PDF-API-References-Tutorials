@@ -57,7 +57,7 @@ TextFragment fragment = textFragments[1];
 
 ## Шаг 5: Создайте скрытое текстовое поле
 
- Мы создаем`TextBoxField`объект для представления скрытого текстового поля. Это поле будет содержать текст, который становится видимым при наведении курсора мыши на текст триггера.
+ Мы создаем`TextBoxField` объект для представления скрытого текстового поля. Это поле будет содержать текст, который становится видимым при наведении курсора мыши на текст триггера.
 
 ```csharp
 TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
@@ -126,7 +126,7 @@ floatingField.Value = "This is the \"floating text field\".";
 floatingField.ReadOnly = true;
 // Установите флаг «скрытый», чтобы сделать поле невидимым при открытии документа
 floatingField.Flags |= AnnotationFlags.Hidden;
-//Установка уникального имени поля необязательна, но разрешена
+// Установка уникального имени поля необязательна, но разрешена
 floatingField.PartialName = "FloatingField_1";
 // Настройка характеристик внешнего вида поля не обязательна, но делает ее лучше
 floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, System.Drawing.Color.Blue);
@@ -137,10 +137,10 @@ floatingField.Border.Width = 1;
 floatingField.Multiline = true;
 // Добавить текстовое поле в документ
 document.Form.Add(floatingField);
-//Создать невидимую кнопку на позиции текстового фрагмента
+// Создать невидимую кнопку на позиции текстового фрагмента
 ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
 // Создать новое действие скрытия для указанного поля (аннотации) и флага невидимости.
-// (Вы также можете ссылаться на плавающее поле по имени, если вы указали его выше.)
+//(Вы также можете ссылаться на плавающее поле по имени, если вы указали его выше.)
 // Добавить действия при входе/выходе мыши в поле невидимой кнопки
 buttonField.Actions.OnEnter = new HideAction(floatingField, false);
 buttonField.Actions.OnExit = new HideAction(floatingField);

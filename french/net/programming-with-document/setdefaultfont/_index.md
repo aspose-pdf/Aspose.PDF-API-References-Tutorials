@@ -1,8 +1,8 @@
 ---
-title: Définir la police par défaut
-linktitle: Définir la police par défaut
+title: Définir la police par défaut dans le fichier PDF
+linktitle: Définir la police par défaut dans le fichier PDF
 second_title: Référence de l'API Aspose.PDF pour .NET
-description: Découvrez comment définir la police par défaut d'un document PDF à l'aide d'Aspose.PDF pour .NET grâce à ce guide étape par étape.
+description: Apprenez à définir la police par défaut dans un fichier PDF à l'aide d'Aspose.PDF pour .NET avec ce guide étape par étape.
 type: docs
 weight: 280
 url: /fr/net/programming-with-document/setdefaultfont/
@@ -65,3 +65,21 @@ using (Document document = new Document(fs))
 	document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
 }
 ```
+
+## Conclusion
+
+La définition d'une police par défaut dans les documents PDF à l'aide d'Aspose.PDF pour .NET est un moyen simple et efficace de garantir que le texte s'affiche correctement, même si les polices d'origine ne sont pas disponibles. En suivant le guide étape par étape et en utilisant le code source C# fourni, les développeurs peuvent facilement définir la police par défaut et créer des PDF qui offrent une expérience de visualisation cohérente et fiable dans différents environnements. Cette fonctionnalité est particulièrement utile dans les scénarios où les fichiers PDF seront affichés ou imprimés sur divers systèmes pouvant avoir différents jeux de polices installés.
+
+### FAQ pour définir la police par défaut dans le fichier PDF
+
+#### Q : Pourquoi la définition d'une police par défaut est-elle importante dans les documents PDF ?
+
+R : La définition d'une police par défaut dans les documents PDF est importante car elle garantit que le texte s'affichera correctement même si les polices d'origine ne sont pas disponibles sur le système sur lequel le PDF est affiché ou imprimé. Cela permet d'éviter des problèmes tels que du texte manquant ou brouillé, garantissant une expérience de visionnage cohérente et fiable.
+
+#### Q : Puis-je choisir n'importe quelle police comme police par défaut en utilisant Aspose.PDF pour .NET ?
+
+ R : Oui, vous pouvez choisir n'importe quelle police disponible sur le système comme police par défaut à l'aide d'Aspose.PDF pour .NET. Indiquez simplement le nom de la police dans le`DefaultFontName` propriété de la`PdfSaveOptions` classe.
+
+#### Q : Que se passe-t-il si la police par défaut spécifiée n'est pas disponible sur le système ?
+
+R : Si la police par défaut spécifiée n'est pas disponible sur le système, le visualiseur PDF utilisera une police de secours pour afficher le texte. Il est conseillé de choisir une police couramment disponible comme Arial ou Times New Roman pour assurer la compatibilité entre les différents systèmes.

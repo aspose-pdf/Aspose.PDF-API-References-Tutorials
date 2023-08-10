@@ -49,7 +49,7 @@ Wir haben den getaggten Inhalt des PDF-Dokuments und das entsprechende Stammstru
 Legen wir nun den Titel für das getaggte PDF-Dokument fest.
 
 ```csharp
-//Definieren Sie den Titel für das getaggte PDF-Dokument
+// Definieren Sie den Titel für das getaggte PDF-Dokument
 taggedContent.SetTitle("Document with images");
 ```
 
@@ -144,7 +144,7 @@ spanElement.ChangeParentElement(paragraph);
 // Dokument speichern
 document.Save(outFile);
 
-// Überprüfung der PDF/UA-Konformität für unser Dokument
+//Überprüfung der PDF/UA-Konformität für unser Dokument
 document = new Document(outFile);
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
@@ -154,3 +154,49 @@ Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 ## Abschluss
 
 In diesem Tutorial haben wir gelernt, wie man mit Aspose.PDF für .NET ein Bild in einer vorhandenen PDF-Datei markiert. Sie können Aspose.PDF jetzt verwenden, um Tags hinzuzufügen und Bilder in Ihren PDF-Dokumenten zu bearbeiten.
+
+### FAQs
+
+#### F: Was ist das Hauptziel dieses Tutorials zum Markieren von Bildern in einem vorhandenen PDF mit Aspose.PDF für .NET?
+
+A: Das Hauptziel dieses Tutorials besteht darin, Sie durch den Prozess der Markierung eines Bildes in einem vorhandenen PDF-Dokument mit Aspose.PDF für .NET zu führen. Das Tutorial bietet Schritt-für-Schritt-Anleitungen und C#-Quellcode-Beispiele, die Ihnen helfen zu verstehen, wie Sie Bildern alternativen Text und Begrenzungsrahmen zuweisen, Elemente innerhalb des Dokuments verschieben und Tags zu Bildern hinzufügen.
+
+#### F: Was sind die Voraussetzungen, um diesem Tutorial zum Markieren von Bildern in einer PDF-Datei mit Aspose.PDF für .NET zu folgen?
+
+A: Bevor Sie beginnen, stellen Sie sicher, dass Sie Ihre Entwicklungsumgebung für die Verwendung von Aspose.PDF für .NET eingerichtet haben. Dazu müssen Sie die Aspose.PDF-Bibliothek installieren und Ihr Projekt so konfigurieren, dass es darauf verweist.
+
+#### F: Wie kann ich mit Aspose.PDF für .NET ein vorhandenes PDF-Dokument öffnen und auf seinen getaggten Inhalt zugreifen?
+
+A: Das Tutorial stellt C#-Quellcodebeispiele bereit, die zeigen, wie man ein vorhandenes PDF-Dokument mit Aspose.PDF für .NET öffnet und auf seinen getaggten Inhalt zur weiteren Bearbeitung zugreift.
+
+#### F: Welchen Zweck hat die Zuweisung von Alternativtext und Begrenzungsrahmen zu Bildern in einem PDF-Dokument?
+
+A: Das Zuweisen alternativer Texte und Begrenzungsrahmen zu Bildern verbessert die Barrierefreiheit, indem beschreibender Text für Bilder bereitgestellt und deren Layout und Position innerhalb des Dokuments definiert wird. Diese Informationen sind für Screenreader und andere unterstützende Technologien von entscheidender Bedeutung.
+
+#### F: Wie kann ich mit Aspose.PDF für .NET den Titel für ein getaggtes PDF-Dokument festlegen?
+
+A: Das Tutorial enthält C#-Quellcodebeispiele, die veranschaulichen, wie der Titel für ein getaggtes PDF-Dokument mit Aspose.PDF für .NET festgelegt wird.
+
+#### F: Was beinhaltet der Prozess des Verschiebens von Elementen innerhalb eines PDF-Dokuments?
+
+A: Das Verschieben von Elementen innerhalb eines PDF-Dokuments erfordert die Änderung des übergeordneten Elements eines bestimmten Elements. In diesem Tutorial erfahren Sie, wie Sie ein Span-Element in ein bestimmtes Paragraph-Element innerhalb einer Tabelle verschieben.
+
+#### F: Wie speichere ich das geänderte PDF-Dokument, nachdem ich Tags hinzugefügt und Bilder bearbeitet habe?
+
+ A: Nachdem Sie Tags hinzugefügt, alternativen Text zugewiesen, Begrenzungsrahmen festgelegt und Änderungen am PDF-Dokument vorgenommen haben, können Sie die bereitgestellten C#-Quellcodebeispiele verwenden, um das geänderte PDF-Dokument mit zu speichern`Save()` Methode.
+
+#### F: Wozu dient der im Tutorial bereitgestellte Beispielquellcode?
+
+A: Der Beispielquellcode dient als praktische Referenz für die Implementierung von Bildkennzeichnung und -bearbeitung mit Aspose.PDF für .NET. Sie können diesen Code als Ausgangspunkt verwenden und ihn an Ihre spezifischen Anforderungen anpassen.
+
+#### F: Kann ich diese Techniken auf andere Arten von Elementen in einem PDF-Dokument anwenden, nicht nur auf Bilder?
+
+A: Ja, die in diesem Tutorial gezeigten Techniken können angepasst werden, um mit verschiedenen Arten von Elementen in einem PDF-Dokument zu arbeiten. Sie können ähnliche Prinzipien anwenden, um andere Elemente wie Text, Tabellen usw. zu kennzeichnen und zu bearbeiten.
+
+#### F: Wie kann ich die PDF/UA-Konformität des geänderten PDF-Dokuments überprüfen?
+
+ A: Das Tutorial stellt C#-Quellcodebeispiele bereit, die zeigen, wie die PDF/UA-Konformität des geänderten PDF-Dokuments mithilfe von validiert wird`Validate()` Methode und Generieren eines XML-Berichts.
+
+#### F: Welche weiteren Funktionen bietet Aspose.PDF für .NET für die Arbeit mit PDF-Dokumenten?
+
+A: Aspose.PDF für .NET bietet eine breite Palette von Funktionen für die Arbeit mit PDF-Dokumenten, darunter Textbearbeitung, Bildeinfügung, Tabellenerstellung, Formularfeldverwaltung, digitale Signaturen, Anmerkungen und mehr. Weitere Informationen finden Sie in der offiziellen Dokumentation und den Ressourcen.

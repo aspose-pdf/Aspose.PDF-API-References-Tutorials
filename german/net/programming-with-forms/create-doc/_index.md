@@ -7,7 +7,6 @@ type: docs
 weight: 40
 url: /de/net/programming-with-forms/create-doc/
 ---
-
 In diesem Tutorial zeigen wir Ihnen, wie Sie mit Aspose.PDF für .NET ein Dokument mit Optionsfeldern erstellen. Wir erklären Ihnen Schritt für Schritt den C#-Quellcode, um Sie durch diesen Prozess zu führen.
 
 ##Schritt 1: Vorbereitung
@@ -144,3 +143,25 @@ catch (Exception ex)
 ## Abschluss
 
 In diesem Tutorial haben wir gelernt, wie man mit Aspose.PDF für .NET ein Dokument mit Optionsfeldern erstellt. Wenn Sie diese Schritte befolgen, können Sie mit Aspose.PDF ganz einfach Optionsfelder zu Ihren PDF-Dokumenten hinzufügen.
+
+### FAQs
+
+#### F: Kann ich das Erscheinungsbild der Optionsfelder im Dokument mit Aspose.PDF für .NET anpassen?
+
+A: Ja, Sie können das Erscheinungsbild der Optionsfelder im Dokument mit Aspose.PDF für .NET anpassen. Sie können Eigenschaften wie Größe, Farbe, Rahmenstil und mehr festlegen, um das Erscheinungsbild der Optionsfelder anzupassen.
+
+#### F: Wie kann ich Optionsfeldgruppen mit sich gegenseitig ausschließenden Optionen hinzufügen?
+
+A: Um sich gegenseitig ausschließende Optionen zu erstellen, können Sie mehrere Optionsfelder mit demselben Namen hinzufügen. Dadurch wird sichergestellt, dass bei Auswahl einer Option die anderen Optionen mit demselben Namen automatisch deaktiviert werden.
+
+#### F: Ist es möglich, eine standardmäßig ausgewählte Option für die Optionsfelder festzulegen?
+
+A: Ja, Sie können mit Aspose.PDF für .NET eine standardmäßig ausgewählte Option für die Optionsfelder festlegen. Du kannst den ... benutzen`Selected` Eigentum der`RadioButtonOptionField` Objekt, um eine Option als standardmäßig ausgewählt zu markieren.
+
+#### F: Kann ich den Optionsfeldern Ereignishandler hinzufügen?
+
+ A: Ja, Sie können mit Aspose.PDF für .NET Ereignishandler zu den Optionsfeldern hinzufügen. Sie können JavaScript-Aktionen zuordnen, z`OnValueChanged`, zu den Optionsfeldern, um bestimmte Aktionen auszuführen, wenn der Benutzer eine Option auswählt.
+
+#### F: Wie kann ich die ausgewählte Option aus der Optionsfeldgruppe abrufen, nachdem der Benutzer eine Auswahl getroffen hat?
+
+ A: Sie können die ausgewählte Option mit Aspose.PDF für .NET aus der Optionsfeldgruppe abrufen. Nachdem der Benutzer eine Auswahl getroffen hat, können Sie darauf zugreifen`Selected` Eigentum der`RadioButtonOptionField` Objekt, um zu überprüfen, welche Option ausgewählt ist.

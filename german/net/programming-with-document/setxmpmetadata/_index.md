@@ -1,8 +1,8 @@
 ---
-title: Legen Sie XMPMetadata fest
-linktitle: Legen Sie XMPMetadata fest
+title: Legen Sie XMPMetadata in der PDF-Datei fest
+linktitle: Legen Sie XMPMetadata in der PDF-Datei fest
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET XMPMetadaten in PDF-Dateien festlegen. Befolgen Sie diese Schritt-für-Schritt-Anleitung.
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET XMPMetadaten in einer PDF-Datei festlegen. Befolgen Sie diese Schritt-für-Schritt-Anleitung.
 type: docs
 weight: 330
 url: /de/net/programming-with-document/setxmpmetadata/
@@ -40,7 +40,7 @@ Nachdem Sie Ihre PDF-Datei geöffnet haben, können Sie mit dem Festlegen der XM
 - `xmp:Nickname`: Ein Spitzname oder Alias für die PDF-Datei.
 - `xmp:CustomProperty`: Eine benutzerdefinierte Eigenschaft mit einem von Ihnen angegebenen Wert.
 
- Um diese Eigenschaften festzulegen, können Sie die verwenden`Metadata` Eigentum der`Document` Objekt. Hier ist ein Beispiel:
+ Um diese Eigenschaften festzulegen, können Sie die verwenden`Metadata` Eigentum der`Document`Objekt. Hier ist ein Beispiel:
 
 ```csharp
 // Eigenschaften festlegen
@@ -83,3 +83,21 @@ pdfDocument.Save(dataDir);
 
 Console.WriteLine("\nXMP metadata in a pdf file setup successfully.\nFile saved at " + dataDir);
 ```
+
+## Abschluss
+
+Aspose.PDF für .NET bietet eine einfache Möglichkeit, XMP-Metadaten in PDF-Dateien festzulegen, sodass Sie Ihren Dokumenten beschreibende Informationen und Eigenschaften hinzufügen können. Die oben bereitgestellte Schritt-für-Schritt-Anleitung zeigt Ihnen, wie Sie verschiedene XMP-Metadateneigenschaften mithilfe von C#-Quellcode festlegen. Darüber hinaus können Sie die XMP-Metadaten an Ihre spezifischen Bedürfnisse und Geschäftsanforderungen anpassen. Mit Aspose.PDF für .NET wird die Verwaltung von PDF-Metadaten effizienter und ermöglicht eine bessere Organisation und Durchsuchbarkeit Ihrer PDF-Dokumente.
+
+### FAQs zum Festlegen von XMP-Metadaten in einer PDF-Datei
+
+#### F: Was sind XMP-Metadaten in einer PDF-Datei und warum sind sie wichtig?
+
+A: XMP (Extensible Metadata Platform) ist ein Standard zum Einbetten von Metadaten in verschiedene Dateiformate, einschließlich PDF. Mit XMP-Metadaten in einer PDF-Datei können Sie dem Dokument beschreibende Informationen und Eigenschaften hinzufügen, wie z. B. Erstellungsdatum, Autor, Titel, Schlüsselwörter und benutzerdefinierte Eigenschaften. Dies ist für eine bessere Organisation, Durchsuchbarkeit und Archivierung von PDF-Dokumenten unerlässlich.
+
+#### F: Kann ich neben den im Beispiel genannten auch andere XMP-Metadateneigenschaften festlegen?
+
+ A: Ja, Sie können je nach Ihren spezifischen Anforderungen eine Vielzahl von XMP-Metadateneigenschaften festlegen. Zu den allgemeinen Eigenschaften gehören:`dc:title` (Dokumenttitel),`dc:creator` (Dokumentersteller),`dc:description` (Dokumentbeschreibung),`pdf:Keywords` (Dokumentschlüsselwörter) und mehr. Die XMP-Spezifikation bietet verschiedene Standard-Namespaces und benutzerdefinierte Namespaces zum Festlegen verschiedener Arten von Metadaten.
+
+#### F: Ist es möglich, XMP-Metadaten aus einer vorhandenen PDF-Datei abzurufen und zu lesen?
+
+ A: Ja, Aspose.PDF für .NET bietet die Möglichkeit, XMP-Metadaten aus einer vorhandenen PDF-Datei zu lesen und abzurufen. Du kannst den ... benutzen`Metadata` Eigentum der`Document` Klasse, um auf die XMP-Metadaten zuzugreifen und die Werte bestimmter Eigenschaften abzurufen.

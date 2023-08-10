@@ -7,7 +7,6 @@ type: docs
 weight: 240
 url: /es/net/document-conversion/provide-credentials-during-html-to-pdf/
 ---
-
 En este tutorial, lo guiaremos a través del proceso de conversión de un archivo HTML a PDF mientras proporcionamos credenciales al acceder a una URL segura usando Aspose.PDF para .NET. Siguiendo los pasos a continuación, podrá convertir contenido HTML a PDF usando las credenciales apropiadas.
 
 ## requisitos previos
@@ -112,3 +111,29 @@ catch (Exception ex)
 
 ## Conclusión
 En este tutorial, cubrimos el proceso paso a paso de convertir un archivo HTML a PDF mientras proporcionamos credenciales al acceder a una URL segura usando Aspose.PDF para .NET. Siguiendo las instrucciones descritas anteriormente, podrá convertir con éxito el contenido HTML a PDF mientras proporciona las credenciales correctas.
+
+### Preguntas frecuentes
+
+#### P: ¿Qué es Aspose.PDF para .NET?
+
+R: Aspose.PDF para .NET es una biblioteca robusta que permite a los desarrolladores trabajar con documentos PDF en aplicaciones C#. Ofrece una amplia gama de funcionalidades, incluida la conversión de HTML a PDF.
+
+#### P: ¿Cómo puedo obtener contenido HTML seguro de una URL?
+
+ R: Para obtener contenido HTML seguro de una URL, puede usar el`WebRequest` clase en C#. Asegúrese de establecer las credenciales adecuadas mediante el`Credentials` propiedad.
+
+#### P: ¿Cuáles son los requisitos previos para este tutorial?
+
+R: Antes de continuar con el tutorial, asegúrese de tener los siguientes requisitos previos:
+
+- Conocimientos básicos del lenguaje de programación C#.
+- Biblioteca Aspose.PDF para .NET instalada en su sistema.
+- Un entorno de desarrollo como Visual Studio.
+
+#### P: ¿Cómo maneja Aspose.PDF para .NET los recursos externos al convertir HTML a PDF?
+
+ R: Aspose.PDF para .NET proporciona la`HtmlLoadOptions`class para manejar recursos externos durante la conversión de HTML a PDF. Puede establecer las credenciales de recursos externos utilizando el`ExternalResourcesCredentials` propiedad.
+
+#### P: ¿Puedo personalizar el nombre de archivo del archivo PDF resultante?
+
+ R: Sí, puede personalizar el nombre del archivo PDF resultante modificando el código que guarda el documento PDF. Simplemente cambie el nombre de archivo deseado en el`pdfDocument.Save()` método.

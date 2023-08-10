@@ -13,15 +13,15 @@ Das Tutorial gibt Ihnen einen detaillierten Überblick über Methoden und Techni
 ## Tutorials
 | Titel | Beschreibung |
 | --- | --- | 
-| [Kennwort ändern](./change-password/) | Erfahren Sie, wie Sie das Passwort eines PDF-Dokuments mit Aspose.PDF für .NET ändern. |  
-| [Entschlüsseln](./decrypt/) | Erfahren Sie, wie Sie PDF-Dateien mit Aspose.PDF für .NET entschlüsseln. |  
-| [Bestimmen Sie das richtige Passwort](./determine-correct-password/) | Erfahren Sie, wie Sie mit Aspose.PDF für .NET das richtige Passwort für eine PDF-Datei ermitteln. |  
-| [Digital signieren](./digitally-sign/) | Erfahren Sie, wie Sie eine PDF-Datei mit Aspose.PDF für .NET digital signieren. |  
-| [Digital mit Zeitstempel signieren](./digitally-sign-with-time-stamp/) | Erfahren Sie, wie Sie mit Aspose.PDF für .NET eine digitale Signatur mit Zeitstempel für eine PDF-Datei durchführen. |  
-| [Verschlüsseln](./encrypt/) | Verschlüsseln Sie Ihre PDF-Dateien sicher mit Aspose.PDF für .NET. |  
+| [Passwort in PDF-Datei ändern](./change-password/) | Erfahren Sie, wie Sie das Passwort in einer PDF-Datei mit Aspose.PDF für .NET ändern. |  
+| [PDF-Datei entschlüsseln](./decrypt/) | Erfahren Sie, wie Sie eine PDF-Datei mit Aspose.PDF für .NET entschlüsseln. |  
+| [Bestimmen Sie das richtige Passwort in der PDF-Datei](./determine-correct-password/) | Erfahren Sie, wie Sie mit Aspose.PDF für .NET das richtige Passwort in einer PDF-Datei ermitteln. |  
+| [PDF-Datei digital anmelden](./digitally-sign/) | Erfahren Sie, wie Sie eine PDF-Datei mit Aspose.PDF für .NET digital signieren. |  
+| [Digital mit Zeitstempel in einer PDF-Datei signieren](./digitally-sign-with-time-stamp/) | Erfahren Sie, wie Sie mit Aspose.PDF für .NET eine digitale Signatur mit Zeitstempel in einer PDF-Datei durchführen. |  
+| [PDF-Datei verschlüsseln](./encrypt/) | Verschlüsseln Sie Ihre PDF-Dateien sicher mit Aspose.PDF für .NET. |  
 | [Bild extrahieren](./extracting-image/) | Extrahieren Sie ganz einfach Bilder aus PDF-Dokumenten mit Aspose.PDF für .NET. |  
 | [Signaturinformationen extrahieren](./extract-signature-info/) | Extrahieren von Signaturinformationen mit Aspose.PDF für .NET. |  
 | [Ist passwortgeschützt](./is-password-protected/) | Überprüfen Sie ganz einfach, ob ein PDF-Dokument mit Aspose.PDF für .NET passwortgeschützt ist. |  
-| [Legen Sie Berechtigungen fest](./set-privileges/) | Legen Sie mit Aspose.PDF für .NET ganz einfach Zugriffsrechte für Ihre PDF-Dateien fest. |  
+| [Legen Sie Berechtigungen in der PDF-Datei fest](./set-privileges/) | Legen Sie mit Aspose.PDF für .NET ganz einfach Zugriffsrechte in PDF-Dateien fest. |  
 | [Unterschreiben Sie mit einer Smartcard und einer PDF-Dateisignatur](./sign-with-smart-card-using-pdf-file-signature/) | Signieren Sie Ihre PDF-Dateien sicher mit einer Smartcard mit Aspose.PDF für .NET. |  
 | [Unterschreiben Sie mit einer Smartcard über das Signaturfeld](./sign-with-smart-card-using-signature-field/) | Signieren Sie Ihre PDF-Dateien sicher mit einer Smartcard mit Aspose.PDF für .NET. |  

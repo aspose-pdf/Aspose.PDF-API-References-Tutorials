@@ -7,7 +7,6 @@ type: docs
 weight: 270
 url: /tr/net/document-conversion/set-default-font-name/
 ---
-
 Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF dosyasında varsayılan yazı tipi adını nasıl ayarlayacağınızı göstereceğiz. Bazen bir PDF dosyasından görüntüleri ayıkladığınızda, eksik yazı tipi sorunlarıyla karşılaşabilirsiniz. Varsayılan bir yazı tipi adı belirterek, ayıklanan metnin doğru şekilde görüntülenmesini sağlayabilirsiniz. Bir PDF dosyasında varsayılan yazı tipi adını ayarlamak için aşağıdaki adımları izleyin.
 
 ## Önkoşullar
@@ -84,3 +83,25 @@ using (Document pdfDocument = new Document(dataDir + "input.pdf"))
 
 ## Çözüm
 Bu öğreticide, Aspose.PDF for .NET kullanarak bir PDF dosyasında varsayılan yazı tipi adının nasıl ayarlanacağını öğrendik. Varsayılan bir yazı tipi adı belirterek, ayıklanan metnin doğru şekilde görüntülenmesini sağlayabilirsiniz. PDF dosyalarından görüntüleri ayıklarken eksik yazı tipi sorunlarını çözmek için bu yöntemi kullanın.
+
+### SSS
+
+#### S: Aspose.PDF for .NET nedir?
+
+Y: Aspose.PDF for .NET, geliştiricilerin C# uygulamalarında PDF belgeleriyle çalışmasını sağlayan güçlü bir kitaplıktır. Bir PDF dosyasında varsayılan yazı tipi adını ayarlamak dahil olmak üzere çeşitli işlevler sunar.
+
+#### S: Neden bir PDF dosyasında varsayılan yazı tipi adını ayarlamam gerekiyor?
+
+A: Varsayılan yazı tipi adının ayarlanması, bir PDF belgesinden metin ayıklanırken kullanışlıdır. PDF, çıkarma makinesinde bulunmayan yazı tiplerine sahip metin içeriyorsa, varsayılan bir yazı tipi adının belirtilmesi metnin doğru görüntülenmesini sağlar.
+
+#### S: Aspose.PDF for .NET kullanarak bir PDF belgesini nasıl yükleyebilirim ve varsayılan yazı tipi adını nasıl ayarlayabilirim?
+
+ Y: Bir PDF belgesi yüklemek ve varsayılan yazı tipi adını ayarlamak için`Document`PDF dosyasını yüklemek için sınıf ve`RenderingOptions.DefaultFontName` İstenen varsayılan yazı tipi adını belirtmek için özelliği.
+
+#### S: Varsayılan yazı tipi adı olarak herhangi bir yazı tipini seçebilir miyim?
+
+C:Evet, çıkartma makinesinde bulunan herhangi bir yazı tipini varsayılan yazı tipi adı olarak seçebilirsiniz. Doğru metin oluşturmayı sağlamak için orijinal PDF'deki eksik yazı tipleriyle yakından eşleşen bir yazı tipi kullanın.
+
+#### S: Varsayılan yazı tipi adını ayarlamak, PDF dosyasında kalıcı bir değişiklik midir?
+
+C: Hayır, Aspose.PDF for .NET kullanılarak varsayılan yazı tipi adının ayarlanması, metin çıkarma sırasında yapılan geçici bir değişikliktir. Orijinal PDF dosyasını değiştirmez.

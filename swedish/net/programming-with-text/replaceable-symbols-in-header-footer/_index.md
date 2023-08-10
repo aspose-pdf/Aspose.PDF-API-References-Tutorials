@@ -8,7 +8,7 @@ weight: 320
 url: /sv/net/programming-with-text/replaceable-symbols-in-header-footer/
 ---
 
-den här handledningen kommer vi att förklara hur man använder utbytbara symboler i sidhuvudet och sidfoten i ett PDF-dokument med hjälp av Aspose.PDF-biblioteket för .NET. Vi kommer att gå igenom steg-för-steg-processen för att skapa en PDF, ställa in marginaler, lägga till sidhuvud och sidfot med utbytbara symboler och spara PDF:en med den medföljande C#-källkoden.
+I den här handledningen kommer vi att förklara hur man använder utbytbara symboler i sidhuvudet och sidfoten i ett PDF-dokument med hjälp av Aspose.PDF-biblioteket för .NET. Vi kommer att gå igenom steg-för-steg-processen för att skapa en PDF, ställa in marginaler, lägga till sidhuvud och sidfot med utbytbara symboler och spara PDF:en med den medföljande C#-källkoden.
 
 ## Förutsättningar
 
@@ -27,7 +27,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Steg 2: Skapa ett PDF-dokument och en sida
 
-Därefter skapar vi ett nytt PDF-dokument och lägger till en sida till det med hjälp av`Document` klass och`Page` klass från Aspose.PDF-biblioteket.
+ Därefter skapar vi ett nytt PDF-dokument och lägger till en sida till det med hjälp av`Document` klass och`Page` klass från Aspose.PDF-biblioteket.
 
 ```csharp
 Document doc = new Document();
@@ -111,7 +111,7 @@ marginInfo.Top = 90;
 marginInfo.Bottom = 50;
 marginInfo.Left = 50;
 marginInfo.Right = 50;
-//Tilldela marginInfo-instansen Margin-egenskapen för sec1.PageInfo
+// Tilldela marginInfo-instansen Margin-egenskapen för sec1.PageInfo
 page.PageInfo.Margin = marginInfo;
 HeaderFooter hfFirst = new HeaderFooter();
 page.Header = hfFirst;
@@ -169,7 +169,7 @@ table.DefaultCellPadding.Top = 10;
 table.DefaultCellPadding.Bottom = 10;
 // Lägg till tabellen i styckesamlingen av önskat avsnitt
 page.Paragraphs.Add(table);
-// Ställ in standardcellkant med BorderInfo-objekt
+// Ställ in standardcellkant med hjälp av BorderInfo-objektet
 table.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1f);
 // Ställ in tabellkanten med ett annat anpassat BorderInfo-objekt
 table.Border = new BorderInfo(BorderSide.All, 1f);

@@ -53,7 +53,7 @@ Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
 ```
 
 ## Шаг 7: Создайте прямоугольник с прозрачностью
-Создайте прямоугольник с определенными размерами и установите для его заливки прозрачный цвет с помощью`Color.FromRgb` метод.
+ Создайте прямоугольник с определенными размерами и установите для его заливки прозрачный цвет с помощью`Color.FromRgb` метод.
 
 ```csharp
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 400, 400);
@@ -118,7 +118,7 @@ canvas.IsChangePosition = false;
 TextFragment text = new TextFragment("transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text ");
 // Создать цветовой объект из альфа-канала
 Aspose.Pdf.Color color = Aspose.Pdf.Color.FromArgb(30, 0, 255, 0);
-//Установить информацию о цвете для экземпляра текста
+// Установить информацию о цвете для экземпляра текста
 text.TextState.ForegroundColor = color;
 // Добавить текст в коллекцию абзацев экземпляра страницы
 page.Paragraphs.Add(text);

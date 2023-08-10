@@ -71,7 +71,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");
 // Metni çıkarmak için TextAbsorber nesnesi oluşturun
 TextAbsorber textAbsorber = new TextAbsorber();
-// Belirli bir sayfa için emiciyi kabul edin
+//Belirli bir sayfa için emiciyi kabul edin
 pdfDocument.Pages[1].Accept(textAbsorber);
 // Ayıklanan metni al
 string extractedText = textAbsorber.Text;

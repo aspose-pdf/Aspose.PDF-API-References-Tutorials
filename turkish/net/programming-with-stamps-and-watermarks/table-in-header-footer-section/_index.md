@@ -44,13 +44,13 @@ Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 // Sayfa için başlık bölümünü tanımlayın
 page. Header = header;
 
-// Başlık bölümünün üst kenar boşluğunu ayarlayın
+//Başlık bölümünün üst kenar boşluğunu ayarlayın
 header. Margin. Top = 20;
 ```
 
 ## 4. Adım: Tabloyu oluşturma
 
- Şimdi kullanarak bir tablo oluşturacağız.`Table`class ve onu başlık bölümünün paragraf koleksiyonuna ekleyin. İşte nasıl:
+ Şimdi kullanarak bir tablo oluşturacağız.`Table` class ve onu başlık bölümünün paragraf koleksiyonuna ekleyin. İşte nasıl:
 
 ```csharp
 // Bir Tablo nesnesini somutlaştırın
@@ -99,7 +99,7 @@ row2.Cells[1].Alignment = Aspose.Pdf.HorizontalAlignment.Center;
 Tablo başlık bölümüne eklendikten sonra, PDF belgesini kaydedebiliriz. İşte nasıl:
 
 ```csharp
-// PDF dosyasını kaydedin
+//PDF dosyasını kaydedin
 pdfDocument.Save(dataDir + "TableInHeaderFooterSection_out.pdf");
 ```
 
@@ -114,7 +114,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Boş oluşturucuyu çağırarak Belge örneğini oluşturun
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document();
 
-// Pdf belgesinde bir sayfa oluşturun
+//Pdf belgesinde bir sayfa oluşturun
 Aspose.Pdf.Page page = pdfDocument.Pages.Add();
 
 // PDF dosyasının bir Başlık Bölümü oluşturun
@@ -123,7 +123,7 @@ Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 // PDF dosyası için Tek Başlığı ayarlayın
 page.Header = header;
 
-//Başlık bölümü için üst kenar boşluğunu ayarlayın
+// Başlık bölümü için üst kenar boşluğunu ayarlayın
 header.Margin.Top = 20;
 
 // Bir tablo nesnesini somutlaştırın
@@ -179,3 +179,43 @@ pdfDocument.Save(dataDir + "TableInHeaderFooterSection_out.pdf");
 ## Çözüm
 
 Tebrikler! Aspose.PDF for .NET kullanarak bir PDF belgesinin üst bilgi veya alt bilgi bölümüne tablo eklemeyi öğrendiniz. Artık PDF belgelerinizde ek bilgileri görüntülemek için tablolar ekleyerek üstbilgilerinizi ve altbilgilerinizi özelleştirebilirsiniz.
+
+### Üst bilgi alt bilgi bölümündeki tablo için SSS
+
+#### S: Bir PDF belgesinin üst bilgi veya alt bilgi bölümüne tablo eklemenin amacı nedir?
+
+Y: Bir PDF belgesinin üst bilgi veya alt bilgi bölümüne tablo eklemek, başlıklar, alt başlıklar, logolar veya belgenin her sayfasında tutarlı bir şekilde görünmesini istediğiniz diğer içerikler gibi yapılandırılmış ve düzenli bilgileri görüntülemenize olanak tanır.
+
+#### S: Sağlanan C# kaynak kodu, bir PDF belgesinin üst bilgi veya alt bilgi bölümüne tablo eklenmesini nasıl sağlar?
+
+A: Kod, boş bir PDF belgesi oluşturma, sayfa ekleme, başlık bölümünü yapılandırma, satırlar ve hücreler içeren bir tablo oluşturma ve son olarak PDF belgesini kaydetme sürecini gösterir. Sonuç, PDF belgesinin başlık bölümünde görüntülenen bir tablodur.
+
+#### S: Kenarlıklar, arka plan rengi ve metin stili gibi tablo hücrelerinin görünümünü özelleştirebilir miyim?
+
+C: Evet, hücre sınırları, arka plan rengi, metin stili, yazı tipi, yazı tipi boyutu ve daha fazlası gibi özellikleri ayarlayarak tablo hücrelerinin görünümünü özelleştirebilirsiniz.
+
+#### S: Tablo, PDF belgesinin başlık bölümüne nasıl eklenir?
+
+C: Kod, tabloyu başlık bölümünün paragraf koleksiyonuna ekler ve bu da tablonun her sayfanın başlığında görüntülenmesini sağlar.
+
+#### S: Gerektiğinde tabloya daha fazla satır ve hücre ekleyebilir miyim?
+
+ A: Kesinlikle, kullanarak tabloya daha fazla satır ve hücre ekleyebilirsiniz.`Rows.Add()` Ve`Cells.Add()` yöntemler. Bu, tablo içeriğini istediğiniz gibi yapılandırmanıza olanak tanır.
+
+#### S: Tablo sütunlarının genişliğini ayarlamak mümkün mü?
+ C: Evet, tablo sütunlarının genişliğini ayarlayabilirsiniz.`ColumnWidths` mülk. Bu, tablonun düzenini kontrol etmenizi sağlar.
+
+#### S: Hücreleri tablodaki birden çok sütuna veya satıra nasıl yayabilirim?
+ C: Hücreleri birden çok sütuna yaymak için`ColSpan`karşılık gelen hücrenin özelliği. Benzer şekilde,`RowSpan` hücreleri birden çok satıra yayma özelliği.
+
+#### S: PDF belgesinin hem üst bilgi hem de alt bilgi bölümlerine tablo eklemek istersem ne olur?
+
+ C: Hem üst bilgi hem de alt bilgi bölümleri için benzer bir yaklaşım izleyebilirsiniz. Basitçe bir`HeaderFooter` alt bilgi için örnek oluşturun, yapılandırın ve tabloyu paragraf koleksiyonuna ekleyin.
+
+#### S: Resimleri tablo hücrelerinde kullanabilir miyim ve bu nasıl elde edilir?
+
+ C: Evet, tablo hücrelerine resim ekleyebilirsiniz. Kod örneği, bir hücre oluşturarak bir hücreye resim eklemeyi gösterir.`Image` nesne, dosya yolunu ve boyutlarını ayarlayarak ve ardından onu bir hücrenin paragraflarına ekleyerek.
+
+#### S: Tablonun PDF belgesindeki tüm sayfalarda tutarlı bir şekilde görünmesini nasıl sağlayabilirim?
+
+ C: Üstbilgi veya altbilgi bölümüne tabloyu eklediğinizde`HeaderFooter` Örneğin, Aspose.PDF, tablonun her sayfada tutarlı bir şekilde görünmesini sağlayarak tekdüze bir düzen sunar.

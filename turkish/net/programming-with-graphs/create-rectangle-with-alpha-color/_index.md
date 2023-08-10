@@ -7,7 +7,6 @@ type: docs
 weight: 60
 url: /tr/net/programming-with-graphs/create-rectangle-with-alpha-color/
 ---
-
 Bu eğitimde, Aspose.PDF for .NET kullanarak alfa renkli bir dikdörtgen oluşturmak için aşağıdaki C# kaynak kodunda adım adım yol göstereceğiz.
 
 Başlamadan önce Aspose.PDF kitaplığını kurduğunuzdan ve geliştirme ortamınızı kurduğunuzdan emin olun. Ayrıca temel C# programlama bilgisine sahip olmak.
@@ -94,9 +93,9 @@ Aspose.Pdf.Page page = doc.Pages.Add();
 Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
 // Belirli boyutlara sahip dikdörtgen nesne oluşturun
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 200, 100);
-// 32 bit ARGB değerinden System.Drawing.Color yapısından grafik dolgu rengini ayarlayın
+//32 bit ARGB değerinden System.Drawing.Color yapısından grafik dolgu rengini ayarlayın
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
-//Grafik örneğinin şekiller koleksiyonuna dikdörtgen nesnesi ekleyin
+// Grafik örneğinin şekiller koleksiyonuna dikdörtgen nesnesi ekleyin
 canvas.Shapes.Add(rect);
 // İkinci dikdörtgen nesnesi oluştur
 Aspose.Pdf.Drawing.Rectangle rect1 = new Aspose.Pdf.Drawing.Rectangle(200, 150, 200, 100);
@@ -114,3 +113,33 @@ Console.WriteLine("\nRectangle object created successfully with alpha color.\nFi
 ## Çözüm
 
 Bu eğitimde, Aspose.PDF for .NET kullanarak alfa renkli bir dikdörtgenin nasıl oluşturulacağını açıkladık. Artık bu bilgiyi, PDF dosyalarınızda saydam renklerle geometrik şekiller oluşturmak için kullanabilirsiniz.
+
+## SSS
+
+#### S: Bu eğitimin amacı nedir?
+
+C: Bu eğitim, Aspose.PDF for .NET kullanarak alfa renkli bir dikdörtgen oluşturma sürecinde size rehberlik etmeyi amaçlamaktadır. Şeffaf renklerle geometrik şekilleri PDF dosyalarınıza nasıl ekleyeceğinizi öğreneceksiniz.
+
+#### S: Başlamadan önce hangi ön koşullar gereklidir?
+
+C: Başlamadan önce Aspose.PDF kütüphanesini kurduğunuzdan ve geliştirme ortamınızı kurduğunuzdan emin olun. Ek olarak, temel bir C# programlama anlayışına sahip olunması önerilir.
+
+#### S: PDF dosyasının kaydedileceği dizini nasıl belirleyebilirim?
+
+Y: Sağlanan kaynak kodunda, elde edilen PDF dosyasını kaydetmek istediğiniz dizini belirtmek için "dataDir" değişkenini değiştirebilirsiniz.
+
+#### S: Grafik nesnesinin ve Dikdörtgenin amacı nedir?
+
+C: Grafik nesnesi, çizim öğeleri için bir kap görevi görürken, Dikdörtgen, PDF'ye ekleyeceğiniz geometrik şekli temsil eder.
+
+#### S: Dikdörtgen için bir alfa rengini nasıl ayarlayabilirim?
+
+C: kullanarak dikdörtgen için bir alfa rengi belirleyebilirsiniz.`FillColor` mülkiyeti`GraphInfo` nesne ve`Color.FromRgb` ARGB değeri olan bir yöntem.
+
+#### S: Farklı alfa renkleriyle birden çok dikdörtgen oluşturabilir miyim?
+
+C: Evet, eğitimde gösterilen benzer adımları izleyerek farklı alfa renklerine sahip birden çok dikdörtgen oluşturabilirsiniz.
+
+#### S: Alfa renkli dikdörtgenler oluşturduktan sonra ortaya çıkan PDF dosyasını nasıl kaydedebilirim?
+
+ A: Alfa renkli dikdörtgenleri oluşturduktan sonra, ortaya çıkan PDF dosyasını kullanarak kaydedebilirsiniz.`doc.Save(dataDir + "CreateRectangleWithAlphaColor_out.pdf");` Sağlanan kaynak kodundaki satır.

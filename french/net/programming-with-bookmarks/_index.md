@@ -13,14 +13,14 @@ De plus, ces didacticiels vous montrent comment personnaliser les propriétés d
 ## Tutoriels
 | Titre | Description |
 | --- | --- | 
-| [Ajouter un marque-page](./add-bookmark/) | Ajoutez facilement des signets à vos fichiers PDF pour une navigation améliorée avec Aspose.PDF pour .NET. |  
-| [Ajouter un signet enfant](./add-child-bookmark/) | Ajoutez facilement un signet enfant à vos fichiers PDF pour une navigation plus organisée avec Aspose.PDF pour .NET. |  
-| [Supprimer tous les signets](./delete-all-bookmarks/) | Supprimez facilement tous les signets de vos fichiers PDF avec Aspose.PDF pour .NET. |  
-| [Supprimer un signet particulier](./delete-particular-bookmark/) | Supprimez facilement un signet particulier de vos fichiers PDF avec Aspose.PDF pour .NET. |  
-| [Développer les signets](./expand-bookmarks/) | Développez facilement les signets de vos fichiers PDF pour une navigation améliorée avec Aspose.PDF pour .NET. |  
-| [Obtenir le numéro de page du signet](./get-bookmark-page-number/) | Obtenez facilement des numéros de page de signet à partir de vos fichiers PDF avec Aspose.PDF pour .NET. |  
-| [Obtenir des signets](./get-bookmarks/) | Marquez facilement vos fichiers PDF avec Aspose.PDF pour .NET. |  
-| [Obtenir des signets enfants](./get-child-bookmarks/) | Obtenez facilement des signets enfants de vos fichiers PDF avec Aspose.PDF pour .NET. |  
-| [Hériter du zoom](./inherit-zoom/) | Bénéficiez facilement du zoom des signets dans vos fichiers PDF avec Aspose.PDF pour .NET. |  
-| [Mettre à jour les signets](./update-bookmarks/) | Mettez facilement à jour les signets de vos fichiers PDF avec Aspose.PDF pour .NET. |  
-| [Mettre à jour les signets enfants](./update-child-bookmarks/) | Mettez facilement à jour les signets enfants dans vos fichiers PDF avec Aspose.PDF pour .NET. |  
+| [Ajouter un signet dans un fichier PDF](./add-bookmark/) | Ajoutez facilement un signet dans un fichier PDF pour une navigation améliorée avec Aspose.PDF pour .NET. |  
+| [Ajouter un signet enfant dans un fichier PDF](./add-child-bookmark/) | Ajoutez facilement un signet enfant dans un fichier PDF pour une navigation plus organisée avec Aspose.PDF pour .NET. |  
+| [Supprimer tous les signets dans le fichier PDF](./delete-all-bookmarks/) | Supprimez facilement tous les signets d'un fichier PDF avec Aspose.PDF pour .NET. |  
+| [Supprimer un signet particulier dans un fichier PDF](./delete-particular-bookmark/) | Supprimez facilement un signet particulier dans un fichier PDF avec Aspose.PDF pour .NET. |  
+| [Développer les signets dans le fichier PDF](./expand-bookmarks/) | Développez facilement les signets dans le fichier PDF pour une navigation améliorée avec Aspose.PDF pour .NET. |  
+| [Obtenir le numéro de page du signet dans le fichier PDF](./get-bookmark-page-number/) | Obtenez facilement le numéro de page du signet dans un fichier PDF avec Aspose.PDF pour .NET. |  
+| [Obtenir des signets dans un fichier PDF](./get-bookmarks/) | Obtenez facilement un signet dans un fichier PDF avec Aspose.PDF pour .NET. |  
+| [Obtenir des signets enfants dans un fichier PDF](./get-child-bookmarks/) | Obtenez facilement des signets enfants dans un fichier PDF avec Aspose.PDF pour .NET. |  
+| [Hériter du zoom avant du fichier PDF](./inherit-zoom/) | Hériter facilement du zoom des signets dans le fichier PDF avec Aspose.PDF pour .NET. |  
+| [Mettre à jour les signets dans le fichier PDF](./update-bookmarks/) | Mettez facilement à jour les signets dans un fichier PDF avec Aspose.PDF pour .NET. |  
+| [Mettre à jour les signets enfants dans un fichier PDF](./update-child-bookmarks/) | Mettez facilement à jour les signets enfants dans un fichier PDF avec Aspose.PDF pour .NET. |  

@@ -1,13 +1,12 @@
 ---
-title: Agregar columna repetida
-linktitle: Agregar columna repetida
+title: Agregar columna repetida en documento PDF
+linktitle: Agregar columna repetida en documento PDF
 second_title: Referencia de API de Aspose.PDF para .NET
 description: Aprenda a agregar una columna repetida en un documento PDF usando Aspose.PDF para .NET.
 type: docs
 weight: 20
 url: /es/net/programming-with-tables/add-repeating-column/
 ---
-
 En este tutorial, aprenderemos cómo agregar una columna repetida en un documento PDF usando Aspose.PDF para .NET. Explicaremos el código fuente en C# paso a paso. Al final de este tutorial, sabrá cómo crear una tabla con una columna repetida en un documento PDF. ¡Empecemos!
 
 ## Paso 1: Configuración del entorno
@@ -70,7 +69,7 @@ for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
      row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
      row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
      // ...
-     //Agregue las otras columnas aquí
+     // Agregue las otras columnas aquí
 }
 ```
 
@@ -102,7 +101,7 @@ Aspose.Pdf.Table outerTable = new Aspose.Pdf.Table();
 outerTable.ColumnWidths = "100%";
 outerTable.HorizontalAlignment = HorizontalAlignment.Left;
 
-// Cree una instancia de un objeto de tabla que se anidará dentro de la tabla exterior que se dividirá dentro de la misma página
+//Cree una instancia de un objeto de tabla que se anidará dentro de la tabla exterior que se dividirá dentro de la misma página
 Aspose.Pdf.Table mytable = new Aspose.Pdf.Table();
 mytable.Broken = TableBroken.VerticalInSamePage;
 mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;
@@ -158,3 +157,25 @@ doc.Save(outFile);
 
 ## Conclusión
 En este tutorial, aprendimos cómo agregar una columna repetida en un documento PDF usando Aspose.PDF para .NET. Puede usar esta guía paso a paso para crear tablas con columnas repetidas en sus propios proyectos de C#.
+
+### Preguntas frecuentes para agregar una columna repetida en un documento PDF
+
+#### P: ¿Puedo personalizar la cantidad de columnas repetidas en la tabla anidada?
+
+ R: Sí, puede personalizar la cantidad de columnas repetidas en la tabla anidada. En el ejemplo proporcionado, establecemos`mytable.RepeatingColumnsCount = 5;`, lo que significa que habrá 5 columnas repetidas. Puede cambiar este valor a cualquier número deseado.
+
+#### P: ¿Es posible agregar dinámicamente más filas a la tabla anidada?
+
+R: Sí, puede agregar dinámicamente más filas a la tabla anidada de la misma manera que se muestra en el tutorial. Puede usar bucles o cualquier otra lógica para agregar filas según sus datos.
+
+#### P: ¿Puedo aplicar estilos y formato a la tabla y sus celdas?
+
+R: Sí, puede aplicar estilos y formato a la tabla y sus celdas usando Aspose.PDF para .NET. La biblioteca proporciona varias propiedades y métodos para personalizar la apariencia de la tabla y su contenido.
+
+#### P: ¿Es Aspose.PDF para .NET compatible con .NET Core?
+
+R: Sí, Aspose.PDF para .NET es compatible con .NET Core. Puede usarlo en aplicaciones .NET Framework y .NET Core.
+
+#### P: ¿Puedo usar este enfoque para agregar columnas repetidas en un documento PDF existente?
+
+R: Sí, puede usar este enfoque para agregar columnas repetidas en un documento PDF existente. Simplemente cargue el documento existente usando Aspose.PDF para .NET y siga los mismos pasos para crear y agregar la columna repetida.

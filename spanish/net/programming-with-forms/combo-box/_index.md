@@ -7,7 +7,6 @@ type: docs
 weight: 30
 url: /es/net/programming-with-forms/combo-box/
 ---
-
 En este tutorial, le mostraremos cómo crear una lista de cuadro combinado usando Aspose.PDF para .NET. Explicaremos el código fuente de C# paso a paso para guiarlo a través de este proceso.
 
 ## Paso 1: Preparación
@@ -103,3 +102,25 @@ catch (Exception ex)
 ## Conclusión
 
 En este tutorial, aprendimos a crear una lista de cuadros combinados con Aspose.PDF para .NET. Siguiendo estos pasos, puede agregar fácilmente una lista de cuadros combinados a sus documentos PDF usando Aspose.PDF.
+
+### Preguntas frecuentes
+
+#### P: ¿Puedo personalizar la apariencia de la lista del cuadro combinado usando Aspose.PDF para .NET?
+
+R: Sí, puede personalizar la apariencia de la lista del cuadro combinado usando Aspose.PDF para .NET. Puede establecer propiedades como el tamaño de la fuente, el color, el color de fondo, el estilo del borde y más para que coincidan con el aspecto que desee.
+
+#### P: ¿Puedo establecer opciones predeterminadas seleccionadas en la lista del cuadro combinado?
+
+ R: Sí, puede configurar las opciones seleccionadas predeterminadas en la lista del cuadro combinado usando Aspose.PDF para .NET. Puedes usar el`Selected` propiedad de la`ComboBoxField` objeto para marcar una o más opciones como seleccionadas por defecto.
+
+#### P: ¿Cómo puedo recuperar el valor seleccionado de la lista del cuadro combinado después de que el usuario haga una selección?
+
+ R: Puede recuperar el valor seleccionado de la lista del cuadro combinado utilizando Aspose.PDF para .NET. Después de que el usuario haga una selección, puede acceder a la`Value` propiedad de la`ComboBoxField`objeto para obtener el valor seleccionado.
+
+#### P: ¿Es posible agregar controladores de eventos o acciones a la lista del cuadro combinado?
+
+ R: Sí, Aspose.PDF para .NET le permite agregar controladores de eventos o acciones a la lista del cuadro combinado. Puede asociar acciones de JavaScript, como`OnValueChanged`, a la lista del cuadro combinado para realizar acciones específicas cuando el usuario selecciona una opción.
+
+#### P: ¿Puedo agregar información sobre herramientas o descripciones a las opciones en la lista del cuadro combinado?
+
+ R: Sí, puede agregar información sobre herramientas o descripciones a las opciones en la lista del cuadro combinado usando Aspose.PDF para .NET. Puede configurar el`AlternateName` propiedad de cada opción para proporcionar información sobre herramientas o descripción que se mostrará cuando el usuario pase el cursor sobre la opción.

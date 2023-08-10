@@ -7,14 +7,13 @@ type: docs
 weight: 10
 url: /fr/net/programming-with-tables/add-image-in-a-table-cell/
 ---
-
 Dans ce didacticiel, nous vous guiderons tout au long du processus d'ajout d'une image à une cellule de tableau à l'aide d'Aspose.PDF pour .NET. Le code source C# fourni montre comment réaliser cette fonctionnalité. En suivant les étapes décrites ci-dessous, vous pourrez incorporer efficacement des images dans les cellules de votre tableau.
 
 Avant de plonger dans le code, assurez-vous que la bibliothèque Aspose.PDF pour .NET est installée et référencée dans votre projet.
 
 ## Étape 1 : Configurer le document
 
- Pour commencer, nous devons créer une nouvelle instance de`Document`classe de l'espace de noms Aspose.Pdf. Cette classe représente un document PDF.
+ Pour commencer, nous devons créer une nouvelle instance de`Document` classe de l'espace de noms Aspose.Pdf. Cette classe représente un document PDF.
 
 ```csharp
 // Chemin d'accès au répertoire des documents.
@@ -29,7 +28,7 @@ Document pdfDocument = new Document();
 Ensuite, nous devons ajouter une page au document PDF. Une page sert de conteneur pour le tableau et d'autres éléments.
 
 ```csharp
-// Créer une page dans le document pdf
+//Créer une page dans le document pdf
 Page sec1 = pdfDocument.Pages.Add();
 ```
 
@@ -44,7 +43,7 @@ Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
 ## Étape 4 : Définition de la bordure de cellule par défaut
 
- Pour assurer la cohérence, nous pouvons définir une bordure de cellule par défaut à l'aide de la`DefaultCellBorder` propriété de la table`BorderInfo` objet.
+ Pour assurer la cohérence, nous pouvons définir une bordure de cellule par défaut à l'aide de la`DefaultCellBorder`propriété de la table`BorderInfo` objet.
 
 ```csharp
 // Définir la bordure de cellule par défaut à l'aide de l'objet BorderInfo
@@ -103,7 +102,7 @@ cell2.Paragraphs.Add(img);
 Après avoir ajouté la cellule d'image, nous pouvons ajouter plus de cellules à la ligne si nécessaire.
 
 ```csharp
-// Ajouter une autre cellule à la ligne
+//Ajouter une autre cellule à la ligne
 row1.Cells.Add("Previous cell with image");
 
 // Ajuster l'alignement vertical de la troisième cellule
@@ -129,11 +128,11 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 // Instancier un objet Document
 Document pdfDocument = new Document();
-// Créer une page dans le document pdf
+//Créer une page dans le document pdf
 Page sec1 = pdfDocument.Pages.Add();
 // Instancier un objet table
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
-//Ajouter le tableau dans la collection de paragraphes de la page souhaitée
+// Ajouter le tableau dans la collection de paragraphes de la page souhaitée
 sec1.Paragraphs.Add(tab1);
 // Définir la bordure de cellule par défaut à l'aide de l'objet BorderInfo
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
@@ -157,3 +156,25 @@ pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 ## Conclusion
 
 Dans ce didacticiel, nous avons couvert un guide étape par étape sur la façon d'ajouter une image à une cellule de tableau à l'aide de Aspose.PDF pour .NET. Nous avons commencé par configurer le document, créer une page et ajouter un tableau. Ensuite, nous définissons la bordure de cellule et la largeur de colonne par défaut. Nous avons montré comment ajouter une image à une cellule de tableau et ajuster l'alignement vertical de la cellule. Enfin, nous avons enregistré le document modifié. En suivant ces étapes, vous pouvez améliorer efficacement vos documents PDF avec des images dans les cellules du tableau.
+
+### FAQ
+
+#### Q : Puis-je ajouter plusieurs images à différentes cellules d'un même tableau à l'aide d'Aspose.PDF pour .NET ?
+
+R : Oui, vous pouvez ajouter plusieurs images à différentes cellules d'un même tableau à l'aide d'Aspose.PDF pour .NET. Suivez simplement le même processus démontré dans le didacticiel pour chaque image que vous souhaitez ajouter au tableau.
+
+#### Q : Puis-je personnaliser la taille et la position de l'image dans la cellule du tableau ?
+
+ R : Oui, vous pouvez personnaliser la taille et la position de l'image dans la cellule du tableau en ajustant les propriétés du`Image`objet. Vous pouvez définir la largeur et la hauteur de l'image, ainsi que l'alignement dans la cellule.
+
+#### Q : Puis-je ajouter des images à un tableau avec un nombre dynamique de lignes et de colonnes ?
+
+R : Oui, vous pouvez ajouter des images à un tableau avec un nombre dynamique de lignes et de colonnes. Aspose.PDF pour .NET offre une flexibilité dans la création de tableaux de dimensions variables. Vous pouvez ajouter des lignes et des cellules selon vos besoins, puis ajouter des images à des cellules spécifiques en conséquence.
+
+#### Q : Quels formats d'image sont pris en charge par Aspose.PDF pour .NET pour ajouter des images aux cellules de tableau ?
+
+R : Aspose.PDF pour .NET prend en charge une large gamme de formats d'image, notamment JPEG, PNG, GIF, BMP et TIFF. Vous pouvez utiliser des images de n'importe lequel de ces formats pour les ajouter aux cellules du tableau.
+
+#### Q : Puis-je ajouter des images aux tableaux d'un document PDF existant ?
+
+R : Oui, vous pouvez ajouter des images aux tableaux d'un document PDF existant à l'aide d'Aspose.PDF pour .NET. Chargez simplement le document existant et suivez les mêmes étapes pour ajouter des images au tableau, comme indiqué dans le didacticiel.

@@ -13,7 +13,7 @@ Följ stegen nedan för att ta bort alla kommentarer från sidan med Aspose.PDF 
 
 ## Steg 1: Installera Aspose.PDF för .NET
 
- För att använda Aspose.PDF för .NET måste du först installera biblioteket. Du kan[ladda ner](https://releases.aspose.com/pdf/net/) biblioteket från Aspose-versionerna och installera det på din dator. Efter installationen måste du lägga till en referens till biblioteket i ditt projekt.
+ För att använda Aspose.PDF för .NET måste du först installera biblioteket. Du kan[ladda ner](https://releases.aspose.com/pdf/net/)biblioteket från Aspose-versionerna och installera det på din dator. Efter installationen måste du lägga till en referens till biblioteket i ditt projekt.
 
 ## Steg 2: Skapa en ny konsolapplikation
 
@@ -65,3 +65,25 @@ pdfDocument.Save(dataDir);
 ## Slutsats
 
 I den här artikeln har vi tillhandahållit en steg-för-steg-guide som hjälper dig att förstå hur du tar bort alla kommentarer från en specifik sida i ett PDF-dokument med Aspose.PDF för .NET. Genom att följa stegen som beskrivs i den här guiden kan du enkelt implementera den här funktionen i ditt eget projekt.
+
+### FAQ's
+
+#### F: Vad är anteckningar i ett PDF-dokument?
+
+S: Anteckningar i ett PDF-dokument är interaktiva element som ger ytterligare information, anteckningar eller kommentarer om specifika delar av dokumentet. Anteckningar kan innehålla textanteckningar, kommentarer, höjdpunkter och andra interaktiva element.
+
+#### F: Kan jag bara ta bort kommentarer från specifika sidor?
+
+S: Ja, med Aspose.PDF för .NET kan du ta bort kommentarer från specifika sidor eller till och med från hela dokumentet, beroende på dina krav.
+
+#### F: Vad händer om det inte finns några kommentarer på den angivna sidan?
+
+ S: Om det inte finns några kommentarer på den angivna sidan, anropar du`Delete()` metod kommer inte att ha någon effekt, och sidan kommer att förbli oförändrad.
+
+#### F: Är det möjligt att ta bort specifika typer av kommentarer istället för alla kommentarer?
+
+S: Ja, Aspose.PDF för .NET tillhandahåller metoder för att komma åt och ta bort specifika typer av anteckningar, såsom textkommentarer, markeringskommentarer, etc.
+
+#### F: Stöder Aspose.PDF för .NET andra operationer på anteckningar?
+
+S: Ja, Aspose.PDF för .NET erbjuder olika metoder för att manipulera och anpassa kommentarer, som att lägga till, ändra, flytta eller ändra storlek på kommentarer.

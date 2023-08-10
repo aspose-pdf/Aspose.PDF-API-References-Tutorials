@@ -98,3 +98,29 @@ Console.WriteLine("\nLength dashed successfully in black and white.\nFile saved 
 ## Conclusion
 
 Dans ce didacticiel, nous avons expliqué comment définir la longueur des tirets à l'aide de Aspose.PDF pour .NET. Vous pouvez désormais utiliser ces connaissances pour créer des lignes avec des motifs de tirets personnalisés dans vos fichiers PDF.
+
+## FAQ
+
+#### Q : Quel est l'objectif de ce didacticiel ?
+
+R : Le but de ce didacticiel est de vous guider tout au long du processus de définition de la longueur des tirets pour les lignes à l'aide d'Aspose.PDF pour .NET. Vous apprendrez à créer des lignes avec des motifs de tirets personnalisés dans vos fichiers PDF.
+
+#### Q : Quels sont les prérequis requis avant de commencer ?
+
+R : Avant de commencer, assurez-vous d'avoir installé la bibliothèque Aspose.PDF et configuré votre environnement de développement. Une compréhension de base de la programmation C # est également recommandée.
+
+#### Q : Comment spécifier le répertoire d'enregistrement du fichier PDF ?
+
+R : Modifiez la variable "dataDir" dans le code source fourni pour indiquer le répertoire dans lequel vous souhaitez enregistrer le fichier PDF résultant.
+
+#### Q : Comment créer une ligne avec des modèles de tirets personnalisés ?
+
+ R : Le didacticiel montre la création d'un objet Ligne et la configuration de sa couleur, de son tableau de tirets et de sa phase de tirets à l'aide de l'outil`GraphInfo` objet. Modifiez ces paramètres pour obtenir le motif de tirets souhaité.
+
+#### Q : Puis-je personnaliser la couleur de la ligne ?
+
+ R : Oui, vous pouvez personnaliser la couleur de la ligne en définissant le`Color` propriété de la`GraphInfo` objet associé à la Ligne.
+
+#### Q : Comment enregistrer le document PDF après avoir défini la longueur du tiret ?
+
+ R : Après avoir configuré l'objet Ligne avec le motif de tirets souhaité, vous pouvez enregistrer le document PDF résultant à l'aide de la`doc.Save(dataDir + "DashLength_out.pdf");` ligne dans le code source fourni.

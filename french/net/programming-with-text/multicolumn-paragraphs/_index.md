@@ -19,7 +19,7 @@ Avant de commencer, assurez-vous que vous disposez des éléments suivants :
 
 ## Étape 1 : Configurer le répertoire de documents
 
- Tout d'abord, vous devez définir le chemin d'accès au répertoire où se trouve votre fichier PDF d'entrée. Remplacer`"YOUR DOCUMENT DIRECTORY"` dans le`dataDir` variable avec le chemin d'accès à votre fichier PDF.
+ Tout d'abord, vous devez définir le chemin d'accès au répertoire où se trouve votre fichier PDF d'entrée. Remplacer`"YOUR DOCUMENT DIRECTORY"` dans le`dataDir`variable avec le chemin d'accès à votre fichier PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -35,7 +35,7 @@ Document doc = new Document(dataDir + "MultiColumnPdf.pdf");
 
 ## Étape 3 : Accéder aux paragraphes multicolonnes
 
- Nous utilisons le`ParagraphAbsorber` classe pour absorber et visiter les paragraphes du document PDF. Nous récupérons ensuite les balises de la page et accédons aux paragraphes multicolonnes.
+ Nous utilisons le`ParagraphAbsorber`classe pour absorber et visiter les paragraphes du document PDF. Nous récupérons ensuite les balises de la page et accédons aux paragraphes multicolonnes.
 
 ```csharp
 ParagraphAbsorber absorb = new ParagraphAbsorber();

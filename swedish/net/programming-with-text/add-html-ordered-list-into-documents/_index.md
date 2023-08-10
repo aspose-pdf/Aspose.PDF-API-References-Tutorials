@@ -21,7 +21,7 @@ Innan du börjar, se till att du har följande:
 2. Lägg till en referens till Aspose.PDF för .NET-biblioteket.
 
 ## Steg 2: Importera nödvändiga namnrymder
-kodfilen där du vill lägga till HTML-listan, lägg till följande med hjälp av direktiven högst upp i filen:
+I kodfilen där du vill lägga till HTML-listan, lägg till följande med hjälp av direktiven högst upp i filen:
 
 ```csharp
 using Aspose.Pdf;
@@ -41,7 +41,7 @@ Document doc = new Document();
 ```
 
 ## Steg 5: Skapa ett HtmlFragment-objekt med HTML-innehållet
- Instantiera en`HtmlFragment` objekt med HTML-innehållet du vill lägga till i dokumentet. I den medföljande koden är HTML-innehållet tilldelat variabeln`t`. Du kan ändra HTML-innehållet efter behov.
+Instantiera en`HtmlFragment` objekt med HTML-innehållet du vill lägga till i dokumentet. I den medföljande koden är HTML-innehållet tilldelat variabeln`t`. Du kan ändra HTML-innehållet efter behov.
 
 ```csharp
 HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>First</li><li>Second</li><li>Third</li><li >Fourth</li><li>Fifth</li></ul>Text after the list.<br/>Next line<br/>Last line</body>`");

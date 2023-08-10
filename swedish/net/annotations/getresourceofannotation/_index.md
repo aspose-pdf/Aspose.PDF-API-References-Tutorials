@@ -7,7 +7,6 @@ type: docs
 weight: 90
 url: /sv/net/annotations/getresourceofannotation/
 ---
-
 Exemplet visar hur man skaffar anteckningsresurs med Aspose.PDF för .NET. För att få tillgång till en anteckning med Aspose.PDF för .NET, följ dessa steg:
 
 ## Steg 1: Ställ in sökvägen till katalogen där dokumentet finns.
@@ -107,7 +106,7 @@ doc.Pages[1].Annotations.Add(sa);
 doc.Save(dataDir + "GetResourceOfAnnotation_Out.pdf");
 // Öppna dokumentet
 Document doc1 = new Document(dataDir + "GetResourceOfAnnotation_Out.pdf");
-//Få handling av annoteringen
+//Få handling av anteckningen
 RenditionAction action = (doc.Pages[1].Annotations[1] as ScreenAnnotation).Action as RenditionAction;
 //Hämta återgivning av återgivningsåtgärden
 Rendition rendition = ((doc.Pages[1].Annotations[1] as ScreenAnnotation).Action as RenditionAction).Rendition;
@@ -126,3 +125,29 @@ ms.Write(buffer, 0, read);
 Console.WriteLine(rendition.Name);
 Console.WriteLine(action.RenditionOperation);
 ```
+
+## Slutsats
+
+I den här handledningen undersökte vi hur man hämtar resursen för en viss anteckning från ett PDF-dokument med Aspose.PDF för .NET. Genom att följa steg-för-steg-guiden och använda den medföljande C#-källkoden kan utvecklare enkelt komma åt och hantera kommentarer, inklusive återgivningskommentarer, i sina PDF-dokument.
+
+### FAQ's
+
+#### F: Vad är en återgivning i samband med PDF-kommentarer?
+
+S: I samband med PDF-kommentarer är en återgivning en presentation av multimediainnehåll. Det gör det möjligt att bädda in multimedia, såsom ljud eller video, i PDF-dokumentet. Återgivningskommentaren anger media som ska presenteras och hur det ska spelas.
+
+#### F: Kan jag få namnet på mediafilen som är kopplad till en återgivningskommentar?
+
+ S: Ja, du kan få namnet på mediafilen som är associerad med en återgivningskommentar med Aspose.PDF för .NET. Mediafilens namn kan nås via`FileSpecification` av`MediaClip` objekt.
+
+#### F: Kan Aspose.PDF för .NET extrahera mediefiler från en återgivningskommentar?
+
+S: Ja, Aspose.PDF för .NET kan extrahera mediadata från en återgivningskommentar, som inkluderar ljud- eller videoinnehåll, och spara den som en separat fil.
+
+#### F: Hur får jag åtkomst till mediadata för en återgivningskommentar?
+
+ S: Mediedata för en återgivningskommentar kan nås via`FileSpecification.Contents` egendom av`MediaClipData` objekt.
+
+#### F: Kan jag modifiera media som är kopplade till en återgivningsanteckning med Aspose.PDF för .NET?
+
+S: Aspose.PDF för .NET tillhandahåller metoder för att komma åt och ändra mediadata som är associerade med en återgivningskommentar. Du kan uppdatera eller ersätta mediafilen som används av en återgivningskommentar.

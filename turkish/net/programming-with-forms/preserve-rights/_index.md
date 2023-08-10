@@ -7,7 +7,6 @@ type: docs
 weight: 210
 url: /tr/net/programming-with-forms/preserve-rights/
 ---
-
 Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF belgesinde form haklarını nasıl koruyacağınızı göstereceğiz. Bu süreçte size yol göstermesi için C# kaynak kodunu adım adım açıklayacağız.
 
 ## Adım 1: Hazırlık
@@ -20,7 +19,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ## 2. Adım: Belgeyi açın
 
- Bir kullanarak kaynak PDF belgesini açın.`FileStream` okuma ve yazma izni ile:
+ kullanarak kaynak PDF belgesini açın.`FileStream` okuma ve yazma izni ile:
 
 ```csharp
 FileStream fs = new FileStream(dataDir + "input.pdf", FileMode.Open, FileAccess.ReadWrite);
@@ -89,3 +88,26 @@ fs.Close();
 ## Çözüm
 
 Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF belgesindeki formun haklarını nasıl koruyacağımızı öğrendik. Bu adımları izleyerek, erişim ve yazma izinlerini korurken form alanlarına kolayca erişebilir ve belirli değişiklikler yapabilirsiniz.
+
+
+### SSS
+
+#### S: PDF belgesindeki belirli form alanlarının haklarını diğerlerini etkilemeden koruyabilir miyim?
+
+ C: Evet, kullanarak`FullName` Form alanlarının özelliği, belirli form alanlarını korumak için hedefleyebilir ve diğerlerini etkilenmeden bırakabilirsiniz.
+
+#### S: Parola korumalı bir PDF belgesindeki bir formun haklarını koruyabilir miyim?
+
+C: Evet, Aspose.PDF for .NET, dosyaya erişmek ve dosyayı değiştirmek için doğru parolayı girdiğiniz sürece parola korumalı PDF belgelerinde bile bir formun haklarını korumanıza olanak tanır.
+
+#### S: Uygun erişim hakları olmadan form alanlarını değiştirmeye çalışırsam ne olur?
+
+Y: Uygun erişim hakları olmadan form alanlarını değiştirmeye çalışırsanız, değişiklikler PDF belgesine kaydedilmez ve bir istisna veya hata mesajı alabilirsiniz.
+
+#### S: Aspose.PDF for .NET, .NET Framework'ün tüm sürümleriyle uyumlu mu?
+
+C: Evet, Aspose.PDF for .NET, .NET Core ve .NET Standard dahil olmak üzere tüm .NET Framework sürümleriyle uyumludur.
+
+#### S: Bir PDF belgesindeki form haklarını C# dışındaki diğer programlama dillerinde programlı olarak koruyabilir miyim?
+
+C: Evet, Aspose.PDF for .NET, C#'a ek olarak VB.NET ve ASP.NET gibi çeşitli programlama dillerini destekler.

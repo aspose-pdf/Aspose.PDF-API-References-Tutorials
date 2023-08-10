@@ -7,7 +7,7 @@ type: docs
 weight: 220
 url: /sv/net/programming-with-document/hidepagenumbersintoc/
 ---
-den här artikeln kommer vi att diskutera implementeringen av funktionen Hide Page Numbers In TOC i Aspose.PDF för .NET med C#. Vi kommer att börja med en kort introduktion till Aspose.PDF för .NET och sedan dyka in i steg-för-steg-guiden för att implementera denna funktion. 
+I den här artikeln kommer vi att diskutera implementeringen av funktionen Hide Page Numbers In TOC i Aspose.PDF för .NET med C#. Vi kommer att börja med en kort introduktion till Aspose.PDF för .NET och sedan dyka in i steg-för-steg-guiden för att implementera denna funktion. 
 
 ## Introduktion till Aspose.PDF för .NET
 
@@ -146,3 +146,21 @@ for (int Level = 1; Level != 5; Level++)
 	}
 doc.Save(outFile);
 ```
+
+## Slutsats
+
+I den här handledningen undersökte vi hur man arbetar med XMP-metadata i ett PDF-dokument med Aspose.PDF för .NET. XMP-metadata ger värdefull information om PDF-dokumentet, inklusive dess titel, författare, skapandedatum och mer. Aspose.PDF för .NET tillåter utvecklare att komma åt och manipulera denna metadata, vilket ger ett flexibelt och kraftfullt API för att arbeta med PDF-dokument.
+
+### FAQ's
+
+#### F: Vad är XMP-metadata i ett PDF-dokument?
+
+S: XMP-metadata (Extensible Metadata Platform) i ett PDF-dokument är ett standardformat för att lagra metadatainformation om dokumentet. Den innehåller detaljer som dokumenttitel, författare, skapelsedatum, nyckelord och mer. XMP-metadata tillhandahåller ett strukturerat och standardiserat sätt att lagra och dela information om PDF-dokumentet.
+
+#### F: Kan jag ändra XMP-metadata för ett PDF-dokument med Aspose.PDF för .NET?
+
+ S: Ja, du kan modifiera XMP-metadata för ett PDF-dokument programmatiskt med Aspose.PDF för .NET. Du kan komma åt`Info` egendom av`Document` objekt, som ger dig tillgång till egenskaperna för XMP-metadata. Du kan sedan uppdatera värdena för dessa egenskaper för att ändra XMP-metadata för PDF-dokumentet.
+
+#### F: Kan jag extrahera anpassade XMP-metadataegenskaper från ett PDF-dokument med Aspose.PDF för .NET?
+
+ S: Ja, du kan extrahera anpassade XMP-metadataegenskaper från ett PDF-dokument med Aspose.PDF för .NET. Du kan använda`Metadata` egendom av`Document`objekt, som ger tillgång till alla XMP-metadataegenskaper i PDF-dokumentet. Du kan sedan extrahera anpassade egenskaper och använda deras värden efter behov.

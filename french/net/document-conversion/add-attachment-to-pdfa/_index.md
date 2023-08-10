@@ -7,7 +7,6 @@ type: docs
 weight: 10
 url: /fr/net/document-conversion/add-attachment-to-pdfa/
 ---
-
 Dans ce tutoriel, nous vous guiderons étape par étape sur la façon d'ajouter une pièce jointe à un fichier PDF/A à l'aide d'Aspose.PDF pour .NET. Nous expliquerons chaque étape à l'aide d'exemples de code C# et fournirons des instructions étape par étape pour vous aider à suivre facilement.
 
 ## Introduction
@@ -34,7 +33,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Aspose.Pdf.Document doc = new Document(dataDir + "input.pdf");
 ```
 
- Dans le code ci-dessus, remplacez`"YOUR DOCUMENTS DIRECTORY"` avec le chemin d'accès réel du répertoire où se trouve votre document PDF d'entrée. Ce code initialise une nouvelle instance du`Document` classe et charge le fichier PDF existant.
+ Dans le code ci-dessus, remplacez`"YOUR DOCUMENTS DIRECTORY"`avec le chemin d'accès réel du répertoire où se trouve votre document PDF d'entrée. Ce code initialise une nouvelle instance du`Document` classe et charge le fichier PDF existant.
 
 ## Étape 2 : Création de la spécification de fichier pour la pièce jointe
 
@@ -72,7 +71,7 @@ Pour que la pièce jointe soit incluse dans le fichier résultant, nous devons c
 doc.Convert(dataDir + "log.txt", Aspose.Pdf.PdfFormat.PDF_A_3A, ConvertErrorAction.Delete);
 ```
 
- Dans le code ci-dessus, nous utilisons le`Convert`méthode pour convertir le document à l'aide de la`"log.txt"` fichier journal. Nous spécifions le format de sortie en utilisant le`PdfFormat.PDF_A_3A` enum et spécifiez l'action à entreprendre en cas d'erreur de conversion avec`ConvertErrorAction.Delete`.
+ Dans le code ci-dessus, nous utilisons le`Convert` méthode pour convertir le document à l'aide de la`"log.txt"` fichier journal. Nous spécifions le format de sortie en utilisant le`PdfFormat.PDF_A_3A` enum et spécifiez l'action à entreprendre en cas d'erreur de conversion avec`ConvertErrorAction.Delete`.
 
 ## Étape 5 : Enregistrez le fichier résultant
 
@@ -95,7 +94,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document doc = new Document(dataDir + "input.pdf");
 // Configurer un nouveau fichier à ajouter en pièce jointe
 FileSpecification fileSpecification = new FileSpecification(dataDir + "aspose-logo.jpg", "Large Image file");
-// Ajouter une pièce jointe à la collection de pièces jointes du document
+//Ajouter une pièce jointe à la collection de pièces jointes du document
 doc.EmbeddedFiles.Add(fileSpecification);
 // Effectuez la conversion en PDF/A_3a afin que la pièce jointe soit incluse dans le fichier resultnat
 doc.Convert(dataDir + "log.txt", Aspose.Pdf.PdfFormat.PDF_A_3A, ConvertErrorAction.Delete);
@@ -109,3 +108,20 @@ Console.WriteLine("\nAttachment added successfully to PDF/A file.\nFile saved at
 
 Dans ce didacticiel, vous avez appris à ajouter une pièce jointe à un fichier PDF/A à l'aide d'Aspose.PDF pour .NET. Nous avons couvert chaque étape du processus, du chargement du document existant à la conversion et à l'enregistrement du fichier résultant. À l'aide des exemples de code fournis, vous pouvez facilement intégrer cette fonctionnalité dans vos propres projets. Expérimentez avec Aspose.PDF pour .NET et découvrez les possibilités qu'il offre pour la manipulation avancée des fichiers PDF.
 
+### FAQ
+
+#### Q : Qu'est-ce qu'Aspose.PDF pour .NET ?
+
+R : Aspose.PDF pour .NET est une puissante bibliothèque de manipulation et de traitement PDF pour les applications .NET. Il permet aux développeurs de créer, éditer, convertir et manipuler des fichiers PDF par programmation.
+
+#### Q : À quoi sert l'ajout de pièces jointes aux fichiers PDF ?
+
+: L'ajout de pièces jointes aux fichiers PDF vous permet d'inclure des fichiers supplémentaires, tels que des images, des documents ou des médias, dans le document PDF. Cela peut être utile pour fournir des informations supplémentaires ou des ressources connexes.
+
+#### Q : Puis-je ajouter plusieurs pièces jointes à un document PDF à l'aide d'Aspose.PDF pour .NET ?
+
+ R : Oui, vous pouvez ajouter plusieurs pièces jointes à un document PDF en utilisant Aspose.PDF pour .NET. Créez simplement plusieurs`FileSpecification` objets, chacun représentant une pièce jointe différente, et ajoutez-les au`EmbeddedFiles` collecte du document.
+
+#### Q : Quel est l'impact de la conversion au format PDF/A_3a sur la pièce jointe ?
+
+R : La conversion au format PDF/A_3a garantit que la pièce jointe est incluse dans le document PDF/A résultant. PDF/A_3a est une norme pour l'archivage à long terme des documents électroniques, et en convertissant dans ce format, la pièce jointe devient une partie permanente du document PDF.

@@ -81,3 +81,29 @@ foreach (MarkupAnnotation annotation in pdfDocument.Pages[1].Annotations)
 	Console.WriteLine("Contents : {0} ", annotation.Contents);                
 }
 ```
+
+## Conclusione
+
+In questo tutorial, abbiamo esplorato come ottenere tutte le annotazioni da una pagina specifica di un documento PDF utilizzando Aspose.PDF per .NET. Seguendo la guida dettagliata e utilizzando il codice sorgente C# fornito, gli sviluppatori possono facilmente estrarre e gestire le annotazioni dai loro documenti PDF.
+
+### FAQ
+
+#### D: Cosa sono le annotazioni in un documento PDF?
+
+R: Le annotazioni in un documento PDF sono elementi interattivi che forniscono informazioni aggiuntive, commenti o note su parti specifiche del documento. Le annotazioni possono includere note di testo, commenti, evidenziazioni e altri elementi interattivi.
+
+#### D: Posso ottenere annotazioni solo da pagine specifiche?
+
+A: Sì, con Aspose.PDF per .NET, puoi ottenere annotazioni da pagine specifiche o anche dall'intero documento, a seconda delle tue esigenze.
+
+#### D: Aspose.PDF per .NET supporta l'estrazione di annotazioni da file PDF protetti da password?
+
+ R: Sì, Aspose.PDF per .NET supporta l'estrazione di annotazioni da file PDF protetti da password. È necessario fornire la password corretta quando si carica il documento PDF utilizzando il file`Document` classe.
+
+#### D: Posso filtrare le annotazioni in base alle loro proprietà, come il contenuto o l'autore?
+
+R: Sì, Aspose.PDF per .NET fornisce metodi per accedere e filtrare le annotazioni in base alle loro proprietà, come contenuto, autore o data di creazione. Puoi scorrere tutte le annotazioni e verificare le proprietà specifiche che desideri filtrare.
+
+#### D: Aspose.PDF per .NET supporta l'estrazione di annotazioni da diversi tipi di documenti PDF?
+
+R: Sì, Aspose.PDF per .NET fornisce vari metodi per estrarre annotazioni da diversi tipi di documenti PDF, incluse annotazioni di markup di testo, annotazioni di testo libero e altro.

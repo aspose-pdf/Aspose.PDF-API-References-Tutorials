@@ -124,4 +124,4 @@ Console.WriteLine("\nCustom tab stops setup successfully.\nFile saved at " + dat
 ```
 
 ## Conclusion
-Vous avez créé avec succès un document PDF avec des taquets de tabulation personnalisés à l'aide d'Aspose.PDF pour .NET. Le fichier PDF résultant se trouve maintenant dans le chemin du fichier de sortie spécifié.
+Vous avez créé avec succès un document PDF avec des taquets de tabulation personnalisés à l'aide d'Aspose.PDF pour .NET. Le fichier PDF résultant peut maintenant être trouvé dans le chemin du fichier de sortie spécifié.

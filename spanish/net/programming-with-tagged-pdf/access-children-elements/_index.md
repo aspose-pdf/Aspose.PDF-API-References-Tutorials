@@ -127,3 +127,36 @@ document.Save(dataDir + "AccessChildrenElements.pdf");
 ## Conclusión
 
 En este tutorial, aprendió cómo acceder a los elementos secundarios de un documento PDF y cómo modificar las propiedades de los elementos mediante Aspose.PDF para .NET. Esto le permite personalizar y manipular los elementos estructurados en un documento PDF según sus necesidades.
+
+### Preguntas frecuentes
+
+#### P: ¿Cuál es el propósito de acceder a elementos secundarios en un documento PDF usando Aspose.PDF para .NET?
+
+R: Acceder a elementos secundarios en un documento PDF usando Aspose.PDF para .NET le permite manipular y personalizar mediante programación los elementos estructurados dentro del documento. Esto puede incluir la modificación de propiedades, como títulos, idiomas, texto real, texto de expansión y texto alternativo, para mejorar la accesibilidad y la presentación del documento.
+
+#### P: ¿Cuál es el papel de la biblioteca Aspose.PDF en este proceso?
+
+R: Aspose.PDF para .NET es una potente biblioteca que proporciona varias funciones para crear, manipular y convertir documentos PDF mediante programación. En este tutorial, la biblioteca se utiliza para cargar un documento PDF, acceder a contenido etiquetado y elementos estructurados y modificar sus propiedades.
+
+#### P: ¿Cuáles son los requisitos previos para trabajar con elementos secundarios en un documento PDF utilizando Aspose.PDF para .NET?
+
+R: Antes de comenzar, asegúrese de tener Visual Studio instalado con .NET Framework y de tener referenciada la biblioteca Aspose.PDF para .NET en su proyecto.
+
+#### P: ¿Cómo permite el código C# proporcionado acceder y modificar elementos secundarios en un documento PDF?
+
+R: El código muestra cómo cargar un documento PDF, acceder al contenido etiquetado y recorrer los elementos secundarios de la raíz y los elementos específicos. Muestra cómo recuperar propiedades de elementos estructurados y cómo modificar esas propiedades para personalizar el documento.
+
+#### P: ¿Puedo acceder y modificar otras propiedades de los elementos secundarios más allá de las que se muestran en el código?
+
+R: Sí, puede acceder y modificar otras propiedades de los elementos secundarios utilizando técnicas similares. Las propiedades demostradas en el código (título, idioma, texto real, etc.) son solo ejemplos, y puede explorar la documentación de Aspose.PDF para descubrir más propiedades y métodos disponibles para la manipulación.
+
+#### P: ¿Cómo identifico a qué elementos secundarios quiero acceder dentro del documento PDF?
+R: El código proporciona un ejemplo de cómo acceder a los elementos secundarios del elemento raíz y un elemento específico dentro de él. Puede identificar los elementos a los que desea acceder en función de su jerarquía y estructura dentro del contenido etiquetado del documento PDF.
+
+#### P: ¿Es posible agregar nuevos elementos secundarios o eliminar los existentes usando este enfoque?
+
+R: Si bien el código proporcionado se enfoca en acceder y modificar los elementos secundarios existentes, puede ampliar el enfoque para agregar nuevos elementos secundarios o eliminar los existentes mediante el uso de métodos apropiados proporcionados por la biblioteca Aspose.PDF.
+
+#### P: ¿Puedo usar este enfoque para trabajar con elementos secundarios anidados dentro del documento PDF?
+
+R: Sí, puede aplicar técnicas similares para acceder y modificar elementos secundarios anidados dentro de la estructura del documento PDF. Al recorrer la jerarquía de elementos, puede acceder y manipular elementos en varios niveles.

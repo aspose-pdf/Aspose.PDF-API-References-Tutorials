@@ -7,7 +7,6 @@ type: docs
 weight: 210
 url: /fr/net/programming-with-forms/preserve-rights/
 ---
-
 Dans ce didacticiel, nous allons vous montrer comment conserver les droits de formulaire dans un document PDF à l'aide d'Aspose.PDF pour .NET. Nous expliquerons étape par étape le code source C # pour vous guider tout au long de ce processus.
 
 ## Étape 1 : Préparation
@@ -89,3 +88,26 @@ fs.Close();
 ## Conclusion
 
 Dans ce didacticiel, nous avons appris à préserver les droits d'un formulaire dans un document PDF à l'aide d'Aspose.PDF pour .NET. En suivant ces étapes, vous pouvez facilement accéder aux champs du formulaire et apporter des modifications spécifiques tout en préservant les autorisations d'accès et d'écriture.
+
+
+### FAQ
+
+#### Q : Puis-je conserver les droits de champs de formulaire spécifiques sans affecter les autres dans le document PDF ?
+
+ R : Oui, en utilisant le`FullName` propriété des champs de formulaire, vous pouvez cibler des champs de formulaire spécifiques pour la préservation tout en laissant les autres inchangés.
+
+#### Q : Puis-je conserver les droits d'un formulaire dans un document PDF protégé par un mot de passe ?
+
+R : Oui, Aspose.PDF pour .NET vous permet de conserver les droits d'un formulaire même dans les documents PDF protégés par mot de passe, tant que vous fournissez le mot de passe correct pour accéder et modifier le fichier.
+
+#### Q : Que se passe-t-il si j'essaie de modifier des champs de formulaire sans les droits d'accès appropriés ?
+
+R : Si vous tentez de modifier des champs de formulaire sans les droits d'accès appropriés, les modifications ne seront pas enregistrées dans le document PDF et vous pourrez recevoir une exception ou un message d'erreur.
+
+#### Q : Aspose.PDF pour .NET est-il compatible avec toutes les versions de .NET Framework ?
+
+R : Oui, Aspose.PDF pour .NET est compatible avec toutes les versions de .NET Framework, y compris .NET Core et .NET Standard.
+
+#### Q : Puis-je conserver les droits de formulaire dans un document PDF par programmation dans d'autres langages de programmation que C# ?
+
+R : Oui, Aspose.PDF pour .NET prend en charge divers langages de programmation, tels que VB.NET et ASP.NET, en plus de C#.

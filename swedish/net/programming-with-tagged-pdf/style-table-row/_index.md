@@ -35,7 +35,7 @@ Vi har skapat ett nytt dokument och ställt in dokumentets titel och språk.
 I detta steg kommer vi att få rotstrukturelementet för vårt dokument.
 
 ```csharp
-// Skaffa rotstrukturelementet
+//Skaffa rotstrukturelementet
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
@@ -215,3 +215,49 @@ Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 ## Slutsats
 
 den här handledningen lärde vi oss hur man formaterar tabellrader med Aspose.PDF för .NET. Vi anpassade tabellradernas stilar och egenskaper, la till sidhuvuden, brödtextraderna och sidfoten, sparade det taggade PDF-dokumentet och validerade dess PDF/UA-kompatibilitet.
+
+### FAQ's
+
+#### F: Vad är syftet med denna handledning om formatering av tabellrader med Aspose.PDF för .NET?
+
+S: Syftet med denna handledning är att guida dig genom processen att formatera tabellrader i ett PDF-dokument med Aspose.PDF för .NET. Det ger steg-för-steg-instruktioner och exempel på C#-källkod för att hjälpa dig att anpassa tabellradstilar och egenskaper.
+
+#### F: Vilka är förutsättningarna för att följa denna handledning?
+
+S: Innan du börjar, se till att du har ställt in din utvecklingsmiljö för att använda Aspose.PDF för .NET. Detta innebär att du installerar Aspose.PDF-biblioteket och konfigurerar ditt projekt för att referera till det.
+
+#### F: Hur kan jag skapa ett nytt PDF-dokument och ställa in dess titel och språk med Aspose.PDF för .NET?
+
+ S: För att skapa ett nytt PDF-dokument måste du skapa ett`Document` objekt från Aspose.PDF-biblioteket. Handledningens medföljande C#-källkod visar hur man skapar ett dokument och ställer in dess titel- och språkegenskaper.
+
+#### F: Vilken betydelse har rotstrukturelementet i ett PDF-dokument?
+
+S: Rotstrukturelementet fungerar som en behållare för andra strukturelement och hjälper till att organisera och kategorisera innehållet i PDF-dokumentet. Det spelar en avgörande roll för att fastställa dokumentets logiska struktur.
+
+#### F: Hur skapar och anpassar jag ett tabellstrukturelement för att formatera tabellrader med Aspose.PDF för .NET?
+
+S: Handledningen förklarar hur man skapar ett tabellstrukturelement och anpassar dess egenskaper för att formatera tabellrader. Den täcker aspekter som bakgrundsfärg, kanter, radhöjd, paginering, standardcellstil och mer.
+
+#### F: Kan jag anpassa stilar och egenskaper för enskilda celler i en tabellrad?
+
+S: Ja, du kan anpassa stilar och egenskaper för enskilda celler i en tabellrad. Handledningen visar hur man ställer in egenskaper som bakgrundsfärg, ramar, textfärg, utfyllnad och mer för tabellceller inom den formaterade tabellraden.
+
+#### F: Hur kan jag lägga till sidhuvuden, brödtextrader och en sidfot i den formaterade tabellraden?
+
+S: Handledningen ger exempel på hur du skapar och lägger till sidhuvuden, brödtextrader och en sidfot till tabellstrukturelementet. Dessa element kan anpassas ytterligare med hjälp av egenskaperna som beskrivs i handledningen.
+
+#### F: Vad är PDF/UA-kompatibilitet och hur kan jag validera det för mitt taggade PDF-dokument?
+
+ S: PDF/UA-kompatibilitet säkerställer att PDF-dokumentet överensstämmer med tillgänglighetsstandarder, vilket gör det mer tillgängligt för användare med funktionshinder. Handledningen visar hur man validerar PDF/UA-överensstämmelse med hjälp av`Validate()` metod och generera en XML-efterlevnadsrapport.
+
+#### F: Hur kan jag införliva dessa koncept i mina egna .NET-applikationer?
+
+S: Du kan använda de medföljande C#-källkodsexemplen som en guide för att implementera tabellradsformatering i dina egna .NET-applikationer. Ändra och anpassa koden för att matcha dina krav och integrera den i dina projekt.
+
+#### F: Finns det några rekommenderade bästa metoder för att formatera tabellrader i PDF-dokument?
+
+S: När du formaterar tabellrader, överväg läsbarheten och tillgängligheten för innehållet. Se till att färgerna har tillräcklig kontrast, använd tydliga och läsbara teckensnitt och bibehåll en konsekvent layout. Validera PDF/UA-efterlevnad för att säkerställa att tillgänglighetsstandarder uppfylls.
+
+#### F: Vilka andra funktioner i Aspose.PDF för .NET kan jag utforska för anpassning av PDF-dokument?
+
+S: Aspose.PDF för .NET erbjuder ett brett utbud av funktioner för anpassning av PDF-dokument, inklusive textmanipulering, bildinfogning, formulärfältshantering, digitala signaturer, anteckningar och mer. Se den officiella dokumentationen och resurserna för att utforska ytterligare funktioner.

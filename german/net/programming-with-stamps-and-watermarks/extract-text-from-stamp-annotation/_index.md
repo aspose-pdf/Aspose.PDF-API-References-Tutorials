@@ -67,3 +67,41 @@ Console.WriteLine(ta.Text);
 ## Abschluss
 
 Herzlichen Glückwunsch! Sie haben gelernt, wie Sie mit Aspose.PDF für .NET Text aus einer Stempelanmerkung in einem PDF-Dokument extrahieren. Mit dieser Methode können Sie jetzt Text aus anderen Anmerkungen in Ihren PDF-Dokumenten extrahieren.
+
+### FAQs zum Extrahieren von Text aus Stempelanmerkungen
+
+#### F: Was ist eine Stempelanmerkung in einem PDF-Dokument und warum sollte ich Text daraus extrahieren?
+
+A: Eine Stempelanmerkung in einem PDF-Dokument ist ein grafisches Element, das zur Bereitstellung zusätzlicher Informationen verwendet werden kann, beispielsweise ein Wasserzeichen oder ein Gummistempel. Das Extrahieren von Text aus einer Stempelanmerkung ist nützlich, wenn Sie textbasierten Inhalt aus diesen Anmerkungen abrufen möchten, zu dem Notizen, Beschriftungen oder andere Textinformationen gehören können.
+
+#### F: Wie extrahiert der bereitgestellte C#-Quellcode Text aus einer Stempelanmerkung?
+
+ A: Der bereitgestellte Quellcode zeigt, wie Text aus einer bestimmten Stempelanmerkung auf einer bestimmten Seite eines PDF-Dokuments extrahiert wird. Es verwendet die Aspose.PDF-Bibliothek, um die Stempelanmerkung abzurufen und ihr Erscheinungsbild mithilfe von a zu überprüfen`TextAbsorber`und zeigt dann den extrahierten Text in der Ausgabe an.
+
+#### F: Kann ich mit einem ähnlichen Ansatz Text aus verschiedenen Arten von Anmerkungen extrahieren?
+
+A: Ja, Sie können einen ähnlichen Ansatz verwenden, um Text aus anderen Arten von Anmerkungen zu extrahieren, z. B. Textanmerkungen oder Popup-Anmerkungen. Sie müssten den Code so ändern, dass er auf den spezifischen Anmerkungstyp abzielt, aus dem Sie Text extrahieren möchten.
+
+####  F: Was ist der Zweck des`TextAbsorber` class in the code?
+
+ A: Die`TextAbsorber` Die Klasse wird verwendet, um Text aus verschiedenen Teilen eines PDF-Dokuments zu extrahieren, einschließlich Stempelanmerkungen. Es „absorbiert“ oder erfasst den Textinhalt, der im angegebenen Bereich oder Element der PDF-Datei gefunden wird.
+
+#### F: Wie identifiziere ich die spezifische Stempelanmerkung, aus der ich Text extrahieren möchte?
+
+ A: Im bereitgestellten Code wird die Stempelanmerkung durch Zugriff auf identifiziert`Annotations` Sammlung einer bestimmten Seite und Verwendung des Index zum Abrufen der gewünschten Anmerkung. Sie können den Index anpassen oder andere Kriterien verwenden, um die Zielanmerkung zu identifizieren.
+
+#### F: Kann ich Text aus mehreren Stempelanmerkungen auf derselben Seite extrahieren?
+
+ A: Ja, Sie können den Code so ändern, dass er die Schleife durchläuft`Annotations`Sammlung einer Seite, Filtern Sie Stempelanmerkungen heraus und extrahieren Sie Text aus jeder Seite.
+
+#### F: Was passiert, wenn die Stempelanmerkung keinen Textinhalt hat? Funktioniert der Code weiterhin?
+
+A: Der Code funktioniert weiterhin, extrahiert jedoch eine leere Zeichenfolge und zeigt sie an, wenn das Erscheinungsbild der Stempelanmerkung keinen Textinhalt enthält.
+
+#### F: Wie kann ich den extrahierten Text in einer Datei speichern, anstatt ihn in der Ausgabe anzuzeigen?
+
+ A: Sie können den Code ändern, um den extrahierten Text in einer Datei zu speichern, anstatt ihn in der Konsole anzuzeigen. Ersetzen Sie einfach die`Console.WriteLine` Anweisung mit Code zum Schreiben des Textes in eine Datei.
+
+#### F: Wie kann ich den extrahierten Text zur weiteren Verarbeitung oder Analyse verwenden?
+
+A: Sobald Sie den Text mit der bereitgestellten Methode extrahiert haben, können Sie ihn bei Bedarf in einer Variablen speichern, manipulieren, analysieren oder in andere Teile Ihrer Anwendung integrieren.

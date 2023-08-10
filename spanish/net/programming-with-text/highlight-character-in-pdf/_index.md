@@ -19,7 +19,7 @@ Antes de comenzar, asegúrese de tener lo siguiente:
 
 ## Paso 1: configurar el directorio de documentos
 
- Primero, debe establecer la ruta al directorio donde se encuentra su archivo PDF de entrada. Reemplazar`"YOUR DOCUMENT DIRECTORY"` en el`dataDir` variable con la ruta a su archivo PDF.
+ Primero, debe establecer la ruta al directorio donde se encuentra su archivo PDF de entrada. Reemplazar`"YOUR DOCUMENT DIRECTORY"` en el`dataDir`variable con la ruta a su archivo PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -74,7 +74,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
          {
              if (i == 0)
              {
-                 //Resaltar caracteres
+                 // Resaltar caracteres
                  gr.DrawRectangle(
                      Think.Yellow,
                      (float)textFragment.Position.XIndent,
@@ -198,4 +198,4 @@ catch (Exception ex)
 
 ## Conclusión
 
-En este tutorial, ha aprendido a resaltar caracteres en un documento PDF utilizando la biblioteca Aspose.PDF para .NET. Siguiendo la guía paso a paso y ejecutando el código C# provisto, puede resaltar caracteres en un PDF y guardar el resultado como una imagen.
+En este tutorial, ha aprendido a resaltar caracteres en un documento PDF utilizando la biblioteca Aspose.PDF para .NET. Siguiendo la guía paso a paso y ejecutando el código C# proporcionado, puede resaltar caracteres en un PDF y guardar el resultado como una imagen.

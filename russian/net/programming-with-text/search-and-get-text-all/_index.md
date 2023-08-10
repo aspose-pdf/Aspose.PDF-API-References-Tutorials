@@ -61,7 +61,7 @@ pdfDocument.Pages.Accept(textFragmentAbsorber);
 
 ## Шаг 6: получить извлеченные текстовые фрагменты
 
- Получить извлеченные текстовые фрагменты с помощью`TextFragments` собственность`TextFragmentAbsorber` объект:
+Получить извлеченные текстовые фрагменты с помощью`TextFragments` собственность`TextFragmentAbsorber` объект:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -95,7 +95,7 @@ foreach (TextFragment textFragment in textFragmentCollection)
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Открыть документ
 Document pdfDocument = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
-// Создайте объект TextAbsorber, чтобы найти все экземпляры входной поисковой фразы.
+//Создайте объект TextAbsorber, чтобы найти все экземпляры входной поисковой фразы.
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
 // Примите поглотитель для всех страниц
 pdfDocument.Pages.Accept(textFragmentAbsorber);

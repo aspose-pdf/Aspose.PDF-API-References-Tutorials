@@ -89,7 +89,7 @@ page.Accept(textFragmentAbsorber);
 
 ## Steg 9: Hämta de extraherade textfragmenten
 
- Hämta de extraherade textfragmenten med hjälp av`TextFragments` egendom av`TextFragmentAbsorber` objekt:
+Hämta de extraherade textfragmenten med hjälp av`TextFragments` egendom av`TextFragmentAbsorber` objekt:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;

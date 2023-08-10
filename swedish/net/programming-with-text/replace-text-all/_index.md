@@ -19,7 +19,7 @@ Innan du börjar, se till att du har följande:
 
 ## Steg 1: Konfigurera dokumentkatalogen
 
- Ställ in sökvägen till katalogen där du har den inmatade PDF-filen. Byta ut`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till din PDF-fil.
+ Ställ in sökvägen till katalogen där du har den inmatade PDF-filen. Byta ut`"YOUR DOCUMENT DIRECTORY"` i`dataDir`variabel med sökvägen till din PDF-fil.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -35,7 +35,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextAll.pdf");
 
 ## Steg 3: Sök och ersätt text
 
- Skapa en`TextFragmentAbsorber`objekt för att hitta alla instanser av den inmatade sökfrasen. Acceptera absorbenten för alla sidor i PDF-dokumentet för att extrahera textfragmenten.
+ Skapa en`TextFragmentAbsorber` objekt för att hitta alla instanser av den inmatade sökfrasen. Acceptera absorbenten för alla sidor i PDF-dokumentet för att extrahera textfragmenten.
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
@@ -73,7 +73,7 @@ Console.WriteLine("\nText replaced successfully.\nFile saved at " + dataDir);
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Öppna dokumentet
 Document pdfDocument = new Document(dataDir + "ReplaceTextAll.pdf");
-// Skapa TextAbsorber-objekt för att hitta alla instanser av den inmatade sökfrasen
+//Skapa TextAbsorber-objekt för att hitta alla instanser av den inmatade sökfrasen
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
 // Acceptera absorbenten för alla sidor
 pdfDocument.Pages.Accept(textFragmentAbsorber);
@@ -97,4 +97,4 @@ Console.WriteLine("\nText replaced  successfully.\nFile saved at " + dataDir);
 
 ## Slutsats
 
-I den här handledningen har du lärt dig hur du ersätter all text i ett PDF-dokument med Aspose.PDF-biblioteket för .NET. Genom att följa steg-för-steg-guiden och köra den medföljande C#-koden kan du ladda ett PDF-dokument, söka efter önskad text, ersätta den och spara den modifierade PDF-filen.
+den här handledningen har du lärt dig hur du ersätter all text i ett PDF-dokument med Aspose.PDF-biblioteket för .NET. Genom att följa steg-för-steg-guiden och köra den medföljande C#-koden kan du ladda ett PDF-dokument, söka efter önskad text, ersätta den och spara den modifierade PDF-filen.

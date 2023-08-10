@@ -77,3 +77,21 @@ dataDir = dataDir + "OptimizeDocument_out.pdf";
 // Enregistrer le document mis à jour
 pdfDocument.Save(dataDir);
 ```
+
+## Conclusion
+
+La fonctionnalité Lier les flux en double d'Aspose.PDF pour .NET fournit un moyen efficace d'optimiser les fichiers PDF en réduisant leur taille. En identifiant et en reliant les flux en double, la bibliothèque aide à créer des documents PDF plus efficaces sans sacrifier l'intégrité des données ou la qualité visuelle. Les développeurs peuvent facilement implémenter cette fonctionnalité à l'aide des étapes fournies et de l'exemple de code source, améliorant ainsi les performances et l'efficacité de stockage de leurs fichiers PDF.
+
+### FAQ
+
+#### Q : Quel est l'objectif de la fonctionnalité Lier les flux en double dans Aspose.PDF pour .NET ?
+
+R : La fonctionnalité Lier les flux en double dans Aspose.PDF pour .NET est utilisée pour optimiser les fichiers PDF en identifiant et en liant les flux en double dans le document. Dans un fichier PDF, il peut y avoir des flux en double (tels que des images ou des polices) qui consomment de l'espace inutile. En reliant ces flux en double, la taille du fichier peut être réduite, ce qui se traduit par un document PDF plus efficace et plus petit.
+
+#### Q : Comment fonctionne la fonctionnalité Lier les flux en double ?
+
+: La fonctionnalité Lier les flux en double fonctionne en analysant les flux de contenu du document PDF et en identifiant les flux en double qui ont le même contenu. Au lieu de stocker ces flux en double séparément, la fonctionnalité crée un lien entre eux, partageant ainsi le même contenu. Cette technique d'optimisation réduit la taille globale du document PDF sans affecter son apparence visuelle ou ses fonctionnalités.
+
+#### Q : La fonctionnalité Lier les flux en double peut-elle entraîner une perte de données ou de qualité dans le document PDF ?
+
+R : Non, la fonctionnalité Lier les flux en double n'entraîne aucune perte de données ou de qualité dans le document PDF. Il optimise uniquement la taille du fichier en reliant les flux en double, sans altérer le contenu ou l'apparence visuelle du document. La fonctionnalité est conçue pour garantir que le document PDF reste intact et conserve sa qualité d'origine.

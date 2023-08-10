@@ -14,7 +14,7 @@ Aprenderá a especificar la configuración de conversión, extraer texto e imág
 | Título | Descripción |
 | --- | --- | 
 | [Agregar archivo adjunto a PDFA](./add-attachment-to-pdfa/) | Agregue fácilmente archivos adjuntos a sus archivos PDF/A usando Aspose.PDF para .NET. |  
-| [MCG a PDF](./cgm-to-pdf/) | Convierta fácilmente archivos CGM a PDF usando Aspose.PDF para .NET. |  
+| [CGM a archivos PDF](./cgm-to-pdf/) | Convierta fácilmente archivos CGM a PDF usando Aspose.PDF para .NET. |  
 | [EPUB a PDF](./epub-to-pdf/) | Guía paso a paso para convertir EPUB a PDF utilizando Aspose.PDF para .NET. |  
 | [Obtener dimensiones SVG](./get-svg-dimensions/) | Guía paso a paso para obtener dimensiones SVG usando Aspose.PDF para .NET. |  
 | [HTML a PDF](./html-to-pdf/) | Guía paso a paso para convertir HTML a PDF utilizando Aspose.PDF para .NET. |  
@@ -28,7 +28,7 @@ Aprenderá a especificar la configuración de conversión, extraer texto e imág
 | [PDF a HTML](./pdf-to-html/) | Guía paso a paso para convertir PDF a HTML utilizando Aspose.PDF para .NET. |  
 | [PDF a PDFA](./pdf-to-pdfa/) | Guía paso a paso para convertir PDF a PDFA usando Aspose.PDF para .NET. |  
 | [PDF a PDFA3b](./pdf-to-pdfa3b/) | Guía paso a paso para convertir PDF a PDF/A-3b usando Aspose.PDF para .NET. |  
-| [Sugerencia de fuentes de PDF a PNG](./pdf-to-png-font-hinting/) | Guía paso a paso para convertir PDF a PNG con sugerencias de fuente usando Aspose.PDF para .NET. |  
+| [Sugerencia de fuente de PDF a PNG](./pdf-to-png-font-hinting/) | Guía paso a paso para convertir PDF a PNG con sugerencias de fuente usando Aspose.PDF para .NET. |  
 | [PDF a PPT](./pdf-to-ppt/) | Guía paso a paso para convertir PDF a PPT usando Aspose.PDF para .NET. |  
 | [PDF a SVG](./pdf-to-svg/) | Guía paso a paso para convertir PDF a SVG usando Aspose.PDF para .NET. |  
 | [PDF a TeX](./pdf-to-tex/) | Guía paso a paso para convertir PDF a Te X usando Aspose.PDF para .NET. |  

@@ -1,15 +1,15 @@
 ---
-title: 获取所有附件
-linktitle: 获取所有附件
+title: 获取PDF文件中的所有附件
+linktitle: 获取PDF文件中的所有附件
 second_title: Aspose.PDF for .NET API 参考
-description: 了解如何使用 Aspose.PDF for .NET 从 PDF 文件中获取所有附件。易于操作的分步指南。
+description: 了解如何使用 Aspose.PDF for .NET 获取 PDF 文件中的所有附件。分步指南，方便操作。
 type: docs
 weight: 40
 url: /zh/net/programming-with-attachments/get-all-the-attachments/
 ---
-在本教程中，我们将逐步引导您完成以下 C# 源代码，以使用 Aspose.PDF for .NET 从 PDF 文件中获取所有附件。
+在本教程中，我们将引导您逐步完成以下 C# 源代码，以使用 Aspose.PDF for .NET 获取 PDF 文件中的所有附件。
 
-在开始之前，请确保您已经安装了 Aspose.PDF 库并设置了您的开发环境。还具有 C# 编程的基本知识。
+在开始之前，请确保您已经安装了 Aspose.PDF 库并设置了开发环境。还具备 C# 编程的基础知识。
 
 ### 第 1 步：文档目录设置
 
@@ -19,7 +19,7 @@ url: /zh/net/programming-with-attachments/get-all-the-attachments/
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### 第 2 步：打开现有的 PDF 文档
+### 步骤 2：打开现有 PDF 文档
 
 我们使用指定的路径打开现有的 PDF 文档。
 
@@ -37,7 +37,7 @@ EmbeddedFileCollection embeddedFiles = pdfDocument.EmbeddedFiles;
 
 ### 第 4 步：检索附件
 
-我们遍历集合以获取所有附件并显示它们的信息。我们还将附件保存在单独的文件中。
+我们浏览集合以获取所有附件并显示它们的信息。我们还将附件保存在单独的文件中。
 
 ```csharp
 int count = 1;
@@ -114,4 +114,42 @@ foreach (FileSpecification fileSpecification in embeddedFiles)
 
 ## 结论
 
-在本教程中，我们解释了如何使用 Aspose.PDF for .NET 从 PDF 文件中获取所有附件。您现在可以使用这些知识从您的 PDF 文件中提取和处理附件。
+在本教程中，我们解释了如何使用 Aspose.PDF for .NET 从 PDF 文件中获取所有附件。您现在可以使用这些知识从 PDF 文件中提取和操作附件。
+
+## 获取 PDF 文件中所有附件的常见问题解答
+
+#### 问：为什么我需要从 PDF 文档中检索所有附件？
+
+答：检索附件允许您访问和操作 PDF 中嵌入的其他文件，这对于存档、共享或进一步处理非常有用。
+
+#### 问：PDF 文档中可以附加哪些类型的文件？
+
+答：PDF 文档可以包含各种附加文件，包括图像、文档、电子表格、音频文件等。
+
+#### 问：本教程如何帮助我使用 Aspose.PDF for .NET 从 PDF 检索附件？
+
+答：本教程提供了访问和检索 PDF 文档中所有附件的分步说明和 C# 源代码。
+
+#### 问：我可以使用本教程检索特定附件而不是所有附件吗？
+
+答：是的，您可以修改提供的代码以根据您的要求有选择地检索附件。
+
+#### 问：使用本教程我可以获得有关每个附件的哪些信息？
+
+答：本教程演示如何检索和显示附件的名称、描述、MIME 类型、创建日期、修改日期和大小等详细信息。
+
+#### 问：如何使用本教程保存检索到的附件？
+
+答：本教程将指导您将每个检索到的附件另存为指定目录中的单独文件。
+
+#### 问：我可以使用这些知识从受密码保护的 PDF 文件中提取附件吗？
+
+答：是的，您可以应用类似的原理，使用 Aspose.PDF for .NET 从受密码保护的 PDF 文件中检索附件。
+
+#### 问：Aspose.PDF for .NET 如何促进附件检索？
+
+答：Aspose.PDF for .NET 提供了直观的 API，使您可以轻松访问和操作 PDF 文档中的附件。
+
+#### 问：是否存在建议检索附件的特定场景？
+
+答：当您需要访问 PDF 中嵌入的文件（例如提取图像、音频文件或其他文档）时，检索附件非常有用。

@@ -37,7 +37,7 @@ pdfDocument1.Pages.Add();
 ```
 
 ## Steg 4: Spara det ändrade dokumentet
- Slutligen kan du spara det ändrade PDF-dokumentet till en fil med hjälp av`Save()` metod för`Document` klass. Var noga med att ange rätt sökväg och filnamn för utdatafilen.
+Slutligen kan du spara det ändrade PDF-dokumentet till en fil med hjälp av`Save()` metod för`Document` klass. Var noga med att ange rätt sökväg och filnamn för utdatafilen.
 
 ```csharp
 dataDir = dataDir + "InsertEmptyPageAtEnd_out.pdf";
@@ -63,3 +63,30 @@ System.Console.WriteLine("\nEmpty page inserted successfully at the end of docum
 
 ## Slutsats
 I den här handledningen lärde vi oss hur man infogar en tom sida i slutet av ett PDF-dokument med Aspose.PDF för .NET. Genom att följa denna steg-för-steg-guide kan du enkelt lägga till en tom sida i slutet av ditt PDF-dokument. Aspose.PDF erbjuder ett kraftfullt och flexibelt API för att arbeta med PDF-filer, så att du kan manipulera, modifiera och generera PDF-dokument enligt dina specifika behov.
+
+### FAQ's
+
+#### F: Hur kan jag infoga en tom sida i slutet av ett PDF-dokument med Aspose.PDF för .NET?
+
+S: För att infoga en tom sida i slutet av ett PDF-dokument med Aspose.PDF för .NET, kan du följa dessa steg:
+
+1. Ställ in dokumentkatalogen genom att ange sökvägen där din ursprungliga PDF-fil finns och där du vill spara den ändrade PDF-filen. Ersätt "DIN DOKUMENTKATOLOG" med lämplig sökväg.
+2.  Öppna PDF-dokumentet med hjälp av`Document` klass av Aspose.PDF. Var noga med att ange rätt sökväg till det ursprungliga PDF-dokumentet.
+3.  Infoga en tom sida i slutet av PDF-dokumentet med hjälp av`Add()` metod för`Pages` egendom av`pdfDocument1` objekt.
+4.  Spara det ändrade PDF-dokumentet till en fil med hjälp av`Save()` metod för`Document` klass. Var noga med att ange rätt sökväg och filnamn för utdatafilen.
+
+#### F: Kan jag infoga en tom sida på en specifik plats i PDF-dokumentet?
+
+ S: Ja, du kan infoga en tom sida på valfri specifik plats i PDF-dokumentet genom att använda`Insert()` metod för`Pages` samling av`pdfDocument1` objekt. Ange index för sidan som ska infogas. Till exempel, för att infoga en tom sida vid index 2, kan du använda`pdfDocument1.Pages.Insert(2);`.
+
+#### F: Kommer det befintliga innehållet i PDF-filen att skrivas över om du infogar en tom sida?
+
+S: Nej, att infoga en tom sida i slutet av PDF-dokumentet kommer inte att skriva över det befintliga innehållet. Det lägger helt enkelt till en tom sida till slutet, vilket lämnar resten av innehållet oförändrat.
+
+#### F: Kan jag infoga flera tomma sidor i slutet av PDF-dokumentet?
+
+S: Ja, du kan infoga flera tomma sidor i slutet av PDF-dokumentet genom att upprepa steget för att infoga den tomma sidan för varje ytterligare sida du vill lägga till.
+
+#### F: Är det möjligt att ta bort en sida från slutet av PDF-dokumentet istället för att lägga till en tom sida?
+
+ S: Ja, du kan ta bort en sida från slutet av PDF-dokumentet med hjälp av`RemoveAt()` metod för`Pages`samling. Till exempel, för att ta bort den sista sidan, kan du använda`pdfDocument1.Pages.RemoveAt(pdfDocument1.Pages.Count);`.

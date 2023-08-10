@@ -26,13 +26,13 @@ Aspose.PDF for .NET'in "Etiketli PDF'lerle Programlama" öğreticileri, etiketli
 | [Bağlantı Yapısı Elemanları](./link-structure-elements/) | Aspose.PDF for .NET ile bağlantı yapısı öğelerini kullanmak için adım adım kılavuz. PDF belgelerinizde köprüler oluşturun. |  
 | [Kök Yapısı](./root-structure/) | PDF belgesinin kök ve StructTreeRoot nesnesine erişmek için kök yapı öğelerini Aspose.PDF for .NET ile kullanmaya yönelik adım adım kılavuz. |  
 | [Kurulum Dili ve Başlığı](./setup-language-and-title/) | Aspose.PDF for .NET ile bir PDF belgesinin dilini ve başlığını yapılandırmak için adım adım kılavuz. Kişiselleştirilmiş çok dilli belgeler oluşturun. |  
-| [Yapı Elemanları Özellikleri](./structure-elements-properties/) | Aspose.PDF for .NET ile bir PDF belgesinde yapısal eleman özellikleriyle çalışmak için adım adım kılavuz. Bilgi açısından zengin yapısal öğeler oluşturun. |  
+| [PDF Dosyasındaki Yapı Elemanları Özellikleri](./structure-elements-properties/) | Aspose.PDF for .NET ile PDF dosyasında yapısal eleman özellikleriyle çalışmak için adım adım kılavuz. Bilgi açısından zengin yapısal öğeler oluşturun. |  
 | [Stil Tablo Hücresi](./style-table-cell/) | Aspose.PDF for .NET ile tablo hücrelerini nasıl şekillendireceğinizi öğrenin: tabloları oluşturmak ve özelleştirmek için adım adım kılavuz. |  
 | [Stil Tablosu Elemanı](./style-table-element/) | Aspose.PDF for .NET ile tablo öğesini nasıl biçimlendireceğinizi öğrenin. Stilleri ve özellikleri özelleştirmek için adım adım kılavuz. |  
 | [Stil Tablosu Satırı](./style-table-row/) | Aspose.PDF for .NET ile tablo satırlarını nasıl özelleştireceğinizi öğrenin, adım adım satırları biçimlendirme ve biçimlendirme kılavuzu. |  
-| [Stil Metin Yapısı](./style-text-structure/) | Aspose.PDF for .NET ile bir PDF belgesindeki metin yapısını nasıl biçimlendireceğinizi öğrenin. Metne stil vermek için adım adım kılavuz. |  
+| [PDF Dosyasında Stil Metin Yapısı](./style-text-structure/) | Aspose.PDF for .NET ile PDF dosyasındaki metin yapısını nasıl biçimlendireceğinizi öğrenin. Metne stil vermek için adım adım kılavuz. |  
 | [Etiketli PDF İçeriği](./tagged-pdf-content/) | Aspose.PDF for .NET ile bir PDF belgesindeki etiketli içerikle nasıl çalışacağınızı öğrenin. Etiketleri kullanmak için adım adım kılavuz. |  
 | [Mevcut PDF'de Resmi Etiketle](./tag-image-in-existing-pdf/) | Aspose.PDF for .NET ile mevcut bir PDF'de bir görüntüyü nasıl işaretleyeceğinizi öğrenin. Görüntülere Etiket Eklemek İçin Adım Adım Kılavuz. |  
 | [Metin Bloğu Yapı Elemanları](./text-block-structure-elements/) | Mevcut bir PDF belgesine başlıklar ve etiketli paragraflar gibi metin bloğu yapı öğeleri eklemek için Aspose.PDF for .NET'i nasıl kullanacağınızı öğrenin. |  
-| [Metin Yapısı Öğeleri](./text-structure-elements/) | Aspose.PDF for .NET kullanarak bir PDF belgesine metin yapısı öğeleri eklemeyi öğrenin. PDF'lerinizin yapısını ve erişilebilirliğini iyileştirin. |  
-| [PDF'yi Doğrula](./validate-pdf/) | Aspose.PDF for .NET ile bir PDF belgesini nasıl doğrulayacağınızı öğrenin. Standartlara uygunluğunu kontrol edin ve bir doğrulama raporu oluşturun. |  
+| [PDF Dosyasındaki Metin Yapısı Öğeleri](./text-structure-elements/) | Aspose.PDF for .NET kullanarak PDF dosyasına metin yapısı öğeleri eklemeyi öğrenin. PDF'lerinizin yapısını ve erişilebilirliğini geliştirin. |  
+| [PDF Dosyasını Doğrula](./validate-pdf/) | Aspose.PDF for .NET ile bir PDF dosyasını nasıl doğrulayacağınızı öğrenin. Standartlara uygunluğunu kontrol edin ve bir doğrulama raporu oluşturun. |  

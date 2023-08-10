@@ -108,7 +108,7 @@ TextFragmentCollection textFragments = absorber.TextFragments;
 // Bucle a través de los fragmentos
 foreach (TextFragment fragment in textFragments)
 {
-	//Crear botón invisible en la posición del fragmento de texto
+	// Crear botón invisible en la posición del fragmento de texto
 	ButtonField field = new ButtonField(fragment.Page, fragment.Rectangle);
 	// El valor AlternateName se mostrará como información sobre herramientas en una aplicación de visualización
 	field.AlternateName = "Tooltip for text.";

@@ -7,8 +7,7 @@ type: docs
 weight: 10
 url: /fr/net/programming-with-forms/add-tooltip-to-field/
 ---
-
-Aspose.PDF pour .NET est une bibliothèque puissante qui permet aux développeurs de manipuler des documents PDF par programme. Dans ce didacticiel, nous allons parcourir le processus d'ajout d'une info-bulle à un champ à l'aide d'Aspose.PDF pour .NET. Nous vous fournirons un guide étape par étape pour vous aider à comprendre et à implémenter cette fonctionnalité dans votre code C#.
+Aspose.PDF pour .NET est une bibliothèque puissante qui permet aux développeurs de manipuler des documents PDF par programmation. Dans ce didacticiel, nous allons parcourir le processus d'ajout d'une info-bulle à un champ à l'aide d'Aspose.PDF pour .NET. Nous vous fournirons un guide étape par étape pour vous aider à comprendre et à implémenter cette fonctionnalité dans votre code C#.
 
 ## Étape 1 : Configurer le projet et inclure Aspose.PDF pour .NET
 
@@ -77,3 +76,25 @@ Console.WriteLine("\nTooltip added successfully.\nFile saved at " + dataDir);
 ## Conclusion
 
 Toutes nos félicitations! Vous avez appris avec succès comment ajouter une info-bulle à un champ en utilisant Aspose.PDF pour .NET. En suivant le guide étape par étape de ce didacticiel, vous pouvez améliorer vos formulaires PDF avec des info-bulles pour fournir des informations ou des conseils supplémentaires aux utilisateurs. N'oubliez pas d'explorer la documentation et les exemples fournis par Aspose.PDF pour .NET pour découvrir les fonctionnalités et fonctionnalités plus avancées offertes par la bibliothèque.
+
+### FAQ
+
+#### Q : Qu'est-ce qu'une info-bulle dans un formulaire PDF et pourquoi devrais-je l'utiliser ?
+
+R : Une info-bulle dans un formulaire PDF est une petite boîte contextuelle qui apparaît lorsque l'utilisateur passe la souris sur un champ spécifique. Il fournit des informations supplémentaires ou des instructions relatives à ce champ. Les info-bulles sont utiles pour guider les utilisateurs, fournir des explications ou offrir une aide contextuelle dans les formulaires PDF.
+
+#### Q : Puis-je personnaliser l'apparence et le comportement de l'info-bulle ?
+
+R : Oui, avec Aspose.PDF pour .NET, vous pouvez personnaliser l'apparence et le comportement de l'info-bulle. Vous pouvez définir le texte, la police, la couleur et d'autres attributs de l'info-bulle en fonction de la conception et des exigences de votre application.
+
+#### Q : Aspose.PDF pour .NET est-il compatible avec d'autres langages de programmation que C# ?
+
+R : Oui, Aspose.PDF pour .NET est conçu pour fonctionner avec d'autres langages .NET tels que VB.NET, F#, etc. La bibliothèque fournit des fonctionnalités cohérentes dans ces langages.
+
+#### Q : Puis-je ajouter des info-bulles à d'autres types de champs de formulaire, tels que des cases à cocher ou des boutons radio ?
+
+R : Oui, vous pouvez ajouter des info-bulles à différents types de champs de formulaire, notamment des champs de texte, des cases à cocher, des boutons radio, des zones de liste déroulante, etc. Le processus est similaire et vous pouvez accéder à différents types de champs de formulaire en utilisant leurs noms ou leurs identifiants.
+
+#### Q : Puis-je supprimer ou modifier l'info-bulle après l'avoir ajoutée au champ ?
+
+ R : Oui, vous pouvez modifier ou supprimer l'info-bulle d'un champ même après son ajout à l'aide d'Aspose.PDF pour .NET. Accédez simplement au champ et mettez à jour son`AlternateName` propriété avec le nouveau texte d'info-bulle ou définissez-la sur une chaîne vide pour supprimer l'info-bulle.

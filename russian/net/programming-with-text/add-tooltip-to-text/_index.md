@@ -108,7 +108,7 @@ TextFragmentCollection textFragments = absorber.TextFragments;
 // Перебрать фрагменты
 foreach (TextFragment fragment in textFragments)
 {
-	//Создать невидимую кнопку на позиции текстового фрагмента
+	// Создать невидимую кнопку на позиции текстового фрагмента
 	ButtonField field = new ButtonField(fragment.Page, fragment.Rectangle);
 	// Значение AlternateName будет отображаться в виде всплывающей подсказки приложением просмотра
 	field.AlternateName = "Tooltip for text.";

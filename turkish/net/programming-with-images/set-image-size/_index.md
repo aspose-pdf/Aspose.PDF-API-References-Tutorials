@@ -1,14 +1,13 @@
 ---
-title: Görüntü Boyutunu Ayarla
-linktitle: Görüntü Boyutunu Ayarla
+title: PDF Dosyasında Görüntü Boyutunu Ayarla
+linktitle: PDF Dosyasında Görüntü Boyutunu Ayarla
 second_title: Aspose.PDF for .NET API Referansı
-description: Aspose.PDF for .NET kullanarak bir PDF belgesindeki görüntünün boyutunu ayarlamak için adım adım kılavuz.
+description: Aspose.PDF for .NET kullanarak PDF dosyasındaki bir görüntünün boyutunu ayarlamak için adım adım kılavuz.
 type: docs
 weight: 270
 url: /tr/net/programming-with-images/set-image-size/
 ---
-
-Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF belgesindeki görüntünün boyutunu nasıl ayarlayacağınız konusunda size yol göstereceğiz. Bu işlemi kolayca gerçekleştirmek için aşağıdaki adımları izleyin.
+Bu öğreticide, Aspose.PDF for .NET kullanarak PDF dosyasındaki bir görüntünün boyutunu nasıl ayarlayacağınız konusunda size yol göstereceğiz. Bu işlemi kolayca gerçekleştirmek için aşağıdaki adımları izleyin.
 
 ## Önkoşullar
 
@@ -46,7 +45,7 @@ img. FixHeight = 100;
 // Resim türünü bilinmiyor olarak ayarla (Bilinmiyor)
 img.FileType = Aspose.Pdf.ImageFileType.Unknown;
 
-// Görüntü kaynak dosyasının yolu
+//Görüntü kaynak dosyasının yolu
 img.File = dataDir + "aspose-logo.jpg";
 
 // Görüntüyü sayfanın paragraf koleksiyonuna ekleyin
@@ -71,7 +70,7 @@ page.PageInfo.Height = 800;
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Belge nesnesini örneklendir
 Document doc = new Document();
-//PDF dosyasının sayfa koleksiyonuna sayfa ekle
+// PDF dosyasının sayfa koleksiyonuna sayfa ekle
 Aspose.Pdf.Page page = doc.Pages.Add();
 // Bir görüntü örneği oluşturun
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
@@ -95,3 +94,41 @@ Console.WriteLine("\nImage size added successfully.\nFile saved at " + dataDir);
 ## Çözüm
 
 Tebrikler! Aspose.PDF for .NET kullanarak bir PDF belgesindeki görüntünün boyutunu başarıyla ayarladınız. Artık PDF dosyalarındaki görüntülerin boyutunu ayarlamak için bu yöntemi kendi projelerinize uygulayabilirsiniz.
+
+### PDF dosyasında görüntü boyutunu ayarlamak için SSS
+
+#### S: Aspose.PDF for .NET kullanarak bir PDF belgesindeki görüntünün boyutunu ayarlamanın amacı nedir?
+
+C: Bir PDF belgesinde görüntünün boyutunu ayarlamanın amacı, PDF'ye eklendiğinde görüntünün boyutlarını kontrol etmektir. Bu, PDF dosyalarınızdaki görüntülerin görünümünü ve düzenini ayarlamanıza olanak tanır.
+
+#### S: Bir görüntünün boyutunu ayarlama işlemi bir PDF belgesinde nasıl çalışır?
+
+ C: Süreç, bir`Aspose.Pdf.Image` örneğini kullanarak genişliğini ve yüksekliğini belirterek`FixWidth` Ve`FixHeight` özellikleri ve ardından görüntüyü PDF belgesine ekleme. Ek olarak, görüntüyü yerleştirmek için sayfanın boyutlarını ayarlayabilirsiniz.
+
+#### S: Bir resmin boyutunu sayfa boyutlarının belirli bir yüzdesine ayarlayabilir miyim?
+
+A: Sağlanan kod, görüntünün mutlak genişliğini ve yüksekliğini noktalar olarak ayarlar. Bir görüntünün boyutunu sayfa boyutlarının yüzdesine göre ayarlamak istiyorsanız, boyutları buna göre hesaplamanız ve kodu buna göre ayarlamanız gerekir.
+
+####  S: Önemi nedir?`FileType` property when adding an image to the PDF document?
+
+ C:`FileType`özelliği, PDF belgesine eklenen görüntünün türünü belirtir. Sağlanan kodda, değer`Unknown` görüntü türünün bilinmediğini belirtir ve Aspose.PDF dosya uzantısına göre görüntü türünü belirlemeye çalışır.
+
+#### S: Bu yöntemi kullanarak tek bir sayfaya birden fazla resim ekleyebilir miyim?
+
+ C: Evet, birden çok görüntü oluşturarak tek bir sayfaya birden çok görüntü ekleyebilirsiniz.`Aspose.Pdf.Image` örnekleri ve bunları sayfanın paragraf koleksiyonuna ekleme. Görüntülerin konumunu ve düzenini gerektiği gibi ayarladığınızdan emin olun.
+
+#### S: Eklenen görselin sayfada yerleşimini ve hizalamasını nasıl kontrol edebilirim?
+
+ C: Eklenen görüntünün yerleşimi ve hizalaması, aşağıdaki gibi özellikler kullanılarak görüntünün koordinatları ve düzeni ayarlanarak kontrol edilebilir:`img.Left`, `img.Top`ve paragraf biçimlendirme özellikleri.
+
+####  S: kullanarak sayfa özelliklerini ayarlamanın amacı nedir?`page.PageInfo.Width` and `page.PageInfo.Height`?
+
+A: Sayfa özelliklerini ayarlamak, sayfanın boyutlarını tanımlamanıza olanak tanır. Bu, sayfa boyutlarının eklenen görseli ve sayfada sahip olabileceğiniz diğer içeriği barındırmasını sağlar.
+
+#### S: Aynı PDF belgesinde farklı görüntüler için farklı boyutlar ayarlayabilir miyim?
+
+ C: Evet, ayrı görüntüler oluşturarak farklı görüntüler için farklı boyutlar ayarlayabilirsiniz.`Aspose.Pdf.Image` örnekler ve ayarlama`FixWidth`, `FixHeight`ve her görüntü için yerleşim özellikleri.
+
+#### S: PDF dosyalarında görüntü boyutlarını ayarlamak için bu yöntemi kendi projelerime nasıl entegre edebilirim?
+
+Y: Bu yöntemi projelerinize entegre etmek için belirtilen adımları izleyin ve kodu gerektiği gibi değiştirin. Bu yöntemi, uygulamanızın gereksinimlerine göre belirli boyutlardaki görüntüleri PDF belgelerinize eklemek için kullanabilirsiniz.

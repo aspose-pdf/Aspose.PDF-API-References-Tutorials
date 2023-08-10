@@ -7,7 +7,6 @@ type: docs
 weight: 140
 url: /tr/net/programming-with-tables/margins-or-padding/
 ---
-
 Bu eğitimde, bir tabloda kenar boşluklarını veya dolguyu ayarlamak için Aspose.PDF for .NET'i kullanma sürecinde size adım adım rehberlik edeceğiz. C# kaynak kodunuzdaki bu işlevi anlamanıza ve uygulamanıza yardımcı olacak açıklamalar ve kod parçacıkları sağlayacağız.
 
 ## 1. Adım: Belge ve Sayfayı Ayarlama
@@ -141,3 +140,25 @@ Console.WriteLine("\nCell and table border width setup successfully.\nFile saved
 
 ## Çözüm
 Tebrikler! Aspose.PDF for .NET kullanarak bir tabloda kenar boşluklarını veya dolguyu nasıl ayarlayacağınızı başarıyla öğrendiniz. Bu bilgi, belge biçimlendirme becerilerinizi geliştirmenize ve tablolarınızı görsel olarak çekici hale getirmenize yardımcı olacaktır.
+
+### SSS
+
+#### S: Bir tablodaki tek tek hücreler için farklı kenar boşlukları veya dolgular ayarlayabilir miyim?
+
+C: Evet, Aspose.PDF for .NET kullanarak bir tablodaki tek tek hücreler için farklı kenar boşlukları veya dolgular ayarlayabilirsiniz. Sağlanan örnekte, tüm tablo için varsayılan hücre dolgusunu şu şekilde ayarladık:`DefaultCellPadding` mülk. Belirli hücreler için farklı dolgu ayarlamak üzere`MarginInfo` her hücrenin ayrı ayrı ve kenar boşluklarını değiştirin.
+
+#### S: Tablonun kenarlık rengini veya stilini nasıl değiştirebilirim?
+
+ A: Tablonun kenarlık rengini veya stilini değiştirmek için`Color` Ve`Width` özellikleri`BorderInfo` nesne. Verilen örnekte, kenarlık rengini siyah olarak ve genişliği 1F (bir nokta) olarak ayarladık.`tab1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);`. Renk ve genişliği ihtiyaçlarınıza göre ayarlayabilirsiniz.
+
+#### S: Tabloya üst bilgi veya alt bilgi eklemek mümkün mü?
+
+C: Evet, Aspose.PDF for .NET'i kullanarak tabloya üst bilgiler veya alt bilgiler ekleyebilirsiniz. Üstbilgiler ve altbilgiler genellikle sütun etiketleri, tablo başlıkları veya özet verileri gibi ek bilgiler içeren ayrı satırlardır. Ek satırlar oluşturabilir, bunları farklı şekilde düzenleyebilir ve tablo içeriğinin üstüne veya altına ekleyebilirsiniz.
+
+#### S: Bir tablo hücresi içindeki metin hizalamasını nasıl ayarlarım?
+
+ C: Bir tablo hücresi içindeki metin hizalamasını ayarlamak için`HorizontalAlignment` Ve`VerticalAlignment` özellikleri`TextFragment` nesne. Örneğin, metni yatay olarak ortaya hizalamak için`mytext.HorizontalAlignment = HorizontalAlignment.Center;` . Benzer şekilde ayarlayabilirsiniz`mytext.VerticalAlignment` Dikey hizalamayı kontrol etmek için.
+
+#### S: Tablo hücrelerine metin yerine resim ekleyebilir miyim?
+
+ C: Evet, Aspose.PDF for .NET'i kullanarak tablo hücrelerine resimler ekleyebilirsiniz. oluşturmak yerine`TextFragment` nesne oluşturabilirsiniz`Image` nesne, görüntü dosyasını yükleyin ve kullanarak istenen hücreye ekleyin.`cell.Paragraphs.Add(image);` yöntem. Bu, metin içeriğinin yanı sıra tabloya resim eklemenizi sağlar.

@@ -26,7 +26,7 @@ Reemplace "SU DIRECTORIO DE DOCUMENTOS" con la ruta a la carpeta donde se almace
 string dataDir = @"C:\Users\JohnDoe\Documents\PDFs\";
 ```
 
-## Paso 3: Abrir documento
+## Paso 3: Abrir Documento
 
 El siguiente paso es abrir el documento PDF que contiene las anotaciones que desea extraer. Puedes hacerlo agregando el siguiente código:
 
@@ -81,3 +81,29 @@ foreach (MarkupAnnotation annotation in pdfDocument.Pages[1].Annotations)
 	Console.WriteLine("Contents : {0} ", annotation.Contents);                
 }
 ```
+
+## Conclusión
+
+En este tutorial, exploramos cómo obtener todas las anotaciones de una página específica de un documento PDF usando Aspose.PDF para .NET. Al seguir la guía paso a paso y usar el código fuente de C# provisto, los desarrolladores pueden extraer y administrar fácilmente las anotaciones de sus documentos PDF.
+
+### Preguntas frecuentes
+
+#### P: ¿Qué son las anotaciones en un documento PDF?
+
+R: Las anotaciones en un documento PDF son elementos interactivos que brindan información adicional, comentarios o notas sobre partes específicas del documento. Las anotaciones pueden incluir notas de texto, comentarios, resaltados y otros elementos interactivos.
+
+#### P: ¿Puedo obtener anotaciones solo de páginas específicas?
+
+R: Sí, con Aspose.PDF para .NET, puede obtener anotaciones de páginas específicas o incluso de todo el documento, según sus requisitos.
+
+#### P: ¿Aspose.PDF para .NET admite la extracción de anotaciones de archivos PDF protegidos con contraseña?
+
+ R: Sí, Aspose.PDF para .NET admite la extracción de anotaciones de archivos PDF protegidos con contraseña. Debe proporcionar la contraseña correcta al cargar el documento PDF utilizando el`Document` clase.
+
+#### P: ¿Puedo filtrar las anotaciones en función de sus propiedades, como el contenido o el autor?
+
+R: Sí, Aspose.PDF para .NET proporciona métodos para acceder y filtrar anotaciones en función de sus propiedades, como el contenido, el autor o la fecha de creación. Puede recorrer todas las anotaciones y verificar las propiedades específicas que desea filtrar.
+
+#### P: ¿Aspose.PDF para .NET admite la extracción de anotaciones de diferentes tipos de documentos PDF?
+
+R: Sí, Aspose.PDF para .NET proporciona varios métodos para extraer anotaciones de diferentes tipos de documentos PDF, incluidas anotaciones de marcado de texto, anotaciones de texto libre y más.

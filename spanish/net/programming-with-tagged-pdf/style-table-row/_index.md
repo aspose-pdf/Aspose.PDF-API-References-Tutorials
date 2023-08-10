@@ -35,7 +35,7 @@ Hemos creado un nuevo documento y hemos establecido el título y el idioma del d
 En este paso obtendremos el elemento de estructura raíz de nuestro documento.
 
 ```csharp
-// Obtener el elemento de estructura raíz
+//Obtener el elemento de estructura raíz
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
@@ -215,3 +215,49 @@ Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 ## Conclusión
 
 En este tutorial, aprendimos a formatear filas de tablas con Aspose.PDF para .NET. Personalizamos los estilos y las propiedades de las filas de la tabla, agregamos los encabezados, las filas del cuerpo y el pie de página, guardamos el documento PDF etiquetado y validamos su conformidad con PDF/UA.
+
+### Preguntas frecuentes
+
+#### P: ¿Cuál es el propósito de este tutorial sobre el formato de las filas de la tabla con Aspose.PDF para .NET?
+
+R: El propósito de este tutorial es guiarlo a través del proceso de dar formato a las filas de la tabla en un documento PDF usando Aspose.PDF para .NET. Proporciona instrucciones paso a paso y ejemplos de código fuente de C# para ayudarlo a personalizar los estilos y las propiedades de las filas de las tablas.
+
+#### P: ¿Cuáles son los requisitos previos para seguir este tutorial?
+
+R: Antes de comenzar, asegúrese de haber configurado su entorno de desarrollo para usar Aspose.PDF para .NET. Esto implica instalar la biblioteca Aspose.PDF y configurar su proyecto para hacer referencia a él.
+
+#### P: ¿Cómo puedo crear un nuevo documento PDF y configurar su título e idioma usando Aspose.PDF para .NET?
+
+ R: Para crear un nuevo documento PDF, debe crear un`Document` objeto de la biblioteca Aspose.PDF. El código fuente de C# proporcionado en el tutorial demuestra cómo crear un documento y establecer sus propiedades de título e idioma.
+
+#### P: ¿Cuál es el significado del elemento de estructura raíz en un documento PDF?
+
+R: El elemento de estructura raíz actúa como contenedor de otros elementos de estructura, lo que ayuda a organizar y categorizar el contenido del documento PDF. Desempeña un papel crucial en el establecimiento de la estructura lógica del documento.
+
+#### P: ¿Cómo creo y personalizo un elemento de estructura de tabla para dar formato a las filas de la tabla usando Aspose.PDF para .NET?
+
+R: El tutorial explica cómo crear un elemento de estructura de tabla y personalizar sus propiedades para dar formato a las filas de la tabla. Cubre aspectos como el color de fondo, los bordes, la altura de las filas, la paginación, el estilo de celda predeterminado y más.
+
+#### P: ¿Puedo personalizar los estilos y las propiedades de las celdas individuales dentro de una fila de la tabla?
+
+R: Sí, puede personalizar los estilos y las propiedades de las celdas individuales dentro de una fila de la tabla. El tutorial demuestra cómo establecer propiedades como el color de fondo, los bordes, el color del texto, el relleno y más para las celdas de la tabla dentro de la fila de la tabla formateada.
+
+#### P: ¿Cómo puedo agregar encabezados, filas de cuerpo y un pie de página a la fila de la tabla con formato?
+
+R: El tutorial proporciona ejemplos de cómo crear y agregar encabezados, filas de cuerpo y un pie de página al elemento de estructura de la tabla. Estos elementos se pueden personalizar aún más utilizando las propiedades descritas en el tutorial.
+
+#### P: ¿Qué es el cumplimiento de PDF/UA y cómo puedo validarlo para mi documento PDF etiquetado?
+
+ R: El cumplimiento de PDF/UA garantiza que el documento PDF cumpla con los estándares de accesibilidad, haciéndolo más accesible para usuarios con discapacidades. El tutorial demuestra cómo validar la conformidad PDF/UA usando el`Validate()` método y generar un informe de cumplimiento de XML.
+
+#### P: ¿Cómo puedo incorporar estos conceptos en mis propias aplicaciones .NET?
+
+R: Puede utilizar los ejemplos de código fuente de C# proporcionados como guía para implementar el formato de filas de tablas en sus propias aplicaciones .NET. Modifique y adapte el código para que coincida con sus requisitos e intégrelo en sus proyectos.
+
+#### P: ¿Existen mejores prácticas recomendadas para formatear filas de tablas en documentos PDF?
+
+R: Al dar formato a las filas de la tabla, tenga en cuenta la legibilidad y la accesibilidad del contenido. Asegúrese de que los colores tengan suficiente contraste, use fuentes claras y legibles y mantenga un diseño uniforme. Valide el cumplimiento de PDF/UA para garantizar que se cumplan los estándares de accesibilidad.
+
+#### P: ¿Qué otras funciones de Aspose.PDF para .NET puedo explorar para personalizar documentos PDF?
+
+R: Aspose.PDF para .NET ofrece una amplia gama de funciones para la personalización de documentos PDF, incluida la manipulación de texto, la inserción de imágenes, la gestión de campos de formulario, las firmas digitales, las anotaciones y más. Consulte la documentación y los recursos oficiales para explorar funcionalidades adicionales.

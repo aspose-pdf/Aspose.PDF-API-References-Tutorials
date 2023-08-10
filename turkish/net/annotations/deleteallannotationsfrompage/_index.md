@@ -13,7 +13,7 @@ Aspose.PDF for .NET Kullanarak Sayfadaki Tüm Ek Açıklamaları Sil için aşa�
 
 ## 1. Adım: Aspose.PDF for .NET'i kurun
 
- Aspose.PDF for .NET'i kullanmak için önce kütüphaneyi kurmanız gerekir. Yapabilirsiniz[indirmek](https://releases.aspose.com/pdf/net/) Aspose yayınlarından kütüphaneyi indirin ve bilgisayarınıza kurun. Kurulumdan sonra, projenizdeki kütüphaneye bir referans eklemeniz gerekir.
+ Aspose.PDF for .NET'i kullanmak için önce kütüphaneyi kurmanız gerekir. Yapabilirsiniz[indirmek](https://releases.aspose.com/pdf/net/)Aspose yayınlarından kütüphaneyi indirin ve bilgisayarınıza kurun. Kurulumdan sonra, projenizdeki kütüphaneye bir referans eklemeniz gerekir.
 
 ## 2. Adım: Yeni Bir Konsol Uygulaması Oluşturun
 
@@ -45,7 +45,7 @@ dataDir = dataDir + "DeleteAllAnnotationsFromPage_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Aspose.PDF for .NET Kullanarak Sayfadaki Tüm Ek Açıklamaları Silmek için Örnek Kaynak Kodu
+### Aspose.PDF for .NET Kullanarak Sayfadaki Tüm Ek Açıklamaları Silmek İçin Örnek Kaynak Kodu
 
 ```csharp
 // Belgeler dizininin yolu.
@@ -65,3 +65,25 @@ pdfDocument.Save(dataDir);
 ## Çözüm
 
 Bu makalede, Aspose.PDF for .NET kullanarak bir PDF belgesinin belirli bir sayfasındaki tüm açıklamaları nasıl sileceğinizi anlamanıza yardımcı olacak adım adım bir kılavuz sağladık. Bu kılavuzda belirtilen adımları izleyerek bu özelliği kendi projenizde kolayca uygulayabilirsiniz.
+
+### SSS
+
+#### S: Bir PDF belgesindeki açıklamalar nelerdir?
+
+Y: Bir PDF belgesindeki ek açıklamalar, belgenin belirli bölümleri hakkında ek bilgiler, notlar veya yorumlar sağlayan etkileşimli öğelerdir. Ek açıklamalar, metin notları, yorumlar, vurgulamalar ve diğer etkileşimli öğeleri içerebilir.
+
+#### S: Ek açıklamaları yalnızca belirli sayfalardan silebilir miyim?
+
+C: Evet, Aspose.PDF for .NET ile, gereksinimlerinize bağlı olarak belirli sayfalardan ve hatta tüm belgeden notları silebilirsiniz.
+
+#### S: Belirtilen sayfada açıklama yoksa ne olur?
+
+ A: Belirtilen sayfada açıklama yoksa,`Delete()` yöntemin herhangi bir etkisi olmayacak ve sayfa değişmeden kalacaktır.
+
+#### S: Tüm notlar yerine belirli tipteki notları silmek mümkün müdür?
+
+C: Evet, Aspose.PDF for .NET, metin açıklamaları, vurgulama açıklamaları vb. gibi belirli açıklama türlerine erişmek ve bunları silmek için yöntemler sağlar.
+
+#### S: Aspose.PDF for .NET, açıklamalardaki diğer işlemleri destekliyor mu?
+
+C: Evet, Aspose.PDF for .NET, notları işlemek ve özelleştirmek için not ekleme, değiştirme, taşıma veya yeniden boyutlandırma gibi çeşitli yöntemler sunar.

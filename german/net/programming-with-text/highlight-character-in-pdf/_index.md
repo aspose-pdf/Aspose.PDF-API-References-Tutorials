@@ -19,7 +19,7 @@ Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
 ## Schritt 1: Richten Sie das Dokumentenverzeichnis ein
 
- Zuerst müssen Sie den Pfad zu dem Verzeichnis festlegen, in dem sich Ihre Eingabe-PDF-Datei befindet. Ersetzen`"YOUR DOCUMENT DIRECTORY"` im`dataDir` Variable mit dem Pfad zu Ihrer PDF-Datei.
+ Zuerst müssen Sie den Pfad zu dem Verzeichnis festlegen, in dem sich Ihre Eingabe-PDF-Datei befindet. Ersetzen`"YOUR DOCUMENT DIRECTORY"` im`dataDir`Variable mit dem Pfad zu Ihrer PDF-Datei.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -74,7 +74,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
          {
              if (i == 0)
              {
-                 //Markieren Sie Zeichen
+                 // Markieren Sie Zeichen
                  gr.DrawRectangle(
                      Think.Yellow,
                      (float)textFragment.Position.XIndent,

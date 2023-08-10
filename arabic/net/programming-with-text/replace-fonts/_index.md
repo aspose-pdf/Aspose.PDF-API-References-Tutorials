@@ -8,7 +8,7 @@ weight: 340
 url: /ar/net/programming-with-text/replace-fonts/
 ---
 
-في هذا البرنامج التعليمي ، سنشرح كيفية استبدال خطوط معينة في مستند PDF باستخدام مكتبة Aspose.PDF لـ .NET. سنتابع العملية خطوة بخطوة لتحميل مستند PDF ، والبحث عن أجزاء نصية ، وتحديد الخطوط المراد استبدالها ، واستبدال الخطوط ، وحفظ ملف PDF المعدل باستخدام كود المصدر C # المقدم.
+في هذا البرنامج التعليمي ، سنشرح كيفية استبدال خطوط معينة في مستند PDF باستخدام مكتبة Aspose.PDF لـ .NET. سنمر في العملية خطوة بخطوة لتحميل مستند PDF ، والبحث عن أجزاء نصية ، وتحديد الخطوط المراد استبدالها ، واستبدال الخطوط ، وحفظ ملف PDF المعدل باستخدام كود المصدر C # المقدم.
 
 ## المتطلبات الأساسية
 
@@ -19,7 +19,7 @@ url: /ar/net/programming-with-text/replace-fonts/
 
 ## الخطوة 1: قم بإعداد دليل المستندات
 
- أولاً ، تحتاج إلى ضبط المسار إلى الدليل حيث لديك ملف PDF للإدخال. يستبدل`"YOUR DOCUMENT DIRECTORY"` في ال`dataDir` متغير مع المسار إلى ملف PDF الخاص بك.
+ أولاً ، تحتاج إلى ضبط المسار إلى الدليل حيث لديك ملف PDF للإدخال. يستبدل`"YOUR DOCUMENT DIRECTORY"` في ال`dataDir`متغير مع المسار إلى ملف PDF الخاص بك.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -78,7 +78,7 @@ try
 	TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));
 	// تقبل الممتص لجميع الصفحات
 	pdfDocument.Pages.Accept(absorber);
-	//اجتياز جميع أجزاء النص
+	// اجتياز جميع أجزاء النص
 	foreach (TextFragment textFragment in absorber.TextFragments)
 	{
 		// إذا كان اسم الخط ArialMT ، فاستبدل اسم الخط بـ Arial

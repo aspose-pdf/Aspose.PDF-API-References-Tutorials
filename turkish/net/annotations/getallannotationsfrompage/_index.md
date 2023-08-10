@@ -81,3 +81,29 @@ foreach (MarkupAnnotation annotation in pdfDocument.Pages[1].Annotations)
 	Console.WriteLine("Contents : {0} ", annotation.Contents);                
 }
 ```
+
+## Çözüm
+
+Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF belgesinin belirli bir sayfasından tüm notların nasıl alınacağını araştırdık. Geliştiriciler, adım adım kılavuzu izleyerek ve sağlanan C# kaynak kodunu kullanarak PDF belgelerinden ek açıklamaları kolayca çıkarabilir ve yönetebilir.
+
+### SSS
+
+#### S: Bir PDF belgesindeki açıklamalar nelerdir?
+
+Y: Bir PDF belgesindeki ek açıklamalar, belgenin belirli bölümleri hakkında ek bilgiler, yorumlar veya notlar sağlayan etkileşimli öğelerdir. Ek açıklamalar, metin notları, yorumlar, vurgulamalar ve diğer etkileşimli öğeleri içerebilir.
+
+#### S: Ek açıklamaları yalnızca belirli sayfalardan alabilir miyim?
+
+C: Evet, Aspose.PDF for .NET ile, gereksinimlerinize bağlı olarak belirli sayfalardan ve hatta tüm belgeden açıklamalar alabilirsiniz.
+
+#### S: Aspose.PDF for .NET, parola korumalı PDF dosyalarından açıklamaların çıkarılmasını destekliyor mu?
+
+ C: Evet, Aspose.PDF for .NET, parola korumalı PDF dosyalarından açıklamaların çıkarılmasını destekler. kullanarak PDF belgesini yüklerken doğru parolayı girmeniz gerekir.`Document` sınıf.
+
+#### S: Ek açıklamaları, içerik veya yazar gibi özelliklerine göre filtreleyebilir miyim?
+
+C: Evet, Aspose.PDF for .NET, ek açıklamalara içerik, yazar veya oluşturma tarihi gibi özelliklerine göre erişmek ve bunları filtrelemek için yöntemler sağlar. Tüm ek açıklamalar arasında dolaşabilir ve filtrelemek istediğiniz belirli özellikleri kontrol edebilirsiniz.
+
+#### S: Aspose.PDF for .NET, farklı türde PDF belgelerinden açıklamaların çıkarılmasını destekliyor mu?
+
+C: Evet, Aspose.PDF for .NET, metin biçimlendirme notları, serbest metin notları ve daha fazlası dahil olmak üzere farklı türlerdeki PDF belgelerinden notları çıkarmak için çeşitli yöntemler sunar.

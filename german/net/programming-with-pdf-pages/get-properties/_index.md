@@ -1,13 +1,12 @@
 ---
-title: Eigenschaften abrufen
-linktitle: Eigenschaften abrufen
+title: PDF-Eigenschaften abrufen
+linktitle: PDF-Eigenschaften abrufen
 second_title: Aspose.PDF für .NET API-Referenz
 description: Schritt-für-Schritt-Anleitung zum Abrufen von PDF-Eigenschaften wie Boxabmessungen und Drehung mit Aspose.PDF für .NET.
 type: docs
 weight: 100
 url: /de/net/programming-with-pdf-pages/get-properties/
 ---
-
 In diesem Tutorial führen wir Sie Schritt für Schritt durch den Prozess, um die Eigenschaften einer PDF-Datei mithilfe von Aspose.PDF für .NET abzurufen. Wir erklären Ihnen den gebündelten C#-Quellcode und stellen Ihnen eine umfassende Anleitung zur Verfügung, die Ihnen hilft, diese Funktion zu verstehen und in Ihren eigenen Projekten zu implementieren. Am Ende dieses Tutorials erfahren Sie, wie Sie mit Aspose.PDF für .NET auf verschiedene Eigenschaften einer PDF-Seite zugreifen, z. B. auf das Grafikfeld, das Zuschneidefeld usw.
 
 ## Voraussetzungen
@@ -88,3 +87,40 @@ System.Console.WriteLine("Rotate : {0}", pdfPage.Rotate);
 Herzlichen Glückwunsch! Sie haben die Eigenschaften einer PDF-Datei mit Aspose.PDF für .NET erfolgreich erhalten. Sie haben gelernt, wie Sie ein PDF-Dokument öffnen, zu einer bestimmten Seite navigieren und verschiedene Seiteneigenschaften wie Bemaßungsfelder und Drehung abrufen. Mithilfe dieser Informationen können Sie nun die Handhabung Ihrer PDF-Dateien anhand ihrer Eigenschaften anpassen.
 
 Weitere Informationen zu erweiterten Funktionen und Anpassungsmöglichkeiten finden Sie unbedingt in der offiziellen Dokumentation zu Aspose.PDF für .NET.
+
+### FAQs
+
+#### F: Wie kann ich die Eigenschaften einer PDF-Datei mit Aspose.PDF für .NET abrufen?
+
+A: Um die Eigenschaften einer PDF-Datei mithilfe von Aspose.PDF für .NET abzurufen, können Sie die folgenden Schritte ausführen:
+
+1. Legen Sie das Dokumentverzeichnis fest, indem Sie den Pfad zur PDF-Datei angeben, deren Eigenschaften Sie abrufen möchten.
+2.  Öffnen Sie das PDF-Dokument mit`Document` Klasse von Aspose.PDF, die den korrekten Pfad zur PDF-Datei bereitstellt.
+3.  Greifen Sie mit auf die Seitensammlung des Dokuments zu`Pages` Eigentum der`pdfDocument` Objekt.
+4. Springen Sie mithilfe des Index der Seite in der Sammlung zu einer bestimmten Seite (die Indexierung beginnt bei 1).
+5.  Rufen Sie die verschiedenen Eigenschaften der PDF-Seite ab, z. B. ArtBox, BleedBox, CropBox, MediaBox, TrimBox, Rect, Seitenzahl und Drehung, indem Sie die entsprechenden Eigenschaften der verwenden`pdfPage` Objekt.
+
+#### F: Welche unterschiedlichen Eigenschaften einer PDF-Seite kann ich mit Aspose.PDF für .NET abrufen?
+
+A: Sie können mit Aspose.PDF für .NET verschiedene Eigenschaften einer PDF-Seite abrufen, wie zum Beispiel:
+
+- ArtBox: Stellt die Abmessungen des Bildmaterials der Seite dar.
+- BleedBox: Stellt die Größe des Anschnitts der Seite dar.
+- CropBox: Stellt die Abmessungen des sichtbaren Inhalts der Seite nach dem Zuschneiden dar.
+- MediaBox: Stellt die Abmessungen der physischen Medien der Seite dar.
+- TrimBox: Stellt die Abmessungen des zugeschnittenen Inhalts der Seite dar.
+- Rect: Stellt die Abmessungen des Begrenzungsrahmens der Seite dar.
+- Seitenzahl: Stellt die Seitenzahl im Dokument dar.
+- Drehen: Stellt den Drehwinkel der Seite dar.
+
+#### F: Wie greife ich auf eine bestimmte Seite im PDF-Dokument zu, um deren Eigenschaften abzurufen?
+
+ A: Um auf eine bestimmte Seite im PDF-Dokument zuzugreifen und deren Eigenschaften abzurufen, können Sie die verwenden`Pages` Eigentum der`pdfDocument` -Objekt, um auf die Seitensammlung des Dokuments zuzugreifen. Anschließend können Sie den Index der Seite in der Sammlung verwenden, um zur gewünschten Seite zu springen. Um beispielsweise auf die zweite Seite zuzugreifen, können Sie verwenden`pdfDocument.Pages[1]` (Indizierung beginnt bei 1).
+
+#### F: Kann ich Vorgänge an den abgerufenen Eigenschaften durchführen, z. B. das Ändern oder Ändern der Größe der Seitenfelder?
+
+A: Ja, sobald Sie die Eigenschaften einer PDF-Seite mit Aspose.PDF für .NET abgerufen haben, können Sie verschiedene Vorgänge daran ausführen. Sie können beispielsweise die Abmessungen der Seitenfelder ändern, die Seite drehen oder die abgerufenen Informationen für die benutzerdefinierte Verarbeitung und Bearbeitung des PDF-Dokuments verwenden.
+
+#### F: Unterstützt Aspose.PDF für .NET das Extrahieren von Eigenschaften aus verschlüsselten oder passwortgeschützten PDF-Dateien?
+
+A: Ja, Aspose.PDF für .NET unterstützt das Extrahieren von Eigenschaften aus verschlüsselten oder passwortgeschützten PDF-Dateien. Solange Sie das richtige Passwort zum Öffnen des PDF-Dokuments angeben, können Sie auf seine Eigenschaften zugreifen und diese abrufen, indem Sie den gleichen Ansatz verwenden, der im Tutorial gezeigt wird.

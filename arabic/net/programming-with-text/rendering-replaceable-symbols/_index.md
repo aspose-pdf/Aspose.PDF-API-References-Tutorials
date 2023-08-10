@@ -27,7 +27,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## الخطوة 2: قم بإنشاء مستند وصفحة PDF
 
-بعد ذلك ، نقوم بإنشاء مستند PDF جديد وإضافة صفحة إليه باستخدام ملف`Document` فئة و`Page` فئة من مكتبة Aspose.PDF.
+ بعد ذلك ، نقوم بإنشاء مستند PDF جديد وإضافة صفحة إليه باستخدام ملف`Document` فئة و`Page` فئة من مكتبة Aspose.PDF.
 
 ```csharp
 Aspose.Pdf.Document pdfApplicationDoc = new Aspose.Pdf.Document();
@@ -65,7 +65,7 @@ par.Position = new Aspose.Pdf.Text.Position(100, 600);
 
 ## الخطوة 6: أضف فقرة نصية إلى الصفحة
 
- نقوم بإنشاء ملف`TextBuilder` الكائن بالصفحة وإلحاق فقرة النص بمنشئ النص.
+ نقوم بإنشاء ملف`TextBuilder`الكائن بالصفحة وإلحاق فقرة النص بمنشئ النص.
 
 ```csharp
 TextBuilder textBuilder = new TextBuilder(applicationFirstPage);

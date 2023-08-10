@@ -13,9 +13,9 @@ Aspose.PDF for .NET'ten grafiklerle programlama eğitimleri, yeni başlayanlarda
 ## Öğreticiler
 | Başlık | Tanım |
 | --- | --- | 
-| [Çizim Ekle](./add-drawing/) | Aspose.PDF for .NET kullanarak çizimleri nasıl ekleyeceğinizi öğrenin. Çizim özelliklerine sahip çekici PDF belgeleri oluşturmak için bu adım adım kılavuzu izleyin. |  
+| [PDF Dosyasına Çizim Ekle](./add-drawing/) | Aspose.PDF for .NET kullanarak PDF dosyasına çizim eklemeyi öğrenin. Çizim özelliklerine sahip çekici PDF belgeleri oluşturmak için bu adım adım kılavuzu izleyin. |  
 | [Gradyan Dolgulu Çizim Ekle](./add-drawing-with-gradient-fill/) | Aspose.PDF for .NET ile degrade dolgulu bir çizimi nasıl ekleyeceğinizi öğrenin. Çekici PDF belgeleri oluşturmak için adım adım öğretici. |  
-| [Satır Nesnesi Ekle](./add-line-object/) | Aspose.PDF for .NET kullanarak bir PDF dosyasına nasıl özel çizgi nesnesi ekleyeceğinizi öğrenin. |  
+| [PDF Dosyasına Çizgi Nesnesi Ekle](./add-line-object/) | Aspose.PDF for .NET kullanarak bir PDF dosyasına nasıl özel çizgi nesnesi ekleyeceğinizi öğrenin. |  
 | [Kontrol Dikdörtgeni Z Sırası](./control-rectangle-z-order/) | Aspose.PDF for .NET kullanarak bir PDF dosyasındaki dikdörtgenlerin Z sırasını nasıl kontrol edeceğinizi öğrenin.  |  
 | [Dolu Dikdörtgen Oluştur](./create-filled-rectangle/) | Aspose.PDF for .NET ile içi dolu bir dikdörtgen oluşturmayı öğrenin. Dolgu rengini özelleştirmek için adım adım kılavuz. |  
 | [Alfa Rengi ile Dikdörtgen Oluşturun](./create-rectangle-with-alpha-color/) | Aspose.PDF for .NET kullanarak saydam renkli bir dikdörtgenin nasıl oluşturulacağını öğrenin. Saydamlığı özelleştirmek için adım adım kılavuz. |  

@@ -1,14 +1,13 @@
 ---
-title: Inserisci interruzione di pagina
-linktitle: Inserisci interruzione di pagina
+title: Inserisci interruzione di pagina nel file PDF
+linktitle: Inserisci interruzione di pagina nel file PDF
 second_title: Aspose.PDF per riferimento API .NET
-description: Scopri come inserire un'interruzione di pagina in un documento PDF utilizzando Aspose.PDF per .NET.
+description: Scopri come inserire un'interruzione di pagina nel file PDF utilizzando Aspose.PDF per .NET.
 type: docs
 weight: 110
 url: /it/net/programming-with-tables/insert-page-break/
 ---
-
-In questo tutorial impareremo come inserire un'interruzione di pagina in un documento PDF utilizzando Aspose.PDF per .NET. Spiegheremo il codice sorgente in C# passo dopo passo. Alla fine di questo tutorial, saprai come aggiungere un'interruzione di pagina dopo un certo numero di righe in una tabella di un documento PDF. Iniziamo!
+In questo tutorial impareremo come inserire un'interruzione di pagina nel file PDF utilizzando Aspose.PDF per .NET. Spiegheremo il codice sorgente in C# passo dopo passo. Alla fine di questo tutorial, saprai come aggiungere un'interruzione di pagina dopo un certo numero di righe in una tabella di un documento PDF. Iniziamo!
 
 ## Passaggio 1: configurazione dell'ambiente
 Assicurati di aver configurato il tuo ambiente di sviluppo C# con Aspose.PDF per .NET. Aggiungere il riferimento alla libreria e importare gli spazi dei nomi necessari.
@@ -106,3 +105,51 @@ Console.WriteLine("\nPage break inserted successfully.\nFile saved at " + dataDi
 
 ## Conclusione
 In questo tutorial, abbiamo imparato come inserire un'interruzione di pagina in un documento PDF utilizzando Aspose.PDF per .NET. Puoi utilizzare questa guida dettagliata per aggiungere un'interruzione di pagina dopo un determinato numero di righe in una tabella in un documento PDF utilizzando C#.
+
+### Domande frequenti per l'inserimento di interruzioni di pagina nel file PDF
+
+#### D: Come posso modificare le dimensioni della pagina per le nuove pagine create dopo l'interruzione di pagina?
+
+ R: Per modificare le dimensioni della pagina per le nuove pagine create dopo l'interruzione di pagina, è possibile impostare il file`PageSize` proprietà del`Page` oggetto. Ad esempio, puoi utilizzare il seguente codice per impostare la dimensione della pagina su A4:
+
+```csharp
+// Imposta la dimensione della pagina su A4
+doc.Pages[1].SetPageSize(PageSize.A4);
+```
+
+#### D: Posso controllare i margini di pagina per le nuove pagine dopo l'interruzione di pagina?
+
+ R: Sì, puoi controllare i margini di pagina per le nuove pagine dopo l'interruzione di pagina. Usa il`Margin` proprietà del`Page` oggetto per impostare i margini della pagina. Ad esempio, per impostare tutti i margini su 10 punti, puoi utilizzare il seguente codice:
+
+```csharp
+// Imposta tutti i margini su 10 punti
+doc.Pages[1].Margin = new MarginInfo(10, 10, 10, 10);
+```
+
+#### D: È possibile aggiungere intestazioni e piè di pagina alle nuove pagine dopo l'interruzione di pagina?
+
+ R: Sì, puoi aggiungere intestazioni e piè di pagina alle nuove pagine dopo l'interruzione di pagina. Usa il`Page.Header` E`Page.Footer` proprietà per aggiungere contenuto alle sezioni di intestazione e piè di pagina della pagina. Per esempio:
+
+```csharp
+// Aggiungi intestazione alle nuove pagine
+doc.Pages[1].Header = new HeaderFooter()
+{
+    Margin = new MarginInfo(10, 10, 10, 10),
+    Paragraphs = { new TextFragment("Header content") }
+};
+
+// Aggiungi piè di pagina alle nuove pagine
+doc.Pages[1].Footer = new HeaderFooter()
+{
+    Margin = new MarginInfo(10, 10, 10, 10),
+    Paragraphs = { new TextFragment("Footer content") }
+};
+```
+
+#### D: Posso inserire interruzioni di pagina in posizioni specifiche diverse da dopo un certo numero di righe?
+
+ R: Sì, puoi inserire interruzioni di pagina in posizioni specifiche diverse da dopo un certo numero di righe. Puoi impostare il`IsInNewPage` proprietà di una riga a`true` per forzare la tabella ad iniziare una nuova pagina dopo quella riga.
+
+#### D: Come posso regolare il comportamento dell'interruzione di pagina in base all'altezza del contenuto?
+
+R: Puoi usare il`IsBroken` proprietà della tabella per abilitare o disabilitare l'interruzione automatica delle righe tra le pagine. Quando impostato su`true`, consente di suddividere le righe tra le pagine in base all'altezza del contenuto.

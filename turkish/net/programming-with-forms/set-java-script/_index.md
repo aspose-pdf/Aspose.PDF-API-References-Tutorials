@@ -7,7 +7,6 @@ type: docs
 weight: 270
 url: /tr/net/programming-with-forms/set-java-script/
 ---
-
 Bu kılavuzda, bir PDF belgesinin form alanında JavaScript'i tanımlamak için Aspose.PDF kitaplığının .NET için nasıl kullanılacağını adım adım açıklayacağız. Metin alanında belirli işlemleri gerçekleştirmek için JavaScript eylemlerini nasıl yapılandıracağınızı göstereceğiz.
 
 ## Önkoşullar
@@ -19,7 +18,7 @@ Başlamadan önce, aşağıdakilere sahip olduğunuzdan emin olun:
 
 ## 1. Adım: Belge dizinini yapılandırma
 
- İlk adım, üzerinde çalışmak istediğiniz PDF dosyasının bulunduğu belge dizinini yapılandırmaktır. kullanabilirsiniz`dataDir`dizin yolunu belirtmek için değişken.
+ İlk adım, üzerinde çalışmak istediğiniz PDF dosyasının bulunduğu belge dizinini yapılandırmaktır. kullanabilirsiniz`dataDir` dizin yolunu belirtmek için değişken.
 
 ```csharp
 // Belgeler dizininin yolu.
@@ -30,7 +29,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ## 2. Adım: Giriş PDF dosyasını yükleme
 
- Bu adımda, giriş PDF dosyasını kullanarak yükleyeceğiz.`Document`Aspose.PDF sınıfı.
+ Bu adımda, giriş PDF dosyasını kullanarak yükleyeceğiz.`Document` Aspose.PDF sınıfı.
 
 ```csharp
 // Giriş PDF dosyasını yükle
@@ -51,7 +50,7 @@ Giriş PDF dosyasında belirtilen metin alanının bulunduğundan emin olun.
 
 ## 4. Adım: JavaScript eylemlerini yapılandırın
 
- Artık metin alanına eriştiğimize göre, bu alanla ilişkili JavaScript eylemlerini yapılandırabiliriz. Bu örnekte iki eylem kullanacağız:`OnModifyCharacter` Ve`OnFormat` . Bu eylemler kullanılarak tanımlanacaktır.`JavascriptAction` nesneler.
+Artık metin alanına eriştiğimize göre, bu alanla ilişkili JavaScript eylemlerini yapılandırabiliriz. Bu örnekte iki eylem kullanacağız:`OnModifyCharacter` Ve`OnFormat` . Bu eylemler kullanılarak tanımlanacaktır.`JavascriptAction` nesneler.
 
 ```csharp
 field.Actions.OnModifyCharacter = new JavascriptAction("AFNumber_Keystroke(2, 1, 1, 0, \"\", true)");
@@ -107,3 +106,26 @@ Console.WriteLine("\nJavaScript on form field setup successfully.\nFile saved at
 ## Çözüm
 
 Bu kılavuzda, bir PDF belgesinin form alanında JavaScript'i ayarlamak için Aspose.PDF kitaplığının .NET için nasıl kullanılacağını öğrendik. Belirtilen adımları izleyerek, metin alanlarında çeşitli işlemler gerçekleştirmek için JavaScript eylemlerini özelleştirebilirsiniz. PDF dosyalarını işleme olanaklarını genişletmek için Aspose.PDF for .NET'in özelliklerini daha fazla keşfetmekten çekinmeyin.
+
+
+### SSS
+
+#### S: Onay kutuları ve radyo düğmeleri gibi diğer form öğelerine JavaScript eklemek için Aspose.PDF for .NET'i kullanabilir miyim?
+
+ C: Evet, Aspose.PDF for .NET JavaScript'i onay kutuları, radyo düğmeleri ve açılır listeler gibi çeşitli form öğelerine eklemenizi sağlar. kullanabilirsiniz`JavascriptAction` Farklı form öğeleri için JavaScript eylemlerini tanımlamak için sınıf.
+
+#### S: Form alanlarında JavaScript kullanarak kullanıcı girişini doğrulamak mümkün müdür?
+
+ C: Evet, form alanlarındaki kullanıcı girişini doğrulamak için JavaScript kullanabilirsiniz. Gibi JavaScript eylemlerini tanımlayarak`OnBlur` veya`OnKeystroke` bir form alanı için girilen verileri doğrulayabilir ve gerekirse hata mesajlarını görüntüleyebilirsiniz.
+
+#### S: Aspose.PDF for .NET kullanarak karmaşık JavaScript işlevlerini yürütebilir miyim?
+
+ C: Evet, Aspose.PDF for .NET kullanarak karmaşık JavaScript işlevlerini çalıştırabilirsiniz. Özel JavaScript işlevleri tanımlama ve bunları`JavascriptAction`.
+
+#### S: Aspose.PDF for .NET, bu eğitimde belirtilenler dışındaki JavaScript olaylarını destekliyor mu?
+
+ C: Evet, Aspose.PDF for .NET, aşağıdakiler de dahil olmak üzere çok çeşitli JavaScript olaylarını destekler:`OnMouseEnter`, `OnMouseExit`, `OnMouseDown` , Ve`OnMouseUp`, diğerleri arasında. Kullanıcı etkileşimlerine dayalı olarak JavaScript işlemlerini tetiklemek için bu olayları kullanabilirsiniz.
+
+#### S: Aspose.PDF for .NET'i mevcut PDF belgelerinden JavaScript kodunu çıkarmak için kullanabilir miyim?
+
+ Y: Aspose.PDF for .NET, mevcut PDF belgelerinden JavaScript kodu çıkarma yeteneği sağlar. kullanabilirsiniz`JavascriptAction` PDF formundaki JavaScript eylemlerine erişmek ve bunları analiz etmek için sınıf ve diğer ilgili yöntemler.

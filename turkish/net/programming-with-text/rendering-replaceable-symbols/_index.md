@@ -27,7 +27,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## 2. Adım: Bir PDF Belgesi ve Sayfası Oluşturun
 
-Ardından, yeni bir PDF belgesi oluşturuyoruz ve bunu kullanarak ona bir sayfa ekliyoruz.`Document` sınıf ve`Page` Aspose.PDF kitaplığından sınıf.
+ Ardından, yeni bir PDF belgesi oluşturuyoruz ve bunu kullanarak ona bir sayfa ekliyoruz.`Document` sınıf ve`Page` Aspose.PDF kitaplığından sınıf.
 
 ```csharp
 Aspose.Pdf.Document pdfApplicationDoc = new Aspose.Pdf.Document();
@@ -65,7 +65,7 @@ par.Position = new Aspose.Pdf.Text.Position(100, 600);
 
 ## 6. Adım: Sayfaya Metin Paragrafı Ekleyin
 
- biz bir yaratırız`TextBuilder` sayfa ile nesne ve metin paragrafını metin oluşturucuya ekleyin.
+ biz bir yaratırız`TextBuilder`sayfa ile nesne ve metin paragrafını metin oluşturucuya ekleyin.
 
 ```csharp
 TextBuilder textBuilder = new TextBuilder(applicationFirstPage);

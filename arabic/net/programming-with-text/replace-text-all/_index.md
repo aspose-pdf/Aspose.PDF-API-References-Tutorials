@@ -19,7 +19,7 @@ url: /ar/net/programming-with-text/replace-text-all/
 
 ## الخطوة 1: قم بإعداد دليل المستندات
 
- عيّن المسار إلى الدليل حيث يوجد لديك ملف PDF للإدخال. يستبدل`"YOUR DOCUMENT DIRECTORY"` في ال`dataDir` متغير مع المسار إلى ملف PDF الخاص بك.
+ عيّن المسار إلى الدليل حيث يوجد لديك ملف PDF للإدخال. يستبدل`"YOUR DOCUMENT DIRECTORY"` في ال`dataDir`متغير مع المسار إلى ملف PDF الخاص بك.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -35,7 +35,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextAll.pdf");
 
 ## الخطوة 3: البحث عن النص واستبداله
 
- إنشاء`TextFragmentAbsorber`للعثور على جميع حالات إدخال عبارة البحث. اقبل الممتص لجميع صفحات مستند PDF لاستخراج أجزاء النص.
+ إنشاء`TextFragmentAbsorber` للعثور على جميع حالات إدخال عبارة البحث. اقبل الممتص لجميع صفحات مستند PDF لاستخراج أجزاء النص.
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
@@ -73,7 +73,7 @@ Console.WriteLine("\nText replaced successfully.\nFile saved at " + dataDir);
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // افتح المستند
 Document pdfDocument = new Document(dataDir + "ReplaceTextAll.pdf");
-// قم بإنشاء كائن TextAbsorber للعثور على جميع مثيلات عبارة البحث المدخلة
+//قم بإنشاء كائن TextAbsorber للعثور على جميع مثيلات عبارة البحث المدخلة
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
 // تقبل الممتص لجميع الصفحات
 pdfDocument.Pages.Accept(textFragmentAbsorber);

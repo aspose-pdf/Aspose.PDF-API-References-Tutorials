@@ -1,14 +1,13 @@
 ---
-title: Lägg till lager
-linktitle: Lägg till lager
+title: Lägg till lager till PDF-fil
+linktitle: Lägg till lager till PDF-fil
 second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du lägger till lager i PDF-filer med Aspose.PDF för .NET. Steg-för-steg-guide med kodhandledning för att skapa och spara skiktade PDF-filer.
 type: docs
 weight: 20
 url: /sv/net/programming-with-document/addlayers/
 ---
-
-För att lägga till lager i en PDF-fil kommer vi att använda Aspose.PDF för .NET. Detta bibliotek låter oss arbeta med PDF-filer i .NET-applikationer effektivt. Följ steg-för-steg-instruktionerna nedan för att lägga till lager med Aspose.PDF för .NET.
+För att lägga till lager till PDF-filen kommer vi att använda Aspose.PDF för .NET. Detta bibliotek låter oss arbeta med PDF-filer i .NET-applikationer effektivt. Följ steg-för-steg-instruktionerna nedan för att lägga till lager med Aspose.PDF för .NET.
 
 ## Steg 1: Skapa ett nytt PDF-dokument
 
@@ -23,7 +22,7 @@ Document doc = new Document();
 
 ## Steg 2: Lägg till en sida i dokumentet
 
-Lägg sedan till en sida i dokumentet med hjälp av`Add` metod för`Pages` samling i`Document` klass.
+ Lägg sedan till en sida i dokumentet med hjälp av`Add` metod för`Pages` samling i`Document` klass.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -61,7 +60,7 @@ I den här handledningen har vi lagt till tre lager med olika färger och namn p
 
 ## Steg 4: Spara PDF-filen
 
- Spara den ändrade PDF-filen med hjälp av`Save` metod för`Document` klass.
+Spara den ändrade PDF-filen med hjälp av`Save` metod för`Document` klass.
 
 ```csharp
 dataDir = dataDir + "AddLayers_out.pdf";
@@ -109,3 +108,26 @@ Console.WriteLine("\nLayers added successfully to PDF file.\nFile saved at " + d
 ## Slutsats
 
 I den här artikeln har vi tillhandahållit en steg-för-steg-guide för att lägga till lager i PDF-filer med Aspose.PDF för .NET. Genom att följa instruktionerna och använda de medföljande kodhandledningarna kan du enkelt infoga lager i dina PDF-dokument. Lager låter dig organisera och kontrollera innehållets synlighet, vilket ger en mer interaktiv och anpassningsbar upplevelse för dina användare.
+
+
+### Vanliga frågor för att lägga till lager till PDF-fil
+
+#### F: Vad är Aspose.PDF för .NET?
+
+S: Aspose.PDF för .NET är ett kraftfullt bibliotek som gör det möjligt för utvecklare att arbeta effektivt med PDF-filer i .NET-applikationer. Den tillhandahåller ett brett utbud av funktioner för att skapa, ändra och manipulera PDF-dokument.
+
+#### F: Vad är PDF-lager?
+
+S: PDF-lager, även kända som Optional Content Groups (OCGs), låter dig kontrollera synligheten och utseendet på specifikt innehåll i en PDF-fil. De är användbara för att organisera innehåll och skapa interaktiva dokument.
+
+#### F: Kan jag lägga till flera lager i en PDF-fil med Aspose.PDF för .NET?
+
+S: Ja, du kan lägga till flera lager i en PDF-fil med Aspose.PDF för .NET. Varje lager kan ha sin egen unika identifierare och namn, som visas i handledningen.
+
+#### F: Hur kan jag anpassa utseendet på lagren?
+
+S: Du kan anpassa utseendet på lagren genom att ange olika egenskaper, som färg, opacitet och synlighet. Aspose.PDF för .NET tillhandahåller olika alternativ för att uppnå detta.
+
+#### F: Är Aspose.PDF för .NET lämplig för professionella projekt?
+
+S: Ja, Aspose.PDF för .NET är ett pålitligt och allmänt använt bibliotek för PDF-manipulation i professionella projekt. Den erbjuder omfattande funktionalitet och utmärkt prestanda för att arbeta med PDF-filer i .NET-applikationer.

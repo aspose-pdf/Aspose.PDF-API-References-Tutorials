@@ -87,3 +87,25 @@ System.Console.WriteLine("\nPage orientation changed successfully.\nFile saved a
 
 ## Çözüm
 Bu öğreticide, Aspose.PDF for .NET kullanarak bir PDF belgesinin sayfa yönünün nasıl değiştirileceğini öğrendik. Yukarıda özetlenen adımları izleyerek, bu işlevi kendi projelerinize kolayca uygulayabilirsiniz. PDF dosyalarıyla çalışmaya yönelik diğer yararlı özellikleri keşfetmek için Aspose.PDF belgelerini daha fazla keşfetmekten çekinmeyin.
+
+### SSS
+
+#### S: Bir PDF belgesinde sayfa yönünü değiştirmenin amacı nedir?
+
+Y: Bir PDF belgesinde sayfa yönünü değiştirmek, sayfanın içeriğini 90 derece döndürmenize olanak tanır. Bu, orijinal içeriğin dikeyden yatay moda geçiş veya tam tersi gibi farklı bir yönde görüntülenmesi veya yazdırılması gereken senaryolarda yararlı olabilir.
+
+#### S: PDF belgesindeki belirli sayfaların yönünü değiştirebilir miyim?
+
+ C: Evet, PDF belgesindeki belirli sayfaların yönünü değiştirebilirsiniz. Sağlanan C# kaynak kodunda,`foreach` döngü, belgenin her sayfasından geçmek ve yönünü değiştirmek için kullanılır. Yalnızca belirli sayfaların yönünü değiştirmek istiyorsanız, bu sayfaları sayfa numaralarına veya diğer ölçütlere göre hedeflemek için döngüyü değiştirebilirsiniz.
+
+#### S: Sayfa yönünü değiştirmek, sayfadaki içeriğin düzenini etkiler mi?
+
+C: Evet, sayfa yönünün değiştirilmesi sayfadaki içeriğin düzenini etkiler. İçerik 90 derece döndürülecek ve sayfanın genişliği ve yüksekliği değiştirilecektir. Sonuç olarak, sayfadaki içeriğin yerleşimi ve hizalaması değişebilir.
+
+#### S: Sayfayı 90 dereceden farklı bir açıyla döndürebilir miyim?
+
+ A: Sağlanan C# kaynak kodunda, sayfa dönüşü kullanılarak 90 dereceye ayarlanmıştır.`page.Rotate = Rotate.on90;` . Ancak gerekirse dönüş açısını başka değerlerle değiştirebilirsiniz. Örneğin, kullanabilirsiniz`Rotate.on180` sayfayı 180 derece döndürmek için veya`Rotate.on270` 270 derece döndürmek için
+
+#### S: Yönü değiştirdikten sonra taşan sayfa içeriğini nasıl ele alabilirim?
+
+C: Sayfa yönünü değiştirirken, sayfanın boyutları değişebilir ve bu da içeriğin taşmasına neden olabilir. Bunu halletmek için, sayfadaki içeriğin düzenini ve biçimlendirmesini ayarlamanız gerekebilir. Aspose.PDF for .NET tarafından sağlanan, öğeleri yeniden boyutlandırma, kenar boşluklarını ayarlama veya içeriği yeniden düzenleme gibi özellikleri, yön değişikliğinden sonra sayfa içeriğinin düzgün bir şekilde sığmasını sağlamak için kullanabilirsiniz.

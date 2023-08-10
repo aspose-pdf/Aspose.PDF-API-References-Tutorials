@@ -11,16 +11,16 @@ description: Aspose.PDF for .NET's Programming with Links and Actions التعل
 ## دروس
 | عنوان | وصف |
 | --- | --- | 
-| [أضف ارتباط تشعبي](./add-hyperlink/) | أضف ارتباطات تشعبية تفاعلية في ملفات PDF الخاصة بك باستخدام Aspose.PDF for .NET. |  
-| [إنشاء ارتباط التطبيق](./create-application-link/) | أنشئ روابط تطبيق بسهولة في ملفات PDF الخاصة بك باستخدام Aspose.PDF for .NET. |  
+| [إضافة ارتباط تشعبي في ملف PDF](./add-hyperlink/) | أضف ارتباطات تشعبية تفاعلية في ملف PDF باستخدام Aspose.PDF لـ .NET. |  
+| [إنشاء رابط التطبيق في ملف PDF](./create-application-link/) | أنشئ روابط التطبيق بسهولة في ملف PDF باستخدام Aspose.PDF for .NET. |  
 | [إنشاء ارتباط الوثيقة](./create-document-link/) | أنشئ روابط لمستندات PDF الأخرى بسهولة باستخدام Aspose.PDF for .NET. |  
-| [إنشاء ارتباط تشعبي محلي](./create-local-hyperlink/) | يمكنك بسهولة إنشاء ارتباطات تشعبية محلية في ملف PDF باستخدام Aspose.PDF for .NET. |  
-| [استخراج الروابط](./extract-links/) | استخرج الروابط بسهولة من مستند PDF باستخدام Aspose.PDF for .NET. |  
-| [احصل على وجهات الارتباط التشعبي](./get-hyperlink-destinations/) | تعرف على كيفية استخراج وجهات الارتباط التشعبي من ملف PDF باستخدام Aspose.PDF for .NET. |  
-| [احصل على نص الارتباط التشعبي](./get-hyperlink-text/) | تعرف على كيفية استخراج نص الارتباط التشعبي من ملف PDF باستخدام Aspose.PDF for .NET. |  
+| [إنشاء ارتباط تشعبي محلي في ملف PDF](./create-local-hyperlink/) | أنشئ روابط تشعبية محلية بسهولة في ملف PDF باستخدام Aspose.PDF for .NET. |  
+| [استخراج الروابط في ملف PDF](./extract-links/) | استخرج الروابط بسهولة في ملف PDF باستخدام Aspose.PDF لـ .NET. |  
+| [احصل على وجهات الارتباط التشعبي في ملف PDF](./get-hyperlink-destinations/) | تعرف على كيفية استخراج وجهات الارتباط التشعبي في ملف PDF باستخدام Aspose.PDF for .NET. |  
+| [احصل على نص الارتباط التشعبي في ملف PDF](./get-hyperlink-text/) | تعرف على كيفية استخراج نص الارتباط التشعبي في ملف PDF باستخدام Aspose.PDF for .NET. |  
 | [إزالة الإجراء المفتوح](./remove-open-action/) | تعرف على كيفية إزالة الإجراء المفتوح من ملف PDF باستخدام Aspose.PDF for .NET. |  
-| [قم بتعيين ارتباط الوجهة](./set-destination-link/) | تعرف على كيفية تعيين رابط الوجهة في ملف PDF باستخدام Aspose.PDF for .NET. |  
-| [تعيين الارتباط الهدف](./set-target-link/) | تعرف على كيفية تعيين رابط هدف في ملف PDF باستخدام Aspose.PDF for .NET. |  
+| [قم بتعيين رابط الوجهة في ملف PDF](./set-destination-link/) | تعرف على كيفية تعيين رابط الوجهة في ملف PDF باستخدام Aspose.PDF for .NET. |  
+| [تعيين الارتباط الهدف في ملف PDF](./set-target-link/) | تعرف على كيفية تعيين رابط هدف في ملف PDF باستخدام Aspose.PDF for .NET. |  
 | [حدد الصفحة عند المشاهدة](./specify-page-when-viewing/) | تعرف على كيفية تحديد صفحة عند عرض ملف PDF باستخدام Aspose.PDF لـ .NET. |  
-| [روابط التحديث](./update-links/) | تعرف على كيفية تحديث الروابط في ملف PDF باستخدام Aspose.PDF for .NET. |  
-| [تحديث لون نص الارتباط](./update-link-text-color/) | تعرف على كيفية تحديث لون نص الروابط في ملف PDF باستخدام Aspose.PDF for .NET. |  
+| [تحديث الروابط في ملف PDF](./update-links/) | تعرف على كيفية تحديث الروابط في ملف PDF باستخدام Aspose.PDF for .NET. |  
+| [تحديث لون نص الرابط في ملف PDF](./update-link-text-color/) | تعرف على كيفية تحديث لون نص الروابط في ملف PDF باستخدام Aspose.PDF for .NET. |  

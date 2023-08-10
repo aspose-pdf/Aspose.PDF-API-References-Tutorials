@@ -13,9 +13,9 @@ Questi tutorial ti guideranno attraverso i diversi passaggi per manipolare gli a
 ## Tutorial
 | Titolo | Descrizione |
 | --- | --- | 
-| [Aggiungi allegato](./add-attachment/) | Scopri come aggiungere allegati ai tuoi file PDF utilizzando Aspose.PDF per .NET.  |  
-| [Elimina tutti gli allegati](./delete-all-attachments/) | Scopri come rimuovere tutti gli allegati da un file PDF utilizzando Aspose.PDF per .NET.  |  
-| [Disabilita la compressione dei file](./disable-files-compression/) | Scopri come disabilitare la compressione dei file in un file PDF con Aspose.PDF per .NET.  |  
-| [Ottieni tutti gli allegati](./get-all-the-attachments/) | Scopri come ottenere tutti gli allegati da un file PDF con Aspose.PDF per .NET.  |  
+| [Aggiungi allegato nel file PDF](./add-attachment/) | Ulteriori informazioni su come aggiungere allegati in file PDF utilizzando Aspose.PDF per .NET.  |  
+| [Elimina tutti gli allegati nel file PDF](./delete-all-attachments/) | Scopri come rimuovere tutti gli allegati nel file PDF utilizzando Aspose.PDF per .NET.  |  
+| [Disabilita la compressione dei file nel file PDF](./disable-files-compression/) | Scopri come disabilitare la compressione dei file nel file PDF con Aspose.PDF per .NET.  |  
+| [Ottieni tutti gli allegati nel file PDF](./get-all-the-attachments/) | Scopri come ottenere tutti gli allegati in file PDF con Aspose.PDF per .NET.  |  
 | [Ottieni informazioni sull'allegato](./get-attachment-info/) | Scopri come ottenere informazioni su un allegato specifico in un file PDF con Aspose.PDF per .NET. |  
-| [Ottieni allegato individuale](./get-individual-attachment/) | Scopri come ottenere un singolo allegato in un file PDF con Aspose.PDF per .NET.  |  
+| [Ottieni singoli allegati nel file PDF](./get-individual-attachment/) | Scopri come ottenere un singolo allegato in un file PDF con Aspose.PDF per .NET.  |  

@@ -39,7 +39,7 @@ Document pdfDocument = new Document(dataDir + "ExtractTextAll.pdf");
 ```
 
 ## الخطوة 5: استخراج نص من منطقة الصفحة
- إنشاء`TextAbsorber` كائن لاستخراج النص من المستند. قم بتكوين ملف`TextSearchOptions` لقصر البحث على منطقة صفحة معينة محددة بواسطة مستطيل.
+ إنشاء`TextAbsorber`كائن لاستخراج النص من المستند. قم بتكوين ملف`TextSearchOptions` لقصر البحث على منطقة صفحة معينة محددة بواسطة مستطيل.
 
 ```csharp
 TextAbsorber absorb = new TextAbsorber();

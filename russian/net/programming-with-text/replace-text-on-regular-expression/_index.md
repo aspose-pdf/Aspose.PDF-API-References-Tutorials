@@ -19,7 +19,7 @@ url: /ru/net/programming-with-text/replace-text-on-regular-expression/
 
 ## Шаг 1. Настройте каталог документов
 
- Укажите путь к каталогу, в котором находится входной PDF-файл. Заменять`"YOUR DOCUMENT DIRECTORY"` в`dataDir` переменная с путем к вашему файлу PDF.
+ Укажите путь к каталогу, в котором находится входной PDF-файл. Заменять`"YOUR DOCUMENT DIRECTORY"` в`dataDir`переменная с путем к вашему файлу PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";

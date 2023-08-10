@@ -14,4 +14,4 @@ Aspose.PDF för .NET:s "Programmering med operatörer" tutorials guidar dig geno
 | --- | --- | 
 | [Rita XForm på sidan](./draw-xform-on-page/) | Steg-för-steg-guide för att rita ett XForm-formulär på en PDF-sida med Aspose.PDF för .NET. Lägg till och placera formuläret på sidan. |  
 | [PDF-operatörer](./pdf-operators/) | Steg-för-steg-guide för att använda PDF-operatörer med Aspose.PDF för .NET. Lägg till en bild på en PDF-sida och ange dess position. |  
-| [Ta bort grafikobjekt](./remove-graphics-objects/) | Steg-för-steg guide för att ta bort grafiska objekt från ett PDF-dokument med Aspose.PDF för .NET. Anpassa och rensa dina PDF-filer. |  
+| [Ta bort grafikobjekt i PDF-fil](./remove-graphics-objects/) | Steg-för-steg guide för att ta bort grafiska objekt i PDF-fil med Aspose.PDF för .NET. Anpassa och rensa dina PDF-filer. |  

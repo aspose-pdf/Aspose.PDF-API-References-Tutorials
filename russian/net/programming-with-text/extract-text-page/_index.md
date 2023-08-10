@@ -71,7 +71,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");
 // Создайте объект TextAbsorber для извлечения текста
 TextAbsorber textAbsorber = new TextAbsorber();
-// Принять поглотитель для конкретной страницы
+//Принять поглотитель для конкретной страницы
 pdfDocument.Pages[1].Accept(textAbsorber);
 // Получить извлеченный текст
 string extractedText = textAbsorber.Text;

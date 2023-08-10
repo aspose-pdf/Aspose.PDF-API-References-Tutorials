@@ -1,8 +1,8 @@
 ---
-title: Bireysel Ek Alın
-linktitle: Bireysel Ek Alın
+title: PDF Dosyasında Bireysel Ek Alın
+linktitle: PDF Dosyasında Bireysel Ek Alın
 second_title: Aspose.PDF for .NET API Referansı
-description: Aspose.PDF for .NET ile bir PDF dosyasında ayrı bir eki nasıl alacağınızı öğrenin.
+description: Aspose.PDF for .NET ile PDF dosyasında ayrı bir eki nasıl alacağınızı öğrenin.
 type: docs
 weight: 60
 url: /tr/net/programming-with-attachments/get-individual-attachment/
@@ -80,7 +80,7 @@ FileSpecification fileSpecification = pdfDocument.EmbeddedFiles[1];
 Console.WriteLine("Name: {0}", fileSpecification.Name);
 Console.WriteLine("Description: {0}", fileSpecification.Description);
 Console.WriteLine("Mime Type: {0}", fileSpecification.MIMEType);
-// Parametre nesnesinin parametreleri içerip içermediğini kontrol edin
+//Parametre nesnesinin parametreleri içerip içermediğini kontrol edin
 if (fileSpecification.Params != null)
 {
 	Console.WriteLine("CheckSum: {0}",
@@ -103,3 +103,41 @@ fileStream.Close();
 ## Çözüm
 
 Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF dosyasından nasıl ayrı bir ek alınacağını açıkladık. Artık bu bilgiyi PDF dosyalarınızdan ekleri ayıklamak ve kaydetmek için kullanabilirsiniz.
+
+### PDF dosyasında bireysel ek almayla ilgili SSS
+
+#### S: Bir PDF belgesinden ayrı bir ek almanın amacı nedir?
+
+C: Bireysel bir ek almak, daha fazla analiz veya düzenleme için yararlı olabilecek belirli bir katıştırılmış dosyayı bir PDF'ye ayıklamanıza ve kaydetmenize olanak tanır.
+
+#### S: PDF ile ilgili görevlerimde bu eğitimden nasıl yararlanabilirim?
+
+C: Bu öğretici, Aspose.PDF for .NET kullanarak bir PDF belgesinden belirli bir eki almak ve kaydetmek için adım adım talimatlar ve C# kaynak kodu sağlar.
+
+#### S: Bu öğreticiyi kullanarak hangi ek özelliklerine erişebilirim?
+
+C: Belirli bir ekin adı, açıklaması, MIME türü, kontrol karması, oluşturma tarihi, değiştirilme tarihi ve boyutu gibi ek özelliklerine erişebilirsiniz.
+
+#### S: İlk ek dışındaki ekleri almak için kodu değiştirebilir miyim?
+
+ A: Kesinlikle, dizini ayarlayabilirsiniz (örn.`pdfDocument.EmbeddedFiles[1]`) PDF içindeki farklı dizinlerdeki ekleri almak için.
+
+#### S: Alınan eki bir dosyaya nasıl kaydederim?
+
+A: Bu öğretici, ekin içeriğini almak ve onu belirli bir ada sahip bir metin dosyasına kaydetmek için kod sağlar.
+
+#### S: Ek bilgisindeki "Karmayı Kontrol Et" özelliğinin önemi nedir?
+
+Y: "Karmayı Kontrol Et" özelliği, ekin bütünlüğünü doğrulamak için kullanılabilen ekin kontrol karma değerini temsil eder.
+
+#### S: Bu bilgiyi, dosya türü gibi belirli ölçütlere sahip ekleri ayıklamak için genişletebilir miyim?
+
+C: Evet, ekleri dosya türü veya diğer özellikler gibi belirli ölçütlere göre filtrelemek için kodu geliştirebilirsiniz.
+
+#### S: Aspose.PDF for .NET, tek tek eklerin çıkarılması sürecini nasıl basitleştiriyor?
+
+Y: Aspose.PDF for .NET, PDF belgeleri içindeki eklerin çıkarılmasını ve değiştirilmesini kolaylaştıran kullanıcı dostu bir API sağlar.
+
+#### S: Bu eğitim, parola korumalı PDF dosyaları için de geçerli mi?
+
+C: Evet, Aspose.PDF for .NET kullanarak parola korumalı PDF dosyalarından tek tek ekleri almak için benzer teknikleri uyarlayabilirsiniz.

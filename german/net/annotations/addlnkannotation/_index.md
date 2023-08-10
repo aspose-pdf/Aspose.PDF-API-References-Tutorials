@@ -103,3 +103,29 @@ dataDir = dataDir + "AddlnkAnnotation_out.pdf";
 // Ausgabedatei speichern
 doc.Save(dataDir);
 ```
+
+## Abschluss
+
+In diesem Tutorial haben wir untersucht, wie man mit Aspose.PDF für .NET Freihandanmerkungen zu einem PDF-Dokument hinzufügt. Durch Befolgen der Schritt-für-Schritt-Anleitung und des bereitgestellten C#-Quellcodes können Entwickler die Ink Annotation-Funktionalität problemlos in ihre PDF-Verarbeitungsanwendungen implementieren.
+
+### FAQs
+
+#### F: Was ist eine Freihandanmerkung in einem PDF-Dokument?
+
+A: Eine Freihandanmerkung in einem PDF-Dokument ermöglicht es Benutzern, Freiform-Freihandanmerkungen mit einem Stift oder einer Maus zu zeichnen. Es wird häufig verwendet, um handgezeichnete Skizzen, Diagramme oder andere freihändige Anmerkungen zu einer PDF-Datei hinzuzufügen.
+
+#### F: Kann ich das Erscheinungsbild der Freihandanmerkung anpassen?
+
+A: Ja, Aspose.PDF für .NET bietet verschiedene Eigenschaften, um das Erscheinungsbild der Freihandanmerkung anzupassen, wie z. B. Farbe, Deckkraft, Versalstil, Rahmenbreite und mehr. Entwickler können diese Eigenschaften an ihre spezifischen Anforderungen anpassen.
+
+#### F: Ist es möglich, einer einzelnen PDF-Seite mehrere Freihandanmerkungen hinzuzufügen?
+
+A: Ja, Sie können mit Aspose.PDF für .NET mehrere Freihandanmerkungen zu einer einzelnen PDF-Seite hinzufügen. Jede Freihandanmerkung kann über einen eigenen Satz von Punkten und ein individuelles Erscheinungsbild verfügen.
+
+#### F: Kann ich Freihandanmerkungen zu vorhandenen PDF-Dokumenten hinzufügen?
+
+A: Ja, mit Aspose.PDF für .NET können Sie Freihandanmerkungen sowohl zu neu erstellten PDF-Dokumenten als auch zu vorhandenen PDF-Dateien hinzufügen. Sie können eine vorhandene PDF-Datei öffnen, Freihandanmerkungen hinzufügen und das aktualisierte Dokument speichern.
+
+#### F: Was sind einige häufige Anwendungsfälle für Freihandanmerkungen in PDF-Dokumenten?
+
+A: Tintenanmerkungen sind für eine Vielzahl von Anwendungen nützlich, darunter das Hinzufügen von Unterschriften oder handschriftlichen Notizen zu PDF-Formularen, das Kommentieren von Architekturplänen oder technischen Zeichnungen und das Markieren von Dokumenten für die gemeinsame Überprüfung.

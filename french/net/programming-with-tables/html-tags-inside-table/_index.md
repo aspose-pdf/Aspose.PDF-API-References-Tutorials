@@ -1,13 +1,12 @@
 ---
-title: Balises HTML à l'intérieur du tableau
-linktitle: Balises HTML à l'intérieur du tableau
+title: Balises HTML à l'intérieur du tableau dans un fichier PDF
+linktitle: Balises HTML à l'intérieur du tableau dans un fichier PDF
 second_title: Référence de l'API Aspose.PDF pour .NET
-description: Apprenez à utiliser les balises HTML dans un tableau dans un document PDF avec Aspose.PDF pour .NET.
+description: Apprenez à utiliser les balises HTML dans un tableau dans un fichier PDF avec Aspose.PDF pour .NET.
 type: docs
 weight: 100
 url: /fr/net/programming-with-tables/html-tags-inside-table/
 ---
-
 Dans ce didacticiel, nous allons apprendre à utiliser des balises HTML dans un tableau dans un document PDF à l'aide d'Aspose.PDF pour .NET. Nous expliquerons pas à pas le code source en C#. À la fin de ce didacticiel, vous saurez comment insérer du contenu HTML dans un tableau d'un document PDF. Commençons!
 
 ## Étape 1 : Configurer l'environnement
@@ -113,3 +112,25 @@ doc.Save(dataDir + "HTMLInsideTableCell_out.pdf");
 
 ## Conclusion
 Dans ce didacticiel, nous avons appris à utiliser des balises HTML dans un tableau dans un document PDF à l'aide d'Aspose.PDF pour .NET. Vous pouvez utiliser ce guide étape par étape pour insérer du contenu HTML dans des cellules de tableau dans un document PDF à l'aide de C#.
+
+### FAQ pour les balises HTML à l'intérieur du tableau dans le fichier PDF
+
+#### Q : Puis-je utiliser d'autres balises et attributs HTML dans les cellules du tableau ?
+
+ R : Oui, vous pouvez utiliser diverses balises et attributs HTML dans les cellules du tableau, tels que`<b>`, `<i>`, `<a>`et beaucoup plus. Aspose.PDF pour .NET prend en charge un large éventail d'éléments et de styles HTML que vous pouvez utiliser pour formater le contenu dans les cellules du tableau.
+
+#### Q : Puis-je appliquer des styles CSS au contenu HTML dans les cellules du tableau ?
+
+R : Oui, vous pouvez appliquer des styles CSS au contenu HTML à l'intérieur des cellules du tableau. Aspose.PDF pour .NET prend en charge les styles CSS de base pouvant être appliqués aux éléments HTML.
+
+#### Q : Est-il possible d'ajouter des images avec du contenu HTML dans les cellules du tableau ?
+
+ R : Oui, vous pouvez ajouter des images avec du contenu HTML dans les cellules du tableau. Vous pouvez utiliser HTML`<img>` balises pour inclure des images provenant de diverses sources, telles que des fichiers locaux ou des URL.
+
+#### Q : Comment puis-je spécifier différentes largeurs de colonne pour le tableau ?
+
+ R : Vous pouvez spécifier différentes largeurs de colonne pour le tableau à l'aide de la`ColumnWidths` propriété du tableau. La propriété prend une chaîne contenant des valeurs séparées par des espaces, où chaque valeur représente la largeur d'une colonne en points.
+
+#### Q : Puis-je utiliser des tableaux imbriqués dans une cellule avec du contenu HTML ?
+
+R : Oui, vous pouvez utiliser des tableaux imbriqués dans une cellule avec du contenu HTML. Vous pouvez créer des instances de tableau distinctes et les ajouter dans le cadre du contenu HTML à l'intérieur d'une cellule pour obtenir l'effet d'imbrication.

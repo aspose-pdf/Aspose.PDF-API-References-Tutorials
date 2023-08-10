@@ -50,14 +50,14 @@ Page page = doc.Pages.Add();
 ```
 
 ## Paso 6: Cree un HtmlFragment con el contenido HTML
- Instanciar un`HtmlFragment` objeto y proporcionar el contenido HTML deseado. En el código proporcionado, el contenido HTML se asigna a la variable`title`. Puede modificar el contenido HTML según sea necesario.
+Instanciar un`HtmlFragment` objeto y proporcionar el contenido HTML deseado. En el código proporcionado, el contenido HTML se asigna a la variable`title`. Puede modificar el contenido HTML según sea necesario.
 
 ```csharp
 HtmlFragment title = new HtmlFragment("<p style='font-family: Verdana'><b><i>Table contains text</i></b></p>");
 ```
 
 ## Paso 7: sobrescriba los estilos para el contenido HTML
- Para sobrescribir los estilos del contenido HTML, puede modificar el`TextState` propiedades de la`HtmlFragment`objeto. En el código proporcionado, la familia de fuentes se cambia a "Arial" y el tamaño de fuente se establece en 20.
+ Para sobrescribir los estilos del contenido HTML, puede modificar el`TextState` propiedades de la`HtmlFragment` objeto. En el código proporcionado, la familia de fuentes se cambia a "Arial" y el tamaño de fuente se establece en 20.
 
 ```csharp
 title. TextState = new TextState("Arial");
@@ -80,7 +80,7 @@ page.Paragraphs.Add(title);
 ```
 
 ## Paso 10: Guarde el documento PDF
- Guarde el documento PDF usando el`Save` metodo de la`Document` objeto. Especifique la ruta del archivo de salida que configuró en el Paso 3.
+ Guarde el documento PDF usando el`Save` metodo de la`Document` objeto. Especifique la ruta del archivo de salida que configuró en el paso 3.
 
 ```csharp
 dataDir = dataDir + "AddHTMLUsingDOMAndOverwrite_out.pdf";

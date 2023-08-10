@@ -49,7 +49,7 @@ PDF belgesinin etiketli içeriğini ve karşılık gelen kök yapı öğesini al
 Şimdi etiketli PDF belgesi için başlığı ayarlayalım.
 
 ```csharp
-//Etiketli PDF belgesi için başlığı tanımlayın
+// Etiketli PDF belgesi için başlığı tanımlayın
 taggedContent.SetTitle("Document with images");
 ```
 
@@ -144,7 +144,7 @@ spanElement.ChangeParentElement(paragraph);
 // Belgeyi kaydet
 document.Save(outFile);
 
-// Çıkan belge için PDF/UA Uyumluluğunu kontrol etme
+//Çıkan belge için PDF/UA Uyumluluğunu kontrol etme
 document = new Document(outFile);
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
@@ -154,3 +154,49 @@ Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 ## Çözüm
 
 Bu eğitimde, Aspose.PDF for .NET kullanarak mevcut bir PDF'de bir görüntüyü nasıl işaretleyeceğimizi öğrendik. Artık Aspose.PDF'yi PDF belgelerinize etiket eklemek ve resimlerde düzenlemeler yapmak için kullanabilirsiniz.
+
+### SSS
+
+#### S: Aspose.PDF for .NET kullanarak mevcut bir PDF'deki görüntüleri etiketlemeye ilişkin bu eğitimin temel amacı nedir?
+
+Y: Bu eğitimin temel amacı, Aspose.PDF for .NET kullanarak mevcut bir PDF belgesindeki bir görüntüyü işaretleme sürecinde size rehberlik etmektir. Öğretici, görüntülere nasıl alternatif metin ve sınırlayıcı kutular atayacağınızı, belge içindeki öğeleri nasıl taşıyacağınızı ve görüntülere etiketler ekleyeceğinizi anlamanıza yardımcı olacak adım adım yönergeler ve C# kaynak kodu örnekleri sağlar.
+
+#### S: Aspose.PDF for .NET kullanarak bir PDF'de görüntüleri etiketlemeye ilişkin bu öğreticiyi takip etmek için ön koşullar nelerdir?
+
+C: Başlamadan önce, geliştirme ortamınızı Aspose.PDF for .NET'i kullanacak şekilde kurduğunuzdan emin olun. Bu, Aspose.PDF kitaplığının kurulmasını ve projenizin buna referans verecek şekilde yapılandırılmasını içerir.
+
+#### S: Aspose.PDF for .NET kullanarak mevcut bir PDF belgesini nasıl açabilirim ve etiketlenmiş içeriğine nasıl erişebilirim?
+
+C: Eğitim, Aspose.PDF for .NET kullanılarak mevcut bir PDF belgesinin nasıl açılacağını ve daha fazla değişiklik için etiketli içeriğine nasıl erişileceğini gösteren C# kaynak kodu örnekleri sağlar.
+
+#### S: Bir PDF belgesindeki resimlere alternatif metin ve sınırlayıcı kutular atamanın amacı nedir?
+
+Y: Görüntülere alternatif metin ve sınırlayıcı kutular atamak, görüntüler için açıklayıcı metin sağlayarak ve bunların düzenini ve belge içindeki konumunu tanımlayarak erişilebilirliği artırır. Bu bilgiler, ekran okuyucular ve diğer yardımcı teknolojiler için çok önemlidir.
+
+#### S: Aspose.PDF for .NET kullanarak etiketli bir PDF belgesi için başlığı nasıl ayarlayabilirim?
+
+C: Eğitim, Aspose.PDF for .NET kullanılarak etiketli bir PDF belgesi için başlığın nasıl ayarlanacağını gösteren C# kaynak kodu örnekleri içerir.
+
+#### S: Bir PDF belgesindeki öğeleri taşıma işlemi neleri içerir?
+
+C: Bir PDF belgesindeki öğelerin taşınması, belirli bir öğenin ana öğesinin değiştirilmesini içerir. Bu öğreticide, bir Span öğesini tablodaki belirli bir Paragraph öğesine nasıl taşıyacağınızı öğreneceksiniz.
+
+#### S: Etiketleri ekledikten ve resimlerde düzenlemeler yaptıktan sonra değiştirilen PDF belgesini nasıl kaydedebilirim?
+
+ C: Etiketleri ekledikten, alternatif metin atadıktan, sınırlayıcı kutuları ayarladıktan ve PDF belgesinde düzenlemeler yaptıktan sonra, değiştirilen PDF belgesini kaydetmek için sağlanan C# kaynak kodu örneklerini kullanabilirsiniz.`Save()` yöntem.
+
+#### S: Eğitimde sağlanan örnek kaynak kodunun amacı nedir?
+
+C: Örnek kaynak kodu, Aspose.PDF for .NET kullanılarak görüntü etiketleme ve manipülasyonu gerçekleştirmek için pratik bir referans görevi görür. Bu kodu bir başlangıç noktası olarak kullanabilir ve özel gereksinimlerinize uyacak şekilde değiştirebilirsiniz.
+
+#### S: Bu teknikleri bir PDF belgesindeki yalnızca resimlere değil, diğer öğe türlerine de uygulayabilir miyim?
+
+C: Evet, bu eğitimde gösterilen teknikler, bir PDF belgesindeki çeşitli öğe türleriyle çalışacak şekilde uyarlanabilir. Metin, tablolar ve daha fazlası gibi diğer öğeleri etiketlemek ve değiştirmek için benzer ilkeleri uygulayabilirsiniz.
+
+#### S: Değiştirilen PDF belgesinin PDF/UA uyumluluğunu nasıl doğrulayabilirim?
+
+ C: Öğretici, değiştirilen PDF belgesinin PDF/UA uyumluluğunun`Validate()` yöntemi ve bir XML raporu oluşturma.
+
+#### S: Aspose.PDF for .NET, PDF belgeleriyle çalışmak için başka hangi özellikleri sunuyor?
+
+Y: Aspose.PDF for .NET, PDF belgeleriyle çalışmak için metin işleme, resim ekleme, tablo oluşturma, form alanı yönetimi, dijital imzalar, ek açıklamalar ve daha fazlasını içeren çok çeşitli özellikler sunar. Daha fazla araştırma için resmi belgelere ve kaynaklara başvurun.

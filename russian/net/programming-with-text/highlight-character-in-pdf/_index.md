@@ -19,7 +19,7 @@ url: /ru/net/programming-with-text/highlight-character-in-pdf/
 
 ## Шаг 1. Настройте каталог документов
 
- Во-первых, вам нужно указать путь к каталогу, в котором находится ваш входной PDF-файл. Заменять`"YOUR DOCUMENT DIRECTORY"` в`dataDir` переменная с путем к вашему файлу PDF.
+ Во-первых, вам нужно указать путь к каталогу, в котором находится ваш входной PDF-файл. Заменять`"YOUR DOCUMENT DIRECTORY"` в`dataDir`переменная с путем к вашему файлу PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -74,7 +74,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
          {
              if (i == 0)
              {
-                 //Выделите символы
+                 // Выделите символы
                  gr.DrawRectangle(
                      Think.Yellow,
                      (float)textFragment.Position.XIndent,

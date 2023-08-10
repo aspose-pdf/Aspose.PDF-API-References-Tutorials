@@ -77,3 +77,21 @@ dataDir = dataDir + "OptimizeDocument_out.pdf";
 // Salva documento aggiornato
 pdfDocument.Save(dataDir);
 ```
+
+## Conclusione
+
+La funzionalità Link Duplicate Streams di Aspose.PDF per .NET fornisce un modo efficace per ottimizzare i file PDF riducendone le dimensioni. Identificando e collegando flussi duplicati, la libreria aiuta a creare documenti PDF più efficienti senza sacrificare l'integrità dei dati o la qualità visiva. Gli sviluppatori possono implementare facilmente questa funzione utilizzando i passaggi forniti e l'esempio di codice sorgente, migliorando le prestazioni e l'efficienza di archiviazione dei loro file PDF.
+
+### FAQ
+
+#### D: Qual è lo scopo della funzione Link Duplicate Streams in Aspose.PDF per .NET?
+
+R: La funzione Collega flussi duplicati in Aspose.PDF per .NET viene utilizzata per ottimizzare i file PDF identificando e collegando flussi duplicati all'interno del documento. In un file PDF potrebbero esserci flussi duplicati (come immagini o caratteri) che consumano spazio non necessario. Collegando questi flussi duplicati, la dimensione del file può essere ridotta, risultando in un documento PDF più efficiente e più piccolo.
+
+#### D: Come funziona la funzione Link Duplicate Streams?
+
+R: La funzione Collega flussi duplicati funziona analizzando i flussi di contenuto del documento PDF e identificando i flussi duplicati con lo stesso contenuto. Invece di archiviare questi flussi duplicati separatamente, la funzione crea un collegamento tra di loro, condividendo efficacemente lo stesso contenuto. Questa tecnica di ottimizzazione riduce le dimensioni complessive del documento PDF senza comprometterne l'aspetto visivo o la funzionalità.
+
+#### D: La funzione Link Duplicate Streams può causare una perdita di dati o di qualità nel documento PDF?
+
+R: No, la funzione Link Duplicate Streams non causa alcuna perdita di dati o qualità nel documento PDF. Ottimizza solo la dimensione del file collegando flussi duplicati, senza alterare il contenuto o l'aspetto visivo del documento. La funzione è progettata per garantire che il documento PDF rimanga intatto e mantenga la sua qualità originale.

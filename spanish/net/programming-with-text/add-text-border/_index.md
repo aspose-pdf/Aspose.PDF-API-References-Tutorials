@@ -46,7 +46,7 @@ Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
 ## Paso 6: crea un fragmento de texto
- Crear un`TextFragment` objeto y proporcionar el texto deseado. Establezca la posición del fragmento de texto usando el`Position` propiedad. En el código proporcionado, el texto se establece en "texto principal" y se coloca en (100, 600) en la página.
+ Crear un`TextFragment`objeto y proporcionar el texto deseado. Establezca la posición del fragmento de texto usando el`Position` propiedad. En el código proporcionado, el texto se establece en "texto principal" y se coloca en (100, 600) en la página.
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
@@ -80,7 +80,7 @@ tb.AppendText(textFragment);
 ```
 
 ## Paso 10: Guarde el documento PDF
- Guarde el documento PDF usando el`Save` metodo de la`Document` objeto. Especifique la ruta del archivo de salida que configuró en el Paso 3.
+ Guarde el documento PDF usando el`Save` metodo de la`Document` objeto. Especifique la ruta del archivo de salida que configuró en el paso 3.
 
 ```csharp
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");

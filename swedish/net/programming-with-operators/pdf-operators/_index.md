@@ -70,7 +70,7 @@ page.Contents.Add(new Do(ximage.Name));
 page. Contents. Add(new GRestore());
 ```
 
- Var noga med att ange de faktiska sökvägarna för PDF- och bildfiler på din maskin. Du kan också justera`lowerLeftX`, `lowerLeftY`, `upperRightX` och`upperRightY` koordinater för att placera bilden efter behov.
+ Var noga med att ange de faktiska sökvägarna för PDF- och bildfiler på din maskin. Du kan också justera`lowerLeftX`, `lowerLeftY`, `upperRightX` och`upperRightY`koordinater för att placera bilden efter behov.
 
 ### Exempel på källkod för PDF-operatörer som använder Aspose.PDF för .NET 
 ```csharp
@@ -83,7 +83,7 @@ int lowerLeftX = 100;
 int lowerLeftY = 100;
 int upperRightX = 200;
 int upperRightY = 200;
-// Skaffa sidan där bilden behöver läggas till
+//Skaffa sidan där bilden behöver läggas till
 Page page = pdfDocument.Pages[1];
 // Ladda bilden i stream
 FileStream imageStream = new FileStream(dataDir + "PDFOperators.jpg", FileMode.Open);
@@ -94,7 +94,7 @@ page.Contents.Add(new Aspose.Pdf.Operators.GSave());
 // Skapa rektangel- och matrisobjekt
 Aspose.Pdf.Rectangle rectangle = new Aspose.Pdf.Rectangle(lowerLeftX, lowerLeftY, upperRightX, upperRightY);
 Matrix matrix = new Matrix(new double[] { rectangle.URX - rectangle.LLX, 0, 0, rectangle.URY - rectangle.LLY, rectangle.LLX, rectangle.LLY });
-//Använda operatorn ConcatenateMatrix (sammanfoga matris): definierar hur bilden ska placeras
+// Använda operatorn ConcatenateMatrix (sammanfoga matris): definierar hur bilden ska placeras
 page.Contents.Add(new Aspose.Pdf.Operators.ConcatenateMatrix(matrix));
 XImage ximage = page.Resources.Images[page.Resources.Images.Count];
 // Använda Gör-operatorn: denna operator ritar en bild
@@ -109,3 +109,63 @@ pdfDocument.Save(dataDir);
 ## Slutsats
 
 I den här handledningen lärde du dig hur du använder PDF-operatorer med Aspose.PDF för .NET. Genom att följa stegen som beskrivs kommer du att kunna lägga till en bild på en PDF-sida och ange dess position exakt. PDF-operatörer ger detaljerad kontroll över manipuleringen av PDF-dokument, vilket gör att du kan anpassa ditt innehåll.
+
+### Vanliga frågor för PDF-operatörer
+
+#### F: Vad är PDF-operatorer i Aspose.PDF?
+
+S: PDF-operatorer är kommandon som används för att manipulera och lägga till innehåll i PDF-dokument. De ger exakt kontroll över olika aspekter av en PDF, som grafik, text och positionering.
+
+#### F: Varför skulle jag använda PDF-operatorer i mina PDF-dokument?
+
+S: PDF-operatörer erbjuder detaljerad kontroll över PDF-innehåll, vilket gör att du kan uppnå specifika layout-, positionerings- och stileffekter som kanske inte är möjliga att uppnå med enbart funktioner på hög nivå.
+
+#### F: Hur importerar jag de nödvändiga namnrymden för att använda PDF-operatorer?
+
+ S: I din C#-kodfil, använd`using` direktiv för att importera de nödvändiga namnområdena för att komma åt klasserna och metoderna som tillhandahålls av Aspose.PDF:
+```csharp
+using System;
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Operators;
+```
+
+#### F: Hur tillhandahåller PDF-operatörer exakt positionering av innehåll?
+
+ S: PDF-operatörer gillar`ConcatenateMatrix` låter dig definiera transformationsmatriser för att exakt positionera och transformera innehåll i ett PDF-dokument.
+
+#### F: Kan jag lägga till en bild på en PDF-sida med hjälp av PDF-operatorer?
+
+S: Ja, du kan använda PDF-operatorer för att lägga till en bild på en PDF-sida och kontrollera dess exakta position, storlek och orientering.
+
+#### F: Hur använder jag PDF-operatorer för att lägga till en bild på en PDF-sida?
+
+ S: Du kan följa stegen som beskrivs i handledningen för att ladda en bild från en fil och använda PDF-operatorer som`GSave`, `ConcatenateMatrix` , och`Do` för att lägga till bilden på en specifik plats på en PDF-sida.
+
+#### F: Vad är syftet med GSave- och GRestore-operatörerna?
+
+ A: Den`GSave` och`GRestore`operatorer i Aspose.PDF används för att spara och återställa grafiktillståndet. De hjälper till att säkerställa att transformationer och inställningar som tillämpas på ett avsnitt av innehållet inte påverkar efterföljande avsnitt.
+
+#### F: Hur kan jag justera positionen för den tillagda bilden på PDF-sidan?
+
+ S: Du kan ändra`lowerLeftX`, `lowerLeftY`, `upperRightX` , och`upperRightY` koordinater i exempelkoden för att styra positionen och storleken på den tillagda bilden.
+
+#### F: Kan jag använda PDF-operatorer för att manipulera textinnehåll också?
+
+S: Ja, PDF-operatorer kan användas för att manipulera textinnehåll, så att du kan anpassa teckensnitt, stilar och placering.
+
+#### F: Är det möjligt att använda transparens eller blandningseffekter med PDF-operatorer?
+
+ S: Ja, PDF-operatörer gillar`SetAlpha`, `SetBlendMode`, och andra kan användas för att tillämpa transparens och blandningseffekter på innehåll.
+
+#### F: Kan jag använda PDF-operatorer för att skapa interaktiva element i ett PDF-dokument?
+
+S: Ja, PDF-operatorer kan användas för att skapa interaktiva element som anteckningar, formulärfält och hyperlänkar.
+
+#### F: Är PDF-operatorer lämpliga för komplexa PDF-manipuleringsuppgifter?
+
+S: Ja, PDF-operatörer erbjuder en lågnivåstrategi för PDF-manipulation och är lämpliga för komplexa uppgifter som kräver exakt kontroll över innehållet.
+
+#### F: Kan jag använda PDF-operatörer med krypterade eller lösenordsskyddade PDF-filer?
+
+S: Ja, PDF-operatörer kan användas med krypterade PDF-filer, men du måste säkerställa korrekt autentisering och behörighet för att ändra innehållet.

@@ -72,7 +72,7 @@ row1.Cells[0].Paragraphs.Add(logo);
 
 ## Steg 6: Lägg till text runt bilden
 
- Vi skapar strängvariabler som innehåller HTML-formaterad text och skapar en`HtmlFragment` objekt. Sedan lägger vi till HTML-texten i tabellcellen som innehåller bilden.
+Vi skapar strängvariabler som innehåller HTML-formaterad text och skapar en`HtmlFragment` objekt. Sedan lägger vi till HTML-texten i tabellcellen som innehåller bilden.
 
 ```csharp
 string TitleString = "<font face=\"Arial\" size=6 color=\"#101090\"><b>Aspose.Pdf for .NET</b></font>";
@@ -111,7 +111,7 @@ Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 Aspose.Pdf.Page page = doc.Pages.Add();
 // Instantiera ett tabellobjekt
 Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
-//Lägg till tabellen i styckesamlingen av önskat avsnitt
+// Lägg till tabellen i styckesamlingen av önskat avsnitt
 page.Paragraphs.Add(table1);
 // Ställ in med tabellens kolumnbredder
 table1.ColumnWidths = "120 270";
@@ -136,7 +136,7 @@ logo.FixWidth = 110;
 row1.Cells.Add();
 // Lägg till bilden i styckesamlingen i tabellcellen
 row1.Cells[0].Paragraphs.Add(logo);
-// Skapa strängvariabler med text som innehåller html-taggar
+//Skapa strängvariabler med text som innehåller html-taggar
 string TitleString = "<font face=\"Arial\" size=6 color=\"#101090\"><b> Aspose.Pdf for .NET</b></font>";
 string BodyString1 = "<font face=\"Arial\" size=2><br/>Aspose.Pdf for .NET is a non-graphical PDF� document reporting component that enables .NET applications to <b> create PDF documents from scratch </b> without utilizing Adobe Acrobat�. Aspose.Pdf for .NET is very affordably priced and offers a wealth of strong features including: compression, tables, graphs, images, hyperlinks, security and custom fonts. </font>";
 // Skapa ett textobjekt som ska läggas till till höger om bilden
@@ -163,4 +163,4 @@ doc.Save(dataDir + "PlacingTextAroundImage_out.pdf");
 
 ## Slutsats
 
-den här handledningen har du lärt dig hur du placerar text runt en bild i ett PDF-dokument med hjälp av Aspose.PDF-biblioteket för .NET. Genom att följa den steg-för-steg-guide och köra den medföljande C#-koden kan du skapa en tabell, lägga till en bild och placera text runt bilden i ett PDF-dokument.
+I den här handledningen har du lärt dig hur du placerar text runt en bild i ett PDF-dokument med hjälp av Aspose.PDF-biblioteket för .NET. Genom att följa den steg-för-steg-guide och köra den medföljande C#-koden kan du skapa en tabell, lägga till en bild och placera text runt bilden i ett PDF-dokument.

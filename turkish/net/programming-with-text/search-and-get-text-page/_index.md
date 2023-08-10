@@ -61,7 +61,7 @@ pdfDocument.Pages.Accept(textFragmentAbsorber);
 
 ## 6. Adım: ayıklanan metin parçalarını alın
 
- Ayıklanan metin parçalarını kullanarak alın`TextFragments` mülkiyeti`TextFragmentAbsorber` nesne:
+Ayıklanan metin parçalarını kullanarak alın`TextFragments` mülkiyeti`TextFragmentAbsorber` nesne:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -98,7 +98,7 @@ Her bir metin parçasında başka eylemler gerçekleştirmek için döngü için
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Belgeyi aç
 Document pdfDocument = new Document(dataDir + "SearchAndGetTextPage.pdf");
-// Giriş arama ifadesinin tüm örneklerini bulmak için TextAbsorber nesnesi oluşturun
+//Giriş arama ifadesinin tüm örneklerini bulmak için TextAbsorber nesnesi oluşturun
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("Figure");
 // Tüm sayfalar için emiciyi kabul edin
 pdfDocument.Pages.Accept(textFragmentAbsorber);

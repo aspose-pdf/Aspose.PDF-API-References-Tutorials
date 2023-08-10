@@ -7,7 +7,6 @@ type: docs
 weight: 100
 url: /de/net/programming-with-document/customizepagenumbeswhileaddingtoc/
 ---
-
 In diesem Tutorial erfahren Sie, wie Sie mit Aspose.PDF für .NET Seitenzahlen anpassen und gleichzeitig ein Inhaltsverzeichnis (TOC) hinzufügen. Wir stellen Ihnen eine Schritt-für-Schritt-Anleitung zusammen mit einem Codebeispiel zur Verfügung, um Ihnen dabei zu helfen, dies zu erreichen.
 
 ## Schritt 1: Laden einer vorhandenen PDF-Datei
@@ -31,7 +30,7 @@ Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
 
 ## Schritt 3: Erstellen eines TOC-Objekts
 
- Um ein TOC-Objekt zu erstellen, müssen wir zunächst ein erstellen`TocInfo`Objekt und legen Sie seine Eigenschaften fest. In diesem Tutorial setzen wir den Titel des Inhaltsverzeichnisses auf „Inhaltsverzeichnis“ und das Seitenzahlpräfix auf „P“.
+ Um ein TOC-Objekt zu erstellen, müssen wir zunächst ein erstellen`TocInfo` Objekt und legen Sie seine Eigenschaften fest. In diesem Tutorial setzen wir den Titel des Inhaltsverzeichnisses auf „Inhaltsverzeichnis“ und das Seitenzahlpräfix auf „P“.
 
 ```csharp
 TocInfo tocInfo = new TocInfo();
@@ -61,14 +60,14 @@ for (int i = 1; i < doc.Pages.Count; i++)
     heading2.Top = doc.Pages[i + 1].Rect.Height;
     // Zielkoordinate
     segment2.Text = "Page " + i.ToString();
-    //Fügen Sie der Seite mit dem Inhaltsverzeichnis eine Überschrift hinzu
+    // Fügen Sie der Seite mit dem Inhaltsverzeichnis eine Überschrift hinzu
     tocPage.Paragraphs.Add(heading2);
 }
 ```
 
 ## Schritt 5: Speichern des aktualisierten Dokuments
 
- Schließlich müssen wir das aktualisierte Dokument in einer neuen Datei speichern. Wir können dies erreichen, indem wir die verwenden`Save()` Methode der`Document` Objekt.
+Schließlich müssen wir das aktualisierte Dokument in einer neuen Datei speichern. Wir können dies erreichen, indem wir die verwenden`Save()` Methode der`Document` Objekt.
 
 ```csharp
 doc.Save(outFile);
@@ -106,7 +105,7 @@ for (int i = 1; i<doc.Pages.Count; i++)
 	heading2.Top = doc.Pages[i + 1].Rect.Height;
 	// Zielkoordinate
 	segment2.Text = "Page " + i.ToString();
-	//Fügen Sie der Seite mit dem Inhaltsverzeichnis eine Überschrift hinzu
+	// Fügen Sie der Seite mit dem Inhaltsverzeichnis eine Überschrift hinzu
 	tocPage.Paragraphs.Add(heading2);
 }
 
@@ -118,3 +117,24 @@ doc.Save(outFile);
 
 In diesem Tutorial haben wir eine Schritt-für-Schritt-Anleitung zum Anpassen von Seitenzahlen beim Hinzufügen eines Inhaltsverzeichnisses mit Aspose.PDF für .NET bereitgestellt. Wir haben auch ein Codebeispiel bereitgestellt, das Sie als Referenz bei der Implementierung dieser Funktion in Ihrem Unternehmen verwenden können
 
+### FAQs
+
+#### F: Was ist ein Inhaltsverzeichnis (TOC) in einem PDF-Dokument?
+
+A: Ein Inhaltsverzeichnis (TOC) in einem PDF-Dokument ist eine Navigationshilfe, die eine organisierte Liste von Dokumentabschnitten oder Kapiteln zusammen mit den entsprechenden Seitenzahlen bereitstellt. Dadurch können Leser schnell zu bestimmten Abschnitten im Dokument navigieren.
+
+#### F: Warum sollte ich Seitenzahlen in einem Inhaltsverzeichnis anpassen?
+
+A: Das Anpassen von Seitenzahlen in einem Inhaltsverzeichnis kann nützlich sein, wenn Sie ein bestimmtes Seitennummerierungsformat verwenden oder zusätzliche Informationen zusammen mit den Seitenzahlen hinzufügen möchten. Es ermöglicht Ihnen, ein personalisierteres und informativeres Inhaltsverzeichnis zu erstellen.
+
+#### F: Kann ich Hyperlinks in das Inhaltsverzeichnis einfügen, um auf bestimmte Abschnitte oder Seiten im PDF-Dokument zu verweisen?
+
+A: Ja, mit Aspose.PDF für .NET können Sie im Inhaltsverzeichnis Hyperlinks erstellen, die auf bestimmte Abschnitte oder Seiten im PDF-Dokument verweisen. Dies verbessert die Interaktivität und Navigation des PDF-Dokuments.
+
+#### F: Ist Aspose.PDF für .NET mit PDF/A-Standards kompatibel?
+
+A: Ja, Aspose.PDF für .NET unterstützt PDF/A-Standards, einschließlich PDF/A-1, PDF/A-2 und PDF/A-3. Damit können Sie PDF-Dokumente erstellen, die den Archivierungs- und Langzeitarchivierungsanforderungen entsprechen.
+
+#### F: Kann ich den Inhaltsverzeichniseinträgen weitere Formatierungen hinzufügen, z. B. Schriftarten oder Farben?
+
+A: Ja, Sie können den Inhaltsverzeichniseinträgen zusätzliche Formatierungen hinzufügen, z. B. Schriftarten, Farben und Schriftgrößen, indem Sie Aspose.PDF für .NET verwenden. Dadurch können Sie das Erscheinungsbild des Inhaltsverzeichnisses an Ihre Anforderungen anpassen.

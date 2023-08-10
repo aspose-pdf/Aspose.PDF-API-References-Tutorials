@@ -1,13 +1,13 @@
 ---
-title: Lägg till SWF-fil som anteckning
+title: Lägg till SWF-fil som PDF-anteckning
 linktitle: Lägg till SWF-fil som anteckning
 second_title: Aspose.PDF för .NET API Referens
-description: Lär dig hur du lägger till SWF-filer som kommentarer i Aspose.PDF för .NET med denna steg-för-steg-guide.
+description: Lär dig hur du lägger till SWF-filer som PDF-kommentarer i Aspose.PDF för .NET med denna steg-för-steg-guide.
 type: docs
 weight: 30
 url: /sv/net/annotations/addswffileasannotation/
 ---
-Om du är en .NET-utvecklare som vill lägga till en SWF-multimediefil som en anteckning till ditt PDF-dokument med Aspose.PDF för .NET, är den här steg-för-steg-guiden för dig. I den här artikeln kommer vi att förklara hur du lägger till SWF-filer som anteckningar i dina PDF-dokument med programmeringsspråket C#. 
+Om du är en .NET-utvecklare som vill lägga till en SWF-multimediefil som PDF-kommentar till ditt PDF-dokument med Aspose.PDF för .NET, är den här steg-för-steg-guiden för dig. I den här artikeln kommer vi att förklara hur du lägger till SWF-filer som anteckningar i dina PDF-dokument med programmeringsspråket C#. 
 
 Följ stegen nedan för att lägga till en SWF-fil som en anteckning i ditt PDF-dokument med Aspose.PDF för .NET:
 
@@ -78,7 +78,7 @@ Denna kod kommer att spara det uppdaterade PDF-dokumentet med anteckningen som "
 // Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Öppna PDF-dokumentet
+//Öppna PDF-dokumentet
 Document doc = new Document(dataDir + "AddSwfFileAsAnnotation.pdf");
 
 // Få referens till sidan som du behöver lägga till anteckningen på
@@ -94,3 +94,29 @@ dataDir = dataDir + "AddSwfFileAsAnnotation_out.pdf";
 // Spara uppdateringen av PDF-dokumentet med anteckning
 doc.Save(dataDir);
 ```        
+
+## Slutsats
+
+I den här handledningen undersökte vi hur man lägger till SWF-filer som kommentarer till PDF-dokument med Aspose.PDF för .NET. Genom att följa den steg-för-steg-guide och använda den medföljande C#-källkoden kan .NET-utvecklare enkelt integrera multimediainnehåll och interaktiva element i sina PDF-filer.
+
+### FAQ's
+
+#### F: Vad är en SWF-fil, och varför skulle jag lägga till den som en kommentar till ett PDF-dokument?
+
+S: En SWF-fil är ett multimediafilformat som används för animerad grafik, videor och interaktivt innehåll. Att lägga till SWF-filer som kommentarer till ett PDF-dokument kan förbättra den visuella upplevelsen genom att inkludera interaktiva element, multimedia eller animationer i PDF:en.
+
+#### F: Kan jag lägga till flera SWF-filer som kommentarer till en enda PDF-sida?
+
+S: Ja, du kan lägga till flera SWF-filer som kommentarer till en enda PDF-sida. Varje SWF-fil kommer att visas i sin angivna rektangel på sidan.
+
+#### F: Finns det några begränsningar eller överväganden när du lägger till SWF-filer som anteckningar?
+
+S: Även om du lägger till SWF-filer eftersom anteckningar kan förbättra PDF-filer, är det viktigt att överväga filstorleken och kompatibiliteten med olika PDF-visningsprogram. Vissa PDF-visningsprogram kanske inte stöder SWF-kommentarer, och stora SWF-filer kan öka PDF:ens totala storlek.
+
+#### F: Kan jag ange position och storlek för SWF-filen på PDF-sidan?
+
+ A: Ja, när du skapar en`ScreenAnnotation` objekt kan du ange positionen och storleken på rektangeln där SWF-filen ska visas på PDF-sidan.
+
+#### F: Kan Aspose.PDF för .NET hantera andra multimediaformat för anteckningar?
+
+S: Aspose.PDF för .NET stöder att lägga till olika multimediaformat som kommentarer, inklusive ljud- och videofiler. Du kan följa liknande steg för att lägga till ljud- eller videokommentarer till dina PDF-dokument.

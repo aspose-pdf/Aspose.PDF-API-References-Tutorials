@@ -7,7 +7,6 @@ type: docs
 weight: 40
 url: /sv/net/programming-with-forms/create-doc/
 ---
-
 I den här handledningen kommer vi att visa dig hur du skapar ett dokument med alternativknappar med Aspose.PDF för .NET. Vi kommer att förklara C#-källkoden steg för steg för att guida dig genom denna process.
 
 ##Steg 1: Förberedelser
@@ -101,7 +100,7 @@ try
 	// Skapa ett nytt dokument
 	Document doc = new Document();
 	Page page = doc.Pages.Add();
-	// Lägg till alternativknappsfält
+	// Lägg till alternativknappfält
 	RadioButtonField field = new RadioButtonField(page);
 	field.Rect = new Aspose.Pdf.Rectangle(40, 650, 100, 720);
 	field.PartialName = "NewField";
@@ -143,4 +142,26 @@ catch (Exception ex)
 
 ## Slutsats
 
-I den här handledningen lärde vi oss hur man skapar ett dokument med alternativknappar med Aspose.PDF för .NET. Genom att följa dessa steg kan du enkelt lägga till alternativknappar till dina PDF-dokument med Aspose.PDF.
+den här handledningen lärde vi oss hur man skapar ett dokument med alternativknappar med Aspose.PDF för .NET. Genom att följa dessa steg kan du enkelt lägga till alternativknappar till dina PDF-dokument med Aspose.PDF.
+
+### FAQ's
+
+#### F: Kan jag anpassa utseendet på alternativknapparna i dokumentet med Aspose.PDF för .NET?
+
+S: Ja, du kan anpassa utseendet på alternativknapparna i dokumentet med Aspose.PDF för .NET. Du kan ställa in egenskaper som storlek, färg, kantstil med mera för att anpassa utseendet på alternativknapparna.
+
+#### F: Hur kan jag lägga till alternativknappsgrupper med ömsesidigt uteslutande alternativ?
+
+S: För att skapa ömsesidigt uteslutande alternativ kan du lägga till flera alternativknappsfält med samma namn. Detta säkerställer att när ett alternativ väljs, kommer de andra alternativen med samma namn att automatiskt avmarkeras.
+
+#### F: Är det möjligt att ställa in ett standardval för alternativknapparna?
+
+S: Ja, du kan ställa in ett standardval för alternativknapparna med Aspose.PDF för .NET. Du kan använda`Selected` egendom av`RadioButtonOptionField` objekt för att markera ett alternativ som valt som standard.
+
+#### F: Kan jag lägga till händelsehanterare till alternativknapparna?
+
+ S: Ja, du kan lägga till händelsehanterare till alternativknapparna med Aspose.PDF för .NET. Du kan koppla JavaScript-åtgärder, som t.ex`OnValueChanged`, till alternativknapparna för att utföra specifika åtgärder när användaren väljer ett alternativ.
+
+#### F: Hur kan jag hämta det valda alternativet från alternativknappsgruppen efter att användaren gjort ett val?
+
+ S: Du kan hämta det valda alternativet från radioknappsgruppen med Aspose.PDF för .NET. När användaren har gjort ett val kan du komma åt`Selected` egendom av`RadioButtonOptionField` objekt för att kontrollera vilket alternativ som är valt.

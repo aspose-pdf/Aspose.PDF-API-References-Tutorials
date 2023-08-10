@@ -57,7 +57,7 @@ TextFragment fragment = textFragments[1];
 
 ## Steg 5: Skapa det dolda textfältet
 
- Vi skapar en`TextBoxField`objekt för att representera det dolda textfältet. Detta fält kommer att innehålla texten som blir synlig när muspekaren svävar över triggertexten.
+ Vi skapar en`TextBoxField` objekt för att representera det dolda textfältet. Detta fält kommer att innehålla texten som blir synlig när muspekaren svävar över triggertexten.
 
 ```csharp
 TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
@@ -126,7 +126,7 @@ floatingField.Value = "This is the \"floating text field\".";
 floatingField.ReadOnly = true;
 // Ställ in "dold" flagga för att göra fält osynligt när dokument öppnas
 floatingField.Flags |= AnnotationFlags.Hidden;
-//Att ange ett unikt fältnamn är inte nödvändigt men tillåtet
+// Att ange ett unikt fältnamn är inte nödvändigt men tillåtet
 floatingField.PartialName = "FloatingField_1";
 // Att ställa in egenskaper för fältutseende är inte nödvändigt men gör det bättre
 floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, System.Drawing.Color.Blue);
@@ -137,10 +137,10 @@ floatingField.Border.Width = 1;
 floatingField.Multiline = true;
 // Lägg till textfält i dokumentet
 document.Form.Add(floatingField);
-//Skapa osynlig knapp på textfragmentposition
+// Skapa osynlig knapp på textfragmentposition
 ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
 // Skapa ny gömma åtgärd för specificerat fält (anteckning) och osynlighetsflagga.
-// (Du kan också hänvisa till flytande fält med namnet om du angav det ovan.)
+//(Du kan också hänvisa till flytande fält med namnet om du angav det ovan.)
 // Lägg till åtgärder på musen enter/exit vid det osynliga knappfältet
 buttonField.Actions.OnEnter = new HideAction(floatingField, false);
 buttonField.Actions.OnExit = new HideAction(floatingField);

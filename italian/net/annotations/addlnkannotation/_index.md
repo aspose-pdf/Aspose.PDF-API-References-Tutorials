@@ -103,3 +103,29 @@ dataDir = dataDir + "AddlnkAnnotation_out.pdf";
 // Salva il file di output
 doc.Save(dataDir);
 ```
+
+## Conclusione
+
+In questo tutorial, abbiamo esplorato come aggiungere annotazioni a inchiostro a un documento PDF utilizzando Aspose.PDF per .NET. Seguendo la guida dettagliata e il codice sorgente C# fornito, gli sviluppatori possono facilmente implementare la funzionalità di annotazione a penna nelle proprie applicazioni di elaborazione PDF.
+
+### FAQ
+
+#### D: Cos'è un'annotazione a penna in un documento PDF?
+
+R: Un'annotazione a penna in un documento PDF consente agli utenti di disegnare annotazioni a penna libera utilizzando uno stilo o un mouse. Viene comunemente utilizzato per aggiungere schizzi, diagrammi o altre annotazioni a mano libera a un PDF.
+
+#### D: Posso personalizzare l'aspetto dell'annotazione a penna?
+
+R: Sì, Aspose.PDF per .NET fornisce varie proprietà per personalizzare l'aspetto dell'annotazione a inchiostro, come colore, opacità, stile del cappuccio, larghezza del bordo e altro. Gli sviluppatori possono regolare queste proprietà per soddisfare i loro requisiti specifici.
+
+#### D: È possibile aggiungere più annotazioni a penna a una singola pagina PDF?
+
+R: Sì, puoi aggiungere più annotazioni a inchiostro a una singola pagina PDF utilizzando Aspose.PDF per .NET. Ciascuna annotazione a inchiostro può avere il proprio set di punti e un aspetto personalizzato.
+
+#### D: Posso aggiungere annotazioni a penna ai documenti PDF esistenti?
+
+R: Sì, Aspose.PDF per .NET consente di aggiungere annotazioni a inchiostro sia ai documenti PDF appena creati che ai file PDF esistenti. È possibile aprire un PDF esistente, aggiungere annotazioni a penna e salvare il documento aggiornato.
+
+#### D: Quali sono alcuni casi d'uso comuni per le annotazioni a penna nei documenti PDF?
+
+R: Le annotazioni a penna sono utili per un'ampia gamma di applicazioni, tra cui l'aggiunta di firme o note scritte a mano ai moduli PDF, l'annotazione di progetti architettonici o disegni tecnici e la marcatura di documenti per la revisione collaborativa.

@@ -53,7 +53,7 @@ Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
 ```
 
 ## 7. Adım: Saydamlıkla bir dikdörtgen oluşturun
-Belirli boyutlara sahip bir dikdörtgen oluşturun ve dolgu rengini kullanarak şeffaf bir renge ayarlayın.`Color.FromRgb` yöntem.
+ Belirli boyutlara sahip bir dikdörtgen oluşturun ve dolgu rengini kullanarak şeffaf bir renge ayarlayın.`Color.FromRgb` yöntem.
 
 ```csharp
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 400, 400);
@@ -118,7 +118,7 @@ canvas.IsChangePosition = false;
 TextFragment text = new TextFragment("transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text ");
 // Alfa kanalından renkli nesne oluştur
 Aspose.Pdf.Color color = Aspose.Pdf.Color.FromArgb(30, 0, 255, 0);
-//Metin örneği için renk bilgilerini ayarla
+// Metin örneği için renk bilgilerini ayarla
 text.TextState.ForegroundColor = color;
 // Sayfa örneğinin paragraf koleksiyonuna metin ekleyin
 page.Paragraphs.Add(text);

@@ -7,7 +7,6 @@ type: docs
 weight: 80
 url: /sv/net/document-conversion/page-orientation-according-image-dimensions/
 ---
-
 I den här handledningen går vi igenom processen att ställa in sidorientering baserat på en bilds mått med Aspose.PDF för .NET. Vi går igenom en lista med JPG-bilder i en given katalog och justerar automatiskt sidorienteringen baserat på bredden på varje bild. Följ stegen nedan för att uppnå detta.
 
 ## Förutsättningar
@@ -27,7 +26,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 // Skapa ett nytt PDF-dokument
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
-//Hämta namnen på alla JPG-filer i en viss katalog
+// Hämta namnen på alla JPG-filer i en viss katalog
 string[] fileEntries = Directory.GetFiles(dataDir, "*.JPG");
 ```
 
@@ -70,7 +69,7 @@ page.PageInfo.IsLandscape = false;
 Efter att ha kontrollerat bildens mått lägger vi till bilden i PDF-dokumentets styckesamling. Använd följande kod:
 
 ```csharp
-//Lägg till bilden i styckesamlingen i PDF-dokumentet
+// Lägg till bilden i styckesamlingen i PDF-dokumentet
 page.Paragraphs.Add(image1);
 ```
 
@@ -78,7 +77,7 @@ page.Paragraphs.Add(image1);
 När vi har lagt till alla bilder i PDF-dokumentet kan vi nu spara den resulterande PDF-filen. Här är det sista steget:
 
 ```csharp
-// Spara PDF-filen
+//Spara PDF-filen
 doc.Save(dataDir + "SetPageOrientation_out.pdf");
 ```
 
@@ -124,3 +123,21 @@ doc.Save(dataDir + "SetPageOrientation_out.pdf");
 
 ## Slutsats
 den här handledningen har vi gått igenom processen steg-för-steg för att ställa in sidorientering baserat på en bilds mått med Aspose.PDF för .NET. Genom att följa instruktionerna ovan bör du nu kunna skapa ett PDF-dokument med rätt sidriktning för varje bild. Den här funktionen är användbar när du har bilder av olika storlekar och vill bädda in dem i ett PDF-dokument.
+
+### FAQ's
+
+#### F: Kan jag använda andra bildformat istället för JPG för att ställa in sidorientering baserat på bildens mått?
+
+S: Ja, du kan använda andra bildformat som PNG, BMP eller GIF förutom JPG för att ställa in sidorientering baserat på bildens mått. Den medföljande koden går igenom alla bildfiler med filtillägget ".JPG", men du kan modifiera det så att det inkluderar andra bildformat också.
+
+#### F: Vad händer om en bilds mått är exakt lika med sidbredden?
+
+S: Om en bilds bredd är exakt lika med sidbredden ställs sidorienteringen till stående. I koden som tillhandahålls är sidorienteringen endast inställd på liggande om bildens bredd är större än sidbredden.
+
+#### F: Kan jag anpassa sidorienteringslogiken baserat på specifika krav?
+
+S: Ja, du kan anpassa sidorienteringslogiken baserat på specifika krav. Du kan till exempel ställa in ett tröskelvärde för att bestämma när sidorienteringen ska ställas in på liggande eller stående. Dessutom kan du överväga faktorer som bildhöjd eller bildförhållande för att bestämma sidorienteringen.
+
+#### F: Kan jag lägga till annat innehåll, som text eller tabeller, till PDF-dokumentet tillsammans med bilderna?
+
+S: Ja, du kan lägga till annat innehåll, som text eller tabeller, till PDF-dokumentet tillsammans med bilderna. Aspose.PDF för .NET tillhandahåller en rik uppsättning funktioner för att manipulera PDF-dokument, inklusive att lägga till text, bilder, tabeller och andra element på sidorna.

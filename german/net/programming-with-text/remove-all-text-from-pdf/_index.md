@@ -35,7 +35,7 @@ Document pdfDocument = new Document(dataDir + "RemoveAllText.pdf");
 
 ## Schritt 3: Entfernen Sie den gesamten Text
 
- Wir initialisieren a`TextFragmentAbsorber` Objekt und verwenden Sie es, um den gesamten absorbierten Text aus dem PDF-Dokument zu entfernen.
+ Wir initialisieren a`TextFragmentAbsorber`Objekt und verwenden Sie es, um den gesamten absorbierten Text aus dem PDF-Dokument zu entfernen.
 
 ```csharp
 TextFragmentAbsorber absorb = new TextFragmentAbsorber();
@@ -66,4 +66,4 @@ pdfDocument.Save(dataDir + "RemoveAllText_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 
 ## Abschluss
 
-In diesem Tutorial haben Sie gelernt, wie Sie mithilfe der Aspose.PDF-Bibliothek für .NET den gesamten Text aus einem PDF-Dokument entfernen. Indem Sie der Schritt-für-Schritt-Anleitung folgen und den bereitgestellten C#-Code ausführen, können Sie ein PDF öffnen und den gesamten Text mit a entfernen`TextFragmentAbsorber`, und speichern Sie das geänderte PDF.
+ In diesem Tutorial haben Sie gelernt, wie Sie mithilfe der Aspose.PDF-Bibliothek für .NET den gesamten Text aus einem PDF-Dokument entfernen. Indem Sie der Schritt-für-Schritt-Anleitung folgen und den bereitgestellten C#-Code ausführen, können Sie ein PDF öffnen und den gesamten Text mit a entfernen`TextFragmentAbsorber`, und speichern Sie das geänderte PDF.

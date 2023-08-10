@@ -14,18 +14,18 @@ Handledningarna inkluderar steg-för-steg-instruktioner, detaljerade kodexempel 
 | Titel | Beskrivning |
 | --- | --- | 
 | [Ändra orientering](./change-orientation/) | Steg-för-steg-guide för att ändra sidorientering för en PDF med Aspose.PDF för .NET. Lätt att följa och implementera i dina projekt. |  
-| [Sammanfoga pdf-filer](./concatenate-pdf-files/) | Steg för steg guide för att sammanfoga PDF-filer med Aspose.PDF för .NET. Lätt att följa och implementera i dina projekt. |  
-| [Ta bort specifik sida](./delete-particular-page/) | Steg-för-steg-guide för att ta bort en specifik sida från en PDF-fil med Aspose.PDF för .NET. Lätt att följa och implementera. |  
+| [Sammanfoga PDF-filer](./concatenate-pdf-files/) | Steg för steg guide för att sammanfoga PDF-filer med Aspose.PDF för .NET. Lätt att följa och implementera i dina projekt. |  
+| [Ta bort en viss sida i PDF-fil](./delete-particular-page/) | Steg-för-steg guide för att ta bort en specifik sida i PDF-fil med Aspose.PDF för .NET. Lätt att följa och implementera. |  
 | [Bestäm sidfärg](./determine-page-color/) | Steg-för-steg-guide för att bestämma PDF-sidans färg med Aspose.PDF för .NET. Analysera och visa färgtypen för varje sida. Lätt att implementera. |  
-| [Anpassa sidans innehåll](./fit-page-contents/) | Detaljerad steg-för-steg-guide för att justera PDF-sidans innehåll med Aspose.PDF för .NET. Enkel implementering och givande slutsats. |  
-| [Skaffa dimensioner](./get-dimensions/) | I den här handledningen förklarar vi hur man får PDF-sidadimensioner och utför manipulationer med Aspose.PDF för .NET. Detaljerade steg tillhandahålls för att guida dig genom processen. |  
-| [Få antal sidor](./get-number-of-pages/) | Steg-för-steg guide för att få sidantal för en PDF med Aspose.PDF för .NET. Enkel att implementera, perfekt för dina projekt. |  
-| [Få sidräkning](./get-page-count/) | Steg-för-steg-guide för att få sidantal för en PDF-fil med Aspose.PDF för .NET. Lätt att följa och implementera i dina projekt. |  
+| [Anpassa sidinnehåll i PDF-fil](./fit-page-contents/) | Detaljerad steg-för-steg-guide för att justera sidinnehåll i PDF-fil med Aspose.PDF för .NET. Enkel implementering och givande slutsats. |  
+| [Hämta PDF-sidans dimensioner](./get-dimensions/) | I den här handledningen förklarar vi hur man får PDF-sidadimensioner och utför manipulationer med Aspose.PDF för .NET. Detaljerade steg tillhandahålls för att guida dig genom processen. |  
+| [Få antal sidor i PDF-fil](./get-number-of-pages/) | Steg-för-steg guide för att få antal sidor i PDF-fil med Aspose.PDF för .NET. Enkel att implementera, perfekt för dina projekt. |  
+| [Hämta sidräkning i PDF-fil](./get-page-count/) | Steg-för-steg guide för att få sidräkningen i PDF-fil med Aspose.PDF för .NET. Lätt att följa och implementera i dina projekt. |  
 | [Skaffa en speciell sida](./get-particular-page/) | Steg-för-steg-guide för att extrahera en specifik sida från en PDF-fil med Aspose.PDF för .NET. Lätt att följa och implementera i dina projekt. |  
-| [Skaffa egenskaper](./get-properties/) | Steg-för-steg guide för att få PDF-egenskaper som boxdimensioner och rotation med Aspose.PDF för .NET. |  
-| [Ställ in Bild Som Bakgrund](./image-as-background/) | Steg-för-steg-guide för att ställa in en bild som en sidbakgrund i ett PDF-dokument med Aspose.PDF för .NET. |  
-| [Infoga tom sida](./insert-empty-page/) | Steg-för-steg guide för att infoga tom sida i PDF-fil med Aspose.PDF för .NET. Anpassa dina PDF-filer med lätthet. |  
+| [Hämta PDF-egenskaper](./get-properties/) | Steg-för-steg guide för att få PDF-egenskaper som boxdimensioner och rotation med Aspose.PDF för .NET. |  
+| [Ställ in bild som sidbakgrund i PDF-fil](./image-as-background/) | Steg-för-steg-guide för att ställa in en bild som en sidbakgrund i PDF-fil med Aspose.PDF för .NET. |  
+| [Infoga tom sida i PDF-fil](./insert-empty-page/) | Steg-för-steg-guide för att infoga tom sida i PDF-fil med Aspose.PDF för .NET. Anpassa dina PDF-filer med lätthet. |  
 | [Infoga tom sida vid slutet](./insert-empty-page-at-end/) | Steg-för-steg-guide för att infoga en tom sida i slutet av ett PDF-dokument med Aspose.PDF för .NET. Enkelt och snabbt! |  
 | [Dela upp till sidor](./split-to-pages/) | Steg-för-steg-guide för att dela upp ett PDF-dokument i enskilda sidor med Aspose.PDF för .NET. |  
-| [Uppdatera dimensioner](./update-dimensions/) | Steg-för-steg-guide för att uppdatera PDF-sidans dimensioner med Aspose.PDF för .NET. Kontrollera måtten efter dina behov. |  
-| [Zooma till sidinnehåll](./zoom-to-page-contents/) | Steg-för-steg-guide för att zooma till sidinnehåll i en PDF-fil med Aspose.PDF för .NET. Förbättra dina PDF-dokument enligt dina specifika behov. |  
+| [Uppdatera PDF-sidans dimensioner](./update-dimensions/) | Steg-för-steg-guide för att uppdatera PDF-sidans dimensioner med Aspose.PDF för .NET. Kontrollera måtten efter dina behov. |  
+| [Zooma till sidinnehåll i PDF-fil](./zoom-to-page-contents/) | Steg-för-steg-guide för att zooma till sidinnehåll i PDF-fil med Aspose.PDF för .NET. Förbättra dina PDF-dokument enligt dina specifika behov. |  

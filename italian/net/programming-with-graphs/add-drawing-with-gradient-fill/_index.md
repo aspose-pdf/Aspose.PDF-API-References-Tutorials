@@ -97,3 +97,41 @@ doc.Save(dataDir + "AddDrawingWithGradientFill_out.pdf");
 ## Conclusione
 
 In questo tutorial, abbiamo spiegato passo dopo passo come aggiungere un disegno con un riempimento sfumato alla programmazione con la grafica utilizzando Aspose.PDF per .NET. Ora puoi utilizzare questa conoscenza per creare interessanti documenti PDF con design personalizzati e riempimenti sfumati.
+
+### FAQ
+
+#### D: Qual è lo scopo di questo tutorial?
+
+A: Questo tutorial ha lo scopo di guidarti attraverso il processo di aggiunta di un disegno con riempimento sfumato alla programmazione con grafica utilizzando Aspose.PDF per .NET.
+
+#### D: Quali prerequisiti sono richiesti prima di iniziare?
+
+A: Prima di iniziare, assicurati di aver installato la libreria Aspose.PDF e di aver impostato il tuo ambiente di sviluppo. Inoltre, è consigliabile avere una conoscenza di base della programmazione C#.
+
+#### D: Come faccio a specificare la directory per salvare il file PDF?
+
+R: Nel codice sorgente fornito, è possibile modificare il valore della variabile "dataDir" per indicare la directory in cui si desidera salvare il file PDF risultante.
+
+#### D: Qual è lo scopo dell'oggetto Graph?
+
+R: L'oggetto Graph funge da contenitore per gli elementi del disegno. Viene creato con dimensioni specificate e aggiunto alla raccolta di paragrafi della pagina.
+
+#### D: Come posso configurare il riempimento sfumato per una forma?
+
+R: Per configurare il riempimento sfumato, puoi impostare la proprietà FillColor di GraphInfo di una forma utilizzando la classe GradientAxialShading. Ciò consente di definire i punti iniziale e finale del gradiente e i colori tra cui passare.
+
+#### D: Posso personalizzare i colori e la direzione del riempimento sfumato?
+
+R: Sì, puoi personalizzare i colori e la direzione del riempimento sfumato regolando gli oggetti Color e specificando i punti iniziale e finale di GradientAxialShading.
+
+#### D: Qual è il passaggio finale del tutorial?
+
+R: Il passaggio finale prevede il salvataggio del file PDF risultante con il nome "AddDrawingWithGradientFill_out.pdf" nella directory specificata.
+
+#### D: È disponibile un codice sorgente di esempio?
+
+R: Sì, il tutorial fornisce un codice sorgente di esempio che puoi utilizzare come riferimento per implementare i passaggi descritti.
+
+#### D: Posso applicare il riempimento sfumato ad altre forme oltre ai rettangoli?
+
+R: Sì, puoi applicare il riempimento sfumato anche ad altre forme. Il processo prevede la configurazione della proprietà FillColor del GraphInfo della forma utilizzando la classe GradientAxialShading.

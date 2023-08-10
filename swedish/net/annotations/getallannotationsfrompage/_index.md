@@ -81,3 +81,29 @@ foreach (MarkupAnnotation annotation in pdfDocument.Pages[1].Annotations)
 	Console.WriteLine("Contents : {0} ", annotation.Contents);                
 }
 ```
+
+## Slutsats
+
+I den här handledningen undersökte vi hur man får alla kommentarer från en specifik sida i ett PDF-dokument med Aspose.PDF för .NET. Genom att följa steg-för-steg-guiden och använda den medföljande C#-källkoden kan utvecklare enkelt extrahera och hantera kommentarer från sina PDF-dokument.
+
+### FAQ's
+
+#### F: Vad är anteckningar i ett PDF-dokument?
+
+S: Anteckningar i ett PDF-dokument är interaktiva element som ger ytterligare information, kommentarer eller anteckningar om specifika delar av dokumentet. Anteckningar kan innehålla textanteckningar, kommentarer, höjdpunkter och andra interaktiva element.
+
+#### F: Kan jag bara få kommentarer från specifika sidor?
+
+S: Ja, med Aspose.PDF för .NET kan du få kommentarer från specifika sidor eller till och med från hela dokumentet, beroende på dina krav.
+
+#### F: Har Aspose.PDF för .NET stöd för att extrahera kommentarer från lösenordsskyddade PDF-filer?
+
+ S: Ja, Aspose.PDF för .NET stöder extrahering av kommentarer från lösenordsskyddade PDF-filer. Du måste ange rätt lösenord när du laddar PDF-dokumentet med hjälp av`Document` klass.
+
+#### F: Kan jag filtrera kommentarer baserat på deras egenskaper, som innehåll eller författare?
+
+S: Ja, Aspose.PDF för .NET tillhandahåller metoder för att få åtkomst till och filtrera kommentarer baserat på deras egenskaper, såsom innehåll, författare eller skapelsedatum. Du kan gå igenom alla kommentarer och leta efter de specifika egenskaper du vill filtrera.
+
+#### F: Har Aspose.PDF för .NET stöd för att extrahera kommentarer från olika typer av PDF-dokument?
+
+S: Ja, Aspose.PDF för .NET tillhandahåller olika metoder för att extrahera kommentarer från olika typer av PDF-dokument, inklusive textmarkeringskommentarer, fritextkommentarer och mer.

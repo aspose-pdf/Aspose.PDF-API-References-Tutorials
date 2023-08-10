@@ -1,13 +1,13 @@
 ---
-title: Lägg till datum och tidsstämpel
-linktitle: Lägg till datum och tidsstämpel
+title: Lägg till datum Tidstämpel i PDF-fil
+linktitle: Lägg till datum Tidstämpel i PDF-fil
 second_title: Aspose.PDF för .NET API Referens
-description: Lär dig hur du enkelt lägger till en datum- och tidsstämpel i dina PDF-dokument med Aspose.PDF för .NET.
+description: Lär dig hur du enkelt lägger till en datum- och tidsstämpel i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 10
 url: /sv/net/programming-with-stamps-and-watermarks/add-date-time-stamp/
 ---
-I den här artikeln tar vi dig steg för steg om hur du lägger till en datum- och tidsstämpel med Aspose.PDF för .NET. Vi visar dig hur du använder den medföljande C#-källkoden för att lägga till en datum- och tidsstämpel i ett befintligt PDF-dokument.
+den här artikeln tar vi dig steg för steg om hur du lägger till en datum- och tidsstämpel i PDF-fil med Aspose.PDF för .NET. Vi visar dig hur du använder den medföljande C#-källkoden för att lägga till en datum- och tidsstämpel till en befintlig PDF-fil.
 
 ## Krav
 
@@ -139,3 +139,41 @@ Console.WriteLine("\nDate time stamp added successfully.\nFile saved at " + data
 ## Slutsats
 
 Grattis! Du har lärt dig hur du lägger till en datum- och tidsstämpel med Aspose.PDF för .NET. Nu kan du tillämpa denna kunskap på dina egna projekt för att lägga till datum- och tidsstämplar till PDF-dokument.
+
+### Vanliga frågor för att lägga till datum och tidsstämpel i PDF-fil
+
+#### F: Vad är syftet med att lägga till en datum- och tidsstämpel i ett PDF-dokument med Aspose.PDF för .NET?
+
+S: Att lägga till en datum- och tidsstämpel i ett PDF-dokument ökar dess informationsvärde genom att ange när dokumentet ändrades eller skapades. Den här funktionen är användbar för att spåra dokumentändringar och tillhandahålla en referenspunkt för dokumenthistorik.
+
+#### F: Kan jag anpassa formatet på datum- och tidsstämpeln för att matcha specifika krav?
+
+ S: Ja, du kan anpassa formatet för datum- och tidsstämpeln enligt dina önskemål. Den medföljande C#-källkoden använder`DateTime.Now.ToString()` metod för att generera tidsstämpeln i ett specifikt format. Du kan ändra den här koden för att formatera tidsstämpeln efter behov.
+
+#### F: Är det möjligt att lägga till datum och tidsstämpel på en specifik plats på en PDF-sida?
+
+ S: Absolut, du kan justera placeringen av datum- och tidsstämpeln på PDF-sidan genom att ändra egenskaperna för`TextStamp` objekt. Koden som tillhandahålls i handledningen visar hur man ställer in egenskaper som marginal, justering och vertikal positionering.
+
+#### F: Kan jag lägga till flera datum- och tidsstämplar på olika sidor i samma PDF-dokument?
+
+ S: Ja, du kan lägga till flera datum- och tidsstämplar på olika sidor i samma PDF-dokument. Upprepa helt enkelt processen att skapa en`TextStamp` objekt och konfigurera dess egenskaper för varje önskad sida.
+
+#### F: Hur kan jag ändra teckensnitt, storlek eller färg på datum- och tidsstämpeltexten?
+
+ S: För att ändra teckensnitt, storlek eller färg på datum- och tidsstämpeltexten kan du anpassa egenskaperna för`DefaultAppearance` objekt som används för att skapa`TextStamp`. Justera teckensnittsnamn, storlek och färgvärden för att uppnå önskat utseende.
+
+#### F: Är det möjligt att lägga till andra typer av anteckningar eller stämplar till ett PDF-dokument med Aspose.PDF för .NET?
+
+S: Ja, Aspose.PDF för .NET tillhandahåller ett brett utbud av anteckningstyper som du kan lägga till i PDF-dokument, inklusive textkommentarer, stämplar, linjer, former och mer. Du kan utforska Aspose.PDF-dokumentationen för ytterligare information om hur du arbetar med anteckningar.
+
+#### F: Finns det några begränsningar eller överväganden när du lägger till en datum- och tidsstämpel i ett PDF-dokument?
+
+S: Även om det är enkelt att lägga till en datum- och tidsstämpel, överväg faktorer som dokumentets layout och befintligt innehåll. Se till att stämpelns placering inte skymmer viktig information eller påverkar dokumentets läsbarhet.
+
+#### F: Hur kan jag integrera den här metoden i mina egna projekt för att lägga till datum- och tidsstämplar i PDF-dokument?
+
+S: För att integrera denna metod, följ de medföljande stegen och justera koden så att den passar ditt projekts struktur. Du kan lägga till datum- och tidsstämplar i befintliga PDF-dokument för att förbättra deras användbarhet och ge en tydlig tidslinje för ändringar.
+
+#### F: Kan jag automatisera processen att lägga till datum- och tidsstämplar i flera PDF-dokument?
+
+S: Ja, du kan automatisera processen att lägga till datum- och tidsstämplar till flera PDF-dokument genom att skapa ett skript eller program som itererar genom en lista med dokument och tillämpar samma stämplingsprocess på var och en.

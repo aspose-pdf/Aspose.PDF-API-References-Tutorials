@@ -13,4 +13,4 @@ Esplora le funzionalità di Aspose.PDF per .NET con tutorial dedicati. Scopri co
 ## Tutorial
 | Titolo | Descrizione |
 | --- | --- | 
-| [Applica stile numero](./apply-number-style/) | Scopri come applicare uno stile di numerazione alle intestazioni in un documento PDF utilizzando Aspose.PDF per .NET. Guida passo passo. |   
+| [Applica stile numero nel file PDF](./apply-number-style/) | Scopri come applicare uno stile di numerazione alle intestazioni nel file PDF utilizzando Aspose.PDF per .NET. Guida passo passo. |   

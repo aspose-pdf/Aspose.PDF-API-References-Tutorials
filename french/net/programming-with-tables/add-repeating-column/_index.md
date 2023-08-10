@@ -1,14 +1,13 @@
 ---
-title: Ajouter une colonne extensible
-linktitle: Ajouter une colonne extensible
+title: Ajouter une colonne répétitive dans un document PDF
+linktitle: Ajouter une colonne répétitive dans un document PDF
 second_title: Référence de l'API Aspose.PDF pour .NET
-description: Apprenez à ajouter une colonne extensible dans un document PDF à l'aide d'Aspose.PDF pour .NET.
+description: Apprenez à ajouter une colonne répétitive dans un document PDF à l'aide d'Aspose.PDF pour .NET.
 type: docs
 weight: 20
 url: /fr/net/programming-with-tables/add-repeating-column/
 ---
-
-Dans ce didacticiel, nous allons apprendre à ajouter une colonne extensible dans un document PDF à l'aide d'Aspose.PDF pour .NET. Nous expliquerons pas à pas le code source en C#. A la fin de ce tutoriel, vous saurez comment créer un tableau avec une colonne extensible dans un document PDF. Commençons!
+Dans ce didacticiel, nous allons apprendre à ajouter une colonne répétitive dans un document PDF à l'aide d'Aspose.PDF pour .NET. Nous expliquerons pas à pas le code source en C#. A la fin de ce tutoriel, vous saurez comment créer un tableau avec une colonne extensible dans un document PDF. Commençons!
 
 ## Étape 1 : Configurer l'environnement
 Tout d'abord, assurez-vous d'avoir configuré votre environnement de développement C# avec Aspose.PDF pour .NET. Ajoutez la référence à la bibliothèque et importez les espaces de noms nécessaires.
@@ -70,7 +69,7 @@ for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
      row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
      row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
      // ...
-     //Ajouter les autres colonnes ici
+     // Ajouter les autres colonnes ici
 }
 ```
 
@@ -102,7 +101,7 @@ Aspose.Pdf.Table outerTable = new Aspose.Pdf.Table();
 outerTable.ColumnWidths = "100%";
 outerTable.HorizontalAlignment = HorizontalAlignment.Left;
 
-// Instanciez un objet table qui sera imbriqué dans outerTable qui se cassera à l'intérieur de la même page
+//Instanciez un objet table qui sera imbriqué dans outerTable qui se cassera à l'intérieur de la même page
 Aspose.Pdf.Table mytable = new Aspose.Pdf.Table();
 mytable.Broken = TableBroken.VerticalInSamePage;
 mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;
@@ -158,3 +157,25 @@ doc.Save(outFile);
 
 ## Conclusion
 Dans ce didacticiel, nous avons appris à ajouter une colonne extensible dans un document PDF à l'aide d'Aspose.PDF pour .NET. Vous pouvez utiliser ce guide étape par étape pour créer des tables avec des colonnes répétitives dans vos propres projets C#.
+
+### FAQ pour ajouter une colonne répétitive dans un document PDF
+
+#### Q : Puis-je personnaliser le nombre de colonnes répétées dans le tableau imbriqué ?
+
+ R : Oui, vous pouvez personnaliser le nombre de colonnes répétées dans le tableau imbriqué. Dans l'exemple fourni, nous posons`mytable.RepeatingColumnsCount = 5;`, ce qui signifie qu'il y aura 5 colonnes répétées. Vous pouvez remplacer cette valeur par n'importe quel nombre souhaité.
+
+#### Q : Est-il possible d'ajouter dynamiquement plus de lignes au tableau imbriqué ?
+
+R : Oui, vous pouvez ajouter dynamiquement d'autres lignes au tableau imbriqué de la même manière que celle indiquée dans le didacticiel. Vous pouvez utiliser des boucles ou toute autre logique pour ajouter des lignes en fonction de vos données.
+
+#### Q : Puis-je appliquer des styles et une mise en forme au tableau et à ses cellules ?
+
+R : Oui, vous pouvez appliquer des styles et une mise en forme au tableau et à ses cellules à l'aide d'Aspose.PDF pour .NET. La bibliothèque fournit diverses propriétés et méthodes pour personnaliser l'apparence de la table et de son contenu.
+
+#### Q : Aspose.PDF pour .NET est-il compatible avec .NET Core ?
+
+R : Oui, Aspose.PDF pour .NET est compatible avec .NET Core. Vous pouvez l'utiliser dans les applications .NET Framework et .NET Core.
+
+#### Q : Puis-je utiliser cette approche pour ajouter des colonnes répétitives dans un document PDF existant ?
+
+R : Oui, vous pouvez utiliser cette approche pour ajouter des colonnes répétitives dans un document PDF existant. Chargez simplement le document existant à l'aide d'Aspose.PDF pour .NET et suivez les mêmes étapes pour créer et ajouter la colonne répétitive.

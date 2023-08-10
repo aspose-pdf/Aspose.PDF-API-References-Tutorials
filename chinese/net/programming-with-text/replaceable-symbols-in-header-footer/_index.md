@@ -8,18 +8,18 @@ weight: 320
 url: /zh/net/programming-with-text/replaceable-symbols-in-header-footer/
 ---
 
-在本教程中，我们将解释如何使用适用于 .NET 的 Aspose.PDF 库在 PDF 文档的页眉和页脚中使用可替换符号。我们将逐步完成创建 PDF、设置边距、添加带有可替换符号的页眉和页脚以及使用提供的 C# 源代码保存 PDF 的过程。
+在本教程中，我们将解释如何使用 .NET 的 Aspose.PDF 库在 PDF 文档的页眉和页脚中使用可替换符号。我们将逐步完成创建 PDF、设置边距、使用可替换符号添加页眉和页脚以及使用提供的 C# 源代码保存 PDF 的过程。
 
 ## 先决条件
 
-在开始之前，请确保您具有以下内容：
+在开始之前，请确保您具备以下条件：
 
 - 安装了 Aspose.PDF for .NET 库。
-- 对 C# 编程有基本的了解。
+- 对 C# 编程有基本了解。
 
 ## 第 1 步：设置文档目录
 
-首先，您需要将路径设置为要保存生成的 PDF 文件的目录。代替`"YOUR DOCUMENT DIRECTORY"`在里面`dataDir`带有所需目录路径的变量。
+首先，您需要设置要保存生成的 PDF 文件的目录路径。代替`"YOUR DOCUMENT DIRECTORY"`在里面`dataDir`变量包含您所需目录的路径。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -27,7 +27,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## 第 2 步：创建 PDF 文档和页面
 
-接下来，我们创建一个新的 PDF 文档并使用`Document`类和`Page` Aspose.PDF 库中的类。
+接下来，我们创建一个新的 PDF 文档并使用以下命令向其中添加页面`Document`类和`Page`来自 Aspose.PDF 库的类。
 
 ```csharp
 Document doc = new Document();
@@ -36,7 +36,7 @@ Page page = doc.Pages.Add();
 
 ## 第 3 步：设置边距
 
-我们使用`MarginInfo`班级。根据您的要求调整边距值。
+我们使用以下命令设置页面的边距`MarginInfo`班级。根据您的要求调整边距值。
 
 ```csharp
 MarginInfo marginInfo = new MarginInfo();
@@ -47,9 +47,9 @@ marginInfo.Right = 50;
 page.PageInfo.Margin = marginInfo;
 ```
 
-## 第 4 步：添加带有可替换符号的标题
+## 步骤 4：添加带有可替换符号的标题
 
-我们创造一个`HeaderFooter`页面的对象并添加一个`TextFragment`带有可替换符号。
+我们创建一个`HeaderFooter`页面对象并添加`TextFragment`带有可替换的符号。
 
 ```csharp
 HeaderFooter hfFirst = new HeaderFooter();
@@ -68,12 +68,12 @@ t1.TextState.LineSpacing = 5f;
 
 hfFirst.Paragraphs.Add(t1);
 
-//添加更多 TextFragments 或根据需要自定义
+//添加更多 TextFragments 或根据需要进行自定义
 ```
 
 ## 第 5 步：添加带有可替换符号的页脚
 
-同样，我们创建一个`HeaderFooter`页脚的对象并添加`TextFragment`具有可替换符号的对象。
+同样，我们创建一个`HeaderFooter`页面页脚对象并添加`TextFragment`带有可替换符号的对象。
 
 ```csharp
 HeaderFooter hfFoot = new HeaderFooter();
@@ -85,7 +85,7 @@ TextFragment t3 = new TextFragment("Generated on test date");
 TextFragment t4 = new TextFragment("report name ");
 TextFragment t5 = new TextFragment("Page $p of $P");
 
-//添加更多 TextFragments 或根据需要自定义
+//添加更多 TextFragments 或根据需要进行自定义
 
 hfFoot.Paragraphs.Add(tab2);
 ```
@@ -100,7 +100,7 @@ doc.Save(dataDir);
 Console.WriteLine("\nReplaceable symbols replaced successfully in the header and footer.\nFile saved at " + dataDir);
 ```
 
-### 使用 Aspose.PDF for .NET 的页眉页脚中可替换符号的示例源代码 
+### 使用 Aspose.PDF for .NET 在页眉页脚中替换符号的示例源代码 
 ```csharp
 //文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -133,19 +133,19 @@ t2.TextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 t2.TextState.LineSpacing = 5f;
 t2.TextState.FontSize = 12;
 hfFirst.Paragraphs.Add(t2);
-//为该部分创建一个 HeaderFooter 对象
+//为该部分创建 HeaderFooter 对象
 HeaderFooter hfFoot = new HeaderFooter();
-//将 HeaderFooter 对象设置为奇偶页脚
+//将 HeaderFooter 对象设置为奇数页脚和偶数页脚
 page.Footer = hfFoot;
 hfFoot.Margin.Left = 50;
 hfFoot.Margin.Right = 50;
-//添加包含当前页码总页数的文本段落
+//添加包含当前页码占总页数的文本段落
 TextFragment t3 = new TextFragment("Generated on test date");
 TextFragment t4 = new TextFragment("report name ");
 TextFragment t5 = new TextFragment("Page $p of $P");
 //实例化一个表对象
 Table tab2 = new Table();
-//在所需部分的段落集合中添加表格
+//将表格添加到所需部分的段落集合中
 hfFoot.Paragraphs.Add(tab2);
 //设置表格的列宽
 tab2.ColumnWidths = "165 172 165";
@@ -154,20 +154,20 @@ Row row3 = tab2.Rows.Add();
 row3.Cells.Add();
 row3.Cells.Add();
 row3.Cells.Add();
-//将文本的垂直对齐方式设置为居中对齐
+//设置文本的垂直对齐方式为居中对齐
 row3.Cells[0].Alignment = Aspose.Pdf.HorizontalAlignment.Left;
 row3.Cells[1].Alignment = Aspose.Pdf.HorizontalAlignment.Center;
 row3.Cells[2].Alignment = Aspose.Pdf.HorizontalAlignment.Right;
 row3.Cells[0].Paragraphs.Add(t3);
 row3.Cells[1].Paragraphs.Add(t4);
 row3.Cells[2].Paragraphs.Add(t5);
-//Sec1.Paragraphs.Add(New Text("Aspose.Total for Java 是 Aspose 提供的每个 Java 组件的编译。它在#$NL" + "每日编译以确保它包含每个组件的最新版本我们的 Java 组件。#$NL " + "使用 Aspose.Total for Java 开发人员可以创建范围广泛的应用程序。#$NL #$NL #$NP" + "Aspose.Total for Java 是每个 Java 组件的汇编由 Aspose 提供。它每天编译#$NL" + "以确保它包含我们每个 Java 组件的最新版本。#$NL " + "使用 Aspose.Total for Java 开发人员可以创建广泛的应用程序范围。#$NL #$NL #$NP" + "Aspose.Total for Java 是 Aspose 提供的每个 Java 组件的编译。它在#$NL" + "每日编译，以确保它包含最我们每个 Java 组件的最新版本。#$NL " + "使用 Aspose.Total for Java 开发人员可以创建范围广泛的应用程序。#$NL #$NL"))
+//Sec1.Paragraphs.Add(New Text("Aspose.Total for Java 是 Aspose 提供的每个 Java 组件的编译。它是在#$NL" + "每日基础上编译的，以确保它包含每个组件的最新版本#$NL " + "使用 Aspose.Total for Java 开发人员可以创建广泛的应用程序。#$NL #$NL #$NP" + "Aspose.Total for Java 是每个 Java 组件的编译由 Aspose 提供。它每天进行编译，以确保它包含我们每个 Java 组件的最新版本。#$NL" + "Java 开发人员使用 Aspose.Total 可以创建广泛的#$NL #$NL #$NP" + "Aspose.Total for Java 是 Aspose 提供的每个 Java 组件的编译。它每天进行编译，以确保它包含最多的内容我们每个 Java 组件的最新版本。#$NL " + "Java 开发人员使用 Aspose.Total 可以创建广泛的应用程序。#$NL #$NL"))
 Table table = new Table();
 table.ColumnWidths = "33% 33% 34%";
 table.DefaultCellPadding = new MarginInfo();
 table.DefaultCellPadding.Top = 10;
 table.DefaultCellPadding.Bottom = 10;
-//在所需部分的段落集合中添加表格
+//将表格添加到所需部分的段落集合中
 page.Paragraphs.Add(table);
 //使用 BorderInfo 对象设置默认单元格边框
 table.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1f);
@@ -204,4 +204,4 @@ Console.WriteLine("\nSymbols replaced successfully in header and footer.\nFile s
 
 ## 结论
 
-在本教程中，您学习了如何使用适用于 .NET 的 Aspose.PDF 库在 PDF 文档的页眉和页脚中使用可替换符号。按照分步指南并执行提供的 C# 代码，您可以创建 PDF、设置页边距、添加带有可替换符号的页眉和页脚，以及保存 PDF。
+在本教程中，您学习了如何使用 .NET 的 Aspose.PDF 库在 PDF 文档的页眉和页脚中使用可替换符号。通过遵循分步指南并执行提供的 C# 代码，您可以创建 PDF、设置边距、添加带有可替换符号的页眉和页脚以及保存 PDF。

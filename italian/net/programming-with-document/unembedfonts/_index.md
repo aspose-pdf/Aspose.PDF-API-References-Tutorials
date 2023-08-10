@@ -1,6 +1,6 @@
 ---
-title: Disincorpora i caratteri
-linktitle: Disincorpora i caratteri
+title: Disincorpora i caratteri e ottimizza i file PDF
+linktitle: Disincorpora i caratteri e ottimizza i file PDF
 second_title: Aspose.PDF per riferimento API .NET
 description: Scopri come utilizzare Aspose.PDF per .NET per ottenere font Unembed e ottimizzare i file PDF. Una guida passo passo.
 type: docs
@@ -24,7 +24,7 @@ Sostituisci "YOUR DOCUMENT DIRECTORY" con il percorso effettivo della directory 
 
 ## Passaggio 2: apri il documento PDF
 
-Il primo passo è caricare il documento PDF che vuoi fare, usa il file`Document` classe di Aspose.PDF per .NET. Il seguente frammento di codice mostra come caricare il documento PDF:
+ Il primo passo è caricare il documento PDF che vuoi fare, usa il file`Document` classe di Aspose.PDF per .NET. Il seguente frammento di codice mostra come caricare il documento PDF:
 
 ```csharp
 // Apri documento
@@ -54,7 +54,7 @@ pdfDocument.OptimizeResources(optimizeOptions);
 
 ## Passaggio 5: salvare il documento aggiornato
 
- Una volta ottimizzato il documento PDF, è possibile salvare il documento aggiornato utilizzando il file`Save` metodo del`Document` classe. Il seguente frammento di codice mostra come salvare il documento aggiornato:
+ Una volta ottimizzato il documento PDF, è possibile salvare il documento aggiornato utilizzando il file`Save` metodo del`Document`classe. Il seguente frammento di codice mostra come salvare il documento aggiornato:
 
 ```csharp
 // Salva documento aggiornato
@@ -63,7 +63,7 @@ pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
 
 ## Passaggio 6: ottieni la dimensione del file originale e ridotta
 
- Infine, puoi ottenere la dimensione del file originale e ridotta del documento PDF utilizzando il file`FileInfo`classe di System.IO. Il seguente frammento di codice mostra come ottenere la dimensione del file originale e ridotta:
+ Infine, puoi ottenere la dimensione del file originale e ridotta del documento PDF utilizzando il file`FileInfo` classe di System.IO. Il seguente frammento di codice mostra come ottenere la dimensione del file originale e ridotta:
 
 ```csharp
 var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
@@ -91,6 +91,45 @@ pdfDocument.OptimizeResources(optimizeOptions);
 // Salva documento aggiornato
 pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
 Console.WriteLine("Finished");
+var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
+var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
+Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
+```
+
+## Conclusione
+
+In questo tutorial, abbiamo dimostrato come utilizzare Aspose.PDF per .NET per ottenere caratteri non incorporati da un documento PDF. Seguendo la guida dettagliata, puoi facilmente implementare questa funzionalità nelle tue applicazioni C#. L'annullamento dell'incorporamento dei caratteri può essere vantaggioso quando è necessario lavorare separatamente con i caratteri estratti o garantire un utilizzo coerente dei caratteri su varie piattaforme.
+
+## FAQ
+
+#### D: Qual è lo scopo dell'annullamento dell'incorporamento dei caratteri da un documento PDF?
+
+R: L'eliminazione dei caratteri da un documento PDF consente di estrarre i caratteri incorporati e utilizzarli in altre applicazioni. Ciò può essere utile per garantire un rendering coerente dei caratteri e preservare l'aspetto visivo del documento.
+
+#### D: Come si specifica il percorso della directory dei documenti nel codice C#?
+
+ R: Per specificare il percorso della directory del documento, sostituisci`"YOUR DOCUMENT DIRECTORY"` nel codice con il percorso effettivo della directory in cui si trova il documento PDF.
+
+####  D: Che cosa significa`UnembedFonts` option do, and where is it set?
+
+ R: Il`UnembedFonts` opzione, disponibile nel`OptimizationOptions` class, abilita o disabilita l'annullamento dell'incorporamento dei font dal documento PDF. Per impostare questa opzione su`true`, utilizzare il seguente codice:
+
+```csharp
+var optimizeOptions = new Pdf.Optimization.OptimizationOptions
+{
+	UnembedFonts = true
+};
+```
+
+#### D: Posso annullare le modifiche apportate durante il processo di ottimizzazione?
+
+R: Aspose.PDF per .NET non apporta modifiche permanenti al documento PDF originale durante l'ottimizzazione. Il processo di ottimizzazione viene eseguito su una copia del documento, lasciando intatto l'originale.
+
+#### D: Come posso controllare la dimensione del file originale e quella ridotta dopo l'ottimizzazione?
+
+R: Puoi usare il`FileInfo` classe di`System.IO` per ottenere la dimensione del file originale e ridotta. Ecco uno snippet di codice di esempio per raggiungere questo obiettivo:
+
+```csharp
 var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
 var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
 Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);

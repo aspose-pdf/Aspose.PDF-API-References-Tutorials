@@ -277,4 +277,46 @@ document.Save(dataDir + "InlineStructureElements.pdf");
 
 ## Conclusión
 
-¡Felicidades! Ha aprendido a utilizar elementos de estructura en línea con Aspose.PDF para .NET. Ahora puede crear una estructura jerárquica en su documento PDF utilizando encabezados de diferentes niveles y párrafos. Explore más características de Aspose.PDF para descubrir todo su potencial.
+¡Felicidades! Ha aprendido a utilizar elementos de estructura en línea con Aspose.PDF para .NET. Ahora puede crear una estructura jerárquica en su documento PDF utilizando encabezados de diferentes niveles y párrafos. Explore más funciones de Aspose.PDF para descubrir todo su potencial.
+
+### Preguntas frecuentes
+
+#### P: ¿Qué son los elementos de estructura en línea en un documento PDF y cómo contribuyen a crear una estructura jerárquica?
+
+R: Los elementos de estructura en línea en un documento PDF, como encabezados de diferentes niveles y párrafos, se utilizan para crear una estructura jerárquica que organiza y presenta el contenido de manera estructurada. Estos elementos le permiten establecer una jerarquía clara y un flujo de información dentro del documento.
+
+#### P: ¿Cómo pueden los elementos de estructura en línea mejorar la legibilidad y la organización de un documento PDF?
+
+R: Los elementos de la estructura en línea, en particular los encabezados y los párrafos, ayudan a mejorar la legibilidad y la organización de un documento PDF al proporcionar una estructura lógica. Los encabezados indican diferentes niveles de importancia y ayudan a los lectores a navegar por el contenido, mientras que los párrafos agrupan la información relacionada.
+
+#### P: ¿Cómo facilita Aspose.PDF para .NET el uso de elementos de estructura en línea?
+
+R: Aspose.PDF para .NET ofrece clases y métodos para crear y manipular elementos de estructura en línea, como encabezados y párrafos. Estos elementos se pueden personalizar, organizar jerárquicamente y enriquecer con contenido para mejorar la presentación visual y la accesibilidad del documento.
+
+####  P: ¿Cuál es el propósito de la`taggedContent` object in relation to inline structure elements?
+
+ R: El`taggedContent` objeto, obtenido de la`TaggedContent` propiedad de un`Document`, le permite trabajar con elementos estructurados, incluidos los elementos de estructura en línea. Le permite crear, personalizar y organizar encabezados y párrafos dentro del documento.
+
+#### P: ¿Cómo ayudan los elementos de estructura en línea a crear una jerarquía de documentos clara?
+
+R: Los elementos de la estructura en línea, como los encabezados de varios niveles, contribuyen a establecer una jerarquía clara y bien definida en el documento. Los lectores pueden identificar rápidamente los temas principales, los subtemas y el contenido relacionado, lo que facilita la navegación y la comprensión del documento.
+
+#### P: ¿Puedo personalizar la apariencia y el formato de los elementos de estructura en línea usando Aspose.PDF para .NET?
+
+R: Sí, puede personalizar la apariencia y el formato de los elementos de la estructura en línea. Puede establecer propiedades como estilos de fuente, tamaños, colores, alineación, sangría y espaciado para lograr la presentación visual deseada para encabezados y párrafos.
+
+#### P: ¿Cómo creo y agrego encabezados de diferentes niveles a un documento PDF utilizando elementos de estructura en línea en Aspose.PDF para .NET?
+
+ R: Puede crear encabezados de diferentes niveles usando el`CreateHeaderElement` y luego agréguelos al elemento de estructura raíz. Posteriormente, puede agregar contenido a cada elemento de encabezado usando el`CreateSpanElement` método para crear tramos de texto.
+
+#### P: ¿Puedo usar elementos de estructura en línea para crear listas, viñetas u otros tipos de organización de contenido en un documento PDF?
+
+R: Si bien los elementos de estructura en línea se usan principalmente para encabezados y párrafos, puede usarlos en combinación con otras características que ofrece Aspose.PDF para .NET para crear listas, viñetas, tablas y otros tipos de organización de contenido para una estructura del documento.
+
+#### P: ¿Cómo contribuyen los elementos de la estructura en línea a la accesibilidad del documento?
+
+R: Los elementos de la estructura en línea juegan un papel crucial en la mejora de la accesibilidad de los documentos. Los encabezados y párrafos correctamente estructurados brindan una jerarquía de documentos clara que ayuda a los lectores de pantalla y otras tecnologías de asistencia a interpretar y transmitir con precisión el contenido a los usuarios con discapacidades.
+
+#### P: ¿Puedo explorar usos más avanzados de elementos de estructura en línea, como crear elementos interactivos o incrustar multimedia?
+
+R: ¡Absolutamente! Si bien este tutorial se enfoca en la creación de encabezados y párrafos, Aspose.PDF para .NET ofrece funciones avanzadas para crear elementos interactivos, incrustar multimedia, agregar hipervínculos y más. Consulte la documentación y los ejemplos de la biblioteca para profundizar en estas capacidades avanzadas.

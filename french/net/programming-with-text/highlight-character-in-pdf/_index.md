@@ -19,7 +19,7 @@ Avant de commencer, assurez-vous que vous disposez des éléments suivants :
 
 ## Étape 1 : Configurer le répertoire de documents
 
- Tout d'abord, vous devez définir le chemin d'accès au répertoire où se trouve votre fichier PDF d'entrée. Remplacer`"YOUR DOCUMENT DIRECTORY"` dans le`dataDir` variable avec le chemin d'accès à votre fichier PDF.
+ Tout d'abord, vous devez définir le chemin d'accès au répertoire où se trouve votre fichier PDF d'entrée. Remplacer`"YOUR DOCUMENT DIRECTORY"` dans le`dataDir`variable avec le chemin d'accès à votre fichier PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -74,7 +74,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
          {
              if (i == 0)
              {
-                 //Mettre en surbrillance les caractères
+                 // Mettre en surbrillance les caractères
                  gr.DrawRectangle(
                      Think.Yellow,
                      (float)textFragment.Position.XIndent,

@@ -24,7 +24,7 @@ Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- Ersetzen`"YOUR DOCUMENT DIRECTORY"` mit dem Pfad zu dem Verzeichnis, in dem sich Ihre Dokumente befinden. Dies wird zum Speichern aller generierten PDF-Dateien verwendet.
+ Ersetzen`"YOUR DOCUMENT DIRECTORY"`mit dem Pfad zu dem Verzeichnis, in dem sich Ihre Dokumente befinden. Dies wird zum Speichern aller generierten PDF-Dateien verwendet.
 
 ## Schritt 2: Finden Sie die Schriftart
 

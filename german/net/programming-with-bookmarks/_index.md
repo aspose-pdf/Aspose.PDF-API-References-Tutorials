@@ -13,14 +13,14 @@ Darüber hinaus zeigen Ihnen diese Tutorials, wie Sie Lesezeicheneigenschaften w
 ## Tutorials
 | Titel | Beschreibung |
 | --- | --- | 
-| [Lesezeichen hinzufügen](./add-bookmark/) | Fügen Sie mit Aspose.PDF für .NET ganz einfach Lesezeichen zu Ihren PDF-Dateien hinzu, um die Navigation zu verbessern. |  
-| [Untergeordnetes Lesezeichen hinzufügen](./add-child-bookmark/) | Fügen Sie mit Aspose.PDF für .NET ganz einfach untergeordnete Lesezeichen zu Ihren PDF-Dateien hinzu, um das Durchsuchen besser zu organisieren. |  
-| [Alle Lesezeichen löschen](./delete-all-bookmarks/) | Mit Aspose.PDF für .NET können Sie ganz einfach alle Lesezeichen aus Ihren PDF-Dateien löschen. |  
-| [Bestimmtes Lesezeichen löschen](./delete-particular-bookmark/) | Mit Aspose.PDF für .NET können Sie ganz einfach ein bestimmtes Lesezeichen aus Ihren PDF-Dateien löschen. |  
-| [Erweitern Sie Lesezeichen](./expand-bookmarks/) | Erweitern Sie ganz einfach die Lesezeichen Ihrer PDF-Dateien für eine verbesserte Navigation mit Aspose.PDF für .NET. |  
-| [Holen Sie sich die Seitenzahl des Lesezeichens](./get-bookmark-page-number/) | Mit Aspose.PDF für .NET können Sie ganz einfach Lesezeichen-Seitenzahlen aus Ihren PDF-Dateien erstellen. |  
-| [Holen Sie sich Lesezeichen](./get-bookmarks/) | Setzen Sie mit Aspose.PDF für .NET ganz einfach Lesezeichen für Ihre PDF-Dateien. |  
-| [Holen Sie sich untergeordnete Lesezeichen](./get-child-bookmarks/) | Mit Aspose.PDF für .NET erhalten Sie ganz einfach untergeordnete Lesezeichen Ihrer PDF-Dateien. |  
-| [Zoom erben](./inherit-zoom/) | Mit Aspose.PDF für .NET können Sie ganz einfach den Lesezeichen-Zoom in Ihren PDF-Dateien übernehmen. |  
-| [Lesezeichen aktualisieren](./update-bookmarks/) | Aktualisieren Sie ganz einfach Lesezeichen in Ihren PDF-Dateien mit Aspose.PDF für .NET. |  
-| [Untergeordnete Lesezeichen aktualisieren](./update-child-bookmarks/) | Aktualisieren Sie untergeordnete Lesezeichen in Ihren PDF-Dateien ganz einfach mit Aspose.PDF für .NET. |  
+| [Lesezeichen in PDF-Datei hinzufügen](./add-bookmark/) | Fügen Sie mit Aspose.PDF für .NET ganz einfach Lesezeichen zur PDF-Datei hinzu, um die Navigation zu verbessern. |  
+| [Untergeordnetes Lesezeichen in PDF-Datei hinzufügen](./add-child-bookmark/) | Fügen Sie mit Aspose.PDF für .NET ganz einfach untergeordnete Lesezeichen zur PDF-Datei hinzu, um das Surfen besser zu organisieren. |  
+| [Alle Lesezeichen in der PDF-Datei löschen](./delete-all-bookmarks/) | Mit Aspose.PDF für .NET können Sie ganz einfach alle Lesezeichen in einer PDF-Datei löschen. |  
+| [Bestimmtes Lesezeichen in der PDF-Datei löschen](./delete-particular-bookmark/) | Mit Aspose.PDF für .NET können Sie ganz einfach ein bestimmtes Lesezeichen in einer PDF-Datei löschen. |  
+| [Erweitern Sie Lesezeichen in der PDF-Datei](./expand-bookmarks/) | Erweitern Sie Lesezeichen in PDF-Dateien ganz einfach, um die Navigation mit Aspose.PDF für .NET zu verbessern. |  
+| [Lesezeichen-Seitenzahl in PDF-Datei abrufen](./get-bookmark-page-number/) | Mit Aspose.PDF für .NET können Sie ganz einfach die Seitenzahl eines Lesezeichens in einer PDF-Datei speichern. |  
+| [Holen Sie sich Lesezeichen in eine PDF-Datei](./get-bookmarks/) | Erstellen Sie ganz einfach Lesezeichen in einer PDF-Datei mit Aspose.PDF für .NET. |  
+| [Holen Sie sich untergeordnete Lesezeichen in eine PDF-Datei](./get-child-bookmarks/) | Mit Aspose.PDF für .NET erhalten Sie ganz einfach Lesezeichen für Kinder in einer PDF-Datei. |  
+| [Vergrößern der PDF-Datei übernehmen](./inherit-zoom/) | Mit Aspose.PDF für .NET können Sie ganz einfach den Lesezeichen-Zoom in einer PDF-Datei übernehmen. |  
+| [Lesezeichen in PDF-Datei aktualisieren](./update-bookmarks/) | Aktualisieren Sie Lesezeichen in PDF-Dateien ganz einfach mit Aspose.PDF für .NET. |  
+| [Untergeordnete Lesezeichen in der PDF-Datei aktualisieren](./update-child-bookmarks/) | Aktualisieren Sie untergeordnete Lesezeichen in PDF-Dateien ganz einfach mit Aspose.PDF für .NET. |  

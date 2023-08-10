@@ -132,7 +132,7 @@ PrivateElement privateElement = taggedContent.CreatePrivateElement();
 ParagraphElement paragraphElement = taggedContent.CreateParagraphElement();
 HeaderElement headerElement = taggedContent.CreateHeaderElement();
 HeaderElement h1Element = taggedContent.CreateHeaderElement(1);
-//Crear elementos de estructura de nivel de texto en línea
+// Crear elementos de estructura de nivel de texto en línea
 SpanElement spanElement = taggedContent.CreateSpanElement();
 QuoteElement quoteElement = taggedContent.CreateQuoteElement();
 NoteElement noteElement = taggedContent.CreateNoteElement();
@@ -158,3 +158,45 @@ document.Save(dataDir + "StructureElements.pdf");
 ## Conclusión
 
 En este tutorial, aprendimos a usar Aspose.PDF para .NET para crear elementos de estructura en un documento PDF etiquetado. Los elementos estructurales ayudan a mejorar la accesibilidad de los documentos y organizan el contenido de manera significativa. Ahora puede utilizar este conocimiento para crear documentos PDF estructurados y fáciles de navegar.
+
+### Preguntas frecuentes
+
+#### P: ¿Cuál es el propósito de crear elementos de estructura en un documento PDF utilizando Aspose.PDF para .NET?
+
+R: La creación de elementos de estructura en un documento PDF con Aspose.PDF para .NET mejora la accesibilidad y la organización del contenido del documento. Los elementos de estructura proporcionan una estructura jerárquica que mejora la navegación, la semántica y la compatibilidad con las tecnologías de asistencia.
+
+#### P: ¿Cómo crea el código C# proporcionado elementos de estructura en un documento PDF?
+
+R: El ejemplo de código demuestra cómo crear varios tipos de elementos de estructura, incluidos elementos de agrupación (como partes, secciones y divisiones), elementos de nivel de bloque (como párrafos y encabezados), elementos de nivel en línea (intervalo, cita, nota ), y elementos de ilustraciones (como figuras y fórmulas). Estos elementos de estructura ayudan a organizar el contenido.
+
+####  P: ¿Por qué es importante establecer el título y el idioma del documento mediante el`SetTitle` and `SetLanguage` methods?
+
+ R: Establecer el título y el idioma del documento mediante el`SetTitle` y`SetLanguage`métodos mejora la accesibilidad y la semántica del documento. El título proporciona una breve descripción del propósito del documento, mientras que el atributo de idioma mejora la representación y la accesibilidad específicas del idioma.
+
+####  P: ¿Cómo agrupar elementos, como`PartElement` and `SectElement`, contribute to the structure of the PDF document?
+
+R: Los elementos de agrupación crean una estructura jerárquica dentro del documento PDF, lo que le permite organizar y agrupar lógicamente el contenido relacionado. Esto mejora la navegación y proporciona una estructura clara para los usuarios.
+
+#### P: ¿Qué son los elementos de estructura de nivel de bloque y de nivel en línea, y en qué se diferencian?
+
+R: Los elementos de estructura de nivel de bloque representan bloques de contenido más grandes, como párrafos y encabezados, mientras que los elementos de nivel en línea representan partes de texto dentro de un párrafo o encabezado, como espacios, comillas y notas. Ayudan a definir la jerarquía y las relaciones del contenido.
+
+####  P: ¿Cómo estructuran los elementos de las ilustraciones, como`FigureElement` and `FormulaElement`, contribute to the document?
+
+R: Los elementos de la estructura de ilustraciones le permiten agregar ilustraciones, figuras y fórmulas matemáticas al documento. Proporcionan una forma estructurada de incluir contenido visual y matemático.
+
+#### P: ¿Puedo usar técnicas similares para crear otros tipos de elementos de estructura, como listas, tablas o anotaciones?
+
+R: Sí, puede usar técnicas similares para crear otros tipos de elementos de estructura como listas, tablas, anotaciones, referencias y más. Aspose.PDF proporciona una amplia gama de métodos de creación de elementos de estructura.
+
+####  P: ¿Cómo guarda el documento PDF etiquetado usando el`Save` method ensure the preservation of structure elements?
+
+ R: El`Save` El método guarda el documento PDF junto con los elementos de estructura creados, lo que garantiza que la estructura jerárquica y semántica del documento se conserve para la accesibilidad y la navegación.
+
+#### P: ¿Qué beneficios aportan los elementos de estructura a los documentos PDF en términos de accesibilidad y compatibilidad con las tecnologías de asistencia?
+
+R: Los elementos de estructura mejoran la accesibilidad al proporcionar una estructura y una semántica significativas al documento. Esto permite que las tecnologías de asistencia, como los lectores de pantalla, interpreten y transmitan el contenido del documento de manera más efectiva a los usuarios con discapacidades.
+
+#### P: ¿Cómo puedo personalizar y combinar más diferentes tipos de elementos de estructura en mis documentos PDF?
+
+R: Puede combinar y personalizar elementos de estructura mediante el uso de métodos de creación adecuados proporcionados por Aspose.PDF. Experimente con diferentes elementos y sus propiedades para crear un documento PDF bien estructurado y organizado.

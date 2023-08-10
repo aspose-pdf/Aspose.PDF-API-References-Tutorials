@@ -7,7 +7,6 @@ type: docs
 weight: 250
 url: /tr/net/document-conversion/remove-hyperlinks-after-converting-from-html/
 ---
-
 Bu eğitimde, Aspose.PDF for .NET kullanılarak bir HTML dosyasından oluşturulan bir PDF dosyasından köprüleri kaldırma sürecinde size yol göstereceğiz. Köprüler, diğer sayfalara veya web sitelerine yönlendirebilen tıklanabilir bağlantılardır. Aşağıdaki adımları izleyerek, ortaya çıkan PDF dosyasından köprüleri kaldırabileceksiniz.
 
 ## Önkoşullar
@@ -106,3 +105,25 @@ doc.Save(dataDir + "RemoveHyperlinksFromText_out.pdf");
 
 ## Çözüm
 Bu öğreticide, Aspose.PDF for .NET kullanılarak bir HTML dosyasından oluşturulan bir PDF dosyasından köprüleri kaldırma sürecini adım adım ele aldık. Yukarıda açıklanan talimatları izleyerek, ortaya çıkan PDF dosyasından köprüleri başarıyla kaldırabileceksiniz.
+
+### SSS
+
+#### S: Aspose.PDF for .NET nedir?
+
+Y: Aspose.PDF for .NET, geliştiricilerin C# uygulamalarında PDF belgeleriyle çalışmasını sağlayan güçlü bir kitaplıktır. HTML dosyalarını PDF'ye dönüştürme ve PDF içeriğini değiştirme yeteneği de dahil olmak üzere çok çeşitli işlevler sunar.
+
+#### S: Neden bir PDF dosyasından köprüleri kaldırmak isteyeyim?
+
+Y: Bir PDF dosyasından köprüleri kaldırmanın çeşitli nedenleri vardır. Örneğin, yazdırma veya arşivleme amacıyla harici bağlantıları ortadan kaldırmak veya PDF içeriğinin köprüler aracılığıyla gezinilebilir olmamasını sağlamak isteyebilirsiniz.
+
+#### S: Aspose.PDF for .NET kullanarak bir HTML dosyasını nasıl yükleyebilirim ve köprüleri nasıl kaldırabilirim?
+
+ C: Bir HTML dosyası yüklemek ve köprüleri kaldırmak için Aspose.PDF for .NET's kullanabilirsiniz.`HtmlLoadOptions` sınıf. Bağlantı ek açıklamalarını bulmak ve niteliklerini değiştirmek için PDF sayfalarının ek açıklamalarını yineleyin.
+
+#### S: Ortaya çıkan PDF için çıktı dosya adını özelleştirebilir miyim?
+
+C: Evet, PDF belgesini kaydeden kodu değiştirerek ortaya çıkan PDF dosyası için çıktı dosya adını özelleştirebilirsiniz. İstenen dosya adını değiştirmeniz yeterlidir.`doc.Save()` yöntem.
+
+#### S: Köprüleri belirli kriterlere göre seçerek kaldırmak mümkün müdür?
+
+C: Evet, köprüleri belirli kriterlere göre seçerek kaldırabilirsiniz. Örneğin, yalnızca harici bağlantıları veya belirli URL'lere işaret eden bağlantıları kaldırmayı seçebilirsiniz.

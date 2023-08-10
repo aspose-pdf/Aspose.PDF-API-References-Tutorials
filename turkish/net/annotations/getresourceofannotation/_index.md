@@ -7,7 +7,6 @@ type: docs
 weight: 90
 url: /tr/net/annotations/getresourceofannotation/
 ---
-
 Örnek, Aspose.PDF for .NET ile açıklama kaynağının nasıl alınacağını gösterir. Aspose.PDF for .NET kullanarak bir ek açıklamanın kaynağını almak için şu adımları izleyin:
 
 ## Adım 1: Belgenin bulunduğu dizinin yolunu ayarlayın.
@@ -126,3 +125,29 @@ ms.Write(buffer, 0, read);
 Console.WriteLine(rendition.Name);
 Console.WriteLine(action.RenditionOperation);
 ```
+
+## Çözüm
+
+Bu öğreticide, Aspose.PDF for .NET kullanarak bir PDF belgesinden belirli bir ek açıklamanın kaynağının nasıl alınacağını araştırdık. Geliştiriciler, adım adım kılavuzu izleyerek ve sağlanan C# kaynak kodunu kullanarak, PDF belgelerindeki yorumlama ek açıklamaları da dahil olmak üzere ek açıklamalara kolayca erişebilir ve bunları yönetebilir.
+
+### SSS
+
+#### S: PDF açıklamaları bağlamında yorumlama nedir?
+
+C: PDF ek açıklamaları bağlamında yorumlama, bir multimedya içerik sunumudur. Ses veya video gibi multimedyaların PDF belgesine gömülmesine izin verir. Yorumlama ek açıklaması, sunulacak medyayı ve nasıl oynatılması gerektiğini belirtir.
+
+#### S: Bir yorumlama ek açıklamasıyla ilişkili medya dosyasının adını alabilir miyim?
+
+ C: Evet, Aspose.PDF for .NET'i kullanarak bir yorumlama ek açıklamasıyla ilişkili medya dosyasının adını alabilirsiniz. Ortam dosyası adına şu adresten erişilebilir:`FileSpecification` arasında`MediaClip` nesne.
+
+#### S: Aspose.PDF for .NET, medya dosyalarını bir yorumlama ek açıklamasından çıkarabilir mi?
+
+C: Evet, Aspose.PDF for .NET, ses veya video içeriği içeren bir yorumlama notundan medya verilerini çıkarabilir ve ayrı bir dosya olarak kaydedebilir.
+
+#### S: Bir yorum notunun medya verilerine nasıl erişebilirim?
+
+ Y: Bir yorumlama ek açıklamasının medya verilerine şu adresten erişilebilir:`FileSpecification.Contents` mülkiyeti`MediaClipData` nesne.
+
+#### S: Aspose.PDF for .NET kullanarak bir yorum açıklama notuyla ilişkili medyayı değiştirebilir miyim?
+
+Y: Aspose.PDF for .NET, bir yorumlama ek açıklamasıyla ilişkili ortam verilerine erişmek ve bunları değiştirmek için yöntemler sağlar. Bir yorumlama notu tarafından kullanılan medya dosyasını güncelleyebilir veya değiştirebilirsiniz.

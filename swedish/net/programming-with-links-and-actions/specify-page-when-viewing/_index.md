@@ -7,7 +7,6 @@ type: docs
 weight: 110
 url: /sv/net/programming-with-links-and-actions/specify-page-when-viewing/
 ---
-
 Lär dig hur du anger en sida när du visar en PDF-fil med Aspose.PDF för .NET med denna steg-för-steg-guide.
 
 ## Steg 1: Sätta upp miljön
@@ -53,7 +52,7 @@ Skapa en instans av navigeringsåtgärden med den angivna målsidan:
 GoToAction action = new GoToAction(doc.Pages[2]);
 ```
 
-## Steg 6: Ange destination
+## Steg 6: Ställ in destination
 
 Ställ in destinationen för att gå till målsidan med hjälp av koordinater och zoom:
 
@@ -102,3 +101,45 @@ doc.Save(dataDir + "goto2page_out.pdf");
 Grattis! Du vet nu hur du anger en sida när du visar en PDF med Aspose.PDF för .NET. Använd denna kunskap för att anpassa användarens visningsupplevelse i dina PDF-dokument.
 
 Nu när du har slutfört den här guiden kan du tillämpa dessa koncept på dina egna projekt och utforska funktionerna som erbjuds av Aspose.PDF för .NET.
+
+### FAQ's 
+
+#### F: Vad är syftet med att ange en målsida när du visar en PDF-fil?
+
+S: Genom att ange en målsida kan du styra vilken sida i ett PDF-dokument som ska visas när filen öppnas. Detta kan förbättra användarupplevelsen genom att dirigera dem till en specifik sida av intresse.
+
+#### F: Hur kan det vara användbart att ange en målsida i PDF-dokument?
+
+S: Att ange en målsida är fördelaktigt när du vill guida användare till ett visst avsnitt eller innehåll i ett PDF-dokument utan att de behöver navigera genom sidorna manuellt.
+
+#### F: Hur underlättar Aspose.PDF för .NET att ange en målsida för visning?
+
+S: Aspose.PDF för .NET tillhandahåller API:er som låter dig ställa in den initiala vyn för ett PDF-dokument, inklusive målsida, zoomnivå och andra visningsegenskaper.
+
+#### F: Kan jag ange vilken sida som helst som målsida?
+
+S: Ja, du kan ange vilken sida som helst i PDF-dokumentet som målsida för visning. Använd helt enkelt lämpligt index för att välja önskad sida.
+
+#### F: Vilken betydelse har zoomfaktorn när du anger en målsida?
+
+S: Zoomfaktorn avgör graden av förstoring som tillämpas på målsidan när PDF-dokumentet öppnas. Den styr hur mycket innehåll som visas i visningsporten.
+
+#### F: Kan jag ställa in olika zoomfaktorer för olika målsidor?
+
+S: Ja, du kan ställa in olika zoomfaktorer för olika målsidor genom att skapa separata`GoToAction` instanser och konfigurera deras destinationer därefter.
+
+#### F: Finns det några begränsningar för att ange en målsida?
+
+S: Att ange en målsida är begränsat till att styra den initiala vyn när PDF-filen öppnas. Det påverkar inte användarinteraktioner eller navigering när PDF-filen väl visas.
+
+#### F: Kan jag använda den här funktionen för att skapa presentationer i ett PDF-dokument?
+
+S: Ja, du kan använda den här funktionen för att skapa presentationsliknande upplevelser i ett PDF-dokument, för att guida användare genom olika avsnitt eller ämnen.
+
+#### F: Kan jag anpassa andra aspekter av den ursprungliga vyn, till exempel sidlayout?
+
+S: Ja, Aspose.PDF för .NET tillhandahåller egenskaper för att anpassa andra aspekter av den initiala vyn, inklusive sidlayout, sidläge och mer.
+
+#### F: Hur kan jag testa om den angivna målsidan och zoomfaktorn fungerar som avsett?
+
+S: Efter att ha använt den medföljande koden för att ange målsidan och zoomfaktorn, öppna den modifierade PDF-filen och verifiera att den öppnas med rätt sida och zoomnivå.

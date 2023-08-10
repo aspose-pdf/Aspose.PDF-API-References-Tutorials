@@ -1,14 +1,13 @@
 ---
-title: Açıklamayı Düzleştir
-linktitle: Açıklamayı Düzleştir
+title: PDF Dosyasında Açıklamayı Düzleştir
+linktitle: PDF Dosyasında Açıklamayı Düzleştir
 second_title: Aspose.PDF for .NET API Referansı
-description: Aspose.PDF for .NET kullanarak bir PDF belgesindeki açıklamaları nasıl düzleştireceğinizi öğrenin. Ek açıklamaları koruyun ve yanlışlıkla değiştirilmesini önleyin.
+description: Aspose.PDF for .NET kullanarak PDF dosyasındaki açıklamaları nasıl düzleştireceğinizi öğrenin. Ek açıklamaları koruyun ve yanlışlıkla değiştirilmesini önleyin.
 type: docs
 weight: 150
 url: /tr/net/programming-with-document/flattenannotation/
 ---
-
-Aspose.PDF for .NET, geliştiricilerin programlı olarak PDF belgeleriyle çalışmasını sağlayan güçlü bir kitaplıktır. Sağladığı özelliklerden biri, PDF belgelerindeki ek açıklamaları düzleştirme yeteneğidir. Açıklamaları bir PDF belgesinde düzleştirmek, açıklamaların belge içeriğinin bir parçası haline geldiği ve artık düzenlenemeyeceği veya silinemeyeceği anlamına gelir. Ek açıklamaların korunmasını ve yanlışlıkla değiştirilememesini sağlamak istediğinizde bu kullanışlıdır.
+Aspose.PDF for .NET, geliştiricilerin PDF dosyasıyla programlı olarak çalışmasını sağlayan güçlü bir kitaplıktır. Sağladığı özelliklerden biri, PDF dosyasındaki ek açıklamaları düzleştirme yeteneğidir. Açıklamaları bir PDF belgesinde düzleştirmek, açıklamaların belge içeriğinin bir parçası haline geldiği ve artık düzenlenemeyeceği veya silinemeyeceği anlamına gelir. Ek açıklamaların korunmasını ve yanlışlıkla değiştirilememesini sağlamak istediğinizde bu kullanışlıdır.
 
 Bu eğitimde, bir PDF belgesindeki ek açıklamaları düzleştirmek için Aspose.PDF for .NET'in nasıl kullanılacağını tartışacağız. Örnek kaynak koduyla birlikte bunun nasıl yapılacağına dair adım adım bir kılavuz sağlayacağız.
 
@@ -75,3 +74,16 @@ Console.WriteLine("\nFlattened annotation successfully.\nFile saved at " + dataD
 ## Çözüm
 Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF belgesindeki ek açıklamaların nasıl düzleştirileceğini ele aldık. Bir PDF belgesindeki açıklamaları düzleştirme, açıklamaların korunmasını ve yanlışlıkla değiştirilememesini sağlayan kullanışlı bir özelliktir. Aspose.PDF for .NET, düzleştirme ek açıklamaları da dahil olmak üzere PDF belgeleriyle çalışmak için basit ve kullanımı kolay bir API sağlar. 
 
+### PDF dosyasındaki ek açıklamayı düzleştirmek için SSS
+
+#### S: Bir PDF belgesindeki açıklamalar nelerdir?
+
+Y: Bir PDF belgesindeki ek açıklamalar, ekstra bilgi veya etkileşim sağlamak için belgeye eklenebilen ek öğeler veya notlardır. Ek açıklamalar metin, resimler, bağlantılar, yorumlar ve daha fazlasını içerebilir.
+
+#### S: Bir PDF belgesindeki ek açıklamaları neden düzleştirmek isteyeyim?
+
+Y: Bir PDF belgesindeki açıklamaları düzleştirmek, açıklamaların belge içeriğinin bir parçası olmasını ve düzenlenemez veya silinemez olmasını sağlamak istediğinizde kullanışlıdır. Ek açıklamaların belgenin bir parçası olarak korunmasına yardımcı olur.
+
+#### S: Bir PDF belgesindeki ek açıklamaları seçerek düzleştirebilir miyim?
+
+C: Evet, Aspose.PDF for .NET kullanarak bir PDF belgesindeki ek açıklamaları seçerek düzleştirebilirsiniz. Belirli notları veya tüm notları belirli bir sayfada veya belgenin tamamında düzleştirmeyi seçebilirsiniz.

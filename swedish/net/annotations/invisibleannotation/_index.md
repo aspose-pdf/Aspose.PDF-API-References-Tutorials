@@ -1,14 +1,13 @@
 ---
-title: Osynlig anteckning
-linktitle: Osynlig anteckning
+title: Osynlig anteckning i PDF-fil
+linktitle: Osynlig anteckning i PDF-fil
 second_title: Aspose.PDF för .NET API Referens
-description: Lär dig hur du osynligt kommenterar PDF-filer med C#-källkod med Aspose.PDF för .NET. Steg-för-steg guide.
+description: Lär dig hur du gör osynliga kommentarer i PDF-fil med C#-källkod med Aspose.PDF för .NET. Steg-för-steg guide.
 type: docs
 weight: 100
 url: /sv/net/annotations/invisibleannotation/
 ---
-
-Anteckningar i PDF-dokument är en kraftfull funktion som låter dig lägga till extra information eller anteckningar till ett dokument utan att ändra det faktiska innehållet. De kan användas för att markera text, uppmärksamma specifika delar av ett dokument eller lägga till kommentarer eller feedback.
+Anteckningar i PDF-fil är en kraftfull funktion som låter dig lägga till extra information eller anteckningar till ett dokument utan att ändra det faktiska innehållet. De kan användas för att markera text, uppmärksamma specifika delar av ett dokument eller lägga till kommentarer eller feedback.
 
 Det finns många olika typer av kommentarer som du kan använda i PDF-dokument, inklusive:
 
@@ -33,7 +32,7 @@ Document doc = new Document(dataDir + "input.pdf");
 FreeTextAnnotation annotation = new FreeTextAnnotation(doc.Pages[1], new Aspose.Pdf.Rectangle(50, 600, 250, 650), new DefaultAppearance("Helvetica", 16, System.Drawing.Color.Red));
 ```
 
- I koden ovan skapar vi en`FreeTextAnnotation`objekt och ange platsen för anteckningen på sidan 2 i PDF-dokumentet. Vi anger också teckensnittstyp, storlek och färg för texten som kommer att visas i anteckningen.
+ I koden ovan skapar vi en`FreeTextAnnotation` objekt och ange platsen för anteckningen på sidan 2 i PDF-dokumentet. Vi anger också teckensnittstyp, storlek och färg för texten som kommer att visas i anteckningen.
 
 ## Steg 2: Lägga till egenskaper till den osynliga anteckningen
 
@@ -84,3 +83,29 @@ doc.Save(dataDir);
 // ExEnd:InvisibleAnnotation
 Console.WriteLine("\nAnnotation nvisible successfully.\nFile saved at " + dataDir);
 ```
+
+## Slutsats
+
+I den här handledningen lärde vi oss hur man skapar en osynlig anteckning i ett PDF-dokument med Aspose.PDF för .NET. Osynliga anteckningar är en användbar funktion när du vill lägga till extra information eller anteckningar till ett dokument utan att visa dem för läsaren. Genom att följa steg-för-steg-guiden och använda den medföljande C#-källkoden kan utvecklare enkelt skapa och anpassa osynliga kommentarer i sina PDF-dokument. Aspose.PDF för .NET tillhandahåller en omfattande uppsättning verktyg för att arbeta med kommentarer, så att du kan förbättra interaktiviteten och användbarheten av dina PDF-filer.
+
+### FAQ's
+
+#### F: Vad är en osynlig anteckning i ett PDF-dokument?
+
+S: En osynlig anteckning i ett PDF-dokument är en anteckning som inte är synlig på sidan men som innehåller ytterligare information eller anteckningar. Det låter dig lägga till kommentarer eller feedback utan att visa dem för läsaren.
+
+#### F: Vilka typer av egenskaper kan läggas till i en osynlig anteckning?
+
+S: Olika egenskaper kan läggas till i en osynlig anteckning, såsom kantfärg, bakgrundsfärg, opacitet, teckensnitt, storlek och färg för texten som kommer att visas.
+
+#### F: Kan jag ställa in olika anteckningsflaggor för en osynlig anteckning?
+
+S: Ja, du kan ställa in olika anteckningsflaggor för en osynlig anteckning, beroende på dina krav. Du kan till exempel göra anteckningen utskrivbar men inte synlig.
+
+#### F: Hur kan jag lägga till en osynlig kommentar på en specifik sida i PDF-dokumentet?
+
+ S: För att lägga till en osynlig anteckning till en specifik sida i PDF-dokumentet måste du skapa en`FreeTextAnnotation` objekt och ange platsen och storleken för anteckningen på den sidan.
+
+#### F: Kan jag ändra egenskaperna hos en befintlig osynlig anteckning i en PDF-fil?
+
+S: Ja, du kan ändra egenskaperna hos en befintlig osynlig anteckning i en PDF-fil med Aspose.PDF för .NET. Du kan ändra teckensnitt, storlek, färg, kantfärg, bakgrundsfärg, opacitet och andra egenskaper för anteckningen.

@@ -24,7 +24,7 @@ Prima di iniziare, assicurati di avere quanto segue:
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- Sostituire`"YOUR DOCUMENT DIRECTORY"` con il percorso della directory in cui si trovano i tuoi documenti. Questo verrà utilizzato per memorizzare tutti i file PDF generati.
+ Sostituire`"YOUR DOCUMENT DIRECTORY"`con il percorso della directory in cui si trovano i tuoi documenti. Questo verrà utilizzato per memorizzare tutti i file PDF generati.
 
 ## Passaggio 2: trova il carattere
 

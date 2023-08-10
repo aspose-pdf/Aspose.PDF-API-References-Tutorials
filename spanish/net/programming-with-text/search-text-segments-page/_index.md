@@ -109,7 +109,7 @@ Modifique el código dentro del ciclo para realizar más acciones en cada segmen
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Abrir documento
 Document pdfDocument = new Document(dataDir + "SearchTextSegmentsPage.pdf");
-// Cree un objeto TextAbsorber para encontrar todas las instancias de la frase de búsqueda de entrada
+//Cree un objeto TextAbsorber para encontrar todas las instancias de la frase de búsqueda de entrada
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
 // Aceptar el absorbedor para todas las páginas.
 pdfDocument.Pages[2].Accept(textFragmentAbsorber);

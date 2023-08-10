@@ -8,7 +8,7 @@ weight: 370
 url: /de/net/programming-with-text/replace-text-page/
 ---
 
-In diesem Tutorial wird erklärt, wie Sie Aspose.PDF für .NET verwenden, um Text auf einer bestimmten Seite eines PDF-Dokuments zu ersetzen. Der bereitgestellte C#-Quellcode demonstriert den Prozess Schritt für Schritt.
+In diesem Tutorial wird erläutert, wie Sie mit Aspose.PDF für .NET Text auf einer bestimmten Seite eines PDF-Dokuments ersetzen. Der bereitgestellte C#-Quellcode demonstriert den Prozess Schritt für Schritt.
 
 ## Voraussetzungen
 
@@ -63,7 +63,7 @@ pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 
 ## Schritt 6: Extrahierte Textfragmente abrufen
 
- Holen Sie sich die extrahierten Textfragmente mit`TextFragments` Eigentum der`TextFragmentAbsorber` Objekt:
+Holen Sie sich die extrahierten Textfragmente mit`TextFragments` Eigentum der`TextFragmentAbsorber` Objekt:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -84,7 +84,7 @@ foreach (TextFragment textFragment in textFragmentCollection)
 }
 ```
 
- Ersetzen Sie im obigen Codeausschnitt`"New Phrase"`mit dem Ersatztext, den Sie verwenden möchten. Sie können auch andere Eigenschaften wie Schriftart, Schriftgröße, Vordergrundfarbe und Hintergrundfarbe anpassen.
+ Ersetzen Sie im obigen Codeausschnitt`"New Phrase"` mit dem Ersatztext, den Sie verwenden möchten. Sie können auch andere Eigenschaften wie Schriftart, Schriftgröße, Vordergrundfarbe und Hintergrundfarbe anpassen.
 
 ## Schritt 8: Speichern Sie das geänderte PDF
 
@@ -102,9 +102,9 @@ pdfDocument.Save(dataDir + "ReplaceTextPage_out.pdf");
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Dokument öffnen
 Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
-// Erstellen Sie ein TextAbsorber-Objekt, um alle Instanzen der eingegebenen Suchphrase zu finden
+//Erstellen Sie ein TextAbsorber-Objekt, um alle Instanzen der eingegebenen Suchphrase zu finden
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
-// Akzeptieren Sie den Absorber für eine bestimmte Seite
+//Akzeptieren Sie den Absorber für eine bestimmte Seite
 pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 // Holen Sie sich die extrahierten Textfragmente
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;

@@ -8,7 +8,7 @@ weight: 300
 url: /es/net/programming-with-text/remove-unused-fonts/
 ---
 
-En este tutorial, explicaremos cómo eliminar las fuentes no utilizadas de un documento PDF utilizando la biblioteca Aspose.PDF para .NET. Pasaremos por el proceso paso a paso de cargar un PDF, identificar y eliminar las fuentes no utilizadas y guardar el PDF actualizado usando el código fuente de C# proporcionado.
+En este tutorial, explicaremos cómo eliminar las fuentes no utilizadas de un documento PDF utilizando la biblioteca Aspose.PDF para .NET. Pasaremos por el proceso paso a paso de cargar un PDF, identificar y eliminar las fuentes no utilizadas y guardar el PDF actualizado usando el código fuente de C# provisto.
 
 ## Requisitos
 
@@ -35,7 +35,7 @@ Document doc = new Document(dataDir + "ReplaceTextPage.pdf");
 
 ## Paso 3: identifique y elimine las fuentes no utilizadas
 
- Creamos un`TextFragmentAbsorber` objeto con el`TextEditOptions` parámetro establecido en`TextEditOptions.FontReplace.RemoveUnusedFonts` . Esta opción nos permite identificar y eliminar fuentes no utilizadas en el documento PDF. Luego iteramos a través de todos los`TextFragments` y establezca la fuente en la fuente deseada.
+ Creamos un`TextFragmentAbsorber` objeto con el`TextEditOptions` parámetro establecido en`TextEditOptions.FontReplace.RemoveUnusedFonts` Esta opción nos permite identificar y eliminar fuentes no utilizadas en el documento PDF. Luego iteramos a través de todos los`TextFragments` y establezca la fuente en la fuente deseada.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));

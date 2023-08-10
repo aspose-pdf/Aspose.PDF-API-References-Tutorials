@@ -27,7 +27,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Paso 2: Cree un documento PDF y una página
 
- continuación, creamos un nuevo documento PDF y le agregamos una página usando el`Document` clase y`Page` clase de la biblioteca Aspose.PDF.
+ A continuación, creamos un nuevo documento PDF y le agregamos una página usando el`Document` clase y`Page` clase de la biblioteca Aspose.PDF.
 
 ```csharp
 Document doc = new Document();
@@ -111,7 +111,7 @@ marginInfo.Top = 90;
 marginInfo.Bottom = 50;
 marginInfo.Left = 50;
 marginInfo.Right = 50;
-//Asigne la instancia de marginInfo a la propiedad Margin de sec1.PageInfo
+// Asigne la instancia de marginInfo a la propiedad Margin de sec1.PageInfo
 page.PageInfo.Margin = marginInfo;
 HeaderFooter hfFirst = new HeaderFooter();
 page.Header = hfFirst;
@@ -161,7 +161,7 @@ row3.Cells[2].Alignment = Aspose.Pdf.HorizontalAlignment.Right;
 row3.Cells[0].Paragraphs.Add(t3);
 row3.Cells[1].Paragraphs.Add(t4);
 row3.Cells[2].Paragraphs.Add(t5);
-//Sec1.Paragraphs.Add(New Text("Aspose.Total for Java es una compilación de todos los componentes de Java ofrecidos por Aspose. Se compila #$NL" + "diariamente para garantizar que contiene las versiones más actualizadas de cada de nuestros componentes de Java. #$NL " + "Usar Aspose.Total para desarrolladores de Java puede crear una amplia gama de aplicaciones. #$NL #$NL #$NP" + "Aspose.Total para Java es una compilación de cada componente de Java ofrecido por Aspose. Se compila #$NL" + "diariamente para garantizar que contiene las versiones más actualizadas de cada uno de nuestros componentes de Java. #$NL " + "Usando Aspose.Total para desarrolladores de Java puede crear una amplia gama de aplicaciones. #$NL #$NL #$NP" + "Aspose.Total para Java es una compilación de todos los componentes de Java ofrecidos por Aspose. Se compila #$NL" + "diariamente para garantizar que contiene la mayor cantidad versiones actualizadas de cada uno de nuestros componentes Java. #$NL " + "Usar Aspose.Total para desarrolladores de Java puede crear una amplia gama de aplicaciones. #$NL #$NL"))
+//Sec1.Paragraphs.Add(New Text("Aspose.Total for Java es una compilación de todos los componentes de Java ofrecidos por Aspose. Se compila #$NL" + "diariamente para garantizar que contiene las versiones más actualizadas de cada de nuestros componentes de Java. #$NL " + "Usar Aspose.Total para desarrolladores de Java puede crear una amplia gama de aplicaciones. #$NL #$NL #$NP" + "Aspose.Total para Java es una compilación de cada componente de Java ofrecido por Aspose. Se compila #$NL" + "diariamente para garantizar que contiene las versiones más actualizadas de cada uno de nuestros componentes de Java. #$NL " + "Usando Aspose.Total para los desarrolladores de Java puede crear una amplia gama de aplicaciones. #$NL #$NL #$NP" + "Aspose.Total para Java es una compilación de todos los componentes de Java ofrecidos por Aspose. Se compila #$NL" + "diariamente para garantizar que contiene la mayor cantidad versiones actualizadas de cada uno de nuestros componentes de Java. #$NL " + "Usar Aspose.Total para que los desarrolladores de Java puedan crear una amplia gama de aplicaciones. #$NL #$NL"))
 Table table = new Table();
 table.ColumnWidths = "33% 33% 34%";
 table.DefaultCellPadding = new MarginInfo();

@@ -1,14 +1,13 @@
 ---
-title: Lägg till innehållsförteckning
-linktitle: Lägg till innehållsförteckning
+title: Lägg till innehållsförteckning till PDF-fil
+linktitle: Lägg till innehållsförteckning till PDF-fil
 second_title: Aspose.PDF för .NET API Referens
-description: Lär dig hur du lägger till en innehållsförteckning till PDF-dokument med Aspose.PDF för .NET. Steg-för-steg guide med exempel på källkod. Öka dokumentnavigeringen!
+description: Lär dig hur du lägger till en innehållsförteckning till en PDF-fil med Aspose.PDF för .NET. Steg-för-steg guide med exempel på källkod. Öka dokumentnavigeringen!
 type: docs
 weight: 40
 url: /sv/net/programming-with-document/addtoc/
 ---
-
-I den här handledningen kommer vi att utforska hur du använder funktionen Lägg till TOC (innehållsförteckning) i Aspose.PDF för .NET för att lägga till en innehållsförteckning till PDF-dokument. Vi kommer att tillhandahålla en steg-för-steg-guide och förklara C#-källkoden som krävs för att uppnå detta. I slutet av denna handledning kommer du att kunna generera ett PDF-dokument med en innehållsförteckning med Aspose.PDF för .NET.
+I den här handledningen kommer vi att utforska hur man använder funktionen Lägg till TOC (innehållsförteckning) till PDF-fil i Aspose.PDF för .NET för att lägga till en innehållsförteckning till PDF-dokument. Vi kommer att tillhandahålla en steg-för-steg-guide och förklara C#-källkoden som krävs för att uppnå detta. I slutet av denna handledning kommer du att kunna generera ett PDF-dokument med en innehållsförteckning med Aspose.PDF för .NET.
 
 
 ## Steg 1: Ladda den befintliga PDF-filen
@@ -101,7 +100,7 @@ title.TextState.FontStyle = FontStyles.Bold;
 tocInfo.Title = title;
 tocPage.TocInfo = tocInfo;
 
-// Skapa strängobjekt som kommer att användas som TOC-element
+//Skapa strängobjekt som kommer att användas som TOC-element
 string[] titles = new string[4];
 titles[0] = "First page";
 titles[1] = "Second page";
@@ -124,7 +123,7 @@ for (int i = 0; i < 2; i++)
 	// Destinationskoordinat
 	segment2.Text = titles[i];
 
-	//Lägg till rubrik på sidan som innehåller innehållsförteckningen
+	// Lägg till rubrik på sidan som innehåller innehållsförteckningen
 	tocPage.Paragraphs.Add(heading2);
 }
 dataDir = dataDir + "TOC_out.pdf";
@@ -133,3 +132,29 @@ doc.Save(dataDir);
 
 Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at " + dataDir);
 ```
+
+## Slutsats
+
+I den här handledningen undersökte vi hur man lägger till en innehållsförteckning (TOC) till PDF-dokument med Aspose.PDF för .NET. Genom att följa steg-för-steg-guiden och använda den medföljande C#-källkoden kan du enkelt skapa ett PDF-dokument med en innehållsförteckning. TOC förbättrar dokumentets användbarhet, så att användare kan navigera till specifika avsnitt eller sidor mer effektivt. Aspose.PDF för .NET ger en robust och användarvänlig lösning för att arbeta med PDF-filer i .NET-applikationer, vilket gör att du enkelt kan skapa dynamiska och interaktiva PDF-dokument.
+
+### Vanliga frågor för att lägga till innehållsförteckning till PDF-fil
+
+#### F: Vad är Aspose.PDF för .NET?
+
+S: Aspose.PDF för .NET är ett kraftfullt bibliotek som gör det möjligt för utvecklare att effektivt arbeta med PDF-filer i .NET-applikationer. Den tillhandahåller ett brett utbud av funktioner för att skapa, manipulera och hantera PDF-dokument programmatiskt.
+
+#### F: Vad är syftet med att lägga till en innehållsförteckning (TOC) till ett PDF-dokument?
+
+S: Innehållsförteckningen (TOC) tillhandahåller ett navigeringshjälpmedel för användare, vilket gör att de snabbt kan hoppa till specifika avsnitt eller sidor i PDF-dokumentet. Det förbättrar dokumentets användbarhet och användarupplevelse.
+
+#### F: Hur lägger jag till en innehållsförteckning till ett PDF-dokument med Aspose.PDF för .NET?
+
+S: För att lägga till en innehållsförteckning till ett PDF-dokument med Aspose.PDF för .NET, måste du skapa en ny sida för innehållsförteckningen, definiera innehållsförteckningsinformationen och sedan skapa innehållsförteckningselement som motsvarar specifika sidor eller avsnitt i dokumentet.
+
+#### F: Kan jag anpassa utseendet på innehållsförteckningen?
+
+S: Ja, du kan anpassa utseendet på innehållsförteckningen genom att ställa in olika egenskaper för TOC-elementen, såsom teckenstorlek, typsnittsstil och justering. Aspose.PDF för .NET ger flexibilitet vid utformningen av innehållsförteckningen för att matcha ditt önskade utseende och känsla.
+
+#### F: Är Aspose.PDF för .NET lämpligt för att lägga till avancerade funktioner till PDF-dokument?
+
+S: Absolut, Aspose.PDF för .NET är ett funktionsrikt bibliotek som låter dig lägga till avancerade funktioner till PDF-dokument, inklusive interaktiva element, formulärfält, digitala signaturer och mer.

@@ -86,3 +86,68 @@ Console.WriteLine("License set successfully.");
 ## Çözüm
 
 Bu öğreticide, Aspose.PDF for .NET kullanarak bir Stream nesnesinden lisans yüklemeyi öğrendiniz. Açıklanan adımları izleyerek Aspose.PDF tarafından sunulan ek özelliklerin kilidini açabilecek ve kütüphaneyi C# projelerinizde en iyi şekilde kullanabileceksiniz.
+
+### Akış nesnesinden yükleme lisansı için SSS
+
+#### S: Bir Stream nesnesinden lisans yüklemenin avantajı nedir?
+
+Y: Bir Akış nesnesinden bir lisans yüklemek, lisans verilerini doğrudan bir akıştan sağlamanıza olanak tanır; bu, lisans dosyasının bellekte depolandığı veya uzak bir kaynaktan alındığı senaryolarda yararlı olabilir.
+
+#### S: Aspose.PDF için gerekli ad alanlarını nasıl içe aktarırım?
+
+ A: C# kod dosyanızda,`using` Aspose.PDF ve System.IO tarafından sağlanan sınıflara ve yöntemlere erişim için gerekli ad alanlarını içe aktarma yönergesi:
+```csharp
+using System;
+using System.IO;
+using Aspose.Pdf;
+```
+
+#### S: Lisans dosyası için belge dizinini nasıl tanımlarım?
+
+ A: Lisansı yüklemeden önce, lisans dosyanızın bulunduğu belgeler dizininin yolunu belirtin. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` makinenizdeki belgeler dizininin gerçek yolu ile.
+
+#### S: Lisans nesnesini nasıl başlatırım?
+
+C: Belge dizinini ayarladıktan sonra, aşağıdaki kod satırını kullanarak Aspose.PDF'nin lisans nesnesini başlatın:
+```csharp
+Aspose.Pdf.License license = new Aspose.Pdf.License();
+```
+
+#### S: Lisansı bir Stream nesnesinden nasıl yüklerim?
+
+ C: Şunu kullanarak bir Akış nesnesinden lisansı yükleyin:`SetLicense` lisans nesnesinin yöntemi. Oluşturmak`FileStream`ve yönteme iletin. Yer değiştirmek`"PATH_TO_LICENSE_FILE"` makinenizdeki lisans dosyasının gerçek yolu ile:
+```csharp
+FileStream myStream = new FileStream("PATH_TO_LICENSE_FILE", FileMode.Open);
+license.SetLicense(myStream);
+```
+
+#### S: Lisansın başarıyla yüklendiğini nasıl onaylarım?
+
+A: Lisansı yükledikten sonra, lisansın başarıyla yüklenip yüklenmediğini kontrol etmek için bir onay mesajı görüntüleyin. Konsolda bir mesaj görüntülemek için aşağıdaki kod satırını kullanın:
+```csharp
+Console.WriteLine("License loaded successfully.");
+```
+
+#### S: Lisansı yüklemek için uzak bir kaynaktan Akış kullanabilir miyim?
+
+ C: Evet, kullanabilirsiniz`MemoryStream` veya uzak bir kaynaktan veya bellekten bir lisans yüklemek için diğer akış türleri.
+
+#### S: Lisansı yükledikten sonra FileStream'i kapatmam gerekir mi?
+
+ C: Evet, kapatmanız önerilir.`FileStream` veya uygun bellek yönetimini sağlamak için lisansı yükledikten sonra akış kaynaklarını serbest bırakın.
+
+#### S: Lisansı FileStream yerine bir bayt dizisinden yükleyebilir miyim?
+
+ C: Evet, bir bayt dizisini bir bayt dizisine dönüştürebilirsiniz.`MemoryStream` ve ardından`SetLicense` akıştan lisans yüklemek için yöntem.
+
+#### S: Yüklenen lisans tüm uygulama için geçerli mi?
+
+ C: Evet, lisans kullanılarak yüklendikten sonra`SetLicense` yöntemi, tüm uygulama alanı için aktif kalır ve Aspose.PDF nesnelerinin tüm örnekleri için ek özellikleri etkinleştirir.
+
+#### S: Aspose.PDF'de lisanslama hakkında nasıl daha fazla bilgi edinebilirim?
+
+Y: Lisanslama, fiyatlandırma ve ilgili ayrıntılar hakkında daha fazla bilgi için şu adresi ziyaret edin:[Aspose.PDF Lisanslama](https://purchase.aspose.com/pricing/pdf/net) sayfa.
+
+#### S: Lisans yüklemeden önce Aspose.PDF'nin deneme sürümünü kullanabilir miyim?
+
+C: Evet, özelliklerini değerlendirmek için Aspose.PDF'nin deneme sürümünü kullanabilirsiniz. Ancak kitaplığın tüm potansiyelini ortaya çıkarmak için geçerli bir lisans yüklemeniz gerekir.

@@ -8,7 +8,7 @@ weight: 280
 url: /es/net/programming-with-text/remove-all-text/
 ---
 
-En este tutorial, explicaremos cómo eliminar todo el texto de un documento PDF utilizando la biblioteca Aspose.PDF para .NET. Pasaremos por el proceso paso a paso de abrir un PDF, seleccionar y eliminar texto de cada página y guardar el PDF modificado usando el código fuente de C# proporcionado.
+En este tutorial, explicaremos cómo eliminar todo el texto de un documento PDF utilizando la biblioteca Aspose.PDF para .NET. Pasaremos por el proceso paso a paso de abrir un PDF, seleccionar y eliminar texto de cada página y guardar el PDF modificado usando el código fuente de C# provisto.
 
 ## Requisitos
 

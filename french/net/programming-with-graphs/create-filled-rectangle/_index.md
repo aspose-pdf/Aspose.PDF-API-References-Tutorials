@@ -92,3 +92,33 @@ Console.WriteLine("\nFilled rectangle object created successfully.\nFile saved a
 ## Conclusion
 
 Dans ce didacticiel, nous avons expliqué comment créer un rectangle rempli à l'aide d'Aspose.PDF pour .NET. Vous pouvez désormais utiliser ces connaissances pour créer des formes géométriques avec des couleurs de remplissage personnalisées dans vos fichiers PDF.
+
+## FAQ
+
+#### Q : Quel est l'objectif de ce didacticiel ?
+
+R : Le but de ce didacticiel est de vous guider tout au long du processus de création d'un rectangle rempli à l'aide d'Aspose.PDF pour .NET, vous permettant d'ajouter des formes géométriques personnalisées avec des couleurs de remplissage à vos fichiers PDF.
+
+#### Q : Quels sont les prérequis requis avant de commencer ?
+
+R : Avant de commencer, assurez-vous d'avoir installé la bibliothèque Aspose.PDF et configuré votre environnement de développement. De plus, il est recommandé d'avoir une compréhension de base de la programmation C#.
+
+#### Q : Comment spécifier le répertoire d'enregistrement du fichier PDF ?
+
+R : Dans le code source fourni, vous pouvez modifier la variable "dataDir" pour indiquer le répertoire dans lequel vous souhaitez enregistrer le fichier PDF résultant.
+
+#### Q : À quoi sert l'objet Graph ?
+
+R : L'objet Graph agit comme un conteneur pour les éléments de dessin. Il est créé avec des dimensions spécifiées et ajouté à la collection de paragraphes de la page.
+
+#### Q : Comment puis-je ajouter un rectangle plein au document PDF ?
+
+R : Pour ajouter un rectangle rempli, créez une instance de la classe Rectangle avec les dimensions et la couleur de remplissage spécifiées, puis ajoutez-la à la collection de formes du graphique.
+
+#### Q : Puis-je personnaliser les dimensions et la couleur de remplissage du rectangle ?
+
+ R : Oui, vous pouvez personnaliser les dimensions et la couleur de remplissage du rectangle en modifiant les paramètres passés au`Aspose.Pdf.Drawing.Rectangle` constructeur et en définissant la propriété FillColor.
+
+#### Q : Comment puis-je enregistrer le fichier PDF résultant après avoir créé le rectangle rempli ?
+
+ R : Après avoir créé le rectangle rempli, vous pouvez enregistrer le fichier PDF résultant à l'aide de la`doc.Save(dataDir + "CreateFilledRectangle_out.pdf");` ligne dans le code source fourni.

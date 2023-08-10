@@ -57,7 +57,7 @@ TextFragment fragment = textFragments[1];
 
 ## Étape 5 : Créez le champ de texte masqué
 
- Nous créons un`TextBoxField`objet pour représenter le champ de texte masqué. Ce champ contiendra le texte qui devient visible lorsque le curseur de la souris survole le texte du déclencheur.
+ Nous créons un`TextBoxField` objet pour représenter le champ de texte masqué. Ce champ contiendra le texte qui devient visible lorsque le curseur de la souris survole le texte du déclencheur.
 
 ```csharp
 TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
@@ -126,7 +126,7 @@ floatingField.Value = "This is the \"floating text field\".";
 floatingField.ReadOnly = true;
 // Définir le drapeau "caché" pour rendre le champ invisible à l'ouverture du document
 floatingField.Flags |= AnnotationFlags.Hidden;
-//Définir un nom de champ unique n'est pas nécessaire mais autorisé
+// Définir un nom de champ unique n'est pas nécessaire mais autorisé
 floatingField.PartialName = "FloatingField_1";
 // Le réglage des caractéristiques d'apparence du champ n'est pas nécessaire mais le rend meilleur
 floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, System.Drawing.Color.Blue);
@@ -137,10 +137,10 @@ floatingField.Border.Width = 1;
 floatingField.Multiline = true;
 // Ajouter un champ de texte au document
 document.Form.Add(floatingField);
-//Créer un bouton invisible sur la position du fragment de texte
+// Créer un bouton invisible sur la position du fragment de texte
 ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
 // Créer une nouvelle action de masquage pour le champ spécifié (annotation) et l'indicateur d'invisibilité.
-// (Vous pouvez également faire référence au champ flottant par le nom si vous l'avez spécifié ci-dessus.)
+//(Vous pouvez également faire référence au champ flottant par le nom si vous l'avez spécifié ci-dessus.)
 // Ajouter des actions sur l'entrée/la sortie de la souris dans le champ du bouton invisible
 buttonField.Actions.OnEnter = new HideAction(floatingField, false);
 buttonField.Actions.OnExit = new HideAction(floatingField);

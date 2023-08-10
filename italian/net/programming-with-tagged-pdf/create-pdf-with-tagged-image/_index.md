@@ -85,3 +85,45 @@ document.Save(dataDir + "PDFwithTaggedImage.pdf");
 ## Conclusione
 
 In questo tutorial, hai imparato come creare un documento PDF con un'immagine con tag utilizzando Aspose.PDF per .NET. Le immagini con tag aggiungono ulteriori informazioni strutturate al tuo documento PDF.
+
+### FAQ
+
+#### D: Qual è lo scopo della creazione di un documento PDF con un'immagine contrassegnata utilizzando Aspose.PDF per .NET?
+
+R: La creazione di un documento PDF con un'immagine con tag utilizzando Aspose.PDF per .NET consente di aggiungere immagini con tag al contenuto del documento. Le immagini con tag forniscono informazioni strutturate, come testo alternativo e titoli, migliorando l'accessibilità e l'organizzazione.
+
+#### D: In che modo la libreria Aspose.PDF aiuta nella creazione di un documento PDF con un'immagine contrassegnata?
+
+R: Aspose.PDF per .NET è una solida libreria che fornisce funzionalità per la creazione, la manipolazione e la conversione di documenti PDF in modo programmatico. In questa esercitazione, le funzionalità della struttura del contenuto con tag della libreria vengono utilizzate per aggiungere un'immagine con tag al documento PDF.
+
+#### D: Quali sono i prerequisiti per la creazione di un documento PDF con un'immagine contrassegnata utilizzando Aspose.PDF per .NET?
+
+R: Prima di iniziare, assicurati di aver installato Visual Studio con .NET Framework e di avere la libreria Aspose.PDF per .NET referenziata nel tuo progetto.
+
+#### D: In che modo il codice C# fornito crea un documento PDF con un'immagine con tag?
+
+R: Il codice mostra come creare un documento PDF, definire un elemento immagine con tag e aggiungerlo al contenuto del documento. L'immagine con tag include testo alternativo, un titolo e un tag utilizzando i metodi forniti da Aspose.PDF.
+
+#### D: Posso utilizzare diversi formati di immagine per l'immagine taggata?
+
+R: Sì, puoi utilizzare diversi formati di immagine per l'immagine con tag, come JPEG, PNG, GIF, ecc. L'esempio di codice fornito nel tutorial utilizza un'immagine JPEG, ma puoi sostituirla con il percorso di un file immagine in il tuo formato preferito.
+
+#### D: Come viene utilizzato il testo alternativo (alt text) nelle immagini contrassegnate?
+
+ R: Il testo alternativo fornisce una descrizione testuale dell'immagine, che viene letta ad alta voce dagli screen reader per gli utenti ipovedenti. Nel codice fornito, il testo alternativo viene impostato utilizzando il file`AlternativeText` proprietà del`IllustrationElement` che rappresenta l'immagine contrassegnata.
+
+####  D: Come funziona il`SetTitle` method contribute to the PDF document's tagged image?
+
+ R: Il`SetTitle` Il metodo imposta il titolo del contenuto con tag del documento PDF, fornendo un contesto aggiuntivo per l'immagine con tag. Questo titolo può aiutare a identificare lo scopo o l'oggetto del contenuto taggato.
+
+#### D: Posso personalizzare il tag e il titolo dell'immagine taggata?
+
+ R: Sì, puoi personalizzare il tag e il titolo dell'immagine taggata utilizzando il file`SetTag` E`Title` metodi del`IllustrationElement`. L'esempio di codice mostra come impostare il tag su "Fig" e il titolo su "Picture 1".
+
+#### D: Come posso assicurarmi che l'immagine taggata sia accessibile e conforme agli standard di accessibilità?
+
+R: Utilizzando le caratteristiche della struttura del contenuto con tag di Aspose.PDF e fornendo testo alternativo e altre informazioni pertinenti, contribuisci all'accessibilità dell'immagine con tag. Garantire la conformità agli standard di accessibilità implica seguire le migliori pratiche per il testo alternativo e la struttura del documento.
+
+#### D: È possibile aggiungere più immagini con tag allo stesso documento PDF utilizzando tecniche simili?
+
+ R: Sì, puoi aggiungere più immagini con tag allo stesso documento PDF utilizzando tecniche simili. Creeresti ulteriori`IllustrationElement` istanze per ogni immagine contrassegnata e personalizzarne le proprietà in base alle esigenze.

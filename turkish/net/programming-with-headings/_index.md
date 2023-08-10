@@ -13,4 +13,4 @@ Aspose.PDF for .NET öğreticileri, sizi adım adım PDF belgelerinizdeki başl�
 ## Öğreticiler
 | Başlık | Tanım |
 | --- | --- | 
-| [Numara Stilini Uygula](./apply-number-style/) | Aspose.PDF for .NET kullanarak bir PDF belgesindeki başlıklara numaralandırma stilini nasıl uygulayacağınızı öğrenin. Adım adım rehber. |   
+| [PDF Dosyasında Sayı Stilini Uygula](./apply-number-style/) | Aspose.PDF for .NET kullanarak PDF dosyasındaki başlıklara numaralandırma stilini nasıl uygulayacağınızı öğrenin. Adım adım rehber. |   

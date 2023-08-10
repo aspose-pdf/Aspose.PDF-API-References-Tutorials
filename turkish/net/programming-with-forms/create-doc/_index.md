@@ -1,13 +1,12 @@
 ---
-title: Doküman Oluştur
-linktitle: Doküman Oluştur
+title: Belge Oluştur
+linktitle: Belge Oluştur
 second_title: Aspose.PDF for .NET API Referansı
 description: Aspose.PDF for .NET kullanarak radyo düğmeleriyle kolayca bir belge oluşturun.
 type: docs
 weight: 40
 url: /tr/net/programming-with-forms/create-doc/
 ---
-
 Bu eğitimde size Aspose.PDF for .NET kullanarak radyo düğmeleriyle nasıl belge oluşturacağınızı göstereceğiz. Bu süreçte size yol göstermesi için C# kaynak kodunu adım adım açıklayacağız.
 
 ##1. Adım: Hazırlık
@@ -144,3 +143,25 @@ catch (Exception ex)
 ## Çözüm
 
 Bu eğitimde, Aspose.PDF for .NET kullanarak radyo düğmeleriyle nasıl belge oluşturacağımızı öğrendik. Bu adımları izleyerek, Aspose.PDF kullanarak PDF belgelerinize kolayca radyo butonları ekleyebilirsiniz.
+
+### SSS
+
+#### S: Aspose.PDF for .NET kullanarak belgedeki radyo düğmelerinin görünümünü özelleştirebilir miyim?
+
+C: Evet, Aspose.PDF for .NET kullanarak belgedeki radyo düğmelerinin görünümünü özelleştirebilirsiniz. Radyo düğmelerinin görünümünü özelleştirmek için boyut, renk, kenarlık stili ve daha fazlası gibi özellikleri ayarlayabilirsiniz.
+
+#### S: Birbirini dışlayan seçeneklerle radyo düğmesi gruplarını nasıl ekleyebilirim?
+
+C: Birbirini dışlayan seçenekler oluşturmak için aynı ada sahip birden çok radyo düğmesi alanı ekleyebilirsiniz. Bu, bir seçenek seçildiğinde, aynı ada sahip diğer seçeneklerin otomatik olarak seçiminin kaldırılmasını sağlayacaktır.
+
+#### S: Radyo düğmeleri için varsayılan seçili bir seçenek ayarlamak mümkün mü?
+
+C: Evet, Aspose.PDF for .NET'i kullanarak radyo düğmeleri için varsayılan seçili bir seçenek belirleyebilirsiniz. kullanabilirsiniz`Selected` mülkiyeti`RadioButtonOptionField` Bir seçeneği varsayılan olarak seçili olarak işaretlemek için nesne.
+
+#### S: Radyo düğmelerine olay işleyicileri ekleyebilir miyim?
+
+ C: Evet, Aspose.PDF for .NET kullanarak radyo düğmelerine olay işleyicileri ekleyebilirsiniz. gibi JavaScript eylemlerini ilişkilendirebilirsiniz.`OnValueChanged`, kullanıcı bir seçeneği belirlediğinde belirli eylemleri gerçekleştirmek için radyo düğmelerine.
+
+#### S: Kullanıcı bir seçim yaptıktan sonra seçili seçeneği radyo düğmesi grubundan nasıl alabilirim?
+
+ C: Aspose.PDF for .NET'i kullanarak radyo düğmesi grubundan seçilen seçeneği alabilirsiniz. Kullanıcı bir seçim yaptıktan sonra,`Selected` mülkiyeti`RadioButtonOptionField` hangi seçeneğin seçildiğini kontrol etmek için nesne.

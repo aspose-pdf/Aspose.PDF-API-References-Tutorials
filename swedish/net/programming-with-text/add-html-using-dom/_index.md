@@ -45,7 +45,7 @@ Page page = doc.Pages.Add();
 ```
 
 ## Steg 6: Skapa ett HtmlFragment med HTML-innehållet
- Instantiera en`HtmlFragment` objekt och tillhandahålla önskat HTML-innehåll. I den medföljande koden är HTML-innehållet tilldelat variabeln`titel`. Du kan ändra HTML-innehållet efter behov.
+Instantiera en`HtmlFragment` objekt och tillhandahålla önskat HTML-innehåll. I den medföljande koden är HTML-innehållet tilldelat variabeln`titel`. Du kan ändra HTML-innehållet efter behov.
 
 ```csharp
 HtmlFragment titel = new HtmlFragment("<fontsize=10><b><i>Table</i></b></fontsize>");

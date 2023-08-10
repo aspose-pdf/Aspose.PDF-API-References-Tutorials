@@ -7,7 +7,6 @@ type: docs
 weight: 250
 url: /de/net/document-conversion/remove-hyperlinks-after-converting-from-html/
 ---
-
 In diesem Tutorial führen wir Sie durch den Prozess des Entfernens von Hyperlinks aus einer PDF-Datei, die mit Aspose.PDF für .NET aus einer HTML-Datei generiert wurde. Hyperlinks sind anklickbare Links, die auf andere Seiten oder Websites weiterleiten können. Wenn Sie die folgenden Schritte ausführen, können Sie Hyperlinks aus der resultierenden PDF-Datei entfernen.
 
 ## Voraussetzungen
@@ -106,3 +105,25 @@ doc.Save(dataDir + "RemoveHyperlinksFromText_out.pdf");
 
 ## Abschluss
 In diesem Tutorial haben wir den Schritt-für-Schritt-Prozess zum Entfernen von Hyperlinks aus einer PDF-Datei behandelt, die mit Aspose.PDF für .NET aus einer HTML-Datei generiert wurde. Wenn Sie die oben beschriebenen Anweisungen befolgen, können Sie Hyperlinks erfolgreich aus der resultierenden PDF-Datei entfernen.
+
+### FAQs
+
+#### F: Was ist Aspose.PDF für .NET?
+
+A: Aspose.PDF für .NET ist eine leistungsstarke Bibliothek, die Entwicklern die Arbeit mit PDF-Dokumenten in C#-Anwendungen ermöglicht. Es bietet eine breite Palette an Funktionen, einschließlich der Möglichkeit, HTML-Dateien in PDF zu konvertieren und PDF-Inhalte zu bearbeiten.
+
+#### F: Warum sollte ich Hyperlinks aus einer PDF-Datei entfernen wollen?
+
+A: Es gibt verschiedene Gründe, Hyperlinks aus einer PDF-Datei zu entfernen. Beispielsweise möchten Sie möglicherweise externe Links für Druck- oder Archivierungszwecke entfernen oder sicherstellen, dass der PDF-Inhalt nicht über Hyperlinks navigierbar ist.
+
+#### F: Wie kann ich mit Aspose.PDF für .NET eine HTML-Datei laden und Hyperlinks entfernen?
+
+ A: Um eine HTML-Datei zu laden und Hyperlinks zu entfernen, können Sie Aspose.PDF für .NET verwenden`HtmlLoadOptions` Klasse. Durchlaufen Sie die Anmerkungen der PDF-Seiten, um Linkanmerkungen zu finden und deren Attribute zu ändern.
+
+#### F: Kann ich den Ausgabedateinamen für das resultierende PDF anpassen?
+
+A: Ja, Sie können den Ausgabedateinamen für die resultierende PDF-Datei anpassen, indem Sie den Code ändern, der das PDF-Dokument speichert. Ändern Sie einfach den gewünschten Dateinamen im`doc.Save()` Methode.
+
+#### F: Ist es möglich, Hyperlinks anhand bestimmter Kriterien selektiv zu entfernen?
+
+A: Ja, Sie können Hyperlinks anhand bestimmter Kriterien selektiv entfernen. Sie können beispielsweise festlegen, dass nur externe Links oder Links, die auf bestimmte URLs verweisen, entfernt werden.

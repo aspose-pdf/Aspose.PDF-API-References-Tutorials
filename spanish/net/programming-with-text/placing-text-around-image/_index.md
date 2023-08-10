@@ -8,7 +8,7 @@ weight: 260
 url: /es/net/programming-with-text/placing-text-around-image/
 ---
 
-En este tutorial, explicaremos cómo colocar texto alrededor de una imagen en un documento PDF utilizando la biblioteca Aspose.PDF para .NET. Pasaremos por el proceso paso a paso de crear una tabla, agregar una imagen y colocar el texto alrededor de la imagen usando el código fuente de C# provisto.
+En este tutorial, explicaremos cómo colocar texto alrededor de una imagen en un documento PDF utilizando la biblioteca Aspose.PDF para .NET. Pasaremos por el proceso paso a paso de crear una tabla, agregar una imagen y colocar el texto alrededor de la imagen usando el código fuente de C# proporcionado.
 
 ## Requisitos
 
@@ -72,7 +72,7 @@ row1.Cells[0].Paragraphs.Add(logo);
 
 ## Paso 6: agrega texto alrededor de la imagen
 
- Creamos variables de cadena que contienen texto con formato HTML y creamos un`HtmlFragment` objeto. Luego, agregamos el texto HTML a la celda de la tabla que contiene la imagen.
+Creamos variables de cadena que contienen texto con formato HTML y creamos un`HtmlFragment` objeto. Luego, agregamos el texto HTML a la celda de la tabla que contiene la imagen.
 
 ```csharp
 string TitleString = "<font face=\"Arial\" size=6 color=\"#101090\"><b>Aspose.Pdf for .NET</b></font>";
@@ -111,7 +111,7 @@ Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 Aspose.Pdf.Page page = doc.Pages.Add();
 // Crear una instancia de un objeto de tabla
 Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
-//Agregue la tabla en la colección de párrafos de la sección deseada
+// Agregue la tabla en la colección de párrafos de la sección deseada
 page.Paragraphs.Add(table1);
 // Establecer con anchos de columna de la tabla
 table1.ColumnWidths = "120 270";
@@ -136,7 +136,7 @@ logo.FixWidth = 110;
 row1.Cells.Add();
 // Agregue la imagen a la colección de párrafos de la celda de la tabla
 row1.Cells[0].Paragraphs.Add(logo);
-// Cree variables de cadena con texto que contenga etiquetas html
+//Cree variables de cadena con texto que contenga etiquetas html
 string TitleString = "<font face=\"Arial\" size=6 color=\"#101090\"><b> Aspose.Pdf for .NET</b></font>";
 string BodyString1 = "<font face=\"Arial\" size=2><br/>Aspose.Pdf for .NET is a non-graphical PDF� document reporting component that enables .NET applications to <b> create PDF documents from scratch </b> without utilizing Adobe Acrobat�. Aspose.Pdf for .NET is very affordably priced and offers a wealth of strong features including: compression, tables, graphs, images, hyperlinks, security and custom fonts. </font>";
 // Cree un objeto de texto para agregarlo a la derecha de la imagen

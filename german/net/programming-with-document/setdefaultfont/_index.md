@@ -1,8 +1,8 @@
 ---
-title: Legen Sie die Standardschriftart fest
-linktitle: Legen Sie die Standardschriftart fest
+title: Legen Sie die Standardschriftart in der PDF-Datei fest
+linktitle: Legen Sie die Standardschriftart in der PDF-Datei fest
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erfahren Sie in dieser Schritt-für-Schritt-Anleitung, wie Sie mit Aspose.PDF für .NET die Standardschriftart für ein PDF-Dokument festlegen.
+description: Erfahren Sie in dieser Schritt-für-Schritt-Anleitung, wie Sie mit Aspose.PDF für .NET die Standardschriftart in einer PDF-Datei festlegen.
 type: docs
 weight: 280
 url: /de/net/programming-with-document/setdefaultfont/
@@ -65,3 +65,21 @@ using (Document document = new Document(fs))
 	document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
 }
 ```
+
+## Abschluss
+
+Das Festlegen einer Standardschriftart in PDF-Dokumenten mit Aspose.PDF für .NET ist eine einfache und effektive Möglichkeit, sicherzustellen, dass der Text korrekt angezeigt wird, auch wenn die Originalschriftarten nicht verfügbar sind. Durch Befolgen der Schritt-für-Schritt-Anleitung und Verwendung des bereitgestellten C#-Quellcodes können Entwickler ganz einfach die Standardschriftart festlegen und PDFs erstellen, die in verschiedenen Umgebungen ein konsistentes und zuverlässiges Anzeigeerlebnis bieten. Diese Funktion ist besonders nützlich in Szenarien, in denen die PDFs auf verschiedenen Systemen angezeigt oder gedruckt werden, auf denen möglicherweise unterschiedliche Schriftarten installiert sind.
+
+### FAQs zum Festlegen der Standardschriftart in einer PDF-Datei
+
+#### F: Warum ist es wichtig, in PDF-Dokumenten eine Standardschriftart festzulegen?
+
+A: Das Festlegen einer Standardschriftart in PDF-Dokumenten ist wichtig, da dadurch sichergestellt wird, dass der Text auch dann korrekt angezeigt wird, wenn die Originalschriftarten auf dem System, auf dem die PDF-Datei angezeigt oder gedruckt wird, nicht verfügbar sind. Es hilft, Probleme wie fehlenden oder verstümmelten Text zu vermeiden und sorgt für ein konsistentes und zuverlässiges Seherlebnis.
+
+#### F: Kann ich mit Aspose.PDF für .NET eine beliebige Schriftart als Standardschriftart auswählen?
+
+ A: Ja, Sie können mit Aspose.PDF für .NET jede auf dem System verfügbare Schriftart als Standardschriftart auswählen. Geben Sie einfach den Namen der Schriftart im an`DefaultFontName` Eigentum der`PdfSaveOptions` Klasse.
+
+#### F: Was passiert, wenn die angegebene Standardschriftart auf dem System nicht verfügbar ist?
+
+A: Wenn die angegebene Standardschriftart auf dem System nicht verfügbar ist, verwendet der PDF-Viewer eine Ersatzschriftart, um den Text anzuzeigen. Es empfiehlt sich, eine allgemein verfügbare Schriftart wie Arial oder Times New Roman zu wählen, um die Kompatibilität zwischen verschiedenen Systemen sicherzustellen.

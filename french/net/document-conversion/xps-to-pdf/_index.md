@@ -1,13 +1,12 @@
 ---
-title: XPS en PDF
-linktitle: XPS en PDF
+title: XPS vers PDF
+linktitle: XPS vers PDF
 second_title: Référence de l'API Aspose.PDF pour .NET
 description: Guide étape par étape pour convertir un fichier XPS en PDF avec Aspose.PDF pour .NET.
 type: docs
 weight: 350
 url: /fr/net/document-conversion/xps-to-pdf/
 ---
-
 Dans ce didacticiel, nous vous expliquerons comment convertir un fichier XPS en PDF à l'aide de la bibliothèque Aspose.PDF pour .NET, étape par étape. Nous détaillerons le code source C# fourni et vous montrerons comment l'implémenter dans vos propres projets. À la fin de ce didacticiel, vous serez en mesure de convertir facilement des fichiers XPS en documents PDF.
 
 ## Étape 1 : Définir le répertoire des documents
@@ -43,7 +42,7 @@ try
 	// Chemin d'accès au répertoire des documents.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Instancier l'objet LoadOption à l'aide de l'option de chargement XPS
+	//Instancier l'objet LoadOption à l'aide de l'option de chargement XPS
 	Aspose.Pdf.LoadOptions options = new XpsLoadOptions();
 
 	// Créer un objet document
@@ -62,3 +61,25 @@ catch(Exception ex)
 
 ## Conclusion
 Dans ce didacticiel, nous avons appris à convertir un fichier XPS en PDF à l'aide de la bibliothèque Aspose.PDF pour .NET. En suivant les étapes fournies, vous pouvez facilement effectuer cette conversion dans vos propres applications. Obtenez des résultats précis et professionnels lors de la conversion de fichiers XPS en PDF.
+
+### FAQ
+
+#### Q : Qu'est-ce que XPS et pourquoi voudrais-je le convertir en PDF ?
+
+R : XPS (XML Paper Specification) est un format de document à mise en page fixe développé par Microsoft. La conversion de XPS en PDF vous permet de rendre le document plus accessible et largement compatible, car le PDF est un format universellement pris en charge sur différentes plateformes et appareils.
+
+#### Q : La bibliothèque Aspose.PDF prend-elle en charge d'autres formats de fichiers que XPS ?
+
+R : Oui, Aspose.PDF pour .NET prend en charge divers autres formats de fichiers pour la conversion, tels que HTML, EPUB, SVG, XML, etc. Il vous permet également de créer et de manipuler des documents PDF par programme.
+
+#### Q : Puis-je personnaliser le processus de conversion PDF, par exemple en définissant la taille de la page, les marges ou d'autres options ?
+
+R : Oui, vous pouvez personnaliser le processus de conversion PDF en utilisant Aspose.PDF pour .NET. La bibliothèque fournit une large gamme d'options pour contrôler la taille de la page, les marges, la compression d'image, l'incorporation de polices et d'autres paramètres liés au PDF pour répondre à vos besoins spécifiques.
+
+#### Q : Existe-t-il une version d'évaluation d'Aspose.PDF pour .NET disponible pour les tests ?
+
+R : Oui, vous pouvez télécharger et essayer la version d'essai d'Aspose.PDF pour .NET à partir du site Web officiel d'Aspose. La version d'essai vous permet d'explorer les fonctionnalités de la bibliothèque avant d'effectuer un achat.
+
+#### Q : Puis-je convertir plusieurs fichiers XPS en PDF dans un processus par lots ?
+
+R : Oui, vous pouvez convertir plusieurs fichiers XPS en PDF dans un processus par lots en implémentant une boucle ou en parcourant la liste des fichiers XPS et en convertissant chaque fichier en PDF à l'aide du code fourni.

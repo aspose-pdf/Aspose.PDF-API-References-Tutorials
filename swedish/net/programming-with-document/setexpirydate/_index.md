@@ -1,8 +1,8 @@
 ---
-title: Ställ in utgångsdatum
-linktitle: Ställ in utgångsdatum
+title: Ställ in utgångsdatum i PDF-fil
+linktitle: Ställ in utgångsdatum i PDF-fil
 second_title: Aspose.PDF för .NET API Referens
-description: Lär dig hur du ställer in utgångsdatum i PDF-dokument med Aspose.PDF för .NET med denna steg-för-steg-guide.
+description: Lär dig hur du ställer in utgångsdatum i PDF-fil med Aspose.PDF för .NET med denna steg-för-steg-guide.
 type: docs
 weight: 300
 url: /sv/net/programming-with-document/setexpirydate/
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Steg 2: Skapa ett nytt PDF-dokument
 
-För att skapa ett nytt PDF-dokument måste vi instansiera ett nytt`Aspose.Pdf.Document` objekt. Vi kan göra detta med följande kod:
+ För att skapa ett nytt PDF-dokument måste vi instansiera ett nytt`Aspose.Pdf.Document` objekt. Vi kan göra detta med följande kod:
 
 ```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
@@ -35,7 +35,7 @@ doc.Pages.Add();
 
 ## Steg 4: Lägga till text i PDF-dokumentet
 
- Efter att ha lagt till en sida i PDF-dokumentet kan vi lägga till text till det med hjälp av`Paragraphs` samling. Vi kan göra detta med följande kod:
+Efter att ha lagt till en sida i PDF-dokumentet kan vi lägga till text till det med hjälp av`Paragraphs` samling. Vi kan göra detta med följande kod:
 
 ```csharp
 doc.Pages[1].Paragraphs.Add(new TextFragment("Hello World..."));
@@ -99,3 +99,21 @@ dataDir = dataDir + "SetExpiryDate_out.pdf";
 // Spara PDF-dokument
 doc.Save(dataDir);
 ```
+
+## Slutsats
+
+Att ställa in ett utgångsdatum för ett PDF-dokument med Aspose.PDF för .NET är en användbar funktion för att säkerställa att dokumentet endast är giltigt under en viss period. Genom att följa steg-för-steg-guiden och använda den medföljande C#-källkoden kan utvecklare enkelt ställa in utgångsdatum och skapa PDF-filer med tidsbegränsad giltighet. Den här funktionen kan vara särskilt användbar för dokument som behöver nås eller distribueras under en begränsad tid.
+
+### Vanliga frågor för inställt utgångsdatum i PDF-fil
+
+#### F: Kan jag ställa in ett annat utgångsdatum för PDF-dokumentet?
+
+ S: Ja, du kan ställa in ett annat utgångsdatum för PDF-dokumentet genom att ändra JavaScript-koden i steg 5. I det angivna exemplet är utgångsdatumet satt till maj 2017. För att ställa in ett annat utgångsdatum måste du ändra`year` och`month` variabler i JavaScript-koden till önskat år och månad.
+
+#### F: Vad händer när PDF-dokumentet har upphört att gälla?
+
+S: När PDF-dokumentet har upphört att gälla, enligt vad som anges i JavaScript-koden, kommer läsaren att visa ett varningsmeddelande som indikerar att filen är utgången och att användaren behöver en ny. Detta varningsmeddelande kommer att visas när PDF-filen öppnas.
+
+#### F: Kan jag använda en specifik tid för utgångsdatumet istället för bara datumet?
+
+ S: Ja, du kan ställa in en specifik tid för utgångsdatumet i JavaScript-koden. Genom att modifiera`expiry` variabel i JavaScript-koden för att inkludera önskad tid, kan du ställa in en specifik tid för utgångsdatumet.

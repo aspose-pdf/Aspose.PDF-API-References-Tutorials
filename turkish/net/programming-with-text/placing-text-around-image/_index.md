@@ -72,7 +72,7 @@ row1.Cells[0].Paragraphs.Add(logo);
 
 ## 6. Adım: Resmin Etrafına Metin Ekleyin
 
- HTML biçimli metin içeren dize değişkenleri oluşturuyoruz ve`HtmlFragment` nesne. Ardından, HTML metnini görüntüyü içeren tablo hücresine ekliyoruz.
+HTML biçimli metin içeren dize değişkenleri oluşturuyoruz ve`HtmlFragment` nesne. Ardından, HTML metnini görüntüyü içeren tablo hücresine ekliyoruz.
 
 ```csharp
 string TitleString = "<font face=\"Arial\" size=6 color=\"#101090\"><b>Aspose.Pdf for .NET</b></font>";
@@ -111,7 +111,7 @@ Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 Aspose.Pdf.Page page = doc.Pages.Add();
 // Bir tablo nesnesini somutlaştırın
 Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
-//Tabloyu istediğiniz bölümün paragraf koleksiyonuna ekleyin
+// Tabloyu istediğiniz bölümün paragraf koleksiyonuna ekleyin
 page.Paragraphs.Add(table1);
 // Tablonun sütun genişlikleriyle ayarla
 table1.ColumnWidths = "120 270";
@@ -136,7 +136,7 @@ logo.FixWidth = 110;
 row1.Cells.Add();
 // Görüntüyü tablo hücresinin paragraflar koleksiyonuna ekleyin
 row1.Cells[0].Paragraphs.Add(logo);
-// Html etiketleri içeren metinle dize değişkenleri oluşturun
+//Html etiketleri içeren metinle dize değişkenleri oluşturun
 string TitleString = "<font face=\"Arial\" size=6 color=\"#101090\"><b> Aspose.Pdf for .NET</b></font>";
 string BodyString1 = "<font face=\"Arial\" size=2><br/>Aspose.Pdf for .NET is a non-graphical PDF� document reporting component that enables .NET applications to <b> create PDF documents from scratch </b> without utilizing Adobe Acrobat�. Aspose.Pdf for .NET is very affordably priced and offers a wealth of strong features including: compression, tables, graphs, images, hyperlinks, security and custom fonts. </font>";
 // Resmin sağına eklenecek bir metin nesnesi oluşturun

@@ -19,7 +19,7 @@ url: /ar/net/programming-with-text/replace-text-on-regular-expression/
 
 ## الخطوة 1: قم بإعداد دليل المستندات
 
- عيّن المسار إلى الدليل حيث يوجد لديك ملف PDF للإدخال. يستبدل`"YOUR DOCUMENT DIRECTORY"` في ال`dataDir` متغير مع المسار إلى ملف PDF الخاص بك.
+ عيّن المسار إلى الدليل حيث يوجد لديك ملف PDF للإدخال. يستبدل`"YOUR DOCUMENT DIRECTORY"` في ال`dataDir`متغير مع المسار إلى ملف PDF الخاص بك.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";

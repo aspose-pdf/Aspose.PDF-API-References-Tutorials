@@ -89,7 +89,7 @@ page.Accept(textFragmentAbsorber);
 
 ## Schritt 9: Abrufen der extrahierten Textfragmente
 
- Holen Sie sich die extrahierten Textfragmente mit`TextFragments` Eigentum der`TextFragmentAbsorber` Objekt:
+Holen Sie sich die extrahierten Textfragmente mit`TextFragments` Eigentum der`TextFragmentAbsorber` Objekt:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;

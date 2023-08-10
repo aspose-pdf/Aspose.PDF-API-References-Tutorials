@@ -29,7 +29,7 @@ Aspose.PDF'nin .NET için "Metin ile Programlama" öğreticileri, PDF belgelerin
 | [Metnin Tümünü Çıkar](./extract-text-all/) |Aspose.PDF for .NET kullanarak bir PDF belgesinden tüm metni nasıl çıkaracağınızı öğrenin.|  
 | [Metni Sayfa Bölgesinden Çıkar](./extract-text-from-page-region/) | Aspose.PDF for .NET kullanarak bir PDF belgesinin sayfasındaki belirli bir bölgeden nasıl metin çıkaracağınızı öğrenin. |  
 | [Metin Sayfasını Ayıkla](./extract-text-page/) | Aspose.PDF for .NET kullanarak bir PDF belgesinin belirli bir sayfasından nasıl metin çıkaracağınızı öğrenin. |  
-| [Metin Aygıtını Kullanarak Metin Çıkarma](./extract-text-using-text-device/) | Aspose.PDF for .NET'te Metin Aygıtını kullanarak bir PDF belgesinden nasıl metin çıkaracağınızı öğrenin. |  
+| [Metin Aygıtını Kullanarak Metin Çıkarın](./extract-text-using-text-device/) | Aspose.PDF for .NET'te Metin Aygıtını kullanarak bir PDF belgesinden nasıl metin çıkaracağınızı öğrenin. |  
 | [Metnin Genişliğini Dinamik Olarak Alın](./get-width-of-text-dynamically/) | Aspose.PDF for .NET kullanarak metnin genişliğini dinamik olarak nasıl alacağınızı öğrenin. |  
 | [Gizli Metin Bloğu](./hidden-text-block/) | Aspose.PDF for .NET kullanarak PDF'de gizli metin bloklarını nasıl oluşturacağınızı öğrenin. |  
 | [PDF'de Karakteri Vurgula](./highlight-character-in-pdf/) | Aspose.PDF for .NET kullanarak bir PDF belgesindeki karakterleri nasıl vurgulayacağınızı öğrenin. |  

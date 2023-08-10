@@ -97,3 +97,41 @@ doc.Save(dataDir + "AddDrawingWithGradientFill_out.pdf");
 ## Abschluss
 
 In diesem Tutorial haben wir Schritt für Schritt erklärt, wie Sie mit Aspose.PDF für .NET eine Zeichnung mit einer Verlaufsfüllung zur Programmierung mit Grafiken hinzufügen. Jetzt können Sie dieses Wissen nutzen, um attraktive PDF-Dokumente mit benutzerdefinierten Designs und Farbverlaufsfüllungen zu erstellen.
+
+### FAQs
+
+#### F: Was ist der Zweck dieses Tutorials?
+
+A: Dieses Tutorial soll Sie durch den Prozess des Hinzufügens einer Zeichnung mit Farbverlaufsfüllung zur Programmierung mit Grafiken mit Aspose.PDF für .NET führen.
+
+#### F: Welche Voraussetzungen sind vor dem Start erforderlich?
+
+A: Bevor Sie beginnen, stellen Sie sicher, dass Sie die Aspose.PDF-Bibliothek installiert und Ihre Entwicklungsumgebung eingerichtet haben. Darüber hinaus werden grundlegende Kenntnisse der C#-Programmierung empfohlen.
+
+#### F: Wie lege ich das Verzeichnis zum Speichern der PDF-Datei fest?
+
+A: Im bereitgestellten Quellcode können Sie den Wert der Variable „dataDir“ ändern, um das Verzeichnis anzugeben, in dem Sie die resultierende PDF-Datei speichern möchten.
+
+#### F: Was ist der Zweck des Graph-Objekts?
+
+A: Das Graph-Objekt dient als Container für die Zeichenelemente. Es wird mit den angegebenen Abmessungen erstellt und der Absatzsammlung der Seite hinzugefügt.
+
+#### F: Wie kann ich die Verlaufsfüllung für eine Form konfigurieren?
+
+A: Um die Verlaufsfüllung zu konfigurieren, können Sie die FillColor-Eigenschaft der GraphInfo einer Form mithilfe der GradientAxialShading-Klasse festlegen. Auf diese Weise können Sie die Start- und Endpunkte des Farbverlaufs sowie die Farben für den Übergang definieren.
+
+#### F: Kann ich die Farben und die Richtung der Verlaufsfüllung anpassen?
+
+A: Ja, Sie können die Farben und die Richtung der Verlaufsfüllung anpassen, indem Sie die Farbobjekte anpassen und die Start- und Endpunkte des GradientAxialShading angeben.
+
+#### F: Was ist der letzte Schritt des Tutorials?
+
+A: Der letzte Schritt besteht darin, die resultierende PDF-Datei mit dem Namen „AddDrawingWithGradientFill_out.pdf“ im angegebenen Verzeichnis zu speichern.
+
+#### F: Ist ein Beispielquellcode verfügbar?
+
+A: Ja, das Tutorial stellt einen Beispielquellcode bereit, den Sie als Referenz für die Implementierung der beschriebenen Schritte verwenden können.
+
+#### F: Kann ich eine Farbverlaufsfüllung auch auf andere Formen als Rechtecke anwenden?
+
+A: Ja, Sie können eine Verlaufsfüllung auch auf andere Formen anwenden. Der Prozess umfasst das Konfigurieren der FillColor-Eigenschaft der GraphInfo der Form mithilfe der GradientAxialShading-Klasse.

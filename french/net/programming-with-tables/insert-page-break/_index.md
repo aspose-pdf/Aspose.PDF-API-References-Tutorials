@@ -1,14 +1,13 @@
 ---
-title: Insérer un saut de page
-linktitle: Insérer un saut de page
+title: Insérer un saut de page dans un fichier PDF
+linktitle: Insérer un saut de page dans un fichier PDF
 second_title: Référence de l'API Aspose.PDF pour .NET
-description: Apprenez à insérer un saut de page dans un document PDF en utilisant Aspose.PDF pour .NET.
+description: Apprenez à insérer un saut de page dans un fichier PDF en utilisant Aspose.PDF pour .NET.
 type: docs
 weight: 110
 url: /fr/net/programming-with-tables/insert-page-break/
 ---
-
-Dans ce tutoriel, nous allons apprendre à insérer un saut de page dans un document PDF en utilisant Aspose.PDF pour .NET. Nous expliquerons pas à pas le code source en C#. A la fin de ce tutoriel, vous saurez comment ajouter un saut de page après un certain nombre de lignes dans un tableau d'un document PDF. Commençons!
+Dans ce didacticiel, nous allons apprendre à insérer un saut de page dans un fichier PDF à l'aide d'Aspose.PDF pour .NET. Nous expliquerons pas à pas le code source en C#. A la fin de ce tutoriel, vous saurez comment ajouter un saut de page après un certain nombre de lignes dans un tableau d'un document PDF. Commençons!
 
 ## Étape 1 : Configurer l'environnement
 Assurez-vous d'avoir configuré votre environnement de développement C# avec Aspose.PDF pour .NET. Ajoutez la référence à la bibliothèque et importez les espaces de noms nécessaires.
@@ -106,3 +105,51 @@ Console.WriteLine("\nPage break inserted successfully.\nFile saved at " + dataDi
 
 ## Conclusion
 Dans ce didacticiel, nous avons appris à insérer un saut de page dans un document PDF à l'aide d'Aspose.PDF pour .NET. Vous pouvez utiliser ce guide étape par étape pour ajouter un saut de page après un certain nombre de lignes dans un tableau dans un document PDF à l'aide de C#.
+
+### FAQ pour insérer un saut de page dans un fichier PDF
+
+#### Q : Comment puis-je modifier la taille de la page pour les nouvelles pages créées après le saut de page ?
+
+ R : Pour modifier la taille de page des nouvelles pages créées après le saut de page, vous pouvez`PageSize` propriété de la`Page` objet. Par exemple, vous pouvez utiliser le code suivant pour définir la taille de la page sur A4 :
+
+```csharp
+// Définissez la taille de la page sur A4
+doc.Pages[1].SetPageSize(PageSize.A4);
+```
+
+#### Q : Puis-je contrôler les marges des nouvelles pages après le saut de page ?
+
+ R : Oui, vous pouvez contrôler les marges de page pour les nouvelles pages après le saut de page. Utilisez le`Margin` propriété de la`Page` objet pour définir les marges de la page. Par exemple, pour définir toutes les marges sur 10 points, vous pouvez utiliser le code suivant :
+
+```csharp
+// Définir toutes les marges sur 10 points
+doc.Pages[1].Margin = new MarginInfo(10, 10, 10, 10);
+```
+
+#### Q : Est-il possible d'ajouter des en-têtes et des pieds de page aux nouvelles pages après le saut de page ?
+
+ R : Oui, vous pouvez ajouter des en-têtes et des pieds de page aux nouvelles pages après le saut de page. Utilisez le`Page.Header` et`Page.Footer` properties pour ajouter du contenu aux sections d'en-tête et de pied de page de la page. Par exemple:
+
+```csharp
+// Ajouter un en-tête aux nouvelles pages
+doc.Pages[1].Header = new HeaderFooter()
+{
+    Margin = new MarginInfo(10, 10, 10, 10),
+    Paragraphs = { new TextFragment("Header content") }
+};
+
+// Ajouter un pied de page aux nouvelles pages
+doc.Pages[1].Footer = new HeaderFooter()
+{
+    Margin = new MarginInfo(10, 10, 10, 10),
+    Paragraphs = { new TextFragment("Footer content") }
+};
+```
+
+#### Q : Puis-je insérer des sauts de page à des emplacements spécifiques autrement qu'après un certain nombre de lignes ?
+
+ R : Oui, vous pouvez insérer des sauts de page à des emplacements spécifiques autres qu'après un certain nombre de lignes. Vous pouvez régler le`IsInNewPage` propriété d'une ligne à`true` pour forcer la table à commencer une nouvelle page après cette ligne.
+
+#### Q : Comment puis-je ajuster le comportement des sauts de page en fonction de la hauteur du contenu ?
+
+ : Vous pouvez utiliser le`IsBroken` propriété du tableau pour activer ou désactiver le saut de ligne automatique sur les pages. Lorsqu'il est réglé sur`true`, il permet aux lignes de se répartir sur les pages en fonction de la hauteur du contenu.

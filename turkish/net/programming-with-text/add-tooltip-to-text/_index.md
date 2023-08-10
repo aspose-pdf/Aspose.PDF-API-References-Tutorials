@@ -108,7 +108,7 @@ TextFragmentCollection textFragments = absorber.TextFragments;
 // Parçalar arasında döngü
 foreach (TextFragment fragment in textFragments)
 {
-	//Metin parçası konumunda görünmez düğme oluştur
+	// Metin parçası konumunda görünmez düğme oluştur
 	ButtonField field = new ButtonField(fragment.Page, fragment.Rectangle);
 	// AlternateName değeri, bir görüntüleyici uygulaması tarafından araç ipucu olarak görüntülenecek
 	field.AlternateName = "Tooltip for text.";

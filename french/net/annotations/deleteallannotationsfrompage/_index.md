@@ -13,7 +13,7 @@ Suivez les étapes ci-dessous pour supprimer toutes les annotations de la page �
 
 ## Étape 1 : Installer Aspose.PDF pour .NET
 
- Pour utiliser Aspose.PDF pour .NET, vous devez d'abord installer la bibliothèque. Tu peux[télécharger](https://releases.aspose.com/pdf/net/) la bibliothèque des versions d'Aspose et installez-la sur votre ordinateur. Après l'installation, vous devez ajouter une référence à la bibliothèque dans votre projet.
+ Pour utiliser Aspose.PDF pour .NET, vous devez d'abord installer la bibliothèque. Tu peux[télécharger](https://releases.aspose.com/pdf/net/)la bibliothèque des versions d'Aspose et installez-la sur votre ordinateur. Après l'installation, vous devez ajouter une référence à la bibliothèque dans votre projet.
 
 ## Étape 2 : Créer une nouvelle application de console
 
@@ -65,3 +65,25 @@ pdfDocument.Save(dataDir);
 ## Conclusion
 
 Dans cet article, nous avons fourni un guide étape par étape pour vous aider à comprendre comment supprimer toutes les annotations d'une page spécifique d'un document PDF à l'aide d'Aspose.PDF pour .NET. En suivant les étapes décrites dans ce guide, vous pouvez facilement implémenter cette fonctionnalité dans votre propre projet.
+
+### FAQ
+
+#### Q : Que sont les annotations dans un document PDF ?
+
+R : Les annotations dans un document PDF sont des éléments interactifs qui fournissent des informations supplémentaires, des notes ou des commentaires sur des parties spécifiques du document. Les annotations peuvent inclure des notes textuelles, des commentaires, des surlignages et d'autres éléments interactifs.
+
+#### Q : Puis-je supprimer les annotations de pages spécifiques uniquement ?
+
+: Oui, avec Aspose.PDF pour .NET, vous pouvez supprimer des annotations de pages spécifiques ou même du document entier, selon vos besoins.
+
+#### Q : Que se passe-t-il s'il n'y a pas d'annotations sur la page spécifiée ?
+
+ A : S'il n'y a pas d'annotations sur la page spécifiée, appeler le`Delete()` n'aura aucun effet et la page restera inchangée.
+
+#### Q : Est-il possible de supprimer des types d'annotations spécifiques au lieu de toutes les annotations ?
+
+R : Oui, Aspose.PDF pour .NET fournit des méthodes pour accéder et supprimer des types spécifiques d'annotations, telles que les annotations de texte, les annotations de surbrillance, etc.
+
+#### Q : Aspose.PDF pour .NET prend-il en charge d'autres opérations sur les annotations ?
+
+R : Oui, Aspose.PDF pour .NET propose diverses méthodes pour manipuler et personnaliser les annotations, telles que l'ajout, la modification, le déplacement ou le redimensionnement des annotations.

@@ -50,14 +50,14 @@ Page page = doc.Pages.Add();
 ```
 
 ## Schritt 6: Erstellen Sie ein HtmlFragment mit dem HTML-Inhalt
- Instanziieren Sie eine`HtmlFragment` Objekt und stellen den gewünschten HTML-Inhalt bereit. Im bereitgestellten Code wird der Variable der HTML-Inhalt zugewiesen`title`. Sie können den HTML-Inhalt nach Bedarf ändern.
+Instanziieren Sie eine`HtmlFragment` Objekt und stellen den gewünschten HTML-Inhalt bereit. Im bereitgestellten Code wird der Variable der HTML-Inhalt zugewiesen`title`. Sie können den HTML-Inhalt nach Bedarf ändern.
 
 ```csharp
 HtmlFragment title = new HtmlFragment("<p style='font-family: Verdana'><b><i>Table contains text</i></b></p>");
 ```
 
 ## Schritt 7: Überschreiben Sie die Stile für den HTML-Inhalt
- Um die Stile des HTML-Inhalts zu überschreiben, können Sie die ändern`TextState` Eigenschaften der`HtmlFragment`Objekt. Im bereitgestellten Code wird die Schriftfamilie in „Arial“ geändert und die Schriftgröße auf 20 eingestellt.
+ Um die Stile des HTML-Inhalts zu überschreiben, können Sie die ändern`TextState` Eigenschaften der`HtmlFragment` Objekt. Im bereitgestellten Code wird die Schriftfamilie in „Arial“ geändert und die Schriftgröße auf 20 eingestellt.
 
 ```csharp
 title. TextState = new TextState("Arial");
@@ -65,7 +65,7 @@ title.TextState.FontSize = 20;
 ```
 
 ## Schritt 8: Randinformationen festlegen
-Passen Sie bei Bedarf den unteren und oberen Rand des HTML-Fragments an. Im bereitgestellten Code ist der untere Rand auf 10 und der obere Rand auf 400 eingestellt.
+Passen Sie bei Bedarf den unteren und oberen Rand des HTML-Fragments an. Im bereitgestellten Code ist der untere Rand auf 10 und der obere Rand auf 400 festgelegt.
 
 ```csharp
 title. Margin. Bottom = 10;

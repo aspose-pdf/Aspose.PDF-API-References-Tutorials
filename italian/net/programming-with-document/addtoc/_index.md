@@ -1,14 +1,13 @@
 ---
-title: Aggiungi TOC
-linktitle: Aggiungi TOC
+title: Aggiungi sommario al file PDF
+linktitle: Aggiungi sommario al file PDF
 second_title: Aspose.PDF per riferimento API .NET
-description: Scopri come aggiungere un sommario ai documenti PDF utilizzando Aspose.PDF per .NET. Guida dettagliata con codice sorgente di esempio. Potenzia la navigazione dei documenti!
+description: Scopri come aggiungere un sommario al file PDF utilizzando Aspose.PDF per .NET. Guida dettagliata con codice sorgente di esempio. Potenzia la navigazione dei documenti!
 type: docs
 weight: 40
 url: /it/net/programming-with-document/addtoc/
 ---
-
-In questo tutorial, esploreremo come utilizzare la funzione Aggiungi TOC (Table of Contents) di Aspose.PDF per .NET per aggiungere un sommario ai documenti PDF. Forniremo una guida dettagliata e spiegheremo il codice sorgente C# necessario per raggiungere questo obiettivo. Alla fine di questo tutorial, sarai in grado di generare un documento PDF con un sommario utilizzando Aspose.PDF per .NET.
+In questo tutorial, esploreremo come utilizzare la funzione Aggiungi sommario (sommario) al file PDF di Aspose.PDF per .NET per aggiungere un sommario ai documenti PDF. Forniremo una guida dettagliata e spiegheremo il codice sorgente C# necessario per raggiungere questo obiettivo. Alla fine di questo tutorial, sarai in grado di generare un documento PDF con un sommario utilizzando Aspose.PDF per .NET.
 
 
 ## Passaggio 1: carica il file PDF esistente
@@ -101,7 +100,7 @@ title.TextState.FontStyle = FontStyles.Bold;
 tocInfo.Title = title;
 tocPage.TocInfo = tocInfo;
 
-// Crea oggetti stringa che verranno utilizzati come elementi TOC
+//Crea oggetti stringa che verranno utilizzati come elementi TOC
 string[] titles = new string[4];
 titles[0] = "First page";
 titles[1] = "Second page";
@@ -124,7 +123,7 @@ for (int i = 0; i < 2; i++)
 	// Coordinate di destinazione
 	segment2.Text = titles[i];
 
-	//Aggiungi un'intestazione alla pagina contenente il sommario
+	// Aggiungi un'intestazione alla pagina contenente il TOC
 	tocPage.Paragraphs.Add(heading2);
 }
 dataDir = dataDir + "TOC_out.pdf";
@@ -133,3 +132,29 @@ doc.Save(dataDir);
 
 Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at " + dataDir);
 ```
+
+## Conclusione
+
+In questo tutorial, abbiamo esplorato come aggiungere un sommario (TOC) ai documenti PDF utilizzando Aspose.PDF per .NET. Seguendo la guida dettagliata e utilizzando il codice sorgente C# fornito, puoi facilmente generare un documento PDF con un sommario. Il sommario migliora l'usabilità del documento, consentendo agli utenti di navigare in sezioni o pagine specifiche in modo più efficiente. Aspose.PDF per .NET fornisce una soluzione solida e intuitiva per lavorare con i file PDF nelle applicazioni .NET, consentendo di creare facilmente documenti PDF dinamici e interattivi.
+
+### Domande frequenti per aggiungere TOC al file PDF
+
+#### D: Cos'è Aspose.PDF per .NET?
+
+R: Aspose.PDF per .NET è una potente libreria che consente agli sviluppatori di lavorare efficacemente con i file PDF nelle applicazioni .NET. Fornisce un'ampia gamma di funzionalità per la creazione, la manipolazione e la gestione di documenti PDF in modo programmatico.
+
+#### D: Qual è lo scopo dell'aggiunta di un sommario (TOC) a un documento PDF?
+
+R: Il sommario (TOC) fornisce un aiuto alla navigazione per gli utenti, consentendo loro di passare rapidamente a sezioni o pagine specifiche all'interno del documento PDF. Migliora l'usabilità del documento e l'esperienza dell'utente.
+
+#### D: Come posso aggiungere un sommario a un documento PDF utilizzando Aspose.PDF per .NET?
+
+A: Per aggiungere un sommario a un documento PDF utilizzando Aspose.PDF per .NET, è necessario creare una nuova pagina per contenere il sommario, definire le informazioni del sommario e quindi creare elementi TOC che corrispondono a pagine specifiche o sezioni del documento.
+
+#### D: Posso personalizzare l'aspetto del sommario?
+
+R: Sì, puoi personalizzare l'aspetto del sommario impostando varie proprietà degli elementi TOC, come la dimensione del carattere, lo stile del carattere e l'allineamento. Aspose.PDF per .NET offre flessibilità nella progettazione del sommario in modo che corrisponda all'aspetto desiderato.
+
+#### D: Aspose.PDF per .NET è adatto per aggiungere funzionalità avanzate ai documenti PDF?
+
+R: Assolutamente, Aspose.PDF per .NET è una libreria ricca di funzionalità che consente di aggiungere funzionalità avanzate ai documenti PDF, inclusi elementi interattivi, campi modulo, firme digitali e altro ancora.

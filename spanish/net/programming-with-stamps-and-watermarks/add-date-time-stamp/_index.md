@@ -1,13 +1,13 @@
 ---
-title: Agregar sello de fecha y hora
-linktitle: Agregar sello de fecha y hora
+title: Agregar sello de fecha y hora en archivo PDF
+linktitle: Agregar sello de fecha y hora en archivo PDF
 second_title: Referencia de API de Aspose.PDF para .NET
-description: Aprenda a agregar fácilmente una marca de fecha y hora a sus documentos PDF con Aspose.PDF para .NET.
+description: Aprenda a agregar fácilmente una marca de fecha y hora en un archivo PDF con Aspose.PDF para .NET.
 type: docs
 weight: 10
 url: /es/net/programming-with-stamps-and-watermarks/add-date-time-stamp/
 ---
-En este artículo, lo guiaremos paso a paso sobre cómo agregar una marca de fecha y hora usando Aspose.PDF para .NET. Le mostraremos cómo usar el código fuente de C# provisto para agregar una marca de fecha y hora a un documento PDF existente.
+En este artículo, lo guiaremos paso a paso sobre cómo agregar una marca de fecha y hora en un archivo PDF usando Aspose.PDF para .NET. Le mostraremos cómo usar el código fuente de C# provisto para agregar una marca de fecha y hora a un archivo PDF existente.
 
 ## Requisitos
 
@@ -139,3 +139,41 @@ Console.WriteLine("\nDate time stamp added successfully.\nFile saved at " + data
 ## Conclusión
 
 ¡Felicidades! Aprendió a agregar una marca de fecha y hora usando Aspose.PDF para .NET. Ahora puede aplicar este conocimiento a sus propios proyectos para agregar marcas de fecha y hora a los documentos PDF.
+
+### Preguntas frecuentes para agregar una marca de fecha y hora en un archivo PDF
+
+#### P: ¿Cuál es el propósito de agregar una marca de fecha y hora a un documento PDF usando Aspose.PDF para .NET?
+
+R: Agregar una marca de fecha y hora a un documento PDF mejora su valor informativo al indicar cuándo se modificó o creó el documento. Esta función es útil para realizar un seguimiento de los cambios en los documentos y proporcionar un punto de referencia para el historial del documento.
+
+#### P: ¿Puedo personalizar el formato de la marca de fecha y hora para que coincida con requisitos específicos?
+
+ R: Sí, puede personalizar el formato del sello de fecha y hora según sus preferencias. El código fuente de C# proporcionado utiliza el`DateTime.Now.ToString()` método para generar la marca de tiempo en un formato específico. Puede modificar este código para formatear la marca de tiempo según sea necesario.
+
+#### P: ¿Es posible agregar la marca de fecha y hora a una ubicación específica en una página PDF?
+
+ R: Absolutamente, puede ajustar la ubicación de la marca de fecha y hora en la página PDF modificando las propiedades de la`TextStamp` objeto. El código proporcionado en el tutorial demuestra cómo establecer propiedades como el margen, la alineación y el posicionamiento vertical.
+
+#### P: ¿Puedo agregar varias marcas de fecha y hora a diferentes páginas del mismo documento PDF?
+
+ R: Sí, puede agregar varias marcas de fecha y hora a diferentes páginas del mismo documento PDF. Simplemente repita el proceso de crear un`TextStamp` objeto y configurando sus propiedades para cada página deseada.
+
+#### P: ¿Cómo puedo cambiar la fuente, el tamaño o el color del texto del sello de fecha y hora?
+
+ R: Para modificar la fuente, el tamaño o el color del texto del sello de fecha y hora, puede personalizar las propiedades del`DefaultAppearance` objeto utilizado para crear el`TextStamp`. Ajuste el nombre de la fuente, el tamaño y los valores de color para lograr la apariencia deseada.
+
+#### P: ¿Es posible agregar otros tipos de anotaciones o sellos a un documento PDF usando Aspose.PDF para .NET?
+
+R: Sí, Aspose.PDF para .NET proporciona una amplia gama de tipos de anotaciones que puede agregar a los documentos PDF, incluidas anotaciones de texto, sellos, líneas, formas y más. Puede explorar la documentación de Aspose.PDF para obtener más detalles sobre cómo trabajar con anotaciones.
+
+#### P: ¿Existen limitaciones o consideraciones al agregar una marca de fecha y hora a un documento PDF?
+
+R: Si bien agregar una marca de fecha y hora es sencillo, tenga en cuenta factores como el diseño del documento y el contenido existente. Asegúrese de que la ubicación del sello no oculte información importante ni afecte la legibilidad del documento.
+
+#### P: ¿Cómo puedo integrar este método en mis propios proyectos para agregar marcas de fecha y hora a los documentos PDF?
+
+R: Para integrar este método, siga los pasos proporcionados y ajuste el código para que se ajuste a la estructura de su proyecto. Puede agregar marcas de fecha y hora a los documentos PDF existentes para mejorar su utilidad y proporcionar una cronología clara de los cambios.
+
+#### P: ¿Puedo automatizar el proceso de agregar marcas de fecha y hora a varios documentos PDF?
+
+R: Sí, puede automatizar el proceso de agregar sellos de fecha y hora a varios documentos PDF mediante la creación de un script o programa que repase una lista de documentos y aplique el mismo proceso de estampado a cada uno.

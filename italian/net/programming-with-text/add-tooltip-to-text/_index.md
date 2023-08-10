@@ -108,7 +108,7 @@ TextFragmentCollection textFragments = absorber.TextFragments;
 // Passa attraverso i frammenti
 foreach (TextFragment fragment in textFragments)
 {
-	//Crea pulsante invisibile sulla posizione del frammento di testo
+	// Crea pulsante invisibile sulla posizione del frammento di testo
 	ButtonField field = new ButtonField(fragment.Page, fragment.Rectangle);
 	// Il valore AlternateName verrà visualizzato come suggerimento da un'applicazione visualizzatore
 	field.AlternateName = "Tooltip for text.";

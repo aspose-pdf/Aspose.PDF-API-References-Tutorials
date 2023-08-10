@@ -63,7 +63,7 @@ pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 
 ## Шаг 6: Получить извлеченные текстовые фрагменты
 
- Получить извлеченные текстовые фрагменты с помощью`TextFragments` собственность`TextFragmentAbsorber` объект:
+Получить извлеченные текстовые фрагменты с помощью`TextFragments` собственность`TextFragmentAbsorber` объект:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -84,7 +84,7 @@ foreach (TextFragment textFragment in textFragmentCollection)
 }
 ```
 
- В приведенном выше фрагменте кода замените`"New Phrase"`с текстом замены, который вы хотите использовать. Вы также можете настроить другие свойства, такие как шрифт, размер шрифта, цвет переднего плана и цвет фона.
+ В приведенном выше фрагменте кода замените`"New Phrase"` с текстом замены, который вы хотите использовать. Вы также можете настроить другие свойства, такие как шрифт, размер шрифта, цвет переднего плана и цвет фона.
 
 ## Шаг 8: Сохраните измененный PDF
 
@@ -102,9 +102,9 @@ pdfDocument.Save(dataDir + "ReplaceTextPage_out.pdf");
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Открыть документ
 Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
-// Создайте объект TextAbsorber, чтобы найти все экземпляры входной поисковой фразы.
+//Создайте объект TextAbsorber, чтобы найти все экземпляры входной поисковой фразы.
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
-// Принять поглотитель для конкретной страницы
+//Принять поглотитель для конкретной страницы
 pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 // Получить извлеченные текстовые фрагменты
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;

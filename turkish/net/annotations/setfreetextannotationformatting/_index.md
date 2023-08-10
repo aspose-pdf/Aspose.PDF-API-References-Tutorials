@@ -7,7 +7,6 @@ type: docs
 weight: 140
 url: /tr/net/annotations/setfreetextannotationformatting/
 ---
-
 Aspose.PDF for .NET, .NET uygulamalarınızda PDF dosyalarıyla programatik olarak çalışmanıza olanak tanıyan, güçlü ve kullanımı kolay bir PDF belge işleme API'sidir. Aspose.PDF for .NET tarafından sağlanan özelliklerden biri, PDF belgelerinde serbest metin açıklama biçimlendirmesi ayarlama yeteneğidir. Bu makalede, Aspose.PDF for .NET kullanarak serbest metin açıklama biçimlendirmesini ayarlama sürecini adım adım anlatacağız.
 
 ## Önkoşullar
@@ -97,3 +96,25 @@ dataDir = dataDir + "SetFreeTextAnnotationFormatting_out.pdf";
 // Güncellenen belgeyi kaydedin
 pdfDocument.Save(dataDir);            
 ```
+
+## Çözüm
+
+Bu öğreticide, Aspose.PDF for .NET kullanarak bir PDF belgesinde serbest metin açıklama biçimlendirmesinin nasıl ayarlanacağını öğrendik. Kitaplık, geliştiricilerin serbest metin ek açıklamaları da dahil olmak üzere çeşitli türde açıklamaları oluşturmasına ve özelleştirmesine olanak tanıyarak PDF belgeleriyle programlı olarak çalışmanın basit ve verimli bir yolunu sunar. Adım adım kılavuzu takip ederek ve sağlanan C# kaynak kodunu kullanarak ortamı kolayca kurabilir, bir PDF belgesi açabilir ve özel biçimlendirmeyle serbest metin notu oluşturabilirsiniz. Aspose.PDF for .NET, PDF belge düzenleme görevlerini basitleştiren sağlam ve güvenilir bir API'dir ve bu da onu PDF dosyalarıyla çalışan .NET geliştiricileri için değerli bir araç haline getirir.
+
+### SSS
+
+#### S: PDF belgesindeki serbest metin notu nedir?
+
+Y: Bir PDF belgesindeki serbest metin ek açıklaması, belirli bir konuma veya yapıya bağlı kalmadan belgeye metin eklemenizi sağlayan bir ek açıklama türüdür. Belgede yorumlar, notlar veya diğer ek bilgileri sağlamak için yaygın olarak kullanılır.
+
+#### S: Aspose.PDF for .NET kullanarak serbest metin açıklamasının görünümünü özelleştirebilir miyim?
+
+C: Evet, serbest metin açıklamasının yazı tipi, yazı tipi boyutu, rengi, konumu ve daha fazlası gibi çeşitli özelliklerini özelleştirebilirsiniz.
+
+#### S: Serbest metin açıklamasının içeriğini nasıl belirleyebilirim?
+
+ C: Serbest metin açıklamasının içeriğini belirtmek için`Contents` mülkiyeti`FreeTextAnnotation` istenen metne itiraz edin.
+
+#### S: Aspose.PDF for .NET kullanarak bir PDF belgesine birden çok serbest metin notu ekleyebilir miyim?
+
+ Y: Evet, bir PDF belgesinde birden çok serbest metin ek açıklaması oluşturabilirsiniz.`FreeTextAnnotation`nesne ve bunları belgedeki farklı sayfalara veya konumlara ekleme.

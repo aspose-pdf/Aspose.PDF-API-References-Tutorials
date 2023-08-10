@@ -19,7 +19,7 @@ Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
 ## Schritt 1: Richten Sie das Dokumentenverzeichnis ein
 
- Zuerst müssen Sie den Pfad zu dem Verzeichnis festlegen, in dem sich Ihre Eingabe-PDF-Datei befindet. Ersetzen`"YOUR DOCUMENT DIRECTORY"` im`dataDir` Variable mit dem Pfad zu Ihrer PDF-Datei.
+ Zuerst müssen Sie den Pfad zu dem Verzeichnis festlegen, in dem sich Ihre Eingabe-PDF-Datei befindet. Ersetzen`"YOUR DOCUMENT DIRECTORY"` im`dataDir`Variable mit dem Pfad zu Ihrer PDF-Datei.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -35,7 +35,7 @@ Document doc = new Document(dataDir + "MultiColumnPdf.pdf");
 
 ## Schritt 3: Auf mehrspaltige Absätze zugreifen
 
- Wir benutzen das`ParagraphAbsorber` Klasse, um die Absätze im PDF-Dokument zu verstehen und zu lesen. Anschließend rufen wir die Seitenmarkierungen ab und greifen auf die mehrspaltigen Absätze zu.
+ Wir benutzen das`ParagraphAbsorber`Klasse, um die Absätze im PDF-Dokument zu verstehen und zu lesen. Anschließend rufen wir die Seitenmarkierungen ab und greifen auf die mehrspaltigen Absätze zu.
 
 ```csharp
 ParagraphAbsorber absorb = new ParagraphAbsorber();

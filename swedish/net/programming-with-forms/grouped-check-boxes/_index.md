@@ -1,13 +1,12 @@
 ---
-title: Grupperade kryssrutor
-linktitle: Grupperade kryssrutor
+title: Grupperade kryssrutor i PDF-dokument
+linktitle: Grupperade kryssrutor i PDF-dokument
 second_title: Aspose.PDF för .NET API Referens
-description: Skapa enkelt grupperade kryssrutor i dina PDF-dokument med Aspose.PDF för .NET.
+description: Skapa enkelt grupperade kryssrutor i PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 170
 url: /sv/net/programming-with-forms/grouped-check-boxes/
 ---
-
 I den här handledningen kommer vi att visa dig hur du skapar grupperade kryssrutor i ett PDF-dokument med Aspose.PDF för .NET. Vi kommer att förklara C#-källkoden steg för steg för att guida dig genom denna process.
 
 ## Steg 1: Förberedelser
@@ -134,3 +133,25 @@ catch (Exception ex)
 ## Slutsats
 
 I den här handledningen lärde vi oss hur man skapar grupperade kryssrutor i ett PDF-dokument med Aspose.PDF för .NET. Genom att följa dessa steg kan du enkelt lägga till anpassade alternativ för alternativknappar och bunta dem i dina PDF-dokument med Aspose.PDF.
+
+### FAQ's
+
+#### F: Vad är grupperade kryssrutor i ett PDF-dokument?
+
+S: Grupperade kryssrutor i ett PDF-dokument hänvisar till en uppsättning alternativknappar som är grupperade. Radioknappar tillåter användare att bara välja ett alternativ från en grupp av ömsesidigt uteslutande val. När en alternativknapp väljs avmarkeras de andra i samma grupp automatiskt. Detta grupperingsbeteende är användbart när du vill ge användarna flera alternativ men begränsa deras val till endast ett val.
+
+#### F: Kan jag anpassa utseendet på grupperade kryssrutor i Aspose.PDF för .NET?
+
+S: Ja, du kan anpassa utseendet på grupperade kryssrutor i Aspose.PDF för .NET. API:et tillhandahåller olika alternativ för att ställa in stil, ram och utseende för alternativknappsalternativ. Du kan definiera positionen för varje alternativ, välja mellan olika boxstilar (t.ex. kvadrat, cirkel, kors) och justera gränsegenskaperna för att uppnå önskad visuell representation.
+
+#### F: Hur lägger jag till grupperade kryssrutor på en specifik sida i ett PDF-dokument?
+
+S: För att lägga till grupperade kryssrutor på en specifik sida i ett PDF-dokument måste du instansiera en`RadioButtonField` objekt med önskat sidnummer som argument. Skapa sedan`RadioButtonOptionField` objekt som representerar varje alternativknapp och ange deras position med hjälp av`Rectangle` objekt. Lägg slutligen till dessa alternativ till`RadioButtonField` och anpassa deras utseende efter behov innan du lägger till`RadioButtonField` till dokumentformuläret.
+
+#### F: Kan jag lägga till flera grupper av kryssrutor i ett enda PDF-dokument?
+
+ S: Ja, du kan lägga till flera grupper av kryssrutor i ett enda PDF-dokument. Varje grupp ska ha en unik`RadioButtonField` objekt och`RadioButtonOptionField` objekt inom varje grupp ska dela samma sida och unika namn för sina alternativ. Detta säkerställer att radioknapparna inom varje grupp fungerar korrekt och att valen utesluter varandra.
+
+#### F: Stöds grupperade kryssrutor i alla PDF-läsare och applikationer?
+
+S: Ja, grupperade kryssrutor stöds i alla standardkompatibla PDF-läsare och applikationer. PDF-specifikationen definierar alternativknappar och deras grupperingsbeteende, vilket gör dem allmänt igenkända i PDF-formatet. Det är dock viktigt att testa funktionaliteten i olika PDF-läsare för att säkerställa konsekvent beteende på olika plattformar.

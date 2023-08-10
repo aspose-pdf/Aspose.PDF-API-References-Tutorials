@@ -19,7 +19,7 @@ Antes de comenzar, asegúrese de tener lo siguiente:
 
 ## Paso 1: configurar el directorio de documentos
 
- Primero, debe establecer la ruta al directorio donde tiene el archivo PDF de entrada. Reemplazar`"YOUR DOCUMENT DIRECTORY"` en el`dataDir` variable con la ruta a su archivo PDF.
+ Primero, debe establecer la ruta al directorio donde tiene el archivo PDF de entrada. Reemplazar`"YOUR DOCUMENT DIRECTORY"` en el`dataDir`variable con la ruta a su archivo PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -78,7 +78,7 @@ try
 	TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));
 	// Aceptar el absorbedor para todas las páginas.
 	pdfDocument.Pages.Accept(absorber);
-	//Atraviesa todos los TextFragments
+	// Atraviesa todos los TextFragments
 	foreach (TextFragment textFragment in absorber.TextFragments)
 	{
 		// Si el nombre de la fuente es ArialMT, reemplace el nombre de la fuente con Arial

@@ -45,14 +45,14 @@ Page page = doc.Pages.Add();
 ```
 
 ## Schritt 6: Erstellen Sie ein HtmlFragment mit dem HTML-Inhalt
- Instanziieren Sie eine`HtmlFragment` Objekt und stellen den gewünschten HTML-Inhalt bereit. Im bereitgestellten Code wird der Variable der HTML-Inhalt zugewiesen`titel`. Sie können den HTML-Inhalt nach Bedarf ändern.
+Instanziieren Sie eine`HtmlFragment` Objekt und stellen den gewünschten HTML-Inhalt bereit. Im bereitgestellten Code wird der Variable der HTML-Inhalt zugewiesen`titel`. Sie können den HTML-Inhalt nach Bedarf ändern.
 
 ```csharp
 HtmlFragment titel = new HtmlFragment("<fontsize=10><b><i>Table</i></b></fontsize>");
 ```
 
 ## Schritt 7: Randinformationen festlegen
-Passen Sie bei Bedarf den unteren und oberen Rand des HTML-Fragments an. Im bereitgestellten Code ist der untere Rand auf 10 und der obere Rand auf 200 eingestellt.
+Passen Sie bei Bedarf den unteren und oberen Rand des HTML-Fragments an. Im bereitgestellten Code ist der untere Rand auf 10 und der obere Rand auf 200 festgelegt.
 
 ```csharp
 title. Margin. Bottom = 10;

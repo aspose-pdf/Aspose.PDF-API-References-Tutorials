@@ -61,7 +61,7 @@ pdfDocument.Pages.Accept(textFragmentAbsorber);
 
 ## Étape 6 : obtenir des fragments de texte extraits
 
- Obtenez les fragments de texte extraits à l'aide de la`TextFragments` propriété de la`TextFragmentAbsorber` objet:
+Obtenez les fragments de texte extraits à l'aide de la`TextFragments` propriété de la`TextFragmentAbsorber` objet:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -95,7 +95,7 @@ Vous pouvez modifier le code dans la boucle pour effectuer d'autres actions sur 
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Ouvrir le document
 Document pdfDocument = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
-// Créer un objet TextAbsorber pour trouver toutes les instances de la phrase de recherche d'entrée
+//Créer un objet TextAbsorber pour trouver toutes les instances de la phrase de recherche d'entrée
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
 // Accepter l'absorbeur pour toutes les pages
 pdfDocument.Pages.Accept(textFragmentAbsorber);

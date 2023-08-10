@@ -1,8 +1,8 @@
 ---
-title: Establecer propiedad de llamada
-linktitle: Establecer propiedad de llamada
+title: Establecer propiedad de llamada en archivo PDF
+linktitle: Establecer propiedad de llamada en archivo PDF
 second_title: Referencia de API de Aspose.PDF para .NET
-description: Aprenda a configurar la propiedad de la llamada con Aspose.PDF para .NET. Personalice las anotaciones con líneas de llamada, color de texto y estilos finales.
+description: Aprenda a configurar la propiedad de llamada en un archivo PDF usando Aspose.PDF para .NET. Personalice las anotaciones con líneas de llamada, color de texto y estilos finales.
 type: docs
 weight: 130
 url: /es/net/annotations/setcalloutproperty/
@@ -17,7 +17,7 @@ En este tutorial, lo guiaremos a través del proceso de configuración de propie
 
 ## Paso 1: Crea un nuevo documento PDF
 
- Cree un nuevo documento PDF usando el`Document` clase proporcionada por Aspose.PDF para .NET.
+ Cree un nuevo documento PDF usando el`Document`clase proporcionada por Aspose.PDF para .NET.
 
 ```csharp
 // La ruta al directorio de documentos.
@@ -67,7 +67,7 @@ page.Annotations.Add(fta);
 
 ## Paso 6: Agrega texto a la anotación
 
-Agregue texto a la anotación configurando el`RichText` propiedad a una cadena de XML formateado. En este tutorial, estamos configurando el color del texto en rojo y el tamaño de fuente en 9.
+ Agregue texto a la anotación configurando el`RichText`propiedad a una cadena de XML formateado. En este tutorial, estamos configurando el color del texto en rojo y el tamaño de fuente en 9.
 
 ```csharp
 fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"color:#FF
@@ -103,3 +103,25 @@ page.Annotations.Add(fta);
 fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"color:#FF0000;font-weight:normal;font-style:normal;font-stretch:normal\"><p dir=\"ltr\"> <span style=\"font-size:9.0pt;font-family:Helvetica\">Esta es una muestra</span></p></body>";
 doc.Save(dataDir + "SetCalloutProperty.pdf");
 ```
+
+## Conclusión
+
+En este tutorial, exploramos cómo establecer propiedades de llamada para una anotación de texto libre en un documento PDF usando Aspose.PDF para .NET. Las anotaciones de llamada son útiles para proporcionar información adicional o explicaciones relacionadas con áreas específicas de un documento. Aspose.PDF para .NET proporciona una amplia gama de funciones y capacidades para trabajar con archivos PDF, incluida la creación y personalización de anotaciones, como llamadas. Al seguir la guía paso a paso y usar el código fuente de C# provisto, los desarrolladores pueden implementar fácilmente anotaciones en sus documentos PDF, mejorando la facilidad de uso y la claridad de sus documentos. Aspose.PDF para .NET es una biblioteca versátil y confiable para operaciones de PDF en aplicaciones .NET, que ofrece herramientas poderosas para manejar varias tareas relacionadas con PDF de manera eficiente.
+
+### Preguntas frecuentes para establecer la propiedad de llamada en un archivo PDF
+
+#### P: ¿Qué es una anotación de llamada en un documento PDF?
+
+R: Una anotación de llamada en un documento PDF es un tipo de anotación que le permite crear un cuadro de texto con una línea guía que apunta a un área específica del documento. Se usa comúnmente para proporcionar información adicional o comentarios relacionados con una sección o elemento en particular en el documento.
+
+#### P: ¿Puedo personalizar la apariencia de la anotación de llamada con Aspose.PDF para .NET?
+
+R: Sí, puede personalizar varias propiedades de la anotación de llamada, como el color, el tamaño de fuente, la alineación del texto, el estilo de línea, el estilo de flecha y más.
+
+#### P: ¿Cómo agrego texto a la anotación de llamada?
+
+ R: Para agregar texto a la anotación de llamada, puede configurar el`RichText` propiedad de la`FreeTextAnnotation` objeto. El`RichText` La propiedad toma una cadena de XML con formato que representa el texto que se mostrará en la anotación de llamada.
+
+#### P: ¿Puedo agregar varias anotaciones de llamadas a un documento PDF usando Aspose.PDF para .NET?
+
+ R: Sí, puede crear varias anotaciones de llamadas en un documento PDF creando varias instancias del`FreeTextAnnotation`objeto y agregarlos a diferentes páginas o ubicaciones en el documento.

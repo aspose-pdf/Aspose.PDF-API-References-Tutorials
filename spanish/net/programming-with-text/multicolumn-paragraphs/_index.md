@@ -8,7 +8,7 @@ weight: 250
 url: /es/net/programming-with-text/multicolumn-paragraphs/
 ---
 
-En este tutorial, explicaremos cómo trabajar con párrafos de varias columnas en un documento PDF utilizando la biblioteca Aspose.PDF para .NET. Pasaremos por el proceso paso a paso de manipular y acceder a párrafos de varias columnas utilizando el código fuente de C# proporcionado.
+En este tutorial, explicaremos cómo trabajar con párrafos de varias columnas en un documento PDF utilizando la biblioteca Aspose.PDF para .NET. Pasaremos por el proceso paso a paso de manipular y acceder a párrafos de varias columnas utilizando el código fuente de C# provisto.
 
 ## Requisitos
 
@@ -19,7 +19,7 @@ Antes de comenzar, asegúrese de tener lo siguiente:
 
 ## Paso 1: configurar el directorio de documentos
 
- Primero, debe establecer la ruta al directorio donde se encuentra su archivo PDF de entrada. Reemplazar`"YOUR DOCUMENT DIRECTORY"` en el`dataDir` variable con la ruta a su archivo PDF.
+ Primero, debe establecer la ruta al directorio donde se encuentra su archivo PDF de entrada. Reemplazar`"YOUR DOCUMENT DIRECTORY"` en el`dataDir`variable con la ruta a su archivo PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -35,7 +35,7 @@ Document doc = new Document(dataDir + "MultiColumnPdf.pdf");
 
 ## Paso 3: acceda a los párrafos de varias columnas
 
- usamos el`ParagraphAbsorber` clase para absorber y visitar los párrafos en el documento PDF. Luego recuperamos las marcas de página y accedemos a los párrafos de varias columnas.
+ usamos el`ParagraphAbsorber`clase para absorber y visitar los párrafos en el documento PDF. Luego recuperamos las marcas de página y accedemos a los párrafos de varias columnas.
 
 ```csharp
 ParagraphAbsorber absorb = new ParagraphAbsorber();

@@ -77,4 +77,4 @@ pdfDocument.Save(dataDir + "RemoveAllText_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 
 ## Slutsats
 
-den här handledningen har du lärt dig hur du tar bort all text från ett PDF-dokument med Aspose.PDF-biblioteket för .NET. Genom att följa steg-för-steg-guiden och köra den medföljande C#-koden kan du öppna en PDF, välja och ta bort text från varje sida och spara den ändrade PDF-filen.
+I den här handledningen har du lärt dig hur du tar bort all text från ett PDF-dokument med Aspose.PDF-biblioteket för .NET. Genom att följa steg-för-steg-guiden och köra den medföljande C#-koden kan du öppna en PDF, välja och ta bort text från varje sida och spara den ändrade PDF-filen.

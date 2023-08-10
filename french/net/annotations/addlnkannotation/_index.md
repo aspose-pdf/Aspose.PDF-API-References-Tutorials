@@ -103,3 +103,29 @@ dataDir = dataDir + "AddlnkAnnotation_out.pdf";
 // Enregistrer le fichier de sortie
 doc.Save(dataDir);
 ```
+
+## Conclusion
+
+Dans ce didacticiel, nous avons exploré comment ajouter des annotations manuscrites à un document PDF à l'aide d'Aspose.PDF pour .NET. En suivant le guide étape par étape et le code source C# fourni, les développeurs peuvent facilement implémenter la fonctionnalité Ink Annotation dans leurs applications de traitement PDF.
+
+### FAQ
+
+#### Q : Qu'est-ce qu'une annotation manuscrite dans un document PDF ?
+
+R : Une annotation à l'encre dans un document PDF permet aux utilisateurs de dessiner des annotations à l'encre de forme libre à l'aide d'un stylet ou d'une souris. Il est couramment utilisé pour ajouter des croquis dessinés à la main, des diagrammes ou d'autres annotations à main levée à un PDF.
+
+#### Q : Puis-je personnaliser l'apparence de l'annotation manuscrite ?
+
+R : Oui, Aspose.PDF pour .NET fournit diverses propriétés pour personnaliser l'apparence de l'annotation manuscrite, telles que la couleur, l'opacité, le style de majuscule, la largeur de la bordure, etc. Les développeurs peuvent ajuster ces propriétés pour répondre à leurs besoins spécifiques.
+
+#### Q : Est-il possible d'ajouter plusieurs annotations manuscrites à une seule page PDF ?
+
+R : Oui, vous pouvez ajouter plusieurs annotations manuscrites à une seule page PDF à l'aide d'Aspose.PDF pour .NET. Chaque annotation manuscrite peut avoir son propre ensemble de points et son apparence personnalisée.
+
+#### Q : Puis-je ajouter des annotations manuscrites à des documents PDF existants ?
+
+R : Oui, Aspose.PDF pour .NET vous permet d'ajouter des annotations manuscrites aux documents PDF nouvellement créés et aux fichiers PDF existants. Vous pouvez ouvrir un PDF existant, ajouter des annotations manuscrites et enregistrer le document mis à jour.
+
+#### Q : Quels sont les cas d'utilisation courants des annotations manuscrites dans les documents PDF ?
+
+R : Les annotations manuscrites sont utiles pour un large éventail d'applications, notamment l'ajout de signatures ou de notes manuscrites aux formulaires PDF, l'annotation de plans architecturaux ou de dessins techniques et le balisage de documents pour une révision collaborative.

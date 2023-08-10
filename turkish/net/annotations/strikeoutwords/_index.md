@@ -101,3 +101,25 @@ for (int j = 1; j <= textFragmentCollection.Count; j++)
 dataDir = dataDir + "StrikeOutWords_out.pdf";
 document.Save(dataDir);
 ```
+
+## Çözüm
+
+Bu eğitimde, bir PDF belgesindeki belirli sözcüklerin üstünü çizmek için Aspose.PDF for .NET'i nasıl kullanacağımızı öğrendik. Adım adım kılavuzu izleyerek ve sağlanan C# kaynak kodunu kullanarak, bir PDF belgesini kolayca yükleyebilir, belirli metin parçalarını arayabilir ve bu kelimeleri görsel olarak işaretlemek ve üzerini çizmek için üstü çizili notlar oluşturabilirsiniz. Aspose.PDF for .NET, PDF belgelerini programatik olarak işlemek için basit ve etkili bir yol sağlayarak, onu .NET uygulamalarında PDF dosyalarıyla çalışan geliştiriciler için değerli bir araç haline getirir.
+
+### SSS
+
+#### S: Aspose.PDF for .NET nedir?
+
+Y: Aspose.PDF for .NET, geliştiricilerin .NET uygulamalarında programlı olarak PDF belgeleri oluşturmasına, düzenlemesine ve işlemesine olanak tanıyan güçlü bir kitaplıktır. Metin çıkarma, ek açıklama işleme, form doldurma ve çok daha fazlası dahil olmak üzere PDF dosyalarıyla çalışmak için çok çeşitli özellikler sağlar.
+
+#### S: Aspose.PDF for .NET'i bir PDF belgesindeki belirli sözcüklerin üstünü çizmek için kullanabilir miyim?
+
+C: Evet, Aspose.PDF for .NET, bir PDF belgesindeki belirli metin parçalarını aramak ve ardından bu kelimeleri görsel olarak işaretlemek ve üzerini çizmek için üstü çizili notlar oluşturmak için işlevsellik sağlar.
+
+#### S: PDF belgesinde üzerini çizmek istediğim metni nasıl belirtebilirim?
+
+ A: Üstünü çizmek istediğiniz metni belirtmek için`TextFragmentAbsorber` Aspose.PDF for .NET tarafından sağlanan sınıf. İstediğiniz kriterlere göre PDF belgesinde belirli bir metin parçasını aramanıza olanak tanır.
+
+#### S: Üstü çizili açıklamanın görünümünü özelleştirebilir miyim?
+
+C: Evet, üstü çizili ek açıklamanın opaklık, kenarlık stili ve renk gibi çeşitli özelliklerini özelleştirebilirsiniz. Bu, üzeri çizili bilgi notunun görünümünü özel gereksinimlerinize göre uyarlamanıza olanak tanır.

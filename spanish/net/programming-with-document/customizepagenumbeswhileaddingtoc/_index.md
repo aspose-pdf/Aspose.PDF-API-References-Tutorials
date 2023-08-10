@@ -7,7 +7,6 @@ type: docs
 weight: 100
 url: /es/net/programming-with-document/customizepagenumbeswhileaddingtoc/
 ---
-
 En este tutorial, exploraremos cómo personalizar los números de página al agregar una tabla de contenido (TOC) usando Aspose.PDF para .NET. Proporcionaremos una guía paso a paso, junto con un código de ejemplo, para ayudarlo a lograrlo.
 
 ## Paso 1: Cargar un archivo PDF existente
@@ -31,7 +30,7 @@ Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
 
 ## Paso 3: Crear un objeto TOC
 
- Para crear un objeto TOC, primero necesitamos crear un`TocInfo`objeto y establecer sus propiedades. En este tutorial, estableceremos el título de la TOC en "Tabla de contenido" y el prefijo del número de página en "P".
+ Para crear un objeto TOC, primero necesitamos crear un`TocInfo` objeto y establecer sus propiedades. En este tutorial, estableceremos el título de la TOC en "Tabla de contenido" y el prefijo del número de página en "P".
 
 ```csharp
 TocInfo tocInfo = new TocInfo();
@@ -61,14 +60,14 @@ for (int i = 1; i < doc.Pages.Count; i++)
     heading2.Top = doc.Pages[i + 1].Rect.Height;
     // Coordenada de destino
     segment2.Text = "Page " + i.ToString();
-    //Agregar encabezado a la página que contiene TOC
+    // Agregar encabezado a la página que contiene TOC
     tocPage.Paragraphs.Add(heading2);
 }
 ```
 
 ## Paso 5: Guardar el documento actualizado
 
- Finalmente, necesitamos guardar el documento actualizado en un nuevo archivo. Esto lo podemos lograr usando el`Save()` metodo de la`Document` objeto.
+Finalmente, necesitamos guardar el documento actualizado en un nuevo archivo. Esto lo podemos lograr usando el`Save()` metodo de la`Document` objeto.
 
 ```csharp
 doc.Save(outFile);
@@ -106,7 +105,7 @@ for (int i = 1; i<doc.Pages.Count; i++)
 	heading2.Top = doc.Pages[i + 1].Rect.Height;
 	// Coordenada de destino
 	segment2.Text = "Page " + i.ToString();
-	//Agregar encabezado a la página que contiene TOC
+	// Agregar encabezado a la página que contiene TOC
 	tocPage.Paragraphs.Add(heading2);
 }
 
@@ -118,3 +117,24 @@ doc.Save(outFile);
 
 En este tutorial, proporcionamos una guía paso a paso sobre cómo personalizar los números de página al agregar una TOC usando Aspose.PDF para .NET. También proporcionamos un ejemplo de código que puede usar como referencia al implementar esta característica en su
 
+### Preguntas frecuentes
+
+#### P: ¿Qué es una tabla de contenido (TOC) en un documento PDF?
+
+R: Una tabla de contenido (TOC) en un documento PDF es una ayuda de navegación que proporciona una lista organizada de secciones o capítulos del documento junto con sus números de página correspondientes. Permite a los lectores navegar rápidamente a secciones específicas dentro del documento.
+
+#### P: ¿Por qué querría personalizar los números de página en una TOC?
+
+R: La personalización de los números de página en una TOC puede ser útil cuando desee utilizar un formato de numeración de página específico o incluir información adicional junto con los números de página. Le permite crear una tabla de contenido más personalizada e informativa.
+
+#### P: ¿Puedo incluir hipervínculos en la TOC para vincular a secciones o páginas específicas dentro del documento PDF?
+
+R: Sí, Aspose.PDF para .NET le permite crear hipervínculos en la TOC que se vinculan a secciones o páginas específicas dentro del documento PDF. Esto mejora la interactividad y la navegación del documento PDF.
+
+#### P: ¿Es Aspose.PDF para .NET compatible con los estándares PDF/A?
+
+R: Sí, Aspose.PDF para .NET es compatible con los estándares PDF/A, incluidos PDF/A-1, PDF/A-2 y PDF/A-3. Le permite crear documentos PDF que cumplen con los requisitos de archivo y conservación a largo plazo.
+
+#### P: ¿Puedo agregar más formato a las entradas de la TOC, como estilos de fuente o colores?
+
+R: Sí, puede agregar formato adicional a las entradas de la TOC, como estilos de fuente, colores y tamaños de fuente, utilizando Aspose.PDF para .NET. Esto le permite personalizar la apariencia del TOC según sus requisitos.

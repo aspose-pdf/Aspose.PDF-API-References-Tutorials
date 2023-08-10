@@ -19,7 +19,7 @@ Başlamadan önce, aşağıdakilere sahip olduğunuzdan emin olun:
 
 ## 1. Adım: Belge Dizinini kurun
 
- Öncelikle, giriş PDF dosyanızın bulunduğu dizinin yolunu belirlemeniz gerekir. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` PDF dosyanızın yolu ile değişken.
+ Öncelikle, giriş PDF dosyanızın bulunduğu dizinin yolunu belirlemeniz gerekir. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir`PDF dosyanızın yolu ile değişken.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -35,7 +35,7 @@ Document doc = new Document(dataDir + "MultiColumnPdf.pdf");
 
 ## 3. Adım: Çok Sütunlu Paragraflara Erişin
 
- biz kullanıyoruz`ParagraphAbsorber` PDF belgesindeki paragrafları özümsemek ve ziyaret etmek için sınıf. Daha sonra sayfa işaretlemelerini alır ve çok sütunlu paragraflara erişiriz.
+ biz kullanıyoruz`ParagraphAbsorber`PDF belgesindeki paragrafları özümsemek ve ziyaret etmek için sınıf. Daha sonra sayfa işaretlemelerini alır ve çok sütunlu paragraflara erişiriz.
 
 ```csharp
 ParagraphAbsorber absorb = new ParagraphAbsorber();

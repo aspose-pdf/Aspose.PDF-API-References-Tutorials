@@ -7,7 +7,6 @@ type: docs
 weight: 140
 url: /fr/net/annotations/setfreetextannotationformatting/
 ---
-
 Aspose.PDF pour .NET est une API de manipulation de documents PDF puissante et facile à utiliser qui vous permet de travailler avec des fichiers PDF par programmation dans vos applications .NET. L'une des fonctionnalités fournies par Aspose.PDF pour .NET est la possibilité de définir une mise en forme d'annotation de texte libre dans les documents PDF. Dans cet article, nous vous guiderons pas à pas dans le processus de définition du formatage d'annotation de texte libre à l'aide d'Aspose.PDF pour .NET.
 
 ## Conditions préalables
@@ -97,3 +96,25 @@ dataDir = dataDir + "SetFreeTextAnnotationFormatting_out.pdf";
 // Enregistrer le document mis à jour
 pdfDocument.Save(dataDir);            
 ```
+
+## Conclusion
+
+Dans ce didacticiel, nous avons appris à définir la mise en forme d'annotation de texte libre dans un document PDF à l'aide d'Aspose.PDF pour .NET. La bibliothèque offre un moyen simple et efficace de travailler avec des documents PDF par programmation, permettant aux développeurs de créer et de personnaliser divers types d'annotations, y compris des annotations de texte libre. En suivant le guide étape par étape et en utilisant le code source C# fourni, vous pouvez facilement configurer l'environnement, ouvrir un document PDF et créer une annotation de texte libre avec une mise en forme personnalisée. Aspose.PDF pour .NET est une API robuste et fiable qui simplifie les tâches de manipulation de documents PDF, ce qui en fait un outil précieux pour les développeurs .NET travaillant avec des fichiers PDF.
+
+### FAQ
+
+#### Q : Qu'est-ce qu'une annotation de texte libre dans un document PDF ?
+
+R : Une annotation de texte libre dans un document PDF est un type d'annotation qui vous permet d'ajouter du texte au document sans être lié à un emplacement ou à une structure spécifique. Il est couramment utilisé pour fournir des commentaires, des notes ou d'autres informations supplémentaires dans le document.
+
+#### Q : Puis-je personnaliser l'apparence de l'annotation de texte libre à l'aide d'Aspose.PDF pour .NET ?
+
+R : Oui, vous pouvez personnaliser diverses propriétés de l'annotation de texte libre, telles que la police, la taille de la police, la couleur, la position, etc.
+
+#### Q : Comment spécifier le contenu de l'annotation de texte libre ?
+
+ R : Pour spécifier le contenu de l'annotation de texte libre, vous pouvez définir le`Contents` propriété de la`FreeTextAnnotation` s'opposer au texte souhaité.
+
+#### Q : Puis-je ajouter plusieurs annotations de texte libre à un document PDF à l'aide d'Aspose.PDF pour .NET ?
+
+ R : Oui, vous pouvez créer plusieurs annotations de texte libre dans un document PDF en créant plusieurs instances du`FreeTextAnnotation`objet et en les ajoutant à différentes pages ou emplacements dans le document.

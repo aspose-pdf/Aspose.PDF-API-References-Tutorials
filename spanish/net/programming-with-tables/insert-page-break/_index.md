@@ -1,14 +1,13 @@
 ---
-title: Insertar salto de página
-linktitle: Insertar salto de página
+title: Insertar salto de página en archivo PDF
+linktitle: Insertar salto de página en archivo PDF
 second_title: Referencia de API de Aspose.PDF para .NET
-description: Aprenda a insertar un salto de página en un documento PDF con Aspose.PDF para .NET.
+description: Aprenda a insertar un salto de página en un archivo PDF usando Aspose.PDF para .NET.
 type: docs
 weight: 110
 url: /es/net/programming-with-tables/insert-page-break/
 ---
-
-En este tutorial, aprenderemos cómo insertar un salto de página en un documento PDF utilizando Aspose.PDF para .NET. Explicaremos el código fuente en C# paso a paso. Al final de este tutorial, sabrá cómo agregar un salto de página después de un cierto número de líneas en una tabla de un documento PDF. ¡Empecemos!
+En este tutorial, aprenderemos cómo insertar un salto de página en un archivo PDF usando Aspose.PDF para .NET. Explicaremos el código fuente en C# paso a paso. Al final de este tutorial, sabrá cómo agregar un salto de página después de un cierto número de líneas en una tabla de un documento PDF. ¡Empecemos!
 
 ## Paso 1: Configuración del entorno
 Asegúrese de haber configurado su entorno de desarrollo C# con Aspose.PDF para .NET. Agregue la referencia a la biblioteca e importe los espacios de nombres necesarios.
@@ -106,3 +105,51 @@ Console.WriteLine("\nPage break inserted successfully.\nFile saved at " + dataDi
 
 ## Conclusión
 En este tutorial, aprendimos cómo insertar un salto de página en un documento PDF usando Aspose.PDF para .NET. Puede usar esta guía paso a paso para agregar un salto de página después de un cierto número de líneas en una tabla en un documento PDF usando C#.
+
+### Preguntas frecuentes sobre insertar salto de página en un archivo PDF
+
+#### P: ¿Cómo puedo cambiar el tamaño de página para las nuevas páginas creadas después del salto de página?
+
+ R: Para cambiar el tamaño de página de las nuevas páginas creadas después del salto de página, puede configurar el`PageSize` propiedad de la`Page` objeto. Por ejemplo, puede usar el siguiente código para establecer el tamaño de página en A4:
+
+```csharp
+// Establezca el tamaño de la página en A4
+doc.Pages[1].SetPageSize(PageSize.A4);
+```
+
+#### P: ¿Puedo controlar los márgenes de las páginas nuevas después del salto de página?
+
+ R: Sí, puede controlar los márgenes de página para las páginas nuevas después del salto de página. Utilizar el`Margin` propiedad de la`Page` objeto para establecer los márgenes de la página. Por ejemplo, para establecer todos los márgenes en 10 puntos, puede usar el siguiente código:
+
+```csharp
+// Establecer todos los márgenes a 10 puntos
+doc.Pages[1].Margin = new MarginInfo(10, 10, 10, 10);
+```
+
+#### P: ¿Es posible agregar encabezados y pies de página a las nuevas páginas después del salto de página?
+
+ R: Sí, puede agregar encabezados y pies de página a las nuevas páginas después del salto de página. Utilizar el`Page.Header` y`Page.Footer` properties para agregar contenido a las secciones de encabezado y pie de página de la página. Por ejemplo:
+
+```csharp
+// Agregar encabezado a las nuevas páginas
+doc.Pages[1].Header = new HeaderFooter()
+{
+    Margin = new MarginInfo(10, 10, 10, 10),
+    Paragraphs = { new TextFragment("Header content") }
+};
+
+// Agregar pie de página a las nuevas páginas
+doc.Pages[1].Footer = new HeaderFooter()
+{
+    Margin = new MarginInfo(10, 10, 10, 10),
+    Paragraphs = { new TextFragment("Footer content") }
+};
+```
+
+#### P: ¿Puedo insertar saltos de página en ubicaciones específicas que no sean después de un cierto número de filas?
+
+ R: Sí, puede insertar saltos de página en ubicaciones específicas que no sean después de un cierto número de filas. Puede configurar el`IsInNewPage` propiedad de una fila para`true` para obligar a la tabla a comenzar una nueva página después de esa fila.
+
+#### P: ¿Cómo puedo ajustar el comportamiento del salto de página según la altura del contenido?
+
+R: Puede utilizar el`IsBroken` propiedad de la tabla para habilitar o deshabilitar el salto automático de filas entre páginas. cuando se establece en`true`, permite que las filas se dividan en páginas según la altura del contenido.

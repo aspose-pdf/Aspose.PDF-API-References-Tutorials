@@ -103,3 +103,29 @@ dataDir = dataDir + "AddlnkAnnotation_out.pdf";
 // Guardar archivo de salida
 doc.Save(dataDir);
 ```
+
+## Conclusión
+
+En este tutorial, exploramos cómo agregar anotaciones de tinta a un documento PDF usando Aspose.PDF para .NET. Al seguir la guía paso a paso y el código fuente de C# proporcionado, los desarrolladores pueden implementar fácilmente la funcionalidad de anotación de tinta en sus aplicaciones de procesamiento de PDF.
+
+### Preguntas frecuentes
+
+#### P: ¿Qué es una anotación de tinta en un documento PDF?
+
+R: Una anotación de tinta en un documento PDF permite a los usuarios dibujar anotaciones de tinta de forma libre con un lápiz óptico o un mouse. Se usa comúnmente para agregar bocetos, diagramas u otras anotaciones a mano alzada a un PDF.
+
+#### P: ¿Puedo personalizar la apariencia de la anotación de tinta?
+
+R: Sí, Aspose.PDF para .NET proporciona varias propiedades para personalizar la apariencia de la anotación de tinta, como el color, la opacidad, el estilo de tapa, el ancho del borde y más. Los desarrolladores pueden ajustar estas propiedades para cumplir con sus requisitos específicos.
+
+#### P: ¿Es posible agregar múltiples anotaciones de tinta a una sola página PDF?
+
+R: Sí, puede agregar múltiples anotaciones de tinta a una sola página PDF usando Aspose.PDF para .NET. Cada anotación de tinta puede tener su propio conjunto de puntos y apariencia personalizada.
+
+#### P: ¿Puedo agregar anotaciones de tinta a documentos PDF existentes?
+
+R: Sí, Aspose.PDF para .NET le permite agregar anotaciones de tinta tanto a documentos PDF recién creados como a archivos PDF existentes. Puede abrir un PDF existente, agregar anotaciones de tinta y guardar el documento actualizado.
+
+#### P: ¿Cuáles son algunos casos de uso comunes para las anotaciones de tinta en documentos PDF?
+
+R: Las anotaciones de tinta son útiles para una amplia gama de aplicaciones, incluida la adición de firmas o notas escritas a mano en formularios PDF, la anotación de planos arquitectónicos o dibujos de ingeniería y el marcado de documentos para revisión colaborativa.

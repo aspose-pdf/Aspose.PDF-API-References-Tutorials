@@ -1,17 +1,17 @@
 ---
-title: Extraer texto resaltado
-linktitle: Extraer texto resaltado
+title: Extraer texto resaltado en archivo PDF
+linktitle: Extraer texto resaltado en archivo PDF
 second_title: Referencia de API de Aspose.PDF para .NET
-description: Aprenda a extraer texto resaltado usando Aspose.PDF para .NET con esta guía paso a paso.
+description: Aprenda cómo extraer texto resaltado en un archivo PDF usando Aspose.PDF para .NET con esta guía paso a paso.
 type: docs
 weight: 60
 url: /es/net/annotations/extracthighlightedtext/
 ---
-Para extraer texto resaltado de un documento PDF, puede usar Aspose.PDF para la API de .NET. Esta API proporciona una forma sencilla de recuperar todo el texto que se ha resaltado en un documento.
+Para extraer el texto resaltado en un archivo PDF, puede usar Aspose.PDF para la API de .NET. Esta API proporciona una forma sencilla de recuperar todo el texto que se ha resaltado en un documento.
 
 ## Paso 1: Cargue el documento PDF
 
- El primer paso para extraer el texto resaltado de un documento PDF es cargar el documento mediante la API de Aspose.PDF para .NET. Puede hacer esto creando una nueva instancia del`Document` class y pasando la ruta al documento PDF como parámetro. 
+ El primer paso para extraer el texto resaltado en un archivo PDF es cargar el documento utilizando Aspose.PDF para la API de .NET. Puede hacer esto creando una nueva instancia del`Document` class y pasando la ruta al documento PDF como parámetro. 
 
 ```csharp
 // La ruta al directorio de documentos.
@@ -82,3 +82,28 @@ foreach (Annotation annotation in doc.Pages[1].Annotations)
 }
 ```
 
+## Conclusión
+
+En este tutorial, exploramos cómo extraer texto resaltado de un documento PDF utilizando Aspose.PDF para .NET. Al seguir la guía paso a paso y usar el código fuente de C# proporcionado, los desarrolladores pueden extraer y administrar fácilmente el texto resaltado en sus documentos PDF.
+
+### Preguntas frecuentes sobre la extracción de texto resaltado en un archivo PDF
+
+#### P: ¿Qué son las anotaciones de marcado de texto en un documento PDF?
+
+R: Las anotaciones de marcado de texto son anotaciones que resaltan o marcan texto específico en un documento PDF. Los ejemplos de anotaciones de marcado de texto incluyen resaltados, subrayados y tachados.
+
+#### P: ¿Puedo extraer texto de otros tipos de anotaciones usando Aspose.PDF para .NET?
+
+R: Sí, Aspose.PDF para .NET proporciona varios métodos para extraer texto de diferentes tipos de anotaciones, incluidas anotaciones de marcado de texto, anotaciones de texto libre y más.
+
+#### P: ¿Aspose.PDF para .NET admite la extracción de texto de archivos PDF protegidos con contraseña?
+
+R: Sí, Aspose.PDF para .NET admite la extracción de texto de archivos PDF protegidos con contraseña. Debe proporcionar la contraseña correcta al cargar el documento PDF utilizando el`Document` clase.
+
+#### P: ¿Puedo filtrar el texto resaltado según otros criterios, como el color o el autor?
+
+R: Sí, puede filtrar el texto resaltado según otros criterios, como el color, el autor o la fecha de creación. Aspose.PDF para .NET proporciona métodos para acceder y filtrar anotaciones en función de sus propiedades.
+
+#### P: ¿Es posible guardar el texto resaltado extraído en un archivo separado?
+
+R: Sí, puede guardar el texto resaltado extraído en un archivo separado o almacenarlo en una estructura de datos para su posterior procesamiento o análisis.

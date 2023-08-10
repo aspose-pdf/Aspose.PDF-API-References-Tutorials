@@ -68,7 +68,7 @@ try
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
 	// Kaynak PDF dosyasını yükle
 	Document doc = new Document(dataDir + "ExtractTextPage.pdf");
-	// Düzenli ifade ile TextFragment Absorber nesnesi oluşturun
+	//Düzenli ifade ile TextFragment Absorber nesnesi oluşturun
 	TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("[TextFragmentAbsorber,companyname,Textbox,50]");
 	doc.Pages.Accept(textFragmentAbsorber);
 	// Her TextFragment'i değiştirin

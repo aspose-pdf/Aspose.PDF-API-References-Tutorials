@@ -1,13 +1,12 @@
 ---
-title: Tag HTML all'interno della tabella
-linktitle: Tag HTML all'interno della tabella
+title: Tag HTML all'interno della tabella nel file PDF
+linktitle: Tag HTML all'interno della tabella nel file PDF
 second_title: Aspose.PDF per riferimento API .NET
-description: Scopri come utilizzare i tag HTML all'interno di una tabella in un documento PDF con Aspose.PDF per .NET.
+description: Scopri come utilizzare i tag HTML all'interno di una tabella nel file PDF con Aspose.PDF per .NET.
 type: docs
 weight: 100
 url: /it/net/programming-with-tables/html-tags-inside-table/
 ---
-
 In questo tutorial impareremo come utilizzare i tag HTML all'interno di una tabella in un documento PDF utilizzando Aspose.PDF per .NET. Spiegheremo il codice sorgente in C# passo dopo passo. Alla fine di questo tutorial, saprai come inserire contenuto HTML in una tabella in un documento PDF. Iniziamo!
 
 ## Passaggio 1: configurazione dell'ambiente
@@ -113,3 +112,25 @@ doc.Save(dataDir + "HTMLInsideTableCell_out.pdf");
 
 ## Conclusione
 In questo tutorial, abbiamo imparato come utilizzare i tag HTML all'interno di una tabella in un documento PDF utilizzando Aspose.PDF per .NET. Puoi utilizzare questa guida dettagliata per inserire contenuto HTML nelle celle di una tabella in un documento PDF utilizzando C#.
+
+### Domande frequenti per i tag HTML all'interno della tabella nel file PDF
+
+#### D: Posso utilizzare altri tag e attributi HTML all'interno delle celle della tabella?
+
+ R: Sì, puoi utilizzare vari tag e attributi HTML all'interno delle celle della tabella, ad esempio`<b>`, `<i>`, `<a>`e molti altri. Aspose.PDF per .NET supporta un'ampia gamma di elementi e stili HTML che è possibile utilizzare per formattare il contenuto all'interno delle celle della tabella.
+
+#### D: Posso applicare stili CSS al contenuto HTML all'interno delle celle della tabella?
+
+R: Sì, puoi applicare stili CSS al contenuto HTML all'interno delle celle della tabella. Aspose.PDF per .NET fornisce il supporto per gli stili CSS di base che possono essere applicati agli elementi HTML.
+
+#### D: È possibile aggiungere immagini insieme al contenuto HTML all'interno delle celle della tabella?
+
+ R: Sì, puoi aggiungere immagini insieme al contenuto HTML all'interno delle celle della tabella. Puoi usare l'HTML`<img>` tag per includere immagini da varie fonti, come file locali o URL.
+
+#### D: Come posso specificare diverse larghezze di colonna per la tabella?
+
+ R: Puoi specificare diverse larghezze di colonna per la tabella utilizzando il file`ColumnWidths` proprietà della tavola. La proprietà accetta una stringa contenente valori separati da spazi, dove ogni valore rappresenta la larghezza di una colonna in punti.
+
+#### D: Posso utilizzare tabelle nidificate all'interno di una cella con contenuto HTML?
+
+R: Sì, puoi utilizzare tabelle nidificate all'interno di una cella con contenuto HTML. È possibile creare istanze di tabelle separate e aggiungerle come parte del contenuto HTML all'interno di una cella per ottenere l'effetto di nidificazione.

@@ -19,7 +19,7 @@ url: /ar/net/programming-with-text/replace-first-occurrence/
 
 ## الخطوة 1: قم بإعداد دليل المستندات
 
- أولاً ، تحتاج إلى ضبط المسار إلى الدليل حيث لديك ملف PDF للإدخال. يستبدل`"YOUR DOCUMENT DIRECTORY"` في ال`dataDir` متغير مع المسار إلى ملف PDF الخاص بك.
+ أولاً ، تحتاج إلى ضبط المسار إلى الدليل حيث لديك ملف PDF للإدخال. يستبدل`"YOUR DOCUMENT DIRECTORY"` في ال`dataDir`متغير مع المسار إلى ملف PDF الخاص بك.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -35,7 +35,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 ## الخطوة 3: ابحث عن أول ظهور لعبارة البحث
 
- نقوم بإنشاء ملف`TextFragmentAbsorber`كائن وقبوله لجميع صفحات مستند PDF للعثور على جميع مثيلات عبارة البحث.
+ نقوم بإنشاء ملف`TextFragmentAbsorber` كائن وقبوله لجميع صفحات مستند PDF للعثور على جميع مثيلات عبارة البحث.
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
@@ -74,7 +74,7 @@ Console.WriteLine("\nText replaced successfully.\nFile saved at " + dataDir);
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // افتح المستند
 Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
-// قم بإنشاء كائن TextAbsorber للعثور على جميع مثيلات عبارة البحث المدخلة
+//قم بإنشاء كائن TextAbsorber للعثور على جميع مثيلات عبارة البحث المدخلة
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
 // تقبل الممتص لجميع الصفحات
 pdfDocument.Pages.Accept(textFragmentAbsorber);

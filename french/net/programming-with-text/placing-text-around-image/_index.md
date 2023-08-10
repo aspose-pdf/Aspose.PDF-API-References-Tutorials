@@ -72,7 +72,7 @@ row1.Cells[0].Paragraphs.Add(logo);
 
 ## Étape 6 : Ajouter du texte autour de l'image
 
- Nous créons des variables de chaîne contenant du texte au format HTML et créons un`HtmlFragment` objet. Ensuite, nous ajoutons le texte HTML à la cellule du tableau contenant l'image.
+Nous créons des variables de chaîne contenant du texte au format HTML et créons un`HtmlFragment` objet. Ensuite, nous ajoutons le texte HTML à la cellule du tableau contenant l'image.
 
 ```csharp
 string TitleString = "<font face=\"Arial\" size=6 color=\"#101090\"><b>Aspose.Pdf for .NET</b></font>";
@@ -111,7 +111,7 @@ Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 Aspose.Pdf.Page page = doc.Pages.Add();
 // Instancier un objet table
 Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
-//Ajouter le tableau dans la collection de paragraphes de la section souhaitée
+// Ajouter le tableau dans la collection de paragraphes de la section souhaitée
 page.Paragraphs.Add(table1);
 // Définir avec les largeurs de colonne du tableau
 table1.ColumnWidths = "120 270";
@@ -136,7 +136,7 @@ logo.FixWidth = 110;
 row1.Cells.Add();
 // Ajouter l'image à la collection de paragraphes de la cellule du tableau
 row1.Cells[0].Paragraphs.Add(logo);
-// Créer des variables de chaîne avec du texte contenant des balises html
+//Créer des variables de chaîne avec du texte contenant des balises html
 string TitleString = "<font face=\"Arial\" size=6 color=\"#101090\"><b> Aspose.Pdf for .NET</b></font>";
 string BodyString1 = "<font face=\"Arial\" size=2><br/>Aspose.Pdf for .NET is a non-graphical PDF� document reporting component that enables .NET applications to <b> create PDF documents from scratch </b> without utilizing Adobe Acrobat�. Aspose.Pdf for .NET is very affordably priced and offers a wealth of strong features including: compression, tables, graphs, images, hyperlinks, security and custom fonts. </font>";
 // Créer un objet texte à ajouter à droite de l'image

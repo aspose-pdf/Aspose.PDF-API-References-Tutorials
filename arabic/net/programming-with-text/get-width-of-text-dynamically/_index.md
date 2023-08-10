@@ -24,7 +24,7 @@ url: /ar/net/programming-with-text/get-width-of-text-dynamically/
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- يستبدل`"YOUR DOCUMENT DIRECTORY"` مع المسار إلى الدليل حيث توجد المستندات الخاصة بك. سيتم استخدام هذا لتخزين أي ملفات PDF تم إنشاؤها.
+ يستبدل`"YOUR DOCUMENT DIRECTORY"`مع المسار إلى الدليل حيث توجد المستندات الخاصة بك. سيتم استخدام هذا لتخزين أي ملفات PDF تم إنشاؤها.
 
 ## الخطوة 2: ابحث عن الخط
 

@@ -109,7 +109,7 @@ Modifiez le code dans la boucle pour effectuer d'autres actions sur chaque segme
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Ouvrir le document
 Document pdfDocument = new Document(dataDir + "SearchTextSegmentsPage.pdf");
-// Créer un objet TextAbsorber pour trouver toutes les instances de la phrase de recherche d'entrée
+//Créer un objet TextAbsorber pour trouver toutes les instances de la phrase de recherche d'entrée
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
 // Accepter l'absorbeur pour toutes les pages
 pdfDocument.Pages[2].Accept(textFragmentAbsorber);

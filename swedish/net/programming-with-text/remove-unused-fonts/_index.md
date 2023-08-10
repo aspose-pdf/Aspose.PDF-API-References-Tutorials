@@ -35,7 +35,7 @@ Document doc = new Document(dataDir + "ReplaceTextPage.pdf");
 
 ## Steg 3: Identifiera och ta bort oanvända teckensnitt
 
- Vi skapar en`TextFragmentAbsorber` objekt med`TextEditOptions` parameter satt till`TextEditOptions.FontReplace.RemoveUnusedFonts` . Det här alternativet låter oss identifiera och ta bort oanvända teckensnitt i PDF-dokumentet. Vi itererar sedan igenom alla`TextFragments` och ställ in typsnittet på önskat typsnitt.
+ Vi skapar en`TextFragmentAbsorber` objekt med`TextEditOptions` parameter satt till`TextEditOptions.FontReplace.RemoveUnusedFonts` Det här alternativet låter oss identifiera och ta bort oanvända teckensnitt i PDF-dokumentet. Vi itererar sedan igenom alla`TextFragments` och ställ in typsnittet på önskat typsnitt.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));

@@ -41,7 +41,7 @@ Document doc = new Document();
 ```
 
 ## Étape 5 : Créer un objet HtmlFragment avec le contenu HTML
- Instancier un`HtmlFragment` objet avec le contenu HTML que vous souhaitez ajouter au document. Dans le code fourni, le contenu HTML est affecté à la variable`t`. Vous pouvez modifier le contenu HTML selon vos besoins.
+Instancier un`HtmlFragment` objet avec le contenu HTML que vous souhaitez ajouter au document. Dans le code fourni, le contenu HTML est affecté à la variable`t`. Vous pouvez modifier le contenu HTML selon vos besoins.
 
 ```csharp
 HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>First</li><li>Second</li><li>Third</li><li >Fourth</li><li>Fifth</li></ul>Text after the list.<br/>Next line<br/>Last line</body>`");
@@ -87,6 +87,6 @@ doc.Save(outFile);
 ```
 
 ## Conclusion
-Vous avez ajouté avec succès une liste ordonnée HTML dans un document à l'aide d'Aspose.PDF pour .NET. Le fichier PDF résultant se trouve maintenant dans le chemin du fichier de sortie spécifié.
+Vous avez ajouté avec succès une liste ordonnée HTML dans un document à l'aide d'Aspose.PDF pour .NET. Le fichier PDF résultant peut maintenant être trouvé dans le chemin du fichier de sortie spécifié.
 
 N'oubliez pas de personnaliser le contenu HTML et d'ajuster le code en fonction de vos besoins spécifiques.

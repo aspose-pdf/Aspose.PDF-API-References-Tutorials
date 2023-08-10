@@ -1,6 +1,6 @@
 ---
-title: Boyutları Güncelle
-linktitle: Boyutları Güncelle
+title: PDF Sayfa Boyutlarını Güncelle
+linktitle: PDF Sayfa Boyutlarını Güncelle
 second_title: Aspose.PDF for .NET API Referansı
 description: Aspose.PDF for .NET kullanarak PDF sayfa boyutlarını güncellemek için adım adım kılavuz. İhtiyaçlarınıza göre boyutları kontrol edin.
 type: docs
@@ -44,14 +44,14 @@ Page pdfPage = pageCollection[1];
 ```
 
 ## 5. Adım: Yeni sayfa boyutlarını tanımlayın
- Artık yeni sayfa boyutunu kullanarak ayarlayabilirsiniz.`SetPageSize()` yöntemi`Page` nesne. Bu örnekte, sayfa boyutlarını A4 (11,7 x 8,3 inç) olarak ayarlıyoruz ve puntoya çeviriyoruz (1 inç = 72 punto).
+ Artık yeni sayfa boyutunu kullanarak ayarlayabilirsiniz.`SetPageSize()` yöntemi`Page`nesne. Bu örnekte, sayfa boyutlarını A4 (11,7 x 8,3 inç) olarak ayarlıyoruz ve puntoya çeviriyoruz (1 inç = 72 punto).
 
 ```csharp
 pdfPage.SetPageSize(597.6, 842.4);
 ```
 
 ## 6. Adım: Güncellenen belgeyi kaydedin
-Son olarak, güncellenmiş PDF belgesini kullanarak bir dosyaya kaydedebilirsiniz.`Save()` yöntemi`Document`sınıf. Doğru yolu ve dosya adını belirttiğinizden emin olun.
+ Son olarak, güncellenmiş PDF belgesini kullanarak bir dosyaya kaydedebilirsiniz.`Save()` yöntemi`Document`sınıf. Doğru yolu ve dosya adını belirttiğinizden emin olun.
 
 ```csharp
 dataDir = dataDir + "UpdateDimensions_out.pdf";
@@ -82,3 +82,32 @@ System.Console.WriteLine("\nPage dimensions updated successfully.\nFile saved at
 
 ## Çözüm
 Bu öğreticide, Aspose.PDF for .NET kullanarak bir PDF belgesindeki sayfanın boyutlarının nasıl güncelleneceğini öğrendik. Bu adım adım kılavuzu izleyerek, bir PDF belgesindeki sayfanın boyutlarını gerektiği gibi kolayca değiştirebilirsiniz. Aspose.PDF, PDF dosyalarıyla çalışmak ve sayfa boyutlarını değiştirmek de dahil olmak üzere çeşitli manipülasyonlar gerçekleştirmek için güçlü ve esnek bir API sunar. Bu bilgiyle, özel ihtiyaçlarınızı karşılamak için PDF sayfalarınızın boyutlarını kontrol edebilir ve özelleştirebilirsiniz.
+
+### PDF sayfası boyutlarının güncellenmesiyle ilgili SSS
+
+#### S: Aspose.PDF for .NET kullanarak bir PDF belgesindeki belirli bir sayfanın boyutlarını nasıl güncelleyebilirim?
+
+C: Aspose.PDF for .NET kullanarak bir PDF belgesindeki belirli bir sayfanın boyutlarını güncellemek için şu adımları takip edebilirsiniz:
+
+1. Orijinal PDF dosyanızın bulunduğu yolu ve güncellenmiş PDF dosyasını nereye kaydetmek istediğinizi belirterek belge dizinini ayarlayın. "BELGELER DİZİNİNİZİ" uygun yolla değiştirin.
+2.  kullanarak güncellemek için mevcut PDF belgesini açın.`Document` Aspose.PDF sınıfı. Orijinal PDF belgesine giden doğru yolu belirttiğinizden emin olun.
+3.  kullanarak PDF belgesinin sayfa koleksiyonuna erişin.`Pages` mülkiyeti`Document` sınıf.
+4. Sayfa dizinini kullanarak sayfa koleksiyonundan güncellemek istediğiniz sayfayı seçin. Sağlanan C# kaynak kodunda ikinci sayfayı (dizin 1) kullanıyoruz.
+5.  kullanarak yeni sayfa boyutunu tanımlayın.`SetPageSize()` yöntemi`Page` nesne. Örnekte, sayfa boyutlarını A4 boyutuna (11,7 x 8,3 inç) ayarlayarak puntoya (1 inç = 72 punto) dönüştürdük.
+6.  Güncellenmiş PDF belgesini kullanarak bir dosyaya kaydedin.`Save()` yöntemi`Document`sınıf. Doğru yolu ve dosya adını belirttiğinizden emin olun.
+
+#### S: PDF belgesindeki birden çok sayfanın boyutlarını aynı anda güncelleyebilir miyim?
+
+C: Evet, PDF belgesindeki birden çok sayfanın boyutlarını aynı anda güncellemek için sağlanan kaynak kodunu değiştirebilirsiniz. Belirli bir sayfayı seçmek yerine (4. adımda gösterildiği gibi), sayfa koleksiyonundaki tüm sayfalar arasında dolaşabilir ve her sayfa için istediğiniz sayfa boyutunu ayarlayabilirsiniz.
+
+#### S: Aspose.PDF for .NET kullanırken sayfa boyutlarını inçten puntoya nasıl dönüştürebilirim?
+
+ C: Aspose.PDF for .NET'te sayfa boyutları için kullanılan ölçüm birimi puntodur ve 1 inç 72 puntoya eşittir. İnçleri noktalara dönüştürmek için aşağıdaki formülü kullanabilirsiniz:`points = inches * 72`. Örneğin, 11,7 x 8,3 inç bir sayfa boyutu ayarlamak için karşılık gelen boyutları (11,7 * 72) ve (8,3 * 72) olarak punto olarak hesaplayabilirsiniz.
+
+#### S: Bir sayfanın boyutlarının güncellenmesi, PDF belgesinin içerik düzenini etkiler mi?
+
+C: Evet, bir sayfanın boyutlarının güncellenmesi, söz konusu sayfadaki PDF belgesinin içerik düzenini etkileyecektir. Sayfa boyutlarını değiştirdiğinizde, sayfadaki içerik yeni boyutlara sığacak şekilde ayarlanacaktır.
+
+#### S: Değişiklikleri geri almak ve orijinal sayfa boyutlarını güncelledikten sonra geri yüklemek mümkün müdür?
+
+C: Evet, değişiklikleri geri almak ve orijinal sayfa boyutlarını geri yüklemek isterseniz, değişiklik yapmadan önce orijinal PDF belgesinin bir kopyasını saklayabilir veya orijinal PDF belgesini değişiklikleri kaydetmeden yeniden açabilirsiniz. Bu şekilde, orijinal boyutlar korunacaktır.

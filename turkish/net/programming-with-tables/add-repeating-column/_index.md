@@ -1,14 +1,13 @@
 ---
-title: Yinelenen Sütun Ekle
-linktitle: Yinelenen Sütun Ekle
+title: PDF Belgesinde Yinelenen Sütun Ekleme
+linktitle: PDF Belgesinde Yinelenen Sütun Ekleme
 second_title: Aspose.PDF for .NET API Referansı
-description: Aspose.PDF for .NET kullanarak bir PDF belgesine yinelenen sütun eklemeyi öğrenin.
+description: Aspose.PDF for .NET kullanarak PDF belgesine yinelenen sütun eklemeyi öğrenin.
 type: docs
 weight: 20
 url: /tr/net/programming-with-tables/add-repeating-column/
 ---
-
-Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF belgesine yinelenen sütun eklemeyi öğreneceğiz. C#'ta kaynak kodunu adım adım anlatacağız. Bu eğitimin sonunda, bir PDF belgesinde yinelenen sütunlu tablo oluşturmayı öğreneceksiniz. Hadi başlayalım!
+Bu eğitimde, Aspose.PDF for .NET kullanarak PDF belgesine yinelenen sütun eklemeyi öğreneceğiz. C#'ta kaynak kodunu adım adım anlatacağız. Bu eğitimin sonunda, bir PDF belgesinde yinelenen sütunlu tablo oluşturmayı öğreneceksiniz. Hadi başlayalım!
 
 ## 1. Adım: Ortamı ayarlama
 Öncelikle Aspose.PDF for .NET ile C# geliştirme ortamınızı kurduğunuzdan emin olun. Referansı kitaplığa ekleyin ve gerekli ad alanlarını içe aktarın.
@@ -70,7 +69,7 @@ for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
      row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
      row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
      // ...
-     //Diğer sütunları buraya ekleyin
+     // Diğer sütunları buraya ekleyin
 }
 ```
 
@@ -102,7 +101,7 @@ Aspose.Pdf.Table outerTable = new Aspose.Pdf.Table();
 outerTable.ColumnWidths = "100%";
 outerTable.HorizontalAlignment = HorizontalAlignment.Left;
 
-// Aynı sayfanın içinde kırılacak olan outerTable'ın içine yuvalanacak bir tablo nesnesi oluşturun
+//Aynı sayfanın içinde kırılacak olan outerTable'ın içine yuvalanacak bir tablo nesnesi oluşturun
 Aspose.Pdf.Table mytable = new Aspose.Pdf.Table();
 mytable.Broken = TableBroken.VerticalInSamePage;
 mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;
@@ -158,3 +157,25 @@ doc.Save(outFile);
 
 ## Çözüm
 Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF belgesine yinelenen sütun eklemeyi öğrendik. Kendi C# projelerinizde yinelenen sütunlara sahip tablolar oluşturmak için bu adım adım kılavuzu kullanabilirsiniz.
+
+### PDF belgesinde yinelenen sütun eklemek için SSS
+
+#### S: İç içe tablodaki yinelenen sütunların sayısını özelleştirebilir miyim?
+
+ C: Evet, iç içe tablodaki yinelenen sütunların sayısını özelleştirebilirsiniz. Sağlanan örnekte, ayarladık`mytable.RepeatingColumnsCount = 5;`, yani 5 yinelenen sütun olacak. Bu değeri istediğiniz herhangi bir sayı ile değiştirebilirsiniz.
+
+#### S: İç içe tabloya dinamik olarak daha fazla satır eklemek mümkün mü?
+
+Y: Evet, eğitimde gösterildiği gibi iç içe geçmiş tabloya dinamik olarak daha fazla satır ekleyebilirsiniz. Verilerinize dayalı olarak satır eklemek için döngüleri veya başka herhangi bir mantığı kullanabilirsiniz.
+
+#### S: Tabloya ve tablonun hücrelerine stil ve biçimlendirme uygulayabilir miyim?
+
+C: Evet, Aspose.PDF for .NET'i kullanarak tabloya ve tablonun hücrelerine stiller ve formatlama uygulayabilirsiniz. Kitaplık, tablonun ve içeriğinin görünümünü özelleştirmek için çeşitli özellikler ve yöntemler sağlar.
+
+#### S: Aspose.PDF for .NET, .NET Core ile uyumlu mu?
+
+C: Evet, Aspose.PDF for .NET, .NET Core ile uyumludur. Hem .NET Framework hem de .NET Core uygulamalarında kullanabilirsiniz.
+
+#### S: Mevcut bir PDF belgesine yinelenen sütunlar eklemek için bu yaklaşımı kullanabilir miyim?
+
+C: Evet, mevcut bir PDF belgesine yinelenen sütunlar eklemek için bu yaklaşımı kullanabilirsiniz. Aspose.PDF for .NET kullanarak mevcut belgeyi yükleyin ve yinelenen sütunu oluşturmak ve eklemek için aynı adımları izleyin.

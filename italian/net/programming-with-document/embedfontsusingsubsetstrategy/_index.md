@@ -1,13 +1,12 @@
 ---
-title: Incorpora i caratteri utilizzando la strategia dei sottoinsiemi
-linktitle: Incorpora i caratteri utilizzando la strategia dei sottoinsiemi
+title: Incorpora i caratteri nel file PDF con la strategia dei sottoinsiemi
+linktitle: Incorpora i caratteri con la strategia dei sottoinsiemi
 second_title: Aspose.PDF per riferimento API .NET
 description: Scopri come incorporare i caratteri in un file PDF con Subset Strategy utilizzando Aspose.PDF per .NET. Ottimizza le dimensioni del tuo PDF incorporando solo i caratteri necessari.
 type: docs
 weight: 130
 url: /it/net/programming-with-document/embedfontsusingsubsetstrategy/
 ---
-
 In questo tutorial, discuteremo come incorporare i caratteri in un file PDF con una strategia di sottoinsieme utilizzando Aspose.PDF per .NET. Aspose.PDF per .NET è una potente libreria che consente agli sviluppatori di creare, modificare e manipolare documenti PDF in modo programmatico. L'incorporamento dei caratteri in un file PDF è un passaggio importante per garantire che il documento venga visualizzato correttamente su dispositivi diversi, indipendentemente dal fatto che i caratteri richiesti siano installati o meno su tali dispositivi.
 
 ## Passaggio 1: creare una nuova applicazione console C#
@@ -71,3 +70,24 @@ doc.Save(dataDir + "Output_out.pdf");
 ## Conclusione
 In questo articolo, abbiamo discusso su come incorporare i caratteri in un file PDF con una strategia di sottoinsieme utilizzando Aspose.PDF per .NET. Aspose.PDF per .NET fornisce un'API semplice e facile da usare per lavorare con documenti PDF, inclusa l'aggiunta e l'incorporamento di caratteri con diverse strategie. L'incorporamento dei caratteri in un file PDF è un passaggio importante per garantire che il documento venga visualizzato correttamente su dispositivi diversi e la strategia dei sottoinsiemi è una funzione utile per ridurre le dimensioni del file del documento PDF.
 
+### Domande frequenti per incorporare i caratteri nel file PDF con la strategia dei sottoinsiemi
+
+#### D: Qual è una strategia di sottoinsieme per l'incorporamento dei caratteri in un file PDF?
+
+R: Una strategia di sottoinsieme per l'incorporamento dei caratteri in un file PDF significa che verrà incorporata solo una parte del carattere contenente i caratteri utilizzati nel documento. Questo aiuta a ridurre le dimensioni del file del documento PDF eliminando i dati dei caratteri non necessari.
+
+#### D: Qual è la differenza tra le strategie SubsetAllFonts e SubsetEmbeddedFontsOnly?
+
+ R: Il`SubsetAllFonts` strategia incorporerà tutti i caratteri nel documento come un sottoinsieme, mentre il`SubsetEmbeddedFontsOnly` la strategia incorporerà solo il sottoinsieme di caratteri che sono già incorporati nel documento. Quest'ultima strategia non influirà sui caratteri che non sono già incorporati.
+
+#### D: Perché l'incorporamento dei caratteri con una strategia di sottoinsieme è importante?
+
+R: L'incorporamento dei caratteri con una strategia di sottoinsieme è importante per garantire che il file PDF contenga i dati dei caratteri necessari per visualizzare correttamente il testo, mantenendo al contempo le dimensioni del file più piccole includendo solo i caratteri utilizzati nel documento.
+
+#### D: Posso utilizzare Aspose.PDF per .NET per incorporare caratteri con strategie diverse?
+
+A: Sì, Aspose.PDF per .NET fornisce varie strategie per l'incorporamento dei caratteri, incluso`SubsetAllFonts` E`SubsetEmbeddedFontsOnly`. Puoi scegliere la strategia appropriata in base alle tue esigenze.
+
+#### D: Aspose.PDF per .NET è una libreria affidabile per lavorare con documenti PDF?
+
+R: Sì, Aspose.PDF per .NET è una libreria affidabile e potente per lavorare con documenti PDF. Fornisce funzionalità complete per la creazione, la modifica e la manipolazione di file PDF nelle applicazioni .NET.

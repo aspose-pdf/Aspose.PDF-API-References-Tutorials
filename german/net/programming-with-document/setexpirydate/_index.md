@@ -1,8 +1,8 @@
 ---
-title: Ablaufdatum festlegen
-linktitle: Ablaufdatum festlegen
+title: Legen Sie das Ablaufdatum in der PDF-Datei fest
+linktitle: Legen Sie das Ablaufdatum in der PDF-Datei fest
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erfahren Sie in dieser Schritt-für-Schritt-Anleitung, wie Sie mit Aspose.PDF für .NET das Ablaufdatum in PDF-Dokumenten festlegen.
+description: Erfahren Sie in dieser Schritt-für-Schritt-Anleitung, wie Sie mit Aspose.PDF für .NET das Ablaufdatum in einer PDF-Datei festlegen.
 type: docs
 weight: 300
 url: /de/net/programming-with-document/setexpirydate/
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Schritt 2: Erstellen eines neuen PDF-Dokuments
 
-Um ein neues PDF-Dokument zu erstellen, müssen wir ein neues instanziieren`Aspose.Pdf.Document` Objekt. Wir können dies mit dem folgenden Code tun:
+ Um ein neues PDF-Dokument zu erstellen, müssen wir ein neues instanziieren`Aspose.Pdf.Document` Objekt. Wir können dies mit dem folgenden Code tun:
 
 ```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
@@ -35,7 +35,7 @@ doc.Pages.Add();
 
 ## Schritt 4: Text zum PDF-Dokument hinzufügen
 
- Nachdem wir dem PDF-Dokument eine Seite hinzugefügt haben, können wir mit dem Text hinzufügen`Paragraphs` Sammlung. Wir können dies mit dem folgenden Code tun:
+Nachdem wir dem PDF-Dokument eine Seite hinzugefügt haben, können wir mit dem Text hinzufügen`Paragraphs` Sammlung. Wir können dies mit dem folgenden Code tun:
 
 ```csharp
 doc.Pages[1].Paragraphs.Add(new TextFragment("Hello World..."));
@@ -99,3 +99,21 @@ dataDir = dataDir + "SetExpiryDate_out.pdf";
 // PDF-Dokument speichern
 doc.Save(dataDir);
 ```
+
+## Abschluss
+
+Das Festlegen eines Ablaufdatums für ein PDF-Dokument mit Aspose.PDF für .NET ist eine nützliche Funktion, um sicherzustellen, dass das Dokument nur für einen bestimmten Zeitraum gültig ist. Indem Entwickler der Schritt-für-Schritt-Anleitung folgen und den bereitgestellten C#-Quellcode verwenden, können sie ganz einfach das Ablaufdatum festlegen und PDFs mit zeitlich begrenzter Gültigkeit erstellen. Diese Funktion kann besonders hilfreich sein für Dokumente, auf die nur für einen begrenzten Zeitraum zugegriffen werden muss oder die verteilt werden müssen.
+
+### FAQs zum Festlegen des Ablaufdatums in der PDF-Datei
+
+#### F: Kann ich ein anderes Ablaufdatum für das PDF-Dokument festlegen?
+
+ A: Ja, Sie können ein anderes Ablaufdatum für das PDF-Dokument festlegen, indem Sie den JavaScript-Code in Schritt 5 ändern. Im bereitgestellten Beispiel ist das Ablaufdatum auf Mai 2017 festgelegt. Um ein anderes Ablaufdatum festzulegen, müssen Sie das ändern`year` Und`month` Variablen im JavaScript-Code auf das gewünschte Jahr und den gewünschten Monat.
+
+#### F: Was passiert, wenn das PDF-Dokument abgelaufen ist?
+
+A: Wenn das PDF-Dokument abgelaufen ist, wie im JavaScript-Code angegeben, zeigt der Viewer eine Warnmeldung an, die darauf hinweist, dass die Datei abgelaufen ist und der Benutzer eine neue benötigt. Diese Warnmeldung wird angezeigt, wenn das PDF geöffnet wird.
+
+#### F: Kann ich für das Ablaufdatum eine bestimmte Uhrzeit anstelle nur des Datums verwenden?
+
+ A: Ja, Sie können im JavaScript-Code eine bestimmte Zeit für das Ablaufdatum festlegen. Durch die Änderung der`expiry` Um die gewünschte Zeit in die Variable im JavaScript-Code einzubeziehen, können Sie eine bestimmte Zeit für das Ablaufdatum festlegen.

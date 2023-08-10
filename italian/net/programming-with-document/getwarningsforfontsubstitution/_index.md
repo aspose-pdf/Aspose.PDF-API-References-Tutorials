@@ -7,7 +7,6 @@ type: docs
 weight: 190
 url: /it/net/programming-with-document/getwarningsforfontsubstitution/
 ---
-
  Aspose.PDF per .NET è una popolare libreria di manipolazione PDF che consente agli sviluppatori di creare, modificare e convertire file PDF nelle loro applicazioni .NET. Una delle funzionalità offerte da questa libreria è la capacità di rilevare avvisi di sostituzione dei caratteri quando viene aperto un documento PDF. Questo tutorial ti guiderà attraverso le fasi di utilizzo del`GetWarningsForFontSubstitution` funzionalità di Aspose.PDF per .NET per rilevare gli avvisi di sostituzione dei caratteri all'apertura di un documento PDF.
 
 ## Passo 1: Installa Aspose.PDF per .NET
@@ -26,11 +25,11 @@ Il primo passaggio nell'utilizzo di questa funzione consiste nel caricare il doc
 // Il percorso del documento PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Apri il documento PDF
+//Apri il documento PDF
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
- Nel codice sopra, sostituisci`"YOUR DOCUMENT DIRECTORY"` con il percorso della directory in cui si trova il documento PDF. Questo codice caricherà il documento PDF in un file`Document` oggetto, che è quindi possibile utilizzare per rilevare gli avvisi di sostituzione dei caratteri.
+ Nel codice sopra, sostituisci`"YOUR DOCUMENT DIRECTORY"`con il percorso della directory in cui si trova il documento PDF. Questo codice caricherà il documento PDF in un file`Document` oggetto, che è quindi possibile utilizzare per rilevare gli avvisi di sostituzione dei caratteri.
 
 ## Passaggio 3: rileva gli avvisi di sostituzione dei caratteri
 
@@ -61,7 +60,7 @@ private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArg
 // Il percorso del documento PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Apri il documento PDF
+//Apri il documento PDF
 Document doc = new Document(dataDir + "input.pdf");
 
 // Rileva gli avvisi di sostituzione dei caratteri
@@ -73,3 +72,25 @@ private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArg
     Console.WriteLine("Font substitution: {0} => {1}", e.OriginalFontName, e.SubstitutedFontName);
 }
 ```
+
+## Conclusione
+
+In questo tutorial, abbiamo discusso su come utilizzare Aspose.PDF per .NET per rilevare gli avvisi di sostituzione dei caratteri all'apertura di un documento PDF. Sottoscrivendo il`FontSubstitution` evento, gli sviluppatori possono rilevare situazioni di sostituzione dei caratteri e gestirle in base alle esigenze della loro applicazione. Aspose.PDF per .NET fornisce un'API semplice per rilevare e gestire gli avvisi di sostituzione dei caratteri, aiutando gli sviluppatori a garantire la fedeltà visiva e la coerenza dei documenti PDF su diversi sistemi.
+
+### FAQ
+
+#### D: Che cos'è la sostituzione dei caratteri in un documento PDF?
+
+R: La sostituzione dei caratteri in un documento PDF si verifica quando un carattere utilizzato nel documento non è disponibile o incorporato nel file. In tali casi, il visualizzatore o la stampante sostituisce il font mancante con uno simile disponibile nel sistema. La sostituzione dei caratteri può influire sull'aspetto e sul layout del documento.
+
+#### D: Perché è importante rilevare la sostituzione dei caratteri?
+
+R: La sostituzione dei caratteri è importante da rilevare perché può influire sulla fedeltà visiva e sul layout del documento PDF. Il rilevamento degli avvisi di sostituzione dei caratteri consente agli sviluppatori di identificare le situazioni in cui i caratteri vengono sostituiti e intraprendere azioni appropriate per garantire che l'aspetto visivo del documento sia coerente tra i diversi sistemi.
+
+#### D: Come posso gestire gli avvisi di sostituzione dei caratteri?
+
+ R: Puoi gestire gli avvisi di sostituzione dei caratteri iscrivendoti al`FontSubstitution` evento del`Document` class e fornendo un metodo personalizzato per gestire l'evento. In questo metodo personalizzato, puoi registrare gli avvisi di sostituzione dei caratteri, avvisare gli utenti o intraprendere altre azioni in base ai requisiti della tua applicazione.
+
+#### D: Posso personalizzare la gestione degli avvisi di sostituzione dei caratteri?
+
+ R: Sì, puoi personalizzare la gestione degli avvisi di sostituzione dei caratteri fornendo un metodo personalizzato per gestire i file`FontSubstitution`evento. In questo metodo personalizzato, puoi registrare gli avvisi di sostituzione dei caratteri, avvisare gli utenti o intraprendere qualsiasi altra azione appropriata in base ai requisiti della tua applicazione.

@@ -33,7 +33,7 @@ lineInfo.Visibility = true;
 lineInfo.LineColor = System.Drawing.Color.Red;
 lineInfo.LineWidth = 2;
 ```
-## Passaggio 5: creare un nuovo file`Aspose.Pdf.Point` array that represents the gesture from the `LineInfo` object.
+##  Passaggio 5: creare un nuovo file`Aspose.Pdf.Point` array that represents the gesture from the `LineInfo` object.
 ```csharp
 int length = lineInfo.VerticeCoordinate.Length / 2;
 Aspose.Pdf.Point[] gesture = new Aspose.Pdf.Point[length];
@@ -115,3 +115,29 @@ dataDir = dataDir + "lnkAnnotationLineWidth_out.pdf";
 // Salva il file di output
 doc.Save(dataDir);
 ```
+
+## Conclusione
+
+In questo tutorial, abbiamo imparato come impostare la larghezza della linea di un'annotazione di collegamento in un documento PDF utilizzando Aspose.PDF per .NET. Aspose.PDF per .NET offre un'ampia gamma di strumenti e funzionalità per lavorare con i documenti PDF, inclusa la possibilità di creare e personalizzare le annotazioni dei collegamenti. Seguendo la guida dettagliata e utilizzando il codice sorgente C# fornito, gli sviluppatori possono facilmente aggiungere collegamenti interattivi ai loro documenti PDF, migliorando l'esperienza utente e l'interattività delle loro applicazioni. Aspose.PDF per .NET è una libreria versatile che consente agli sviluppatori .NET di lavorare con i file PDF in modo efficiente ed efficace.
+
+### FAQ
+
+#### D: Cos'è un'annotazione di collegamento in un documento PDF?
+
+R: Un'annotazione di collegamento in un documento PDF è un elemento interattivo che consente di creare collegamenti ipertestuali o azioni che indirizzano l'utente a un'altra posizione all'interno dello stesso documento, un sito Web esterno o un documento PDF diverso.
+
+#### D: Come posso impostare la larghezza della linea di un'annotazione di collegamento utilizzando Aspose.PDF per .NET?
+
+A: Per impostare la larghezza della linea di un'annotazione di collegamento utilizzando Aspose.PDF per .NET, è possibile creare un file`InkAnnotation` oggetto e specificare la proprietà della larghezza della linea.
+
+#### D: Quali proprietà possono essere personalizzate per un'annotazione di collegamento in Aspose.PDF per .NET?
+
+R: È possibile personalizzare varie proprietà di un'annotazione di collegamento in Aspose.PDF per .NET, come posizione, dimensione, colore, proprietà del bordo (larghezza, stile, motivo del trattino ed effetto), oggetto, titolo e visibilità.
+
+#### D: Posso creare un'annotazione di collegamento che contenga più gesti input penna?
+
+ R: Sì, puoi creare un'annotazione di collegamento che contenga più gesti input penna aggiungendone più`Point` array al`InkAnnotation` oggetto.
+
+#### D: Come posso aggiungere un'annotazione di collegamento a una pagina specifica del documento PDF?
+
+ R: Per aggiungere un'annotazione di collegamento a una pagina specifica del documento PDF, è necessario specificare il numero di pagina durante la creazione del file`InkAnnotation` oggetto. Per esempio,`new InkAnnotation(doc.Pages[1], ...)` aggiunge l'annotazione del collegamento alla prima pagina.

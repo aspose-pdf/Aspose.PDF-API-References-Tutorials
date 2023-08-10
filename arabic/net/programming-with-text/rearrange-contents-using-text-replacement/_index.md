@@ -68,7 +68,7 @@ try
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
 	// قم بتحميل ملف PDF المصدر
 	Document doc = new Document(dataDir + "ExtractTextPage.pdf");
-	// قم بإنشاء كائن TextFragment Absorber بتعبير عادي
+	//قم بإنشاء كائن TextFragment Absorber بتعبير عادي
 	TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("[TextFragmentAbsorber,companyname,Textbox,50]");
 	doc.Pages.Accept(textFragmentAbsorber);
 	// استبدل كل TextFragment

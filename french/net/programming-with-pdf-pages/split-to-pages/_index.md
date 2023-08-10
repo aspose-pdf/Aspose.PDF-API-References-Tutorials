@@ -65,3 +65,31 @@ foreach (Page pdfPage in pdfDocument.Pages)
 
 ## Conclusion
 Dans ce didacticiel, nous avons appris à diviser un document PDF en pages individuelles à l'aide d'Aspose.PDF pour .NET. En suivant ce guide étape par étape, vous pouvez facilement diviser un document PDF en plusieurs fichiers PDF, chacun contenant une seule page. Aspose.PDF offre une API puissante et flexible pour travailler avec des documents PDF dans vos projets. Vous pouvez désormais utiliser cette fonctionnalité pour effectuer des opérations de fractionnement de documents PDF en fonction de vos besoins spécifiques.
+
+### FAQ
+
+#### Q : Comment puis-je diviser un document PDF en pages individuelles à l'aide d'Aspose.PDF pour .NET ?
+
+R : Pour diviser un document PDF en pages individuelles à l'aide d'Aspose.PDF pour .NET, vous pouvez suivre ces étapes :
+
+1. Définissez le répertoire du document en spécifiant le chemin où se trouve votre fichier PDF d'origine et où vous souhaitez enregistrer les fichiers PDF fractionnés. Remplacez "VOTRE RÉPERTOIRE DE DOCUMENTS" par le chemin approprié.
+2.  Ouvrez le document PDF à fractionner à l'aide de la`Document` classe de Aspose.PDF. Assurez-vous de spécifier le chemin d'accès correct au document PDF d'origine.
+3. Parcourez toutes les pages du document PDF à l'aide d'une boucle.
+4.  Pour chaque page, créez un nouveau document à l'aide de la`Document` classe et ajoutez cette page à ce nouveau document à l'aide de la`Add()` méthode de la`Pages` propriété.
+5.  Enregistrez le nouveau document avec un nom de fichier unique pour chaque page à l'aide de la`Save()` méthode de la`Document` classe.
+
+#### Q : Le fractionnement du document PDF affectera-t-il le fichier PDF d'origine ?
+
+R : Non, le fractionnement du document PDF n'affectera pas le fichier PDF d'origine. Chaque page est copiée dans un nouveau document et les nouveaux documents sont enregistrés séparément, laissant le fichier PDF d'origine intact.
+
+#### Q : Puis-je spécifier un format de fichier différent pour les pages fractionnées, comme des images ou des fichiers texte ?
+
+R : Le code source C# fourni montre comment diviser le document PDF en fichiers PDF distincts pour chaque page. Cependant, vous pouvez modifier le code pour enregistrer les pages fractionnées dans d'autres formats, tels que des images ou des fichiers texte, en fonction de vos besoins spécifiques.
+
+#### Q : Existe-t-il une limite au nombre de pages pouvant être fractionnées à l'aide d'Aspose.PDF pour .NET ?
+
+R : Il n'y a pas de limite spécifique imposée par Aspose.PDF pour .NET sur le nombre de pages pouvant être fractionnées. Cependant, la quantité de mémoire et de ressources disponibles sur votre système peut affecter les performances lorsque vous travaillez avec un grand nombre de pages.
+
+#### Q : Puis-je séparer une plage spécifique de pages du document PDF ?
+
+R : Oui, vous pouvez modifier le code source fourni pour séparer une plage spécifique de pages du document PDF. Au lieu de parcourir toutes les pages en boucle, vous pouvez implémenter une logique pour sélectionner une plage spécifique de pages et créer de nouveaux documents uniquement pour ces pages.

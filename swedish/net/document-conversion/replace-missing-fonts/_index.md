@@ -7,7 +7,6 @@ type: docs
 weight: 260
 url: /sv/net/document-conversion/replace-missing-fonts/
 ---
-
 I den här handledningen går vi igenom processen för att ersätta saknade teckensnitt i en PDF-fil med Aspose.PDF för .NET. När du öppnar en PDF-fil på en maskin där ett specifikt teckensnitt saknas, kan det uppstå problem med teckensnittsvisningen. I sådana fall är det möjligt att ersätta det saknade teckensnittet med ett annat teckensnitt som finns tillgängligt på maskinen. Genom att följa stegen nedan kommer du att kunna ersätta saknade teckensnitt i en PDF-fil.
 
 ## Förutsättningar
@@ -90,3 +89,25 @@ pdf.Save(fileNew.FullName);
 
 ## Slutsats
 den här handledningen täckte vi steg-för-steg-processen för att ersätta saknade teckensnitt i en PDF-fil med Aspose.PDF för .NET. Genom att följa instruktionerna ovan kommer du att framgångsrikt kunna ersätta saknade teckensnitt i din PDF-fil.
+
+### FAQ's
+
+#### F: Vad är Aspose.PDF för .NET?
+
+S: Aspose.PDF för .NET är ett kraftfullt bibliotek som gör det möjligt för utvecklare att arbeta med PDF-dokument i C#-applikationer. Den erbjuder olika funktioner, inklusive möjligheten att ersätta saknade teckensnitt i PDF-filer.
+
+#### F: Varför skulle jag stöta på saknade teckensnitt i en PDF-fil?
+
+S: Saknade teckensnitt i en PDF-fil kan uppstå när filen öppnas på en maskin som inte har de nödvändiga teckensnitten installerade. Detta kan leda till teckensnittsersättning, vilket påverkar dokumentets visuella utseende.
+
+#### F: Hur kan jag hitta och ersätta saknade teckensnitt i en PDF-fil med Aspose.PDF för .NET?
+
+ S: För att hitta och ersätta saknade teckensnitt kan du använda`FontRepository.FindFont` metod för att kontrollera förekomsten av det önskade teckensnittet. Om teckensnittet saknas kan du lägga till ett teckensnittsersättning med hjälp av`FontRepository.Substitutions` fast egendom.
+
+#### F: Kan jag anpassa teckensnittsersättningsprocessen?
+
+S: Ja, du kan anpassa teckensnittsersättningsprocessen genom att ange ett annat teckensnitt för ersättningen. I den angivna koden använde vi Arial som ersättning för det saknade "AgencyFB"-teckensnittet, men du kan välja ett annat typsnitt enligt dina preferenser.
+
+#### F: Hur kan jag säkerställa noggrannheten i teckensnittsrenderingen efter ersättning?
+
+S: Aspose.PDF för .NET ger robusta teckensnittshanteringsmöjligheter, vilket säkerställer korrekt teckensnittsrendering efter ersättning. Du kan förhandsgranska den resulterande PDF-filen för att verifiera teckensnittsersättningen.

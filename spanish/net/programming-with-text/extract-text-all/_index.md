@@ -54,7 +54,7 @@ string extractedText = textAbsorber.Text;
 ```
 
 ## Paso 7: Guarda el texto extraído
- Crear un`TextWriter` y abra el archivo donde desea guardar el texto extraído. Escriba el texto extraído en el archivo y cierre la transmisión.
+ Crear un`TextWriter` y abra el archivo donde desea guardar el texto extraído. Escriba el texto extraído en el archivo y cierre la secuencia.
 
 ```csharp
 TextWriter tw = new StreamWriter(dataDir + "extracted-text.txt");

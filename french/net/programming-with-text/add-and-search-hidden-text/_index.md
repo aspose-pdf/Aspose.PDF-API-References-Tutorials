@@ -49,7 +49,7 @@ TextFragmentAbsorber absorb = new TextFragmentAbsorber();
 absorb.Visit(doc.Pages[1]);
 foreach(TextFragment fragment in absorber.TextFragments)
 {
-// Faire quelque chose avec les fragments
+//Faire quelque chose avec les fragments
 Console.WriteLine("Text '{0}' at position {1}, invisibility: {2} ",
 fragment.Text, fragment.Position.ToString(), fragment.TextState.Invisible);
 }
@@ -88,4 +88,4 @@ doc.Dispose();
 
 ## Conclusion
 
-Félicitation ! Vous avez ajouté et trouvé avec succès du texte masqué dans un document PDF à l'aide d'Aspose.PDF pour .NET. Vous pouvez maintenant appliquer cette méthode à vos propres projets pour manipuler et rechercher du texte caché dans des fichiers PDF.
+Félicitation ! Vous avez ajouté et trouvé avec succès du texte masqué dans un document PDF à l'aide d'Aspose.PDF pour .NET. Vous pouvez maintenant appliquer cette méthode à vos propres projets pour manipuler et rechercher du texte masqué dans des fichiers PDF.

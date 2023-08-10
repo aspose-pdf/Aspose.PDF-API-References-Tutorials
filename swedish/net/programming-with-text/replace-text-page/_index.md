@@ -63,7 +63,7 @@ pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 
 ## Steg 6: Hämta extraherade textfragment
 
- Hämta de extraherade textfragmenten med hjälp av`TextFragments` egendom av`TextFragmentAbsorber` objekt:
+Hämta de extraherade textfragmenten med hjälp av`TextFragments` egendom av`TextFragmentAbsorber` objekt:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -84,7 +84,7 @@ foreach (TextFragment textFragment in textFragmentCollection)
 }
 ```
 
- I kodavsnittet ovan, ersätt`"New Phrase"`med den ersättningstext du vill använda. Du kan också anpassa andra egenskaper som typsnitt, teckenstorlek, förgrundsfärg och bakgrundsfärg.
+ I kodavsnittet ovan, ersätt`"New Phrase"` med den ersättningstext du vill använda. Du kan också anpassa andra egenskaper som typsnitt, teckenstorlek, förgrundsfärg och bakgrundsfärg.
 
 ## Steg 8: Spara den ändrade PDF-filen
 
@@ -102,9 +102,9 @@ pdfDocument.Save(dataDir + "ReplaceTextPage_out.pdf");
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Öppna dokumentet
 Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
-// Skapa TextAbsorber-objekt för att hitta alla instanser av den inmatade sökfrasen
+//Skapa TextAbsorber-objekt för att hitta alla instanser av den inmatade sökfrasen
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
-// Acceptera absorbenten för en viss sida
+//Acceptera absorbenten för en viss sida
 pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 // Hämta de extraherade textfragmenten
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;

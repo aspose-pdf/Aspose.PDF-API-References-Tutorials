@@ -53,7 +53,7 @@ Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
 ```
 
 ## Paso 7: crea un rectángulo con transparencia
-Cree un rectángulo con dimensiones específicas y establezca su color de relleno en un color transparente usando el`Color.FromRgb` método.
+ Cree un rectángulo con dimensiones específicas y establezca su color de relleno en un color transparente usando el`Color.FromRgb` método.
 
 ```csharp
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 400, 400);
@@ -118,7 +118,7 @@ canvas.IsChangePosition = false;
 TextFragment text = new TextFragment("transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text ");
 // Crear objeto de color desde el canal alfa
 Aspose.Pdf.Color color = Aspose.Pdf.Color.FromArgb(30, 0, 255, 0);
-//Establecer información de color para la instancia de texto
+// Establecer información de color para la instancia de texto
 text.TextState.ForegroundColor = color;
 // Agregar texto a la colección de párrafos de instancia de página
 page.Paragraphs.Add(text);

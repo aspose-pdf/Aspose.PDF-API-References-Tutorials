@@ -1,13 +1,13 @@
 ---
-title: Tüm Ekleri Alın
-linktitle: Tüm Ekleri Alın
+title: PDF Dosyasındaki Tüm Ekleri Alın
+linktitle: PDF Dosyasındaki Tüm Ekleri Alın
 second_title: Aspose.PDF for .NET API Referansı
-description: Aspose.PDF for .NET ile bir PDF dosyasındaki tüm ekleri nasıl alacağınızı öğrenin. Kolay kullanım için adım adım kılavuz.
+description: Aspose.PDF for .NET ile PDF dosyasındaki tüm ekleri nasıl alacağınızı öğrenin. Kolay kullanım için adım adım kılavuz.
 type: docs
 weight: 40
 url: /tr/net/programming-with-attachments/get-all-the-attachments/
 ---
-Bu öğreticide, Aspose.PDF for .NET kullanarak bir PDF dosyasından tüm ekleri almanız için aşağıdaki C# kaynak kodunda size adım adım yol göstereceğiz.
+Bu eğitimde, Aspose.PDF for .NET kullanarak PDF dosyasındaki tüm ekleri almak için aşağıdaki C# kaynak kodunda adım adım yol göstereceğiz.
 
 Başlamadan önce Aspose.PDF kitaplığını kurduğunuzdan ve geliştirme ortamınızı kurduğunuzdan emin olun. Ayrıca temel C# programlama bilgisine sahip olmak.
 
@@ -88,7 +88,7 @@ foreach (FileSpecification fileSpecification in embeddedFiles)
 	Console.WriteLine("Description: {0}",
 	fileSpecification.Description);
 	Console.WriteLine("Mime Type: {0}", fileSpecification.MIMEType);
-	// Parametre nesnesinin parametreleri içerip içermediğini kontrol edin
+	//Parametre nesnesinin parametreleri içerip içermediğini kontrol edin
 	if (fileSpecification.Params != null)
 	{
 		Console.WriteLine("CheckSum: {0}",
@@ -115,3 +115,41 @@ foreach (FileSpecification fileSpecification in embeddedFiles)
 ## Çözüm
 
 Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF dosyasından tüm eklerin nasıl alınacağını açıkladık. Artık bu bilgiyi PDF dosyalarınızdan ekleri ayıklamak ve değiştirmek için kullanabilirsiniz.
+
+## PDF dosyasındaki tüm ekleri almak için SSS
+
+#### S: Neden bir PDF belgesindeki tüm ekleri almam gerekiyor?
+
+Y: Ekleri almak, bir PDF'ye gömülü ek dosyalara erişmenizi ve bunları değiştirmenizi sağlar; bu, arşivleme, paylaşma veya daha fazla işleme için yararlı olabilir.
+
+#### S: Bir PDF belgesine ne tür dosyalar eklenebilir?
+
+Y: PDF belgeleri, resimler, belgeler, elektronik tablolar, ses dosyaları ve daha fazlası dahil olmak üzere çok çeşitli ekli dosyalar içerebilir.
+
+#### S: Bu eğitim, Aspose.PDF for .NET kullanarak bir PDF'den ekleri almama nasıl yardımcı oluyor?
+
+A: Bu öğretici, bir PDF belgesindeki tüm eklere erişmek ve bunları almak için adım adım talimatlar ve C# kaynak kodu sağlar.
+
+#### S: Bu öğreticiyi kullanarak tüm ekler yerine belirli ekleri alabilir miyim?
+
+C: Evet, gereksinimlerinize göre ekleri seçerek almak için sağlanan kodu değiştirebilirsiniz.
+
+#### S: Bu öğreticiyi kullanarak her ek hakkında hangi bilgileri edinebilirim?
+
+A: Bu öğretici, ekin adı, açıklaması, MIME türü, oluşturma tarihi, değiştirme tarihi ve boyutu gibi ayrıntıların nasıl alınacağını ve görüntüleneceğini gösterir.
+
+#### S: Bu eğitim kullanılarak alınan ekler nasıl kaydedilir?
+
+C: Eğitim, alınan her eki belirtilen dizinde ayrı bir dosya olarak kaydetme konusunda size rehberlik eder.
+
+#### S: Bu bilgiyi parola korumalı PDF dosyalarından ekleri çıkarmak için kullanabilir miyim?
+
+C: Evet, Aspose.PDF for .NET kullanarak parola korumalı PDF dosyalarından ekleri almak için benzer ilkeleri uygulayabilirsiniz.
+
+#### S: Aspose.PDF for .NET, ek almayı nasıl kolaylaştırır?
+
+Y: Aspose.PDF for .NET, PDF belgelerindeki eklere kolayca erişmenizi ve bunları değiştirmenizi sağlayan sezgisel bir API sağlar.
+
+#### S: Ekleri almanın önerildiği belirli senaryolar var mı?
+
+C: Ekleri almak, görüntüleri, ses dosyalarını veya ek belgeleri ayıklamak gibi bir PDF'ye katıştırılmış dosyalara erişmeniz gerektiğinde kullanışlıdır.

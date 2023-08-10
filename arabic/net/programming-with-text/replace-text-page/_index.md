@@ -63,7 +63,7 @@ pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 
 ## الخطوة 6: استرجاع أجزاء النص المستخرجة
 
- احصل على أجزاء النص المستخرجة باستخدام ملحق`TextFragments` ممتلكات`TextFragmentAbsorber` هدف:
+احصل على أجزاء النص المستخرجة باستخدام ملحق`TextFragments` ممتلكات`TextFragmentAbsorber` هدف:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -84,7 +84,7 @@ foreach (TextFragment textFragment in textFragmentCollection)
 }
 ```
 
- في مقتطف الشفرة أعلاه ، استبدل`"New Phrase"`مع النص البديل الذي تريد استخدامه. يمكنك أيضًا تخصيص خصائص أخرى مثل الخط وحجم الخط ولون المقدمة ولون الخلفية.
+ في مقتطف الشفرة أعلاه ، استبدل`"New Phrase"` مع النص البديل الذي تريد استخدامه. يمكنك أيضًا تخصيص خصائص أخرى مثل الخط وحجم الخط ولون المقدمة ولون الخلفية.
 
 ## الخطوة 8: احفظ ملف PDF المعدل
 
@@ -102,9 +102,9 @@ pdfDocument.Save(dataDir + "ReplaceTextPage_out.pdf");
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // افتح المستند
 Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
-// قم بإنشاء كائن TextAbsorber للعثور على جميع مثيلات عبارة البحث المدخلة
+//قم بإنشاء كائن TextAbsorber للعثور على جميع مثيلات عبارة البحث المدخلة
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
-// تقبل الممتص لصفحة معينة
+//تقبل الممتص لصفحة معينة
 pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 // احصل على أجزاء النص المستخرجة
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;

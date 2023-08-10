@@ -1,13 +1,12 @@
 ---
-title: Imposta bordo
-linktitle: Imposta bordo
+title: Imposta bordo in PDF su tabella
+linktitle: Imposta bordo in PDF su tabella
 second_title: Aspose.PDF per riferimento API .NET
-description: Scopri come impostare un bordo in una tabella PDF con Aspose.PDF per .NET.
+description: Ulteriori informazioni su come impostare un bordo in PDF al tavolo con Aspose.PDF per .NET.
 type: docs
 weight: 200
 url: /it/net/programming-with-tables/set-border/
 ---
-
 In questo tutorial, ti guideremo passo dopo passo per impostare un bordo in una tabella di un documento PDF utilizzando Aspose.PDF per .NET. Spiegheremo il codice sorgente C# fornito e ti mostreremo come implementarlo.
 
 ## Passaggio 1: creazione di un'istanza dell'oggetto Document
@@ -103,7 +102,7 @@ Document doc = new Document();
 Page page = doc.Pages.Add();
 // Crea un oggetto BorderInfo
 Aspose.Pdf.BorderInfo border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All);
-// Specifica che il bordo superiore sarà doppio
+//Specifica che il bordo superiore sarà doppio
 border.Top.IsDoubled = true;
 // Specifica che il bordo inferiore sarà doppio
 border.Bottom.IsDoubled = true;
@@ -128,3 +127,25 @@ Console.WriteLine("\nBorder setup successfully.\nFile saved at " + dataDir);
 
 ## Conclusione
 Congratulazioni! Ora hai imparato come impostare un bordo in una tabella di un documento PDF utilizzando Aspose.PDF per .NET. Questa guida dettagliata ti ha mostrato come creare un documento, aggiungere una pagina, configurare il bordo della tabella e salvare il documento PDF. Ora puoi applicare questa conoscenza ai tuoi progetti.
+
+### FAQ
+
+#### D: Posso impostare diversi stili di bordo (ad es. tratteggiato o punteggiato) per i bordi superiore e inferiore della tabella?
+
+ R: Sì, puoi impostare diversi stili di bordo per i bordi superiore e inferiore del tavolo modificando il file`border.Top.Style` E`border.Bottom.Style`properties nel codice sorgente C# fornito. Aspose.PDF per .NET ti consente di scegliere tra vari stili di bordo, inclusi Solido, Tratteggiato, Punteggiato, Doppio e altro.
+
+#### D: Come posso impostare il colore del bordo del tavolo?
+
+ R: Puoi impostare il colore del bordo del tavolo modificando il file`border.Color` proprietà nel codice sorgente C#. Basta fornire il colore desiderato, ad esempio`Aspose.Pdf.Color.Red` o qualsiasi altra rappresentazione cromatica valida, per personalizzare il colore del bordo.
+
+#### D: È possibile applicare bordi a singole celle all'interno della tabella con impostazioni diverse (ad es. colori o stili di bordo diversi)?
+
+ R: Sì, puoi applicare i bordi alle singole celle all'interno della tabella con impostazioni diverse configurando il file`cell.Border` proprietà per ogni cella individualmente. Ciò ti consente di avere stili e colori del bordo specifici della cella in base alle tue esigenze.
+
+#### D: Posso rimuovere il bordo da lati specifici del tavolo (ad es. bordi sinistro e destro)?
+
+ R: Sì, puoi rimuovere il bordo da lati specifici del tavolo modificando il file`border.Left`, `border.Right`, `border.Top` , E`border.Bottom`proprietà nel codice sorgente C#. Impostando queste proprietà su`null` rimuoverà il bordo dai lati corrispondenti della tabella.
+
+#### D: Come posso regolare lo spessore del bordo del tavolo?
+
+ R: Puoi regolare lo spessore del bordo del tavolo modificando il file`border.Width` proprietà nel codice sorgente C#. Basta impostare la larghezza del bordo desiderata (in punti) per ottenere lo spessore desiderato.

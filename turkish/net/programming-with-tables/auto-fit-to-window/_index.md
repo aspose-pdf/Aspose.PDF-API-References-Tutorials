@@ -7,7 +7,6 @@ type: docs
 weight: 50
 url: /tr/net/programming-with-tables/auto-fit-to-window/
 ---
-
 Aşağıdaki makale, sağlanan C# kaynak kodunun Aspose.PDF kitaplığını .NET kullanarak Otomatik Pencereye Sığdır işlevine ulaşmak için nasıl kullanılacağına ilişkin adım adım bir kılavuzdur. Pencereye Otomatik Sığdır işlevi, görüntüleme penceresine uyarlanmış bir düzen ile PDF dosyaları oluşturmanıza olanak tanır. Bu özellik, özellikle PDF belgenizin kullanıcı tarafından kullanılan PDF okuyucu penceresinin boyutuna otomatik olarak ayarlanmasını istediğinizde kullanışlıdır.
 
 ## 1. Adım: Ortamı Kurma
@@ -145,3 +144,25 @@ doc.Save(dataDir);
 ## Çözüm
 
 Bu eğitimde, Pencereye Otomatik Sığdır özelliğiyle bir PDF dosyası oluşturmak için Aspose.PDF for .NET'i nasıl kullanacağımızı öğrendik. Bu özellik, PDF belgenizin otomatik olarak görüntüleme penceresinin boyutuna göre ayarlanmasını istediğinizde son derece kullanışlıdır. Aspose.PDF for .NET, PDF dosyalarını oluşturmak ve değiştirmek için birçok başka güçlü özellik sunar. Tüm yeteneklerini keşfetmek için bu kitaplığı daha fazla keşfetmenizi tavsiye ederim.
+
+### SSS
+
+#### S: PDF oluşturmada Pencereye Otomatik Sığdır özelliğinin amacı nedir?
+
+Y: PDF oluşturmadaki Pencereye Otomatik Sığdır özelliği, PDF belgesinin düzeninin otomatik olarak kullanıcı tarafından kullanılan PDF okuyucu penceresinin boyutuna göre ayarlanmasını sağlar. Bu, daha iyi görüntülemeye olanak tanır ve içeriğin mevcut görüntüleme alanına mükemmel bir şekilde sığmasını sağlar.
+
+#### S: Yazı tipi boyutu ve renkleri gibi tablonun görünümünü özelleştirebilir miyim?
+
+C: Evet, Aspose.PDF for .NET'i kullanarak PDF belgesindeki tablonun görünümünü özelleştirebilirsiniz. Sağlanan kod parçacığı, hücre sınırları, kenar boşlukları ve sütun genişlikleri gibi özelliklerin nasıl ayarlanacağını gösterir. Tablonun ve içeriğinin yazı tipi boyutunu, renklerini ve diğer stil özelliklerini daha da özelleştirebilirsiniz.
+
+#### S: Aspose.PDF for .NET'i C# projeme nasıl entegre edebilirim?
+
+C: Aspose.PDF for .NET'i C# projenizde kullanmak için önce makinenize Aspose.PDF for .NET kitaplığını kurmanız gerekir. Ardından, C# projenizdeki kitaplığa bir başvuru ekleyebilirsiniz. Son olarak, Aspose.PDF for .NET tarafından sağlanan sınıflara ve yöntemlere erişmek için gerekli ad alanlarını içe aktarın.
+
+#### S: Aspose.PDF for .NET, .NET Core uygulamalarıyla uyumlu mu?
+
+C: Evet, Aspose.PDF for .NET, .NET Core uygulamalarıyla uyumludur. .NET Framework, .NET Core ve .NET 5.0+ dahil olmak üzere çeşitli .NET platformlarını destekler.
+
+#### S: PDF belgesine daha fazla tablo ekleyebilir miyim?
+
+Y: Evet, kod parçacığında gösterilen benzer adımları izleyerek bir PDF belgesine birden çok tablo ekleyebilirsiniz. Basitçe yeni örneklerini oluşturun`Aspose.Pdf.Table` sınıflandırın ve bunları PDF belgesinin farklı bölümlerine veya sayfalarına ekleyin.

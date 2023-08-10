@@ -12,14 +12,14 @@ url: /zh/net/programming-with-text/remove-unused-fonts/
 
 ## 要求
 
-在开始之前，请确保您具有以下内容：
+在开始之前，请确保您具备以下条件：
 
 - 安装了 Aspose.PDF for .NET 库。
-- 对 C# 编程有基本的了解。
+- 对 C# 编程有基本了解。
 
 ## 第 1 步：设置文档目录
 
-首先，您需要设置 PDF 文件所在目录的路径。代替`"YOUR DOCUMENT DIRECTORY"`在里面`dataDir`带有 PDF 文件路径的变量。
+首先，您需要设置 PDF 文件所在目录的路径。代替`"YOUR DOCUMENT DIRECTORY"`在里面`dataDir`变量包含 PDF 文件的路径。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -27,7 +27,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## 第 2 步：加载源 PDF
 
-接下来，我们使用`Document` Aspose.PDF 库中的类。
+接下来，我们使用以下命令加载源 PDF 文档`Document`来自 Aspose.PDF 库的类。
 
 ```csharp
 Document doc = new Document(dataDir + "ReplaceTextPage.pdf");
@@ -35,7 +35,7 @@ Document doc = new Document(dataDir + "ReplaceTextPage.pdf");
 
 ## 第 3 步：识别并删除未使用的字体
 
-我们创造一个`TextFragmentAbsorber`对象与`TextEditOptions`参数设置为`TextEditOptions.FontReplace.RemoveUnusedFonts`.此选项允许我们识别和删除 PDF 文档中未使用的字体。然后我们遍历所有`TextFragments`并将字体设置为所需的字体。
+我们创建一个`TextFragmentAbsorber`对象与`TextEditOptions`参数设置为`TextEditOptions.FontReplace.RemoveUnusedFonts`。此选项允许我们识别并删除 PDF 文档中未使用的字体。然后我们迭代所有的`TextFragments`并将字体设置为所需的字体。
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));
@@ -47,7 +47,7 @@ foreach(TextFragment textFragment in absorber.TextFragments)
 }
 ```
 
-## 第 4 步：保存更新的 PDF
+## 第 4 步：保存更新后的 PDF
 
 最后，我们将更新后的 PDF 文档保存到指定的输出文件中。
 
@@ -57,7 +57,7 @@ doc.Save(dataDir);
 Console.WriteLine("\nUnused fonts removed successfully from the PDF document.\nFile saved at " + dataDir);
 ```
 
-### 使用 Aspose.PDF for .NET 删除未使用字体的示例源代码 
+### 使用 Aspose.PDF for .NET 删除未使用的字体的示例源代码 
 ```csharp
 try
 {
@@ -67,7 +67,7 @@ try
 	Document doc = new Document(dataDir + "ReplaceTextPage.pdf");
 	TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));
 	doc.Pages.Accept(absorber);
-	//遍历所有的 TextFragments
+	//遍历所有 TextFragments
 	foreach (TextFragment textFragment in absorber.TextFragments)
 	{
 		textFragment.TextState.Font = FontRepository.FindFont("Arial, Bold");
@@ -85,4 +85,4 @@ catch (Exception ex)
 
 ## 结论
 
-在本教程中，您学习了如何使用 .NET 的 Aspose.PDF 库从 PDF 文档中删除未使用的字体。按照分步指南并执行提供的 C# 代码，您可以加载 PDF，识别和删除未使用的字体，并保存更新后的 PDF。
+在本教程中，您学习了如何使用 .NET 的 Aspose.PDF 库从 PDF 文档中删除未使用的字体。通过遵循分步指南并执行提供的 C# 代码，您可以加载 PDF、识别和删除未使用的字体以及保存更新的 PDF。

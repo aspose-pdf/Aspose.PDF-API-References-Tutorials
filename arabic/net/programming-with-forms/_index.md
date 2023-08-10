@@ -16,28 +16,28 @@ description: تحقق من دروس البرمجة باستخدام Aspose.PDF F
 | [إضافة تلميح إلى الحقل](./add-tooltip-to-field/) | تعرف على كيفية إضافة تلميح أداة إلى حقل باستخدام Aspose.PDF for .NET. |  
 | [تعبئة النص العربي](./arabic-text-filling/) | قم بتعبئة حقول نموذج PDF بسهولة بالنص العربي باستخدام Aspose.PDF for .NET. |  
 | [صندوق التحرير](./combo-box/) | أنشئ بسهولة قائمة مربع تحرير وسرد في مستندات PDF الخاصة بك باستخدام Aspose.PDF for .NET. |  
-| [قم بإنشاء مستند](./create-doc/) | أنشئ مستندًا بسهولة باستخدام أزرار الاختيار باستخدام Aspose.PDF for .NET. |  
-| [حذف حقل النموذج](./delete-form-field/) | قم بإزالة حقول النماذج غير المرغوب فيها بسهولة من مستندات PDF الخاصة بك باستخدام Aspose.PDF for .NET. |  
-| [تحديد الحقل المطلوب](./determine-required-field/) | حدد الحقول المطلوبة بسهولة في نماذج PDF الخاصة بك باستخدام Aspose.PDF for .NET. |  
+| [إنشاء وثيقة](./create-doc/) | أنشئ مستندًا بسهولة باستخدام أزرار الاختيار باستخدام Aspose.PDF for .NET. |  
+| [حذف حقل النموذج في مستند PDF](./delete-form-field/) | قم بإزالة حقول النموذج غير المرغوب فيها بسهولة في مستند PDF باستخدام Aspose.PDF for .NET. |  
+| [حدد الحقل المطلوب في نموذج PDF](./determine-required-field/) | حدد الحقول المطلوبة بسهولة في شكل PDF باستخدام Aspose.PDF for .NET. |  
 | [XFA الديناميكي إلى نموذج Acro](./dynamic-xfa-to-acro-form/) | قم بتحويل نماذج XFATo الديناميكية بسهولة إلى نماذج AcroForm القياسية باستخدام Aspose.PDF لـ .NET. |  
-| [ملء حقل النموذج](./fill-form-field/) | قم بملء حقول النموذج بسهولة في مستندات PDF الخاصة بك باستخدام Aspose.PDF for .NET. |  
+| [قم بتعبئة حقل نموذج PDF](./fill-form-field/) | قم بملء حقول النموذج بسهولة في مستندات PDF الخاصة بك باستخدام Aspose.PDF for .NET. |  
 | [املأ حقول XFAF](./fill-xfafields/) | قم بملء حقول XFA بسهولة في مستندات PDF الخاصة بك باستخدام Aspose.PDF for .NET. |  
-| [تسطيح الأشكال](./flatten-forms/) | قم بتسوية النماذج بسهولة في مستندات PDF الخاصة بك باستخدام Aspose.PDF لـ .NET. |  
+| [تسطيح النماذج في وثيقة PDF](./flatten-forms/) | يمكنك تسوية النماذج بسهولة في مستند PDF باستخدام Aspose.PDF لـ .NET. |  
 | [خط حقل النموذج 14](./form-field-font-14/) | يمكنك بسهولة تكوين خط حقول النموذج في مستندات PDF الخاصة بك باستخدام Aspose.PDF for .NET. |  
-| [احصل على إحداثيات](./get-coordinates/) | احصل بسهولة على إحداثيات حقل النموذج في مستندات PDF الخاصة بك باستخدام Aspose.PDF for .NET. |  
-| [احصل على الحقول من المنطقة](./get-fields-from-region/) | احصل بسهولة على الحقول من منطقة معينة في مستندات PDF الخاصة بك باستخدام Aspose.PDF for .NET. |  
-| [الحصول على قيمة من الميدان](./get-value-from-field/) | احصل بسهولة على قيمة حقل النموذج في مستندات PDF الخاصة بك باستخدام Aspose.PDF for .NET. |  
-| [احصل على القيم من جميع المجالات](./get-values-from-all-fields/) | احصل بسهولة على قيم جميع حقول النموذج في مستندات PDF الخاصة بك باستخدام Aspose.PDF for .NET. |  
+| [احصل على إحداثيات حقل نموذج PDF](./get-coordinates/) | احصل بسهولة على إحداثيات حقول نموذج PDF في مستندات PDF الخاصة بك باستخدام Aspose.PDF for .NET. |  
+| [احصل على الحقول من المنطقة في ملف PDF](./get-fields-from-region/) | احصل بسهولة على الحقول من منطقة معينة في ملف PDF باستخدام Aspose.PDF for .NET. |  
+| [الحصول على قيمة من الحقل في مستند PDF](./get-value-from-field/) | احصل بسهولة على قيمة حقل النموذج في مستند PDF باستخدام Aspose.PDF for .NET. |  
+| [احصل على القيم من جميع الحقول في مستند PDF](./get-values-from-all-fields/) | احصل بسهولة على قيم جميع حقول النموذج في مستند PDF باستخدام Aspose.PDF for .NET. |  
 | [احصل على XFAProperties](./get-xfaproperties/) | احصل بسهولة على خصائص XFA لحقول النموذج في مستندات PDF الخاصة بك باستخدام Aspose.PDF for .NET. |  
-| [خانات اختيار مجمعة](./grouped-check-boxes/) | يمكنك بسهولة إنشاء مربعات اختيار مجمعة في مستندات PDF الخاصة بك باستخدام Aspose.PDF for .NET. |  
+| [مربعات الاختيار المجمعة في مستند PDF](./grouped-check-boxes/) | أنشئ مربعات اختيار مجمعة بسهولة في مستند PDF باستخدام Aspose.PDF for .NET. |  
 | [أزرار الراديو أفقيًا وعموديًا](./horizontally-and-vertically-radio-buttons/) | يمكنك بسهولة إنشاء أزرار اختيار أفقية ورأسية في مستندات PDF الخاصة بك باستخدام Aspose.PDF for .NET. |  
-| [تعديل حقل النموذج](./modify-form-field/) | قم بتحرير حقول النموذج بسهولة في مستندات PDF الخاصة بك باستخدام Aspose.PDF for .NET. |  
+| [تعديل حقل النموذج في مستند PDF](./modify-form-field/) | قم بتحرير حقول النموذج بسهولة في مستند PDF باستخدام Aspose.PDF for .NET. |  
 | [نقل حقل النموذج](./move-form-field/) | انقل حقول النموذج بسهولة في مستندات PDF الخاصة بك باستخدام Aspose.PDF for .NET. |  
 | [حقوق الحفظ](./preserve-rights/) | احتفظ بحقوق النموذج في مستندات PDF الخاصة بك باستخدام Aspose.PDF for .NET. |  
 | [زر الراديو](./radio-button/) | أضف أزرار اختيار إلى مستندات PDF بسهولة باستخدام Aspose.PDF for .NET. |  
 | [زر الاختيار مع الخيارات](./radio-button-with-options/) | أضف بسهولة زر اختيار مع خيارات إلى مستند PDF باستخدام Aspose.PDF for .NET. |  
 | [استرداد حقل النموذج في ترتيب الجدولة](./retrieve-form-field-in-tab-order/) | تعرف على كيفية استرداد حقول النموذج بترتيب علامات التبويب باستخدام Aspose.PDF for .NET. |  
-| [حدد زر الاختيار](./select-radio-button/) | تعرف على كيفية تحديد زر اختيار في مستند PDF باستخدام Aspose.PDF for .NET. |  
+| [حدد زر الراديو في مستند PDF](./select-radio-button/) | تعرف على كيفية تحديد زر اختيار في مستند PDF باستخدام Aspose.PDF for .NET. |  
 | [تعيين حد الحقل](./set-field-limit/) | تعرف على كيفية تعيين حدود الحقل في مستند PDF باستخدام Aspose.PDF for .NET. |  
 | [تعيين Java Script](./set-java-script/) | تعرف على كيفية استخدام Aspose.PDF for .NET لتعيين JavaScript في حقول النموذج في ملفات PDF. |  
 | [تعيين تسمية زر الراديو](./set-radio-button-caption/) | تعرف على كيفية استخدام Aspose.PDF for .NET لتعيين التسمية التوضيحية لزر الاختيار في نموذج PDF. |  

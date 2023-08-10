@@ -1,17 +1,17 @@
 ---
-title: Extrahera markerad text
-linktitle: Extrahera markerad text
+title: Extrahera markerad text i PDF-fil
+linktitle: Extrahera markerad text i PDF-fil
 second_title: Aspose.PDF för .NET API Referens
-description: Lär dig hur du extraherar markerad text med Aspose.PDF för .NET med denna steg-för-steg-guide.
+description: Lär dig hur du extraherar markerad text i PDF-fil med Aspose.PDF för .NET med denna steg-för-steg-guide.
 type: docs
 weight: 60
 url: /sv/net/annotations/extracthighlightedtext/
 ---
-För att extrahera markerad text från ett PDF-dokument kan du använda Aspose.PDF för .NET API. Detta API ger ett enkelt sätt att hämta all text som har markerats i ett dokument.
+För att extrahera markerad text i en PDF-fil kan du använda Aspose.PDF för .NET API. Detta API ger ett enkelt sätt att hämta all text som har markerats i ett dokument.
 
 ## Steg 1: Ladda PDF-dokumentet
 
- Det första steget för att extrahera markerad text från ett PDF-dokument är att ladda dokumentet med Aspose.PDF för .NET API. Du kan göra detta genom att skapa en ny instans av`Document` klass och skicka sökvägen till PDF-dokumentet som en parameter. 
+ Det första steget för att extrahera markerad text i PDF-filen är att ladda dokumentet med Aspose.PDF för .NET API. Du kan göra detta genom att skapa en ny instans av`Document` klass och skicka sökvägen till PDF-dokumentet som en parameter. 
 
 ```csharp
 // Sökvägen till dokumentkatalogen.
@@ -82,3 +82,28 @@ foreach (Annotation annotation in doc.Pages[1].Annotations)
 }
 ```
 
+## Slutsats
+
+den här handledningen undersökte vi hur man extraherar markerad text från ett PDF-dokument med Aspose.PDF för .NET. Genom att följa steg-för-steg-guiden och använda den medföljande C#-källkoden kan utvecklare enkelt extrahera och hantera markerad text i sina PDF-dokument.
+
+### Vanliga frågor för att extrahera markerad text i PDF-fil
+
+#### F: Vad är textmarkeringskommentarer i ett PDF-dokument?
+
+S: Textmarkeringskommentarer är kommentarer som markerar eller markerar specifik text i ett PDF-dokument. Exempel på textmarkeringskommentarer inkluderar markeringar, understrykningar och genomstrykning.
+
+#### F: Kan jag extrahera text från andra typer av anteckningar med Aspose.PDF för .NET?
+
+S: Ja, Aspose.PDF för .NET tillhandahåller olika metoder för att extrahera text från olika typer av kommentarer, inklusive textmarkeringskommentarer, fritextkommentarer och mer.
+
+#### F: Stöder Aspose.PDF för .NET extrahering av text från lösenordsskyddade PDF-filer?
+
+S: Ja, Aspose.PDF för .NET stöder extrahering av text från lösenordsskyddade PDF-filer. Du måste ange rätt lösenord när du laddar PDF-dokumentet med hjälp av`Document` klass.
+
+#### F: Kan jag filtrera markerad text baserat på andra kriterier, som färg eller författare?
+
+S: Ja, du kan filtrera markerad text baserat på andra kriterier, som färg, författare eller skapelsedatum. Aspose.PDF för .NET tillhandahåller metoder för att komma åt och filtrera kommentarer baserat på deras egenskaper.
+
+#### F: Är det möjligt att spara den extraherade markerade texten till en separat fil?
+
+S: Ja, du kan spara den extraherade markerade texten till en separat fil eller lagra den i en datastruktur för vidare bearbetning eller analys.

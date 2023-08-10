@@ -85,3 +85,45 @@ document.Save(dataDir + "PDFwithTaggedImage.pdf");
 ## Conclusion
 
 Dans ce didacticiel, vous avez appris à créer un document PDF avec une image balisée à l'aide d'Aspose.PDF pour .NET. Les images balisées ajoutent des informations structurées supplémentaires à votre document PDF.
+
+### FAQ
+
+#### Q : Quel est l'objectif de créer un document PDF avec une image balisée à l'aide d'Aspose.PDF pour .NET ?
+
+R : La création d'un document PDF avec une image balisée à l'aide d'Aspose.PDF pour .NET vous permet d'ajouter des images balisées au contenu du document. Les images balisées fournissent des informations structurées, telles que le texte alternatif et les titres, améliorant l'accessibilité et l'organisation.
+
+#### Q : Comment la bibliothèque Aspose.PDF aide-t-elle à créer un document PDF avec une image balisée ?
+
+: Aspose.PDF pour .NET est une bibliothèque robuste qui fournit des fonctionnalités pour créer, manipuler et convertir des documents PDF par programmation. Dans ce didacticiel, les fonctionnalités de structure de contenu balisé de la bibliothèque sont utilisées pour ajouter une image balisée au document PDF.
+
+#### Q : Quelles sont les conditions préalables à la création d'un document PDF avec une image balisée à l'aide d'Aspose.PDF pour .NET ?
+
+R : Avant de commencer, assurez-vous que Visual Studio est installé avec le framework .NET et que la bibliothèque Aspose.PDF pour .NET est référencée dans votre projet.
+
+#### Q : Comment le code C# fourni crée-t-il un document PDF avec une image balisée ?
+
+R : Le code montre comment créer un document PDF, définir un élément d'image balisé et l'ajouter au contenu du document. L'image balisée comprend un texte alternatif, un titre et une balise à l'aide des méthodes fournies par Aspose.PDF.
+
+#### Q : Puis-je utiliser différents formats d'image pour l'image taguée ?
+
+R : Oui, vous pouvez utiliser différents formats d'image pour l'image balisée, tels que JPEG, PNG, GIF, etc. L'exemple de code fourni dans le didacticiel utilise une image JPEG, mais vous pouvez la remplacer par le chemin d'accès à un fichier image dans votre format préféré.
+
+#### Q : Comment le texte alternatif (texte alternatif) est-il utilisé dans les images balisées ?
+
+ R : Le texte alternatif fournit une description textuelle de l'image, qui est lue à haute voix par les lecteurs d'écran pour les utilisateurs malvoyants. Dans le code fourni, le texte alternatif est défini à l'aide de la`AlternativeText` propriété de la`IllustrationElement` représentant l'image taguée.
+
+####  Q : Comment fonctionne le`SetTitle` method contribute to the PDF document's tagged image?
+
+ R : Le`SetTitle` La méthode définit le titre du contenu balisé du document PDF, fournissant un contexte supplémentaire pour l'image balisée. Ce titre peut aider à identifier le but ou le sujet du contenu balisé.
+
+#### Q : Puis-je personnaliser le tag et le titre de l'image taguée ?
+
+ R : Oui, vous pouvez personnaliser le tag et le titre de l'image taguée à l'aide de la`SetTag` et`Title` méthodes de la`IllustrationElement`. L'exemple de code montre comment définir la balise sur "Fig" et le titre sur "Image 1".
+
+#### Q : Comment puis-je m'assurer que l'image taguée est accessible et conforme aux normes d'accessibilité ?
+
+R : En utilisant les fonctionnalités de structure de contenu balisé d'Aspose.PDF et en fournissant un texte alternatif et d'autres informations pertinentes, vous contribuez à l'accessibilité de l'image balisée. Assurer la conformité aux normes d'accessibilité implique de suivre les meilleures pratiques pour le texte alternatif et la structure du document.
+
+#### Q : Est-il possible d'ajouter plusieurs images balisées au même document PDF en utilisant des techniques similaires ?
+
+ R : Oui, vous pouvez ajouter plusieurs images balisées au même document PDF en utilisant des techniques similaires. Vous créeriez des`IllustrationElement` instances pour chaque image taguée et personnalisez leurs propriétés selon vos besoins.

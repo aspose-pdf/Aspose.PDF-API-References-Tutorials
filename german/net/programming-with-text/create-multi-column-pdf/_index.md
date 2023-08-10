@@ -65,7 +65,7 @@ page.Paragraphs.Add(graph1);
 ```
 
 ## Schritt 8: Überschriftentext mit HTML-Formatierung hinzufügen
- Erstelle ein`HtmlFragment`Objekt und setzen Sie dessen Inhalt auf den gewünschten HTML-Text. Fügen Sie dann das Fragment hinzu`Paragraphs` Sammlung der Seite.
+ Erstelle ein`HtmlFragment` Objekt und setzen Sie dessen Inhalt auf den gewünschten HTML-Text. Fügen Sie dann das Fragment hinzu`Paragraphs` Sammlung der Seite.
 
 ```csharp
 string s = "<font face=\"Times New Roman\" size=4>" +
@@ -115,7 +115,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 // Geben Sie die Informationen zum linken Rand für die PDF-Datei an
 doc.PageInfo.Margin.Left = 40;
-// Geben Sie die Informationen zum rechten Rand für die PDF-Datei an
+//Geben Sie die Informationen zum rechten Rand für die PDF-Datei an
 doc.PageInfo.Margin.Right = 40;
 Page page = doc.Pages.Add();
 Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500, 2);

@@ -52,7 +52,7 @@ TextFragment textFragment = absorb.TextFragments[1];
 ```
 
 ## Шаг 6: Установите цвет заливки для текста
- Создать новый`Color` объект с цветовым пространством шаблона и укажите цвета градиентного затенения. Назначьте этот цвет`ForegroundColor` собственность`TextState` принадлежащий`TextFragment` объект.
+ Создать новый`Color`объект с цветовым пространством шаблона и укажите цвета градиентного затенения. Назначьте этот цвет`ForegroundColor` собственность`TextState` принадлежащий`TextFragment` объект.
 
 ```csharp
 textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()

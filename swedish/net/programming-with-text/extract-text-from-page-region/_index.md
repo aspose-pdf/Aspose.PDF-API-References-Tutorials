@@ -39,7 +39,7 @@ Document pdfDocument = new Document(dataDir + "ExtractTextAll.pdf");
 ```
 
 ## Steg 5: Extrahera text från en sidregion
- Skapa en`TextAbsorber` objekt för att extrahera text från dokumentet. Konfigurera`TextSearchOptions` för att begränsa sökningen till en specifik sidregion definierad av en rektangel.
+ Skapa en`TextAbsorber`objekt för att extrahera text från dokumentet. Konfigurera`TextSearchOptions` för att begränsa sökningen till en specifik sidregion definierad av en rektangel.
 
 ```csharp
 TextAbsorber absorb = new TextAbsorber();
@@ -78,7 +78,7 @@ absorber.TextSearchOptions.Rectangle = new Aspose.Pdf.Rectangle(100, 200, 250, 3
 pdfDocument.Pages[1].Accept(absorber);
 // Hämta den extraherade texten
 string extractedText = absorber.Text;
-// Skapa en författare och öppna filen
+// Skapa en skribent och öppna filen
 TextWriter tw = new StreamWriter(dataDir + "extracted-text.txt");
 // Skriv en textrad till filen
 tw.WriteLine(extractedText);

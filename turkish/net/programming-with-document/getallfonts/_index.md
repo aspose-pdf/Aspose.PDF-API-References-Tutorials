@@ -1,14 +1,13 @@
 ---
-title: Tüm Yazı Tiplerini Alın
-linktitle: Tüm Yazı Tiplerini Alın
+title: PDF Dosyasındaki Tüm Yazı Tiplerini Alın
+linktitle: PDF Dosyasındaki Tüm Yazı Tiplerini Alın
 second_title: Aspose.PDF for .NET API Referansı
-description: Bu adım adım kılavuz ve örnek kod ile bir PDF belgesinde kullanılan tüm yazı tiplerini programlı olarak almak için Aspose.PDF for .NET'i nasıl kullanacağınızı öğrenin.
+description: Bu adım adım kılavuz ve örnek kod ile bir PDF dosyasında kullanılan tüm yazı tiplerini programlı olarak almak için Aspose.PDF for .NET'i nasıl kullanacağınızı öğrenin.
 type: docs
 weight: 160
 url: /tr/net/programming-with-document/getallfonts/
 ---
-
-Aspose.PDF for .NET, geliştiricilerin programlı olarak PDF belgeleriyle çalışmasını sağlayan güçlü bir kitaplıktır. Sağladığı özelliklerden biri, bir PDF belgesinde kullanılan tüm yazı tiplerini alma yeteneğidir. Bu, bir PDF belgesindeki yazı tiplerini programlı olarak analiz etmeniz veya değiştirmeniz gerektiğinde yararlı olabilir.
+Aspose.PDF for .NET, geliştiricilerin PDF dosyasıyla programlı olarak çalışmasını sağlayan güçlü bir kitaplıktır. Sağladığı özelliklerden biri, bir PDF dosyasında kullanılan tüm yazı tiplerini alma yeteneğidir. Bu, bir PDF dosyasındaki yazı tiplerini programlı olarak analiz etmeniz veya değiştirmeniz gerektiğinde yararlı olabilir.
 
 Bu eğitimde, bir PDF belgesinde kullanılan tüm yazı tiplerini almak için Aspose.PDF for .NET'in nasıl kullanılacağını tartışacağız. Örnek kaynak koduyla birlikte bunun nasıl yapılacağına dair adım adım bir kılavuz sağlayacağız.
 
@@ -61,4 +60,20 @@ foreach (Aspose.Pdf.Text.Font font in fonts)
 ## Çözüm
 Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF belgesinde kullanılan tüm yazı tiplerini nasıl elde edeceğimizi tartıştık. Bir PDF belgesindeki yazı tiplerini programlı olarak analiz etmeniz veya değiştirmeniz gerekiyorsa, bir PDF belgesinde kullanılan tüm yazı tiplerini almak yararlı olabilir. Aspose.PDF for .NET, bir PDF belgesinde kullanılan tüm yazı tiplerini almak da dahil olmak üzere, PDF belgeleriyle çalışmak için basit ve kullanımı kolay bir API sağlar.
 
+### SSS
 
+#### S: Neden bir PDF belgesinde kullanılan tüm yazı tiplerini almam gerekiyor?
+
+C: Bir PDF belgesinde kullanılan tüm yazı tiplerini almak, yazı tipi değiştirme veya yazı tipi özelleştirme gibi çeşitli amaçlar için yazı tiplerini programlı olarak analiz etmeniz veya değiştirmeniz gerekiyorsa yararlı olabilir.
+
+#### S: Aspose.PDF for .NET kullanarak bir PDF belgesinde kullanılan tüm yazı tiplerini nasıl edinebilirim?
+
+ C: Aspose.PDF for .NET kullanarak bir PDF belgesinde kullanılan tüm yazı tiplerini`GetAllFonts` yöntemi`FontUtilities` sınıf. Bu yöntem bir dizi döndürür`Aspose.Pdf.Text.Font` PDF belgesinde kullanılan yazı tiplerini temsil eden nesneler.
+
+#### S: Yazı tiplerini belirli kriterlere göre filtreleyebilir miyim?
+
+C: Evet, Aspose.PDF for .NET kullanarak yazı tiplerini belirli kriterlere göre filtreleyebilirsiniz. Tüm yazı tiplerini aldıktan sonra, yazı tiplerini programlı olarak analiz edebilir ve gerektiği gibi filtreleme mantığı uygulayabilirsiniz.
+
+#### S: Aspose.PDF for .NET, çeşitli yazı tipi biçimleriyle uyumlu mu?
+
+C: Evet, Aspose.PDF for .NET, TrueType, OpenType ve Type 1 yazı tipleri dahil olmak üzere çeşitli yazı tipi biçimleriyle uyumludur. Farklı yazı tipi biçimleriyle çalışabilir ve bunları PDF belge düzenlemesi sırasında işleyebilir.

@@ -66,3 +66,57 @@ Console.WriteLine("License set successfully.");
 ## Abschluss
 
 In diesem Tutorial haben Sie gelernt, wie Sie mit Aspose.PDF für .NET eine Lizenz mithilfe einer eingebetteten Ressource festlegen. Wenn Sie die beschriebenen Schritte befolgen, können Sie den vollen Funktionsumfang von Aspose.PDF freischalten und die Bibliothek optimal in Ihren C#-Projekten nutzen.
+
+### FAQs zur Set-Lizenz mit eingebetteten Ressourcen
+
+#### F: Warum sollte ich eine Lizenz mithilfe einer eingebetteten Ressource festlegen?
+
+A: Durch das Festlegen einer Lizenz mithilfe einer eingebetteten Ressource wird sichergestellt, dass Ihre Lizenzinformationen sicher in Ihrer Anwendung gespeichert werden. Es ermöglicht Ihnen, alle von Aspose.PDF angebotenen Funktionen freizuschalten und gleichzeitig Ihre Lizenzinformationen vertraulich zu behandeln.
+
+#### F: Wie importiere ich die erforderlichen Namespaces für Aspose.PDF?
+
+ A: Verwenden Sie in Ihrer C#-Codedatei die`using` Direktive zum Importieren der erforderlichen Namespaces für den Zugriff auf die von Aspose.PDF bereitgestellten Klassen und Methoden:
+```csharp
+using System;
+using Aspose.Pdf;
+```
+
+#### F: Was ist eine eingebettete Ressource?
+
+A: Eine eingebettete Ressource ist eine Datei, die in der Assembly Ihrer Anwendung enthalten ist. Es kann direkt über Ihren Code aufgerufen und verwendet werden.
+
+#### F: Wie binde ich die Lizenzdatei als eingebettete Ressource ein?
+
+A: Um die Lizenzdatei als eingebettete Ressource einzuschließen, fügen Sie die Lizenzdatei zu Ihrem Projekt hinzu und setzen Sie ihre Build-Aktion-Eigenschaft auf „Eingebettete Ressource“.
+
+#### F: Wie stelle ich die Lizenz mithilfe einer eingebetteten Ressource ein?
+
+ A: Nachdem Sie die erforderlichen Namespaces importiert haben, können Sie die Lizenz mithilfe des bereitgestellten Code-Snippets festlegen. Ersetzen`"MergedAPI.Aspose.Total.lic"` mit dem richtigen Pfad zu Ihrer eingebetteten Lizenzressource.
+
+#### F: Kann ich mehrere eingebettete Lizenzressourcen im selben Projekt verwenden?
+
+ A: Ja, Sie können mehrere eingebettete Lizenzressourcen im selben Projekt verwenden, indem Sie sie separat initialisieren`Aspose.Pdf.License` Objekte und das Festlegen jeder Lizenz einzeln.
+
+#### F: Was passiert, wenn ich die Lizenzdatei ändere?
+
+ A: Wenn Sie die Lizenz aktualisieren müssen, ersetzen Sie die vorhandene eingebettete Lizenzdatei durch die neue und achten Sie darauf, den Dateipfad im zu aktualisieren`SetLicense` Methode entsprechend anpassen.
+
+#### F: Kann ich mithilfe einer eingebetteten Ressource eine Lizenz für andere Aspose-Bibliotheken festlegen?
+
+A: Ja, der Prozess zum Festlegen einer Lizenz mithilfe einer eingebetteten Ressource ist in den verschiedenen Aspose-Bibliotheken ähnlich. Allerdings kann jede Bibliothek ihre eigenen Besonderheiten haben. Sehen Sie sich daher die Dokumentation der entsprechenden Bibliothek an.
+
+#### F: Ist es notwendig, die Lizenz mithilfe einer eingebetteten Ressource festzulegen?
+
+A: Obwohl dies nicht zwingend erforderlich ist, wird das Festlegen der Lizenz mithilfe einer eingebetteten Ressource empfohlen, um die Sicherheit Ihrer Lizenzinformationen zu gewährleisten und eine reibungslose Funktionalität zu gewährleisten.
+
+#### F: Kann ich eine eingebettete Lizenz mit einer Testversion von Aspose.PDF verwenden?
+
+A: Ja, Sie können eine eingebettete Lizenz mit einer Testversion von Aspose.PDF verwenden. Für den vollen Funktionsumfang wird jedoch die Verwendung einer gültigen Lizenz empfohlen.
+
+#### F: Wie erhalte ich eine gültige Lizenz für Aspose.PDF?
+
+ A: Sie können eine gültige Lizenz erhalten, indem Sie sie bei kaufen[Aspose.PDF-Kauf](https://purchase.aspose.com/pricing/pdf/net) Seite.
+
+#### F: Wo erhalte ich weitere Informationen zum Festlegen von Lizenzen für Aspose-Produkte?
+
+A: Weitere Informationen zum Festlegen von Lizenzen, zum Einbetten von Ressourcen und zugehörige Details finden Sie im[Aspose-Lizenzdokumentation](https://docs.aspose.com/pdf/net/licensing/) Seite.

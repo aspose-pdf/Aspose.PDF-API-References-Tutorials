@@ -1,13 +1,12 @@
 ---
-title: Betten Sie Schriftarten mithilfe der Subset-Strategie ein
-linktitle: Betten Sie Schriftarten mithilfe der Subset-Strategie ein
+title: Betten Sie Schriftarten mit der Subset-Strategie in eine PDF-Datei ein
+linktitle: Betten Sie Schriftarten mit der Subset-Strategie ein
 second_title: Aspose.PDF für .NET API-Referenz
 description: Erfahren Sie, wie Sie mit Subset Strategy mithilfe von Aspose.PDF für .NET Schriftarten in eine PDF-Datei einbetten. Optimieren Sie die Größe Ihrer PDF-Datei, indem Sie nur die erforderlichen Zeichen einbetten.
 type: docs
 weight: 130
 url: /de/net/programming-with-document/embedfontsusingsubsetstrategy/
 ---
-
 In diesem Tutorial besprechen wir, wie man Schriftarten mit einer Teilmengenstrategie mithilfe von Aspose.PDF für .NET in eine PDF-Datei einbettet. Aspose.PDF für .NET ist eine leistungsstarke Bibliothek, mit der Entwickler PDF-Dokumente programmgesteuert erstellen, bearbeiten und bearbeiten können. Das Einbetten von Schriftarten in eine PDF-Datei ist ein wichtiger Schritt, um sicherzustellen, dass das Dokument auf verschiedenen Geräten korrekt angezeigt wird, unabhängig davon, ob die erforderlichen Schriftarten auf diesen Geräten installiert sind oder nicht.
 
 ## Schritt 1: Erstellen Sie eine neue C#-Konsolenanwendung
@@ -71,3 +70,24 @@ doc.Save(dataDir + "Output_out.pdf");
 ## Abschluss
 In diesem Artikel haben wir besprochen, wie man Schriftarten mit einer Teilmengenstrategie mithilfe von Aspose.PDF für .NET in eine PDF-Datei einbettet. Aspose.PDF für .NET bietet eine einfache und benutzerfreundliche API für die Arbeit mit PDF-Dokumenten, einschließlich des Hinzufügens und Einbettens von Schriftarten mit verschiedenen Strategien. Das Einbetten von Schriftarten in eine PDF-Datei ist ein wichtiger Schritt, um sicherzustellen, dass das Dokument auf verschiedenen Geräten korrekt angezeigt wird, und die Subset-Strategie ist eine nützliche Funktion, um die Dateigröße des PDF-Dokuments zu reduzieren.
 
+### FAQs zum Einbetten von Schriftarten in PDF-Dateien mit Teilmengenstrategie
+
+#### F: Was ist eine Teilmengenstrategie zum Einbetten von Schriftarten in eine PDF-Datei?
+
+A: Eine Teilmengenstrategie zum Einbetten von Schriftarten in eine PDF-Datei bedeutet, dass nur ein Teil der Schriftart eingebettet wird, der die im Dokument verwendeten Zeichen enthält. Dies trägt dazu bei, die Dateigröße des PDF-Dokuments zu reduzieren, indem unnötige Schriftartdaten entfernt werden.
+
+#### F: Was ist der Unterschied zwischen den Strategien SubsetAllFonts und SubsetEmbeddedFontsOnly?
+
+ A: Die`SubsetAllFonts` Die Strategie bettet alle Schriftarten als Teilmenge in das Dokument ein, während die`SubsetEmbeddedFontsOnly` Die Strategie bettet nur die Teilmenge der Schriftarten ein, die bereits im Dokument eingebettet sind. Die letztere Strategie wirkt sich nicht auf Schriftarten aus, die noch nicht eingebettet sind.
+
+#### F: Warum ist das Einbetten von Schriftarten mit einer Teilmengenstrategie wichtig?
+
+A: Das Einbetten von Schriftarten mit einer Teilmengenstrategie ist wichtig, um sicherzustellen, dass die PDF-Datei die erforderlichen Schriftartdaten für die korrekte Anzeige von Text enthält und gleichzeitig die Dateigröße kleiner gehalten wird, indem nur die im Dokument verwendeten Zeichen einbezogen werden.
+
+#### F: Kann ich Aspose.PDF für .NET verwenden, um Schriftarten mit unterschiedlichen Strategien einzubetten?
+
+A: Ja, Aspose.PDF für .NET bietet verschiedene Strategien zum Einbetten von Schriftarten, darunter`SubsetAllFonts` Und`SubsetEmbeddedFontsOnly`. Basierend auf Ihren Anforderungen können Sie die passende Strategie wählen.
+
+#### F: Ist Aspose.PDF für .NET eine zuverlässige Bibliothek für die Arbeit mit PDF-Dokumenten?
+
+A: Ja, Aspose.PDF für .NET ist eine zuverlässige und leistungsstarke Bibliothek für die Arbeit mit PDF-Dokumenten. Es bietet umfangreiche Funktionen zum Erstellen, Bearbeiten und Bearbeiten von PDF-Dateien in .NET-Anwendungen.

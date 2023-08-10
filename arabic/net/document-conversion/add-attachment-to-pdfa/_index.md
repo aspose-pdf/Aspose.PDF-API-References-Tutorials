@@ -7,7 +7,6 @@ type: docs
 weight: 10
 url: /ar/net/document-conversion/add-attachment-to-pdfa/
 ---
-
 في هذا البرنامج التعليمي ، سنوجهك خطوة بخطوة حول كيفية إضافة مرفق إلى ملف PDF / A باستخدام Aspose.PDF for .NET. سنشرح كل خطوة باستخدام أمثلة كود C # ونقدم إرشادات خطوة بخطوة لمساعدتك على المتابعة بسهولة.
 
 ## مقدمة
@@ -34,7 +33,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Aspose.Pdf.Document doc = new Document(dataDir + "input.pdf");
 ```
 
- في الكود أعلاه ، استبدل`"YOUR DOCUMENTS DIRECTORY"` مع المسار الفعلي للدليل حيث يوجد مستند PDF الذي تم إدخاله. يقوم هذا الرمز بتهيئة مثيل جديد لملف`Document` فئة وتحميل ملف PDF الموجود.
+ في الكود أعلاه ، استبدل`"YOUR DOCUMENTS DIRECTORY"`مع المسار الفعلي للدليل حيث يوجد مستند PDF الذي تم إدخاله. يقوم هذا الرمز بتهيئة مثيل جديد لملف`Document` فئة وتحميل ملف PDF الموجود.
 
 ## الخطوة 2: إنشاء مواصفات الملف للمرفق
 
@@ -61,7 +60,7 @@ FileSpecification fileSpecification = new FileSpecification(dataDir + "aspose-lo
 doc.EmbeddedFiles.Add(fileSpecification);
 ```
 
- في الكود أعلاه ، نستخدم الامتداد`Add` طريقة المستند`s `مجموعة EmbeddedFiles` لإضافة مواصفات الملف كمرفق.
+ في الكود أعلاه ، نستخدم الامتداد`Add` طريقة الوثيقة`s `مجموعة EmbeddedFiles` لإضافة مواصفات الملف كمرفق.
 
 ## الخطوة 4: التحويل إلى PDF / A_3a
 
@@ -72,7 +71,7 @@ doc.EmbeddedFiles.Add(fileSpecification);
 doc.Convert(dataDir + "log.txt", Aspose.Pdf.PdfFormat.PDF_A_3A, ConvertErrorAction.Delete);
 ```
 
- في الكود أعلاه ، نستخدم الامتداد`Convert`طريقة لتحويل المستند باستخدام`"log.txt"` ملف تسجيل. نحدد تنسيق الإخراج باستخدام`PdfFormat.PDF_A_3A` تعداد وتحديد الإجراء المطلوب اتخاذه بشأن خطأ التحويل مع`ConvertErrorAction.Delete`.
+ في الكود أعلاه ، نستخدم الامتداد`Convert` طريقة لتحويل المستند باستخدام`"log.txt"` ملف تسجيل. نحدد تنسيق الإخراج باستخدام`PdfFormat.PDF_A_3A` تعداد وتحديد الإجراء المطلوب اتخاذه بشأن خطأ التحويل مع`ConvertErrorAction.Delete`.
 
 ## الخطوة 5: احفظ الملف الناتج
 
@@ -95,7 +94,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document doc = new Document(dataDir + "input.pdf");
 // قم بإعداد ملف جديد لإضافته كمرفق
 FileSpecification fileSpecification = new FileSpecification(dataDir + "aspose-logo.jpg", "Large Image file");
-// أضف مرفقًا إلى مجموعة مرفقات المستند
+//أضف مرفقًا إلى مجموعة مرفقات المستند
 doc.EmbeddedFiles.Add(fileSpecification);
 // قم بإجراء التحويل إلى PDF / A_3a بحيث يتم تضمين المرفق في ملف resultnat
 doc.Convert(dataDir + "log.txt", Aspose.Pdf.PdfFormat.PDF_A_3A, ConvertErrorAction.Delete);
@@ -109,3 +108,20 @@ Console.WriteLine("\nAttachment added successfully to PDF/A file.\nFile saved at
 
 في هذا البرنامج التعليمي ، تعلمت كيفية إضافة مرفق إلى ملف PDF / A باستخدام Aspose.PDF لـ .NET. لقد غطينا كل خطوة من خطوات العملية ، من تحميل المستند الحالي إلى تحويل الملف الناتج وحفظه. باستخدام أمثلة التعليمات البرمجية المتوفرة ، يمكنك بسهولة دمج هذه الوظيفة في مشاريعك الخاصة. جرب Aspose.PDF لـ .NET واكتشف الإمكانيات التي يوفرها لمعالجة متقدمة لملفات PDF.
 
+### التعليمات
+
+#### س: ما هو Aspose.PDF لـ .NET؟
+
+ج: Aspose.PDF for .NET هي مكتبة قوية لمعالجة ومعالجة ملفات PDF لتطبيقات .NET. يسمح للمطورين بإنشاء ملفات PDF وتحريرها وتحويلها ومعالجتها برمجيًا.
+
+#### س: ما هو الغرض من إضافة المرفقات إلى ملفات PDF؟
+
+ج: تسمح لك إضافة المرفقات إلى ملفات PDF بتضمين ملفات إضافية ، مثل الصور أو المستندات أو الوسائط ، داخل مستند PDF. يمكن أن يكون هذا مفيدًا لتوفير معلومات تكميلية أو موارد ذات صلة.
+
+#### س: هل يمكنني إضافة عدة مرفقات إلى مستند PDF باستخدام Aspose.PDF for .NET؟
+
+ ج: نعم ، يمكنك إضافة عدة مرفقات إلى مستند PDF باستخدام Aspose.PDF for .NET. ببساطة قم بإنشاء عدة ملفات`FileSpecification` كائنات ، يمثل كل منها مرفقًا مختلفًا ، وقم بإضافتها إلى ملف`EmbeddedFiles` جمع الوثيقة.
+
+#### س: كيف يؤثر التحويل إلى تنسيق PDF / A_3a على المرفق؟
+
+ج: يضمن التحويل إلى تنسيق PDF / A_3a تضمين المرفق في مستند PDF / A الناتج. يعد PDF / A_3a معيارًا للأرشفة طويلة المدى للمستندات الإلكترونية ، ومن خلال التحويل إلى هذا التنسيق ، يصبح المرفق جزءًا دائمًا من مستند PDF.

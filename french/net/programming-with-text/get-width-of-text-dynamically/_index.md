@@ -24,7 +24,7 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants :
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- Remplacer`"YOUR DOCUMENT DIRECTORY"` avec le chemin du répertoire où se trouvent vos documents. Il sera utilisé pour stocker tous les fichiers PDF générés.
+ Remplacer`"YOUR DOCUMENT DIRECTORY"`avec le chemin du répertoire où se trouvent vos documents. Il sera utilisé pour stocker tous les fichiers PDF générés.
 
 ## Étape 2 : Trouver la police
 

@@ -53,7 +53,7 @@ Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
 ```
 
 ## Schritt 7: Erstellen Sie ein Rechteck mit Transparenz
-Erstellen Sie ein Rechteck mit bestimmten Abmessungen und stellen Sie dessen Füllfarbe mithilfe von auf eine transparente Farbe ein`Color.FromRgb` Methode.
+ Erstellen Sie ein Rechteck mit bestimmten Abmessungen und stellen Sie dessen Füllfarbe mithilfe von auf eine transparente Farbe ein`Color.FromRgb` Methode.
 
 ```csharp
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 400, 400);
@@ -118,7 +118,7 @@ canvas.IsChangePosition = false;
 TextFragment text = new TextFragment("transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text ");
 // Erstellen Sie ein Farbobjekt aus dem Alpha-Kanal
 Aspose.Pdf.Color color = Aspose.Pdf.Color.FromArgb(30, 0, 255, 0);
-//Legen Sie Farbinformationen für die Textinstanz fest
+// Legen Sie Farbinformationen für die Textinstanz fest
 text.TextState.ForegroundColor = color;
 // Fügen Sie Text zur Absatzsammlung der Seiteninstanz hinzu
 page.Paragraphs.Add(text);

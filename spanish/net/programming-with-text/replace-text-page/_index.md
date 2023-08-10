@@ -63,7 +63,7 @@ pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 
 ## Paso 6: recuperar fragmentos de texto extraídos
 
- Obtenga los fragmentos de texto extraídos usando el`TextFragments` propiedad de la`TextFragmentAbsorber` objeto:
+Obtenga los fragmentos de texto extraídos usando el`TextFragments` propiedad de la`TextFragmentAbsorber` objeto:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -84,7 +84,7 @@ foreach (TextFragment textFragment in textFragmentCollection)
 }
 ```
 
- En el fragmento de código anterior, reemplace`"New Phrase"`con el texto de reemplazo que desea utilizar. También puede personalizar otras propiedades, como la fuente, el tamaño de fuente, el color de primer plano y el color de fondo.
+ En el fragmento de código anterior, reemplace`"New Phrase"` con el texto de reemplazo que desea utilizar. También puede personalizar otras propiedades, como la fuente, el tamaño de fuente, el color de primer plano y el color de fondo.
 
 ## Paso 8: Guarde el PDF modificado
 
@@ -102,9 +102,9 @@ pdfDocument.Save(dataDir + "ReplaceTextPage_out.pdf");
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Abrir documento
 Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
-// Cree un objeto TextAbsorber para encontrar todas las instancias de la frase de búsqueda de entrada
+//Cree un objeto TextAbsorber para encontrar todas las instancias de la frase de búsqueda de entrada
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
-// Aceptar el absorbedor para una página en particular
+//Aceptar el absorbedor para una página en particular
 pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 // Obtener los fragmentos de texto extraídos
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;

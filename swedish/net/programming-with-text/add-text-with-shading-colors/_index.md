@@ -52,7 +52,7 @@ TextFragment textFragment = absorb.TextFragments[1];
 ```
 
 ## Steg 6: Ställ in skuggfärg för texten
- Skapa en ny`Color` objekt med en mönsterfärgrymd och ange toningsskuggningsfärgerna. Tilldela denna färg till`ForegroundColor` egendom av`TextState` av`TextFragment` objekt.
+ Skapa en ny`Color`objekt med en mönsterfärgrymd och ange toningsskuggningsfärgerna. Tilldela denna färg till`ForegroundColor` egendom av`TextState` av`TextFragment` objekt.
 
 ```csharp
 textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()

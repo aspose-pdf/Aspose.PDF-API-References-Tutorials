@@ -49,7 +49,7 @@ Nous avons obtenu le contenu balisé du document PDF et l'élément de structure
 Définissons maintenant le titre du document PDF balisé.
 
 ```csharp
-//Définir le titre du document PDF balisé
+// Définir le titre du document PDF balisé
 taggedContent.SetTitle("Document with images");
 ```
 
@@ -144,7 +144,7 @@ spanElement.ChangeParentElement(paragraph);
 // Enregistrer le document
 document.Save(outFile);
 
-// Vérification de la conformité PDF/UA pour notre document
+//Vérification de la conformité PDF/UA pour notre document
 document = new Document(outFile);
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
@@ -154,3 +154,49 @@ Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 ## Conclusion
 
 Dans ce didacticiel, nous avons appris à baliser une image dans un PDF existant à l'aide d'Aspose.PDF pour .NET. Vous pouvez désormais utiliser Aspose.PDF pour ajouter des balises et apporter des modifications aux images de vos documents PDF.
+
+### FAQ
+
+#### Q : Quel est l'objectif principal de ce didacticiel sur le balisage d'images dans un PDF existant à l'aide d'Aspose.PDF pour .NET ?
+
+R : L'objectif principal de ce didacticiel est de vous guider tout au long du processus de balisage d'une image dans un document PDF existant à l'aide d'Aspose.PDF pour .NET. Le didacticiel fournit des instructions détaillées et des exemples de code source C# pour vous aider à comprendre comment attribuer un texte alternatif et des cadres de délimitation aux images, déplacer des éléments dans le document et ajouter des balises aux images.
+
+#### Q : Quelles sont les conditions préalables pour suivre ce didacticiel sur le balisage d'images dans un PDF à l'aide d'Aspose.PDF pour .NET ?
+
+R : Avant de commencer, assurez-vous d'avoir configuré votre environnement de développement pour utiliser Aspose.PDF pour .NET. Cela implique d'installer la bibliothèque Aspose.PDF et de configurer votre projet pour le référencer.
+
+#### Q : Comment puis-je ouvrir un document PDF existant et accéder à son contenu balisé à l'aide d'Aspose.PDF pour .NET ?
+
+R : Le didacticiel fournit des exemples de code source C# qui montrent comment ouvrir un document PDF existant à l'aide d'Aspose.PDF pour .NET et accéder à son contenu balisé pour une manipulation ultérieure.
+
+#### Q : Quel est le but d'attribuer un texte alternatif et des cadres de délimitation aux images dans un document PDF ?
+
+R : L'attribution de texte alternatif et de cadres de délimitation aux images améliore l'accessibilité en fournissant un texte descriptif pour les images et en définissant leur mise en page et leur position dans le document. Ces informations sont cruciales pour les lecteurs d'écran et autres technologies d'assistance.
+
+#### Q : Comment puis-je définir le titre d'un document PDF balisé à l'aide d'Aspose.PDF pour .NET ?
+
+R : Le didacticiel comprend des exemples de code source C# qui illustrent comment définir le titre d'un document PDF balisé à l'aide d'Aspose.PDF pour .NET.
+
+#### Q : En quoi consiste le processus de déplacement d'éléments dans un document PDF ?
+
+R : Le déplacement d'éléments dans un document PDF implique la modification de l'élément parent d'un élément particulier. Dans ce didacticiel, vous apprendrez à déplacer un élément Span dans un élément Paragraph spécifié dans un tableau.
+
+#### Q : Comment puis-je enregistrer le document PDF modifié après avoir ajouté des balises et apporté des modifications aux images ?
+
+ R : Une fois que vous avez ajouté des balises, attribué un texte de remplacement, défini des cadres de délimitation et apporté des modifications au document PDF, vous pouvez utiliser les exemples de code source C# fournis pour enregistrer le document PDF modifié à l'aide de`Save()` méthode.
+
+#### Q : À quoi sert l'exemple de code source fourni dans le didacticiel ?
+
+R : L'exemple de code source sert de référence pratique pour la mise en œuvre du balisage et de la manipulation d'images à l'aide d'Aspose.PDF pour .NET. Vous pouvez utiliser ce code comme point de départ et le modifier en fonction de vos besoins spécifiques.
+
+#### Q : Puis-je appliquer ces techniques à d'autres types d'éléments dans un document PDF, pas seulement aux images ?
+
+: Oui, les techniques présentées dans ce didacticiel peuvent être adaptées pour fonctionner avec différents types d'éléments dans un document PDF. Vous pouvez appliquer des principes similaires pour baliser et manipuler d'autres éléments tels que du texte, des tableaux, etc.
+
+#### Q : Comment puis-je valider la conformité PDF/UA du document PDF modifié ?
+
+ R : Le didacticiel fournit des exemples de code source C# qui montrent comment valider la conformité PDF/UA du document PDF modifié à l'aide de la`Validate()` méthode et génération d'un rapport XML.
+
+#### Q : Quelles autres fonctionnalités offre Aspose.PDF pour .NET pour travailler avec des documents PDF ?
+
+R : Aspose.PDF pour .NET offre un large éventail de fonctionnalités pour travailler avec des documents PDF, notamment la manipulation de texte, l'insertion d'images, la création de tableaux, la gestion des champs de formulaire, les signatures numériques, les annotations, etc. Consultez la documentation officielle et les ressources pour une exploration plus approfondie.

@@ -68,7 +68,7 @@ FileSpecification fileSpecification = pdfDocument.EmbeddedFiles[1];
 Console.WriteLine("Name: {0}", fileSpecification.Name);
 Console.WriteLine("Description: {0}", fileSpecification.Description);
 Console.WriteLine("Mime Type: {0}", fileSpecification.MIMEType);
-// Vérifier si l'objet de paramètre contient les paramètres
+//Vérifier si l'objet de paramètre contient les paramètres
 if (fileSpecification.Params != null)
 {
 	Console.WriteLine("CheckSum: {0}",
@@ -85,3 +85,41 @@ if (fileSpecification.Params != null)
 ## Conclusion
 
 Dans ce didacticiel, nous avons expliqué comment obtenir des informations sur une pièce jointe spécifique d'un fichier PDF à l'aide d'Aspose.PDF pour .NET. Vous pouvez maintenant utiliser ces connaissances pour extraire et afficher les informations sur les pièces jointes de vos fichiers PDF.
+
+### FAQ pour obtenir des informations sur les pièces jointes 
+
+#### Q : Pourquoi aurais-je besoin de récupérer des informations sur des pièces jointes spécifiques dans un document PDF ?
+
+: La récupération des informations sur les pièces jointes vous permet de comprendre et d'analyser les détails des fichiers intégrés dans un PDF, ce qui vous aide à gérer et à travailler efficacement avec les pièces jointes.
+
+#### Q : Quel type d'informations puis-je recueillir sur une pièce jointe spécifique à l'aide de ce didacticiel ?
+
+R : Ce didacticiel montre comment récupérer et afficher les propriétés des pièces jointes telles que le nom, la description, le type MIME, le contrôle de hachage, la date de création, la date de modification et la taille.
+
+#### Q : Comment ce didacticiel m'aide-t-il à collecter des informations sur les pièces jointes à l'aide d'Aspose.PDF pour .NET ?
+
+R : Ce didacticiel fournit des instructions pas à pas et du code source C# pour accéder et afficher des informations sur une pièce jointe spécifique dans un document PDF.
+
+#### Q : Puis-je récupérer des informations sur toutes les pièces jointes au lieu d'une pièce jointe spécifique à l'aide de ce didacticiel ?
+
+R : Ce didacticiel est axé sur l'obtention d'informations sur une pièce jointe spécifique, mais vous pouvez adapter le code pour parcourir toutes les pièces jointes et rassembler leurs informations.
+
+#### Q : À quoi sert la propriété "Vérifier le hachage" affichée dans les informations de la pièce jointe ?
+
+R : La propriété "Vérifier le hachage" représente la valeur de hachage de contrôle de la pièce jointe, qui peut être utilisée pour vérifier l'intégrité de la pièce jointe.
+
+#### Q : Comment puis-je modifier ce code pour récupérer des informations sur les pièces jointes avec des indices différents ?
+
+ R : Vous pouvez modifier la valeur de l'index (par exemple,`pdfDocument.EmbeddedFiles[1]`) pour récupérer des informations sur les pièces jointes à différents index dans le document PDF.
+
+#### Q : Puis-je utiliser ces connaissances pour recueillir des informations à partir de fichiers PDF protégés par mot de passe ?
+
+R : Oui, vous pouvez appliquer des principes similaires pour recueillir des informations sur les pièces jointes à partir de fichiers PDF protégés par mot de passe à l'aide d'Aspose.PDF pour .NET.
+
+#### Q : Comment Aspose.PDF pour .NET simplifie-t-il le processus d'obtention des informations de pièce jointe ?
+
+R : Aspose.PDF pour .NET fournit une API intuitive qui vous permet d'accéder et de manipuler facilement les propriétés des pièces jointes dans les documents PDF.
+
+#### Q : Existe-t-il des scénarios spécifiques dans lesquels la collecte d'informations sur les pièces jointes est recommandée ?
+
+R : La collecte d'informations sur les pièces jointes est utile lorsque vous devez comprendre les détails des fichiers intégrés, comme la vérification de leurs propriétés ou l'audit des pièces jointes dans un document.

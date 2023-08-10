@@ -114,7 +114,7 @@ Este código guarda el documento PDF con los elementos estructurados en un archi
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "AddStructureElementIntoElement_Output.pdf";
 string logFile = dataDir + "46144_log.xml";
-//Documento de creación y obtención de contenido PDF etiquetado
+// Documento de creación y obtención de contenido PDF etiquetado
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 // Configuración del título y el idioma natural del documento
@@ -176,3 +176,41 @@ Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 ## Conclusión
 
 En este tutorial, aprendió a agregar un elemento de estructura a un elemento en un documento PDF usando Aspose.PDF para .NET. Con las funciones de estructura de contenido marcado de Aspose.PDF, puede crear una estructura jerárquica en su documento PDF, lo que facilita la administración y navegación por el contenido.
+
+### Preguntas frecuentes
+
+#### P: ¿Cuál es el propósito de agregar un elemento de estructura a un elemento en un documento PDF utilizando Aspose.PDF para .NET?
+
+R: Agregar un elemento de estructura a un elemento en un documento PDF usando Aspose.PDF para .NET le permite crear una estructura jerárquica dentro del contenido del documento. Esta estructura jerárquica mejora la organización y navegación del contenido, facilitando la gestión y el acceso a elementos específicos.
+
+#### P: ¿Cómo ayuda la biblioteca Aspose.PDF a agregar elementos de estructura a un documento PDF?
+
+R: Aspose.PDF para .NET es una poderosa biblioteca que proporciona capacidades para crear, manipular y convertir documentos PDF mediante programación. En este tutorial, se aprovechan las funciones de estructura de contenido marcado de la biblioteca para crear y agregar elementos de estructura al contenido del documento PDF.
+
+#### P: ¿Cuáles son los requisitos previos para agregar elementos de estructura a un documento PDF usando Aspose.PDF para .NET?
+
+R: Antes de comenzar, asegúrese de tener Visual Studio instalado con .NET Framework y de tener referenciada la biblioteca Aspose.PDF para .NET en su proyecto.
+
+#### P: ¿Cómo crea y agrega el código C# proporcionado elementos de estructura al contenido del documento PDF?
+
+R: El código muestra cómo crear un documento PDF, definir un elemento de estructura raíz y agregarle varios elementos estructurados, como párrafos y espacios. Cada elemento estructurado se crea utilizando métodos proporcionados por Aspose.PDF, lo que le permite crear una estructura jerárquica.
+
+#### P: ¿Puedo personalizar los tipos de elementos de estructura que agrego al documento PDF?
+
+R: Sí, puede personalizar los tipos de elementos de estructura explorando diferentes métodos proporcionados por la biblioteca Aspose.PDF. El código muestra párrafos y espacios como ejemplos, pero puede crear y agregar otros tipos de elementos estructurados según sea necesario.
+
+#### P: ¿Cómo defino la relación jerárquica entre los elementos de estructura agregados?
+
+ R: La relación jerárquica entre los elementos de la estructura se define por el orden en que los agrega a sus elementos principales. En el código, las relaciones padre-hijo se establecen usando el`AppendChild` método.
+
+#### P: ¿Cuáles son los beneficios de crear una estructura jerárquica en un documento PDF?
+
+R: La creación de una estructura jerárquica en un documento PDF mejora su accesibilidad, navegación y organización. Permite que las tecnologías de asistencia interpreten y transmitan mejor el contenido del documento, haciéndolo más fácil de usar para personas con discapacidades.
+
+#### P: ¿Cómo puedo validar el cumplimiento de PDF/UA después de agregar elementos de estructura?
+
+ R: El código provisto en el tutorial demuestra cómo validar el cumplimiento de PDF/UA usando el`Validate` método. Al validar el documento con el estándar PDF/UA, puede asegurarse de que los elementos de estructura agregados cumplan con las pautas de accesibilidad.
+
+#### P: ¿Puedo usar este enfoque para agregar elementos de estructura a un documento PDF existente?
+
+R: Sí, puede modificar el enfoque provisto para agregar elementos de estructura a un documento PDF existente. En lugar de crear un nuevo documento, cargaría el documento existente usando Aspose.PDF y luego seguiría pasos similares para agregar elementos de estructura.

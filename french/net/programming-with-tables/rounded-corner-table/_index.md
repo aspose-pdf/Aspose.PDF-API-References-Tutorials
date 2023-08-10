@@ -1,13 +1,12 @@
 ---
-title: Table d'angle arrondie
-linktitle: Table d'angle arrondie
+title: Table à coins arrondis dans un document PDF
+linktitle: Table à coins arrondis dans un document PDF
 second_title: Référence de l'API Aspose.PDF pour .NET
 description: Apprenez à créer un tableau à coins arrondis dans un document PDF à l'aide d'Aspose.PDF pour .NET.
 type: docs
 weight: 190
 url: /fr/net/programming-with-tables/rounded-corner-table/
 ---
-
 Dans ce didacticiel, nous vous guiderons pas à pas pour créer un tableau à coins arrondis dans un document PDF à l'aide d'Aspose.PDF pour .NET. Nous expliquerons le code source C# fourni et vous montrerons comment l'implémenter.
 
 ## Etape 1 : Création du tableau
@@ -28,7 +27,7 @@ tab1.CornerStyle = Aspose.Pdf.BorderCornerStyle.Round;
 Pour donner au tableau une bordure à coins arrondis, nous devons créer un objet BorderInfo et le configurer avec les paramètres appropriés :
 
 ```csharp
-//Créer un objet GraphInfo pour définir la couleur de la bordure
+// Créer un objet GraphInfo pour définir la couleur de la bordure
 GraphInfo graph = new GraphInfo();
 graph.Color = Aspose.Pdf.Color.Red;
 
@@ -63,3 +62,25 @@ tab1.Border = bInfo;
 
 ## Conclusion
 Félicitation ! Vous avez maintenant appris à créer un tableau à coins arrondis dans un document PDF à l'aide d'Aspose.PDF pour .NET. Ce guide étape par étape vous a montré comment configurer le style de coin arrondi et la bordure de tableau. Vous pouvez maintenant appliquer ces connaissances à vos propres projets.
+
+### FAQ pour la table à coins arrondis dans le document PDF
+
+#### Q : Puis-je personnaliser le rayon des coins arrondis du tableau ?
+
+ : Oui, vous pouvez personnaliser le rayon des coins arrondis du tableau en modifiant la valeur du`bInfo.RoundedBorderRadius` propriété dans le code source C# fourni. Définissez simplement la valeur de rayon souhaitée (en points) pour obtenir l'apparence de coin arrondi souhaitée.
+
+#### Q : Puis-je appliquer des coins arrondis à des cellules individuelles du tableau ?
+
+R : Non, le style de coin arrondi est appliqué à l'ensemble du tableau dans son ensemble. Aspose.PDF pour .NET ne fournit actuellement pas de prise en charge intégrée pour l'application de coins arrondis à des cellules individuelles dans le tableau.
+
+#### Q : Puis-je changer la couleur de la bordure des coins arrondis ?
+
+ R : Oui, vous pouvez changer la couleur de la bordure des coins arrondis en modifiant la valeur du`graph.Color` propriété dans le code source C#. Fournissez simplement la couleur souhaitée, telle que`Aspose.Pdf.Color.Red` ou toute autre représentation de couleur valide.
+
+#### Q : Est-il possible d'appliquer différents styles de coin (par exemple, carré et arrondi) à différents tableaux dans le même document PDF ?
+
+: Oui, il est possible d'appliquer différents styles de coin à différents tableaux dans le même document PDF. Vous pouvez créer plusieurs tables et configurer leurs styles de coin individuellement en fonction de vos besoins.
+
+#### Q : Puis-je ajuster l'épaisseur de la bordure des coins arrondis ?
+
+ R : Oui, vous pouvez ajuster l'épaisseur de la bordure des coins arrondis en modifiant le`BorderInfo` propriétés de l'objet dans le code source C#. Par exemple, vous pouvez définir le`bInfo.Width` propriété pour ajuster l'épaisseur de la bordure.

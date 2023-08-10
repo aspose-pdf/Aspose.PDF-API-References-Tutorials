@@ -27,7 +27,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Schritt 2: Erstellen Sie ein PDF-Dokument und eine Seite
 
-Als nächstes erstellen wir ein neues PDF-Dokument und fügen ihm mithilfe von eine Seite hinzu`Document` Klasse und`Page` Klasse aus der Aspose.PDF-Bibliothek.
+ Als nächstes erstellen wir ein neues PDF-Dokument und fügen ihm mithilfe von eine Seite hinzu`Document` Klasse und`Page` Klasse aus der Aspose.PDF-Bibliothek.
 
 ```csharp
 Aspose.Pdf.Document pdfApplicationDoc = new Aspose.Pdf.Document();
@@ -65,7 +65,7 @@ par.Position = new Aspose.Pdf.Text.Position(100, 600);
 
 ## Schritt 6: Fügen Sie der Seite einen Textabsatz hinzu
 
- Wir erstellen ein`TextBuilder` Objekt mit der Seite und hängen Sie den Textabsatz an den Textgenerator an.
+ Wir erstellen ein`TextBuilder`Objekt mit der Seite und hängen Sie den Textabsatz an den Textgenerator an.
 
 ```csharp
 TextBuilder textBuilder = new TextBuilder(applicationFirstPage);

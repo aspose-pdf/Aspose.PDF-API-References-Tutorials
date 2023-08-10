@@ -61,7 +61,7 @@ pdfDocument.Pages.Accept(textFragmentAbsorber);
 
 ## Passaggio 6: ottieni frammenti di testo estratti
 
- Ottieni i frammenti di testo estratti utilizzando il file`TextFragments` proprietà del`TextFragmentAbsorber` oggetto:
+Ottieni i frammenti di testo estratti utilizzando il file`TextFragments` proprietà del`TextFragmentAbsorber` oggetto:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -98,7 +98,7 @@ foreach (TextFragment textFragment in textFragmentCollection)
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Apri documento
 Document pdfDocument = new Document(dataDir + "SearchAndGetTextPage.pdf");
-// Crea un oggetto TextAbsorber per trovare tutte le istanze della frase di ricerca di input
+//Crea un oggetto TextAbsorber per trovare tutte le istanze della frase di ricerca di input
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("Figure");
 // Accetta l'assorbitore per tutte le pagine
 pdfDocument.Pages.Accept(textFragmentAbsorber);

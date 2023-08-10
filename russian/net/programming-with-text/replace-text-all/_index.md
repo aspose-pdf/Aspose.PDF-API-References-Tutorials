@@ -19,7 +19,7 @@ url: /ru/net/programming-with-text/replace-text-all/
 
 ## Шаг 1. Настройте каталог документов
 
- Укажите путь к каталогу, в котором находится входной PDF-файл. Заменять`"YOUR DOCUMENT DIRECTORY"` в`dataDir` переменная с путем к вашему файлу PDF.
+ Укажите путь к каталогу, в котором находится входной PDF-файл. Заменять`"YOUR DOCUMENT DIRECTORY"` в`dataDir`переменная с путем к вашему файлу PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -35,7 +35,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextAll.pdf");
 
 ## Шаг 3: Найдите и замените текст
 
- Создать`TextFragmentAbsorber`объект, чтобы найти все экземпляры входной поисковой фразы. Примите поглотитель для всех страниц PDF-документа, чтобы извлечь текстовые фрагменты.
+ Создать`TextFragmentAbsorber` объект, чтобы найти все экземпляры входной поисковой фразы. Примите поглотитель для всех страниц PDF-документа, чтобы извлечь текстовые фрагменты.
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
@@ -73,7 +73,7 @@ Console.WriteLine("\nText replaced successfully.\nFile saved at " + dataDir);
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Открыть документ
 Document pdfDocument = new Document(dataDir + "ReplaceTextAll.pdf");
-// Создайте объект TextAbsorber, чтобы найти все экземпляры входной поисковой фразы.
+//Создайте объект TextAbsorber, чтобы найти все экземпляры входной поисковой фразы.
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
 // Примите поглотитель для всех страниц
 pdfDocument.Pages.Accept(textFragmentAbsorber);

@@ -1,14 +1,13 @@
 ---
-title: SVG-Objekt hinzufügen
-linktitle: SVG-Objekt hinzufügen
+title: SVG-Objekt in PDF-Datei hinzufügen
+linktitle: SVG-Objekt in PDF-Datei hinzufügen
 second_title: Aspose.PDF für .NET API-Referenz
-description: Fügen Sie mit Aspose.PDF für .NET ganz einfach SVG-Objekte zu Ihren PDF-Dateien hinzu.
+description: Fügen Sie mit Aspose.PDF für .NET ganz einfach SVG-Objekte in eine PDF-Datei ein.
 type: docs
 weight: 30
 url: /de/net/programming-with-tables/add-svg-object/
 ---
-
-In diesem Tutorial erfahren Sie, wie Sie mithilfe der Bibliothek Aspose.PDF für .NET ein SVG-Objekt zu einer PDF-Datei hinzufügen. SVG (Scalable Vector Graphics) ist ein beliebtes Format für Vektorgrafiken, das ohne Qualitätsverlust einfach skaliert werden kann. Mit Aspose.PDF können Sie SVG-Objekte programmgesteuert zu Ihren PDF-Dokumenten hinzufügen.
+In diesem Tutorial erfahren Sie, wie Sie mit der Bibliothek Aspose.PDF für .NET ein SVG-Objekt in eine PDF-Datei hinzufügen. SVG (Scalable Vector Graphics) ist ein beliebtes Format für Vektorgrafiken, das ohne Qualitätsverlust einfach skaliert werden kann. Mit Aspose.PDF können Sie SVG-Objekte programmgesteuert zu Ihren PDF-Dokumenten hinzufügen.
 
 ## Anforderungen
 
@@ -159,3 +158,25 @@ Console.WriteLine("\nSVG image added successfully inside a table cell.\nFile sav
 ## Abschluss
 
 In diesem Tutorial haben wir gelernt, wie man mithilfe der Bibliothek Aspose.PDF für .NET ein SVG-Objekt zu einer PDF-Datei hinzufügt. Wir haben den Schritt-für-Schritt-Prozess zum Erstellen eines Dokuments, zum Einrichten der Umgebung, zum Hinzufügen eines SVG-Bilds zu einer Tabellenzelle und zum Speichern der PDF-Datei behandelt. Jetzt können Sie SVG-Objekte programmgesteuert in Ihre PDF-Dokumente integrieren.
+
+### FAQs zum Hinzufügen eines SVG-Objekts in einer PDF-Datei
+
+#### F: Kann ich dem PDF-Dokument mehrere SVG-Objekte hinzufügen?
+
+ A: Ja, Sie können dem PDF-Dokument mehrere SVG-Objekte hinzufügen. Einfach weitere erstellen und konfigurieren`Aspose.Pdf.Image` Instanzen für jedes SVG-Bild, das Sie hinzufügen möchten, und fügen Sie sie dann den gewünschten Tabellenzellen oder Absätzen im PDF-Dokument hinzu.
+
+#### F: Wie kann ich die Größe und Position des SVG-Bildes in der Tabellenzelle anpassen?
+
+ A: Um die Größe und Position des SVG-Bildes in der Tabellenzelle anzupassen, können Sie das ändern`FixWidth` Und`FixHeight` Eigenschaften der`Aspose.Pdf.Image`Beispiel. Sie können auch andere Eigenschaften verwenden, z`HorizontalAlignment` Und`VerticalAlignment` der Tabellenzelle, um die Positionierung zu steuern.
+
+#### F: Ist es möglich, Text neben dem SVG-Bild in derselben Tabellenzelle hinzuzufügen?
+
+ A: Ja, es ist möglich, Text neben dem SVG-Bild in derselben Tabellenzelle hinzuzufügen. Du kannst den ... benutzen`cell.Paragraphs.Add(new TextFragment("Your Text Here"));` Methode zum Hinzufügen von Text zur Zelle zusammen mit dem SVG-Bild.
+
+#### F: Kann ich dem SVG-Bild Hyperlinks hinzufügen?
+
+ A: Ja, Sie können Hyperlinks zum SVG-Bild hinzufügen, indem Sie die verwenden`Hyperlink` Eigentum der`Aspose.Pdf.Image` Beispiel. Legen Sie die Hyperlink-URL oder Aktion fest, um das Bild anklickbar zu machen.
+
+#### F: Ist Aspose.PDF für .NET mit .NET Core 3.1 oder späteren Versionen kompatibel?
+
+A: Ja, Aspose.PDF für .NET ist mit .NET Core 3.1 und späteren Versionen kompatibel. Sie können es sowohl in .NET Framework- als auch in .NET Core-Anwendungen verwenden.

@@ -50,14 +50,14 @@ Page page = doc.Pages.Add();
 ```
 
 ## الخطوة 6: إنشاء HtmlFragment مع محتوى HTML
- تجسيد`HtmlFragment` كائن وتوفير محتوى HTML المطلوب. في الكود المقدم ، يتم تعيين محتوى HTML للمتغير`title`. يمكنك تعديل محتوى HTML حسب الحاجة.
+تجسيد`HtmlFragment` كائن وتوفير محتوى HTML المطلوب. في الكود المقدم ، يتم تعيين محتوى HTML للمتغير`title`. يمكنك تعديل محتوى HTML حسب الحاجة.
 
 ```csharp
 HtmlFragment title = new HtmlFragment("<p style='font-family: Verdana'><b><i>Table contains text</i></b></p>");
 ```
 
 ## الخطوة 7: الكتابة فوق أنماط محتوى HTML
- للكتابة فوق أنماط محتوى HTML ، يمكنك تعديل ملف`TextState` خصائص`HtmlFragment`هدف. في الكود المقدم ، تم تغيير عائلة الخط إلى "Arial" وضبط حجم الخط على 20.
+ للكتابة فوق أنماط محتوى HTML ، يمكنك تعديل ملف`TextState` خصائص`HtmlFragment` هدف. في الكود المقدم ، تم تغيير عائلة الخط إلى "Arial" وضبط حجم الخط على 20.
 
 ```csharp
 title. TextState = new TextState("Arial");

@@ -68,7 +68,7 @@ try
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
 	// Загрузить исходный PDF-файл
 	Document doc = new Document(dataDir + "ExtractTextPage.pdf");
-	// Создайте объект TextFragment Absorber с регулярным выражением
+	//Создайте объект TextFragment Absorber с регулярным выражением
 	TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("[TextFragmentAbsorber,companyname,Textbox,50]");
 	doc.Pages.Accept(textFragmentAbsorber);
 	// Замените каждый TextFragment
@@ -95,4 +95,4 @@ catch (Exception ex)
 
 ## Заключение
 
-В этом руководстве вы узнали, как изменить порядок содержимого в документе PDF с помощью замены текста с помощью библиотеки Aspose.PDF для .NET. Следуя пошаговому руководству и выполняя предоставленный код C#, вы можете искать определенные текстовые фрагменты, настраивать их внешний вид и заменять текст в документе PDF.
+В этом руководстве вы узнали, как изменить порядок содержимого в документе PDF с помощью замены текста с помощью библиотеки Aspose.PDF для .NET. Следуя пошаговому руководству и выполняя предоставленный код C#, вы можете искать определенные фрагменты текста, настраивать их внешний вид и заменять текст в документе PDF.

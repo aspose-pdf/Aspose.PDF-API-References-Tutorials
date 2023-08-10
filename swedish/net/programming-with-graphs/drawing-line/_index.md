@@ -7,14 +7,13 @@ type: docs
 weight: 80
 url: /sv/net/programming-with-graphs/drawing-line/
 ---
-
-den här handledningen går vi igenom följande C#-källkod steg för steg för att rita en linje med Aspose.PDF för .NET.
+I den här handledningen går vi igenom följande C#-källkod steg för steg för att rita en linje med Aspose.PDF för .NET.
 
 Se till att du har installerat Aspose.PDF-biblioteket och ställt in din utvecklingsmiljö innan du börjar. Har även grundläggande kunskaper i C#-programmering.
 
 ## Steg 1: Installation av dokumentkatalog
 
-I den medföljande källkoden måste du ange katalogen där du vill spara den resulterande PDF-filen. Ändra variabeln "dataDir" till önskad katalog.
+den medföljande källkoden måste du ange katalogen där du vill spara den resulterande PDF-filen. Ändra variabeln "dataDir" till önskad katalog.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -84,7 +83,7 @@ Document pDoc = new Document();
 Page pg = pDoc.Pages.Add();
 // Ställ in sidmarginalen på alla sidor som 0
 pg.PageInfo.Margin.Left = pg.PageInfo.Margin.Right = pg.PageInfo.Margin.Bottom = pg.PageInfo.Margin.Top = 0;
-//Skapa grafobjekt med bredd och höjd lika med sidmåtten
+// Skapa grafobjekt med bredd och höjd lika med sidmåtten
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph((float)pg.PageInfo.Width , (float)pg.PageInfo.Height);
 // Skapa första radens objekt från Nedre vänstra till övre högra hörnet på sidan
 Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { (float)pg.Rect.LLX, 0, (float)pg.PageInfo.Width, (float)pg.Rect.URY });
@@ -106,3 +105,33 @@ Console.WriteLine("\nLine drawn successfully across the page.\nFile saved at " +
 ## Slutsats
 
 I den här handledningen förklarade vi hur man ritar en linje med Aspose.PDF för .NET. Du kan nu använda denna kunskap för att skapa geometriska former med anpassade linjer i dina PDF-filer.
+
+### FAQ's
+
+#### F: Vad är syftet med denna handledning?
+
+S: Syftet med denna handledning är att guida dig genom processen att rita linjer med Aspose.PDF för .NET. Du lär dig hur du skapar linjer på en PDF-sida och anpassar deras utseende.
+
+#### F: Vilka förutsättningar krävs innan start?
+
+S: Innan du börjar, se till att du har installerat Aspose.PDF-biblioteket och ställt in din utvecklingsmiljö. Grundläggande kunskaper i C#-programmering rekommenderas också.
+
+#### F: Hur anger jag katalogen för att spara PDF-filen?
+
+S: Ändra "dataDir"-variabeln i den medföljande källkoden för att ange katalogen där du vill spara den resulterande PDF-filen.
+
+#### F: Hur skapar jag rader på en PDF-sida?
+
+S: Handledningen visar att man skapar ett grafobjekt med sidans dimensioner och sedan lägger till linjeobjekt till det. Ändra koordinaterna och egenskaperna för linjeobjekten för att skapa önskade linjer.
+
+#### F: Kan jag anpassa utseendet på linjerna?
+
+S: Ja, du kan anpassa utseendet på linjerna genom att ändra egenskaperna för linjeobjekten. Detta inkluderar att ändra deras koordinater, färg, tjocklek och andra grafiska attribut.
+
+#### F: Hur sparar jag PDF-dokumentet efter att ha ritat linjerna?
+
+S: Efter att ha lagt till Graph-objektet med linjeobjekt på sidan kan du spara det resulterande PDF-dokumentet med hjälp av`pDoc.Save(dataDir + "DrawingLine_out.pdf");` rad i den medföljande källkoden.
+
+#### F: Kan jag rita linjer med olika vinklar och orienteringar?
+
+S: Ja, du kan rita linjer med olika vinklar och orienteringar genom att justera koordinaterna och egenskaperna för linjeobjekten i grafen.

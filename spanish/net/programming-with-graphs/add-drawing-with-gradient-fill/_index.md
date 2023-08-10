@@ -97,3 +97,41 @@ doc.Save(dataDir + "AddDrawingWithGradientFill_out.pdf");
 ## Conclusión
 
 En este tutorial hemos explicado paso a paso cómo añadir un dibujo con relleno degradado a la programación con gráficos usando Aspose.PDF para .NET. Ahora puede utilizar este conocimiento para crear atractivos documentos PDF con diseños personalizados y rellenos degradados.
+
+### Preguntas frecuentes
+
+#### P: ¿Cuál es el propósito de este tutorial?
+
+R: Este tutorial tiene como objetivo guiarlo a través del proceso de agregar un dibujo con relleno degradado a la programación con gráficos usando Aspose.PDF para .NET.
+
+#### P: ¿Qué requisitos previos se requieren antes de comenzar?
+
+R: Antes de comenzar, asegúrese de haber instalado la biblioteca Aspose.PDF y configurar su entorno de desarrollo. Además, se recomienda tener conocimientos básicos de programación en C#.
+
+#### P: ¿Cómo especifico el directorio para guardar el archivo PDF?
+
+R: En el código fuente provisto, puede cambiar el valor de la variable "dataDir" para indicar el directorio donde desea guardar el archivo PDF resultante.
+
+#### P: ¿Cuál es el propósito del objeto Graph?
+
+R: El objeto Graph sirve como contenedor para los elementos de dibujo. Se crea con dimensiones específicas y se agrega a la colección de párrafos de la página.
+
+#### P: ¿Cómo puedo configurar el relleno degradado para una forma?
+
+R: Para configurar el relleno degradado, puede establecer la propiedad FillColor de GraphInfo de una forma mediante la clase GradientAxialShading. Esto le permite definir los puntos de inicio y finalización del degradado y los colores entre los que se realizará la transición.
+
+#### P: ¿Puedo personalizar los colores y la dirección del relleno degradado?
+
+R: Sí, puede personalizar los colores y la dirección del relleno degradado ajustando los objetos Color y especificando los puntos inicial y final de GradientAxialShading.
+
+#### P: ¿Cuál es el paso final del tutorial?
+
+R: El último paso consiste en guardar el archivo PDF resultante con el nombre "AddDrawingWithGradientFill_out.pdf" en el directorio especificado.
+
+#### P: ¿Hay un código fuente de muestra disponible?
+
+R: Sí, el tutorial proporciona un código fuente de muestra que puede usar como referencia para implementar los pasos descritos.
+
+#### P: ¿Puedo aplicar un relleno degradado a otras formas además de los rectángulos?
+
+R: Sí, también puede aplicar relleno degradado a otras formas. El proceso implica configurar la propiedad FillColor de GraphInfo de la forma mediante la clase GradientAxialShading.

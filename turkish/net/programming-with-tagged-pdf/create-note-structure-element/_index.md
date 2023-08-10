@@ -103,7 +103,7 @@ NoteElement note3 = taggedContent.CreateNoteElement();
 paragraph.AppendChild(note3);
 note3.SetText("Note with ID = 'note_003'. ");
 note3.SetId("note_003");
-//İstisna atmalı - Aspose.Pdf.Tagged.TaggedException : ID='note_002' olan yapı öğesi zaten var
+// İstisna atmalı - Aspose.Pdf.Tagged.TaggedException : ID='note_002' olan yapı öğesi zaten var
 //note3.SetId("note_002");
 // Not Yapısı Elemanı için ClearId() kullanılırsa sonuç belgesi PDF/UA ile uyumlu değildir
 //note3.ClearId();
@@ -119,3 +119,45 @@ Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 ## Çözüm
 
 Bu öğreticide, Aspose.PDF for .NET kullanarak bir PDF belgesinde not yapısı öğeleri oluşturmayı öğrendiniz. Yapılandırılmış not öğeleri, PDF belgenize ek, yapılandırılmış bilgiler eklemenizi sağlar.
+
+### SSS
+
+#### S: Aspose.PDF for .NET kullanarak bir PDF belgesinde not yapısı öğeleri oluşturmanın amacı nedir?
+
+C: Aspose.PDF for .NET kullanarak bir PDF belgesinde not yapısı öğeleri oluşturmak, belgenin içeriğine yapılandırılmış notlar eklemenizi sağlar. Bu notlar, içeriğin belirli bölümlerine ek bağlam, açıklamalar veya referanslar sağlayabilir.
+
+#### S: Aspose.PDF kitaplığı, bir PDF belgesinde not yapısı öğeleri oluşturmaya nasıl yardımcı olur?
+
+Y: Aspose.PDF for .NET, PDF belgelerini program aracılığıyla oluşturmak, değiştirmek ve dönüştürmek için işlevler sağlayan güçlü bir kitaplıktır. Bu öğreticide, kitaplığın işaretli içerik yapısı özellikleri, PDF belgesinin içeriğinde yapılandırılmış not öğeleri oluşturmak için kullanılır.
+
+#### S: Aspose.PDF for .NET kullanarak bir PDF belgesinde not yapısı öğeleri oluşturmak için ön koşullar nelerdir?
+
+C: Başlamadan önce, Visual Studio'nun .NET çerçevesiyle kurulu olduğundan ve projenizde Aspose.PDF for .NET kitaplığına referans verildiğinden emin olun.
+
+#### S: Sağlanan C# kodu, PDF belgesinin içeriğinde nasıl not yapısı öğeleri oluşturur?
+
+C: Kod, bir PDF belgesinin nasıl oluşturulacağını, not yapılı öğelerin nasıl tanımlanacağını ve bunların bir paragrafa nasıl ekleneceğini gösterir. Her not, Aspose.PDF tarafından sağlanan ve yapılandırılmış notları içeriğe dahil etmenize izin veren yöntemler kullanılarak oluşturulur.
+
+#### S: Oluşturduğum not yapısı öğelerinin içeriğini ve özelliklerini özelleştirebilir miyim?
+
+C: Evet, Aspose.PDF kitaplığı tarafından sağlanan yöntemleri ve özellikleri kullanarak not yapısı öğelerinin içeriğini ve özelliklerini özelleştirebilirsiniz. Kod, not öğelerinin metninin ve kimliğinin nasıl ayarlanacağını gösterir, ancak bunları gerektiği gibi özelleştirebilirsiniz.
+
+#### S: Not yapısı öğeleri ile belgenin içeriği arasında hiyerarşik ilişki nasıl kurulur?
+
+ C: Hiyerarşik ilişki, not yapısı öğelerinin paragraflar gibi diğer yapılandırılmış öğelerin alt öğeleri olarak eklenmesiyle kurulur. Kodda, not öğeleri kullanılarak bir paragraf öğesine eklenir.`AppendChild` yöntem.
+
+#### S: Not yapısı öğelerine benzersiz kimlikler atayabilir miyim?
+
+A: Evet, kullanarak not yapısı öğelerine benzersiz kimlikler atayabilirsiniz.`SetId` yöntem. Kod, not öğelerinin kimliklerinin benzersiz değerlere nasıl ayarlanacağını gösterir.
+
+#### S: Bir not yapısı öğesine yinelenen bir kimlik atamaya çalışırsam ne olur?
+
+C: Bir not yapısı öğesine yinelenen bir kimlik atamaya çalışmak bir istisnayla sonuçlanacaktır. Öğreticide sağlanan kod, bu senaryoyu gösteren bir açıklama içerir.
+
+#### S: Not yapısı öğeleri oluştururken PDF/UA uyumluluğunu nasıl sağlayabilirim?
+
+ Y: Öğreticide sağlanan kod, PDF/UA uyumluluğunun nasıl doğrulanacağını gösterir.`Validate` yöntem. Belgeyi PDF/UA standardına göre doğrulayarak, eklenen not yapısı öğelerinin erişilebilirlik yönergelerine uygun olmasını sağlayabilirsiniz.
+
+#### S: Mevcut bir PDF belgesine not yapısı öğeleri eklemek için bu yaklaşımı kullanabilir miyim?
+
+C: Evet, mevcut bir PDF belgesine not yapısı öğeleri eklemek için sağlanan yaklaşımı değiştirebilirsiniz. Yeni bir belge oluşturmak yerine, mevcut belgeyi Aspose.PDF kullanarak yükler ve ardından not öğelerini eklemek için benzer adımları izlersiniz.

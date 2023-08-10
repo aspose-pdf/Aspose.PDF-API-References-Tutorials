@@ -51,7 +51,7 @@ Aspose.Pdf.Text.TextFragment txt1 = new Aspose.Pdf.Text.TextFragment("Aspose.Pdf
 txt1.TextState.ForegroundColor = Color.Blue;
 txt1.IsInLineParagraph = true;
 
-//Crear un objeto de imagen para la imagen
+// Crear un objeto de imagen para la imagen
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 
 // Establecer la ruta de la imagen
@@ -116,7 +116,7 @@ txt1.IsInLineParagraph = true;
 // Crear un objeto de imagen en la sección.
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 
-// Establecer la ruta del archivo de imagen
+//Establecer la ruta del archivo de imagen
 image1.File = dataDir + "aspose-logo.jpg";
 
 // Establecer el ancho de la imagen Información
@@ -140,3 +140,45 @@ pdf1.Save(dataDir + "ImageAndPageNumberInHeaderFooter_UsingInlineParagraph_out.p
 ## Conclusión
 
 ¡Felicidades! Ha aprendido a agregar una imagen y un número de página en la sección de encabezado y pie de página de un documento PDF utilizando párrafos en línea con Aspose.PDF para .NET. Ahora puede personalizar el encabezado y el pie de página de sus documentos PDF de manera flexible.
+
+### Preguntas frecuentes
+
+#### P: ¿Cuál es la ventaja de usar párrafos en línea para agregar una imagen y texto al encabezado de un documento PDF?
+
+R: El uso de párrafos en línea le permite integrar sin problemas imágenes y texto dentro del mismo párrafo, proporcionando un control preciso sobre su ubicación y formato. Este método es especialmente útil para crear encabezados personalizados con elementos visuales.
+
+#### P: ¿Cómo logra el código fuente de C# proporcionado párrafos en línea para el encabezado de un documento PDF?
+
+R: El código provisto demuestra cómo crear un documento PDF, agregar una página y personalizar el encabezado usando párrafos en línea. Agrega un TextFragment con texto en línea, una imagen en línea y otro TextFragment en línea.
+
+#### P: ¿Cómo especifico el color del texto en línea en el encabezado?
+
+ R: El color del texto en línea se especifica mediante el`ForegroundColor` propiedad de la`TextState` del`TextFragment` objeto.
+
+#### P: ¿Puedo ajustar las dimensiones de la imagen en línea en el encabezado?
+
+ R: Sí, puede ajustar las dimensiones de la imagen en línea usando el`FixWidth` y`FixHeight` propiedades de la`Image` objeto. Esto le permite controlar el ancho y el alto de la imagen dentro del encabezado.
+
+#### P: ¿Puedo incluir elementos en línea adicionales, como hipervínculos o diferentes estilos de fuente, en el encabezado?
+
+ R: Sí, puede incluir elementos en línea adicionales en el encabezado creando más`TextFragment` o`Image` objetos con las propiedades deseadas. Esto le permite personalizar aún más el encabezado, incluidos hipervínculos, diferentes estilos de fuente u otros elementos visuales.
+
+#### P: ¿Cómo puedo asegurarme de que la imagen y el texto en línea permanezcan correctamente alineados y formateados en diferentes dispositivos y visores?
+
+R: Aspose.PDF para .NET garantiza que las imágenes y el texto en línea estén correctamente alineados y formateados, lo que da como resultado una apariencia uniforme en diferentes dispositivos y visores de PDF.
+
+#### P: ¿Puedo aplicar párrafos en línea también a la sección de pie de página?
+
+ R: Sí, puede aplicar la misma técnica de usar párrafos en línea a la sección de pie de página creando un`Footer` objeto y agregarle elementos en línea como texto e imágenes.
+
+#### P: ¿Es posible combinar párrafos en línea con otros métodos de personalización de encabezado o pie de página?
+
+R: Sí, puede combinar párrafos en línea con otros métodos de personalización de encabezado o pie de página proporcionados por Aspose.PDF para .NET para crear diseños de encabezado o pie de página más complejos y personalizados.
+
+#### P: ¿Puedo eliminar o borrar los elementos en línea del encabezado si es necesario?
+
+ R: Sí, puede eliminar o borrar los elementos en línea modificando el contenido de la`HeaderFooter` objeto y eliminando los respectivos párrafos en línea.
+
+#### P: ¿Cómo puedo aplicar párrafos en línea a páginas específicas del documento PDF?
+
+ R: Para aplicar párrafos en línea a páginas específicas, puede crear párrafos separados`HeaderFooter` objetos para cada página y asígnelos usando el`Header` propiedad de los respectivos`Aspose.Pdf.Page` objetos.

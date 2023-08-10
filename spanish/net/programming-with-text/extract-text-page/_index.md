@@ -54,7 +54,7 @@ string extractedText = textAbsorber.Text;
 ```
 
 ## Paso 7: Guarda el texto extraído
- Crear un`TextWriter` y abra el archivo donde desea guardar el texto extraído. Escriba el texto extraído en el archivo y cierre la transmisión.
+ Crear un`TextWriter` y abra el archivo donde desea guardar el texto extraído. Escriba el texto extraído en el archivo y cierre la secuencia.
 
 ```csharp
 dataDir = dataDir + "extracted-text_out.txt";
@@ -71,7 +71,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");
 // Crear objeto TextAbsorber para extraer texto
 TextAbsorber textAbsorber = new TextAbsorber();
-// Aceptar el absorbedor para una página en particular
+//Aceptar el absorbedor para una página en particular
 pdfDocument.Pages[1].Accept(textAbsorber);
 // Obtener el texto extraído
 string extractedText = textAbsorber.Text;

@@ -45,7 +45,7 @@ Page page = doc.Pages.Add();
 ```
 
 ## الخطوة 6: إنشاء HtmlFragment مع محتوى HTML
- تجسيد`HtmlFragment` كائن وتوفير محتوى HTML المطلوب. في الكود المقدم ، يتم تعيين محتوى HTML للمتغير`titel`. يمكنك تعديل محتوى HTML حسب الحاجة.
+تجسيد`HtmlFragment` كائن وتوفير محتوى HTML المطلوب. في الكود المقدم ، يتم تعيين محتوى HTML للمتغير`titel`. يمكنك تعديل محتوى HTML حسب الحاجة.
 
 ```csharp
 HtmlFragment titel = new HtmlFragment("<fontsize=10><b><i>Table</i></b></fontsize>");

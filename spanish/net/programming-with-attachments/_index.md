@@ -13,9 +13,9 @@ Estos tutoriales lo guiarán a través de los diferentes pasos para manipular ar
 ## Tutoriales
 | Título | Descripción |
 | --- | --- | 
-| [Añadir un adjunto](./add-attachment/) | Aprenda a agregar archivos adjuntos a sus archivos PDF usando Aspose.PDF para .NET.  |  
-| [Eliminar todos los archivos adjuntos](./delete-all-attachments/) | Aprenda a eliminar todos los archivos adjuntos de un archivo PDF con Aspose.PDF para .NET.  |  
-| [Deshabilitar la compresión de archivos](./disable-files-compression/) | Aprenda a deshabilitar la compresión de archivos en un archivo PDF con Aspose.PDF para .NET.  |  
-| [Obtenga todos los archivos adjuntos](./get-all-the-attachments/) | Aprenda a obtener todos los archivos adjuntos de un archivo PDF con Aspose.PDF para .NET.  |  
+| [Agregar archivo adjunto en archivo PDF](./add-attachment/) | Aprenda a agregar archivos adjuntos en un archivo PDF usando Aspose.PDF para .NET.  |  
+| [Eliminar todos los archivos adjuntos en un archivo PDF](./delete-all-attachments/) | Aprenda a eliminar todos los archivos adjuntos en un archivo PDF usando Aspose.PDF para .NET.  |  
+| [Deshabilitar la compresión de archivos en archivos PDF](./disable-files-compression/) | Aprenda a deshabilitar la compresión de archivos en un archivo PDF con Aspose.PDF para .NET.  |  
+| [Obtenga todos los archivos adjuntos en un archivo PDF](./get-all-the-attachments/) | Aprenda cómo obtener todos los archivos adjuntos en un archivo PDF con Aspose.PDF para .NET.  |  
 | [Obtener información del archivo adjunto](./get-attachment-info/) | Aprenda a obtener información sobre un archivo adjunto específico en un archivo PDF con Aspose.PDF para .NET. |  
-| [Obtener archivo adjunto individual](./get-individual-attachment/) | Aprenda a obtener un archivo adjunto individual en un archivo PDF con Aspose.PDF para .NET.  |  
+| [Obtenga un archivo adjunto individual en un archivo PDF](./get-individual-attachment/) | Aprenda cómo obtener un archivo adjunto individual en un archivo PDF con Aspose.PDF para .NET.  |  

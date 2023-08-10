@@ -109,7 +109,7 @@ Gerekirse her bir metin parçasında başka eylemler gerçekleştirmek için dö
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Belgeyi aç
 Document pdfDocument = new Document(dataDir + "SearchTextSegmentsPage.pdf");
-// Giriş arama ifadesinin tüm örneklerini bulmak için TextAbsorber nesnesi oluşturun
+//Giriş arama ifadesinin tüm örneklerini bulmak için TextAbsorber nesnesi oluşturun
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
 // Tüm sayfalar için emiciyi kabul edin
 pdfDocument.Pages[2].Accept(textFragmentAbsorber);

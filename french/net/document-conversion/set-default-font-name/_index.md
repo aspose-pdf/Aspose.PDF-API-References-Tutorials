@@ -7,7 +7,6 @@ type: docs
 weight: 270
 url: /fr/net/document-conversion/set-default-font-name/
 ---
-
 Dans ce didacticiel, nous allons vous montrer comment définir le nom de police par défaut dans un fichier PDF à l'aide d'Aspose.PDF pour .NET. Parfois, lorsque vous extrayez des images d'un fichier PDF, vous pouvez rencontrer des problèmes de polices manquantes. En spécifiant un nom de police par défaut, vous pouvez vous assurer que le texte extrait s'affichera correctement. Suivez les étapes ci-dessous pour définir le nom de police par défaut dans un fichier PDF.
 
 ## Conditions préalables
@@ -84,3 +83,25 @@ using (Document pdfDocument = new Document(dataDir + "input.pdf"))
 
 ## Conclusion
 Dans ce didacticiel, nous avons appris à définir le nom de police par défaut dans un fichier PDF à l'aide d'Aspose.PDF pour .NET. En spécifiant un nom de police par défaut, vous pouvez vous assurer que le texte extrait s'affichera correctement. Utilisez cette méthode pour résoudre les problèmes de polices manquantes lors de l'extraction d'images à partir de fichiers PDF.
+
+### FAQ
+
+#### Q : Qu'est-ce qu'Aspose.PDF pour .NET ?
+
+R : Aspose.PDF pour .NET est une bibliothèque puissante qui permet aux développeurs de travailler avec des documents PDF dans des applications C#. Il offre diverses fonctionnalités, notamment la définition du nom de police par défaut dans un fichier PDF.
+
+#### Q : Pourquoi aurais-je besoin de définir le nom de police par défaut dans un fichier PDF ?
+
+R : La définition du nom de police par défaut est utile lors de l'extraction de texte d'un document PDF. Si le PDF contient du texte avec des polices qui ne sont pas disponibles sur la machine d'extraction, la spécification d'un nom de police par défaut garantit un affichage correct du texte.
+
+#### Q : Comment puis-je charger un document PDF et définir le nom de la police par défaut à l'aide d'Aspose.PDF pour .NET ?
+
+ R : Pour charger un document PDF et définir le nom de la police par défaut, vous pouvez utiliser le`Document`class pour charger le fichier PDF et le`RenderingOptions.DefaultFontName` propriété pour spécifier le nom de police par défaut souhaité.
+
+#### Q : Puis-je choisir n'importe quelle police comme nom de police par défaut ?
+
+R : Oui, vous pouvez choisir n'importe quelle police disponible sur la machine d'extraction comme nom de police par défaut. Utilisez une police qui correspond étroitement aux polices manquantes dans le PDF d'origine pour garantir un rendu précis du texte.
+
+#### Q : La définition du nom de police par défaut constitue-t-elle une modification permanente du fichier PDF ?
+
+R : Non, la définition du nom de police par défaut à l'aide d'Aspose.PDF pour .NET est une modification temporaire effectuée lors de l'extraction de texte. Il ne modifie pas le fichier PDF d'origine.

@@ -7,7 +7,6 @@ type: docs
 weight: 100
 url: /sv/net/programming-with-document/customizepagenumbeswhileaddingtoc/
 ---
-
 I den här handledningen kommer vi att utforska hur man anpassar sidnummer samtidigt som man lägger till en innehållsförteckning (TOC) med Aspose.PDF för .NET. Vi kommer att ge steg-för-steg-vägledning, tillsammans med ett kodexempel, för att hjälpa dig uppnå detta.
 
 ## Steg 1: Ladda en befintlig PDF-fil
@@ -31,7 +30,7 @@ Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
 
 ## Steg 3: Skapa ett TOC-objekt
 
- För att skapa ett TOC-objekt måste vi först skapa ett`TocInfo`objekt och ställ in dess egenskaper. I den här handledningen kommer vi att ställa in titeln på innehållsförteckningen till "Innehållsförteckning" och sidnummerprefixet till "P".
+ För att skapa ett TOC-objekt måste vi först skapa ett`TocInfo` objekt och ställ in dess egenskaper. I den här handledningen kommer vi att ställa in titeln på innehållsförteckningen till "Innehållsförteckning" och sidnummerprefixet till "P".
 
 ```csharp
 TocInfo tocInfo = new TocInfo();
@@ -61,14 +60,14 @@ for (int i = 1; i < doc.Pages.Count; i++)
     heading2.Top = doc.Pages[i + 1].Rect.Height;
     // Destinationskoordinat
     segment2.Text = "Page " + i.ToString();
-    //Lägg till rubrik på sidan som innehåller innehållsförteckningen
+    // Lägg till rubrik på sidan som innehåller innehållsförteckningen
     tocPage.Paragraphs.Add(heading2);
 }
 ```
 
 ## Steg 5: Spara det uppdaterade dokumentet
 
- Slutligen måste vi spara det uppdaterade dokumentet till en ny fil. Vi kan uppnå detta genom att använda`Save()` metod för`Document` objekt.
+Slutligen måste vi spara det uppdaterade dokumentet till en ny fil. Vi kan uppnå detta genom att använda`Save()` metod för`Document` objekt.
 
 ```csharp
 doc.Save(outFile);
@@ -106,7 +105,7 @@ for (int i = 1; i<doc.Pages.Count; i++)
 	heading2.Top = doc.Pages[i + 1].Rect.Height;
 	// Destinationskoordinat
 	segment2.Text = "Page " + i.ToString();
-	//Lägg till rubrik på sidan som innehåller innehållsförteckningen
+	// Lägg till rubrik på sidan som innehåller innehållsförteckningen
 	tocPage.Paragraphs.Add(heading2);
 }
 
@@ -118,3 +117,24 @@ doc.Save(outFile);
 
 I den här handledningen har vi gett steg-för-steg-vägledning om hur man anpassar sidnummer samtidigt som man lägger till en innehållsförteckning med Aspose.PDF för .NET. Vi har också tillhandahållit ett kodexempel som du kan använda som referens när du implementerar den här funktionen i din
 
+### FAQ's
+
+#### F: Vad är en innehållsförteckning (TOC) i ett PDF-dokument?
+
+S: En innehållsförteckning (TOC) i ett PDF-dokument är ett navigeringshjälpmedel som tillhandahåller en organiserad lista över dokumentavsnitt eller kapitel tillsammans med motsvarande sidnummer. Det låter läsare snabbt navigera till specifika avsnitt i dokumentet.
+
+#### F: Varför skulle jag vilja anpassa sidnummer i en innehållsförteckning?
+
+S: Att anpassa sidnummer i en innehållsförteckning kan vara användbart när du vill använda ett specifikt sidnumreringsformat eller inkludera ytterligare information tillsammans med sidnumren. Det låter dig skapa en mer personlig och informativ innehållsförteckning.
+
+#### F: Kan jag inkludera hyperlänkar i innehållsförteckningen för att länka till specifika avsnitt eller sidor i PDF-dokumentet?
+
+S: Ja, Aspose.PDF för .NET låter dig skapa hyperlänkar i innehållsförteckningen som länkar till specifika avsnitt eller sidor i PDF-dokumentet. Detta förbättrar PDF-dokumentets interaktivitet och navigering.
+
+#### F: Är Aspose.PDF för .NET kompatibel med PDF/A-standarder?
+
+S: Ja, Aspose.PDF för .NET stöder PDF/A-standarder, inklusive PDF/A-1, PDF/A-2 och PDF/A-3. Det låter dig skapa PDF-dokument som uppfyller kraven för arkivering och långsiktigt bevarande.
+
+#### F: Kan jag lägga till mer formatering till innehållsförteckningsposterna, som typsnittsstilar eller färger?
+
+S: Ja, du kan lägga till ytterligare formatering till innehållsförteckningen, såsom teckensnitt, färger och teckenstorlekar, med Aspose.PDF för .NET. Detta gör att du kan anpassa utseendet på innehållsförteckningen enligt dina krav.

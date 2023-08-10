@@ -7,7 +7,6 @@ type: docs
 weight: 160
 url: /it/net/document-conversion/pdf-to-png-font-hinting/
 ---
-
 In questo tutorial, ti guideremo attraverso il processo di conversione di un PDF in immagini PNG utilizzando Aspose.PDF per .NET, abilitando al contempo i suggerimenti sui caratteri. Il suggerimento sui caratteri è una tecnica che migliora la leggibilità dei caratteri piccoli. Seguendo i passaggi seguenti, sarai in grado di convertire ogni pagina del PDF in un'immagine PNG con suggerimenti sui caratteri.
 
 ## Prerequisiti
@@ -93,7 +92,7 @@ try
 			// Imposta le opzioni di rendering predefinite
 			pngDevice.RenderingOptions = opts;
 
-			// Converti una pagina specifica e salva l'immagine per lo streaming
+			//Converti una pagina specifica e salva l'immagine per lo streaming
 			pngDevice.Process(pdfDocument.Pages[pageCount], imageStream);
 
 			// Chiudi flusso
@@ -110,3 +109,21 @@ catch (Exception ex)
 
 ## Conclusione
 In questo tutorial, abbiamo coperto il processo passo-passo di conversione da PDF a immagini PNG con suggerimenti sui caratteri utilizzando Aspose.PDF per .NET. Seguendo le istruzioni sopra descritte, ora dovresti essere in grado di convertire ogni pagina del PDF in un'immagine PNG con suggerimenti sui caratteri. Questa funzione è utile quando si desidera mantenere la leggibilità dei caratteri piccoli durante la conversione in immagini PNG.
+
+### FAQ
+
+#### D: Che cos'è il suggerimento sui caratteri e perché è importante quando si converte un PDF in PNG?
+
+R: Il suggerimento sui caratteri è una tecnica utilizzata per migliorare la leggibilità dei caratteri piccoli regolandone la forma e il posizionamento. Durante la conversione da PDF a immagini PNG, l'abilitazione dei suggerimenti sui caratteri garantisce che il testo nelle immagini PNG risultanti rimanga leggibile e chiaro, soprattutto per i caratteri di piccole dimensioni. Questo è importante per mantenere la qualità e la leggibilità del testo durante la conversione di documenti PDF in immagini.
+
+#### D: In che modo i suggerimenti sui caratteri influiscono sul processo di conversione PNG?
+
+R: I suggerimenti sui caratteri influiscono sul modo in cui il testo viene visualizzato nelle immagini PNG risultanti durante il processo di conversione da PDF a PNG. Abilitando i suggerimenti sui caratteri, la libreria Aspose.PDF regola il rendering dei caratteri per garantire che i caratteri piccoli mantengano la loro chiarezza e leggibilità, rendendo le immagini PNG visivamente più accattivanti e leggibili.
+
+#### D: Posso modificare le impostazioni dei suggerimenti sui caratteri per personalizzare la conversione PNG?
+
+ R: Sì, la libreria Aspose.PDF per .NET fornisce opzioni per personalizzare il processo di conversione PNG, comprese le impostazioni di suggerimento sui caratteri. Nell'esempio di codice fornito, il`UseFontHinting` proprietà del`RenderingOptions` l'oggetto è impostato`true` per abilitare i suggerimenti sui caratteri. È possibile perfezionare ulteriormente il processo di conversione regolando altre proprietà nel file`RenderingOptions` classe in base alle vostre esigenze.
+
+#### D: Come vengono salvate le immagini PNG nel processo di conversione PNG?
+
+R: Nell'esempio di codice fornito, ogni pagina del documento PDF viene convertita in un'immagine PNG separata. Le immagini PNG vengono salvate come singoli file con nomi di file che seguono il modello "image{pageCount}_ fuori.png", dove`{pageCount}` è il numero della pagina da convertire. Ogni immagine PNG rappresenta una pagina del documento PDF originale.

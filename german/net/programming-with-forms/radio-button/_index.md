@@ -7,7 +7,6 @@ type: docs
 weight: 220
 url: /de/net/programming-with-forms/radio-button/
 ---
-
 In diesem Tutorial zeigen wir Ihnen, wie Sie mit Aspose.PDF für .NET ein Optionsfeld in ein PDF-Dokument einfügen. Wir erklären Ihnen Schritt für Schritt den C#-Quellcode, um Sie durch diesen Prozess zu führen.
 
 ## Schritt 1: Vorbereitung
@@ -87,7 +86,7 @@ try
 	// Fügen Sie ein Optionsfeld zum Formularobjekt des Dokumentobjekts hinzu
 	pdfDocument.Form.Add(radio);
 	dataDir = dataDir + "RadioButton_out.pdf";
-	// Speichern Sie die PDF-Datei
+	//Speichern Sie die PDF-Datei
 	pdfDocument.Save(dataDir);
 	Console.WriteLine("\nRadio button field added successfully.\nFile saved at " + dataDir);
 }
@@ -100,3 +99,26 @@ catch (Exception ex)
 ## Abschluss
 
 In diesem Tutorial haben wir gelernt, wie man mit Aspose.PDF für .NET ein Optionsfeld in ein PDF-Dokument einfügt. Wenn Sie diese Schritte befolgen, können Sie ganz einfach ein Optionsfeld erstellen und es auf einer bestimmten Seite in Ihrem PDF-Dokument platzieren.
+
+
+### FAQs
+
+#### F: Kann ich das Erscheinungsbild des Optionsfelds anpassen, z. B. seine Größe und Farbe?
+
+ A: Ja, Sie können das Erscheinungsbild des Optionsfelds mithilfe von anpassen`Rectangle` Koordinaten des Objekts, um seine Größe und Position zu definieren. Mit Aspose.PDF für .NET können Sie das Erscheinungsbild des Optionsfelds an Ihre Bedürfnisse anpassen.
+
+#### F: Kann ich mehrere Optionsfelder mit unterschiedlichen Gruppen auf derselben Seite hinzufügen?
+
+A: Ja, Sie können auf derselben Seite mehrere Optionsfelder mit unterschiedlichen Gruppen hinzufügen. Jede Gruppe von Optionsfeldern kann einen eindeutigen Namen haben und es kann jeweils nur eine Option innerhalb jeder Gruppe ausgewählt werden.
+
+#### F: Wie kann ich den Optionsfeldoptionen eine Beschriftung oder Textbeschreibung hinzufügen?
+
+ A: Um den Optionsfeldoptionen eine Beschriftung oder Textbeschreibung hinzuzufügen, können Sie die verwenden`TextStamp`Klasse von Aspose.PDF für .NET, um Text auf dem PDF-Dokument an bestimmten Koordinaten zu überlagern.
+
+#### F: Ist Aspose.PDF für .NET mit allen Versionen von .NET Framework kompatibel?
+
+A: Ja, Aspose.PDF für .NET ist mit allen Versionen von .NET Framework kompatibel, einschließlich .NET Core und .NET Standard.
+
+#### F: Kann ich die Auswahl einer Optionsschaltfläche im PDF-Dokument programmgesteuert steuern?
+
+ A: Ja, Sie können die Auswahl einer Optionsschaltfläche mithilfe von programmgesteuert steuern`IsSelected` Eigentum der`RadioButtonOption` Klasse. Mit dieser Eigenschaft können Sie eine bestimmte Option als ausgewählt festlegen.

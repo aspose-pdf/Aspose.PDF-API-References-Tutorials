@@ -35,7 +35,7 @@ Document doc = new Document(dataDir + "ReplaceTextPage.pdf");
 
 ## الخطوة 3: تحديد وإزالة الخطوط غير المستخدمة
 
- نقوم بإنشاء ملف`TextFragmentAbsorber` كائن مع`TextEditOptions` تم تعيين المعلمة على`TextEditOptions.FontReplace.RemoveUnusedFonts` . يتيح لنا هذا الخيار تحديد الخطوط غير المستخدمة وإزالتها في مستند PDF. ثم نقوم بالتكرار خلال جميع ملفات`TextFragments` واضبط الخط على الخط المطلوب.
+ نقوم بإنشاء ملف`TextFragmentAbsorber` كائن مع`TextEditOptions` تم تعيين المعلمة على`TextEditOptions.FontReplace.RemoveUnusedFonts` يتيح لنا هذا الخيار تحديد الخطوط غير المستخدمة وإزالتها في مستند PDF. ثم نقوم بالتكرار خلال جميع ملفات`TextFragments` واضبط الخط على الخط المطلوب.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));

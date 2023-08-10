@@ -1,14 +1,13 @@
 ---
-title: Obtener información del archivo
-linktitle: Obtener información del archivo
+title: Obtener información de archivo en archivo PDF
+linktitle: Obtener información de archivo en archivo PDF
 second_title: Referencia de API de Aspose.PDF para .NET
-description: Aprenda a usar la función GetFileInfo de Aspose.PDF para .NET para recuperar información de metadatos sobre un documento PDF.
+description: Aprenda a usar la función GetFileInfo en archivo PDF de Aspose.PDF para .NET para recuperar información de metadatos sobre un documento PDF.
 type: docs
 weight: 180
 url: /es/net/programming-with-document/getfileinfo/
 ---
-
- Aspose.PDF para .NET es una popular biblioteca de manipulación de PDF que permite a los desarrolladores crear, editar y convertir archivos PDF en sus aplicaciones .NET. Una de las características que ofrece esta biblioteca es la capacidad de recuperar información sobre los metadatos de un documento PDF. Este tutorial lo guiará a través de los pasos para usar el`GetFileInfo`función de Aspose.PDF para .NET para recuperar información sobre los metadatos de un documento PDF.
+Aspose.PDF para .NET es una popular biblioteca de manipulación de PDF que permite a los desarrolladores crear, editar y convertir archivos PDF en sus aplicaciones .NET. Una de las características que ofrece esta biblioteca es la capacidad de recuperar información sobre los metadatos de un documento PDF. Este tutorial lo guiará a través de los pasos para usar el`GetFileInfo` función de Aspose.PDF para .NET para recuperar información sobre los metadatos de un documento PDF.
 
 ## Paso 1: Instale Aspose.PDF para .NET
 
@@ -26,11 +25,11 @@ El primer paso para usar esta función es cargar el documento PDF sobre el que d
 // La ruta al documento PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Abre el documento PDF
+//Abre el documento PDF
 Document pdfDocument = new Document(dataDir + "GetFileInfo.pdf");
 ```
 
- En el código anterior, reemplace`"YOUR DOCUMENT DIRECTORY"` con la ruta al directorio donde se encuentra su documento PDF. Este código cargará el documento PDF en un`Document` objeto, que luego puede usar para recuperar información sobre los metadatos del documento.
+ En el código anterior, reemplace`"YOUR DOCUMENT DIRECTORY"`con la ruta al directorio donde se encuentra su documento PDF. Este código cargará el documento PDF en un`Document` objeto, que luego puede usar para recuperar información sobre los metadatos del documento.
 
 ## Paso 3: recuperar los metadatos del documento
 
@@ -59,7 +58,7 @@ En el código anterior, cada línea recupera una propiedad de metadatos diferent
 // La ruta al documento PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Abre el documento PDF
+//Abre el documento PDF
 Document pdfDocument = new Document(dataDir + "GetFileInfo.pdf");
 
 // Obtener información del documento
@@ -73,3 +72,25 @@ Console.WriteLine("Modify Date: {0}", docInfo.ModDate);
 Console.WriteLine("Subject: {0}", docInfo.Subject);
 Console.WriteLine("Title: {0}", docInfo.Title);
 ```
+
+## Conclusión
+
+En este tutorial, hemos discutido cómo usar Aspose.PDF para .NET para recuperar información sobre los metadatos de un documento PDF. Al cargar un documento PDF y acceder a sus propiedades de metadatos, puede recopilar información sobre las características y propiedades del documento. Aspose.PDF para .NET proporciona una API simple y fácil de usar para trabajar con documentos PDF, incluida la recuperación de información de metadatos, lo que la convierte en una herramienta valiosa para la manipulación de PDF en aplicaciones .NET.
+
+### Preguntas frecuentes
+
+#### P: ¿Qué son los metadatos en un documento PDF?
+
+R: Los metadatos en un documento PDF se refieren a la información que describe las propiedades y características del documento. Esta información generalmente incluye el título del documento, el autor, el tema, las palabras clave, la fecha de creación, la fecha de modificación y más.
+
+#### P: ¿Cómo puedo instalar Aspose.PDF para .NET en mi proyecto .NET?
+
+ R: Para instalar Aspose.PDF para .NET, debe descargar la biblioteca de la[Página de descarga de Aspose.PDF para .NET](https://releases.aspose.com/pdf/net)Después de la descarga, extraiga el contenido del archivo ZIP y agregue una referencia a Aspose.PDF para .NET DLL en su proyecto .NET.
+
+#### P: ¿Puedo personalizar el código para recuperar solo propiedades específicas de metadatos?
+
+R: Sí, puede personalizar el código para recuperar propiedades de metadatos específicas comentando las líneas que no necesita. Cada línea del código corresponde a una propiedad de metadatos específica, por lo que puede incluir o excluir propiedades según sus requisitos.
+
+#### P: ¿Qué tipos de propiedades de metadatos puedo recuperar con Aspose.PDF para .NET?
+
+R: Con Aspose.PDF para .NET, puede recuperar varias propiedades de metadatos de un documento PDF, incluidos el autor, el título, el asunto, las palabras clave, la fecha de creación y la fecha de modificación.

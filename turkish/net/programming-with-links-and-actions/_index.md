@@ -11,16 +11,16 @@ Aspose.PDF for .NET'teki "Bağlantılar ve Eylemlerle Programlama" öğretici sa
 ## Öğreticiler
 | Başlık | Tanım |
 | --- | --- | 
-| [Köprü Ekle](./add-hyperlink/) | Aspose.PDF for .NET ile PDF dosyalarınıza etkileşimli köprüler ekleyin. |  
-| [Uygulama Bağlantısı Oluştur](./create-application-link/) | Aspose.PDF for .NET ile PDF dosyalarınızda kolayca uygulama bağlantıları oluşturun. |  
+| [PDF Dosyasına Köprü Ekle](./add-hyperlink/) | Aspose.PDF for .NET ile PDF dosyasına etkileşimli köprüler ekleyin. |  
+| [PDF Dosyasında Uygulama Bağlantısı Oluşturun](./create-application-link/) | Aspose.PDF for .NET ile PDF dosyasında kolayca uygulama bağlantıları oluşturun. |  
 | [Belge Bağlantısı Oluştur](./create-document-link/) | Aspose.PDF for .NET ile diğer PDF belgelerine kolayca bağlantılar oluşturun. |  
-| [Yerel Köprü Oluştur](./create-local-hyperlink/) | Aspose.PDF for .NET kullanarak bir PDF dosyasında kolayca yerel köprüler oluşturun. |  
-| [Bağlantıları Ayıkla](./extract-links/) | Aspose.PDF for .NET kullanarak bir PDF belgesinden kolayca bağlantı çıkarın. |  
-| [Köprü Hedeflerini Alın](./get-hyperlink-destinations/) | Aspose.PDF for .NET kullanarak bir PDF dosyasından köprü hedeflerini nasıl çıkaracağınızı öğrenin. |  
-| [Köprü Metni Alın](./get-hyperlink-text/) | Aspose.PDF for .NET kullanarak bir PDF dosyasından köprü metni çıkarmayı öğrenin. |  
+| [PDF Dosyasında Yerel Köprü Oluşturma](./create-local-hyperlink/) | Aspose.PDF for .NET kullanarak PDF dosyasında kolayca yerel köprüler oluşturun. |  
+| [PDF Dosyasındaki Bağlantıları Çıkarın](./extract-links/) | Aspose.PDF for .NET kullanarak PDF dosyasındaki bağlantıları kolayca ayıklayın. |  
+| [PDF Dosyasında Köprü Hedeflerini Alın](./get-hyperlink-destinations/) | Aspose.PDF for .NET kullanarak PDF dosyasındaki köprü hedeflerini nasıl çıkaracağınızı öğrenin. |  
+| [PDF Dosyasında Köprü Metni Alın](./get-hyperlink-text/) | Aspose.PDF for .NET kullanarak PDF dosyasındaki köprü metnini nasıl çıkaracağınızı öğrenin. |  
 | [Açık İşlemi Kaldır](./remove-open-action/) | Aspose.PDF for .NET kullanarak bir PDF'den açık eylemi nasıl kaldıracağınızı öğrenin. |  
-| [Hedef Bağlantıyı Ayarla](./set-destination-link/) | Aspose.PDF for .NET kullanarak bir PDF dosyasında bir hedef bağlantısını nasıl ayarlayacağınızı öğrenin. |  
-| [Hedef Bağlantıyı Ayarla](./set-target-link/) | Aspose.PDF for .NET kullanarak bir PDF dosyasında nasıl hedef bağlantı ayarlayacağınızı öğrenin. |  
+| [PDF Dosyasında Hedef Bağlantıyı Ayarla](./set-destination-link/) | Aspose.PDF for .NET kullanarak PDF dosyasında bir hedef bağlantısını nasıl ayarlayacağınızı öğrenin. |  
+| [PDF Dosyasında Hedef Bağlantıyı Ayarlayın](./set-target-link/) | Aspose.PDF for .NET kullanarak PDF dosyasında bir hedef bağlantının nasıl ayarlanacağını öğrenin. |  
 | [Görüntülerken Sayfayı Belirtin](./specify-page-when-viewing/) | Aspose.PDF for .NET kullanarak bir PDF görüntülerken sayfa belirtmeyi öğrenin. |  
-| [Bağlantıları Güncelle](./update-links/) | Aspose.PDF for .NET ile bir PDF dosyasındaki bağlantıları nasıl güncelleyeceğinizi öğrenin. |  
-| [Bağlantı Metin Rengini Güncelle](./update-link-text-color/) | Aspose.PDF for .NET ile bir PDF dosyasındaki bağlantıların metin rengini nasıl güncelleyeceğinizi öğrenin. |  
+| [PDF Dosyasındaki Bağlantıları Güncelle](./update-links/) | Aspose.PDF for .NET ile PDF dosyasındaki bağlantıları nasıl güncelleyeceğinizi öğrenin. |  
+| [PDF Dosyasında Bağlantı Metni Rengini Güncelle](./update-link-text-color/) | Aspose.PDF for .NET ile PDF dosyasındaki bağlantıların metin rengini nasıl güncelleyeceğinizi öğrenin. |  

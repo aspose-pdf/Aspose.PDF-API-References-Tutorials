@@ -7,8 +7,7 @@ type: docs
 weight: 10
 url: /it/net/programming-with-forms/add-tooltip-to-field/
 ---
-
-Aspose.PDF per .NET è una potente libreria che consente agli sviluppatori di manipolare i documenti PDF a livello di programmazione. In questo tutorial, illustreremo il processo di aggiunta di una descrizione comando a un campo utilizzando Aspose.PDF per .NET. Forniremo una guida dettagliata per aiutarti a comprendere e implementare questa funzionalità nel tuo codice C#.
+Aspose.PDF per .NET è una potente libreria che consente agli sviluppatori di manipolare i documenti PDF a livello di codice. In questo tutorial, illustreremo il processo di aggiunta di una descrizione comando a un campo utilizzando Aspose.PDF per .NET. Forniremo una guida dettagliata per aiutarti a comprendere e implementare questa funzionalità nel tuo codice C#.
 
 ## Passaggio 1: impostazione del progetto e inclusione di Aspose.PDF per .NET
 
@@ -77,3 +76,25 @@ Console.WriteLine("\nTooltip added successfully.\nFile saved at " + dataDir);
 ## Conclusione
 
 Congratulazioni! Hai imparato con successo come aggiungere una descrizione comandi a un campo utilizzando Aspose.PDF per .NET. Seguendo la guida dettagliata in questo tutorial, puoi migliorare i tuoi moduli PDF con suggerimenti per fornire ulteriori informazioni o indicazioni agli utenti. Ricorda di esplorare la documentazione e gli esempi forniti da Aspose.PDF per .NET per scoprire caratteristiche e funzionalità più avanzate offerte dalla libreria.
+
+### FAQ
+
+#### D: Cos'è una descrizione comandi in un modulo PDF e perché dovrei usarla?
+
+R: Un suggerimento in un modulo PDF è una piccola finestra pop-up che appare quando l'utente passa il mouse su un campo specifico. Fornisce ulteriori informazioni o istruzioni relative a tale campo. Le descrizioni comandi sono utili per guidare gli utenti, fornire spiegazioni o offrire una guida specifica al contesto nei moduli PDF.
+
+#### D: Posso personalizzare l'aspetto e il comportamento del tooltip?
+
+R: Sì, con Aspose.PDF per .NET, puoi personalizzare l'aspetto e il comportamento del tooltip. È possibile impostare il testo, il carattere, il colore e altri attributi della descrizione comandi in modo che corrispondano al design e ai requisiti dell'applicazione.
+
+#### D: Aspose.PDF per .NET è compatibile con altri linguaggi di programmazione oltre a C#?
+
+R: Sì, Aspose.PDF per .NET è progettato per funzionare con altri linguaggi .NET come VB.NET, F# e altri. La libreria fornisce funzionalità coerenti in questi linguaggi.
+
+#### D: Posso aggiungere suggerimenti ad altri tipi di campi del modulo, come caselle di controllo o pulsanti di opzione?
+
+R: Sì, puoi aggiungere suggerimenti a vari tipi di campi modulo, inclusi campi di testo, caselle di controllo, pulsanti di opzione, caselle combinate e altro. Il processo è simile e puoi accedere a diversi tipi di campi modulo utilizzando i loro nomi o ID.
+
+#### D: Posso rimuovere o modificare la descrizione comando dopo che è stata aggiunta al campo?
+
+ R: Sì, puoi modificare o rimuovere il tooltip da un campo anche dopo che è stato aggiunto utilizzando Aspose.PDF per .NET. Basta accedere al campo e aggiornarlo`AlternateName` property con il nuovo testo del tooltip o impostarlo su una stringa vuota per rimuovere il tooltip.

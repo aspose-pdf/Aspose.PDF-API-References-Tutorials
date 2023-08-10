@@ -19,7 +19,7 @@ Prima di iniziare, assicurati di disporre di quanto segue:
 
 ## Passaggio 1: impostare la directory dei documenti
 
- Innanzitutto, è necessario impostare il percorso della directory in cui si trova il file PDF di input. Sostituire`"YOUR DOCUMENT DIRECTORY"` nel`dataDir` variabile con il percorso del file PDF.
+ Innanzitutto, è necessario impostare il percorso della directory in cui si trova il file PDF di input. Sostituire`"YOUR DOCUMENT DIRECTORY"` nel`dataDir`variabile con il percorso del file PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -35,7 +35,7 @@ Document doc = new Document(dataDir + "MultiColumnPdf.pdf");
 
 ## Passaggio 3: accedere ai paragrafi multicolonna
 
- Noi usiamo il`ParagraphAbsorber` classe per assorbire e visitare i paragrafi nel documento PDF. Quindi recuperiamo i markup della pagina e accediamo ai paragrafi multicolonna.
+ Noi usiamo il`ParagraphAbsorber`classe per assorbire e visitare i paragrafi nel documento PDF. Quindi recuperiamo i markup della pagina e accediamo ai paragrafi multicolonna.
 
 ```csharp
 ParagraphAbsorber absorb = new ParagraphAbsorber();
@@ -43,7 +43,7 @@ absorb.Visit(doc);
 PageMarkup markup = absorb.PageMarkups[0];
 ```
 
-## Passaggio 4: lavorare con paragrafi a più colonne
+## Passaggio 4: lavorare con paragrafi multicolonna
 
 Accediamo a sezioni e paragrafi specifici all'interno della struttura a più colonne e stampiamo il loro testo.
 

@@ -50,14 +50,14 @@ Page page = doc.Pages.Add();
 ```
 
 ## Steg 6: Skapa ett HtmlFragment med HTML-innehållet
- Instantiera en`HtmlFragment` objekt och tillhandahålla önskat HTML-innehåll. I den medföljande koden är HTML-innehållet tilldelat variabeln`title`. Du kan ändra HTML-innehållet efter behov.
+Instantiera en`HtmlFragment` objekt och tillhandahålla önskat HTML-innehåll. I den medföljande koden är HTML-innehållet tilldelat variabeln`title`. Du kan ändra HTML-innehållet efter behov.
 
 ```csharp
 HtmlFragment title = new HtmlFragment("<p style='font-family: Verdana'><b><i>Table contains text</i></b></p>");
 ```
 
 ## Steg 7: Skriv över stilarna för HTML-innehållet
- För att skriva över HTML-innehållets stilar kan du ändra`TextState` egenskaper hos`HtmlFragment`objekt. I den medföljande koden ändras teckensnittsfamiljen till "Arial" och teckenstorleken är inställd på 20.
+ För att skriva över HTML-innehållets stilar kan du ändra`TextState` egenskaper hos`HtmlFragment` objekt. I den medföljande koden ändras teckensnittsfamiljen till "Arial" och teckenstorleken är inställd på 20.
 
 ```csharp
 title. TextState = new TextState("Arial");

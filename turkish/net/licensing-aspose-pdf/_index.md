@@ -11,8 +11,8 @@ description: Lisanslama Aspose.PDF for .NET öğreticileri, lisans yükleme ve u
 ## Öğreticiler
 | Başlık | Tanım |
 | --- | --- | 
-| [Tarifeli Lisansı Yapılandır](./configure-metered-license/) | Aspose.PDF for .NET ile ölçülü bir lisans oluşturmak ve gelişmiş özelliklerden yararlanmak için adım adım kılavuz. |  
+| [PDF Dosyasında Tarifeli Lisans Anahtarlarını Yapılandırma](./configure-metered-license/) | Aspose.PDF for .NET ile PDF dosyasında ölçülü bir lisans anahtarı ayarlamak ve gelişmiş özelliklerden yararlanmak için adım adım kılavuz. |  
 | [Dosyadan Lisans Yükle](./load-license-from-file/) | Aspose.PDF for .NET kullanarak dosyadan lisans yüklemek için adım adım kılavuz. Ek özelliklerin kilidini açın ve Aspose.PDF'yi en iyi şekilde kullanın. |  
 | [Akış Nesnesinden Lisans Yükle](./load-license-from-stream-object/) | Aspose.PDF for .NET kullanarak bir Stream nesnesinden lisans yüklemek için adım adım kılavuz. Ek özelliklerin kilidini açın. |  
-| [Güvenli Lisans](./secure-license/) | Aspose.PDF for .NET kullanarak bir lisansı güvenceye almak için adım adım kılavuz. PDF uygulamanızı yetkisiz erişime karşı koruyun. |  
+| [PDF Dosyasında Güvenli Lisans](./secure-license/) | Aspose.PDF for .NET kullanarak PDF dosyasında lisans güvenliğini sağlamak için adım adım kılavuz. PDF uygulamanızı yetkisiz erişime karşı koruyun. |  
 | [Gömülü Kaynağı Kullanarak Lisans Ayarlama](./set-license-using-embedded-resource/) | Aspose.PDF for .NET ile gömülü bir kaynak kullanarak bir lisans ayarlamak için adım adım kılavuz. Tüm özelliklerin kilidini açın. |  

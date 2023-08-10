@@ -8,7 +8,7 @@ weight: 360
 url: /sv/net/programming-with-text/replace-text-on-regular-expression/
 ---
 
-den här handledningen kommer vi att förklara hur man ersätter text baserat på ett reguljärt uttryck i ett PDF-dokument med hjälp av Aspose.PDF-biblioteket för .NET. Vi kommer att tillhandahålla en steg-för-steg-guide tillsammans med den nödvändiga C#-källkoden.
+I den här handledningen kommer vi att förklara hur man ersätter text baserat på ett reguljärt uttryck i ett PDF-dokument med hjälp av Aspose.PDF-biblioteket för .NET. Vi kommer att tillhandahålla en steg-för-steg-guide tillsammans med den nödvändiga C#-källkoden.
 
 ## Förutsättningar
 
@@ -19,7 +19,7 @@ Innan du börjar, se till att du har följande:
 
 ## Steg 1: Konfigurera dokumentkatalogen
 
- Ställ in sökvägen till katalogen där du har den inmatade PDF-filen. Byta ut`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till din PDF-fil.
+ Ställ in sökvägen till katalogen där du har den inmatade PDF-filen. Byta ut`"YOUR DOCUMENT DIRECTORY"` i`dataDir`variabel med sökvägen till din PDF-fil.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -89,7 +89,7 @@ foreach (TextFragment textFragment in textFragmentCollection)
 {
 	// Uppdatera text och andra egenskaper
 	textFragment.Text = "New Phrase";
-	// Ställ in en instans av ett objekt.
+	// Ställ in på en instans av ett objekt.
 	textFragment.TextState.Font = FontRepository.FindFont("Verdana");
 	textFragment.TextState.FontSize = 22;
 	textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Blue);
@@ -102,4 +102,4 @@ Console.WriteLine("\nText replaced successfully based on a regular expression.\n
 
 ## Slutsats
 
-den här handledningen har du lärt dig hur du ersätter text baserat på ett reguljärt uttryck i ett PDF-dokument med Aspose.PDF-biblioteket för .NET. Genom att följa den steg-för-steg-guide och exekvera den medföljande C#-koden kan du ladda ett PDF-dokument, söka efter text med ett reguljärt uttryck, ersätta det och spara den modifierade PDF-filen.
+I den här handledningen har du lärt dig hur du ersätter text baserat på ett reguljärt uttryck i ett PDF-dokument med Aspose.PDF-biblioteket för .NET. Genom att följa den steg-för-steg-guide och exekvera den medföljande C#-koden kan du ladda ett PDF-dokument, söka efter text med ett reguljärt uttryck, ersätta det och spara den modifierade PDF-filen.

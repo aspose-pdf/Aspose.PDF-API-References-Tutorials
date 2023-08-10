@@ -68,7 +68,7 @@ FileSpecification fileSpecification = pdfDocument.EmbeddedFiles[1];
 Console.WriteLine("Name: {0}", fileSpecification.Name);
 Console.WriteLine("Description: {0}", fileSpecification.Description);
 Console.WriteLine("Mime Type: {0}", fileSpecification.MIMEType);
-// Überprüfen Sie, ob das Parameterobjekt die Parameter enthält
+//Überprüfen Sie, ob das Parameterobjekt die Parameter enthält
 if (fileSpecification.Params != null)
 {
 	Console.WriteLine("CheckSum: {0}",
@@ -85,3 +85,41 @@ if (fileSpecification.Params != null)
 ## Abschluss
 
 In diesem Tutorial haben wir erklärt, wie Sie mit Aspose.PDF für .NET Informationen zu einem bestimmten Anhang einer PDF-Datei erhalten. Mit diesem Wissen können Sie nun Anhanginformationen aus Ihren PDF-Dateien extrahieren und anzeigen.
+
+### FAQs zum Abrufen von Anhangsinformationen 
+
+#### F: Warum sollte ich Informationen zu bestimmten Anhängen in einem PDF-Dokument abrufen?
+
+A: Durch das Abrufen von Anhangsinformationen können Sie die Details eingebetteter Dateien in einer PDF-Datei verstehen und analysieren und so Anhänge effektiv verwalten und bearbeiten.
+
+#### F: Welche Art von Informationen kann ich mit diesem Tutorial über einen bestimmten Anhang sammeln?
+
+A: In diesem Tutorial wird gezeigt, wie Anhangseigenschaften wie Name, Beschreibung, MIME-Typ, Kontroll-Hash, Erstellungsdatum, Änderungsdatum und Größe abgerufen und angezeigt werden.
+
+#### F: Wie hilft mir dieses Tutorial beim Sammeln von Anhangsinformationen mit Aspose.PDF für .NET?
+
+A: Dieses Tutorial bietet Schritt-für-Schritt-Anleitungen und C#-Quellcode für den Zugriff auf und die Anzeige von Informationen zu einem bestimmten Anhang in einem PDF-Dokument.
+
+#### F: Kann ich mit diesem Tutorial Informationen zu allen Anhängen anstelle eines bestimmten Anhangs abrufen?
+
+A: Dieses Tutorial konzentriert sich darauf, Informationen zu einem bestimmten Anhang zu erhalten. Sie können den Code jedoch anpassen, um alle Anhänge zu durchlaufen und deren Informationen zu sammeln.
+
+#### F: Welchen Zweck hat die Eigenschaft „Hash prüfen“, die in den Anhangsinformationen angezeigt wird?
+
+A: Die Eigenschaft „Check Hash“ stellt den Kontroll-Hash-Wert des Anhangs dar, der zur Überprüfung der Integrität des Anhangs verwendet werden kann.
+
+#### F: Wie kann ich diesen Code ändern, um Informationen über Anhänge mit unterschiedlichen Indizes abzurufen?
+
+ A: Sie können den Indexwert ändern (z. B.`pdfDocument.EmbeddedFiles[1]`), um Informationen zu Anhängen an verschiedenen Indizes im PDF-Dokument abzurufen.
+
+#### F: Kann ich dieses Wissen nutzen, um Informationen aus passwortgeschützten PDF-Dateien zu sammeln?
+
+A: Ja, Sie können ähnliche Prinzipien anwenden, um Anhanginformationen aus passwortgeschützten PDF-Dateien mit Aspose.PDF für .NET zu sammeln.
+
+#### F: Wie vereinfacht Aspose.PDF für .NET den Prozess zum Abrufen von Anhangsinformationen?
+
+A: Aspose.PDF für .NET bietet eine intuitive API, mit der Sie problemlos auf Anhangeigenschaften in PDF-Dokumenten zugreifen und diese bearbeiten können.
+
+#### F: Gibt es bestimmte Szenarien, in denen das Sammeln von Anhangsinformationen empfohlen wird?
+
+A: Das Sammeln von Anhangsinformationen ist hilfreich, wenn Sie die Details eingebetteter Dateien verstehen müssen, beispielsweise um deren Eigenschaften zu überprüfen oder Anhänge in einem Dokument zu prüfen.

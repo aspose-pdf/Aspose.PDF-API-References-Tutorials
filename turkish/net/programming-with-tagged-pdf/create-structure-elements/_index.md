@@ -132,7 +132,7 @@ PrivateElement privateElement = taggedContent.CreatePrivateElement();
 ParagraphElement paragraphElement = taggedContent.CreateParagraphElement();
 HeaderElement headerElement = taggedContent.CreateHeaderElement();
 HeaderElement h1Element = taggedContent.CreateHeaderElement(1);
-//Metin Satır İçi Düzey Yapı Öğeleri Oluşturma
+// Metin Satır İçi Düzey Yapı Öğeleri Oluşturma
 SpanElement spanElement = taggedContent.CreateSpanElement();
 QuoteElement quoteElement = taggedContent.CreateQuoteElement();
 NoteElement noteElement = taggedContent.CreateNoteElement();
@@ -158,3 +158,45 @@ document.Save(dataDir + "StructureElements.pdf");
 ## Çözüm
 
 Bu eğitimde, etiketli bir PDF belgesinde yapı elemanları oluşturmak için Aspose.PDF for .NET'i nasıl kullanacağımızı öğrendik. Yapısal öğeler, belge erişilebilirliğini artırmaya ve içeriği anlamlı bir şekilde düzenlemeye yardımcı olur. Artık bu bilgiyi yapılandırılmış, gezinmesi kolay PDF belgeleri oluşturmak için kullanabilirsiniz.
+
+### SSS
+
+#### S: Aspose.PDF for .NET kullanarak bir PDF belgesinde yapı elemanları oluşturmanın amacı nedir?
+
+C: Aspose.PDF for .NET kullanarak bir PDF belgesinde yapı öğeleri oluşturmak, belge içeriğinin erişilebilirliğini ve organizasyonunu geliştirir. Yapı öğeleri, gezinmeyi, anlambilimi ve yardımcı teknolojilerle uyumluluğu geliştiren hiyerarşik bir yapı sağlar.
+
+#### S: Sağlanan C# kodu, bir PDF belgesinde yapı öğelerini nasıl oluşturur?
+
+A: Kod örneği, gruplandırma öğeleri (parçalar, bölümler ve div'ler gibi), blok düzeyi öğeler (paragraflar ve başlıklar gibi), satır içi düzey öğeler (açıklık, alıntı, not) dahil olmak üzere çeşitli yapı öğeleri türlerinin nasıl oluşturulacağını gösterir. ) ve çizim öğeleri (şekiller ve formüller gibi). Bu yapı öğeleri, içeriğin düzenlenmesine yardımcı olur.
+
+####  S: kullanarak belgenin başlığını ve dilini ayarlamak neden önemlidir?`SetTitle` and `SetLanguage` methods?
+
+ A: kullanarak belgenin başlığını ve dilini ayarlama`SetTitle` Ve`SetLanguage`yöntemler, belge erişilebilirliğini ve anlamını geliştirir. Başlık, belgenin amacının kısa bir açıklamasını sağlarken, dil özelliği dile özgü işlemeyi ve erişilebilirliği geliştirir.
+
+####  S: gibi öğeleri gruplama nasıl yapılır?`PartElement` and `SectElement`, contribute to the structure of the PDF document?
+
+Y: Gruplandırma öğeleri, PDF belgesi içinde hiyerarşik bir yapı oluşturarak ilgili içeriği mantıksal olarak düzenlemenize ve gruplandırmanıza olanak tanır. Bu, gezinmeyi geliştirir ve kullanıcılar için net bir yapı sağlar.
+
+#### S: Blok düzeyinde ve satır içi düzeyde yapı öğeleri nelerdir ve nasıl farklılık gösterirler?
+
+C: Blok düzeyindeki yapı öğeleri, paragraflar ve başlıklar gibi daha büyük içerik bloklarını temsil ederken, satır içi düzeydeki öğeler, bir paragraf veya başlık içindeki açıklıklar, alıntılar ve notlar gibi metin bölümlerini temsil eder. İçeriğin hiyerarşisini ve ilişkilerini tanımlamaya yardımcı olurlar.
+
+####  S: Sanat eseri yapı öğeleri nasıl`FigureElement` and `FormulaElement`, contribute to the document?
+
+C: Sanat eseri yapı öğeleri, belgeye çizimler, şekiller ve matematiksel formüller eklemenizi sağlar. Görsel ve matematiksel içeriği dahil etmek için yapılandırılmış bir yol sağlarlar.
+
+#### S: Listeler, tablolar veya ek açıklamalar gibi diğer yapı öğesi türlerini oluşturmak için benzer teknikleri kullanabilir miyim?
+
+C: Evet, listeler, tablolar, ek açıklamalar, referanslar ve daha fazlası gibi diğer yapı öğesi türlerini oluşturmak için benzer teknikleri kullanabilirsiniz. Aspose.PDF, çok çeşitli yapı öğesi oluşturma yöntemleri sunar.
+
+####  S: etiketli PDF belgesini kullanarak nasıl kaydedilir?`Save` method ensure the preservation of structure elements?
+
+ C:`Save` yöntem, PDF belgesini oluşturulan yapı öğeleriyle birlikte kaydederek, belgenin hiyerarşik ve anlamsal yapısının erişilebilirlik ve gezinme için korunmasını sağlar.
+
+#### S: Yapı öğeleri, erişilebilirlik ve yardımcı teknolojilerle uyumluluk açısından PDF belgelerine ne gibi faydalar sağlar?
+
+Y: Yapı öğeleri, belgeye anlamlı bir yapı ve anlambilim sağlayarak erişilebilirliği artırır. Bu, ekran okuyucular gibi yardımcı teknolojilerin belge içeriğini engelli kullanıcılara daha etkili bir şekilde yorumlamasını ve iletmesini sağlar.
+
+#### S: PDF belgelerimde farklı türde yapı öğelerini nasıl daha fazla özelleştirip birleştirebilirim?
+
+Y: Aspose.PDF tarafından sağlanan uygun oluşturma yöntemlerini kullanarak yapı öğelerini birleştirebilir ve özelleştirebilirsiniz. İyi yapılandırılmış ve düzenli bir PDF belgesi oluşturmak için farklı öğeler ve özellikleriyle denemeler yapın.

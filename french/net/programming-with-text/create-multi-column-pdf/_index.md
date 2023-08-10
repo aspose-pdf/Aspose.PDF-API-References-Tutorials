@@ -65,7 +65,7 @@ page.Paragraphs.Add(graph1);
 ```
 
 ## Étape 8 : Ajoutez un texte d'en-tête avec la mise en forme HTML
- Créé un`HtmlFragment`objet et définissez son contenu sur le texte HTML souhaité. Ensuite, ajoutez le fragment au`Paragraphs` collecte de la page.
+ Créé un`HtmlFragment` objet et définissez son contenu sur le texte HTML souhaité. Ensuite, ajoutez le fragment au`Paragraphs` collecte de la page.
 
 ```csharp
 string s = "<font face=\"Times New Roman\" size=4>" +
@@ -115,7 +115,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 // Spécifiez les informations de marge gauche pour le fichier PDF
 doc.PageInfo.Margin.Left = 40;
-// Spécifiez les informations de marge droite pour le fichier PDF
+//Spécifiez les informations de marge droite pour le fichier PDF
 doc.PageInfo.Margin.Right = 40;
 Page page = doc.Pages.Add();
 Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500, 2);
@@ -162,4 +162,4 @@ Console.WriteLine("\nMulti column pdf file created successfully.\nFile saved at 
 ```
 
 ## Conclusion
-Vous avez créé avec succès un PDF multi-colonnes à l'aide d'Aspose.PDF pour .NET. Le fichier PDF résultant se trouve maintenant dans le chemin du fichier de sortie spécifié.
+Vous avez créé avec succès un PDF multi-colonnes à l'aide d'Aspose.PDF pour .NET. Le fichier PDF résultant peut maintenant être trouvé dans le chemin du fichier de sortie spécifié.

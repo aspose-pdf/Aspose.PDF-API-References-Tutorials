@@ -27,7 +27,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## 2. Adım: Bir PDF Belgesi ve Sayfası Oluşturun
 
-Ardından, yeni bir PDF belgesi oluşturuyoruz ve bunu kullanarak ona bir sayfa ekliyoruz.`Document` sınıf ve`Page` Aspose.PDF kitaplığından sınıf.
+ Ardından, yeni bir PDF belgesi oluşturuyoruz ve bunu kullanarak ona bir sayfa ekliyoruz.`Document` sınıf ve`Page` Aspose.PDF kitaplığından sınıf.
 
 ```csharp
 Document doc = new Document();
@@ -111,7 +111,7 @@ marginInfo.Top = 90;
 marginInfo.Bottom = 50;
 marginInfo.Left = 50;
 marginInfo.Right = 50;
-//marginInfo örneğini sec1.PageInfo'nun Margin özelliğine atayın
+// marginInfo örneğini sec1.PageInfo'nun Margin özelliğine atayın
 page.PageInfo.Margin = marginInfo;
 HeaderFooter hfFirst = new HeaderFooter();
 page.Header = hfFirst;

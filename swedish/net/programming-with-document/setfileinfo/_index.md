@@ -1,8 +1,8 @@
 ---
-title: Ställ in filinformation
-linktitle: Ställ in filinformation
+title: Ställ in filinformation i PDF-fil
+linktitle: Ställ in filinformation i PDF-fil
 second_title: Aspose.PDF för .NET API Referens
-description: Lär dig hur du använder Aspose.PDF för .NET för att ställa in filinformation i dina PDF-dokument med denna steg-för-steg-guide.
+description: Lär dig hur du använder Aspose.PDF för .NET för att ställa in filinformation i PDF-fil med denna steg-för-steg-guide.
 type: docs
 weight: 310
 url: /sv/net/programming-with-document/setfileinfo/
@@ -90,3 +90,17 @@ Console.WriteLine("\nFile informations setup successfully.\nFile saved at " + da
 ## Slutsats
 
 Sammanfattningsvis erbjuder Aspose.PDF för .NET ett enkelt och effektivt sätt att ställa in filinformation för PDF-dokument. Genom att följa de ovan nämnda stegen kan du enkelt ställa in önskade filinformationsvärden för dina PDF-dokument med hjälp av C#-källkoden.
+
+### Vanliga frågor för inställd filinformation i PDF-fil
+
+#### F: Kan jag ställa in ytterligare filinformationsegenskaper som inte nämns i exemplet?
+
+ S: Ja, du kan ställa in ytterligare filinformationsegenskaper med hjälp av`DocumentInfo` objekt i Aspose.PDF för .NET. De`DocumentInfo`class tillhandahåller olika egenskaper som låter dig ställa in ytterligare information såsom producent, version och anpassade egenskaper.
+
+#### F: Är det möjligt att hämta filinformationen från ett befintligt PDF-dokument?
+
+ S: Ja, du kan hämta filinformationen från ett befintligt PDF-dokument med Aspose.PDF för .NET. För att göra detta kan du använda`DocumentInfo` objekt för att komma åt filinformationsegenskaperna och läsa informationen som lagras i PDF-dokumentet.
+
+#### F: Ändrar inställningen av filinformation det ursprungliga PDF-dokumentet?
+
+S: Nej, att ställa in filinformationen med Aspose.PDF för .NET ändrar inte det ursprungliga PDF-dokumentet. Istället skapar den ett nytt PDF-dokument med den uppdaterade filinformationen. Det ursprungliga PDF-dokumentet förblir oförändrat.

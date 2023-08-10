@@ -98,3 +98,29 @@ Console.WriteLine("\nLength dashed successfully in black and white.\nFile saved 
 ## Conclusión
 
 En este tutorial, explicamos cómo configurar la longitud de los guiones usando Aspose.PDF para .NET. Ahora puede usar este conocimiento para crear líneas con patrones de guiones personalizados en sus archivos PDF.
+
+## preguntas frecuentes
+
+#### P: ¿Cuál es el propósito de este tutorial?
+
+R: El propósito de este tutorial es guiarlo a través del proceso de configuración de la longitud de los guiones para las líneas usando Aspose.PDF para .NET. Aprenderá a crear líneas con patrones de guiones personalizados en sus archivos PDF.
+
+#### P: ¿Qué requisitos previos se requieren antes de comenzar?
+
+R: Antes de comenzar, asegúrese de haber instalado la biblioteca Aspose.PDF y configurar su entorno de desarrollo. También se recomienda una comprensión básica de la programación en C#.
+
+#### P: ¿Cómo especifico el directorio para guardar el archivo PDF?
+
+R: Modifique la variable "dataDir" en el código fuente provisto para indicar el directorio donde desea guardar el archivo PDF resultante.
+
+#### P: ¿Cómo creo una línea con patrones de guiones personalizados?
+
+ R: El tutorial muestra la creación de un objeto Línea y la configuración de su color, matriz de guiones y fase de guiones mediante el`GraphInfo` objeto. Modifique estos ajustes para lograr el patrón de guiones deseado.
+
+#### P: ¿Puedo personalizar el color de la línea?
+
+ R: Sí, puede personalizar el color de la línea configurando el`Color` propiedad de la`GraphInfo` objeto asociado a la Línea.
+
+#### P: ¿Cómo guardo el documento PDF después de configurar la longitud del guión?
+
+ R: Después de configurar el objeto Línea con el patrón de guiones deseado, puede guardar el documento PDF resultante usando el`doc.Save(dataDir + "DashLength_out.pdf");` línea en el código fuente proporcionado.

@@ -7,7 +7,6 @@ type: docs
 weight: 220
 url: /fr/net/programming-with-forms/radio-button/
 ---
-
 Dans ce tutoriel, nous allons vous montrer comment ajouter un bouton radio dans un document PDF en utilisant Aspose.PDF pour .NET. Nous expliquerons étape par étape le code source C # pour vous guider tout au long de ce processus.
 
 ## Étape 1 : Préparation
@@ -87,7 +86,7 @@ try
 	// Ajouter un bouton radio à l'objet de formulaire de l'objet Document
 	pdfDocument.Form.Add(radio);
 	dataDir = dataDir + "RadioButton_out.pdf";
-	// Enregistrez le fichier PDF
+	//Enregistrez le fichier PDF
 	pdfDocument.Save(dataDir);
 	Console.WriteLine("\nRadio button field added successfully.\nFile saved at " + dataDir);
 }
@@ -100,3 +99,26 @@ catch (Exception ex)
 ## Conclusion
 
 Dans ce didacticiel, nous avons appris à ajouter un bouton radio dans un document PDF à l'aide d'Aspose.PDF pour .NET. En suivant ces étapes, vous pouvez facilement créer un bouton radio et le placer sur une page spécifique de votre document PDF.
+
+
+### FAQ
+
+#### Q : Puis-je personnaliser l'apparence du bouton radio, comme sa taille et sa couleur ?
+
+ R : Oui, vous pouvez personnaliser l'apparence du bouton radio à l'aide de la`Rectangle` les coordonnées de l'objet pour définir sa taille et sa position. Aspose.PDF pour .NET vous permet d'ajuster l'apparence du bouton radio en fonction de vos besoins.
+
+#### Q : Puis-je ajouter plusieurs boutons radio avec différents groupes sur la même page ?
+
+R : Oui, vous pouvez ajouter plusieurs boutons radio avec différents groupes sur la même page. Chaque groupe de boutons radio peut avoir un nom unique et une seule option dans chaque groupe peut être sélectionnée à la fois.
+
+#### Q : Comment puis-je ajouter une étiquette ou une description textuelle aux options du bouton radio ?
+
+ R : Pour ajouter une étiquette ou une description textuelle aux options du bouton radio, vous pouvez utiliser le`TextStamp`classe de Aspose.PDF pour .NET pour superposer du texte sur le document PDF à des coordonnées spécifiques.
+
+#### Q : Aspose.PDF pour .NET est-il compatible avec toutes les versions de .NET Framework ?
+
+R : Oui, Aspose.PDF pour .NET est compatible avec toutes les versions de .NET Framework, y compris .NET Core et .NET Standard.
+
+#### Q : Puis-je contrôler par programme la sélection d'une option de bouton radio dans le document PDF ?
+
+ R : Oui, vous pouvez contrôler par programme la sélection d'une option de bouton radio à l'aide de la`IsSelected` propriété de la`RadioButtonOption` classe. Cette propriété vous permet de définir une option spécifique comme étant sélectionnée.

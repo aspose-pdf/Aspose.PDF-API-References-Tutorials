@@ -1,13 +1,12 @@
 ---
-title: Casillas de verificación agrupadas
-linktitle: Casillas de verificación agrupadas
+title: Casillas de verificación agrupadas en documento PDF
+linktitle: Casillas de verificación agrupadas en documento PDF
 second_title: Referencia de API de Aspose.PDF para .NET
-description: Cree fácilmente casillas de verificación agrupadas en sus documentos PDF con Aspose.PDF para .NET.
+description: Cree fácilmente casillas de verificación agrupadas en documentos PDF con Aspose.PDF para .NET.
 type: docs
 weight: 170
 url: /es/net/programming-with-forms/grouped-check-boxes/
 ---
-
 En este tutorial, le mostraremos cómo crear casillas de verificación agrupadas en un documento PDF utilizando Aspose.PDF para .NET. Explicaremos el código fuente de C# paso a paso para guiarlo a través de este proceso.
 
 ## Paso 1: Preparación
@@ -42,9 +41,9 @@ Cree una instancia de un objeto RadioButtonField con el número de página como 
 RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
 ```
 
-## Paso 5: Agregar opciones de botón de radio
+## Paso 5: Agregar opciones de botón de opción
 
-Agregue opciones de botones de radio usando el objeto RadioButtonOptionField y especifique su posición usando el objeto Rectangle:
+Agregue opciones de botón de radio usando el objeto RadioButtonOptionField y especifique su posición usando el objeto Rectangle:
 
 ```csharp
 RadioButtonOptionField opt1 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(0, 0, 20, 20));
@@ -134,3 +133,25 @@ catch (Exception ex)
 ## Conclusión
 
 En este tutorial, aprendimos a crear casillas de verificación agrupadas en un documento PDF usando Aspose.PDF para .NET. Siguiendo estos pasos, puede agregar fácilmente opciones de botones de opción personalizados y agruparlos en sus documentos PDF usando Aspose.PDF.
+
+### Preguntas frecuentes
+
+#### P: ¿Qué son las casillas de verificación agrupadas en un documento PDF?
+
+R: Las casillas de verificación agrupadas en un documento PDF se refieren a un conjunto de opciones de botones de radio que se agrupan. Los botones de radio permiten a los usuarios seleccionar solo una opción de un grupo de opciones mutuamente excluyentes. Cuando se selecciona un botón de opción, los demás del mismo grupo se deseleccionan automáticamente. Este comportamiento de agrupación es útil cuando desea presentar a los usuarios múltiples opciones pero limitar su selección a una sola opción.
+
+#### P: ¿Puedo personalizar la apariencia de las casillas de verificación agrupadas en Aspose.PDF para .NET?
+
+R: Sí, puede personalizar la apariencia de las casillas de verificación agrupadas en Aspose.PDF para .NET. La API proporciona varias opciones para establecer el estilo, el borde y la apariencia de las opciones de los botones de opción. Puede definir la posición de cada opción, elegir entre diferentes estilos de cuadro (p. ej., cuadrado, círculo, cruz) y ajustar las propiedades del borde para lograr la representación visual deseada.
+
+#### P: ¿Cómo agrego casillas de verificación agrupadas a una página específica en un documento PDF?
+
+R: Para agregar casillas de verificación agrupadas a una página específica en un documento PDF, debe crear una instancia`RadioButtonField` objeto con el número de página deseado como argumento. Luego, crea`RadioButtonOptionField` objetos que representan cada opción de botón de radio y especificar su posición usando el`Rectangle` objeto. Finalmente, agregue estas opciones a la`RadioButtonField` y personalice su apariencia según sea necesario antes de agregar el`RadioButtonField` al formulario del documento.
+
+#### P: ¿Puedo agregar varios grupos de casillas de verificación a un solo documento PDF?
+
+ R: Sí, puede agregar varios grupos de casillas de verificación a un solo documento PDF. Cada grupo debe tener un único`RadioButtonField` objeto, y el`RadioButtonOptionField` los objetos dentro de cada grupo deben compartir la misma página y nombres únicos para sus opciones. Esto asegura que los botones de radio dentro de cada grupo funcionen correctamente y que las selecciones sean mutuamente excluyentes.
+
+#### P: ¿Se admiten las casillas de verificación agrupadas en todos los visores y aplicaciones de PDF?
+
+R: Sí, las casillas de verificación agrupadas son compatibles con todos los visores y aplicaciones de PDF compatibles con los estándares. La especificación de PDF define los botones de opción y su comportamiento de agrupación, lo que los hace universalmente reconocidos en el formato PDF. Sin embargo, es esencial probar la funcionalidad en diferentes visores de PDF para garantizar un comportamiento uniforme en varias plataformas.

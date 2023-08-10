@@ -86,3 +86,44 @@ document.Save(dataDir + "PDFwithTaggedImage.pdf");
 
 In this tutorial, you learned how to create a PDF document with a tagged image using Aspose.PDF for .NET. Tagged images add additional, structured information to your PDF document.
 
+### FAQ's
+
+#### Q: What is the purpose of creating a PDF document with a tagged image using Aspose.PDF for .NET?
+
+A: Creating a PDF document with a tagged image using Aspose.PDF for .NET allows you to add tagged images to the document's content. Tagged images provide structured information, such as alt text and titles, enhancing accessibility and organization.
+
+#### Q: How does the Aspose.PDF library assist in creating a PDF document with a tagged image?
+
+A: Aspose.PDF for .NET is a robust library that provides functionalities for creating, manipulating, and converting PDF documents programmatically. In this tutorial, the library's tagged content structure features are used to add a tagged image to the PDF document.
+
+#### Q: What are the prerequisites for creating a PDF document with a tagged image using Aspose.PDF for .NET?
+
+A: Before you begin, ensure that you have Visual Studio installed with the .NET framework and have the Aspose.PDF library for .NET referenced in your project.
+
+#### Q: How does the provided C# code create a PDF document with a tagged image?
+
+A: The code demonstrates how to create a PDF document, define a tagged image element, and add it to the document's content. The tagged image includes alt text, a title, and a tag using methods provided by Aspose.PDF.
+
+#### Q: Can I use different image formats for the tagged image?
+
+A: Yes, you can use different image formats for the tagged image, such as JPEG, PNG, GIF, etc. The code example provided in the tutorial uses a JPEG image, but you can replace it with the path to an image file in your preferred format.
+
+#### Q: How is the alternative text (alt text) used in tagged images?
+
+A: Alt text provides a textual description of the image, which is read aloud by screen readers for visually impaired users. In the provided code, the alt text is set using the `AlternativeText` property of the `IllustrationElement` representing the tagged image.
+
+#### Q: How does the `SetTitle` method contribute to the PDF document's tagged image?
+
+A: The `SetTitle` method sets the title of the PDF document's tagged content, providing additional context for the tagged image. This title can help identify the purpose or subject of the tagged content.
+
+#### Q: Can I customize the tag and title of the tagged image?
+
+A: Yes, you can customize the tag and title of the tagged image using the `SetTag` and `Title` methods of the `IllustrationElement`. The code example demonstrates how to set the tag to "Fig" and the title to "Picture 1."
+
+#### Q: How can I ensure that the tagged image is accessible and compliant with accessibility standards?
+
+A: By using the tagged content structure features of Aspose.PDF and providing alt text and other relevant information, you contribute to the accessibility of the tagged image. Ensuring compliance with accessibility standards involves following best practices for alt text and document structure.
+
+#### Q: Is it possible to add multiple tagged images to the same PDF document using similar techniques?
+
+A: Yes, you can add multiple tagged images to the same PDF document using similar techniques. You would create additional `IllustrationElement` instances for each tagged image and customize their properties as needed.

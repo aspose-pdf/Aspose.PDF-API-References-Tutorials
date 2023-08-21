@@ -7,7 +7,6 @@ type: docs
 weight: 30
 url: /net/programming-with-text/add-html-ordered-list-into-documents/
 ---
-
 In this tutorial, you will learn how to use the Aspose.PDF for .NET library to add an HTML ordered list into a document. The code provided demonstrates the necessary steps to accomplish this task.
 
 ## Requirements
@@ -90,3 +89,52 @@ doc.Save(outFile);
 You have successfully added an HTML ordered list into a document using Aspose.PDF for .NET. The resulting PDF file can now be found at the specified output file path.
 
 Remember to customize the HTML content and adjust the code according to your specific requirements.
+
+### FAQ's
+
+#### Q: What is the purpose of this tutorial?
+
+A: This tutorial aims to guide you through the process of adding an HTML ordered list into a document using the Aspose.PDF for .NET library. It provides step-by-step instructions and code snippets to help you achieve this task.
+
+#### Q: Which namespaces do I need to import for this tutorial?
+
+A: You need to import the following namespaces at the top of your code file:
+
+```csharp
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+```
+
+#### Q: How do I specify the document directory and output file path?
+
+A: In the code, locate the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory. Also, find the line `string outFile = dataDir + "AddHTMLOrderedListIntoDocuments_out.pdf";` and replace `"AddHTMLOrderedListIntoDocuments_out.pdf"` with your desired output PDF file name.
+
+#### Q: Can I customize the HTML content being added to the document?
+
+A: Absolutely! In Step 5, you'll create an `HtmlFragment` object named `t` that holds the HTML content. You can modify the HTML content within the backticks to suit your requirements.
+
+#### Q: How do I add the HTML ordered list to a page in the document?
+
+A: In Step 7, you'll add the `HtmlFragment` object (`t`) to the page using the `Add` method of the `Paragraphs` collection. This will seamlessly integrate the HTML ordered list into the document.
+
+#### Q: How do I save the resulting PDF document?
+
+A: After adding the HTML content and arranging it on a page, you can save the PDF document using the `Save` method of the `Document` object. Make sure to provide the correct output file path you set earlier.
+
+#### Q: Can you provide a summary of the sample source code for reference?
+
+A: Certainly! Here's a summarized version of the sample source code provided in this tutorial:
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+string outFile = dataDir + "AddHTMLOrderedListIntoDocuments_out.pdf";
+Document doc = new Document();
+HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>First</li><li>Second</li><li>Third</li><li>Fourth</li><li>Fifth</li></ul>Text after the list.<br/>Next line<br/>Last line</body>`");
+Page page = doc.Pages.Add();
+page.Paragraphs.Add(t);
+doc.Save(outFile);
+```
+
+#### Q: What is the key takeaway from this tutorial?
+
+A: By following this tutorial, you've successfully learned how to leverage the Aspose.PDF for .NET library to incorporate an HTML ordered list into a document. This newfound knowledge can be applied to enhance your document creation and manipulation processes.

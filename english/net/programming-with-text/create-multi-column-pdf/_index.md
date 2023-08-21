@@ -7,7 +7,6 @@ type: docs
 weight: 110
 url: /net/programming-with-text/create-multi-column-pdf/
 ---
-
 This tutorial will guide you through the process of creating a multi column PDF using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
 
 ## Requirements
@@ -163,3 +162,54 @@ Console.WriteLine("\nMulti column pdf file created successfully.\nFile saved at 
 
 ## Conclusion
 You have successfully created a multi column PDF using Aspose.PDF for .NET. The resulting PDF file can now be found at the specified output file path.
+
+### FAQ's
+
+#### Q: What is the focus of this tutorial?
+
+This tutorial is focused on guiding you through the process of creating a multi-column PDF using the Aspose.PDF for .NET library. The provided C# source code demonstrates the necessary steps to achieve this.
+
+#### Q: Which namespaces should I import for this tutorial?
+
+A: In the code file where you want to create a multi-column PDF, import the following namespaces at the beginning of the file:
+
+```csharp
+using Aspose.Pdf;
+using Aspose.Pdf.Drawing;
+```
+
+#### Q: How do I specify the document directory?
+
+A: In the code, find the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+
+#### Q: How do I create a new Document instance?
+
+A: In Step 4, you'll instantiate a new `Document` object using the provided code.
+
+#### Q: How do I set the page margins?
+
+A: In Step 5, you'll use the `PageInfo.Margin` property of the `Document` to specify the left and right margin information for the PDF file.
+
+#### Q: How do I add a page to the document?
+
+A: In Step 6, you'll add a new page to the document using the `Add` method of the `Pages` collection.
+
+#### Q: How do I create a Graph object and add a line?
+
+A: In Step 7, you'll create a new `Graph` object, add a line to it, and then add the `Graph` object to the `Paragraphs` collection of the page.
+
+#### Q: How do I add heading text with HTML formatting?
+
+A: In Step 8, you'll create an `HtmlFragment` object and set its content to the desired HTML text, then add the fragment to the `Paragraphs` collection of the page.
+
+#### Q: How do I create a FloatingBox with multiple columns?
+
+A: In Step 9, you'll create a `FloatingBox` object with multiple columns and column spacing, then add text fragments and a line to the `Paragraphs` collection of the `FloatingBox`.
+
+#### Q: How do I save the PDF document?
+
+A: In Step 10, you'll save the PDF document using the `Save` method of the `Document` object.
+
+#### Q: What is the main takeaway from this tutorial?
+
+A: By following this tutorial, you've learned how to create a multi-column PDF document using Aspose.PDF for .NET. This can be useful for displaying content in a structured and organized layout.

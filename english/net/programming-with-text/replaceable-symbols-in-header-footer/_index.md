@@ -7,7 +7,6 @@ type: docs
 weight: 320
 url: /net/programming-with-text/replaceable-symbols-in-header-footer/
 ---
-
 In this tutorial, we will explain how to use replaceable symbols in the header and footer of a PDF document using the Aspose.PDF library for .NET. We will go through the step-by-step process of creating a PDF, setting margins, adding header and footer with replaceable symbols, and saving the PDF using the provided C# source code.
 
 ## Prerequisites
@@ -205,3 +204,51 @@ Console.WriteLine("\nSymbols replaced successfully in header and footer.\nFile s
 ## Conclusion
 
 In this tutorial, you have learned how to use replaceable symbols in the header and footer of a PDF document using the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can create a PDF, set margins, add header and footer with replaceable symbols, and save the PDF.
+
+### FAQ's
+
+#### Q: What is the purpose of the "Replaceable Symbols In Header Footer" tutorial?
+
+A: The "Replaceable Symbols In Header Footer" tutorial aims to guide you through the process of using the Aspose.PDF library for .NET to add replaceable symbols to the header and footer of a PDF document. Replaceable symbols allow you to dynamically replace specific placeholders with actual values when generating the PDF.
+
+#### Q: What are replaceable symbols in the context of a PDF header and footer?
+
+A: Replaceable symbols are placeholders that you can insert into the header and footer of a PDF document. These symbols act as dynamic placeholders for values that can be filled in at runtime, such as page numbers, dates, and custom information.
+
+#### Q: Why would I want to use replaceable symbols in a PDF header and footer?
+
+A: Replaceable symbols in the header and footer are useful when you want to include dynamic information in your PDF documents, such as page numbers, dates, or other variable data that may change when the document is generated.
+
+#### Q: How can I set the margins for the PDF page?
+
+A: You can set the margins for the PDF page using the `MarginInfo` class and assigning it to the `Margin` property of the `PageInfo` of the page. Adjust the margin values as needed.
+
+#### Q: How do I add replaceable symbols to the header and footer?
+
+A: You can add replaceable symbols by creating a `HeaderFooter` object for the header and footer of the page. Then, you can add `TextFragment` objects with the desired text, including replaceable symbols, to the `Paragraphs` collection of the `HeaderFooter` object.
+
+#### Q: Can I customize the appearance of the replaceable symbols?
+
+A: Yes, you can customize the appearance of the replaceable symbols by modifying the properties of the `TextFragment` objects that contain the symbols. You can set properties such as font, font size, color, alignment, and line spacing.
+
+#### Q: What kind of replaceable symbols can I use?
+
+A: You can use a variety of replaceable symbols, such as:
+
+- `$p`: Current page number.
+- `$P`: Total number of pages.
+- `$d`: Current date.
+- `$t`: Current time.
+- Custom placeholders you define.
+
+#### Q: Can I include other text and formatting around the replaceable symbols?
+
+A: Yes, you can include other text and formatting around the replaceable symbols within the `TextFragment` objects. This allows you to create more complex headers and footers that incorporate dynamic and static content.
+
+#### Q: How can I save the generated PDF document?
+
+A: To save the generated PDF document, you can use the `Save` method of the `Document` class. Provide the desired output file path and name as an argument.
+
+#### Q: Is a valid Aspose License required for this tutorial?
+
+A: Yes, a valid Aspose License is required to execute the code successfully in this tutorial. You can obtain a full license or a 30-day temporary license from the Aspose website.

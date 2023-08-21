@@ -1,14 +1,13 @@
 ---
-title: Hidden Text Block
-linktitle: Hidden Text Block
+title: Hidden Text Block In PDF File
+linktitle: Hidden Text Block In PDF File
 second_title: Aspose.PDF for .NET API Reference
-description: Learn how to create hidden text blocks in PDF using Aspose.PDF for .NET.
+description: Learn how to create hidden text blocks in PDF file using Aspose.PDF for .NET.
 type: docs
 weight: 230
 url: /net/programming-with-text/hidden-text-block/
 ---
-
-In this tutorial, we will explain how to create a hidden text block using the Aspose.PDF library for .NET. A hidden text block is a floating text that becomes visible when the mouse cursor hovers over a specific area. We will go through the step-by-step process of creating the hidden text block using the provided C# source code.
+In this tutorial, we will explain how to create a hidden text block in PDF file using the Aspose.PDF library for .NET. A hidden text block is a floating text that becomes visible when the mouse cursor hovers over a specific area. We will go through the step-by-step process of creating the hidden text block using the provided C# source code.
 
 ## Requirements
 
@@ -153,3 +152,43 @@ document.Save(outputFile);
 ## Conclusion
 
 In this tutorial, you have learned how to create a hidden text block using the Aspose.PDF for .NET library. By following the step-by-step guide, you can generate a PDF document with a hidden text field that becomes visible when the mouse cursor hovers over a specific area. You can customize the appearance and behavior of the hidden text block according to your requirements.
+
+### FAQ's
+
+#### Q: What is the purpose of the "Hidden Text Block In PDF File" tutorial?
+
+A: The "Hidden Text Block In PDF File" tutorial explains how to create a hidden text block in a PDF file using the Aspose.PDF library for .NET. A hidden text block is a floating text that becomes visible when the mouse cursor hovers over a specific area. This tutorial provides a step-by-step guide using C# source code.
+
+#### Q: Why would I want to create a hidden text block in a PDF file?
+
+A: Creating a hidden text block can be useful for interactive PDF documents where you want to provide additional information or context that only becomes visible when a user hovers their mouse cursor over a designated area.
+
+#### Q: How do I set up the document directory?
+
+A: To set up the document directory:
+
+1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where you want to save the generated PDF file.
+
+#### Q: How do I create a sample document and add a text fragment to it?
+
+A: In the tutorial, you use the `Document` class to create a sample PDF document and add a text fragment. This text fragment serves as the trigger for displaying the hidden text block.
+
+#### Q: How do I find the text fragment that triggers the hidden text block?
+
+A: The tutorial demonstrates how to use a `TextFragmentAbsorber` object to find the text fragment that triggers the display of the hidden text block. It searches for a specific text string within the PDF document.
+
+#### Q: How do I create and customize the hidden text field?
+
+A: You create a `TextBoxField` object to represent the hidden text field. The tutorial provides code to set various properties such as position, value, appearance, and behavior of the hidden text field.
+
+#### Q: How do I create an invisible button associated with the hidden text block?
+
+A: An invisible button field is created using the `ButtonField` class. This button field is positioned on top of the trigger text fragment and has actions associated with mouse enter and exit events. These actions control the visibility of the hidden text block.
+
+#### Q: Can I customize the appearance of the hidden text block and the trigger area?
+
+A: Yes, you can customize various properties of both the hidden text field and the invisible button, including font, color, size, and positioning.
+
+#### Q: How do I save the modified document with the hidden text block?
+
+A: The tutorial demonstrates how to save the modified document using the `Save` method of the `Document` class.

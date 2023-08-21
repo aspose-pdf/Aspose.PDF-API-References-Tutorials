@@ -1,13 +1,12 @@
 ---
-title: Add HTML Using DOM And Overwrite
+title: Add HTML Using DOM And PDF Overwrite
 linktitle: Add HTML Using DOM And Overwrite
 second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add HTML content using DOM in Aspose.PDF for .NET.
+description: Learn how to add HTML content using DOM and PDF overwrite in Aspose.PDF for .NET.
 type: docs
 weight: 50
 url: /net/programming-with-text/add-html-using-dom-and-overwrite/
 ---
-
 This tutorial will guide you through the process of adding HTML content using DOM (Document Object Model) in Aspose.PDF for .NET. Additionally, you will learn how to overwrite styles for the HTML content. The provided C# source code demonstrates the necessary steps.
 
 ## Requirements
@@ -114,3 +113,85 @@ doc.Save(dataDir);
 
 ## Conclusion
 You have successfully added HTML content using DOM in Aspose.PDF for .NET and overwritten the styles for the HTML content. The resulting PDF file can now be found at the specified output file path.
+
+### FAQ's
+
+#### Q: What is the focus of this tutorial?
+
+A: This tutorial is designed to walk you through the process of adding HTML content to a PDF document using the Document Object Model (DOM) in Aspose.PDF for .NET. Additionally, you will learn how to overwrite styles for the HTML content, allowing you to customize its appearance. The tutorial provides C# source code snippets to demonstrate the required steps.
+
+#### Q: Which namespaces do I need to import for this tutorial?
+
+A: In the code file where you intend to add HTML content, import the following namespaces at the beginning of the file:
+
+```csharp
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+```
+
+#### Q: How do I specify the document directory and output file path?
+
+A: In the code, locate the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+
+#### Q: How do I create a Document object?
+
+A: In Step 4, you'll instantiate a new `Document` object using the following line of code:
+
+```csharp
+Document doc = new Document();
+```
+
+#### Q: How do I add a page to the document?
+
+A: In Step 5, you'll add a new page to the document using the `Add` method of the `Pages` collection:
+
+```csharp
+Page page = doc.Pages.Add();
+```
+
+#### Q: How can I set HTML content using the DOM?
+
+A: In Step 6, you'll create an `HtmlFragment` object and assign your desired HTML content to it. The HTML content is assigned to the variable `title`:
+
+```csharp
+HtmlFragment title = new HtmlFragment("<p style='font-family: Verdana'><b><i>Table contains text</i></b></p>");
+```
+
+#### Q: How can I overwrite the styles of the HTML content?
+
+A: In Step 7, you'll overwrite the styles of the HTML content by modifying the `TextState` properties of the `HtmlFragment` object. For example, you can change the font family to "Arial" and set the font size to 20:
+
+```csharp
+title.TextState = new TextState("Arial");
+title.TextState.FontSize = 20;
+```
+
+#### Q: Can I adjust the margin of the HTML content?
+
+A: Yes, in Step 8, you can adjust the bottom and top margins of the HTML fragment as needed:
+
+```csharp
+title.Margin.Bottom = 10;
+title.Margin.Top = 400;
+```
+
+#### Q: How do I add the HtmlFragment to the PDF document?
+
+A: In Step 9, you'll add the `HtmlFragment` object (`title`) to the paragraphs collection of the page:
+
+```csharp
+page.Paragraphs.Add(title);
+```
+
+#### Q: How do I save the resulting PDF document?
+
+A: After adding the HTML content and customizing its styles, use the `Save` method of the `Document` object to save the PDF document:
+
+```csharp
+dataDir = dataDir + "AddHTMLUsingDOMAndOverwrite_out.pdf";
+doc.Save(dataDir);
+```
+
+#### Q: What is the key takeaway from this tutorial?
+
+A: By following this tutorial, you've successfully learned how to incorporate HTML content using the Document Object Model (DOM) in Aspose.PDF for .NET. Additionally, you've gained the ability to overwrite styles to tailor the appearance of the HTML content within the resulting PDF document.

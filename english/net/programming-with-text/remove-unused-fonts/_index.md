@@ -1,14 +1,13 @@
 ---
-title: Remove Unused Fonts
-linktitle: Remove Unused Fonts
+title: Remove Unused Fonts In PDF File
+linktitle: Remove Unused Fonts In PDF File
 second_title: Aspose.PDF for .NET API Reference
-description: Learn how to remove unused fonts from a PDF document using Aspose.PDF for .NET.
+description: Learn how to remove unused fonts in PDF file using Aspose.PDF for .NET.
 type: docs
 weight: 300
 url: /net/programming-with-text/remove-unused-fonts/
 ---
-
-In this tutorial, we will explain how to remove unused fonts from a PDF document using the Aspose.PDF library for .NET. We will go through the step-by-step process of loading a PDF, identifying and removing unused fonts, and saving the updated PDF using the provided C# source code.
+In this tutorial, we will explain how to remove unused fonts in PDF file using the Aspose.PDF library for .NET. We will go through the step-by-step process of loading a PDF, identifying and removing unused fonts, and saving the updated PDF using the provided C# source code.
 
 ## Requirements
 
@@ -86,3 +85,49 @@ catch (Exception ex)
 ## Conclusion
 
 In this tutorial, you have learned how to remove unused fonts from a PDF document using the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can load a PDF, identify and remove unused fonts, and save the updated PDF.
+
+### FAQ's
+
+#### Q: What is the purpose of the "Remove Unused Fonts In PDF File" tutorial?
+
+A: The "Remove Unused Fonts In PDF File" tutorial explains how to use the Aspose.PDF library for .NET to remove unused fonts from a PDF document. The tutorial guides you through the process of loading a PDF, identifying and removing unused fonts, and saving the updated PDF.
+
+#### Q: Why would I want to remove unused fonts from a PDF document?
+
+A: Removing unused fonts from a PDF document can help reduce the file size and optimize the document for better performance. This is particularly useful when dealing with PDFs that contain embedded fonts that are not actually used in the document's content.
+
+#### Q: How do I set up the document directory?
+
+A: To set up the document directory:
+
+1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where your PDF files are located.
+
+#### Q: How do I remove unused fonts from a PDF document using the Aspose.PDF library?
+
+A: The tutorial guides you through the process step by step:
+
+1. Open the PDF document using the `Document` class.
+2. Create a `TextFragmentAbsorber` object with `TextEditOptions` set to `FontReplace.RemoveUnusedFonts`.
+3. Accept the absorber to identify and remove unused fonts from the PDF.
+4. Iterate through all `TextFragments` and set the font to a desired font.
+5. Save the updated PDF document.
+
+#### Q: What is the purpose of the `TextEditOptions.FontReplace.RemoveUnusedFonts` parameter?
+
+A: The `TextEditOptions.FontReplace.RemoveUnusedFonts` parameter instructs the `TextFragmentAbsorber` to identify and remove unused fonts from the PDF document.
+
+#### Q: Can I replace unused fonts with a font of my choice?
+
+A: Yes, you can modify the code to replace unused fonts with a font of your choice. In the provided sample code, the font "Arial, Bold" is used as a replacement.
+
+#### Q: How does the `TextFragmentAbsorber` work to remove unused fonts?
+
+A: The `TextFragmentAbsorber` is configured with the `TextEditOptions.FontReplace.RemoveUnusedFonts` parameter, which identifies unused fonts within the text fragments of the PDF. After absorption, you can iterate through the `TextFragments` and set their fonts to desired replacement fonts.
+
+#### Q: What is the expected outcome of executing the provided code?
+
+A: By following the tutorial and running the provided C# code, you will remove unused fonts from the input PDF document and save the updated version as the output PDF file.
+
+#### Q: Can I modify the code to remove fonts only from specific pages or areas?
+
+A: The provided code focuses on removing unused fonts from the entire PDF document. If you want to target specific pages or regions for font removal, you would need to modify the approach and use more complex logic to identify unused fonts in those areas.

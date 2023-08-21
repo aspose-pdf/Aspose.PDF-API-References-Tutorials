@@ -7,7 +7,6 @@ type: docs
 weight: 270
 url: /net/programming-with-text/rearrange-contents-using-text-replacement/
 ---
-
 In this tutorial, we will explain how to rearrange contents in a PDF document by using text replacement with the Aspose.PDF library for .NET. We will go through the step-by-step process of loading a PDF, searching for specific text fragments, replacing the text, and saving the modified PDF using the provided C# source code.
 
 ## Requirements
@@ -96,3 +95,43 @@ catch (Exception ex)
 ## Conclusion
 
 In this tutorial, you have learned how to rearrange contents in a PDF document by using text replacement with the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can search for specific text fragments, customize their appearance, and replace the text in a PDF document.
+
+### FAQ's
+
+#### Q: What is the purpose of the "Rearrange Contents Using Text Replacement" tutorial?
+
+A: The "Rearrange Contents Using Text Replacement" tutorial demonstrates how to use the Aspose.PDF library for .NET to rearrange contents in a PDF document by performing text replacement. The tutorial provides a step-by-step guide and C# source code to help you load a PDF, search for specific text fragments, replace the text, and save the modified PDF.
+
+#### Q: Why would I want to rearrange contents in a PDF document?
+
+A: Rearranging contents in a PDF document can be useful for various purposes, such as updating text, reformatting layout, or making corrections. This technique allows you to dynamically modify the content of a PDF while preserving its structure and appearance.
+
+#### Q: How do I set up the document directory?
+
+A: To set up the document directory:
+
+1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where your PDF files are located.
+
+#### Q: How do I perform text replacement in a PDF document?
+
+A: The tutorial guides you through the process of searching for specific text fragments in a PDF using the `TextFragmentAbsorber` class. It demonstrates how to customize the appearance of the text fragments and replace their content.
+
+#### Q: Can I customize the font, size, and color of the replaced text?
+
+A: Yes, you can customize the font, size, and color of the replaced text by modifying the `TextState` properties of the `TextFragment` object. The tutorial provides an example of how to set the font, font size, and foreground color of the text.
+
+#### Q: How do I save the modified PDF document?
+
+A: After performing text replacement and customizing the text fragments, you can save the modified PDF document using the `Save` method of the `Document` class. Provide the desired output file path as an argument to the `Save` method.
+
+#### Q: What is the expected output of this tutorial?
+
+A: By following the tutorial and executing the provided C# code, you will generate a modified PDF document where specific text fragments have been replaced and customized according to your specifications.
+
+#### Q: Can I use different regular expressions for text search?
+
+A: Yes, you can use different regular expressions to search for specific text fragments in the PDF document. The example provided in the tutorial demonstrates how to create a `TextFragmentAbsorber` object with a specific regular expression to search for and replace text.
+
+#### Q: Is a valid Aspose License required for this tutorial?
+
+A: Yes, a valid Aspose License is required for this tutorial to work correctly. You can purchase a full license or obtain a 30-day temporary license from the Aspose website.

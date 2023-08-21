@@ -1,14 +1,13 @@
 ---
-title: Add Tooltip To Text
-linktitle: Add Tooltip To Text
+title: Add Tooltip To Text In PDF File
+linktitle: Add Tooltip To Text In PDF File
 second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add tooltips to text in a PDF document using Aspose.PDF for .NET.
+description: Learn how to add tooltips to text in PDF file using Aspose.PDF for .NET.
 type: docs
 weight: 90
 url: /net/programming-with-text/add-tooltip-to-text/
 ---
-
-This tutorial will guide you through the process of adding tooltips to text in a PDF document using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+This tutorial will guide you through the process of adding tooltips to text in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
 
 ## Requirements
 Before you begin, ensure that you have the following:
@@ -139,3 +138,47 @@ document.Save(outputFile);
 
 ## Conclusion
 You have successfully added tooltips to text in a PDF document using Aspose.PDF for .NET. The resulting PDF file can now be found at the specified output file path.
+
+## FAQs
+
+#### Q: What is the focus of this tutorial?
+
+A: This tutorial focuses on adding tooltips to text within a PDF file using the Aspose.PDF for .NET library. The provided C# source code demonstrates the steps required to achieve this.
+
+#### Q: Which namespaces need to be imported for this tutorial?
+
+A: In the code file where you want to add tooltips to text, import the following namespaces at the beginning of the file:
+
+```csharp
+using Aspose.Pdf;
+using Aspose.Pdf.Forms;
+using Aspose.Pdf.Text;
+```
+
+#### Q: How do I specify the document directory?
+
+A: In the code, find the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+
+#### Q: How can I create a sample document with text?
+
+A: In Step 4, you'll create a new `Document` object and add pages with text fragments. The code provided adds two text fragments with respective tooltip text.
+
+#### Q: How do I open the document and find the text fragments?
+
+A: In Step 5, you'll load the created document using the `Document` constructor and find the text fragments requiring tooltips using the `TextFragmentAbsorber`.
+
+#### Q: How do I add tooltips to the text fragments?
+
+A: In Step 6, you'll loop through the extracted text fragments and create invisible buttons at their positions. The tooltip text is assigned to the `AlternateName` property of the `ButtonField`, which is added to the document's form.
+
+#### Q: How do I repeat the process for additional text fragments with long tooltips?
+
+A: For text fragments with long tooltips, repeat Steps 5 and 6. Modify the search criteria and tooltip text accordingly.
+
+#### Q: How do I save the modified document?
+
+A: In Step 8, you'll save the modified PDF document using the `Save` method of the `Document` object.
+
+#### Q: What is the main takeaway from this tutorial?
+
+A: By following this tutorial, you've learned how to enhance your PDF document by adding tooltips to text using Aspose.PDF for .NET. This can provide valuable additional information for readers when they interact with the PDF content.

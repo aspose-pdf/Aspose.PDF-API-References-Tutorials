@@ -1,14 +1,13 @@
 ---
-title: Placing Text Around Image
-linktitle: Placing Text Around Image
+title: Placing Text Around Image In PDF File
+linktitle: Placing Text Around Image In PDF File
 second_title: Aspose.PDF for .NET API Reference
-description: Learn how to place text around an image in a PDF document using Aspose.PDF for .NET.
+description: Learn how to place text around an image in PDF file using Aspose.PDF for .NET.
 type: docs
 weight: 260
 url: /net/programming-with-text/placing-text-around-image/
 ---
-
-In this tutorial, we will explain how to place text around an image in a PDF document using the Aspose.PDF library for .NET. We will go through the step-by-step process of creating a table, adding an image, and positioning text around the image using the provided C# source code.
+In this tutorial, we will explain how to place text around an image in PDF file using the Aspose.PDF library for .NET. We will go through the step-by-step process of creating a table, adding an image, and positioning text around the image using the provided C# source code.
 
 ## Requirements
 
@@ -164,3 +163,47 @@ doc.Save(dataDir + "PlacingTextAroundImage_out.pdf");
 ## Conclusion
 
 In this tutorial, you have learned how to place text around an image in a PDF document using the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can create a table, add an image, and position text around the image in a PDF document.
+
+### FAQ's
+
+#### Q: What is the purpose of the "Placing Text Around Image In PDF File" tutorial?
+
+A: The "Placing Text Around Image In PDF File" tutorial demonstrates how to use the Aspose.PDF library for .NET to place text around an image in a PDF document. The tutorial provides a step-by-step guide and C# source code to help you create a table, add an image, and position text around the image.
+
+#### Q: Why would I want to place text around an image in a PDF document?
+
+A: Placing text around an image enhances the visual presentation of your PDF documents, making them more engaging and informative. This technique is often used in documents, brochures, reports, and other materials where you want to combine images and text in an aesthetically pleasing manner.
+
+#### Q: How do I set up the document directory?
+
+A: To set up the document directory:
+
+1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where you want to save the generated PDF file.
+
+#### Q: How do I create a table and add an image to it?
+
+A: The tutorial guides you through the process of creating a table using the `Table` class and adding an image to the table using the `Image` class. You will specify the image file path, height, and width before adding it to a table cell.
+
+#### Q: How do I position text around the image?
+
+A: To position text around the image, you will create HTML-formatted text using the `HtmlFragment` class. This text will contain both a title and body text. You will then add this HTML text to a table cell that is adjacent to the image cell.
+
+#### Q: Can I customize the appearance of the text and image?
+
+A: Yes, you can customize the appearance of the text and image using HTML tags and properties. For example, you can set font sizes, colors, styles, and alignment for the text. Additionally, you can adjust the size and dimensions of the image.
+
+#### Q: How do I save the PDF document?
+
+A: After adding the image and text to the table, you can save the PDF document using the `Save` method of the `Document` class. Provide the desired output file path as an argument to the `Save` method.
+
+#### Q: What is the expected output of this tutorial?
+
+A: By following the tutorial and executing the provided C# code, you will generate a PDF document that demonstrates how to place text around an image. The output document will contain a table with an image and text positioned around it.
+
+#### Q: Can I use different image formats other than JPG?
+
+A: Yes, you can use different image formats supported by the Aspose.PDF library, such as PNG, BMP, GIF, and more. When creating the `Image` object, specify the file path of the desired image format.
+
+#### Q: Is a valid Aspose License required for this tutorial?
+
+A: Yes, a valid Aspose License is required for this tutorial to work correctly. You can purchase a full license or obtain a 30-day temporary license from the Aspose website.

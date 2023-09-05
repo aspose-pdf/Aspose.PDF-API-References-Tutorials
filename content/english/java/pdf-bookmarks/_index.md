@@ -18,6 +18,7 @@ Learn how to set bookmarks to the start of PDF pages using Aspose.PDF for Java. 
 ### [Delete Bookmarks from PDF Files](./delete-bookmarks-pdf-files/)
 Learn how to delete bookmarks from PDF files effortlessly using Aspose.PDF for Java. Our step-by-step guide and sample code make it simple.
 ### [View Expanded Bookmarks in PDFs](./view-expanded-bookmarks-pdfs/)
+Learn how to view expanded bookmarks in PDFs using Aspose.PDF for Java. Enhance document navigation with step-by-step guidance.
 ### [Retrieve Bookmarks from PDF Documents](./retrieve-bookmarks-pdf-documents/)
 Learn how to retrieve PDF bookmarks efficiently using Aspose.PDF for Java in this comprehensive guide.
 ### [Update Bookmarks in PDFs](./update-bookmarks-pdfs/)

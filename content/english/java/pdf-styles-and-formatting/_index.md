@@ -14,3 +14,5 @@ url: /java/pdf-styles-and-formatting/
 ### [Structure Elements Properties in PDF using Java](./structure-elements-properties-in-pdf-using-java/)
 ### [Style Table Cell in PDF using Java](./style-table-cell-in-pdf-using-java/)
 ### [Style Table Element in PDF using Java](./style-table-element-in-pdf-using-java/)
+### [Style Table Row in PDF using Java](./style-table-row-in-pdf-using-java/)
+### [Style Text Structure in PDF using Java](./style-text-structure-in-pdf-using-java/)

@@ -5,5 +5,5 @@ second_title: Aspose.PDF Java PDF Processing API
 description: 
 type: docs
 weight: 13
-url: /java/pdf-text-extraction/text-block-structure-elements-in-pdf-using-java/
+url: /java/pdf-structure-elements/text-block-structure-elements-in-pdf-using-java/
 ---

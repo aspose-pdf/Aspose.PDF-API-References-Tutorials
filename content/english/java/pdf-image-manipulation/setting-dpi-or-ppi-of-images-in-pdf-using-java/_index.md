@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF Processing API
 description: Optimize PDF image quality with our step-by-step guide on setting DPI/PPI in PDF using Java. Learn how to enhance your documents for print and digital display.
 type: docs
 weight: 12
-url: /java/pdf-metadata-and-properties/setting-dpi-or-ppi-of-images-in-pdf-using-java/
+url: /java/pdf-image-manipulation/setting-dpi-or-ppi-of-images-in-pdf-using-java/
 ---
 
 ## Introduction to Setting DPI or PPI of Images in PDF using Java

@@ -5,5 +5,5 @@ second_title: Aspose.PDF Java PDF Processing API
 description: 
 type: docs
 weight: 14
-url: /java/pdf-text-manipulation/convert-pdf-pages-to-bmp-image-using-java/
+url: /java/pdf-image-manipulation/convert-pdf-pages-to-bmp-image-using-java/
 ---

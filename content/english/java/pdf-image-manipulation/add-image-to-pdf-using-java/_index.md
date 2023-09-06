@@ -5,5 +5,5 @@ second_title: Aspose.PDF Java PDF Processing API
 description: 
 type: docs
 weight: 10
-url: /java/pdf-text-manipulation/add-image-to-pdf-using-java/
+url: /java/pdf-image-manipulation/add-image-to-pdf-using-java/
 ---

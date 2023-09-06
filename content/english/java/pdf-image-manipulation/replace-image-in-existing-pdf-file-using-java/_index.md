@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF Processing API
 description: Learn how to replace images in PDF files with Java using Aspose.PDF for Java. Step-by-step guide with code examples for seamless image replacement.
 type: docs
 weight: 11
-url: /java/pdf-metadata-and-properties/replace-image-in-existing-pdf-file-using-java/
+url: /java/pdf-image-manipulation/replace-image-in-existing-pdf-file-using-java/
 ---
 
 ## Introduction to Replace Image in Existing PDF File using Java

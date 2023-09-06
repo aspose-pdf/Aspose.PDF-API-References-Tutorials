@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF Processing API
 description: Learn how to identify colored or black and white images inside PDFs using Aspose.PDF for Java. Our step-by-step guide simplifies the process.
 type: docs
 weight: 10
-url: /java/pdf-metadata-and-properties/identify-if-image-inside-pdf-is-colored-or-black-and-white-in-java/
+url: /java/pdf-image-manipulation/identify-if-image-inside-pdf-is-colored-or-black-and-white-in-java/
 ---
 
 ## Introduction

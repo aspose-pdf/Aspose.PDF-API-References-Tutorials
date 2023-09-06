@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF Processing API
 description: Learn how to extract image properties from PDFs in Java using Aspose.PDF for Java. Step-by-step guide with source code. Enhance your PDF processing skills today!
 type: docs
 weight: 23
-url: /java/pdf-attachments/extract-image-properties-from-pdf-in-java/
+url: /java/pdf-images/extract-image-properties-from-pdf-in-java/
 ---
 
 Aspose.PDF for Java is a powerful library that allows you to work with PDF documents in Java applications. In this step-by-step guide, we will explore how to extract image properties from a PDF document using Aspose.PDF for Java. We will provide you with source code examples to make the process easy to understand.

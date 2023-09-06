@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF Processing API
 description: Learn how to add HTML ordered lists into PDF documents using Aspose.PDF for Java. Step-by-step guide with source code.
 type: docs
 weight: 11
-url: /java/pdf-validation-and-verification/add-html-ordered-list-into-documents-in-java/
+url: /java/pdf-page-manipulation/add-html-ordered-list-into-documents-in-java/
 ---
 
 In this tutorial, we will guide you through the process of adding an HTML ordered list into documents using Aspose.PDF for Java. Aspose.PDF for Java is a powerful library that allows you to create, manipulate, and convert PDF documents in Java applications. 

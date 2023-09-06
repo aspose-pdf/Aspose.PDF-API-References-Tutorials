@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF Processing API
 description: Learn how to add HTML strings to PDF documents using the Aspose.PDF for Java library. This step-by-step guide will show you the process with source code examples. 
 type: docs
 weight: 12
-url: /java/pdf-validation-and-verification/add-html-string-using-dom-in-java/
+url: /java/pdf-page-manipulation/add-html-string-using-dom-in-java/
 ---
 
 # Introduction

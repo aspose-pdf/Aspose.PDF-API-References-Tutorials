@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF Processing API
 description: Learn how to manipulate HTML content in Java using the DOM (Document Object Model) and overwrite existing content. Follow this step-by-step guide with source code examples using Aspose.PDF for Java.
 type: docs
 weight: 13
-url: /java/pdf-validation-and-verification/add-html-using-dom-and-overwrite-content-in-java/
+url: /java/pdf-page-manipulation/add-html-using-dom-and-overwrite-content-in-java/
 ---
 
 ## Introduction

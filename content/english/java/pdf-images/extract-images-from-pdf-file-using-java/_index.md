@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF Processing API
 description: Learn how to extract images from a PDF file using Java with Aspose.PDF for Java. Step-by-step guide with source code. Unlock PDF image extraction now.
 type: docs
 weight: 24
-url: /java/pdf-attachments/extract-images-from-pdf-file-using-java/
+url: /java/pdf-images/extract-images-from-pdf-file-using-java/
 ---
 
 In this step-by-step guide, we will explore how to extract images from a PDF file using Java and the Aspose.PDF for Java library. Image extraction from PDFs can be a valuable task in various applications, from content analysis to image manipulation. By the end of this tutorial, you'll be able to efficiently extract images from PDFs using Java.

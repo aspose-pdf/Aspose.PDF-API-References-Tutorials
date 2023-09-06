@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF Processing API
 description: Learn how to delete images from a PDF file using Java with Aspose.PDF for Java. Step-by-step guide with source code for efficient image removal in PDFs.
 type: docs
 weight: 22
-url: /java/pdf-attachments/delete-images-from-pdf-file-using-java/
+url: /java/pdf-images/delete-images-from-pdf-file-using-java/
 ---
 
 In this step-by-step guide, we will explore how to delete images from a PDF file using Java programming language with the help of Aspose.PDF for Java. Aspose.PDF is a powerful library that allows developers to work with PDF files programmatically, making it an ideal choice for this task.

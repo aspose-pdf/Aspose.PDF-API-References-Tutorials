@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF Processing API
 description: Learn how to extract embedded image names from PDF files using Java and Aspose.PDF for Java. Step-by-step guide with source code for efficient PDF data extraction.
 type: docs
 weight: 14
-url: /java/pdf-attachments/get-name-of-images-embedded-in-pdf-file-using-java/
+url: /java/pdf-images/get-name-of-images-embedded-in-pdf-file-using-java/
 ---
 ## Introduction
 

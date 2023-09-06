@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF Processing API
 description: Learn how to insert rotated text into a PDF document using Java. Follow this detailed step-by-step guide with code examples to enhance your PDFs with rotated text. 
 type: docs
 weight: 14
-url: /java/pdf-validation-and-verification/add-rotated-text-in-pdf-using-java/
+url: /java/pdf-page-manipulation/add-rotated-text-in-pdf-using-java/
 ---
 
 ## Introduction

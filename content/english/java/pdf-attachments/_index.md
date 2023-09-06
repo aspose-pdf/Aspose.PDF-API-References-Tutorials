@@ -17,3 +17,8 @@ Learn how to remove attachments from PDFs in Java with Aspose.PDF. Step-by-step 
 Learn how to retrieve PDF attachments in Java using Aspose.PDF. Step-by-step guide with code examples for managing PDF document attachments.
 ### [List All Attachments in PDF Documents](./list-all-attachments-pdf-documents/)
 Discover How to List Attachments in PDFs using Aspose.PDF for Java. Step-by-Step Guide for Extracting PDF Attachments with Ease.
+### [Delete Image from PDF Resources using Java](./delete-image-from-pdf-resources-using-java/)
+### [Delete Images from a PDF File using Java](./delete-images-from-pdf-file-using-java/)
+### [Extract Image Properties from PDF in Java](./extract-image-properties-from-pdf-in-java/)
+### [Extract Images from a PDF File using Java](./extract-images-from-pdf-file-using-java/)
+### [Get Name of Images Embedded in PDF File using Java](./get-name-of-images-embedded-in-pdf-file-using-java/)

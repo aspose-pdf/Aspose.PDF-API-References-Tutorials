@@ -59,3 +59,8 @@ Effortlessly convert XML to PDF with Aspose.PDF for Java. Streamline data repres
 Learn how to convert XPS to PDF files effortlessly using Aspose.PDF for Java. Our step-by-step guide simplifies the process.
 ### [Transform XSL-FO to PDF Format](./transform-xsl-fo-to-pdf-format/)
 Transform XSL-FO to PDF with Aspose.PDF for Java. Step-by-step guide, source code, and FAQs for efficient data conversion.
+### [Convert PDF to HTML with Font Substitution](./convert-pdf-to-html-with-font-substitution/)
+### [Validate PDF UA Standards](./validate-pdf-ua-standards/)
+### [Adding JavaScript using DOM in PDF](./adding-javascript-using-dom-in-pdf/)
+### [Add Layers to a PDF File using Java](./add-layers-to-pdf-file-using-java/)
+### [Add Table of Contents to an Existing PDF in Java](./add-table-of-contents-to-existing-pdf-in-java/)

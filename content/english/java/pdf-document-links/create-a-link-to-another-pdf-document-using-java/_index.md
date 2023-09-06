@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF Processing API
 description: Learn how to create PDF document links in Java effortlessly with Aspose.PDF for Java. Step-by-step guide for PDF interactivity.
 type: docs
 weight: 14
-url: /java/pdf-metadata-and-properties/create-a-link-to-another-pdf-document-using-java/
+url: /java/pdf-document-links/create-a-link-to-another-pdf-document-using-java/
 ---
 
 ## Introduction to Create a Link to Another PDF Document using Java

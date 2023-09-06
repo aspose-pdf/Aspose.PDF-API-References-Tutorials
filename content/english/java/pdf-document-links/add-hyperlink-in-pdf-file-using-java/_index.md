@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF Processing API
 description: Learn how to add hyperlinks to PDF files using Java with step-by-step instructions and source code. Enhance your PDF documents with interactivity.
 type: docs
 weight: 13
-url: /java/pdf-metadata-and-properties/add-hyperlink-in-pdf-file-using-java/
+url: /java/pdf-document-links/add-hyperlink-in-pdf-file-using-java/
 ---
 
 ## Introduction to Add Hyperlink in PDF File using Java

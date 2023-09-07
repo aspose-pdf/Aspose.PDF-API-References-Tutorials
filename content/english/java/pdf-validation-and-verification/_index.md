@@ -10,3 +10,4 @@ url: /java/pdf-validation-and-verification/
 
 ## PDF Validation and Verification Tutorials
 ### [Validate PDF in Java](./validate-pdf-in-java/)
+Learn how to validate PDF documents in Java using Aspose.PDF, ensuring the integrity and compliance of your PDF files.

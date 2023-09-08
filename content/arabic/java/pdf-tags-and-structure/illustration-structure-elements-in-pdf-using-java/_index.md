@@ -98,7 +98,7 @@ pdfDocument.save("Illustration.pdf");
 
  إذا كانت لديك أي أسئلة أو كنت بحاجة إلى مزيد من المساعدة، فلا تتردد في استكشاف[Aspose.PDF لوثائق جافا](https://reference.aspose.com/pdf/java/) لمزيد من التفاصيل المتعمقة.
 
-##الأسئلة الشائعة
+## الأسئلة الشائعة
 
 ### ما هو Aspose.PDF لجافا؟
    Aspose.PDF for Java هي مكتبة قوية للعمل مع مستندات PDF برمجياً في تطبيقات Java.

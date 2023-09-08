@@ -7,7 +7,6 @@ type: docs
 weight: 12
 url: /it/java/pdf-text-extraction/tagged-pdf-content-extraction-using-java/
 ---
-# Estrazione del contenuto PDF con tag utilizzando Java e Aspose.PDF per Java
 
 PDF contrassegnati sono strutturati in modo da renderli accessibili alle persone con disabilità e agevolare anche l'estrazione automatizzata dei contenuti. In questa guida passo passo, esploreremo come estrarre il contenuto dai PDF con tag utilizzando Java e la libreria Aspose.PDF per Java. Forniremo esempi di codice sorgente per rendere il processo chiaro e accessibile.
 

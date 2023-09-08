@@ -115,7 +115,7 @@ pdfDocument.save("modified-document.pdf");
 
 Bu eğitimde, Java ve Aspose.PDF for Java kütüphanesini kullanarak mevcut bir PDF belgesine nasıl tablo ekleneceğini öğrendik. Tablonun görünümünü ve içeriğini özel ihtiyaçlarınızı karşılayacak şekilde özelleştirebilirsiniz. Tablolar, verileri PDF belgeleri içinde yapılandırılmış bir biçimde sunmak için değerli bir araçtır.
 
-# SSS'ler
+## SSS'ler
 
 ### Aspose.PDF for Java'yı nasıl kurabilirim?
 

@@ -133,15 +133,13 @@ Se riscontri problemi durante questo processo, consulta la documentazione Aspose
 
 In questa guida passo passo, abbiamo imparato come eliminare le immagini da un file PDF utilizzando Java con l'aiuto di Aspose.PDF per Java. Questa potente libreria semplifica il processo e consente una manipolazione efficiente del contenuto PDF. Se hai bisogno di oscurare informazioni sensibili o ottimizzare file PDF, Aspose.PDF per Java è uno strumento prezioso per il tuo toolkit.
 
-# Domande frequenti
+## Domande frequenti
 
 ### Come posso installare Aspose.PDF per Java?
 
  L'installazione di Aspose.PDF per Java è semplice. Visitare il[Aspose.PDF per la pagina di download di Java](https://releases.aspose.com/pdf/java/) e seguire le istruzioni di installazione fornite per il proprio ambiente di sviluppo specifico.
 
-### Qual è il processo per caricare un file PDF in Java utilizzando Aspose.PDF
-
-?
+### Qual è il processo per caricare un file PDF in Java utilizzando Aspose.PDF?
 
  Per caricare un file PDF in Java utilizzando Aspose.PDF, è possibile utilizzare il file`Document` classe fornita dalla biblioteca. Crea semplicemente un file`Document` oggetto e passa il percorso del tuo file PDF come parametro, come mostrato nell'esempio in questa guida.
 

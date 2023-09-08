@@ -91,5 +91,5 @@ public class PDFValidator {
 ### Aspose.PDF for Java 可以免费使用吗？
    虽然 Aspose.PDF for Java 是一个商业库，但它提供了用于评估目的的免费试用版。
 
-## 在哪里可以访问有关 Aspose.PDF for Java 的更广泛的信息？
+### 在哪里可以访问有关 Aspose.PDF for Java 的更广泛的信息？
    您可以仔细阅读 API 文档：[https://reference.aspose.com/pdf/java/](https://reference.aspose.com/pdf/java/)详尽的见解和示例。

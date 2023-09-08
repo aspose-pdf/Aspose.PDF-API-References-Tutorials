@@ -46,7 +46,7 @@ Erfahren Sie, wie Sie mit Aspose.PDF für Java interaktive PDF-Formulare erstell
 ### [PDF-Tabellen](./pdf-tables/)
 Entdecken Sie PDF-Tabellen mit Aspose.PDF für Java. Erstellen und bearbeiten Sie mühelos Tabellen in Ihren PDF-Dokumenten. 
 ### [PDF-Strukturelemente](./pdf-structure-elements/)
-Entdecken Sie die Tutorials zu Aspose.PDF für Java, um PDF-Strukturelemente zu beherrschen. Erstellen Sie mühelos organisierte, barrierefreie PDFs.
+Entdecken Sie Aspose.PDF für Java-Tutorials, um PDF-Strukturelemente zu beherrschen. Erstellen Sie mühelos organisierte, barrierefreie PDFs.
 ### [PDF-Tags und -Struktur](./pdf-tags-and-structure/)
 Beherrschen Sie PDF-Tags und -Strukturen in Java mit Aspose.PDF für Java-Tutorials. Erstellen Sie mühelos barrierefreie und organisierte PDFs.
 ### [PDF-Stile und Formatierung](./pdf-styles-and-formatting/)

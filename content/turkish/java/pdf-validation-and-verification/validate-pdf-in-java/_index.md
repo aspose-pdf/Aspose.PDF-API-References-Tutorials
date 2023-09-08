@@ -91,5 +91,5 @@ Aspose.PDF for Java kullanılarak Java'daki PDF'lerin doğrulanması, belgelerin
 ### Aspose.PDF for Java ücretsiz olarak kullanılabilir mi?
    Aspose.PDF for Java ticari bir kütüphane olmasına rağmen, değerlendirme amacıyla ücretsiz deneme süresini uzatmaktadır.
 
-## Aspose.PDF for Java ile ilgili daha kapsamlı bilgiye nereden ulaşabilirim?
+### Aspose.PDF for Java ile ilgili daha kapsamlı bilgiye nereden ulaşabilirim?
     API belgelerini şu adreste inceleyebilirsiniz:[https://reference.aspose.com/pdf/java/](https://reference.aspose.com/pdf/java/) Kapsamlı bilgiler ve örnekler için.

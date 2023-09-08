@@ -63,7 +63,7 @@ Die extrahierten Bilder können an Ihrem gewünschten Ort gespeichert werden. Im
 
 In dieser Schritt-für-Schritt-Anleitung haben wir gelernt, wie man mit Java mit der Bibliothek Aspose.PDF für Java Bilder aus einer PDF-Datei extrahiert. Dies kann eine wertvolle Fähigkeit sein, wenn Sie mit PDF-Dokumenten in Java-Anwendungen arbeiten. Denken Sie daran, in der Dokumentation zu Aspose.PDF für Java nach weiteren erweiterten Funktionen und Anpassungsoptionen zu suchen.
 
-# FAQs
+## FAQs
 
 ### Wie installiere ich Aspose.PDF für Java?
 

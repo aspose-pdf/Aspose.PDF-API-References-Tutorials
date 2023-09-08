@@ -91,5 +91,5 @@ La convalida dei PDF in Java utilizzando Aspose.PDF per Java costituisce una mis
 ### Aspose.PDF per Java è disponibile per l'utilizzo gratuito?
    Sebbene Aspose.PDF per Java sia una libreria commerciale, estende una prova gratuita a scopo di valutazione.
 
-## Dove posso accedere a informazioni più complete su Aspose.PDF per Java?
+### Dove posso accedere a informazioni più complete su Aspose.PDF per Java?
     Puoi consultare la documentazione dell'API all'indirizzo[https://reference.aspose.com/pdf/java/](https://reference.aspose.com/pdf/java/) per approfondimenti ed esempi esaustivi.

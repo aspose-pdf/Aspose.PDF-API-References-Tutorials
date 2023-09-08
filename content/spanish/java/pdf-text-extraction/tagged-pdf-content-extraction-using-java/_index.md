@@ -7,7 +7,6 @@ type: docs
 weight: 12
 url: /es/java/pdf-text-extraction/tagged-pdf-content-extraction-using-java/
 ---
-# Extracción de contenido PDF etiquetado utilizando Java y Aspose.PDF para Java
 
 Los archivos PDF etiquetados están estructurados de manera que sean accesibles para personas con discapacidades y también ayudan en la extracción automatizada de contenido. En esta guía paso a paso, exploraremos cómo extraer contenido de archivos PDF etiquetados usando Java y la biblioteca Aspose.PDF para Java. Proporcionaremos ejemplos de código fuente para que el proceso sea claro y accesible.
 

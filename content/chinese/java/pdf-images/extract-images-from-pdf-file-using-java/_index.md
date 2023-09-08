@@ -63,7 +63,7 @@ for (Page page : pdfDocument.getPages()) {
 
 在本分步指南中，我们学习了如何使用 Java 和 Aspose.PDF for Java 库从 PDF 文件中提取图像。在 Java 应用程序中处理 PDF 文档时，这可能是一项宝贵的技能。请记住查看 Aspose.PDF for Java 文档以获取更多高级功能和自定义选项。
 
-# 常见问题解答
+## 常见问题解答
 
 ### 如何安装 Aspose.PDF for Java？
 

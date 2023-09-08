@@ -115,7 +115,7 @@ pdfDocument.save("modified-document.pdf");
 
 Dans ce didacticiel, nous avons appris comment ajouter un tableau à un document PDF existant à l'aide de Java et de la bibliothèque Aspose.PDF pour Java. Vous pouvez personnaliser l'apparence et le contenu du tableau pour répondre à vos besoins spécifiques. Les tableaux sont un outil précieux pour présenter les données dans un format structuré dans des documents PDF.
 
-# FAQ
+## FAQ
 
 ### Comment puis-je installer Aspose.PDF pour Java ?
 

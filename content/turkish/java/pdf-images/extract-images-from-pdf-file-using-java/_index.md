@@ -63,7 +63,7 @@ for (Page page : pdfDocument.getPages()) {
 
 Bu adım adım kılavuzda, Aspose.PDF for Java kütüphanesini kullanarak Java kullanarak bir PDF dosyasından görüntülerin nasıl çıkarılacağını öğrendik. Bu, Java uygulamalarında PDF belgeleriyle çalışırken değerli bir beceri olabilir. Daha gelişmiş özellikler ve özelleştirme seçenekleri için Aspose.PDF for Java belgelerine göz atmayı unutmayın.
 
-# SSS
+## SSS
 
 ### Aspose.PDF for Java'yı nasıl yüklerim?
 

@@ -133,15 +133,13 @@ pdfDocument.save("modified.pdf");
 
 在本分步指南中，我们学习了如何在 Aspose.PDF for Java 的帮助下使用 Java 从 PDF 文件中删除图像。这个功能强大的库简化了流程并允许高效地操作 PDF 内容。无论您需要编辑敏感信息还是优化 PDF 文件，Aspose.PDF for Java 都是您工具包中的一个有价值的工具。
 
-# 常见问题解答
+## 常见问题解答
 
 ### 如何安装 Aspose.PDF for Java？
 
 安装 Aspose.PDF for Java 非常简单。参观[Aspose.PDF for Java 下载页面](https://releases.aspose.com/pdf/java/)并遵循为您的特定开发环境提供的安装说明。
 
-### 在Java中使用Aspose.PDF加载PDF文件的过程是什么
-
-？
+### 在Java中使用Aspose.PDF加载PDF文件的过程是怎样的？
 
 要使用 Aspose.PDF 在 Java 中加载 PDF 文件，您可以使用`Document`图书馆提供的课程。只需创建一个`Document`对象并将 PDF 文件的路径作为参数传递，如本指南中的示例所示。
 

@@ -32,7 +32,7 @@ using Aspose.Pdf.Text;
  Dans le code, localisez la ligne qui dit`string dataDir = "YOUR DOCUMENT DIRECTORY";` et remplacer`"YOUR DOCUMENT DIRECTORY"` avec le chemin d'accès au répertoire où sont stockés vos documents.
 
 ## Étape 4 : Créer un exemple de document avec du texte
- Créer un nouveau`Document` objet et ajoutez des pages avec des fragments de texte. Dans le code fourni, deux fragments de texte sont ajoutés au document avec le texte d'info-bulle correspondant.
+ Créer un nouveau`Document` objet et ajouter des pages avec des fragments de texte. Dans le code fourni, deux fragments de texte sont ajoutés au document avec le texte d'info-bulle correspondant.
 
 ```csharp
 Document doc = new Document();

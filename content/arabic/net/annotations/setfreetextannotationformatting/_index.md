@@ -1,120 +1,120 @@
 ---
-title: Set Free Text Annotation Formatting
-linktitle: Set Free Text Annotation Formatting
-second_title: Aspose.PDF for .NET API Reference
-description: This article provides a step-by-step guide on how to create a free text annotation and specify its contents using Aspose.PDF for .NET
+title: تعيين تنسيق التعليقات التوضيحية للنص مجانًا
+linktitle: تعيين تنسيق التعليقات التوضيحية للنص مجانًا
+second_title: Aspose.PDF لمرجع .NET API
+description: توفر هذه المقالة دليلاً خطوة بخطوة حول كيفية إنشاء تعليق توضيحي للنص الحر وتحديد محتوياته باستخدام Aspose.PDF لـ .NET
 type: docs
 weight: 140
 url: /ar/net/annotations/setfreetextannotationformatting/
 ---
-Aspose.PDF for .NET is a powerful and easy-to-use PDF document manipulation API that allows you to work with PDF files programmatically in your .NET applications. One of the features provided by Aspose.PDF for .NET is the ability to set free text annotation formatting in PDF documents. In this article, we will walk you through the step-by-step process of setting free text annotation formatting using Aspose.PDF for .NET.
+Aspose.PDF for .NET عبارة عن واجهة برمجة تطبيقات قوية وسهلة الاستخدام لمعالجة مستندات PDF تتيح لك العمل مع ملفات PDF برمجيًا في تطبيقات .NET الخاصة بك. إحدى الميزات التي يوفرها Aspose.PDF لـ .NET هي القدرة على ضبط تنسيق التعليقات التوضيحية النصية المجانية في مستندات PDF. في هذه المقالة، سنرشدك خلال العملية خطوة بخطوة لإعداد تنسيق التعليقات التوضيحية للنص الحر باستخدام Aspose.PDF لـ .NET.
 
-## Prerequisites
+## المتطلبات الأساسية
 
-Before we get started, make sure that you have the following prerequisites:
+قبل أن نبدأ، تأكد من توفر المتطلبات الأساسية التالية:
 
-- Microsoft Visual Studio 2010 or later
-- Aspose.PDF for .NET
-- Basic knowledge of C#
+- مايكروسوفت فيجوال ستوديو 2010 أو الأحدث
+- Aspose.PDF ل.NET
+- المعرفة الأساسية بـ C#
 
 
 
-## Step 1: Create a new C# console application
+## الخطوة 1: إنشاء تطبيق وحدة تحكم C# جديد
 
-First, create a new C# console application in Microsoft Visual Studio. To create a new console application, select "File" > "New" > "Project" > "Visual C#" > "Console Application" from the main menu.
+أولاً، قم بإنشاء تطبيق وحدة تحكم C# جديد في Microsoft Visual Studio. لإنشاء تطبيق وحدة تحكم جديد، حدد "ملف" > "جديد" > "مشروع" > "Visual C#" > "تطبيق وحدة التحكم" من القائمة الرئيسية.
 
-## Step 2: Add reference to Aspose.PDF for .NET
+## الخطوة 2: إضافة مرجع إلى Aspose.PDF لـ .NET
 
-Next, add a reference to Aspose.PDF for .NET in your project. To do this, right-click on your project in the "Solution Explorer" pane, select "Add" > "Reference", and then browse to the location where you saved the Aspose.PDF for .NET DLL file. Select the DLL file and click "OK" to add the reference to your project.
+بعد ذلك، أضف مرجعًا إلى Aspose.PDF لـ .NET في مشروعك. للقيام بذلك، انقر بزر الماوس الأيمن على مشروعك في جزء "مستكشف الحلول"، وحدد "إضافة" > "مرجع"، ثم انتقل إلى الموقع الذي قمت بحفظ ملف Aspose.PDF لملف .NET DLL فيه. حدد ملف DLL وانقر فوق "موافق" لإضافة المرجع إلى مشروعك.
 
-## Step 3: Set up the environment
+## الخطوة 3: إعداد البيئة
 
-After adding the reference to Aspose.PDF for .NET, you need to set up the environment. To do this, create a new string variable called "dataDir" and set it to the path of the directory where your PDF document is located. Replace "YOUR DOCUMENT DIRECTORY" in the code below with the actual path of your document directory:
+بعد إضافة المرجع إلى Aspose.PDF لـ .NET، تحتاج إلى إعداد البيئة. للقيام بذلك، قم بإنشاء متغير سلسلة جديد يسمى "dataDir" وقم بتعيينه على مسار الدليل الذي يوجد به مستند PDF الخاص بك. استبدل "دليل مستندك" في الكود أدناه بالمسار الفعلي لدليل مستندك:
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 4: Open the PDF document
+## الخطوة 4: افتح مستند PDF
 
-Once you have set up the environment, you can open the PDF document using the following code:
+بمجرد قيامك بإعداد البيئة، يمكنك فتح مستند PDF باستخدام الكود التالي:
 
 ```csharp
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "SetFreeTextAnnotationFormatting.pdf");
 ```
 
-Replace "SetFreeTextAnnotationFormatting.pdf" with the actual name of your PDF document.
+استبدل "SetFreeTextAnnotationFormatting.pdf" بالاسم الفعلي لمستند PDF الخاص بك.
 
-## Step 5: Set up default appearance
+## الخطوة 5: إعداد المظهر الافتراضي
 
-To set up the default appearance of the free text annotation, you need to instantiate the DefaultAppearance object with the desired font, font size, and color. In this tutorial, we are setting the font to "Arial", font size to 28, and color to red.
+لإعداد المظهر الافتراضي للتعليق التوضيحي للنص الحر، تحتاج إلى إنشاء كائن DefaultAppearance بالخط وحجم الخط واللون المطلوب. في هذا البرنامج التعليمي، نقوم بتعيين الخط إلى "Arial"، وحجم الخط إلى 28، واللون إلى الأحمر.
 
 ```csharp
-// Instantiate DefaultAppearance object
+// إنشاء مثيل لكائن DefaultAppearance
 DefaultAppearance default_appearance = new DefaultAppearance("Arial", 28, System.Drawing.Color.Red);
 ```
 
-## Step 6: Create a free text annotation
+## الخطوة 6: إنشاء تعليق توضيحي للنص الحر
 
-Now that you have set up the default appearance, you can create a free text annotation using the following code:
+الآن بعد أن قمت بإعداد المظهر الافتراضي، يمكنك إنشاء تعليق توضيحي للنص الحر باستخدام الكود التالي:
 
 ```csharp
-// Create annotation
+// إنشاء تعليق توضيحي
 FreeTextAnnotation freetext = new FreeTextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600), default_appearance);
 ```
 
-The above code creates a new free text annotation on the second page of the PDF document. The annotation will be positioned at (200, 400) and will have a width of 400 and a height of 600.
+ينشئ الكود أعلاه تعليقًا توضيحيًا نصيًا مجانيًا جديدًا في الصفحة الثانية من مستند PDF. سيتم وضع التعليق التوضيحي عند (200، 400) وسيكون عرضه 400 وارتفاعه 600.
 
-## Step 7: Specify the contents of the annotation
+## الخطوة 7: حدد محتويات التعليق التوضيحي
 
-After creating the free text annotation, you can specify the contents of the annotation using the following code:
+بعد إنشاء التعليق التوضيحي للنص الحر، يمكنك تحديد محتويات التعليق التوضيحي باستخدام الكود التالي:
 
 ```csharp
-// Specify the contents of annotation
+// حدد محتويات التعليق التوضيحي
 freetext.Contents = "Free Text
 ```
 
-### Example source code for Set Free Text Annotation Formatting using Aspose.PDF for .NET
+### مثال على التعليمات البرمجية المصدر لتعيين تنسيق التعليق التوضيحي للنص الحر باستخدام Aspose.PDF لـ .NET
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "SetFreeTextAnnotationFormatting.pdf");
 
-// Instantiate DefaultAppearance object
+// إنشاء مثيل لكائن DefaultAppearance
 DefaultAppearance default_appearance = new DefaultAppearance("Arial", 28, System.Drawing.Color.Red);
-// Create annotation
+// إنشاء تعليق توضيحي
 FreeTextAnnotation freetext = new FreeTextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600), default_appearance);
-// Specify the contents of annotation
+// حدد محتويات التعليق التوضيحي
 freetext.Contents = "Free Text";
-// Add anootation to annotations collection of page
+// إضافة تعليق توضيحي إلى مجموعة التعليقات التوضيحية للصفحة
 pdfDocument.Pages[1].Annotations.Add(freetext);
 dataDir = dataDir + "SetFreeTextAnnotationFormatting_out.pdf";
-// Save the updated document
+// احفظ المستند المحدث
 pdfDocument.Save(dataDir);            
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we learned how to set free text annotation formatting in a PDF document using Aspose.PDF for .NET. The library provides a straightforward and efficient way to work with PDF documents programmatically, allowing developers to create and customize various types of annotations, including free text annotations. By following the step-by-step guide and using the provided C# source code, you can easily set up the environment, open a PDF document, and create a free text annotation with custom formatting. Aspose.PDF for .NET is a robust and reliable API that simplifies PDF document manipulation tasks, making it a valuable tool for .NET developers working with PDF files.
+في هذا البرنامج التعليمي، تعلمنا كيفية تعيين تنسيق التعليقات التوضيحية للنص الحر في مستند PDF باستخدام Aspose.PDF لـ .NET. توفر المكتبة طريقة مباشرة وفعالة للعمل مع مستندات PDF برمجيًا، مما يسمح للمطورين بإنشاء وتخصيص أنواع مختلفة من التعليقات التوضيحية، بما في ذلك التعليقات التوضيحية النصية المجانية. باتباع الدليل خطوة بخطوة واستخدام كود مصدر C# المقدم، يمكنك بسهولة إعداد البيئة وفتح مستند PDF وإنشاء تعليق توضيحي نصي مجاني بتنسيق مخصص. Aspose.PDF for .NET عبارة عن واجهة برمجة تطبيقات قوية وموثوقة تعمل على تبسيط مهام معالجة مستندات PDF، مما يجعلها أداة قيمة لمطوري .NET الذين يعملون مع ملفات PDF.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is a free text annotation in a PDF document?
+#### س: ما هو التعليق التوضيحي النصي الحر في مستند PDF؟
 
-A: A free text annotation in a PDF document is a type of annotation that allows you to add text to the document without being tied to a specific location or structure. It is commonly used to provide comments, notes, or other additional information in the document.
+ج: التعليق التوضيحي النصي الحر في مستند PDF هو نوع من التعليق التوضيحي الذي يسمح لك بإضافة نص إلى المستند دون الارتباط بموقع أو بنية معينة. يتم استخدامه بشكل شائع لتقديم التعليقات أو الملاحظات أو غيرها من المعلومات الإضافية في المستند.
 
-#### Q: Can I customize the appearance of the free text annotation using Aspose.PDF for .NET?
+#### س: هل يمكنني تخصيص مظهر التعليق التوضيحي للنص الحر باستخدام Aspose.PDF لـ .NET؟
 
-A: Yes, you can customize various properties of the free text annotation, such as the font, font size, color, position, and more.
+ج: نعم، يمكنك تخصيص خصائص مختلفة للتعليق التوضيحي للنص الحر، مثل الخط وحجم الخط واللون والموضع والمزيد.
 
-#### Q: How do I specify the contents of the free text annotation?
+#### س: كيف يمكنني تحديد محتويات التعليق التوضيحي للنص الحر؟
 
-A: To specify the contents of the free text annotation, you can set the `Contents` property of the `FreeTextAnnotation` object to the desired text.
+ ج: لتحديد محتويات التعليق التوضيحي للنص الحر، يمكنك تعيين`Contents` ملكية`FreeTextAnnotation` الاعتراض على النص المطلوب.
 
-#### Q: Can I add multiple free text annotations to a PDF document using Aspose.PDF for .NET?
+#### س: هل يمكنني إضافة عدة تعليقات توضيحية نصية مجانية إلى مستند PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: Yes, you can create multiple free text annotations in a PDF document by creating multiple instances of the `FreeTextAnnotation` object and adding them to different pages or locations in the document.
+ ج: نعم، يمكنك إنشاء عدة تعليقات توضيحية نصية مجانية في مستند PDF عن طريق إنشاء مثيلات متعددة لـ`FreeTextAnnotation`الكائن وإضافته إلى صفحات أو مواقع مختلفة في المستند.

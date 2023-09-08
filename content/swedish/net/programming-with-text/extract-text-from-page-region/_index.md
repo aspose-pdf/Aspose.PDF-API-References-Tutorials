@@ -1,44 +1,44 @@
 ---
-title: Extract Text From Page Region In PDF File
-linktitle: Extract Text From Page Region In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract text from a specific region on a page in PDF file using Aspose.PDF for .NET.
+title: Extrahera text från sidregion i PDF-fil
+linktitle: Extrahera text från sidregion i PDF-fil
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du extraherar text från en specifik region på en sida i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 190
 url: /sv/net/programming-with-text/extract-text-from-page-region/
 ---
-This tutorial will guide you through the process of extracting text from a specific region on a page in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+Denna handledning guidar dig genom processen att extrahera text från en specifik region på en sida i PDF-fil med Aspose.PDF för .NET. Den medföljande C#-källkoden visar de nödvändiga stegen.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## Krav
+Innan du börjar, se till att du har följande:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio eller någon annan C#-kompilator installerad på din maskin.
+- Aspose.PDF för .NET-bibliotek. Du kan ladda ner den från den officiella Aspose-webbplatsen eller använda en pakethanterare som NuGet för att installera den.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## Steg 1: Konfigurera projektet
+1. Skapa ett nytt C#-projekt i din föredragna utvecklingsmiljö.
+2. Lägg till en referens till Aspose.PDF för .NET-biblioteket.
 
-## Step 2: Import required namespaces
-In the code file where you want to extract text, add the following using directives at the top of the file:
+## Steg 2: Importera nödvändiga namnrymder
+I kodfilen där du vill extrahera text, lägg till följande med hjälp av direktiv överst i filen:
 
 ```csharp
 using Aspose.Pdf;
 using System.IO;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## Steg 3: Ställ in dokumentkatalogen
+ I koden, lokalisera raden som säger`string dataDir = "YOUR DOCUMENT DIRECTORY";` och byt ut`"YOUR DOCUMENT DIRECTORY"` med sökvägen till katalogen där dina dokument är lagrade.
 
-## Step 4: Open the PDF document
-Open an existing PDF document using the `Document` constructor and passing the path to the input PDF file.
+## Steg 4: Öppna PDF-dokumentet
+ Öppna ett befintligt PDF-dokument med hjälp av`Document`konstruktorn och skickar sökvägen till indata-PDF-filen.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ExtractTextAll.pdf");
 ```
 
-## Step 5: Extract text from a page region
-Create a `TextAbsorber` object to extract text from the document. Configure the `TextSearchOptions` to limit the search to a specific page region defined by a rectangle.
+## Steg 5: Extrahera text från en sidregion
+ Skapa en`TextAbsorber` objekt för att extrahera text från dokumentet. Konfigurera`TextSearchOptions` för att begränsa sökningen till en specifik sidregion definierad av en rektangel.
 
 ```csharp
 TextAbsorber absorb = new TextAbsorber();
@@ -47,15 +47,15 @@ absorb.TextSearchOptions.Rectangle = new Aspose.Pdf.Rectangle(100, 200, 250, 350
 pdfDocument.Pages[1].Accept(absorb);
 ```
 
-## Step 6: Get the extracted text
-Access the extracted text from the `TextAbsorber` object.
+## Steg 6: Hämta den extraherade texten
+ Få åtkomst till den extraherade texten från`TextAbsorber` objekt.
 
 ```csharp
 string extractedText = absorb.Text;
 ```
 
-## Step 7: Save the extracted text
-Create a `TextWriter` and open the file where you want to save the extracted text. Write the extracted text to the file and close the stream.
+## Steg 7: Spara den extraherade texten
+ Skapa en`TextWriter` och öppna filen där du vill spara den extraherade texten. Skriv den extraherade texten till filen och stäng strömmen.
 
 ```csharp
 TextWriter tw = new StreamWriter(dataDir + "extracted-text.txt");
@@ -63,66 +63,66 @@ tw.WriteLine(extractedText);
 tw. Close();
 ```
 
-### Sample source code for Extract Text From Page Region using Aspose.PDF for .NET 
+### Exempel på källkod för att extrahera text från sidregion med Aspose.PDF för .NET 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Öppna dokumentet
 Document pdfDocument = new Document(dataDir + "ExtractTextAll.pdf");
-// Create TextAbsorber object to extract text
+// Skapa TextAbsorber-objekt för att extrahera text
 TextAbsorber absorber = new TextAbsorber();
 absorber.TextSearchOptions.LimitToPageBounds = true;
 absorber.TextSearchOptions.Rectangle = new Aspose.Pdf.Rectangle(100, 200, 250, 350);
-// Accept the absorber for first page
+// Acceptera absorbenten för första sidan
 pdfDocument.Pages[1].Accept(absorber);
-// Get the extracted text
+// Hämta den extraherade texten
 string extractedText = absorber.Text;
-// Create a writer and open the file
+// Skapa en skribent och öppna filen
 TextWriter tw = new StreamWriter(dataDir + "extracted-text.txt");
-// Write a line of text to the file
+// Skriv en textrad till filen
 tw.WriteLine(extractedText);
-// Close the stream
+// Stäng strömmen
 tw.Close();
 ```
 
-## Conclusion
-You have successfully extracted text from a specific region on a page of a PDF document using Aspose.PDF for .NET. The extracted text has been saved to the specified output file.
+## Slutsats
+Du har framgångsrikt extraherat text från en specifik region på en sida i ett PDF-dokument med Aspose.PDF för .NET. Den extraherade texten har sparats i den angivna utdatafilen.
 
 ### FAQ's
 
-#### Q: What is the purpose of this tutorial?
+#### F: Vad är syftet med denna handledning?
 
-A: This tutorial aims to guide you through the process of extracting text from a specific region on a page in a PDF file using Aspose.PDF for .NET. The accompanying C# source code provides step-by-step instructions for accomplishing this task.
+S: Denna handledning syftar till att guida dig genom processen att extrahera text från en specifik region på en sida i en PDF-fil med Aspose.PDF för .NET. Den medföljande C#-källkoden ger steg-för-steg-instruktioner för att utföra denna uppgift.
 
-#### Q: What namespaces should I import?
+#### F: Vilka namnområden ska jag importera?
 
-A: In the code file where you intend to extract text, include the following using directives at the beginning of the file:
+S: I kodfilen där du tänker extrahera text, inkludera följande med hjälp av direktiv i början av filen:
 
 ```csharp
 using Aspose.Pdf;
 using System.IO;
 ```
 
-#### Q: How do I specify the document directory?
+#### F: Hur anger jag dokumentkatalogen?
 
-A: Locate the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` in the code and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ S: Lokalisera linjen`string dataDir = "YOUR DOCUMENT DIRECTORY";` i koden och byt ut`"YOUR DOCUMENT DIRECTORY"` med den faktiska sökvägen till din dokumentkatalog.
 
-#### Q: How do I open an existing PDF document?
+#### F: Hur öppnar jag ett befintligt PDF-dokument?
 
-A: In Step 4, you'll open an existing PDF document using the `Document` constructor and providing the path to the input PDF file.
+ S: I steg 4 öppnar du ett befintligt PDF-dokument med hjälp av`Document` konstruktor och tillhandahåller sökvägen till PDF-inmatningsfilen.
 
-#### Q: How do I extract text from a specific page region?
+#### F: Hur extraherar jag text från en specifik sidregion?
 
-A: Step 5 involves creating a `TextAbsorber` object to extract text from the PDF document. You'll then configure the `TextSearchOptions` to define a specific rectangular region on the page using coordinates.
+ S: Steg 5 innebär att skapa en`TextAbsorber`objekt för att extrahera text från PDF-dokumentet. Du kommer sedan att konfigurera`TextSearchOptions` för att definiera ett specifikt rektangulärt område på sidan med hjälp av koordinater.
 
-#### Q: How do I access the extracted text?
+#### F: Hur kommer jag åt den extraherade texten?
 
-A: Step 6 guides you through accessing the extracted text from the `TextAbsorber` object.
+ S: Steg 6 guidar dig genom att komma åt den extraherade texten från`TextAbsorber` objekt.
 
-#### Q: How do I save the extracted text to a file?
+#### F: Hur sparar jag den extraherade texten till en fil?
 
-A: In Step 7, you'll create a `TextWriter`, open the file where you want to save the extracted text, write the extracted text to the file, and then close the stream.
+ S: I steg 7 skapar du en`TextWriter`, öppna filen där du vill spara den extraherade texten, skriv den extraherade texten till filen och stäng sedan strömmen.
 
-#### Q: What is the key takeaway from this tutorial?
+#### F: Vad är nyckeln till den här handledningen?
 
-A: By following this tutorial, you've learned how to extract text from a specific region on a page of a PDF document using Aspose.PDF for .NET. The extracted text has been saved to a specified output file, allowing you to precisely target and analyze the desired textual content.
+S: Genom att följa denna handledning har du lärt dig hur du extraherar text från en specifik region på en sida i ett PDF-dokument med Aspose.PDF för .NET. Den extraherade texten har sparats i en specificerad utdatafil, så att du kan rikta in och analysera det önskade textinnehållet exakt.

@@ -1,51 +1,51 @@
 ---
-title: Add Subsequent Lines Indent In PDF File
-linktitle: Add Subsequent Lines Indent In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add subsequent lines indent to text in PDF file using Aspose.PDF for .NET.
+title: Добавить отступ последующих строк в PDF-файле
+linktitle: Добавить отступ последующих строк в PDF-файле
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как добавить отступ к последующим строкам текста в PDF-файле с помощью Aspose.PDF для .NET.
 type: docs
 weight: 60
 url: /ru/net/programming-with-text/add-subsequent-lines-indent/
 ---
-This tutorial will guide you through the process of adding subsequent lines indent to text in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+Это руководство проведет вас через процесс добавления отступов последующих строк к тексту в PDF-файле с помощью Aspose.PDF для .NET. Приведенный исходный код C# демонстрирует необходимые шаги.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## Требования
+Прежде чем начать, убедитесь, что у вас есть следующее:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio или любой другой компилятор C#, установленный на вашем компьютере.
+- Aspose.PDF для библиотеки .NET. Вы можете скачать его с официального сайта Aspose или использовать для установки менеджер пакетов, например NuGet.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## Шаг 1. Настройте проект
+1. Создайте новый проект C# в предпочитаемой вами среде разработки.
+2. Добавьте ссылку на библиотеку Aspose.PDF для .NET.
 
-## Step 2: Import required namespaces
-In the code file where you want to add subsequent lines indent, add the following using directive at the top of the file:
+## Шаг 2. Импортируйте необходимые пространства имен.
+В файле кода, в котором вы хотите добавить отступы для последующих строк, добавьте следующую директиву using в верхней части файла:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## Шаг 3. Установите каталог документов.
+ В коде найдите строку с надписью`string dataDir = "YOUR DOCUMENT DIRECTORY";` и заменить`"YOUR DOCUMENT DIRECTORY"` с путем к каталогу, в котором хранятся ваши документы.
 
-## Step 4: Create a new Document object
-Instantiate a new `Document` object by adding the following line of code:
+## Шаг 4. Создайте новый объект документа.
+ Создать экземпляр нового`Document` объект, добавив следующую строку кода:
 
 ```csharp
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 ```
 
-## Step 5: Add a page to the document
-Add a new page to the document by using the `Add` method of the `Pages` collection. In the provided code, the new page is assigned to the variable `page`.
+## Шаг 5. Добавьте страницу в документ
+ Добавьте новую страницу в документ с помощью`Add` метод`Pages`коллекция. В предоставленном коде новая страница присваивается переменной`page`.
 
 ```csharp
 Aspose.Pdf.Page page = document.Pages.Add();
 ```
 
-## Step 6: Create a TextFragment with subsequent lines indent
-Instantiate a `TextFragment` object and provide the desired text. In the provided code, the text is assigned to the variable `text`. Then, initialize `TextFormattingOptions` for the `TextFragment` and specify the `SubsequentLinesIndent` value.
+## Шаг 6. Создайте TextFragment с отступом последующих строк.
+ Создать экземпляр`TextFragment` объект и укажите желаемый текст. В предоставленном коде текст присваивается переменной`text` . Затем инициализируйте`TextFormattingOptions` для`TextFragment`и укажите`SubsequentLinesIndent` ценить.
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog." );
@@ -55,15 +55,15 @@ text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 };
 ```
 
-## Step 7: Add the TextFragment to the page
-Add the `TextFragment` object to the paragraphs collection of the page.
+## Шаг 7. Добавьте TextFragment на страницу.
+ Добавить`TextFragment` объект коллекции абзацев страницы.
 
 ```csharp
 page.Paragraphs.Add(text);
 ```
 
-## Step 8: Repeat steps 6 and 7 for additional lines
-To add subsequent lines with the same indent, repeat steps 6 and 7 for each line. Update the text content as needed.
+## Шаг 8. Повторите шаги 6 и 7 для дополнительных строк.
+Чтобы добавить последующие строки с тем же отступом, повторите шаги 6 и 7 для каждой строки. При необходимости обновите текстовое содержимое.
 
 ```csharp
 text = new Aspose.Pdf.Text.TextFragment("Line2");
@@ -76,22 +76,22 @@ text = new Aspose.Pdf.Text.TextFragment("Line5");
 page.Paragraphs.Add(text);
 ```
 
-## Step 9: Save the PDF document
-Save the PDF document using the `Save` method of the `Document` object. Specify the output file path.
+## Шаг 9. Сохраните PDF-документ.
+ Сохраните PDF-документ, используя`Save` метод`Document` объект. Укажите путь к выходному файлу.
 
 ```csharp
 document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 ```
 
-### Sample source code for Add Subsequent Lines Indent using Aspose.PDF for .NET 
+### Пример исходного кода для добавления отступа последующих строк с использованием Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create new document object 
+// Создать новый объект документа
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 Aspose.Pdf.Page page = document.Pages.Add();
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog.");
-// Initilize TextFormattingOptions for the text fragment and specify SubsequentLinesIndent value
+// Инициализируйте TextFormattingOptions для фрагмента текста и укажите значение FollowLinesIndent.
 text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 {
 	SubsequentLinesIndent = 20
@@ -108,47 +108,47 @@ page.Paragraphs.Add(text);
 document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 ```
 
-## Conclusion
-You have successfully added subsequent lines indent to text using Aspose.PDF for .NET. The resulting PDF file can now be found at the specified output file path.
+## Заключение
+Вы успешно добавили отступ последующих строк к тексту, используя Aspose.PDF для .NET. Полученный PDF-файл теперь можно найти по указанному пути к выходному файлу.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is the focus of this tutorial?
+#### Вопрос: Чему посвящено это руководство?
 
-A: This tutorial provides a comprehensive guide on how to add subsequent lines indent to text in a PDF file using the Aspose.PDF for .NET library. It includes C# source code examples to illustrate the steps required for achieving this.
+О: В этом руководстве представлено подробное руководство о том, как добавить отступы к последующим строкам текста в PDF-файле с помощью библиотеки Aspose.PDF для .NET. Он включает примеры исходного кода C#, иллюстрирующие шаги, необходимые для достижения этой цели.
 
-#### Q: Which namespaces do I need to import for this tutorial?
+#### Вопрос: Какие пространства имен мне нужно импортировать для работы с этим руководством?
 
-A: In the code file where you intend to add subsequent lines indent, import the following namespaces at the beginning of the file:
+О: В файле кода, в котором вы собираетесь добавить отступы для последующих строк, импортируйте в начало файла следующие пространства имен:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-#### Q: How do I specify the document directory?
+#### Вопрос: Как указать каталог документа?
 
-A: In the code, locate the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ О: В коде найдите строку`string dataDir = "YOUR DOCUMENT DIRECTORY";` и заменить`"YOUR DOCUMENT DIRECTORY"` с фактическим путем к каталогу вашего документа.
 
-#### Q: How do I create a Document object?
+#### Вопрос: Как создать объект «Документ»?
 
-A: In Step 4, you'll instantiate a new `Document` object using the following line of code:
+ О: На шаге 4 вы создадите новый экземпляр`Document` объект, используя следующую строку кода:
 
 ```csharp
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 ```
 
-#### Q: How do I add a page to the document?
+#### Вопрос: Как добавить страницу в документ?
 
-A: In Step 5, you'll add a new page to the document using the `Add` method of the `Pages` collection:
+ О: На шаге 5 вы добавите в документ новую страницу, используя`Add` метод`Pages` коллекция:
 
 ```csharp
 Aspose.Pdf.Page page = document.Pages.Add();
 ```
 
-#### Q: How can I add subsequent lines indent to text?
+#### Вопрос: Как добавить отступы к последующим строкам текста?
 
-A: In Step 6, you'll create a `TextFragment` object and assign the desired text to it. Then, you'll initialize `TextFormattingOptions` for the `TextFragment` and specify the `SubsequentLinesIndent` value:
+ О: На шаге 6 вы создадите`TextFragment` объект и присвойте ему нужный текст. Затем вы инициализируете`TextFormattingOptions` для`TextFragment`и укажите`SubsequentLinesIndent` ценить:
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("Your text here");
@@ -158,26 +158,26 @@ text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 };
 ```
 
-#### Q: How do I add the TextFragment to the PDF document?
+#### Вопрос: Как добавить TextFragment в документ PDF?
 
-A: In Step 7, you'll add the `TextFragment` object (`text`) to the paragraphs collection of the page:
+ О: На шаге 7 вы добавите`TextFragment` объект (`text`) в коллекцию абзацев страницы:
 
 ```csharp
 page.Paragraphs.Add(text);
 ```
 
-#### Q: Can I repeat the process for additional lines?
+#### Вопрос: Могу ли я повторить процесс для дополнительных строк?
 
-A: Yes, in Step 8, you can repeat the process for additional lines with the same indent by creating new `TextFragment` objects and adding them to the paragraphs collection of the page.
+ О: Да, на шаге 8 вы можете повторить процесс для дополнительных строк с тем же отступом, создав новые.`TextFragment` объекты и добавление их в коллекцию абзацев на странице.
 
-#### Q: How do I save the resulting PDF document?
+#### Вопрос: Как сохранить полученный PDF-документ?
 
-A: After adding the text with subsequent lines indent, use the `Save` method of the `Document` object to save the PDF document:
+ О: После добавления текста с отступом последующих строк используйте команду`Save` метод`Document` объект для сохранения PDF-документа:
 
 ```csharp
 document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 ```
 
-#### Q: What is the key takeaway from this tutorial?
+#### Вопрос: Каков основной вывод из этого урока?
 
-A: By following this tutorial, you've successfully learned how to enhance the readability of text in a PDF document by adding subsequent lines indent using Aspose.PDF for .NET. This technique can be useful for various types of documents and reports.
+О: Следуя этому руководству, вы успешно научились улучшать читаемость текста в PDF-документе, добавляя отступы к последующим строкам с помощью Aspose.PDF для .NET. Этот метод может быть полезен для различных типов документов и отчетов.

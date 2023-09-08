@@ -1,49 +1,49 @@
 ---
-title: Combo Box
-linktitle: Combo Box
-second_title: Aspose.PDF for .NET API Reference
-description: Easily create combo box list in your PDF documents using Aspose.PDF for .NET.
+title: Kombinationsrutan
+linktitle: Kombinationsrutan
+second_title: Aspose.PDF för .NET API Referens
+description: Skapa enkelt kombinationsruta i dina PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 30
 url: /sv/net/programming-with-forms/combo-box/
 ---
-In this tutorial, we will show you how to create a combo box list using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+I den här handledningen kommer vi att visa dig hur du skapar en kombinationsrutalista med Aspose.PDF för .NET. Vi kommer att förklara C#-källkoden steg för steg för att guida dig genom denna process.
 
-## Step 1: Preparation
+## Steg 1: Förberedelser
 
-First, make sure you have imported the necessary libraries and set the path to the documents directory:
+Se först till att du har importerat de nödvändiga biblioteken och ställer in sökvägen till dokumentkatalogen:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Create a Document Object
+## Steg 2: Skapa ett dokumentobjekt
 
-Create a Document object to hold the PDF form:
+Skapa ett dokumentobjekt för att hålla PDF-formuläret:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 3: Add a page
+## Steg 3: Lägg till en sida
 
-Add a page to the document:
+Lägg till en sida i dokumentet:
 
 ```csharp
 doc.Pages.Add();
 ```
 
-## Step 4: Instantiate a ComboBoxField Object
+## Steg 4: Instantiera ett ComboBoxField-objekt
 
-Instantiate a ComboBoxField object with the desired dimensions:
+Instantiera ett ComboBoxField-objekt med önskade dimensioner:
 
 ```csharp
 ComboBoxField combo = new ComboBoxField(doc.Pages[1], new Aspose.Pdf.Rectangle(100, 600, 150, 616));
 ```
 
-## Step 5: Add options to the drop-down list
+## Steg 5: Lägg till alternativ i rullgardinsmenyn
 
-Add the desired options to the drop-down list:
+Lägg till önskade alternativ i rullgardinsmenyn:
 
 ```csharp
 combo.AddOption("Red");
@@ -52,44 +52,44 @@ combo.AddOption("Green");
 combo.AddOption("Blue");
 ```
 
-## Step 6: Add the combo box list to the form
+## Steg 6: Lägg till kombinationsrutan i formuläret
 
-Add the ComboBoxField object to the Document Form Fields collection:
+Lägg till ComboBoxField-objektet i samlingen Document Form Fields:
 
 ```csharp
 doc.Form.Add(combo);
 ```
 
-## Step 7: Save the document
+## Steg 7: Spara dokumentet
 
-Save the PDF document:
+Spara PDF-dokumentet:
 
 ```csharp
 dataDir = dataDir + "ComboBox_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Combo Box using Aspose.PDF for .NET 
+### Exempel på källkod för Combo Box med Aspose.PDF för .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Sökvägen till dokumentkatalogen.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Create Document object
+	// Skapa dokumentobjekt
 	Document doc = new Document();
-	// Add page to document object
+	// Lägg till sida till dokumentobjekt
 	doc.Pages.Add();
-	// Instantiate ComboBox Field object
+	// Instantiera ComboBox Field-objekt
 	ComboBoxField combo = new ComboBoxField(doc.Pages[1], new Aspose.Pdf.Rectangle(100, 600, 150, 616));
-	// Add option to ComboBox
+	// Lägg till alternativ till ComboBox
 	combo.AddOption("Red");
 	combo.AddOption("Yellow");
 	combo.AddOption("Green");
 	combo.AddOption("Blue");
-	// Add combo box object to form fields collection of document object
+	// Lägg till kombinationsrutaobjekt till formulärfältsamling av dokumentobjekt
 	doc.Form.Add(combo);
 	dataDir = dataDir + "ComboBox_out.pdf";
-	// Save the PDF document
+	// Spara PDF-dokumentet
 	doc.Save(dataDir);
 	Console.WriteLine("\nCombobox field added successfully.\nFile saved at " + dataDir);
 }
@@ -99,28 +99,28 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Slutsats
 
-In this tutorial, we learned how to create a combo box list using Aspose.PDF for .NET. By following these steps, you can easily add a combo box list to your PDF documents using Aspose.PDF.
+den här handledningen lärde vi oss hur man skapar en kombinationsrutalista med Aspose.PDF för .NET. Genom att följa dessa steg kan du enkelt lägga till en kombinationsrutalista till dina PDF-dokument med Aspose.PDF.
 
 ### FAQ's
 
-#### Q: Can I customize the appearance of the combo box list using Aspose.PDF for .NET?
+#### F: Kan jag anpassa utseendet på kombinationsrutelistan med Aspose.PDF för .NET?
 
-A: Yes, you can customize the appearance of the combo box list using Aspose.PDF for .NET. You can set properties such as font size, color, background color, border style, and more to match your desired look and feel.
+S: Ja, du kan anpassa utseendet på kombinationsrutelistan med Aspose.PDF för .NET. Du kan ställa in egenskaper som teckenstorlek, färg, bakgrundsfärg, kantstil med mera för att matcha ditt önskade utseende och känsla.
 
-#### Q: Can I set default selected options in the combo box list?
+#### F: Kan jag ställa in standardvalda alternativ i kombinationsrutan?
 
-A: Yes, you can set default selected options in the combo box list using Aspose.PDF for .NET. You can use the `Selected` property of the `ComboBoxField` object to mark one or more options as selected by default.
+ S: Ja, du kan ställa in standardvalda alternativ i kombinationsrutan med Aspose.PDF för .NET. Du kan använda`Selected` egendom av`ComboBoxField` objekt för att markera ett eller flera alternativ som valda som standard.
 
-#### Q: How can I retrieve the selected value from the combo box list after the user makes a selection?
+#### F: Hur kan jag hämta det valda värdet från kombinationsrutan efter att användaren gjort ett val?
 
-A: You can retrieve the selected value from the combo box list using Aspose.PDF for .NET. After the user makes a selection, you can access the `Value` property of the `ComboBoxField` object to obtain the selected value.
+ S: Du kan hämta det valda värdet från kombinationsrutan med Aspose.PDF för .NET. När användaren har gjort ett val kan du komma åt`Value` egendom av`ComboBoxField`objekt för att få det valda värdet.
 
-#### Q: Is it possible to add event handlers or actions to the combo box list?
+#### F: Är det möjligt att lägga till händelsehanterare eller åtgärder till kombinationsrutelistan?
 
-A: Yes, Aspose.PDF for .NET allows you to add event handlers or actions to the combo box list. You can associate JavaScript actions, such as `OnValueChanged`, to the combo box list to perform specific actions when the user selects an option.
+ S: Ja, Aspose.PDF för .NET låter dig lägga till händelsehanterare eller åtgärder till listan med kombinationsrutor. Du kan koppla JavaScript-åtgärder, som t.ex`OnValueChanged`, till kombinationsrutan för att utföra specifika åtgärder när användaren väljer ett alternativ.
 
-#### Q: Can I add tooltips or descriptions to the options in the combo box list?
+#### F: Kan jag lägga till verktygstips eller beskrivningar till alternativen i kombinationsrutan?
 
-A: Yes, you can add tooltips or descriptions to the options in the combo box list using Aspose.PDF for .NET. You can set the `AlternateName` property of each option to provide a tooltip or description that will be displayed when the user hovers over the option.
+ S: Ja, du kan lägga till verktygstips eller beskrivningar till alternativen i kombinationsrutan med Aspose.PDF för .NET. Du kan ställa in`AlternateName` egenskapen för varje alternativ för att tillhandahålla ett verktygstips eller en beskrivning som kommer att visas när användaren håller muspekaren över alternativet.

@@ -1,51 +1,51 @@
 ---
-title: Text In Footer Of PDF File
-linktitle: Text In Footer Of PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn to add text in the footer of PDF file with Aspose.PDF for .NET.
+title: Texto en pie de página del archivo PDF
+linktitle: Texto en pie de página del archivo PDF
+second_title: Aspose.PDF para referencia de API .NET
+description: Aprenda a agregar texto en el pie de página de un archivo PDF con Aspose.PDF para .NET.
 type: docs
 weight: 180
 url: /es/net/programming-with-stamps-and-watermarks/text-in-footer/
 ---
-In this tutorial, we are going to learn how to add text in the footer of PDF file using Aspose.PDF for .NET. Follow the steps below:
+En este tutorial, aprenderemos cómo agregar texto en el pie de página de un archivo PDF usando Aspose.PDF para .NET. Siga los pasos a continuación:
 
-## Step 1: Project preparation
+## Paso 1: preparación del proyecto
 
-Make sure you have installed Aspose.PDF for .NET and created a C# project.
+Asegúrese de haber instalado Aspose.PDF para .NET y haber creado un proyecto C#.
 
-## Step 2: Importing namespaces
+## Paso 2: importar espacios de nombres
 
-Add the following namespaces to your C# source file:
+Agregue los siguientes espacios de nombres a su archivo fuente de C#:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Opening the document
+## Paso 3: abrir el documento
 
-Open the existing PDF document using the path provided:
+Abra el documento PDF existente utilizando la ruta proporcionada:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document pdfDocument = new Document(dataDir + "TextinFooter.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to your documents directory.
+Asegúrese de reemplazar "SU DIRECTORIO DE DOCUMENTOS" con la ruta real a su directorio de documentos.
 
-## Step 4: Create footer text
+## Paso 4: crear texto de pie de página
 
-Create a new text stamp with the text you want to add in the footer:
+Crea un nuevo sello de texto con el texto que deseas agregar en el pie de página:
 
 ```csharp
 TextStamp textStamp = new TextStamp("footer text");
 ```
 
-You can customize the text by changing its properties like bottom margin, horizontal alignment, and vertical alignment.
+Puede personalizar el texto cambiando sus propiedades como margen inferior, alineación horizontal y alineación vertical.
 
-## Step 5: Add footer text to all pages
+## Paso 5: agregue texto de pie de página a todas las páginas
 
-Go through all the pages of the PDF document and add the text stamp in the footer:
+Revise todas las páginas del documento PDF y agregue el sello de texto en el pie de página:
 
 ```csharp
 foreach(Page page in pdfDocument.Pages)
@@ -54,9 +54,9 @@ foreach(Page page in pdfDocument.Pages)
 }
 ```
 
-## Step 6: Saving the PDF Document
+## Paso 6: guardar el documento PDF
 
-Once the footer text has been added on all pages, save the updated PDF document:
+Una vez que se haya agregado el texto del pie de página en todas las páginas, guarde el documento PDF actualizado:
 
 ```csharp
 dataDir = dataDir + "TextinFooter_out.pdf";
@@ -64,72 +64,72 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nText in footer added successfully.\nFile saved at: " + dataDir);
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where you want to save the PDF document.
+Asegúrese de reemplazar "SU DIRECTORIO DE DOCUMENTOS" con la ruta real al directorio donde desea guardar el documento PDF.
 
-### Sample source code for Textin Footer using Aspose.PDF for .NET 
+### Código fuente de muestra para Textin Footer usando Aspose.PDF para .NET 
 ```csharp
 
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Abrir documento
 Document pdfDocument = new Document(dataDir+ "TextinFooter.pdf");
 
-// Create footer
+// Crear pie de página
 TextStamp textStamp = new TextStamp("Footer Text");
 
-// Set properties of the stamp
+// Establecer propiedades del sello
 textStamp.BottomMargin = 10;
 textStamp.HorizontalAlignment = HorizontalAlignment.Center;
 textStamp.VerticalAlignment = VerticalAlignment.Bottom;
 
-// Add footer on all pages
+// Agregar pie de página en todas las páginas
 foreach (Page page in pdfDocument.Pages)
 {
 	page.AddStamp(textStamp);
 }
 dataDir = dataDir + "TextinFooter_out.pdf";
 
-// Save updated PDF file
+// Guardar archivo PDF actualizado
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nText in footer added successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
+## Conclusión
 
-Congratulation ! You have learned how to add text in the footer of a PDF document using Aspose.PDF for .NET. You can now customize your footers by adding additional text to your PDF documents.
+¡Enhorabuena! Ha aprendido cómo agregar texto en el pie de página de un documento PDF usando Aspose.PDF para .NET. Ahora puede personalizar sus pies de página agregando texto adicional a sus documentos PDF.
 
-### FAQ's for text in footer of PDF file
+### Preguntas frecuentes sobre el texto en el pie de página del archivo PDF
 
-#### Q: What is the purpose of adding text in the footer of a PDF document?
+#### P: ¿Cuál es el propósito de agregar texto en el pie de página de un documento PDF?
 
-A: Adding text in the footer of a PDF document allows you to include important information, such as copyright notices, page numbers, document version, or any other text that you want to appear consistently at the bottom of each page.
+R: Agregar texto en el pie de página de un documento PDF le permite incluir información importante, como avisos de derechos de autor, números de página, versión del documento o cualquier otro texto que desee que aparezca de manera consistente en la parte inferior de cada página.
 
-#### Q: How does the provided C# source code achieve the addition of text in the footer of a PDF document?
+#### P: ¿Cómo logra el código fuente C# proporcionado agregar texto en el pie de página de un documento PDF?
 
-A: The code demonstrates the process of opening an existing PDF document, creating a text stamp with the desired footer text, customizing the text properties, adding the text stamp to all pages, and finally saving the updated PDF document with the added footer text.
+R: El código demuestra el proceso de abrir un documento PDF existente, crear un sello de texto con el texto de pie de página deseado, personalizar las propiedades del texto, agregar el sello de texto a todas las páginas y, finalmente, guardar el documento PDF actualizado con el texto de pie de página agregado.
 
-#### Q: Can I modify the appearance of the footer text, such as its font, size, color, and alignment?
+#### P: ¿Puedo modificar la apariencia del texto del pie de página, como su fuente, tamaño, color y alineación?
 
-A: Yes, you can customize the appearance of the footer text by modifying the properties of the `TextStamp` object. The code example includes setting properties like bottom margin, horizontal alignment, and vertical alignment. You can also adjust the font, size, color, and other text-related properties.
+ R: Sí, puedes personalizar la apariencia del texto del pie de página modificando las propiedades del`TextStamp` objeto. El ejemplo de código incluye la configuración de propiedades como margen inferior, alineación horizontal y alineación vertical. También puedes ajustar la fuente, el tamaño, el color y otras propiedades relacionadas con el texto.
 
-#### Q: Is it possible to add different text to each page's footer?
+#### P: ¿Es posible agregar texto diferente al pie de página de cada página?
 
-A: Yes, you can add different text to each page's footer by creating separate `TextStamp` objects with different text content or properties and then adding them to specific pages as needed.
+ R: Sí, puedes agregar texto diferente al pie de página de cada página creando`TextStamp` objetos con diferente contenido de texto o propiedades y luego agregarlos a páginas específicas según sea necesario.
 
-#### Q: How do I ensure the footer text appears consistently on every page of the PDF document?
+#### P: ¿Cómo me aseguro de que el texto del pie de página aparezca de forma coherente en cada página del documento PDF?
 
-A: By using a loop that iterates through all the pages of the PDF document and adding the same text stamp to each page, you ensure that the footer text appears consistently on every page.
+R: Al utilizar un bucle que recorre todas las páginas del documento PDF y agregar el mismo sello de texto a cada página, se asegura de que el texto del pie de página aparezca de manera consistente en cada página.
 
-#### Q: Can I add multiple lines of text or format the footer text with line breaks?
+#### P: ¿Puedo agregar varias líneas de texto o formatear el texto del pie de página con saltos de línea?
 
-A: Yes, you can add multiple lines of text to the footer by including line breaks in the text string. For example, you can use the escape sequence `\n` to indicate a line break in the text.
+ R: Sí, puedes agregar varias líneas de texto al pie de página incluyendo saltos de línea en la cadena de texto. Por ejemplo, puedes usar la secuencia de escape.`\n` para indicar un salto de línea en el texto.
 
-#### Q: What happens if I want to add different content to the header and footer of the same PDF document?
+#### P: ¿Qué sucede si quiero agregar contenido diferente al encabezado y al pie de página del mismo documento PDF?
 
-A: To add different content to the header and footer sections, you would follow similar steps for both sections. The code demonstrates adding text to the footer; you can use a similar approach to add text to the header.
+R: Para agregar contenido diferente a las secciones de encabezado y pie de página, deberá seguir pasos similares para ambas secciones. El código demuestra cómo agregar texto al pie de página; puede utilizar un enfoque similar para agregar texto al encabezado.
 
-#### Q: Is it possible to add images or other elements alongside the footer text using this approach?
+#### P: ¿Es posible agregar imágenes u otros elementos junto al texto del pie de página usando este método?
 
-A: While the provided code specifically demonstrates adding text to the footer, you can extend the approach to add other elements like images, lines, shapes, or any other content to the footer section using the Aspose.PDF library.
+R: Si bien el código proporcionado demuestra específicamente cómo agregar texto al pie de página, puede ampliar el enfoque para agregar otros elementos como imágenes, líneas, formas o cualquier otro contenido a la sección del pie de página usando la biblioteca Aspose.PDF.

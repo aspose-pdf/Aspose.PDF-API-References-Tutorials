@@ -1,28 +1,28 @@
 ---
-title: Search Text And Add Hyperlink
-linktitle: Search Text And Add Hyperlink
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to search for text in a PDF, add hyperlinks to the found text, and save the modified document using Aspose.PDF for .NET.
+title: 搜索文本并添加超链接
+linktitle: 搜索文本并添加超链接
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 在 PDF 中搜索文本、向找到的文本添加超链接以及保存修改后的文档。
 type: docs
 weight: 450
 url: /zh/net/programming-with-text/search-text-and-add-hyperlink/
 ---
-This tutorial explains how to use Aspose.PDF for .NET to search for specific text in a PDF document, add a hyperlink to the found text, and save the modified document. The provided C# source code demonstrates the process step by step.
+本教程介绍如何使用 Aspose.PDF for .NET 搜索 PDF 文档中的特定文本、添加找到的文本的超链接以及保存修改后的文档。提供的 C# 源代码逐步演示了该过程。
 
-## Prerequisites
+## 先决条件
 
-Before proceeding with the tutorial, make sure you have the following:
+在继续学习本教程之前，请确保您具备以下条件：
 
-- Basic knowledge of C# programming language.
-- Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to install it in your project.
+- C# 编程语言的基础知识。
+- 安装了 Aspose.PDF for .NET 库。您可以从 Aspose 网站获取它或使用 NuGet 将其安装到您的项目中。
 
-## Step 1: Set up the project
+## 第 1 步：设置项目
 
-Start by creating a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library.
+首先在您首选的集成开发环境 (IDE) 中创建一个新的 C# 项目，并添加对 Aspose.PDF for .NET 库的引用。
 
-## Step 2: Import necessary namespaces
+## 第2步：导入必要的命名空间
 
-Add the following using directives at the beginning of your C# file to import the required namespaces:
+在 C# 文件的开头添加以下 using 指令以导入所需的命名空间：
 
 ```csharp
 using Aspose.Pdf;
@@ -31,77 +31,77 @@ using Aspose.Pdf.Facades;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Set the path to the document directory
+## 第三步：设置文档目录路径
 
-Set the path to your document directory using the `dataDir` variable:
+使用以下命令设置文档目录的路径`dataDir`多变的：
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+代替`"YOUR DOCUMENT DIRECTORY"`与文档目录的实际路径。
 
-## Step 4: Create a TextFragmentAbsorber
+## 第四步：创建一个TextFragmentAbsorber
 
-Create a `TextFragmentAbsorber` object to find all instances of the input search phrase:
+创建一个`TextFragmentAbsorber`对象查找输入搜索短语的所有实例：
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("\\d{4}-\\d{4}");
 ```
 
-Replace `"\\d{4}-\\d{4}"` with your desired regular expression pattern.
+代替`"\\d{4}-\\d{4}"`与您想要的正则表达式模式。
 
-## Step 5: Enable regular expression search
+## 第 5 步：启用正则表达式搜索
 
-Enable regular expression search by setting the `TextSearchOptions` property of the absorber:
+通过设置启用正则表达式搜索`TextSearchOptions`吸收体的特性：
 
 ```csharp
 absorber.TextSearchOptions = new TextSearchOptions(true);
 ```
 
-## Step 6: Open and bind the PDF document
+## 步骤6：打开并绑定PDF文档
 
-Create a `PdfContentEditor` object and bind it to the source PDF file:
+创建一个`PdfContentEditor`对象并将其绑定到源 PDF 文件：
 
 ```csharp
 PdfContentEditor editor = new PdfContentEditor();
 editor.BindPdf(dataDir + "SearchRegularExpressionPage.pdf");
 ```
 
-Replace `"SearchRegularExpressionPage.pdf"` with the actual name of your PDF file.
+代替`"SearchRegularExpressionPage.pdf"`与您的 PDF 文件的实际名称。
 
-## Step 7: Accept the absorber for the page
+## 第 7 步：接受页面的吸收器
 
-Accept the absorber for the desired page of the document:
+接受文档所需页面的吸收器：
 
 ```csharp
 editor.Document.Pages[1].Accept(absorber);
 ```
 
-Replace `1` with the desired page number.
+代替`1`与所需的页码。
 
-## Step 8: Add hyperlinks to the found text
+## 步骤 8：将超链接添加到找到的文本
 
-Loop through the retrieved text fragments and add hyperlinks to them:
+循环检索到的文本片段并向其添加超链接：
 
 ```csharp
 foreach (TextFragment textFragment in absorber.TextFragments)
 {
     textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
-    // Create a rectangle based on the text fragment's position
+    //根据文本片段的位置创建一个矩形
     System.Drawing.Rectangle rect = new System.Drawing.Rectangle((int)textFragment.Rectangle.LLX,
         (int)Math.Round(textFragment.Rectangle.LLY), (int)Math.Round(textFragment.Rectangle.Width + 2),
         (int)Math.Round(textFragment.Rectangle.Height + 1));
-    // Add a web link to the rectangle
+    //将网络链接添加到矩形
     editor.CreateWebLink(rect, "http://www.aspose.com", 1, System.Drawing.Color.Blue);
 }
 ```
 
-Replace `"http://www.aspose.com"` with the desired hyperlink URL.
+代替`"http://www.aspose.com"`与所需的超链接 URL。
 
-## Step 9: Save and close the modified document
+## 步骤9：保存并关闭修改后的文档
 
-Save the modified document and close the editor:
+保存修改后的文档并关闭编辑器：
 
 ```csharp
 dataDir = dataDir + "SearchTextAndAddHyperlink_out.pdf";
@@ -110,26 +110,26 @@ editor.Close();
 Console.WriteLine("\nText replaced and hyperlink added successfully based on a regular expression.\nFile saved at " + dataDir);
 ```
 
-Make sure to replace `"SearchTextAndAddHyperlink_out.pdf"` with the desired output file name.
+确保更换`"SearchTextAndAddHyperlink_out.pdf"`与所需的输出文件名。
 
-### Sample source code for Search Text And Add Hyperlink using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 搜索文本和添加超链接的示例源代码 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create absorber object to find all instances of the input search phrase
+//创建吸收器对象以查找输入搜索短语的所有实例
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("\\d{4}-\\d{4}");
-// Enable regular expression search
+//启用正则表达式搜索
 absorber.TextSearchOptions = new TextSearchOptions(true);
-// Open document
+//打开文档
 PdfContentEditor editor = new PdfContentEditor();
-// Bind source PDF file
+//绑定源PDF文件
 editor.BindPdf(dataDir + "SearchRegularExpressionPage.pdf");
-// Accept the absorber for the page
+//接受页面的吸收器
 editor.Document.Pages[1].Accept(absorber);
 int[] dashArray = { };
 String[] LEArray = { };
 System.Drawing.Color blue = System.Drawing.Color.Blue;
-// Loop through the fragments
+//循环遍历片段
 foreach (TextFragment textFragment in absorber.TextFragments)
 {
 	textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
@@ -137,7 +137,7 @@ foreach (TextFragment textFragment in absorber.TextFragments)
 		(int)Math.Round(textFragment.Rectangle.LLY), (int)Math.Round(textFragment.Rectangle.Width + 2),
 		(int)Math.Round(textFragment.Rectangle.Height + 1));
 	Enum[] actionName = new Enum[2] { Aspose.Pdf.Annotations.PredefinedAction.Document_AttachFile, Aspose.Pdf.Annotations.PredefinedAction.Document_ExtractPages };
-	editor.CreateWebLink(rect, "http:// Www.aspose.com", 1, blue, actionName);
+	editor.CreateWebLink(rect, "http://www.aspose.com", 1, 蓝色, actionName);
 	editor.CreateLine(rect, "", (float)textFragment.Rectangle.LLX + 1, (float)textFragment.Rectangle.LLY - 1,
 		(float)textFragment.Rectangle.URX, (float)textFragment.Rectangle.LLY - 1, 1, 1, blue, "S", dashArray, LEArray);
 }
@@ -147,44 +147,44 @@ editor.Close();
 Console.WriteLine("\nText replaced and hyperlink added successfully based on a regular expression.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## 结论
 
-Congratulations! You have successfully learned how to search for specific text in a PDF document, add hyperlinks to the found text, and save the modified document using Aspose.PDF for .NET. This tutorial provided a step-by-step guide, from setting up the project to performing the required actions. You can now incorporate this code into your own C# projects to manipulate text and add hyperlinks in PDF files.
+恭喜！您已经成功学习了如何在 PDF 文档中搜索特定文本、向找到的文本添加超链接以及使用 Aspose.PDF for .NET 保存修改后的文档。本教程提供了从设置项目到执行所需操作的分步指南。现在，您可以将此代码合并到您自己的 C# 项目中，以操作文本并在 PDF 文件中添加超链接。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What is the purpose of the "Search Text And Add Hyperlink" tutorial?
+#### 问：“搜索文本并添加超链接”教程的目的是什么？
 
-A: The "Search Text And Add Hyperlink" tutorial aims to demonstrate how to use the Aspose.PDF library for .NET to search for specific text within a PDF document, add hyperlinks to the found text, and then save the modified document. The tutorial provides a comprehensive guide and C# code samples to illustrate the step-by-step process.
+答：“搜索文本并添加超链接”教程旨在演示如何使用 Aspose.PDF .NET 库在 PDF 文档中搜索特定文本，向找到的文本添加超链接，然后保存修改后的文档。本教程提供了全面的指南和 C# 代码示例来说明分步过程。
 
-#### Q: How does this tutorial help in adding hyperlinks to specific text in a PDF document?
+#### 问：本教程如何帮助您在 PDF 文档中添加指向特定文本的超链接？
 
-A: This tutorial guides you through the process of using the Aspose.PDF library to locate specific text in a PDF document, apply a hyperlink to the identified text, and save the modified PDF. It covers essential steps such as setting up the project, loading the document, enabling regular expression search, and adding hyperlinks to the found text.
+答：本教程将指导您完成使用 Aspose.PDF 库来查找 PDF 文档中的特定文本、将超链接应用到所识别的文本以及保存修改后的 PDF 的过程。它涵盖了一些基本步骤，例如设置项目、加载文档、启用正则表达式搜索以及向找到的文本添加超链接。
 
-#### Q: What prerequisites are needed to follow this tutorial?
+#### 问：学习本教程需要什么先决条件？
 
-A: Before you start, you should have a basic understanding of the C# programming language. Additionally, you need to have the Aspose.PDF for .NET library installed, which can be obtained from the Aspose website or installed using NuGet in your project.
+答：开始之前，您应该对 C# 编程语言有基本的了解。此外，您需要安装 Aspose.PDF for .NET 库，该库可以从 Aspose 网站获取或在项目中使用 NuGet 安装。
 
-#### Q: How do I set up my project to follow this tutorial?
+#### 问：如何设置我的项目来遵循本教程？
 
-A: Begin by creating a new C# project in your preferred integrated development environment (IDE). Then, add a reference to the Aspose.PDF for .NET library, which will enable you to utilize the library's capabilities in your project.
+答：首先在您首选的集成开发环境 (IDE) 中创建一个新的 C# 项目。然后，添加对 Aspose.PDF for .NET 库的引用，这将使您能够在项目中利用该库的功能。
 
-#### Q: Can I add hyperlinks to specific text using this tutorial?
+#### 问：我可以使用本教程添加指向特定文本的超链接吗？
 
-A: Yes, this tutorial specifically focuses on adding hyperlinks to specific text in a PDF document. It demonstrates how to find and extract the desired text using regular expressions, create hyperlinks associated with the text fragments, and save the modified PDF.
+答：是的，本教程特别关注在 PDF 文档中添加指向特定文本的超链接。它演示了如何使用正则表达式查找和提取所需的文本、创建与文本片段关联的超链接以及保存修改后的 PDF。
 
-#### Q: How do I define the text I want to search for and add a hyperlink to?
+#### 问：如何定义要搜索的文本并添加超链接？
 
-A: To specify the text you want to search for and add a hyperlink to, create a `TextFragmentAbsorber` object and set its pattern using the `Text` parameter. Replace the default pattern `"\\d{4}-\\d{4}"` in the tutorial's code with your desired regular expression pattern.
+答：要指定要搜索的文本并添加超链接，请创建一个`TextFragmentAbsorber`对象并使用设置其模式`Text`范围。替换默认模式`"\\d{4}-\\d{4}"`在教程的代码中添加您所需的正则表达式模式。
 
-#### Q: How can I enable regular expression search for text?
+#### 问：如何启用文本的正则表达式搜索？
 
-A: Regular expression search is enabled by creating a `TextSearchOptions` object and setting its value to `true`. Assign this object to the `TextSearchOptions` property of the `TextFragmentAbsorber` instance. This ensures that the regular expression pattern is applied during text search.
+ A：通过创建一个来启用正则表达式搜索`TextSearchOptions`对象并将其值设置为`true`。将此对象分配给`TextSearchOptions`的财产`TextFragmentAbsorber`实例。这可确保在文本搜索期间应用正则表达式模式。
 
-#### Q: How do I add hyperlinks to the found text?
+#### 问：如何向找到的文本添加超链接？
 
-A: After identifying the text fragments using the `TextFragmentAbsorber`, the tutorial provides a loop to iterate through these fragments. For each text fragment, the tutorial demonstrates how to set the text color to blue and create a hyperlink using the `CreateWebLink` method.
+ A：使用识别文本片段后`TextFragmentAbsorber`，本教程提供了一个循环来迭代这些片段。对于每个文本片段，本教程演示了如何将文本颜色设置为蓝色并使用`CreateWebLink`方法。
 
-#### Q: What are the steps to save the modified PDF with hyperlinks?
+#### 问：保存修改后的带超链接的PDF的步骤是什么？
 
-A: After adding hyperlinks to the desired text fragments, use the `PdfContentEditor` class to save the modified document. The tutorial's sample code showcases how to save the edited PDF, close the editor, and display a success message.
+ A：将超链接添加到所需的文本片段后，使用`PdfContentEditor`类来保存修改后的文档。本教程的示例代码展示了如何保存编辑后的 PDF、关闭编辑器以及显示成功消息。

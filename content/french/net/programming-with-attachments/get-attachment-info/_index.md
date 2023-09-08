@@ -1,50 +1,50 @@
 ---
-title: Get Attachment Info
-linktitle: Get Attachment Info
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to get information about a specific attachment in a PDF file with Aspose.PDF for .NET. Step by step guide.
+title: Obtenir des informations sur les pièces jointes
+linktitle: Obtenir des informations sur les pièces jointes
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment obtenir des informations sur une pièce jointe spécifique dans un fichier PDF avec Aspose.PDF pour .NET. Guide étape par étape.
 type: docs
 weight: 50
 url: /fr/net/programming-with-attachments/get-attachment-info/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to get the information about a specific attachment of a PDF file using Aspose.PDF for .NET.
+Dans ce didacticiel, nous vous guiderons étape par étape à travers le code source C# suivant pour obtenir les informations sur une pièce jointe spécifique d'un fichier PDF à l'aide d'Aspose.PDF pour .NET.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Assurez-vous d'avoir installé la bibliothèque Aspose.PDF et configuré votre environnement de développement avant de commencer. Posséder également des connaissances de base en programmation C#.
 
-### Step 1: Document Directory Setup
+### Étape 1 : configuration du répertoire de documents
 
-In the source code provided, you need to specify the directory where the PDF file is located from which you want to get the attachment information. Change the "dataDir" variable to the desired directory.
+Dans le code source fourni, vous devez spécifier le répertoire où se trouve le fichier PDF à partir duquel vous souhaitez obtenir les informations de la pièce jointe. Remplacez la variable "dataDir" par le répertoire souhaité.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### Step 2: Open the existing PDF document
+### Étape 2 : Ouvrez le document PDF existant
 
-We open the existing PDF document using the specified path.
+Nous ouvrons le document PDF existant en utilisant le chemin spécifié.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetAttachmentInfo.pdf");
 ```
 
-### Step 3: Obtaining a Specific Attachment
+### Étape 3 : obtention d'une pièce jointe spécifique
 
-We retrieve a specific attachment from the document's attachments collection. In this example, we get the first attachment using index 1.
+Nous récupérons une pièce jointe spécifique de la collection de pièces jointes du document. Dans cet exemple, nous obtenons la première pièce jointe en utilisant l'index 1.
 
 ```csharp
 FileSpecification fileSpecification = pdfDocument.EmbeddedFiles[1];
 ```
 
-### Step 4: Get File Properties
+### Étape 4 : obtenir les propriétés du fichier
 
-We display attachment properties such as name, description, MIME type, control hash, date created, date modified, and size.
+Nous affichons les propriétés des pièces jointes telles que le nom, la description, le type MIME, le hachage de contrôle, la date de création, la date de modification et la taille.
 
 ```csharp
 Console.WriteLine("Name: {0}", fileSpecification.Name);
 Console.WriteLine("Description: {0}", fileSpecification.Description);
 Console.WriteLine("MIME Type: {0}", fileSpecification.MIMEType);
 
-// Check if object parameters contain additional information
+// Vérifiez si les paramètres de l'objet contiennent des informations supplémentaires
 if (fileSpecification.Params != null)
 {
 Console.WriteLine("Check Hash: {0}", fileSpecification.Params.CheckSum);
@@ -54,21 +54,21 @@ Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
 }
 ```
 
-### Sample source code for Get Attachment Info using Aspose.PDF for .NET
+### Exemple de code source pour obtenir des informations sur les pièces jointes à l'aide d'Aspose.PDF pour .NET
  
 ```csharp
 
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Ouvrir le document
 Document pdfDocument = new Document(dataDir + "GetAttachmentInfo.pdf");
-// Get particular embedded file
+// Obtenir un fichier intégré particulier
 FileSpecification fileSpecification = pdfDocument.EmbeddedFiles[1];
-// Get the file properties
+// Obtenez les propriétés du fichier
 Console.WriteLine("Name: {0}", fileSpecification.Name);
 Console.WriteLine("Description: {0}", fileSpecification.Description);
 Console.WriteLine("Mime Type: {0}", fileSpecification.MIMEType);
-// Check if parameter object contains the parameters
+//Vérifiez si l'objet paramètre contient les paramètres
 if (fileSpecification.Params != null)
 {
 	Console.WriteLine("CheckSum: {0}",
@@ -84,42 +84,42 @@ if (fileSpecification.Params != null)
 
 ## Conclusion
 
-In this tutorial, we explained how to get the information about a specific attachment of a PDF file using Aspose.PDF for .NET. You can now use this knowledge to extract and view attachment information from your PDF files.
+Dans ce didacticiel, nous avons expliqué comment obtenir des informations sur une pièce jointe spécifique d'un fichier PDF à l'aide d'Aspose.PDF pour .NET. Vous pouvez désormais utiliser ces connaissances pour extraire et afficher les informations des pièces jointes de vos fichiers PDF.
 
-### FAQ's for get attachment info 
+### FAQ pour obtenir des informations sur les pièces jointes 
 
-#### Q: Why would I need to retrieve information about specific attachments in a PDF document?
+#### Q : Pourquoi aurais-je besoin de récupérer des informations sur des pièces jointes spécifiques dans un document PDF ?
 
-A: Retrieving attachment information allows you to understand and analyze the details of embedded files within a PDF, helping you manage and work with attachments effectively.
+R : La récupération des informations sur les pièces jointes vous permet de comprendre et d'analyser les détails des fichiers incorporés dans un PDF, vous aidant ainsi à gérer et à utiliser efficacement les pièces jointes.
 
-#### Q: What type of information can I gather about a specific attachment using this tutorial?
+#### Q : Quel type d'informations puis-je recueillir sur une pièce jointe spécifique à l'aide de ce didacticiel ?
 
-A: This tutorial demonstrates how to retrieve and display attachment properties such as name, description, MIME type, control hash, creation date, modification date, and size.
+R : Ce didacticiel montre comment récupérer et afficher les propriétés des pièces jointes telles que le nom, la description, le type MIME, le hachage du contrôle, la date de création, la date de modification et la taille.
 
-#### Q: How does this tutorial help me gather attachment information using Aspose.PDF for .NET?
+#### Q : Comment ce didacticiel m'aide-t-il à rassembler les informations des pièces jointes à l'aide d'Aspose.PDF pour .NET ?
 
-A: This tutorial provides step-by-step instructions and C# source code to access and display information about a specific attachment within a PDF document.
+R : Ce didacticiel fournit des instructions étape par étape et du code source C# pour accéder et afficher des informations sur une pièce jointe spécifique dans un document PDF.
 
-#### Q: Can I retrieve information about all attachments instead of a specific attachment using this tutorial?
+#### Q : Puis-je récupérer des informations sur toutes les pièces jointes au lieu d'une pièce jointe spécifique à l'aide de ce didacticiel ?
 
-A: This tutorial is focused on obtaining information about a specific attachment, but you can adapt the code to loop through all attachments and gather their information.
+R : Ce didacticiel vise à obtenir des informations sur une pièce jointe spécifique, mais vous pouvez adapter le code pour parcourir toutes les pièces jointes et rassembler leurs informations.
 
-#### Q: What is the purpose of the "Check Hash" property displayed in the attachment information?
+#### Q : A quoi sert la propriété « Vérifier le hachage » affichée dans les informations de la pièce jointe ?
 
-A: The "Check Hash" property represents the control hash value of the attachment, which can be used to verify the integrity of the attachment.
+R : La propriété « Vérifier le hachage » représente la valeur de hachage de contrôle de la pièce jointe, qui peut être utilisée pour vérifier l'intégrité de la pièce jointe.
 
-#### Q: How can I modify this code to retrieve information about attachments with different indices?
+#### Q : Comment puis-je modifier ce code pour récupérer des informations sur les pièces jointes avec des indices différents ?
 
-A: You can change the index value (e.g., `pdfDocument.EmbeddedFiles[1]`) to retrieve information about attachments at different indices within the PDF document.
+ R : Vous pouvez modifier la valeur de l'index (par exemple,`pdfDocument.EmbeddedFiles[1]`) pour récupérer des informations sur les pièces jointes à différents index du document PDF.
 
-#### Q: Can I use this knowledge to gather information from password-protected PDF files?
+#### Q : Puis-je utiliser ces connaissances pour collecter des informations à partir de fichiers PDF protégés par mot de passe ?
 
-A: Yes, you can apply similar principles to gather attachment information from password-protected PDF files using Aspose.PDF for .NET.
+R : Oui, vous pouvez appliquer des principes similaires pour collecter des informations sur les pièces jointes à partir de fichiers PDF protégés par mot de passe à l'aide d'Aspose.PDF pour .NET.
 
-#### Q: How does Aspose.PDF for .NET simplify the process of obtaining attachment information?
+#### Q : Comment Aspose.PDF pour .NET simplifie-t-il le processus d'obtention des informations sur les pièces jointes ?
 
-A: Aspose.PDF for .NET provides an intuitive API that allows you to access and manipulate attachment properties in PDF documents with ease.
+R : Aspose.PDF pour .NET fournit une API intuitive qui vous permet d'accéder et de manipuler facilement les propriétés des pièces jointes dans les documents PDF.
 
-#### Q: Are there specific scenarios where gathering attachment information is recommended?
+#### Q : Existe-t-il des scénarios spécifiques dans lesquels la collecte d’informations sur les pièces jointes est recommandée ?
 
-A: Gathering attachment information is valuable when you need to understand the details of embedded files, such as verifying their properties or auditing attachments in a document.
+R : La collecte d'informations sur les pièces jointes est utile lorsque vous avez besoin de comprendre les détails des fichiers intégrés, comme la vérification de leurs propriétés ou l'audit des pièces jointes dans un document.

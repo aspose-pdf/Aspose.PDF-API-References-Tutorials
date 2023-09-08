@@ -1,49 +1,49 @@
 ---
-title: Grouped Check Boxes In PDF Document
-linktitle: Grouped Check Boxes In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Easily create grouped checkboxes in PDF document with Aspose.PDF for .NET.
+title: Сгруппированные флажки в PDF-документе
+linktitle: Сгруппированные флажки в PDF-документе
+second_title: Справочник по Aspose.PDF для .NET API
+description: Легко создавайте сгруппированные флажки в PDF-документе с помощью Aspose.PDF для .NET.
 type: docs
 weight: 170
 url: /ru/net/programming-with-forms/grouped-check-boxes/
 ---
-In this tutorial, we will show you how to create grouped checkboxes in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+В этом уроке мы покажем вам, как создавать сгруппированные флажки в PDF-документе с помощью Aspose.PDF для .NET. Мы шаг за шагом объясним исходный код C#, чтобы помочь вам в этом процессе.
 
-## Step 1: Preparation
+## Шаг 1: Подготовка
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+Убедитесь, что вы импортировали необходимые библиотеки и указали путь к каталогу с вашими документами:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Instantiate a Document Object
+## Шаг 2. Создайте экземпляр объекта документа
 
-Instantiate a Document object:
+Создайте экземпляр объекта Document:
 
 ```csharp
 Document pdfDocument = new Document();
 ```
 
-## Step 3: Add page to PDF document
+## Шаг 3. Добавьте страницу в PDF-документ.
 
-Add a page to the PDF document:
+Добавьте страницу в PDF-документ:
 
 ```csharp
 Page page = pdfDocument.Pages.Add();
 ```
 
-## Step 4: Instantiate a RadioButtonField Object
+## Шаг 4. Создайте экземпляр объекта RadioButtonField
 
-Instantiate a RadioButtonField object with the page number as argument:
+Создайте экземпляр объекта RadioButtonField с номером страницы в качестве аргумента:
 
 ```csharp
 RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
 ```
 
-## Step 5: Add radio button options
+## Шаг 5. Добавьте параметры переключателя
 
-Add radio button options using the RadioButtonOptionField object and specify their position using the Rectangle object:
+Добавьте параметры переключателя с помощью объекта RadioButtonOptionField и укажите их положение с помощью объекта Rectangle:
 
 ```csharp
 RadioButtonOptionField opt1 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(0, 0, 20, 20));
@@ -54,9 +54,9 @@ radio.Add(opt1);
 radio.Add(opt2);
 ```
 
-## Step 6: Customize radio button options
+## Шаг 6. Настройте параметры переключателя
 
-Customize radio button options by setting their style, border, and appearance:
+Настройте параметры переключателей, задав их стиль, рамку и внешний вид:
 
 ```csharp
 opt1.Style = BoxStyle.Square;
@@ -69,36 +69,36 @@ opt2.Border.Width = 1;
 opt2.Border.Style = BorderStyle.Solid;
 ```
 
-## Step 7: Add the radio buttons to the form
+## Шаг 7. Добавьте переключатели в форму.
 
-Add the radio buttons to the document form object:
+Добавьте переключатели в объект формы документа:
 
 ```csharp
 pdfDocument.Form.Add(radio);
 ```
 
-## Step 8: Save the document
+## Шаг 8: Сохраните документ
 
-Save the PDF document:
+Сохраните PDF-документ:
 
 ```csharp
 dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Grouped Check Boxes using Aspose.PDF for .NET 
+### Пример исходного кода для сгруппированных флажков с использованием Aspose.PDF для .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Путь к каталогу документов.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Instantiate Document object
+	// Создать экземпляр объекта документа
 	Document pdfDocument = new Document();
-	// Add a page to PDF file
+	// Добавить страницу в PDF-файл
 	Page page = pdfDocument.Pages.Add();
-	// Instatiate RadioButtonField object with page number as argument
+	// Создать объект RadioButtonField с номером страницы в качестве аргумента.
 	RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
-	// Add first radio button option and also specify its origin using Rectangle object
+	// Добавьте первый параметр переключателя, а также укажите его начало с помощью объекта Rectangle.
 	RadioButtonOptionField opt1 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(0, 0, 20, 20));
 	RadioButtonOptionField opt2 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(100, 0, 120, 20));
 	opt1.OptionName = "Test1";
@@ -117,10 +117,10 @@ try
 	opt2.Border.Width = 1;
 	opt2.Border.Style = BorderStyle.Solid;
 	opt2.Characteristics.Border = System.Drawing.Color.Black;
-	// Add radio button to form object of Document object
+	// Добавить переключатель для формирования объекта объекта документа.
 	pdfDocument.Form.Add(radio);
 	dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
-	// Save the PDF document
+	// Сохраните PDF-документ
 	pdfDocument.Save(dataDir);
 	Console.WriteLine("\nGrouped checkboxes added successfully.\nFile saved at " + dataDir);
 }
@@ -130,28 +130,28 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, we learned how to create grouped checkboxes in a PDF document using Aspose.PDF for .NET. By following these steps, you can easily add custom radio button options and bundle them in your PDF documents using Aspose.PDF.
+В этом уроке мы узнали, как создавать сгруппированные флажки в PDF-документе с помощью Aspose.PDF для .NET. Следуя этим шагам, вы можете легко добавить пользовательские параметры переключателей и объединить их в свои PDF-документы с помощью Aspose.PDF.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What are grouped checkboxes in a PDF document?
+#### Вопрос: Что такое сгруппированные флажки в PDF-документе?
 
-A: Grouped checkboxes in a PDF document refer to a set of radio button options that are grouped together. Radio buttons allow users to select only one option from a group of mutually exclusive choices. When one radio button is selected, the others in the same group are automatically deselected. This grouping behavior is useful when you want to present users with multiple options but limit their selection to one choice only.
+О: Сгруппированные флажки в PDF-документе относятся к набору параметров переключателей, сгруппированных вместе. Радиокнопки позволяют пользователям выбирать только один вариант из группы взаимоисключающих вариантов. Когда выбран один переключатель, выбор остальных в той же группе автоматически отменяется. Такое группирование полезно, когда вы хотите предоставить пользователям несколько вариантов, но ограничить их выбор только одним вариантом.
 
-#### Q: Can I customize the appearance of grouped checkboxes in Aspose.PDF for .NET?
+#### Вопрос: Могу ли я настроить внешний вид сгруппированных флажков в Aspose.PDF для .NET?
 
-A: Yes, you can customize the appearance of grouped checkboxes in Aspose.PDF for .NET. The API provides various options to set the style, border, and appearance of radio button options. You can define the position of each option, choose between different box styles (e.g., square, circle, cross), and adjust the border properties to achieve the desired visual representation.
+О: Да, вы можете настроить внешний вид сгруппированных флажков в Aspose.PDF для .NET. API предоставляет различные параметры для установки стиля, границы и внешнего вида переключателей. Вы можете определить положение каждого параметра, выбирать между различными стилями рамки (например, квадрат, круг, крест) и настраивать свойства границы для достижения желаемого визуального представления.
 
-#### Q: How do I add grouped checkboxes to a specific page in a PDF document?
+#### Вопрос: Как добавить сгруппированные флажки на определенную страницу PDF-документа?
 
-A: To add grouped checkboxes to a specific page in a PDF document, you need to instantiate a `RadioButtonField` object with the desired page number as an argument. Then, create `RadioButtonOptionField` objects representing each radio button option and specify their position using the `Rectangle` object. Finally, add these options to the `RadioButtonField` and customize their appearance as needed before adding the `RadioButtonField` to the document form.
+О: Чтобы добавить сгруппированные флажки на определенную страницу PDF-документа, вам необходимо создать экземпляр`RadioButtonField` объект с нужным номером страницы в качестве аргумента. Затем создайте`RadioButtonOptionField` объекты, представляющие каждую опцию переключателя, и укажите их положение с помощью`Rectangle` объект. Наконец, добавьте эти параметры в`RadioButtonField` и настройте их внешний вид по мере необходимости, прежде чем добавлять`RadioButtonField` в форму документа.
 
-#### Q: Can I add multiple groups of checkboxes to a single PDF document?
+#### Вопрос: Могу ли я добавить несколько групп флажков в один PDF-документ?
 
-A: Yes, you can add multiple groups of checkboxes to a single PDF document. Each group should have a unique `RadioButtonField` object, and the `RadioButtonOptionField` objects within each group should share the same page and unique names for their options. This ensures that the radio buttons within each group function correctly, and the selections are mutually exclusive.
+ О: Да, вы можете добавить несколько групп флажков в один PDF-документ. Каждая группа должна иметь уникальный`RadioButtonField` объект, и`RadioButtonOptionField` объекты внутри каждой группы должны иметь одну и ту же страницу и уникальные имена для своих параметров. Это гарантирует, что переключатели внутри каждой группы будут работать правильно, а выбор будет взаимоисключающим.
 
-#### Q: Are grouped checkboxes supported in all PDF viewers and applications?
+#### Вопрос: Поддерживаются ли сгруппированные флажки во всех программах просмотра PDF-файлов и приложениях?
 
-A: Yes, grouped checkboxes are supported in all standard-compliant PDF viewers and applications. The PDF specification defines radio buttons and their grouping behavior, making them universally recognized in the PDF format. However, it's essential to test the functionality in different PDF viewers to ensure consistent behavior across various platforms.
+О: Да, сгруппированные флажки поддерживаются во всех стандартных программах просмотра PDF-файлов и приложениях. Спецификация PDF определяет переключатели и их группировку, что делает их общепризнанными в формате PDF. Однако важно протестировать функциональность в разных программах просмотра PDF-файлов, чтобы обеспечить единообразное поведение на разных платформах.

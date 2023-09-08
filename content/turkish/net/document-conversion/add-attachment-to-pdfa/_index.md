@@ -1,127 +1,127 @@
 ---
-title: Add Attachment to PDFA
-linktitle: Add Attachment to PDFA
-second_title: Aspose.PDF for .NET API Reference
-description: Easily add attachments to your PDF/A files using Aspose.PDF for .NET.
+title: PDFA'ya Ek Ekle
+linktitle: PDFA'ya Ek Ekle
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET'i kullanarak PDF/A dosyalarınıza kolayca eklentiler ekleyin.
 type: docs
 weight: 10
 url: /tr/net/document-conversion/add-attachment-to-pdfa/
 ---
-In this tutorial, we will guide you step by step on how to add an attachment to a PDF/A file using Aspose.PDF for .NET. We'll explain each step using C# code examples and provide step-by-step instructions to help you follow along easily.
+Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF/A dosyasına nasıl eklenti ekleneceği konusunda size adım adım rehberlik edeceğiz. Her adımı C# kod örneklerini kullanarak açıklayacağız ve kolayca takip etmenize yardımcı olacak adım adım talimatlar sunacağız.
 
-## Introduction
+## giriiş
 
-Attachments can be valuable additions to PDF files, as they allow you to include additional files such as relevant images, documents, or media. With Aspose.PDF for .NET, you can easily add attachments to your PDF files and ensure they are included in the final result.
+Ekler, ilgili görseller, belgeler veya medya gibi ek dosyalar eklemenize olanak tanıdığından PDF dosyalarına değerli eklemeler olabilir. Aspose.PDF for .NET ile PDF dosyalarınıza kolayca eklentiler ekleyebilir ve bunların nihai sonuca dahil edilmesini sağlayabilirsiniz.
 
-## Environment setup
+## Ortam kurulumu
 
-Before starting the implementation, let's first configure our development environment to work with Aspose.PDF for .NET.
+Uygulamaya başlamadan önce, geliştirme ortamımızı Aspose.PDF for .NET ile çalışacak şekilde yapılandıralım.
 
-1. Install Visual Studio or any other IDE suitable for C# development.
-2. Create a new C# project.
-3. Install the Aspose.PDF for .NET package via NuGet to add the necessary dependencies.
+1. Visual Studio'yu veya C# geliştirmeye uygun başka bir IDE'yi yükleyin.
+2. Yeni bir C# projesi oluşturun.
+3. Gerekli bağımlılıkları eklemek için Aspose.PDF for .NET paketini NuGet aracılığıyla yükleyin.
 
-## Step 1: Load existing PDF file
+## 1. Adım: Mevcut PDF dosyasını yükleyin
 
-To add an attachment, we first need to upload an existing PDF file. Follow these steps to upload the document using Aspose.PDF for .NET:
+Ek eklemek için öncelikle mevcut bir PDF dosyasını yüklememiz gerekir. Belgeyi Aspose.PDF for .NET kullanarak yüklemek için şu adımları izleyin:
 
 ```csharp
-// Path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Instantiate a new Document instance to load the existing file
+// Mevcut dosyayı yüklemek için yeni bir Belge örneği oluşturun
 Aspose.Pdf.Document doc = new Document(dataDir + "input.pdf");
 ```
 
-In the code above, replace `"YOUR DOCUMENTS DIRECTORY"` with the actual path of the directory where your input PDF document is located. This code initializes a new instance of the `Document` class and loads the existing PDF file.
+ Yukarıdaki kodda değiştirin`"YOUR DOCUMENTS DIRECTORY"`giriş PDF belgenizin bulunduğu dizinin gerçek yolu ile. Bu kod, yeni bir örneğini başlatır.`Document` sınıfını açar ve mevcut PDF dosyasını yükler.
 
-## Step 2: Creating the file specification for the attachment
+## Adım 2: Ek için dosya spesifikasyonunun oluşturulması
 
-To add an attachment, we need to create a file spec that defines the properties of the attachment. Follow these steps to create the file specification:
+Bir ek eklemek için, ekin özelliklerini tanımlayan bir dosya spesifikasyonu oluşturmamız gerekir. Dosya spesifikasyonunu oluşturmak için şu adımları izleyin:
 
 ```csharp
-// Path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Specify the new file to add as an attachment
+// Ek olarak eklenecek yeni dosyayı belirtin
 FileSpecification fileSpecification = new FileSpecification(dataDir + "aspose-logo.jpg", "Large image file");
 ```
 
-In the code above, replace `"YOUR DOCUMENTS DIRECTORY"` with the actual path of the directory where your image file to add is located. The file specification is created using the `FileSpecification` class, specifying the file path and a description.
+ Yukarıdaki kodda değiştirin`"YOUR DOCUMENTS DIRECTORY"` eklenecek resim dosyanızın bulunduğu dizinin gerçek yolu ile. Dosya spesifikasyonu kullanılarak oluşturulur.`FileSpecification` sınıf, dosya yolunu ve bir açıklamayı belirterek.
 
-## Step 3: Adding the attachment to the document
+## 3. Adım: Eki belgeye ekleme
 
-Now that we have the file specification, we can add it to the document's attachments collection. Follow these steps to add the attachment:
+Artık dosya spesifikasyonuna sahip olduğumuza göre onu belgenin ekler koleksiyonuna ekleyebiliriz. Eki eklemek için şu adımları izleyin:
 
 ```csharp
-// Add the attachment to the collection of
+// Eki koleksiyona ekle
 
   document attachments
 doc.EmbeddedFiles.Add(fileSpecification);
 ```
 
-In the code above, we use the `Add` method of the document`s `EmbeddedFiles` collection to add the file specification as an attachment.
+ Yukarıdaki kodda şunu kullanıyoruz:`Add` belgenin yöntemi`s `Dosya spesifikasyonunu ek olarak eklemek için EmbeddedFiles koleksiyonu.
 
-## Step 4: Convert to PDF/A_3a
+## 4. Adım: PDF/A_3a'ya dönüştürün
 
-For the attachment to be included in the resulting file, we need to convert to PDF/A_3a format. Follow these steps to perform the conversion:
+Ekin ortaya çıkan dosyaya dahil edilebilmesi için PDF/A_3a formatına dönüştürmemiz gerekiyor. Dönüşümü gerçekleştirmek için şu adımları izleyin:
 
 ```csharp
-// Perform the conversion to PDF/A_3a format
+// PDF/A_3a formatına dönüştürme işlemini gerçekleştirin
 doc.Convert(dataDir + "log.txt", Aspose.Pdf.PdfFormat.PDF_A_3A, ConvertErrorAction.Delete);
 ```
 
-In the code above, we use the `Convert` method to convert the document using the `"log.txt"` log file. We specify the output format using the `PdfFormat.PDF_A_3A` enum and specify the action to take on conversion error with `ConvertErrorAction.Delete`.
+ Yukarıdaki kodda şunu kullanıyoruz:`Convert` kullanarak belgeyi dönüştürme yöntemini kullanın.`"log.txt"` log dosyası. Çıkış formatını kullanarak belirtiyoruz.`PdfFormat.PDF_A_3A` enum'u seçin ve dönüştürme hatası durumunda gerçekleştirilecek eylemi belirtin.`ConvertErrorAction.Delete`.
 
-## Step 5: Save the resulting file
+## Adım 5: Ortaya çıkan dosyayı kaydedin
 
-Finally, we save the modified PDF document with the added attachment. Follow these steps to save the resulting file:
+Son olarak değiştirilen PDF belgesini eklenen ekle birlikte kaydediyoruz. Ortaya çıkan dosyayı kaydetmek için şu adımları izleyin:
 
 ```csharp
-// Save the resulting file
+// Ortaya çıkan dosyayı kaydedin
 doc.Save(dataDir + "AddAttachmentToPDFA_out.pdf");
 ```
 
-In the code above, we use the `Save` method to save the document with the file name `"AddAttachmentToPDFA_out.pdf"`. Be sure to specify the appropriate path where you want to save the resulting file.
+ Yukarıdaki kodda şunu kullanıyoruz:`Save` belgeyi dosya adıyla kaydetme yöntemi`"AddAttachmentToPDFA_out.pdf"`. Ortaya çıkan dosyayı kaydetmek istediğiniz uygun yolu belirttiğinizden emin olun.
 
-### Example source code for add attachment to PDFA using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak PDFA'ya eklenti eklemek için örnek kaynak kodu
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate Document instance to load existing file
+// Mevcut dosyayı yüklemek için Belge örneğini oluştur
 Aspose.Pdf.Document doc = new Document(dataDir + "input.pdf");
-// Setup new file to be added as attachment
+// Ek olarak eklenecek yeni dosyayı ayarlayın
 FileSpecification fileSpecification = new FileSpecification(dataDir + "aspose-logo.jpg", "Large Image file");
-// Add attachment to document's attachment collection
+//Belgenin ek koleksiyonuna ek ekleyin
 doc.EmbeddedFiles.Add(fileSpecification);
-// Perform conversion to PDF/A_3a so attachment is included in resultnat file
+// Ekin sonuç dosyasına dahil edilmesi için PDF/A_3a'ya dönüştürme gerçekleştirin
 doc.Convert(dataDir + "log.txt", Aspose.Pdf.PdfFormat.PDF_A_3A, ConvertErrorAction.Delete);
-// Save resultant file
+// Ortaya çıkan dosyayı kaydet
 doc.Save(dataDir + "AddAttachmentToPDFA_out.pdf");
 
 Console.WriteLine("\nAttachment added successfully to PDF/A file.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, you learned how to add an attachment to a PDF/A file using Aspose.PDF for .NET. We've covered every step of the process, from loading the existing document to converting and saving the resulting file. Using the provided code examples, you can easily integrate this functionality into your own projects. Experiment with Aspose.PDF for .NET and discover the possibilities it offers for advanced manipulation of PDF files.
+Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF/A dosyasına nasıl eklenti ekleyeceğinizi öğrendiniz. Mevcut belgenin yüklenmesinden, sonuçtaki dosyanın dönüştürülmesine ve kaydedilmesine kadar sürecin her adımını ele aldık. Sağlanan kod örneklerini kullanarak bu işlevselliği kendi projelerinize kolayca entegre edebilirsiniz. Aspose.PDF for .NET ile denemeler yapın ve PDF dosyalarının gelişmiş manipülasyonu için sunduğu olanakları keşfedin.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET nedir?
 
-A: Aspose.PDF for .NET is a powerful PDF manipulation and processing library for .NET applications. It allows developers to create, edit, convert, and manipulate PDF files programmatically.
+C: Aspose.PDF for .NET, .NET uygulamalarına yönelik güçlü bir PDF işleme ve işleme kütüphanesidir. Geliştiricilerin PDF dosyalarını programlı olarak oluşturmasına, düzenlemesine, dönüştürmesine ve değiştirmesine olanak tanır.
 
-#### Q: What is the purpose of adding attachments to PDF files?
+#### S: PDF dosyalarına eklenti eklemenin amacı nedir?
 
-A: Adding attachments to PDF files allows you to include additional files, such as images, documents, or media, within the PDF document. This can be useful for providing supplementary information or related resources.
+C: PDF dosyalarına ek eklemek, PDF belgesine resim, belge veya medya gibi ek dosyalar eklemenizi sağlar. Bu, ek bilgi veya ilgili kaynakların sağlanması açısından yararlı olabilir.
 
-#### Q: Can I add multiple attachments to a PDF document using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET kullanarak bir PDF belgesine birden fazla eklenti ekleyebilir miyim?
 
-A: Yes, you can add multiple attachments to a PDF document using Aspose.PDF for .NET. Simply create multiple `FileSpecification` objects, each representing a different attachment, and add them to the `EmbeddedFiles` collection of the document.
+ C: Evet, Aspose.PDF for .NET'i kullanarak bir PDF belgesine birden fazla eklenti ekleyebilirsiniz. Basitçe birden fazla oluşturun`FileSpecification` her biri farklı bir eki temsil eden nesneleri seçin ve bunları`EmbeddedFiles` belgenin toplanması.
 
-#### Q: How does the conversion to PDF/A_3a format impact the attachment?
+#### S: PDF/A_3a biçimine dönüştürme, eki nasıl etkiler?
 
-A: The conversion to PDF/A_3a format ensures that the attachment is included in the resulting PDF/A document. PDF/A_3a is a standard for long-term archiving of electronic documents, and by converting to this format, the attachment becomes a permanent part of the PDF document.
+C: PDF/A_3a formatına dönüştürme, ekin ortaya çıkan PDF/A belgesine dahil edilmesini sağlar. PDF/A_3a, elektronik belgelerin uzun süreli arşivlenmesine yönelik bir standarttır ve bu formata dönüştürülmesiyle ek, PDF belgesinin kalıcı bir parçası haline gelir.

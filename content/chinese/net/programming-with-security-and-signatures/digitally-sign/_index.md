@@ -1,28 +1,28 @@
 ---
-title: Digitally Sign In PDF File
-linktitle: Digitally Sign In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to digitally sign in PDF file with Aspose.PDF for .NET.
+title: 数字登录 PDF 文件
+linktitle: 数字登录 PDF 文件
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 对 PDF 文件进行数字签名。
 type: docs
 weight: 40
 url: /zh/net/programming-with-security-and-signatures/digitally-sign/
 ---
-In this tutorial, we will walk you through the process of digitally signing in PDF file using Aspose.PDF for .NET. The digital signature guarantees the authenticity and integrity of the document, by adding a unique electronic fingerprint.
+在本教程中，我们将引导您完成使用 Aspose.PDF for .NET 对 PDF 文件进行数字签名的过程。数字签名通过添加唯一的电子指纹来保证文档的真实性和完整性。
 
-## Step 1: Prerequisites
+## 第 1 步：先决条件
 
-Before you begin, make sure you have the following prerequisites:
+在开始之前，请确保您具备以下先决条件：
 
-- Basic knowledge of the C# programming language
-- Installing Visual Studio on your machine
-- Aspose.PDF library for .NET installed
+- C# 编程语言的基础知识
+- 在您的计算机上安装 Visual Studio
+- 已安装适用于 .NET 的 Aspose.PDF 库
 
-## Step 2: Environment setup
+## 第2步：环境设置
 
-To get started, follow these steps to set up your development environment:
+首先，请按照以下步骤设置您的开发环境：
 
-1. Open Visual Studio and create a new C# project.
-2. Import the required namespaces into your code file:
+1. 打开 Visual Studio 并创建一个新的 C# 项目。
+2. 将所需的命名空间导入到您的代码文件中：
 
 ```csharp
 using Aspose.Pdf;
@@ -30,9 +30,9 @@ using Aspose.Pdf.Forms;
 using System.Collections.Generic;
 ```
 
-## Step 3: Digital signature
+## 第三步：数字签名
 
-The first step is to digitally sign the PDF file. The provided code shows how to make a digital signature with Aspose.PDF for .NET.
+第一步是对 PDF 文件进行数字签名。提供的代码展示了如何使用 Aspose.PDF for .NET 进行数字签名。
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -53,11 +53,11 @@ using (Document document = new Document(inFile))
 }
 ```
 
-This code loads a PDF file, creates a digital signature with a specified appearance, then saves the PDF file with the added signature.
+此代码加载 PDF 文件，创建具有指定外观的数字签名，然后使用添加的签名保存 PDF 文件。
 
-## Step 4: Signature Verification
+## 第四步：签名验证
 
-After adding the digital signature, you can check if the PDF file contains a valid signature.
+添加数字签名后，您可以检查PDF文件是否包含有效签名。
 
 ```csharp
 using(Document document = new Document(outFile))
@@ -73,7 +73,7 @@ using(Document document = new Document(outFile))
                  {
                      if (signature.GetAccessPermissions() == DocMDPAccessPermissions.FillingInForms)
                      {
-                         // Do something
+                         //做一点事
                      }
                  }
              }
@@ -82,13 +82,13 @@ using(Document document = new Document(outFile))
 }
 ```
 
-This code verifies the first signature of the PDF file and performs additional actions if the signature is certified and has specific permissions.
+此代码验证 PDF 文件的第一个签名，并在签名经过认证且具有特定权限时执行其他操作。
 
-### Sample source code for Digitally Sign using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 进行数字签名的示例源代码 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	//文档目录的路径。
 	string dataDir = "YOUR DOCUMENTS DIRECTORY";
 	string pbxFile = "";
 	string inFile = dataDir + @"DigitallySign.pdf";
@@ -97,14 +97,14 @@ try
 	{
 		using (PdfFileSignature signature = new PdfFileSignature(document))
 		{
-			PKCS7 pkcs = new PKCS7(pbxFile, "WebSales"); // Use PKCS7/PKCS7Detached objects
+			PKCS7 pkcs = new PKCS7(pbxFile, "WebSales"); //使用 PKCS7/PKCS7Detached 对象
 			DocMDPSignature docMdpSignature = new DocMDPSignature(pkcs, DocMDPAccessPermissions.FillingInForms);
 			System.Drawing.Rectangle rect = new System.Drawing.Rectangle(100, 100, 200, 100);
-			// Set signature appearance
+			//设置签名外观
 			signature.SignatureAppearance = dataDir + @"aspose-logo.jpg";
-			// Create any of the three signature types
+			//创建三种签名类型中的任意一种
 			signature.Certify(1, "Signature Reason", "Contact", "Location", true, rect, docMdpSignature);
-			// Save output PDF file
+			//保存输出 PDF 文件
 			signature.Save(outFile);
 		}
 	}
@@ -113,15 +113,15 @@ try
 		using (PdfFileSignature signature = new PdfFileSignature(document))
 		{
 			IList<string> sigNames = signature.GetSignNames();
-			if (sigNames.Count > 0) // Any signatures?
+			if (sigNames.Count > 0) //有签名吗？
 			{
-				if (signature.VerifySigned(sigNames[0] as string)) // Verify first one
+				if (signature.VerifySigned(sigNames[0] as string)) //验证第一个
 				{
-					if (signature.IsCertified) // Certified?
+					if (signature.IsCertified) //已认证？
 					{
-						if (signature.GetAccessPermissions() == DocMDPAccessPermissions.FillingInForms) // Get access permission
+						if (signature.GetAccessPermissions() == DocMDPAccessPermissions.FillingInForms) //获取访问权限
 						{
-							// Do something
+							//做一点事
 						}
 					}
 				}
@@ -135,48 +135,48 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## 结论
 
-Congratulation ! You have successfully performed a digital signature on a PDF file using Aspose.PDF for .NET. This tutorial covered the step-by-step process, from adding the digital signature to verifying its validity. You can now use this feature to secure your PDF files with digital signatures.
+恭喜！您已使用 Aspose.PDF for .NET 对 PDF 文件成功执行了数字签名。本教程介绍了从添加数字签名到验证其有效性的分步过程。您现在可以使用此功能通过数字签名来保护您的 PDF 文件。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What is the purpose of this tutorial?
+#### 问：本教程的目的是什么？
 
-A: This tutorial guides you through the process of digitally signing a PDF file using Aspose.PDF for .NET. Digital signatures add an electronic fingerprint to ensure the authenticity and integrity of the document.
+答：本教程将指导您完成使用 Aspose.PDF for .NET 对 PDF 文件进行数字签名的过程。数字签名添加电子指纹以确保文档的真实性和完整性。
 
-#### Q: What prerequisites are required before starting?
+#### 问：开始之前需要什么先决条件？
 
-A: Before you begin, ensure you have a basic understanding of the C# programming language, have Visual Studio installed, and have the Aspose.PDF library for .NET installed.
+答：开始之前，请确保您对 C# 编程语言有基本的了解，已安装 Visual Studio，并安装了适用于 .NET 的 Aspose.PDF 库。
 
-#### Q: How do I set up the development environment?
+#### 问：如何搭建开发环境？
 
-A: Follow the provided steps to set up your development environment, including creating a new C# project in Visual Studio, and importing the required namespaces.
+答：按照提供的步骤设置开发环境，包括在 Visual Studio 中创建新的 C# 项目，并导入所需的命名空间。
 
-#### Q: How do I add a digital signature to a PDF file?
+#### 问：如何向 PDF 文件添加数字签名？
 
-A: The provided sample code demonstrates how to load a PDF file, create a digital signature, specify appearance, and save the signed PDF file. The digital signature is added using the `Certify` method of the `PdfFileSignature` object.
+答：提供的示例代码演示了如何加载 PDF 文件、创建数字签名、指定外观以及保存签名的 PDF 文件。数字签名是使用添加的`Certify`的方法`PdfFileSignature`目的。
 
-#### Q: How do I verify the validity of a digital signature?
+#### 问：如何验证数字签名的有效性？
 
-A: After adding the digital signature, you can use the sample code to verify the validity of the signature. It checks if the signature is certified and has specific access permissions.
+A：添加数字签名后，您可以使用示例代码验证签名的有效性。它检查签名是否经过认证并具有特定的访问权限。
 
-#### Q: What does the `PKCS7` object represent?
+#### 问：什么是`PKCS7` object represent?
 
-A: The `PKCS7` object is used to provide the cryptographic functionality for digital signatures. It is used to create the digital signature in the provided sample code.
+答： 的`PKCS7`对象用于为数字签名提供加密功能。它用于在提供的示例代码中创建数字签名。
 
-#### Q: Can I customize the appearance of the digital signature?
+#### 问：我可以自定义数字签名的外观吗？
 
-A: Yes, you can customize the appearance of the digital signature by specifying the path to an image in the `SignatureAppearance` property of the `PdfFileSignature` object.
+答：是的，您可以通过在文件中指定图像的路径来自定义数字签名的外观。`SignatureAppearance`的财产`PdfFileSignature`目的。
 
-#### Q: What happens if the signature is not valid?
+#### 问：如果签名无效怎么办？
 
-A: If the signature is not valid, the verification process will fail, and the corresponding actions within the verification code block will not be executed.
+A：如果签名无效，则验证过程将失败，验证码块内的相应操作将不会被执行。
 
-#### Q: How can I ensure the security of my digital signatures?
+#### 问：如何确保我的数字签名的安全？
 
-A: Digital signatures are secure by design and use cryptographic techniques to ensure authenticity and integrity. Ensure that you keep your private key secure and follow best practices for handling digital signatures.
+答：数字签名在设计上是安全的，并使用加密技术来确保真实性和完整性。确保您的私钥安全并遵循处理数字签名的最佳实践。
 
-#### Q: Can I add multiple digital signatures to a PDF?
+#### 问：我可以在 PDF 中添加多个数字签名吗？
 
-A: Yes, you can add multiple digital signatures to a PDF file using the `PdfFileSignature` object's `Sign` or `Certify` methods. Each signature will have its own appearance and configuration.
+答：是的，您可以使用以下命令向 PDF 文件添加多个数字签名`PdfFileSignature`对象的`Sign`或者`Certify`方法。每个签名都有自己的外观和配置。

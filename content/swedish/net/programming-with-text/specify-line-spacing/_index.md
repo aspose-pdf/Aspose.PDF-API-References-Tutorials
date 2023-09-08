@@ -1,28 +1,28 @@
 ---
-title: Specify Line Spacing In PDF File
-linktitle: Specify Line Spacing In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to specify line spacing in PDF file using Aspose.PDF for .NET.
+title: Ange radavstånd i PDF-fil
+linktitle: Ange radavstånd i PDF-fil
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du anger radavstånd i PDF-filen med Aspose.PDF för .NET.
 type: docs
 weight: 510
 url: /sv/net/programming-with-text/specify-line-spacing/
 ---
-This tutorial explains how to specify line spacing in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the process step by step.
+Denna handledning förklarar hur man anger radavstånd i PDF-fil med Aspose.PDF för .NET. Den medföljande C#-källkoden demonstrerar processen steg för steg.
 
-## Prerequisites
+## Förutsättningar
 
-Before proceeding with the tutorial, make sure you have the following:
+Innan du fortsätter med handledningen, se till att du har följande:
 
-- Basic knowledge of C# programming language.
-- Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to install it in your project.
+- Grundläggande kunskaper i programmeringsspråket C#.
+- Aspose.PDF för .NET-biblioteket installerat. Du kan hämta det från Asposes webbplats eller använda NuGet för att installera det i ditt projekt.
 
-## Step 1: Set up the project
+## Steg 1: Konfigurera projektet
 
-Start by creating a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library.
+Börja med att skapa ett nytt C#-projekt i din föredragna integrerade utvecklingsmiljö (IDE) och lägg till en referens till Aspose.PDF för .NET-biblioteket.
 
-## Step 2: Import necessary namespaces
+## Steg 2: Importera nödvändiga namnutrymmen
 
-Add the following using directives at the beginning of your C# file to import the required namespaces:
+Lägg till följande med hjälp av direktiv i början av din C#-fil för att importera de nödvändiga namnrymden:
 
 ```csharp
 using Aspose.Pdf;
@@ -30,44 +30,44 @@ using Aspose.Pdf.Text;
 using System.IO;
 ```
 
-## Step 3: Set the path to the document directory
+## Steg 3: Ställ in sökvägen till dokumentkatalogen
 
-Set the path to your document directory using the `dataDir` variable:
+ Ställ in sökvägen till din dokumentkatalog med hjälp av`dataDir` variabel:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ Byta ut`"YOUR DOCUMENT DIRECTORY"` med den faktiska sökvägen till din dokumentkatalog.
 
-## Step 4: Load the input PDF file
+## Steg 4: Ladda in PDF-filen
 
-Load the input PDF file using the `Document` class:
+ Ladda in PDF-filen med hjälp av`Document` klass:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 5: Create TextFormattingOptions
+## Steg 5: Skapa TextFormattingOptions
 
-Create a `TextFormattingOptions` object and set the line spacing mode to `FullSize`:
+ Skapa en`TextFormattingOptions` objekt och ställ in radavståndsläget till`FullSize`:
 
 ```csharp
 TextFormattingOptions formattingOptions = new TextFormattingOptions();
 formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
 ```
 
-## Step 6: Create a TextFragment
+## Steg 6: Skapa ett TextFragment
 
-Create a `TextFragment` object and specify the text content:
+ Skapa en`TextFragment` objekt och ange textinnehållet:
 
 ```csharp
 TextFragment textFragment = new TextFragment("Hello world");
 ```
 
-## Step 7: Load the font file (optional)
+## Steg 7: Ladda teckensnittsfilen (valfritt)
 
-If you want to use a specific font for the text, load the TrueType font file into a `FileStream` object:
+ Om du vill använda ett specifikt teckensnitt för texten, ladda TrueType-teckensnittsfilen i en`FileStream` objekt:
 
 ```csharp
 string fontFile = dataDir + "HPSimplified.TTF";
@@ -77,111 +77,111 @@ using (FileStream fontStream = File.OpenRead(fontFile))
 }
 ```
 
-Replace `"HPSimplified.TTF"` with the actual font file name.
+ Byta ut`"HPSimplified.TTF"` med det faktiska teckensnittsfilnamnet.
 
-## Step 8: Specify the text position and line spacing
+## Steg 8: Ange textposition och radavstånd
 
-Set the position for the text fragment and assign the `TextFormattingOptions` to the `TextState.FormattingOptions` property:
+ Ställ in positionen för textfragmentet och tilldela`TextFormattingOptions` till`TextState.FormattingOptions` fast egendom:
 
 ```csharp
 textFragment.Position = new Position(100, 600);
 textFragment.TextState.FormattingOptions = formattingOptions;
 ```
 
-## Step 9: Add the text to the document
+## Steg 9: Lägg till texten i dokumentet
 
-Add the text fragment to the document, either by appending it to a `TextBuilder` or directly to a page's `Paragraphs` collection:
+ Lägg till textfragmentet i dokumentet, antingen genom att lägga till det i en`TextBuilder` eller direkt till en sida`Paragraphs` samling:
 
 ```csharp
 var page = doc.Pages.Add();
 page.Paragraphs.Add(textFragment);
 ```
 
-## Step 10: Save the resulting PDF document
+## Steg 10: Spara det resulterande PDF-dokumentet
 
-Save the modified PDF document:
+Spara det ändrade PDF-dokumentet:
 
 ```csharp
 dataDir = dataDir + "SpecifyLineSpacing_out.pdf";
 doc.Save(dataDir);
 ```
 
-Make sure to replace `"SpecifyLineSpacing_out.pdf"` with the desired output file name.
+ Se till att byta ut`"SpecifyLineSpacing_out.pdf"` med önskat utdatafilnamn.
 
-### Sample source code for Specify Line Spacing using Aspose.PDF for .NET 
+### Exempel på källkod för Specificera radavstånd med Aspose.PDF för .NET 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string fontFile = dataDir + "HPSimplified.TTF";
-// Load input PDF file
+// Ladda inmatad PDF-fil
 Document doc = new Document();
-//Create TextFormattingOptions with LineSpacingMode.FullSize
+//Skapa TextFormattingOptions med LineSpacingMode.FullSize
 TextFormattingOptions formattingOptions = new TextFormattingOptions();
 formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
-// Create text builder object for first page of document
+// Skapa textbyggarobjekt för första sidan i dokumentet
 //TextBuilder textBuilder = new TextBuilder(doc.Pages[1]);
-// Create text fragment with sample string
+// Skapa textfragment med exempelsträng
 TextFragment textFragment = new TextFragment("Hello world");
 if (fontFile != "")
 {
-	// Load the TrueType font into stream object
+	// Ladda TrueType-teckensnittet i strömobjektet
 	using (FileStream fontStream = System.IO.File.OpenRead(fontFile))
 	{
-		// Set the font name for text string
+		//Ställ in teckensnittsnamnet för textsträngen
 		textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
-		// Specify the position for Text Fragment
+		// Ange positionen för textfragment
 		textFragment.Position = new Position(100, 600);
-		//Set TextFormattingOptions of current fragment to predefined(which points to LineSpacingMode.FullSize)
+		//Ställ in TextFormattingOptions för aktuellt fragment till fördefinierat (vilket pekar på LineSpacingMode.FullSize)
 		textFragment.TextState.FormattingOptions = formattingOptions;
-		// Add the text to TextBuilder so that it can be placed over the PDF file
+		// Lägg till texten i TextBuilder så att den kan placeras över PDF-filen
 		//textBuilder.AppendText(textFragment);
 		var page = doc.Pages.Add();
 		page.Paragraphs.Add(textFragment);
 	}
 	dataDir = dataDir + "SpecifyLineSpacing_out.pdf";
-	// Save resulting PDF document
+	// Spara det resulterande PDF-dokumentet
 	doc.Save(dataDir);
 }
 ```
 
-## Conclusion
+## Slutsats
 
-Congratulations! You have successfully learned how to specify line spacing in a PDF document using Aspose.PDF for .NET. This tutorial provided a step-by-step guide, from setting up the project to saving the modified document. You can now incorporate this code into your own C# projects to customize the line spacing of text in PDF files.
+Grattis! Du har framgångsrikt lärt dig hur du anger radavstånd i ett PDF-dokument med Aspose.PDF för .NET. Denna handledning gav en steg-för-steg-guide, från att ställa in projektet till att spara det ändrade dokumentet. Du kan nu infoga den här koden i dina egna C#-projekt för att anpassa radavståndet för text i PDF-filer.
 
 ### FAQ's
 
-#### Q: What is the purpose of the "Specify Line Spacing In PDF File" tutorial?
+#### F: Vad är syftet med handledningen "Ange radavstånd i PDF-fil"?
 
-A: The "Specify Line Spacing In PDF File" tutorial aims to guide users on how to use the Aspose.PDF library for .NET to customize the line spacing of text within a PDF document. The tutorial provides step-by-step instructions and C# code samples to demonstrate the process.
+S: Handledningen "Ange radavstånd i PDF-fil" syftar till att vägleda användare om hur man använder Aspose.PDF-biblioteket för .NET för att anpassa radavståndet för text i ett PDF-dokument. Handledningen innehåller steg-för-steg-instruktioner och C#-kodexempel för att demonstrera processen.
 
-#### Q: How does this tutorial help in specifying line spacing within a PDF document?
+#### F: Hur hjälper den här handledningen att ange radavstånd i ett PDF-dokument?
 
-A: This tutorial helps users understand how to utilize the capabilities of Aspose.PDF for .NET to specify line spacing for text in a PDF document. By following the provided steps and code examples, users can adjust the line spacing according to their preferences.
+S: Denna handledning hjälper användare att förstå hur man använder funktionerna i Aspose.PDF för .NET för att ange radavstånd för text i ett PDF-dokument. Genom att följa de medföljande stegen och kodexemplen kan användare justera radavståndet enligt deras preferenser.
 
-#### Q: What prerequisites are required to follow this tutorial?
+#### F: Vilka förutsättningar krävs för att följa denna handledning?
 
-A: Before starting the tutorial, you should have a basic understanding of the C# programming language. Additionally, you need to have the Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or install it in your project using NuGet.
+S: Innan du startar handledningen bör du ha en grundläggande förståelse för programmeringsspråket C#. Dessutom måste du ha Aspose.PDF för .NET-biblioteket installerat. Du kan hämta det från Asposes webbplats eller installera det i ditt projekt med NuGet.
 
-#### Q: How do I set up my project to follow this tutorial?
+#### F: Hur ställer jag in mitt projekt för att följa denna handledning?
 
-A: To get started, create a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library. This enables you to leverage the library's features for working with PDF documents and customizing line spacing.
+S: För att komma igång, skapa ett nytt C#-projekt i din föredragna integrerade utvecklingsmiljö (IDE) och lägg till en referens till Aspose.PDF för .NET-biblioteket. Detta gör att du kan utnyttja bibliotekets funktioner för att arbeta med PDF-dokument och anpassa radavstånd.
 
-#### Q: Can I use this tutorial to specify line spacing for any type of text?
+#### F: Kan jag använda den här handledningen för att ange radavstånd för alla typer av text?
 
-A: Yes, this tutorial provides instructions on how to specify line spacing for any text content within a PDF document using Aspose.PDF for .NET. You can use the provided code samples to adjust the line spacing of text according to your needs.
+S: Ja, den här handledningen ger instruktioner om hur man anger radavstånd för textinnehåll i ett PDF-dokument med Aspose.PDF för .NET. Du kan använda de medföljande kodexemplen för att justera textens radavstånd efter dina behov.
 
-#### Q: How do I specify the line spacing mode in the tutorial?
+#### F: Hur anger jag radavståndsläget i handledningen?
 
-A: The tutorial demonstrates how to create a `TextFormattingOptions` object and set its `LineSpacing` property to `TextFormattingOptions.LineSpacingMode.FullSize`. This mode specifies full line spacing for the text content.
+ S: Handledningen visar hur man skapar en`TextFormattingOptions` objekt och ställ in dess`LineSpacing` egendom till`TextFormattingOptions.LineSpacingMode.FullSize`. Detta läge anger fullständigt radavstånd för textinnehållet.
 
-#### Q: How can I load a specific font for the text?
+#### F: Hur kan jag ladda ett specifikt teckensnitt för texten?
 
-A: If you wish to use a specific font for the text content, the tutorial provides guidance on how to load a TrueType font file into a `FileStream` object and set it as the font for the `TextFragment`. This enables you to customize the font of the text along with its line spacing.
+ S: Om du vill använda ett specifikt teckensnitt för textinnehållet, ger handledningen vägledning om hur du laddar en TrueType-teckensnittsfil i en`FileStream` objekt och ställ in det som teckensnitt för`TextFragment`. Detta gör att du kan anpassa textens teckensnitt tillsammans med dess radavstånd.
 
-#### Q: How do I customize the position of the text within the PDF document?
+#### F: Hur anpassar jag positionen för texten i PDF-dokumentet?
 
-A: To customize the position of the text, create a `TextFragment` object and set its `Position` property to the desired coordinates (X and Y). This allows you to control where the text is placed within the PDF document.
+ S: För att anpassa textens position, skapa en`TextFragment` objekt och ställ in dess`Position`egenskapen till de önskade koordinaterna (X och Y). Detta låter dig styra var texten placeras i PDF-dokumentet.
 
-#### Q: Can I apply these line spacing modifications to existing PDF documents?
+#### F: Kan jag tillämpa dessa radavståndsändringar på befintliga PDF-dokument?
 
-A: Yes, you can modify line spacing for text in existing PDF documents. The tutorial demonstrates how to create a `TextFragment` with the specified line spacing and position, and then add it to a page's `Paragraphs` collection.
+ S: Ja, du kan ändra radavstånd för text i befintliga PDF-dokument. Handledningen visar hur man skapar en`TextFragment` med angivet radavstånd och position, och lägg sedan till det på en sidas`Paragraphs` samling.

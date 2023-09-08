@@ -1,27 +1,27 @@
 ---
-title: Apply Number Style In PDF File
-linktitle: Apply Number Style In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to apply a numbering style to headings in PDF file using Aspose.PDF for .NET. Step by step guide.
+title: تطبيق نمط الأرقام في ملف PDF
+linktitle: تطبيق نمط الأرقام في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية تطبيق نمط الترقيم على العناوين في ملف PDF باستخدام Aspose.PDF لـ .NET. دليل خطوة بخطوة.
 type: docs
 weight: 10
 url: /ar/net/programming-with-headings/apply-number-style/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to apply numbering style in PDF file using Aspose.PDF for .NET.
+في هذا البرنامج التعليمي، سنرشدك عبر التعليمات البرمجية المصدر لـ C# التالية خطوة بخطوة لتطبيق نمط الترقيم في ملف PDF باستخدام Aspose.PDF لـ .NET.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+تأكد من تثبيت مكتبة Aspose.PDF وإعداد بيئة التطوير الخاصة بك قبل البدء. لديك أيضًا معرفة أساسية ببرمجة C#.
 
-### Step 1: Document Directory Setup
+### الخطوة 1: إعداد دليل المستندات
 
-In the provided source code, you need to specify the directory where you want to save the generated PDF file. Change the "dataDir" variable to the desired directory.
+في الكود المصدري المقدم، تحتاج إلى تحديد الدليل الذي تريد حفظ ملف PDF الذي تم إنشاؤه فيه. قم بتغيير المتغير "dataDir" إلى الدليل المطلوب.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### Step 2: Creating the PDF Document
+### الخطوة 2: إنشاء وثيقة PDF
 
-We create a new PDF document with specified dimensions and margins.
+نقوم بإنشاء مستند PDF جديد بأبعاد وهوامش محددة.
 
 ```csharp
 Document pdfDoc = new Document();
@@ -34,9 +34,9 @@ pdfDoc.PageInfo.Margin.Top = 72;
 pdfDoc.PageInfo.Margin.Bottom = 72;
 ```
 
-### Step 3: Creating a Page and Floating Container
+### الخطوة 3: إنشاء صفحة وحاوية عائمة
 
-We add a page to the document and create a floating container to organize the content.
+نضيف صفحة إلى المستند وننشئ حاوية عائمة لتنظيم المحتوى.
 
 ```csharp
 Aspose.Pdf.Page pdfPage = pdfDoc.Pages.Add();
@@ -52,9 +52,9 @@ floatBox.Margin = pdfPage.PageInfo.Margin;
 pdfPage.Paragraphs.Add(floatBox);
 ```
 
-### Step 4: Add headings with numbering
+### الخطوة 4: إضافة العناوين مع الترقيم
 
-We create headers with specified numberings and add them to the floating container.
+نقوم بإنشاء رؤوس بأرقام محددة ونضيفها إلى الحاوية العائمة.
 
 ```csharp
 Aspose.Pdf.Heading heading = new Aspose.Pdf.Heading(1);
@@ -84,9 +84,9 @@ heading3.IsAutoSequence = true;
 floatBox.Paragraphs.Add(heading3);
 ```
 
-### Step 5: Saving the PDF Document
+### الخطوة 5: حفظ مستند PDF
 
-We save the generated PDF document in the specified directory.
+نقوم بحفظ مستند PDF الذي تم إنشاؤه في الدليل المحدد.
 
 ```csharp
 dataDir = dataDir + "ApplyNumberStyle_out.pdf";
@@ -94,10 +94,10 @@ pdfDoc.Save(dataDir);
 Console.WriteLine("\nNumbering style successfully applied to headers.\nFile saved as: " + dataDir);
 ```
 
-### Sample source code for Apply Number Style using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لتطبيق نمط الأرقام باستخدام Aspose.PDF لـ .NET 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDoc = new Document();
 pdfDoc.PageInfo.Width = 612.0;
@@ -147,48 +147,48 @@ Console.WriteLine("\nNumber style applied successfully in headings.\nFile saved 
           
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we explained how to apply a numbering style to headings in a PDF document using Aspose.PDF for .NET. You can now use this knowledge to create PDF documents with custom numberings for headings.
+في هذا البرنامج التعليمي، شرحنا كيفية تطبيق نمط الترقيم على العناوين في مستند PDF باستخدام Aspose.PDF لـ .NET. يمكنك الآن استخدام هذه المعرفة لإنشاء مستندات PDF بأرقام مخصصة للعناوين.
 
-### FAQ's for apply number style in PDF file
+### الأسئلة الشائعة لتطبيق نمط الأرقام في ملف PDF
 
-#### Q: What is numbering style in a PDF document?
+#### س: ما هو نمط الترقيم في مستند PDF؟
 
-A: Numbering style refers to the format in which headings or sections are numbered in a PDF document. It can include numerals, letters, or other characters to provide a hierarchical structure.
+ج: يشير نمط الترقيم إلى التنسيق الذي يتم به ترقيم العناوين أو الأقسام في مستند PDF. ويمكن أن تتضمن أرقامًا أو أحرفًا أو أحرفًا أخرى لتوفير بنية هرمية.
 
-#### Q: Why would I need to apply numbering style to headings in a PDF document?
+#### س: لماذا أحتاج إلى تطبيق نمط الترقيم على العناوين في مستند PDF؟
 
-A: Applying numbering style to headings enhances the readability and organization of your PDF document. It helps readers easily navigate and understand the hierarchical structure of the content.
+ج: يؤدي تطبيق نمط الترقيم على العناوين إلى تحسين إمكانية قراءة مستند PDF الخاص بك وتنظيمه. فهو يساعد القراء على التنقل بسهولة وفهم البنية الهرمية للمحتوى.
 
-#### Q: What is Aspose.PDF for .NET?
+#### س: ما هو Aspose.PDF لـ .NET؟
 
-A: Aspose.PDF for .NET is a library that allows developers to work with PDF files programmatically in .NET applications. It provides a wide range of features for creating, editing, converting, and manipulating PDF documents.
+ج: Aspose.PDF for .NET هي مكتبة تتيح للمطورين العمل مع ملفات PDF برمجيًا في تطبيقات .NET. فهو يوفر مجموعة واسعة من الميزات لإنشاء مستندات PDF وتحريرها وتحويلها ومعالجتها.
 
-#### Q: How do I import the required libraries for my C# project?
+#### س: كيف يمكنني استيراد المكتبات المطلوبة لمشروع C# الخاص بي؟
 
-A: To import the necessary libraries for your C# project, include the following import directives:
+ج: لاستيراد المكتبات اللازمة لمشروع C# الخاص بك، قم بتضمين توجيهات الاستيراد التالية:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-These directives enable you to access the classes and methods needed for working with PDF documents and applying numbering styles.
+تمكنك هذه التوجيهات من الوصول إلى الفئات والأساليب اللازمة للعمل مع مستندات PDF وتطبيق أنماط الترقيم.
 
-#### Q: How do I specify the directory for saving the generated PDF file?
+#### س: كيف أحدد الدليل لحفظ ملف PDF الذي تم إنشاؤه؟
 
-A: In the provided source code, modify the "dataDir" variable to specify the directory where you want to save the generated PDF file.
+ج: في الكود المصدري المقدم، قم بتعديل متغير "dataDir" لتحديد الدليل الذي تريد حفظ ملف PDF الذي تم إنشاؤه فيه.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-Replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory path.
+ يستبدل`"YOUR DOCUMENTS DIRECTORY"` مع مسار الدليل الفعلي.
 
-#### Q: How do I create a PDF document with specified dimensions and margins?
+#### س: كيف أقوم بإنشاء مستند PDF بأبعاد وهوامش محددة؟
 
-A: To create a PDF document with specified dimensions and margins, use the following code:
+ج: لإنشاء مستند PDF بأبعاد وهوامش محددة، استخدم الكود التالي:
 
 ```csharp
 Document pdfDoc = new Document();
@@ -201,13 +201,13 @@ pdfDoc.PageInfo.Margin.Top = 72;
 pdfDoc.PageInfo.Margin.Bottom = 72;
 ```
 
-#### Q: How do I add headings with numbering style to the PDF document?
+#### س: كيف يمكنني إضافة عناوين بنمط الترقيم إلى مستند PDF؟
 
-A: To add headings with numbering style to the PDF document, use the provided code samples to create headings and customize their numbering styles. Adjust properties such as text, numbering style, start number, and auto sequence as needed.
+ج: لإضافة عناوين بنمط ترقيم إلى مستند PDF، استخدم نماذج التعليمات البرمجية المتوفرة لإنشاء عناوين وتخصيص أنماط الترقيم الخاصة بها. اضبط الخصائص مثل النص ونمط الترقيم ورقم البداية والتسلسل التلقائي حسب الحاجة.
 
-#### Q: How do I save the generated PDF document?
+#### س: كيف يمكنني حفظ مستند PDF الذي تم إنشاؤه؟
 
-A: To save the generated PDF document, use the `Save` method of the `pdfDoc` object:
+ ج: لحفظ مستند PDF الذي تم إنشاؤه، استخدم الملف`Save` طريقة`pdfDoc` هدف:
 
 ```csharp
 dataDir = dataDir + "ApplyNumberStyle_out.pdf";
@@ -215,14 +215,14 @@ pdfDoc.Save(dataDir);
 Console.WriteLine("\nNumbering style applied to headers.\nFile saved as: " + dataDir);
 ```
 
-#### Q: How can I confirm that the numbering style has been applied?
+#### س: كيف يمكنني التأكد من تطبيق نمط الترقيم؟
 
-A: Open the generated PDF file to verify that the specified numbering style has been applied to the headings.
+ج: افتح ملف PDF الذي تم إنشاؤه للتحقق من تطبيق نمط الترقيم المحدد على العناوين.
 
-#### Q: Can I customize the numbering style further?
+#### س: هل يمكنني تخصيص نمط الترقيم بشكل أكبر؟
 
-A: Yes, you can customize the numbering style further by adjusting the properties of the `Heading` objects, such as numbering style type, start number, and auto sequence.
+ ج: نعم، يمكنك تخصيص نمط الترقيم بشكل أكبر عن طريق ضبط خصائص`Heading` الكائنات، مثل نوع نمط الترقيم ورقم البداية والتسلسل التلقائي.
 
-#### Q: Can I apply different numbering styles to different sections of the document?
+#### س: هل يمكنني تطبيق أنماط ترقيم مختلفة على أقسام مختلفة من المستند؟
 
-A: Yes, you can apply different numbering styles to different sections of the document by creating multiple `Heading` objects with different styles and sequences.
+ج: نعم، يمكنك تطبيق أنماط ترقيم مختلفة على أقسام مختلفة من المستند عن طريق إنشاء عدة أنماط`Heading` كائنات ذات أنماط وتسلسلات مختلفة.

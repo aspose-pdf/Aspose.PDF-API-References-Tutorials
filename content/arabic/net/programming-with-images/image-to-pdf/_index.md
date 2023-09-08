@@ -1,21 +1,21 @@
 ---
-title: Image to PDF
-linktitle: Image to PDF
-second_title: Aspose.PDF for .NET API Reference
-description: Easily convert image to PDF using Aspose.PDF for .NET.
+title: الصورة إلى PDF
+linktitle: الصورة إلى PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: قم بتحويل الصورة بسهولة إلى PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 180
 url: /ar/net/programming-with-images/image-to-pdf/
 ---
-Aspose.PDF for .NET is a powerful library that allows developers to create, manipulate, and convert PDF documents using C# or any .NET language. In this tutorial, we will guide you through the process of converting an image to PDF using Aspose.PDF for .NET.
+Aspose.PDF for .NET هي مكتبة قوية تتيح للمطورين إنشاء مستندات PDF ومعالجتها وتحويلها باستخدام لغة C# أو أي لغة .NET. في هذا البرنامج التعليمي، سنرشدك خلال عملية تحويل صورة إلى PDF باستخدام Aspose.PDF لـ .NET.
 
-## Step 1: Setting up the Environment
+## الخطوة 1: إعداد البيئة
 
-Before we begin, make sure you have Aspose.PDF for .NET installed on your system. You can download and install it from the official Aspose website. Once installed, create a new C# project in your preferred development environment.
+قبل أن نبدأ، تأكد من تثبيت Aspose.PDF for .NET على نظامك. يمكنك تنزيله وتثبيته من موقع Aspose الرسمي. بمجرد التثبيت، قم بإنشاء مشروع C# جديد في بيئة التطوير المفضلة لديك.
 
-## Step 2: Importing the Required Libraries
+## الخطوة 2: استيراد المكتبات المطلوبة
 
-To use Aspose.PDF for .NET in your project, you need to import the necessary libraries. Add the following using statements at the beginning of your C# file:
+لاستخدام Aspose.PDF لـ .NET في مشروعك، تحتاج إلى استيراد المكتبات الضرورية. أضف عبارات الاستخدام التالية في بداية ملف C# الخاص بك:
 
 ```csharp
 using Aspose.Pdf;
@@ -23,30 +23,30 @@ using System.IO;
 using System.Drawing;
 ```
 
-## Step 3: Initializing the Document Object
+## الخطوة 3: تهيئة كائن المستند
 
-In the C# code, the first step is to initialize the `Document` object. This object represents the PDF document that we will create. Add the following code to your project:
+ في كود C#، الخطوة الأولى هي تهيئة ملف`Document` هدف. يمثل هذا الكائن مستند PDF الذي سنقوم بإنشائه. أضف الكود التالي إلى مشروعك:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 ```
 
-Replace `"YOUR DOCUMENT DIRECTORY"` with the actual path where you want to save the PDF file.
+ يستبدل`"YOUR DOCUMENT DIRECTORY"`بالمسار الفعلي الذي تريد حفظ ملف PDF فيه.
 
-## Step 4: Adding a Page to the Document
+## الخطوة 4: إضافة صفحة إلى المستند
 
-Next, we need to add a page to the document. A page is represented by the `Page` class. Use the following code to add a page to the document:
+ بعد ذلك، نحتاج إلى إضافة صفحة إلى المستند. يتم تمثيل الصفحة بواسطة`Page` فصل. استخدم الكود التالي لإضافة صفحة إلى المستند:
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
-This code creates a new page and adds it to the `Pages` collection of the document.
+ يقوم هذا الرمز بإنشاء صفحة جديدة وإضافتها إلى ملف`Pages` جمع الوثيقة.
 
-## Step 5: Loading the Image File
+## الخطوة 5: تحميل ملف الصورة
 
-To convert an image to PDF, we first need to load the source image file. In this example, we assume that the image file is named `aspose-logo.jpg` and is located in the same directory as your C# file. Use the following code to load the image file:
+ لتحويل صورة إلى PDF، نحتاج أولاً إلى تحميل ملف الصورة المصدر. في هذا المثال، نفترض أن ملف الصورة مسمى`aspose-logo.jpg` ويقع في نفس الدليل الذي يوجد به ملف C# الخاص بك. استخدم الكود التالي لتحميل ملف الصورة:
 
 ```csharp
 FileStream fs = new FileStream(dataDir + "aspose-logo.jpg", FileMode.Open, FileAccess.Read);
@@ -55,11 +55,11 @@ fs.Read(tmpBytes, 0, int.Parse(fs.Length.ToString()));
 MemoryStream mystream = new MemoryStream(tmpBytes);
 ```
 
-Make sure to replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the image file.
+ تأكد من استبدال`"YOUR DOCUMENT DIRECTORY"` مع المسار الفعلي لملف الصورة.
 
-## Step 6: Setting Margins and Crop Box
+## الخطوة 6: تحديد الهوامش ومربع الاقتصاص
 
-Before adding the image to the PDF page, we can customize the page layout. For example, we can set the margins and crop box to fit the image dimensions. Use the following code to adjust the page settings:
+قبل إضافة الصورة إلى صفحة PDF، يمكننا تخصيص تخطيط الصفحة. على سبيل المثال، يمكننا ضبط الهوامش ومربع الاقتصاص ليناسب أبعاد الصورة. استخدم الكود التالي لضبط إعدادات الصفحة:
 
 ```csharp
 Bitmap b = new Bitmap(mystream);
@@ -72,125 +72,125 @@ page
 page.CropBox = new Aspose.Pdf.Rectangle(0, 0, b.Width, b.Height);
 ```
 
-These settings ensure that the image will fit the page without any additional margins.
+تضمن هذه الإعدادات ملاءمة الصورة للصفحة دون أي هوامش إضافية.
 
-## Step 7: Creating an Image Object
+## الخطوة 7: إنشاء كائن صورة
 
-Now, let's create an `Aspose.Pdf.Image` object to hold the image data. Add the following code to your project:
+الآن، دعونا نقوم بإنشاء`Aspose.Pdf.Image` كائن للاحتفاظ ببيانات الصورة. أضف الكود التالي إلى مشروعك:
 
 ```csharp
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 ```
 
-This object will represent the image that we want to add to the PDF page.
+سيمثل هذا الكائن الصورة التي نريد إضافتها إلى صفحة PDF.
 
-## Step 8: Adding the Image to the Page
+## الخطوة 8: إضافة الصورة إلى الصفحة
 
-To add the image to the PDF page, we need to assign the image data to the `ImageStream` property of the `Aspose.Pdf.Image` object. Use the following code to add the image:
+ لإضافة الصورة إلى صفحة PDF، نحتاج إلى تعيين بيانات الصورة إلى ملف`ImageStream` ملكية`Aspose.Pdf.Image` هدف. استخدم الكود التالي لإضافة الصورة:
 
 ```csharp
 image1.ImageStream = mystream;
 page.Paragraphs.Add(image1);
 ```
 
-Here, we assign the image stream to the `ImageStream` property and then add the image object to the `Paragraphs` collection of the page.
+ هنا، نقوم بتعيين دفق الصورة إلى`ImageStream` الخاصية ثم قم بإضافة كائن الصورة إلى`Paragraphs` مجموعة من الصفحة.
 
-## Step 9: Saving the PDF File
+## الخطوة 9: حفظ ملف PDF
 
-Once we have added the image to the PDF page, we can save the resulting PDF file. Use the following code to save the file:
+بمجرد إضافة الصورة إلى صفحة PDF، يمكننا حفظ ملف PDF الناتج. استخدم الكود التالي لحفظ الملف:
 
 ```csharp
 dataDir = dataDir + "ImageToPDF_out.pdf";
 doc.Save(dataDir);
 ```
 
-Replace `"YOUR DOCUMENT DIRECTORY"` with the desired output directory and file name.
+ يستبدل`"YOUR DOCUMENT DIRECTORY"` مع دليل الإخراج المطلوب واسم الملف.
 
-## Step 10: Closing the Memory Stream
+## الخطوة 10: إغلاق دفق الذاكرة
 
-After saving the PDF file, it's important to close the memory stream to release system resources. Add the following code to close the memory stream:
+بعد حفظ ملف PDF، من المهم إغلاق تدفق الذاكرة لتحرير موارد النظام. أضف الكود التالي لإغلاق دفق الذاكرة:
 
 ```csharp
 mystream. Close();
 ```
 
-## Running the Code and Verifying the Output
+## تشغيل الكود والتحقق من المخرجات
 
-You have now completed the code implementation. Run the code and verify that the image has been successfully converted to PDF. The output file should be saved in the specified directory.
+لقد أكملت الآن تنفيذ التعليمات البرمجية. قم بتشغيل الكود وتحقق من أن الصورة قد تم تحويلها بنجاح إلى PDF. يجب حفظ ملف الإخراج في الدليل المحدد.
 
 
-### Sample source code for Image to PDF using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لصورة إلى PDF باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Instantiate Document Object
+// إنشاء مثيل لكائن المستند
 Document doc = new Document();
-// Add a page to pages collection of document
+// إضافة صفحة إلى مجموعة صفحات الوثيقة
 Page page = doc.Pages.Add();
-// Load the source image file to Stream object
+// قم بتحميل ملف الصورة المصدر إلى كائن الدفق
 FileStream fs = new FileStream(dataDir + "aspose-logo.jpg", FileMode.Open, FileAccess.Read);
 byte[] tmpBytes = new byte[fs.Length];
 fs.Read(tmpBytes, 0, int.Parse(fs.Length.ToString()));
 MemoryStream mystream = new MemoryStream(tmpBytes);
-// Instantiate BitMap object with loaded image stream
+// إنشاء كائن BitMap مع دفق الصور المحملة
 Bitmap b = new Bitmap(mystream);
-// Set margins so image will fit, etc.
+// قم بتعيين الهوامش بحيث تناسب الصورة، وما إلى ذلك.
 page.PageInfo.Margin.Bottom = 0;
 page.PageInfo.Margin.Top = 0;
 page.PageInfo.Margin.Left = 0;
 page.PageInfo.Margin.Right = 0;
 page.CropBox = new Aspose.Pdf.Rectangle(0, 0, b.Width, b.Height);
-// Create an image object
+// إنشاء كائن الصورة
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
-// Add the image into paragraphs collection of the section
+// إضافة الصورة إلى مجموعة فقرات القسم
 page.Paragraphs.Add(image1);
-// Set the image file stream
+// ضبط دفق ملف الصورة
 image1.ImageStream = mystream;
 dataDir = dataDir + "ImageToPDF_out.pdf";
-// Save resultant PDF file
+// حفظ ملف PDF الناتج
 doc.Save(dataDir);
-// Close memoryStream object
+// أغلق كائن دفق الذاكرة
 mystream.Close();
 Console.WriteLine("\nImage converted to pdf successfully.\nFile saved at " + dataDir); 
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we have learned how to convert an image to PDF using Aspose.PDF for .NET. We covered the step-by-step process, including setting up the environment, importing libraries, initializing the document object, loading the image file, setting margins and crop box, adding the image to the page, saving the PDF file, and closing the memory stream. By following these steps, you can easily convert images to PDF in your .NET applications.
+في هذا البرنامج التعليمي، تعلمنا كيفية تحويل صورة إلى PDF باستخدام Aspose.PDF لـ .NET. لقد قمنا بتغطية العملية خطوة بخطوة، بما في ذلك إعداد البيئة، واستيراد المكتبات، وتهيئة كائن المستند، وتحميل ملف الصورة، وتعيين الهوامش ومربع الاقتصاص، وإضافة الصورة إلى الصفحة، وحفظ ملف PDF، وإغلاق الملف. تيار الذاكرة. باتباع هذه الخطوات، يمكنك بسهولة تحويل الصور إلى PDF في تطبيقات .NET الخاصة بك.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is Aspose.PDF for .NET, and how does it assist in working with PDF documents?
+#### س: ما هو Aspose.PDF لـ .NET، وكيف يساعد في العمل مع مستندات PDF؟
 
-A: Aspose.PDF for .NET is a robust library that enables developers to create, manipulate, and convert PDF documents using C# or any .NET language. It simplifies tasks related to PDF generation, modification, and conversion within .NET applications.
+ج: Aspose.PDF for .NET هي مكتبة قوية تمكن المطورين من إنشاء مستندات PDF ومعالجتها وتحويلها باستخدام لغة C# أو أي لغة .NET. إنه يبسط المهام المتعلقة بإنشاء PDF وتعديله وتحويله داخل تطبيقات .NET.
 
-#### Q: What is the purpose of converting an image to PDF using Aspose.PDF for .NET?
+#### س: ما هو الغرض من تحويل صورة إلى PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: Converting an image to PDF allows you to embed images into a PDF document, enabling better document management, sharing, and printing capabilities.
+ج: يتيح لك تحويل صورة إلى PDF دمج الصور في مستند PDF، مما يتيح لك إدارة المستندات ومشاركتها وإمكانيات الطباعة بشكل أفضل.
 
-#### Q: Why are the `using` statements necessary in the C# code?
+####  س: لماذا`using` statements necessary in the C# code?
 
-A: The `using` statements import required namespaces, allowing you to use classes and methods from those namespaces without fully qualifying them. This promotes cleaner and more concise code.
+ ج: ال`using` تستورد البيانات مساحات الأسماء المطلوبة، مما يسمح لك باستخدام الفئات والأساليب من مساحات الأسماء هذه دون تأهيلها بشكل كامل. وهذا يعزز التعليمات البرمجية الأنظف والأكثر إيجازًا.
 
-#### Q5: What role does the `Document` object play in the image-to-PDF conversion process?
-A: The `Document` object represents the PDF document that you'll create. It acts as a container for pages, paragraphs, and various PDF elements.
+####  س5: ما هو الدور الذي يقوم به`Document` object play in the image-to-PDF conversion process?
+ ج: ال`Document` يمثل الكائن مستند PDF الذي ستقوم بإنشائه. إنه بمثابة حاوية للصفحات والفقرات وعناصر PDF المختلفة.
 
-#### Q: How is an image loaded into the PDF document using Aspose.PDF for .NET?
+#### س: كيف يتم تحميل الصورة في مستند PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: The image is loaded into the PDF document by creating an `Aspose.Pdf.Image` object and assigning the image data to its `ImageStream` property. This object is then added to the `Paragraphs` collection of the PDF page.
+ ج: يتم تحميل الصورة في مستند PDF عن طريق إنشاء ملف`Aspose.Pdf.Image` الكائن وتعيين بيانات الصورة له`ImageStream` ملكية. ثم يتم إضافة هذا الكائن إلى`Paragraphs` مجموعة من صفحة PDF.
 
-#### Q: What steps are involved in adjusting the page layout before adding the image to the PDF page?
+#### س: ما هي الخطوات المتضمنة في ضبط تخطيط الصفحة قبل إضافة الصورة إلى صفحة PDF؟
 
-A: The code allows you to set margins and crop box dimensions to customize the page layout. This ensures that the image fits the page without additional margins.
+ج: يسمح لك الكود بتعيين الهوامش وأبعاد مربع الاقتصاص لتخصيص تخطيط الصفحة. وهذا يضمن أن الصورة تناسب الصفحة دون هوامش إضافية.
 
-#### Q: Why is it important to close the memory stream after saving the PDF file?
+#### س: لماذا من المهم إغلاق تدفق الذاكرة بعد حفظ ملف PDF؟
 
-A: Closing the memory stream releases system resources associated with the image data, preventing memory leaks and optimizing resource usage.
+ج: يؤدي إغلاق تدفق الذاكرة إلى تحرير موارد النظام المرتبطة ببيانات الصورة، مما يمنع تسرب الذاكرة ويحسن استخدام الموارد.
 
-#### Q: Can this image-to-PDF conversion code be used for multiple images within a single PDF document?
+#### س: هل يمكن استخدام رمز تحويل الصورة إلى PDF هذا لصور متعددة داخل مستند PDF واحد؟
 
-A: Yes, this code can be adapted to convert multiple images into a single PDF document. You can repeat the process for each image, adding them to separate pages or arranging them as needed.
+ج: نعم، يمكن تعديل هذا الرمز لتحويل صور متعددة إلى مستند PDF واحد. يمكنك تكرار العملية لكل صورة، أو إضافتها إلى صفحات منفصلة أو ترتيبها حسب الحاجة.
 
-#### Q: How can developers benefit from using Aspose.PDF for .NET to convert images to PDF?
+#### س: كيف يمكن للمطورين الاستفادة من استخدام Aspose.PDF لـ .NET لتحويل الصور إلى PDF؟
 
-A: Developers can streamline the process of adding images to PDF documents, enhancing document presentation, sharing, and archiving capabilities. This capability is valuable for creating image-rich reports, presentations, and documentation.
+ج: يمكن للمطورين تبسيط عملية إضافة الصور إلى مستندات PDF، وتعزيز إمكانات عرض المستندات ومشاركتها وأرشفتها. تعتبر هذه الإمكانية ذات قيمة لإنشاء تقارير وعروض تقديمية ووثائق غنية بالصور.

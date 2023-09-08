@@ -1,134 +1,134 @@
 ---
-title: Set Image Size In PDF File
-linktitle: Set Image Size In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to set the size of an image in PDF file using Aspose.PDF for .NET.
+title: Ställ in bildstorlek i PDF-fil
+linktitle: Ställ in bildstorlek i PDF-fil
+second_title: Aspose.PDF för .NET API Referens
+description: Steg-för-steg-guide för att ställa in storleken på en bild i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 270
 url: /sv/net/programming-with-images/set-image-size/
 ---
-In this tutorial, we will walk you through how to set the size of an image in PDF file using Aspose.PDF for .NET. Follow these steps to perform this operation easily.
+I den här handledningen går vi igenom hur du ställer in storleken på en bild i PDF-fil med Aspose.PDF för .NET. Följ dessa steg för att enkelt utföra denna operation.
 
-## Prerequisites
+## Förutsättningar
 
-Before you begin, make sure you have the following:
+Innan du börjar, se till att du har följande:
 
-- Visual Studio or any other development environment installed and configured.
-- A basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed. You can download it from Aspose official website.
+- Visual Studio eller någon annan utvecklingsmiljö installerad och konfigurerad.
+- Grundläggande kunskaper i programmeringsspråket C#.
+- Aspose.PDF-bibliotek för .NET installerat. Du kan ladda ner den från Asposes officiella hemsida.
 
-## Step 1: Creation of the PDF document
+## Steg 1: Skapa PDF-dokumentet
 
-To get started, use the following code to create a new PDF document:
+För att komma igång använder du följande kod för att skapa ett nytt PDF-dokument:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Instantiate a Document object
+// Instantiera ett dokumentobjekt
 Document doc = new Document();
 
-// Add a page to the collection of pages of the PDF file
+// Lägg till en sida till samlingen av sidor i PDF-filen
 Aspose.Pdf.Page page = doc.Pages.Add();
 ```
 
-## Step 2: Added picture
+## Steg 2: Lade till bild
 
-Next, we'll add an image to the page of the PDF document. Use the following code:
+Därefter lägger vi till en bild på sidan i PDF-dokumentet. Använd följande kod:
 
 ```csharp
-// Create an image instance
+// Skapa en bildinstans
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
 
-// Set the width and height of the image in points
+// Ställ in bildens bredd och höjd i punkter
 img. FixWidth = 100;
 img. FixHeight = 100;
 
-// Set image type to unknown (Unknown)
+// Ställ in bildtyp till okänd (Okänd)
 img.FileType = Aspose.Pdf.ImageFileType.Unknown;
 
-// Path to the image source file
+//Sökväg till bildkällfilen
 img.File = dataDir + "aspose-logo.jpg";
 
-// Add the image to the page's paragraph collection
+// Lägg till bilden i sidans styckesamling
 page.Paragraphs.Add(img);
 ```
 
-Be sure to provide the correct path to the image source file.
+Se till att ange rätt sökväg till bildkällfilen.
 
-## Step 3: Setting page properties
+## Steg 3: Ställa in sidegenskaper
 
-Finally, we'll set the properties of the page, including its width and height. Use the following code:
+Slutligen ställer vi in egenskaperna för sidan, inklusive dess bredd och höjd. Använd följande kod:
 
 ```csharp
-// Set page properties
+// Ställ in sidegenskaper
 page.PageInfo.Width = 800;
 page.PageInfo.Height = 800;
 ```
 
-### Sample source code for Set Image Size using Aspose.PDF for .NET 
+### Exempel på källkod för Set Image Size med Aspose.PDF för .NET 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Instantiate Document object
+// Instantiera dokumentobjekt
 Document doc = new Document();
-// add page to pages collection of PDF file
+// lägg till sida till sidor samling av PDF-fil
 Aspose.Pdf.Page page = doc.Pages.Add();
-// Create an image instance
+// Skapa en bildinstans
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
-// Set Image Width and Height in Points
+// Ställ in bildbredd och höjd i punkter
 img.FixWidth = 100;
 img.FixHeight = 100;
-// Set image type as SVG
+// Ställ in bildtyp som SVG
 img.FileType = Aspose.Pdf.ImageFileType.Unknown;
-// Path for source file
+// Sökväg för källfil
 img.File = dataDir + "aspose-logo.jpg";
 page.Paragraphs.Add(img);
-//Set page properties
+//Ställ in sidegenskaper
 page.PageInfo.Width = 800;
 page.PageInfo.Height = 800;
 dataDir = dataDir + "SetImageSize_out.pdf";
-// save resultant PDF file
+// spara den resulterande PDF-filen
 doc.Save(dataDir);
 Console.WriteLine("\nImage size added successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Slutsats
 
-Congratulation ! You have successfully set the size of an image in a PDF document using Aspose.PDF for .NET. You can now apply this method to your own projects to adjust the size of images in PDF files.
+Grattis! Du har framgångsrikt angett storleken på en bild i ett PDF-dokument med Aspose.PDF för .NET. Du kan nu tillämpa den här metoden på dina egna projekt för att justera storleken på bilder i PDF-filer.
 
-### FAQ's for set image size in PDF file
+### Vanliga frågor för inställd bildstorlek i PDF-fil
 
-#### Q: What is the purpose of setting the size of an image in a PDF document using Aspose.PDF for .NET?
+#### F: Vad är syftet med att ställa in storleken på en bild i ett PDF-dokument med Aspose.PDF för .NET?
 
-A: The purpose of setting the size of an image in a PDF document is to control the dimensions of the image when it is added to the PDF. This allows you to adjust the appearance and layout of images within your PDF files.
+S: Syftet med att ställa in storleken på en bild i ett PDF-dokument är att kontrollera bildens mått när den läggs till i PDF-filen. Detta låter dig justera utseendet och layouten för bilder i dina PDF-filer.
 
-#### Q: How does the process of setting the size of an image work in a PDF document?
+#### F: Hur fungerar processen att ställa in storleken på en bild i ett PDF-dokument?
 
-A: The process involves creating an `Aspose.Pdf.Image` instance, specifying its width and height using the `FixWidth` and `FixHeight` properties, and then adding the image to the PDF document. Additionally, you can set the dimensions of the page itself to accommodate the image.
+ S: Processen innebär att skapa en`Aspose.Pdf.Image` ange dess bredd och höjd med hjälp av`FixWidth` och`FixHeight` egenskaper och sedan lägga till bilden i PDF-dokumentet. Dessutom kan du ställa in måtten på själva sidan för att passa bilden.
 
-#### Q: Can I set the size of an image to a specific percentage of the page dimensions?
+#### F: Kan jag ställa in storleken på en bild till en viss procentandel av sidmåtten?
 
-A: The provided code sets the absolute width and height of the image in points. If you want to set the size of an image based on a percentage of the page dimensions, you would need to calculate the dimensions accordingly and adjust the code accordingly.
+S: Den medföljande koden anger bildens absoluta bredd och höjd i punkter. Om du vill ställa in storleken på en bild baserat på en procentandel av sidmåtten, måste du beräkna måtten därefter och justera koden därefter.
 
-#### Q: What is the significance of the `FileType` property when adding an image to the PDF document?
+####  F: Vad är betydelsen av`FileType` property when adding an image to the PDF document?
 
-A: The `FileType` property specifies the type of the image being added to the PDF document. In the provided code, the value `Unknown` indicates that the type of the image is unknown, and Aspose.PDF will attempt to determine the image type based on the file extension.
+ A: Den`FileType`egenskapen anger typen av bilden som läggs till i PDF-dokumentet. I den angivna koden, värdet`Unknown` indikerar att typen av bild är okänd, och Aspose.PDF kommer att försöka fastställa bildtypen baserat på filtillägget.
 
-#### Q: Can I add multiple images to a single page using this method?
+#### F: Kan jag lägga till flera bilder på en enda sida med den här metoden?
 
-A: Yes, you can add multiple images to a single page by creating multiple `Aspose.Pdf.Image` instances and adding them to the page's paragraph collection. Make sure to adjust the positioning and layout of the images as needed.
+ S: Ja, du kan lägga till flera bilder på en enda sida genom att skapa flera`Aspose.Pdf.Image` instanser och lägga till dem i sidans styckesamling. Se till att justera bildernas placering och layout efter behov.
 
-#### Q: How can I control the placement and alignment of the added image on the page?
+#### F: Hur kan jag kontrollera placeringen och justeringen av den tillagda bilden på sidan?
 
-A: The placement and alignment of the added image can be controlled by adjusting the coordinates and layout of the image using properties such as `img.Left`, `img.Top`, and paragraph formatting properties.
+ S: Placeringen och justeringen av den tillagda bilden kan styras genom att justera bildens koordinater och layout med hjälp av egenskaper som t.ex.`img.Left`, `img.Top`, och egenskaper för styckeformatering.
 
-#### Q: What is the purpose of setting the page properties using `page.PageInfo.Width` and `page.PageInfo.Height`?
+####  F: Vad är syftet med att ställa in sidegenskaperna med`page.PageInfo.Width` and `page.PageInfo.Height`?
 
-A: Setting the page properties allows you to define the dimensions of the page itself. This ensures that the page dimensions accommodate the added image and any other content you may have on the page.
+S: Genom att ställa in sidegenskaperna kan du definiera dimensionerna för själva sidan. Detta säkerställer att sidmåtten passar den tillagda bilden och allt annat innehåll du kan ha på sidan.
 
-#### Q: Can I set different sizes for different images within the same PDF document?
+#### F: Kan jag ställa in olika storlekar för olika bilder i samma PDF-dokument?
 
-A: Yes, you can set different sizes for different images by creating separate `Aspose.Pdf.Image` instances and adjusting the `FixWidth`, `FixHeight`, and placement properties for each image.
+ S: Ja, du kan ställa in olika storlekar för olika bilder genom att skapa separata`Aspose.Pdf.Image` instanser och justera`FixWidth`, `FixHeight`, och placeringsegenskaper för varje bild.
 
-#### Q: How can I integrate this method into my own projects to set image sizes in PDF files?
+#### F: Hur kan jag integrera den här metoden i mina egna projekt för att ställa in bildstorlekar i PDF-filer?
 
-A: To integrate this method into your projects, follow the outlined steps and modify the code as needed. You can use this method to add images of specific sizes to your PDF documents based on your application's requirements.
+S: För att integrera den här metoden i dina projekt, följ de beskrivna stegen och modifiera koden efter behov. Du kan använda den här metoden för att lägga till bilder av specifika storlekar till dina PDF-dokument baserat på din applikations krav.

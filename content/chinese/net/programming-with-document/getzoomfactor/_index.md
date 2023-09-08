@@ -1,96 +1,96 @@
 ---
-title: Get Zoom Factor In PDF File
-linktitle: Get Zoom Factor In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use Aspose.PDF for .NET to get the zoom factor in PDF file with this step-by-step guide.
+title: 获取 PDF 文件中的缩放系数
+linktitle: 获取 PDF 文件中的缩放系数
+second_title: Aspose.PDF for .NET API 参考
+description: 通过此分步指南，了解如何使用 Aspose.PDF for .NET 获取 PDF 文件中的缩放系数。
 type: docs
 weight: 210
 url: /zh/net/programming-with-document/getzoomfactor/
 ---
-Aspose.PDF for .NET is a PDF manipulation library that provides many features to perform various operations on PDF documents. One of these features is the ability to get the zoom factor in PDF file. In this tutorial, we will explain how to use Aspose.PDF for .NET to get the zoom factor in PDF file using C# source code.
+Aspose.PDF for .NET 是一个 PDF 操作库，它提供了许多功能来对 PDF 文档执行各种操作。这些功能之一是能够获取 PDF 文件中的缩放系数。在本教程中，我们将解释如何使用 Aspose.PDF for .NET 使用 C# 源代码获取 PDF 文件中的缩放系数。
 
 
-## Step 1: Instantiate new Document object
+## 步骤 1：实例化新的 Document 对象
 
-The first step to getting the zoom factor of a PDF file using Aspose.PDF for .NET is to instantiate a new `Document` object. The `Document` object represents a PDF document that can be loaded from a file or a stream.
+使用 Aspose.PDF for .NET 获取 PDF 文件的缩放系数的第一步是实例化一个新的`Document`目的。这`Document`对象表示可以从文件或流加载的 PDF 文档。
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate new Document object
+//实例化新的 Document 对象
 Document doc = new Document(dataDir + "Zoomed_pdf.pdf");
 ```
 
-In the above code, we have created a `Document` object by passing the path of the PDF file to the constructor of the `Document` class. You need to replace "YOUR DOCUMENT DIRECTORY" with the actual path of the directory where your PDF file is located.
+在上面的代码中，我们创建了一个`Document`对象通过将 PDF 文件的路径传递给构造函数`Document`班级。您需要将“您的文档目录”替换为 PDF 文件所在目录的实际路径。
 
-## Step 2: Create GoToAction object
+## 第2步：创建GoToAction对象
 
-The next step is to create a `GoToAction` object. A `GoToAction` object represents an action that goes to a specific destination in a PDF document. In our case, we want to get the zoom factor of the PDF file, so we will use the `OpenAction` property of the `Document` object to get the `GoToAction` object.
+下一步是创建一个`GoToAction`目的。 A`GoToAction`对象表示前往 PDF 文档中特定目标的操作。在我们的例子中，我们想要获取 PDF 文件的缩放系数，因此我们将使用`OpenAction`的财产`Document`对象得到`GoToAction`目的。
 
 ```csharp
-// Create GoToAction object
+//创建GoToAction对象
 GoToAction action = doc.OpenAction as GoToAction;
 ```
 
-In the above code, we have created a `GoToAction` object by casting the `OpenAction` property of the `Document` object to `GoToAction`.
+在上面的代码中，我们创建了一个`GoToAction`通过投射对象`OpenAction`的财产`Document`反对`GoToAction`.
 
-## Step 3: Get the Zoom factor of PDF file
+## 步骤3：获取PDF文件的缩放系数
 
-The third step is to get the zoom factor of the PDF file. We can get the zoom factor of the PDF file by accessing the `Destination` property of the `GoToAction` object and then casting it to `XYZExplicitDestination`. The `XYZExplicitDestination` class represents a destination in a PDF document that specifies the coordinates and zoom factor to go to.
+第三步是获取PDF文件的缩放系数。我们可以通过访问来获取 PDF 文件的缩放系数`Destination`的财产`GoToAction`对象，然后将其投射到`XYZExplicitDestination`。这`XYZExplicitDestination`类表示 PDF 文档中的目的地，指定要转到的坐标和缩放系数。
 
 ```csharp
-// Get the Zoom factor of PDF file
-System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); // Document zoom value;
+//获取PDF文件的缩放系数
+System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); //文档缩放值；
 ```
 
-In the above code, we have accessed the `Destination` property of the `GoToAction` object and then cast it to `XYZExplicitDestination`. After that, we have accessed the `Zoom` property of the `XYZExplicitDestination` object to get the zoom factor of the PDF file.
+在上面的代码中，我们访问了`Destination`的财产`GoToAction`对象，然后将其投射到`XYZExplicitDestination`。之后我们就可以访问到了`Zoom`的财产`XYZExplicitDestination`对象获取 PDF 文件的缩放系数。
 
-## Step 4: Output the Zoom factor
+## 第四步：输出缩放系数
 
-The final step is to output the zoom factor of the PDF file. We can use the `System.Console.WriteLine`
+最后一步是输出 PDF 文件的缩放系数。我们可以使用`System.Console.WriteLine`
 
 ```csharp
-// Get the Zoom factor of PDF file
-System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); // Document zoom value;
+//获取PDF文件的缩放系数
+System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); //文档缩放值；
 ```        
 
-### Example Source Code for Get Zoom Factor using Aspose.PDF for .NET
+### 使用 Aspose.PDF for .NET 获取缩放系数的示例源代码
 
-Here's the complete example source code for Get Zoom Factor using Aspose.PDF for .NET:
+以下是使用 Aspose.PDF for .NET 获取缩放系数的完整示例源代码：
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate new Document object
+//实例化新的 Document 对象
 Document doc = new Document(dataDir + "Zoomed_pdf.pdf");
 
-// Create GoToAction object
+//创建GoToAction对象
 GoToAction action = doc.OpenAction as GoToAction;
 
-// Get the Zoom factor of PDF file
-System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); // Document zoom value;
+//获取PDF文件的缩放系数
+System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); //文档缩放值；
 ```
 
-## Conclusion
+## 结论
 
-In this tutorial, we have explored how to use Aspose.PDF for .NET to get the zoom factor of a PDF file. The zoom factor is a crucial aspect of a PDF document, as it determines the initial display size when opened in a viewer. By accessing and utilizing the zoom factor, developers can customize the viewing experience for end-users. Aspose.PDF for .NET provides a simple and effective API to retrieve the zoom factor and other navigation-related information from a PDF document, empowering developers to build feature-rich and interactive PDF applications.
+在本教程中，我们探索了如何使用 Aspose.PDF for .NET 来获取 PDF 文件的缩放系数。缩放系数是 PDF 文档的一个重要方面，因为它决定了在查看器中打开时的初始显示大小。通过访问和利用缩放系数，开发人员可以为最终用户定制观看体验。 Aspose.PDF for .NET提供了一个简单而有效的API来从PDF文档中检索缩放系数和其他与导航相关的信息，使开发人员能够构建功能丰富的交互式PDF应用程序。
 
-### FAQ's for get zoom factor in PDF file
+### 获取 PDF 文件缩放系数的常见问题解答
 
-#### Q: What is the zoom factor in a PDF file?
+#### 问：PDF 文件的缩放系数是多少？
 
-A: The zoom factor in a PDF file refers to the level of magnification applied to the document when it is viewed. It determines the initial display size of the PDF file on the screen. A zoom factor of 1.0 represents the actual size (100% zoom), while a zoom factor greater than 1.0 represents an enlargement, and a zoom factor less than 1.0 represents a reduction.
+答：PDF 文件中的缩放系数是指查看文档时应用的放大级别。它决定 PDF 文件在屏幕上的初始显示大小。缩放系数为1.0表示实际尺寸（100%缩放），大于1.0表示放大，小于1.0表示缩小。
 
-#### Q: How can I use the zoom factor information in my application?
+#### 问：如何在我的应用程序中使用缩放系数信息？
 
-A: You can use the zoom factor information to customize the initial display size of a PDF document when it is opened in a viewer. For example, you can set a specific zoom factor to ensure that the PDF is displayed at a particular size or fit the entire page to the viewer's window.
+答：您可以使用缩放系数信息来自定义 PDF 文档在查看器中打开时的初始显示大小。例如，您可以设置特定的缩放系数以确保 PDF 以特定尺寸显示或使整个页面适合查看器的窗口。
 
-#### Q: Can I modify the zoom factor of a PDF document programmatically using Aspose.PDF for .NET?
+#### 问：我可以使用 Aspose.PDF for .NET 以编程方式修改 PDF 文档的缩放系数吗？
 
-A: Yes, you can modify the zoom factor of a PDF document programmatically using Aspose.PDF for .NET. You can set the zoom factor for specific actions, such as `GoToAction` or `GoToRemoteAction`, to control how the document is displayed when the user interacts with links or bookmarks.
+答：是的，您可以使用 Aspose.PDF for .NET 以编程方式修改 PDF 文档的缩放系数。您可以为特定操作设置缩放系数，例如`GoToAction`或者`GoToRemoteAction`，控制当用户与链接或书签交互时文档的显示方式。
 
-#### Q: Are there other ways to navigate to specific locations in a PDF document using Aspose.PDF for .NET?
+#### 问：是否有其他方法可以使用 Aspose.PDF for .NET 导航到 PDF 文档中的特定位置？
 
-A: Yes, Aspose.PDF for .NET provides various features to navigate to specific locations in a PDF document. Besides using `GoToAction`, you can use other actions like `GoToURIAction` to open a URL, `GoToEmbeddedAction` to navigate to embedded files, and `GoToNamedAction` to go to named destinations within the PDF document.
+答：是的，Aspose.PDF for .NET 提供了各种功能来导航到 PDF 文档中的特定位置。除了使用`GoToAction`，您可以使用其他操作，例如`GoToURIAction`打开一个 URL，`GoToEmbeddedAction`导航到嵌入文件，以及`GoToNamedAction`转至 PDF 文档中的指定目的地。

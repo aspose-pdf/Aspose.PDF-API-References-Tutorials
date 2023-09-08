@@ -1,33 +1,33 @@
 ---
-title: Redact Page
-linktitle: Redact Page
-second_title: Aspose.PDF for .NET API Reference
-description: This article explains how to redact a PDF page using Aspose.PDF for .NET, including step-by-step instructions and example source code.
+title: Seite redigieren
+linktitle: Seite redigieren
+second_title: Aspose.PDF für .NET API-Referenz
+description: In diesem Artikel wird erläutert, wie Sie eine PDF-Seite mit Aspose.PDF für .NET redigieren, einschließlich Schritt-für-Schritt-Anleitungen und Beispielquellcode.
 type: docs
 weight: 120
 url: /de/net/annotations/redactpage/
 ---
-If you're looking to redact sensitive information from a PDF document using Aspose.PDF for .NET, you're in luck! Here's a step-by-step guide to get you started:
+Wenn Sie sensible Informationen aus einem PDF-Dokument mit Aspose.PDF für .NET entfernen möchten, haben Sie Glück! Hier ist eine Schritt-für-Schritt-Anleitung für den Einstieg:
 
-## Step 1: In the code, set the path to the directory where your PDF document is located:
+## Schritt 1: Legen Sie im Code den Pfad zu dem Verzeichnis fest, in dem sich Ihr PDF-Dokument befindet:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Open the PDF document:
+## Schritt 2: Öffnen Sie das PDF-Dokument:
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 3: Create a RedactionAnnotation instance for a specific page region:
+## Schritt 3: Erstellen Sie eine RedactionAnnotation-Instanz für einen bestimmten Seitenbereich:
 
 ```csharp
 RedactionAnnotation annot = new RedactionAnnotation(doc.Pages[1], new Aspose.Pdf.Rectangle(200, 500, 300, 600));
 ```
 
-## Step 4: Set the fill color, border color, and text color of the redaction annotation:
+## Schritt 4: Legen Sie die Füllfarbe, Rahmenfarbe und Textfarbe der Schwärzungsanmerkung fest:
 
 ```csharp
 annot.FillColor = Aspose.Pdf.Color.Green;
@@ -35,95 +35,95 @@ annot.BorderColor = Aspose.Pdf.Color.Yellow;
 annot.Color = Aspose.Pdf.Color.Blue;
 ```
 
-## Step 5: Set the text to be printed on the redaction annotation and its alignment:
+## Schritt 5: Legen Sie den Text fest, der auf der Schwärzungsanmerkung gedruckt werden soll, und seine Ausrichtung:
 
 ```csharp
 annot.OverlayText = "REDACTED";
 annot.TextAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 ```
 
-## Step 6: Repeat the overlay text over the redaction annotation:
+## Schritt 6: Wiederholen Sie den Overlay-Text über der Schwärzungsanmerkung:
 
 ```csharp
 annot.Repeat = true;
 ```
 
-## Step 7: Add the annotation to the annotations collection of the first page:
+## Schritt 7: Fügen Sie die Anmerkung zur Anmerkungssammlung der ersten Seite hinzu:
 
 ```csharp
 doc.Pages[1].Annotations.Add(annot);
 ```
 
-## Step 8: Flatten the annotation and redact page contents, i.e., remove text and images under the redacted annotation:
+## Schritt 8: Reduzieren Sie die Anmerkung und redigieren Sie den Seiteninhalt, d. h. entfernen Sie Text und Bilder unter der redigierten Anmerkung:
 
 ```csharp
 annot.Redact();
 ```
 
-## Step 9: Set the path and name of the output PDF file:
+## Schritt 9: Legen Sie den Pfad und Namen der Ausgabe-PDF-Datei fest:
 
 ```csharp
 dataDir = dataDir + "RedactPage_out.pdf";
 ```
 
-## Step 10: Save the PDF document with the redacted page:
+## Schritt 10: Speichern Sie das PDF-Dokument mit der redigierten Seite:
 
 ```csharp
 doc.Save(dataDir);
 ```
 
-That's it! You have successfully redacted a page of your PDF document using Aspose.PDF for .NET.
+Das ist es! Sie haben eine Seite Ihres PDF-Dokuments erfolgreich mit Aspose.PDF für .NET redigiert.
 
-### Example source code for Redact Page using Aspose.PDF for .NET:
+### Beispielquellcode für Redact Page mit Aspose.PDF für .NET:
 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Dokument öffnen
 Document doc = new Document(dataDir + "input.pdf");
 
-// Create RedactionAnnotation instance for specific page region
+// Erstellen Sie eine RedactionAnnotation-Instanz für einen bestimmten Seitenbereich
 RedactionAnnotation annot = new RedactionAnnotation(doc.Pages[1], new Aspose.Pdf.Rectangle(200, 500, 300, 600));
 annot.FillColor = Aspose.Pdf.Color.Green;
 annot.BorderColor = Aspose.Pdf.Color.Yellow;
 annot.Color = Aspose.Pdf.Color.Blue;
-// Text to be printed on redact annotation
+// Text, der auf der Schwärzungsanmerkung gedruckt werden soll
 annot.OverlayText = "REDACTED";
 annot.TextAlignment = Aspose.Pdf.HorizontalAlignment.Center;
-// Repat Overlay text over redact Annotation
+// Repat Overlay-Text über redigierte Anmerkung
 annot.Repeat = true;
-// Add annotation to annotations collection of first page
+// Anmerkung zur Anmerkungssammlung der ersten Seite hinzufügen
 doc.Pages[1].Annotations.Add(annot);
-// Flattens annotation and redacts page contents (i.e. removes text and image
-// Under redacted annotation)
+// Reduziert Anmerkungen und redigiert Seiteninhalte (d. h. entfernt Text und Bilder).
+// Unter redigierter Anmerkung)
 annot.Redact();
 dataDir = dataDir + "RedactPage_out.pdf";
 doc.Save(dataDir);
 ```
 
-## Conclusion
+## Abschluss
 
-In this tutorial, we explored how to redact a page in a PDF document using Aspose.PDF for .NET. Redaction is an essential feature for securely removing sensitive information from PDF documents, ensuring data privacy and security. By following the step-by-step guide and using the provided C# source code, developers can easily add redaction functionality to their applications, improving the data security and compliance of their PDF documents. Aspose.PDF for .NET offers a robust set of tools for working with PDF files, providing efficient and effective redaction capabilities along with various other PDF operations.
+In diesem Tutorial haben wir untersucht, wie man eine Seite in einem PDF-Dokument mit Aspose.PDF für .NET redigiert. Die Schwärzung ist eine wesentliche Funktion zum sicheren Entfernen sensibler Informationen aus PDF-Dokumenten und gewährleistet Datenschutz und Sicherheit. Durch Befolgen der Schritt-für-Schritt-Anleitung und Verwendung des bereitgestellten C#-Quellcodes können Entwickler ihren Anwendungen problemlos Schwärzungsfunktionen hinzufügen und so die Datensicherheit und Compliance ihrer PDF-Dokumente verbessern. Aspose.PDF für .NET bietet einen robusten Satz an Tools für die Arbeit mit PDF-Dateien und bietet effiziente und effektive Schwärzungsfunktionen sowie verschiedene andere PDF-Vorgänge.
 
-### FAQ's
+### FAQs
 
-#### Q: What is redaction in a PDF document?
+#### F: Was ist Schwärzung in einem PDF-Dokument?
 
-A: Redaction in a PDF document is the process of permanently removing or obscuring sensitive or confidential information from the document. This ensures that the redacted information cannot be accessed or viewed, providing data security and privacy.
+A: Bei der Schwärzung eines PDF-Dokuments werden sensible oder vertrauliche Informationen dauerhaft aus dem Dokument entfernt oder unkenntlich gemacht. Dadurch wird sichergestellt, dass auf die redigierten Informationen nicht zugegriffen oder sie eingesehen werden können, was für Datensicherheit und Datenschutz sorgt.
 
-#### Q: Can I redact multiple areas of a page in a PDF document?
+#### F: Kann ich mehrere Bereiche einer Seite in einem PDF-Dokument schwärzen?
 
-A: Yes, with Aspose.PDF for .NET, you can create multiple `RedactionAnnotation` instances to redact multiple areas of a page in a PDF document. Each `RedactionAnnotation` can be customized with different fill colors, border colors, overlay texts, and other properties.
+A: Ja, mit Aspose.PDF für .NET können Sie mehrere erstellen`RedactionAnnotation` Instanzen, um mehrere Bereiche einer Seite in einem PDF-Dokument zu schwärzen. Jede`RedactionAnnotation` kann mit verschiedenen Füllfarben, Rahmenfarben, Overlay-Texten und anderen Eigenschaften angepasst werden.
 
-#### Q: Does redaction in Aspose.PDF for .NET permanently remove the redacted information?
+#### F: Entfernt die Schwärzung in Aspose.PDF für .NET die geschwärzten Informationen dauerhaft?
 
-A: Yes, redaction in Aspose.PDF for .NET permanently removes the redacted information from the PDF document. Once redaction is performed and the document is saved, the redacted information cannot be recovered.
+A: Ja, durch die Schwärzung in Aspose.PDF für .NET werden die geschwärzten Informationen dauerhaft aus dem PDF-Dokument entfernt. Sobald die Schwärzung durchgeführt und das Dokument gespeichert wurde, können die geschwärzten Informationen nicht wiederhergestellt werden.
 
-#### Q: Can I redact text and images under the redacted area in a PDF document?
+#### F: Kann ich Text und Bilder unter dem geschwärzten Bereich in einem PDF-Dokument schwärzen?
 
-A: Yes, when you call the `Redact()` method on the `RedactionAnnotation` object, it will not only add a redaction overlay to the specified area but also remove the underlying text and images from that area.
+ A: Ja, wenn Sie anrufen`Redact()` Methode auf der`RedactionAnnotation` Wenn Sie ein Objekt hinzufügen, wird dem angegebenen Bereich nicht nur eine Schwärzungsüberlagerung hinzugefügt, sondern auch der darunter liegende Text und die Bilder aus diesem Bereich entfernt.
 
-#### Q: Can Aspose.PDF for .NET redact multiple pages in a PDF document?
+#### F: Kann Aspose.PDF für .NET mehrere Seiten in einem PDF-Dokument redigieren?
 
-A: Yes, you can create `RedactionAnnotation` instances for multiple pages in a PDF document to redact sensitive information from multiple pages.
+ A: Ja, Sie können erstellen`RedactionAnnotation` Instanzen für mehrere Seiten in einem PDF-Dokument, um vertrauliche Informationen von mehreren Seiten zu schwärzen.

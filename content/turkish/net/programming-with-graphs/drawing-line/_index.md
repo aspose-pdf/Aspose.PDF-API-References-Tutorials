@@ -1,44 +1,44 @@
 ---
-title: Drawing Line
-linktitle: Drawing Line
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to draw a line across a page using Aspose.PDF for .NET. Step-by-step guide to creating custom lines.
+title: Çizim Çizgisi
+linktitle: Çizim Çizgisi
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET'i kullanarak sayfa boyunca nasıl çizgi çizeceğinizi öğrenin. Özel çizgiler oluşturmaya yönelik adım adım kılavuz.
 type: docs
 weight: 80
 url: /tr/net/programming-with-graphs/drawing-line/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to draw a line using Aspose.PDF for .NET.
+Bu eğitimde, Aspose.PDF for .NET kullanarak bir çizgi çizmek için aşağıdaki C# kaynak kodunu size adım adım anlatacağız.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Başlamadan önce Aspose.PDF kütüphanesini kurduğunuzdan ve geliştirme ortamınızı kurduğunuzdan emin olun. Ayrıca temel C# programlama bilgisine sahip olmak.
 
-## Step 1: Document Directory Setup
+## Adım 1: Belge Dizini Kurulumu
 
-In the provided source code, you need to specify the directory where you want to save the resulting PDF file. Change the "dataDir" variable to the desired directory.
+Sağlanan kaynak kodunda, ortaya çıkan PDF dosyasını kaydetmek istediğiniz dizini belirtmeniz gerekir. "dataDir" değişkenini istediğiniz dizine değiştirin.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Creating a Document Instance and Adding a Page
+## Adım 2: Belge Örneği Oluşturma ve Sayfa Ekleme
 
-We create an instance of the Document class and add a page to this document.
+Document sınıfının bir örneğini oluşturup bu belgeye bir sayfa ekliyoruz.
 
 ```csharp
 Document pDoc = new Document();
 Page pg = pDoc.Pages.Add();
 ```
 
-## Step 3: Setting Page Margins
+## 3. Adım: Sayfa Kenar Boşluklarını Ayarlama
 
-We set the page margins to 0 on all sides.
+Sayfa kenar boşluklarını her tarafta 0 olarak ayarladık.
 
 ```csharp
 pg.PageInfo.Margin.Left = pg.PageInfo.Margin.Right = pg.PageInfo.Margin.Bottom = pg.PageInfo.Margin.Top = 0;
 ```
 
-## Step 4: Creating a Graph Object and the First Line
+## Adım 4: Grafik Nesnesi ve İlk Satır Oluşturma
 
-We create a Graph object with dimensions equal to those of the page and draw the first line going from the lower left corner to the upper right corner of the page.
+Sayfanın boyutlarına eşit boyutlarda bir Graph nesnesi oluşturup sayfanın sol alt köşesinden sağ üst köşesine giden ilk çizgiyi çiziyoruz.
 
 ```csharp
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph((float)pg.PageInfo.Width, (float)pg.PageInfo.Height);
@@ -46,92 +46,92 @@ Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { (float)
 graph.Shapes.Add(line);
 ```
 
-## Step 5: Drawing the second line
+## Adım 5: İkinci çizgiyi çizme
 
-We draw the second line going from the upper left corner to the lower right corner of the page.
+Sayfanın sol üst köşesinden sağ alt köşesine doğru giden ikinci çizgiyi çiziyoruz.
 
 ```csharp
 Aspose.Pdf.Drawing.Line line2 = new Aspose.Pdf.Drawing.Line(new float[] { 0, (float)pg.Rect.URY, (float)pg.PageInfo.Width, (float)pg.Rect. LLX });
 graph.Shapes.Add(line2);
 ```
 
-## Step 6: Adding the Graph Object to the Page
+## Adım 6: Grafik Nesnesini Sayfaya Ekleme
 
-We add the Graph object to the page's paragraph collection.
+Graph nesnesini sayfanın paragraf koleksiyonuna ekliyoruz.
 
 ```csharp
 pg.Paragraphs.Add(graph);
 ```
 
-## Step 7: Saving the Resulting PDF File
+## Adım 7: Ortaya Çıkan PDF Dosyasını Kaydetme
 
-Finally, we save the resulting PDF file with the name "DrawingLine_out.pdf" in the specified directory.
+Son olarak ortaya çıkan PDF dosyasını "DrawingLine_out.pdf" ismiyle belirtilen dizine kaydediyoruz.
 
 ```csharp
 pDoc.Save(dataDir + "DrawingLine_out.pdf");
 ```
 
-### Sample source code for Drawing Line using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Çizgi Çizimi için örnek kaynak kodu 
 
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create Document instance
+// Belge örneği oluştur
 Document pDoc = new Document();
-// Add page to pages collection of PDF document
+// PDF belgesinin sayfa koleksiyonuna sayfa ekle
 Page pg = pDoc.Pages.Add();
-// Set page margin on all sides as 0
+// Sayfa kenar boşluğunu tüm kenarlarda 0 olarak ayarla
 pg.PageInfo.Margin.Left = pg.PageInfo.Margin.Right = pg.PageInfo.Margin.Bottom = pg.PageInfo.Margin.Top = 0;
-// Create Graph object with Width and Height equal to page dimensions
+// Genişlik ve Yükseklik sayfa boyutlarına eşit olan Grafik nesnesi oluşturun
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph((float)pg.PageInfo.Width , (float)pg.PageInfo.Height);
-// Create first line object starting from Lower-Left to Top-Right corner of page
+// Sayfanın Sol Alt köşesinden Sağ Üst köşesine kadar ilk satır nesnesini oluşturun
 Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { (float)pg.Rect.LLX, 0, (float)pg.PageInfo.Width, (float)pg.Rect.URY });
-// Add line to shapes collection of Graph object
+// Grafik nesnesinin şekiller koleksiyonuna çizgi ekleme
 graph.Shapes.Add(line);
-// Draw line from Top-Left corner of page to Bottom-Right corner of page
+// Sayfanın Sol Üst köşesinden Sayfanın Sağ Alt köşesine doğru çizgi çizin
 Aspose.Pdf.Drawing.Line line2 = new Aspose.Pdf.Drawing.Line(new float[] { 0, (float)pg.Rect.URY, (float)pg.PageInfo.Width, (float)pg.Rect.LLX });
-// Add line to shapes collection of Graph object
+// Grafik nesnesinin şekiller koleksiyonuna çizgi ekleme
 graph.Shapes.Add(line2);
-// Add Graph object to paragraphs collection of page
+// Sayfanın paragraf koleksiyonuna Grafik nesnesi ekleme
 pg.Paragraphs.Add(graph);
 dataDir = dataDir + "DrawingLine_out.pdf";
-// Save PDF file
+// PDF dosyasını kaydet
 pDoc.Save(dataDir);
 Console.WriteLine("\nLine drawn successfully across the page.\nFile saved at " + dataDir);            
 
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we explained how to draw a line using Aspose.PDF for .NET. You can now use this knowledge to create geometric shapes with custom lines in your PDF files.
+Bu eğitimde Aspose.PDF for .NET kullanarak nasıl çizgi çizileceğini anlattık. Artık bu bilgiyi PDF dosyalarınızda özel çizgilerle geometrik şekiller oluşturmak için kullanabilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the purpose of this tutorial?
+#### S: Bu eğitimin amacı nedir?
 
-A: This tutorial's purpose is to guide you through the process of drawing lines using Aspose.PDF for .NET. You'll learn how to create lines on a PDF page and customize their appearance.
+C: Bu eğitimin amacı Aspose.PDF for .NET kullanarak çizgi çizme sürecinde size rehberlik etmektir. Bir PDF sayfasında çizgiler oluşturmayı ve görünümlerini nasıl özelleştireceğinizi öğreneceksiniz.
 
-#### Q: What prerequisites are required before starting?
+#### S: Başlamadan önce hangi önkoşullar gereklidir?
 
-A: Before you begin, ensure you have installed the Aspose.PDF library and set up your development environment. Basic knowledge of C# programming is also recommended.
+C: Başlamadan önce Aspose.PDF kütüphanesini kurduğunuzdan ve geliştirme ortamınızı kurduğunuzdan emin olun. Temel C# programlama bilgisi de önerilir.
 
-#### Q: How do I specify the directory for saving the PDF file?
+#### S: PDF dosyasının kaydedileceği dizini nasıl belirlerim?
 
-A: Modify the "dataDir" variable in the provided source code to indicate the directory where you want to save the resulting PDF file.
+C: Ortaya çıkan PDF dosyasını kaydetmek istediğiniz dizini belirtmek için sağlanan kaynak koddaki "dataDir" değişkenini değiştirin.
 
-#### Q: How do I create lines on a PDF page?
+#### S: PDF sayfasında nasıl çizgiler oluşturabilirim?
 
-A: The tutorial demonstrates creating a Graph object with the dimensions of the page and then adding Line objects to it. Modify the coordinates and properties of the Line objects to create the desired lines.
+C: Öğretici, sayfanın boyutlarına sahip bir Graph nesnesi oluşturmayı ve ardından buna Line nesneleri eklemeyi gösterir. İstediğiniz çizgileri oluşturmak için Çizgi nesnelerinin koordinatlarını ve özelliklerini değiştirin.
 
-#### Q: Can I customize the appearance of the lines?
+#### S: Çizgilerin görünümünü özelleştirebilir miyim?
 
-A: Yes, you can customize the appearance of the lines by modifying the properties of the Line objects. This includes changing their coordinates, color, thickness, and other graphical attributes.
+C: Evet, Çizgi nesnelerinin özelliklerini değiştirerek çizgilerin görünümünü özelleştirebilirsiniz. Buna koordinatların, renklerin, kalınlıkların ve diğer grafiksel niteliklerin değiştirilmesi de dahildir.
 
-#### Q: How do I save the PDF document after drawing the lines?
+#### S: Çizgileri çizdikten sonra PDF belgesini nasıl kaydedebilirim?
 
-A: After adding the Graph object with Line objects to the page, you can save the resulting PDF document using the `pDoc.Save(dataDir + "DrawingLine_out.pdf");` line in the provided source code.
+C: Çizgi nesnelerini içeren Grafik nesnesini sayfaya ekledikten sonra, elde edilen PDF belgesini kullanarak kaydedebilirsiniz.`pDoc.Save(dataDir + "DrawingLine_out.pdf");` Sağlanan kaynak kodundaki satır.
 
-#### Q: Can I draw lines with different angles and orientations?
+#### S: Farklı açı ve yönlerde çizgiler çizebilir miyim?
 
-A: Yes, you can draw lines with different angles and orientations by adjusting the coordinates and properties of the Line objects within the Graph.
+C: Evet, Grafik içindeki Çizgi nesnelerinin koordinatlarını ve özelliklerini ayarlayarak farklı açı ve yönelimlerde çizgiler çizebilirsiniz.

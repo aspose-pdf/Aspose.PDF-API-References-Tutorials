@@ -1,41 +1,41 @@
 ---
-title: Set Callout Property In PDF File
-linktitle: Set Callout Property In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set Callout Property in PDF File using Aspose.PDF for .NET. Customize annotations with callout lines, text color, and ending styles.
+title: تعيين خاصية وسيلة الشرح في ملف PDF
+linktitle: تعيين خاصية وسيلة الشرح في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية تعيين خاصية وسيلة الشرح في ملف PDF باستخدام Aspose.PDF لـ .NET. قم بتخصيص التعليقات التوضيحية باستخدام خطوط وسائل الشرح ولون النص وأنماط النهاية.
 type: docs
 weight: 130
 url: /ar/net/annotations/setcalloutproperty/
 ---
-Aspose.PDF for .NET is a powerful library for creating, manipulating, and converting PDF documents in C#. One of the features provided by this library is the ability to set callout properties for free text annotations in PDF documents. This can be done using the `FreeTextAnnotation` class, which allows you to create annotations with callouts.
+ Aspose.PDF for .NET هي مكتبة قوية لإنشاء مستندات PDF ومعالجتها وتحويلها بلغة C#. إحدى الميزات التي توفرها هذه المكتبة هي القدرة على تعيين خصائص وسائل الشرح للتعليقات التوضيحية النصية المجانية في مستندات PDF. ويمكن القيام بذلك باستخدام`FreeTextAnnotation` class، والذي يسمح لك بإنشاء التعليقات التوضيحية مع وسائل الشرح.
 
-In this tutorial, we will guide you through the process of setting callout properties for a free text annotation using Aspose.PDF for .NET in C#. Follow the steps below to get started.
+في هذا البرنامج التعليمي، سنرشدك خلال عملية تعيين خصائص وسائل الشرح لتعليق توضيحي للنص الحر باستخدام Aspose.PDF لـ .NET في C#. اتبع الخطوات أدناه للبدء.
 
-## Install Aspose.PDF for .NET
+## قم بتثبيت Aspose.PDF لـ .NET
 
-If you haven't already done so, you will need to [download](https://releases.aspose.com/pdf/net/) and install Aspose.PDF for .NET from the Aspose Releases or via NuGet package manager.
+ إذا لم تكن قد قمت بذلك بالفعل، فسوف تحتاج إلى ذلك[تحميل](https://releases.aspose.com/pdf/net/) وقم بتثبيت Aspose.PDF لـ .NET من إصدارات Aspose أو عبر مدير الحزم NuGet.
 
-## Step 1: Create a new PDF document
+## الخطوة 1: إنشاء مستند PDF جديد
 
-Create a new PDF document using the `Document` class provided by Aspose.PDF for .NET.
+ قم بإنشاء مستند PDF جديد باستخدام`Document`فئة مقدمة من Aspose.PDF لـ .NET.
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 ```
 
-## Step 2: Add a new page to the document
+## الخطوة 2: إضافة صفحة جديدة إلى المستند
 
-Add a new page to the document using the `Pages` collection of the `Document` class.
+ أضف صفحة جديدة إلى المستند باستخدام`Pages` جمع من`Document` فصل.
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
-## Step 3: Set default appearance
+## الخطوة 3: تعيين المظهر الافتراضي
 
-Set the default appearance for the free text annotation by creating a new `DefaultAppearance` object and setting its properties such as `TextColor` and `FontSize`.
+ قم بتعيين المظهر الافتراضي للتعليق التوضيحي للنص الحر عن طريق إنشاء ملف جديد`DefaultAppearance` الكائن وتعيين خصائصه مثل`TextColor` و`FontSize`.
 
 ```csharp
 DefaultAppearance da = new DefaultAppearance();
@@ -43,9 +43,9 @@ da.TextColor = System.Drawing.Color.Red;
 da.FontSize = 10;
 ```
 
-## Step 4: Create a free text annotation with callout
+## الخطوة 4: إنشاء تعليق توضيحي نصي مجاني باستخدام وسيلة الشرح
 
-Create a new free text annotation with callout by using the `FreeTextAnnotation` class. Set the `Intent` property to `FreeTextIntent.FreeTextCallout` to specify that this is a callout annotation. Set the `EndingStyle` property to `LineEnding.OpenArrow` to specify the style of the arrow at the end of the callout. Set the `Callout` property to an array of `Point` objects that represent the points on the page where the callout line should be drawn.
+ قم بإنشاء تعليق توضيحي نصي مجاني جديد باستخدام وسيلة الشرح باستخدام`FreeTextAnnotation` فصل. تعيين`Intent` الملكية ل`FreeTextIntent.FreeTextCallout` لتحديد أن هذا تعليق توضيحي لوسيلة شرح. تعيين`EndingStyle` الملكية ل`LineEnding.OpenArrow` لتحديد نمط السهم في نهاية وسيلة الشرح. تعيين`Callout` الملكية لمجموعة من`Point` الكائنات التي تمثل النقاط الموجودة على الصفحة حيث يجب رسم خط وسيلة الشرح.
 
 ```csharp
 FreeTextAnnotation fta = new FreeTextAnnotation(page, new Rectangle(422.25, 645.75, 583.5, 702.75), da);
@@ -57,34 +57,34 @@ fta.Callout = new Point[]
 };
 ```
 
-## Step 5: Add the free text annotation to the page
+## الخطوة 5: أضف التعليق التوضيحي النصي المجاني إلى الصفحة
 
-Add the free text annotation to the page by using the `Annotations` collection of the `Page` class.
+ أضف التعليق التوضيحي النصي المجاني إلى الصفحة باستخدام`Annotations` جمع من`Page` فصل.
 
 ```csharp
 page.Annotations.Add(fta);
 ```
 
-## Step 6: Add text to the annotation
+## الخطوة 6: إضافة نص إلى التعليق التوضيحي
 
-Add text to the annotation by setting the `RichText` property to a string of formatted XML. In this tutorial, we're setting the text color to red and the font size to 9.
+ أضف نصًا إلى التعليق التوضيحي عن طريق ضبط`RichText`الخاصية إلى سلسلة من تنسيق XML. في هذا البرنامج التعليمي، نقوم بتعيين لون النص إلى اللون الأحمر وحجم الخط إلى 9.
 
 ```csharp
-fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\"  style=\"color:#FF
+fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"اللون:#FF
 ```
 
-## Step 7: save the document
+## الخطوة 7: احفظ المستند
 
-Now save the document by using the following code:
+الآن احفظ المستند باستخدام الكود التالي:
 
 ```csharp
 doc.Save(dataDir + "SetCalloutProperty.pdf")
 ```
 
-### Example source code for Set Callout Property using Aspose.PDF for .NET
+### مثال على التعليمات البرمجية المصدر لتعيين خاصية وسيلة الشرح باستخدام Aspose.PDF لـ .NET
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 Document doc = new Document();
@@ -100,28 +100,28 @@ fta.Callout = new Point[]
 	new Point(428.25,651.75), new Point(462.75,681.375), new Point(474,681.375)
 };
 page.Annotations.Add(fta);
-fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\"  style=\"color:#FF0000;font-weight:normal;font-style:normal;font-stretch:normal\"><p dir=\"ltr\"><span style=\"font-size:9.0pt;font-family:Helvetica\">This is a sample</span></p></body>";
+fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"color:#FF0000;font-weight:normal;font-style:normal;font-stretch:normal\"><p dir=\"ltr\"> <span style=\"font-size:9.0pt;font-family:Helvetica\">هذه عينة</span></p></body>";
 doc.Save(dataDir + "SetCalloutProperty.pdf");
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we explored how to set callout properties for a free text annotation in a PDF document using Aspose.PDF for .NET. Callout annotations are useful for providing additional information or explanations related to specific areas in a document. Aspose.PDF for .NET provides a wide range of features and capabilities to work with PDF files, including creating and customizing annotations, such as callouts. By following the step-by-step guide and using the provided C# source code, developers can easily implement callout annotations in their PDF documents, enhancing the usability and clarity of their documents. Aspose.PDF for .NET is a versatile and reliable library for PDF operations in .NET applications, offering powerful tools to handle various PDF-related tasks efficiently.
+في هذا البرنامج التعليمي، اكتشفنا كيفية تعيين خصائص وسائل الشرح لتعليق توضيحي للنص الحر في مستند PDF باستخدام Aspose.PDF لـ .NET. تعد التعليقات التوضيحية لوسائل الشرح مفيدة في توفير معلومات أو توضيحات إضافية تتعلق بمناطق محددة في المستند. يوفر Aspose.PDF for .NET نطاقًا واسعًا من الميزات والإمكانيات للعمل مع ملفات PDF، بما في ذلك إنشاء التعليقات التوضيحية وتخصيصها، مثل وسائل الشرح. من خلال اتباع الدليل خطوة بخطوة واستخدام كود مصدر C# المقدم، يمكن للمطورين تنفيذ التعليقات التوضيحية لوسائل الشرح بسهولة في مستندات PDF الخاصة بهم، مما يعزز سهولة استخدام مستنداتهم ووضوحها. Aspose.PDF for .NET هي مكتبة متعددة الاستخدامات وموثوقة لعمليات PDF في تطبيقات .NET، وتوفر أدوات قوية للتعامل مع المهام المختلفة المتعلقة بـ PDF بكفاءة.
 
-### FAQ's for set callout property in PDF file
+### الأسئلة الشائعة لتعيين خاصية وسيلة الشرح في ملف PDF
 
-#### Q: What is a callout annotation in a PDF document?
+#### س: ما هو التعليق التوضيحي لوسيلة الشرح في مستند PDF؟
 
-A: A callout annotation in a PDF document is a type of annotation that allows you to create a text box with a leader line pointing to a specific area in the document. It is commonly used to provide additional information or comments related to a particular section or element in the document.
+ج: التعليق التوضيحي لوسائط الشرح في مستند PDF هو نوع من التعليقات التوضيحية التي تسمح لك بإنشاء مربع نص به سطر سابق يشير إلى منطقة معينة في المستند. يتم استخدامه بشكل شائع لتوفير معلومات أو تعليقات إضافية تتعلق بقسم أو عنصر معين في المستند.
 
-#### Q: Can I customize the appearance of the callout annotation using Aspose.PDF for .NET?
+#### س: هل يمكنني تخصيص مظهر التعليق التوضيحي لوسيلة الشرح باستخدام Aspose.PDF لـ .NET؟
 
-A: Yes, you can customize various properties of the callout annotation, such as the color, font size, text alignment, line style, arrow style, and more.
+ج: نعم، يمكنك تخصيص خصائص مختلفة للتعليق التوضيحي لوسيلة الشرح، مثل اللون وحجم الخط ومحاذاة النص ونمط الخط ونمط السهم والمزيد.
 
-#### Q: How do I add text to the callout annotation?
+#### س: كيف يمكنني إضافة نص إلى التعليق التوضيحي لوسيلة الشرح؟
 
-A: To add text to the callout annotation, you can set the `RichText` property of the `FreeTextAnnotation` object. The `RichText` property takes a string of formatted XML that represents the text to be displayed in the callout annotation.
+ ج: لإضافة نص إلى التعليق التوضيحي لوسيلة الشرح، يمكنك تعيين`RichText` ملكية`FreeTextAnnotation` هدف. ال`RichText` تأخذ الخاصية سلسلة من XML المنسق الذي يمثل النص الذي سيتم عرضه في التعليق التوضيحي لوسيلة الشرح.
 
-#### Q: Can I add multiple callout annotations to a PDF document using Aspose.PDF for .NET?
+#### س: هل يمكنني إضافة تعليقات توضيحية متعددة لوسائط الشرح إلى مستند PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: Yes, you can create multiple callout annotations in a PDF document by creating multiple instances of the `FreeTextAnnotation` object and adding them to different pages or locations in the document.
+ ج: نعم، يمكنك إنشاء تعليقات توضيحية متعددة لوسائط الشرح في مستند PDF عن طريق إنشاء مثيلات متعددة لـ`FreeTextAnnotation`الكائن وإضافته إلى صفحات أو مواقع مختلفة في المستند.

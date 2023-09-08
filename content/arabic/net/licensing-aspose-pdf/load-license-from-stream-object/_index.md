@@ -1,28 +1,28 @@
 ---
-title: Load License From Stream Object
-linktitle: Load License From Stream Object
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to load a license from a Stream object using Aspose.PDF for .NET. Unlock additional features.
+title: تحميل الترخيص من كائن الدفق
+linktitle: تحميل الترخيص من كائن الدفق
+second_title: Aspose.PDF لمرجع .NET API
+description: دليل خطوة بخطوة لتحميل ترخيص من كائن دفق باستخدام Aspose.PDF لـ .NET. فتح ميزات إضافية.
 type: docs
 weight: 30
 url: /ar/net/licensing-aspose-pdf/load-license-from-stream-object/
 ---
-In this tutorial, we will provide you with a step-by-step guide on how to load a license from a Stream object using Aspose.PDF for .NET. Aspose.PDF is a powerful library that allows you to create, manipulate and convert PDF documents programmatically. By uploading a license, you can unlock additional features offered by Aspose.PDF.
+في هذا البرنامج التعليمي، سنزودك بدليل خطوة بخطوة حول كيفية تحميل ترخيص من كائن Stream باستخدام Aspose.PDF لـ .NET. Aspose.PDF هي مكتبة قوية تتيح لك إنشاء مستندات PDF ومعالجتها وتحويلها برمجيًا. من خلال تحميل الترخيص، يمكنك فتح الميزات الإضافية التي يقدمها Aspose.PDF.
 
-## Prerequisites
+## المتطلبات الأساسية
 
-Before you begin, make sure you have the following prerequisites in place:
+قبل البدء، تأكد من توفر المتطلبات الأساسية التالية:
 
-1. Visual Studio installed with .NET framework.
-2. The Aspose.PDF library for .NET.
+1. تم تثبيت Visual Studio مع إطار عمل .NET.
+2. مكتبة Aspose.PDF لـ .NET.
 
-## Step 1: Project Setup
+## الخطوة 1: إعداد المشروع
 
-To get started, create a new project in Visual Studio and add a reference to the Aspose.PDF for .NET library. You can download the library from Aspose official website and install it on your machine.
+للبدء، قم بإنشاء مشروع جديد في Visual Studio وقم بإضافة مرجع إلى مكتبة Aspose.PDF لـ .NET. يمكنك تنزيل المكتبة من موقع Aspose الرسمي وتثبيتها على جهازك.
 
-## Step 2: Import the necessary namespaces
+## الخطوة 2: استيراد مساحات الأسماء الضرورية
 
-In your C# code file, import the namespaces required to access the classes and methods provided by Aspose.PDF:
+في ملف التعليمات البرمجية C# الخاص بك، قم باستيراد مساحات الأسماء المطلوبة للوصول إلى الفئات والأساليب التي يوفرها Aspose.PDF:
 
 ```csharp
 using System;
@@ -30,124 +30,124 @@ using System.IO;
 using Aspose.Pdf;
 ```
 
-## Step 3: Defining the document directory
+## الخطوة 3: تحديد دليل المستندات
 
-Before uploading the license, you must specify the path to the documents directory where your license file is located. For example :
+قبل تحميل الترخيص، يجب عليك تحديد المسار إلى دليل المستندات حيث يوجد ملف الترخيص الخاص بك. على سبيل المثال :
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Be sure to replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the documents directory on your machine.
+ تأكد من استبدال`"YOUR DOCUMENT DIRECTORY"` بالمسار الفعلي إلى دليل المستندات الموجود على جهازك.
 
-## Step 4: License Object Initialization
+## الخطوة 4: تهيئة كائن الترخيص
 
-After setting the document directory, you need to initialize the license object of Aspose.PDF. Use the following line of code to initialize the license object:
+بعد تعيين دليل المستند، تحتاج إلى تهيئة كائن ترخيص Aspose.PDF. استخدم السطر التالي من التعليمات البرمجية لتهيئة كائن الترخيص:
 
 ```csharp
 Aspose.Pdf.License license = new Aspose.Pdf.License();
 ```
 
-## Step 5: Loading the license from a Stream object
+## الخطوة 5: تحميل الترخيص من كائن الدفق
 
-Once the license object is initialized, you can load the license from a Stream object. Use the following lines of code to load the license:
+بمجرد تهيئة كائن الترخيص، يمكنك تحميل الترخيص من كائن دفق. استخدم سطور التعليمات البرمجية التالية لتحميل الترخيص:
 
 ```csharp
 FileStream myStream = new FileStream("PATH_TO_LICENSE_FILE", FileMode.Open);
 license.SetLicense(myStream);
 ```
 
-Be sure to replace `"PATH_TO_LICENSE_FILE"` with the actual path to the license file on your machine.
+ تأكد من استبدال`"PATH_TO_LICENSE_FILE"` بالمسار الفعلي لملف الترخيص الموجود على جهازك.
 
-## Step 6: License Upload Confirmation
+## الخطوة 6: تأكيد تحميل الترخيص
 
-After loading the license, you can display a confirmation message to check if the license has been loaded successfully. Use the following line of code to display a message in the console:
+بعد تحميل الترخيص، يمكنك عرض رسالة تأكيد للتأكد من أنه تم تحميل الترخيص بنجاح. استخدم سطر التعليمات البرمجية التالي لعرض رسالة في وحدة التحكم:
 
 ```csharp
 Console.WriteLine("License loaded successfully.");
 ```
 
-### Sample source code for Load License From Stream Object using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لتحميل الترخيص من كائن الدفق باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Initialize license object
+// تهيئة كائن الترخيص
 Aspose.Pdf.License license = new Aspose.Pdf.License();
-// Load license in FileStream
+// تحميل الترخيص في FileStream
 FileStream myStream = new FileStream("PATH_TO_LICENSE_FILE", FileMode.Open);
-// Set license
+//تعيين الترخيص
 license.SetLicense(myStream);
 Console.WriteLine("License set successfully.");
 
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, you learned how to load a license from a Stream object using Aspose.PDF for .NET. By following the described steps, you will be able to unlock the additional features offered by Aspose.PDF and use the library optimally in your C# projects.
+في هذا البرنامج التعليمي، تعلمت كيفية تحميل ترخيص من كائن Stream باستخدام Aspose.PDF لـ .NET. باتباع الخطوات الموضحة، ستتمكن من فتح الميزات الإضافية التي يقدمها Aspose.PDF واستخدام المكتبة على النحو الأمثل في مشاريع C# الخاصة بك.
 
-### FAQ's for load license from stream object
+### الأسئلة الشائعة حول ترخيص التحميل من كائن الدفق
 
-#### Q: What is the advantage of loading a license from a Stream object?
+#### س: ما هي ميزة تحميل الترخيص من كائن الدفق؟
 
-A: Loading a license from a Stream object allows you to provide the license data directly from a stream, which can be useful in scenarios where the license file is stored in memory or retrieved from a remote source.
+ج: يتيح لك تحميل ترخيص من كائن دفق توفير بيانات الترخيص مباشرة من دفق، وهو ما يمكن أن يكون مفيدًا في السيناريوهات التي يتم فيها تخزين ملف الترخيص في الذاكرة أو استرداده من مصدر بعيد.
 
-#### Q: How do I import the necessary namespaces for Aspose.PDF?
+#### س: كيف يمكنني استيراد مساحات الأسماء الضرورية لـ Aspose.PDF؟
 
-A: In your C# code file, use the `using` directive to import the required namespaces for accessing the classes and methods provided by Aspose.PDF and System.IO:
+ ج: في ملف التعليمات البرمجية C# الخاص بك، استخدم ملف`using` توجيه لاستيراد مساحات الأسماء المطلوبة للوصول إلى الفئات والأساليب التي يوفرها Aspose.PDF وSystem.IO:
 ```csharp
 using System;
 using System.IO;
 using Aspose.Pdf;
 ```
 
-#### Q: How do I define the document directory for the license file?
+#### س: كيف يمكنني تحديد دليل المستندات لملف الترخيص؟
 
-A: Before uploading the license, specify the path to the documents directory where your license file is located. Replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the documents directory on your machine.
+ ج: قبل تحميل الترخيص، حدد المسار إلى دليل المستندات حيث يوجد ملف الترخيص الخاص بك. يستبدل`"YOUR DOCUMENT DIRECTORY"` بالمسار الفعلي إلى دليل المستندات الموجود على جهازك.
 
-#### Q: How do I initialize the license object?
+#### س: كيف يمكنني تهيئة كائن الترخيص؟
 
-A: After setting the document directory, initialize the license object of Aspose.PDF using the following line of code:
+ج: بعد تعيين دليل المستند، قم بتهيئة كائن ترخيص Aspose.PDF باستخدام السطر التالي من التعليمات البرمجية:
 ```csharp
 Aspose.Pdf.License license = new Aspose.Pdf.License();
 ```
 
-#### Q: How do I load the license from a Stream object?
+#### س: كيف يمكنني تحميل الترخيص من كائن الدفق؟
 
-A: Load the license from a Stream object using the `SetLicense` method of the license object. Create a `FileStream` and pass it to the method. Replace `"PATH_TO_LICENSE_FILE"` with the actual path to the license file on your machine:
+ ج: قم بتحميل الترخيص من كائن دفق باستخدام ملف`SetLicense` طريقة كائن الترخيص. إنشاء`FileStream`وتمريرها إلى الطريقة. يستبدل`"PATH_TO_LICENSE_FILE"` بالمسار الفعلي لملف الترخيص الموجود على جهازك:
 ```csharp
 FileStream myStream = new FileStream("PATH_TO_LICENSE_FILE", FileMode.Open);
 license.SetLicense(myStream);
 ```
 
-#### Q: How do I confirm that the license has been loaded successfully?
+#### س: كيف أتأكد من أنه تم تحميل الترخيص بنجاح؟
 
-A: After loading the license, display a confirmation message to check if the license has been loaded successfully. Use the following line of code to display a message in the console:
+ج: بعد تحميل الترخيص، قم بعرض رسالة تأكيد للتأكد من أنه تم تحميل الترخيص بنجاح. استخدم سطر التعليمات البرمجية التالي لعرض رسالة في وحدة التحكم:
 ```csharp
 Console.WriteLine("License loaded successfully.");
 ```
 
-#### Q: Can I use a Stream from a remote source to load the license?
+#### س: هل يمكنني استخدام دفق من مصدر بعيد لتحميل الترخيص؟
 
-A: Yes, you can use a `MemoryStream` or other stream types to load a license from a remote source or from memory.
+ ج: نعم، يمكنك استخدام أ`MemoryStream` أو أنواع التدفق الأخرى لتحميل الترخيص من مصدر بعيد أو من الذاكرة.
 
-#### Q: Do I need to close the FileStream after loading the license?
+#### س: هل أحتاج إلى إغلاق FileStream بعد تحميل الترخيص؟
 
-A: Yes, it is recommended to close the `FileStream` or release the stream resources after loading the license to ensure proper memory management.
+ ج: نعم، يوصى بإغلاقه`FileStream` أو قم بتحرير موارد الدفق بعد تحميل الترخيص لضمان الإدارة المناسبة للذاكرة.
 
-#### Q: Can I load the license from a byte array instead of a FileStream?
+#### س: هل يمكنني تحميل الترخيص من مصفوفة بايت بدلاً من FileStream؟
 
-A: Yes, you can convert a byte array to a `MemoryStream` and then use the `SetLicense` method to load the license from the stream.
+ ج: نعم، يمكنك تحويل مصفوفة بايت إلى ملف`MemoryStream` ثم استخدم`SetLicense` طريقة تحميل الترخيص من الدفق.
 
-#### Q: Is the loaded license valid for the entire application?
+#### س: هل الترخيص المحمل صالح للتطبيق بأكمله؟
 
-A: Yes, once the license is loaded using the `SetLicense` method, it remains active for the entire application domain and enables the additional features for all instances of Aspose.PDF objects.
+ ج: نعم، بمجرد تحميل الترخيص باستخدام`SetLicense` الطريقة، تظل نشطة لمجال التطبيق بأكمله وتمكن الميزات الإضافية لجميع مثيلات كائنات Aspose.PDF.
 
-#### Q: How do I learn more about licensing in Aspose.PDF?
+#### س: كيف يمكنني معرفة المزيد حول الترخيص في Aspose.PDF؟
 
-A: For more information about licensing, pricing, and related details, visit the [Aspose.PDF Licensing](https://purchase.aspose.com/pricing/pdf/net) page.
+ج: لمزيد من المعلومات حول الترخيص والتسعير والتفاصيل ذات الصلة، قم بزيارة[Aspose.PDF الترخيص](https://purchase.aspose.com/pricing/pdf/net) صفحة.
 
-#### Q: Can I use a trial version of Aspose.PDF before loading a license?
+#### س: هل يمكنني استخدام نسخة تجريبية من Aspose.PDF قبل تحميل الترخيص؟
 
-A: Yes, you can use the trial version of Aspose.PDF to evaluate its features. However, to unlock the full potential of the library, you need to load a valid license.
+ج: نعم، يمكنك استخدام الإصدار التجريبي من Aspose.PDF لتقييم مميزاته. ومع ذلك، لفتح الإمكانات الكاملة للمكتبة، تحتاج إلى تحميل ترخيص صالح.

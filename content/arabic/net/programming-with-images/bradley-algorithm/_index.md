@@ -1,50 +1,50 @@
 ---
-title: Bradley Algorithm
-linktitle: Bradley Algorithm
-second_title: Aspose.PDF for .NET API Reference
-description: Convert a PDF document using the Bradley algorithm with Aspose.PDF for .NET.
+title: خوارزمية برادلي
+linktitle: خوارزمية برادلي
+second_title: Aspose.PDF لمرجع .NET API
+description: قم بتحويل مستند PDF باستخدام خوارزمية Bradley مع Aspose.PDF لـ .NET.
 type: docs
 weight: 30
 url: /ar/net/programming-with-images/bradley-algorithm/
 ---
-This step-by-step guide explains how to use the Bradley Algorithm with Aspose.PDF for .NET. Make sure you have already set up your environment and follow the steps below:
+يشرح هذا الدليل خطوة بخطوة كيفية استخدام خوارزمية برادلي مع Aspose.PDF لـ .NET. تأكد من أنك قمت بالفعل بإعداد بيئتك واتبع الخطوات التالية:
 
-## Step 1: Define the document directory
+## الخطوة 1: تحديد دليل المستند
 
-Before you start, make sure you set the correct directory for the documents. Replace `"YOUR DOCUMENT DIRECTORY"` in the code with the path to the directory where your PDF document is located.
+ قبل البدء، تأكد من تعيين الدليل الصحيح للمستندات. يستبدل`"YOUR DOCUMENT DIRECTORY"` في الكود الذي يحتوي على المسار إلى الدليل الذي يوجد به مستند PDF الخاص بك.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Open the document
+## الخطوة 2: افتح المستند
 
-In this step, we will open the PDF document using the `Document` class of Aspose.PDF. Use the `Document` constructor and pass the path to the PDF document.
+في هذه الخطوة، سنقوم بفتح مستند PDF باستخدام الملف`Document` فئة Aspose.PDF. استخدم ال`Document` منشئ وتمرير المسار إلى وثيقة PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "PageToTIFF.pdf");
 ```
 
-## Step 3: Define output files
+## الخطوة 3: تحديد ملفات الإخراج
 
-Define the output filenames for the resulting image and the binary image. Replace `"resultant_out.tif"` and `"37116-bin_out.tif"` with the desired names for the output files.
+ حدد أسماء ملفات الإخراج للصورة الناتجة والصورة الثنائية. يستبدل`"resultant_out.tif"` و`"37116-bin_out.tif"` بالأسماء المطلوبة لملفات الإخراج.
 
 ```csharp
 string outputImageFile = dataDir + "resultant_out.tif";
 string outputBinImageFile = dataDir + "37116-bin_out.tif";
 ```
 
-## Step 4: Create the Resolution object
+## الخطوة 4: إنشاء كائن الدقة
 
-Create a `Resolution` object to set the resolution of the TIFF image. In this example, we are using a resolution of 300 dpi.
+ إنشاء`Resolution`كائن لتعيين دقة صورة TIFF. في هذا المثال، نستخدم دقة تبلغ 300 نقطة في البوصة.
 
 ```csharp
 Resolution resolution = new Resolution(300);
 ```
 
-## Step 5: Create the TiffSettings object
+## الخطوة 5: إنشاء كائن TiffSettings
 
-Create a `TiffSettings` object to specify settings for the output TIFF file. In this example, we are using LZW compression and a color depth of 1 bit per pixel (1 bpp format).
+ إنشاء`TiffSettings`كائن لتحديد الإعدادات لملف الإخراج TIFF. في هذا المثال، نستخدم ضغط LZW وعمق ألوان يبلغ 1 بت لكل بكسل (تنسيق 1 bpp).
 
 ```csharp
 TiffSettings tiffSettings = new TiffSettings();
@@ -52,25 +52,25 @@ tiffSettings.Compression = CompressionType.LZW;
 tiffSettings.Depth = Aspose.Pdf.Devices.ColorDepth.Format1bpp;
 ```
 
-## Step 6: Create the TIFF device
+## الخطوة 6: إنشاء جهاز TIFF
 
-Create a TIFF device using the `TiffDevice` object, specifying the resolution and TIFF settings.
+ قم بإنشاء جهاز TIFF باستخدام`TiffDevice` الكائن، مع تحديد الدقة وإعدادات TIFF.
 
 ```csharp
 TiffDevice tiffDevice = new TiffDevice(resolution, tiffSettings);
 ```
 
-## Step 7: Convert the specific page and save the image
+## الخطوة 7: تحويل الصفحة المحددة وحفظ الصورة
 
-Use the `Process` method of the TIFF device to convert a specific page of the PDF document and save the image to a TIFF file. Specify the file output path.
+ استخدم ال`Process` طريقة جهاز TIFF لتحويل صفحة معينة من مستند PDF وحفظ الصورة في ملف TIFF. حدد مسار إخراج الملف.
 
 ```csharp
 tiffDevice.Process(pdfDocument, outputImageFile);
 ```
 
-## Step 8: Binarize the image using the Bradley algorithm
+## الخطوة 8: قم بتضمين الصورة باستخدام خوارزمية برادلي
 
-Use the `BinarizeBradley` method of the TIFF device to binarize the image using the Bradley algorithm. This method takes an input stream of the original image and an output stream for the binary image. Specify the binarization threshold (0.1 in this example).
+ استخدم ال`BinarizeBradley` طريقة جهاز TIFF لثنائية الصورة باستخدام خوارزمية برادلي. تأخذ هذه الطريقة دفق إدخال للصورة الأصلية ودفق إخراج للصورة الثنائية. حدد عتبة الثنائية (0.1 في هذا المثال).
 
 ```csharp
 using (FileStream
@@ -84,23 +84,23 @@ tiffDevice. Binarize Bradley(inStream, outStream, 0.1);
 }
 ```
 
-### Sample source code for Bradley Algorithm using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لخوارزمية برادلي باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir+ "PageToTIFF.pdf");
 string outputImageFile = dataDir + "resultant_out.tif";
 string outputBinImageFile = dataDir + "37116-bin_out.tif";
-// Create Resolution object
+// إنشاء كائن القرار
 Resolution resolution = new Resolution(300);
-// Create TiffSettings object
+// إنشاء كائن TiffSettings
 TiffSettings tiffSettings = new TiffSettings();
 tiffSettings.Compression = CompressionType.LZW;
 tiffSettings.Depth = Aspose.Pdf.Devices.ColorDepth.Format1bpp;
-// Create TIFF device
+// إنشاء جهاز TIFF
 TiffDevice tiffDevice = new TiffDevice(resolution, tiffSettings);
-// Convert a particular page and save the image to stream
+//تحويل صفحة معينة وحفظ الصورة للبث
 tiffDevice.Process(pdfDocument, outputImageFile);
 using (FileStream inStream = new FileStream(outputImageFile, FileMode.Open))
 {
@@ -112,43 +112,43 @@ using (FileStream inStream = new FileStream(outputImageFile, FileMode.Open))
 System.Console.WriteLine("Conversion using bradley algorithm performed successfully!");
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You have successfully completed the conversion using the Bradley algorithm with Aspose.PDF for .NET. You can now use the resulting images in your projects or applications.
+تهنئة ! لقد أكملت التحويل بنجاح باستخدام خوارزمية Bradley مع Aspose.PDF لـ .NET. يمكنك الآن استخدام الصور الناتجة في مشاريعك أو تطبيقاتك.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the Bradley Algorithm and how does it relate to Aspose.PDF for .NET?
+#### س: ما هي خوارزمية برادلي وكيف ترتبط بـ Aspose.PDF لـ .NET؟
 
-A: The Bradley Algorithm is an image processing technique used to enhance image quality and clarity. Aspose.PDF for .NET provides a convenient way to apply the Bradley Algorithm to PDF documents, resulting in improved images.
+ج: خوارزمية برادلي هي تقنية معالجة صور تُستخدم لتحسين جودة الصورة ووضوحها. يوفر Aspose.PDF for .NET طريقة ملائمة لتطبيق خوارزمية Bradley على مستندات PDF، مما يؤدي إلى تحسين الصور.
 
-#### Q: How do I set up my environment for using the Bradley Algorithm with Aspose.PDF for .NET?
+#### س: كيف يمكنني إعداد البيئة الخاصة بي لاستخدام خوارزمية Bradley مع Aspose.PDF لـ .NET؟
 
-A: Before you begin, ensure that you have Aspose.PDF for .NET properly installed and your development environment configured.
+ج: قبل البدء، تأكد من تثبيت Aspose.PDF for .NET بشكل صحيح وتكوين بيئة التطوير لديك.
 
-#### Q: What is the significance of defining the document directory in the Bradley Algorithm process?
+#### س: ما أهمية تحديد دليل المستندات في عملية خوارزمية برادلي؟
 
-A: Specifying the correct document directory is crucial to ensure that the PDF document is located in the right path for processing.
+ج: يعد تحديد دليل المستند الصحيح أمرًا بالغ الأهمية لضمان وجود مستند PDF في المسار الصحيح للمعالجة.
 
-#### Q: How do I open a PDF document using Aspose.PDF for .NET in the Bradley Algorithm?
+#### س: كيف يمكنني فتح مستند PDF باستخدام Aspose.PDF لـ .NET في خوارزمية برادلي؟
 
-A: Use the `Document` class to open the PDF document, which serves as the input for the Bradley Algorithm process.
+ ج: استخدم`Document` فئة لفتح مستند PDF، الذي يعمل كمدخل لعملية خوارزمية برادلي.
 
-#### Q: What is the purpose of defining output filenames for the image and binary image in the Bradley Algorithm process?
+#### س: ما هو الغرض من تحديد أسماء ملفات الإخراج للصورة والصورة الثنائية في عملية خوارزمية برادلي؟
 
-A: Defining output filenames allows you to specify where the resulting image and binary image will be saved after applying the Bradley Algorithm.
+ج: يتيح لك تحديد أسماء ملفات الإخراج تحديد مكان حفظ الصورة الناتجة والصورة الثنائية بعد تطبيق خوارزمية برادلي.
 
-#### Q: How does the resolution setting affect the TIFF image quality in the Bradley Algorithm process?
+#### س: كيف يؤثر إعداد الدقة على جودة صورة TIFF في عملية خوارزمية برادلي؟
 
-A: The resolution setting determines the level of detail and clarity in the resulting TIFF image after applying the Bradley Algorithm.
+ج: يحدد إعداد الدقة مستوى التفاصيل والوضوح في صورة TIFF الناتجة بعد تطبيق خوارزمية برادلي.
 
-#### Q: What settings can I customize for the output TIFF image in the Bradley Algorithm process?
-A: You can customize settings such as compression type and color depth to achieve the desired output for the TIFF image.
+#### س: ما هي الإعدادات التي يمكنني تخصيصها لمخرجات صورة TIFF في عملية خوارزمية برادلي؟
+ج: يمكنك تخصيص الإعدادات مثل نوع الضغط وعمق الألوان لتحقيق الإخراج المطلوب لصورة TIFF.
 
-#### Q: How does the TIFF device contribute to the Bradley Algorithm process?
+#### س: كيف يساهم جهاز TIFF في عملية خوارزمية برادلي؟
 
-A: The TIFF device acts as a tool for processing images and applying the Bradley Algorithm, resulting in enhanced image quality.
+ج: يعمل جهاز TIFF كأداة لمعالجة الصور وتطبيق خوارزمية برادلي، مما يؤدي إلى تحسين جودة الصورة.
 
-#### Q: How do I convert a specific page of a PDF document to a TIFF image in the Bradley Algorithm process?
+#### س: كيف يمكنني تحويل صفحة معينة من مستند PDF إلى صورة TIFF في عملية خوارزمية برادلي؟
 
-A: Utilize the `Process` method of the TIFF device to convert a specific page of the PDF document into a TIFF image, which can then be further processed using the Bradley Algorithm.
+ ج: الاستفادة من`Process` طريقة جهاز TIFF لتحويل صفحة معينة من مستند PDF إلى صورة TIFF، والتي يمكن بعد ذلك معالجتها باستخدام خوارزمية برادلي.

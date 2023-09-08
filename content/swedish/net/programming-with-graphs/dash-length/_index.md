@@ -1,45 +1,45 @@
 ---
-title: Dash Length
-linktitle: Dash Length
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set the length of dashes with Aspose.PDF for .NET. Step by step guide to customize dash patterns.
+title: Strecklängd
+linktitle: Strecklängd
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du ställer in längden på streck med Aspose.PDF för .NET. Steg för steg guide för att anpassa streckmönster.
 type: docs
 weight: 70
 url: /sv/net/programming-with-graphs/dash-length/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to set the length of dashes using Aspose.PDF for .NET.
+I den här handledningen går vi igenom följande C#-källkod steg för steg för att ställa in längden på streck med Aspose.PDF för .NET.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Se till att du har installerat Aspose.PDF-biblioteket och ställt in din utvecklingsmiljö innan du börjar. Har även grundläggande kunskaper i C#-programmering.
 
-## Step 1: Document Directory Setup
+## Steg 1: Installation av dokumentkatalog
 
-In the provided source code, you need to specify the directory where you want to save the resulting PDF file. Change the "dataDir" variable to the desired directory.
+den medföljande källkoden måste du ange katalogen där du vill spara den resulterande PDF-filen. Ändra variabeln "dataDir" till önskad katalog.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Instantiating a Document Object and Adding a Page
+## Steg 2: Instantiera ett dokumentobjekt och lägga till en sida
 
-We create an instance of the Document class and add a page to this document.
+Vi skapar en instans av klassen Document och lägger till en sida i detta dokument.
 
 ```csharp
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Step 3: Creating a Graph Object and adding it to the page
+## Steg 3: Skapa ett grafobjekt och lägga till det på sidan
 
-We create a Graph object with specified dimensions and add it to the page's paragraph collection.
+Vi skapar ett Graph-objekt med specificerade mått och lägger till det i sidans styckesamling.
 
 ```csharp
 Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
 page.Paragraphs.Add(canvas);
 ```
 
-## Step 4: Creating a Line Object and Configuring
+## Steg 4: Skapa ett linjeobjekt och konfigurera
 
-We create a Line object with the specified coordinates and configure the color and length of the dashes.
+Vi skapar ett linjeobjekt med de angivna koordinaterna och konfigurerar färgen och längden på strecken.
 
 ```csharp
 Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { 100, 100, 200, 100 });
@@ -48,79 +48,79 @@ line.GraphInfo.DashArray = new int[] { 0, 1, 0 };
 line.GraphInfo.DashPhase = 1;
 ```
 
-## Step 5: Adding the Line to the Graph Object
+## Steg 5: Lägga till linjen i grafobjektet
 
-We add the line to the shape collection of the Graph object.
+Vi lägger till linjen i formsamlingen för Graph-objektet.
 
 ```csharp
 canvas.Shapes.Add(line);
 ```
 
-## Step 6: Saving the Resulting PDF File
+## Steg 6: Spara den resulterande PDF-filen
 
-Finally, we save the resulting PDF file with the name "DashLength_out.pdf" in the specified directory.
+Slutligen sparar vi den resulterande PDF-filen med namnet "DashLength_out.pdf" i den angivna katalogen.
 
 ```csharp
 doc.Save(dataDir + "DashLength_out.pdf");
 ```
 
-### Sample source code for Dash Length using Aspose.PDF for .NET 
+### Exempel på källkod för Dash Length med Aspose.PDF för .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Instantiate Document instance
+// Instantiera dokumentinstans
 Document doc = new Document();
-// Add page to pages collection of Document object
+// Lägg till sida till sidsamling av dokumentobjekt
 Page page = doc.Pages.Add();
-// Create Drawing object with certain dimensions
+// Skapa ritobjekt med vissa dimensioner
 Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
-// Add drawing object to paragraphs collection of page instance
+// Lägg till ritobjekt till styckesamling av sidinstanser
 page.Paragraphs.Add(canvas);
-// Create Line object
+// Skapa linjeobjekt
 Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { 100, 100, 200, 100 });
-// Set color for Line object
+// Ställ in färg för linjeobjekt
 line.GraphInfo.Color = Aspose.Pdf.Color.Red;
-// Specify dash array for line object
+// Ange streckmatris för linjeobjekt
 line.GraphInfo.DashArray = new int[] { 0, 1, 0 };
-// Set the dash phase for Line instance
+// Ställ in streckfasen för linjeinstans
 line.GraphInfo.DashPhase = 1;
-// Add line to shapes collection of drawing object
+// Lägg till linje i formsamlingen av ritobjekt
 canvas.Shapes.Add(line);
 dataDir = dataDir + "DashLength_out.pdf";
-// Save PDF document
+// Spara PDF-dokument
 doc.Save(dataDir);
 Console.WriteLine("\nLength dashed successfully in black and white.\nFile saved at " + dataDir);            
 
 ```
 
-## Conclusion
+## Slutsats
 
-In this tutorial, we explained how to set the length of dashes using Aspose.PDF for .NET. Now you can use this knowledge to create lines with custom dash patterns in your PDF files.
+I den här handledningen förklarade vi hur man ställer in längden på streck med Aspose.PDF för .NET. Nu kan du använda denna kunskap för att skapa linjer med anpassade streckmönster i dina PDF-filer.
 
-## FAQs
+## Vanliga frågor
 
-#### Q: What is the purpose of this tutorial?
+#### F: Vad är syftet med denna handledning?
 
-A: This tutorial's purpose is to guide you through the process of setting the length of dashes for lines using Aspose.PDF for .NET. You'll learn how to create lines with custom dash patterns in your PDF files.
+S: Syftet med denna handledning är att guida dig genom processen att ställa in längden på streck för linjer med Aspose.PDF för .NET. Du lär dig hur du skapar linjer med anpassade streckmönster i dina PDF-filer.
 
-#### Q: What prerequisites are required before starting?
+#### F: Vilka förutsättningar krävs innan start?
 
-A: Before you start, ensure that you have installed the Aspose.PDF library and set up your development environment. A basic understanding of C# programming is also recommended.
+S: Innan du börjar, se till att du har installerat Aspose.PDF-biblioteket och ställt in din utvecklingsmiljö. En grundläggande förståelse för C#-programmering rekommenderas också.
 
-#### Q: How do I specify the directory for saving the PDF file?
+#### F: Hur anger jag katalogen för att spara PDF-filen?
 
-A: Modify the "dataDir" variable in the provided source code to indicate the directory where you want to save the resulting PDF file.
+S: Ändra "dataDir"-variabeln i den medföljande källkoden för att ange katalogen där du vill spara den resulterande PDF-filen.
 
-#### Q: How do I create a line with custom dash patterns?
+#### F: Hur skapar jag en linje med anpassade streckmönster?
 
-A: The tutorial demonstrates creating a Line object and configuring its color, dash array, and dash phase using the `GraphInfo` object. Modify these settings to achieve the desired dash pattern.
+ S: Handledningen visar att man skapar ett linjeobjekt och konfigurerar dess färg, streckarray och streckfas med hjälp av`GraphInfo` objekt. Ändra dessa inställningar för att uppnå önskat streckmönster.
 
-#### Q: Can I customize the color of the line?
+#### F: Kan jag anpassa färgen på linjen?
 
-A: Yes, you can customize the color of the line by setting the `Color` property of the `GraphInfo` object associated with the Line.
+ S: Ja, du kan anpassa färgen på linjen genom att ställa in`Color` egendom av`GraphInfo` objekt som är associerat med linjen.
 
-#### Q: How do I save the PDF document after setting the dash length?
+#### F: Hur sparar jag PDF-dokumentet efter att ha ställt in strecklängden?
 
-A: After configuring the Line object with the desired dash pattern, you can save the resulting PDF document using the `doc.Save(dataDir + "DashLength_out.pdf");` line in the provided source code.
+ S: Efter att ha konfigurerat linjeobjektet med önskat streckmönster kan du spara det resulterande PDF-dokumentet med hjälp av`doc.Save(dataDir + "DashLength_out.pdf");` rad i den medföljande källkoden.

@@ -1,55 +1,55 @@
 ---
-title: XML To PDFSet Image Path
-linktitle: XML To PDFSet Image Path
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to set the path of an image when converting XML to PDF with Aspose.PDF for .NET.
+title: XML zu PDFBildpfad festlegen
+linktitle: XML zu PDFBildpfad festlegen
+second_title: Aspose.PDF für .NET API-Referenz
+description: Schritt-für-Schritt-Anleitung zum Festlegen des Pfads eines Bildes beim Konvertieren von XML in PDF mit Aspose.PDF für .NET.
 type: docs
 weight: 340
 url: /de/net/document-conversion/xml-to-pdfset-image-path/
 ---
-In this tutorial, we will walk you through step-by-step how to set the path of an image when converting an XML file to PDF using the Aspose.PDF library for .NET. We'll detail the provided C# source code and show you how to implement it in your own projects. By the end of this tutorial, you can easily specify the path of an image when converting XML to PDF.
+In diesem Tutorial führen wir Sie Schritt für Schritt durch die Festlegung des Pfads eines Bildes beim Konvertieren einer XML-Datei in PDF mithilfe der Aspose.PDF-Bibliothek für .NET. Wir erläutern den bereitgestellten C#-Quellcode und zeigen Ihnen, wie Sie ihn in Ihren eigenen Projekten implementieren. Am Ende dieses Tutorials können Sie beim Konvertieren von XML in PDF ganz einfach den Pfad eines Bildes angeben.
 
-## Step 1: Set File Paths
+## Schritt 1: Dateipfade festlegen
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 string inXml = dataDir + "input.xml";
 string inFile = dataDir + "aspose-logo.jpg";
 string outFile = dataDir + "output_out.pdf";
 ```
-Define the paths of the input XML files, the image to use and the output PDF file. Replace `"YOUR DOCUMENTS DIRECTORY"` with the path where you saved your files.
+ Definieren Sie die Pfade der XML-Eingabedateien, des zu verwendenden Bildes und der PDF-Ausgabedatei. Ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem Pfad, in dem Sie Ihre Dateien gespeichert haben.
 
-## Step 2: Instantiate a Document object
+## Schritt 2: Instanziieren Sie ein Document-Objekt
 ```csharp
 Document doc = new Document();
 ```
-Create an instance of the Document object.
+Erstellen Sie eine Instanz des Document-Objekts.
 
-## Step 3: Link the source XML file
+## Schritt 3: Verknüpfen Sie die XML-Quelldatei
 ```csharp
 doc. BindXml(inXml);
 ```
-Links the source XML file to the document.
+Verknüpft die XML-Quelldatei mit dem Dokument.
 
-## Step 4: Set Image Path
+## Schritt 4: Bildpfad festlegen
 ```csharp
 Image image = (Image)doc.GetObjectById("testImg");
 image.File = inFile;
 ```
-Get the Image object reference from the XML using its ID and set the path of the image to use.
+Rufen Sie mithilfe seiner ID die Bildobjektreferenz aus dem XML ab und legen Sie den Pfad des zu verwendenden Bilds fest.
 
-## Step 5: Save the Resulting PDF File
+## Schritt 5: Speichern Sie die resultierende PDF-Datei
 ```csharp
 doc.Save(outFile);
 ```
-Save the resulting PDF file to the specified directory.
+Speichern Sie die resultierende PDF-Datei im angegebenen Verzeichnis.
 
-### Example source code for XML to PDFSet Image Path using Aspose.PDF for .NET
+### Beispielquellcode für XML to PDFSet Image Path mit Aspose.PDF für .NET
 
 ```csharp
 try
 {
 	
-	// The path to the documents directory.
+	// Der Pfad zum Dokumentenverzeichnis.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
 	string inXml = dataDir + "input.xml";
 	string inFile = dataDir + "aspose-logo.jpg";
@@ -67,27 +67,27 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
-In this tutorial, we learned how to set the path of an image when converting XML to PDF using the Aspose.PDF library for .NET. By following the steps provided, you can easily specify the image path in your own XML to PDF conversions.
+## Abschluss
+In diesem Tutorial haben wir gelernt, wie man den Pfad eines Bildes beim Konvertieren von XML in PDF mithilfe der Aspose.PDF-Bibliothek für .NET festlegt. Indem Sie die bereitgestellten Schritte befolgen, können Sie den Bildpfad ganz einfach in Ihren eigenen XML-zu-PDF-Konvertierungen angeben.
 
-### FAQ's
+### FAQs
 
-#### Q: What is the purpose of setting the image path when converting XML to PDF?
+#### F: Wozu dient das Festlegen des Bildpfads beim Konvertieren von XML in PDF?
 
-A: When converting XML to PDF, setting the image path allows you to specify the location of an image that is referenced in the XML. This ensures that the image is correctly displayed in the resulting PDF document.
+A: Beim Konvertieren von XML in PDF können Sie durch Festlegen des Bildpfads den Speicherort eines Bilds angeben, auf das im XML verwiesen wird. Dadurch wird sichergestellt, dass das Bild im resultierenden PDF-Dokument korrekt angezeigt wird.
 
-#### Q: Can I use images from different directories?
+#### F: Kann ich Bilder aus verschiedenen Verzeichnissen verwenden?
 
-A: Yes, you can use images from different directories by providing the correct file path for each image. In the provided code, the `inFile` variable holds the path to the image file, and you can update it to point to images in different directories.
+ A: Ja, Sie können Bilder aus verschiedenen Verzeichnissen verwenden, indem Sie für jedes Bild den richtigen Dateipfad angeben. Im bereitgestellten Code ist die`inFile` Die Variable enthält den Pfad zur Bilddatei und Sie können sie aktualisieren, um auf Bilder in verschiedenen Verzeichnissen zu verweisen.
 
-#### Q: Can I use images from a remote URL?
+#### F: Kann ich Bilder von einer Remote-URL verwenden?
 
-A: Yes, you can use images from a remote URL by providing the URL instead of a local file path. Ensure that your application has internet access to retrieve the image from the remote URL.
+A: Ja, Sie können Bilder von einer Remote-URL verwenden, indem Sie die URL anstelle eines lokalen Dateipfads angeben. Stellen Sie sicher, dass Ihre Anwendung über einen Internetzugang verfügt, um das Bild von der Remote-URL abzurufen.
 
-#### Q: What format should the input XML file have?
+#### F: Welches Format sollte die XML-Eingabedatei haben?
 
-A: The input XML file should have a structure that references the image using an ID. In the provided code, the ID "testImg" is used to reference the image.
+A: Die XML-Eingabedatei sollte eine Struktur haben, die über eine ID auf das Bild verweist. Im bereitgestellten Code wird die ID „testImg“ verwendet, um auf das Bild zu verweisen.
 
-#### Q: Can I add multiple images to the PDF?
+#### F: Kann ich dem PDF mehrere Bilder hinzufügen?
 
-A: Yes, you can add multiple images to the PDF by referencing them in the XML file using different IDs and setting the file paths accordingly.
+A: Ja, Sie können dem PDF mehrere Bilder hinzufügen, indem Sie sie in der XML-Datei mit unterschiedlichen IDs referenzieren und die Dateipfade entsprechend festlegen.

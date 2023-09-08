@@ -1,32 +1,32 @@
 ---
-title: Hidden Text Block In PDF File
-linktitle: Hidden Text Block In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to create hidden text blocks in PDF file using Aspose.PDF for .NET.
+title: كتلة النص المخفية في ملف PDF
+linktitle: كتلة النص المخفية في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إنشاء كتل نصية مخفية في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 230
 url: /ar/net/programming-with-text/hidden-text-block/
 ---
-In this tutorial, we will explain how to create a hidden text block in PDF file using the Aspose.PDF library for .NET. A hidden text block is a floating text that becomes visible when the mouse cursor hovers over a specific area. We will go through the step-by-step process of creating the hidden text block using the provided C# source code.
+سنشرح في هذا البرنامج التعليمي كيفية إنشاء كتلة نصية مخفية في ملف PDF باستخدام مكتبة Aspose.PDF لـ .NET. كتلة النص المخفية هي نص عائم يصبح مرئيًا عندما يمرر مؤشر الماوس فوق منطقة معينة. سنتابع عملية إنشاء كتلة النص المخفية خطوة بخطوة باستخدام كود مصدر C# المقدم.
 
-## Requirements
+## متطلبات
 
-Before you begin, ensure that you have the following:
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- The Aspose.PDF for .NET library installed.
-- A basic understanding of C# programming.
+- تم تثبيت Aspose.PDF لمكتبة .NET.
+- فهم أساسي للبرمجة C#.
 
-## Step 1: Set up the Document Directory
+## الخطوة 1: إعداد دليل المستندات
 
-First, you need to set the path to the directory where you want to save the generated PDF file. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your desired directory.
+ أولاً، تحتاج إلى تعيين المسار إلى الدليل الذي تريد حفظ ملف PDF الذي تم إنشاؤه فيه. يستبدل`"YOUR DOCUMENT DIRECTORY"` في ال`dataDir`متغير مع المسار إلى الدليل المطلوب.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Create a Sample Document
+## الخطوة 2: إنشاء مستند نموذجي
 
-In this step, we create a sample PDF document and add a text fragment to it. The text fragment will serve as the trigger for displaying the hidden text block.
+في هذه الخطوة، نقوم بإنشاء نموذج مستند PDF وإضافة جزء نص إليه. سيكون جزء النص بمثابة المشغل لعرض كتلة النص المخفية.
 
 ```csharp
 string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
@@ -35,17 +35,17 @@ doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to d
 doc.Save(outputFile);
 ```
 
-## Step 3: Open the Document
+## الخطوة 3: افتح المستند
 
-Now, we open the previously created document using the `Document` class.
+ الآن، نفتح المستند الذي تم إنشاؤه مسبقًا باستخدام الملف`Document` فصل.
 
 ```csharp
 Document document = new Document(outputFile);
 ```
 
-## Step 4: Find the Text Fragment
+## الخطوة 4: ابحث عن جزء النص
 
-We use a `TextFragmentAbsorber` object to find the text fragment that will trigger the display of the hidden text block. In this case, we are searching for the exact text "Move the mouse cursor here to display floating text".
+ نحن نستخدم`TextFragmentAbsorber` كائن للعثور على جزء النص الذي سيؤدي إلى عرض كتلة النص المخفية. في هذه الحالة، نحن نبحث عن النص الدقيق "حرك مؤشر الماوس هنا لعرض النص العائم".
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
@@ -54,9 +54,9 @@ TextFragmentCollection textFragments = absorb.TextFragments;
 TextFragment fragment = textFragments[1];
 ```
 
-## Step 5: Create the Hidden Text Field
+## الخطوة 5: إنشاء حقل النص المخفي
 
-We create a `TextBoxField` object to represent the hidden text field. This field will contain the text that becomes visible when the mouse cursor hovers over the trigger text.
+ نقوم بإنشاء أ`TextBoxField` كائن لتمثيل حقل النص المخفي. سيحتوي هذا الحقل على النص الذي يصبح مرئيًا عند تمرير مؤشر الماوس فوق نص التشغيل.
 
 ```csharp
 TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
@@ -72,17 +72,17 @@ floatingField.Border.Width = 1;
 floatingField. Multiline = true;
 ```
 
-## Step 6: Add the Hidden Text Field to the Document
+## الخطوة 6: أضف حقل النص المخفي إلى المستند
 
-We add the hidden text field to the document's form collection.
+نضيف حقل النص المخفي إلى مجموعة نماذج المستند.
 
 ```csharp
 document.Form.Add(floatingField);
 ```
 
-## Step 7: Create the Invisible Button
+## الخطوة 7: إنشاء الزر غير المرئي
 
-We create an invisible button field that will be positioned on top of the trigger text fragment. This button field will have actions associated with mouse enter and exit events.
+نقوم بإنشاء حقل زر غير مرئي سيتم وضعه أعلى جزء نص التشغيل. سيحتوي حقل الزر هذا على إجراءات مرتبطة بأحداث الدخول والخروج بالماوس.
 
 ```csharp
 ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
@@ -91,104 +91,104 @@ buttonField.Actions.OnExit = new HideAction(floatingField);
 document.Form.Add(buttonField);
 ```
 
-## Step 8: Save the Document
+## الخطوة 8: احفظ المستند
 
-Finally, we save the modified document with the hidden text block.
+وأخيرا، نقوم بحفظ المستند المعدل مع كتلة النص المخفية.
 
 ```csharp
 document. Save(outputFile);
 ```
 
-### Sample source code for Hidden Text Block using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لكتلة النص المخفية باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
-// Create sample document with text
+// إنشاء وثيقة نموذجية مع النص
 Document doc = new Document();
 doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display floating text"));
 doc.Save(outputFile);
-// Open document with text
+// فتح المستند مع النص
 Document document = new Document(outputFile);
-// Create TextAbsorber object to find all the phrases matching the regular expression
+// قم بإنشاء كائن TextAbsorter للعثور على جميع العبارات المطابقة للتعبير العادي
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
-// Accept the absorber for the document pages
+// قبول الممتص لصفحات الوثيقة
 document.Pages.Accept(absorber);
-// Get the first extracted text fragment
+// احصل على أول جزء من النص المستخرج
 TextFragmentCollection textFragments = absorber.TextFragments;
 TextFragment fragment = textFragments[1];
-// Create hidden text field for floating text in the specified rectangle of the page
+// قم بإنشاء حقل نص مخفي للنص العائم في المستطيل المحدد للصفحة
 TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
-// Set text to be displayed as field value
+// قم بتعيين النص ليتم عرضه كقيمة حقل
 floatingField.Value = "This is the \"floating text field\".";
-// We recommend to make field 'readonly' for this scenario
+// نوصي بجعل الحقل "للقراءة فقط" لهذا السيناريو
 floatingField.ReadOnly = true;
-// Set 'hidden' flag to make field invisible on document opening
+// قم بتعيين علامة "مخفية" لجعل الحقل غير مرئي عند فتح المستند
 floatingField.Flags |= AnnotationFlags.Hidden;
-// Setting a unique field name isn't necessary but allowed
+// ليس من الضروري تعيين اسم حقل فريد ولكنه مسموح به
 floatingField.PartialName = "FloatingField_1";
-// Setting characteristics of field appearance isn't necessary but makes it better
+// ليس من الضروري تحديد خصائص المظهر الميداني ولكنه يجعله أفضل
 floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, System.Drawing.Color.Blue);
 floatingField.Characteristics.Background = System.Drawing.Color.LightBlue;
 floatingField.Characteristics.Border = System.Drawing.Color.DarkBlue;
 floatingField.Border = new Border(floatingField);
 floatingField.Border.Width = 1;
 floatingField.Multiline = true;
-// Add text field to the document
+// إضافة حقل نصي إلى المستند
 document.Form.Add(floatingField);
-// Create invisible button on text fragment position
+// إنشاء زر غير مرئي في موضع جزء النص
 ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
-// Create new hide action for specified field (annotation) and invisibility flag.
-// (You also may reffer floating field by the name if you specified it above.)
-// Add actions on mouse enter/exit at the invisible button field
+// قم بإنشاء إجراء إخفاء جديد للحقل المحدد (التعليق التوضيحي) وعلامة الاختفاء.
+//(يمكنك أيضًا إعادة الإشارة إلى الحقل العائم بالاسم إذا حددته أعلاه.)
+// أضف إجراءات عند الدخول/الخروج بالماوس في حقل الزر غير المرئي
 buttonField.Actions.OnEnter = new HideAction(floatingField, false);
 buttonField.Actions.OnExit = new HideAction(floatingField);
-// Add button field to the document
+// إضافة حقل زر إلى المستند
 document.Form.Add(buttonField);
-// Save document
+// حفظ المستند
 document.Save(outputFile);
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, you have learned how to create a hidden text block using the Aspose.PDF for .NET library. By following the step-by-step guide, you can generate a PDF document with a hidden text field that becomes visible when the mouse cursor hovers over a specific area. You can customize the appearance and behavior of the hidden text block according to your requirements.
+في هذا البرنامج التعليمي، تعلمت كيفية إنشاء كتلة نصية مخفية باستخدام مكتبة Aspose.PDF لـ .NET. باتباع الدليل الموضح خطوة بخطوة، يمكنك إنشاء مستند PDF يحتوي على حقل نصي مخفي يصبح مرئيًا عندما يمرر مؤشر الماوس فوق منطقة معينة. يمكنك تخصيص مظهر وسلوك كتلة النص المخفية وفقًا لمتطلباتك.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of the "Hidden Text Block In PDF File" tutorial?
+#### س: ما هو الغرض من البرنامج التعليمي "Hidden Text Block In PDF File"؟
 
-A: The "Hidden Text Block In PDF File" tutorial explains how to create a hidden text block in a PDF file using the Aspose.PDF library for .NET. A hidden text block is a floating text that becomes visible when the mouse cursor hovers over a specific area. This tutorial provides a step-by-step guide using C# source code.
+ج: يشرح البرنامج التعليمي "Hidden Text Block In PDF File" كيفية إنشاء كتلة نص مخفية في ملف PDF باستخدام مكتبة Aspose.PDF لـ .NET. كتلة النص المخفية هي نص عائم يصبح مرئيًا عندما يمرر مؤشر الماوس فوق منطقة معينة. يوفر هذا البرنامج التعليمي دليلاً خطوة بخطوة باستخدام كود مصدر C#.
 
-#### Q: Why would I want to create a hidden text block in a PDF file?
+#### س: لماذا أرغب في إنشاء كتلة نصية مخفية في ملف PDF؟
 
-A: Creating a hidden text block can be useful for interactive PDF documents where you want to provide additional information or context that only becomes visible when a user hovers their mouse cursor over a designated area.
+ج: يمكن أن يكون إنشاء كتلة نصية مخفية مفيدًا لمستندات PDF التفاعلية حيث تريد توفير معلومات إضافية أو سياق يصبح مرئيًا فقط عندما يقوم المستخدم بتمرير مؤشر الماوس فوق منطقة معينة.
 
-#### Q: How do I set up the document directory?
+#### س: كيف أقوم بإعداد دليل المستندات؟
 
-A: To set up the document directory:
+ج: لإعداد دليل المستندات:
 
-1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where you want to save the generated PDF file.
+1.  يستبدل`"YOUR DOCUMENT DIRECTORY"` في ال`dataDir` متغير مع المسار إلى الدليل الذي تريد حفظ ملف PDF الذي تم إنشاؤه فيه.
 
-#### Q: How do I create a sample document and add a text fragment to it?
+#### س: كيف يمكنني إنشاء مستند نموذجي وإضافة جزء نص إليه؟
 
-A: In the tutorial, you use the `Document` class to create a sample PDF document and add a text fragment. This text fragment serves as the trigger for displaying the hidden text block.
+ج: في البرنامج التعليمي، يمكنك استخدام`Document` لإنشاء مستند PDF نموذجي وإضافة جزء نصي. يعمل جزء النص هذا كمشغل لعرض كتلة النص المخفية.
 
-#### Q: How do I find the text fragment that triggers the hidden text block?
+#### س: كيف يمكنني العثور على جزء النص الذي يقوم بتشغيل كتلة النص المخفية؟
 
-A: The tutorial demonstrates how to use a `TextFragmentAbsorber` object to find the text fragment that triggers the display of the hidden text block. It searches for a specific text string within the PDF document.
+ ج: يوضح البرنامج التعليمي كيفية استخدام`TextFragmentAbsorber` كائن للعثور على جزء النص الذي يؤدي إلى عرض كتلة النص المخفية. يبحث عن سلسلة نصية محددة داخل مستند PDF.
 
-#### Q: How do I create and customize the hidden text field?
+#### س: كيف يمكنني إنشاء حقل النص المخفي وتخصيصه؟
 
-A: You create a `TextBoxField` object to represent the hidden text field. The tutorial provides code to set various properties such as position, value, appearance, and behavior of the hidden text field.
+ ج: تقوم بإنشاء`TextBoxField` كائن لتمثيل حقل النص المخفي. يوفر البرنامج التعليمي تعليمات برمجية لتعيين خصائص مختلفة مثل الموضع والقيمة والمظهر وسلوك حقل النص المخفي.
 
-#### Q: How do I create an invisible button associated with the hidden text block?
+#### س: كيف أقوم بإنشاء زر غير مرئي مرتبط بكتلة النص المخفية؟
 
-A: An invisible button field is created using the `ButtonField` class. This button field is positioned on top of the trigger text fragment and has actions associated with mouse enter and exit events. These actions control the visibility of the hidden text block.
+ ج: يتم إنشاء حقل زر غير مرئي باستخدام`ButtonField` فصل. يتم وضع حقل الزر هذا أعلى جزء نص التشغيل ويحتوي على إجراءات مرتبطة بأحداث الدخول والخروج بالماوس. تتحكم هذه الإجراءات في رؤية كتلة النص المخفية.
 
-#### Q: Can I customize the appearance of the hidden text block and the trigger area?
+#### س: هل يمكنني تخصيص مظهر كتلة النص المخفية ومنطقة التشغيل؟
 
-A: Yes, you can customize various properties of both the hidden text field and the invisible button, including font, color, size, and positioning.
+ج: نعم، يمكنك تخصيص خصائص مختلفة لكل من حقل النص المخفي والزر غير المرئي، بما في ذلك الخط واللون والحجم والموضع.
 
-#### Q: How do I save the modified document with the hidden text block?
+#### س: كيف يمكنني حفظ المستند المعدل مع كتلة النص المخفية؟
 
-A: The tutorial demonstrates how to save the modified document using the `Save` method of the `Document` class.
+ ج: يوضح البرنامج التعليمي كيفية حفظ المستند المعدل باستخدام ملف`Save` طريقة`Document` فصل.

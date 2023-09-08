@@ -1,61 +1,61 @@
 ---
-title: Create Rectangle With Alpha Color
-linktitle: Create Rectangle With Alpha Color
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to create a rectangle with transparent color using Aspose.PDF for .NET. Step-by-step guide to customize transparency.
+title: Alfa Rengiyle Dikdörtgen Oluştur
+linktitle: Alfa Rengiyle Dikdörtgen Oluştur
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET'i kullanarak şeffaf renkli bir dikdörtgenin nasıl oluşturulacağını öğrenin. Şeffaflığı özelleştirmek için adım adım kılavuz.
 type: docs
 weight: 60
 url: /tr/net/programming-with-graphs/create-rectangle-with-alpha-color/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to create a rectangle with alpha color using Aspose.PDF for .NET.
+Bu eğitimde, Aspose.PDF for .NET'i kullanarak alfa renkli bir dikdörtgen oluşturmak için aşağıdaki C# kaynak kodunu adım adım anlatacağız.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Başlamadan önce Aspose.PDF kütüphanesini kurduğunuzdan ve geliştirme ortamınızı kurduğunuzdan emin olun. Ayrıca temel C# programlama bilgisine sahip olmak.
 
-## Step 1: Document Directory Setup
+## Adım 1: Belge Dizini Kurulumu
 
-In the provided source code, you need to specify the directory where you want to save the resulting PDF file. Change the "dataDir" variable to the desired directory.
+Sağlanan kaynak kodunda, ortaya çıkan PDF dosyasını kaydetmek istediğiniz dizini belirtmeniz gerekir. "dataDir" değişkenini istediğiniz dizine değiştirin.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Instantiating a Document Object and Adding a Page
+## Adım 2: Bir Belge Nesnesinin Örneklenmesi ve Sayfa Ekleme
 
-We create an instance of the Document class and add a page to this document.
+Document sınıfının bir örneğini oluşturup bu belgeye bir sayfa ekliyoruz.
 
 ```csharp
 Document doc = new Document();
 Aspose.Pdf.Page page = doc.Pages.Add();
 ```
 
-## Step 3: Creating a Graph Object and a Rectangle
+## Adım 3: Grafik Nesnesi ve Dikdörtgen Oluşturma
 
-We create a Graph object with specified dimensions and a rectangle with specific dimensions.
+Belirtilen boyutlara sahip bir Graph nesnesi ve belirli boyutlara sahip bir dikdörtgen oluşturuyoruz.
 
 ```csharp
 Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 200, 100);
 ```
 
-## Step 4: Setting up the alpha color for the rectangle
+## 4. Adım: Dikdörtgenin alfa rengini ayarlama
 
-We can specify an alpha color for the rectangle using the FromArgb method of the System.Drawing.Color class.
+System.Drawing.Color sınıfının FromArgb yöntemini kullanarak dikdörtgen için bir alfa rengi belirtebiliriz.
 
 ```csharp
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
 ```
 
-## Step 5: Adding the Rectangle to the Graph Object
+## Adım 5: Dikdörtgeni Grafik Nesnesine Ekleme
 
-We add the rectangle to the shape collection of the Graph object.
+Dikdörtgeni Graph nesnesinin şekil koleksiyonuna ekliyoruz.
 
 ```csharp
 canvas.Shapes.Add(rect);
 ```
 
-## Step 6: Creating a second rectangle with a different alpha color
+## Adım 6: Farklı alfa rengiyle ikinci bir dikdörtgen oluşturma
 
-We create a second rectangle with specific dimensions and another alpha color.
+Belirli boyutlara ve başka bir alfa rengine sahip ikinci bir dikdörtgen oluşturuyoruz.
 
 ```csharp
 Aspose.Pdf.Drawing.Rectangle rect1 = new Aspose.Pdf.Drawing.Rectangle(200, 150, 200, 100);
@@ -63,83 +63,83 @@ rect1.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromAr
 canvas.Shapes.Add(rect1);
 ```
 
-## Step 7: Adding the Graph Object to the Page
+## Adım 7: Grafik Nesnesini Sayfaya Ekleme
 
-We add the Graph object to the Page object's Paragraph collection.
+Graph nesnesini Page nesnesinin Paragraph koleksiyonuna ekliyoruz.
 
 ```csharp
 page.Paragraphs.Add(canvas);
 ```
 
-## Step 8: Saving the Resulting PDF File
+## Adım 8: Ortaya Çıkan PDF Dosyasını Kaydetme
 
-Finally, we save the resulting PDF file with the name "CreateRectangleWithAlphaColor_out.pdf" in the specified directory.
+Son olarak ortaya çıkan PDF dosyasını "CreateRectangleWithAlphaColor_out.pdf" ismiyle belirtilen dizine kaydediyoruz.
 
 ```csharp
 doc.Save(dataDir + "CreateRectangleWithAlphaColor_out.pdf");
 ```
 
-### Sample source code for Create Rectangle With Alpha Color using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Alfa Renkli Dikdörtgen Oluşturma için örnek kaynak kodu 
 
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Instantiate Document instance
+// Belge örneğini oluştur
 Document doc = new Document();
-// Add page to pages collection of PDF file
+// PDF dosyasının sayfa koleksiyonuna sayfa ekle
 Aspose.Pdf.Page page = doc.Pages.Add();
-// Create Graph instance
+// Grafik örneği oluştur
 Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
-// Create rectangle object with specific dimensions
+// Belirli boyutlara sahip dikdörtgen nesne oluşturma
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 200, 100);
-// Set graph fill color from System.Drawing.Color structure from a 32-bit ARGB value
+//Grafik dolgu rengini System.Drawing.Color yapısından 32 bit ARGB değerinden ayarlayın
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
-// Add rectangle object to shapes collection of Graph instance
+// Graph örneğinin şekiller koleksiyonuna dikdörtgen nesnesi ekleme
 canvas.Shapes.Add(rect);
-// Create second rectangle object
+// İkinci dikdörtgen nesneyi oluştur
 Aspose.Pdf.Drawing.Rectangle rect1 = new Aspose.Pdf.Drawing.Rectangle(200, 150, 200, 100);
 rect1.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(16118015)));
 canvas.Shapes.Add(rect1);
-// Add graph instance to paragraph collection of page object
+// Sayfa nesnesinin paragraf koleksiyonuna grafik örneği ekleme
 page.Paragraphs.Add(canvas);
 dataDir = dataDir + "CreateRectangleWithAlphaColor_out.pdf";
-// Save PDF file
+// PDF dosyasını kaydet
 doc.Save(dataDir);
 Console.WriteLine("\nRectangle object created successfully with alpha color.\nFile saved at " + dataDir);            
 
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we explained how to create a rectangle with alpha color using Aspose.PDF for .NET. You can now use this knowledge to create geometric shapes with transparent colors in your PDF files.
+Bu eğitimde Aspose.PDF for .NET kullanarak alfa renkli dikdörtgenin nasıl oluşturulacağını anlattık. Artık bu bilgiyi PDF dosyalarınızda şeffaf renklere sahip geometrik şekiller oluşturmak için kullanabilirsiniz.
 
-## FAQ's
+## SSS'ler
 
-#### Q: What is the purpose of this tutorial?
+#### S: Bu eğitimin amacı nedir?
 
-A: This tutorial aims to guide you through the process of creating a rectangle with alpha color using Aspose.PDF for .NET. You'll learn how to add geometric shapes with transparent colors to your PDF files.
+C: Bu eğitimin amacı, Aspose.PDF for .NET'i kullanarak alfa renkli bir dikdörtgen oluşturma sürecinde size rehberlik etmektir. PDF dosyalarınıza şeffaf renklere sahip geometrik şekilleri nasıl ekleyeceğinizi öğreneceksiniz.
 
-#### Q: What prerequisites are required before starting?
+#### S: Başlamadan önce hangi önkoşullar gereklidir?
 
-A: Before you begin, ensure that you have installed the Aspose.PDF library and set up your development environment. Additionally, having a basic understanding of C# programming is recommended.
+C: Başlamadan önce Aspose.PDF kütüphanesini kurduğunuzdan ve geliştirme ortamınızı kurduğunuzdan emin olun. Ek olarak, C# programlama konusunda temel bir anlayışa sahip olmanız tavsiye edilir.
 
-#### Q: How do I specify the directory for saving the PDF file?
+#### S: PDF dosyasının kaydedileceği dizini nasıl belirlerim?
 
-A: In the provided source code, you can modify the "dataDir" variable to indicate the directory where you want to save the resulting PDF file.
+C: Sağlanan kaynak kodunda, elde edilen PDF dosyasını kaydetmek istediğiniz dizini belirtmek için "dataDir" değişkenini değiştirebilirsiniz.
 
-#### Q: What is the purpose of the Graph object and Rectangle?
+#### S: Graph nesnesinin ve Rectangle'ın amacı nedir?
 
-A: The Graph object acts as a container for drawing elements, while the Rectangle represents the geometric shape that you'll be adding to the PDF.
+C: Grafik nesnesi çizim öğeleri için bir kap görevi görürken Dikdörtgen, PDF'ye ekleyeceğiniz geometrik şekli temsil eder.
 
-#### Q: How can I set up an alpha color for the rectangle?
+#### S: Dikdörtgen için alfa rengini nasıl ayarlayabilirim?
 
-A: You can specify an alpha color for the rectangle using the `FillColor` property of the `GraphInfo` object and the `Color.FromRgb` method with an ARGB value.
+C: Dikdörtgen için bir alfa rengi belirleyebilirsiniz.`FillColor` mülkiyeti`GraphInfo` nesne ve`Color.FromRgb` ARGB değeri olan yöntem.
 
-#### Q: Can I create multiple rectangles with different alpha colors?
+#### S: Farklı alfa renklerine sahip birden fazla dikdörtgen oluşturabilir miyim?
 
-A: Yes, you can create multiple rectangles with different alpha colors by following similar steps as demonstrated in the tutorial.
+C: Evet, eğitimde gösterildiği gibi benzer adımları izleyerek farklı alfa renklerine sahip birden çok dikdörtgen oluşturabilirsiniz.
 
-#### Q: How do I save the resulting PDF file after creating rectangles with alpha colors?
+#### S: Alfa renkli dikdörtgenler oluşturduktan sonra ortaya çıkan PDF dosyasını nasıl kaydederim?
 
-A: After creating the rectangles with alpha colors, you can save the resulting PDF file using the `doc.Save(dataDir + "CreateRectangleWithAlphaColor_out.pdf");` line in the provided source code.
+ C: Alfa renkli dikdörtgenler oluşturduktan sonra ortaya çıkan PDF dosyasını`doc.Save(dataDir + "CreateRectangleWithAlphaColor_out.pdf");` Sağlanan kaynak kodundaki satır.

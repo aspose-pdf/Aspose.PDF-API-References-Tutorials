@@ -1,94 +1,94 @@
 ---
-title: Image In Header
-linktitle: Image In Header
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add an image in the header section of a PDF document with Aspose.PDF for .NET.
+title: Image dans l'en-tête
+linktitle: Image dans l'en-tête
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment ajouter une image dans la section d'en-tête d'un document PDF avec Aspose.PDF pour .NET.
 type: docs
 weight: 140
 url: /fr/net/programming-with-stamps-and-watermarks/image-in-header/
 ---
-In this tutorial, we will guide you step by step on how to add an image in the header section of a PDF document using Aspose.PDF for .NET. We will use the provided C# source code to open an existing PDF document, create an image buffer, set its properties, and add it to all pages of the PDF document.
+Dans ce didacticiel, nous vous guiderons étape par étape sur la façon d'ajouter une image dans la section d'en-tête d'un document PDF à l'aide d'Aspose.PDF pour .NET. Nous utiliserons le code source C# fourni pour ouvrir un document PDF existant, créer un tampon d'image, définir ses propriétés et l'ajouter à toutes les pages du document PDF.
 
-## Step 1: Setting up the environment
+## Étape 1 : Configuration de l'environnement
 
-Before you begin, make sure you have the following:
+Avant de commencer, assurez-vous d'avoir les éléments suivants :
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Un environnement de développement .NET installé.
+- La bibliothèque Aspose.PDF pour .NET téléchargée et référencée dans votre projet.
 
-## Step 2: Loading the existing PDF document
+## Étape 2 : Chargement du document PDF existant
 
-The first step is to load the existing PDF document into your project. Here's how:
+La première étape consiste à charger le document PDF existant dans votre projet. Voici comment:
 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the existing PDF document
+// Ouvrir le document PDF existant
 Document pdfDocument = new Document(dataDir + "ImageinHeader.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+Assurez-vous de remplacer « VOTRE RÉPERTOIRE DE DOCUMENTS » par le chemin d'accès réel au répertoire où se trouve votre document PDF.
 
-## Step 3: Creating and adding the image in the header section
+## Étape 3 : Création et ajout de l'image dans la section d'en-tête
 
-Now that the PDF document is loaded, we can create an image buffer and add it to all pages of the document as a header section. Here's how:
+Maintenant que le document PDF est chargé, nous pouvons créer un tampon d'image et l'ajouter à toutes les pages du document en tant que section d'en-tête. Voici comment:
 
 ```csharp
-// Create the frame buffer
+// Créer le tampon de trame
 ImageStamp imageStamp = new ImageStamp(dataDir + "aspose-logo.jpg");
 
-// Set image buffer properties
+// Définir les propriétés du tampon d'image
 imageStamp.TopMargin = 10;
 imageStamp.HorizontalAlignment = HorizontalAlignment.Center;
 imageStamp.VerticalAlignment = VerticalAlignment.Top;
 
-// Add image buffer to all pages
+// Ajouter un tampon d'image à toutes les pages
 foreach(Page page in pdfDocument.Pages)
 {
      page.AddStamp(imageStamp);
 }
 ```
 
-The above code creates an image buffer from the "aspose-logo.jpg" file and sets its properties, such as top margin, horizontal and vertical alignment. Then the image stamp is added to all pages of the PDF document as a header section.
+Le code ci-dessus crée un tampon d'image à partir du fichier "aspose-logo.jpg" et définit ses propriétés, telles que la marge supérieure, l'alignement horizontal et vertical. Ensuite, le tampon d'image est ajouté à toutes les pages du document PDF en tant que section d'en-tête.
 
-## Step 4: Saving the modified PDF document
+## Étape 4 : Sauvegarde du document PDF modifié
 
-Once the image is added in the header section, we can save the modified PDF document. Here's how:
+Une fois l'image ajoutée dans la section d'en-tête, nous pouvons enregistrer le document PDF modifié. Voici comment:
 
 ```csharp
-// Save the modified PDF document
+// Enregistrez le document PDF modifié
 pdfDocument.Save(dataDir + "ImageinHeader_out.pdf");
 ```
 
-The above code saves the edited PDF document to the specified directory.
+Le code ci-dessus enregistre le document PDF modifié dans le répertoire spécifié.
 
-### Sample source code for Imagein Header using Aspose.PDF for .NET 
+### Exemple de code source pour l'en-tête Imagein utilisant Aspose.PDF pour .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Ouvrir le document
 Document pdfDocument = new Document(dataDir+ "ImageinHeader.pdf");
 
-// Create header
+// Créer un en-tête
 ImageStamp imageStamp = new ImageStamp(dataDir+ "aspose-logo.jpg");
 
-// Set properties of the stamp
+// Définir les propriétés du tampon
 imageStamp.TopMargin = 10;
 imageStamp.HorizontalAlignment = HorizontalAlignment.Center;
 imageStamp.VerticalAlignment = VerticalAlignment.Top;
 
-// Add header on all pages
+// Ajouter un en-tête sur toutes les pages
 foreach (Page page in pdfDocument.Pages)
 {
 	page.AddStamp(imageStamp);
 }
 dataDir = dataDir + "ImageinHeader_out.pdf";
 
-// Save updated document
+// Enregistrer le document mis à jour
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nImage in header added successfully.\nFile saved at " + dataDir);                        
 
@@ -96,46 +96,46 @@ Console.WriteLine("\nImage in header added successfully.\nFile saved at " + data
 
 ## Conclusion
 
-Congratulation ! You have learned how to add an image in the header section of a PDF document using Aspose.PDF for .NET. You can now customize the headers of your PDF documents by adding images.
+Félicitation ! Vous avez appris à ajouter une image dans la section d'en-tête d'un document PDF à l'aide d'Aspose.PDF pour .NET. Vous pouvez désormais personnaliser les en-têtes de vos documents PDF en ajoutant des images.
 
-### FAQ's for image in header
+### FAQ pour l'image dans l'en-tête
 
-#### Q: What is the purpose of adding an image in the header section of a PDF document?
+#### Q : A quoi sert l'ajout d'une image dans la section d'en-tête d'un document PDF ?
 
-A: Adding an image in the header section of a PDF document allows you to include visual elements, such as a logo or branding, at the top of every page. This can enhance the overall look and feel of the PDF content.
+: L'ajout d'une image dans la section d'en-tête d'un document PDF vous permet d'inclure des éléments visuels, tels qu'un logo ou une marque, en haut de chaque page. Cela peut améliorer l’apparence générale du contenu PDF.
 
-#### Q: How does the provided C# source code achieve adding an image to the header section of a PDF document?
+#### Q : Comment le code source C# fourni permet-il d'ajouter une image à la section d'en-tête d'un document PDF ?
 
-A: The provided code demonstrates how to load an existing PDF document, create an `ImageStamp` object from an image file, set properties such as top margin and alignment, and then add the image stamp to the header of all pages.
+ R : Le code fourni montre comment charger un document PDF existant, créer un`ImageStamp` objet à partir d’un fichier image, définissez des propriétés telles que la marge supérieure et l’alignement, puis ajoutez le tampon d’image à l’en-tête de toutes les pages.
 
-#### Q: Can I adjust the position and alignment of the image within the header section?
+#### Q : Puis-je ajuster la position et l'alignement de l'image dans la section d'en-tête ?
 
-A: Yes, you can adjust the position and alignment of the image within the header section by modifying the properties of the `ImageStamp` object. The code snippet sets properties such as `TopMargin`, `HorizontalAlignment`, and `VerticalAlignment`.
+ R : Oui, vous pouvez ajuster la position et l'alignement de l'image dans la section d'en-tête en modifiant les propriétés du`ImageStamp` objet. L'extrait de code définit des propriétés telles que`TopMargin`, `HorizontalAlignment` , et`VerticalAlignment`.
 
-#### Q: Is it possible to add different images to the header section on different pages of the PDF document?
+#### Q : Est-il possible d'ajouter différentes images à la section d'en-tête sur différentes pages du document PDF ?
 
-A: Yes, you can add different images to the header section on different pages by creating separate `ImageStamp` objects with different image files and properties, and then adding them to specific pages.
+ R : Oui, vous pouvez ajouter différentes images à la section d'en-tête sur différentes pages en créant des`ImageStamp` objets avec différents fichiers image et propriétés, puis en les ajoutant à des pages spécifiques.
 
-#### Q: How does the code ensure that the image is added to all pages of the PDF document's header section?
+#### Q : Comment le code garantit-il que l'image est ajoutée à toutes les pages de la section d'en-tête du document PDF ?
 
-A: The provided code uses a `foreach` loop to iterate through all pages of the PDF document and adds the same `ImageStamp` to each page's header section.
+R : Le code fourni utilise un`foreach` boucle pour parcourir toutes les pages du document PDF et ajoute la même chose`ImageStamp`à la section d'en-tête de chaque page.
 
-#### Q: Can I add other elements, such as text or shapes, to the header section using a similar approach?
+#### Q : Puis-je ajouter d'autres éléments, tels que du texte ou des formes, à la section d'en-tête en utilisant une approche similaire ?
 
-A: Yes, you can add other elements like text or shapes to the header section using a similar approach by creating the appropriate stamp objects (e.g., `TextStamp`) and setting their properties accordingly.
+ R : Oui, vous pouvez ajouter d'autres éléments comme du texte ou des formes à la section d'en-tête en utilisant une approche similaire en créant les objets tampon appropriés (par exemple,`TextStamp`) et en définissant leurs propriétés en conséquence.
 
-#### Q: How do I specify the path to the image file that I want to add to the header?
+#### Q : Comment puis-je spécifier le chemin d'accès au fichier image que je souhaite ajouter à l'en-tête ?
 
-A: The path to the image file is specified when creating the `ImageStamp` object, as shown in the code. Make sure to provide the correct path to the image file.
+ R : Le chemin d'accès au fichier image est spécifié lors de la création du`ImageStamp` objet, comme indiqué dans le code. Assurez-vous de fournir le chemin correct vers le fichier image.
 
-#### Q: Can I customize the image's size within the header section?
+#### Q : Puis-je personnaliser la taille de l'image dans la section d'en-tête ?
 
-A: Yes, you can customize the image's size within the header section by adjusting the dimensions of the `ImageStamp` using properties like `Width` and `Height`.
+ R : Oui, vous pouvez personnaliser la taille de l'image dans la section d'en-tête en ajustant les dimensions du`ImageStamp` en utilisant des propriétés comme`Width` et`Height`.
 
-#### Q: Is it possible to remove or replace the image in the header section after it has been added?
+#### Q : Est-il possible de supprimer ou de remplacer l'image dans la section d'en-tête après son ajout ?
 
-A: Yes, you can remove or replace the image in the header section by modifying the contents of the `ImageStamp` object or removing the stamp from specific pages.
+ R : Oui, vous pouvez supprimer ou remplacer l'image dans la section d'en-tête en modifiant le contenu du`ImageStamp` objet ou en supprimant le tampon de pages spécifiques.
 
-#### Q: How does the code handle scenarios where the image's dimensions exceed the available space in the header?
+#### Q : Comment le code gère-t-il les scénarios dans lesquels les dimensions de l'image dépassent l'espace disponible dans l'en-tête ?
 
-A: The code sets properties such as `TopMargin`, `HorizontalAlignment`, and `VerticalAlignment` to control the positioning and alignment of the image. Ensure that these properties are adjusted to prevent any overlap or layout issues.
+ R : Le code définit des propriétés telles que`TopMargin`, `HorizontalAlignment` , et`VerticalAlignment` pour contrôler le positionnement et l’alignement de l’image. Assurez-vous que ces propriétés sont ajustées pour éviter tout problème de chevauchement ou de mise en page.

@@ -1,17 +1,17 @@
 ---
-title: Create Document Link
-linktitle: Create Document Link
-second_title: Aspose.PDF for .NET API Reference
-description: Easily create links to other PDF documents with Aspose.PDF for .NET.
+title: Dokumentlink erstellen
+linktitle: Dokumentlink erstellen
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erstellen Sie mit Aspose.PDF für .NET ganz einfach Links zu anderen PDF-Dokumenten.
 type: docs
 weight: 30
 url: /de/net/programming-with-links-and-actions/create-document-link/
 ---
-Linking to another document in a PDF file allows you to create clickable links that redirect users to other PDF documents. With Aspose.PDF for .NET, you can easily create such links by following the following source code:
+Durch die Verknüpfung mit einem anderen Dokument in einer PDF-Datei können Sie anklickbare Links erstellen, die Benutzer zu anderen PDF-Dokumenten weiterleiten. Mit Aspose.PDF für .NET können Sie solche Links ganz einfach erstellen, indem Sie dem folgenden Quellcode folgen:
 
-## Step 1: Import required libraries
+## Schritt 1: Erforderliche Bibliotheken importieren
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Bevor Sie beginnen, müssen Sie die erforderlichen Bibliotheken für Ihr C#-Projekt importieren. Hier ist die notwendige Importanweisung:
 
 ```csharp
 using Aspose.Pdf;
@@ -19,25 +19,25 @@ using Aspose.Pdf.Annotations;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-## Step 2: Set path to documents folder
+## Schritt 2: Legen Sie den Pfad zum Dokumentenordner fest
 
-In this step, you need to specify the path to the folder containing the PDF file to which you want to add a link to another document. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+In diesem Schritt müssen Sie den Pfad zu dem Ordner angeben, der die PDF-Datei enthält, zu der Sie einen Link zu einem anderen Dokument hinzufügen möchten. Ersetzen`"YOUR DOCUMENT DIRECTORY"`Geben Sie im folgenden Code den tatsächlichen Pfad zu Ihrem Dokumentenordner ein:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Schritt 3: Öffnen Sie das PDF-Dokument
 
-Now we will open the PDF document to which we want to add the link to another document using the following code:
+Nun öffnen wir das PDF-Dokument, zu dem wir den Link zu einem anderen Dokument hinzufügen möchten, mit dem folgenden Code:
 
 ```csharp
 Document document = new Document(dataDir + "CreateDocumentLink.pdf");
 ```
 
-## Step 4: Create the link to another document
+## Schritt 4: Erstellen Sie den Link zu einem anderen Dokument
 
-In this step, we will create the link to another document using the `LinkAnnotation` annotation. We will specify the coordinates and area of the link, as well as the navigation action to an external document. Here is the corresponding code:
+ In diesem Schritt erstellen wir mithilfe von den Link zu einem anderen Dokument`LinkAnnotation` Anmerkung. Wir geben die Koordinaten und den Bereich des Links sowie die Navigationsaktion zu einem externen Dokument an. Hier ist der entsprechende Code:
 
 ```csharp
 Page page = document.Pages[1];
@@ -47,73 +47,73 @@ link. Action = new GoToRemoteAction(dataDir + "RemoveOpenAction.pdf", 1);
 page.Annotations.Add(link);
 ```
 
-## Step 5: Save the updated file
+## Schritt 5: Speichern Sie die aktualisierte Datei
 
-Now let's save the updated PDF file using the `Save` method of the `document` object. Here is the corresponding code:
+ Speichern wir nun die aktualisierte PDF-Datei mit`Save` Methode der`document` Objekt. Hier ist der entsprechende Code:
 
 ```csharp
 dataDir = dataDir + "CreateDocumentLink_out.pdf";
 document. Save(dataDir);
 ```
 
-### Sample source code for Create Document Link using Aspose.PDF for .NET 
+### Beispielquellcode für „Dokumentverknüpfung erstellen“ mit Aspose.PDF für .NET 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Dokument öffnen
 Document document = new Document(dataDir+ "CreateDocumentLink.pdf");
-// Create link
+// Verknüpfung erstellen
 Page page = document.Pages[1];
 LinkAnnotation link = new LinkAnnotation(page, new Aspose.Pdf.Rectangle(100, 100, 300, 300));
 link.Color = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Green);
 link.Action = new GoToRemoteAction(dataDir + "RemoveOpenAction.pdf", 1);
 page.Annotations.Add(link);
 dataDir = dataDir + "CreateDocumentLink_out.pdf";
-// Save updated document
+// Aktualisiertes Dokument speichern
 document.Save(dataDir);
 Console.WriteLine("\nDocument link created successfully.\nFile saved at " + dataDir);            
 ```
 
-## Conclusion
+## Abschluss
 
-Congratulation ! You now have a step-by-step guide to linking to other documents with Aspose.PDF for .NET. You can use this code to create clickable links in your PDF files, redirecting users to other documents.
+Herzlichen Glückwunsch! Sie verfügen nun über eine Schritt-für-Schritt-Anleitung zum Verknüpfen mit anderen Dokumenten mit Aspose.PDF für .NET. Mit diesem Code können Sie anklickbare Links in Ihren PDF-Dateien erstellen und Benutzer zu anderen Dokumenten weiterleiten.
 
-Be sure to check out the official Aspose.PDF documentation for more information on the advanced features of interactive links.
+Weitere Informationen zu den erweiterten Funktionen interaktiver Links finden Sie unbedingt in der offiziellen Aspose.PDF-Dokumentation.
 
-### FAQ's for create document link
+### FAQs zum Erstellen eines Dokumentlinks
 
-#### Q: What are document links in PDF files?
+#### F: Was sind Dokumentlinks in PDF-Dateien?
 
-A: Document links in PDF files are clickable links that direct users to other PDF documents. These links enhance navigation by providing an efficient way to connect related content and facilitate a seamless reading experience.
+A: Dokumentlinks in PDF-Dateien sind anklickbare Links, die Benutzer zu anderen PDF-Dokumenten weiterleiten. Diese Links verbessern die Navigation, indem sie eine effiziente Möglichkeit bieten, verwandte Inhalte zu verbinden und ein nahtloses Leseerlebnis zu ermöglichen.
 
-#### Q: How can I benefit from creating document links?
+#### F: Wie kann ich von der Erstellung von Dokumentverknüpfungen profitieren?
 
-A: Creating document links allows you to establish connections between different sections or topics within your PDF documents. This feature enables users to access supplementary information or related materials with ease.
+A: Durch das Erstellen von Dokumentverknüpfungen können Sie Verbindungen zwischen verschiedenen Abschnitten oder Themen in Ihren PDF-Dokumenten herstellen. Mit dieser Funktion können Benutzer problemlos auf ergänzende Informationen oder verwandte Materialien zugreifen.
 
-#### Q: How does Aspose.PDF for .NET support the creation of document links?
+#### F: Wie unterstützt Aspose.PDF für .NET die Erstellung von Dokumentlinks?
 
-A: Aspose.PDF for .NET simplifies the process of creating document links by providing a comprehensive set of APIs. The step-by-step tutorial outlined in this guide demonstrates how to add document links to your PDF files.
+A: Aspose.PDF für .NET vereinfacht den Prozess der Erstellung von Dokumentverknüpfungen durch die Bereitstellung eines umfassenden Satzes von APIs. Das in diesem Handbuch beschriebene Schritt-für-Schritt-Tutorial zeigt, wie Sie Dokumentlinks zu Ihren PDF-Dateien hinzufügen.
 
-#### Q: Can I customize the appearance of document links?
+#### F: Kann ich das Erscheinungsbild von Dokumentlinks anpassen?
 
-A: Absolutely! Aspose.PDF for .NET offers customization options for document link appearance, including color, style, and hover effects. You can tailor the appearance to match your document's design.
+A: Auf jeden Fall! Aspose.PDF für .NET bietet Anpassungsoptionen für das Erscheinungsbild von Dokumentlinks, einschließlich Farbe, Stil und Hover-Effekten. Sie können das Erscheinungsbild an das Design Ihres Dokuments anpassen.
 
-#### Q: Is it possible to link to specific sections or pages within another document?
+#### F: Ist es möglich, auf bestimmte Abschnitte oder Seiten in einem anderen Dokument zu verlinken?
 
-A: Yes, you can create links that navigate users to specific pages or sections within another PDF document. Aspose.PDF for .NET provides the flexibility to define the target location within the linked document.
+A: Ja, Sie können Links erstellen, die Benutzer zu bestimmten Seiten oder Abschnitten in einem anderen PDF-Dokument führen. Aspose.PDF für .NET bietet die Flexibilität, den Zielort innerhalb des verknüpften Dokuments zu definieren.
 
-#### Q: How can I ensure that my document links are functional?
+#### F: Wie kann ich sicherstellen, dass meine Dokumentverknüpfungen funktionieren?
 
-A: By following the provided tutorial and sample code, you can confidently create functional document links. You can test the links by opening the generated PDF document and clicking on the links.
+A: Wenn Sie dem bereitgestellten Tutorial und dem Beispielcode folgen, können Sie problemlos funktionale Dokumentverknüpfungen erstellen. Sie können die Links testen, indem Sie das generierte PDF-Dokument öffnen und auf die Links klicken.
 
-#### Q: Can I create multiple document links within a single PDF file?
+#### F: Kann ich in einer einzigen PDF-Datei mehrere Dokumentverknüpfungen erstellen?
 
-A: Certainly! You can create multiple document links within a single PDF document using the `LinkAnnotation` annotation. This allows you to provide users with access to various related documents from different sections.
+ A: Auf jeden Fall! Sie können mit dem mehrere Dokumentverknüpfungen innerhalb eines einzelnen PDF-Dokuments erstellen`LinkAnnotation`Anmerkung. Auf diese Weise können Sie Benutzern Zugriff auf verschiedene verwandte Dokumente aus verschiedenen Abschnitten gewähren.
 
-#### Q: Are there any limitations when linking to external documents?
+#### F: Gibt es Einschränkungen bei der Verknüpfung mit externen Dokumenten?
 
-A: When linking to external documents, ensure that the linked documents are accessible and located in the specified paths. It's also important to consider user permissions and the compatibility of linked documents.
+A: Stellen Sie beim Verknüpfen mit externen Dokumenten sicher, dass die verknüpften Dokumente zugänglich sind und sich in den angegebenen Pfaden befinden. Es ist auch wichtig, Benutzerberechtigungen und die Kompatibilität verknüpfter Dokumente zu berücksichtigen.
 
-#### Q: Can I link to documents stored on the web or online repositories?
+#### F: Kann ich auf Dokumente verlinken, die im Web oder in Online-Repositories gespeichert sind?
 
-A: While this tutorial focuses on linking to local documents, Aspose.PDF for .NET also supports linking to web URLs or online repositories. You can adapt the provided code to create web-based document links.
+A: Während sich dieses Tutorial auf die Verknüpfung mit lokalen Dokumenten konzentriert, unterstützt Aspose.PDF für .NET auch die Verknüpfung mit Web-URLs oder Online-Repositorys. Sie können den bereitgestellten Code anpassen, um webbasierte Dokumentverknüpfungen zu erstellen.

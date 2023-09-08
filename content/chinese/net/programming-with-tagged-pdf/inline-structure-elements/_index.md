@@ -1,69 +1,69 @@
 ---
-title: Inline Structure Elements
-linktitle: Inline Structure Elements
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to using online structural elements with Aspose.PDF for .NET. Organize your PDFs with headings and paragraphs.
+title: 内联结构元素
+linktitle: 内联结构元素
+second_title: Aspose.PDF for .NET API 参考
+description: 通过 Aspose.PDF for .NET 使用在线结构元素的分步指南。使用标题和段落组织您的 PDF。
 type: docs
 weight: 110
 url: /zh/net/programming-with-tagged-pdf/inline-structure-elements/
 ---
-In this step-by-step guide, we'll show you how to use inline structure elements with Aspose.PDF for .NET. Aspose.PDF is a powerful library that lets you manipulate PDF documents programmatically. Inline structure elements allow you to create a hierarchical structure in your PDF document using headings of different levels and paragraphs.
+在本分步指南中，我们将向您展示如何在 Aspose.PDF for .NET 中使用内联结构元素。 Aspose.PDF 是一个功能强大的库，可让您以编程方式操作 PDF 文档。内联结构元素允许您使用不同级别和段落的标题在 PDF 文档中创建层次结构。
 
-Let's dive into the code and learn how to use inline structure elements with Aspose.PDF for .NET.
+让我们深入研究代码并了解如何在 Aspose.PDF for .NET 中使用内联结构元素。
 
-## Prerequisites
+## 先决条件
 
-Before you begin, make sure you have the following:
+在开始之前，请确保您具备以下条件：
 
-1. Aspose.PDF library for .NET installed.
-2. A basic knowledge of the C# programming language.
+1. 安装了适用于.NET 的 Aspose.PDF 库。
+2. C# 编程语言的基础知识。
 
-## Step 1: Setting up the environment
+## 第一步：搭建环境
 
-To get started, open your C# development environment and create a new project. Make sure you have added a reference to the Aspose.PDF library for .NET in your project.
+首先，打开 C# 开发环境并创建一个新项目。确保您已在项目中添加对 .NET 的 Aspose.PDF 库的引用。
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Creating the document
+## 第 2 步：创建文档
 
-The first step is to create a new PDF document using the `Document` class.
+第一步是使用以下命令创建一个新的 PDF 文档`Document`班级。
 
 ```csharp
-// Create the PDF document
+//创建 PDF 文档
 Document document = new Document();
 ```
 
-## Step 3: Work with tagged content
+## 第 3 步：处理标记内容
 
-Then we get the tagged content of the document to work with.
+然后我们获取要使用的文档的标记内容。
 
 ```csharp
-// Get the tagged content of the document
+//获取文档的标记内容
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-## Step 4: Set document title and language
+## 步骤 4：设置文档标题和语言
 
-We can now set the document title and language.
+我们现在可以设置文档标题和语言。
 
 ```csharp
-// Define the document title and language
+//定义文档标题和语言
 taggedContent.SetTitle("Tagged PDF document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-## Step 5: Add structural elements online
+## 第5步：在线添加结构元素
 
-Now we are going to add inline structure elements such as headings of different levels and paragraphs to our document.
+现在我们将向文档添加内联结构元素，例如不同级别的标题和段落。
 
 ```csharp
-// Get the root structure element
+//获取根结构元素
 StructureElement rootElement = taggedContent.RootElement;
 
-// Add headers of different levels
+//添加不同级别的标题
 HeaderElement h1 = taggedContent.CreateHeaderElement(1);
 HeaderElement h2 = taggedContent.CreateHeaderElement(2);
 HeaderElement h3 = taggedContent.CreateHeaderElement(3);
@@ -77,7 +77,7 @@ rootElement.AppendChild(h4);
 rootElement.AppendChild(h5);
 rootElement.AppendChild(h6);
 
-// Add content to each header
+//向每个标题添加内容
 SpanElement spanH11 = taggedContent.CreateSpanElement();
 spanH11.SetText("H1.");
 h1.AppendChild(spanH11);
@@ -120,12 +120,12 @@ SpanElement spanH62 = taggedContent.CreateSpanElement();
 spanH62.SetText("Heading level 6");
 h6.AppendChild(spanH62);
 
-// Add a paragraph
+//添加一段
 ParagraphElement p = taggedContent.CreateParagraphElement();
 p.SetText("P.");
 rootElement.AppendChild(p);
 
-// Add content to the paragraph
+//向段落添加内容
 SpanElement span1 = taggedContent.CreateSpanElement();
 span1.SetText("Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
 p.AppendChild(span1);
@@ -158,35 +158,35 @@ span10.SetText("Sed vulputate, quam sed lacinia luctus, ipsum nibh fringilla pur
 p.AppendChild(span10);
 ```
 
-Here we create inline structure elements, such as headings of different levels and a paragraph, and add content to them.
+在这里，我们创建内联结构元素，例如不同级别的标题和段落，并向其中添加内容。
 
-## Step 6: Save the tagged PDF document
+## 步骤 6：保存标记的 PDF 文档
 
-Finally, we save the tagged PDF document.
+最后，我们保存标记的 PDF 文档。
 
 ```csharp
-// Save the tagged PDF document
+//保存标记的 PDF 文档
 document.Save(dataDir + "InlineStructureElements.pdf");
 ```
 
-### Sample source code for Inline Structure Elements using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 的内联结构元素的示例源代码 
 
 ```csharp
 
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create Pdf Document
+//创建 PDF 文档
 Document document = new Document();
 
-// Get Content for work with TaggedPdf
+//获取与 TaggedPdf 一起使用的内容
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Set Title and Language for Documnet
+//设置文档网的标题和语言
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 
-// Get Root Structure Element
+//获取根结构元素
 StructureElement rootElement = taggedContent.RootElement;
 HeaderElement h1 = taggedContent.CreateHeaderElement(1);
 HeaderElement h2 = taggedContent.CreateHeaderElement(2);
@@ -270,53 +270,53 @@ SpanElement span10 = taggedContent.CreateSpanElement();
 span10.SetText("Sed vulputate, quam sed lacinia luctus, ipsum nibh fringilla purus, vitae posuere risus odio id massa. Cras sed venenatis lacus.");
 p.AppendChild(span10);
 
-// Save Tagged Pdf Document
+//保存标记的 PDF 文档
 document.Save(dataDir + "InlineStructureElements.pdf");
 
 ```
 
-## Conclusion
+## 结论
 
-Congratulation ! You have learned how to use inline structure elements with Aspose.PDF for .NET. You can now create a hierarchical structure in your PDF document by using headings of different levels and paragraphs. Explore more features of Aspose.PDF to discover its full potential.
+恭喜！您已经了解了如何通过 Aspose.PDF for .NET 使用内联结构元素。现在，您可以使用不同级别和段落的标题在 PDF 文档中创建层次结构。探索 Aspose.PDF 的更多功能以发现其全部潜力。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What are inline structure elements in a PDF document, and how do they contribute to creating a hierarchical structure?
+#### 问：PDF 文档中的内联结构元素是什么？它们如何有助于创建层次结构？
 
-A: Inline structure elements in a PDF document, such as headings of different levels and paragraphs, are used to create a hierarchical structure that organizes and presents content in a structured manner. These elements allow you to establish a clear hierarchy and flow of information within the document.
+答：PDF 文档中的内联结构元素（例如不同级别的标题和段落）用于创建分层结构，以结构化方式组织和呈现内容。这些元素允许您在文档中建立清晰的层次结构和信息流。
 
-#### Q: How can inline structure elements enhance the readability and organization of a PDF document?
+#### 问：内联结构元素如何增强 PDF 文档的可读性和组织性？
 
-A: Inline structure elements, particularly headings and paragraphs, help improve the readability and organization of a PDF document by providing a logical structure. Headings indicate different levels of importance and help readers navigate the content, while paragraphs group related information together.
+答：内联结构元素，特别是标题和段落，通过提供逻辑结构来帮助提高 PDF 文档的可读性和组织性。标题表示不同的重要性级别并帮助读者浏览内容，而段落则将相关信息分组在一起。
 
-#### Q: How does Aspose.PDF for .NET facilitate the use of inline structure elements?
+#### 问：Aspose.PDF for .NET 如何促进内联结构元素的使用？
 
-A: Aspose.PDF for .NET offers classes and methods to create and manipulate inline structure elements, such as headings and paragraphs. These elements can be customized, organized hierarchically, and enriched with content to improve the visual presentation and accessibility of the document.
+答：Aspose.PDF for .NET 提供了类和方法来创建和操作内联结构元素，例如标题和段落。这些元素可以进行定制、分层组织并丰富内容，以改善文档的视觉呈现和可访问性。
 
-#### Q: What is the purpose of the `taggedContent` object in relation to inline structure elements?
+#### 问：这样做的目的是什么`taggedContent` object in relation to inline structure elements?
 
-A: The `taggedContent` object, obtained from the `TaggedContent` property of a `Document`, allows you to work with structured elements, including inline structure elements. It enables you to create, customize, and organize headings and paragraphs within the document.
+答： 的`taggedContent`对象，从获得`TaggedContent`的财产`Document`，允许您使用结构化元素，包括内联结构元素。它使您能够创建、自定义和组织文档中的标题和段落。
 
-#### Q: How do inline structure elements aid in creating a clear document hierarchy?
+#### 问：内联结构元素如何帮助创建清晰的文档层次结构？
 
-A: Inline structure elements, such as headings of varying levels, contribute to establishing a clear and well-defined hierarchy in the document. Readers can quickly identify the main topics, subtopics, and related content, making the document easier to navigate and comprehend.
+答：内联结构元素（例如不同级别的标题）有助于在文档中建立清晰且定义明确的层次结构。读者可以快速识别主主题、副主题和相关内容，使文档更易于浏览和理解。
 
-#### Q: Can I customize the appearance and formatting of inline structure elements using Aspose.PDF for .NET?
+#### 问：我可以使用 Aspose.PDF for .NET 自定义内联结构元素的外观和格式吗？
 
-A: Yes, you can customize the appearance and formatting of inline structure elements. You can set properties such as font styles, sizes, colors, alignment, indentation, and spacing to achieve the desired visual presentation for headings and paragraphs.
+答：是的，您可以自定义内联结构元素的外观和格式。您可以设置字体样式、大小、颜色、对齐方式、缩进和间距等属性，以实现标题和段落所需的视觉呈现。
 
-#### Q: How do I create and add headings of different levels to a PDF document using inline structure elements in Aspose.PDF for .NET?
+#### 问：如何使用 Aspose.PDF for .NET 中的内联结构元素创建不同级别的标题并将其添加到 PDF 文档？
 
-A: You can create headings of different levels using the `CreateHeaderElement` method and then append them to the root structure element. Subsequently, you can add content to each heading element using the `CreateSpanElement` method to create spans of text.
+答：您可以使用以下命令创建不同级别的标题`CreateHeaderElement`方法，然后将它们附加到根结构元素。随后，您可以使用以下命令向每个标题元素添加内容`CreateSpanElement`创建文本跨度的方法。
 
-#### Q: Can I use inline structure elements to create lists, bullet points, or other types of content organization in a PDF document?
+#### 问：我可以使用内联结构元素在 PDF 文档中创建列表、项目符号或其他类型的内容组织吗？
 
-A: While inline structure elements themselves are primarily used for headings and paragraphs, you can use them in combination with other features offered by Aspose.PDF for .NET to create lists, bullet points, tables, and other types of content organization for a comprehensive document structure.
+答：虽然内联结构元素本身主要用于标题和段落，但您可以将它们与 Aspose.PDF for .NET 提供的其他功能结合使用，以创建列表、项目符号点、表格和其他类型的内容组织，以实现全面的内容组织。文档结构。
 
-#### Q: How do inline structure elements contribute to document accessibility?
+#### 问：内联结构元素如何有助于文档的可访问性？
 
-A: Inline structure elements play a crucial role in enhancing document accessibility. Properly structured headings and paragraphs provide a clear document hierarchy that aids screen readers and other assistive technologies in accurately interpreting and conveying the content to users with disabilities.
+答：内联结构元素在增强文档可访问性方面发挥着至关重要的作用。结构正确的标题和段落提供了清晰的文档层次结构，有助于屏幕阅读器和其他辅助技术准确地向残障用户解释和传达内容。
 
-#### Q: Can I explore more advanced uses of inline structure elements, such as creating interactive elements or embedding multimedia?
+#### 问：我可以探索内联结构元素的更高级用途，例如创建交互式元素或嵌入多媒体吗？
 
-A: Absolutely! While this tutorial focuses on creating headings and paragraphs, Aspose.PDF for .NET offers advanced features to create interactive elements, embed multimedia, add hyperlinks, and more. Check the library's documentation and examples to delve into these advanced capabilities.
+答：当然！虽然本教程重点介绍创建标题和段落，但 Aspose.PDF for .NET 提供了创建交互式元素、嵌入多媒体、添加超链接等高级功能。检查库的文档和示例以深入研究这些高级功能。

@@ -1,28 +1,28 @@
 ---
-title: Use Latex Script In PDF File
-linktitle: Use Latex Script In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use Latex script to add mathematical expressions or formulae in a PDF document using Aspose.PDF for .NET.
+title: استخدم برنامج Latex Script في ملف PDF
+linktitle: استخدم برنامج Latex Script في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية استخدام البرنامج النصي Latex لإضافة تعبيرات أو صيغ رياضية في مستند PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 550
 url: /ar/net/programming-with-text/use-latex-script/
 ---
-This tutorial explains how to use Latex script to add mathematical expressions or formulae in a PDF document using Aspose.PDF for .NET. The provided C# source code demonstrates the steps to create a document, add a table with a cell containing LaTeX script, and save the document.
+يشرح هذا البرنامج التعليمي كيفية استخدام البرنامج النصي Latex لإضافة تعبيرات أو صيغ رياضية في مستند PDF باستخدام Aspose.PDF لـ .NET. يوضح كود مصدر C# المقدم خطوات إنشاء مستند وإضافة جدول بخلية تحتوي على البرنامج النصي LaTeX وحفظ المستند.
 
-## Prerequisites
+## المتطلبات الأساسية
 
-Before you begin, ensure that you have the following:
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- Basic knowledge of C# programming language.
-- Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to install it in your project.
+- المعرفة الأساسية بلغة البرمجة C#.
+- تم تثبيت Aspose.PDF لمكتبة .NET. يمكنك الحصول عليه من موقع Aspose أو استخدام NuGet لتثبيته في مشروعك.
 
-## Step 1: Set up the project
+## الخطوة 1: إعداد المشروع
 
-Create a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library.
+قم بإنشاء مشروع C# جديد في بيئة التطوير المتكاملة المفضلة لديك (IDE) وأضف مرجعًا إلى مكتبة Aspose.PDF لـ .NET.
 
-## Step 2: Import necessary namespaces
+## الخطوة 2: استيراد مساحات الأسماء الضرورية
 
-Add the following using directives at the beginning of your C# file to import the required namespaces:
+أضف ما يلي باستخدام التوجيهات في بداية ملف C# الخاص بك لاستيراد مساحات الأسماء المطلوبة:
 
 ```csharp
 using Aspose.Pdf;
@@ -30,27 +30,27 @@ using Aspose.Pdf.Tables;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Create and configure the document
+## الخطوة 3: إنشاء وتكوين المستند
 
-Create a new `Document` object and add a page to it:
+ إنشاء جديد`Document` الكائن وأضف صفحة إليه:
 
 ```csharp
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Step 4: Create and configure the table
+## الخطوة 4: إنشاء وتكوين الجدول
 
-Create a table and add a row to it:
+إنشاء جدول وإضافة صف إليه:
 
 ```csharp
 Table table = new Table();
 Row row = table.Rows.Add();
 ```
 
-## Step 5: Add a cell with LaTeX script
+## الخطوة 5: إضافة خلية باستخدام البرنامج النصي LaTeX
 
-Create a cell and add a `LatexFragment` containing the Latex script:
+ إنشاء خلية وإضافة أ`LatexFragment` يحتوي على نص اللاتكس:
 
 ```csharp
 string latexText1 = "$123456789+\\sqrt{1}+\\int_a^b f(x)dx$";
@@ -59,74 +59,74 @@ LatexFragment ltext1 = new LatexFragment(latexText1, true);
 cell.Paragraphs.Add(ltext1);
 ```
 
-Note that the `true` parameter in the `LatexFragment` constructor eliminates Latex paragraph indents.
+ نلاحظ أن`true` المعلمة في`LatexFragment` يقوم المنشئ بإزالة المسافات البادئة للفقرة اللاتكس.
 
-## Step 6: Add the table to the page
+## الخطوة 6: أضف الجدول إلى الصفحة
 
-Add the table to the page:
+أضف الجدول إلى الصفحة:
 
 ```csharp
 page.Paragraphs.Add(table);
 ```
 
-## Step 7: Save the document
+## الخطوة 7: احفظ المستند
 
-Save the document to a PDF file:
+احفظ المستند في ملف PDF:
 
 ```csharp
 doc.Save(dataDir + "LatextScriptInPdf_out.pdf");
 ```
 
-### Sample source code for Use Latex Script using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لاستخدام برنامج Latex Script باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create a new Document Object
+// قم بإنشاء كائن مستند جديد
 Document doc = new Document();
-// Add Page in Pages Collection
+// إضافة صفحة في مجموعة الصفحات
 Page page = doc.Pages.Add();
-// Create a Table
+// إنشاء جدول
 Table table = new Table();
-// Add a row into Table
+// أضف صفًا إلى الجدول
 Row row = table.Rows.Add();
-// Add Cell with Latex Script to add methematical expressions/formulae
+// أضف خلية تحتوي على برنامج Latex Script لإضافة تعبيرات/صيغ رياضية
 string latexText1 = "$123456789+\\sqrt{1}+\\int_a^b f(x)dx$";
 Cell cell = row.Cells.Add();
 cell.Margin = new MarginInfo { Left = 20, Right = 20, Top = 20, Bottom = 20 };
-// Second LatexFragment constructor bool parameter provides LaTeX paragraph indents elimination.
+// توفر المعلمة المنطقية الثانية لمنشئ LatexFragment إزالة المسافات البادئة للفقرة LaTeX.
 LatexFragment ltext1 = new LatexFragment(latexText1, true);
 cell.Paragraphs.Add(ltext1);
-// Add table inside page
+// إضافة جدول داخل الصفحة
 page.Paragraphs.Add(table);
-// Save the document
+// احفظ المستند
 doc.Save(dataDir + "LatextScriptInPdf_out.pdf");
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulations! You have successfully learned how to use Latex script to add mathematical expressions or formulae in a PDF document using Aspose.PDF for .NET. This tutorial provided step-by-step instructions on creating a document, adding a table with a cell containing LaTeX script, and saving the document. You can now incorporate this code into your own C# projects to generate PDF files with mathematical content.
+تهانينا! لقد تعلمت بنجاح كيفية استخدام البرنامج النصي Latex لإضافة تعبيرات أو صيغ رياضية في مستند PDF باستخدام Aspose.PDF لـ .NET. قدم هذا البرنامج التعليمي إرشادات خطوة بخطوة حول إنشاء مستند وإضافة جدول بخلية تحتوي على البرنامج النصي LaTeX وحفظ المستند. يمكنك الآن دمج هذا الرمز في مشاريع C# الخاصة بك لإنشاء ملفات PDF ذات محتوى رياضي.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of the "Use Latex Script In PDF File" tutorial?
+#### س: ما هو الغرض من البرنامج التعليمي "استخدام برنامج Latex في ملف PDF"؟
 
-A: The "Use Latex Script In PDF File" tutorial aims to guide users on how to incorporate LaTeX script to add mathematical expressions or formulae within a PDF document using Aspose.PDF for .NET. The tutorial provides step-by-step instructions and C# code samples to create a document, insert a table with a cell containing LaTeX script, and save the document.
+ج: يهدف البرنامج التعليمي "استخدام برنامج اللاتكس في ملف PDF" إلى توجيه المستخدمين حول كيفية دمج برنامج LaTeX لإضافة تعبيرات رياضية أو صيغ داخل مستند PDF باستخدام Aspose.PDF لـ .NET. يوفر البرنامج التعليمي إرشادات خطوة بخطوة ونماذج التعليمات البرمجية C# لإنشاء مستند، وإدراج جدول بخلية تحتوي على برنامج LaTeX النصي، وحفظ المستند.
 
-#### Q: How does this tutorial help in using LaTeX script for mathematical expressions in a PDF document?
+#### س: كيف يساعد هذا البرنامج التعليمي في استخدام البرنامج النصي LaTeX للتعبيرات الرياضية في مستند PDF؟
 
-A: This tutorial helps users understand how to leverage Aspose.PDF for .NET to include mathematical expressions or formulae written in LaTeX script within a PDF document. By following the provided code examples, users can create documents with complex mathematical content seamlessly.
+ج: يساعد هذا البرنامج التعليمي المستخدمين على فهم كيفية الاستفادة من Aspose.PDF لـ .NET لتضمين التعبيرات الرياضية أو الصيغ المكتوبة بلغة LaTeX النصية داخل مستند PDF. من خلال اتباع أمثلة التعليمات البرمجية المتوفرة، يمكن للمستخدمين إنشاء مستندات ذات محتوى رياضي معقد بسلاسة.
 
-#### Q: What prerequisites are necessary to follow this tutorial?
+#### س: ما هي المتطلبات الأساسية اللازمة لمتابعة هذا البرنامج التعليمي؟
 
-A: To successfully follow this tutorial, you should have a basic understanding of the C# programming language. Additionally, ensure that you have the Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to install it in your project.
+ج: لمتابعة هذا البرنامج التعليمي بنجاح، يجب أن يكون لديك فهم أساسي للغة البرمجة C#. بالإضافة إلى ذلك، تأكد من تثبيت مكتبة Aspose.PDF لـ .NET. يمكنك الحصول عليه من موقع Aspose أو استخدام NuGet لتثبيته في مشروعك.
 
-#### Q: How do I set up my project to use LaTeX script in a PDF document?
+#### س: كيف أقوم بإعداد مشروعي لاستخدام البرنامج النصي LaTeX في مستند PDF؟
 
-A: To begin, create a new C# project in your chosen integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library. This will provide you with the necessary tools to work with PDF documents and LaTeX script.
+ج: للبدء، قم بإنشاء مشروع C# جديد في بيئة التطوير المتكاملة (IDE) التي اخترتها وأضف مرجعًا إلى مكتبة Aspose.PDF لـ .NET. سيوفر لك هذا الأدوات اللازمة للعمل مع مستندات PDF وبرنامج LaTeX النصي.
 
-#### Q: What namespaces do I need to import to work with Aspose.PDF for .NET?
+#### س: ما هي مساحات الأسماء التي أحتاج إلى استيرادها للعمل مع Aspose.PDF لـ .NET؟
 
-A: In your C# code file, include the following using directives at the beginning to import the required namespaces:
+ج: في ملف تعليمات برمجية C# الخاص بك، قم بتضمين ما يلي باستخدام التوجيهات في البداية لاستيراد مساحات الأسماء المطلوبة:
 
 ```csharp
 using Aspose.Pdf;
@@ -134,26 +134,26 @@ using Aspose.Pdf.Tables;
 using Aspose.Pdf.Text;
 ```
 
-These namespaces will allow you to access the classes and functionality needed for working with PDF documents and LaTeX script.
+ستسمح لك مساحات الأسماء هذه بالوصول إلى الفئات والوظائف اللازمة للعمل مع مستندات PDF وبرنامج LaTeX النصي.
 
-#### Q: How can I use LaTeX script to add mathematical expressions or formulae in a PDF document?
+#### س: كيف يمكنني استخدام البرنامج النصي LaTeX لإضافة تعبيرات أو صيغ رياضية في مستند PDF؟
 
-A: This tutorial demonstrates the process step by step. After setting up your project and importing the required namespaces, you will create a new `Document` object, add a page, and then create a table with a cell containing LaTeX script. The LaTeX script should be wrapped in `$` symbols. By following the provided code examples, you can seamlessly integrate LaTeX-based mathematical expressions into your PDF document.
+ ج: يوضح هذا البرنامج التعليمي العملية خطوة بخطوة. بعد إعداد مشروعك واستيراد مساحات الأسماء المطلوبة، ستقوم بإنشاء نطاق جديد`Document` الكائن، وأضف صفحة، ثم أنشئ جدولًا يحتوي على خلية تحتوي على البرنامج النصي LaTeX. يجب تغليف البرنامج النصي LaTeX`$` حرف او رمز. باتباع أمثلة التعليمات البرمجية المتوفرة، يمكنك دمج التعبيرات الرياضية المستندة إلى LaTeX بسلاسة في مستند PDF الخاص بك.
 
-#### Q: Can I customize the LaTeX script used in the tutorial?
+#### س: هل يمكنني تخصيص البرنامج النصي LaTeX المستخدم في البرنامج التعليمي؟
 
-A: Absolutely. The provided code examples showcase how to insert a LaTeX script for a mathematical expression. You can modify the `latexText1` variable to contain any mathematical formula or expression that you want to display in the PDF document.
+ ج: بالتأكيد. تعرض أمثلة التعليمات البرمجية المقدمة كيفية إدراج برنامج نصي LaTeX للتعبير الرياضي. يمكنك تعديل`latexText1` متغير يحتوي على أي صيغة أو تعبير رياضي تريد عرضه في مستند PDF.
 
-#### Q: How do I save the PDF document after adding LaTeX-based content?
+#### س: كيف يمكنني حفظ مستند PDF بعد إضافة محتوى يستند إلى LaTeX؟
 
-A: After adding the LaTeX-based content to the PDF document, you can save it using the following code snippet:
+ج: بعد إضافة المحتوى المستند إلى LaTeX إلى مستند PDF، يمكنك حفظه باستخدام مقتطف التعليمات البرمجية التالي:
 
 ```csharp
 doc.Save(dataDir + "LatextScriptInPdf_out.pdf");
 ```
 
-Replace `"LatextScriptInPdf_out.pdf"` with your desired output file name. This will save the PDF document containing the mathematical expressions written in LaTeX script.
+ يستبدل`"LatextScriptInPdf_out.pdf"` مع اسم ملف الإخراج المطلوب. سيؤدي هذا إلى حفظ مستند PDF الذي يحتوي على التعبيرات الرياضية المكتوبة بخط LaTeX.
 
-#### Q: Can I include multiple LaTeX-based expressions in a single PDF document?
+#### س: هل يمكنني تضمين تعبيرات متعددة مستندة إلى LaTeX في مستند PDF واحد؟
 
-A: Yes, you can include multiple LaTeX-based expressions within the same PDF document. Simply repeat the steps of creating cells and adding `LatexFragment` objects to those cells as needed.
+ ج: نعم، يمكنك تضمين العديد من التعبيرات المستندة إلى LaTeX في نفس مستند PDF. ما عليك سوى تكرار خطوات إنشاء الخلايا وإضافتها`LatexFragment` الكائنات لتلك الخلايا حسب الحاجة.

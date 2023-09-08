@@ -1,145 +1,145 @@
 ---
-title: Specify Page When Viewing
-linktitle: Specify Page When Viewing
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to specify a page when viewing a PDF using Aspose.PDF for .NET.
+title: 查看时指定页面
+linktitle: 查看时指定页面
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 查看 PDF 时指定页面。
 type: docs
 weight: 110
 url: /zh/net/programming-with-links-and-actions/specify-page-when-viewing/
 ---
-Learn how to specify a page when viewing a PDF file using Aspose.PDF for .NET with this step-by-step guide.
+通过此分步指南，了解如何在使用 Aspose.PDF for .NET 查看 PDF 文件时指定页面。
 
-## Step 1: Setting up the environment
+## 第一步：搭建环境
 
-Make sure you have set up your development environment with a C# project and the appropriate Aspose.PDF references.
+确保您已使用 C# 项目和适当的 Aspose.PDF 参考设置开发环境。
 
-## Step 2: Loading the PDF file
+## 第 2 步：加载 PDF 文件
 
-Set the directory path of your documents and upload the PDF file using the following code:
+使用以下代码设置文档的目录路径并上传 PDF 文件：
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Load the PDF file
+//加载 PDF 文件
 Document doc = new Document(dataDir + "SpecifyPageWhenViewing.pdf");
 ```
 
-## Step 3: Specifying the target page
+## 第三步：指定目标页面
 
-Get the target page instance using the following code:
+使用以下代码获取目标页面实例：
 
 ```csharp
 Page page2 = doc.Pages[2];
 ```
 
-You can adjust the index `[2]` to select the desired page.
+您可以调整索引`[2]`选择所需的页面。
 
-## Step 4: Configuring the zoom setting
+## 步骤 4：配置缩放设置
 
-Create a variable to set the target page zoom factor:
+创建一个变量来设置目标页面缩放系数：
 
 ```csharp
 double zoom = 1;
 ```
 
-You can adjust the zoom value according to your needs.
+您可以根据需要调整缩放值。
 
-## Step 5: Create the navigation action
+## 第 5 步：创建导航操作
 
-Create an instance of the navigation action using the specified target page:
+使用指定的目标页面创建导航操作的实例：
 
 ```csharp
 GoToAction action = new GoToAction(doc.Pages[2]);
 ```
 
-## Step 6: Setting the destination
+## 第 6 步：设置目的地
 
-Set the destination to go to the target page using coordinates and zoom:
+使用坐标和缩放设置目的地以转到目标页面：
 
 ```csharp
 action.Destination = new XYZExplicitDestination(page2, 0, page2.Rect.Height, zoom);
 ```
 
-## Step 7: Configuring the Document Open Action
+## 步骤 7：配置文档打开操作
 
-Set the document open action with the created navigation action:
+使用创建的导航操作设置文档打开操作：
 
 ```csharp
 doc. OpenAction = action;
 ```
 
-## Step 8: Save the updated document
+## 步骤 8：保存更新后的文档
 
-Save the updated document using the `Save` method:
+使用保存更新的文档`Save`方法：
 
 ```csharp
 doc.Save(dataDir + "goto2page_out.pdf");
 ```
 
-### Sample source code for Specify Page When Viewing using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 查看时指定页面的示例源代码 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load the PDF file
+//加载 PDF 文件
 Document doc = new Document(dataDir + "SpecifyPageWhenViewing.pdf");
-// Get the instance of second page of document
+//获取文档第二页的实例
 Page page2 = doc.Pages[2];
-// Create the variable to set the zoom factor of target page
+//创建变量来设置目标页面的缩放系数
 double zoom = 1;
-// Create GoToAction instance
+//创建GoToAction实例
 GoToAction action = new GoToAction(doc.Pages[2]);
-// Go to 2 page
+//转到第 2 页
 action.Destination = new XYZExplicitDestination(page2, 0, page2.Rect.Height, zoom);
-// Set the document open action
+//设置文档打开动作
 doc.OpenAction = action;
-// Save updated document
+//保存更新的文档
 doc.Save(dataDir + "goto2page_out.pdf");
 ```
 
-## Conclusion
+## 结论
 
-Congratulation ! You now know how to specify a page when viewing a PDF using Aspose.PDF for .NET. Use this knowledge to customize the user viewing experience in your PDF documents.
+恭喜！您现在知道如何使用 Aspose.PDF for .NET 查看 PDF 时指定页面。使用这些知识来定制 PDF 文档中的用户查看体验。
 
-Now that you've completed this guide, you can apply these concepts to your own projects and further explore the features offered by Aspose.PDF for .NET.
+现在您已经完成了本指南，您可以将这些概念应用到您自己的项目中，并进一步探索 Aspose.PDF for .NET 提供的功能。
 
-### FAQ's 
+### 常见问题解答 
 
-#### Q: What is the purpose of specifying a target page when viewing a PDF file?
+#### 问：查看PDF文件时指定目标页面的作用是什么？
 
-A: Specifying a target page allows you to control which page of a PDF document is displayed when the file is opened. This can enhance the user experience by directing them to a specific page of interest.
+答：指定目标页面可以让您控制打开 PDF 文档时显示的页面。这可以通过将用户引导至感兴趣的特定页面来增强用户体验。
 
-#### Q: How can specifying a target page be useful in PDF documents?
+#### 问：在 PDF 文档中指定目标页面有何用处？
 
-A: Specifying a target page is beneficial when you want to guide users to a particular section or content within a PDF document without requiring them to manually navigate through the pages.
+答：当您想要引导用户到达 PDF 文档中的特定部分或内容而不要求他们手动浏览页面时，指定目标页面非常有用。
 
-#### Q: How does Aspose.PDF for .NET facilitate specifying a target page for viewing?
+#### 问：Aspose.PDF for .NET 如何方便指定要查看的目标页面？
 
-A: Aspose.PDF for .NET provides APIs that allow you to set the initial view of a PDF document, including the target page, zoom level, and other display properties.
+答：Aspose.PDF for .NET 提供的 API 允许您设置 PDF 文档的初始视图，包括目标页面、缩放级别和其他显示属性。
 
-#### Q: Can I specify any page to be the target page?
+#### 问：我可以指定任意页面作为目标页面吗？
 
-A: Yes, you can specify any page within the PDF document as the target page for viewing. Simply use the appropriate index to select the desired page.
+答：是的，您可以指定PDF文档中的任意页面作为查看的目标页面。只需使用适当的索引来选择所需的页面即可。
 
-#### Q: What is the significance of the zoom factor when specifying a target page?
+#### 问：指定目标页面时缩放系数有何意义？
 
-A: The zoom factor determines the level of magnification applied to the target page when the PDF document is opened. It controls how much content is displayed within the viewport.
+答：缩放系数决定打开 PDF 文档时应用于目标页面的放大级别。它控制视口中显示的内容量。
 
-#### Q: Can I set different zoom factors for different target pages?
+#### 问：我可以为不同的目标页面设置不同的缩放系数吗？
 
-A: Yes, you can set different zoom factors for different target pages by creating separate `GoToAction` instances and configuring their destinations accordingly.
+A：是的，您可以通过创建单独的目标页面来为不同的目标页面设置不同的缩放系数`GoToAction`实例并相应地配置它们的目的地。
 
-#### Q: Are there any limitations to specifying a target page?
+#### 问：指定目标页面有什么限制吗？
 
-A: Specifying a target page is limited to controlling the initial view when the PDF is opened. It does not affect user interactions or navigation once the PDF is displayed.
+答：指定目标页面仅限于控制 PDF 打开时的初始视图。显示 PDF 后，它不会影响用户交互或导航。
 
-#### Q: Can I use this feature to create presentations within a PDF document?
+#### 问：我可以使用此功能在 PDF 文档中创建演示文稿吗？
 
-A: Yes, you can use this feature to create presentation-like experiences within a PDF document, guiding users through different sections or topics.
+答：是的，您可以使用此功能在 PDF 文档中创建类似演示的体验，引导用户浏览不同的部分或主题。
 
-#### Q: Can I customize other aspects of the initial view, such as page layout?
+#### 问：我可以自定义初始视图的其他方面，例如页面布局吗？
 
-A: Yes, Aspose.PDF for .NET provides properties to customize other aspects of the initial view, including page layout, page mode, and more.
+答：是的，Aspose.PDF for .NET 提供了自定义初始视图其他方面的属性，包括页面布局、页面模式等。
 
-#### Q: How can I test if the specified target page and zoom factor are working as intended?
+#### 问：如何测试指定的目标页面和缩放系数是否按预期工作？
 
-A: After applying the provided code to specify the target page and zoom factor, open the modified PDF file and verify that it opens with the correct page and zoom level.
+答：应用提供的代码指定目标页面和缩放系数后，打开修改后的 PDF 文件并验证它是否以正确的页面和缩放级别打开。

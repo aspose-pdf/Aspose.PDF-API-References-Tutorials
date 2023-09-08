@@ -1,178 +1,178 @@
 ---
-title: Inherit Zoom In PDF File
-linktitle: Inherit Zoom In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily inherit bookmark zoom in PDF file with Aspose.PDF for .NET.
+title: 继承放大 PDF 文件
+linktitle: 继承放大 PDF 文件
+second_title: Aspose.PDF for .NET API 参考
+description: 使用 Aspose.PDF for .NET 轻松继承 PDF 文件中的书签缩放。
 type: docs
 weight: 90
 url: /zh/net/programming-with-bookmarks/inherit-zoom/
 ---
-Zoom inheritance in PDF file allows you to specify a default zoom level for bookmarks. With Aspose.PDF for .NET, you can easily inherit zoom by following the following source code:
+PDF 文件中的缩放继承允许您指定书签的默认缩放级别。使用Aspose.PDF for .NET，您可以通过以下源代码轻松继承缩放：
 
-## Step 1: Import required libraries
+## 第1步：导入所需的库
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+在开始之前，您需要为 C# 项目导入必要的库。这是必要的导入指令：
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-## Step 2: Set path to documents folder
+## 步骤 2：设置文档文件夹路径
 
-In this step, you need to specify the path to the folder containing the PDF file you want to inherit the zoom from. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+在此步骤中，您需要指定包含要继承缩放的 PDF 文件的文件夹的路径。代替`"YOUR DOCUMENT DIRECTORY"`在以下代码中使用文档文件夹的实际路径：
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## 步骤 3：打开 PDF 文档
 
-Now we are going to open the PDF document on which we want to inherit the zoom using the following code:
+现在我们将使用以下代码打开要继承缩放的 PDF 文档：
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 4: Get Bookmarks Collection
+## 第四步：获取书签集合
 
-In this step, we will get the collection of bookmarks or landmarks of the document using the `Outlines` property of the `doc` object. Here is the corresponding code:
+在此步骤中，我们将使用以下方法获取文档的书签或地标的集合`Outlines`的财产`doc`目的。这是相应的代码：
 
 ```csharp
 OutlineItemCollection item = new OutlineItemCollection(doc.Outlines);
 ```
 
-## Step 5: Set Zoom Level
+## 第 5 步：设置缩放级别
 
-Now we will set the zoom level by creating an `XYZExplicitDestination` object with the specified x, y and z coordinates. Here we use the coordinates (100, 100, 0) with a zoom of 2. Here is the corresponding code:
+现在我们将通过创建一个来设置缩放级别`XYZExplicitDestination`具有指定 x、y 和 z 坐标的对象。这里我们使用坐标(100, 100, 0)，缩放为2。下面是相应的代码：
 
 ```csharp
 XYZExplicitDestination dest = new XYZExplicitDestination(2, 100, 100, 0);
 ```
 
-## Step 6: Add Zoom Level to Bookmarks
+## 第 6 步：将缩放级别添加到书签
 
-In this step, we add the `XYZExplicitDestination` object as an action to the bookmarks of the `item` collection. Here is the corresponding code:
+在此步骤中，我们添加`XYZExplicitDestination`对象作为对书签的操作`item`收藏。这是相应的代码：
 
 ```csharp
 item. Action = new GoToAction(dest);
 ```
 
-## Step 7: Add the updated bookmarks to the document
+## 步骤 7：将更新后的书签添加到文档中
 
-Finally, we add the updated bookmarks to the document's bookmarks collection using the `Add` method of the `doc.Outlines` object. Here is the corresponding code:
+最后，我们使用以下命令将更新后的书签添加到文档的书签集合中：`Add`的方法`doc.Outlines`目的。这是相应的代码：
 
 ```csharp
 doc. Outlines. Add(item);
 ```
 
-## Step 8: Save the updated file
+## 第 8 步：保存更新的文件
 
-Now let's save the updated PDF file using the `Save` method of the `doc` object. Here is the corresponding code:
+现在让我们使用以下命令保存更新后的 PDF 文件`Save`的方法`doc`目的。这是相应的代码：
 
 ```csharp
 dataDir = dataDir + "InheritZoom_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Inherit Zoom using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 继承缩放的示例源代码 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+//打开文档
 Document doc = new Document(dataDir + "input.pdf");
-// Get outlines/bookmarks collection of PDF file
+//获取PDF文件的大纲/书签集合
 OutlineItemCollection item = new OutlineItemCollection(doc.Outlines);
-// Set zoom level as 0
+//将缩放级别设置为 0
 XYZExplicitDestination dest = new XYZExplicitDestination(2, 100, 100, 0);
-// Add XYZExplicitDestination as action to outlines collection of PDF
+//添加 XYZExplicitDestination 作为操作来概述 PDF 集合
 item.Action = new GoToAction(dest);
-// Add item to outlines collection of PDF file
+//将项目添加到 PDF 文件的大纲集合
 doc.Outlines.Add(item);
 dataDir = dataDir + "InheritZoom_out.pdf";
-// Save output
+//保存输出
 doc.Save(dataDir);
 Console.WriteLine("\nBookmarks updated successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## 结论
 
-Congratulation ! Now you have a step by step guide to Inherit Zoom with Aspose.PDF for .NET. You can use this code to specify a default zoom level for bookmarks in your PDF documents.
+恭喜！现在您有了使用 Aspose.PDF for .NET 继承 Zoom 的分步指南。您可以使用此代码指定 PDF 文档中书签的默认缩放级别。
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+请务必查看官方 Aspose.PDF 文档，以获取有关高级书签操作功能的更多信息。
 
-### FAQ's for inherit zoom in PDF file
+### PDF 文件继承缩放的常见问题解答
 
-#### Q: What is zoom inheritance in a PDF file?
+#### 问：什么是 PDF 文件中的缩放继承？
 
-A: Zoom inheritance refers to the ability to specify a default zoom level for bookmarks in a PDF document. This allows for consistent and user-friendly navigation when users interact with the bookmarks.
+答：缩放继承是指为 PDF 文档中的书签指定默认缩放级别的功能。当用户与书签交互时，这可以实现一致且用户友好的导航。
 
-#### Q: Why would I want to inherit zoom levels for bookmarks?
+#### 问：为什么我要继承书签的缩放级别？
 
-A: Inheriting zoom levels ensures that users have a consistent viewing experience when navigating through bookmarks in a PDF document. It can be particularly useful when you want to provide a specific view for different sections of a document.
+答：继承缩放级别可确保用户在浏览 PDF 文档中的书签时获得一致的查看体验。当您想要为文档的不同部分提供特定视图时，它会特别有用。
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### 问：如何导入 C# 项目所需的库？
 
-A: To import the required libraries for your C# project, include the following import directives:
+答：要导入 C# 项目所需的库，请包含以下导入指令：
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-These directives enable you to access the classes and methods needed to work with PDF documents and bookmarks.
+这些指令使您能够访问处理 PDF 文档和书签所需的类和方法。
 
-#### Q: How do I specify the path to the documents folder?
+#### 问：如何指定文档文件夹的路径？
 
-A: In the provided source code, replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file for which you want to inherit zoom levels.
+ A：在提供的源代码中，替换`"YOUR DOCUMENT DIRECTORY"`包含要继承缩放级别的 PDF 文件的文件夹的实际路径。
 
-#### Q: How do I open a PDF document to inherit zoom levels?
+#### 问：如何打开 PDF 文档以继承缩放级别？
 
-A: To open a PDF document for inheriting zoom levels, use the following code:
+答：要打开 PDF 文档以继承缩放级别，请使用以下代码：
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-Replace `"input.pdf"` with the actual file name.
+代替`"input.pdf"`与实际的文件名。
 
-#### Q: How do I set the zoom level for bookmarks?
+#### 问：如何设置书签的缩放级别？
 
-A: To set the zoom level, create an `XYZExplicitDestination` object with the desired coordinates and zoom factor. Here's an example:
+ A：要设置缩放级别，请创建一个`XYZExplicitDestination`具有所需坐标和缩放系数的对象。这是一个例子：
 
 ```csharp
 XYZExplicitDestination dest = new XYZExplicitDestination(2, 100, 100, 0);
 ```
 
-This sets the zoom level to 2 at coordinates (100, 100).
+这会将坐标 (100, 100) 处的缩放级别设置为 2。
 
-#### Q: How do I add the zoom level to bookmarks?
+#### 问：如何将缩放级别添加到书签？
 
-A: Add the `XYZExplicitDestination` object as an action to the bookmarks collection:
+答：添加`XYZExplicitDestination`对象作为书签集合的操作：
 
 ```csharp
 item.Action = new GoToAction(dest);
 ```
 
-Where `item` is an `OutlineItemCollection` representing a bookmark.
+在哪里`item`是一个`OutlineItemCollection`代表一个书签。
 
-#### Q: How do I save the updated PDF file?
+#### 问：如何保存更新后的 PDF 文件？
 
-A: Save the updated PDF file using the `Save` method of the `doc` object:
+答：使用以下命令保存更新的 PDF 文件`Save`的方法`doc`目的：
 
 ```csharp
 dataDir = dataDir + "InheritZoom_out.pdf";
 doc.Save(dataDir);
 ```
 
-#### Q: Can I customize zoom levels for different bookmarks?
+#### 问：我可以为不同的书签自定义缩放级别吗？
 
-A: Yes, you can customize the zoom levels for different bookmarks by creating multiple `XYZExplicitDestination` objects with different coordinates and zoom factors.
+答：是的，您可以通过创建多个书签来自定义不同书签的缩放级别`XYZExplicitDestination`具有不同坐标和缩放系数的对象。
 
-#### Q: Is there a limit to the number of bookmarks I can apply zoom inheritance to?
+#### 问：我可以应用缩放继承的书签数量有限制吗？
 
-A: There is typically no strict limit to the number of bookmarks you can apply zoom inheritance to. However, very large documents with an excessive number of bookmarks may require efficient memory management.
+答：通常，您可以应用缩放继承的书签数量没有严格限制。然而，具有过多书签的非常大的文档可能需要高效的内存管理。
 
-#### Q: How can I confirm that the zoom inheritance has been applied?
+#### 问：如何确认缩放继承已应用？
 
-A: Open the generated PDF file to verify that the specified zoom levels have been inherited by the bookmarks.
+答：打开生成的 PDF 文件以验证书签是否继承了指定的缩放级别。

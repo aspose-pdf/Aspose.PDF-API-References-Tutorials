@@ -1,120 +1,120 @@
 ---
-title: Set Free Text Annotation Formatting
-linktitle: Set Free Text Annotation Formatting
-second_title: Aspose.PDF for .NET API Reference
-description: This article provides a step-by-step guide on how to create a free text annotation and specify its contents using Aspose.PDF for .NET
+title: Establecer formato de anotación de texto libre
+linktitle: Establecer formato de anotación de texto libre
+second_title: Aspose.PDF para referencia de API .NET
+description: Este artículo proporciona una guía paso a paso sobre cómo crear una anotación de texto libre y especificar su contenido usando Aspose.PDF para .NET.
 type: docs
 weight: 140
 url: /es/net/annotations/setfreetextannotationformatting/
 ---
-Aspose.PDF for .NET is a powerful and easy-to-use PDF document manipulation API that allows you to work with PDF files programmatically in your .NET applications. One of the features provided by Aspose.PDF for .NET is the ability to set free text annotation formatting in PDF documents. In this article, we will walk you through the step-by-step process of setting free text annotation formatting using Aspose.PDF for .NET.
+Aspose.PDF para .NET es una API de manipulación de documentos PDF potente y fácil de usar que le permite trabajar con archivos PDF mediante programación en sus aplicaciones .NET. Una de las características proporcionadas por Aspose.PDF para .NET es la capacidad de configurar el formato de anotación de texto libre en documentos PDF. En este artículo, lo guiaremos a través del proceso paso a paso para configurar el formato de anotación de texto libre usando Aspose.PDF para .NET.
 
-## Prerequisites
+## Requisitos previos
 
-Before we get started, make sure that you have the following prerequisites:
+Antes de comenzar, asegúrese de tener los siguientes requisitos previos:
 
-- Microsoft Visual Studio 2010 or later
-- Aspose.PDF for .NET
-- Basic knowledge of C#
+- Microsoft Visual Studio 2010 o posterior
+- Aspose.PDF para .NET
+- Conocimientos básicos de C#.
 
 
 
-## Step 1: Create a new C# console application
+## Paso 1: crear una nueva aplicación de consola C#
 
-First, create a new C# console application in Microsoft Visual Studio. To create a new console application, select "File" > "New" > "Project" > "Visual C#" > "Console Application" from the main menu.
+Primero, cree una nueva aplicación de consola C# en Microsoft Visual Studio. Para crear una nueva aplicación de consola, seleccione "Archivo" > "Nuevo" > "Proyecto" > "Visual C#" > "Aplicación de consola" en el menú principal.
 
-## Step 2: Add reference to Aspose.PDF for .NET
+## Paso 2: agregue una referencia a Aspose.PDF para .NET
 
-Next, add a reference to Aspose.PDF for .NET in your project. To do this, right-click on your project in the "Solution Explorer" pane, select "Add" > "Reference", and then browse to the location where you saved the Aspose.PDF for .NET DLL file. Select the DLL file and click "OK" to add the reference to your project.
+A continuación, agregue una referencia a Aspose.PDF para .NET en su proyecto. Para hacer esto, haga clic derecho en su proyecto en el panel "Explorador de soluciones", seleccione "Agregar" > "Referencia" y luego busque la ubicación donde guardó el archivo DLL Aspose.PDF para .NET. Seleccione el archivo DLL y haga clic en "Aceptar" para agregar la referencia a su proyecto.
 
-## Step 3: Set up the environment
+## Paso 3: configurar el entorno
 
-After adding the reference to Aspose.PDF for .NET, you need to set up the environment. To do this, create a new string variable called "dataDir" and set it to the path of the directory where your PDF document is located. Replace "YOUR DOCUMENT DIRECTORY" in the code below with the actual path of your document directory:
+Después de agregar la referencia a Aspose.PDF para .NET, debe configurar el entorno. Para hacer esto, cree una nueva variable de cadena llamada "dataDir" y configúrela en la ruta del directorio donde se encuentra su documento PDF. Reemplace "SU DIRECTORIO DE DOCUMENTOS" en el código siguiente con la ruta real de su directorio de documentos:
 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 4: Open the PDF document
+## Paso 4: abre el documento PDF
 
-Once you have set up the environment, you can open the PDF document using the following code:
+Una vez que haya configurado el entorno, puede abrir el documento PDF usando el siguiente código:
 
 ```csharp
-// Open document
+// Abrir documento
 Document pdfDocument = new Document(dataDir + "SetFreeTextAnnotationFormatting.pdf");
 ```
 
-Replace "SetFreeTextAnnotationFormatting.pdf" with the actual name of your PDF document.
+Reemplace "SetFreeTextAnnotationFormatting.pdf" con el nombre real de su documento PDF.
 
-## Step 5: Set up default appearance
+## Paso 5: configurar la apariencia predeterminada
 
-To set up the default appearance of the free text annotation, you need to instantiate the DefaultAppearance object with the desired font, font size, and color. In this tutorial, we are setting the font to "Arial", font size to 28, and color to red.
+Para configurar la apariencia predeterminada de la anotación de texto libre, debe crear una instancia del objeto DefaultAppearance con la fuente, el tamaño de fuente y el color deseados. En este tutorial, configuraremos la fuente en "Arial", el tamaño de fuente en 28 y el color en rojo.
 
 ```csharp
-// Instantiate DefaultAppearance object
+// Crear una instancia del objeto DefaultAppearance
 DefaultAppearance default_appearance = new DefaultAppearance("Arial", 28, System.Drawing.Color.Red);
 ```
 
-## Step 6: Create a free text annotation
+## Paso 6: crea una anotación de texto libre
 
-Now that you have set up the default appearance, you can create a free text annotation using the following code:
+Ahora que ha configurado la apariencia predeterminada, puede crear una anotación de texto libre usando el siguiente código:
 
 ```csharp
-// Create annotation
+// Crear anotación
 FreeTextAnnotation freetext = new FreeTextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600), default_appearance);
 ```
 
-The above code creates a new free text annotation on the second page of the PDF document. The annotation will be positioned at (200, 400) and will have a width of 400 and a height of 600.
+El código anterior crea una nueva anotación de texto libre en la segunda página del documento PDF. La anotación se colocará en (200, 400) y tendrá un ancho de 400 y un alto de 600.
 
-## Step 7: Specify the contents of the annotation
+## Paso 7: especificar el contenido de la anotación
 
-After creating the free text annotation, you can specify the contents of the annotation using the following code:
+Después de crear la anotación de texto libre, puede especificar el contenido de la anotación usando el siguiente código:
 
 ```csharp
-// Specify the contents of annotation
+// Especificar el contenido de la anotación.
 freetext.Contents = "Free Text
 ```
 
-### Example source code for Set Free Text Annotation Formatting using Aspose.PDF for .NET
+### Código fuente de ejemplo para establecer formato de anotación de texto libre usando Aspose.PDF para .NET
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Abrir documento
 Document pdfDocument = new Document(dataDir + "SetFreeTextAnnotationFormatting.pdf");
 
-// Instantiate DefaultAppearance object
+// Crear una instancia del objeto DefaultAppearance
 DefaultAppearance default_appearance = new DefaultAppearance("Arial", 28, System.Drawing.Color.Red);
-// Create annotation
+// Crear anotación
 FreeTextAnnotation freetext = new FreeTextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600), default_appearance);
-// Specify the contents of annotation
+// Especificar el contenido de la anotación.
 freetext.Contents = "Free Text";
-// Add anootation to annotations collection of page
+// Agregar anotación a la colección de anotaciones de la página
 pdfDocument.Pages[1].Annotations.Add(freetext);
 dataDir = dataDir + "SetFreeTextAnnotationFormatting_out.pdf";
-// Save the updated document
+// Guardar el documento actualizado
 pdfDocument.Save(dataDir);            
 ```
 
-## Conclusion
+## Conclusión
 
-In this tutorial, we learned how to set free text annotation formatting in a PDF document using Aspose.PDF for .NET. The library provides a straightforward and efficient way to work with PDF documents programmatically, allowing developers to create and customize various types of annotations, including free text annotations. By following the step-by-step guide and using the provided C# source code, you can easily set up the environment, open a PDF document, and create a free text annotation with custom formatting. Aspose.PDF for .NET is a robust and reliable API that simplifies PDF document manipulation tasks, making it a valuable tool for .NET developers working with PDF files.
+En este tutorial, aprendimos cómo configurar el formato de anotación de texto libre en un documento PDF usando Aspose.PDF para .NET. La biblioteca proporciona una forma sencilla y eficiente de trabajar con documentos PDF mediante programación, lo que permite a los desarrolladores crear y personalizar varios tipos de anotaciones, incluidas anotaciones de texto libre. Si sigue la guía paso a paso y utiliza el código fuente C# proporcionado, puede configurar fácilmente el entorno, abrir un documento PDF y crear una anotación de texto libre con formato personalizado. Aspose.PDF para .NET es una API sólida y confiable que simplifica las tareas de manipulación de documentos PDF, lo que la convierte en una herramienta valiosa para los desarrolladores de .NET que trabajan con archivos PDF.
 
-### FAQ's
+### Preguntas frecuentes
 
-#### Q: What is a free text annotation in a PDF document?
+#### P: ¿Qué es una anotación de texto libre en un documento PDF?
 
-A: A free text annotation in a PDF document is a type of annotation that allows you to add text to the document without being tied to a specific location or structure. It is commonly used to provide comments, notes, or other additional information in the document.
+R: Una anotación de texto libre en un documento PDF es un tipo de anotación que le permite agregar texto al documento sin estar vinculado a una ubicación o estructura específica. Se utiliza comúnmente para proporcionar comentarios, notas u otra información adicional en el documento.
 
-#### Q: Can I customize the appearance of the free text annotation using Aspose.PDF for .NET?
+#### P: ¿Puedo personalizar la apariencia de la anotación de texto libre usando Aspose.PDF para .NET?
 
-A: Yes, you can customize various properties of the free text annotation, such as the font, font size, color, position, and more.
+R: Sí, puedes personalizar varias propiedades de la anotación de texto libre, como la fuente, el tamaño de la fuente, el color, la posición y más.
 
-#### Q: How do I specify the contents of the free text annotation?
+#### P: ¿Cómo especifico el contenido de la anotación de texto libre?
 
-A: To specify the contents of the free text annotation, you can set the `Contents` property of the `FreeTextAnnotation` object to the desired text.
+ R: Para especificar el contenido de la anotación de texto libre, puede configurar el`Contents` propiedad de la`FreeTextAnnotation` oponerse al texto deseado.
 
-#### Q: Can I add multiple free text annotations to a PDF document using Aspose.PDF for .NET?
+#### P: ¿Puedo agregar varias anotaciones de texto libre a un documento PDF usando Aspose.PDF para .NET?
 
-A: Yes, you can create multiple free text annotations in a PDF document by creating multiple instances of the `FreeTextAnnotation` object and adding them to different pages or locations in the document.
+ R: Sí, puede crear varias anotaciones de texto libre en un documento PDF creando varias instancias del`FreeTextAnnotation`objeto y agregarlos a diferentes páginas o ubicaciones en el documento.

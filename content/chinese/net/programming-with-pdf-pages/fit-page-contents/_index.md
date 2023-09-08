@@ -1,36 +1,36 @@
 ---
-title: Fit Page Contents In PDF File
-linktitle: Fit Page Contents In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Detailed step-by-step guide to adjusting page contents in PDF file using Aspose.PDF for .NET. Easy implementation and rewarding conclusion.
+title: 使页面内容适合 PDF 文件
+linktitle: 使页面内容适合 PDF 文件
+second_title: Aspose.PDF for .NET API 参考
+description: 使用 Aspose.PDF for .NET 调整 PDF 文件中页面内容的详细分步指南。易于实施和有益的结论。
 type: docs
 weight: 50
 url: /zh/net/programming-with-pdf-pages/fit-page-contents/
 ---
-In this tutorial, we'll walk you through the step-by-step process to adjust page contents in PDF file using Aspose.PDF for .NET. We'll explain the bundled C# source code and provide you with a comprehensive guide to help you understand and implement this feature in your own projects. At the end of this tutorial, you will know how to adjust the content of PDF pages using Aspose.PDF for .NET.
+在本教程中，我们将引导您完成使用 Aspose.PDF for .NET 调整 PDF 文件中的页面内容的分步过程。我们将解释捆绑的 C# 源代码，并为您提供全面的指南，帮助您理解并在自己的项目中实现此功能。在本教程结束时，您将了解如何使用 Aspose.PDF for .NET 调整 PDF 页面的内容。
 
-## Prerequisites
-Before you begin, make sure you have the following:
+## 先决条件
+在开始之前，请确保您具备以下条件：
 
-- A basic knowledge of the C# programming language
-- Aspose.PDF for .NET installed in your development environment
+- C# 编程语言的基础知识
+- 在您的开发环境中安装 Aspose.PDF for .NET
 
-## Step 1: Define the document directory
-First, you need to set the path to your documents directory. This is the location where your input PDF file is located. Replace "YOUR DOCUMENTS DIRECTORY" with the appropriate path.
+## 第1步：定义文档目录
+首先，您需要设置文档目录的路径。这是您输入的 PDF 文件所在的位置。将“您的文档目录”替换为适当的路径。
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Load the PDF document
-Then you can load the PDF document using the `Document` class of Aspose.PDF. Be sure to specify the correct path to the input PDF file.
+## 第 2 步：加载 PDF 文档
+然后您可以使用以下命令加载 PDF 文档`Document`Aspose.PDF 类。请务必指定输入 PDF 文件的正确路径。
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 3: Adjust page content
-Now you can cycle through all the pages of the document and adjust the content of each page according to the size of the media box. In the example provided, we adjust the width of the page to render it in landscape mode (landscape) keeping the same height. The new width is calculated based on the aspect ratio of the media box.
+## 第三步：调整页面内容
+现在您可以循环浏览文档的所有页面，并根据媒体框的大小调整每个页面的内容。在提供的示例中，我们调整页面的宽度，使其以横向模式（landscape）呈现，并保持相同的高度。新宽度是根据媒体框的长宽比计算的。
 
 ```csharp
 foreach(Page page in doc.Pages)
@@ -41,46 +41,46 @@ foreach(Page page in doc.Pages)
 }
 ```
 
-### Sample source code for Fit Page Contents using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 调整页面内容的示例源代码 
 
 ```csharp
 
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "input.pdf");
 foreach (Page page in doc.Pages)
 {
 	Rectangle r = page.MediaBox;
-	// New height the same
+	//新高度一样
 	double newHeight = r.Height;
-	// New width is expanded proportionally to make orientation landscape
-	// (we assume that previous orientation is portrait)
+	//新宽度按比例扩展以形成方向横向
+	//（我们假设之前的方向是纵向）
 	double newWidth = r.Height * r.Height / r.Width;
 }          
 
 ```
 
-## Conclusion
-In this tutorial, we learned how to adjust PDF page content using Aspose.PDF for .NET. By following the steps outlined above, you can easily implement this functionality in your own projects. Feel free to explore the Aspose.PDF documentation further to discover other useful features for working with PDF files.
+## 结论
+在本教程中，我们学习了如何使用 Aspose.PDF for .NET 调整 PDF 页面内容。通过执行上述步骤，您可以在自己的项目中轻松实现此功能。请随意进一步探索 Aspose.PDF 文档，以发现处理 PDF 文件的其他有用功能。
 
-### FAQ's for fit page contents in PDF file
+### PDF 文件中适合页面内容的常见问题解答
 
-#### Q: What does the "media box" represent in the context of PDF pages?
+#### 问：PDF 页面中的“媒体框”代表什么？
 
-A: In the context of PDF pages, the "media box" represents the bounding box that defines the physical dimensions of the page content. It defines the width, height, and location of the page content within the PDF document.
+答：在 PDF 页面的上下文中，“媒体框”表示定义页面内容的物理尺寸的边界框。它定义 PDF 文档中页面内容的宽度、高度和位置。
 
-#### Q: How does the provided C# source code adjust the page content?
+#### Q：提供的C#源码如何调整页面内容？
 
-A: The provided C# source code adjusts the page content by resizing each page's width to make it appear in landscape mode while keeping the same height. The new width is calculated based on the aspect ratio of the media box, ensuring that the content retains its original proportions.
+答：提供的 C# 源代码通过调整每个页面的宽度大小来调整页面内容，使其以横向模式显示，同时保持相同的高度。新的宽度是根据媒体框的长宽比计算的，确保内容保留其原始比例。
 
-#### Q: Can I adjust the page content to fit a specific size or aspect ratio?
+#### 问：我可以调整页面内容以适应特定的尺寸或宽高比吗？
 
-A: Yes, you can adjust the page content to fit a specific size or aspect ratio by modifying the calculation in the provided C# source code. For example, if you want to fit the page content into a fixed size (e.g., 8.5 x 11 inches), you can calculate the new width and height accordingly.
+答：是的，您可以通过修改提供的 C# 源代码中的计算来调整页面内容以适合特定的尺寸或宽高比。例如，如果您希望将页面内容调整为固定尺寸（例如，8.5 x 11 英寸），则可以相应地计算新的宽度和高度。
 
-#### Q: What will happen to the content on the page after adjusting the page size?
+#### Q：调整页面大小后，页面内容会发生什么变化？
 
-A: After adjusting the page size using the provided C# source code, the content on the page will be resized proportionally. If the original content's aspect ratio differs significantly from the new aspect ratio, the content may appear stretched or compressed.
+A：使用提供的C#源代码调整页面大小后，页面上的内容将按比例调整大小。如果原始内容的宽高比与新的宽高比显着不同，则内容可能会出现拉伸或压缩。
 
-#### Q: Can I adjust the content of specific pages instead of all pages in the PDF document?
+#### 问：我可以调整PDF文档中特定页面的内容而不是所有页面吗？
 
-A: Yes, you can adjust the content of specific pages instead of all pages in the PDF document. In the provided C# source code, the "foreach" loop iterates through all pages in the document. To adjust the content of specific pages, you can use conditional statements within the loop to target only the desired pages.
+答：是的，您可以调整 PDF 文档中特定页面的内容，而不是所有页面的内容。在提供的 C# 源代码中，“foreach”循环遍历文档中的所有页面。要调整特定页面的内容，您可以在循环中使用条件语句来仅定位所需的页面。

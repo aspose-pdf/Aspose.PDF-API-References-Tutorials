@@ -1,38 +1,38 @@
 ---
-title: Set Default Font Name
-linktitle: Set Default Font Name
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to set default font name in PDF file using Aspose.PDF for .NET.
+title: Définir le nom de la police par défaut
+linktitle: Définir le nom de la police par défaut
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Guide étape par étape pour définir le nom de police par défaut dans le fichier PDF à l'aide d'Aspose.PDF pour .NET.
 type: docs
 weight: 270
 url: /fr/net/document-conversion/set-default-font-name/
 ---
-In this tutorial, we will show you how to set the default font name in a PDF file using Aspose.PDF for .NET. Sometimes when you extract images from a PDF file, you may encounter missing font issues. By specifying a default font name, you can ensure that extracted text will be displayed correctly. Follow the steps below to set the default font name in a PDF file.
+Dans ce didacticiel, nous allons vous montrer comment définir le nom de police par défaut dans un fichier PDF à l'aide d'Aspose.PDF pour .NET. Parfois, lorsque vous extrayez des images d'un fichier PDF, vous pouvez rencontrer des problèmes de police manquante. En spécifiant un nom de police par défaut, vous pouvez vous assurer que le texte extrait s'affichera correctement. Suivez les étapes ci-dessous pour définir le nom de police par défaut dans un fichier PDF.
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## Conditions préalables
+Avant de commencer, assurez-vous de remplir les conditions préalables suivantes :
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- Connaissance de base du langage de programmation C#.
+- Bibliothèque Aspose.PDF pour .NET installée sur votre système.
+- Un environnement de développement tel que Visual Studio.
 
-## Step 1: Loading the PDF document
-The first step is to load the PDF document into a `Document` object. Use the following code:
+## Étape 1 : Chargement du document PDF
+ La première étape consiste à charger le document PDF dans un`Document` objet. Utilisez le code suivant :
 
 ```csharp
-// Path to the documents directory.
+// Chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 using (Document pdfDocument = new Document(dataDir + "input.pdf"))
 {
-     // Code to add
+     // Code à ajouter
 }
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where your PDF file is located.
+ Assurez-vous de remplacer`"YOUR DOCUMENTS DIRECTORY"` avec le répertoire réel où se trouve votre fichier PDF.
 
-## Step 2: Set default font name
-Next, we'll set the default font name using the `DefaultFontName` option of the `RenderingOptions` object. Use the following code:
+## Étape 2 : Définir le nom de la police par défaut
+ Ensuite, nous définirons le nom de la police par défaut en utilisant le`DefaultFontName` option du`RenderingOptions` objet. Utilisez le code suivant :
 
 ```csharp
 using (Document pdfDocument = new Document(dataDir + "input.pdf"))
@@ -45,26 +45,26 @@ using (Document pdfDocument = new Document(dataDir + "input.pdf"))
          ro.DefaultFontName = "Arial";
          pngDevice.RenderingOptions = ro;
         
-         // Code to add
+         // Code à ajouter
      }
 }
 ```
 
-Be sure to replace `"Arial"` with the desired font name.
+ Assurez-vous de remplacer`"Arial"` avec le nom de police souhaité.
 
-## Step 3: Image Extraction
-Next, we will extract the image from the specified page of the PDF document. Use the following code:
+## Étape 3 : Extraction d’images
+Ensuite, nous extrairons l'image de la page spécifiée du document PDF. Utilisez le code suivant :
 
 ```csharp
 pngDevice.Process(pdfDocument.Pages[1], imageStream);
 ```
 
-Be sure to specify the correct page number in `pdfDocument.Pages[1]`.
+ Assurez-vous de spécifier le numéro de page correct dans`pdfDocument.Pages[1]`.
 
-### Example source code for Set Default Font Name using Aspose.PDF for .NET
+### Exemple de code source pour définir le nom de police par défaut à l'aide d'Aspose.PDF pour .NET
 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 using (Document pdfDocument = new Document(dataDir + "input.pdf"))
@@ -82,26 +82,26 @@ using (Document pdfDocument = new Document(dataDir + "input.pdf"))
 ```
 
 ## Conclusion
-In this tutorial, we learned how to set the default font name in a PDF file using Aspose.PDF for .NET. By specifying a default font name, you can ensure that extracted text will be displayed correctly. Use this method to resolve missing font issues when extracting images from PDF files.
+Dans ce didacticiel, nous avons appris à définir le nom de police par défaut dans un fichier PDF à l'aide d'Aspose.PDF pour .NET. En spécifiant un nom de police par défaut, vous pouvez vous assurer que le texte extrait s'affichera correctement. Utilisez cette méthode pour résoudre les problèmes de police manquante lors de l'extraction d'images à partir de fichiers PDF.
 
-### FAQ's
+### FAQ
 
-#### Q: What is Aspose.PDF for .NET?
+#### Q : Qu'est-ce qu'Aspose.PDF pour .NET ?
 
-A: Aspose.PDF for .NET is a powerful library that enables developers to work with PDF documents in C# applications. It offers various functionalities, including setting the default font name in a PDF file.
+R : Aspose.PDF pour .NET est une bibliothèque puissante qui permet aux développeurs de travailler avec des documents PDF dans des applications C#. Il offre diverses fonctionnalités, notamment la définition du nom de police par défaut dans un fichier PDF.
 
-#### Q: Why would I need to set the default font name in a PDF file?
+#### Q : Pourquoi devrais-je définir le nom de police par défaut dans un fichier PDF ?
 
-A: Setting the default font name is useful when extracting text from a PDF document. If the PDF contains text with fonts that are not available on the extraction machine, specifying a default font name ensures correct text display.
+R : La définition du nom de police par défaut est utile lors de l'extraction de texte d'un document PDF. Si le PDF contient du texte avec des polices qui ne sont pas disponibles sur la machine d'extraction, la spécification d'un nom de police par défaut garantit un affichage correct du texte.
 
-#### Q: How can I load a PDF document and set the default font name using Aspose.PDF for .NET?
+#### Q : Comment puis-je charger un document PDF et définir le nom de la police par défaut à l'aide d'Aspose.PDF pour .NET ?
 
-A: To load a PDF document and set the default font name, you can use the `Document` class to load the PDF file and the `RenderingOptions.DefaultFontName` property to specify the desired default font name.
+ R : Pour charger un document PDF et définir le nom de la police par défaut, vous pouvez utiliser le`Document`classe pour charger le fichier PDF et le`RenderingOptions.DefaultFontName` propriété pour spécifier le nom de police par défaut souhaité.
 
-#### Q: Can I choose any font as the default font name?
+#### Q : Puis-je choisir n’importe quelle police comme nom de police par défaut ?
 
-A:Yes, you can choose any font that is available on the extraction machine as the default font name. Use a font that closely matches the missing fonts in the original PDF to ensure accurate text rendering.
+R : Oui, vous pouvez choisir n’importe quelle police disponible sur la machine d’extraction comme nom de police par défaut. Utilisez une police qui correspond étroitement aux polices manquantes dans le PDF d'origine pour garantir un rendu précis du texte.
 
-#### Q: Is setting the default font name a permanent change to the PDF file?
+#### Q : La définition du nom de police par défaut constitue-t-elle une modification permanente du fichier PDF ?
 
-A: No, setting the default font name using Aspose.PDF for .NET is a temporary change made during text extraction. It does not modify the original PDF file.
+R : Non, la définition du nom de police par défaut à l'aide d'Aspose.PDF pour .NET est une modification temporaire effectuée lors de l'extraction de texte. Il ne modifie pas le fichier PDF original.

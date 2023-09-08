@@ -1,36 +1,36 @@
 ---
-title: Determine Correct Password In PDF File
-linktitle: Determine Correct Password In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to determine the correct password in PDF file with Aspose.PDF for .NET.
+title: PDF Dosyasında Doğru Şifreyi Belirleyin
+linktitle: PDF Dosyasında Doğru Şifreyi Belirleyin
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile PDF dosyasında doğru şifreyi nasıl belirleyeceğinizi öğrenin.
 type: docs
 weight: 30
 url: /tr/net/programming-with-security-and-signatures/determine-correct-password/
 ---
-In this tutorial, we'll walk you through the process of determining the correct password in PDF file using Aspose.PDF for .NET. This feature allows you to check if a PDF file is password protected and find the correct password from a predefined list.
+Bu eğitimde, Aspose.PDF for .NET'i kullanarak PDF dosyasında doğru şifreyi belirleme sürecinde size yol göstereceğiz. Bu özellik, bir PDF dosyasının parola korumalı olup olmadığını kontrol etmenize ve önceden tanımlanmış bir listeden doğru parolayı bulmanıza olanak tanır.
 
-## Step 1: Prerequisites
+## 1. Adım: Önkoşullar
 
-Before you begin, make sure you have the following prerequisites:
+Başlamadan önce aşağıdaki önkoşullara sahip olduğunuzdan emin olun:
 
-- Basic knowledge of the C# programming language
-- Installing Visual Studio on your machine
-- Aspose.PDF library for .NET installed
+- C# programlama dili hakkında temel bilgi
+- Visual Studio'yu makinenize yükleme
+- .NET için Aspose.PDF kütüphanesi kuruldu
 
-## Step 2: Environment setup
+## 2. Adım: Ortam kurulumu
 
-To get started, follow these steps to set up your development environment:
+Başlamak için geliştirme ortamınızı ayarlamak üzere şu adımları izleyin:
 
-1. Open Visual Studio and create a new C# project.
-2. Import the required namespaces into your code file:
+1. Visual Studio'yu açın ve yeni bir C# projesi oluşturun.
+2. Gerekli ad alanlarını kod dosyanıza aktarın:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 3: Loading source PDF file
+## 3. Adım: Kaynak PDF dosyasını yükleme
 
-The first step is to upload the source PDF file you want to verify. In this example, we assume that you have a PDF file named "IsPasswordProtected.pdf" in the specified directory.
+İlk adım, doğrulamak istediğiniz kaynak PDF dosyasını yüklemektir. Bu örnekte belirtilen dizinde "IsPasswordProtected.pdf" adında bir PDF dosyanızın olduğunu varsayıyoruz.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -38,21 +38,21 @@ PdfFileInfo info = new PdfFileInfo();
 info.BindPdf(dataDir + "IsPasswordProtected.pdf");
 ```
 
-Be sure to replace the placeholders with the actual locations of your PDF file.
+Yer tutucuları PDF dosyanızın gerçek konumlarıyla değiştirdiğinizden emin olun.
 
-## Step 4: Determine Source PDF Encryption
+## Adım 4: Kaynak PDF Şifrelemesini Belirleyin
 
-Once you have uploaded the source PDF file, you can determine if it is encrypted using the `IsEncrypted` method of the `PdfFileInfo` object.
+Kaynak PDF dosyasını yükledikten sonra, şifreli olup olmadığını aşağıdaki düğmeyi kullanarak belirleyebilirsiniz:`IsEncrypted` yöntemi`PdfFileInfo` nesne.
 
 ```csharp
 Console.WriteLine("The file is password protected: " + info.IsEncrypted);
 ```
 
-This statement displays whether the PDF file is password protected or not.
+Bu ifade, PDF dosyasının parola korumalı olup olmadığını görüntüler.
 
-## Step 5: Finding the correct password
+## Adım 5: Doğru şifreyi bulma
 
-Next, we will search for the correct password using a predefined list of passwords. We go through each password in the list and try to load the PDF document with that password.
+Daha sonra, önceden tanımlanmış bir şifre listesini kullanarak doğru şifreyi arayacağız. Listedeki her şifreyi inceliyoruz ve PDF belgesini bu şifreyle yüklemeye çalışıyoruz.
 
 ```csharp
 String[] passwords = new String[5] { "test", "test1", "test2", "test3", "sample" };
@@ -71,17 +71,17 @@ Console.WriteLine("The password " + passwords[passwordcount] + " is not correct.
 }
 ```
 
-This loop tests each word of pass from the list. If the password is correct, the number of pages in the document is displayed. Otherwise, a message indicating that the password is not correct is displayed.
+Bu döngü listedeki her geçiş kelimesini test eder. Şifre doğruysa belgedeki sayfa sayısı görüntülenir. Aksi halde şifrenin doğru olmadığını belirten bir mesaj görüntülenir.
 
 
-### Sample source code for Determine Correct Password using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Doğru Şifreyi Belirlemek için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";            
-// Load source PDF file
+// Kaynak PDF dosyasını yükle
 PdfFileInfo info = new PdfFileInfo();
 info.BindPdf(dataDir + "IsPasswordProtected.pdf");
-// Determine if the source PDF is encrypted
+// Kaynak PDF'nin şifrelenip şifrelenmediğini belirleme
 Console.WriteLine("File is password protected " + info.IsEncrypted);
 String[] passwords = new String[5] { "test", "test1", "test2", "test3", "sample" };
 for (int passwordcount = 0; passwordcount < passwords.Length; passwordcount++)
@@ -99,48 +99,48 @@ for (int passwordcount = 0; passwordcount < passwords.Length; passwordcount++)
 }
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulation ! You have successfully determined the correct password for a PDF file using Aspose.PDF for .NET. This tutorial covered the step-by-step process, from verifying file encryption to finding the correct password from a predefined list. Now you can use this feature to check and find the correct password of your PDF files.
+Tebrikler! Aspose.PDF for .NET'i kullanarak bir PDF dosyası için doğru şifreyi başarıyla belirlediniz. Bu eğitimde, dosya şifrelemesinin doğrulanmasından önceden tanımlanmış bir listeden doğru şifrenin bulunmasına kadar adım adım süreç anlatılmıştır. Artık PDF dosyalarınızın doğru şifresini kontrol etmek ve bulmak için bu özelliği kullanabilirsiniz.
 
-### FAQ's for determine correct password in PDF file
+### PDF dosyasında doğru şifreyi belirlemek için SSS
 
-#### Q: What is the purpose of this tutorial?
+#### S: Bu eğitimin amacı nedir?
 
-A: This tutorial aims to guide you through the process of determining the correct password for a PDF file using Aspose.PDF for .NET. This feature allows you to check whether a PDF file is password protected and attempt to find the correct password from a predefined list.
+C: Bu eğitimin amacı, Aspose.PDF for .NET kullanarak bir PDF dosyası için doğru şifreyi belirleme sürecinde size rehberlik etmektir. Bu özellik, bir PDF dosyasının parola korumalı olup olmadığını kontrol etmenize ve önceden tanımlanmış bir listeden doğru parolayı bulmaya çalışmanıza olanak tanır.
 
-#### Q: What prerequisites are required before starting?
+#### S: Başlamadan önce hangi önkoşullar gereklidir?
 
-A: Before you begin, make sure you have a basic understanding of the C# programming language, have Visual Studio installed on your machine, and have the Aspose.PDF library for .NET installed.
+C: Başlamadan önce, C# programlama dili hakkında temel bilgiye sahip olduğunuzdan, makinenizde Visual Studio'nun kurulu olduğundan ve Aspose.PDF kütüphanesinin .NET için kurulu olduğundan emin olun.
 
-#### Q: How do I set up the development environment?
+#### S: Geliştirme ortamını nasıl kurarım?
 
-A: Follow the provided steps to set up your development environment, including creating a new C# project in Visual Studio, and importing the required namespaces.
+C: Visual Studio'da yeni bir C# projesi oluşturma ve gerekli ad alanlarını içe aktarma da dahil olmak üzere geliştirme ortamınızı kurmak için sağlanan adımları izleyin.
 
-#### Q: How do I determine if a PDF file is encrypted?
+#### S: Bir PDF dosyasının şifrelenip şifrelenmediğini nasıl belirleyebilirim?
 
-A: Use the `PdfFileInfo` class to bind the source PDF file. Then, use the `IsEncrypted` property to determine if the PDF file is password protected.
+ C: Kullan`PdfFileInfo` Kaynak PDF dosyasını bağlamak için sınıf. Daha sonra şunu kullanın:`IsEncrypted` PDF dosyasının parola korumalı olup olmadığını belirleme özelliği.
 
-#### Q: How can I find the correct password for a PDF file?
+#### S: Bir PDF dosyası için doğru şifreyi nasıl bulabilirim?
 
-A: After determining that the PDF file is encrypted, you can attempt to find the correct password by using a predefined list of passwords. The provided sample code demonstrates how to loop through the list, try each password, and determine if the password is correct.
+C: PDF dosyasının şifrelendiğini belirledikten sonra, önceden tanımlanmış bir şifre listesini kullanarak doğru şifreyi bulmayı deneyebilirsiniz. Sağlanan örnek kod, listede nasıl döngü yapılacağını, her parolanın nasıl deneneceğini ve parolanın doğru olup olmadığının nasıl belirleneceğini gösterir.
 
-#### Q: What happens if the correct password is found?
+#### S: Doğru şifre bulunursa ne olur?
 
-A: If the correct password is found, the sample code will display the number of pages in the PDF document.
+C: Doğru şifre bulunursa örnek kod, PDF belgesindeki sayfa sayısını gösterecektir.
 
-#### Q: What if the password is not correct?
+#### S: Şifre doğru değilse ne olur?
 
-A: If the password is not correct, the sample code will catch the `InvalidPasswordException` and display a message indicating that the password is not correct.
+ C: Şifre doğru değilse örnek kod,`InvalidPasswordException` ve şifrenin doğru olmadığını belirten bir mesaj görüntüleyin.
 
-#### Q: Can I use a different list of passwords?
+#### S: Farklı bir şifre listesi kullanabilir miyim?
 
-A: Yes, you can modify the `passwords` array in the sample code to include the passwords you want to test.
+ C: Evet, değiştirebilirsiniz`passwords` test etmek istediğiniz şifreleri içerecek şekilde örnek koddaki dizi.
 
-#### Q: How do I know the password has been successfully determined?
+#### S: Şifrenin başarıyla belirlendiğini nasıl bileceğim?
 
-A: If the sample code successfully loads the PDF document with a password and displays the number of pages, it means that the correct password has been determined.
+C: Örnek kod, PDF belgesini şifreyle başarıyla yüklüyor ve sayfa sayısını gösteriyorsa bu, doğru şifrenin belirlendiği anlamına gelir.
 
-#### Q: How can I ensure the security of my passwords while testing?
+#### S: Test sırasında şifrelerimin güvenliğini nasıl sağlayabilirim?
 
-A: Be cautious when using a predefined list of passwords, and avoid using sensitive or confidential passwords for testing purposes. Additionally, remove or modify the testing code before deploying your application.
+C: Önceden tanımlanmış bir şifre listesi kullanırken dikkatli olun ve hassas veya gizli şifreleri test amacıyla kullanmaktan kaçının. Ayrıca uygulamanızı dağıtmadan önce test kodunu kaldırın veya değiştirin.

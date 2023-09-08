@@ -1,17 +1,17 @@
 ---
-title: Create Application Link In PDF File
-linktitle: Create Application Link In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily create application links in PDF file with Aspose.PDF for .NET.
+title: Crea collegamento all'applicazione nel file PDF
+linktitle: Crea collegamento all'applicazione nel file PDF
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Crea facilmente collegamenti alle applicazioni in file PDF con Aspose.PDF per .NET.
 type: docs
 weight: 20
 url: /it/net/programming-with-links-and-actions/create-application-link/
 ---
-Creating an application link in PDF file allows you to create links to external applications, such as executable files or URLs. With Aspose.PDF for .NET, you can easily create app links by following the following source code:
+La creazione di un collegamento ad un'applicazione in un file PDF consente di creare collegamenti ad applicazioni esterne, come file eseguibili o URL. Con Aspose.PDF per .NET, puoi creare facilmente collegamenti alle app seguendo il seguente codice sorgente:
 
-## Step 1: Import required libraries
+## Passaggio 1: importa le librerie richieste
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Prima di iniziare, devi importare le librerie necessarie per il tuo progetto C#. Ecco la necessaria direttiva sulle importazioni:
 
 ```csharp
 using Aspose.Pdf;
@@ -19,25 +19,25 @@ using Aspose.Pdf.Annotations;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-## Step 2: Set path to documents folder
+## Passaggio 2: imposta il percorso della cartella dei documenti
 
-In this step, you need to specify the path to the folder containing the PDF file to which you want to add an app link. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ In questo passaggio, devi specificare il percorso della cartella contenente il file PDF a cui desideri aggiungere un collegamento all'app. Sostituire`"YOUR DOCUMENT DIRECTORY"`nel seguente codice con il percorso effettivo della cartella dei documenti:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Passaggio 3: apri il documento PDF
 
-Now we will open the PDF document to which we want to add an application link using the following code:
+Ora apriremo il documento PDF a cui vogliamo aggiungere un collegamento all'applicazione utilizzando il seguente codice:
 
 ```csharp
 Document document = new Document(dataDir + "CreateApplicationLink.pdf");
 ```
 
-## Step 4: Create the Application Link
+## Passaggio 4: creare il collegamento dell'applicazione
 
-In this step, we will create the application link using the `LinkAnnotation` annotation. We will specify the coordinates and area of the link, as well as the application launch action. Here is the corresponding code:
+ In questo passaggio creeremo il collegamento dell'applicazione utilizzando il file`LinkAnnotation`annotazione. Specificheremo le coordinate e l'area del collegamento, nonché l'azione di avvio dell'applicazione. Ecco il codice corrispondente:
 
 ```csharp
 Page page = document.Pages[1];
@@ -47,72 +47,72 @@ link. Action = new LaunchAction(document, dataDir + "CreateApplicationLink.pdf")
 page.Annotations.Add(link);
 ```
 
-## Step 5: Save the updated file
+## Passaggio 5: salva il file aggiornato
 
-Now let's save the updated PDF file using the `Save` method of the `document` object. Here is the corresponding code:
+ Ora salviamo il file PDF aggiornato utilizzando il file`Save` metodo del`document` oggetto. Ecco il codice corrispondente:
 
 ```csharp
 dataDir = dataDir + "CreateApplicationLink_out.pdf";
 document. Save(dataDir);
 ```
 
-### Sample source code for Create Application Link using Aspose.PDF for .NET 
+### Codice sorgente di esempio per Crea collegamento applicazione utilizzando Aspose.PDF per .NET 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Apri documento
 Document document = new Document( dataDir + "CreateApplicationLink.pdf");
-// Create link
+// Crea collegamento
 Page page = document.Pages[1];
 LinkAnnotation link = new LinkAnnotation(page, new Aspose.Pdf.Rectangle(100, 100, 300, 300));
 link.Color = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Green);
 link.Action = new LaunchAction(document, dataDir + "CreateApplicationLink.pdf");
 page.Annotations.Add(link);
 dataDir = dataDir + "CreateApplicationLink_out.pdf";
-// Save updated document
+// Salva documento aggiornato
 document.Save(dataDir);
 Console.WriteLine("\nApplication link created successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Conclusione
 
-Congratulation ! You now have a step-by-step guide to creating app links with Aspose.PDF for .NET. You can use this code to add links to external applications in your PDF documents.
+Congratulazioni! Ora hai una guida passo passo per creare collegamenti di app con Aspose.PDF per .NET. Puoi utilizzare questo codice per aggiungere collegamenti ad applicazioni esterne nei tuoi documenti PDF.
 
-Be sure to check out the official Aspose.PDF documentation for more information on the advanced features of interactive links.
+Assicurati di controllare la documentazione ufficiale Aspose.PDF per ulteriori informazioni sulle funzionalità avanzate dei collegamenti interattivi.
 
-### FAQ's for create application link in PDF file
+### Domande frequenti per creare il collegamento dell'applicazione nel file PDF
 
-#### Q: What are application links in PDF files?
+#### D: Cosa sono i collegamenti alle applicazioni nei file PDF?
 
-A: Application links in PDF files allow you to create links that open external applications, such as executable files or URLs, when clicked. This feature enhances interactivity and provides a convenient way to connect users to external resources.
+R: I collegamenti alle applicazioni nei file PDF consentono di creare collegamenti che aprono applicazioni esterne, come file eseguibili o URL, quando vengono selezionati. Questa funzionalità migliora l'interattività e fornisce un modo conveniente per connettere gli utenti a risorse esterne.
 
-#### Q: How does Aspose.PDF for .NET facilitate the creation of application links?
+#### D: In che modo Aspose.PDF per .NET facilita la creazione di collegamenti alle applicazioni?
 
-A: Aspose.PDF for .NET simplifies the process of creating application links by providing a comprehensive set of tools and APIs. The step-by-step tutorial provided in this guide demonstrates how to add app links to your PDF documents.
+R: Aspose.PDF per .NET semplifica il processo di creazione di collegamenti applicativi fornendo un set completo di strumenti e API. Il tutorial passo passo fornito in questa guida mostra come aggiungere collegamenti ad app ai tuoi documenti PDF.
 
-#### Q: Can I customize the appearance of application links?
+#### D: Posso personalizzare l'aspetto dei collegamenti alle applicazioni?
 
-A: Absolutely! With Aspose.PDF for .NET, you have control over the appearance of application links. You can specify attributes such as color, style, and hover effects to ensure a visually appealing user experience.
+R: Assolutamente! Con Aspose.PDF per .NET, hai il controllo sull'aspetto dei collegamenti delle applicazioni. Puoi specificare attributi come colore, stile ed effetti al passaggio del mouse per garantire un'esperienza utente visivamente accattivante.
 
-#### Q: Are there any restrictions on the types of external applications I can link to?
+#### D: Sono previste restrizioni sui tipi di applicazioni esterne a cui posso collegarmi?
 
-A: Aspose.PDF for .NET allows you to link to a variety of external applications, including executable files, URLs, and documents. However, it's important to consider user security and compatibility when linking to executable files.
+R: Aspose.PDF per .NET ti consente di collegarti a una varietà di applicazioni esterne, inclusi file eseguibili, URL e documenti. Tuttavia, è importante considerare la sicurezza e la compatibilità dell'utente quando si collega a file eseguibili.
 
-#### Q: How can I verify that my application links are working correctly?
+#### D: Come posso verificare che i collegamenti delle mie applicazioni funzionino correttamente?
 
-A: By following the tutorial's instructions and using the provided sample code, you can confidently create functional application links. You can then test the links by opening the generated PDF document and clicking on the application links.
+R: Seguendo le istruzioni del tutorial e utilizzando il codice di esempio fornito, puoi creare con sicurezza collegamenti applicativi funzionali. È quindi possibile testare i collegamenti aprendo il documento PDF generato e facendo clic sui collegamenti dell'applicazione.
 
-#### Q: Can I create multiple application links within a single PDF document?
+#### D: Posso creare più collegamenti ad applicazioni all'interno di un singolo documento PDF?
 
-A: Yes, you can create multiple application links within a single PDF document using the `LinkAnnotation` annotation. This allows you to provide users with access to different external applications from various sections of the document.
+ R: Sì, puoi creare più collegamenti ad applicazioni all'interno di un singolo documento PDF utilizzando il file`LinkAnnotation` annotazione. Ciò consente di fornire agli utenti l'accesso a diverse applicazioni esterne da varie sezioni del documento.
 
-#### Q: Are there any security considerations when using application links?
-A: When linking to executable files, it's important to ensure that the linked applications are secure and trustworthy. Additionally, consider user permissions and inform users about the potential launch of external applications.
+#### D: Esistono considerazioni sulla sicurezza quando si utilizzano i collegamenti alle applicazioni?
+R: Quando ci si collega a file eseguibili, è importante garantire che le applicazioni collegate siano sicure e affidabili. Inoltre, considera le autorizzazioni degli utenti e informa gli utenti sul potenziale lancio di applicazioni esterne.
 
-#### Q: How do I add application links to URLs or web pages?
+#### D: Come posso aggiungere collegamenti alle applicazioni a URL o pagine Web?
 
-A: While this tutorial focuses on creating links to external applications, Aspose.PDF for .NET also supports creating hyperlinks to URLs or web pages. You can adapt the provided code to create web links within your PDF documents.
+R: Sebbene questo tutorial si concentri sulla creazione di collegamenti ad applicazioni esterne, Aspose.PDF per .NET supporta anche la creazione di collegamenti ipertestuali a URL o pagine Web. Puoi adattare il codice fornito per creare collegamenti web all'interno dei tuoi documenti PDF.
 
-#### Q: Can I use Aspose.PDF for .NET to extract information from linked external applications?
+#### D: Posso utilizzare Aspose.PDF per .NET per estrarre informazioni da applicazioni esterne collegate?
 
-A: Yes, Aspose.PDF for .NET provides capabilities to extract and manipulate information from linked external applications. You can explore the library's extensive features to perform various tasks related to linked content.
+R: Sì, Aspose.PDF per .NET fornisce funzionalità per estrarre e manipolare informazioni da applicazioni esterne collegate. Puoi esplorare le estese funzionalità della libreria per eseguire varie attività relative al contenuto collegato.

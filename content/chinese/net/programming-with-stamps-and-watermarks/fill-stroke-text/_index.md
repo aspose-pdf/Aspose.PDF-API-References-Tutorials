@@ -1,165 +1,165 @@
 ---
-title: Fill Stroke Text In PDF File
-linktitle: Fill Stroke Text In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to easily fill and outline text in PDF file with Aspose.PDF for .NET.
+title: 在 PDF 文件中填充描边文本
+linktitle: 在 PDF 文件中填充描边文本
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 轻松填充 PDF 文件中的文本并为其添加轮廓。
 type: docs
 weight: 90
 url: /zh/net/programming-with-stamps-and-watermarks/fill-stroke-text/
 ---
-In this tutorial, we will take you step by step on how to fill and outline text in PDF file using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to apply fill and outline colors to text in the PDF file.
+在本教程中，我们将逐步指导您如何使用 Aspose.PDF for .NET 在 PDF 文件中填充和轮廓文本。我们将向您展示如何使用提供的 C# 源代码将填充和轮廓颜色应用于 PDF 文件中的文本。
 
-## Step 1: Setting up the environment
+## 第一步：搭建环境
 
-Before you begin, make sure you have the following:
+在开始之前，请确保您具备以下条件：
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- 已安装的 .NET 开发环境。
+- 下载用于 .NET 的 Aspose.PDF 库并在您的项目中引用。
 
-## Step 2: Creating the TextState Object
+## 第 2 步：创建 TextState 对象
 
-The first step is to create a TextState object to pass the advanced properties. Here's how:
+第一步是创建一个 TextState 对象来传递高级属性。就是这样：
 
 ```csharp
-// Create TextState object to transfer advanced properties
+//创建 TextState 对象以传递高级属性
 TextState ts = new TextState();
 
-// Set outline color
+//设置轮廓颜色
 ts.StrokingColor = Color.Gray;
 
-// Define the text rendering mode
+//定义文本渲染模式
 ts.RenderingMode = TextRenderingMode.StrokeText;
 ```
 
-The above code creates a new TextState object and sets the outline color as well as how the text is rendered.
+上面的代码创建一个新的 TextState 对象并设置轮廓颜色以及文本的呈现方式。
 
-## Step 3: Loading the PDF document
+## 第 3 步：加载 PDF 文档
 
-Now that the TextState object is ready, we can load the PDF document where we want to apply the text fill and outline. Here's how:
+现在 TextState 对象已准备就绪，我们可以在要应用文本填充和轮廓的位置加载 PDF 文档。就是这样：
 
 ```csharp
-// Load the PDF document as input
+//加载 PDF 文档作为输入
 Facades.PdfFileStamp fileStamp = new Facades.PdfFileStamp(new Aspose.Pdf.Document(dataDir + "input.pdf"));
 ```
 
-The code above loads the existing PDF document using the PdfFileStamp class from the Aspose.PDF.Facades library.
+上面的代码使用 Aspose.PDF.Facades 库中的 PdfFileStamp 类加载现有 PDF 文档。
 
-## Step 4: Add Fill and Stroke to Text
+## 第 4 步：为文本添加填充和描边
 
-Now that the PDF document is loaded, we can add the fill and outline to the text. Here's how:
+现在 PDF 文档已加载，我们可以向文本添加填充和轮廓。就是这样：
 
 ```csharp
-// Create a stamp (Stamp) with the defined text and properties
+//使用定义的文本和属性创建图章（Stamp）
 Aspose.Pdf.Facades.Stamp stamp = new Aspose.Pdf.Facades.Stamp();
 stamp.BindLogo(new Facades.FormattedText("PAID IN FULL", System.Drawing.Color.Gray, "Arial", Facades.EncodingType.Winansi, true, 78));
 
-// Bind the TextState object
+//绑定 TextState 对象
 stamp.BindTextState(ts);
 
-// Set origin X, Y
+//设置原点X、Y
 stamp.SetOrigin(100, 100);
 stamp. Opacity = 5;
 stamp.BlendingSpace = Facades.BlendingColorSpace.DeviceRGB;
 stamp.Rotation = 45.0F;
 stamp. IsBackground = false;
 
-// Add the stamp to the document
+//将图章添加到文档中
 fileStamp.AddStamp(stamp);
 ```
 
-The above code creates a Stamp with the specified text and defined Fill and Stroke properties.
+上面的代码创建一个具有指定文本和定义的填充和描边属性的图章。
 
-## Step 5: Save the output document
+## 步骤5：保存输出文档
 
-Once the text stamp is added, we can save the modified PDF document. Here's how:
+添加文本图章后，我们就可以保存修改后的PDF文档。就是这样：
 
 ```csharp
-// Save the modified document
+//保存修改后的文档
 fileStamp.Save(dataDir + "output_out.pdf");
 fileStamp.Close();
 ```
 
-The above code saves the edited PDF document to the specified directory.
+上述代码将编辑后的PDF文档保存到指定目录。
 
-### Sample source code for Fill Stroke Text using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 填充描边文本的示例源代码 
 ```csharp
 
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create TextState object to transfer advanced properties
+//创建 TextState 对象以传递高级属性
 TextState ts = new TextState();
 
-// Set color for stroke
+//设置描边颜色
 ts.StrokingColor = Color.Gray;
 
-// Set text rendering mode
+//设置文本渲染模式
 ts.RenderingMode = TextRenderingMode.StrokeText;
 
-// Load an input PDF document
+//加载输入 PDF 文档
 Facades.PdfFileStamp fileStamp = new Facades.PdfFileStamp(new Aspose.Pdf.Document(dataDir + "input.pdf"));
 Aspose.Pdf.Facades.Stamp stamp = new Aspose.Pdf.Facades.Stamp();
 stamp.BindLogo(new Facades.FormattedText("PAID IN FULL", System.Drawing.Color.Gray, "Arial", Facades.EncodingType.Winansi, true, 78));
 
-// Bind TextState
+//绑定文本状态
 stamp.BindTextState(ts);
 
-// Set X,Y origin
+//设置X、Y原点
 stamp.SetOrigin(100, 100);
 stamp.Opacity = 5;
 stamp.BlendingSpace = Facades.BlendingColorSpace.DeviceRGB;
 stamp.Rotation = 45.0F;
 stamp.IsBackground = false;
 
-// Add Stamp
+//添加图章
 fileStamp.AddStamp(stamp);
 fileStamp.Save(dataDir + "ouput_out.pdf");
 fileStamp.Close();
 
 ```
 
-## Conclusion
+## 结论
 
-Congratulation ! You have learned how to fill and outline text in a PDF document using Aspose.PDF for .NET. Now you can apply this knowledge to customize fill and outline colors in your PDF documents.
+恭喜！您已经学习了如何使用 Aspose.PDF for .NET 在 PDF 文档中填充和轮廓文本。现在，您可以应用这些知识来自定义 PDF 文档中的填充和轮廓颜色。
 
-### FAQ's for fill stroke text in PDF file
+### PDF 文件中填充描边文本的常见问题解答
 
-#### Q: What does it mean to fill and outline text in a PDF document, and when might I need to do so?
+#### 问：在 PDF 文档中填充和概述文本意味着什么？何时需要这样做？
 
-A: Filling and outlining text in a PDF document involves applying colors to the interior of the text characters (fill) and to the borders around the text (outline). This can be used to enhance the visual appearance of the text, create emphasis, or highlight specific content within the PDF.
+答：在 PDF 文档中填充和轮廓文本涉及将颜色应用于文本字符的内部（填充）和文本周围的边框（轮廓）。这可用于增强文本的视觉外观、强调或突出显示 PDF 中的特定内容。
 
-#### Q: How does the provided C# source code accomplish filling and outlining text in a PDF file?
+#### 问：提供的C#源代码如何完成PDF文件中的文本填充和轮廓显示？
 
-A: The provided source code demonstrates how to create a `TextState` object to define advanced text properties, such as outline color and rendering mode. It then uses Aspose.PDF.Facades to load an existing PDF document, create a stamp containing the text with specified fill and stroke properties, and add the stamp to the document.
+答：提供的源代码演示了如何创建`TextState`对象来定义高级文本属性，例如轮廓颜色和渲染模式。然后，它使用 Aspose.PDF.Facades 加载现有 PDF 文档，创建包含具有指定填充和描边属性的文本的图章，并将图章添加到文档中。
 
-#### Q: What is the purpose of the `TextState` object in the code?
+#### 问：这样做的目的是什么`TextState` object in the code?
 
-A: The `TextState` object is used to define advanced text properties, including the color of the text outline (stroke) and the rendering mode. It allows you to customize how the text appears in terms of stroke and fill.
+答： 的`TextState`对象用于定义高级文本属性，包括文本轮廓（描边）的颜色和渲染模式。它允许您自定义文本在描边和填充方面的显示方式。
 
-#### Q: Can I apply different fill and outline colors to different parts of the same text?
+#### 问：我可以对同一文本的不同部分应用不同的填充和轮廓颜色吗？
 
-A: Yes, you can modify the code to create different `TextState` objects with distinct fill and outline colors and apply them to specific parts of the text using separate `Stamp` objects.
+ A：是的，您可以修改代码来创建不同的`TextState`具有不同填充和轮廓颜色的对象，并使用单独的方法将它们应用到文本的特定部分`Stamp`对象。
 
-#### Q: Can I apply fill and outline colors to text that is already present in the PDF document?
+#### 问：我可以将填充颜色和轮廓颜色应用到 PDF 文档中已有的文本吗？
 
-A: Yes, you can use similar principles to apply fill and outline colors to existing text in the PDF document by selecting the appropriate text objects and adding them as stamps with the desired `TextState` properties.
+答：是的，您可以使用类似的原理将填充和轮廓颜色应用到 PDF 文档中的现有文本，方法是选择适当的文本对象并将其添加为具有所需颜色的图章。`TextState`特性。
 
-#### Q: How can I adjust the opacity and blending of the filled and outlined text?
+#### 问：如何调整填充文本和轮廓文本的不透明度和混合？
 
-A: The provided code allows you to set the opacity and blending properties of the stamp using the `Opacity` and `BlendingSpace` properties, respectively. You can adjust these values to achieve the desired visual effect.
+答：提供的代码允许您使用以下命令设置图章的不透明度和混合属性`Opacity`和`BlendingSpace`属性，分别。您可以调整这些值以达到所需的视觉效果。
 
-#### Q: How can I apply different fill and outline colors to multiple stamps within the same PDF document?
+#### 问：如何对同一 PDF 文档中的多个图章应用不同的填充和轮廓颜色？
 
-A: You can create multiple `TextState` objects with different fill and outline colors, and then create separate `Stamp` objects for each set of text with distinct colors. Add these stamps to the same PDF document using the `PdfFileStamp` class.
+答：可以创建多个`TextState`具有不同填充和轮廓颜色的对象，然后创建单独的`Stamp`每组文本的对象具有不同的颜色。使用以下命令将这些图章添加到同一 PDF 文档中`PdfFileStamp`班级。
 
-#### Q: Can I use fonts other than Arial for the outlined and filled text?
+#### 问：我可以使用 Arial 以外的字体来显示轮廓文本和填充文本吗？
 
-A: Yes, you can change the font by modifying the font name parameter in the `FormattedText` constructor when creating the stamp. You can use any font available on your system.
+ A：是的，您可以通过修改字体名称参数来更改字体`FormattedText`创建图章时的构造函数。您可以使用系统上可用的任何字体。
 
-#### Q: How can I modify the rotation angle of the outlined and filled text?
+#### 问：如何修改轮廓文本和填充文本的旋转角度？
 
-A: The provided code allows you to set the rotation angle of the stamp using the `Rotation` property. You can adjust this property to specify the desired rotation angle for the text.
+答：提供的代码允许您使用设置图章的旋转角度`Rotation`财产。您可以调整此属性来指定文本所需的旋转角度。
 
-#### Q: How can I control the position and size of the outlined and filled text on the page?
+#### 问：如何控制页面上轮廓文本和填充文本的位置和大小？
 
-A: You can use the `SetOrigin` method of the `Stamp` object to set the X and Y coordinates of the stamp's position on the page. Additionally, you can adjust the font size in the `FormattedText` constructor to control the size of the text.
+答：您可以使用`SetOrigin`的方法`Stamp`对象设置页面上图章位置的 X 和 Y 坐标。另外，您还可以调整字体大小`FormattedText`构造函数来控制文本的大小。

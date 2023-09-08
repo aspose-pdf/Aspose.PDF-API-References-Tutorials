@@ -1,74 +1,74 @@
 ---
-title: Search And Get Text All
-linktitle: Search And Get Text All
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to search and get text from all pages of a PDF document using Aspose.PDF for .NET.
+title: Rechercher et obtenir du texte tout
+linktitle: Rechercher et obtenir du texte tout
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment rechercher et obtenir du texte sur toutes les pages d'un document PDF à l'aide d'Aspose.PDF pour .NET.
 type: docs
 weight: 420
 url: /fr/net/programming-with-text/search-and-get-text-all/
 ---
-This tutorial explains how to use Aspose.PDF for .NET to search and get text from all pages of a PDF document. The provided C# source code demonstrates the process step by step.
+Ce didacticiel explique comment utiliser Aspose.PDF pour .NET pour rechercher et obtenir du texte sur toutes les pages d'un document PDF. Le code source C# fourni illustre le processus étape par étape.
 
-## Prerequisites
+## Conditions préalables
 
-Before proceeding with the tutorial, make sure you have the following:
+Avant de poursuivre le didacticiel, assurez-vous d'avoir les éléments suivants :
 
-- Basic knowledge of C# programming language.
-- Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to install it in your project.
+- Connaissance de base du langage de programmation C#.
+- Aspose.PDF pour la bibliothèque .NET installée. Vous pouvez l'obtenir sur le site Web Aspose ou utiliser NuGet pour l'installer dans votre projet.
 
-## Step 1: Set up the project
+## Étape 1 : Configurer le projet
 
-Start by creating a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library.
+Commencez par créer un nouveau projet C# dans votre environnement de développement intégré (IDE) préféré et ajoutez une référence à la bibliothèque Aspose.PDF pour .NET.
 
-## Step 2: Import necessary namespaces
+## Étape 2 : Importer les espaces de noms nécessaires
 
-Add the following using directives at the beginning of your C# file to import the required namespaces:
+Ajoutez les directives using suivantes au début de votre fichier C# pour importer les espaces de noms requis :
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Load the PDF document
+## Étape 3 : Charger le document PDF
 
-Set the path to your PDF document directory and load the document using the `Document` class:
+ Définissez le chemin d'accès à votre répertoire de documents PDF et chargez le document à l'aide du`Document` classe:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
 ```
 
-Make sure to replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ Assurez-vous de remplacer`"YOUR DOCUMENT DIRECTORY"` avec le chemin réel vers votre répertoire de documents.
 
-## Step 4: Search and extract text
+## Étape 4 : Rechercher et extraire du texte
 
-Create a `TextFragmentAbsorber` object to find all instances of the input search phrase:
+ Créer un`TextFragmentAbsorber` objet pour trouver toutes les instances de la phrase de recherche saisie :
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
 ```
 
-Replace `"text"` with the actual text you want to search for.
+ Remplacer`"text"` avec le texte réel que vous souhaitez rechercher.
 
-## Step 5: Search on all pages
+## Étape 5 : Rechercher sur toutes les pages
 
-Accept the absorber for all the pages of the document:
+Acceptez l'absorbeur pour toutes les pages du document :
 
 ```csharp
 pdfDocument.Pages.Accept(textFragmentAbsorber);
 ```
 
-## Step 6: get extracted text fragments
+## Étape 6 : obtenir des fragments de texte extraits
 
-Get the extracted text fragments using the `TextFragments` property of the `TextFragmentAbsorber` object:
+Obtenez les fragments de texte extraits en utilisant le`TextFragments` propriété du`TextFragmentAbsorber` objet:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
 ```
 
-## Step 7: Loop through the text fragments
+## Étape 7 : Parcourez les fragments de texte
 
-Loop through the getd text fragments and access their properties:
+Parcourez les fragments de texte obtenus et accédez à leurs propriétés :
 
 ```csharp
 foreach (TextFragment textFragment in textFragmentCollection)
@@ -86,21 +86,21 @@ foreach (TextFragment textFragment in textFragmentCollection)
 }
 ```
 
-You can modify the code within the loop to perform further actions on each text fragment.
+Vous pouvez modifier le code dans la boucle pour effectuer d'autres actions sur chaque fragment de texte.
 
-### Sample source code for Search And Get Text All using Aspose.PDF for .NET 
+### Exemple de code source pour Rechercher et obtenir du texte à l'aide d'Aspose.PDF pour .NET 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Ouvrir le document
 Document pdfDocument = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
-// Create TextAbsorber object to find all instances of the input search phrase
+// Créez un objet TextAbsorber pour trouver toutes les instances de la phrase de recherche d'entrée
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
-// Accept the absorber for all the pages
+// Acceptez l'absorbeur pour toutes les pages
 pdfDocument.Pages.Accept(textFragmentAbsorber);
-// Get the extracted text fragments
+// Obtenez les fragments de texte extraits
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-// Loop through the fragments
+// Parcourez les fragments
 foreach (TextFragment textFragment in textFragmentCollection)
 {
 	Console.WriteLine("Text : {0} ", textFragment.Text);
@@ -118,42 +118,42 @@ foreach (TextFragment textFragment in textFragmentCollection)
 
 ## Conclusion
 
-Congratulations! You have successfully learned how to search and get text from all pages of a PDF document using Aspose.PDF for .NET. This tutorial provided a step-by-step guide, from loading the document to accessing the extracted text fragments. You can now incorporate this code into your own C# projects to analyze and process text content in PDF files.
+Toutes nos félicitations! Vous avez appris avec succès comment rechercher et obtenir du texte à partir de toutes les pages d'un document PDF à l'aide d'Aspose.PDF pour .NET. Ce didacticiel a fourni un guide étape par étape, depuis le chargement du document jusqu'à l'accès aux fragments de texte extraits. Vous pouvez désormais intégrer ce code dans vos propres projets C# pour analyser et traiter le contenu textuel des fichiers PDF.
 
-### FAQ's
+### FAQ
 
-#### Q: What is the purpose of the "Search And Get Text All" tutorial?
+#### Q : Quel est l'objectif du didacticiel « Rechercher et obtenir tout le texte » ?
 
-A: The "Search And Get Text All" tutorial demonstrates how to utilize the Aspose.PDF library for .NET to search and extract text from all pages of a PDF document. The tutorial provides step-by-step instructions along with sample C# code to perform text search and retrieval.
+R : Le didacticiel « Rechercher et obtenir tout le texte » montre comment utiliser la bibliothèque Aspose.PDF pour .NET pour rechercher et extraire du texte de toutes les pages d'un document PDF. Le didacticiel fournit des instructions étape par étape ainsi qu'un exemple de code C# pour effectuer une recherche et une récupération de texte.
 
-#### Q: How does this tutorial help in extracting text from PDF documents?
+#### Q : Comment ce didacticiel aide-t-il à extraire du texte à partir de documents PDF ?
 
-A: This tutorial guides you through the process of extracting text from all pages of a PDF document. It uses the Aspose.PDF library to locate specific text phrases and retrieve associated information, such as position, font properties, and colors.
+R : Ce didacticiel vous guide tout au long du processus d'extraction de texte de toutes les pages d'un document PDF. Il utilise la bibliothèque Aspose.PDF pour localiser des phrases de texte spécifiques et récupérer les informations associées, telles que la position, les propriétés de la police et les couleurs.
 
-#### Q: What are the prerequisites for following this tutorial?
+#### Q : Quels sont les prérequis pour suivre ce tutoriel ?
 
-A: Before starting this tutorial, you should have a basic understanding of the C# programming language. Additionally, you need to have the Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to integrate it into your project.
+R : Avant de commencer ce didacticiel, vous devez avoir une compréhension de base du langage de programmation C#. De plus, vous devez avoir installé la bibliothèque Aspose.PDF pour .NET. Vous pouvez l'obtenir sur le site Web Aspose ou utiliser NuGet pour l'intégrer à votre projet.
 
-#### Q: How do I set up my project to follow this tutorial?
+#### Q : Comment configurer mon projet pour suivre ce tutoriel ?
 
-A: To get started, create a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library. This will allow you to access the library's functionality in your project.
+R : Pour commencer, créez un nouveau projet C# dans votre environnement de développement intégré (IDE) préféré et ajoutez une référence à la bibliothèque Aspose.PDF pour .NET. Cela vous permettra d'accéder aux fonctionnalités de la bibliothèque dans votre projet.
 
-#### Q: How do I search for specific text within a PDF document?
+#### Q : Comment rechercher un texte spécifique dans un document PDF ?
 
-A: You can use the `TextFragmentAbsorber` class to find instances of a specific search phrase within the PDF document. By creating an instance of this class and specifying the target text, you can capture all occurrences of that text.
+R : Vous pouvez utiliser le`TextFragmentAbsorber`classe pour trouver des instances d’une expression de recherche spécifique dans le document PDF. En créant une instance de cette classe et en spécifiant le texte cible, vous pouvez capturer toutes les occurrences de ce texte.
 
-#### Q: Can I search for text across all pages of the PDF document?
+#### Q : Puis-je rechercher du texte sur toutes les pages du document PDF ?
 
-A: Yes, the tutorial demonstrates how to search for text across all pages of the PDF document. The `pdfDocument.Pages.Accept(textFragmentAbsorber)` method is used to accept the absorber for all the pages, allowing you to search for the desired text on every page.
+ R : Oui, le didacticiel montre comment rechercher du texte sur toutes les pages du document PDF. Le`pdfDocument.Pages.Accept(textFragmentAbsorber)` La méthode est utilisée pour accepter l'absorbeur pour toutes les pages, vous permettant de rechercher le texte souhaité sur chaque page.
 
-#### Q: How do I access the extracted text fragments?
+#### Q : Comment puis-je accéder aux fragments de texte extraits ?
 
-A: After searching for the text, you can access the extracted text fragments using the `TextFragments` property of the `TextFragmentAbsorber` object. This property provides access to a collection of `TextFragment` objects that contain the extracted text and related information.
+ R : Après avoir recherché le texte, vous pouvez accéder aux fragments de texte extraits en utilisant le`TextFragments` propriété du`TextFragmentAbsorber` objet. Cette propriété donne accès à une collection de`TextFragment` objets qui contiennent le texte extrait et les informations associées.
 
-#### Q: What information can I retrieve from the extracted text fragments?
+#### Q : Quelles informations puis-je récupérer à partir des fragments de texte extraits ?
 
-A: You can retrieve various details from the extracted text fragments, such as the actual text content, position (X and Y coordinates), font information (name, size, color, etc.), and more. The tutorial's sample code demonstrates how to access and print these details.
+R : Vous pouvez récupérer divers détails des fragments de texte extraits, tels que le contenu réel du texte, la position (coordonnées X et Y), les informations sur la police (nom, taille, couleur, etc.), et bien plus encore. L'exemple de code du didacticiel montre comment accéder à ces détails et les imprimer.
 
-#### Q: Can I perform further actions on the extracted text fragments?
+#### Q : Puis-je effectuer d’autres actions sur les fragments de texte extraits ?
 
-A: Absolutely. Once you have the extracted text fragments, you can modify the code within the loop to perform custom actions on each fragment. This could include saving the extracted text, analyzing text patterns, or applying formatting changes.
+R : Absolument. Une fois que vous disposez des fragments de texte extraits, vous pouvez modifier le code dans la boucle pour effectuer des actions personnalisées sur chaque fragment. Cela peut inclure l'enregistrement du texte extrait, l'analyse des modèles de texte ou l'application de modifications de formatage.

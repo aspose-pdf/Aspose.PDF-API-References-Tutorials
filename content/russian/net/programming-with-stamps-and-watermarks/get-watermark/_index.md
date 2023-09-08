@@ -1,59 +1,59 @@
 ---
-title: Get Watermark From PDF File
-linktitle: Get Watermark From PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract watermarks from PDF file with Aspose.PDF for .NET.
+title: Получить водяной знак из PDF-файла
+linktitle: Получить водяной знак из PDF-файла
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как извлечь водяные знаки из PDF-файла с помощью Aspose.PDF для .NET.
 type: docs
 weight: 100
 url: /ru/net/programming-with-stamps-and-watermarks/get-watermark/
 ---
-In this tutorial, we will take you step by step on how to get a watermark from PDF file using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to iterate through the artifacts of a specific page and get the watermark type, text, and location.
+В этом уроке мы шаг за шагом покажем вам, как получить водяной знак из файла PDF с помощью Aspose.PDF для .NET. Мы покажем вам, как использовать предоставленный исходный код C# для перебора артефактов конкретной страницы и получения типа, текста и местоположения водяного знака.
 
-## Step 1: Setting up the environment
+## Шаг 1. Настройка среды
 
-Before you begin, make sure you have the following:
+Прежде чем начать, убедитесь, что у вас есть следующее:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Установленная среда разработки .NET.
+- Библиотека Aspose.PDF для .NET загружена и используется в вашем проекте.
 
-## Step 2: Loading the PDF document
+## Шаг 2. Загрузка PDF-документа
 
-The first step is to load the existing PDF document into your project. Here's how:
+Первым шагом является загрузка существующего PDF-документа в ваш проект. Вот как:
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the PDF document
+//Откройте PDF-документ
 Document pdfDocument = new Document(dataDir + "watermark.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+Обязательно замените «КАТАЛОГ ВАШИХ ДОКУМЕНТОВ» фактическим путем к каталогу, в котором находится ваш PDF-документ.
 
-## Step 3: Getting the watermark
+## Шаг 3. Получение водяного знака
 
-Now that you have loaded the PDF document, you can iterate through the specific page artifacts to get the watermark information. Here's how:
+Теперь, когда вы загрузили PDF-документ, вы можете перебирать определенные артефакты страницы, чтобы получить информацию о водяных знаках. Вот как:
 
 ```csharp
-// Browse artifacts and get watermark subtype, text and location
+// Просмотрите артефакты и получите подтип, текст и местоположение водяного знака.
 foreach(Artifact artifact in pdfDocument.Pages[1].Artifacts)
 {
      Console.WriteLine(artifact.Subtype + " " + artifact.Text + " " + artifact.Rectangle);
 }
 ```
 
-The above code loops through all artifacts on the first page of the PDF document and displays the subtype, text, and rectangle (location) of each watermark encountered.
+Приведенный выше код проходит через все артефакты на первой странице PDF-документа и отображает подтип, текст и прямоугольник (расположение) каждого встреченного водяного знака.
 
-### Sample source code for Get Watermark using Aspose.PDF for .NET 
+### Пример исходного кода для получения водяного знака с помощью Aspose.PDF для .NET 
 ```csharp
 
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Открыть документ
 Document pdfDocument = new Document( dataDir +  "watermark.pdf");
 
-// Iterate through and get tub-type, text and location of artifact
+// Выполните итерацию и получите тип ванны, текст и местоположение артефакта.
 foreach (Artifact artifact in pdfDocument.Pages[1].Artifacts)
 {
 	Console.WriteLine(artifact.Subtype + " " + artifact.Text + " " + artifact.Rectangle);
@@ -61,48 +61,48 @@ foreach (Artifact artifact in pdfDocument.Pages[1].Artifacts)
 
 ```
 
-## Conclusion
+## Заключение
 
-Congratulation ! You have learned how to get watermark information from a PDF document using Aspose.PDF for .NET. Now you can use this knowledge to analyze and process watermarks in your PDF documents.
+Поздравляем! Вы узнали, как получить информацию о водяных знаках из PDF-документа с помощью Aspose.PDF для .NET. Теперь вы можете использовать эти знания для анализа и обработки водяных знаков в ваших PDF-документах.
 
-### FAQ's for get watermark from PDF file
+### Часто задаваемые вопросы по получению водяного знака из PDF-файла
 
-#### Q: What is a watermark in a PDF document, and why would I need to extract its information?
+#### Вопрос: Что такое водяной знак в PDF-документе и зачем мне нужно извлекать его информацию?
 
-A: A watermark in a PDF document is a recognizable image or text that is superimposed onto the content of the document, often to indicate its status, ownership, or confidential nature. Extracting watermark information can be useful for analyzing document authenticity, identifying document source, or processing documents based on watermark presence.
+О: Водяной знак в PDF-документе — это узнаваемое изображение или текст, который накладывается на содержимое документа, часто для обозначения его статуса, владельца или конфиденциального характера. Извлечение информации о водяных знаках может быть полезно для анализа подлинности документа, определения источника документа или обработки документов на основе наличия водяных знаков.
 
-#### Q: How does the provided C# source code help in extracting watermark information from a PDF file?
+#### Вопрос: Как предоставленный исходный код C# помогает извлечь информацию о водяных знаках из файла PDF?
 
-A: The provided code demonstrates how to load an existing PDF document, iterate through the artifacts of a specific page, and extract information about watermarks. It does this by accessing the `Subtype`, `Text`, and `Rectangle` properties of each artifact.
+ О: Предоставленный код демонстрирует, как загрузить существующий PDF-документ, перебрать артефакты конкретной страницы и извлечь информацию о водяных знаках. Это делается путем доступа к`Subtype`, `Text` , и`Rectangle` свойства каждого артефакта.
 
-#### Q: What does the `Subtype` property of an artifact represent?
+####  Вопрос: Что означает`Subtype` property of an artifact represent?
 
-A: The `Subtype` property of an artifact represents the type of the artifact. For watermarks, it indicates that the artifact is a watermark.
+ А:`Subtype` Свойство артефакта представляет тип артефакта. Для водяных знаков это означает, что артефакт является водяным знаком.
 
-#### Q: How does the code determine the location (rectangle) of the watermark on the page?
+#### Вопрос: Как код определяет расположение (прямоугольник) водяного знака на странице?
 
-A: The code uses the `Rectangle` property of the artifact to determine the location of the watermark. The `Rectangle` property represents the bounding rectangle of the artifact on the page.
+ О: В коде используется`Rectangle` свойство артефакта для определения местоположения водяного знака.`Rectangle` Свойство представляет ограничивающий прямоугольник артефакта на странице.
 
-#### Q: Can I modify the code to extract additional information about the watermark, such as its appearance or color?
+#### Вопрос: Могу ли я изменить код, чтобы получить дополнительную информацию о водяном знаке, например его внешний вид или цвет?
 
-A: Yes, you can modify the code to access other properties of the artifact, such as its appearance or color, if such information is available and relevant to your use case.
+О: Да, вы можете изменить код, чтобы получить доступ к другим свойствам артефакта, таким как его внешний вид или цвет, если такая информация доступна и соответствует вашему варианту использования.
 
-#### Q: Can I extract watermark information from multiple pages of a PDF document using this code?
+#### Вопрос: Могу ли я извлечь информацию о водяных знаках из нескольких страниц PDF-документа с помощью этого кода?
 
-A: Yes, you can modify the code to iterate through artifacts on multiple pages by changing the page index in the loop to access artifacts from different pages.
+О: Да, вы можете изменить код для перебора артефактов на нескольких страницах, изменив индекс страницы в цикле для доступа к артефактам с разных страниц.
 
-#### Q: What happens if there are no watermarks on the specified page?
+#### Вопрос: Что произойдет, если на указанной странице нет водяных знаков?
 
-A: If there are no watermarks on the specified page, the loop will not execute, and no watermark information will be displayed.
+О: Если на указанной странице нет водяных знаков, цикл не будет выполнен и информация о водяных знаках отображаться не будет.
 
-#### Q: How can I use the extracted watermark information for further processing?
+#### Вопрос: Как я могу использовать извлеченную информацию о водяных знаках для дальнейшей обработки?
 
-A: The extracted watermark information can be used for various purposes, such as logging, analysis, reporting, or automation of specific actions based on the presence or properties of watermarks.
+О: Извлеченная информация о водяных знаках может использоваться для различных целей, таких как ведение журнала, анализ, составление отчетов или автоматизация определенных действий, основанных на наличии или свойствах водяных знаков.
 
-#### Q: Can I modify this code to extract information about other types of artifacts in a PDF document?
+#### Вопрос: Могу ли я изменить этот код для извлечения информации о других типах артефактов в PDF-документе?
 
-A: Yes, you can modify the code to extract information about other types of artifacts by accessing their properties using a similar approach.
+О: Да, вы можете изменить код для извлечения информации о других типах артефактов, обращаясь к их свойствам, используя аналогичный подход.
 
-#### Q: How can I access watermarks that are not artifacts but are part of the PDF content?
+#### Вопрос: Как я могу получить доступ к водяным знакам, которые не являются артефактами, но являются частью содержимого PDF?
 
-A: Watermarks that are not artifacts may be part of the PDF content itself, such as images or text. To extract information about these types of watermarks, you may need to analyze the PDF content and identify specific elements that represent the watermarks.
+О: Водяные знаки, не являющиеся артефактами, могут быть частью самого содержимого PDF, например изображениями или текстом. Чтобы извлечь информацию об этих типах водяных знаков, вам может потребоваться проанализировать содержимое PDF-файла и определить конкретные элементы, представляющие водяные знаки.

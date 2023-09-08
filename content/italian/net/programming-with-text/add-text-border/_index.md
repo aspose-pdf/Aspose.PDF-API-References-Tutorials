@@ -1,59 +1,59 @@
 ---
-title: Add Text Border In PDF File
-linktitle: Add Text Border In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add a text border in PDF file using Aspose.PDF for .NET.
+title: Aggiungi bordo di testo nel file PDF
+linktitle: Aggiungi bordo di testo nel file PDF
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Scopri come aggiungere un bordo di testo nel file PDF utilizzando Aspose.PDF per .NET.
 type: docs
 weight: 70
 url: /it/net/programming-with-text/add-text-border/
 ---
-This tutorial will guide you through the process of adding a text border in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+Questo tutorial ti guiderà attraverso il processo di aggiunta di un bordo di testo nel file PDF utilizzando Aspose.PDF per .NET. Il codice sorgente C# fornito illustra i passaggi necessari.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## Requisiti
+Prima di iniziare, assicurati di avere quanto segue:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio o qualsiasi altro compilatore C# installato sul tuo computer.
+- Aspose.PDF per la libreria .NET. Puoi scaricarlo dal sito Web ufficiale di Aspose o utilizzare un gestore di pacchetti come NuGet per installarlo.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## Passaggio 1: impostare il progetto
+1. Crea un nuovo progetto C# nel tuo ambiente di sviluppo preferito.
+2. Aggiungere un riferimento alla libreria Aspose.PDF per .NET.
 
-## Step 2: Import required namespaces
-In the code file where you want to add the text border, add the following using directive at the top of the file:
+## Passaggio 2: importa gli spazi dei nomi richiesti
+Nel file di codice in cui desideri aggiungere il bordo del testo, aggiungi la seguente direttiva using nella parte superiore del file:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## Passaggio 3: imposta la directory dei documenti
+ Nel codice, individua la riga che dice`string dataDir = "YOUR DOCUMENT DIRECTORY";` e sostituire`"YOUR DOCUMENT DIRECTORY"` con il percorso della directory in cui sono archiviati i tuoi documenti.
 
-## Step 4: Create a new Document object
-Instantiate a new `Document` object by adding the following line of code:
+## Passaggio 4: crea un nuovo oggetto Documento
+ Istanziarne uno nuovo`Document` oggetto aggiungendo la seguente riga di codice:
 
 ```csharp
 Document pdfDocument = new Document();
 ```
 
-## Step 5: Add a page to the document
-Add a new page to the document by using the `Add` method of the `Pages` collection. In the provided code, the new page is assigned to the variable `pdfPage`.
+## Passaggio 5: aggiungi una pagina al documento
+ Aggiungi una nuova pagina al documento utilizzando il file`Add` metodo del`Pages`collezione. Nel codice fornito, la nuova pagina viene assegnata alla variabile`pdfPage`.
 
 ```csharp
 Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
-## Step 6: Create a TextFragment
-Create a `TextFragment` object and provide the desired text. Set the position of the text fragment using the `Position` property. In the provided code, the text is set to "main text" and positioned at (100, 600) on the page.
+## Passaggio 6: crea un TextFragment
+ Creare un`TextFragment` oggetto e fornire il testo desiderato. Imposta la posizione del frammento di testo utilizzando`Position` proprietà. Nel codice fornito, il testo è impostato su "testo principale" e posizionato in (100, 600) nella pagina.
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
 textFragment.Position = new Position(100, 600);
 ```
 
-## Step 7: Set text properties
-Customize the text properties such as font size, font type, background color, foreground color, etc. In the provided code, properties such as font size, font, background color, foreground color, and stroking color are set for the text fragment.
+## Passaggio 7: imposta le proprietà del testo
+Personalizza le proprietà del testo come dimensione del carattere, tipo di carattere, colore di sfondo, colore di primo piano, ecc. Nel codice fornito, proprietà come dimensione del carattere, carattere, colore di sfondo, colore di primo piano e colore del tratto vengono impostate per il frammento di testo.
 
 ```csharp
 textFragment.TextState.FontSize = 12;
@@ -63,104 +63,104 @@ textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
 textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
 ```
 
-## Step 8: Enable text border
-To enable the text border, set the `DrawTextRectangleBorder` property of the text fragment's `TextState` to `true`.
+## Passaggio 8: attiva il bordo del testo
+ Per abilitare il bordo del testo, impostare il`DrawTextRectangleBorder`proprietà del frammento di testo`TextState` A`true`.
 
 ```csharp
 textFragment.TextState.DrawTextRectangleBorder = true;
 ```
 
-## Step 9: Add the TextFragment to the page
-Use the `TextBuilder` class to add the `TextFragment` object to the page.
+## Passaggio 9: aggiungi TextFragment alla pagina
+ Usa il`TextBuilder` classe per aggiungere il file`TextFragment` opporsi alla pagina.
 
 ```csharp
 TextBuilder tb = new TextBuilder(pdfPage);
 tb.AppendText(textFragment);
 ```
 
-## Step 10: Save the PDF document
-Save the PDF document using the `Save` method of the `Document` object. Specify the output file path that you set in Step 3.
+## Passaggio 10: salva il documento PDF
+ Salvare il documento PDF utilizzando il file`Save` metodo del`Document` oggetto. Specificare il percorso del file di output impostato al passaggio 3.
 
 ```csharp
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
 ```
 
-### Sample source code for Add Text Border using Aspose.PDF for .NET 
+### Codice sorgente di esempio per Aggiungi bordo testo utilizzando Aspose.PDF per .NET 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create new document object 
+// Crea un nuovo oggetto documento
 Document pdfDocument = new Document();
-// Get particular page
+// Ottieni una pagina particolare
 Page pdfPage = (Page)pdfDocument.Pages.Add();
-// Create text fragment
+// Crea frammento di testo
 TextFragment textFragment = new TextFragment("main text");
 textFragment.Position = new Position(100, 600);
-// Set text properties
+// Imposta le proprietà del testo
 textFragment.TextState.FontSize = 12;
 textFragment.TextState.Font = FontRepository.FindFont("TimesNewRoman");
 textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
 textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
-// Set StrokingColor property for drawing border (stroking) around text rectangle
+// Imposta la proprietà StrokingColor per disegnare il bordo (traccia) attorno al rettangolo di testo
 textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
-// Set DrawTextRectangleBorder property value to true
+// Imposta il valore della proprietà DrawTextRectangleBorder su true
 textFragment.TextState.DrawTextRectangleBorder = true;
 TextBuilder tb = new TextBuilder(pdfPage);
 tb.AppendText(textFragment);
-// Save the document
+// Salva il documento
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
 ```
 
-## Conclusion
-You have successfully added a text border to your PDF document using Aspose.PDF for .NET. The resulting PDF file can now be found at the specified output file path.
+## Conclusione
+Hai aggiunto con successo un bordo di testo al tuo documento PDF utilizzando Aspose.PDF per .NET. Il file PDF risultante può ora essere trovato nel percorso del file di output specificato.
 
-### FAQ's
+### Domande frequenti
 
-#### Q: What is the main focus of this tutorial?
+#### D: Qual è l'obiettivo principale di questo tutorial?
 
-A: This tutorial guides you through the process of adding a text border to a PDF file using the Aspose.PDF for .NET library. The provided C# source code demonstrates the necessary steps to achieve this.
+R: Questo tutorial ti guida attraverso il processo di aggiunta di un bordo di testo a un file PDF utilizzando la libreria Aspose.PDF per .NET. Il codice sorgente C# fornito illustra i passaggi necessari per raggiungere questo obiettivo.
 
-#### Q: Which namespaces do I need to import for this tutorial?
+#### D: Quali spazi dei nomi devo importare per questo tutorial?
 
-A: In the code file where you want to add the text border, import the following namespaces at the beginning of the file:
+R: Nel file di codice in cui desideri aggiungere il bordo del testo, importa i seguenti spazi dei nomi all'inizio del file:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-#### Q: How do I specify the document directory?
+#### D: Come posso specificare la directory dei documenti?
 
-A: In the code, locate the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ A: Nel codice, individuare la riga`string dataDir = "YOUR DOCUMENT DIRECTORY";` e sostituire`"YOUR DOCUMENT DIRECTORY"` con il percorso effettivo della directory dei documenti.
 
-#### Q: How do I create a Document object?
+#### D: Come posso creare un oggetto Document?
 
-A: In Step 4, you'll instantiate a new `Document` object using the following line of code:
+ R: Nel passaggio 4 creerai un'istanza di new`Document` oggetto utilizzando la seguente riga di codice:
 
 ```csharp
 Document pdfDocument = new Document();
 ```
 
-#### Q: How do I add a page to the document?
+#### D: Come faccio ad aggiungere una pagina al documento?
 
-A: In Step 5, you'll add a new page to the document using the `Add` method of the `Pages` collection:
+ R: Nel passaggio 5, aggiungerai una nuova pagina al documento utilizzando il file`Add` metodo del`Pages` collezione:
 
 ```csharp
 Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
-#### Q: How do I create a TextFragment and set its position?
+#### D: Come posso creare un TextFragment e impostarne la posizione?
 
-A: In Step 6, you'll create a `TextFragment` object and set its position on the page using the `Position` property:
+ R: Nel passaggio 6 creerai un file`TextFragment`oggetto e impostarne la posizione sulla pagina utilizzando il comando`Position` proprietà:
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
 textFragment.Position = new Position(100, 600);
 ```
 
-#### Q: How can I customize the text properties, including the text border?
+#### D: Come posso personalizzare le proprietà del testo, incluso il bordo del testo?
 
-A: In Step 7, you'll customize various text properties such as font size, font type, background color, foreground color, and text border:
+R: Nel passaggio 7 personalizzerai varie proprietà del testo come dimensione del carattere, tipo di carattere, colore di sfondo, colore di primo piano e bordo del testo:
 
 ```csharp
 textFragment.TextState.FontSize = 12;
@@ -171,23 +171,23 @@ textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
 textFragment.TextState.DrawTextRectangleBorder = true;
 ```
 
-#### Q: How do I add the TextFragment to the PDF document?
+#### D: Come posso aggiungere TextFragment al documento PDF?
 
-A: In Step 9, you'll use the `TextBuilder` class to add the `TextFragment` object to the page:
+ R: Nel passaggio 9 utilizzerai il file`TextBuilder` classe per aggiungere il file`TextFragment` opporsi alla pagina:
 
 ```csharp
 TextBuilder tb = new TextBuilder(pdfPage);
 tb.AppendText(textFragment);
 ```
 
-#### Q: How do I save the resulting PDF document?
+#### D: Come posso salvare il documento PDF risultante?
 
-A: After adding the text with a border, use the `Save` method of the `Document` object to save the PDF document:
+ R: Dopo aver aggiunto il testo con un bordo, utilizza il file`Save` metodo del`Document` oggetto per salvare il documento PDF:
 
 ```csharp
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
 ```
 
-#### Q: What is the main takeaway from this tutorial?
+#### D: Qual è il punto principale di questo tutorial?
 
-A: By following this tutorial, you've successfully learned how to enhance your PDF document by adding a text border using Aspose.PDF for .NET. This can be particularly useful for emphasizing specific text content within your PDF files.
+R: Seguendo questo tutorial, hai imparato con successo come migliorare il tuo documento PDF aggiungendo un bordo di testo utilizzando Aspose.PDF per .NET. Ciò può essere particolarmente utile per enfatizzare contenuti di testo specifici all'interno dei file PDF.

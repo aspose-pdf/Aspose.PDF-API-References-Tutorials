@@ -1,178 +1,178 @@
 ---
-title: Inherit Zoom In PDF File
-linktitle: Inherit Zoom In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily inherit bookmark zoom in PDF file with Aspose.PDF for .NET.
+title: Hériter du zoom dans un fichier PDF
+linktitle: Hériter du zoom dans un fichier PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Héritez facilement du zoom des favoris dans un fichier PDF avec Aspose.PDF pour .NET.
 type: docs
 weight: 90
 url: /fr/net/programming-with-bookmarks/inherit-zoom/
 ---
-Zoom inheritance in PDF file allows you to specify a default zoom level for bookmarks. With Aspose.PDF for .NET, you can easily inherit zoom by following the following source code:
+L'héritage du zoom dans un fichier PDF vous permet de spécifier un niveau de zoom par défaut pour les signets. Avec Aspose.PDF pour .NET, vous pouvez facilement hériter du zoom en suivant le code source suivant :
 
-## Step 1: Import required libraries
+## Étape 1 : Importer les bibliothèques requises
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Avant de commencer, vous devez importer les bibliothèques nécessaires à votre projet C#. Voici la directive d'importation nécessaire :
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-## Step 2: Set path to documents folder
+## Étape 2 : Définir le chemin d'accès au dossier de documents
 
-In this step, you need to specify the path to the folder containing the PDF file you want to inherit the zoom from. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ Dans cette étape, vous devez spécifier le chemin d'accès au dossier contenant le fichier PDF dont vous souhaitez hériter du zoom. Remplacer`"YOUR DOCUMENT DIRECTORY"`dans le code suivant avec le chemin réel de votre dossier de documents :
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Étape 3 : Ouvrez le document PDF
 
-Now we are going to open the PDF document on which we want to inherit the zoom using the following code:
+Nous allons maintenant ouvrir le document PDF sur lequel nous souhaitons hériter du zoom à l'aide du code suivant :
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 4: Get Bookmarks Collection
+## Étape 4 : Obtenir la collection de signets
 
-In this step, we will get the collection of bookmarks or landmarks of the document using the `Outlines` property of the `doc` object. Here is the corresponding code:
+ Dans cette étape, nous obtiendrons la collection de signets ou de repères du document en utilisant le`Outlines` propriété du`doc` objet. Voici le code correspondant :
 
 ```csharp
 OutlineItemCollection item = new OutlineItemCollection(doc.Outlines);
 ```
 
-## Step 5: Set Zoom Level
+## Étape 5 : Définir le niveau de zoom
 
-Now we will set the zoom level by creating an `XYZExplicitDestination` object with the specified x, y and z coordinates. Here we use the coordinates (100, 100, 0) with a zoom of 2. Here is the corresponding code:
+ Nous allons maintenant définir le niveau de zoom en créant un`XYZExplicitDestination` objet avec les coordonnées x, y et z spécifiées. Ici on utilise les coordonnées (100, 100, 0) avec un zoom de 2. Voici le code correspondant :
 
 ```csharp
 XYZExplicitDestination dest = new XYZExplicitDestination(2, 100, 100, 0);
 ```
 
-## Step 6: Add Zoom Level to Bookmarks
+## Étape 6 : ajouter un niveau de zoom aux signets
 
-In this step, we add the `XYZExplicitDestination` object as an action to the bookmarks of the `item` collection. Here is the corresponding code:
+ Dans cette étape, nous ajoutons le`XYZExplicitDestination` objet comme une action sur les signets du`item` collection. Voici le code correspondant :
 
 ```csharp
 item. Action = new GoToAction(dest);
 ```
 
-## Step 7: Add the updated bookmarks to the document
+## Étape 7 : ajouter les signets mis à jour au document
 
-Finally, we add the updated bookmarks to the document's bookmarks collection using the `Add` method of the `doc.Outlines` object. Here is the corresponding code:
+ Enfin, nous ajoutons les signets mis à jour à la collection de signets du document en utilisant le`Add` méthode du`doc.Outlines` objet. Voici le code correspondant :
 
 ```csharp
 doc. Outlines. Add(item);
 ```
 
-## Step 8: Save the updated file
+## Étape 8 : Enregistrez le fichier mis à jour
 
-Now let's save the updated PDF file using the `Save` method of the `doc` object. Here is the corresponding code:
+ Enregistrons maintenant le fichier PDF mis à jour en utilisant le`Save` méthode du`doc` objet. Voici le code correspondant :
 
 ```csharp
 dataDir = dataDir + "InheritZoom_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Inherit Zoom using Aspose.PDF for .NET 
+### Exemple de code source pour hériter du zoom à l'aide d'Aspose.PDF pour .NET 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Ouvrir le document
 Document doc = new Document(dataDir + "input.pdf");
-// Get outlines/bookmarks collection of PDF file
+// Obtenir une collection de plans/signets d'un fichier PDF
 OutlineItemCollection item = new OutlineItemCollection(doc.Outlines);
-// Set zoom level as 0
+// Définir le niveau de zoom sur 0
 XYZExplicitDestination dest = new XYZExplicitDestination(2, 100, 100, 0);
-// Add XYZExplicitDestination as action to outlines collection of PDF
+// Ajouter XYZExplicitDestination comme action pour décrire la collection de PDF
 item.Action = new GoToAction(dest);
-// Add item to outlines collection of PDF file
+// Ajouter un élément à la collection de contours du fichier PDF
 doc.Outlines.Add(item);
 dataDir = dataDir + "InheritZoom_out.pdf";
-// Save output
+// Enregistrer la sortie
 doc.Save(dataDir);
 Console.WriteLine("\nBookmarks updated successfully.\nFile saved at " + dataDir);
 ```
 
 ## Conclusion
 
-Congratulation ! Now you have a step by step guide to Inherit Zoom with Aspose.PDF for .NET. You can use this code to specify a default zoom level for bookmarks in your PDF documents.
+Félicitation ! Vous disposez désormais d’un guide étape par étape pour hériter du zoom avec Aspose.PDF pour .NET. Vous pouvez utiliser ce code pour spécifier un niveau de zoom par défaut pour les signets dans vos documents PDF.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Assurez-vous de consulter la documentation officielle Aspose.PDF pour plus d'informations sur les fonctionnalités avancées de manipulation de signets.
 
-### FAQ's for inherit zoom in PDF file
+### FAQ pour hériter du zoom dans un fichier PDF
 
-#### Q: What is zoom inheritance in a PDF file?
+#### Q : Qu'est-ce que l'héritage du zoom dans un fichier PDF ?
 
-A: Zoom inheritance refers to the ability to specify a default zoom level for bookmarks in a PDF document. This allows for consistent and user-friendly navigation when users interact with the bookmarks.
+R : L'héritage du zoom fait référence à la possibilité de spécifier un niveau de zoom par défaut pour les signets dans un document PDF. Cela permet une navigation cohérente et conviviale lorsque les utilisateurs interagissent avec les signets.
 
-#### Q: Why would I want to inherit zoom levels for bookmarks?
+#### Q : Pourquoi voudrais-je hériter des niveaux de zoom pour les favoris ?
 
-A: Inheriting zoom levels ensures that users have a consistent viewing experience when navigating through bookmarks in a PDF document. It can be particularly useful when you want to provide a specific view for different sections of a document.
+R : L'héritage des niveaux de zoom garantit aux utilisateurs une expérience de visualisation cohérente lorsqu'ils naviguent dans les signets d'un document PDF. Cela peut être particulièrement utile lorsque vous souhaitez fournir une vue spécifique pour différentes sections d'un document.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### Q : Comment importer les bibliothèques nécessaires pour mon projet C# ?
 
-A: To import the required libraries for your C# project, include the following import directives:
+R : Pour importer les bibliothèques requises pour votre projet C#, incluez les directives d'importation suivantes :
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-These directives enable you to access the classes and methods needed to work with PDF documents and bookmarks.
+Ces directives vous permettent d'accéder aux classes et méthodes nécessaires pour travailler avec des documents et des signets PDF.
 
-#### Q: How do I specify the path to the documents folder?
+#### Q : Comment puis-je spécifier le chemin d'accès au dossier de documents ?
 
-A: In the provided source code, replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file for which you want to inherit zoom levels.
+ R : Dans le code source fourni, remplacez`"YOUR DOCUMENT DIRECTORY"` avec le chemin réel vers le dossier contenant le fichier PDF pour lequel vous souhaitez hériter des niveaux de zoom.
 
-#### Q: How do I open a PDF document to inherit zoom levels?
+#### Q : Comment puis-je ouvrir un document PDF pour hériter des niveaux de zoom ?
 
-A: To open a PDF document for inheriting zoom levels, use the following code:
+R : Pour ouvrir un document PDF afin d'hériter des niveaux de zoom, utilisez le code suivant :
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-Replace `"input.pdf"` with the actual file name.
+ Remplacer`"input.pdf"` avec le nom réel du fichier.
 
-#### Q: How do I set the zoom level for bookmarks?
+#### Q : Comment définir le niveau de zoom des favoris ?
 
-A: To set the zoom level, create an `XYZExplicitDestination` object with the desired coordinates and zoom factor. Here's an example:
+ R : Pour définir le niveau de zoom, créez un`XYZExplicitDestination` objet avec les coordonnées et le facteur de zoom souhaités. Voici un exemple :
 
 ```csharp
 XYZExplicitDestination dest = new XYZExplicitDestination(2, 100, 100, 0);
 ```
 
-This sets the zoom level to 2 at coordinates (100, 100).
+Cela définit le niveau de zoom sur 2 aux coordonnées (100, 100).
 
-#### Q: How do I add the zoom level to bookmarks?
+#### Q : Comment ajouter le niveau de zoom aux favoris ?
 
-A: Add the `XYZExplicitDestination` object as an action to the bookmarks collection:
+ R : Ajoutez le`XYZExplicitDestination` objet en tant qu'action sur la collection de signets :
 
 ```csharp
 item.Action = new GoToAction(dest);
 ```
 
-Where `item` is an `OutlineItemCollection` representing a bookmark.
+ Où`item` est un`OutlineItemCollection` représentant un signet.
 
-#### Q: How do I save the updated PDF file?
+#### Q : Comment puis-je enregistrer le fichier PDF mis à jour ?
 
-A: Save the updated PDF file using the `Save` method of the `doc` object:
+ R : Enregistrez le fichier PDF mis à jour à l'aide du`Save` méthode du`doc` objet:
 
 ```csharp
 dataDir = dataDir + "InheritZoom_out.pdf";
 doc.Save(dataDir);
 ```
 
-#### Q: Can I customize zoom levels for different bookmarks?
+#### Q : Puis-je personnaliser les niveaux de zoom pour différents signets ?
 
-A: Yes, you can customize the zoom levels for different bookmarks by creating multiple `XYZExplicitDestination` objects with different coordinates and zoom factors.
+ R : Oui, vous pouvez personnaliser les niveaux de zoom pour différents signets en créant plusieurs`XYZExplicitDestination` objets avec des coordonnées et des facteurs de zoom différents.
 
-#### Q: Is there a limit to the number of bookmarks I can apply zoom inheritance to?
+#### Q : Y a-t-il une limite au nombre de favoris auxquels je peux appliquer l'héritage du zoom ?
 
-A: There is typically no strict limit to the number of bookmarks you can apply zoom inheritance to. However, very large documents with an excessive number of bookmarks may require efficient memory management.
+R : Il n'y a généralement pas de limite stricte au nombre de signets auxquels vous pouvez appliquer l'héritage de zoom. Toutefois, les documents très volumineux comportant un nombre excessif de signets peuvent nécessiter une gestion efficace de la mémoire.
 
-#### Q: How can I confirm that the zoom inheritance has been applied?
+#### Q : Comment puis-je confirmer que l'héritage du zoom a été appliqué ?
 
-A: Open the generated PDF file to verify that the specified zoom levels have been inherited by the bookmarks.
+R : Ouvrez le fichier PDF généré pour vérifier que les niveaux de zoom spécifiés ont été hérités par les signets.

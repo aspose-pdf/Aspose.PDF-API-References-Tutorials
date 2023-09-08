@@ -1,57 +1,57 @@
 ---
-title: Get All Annotations From Page
-linktitle: Get All Annotations From Page
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use Aspose.PDF for .NET to retrieve all annotations from a PDF page with this step-by-step guide.
+title: احصل على جميع التعليقات التوضيحية من الصفحة
+linktitle: احصل على جميع التعليقات التوضيحية من الصفحة
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية استخدام Aspose.PDF لـ .NET لاسترداد كافة التعليقات التوضيحية من صفحة PDF باستخدام هذا الدليل التفصيلي خطوة بخطوة.
 type: docs
 weight: 70
 url: /ar/net/annotations/getallannotationsfrompage/
 ---
-This article will guide you through the process of extracting all annotations from a PDF page using Aspose.PDF for .NET. Aspose.PDF for .NET is a library that allows developers to create, edit, and convert PDF documents. With the help of this guide, you will be able to get all the annotations from a specific PDF page using the provided C# source code.
+سترشدك هذه المقالة خلال عملية استخراج كافة التعليقات التوضيحية من صفحة PDF باستخدام Aspose.PDF لـ .NET. Aspose.PDF for .NET هي مكتبة تتيح للمطورين إنشاء مستندات PDF وتحريرها وتحويلها. بمساعدة هذا الدليل، ستتمكن من الحصول على جميع التعليقات التوضيحية من صفحة PDF محددة باستخدام كود مصدر C# المقدم.
 
-Follow the below steps how to get all Annotations for a PDF page using Aspose.PDF for .NET:
+اتبع الخطوات التالية لكيفية الحصول على جميع التعليقات التوضيحية لصفحة PDF باستخدام Aspose.PDF لـ .NET:
 
-## Step 1: The Path to the Documents Directory
+## الخطوة 1: المسار إلى دليل المستندات
 
-The first step in getting all annotations from a PDF page using Aspose.PDF for .NET is to set the path to the documents directory where your PDF files are stored. You can do this by modifying the following line of code:
+الخطوة الأولى في الحصول على جميع التعليقات التوضيحية من صفحة PDF باستخدام Aspose.PDF لـ .NET هي تعيين المسار إلى دليل المستندات حيث يتم تخزين ملفات PDF الخاصة بك. يمكنك القيام بذلك عن طريق تعديل السطر التالي من التعليمات البرمجية:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
-## Step 2: Your PDF files are stored
+## الخطوة 2: يتم تخزين ملفات PDF الخاصة بك
 
-Replace "YOUR DOCUMENT DIRECTORY" with the path to the folder where your PDF files are stored. For example:
+استبدل "YOUR DOCUMENT DIRECTORY" بالمسار إلى المجلد حيث يتم تخزين ملفات PDF الخاصة بك. على سبيل المثال:
 
 ```csharp
 string dataDir = @"C:\Users\JohnDoe\Documents\PDFs\";
 ```
 
-## Step 3: Open Document
+## الخطوة 3: افتح المستند
 
-The next step is to open the PDF document that contains the annotations you want to extract. You can do this by adding the following code:
+الخطوة التالية هي فتح مستند PDF الذي يحتوي على التعليقات التوضيحية التي تريد استخراجها. يمكنك القيام بذلك عن طريق إضافة الكود التالي:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetAllAnnotationsFromPage.pdf");
 ```
 
-This line of code initializes a new instance of the Document class and loads the PDF document "GetAllAnnotationsFromPage.pdf". Replace this filename with the name of your PDF file.
+يقوم سطر التعليمات البرمجية هذا بتهيئة مثيل جديد لفئة المستند وتحميل مستند PDF "GetAllAnnotationsFromPage.pdf". استبدل اسم الملف هذا باسم ملف PDF الخاص بك.
 
-## Step 4: Loop through All Annotations
+## الخطوة 4: قم بالتمرير عبر جميع التعليقات التوضيحية
 
-Once you have opened the PDF document, you can loop through all the annotations on a specific page. For example, to loop through all the annotations on the first page of the PDF document, add the following code:
+بمجرد فتح مستند PDF، يمكنك تكرار جميع التعليقات التوضيحية الموجودة على صفحة معينة. على سبيل المثال، لاستعراض كافة التعليقات التوضيحية الموجودة على الصفحة الأولى من مستند PDF، قم بإضافة الكود التالي:
 
 ```csharp
 foreach (MarkupAnnotation annotation in pdfDocument.Pages[1].Annotations)
 {
-    // Code goes here
+    // الكود يذهب هنا
 }
 ```
 
-This code loops through all the annotations on the first page of the PDF document and assigns each annotation to the "annotation" variable.
+يتكرر هذا الرمز عبر جميع التعليقات التوضيحية الموجودة على الصفحة الأولى من مستند PDF ويقوم بتعيين كل تعليق توضيحي لمتغير "التعليق التوضيحي".
 
-## Step 5: Get Annotation Properties
+## الخطوة 5: الحصول على خصائص التعليق التوضيحي
 
-To extract the properties of each annotation, you can add the following code inside the foreach loop:
+لاستخراج خصائص كل تعليق توضيحي، يمكنك إضافة الكود التالي داخل حلقة foreach:
 
 ```csharp
 Console.WriteLine("Title : {0} ", annotation.Title);
@@ -59,51 +59,51 @@ Console.WriteLine("Subject : {0} ", annotation.Subject);
 Console.WriteLine("Contents : {0} ", annotation.Contents);
 ```
 
-This code writes the Title, Subject, and Contents of each annotation to the console.
+يكتب هذا الرمز العنوان والموضوع والمحتويات الخاصة بكل تعليق توضيحي على وحدة التحكم.
 
-### Example Source Code for Get All Annotations From Page using Aspose.PDF for .NET
+### مثال على كود المصدر للحصول على كافة التعليقات التوضيحية من الصفحة باستخدام Aspose.PDF لـ .NET
 
-Here is the complete source code for getting all annotations from a PDF page using Aspose.PDF for .NET:
+فيما يلي الكود المصدري الكامل للحصول على جميع التعليقات التوضيحية من صفحة PDF باستخدام Aspose.PDF لـ .NET:
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "GetAllAnnotationsFromPage.pdf");
 
-// Loop through all the annotations
+// قم بالمراجعة من خلال جميع التعليقات التوضيحية
 foreach (MarkupAnnotation annotation in pdfDocument.Pages[1].Annotations)
 {
-	// Get annotation properties
+	// الحصول على خصائص التعليق التوضيحي
 	Console.WriteLine("Title : {0} ", annotation.Title);
 	Console.WriteLine("Subject : {0} ", annotation.Subject);
 	Console.WriteLine("Contents : {0} ", annotation.Contents);                
 }
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we explored how to get all annotations from a specific page of a PDF document using Aspose.PDF for .NET. By following the step-by-step guide and using the provided C# source code, developers can easily extract and manage annotations from their PDF documents.
+في هذا البرنامج التعليمي، اكتشفنا كيفية الحصول على جميع التعليقات التوضيحية من صفحة معينة في مستند PDF باستخدام Aspose.PDF لـ .NET. باتباع الدليل الموضح خطوة بخطوة واستخدام كود مصدر C# المقدم، يمكن للمطورين بسهولة استخراج التعليقات التوضيحية وإدارتها من مستندات PDF الخاصة بهم.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What are annotations in a PDF document?
+#### س: ما هي التعليقات التوضيحية في وثيقة PDF؟
 
-A: Annotations in a PDF document are interactive elements that provide additional information, comments, or notes on specific parts of the document. Annotations can include text notes, comments, highlights, and other interactive elements.
+ج: التعليقات التوضيحية الموجودة في مستند PDF هي عناصر تفاعلية توفر معلومات أو تعليقات أو ملاحظات إضافية حول أجزاء معينة من المستند. يمكن أن تتضمن التعليقات التوضيحية ملاحظات نصية وتعليقات وإبرازات وعناصر تفاعلية أخرى.
 
-#### Q: Can I get annotations from specific pages only?
+#### س: هل يمكنني الحصول على التعليقات التوضيحية من صفحات محددة فقط؟
 
-A: Yes, with Aspose.PDF for .NET, you can get annotations from specific pages or even from the entire document, depending on your requirements.
+ج: نعم، باستخدام Aspose.PDF for .NET، يمكنك الحصول على التعليقات التوضيحية من صفحات محددة أو حتى من المستند بأكمله، وفقًا لمتطلباتك.
 
-#### Q: Does Aspose.PDF for .NET support extracting annotations from password-protected PDF files?
+#### س: هل يدعم Aspose.PDF for .NET استخراج التعليقات التوضيحية من ملفات PDF المحمية بكلمة مرور؟
 
-A: Yes, Aspose.PDF for .NET supports extracting annotations from password-protected PDF files. You need to provide the correct password when loading the PDF document using the `Document` class.
+ ج: نعم، يدعم Aspose.PDF for .NET استخراج التعليقات التوضيحية من ملفات PDF المحمية بكلمة مرور. يتعين عليك تقديم كلمة المرور الصحيحة عند تحميل مستند PDF باستخدام ملف`Document` فصل.
 
-#### Q: Can I filter annotations based on their properties, such as content or author?
+#### س: هل يمكنني تصفية التعليقات التوضيحية بناءً على خصائصها، مثل المحتوى أو المؤلف؟
 
-A: Yes, Aspose.PDF for .NET provides methods to access and filter annotations based on their properties, such as content, author, or creation date. You can loop through all annotations and check for the specific properties you want to filter.
+ج: نعم، يوفر Aspose.PDF for .NET طرقًا للوصول إلى التعليقات التوضيحية وتصفيتها استنادًا إلى خصائصها، مثل المحتوى أو المؤلف أو تاريخ الإنشاء. يمكنك تكرار جميع التعليقات التوضيحية والتحقق من الخصائص المحددة التي تريد تصفيتها.
 
-#### Q: Does Aspose.PDF for .NET support extracting annotations from different types of PDF documents?
+#### س: هل يدعم Aspose.PDF for .NET استخراج التعليقات التوضيحية من أنواع مختلفة من مستندات PDF؟
 
-A: Yes, Aspose.PDF for .NET provides various methods to extract annotations from different types of PDF documents, including text markup annotations, free text annotations, and more.
+ج: نعم، يوفر Aspose.PDF for .NET طرقًا متنوعة لاستخراج التعليقات التوضيحية من أنواع مختلفة من مستندات PDF، بما في ذلك التعليقات التوضيحية لترميز النص، والتعليقات التوضيحية النصية المجانية، والمزيد.

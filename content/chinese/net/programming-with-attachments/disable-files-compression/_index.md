@@ -1,123 +1,123 @@
 ---
-title: Disable Files Compression In PDF File
-linktitle: Disable Files Compression In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to disable file compression in PDF file with Aspose.PDF for .NET. Step-by-step guide for easy handling.
+title: 禁用 PDF 文件中的文件压缩
+linktitle: 禁用 PDF 文件中的文件压缩
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 禁用 PDF 文件中的文件压缩。分步指南，方便操作。
 type: docs
 weight: 30
 url: /zh/net/programming-with-attachments/disable-files-compression/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to disable file compression in PDF using Aspose.PDF for .NET.
+在本教程中，我们将引导您逐步完成以下 C# 源代码，以使用 Aspose.PDF for .NET 禁用 PDF 中的文件压缩。
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+在开始之前，请确保您已经安装了 Aspose.PDF 库并设置了开发环境。还具备 C# 编程的基础知识。
 
-### Step 1: Document Directory Setup
+### 第 1 步：文档目录设置
 
-In the provided source code, you need to specify the directory where the PDF file is located that you want to disable file compression. Change the "dataDir" variable to the desired directory.
+在提供的源代码中，您需要指定要禁用文件压缩的 PDF 文件所在的目录。将“dataDir”变量更改为所需的目录。
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### Step 2: Open the existing PDF document
+### 步骤 2：打开现有 PDF 文档
 
-We open the existing PDF document using the specified path.
+我们使用指定的路径打开现有的 PDF 文档。
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
 ```
 
-### Step 3: Setting up the new file to add as an attachment
+### 步骤 3：设置新文件以添加为附件
 
-We configure the new file that we want to add as an attachment. In this example, we add a text file with the name "test_out.txt" and a description "Example text file".
+我们配置要添加为附件的新文件。在此示例中，我们添加一个名为“test_out.txt”和描述“示例文本文件”的文本文件。
 
 ```csharp
 FileSpecification fileSpecification = new FileSpecification("test_out.txt", "Sample text file");
 ```
 
-### Step 4: Disable File Compression
+### 步骤 4：禁用文件压缩
 
-We disable file compression by setting the Encoding property of the FileSpecification object to FileEncoding.None.
+我们通过将 FileSpecification 对象的 Encoding 属性设置为 FileEncoding.None 来禁用文件压缩。
 
 ```csharp
 fileSpecification.Encoding = FileEncoding.None;
 ```
 
-### Step 5: Adding the attachment to the document's attachments collection
+### 步骤 5：将附件添加到文档的附件集合中
 
-We add the attachment to the document's attachments collection.
+我们将附件添加到文档的附件集合中。
 
 ```csharp
 pdfDocument.EmbeddedFiles.Add(fileSpecification);
 ```
 
-### Step 6: Save the new output file
+### 第 6 步：保存新的输出文件
 
-Finally, we save the resulting new PDF file with the name "DisableFilesCompression_out.pdf" in the specified directory.
+最后，我们将生成的新 PDF 文件以名称“DisableFilesCompression_out.pdf”保存在指定目录中。
 
 ```csharp
 pdfDocument.Save(dataDir + "DisableFilesCompression_out.pdf");
 ```
 
 
-### Sample source code for Disable Files Compression using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 禁用文件压缩的示例源代码 
 
 ```csharp
 
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
-// Setup new file to be added as attachment
+//设置要添加为附件的新文件
 FileSpecification fileSpecification = new FileSpecification("test_out.txt", "Sample text file");
-// Specify Encoding proparty setting it to FileEncoding.None
+//指定 Encoding proparty 将其设置为 FileEncoding.None
 fileSpecification.Encoding = FileEncoding.None;
-// Add attachment to document's attachment collection
+//将附件添加到文档的附件集合
 pdfDocument.EmbeddedFiles.Add(fileSpecification);
 dataDir = dataDir + "DisableFilesCompression_out.pdf";
-// Save new output
+//保存新输出
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nFile compression disabled successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
+## 结论
 
-In this tutorial, we explained how to disable file compression in a PDF using Aspose.PDF for .NET. You can now use this knowledge to maintain the integrity of attached files without compression.
+在本教程中，我们解释了如何使用 Aspose.PDF for .NET 禁用 PDF 中的文件压缩。您现在可以使用这些知识来维护附加文件的完整性，而无需压缩。
 
-## FAQ's for disable files compression in PDF file
+## 在 PDF 文件中禁用文件压缩的常见问题解答
 
-#### Q: Why would I want to disable file compression in a PDF document?
+#### 问：为什么我要在 PDF 文档中禁用文件压缩？
 
-A: Disabling file compression ensures that attached files within a PDF document remain uncompressed, preserving their original quality and content.
+答：禁用文件压缩可确保 PDF 文档中的附加文件保持未压缩状态，从而保留其原始质量和内容。
 
-#### Q: How does disabling file compression benefit PDF attachments?
+#### 问：禁用文件压缩对 PDF 附件有何好处？
 
-A: Disabling compression prevents any loss of data or quality that can occur during the compression process, ensuring that attached files are presented as-is.
+答：禁用压缩可以防止压缩过程中可能发生的任何数据或质量损失，从而确保附加文件按原样呈现。
 
-#### Q: Can I selectively disable compression for specific attachments using this tutorial?
+#### 问：我可以使用本教程选择性地禁用特定附件的压缩吗？
 
-A: Yes, this tutorial guides you through disabling file compression for individual attachments in a PDF document, providing fine-grained control.
+答：是的，本教程将指导您禁用 PDF 文档中各个附件的文件压缩，从而提供细粒度的控制。
 
-#### Q: What types of attachments can I disable compression for?
+#### 问：我可以对哪些类型的附件禁用压缩？
 
-A: You can disable compression for any type of attachment, such as images, documents, spreadsheets, and more, ensuring their integrity is maintained.
+答：您可以对任何类型的附件（例如图像、文档、电子表格等）禁用压缩，以确保保持其完整性。
 
-#### Q: Does disabling compression affect the overall file size of the PDF document?
+#### 问：禁用压缩会影响 PDF 文档的整体文件大小吗？
 
-A: Disabling compression for attachments might lead to a slight increase in the overall file size of the PDF document, as uncompressed files take up more space.
+答：禁用附件压缩可能会导致 PDF 文档的整体文件大小略有增加，因为未压缩的文件会占用更多空间。
 
-#### Q: How does Aspose.PDF for .NET facilitate the process of disabling file compression?
+#### 问：Aspose.PDF for .NET 如何促进禁用文件压缩的过程？
 
-A: Aspose.PDF for .NET provides an easy-to-use API that allows you to disable file compression for attachments, as demonstrated in the provided source code.
+答：Aspose.PDF for .NET 提供了一个易于使用的 API，允许您禁用附件的文件压缩，如提供的源代码中所示。
 
-#### Q: Can I re-enable compression for attachments later if needed?
+#### 问：如果需要，我可以稍后重新启用附件压缩吗？
 
-A: Yes, you can modify the attachment's settings to enable compression again if necessary.
+答：是的，如有必要，您可以修改附件的设置以再次启用压缩。
 
-#### Q: What happens if I open the PDF on a device or software that supports compression?
+#### 问：如果我在支持压缩的设备或软件上打开 PDF，会发生什么情况？
 
-A: If you open the PDF on a device or software that supports compression, the attachment might be displayed uncompressed, potentially affecting file size and rendering performance.
+答：如果您在支持压缩的设备或软件上打开 PDF，附件可能会以未压缩的形式显示，这可能会影响文件大小和渲染性能。
 
-#### Q: Are there specific scenarios where disabling compression is recommended?
+#### 问：是否存在建议禁用压缩的特定场景？
 
-A: Disabling compression is recommended for attachments where maintaining the original quality and data integrity is a priority, such as high-resolution images or sensitive documents.
+答：对于优先考虑保持原始质量和数据完整性的附件（例如高分辨率图像或敏感文档），建议禁用压缩。

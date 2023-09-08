@@ -1,51 +1,51 @@
 ---
-title: Text In Header Of PDF File
-linktitle: Text In Header Of PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add text in the header of PDF file with Aspose.PDF for .NET.
+title: Texte dans l'en-tête du fichier PDF
+linktitle: Texte dans l'en-tête du fichier PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment ajouter du texte dans l'en-tête d'un fichier PDF avec Aspose.PDF pour .NET.
 type: docs
 weight: 190
 url: /fr/net/programming-with-stamps-and-watermarks/text-in-header/
 ---
-In this tutorial, we are going to learn how to add text in the header of PDF file using Aspose.PDF for .NET. Follow the steps below:
+Dans ce didacticiel, nous allons apprendre à ajouter du texte dans l'en-tête d'un fichier PDF à l'aide d'Aspose.PDF pour .NET. Suivez les étapes ci-dessous :
 
-## Step 1: Project preparation
+## Étape 1 : Préparation du projet
 
-Make sure you have installed Aspose.PDF for .NET and created a C# project.
+Assurez-vous d'avoir installé Aspose.PDF pour .NET et créé un projet C#.
 
-## Step 2: Importing namespaces
+## Étape 2 : Importer des espaces de noms
 
-Add the following namespaces to your C# source file:
+Ajoutez les espaces de noms suivants à votre fichier source C# :
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Opening the document
+## Étape 3 : Ouverture du document
 
-Open the existing PDF document using the path provided:
+Ouvrez le document PDF existant en utilisant le chemin fourni :
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document pdfDocument = new Document(dataDir + "TextinHeader.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to your documents directory.
+Assurez-vous de remplacer « VOTRE RÉPERTOIRE DE DOCUMENTS » par le chemin réel d'accès à votre répertoire de documents.
 
-## Step 4: Creating Header Text
+## Étape 4 : Création du texte d'en-tête
 
-Create a new text stamp with the text you want to add in the header:
+Créez un nouveau tampon de texte avec le texte que vous souhaitez ajouter dans l'en-tête :
 
 ```csharp
 TextStamp textStamp = new TextStamp("Header text");
 ```
 
-You can customize the text by changing its properties like top margin, horizontal alignment, and vertical alignment.
+Vous pouvez personnaliser le texte en modifiant ses propriétés telles que la marge supérieure, l'alignement horizontal et l'alignement vertical.
 
-## Step 5: Add header text to all pages
+## Étape 5 : ajouter du texte d'en-tête à toutes les pages
 
-Go through all the pages of the PDF document and add the text stamp in the header:
+Parcourez toutes les pages du document PDF et ajoutez le tampon de texte dans l'en-tête :
 
 ```csharp
 foreach(Page page in pdfDocument.Pages)
@@ -54,41 +54,41 @@ foreach(Page page in pdfDocument.Pages)
 }
 ```
 
-## Step 6: Saving the PDF Document
+## Étape 6 : Enregistrement du document PDF
 
-Once the header text has been added on all pages, save the updated PDF document:
+Une fois le texte d'en-tête ajouté sur toutes les pages, enregistrez le document PDF mis à jour :
 
 ```csharp
 pdfDocument.Save(dataDir + "TextinHeader_out.pdf");
 Console.WriteLine("\nText in header added successfully.\nFile saved at: " + dataDir);
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where you want to save the PDF document.
+Assurez-vous de remplacer « VOTRE RÉPERTOIRE DE DOCUMENTS » par le chemin réel du répertoire dans lequel vous souhaitez enregistrer le document PDF.
 
-### Sample source code for Textin Header using Aspose.PDF for .NET 
+### Exemple de code source pour l'en-tête Textin utilisant Aspose.PDF pour .NET 
 ```csharp
 
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Ouvrir le document
 Document pdfDocument = new Document(dataDir+ "TextinHeader.pdf");
 
-// Create header
+// Créer un en-tête
 TextStamp textStamp = new TextStamp("Header Text");
 
-// Set properties of the stamp
+// Définir les propriétés du tampon
 textStamp.TopMargin = 10;
 textStamp.HorizontalAlignment = HorizontalAlignment.Center;
 textStamp.VerticalAlignment = VerticalAlignment.Top;
 
-// Add header on all pages
+// Ajouter un en-tête sur toutes les pages
 foreach (Page page in pdfDocument.Pages)
 {
 	page.AddStamp(textStamp);
 }
 
-// Save updated document
+// Enregistrer le document mis à jour
 pdfDocument.Save(dataDir+ "TextinHeader_out.pdf");
 Console.WriteLine("\nText in header added successfully.\nFile saved at " + dataDir);
 
@@ -96,38 +96,38 @@ Console.WriteLine("\nText in header added successfully.\nFile saved at " + dataD
 
 ## Conclusion
 
-Congratulation ! You have learned how to add text in the header of a PDF document using Aspose.PDF for .NET. You can now customize your headers by adding additional text to your PDF documents.
+Félicitation ! Vous avez appris à ajouter du texte dans l'en-tête d'un document PDF à l'aide d'Aspose.PDF pour .NET. Vous pouvez désormais personnaliser vos en-têtes en ajoutant du texte supplémentaire à vos documents PDF.
 
-### FAQ's for text in header of PDF file
+### FAQ pour le texte dans l'en-tête du fichier PDF
 
-#### Q: What is the purpose of adding text in the header of a PDF document?
+#### Q : A quoi sert l'ajout de texte dans l'en-tête d'un document PDF ?
 
-A: Adding text in the header of a PDF document allows you to include important information, such as titles, document names, dates, or any other text that you want to appear consistently at the top of each page.
+R : L'ajout de texte dans l'en-tête d'un document PDF vous permet d'inclure des informations importantes, telles que des titres, des noms de documents, des dates ou tout autre texte que vous souhaitez afficher de manière cohérente en haut de chaque page.
 
-#### Q: How does the provided C# source code achieve the addition of text in the header of a PDF document?
+#### Q : Comment le code source C# fourni permet-il d'ajouter du texte dans l'en-tête d'un document PDF ?
 
-A: The code demonstrates the process of opening an existing PDF document, creating a text stamp with the desired header text, customizing the text properties, adding the text stamp to all pages, and finally saving the updated PDF document with the added header text.
+R : Le code montre le processus d'ouverture d'un document PDF existant, de création d'un tampon de texte avec le texte d'en-tête souhaité, de personnalisation des propriétés du texte, d'ajout du tampon de texte à toutes les pages et enfin d'enregistrement du document PDF mis à jour avec le texte d'en-tête ajouté.
 
-#### Q: Can I modify the appearance of the header text, such as its font, size, color, and alignment?
+#### Q : Puis-je modifier l’apparence du texte d’en-tête, comme sa police, sa taille, sa couleur et son alignement ?
 
-A: Yes, you can customize the appearance of the header text by modifying the properties of the `TextStamp` object. The code example includes setting properties like top margin, horizontal alignment, and vertical alignment. You can also adjust the font, size, color, and other text-related properties.
+ R : Oui, vous pouvez personnaliser l'apparence du texte d'en-tête en modifiant les propriétés du`TextStamp`objet. L'exemple de code inclut la définition de propriétés telles que la marge supérieure, l'alignement horizontal et l'alignement vertical. Vous pouvez également ajuster la police, la taille, la couleur et d'autres propriétés liées au texte.
 
-#### Q: Is it possible to add different text to each page's header?
+#### Q : Est-il possible d'ajouter un texte différent à l'en-tête de chaque page ?
 
-A: Yes, you can add different text to each page's header by creating separate `TextStamp` objects with different text content or properties and then adding them to specific pages as needed.
+ R : Oui, vous pouvez ajouter un texte différent à l'en-tête de chaque page en créant des`TextStamp` des objets avec un contenu ou des propriétés de texte différents, puis en les ajoutant à des pages spécifiques selon les besoins.
 
-#### Q: How do I ensure the header text appears consistently on every page of the PDF document?
+#### Q : Comment puis-je m'assurer que le texte d'en-tête apparaît de manière cohérente sur chaque page du document PDF ?
 
-A: By using a loop that iterates through all the pages of the PDF document and adding the same text stamp to each page, you ensure that the header text appears consistently on every page.
+R : En utilisant une boucle qui parcourt toutes les pages du document PDF et en ajoutant le même tampon de texte à chaque page, vous garantissez que le texte d'en-tête apparaît de manière cohérente sur chaque page.
 
-#### Q: Can I add multiple lines of text or format the header text with line breaks?
+#### Q : Puis-je ajouter plusieurs lignes de texte ou formater le texte d'en-tête avec des sauts de ligne ?
 
-A: Yes, you can add multiple lines of text to the header by including line breaks in the text string. For example, you can use the escape sequence `\n` to indicate a line break in the text.
+ R : Oui, vous pouvez ajouter plusieurs lignes de texte à l'en-tête en incluant des sauts de ligne dans la chaîne de texte. Par exemple, vous pouvez utiliser la séquence d'échappement`\n` pour indiquer un saut de ligne dans le texte.
 
-#### Q: What happens if I want to add different content to the header and footer of the same PDF document?
+#### Q : Que se passe-t-il si je souhaite ajouter un contenu différent à l'en-tête et au pied de page du même document PDF ?
 
-A: To add different content to the header and footer sections, you would follow similar steps for both sections. The code demonstrates adding text to the header; you can use a similar approach to add text to the footer.
+R : Pour ajouter un contenu différent aux sections d'en-tête et de pied de page, vous devez suivre des étapes similaires pour les deux sections. Le code montre l'ajout de texte à l'en-tête ; vous pouvez utiliser une approche similaire pour ajouter du texte au pied de page.
 
-#### Q: Is it possible to add images or other elements alongside the header text using this approach?
+#### Q : Est-il possible d'ajouter des images ou d'autres éléments à côté du texte d'en-tête en utilisant cette approche ?
 
-A: While the provided code specifically demonstrates adding text to the header, you can extend the approach to add other elements like images, lines, shapes, or any other content to the header section using the Aspose.PDF library.
+R : Bien que le code fourni démontre spécifiquement l'ajout de texte à l'en-tête, vous pouvez étendre l'approche pour ajouter d'autres éléments tels que des images, des lignes, des formes ou tout autre contenu à la section d'en-tête à l'aide de la bibliothèque Aspose.PDF.

@@ -1,84 +1,84 @@
 ---
-title: Create Thumbnail Images In PDF File
-linktitle: Create Thumbnail Images In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily create thumbnail image in PDF file with Aspose.PDF for .NET.
+title: Crea immagini in miniatura nel file PDF
+linktitle: Crea immagini in miniatura nel file PDF
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Crea facilmente un'immagine in miniatura nel file PDF con Aspose.PDF per .NET.
 type: docs
 weight: 100
 url: /it/net/programming-with-images/create-thumbnail-images/
 ---
-This guide will take you step by step how to create thumbnail image in PDF file using Aspose.PDF for .NET. Make sure you have already set up your environment and follow the steps below:
+Questa guida ti guiderà passo dopo passo su come creare un'immagine in miniatura nel file PDF utilizzando Aspose.PDF per .NET. Assicurati di aver già configurato il tuo ambiente e segui i passaggi seguenti:
 
-## Step 1: Define the document directory
+## Passaggio 1: definire la directory dei documenti
 
-Before you start, make sure you set the correct directory for the documents. Replace `"YOUR DOCUMENT DIRECTORY"` in the code with the path to the directory containing your PDF files.
+ Prima di iniziare, assicurati di impostare la directory corretta per i documenti. Sostituire`"YOUR DOCUMENT DIRECTORY"` nel codice con il percorso della directory contenente i file PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Get the names of all PDF files in a directory
+## Passaggio 2: ottieni i nomi di tutti i file PDF in una directory
 
-In this step, we will retrieve the names of all PDF files present in the specified directory using C#'s `Directory` class. Files will be stored in an array of strings.
+ In questo passaggio, recupereremo i nomi di tutti i file PDF presenti nella directory specificata utilizzando C#`Directory` classe. I file verranno archiviati in una matrice di stringhe.
 
 ```csharp
 string[] fileEntries = Directory.GetFiles(dataDir, "*.pdf");
 ```
 
-## Step 3: Browse all PDF files and their pages
+## Passaggio 3: sfoglia tutti i file PDF e le relative pagine
 
-In this step, we will go through all PDF files and their pages to create image thumbnails. We will use a `for` loop to iterate through all the files.
+ In questo passaggio esamineremo tutti i file PDF e le relative pagine per creare miniature delle immagini. Useremo a`for` loop per scorrere tutti i file.
 
 ```csharp
 for (int counter = 0; counter < fileEntries.Length; counter++)
 {
-     // Open the PDF document
+     //Apri il documento PDF
      Document pdfDocument = new Document(fileEntries[counter]);
     
-     // Go through all the pages of the document
+     // Scorri tutte le pagine del documento
      for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
      {
-         // Create a stream to save the thumbnail image
+         // Crea uno stream per salvare l'immagine in miniatura
          using (FileStream imageStream = new FileStream(dataDir + "\\Thumbnails" + counter.ToString() + "_" + pageCount + ".jpg", FileMode.Create))
          {
-             // Create a Resolution object
+             // Creare un oggetto Risoluzione
              Resolution resolution = new Resolution(300);
             
-             // Create a JPEG device with the specified attributes
+             // Crea un dispositivo JPEG con gli attributi specificati
              JpegDevice jpegDevice = new JpegDevice(45, 59, resolution, 100);
             
-             // Convert a specific page and save the image to the stream
+             // Converti una pagina specifica e salva l'immagine nello stream
              jpegDevice.Process(pdfDocument.Pages[pageCount], imageStream);
             
-             // Close the stream
+             // Chiudi il flusso
              imageStream.Close();
          }
      }
 }
 ```
 
-### Sample source code for Create Thumbnail Images using Aspose.PDF for .NET 
+### Codice sorgente di esempio per creare immagini in miniatura utilizzando Aspose.PDF per .NET 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Retrieve names of all the PDF files in a particular directory
+//Recupera i nomi di tutti i file PDF in una directory particolare
 string[] fileEntries = Directory.GetFiles(dataDir, "*.pdf");
-// Iterate through all the files entries in array
+// Scorrere tutte le voci dei file nell'array
 for (int counter = 0; counter < fileEntries.Length; counter++)
 {
-	//Open document
+	//Apri documento
 	Document pdfDocument = new Document(fileEntries[counter]);
 	for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 	{
 		using (FileStream imageStream = new FileStream(dataDir + "\\Thumbanils" + counter.ToString() + "_" + pageCount + ".jpg", FileMode.Create))
 		{
-			//Create Resolution object
+			//Crea oggetto Risoluzione
 			Resolution resolution = new Resolution(300);
-			//JpegDevice jpegDevice = new JpegDevice(500, 700, resolution, 100);
+			//JpegDevice jpegDevice = nuovo JpegDevice(500, 700, risoluzione, 100);
 			JpegDevice jpegDevice = new JpegDevice(45, 59, resolution, 100);
-			//Convert a particular page and save the image to stream
+			//Converti una pagina particolare e salva l'immagine in streaming
 			jpegDevice.Process(pdfDocument.Pages[pageCount], imageStream);
-			//Close stream
+			//Chiudi flusso
 			imageStream.Close();
 		}
 	}
@@ -86,44 +86,44 @@ for (int counter = 0; counter < fileEntries.Length; counter++)
 System.Console.WriteLine("PDF pages are converted to thumbnails successfully!");
 ```
 
-## Conclusion
+## Conclusione
 
-Congratulation ! You have successfully created image thumbnails from PDF files using Aspose.PDF for .NET. Image thumbnails are saved in the specified directory. You can now use these thumbnails to display a visual preview of your PDF files.
+Congratulazioni! Hai creato con successo miniature di immagini da file PDF utilizzando Aspose.PDF per .NET. Le miniature delle immagini vengono salvate nella directory specificata. Ora puoi utilizzare queste miniature per visualizzare un'anteprima visiva dei tuoi file PDF.
 
-### FAQ's for create thumbnail images in PDF file
+### Domande frequenti per creare immagini in miniatura nel file PDF
 
-#### Q: What is the purpose of creating thumbnail images from PDF files using Aspose.PDF for .NET?
+#### D: Qual è lo scopo di creare immagini in miniatura da file PDF utilizzando Aspose.PDF per .NET?
 
-A: Creating thumbnail images from PDF files allows you to generate small visual previews of each page in the PDF, which can be useful for quickly previewing and navigating through the content.
+R: La creazione di immagini in miniatura da file PDF consente di generare piccole anteprime visive di ogni pagina nel PDF, che possono essere utili per visualizzare rapidamente l'anteprima e navigare nel contenuto.
 
-#### Q: How does Aspose.PDF for .NET facilitate the creation of thumbnail images from PDF files?
+#### D: In che modo Aspose.PDF per .NET facilita la creazione di immagini in miniatura da file PDF?
 
-A: Aspose.PDF for .NET provides a step-by-step process to open PDF documents, iterate through their pages, create thumbnail images, and save them to a specified directory using the `JpegDevice` class.
+R: Aspose.PDF per .NET fornisce un processo passo passo per aprire documenti PDF, scorrere le loro pagine, creare immagini in miniatura e salvarle in una directory specificata utilizzando il comando`JpegDevice` classe.
 
-#### Q: Why is it important to define the document directory before starting the creation of thumbnail images?
+#### D: Perché è importante definire la directory dei documenti prima di iniziare la creazione delle immagini in miniatura?
 
-A: Specifying the document directory ensures that the PDF files are correctly located, and the resulting thumbnail images are saved in the desired output path.
+R: Specificare la directory dei documenti garantisce che i file PDF siano posizionati correttamente e che le immagini in miniatura risultanti vengano salvate nel percorso di output desiderato.
 
-#### Q: How does the `Document` class in Aspose.PDF for .NET help in the creation of thumbnail images?
+####  D: Come funziona il`Document` class in Aspose.PDF for .NET help in the creation of thumbnail images?
 
-A: The `Document` class allows you to open and manipulate PDF documents. In this case, it is used to load the PDF files from which thumbnail images will be created.
+ R: Il`Document` class ti consente di aprire e manipolare documenti PDF. In questo caso viene utilizzato per caricare i file PDF da cui verranno create le immagini in miniatura.
 
-#### Q: What role does the `JpegDevice` class play in the creation of thumbnail images?
+####  D: Che ruolo ha il`JpegDevice` class play in the creation of thumbnail images?
 
-A: The `JpegDevice` class is responsible for converting PDF pages to JPEG images, which are used as thumbnail images. It allows you to specify attributes such as width, height, resolution, and quality.
+ R: Il`JpegDevice` è responsabile della conversione delle pagine PDF in immagini JPEG, che vengono utilizzate come immagini in miniatura. Ti consente di specificare attributi come larghezza, altezza, risoluzione e qualità.
 
-#### Q: How is each page of the PDF document converted to an individual thumbnail image?
+#### D: Come viene convertita ciascuna pagina del documento PDF in una singola immagine in miniatura?
 
-A: A nested `for` loop is used to iterate through each PDF file and its pages. For each page, a JPEG device is created with specified attributes, and the `Process` method is used to convert the page to a thumbnail image and save it to the stream.
+ R: Un nidificato`for`loop viene utilizzato per scorrere ogni file PDF e le sue pagine. Per ogni pagina, viene creato un dispositivo JPEG con gli attributi specificati e il file`Process` viene utilizzato per convertire la pagina in un'immagine in miniatura e salvarla nello stream.
 
-#### Q: Can I adjust the resolution or quality of the resulting thumbnail images during the creation process?
+#### D: Posso regolare la risoluzione o la qualità delle immagini in miniatura risultanti durante il processo di creazione?
 
-A: Yes, you can modify attributes such as resolution, width, height, and quality by configuring the `JpegDevice` object before converting each page.
+ R: Sì, puoi modificare attributi come risoluzione, larghezza, altezza e qualità configurando il file`JpegDevice` oggetto prima di convertire ogni pagina.
 
-#### Q: How can I utilize the generated thumbnail images in my projects or applications after the creation process?
+#### D: Come posso utilizzare le immagini in miniatura generate nei miei progetti o applicazioni dopo il processo di creazione?
 
-A: The resulting thumbnail images can be used to provide a visual preview of PDF files, helping users quickly identify and navigate through the content.
+R: Le immagini in miniatura risultanti possono essere utilizzate per fornire un'anteprima visiva dei file PDF, aiutando gli utenti a identificare e navigare rapidamente nel contenuto.
 
-#### : Is there any limit to the number of thumbnail images that can be generated from PDF files using this creation process?
+#### : Esiste un limite al numero di immagini in miniatura che possono essere generate da file PDF utilizzando questo processo di creazione?
 
-A: The number of thumbnail images generated depends on the number of pages in each PDF document. Each page will be converted into a separate thumbnail image.
+R: Il numero di immagini in miniatura generate dipende dal numero di pagine in ciascun documento PDF. Ogni pagina verrà convertita in un'immagine in miniatura separata.

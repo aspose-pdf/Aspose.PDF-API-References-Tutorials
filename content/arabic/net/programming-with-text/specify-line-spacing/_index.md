@@ -1,28 +1,28 @@
 ---
-title: Specify Line Spacing In PDF File
-linktitle: Specify Line Spacing In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to specify line spacing in PDF file using Aspose.PDF for .NET.
+title: تحديد تباعد الأسطر في ملف PDF
+linktitle: تحديد تباعد الأسطر في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية تحديد تباعد الأسطر في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 510
 url: /ar/net/programming-with-text/specify-line-spacing/
 ---
-This tutorial explains how to specify line spacing in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the process step by step.
+يشرح هذا البرنامج التعليمي كيفية تحديد تباعد الأسطر في ملف PDF باستخدام Aspose.PDF لـ .NET. يوضح كود مصدر C# المقدم العملية خطوة بخطوة.
 
-## Prerequisites
+## المتطلبات الأساسية
 
-Before proceeding with the tutorial, make sure you have the following:
+قبل متابعة البرنامج التعليمي، تأكد من أن لديك ما يلي:
 
-- Basic knowledge of C# programming language.
-- Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to install it in your project.
+- المعرفة الأساسية بلغة البرمجة C#.
+- تم تثبيت Aspose.PDF لمكتبة .NET. يمكنك الحصول عليه من موقع Aspose أو استخدام NuGet لتثبيته في مشروعك.
 
-## Step 1: Set up the project
+## الخطوة 1: إعداد المشروع
 
-Start by creating a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library.
+ابدأ بإنشاء مشروع C# جديد في بيئة التطوير المتكاملة المفضلة لديك (IDE) وأضف مرجعًا إلى مكتبة Aspose.PDF لـ .NET.
 
-## Step 2: Import necessary namespaces
+## الخطوة 2: استيراد مساحات الأسماء الضرورية
 
-Add the following using directives at the beginning of your C# file to import the required namespaces:
+أضف ما يلي باستخدام التوجيهات في بداية ملف C# الخاص بك لاستيراد مساحات الأسماء المطلوبة:
 
 ```csharp
 using Aspose.Pdf;
@@ -30,44 +30,44 @@ using Aspose.Pdf.Text;
 using System.IO;
 ```
 
-## Step 3: Set the path to the document directory
+## الخطوة 3: قم بتعيين المسار إلى دليل المستند
 
-Set the path to your document directory using the `dataDir` variable:
+ قم بتعيين المسار إلى دليل المستند الخاص بك باستخدام`dataDir` عامل:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ يستبدل`"YOUR DOCUMENT DIRECTORY"` بالمسار الفعلي إلى دليل المستندات الخاص بك.
 
-## Step 4: Load the input PDF file
+## الخطوة 4: تحميل ملف PDF الإدخال
 
-Load the input PDF file using the `Document` class:
+ قم بتحميل ملف PDF المدخل باستخدام ملف`Document` فصل:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 5: Create TextFormattingOptions
+## الخطوة 5: إنشاء خيارات تنسيق النص
 
-Create a `TextFormattingOptions` object and set the line spacing mode to `FullSize`:
+ إنشاء`TextFormattingOptions` الكائن واضبط وضع تباعد الأسطر على`FullSize`:
 
 ```csharp
 TextFormattingOptions formattingOptions = new TextFormattingOptions();
 formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
 ```
 
-## Step 6: Create a TextFragment
+## الخطوة 6: إنشاء TextFragment
 
-Create a `TextFragment` object and specify the text content:
+ إنشاء`TextFragment` الكائن وتحديد محتوى النص:
 
 ```csharp
 TextFragment textFragment = new TextFragment("Hello world");
 ```
 
-## Step 7: Load the font file (optional)
+## الخطوة 7: تحميل ملف الخط (اختياري)
 
-If you want to use a specific font for the text, load the TrueType font file into a `FileStream` object:
+ إذا كنت تريد استخدام خط معين للنص، فقم بتحميل ملف خط TrueType إلى ملف`FileStream` هدف:
 
 ```csharp
 string fontFile = dataDir + "HPSimplified.TTF";
@@ -77,111 +77,111 @@ using (FileStream fontStream = File.OpenRead(fontFile))
 }
 ```
 
-Replace `"HPSimplified.TTF"` with the actual font file name.
+ يستبدل`"HPSimplified.TTF"` مع اسم ملف الخط الفعلي.
 
-## Step 8: Specify the text position and line spacing
+## الخطوة 8: تحديد موضع النص وتباعد الأسطر
 
-Set the position for the text fragment and assign the `TextFormattingOptions` to the `TextState.FormattingOptions` property:
+ قم بتعيين موضع جزء النص وقم بتعيين`TextFormattingOptions` إلى`TextState.FormattingOptions` ملكية:
 
 ```csharp
 textFragment.Position = new Position(100, 600);
 textFragment.TextState.FormattingOptions = formattingOptions;
 ```
 
-## Step 9: Add the text to the document
+## الخطوة 9: أضف النص إلى المستند
 
-Add the text fragment to the document, either by appending it to a `TextBuilder` or directly to a page's `Paragraphs` collection:
+ قم بإضافة جزء النص إلى المستند، إما عن طريق إلحاقه بـ a`TextBuilder` أو مباشرة إلى الصفحة`Paragraphs` مجموعة:
 
 ```csharp
 var page = doc.Pages.Add();
 page.Paragraphs.Add(textFragment);
 ```
 
-## Step 10: Save the resulting PDF document
+## الخطوة 10: احفظ مستند PDF الناتج
 
-Save the modified PDF document:
+احفظ مستند PDF المعدل:
 
 ```csharp
 dataDir = dataDir + "SpecifyLineSpacing_out.pdf";
 doc.Save(dataDir);
 ```
 
-Make sure to replace `"SpecifyLineSpacing_out.pdf"` with the desired output file name.
+ تأكد من استبدال`"SpecifyLineSpacing_out.pdf"` مع اسم ملف الإخراج المطلوب.
 
-### Sample source code for Specify Line Spacing using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لتحديد تباعد الأسطر باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string fontFile = dataDir + "HPSimplified.TTF";
-// Load input PDF file
+// تحميل ملف PDF الإدخال
 Document doc = new Document();
-//Create TextFormattingOptions with LineSpacingMode.FullSize
+//قم بإنشاء TextFormattingOptions باستخدام LineSpacingMode.FullSize
 TextFormattingOptions formattingOptions = new TextFormattingOptions();
 formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
-// Create text builder object for first page of document
+// إنشاء كائن منشئ النص للصفحة الأولى من المستند
 //TextBuilder textBuilder = new TextBuilder(doc.Pages[1]);
-// Create text fragment with sample string
+// إنشاء جزء نصي باستخدام سلسلة عينة
 TextFragment textFragment = new TextFragment("Hello world");
 if (fontFile != "")
 {
-	// Load the TrueType font into stream object
+	// قم بتحميل خط TrueType إلى كائن الدفق
 	using (FileStream fontStream = System.IO.File.OpenRead(fontFile))
 	{
-		// Set the font name for text string
+		//قم بتعيين اسم الخط لسلسلة نصية
 		textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
-		// Specify the position for Text Fragment
+		// حدد موضع جزء النص
 		textFragment.Position = new Position(100, 600);
-		//Set TextFormattingOptions of current fragment to predefined(which points to LineSpacingMode.FullSize)
+		//قم بتعيين TextFormattingOptions للجزء الحالي على المحدد مسبقًا (الذي يشير إلى LineSpacingMode.FullSize)
 		textFragment.TextState.FormattingOptions = formattingOptions;
-		// Add the text to TextBuilder so that it can be placed over the PDF file
+		// أضف النص إلى TextBuilder بحيث يمكن وضعه فوق ملف PDF
 		//textBuilder.AppendText(textFragment);
 		var page = doc.Pages.Add();
 		page.Paragraphs.Add(textFragment);
 	}
 	dataDir = dataDir + "SpecifyLineSpacing_out.pdf";
-	// Save resulting PDF document
+	// احفظ مستند PDF الناتج
 	doc.Save(dataDir);
 }
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulations! You have successfully learned how to specify line spacing in a PDF document using Aspose.PDF for .NET. This tutorial provided a step-by-step guide, from setting up the project to saving the modified document. You can now incorporate this code into your own C# projects to customize the line spacing of text in PDF files.
+تهانينا! لقد تعلمت بنجاح كيفية تحديد تباعد الأسطر في مستند PDF باستخدام Aspose.PDF لـ .NET. قدم هذا البرنامج التعليمي دليلاً خطوة بخطوة، بدءًا من إعداد المشروع وحتى حفظ المستند المعدل. يمكنك الآن دمج هذا الرمز في مشاريع C# الخاصة بك لتخصيص تباعد أسطر النص في ملفات PDF.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of the "Specify Line Spacing In PDF File" tutorial?
+#### س: ما هو الغرض من البرنامج التعليمي "تحديد تباعد الأسطر في ملف PDF"؟
 
-A: The "Specify Line Spacing In PDF File" tutorial aims to guide users on how to use the Aspose.PDF library for .NET to customize the line spacing of text within a PDF document. The tutorial provides step-by-step instructions and C# code samples to demonstrate the process.
+ج: يهدف البرنامج التعليمي "تحديد تباعد الأسطر في ملف PDF" إلى توجيه المستخدمين حول كيفية استخدام مكتبة Aspose.PDF لـ .NET لتخصيص تباعد الأسطر في النص داخل مستند PDF. يوفر البرنامج التعليمي إرشادات خطوة بخطوة ونماذج تعليمات برمجية C# لتوضيح العملية.
 
-#### Q: How does this tutorial help in specifying line spacing within a PDF document?
+#### س: كيف يساعد هذا البرنامج التعليمي في تحديد تباعد الأسطر داخل مستند PDF؟
 
-A: This tutorial helps users understand how to utilize the capabilities of Aspose.PDF for .NET to specify line spacing for text in a PDF document. By following the provided steps and code examples, users can adjust the line spacing according to their preferences.
+ج: يساعد هذا البرنامج التعليمي المستخدمين على فهم كيفية الاستفادة من إمكانيات Aspose.PDF لـ .NET لتحديد تباعد الأسطر للنص في مستند PDF. باتباع الخطوات المقدمة وأمثلة التعليمات البرمجية، يمكن للمستخدمين ضبط تباعد الأسطر وفقًا لتفضيلاتهم.
 
-#### Q: What prerequisites are required to follow this tutorial?
+#### س: ما هي المتطلبات الأساسية المطلوبة لمتابعة هذا البرنامج التعليمي؟
 
-A: Before starting the tutorial, you should have a basic understanding of the C# programming language. Additionally, you need to have the Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or install it in your project using NuGet.
+ج: قبل البدء في البرنامج التعليمي، يجب أن يكون لديك فهم أساسي للغة البرمجة C#. بالإضافة إلى ذلك، تحتاج إلى تثبيت Aspose.PDF لمكتبة .NET. يمكنك الحصول عليه من موقع Aspose أو تثبيته في مشروعك باستخدام NuGet.
 
-#### Q: How do I set up my project to follow this tutorial?
+#### س: كيف أقوم بإعداد مشروعي لمتابعة هذا البرنامج التعليمي؟
 
-A: To get started, create a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library. This enables you to leverage the library's features for working with PDF documents and customizing line spacing.
+ج: للبدء، قم بإنشاء مشروع C# جديد في بيئة التطوير المتكاملة المفضلة لديك (IDE) وأضف مرجعًا إلى مكتبة Aspose.PDF لـ .NET. يمكّنك هذا من الاستفادة من ميزات المكتبة للعمل مع مستندات PDF وتخصيص تباعد الأسطر.
 
-#### Q: Can I use this tutorial to specify line spacing for any type of text?
+#### س: هل يمكنني استخدام هذا البرنامج التعليمي لتحديد تباعد الأسطر لأي نوع من النص؟
 
-A: Yes, this tutorial provides instructions on how to specify line spacing for any text content within a PDF document using Aspose.PDF for .NET. You can use the provided code samples to adjust the line spacing of text according to your needs.
+ج: نعم، يوفر هذا البرنامج التعليمي إرشادات حول كيفية تحديد تباعد الأسطر لأي محتوى نصي داخل مستند PDF باستخدام Aspose.PDF لـ .NET. يمكنك استخدام نماذج التعليمات البرمجية المتوفرة لضبط تباعد الأسطر في النص وفقًا لاحتياجاتك.
 
-#### Q: How do I specify the line spacing mode in the tutorial?
+#### س: كيف أحدد وضع تباعد الأسطر في البرنامج التعليمي؟
 
-A: The tutorial demonstrates how to create a `TextFormattingOptions` object and set its `LineSpacing` property to `TextFormattingOptions.LineSpacingMode.FullSize`. This mode specifies full line spacing for the text content.
+ ج: يوضح البرنامج التعليمي كيفية إنشاء ملف`TextFormattingOptions` الكائن وتعيينه`LineSpacing` الملكية ل`TextFormattingOptions.LineSpacingMode.FullSize`. يحدد هذا الوضع تباعد الأسطر بالكامل لمحتوى النص.
 
-#### Q: How can I load a specific font for the text?
+#### س: كيف يمكنني تحميل خط معين للنص؟
 
-A: If you wish to use a specific font for the text content, the tutorial provides guidance on how to load a TrueType font file into a `FileStream` object and set it as the font for the `TextFragment`. This enables you to customize the font of the text along with its line spacing.
+ ج: إذا كنت ترغب في استخدام خط معين لمحتوى النص، فإن البرنامج التعليمي يوفر إرشادات حول كيفية تحميل ملف خط TrueType في ملف`FileStream` الكائن وقم بتعيينه كخط لـ`TextFragment`. يمكّنك هذا من تخصيص خط النص مع تباعد الأسطر.
 
-#### Q: How do I customize the position of the text within the PDF document?
+#### س: كيف يمكنني تخصيص موضع النص داخل مستند PDF؟
 
-A: To customize the position of the text, create a `TextFragment` object and set its `Position` property to the desired coordinates (X and Y). This allows you to control where the text is placed within the PDF document.
+ ج: لتخصيص موضع النص، قم بإنشاء ملف`TextFragment` الكائن وتعيينه`Position`الخاصية إلى الإحداثيات المطلوبة (X و Y). يتيح لك ذلك التحكم في مكان وضع النص داخل مستند PDF.
 
-#### Q: Can I apply these line spacing modifications to existing PDF documents?
+#### س: هل يمكنني تطبيق تعديلات تباعد الأسطر على مستندات PDF الموجودة؟
 
-A: Yes, you can modify line spacing for text in existing PDF documents. The tutorial demonstrates how to create a `TextFragment` with the specified line spacing and position, and then add it to a page's `Paragraphs` collection.
+ ج: نعم، يمكنك تعديل تباعد الأسطر للنص في مستندات PDF الموجودة. يوضح البرنامج التعليمي كيفية إنشاء`TextFragment` مع تباعد الأسطر والموضع المحدد، ثم قم بإضافته إلى الصفحة`Paragraphs` مجموعة.

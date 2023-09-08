@@ -1,33 +1,33 @@
 ---
-title: Get Values From All Fields In PDF Document
-linktitle: Get Values From All Fields In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Easily get the values of all form fields in PDF document with Aspose.PDF for .NET.
+title: 从 PDF 文档中的所有字段获取值
+linktitle: 从 PDF 文档中的所有字段获取值
+second_title: Aspose.PDF for .NET API 参考
+description: 使用 Aspose.PDF for .NET 轻松获取 PDF 文档中所有表单字段的值。
 type: docs
 weight: 150
 url: /zh/net/programming-with-forms/get-values-from-all-fields/
 ---
-In this tutorial, we will show you how to get the values of all form fields in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+在本教程中，我们将向您展示如何使用 Aspose.PDF for .NET 获取 PDF 文档中所有表单字段的值。我们将逐步解释 C# 源代码，以指导您完成此过程。
 
-## Step 1: Preparation
+## 第 1 步：准备
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+确保您已导入必要的库并设置文档目录的路径：
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Open the document
+## 步骤 2：打开文档
 
-Open the PDF document:
+打开 PDF 文档：
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetValuesFromAllFields.pdf");
 ```
 
-## Step 3: Get values for all fields
+## 步骤 3：获取所有字段的值
 
-Loop through all the form fields in the document and get their names and values:
+循环遍历文档中的所有表单字段并获取它们的名称和值：
 
 ```csharp
 foreach(Field formField in pdfDocument.Form)
@@ -37,13 +37,13 @@ Console.WriteLine("Value: {0}", formField.Value);
 }
 ```
 
-### Sample source code for Get Values From All Fields using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 从所有字段获取值的示例源代码 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+//打开文档
 Document pdfDocument = new Document(dataDir + "GetValuesFromAllFields.pdf");
-// Get values from all fields
+//从所有字段获取值
 foreach (Field formField in pdfDocument.Form)
 {
 	Console.WriteLine("Field Name : {0} ", formField.PartialName);
@@ -51,28 +51,28 @@ foreach (Field formField in pdfDocument.Form)
 }
 ```
 
-## Conclusion
+## 结论
 
-In this tutorial, we learned how to get the values of all form fields in a PDF document using Aspose.PDF for .NET. By following these steps, you can easily extract the values of all form fields from your PDF documents using Aspose.PDF.
+在本教程中，我们学习了如何使用 Aspose.PDF for .NET 获取 PDF 文档中所有表单字段的值。通过执行这些步骤，您可以使用 Aspose.PDF 轻松地从 PDF 文档中提取所有表单字段的值。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: Can I modify the values of form fields while retrieving them using Aspose.PDF for .NET?
+#### 问：我可以在使用 Aspose.PDF for .NET 检索表单字段的值时修改它们吗？
 
-A: Yes, you can modify the values of form fields while retrieving them using Aspose.PDF for .NET. Once you have the `Field` object representing a form field, you can update its `Value` property with the desired value. After making the necessary changes, you can save the updated PDF document to reflect the changes.
+答：是的，您可以在使用 Aspose.PDF for .NET 检索表单字段的同时修改它们的值。一旦你拥有了`Field`代表表单字段的对象，您可以更新其`Value`具有所需价值的财产。进行必要的更改后，您可以保存更新的 PDF 文档以反映更改。
 
-#### Q: How can I filter and retrieve specific form fields based on their types (e.g., text fields, checkboxes)?
+#### 问：如何根据类型（例如文本字段、复选框）过滤和检索特定表单字段？
 
-A: To retrieve specific form fields based on their types, you can use conditional statements or LINQ queries to filter the fields of interest. You can check the type of each form field using the field's `FieldType` property, and then retrieve the values accordingly.
+答：要根据类型检索特定的表单字段，您可以使用条件语句或 LINQ 查询来过滤感兴趣的字段。您可以使用字段的字段检查每个表单字段的类型`FieldType`属性，然后相应地检索值。
 
-#### Q: What happens if the PDF document has no form fields?
+#### 问：如果 PDF 文档没有表单字段会怎样？
 
-A: If the PDF document does not contain any form fields, the `pdfDocument.Form` property will return an empty collection. In such cases, the loop to retrieve values will not execute, and no values will be displayed.
+答：如果 PDF 文档不包含任何表单字段，则`pdfDocument.Form`属性将返回一个空集合。在这种情况下，检索值的循环将不会执行，并且不会显示任何值。
 
-#### Q: Can I extract the form field values in a specific order or sort them alphabetically?
+#### 问：我可以按特定顺序提取表单字段值或按字母顺序排序吗？
 
-A: The order in which the form fields are retrieved depends on the underlying structure of the PDF document. Aspose.PDF for .NET returns the form fields in the order they were added to the document. If you want to display or process the form fields in a specific order, you can implement custom sorting logic based on your requirements.
+答：检索表单字段的顺序取决于 PDF 文档的底层结构。 Aspose.PDF for .NET 按照表单字段添加到文档的顺序返回表单字段。如果您想按特定顺序显示或处理表单字段，您可以根据您的要求实现自定义排序逻辑。
 
-#### Q: How can I handle encrypted PDF documents with password-protected form fields?
+#### 问：如何处理带有受密码保护的表单字段的加密 PDF 文档？
 
-A: Aspose.PDF for .NET provides features to work with encrypted PDF documents and password-protected form fields. Before loading the document, you can set the password using the `pdfDocument.Password` property to access the secured PDF document and its form fields.
+答：Aspose.PDF for .NET 提供了处理加密 PDF 文档和受密码保护的表单字段的功能。在加载文档之前，您可以使用以下命令设置密码`pdfDocument.Password`属性来访问受保护的 PDF 文档及其表单字段。

@@ -1,104 +1,104 @@
 ---
-title: Get PDF Page Dimensions
-linktitle: Get PDF Page Dimensions
-second_title: Aspose.PDF for .NET API Reference
-description: In this tutorial, we explain how to get PDF page dimensions and perform manipulations using Aspose.PDF for .NET. Detailed steps are provided to guide you through the process.
+title: Получить размеры страницы PDF
+linktitle: Получить размеры страницы PDF
+second_title: Справочник по Aspose.PDF для .NET API
+description: В этом уроке мы объясним, как получить размеры страницы PDF и выполнить манипуляции с помощью Aspose.PDF для .NET. Подробные инструкции помогут вам пройти этот процесс.
 type: docs
 weight: 60
 url: /ru/net/programming-with-pdf-pages/get-dimensions/
 ---
-In this tutorial, we'll walk you through the step-by-step process of getting page dimensions in a PDF file using Aspose.PDF for .NET. We'll explain the bundled C# source code and provide you with a comprehensive guide to help you understand and implement this feature in your own projects. At the end of this tutorial, you will know how to get the dimensions of a page in a PDF file using Aspose.PDF for .NET.
+В этом уроке мы покажем вам пошаговый процесс получения размеров страницы в PDF-файле с помощью Aspose.PDF для .NET. Мы объясним прилагаемый исходный код C# и предоставим вам подробное руководство, которое поможет вам понять и реализовать эту функцию в ваших собственных проектах. В конце этого руководства вы узнаете, как получить размеры страницы в PDF-файле с помощью Aspose.PDF для .NET.
 
-## Prerequisites
-Before you begin, make sure you have the following:
+## Предварительные условия
+Прежде чем начать, убедитесь, что у вас есть следующее:
 
-- A basic knowledge of the C# programming language
-- Aspose.PDF for .NET installed in your development environment
+- Базовые знания языка программирования C#.
+- Aspose.PDF для .NET, установленный в вашей среде разработки.
 
-## Step 1: Define the document directory
-First, you need to set the path to your documents directory. This is the location where your PDF file is located. Replace "YOUR DOCUMENTS DIRECTORY" with the appropriate path.
+## Шаг 1. Определите каталог документов.
+Во-первых, вам нужно установить путь к каталогу ваших документов. Это место, где находится ваш PDF-файл. Замените «КАТАЛОГ ВАШИХ ДОКУМЕНТОВ» на соответствующий путь.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Open the PDF document
-Then you can open the PDF file using the `Document` class of Aspose.PDF. Be sure to specify the correct path to the PDF file.
+## Шаг 2. Откройте PDF-документ.
+ Затем вы можете открыть PDF-файл, используя`Document` класс Aspose.PDF. Обязательно укажите правильный путь к PDF-файлу.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "UpdateDimensions.pdf");
 ```
 
-## Step 3: Add a blank page (if needed)
-If the PDF document already contains pages, you can jump to an existing page using the index `1` (the first page has an index of 1). Otherwise, you can add a new page to the document.
+## Шаг 3. Добавьте пустую страницу (при необходимости).
+ Если PDF-документ уже содержит страницы, вы можете перейти на существующую страницу, используя индекс`1` (первая страница имеет индекс 1). В противном случае вы можете добавить в документ новую страницу.
 
 ```csharp
 Page page = pdfDocument.Pages.Count > 0? pdfDocument.Pages[1] : pdfDocument.Pages.Add();
 ```
 
-## Step 4: Get page dimensions
-You can now get the page dimensions using the `GetPageRect()` method of the `Page` object. This method returns a `Rectangle` object containing the dimensions of the page. You can access the width and height using the `Width` and `Height` properties.
+## Шаг 4. Получите размеры страницы
+ Теперь вы можете получить размеры страницы, используя`GetPageRect()` метод`Page` объект. Этот метод возвращает`Rectangle` объект, содержащий размеры страницы. Вы можете получить доступ к ширине и высоте, используя`Width` и`Height` характеристики.
 
 ```csharp
 Console.WriteLine(page.GetPageRect(true).Width.ToString() + ":" + page.GetPageRect(true).Height);
 ```
 
-## Step 5: Rotate the page
-If you want to rotate the page, you can use the `Rotate` property of the `Page` object. In this example, the page is rotated 90 degrees.
+## Шаг 5. Поверните страницу
+ Если вы хотите повернуть страницу, вы можете использовать`Rotate` собственность`Page`объект. В этом примере страница повернута на 90 градусов.
 
 ```csharp
 page. Rotate = Rotate. on90;
 ```
 
-## Step 6: Get page dimensions again
-After page rotation, you can get the page dimensions again using the `GetPageRect()` method.
+## Шаг 6. Снова получите размеры страницы
+ После поворота страницы вы можете снова получить размеры страницы, используя`GetPageRect()` метод.
 
 ```csharp
 Console.WriteLine(page.GetPageRect(true).Width.ToString() + ":" + page.GetPageRect(true).Height);
 ```
 
-### Sample source code for Get Dimensions using Aspose.PDF for .NET 
+### Пример исходного кода для получения измерений с использованием Aspose.PDF для .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Открыть документ
 Document pdfDocument = new Document(dataDir + "UpdateDimensions.pdf");
-// Adds a blank page to pdf document
+// Добавляет пустую страницу в документ PDF.
 Page page = pdfDocument.Pages.Count > 0 ? pdfDocument.Pages[1] : pdfDocument.Pages.Add();
-// Get page height and width information
+// Получить информацию о высоте и ширине страницы
 Console.WriteLine(page.GetPageRect(true).Width.ToString() + ":" + page.GetPageRect(true).Height);
-// Rotate page at 90 degree angle
+// Поворот страницы на 90 градусов
 page.Rotate = Rotation.on90;
-// Get page height and width information
+// Получить информацию о высоте и ширине страницы
 Console.WriteLine(page.GetPageRect(true).Width.ToString() + ":" + page.GetPageRect(true).Height);
 
 ```
 
-## Conclusion
-In this tutorial, we learned how to get the dimensions of a page in a PDF file using Aspose.PDF for .NET. By following the steps provided, you can easily extract page dimensions and perform other PDF manipulation operations. Aspose.PDF for .NET offers great flexibility for working with PDF files and allows you to develop powerful and customized solutions.
+## Заключение
+В этом уроке мы узнали, как получить размеры страницы в PDF-файле с помощью Aspose.PDF для .NET. Следуя предоставленным инструкциям, вы можете легко извлечь размеры страницы и выполнить другие операции по манипулированию PDF-файлами. Aspose.PDF для .NET предлагает большую гибкость при работе с PDF-файлами и позволяет разрабатывать мощные и индивидуальные решения.
 
-Feel free to further explore the documentation of Aspose.PDF to discover all the features offered by this library.
+Не стесняйтесь дополнительно изучить документацию Aspose.PDF, чтобы узнать обо всех функциях, предлагаемых этой библиотекой.
 
-### FAQs for get PDF page dimensions
+### Часто задаваемые вопросы по получению размеров страницы PDF
 
-#### Q: How can I get the dimensions of a specific page in a PDF file?
+#### Вопрос: Как узнать размеры конкретной страницы PDF-файла?
 
-A: To get the dimensions of a specific page in a PDF file, you can use the `GetPageRect()` method of the `Page` object in Aspose.PDF for .NET. This method returns a `Rectangle` object containing the dimensions (width and height) of the page.
+О: Чтобы получить размеры конкретной страницы PDF-файла, вы можете использовать`GetPageRect()` метод`Page` объект в Aspose.PDF для .NET. Этот метод возвращает`Rectangle` объект, содержащий размеры (ширину и высоту) страницы.
 
-#### Q: What does the `GetPageRect(true)` method do in the provided C# source code?
+####  Вопрос: Что означает`GetPageRect(true)` method do in the provided C# source code?
 
-A: The `GetPageRect(true)` method in the provided C# source code returns the dimensions of the page after applying any rotations. If the page is rotated, the method will return the dimensions of the rotated page, which could be different from the original dimensions.
+ А:`GetPageRect(true)` Метод в предоставленном исходном коде C# возвращает размеры страницы после применения любого поворота. Если страница повернута, метод вернет размеры повернутой страницы, которые могут отличаться от исходных размеров.
 
-#### Q: Can I get the dimensions of all pages in the PDF document using Aspose.PDF for .NET?
+#### Вопрос: Могу ли я получить размеры всех страниц PDF-документа с помощью Aspose.PDF для .NET?
 
-A: Yes, you can get the dimensions of all pages in the PDF document by iterating through the `Pages` collection of the `Document` object and using the `GetPageRect(true)` method for each page.
+ О: Да, вы можете получить размеры всех страниц PDF-документа, перебирая`Pages` коллекция`Document` объект и используя`GetPageRect(true)` метод для каждой страницы.
 
-#### Q: How can I determine the orientation of a page (portrait or landscape) based on its dimensions?
+#### Вопрос: Как определить ориентацию страницы (книжную или альбомную) по ее размерам?
 
-A: To determine the orientation of a page based on its dimensions, you can compare the width and height of the page. If the width is greater than the height, the page is in landscape orientation, and if the height is greater than the width, the page is in portrait orientation.
+О: Чтобы определить ориентацию страницы по ее размерам, вы можете сравнить ширину и высоту страницы. Если ширина больше высоты, страница имеет альбомную ориентацию, а если высота больше ширины, страница имеет книжную ориентацию.
 
-#### Q: Can I modify the dimensions of a page using Aspose.PDF for .NET?
+#### Вопрос: Могу ли я изменить размеры страницы с помощью Aspose.PDF для .NET?
 
-A: Yes, you can modify the dimensions of a page in Aspose.PDF for .NET. After getting the `Rectangle` object representing the page dimensions, you can adjust the width and height as per your requirements and then apply the changes to the page.
+ О: Да, вы можете изменить размеры страницы в Aspose.PDF для .NET. После получения`Rectangle` объект, представляющий размеры страницы, вы можете настроить ширину и высоту в соответствии с вашими требованиями, а затем применить изменения к странице.

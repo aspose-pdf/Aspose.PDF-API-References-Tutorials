@@ -1,40 +1,40 @@
 ---
-title: Remove All Text In PDF File
-linktitle: Remove All Text In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to remove all text in PDF file using Aspose.PDF for .NET.
+title: إزالة كل النص في ملف PDF
+linktitle: إزالة كل النص في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إزالة كل النص في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 280
 url: /ar/net/programming-with-text/remove-all-text/
 ---
-In this tutorial, we will explain how to remove all text in PDF file using the Aspose.PDF library for .NET. We will go through the step-by-step process of opening a PDF, selecting and deleting text from each page, and saving the modified PDF using the provided C# source code.
+سنشرح في هذا البرنامج التعليمي كيفية إزالة كل النص في ملف PDF باستخدام مكتبة Aspose.PDF لـ .NET. سنتابع عملية فتح ملف PDF خطوة بخطوة، واختيار النص وحذفه من كل صفحة، وحفظ ملف PDF المعدل باستخدام كود مصدر C# المقدم.
 
-## Requirements
+## متطلبات
 
-Before you begin, ensure that you have the following:
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- The Aspose.PDF for .NET library installed.
-- A basic understanding of C# programming.
+- تم تثبيت Aspose.PDF لمكتبة .NET.
+- فهم أساسي للبرمجة C#.
 
-## Step 1: Set up the Document Directory
+## الخطوة 1: إعداد دليل المستندات
 
-First, you need to set the path to the directory where your PDF files are located. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your PDF files.
+ أولاً، تحتاج إلى تعيين المسار إلى الدليل الذي توجد به ملفات PDF الخاصة بك. يستبدل`"YOUR DOCUMENT DIRECTORY"` في ال`dataDir` متغير مع المسار إلى ملفات PDF الخاصة بك.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Open the PDF Document
+## الخطوة 2: افتح مستند PDF
 
-Next, we open the PDF document using the `Document` class from the Aspose.PDF library.
+ بعد ذلك، نقوم بفتح مستند PDF باستخدام الملف`Document` فئة من مكتبة Aspose.PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "RemoveAllText.pdf");
 ```
 
-## Step 3: Remove Text from Each Page
+## الخطوة 3: إزالة النص من كل صفحة
 
-We loop through all the pages of the PDF document and use an `OperatorSelector` to select all text on each page. Then, we delete the selected text.
+ نقوم بالتمرير خلال جميع صفحات مستند PDF ونستخدم ملف`OperatorSelector` لتحديد كل النص في كل صفحة. ثم نقوم بحذف النص المحدد.
 
 ```csharp
 for (int i = 1; i <= pdfDocument.Pages.Count; i++)
@@ -46,74 +46,74 @@ for (int i = 1; i <= pdfDocument.Pages.Count; i++)
 }
 ```
 
-## Step 4: Save the Modified PDF
+## الخطوة 4: احفظ ملف PDF المعدل
 
-Finally, we save the modified PDF document to the specified output file.
+وأخيرًا، نقوم بحفظ مستند PDF المعدل في ملف الإخراج المحدد.
 
 ```csharp
 pdfDocument.Save(dataDir + "RemoveAllText_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 ```
 
-### Sample source code for Remove All Text using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لإزالة كافة النصوص باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "RemoveAllText.pdf");
-// Loop through all pages of PDF Document
+// قم بالتمرير عبر جميع صفحات مستند PDF
 for (int i = 1; i <= pdfDocument.Pages.Count; i++)
 {
 	Page page = pdfDocument.Pages[i];
 	OperatorSelector operatorSelector = new OperatorSelector(new Aspose.Pdf.Operators.TextShowOperator());
-	// Select all text on the page
+	// حدد كل النص الموجود على الصفحة
 	page.Contents.Accept(operatorSelector);
-	// Delete all text
+	// حذف كل النص
 	page.Contents.Delete(operatorSelector.Selected);
 }
-// Save the document
+// احفظ المستند
 pdfDocument.Save(dataDir + "RemoveAllText_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, you have learned how to remove all text from a PDF document using the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can open a PDF, select and delete text from each page, and save the modified PDF.
+في هذا البرنامج التعليمي، تعلمت كيفية إزالة كل النص من مستند PDF باستخدام مكتبة Aspose.PDF لـ .NET. باتباع الدليل الموضح خطوة بخطوة وتنفيذ كود C# المقدم، يمكنك فتح ملف PDF وتحديد النص وحذفه من كل صفحة وحفظ ملف PDF المعدل.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of the "Remove All Text In PDF File" tutorial?
+#### س: ما هو الغرض من البرنامج التعليمي "إزالة كافة النصوص في ملف PDF"؟
 
-A: The "Remove All Text In PDF File" tutorial aims to demonstrate how to use the Aspose.PDF library for .NET to remove all text from a PDF document. The tutorial provides a step-by-step guide and C# source code to help you open a PDF document, select and delete text from each page, and save the modified PDF.
+ج: يهدف البرنامج التعليمي "إزالة كل النص في ملف PDF" إلى توضيح كيفية استخدام مكتبة Aspose.PDF لـ .NET لإزالة كل النص من مستند PDF. يوفر البرنامج التعليمي دليلاً خطوة بخطوة وكود مصدر C# لمساعدتك على فتح مستند PDF وتحديد النص وحذفه من كل صفحة وحفظ ملف PDF المعدل.
 
-#### Q: Why would I want to remove all text from a PDF document?
+#### س: لماذا أرغب في إزالة كل النص من مستند PDF؟
 
-A: There are various scenarios where removing all text from a PDF document could be useful. For example, you might want to create a redacted version of a document by removing sensitive information, or you might need to generate a visual representation of the document without its textual content.
+ج: هناك العديد من السيناريوهات التي قد يكون من المفيد فيها إزالة النص بالكامل من مستند PDF. على سبيل المثال، قد ترغب في إنشاء نسخة منقحة من المستند عن طريق إزالة المعلومات الحساسة، أو قد تحتاج إلى إنشاء تمثيل مرئي للمستند بدون محتواه النصي.
 
-#### Q: How do I set up the document directory?
+#### س: كيف أقوم بإعداد دليل المستندات؟
 
-A: To set up the document directory:
+ج: لإعداد دليل المستندات:
 
-1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where your PDF files are located.
+1.  يستبدل`"YOUR DOCUMENT DIRECTORY"` في ال`dataDir` متغير مع المسار إلى الدليل حيث توجد ملفات PDF الخاصة بك.
 
-#### Q: How do I remove text from each page of a PDF document?
+#### س: كيف يمكنني إزالة النص من كل صفحة في مستند PDF؟
 
-A: The tutorial guides you through the process of looping through all the pages of a PDF document, selecting all the text on each page using an `OperatorSelector`, and then deleting the selected text.
+ ج: يرشدك البرنامج التعليمي خلال عملية التكرار عبر جميع صفحات مستند PDF، وتحديد كل النص في كل صفحة باستخدام`OperatorSelector`، ثم قم بحذف النص المحدد.
 
-#### Q: Can I selectively remove text from specific pages?
+#### س: هل يمكنني إزالة النص بشكل انتقائي من صفحات معينة؟
 
-A: Yes, you can modify the loop to selectively remove text from specific pages by specifying the page numbers you want to process. The example provided in the tutorial demonstrates how to loop through all pages, but you can adjust it to meet your requirements.
+ج: نعم، يمكنك تعديل الحلقة لإزالة النص بشكل انتقائي من صفحات معينة عن طريق تحديد أرقام الصفحات التي تريد معالجتها. يوضح المثال الموجود في البرنامج التعليمي كيفية التنقل عبر كافة الصفحات، ولكن يمكنك تعديله لتلبية متطلباتك.
 
-#### Q: How do I save the modified PDF document?
+#### س: كيف يمكنني حفظ مستند PDF المعدل؟
 
-A: After removing text from each page, you can save the modified PDF document using the `Save` method of the `Document` class. Provide the desired output file path and specify the desired save format as arguments to the `Save` method.
+ ج: بعد إزالة النص من كل صفحة، يمكنك حفظ مستند PDF المعدل باستخدام الملف`Save` طريقة`Document`فصل. قم بتوفير مسار ملف الإخراج المطلوب وحدد تنسيق الحفظ المطلوب كوسائط لملف`Save` طريقة.
 
-#### Q: What is the expected output of this tutorial?
+#### س: ما هو الناتج المتوقع من هذا البرنامج التعليمي؟
 
-A: By following the tutorial and executing the provided C# code, you will generate a modified PDF document where all the text on each page has been removed.
+ج: باتباع البرنامج التعليمي وتنفيذ كود C# المقدم، سوف تقوم بإنشاء مستند PDF معدل حيث تمت إزالة كل النص الموجود في كل صفحة.
 
-#### Q: Can I use different operators to remove other types of content?
+#### س: هل يمكنني استخدام عوامل تشغيل مختلفة لإزالة أنواع أخرى من المحتوى؟
 
-A: Yes, you can use different operators to target and remove various types of content from a PDF document, such as images or graphical elements. The example provided in the tutorial specifically focuses on removing text.
+ج: نعم، يمكنك استخدام عوامل تشغيل مختلفة لاستهداف أنواع مختلفة من المحتوى وإزالتها من مستند PDF، مثل الصور أو العناصر الرسومية. يركز المثال المقدم في البرنامج التعليمي بشكل خاص على إزالة النص.
 
-#### Q: Is a valid Aspose License required for this tutorial?
+#### س: هل يلزم وجود ترخيص Aspose صالح لهذا البرنامج التعليمي؟
 
-A: Yes, a valid Aspose License is required for this tutorial to work correctly. You can purchase a full license or obtain a 30-day temporary license from the Aspose website.
+ج: نعم، يلزم وجود ترخيص Aspose صالح حتى يعمل هذا البرنامج التعليمي بشكل صحيح. يمكنك شراء ترخيص كامل أو الحصول على ترخيص مؤقت لمدة 30 يومًا من موقع Aspose.

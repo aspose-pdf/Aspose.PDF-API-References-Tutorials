@@ -1,64 +1,64 @@
 ---
-title: Style Table Element
-linktitle: Style Table Element
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to format table element with Aspose.PDF for .NET. Step-by-step guide to customize styles and properties.
+title: Élément de table de styles
+linktitle: Élément de table de styles
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment formater un élément de tableau avec Aspose.PDF pour .NET. Guide étape par étape pour personnaliser les styles et les propriétés.
 type: docs
 weight: 170
 url: /fr/net/programming-with-tagged-pdf/style-table-element/
 ---
-In this detailed tutorial, we will walk you through the provided C# source code step by step to format the array element using Aspose.PDF for .NET. Follow the instructions below to understand how to customize the styles and properties of the array element.
+Dans ce didacticiel détaillé, nous vous guiderons étape par étape à travers le code source C# fourni pour formater l'élément du tableau à l'aide d'Aspose.PDF pour .NET. Suivez les instructions ci-dessous pour comprendre comment personnaliser les styles et les propriétés de l'élément de tableau.
 
-## Step 1: Setting up the environment
+## Étape 1 : Configuration de l'environnement
 
-Before you begin, make sure you've configured your development environment to use Aspose.PDF for .NET. This includes installing the Aspose.PDF library and configuring your project to reference it.
+Avant de commencer, assurez-vous d'avoir configuré votre environnement de développement pour utiliser Aspose.PDF pour .NET. Cela inclut l'installation de la bibliothèque Aspose.PDF et la configuration de votre projet pour le référencer.
 
-## Step 2: Creating a document
+## Étape 2 : Création d'un document
 
-In this step, we will create a new document object Aspose.PDF.
+Dans cette étape, nous allons créer un nouvel objet document Aspose.PDF.
 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Document creation
+// création de documents
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example of table formatting");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-We have created a new document and set the document title and language.
+Nous avons créé un nouveau document et défini le titre et la langue du document.
 
-## Step 3: Obtaining the root structure element
+## Étape 3 : Obtention de l'élément de structure racine
 
-In this step we will get the root structure element for our document.
+Dans cette étape, nous obtiendrons l’élément de structure racine de notre document.
 
 ```csharp
-// Obtain the root structure element
+//Obtenir l'élément de structure racine
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-We got the root structure element which will serve as a container for the array element.
+Nous avons l'élément de structure racine qui servira de conteneur pour l'élément de tableau.
 
-## Step 4: Creating the array structure element
+## Étape 4 : Création de l'élément de structure du tableau
 
-Now let's create a new table structure element for our document.
+Créons maintenant un nouvel élément de structure de table pour notre document.
 
 ```csharp
-// Create the array structure element
+// Créer l'élément de structure de tableau
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 ```
 
-We have created a new array structure element and added it to the root structure element.
+Nous avons créé un nouvel élément de structure de tableau et l'avons ajouté à l'élément de structure racine.
 
-## Step 5: Customizing Array Element Styles and Properties
+## Étape 5 : Personnalisation des styles et des propriétés des éléments du tableau
 
-In this step, we will customize the styles and properties of the array element.
+Dans cette étape, nous personnaliserons les styles et les propriétés de l'élément du tableau.
 
 ```csharp
-// Customize the styles and properties of the array element
+// Personnaliser les styles et les propriétés de l'élément du tableau
 tableElement.BackgroundColor = Color.Beige;
 tableElement.Border = new BorderInfo(BorderSide.All, 0.80F, Color.Gray);
 tableElement. Alignment = HorizontalAlignment. Center;
@@ -77,30 +77,30 @@ tableElement. Top = 40F;
 tableElement.RepeatingColumnsCount = 2;
 tableElement.RepeatingRowsCount = 3;
 
-// Customize the style of repeated lines
+// Personnalisez le style des lignes répétées
 TextState rowStyle = new TextState();
 rowStyle.BackgroundColor = Color.LightCoral;
 tableElement.RepeatingRowsStyle = rowStyle;
 ```
 
-We used various properties to customize the table element, such as background color, borders, alignment, default cell style, margins, column width, etc.
+Nous avons utilisé diverses propriétés pour personnaliser l'élément du tableau, telles que la couleur d'arrière-plan, les bordures, l'alignement, le style de cellule par défaut, les marges, la largeur des colonnes, etc.
 
-## Step 6: Add table headers, body and footer
+## Étape 6 : Ajouter les en-têtes, le corps et le pied de page du tableau
 
-Now let's add the table headers, body and footer to the table element.
+Ajoutons maintenant les en-têtes, le corps et le pied de page du tableau à l'élément table.
 ```csharp
-// Add table headers
+// Ajouter des en-têtes de tableau
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
 TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
 TableTFootElement tableTFootElement = tableElement.CreateTFoot();
 
-// Number of rows and columns in the table
+// Nombre de lignes et de colonnes dans le tableau
 int rowCount = 10;
 int colCount = 5;
 int rowIndex;
 int colIndex;
 
-// Create the table header row
+// Créer la ligne d'en-tête du tableau
 TableTRElement headTrElement = tableTHeadElement.CreateTR();
 headTrElement.AlternativeText = "Header Row";
 
@@ -110,7 +110,7 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
      theElement.SetText(string.Format("Header {0}", colIndex));
 }
 
-// Add the rows of the table body
+//Ajouter les lignes du corps du tableau
 for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
 {
      TableTRElement trElement = tableTBodyElement.CreateTR();
@@ -123,7 +123,7 @@ for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
      }
 }
 
-// Add the footing line of the table
+// Ajouter la ligne de bas de page du tableau
 TableTRElement footTrElement = tableTFootElement.CreateTR();
 footTrElement.AlternativeText = "Footline";
 
@@ -134,49 +134,49 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 }
 ```
 
-We added the headers, body rows, and footer row to the table using the corresponding elements.
+Nous avons ajouté les en-têtes, les lignes du corps et la ligne du pied de page au tableau en utilisant les éléments correspondants.
 
-## Step 7: Saving the tagged PDF document
+## Étape 7 : Enregistrer le document PDF balisé
 
-Now that we've created our document with the styled table element, we'll save it as a tagged PDF document.
+Maintenant que nous avons créé notre document avec l'élément de tableau stylisé, nous allons l'enregistrer en tant que document PDF balisé.
 
 ```csharp
-// Save the tagged PDF document
+// Enregistrez le document PDF balisé
 document.Save(dataDir + "StyleTableElement.pdf");
 ```
 
-We saved the tagged PDF document in the specified directory.
+Nous avons enregistré le document PDF balisé dans le répertoire spécifié.
 
-## Step 8: PDF/UA compliance validation
+## Étape 8 : Validation de la conformité PDF/UA
 
-Next, we will validate the PDF/UA conformity of our document.
+Ensuite, nous validerons la conformité PDF/UA de notre document.
 
 ```csharp
-// PDF/UA compliance check
+// Vérification de la conformité PDF/UA
 document = new Document(dataDir + "StyleTableElement.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableElement.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(string.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
 ```
 
-We uploaded the tagged PDF document and validated its PDF/UA compliance by generating an XML report.
+Nous avons téléchargé le document PDF balisé et validé sa conformité PDF/UA en générant un rapport XML.
 
-### Sample source code for Style Table Element using Aspose.PDF for .NET 
+### Exemple de code source pour l'élément de table de style utilisant Aspose.PDF pour .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create document
+// Créer un document
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example table style");
 taggedContent.SetLanguage("en-US");
 
-// Get root structure element
+// Obtenir l'élément de structure racine
 StructureElement rootElement = taggedContent.RootElement;
 
-// Create table structure element
+// Créer un élément de structure de table
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 tableElement.BackgroundColor = Color.Beige;
@@ -231,10 +231,10 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 	tdElement.SetText(String.Format("Foot {0}", colIndex));
 }
 
-// Save Tagged Pdf Document
+// Enregistrer le document PDF balisé
 document.Save(dataDir + "StyleTableElement.pdf");
 
-// Checking PDF/UA compliance
+// Vérification de la conformité PDF/UA
 document = new Document(dataDir + "StyleTableElement.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableElement.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
@@ -243,50 +243,50 @@ Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ## Conclusion
 
-In this tutorial, we learned how to format the array element with Aspose.PDF for .NET. We customized the styles and properties of the table element, added headers, body rows, and a footer, saved the tagged PDF document, and validated its PDF/UA compliance.
+Dans ce didacticiel, nous avons appris à formater l'élément du tableau avec Aspose.PDF pour .NET. Nous avons personnalisé les styles et les propriétés de l'élément de tableau, ajouté des en-têtes, des lignes de corps et un pied de page, enregistré le document PDF balisé et validé sa conformité PDF/UA.
 
-### FAQ's
+### FAQ
 
-#### Q: What is the purpose of this tutorial on formatting the array element using Aspose.PDF for .NET?
+#### Q : Quel est l'objectif de ce didacticiel sur le formatage de l'élément de tableau à l'aide d'Aspose.PDF pour .NET ?
 
-A: The goal of this tutorial is to guide you through the process of formatting the array element in a PDF document using Aspose.PDF for .NET. It provides step-by-step instructions and C# source code examples to help you customize the styles and properties of the array element.
+: L'objectif de ce didacticiel est de vous guider tout au long du processus de formatage de l'élément de tableau dans un document PDF à l'aide d'Aspose.PDF pour .NET. Il fournit des instructions étape par étape et des exemples de code source C# pour vous aider à personnaliser les styles et les propriétés de l'élément de tableau.
 
-#### Q: What are the prerequisites for following this tutorial?
+#### Q : Quels sont les prérequis pour suivre ce tutoriel ?
 
-A: Before you start, ensure that you have set up your development environment to use Aspose.PDF for .NET. This involves installing the Aspose.PDF library and configuring your project to reference it.
+R : Avant de commencer, assurez-vous d'avoir configuré votre environnement de développement pour utiliser Aspose.PDF pour .NET. Cela implique d'installer la bibliothèque Aspose.PDF et de configurer votre projet pour le référencer.
 
-#### Q: How can I create a new PDF document and set its title and language using Aspose.PDF for .NET?
+#### Q : Comment puis-je créer un nouveau document PDF et définir son titre et sa langue à l'aide d'Aspose.PDF pour .NET ?
 
-A: To create a new PDF document, you need to create a `Document` object from the Aspose.PDF library. The tutorial's provided C# source code demonstrates how to create a document and set its title and language properties.
+ R : Pour créer un nouveau document PDF, vous devez créer un`Document` objet de la bibliothèque Aspose.PDF. Le code source C# fourni dans le didacticiel montre comment créer un document et définir ses propriétés de titre et de langue.
 
-#### Q: What is the significance of the root structure element in a PDF document?
+#### Q : Quelle est la signification de l’élément de structure racine dans un document PDF ?
 
-A: The root structure element acts as a container for other structure elements, helping to organize and categorize the content of the PDF document. It plays a crucial role in establishing the logical structure of the document.
+R : L'élément de structure racine agit comme un conteneur pour d'autres éléments de structure, aidant à organiser et à catégoriser le contenu du document PDF. Il joue un rôle crucial dans l’établissement de la structure logique du document.
 
-#### Q: How do I create and customize an array structure element using Aspose.PDF for .NET?
+#### Q : Comment créer et personnaliser un élément de structure de tableau à l'aide d'Aspose.PDF pour .NET ?
 
-A: You can create an array structure element using the `CreateTableElement()` method. The tutorial's source code provides examples of customizing various properties of the table element, such as background color, borders, alignment, column width, and more.
+ R : Vous pouvez créer un élément de structure de tableau à l'aide de l'outil`CreateTableElement()` méthode. Le code source du didacticiel fournit des exemples de personnalisation de diverses propriétés de l'élément table, telles que la couleur d'arrière-plan, les bordures, l'alignement, la largeur des colonnes, etc.
 
-#### Q: Can I customize the styles and properties of table cells within the array element?
+#### Q : Puis-je personnaliser les styles et les propriétés des cellules du tableau dans l’élément du tableau ?
 
-A: Yes, the tutorial covers how to customize the styles and properties of the entire table element, including headers, body rows, and footer. However, it doesn't specifically address customizing individual table cells.
+R : Oui, le didacticiel explique comment personnaliser les styles et les propriétés de l'ensemble de l'élément de tableau, y compris les en-têtes, les lignes du corps et le pied de page. Cependant, il ne traite pas spécifiquement de la personnalisation des cellules individuelles du tableau.
 
-#### Q: How can I add headers, body rows, and a footer to the table element?
+#### Q : Comment puis-je ajouter des en-têtes, des lignes de corps et un pied de page à l'élément tableau ?
 
-A: The tutorial explains how to create and add headers, body rows, and a footer to the table element using the appropriate methods provided by Aspose.PDF for .NET.
+R : Le didacticiel explique comment créer et ajouter des en-têtes, des lignes de corps et un pied de page à l'élément de tableau à l'aide des méthodes appropriées fournies par Aspose.PDF pour .NET.
 
-#### Q: What is PDF/UA compliance, and how can I validate it for my tagged PDF document?
+#### Q : Qu'est-ce que la conformité PDF/UA et comment puis-je la valider pour mon document PDF balisé ?
 
-A: PDF/UA compliance ensures that the PDF document conforms to accessibility standards, making it more accessible to users with disabilities. The tutorial demonstrates how to validate PDF/UA conformity using the `Validate()` method and generate an XML compliance report.
+ R : La conformité PDF/UA garantit que le document PDF est conforme aux normes d'accessibilité, le rendant ainsi plus accessible aux utilisateurs handicapés. Le didacticiel montre comment valider la conformité PDF/UA à l'aide de l'outil`Validate()` et générer un rapport de conformité XML.
 
-#### Q: How can I incorporate these concepts into my own .NET applications?
+#### Q : Comment puis-je intégrer ces concepts dans mes propres applications .NET ?
 
-A: You can use the provided C# source code examples as a guide to implementing array element formatting in your own .NET applications. Modify and adapt the code to match your requirements and integrate it into your projects.
+R : Vous pouvez utiliser les exemples de code source C# fournis comme guide pour implémenter le formatage des éléments de tableau dans vos propres applications .NET. Modifiez et adaptez le code pour qu'il corresponde à vos besoins et intégrez-le dans vos projets.
 
-#### Q: Are there any recommended best practices for formatting array elements in PDF documents?
+#### Q : Existe-t-il des bonnes pratiques recommandées pour le formatage des éléments de tableau dans les documents PDF ?
 
-A: When formatting array elements (tables), consider the readability and accessibility of the content. Use clear and legible fonts, appropriate colors, and maintain a consistent layout. Validate PDF/UA compliance to ensure accessibility standards are met.
+R : Lors du formatage des éléments du tableau (tableaux), tenez compte de la lisibilité et de l'accessibilité du contenu. Utilisez des polices claires et lisibles, des couleurs appropriées et maintenez une mise en page cohérente. Validez la conformité PDF/UA pour garantir que les normes d’accessibilité sont respectées.
 
-#### Q: What other features of Aspose.PDF for .NET can I explore for PDF document customization?
+#### Q : Quelles autres fonctionnalités d'Aspose.PDF pour .NET puis-je explorer pour la personnalisation de documents PDF ?
 
-A: Aspose.PDF for .NET offers a range of features for PDF document customization, including text manipulation, image insertion, form field management, digital signatures, annotations, and more. Consult the official documentation and resources to explore additional functionalities.
+R : Aspose.PDF pour .NET offre une gamme de fonctionnalités pour la personnalisation des documents PDF, notamment la manipulation de texte, l'insertion d'images, la gestion des champs de formulaire, les signatures numériques, les annotations, etc. Consultez la documentation et les ressources officielles pour explorer des fonctionnalités supplémentaires.

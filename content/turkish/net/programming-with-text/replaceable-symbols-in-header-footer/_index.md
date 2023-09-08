@@ -1,41 +1,41 @@
 ---
-title: Replaceable Symbols In Header Footer
-linktitle: Replaceable Symbols In Header Footer
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use replaceable symbols in the header and footer of a PDF document using Aspose.PDF for .NET.
+title: Üstbilgi Altbilgisindeki Değiştirilebilir Semboller
+linktitle: Üstbilgi Altbilgisindeki Değiştirilebilir Semboller
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak bir PDF belgesinin üstbilgisinde ve altbilgisinde değiştirilebilir sembollerin nasıl kullanılacağını öğrenin.
 type: docs
 weight: 320
 url: /tr/net/programming-with-text/replaceable-symbols-in-header-footer/
 ---
-In this tutorial, we will explain how to use replaceable symbols in the header and footer of a PDF document using the Aspose.PDF library for .NET. We will go through the step-by-step process of creating a PDF, setting margins, adding header and footer with replaceable symbols, and saving the PDF using the provided C# source code.
+Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak bir PDF belgesinin üstbilgisinde ve altbilgisinde değiştirilebilir sembollerin nasıl kullanılacağını açıklayacağız. PDF oluşturma, kenar boşluklarını ayarlama, değiştirilebilir sembollerle üstbilgi ve altbilgi ekleme ve sağlanan C# kaynak kodunu kullanarak PDF'yi kaydetme işlemlerini adım adım gerçekleştireceğiz.
 
-## Prerequisites
+## Önkoşullar
 
-Before you begin, ensure that you have the following:
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- The Aspose.PDF for .NET library installed.
-- A basic understanding of C# programming.
+- Aspose.PDF for .NET kütüphanesi kuruldu.
+- C# programlamanın temel anlayışı.
 
-## Step 1: Set up the Document Directory
+## 1. Adım: Belge Dizinini Ayarlayın
 
-First, you need to set the path to the directory where you want to save the generated PDF file. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your desired directory.
+ Öncelikle oluşturulan PDF dosyasını kaydetmek istediğiniz dizinin yolunu ayarlamanız gerekir. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir`İstediğiniz dizinin yolunu içeren değişken.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Create a PDF Document and Page
+## Adım 2: PDF Belgesi ve Sayfası Oluşturun
 
-Next, we create a new PDF document and add a page to it using the `Document` class and `Page` class from the Aspose.PDF library.
+ Daha sonra, yeni bir PDF belgesi oluşturup ona bir sayfa ekliyoruz.`Document` sınıf ve`Page` Aspose.PDF kütüphanesinden sınıf.
 
 ```csharp
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Step 3: Set Margins
+## 3. Adım: Kenar Boşluklarını Ayarlayın
 
-We set the margins for the page using the `MarginInfo` class. Adjust the margin values according to your requirements.
+ Sayfanın kenar boşluklarını kullanarak ayarlıyoruz.`MarginInfo`sınıf. Marj değerlerini gereksinimlerinize göre ayarlayın.
 
 ```csharp
 MarginInfo marginInfo = new MarginInfo();
@@ -46,9 +46,9 @@ marginInfo.Right = 50;
 page.PageInfo.Margin = marginInfo;
 ```
 
-## Step 4: Add Header with Replaceable Symbols
+## Adım 4: Değiştirilebilir Sembollerle Başlık Ekleme
 
-We create a `HeaderFooter` object for the page and add a `TextFragment` with replaceable symbols to it.
+ Biz bir yaratıyoruz`HeaderFooter` sayfa için nesne ve bir tane ekleyin`TextFragment` değiştirilebilir sembollerle birlikte.
 
 ```csharp
 HeaderFooter hfFirst = new HeaderFooter();
@@ -57,7 +57,7 @@ hfFirst.Margin.Left = 50;
 hfFirst.Margin.Right = 50;
 
 TextFragment t1 = new TextFragment("report title");
-// Set text properties if desired
+// İsterseniz metin özelliklerini ayarlayın
 t1.TextState.Font = FontRepository.FindFont("Arial");
 t1.TextState.FontSize = 16;
 t1.TextState.ForegroundColor = Aspose.Pdf.Color.Black;
@@ -67,12 +67,12 @@ t1.TextState.LineSpacing = 5f;
 
 hfFirst.Paragraphs.Add(t1);
 
-// Add more TextFragments or customize as needed
+// Daha fazla TextFragments ekleyin veya gerektiği gibi özelleştirin
 ```
 
-## Step 5: Add Footer with Replaceable Symbols
+## Adım 5: Değiştirilebilir Sembollerle Alt Bilgi Ekleme
 
-Similarly, we create a `HeaderFooter` object for the page footer and add `TextFragment` objects with replaceable symbols to it.
+ Benzer şekilde, bir`HeaderFooter` sayfa altbilgisi için nesne ve ekleme`TextFragment` Değiştirilebilir sembollere sahip nesneler.
 
 ```csharp
 HeaderFooter hfFoot = new HeaderFooter();
@@ -84,14 +84,14 @@ TextFragment t3 = new TextFragment("Generated on test date");
 TextFragment t4 = new TextFragment("report name ");
 TextFragment t5 = new TextFragment("Page $p of $P");
 
-// Add more TextFragments or customize as needed
+// Daha fazla TextFragments ekleyin veya gerektiği gibi özelleştirin
 
 hfFoot.Paragraphs.Add(tab2);
 ```
 
-## Step 6: Save the PDF Document
+## Adım 6: PDF Belgesini Kaydedin
 
-Finally, we save the PDF document to the specified output file.
+Son olarak PDF belgesini belirtilen çıktı dosyasına kaydediyoruz.
 
 ```csharp
 dataDir = dataDir + "ReplaceableSymbolsInHeaderFooter_out.pdf";
@@ -99,9 +99,9 @@ doc.Save(dataDir);
 Console.WriteLine("\nReplaceable symbols replaced successfully in the header and footer.\nFile saved at " + dataDir);
 ```
 
-### Sample source code for Replaceable Symbols In Header Footer using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Üst Bilgi Alt Bilgisindeki Değiştirilebilir Semboller için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 Page page = doc.Pages.Add();
@@ -110,13 +110,13 @@ marginInfo.Top = 90;
 marginInfo.Bottom = 50;
 marginInfo.Left = 50;
 marginInfo.Right = 50;
-// Assign the marginInfo instance to Margin property of sec1.PageInfo
+// MarginInfo örneğini sec1.PageInfo'nun Margin özelliğine atayın
 page.PageInfo.Margin = marginInfo;
 HeaderFooter hfFirst = new HeaderFooter();
 page.Header = hfFirst;
 hfFirst.Margin.Left = 50;
 hfFirst.Margin.Right = 50;
-// Instantiate a Text paragraph that will store the content to show as header
+// Başlık olarak gösterilecek içeriği saklayacak bir Metin paragrafı örneği oluşturun
 TextFragment t1 = new TextFragment("report title");
 t1.TextState.Font = FontRepository.FindFont("Arial");
 t1.TextState.FontSize = 16;
@@ -132,48 +132,48 @@ t2.TextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 t2.TextState.LineSpacing = 5f;
 t2.TextState.FontSize = 12;
 hfFirst.Paragraphs.Add(t2);
-// Create a HeaderFooter object for the section
+// Bölüm için bir HeaderFooter nesnesi oluşturun
 HeaderFooter hfFoot = new HeaderFooter();
-// Set the HeaderFooter object to odd & even footer
+// HeaderFooter nesnesini tek ve çift altbilgi olarak ayarlayın
 page.Footer = hfFoot;
 hfFoot.Margin.Left = 50;
 hfFoot.Margin.Right = 50;
-// Add a text paragraph containing current page number of total number of pages
+// Toplam sayfa sayısının geçerli sayfa numarasını içeren bir metin paragrafı ekleyin
 TextFragment t3 = new TextFragment("Generated on test date");
 TextFragment t4 = new TextFragment("report name ");
 TextFragment t5 = new TextFragment("Page $p of $P");
-// Instantiate a table object
+// Bir tablo nesnesinin örneğini oluşturma
 Table tab2 = new Table();
-// Add the table in paragraphs collection of the desired section
+// Tabloyu istediğiniz bölümün paragraf koleksiyonuna ekleyin
 hfFoot.Paragraphs.Add(tab2);
-// Set with column widths of the table
+// Tablonun sütun genişliklerine göre ayarlama
 tab2.ColumnWidths = "165 172 165";
-// Create rows in the table and then cells in the rows
+// Tabloda satırlar ve ardından satırlarda hücreler oluşturun
 Row row3 = tab2.Rows.Add();
 row3.Cells.Add();
 row3.Cells.Add();
 row3.Cells.Add();
-// Set the vertical allignment of the text as center alligned
+// Metnin dikey hizalamasını ortaya hizalanmış olarak ayarla
 row3.Cells[0].Alignment = Aspose.Pdf.HorizontalAlignment.Left;
 row3.Cells[1].Alignment = Aspose.Pdf.HorizontalAlignment.Center;
 row3.Cells[2].Alignment = Aspose.Pdf.HorizontalAlignment.Right;
 row3.Cells[0].Paragraphs.Add(t3);
 row3.Cells[1].Paragraphs.Add(t4);
 row3.Cells[2].Paragraphs.Add(t5);
-// Sec1.Paragraphs.Add(New Text("Aspose.Total for Java is a compilation of every Java component offered by Aspose. It is compiled on a#$NL" + "daily basis to ensure it contains the most up to date versions of each of our Java components. #$NL " + "Using Aspose.Total for Java developers can create a wide range of applications. #$NL #$NL #$NP" + "Aspose.Total for Java is a compilation of every Java component offered by Aspose. It is compiled on a#$NL" + "daily basis to ensure it contains the most up to date versions of each of our Java components. #$NL " + "Using Aspose.Total for Java developers can create a wide range of applications. #$NL #$NL #$NP" + "Aspose.Total for Java is a compilation of every Java component offered by Aspose. It is compiled on a#$NL" + "daily basis to ensure it contains the most up to date versions of each of our Java components. #$NL " + "Using Aspose.Total for Java developers can create a wide range of applications. #$NL #$NL"))
+//Sec1.Paragraphs.Add(New Text("Aspose.Total for Java, Aspose tarafından sunulan tüm Java bileşenlerinin bir derlemesidir. Her birinin en güncel sürümlerini içerdiğinden emin olmak için #$NL" + "günlük olarak derlenir. #$NL " + "Aspose.Total for Java'yı kullanarak geliştiriciler çok çeşitli uygulamalar oluşturabilirler. #$NL #$NL #$NP" + "Aspose.Total for Java, her Java bileşeninin bir derlemesidir Aspose tarafından sunulmaktadır. Java bileşenlerimizin her birinin en güncel sürümlerini içerdiğinden emin olmak için #$NL" + "günlük olarak derlenir. #$NL " + "Java geliştiricileri için Aspose.Total'ı kullanarak geniş bir içerik oluşturabilirsiniz. #$NL #$NL #$NP" + "Aspose.Total for Java, Aspose tarafından sunulan her Java bileşeninin bir derlemesidir. En fazla içeriği içerdiğinden emin olmak için #$NL" + "günlük olarak derlenir. Java bileşenlerimizin her birinin güncel sürümleri. #$NL " + "Java geliştiricileri Aspose.Total'ı kullanarak çok çeşitli uygulamalar oluşturabilir. #$NL #$NL"))
 Table table = new Table();
 table.ColumnWidths = "33% 33% 34%";
 table.DefaultCellPadding = new MarginInfo();
 table.DefaultCellPadding.Top = 10;
 table.DefaultCellPadding.Bottom = 10;
-// Add the table in paragraphs collection of the desired section
+// Tabloyu istediğiniz bölümün paragraf koleksiyonuna ekleyin
 page.Paragraphs.Add(table);
-// Set default cell border using BorderInfo object
+// BorderInfo nesnesini kullanarak varsayılan hücre kenarlığını ayarlama
 table.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1f);
-// Set table border using another customized BorderInfo object
+// Başka bir özelleştirilmiş BorderInfo nesnesini kullanarak tablo kenarlığını ayarlayın
 table.Border = new BorderInfo(BorderSide.All, 1f);
 table.RepeatingRowsCount = 1;
-// Create rows in the table and then cells in the rows
+// Tabloda satırlar ve ardından satırlarda hücreler oluşturun
 Row row1 = table.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
@@ -201,54 +201,54 @@ doc.Save(dataDir);
 Console.WriteLine("\nSymbols replaced successfully in header and footer.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, you have learned how to use replaceable symbols in the header and footer of a PDF document using the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can create a PDF, set margins, add header and footer with replaceable symbols, and save the PDF.
+Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak bir PDF belgesinin üstbilgisinde ve altbilgisinde değiştirilebilir sembollerin nasıl kullanılacağını öğrendiniz. Adım adım kılavuzu izleyerek ve verilen C# kodunu çalıştırarak bir PDF oluşturabilir, kenar boşluklarını ayarlayabilir, değiştirilebilir sembollerle üst bilgi ve alt bilgi ekleyebilir ve PDF'yi kaydedebilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the purpose of the "Replaceable Symbols In Header Footer" tutorial?
+#### S: "Üst Bilgi Alt Bilgideki Değiştirilebilir Semboller" eğitiminin amacı nedir?
 
-A: The "Replaceable Symbols In Header Footer" tutorial aims to guide you through the process of using the Aspose.PDF library for .NET to add replaceable symbols to the header and footer of a PDF document. Replaceable symbols allow you to dynamically replace specific placeholders with actual values when generating the PDF.
+C: "Üst Bilgi Alt Bilgisindeki Değiştirilebilir Semboller" eğitimi, bir PDF belgesinin üst bilgi ve alt bilgisine değiştirilebilir semboller eklemek için .NET için Aspose.PDF kütüphanesini kullanma sürecinde size rehberlik etmeyi amaçlamaktadır. Değiştirilebilir semboller, PDF'yi oluştururken belirli yer tutucuları dinamik olarak gerçek değerlerle değiştirmenize olanak tanır.
 
-#### Q: What are replaceable symbols in the context of a PDF header and footer?
+#### S: PDF üstbilgisi ve altbilgisi bağlamında değiştirilebilir simgeler nelerdir?
 
-A: Replaceable symbols are placeholders that you can insert into the header and footer of a PDF document. These symbols act as dynamic placeholders for values that can be filled in at runtime, such as page numbers, dates, and custom information.
+C: Değiştirilebilir semboller, bir PDF belgesinin üstbilgisine ve altbilgisine ekleyebileceğiniz yer tutuculardır. Bu semboller, sayfa numaraları, tarihler ve özel bilgiler gibi çalışma zamanında doldurulabilecek değerler için dinamik yer tutucular görevi görür.
 
-#### Q: Why would I want to use replaceable symbols in a PDF header and footer?
+#### S: PDF üstbilgisinde ve altbilgisinde neden değiştirilebilir semboller kullanmak isteyeyim?
 
-A: Replaceable symbols in the header and footer are useful when you want to include dynamic information in your PDF documents, such as page numbers, dates, or other variable data that may change when the document is generated.
+C: Üstbilgi ve altbilgideki değiştirilebilir semboller, PDF belgelerinize sayfa numaraları, tarihler veya belge oluşturulduğunda değişebilecek diğer değişken veriler gibi dinamik bilgiler eklemek istediğinizde kullanışlıdır.
 
-#### Q: How can I set the margins for the PDF page?
+#### S: PDF sayfasının kenar boşluklarını nasıl ayarlayabilirim?
 
-A: You can set the margins for the PDF page using the `MarginInfo` class and assigning it to the `Margin` property of the `PageInfo` of the page. Adjust the margin values as needed.
+ C: PDF sayfasının kenar boşluklarını aşağıdaki düğmeyi kullanarak ayarlayabilirsiniz:`MarginInfo` sınıfa atamak ve`Margin` mülkiyeti`PageInfo` sayfanın. Kenar boşluğu değerlerini gerektiği gibi ayarlayın.
 
-#### Q: How do I add replaceable symbols to the header and footer?
+#### S: Değiştirilebilir sembolleri üstbilgi ve altbilgiye nasıl eklerim?
 
-A: You can add replaceable symbols by creating a `HeaderFooter` object for the header and footer of the page. Then, you can add `TextFragment` objects with the desired text, including replaceable symbols, to the `Paragraphs` collection of the `HeaderFooter` object.
+ C: Değiştirilebilir sembolleri bir`HeaderFooter` sayfanın üstbilgisi ve altbilgisi için nesne. Daha sonra ekleyebilirsiniz`TextFragment`Değiştirilebilir semboller de dahil olmak üzere istenen metni içeren nesneleri`Paragraphs` koleksiyonu`HeaderFooter` nesne.
 
-#### Q: Can I customize the appearance of the replaceable symbols?
+#### S: Değiştirilebilir simgelerin görünümünü özelleştirebilir miyim?
 
-A: Yes, you can customize the appearance of the replaceable symbols by modifying the properties of the `TextFragment` objects that contain the symbols. You can set properties such as font, font size, color, alignment, and line spacing.
+ C: Evet, değiştirilebilir sembollerin özelliklerini değiştirerek, değiştirilebilir sembollerin görünümünü özelleştirebilirsiniz.`TextFragment` sembolleri içeren nesneler. Yazı tipi, yazı tipi boyutu, renk, hizalama ve satır aralığı gibi özellikleri ayarlayabilirsiniz.
 
-#### Q: What kind of replaceable symbols can I use?
+#### S: Ne tür değiştirilebilir semboller kullanabilirim?
 
-A: You can use a variety of replaceable symbols, such as:
+C: Aşağıdakiler gibi çeşitli değiştirilebilir semboller kullanabilirsiniz:
 
-- `$p`: Current page number.
-- `$P`: Total number of pages.
-- `$d`: Current date.
-- `$t`: Current time.
-- Custom placeholders you define.
+- `$p`: Geçerli sayfa numarası.
+- `$P`: Toplam sayfa sayısı.
+- `$d`: Geçerli tarih.
+- `$t`: Şimdiki zaman.
+- Tanımladığınız özel yer tutucular.
 
-#### Q: Can I include other text and formatting around the replaceable symbols?
+#### S: Değiştirilebilir simgelerin çevresine başka metin ve biçimlendirme ekleyebilir miyim?
 
-A: Yes, you can include other text and formatting around the replaceable symbols within the `TextFragment` objects. This allows you to create more complex headers and footers that incorporate dynamic and static content.
+ C: Evet, değiştirilebilir simgelerin çevresine başka metin ve biçimlendirmeler ekleyebilirsiniz.`TextFragment` nesneler. Bu, dinamik ve statik içerik içeren daha karmaşık üstbilgiler ve altbilgiler oluşturmanıza olanak tanır.
 
-#### Q: How can I save the generated PDF document?
+#### S: Oluşturulan PDF belgesini nasıl kaydedebilirim?
 
-A: To save the generated PDF document, you can use the `Save` method of the `Document` class. Provide the desired output file path and name as an argument.
+ C: Oluşturulan PDF belgesini kaydetmek için`Save` yöntemi`Document`sınıf. İstenilen çıktı dosyası yolunu ve adını bağımsız değişken olarak sağlayın.
 
-#### Q: Is a valid Aspose License required for this tutorial?
+#### S: Bu eğitim için geçerli bir Aspose Lisansı gerekli mi?
 
-A: Yes, a valid Aspose License is required to execute the code successfully in this tutorial. You can obtain a full license or a 30-day temporary license from the Aspose website.
+C: Evet, bu eğitimde kodu başarıyla yürütmek için geçerli bir Aspose Lisansı gereklidir. Aspose web sitesinden tam lisans veya 30 günlük geçici lisans alabilirsiniz.

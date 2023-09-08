@@ -1,38 +1,38 @@
 ---
-title: Add PDF Annotation
-linktitle: Add Annotation
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add text PDF annotations with Aspose.PDF for .NET using this C# source code. Customize your annotations with specific details and icons.
+title: PDF Açıklaması Ekle
+linktitle: Ek Açıklama Ekle
+second_title: .NET API Referansı için Aspose.PDF
+description: Bu C# kaynak kodunu kullanarak Aspose.PDF for .NET ile metin PDF açıklamalarını nasıl ekleyeceğinizi öğrenin. Ek açıklamalarınızı belirli ayrıntılar ve simgelerle özelleştirin.
 type: docs
 weight: 10
 url: /tr/net/annotations/addannotation/
 ---
-Adding annotations to PDF documents is a powerful feature that can enhance collaboration and review processes. Aspose.PDF for .NET makes it easy to add annotations programmatically to PDF documents using C#. In this guide, we will explain step-by-step how to use Aspose.PDF for .NET to add annotations to a PDF document.
+PDF belgelerine ek açıklamalar eklemek, işbirliğini ve inceleme süreçlerini geliştirebilecek güçlü bir özelliktir. Aspose.PDF for .NET, C# kullanarak PDF belgelerine programlı olarak açıklama eklemeyi kolaylaştırır. Bu kılavuzda, bir PDF belgesine açıklama eklemek için Aspose.PDF for .NET'in nasıl kullanılacağını adım adım açıklayacağız.
 
-## Step 1: Create a New Project and Install Aspose.PDF for .NET
+## Adım 1: Yeni Bir Proje Oluşturun ve Aspose.PDF for .NET'i Kurun
 
-Before we start writing the code for adding annotations, we need to create a new project and install Aspose.PDF for .NET. To install Aspose.PDF for .NET, follow these steps:
+Ek açıklama ekleme kodunu yazmaya başlamadan önce yeni bir proje oluşturmamız ve Aspose.PDF for .NET'i kurmamız gerekiyor. Aspose.PDF for .NET'i yüklemek için şu adımları izleyin:
 
-1. Open Visual Studio and create a new C# project.
-2. Right-click on the project in the Solution Explorer and select "Manage NuGet Packages".
-3. Search for "Aspose.PDF" and select "Install".
+1. Visual Studio'yu açın ve yeni bir C# projesi oluşturun.
+2. Solution Explorer'da projeye sağ tıklayın ve "NuGet Paketlerini Yönet" seçeneğini seçin.
+3. "Aspose.PDF"yi arayın ve "Yükle"yi seçin.
 
-Once the installation is complete, we can start writing the code.
+Kurulum tamamlandıktan sonra kodu yazmaya başlayabiliriz.
 
-## Step 2: Open the PDF Document
+## Adım 2: PDF Belgesini açın
 
-The first step in adding annotations is to open the PDF document. We can use the following code to open the document:
+Ek açıklamalar eklemenin ilk adımı PDF belgesini açmaktır. Belgeyi açmak için aşağıdaki kodu kullanabiliriz:
 
 ```csharp
 string dataDir = "YOUR DATA DIRECTORY";
 Document pdfDocument = new Document(dataDir + "AddAnnotation.pdf");
 ```
 
-In this code, we specify the path to the PDF document we want to open. Make sure to replace "YOUR DATA DIRECTORY" with the actual path to your data directory.
+Bu kodda açmak istediğimiz PDF belgesinin yolunu belirtiyoruz. "VERİ DİZİNİ"ni veri dizininizin gerçek yolu ile değiştirdiğinizden emin olun.
 
-## Step 3: Create the Annotation
+## 3. Adım: Ek Açıklamayı Oluşturun
 
-To add an annotation, we need to create a new instance of the `TextAnnotation` class. We can use the following code to create a new text annotation:
+ Bir açıklama eklemek için yeni bir örnek oluşturmamız gerekir.`TextAnnotation` sınıf. Yeni bir metin açıklaması oluşturmak için aşağıdaki kodu kullanabiliriz:
 
 ```csharp
 TextAnnotation textAnnotation = new TextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600));
@@ -44,11 +44,11 @@ textAnnotation.Open = true;
 textAnnotation.Icon = TextIcon.Key;
 ```
 
-In this code, we create a new text annotation on the second page of the PDF document. We also set the title, subject, state, contents, open, and icon properties of the annotation.
+Bu kodda PDF belgesinin ikinci sayfasında yeni bir metin açıklaması oluşturuyoruz. Ek açıklamanın başlık, konu, durum, içerik, açık ve simge özelliklerini de belirliyoruz.
 
-## Step 4: Customize the Annotation
+## 4. Adım: Ek Açıklamayı Özelleştirin
 
-We can customize the appearance of the annotation using the `Border` class. We can use the following code to customize the border of the annotation:
+ Ek açıklamanın görünümünü aşağıdakileri kullanarak özelleştirebiliriz:`Border` sınıf. Ek açıklamanın kenarlığını özelleştirmek için aşağıdaki kodu kullanabiliriz:
 
 ```csharp
 Border border = new Border(textAnnotation);
@@ -58,37 +58,37 @@ textAnnotation.Border = border;
 textAnnotation.Rect = new Aspose.Pdf.Rectangle(200, 400, 400, 600);
 ```
 
-In this code, we create a new `Border` object and set its width and dash properties. We then set the `Border` property of the annotation to the new `Border` object. Finally, we set the `Rect` property of the annotation to specify its position and size.
+ Bu kodda yeni bir tane oluşturuyoruz.`Border`nesneyi seçin ve genişlik ve çizgi özelliklerini ayarlayın. Daha sonra ayarladık`Border` yeni açıklamanın özelliği`Border` nesne. Son olarak ayarları yaptık`Rect` Ek açıklamanın konumunu ve boyutunu belirtme özelliğini kullanın.
 
-## Step 5: Add the Annotation to the PDF Document
+## Adım 5: Ek Açıklamayı PDF Belgesine Ekleme
 
-Once we have created and customized the annotation, we need to add it to the PDF document. We can use the following code to add the annotation to the PDF document:
+Ek açıklamayı oluşturup özelleştirdikten sonra, onu PDF belgesine eklememiz gerekir. Ek açıklamayı PDF belgesine eklemek için aşağıdaki kodu kullanabiliriz:
 
 ```csharp
 pdfDocument.Pages[1].Annotations.Add(textAnnotation);
 ```
 
-In this code, we add the annotation to the annotations collection of the second page of the PDF document.
+Bu kodda, açıklamayı PDF belgesinin ikinci sayfasının açıklama koleksiyonuna ekliyoruz.
 
-## Step 6: Save the Output File
+## Adım 6: Çıktı Dosyasını Kaydedin
 
-Finally, we need to save the PDF document with the added annotation. We can use the following code to save the output file:
+Son olarak, eklenen açıklamayla birlikte PDF belgesini kaydetmemiz gerekiyor. Çıktı dosyasını kaydetmek için aşağıdaki kodu kullanabiliriz:
 
 ```csharp
 dataDir = dataDir + "AddAnnotation_out.pdf";
 pdfDocument.Save(dataDir);
 ```
-### Example source code for Adding Annotation using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak Açıklama Eklemek için örnek kaynak kodu
 
 
 ```csharp   
- // The path to the documents directory.
+ // Belgeler dizininin yolu.
 string dataDir = "YOUR DATA DIRECTORY";
 
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir + "AddAnnotation.pdf");
 
-// Create annotation
+// Ek açıklama oluştur
 TextAnnotation textAnnotation = new TextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600));
 textAnnotation.Title = "Sample Annotation Title";
 textAnnotation.Subject = "Sample Subject";
@@ -103,36 +103,36 @@ border.Dash = new Dash(1, 1);
 textAnnotation.Border = border;
 textAnnotation.Rect = new Aspose.Pdf.Rectangle(200, 400, 400, 600);
 
-// Add annotation in the annotations collection of the page
+// Sayfanın ek açıklamalar koleksiyonuna ek açıklama ekleyin
 pdfDocument.Pages[1].Annotations.Add(textAnnotation);
 dataDir = dataDir + "AddAnnotation_out.pdf";
-// Save output file
+// Çıkış dosyasını kaydet
 pdfDocument.Save(dataDir);
 ```
-This code demonstrates how to add a text annotation with a specific title, subject, state, contents, and icon to a PDF page using Aspose.PDF for .NET. You can modify this code according to your requirements for adding annotations to your PDF documents. Just remember to replace YOUR DATA DIRECTORY with the actual directory path where your PDF file is located and where you want to save the output file.
+Bu kod, Aspose.PDF for .NET kullanılarak bir PDF sayfasına belirli bir başlık, konu, durum, içerik ve simge içeren bir metin açıklamasının nasıl ekleneceğini gösterir. Bu kodu, PDF belgelerinize ek açıklamalar ekleme gereksinimlerinize göre değiştirebilirsiniz. VERİ DİZİNİNİZİ, PDF dosyanızın bulunduğu ve çıktı dosyasını kaydetmek istediğiniz gerçek dizin yolu ile değiştirmeyi unutmayın.
 
-## Conclusion
+## Çözüm
 
-Adding annotations to PDF documents using Aspose.PDF for .NET offers a valuable tool for enhancing document collaboration and review processes. By following the step-by-step guide provided in this article, developers can seamlessly integrate annotation capabilities into their C# applications.
+Aspose.PDF for .NET kullanarak PDF belgelerine açıklamalar eklemek, belge işbirliğini ve inceleme süreçlerini geliştirmek için değerli bir araç sunar. Geliştiriciler, bu makalede sağlanan adım adım kılavuzu izleyerek ek açıklama yeteneklerini C# uygulamalarına sorunsuz bir şekilde entegre edebilir.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What types of annotations can be added using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET kullanılarak ne tür açıklamalar eklenebilir?
 
-A: Aspose.PDF for .NET supports various types of annotations, including text annotations, stamps, links, shapes, and more. Developers can customize the appearance and properties of these annotations to suit their specific needs.
+C: Aspose.PDF for .NET, metin açıklamaları, damgalar, bağlantılar, şekiller ve daha fazlasını içeren çeşitli açıklama türlerini destekler. Geliştiriciler bu ek açıklamaların görünümünü ve özelliklerini kendi özel ihtiyaçlarına uyacak şekilde özelleştirebilir.
 
-#### Q: Can I add annotations to specific pages in a multi-page PDF document?
+#### S: Çok sayfalı bir PDF belgesindeki belirli sayfalara açıklamalar ekleyebilir miyim?
 
-A: Yes, Aspose.PDF for .NET allows you to specify the page where you want to add the annotation. You can choose a specific page or add annotations to multiple pages as needed.
+C: Evet, Aspose.PDF for .NET, açıklamayı eklemek istediğiniz sayfayı belirtmenize olanak tanır. Gerektiğinde belirli bir sayfayı seçebilir veya birden fazla sayfaya ek açıklamalar ekleyebilirsiniz.
 
-#### Q: How do I customize the appearance of annotations?
+#### S: Ek açıklamaların görünümünü nasıl özelleştiririm?
 
-A: Annotations can be customized using properties such as border width, color, dash style, text style, and more. Aspose.PDF for .NET provides a rich set of options to tailor the appearance of annotations.
+C: Ek açıklamalar, kenarlık genişliği, renk, çizgi stili, metin stili ve daha fazlası gibi özellikler kullanılarak özelleştirilebilir. Aspose.PDF for .NET, açıklamaların görünümünü uyarlamak için zengin seçenekler sunar.
 
-#### Q: Is it possible to add hyperlinks as annotations using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET kullanarak köprüleri açıklama olarak eklemek mümkün müdür?
 
-A: Yes, you can add hyperlinks as annotations to PDF documents using Aspose.PDF for .NET. Hyperlink annotations can be used to link to external URLs or specific locations within the same document.
+C: Evet, Aspose.PDF for .NET'i kullanarak PDF belgelerine açıklama olarak köprüler ekleyebilirsiniz. Köprü ek açıklamaları, harici URL'lere veya aynı belge içindeki belirli konumlara bağlantı vermek için kullanılabilir.
 
-#### Q: Can annotations be added to existing PDF documents without altering the original content?
+#### S: Orijinal içeriği değiştirmeden mevcut PDF belgelerine açıklamalar eklenebilir mi?
 
-A: Yes, Aspose.PDF for .NET adds annotations as additional elements without altering the original content of the PDF document. The original PDF content remains intact.
+C: Evet, Aspose.PDF for .NET, PDF belgesinin orijinal içeriğini değiştirmeden ek öğeler olarak açıklamalar ekler. Orijinal PDF içeriği bozulmadan kalır.

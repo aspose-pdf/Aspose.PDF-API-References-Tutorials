@@ -1,113 +1,113 @@
 ---
-title: Add Attachment In PDF File
-linktitle: Add Attachment In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add attachment in PDF file using Aspose.PDF for .NET. Step-by-step guide for easy handling.
+title: Anhang zur PDF-Datei hinzufügen
+linktitle: Anhang zur PDF-Datei hinzufügen
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET einen Anhang zu einer PDF-Datei hinzufügen. Schritt-für-Schritt-Anleitung für einfache Handhabung.
 type: docs
 weight: 10
 url: /de/net/programming-with-attachments/add-attachment/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to add an attachment in PDF file using Aspose.PDF for .NET.
+In diesem Tutorial führen wir Sie Schritt für Schritt durch den folgenden C#-Quellcode, um mit Aspose.PDF für .NET einen Anhang zu einer PDF-Datei hinzuzufügen.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Stellen Sie sicher, dass Sie die Aspose.PDF-Bibliothek installiert und Ihre Entwicklungsumgebung eingerichtet haben, bevor Sie beginnen. Außerdem verfügen Sie über Grundkenntnisse der C#-Programmierung.
 
-### Step 1: Document Directory Setup
+### Schritt 1: Einrichten des Dokumentenverzeichnisses
 
-In the provided source code, you need to specify the directory where the PDF file you want to add the attachment is located. Change the "dataDir" variable to the desired directory.
+Im bereitgestellten Quellcode müssen Sie das Verzeichnis angeben, in dem sich die PDF-Datei befindet, der Sie den Anhang hinzufügen möchten. Ändern Sie die Variable „dataDir“ in das gewünschte Verzeichnis.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### Step 2: Open the existing PDF document
+### Schritt 2: Öffnen Sie das vorhandene PDF-Dokument
 
-We open the existing PDF document using the specified path.
+Wir öffnen das vorhandene PDF-Dokument über den angegebenen Pfad.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "AddAttachment.pdf");
 ```
 
-### Step 3: Setting up the new file to add as an attachment
+### Schritt 3: Einrichten der neuen Datei zum Hinzufügen als Anhang
 
-We configure the new file that we want to add as an attachment. In this example, we add a text file with the name "test.txt" and a description "Example text file".
+Wir konfigurieren die neue Datei, die wir als Anhang hinzufügen möchten. In diesem Beispiel fügen wir eine Textdatei mit dem Namen „test.txt“ und der Beschreibung „Beispieltextdatei“ hinzu.
 
 ```csharp
 FileSpecification fileSpecification = new FileSpecification(dataDir + "test.txt", "Sample text file");
 ```
 
-### Step 4: Adding the attachment to the document's attachments collection
+### Schritt 4: Hinzufügen des Anhangs zur Anhangssammlung des Dokuments
 
-We add the attachment to the document's attachments collection.
+Wir fügen den Anhang zur Anhangssammlung des Dokuments hinzu.
 
 ```csharp
 pdfDocument.EmbeddedFiles.Add(fileSpecification);
 ```
 
-### Step 5: Saving the new output file
+### Schritt 5: Speichern der neuen Ausgabedatei
 
-Finally, we save the resulting new PDF file with the name "AddAttachment_out.pdf" in the specified directory.
+Abschließend speichern wir die resultierende neue PDF-Datei mit dem Namen „AddAttachment_out.pdf“ im angegebenen Verzeichnis.
 
 ```csharp
 pdfDocument.Save(dataDir + "AddAttachment_out.pdf");
 ```
 
-### Sample source code for Add Attachment using Aspose.PDF for .NET
+### Beispielquellcode für „Anhang hinzufügen“ mit Aspose.PDF für .NET
  
 ```csharp
 
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Dokument öffnen
 Document pdfDocument = new Document(dataDir + "AddAttachment.pdf");
-// Setup new file to be added as attachment
+// Richten Sie eine neue Datei ein, die als Anhang hinzugefügt werden soll
 FileSpecification fileSpecification = new FileSpecification(dataDir + "test.txt", "Sample text file");
-// Add attachment to document's attachment collection
+//Anhang zur Anhangssammlung des Dokuments hinzufügen
 pdfDocument.EmbeddedFiles.Add(fileSpecification);
 dataDir = dataDir + "AddAttachment_out.pdf";
-// Save new output
+// Neue Ausgabe speichern
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nSample text file attached successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
+## Abschluss
 
-In this tutorial, we explained how to add an attachment to a PDF file using Aspose.PDF for .NET. You can now use this knowledge to add additional files as attachments to your PDF documents.
+In diesem Tutorial haben wir erklärt, wie man mit Aspose.PDF für .NET einen Anhang zu einer PDF-Datei hinzufügt. Dieses Wissen können Sie nun nutzen, um zusätzliche Dateien als Anhänge zu Ihren PDF-Dokumenten hinzuzufügen.
 
-### FAQ's for add attachment in PDF file
+### FAQs zum Hinzufügen von Anhängen in PDF-Dateien
 
-#### Q: Why would I need to add attachments to a PDF file?
+#### F: Warum sollte ich Anhänge zu einer PDF-Datei hinzufügen?
 
-A: Adding attachments to a PDF file allows you to include supplementary materials, such as supporting documents, images, or files, which can provide additional context or information to the PDF's content.
+A: Durch das Hinzufügen von Anhängen zu einer PDF-Datei können Sie ergänzende Materialien wie unterstützende Dokumente, Bilder oder Dateien hinzufügen, die zusätzlichen Kontext oder Informationen zum Inhalt der PDF-Datei bereitstellen können.
 
-#### Q: How does Aspose.PDF for .NET simplify the process of adding attachments?
+#### F: Wie vereinfacht Aspose.PDF für .NET das Hinzufügen von Anhängen?
 
-A: Aspose.PDF for .NET provides a streamlined API that allows you to easily add attachments to PDF files. The provided source code demonstrates step-by-step how to accomplish this task.
+A: Aspose.PDF für .NET bietet eine optimierte API, mit der Sie problemlos Anhänge zu PDF-Dateien hinzufügen können. Der bereitgestellte Quellcode zeigt Schritt für Schritt, wie diese Aufgabe ausgeführt wird.
 
-#### Q: What types of files can be attached to a PDF using Aspose.PDF for .NET?
+#### F: Welche Dateitypen können mit Aspose.PDF für .NET an eine PDF-Datei angehängt werden?
 
-A: Aspose.PDF for .NET supports attaching various types of files, including text files, images, documents, spreadsheets, and more, as long as they are accessible from your development environment.
+A: Aspose.PDF für .NET unterstützt das Anhängen verschiedener Dateitypen, einschließlich Textdateien, Bilder, Dokumente, Tabellenkalkulationen und mehr, sofern sie von Ihrer Entwicklungsumgebung aus zugänglich sind.
 
-#### Q: Is there a limit to the number of attachments that can be added to a PDF file?
+#### F: Gibt es eine Begrenzung für die Anzahl der Anhänge, die einer PDF-Datei hinzugefügt werden können?
 
-A: There is no strict limit to the number of attachments that can be added, but it's important to consider the overall file size and potential impact on document performance.
+A: Es gibt keine strenge Begrenzung für die Anzahl der Anhänge, die hinzugefügt werden können. Es ist jedoch wichtig, die Gesamtdateigröße und mögliche Auswirkungen auf die Dokumentleistung zu berücksichtigen.
 
-#### Q: Can I customize the description of the attached files?
+#### F: Kann ich die Beschreibung der angehängten Dateien anpassen?
 
-A: Yes, you can customize the description of each attached file. This description provides additional context for the attached file and helps users understand its purpose.
+A: Ja, Sie können die Beschreibung jeder angehängten Datei anpassen. Diese Beschreibung bietet zusätzlichen Kontext für die angehängte Datei und hilft Benutzern, ihren Zweck zu verstehen.
 
-#### Q: Are there any file size considerations when adding attachments?
+#### F: Muss beim Hinzufügen von Anhängen die Dateigröße berücksichtigt werden?
 
-A: While attachments can increase the overall file size of the PDF, Aspose.PDF for .NET ensures efficient attachment handling to minimize any negative impact on document performance.
+A: Während Anhänge die Gesamtdateigröße der PDF-Datei erhöhen können, sorgt Aspose.PDF für .NET für eine effiziente Handhabung von Anhängen, um negative Auswirkungen auf die Dokumentleistung zu minimieren.
 
-#### Q: Can attachments be added to specific pages within the PDF document?
+#### F: Können Anhänge zu bestimmten Seiten im PDF-Dokument hinzugefügt werden?
 
-A: Attachments are associated with the entire PDF document, rather than specific pages. They are accessible to users through the attachment panel in PDF viewers.
+A: Anhänge beziehen sich auf das gesamte PDF-Dokument und nicht auf bestimmte Seiten. Sie sind für Benutzer über das Anhangfenster in PDF-Viewern zugänglich.
 
-#### Q: How can I verify that the attachment was added successfully?
+#### F: Wie kann ich überprüfen, ob der Anhang erfolgreich hinzugefügt wurde?
 
-A: After following the provided source code, you can open the resulting PDF file to confirm that the attached file is accessible through the attachment panel.
+A: Nachdem Sie dem bereitgestellten Quellcode gefolgt sind, können Sie die resultierende PDF-Datei öffnen, um zu bestätigen, dass die angehängte Datei über das Anhangsfenster zugänglich ist.
 
-#### Q: Can I remove or update attachments after they have been added?
+#### F: Kann ich Anhänge entfernen oder aktualisieren, nachdem sie hinzugefügt wurden?
 
-A: Yes, you can modify or remove attachments from a PDF file using Aspose.PDF for .NET's API, giving you flexibility in managing attachments as needed.
+A: Ja, Sie können Anhänge mit der API von Aspose.PDF für .NET ändern oder aus einer PDF-Datei entfernen, was Ihnen Flexibilität bei der Verwaltung von Anhängen nach Bedarf gibt.

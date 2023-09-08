@@ -1,58 +1,58 @@
 ---
-title: Extract Highlighted Text In PDF File
-linktitle: Extract Highlighted Text In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract highlighted text in PDF file using Aspose.PDF for .NET with this step-by-step guide.
+title: Extraire le texte en surbrillance dans un fichier PDF
+linktitle: Extraire le texte en surbrillance dans un fichier PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment extraire le texte en surbrillance dans un fichier PDF à l'aide d'Aspose.PDF pour .NET avec ce guide étape par étape.
 type: docs
 weight: 60
 url: /fr/net/annotations/extracthighlightedtext/
 ---
-To extract highlighted text in PDF file, you can use the Aspose.PDF for .NET API. This API provides a simple way to retrieve all the text that has been highlighted in a document.
+Pour extraire le texte en surbrillance dans un fichier PDF, vous pouvez utiliser l'API Aspose.PDF pour .NET. Cette API offre un moyen simple de récupérer tout le texte qui a été surligné dans un document.
 
-## Step 1: Load the PDF document
+## Étape 1 : Charger le document PDF
 
-The first step in extracting highlighted text in PDF file is to load the document using the Aspose.PDF for .NET API. You can do this by creating a new instance of the `Document` class and passing the path to the PDF document as a parameter. 
+ La première étape de l'extraction du texte en surbrillance dans un fichier PDF consiste à charger le document à l'aide de l'API Aspose.PDF pour .NET. Vous pouvez le faire en créant une nouvelle instance du`Document` classe et en passant le chemin d’accès au document PDF en paramètre. 
 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir ="YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "ExtractHighlightedText.pdf");
 ```
 
-## Step 2: Loop through all annotations
+## Étape 2 : Parcourir toutes les annotations
 
-The next step is to loop through all the annotations in the PDF document. You can do this using a `foreach` loop, like so:
+ L'étape suivante consiste à parcourir toutes les annotations du document PDF. Vous pouvez le faire en utilisant un`foreach` boucle, comme ceci :
 
 ```csharp
 foreach (Annotation annotation in doc.Pages[1].Annotations)
 {
-	// Code goes here
+	// Le code va ici
 }
 ```
 
-## Step 3: Filter text markup annotations
+## Étape 3 : Filtrer les annotations de balisage de texte
 
-Inside the `foreach` loop, you will need to filter out all the annotations that are not text markup annotations. You can do this by checking if the annotation is an instance of the `TextMarkupAnnotation` class.
+ À l'intérieur de`foreach` boucle, vous devrez filtrer toutes les annotations qui ne sont pas des annotations de balisage de texte. Vous pouvez le faire en vérifiant si l'annotation est une instance du`TextMarkupAnnotation` classe.
 
 ```csharp
 if (annotation is TextMarkupAnnotation)
 {
-	// Code goes here
+	// Le code va ici
 }
 ```
 
-## Step 4: Retrieve highlighted text fragments
+## Étape 4 : Récupérer les fragments de texte en surbrillance
 
-Once you have filtered out all the text markup annotations, you can retrieve the highlighted text fragments for each annotation. You can do this by calling the `GetMarkedTextFragments()` method on the `TextMarkupAnnotation` object.
+ Une fois que vous avez filtré toutes les annotations de balisage de texte, vous pouvez récupérer les fragments de texte en surbrillance pour chaque annotation. Vous pouvez le faire en appelant le`GetMarkedTextFragments()` méthode sur le`TextMarkupAnnotation` objet.
 
 ```csharp
 TextMarkupAnnotation highlightedAnnotation = annotation as TextMarkupAnnotation;
 TextFragmentCollection collection = highlightedAnnotation.GetMarkedTextFragments();
 ```
 
-## Step 5: Display the highlighted text
+## Étape 5 : Afficher le texte en surbrillance
 
-Finally, you can display the highlighted text to the user. You can do this by looping through each `TextFragment` object in the `TextFragmentCollection` and calling the `Text` property.
+ Enfin, vous pouvez afficher le texte en surbrillance à l'utilisateur. Vous pouvez le faire en parcourant chaque`TextFragment` objet dans le`TextFragmentCollection` et en appelant le`Text` propriété.
 
 ```csharp
 foreach (TextFragment tf in collection)
@@ -61,10 +61,10 @@ foreach (TextFragment tf in collection)
 }
 ```
 
-### Example source code for Extract Highlighted Text using Aspose.PDF for .NET
+### Exemple de code source pour extraire le texte en surbrillance à l'aide d'Aspose.PDF pour .NET
 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir ="YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "ExtractHighlightedText.pdf");
 
@@ -84,26 +84,26 @@ foreach (Annotation annotation in doc.Pages[1].Annotations)
 
 ## Conclusion
 
-In this tutorial, we explored how to extract highlighted text from a PDF document using Aspose.PDF for .NET. By following the step-by-step guide and using the provided C# source code, developers can easily extract and manage highlighted text in their PDF documents.
+Dans ce didacticiel, nous avons exploré comment extraire le texte en surbrillance d'un document PDF à l'aide d'Aspose.PDF pour .NET. En suivant le guide étape par étape et en utilisant le code source C# fourni, les développeurs peuvent facilement extraire et gérer le texte en surbrillance dans leurs documents PDF.
 
-### FAQ's for extract highlighted text in PDF file
+### FAQ pour extraire le texte en surbrillance dans un fichier PDF
 
-#### Q: What are text markup annotations in a PDF document?
+#### Q : Que sont les annotations de balisage de texte dans un document PDF ?
 
-A: Text markup annotations are annotations that highlight or mark specific text in a PDF document. Examples of text markup annotations include highlights, underlines, and strikethroughs.
+R : Les annotations de balisage de texte sont des annotations qui mettent en évidence ou marquent un texte spécifique dans un document PDF. Des exemples d'annotations de balisage de texte incluent les surlignages, les soulignements et les barrés.
 
-#### Q: Can I extract text from other types of annotations using Aspose.PDF for .NET?
+#### Q : Puis-je extraire du texte à partir d’autres types d’annotations à l’aide d’Aspose.PDF pour .NET ?
 
-A: Yes, Aspose.PDF for .NET provides various methods to extract text from different types of annotations, including text markup annotations, free text annotations, and more.
+R : Oui, Aspose.PDF pour .NET fournit diverses méthodes pour extraire du texte à partir de différents types d'annotations, notamment des annotations de balisage de texte, des annotations de texte libre, etc.
 
-#### Q: Does Aspose.PDF for .NET support extracting text from password-protected PDF files?
+#### Q : Aspose.PDF pour .NET prend-il en charge l'extraction de texte à partir de fichiers PDF protégés par mot de passe ?
 
-A: Yes, Aspose.PDF for .NET supports extracting text from password-protected PDF files. You need to provide the correct password when loading the PDF document using the `Document` class.
+ R : Oui, Aspose.PDF pour .NET prend en charge l'extraction de texte à partir de fichiers PDF protégés par mot de passe. Vous devez fournir le mot de passe correct lors du chargement du document PDF à l'aide du`Document` classe.
 
-#### Q: Can I filter highlighted text based on other criteria, such as color or author?
+#### Q : Puis-je filtrer le texte en surbrillance en fonction d'autres critères, tels que la couleur ou l'auteur ?
 
-A: Yes, you can filter highlighted text based on other criteria, such as color, author, or creation date. Aspose.PDF for .NET provides methods to access and filter annotations based on their properties.
+: Oui, vous pouvez filtrer le texte en surbrillance en fonction d'autres critères, tels que la couleur, l'auteur ou la date de création. Aspose.PDF pour .NET fournit des méthodes pour accéder et filtrer les annotations en fonction de leurs propriétés.
 
-#### Q: Is it possible to save the extracted highlighted text to a separate file?
+#### Q : Est-il possible d'enregistrer le texte en surbrillance extrait dans un fichier séparé ?
 
-A: Yes, you can save the extracted highlighted text to a separate file or store it in a data structure for further processing or analysis.
+R : Oui, vous pouvez enregistrer le texte en surbrillance extrait dans un fichier séparé ou le stocker dans une structure de données pour un traitement ou une analyse ultérieure.

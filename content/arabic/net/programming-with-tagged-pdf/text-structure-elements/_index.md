@@ -1,150 +1,150 @@
 ---
-title: Text Structure Elements In PDF File
-linktitle: Text Structure Elements In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add text structure elements in PDF file using Aspose.PDF for .NET. Improve the structure and accessibility of your PDFs.
+title: عناصر بنية النص في ملف PDF
+linktitle: عناصر بنية النص في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إضافة عناصر بنية النص في ملف PDF باستخدام Aspose.PDF لـ .NET. قم بتحسين بنية ملفات PDF الخاصة بك وإمكانية الوصول إليها.
 type: docs
 weight: 230
 url: /ar/net/programming-with-tagged-pdf/text-structure-elements/
 ---
-In this detailed tutorial, we will walk you through the provided C# source code step by step to create text structure elements in a tagged PDF file using Aspose.PDF for .NET. Follow the instructions below to understand how to add text structure elements to your PDF file.
+في هذا البرنامج التعليمي التفصيلي، سنرشدك عبر كود مصدر C# المقدم خطوة بخطوة لإنشاء عناصر بنية النص في ملف PDF ذي علامات باستخدام Aspose.PDF لـ .NET. اتبع الإرشادات أدناه لفهم كيفية إضافة عناصر بنية النص إلى ملف PDF الخاص بك.
 
-## Step 1: Setting up the environment
+## الخطوة 1: تهيئة البيئة
 
-Before you begin, make sure you've configured your development environment to use Aspose.PDF for .NET. This includes installing the Aspose.PDF library and configuring your project to reference it.
+قبل أن تبدأ، تأكد من تكوين بيئة التطوير الخاصة بك لاستخدام Aspose.PDF لـ .NET. يتضمن ذلك تثبيت مكتبة Aspose.PDF وتكوين مشروعك للرجوع إليه.
 
-## Step 2: Creating the PDF document
+## الخطوة 2: إنشاء وثيقة PDF
 
-In this step, we will create a new PDF document object with Aspose.PDF.
+في هذه الخطوة، سنقوم بإنشاء كائن مستند PDF جديد باستخدام Aspose.PDF.
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Create the PDF document
+// قم بإنشاء مستند PDF
 Document document = new Document();
 ```
 
-We have created a new PDF document with Aspose.PDF.
+لقد قمنا بإنشاء مستند PDF جديد باستخدام Aspose.PDF.
 
-## Step 3: Get tagged content and set title and language
+## الخطوة 3: احصل على المحتوى الموسوم وقم بتعيين العنوان واللغة
 
-Now let's get the tagged content of the PDF document and set the document title and language.
+الآن دعنا نحصل على المحتوى المميز لمستند PDF ونقوم بتعيين عنوان المستند ولغته.
 
 ```csharp
-// Get tagged content
+// الحصول على المحتوى الموسومة
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Define the document title and language
+// تحديد عنوان الوثيقة واللغة
 taggedContent.SetTitle("Tagged PDF document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-We have set the title and language of the tagged PDF document.
+لقد قمنا بتعيين عنوان ولغة مستند PDF الذي تم وضع علامة عليه.
 
-## Step 4: Obtaining the root structure element
+## الخطوة 4: الحصول على عنصر البنية الجذرية
 
-Now let's get the root structure element of the PDF document.
+الآن دعنا نحصل على عنصر البنية الجذرية لمستند PDF.
 
 ```csharp
-// Obtain the root structure element
+//الحصول على عنصر البنية الجذرية
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-We have obtained the root structure element of the PDF document.
+لقد حصلنا على عنصر البنية الجذرية لمستند PDF.
 
-## Step 5: Adding the paragraph structure element
+## الخطوة 5: إضافة عنصر هيكل الفقرة
 
-Now let's add a paragraph structure element to our PDF document.
+الآن دعونا نضيف عنصر بنية الفقرة إلى مستند PDF الخاص بنا.
 
 ```csharp
-// Create the paragraph structure element
+// إنشاء عنصر هيكل الفقرة
 ParagraphElement p = taggedContent.CreateParagraphElement();
 
-// Definition of the text of the paragraph structure element
+// تعريف النص بعنصر بنية الفقرة
 p.SetText("Paragraph.");
 
-// Add the paragraph structure element to the root structure element
+// أضف عنصر بنية الفقرة إلى عنصر البنية الجذرية
 rootElement.AppendChild(p);
 ```
 
-We added a paragraph structure element with text to our PDF document.
+أضفنا عنصر بنية الفقرة مع النص إلى مستند PDF الخاص بنا.
 
-## Step 6: Saving the PDF Document
+## الخطوة 6: حفظ مستند PDF
 
-Now that we're done editing the PDF document, let's save it to a file.
+الآن بعد أن انتهينا من تحرير مستند PDF، فلنحفظه في ملف.
 
 ```csharp
-// Save the tagged PDF document
+// احفظ مستند PDF الذي تم وضع علامة عليه
 document.Save(dataDir + "ElementDeStructureDeTexte.pdf");
 ```
 
-We saved the PDF document tagged with the text structure element in the specified directory.
+لقد قمنا بحفظ مستند PDF الذي تم وضع علامة عليه بعنصر بنية النص في الدليل المحدد.
 
 
-### Sample source code for Text Structure Elements using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لعناصر بنية النص باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create Pdf Document
+// إنشاء مستند PDF
 Document document = new Document();
 
-// Get Content for work with TaggedPdf
+// احصل على محتوى للعمل مع TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Set Title and Language for Documnet
+// قم بتعيين العنوان واللغة لـ Documnet
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 
-// Get Root Structure Elements
+// احصل على عناصر البنية الجذرية
 StructureElement rootElement = taggedContent.RootElement;
 ParagraphElement p = taggedContent.CreateParagraphElement();
 
-// Set Text to Text Structure Element
+// اضبط النص على عنصر بنية النص
 p.SetText("Paragraph.");
 rootElement.AppendChild(p);
 
-// Save Tagged Pdf Document
+// حفظ وثيقة PDF ذات العلامات
 document.Save(dataDir + "TextStructureElement.pdf");
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we learned how to use Aspose.PDF for .NET to add text structure elements to a PDF document. You can now use these features to improve the structure and accessibility of your PDF documents.
+في هذا البرنامج التعليمي، تعلمنا كيفية استخدام Aspose.PDF لـ .NET لإضافة عناصر بنية النص إلى مستند PDF. يمكنك الآن استخدام هذه الميزات لتحسين بنية مستندات PDF الخاصة بك وإمكانية الوصول إليها.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the main objective of this tutorial on creating text structure elements in a tagged PDF file using Aspose.PDF for .NET?
+#### س: ما هو الهدف الرئيسي لهذا البرنامج التعليمي حول إنشاء عناصر بنية النص في ملف PDF ذو علامات باستخدام Aspose.PDF لـ .NET؟
 
-A: The primary focus of this tutorial is to guide you through the process of adding text structure elements to a tagged PDF document using Aspose.PDF for .NET. The tutorial provides step-by-step instructions and C# source code examples to help you enhance the structure and accessibility of your PDF files.
+ج: التركيز الأساسي لهذا البرنامج التعليمي هو إرشادك خلال عملية إضافة عناصر بنية النص إلى وثيقة PDF ذات علامات باستخدام Aspose.PDF لـ .NET. يوفر البرنامج التعليمي إرشادات خطوة بخطوة وأمثلة على التعليمات البرمجية المصدر لـ C# لمساعدتك في تحسين بنية ملفات PDF الخاصة بك وإمكانية الوصول إليها.
 
-#### Q: What prerequisites are necessary for following this tutorial on text structure elements in a tagged PDF file?
+#### س: ما المتطلبات الأساسية اللازمة لمتابعة هذا البرنامج التعليمي حول عناصر بنية النص في ملف PDF ذي علامات تمييز؟
 
-A: Before you start, ensure that you have set up your development environment to use Aspose.PDF for .NET. This involves installing the Aspose.PDF library and configuring your project to reference it.
+ج: قبل البدء، تأكد من أنك قمت بإعداد بيئة التطوير الخاصة بك لاستخدام Aspose.PDF لـ .NET. يتضمن ذلك تثبيت مكتبة Aspose.PDF وتكوين مشروعك للرجوع إليه.
 
-#### Q: How can I create a new PDF document and add text structure elements using Aspose.PDF for .NET?
+#### س: كيف يمكنني إنشاء مستند PDF جديد وإضافة عناصر بنية النص باستخدام Aspose.PDF لـ .NET؟
 
-A: The tutorial includes C# source code examples that demonstrate how to create a new PDF document and add a paragraph text structure element using Aspose.PDF for .NET.
+ج: يشتمل البرنامج التعليمي على أمثلة التعليمات البرمجية المصدر لـ C# التي توضح كيفية إنشاء مستند PDF جديد وإضافة عنصر بنية نص فقرة باستخدام Aspose.PDF لـ .NET.
 
-#### Q: What is the significance of adding text structure elements to a tagged PDF document?
+#### س: ما أهمية إضافة عناصر بنية النص إلى وثيقة PDF ذات علامات تمييز؟
 
-A: Adding text structure elements enhances the semantic structure of a PDF document. This improves accessibility for screen readers and other assistive technologies, making it easier for users to navigate and comprehend the content.
+ج: تؤدي إضافة عناصر بنية النص إلى تحسين البنية الدلالية لمستند PDF. يعمل ذلك على تحسين إمكانية الوصول لقارئات الشاشة والتقنيات المساعدة الأخرى، مما يسهل على المستخدمين التنقل وفهم المحتوى.
 
-#### Q: How do I set the title and language of a tagged PDF document using Aspose.PDF for .NET?
+#### س: كيف يمكنني تعيين عنوان ولغة مستند PDF ذي علامات تمييز باستخدام Aspose.PDF لـ .NET؟
 
-A: The tutorial provides C# source code examples that illustrate how to set the title and language of a tagged PDF document using Aspose.PDF for .NET.
+ج: يوفر البرنامج التعليمي أمثلة على التعليمات البرمجية المصدر لـ C# التي توضح كيفية تعيين عنوان ولغة مستند PDF ذي علامات باستخدام Aspose.PDF لـ .NET.
 
-#### Q: How can I create a paragraph text structure element in a PDF document using Aspose.PDF for .NET?
+#### س: كيف يمكنني إنشاء عنصر بنية نص فقرة في مستند PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: The tutorial includes C# source code examples that demonstrate how to create a paragraph text structure element using the `CreateParagraphElement()` method and add text to it using the `SetText()` method. The paragraph is then appended to the root structure element of the tagged PDF document.
+ ج: يشتمل البرنامج التعليمي على أمثلة التعليمات البرمجية المصدر لـ C# التي توضح كيفية إنشاء عنصر بنية نص فقرة باستخدام`CreateParagraphElement()`الطريقة وإضافة نص إليها باستخدام`SetText()` طريقة. يتم بعد ذلك إلحاق الفقرة بعنصر البنية الجذرية لمستند PDF الذي تم وضع علامة عليه.
 
-#### Q: Can I customize the appearance and formatting of the text structure elements I add to the PDF document?
+#### س: هل يمكنني تخصيص مظهر وتنسيق عناصر بنية النص التي أقوم بإضافتها إلى مستند PDF؟
 
-A: Text structure elements primarily focus on semantic structure and accessibility. While you can set text content and potentially apply basic formatting, extensive appearance customization is typically achieved through other PDF features such as styling, fonts, and annotations.
+ج: تركز عناصر بنية النص بشكل أساسي على البنية الدلالية وإمكانية الوصول إليها. على الرغم من أنه يمكنك تعيين محتوى النص وتطبيق التنسيق الأساسي، إلا أنه يتم عادةً تحقيق تخصيص المظهر الشامل من خلال ميزات PDF الأخرى مثل التصميم والخطوط والتعليقات التوضيحية.
 
-#### Q: How does the provided sample source code assist in adding text structure elements to a PDF document?
+#### س: كيف يساعد نموذج التعليمات البرمجية المصدر المقدم في إضافة عناصر بنية النص إلى مستند PDF؟
 
-A: The sample source code serves as a practical reference for implementing the creation of text structure elements in a tagged PDF document using Aspose.PDF for .NET. You can use this code as a starting point and modify it to suit your specific requirements.
+ج: يعتبر نموذج التعليمات البرمجية المصدر بمثابة مرجع عملي لتنفيذ إنشاء عناصر بنية النص في وثيقة PDF ذات علامات باستخدام Aspose.PDF لـ .NET. يمكنك استخدام هذا الرمز كنقطة بداية وتعديله ليناسب متطلباتك المحددة.

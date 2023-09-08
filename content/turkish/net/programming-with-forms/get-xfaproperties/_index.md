@@ -1,107 +1,107 @@
 ---
-title: Get XFAProperties
-linktitle: Get XFAProperties
-second_title: Aspose.PDF for .NET API Reference
-description: Easily get XFA properties of form fields in your PDF documents with Aspose.PDF for .NET.
+title: XFAProperties'i edinin
+linktitle: XFAProperties'i edinin
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile PDF belgelerinizdeki form alanlarının XFA özelliklerini kolayca edinin.
 type: docs
 weight: 160
 url: /tr/net/programming-with-forms/get-xfaproperties/
 ---
-In this tutorial, we will show you how to get XFA properties of form fields in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+Bu eğitimde size Aspose.PDF for .NET kullanarak form alanlarının XFA özelliklerini bir PDF belgesinde nasıl alacağınızı göstereceğiz. Bu süreçte size yol göstermek için C# kaynak kodunu adım adım açıklayacağız.
 
-## Step 1: Preparation
+## Adım 1: Hazırlık
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+Gerekli kitaplıkları içe aktardığınızdan ve belgeler dizininizin yolunu ayarladığınızdan emin olun:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Load the XFA form
+## 2. Adım: XFA formunu yükleyin
 
-Load the XFA form from the PDF document:
+XFA formunu PDF belgesinden yükleyin:
 
 ```csharp
 Document doc = new Document(dataDir + "GetXFAProperties.pdf");
 ```
 
-## Step 3: Get field names
+## 3. Adım: Alan adlarını alın
 
-Get XFA field names:
+XFA alan adlarını alın:
 
 ```csharp
 string[] names = doc.Form.XFA.FieldNames;
 ```
 
-## Step 4: Set Field Values
+## Adım 4: Alan Değerlerini Ayarlayın
 
-Set values for XFA fields:
+XFA alanları için değerleri ayarlayın:
 
 ```csharp
 doc.Form.XFA[names[0]] = "Field 0";
 doc.Form.XFA[names[1]] = "Field 1";
 ```
 
-## Step 5: Get fields position
+## 5. Adım: Alanların konumunu alın
 
-Get the position of XFA fields:
+XFA alanlarının konumunu alın:
 
 ```csharp
 Console.WriteLine(doc.Form.XFA.GetFieldTemplate(names[0]).Attributes["x"].Value);
 Console.WriteLine(doc.Form.XFA.GetFieldTemplate(names[0]).Attributes["y"].Value);
 ```
 
-## Step 6: Save the updated document
+## 6. Adım: Güncellenen belgeyi kaydedin
 
-Save the updated PDF document:
+Güncellenen PDF belgesini kaydedin:
 
 ```csharp
 dataDir = dataDir + "Filled_XFA_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Get XFAProperties using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Get XFAProperties için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load XFA form
+// XFA formunu yükle
 Document doc = new Document(dataDir + "GetXFAProperties.pdf");
 string[] names = doc.Form.XFA.FieldNames;
-// Set field values
+// Alan değerlerini ayarlayın
 doc.Form.XFA[names[0]] = "Field 0";
 doc.Form.XFA[names[1]] = "Field 1";
-// Get field position
+// Saha konumunu al
 Console.WriteLine(doc.Form.XFA.GetFieldTemplate(names[0]).Attributes["x"].Value);
-// Get field position
+// Saha konumunu al
 Console.WriteLine(doc.Form.XFA.GetFieldTemplate(names[0]).Attributes["y"].Value);
 dataDir = dataDir + "Filled_XFA_out.pdf";
-// Save the updated document
+// Güncellenen belgeyi kaydet
 doc.Save(dataDir);
 Console.WriteLine("\nXFA fields properties retrieved successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we learned how to get XFA properties of form fields in a PDF document using Aspose.PDF for .NET. By following these steps, you can easily extract XFA field information, such as positions, from PDF documents using Aspose.PDF.
+Bu eğitimde Aspose.PDF for .NET kullanarak form alanlarının XFA özelliklerini bir PDF belgesinde nasıl elde edeceğimizi öğrendik. Bu adımları izleyerek, Aspose.PDF'yi kullanarak pozisyonlar gibi XFA alan bilgilerini PDF belgelerinden kolayca çıkarabilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What are XFA properties in a PDF document?
+#### S: Bir PDF belgesindeki XFA özellikleri nelerdir?
 
-A: XFA (XML Forms Architecture) properties in a PDF document refer to the XML-based structure used to define dynamic forms with complex layouts and interactive features. XFA allows for rich form design and data handling in PDF documents, enabling features such as calculations, validations, and dynamic content. Aspose.PDF for .NET provides APIs to work with XFA forms and retrieve various properties, including field names, values, positions, and more.
+C: Bir PDF belgesindeki XFA (XML Form Mimarisi) özellikleri, karmaşık düzenlere ve etkileşimli özelliklere sahip dinamik formları tanımlamak için kullanılan XML tabanlı yapıyı ifade eder. XFA, PDF belgelerinde zengin form tasarımına ve veri işlemeye olanak tanıyarak hesaplamalar, doğrulamalar ve dinamik içerik gibi özellikleri etkinleştirir. Aspose.PDF for .NET, XFA formlarıyla çalışmak ve alan adları, değerler, konumlar ve daha fazlası dahil olmak üzere çeşitli özellikleri almak için API'ler sağlar.
 
-#### Q: Can I modify XFA properties using Aspose.PDF for .NET?
+#### S: XFA özelliklerini Aspose.PDF for .NET kullanarak değiştirebilir miyim?
 
-A: Yes, you can modify XFA properties using Aspose.PDF for .NET. The API allows you to access and update the values of XFA form fields programmatically. You can set new values for XFA fields, update their positions, change appearances, and perform other actions to customize the XFA form dynamically.
+C: Evet, Aspose.PDF for .NET'i kullanarak XFA özelliklerini değiştirebilirsiniz. API, XFA form alanlarının değerlerine programlı olarak erişmenize ve bunları güncellemenize olanak tanır. XFA alanlarını dinamik olarak özelleştirmek için XFA alanları için yeni değerler ayarlayabilir, konumlarını güncelleyebilir, görünümleri değiştirebilir ve diğer eylemleri gerçekleştirebilirsiniz.
 
-#### Q: How can I determine if a PDF document contains XFA forms?
+#### S: Bir PDF belgesinin XFA formları içerip içermediğini nasıl belirleyebilirim?
 
-A: To determine if a PDF document contains XFA forms, you can check whether the `Form` property of the `Document` object is null or not. If the document contains XFA forms, the `Form` property will be available, and you can proceed with further XFA-related operations.
+ C: Bir PDF belgesinin XFA formları içerip içermediğini belirlemek için,`Form` mülkiyeti`Document`nesnenin boş olup olmadığı. Belge XFA formlarını içeriyorsa,`Form` mülk mevcut olacak ve XFA ile ilgili diğer işlemlere devam edebilirsiniz.
 
-#### Q: Are XFA forms supported in all PDF viewers and applications?
+#### S: XFA formları tüm PDF görüntüleyicilerde ve uygulamalarda destekleniyor mu?
 
-A: While XFA forms provide rich interactive form features, they may not be supported in all PDF viewers and applications. Some PDF viewers may only support AcroForm-based forms, which are another form type used in PDF documents. It's essential to consider the compatibility of XFA forms with the target audience and the intended use of the PDF document.
+C: XFA formları zengin etkileşimli form özellikleri sağlasa da tüm PDF görüntüleyicilerde ve uygulamalarda desteklenmeyebilir. Bazı PDF görüntüleyiciler yalnızca PDF belgelerinde kullanılan başka bir form türü olan AcroForm tabanlı formları destekleyebilir. XFA formlarının hedef kitleye uyumluluğunun ve PDF belgesinin kullanım amacının dikkate alınması önemlidir.
 
-#### Q: Can I convert XFA forms to AcroForm-based forms using Aspose.PDF for .NET?
+#### S: XFA formlarını Aspose.PDF for .NET kullanarak AcroForm tabanlı formlara dönüştürebilir miyim?
 
-A: Aspose.PDF for .NET provides capabilities to convert XFA forms to AcroForm-based forms. By converting XFA forms to AcroForm, you can ensure broader compatibility with various PDF viewers and applications that may not fully support XFA. You can follow the appropriate APIs and techniques to perform the conversion as per your requirements.
+C: Aspose.PDF for .NET, XFA formlarını AcroForm tabanlı formlara dönüştürme yetenekleri sağlar. XFA formlarını AcroForm'a dönüştürerek, XFA'yı tam olarak desteklemeyebilecek çeşitli PDF görüntüleyiciler ve uygulamalarla daha geniş uyumluluk sağlayabilirsiniz. Dönüşümü gereksinimlerinize göre gerçekleştirmek için uygun API'leri ve teknikleri takip edebilirsiniz.

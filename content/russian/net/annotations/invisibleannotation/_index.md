@@ -1,74 +1,74 @@
 ---
-title: Invisible Annotation In PDF File
-linktitle: Invisible Annotation In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to invisible annotation in PDF file using C# source code with Aspose.PDF for .NET. Step-by-step guide.
+title: Невидимая аннотация в PDF-файле
+linktitle: Невидимая аннотация в PDF-файле
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как сделать невидимыми аннотации в PDF-файле, используя исходный код C# с помощью Aspose.PDF для .NET. Пошаговое руководство.
 type: docs
 weight: 100
 url: /ru/net/annotations/invisibleannotation/
 ---
-Annotations in PDF file are a powerful feature that allows you to add extra information or notes to a document without changing the actual content. They can be used to highlight text, draw attention to specific areas of a document, or add comments or feedback.
+Аннотации в PDF-файле — это мощная функция, которая позволяет добавлять в документ дополнительную информацию или примечания без изменения фактического содержимого. Их можно использовать для выделения текста, привлечения внимания к определенным областям документа или добавления комментариев или отзывов.
 
-There are many different types of annotations that you can use in PDF documents, including:
+В документах PDF можно использовать множество различных типов аннотаций, в том числе:
 
-- Text Annotations
-- Link Annotations
-- Stamp Annotations
-- Sound Annotations
-- File Attachment Annotations
-- and many more
+- Текстовые аннотации
+- Аннотации к ссылкам
+- Штамп Аннотации
+- Звуковые аннотации
+- Аннотации к вложенным файлам
+- и многое другое
 
-## Step 1: Creating an Invisible Annotation in a PDF Document Using Aspose.PDF for .NET
+## Шаг 1. Создание невидимой аннотации в PDF-документе с использованием Aspose.PDF для .NET
 
-To create an invisible annotation in a PDF document using Aspose.PDF for .NET, we first need to create a `FreeTextAnnotation` object and specify the location and size of the annotation.
+ Чтобы создать невидимую аннотацию в PDF-документе с помощью Aspose.PDF для .NET, нам сначала нужно создать`FreeTextAnnotation` объект и укажите расположение и размер аннотации.
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Открыть документ
 Document doc = new Document(dataDir + "input.pdf");
 
 FreeTextAnnotation annotation = new FreeTextAnnotation(doc.Pages[1], new Aspose.Pdf.Rectangle(50, 600, 250, 650), new DefaultAppearance("Helvetica", 16, System.Drawing.Color.Red));
 ```
 
-In the code above, we create a `FreeTextAnnotation` object and specify the location of the annotation on page 2 of the PDF document. We also specify the font type, size, and color for the text that will be displayed in the annotation.
+ В приведенном выше коде мы создаем`FreeTextAnnotation`объект и укажите расположение аннотации на странице 2 PDF-документа. Мы также указываем тип, размер и цвет шрифта для текста, который будет отображаться в аннотации.
 
-## Step 2: Adding Characteristics to the Invisible Annotation
+## Шаг 2. Добавление характеристик в невидимую аннотацию
 
-Next, we can add some characteristics to the annotation, such as a border color, background color, or opacity.
+Далее мы можем добавить к аннотации некоторые характеристики, такие как цвет границы, цвет фона или непрозрачность.
 
 ```csharp
 annotation.Characteristics.Border = System.Drawing.Color.Red;
 ```
 
-In the code above, we set the border color of the annotation to red.
+В приведенном выше коде мы устанавливаем красный цвет границы аннотации.
 
-## Step 3: Setting the Annotation Flags
+## Шаг 3. Установка флагов аннотаций
 
-After we have created the annotation and set its characteristics, we can specify the annotation flags. In this tutorial, we want the annotation to be printable, but not viewable.
+После того как мы создали аннотацию и установили ее характеристики, мы можем указать флаги аннотации. В этом уроке мы хотим, чтобы аннотацию можно было распечатать, но нельзя было просмотреть.
 
 ```csharp
 annotation.Flags = AnnotationFlags.Print | AnnotationFlags.NoView;
 doc.Pages[1].Annotations.Add(annotation);
 ```
 
-## Step 4: Saving the Modified PDF Document
+## Шаг 4. Сохранение измененного PDF-документа
 
-Finally, we can save the modified PDF document with the new invisible annotation.
+Наконец, мы можем сохранить измененный PDF-документ с новой невидимой аннотацией.
 
 ```csharp
 dataDir = dataDir + "InvisibleAnnotation_out.pdf";
 doc.Save(dataDir);
 ```
 
-## Example Source Code for How to Invisible Annotation using Aspose.PDF for .NET
+## Пример исходного кода для невидимых аннотаций с помощью Aspose.PDF для .NET
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Открыть документ
 Document doc = new Document(dataDir + "input.pdf");
 
 FreeTextAnnotation annotation = new FreeTextAnnotation(doc.Pages[1], new Aspose.Pdf.Rectangle(50, 600, 250, 650), new DefaultAppearance("Helvetica", 16, System.Drawing.Color.Red));
@@ -78,34 +78,34 @@ annotation.Flags = AnnotationFlags.Print | AnnotationFlags.NoView;
 doc.Pages[1].Annotations.Add(annotation);
 
 dataDir = dataDir + "InvisibleAnnotation_out.pdf";
-// Save output file
+// Сохранить выходной файл
 doc.Save(dataDir);
 // ExEnd:InvisibleAnnotation
 Console.WriteLine("\nAnnotation nvisible successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, we learned how to create an invisible annotation in a PDF document using Aspose.PDF for .NET. Invisible annotations are a useful feature when you want to add extra information or notes to a document without displaying them to the reader. By following the step-by-step guide and using the provided C# source code, developers can easily create and customize invisible annotations in their PDF documents. Aspose.PDF for .NET provides a comprehensive set of tools for working with annotations, allowing you to enhance the interactivity and usability of your PDF files.
+В этом уроке мы узнали, как создать невидимую аннотацию в PDF-документе с помощью Aspose.PDF для .NET. Невидимые аннотации — полезная функция, если вы хотите добавить в документ дополнительную информацию или примечания, не отображая их читателю. Следуя пошаговому руководству и используя предоставленный исходный код C#, разработчики могут легко создавать и настраивать невидимые аннотации в своих PDF-документах. Aspose.PDF для .NET предоставляет полный набор инструментов для работы с аннотациями, позволяющий повысить интерактивность и удобство использования ваших PDF-файлов.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is an invisible annotation in a PDF document?
+#### Вопрос: Что такое невидимая аннотация в PDF-документе?
 
-A: An invisible annotation in a PDF document is an annotation that is not visible on the page but contains additional information or notes. It allows you to add comments or feedback without displaying them to the reader.
+О: Невидимая аннотация в PDF-документе — это аннотация, которая не видна на странице, но содержит дополнительную информацию или примечания. Он позволяет добавлять комментарии или отзывы, не отображая их читателю.
 
-#### Q: What types of characteristics can be added to an invisible annotation?
+#### Вопрос: Какие типы характеристик можно добавить к невидимой аннотации?
 
-A: Various characteristics can be added to an invisible annotation, such as border color, background color, opacity, font type, size, and color for the text that will be displayed.
+О: К невидимой аннотации можно добавить различные характеристики, такие как цвет рамки, цвет фона, непрозрачность, тип шрифта, размер и цвет отображаемого текста.
 
-#### Q: Can I set different annotation flags for an invisible annotation?
+#### Вопрос: Могу ли я установить разные флаги аннотаций для невидимых аннотаций?
 
-A: Yes, you can set different annotation flags for an invisible annotation, depending on your requirements. For example, you can make the annotation printable but not viewable.
+О: Да, вы можете установить разные флаги для невидимых аннотаций, в зависимости от ваших требований. Например, вы можете сделать аннотацию доступной для печати, но недоступной для просмотра.
 
-#### Q: How can I add an invisible annotation to a specific page of the PDF document?
+#### Вопрос: Как добавить невидимую аннотацию на определенную страницу PDF-документа?
 
-A: To add an invisible annotation to a specific page of the PDF document, you need to create a `FreeTextAnnotation` object and specify the location and size of the annotation on that page.
+ О: Чтобы добавить невидимую аннотацию к определенной странице PDF-документа, вам необходимо создать`FreeTextAnnotation` объект и укажите расположение и размер аннотации на этой странице.
 
-#### Q: Can I modify the characteristics of an existing invisible annotation in a PDF file?
+#### Вопрос: Могу ли я изменить характеристики существующей невидимой аннотации в файле PDF?
 
-A: Yes, you can modify the characteristics of an existing invisible annotation in a PDF file using Aspose.PDF for .NET. You can change the font type, size, color, border color, background color, opacity, and other properties of the annotation.
+О: Да, вы можете изменить характеристики существующей невидимой аннотации в файле PDF с помощью Aspose.PDF для .NET. Вы можете изменить тип шрифта, размер, цвет, цвет границы, цвет фона, непрозрачность и другие свойства аннотации.

@@ -1,17 +1,17 @@
 ---
-title: Create Application Link In PDF File
-linktitle: Create Application Link In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily create application links in PDF file with Aspose.PDF for .NET.
+title: 在 PDF 文件中创建申请链接
+linktitle: 在 PDF 文件中创建申请链接
+second_title: Aspose.PDF for .NET API 参考
+description: 使用 Aspose.PDF for .NET 在 PDF 文件中轻松创建应用程序链接。
 type: docs
 weight: 20
 url: /zh/net/programming-with-links-and-actions/create-application-link/
 ---
-Creating an application link in PDF file allows you to create links to external applications, such as executable files or URLs. With Aspose.PDF for .NET, you can easily create app links by following the following source code:
+在 PDF 文件中创建应用程序链接允许您创建指向外部应用程序的链接，例如可执行文件或 URL。使用 Aspose.PDF for .NET，您可以按照以下源代码轻松创建应用程序链接：
 
-## Step 1: Import required libraries
+## 第1步：导入所需的库
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+在开始之前，您需要为 C# 项目导入必要的库。这是必要的导入指令：
 
 ```csharp
 using Aspose.Pdf;
@@ -19,25 +19,25 @@ using Aspose.Pdf.Annotations;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-## Step 2: Set path to documents folder
+## 步骤 2：设置文档文件夹路径
 
-In this step, you need to specify the path to the folder containing the PDF file to which you want to add an app link. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+在此步骤中，您需要指定包含要添加应用程序链接的 PDF 文件的文件夹的路径。代替`"YOUR DOCUMENT DIRECTORY"`在以下代码中使用文档文件夹的实际路径：
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## 步骤 3：打开 PDF 文档
 
-Now we will open the PDF document to which we want to add an application link using the following code:
+现在我们将使用以下代码打开要添加应用程序链接的 PDF 文档：
 
 ```csharp
 Document document = new Document(dataDir + "CreateApplicationLink.pdf");
 ```
 
-## Step 4: Create the Application Link
+## 第 4 步：创建应用程序链接
 
-In this step, we will create the application link using the `LinkAnnotation` annotation. We will specify the coordinates and area of the link, as well as the application launch action. Here is the corresponding code:
+在此步骤中，我们将使用以下命令创建应用程序链接`LinkAnnotation`注解。我们将指定链接的坐标和区域，以及应用程序启动操作。这是相应的代码：
 
 ```csharp
 Page page = document.Pages[1];
@@ -47,72 +47,72 @@ link. Action = new LaunchAction(document, dataDir + "CreateApplicationLink.pdf")
 page.Annotations.Add(link);
 ```
 
-## Step 5: Save the updated file
+## 第 5 步：保存更新的文件
 
-Now let's save the updated PDF file using the `Save` method of the `document` object. Here is the corresponding code:
+现在让我们使用以下命令保存更新后的 PDF 文件`Save`的方法`document`目的。这是相应的代码：
 
 ```csharp
 dataDir = dataDir + "CreateApplicationLink_out.pdf";
 document. Save(dataDir);
 ```
 
-### Sample source code for Create Application Link using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 创建应用程序链接的示例源代码 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+//打开文档
 Document document = new Document( dataDir + "CreateApplicationLink.pdf");
-// Create link
+//创建链接
 Page page = document.Pages[1];
 LinkAnnotation link = new LinkAnnotation(page, new Aspose.Pdf.Rectangle(100, 100, 300, 300));
 link.Color = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Green);
 link.Action = new LaunchAction(document, dataDir + "CreateApplicationLink.pdf");
 page.Annotations.Add(link);
 dataDir = dataDir + "CreateApplicationLink_out.pdf";
-// Save updated document
+//保存更新的文档
 document.Save(dataDir);
 Console.WriteLine("\nApplication link created successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## 结论
 
-Congratulation ! You now have a step-by-step guide to creating app links with Aspose.PDF for .NET. You can use this code to add links to external applications in your PDF documents.
+恭喜！您现在拥有使用 Aspose.PDF for .NET 创建应用程序链接的分步指南。您可以使用此代码在 PDF 文档中添加指向外部应用程序的链接。
 
-Be sure to check out the official Aspose.PDF documentation for more information on the advanced features of interactive links.
+请务必查看 Aspose.PDF 官方文档，以获取有关交互式链接高级功能的更多信息。
 
-### FAQ's for create application link in PDF file
+### 在 PDF 文件中创建应用程序链接的常见问题解答
 
-#### Q: What are application links in PDF files?
+#### 问：PDF 文件中的应用程序链接是什么？
 
-A: Application links in PDF files allow you to create links that open external applications, such as executable files or URLs, when clicked. This feature enhances interactivity and provides a convenient way to connect users to external resources.
+答：PDF 文件中的应用程序链接允许您创建在单击时打开外部应用程序的链接，例如可执行文件或 URL。此功能增强了交互性，并提供了一种将用户连接到外部资源的便捷方式。
 
-#### Q: How does Aspose.PDF for .NET facilitate the creation of application links?
+#### 问：Aspose.PDF for .NET 如何促进应用程序链接的创建？
 
-A: Aspose.PDF for .NET simplifies the process of creating application links by providing a comprehensive set of tools and APIs. The step-by-step tutorial provided in this guide demonstrates how to add app links to your PDF documents.
+答：Aspose.PDF for .NET 通过提供一套全面的工具和 API 简化了创建应用程序链接的过程。本指南中提供的分步教程演示了如何将应用程序链接添加到 PDF 文档。
 
-#### Q: Can I customize the appearance of application links?
+#### 问：我可以自定义应用程序链接的外观吗？
 
-A: Absolutely! With Aspose.PDF for .NET, you have control over the appearance of application links. You can specify attributes such as color, style, and hover effects to ensure a visually appealing user experience.
+答：当然！使用 Aspose.PDF for .NET，您可以控制应用程序链接的外观。您可以指定颜色、样式和悬停效果等属性，以确保具有视觉吸引力的用户体验。
 
-#### Q: Are there any restrictions on the types of external applications I can link to?
+#### 问：我可以链接到的外部应用程序类型有限制吗？
 
-A: Aspose.PDF for .NET allows you to link to a variety of external applications, including executable files, URLs, and documents. However, it's important to consider user security and compatibility when linking to executable files.
+答：Aspose.PDF for .NET 允许您链接到各种外部应用程序，包括可执行文件、URL 和文档。但是，在链接到可执行文件时，考虑用户安全性和兼容性非常重要。
 
-#### Q: How can I verify that my application links are working correctly?
+#### 问：如何验证我的应用程序链接是否正常工作？
 
-A: By following the tutorial's instructions and using the provided sample code, you can confidently create functional application links. You can then test the links by opening the generated PDF document and clicking on the application links.
+答：通过遵循教程的说明并使用提供的示例代码，您可以自信地创建功能应用程序链接。然后，您可以通过打开生成的 PDF 文档并单击应用程序链接来测试链接。
 
-#### Q: Can I create multiple application links within a single PDF document?
+#### 问：我可以在单个 PDF 文档中创建多个应用程序链接吗？
 
-A: Yes, you can create multiple application links within a single PDF document using the `LinkAnnotation` annotation. This allows you to provide users with access to different external applications from various sections of the document.
+答：是的，您可以使用以下命令在单个 PDF 文档中创建多个应用程序链接`LinkAnnotation`注解。这允许您为用户提供从文档的各个部分访问不同外部应用程序的权限。
 
-#### Q: Are there any security considerations when using application links?
-A: When linking to executable files, it's important to ensure that the linked applications are secure and trustworthy. Additionally, consider user permissions and inform users about the potential launch of external applications.
+#### 问：使用应用程序链接时有什么安全注意事项吗？
+答：链接到可执行文件时，确保链接的应用程序安全且值得信赖非常重要。此外，请考虑用户权限并通知用户可能启动的外部应用程序。
 
-#### Q: How do I add application links to URLs or web pages?
+#### 问：如何将应用程序链接添加到 URL 或网页？
 
-A: While this tutorial focuses on creating links to external applications, Aspose.PDF for .NET also supports creating hyperlinks to URLs or web pages. You can adapt the provided code to create web links within your PDF documents.
+答：虽然本教程重点介绍创建到外部应用程序的链接，但 Aspose.PDF for .NET 还支持创建到 URL 或网页的超链接。您可以调整提供的代码以在 PDF 文档中创建 Web 链接。
 
-#### Q: Can I use Aspose.PDF for .NET to extract information from linked external applications?
+#### 问：我可以使用 Aspose.PDF for .NET 从链接的外部应用程序中提取信息吗？
 
-A: Yes, Aspose.PDF for .NET provides capabilities to extract and manipulate information from linked external applications. You can explore the library's extensive features to perform various tasks related to linked content.
+答：是的，Aspose.PDF for .NET 提供了从链接的外部应用程序中提取和操作信息的功能。您可以探索该库的广泛功能来执行与链接内容相关的各种任务。

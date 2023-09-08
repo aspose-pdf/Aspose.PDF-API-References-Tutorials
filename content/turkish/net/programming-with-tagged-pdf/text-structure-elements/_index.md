@@ -1,150 +1,150 @@
 ---
-title: Text Structure Elements In PDF File
-linktitle: Text Structure Elements In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add text structure elements in PDF file using Aspose.PDF for .NET. Improve the structure and accessibility of your PDFs.
+title: PDF Dosyasındaki Metin Yapısı Öğeleri
+linktitle: PDF Dosyasındaki Metin Yapısı Öğeleri
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET'i kullanarak PDF dosyasına metin yapısı öğelerini nasıl ekleyeceğinizi öğrenin. PDF'lerinizin yapısını ve erişilebilirliğini iyileştirin.
 type: docs
 weight: 230
 url: /tr/net/programming-with-tagged-pdf/text-structure-elements/
 ---
-In this detailed tutorial, we will walk you through the provided C# source code step by step to create text structure elements in a tagged PDF file using Aspose.PDF for .NET. Follow the instructions below to understand how to add text structure elements to your PDF file.
+Bu ayrıntılı eğitimde, Aspose.PDF for .NET kullanarak etiketli bir PDF dosyasında metin yapısı öğeleri oluşturmak için sağlanan C# kaynak kodunu size adım adım anlatacağız. Metin yapısı öğelerini PDF dosyanıza nasıl ekleyeceğinizi anlamak için aşağıdaki talimatları izleyin.
 
-## Step 1: Setting up the environment
+## 1. Adım: Ortamı ayarlama
 
-Before you begin, make sure you've configured your development environment to use Aspose.PDF for .NET. This includes installing the Aspose.PDF library and configuring your project to reference it.
+Başlamadan önce geliştirme ortamınızı Aspose.PDF for .NET'i kullanacak şekilde yapılandırdığınızdan emin olun. Buna Aspose.PDF kütüphanesinin kurulması ve projenizin buna referans verecek şekilde yapılandırılması da dahildir.
 
-## Step 2: Creating the PDF document
+## Adım 2: PDF belgesini oluşturma
 
-In this step, we will create a new PDF document object with Aspose.PDF.
+Bu adımda Aspose.PDF ile yeni bir PDF belge nesnesi oluşturacağız.
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Create the PDF document
+// PDF belgesini oluşturun
 Document document = new Document();
 ```
 
-We have created a new PDF document with Aspose.PDF.
+Aspose.PDF ile yeni bir PDF belgesi oluşturduk.
 
-## Step 3: Get tagged content and set title and language
+## 3. Adım: Etiketli içeriği alın ve başlık ile dili ayarlayın
 
-Now let's get the tagged content of the PDF document and set the document title and language.
+Şimdi PDF belgesinin etiketli içeriğini alıp belge başlığını ve dilini ayarlayalım.
 
 ```csharp
-// Get tagged content
+// Etiketli içeriği alın
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Define the document title and language
+// Belge başlığını ve dilini tanımlayın
 taggedContent.SetTitle("Tagged PDF document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-We have set the title and language of the tagged PDF document.
+Etiketli PDF belgesinin başlığını ve dilini belirledik.
 
-## Step 4: Obtaining the root structure element
+## Adım 4: Kök yapı öğesinin elde edilmesi
 
-Now let's get the root structure element of the PDF document.
+Şimdi PDF belgesinin kök yapı öğesini alalım.
 
 ```csharp
-// Obtain the root structure element
+//Kök yapı öğesini edinin
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-We have obtained the root structure element of the PDF document.
+PDF belgesinin kök yapı öğesini elde ettik.
 
-## Step 5: Adding the paragraph structure element
+## Adım 5: Paragraf yapısı öğesini ekleme
 
-Now let's add a paragraph structure element to our PDF document.
+Şimdi PDF belgemize bir paragraf yapısı öğesi ekleyelim.
 
 ```csharp
-// Create the paragraph structure element
+// Paragraf yapısı öğesini oluşturma
 ParagraphElement p = taggedContent.CreateParagraphElement();
 
-// Definition of the text of the paragraph structure element
+// Paragraf yapı öğesinin metninin tanımı
 p.SetText("Paragraph.");
 
-// Add the paragraph structure element to the root structure element
+// Paragraf yapısı öğesini kök yapı öğesine ekleyin
 rootElement.AppendChild(p);
 ```
 
-We added a paragraph structure element with text to our PDF document.
+PDF belgemize metin içeren bir paragraf yapısı öğesi ekledik.
 
-## Step 6: Saving the PDF Document
+## Adım 6: PDF Belgesini Kaydetme
 
-Now that we're done editing the PDF document, let's save it to a file.
+Artık PDF belgesini düzenlemeyi bitirdiğimize göre, onu bir dosyaya kaydedelim.
 
 ```csharp
-// Save the tagged PDF document
+// Etiketli PDF belgesini kaydedin
 document.Save(dataDir + "ElementDeStructureDeTexte.pdf");
 ```
 
-We saved the PDF document tagged with the text structure element in the specified directory.
+Metin yapısı öğesiyle etiketlenen PDF belgesini belirtilen dizine kaydettik.
 
 
-### Sample source code for Text Structure Elements using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanan Metin Yapısı Öğeleri için örnek kaynak kodu 
 
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create Pdf Document
+// Pdf Belgesi Oluştur
 Document document = new Document();
 
-// Get Content for work with TaggedPdf
+// TaggedPdf ile çalışmaya yönelik İçerik edinin
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Set Title and Language for Documnet
+// Documnet için Başlığı ve Dili Ayarlayın
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 
-// Get Root Structure Elements
+// Kök Yapı Elemanlarını Alın
 StructureElement rootElement = taggedContent.RootElement;
 ParagraphElement p = taggedContent.CreateParagraphElement();
 
-// Set Text to Text Structure Element
+// Metni Metin Yapısı Öğesine Ayarla
 p.SetText("Paragraph.");
 rootElement.AppendChild(p);
 
-// Save Tagged Pdf Document
+// Etiketli Pdf Belgesini Kaydet
 document.Save(dataDir + "TextStructureElement.pdf");
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we learned how to use Aspose.PDF for .NET to add text structure elements to a PDF document. You can now use these features to improve the structure and accessibility of your PDF documents.
+Bu eğitimde, bir PDF belgesine metin yapısı öğeleri eklemek için Aspose.PDF for .NET'in nasıl kullanılacağını öğrendik. Artık PDF belgelerinizin yapısını ve erişilebilirliğini geliştirmek için bu özellikleri kullanabilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the main objective of this tutorial on creating text structure elements in a tagged PDF file using Aspose.PDF for .NET?
+#### S: Etiketli bir PDF dosyasında Aspose.PDF for .NET kullanarak metin yapısı öğeleri oluşturmaya yönelik bu eğitimin ana amacı nedir?
 
-A: The primary focus of this tutorial is to guide you through the process of adding text structure elements to a tagged PDF document using Aspose.PDF for .NET. The tutorial provides step-by-step instructions and C# source code examples to help you enhance the structure and accessibility of your PDF files.
+C: Bu eğitimin ana odağı, Aspose.PDF for .NET kullanarak etiketli bir PDF belgesine metin yapısı öğeleri ekleme sürecinde size rehberlik etmektir. Eğitimde, PDF dosyalarınızın yapısını ve erişilebilirliğini geliştirmenize yardımcı olacak adım adım talimatlar ve C# kaynak kodu örnekleri sağlanır.
 
-#### Q: What prerequisites are necessary for following this tutorial on text structure elements in a tagged PDF file?
+#### S: Etiketli bir PDF dosyasındaki metin yapısı öğeleriyle ilgili bu eğitimi takip etmek için hangi ön koşullar gereklidir?
 
-A: Before you start, ensure that you have set up your development environment to use Aspose.PDF for .NET. This involves installing the Aspose.PDF library and configuring your project to reference it.
+C: Başlamadan önce, geliştirme ortamınızı Aspose.PDF for .NET'i kullanacak şekilde ayarladığınızdan emin olun. Bu, Aspose.PDF kütüphanesinin kurulmasını ve projenizin buna referans verecek şekilde yapılandırılmasını içerir.
 
-#### Q: How can I create a new PDF document and add text structure elements using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET kullanarak yeni bir PDF belgesini nasıl oluşturabilir ve metin yapısı öğelerini nasıl ekleyebilirim?
 
-A: The tutorial includes C# source code examples that demonstrate how to create a new PDF document and add a paragraph text structure element using Aspose.PDF for .NET.
+C: Eğitim, Aspose.PDF for .NET kullanılarak yeni bir PDF belgesinin nasıl oluşturulacağını ve paragraf metin yapısı öğesinin nasıl ekleneceğini gösteren C# kaynak kodu örneklerini içerir.
 
-#### Q: What is the significance of adding text structure elements to a tagged PDF document?
+#### S: Etiketli bir PDF belgesine metin yapısı öğeleri eklemenin önemi nedir?
 
-A: Adding text structure elements enhances the semantic structure of a PDF document. This improves accessibility for screen readers and other assistive technologies, making it easier for users to navigate and comprehend the content.
+C: Metin yapısı öğeleri eklemek, PDF belgesinin anlamsal yapısını geliştirir. Bu, ekran okuyucuların ve diğer yardımcı teknolojilerin erişilebilirliğini geliştirerek kullanıcıların içerikte gezinmesini ve içeriği anlamasını kolaylaştırır.
 
-#### Q: How do I set the title and language of a tagged PDF document using Aspose.PDF for .NET?
+#### S: Etiketli bir PDF belgesinin başlığını ve dilini Aspose.PDF for .NET kullanarak nasıl ayarlarım?
 
-A: The tutorial provides C# source code examples that illustrate how to set the title and language of a tagged PDF document using Aspose.PDF for .NET.
+C: Eğitimde Aspose.PDF for .NET kullanılarak etiketli bir PDF belgesinin başlığının ve dilinin nasıl ayarlanacağını gösteren C# kaynak kodu örnekleri sunulmaktadır.
 
-#### Q: How can I create a paragraph text structure element in a PDF document using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'i kullanarak bir PDF belgesinde nasıl paragraf metin yapısı öğesi oluşturabilirim?
 
-A: The tutorial includes C# source code examples that demonstrate how to create a paragraph text structure element using the `CreateParagraphElement()` method and add text to it using the `SetText()` method. The paragraph is then appended to the root structure element of the tagged PDF document.
+ C: Öğretici, aşağıdakileri kullanarak bir paragraf metni yapısı öğesinin nasıl oluşturulacağını gösteren C# kaynak kodu örneklerini içerir:`CreateParagraphElement()`yöntemini kullanarak ona metin ekleyin.`SetText()` yöntem. Daha sonra paragraf, etiketli PDF belgesinin kök yapı öğesine eklenir.
 
-#### Q: Can I customize the appearance and formatting of the text structure elements I add to the PDF document?
+#### S: PDF belgesine eklediğim metin yapısı öğelerinin görünümünü ve biçimlendirmesini özelleştirebilir miyim?
 
-A: Text structure elements primarily focus on semantic structure and accessibility. While you can set text content and potentially apply basic formatting, extensive appearance customization is typically achieved through other PDF features such as styling, fonts, and annotations.
+C: Metin yapısı öğeleri öncelikle anlamsal yapıya ve erişilebilirliğe odaklanır. Metin içeriğini ayarlayabilir ve muhtemelen temel biçimlendirmeyi uygulayabilirsiniz, ancak kapsamlı görünüm özelleştirmesi genellikle stil, yazı tipleri ve ek açıklamalar gibi diğer PDF özellikleri aracılığıyla gerçekleştirilir.
 
-#### Q: How does the provided sample source code assist in adding text structure elements to a PDF document?
+#### S: Sağlanan örnek kaynak kodu, metin yapısı öğelerinin bir PDF belgesine eklenmesine nasıl yardımcı olur?
 
-A: The sample source code serves as a practical reference for implementing the creation of text structure elements in a tagged PDF document using Aspose.PDF for .NET. You can use this code as a starting point and modify it to suit your specific requirements.
+C: Örnek kaynak kodu, Aspose.PDF for .NET kullanılarak etiketli bir PDF belgesinde metin yapısı öğelerinin oluşturulmasını uygulamak için pratik bir referans görevi görür. Bu kodu bir başlangıç noktası olarak kullanabilir ve özel gereksinimlerinize uyacak şekilde değiştirebilirsiniz.

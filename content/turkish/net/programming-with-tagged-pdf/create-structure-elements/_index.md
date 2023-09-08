@@ -1,54 +1,54 @@
 ---
-title: Create Structure Elements
-linktitle: Create Structure Elements
-second_title: Aspose.PDF for .NET API Reference
-description: In this tutorial, you will learn how to use Aspose.PDF for .NET to create structural elements in a tagged PDF document.
+title: Yapı Elemanları Oluşturun
+linktitle: Yapı Elemanları Oluşturun
+second_title: .NET API Referansı için Aspose.PDF
+description: Bu eğitimde, etiketli bir PDF belgesinde yapısal öğeler oluşturmak için Aspose.PDF for .NET'i nasıl kullanacağınızı öğreneceksiniz.
 type: docs
 weight: 60
 url: /tr/net/programming-with-tagged-pdf/create-structure-elements/
 ---
-The following C# source code uses Aspose.PDF for .NET to create structure elements. Follow the steps below to understand how the code works.
+Aşağıdaki C# kaynak kodu, yapı elemanları oluşturmak için Aspose.PDF for .NET'i kullanıyor. Kodun nasıl çalıştığını anlamak için aşağıdaki adımları izleyin.
 
-## Step 1: Import the necessary libraries
+## 1. Adım: Gerekli kitaplıkları içe aktarın
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Define the directory of your documents
+## Adım 2: Belgelerinizin dizinini tanımlayın
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-Be sure to specify the correct path to your documents directory.
+Belgeler dizininizin doğru yolunu belirttiğinizden emin olun.
 
-## Step 3: Create a PDF document
+## 3. Adım: Bir PDF belgesi oluşturun
 
 ```csharp
 Document document = new Document();
 ```
 
-We create a new Document object that represents the PDF document.
+PDF belgesini temsil eden yeni bir Belge nesnesi oluşturuyoruz.
 
-## Step 4: Get content to work with TaggedPdf
+## 4. Adım: TaggedPdf ile çalışacak içeriği edinin
 
 ```csharp
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-We retrieve the tagged content of the PDF document. This will allow us to manipulate structural elements.
+PDF belgesinin etiketli içeriğini alıyoruz. Bu, yapısal elemanları manipüle etmemizi sağlayacaktır.
 
-## Step 5: Set document title and language
+## 5. Adım: Belge başlığını ve dilini ayarlayın
 
 ```csharp
 taggedContent.SetTitle("Tagged PDF document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-We set the title and language of the tagged PDF document. This improves the accessibility of the document.
+Etiketli PDF belgesinin başlığını ve dilini belirliyoruz. Bu, belgenin erişilebilirliğini artırır.
 
-## Step 6: Create grouping elements
+## 6. Adım: Gruplandırma öğeleri oluşturun
 
 ```csharp
 PartElement partElement = taggedContent.CreatePartElement();
@@ -64,9 +64,9 @@ NonStructElement nonStructElement = taggedContent.CreateNonStructElement();
 PrivateElement privateElement = taggedContent.CreatePrivateElement();
 ```
 
-We create different structural elements for grouping content in the PDF document.
+PDF belgesindeki içeriği gruplamak için farklı yapısal öğeler oluşturuyoruz.
 
-## Step 7: Create paragraph structure elements
+## 7. Adım: Paragraf yapısı öğeleri oluşturun
 
 ```csharp
 ParagraphElement paragraphElement = taggedContent.CreateParagraphElement();
@@ -74,9 +74,9 @@ HeaderElement headerElement = taggedContent.CreateHeaderElement();
 HeaderElement h1Element = taggedContent.CreateHeaderElement(1);
 ```
 
-We create block-level structural elements for paragraphs and headings. The example above shows the creation of a level 1 header.
+Paragraflar ve başlıklar için blok düzeyinde yapısal öğeler oluşturuyoruz. Yukarıdaki örnekte 1. düzey başlığın oluşturulması gösterilmektedir.
 
-## Step 8: Create inline level structure elements
+## Adım 8: Satır içi düzey yapı öğeleri oluşturun
 
 ```csharp
 SpanElement spanElement = taggedContent.CreateSpanElement();
@@ -84,39 +84,39 @@ QuoteElement quoteElement = taggedContent.CreateQuoteElement();
 NoteElement noteElement = taggedContent.CreateNoteElement();
 ```
 
-We create inline level structure elements for the parts of text that appear inside a paragraph or heading.
+Bir paragrafın veya başlığın içinde görünen metin bölümleri için satır içi düzeyde yapı elemanları oluştururuz.
 
-## Step 9: Create artwork structure elements
+## 9. Adım: Resim yapısı öğeleri oluşturun
 
 ```csharp
 FigureElement figureElement = taggedContent.CreateFigureElement();
 FormulaElement formulaElement = taggedContent.CreateFormulaElement();
 ```
 
-We create structural elements for the illustrations and mathematical formulas present in the document.
+Belgede yer alan illüstrasyonlar ve matematiksel formüller için yapısal öğeler oluşturuyoruz.
 
-## Step 10: Save the tagged PDF document
+## Adım 10: Etiketli PDF belgesini kaydedin
 
 ```csharp
 document.Save(dataDir + "StructureElements.pdf");
 ```
 
-We save the tagged PDF document with the created structure elements.
+Etiketli PDF belgesini oluşturulan yapı elemanlarıyla birlikte kaydediyoruz.
 
-### Sample source code for Create Structure Elements using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Yapı Elemanları Oluşturma için örnek kaynak kodu 
 
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create Pdf Document
+// Pdf Belgesi Oluştur
 Document document = new Document();
-// Get Content for work with TaggedPdf
+// TaggedPdf ile çalışmaya yönelik İçerik edinin
 ITaggedContent taggedContent = document.TaggedContent;
-// Set Title and Language for Documnet
+// Documnet için Başlığı ve Dili Ayarlayın
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
-// Create Grouping Elements
+// Gruplandırma Öğeleri Oluşturun
 PartElement partElement = taggedContent.CreatePartElement();
 ArtElement artElement = taggedContent.CreateArtElement();
 SectElement sectElement = taggedContent.CreateSectElement();
@@ -128,18 +128,18 @@ TOCIElement tociElement = taggedContent.CreateTOCIElement();
 IndexElement indexElement = taggedContent.CreateIndexElement();
 NonStructElement nonStructElement = taggedContent.CreateNonStructElement();
 PrivateElement privateElement = taggedContent.CreatePrivateElement();
-// Create Text Block-Level Structure Elements
+// Metin Bloğu Düzeyinde Yapı Öğeleri Oluşturma
 ParagraphElement paragraphElement = taggedContent.CreateParagraphElement();
 HeaderElement headerElement = taggedContent.CreateHeaderElement();
 HeaderElement h1Element = taggedContent.CreateHeaderElement(1);
-// Create Text Inline-Level Structure Elements
+// Metin Satır İçi Düzeyde Yapı Öğeleri Oluşturma
 SpanElement spanElement = taggedContent.CreateSpanElement();
 QuoteElement quoteElement = taggedContent.CreateQuoteElement();
 NoteElement noteElement = taggedContent.CreateNoteElement();
-// Create Illustration Structure Elements
+// İllüstrasyon Yapı Elemanları Oluşturun
 FigureElement figureElement = taggedContent.CreateFigureElement();
 FormulaElement formulaElement = taggedContent.CreateFormulaElement();
-// Methods are under development
+// Yöntemler geliştiriliyor
 ListElement listElement = taggedContent.CreateListElement();
 TableElement tableElement = taggedContent.CreateTableElement();
 ReferenceElement referenceElement = taggedContent.CreateReferenceElement();
@@ -150,53 +150,53 @@ AnnotElement annotElement = taggedContent.CreateAnnotElement();
 RubyElement rubyElement = taggedContent.CreateRubyElement();
 WarichuElement warichuElement = taggedContent.CreateWarichuElement();
 FormElement formElement = taggedContent.CreateFormElement();
-// Save Tagged Pdf Document
+// Etiketli Pdf Belgesini Kaydet
 document.Save(dataDir + "StructureElements.pdf");
 
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we learned how to use Aspose.PDF for .NET to create structure elements in a tagged PDF document. Structural elements help improve document accessibility and organize content in a meaningful way. Now you can use this knowledge to create structured, easy-to-navigate PDF documents.
+Bu eğitimde, etiketli bir PDF belgesinde yapı öğeleri oluşturmak için Aspose.PDF for .NET'in nasıl kullanılacağını öğrendik. Yapısal öğeler belge erişilebilirliğini artırmaya ve içeriği anlamlı bir şekilde düzenlemeye yardımcı olur. Artık bu bilgiyi yapılandırılmış, gezinmesi kolay PDF belgeleri oluşturmak için kullanabilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the purpose of creating structure elements in a PDF document using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET kullanarak bir PDF belgesinde yapı elemanları oluşturmanın amacı nedir?
 
-A: Creating structure elements in a PDF document using Aspose.PDF for .NET enhances the accessibility and organization of the document's content. Structure elements provide a hierarchical structure that improves navigation, semantics, and compatibility with assistive technologies.
+C: Aspose.PDF for .NET kullanarak bir PDF belgesinde yapı öğeleri oluşturmak, belge içeriğinin erişilebilirliğini ve organizasyonunu geliştirir. Yapı öğeleri gezinmeyi, anlambilimi ve yardımcı teknolojilerle uyumluluğu geliştiren hiyerarşik bir yapı sağlar.
 
-#### Q: How does the provided C# code create structure elements in a PDF document?
+#### S: Sağlanan C# kodu bir PDF belgesinde yapı öğelerini nasıl oluşturur?
 
-A: The code example demonstrates how to create various types of structure elements, including grouping elements (such as parts, sections, and divs), block-level elements (like paragraphs and headings), inline-level elements (span, quote, note), and artwork elements (such as figures and formulas). These structure elements help organize content.
+C: Kod örneği, gruplandırma öğeleri (parçalar, bölümler ve div'ler gibi), blok düzeyi öğeler (paragraflar ve başlıklar gibi), satır içi düzey öğeler (yayılma, alıntı, not) dahil olmak üzere çeşitli türde yapı öğelerinin nasıl oluşturulacağını gösterir. ) ve resim öğeleri (şekiller ve formüller gibi). Bu yapı öğeleri içeriğin düzenlenmesine yardımcı olur.
 
-#### Q: Why is it important to set the document's title and language using the `SetTitle` and `SetLanguage` methods?
+####  S: Belgenin başlığını ve dilini ayarlamak neden önemlidir?`SetTitle` and `SetLanguage` methods?
 
-A: Setting the document's title and language using the `SetTitle` and `SetLanguage` methods improves document accessibility and semantics. The title provides a brief description of the document's purpose, while the language attribute enhances language-specific rendering and accessibility.
+ C: Belgenin başlığını ve dilini kullanarak ayarlama`SetTitle` Ve`SetLanguage`yöntemleri belge erişilebilirliğini ve anlambilimini geliştirir. Başlık, belgenin amacının kısa bir açıklamasını sağlarken, dil özelliği dile özgü oluşturmayı ve erişilebilirliği geliştirir.
 
-#### Q: How do grouping elements, such as `PartElement` and `SectElement`, contribute to the structure of the PDF document?
+####  S: gibi öğeler nasıl gruplandırılır?`PartElement` and `SectElement`, contribute to the structure of the PDF document?
 
-A: Grouping elements create a hierarchical structure within the PDF document, allowing you to logically organize and group related content. This enhances navigation and provides a clear structure for users.
+C: Gruplandırma öğeleri, PDF belgesinde hiyerarşik bir yapı oluşturarak ilgili içeriği mantıksal olarak düzenlemenize ve gruplandırmanıza olanak tanır. Bu, gezinmeyi geliştirir ve kullanıcılar için net bir yapı sağlar.
 
-#### Q: What are block-level and inline-level structure elements, and how do they differ?
+#### S: Blok düzeyi ve satır içi düzey yapı öğeleri nelerdir ve bunlar arasındaki farklar nelerdir?
 
-A: Block-level structure elements represent larger blocks of content, such as paragraphs and headings, while inline-level elements represent parts of text within a paragraph or heading, such as spans, quotes, and notes. They help define the hierarchy and relationships of content.
+C: Blok düzeyindeki yapı öğeleri, paragraflar ve başlıklar gibi daha büyük içerik bloklarını temsil ederken satır içi düzeydeki öğeler, bir paragraf veya başlık içindeki açıklıklar, alıntılar ve notlar gibi metnin bölümlerini temsil eder. İçeriğin hiyerarşisini ve ilişkilerini tanımlamaya yardımcı olurlar.
 
-#### Q: How do artwork structure elements, like `FigureElement` and `FormulaElement`, contribute to the document?
+####  S: Sanat eseri öğeleri nasıl yapılandırılır?`FigureElement` and `FormulaElement`, contribute to the document?
 
-A: Artwork structure elements allow you to add illustrations, figures, and mathematical formulas to the document. They provide a structured way to include visual and mathematical content.
+C: Sanat eseri yapısı öğeleri, belgeye resimler, şekiller ve matematiksel formüller eklemenizi sağlar. Görsel ve matematiksel içeriği dahil etmek için yapılandırılmış bir yol sağlarlar.
 
-#### Q: Can I use similar techniques to create other types of structure elements, like lists, tables, or annotations?
+#### S: Listeler, tablolar veya ek açıklamalar gibi diğer türdeki yapı öğelerini oluşturmak için benzer teknikleri kullanabilir miyim?
 
-A: Yes, you can use similar techniques to create other types of structure elements like lists, tables, annotations, references, and more. Aspose.PDF provides a wide range of structure element creation methods.
+C: Evet, listeler, tablolar, ek açıklamalar, referanslar ve daha fazlası gibi diğer türdeki yapı öğelerini oluşturmak için benzer teknikleri kullanabilirsiniz. Aspose.PDF çok çeşitli yapı elemanı oluşturma yöntemleri sunar.
 
-#### Q: How does saving the tagged PDF document using the `Save` method ensure the preservation of structure elements?
+####  S: Etiketli PDF belgesini kullanarak nasıl kaydedilir?`Save` method ensure the preservation of structure elements?
 
-A: The `Save` method saves the PDF document along with the created structure elements, ensuring that the document's hierarchical and semantic structure is preserved for accessibility and navigation.
+ C:`Save` yöntemi, PDF belgesini oluşturulan yapı öğeleriyle birlikte kaydederek belgenin hiyerarşik ve anlamsal yapısının erişilebilirlik ve gezinme açısından korunmasını sağlar.
 
-#### Q: What benefits do structure elements bring to PDF documents in terms of accessibility and compatibility with assistive technologies?
+#### S: Yapı öğeleri, erişilebilirlik ve yardımcı teknolojilerle uyumluluk açısından PDF belgelerine ne gibi faydalar sağlar?
 
-A: Structure elements enhance accessibility by providing a meaningful structure and semantics to the document. This allows assistive technologies like screen readers to interpret and convey the document's content more effectively to users with disabilities.
+C: Yapı öğeleri, belgeye anlamlı bir yapı ve anlam bilgisi sağlayarak erişilebilirliği artırır. Bu, ekran okuyucular gibi yardımcı teknolojilerin belge içeriğini engelli kullanıcılara daha etkili bir şekilde yorumlamasına ve aktarmasına olanak tanır.
 
-#### Q: How can I further customize and combine different types of structure elements in my PDF documents?
+#### S: PDF belgelerimde farklı türdeki yapı öğelerini nasıl daha fazla kişiselleştirebilir ve birleştirebilirim?
 
-A: You can combine and customize structure elements by using appropriate creation methods provided by Aspose.PDF. Experiment with different elements and their properties to create a well-structured and organized PDF document.
+C: Aspose.PDF tarafından sağlanan uygun oluşturma yöntemlerini kullanarak yapı elemanlarını birleştirebilir ve özelleştirebilirsiniz. İyi yapılandırılmış ve organize bir PDF belgesi oluşturmak için farklı öğeler ve özellikleriyle denemeler yapın.

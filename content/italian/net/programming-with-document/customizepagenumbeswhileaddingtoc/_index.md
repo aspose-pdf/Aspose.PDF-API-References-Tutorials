@@ -1,17 +1,17 @@
 ---
-title: Customize Page Numbes While Adding TOC
-linktitle: Customize Page Numbes While Adding TOC
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to customize page numbers while adding a table of contents (TOC) using Aspose.PDF for .NET with this step-by-step guide and code example.
+title: Personalizza i numeri di pagina durante l'aggiunta del sommario
+linktitle: Personalizza i numeri di pagina durante l'aggiunta del sommario
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Scopri come personalizzare i numeri di pagina aggiungendo un sommario (TOC) utilizzando Aspose.PDF per .NET con questa guida passo passo e un esempio di codice.
 type: docs
 weight: 100
 url: /it/net/programming-with-document/customizepagenumbeswhileaddingtoc/
 ---
-In this tutoria, we will explore how to customize page numbers while adding a table of contents (TOC) using Aspose.PDF for .NET. We will provide step-by-step guidance, along with a code example, to help you achieve this.
+In questa esercitazione, esploreremo come personalizzare i numeri di pagina aggiungendo un sommario (TOC) utilizzando Aspose.PDF per .NET. Forniremo una guida passo passo, insieme a un esempio di codice, per aiutarti a raggiungere questo obiettivo.
 
-## Step 1: Loading an existing PDF file
+## Passaggio 1: caricamento di un file PDF esistente
 
-First, we need to load an existing PDF file. For this tutorial, we will use the file "42824.pdf" located in the "YOUR DOCUMENT DIRECTORY" directory. Replace this directory path with the actual path to your document directory.
+Innanzitutto, dobbiamo caricare un file PDF esistente. Per questo tutorial utilizzeremo il file "42824.pdf" situato nella directory "LA TUA DIRECTORY DOCUMENTI". Sostituisci questo percorso di directory con il percorso effettivo della directory dei documenti.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -20,17 +20,17 @@ string outFile = dataDir + "42824_out.pdf";
 Document doc = new Document(inFile);
 ```
 
-## Step 2: Adding a TOC page
+## Passaggio 2: aggiunta di una pagina di sommario
 
-Next, we need to add a new page at the beginning of the document to serve as the TOC page. We can achieve this by using the `Insert()` method of the `Pages` collection of the `Document` object.
+ Successivamente, dobbiamo aggiungere una nuova pagina all'inizio del documento che funga da pagina del sommario. Possiamo raggiungere questo obiettivo utilizzando il file`Insert()` metodo del`Pages` raccolta del`Document` oggetto.
 
 ```csharp
 Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
 ```
 
-## Step 3: Creating a TOC object
+## Passaggio 3: creazione di un oggetto TOC
 
-To create a TOC object, we first need to create a `TocInfo` object and set its properties. In this tutorial, we will set the title of the TOC to "Table Of Contents" and the page number prefix to "P".
+ Per creare un oggetto TOC, dobbiamo prima creare un file`TocInfo` oggetto e impostarne le proprietà. In questo tutorial, imposteremo il titolo del sommario su "Sommario" e il prefisso del numero di pagina su "P".
 
 ```csharp
 TocInfo tocInfo = new TocInfo();
@@ -42,99 +42,99 @@ tocInfo.PageNumbersPrefix = "P";
 tocPage.TocInfo = tocInfo;
 ```
 
-## Step 4: Creating TOC entries
+## Passaggio 4: creazione delle voci del sommario
 
-To create TOC entries, we need to loop through all the pages of the document, except for the TOC page, and create a heading object for each page. We can then add the heading object to the TOC page and specify its destination page.
+Per creare voci di sommario, dobbiamo scorrere tutte le pagine del documento, ad eccezione della pagina del sommario, e creare un oggetto intestazione per ciascuna pagina. Possiamo quindi aggiungere l'oggetto intestazione alla pagina TOC e specificarne la pagina di destinazione.
 
 ```csharp
 for (int i = 1; i < doc.Pages.Count; i++)
 {
-    // Create Heading object
+    // Crea oggetto Intestazione
     Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
     TextSegment segment2 = new TextSegment();
     heading2.TocPage = tocPage;
     heading2.Segments.Add(segment2);
-    // Specify the destination page for heading object
+    // Specificare la pagina di destinazione per l'oggetto intestazione
     heading2.DestinationPage = doc.Pages[i + 1];
-    // Destination page
+    // Pagina di destinazione
     heading2.Top = doc.Pages[i + 1].Rect.Height;
-    // Destination coordinate
+    // Coordinata di destinazione
     segment2.Text = "Page " + i.ToString();
-    // Add heading to page containing TOC
+    // Aggiungi intestazione alla pagina contenente il sommario
     tocPage.Paragraphs.Add(heading2);
 }
 ```
 
-## Step 5: Saving the updated document
+## Passaggio 5: salvataggio del documento aggiornato
 
-Finally, we need to save the updated document to a new file. We can achieve this by using the `Save()` method of the `Document` object.
+Infine, dobbiamo salvare il documento aggiornato in un nuovo file. Possiamo raggiungere questo obiettivo utilizzando il file`Save()` metodo del`Document` oggetto.
 
 ```csharp
 doc.Save(outFile);
 ```
 
-### Example source code for customizing page numbes while adding TOC using Aspose.PDF for .NET
+### Esempio di codice sorgente per personalizzare i numeri di pagina durante l'aggiunta del sommario utilizzando Aspose.PDF per .NET
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string inFile = dataDir + "42824.pdf";
 string outFile = dataDir + "42824_out.pdf";
-// Load an existing PDF files
+// Carica un file PDF esistente
 Document doc = new Document(inFile);
-// Get access to first page of PDF file
+// Ottieni l'accesso alla prima pagina del file PDF
 Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
-// Create object to represent TOC information
+// Crea un oggetto per rappresentare le informazioni del sommario
 TocInfo tocInfo = new TocInfo();
 TextFragment title = new TextFragment("Table Of Contents");
 title.TextState.FontSize = 20;
 title.TextState.FontStyle = FontStyles.Bold;
-// Set the title for TOC
+// Imposta il titolo per il sommario
 tocInfo.Title = title;
 tocInfo.PageNumbersPrefix = "P";
 tocPage.TocInfo = tocInfo;
 for (int i = 1; i<doc.Pages.Count; i++)
 {
-	// Create Heading object
+	// Crea oggetto Intestazione
 	Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
 	TextSegment segment2 = new TextSegment();
 	heading2.TocPage = tocPage;
 	heading2.Segments.Add(segment2);
-	// Specify the destination page for heading object
+	// Specificare la pagina di destinazione per l'oggetto intestazione
 	heading2.DestinationPage = doc.Pages[i + 1];
-	// Destination page
+	// Pagina di destinazione
 	heading2.Top = doc.Pages[i + 1].Rect.Height;
-	// Destination coordinate
+	// Coordinata di destinazione
 	segment2.Text = "Page " + i.ToString();
-	// Add heading to page containing TOC
+	// Aggiungi intestazione alla pagina contenente il sommario
 	tocPage.Paragraphs.Add(heading2);
 }
 
-// Save the updated document
+// Salva il documento aggiornato
 doc.Save(outFile);
 ```
 
-## Conclusion
+## Conclusione
 
-In this tutorial, we have provided step-by-step guidance on how to customize page numbers while adding a TOC using Aspose.PDF for .NET. We have also provided a code example that you can use as a reference when implementing this feature in your
+In questo tutorial, abbiamo fornito una guida passo passo su come personalizzare i numeri di pagina aggiungendo un sommario utilizzando Aspose.PDF per .NET. Abbiamo anche fornito un esempio di codice che puoi utilizzare come riferimento quando implementi questa funzionalità nel tuo
 
-### FAQ's
+### Domande frequenti
 
-#### Q: What is a table of contents (TOC) in a PDF document?
+#### D: Cos'è un sommario (TOC) in un documento PDF?
 
-A: A table of contents (TOC) in a PDF document is a navigational aid that provides an organized list of document sections or chapters along with their corresponding page numbers. It allows readers to quickly navigate to specific sections within the document.
+R: Un sommario (TOC) in un documento PDF è un aiuto alla navigazione che fornisce un elenco organizzato di sezioni o capitoli del documento insieme ai numeri di pagina corrispondenti. Consente ai lettori di navigare rapidamente verso sezioni specifiche all'interno del documento.
 
-#### Q:Why would I want to customize page numbers in a TOC?
+#### D: Perché dovrei personalizzare i numeri di pagina in un sommario?
 
-A: Customizing page numbers in a TOC can be useful when you want to use a specific page numbering format or include additional information along with the page numbers. It allows you to create a more personalized and informative table of contents.
+R: La personalizzazione dei numeri di pagina in un sommario può essere utile quando desideri utilizzare un formato di numerazione delle pagine specifico o includere informazioni aggiuntive insieme ai numeri di pagina. Ti consente di creare un sommario più personalizzato e informativo.
 
-#### Q: Can I include hyperlinks in the TOC to link to specific sections or pages within the PDF document?
+#### D: Posso includere collegamenti ipertestuali nel sommario per collegarmi a sezioni o pagine specifiche all'interno del documento PDF?
 
-A: Yes, Aspose.PDF for .NET allows you to create hyperlinks in the TOC that link to specific sections or pages within the PDF document. This enhances the interactivity and navigation of the PDF document.
+R: Sì, Aspose.PDF per .NET ti consente di creare collegamenti ipertestuali nel sommario che collegano a sezioni o pagine specifiche all'interno del documento PDF. Ciò migliora l'interattività e la navigazione del documento PDF.
 
-#### Q: Is Aspose.PDF for .NET compatible with PDF/A standards?
+#### D: Aspose.PDF per .NET è compatibile con gli standard PDF/A?
 
-A: Yes, Aspose.PDF for .NET supports PDF/A standards, including PDF/A-1, PDF/A-2, and PDF/A-3. It allows you to create PDF documents that comply with archiving and long-term preservation requirements.
+R: Sì, Aspose.PDF per .NET supporta gli standard PDF/A, inclusi PDF/A-1, PDF/A-2 e PDF/A-3. Consente di creare documenti PDF conformi ai requisiti di archiviazione e conservazione a lungo termine.
 
-#### Q: Can I add more formatting to the TOC entries, such as font styles or colors?
+#### D: Posso aggiungere ulteriore formattazione alle voci del sommario, ad esempio stili o colori dei caratteri?
 
-A: Yes, you can add additional formatting to the TOC entries, such as font styles, colors, and font sizes, using Aspose.PDF for .NET. This allows you to customize the appearance of the TOC as per your requirements.
+R: Sì, puoi aggiungere ulteriore formattazione alle voci del sommario, come stili di carattere, colori e dimensioni dei caratteri, utilizzando Aspose.PDF per .NET. Ciò ti consente di personalizzare l'aspetto del sommario in base alle tue esigenze.

@@ -1,49 +1,49 @@
 ---
-title: Set Properties For Print Dialog
-linktitle: Set Properties For Print Dialog
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set properties for print dialog in Aspose.PDF for .NET using step-by-step guide.
+title: Ställ in egenskaper för utskriftsdialog
+linktitle: Ställ in egenskaper för utskriftsdialog
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du ställer in egenskaper för utskriftsdialog i Aspose.PDF för .NET med hjälp av en steg-för-steg-guide.
 type: docs
 weight: 320
 url: /sv/net/programming-with-document/setpropertiesforprintdialog/
 ---
-here's a step-by-step guide for setting properties for the print dialog using Aspose.PDF for .NET:
+här är en steg-för-steg-guide för att ställa in egenskaper för utskriftsdialogrutan med Aspose.PDF för .NET:
 
 
-## Step 1: Define the directory where your PDF document is located:
+## Steg 1: Definiera katalogen där ditt PDF-dokument finns:
 
 ```csharp
 var dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
    
-## Step 2: Create a new instance of the `Document` class:
+##  Steg 2: Skapa en ny instans av`Document` class:
 
 ```csharp
 using (Document doc = new Document())
 {
-  // Code here
+  // Kod här
 }
 ```
    
-## Step 3: Add a new page to the document:
+## Steg 3: Lägg till en ny sida i dokumentet:
 
 ```csharp
 doc.Pages.Add();
 ```
    
-## Step 4: Set the duplex property to `DuplexFlipLongEdge`:
+##  Steg 4: Ställ in duplexegenskapen till`DuplexFlipLongEdge`:
 
 ```csharp
 doc.Duplex = PrintDuplex.DuplexFlipLongEdge;
 ```
    
-## Step 5: Save the document with the specified file name and format:
+## Steg 5: Spara dokumentet med angivet filnamn och format:
 
 ```csharp
 doc.Save(dataDir + "35297_out.pdf", SaveFormat.Pdf);
 ```
 
-### Example source code for Set Properties For Print Dialog using Aspose.PDF for .NET
+### Exempel på källkod för Set Properties For Print Dialog med Aspose.PDF för .NET
 
 ```csharp
 var dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -56,20 +56,20 @@ using (Document doc = new Document())
 }
 ```
 
-## Conclusion
+## Slutsats
 
-Aspose.PDF for .NET makes it easy to set properties for the print dialog in your PDF files. By following the step-by-step guide above, you can quickly optimize your PDF files for printing.
+Aspose.PDF för .NET gör det enkelt att ställa in egenskaper för utskriftsdialogrutan i dina PDF-filer. Genom att följa steg-för-steg-guiden ovan kan du snabbt optimera dina PDF-filer för utskrift.
 
 ### FAQ's
 
-#### Q: Can I set other print dialog properties besides duplex mode using Aspose.PDF for .NET?
+#### F: Kan jag ställa in andra utskriftsdialogegenskaper förutom duplexläge med Aspose.PDF för .NET?
 
-A: Yes, besides setting the duplex mode, Aspose.PDF for .NET allows you to set various other properties for the print dialog. Some examples include setting the print quality, page range, number of copies, paper size, and more. You can refer to the Aspose.PDF for .NET documentation to explore the full list of available properties.
+S: Ja, förutom att ställa in duplexläget, låter Aspose.PDF för .NET dig ställa in olika andra egenskaper för utskriftsdialogrutan. Några exempel inkluderar inställning av utskriftskvalitet, sidintervall, antal kopior, pappersstorlek och mer. Du kan se Aspose.PDF för .NET-dokumentationen för att utforska hela listan över tillgängliga egenskaper.
 
-#### Q: How can I set the print quality when printing the PDF document?
+#### F: Hur kan jag ställa in utskriftskvaliteten när jag skriver ut PDF-dokumentet?
 
-A: To set the print quality, you can use the `PrintQuality` property of the `Document` class in Aspose.PDF for .NET. You can choose from different print quality options such as high, medium, or low, based on your requirements.
+ S: För att ställa in utskriftskvaliteten kan du använda`PrintQuality` egendom av`Document` klass i Aspose.PDF för .NET. Du kan välja mellan olika utskriftskvalitetsalternativ som hög, medium eller låg, baserat på dina krav.
 
-#### Q: Is it possible to specify custom print settings for different pages in the PDF document?
+#### F: Är det möjligt att ange anpassade utskriftsinställningar för olika sidor i PDF-dokumentet?
 
-A: Yes, you can set custom print settings for different pages in the PDF document using Aspose.PDF for .NET. You can access individual pages through the `doc.Pages` collection and set specific print settings for each page separately.
+ S: Ja, du kan ställa in anpassade utskriftsinställningar för olika sidor i PDF-dokumentet med Aspose.PDF för .NET. Du kan komma åt enskilda sidor via`doc.Pages` samla in och ställ in specifika utskriftsinställningar för varje sida separat.

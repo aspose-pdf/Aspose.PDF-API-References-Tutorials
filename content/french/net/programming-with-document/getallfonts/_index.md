@@ -1,42 +1,42 @@
 ---
-title: Get All Fonts In PDF File
-linktitle: Get All Fonts In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use Aspose.PDF for .NET to get all the fonts used in a PDF file programmatically with this step-by-step guide and example code.
+title: Obtenez toutes les polices dans un fichier PDF
+linktitle: Obtenez toutes les polices dans un fichier PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment utiliser Aspose.PDF pour .NET pour obtenir toutes les polices utilisées dans un fichier PDF par programme avec ce guide étape par étape et cet exemple de code.
 type: docs
 weight: 160
 url: /fr/net/programming-with-document/getallfonts/
 ---
-Aspose.PDF for .NET is a powerful library that enables developers to work with PDF file programmatically. One of the features that it provides is the ability to get all the fonts used in a PDF file. This can be useful if you need to programmatically analyze or manipulate the fonts in a PDF file.
+Aspose.PDF pour .NET est une bibliothèque puissante qui permet aux développeurs de travailler avec des fichiers PDF par programme. L'une des fonctionnalités qu'il offre est la possibilité d'obtenir toutes les polices utilisées dans un fichier PDF. Cela peut être utile si vous devez analyser ou manipuler par programme les polices d'un fichier PDF.
 
-In this tutorial, we will discuss how to use Aspose.PDF for .NET to get all the fonts used in a PDF document. We will provide a step-by-step guide on how to do this, along with example source code.
+Dans ce didacticiel, nous verrons comment utiliser Aspose.PDF pour .NET pour obtenir toutes les polices utilisées dans un document PDF. Nous fournirons un guide étape par étape sur la façon de procéder, ainsi qu'un exemple de code source.
 
-## Step 1: Create a new C# Console Application
-To get started, create a new C# Console Application in Visual Studio. You can name it whatever you like. Once the project is created, you need to add a reference to the Aspose.PDF for .NET library.
+## Étape 1 : Créer une nouvelle application console C#
+Pour commencer, créez une nouvelle application console C# dans Visual Studio. Vous pouvez le nommer comme vous le souhaitez. Une fois le projet créé, vous devez ajouter une référence à la bibliothèque Aspose.PDF pour .NET.
 
-## Step 2: Import the Aspose.PDF Namespace
-Add the following line of code at the top of your C# file to import the Aspose.PDF namespace:
+## Étape 2 : Importer l'espace de noms Aspose.PDF
+Ajoutez la ligne de code suivante en haut de votre fichier C# pour importer l'espace de noms Aspose.PDF :
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 3: Load the PDF Document
-Load the PDF document that you want to get the fonts from:
+## Étape 3 : Charger le document PDF
+Chargez le document PDF à partir duquel vous souhaitez obtenir les polices :
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 4: Get All the Fonts
-Get all the fonts used in the PDF document:
+## Étape 4 : Obtenez toutes les polices
+Obtenez toutes les polices utilisées dans le document PDF :
 
 ```csharp
 Aspose.Pdf.Text.Font[] fonts = doc.FontUtilities.GetAllFonts();
 ```
 
-## Step 5: Print All the Fonts
-Print all the fonts used in the PDF document:
+## Étape 5 : Imprimer toutes les polices
+Imprimez toutes les polices utilisées dans le document PDF :
 
 ```csharp
 foreach (Aspose.Pdf.Text.Font font in fonts)
@@ -45,9 +45,9 @@ foreach (Aspose.Pdf.Text.Font font in fonts)
 }
 ```
 
-### Example source code for Get All Fonts using Aspose.PDF for .NET
+### Exemple de code source pour obtenir toutes les polices à l'aide d'Aspose.PDF pour .NET
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "input.pdf");
 Aspose.Pdf.Text.Font[] fonts = doc.FontUtilities.GetAllFonts();
@@ -58,22 +58,22 @@ foreach (Aspose.Pdf.Text.Font font in fonts)
 ```
 
 ## Conclusion
-In this tutorial, we have discussed how to get all the fonts used in a PDF document using Aspose.PDF for .NET. Getting all the fonts used in a PDF document can be useful if you need to programmatically analyze or manipulate the fonts in a PDF document. Aspose.PDF for .NET provides a simple and easy-to-use API to work with PDF documents, including getting all the fonts used in a PDF document.
+Dans ce didacticiel, nous avons expliqué comment obtenir toutes les polices utilisées dans un document PDF à l'aide d'Aspose.PDF pour .NET. Obtenir toutes les polices utilisées dans un document PDF peut être utile si vous devez analyser ou manipuler par programme les polices d'un document PDF. Aspose.PDF pour .NET fournit une API simple et facile à utiliser pour travailler avec des documents PDF, notamment pour obtenir toutes les polices utilisées dans un document PDF.
 
-### FAQ's
+### FAQ
 
-#### Q: Why would I need to get all the fonts used in a PDF document?
+#### Q : Pourquoi aurais-je besoin de toutes les polices utilisées dans un document PDF ?
 
-A: Getting all the fonts used in a PDF document can be useful if you need to programmatically analyze or manipulate the fonts for various purposes, such as font replacement or font customization.
+R : Obtenir toutes les polices utilisées dans un document PDF peut être utile si vous devez analyser ou manipuler les polices par programme à diverses fins, telles que le remplacement ou la personnalisation des polices.
 
-#### Q: How can I get all the fonts used in a PDF document using Aspose.PDF for .NET?
+#### Q : Comment puis-je obtenir toutes les polices utilisées dans un document PDF à l'aide d'Aspose.PDF pour .NET ?
 
-A: You can get all the fonts used in a PDF document using Aspose.PDF for .NET by calling the `GetAllFonts` method of the `FontUtilities` class. This method returns an array of `Aspose.Pdf.Text.Font` objects, which represent the fonts used in the PDF document.
+ R : Vous pouvez obtenir toutes les polices utilisées dans un document PDF à l'aide d'Aspose.PDF pour .NET en appelant le`GetAllFonts` méthode du`FontUtilities` classe. Cette méthode renvoie un tableau de`Aspose.Pdf.Text.Font` objets, qui représentent les polices utilisées dans le document PDF.
 
-#### Q: Can I filter fonts based on certain criteria?
+#### Q : Puis-je filtrer les polices en fonction de certains critères ?
 
-A: Yes, you can filter fonts based on certain criteria using Aspose.PDF for .NET. After getting all the fonts, you can programmatically analyze the fonts and apply filtering logic as needed.
+R : Oui, vous pouvez filtrer les polices en fonction de certains critères à l'aide d'Aspose.PDF pour .NET. Après avoir obtenu toutes les polices, vous pouvez analyser les polices par programme et appliquer une logique de filtrage si nécessaire.
 
-#### Q: Is Aspose.PDF for .NET compatible with various font formats?
+#### Q : Aspose.PDF pour .NET est-il compatible avec différents formats de police ?
 
-A: Yes, Aspose.PDF for .NET is compatible with various font formats, including TrueType, OpenType, and Type 1 fonts. It can work with different font formats and handle them during PDF document manipulation.
+R : Oui, Aspose.PDF pour .NET est compatible avec différents formats de polices, notamment les polices TrueType, OpenType et Type 1. Il peut fonctionner avec différents formats de polices et les gérer lors de la manipulation de documents PDF.

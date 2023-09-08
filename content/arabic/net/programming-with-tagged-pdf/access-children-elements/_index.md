@@ -1,28 +1,28 @@
 ---
-title: Access Children Elements
-linktitle: Access Children Elements
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to accessing and editing child elements of a PDF document using Aspose.PDF for .NET. Personalize your PDF content.
+title: الوصول إلى عناصر الأطفال
+linktitle: الوصول إلى عناصر الأطفال
+second_title: Aspose.PDF لمرجع .NET API
+description: دليل خطوة بخطوة للوصول إلى العناصر الفرعية لمستند PDF وتحريرها باستخدام Aspose.PDF لـ .NET. قم بتخصيص محتوى PDF الخاص بك.
 type: docs
 weight: 10
 url: /ar/net/programming-with-tagged-pdf/access-children-elements/
 ---
-In this tutorial, we will provide you with a step-by-step guide on accessing child elements of a PDF document using Aspose.PDF for .NET. Aspose.PDF is a powerful library that allows you to create, manipulate and convert PDF documents programmatically. Using the marked content structure features of Aspose.PDF, you can access and modify the properties of structured elements in a PDF document.
+في هذا البرنامج التعليمي، سنزودك بدليل خطوة بخطوة حول الوصول إلى العناصر الفرعية لمستند PDF باستخدام Aspose.PDF لـ .NET. Aspose.PDF هي مكتبة قوية تتيح لك إنشاء مستندات PDF ومعالجتها وتحويلها برمجيًا. باستخدام ميزات بنية المحتوى المحددة في Aspose.PDF، يمكنك الوصول إلى خصائص العناصر المنظمة في مستند PDF وتعديلها.
 
-## Prerequisites
+## المتطلبات الأساسية
 
-Before you begin, make sure you have the following prerequisites in place:
+قبل البدء، تأكد من توفر المتطلبات الأساسية التالية:
 
-1. Visual Studio installed with .NET framework.
-2. The Aspose.PDF library for .NET.
+1. تم تثبيت Visual Studio مع إطار عمل .NET.
+2. مكتبة Aspose.PDF لـ .NET.
 
-## Step 1: Project Setup
+## الخطوة 1: إعداد المشروع
 
-To get started, create a new project in Visual Studio and add a reference to the Aspose.PDF for .NET library. You can download the library from Aspose official website and install it on your machine.
+للبدء، قم بإنشاء مشروع جديد في Visual Studio وقم بإضافة مرجع إلى مكتبة Aspose.PDF لـ .NET. يمكنك تنزيل المكتبة من موقع Aspose الرسمي وتثبيتها على جهازك.
 
-## Step 2: Import the necessary namespaces
+## الخطوة 2: استيراد مساحات الأسماء الضرورية
 
-In your C# code file, import the namespaces required to access the classes and methods provided by Aspose.PDF:
+في ملف التعليمات البرمجية C# الخاص بك، قم باستيراد مساحات الأسماء المطلوبة للوصول إلى الفئات والأساليب التي يوفرها Aspose.PDF:
 
 ```csharp
 using System;
@@ -30,9 +30,9 @@ using Aspose.Pdf;
 using Aspose.Pdf.Tagged;
 ```
 
-## Step 3: Loading the PDF Document and Accessing Child Elements
+## الخطوة 3: تحميل مستند PDF والوصول إلى العناصر الفرعية
 
-Use the following code to load the PDF document and access the child elements:
+استخدم الكود التالي لتحميل مستند PDF والوصول إلى العناصر الفرعية:
 
 ```csharp
 string dataDir = "YOUR_DIRECTORY_OF_DOCUMENTS";
@@ -45,7 +45,7 @@ foreach(Element element in elementList)
 if (element is StructureElement)
 {
 StructureElement structureElement = element as StructureElement;
-// Access the properties of the element
+// الوصول إلى خصائص العنصر
 string title = structureElement.Title;
 string language = structureElement.Language;
 string actualText = structureElement.ActualText;
@@ -55,11 +55,11 @@ string alternativeText = structureElement.AlternativeText;
 }
 ```
 
-This code allows you to access the child elements of the root of the PDF document structure and get the properties of each element.
+يتيح لك هذا الرمز الوصول إلى العناصر الفرعية لجذر بنية مستند PDF والحصول على خصائص كل عنصر.
 
-## Step 4: Accessing Root Element Children and Changing Properties
+## الخطوة 4: الوصول إلى عناصر الجذر الفرعية وتغيير الخصائص
 
-Use the following code to access the children of the root element and modify the properties:
+استخدم الكود التالي للوصول إلى العناصر الفرعية للعنصر الجذر وتعديل الخصائص:
 
 ```csharp
 elementList = taggedContent.RootElement.ChildElements[1].ChildElements;
@@ -69,7 +69,7 @@ foreach(Element element in elementList)
 if (element is StructureElement)
 {
 StructureElement structureElement = element as StructureElement;
-// Modify the properties of the element
+// تعديل خصائص العنصر
 structureElement.Title = "title";
 structureElement.Language = "fr-FR";
 structureElement.ActualText = "actual text";
@@ -79,25 +79,25 @@ structureElement.AlternativeText = "alt";
 }
 ```
 
-This code allows you to access the children of the first element of the root element and modify the properties of each element.
+يتيح لك هذا الرمز الوصول إلى أبناء العنصر الأول من العنصر الجذر وتعديل خصائص كل عنصر.
 
 
-### Sample source code for Access Children Elements using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لـ Access Children Elements باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open Pdf Document
+// افتح مستند PDF
 Document document = new Document(dataDir + "StructureElementsTree.pdf");
-// Get Content for work with TaggedPdf
+// احصل على محتوى للعمل مع TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
-// Access to root element(s)
+// الوصول إلى العناصر الجذرية
 ElementList elementList = taggedContent.StructTreeRootElement.ChildElements;
 foreach (Element element in elementList)
 {
 	if (element is StructureElement)
 	{
 		StructureElement structureElement = element as StructureElement;
-		// Get properties
+		// احصل على خصائص
 		string title = structureElement.Title;
 		string language = structureElement.Language;
 		string actualText = structureElement.ActualText;
@@ -105,14 +105,14 @@ foreach (Element element in elementList)
 		string alternativeText = structureElement.AlternativeText;
 	}
 }
-// Access to children elements of first element in root element
+// الوصول إلى عناصر الأطفال من العنصر الأول في العنصر الجذر
 elementList = taggedContent.RootElement.ChildElements[1].ChildElements;
 foreach (Element element in elementList)
 {
 	if (element is StructureElement)
 	{
 		StructureElement structureElement = element as StructureElement;
-		// Set properties
+		// تعيين الخصائص
 		structureElement.Title = "title";
 		structureElement.Language = "fr-FR";
 		structureElement.ActualText = "actual text";
@@ -120,43 +120,43 @@ foreach (Element element in elementList)
 		structureElement.AlternativeText = "alt";
 	}
 }
-// Save Tagged Pdf Document
+// حفظ وثيقة PDF ذات العلامات
 document.Save(dataDir + "AccessChildrenElements.pdf");
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, you learned how to access child elements of a PDF document and how to modify element properties using Aspose.PDF for .NET. This allows you to customize and manipulate the structured elements in a PDF document according to your needs.
+في هذا البرنامج التعليمي، تعلمت كيفية الوصول إلى العناصر الفرعية لمستند PDF وكيفية تعديل خصائص العناصر باستخدام Aspose.PDF لـ .NET. يتيح لك ذلك تخصيص العناصر المنظمة ومعالجتها في مستند PDF وفقًا لاحتياجاتك.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of accessing child elements in a PDF document using Aspose.PDF for .NET?
+#### س: ما هو الغرض من الوصول إلى العناصر الفرعية في مستند PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: Accessing child elements in a PDF document using Aspose.PDF for .NET allows you to programmatically manipulate and customize the structured elements within the document. This can include modifying properties, such as titles, languages, actual text, expansion text, and alternative text, to enhance the accessibility and presentation of the document.
+ج: يتيح لك الوصول إلى العناصر الفرعية في مستند PDF باستخدام Aspose.PDF لـ .NET معالجة العناصر المنظمة وتخصيصها برمجيًا داخل المستند. يمكن أن يتضمن ذلك تعديل الخصائص، مثل العناوين واللغات والنص الفعلي ونص التوسيع والنص البديل، لتحسين إمكانية الوصول إلى المستند وعرضه.
 
-#### Q: What is the role of the Aspose.PDF library in this process?
+#### س: ما هو دور مكتبة Aspose.PDF في هذه العملية؟
 
-A: Aspose.PDF for .NET is a powerful library that provides various features for creating, manipulating, and converting PDF documents programmatically. In this tutorial, the library is used to load a PDF document, access tagged content and structured elements, and modify their properties.
+ج: Aspose.PDF for .NET هي مكتبة قوية توفر ميزات متنوعة لإنشاء مستندات PDF ومعالجتها وتحويلها برمجيًا. في هذا البرنامج التعليمي، يتم استخدام المكتبة لتحميل مستند PDF، والوصول إلى المحتوى المميز والعناصر المنظمة، وتعديل خصائصها.
 
-#### Q: What are the prerequisites for working with child elements in a PDF document using Aspose.PDF for .NET?
+#### س: ما هي المتطلبات الأساسية للعمل مع العناصر الفرعية في مستند PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: Before you begin, ensure that you have Visual Studio installed with the .NET framework and have the Aspose.PDF library for .NET referenced in your project.
+ج: قبل أن تبدأ، تأكد من تثبيت Visual Studio مع إطار عمل .NET وأن مكتبة Aspose.PDF الخاصة بـ .NET مشار إليها في مشروعك.
 
-#### Q: How does the provided C# code allow for accessing and modifying child elements in a PDF document?
+#### س: كيف يسمح رمز C# المقدم بالوصول إلى العناصر الفرعية وتعديلها في مستند PDF؟
 
-A: The code demonstrates how to load a PDF document, access the tagged content, and traverse through the child elements of the root and specific elements. It showcases how to retrieve properties of structured elements and how to modify those properties to customize the document.
+ج: يوضح الكود كيفية تحميل مستند PDF، والوصول إلى المحتوى الموسوم، والتنقل عبر العناصر الفرعية للجذر والعناصر المحددة. ويعرض كيفية استرداد خصائص العناصر المنظمة وكيفية تعديل تلك الخصائص لتخصيص المستند.
 
-#### Q: Can I access and modify other properties of the child elements beyond the ones shown in the code?
+#### س: هل يمكنني الوصول إلى الخصائص الأخرى للعناصر الفرعية وتعديلها بخلاف تلك الموضحة في الكود؟
 
-A: Yes, you can access and modify various other properties of the child elements using similar techniques. The properties demonstrated in the code (title, language, actual text, etc.) are just examples, and you can explore the Aspose.PDF documentation to discover more properties and methods available for manipulation.
+ج: نعم، يمكنك الوصول إلى العديد من الخصائص الأخرى للعناصر الفرعية وتعديلها باستخدام تقنيات مشابهة. الخصائص الموضحة في الكود (العنوان، اللغة، النص الفعلي، وما إلى ذلك) هي مجرد أمثلة، ويمكنك استكشاف وثائق Aspose.PDF لاكتشاف المزيد من الخصائص والأساليب المتاحة للمعالجة.
 
-#### Q: How do I identify which child elements I want to access within the PDF document?
-A: The code provides an example of accessing the child elements of the root element and a specific element within it. You can identify the elements you want to access based on their hierarchy and structure within the tagged content of the PDF document.
+#### س: كيف يمكنني تحديد العناصر الفرعية التي أريد الوصول إليها داخل مستند PDF؟
+ج: يوفر الكود مثالاً للوصول إلى العناصر الفرعية للعنصر الجذر وعنصر محدد بداخله. يمكنك تحديد العناصر التي تريد الوصول إليها بناءً على تسلسلها الهرمي وبنيتها ضمن المحتوى المميز بمستند PDF.
 
-#### Q: Is it possible to add new child elements or delete existing ones using this approach?
+#### س: هل من الممكن إضافة عناصر فرعية جديدة أو حذف العناصر الموجودة باستخدام هذا الأسلوب؟
 
-A: While the provided code focuses on accessing and modifying existing child elements, you can extend the approach to add new child elements or delete existing ones by using appropriate methods provided by the Aspose.PDF library.
+ج: بينما تركز التعليمات البرمجية المقدمة على الوصول إلى العناصر الفرعية الموجودة وتعديلها، يمكنك توسيع النهج لإضافة عناصر فرعية جديدة أو حذف العناصر الموجودة باستخدام الطرق المناسبة التي توفرها مكتبة Aspose.PDF.
 
-#### Q: Can I use this approach to work with nested child elements within the PDF document?
+#### س: هل يمكنني استخدام هذا الأسلوب للعمل مع العناصر الفرعية المتداخلة داخل مستند PDF؟
 
-A: Yes, you can apply similar techniques to access and modify nested child elements within the PDF document's structure. By traversing through the hierarchy of elements, you can access and manipulate elements at various levels.
+ج: نعم، يمكنك تطبيق تقنيات مشابهة للوصول إلى العناصر الفرعية المتداخلة وتعديلها داخل بنية مستند PDF. من خلال اجتياز التسلسل الهرمي للعناصر، يمكنك الوصول إلى العناصر ومعالجتها على مستويات مختلفة.

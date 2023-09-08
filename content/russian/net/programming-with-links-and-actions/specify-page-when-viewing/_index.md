@@ -1,145 +1,145 @@
 ---
-title: Specify Page When Viewing
-linktitle: Specify Page When Viewing
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to specify a page when viewing a PDF using Aspose.PDF for .NET.
+title: Указать страницу при просмотре
+linktitle: Указать страницу при просмотре
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как указать страницу при просмотре PDF-файла с помощью Aspose.PDF для .NET.
 type: docs
 weight: 110
 url: /ru/net/programming-with-links-and-actions/specify-page-when-viewing/
 ---
-Learn how to specify a page when viewing a PDF file using Aspose.PDF for .NET with this step-by-step guide.
+Узнайте, как указать страницу при просмотре PDF-файла с помощью Aspose.PDF для .NET, с помощью этого пошагового руководства.
 
-## Step 1: Setting up the environment
+## Шаг 1. Настройка среды
 
-Make sure you have set up your development environment with a C# project and the appropriate Aspose.PDF references.
+Убедитесь, что вы настроили свою среду разработки с помощью проекта C# и соответствующих ссылок на Aspose.PDF.
 
-## Step 2: Loading the PDF file
+## Шаг 2. Загрузка PDF-файла
 
-Set the directory path of your documents and upload the PDF file using the following code:
+Задайте путь к каталогу ваших документов и загрузите PDF-файл, используя следующий код:
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Load the PDF file
+// Загрузите PDF-файл
 Document doc = new Document(dataDir + "SpecifyPageWhenViewing.pdf");
 ```
 
-## Step 3: Specifying the target page
+## Шаг 3. Указание целевой страницы
 
-Get the target page instance using the following code:
+Получите экземпляр целевой страницы, используя следующий код:
 
 ```csharp
 Page page2 = doc.Pages[2];
 ```
 
-You can adjust the index `[2]` to select the desired page.
+ Вы можете настроить индекс`[2]` для выбора нужной страницы.
 
-## Step 4: Configuring the zoom setting
+## Шаг 4. Настройка масштаба
 
-Create a variable to set the target page zoom factor:
+Создайте переменную, чтобы установить коэффициент масштабирования целевой страницы:
 
 ```csharp
 double zoom = 1;
 ```
 
-You can adjust the zoom value according to your needs.
+Вы можете настроить значение масштабирования в соответствии с вашими потребностями.
 
-## Step 5: Create the navigation action
+## Шаг 5. Создайте действие навигации.
 
-Create an instance of the navigation action using the specified target page:
+Создайте экземпляр действия навигации, используя указанную целевую страницу:
 
 ```csharp
 GoToAction action = new GoToAction(doc.Pages[2]);
 ```
 
-## Step 6: Setting the destination
+## Шаг 6: Установка пункта назначения
 
-Set the destination to go to the target page using coordinates and zoom:
+Установите пункт назначения для перехода на целевую страницу, используя координаты и масштаб:
 
 ```csharp
 action.Destination = new XYZExplicitDestination(page2, 0, page2.Rect.Height, zoom);
 ```
 
-## Step 7: Configuring the Document Open Action
+## Шаг 7. Настройка действия открытия документа
 
-Set the document open action with the created navigation action:
+Задайте действие открытия документа с помощью созданного действия навигации:
 
 ```csharp
 doc. OpenAction = action;
 ```
 
-## Step 8: Save the updated document
+## Шаг 8. Сохраните обновленный документ.
 
-Save the updated document using the `Save` method:
+ Сохраните обновленный документ, используя`Save` метод:
 
 ```csharp
 doc.Save(dataDir + "goto2page_out.pdf");
 ```
 
-### Sample source code for Specify Page When Viewing using Aspose.PDF for .NET 
+### Пример исходного кода для указания страницы при просмотре с использованием Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load the PDF file
+// Загрузите PDF-файл
 Document doc = new Document(dataDir + "SpecifyPageWhenViewing.pdf");
-// Get the instance of second page of document
+// Получить экземпляр второй страницы документа
 Page page2 = doc.Pages[2];
-// Create the variable to set the zoom factor of target page
+// Создайте переменную, чтобы установить коэффициент масштабирования целевой страницы.
 double zoom = 1;
-// Create GoToAction instance
+// Создать экземпляр GoToAction.
 GoToAction action = new GoToAction(doc.Pages[2]);
-// Go to 2 page
+// Перейти на 2 страницу
 action.Destination = new XYZExplicitDestination(page2, 0, page2.Rect.Height, zoom);
-// Set the document open action
+// Установите действие открытия документа
 doc.OpenAction = action;
-// Save updated document
+// Сохранить обновленный документ
 doc.Save(dataDir + "goto2page_out.pdf");
 ```
 
-## Conclusion
+## Заключение
 
-Congratulation ! You now know how to specify a page when viewing a PDF using Aspose.PDF for .NET. Use this knowledge to customize the user viewing experience in your PDF documents.
+Поздравляем! Теперь вы знаете, как указать страницу при просмотре PDF-файла с помощью Aspose.PDF для .NET. Используйте эти знания для настройки удобства просмотра PDF-документов.
 
-Now that you've completed this guide, you can apply these concepts to your own projects and further explore the features offered by Aspose.PDF for .NET.
+Теперь, когда вы завершили работу с этим руководством, вы можете применить эти концепции к своим собственным проектам и продолжить изучение функций, предлагаемых Aspose.PDF для .NET.
 
-### FAQ's 
+### Часто задаваемые вопросы 
 
-#### Q: What is the purpose of specifying a target page when viewing a PDF file?
+#### Вопрос: Какова цель указания целевой страницы при просмотре PDF-файла?
 
-A: Specifying a target page allows you to control which page of a PDF document is displayed when the file is opened. This can enhance the user experience by directing them to a specific page of interest.
+О: Указание целевой страницы позволяет вам контролировать, какая страница PDF-документа отображается при открытии файла. Это может улучшить взаимодействие с пользователем, направляя его на конкретную интересующую страницу.
 
-#### Q: How can specifying a target page be useful in PDF documents?
+#### Вопрос: Чем полезно указание целевой страницы в PDF-документах?
 
-A: Specifying a target page is beneficial when you want to guide users to a particular section or content within a PDF document without requiring them to manually navigate through the pages.
+О: Указание целевой страницы полезно, если вы хотите направить пользователей к определенному разделу или содержимому PDF-документа, не требуя от них ручной навигации по страницам.
 
-#### Q: How does Aspose.PDF for .NET facilitate specifying a target page for viewing?
+#### Вопрос: Как Aspose.PDF for .NET упрощает указание целевой страницы для просмотра?
 
-A: Aspose.PDF for .NET provides APIs that allow you to set the initial view of a PDF document, including the target page, zoom level, and other display properties.
+О: Aspose.PDF для .NET предоставляет API, которые позволяют вам установить начальный вид PDF-документа, включая целевую страницу, уровень масштабирования и другие свойства отображения.
 
-#### Q: Can I specify any page to be the target page?
+#### Вопрос: Могу ли я указать любую страницу в качестве целевой?
 
-A: Yes, you can specify any page within the PDF document as the target page for viewing. Simply use the appropriate index to select the desired page.
+О: Да, вы можете указать любую страницу PDF-документа в качестве целевой страницы для просмотра. Просто используйте соответствующий указатель, чтобы выбрать нужную страницу.
 
-#### Q: What is the significance of the zoom factor when specifying a target page?
+#### Вопрос: Каково значение коэффициента масштабирования при указании целевой страницы?
 
-A: The zoom factor determines the level of magnification applied to the target page when the PDF document is opened. It controls how much content is displayed within the viewport.
+О: Коэффициент масштабирования определяет уровень увеличения, применяемого к целевой странице при открытии PDF-документа. Он контролирует, сколько контента отображается в области просмотра.
 
-#### Q: Can I set different zoom factors for different target pages?
+#### Вопрос: Могу ли я установить разные коэффициенты масштабирования для разных целевых страниц?
 
-A: Yes, you can set different zoom factors for different target pages by creating separate `GoToAction` instances and configuring their destinations accordingly.
+О: Да, вы можете установить разные коэффициенты масштабирования для разных целевых страниц, создав отдельные`GoToAction` экземпляров и соответствующим образом настроив их места назначения.
 
-#### Q: Are there any limitations to specifying a target page?
+#### Вопрос: Существуют ли какие-либо ограничения на указание целевой страницы?
 
-A: Specifying a target page is limited to controlling the initial view when the PDF is opened. It does not affect user interactions or navigation once the PDF is displayed.
+О: Указание целевой страницы ограничивается управлением исходным видом при открытии PDF-файла. Это не влияет на взаимодействие с пользователем или навигацию после отображения PDF-файла.
 
-#### Q: Can I use this feature to create presentations within a PDF document?
+#### Вопрос: Могу ли я использовать эту функцию для создания презентаций в документе PDF?
 
-A: Yes, you can use this feature to create presentation-like experiences within a PDF document, guiding users through different sections or topics.
+О: Да, вы можете использовать эту функцию для создания презентаций в PDF-документе, направляя пользователей по различным разделам или темам.
 
-#### Q: Can I customize other aspects of the initial view, such as page layout?
+#### Вопрос: Могу ли я настроить другие аспекты исходного вида, например макет страницы?
 
-A: Yes, Aspose.PDF for .NET provides properties to customize other aspects of the initial view, including page layout, page mode, and more.
+О: Да, Aspose.PDF для .NET предоставляет свойства для настройки других аспектов исходного представления, включая макет страницы, режим страницы и многое другое.
 
-#### Q: How can I test if the specified target page and zoom factor are working as intended?
+#### Вопрос: Как я могу проверить, работают ли указанная целевая страница и коэффициент масштабирования должным образом?
 
-A: After applying the provided code to specify the target page and zoom factor, open the modified PDF file and verify that it opens with the correct page and zoom level.
+О: После применения предоставленного кода для указания целевой страницы и коэффициента масштабирования откройте измененный PDF-файл и убедитесь, что он открывается с правильной страницей и уровнем масштабирования.

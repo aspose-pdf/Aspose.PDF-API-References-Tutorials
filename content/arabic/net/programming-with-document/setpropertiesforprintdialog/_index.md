@@ -1,49 +1,49 @@
 ---
-title: Set Properties For Print Dialog
-linktitle: Set Properties For Print Dialog
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set properties for print dialog in Aspose.PDF for .NET using step-by-step guide.
+title: قم بتعيين خصائص مربع حوار الطباعة
+linktitle: قم بتعيين خصائص مربع حوار الطباعة
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية تعيين خصائص مربع حوار الطباعة في Aspose.PDF لـ .NET باستخدام دليل خطوة بخطوة.
 type: docs
 weight: 320
 url: /ar/net/programming-with-document/setpropertiesforprintdialog/
 ---
-here's a step-by-step guide for setting properties for the print dialog using Aspose.PDF for .NET:
+فيما يلي دليل خطوة بخطوة لإعداد خصائص مربع حوار الطباعة باستخدام Aspose.PDF لـ .NET:
 
 
-## Step 1: Define the directory where your PDF document is located:
+## الخطوة 1: تحديد الدليل الذي يوجد به مستند PDF الخاص بك:
 
 ```csharp
 var dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
    
-## Step 2: Create a new instance of the `Document` class:
+##  الخطوة 2: إنشاء مثيل جديد لـ`Document` class:
 
 ```csharp
 using (Document doc = new Document())
 {
-  // Code here
+  // الرمز هنا
 }
 ```
    
-## Step 3: Add a new page to the document:
+## الخطوة 3: إضافة صفحة جديدة إلى المستند:
 
 ```csharp
 doc.Pages.Add();
 ```
    
-## Step 4: Set the duplex property to `DuplexFlipLongEdge`:
+##  الخطوة 4: قم بتعيين الخاصية المزدوجة على`DuplexFlipLongEdge`:
 
 ```csharp
 doc.Duplex = PrintDuplex.DuplexFlipLongEdge;
 ```
    
-## Step 5: Save the document with the specified file name and format:
+## الخطوة 5: احفظ المستند باسم الملف المحدد وتنسيقه:
 
 ```csharp
 doc.Save(dataDir + "35297_out.pdf", SaveFormat.Pdf);
 ```
 
-### Example source code for Set Properties For Print Dialog using Aspose.PDF for .NET
+### مثال على التعليمات البرمجية المصدر لـ Set Properties For Print Dialog باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 var dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -56,20 +56,20 @@ using (Document doc = new Document())
 }
 ```
 
-## Conclusion
+## خاتمة
 
-Aspose.PDF for .NET makes it easy to set properties for the print dialog in your PDF files. By following the step-by-step guide above, you can quickly optimize your PDF files for printing.
+يسهل Aspose.PDF for .NET تعيين خصائص مربع حوار الطباعة في ملفات PDF الخاصة بك. باتباع الدليل الموضح أعلاه خطوة بخطوة، يمكنك تحسين ملفات PDF الخاصة بك بسرعة للطباعة.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: Can I set other print dialog properties besides duplex mode using Aspose.PDF for .NET?
+#### س: هل يمكنني تعيين خصائص أخرى لمربع حوار الطباعة إلى جانب الوضع المزدوج باستخدام Aspose.PDF لـ .NET؟
 
-A: Yes, besides setting the duplex mode, Aspose.PDF for .NET allows you to set various other properties for the print dialog. Some examples include setting the print quality, page range, number of copies, paper size, and more. You can refer to the Aspose.PDF for .NET documentation to explore the full list of available properties.
+ج: نعم، إلى جانب ضبط الوضع المزدوج، يسمح لك Aspose.PDF لـ .NET بتعيين خصائص أخرى متنوعة لمربع حوار الطباعة. تتضمن بعض الأمثلة ضبط جودة الطباعة ونطاق الصفحات وعدد النسخ وحجم الورق والمزيد. يمكنك الرجوع إلى Aspose.PDF لوثائق .NET لاستكشاف القائمة الكاملة للخصائص المتاحة.
 
-#### Q: How can I set the print quality when printing the PDF document?
+#### س: كيف يمكنني ضبط جودة الطباعة عند طباعة مستند PDF؟
 
-A: To set the print quality, you can use the `PrintQuality` property of the `Document` class in Aspose.PDF for .NET. You can choose from different print quality options such as high, medium, or low, based on your requirements.
+ ج: لتعيين جودة الطباعة، يمكنك استخدام`PrintQuality` ملكية`Document` فئة في Aspose.PDF لـ .NET. يمكنك الاختيار من بين خيارات جودة الطباعة المختلفة مثل عالية أو متوسطة أو منخفضة، بناءً على متطلباتك.
 
-#### Q: Is it possible to specify custom print settings for different pages in the PDF document?
+#### س: هل من الممكن تحديد إعدادات الطباعة المخصصة لصفحات مختلفة في مستند PDF؟
 
-A: Yes, you can set custom print settings for different pages in the PDF document using Aspose.PDF for .NET. You can access individual pages through the `doc.Pages` collection and set specific print settings for each page separately.
+ ج: نعم، يمكنك ضبط إعدادات الطباعة المخصصة لصفحات مختلفة في مستند PDF باستخدام Aspose.PDF لـ .NET. يمكنك الوصول إلى الصفحات الفردية من خلال`doc.Pages` جمع وضبط إعدادات الطباعة المحددة لكل صفحة على حدة.

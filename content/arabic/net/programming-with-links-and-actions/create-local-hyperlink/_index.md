@@ -1,17 +1,17 @@
 ---
-title: Create Local Hyperlink In PDF File
-linktitle: Create Local Hyperlink In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily create local hyperlinks in PDF file using Aspose.PDF for .NET.
+title: إنشاء ارتباط تشعبي محلي في ملف PDF
+linktitle: إنشاء ارتباط تشعبي محلي في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: أنشئ ارتباطات تشعبية محلية بسهولة في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 40
 url: /ar/net/programming-with-links-and-actions/create-local-hyperlink/
 ---
-Creating local hyperlinks in PDF file lets you create clickable links that take users to other pages in the same PDF document. With Aspose.PDF for .NET, you can easily create such links by following the following source code:
+يتيح لك إنشاء الارتباطات التشعبية المحلية في ملف PDF إنشاء روابط قابلة للنقر تنقل المستخدمين إلى صفحات أخرى في نفس مستند PDF. باستخدام Aspose.PDF for .NET، يمكنك بسهولة إنشاء مثل هذه الروابط باتباع التعليمات البرمجية المصدر التالية:
 
-## Step 1: Import Required Libraries
+## الخطوة 1: استيراد المكتبات المطلوبة
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+قبل أن تبدأ، تحتاج إلى استيراد المكتبات اللازمة لمشروع C# الخاص بك. فيما يلي توجيه الاستيراد الضروري:
 
 ```csharp
 using Aspose.Pdf;
@@ -19,25 +19,25 @@ using Aspose.Pdf.Text;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-## Step 2: Set path to documents folder
+## الخطوة 2: تعيين المسار إلى مجلد المستندات
 
-In this step, you need to specify the path to the folder where you want to save the resulting PDF file. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ في هذه الخطوة، تحتاج إلى تحديد المسار إلى المجلد الذي تريد حفظ ملف PDF الناتج فيه. يستبدل`"YOUR DOCUMENT DIRECTORY"`في الكود التالي مع المسار الفعلي لمجلد المستندات الخاص بك:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Create an instance of Document
+## الخطوة 3: إنشاء مثيل للمستند
 
-We will create an instance of the `Document` class to represent our PDF document. Here is the corresponding code:
+ سنقوم بإنشاء مثيل لـ`Document` فئة لتمثيل وثيقة PDF لدينا. هنا هو الكود المقابل:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 4: Add page and text with hyperlinks
+## الخطوة 4: إضافة الصفحة والنص مع الارتباطات التشعبية
 
-In this step, we are going to add a page to our PDF document and add some text containing local hyperlinks. We will define the target pages for each link. Here is the corresponding code:
+في هذه الخطوة، سنقوم بإضافة صفحة إلى مستند PDF الخاص بنا وإضافة بعض النصوص التي تحتوي على ارتباطات تشعبية محلية. سوف نقوم بتحديد الصفحات المستهدفة لكل رابط. هنا هو الكود المقابل:
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -56,90 +56,90 @@ text. Hyperlink = link;
 page.Paragraphs.Add(text);
 ```
 
-## Step 5: Save the updated document
+## الخطوة 5: احفظ المستند المحدث
 
-Now let's save the updated PDF file using the `Save` method of the `doc` object. Here is the corresponding code:
+ الآن دعونا نحفظ ملف PDF المحدث باستخدام ملف`Save` طريقة`doc` هدف. هنا هو الكود المقابل:
 
 ```csharp
 dataDir = dataDir + "CreateLocalHyperlink_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Create Local Hyperlink using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لإنشاء ارتباط تشعبي محلي باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create Document instance
+// إنشاء مثيل المستند
 Document doc = new Document();
-// Add page to pages collection of PDF file
+// إضافة صفحة إلى مجموعة الصفحات من ملف PDF
 Page page = doc.Pages.Add();
-// Create Text Fragment instance
+// إنشاء مثيل جزء النص
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("link page number test to page 7");
-// Create local hyperlink instance
+// إنشاء مثيل الارتباط التشعبي المحلي
 Aspose.Pdf.LocalHyperlink link = new Aspose.Pdf.LocalHyperlink();
-// Set target page for link instance
+// قم بتعيين الصفحة المستهدفة لمثيل الارتباط
 link.TargetPageNumber = 7;
-// Set TextFragment hyperlink
+// تعيين الارتباط التشعبي TextFragment
 text.Hyperlink = link;
-// Add text to paragraphs collection of Page
+//إضافة نص إلى مجموعة الفقرات من الصفحة
 page.Paragraphs.Add(text);
-// Create new TextFragment instance
+// إنشاء مثيل TextFragment جديد
 text = new TextFragment("link page number test to page 1");
-// TextFragment should be added over new page
+// يجب إضافة TextFragment على صفحة جديدة
 text.IsInNewPage = true;
-// Create another local hyperlink instance
+// إنشاء مثيل ارتباط تشعبي محلي آخر
 link = new LocalHyperlink();
-// Set Target page for second hyperlink
+// قم بتعيين الصفحة المستهدفة للارتباط التشعبي الثاني
 link.TargetPageNumber = 1;
-// Set link for second TextFragment
+// تعيين رابط لجزء النص الثاني
 text.Hyperlink = link;
-// Add text to paragraphs collection of page object
+// إضافة نص إلى مجموعة الفقرات من كائن الصفحة
 page.Paragraphs.Add(text);    
 dataDir = dataDir + "CreateLocalHyperlink_out.pdf";
-// Save updated document
+// حفظ المستند المحدث
 doc.Save(dataDir);
 Console.WriteLine("\nLocal hyperlink created successfully.\nFile saved at " + dataDir);            
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! Now you have a step by step guide to create local hyperlinks in a PDF using Aspose.PDF for .NET. You can use this code to create clickable links that take users to other pages in the same document.
+تهنئة ! لديك الآن دليل خطوة بخطوة لإنشاء ارتباطات تشعبية محلية في ملف PDF باستخدام Aspose.PDF لـ .NET. يمكنك استخدام هذا الرمز لإنشاء روابط قابلة للنقر تنقل المستخدمين إلى صفحات أخرى في نفس المستند.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced hyperlinking features.
+تأكد من مراجعة وثائق Aspose.PDF الرسمية لمزيد من المعلومات حول ميزات الارتباط التشعبي المتقدمة.
 
-### FAQ's for create local hyperlink in PDF file
+### الأسئلة الشائعة لإنشاء ارتباط تشعبي محلي في ملف PDF
 
-#### Q: What are local hyperlinks in a PDF file?
+#### س: ما هي الارتباطات التشعبية المحلية في ملف PDF؟
 
-A: Local hyperlinks in a PDF file are clickable links that navigate users to different pages within the same document. These links enhance navigation and allow readers to quickly access relevant sections.
+ج: الارتباطات التشعبية المحلية في ملف PDF هي ارتباطات قابلة للنقر تنقل المستخدمين إلى صفحات مختلفة داخل نفس المستند. تعمل هذه الروابط على تحسين التنقل وتسمح للقراء بالوصول بسرعة إلى الأقسام ذات الصلة.
 
-#### Q: How can local hyperlinks benefit my PDF document?
+#### س: كيف يمكن للارتباطات التشعبية المحلية أن تفيد مستند PDF الخاص بي؟
 
-A: Local hyperlinks provide an efficient way to connect related content within the same PDF document. They improve user experience by enabling readers to quickly jump to specific sections without scrolling through the entire document.
+ج: توفر الارتباطات التشعبية المحلية طريقة فعالة لربط المحتوى ذي الصلة داخل مستند PDF نفسه. إنها تعمل على تحسين تجربة المستخدم من خلال تمكين القراء من الانتقال بسرعة إلى أقسام معينة دون التمرير عبر المستند بأكمله.
 
-#### Q: How does Aspose.PDF for .NET support the creation of local hyperlinks?
-A: Aspose.PDF for .NET offers comprehensive support for creating local hyperlinks. The step-by-step tutorial provided in this guide demonstrates how to add local hyperlinks to your PDF document using C#.
+#### س: كيف يدعم Aspose.PDF for .NET إنشاء الارتباطات التشعبية المحلية؟
+ج: يوفر Aspose.PDF for .NET دعمًا شاملاً لإنشاء الارتباطات التشعبية المحلية. يوضح البرنامج التعليمي خطوة بخطوة المقدم في هذا الدليل كيفية إضافة ارتباطات تشعبية محلية إلى مستند PDF الخاص بك باستخدام C#.
 
-#### Q: Can I customize the appearance of local hyperlinks?
+#### س: هل يمكنني تخصيص مظهر الارتباطات التشعبية المحلية؟
 
-A: Yes, you can customize the appearance of local hyperlinks, including text color and style, to ensure they match your document's design and provide a consistent visual experience.
+ج: نعم، يمكنك تخصيص مظهر الارتباطات التشعبية المحلية، بما في ذلك لون النص ونمطه، للتأكد من أنها تتوافق مع تصميم المستند الخاص بك وتوفر تجربة مرئية متسقة.
 
-#### Q: Is it possible to create multiple local hyperlinks within a single PDF page?
+#### س: هل من الممكن إنشاء ارتباطات تشعبية محلية متعددة داخل صفحة PDF واحدة؟
 
-A: Absolutely! You can create multiple local hyperlinks within a single PDF page, allowing readers to jump to various sections or pages as needed. Each local hyperlink can be tailored to its respective target.
+ج: بالتأكيد! يمكنك إنشاء ارتباطات تشعبية محلية متعددة داخل صفحة PDF واحدة، مما يسمح للقراء بالانتقال إلى أقسام أو صفحات مختلفة حسب الحاجة. يمكن تصميم كل ارتباط تشعبي محلي ليناسب الهدف الخاص به.
 
-#### Q: Can I link to specific sections of a page using local hyperlinks?
+#### س: هل يمكنني الارتباط بأقسام محددة من الصفحة باستخدام الارتباطات التشعبية المحلية؟
 
-A: While local hyperlinks typically navigate to entire pages, you can create anchors or bookmarks within your PDF document to achieve targeted linking. Aspose.PDF for .NET supports various hyperlinking options.
+ج: بينما تنتقل الارتباطات التشعبية المحلية عادةً إلى الصفحات بأكملها، يمكنك إنشاء نقاط ارتساء أو إشارات مرجعية داخل مستند PDF الخاص بك لتحقيق الارتباط المستهدف. يدعم Aspose.PDF for .NET خيارات الارتباط التشعبي المتنوعة.
 
-#### Q: How can I verify that my local hyperlinks are functioning correctly?
+#### س: كيف يمكنني التحقق من أن الارتباطات التشعبية المحلية الخاصة بي تعمل بشكل صحيح؟
 
-A: By following the tutorial and sample code provided, you can confidently create functional local hyperlinks. You can test the links by opening the generated PDF document and clicking on the hyperlinked text.
+ج: باتباع البرنامج التعليمي ونموذج التعليمات البرمجية المقدمين، يمكنك بثقة إنشاء ارتباطات تشعبية محلية وظيفية. يمكنك اختبار الروابط عن طريق فتح مستند PDF الذي تم إنشاؤه والنقر فوق النص المرتبط تشعبيًا.
 
-#### Q: Are there any limitations when using local hyperlinks?
+#### س: هل هناك أي قيود عند استخدام الارتباطات التشعبية المحلية؟
 
-A: Local hyperlinks are an effective way to enhance document navigation, but it's important to ensure that the document's structure remains clear and intuitive. Properly labeled hyperlinks and anchors contribute to a positive user experience.
+ج: تعتبر الارتباطات التشعبية المحلية وسيلة فعالة لتحسين التنقل في المستند، ولكن من المهم التأكد من أن بنية المستند تظل واضحة وبديهية. تساهم الارتباطات التشعبية والمثبتات المصنفة بشكل صحيح في توفير تجربة مستخدم إيجابية.
 
-#### Q: Can I create local hyperlinks within tables or images?
+#### س: هل يمكنني إنشاء ارتباطات تشعبية محلية داخل الجداول أو الصور؟
 
-A: Yes, you can create local hyperlinks within various elements of your PDF document, including tables, images, and text. Aspose.PDF for .NET offers flexibility in adding hyperlinks to different types of content.
+ج: نعم، يمكنك إنشاء ارتباطات تشعبية محلية ضمن عناصر مختلفة في مستند PDF الخاص بك، بما في ذلك الجداول والصور والنص. يوفر Aspose.PDF for .NET المرونة في إضافة الارتباطات التشعبية إلى أنواع مختلفة من المحتوى.

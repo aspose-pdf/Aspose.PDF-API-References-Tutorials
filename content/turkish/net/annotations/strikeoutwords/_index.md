@@ -1,33 +1,33 @@
 ---
-title: Strike Out Words
-linktitle: Strike Out Words
-second_title: Aspose.PDF for .NET API Reference
-description: This article provides a step-by-step guide to using Aspose.PDF for .NET's Strike Out Words feature, including step by step guide and explanations
+title: Kelimelerin Üstünü Çizin
+linktitle: Kelimelerin Üstünü Çizin
+second_title: .NET API Referansı için Aspose.PDF
+description: Bu makale Aspose.PDF for .NET'in Sözcüklerin Üzerini Çiz özelliğinin kullanımıyla ilgili adım adım kılavuz ve açıklamalar sunmaktadır.
 type: docs
 weight: 150
 url: /tr/net/annotations/strikeoutwords/
 ---
-Aspose.PDF for .NET is a PDF document manipulation and processing library that provides various features to create, modify, and convert PDF files. One of the useful features that Aspose.PDF provides is the ability to strike out words or phrases in a PDF document using C# source code. In this article, we will provide a step-by-step guide on how to strike out words using Aspose.PDF for .NET.
+Aspose.PDF for .NET, PDF dosyalarını oluşturmak, değiştirmek ve dönüştürmek için çeşitli özellikler sağlayan bir PDF belge işleme ve işleme kitaplığıdır. Aspose.PDF'in sağladığı kullanışlı özelliklerden biri, C# kaynak kodunu kullanarak bir PDF belgesindeki sözcüklerin veya ifadelerin üzerini çizebilme yeteneğidir. Bu makalede, Aspose.PDF for .NET kullanarak kelimelerin üzerinin nasıl çizileceği konusunda adım adım bir kılavuz sunacağız.
 
-## Step 1: Loading the PDF document
-The first step is to load the PDF document that you want to modify. In this tutorial, we will load a PDF document named "input.pdf" from the "YOUR DOCUMENT DIRECTORY" folder. 
+## 1. Adım: PDF belgesini yükleme
+İlk adım, değiştirmek istediğiniz PDF belgesini yüklemektir. Bu eğitimde "BELGE DİZİNİNİZ" klasöründen "input.pdf" adlı bir PDF belgesi yükleyeceğiz. 
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document document = new Document(dataDir + "input.pdf");
 ```
 
-## Step 2: Searching for text fragments
-To strike out specific words or phrases in the PDF document, you first need to search for them. Aspose.PDF provides a TextFragmentAbsorber class that can be used to search for a specific text fragment in the PDF document.
+## 2. Adım: Metin parçalarını arama
+PDF belgesindeki belirli kelimelerin veya kelime öbeklerinin üstünü çizmek için önce bunları aramanız gerekir. Aspose.PDF, PDF belgesinde belirli bir metin parçasını aramak için kullanılabilecek bir TextFragmentAbsorber sınıfı sağlar.
 
 ```csharp
 Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.TextFragmentAbsorber("Estoque");
 ```
 
-In the above code, we are searching for the text fragment "Estoque" in the PDF document. You can modify this to search for any other word or phrase that you want to strike out.
+Yukarıdaki kodda PDF belgesinde "Estoque" metin parçasını arıyoruz. Üstünü çizmek istediğiniz başka bir kelimeyi veya ifadeyi aramak için bunu değiştirebilirsiniz.
 
-## Step 3: Striking out the text fragments
-After finding the text fragments, the next step is to strike them out. Aspose.PDF provides a StrikeOutAnnotation class that can be used to create a strike-out annotation for the text fragment. 
+## 3. Adım: Metin parçalarının üzerini çizme
+Metin parçalarını bulduktan sonraki adım bunların üzerini çizmektir. Aspose.PDF, metin parçası için üstü çizili açıklama oluşturmak amacıyla kullanılabilecek bir StrikeOutAnnotation sınıfı sağlar. 
 
 ```csharp
 Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle((float)textFragment.Position.XIndent, (float)textFragment.Position.YIndent, (float)textFragment.Position.XIndent + (float)textFragment.Rectangle.Width, (float)textFragment.Position.YIndent + (float)textFragment.Rectangle.Height);
@@ -39,46 +39,46 @@ strikeOut.Color = Aspose.Pdf.Color.Red;
 textFragment.Page.Annotations.Add(strikeOut);
 ```
 
-In the above code, we are creating a strike-out annotation for each text fragment that we found. We are setting the opacity, border, and color of the strike-out annotation as well.
+Yukarıdaki kodda bulduğumuz her metin parçası için üstü çizili bir açıklama oluşturuyoruz. Üstü çizili açıklamanın opaklığını, kenarlığını ve rengini de ayarlıyoruz.
 
-## Step 4: Saving the modified PDF document
-After striking out the text fragments, the save the modified document.
+## Adım 4: Değiştirilen PDF belgesini kaydetme
+Metin parçalarının üzerini çizdikten sonra değiştirilen belgeyi kaydedin.
 
 ```csharp
 dataDir = dataDir + "StrikeOutWords_out.pdf";
 document.Save(dataDir);
 ```
 
-### Example source code for Strike Out Words using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanan Kelimelerin Üzerini Çizmek için örnek kaynak kodu
 
 
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Belgeyi aç
 Document document = new Document(dataDir + "input.pdf");
 
-// Create TextFragment Absorber instance to search particular text fragment
+// Belirli bir metin parçasını aramak için TextFragment Absorber örneği oluşturun
 Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.TextFragmentAbsorber("Estoque");
-// Iterate through pages of PDF document
+// PDF belgesinin sayfalarını yineleyin
 for (int i = 1; i <= document.Pages.Count; i++)
 {
-	// Get first page of PDF document
+	// PDF belgesinin ilk sayfasını alın
 	Page page = document.Pages[1];
 	page.Accept(textFragmentAbsorber);
 }
 
-// Create a collection of Absorbed text
+// Emilmiş metinlerden oluşan bir koleksiyon oluşturun
 Aspose.Pdf.Text.TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
 
-// Iterate on above collection
+//Yukarıdaki koleksiyonu yineleyin
 for (int j = 1; j <= textFragmentCollection.Count; j++)
 {
 	Aspose.Pdf.Text.TextFragment textFragment = textFragmentCollection[j];
 
-	// Get rectangular dimensions of TextFragment object  	
+	// TextFragment nesnesinin dikdörtgen boyutlarını alın
 	Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle(
 				(float)textFragment.Position.XIndent,
 				(float)textFragment.Position.YIndent,
@@ -87,39 +87,39 @@ for (int j = 1; j <= textFragmentCollection.Count; j++)
 				(float)textFragment.Position.YIndent +
 				(float)textFragment.Rectangle.Height);
 
-	// Instantiate StrikeOut Annotation instance
+	// StrikeOut Ek Açıklama örneğini oluştur
 	StrikeOutAnnotation strikeOut = new StrikeOutAnnotation(textFragment.Page, rect);
-	// Set opacity for annotation
+	// Ek açıklama için opaklığı ayarlayın
 	strikeOut.Opacity = .80f;
-	// Set the border for annotation instance
+	// Ek açıklama örneği için kenarlığı ayarlayın
 	strikeOut.Border = new Border(strikeOut);
-	// Set the color of annotation
+	// Ek açıklamanın rengini ayarlayın
 	strikeOut.Color = Aspose.Pdf.Color.Red;
-	// Add annotation to annotations collection of TextFragment
+	// TextFragment'in ek açıklama koleksiyonuna ek açıklama ekleme
 	textFragment.Page.Annotations.Add(strikeOut);
 }
 dataDir = dataDir + "StrikeOutWords_out.pdf";
 document.Save(dataDir);
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we learned how to use Aspose.PDF for .NET to strike out specific words in a PDF document. By following the step-by-step guide and using the provided C# source code, you can easily load a PDF document, search for specific text fragments, and create strike-out annotations to visually mark and strike out those words. Aspose.PDF for .NET provides a simple and effective way to manipulate PDF documents programmatically, making it a valuable tool for developers working with PDF files in .NET applications.
+Bu eğitimde, bir PDF belgesindeki belirli kelimelerin üzerini çizmek için Aspose.PDF for .NET'i nasıl kullanacağımızı öğrendik. Adım adım kılavuzu izleyerek ve sağlanan C# kaynak kodunu kullanarak, kolayca bir PDF belgesi yükleyebilir, belirli metin parçalarını arayabilir ve bu sözcükleri görsel olarak işaretlemek ve üstünü çizmek için üstü çizili ek açıklamalar oluşturabilirsiniz. Aspose.PDF for .NET, PDF belgelerini programlı olarak işlemek için basit ve etkili bir yol sağlayarak, onu .NET uygulamalarında PDF dosyalarıyla çalışan geliştiriciler için değerli bir araç haline getirir.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET nedir?
 
-A: Aspose.PDF for .NET is a powerful library that allows developers to create, edit, and manipulate PDF documents programmatically in .NET applications. It provides a wide range of features to work with PDF files, including text extraction, annotation handling, form filling, and much more.
+C: Aspose.PDF for .NET, geliştiricilerin .NET uygulamalarında PDF belgelerini programlı olarak oluşturmasına, düzenlemesine ve işlemesine olanak tanıyan güçlü bir kitaplıktır. Metin çıkarma, açıklama ekleme, form doldurma ve çok daha fazlasını içeren PDF dosyalarıyla çalışmak için çok çeşitli özellikler sunar.
 
-#### Q: Can I use Aspose.PDF for .NET to strike out specific words in a PDF document?
+#### S: Bir PDF belgesindeki belirli kelimelerin üstünü çizmek için Aspose.PDF for .NET'i kullanabilir miyim?
 
-A: Yes, Aspose.PDF for .NET provides functionality to search for specific text fragments in a PDF document and then create strike-out annotations to visually mark and strike out those words.
+C: Evet, Aspose.PDF for .NET, bir PDF belgesindeki belirli metin parçalarını aramak ve ardından bu sözcükleri görsel olarak işaretleyip çizmek için üstü çizili açıklamalar oluşturmak için işlevsellik sağlar.
 
-#### Q: How do I specify the text I want to strike out in the PDF document?
+#### S: PDF belgesinde üzerini çizmek istediğim metni nasıl belirlerim?
 
-A: To specify the text you want to strike out, you can use the `TextFragmentAbsorber` class provided by Aspose.PDF for .NET. It allows you to search for a specific text fragment in the PDF document based on your desired criteria.
+ C: Üzerini çizmek istediğiniz metni belirtmek için`TextFragmentAbsorber` sınıf Aspose.PDF for .NET tarafından sağlanmıştır. İstediğiniz kriterlere göre PDF belgesinde belirli bir metin parçasını aramanıza olanak tanır.
 
-#### Q: Can I customize the appearance of the strike-out annotation?
+#### S: Üzeri çizili açıklamanın görünümünü özelleştirebilir miyim?
 
-A: Yes, you can customize various properties of the strike-out annotation, such as the opacity, border style, and color. This allows you to tailor the appearance of the strike-out annotation to your specific requirements.
+C: Evet, üstü çizili açıklamanın opaklık, kenarlık stili ve renk gibi çeşitli özelliklerini özelleştirebilirsiniz. Bu, üstü çizili açıklamanın görünümünü özel gereksinimlerinize göre uyarlamanıza olanak tanır.

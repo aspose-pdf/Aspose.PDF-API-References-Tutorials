@@ -1,48 +1,48 @@
 ---
-title: Embed Font While PDF Doc Creation
-linktitle: Embed Font While PDF Doc Creation
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to embed a font while creating a PDF document using Aspose.PDF for .NET. Ensure correct display on different devices.
+title: تضمين الخط أثناء إنشاء مستند PDF
+linktitle: تضمين الخط أثناء إنشاء مستند PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية تضمين خط أثناء إنشاء مستند PDF باستخدام Aspose.PDF لـ .NET. ضمان العرض الصحيح على أجهزة مختلفة.
 type: docs
 weight: 140
 url: /ar/net/programming-with-document/embedfontwhiledoccreation/
 ---
-In this tutorial, we will discuss how to embed a font while creating a PDF document using Aspose.PDF for .NET. Aspose.PDF for .NET is a powerful library that allows developers to create, edit, and manipulate PDF documents programmatically. This library provides a wide range of features to work with PDF documents, including adding text, images, tables, and much more. Embedding fonts while creating a PDF document is a common requirement for developers who want to ensure that the PDF document displays correctly on different devices, regardless of whether the required fonts are installed on those devices or not.
+في هذا البرنامج التعليمي، سنناقش كيفية تضمين خط أثناء إنشاء مستند PDF باستخدام Aspose.PDF لـ .NET. Aspose.PDF for .NET هي مكتبة قوية تتيح للمطورين إنشاء مستندات PDF وتحريرها ومعالجتها برمجيًا. توفر هذه المكتبة مجموعة واسعة من الميزات للعمل مع مستندات PDF، بما في ذلك إضافة النصوص والصور والجداول وغير ذلك الكثير. يعد تضمين الخطوط أثناء إنشاء مستند PDF متطلبًا شائعًا للمطورين الذين يريدون التأكد من عرض مستند PDF بشكل صحيح على أجهزة مختلفة، بغض النظر عما إذا كانت الخطوط المطلوبة مثبتة على تلك الأجهزة أم لا.
 
-## Step 1: Create a new C# Console Application
-To get started, create a new C# Console Application in Visual Studio. You can name it whatever you like. Once the project is created, you need to add a reference to the Aspose.PDF for .NET library.
+## الخطوة 1: إنشاء تطبيق وحدة تحكم C# جديد
+للبدء، قم بإنشاء تطبيق C# Console جديد في Visual Studio. يمكنك تسميتها ما تريد. بمجرد إنشاء المشروع، تحتاج إلى إضافة مرجع إلى مكتبة Aspose.PDF لـ .NET.
 
-## Step 2: Import the Aspose.PDF Namespace
-Add the following line of code at the top of your C# file to import the Aspose.PDF namespace:
+## الخطوة 2: استيراد مساحة الاسم Aspose.PDF
+أضف السطر التالي من التعليمات البرمجية في أعلى ملف C# الخاص بك لاستيراد مساحة الاسم Aspose.PDF:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 3: Instantiate a Pdf Object
-Instantiate a Pdf object by calling its empty constructor:
+## الخطوة 3: إنشاء مثيل لكائن Pdf
+قم بإنشاء مثيل لكائن Pdf عن طريق استدعاء منشئه الفارغ:
 
 ```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 ```
 
-## Step 4: Create a Section in the Pdf Object
-Create a section in the Pdf object:
+## الخطوة 4: إنشاء قسم في كائن Pdf
+قم بإنشاء قسم في كائن Pdf:
 
 ```csharp
 Aspose.Pdf.Page page = doc.Pages.Add();
 ```
 
-## Step 5: Add Text to the Section
-Add text to the section:
+## الخطوة 5: إضافة نص إلى القسم
+إضافة نص إلى القسم:
 
 ```csharp
 Aspose.Pdf.Text.TextFragment fragment = new Aspose.Pdf.Text.TextFragment("");
 Aspose.Pdf.Text.TextSegment segment = new Aspose.Pdf.Text.TextSegment(" This is a sample text using Custom font.");
 ```
 
-## Step 6: Set the Font and Embed It
-Set the font and embed it:
+## الخطوة 6: تعيين الخط وتضمينه
+اضبط الخط وقم بتضمينه:
 
 ```csharp
 Aspose.Pdf.Text.TextState ts = new Aspose.Pdf.Text.TextState();
@@ -53,25 +53,25 @@ fragment.Segments.Add(segment);
 page.Paragraphs.Add(fragment);
 ```
 
-## Step 7: Save the PDF Document
-Once you have embedded the font while creating the PDF document, you need to save the document:
+## الخطوة 7: احفظ مستند PDF
+بمجرد تضمين الخط أثناء إنشاء مستند PDF، ستحتاج إلى حفظ المستند:
 
 ```csharp
 dataDir = dataDir + "EmbedFontWhileDocCreation_out.pdf";
-// Save PDF Document
+// حفظ وثيقة PDF
 doc.Save(dataDir);
 ```
 
-### Example Source Code for Embed Font While Doc Creation using Aspose.PDF for .NET
+### مثال على كود المصدر لتضمين الخط أثناء إنشاء المستند باستخدام Aspose.PDF لـ .NET
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate Pdf object by calling its empty constructor
+// قم بإنشاء مثيل لكائن Pdf عن طريق استدعاء المُنشئ الفارغ الخاص به
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
-// Create a section in the Pdf object
+// قم بإنشاء قسم في كائن Pdf
 Aspose.Pdf.Page page = doc.Pages.Add();
 
 Aspose.Pdf.Text.TextFragment fragment = new Aspose.Pdf.Text.TextFragment("");
@@ -85,31 +85,31 @@ fragment.Segments.Add(segment);
 page.Paragraphs.Add(fragment);
 
 dataDir = dataDir + "EmbedFontWhileDocCreation_out.pdf";
-// Save PDF Document
+// حفظ وثيقة PDF
 doc.Save(dataDir);
 ```
 
-## Conclusion
-In this tutorial, we have discussed how to embed a font while creating a PDF document using Aspose.PDF for .NET. Aspose.PDF for .NET provides a simple and easy-to-use API to work with PDF documents, including adding and embedding fonts. Embedding fonts while creating a PDF document is an important step to ensure that the document is displayed correctly on different devices, regardless of whether the required fonts are installed on those devices or not.
+## خاتمة
+في هذا البرنامج التعليمي، ناقشنا كيفية تضمين خط أثناء إنشاء مستند PDF باستخدام Aspose.PDF لـ .NET. يوفر Aspose.PDF for .NET واجهة برمجة تطبيقات بسيطة وسهلة الاستخدام للعمل مع مستندات PDF، بما في ذلك إضافة الخطوط وتضمينها. يعد تضمين الخطوط أثناء إنشاء مستند PDF خطوة مهمة لضمان عرض المستند بشكل صحيح على أجهزة مختلفة، بغض النظر عما إذا كانت الخطوط المطلوبة مثبتة على تلك الأجهزة أم لا.
 
-### FAQ's for embed font while PDF doc creation
+### الأسئلة الشائعة لتضمين الخط أثناء إنشاء مستند PDF
 
-#### Q: Why is embedding fonts while creating a PDF document important?
+#### س: ما أهمية تضمين الخطوط أثناء إنشاء مستند PDF؟
 
-A: Embedding fonts while creating a PDF document is important to ensure that the document is displayed correctly on different devices, even if the required fonts are not installed on those devices. This helps maintain the document's intended appearance and prevents font substitution issues.
+ج: يعد تضمين الخطوط أثناء إنشاء مستند PDF أمرًا مهمًا لضمان عرض المستند بشكل صحيح على أجهزة مختلفة، حتى لو لم يتم تثبيت الخطوط المطلوبة على تلك الأجهزة. يساعد هذا في الحفاظ على المظهر المقصود للمستند ويمنع مشكلات استبدال الخط.
 
-#### Q: How can I embed fonts while creating a PDF document using Aspose.PDF for .NET?
+#### س: كيف يمكنني تضمين الخطوط أثناء إنشاء مستند PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: You can embed fonts while creating a PDF document using Aspose.PDF for .NET by specifying the font and setting the `IsEmbedded` property to `true`. This ensures that the font data is embedded in the PDF file.
+ج: يمكنك تضمين الخطوط أثناء إنشاء مستند PDF باستخدام Aspose.PDF for .NET عن طريق تحديد الخط وتعيين الإعداد`IsEmbedded` الملكية ل`true`. وهذا يضمن تضمين بيانات الخط في ملف PDF.
 
-#### Q: Can I specify a custom font while embedding it in a PDF document?
+#### س: هل يمكنني تحديد خط مخصص أثناء تضمينه في مستند PDF؟
 
-A: Yes, you can specify a custom font while embedding it in a PDF document using Aspose.PDF for .NET. This allows you to use specific fonts that suit your design requirements.
+ج: نعم، يمكنك تحديد خط مخصص أثناء تضمينه في مستند PDF باستخدام Aspose.PDF لـ .NET. يتيح لك ذلك استخدام خطوط محددة تناسب متطلبات التصميم الخاصة بك.
 
-#### Q: Is Aspose.PDF for .NET compatible with various font formats?
+#### س: هل يتوافق Aspose.PDF for .NET مع تنسيقات الخطوط المختلفة؟
 
-A: Yes, Aspose.PDF for .NET is compatible with various font formats, including TrueType, OpenType, and Type 1 fonts. It can embed fonts in a PDF document regardless of their format.
+ج: نعم، Aspose.PDF for .NET متوافق مع تنسيقات الخطوط المختلفة، بما في ذلك خطوط TrueType وOpenType وType 1. يمكنه تضمين الخطوط في مستند PDF بغض النظر عن تنسيقها.
 
-#### Q: Can I customize the font embedding process?
+#### س: هل يمكنني تخصيص عملية تضمين الخط؟
 
-A: Yes, you can customize the font embedding process using Aspose.PDF for .NET. You can specify the font and set properties such as `IsEmbedded` to control how the font is embedded in the PDF document.
+ ج: نعم، يمكنك تخصيص عملية تضمين الخط باستخدام Aspose.PDF لـ .NET. يمكنك تحديد الخط وتعيين خصائص مثل`IsEmbedded` للتحكم في كيفية تضمين الخط في مستند PDF.

@@ -1,33 +1,33 @@
 ---
-title: Get PDF Form Field Coordinates
-linktitle: Get PDF Form Field Coordinates
-second_title: Aspose.PDF for .NET API Reference
-description: Easily get PDF form field coordinates in your PDF documents with Aspose.PDF for .NET.
+title: 获取 PDF 表单字段坐标
+linktitle: 获取 PDF 表单字段坐标
+second_title: Aspose.PDF for .NET API 参考
+description: 使用 Aspose.PDF for .NET 轻松获取 PDF 文档中的 PDF 表单字段坐标。
 type: docs
 weight: 120
 url: /zh/net/programming-with-forms/get-coordinates/
 ---
-In this tutorial, we will show you how to get PDF form field coordinates using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+在本教程中，我们将向您展示如何使用 Aspose.PDF for .NET 获取 PDF 表单字段坐标。我们将逐步解释 C# 源代码，以指导您完成此过程。
 
-## Step 1: Preparation
+## 第 1 步：准备
 
-Make sure you have imported the necessary libraries and set the path to the documents directory:
+确保您已导入必要的库并设置文档目录的路径：
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load the output document
+## 第 2 步：加载输出文档
 
-Load the output PDF document:
+加载输出 PDF 文档：
 
 ```csharp
 Document doc1 = new Document(dataDir + "input.pdf");
 ```
 
-## Step 3: Find added fields
+## 第 3 步：查找添加的字段
 
-Find the added form fields (in this example, we're using the "Item1", "Item2", and "Item3" fields):
+找到添加的表单字段（在本例中，我们使用“Item1”、“Item2”和“Item3”字段）：
 
 ```csharp
 RadioButtonField field0 = doc1.Form["Item1"] as RadioButtonField;
@@ -35,9 +35,9 @@ RadioButtonField field1 = doc1.Form["Item2"] as RadioButtonField;
 RadioButtonField field2 = doc1.Form["Item3"] as RadioButtonField;
 ```
 
-## Step 4: Display sub-item positions for each field
+## 步骤 4：显示每个字段的子项位置
 
-Cycle through the options for each field and view the coordinates for each sub-item:
+循环浏览每个字段的选项并查看每个子项的坐标：
 
 ```csharp
 foreach(RadioButtonOptionField option in field0)
@@ -54,19 +54,19 @@ Console.WriteLine(option.Rect);
 }
 ```
 
-### Sample source code for Get Coordinates using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 获取坐标的示例源代码 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	//文档目录的路径。
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Load the output document 
+	//加载输出文档
 	Document doc1 = new Document( dataDir + "input.pdf");
-	// Find added fields
+	//查找添加的字段
 	RadioButtonField field0 = doc1.Form["Item1"] as RadioButtonField;
 	RadioButtonField field1 = doc1.Form["Item2"] as RadioButtonField;
 	RadioButtonField field2 = doc1.Form["Item3"] as RadioButtonField;
-	// And show positions of sub items for each of them. 
+	//并显示每个子项目的位置。
 	foreach (RadioButtonOptionField option in field0)
 	{
 		Console.WriteLine(option.Rect);
@@ -86,28 +86,28 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## 结论
 
-In this tutorial, we learned how to get form field coordinates using Aspose.PDF for .NET. By following these steps, you can easily retrieve the coordinates of your form fields' sub-elements in your PDF documents using Aspose.PDF.
+在本教程中，我们学习了如何使用 Aspose.PDF for .NET 获取表单字段坐标。通过执行这些步骤，您可以使用 Aspose.PDF 轻松检索 PDF 文档中表单字段子元素的坐标。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: Can I use this method to get coordinates for any type of form field in Aspose.PDF for .NET?
+#### 问：我可以使用此方法获取 Aspose.PDF for .NET 中任何类型表单字段的坐标吗？
 
-A: Yes, you can use this method to get coordinates for various types of form fields in Aspose.PDF for .NET. The provided C# source code demonstrates how to get coordinates for RadioButton fields, but you can adapt the same approach for other form field types, such as TextBox, CheckBox, ListBox, and more.
+答：是的，您可以使用此方法获取 Aspose.PDF for .NET 中各种类型表单字段的坐标。提供的 C# 源代码演示了如何获取 RadioButton 字段的坐标，但您可以对其他表单字段类型（例如 TextBox、CheckBox、ListBox 等）采用相同的方法。
 
-#### Q: How can I modify or adjust the form field coordinates?
+#### 问：如何修改或调整表单域坐标？
 
-A: Form field coordinates are based on the PDF document's coordinate system, where the origin (0,0) is located at the bottom-left corner of the page. To modify or adjust the form field coordinates, you can update the `Rect` property of the respective form field or its sub-items, such as RadioButtonOptionField.
+答：表单域坐标基于 PDF 文档的坐标系，原点 (0,0) 位于页面的左下角。要修改或调整表单字段坐标，您可以更新`Rect`相应表单字段或其子项的属性，例如 RadioButtonOptionField。
 
-#### Q: Can I get the coordinates of form fields added programmatically to a PDF document?
+#### 问：我可以获取以编程方式添加到 PDF 文档中的表单字段的坐标吗？
 
-A: Yes, you can get the coordinates of form fields that were added programmatically to a PDF document. Aspose.PDF for .NET allows you to add form fields dynamically, and once added, you can retrieve their coordinates using the approach demonstrated in this tutorial.
+答：是的，您可以获得以编程方式添加到 PDF 文档的表单字段的坐标。 Aspose.PDF for .NET 允许您动态添加表单字段，添加后，您可以使用本教程中演示的方法检索其坐标。
 
-#### Q: What is the purpose of retrieving form field coordinates?
+#### 问：检索表单字段坐标的目的是什么？
 
-A: Retrieving form field coordinates can be helpful when you need to perform specific layout-related operations or validations on form fields within a PDF document. It allows you to accurately position and align form fields based on their coordinates, ensuring that they appear correctly in the document and provide a seamless user experience.
+答：当您需要对 PDF 文档中的表单字段执行特定的布局相关操作或验证时，检索表单字段坐标会很有帮助。它允许您根据表单字段的坐标准确定位和对齐表单字段，确保它们正确显示在文档中并提供无缝的用户体验。
 
-#### Q: Are the form field coordinates expressed in points or another unit?
+#### 问：表单字段坐标是以点还是其他单位表示的？
 
-A: The form field coordinates in Aspose.PDF for .NET are expressed in points. One point is equivalent to 1/72 inch, making it a standard unit of measurement in the PDF format.
+答：Aspose.PDF for .NET 中的表单字段坐标以点表示。 1 点相当于 1/72 英寸，使其成为 PDF 格式中的标准测量单位。

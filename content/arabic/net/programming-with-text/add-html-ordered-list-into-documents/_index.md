@@ -1,129 +1,129 @@
 ---
-title: Add HTML Ordered List Into Documents
-linktitle: Add HTMLOrdered List Into Documents
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add an HTML ordered list to a document using Aspose.PDF for .NET.
+title: إضافة قائمة مرتبة بتنسيق HTML إلى المستندات
+linktitle: إضافة قائمة HTMLOrdered إلى المستندات
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إضافة قائمة مرتبة بتنسيق HTML إلى مستند باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 30
 url: /ar/net/programming-with-text/add-html-ordered-list-into-documents/
 ---
-In this tutorial, you will learn how to use the Aspose.PDF for .NET library to add an HTML ordered list into a document. The code provided demonstrates the necessary steps to accomplish this task.
+ستتعلم في هذا البرنامج التعليمي كيفية استخدام مكتبة Aspose.PDF for .NET لإضافة قائمة HTML مرتبة إلى مستند. يوضح الكود المقدم الخطوات اللازمة لإنجاز هذه المهمة.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## متطلبات
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio أو أي مترجم C# آخر مثبت على جهازك.
+- Aspose.PDF لمكتبة .NET. يمكنك تنزيله من موقع Aspose الرسمي أو استخدام مدير الحزم مثل NuGet لتثبيته.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## الخطوة 1: إعداد المشروع
+1. قم بإنشاء مشروع C# جديد في بيئة التطوير المفضلة لديك.
+2. قم بإضافة مرجع إلى Aspose.PDF لمكتبة .NET.
 
-## Step 2: Import required namespaces
-In the code file where you want to add the HTML ordered list, add the following using directives at the top of the file:
+## الخطوة 2: استيراد مساحات الأسماء المطلوبة
+في ملف التعليمات البرمجية الذي تريد إضافة قائمة HTML المرتبة إليه، أضف ما يلي باستخدام التوجيهات الموجودة في أعلى الملف:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Set the document directory and output file path
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## الخطوة 3: قم بتعيين دليل المستند ومسار ملف الإخراج
+ في الكود، حدد السطر الذي يقول`string dataDir = "YOUR DOCUMENT DIRECTORY";` واستبدال`"YOUR DOCUMENT DIRECTORY"` مع المسار إلى الدليل حيث يتم تخزين المستندات الخاصة بك.
 
-Next, locate the line that says `string outFile = dataDir + "AddHTMLOrderedListIntoDocuments_out.pdf";` and replace `"AddHTMLOrderedListIntoDocuments_out.pdf"` with the desired name for your output PDF file.
+ بعد ذلك، حدد موقع السطر الذي يقول`string outFile = dataDir + "AddHTMLOrderedListIntoDocuments_out.pdf";` واستبدال`"AddHTMLOrderedListIntoDocuments_out.pdf"` بالاسم المطلوب لملف PDF الناتج.
 
-## Step 4: Create a new Document object
-Instantiate a new `Document` object by adding the following line of code:
+## الخطوة 4: إنشاء كائن مستند جديد
+ إنشاء مثيل جديد`Document` كائن عن طريق إضافة السطر التالي من التعليمات البرمجية:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 5: Create an HtmlFragment object with the HTML content
-Instantiate an `HtmlFragment` object with the HTML content you want to add to the document. In the provided code, the HTML content is assigned to the variable `t`. You can modify the HTML content as needed.
+## الخطوة 5: إنشاء كائن HtmlFragment بمحتوى HTML
+ إنشاء مثيل ل`HtmlFragment` كائن يحتوي على محتوى HTML الذي تريد إضافته إلى المستند. في التعليمات البرمجية المقدمة، يتم تعيين محتوى HTML للمتغير`t`. يمكنك تعديل محتوى HTML حسب الحاجة.
 
 ```csharp
 HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>First</li><li>Second</li><li>Third</li><li >Fourth</li><li>Fifth</li></ul>Text after the list.<br/>Next line<br/>Last line</body>`");
 ```
 
-## Step 6: Add a page to the document
-Add a new page to the document by using the `Add` method of the `Pages` collection. In the provided code, the new page is assigned to the variable `page`.
+## الخطوة 6: إضافة صفحة إلى المستند
+ أضف صفحة جديدة إلى المستند باستخدام`Add` طريقة`Pages`مجموعة. في الكود المقدم، يتم تعيين الصفحة الجديدة للمتغير`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
-## Step 7: Add the HtmlFragment to the page
-Add the `HtmlFragment` object to the page by using the `Add` method of the `Paragraphs` collection.
+## الخطوة 7: أضف HtmlFragment إلى الصفحة
+ أضف ال`HtmlFragment` الاعتراض على الصفحة باستخدام`Add` طريقة`Paragraphs` مجموعة.
 
 ```csharp
 page.Paragraphs.Add(t);
 ```
 
-## Step 8: Save the PDF document
-Save the resulting PDF file using the `Save` method of the `Document` object. Specify the output file path that you set in Step 3.
+## الخطوة 8: احفظ مستند PDF
+ احفظ ملف PDF الناتج باستخدام ملف`Save` طريقة`Document` هدف. حدد مسار ملف الإخراج الذي قمت بتعيينه في الخطوة 3.
 
 ```csharp
 doc.Save(outFile);
 ```
 
-### Sample source code for Add HTMLOrdered List Into Documents using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لإضافة قائمة HTMLOrdered إلى المستندات باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// The path to the output document.  
+// المسار إلى مستند الإخراج.
 string outFile = dataDir + "AddHTMLOrderedListIntoDocuments_out.pdf";
-// Instantiate Document object  
+// إنشاء مثيل لكائن المستند
 Document doc = new Document();
-// Instantiate HtmlFragment object with corresponding HTML fragment  
+// إنشاء كائن HtmlFragment مع جزء HTML المطابق
 HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>First</li><li>Second</li><li>Third</li><li>Fourth</li><li>Fifth</li></ul>Text after the list.<br/>Next line<br/>Last line</body>`");
-// Add Page in Pages Collection  
+// إضافة صفحة في مجموعة الصفحات
 Page page = doc.Pages.Add();
-// Add HtmlFragment inside page  
+// أضف HtmlFragment داخل الصفحة
 page.Paragraphs.Add(t);
-// Save resultant PDF file  
+// حفظ ملف PDF الناتج
 doc.Save(outFile);
 ```
 
-## Conclusion
-You have successfully added an HTML ordered list into a document using Aspose.PDF for .NET. The resulting PDF file can now be found at the specified output file path.
+## خاتمة
+لقد قمت بنجاح بإضافة قائمة HTML مرتبة إلى مستند باستخدام Aspose.PDF لـ .NET. يمكن الآن العثور على ملف PDF الناتج في مسار ملف الإخراج المحدد.
 
-Remember to customize the HTML content and adjust the code according to your specific requirements.
+تذكر تخصيص محتوى HTML وضبط الكود وفقًا لمتطلباتك المحددة.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of this tutorial?
+#### س: ما هو الغرض من هذا البرنامج التعليمي؟
 
-A: This tutorial aims to guide you through the process of adding an HTML ordered list into a document using the Aspose.PDF for .NET library. It provides step-by-step instructions and code snippets to help you achieve this task.
+ج: يهدف هذا البرنامج التعليمي إلى إرشادك خلال عملية إضافة قائمة HTML مرتبة إلى مستند باستخدام مكتبة Aspose.PDF for .NET. فهو يوفر إرشادات خطوة بخطوة ومقتطفات التعليمات البرمجية لمساعدتك في تحقيق هذه المهمة.
 
-#### Q: Which namespaces do I need to import for this tutorial?
+#### س: ما هي مساحات الأسماء التي أحتاج إلى استيرادها لهذا البرنامج التعليمي؟
 
-A: You need to import the following namespaces at the top of your code file:
+ج: تحتاج إلى استيراد مساحات الأسماء التالية في أعلى ملف التعليمات البرمجية الخاص بك:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-#### Q: How do I specify the document directory and output file path?
+#### س: كيف يمكنني تحديد دليل المستند ومسار ملف الإخراج؟
 
-A: In the code, locate the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory. Also, find the line `string outFile = dataDir + "AddHTMLOrderedListIntoDocuments_out.pdf";` and replace `"AddHTMLOrderedListIntoDocuments_out.pdf"` with your desired output PDF file name.
+ ج: في الكود، حدد موقع السطر`string dataDir = "YOUR DOCUMENT DIRECTORY";` واستبدال`"YOUR DOCUMENT DIRECTORY"` بالمسار الفعلي إلى دليل المستندات الخاص بك. ابحث أيضًا عن الخط`string outFile = dataDir + "AddHTMLOrderedListIntoDocuments_out.pdf";` واستبدال`"AddHTMLOrderedListIntoDocuments_out.pdf"` مع اسم ملف PDF الناتج المطلوب.
 
-#### Q: Can I customize the HTML content being added to the document?
+#### س: هل يمكنني تخصيص محتوى HTML الذي تتم إضافته إلى المستند؟
 
-A: Absolutely! In Step 5, you'll create an `HtmlFragment` object named `t` that holds the HTML content. You can modify the HTML content within the backticks to suit your requirements.
+ ج: بالتأكيد! في الخطوة 5، ستقوم بإنشاء`HtmlFragment` الكائن المسمى`t` الذي يحمل محتوى HTML. يمكنك تعديل محتوى HTML داخل العلامات الخلفية ليناسب متطلباتك.
 
-#### Q: How do I add the HTML ordered list to a page in the document?
+#### س: كيف يمكنني إضافة قائمة HTML المرتبة إلى صفحة في المستند؟
 
-A: In Step 7, you'll add the `HtmlFragment` object (`t`) to the page using the `Add` method of the `Paragraphs` collection. This will seamlessly integrate the HTML ordered list into the document.
+ ج: في الخطوة 7، عليك إضافة`HtmlFragment` هدف (`t` ) إلى الصفحة باستخدام`Add` طريقة`Paragraphs`مجموعة. سيؤدي هذا إلى دمج قائمة HTML المطلوبة في المستند بسلاسة.
 
-#### Q: How do I save the resulting PDF document?
+#### س: كيف يمكنني حفظ مستند PDF الناتج؟
 
-A: After adding the HTML content and arranging it on a page, you can save the PDF document using the `Save` method of the `Document` object. Make sure to provide the correct output file path you set earlier.
+ ج: بعد إضافة محتوى HTML وترتيبه على الصفحة، يمكنك حفظ مستند PDF باستخدام الملف`Save` طريقة`Document` هدف. تأكد من توفير مسار ملف الإخراج الصحيح الذي قمت بتعيينه مسبقًا.
 
-#### Q: Can you provide a summary of the sample source code for reference?
+#### س: هل يمكنك تقديم ملخص لنموذج التعليمات البرمجية المصدر كمرجع؟
 
-A: Certainly! Here's a summarized version of the sample source code provided in this tutorial:
+ج: بالتأكيد! فيما يلي نسخة مختصرة من نموذج التعليمات البرمجية المصدر المقدم في هذا البرنامج التعليمي:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -135,6 +135,6 @@ page.Paragraphs.Add(t);
 doc.Save(outFile);
 ```
 
-#### Q: What is the key takeaway from this tutorial?
+#### س: ما هي الوجبات الرئيسية من هذا البرنامج التعليمي؟
 
-A: By following this tutorial, you've successfully learned how to leverage the Aspose.PDF for .NET library to incorporate an HTML ordered list into a document. This newfound knowledge can be applied to enhance your document creation and manipulation processes.
+ج: باتباع هذا البرنامج التعليمي، تكون قد تعلمت بنجاح كيفية الاستفادة من مكتبة Aspose.PDF لـ .NET لدمج قائمة HTML مرتبة في مستند. يمكن تطبيق هذه المعرفة المكتشفة حديثًا لتحسين عمليات إنشاء المستندات ومعالجتها.

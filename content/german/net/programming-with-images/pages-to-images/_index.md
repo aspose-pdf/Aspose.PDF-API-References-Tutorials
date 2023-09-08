@@ -1,136 +1,136 @@
 ---
-title: Pages To Images
-linktitle: Pages To Images
-second_title: Aspose.PDF for .NET API Reference
-description: Easily convert pages of a PDF document to images with Aspose.PDF for .NET.
+title: Seiten zu Bildern
+linktitle: Seiten zu Bildern
+second_title: Aspose.PDF für .NET API-Referenz
+description: Konvertieren Sie mit Aspose.PDF für .NET ganz einfach Seiten eines PDF-Dokuments in Bilder.
 type: docs
 weight: 200
 url: /de/net/programming-with-images/pages-to-images/
 ---
-In this tutorial, we will guide you step by step to convert the pages of a PDF document into individual images using the Aspose.PDF library for .NET. The provided C# source code shows you how to open a PDF document, create images from each page and save them. We will explain each step in detail to help you understand the process in depth.
+In diesem Tutorial führen wir Sie Schritt für Schritt durch die Konvertierung der Seiten eines PDF-Dokuments in einzelne Bilder mithilfe der Aspose.PDF-Bibliothek für .NET. Der bereitgestellte C#-Quellcode zeigt Ihnen, wie Sie ein PDF-Dokument öffnen, Bilder von jeder Seite erstellen und diese speichern. Wir erklären Ihnen jeden Schritt im Detail, damit Sie den Prozess besser verstehen.
 
-## Prerequisites
-Before you begin, make sure you have the following items:
-- Basic knowledge of the C# programming language.
-- The Aspose.PDF library for .NET installed in your project.
-- A PDF document that you want to convert to images.
+## Voraussetzungen
+Bevor Sie beginnen, stellen Sie sicher, dass Sie über die folgenden Artikel verfügen:
+- Grundkenntnisse der Programmiersprache C#.
+- Die in Ihrem Projekt installierte Aspose.PDF-Bibliothek für .NET.
+- Ein PDF-Dokument, das Sie in Bilder konvertieren möchten.
 
-## Step 1: Project Setup
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF library in your project.
+## Schritt 1: Projekteinrichtung
+1. Erstellen Sie ein neues C#-Projekt in Ihrer bevorzugten Entwicklungsumgebung.
+2. Fügen Sie in Ihrem Projekt einen Verweis auf die Aspose.PDF-Bibliothek hinzu.
 
-## Step 2: Import the necessary namespaces
-At the beginning of your C# file, import the namespaces required to access the classes and methods of Aspose.PDF. Here is an example :
+## Schritt 2: Importieren Sie die erforderlichen Namespaces
+Importieren Sie am Anfang Ihrer C#-Datei die Namespaces, die für den Zugriff auf die Klassen und Methoden von Aspose.PDF erforderlich sind. Hier ist ein Beispiel :
 ```csharp
 using System;
 using Aspose.Pdf;
 using System.IO;
 ```
 
-## Step 3: Initializing variables and paths
-Before performing the conversion, we need to configure the necessary variables and paths.
+## Schritt 3: Variablen und Pfade initialisieren
+Bevor wir die Konvertierung durchführen, müssen wir die notwendigen Variablen und Pfade konfigurieren.
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual path to your documents directory.
+ Unbedingt ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Pfad zu Ihrem Dokumentenverzeichnis.
 
-## Step 4: Converting Pages to Images
-To convert PDF document pages to images, follow these steps:
-1. Open the PDF document using the `Document` class.
+## Schritt 4: Seiten in Bilder konvertieren
+Um PDF-Dokumentseiten in Bilder zu konvertieren, gehen Sie folgendermaßen vor:
+1.  Öffnen Sie das PDF-Dokument mit`Document` Klasse.
 ```csharp
 Document pdfDocument = new Document(dataDir + "PagesToImages.pdf");
 ```
-2. Iterate through each page of the document using a `for` loop.
+2.  Durchlaufen Sie jede Seite des Dokuments mit a`for` Schleife.
 ```csharp
 for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 {
-// Code for converting each page into an image
+// Code zum Konvertieren jeder Seite in ein Bild
 }
 ```
-3. Inside the loop, create a file stream for each image to save.
+3. Erstellen Sie innerhalb der Schleife einen Dateistream für jedes zu speichernde Bild.
 ```csharp
 using (FileStream imageStream = new FileStream(dataDir + "image" + pageCount + "_out" + ".jpg", FileMode.Create))
 {
-// Code for converting the page into an image
+// Code zum Konvertieren der Seite in ein Bild
 }
 ```
-4. Inside the `using` block, create a `Resolution` object to set the image resolution.
+4.  Im Inneren`using` Block, erstelle einen`Resolution` Objekt, um die Bildauflösung festzulegen.
 ```csharp
 Resolution resolution = new Resolution(300);
 ```
-5. Create a `JpegDevice` object using the specified resolution and quality.
+5.  Ein ... kreieren`JpegDevice` Objekt mit der angegebenen Auflösung und Qualität.
 ```csharp
 JpegDevice jpegDevice = new JpegDevice(resolution, 100);
 ```
-6. Use the `Process` method of the `jpegDevice` object to convert a specific page to an image and save the image to the stream.
+6.  Benutzen Sie die`Process` Methode der`jpegDevice` Objekt, um eine bestimmte Seite in ein Bild zu konvertieren und das Bild im Stream zu speichern.
 ```csharp
 jpegDevice.Process(pdfDocument.Pages[pageCount], imageStream);
 ```
-7. Close the image stream.
+7. Schließen Sie den Bildstream.
 ```csharp
 imageStream.Close();
 ```
-8. Repeat these steps for each page of the document.
-9. Display a success message at the end of the process.
+8. Wiederholen Sie diese Schritte für jede Seite des Dokuments.
+9. Am Ende des Vorgangs wird eine Erfolgsmeldung angezeigt.
 ```csharp
 Console.WriteLine("PDF pages converted to individual images successfully!");
 ```
 
-### Sample source code for Pages To Images using Aspose.PDF for .NET 
+### Beispielquellcode für Pages To Images mit Aspose.PDF für .NET 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Dokument öffnen
 Document pdfDocument = new Document(dataDir + "PagesToImages.pdf");
 for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 {
 	using (FileStream imageStream = new FileStream(dataDir + "image" + pageCount + "_out" + ".jpg", FileMode.Create))
 	{
-		// Create JPEG device with specified attributes
-		// Width, Height, Resolution, Quality
-		// Quality [0-100], 100 is Maximum
-		// Create Resolution object
+		// Erstellen Sie ein JPEG-Gerät mit angegebenen Attributen
+		// Breite, Höhe, Auflösung, Qualität
+		// Qualität [0-100], 100 ist das Maximum
+		// Auflösungsobjekt erstellen
 		Resolution resolution = new Resolution(300);
-		// JpegDevice jpegDevice = new JpegDevice(500, 700, resolution, 100);
+		//JpegDevice jpegDevice = new JpegDevice(500, 700, Auflösung, 100);
 		JpegDevice jpegDevice = new JpegDevice(resolution, 100);
-		// Convert a particular page and save the image to stream
+		//Konvertieren Sie eine bestimmte Seite und speichern Sie das Bild im Stream
 		jpegDevice.Process(pdfDocument.Pages[pageCount], imageStream);
-		// Close stream
+		// Stream schließen
 		imageStream.Close();
 	}
 }
 System.Console.WriteLine("PDF pages are converted to individual images successfully!");
 ```
 
-## Conclusion
-By following this step-by-step guide, you learned how to convert the pages of a PDF document into individual images using the Aspose.PDF library for .NET. This process involves setting up the project, importing the necessary namespaces, initializing variables and paths, and converting pages to images. You can now integrate this code into your own projects and modify it to suit your specific needs.
+## Abschluss
+Durch Befolgen dieser Schritt-für-Schritt-Anleitung haben Sie gelernt, wie Sie die Seiten eines PDF-Dokuments mithilfe der Aspose.PDF-Bibliothek für .NET in einzelne Bilder konvertieren. Dieser Prozess umfasst das Einrichten des Projekts, das Importieren der erforderlichen Namespaces, das Initialisieren von Variablen und Pfaden sowie das Konvertieren von Seiten in Bilder. Sie können diesen Code nun in Ihre eigenen Projekte integrieren und an Ihre spezifischen Bedürfnisse anpassen.
 
-### FAQ's
+### FAQs
 
-#### Q: Why would I want to convert PDF document pages to individual images using Aspose.PDF for .NET?
+#### F: Warum sollte ich PDF-Dokumentseiten mit Aspose.PDF für .NET in einzelne Bilder konvertieren wollen?
 
-A: Converting PDF document pages to individual images can be useful for various purposes, such as creating image thumbnails, extracting content from PDFs for further processing, generating image previews, and integrating PDF content into image-oriented applications.
+A: Das Konvertieren von PDF-Dokumentseiten in einzelne Bilder kann für verschiedene Zwecke nützlich sein, z. B. zum Erstellen von Miniaturansichten von Bildern, zum Extrahieren von Inhalten aus PDFs zur weiteren Verarbeitung, zum Generieren von Bildvorschauen und zum Integrieren von PDF-Inhalten in bildorientierte Anwendungen.
 
-#### Q: How does the `Document` class facilitate the conversion of PDF pages to images?
+####  F: Wie funktioniert das?`Document` class facilitate the conversion of PDF pages to images?
 
-A: The `Document` class from the Aspose.PDF library is used to open and manipulate PDF documents programmatically. In this tutorial, we use it to open the PDF document and access its pages for conversion.
+ A: Die`Document`Die Klasse aus der Aspose.PDF-Bibliothek wird zum programmgesteuerten Öffnen und Bearbeiten von PDF-Dokumenten verwendet. In diesem Tutorial verwenden wir es, um das PDF-Dokument zu öffnen und auf seine Seiten zur Konvertierung zuzugreifen.
 
-#### Q: Can I adjust the image resolution and quality during the conversion process?
+#### F: Kann ich die Bildauflösung und -qualität während des Konvertierungsvorgangs anpassen?
 
-A: Yes, you can adjust the image resolution and quality by creating a `Resolution` object and specifying the desired values. In the provided code, `Resolution resolution = new Resolution(300)` sets the resolution to 300 DPI, and `JpegDevice jpegDevice = new JpegDevice(resolution, 100)` specifies the image quality as 100.
+ A: Ja, Sie können die Bildauflösung und -qualität anpassen, indem Sie ein erstellen`Resolution` Objekt und Angabe der gewünschten Werte. Im bereitgestellten Code`Resolution resolution = new Resolution(300)` stellt die Auflösung auf 300 DPI ein und`JpegDevice jpegDevice = new JpegDevice(resolution, 100)` gibt die Bildqualität mit 100 an.
 
-#### Q: How do I specify the output file format and naming for the converted images?
+#### F: Wie lege ich das Ausgabedateiformat und die Benennung für die konvertierten Bilder fest?
 
-A: In the provided code, the output file format is JPEG, and the images are named sequentially using the `pageCount` variable. You can modify the code to use different image formats (such as PNG or TIFF) and customize the naming convention as needed.
+ A: Im bereitgestellten Code ist das Ausgabedateiformat JPEG und die Bilder werden nacheinander mit benannt`pageCount` Variable. Sie können den Code ändern, um andere Bildformate (z. B. PNG oder TIFF) zu verwenden, und die Namenskonvention nach Bedarf anpassen.
 
-#### Q: Is it possible to convert only specific pages from the PDF document?
+#### F: Ist es möglich, nur bestimmte Seiten aus dem PDF-Dokument zu konvertieren?
 
-A: Yes, you can convert specific pages from the PDF document by adjusting the range in the `for` loop. In the provided code, `for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)` iterates through all pages of the document. You can change the range to convert a subset of pages.
+A: Ja, Sie können bestimmte Seiten aus dem PDF-Dokument konvertieren, indem Sie den Bereich im anpassen`for` Schleife. Im bereitgestellten Code`for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)` Durchläuft alle Seiten des Dokuments. Sie können den Bereich ändern, um eine Teilmenge von Seiten zu konvertieren.
 
-#### Q: How can I integrate this conversion method into my own projects?
+#### F: Wie kann ich diese Konvertierungsmethode in meine eigenen Projekte integrieren?
 
-A: You can integrate the provided code into your own projects by following the outlined steps. Modify the code as needed to process specific PDF documents, adjust image settings, and save the resulting images to your desired locations.
+A: Sie können den bereitgestellten Code in Ihre eigenen Projekte integrieren, indem Sie die beschriebenen Schritte befolgen. Ändern Sie den Code nach Bedarf, um bestimmte PDF-Dokumente zu verarbeiten, Bildeinstellungen anzupassen und die resultierenden Bilder an den gewünschten Speicherorten zu speichern.
 
-#### Q: What is the purpose of the `using` statement in the code?
+####  F: Was ist der Zweck des`using` statement in the code?
 
-A: The `using` statement is used to ensure proper disposal of resources (in this case, file streams) after they are no longer needed. It helps prevent resource leaks and improves the efficiency of the code.
+ A: Die`using` Die Anweisung wird verwendet, um die ordnungsgemäße Entsorgung von Ressourcen (in diesem Fall Dateistreams) sicherzustellen, nachdem sie nicht mehr benötigt werden. Es hilft, Ressourcenlecks zu verhindern und die Effizienz des Codes zu verbessern.

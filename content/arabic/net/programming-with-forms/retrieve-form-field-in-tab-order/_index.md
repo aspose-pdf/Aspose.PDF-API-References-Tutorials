@@ -1,47 +1,47 @@
 ---
-title: Retrieve Form Field In Tab Order
-linktitle: Retrieve Form Field In Tab Order
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to retrieve form fields in tab order using Aspose.PDF for .NET.
+title: استرداد حقل النموذج في ترتيب علامات التبويب
+linktitle: استرداد حقل النموذج في ترتيب علامات التبويب
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية استرداد حقول النموذج بترتيب علامات التبويب باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 240
 url: /ar/net/programming-with-forms/retrieve-form-field-in-tab-order/
 ---
-When working with PDF documents in C# using Aspose.PDF for .NET, you may come across a scenario where you need to retrieve form fields in a specific tab order. This can be useful when you want to perform operations on form fields based on their tab sequence. In this tutorial, we will guide you step by step on how to retrieve form fields in tab order using Aspose.PDF for .NET.
+عند العمل مع مستندات PDF في لغة C# باستخدام Aspose.PDF لـ .NET، قد تصادف سيناريو تحتاج فيه إلى استرداد حقول النموذج بترتيب علامات تبويب محدد. يمكن أن يكون هذا مفيدًا عندما تريد تنفيذ عمليات على حقول النموذج بناءً على تسلسل علامات التبويب الخاصة بها. في هذا البرنامج التعليمي، سنرشدك خطوة بخطوة حول كيفية استرداد حقول النموذج بترتيب علامات التبويب باستخدام Aspose.PDF لـ .NET.
 
-## Requirements
+## متطلبات
 
-Before we begin, make sure you have the following prerequisites:
+قبل أن نبدأ، تأكد من توفر المتطلبات الأساسية التالية:
 
-- Visual Studio installed on your system
-- Aspose.PDF for .NET library installed
+- تم تثبيت Visual Studio على نظامك
+- تم تثبيت Aspose.PDF لمكتبة .NET
 
-Now, let's dive into the steps to retrieve form fields in tab order.
+الآن، دعنا نتعمق في خطوات استرداد حقول النموذج بترتيب علامات التبويب.
 
-## Step 1: Setting the Document Directory
+## الخطوة 1: إعداد دليل المستندات
 
-To start with, you need to set the document directory where your PDF document is located. You can do this by specifying the path to the directory in the `dataDir` variable.
+ للبدء، تحتاج إلى تعيين دليل المستند حيث يوجد مستند PDF الخاص بك. يمكنك القيام بذلك عن طريق تحديد المسار إلى الدليل في ملف`dataDir` عامل.
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ يستبدل`"YOUR DOCUMENT DIRECTORY"` بالمسار الفعلي إلى دليل المستندات الخاص بك.
 
-## Step 2: Loading the PDF Document
+## الخطوة 2: تحميل وثيقة PDF
 
-In this step, we will load the PDF document using Aspose.PDF for .NET. The `Document` class provides the ability to load and manipulate PDF documents.
+ في هذه الخطوة، سنقوم بتحميل مستند PDF باستخدام Aspose.PDF لـ .NET. ال`Document` توفر الفئة القدرة على تحميل ومعالجة مستندات PDF.
 
 ```csharp
 Document doc = new Document(dataDir + "Test2.pdf");
 ```
 
-Here, `"Test2.pdf"` is the name of the PDF document you want to load. Make sure the document is present in the specified document directory.
+ هنا،`"Test2.pdf"`هو اسم مستند PDF الذي تريد تحميله. تأكد من وجود المستند في دليل المستند المحدد.
 
-## Step 3: Retrieving Form Fields in Tab Order
+## الخطوة 3: استرداد حقول النموذج في ترتيب علامات التبويب
 
-To retrieve form fields in tab order, we need to access the `FieldsInTabOrder` property of the `Page` class. This property returns a list of form fields sorted by their tab sequence.
+ لاسترداد حقول النموذج بترتيب علامات التبويب، نحتاج إلى الوصول إلى ملف`FieldsInTabOrder` ملكية`Page` فصل. تقوم هذه الخاصية بإرجاع قائمة حقول النموذج مرتبة حسب تسلسل علامات التبويب الخاصة بها.
 
 ```csharp
 Page page = doc.Pages[1];
@@ -53,11 +53,11 @@ foreach (Field field in fields)
 }
 ```
 
-In the above code snippet, we retrieve the form fields from the second page (`doc.Pages[1]`) and iterate through each field to concatenate their partial names into the `s` variable. You can modify this code snippet based on your specific requirements.
+في مقتطف الكود أعلاه، نقوم باسترداد حقول النموذج من الصفحة الثانية (`doc.Pages[1]` ) والتكرار خلال كل حقل لتسلسل أسمائهم الجزئية في ملف`s` عامل. يمكنك تعديل مقتطف الشفرة هذا بناءً على متطلباتك المحددة.
 
-## Step 4: Modifying the Tab Order
+## الخطوة 4: تعديل ترتيب علامات التبويب
 
-If you want to modify the tab order of form fields, you can do so by accessing the `TabOrder` property of each field and assigning a new tab order value. Here's an example:
+ إذا كنت تريد تعديل ترتيب علامات التبويب لحقول النموذج، فيمكنك القيام بذلك عن طريق الوصول إلى`TabOrder` خاصية كل حقل وتعيين قيمة ترتيب علامة تبويب جديدة. هنا مثال:
 
 ```csharp
 (doc.Form[3] as Field).TabOrder = 1;
@@ -65,21 +65,21 @@ If you want to modify the tab order of form fields, you can do so by accessing t
 (doc.Form[2] as Field).TabOrder = 3;
 ```
 
-In the above code snippet, we assign new tab order values to three form fields (`doc.Form[3]`, `doc.Form[1]`, and `doc.Form[2]`). Adjust the field indices and tab order values according to your specific requirements.
+في مقتطف الكود أعلاه، نقوم بتعيين قيم ترتيب علامات التبويب الجديدة لثلاثة حقول نموذج (`doc.Form[3]`, `doc.Form[1]` ، و`doc.Form[2]`). اضبط مؤشرات الحقول وقيم ترتيب علامات التبويب وفقًا لمتطلباتك المحددة.
 
-## Step 5: Saving the Modified Document
+## الخطوة 5: حفظ المستند المعدل
 
-After modifying the tab order of form fields, you need to save the modified document. You can do this using the `Save` method of the `Document` class.
+ بعد تعديل ترتيب علامات التبويب لحقول النموذج، ستحتاج إلى حفظ المستند المعدل. يمكنك القيام بذلك باستخدام`Save` طريقة`Document` فصل.
 
 ```csharp
 doc.Save(dataDir + "39522_out.pdf");
 ```
 
-Here, `"39522_out.pdf"` is the name of the output file where the modified document will be saved. Specify the desired name and location for the output file.
+ هنا،`"39522_out.pdf"` هو اسم ملف الإخراج حيث سيتم حفظ المستند المعدل. حدد الاسم والموقع المطلوبين لملف الإخراج.
 
-### Sample source code for Retrieve Form Field In Tab Order using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لاسترداد حقل النموذج في ترتيب علامات التبويب باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "Test2.pdf");
 Page page = doc.Pages[1];
@@ -106,29 +106,29 @@ foreach (Field field in doc1.Form)
 }
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we learned how to retrieve form fields in tab order using Aspose.PDF for .NET. We covered the steps involved in loading a PDF document, retrieving form fields in tab order, modifying the tab order, and saving the modified document. By following these steps, you can efficiently work with form fields and customize their tab sequence as per your requirements.
+في هذا البرنامج التعليمي، تعلمنا كيفية استرداد حقول النموذج بترتيب علامات التبويب باستخدام Aspose.PDF لـ .NET. لقد قمنا بتغطية الخطوات المتضمنة في تحميل مستند PDF، واسترداد حقول النموذج بترتيب علامات التبويب، وتعديل ترتيب علامات التبويب، وحفظ المستند المعدل. باتباع هذه الخطوات، يمكنك العمل بكفاءة مع حقول النموذج وتخصيص تسلسل علامات التبويب الخاصة بها وفقًا لمتطلباتك.
 
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: How can I use the retrieved form fields in my C# code for further processing?
+#### س: كيف يمكنني استخدام حقول النموذج المستردة في كود C# الخاص بي لمزيد من المعالجة؟
 
-A: You can use the retrieved form fields in your C# code by accessing their properties such as `Value`, `Name`, `Rect`, etc. These properties allow you to read and modify the form field data as needed.
+ ج: يمكنك استخدام حقول النموذج المستردة في كود C# الخاص بك عن طريق الوصول إلى خصائصها مثل`Value`, `Name`, `Rect`وما إلى ذلك. تتيح لك هذه الخصائص قراءة بيانات حقل النموذج وتعديلها حسب الحاجة.
 
-#### Q: Can I retrieve form fields from all pages of the PDF document in tab order?
+#### س: هل يمكنني استرداد حقول النموذج من جميع صفحات مستند PDF بترتيب علامات التبويب؟
 
-A: Yes, you can retrieve form fields from all pages of the PDF document by iterating through each page and accessing the `FieldsInTabOrder` property as shown in the tutorial. This will give you form fields sorted by their tab sequence across all pages.
+ ج: نعم، يمكنك استرداد حقول النموذج من جميع صفحات مستند PDF عن طريق التكرار خلال كل صفحة والوصول إلى ملف`FieldsInTabOrder` الملكية كما هو موضح في البرنامج التعليمي. سيعطيك هذا حقول النموذج مرتبة حسب تسلسل علامات التبويب الخاصة بها عبر جميع الصفحات.
 
-#### Q: Is it possible to retrieve only specific types of form fields, such as text fields or checkboxes, in tab order?
+#### س: هل من الممكن استرداد أنواع محددة فقط من حقول النموذج، مثل الحقول النصية أو خانات الاختيار، بترتيب علامات التبويب؟
 
-A: Yes, you can filter form fields based on their types, such as text fields or checkboxes, after retrieving them in tab order. You can use conditional statements to check the type of each form field and process them accordingly.
+ج: نعم، يمكنك تصفية حقول النموذج بناءً على أنواعها، مثل الحقول النصية أو مربعات الاختيار، بعد استردادها بترتيب علامات التبويب. يمكنك استخدام العبارات الشرطية للتحقق من نوع كل حقل نموذج ومعالجتها وفقًا لذلك.
 
-#### Q: Can I retrieve form fields based on their names instead of tab order?
+#### س: هل يمكنني استرداد حقول النموذج بناءً على أسمائها بدلاً من ترتيب علامات التبويب؟
 
-A: Yes, you can retrieve form fields based on their names by using the `doc.Form` collection and specifying the field name as an index. For example, `doc.Form["fieldName"]` will retrieve the form field with the specified name.
+ ج: نعم، يمكنك استرداد حقول النموذج بناءً على أسمائها باستخدام ملف`doc.Form` جمع وتحديد اسم الحقل كفهرس. على سبيل المثال،`doc.Form["fieldName"]`سيتم استرداد حقل النموذج بالاسم المحدد.
 
-#### Q: Does Aspose.PDF for .NET support working with encrypted PDF documents?
+#### س: هل يدعم Aspose.PDF for .NET العمل مع مستندات PDF المشفرة؟
 
-A: Yes, Aspose.PDF for .NET provides support for working with encrypted PDF documents. You can load and manipulate encrypted PDF files using appropriate password parameters.
+ج: نعم، يوفر Aspose.PDF for .NET الدعم للعمل مع مستندات PDF المشفرة. يمكنك تحميل ملفات PDF المشفرة ومعالجتها باستخدام معلمات كلمة المرور المناسبة.

@@ -1,50 +1,50 @@
 ---
-title: Embed Standard Type 1Fonts In PDF File
-linktitle: Embed Standard Type 1Fonts In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to embed standard Type 1 fonts in PDF file using Aspose.PDF for .NET.
+title: تضمين الخطوط القياسية من النوع 1 في ملف PDF
+linktitle: تضمين الخطوط القياسية من النوع 1 في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية تضمين الخطوط القياسية من النوع 1 في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 140
 url: /ar/net/programming-with-text/embed-standard-type-1fonts/
 ---
-This tutorial will guide you through the process of embedding standard Type 1 fonts in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+سيرشدك هذا البرنامج التعليمي خلال عملية تضمين الخطوط القياسية من النوع 1 في ملف PDF باستخدام Aspose.PDF لـ .NET. يوضح كود مصدر C# المقدم الخطوات اللازمة.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## متطلبات
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio أو أي مترجم C# آخر مثبت على جهازك.
+- Aspose.PDF لمكتبة .NET. يمكنك تنزيله من موقع Aspose الرسمي أو استخدام مدير الحزم مثل NuGet لتثبيته.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## الخطوة 1: إعداد المشروع
+1. قم بإنشاء مشروع C# جديد في بيئة التطوير المفضلة لديك.
+2. قم بإضافة مرجع إلى Aspose.PDF لمكتبة .NET.
 
-## Step 2: Import required namespaces
-In the code file where you want to embed standard Type 1 fonts, add the following using directive at the top of the file:
+## الخطوة 2: استيراد مساحات الأسماء المطلوبة
+في ملف التعليمات البرمجية الذي تريد تضمين الخطوط القياسية من النوع 1 فيه، أضف ما يلي باستخدام التوجيه الموجود في أعلى الملف:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## الخطوة 3: قم بتعيين دليل المستند
+ في الكود، حدد السطر الذي يقول`string dataDir = "YOUR DOCUMENT DIRECTORY";` واستبدال`"YOUR DOCUMENT DIRECTORY"` مع المسار إلى الدليل حيث يتم تخزين المستندات الخاصة بك.
 
-## Step 4: Load the existing PDF document
-Load an existing PDF document using the `Document` constructor and passing the path to the input PDF file.
+## الخطوة 4: قم بتحميل مستند PDF الموجود
+ قم بتحميل مستند PDF موجود باستخدام الملف`Document`منشئ وتمرير المسار إلى ملف PDF الإدخال.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "input.pdf");
 ```
 
-## Step 5: Set the EmbedStandardFonts property
-Set the `EmbedStandardFonts` property of the document to `true` in order to enable embedding standard Type 1 fonts.
+## الخطوة 5: قم بتعيين خاصية EmbedStandardFonts
+ تعيين`EmbedStandardFonts` خاصية الوثيقة ل`true` لتمكين تضمين الخطوط القياسية من النوع 1.
 
 ```csharp
 pdfDocument.EmbedStandardFonts = true;
 ```
 
-## Step 6: Embed fonts in each page
-Loop through each page of the PDF document and check if the fonts are already embedded. If not, set the `IsEmbedded` property to `true` to embed the font.
+## الخطوة 6: تضمين الخطوط في كل صفحة
+ قم بالمراجعة خلال كل صفحة من مستند PDF وتحقق مما إذا كانت الخطوط مضمنة بالفعل. إذا لم يكن الأمر كذلك، قم بتعيين`IsEmbedded` الملكية ل`true` لتضمين الخط.
 
 ```csharp
 foreach(Page page in pdfDocument.Pages)
@@ -62,20 +62,20 @@ foreach(Page page in pdfDocument.Pages)
 }
 ```
 
-## Step 7: Save the updated PDF document
-Save the updated PDF document using the `Save` method of the `Document` object, specifying the output file path.
+## الخطوة 7: احفظ مستند PDF المحدث
+ احفظ مستند PDF المحدث باستخدام الملف`Save` طريقة`Document` كائن، وتحديد مسار ملف الإخراج.
 
 ```csharp
 pdfDocument.Save(dataDir + "EmbeddedFonts-updated_out.pdf");
 ```
 
-### Sample source code for Embed Standard Type 1Fonts using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لتضمين الخطوط القياسية من النوع 1 باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load an existing PDF Document
+// قم بتحميل مستند PDF موجود
 Document pdfDocument = new Document(dataDir + "input.pdf");
-// Set EmbedStandardFonts property of document
+// قم بتعيين خاصية EmbedStandardFonts للمستند
 pdfDocument.EmbedStandardFonts = true;
 foreach (Aspose.Pdf.Page page in pdfDocument.Pages)
 {
@@ -83,7 +83,7 @@ foreach (Aspose.Pdf.Page page in pdfDocument.Pages)
 	{
 		foreach (Aspose.Pdf.Text.Font pageFont in page.Resources.Fonts)
 		{
-			// Check if font is already embedded
+			// تحقق مما إذا كان الخط مضمنًا بالفعل
 			if (!pageFont.IsEmbedded)
 			{
 				pageFont.IsEmbedded = true;
@@ -94,47 +94,47 @@ foreach (Aspose.Pdf.Page page in pdfDocument.Pages)
 pdfDocument.Save(dataDir + "EmbeddedFonts-updated_out.pdf");
 ```
 
-## Conclusion
-You have successfully embedded standard Type 1 fonts in a PDF document using Aspose.PDF for .NET. The updated PDF file with embedded fonts has been saved at the specified output file path.
+## خاتمة
+لقد نجحت في تضمين خطوط Type 1 القياسية في مستند PDF باستخدام Aspose.PDF لـ .NET. تم حفظ ملف PDF المحدث مع الخطوط المضمنة في مسار ملف الإخراج المحدد.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the focus of this tutorial?
+#### س: ما هو محور هذا البرنامج التعليمي؟
 
-A: This tutorial provides a step-by-step guide to embedding standard Type 1 fonts in a PDF file using the Aspose.PDF for .NET library. The accompanying C# source code demonstrates the necessary procedures.
+ج: يوفر هذا البرنامج التعليمي دليلاً خطوة بخطوة لتضمين الخطوط القياسية من النوع 1 في ملف PDF باستخدام مكتبة Aspose.PDF لـ .NET. يوضح كود مصدر C# المصاحب الإجراءات اللازمة.
 
-#### Q: Which namespace do I need to import?
+#### س: ما هي مساحة الاسم التي أحتاج إلى استيرادها؟
 
-A: In the code file where you intend to embed standard Type 1 fonts, include the following namespace at the top of the file:
+ج: في ملف التعليمات البرمجية الذي تنوي تضمين خطوط النوع 1 القياسية فيه، قم بتضمين مساحة الاسم التالية في أعلى الملف:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-#### Q: How do I specify the document directory?
+#### س: كيف أحدد دليل المستندات؟
 
-A: Locate the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` in the code and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ ج: تحديد موقع الخط`string dataDir = "YOUR DOCUMENT DIRECTORY";` في التعليمات البرمجية واستبدال`"YOUR DOCUMENT DIRECTORY"` بالمسار الفعلي إلى دليل المستندات الخاص بك.
 
-#### Q: How do I load an existing PDF document?
+#### س: كيف يمكنني تحميل مستند PDF موجود؟
 
-A: In Step 4, you'll load an existing PDF document using the `Document` constructor and providing the path to the input PDF file.
+ ج: في الخطوة 4، ستقوم بتحميل مستند PDF موجود باستخدام ملف`Document` منشئ وتوفير المسار إلى ملف PDF الإدخال.
 
-#### Q: What is the purpose of the `EmbedStandardFonts` property?
+####  س: ما هو الغرض من`EmbedStandardFonts` property?
 
-A: In Step 5, you'll set the `EmbedStandardFonts` property of the document to `true`, enabling the embedding of standard Type 1 fonts.
+ ج: في الخطوة 5، ستقوم بتعيين`EmbedStandardFonts` خاصية الوثيقة ل`true`، مما يتيح تضمين الخطوط القياسية من النوع 1.
 
-#### Q: How do I embed fonts in each page?
+#### س: كيف أقوم بتضمين الخطوط في كل صفحة؟
 
-A: Step 6 involves looping through each page of the PDF document. For fonts that are not already embedded, you'll set the `IsEmbedded` property to `true` to embed the font.
+ ج: تتضمن الخطوة 6 التكرار خلال كل صفحة من مستند PDF. بالنسبة للخطوط غير المضمنة بالفعل، ستقوم بتعيين`IsEmbedded` الملكية ل`true` لتضمين الخط.
 
-#### Q: How do I save the updated PDF document?
+#### س: كيف يمكنني حفظ مستند PDF المحدث؟
 
-A: In Step 7, you'll use the `Save` method of the `Document` object to save the updated PDF document, specifying the output file path.
+ ج: في الخطوة 7، ستستخدم`Save` طريقة`Document` كائن لحفظ مستند PDF المحدث، مع تحديد مسار ملف الإخراج.
 
-#### Q: What is the significance of embedding fonts in a PDF document?
+#### س: ما أهمية تضمين الخطوط في مستند PDF؟
 
-A: Embedding fonts ensures that the fonts used in the PDF are included within the file itself. This guarantees consistent display of text even if the recipient's system does not have the required fonts installed.
+ج: يضمن تضمين الخطوط تضمين الخطوط المستخدمة في ملف PDF داخل الملف نفسه. ويضمن ذلك عرضًا متسقًا للنص حتى لو لم يكن نظام المستلم مثبتًا عليه الخطوط المطلوبة.
 
-#### Q: What's the main takeaway from this tutorial?
+#### س: ما هي الوجبات الرئيسية من هذا البرنامج التعليمي؟
 
-A: By following this tutorial, you've gained the knowledge and skills to embed standard Type 1 fonts in a PDF document using Aspose.PDF for .NET. This ensures the proper rendering of text across different systems.
+ج: باتباع هذا البرنامج التعليمي، اكتسبت المعرفة والمهارات اللازمة لتضمين الخطوط القياسية من النوع 1 في مستند PDF باستخدام Aspose.PDF لـ .NET. وهذا يضمن العرض الصحيح للنص عبر أنظمة مختلفة.

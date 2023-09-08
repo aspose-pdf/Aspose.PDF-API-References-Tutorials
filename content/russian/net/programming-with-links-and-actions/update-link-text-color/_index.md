@@ -1,39 +1,39 @@
 ---
-title: Update Link Text Color In PDF File
-linktitle: Update Link Text Color In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to update the text color of links in PDF file with Aspose.PDF for .NET.
+title: Обновить цвет текста ссылки в PDF-файле
+linktitle: Обновить цвет текста ссылки в PDF-файле
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как обновить цвет текста ссылок в PDF-файле с помощью Aspose.PDF для .NET.
 type: docs
 weight: 130
 url: /ru/net/programming-with-links-and-actions/update-link-text-color/
 ---
-Learn how to update the text color of links in PDF file using Aspose.PDF for .NET with this step-by-step guide.
+Узнайте, как обновить цвет текста ссылок в PDF-файле с помощью Aspose.PDF для .NET, с помощью этого пошагового руководства.
 
-## Step 1: Setting up the environment
+## Шаг 1. Настройка среды
 
-Make sure you have set up your development environment with a C# project and the appropriate Aspose.PDF references.
+Убедитесь, что вы настроили свою среду разработки с помощью проекта C# и соответствующих ссылок на Aspose.PDF.
 
-## Step 2: Loading the PDF file
+## Шаг 2. Загрузка PDF-файла
 
-Set the directory path of your documents and upload the PDF file using the following code:
+Задайте путь к каталогу ваших документов и загрузите PDF-файл, используя следующий код:
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Load the PDF file
+// Загрузите PDF-файл
 Document doc = new Document(dataDir + "UpdateLinks.pdf");
 ```
 
-## Step 3: Navigating Link Annotations
+## Шаг 3. Навигация по аннотациям ссылок
 
-Loop through all the link annotations on the second page of the document using the following code:
+Просмотрите все аннотации ссылок на второй странице документа, используя следующий код:
 
 ```csharp
 foreach(Annotation annotation in doc.Pages[1].Annotations)
 {
      if (annotation is LinkAnnotation)
      {
-         // Find the text under the annotation
+         // Найдите текст под аннотацией
          TextFragmentAbsorber ta = new TextFragmentAbsorber();
          Rectangle rect = annotation.Rect;
          rect.LLX -= 10;
@@ -42,7 +42,7 @@ foreach(Annotation annotation in doc.Pages[1].Annotations)
          rect.URY += 10;
          ta.TextSearchOptions = new TextSearchOptions(rect);
          your.Visit(doc.Pages[1]);
-         // Change text color.
+         // Изменить цвет текста.
          foreach(TextFragment tf in ta.TextFragments)
          {
              tf.TextState.ForegroundColor = Color.Red;
@@ -51,36 +51,36 @@ foreach(Annotation annotation in doc.Pages[1].Annotations)
 }
 ```
 
-## Step 4: Save document with updated link text
+## Шаг 4. Сохраните документ с обновленным текстом ссылки.
 
-Save the document with the updated link text using the `Save` method:
+ Сохраните документ с обновленным текстом ссылки, используя`Save` метод:
 
 ```csharp
 dataDir = dataDir + "UpdateLinkTextColor_out.pdf";
 doc.Save(dataDir);
 ```
 
-## Step 5: Displaying the result
+## Шаг 5: Отображение результата
 
-Display a message that the link annotation text color was updated successfully and specify the location of the saved file:
+Отобразите сообщение о том, что цвет текста аннотации ссылки был успешно обновлен, и укажите местоположение сохраненного файла:
 
 ```csharp
 Console.WriteLine("\nText color of link annotations updated successfully.\nFile saved to location: " + dataDir);
 ```
 
-### Sample source code for Update Link Text Color using Aspose.PDF for .NET 
+### Пример исходного кода для обновления цвета текста ссылки с использованием Aspose.PDF для .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Путь к каталогу документов.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Load the PDF file
+	// Загрузите PDF-файл
 	Document doc = new Document(dataDir + "UpdateLinks.pdf");
 	foreach (Annotation annotation in doc.Pages[1].Annotations)
 	{
 		if (annotation is LinkAnnotation)
 		{
-			// Search the text under the annotation
+			// Поиск по тексту под аннотацией
 			TextFragmentAbsorber ta = new TextFragmentAbsorber();
 			Rectangle rect = annotation.Rect;
 			rect.LLX -= 10;
@@ -89,7 +89,7 @@ try
 			rect.URY += 10;
 			ta.TextSearchOptions = new TextSearchOptions(rect);
 			ta.Visit(doc.Pages[1]);
-			// Change color of the text.
+			//Изменить цвет текста.
 			foreach (TextFragment tf in ta.TextFragments)
 			{
 				tf.TextState.ForegroundColor = Color.Red;
@@ -97,7 +97,7 @@ try
 		}
 	}
 	dataDir = dataDir + "UpdateLinkTextColor_out.pdf";
-	// Save the document with updated link
+	// Сохраните документ с обновленной ссылкой.
 	doc.Save(dataDir);
 	Console.WriteLine("\nLinkAnnotation text color updated successfully.\nFile saved at " + dataDir);
 }
@@ -107,46 +107,46 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Заключение
 
-Congratulation ! You now know how to update the text color of links in a PDF file using Aspose.PDF for .NET. Use this knowledge to customize the appearance of your links in PDF documents.
+Поздравляем! Теперь вы знаете, как обновить цвет текста ссылок в PDF-файле с помощью Aspose.PDF для .NET. Используйте эти знания, чтобы настроить внешний вид ссылок в документах PDF.
 
-Now that you've completed this guide, you can apply these concepts to your own projects and further explore the features offered by Aspose.PDF for .NET.
+Теперь, когда вы завершили работу с этим руководством, вы можете применить эти концепции к своим собственным проектам и продолжить изучение функций, предлагаемых Aspose.PDF для .NET.
 
-### FAQ's for update link text color in PDF file 
+### Часто задаваемые вопросы по обновлению цвета текста ссылки в PDF-файле 
 
-#### Q: Why would I want to update the text color of links in a PDF document?
+#### Вопрос: Зачем мне обновлять цвет текста ссылок в PDF-документе?
 
-A: Updating the text color of links allows you to visually emphasize and customize the appearance of hyperlinks within your PDF document, making them more noticeable and enhancing the user experience.
+О: Обновление цвета текста ссылок позволяет визуально подчеркнуть и настроить внешний вид гиперссылок в PDF-документе, делая их более заметными и повышая удобство использования.
 
-#### Q: How does changing the text color of links benefit the user experience?
+#### Вопрос: Как изменение цвета текста ссылок улучшает взаимодействие с пользователем?
 
-A: Changing the text color of links can help users easily identify and interact with clickable elements, improving navigation and engagement within the PDF document.
+О: Изменение цвета текста ссылок может помочь пользователям легко идентифицировать кликабельные элементы и взаимодействовать с ними, улучшая навигацию и взаимодействие с PDF-документом.
 
-#### Q: Can I change the text color of specific links or all links in the document?
+#### Вопрос: Могу ли я изменить цвет текста отдельных ссылок или всех ссылок в документе?
 
-A: This tutorial focuses on changing the text color of specific links. However, you can modify the provided code to iterate through all link annotations if you wish to change the text color of all links.
+О: В этом руководстве основное внимание уделяется изменению цвета текста определенных ссылок. Однако вы можете изменить предоставленный код для перебора всех аннотаций ссылок, если хотите изменить цвет текста всех ссылок.
 
-#### Q: What does the `TextFragmentAbsorber` class do in the provided code?
+####  Вопрос: Что означает`TextFragmentAbsorber` class do in the provided code?
 
-A: The `TextFragmentAbsorber` class is used to search for text fragments within a specified region, which in this case corresponds to the area of the link annotation. It helps identify and target the text associated with the link.
+ А:`TextFragmentAbsorber` Класс используется для поиска фрагментов текста в пределах заданной области, которая в данном случае соответствует области аннотации ссылки. Это помогает идентифицировать и нацелить текст, связанный со ссылкой.
 
-#### Q: How can I adjust the size of the area considered for changing the text color?
+#### Вопрос: Как настроить размер области, предназначенной для изменения цвета текста?
 
-A: The size of the area is adjusted by modifying the `rect` object in the provided code. You can change the coordinates to expand or shrink the search area around the link annotation.
+ О: Размер области регулируется путем изменения`rect` объект в предоставленном коде. Вы можете изменить координаты, чтобы расширить или уменьшить область поиска вокруг аннотации ссылки.
 
-#### Q: Can I change the text color to a color other than red?
+#### Вопрос: Могу ли я изменить цвет текста на другой цвет, кроме красного?
 
-A: Yes, you can customize the text color by modifying the `tf.TextState.ForegroundColor` property. You can set it to any desired color using the `Color` class from the System.Drawing namespace.
+ О: Да, вы можете настроить цвет текста, изменив`tf.TextState.ForegroundColor` свойство. Вы можете установить любой желаемый цвет с помощью`Color` класс из пространства имен System.Drawing.
 
-#### Q: Are there any limitations to changing the text color of links?
+#### Вопрос: Есть ли какие-либо ограничения на изменение цвета текста ссылок?
 
-A: Changing the text color of links is limited to modifying their appearance. It does not affect the link's destination or behavior.
+О: Изменение цвета текста ссылок ограничивается изменением их внешнего вида. Это не влияет на назначение или поведение ссылки.
 
-#### Q: How can I test if the text color of link annotations has been successfully updated?
+#### Вопрос: Как проверить, был ли успешно обновлен цвет текста аннотаций ссылок?
 
-A: After applying the provided code to update the text color, open the modified PDF file and verify that the text color of the specified links has changed as expected.
+О: После применения предоставленного кода для обновления цвета текста откройте измененный PDF-файл и убедитесь, что цвет текста указанных ссылок изменился должным образом.
 
-#### Q: Is there a way to revert the text color of links to the original color?
+#### Вопрос: Есть ли способ вернуть цвет текста ссылок к исходному цвету?
 
-A: Yes, you can modify the code to store the original text color before updating it and then use that information to revert the text color if needed.
+О: Да, вы можете изменить код, чтобы сохранить исходный цвет текста перед его обновлением, а затем использовать эту информацию для восстановления цвета текста, если это необходимо.

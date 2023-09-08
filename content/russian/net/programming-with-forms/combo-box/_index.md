@@ -1,49 +1,49 @@
 ---
-title: Combo Box
-linktitle: Combo Box
-second_title: Aspose.PDF for .NET API Reference
-description: Easily create combo box list in your PDF documents using Aspose.PDF for .NET.
+title: Поле со списком
+linktitle: Поле со списком
+second_title: Справочник по Aspose.PDF для .NET API
+description: Легко создавайте список полей со списком в своих PDF-документах, используя Aspose.PDF для .NET.
 type: docs
 weight: 30
 url: /ru/net/programming-with-forms/combo-box/
 ---
-In this tutorial, we will show you how to create a combo box list using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+В этом уроке мы покажем вам, как создать список со списком, используя Aspose.PDF для .NET. Мы шаг за шагом объясним исходный код C#, чтобы помочь вам в этом процессе.
 
-## Step 1: Preparation
+## Шаг 1: Подготовка
 
-First, make sure you have imported the necessary libraries and set the path to the documents directory:
+Сначала убедитесь, что вы импортировали необходимые библиотеки и задали путь к каталогу документов:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Create a Document Object
+## Шаг 2. Создайте объект документа
 
-Create a Document object to hold the PDF form:
+Создайте объект Document для хранения формы PDF:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 3: Add a page
+## Шаг 3. Добавьте страницу
 
-Add a page to the document:
+Добавьте страницу в документ:
 
 ```csharp
 doc.Pages.Add();
 ```
 
-## Step 4: Instantiate a ComboBoxField Object
+## Шаг 4. Создайте экземпляр объекта ComboBoxField
 
-Instantiate a ComboBoxField object with the desired dimensions:
+Создайте экземпляр объекта ComboBoxField с нужными размерами:
 
 ```csharp
 ComboBoxField combo = new ComboBoxField(doc.Pages[1], new Aspose.Pdf.Rectangle(100, 600, 150, 616));
 ```
 
-## Step 5: Add options to the drop-down list
+## Шаг 5. Добавьте параметры в раскрывающийся список.
 
-Add the desired options to the drop-down list:
+Добавьте нужные параметры в раскрывающийся список:
 
 ```csharp
 combo.AddOption("Red");
@@ -52,44 +52,44 @@ combo.AddOption("Green");
 combo.AddOption("Blue");
 ```
 
-## Step 6: Add the combo box list to the form
+## Шаг 6. Добавьте список полей со списком в форму.
 
-Add the ComboBoxField object to the Document Form Fields collection:
+Добавьте объект ComboBoxField в коллекцию Поля формы документа:
 
 ```csharp
 doc.Form.Add(combo);
 ```
 
-## Step 7: Save the document
+## Шаг 7: Сохраните документ
 
-Save the PDF document:
+Сохраните PDF-документ:
 
 ```csharp
 dataDir = dataDir + "ComboBox_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Combo Box using Aspose.PDF for .NET 
+### Пример исходного кода для поля со списком с использованием Aspose.PDF для .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Путь к каталогу документов.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Create Document object
+	// Создать объект документа
 	Document doc = new Document();
-	// Add page to document object
+	// Добавить страницу в объект документа
 	doc.Pages.Add();
-	// Instantiate ComboBox Field object
+	// Создать экземпляр объекта поля ComboBox
 	ComboBoxField combo = new ComboBoxField(doc.Pages[1], new Aspose.Pdf.Rectangle(100, 600, 150, 616));
-	// Add option to ComboBox
+	// Добавить опцию в ComboBox
 	combo.AddOption("Red");
 	combo.AddOption("Yellow");
 	combo.AddOption("Green");
 	combo.AddOption("Blue");
-	// Add combo box object to form fields collection of document object
+	// Добавьте объект поля со списком, чтобы сформировать коллекцию полей объекта документа.
 	doc.Form.Add(combo);
 	dataDir = dataDir + "ComboBox_out.pdf";
-	// Save the PDF document
+	// Сохраните PDF-документ
 	doc.Save(dataDir);
 	Console.WriteLine("\nCombobox field added successfully.\nFile saved at " + dataDir);
 }
@@ -99,28 +99,28 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, we learned how to create a combo box list using Aspose.PDF for .NET. By following these steps, you can easily add a combo box list to your PDF documents using Aspose.PDF.
+В этом уроке мы узнали, как создать список со списком, используя Aspose.PDF для .NET. Следуя этим шагам, вы можете легко добавить список со списком в свои PDF-документы с помощью Aspose.PDF.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: Can I customize the appearance of the combo box list using Aspose.PDF for .NET?
+#### Вопрос: Могу ли я настроить внешний вид списка полей со списком, используя Aspose.PDF для .NET?
 
-A: Yes, you can customize the appearance of the combo box list using Aspose.PDF for .NET. You can set properties such as font size, color, background color, border style, and more to match your desired look and feel.
+О: Да, вы можете настроить внешний вид списка полей со списком, используя Aspose.PDF для .NET. Вы можете установить такие свойства, как размер шрифта, цвет, цвет фона, стиль границы и т. д., чтобы они соответствовали желаемому внешнему виду.
 
-#### Q: Can I set default selected options in the combo box list?
+#### Вопрос: Могу ли я установить выбранные по умолчанию параметры в списке поля со списком?
 
-A: Yes, you can set default selected options in the combo box list using Aspose.PDF for .NET. You can use the `Selected` property of the `ComboBoxField` object to mark one or more options as selected by default.
+ О: Да, вы можете установить выбранные по умолчанию параметры в списке полей со списком, используя Aspose.PDF для .NET. Вы можете использовать`Selected` собственность`ComboBoxField` объект, чтобы отметить один или несколько параметров как выбранных по умолчанию.
 
-#### Q: How can I retrieve the selected value from the combo box list after the user makes a selection?
+#### Вопрос: Как получить выбранное значение из списка поля со списком после того, как пользователь сделает выбор?
 
-A: You can retrieve the selected value from the combo box list using Aspose.PDF for .NET. After the user makes a selection, you can access the `Value` property of the `ComboBoxField` object to obtain the selected value.
+ О: Вы можете получить выбранное значение из списка поля со списком, используя Aspose.PDF для .NET. После того, как пользователь сделает выбор, вы можете получить доступ к`Value` собственность`ComboBoxField`объект для получения выбранного значения.
 
-#### Q: Is it possible to add event handlers or actions to the combo box list?
+#### Вопрос: Можно ли добавить обработчики событий или действия в список полей со списком?
 
-A: Yes, Aspose.PDF for .NET allows you to add event handlers or actions to the combo box list. You can associate JavaScript actions, such as `OnValueChanged`, to the combo box list to perform specific actions when the user selects an option.
+ О: Да, Aspose.PDF для .NET позволяет добавлять обработчики событий или действия в список полей со списком. Вы можете связать действия JavaScript, например`OnValueChanged`, в список полей со списком для выполнения определенных действий, когда пользователь выбирает опцию.
 
-#### Q: Can I add tooltips or descriptions to the options in the combo box list?
+#### Вопрос: Могу ли я добавить всплывающие подсказки или описания к параметрам в списке поля со списком?
 
-A: Yes, you can add tooltips or descriptions to the options in the combo box list using Aspose.PDF for .NET. You can set the `AlternateName` property of each option to provide a tooltip or description that will be displayed when the user hovers over the option.
+ О: Да, вы можете добавить всплывающие подсказки или описания к параметрам в списке полей со списком, используя Aspose.PDF для .NET. Вы можете установить`AlternateName` свойство каждого параметра, чтобы предоставить всплывающую подсказку или описание, которое будет отображаться, когда пользователь наводит указатель мыши на параметр.

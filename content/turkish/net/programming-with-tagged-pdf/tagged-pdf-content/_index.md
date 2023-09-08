@@ -1,126 +1,126 @@
 ---
-title: Tagged PDF Content
-linktitle: Tagged PDF Content
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to work with tagged content in a PDF document with Aspose.PDF for .NET. A step-by-step guide to using tags.
+title: Etiketli PDF İçeriği
+linktitle: Etiketli PDF İçeriği
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile bir PDF belgesindeki etiketli içerikle nasıl çalışılacağını öğrenin. Etiketlerin kullanımına ilişkin adım adım kılavuz.
 type: docs
 weight: 200
 url: /tr/net/programming-with-tagged-pdf/tagged-pdf-content/
 ---
-In this detailed tutorial, we will walk you through the provided C# source code step by step for working with marked up content of a PDF document using Aspose.PDF for .NET. Follow the instructions below to understand how to use the tag for PDF content.
+Bu ayrıntılı eğitimde, Aspose.PDF for .NET kullanarak bir PDF belgesinin işaretlenmiş içeriğiyle çalışmak için sağlanan C# kaynak kodunu size adım adım anlatacağız. Etiketin PDF içeriği için nasıl kullanılacağını anlamak için aşağıdaki talimatları izleyin.
 
-## Step 1: Setting up the environment
+## 1. Adım: Ortamı ayarlama
 
-Before you begin, make sure you've configured your development environment to use Aspose.PDF for .NET. This includes installing the Aspose.PDF library and configuring your project to reference it.
+Başlamadan önce geliştirme ortamınızı Aspose.PDF for .NET'i kullanacak şekilde yapılandırdığınızdan emin olun. Buna Aspose.PDF kütüphanesinin kurulması ve projenizin buna referans verecek şekilde yapılandırılması da dahildir.
 
-## Step 2: Creating the PDF document
+## Adım 2: PDF belgesini oluşturma
 
-In this step, we will create a new PDF document object with Aspose.PDF.
+Bu adımda Aspose.PDF ile yeni bir PDF belge nesnesi oluşturacağız.
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Create the PDF document
+// PDF belgesini oluşturun
 Document document = new Document();
 ```
 
-We have created a new PDF document with Aspose.PDF.
+Aspose.PDF ile yeni bir PDF belgesi oluşturduk.
 
-## Step 3: Get content to work with the tagged PDF
+## 3. Adım: Etiketli PDF ile çalışacak içeriği alın
 
-In this step, we will get the contents of the PDF document to work with the tagged PDF.
+Bu adımda, PDF belgesinin içeriğinin etiketli PDF ile çalışmasını sağlayacağız.
 
 ```csharp
-// Get the content to work with the tagged PDF
+// İçeriğin etiketli PDF ile çalışmasını sağlayın
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-We got the contents of the PDF document to work with the tagged PDF.
+Etiketli PDF ile çalışacak PDF belgesinin içeriğini aldık.
 
-## Step 4: Work with PDF Tagged Content
+## 4. Adım: PDF Etiketli İçerikle Çalışma
 
-Now we will work with the tagged content of the PDF using the appropriate tags.
+Şimdi uygun etiketleri kullanarak PDF'nin etiketli içeriğiyle çalışacağız.
 
 ```csharp
-// Work with the tagged content of the PDF
+// PDF'nin etiketli içeriğiyle çalışma
 taggedContent.SetTitle("Simple tagged PDF document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-We have set the title and language of the tagged PDF document.
+Etiketli PDF belgesinin başlığını ve dilini belirledik.
 
-## Step 5: Saving the tagged PDF document
+## 5. Adım: Etiketli PDF belgesini kaydetme
 
-Now that we've worked with the tagged content of the PDF document, let's save it as a tagged PDF document.
+Artık PDF belgesinin etiketli içeriğiyle çalıştığımıza göre, onu etiketli bir PDF belgesi olarak kaydedelim.
 
 ```csharp
-// Save the tagged PDF document
+// Etiketli PDF belgesini kaydedin
 document.Save(dataDir + "ContentPDFTag.pdf");
 ```
 
-We saved the tagged PDF document in the specified directory.
+Etiketli PDF belgesini belirtilen dizine kaydettik.
 
-### Sample source code for Tagged PDFContent using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanan Etiketli PDFContent için örnek kaynak kodu 
 
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create Pdf Document
+// Pdf Belgesi Oluştur
 Document document = new Document();
 
-// Get Content for work with TaggedPdf
+// TaggedPdf ile çalışmaya yönelik İçerik edinin
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Work with Tagged Pdf content
-// Set Title and Language for Documnet
+// Etiketli Pdf içeriğiyle çalışma
+// Documnet için Başlığı ve Dili Ayarlayın
 taggedContent.SetTitle("Simple Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 
-// Save Tagged Pdf Document
+// Etiketli Pdf Belgesini Kaydet
 document.Save(dataDir + "TaggedPDFContent.pdf");
 
 ```
-## Conclusion
+## Çözüm
 
-In this tutorial, we learned how to work with marked up content in a PDF document using Aspose.PDF for .NET. You can now use Aspose.PDF to create PDF documents with appropriate tagged content.
+Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF belgesindeki işaretlenmiş içerikle nasıl çalışılacağını öğrendik. Artık uygun etiketli içeriğe sahip PDF belgeleri oluşturmak için Aspose.PDF'yi kullanabilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the main focus of this tutorial on working with tagged PDF content using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET kullanarak etiketli PDF içeriğiyle çalışmaya yönelik bu eğitimin ana odağı nedir?
 
-A: This tutorial is primarily focused on guiding you through the process of working with marked up content within a PDF document using Aspose.PDF for .NET. The tutorial provides step-by-step instructions and C# source code examples to help you understand how to use tags to define and manipulate the content of a PDF document.
+C: Bu eğitim öncelikle Aspose.PDF for .NET kullanarak bir PDF belgesindeki işaretlenmiş içerikle çalışma sürecinde size rehberlik etmeye odaklanmıştır. Öğretici, bir PDF belgesinin içeriğini tanımlamak ve değiştirmek için etiketleri nasıl kullanacağınızı anlamanıza yardımcı olacak adım adım talimatlar ve C# kaynak kodu örnekleri sağlar.
 
-#### Q: What are the prerequisites for following this tutorial on tagged PDF content manipulation with Aspose.PDF for .NET?
+#### S: Etiketli PDF içeriğinin Aspose.PDF for .NET ile işlenmesiyle ilgili bu eğitimi takip etmenin önkoşulları nelerdir?
 
-A: Before you begin, ensure that you have set up your development environment to use Aspose.PDF for .NET. This involves installing the Aspose.PDF library and configuring your project to reference it.
+C: Başlamadan önce, geliştirme ortamınızı Aspose.PDF for .NET'i kullanacak şekilde ayarladığınızdan emin olun. Bu, Aspose.PDF kütüphanesinin kurulmasını ve projenizin buna referans verecek şekilde yapılandırılmasını içerir.
 
-#### Q: How can I create a new PDF document and work with its tagged content using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'i kullanarak yeni bir PDF belgesini nasıl oluşturabilirim ve etiketli içeriğiyle nasıl çalışabilirim?
 
-A: The tutorial provides C# source code examples that demonstrate how to create a new PDF document and access its tagged content for further manipulation.
+C: Eğitimde, yeni bir PDF belgesinin nasıl oluşturulacağını ve daha fazla değişiklik yapmak üzere etiketli içeriğine nasıl erişileceğini gösteren C# kaynak kodu örnekleri sağlanmaktadır.
 
-#### Q: What is the significance of working with tagged content in a PDF document?
+#### S: Bir PDF belgesinde etiketli içerikle çalışmanın önemi nedir?
 
-A: Working with tagged content in a PDF document involves using structured tags to define the semantic meaning of the document's elements. This is particularly important for accessibility and content extraction, as it enables screen readers and other technologies to interpret the document's content correctly.
+C: Bir PDF belgesinde etiketli içerikle çalışmak, belgenin öğelerinin anlamsal anlamını tanımlamak için yapılandırılmış etiketlerin kullanılmasını içerir. Bu, ekran okuyucuların ve diğer teknolojilerin belgenin içeriğini doğru şekilde yorumlamasını sağladığından erişilebilirlik ve içerik çıkarma açısından özellikle önemlidir.
 
-#### Q: How can I set the title and language for a tagged PDF document using Aspose.PDF for .NET?
+#### S: Etiketli bir PDF belgesinin başlığını ve dilini Aspose.PDF for .NET kullanarak nasıl ayarlayabilirim?
 
-A: The tutorial includes C# source code examples that illustrate how to set the title and language for a tagged PDF document using Aspose.PDF for .NET.
+C: Eğitim, Aspose.PDF for .NET kullanılarak etiketli bir PDF belgesinin başlığının ve dilinin nasıl ayarlanacağını gösteren C# kaynak kodu örneklerini içerir.
 
-#### Q: What is the process of saving a tagged PDF document after working with its tagged content?
+#### S: Etiketli bir PDF belgesini, etiketli içeriğiyle çalıştıktan sonra kaydetme süreci nedir?
 
-A: After making modifications to the tagged content of a PDF document, you can use the provided C# source code examples to save the modified document using the `Save()` method.
+ C: Bir PDF belgesinin etiketli içeriğinde değişiklikler yaptıktan sonra, sağlanan C# kaynak kodu örneklerini kullanarak değiştirilen belgeyi kaydetmek için kullanabilirsiniz.`Save()` yöntem.
 
-#### Q: How does the sample source code provided in the tutorial help in working with tagged PDF content?
+#### S: Eğitimde sağlanan örnek kaynak kodu, etiketli PDF içeriğiyle çalışmaya nasıl yardımcı olur?
 
-A: The sample source code serves as a practical reference for implementing tagged content manipulation using Aspose.PDF for .NET. You can use this code as a starting point and modify it according to your specific requirements.
+C: Örnek kaynak kodu, Aspose.PDF for .NET kullanılarak etiketli içerik manipülasyonunun uygulanması için pratik bir referans görevi görür. Bu kodu bir başlangıç noktası olarak kullanabilir ve özel gereksinimlerinize göre değiştirebilirsiniz.
 
-#### Q: Can I apply similar techniques to other types of elements in a PDF document, not just text and language settings?
+#### S: Benzer teknikleri yalnızca metin ve dil ayarlarına değil, bir PDF belgesindeki diğer öğe türlerine de uygulayabilir miyim?
 
-A: Yes, the techniques demonstrated in this tutorial can be adapted to work with various types of elements within a PDF document. You can use similar principles to manipulate text, images, tables, and more, while utilizing tags to define their roles and attributes.
+C: Evet, bu eğitimde gösterilen teknikler, bir PDF belgesindeki çeşitli öğe türleriyle çalışacak şekilde uyarlanabilir. Metinleri, görselleri, tabloları ve daha fazlasını değiştirmek için benzer ilkeleri kullanabilir, aynı zamanda bunların rollerini ve niteliklerini tanımlamak için etiketleri kullanabilirsiniz.
 
-#### Q: How can I use Aspose.PDF for .NET to further enhance and customize PDF documents beyond tagged content?
+#### S: Etiketli içeriğin ötesinde PDF belgelerini daha da geliştirmek ve özelleştirmek için Aspose.PDF for .NET'i nasıl kullanabilirim?
 
-A: Aspose.PDF for .NET offers a wide range of features for PDF document manipulation, including adding text, images, tables, hyperlinks, annotations, form fields, watermarks, digital signatures, and more. You can explore the official documentation and resources for a comprehensive understanding of the library's capabilities.
+C: Aspose.PDF for .NET, PDF belge işleme için metin, resim, tablo, hiper bağlantı, ek açıklama, form alanı, filigran, dijital imza ve daha fazlasını ekleme dahil çok çeşitli özellikler sunar. Kütüphanenin yeteneklerini kapsamlı bir şekilde anlamak için resmi belgeleri ve kaynakları keşfedebilirsiniz.

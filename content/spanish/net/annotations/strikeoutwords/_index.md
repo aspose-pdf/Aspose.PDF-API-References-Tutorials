@@ -1,33 +1,33 @@
 ---
-title: Strike Out Words
-linktitle: Strike Out Words
-second_title: Aspose.PDF for .NET API Reference
-description: This article provides a step-by-step guide to using Aspose.PDF for .NET's Strike Out Words feature, including step by step guide and explanations
+title: Tachar palabras
+linktitle: Tachar palabras
+second_title: Aspose.PDF para referencia de API .NET
+description: Este artículo proporciona una guía paso a paso para usar Aspose.PDF para la función Tachar palabras de .NET, incluida una guía paso a paso y explicaciones.
 type: docs
 weight: 150
 url: /es/net/annotations/strikeoutwords/
 ---
-Aspose.PDF for .NET is a PDF document manipulation and processing library that provides various features to create, modify, and convert PDF files. One of the useful features that Aspose.PDF provides is the ability to strike out words or phrases in a PDF document using C# source code. In this article, we will provide a step-by-step guide on how to strike out words using Aspose.PDF for .NET.
+Aspose.PDF para .NET es una biblioteca de procesamiento y manipulación de documentos PDF que proporciona varias funciones para crear, modificar y convertir archivos PDF. Una de las funciones útiles que ofrece Aspose.PDF es la capacidad de tachar palabras o frases en un documento PDF utilizando el código fuente C#. En este artículo, proporcionaremos una guía paso a paso sobre cómo tachar palabras usando Aspose.PDF para .NET.
 
-## Step 1: Loading the PDF document
-The first step is to load the PDF document that you want to modify. In this tutorial, we will load a PDF document named "input.pdf" from the "YOUR DOCUMENT DIRECTORY" folder. 
+## Paso 1: cargar el documento PDF
+El primer paso es cargar el documento PDF que desea modificar. En este tutorial, cargaremos un documento PDF llamado "input.pdf" desde la carpeta "SU DIRECTORIO DE DOCUMENTOS". 
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document document = new Document(dataDir + "input.pdf");
 ```
 
-## Step 2: Searching for text fragments
-To strike out specific words or phrases in the PDF document, you first need to search for them. Aspose.PDF provides a TextFragmentAbsorber class that can be used to search for a specific text fragment in the PDF document.
+## Paso 2: buscar fragmentos de texto
+Para tachar palabras o frases específicas en el documento PDF, primero debe buscarlas. Aspose.PDF proporciona una clase TextFragmentAbsorber que se puede utilizar para buscar un fragmento de texto específico en el documento PDF.
 
 ```csharp
 Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.TextFragmentAbsorber("Estoque");
 ```
 
-In the above code, we are searching for the text fragment "Estoque" in the PDF document. You can modify this to search for any other word or phrase that you want to strike out.
+En el código anterior, buscamos el fragmento de texto "Estoque" en el documento PDF. Puedes modificar esto para buscar cualquier otra palabra o frase que quieras tachar.
 
-## Step 3: Striking out the text fragments
-After finding the text fragments, the next step is to strike them out. Aspose.PDF provides a StrikeOutAnnotation class that can be used to create a strike-out annotation for the text fragment. 
+## Paso 3: tachar los fragmentos de texto
+Después de encontrar los fragmentos de texto, el siguiente paso es tacharlos. Aspose.PDF proporciona una clase StrikeOutAnnotation que se puede utilizar para crear una anotación tachada para el fragmento de texto. 
 
 ```csharp
 Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle((float)textFragment.Position.XIndent, (float)textFragment.Position.YIndent, (float)textFragment.Position.XIndent + (float)textFragment.Rectangle.Width, (float)textFragment.Position.YIndent + (float)textFragment.Rectangle.Height);
@@ -39,46 +39,46 @@ strikeOut.Color = Aspose.Pdf.Color.Red;
 textFragment.Page.Annotations.Add(strikeOut);
 ```
 
-In the above code, we are creating a strike-out annotation for each text fragment that we found. We are setting the opacity, border, and color of the strike-out annotation as well.
+En el código anterior, estamos creando una anotación tachada para cada fragmento de texto que encontramos. También estamos configurando la opacidad, el borde y el color de la anotación tachada.
 
-## Step 4: Saving the modified PDF document
-After striking out the text fragments, the save the modified document.
+## Paso 4: guardar el documento PDF modificado
+Después de tachar los fragmentos de texto, guarde el documento modificado.
 
 ```csharp
 dataDir = dataDir + "StrikeOutWords_out.pdf";
 document.Save(dataDir);
 ```
 
-### Example source code for Strike Out Words using Aspose.PDF for .NET
+### Código fuente de ejemplo para tachar palabras usando Aspose.PDF para .NET
 
 
 ```csharp
 
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Abrir documento
 Document document = new Document(dataDir + "input.pdf");
 
-// Create TextFragment Absorber instance to search particular text fragment
+// Cree una instancia de TextFragment Absorber para buscar un fragmento de texto en particular
 Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.TextFragmentAbsorber("Estoque");
-// Iterate through pages of PDF document
+// Iterar a través de páginas de un documento PDF
 for (int i = 1; i <= document.Pages.Count; i++)
 {
-	// Get first page of PDF document
+	// Obtener la primera página del documento PDF
 	Page page = document.Pages[1];
 	page.Accept(textFragmentAbsorber);
 }
 
-// Create a collection of Absorbed text
+// Crear una colección de texto absorbido
 Aspose.Pdf.Text.TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
 
-// Iterate on above collection
+//Iterar en la colección anterior
 for (int j = 1; j <= textFragmentCollection.Count; j++)
 {
 	Aspose.Pdf.Text.TextFragment textFragment = textFragmentCollection[j];
 
-	// Get rectangular dimensions of TextFragment object  	
+	// Obtener dimensiones rectangulares del objeto TextFragment
 	Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle(
 				(float)textFragment.Position.XIndent,
 				(float)textFragment.Position.YIndent,
@@ -87,39 +87,39 @@ for (int j = 1; j <= textFragmentCollection.Count; j++)
 				(float)textFragment.Position.YIndent +
 				(float)textFragment.Rectangle.Height);
 
-	// Instantiate StrikeOut Annotation instance
+	// Crear una instancia de anotación StrikeOut
 	StrikeOutAnnotation strikeOut = new StrikeOutAnnotation(textFragment.Page, rect);
-	// Set opacity for annotation
+	// Establecer opacidad para la anotación
 	strikeOut.Opacity = .80f;
-	// Set the border for annotation instance
+	// Establecer el borde para la instancia de anotación
 	strikeOut.Border = new Border(strikeOut);
-	// Set the color of annotation
+	// Establecer el color de la anotación
 	strikeOut.Color = Aspose.Pdf.Color.Red;
-	// Add annotation to annotations collection of TextFragment
+	// Agregar anotación a la colección de anotaciones de TextFragment
 	textFragment.Page.Annotations.Add(strikeOut);
 }
 dataDir = dataDir + "StrikeOutWords_out.pdf";
 document.Save(dataDir);
 ```
 
-## Conclusion
+## Conclusión
 
-In this tutorial, we learned how to use Aspose.PDF for .NET to strike out specific words in a PDF document. By following the step-by-step guide and using the provided C# source code, you can easily load a PDF document, search for specific text fragments, and create strike-out annotations to visually mark and strike out those words. Aspose.PDF for .NET provides a simple and effective way to manipulate PDF documents programmatically, making it a valuable tool for developers working with PDF files in .NET applications.
+En este tutorial, aprendimos cómo usar Aspose.PDF para .NET para tachar palabras específicas en un documento PDF. Si sigue la guía paso a paso y utiliza el código fuente C# proporcionado, puede cargar fácilmente un documento PDF, buscar fragmentos de texto específicos y crear anotaciones tachadas para marcar y tachar visualmente esas palabras. Aspose.PDF para .NET proporciona una forma sencilla y eficaz de manipular documentos PDF mediante programación, lo que lo convierte en una herramienta valiosa para los desarrolladores que trabajan con archivos PDF en aplicaciones .NET.
 
-### FAQ's
+### Preguntas frecuentes
 
-#### Q: What is Aspose.PDF for .NET?
+#### P: ¿Qué es Aspose.PDF para .NET?
 
-A: Aspose.PDF for .NET is a powerful library that allows developers to create, edit, and manipulate PDF documents programmatically in .NET applications. It provides a wide range of features to work with PDF files, including text extraction, annotation handling, form filling, and much more.
+R: Aspose.PDF para .NET es una potente biblioteca que permite a los desarrolladores crear, editar y manipular documentos PDF mediante programación en aplicaciones .NET. Proporciona una amplia gama de funciones para trabajar con archivos PDF, incluida la extracción de texto, el manejo de anotaciones, el llenado de formularios y mucho más.
 
-#### Q: Can I use Aspose.PDF for .NET to strike out specific words in a PDF document?
+#### P: ¿Puedo utilizar Aspose.PDF para .NET para tachar palabras específicas en un documento PDF?
 
-A: Yes, Aspose.PDF for .NET provides functionality to search for specific text fragments in a PDF document and then create strike-out annotations to visually mark and strike out those words.
+R: Sí, Aspose.PDF para .NET proporciona funcionalidad para buscar fragmentos de texto específicos en un documento PDF y luego crear anotaciones tachadas para marcar y tachar visualmente esas palabras.
 
-#### Q: How do I specify the text I want to strike out in the PDF document?
+#### P: ¿Cómo especifico el texto que quiero tachar en el documento PDF?
 
-A: To specify the text you want to strike out, you can use the `TextFragmentAbsorber` class provided by Aspose.PDF for .NET. It allows you to search for a specific text fragment in the PDF document based on your desired criteria.
+ R: Para especificar el texto que desea tachar, puede utilizar el`TextFragmentAbsorber` clase proporcionada por Aspose.PDF para .NET. Le permite buscar un fragmento de texto específico en el documento PDF según los criterios deseados.
 
-#### Q: Can I customize the appearance of the strike-out annotation?
+#### P: ¿Puedo personalizar la apariencia de la anotación tachada?
 
-A: Yes, you can customize various properties of the strike-out annotation, such as the opacity, border style, and color. This allows you to tailor the appearance of the strike-out annotation to your specific requirements.
+R: Sí, puedes personalizar varias propiedades de la anotación tachada, como la opacidad, el estilo del borde y el color. Esto le permite adaptar la apariencia de la anotación tachada a sus requisitos específicos.

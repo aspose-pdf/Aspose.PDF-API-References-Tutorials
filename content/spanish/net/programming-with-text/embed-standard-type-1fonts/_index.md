@@ -1,50 +1,50 @@
 ---
-title: Embed Standard Type 1Fonts In PDF File
-linktitle: Embed Standard Type 1Fonts In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to embed standard Type 1 fonts in PDF file using Aspose.PDF for .NET.
+title: Incrustar fuentes estándar tipo 1 en un archivo PDF
+linktitle: Incrustar fuentes estándar tipo 1 en un archivo PDF
+second_title: Aspose.PDF para referencia de API .NET
+description: Aprenda a incrustar fuentes estándar Tipo 1 en un archivo PDF usando Aspose.PDF para .NET.
 type: docs
 weight: 140
 url: /es/net/programming-with-text/embed-standard-type-1fonts/
 ---
-This tutorial will guide you through the process of embedding standard Type 1 fonts in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+Este tutorial lo guiará a través del proceso de incrustar fuentes estándar Tipo 1 en un archivo PDF usando Aspose.PDF para .NET. El código fuente de C# proporcionado demuestra los pasos necesarios.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## Requisitos
+Antes de comenzar, asegúrese de tener lo siguiente:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio o cualquier otro compilador de C# instalado en su máquina.
+- Aspose.PDF para la biblioteca .NET. Puede descargarlo del sitio web oficial de Aspose o utilizar un administrador de paquetes como NuGet para instalarlo.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## Paso 1: configurar el proyecto
+1. Cree un nuevo proyecto de C# en su entorno de desarrollo preferido.
+2. Agregue una referencia a la biblioteca Aspose.PDF para .NET.
 
-## Step 2: Import required namespaces
-In the code file where you want to embed standard Type 1 fonts, add the following using directive at the top of the file:
+## Paso 2: importar los espacios de nombres necesarios
+En el archivo de código donde desea incrustar fuentes estándar Tipo 1, agregue la siguiente directiva usando en la parte superior del archivo:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## Paso 3: configurar el directorio de documentos
+ En el código, localice la línea que dice`string dataDir = "YOUR DOCUMENT DIRECTORY";` y reemplazar`"YOUR DOCUMENT DIRECTORY"` con la ruta al directorio donde están almacenados sus documentos.
 
-## Step 4: Load the existing PDF document
-Load an existing PDF document using the `Document` constructor and passing the path to the input PDF file.
+## Paso 4: cargue el documento PDF existente
+ Cargue un documento PDF existente usando el`Document`constructor y pasando la ruta al archivo PDF de entrada.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "input.pdf");
 ```
 
-## Step 5: Set the EmbedStandardFonts property
-Set the `EmbedStandardFonts` property of the document to `true` in order to enable embedding standard Type 1 fonts.
+## Paso 5: establezca la propiedad EmbedStandardFonts
+ Selecciona el`EmbedStandardFonts` propiedad del documento para`true` para permitir la incrustación de fuentes estándar Tipo 1.
 
 ```csharp
 pdfDocument.EmbedStandardFonts = true;
 ```
 
-## Step 6: Embed fonts in each page
-Loop through each page of the PDF document and check if the fonts are already embedded. If not, set the `IsEmbedded` property to `true` to embed the font.
+## Paso 6: incrusta fuentes en cada página
+ Recorra cada página del documento PDF y compruebe si las fuentes ya están incrustadas. Si no, configure el`IsEmbedded` propiedad a`true` para incrustar la fuente.
 
 ```csharp
 foreach(Page page in pdfDocument.Pages)
@@ -62,20 +62,20 @@ foreach(Page page in pdfDocument.Pages)
 }
 ```
 
-## Step 7: Save the updated PDF document
-Save the updated PDF document using the `Save` method of the `Document` object, specifying the output file path.
+## Paso 7: guarde el documento PDF actualizado
+ Guarde el documento PDF actualizado utilizando el`Save` método de la`Document` objeto, especificando la ruta del archivo de salida.
 
 ```csharp
 pdfDocument.Save(dataDir + "EmbeddedFonts-updated_out.pdf");
 ```
 
-### Sample source code for Embed Standard Type 1Fonts using Aspose.PDF for .NET 
+### Código fuente de muestra para incrustar fuentes estándar tipo 1 usando Aspose.PDF para .NET 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load an existing PDF Document
+// Cargar un documento PDF existente
 Document pdfDocument = new Document(dataDir + "input.pdf");
-// Set EmbedStandardFonts property of document
+// Establecer la propiedad EmbedStandardFonts del documento
 pdfDocument.EmbedStandardFonts = true;
 foreach (Aspose.Pdf.Page page in pdfDocument.Pages)
 {
@@ -83,7 +83,7 @@ foreach (Aspose.Pdf.Page page in pdfDocument.Pages)
 	{
 		foreach (Aspose.Pdf.Text.Font pageFont in page.Resources.Fonts)
 		{
-			// Check if font is already embedded
+			// Compruebe si la fuente ya está incrustada
 			if (!pageFont.IsEmbedded)
 			{
 				pageFont.IsEmbedded = true;
@@ -94,47 +94,47 @@ foreach (Aspose.Pdf.Page page in pdfDocument.Pages)
 pdfDocument.Save(dataDir + "EmbeddedFonts-updated_out.pdf");
 ```
 
-## Conclusion
-You have successfully embedded standard Type 1 fonts in a PDF document using Aspose.PDF for .NET. The updated PDF file with embedded fonts has been saved at the specified output file path.
+## Conclusión
+Ha incrustado con éxito fuentes estándar Tipo 1 en un documento PDF utilizando Aspose.PDF para .NET. El archivo PDF actualizado con fuentes incrustadas se guardó en la ruta del archivo de salida especificada.
 
-### FAQ's
+### Preguntas frecuentes
 
-#### Q: What is the focus of this tutorial?
+#### P: ¿Cuál es el enfoque de este tutorial?
 
-A: This tutorial provides a step-by-step guide to embedding standard Type 1 fonts in a PDF file using the Aspose.PDF for .NET library. The accompanying C# source code demonstrates the necessary procedures.
+R: Este tutorial proporciona una guía paso a paso para incrustar fuentes Tipo 1 estándar en un archivo PDF utilizando la biblioteca Aspose.PDF para .NET. El código fuente de C# adjunto demuestra los procedimientos necesarios.
 
-#### Q: Which namespace do I need to import?
+#### P: ¿Qué espacio de nombres necesito importar?
 
-A: In the code file where you intend to embed standard Type 1 fonts, include the following namespace at the top of the file:
+R: En el archivo de código donde desea incrustar fuentes estándar Tipo 1, incluya el siguiente espacio de nombres en la parte superior del archivo:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-#### Q: How do I specify the document directory?
+#### P: ¿Cómo especifico el directorio de documentos?
 
-A: Locate the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` in the code and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ R: Localice la línea`string dataDir = "YOUR DOCUMENT DIRECTORY";` en el código y reemplazar`"YOUR DOCUMENT DIRECTORY"` con la ruta real a su directorio de documentos.
 
-#### Q: How do I load an existing PDF document?
+#### P: ¿Cómo cargo un documento PDF existente?
 
-A: In Step 4, you'll load an existing PDF document using the `Document` constructor and providing the path to the input PDF file.
+ R: En el Paso 4, cargará un documento PDF existente usando el`Document` constructor y proporcionando la ruta al archivo PDF de entrada.
 
-#### Q: What is the purpose of the `EmbedStandardFonts` property?
+####  P: ¿Cuál es el propósito de la`EmbedStandardFonts` property?
 
-A: In Step 5, you'll set the `EmbedStandardFonts` property of the document to `true`, enabling the embedding of standard Type 1 fonts.
+ R: En el paso 5, configurará el`EmbedStandardFonts` propiedad del documento para`true`, permitiendo la incrustación de fuentes estándar Tipo 1.
 
-#### Q: How do I embed fonts in each page?
+#### P: ¿Cómo incrusto fuentes en cada página?
 
-A: Step 6 involves looping through each page of the PDF document. For fonts that are not already embedded, you'll set the `IsEmbedded` property to `true` to embed the font.
+ R: El paso 6 implica recorrer cada página del documento PDF. Para fuentes que aún no están incrustadas, configurará el`IsEmbedded` propiedad a`true` para incrustar la fuente.
 
-#### Q: How do I save the updated PDF document?
+#### P: ¿Cómo guardo el documento PDF actualizado?
 
-A: In Step 7, you'll use the `Save` method of the `Document` object to save the updated PDF document, specifying the output file path.
+ R: En el paso 7, utilizará el`Save` método de la`Document` objeto para guardar el documento PDF actualizado, especificando la ruta del archivo de salida.
 
-#### Q: What is the significance of embedding fonts in a PDF document?
+#### P: ¿Cuál es la importancia de incrustar fuentes en un documento PDF?
 
-A: Embedding fonts ensures that the fonts used in the PDF are included within the file itself. This guarantees consistent display of text even if the recipient's system does not have the required fonts installed.
+R: Incrustar fuentes garantiza que las fuentes utilizadas en el PDF estén incluidas dentro del propio archivo. Esto garantiza una visualización consistente del texto incluso si el sistema del destinatario no tiene instaladas las fuentes requeridas.
 
-#### Q: What's the main takeaway from this tutorial?
+#### P: ¿Cuál es la principal conclusión de este tutorial?
 
-A: By following this tutorial, you've gained the knowledge and skills to embed standard Type 1 fonts in a PDF document using Aspose.PDF for .NET. This ensures the proper rendering of text across different systems.
+R: Al seguir este tutorial, obtendrá los conocimientos y las habilidades para incrustar fuentes Tipo 1 estándar en un documento PDF utilizando Aspose.PDF para .NET. Esto garantiza la representación adecuada del texto en diferentes sistemas.

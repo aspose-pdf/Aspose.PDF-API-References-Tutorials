@@ -1,70 +1,70 @@
 ---
-title: Tag Image In Existing PDF
-linktitle: Tag Image In Existing PDF
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to mark up an image in an existing PDF with Aspose.PDF for .NET. A Step-by-Step Guide to Adding Tags to Images.
+title: Etiquetar imagen en PDF existente
+linktitle: Etiquetar imagen en PDF existente
+second_title: Aspose.PDF para referencia de API .NET
+description: Aprenda a marcar una imagen en un PDF existente con Aspose.PDF para .NET. Una guía paso a paso para agregar etiquetas a imágenes.
 type: docs
 weight: 210
 url: /es/net/programming-with-tagged-pdf/tag-image-in-existing-pdf/
 ---
-In this detailed tutorial, we will walk you through the provided C# source code step by step to mark up an image in an existing PDF using Aspose.PDF for .NET. Follow the instructions below to understand how to add tags to an image in a PDF.
+En este tutorial detallado, lo guiaremos paso a paso a través del código fuente de C# proporcionado para marcar una imagen en un PDF existente usando Aspose.PDF para .NET. Siga las instrucciones a continuación para comprender cómo agregar etiquetas a una imagen en un PDF.
 
-## Step 1: Setting up the environment
+## Paso 1: configurar el entorno
 
-Before you begin, make sure you've configured your development environment to use Aspose.PDF for .NET. This includes installing the Aspose.PDF library and configuring your project to reference it.
+Antes de comenzar, asegúrese de haber configurado su entorno de desarrollo para usar Aspose.PDF para .NET. Esto incluye instalar la biblioteca Aspose.PDF y configurar su proyecto para hacer referencia a ella.
 
-## Step 2: Open the existing PDF document
+## Paso 2: abra el documento PDF existente
 
-In this step, we will open an existing PDF document using Aspose.PDF.
+En este paso, abriremos un documento PDF existente usando Aspose.PDF.
 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Input and output file paths
+// Rutas de archivos de entrada y salida
 string inFile = dataDir + "TH.pdf";
 string outFile = dataDir + "TH_out.pdf";
 string logFile = dataDir + "TH_out.xml";
 
-// Open the document
+// abrir el documento
 Document document = new Document(inFile);
 ```
 
-We opened the existing PDF document using Aspose.PDF.
+Abrimos el documento PDF existente usando Aspose.PDF.
 
-## Step 3: Obtain Tagged Content and Root Structure Element
+## Paso 3: obtener contenido etiquetado y elemento de estructura raíz
 
-Now we will get the tagged content of the PDF document and the corresponding root structure element.
+Ahora obtendremos el contenido etiquetado del documento PDF y el elemento de estructura raíz correspondiente.
 
 ```csharp
-// Get tagged content and root structure element
+// Obtener contenido etiquetado y elemento de estructura raíz
 ITaggedContent taggedContent = document.TaggedContent;
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-We got the tagged content of the PDF document and the corresponding root structure element.
+Obtuvimos el contenido etiquetado del documento PDF y el elemento de estructura raíz correspondiente.
 
-## Step 4: Setting the title for the tagged PDF document
+## Paso 4: configurar el título del documento PDF etiquetado
 
-Now let's set the title for the tagged PDF document.
+Ahora configuremos el título del documento PDF etiquetado.
 
 ```csharp
-// Define the title for the tagged PDF document
+// Definir el título del documento PDF etiquetado
 taggedContent.SetTitle("Document with images");
 ```
 
-We have set the title for the tagged PDF document.
+Hemos establecido el título para el documento PDF etiquetado.
 
-## Step 5: Assign alt texts and bounding box to the image
+## Paso 5: asigne textos alternativos y cuadros delimitadores a la imagen
 
-Now, for each image element, we'll assign alt text and a bounding box.
+Ahora, para cada elemento de la imagen, asignaremos texto alternativo y un cuadro delimitador.
 
 ```csharp
 foreach(FigureElement figureElement in rootElement.FindElements<FigureElement>(true))
 {
-     // Assign alternative text to the image
+     // Asignar texto alternativo a la imagen.
      figureElement.AlternativeText = "Alternative text for image (technique 2)";
-     // Create and assign the bounding box (bbox)
+     // Crear y asignar el cuadro delimitador (bbox)
      StructureAttribute bboxAttribute = new StructureAttribute(AttributeKey.BBox);
      bboxAttribute.SetRectangleValue(new Rectangle(0.0, 0.0, 100.0, 100.0));
      StructureAttributes figureLayoutAttributes = figureElement.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
@@ -72,131 +72,131 @@ foreach(FigureElement figureElement in rootElement.FindElements<FigureElement>(t
 }
 ```
 
-We've assigned alt text and a bounding box to each image element in the PDF document.
+Hemos asignado texto alternativo y un cuadro delimitador a cada elemento de imagen en el documento PDF.
 
-## Step 6: Moving the Span element into the paragraph
+## Paso 6: Mover el elemento Span al párrafo
 
-Now let's move the Span element into the paragraph.
+Ahora muevamos el elemento Span al párrafo.
 
 ```csharp
-// Move Span element into paragraph (find incorrect span and paragraph in first TD)
+// Mueva el elemento Span al párrafo (busque el span y el párrafo incorrectos en el primer TD)
 TableElement tableElement = rootElement.FindElements<TableElement>(true)[0];
 SpanElement spanElement = tableElement.FindElements<SpanElement>(true)[0];
 TableTDElement firstTdElement = tableElement.FindElements<TableTDElement>(true)[0];
 ParagraphElement paragraph = firstTdElement.FindElements<ParagraphElement>(true)[0];
 
-// Move the Span element in the paragraph
+// Mover el elemento Span en el párrafo
 spanElement.ChangeParentElement(paragraph);
 ```
 
-We moved the Span element into the specified paragraph.
+Movimos el elemento Span al párrafo especificado.
 
-## Step 7: Saving the modified PDF document
+## Paso 7: Guardar el documento PDF modificado
 
-Now that we have made the necessary changes, we will save the modified PDF document.
+Ahora que hemos realizado los cambios necesarios, guardaremos el documento PDF modificado.
 
 ```csharp
-// Save the PDF document
+// Guarde el documento PDF
 document. Save(outFile);
 ```
 
-We saved the modified PDF document in the specified directory.
+Guardamos el documento PDF modificado en el directorio especificado.
 
-### Sample source code for Tag Image In Existing PDF using Aspose.PDF for .NET 
+### Código fuente de muestra para etiquetar imagen en PDF existente usando Aspose.PDF para .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string inFile = dataDir + "TH.pdf";
 string outFile = dataDir + "TH_out.pdf";
 string logFile = dataDir + "TH_out.xml";
 
-// Open document
+// Abrir documento
 Document document = new Document(inFile);
 
-// Gets tagged content and root structure element
+// Obtiene contenido etiquetado y elemento de estructura raíz.
 ITaggedContent taggedContent = document.TaggedContent;
 StructureElement rootElement = taggedContent.RootElement;
 
-// Set title for tagged pdf document
+// Establecer título para el documento pdf etiquetado
 taggedContent.SetTitle("Document with images");
 foreach (FigureElement figureElement in rootElement.FindElements<FigureElement>(true))
 {
-	// Set Alternative Text  for Figure
+	// Establecer texto alternativo para la figura
 	figureElement.AlternativeText = "Figure alternative text (technique 2)";
-	// Create and Set BBox Attribute
+	// Crear y configurar el atributo BBox
 	StructureAttribute bboxAttribute = new StructureAttribute(AttributeKey.BBox);
 	bboxAttribute.SetRectangleValue(new Rectangle(0.0, 0.0, 100.0, 100.0));
 	StructureAttributes figureLayoutAttributes = figureElement.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
 	figureLayoutAttributes.SetAttribute(bboxAttribute);
 }
 
-// Move Span Element into Paragraph (find wrong span and paragraph in first TD)
+// Mueva el elemento de extensión al párrafo (busque la extensión y el párrafo incorrectos en el primer TD)
 TableElement tableElement = rootElement.FindElements<TableElement>(true)[0];
 SpanElement spanElement = tableElement.FindElements<SpanElement>(true)[0];
 TableTDElement firstTdElement = tableElement.FindElements<TableTDElement>(true)[0];
 ParagraphElement paragraph = firstTdElement.FindElements<ParagraphElement>(true)[0];
 
-// Move Span Element into Paragraph
+// Mover elemento de extensión al párrafo
 spanElement.ChangeParentElement(paragraph);
 
-// Save document
+// guardar documento
 document.Save(outFile);
 
-// Checking PDF/UA Compliance for out document
+//Comprobar la conformidad con PDF/UA para nuestro documento
 document = new Document(outFile);
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ```
 
-## Conclusion
+## Conclusión
 
-In this tutorial, we learned how to mark up an image in an existing PDF using Aspose.PDF for .NET. You can now use Aspose.PDF to add tags and make edits to images in your PDF documents.
+En este tutorial, aprendimos cómo marcar una imagen en un PDF existente usando Aspose.PDF para .NET. Ahora puede utilizar Aspose.PDF para agregar etiquetas y editar imágenes en sus documentos PDF.
 
-### FAQ's
+### Preguntas frecuentes
 
-#### Q: What is the main objective of this tutorial on tagging images in an existing PDF using Aspose.PDF for .NET?
+#### P: ¿Cuál es el objetivo principal de este tutorial sobre cómo etiquetar imágenes en un PDF existente usando Aspose.PDF para .NET?
 
-A: The primary goal of this tutorial is to guide you through the process of marking up an image within an existing PDF document using Aspose.PDF for .NET. The tutorial provides step-by-step instructions and C# source code examples to help you understand how to assign alternative text and bounding boxes to images, move elements within the document, and add tags to images.
+R: El objetivo principal de este tutorial es guiarlo a través del proceso de marcar una imagen dentro de un documento PDF existente usando Aspose.PDF para .NET. El tutorial proporciona instrucciones paso a paso y ejemplos de código fuente de C# para ayudarle a comprender cómo asignar texto alternativo y cuadros delimitadores a imágenes, mover elementos dentro del documento y agregar etiquetas a imágenes.
 
-#### Q: What are the prerequisites for following this tutorial on tagging images in a PDF using Aspose.PDF for .NET?
+#### P: ¿Cuáles son los requisitos previos para seguir este tutorial sobre cómo etiquetar imágenes en un PDF usando Aspose.PDF para .NET?
 
-A: Before you start, ensure that you have set up your development environment to use Aspose.PDF for .NET. This involves installing the Aspose.PDF library and configuring your project to reference it.
+R: Antes de comenzar, asegúrese de haber configurado su entorno de desarrollo para utilizar Aspose.PDF para .NET. Esto implica instalar la biblioteca Aspose.PDF y configurar su proyecto para hacer referencia a ella.
 
-#### Q: How can I open an existing PDF document and access its tagged content using Aspose.PDF for .NET?
+#### P: ¿Cómo puedo abrir un documento PDF existente y acceder a su contenido etiquetado usando Aspose.PDF para .NET?
 
-A: The tutorial provides C# source code examples that demonstrate how to open an existing PDF document using Aspose.PDF for .NET and access its tagged content for further manipulation.
+R: El tutorial proporciona ejemplos de código fuente de C# que demuestran cómo abrir un documento PDF existente usando Aspose.PDF para .NET y acceder a su contenido etiquetado para su posterior manipulación.
 
-#### Q: What is the purpose of assigning alternative text and bounding boxes to images in a PDF document?
+#### P: ¿Cuál es el propósito de asignar texto alternativo y cuadros delimitadores a imágenes en un documento PDF?
 
-A: Assigning alternative text and bounding boxes to images enhances accessibility by providing descriptive text for images and defining their layout and position within the document. This information is crucial for screen readers and other assistive technologies.
+R: Asignar texto alternativo y cuadros delimitadores a las imágenes mejora la accesibilidad al proporcionar texto descriptivo para las imágenes y definir su diseño y posición dentro del documento. Esta información es crucial para los lectores de pantalla y otras tecnologías de asistencia.
 
-#### Q: How can I set the title for a tagged PDF document using Aspose.PDF for .NET?
+#### P: ¿Cómo puedo configurar el título de un documento PDF etiquetado usando Aspose.PDF para .NET?
 
-A: The tutorial includes C# source code examples that illustrate how to set the title for a tagged PDF document using Aspose.PDF for .NET.
+R: El tutorial incluye ejemplos de código fuente de C# que ilustran cómo configurar el título de un documento PDF etiquetado usando Aspose.PDF para .NET.
 
-#### Q: What does the process of moving elements within a PDF document involve?
+#### P: ¿Qué implica el proceso de mover elementos dentro de un documento PDF?
 
-A: Moving elements within a PDF document involves changing the parent element of a particular element. In this tutorial, you'll learn how to move a Span element into a specified Paragraph element within a table.
+R: Mover elementos dentro de un documento PDF implica cambiar el elemento principal de un elemento en particular. En este tutorial, aprenderá cómo mover un elemento Span a un elemento Paragraph específico dentro de una tabla.
 
-#### Q: How do I save the modified PDF document after adding tags and making edits to images?
+#### P: ¿Cómo guardo el documento PDF modificado después de agregar etiquetas y editar las imágenes?
 
-A: Once you've added tags, assigned alternative text, set bounding boxes, and made edits to the PDF document, you can use the provided C# source code examples to save the modified PDF document using the `Save()` method.
+ R: Una vez que haya agregado etiquetas, asignado texto alternativo, establecido cuadros delimitadores y realizado modificaciones en el documento PDF, puede usar los ejemplos de código fuente de C# proporcionados para guardar el documento PDF modificado usando el`Save()` método.
 
-#### Q: What is the purpose of the sample source code provided in the tutorial?
+#### P: ¿Cuál es el propósito del código fuente de muestra proporcionado en el tutorial?
 
-A: The sample source code serves as a practical reference for implementing image tagging and manipulation using Aspose.PDF for .NET. You can use this code as a starting point and modify it to suit your specific requirements.
+R: El código fuente de muestra sirve como referencia práctica para implementar el etiquetado y la manipulación de imágenes utilizando Aspose.PDF para .NET. Puede utilizar este código como punto de partida y modificarlo para adaptarlo a sus requisitos específicos.
 
-#### Q: Can I apply these techniques to other types of elements in a PDF document, not just images?
+#### P: ¿Puedo aplicar estas técnicas a otros tipos de elementos en un documento PDF, no solo a imágenes?
 
-A: Yes, the techniques demonstrated in this tutorial can be adapted to work with various types of elements within a PDF document. You can apply similar principles to tag and manipulate other elements such as text, tables, and more.
+R: Sí, las técnicas demostradas en este tutorial se pueden adaptar para trabajar con varios tipos de elementos dentro de un documento PDF. Puede aplicar principios similares para etiquetar y manipular otros elementos como texto, tablas y más.
 
-#### Q: How can I validate the PDF/UA compliance of the modified PDF document?
+#### P: ¿Cómo puedo validar la conformidad con PDF/UA del documento PDF modificado?
 
-A: The tutorial provides C# source code examples that show how to validate the PDF/UA compliance of the modified PDF document by using the `Validate()` method and generating an XML report.
+ R: El tutorial proporciona ejemplos de código fuente de C# que muestran cómo validar la conformidad con PDF/UA del documento PDF modificado utilizando el`Validate()` método y generar un informe XML.
 
-#### Q: What other features does Aspose.PDF for .NET offer for working with PDF documents?
+#### P: ¿Qué otras características ofrece Aspose.PDF para .NET para trabajar con documentos PDF?
 
-A: Aspose.PDF for .NET offers a wide range of features for working with PDF documents, including text manipulation, image insertion, table creation, form field management, digital signatures, annotations, and more. Consult the official documentation and resources for further exploration.
+R: Aspose.PDF para .NET ofrece una amplia gama de funciones para trabajar con documentos PDF, incluida la manipulación de texto, inserción de imágenes, creación de tablas, gestión de campos de formulario, firmas digitales, anotaciones y más. Consulte la documentación y los recursos oficiales para una mayor exploración.

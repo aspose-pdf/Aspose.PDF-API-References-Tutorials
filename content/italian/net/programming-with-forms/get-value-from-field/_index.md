@@ -1,82 +1,82 @@
 ---
-title: Get Value From Field In PDF Document
-linktitle: Get Value From Field In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Easily get the value of a form field in PDF document with Aspose.PDF for .NET.
+title: Ottieni valore dal campo nel documento PDF
+linktitle: Ottieni valore dal campo nel documento PDF
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Ottieni facilmente il valore di un campo modulo nel documento PDF con Aspose.PDF per .NET.
 type: docs
 weight: 140
 url: /it/net/programming-with-forms/get-value-from-field/
 ---
-In this tutorial, we will show you how to get the value of a form field using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+In questo tutorial, ti mostreremo come ottenere il valore di un campo modulo utilizzando Aspose.PDF per .NET. Spiegheremo il codice sorgente C# passo dopo passo per guidarti attraverso questo processo.
 
-## Step 1: Preparation
+## Passaggio 1: preparazione
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+Assicurati di aver importato le librerie necessarie e di impostare il percorso della directory dei documenti:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Open the document
+## Passaggio 2: apri il documento
 
-Open the PDF document:
+Apri il documento PDF:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetValueFromField.pdf");
 ```
 
-## Step 3: Get Field
+## Passaggio 3: ottieni il campo
 
-Get the desired form field (in this example, we're using the "textbox1" field):
+Ottieni il campo modulo desiderato (in questo esempio, stiamo utilizzando il campo "textbox1"):
 
 ```csharp
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
 ```
 
-## Step 4: Get field value
+## Passaggio 4: ottieni il valore del campo
 
-Get the field value using the `Value` property:
+ Ottieni il valore del campo utilizzando il file`Value` proprietà:
 
 ```csharp
 Console.WriteLine("PartialName: {0}", textBoxField.PartialName);
 Console.WriteLine("Value: {0}", textBoxField.Value);
 ```
 
-### Sample source code for Get Value From Field using Aspose.PDF for .NET 
+### Codice sorgente di esempio per Ottieni valore dal campo utilizzando Aspose.PDF per .NET 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Apri documento
 Document pdfDocument = new Document(dataDir + "GetValueFromField.pdf");
-// Get a field
+// Prendi un campo
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
-// Get field value
+// Ottieni il valore del campo
 Console.WriteLine("PartialName : {0} ", textBoxField.PartialName);
 Console.WriteLine("Value : {0} ", textBoxField.Value);
 ```
 
-## Conclusion
+## Conclusione
 
-In this tutorial, we learned how to get the value of a form field using Aspose.PDF for .NET. By following these steps, you can easily extract the value of a specific form field in your PDF documents using Aspose.PDF.
+In questo tutorial, abbiamo imparato come ottenere il valore di un campo modulo utilizzando Aspose.PDF per .NET. Seguendo questi passaggi, puoi facilmente estrarre il valore di un campo modulo specifico nei tuoi documenti PDF utilizzando Aspose.PDF.
 
-### FAQ's
+### Domande frequenti
 
-#### Q: Can I get the value of a form field without knowing its name beforehand?
+#### D: Posso ottenere il valore di un campo modulo senza conoscerne in anticipo il nome?
 
-A: No, you need to know the name or partial name of the form field to get its value using Aspose.PDF for .NET. The `pdfDocument.Form["fieldname"]` syntax requires the exact name or partial name of the form field to access its properties, including the value.
+ R: No, è necessario conoscere il nome o il nome parziale del campo del modulo per ottenere il suo valore utilizzando Aspose.PDF per .NET. IL`pdfDocument.Form["fieldname"]` la sintassi richiede il nome esatto o il nome parziale del campo modulo per accedere alle sue proprietà, incluso il valore.
 
-#### Q: What if the form field does not exist in the PDF document?
+#### D: Cosa succede se il campo modulo non esiste nel documento PDF?
 
-A: If the form field does not exist in the PDF document, the `pdfDocument.Form["fieldname"]` syntax will return `null`. It's essential to handle such cases by checking for `null` before accessing the properties of the form field to avoid exceptions.
+ R: Se il campo modulo non esiste nel documento PDF, il file`pdfDocument.Form["fieldname"]` la sintassi tornerà`null` . È essenziale gestire questi casi controllando`null` prima di accedere alle proprietà del campo modulo per evitare eccezioni.
 
-#### Q: How can I handle different types of form fields (e.g., checkboxes, radio buttons) to get their values?
+#### D: Come posso gestire diversi tipi di campi del modulo (ad esempio, caselle di controllo, pulsanti di opzione) per ottenere i loro valori?
 
-A: To handle different types of form fields, you can use the appropriate field classes available in Aspose.PDF for .NET. For example, use `CheckBoxField` to work with checkboxes and `RadioButtonField` to work with radio buttons. Once you have the correct field object, you can access its properties, including the value.
+ R: Per gestire diversi tipi di campi modulo, è possibile utilizzare le classi di campo appropriate disponibili in Aspose.PDF per .NET. Ad esempio, usa`CheckBoxField` per lavorare con le caselle di controllo e`RadioButtonField`per lavorare con i pulsanti di opzione. Una volta ottenuto l'oggetto campo corretto, è possibile accedere alle sue proprietà, incluso il valore.
 
-#### Q: Can I get the values of multiple form fields at once?
+#### D: Posso ottenere i valori di più campi modulo contemporaneamente?
 
-A: Yes, you can get the values of multiple form fields at once by iterating through the form fields collection using a loop or LINQ queries. This way, you can access the value of each form field in the PDF document programmatically.
+R: Sì, puoi ottenere i valori di più campi modulo contemporaneamente scorrendo la raccolta dei campi modulo utilizzando un ciclo o query LINQ. In questo modo è possibile accedere a livello di codice al valore di ciascun campo modulo nel documento PDF.
 
-#### Q: Is it possible to modify the value of a form field and save the changes back to the PDF document?
+#### D: È possibile modificare il valore di un campo modulo e salvare le modifiche nel documento PDF?
 
-A: Yes, you can modify the value of a form field using Aspose.PDF for .NET and save the changes back to the PDF document. After updating the `Value` property of the form field, you can use the `pdfDocument.Save()` method to save the changes to the original PDF document.
+ R: Sì, puoi modificare il valore di un campo modulo utilizzando Aspose.PDF per .NET e salvare le modifiche nel documento PDF. Dopo aver aggiornato il`Value` proprietà del campo modulo, è possibile utilizzare il file`pdfDocument.Save()` metodo per salvare le modifiche al documento PDF originale.

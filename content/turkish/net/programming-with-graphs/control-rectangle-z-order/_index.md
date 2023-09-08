@@ -1,53 +1,53 @@
 ---
-title: Control Rectangle Z Order In PDF File
-linktitle: Control Rectangle Z Order In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to control the Z-order of rectangles in a PDF file using Aspose.PDF for .NET. 
+title: PDF Dosyasında Dikdörtgen Z Sırasını Kontrol Et
+linktitle: PDF Dosyasında Dikdörtgen Z Sırasını Kontrol Et
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak bir PDF dosyasındaki dikdörtgenlerin Z sırasını nasıl kontrol edeceğinizi öğrenin.
 type: docs
 weight: 40
 url: /tr/net/programming-with-graphs/control-rectangle-z-order/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to control the Z-order of rectangles using Aspose.PDF for .NET.
+Bu eğitimde, Aspose.PDF for .NET kullanarak dikdörtgenlerin Z sırasını kontrol etmek için aşağıdaki C# kaynak kodunu adım adım anlatacağız.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Başlamadan önce Aspose.PDF kütüphanesini kurduğunuzdan ve geliştirme ortamınızı kurduğunuzdan emin olun. Ayrıca temel C# programlama bilgisine sahip olmak.
 
-## Step 1: Document Directory Setup
+## Adım 1: Belge Dizini Kurulumu
 
-In the provided source code, you need to specify the directory where you want to save the resulting PDF file. Change the "dataDir" variable to the desired directory.
+Sağlanan kaynak kodunda, ortaya çıkan PDF dosyasını kaydetmek istediğiniz dizini belirtmeniz gerekir. "dataDir" değişkenini istediğiniz dizine değiştirin.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Instantiating a Document Object and Adding a Page
+## Adım 2: Bir Belge Nesnesinin Örneklenmesi ve Sayfa Ekleme
 
-We create an instance of the Document class and add a page to this document.
+Document sınıfının bir örneğini oluşturup bu belgeye bir sayfa ekliyoruz.
 
 ```csharp
 Document doc1 = new Document();
 Aspose.Pdf.Page page1 = doc1.Pages.Add();
 ```
 
-## Step 3: Setting up the page size
+## 3. Adım: Sayfa boyutunu ayarlama
 
-We set the PDF page size using the SetPageSize method.
+SetPageSize yöntemini kullanarak PDF sayfa boyutunu ayarlıyoruz.
 
 ```csharp
 page1.SetPageSize(375, 300);
 ```
 
-## Step 4: Setting Page Margins
+## Adım 4: Sayfa Kenar Boşluklarını Ayarlama
 
-We can configure the page margins using the properties of the PageInfo object.
+PageInfo nesnesinin özelliklerini kullanarak sayfa kenar boşluklarını yapılandırabiliriz.
 
 ```csharp
 page1.PageInfo.Margin.Left = 0;
 page1.PageInfo.Margin.Top = 0;
 ```
 
-## Step 5: Add Rectangles with Specified Z Order
+## Adım 5: Belirtilen Z Sırasıyla Dikdörtgenler Ekleyin
 
-We create and add rectangles to the page with different colors and specified Z orders.
+Sayfaya farklı renklerde ve belirtilen Z sıralarında dikdörtgenler oluşturup ekliyoruz.
 
 ```csharp
 AddRectangle(page1, 50, 40, 60, 40, Aspose.Pdf.Color.Red, 2);
@@ -55,75 +55,75 @@ AddRectangle(page1, 20, 20, 30, 30, Aspose.Pdf.Color.Blue, 1);
 AddRectangle(page1, 40, 40, 60, 30, Aspose.Pdf.Color.Green, 0);
 ```
 
-## Step 6: Saving the Resulting PDF File
+## Adım 6: Ortaya Çıkan PDF Dosyasını Kaydetme
 
-Finally, we save the resulting PDF file with the name "ControlRectangleZOrder_out.pdf" in the specified directory.
+Son olarak ortaya çıkan PDF dosyasını "ControlRectangleZOrder_out.pdf" ismiyle belirtilen dizine kaydediyoruz.
 
 ```csharp
 doc1.Save(dataDir);
 ```
-### Sample source code for Control Rectangle Z Order using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanılarak Dikdörtgen Z Düzeni Kontrolü için örnek kaynak kodu 
 
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Instantiate Document class object
+// Belge sınıfı nesnesini örnekle
 Document doc1 = new Document();
-/// Add page to pages collection of PDF file
+/// PDF dosyasının sayfa koleksiyonuna sayfa ekle
 Aspose.Pdf.Page page1 = doc1.Pages.Add();
-// Set size of PDF page
+// PDF sayfasının boyutunu ayarlayın
 page1.SetPageSize(375, 300);
-// Set left margin for page object as 0
+// Sayfa nesnesi için sol kenar boşluğunu 0 olarak ayarla
 page1.PageInfo.Margin.Left = 0;
-// Set top margin of page object as 0
+// Sayfa nesnesinin üst kenar boşluğunu 0 olarak ayarla
 page1.PageInfo.Margin.Top = 0;
-// Create a new rectangle with Color as Red, Z-Order as 0 and certain dimensions
+// Rengi Kırmızı, Z Sırası 0 ve belirli boyutlara sahip yeni bir dikdörtgen oluşturun
 AddRectangle(page1, 50, 40, 60, 40, Aspose.Pdf.Color.Red, 2);
-// Create a new rectangle with Color as Blue, Z-Order as 0 and certain dimensions
+// Rengi Mavi, Z Sırası 0 ve belirli boyutlara sahip yeni bir dikdörtgen oluşturun
 AddRectangle(page1, 20, 20, 30, 30, Aspose.Pdf.Color.Blue, 1);
-// Create a new rectangle with Color as Green, Z-Order as 0 and certain dimensions
+//Rengi Yeşil, Z Sırası 0 ve belirli boyutlara sahip yeni bir dikdörtgen oluşturun
 AddRectangle(page1, 40, 40, 60, 30, Aspose.Pdf.Color.Green, 0);
 dataDir = dataDir + "ControlRectangleZOrder_out.pdf";
-// Save resultant PDF file
+// Ortaya çıkan PDF dosyasını kaydedin
 doc1.Save(dataDir);
 
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we explained how to control the Z-order of rectangles using Aspose.PDF for .NET. You can now use this knowledge to arrange and layer rectangles in your PDF files with precision.
+Bu eğitimde Aspose.PDF for .NET kullanarak dikdörtgenlerin Z sırasının nasıl kontrol edileceğini açıkladık. Artık bu bilgiyi PDF dosyalarınızdaki dikdörtgenleri hassas bir şekilde düzenlemek ve katmanlamak için kullanabilirsiniz.
 
-### FAQ's control rectangle z order in PDF file
+### SSS'nin PDF dosyasındaki kontrol dikdörtgeni z sırası
 
-#### Q: What is the purpose of this tutorial?
+#### S: Bu eğitimin amacı nedir?
 
-A: This tutorial aims to guide you through the process of controlling the Z-order of rectangles using Aspose.PDF for .NET, allowing you to arrange and layer rectangles in your PDF files.
+C: Bu eğitim, Aspose.PDF for .NET'i kullanarak dikdörtgenlerin Z sırasını kontrol etme sürecinde size rehberlik etmeyi amaçlıyor ve PDF dosyalarınızda dikdörtgenleri düzenlemenize ve katmanlamanıza olanak tanıyor.
 
-#### Q: What prerequisites are required before starting?
+#### S: Başlamadan önce hangi önkoşullar gereklidir?
 
-A: Before you begin, ensure that you have installed the Aspose.PDF library and set up your development environment. Additionally, having a basic understanding of C# programming is recommended.
+C: Başlamadan önce Aspose.PDF kütüphanesini kurduğunuzdan ve geliştirme ortamınızı kurduğunuzdan emin olun. Ek olarak, C# programlama konusunda temel bir anlayışa sahip olmanız tavsiye edilir.
 
-#### Q: How do I specify the directory for saving the PDF file?
+#### S: PDF dosyasının kaydedileceği dizini nasıl belirlerim?
 
-A: In the provided source code, you can modify the "dataDir" variable to indicate the directory where you want to save the resulting PDF file.
+C: Sağlanan kaynak kodunda, elde edilen PDF dosyasını kaydetmek istediğiniz dizini belirtmek için "dataDir" değişkenini değiştirebilirsiniz.
 
-#### Q: What is the purpose of setting page size and margins?
+#### S: Sayfa boyutunu ve kenar boşluklarını ayarlamanın amacı nedir?
 
-A: Setting the page size and margins helps configure the layout of the PDF page and provides a canvas on which you can arrange the rectangles.
+C: Sayfa boyutunu ve kenar boşluklarını ayarlamak, PDF sayfasının düzenini yapılandırmaya yardımcı olur ve üzerinde dikdörtgenleri düzenleyebileceğiniz bir tuval sağlar.
 
-#### Q: How do I add rectangles with specified Z order?
+#### S: Belirtilen Z sırasına sahip dikdörtgenleri nasıl eklerim?
 
-A: You can create and add rectangles to the page using the `AddRectangle` method, specifying the position, dimensions, color, and Z order for each rectangle.
+ C: Sayfaya dikdörtgenler oluşturup ekleyebilirsiniz.`AddRectangle` Her dikdörtgenin konumunu, boyutlarını, rengini ve Z sırasını belirten yöntem.
 
-#### Q: What is Z-order, and why is it important?
+#### S: Z sırası nedir ve neden önemlidir?
 
-A: Z-order determines the stacking order of objects on a page. Objects with higher Z-order values are positioned on top of objects with lower Z-order values, affecting their visibility and layering.
+C: Z-düzeni, bir sayfadaki nesnelerin yığınlanma sırasını belirler. Daha yüksek Z-düzeni değerlerine sahip nesneler, daha düşük Z-düzeni değerlerine sahip nesnelerin üstüne konumlandırılır ve bu da onların görünürlüğünü ve katmanlanmasını etkiler.
 
-#### Q: Can I customize the colors and dimensions of the rectangles?
+#### S: Dikdörtgenlerin renklerini ve boyutlarını özelleştirebilir miyim?
 
-A: Yes, you can customize the colors, positions, and dimensions of the rectangles by modifying the parameters passed to the `AddRectangle` method.
+ C: Evet, dikdörtgenlerin renklerini, konumlarını ve boyutlarını, aktarılan parametreleri değiştirerek özelleştirebilirsiniz.`AddRectangle` yöntem.
 
-#### Q: How do I save the resulting PDF file after arranging the rectangles?
+#### S: Dikdörtgenleri düzenledikten sonra ortaya çıkan PDF dosyasını nasıl kaydedebilirim?
 
-A: After arranging the rectangles, you can save the resulting PDF file using the `doc1.Save(dataDir);` line in the provided source code.
+ C: Dikdörtgenleri düzenledikten sonra ortaya çıkan PDF dosyasını`doc1.Save(dataDir);` Sağlanan kaynak kodundaki satır.

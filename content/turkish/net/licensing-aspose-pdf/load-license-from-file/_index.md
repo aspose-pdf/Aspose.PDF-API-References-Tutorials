@@ -1,147 +1,147 @@
 ---
-title: Load License From File
-linktitle: Load License From File
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to load license from file using Aspose.PDF for .NET. Unlock additional features and use Aspose.PDF optimally.
+title: Lisansı Dosyadan Yükle
+linktitle: Lisansı Dosyadan Yükle
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak dosyadan lisans yüklemek için adım adım kılavuz. Ek özelliklerin kilidini açın ve Aspose.PDF'yi en iyi şekilde kullanın.
 type: docs
 weight: 20
 url: /tr/net/licensing-aspose-pdf/load-license-from-file/
 ---
-In this tutorial, we will provide you with a step-by-step guide on how to load a license from a file using Aspose.PDF for .NET. Aspose.PDF is a powerful library that allows you to create, manipulate and convert PDF documents programmatically. By uploading a license, you can unlock additional features offered by Aspose.PDF.
+Bu eğitimde size Aspose.PDF for .NET kullanarak bir dosyadan lisansın nasıl yükleneceği konusunda adım adım bir kılavuz sunacağız. Aspose.PDF, PDF belgelerini programlı olarak oluşturmanıza, değiştirmenize ve dönüştürmenize olanak tanıyan güçlü bir kütüphanedir. Bir lisans yükleyerek Aspose.PDF tarafından sunulan ek özelliklerin kilidini açabilirsiniz.
 
-## Prerequisites
+## Önkoşullar
 
-Before you begin, make sure you have the following prerequisites in place:
+Başlamadan önce aşağıdaki önkoşulların mevcut olduğundan emin olun:
 
-1. Visual Studio installed with .NET framework.
-2. The Aspose.PDF library for .NET.
+1. .NET framework ile yüklenen Visual Studio.
+2. .NET için Aspose.PDF kütüphanesi.
 
-## Step 1: Project Setup
+## Adım 1: Proje Kurulumu
 
-To get started, create a new project in Visual Studio and add a reference to the Aspose.PDF for .NET library. You can download the library from Aspose official website and install it on your machine.
+Başlamak için Visual Studio'da yeni bir proje oluşturun ve Aspose.PDF for .NET kitaplığına bir referans ekleyin. Kütüphaneyi Aspose resmi web sitesinden indirebilir ve makinenize kurabilirsiniz.
 
-## Step 2: Import the necessary namespaces
+## 2. Adım: Gerekli ad alanlarını içe aktarın
 
-In your C# code file, import the namespaces required to access the classes and methods provided by Aspose.PDF:
+Aspose.PDF tarafından sağlanan sınıflara ve yöntemlere erişmek için gereken ad alanlarını C# kod dosyanıza aktarın:
 
 ```csharp
 using System;
 using Aspose.Pdf;
 ```
 
-## Step 3: Defining the document directory
+## Adım 3: Belge dizinini tanımlama
 
-Before uploading the license, you must specify the path to the documents directory where your license file is located. For example :
+Lisansı yüklemeden önce lisans dosyanızın bulunduğu belgeler dizininin yolunu belirtmelisiniz. Örneğin :
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Be sure to replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the documents directory on your machine.
+ Değiştirdiğinizden emin olun`"YOUR DOCUMENT DIRECTORY"` makinenizdeki belgeler dizininin gerçek yolunu içerir.
 
-## Step 4: License Object Initialization
+## Adım 4: Lisans Nesnesinin Başlatılması
 
-After setting the document directory, you need to initialize the license object of Aspose.PDF. Use the following line of code to initialize the license object:
+Belge dizinini ayarladıktan sonra Aspose.PDF'in lisans nesnesini başlatmanız gerekir. Lisans nesnesini başlatmak için aşağıdaki kod satırını kullanın:
 
 ```csharp
 Aspose.Pdf.License license = new Aspose.Pdf.License();
 ```
 
-## Step 5: Loading the license from a file
+## Adım 5: Lisansı bir dosyadan yükleme
 
-Once the license object is initialized, you can load the license from a file. Use the following line of code to load the license:
+Lisans nesnesi başlatıldığında lisansı bir dosyadan yükleyebilirsiniz. Lisansı yüklemek için aşağıdaki kod satırını kullanın:
 
 ```csharp
 license.SetLicense("PATH_TO_LICENSE_FILE");
 ```
 
-Be sure to replace `"PATH_TO_LICENSE_FILE"` with the actual path to the license file on your machine.
+ Değiştirdiğinizden emin olun`"PATH_TO_LICENSE_FILE"` makinenizdeki lisans dosyasının gerçek yolunu içerir.
 
-## Step 6: License Upload Confirmation
+## Adım 6: Lisans Yükleme Onayı
 
-After loading the license, you can display a confirmation message to check if the license has been loaded successfully. Use the following line of code to display a message in the console:
+Lisansı yükledikten sonra lisansın başarıyla yüklenip yüklenmediğini kontrol etmek için bir onay mesajı görüntüleyebilirsiniz. Konsolda bir mesaj görüntülemek için aşağıdaki kod satırını kullanın:
 
 ```csharp
 Console.WriteLine("License loaded successfully.");
 ```
 
-### Sample source code for Load License From File using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak Lisansı Dosyadan Yüklemek için örnek kaynak kodu
  
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Initialize license object
+// Lisans nesnesini başlat
 Aspose.Pdf.License license = new Aspose.Pdf.License();
-// Set license
+//Lisansı ayarla
 license.SetLicense("PATH_TO_LICENSE_FILE");
 Console.WriteLine("License set successfully.");
 
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, you learned how to load a license from a file using Aspose.PDF for .NET. By following the described steps, you will be able to unlock the additional features offered by Aspose.PDF and use the library optimally in your C# projects.
+Bu eğitimde Aspose.PDF for .NET kullanarak bir dosyadan nasıl lisans yükleyeceğinizi öğrendiniz. Açıklanan adımları takip ederek Aspose.PDF tarafından sunulan ek özelliklerin kilidini açabilecek ve kütüphaneyi C# projelerinizde en iyi şekilde kullanabileceksiniz.
 
-### FAQ's for load license from file
+### Lisansı dosyadan yüklemek için SSS
 
-#### Q: What is the purpose of loading a license in Aspose.PDF?
+#### S: Aspose.PDF'e lisans yüklemenin amacı nedir?
 
-A: Loading a license in Aspose.PDF unlocks additional features and functionalities of the library, enabling you to fully utilize its capabilities for creating, manipulating, and converting PDF documents programmatically.
+C: Aspose.PDF'e bir lisans yüklemek, kütüphanenin ek özelliklerinin ve işlevlerinin kilidini açarak PDF belgelerini programlı olarak oluşturma, değiştirme ve dönüştürme yeteneklerini tam olarak kullanmanızı sağlar.
 
-#### Q: How do I import the necessary namespaces for Aspose.PDF?
+#### S: Aspose.PDF için gerekli ad alanlarını nasıl içe aktarabilirim?
 
-A: In your C# code file, use the `using` directive to import the required namespaces for accessing the classes and methods provided by Aspose.PDF:
+ C: C# kod dosyanızda şunu kullanın:`using` Aspose.PDF tarafından sağlanan sınıflara ve yöntemlere erişim için gerekli ad alanlarını içe aktarma yönergesi:
 ```csharp
 using System;
 using Aspose.Pdf;
 ```
 
-#### Q: How do I define the document directory for the license file?
+#### S: Lisans dosyası için belge dizinini nasıl tanımlarım?
 
-A: Before uploading the license, you need to specify the path to the documents directory where your license file is located. Replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the documents directory on your machine.
+C: Lisansı yüklemeden önce lisans dosyanızın bulunduğu belgeler dizininin yolunu belirtmeniz gerekir. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` makinenizdeki belgeler dizininin gerçek yolunu içerir.
 
-#### Q: How do I initialize the license object?
+#### S: Lisans nesnesini nasıl başlatabilirim?
 
-A: After setting the document directory, initialize the license object of Aspose.PDF using the following line of code:
+C: Belge dizinini ayarladıktan sonra aşağıdaki kod satırını kullanarak Aspose.PDF'in lisans nesnesini başlatın:
 ```csharp
 Aspose.Pdf.License license = new Aspose.Pdf.License();
 ```
 
-#### Q: How do I load the license from a file?
+#### S: Lisansı bir dosyadan nasıl yüklerim?
 
-A: Load the license from a file using the `SetLicense` method of the license object. Replace `"PATH_TO_LICENSE_FILE"` with the actual path to the license file on your machine:
+ C: Lisansı kullanarak bir dosyadan yükleyin.`SetLicense` lisans nesnesinin yöntemi. Yer değiştirmek`"PATH_TO_LICENSE_FILE"` makinenizdeki lisans dosyasının gerçek yolu ile:
 ```csharp
 license.SetLicense("PATH_TO_LICENSE_FILE");
 ```
 
-#### Q: How do I confirm that the license has been loaded successfully?
+#### S: Lisansın başarıyla yüklendiğini nasıl doğrularım?
 
-A: After loading the license, you can display a confirmation message to check if the license has been loaded successfully. Use the following line of code to display a message in the console:
+C: Lisansı yükledikten sonra lisansın başarıyla yüklenip yüklenmediğini kontrol etmek için bir onay mesajı görüntüleyebilirsiniz. Konsolda bir mesaj görüntülemek için aşağıdaki kod satırını kullanın:
 ```csharp
 Console.WriteLine("License loaded successfully.");
 ```
 
-#### Q: Can I load the license dynamically at runtime?
+#### S: Lisansı çalışma zamanında dinamik olarak yükleyebilir miyim?
 
-A: Yes, you can load the license dynamically at runtime by following the same steps provided in the tutorial. Ensure that the license file path is correctly specified.
+C: Evet, eğitimde sağlanan adımların aynısını izleyerek lisansı çalışma zamanında dinamik olarak yükleyebilirsiniz. Lisans dosyası yolunun doğru şekilde belirtildiğinden emin olun.
 
-#### Q: Is the license loaded globally for the entire application?
+#### S: Lisans uygulamanın tamamı için genel olarak mı yüklendi?
 
-A: Yes, once the license is loaded using the `SetLicense` method, it remains active for the entire application domain and enables the additional features for all instances of Aspose.PDF objects.
+ C: Evet, lisans kullanılarak yüklendikten sonra`SetLicense` yöntemiyle tüm uygulama alanı için aktif kalır ve Aspose.PDF nesnelerinin tüm örnekleri için ek özellikleri etkinleştirir.
 
-#### Q: Can I use a trial version of Aspose.PDF before loading a license?
+#### S: Lisans yüklemeden önce Aspose.PDF'in deneme sürümünü kullanabilir miyim?
 
-A: Yes, you can use the trial version of Aspose.PDF to evaluate its features. However, to unlock the full potential of the library, you need to load a valid license.
+C: Evet, özelliklerini değerlendirmek için Aspose.PDF'in deneme sürümünü kullanabilirsiniz. Ancak kütüphanenin tüm potansiyelini açığa çıkarmak için geçerli bir lisans yüklemeniz gerekir.
 
-#### Q: Where can I obtain a valid license for Aspose.PDF?
+#### S: Aspose.PDF için geçerli bir lisansı nereden edinebilirim?
 
-A: You can obtain a valid license for Aspose.PDF by purchasing it from the [Aspose.PDF Purchase](https://purchase.aspose.com/pricing/pdf/net) page.
+ C: Aspose.PDF için geçerli bir lisansı şu adresten satın alabilirsiniz:[Aspose.PDF Satın Al](https://purchase.aspose.com/pricing/pdf/net) sayfa.
 
-#### Q: Can I reuse the same license for multiple applications?
+#### S: Aynı lisansı birden fazla uygulama için yeniden kullanabilir miyim?
 
-A: The license is generally valid for a single application or domain. If you have multiple applications, you may need separate licenses for each application.
+C: Lisans genellikle tek bir uygulama veya alan adı için geçerlidir. Birden fazla uygulamanız varsa her uygulama için ayrı lisanslara ihtiyacınız olabilir.
 
-#### Q: How do I learn more about licensing in Aspose.PDF?
+#### S: Aspose.PDF'de lisanslama hakkında nasıl daha fazla bilgi edinebilirim?
 
-A: For more information about licensing, pricing, and related details, visit the [Aspose.PDF Licensing](https://purchase.aspose.com/pricing/pdf/net) page.
+C: Lisanslama, fiyatlandırma ve ilgili ayrıntılar hakkında daha fazla bilgi için şu adresi ziyaret edin:[Aspose.PDF Lisanslama](https://purchase.aspose.com/pricing/pdf/net) sayfa.

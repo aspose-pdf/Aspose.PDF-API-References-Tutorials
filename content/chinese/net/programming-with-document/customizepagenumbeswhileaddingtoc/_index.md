@@ -1,17 +1,17 @@
 ---
-title: Customize Page Numbes While Adding TOC
-linktitle: Customize Page Numbes While Adding TOC
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to customize page numbers while adding a table of contents (TOC) using Aspose.PDF for .NET with this step-by-step guide and code example.
+title: 添加目录时自定义页码
+linktitle: 添加目录时自定义页码
+second_title: Aspose.PDF for .NET API 参考
+description: 通过此分步指南和代码示例，了解如何使用 Aspose.PDF for .NET 添加目录 (TOC) 时自定义页码。
 type: docs
 weight: 100
 url: /zh/net/programming-with-document/customizepagenumbeswhileaddingtoc/
 ---
-In this tutoria, we will explore how to customize page numbers while adding a table of contents (TOC) using Aspose.PDF for .NET. We will provide step-by-step guidance, along with a code example, to help you achieve this.
+在本教程中，我们将探讨如何使用 Aspose.PDF for .NET 添加目录 (TOC) 时自定义页码。我们将提供分步指导以及代码示例，以帮助您实现这一目标。
 
-## Step 1: Loading an existing PDF file
+## 第 1 步：加载现有 PDF 文件
 
-First, we need to load an existing PDF file. For this tutorial, we will use the file "42824.pdf" located in the "YOUR DOCUMENT DIRECTORY" directory. Replace this directory path with the actual path to your document directory.
+首先，我们需要加载现有的 PDF 文件。在本教程中，我们将使用位于“您的文档目录”目录中的文件“42824.pdf”。将此目录路径替换为文档目录的实际路径。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -20,17 +20,17 @@ string outFile = dataDir + "42824_out.pdf";
 Document doc = new Document(inFile);
 ```
 
-## Step 2: Adding a TOC page
+## 第 2 步：添加 TOC 页面
 
-Next, we need to add a new page at the beginning of the document to serve as the TOC page. We can achieve this by using the `Insert()` method of the `Pages` collection of the `Document` object.
+接下来，我们需要在文档的开头添加一个新页面作为目录页面。我们可以通过使用来实现这一点`Insert()`的方法`Pages`的集合`Document`目的。
 
 ```csharp
 Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
 ```
 
-## Step 3: Creating a TOC object
+## 第 3 步：创建 TOC 对象
 
-To create a TOC object, we first need to create a `TocInfo` object and set its properties. In this tutorial, we will set the title of the TOC to "Table Of Contents" and the page number prefix to "P".
+要创建 TOC 对象，我们首先需要创建一个`TocInfo`对象并设置其属性。在本教程中，我们将目录标题设置为“目录”，页码前缀设置为“P”。
 
 ```csharp
 TocInfo tocInfo = new TocInfo();
@@ -42,99 +42,99 @@ tocInfo.PageNumbersPrefix = "P";
 tocPage.TocInfo = tocInfo;
 ```
 
-## Step 4: Creating TOC entries
+## 第 4 步：创建目录条目
 
-To create TOC entries, we need to loop through all the pages of the document, except for the TOC page, and create a heading object for each page. We can then add the heading object to the TOC page and specify its destination page.
+要创建目录条目，我们需要循环遍历文档的所有页面（目录页面除外），并为每个页面创建一个标题对象。然后，我们可以将标题对象添加到目录页面并指定其目标页面。
 
 ```csharp
 for (int i = 1; i < doc.Pages.Count; i++)
 {
-    // Create Heading object
+    //创建标题对象
     Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
     TextSegment segment2 = new TextSegment();
     heading2.TocPage = tocPage;
     heading2.Segments.Add(segment2);
-    // Specify the destination page for heading object
+    //指定标题对象的目标页面
     heading2.DestinationPage = doc.Pages[i + 1];
-    // Destination page
+    //目的地页面
     heading2.Top = doc.Pages[i + 1].Rect.Height;
-    // Destination coordinate
+    //目的地坐标
     segment2.Text = "Page " + i.ToString();
-    // Add heading to page containing TOC
+    //将标题添加到包含目录的页面
     tocPage.Paragraphs.Add(heading2);
 }
 ```
 
-## Step 5: Saving the updated document
+## 步骤 5：保存更新的文档
 
-Finally, we need to save the updated document to a new file. We can achieve this by using the `Save()` method of the `Document` object.
+最后，我们需要将更新后的文档保存到新文件中。我们可以通过使用来实现这一点`Save()`的方法`Document`目的。
 
 ```csharp
 doc.Save(outFile);
 ```
 
-### Example source code for customizing page numbes while adding TOC using Aspose.PDF for .NET
+### 使用 Aspose.PDF for .NET 添加目录时自定义页码的示例源代码
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string inFile = dataDir + "42824.pdf";
 string outFile = dataDir + "42824_out.pdf";
-// Load an existing PDF files
+//加载现有的 PDF 文件
 Document doc = new Document(inFile);
-// Get access to first page of PDF file
+//访问 PDF 文件的第一页
 Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
-// Create object to represent TOC information
+//创建对象来表示 TOC 信息
 TocInfo tocInfo = new TocInfo();
 TextFragment title = new TextFragment("Table Of Contents");
 title.TextState.FontSize = 20;
 title.TextState.FontStyle = FontStyles.Bold;
-// Set the title for TOC
+//设置目录标题
 tocInfo.Title = title;
 tocInfo.PageNumbersPrefix = "P";
 tocPage.TocInfo = tocInfo;
 for (int i = 1; i<doc.Pages.Count; i++)
 {
-	// Create Heading object
+	//创建标题对象
 	Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
 	TextSegment segment2 = new TextSegment();
 	heading2.TocPage = tocPage;
 	heading2.Segments.Add(segment2);
-	// Specify the destination page for heading object
+	//指定标题对象的目标页面
 	heading2.DestinationPage = doc.Pages[i + 1];
-	// Destination page
+	//目的地页面
 	heading2.Top = doc.Pages[i + 1].Rect.Height;
-	// Destination coordinate
+	//目的地坐标
 	segment2.Text = "Page " + i.ToString();
-	// Add heading to page containing TOC
+	//将标题添加到包含目录的页面
 	tocPage.Paragraphs.Add(heading2);
 }
 
-// Save the updated document
+//保存更新后的文档
 doc.Save(outFile);
 ```
 
-## Conclusion
+## 结论
 
-In this tutorial, we have provided step-by-step guidance on how to customize page numbers while adding a TOC using Aspose.PDF for .NET. We have also provided a code example that you can use as a reference when implementing this feature in your
+在本教程中，我们提供了有关如何使用 Aspose.PDF for .NET 添加目录时自定义页码的分步指南。我们还提供了一个代码示例，您可以在自己的系统中实现此功能时作为参考。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What is a table of contents (TOC) in a PDF document?
+#### 问：什么是 PDF 文档中的目录 (TOC)？
 
-A: A table of contents (TOC) in a PDF document is a navigational aid that provides an organized list of document sections or chapters along with their corresponding page numbers. It allows readers to quickly navigate to specific sections within the document.
+答：PDF 文档中的目录 (TOC) 是一种导航辅助工具，它提供了文档部分或章节的组织列表及其相应的页码。它允许读者快速导航到文档中的特定部分。
 
-#### Q:Why would I want to customize page numbers in a TOC?
+#### 问：为什么我要自定义目录中的页码？
 
-A: Customizing page numbers in a TOC can be useful when you want to use a specific page numbering format or include additional information along with the page numbers. It allows you to create a more personalized and informative table of contents.
+答：当您想要使用特定的页码格式或在页码中包含其他信息时，自定义目录中的页码非常有用。它允许您创建更加个性化和信息丰富的目录。
 
-#### Q: Can I include hyperlinks in the TOC to link to specific sections or pages within the PDF document?
+#### 问：我可以在目录中包含超链接来链接到 PDF 文档中的特定部分或页面吗？
 
-A: Yes, Aspose.PDF for .NET allows you to create hyperlinks in the TOC that link to specific sections or pages within the PDF document. This enhances the interactivity and navigation of the PDF document.
+答：是的，Aspose.PDF for .NET 允许您在目录中创建超链接，链接到 PDF 文档中的特定部分或页面。这增强了 PDF 文档的交互性和导航性。
 
-#### Q: Is Aspose.PDF for .NET compatible with PDF/A standards?
+#### 问：Aspose.PDF for .NET 与 PDF/A 标准兼容吗？
 
-A: Yes, Aspose.PDF for .NET supports PDF/A standards, including PDF/A-1, PDF/A-2, and PDF/A-3. It allows you to create PDF documents that comply with archiving and long-term preservation requirements.
+答：是的，Aspose.PDF for .NET 支持 PDF/A 标准，包括 PDF/A-1、PDF/A-2 和 PDF/A-3。它允许您创建符合存档和长期保存要求的 PDF 文档。
 
-#### Q: Can I add more formatting to the TOC entries, such as font styles or colors?
+#### 问：我可以为目录条目添加更多格式吗，例如字体样式或颜色？
 
-A: Yes, you can add additional formatting to the TOC entries, such as font styles, colors, and font sizes, using Aspose.PDF for .NET. This allows you to customize the appearance of the TOC as per your requirements.
+答：是的，您可以使用 Aspose.PDF for .NET 向 TOC 条目添加其他格式，例如字体样式、颜色和字体大小。这允许您根据您的要求自定义目录的外观。

@@ -1,165 +1,165 @@
 ---
-title: Fill Stroke Text In PDF File
-linktitle: Fill Stroke Text In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to easily fill and outline text in PDF file with Aspose.PDF for .NET.
+title: PDF Dosyasındaki Kontur Metnini Doldur
+linktitle: PDF Dosyasındaki Kontur Metnini Doldur
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile PDF dosyasındaki metni nasıl kolayca doldurup çerçeveleyeceğinizi öğrenin.
 type: docs
 weight: 90
 url: /tr/net/programming-with-stamps-and-watermarks/fill-stroke-text/
 ---
-In this tutorial, we will take you step by step on how to fill and outline text in PDF file using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to apply fill and outline colors to text in the PDF file.
+Bu eğitimde, Aspose.PDF for .NET'i kullanarak PDF dosyasındaki metni nasıl doldurup çerçeveleyeceğinizi adım adım anlatacağız. PDF dosyasındaki metne dolgu ve anahat renklerini uygulamak için sağlanan C# kaynak kodunu nasıl kullanacağınızı size göstereceğiz.
 
-## Step 1: Setting up the environment
+## 1. Adım: Ortamı ayarlama
 
-Before you begin, make sure you have the following:
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Kurulu bir .NET geliştirme ortamı.
+- .NET için Aspose.PDF kütüphanesini indirip projenizde referans olarak kullanabilirsiniz.
 
-## Step 2: Creating the TextState Object
+## Adım 2: TextState Nesnesini Oluşturma
 
-The first step is to create a TextState object to pass the advanced properties. Here's how:
+İlk adım, gelişmiş özellikleri iletmek için bir TextState nesnesi oluşturmaktır. İşte nasıl:
 
 ```csharp
-// Create TextState object to transfer advanced properties
+// Gelişmiş özellikleri aktarmak için TextState nesnesi oluşturun
 TextState ts = new TextState();
 
-// Set outline color
+// Anahat rengini ayarla
 ts.StrokingColor = Color.Gray;
 
-// Define the text rendering mode
+// Metin oluşturma modunu tanımlayın
 ts.RenderingMode = TextRenderingMode.StrokeText;
 ```
 
-The above code creates a new TextState object and sets the outline color as well as how the text is rendered.
+Yukarıdaki kod, yeni bir TextState nesnesi oluşturur ve anahat rengini ve metnin nasıl oluşturulacağını ayarlar.
 
-## Step 3: Loading the PDF document
+## 3. Adım: PDF belgesini yükleme
 
-Now that the TextState object is ready, we can load the PDF document where we want to apply the text fill and outline. Here's how:
+Artık TextState nesnesi hazır olduğuna göre, PDF belgesini metin dolgusunu ve ana hatlarını uygulamak istediğimiz yere yükleyebiliriz. İşte nasıl:
 
 ```csharp
-// Load the PDF document as input
+// PDF belgesini giriş olarak yükleyin
 Facades.PdfFileStamp fileStamp = new Facades.PdfFileStamp(new Aspose.Pdf.Document(dataDir + "input.pdf"));
 ```
 
-The code above loads the existing PDF document using the PdfFileStamp class from the Aspose.PDF.Facades library.
+Yukarıdaki kod, Aspose.PDF.Facades kütüphanesindeki PdfFileStamp sınıfını kullanarak mevcut PDF belgesini yükler.
 
-## Step 4: Add Fill and Stroke to Text
+## Adım 4: Metne Dolgu ve Kontur Ekleme
 
-Now that the PDF document is loaded, we can add the fill and outline to the text. Here's how:
+Artık PDF belgesi yüklendiğine göre metne dolgu ve anahat ekleyebiliriz. İşte nasıl:
 
 ```csharp
-// Create a stamp (Stamp) with the defined text and properties
+// Tanımlanmış metin ve özelliklere sahip bir damga (Damga) oluşturun
 Aspose.Pdf.Facades.Stamp stamp = new Aspose.Pdf.Facades.Stamp();
 stamp.BindLogo(new Facades.FormattedText("PAID IN FULL", System.Drawing.Color.Gray, "Arial", Facades.EncodingType.Winansi, true, 78));
 
-// Bind the TextState object
+// TextState nesnesini bağlayın
 stamp.BindTextState(ts);
 
-// Set origin X, Y
+// Başlangıç noktasını ayarla X, Y
 stamp.SetOrigin(100, 100);
 stamp. Opacity = 5;
 stamp.BlendingSpace = Facades.BlendingColorSpace.DeviceRGB;
 stamp.Rotation = 45.0F;
 stamp. IsBackground = false;
 
-// Add the stamp to the document
+// Damgayı belgeye ekleme
 fileStamp.AddStamp(stamp);
 ```
 
-The above code creates a Stamp with the specified text and defined Fill and Stroke properties.
+Yukarıdaki kod, belirtilen metin ve tanımlanmış Dolgu ve Kontur özelliklerine sahip bir Damga oluşturur.
 
-## Step 5: Save the output document
+## 5. Adım: Çıktı belgesini kaydedin
 
-Once the text stamp is added, we can save the modified PDF document. Here's how:
+Metin damgası eklendikten sonra değiştirilen PDF belgesini kaydedebiliriz. İşte nasıl:
 
 ```csharp
-// Save the modified document
+// Değiştirilen belgeyi kaydet
 fileStamp.Save(dataDir + "output_out.pdf");
 fileStamp.Close();
 ```
 
-The above code saves the edited PDF document to the specified directory.
+Yukarıdaki kod, düzenlenen PDF belgesini belirtilen dizine kaydeder.
 
-### Sample source code for Fill Stroke Text using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanılarak Kontur Metni Dolgusu için örnek kaynak kodu 
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create TextState object to transfer advanced properties
+// Gelişmiş özellikleri aktarmak için TextState nesnesi oluşturun
 TextState ts = new TextState();
 
-// Set color for stroke
+// Kontur için rengi ayarla
 ts.StrokingColor = Color.Gray;
 
-// Set text rendering mode
+// Metin oluşturma modunu ayarlama
 ts.RenderingMode = TextRenderingMode.StrokeText;
 
-// Load an input PDF document
+// Giriş PDF belgesi yükleme
 Facades.PdfFileStamp fileStamp = new Facades.PdfFileStamp(new Aspose.Pdf.Document(dataDir + "input.pdf"));
 Aspose.Pdf.Facades.Stamp stamp = new Aspose.Pdf.Facades.Stamp();
 stamp.BindLogo(new Facades.FormattedText("PAID IN FULL", System.Drawing.Color.Gray, "Arial", Facades.EncodingType.Winansi, true, 78));
 
-// Bind TextState
+// TextState'i Bağla
 stamp.BindTextState(ts);
 
-// Set X,Y origin
+// X,Y kökenini ayarla
 stamp.SetOrigin(100, 100);
 stamp.Opacity = 5;
 stamp.BlendingSpace = Facades.BlendingColorSpace.DeviceRGB;
 stamp.Rotation = 45.0F;
 stamp.IsBackground = false;
 
-// Add Stamp
+// Damga Ekle
 fileStamp.AddStamp(stamp);
 fileStamp.Save(dataDir + "ouput_out.pdf");
 fileStamp.Close();
 
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulation ! You have learned how to fill and outline text in a PDF document using Aspose.PDF for .NET. Now you can apply this knowledge to customize fill and outline colors in your PDF documents.
+Tebrikler! Aspose.PDF for .NET'i kullanarak bir PDF belgesindeki metni nasıl doldurup çerçeveleyeceğinizi öğrendiniz. Artık bu bilgiyi PDF belgelerinizdeki dolgu ve anahat renklerini özelleştirmek için uygulayabilirsiniz.
 
-### FAQ's for fill stroke text in PDF file
+### PDF dosyasındaki dolgu kontur metni hakkında SSS
 
-#### Q: What does it mean to fill and outline text in a PDF document, and when might I need to do so?
+#### S: Bir PDF belgesindeki metni doldurmak ve ana hatlarını çizmek ne anlama gelir ve bunu ne zaman yapmam gerekebilir?
 
-A: Filling and outlining text in a PDF document involves applying colors to the interior of the text characters (fill) and to the borders around the text (outline). This can be used to enhance the visual appearance of the text, create emphasis, or highlight specific content within the PDF.
+C: Bir PDF belgesindeki metnin doldurulması ve ana hatlarının belirlenmesi, metin karakterlerinin iç kısmına (dolgu) ve metnin etrafındaki kenarlıklara (anahat) renk uygulanmasını içerir. Bu, metnin görsel görünümünü geliştirmek, vurgu oluşturmak veya PDF'deki belirli içeriği vurgulamak için kullanılabilir.
 
-#### Q: How does the provided C# source code accomplish filling and outlining text in a PDF file?
+#### S: Sağlanan C# kaynak kodu, bir PDF dosyasındaki metni doldurmayı ve ana hatlarını çizmeyi nasıl başarır?
 
-A: The provided source code demonstrates how to create a `TextState` object to define advanced text properties, such as outline color and rendering mode. It then uses Aspose.PDF.Facades to load an existing PDF document, create a stamp containing the text with specified fill and stroke properties, and add the stamp to the document.
+ C: Sağlanan kaynak kodu nasıl oluşturulacağını gösterir.`TextState` Anahat rengi ve oluşturma modu gibi gelişmiş metin özelliklerini tanımlamak için nesne. Daha sonra mevcut bir PDF belgesini yüklemek, belirtilen dolgu ve kontur özelliklerine sahip metni içeren bir damga oluşturmak ve damgayı belgeye eklemek için Aspose.PDF.Facades'i kullanır.
 
-#### Q: What is the purpose of the `TextState` object in the code?
+####  Soru: Programın amacı nedir?`TextState` object in the code?
 
-A: The `TextState` object is used to define advanced text properties, including the color of the text outline (stroke) and the rendering mode. It allows you to customize how the text appears in terms of stroke and fill.
+ C:`TextState`nesne, metin anahattının rengi (kontur) ve oluşturma modu dahil olmak üzere gelişmiş metin özelliklerini tanımlamak için kullanılır. Metnin kontur ve dolgu açısından nasıl görüneceğini özelleştirmenize olanak tanır.
 
-#### Q: Can I apply different fill and outline colors to different parts of the same text?
+#### S: Aynı metnin farklı bölümlerine farklı dolgu ve anahat renkleri uygulayabilir miyim?
 
-A: Yes, you can modify the code to create different `TextState` objects with distinct fill and outline colors and apply them to specific parts of the text using separate `Stamp` objects.
+ C: Evet, farklı oluşturmak için kodu değiştirebilirsiniz.`TextState` farklı dolgu ve anahat renklerine sahip nesneler oluşturabilir ve bunları ayrı ayrı kullanarak metnin belirli bölümlerine uygulayabilirsiniz.`Stamp` nesneler.
 
-#### Q: Can I apply fill and outline colors to text that is already present in the PDF document?
+#### S: PDF belgesinde zaten mevcut olan metne dolgu ve anahat renklerini uygulayabilir miyim?
 
-A: Yes, you can use similar principles to apply fill and outline colors to existing text in the PDF document by selecting the appropriate text objects and adding them as stamps with the desired `TextState` properties.
+ C: Evet, uygun metin nesnelerini seçip bunları istediğiniz şekilde damga olarak ekleyerek PDF belgesindeki mevcut metne dolgu ve anahat renklerini uygulamak için benzer ilkeleri kullanabilirsiniz.`TextState` özellikler.
 
-#### Q: How can I adjust the opacity and blending of the filled and outlined text?
+#### S: Doldurulmuş ve çerçeveleri çizilen metnin opaklığını ve karışımını nasıl ayarlayabilirim?
 
-A: The provided code allows you to set the opacity and blending properties of the stamp using the `Opacity` and `BlendingSpace` properties, respectively. You can adjust these values to achieve the desired visual effect.
+ C: Sağlanan kod, damganın opaklığını ve karışım özelliklerini ayarlamanıza olanak tanır.`Opacity` Ve`BlendingSpace`sırasıyla özellikler. İstediğiniz görsel efekti elde etmek için bu değerleri ayarlayabilirsiniz.
 
-#### Q: How can I apply different fill and outline colors to multiple stamps within the same PDF document?
+#### S: Aynı PDF belgesindeki birden fazla damgaya farklı dolgu ve anahat renklerini nasıl uygulayabilirim?
 
-A: You can create multiple `TextState` objects with different fill and outline colors, and then create separate `Stamp` objects for each set of text with distinct colors. Add these stamps to the same PDF document using the `PdfFileStamp` class.
+ C: Birden fazla oluşturabilirsiniz`TextState` farklı dolgu ve anahat renklerine sahip nesneler oluşturun ve ardından ayrı ayrı oluşturun`Stamp` her metin kümesi için farklı renklere sahip nesneler. Bu damgaları aynı PDF belgesine şunu kullanarak ekleyin:`PdfFileStamp` sınıf.
 
-#### Q: Can I use fonts other than Arial for the outlined and filled text?
+#### S: Özetlenen ve doldurulmuş metin için Arial dışında yazı tipleri kullanabilir miyim?
 
-A: Yes, you can change the font by modifying the font name parameter in the `FormattedText` constructor when creating the stamp. You can use any font available on your system.
+ C: Evet, yazı tipi adı parametresini değiştirerek yazı tipini değiştirebilirsiniz.`FormattedText` damgayı oluştururken yapıcı. Sisteminizde bulunan herhangi bir yazı tipini kullanabilirsiniz.
 
-#### Q: How can I modify the rotation angle of the outlined and filled text?
+#### S: Ana hatları çizilen ve doldurulan metnin dönüş açısını nasıl değiştirebilirim?
 
-A: The provided code allows you to set the rotation angle of the stamp using the `Rotation` property. You can adjust this property to specify the desired rotation angle for the text.
+ C: Sağlanan kod, damganın dönüş açısını kullanarak ayarlamanıza olanak tanır.`Rotation` mülk. Metin için istenen dönüş açısını belirtmek için bu özelliği ayarlayabilirsiniz.
 
-#### Q: How can I control the position and size of the outlined and filled text on the page?
+#### S: Sayfadaki özetlenen ve doldurulmuş metnin konumunu ve boyutunu nasıl kontrol edebilirim?
 
-A: You can use the `SetOrigin` method of the `Stamp` object to set the X and Y coordinates of the stamp's position on the page. Additionally, you can adjust the font size in the `FormattedText` constructor to control the size of the text.
+C: Kullanabilirsiniz`SetOrigin` yöntemi`Stamp` Damganın sayfadaki konumunun X ve Y koordinatlarını ayarlamak için nesne. Ayrıca yazı tipi boyutunu da ayarlayabilirsiniz.`FormattedText` Metnin boyutunu kontrol etmek için yapıcı.

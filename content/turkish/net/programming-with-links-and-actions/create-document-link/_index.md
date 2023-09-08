@@ -1,17 +1,17 @@
 ---
-title: Create Document Link
-linktitle: Create Document Link
-second_title: Aspose.PDF for .NET API Reference
-description: Easily create links to other PDF documents with Aspose.PDF for .NET.
+title: Belge Bağlantısı Oluştur
+linktitle: Belge Bağlantısı Oluştur
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile kolayca diğer PDF belgelerine bağlantılar oluşturun.
 type: docs
 weight: 30
 url: /tr/net/programming-with-links-and-actions/create-document-link/
 ---
-Linking to another document in a PDF file allows you to create clickable links that redirect users to other PDF documents. With Aspose.PDF for .NET, you can easily create such links by following the following source code:
+Bir PDF dosyasındaki başka bir belgeye bağlantı vermek, kullanıcıları diğer PDF belgelerine yönlendiren tıklanabilir bağlantılar oluşturmanıza olanak tanır. Aspose.PDF for .NET ile aşağıdaki kaynak kodunu izleyerek bu tür bağlantıları kolayca oluşturabilirsiniz:
 
-## Step 1: Import required libraries
+## 1. Adım: Gerekli kitaplıkları içe aktarın
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Başlamadan önce C# projeniz için gerekli kütüphaneleri içe aktarmanız gerekir. Gerekli ithalat direktifi aşağıdadır:
 
 ```csharp
 using Aspose.Pdf;
@@ -19,25 +19,25 @@ using Aspose.Pdf.Annotations;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-## Step 2: Set path to documents folder
+## 2. Adım: Belgeler klasörünün yolunu ayarlayın
 
-In this step, you need to specify the path to the folder containing the PDF file to which you want to add a link to another document. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+Bu adımda, başka bir belgeye bağlantı eklemek istediğiniz PDF dosyasının bulunduğu klasörün yolunu belirtmeniz gerekir. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"`belgeler klasörünüzün gerçek yolunu içeren aşağıdaki kodda:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## 3. Adım: PDF belgesini açın
 
-Now we will open the PDF document to which we want to add the link to another document using the following code:
+Şimdi aşağıdaki kodu kullanarak başka bir belgeye bağlantı eklemek istediğimiz PDF belgesini açacağız:
 
 ```csharp
 Document document = new Document(dataDir + "CreateDocumentLink.pdf");
 ```
 
-## Step 4: Create the link to another document
+## 4. Adım: Başka bir belgeye bağlantı oluşturun
 
-In this step, we will create the link to another document using the `LinkAnnotation` annotation. We will specify the coordinates and area of the link, as well as the navigation action to an external document. Here is the corresponding code:
+ Bu adımda, kullanarak başka bir belgeye bağlantı oluşturacağız.`LinkAnnotation` dipnot. Bağlantının koordinatlarını ve alanını ve ayrıca harici bir belgeye yönelik gezinme eylemini belirleyeceğiz. İşte ilgili kod:
 
 ```csharp
 Page page = document.Pages[1];
@@ -47,73 +47,73 @@ link. Action = new GoToRemoteAction(dataDir + "RemoveOpenAction.pdf", 1);
 page.Annotations.Add(link);
 ```
 
-## Step 5: Save the updated file
+## 5. Adım: Güncellenen dosyayı kaydedin
 
-Now let's save the updated PDF file using the `Save` method of the `document` object. Here is the corresponding code:
+ Şimdi güncellenen PDF dosyasını kullanarak kaydedelim.`Save` yöntemi`document` nesne. İşte ilgili kod:
 
 ```csharp
 dataDir = dataDir + "CreateDocumentLink_out.pdf";
 document. Save(dataDir);
 ```
 
-### Sample source code for Create Document Link using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Belge Bağlantısı Oluşturma için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Belgeyi aç
 Document document = new Document(dataDir+ "CreateDocumentLink.pdf");
-// Create link
+// Bağlantı oluştur
 Page page = document.Pages[1];
 LinkAnnotation link = new LinkAnnotation(page, new Aspose.Pdf.Rectangle(100, 100, 300, 300));
 link.Color = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Green);
 link.Action = new GoToRemoteAction(dataDir + "RemoveOpenAction.pdf", 1);
 page.Annotations.Add(link);
 dataDir = dataDir + "CreateDocumentLink_out.pdf";
-// Save updated document
+// Güncellenen belgeyi kaydet
 document.Save(dataDir);
 Console.WriteLine("\nDocument link created successfully.\nFile saved at " + dataDir);            
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulation ! You now have a step-by-step guide to linking to other documents with Aspose.PDF for .NET. You can use this code to create clickable links in your PDF files, redirecting users to other documents.
+Tebrikler! Artık Aspose.PDF for .NET ile diğer belgelere bağlanmak için adım adım bir kılavuza sahipsiniz. Bu kodu, PDF dosyalarınızda tıklanabilir bağlantılar oluşturmak ve kullanıcıları diğer belgelere yönlendirmek için kullanabilirsiniz.
 
-Be sure to check out the official Aspose.PDF documentation for more information on the advanced features of interactive links.
+Etkileşimli bağlantıların gelişmiş özellikleri hakkında daha fazla bilgi için resmi Aspose.PDF belgelerine göz atmayı unutmayın.
 
-### FAQ's for create document link
+### Belge bağlantısı oluşturmak için SSS'ler
 
-#### Q: What are document links in PDF files?
+#### S: PDF dosyalarındaki belge bağlantıları nelerdir?
 
-A: Document links in PDF files are clickable links that direct users to other PDF documents. These links enhance navigation by providing an efficient way to connect related content and facilitate a seamless reading experience.
+C: PDF dosyalarındaki belge bağlantıları, kullanıcıları diğer PDF belgelerine yönlendiren tıklanabilir bağlantılardır. Bu bağlantılar, ilgili içeriğe bağlanmanın etkili bir yolunu sağlayarak ve kesintisiz bir okuma deneyimini kolaylaştırarak gezinmeyi geliştirir.
 
-#### Q: How can I benefit from creating document links?
+#### S: Belge bağlantıları oluşturmaktan nasıl yararlanabilirim?
 
-A: Creating document links allows you to establish connections between different sections or topics within your PDF documents. This feature enables users to access supplementary information or related materials with ease.
+C: Belge bağlantıları oluşturmak, PDF belgelerinizdeki farklı bölümler veya konular arasında bağlantı kurmanıza olanak tanır. Bu özellik, kullanıcıların ek bilgilere veya ilgili materyallere kolaylıkla erişmesini sağlar.
 
-#### Q: How does Aspose.PDF for .NET support the creation of document links?
+#### S: Aspose.PDF for .NET belge bağlantılarının oluşturulmasını nasıl destekliyor?
 
-A: Aspose.PDF for .NET simplifies the process of creating document links by providing a comprehensive set of APIs. The step-by-step tutorial outlined in this guide demonstrates how to add document links to your PDF files.
+C: Aspose.PDF for .NET, kapsamlı bir API seti sağlayarak belge bağlantıları oluşturma sürecini basitleştirir. Bu kılavuzda özetlenen adım adım eğitim, PDF dosyalarınıza belge bağlantılarının nasıl ekleneceğini gösterir.
 
-#### Q: Can I customize the appearance of document links?
+#### S: Belge bağlantılarının görünümünü özelleştirebilir miyim?
 
-A: Absolutely! Aspose.PDF for .NET offers customization options for document link appearance, including color, style, and hover effects. You can tailor the appearance to match your document's design.
+C: Kesinlikle! Aspose.PDF for .NET, belge bağlantısı görünümü için renk, stil ve vurgu efektleri dahil olmak üzere özelleştirme seçenekleri sunar. Görünümü belgenizin tasarımına uyacak şekilde uyarlayabilirsiniz.
 
-#### Q: Is it possible to link to specific sections or pages within another document?
+#### S: Başka bir belgedeki belirli bölümlere veya sayfalara bağlantı vermek mümkün müdür?
 
-A: Yes, you can create links that navigate users to specific pages or sections within another PDF document. Aspose.PDF for .NET provides the flexibility to define the target location within the linked document.
+C: Evet, kullanıcıları başka bir PDF belgesindeki belirli sayfalara veya bölümlere yönlendiren bağlantılar oluşturabilirsiniz. Aspose.PDF for .NET, bağlantılı belge içindeki hedef konumu tanımlama esnekliği sağlar.
 
-#### Q: How can I ensure that my document links are functional?
+#### S: Belge bağlantılarımın işlevsel olduğundan nasıl emin olabilirim?
 
-A: By following the provided tutorial and sample code, you can confidently create functional document links. You can test the links by opening the generated PDF document and clicking on the links.
+C: Verilen eğitimi ve örnek kodu takip ederek, işlevsel belge bağlantılarını güvenle oluşturabilirsiniz. Oluşturulan PDF belgesini açıp bağlantılara tıklayarak bağlantıları test edebilirsiniz.
 
-#### Q: Can I create multiple document links within a single PDF file?
+#### S: Tek bir PDF dosyasında birden fazla belge bağlantısı oluşturabilir miyim?
 
-A: Certainly! You can create multiple document links within a single PDF document using the `LinkAnnotation` annotation. This allows you to provide users with access to various related documents from different sections.
+ C: Kesinlikle! Tek bir PDF belgesinde birden fazla belge bağlantısı oluşturabilirsiniz.`LinkAnnotation`dipnot. Bu, kullanıcılara farklı bölümlerden çeşitli ilgili belgelere erişim sağlamanıza olanak tanır.
 
-#### Q: Are there any limitations when linking to external documents?
+#### S: Harici belgelere bağlantı verirken herhangi bir sınırlama var mı?
 
-A: When linking to external documents, ensure that the linked documents are accessible and located in the specified paths. It's also important to consider user permissions and the compatibility of linked documents.
+C: Harici belgelere bağlantı verirken, bağlantılı belgelerin erişilebilir olduğundan ve belirtilen yollarda bulunduğundan emin olun. Kullanıcı izinlerini ve bağlantılı belgelerin uyumluluğunu dikkate almak da önemlidir.
 
-#### Q: Can I link to documents stored on the web or online repositories?
+#### S: Web'de veya çevrimiçi veri havuzlarında saklanan belgelere bağlantı verebilir miyim?
 
-A: While this tutorial focuses on linking to local documents, Aspose.PDF for .NET also supports linking to web URLs or online repositories. You can adapt the provided code to create web-based document links.
+C: Bu eğitim yerel belgelere bağlanmaya odaklanırken Aspose.PDF for .NET aynı zamanda web URL'lerine veya çevrimiçi depolara bağlanmayı da destekler. Web tabanlı belge bağlantıları oluşturmak için sağlanan kodu uyarlayabilirsiniz.

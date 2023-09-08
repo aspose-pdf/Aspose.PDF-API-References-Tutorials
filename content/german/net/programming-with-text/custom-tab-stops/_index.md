@@ -1,52 +1,52 @@
 ---
-title: Custom Tab Stops In PDF File
-linktitle: Custom Tab Stops In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to create custom tab stops in PDF file using Aspose.PDF for .NET.
+title: Benutzerdefinierte Tabstopps in PDF-Dateien
+linktitle: Benutzerdefinierte Tabstopps in PDF-Dateien
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET benutzerdefinierte Tabstopps in einer PDF-Datei erstellen.
 type: docs
 weight: 120
 url: /de/net/programming-with-text/custom-tab-stops/
 ---
 
-This tutorial will guide you through the process of creating custom tab stops in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+Dieses Tutorial führt Sie durch den Prozess der Erstellung benutzerdefinierter Tabstopps in einer PDF-Datei mit Aspose.PDF für .NET. Der bereitgestellte C#-Quellcode demonstriert die notwendigen Schritte.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## Anforderungen
+Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio oder ein anderer auf Ihrem Computer installierter C#-Compiler.
+- Aspose.PDF für .NET-Bibliothek. Sie können es von der offiziellen Aspose-Website herunterladen oder einen Paketmanager wie NuGet verwenden, um es zu installieren.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## Schritt 1: Richten Sie das Projekt ein
+1. Erstellen Sie ein neues C#-Projekt in Ihrer bevorzugten Entwicklungsumgebung.
+2. Fügen Sie einen Verweis auf die Aspose.PDF für .NET-Bibliothek hinzu.
 
-## Step 2: Import required namespaces
-In the code file where you want to create custom tab stops, add the following using directives at the top of the file:
+## Schritt 2: Erforderliche Namespaces importieren
+Fügen Sie in der Codedatei, in der Sie benutzerdefinierte Tabstopps erstellen möchten, die folgenden using-Anweisungen am Anfang der Datei hinzu:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## Schritt 3: Legen Sie das Dokumentverzeichnis fest
+ Suchen Sie im Code die Zeile mit der Aufschrift`string dataDir = "YOUR DOCUMENT DIRECTORY";` und ersetzen`"YOUR DOCUMENT DIRECTORY"` mit dem Pfad zu dem Verzeichnis, in dem Ihre Dokumente gespeichert sind.
 
-## Step 4: Create a new Document instance
-Instantiate a new `Document` object by adding the following line of code:
+## Schritt 4: Erstellen Sie eine neue Dokumentinstanz
+ Instanziieren Sie eine neue`Document` Objekt durch Hinzufügen der folgenden Codezeile:
 
 ```csharp
 Document _pdfdocument = new Document();
 ```
 
-## Step 5: Add a page to the document
-Add a new page to the document using the `Add` method of the `Pages` collection. In the provided code, the new page is assigned to the variable `page`.
+## Schritt 5: Fügen Sie dem Dokument eine Seite hinzu
+ Fügen Sie mit dem eine neue Seite zum Dokument hinzu`Add` Methode der`Pages`Sammlung. Im bereitgestellten Code wird die neue Seite der Variablen zugewiesen`page`.
 
 ```csharp
 Page page = _pdfdocument.Pages.Add();
 ```
 
-## Step 6: Create custom tab stops
-Create a `TabStops` object and add custom tab stops to it. Set the alignment type and leader type for each tab stop.
+## Schritt 6: Erstellen Sie benutzerdefinierte Tabstopps
+ Ein ... kreieren`TabStops` Objekt und fügen Sie ihm benutzerdefinierte Tabstopps hinzu. Legen Sie den Ausrichtungstyp und den Führungslinientyp für jeden Tabstopp fest.
 
 ```csharp
 TabStops ts = new TabStops();
@@ -63,8 +63,8 @@ ts3.AlignmentType = TabAlignmentType.Left;
 ts3.LeaderType = TabLeaderType.Dot;
 ```
 
-## Step 7: Create text fragments with tab stops
-Create `TextFragment` objects and pass the custom tab stops to them. Use the special characters `#$TAB` to indicate the tab stops within the text.
+## Schritt 7: Erstellen Sie Textfragmente mit Tabstopps
+ Erstellen`TextFragment` Objekte und übergeben die benutzerdefinierten Tabstopps an sie. Verwenden Sie die Sonderzeichen`#$TAB` um die Tabstopps im Text anzuzeigen.
 
 ```csharp
 TextFragment header = new TextFragment("This is an example of forming a table with TAB stops", ts);
@@ -82,17 +82,17 @@ page.Paragraphs.Add(text1);
 page.Paragraphs.Add(text2);
 ```
 
-## Step 8: Save the PDF document
-Save the PDF document using the `Save` method of the `Document` object.
+## Schritt 8: Speichern Sie das PDF-Dokument
+ Speichern Sie das PDF-Dokument mit`Save` Methode der`Document` Objekt.
 
 ```csharp
 _pdfdocument.Save(dataDir);
 Console.WriteLine("\nCustom tab stops setup successfully.\nFile saved at " + dataDir);
 ```
 
-### Sample source code for Custom Tab Stops using Aspose.PDF for .NET 
+### Beispielquellcode für benutzerdefinierte Tabstopps mit Aspose.PDF für .NET 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document _pdfdocument = new Document();
 Page page = _pdfdocument.Pages.Add();
@@ -123,48 +123,48 @@ _pdfdocument.Save(dataDir);
 Console.WriteLine("\nCustom tab stops setup successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
-You have successfully created a PDF document with custom tab stops using Aspose.PDF for .NET. The resulting PDF file can now be found at the specified output file path.
+## Abschluss
+Sie haben mit Aspose.PDF für .NET erfolgreich ein PDF-Dokument mit benutzerdefinierten Tabstopps erstellt. Die resultierende PDF-Datei befindet sich nun im angegebenen Ausgabedateipfad.
 
-### FAQ's
+### FAQs
 
-#### Q: What is the focus of this tutorial?
+#### F: Was ist der Schwerpunkt dieses Tutorials?
 
-A: This tutorial is focused on guiding you through the process of creating custom tab stops in a PDF file using the Aspose.PDF for .NET library. The provided C# source code demonstrates the necessary steps to achieve this.
+A: Der Schwerpunkt dieses Tutorials liegt darauf, Sie durch den Prozess der Erstellung benutzerdefinierter Tabstopps in einer PDF-Datei mithilfe der Aspose.PDF für .NET-Bibliothek zu führen. Der bereitgestellte C#-Quellcode demonstriert die notwendigen Schritte, um dies zu erreichen.
 
-#### Q: Which namespaces should I import for this tutorial?
+#### F: Welche Namespaces sollte ich für dieses Tutorial importieren?
 
-A: In the code file where you want to create custom tab stops, import the following namespaces at the beginning of the file:
+A: Importieren Sie in der Codedatei, in der Sie benutzerdefinierte Tabstopps erstellen möchten, die folgenden Namespaces am Anfang der Datei:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-#### Q: How do I specify the document directory?
+#### F: Wie lege ich das Dokumentenverzeichnis fest?
 
-A: In the code, find the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ A: Suchen Sie im Code die Zeile`string dataDir = "YOUR DOCUMENT DIRECTORY";` und ersetzen`"YOUR DOCUMENT DIRECTORY"` mit dem tatsächlichen Pfad zu Ihrem Dokumentverzeichnis.
 
-#### Q: How do I create a new Document instance?
+#### F: Wie erstelle ich eine neue Dokumentinstanz?
 
-A: In Step 4, you'll instantiate a new `Document` object using the provided code.
+ A: In Schritt 4 instanziieren Sie eine neue`Document` Objekt mithilfe des bereitgestellten Codes.
 
-#### Q: How do I add a page to the document?
+#### F: Wie füge ich dem Dokument eine Seite hinzu?
 
-A: In Step 5, you'll add a new page to the document using the `Add` method of the `Pages` collection.
+ A: In Schritt 5 fügen Sie dem Dokument eine neue Seite hinzu`Add` Methode der`Pages` Sammlung.
 
-#### Q: How do I create custom tab stops?
+#### F: Wie erstelle ich benutzerdefinierte Tabstopps?
 
-A: In Step 6, you'll create a `TabStops` object and add custom tab stops to it. You'll also set alignment and leader types for each tab stop.
+ A: In Schritt 6 erstellen Sie eine`TabStops` Objekt und fügen Sie ihm benutzerdefinierte Tabstopps hinzu. Sie legen außerdem Ausrichtungs- und Führungstypen für jeden Tabstopp fest.
 
-#### Q: How do I create text fragments with tab stops?
+#### F: Wie erstelle ich Textfragmente mit Tabstopps?
 
-A: In Step 7, you'll create `TextFragment` objects and pass the custom tab stops to them. You'll use the special characters `#$TAB` to indicate the tab stops within the text.
+ A: In Schritt 7 erstellen Sie`TextFragment` Objekte und übergeben die benutzerdefinierten Tabstopps an sie. Sie verwenden die Sonderzeichen`#$TAB` um die Tabstopps im Text anzuzeigen.
 
-#### Q: How do I save the PDF document?
+#### F: Wie speichere ich das PDF-Dokument?
 
-A: In Step 8, you'll save the PDF document using the `Save` method of the `Document` object.
+ A: In Schritt 8 speichern Sie das PDF-Dokument mit`Save` Methode der`Document` Objekt.
 
-#### Q: What is the main takeaway from this tutorial?
+#### F: Was ist die wichtigste Erkenntnis aus diesem Tutorial?
 
-A: By following this tutorial, you've learned how to create a PDF document with custom tab stops using Aspose.PDF for .NET. This can be useful for organizing and aligning text in a structured manner.
+A: Durch die Befolgung dieses Tutorials haben Sie gelernt, wie Sie mit Aspose.PDF für .NET ein PDF-Dokument mit benutzerdefinierten Tabstopps erstellen. Dies kann nützlich sein, um Text strukturiert zu organisieren und auszurichten.

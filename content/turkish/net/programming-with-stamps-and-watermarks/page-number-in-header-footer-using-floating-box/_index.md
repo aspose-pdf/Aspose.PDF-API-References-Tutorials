@@ -1,141 +1,141 @@
 ---
-title: Page Number In Header Footer Using Floating Box
-linktitle: Page Number In Header Footer Using Floating Box
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add the page number in the header and footer of a PDF document with Aspose.PDF for .NET.
+title: Kayan Kutu Kullanarak Üst Bilgi Alt Bilgideki Sayfa Numarası
+linktitle: Kayan Kutu Kullanarak Üst Bilgi Alt Bilgideki Sayfa Numarası
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile bir PDF belgesinin üstbilgi ve altbilgisine sayfa numarasını nasıl ekleyeceğinizi öğrenin.
 type: docs
 weight: 150
 url: /tr/net/programming-with-stamps-and-watermarks/page-number-in-header-footer-using-floating-box/
 ---
-In this tutorial, we will guide you step by step on how to add page number in header and footer of a PDF document using FloatingBox with Aspose.PDF for .NET. We will use the provided C# source code to create a PDF document, add a page, create a FloatingBox, set its position and add the page number to it, then save the modified PDF document.
+Bu eğitimde, Aspose.PDF for .NET ile FloatingBox kullanarak bir PDF belgesinin üstbilgisine ve altbilgisine sayfa numarasının nasıl ekleneceği konusunda size adım adım rehberlik edeceğiz. Bir PDF belgesi oluşturmak, bir sayfa eklemek, bir FloatingBox oluşturmak, konumunu ayarlamak ve sayfa numarasını buna eklemek, ardından değiştirilen PDF belgesini kaydetmek için sağlanan C# kaynak kodunu kullanacağız.
 
-## Step 1: Setting up the environment
+## 1. Adım: Ortamı ayarlama
 
-Before you begin, make sure you have the following:
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Kurulu bir .NET geliştirme ortamı.
+- .NET için Aspose.PDF kütüphanesini indirip projenizde referans olarak kullanabilirsiniz.
 
-## Step 2: Creating the PDF document and adding a page
+## Adım 2: PDF belgesini oluşturma ve sayfa ekleme
 
-The first step is to create an instance of the PDF document and add a page to it. Here's how:
+İlk adım, PDF belgesinin bir örneğini oluşturmak ve ona bir sayfa eklemektir. İşte nasıl:
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Instantiate the PDF document
+// PDF belgesini örneklendirin
 Aspose.Pdf.Document pdf = new Aspose.Pdf.Document();
 
-// Add a page to the PDF document
+// PDF belgesine sayfa ekleme
 Aspose.Pdf.Page page = pdf.Pages.Add();
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where you want to save the PDF document.
+"BELGELERİNİZ DİZİNİ"ni, PDF belgesini kaydetmek istediğiniz dizinin gerçek yolu ile değiştirdiğinizden emin olun.
 
-## Step 3: Creating the FloatingBox and adding the page number
+## Adım 3: FloatingBox'ı oluşturma ve sayfa numarasını ekleme
 
-Now that the page is added to the PDF document, we can create a FloatingBox, set its position, and add the page number to it. Here's how:
+Artık sayfa PDF belgesine eklendiğine göre bir FloatingBox oluşturabilir, konumunu ayarlayabilir ve sayfa numarasını buna ekleyebiliriz. İşte nasıl:
 
 ```csharp
-// Create a FloatingBox with a width of 140 and a height of 80
+// 140 genişliğinde ve 80 yüksekliğinde bir FloatingBox oluşturun
 Aspose.Pdf.FloatingBox box1 = new Aspose.Pdf.FloatingBox(140, 80);
 
-// Set the left position of the paragraph
+// Paragrafın sol konumunu ayarlama
 box1. Left = 2;
 
-// Set the top position of the paragraph
+// Paragrafın üst konumunu ayarlama
 box1. Top = 10;
 
-// Add the page number to the FloatingBox
+// Sayfa numarasını FloatingBox'a ekleyin
 box1.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("Page: ($p/ $P )"));
 
-// Add the FloatingBox to the page
+// FloatingBox'ı sayfaya ekleyin
 page.Paragraphs.Add(box1);
 ```
 
-The code above creates a FloatingBox with a width of 140 and a height of 80. Next, we set its position by specifying the left and top values. Finally, we add the page number to the FloatingBox using a TextFragment containing the syntax "($p/ $P )" which will be replaced with the current page number and the total number of pages.
+Yukarıdaki kod genişliği 140, yüksekliği 80 olan bir FloatingBox oluşturuyor. Daha sonra sol ve üst değerlerini belirterek konumunu belirliyoruz. Son olarak, mevcut sayfa numarası ve toplam sayfa sayısıyla değiştirilecek "($p/ $P )" sözdizimini içeren bir TextFragment kullanarak sayfa numarasını FloatingBox'a ekliyoruz.
 
-## Step 4: Saving the modified PDF document
+## Adım 4: Değiştirilen PDF belgesini kaydetme
 
-Once the page number is added to the header or footer using the FloatingBox, we can save the modified PDF document. Here's how:
+FloatingBox kullanılarak sayfa numarası üstbilgi veya altbilgiye eklendikten sonra değiştirilen PDF belgesini kaydedebiliriz. İşte nasıl:
 
 ```csharp
-// Save the modified PDF document
+// Değiştirilen PDF belgesini kaydedin
 pdf.Save(dataDir + "PageNumberinHeaderFooterUsingFloatingBox_out.pdf");
 ```
 
-The above code saves the edited PDF document to the specified directory.
+Yukarıdaki kod, düzenlenen PDF belgesini belirtilen dizine kaydeder.
 
-### Sample source code for Page Numberin Header Footer Using Floating Box using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Kayan Kutu Kullanan Sayfa Numarasındaki Üst Bilgi Alt Bilgisi için örnek kaynak kodu 
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate Document instance
+// Belge örneğini oluştur
 Aspose.Pdf.Document pdf = new Aspose.Pdf.Document();
 
-// Add a Page into the pdf document
+// PDF belgesine bir Sayfa ekleyin
 Aspose.Pdf.Page page = pdf.Pages.Add();
 
-// Initializes a new instance of the FloatingBox class
+//FloatingBox sınıfının yeni bir örneğini başlatır
 Aspose.Pdf.FloatingBox box1 = new Aspose.Pdf.FloatingBox(140, 80);
 
-// Float value that indicates left position of the paragraph
+// Paragrafın sol konumunu gösteren kayan değer
 box1.Left = 2;
 
-// Float value that indicates top position of the paragraph
+// Paragrafın üst konumunu gösteren kayan değer
 box1.Top = 10;
 
-// Add the macros to the paragraphs collection of the FloatingBox
+// Makroları FloatingBox'ın paragraf koleksiyonuna ekleyin
 box1.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("Page: ($p/ $P )"));
 
-// Add a floatingBox to the page
+// Sayfaya bir floatBox ekleyin
 page.Paragraphs.Add(box1);
 
-// Save the document
+// Belgeyi kaydet
 pdf.Save(dataDir + "PageNumberinHeaderFooterUsingFloatingBox_out.pdf");
 
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulation ! You have learned how to add page number in header and footer of PDF document using FloatingBox with Aspose.PDF for .NET. You can now customize your headers and footers by adding dynamic information such as page number.
+Tebrikler! Aspose.PDF for .NET ile FloatingBox kullanarak PDF belgesinin üstbilgisine ve altbilgisine sayfa numarasının nasıl ekleneceğini öğrendiniz. Artık sayfa numarası gibi dinamik bilgiler ekleyerek üstbilgilerinizi ve altbilgilerinizi özelleştirebilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is a FloatingBox, and how is it used to add page numbers in the header or footer of a PDF document?
+#### S: FloatingBox nedir ve bir PDF belgesinin üstbilgisine veya altbilgisine sayfa numaraları eklemek için nasıl kullanılır?
 
-A: A FloatingBox is a versatile layout element in Aspose.PDF that can hold various content, including text and images. In this tutorial, it's used to create a container for the page number, allowing you to dynamically insert the current page number and total page count into the header or footer.
+C: FloatingBox, Aspose.PDF'de metin ve resimler de dahil olmak üzere çeşitli içerikleri tutabilen çok yönlü bir düzen öğesidir. Bu öğreticide, sayfa numarası için bir kapsayıcı oluşturmak için kullanılır; bu, geçerli sayfa numarasını ve toplam sayfa sayısını üstbilgi veya altbilgiye dinamik olarak eklemenize olanak tanır.
 
-#### Q: How does the provided C# source code achieve adding page numbers using a FloatingBox?
+#### S: Sağlanan C# kaynak kodu, FloatingBox kullanarak sayfa numaraları eklemeyi nasıl başarır?
 
-A: The code snippet demonstrates how to create a PDF document, add a page, create a FloatingBox, set its position within the page, and insert the page number using a TextFragment. The syntax "($p/ $P )" in the TextFragment is replaced with the current page number and total page count.
+C: Kod pasajı, bir PDF belgesinin nasıl oluşturulacağını, bir sayfanın nasıl ekleneceğini, bir FloatingBox'un nasıl oluşturulacağını, sayfa içindeki konumunun nasıl ayarlanacağını ve bir TextFragment kullanarak sayfa numarasının nasıl ekleneceğini gösterir. TextFragment'teki "($p/ $P )" sözdizimi, geçerli sayfa numarası ve toplam sayfa sayısıyla değiştirilir.
 
-#### Q: Can I customize the appearance and formatting of the page number added using the FloatingBox?
+#### S: FloatingBox kullanarak eklenen sayfa numarasının görünümünü ve formatını özelleştirebilir miyim?
 
-A: Yes, you can customize the appearance of the page number by modifying the properties of the TextFragment within the FloatingBox. You can change font size, color, style, alignment, and other formatting options.
+C: Evet, FloatingBox içindeki TextFragment'in özelliklerini değiştirerek sayfa numarasının görünümünü özelleştirebilirsiniz. Yazı tipi boyutunu, rengini, stilini, hizalamasını ve diğer biçimlendirme seçeneklerini değiştirebilirsiniz.
 
-#### Q: Is it possible to add different dynamic elements, such as date and time, to the header or footer using a similar approach?
+#### S: Benzer bir yaklaşım kullanarak üst bilgi veya alt bilgiye tarih ve saat gibi farklı dinamik öğeler eklemek mümkün müdür?
 
-A: Absolutely, you can add different dynamic elements like date, time, document metadata, or custom text by modifying the TextFragment content within the FloatingBox. You can use macros like "($p/ $P )" for page numbers or "($date)" for the current date.
+C: Kesinlikle, FloatingBox içindeki TextFragment içeriğini değiştirerek tarih, saat, belge meta verileri veya özel metin gibi farklı dinamik öğeler ekleyebilirsiniz. Sayfa numaraları için "($p/ $P )" veya güncel tarih için "($date)" gibi makroları kullanabilirsiniz.
 
-#### Q: How do I specify the position of the FloatingBox within the header or footer section?
-A: The provided code sets the position of the FloatingBox using the `Left` and `Top` properties. You can adjust these values to position the FloatingBox as desired within the header or footer section.
+#### S: FloatingBox'un üstbilgi veya altbilgi bölümündeki konumunu nasıl belirlerim?
+ C: Sağlanan kod, FloatingBox'un konumunu şunu kullanarak ayarlar:`Left` Ve`Top` özellikler. FloatingBox'ı üstbilgi veya altbilgi bölümünde istediğiniz gibi konumlandırmak için bu değerleri ayarlayabilirsiniz.
 
-#### Q: Can I use a different font or style for the page number in the header or footer?
+#### S: Üstbilgi veya altbilgideki sayfa numarası için farklı bir yazı tipi veya stil kullanabilir miyim?
 
-A: Yes, you can customize the font, style, and other formatting properties of the page number text by modifying the TextFragment properties within the FloatingBox.
+C: Evet, FloatingBox içindeki TextFragment özelliklerini değiştirerek sayfa numarası metninin yazı tipi, stili ve diğer formatlama özelliklerini özelleştirebilirsiniz.
 
-#### Q: What happens if the content in the FloatingBox exceeds its dimensions?
+#### S: FloatingBox'taki içerik boyutlarını aşarsa ne olur?
 
-A: If the content within the FloatingBox exceeds its dimensions, it may be cut off or layout issues may arise. Ensure that the dimensions of the FloatingBox are suitable for accommodating the content, and consider adjusting the page layout if needed.
+C: FloatingBox içindeki içerik boyutlarını aşarsa kesilebilir veya düzen sorunları ortaya çıkabilir. FloatingBox'ın boyutlarının içeriğe uyum sağlamaya uygun olduğundan emin olun ve gerekirse sayfa düzenini ayarlamayı düşünün.
 
-#### Q: Is it possible to add multiple FloatingBoxes with different content to the header or footer of the same page?
+#### S: Aynı sayfanın üstbilgisine veya altbilgisine farklı içeriğe sahip birden fazla FloatingBox eklemek mümkün müdür?
 
-A: Yes, you can add multiple FloatingBoxes with different content to the header or footer of the same page by creating separate FloatingBox instances and adding them to the page's Paragraphs collection.
+C: Evet, ayrı FloatingBox örnekleri oluşturup bunları sayfanın Paragraphs koleksiyonuna ekleyerek aynı sayfanın üstbilgisine veya altbilgisine farklı içeriğe sahip birden fazla FloatingBox ekleyebilirsiniz.
 
-#### Q: Can I use the FloatingBox approach to add content to other sections of the PDF document, such as the body or margins?
+#### S: PDF belgesinin gövde veya kenar boşlukları gibi diğer bölümlerine içerik eklemek için FloatingBox yaklaşımını kullanabilir miyim?
 
-A: While FloatingBoxes are commonly used for headers and footers, you can also use them to add content to other sections of the PDF document, such as the body or margins, by positioning them accordingly within the page.
+C: FloatingBox'lar genellikle üstbilgiler ve altbilgiler için kullanılsa da, bunları sayfa içinde uygun şekilde konumlandırarak PDF belgesinin gövde veya kenar boşlukları gibi diğer bölümlerine içerik eklemek için de kullanabilirsiniz.

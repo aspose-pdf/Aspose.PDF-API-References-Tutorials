@@ -1,27 +1,27 @@
 ---
-title: Render Table In PDF Document
-linktitle: Render Table In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to display a table in PDF document using Aspose.PDF for .NET.
+title: تقديم الجدول في وثيقة PDF
+linktitle: تقديم الجدول في وثيقة PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية عرض جدول في مستند PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 170
 url: /ar/net/programming-with-tables/render-table/
 ---
-In this tutorial, we will guide you step by step to display a table in PDF document using Aspose.PDF for .NET. We'll explain the provided C# source code and show you how to implement it.
+في هذا البرنامج التعليمي، سنرشدك خطوة بخطوة لعرض جدول في مستند PDF باستخدام Aspose.PDF لـ .NET. سنشرح لك كود مصدر C# المقدم ونوضح لك كيفية تنفيذه.
 
-## Step 1: Creating the document
-First, we'll create a new PDF document:
+## الخطوة 1: إنشاء الوثيقة
+أولاً، سنقوم بإنشاء مستند PDF جديد:
 
 ```csharp
-// Path to the documents directory
+// المسار إلى دليل المستندات
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Create a new document
+// إنشاء مستند جديد
 Document doc = new Document();
 ```
 
-## Step 2: Configuring page margins and orientation
-Next, we'll configure the page margins and set the orientation to landscape mode:
+## الخطوة 2: تكوين هوامش الصفحة واتجاهها
+بعد ذلك، سنقوم بتكوين هوامش الصفحة وتعيين الاتجاه إلى الوضع الأفقي:
 
 ```csharp
 PageInfo pageInfo = doc.PageInfo;
@@ -35,16 +35,16 @@ marginInfo.Bottom = 37;
 pageInfo.IsLandscape = true;
 ```
 
-## Step 3: Creating the table and columns
-Now let's create a table and set the column widths:
+## الخطوة 3: إنشاء الجدول والأعمدة
+لنقم الآن بإنشاء جدول وضبط عرض الأعمدة:
 
 ```csharp
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
 table. ColumnWidths = "50 100";
 ```
 
-## Step 4: Add rows and cells to the table
-Next, we'll add rows and cells to the table using a loop:
+## الخطوة 4: إضافة صفوف وخلايا إلى الجدول
+بعد ذلك، سنقوم بإضافة صفوف وخلايا إلى الجدول باستخدام حلقة:
 
 ```csharp
 for (int i = 1; i <= 120; i++)
@@ -58,8 +58,8 @@ for (int i = 1; i <= 120; i++)
 }
 ```
 
-## Step 5: Adding the table to the page
-Now let's add the table to the document page:
+## الخطوة 5: إضافة الجدول إلى الصفحة
+الآن دعونا نضيف الجدول إلى صفحة المستند:
 
 ```csharp
 Page curPage = doc.Pages.Add();
@@ -67,8 +67,8 @@ Aspose.Pdf.Paragraphs paragraphs = curPage.Paragraphs;
 paragraphs. Add(table);
 ```
 
-## Step 6: Displaying the table on a new page
-Next, we'll create a new table and set the "IsInNewPage" property to "true" to display the table on a new page:
+## الخطوة 6: عرض الجدول في صفحة جديدة
+بعد ذلك، سنقوم بإنشاء جدول جديد وتعيين خاصية "IsInNewPage" على "true" لعرض الجدول في صفحة جديدة:
 
 ```csharp
 Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
@@ -85,8 +85,8 @@ table1.IsInNewPage = true;
 paragraphs. Add(table1);
 ```
 
-## Step 7: Save PDF
-Finally, we save the PDF document:
+## الخطوة 7: حفظ ملف PDF
+وأخيرًا، نقوم بحفظ مستند PDF:
 
 ```csharp
 dataDir = dataDir + "IsNewPageProperty_Test_out.pdf";
@@ -95,10 +95,10 @@ doc.Save(dataDir);
 Console.WriteLine("\nTable displayed successfully on a page.\nFile saved at location: " + dataDir);
 ```
 
-### Example source code for Render Table using Aspose.PDF for .NET
+### مثال على التعليمات البرمجية المصدر لـ Render Table باستخدام Aspose.PDF لـ .NET
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 Document doc = new Document();
@@ -114,7 +114,7 @@ pageInfo.IsLandscape = true;
 
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
 table.ColumnWidths = "50 100";
-// Added page.
+// الصفحة المضافة.
 Page curPage = doc.Pages.Add();
 for (int i = 1; i <= 120; i++)
 {
@@ -139,7 +139,7 @@ for (int i = 1; i <= 10; i++)
 	cell2.Paragraphs.Add(new TextFragment("LAAGGGGGG"));
 }
 table1.IsInNewPage = true;
-// I want to keep table 1 to next page please...
+// أريد الاحتفاظ بالجدول 1 في الصفحة التالية من فضلك...
 paragraphs.Add(table1);
 dataDir = dataDir + "IsNewPageProperty_Test_out.pdf";
 doc.Save(dataDir);
@@ -147,27 +147,27 @@ doc.Save(dataDir);
 Console.WriteLine("\nTable render successfully on a page.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
-Congratulation ! You have now learned how to display a table in a PDF document using Aspose.PDF for .NET. This step-by-step guide showed you how to create a document, configure page margins and orientation, add a table, and display a table on a new page. Now you can apply this knowledge to your own projects.
+## خاتمة
+تهنئة ! لقد تعلمت الآن كيفية عرض جدول في مستند PDF باستخدام Aspose.PDF لـ .NET. يوضح لك هذا الدليل خطوة بخطوة كيفية إنشاء مستند وتكوين هوامش الصفحة واتجاهها وإضافة جدول وعرض جدول في صفحة جديدة. الآن يمكنك تطبيق هذه المعرفة على مشاريعك الخاصة.
 
-### FAQ's for render table in PDF document
+### الأسئلة الشائعة حول جدول العرض في مستند PDF
 
-#### Q: How can I modify the table's appearance, such as changing cell colors or adding borders?
+#### س: كيف يمكنني تعديل مظهر الجدول، مثل تغيير ألوان الخلايا أو إضافة حدود؟
 
-A: To modify the table's appearance, you can set various properties of the `Aspose.Pdf.Table` and its cells. For example, you can set the `BackgroundColor` property of cells to change their background color. You can also set the `Border` property of the table or individual cells to add borders. Additionally, you can customize the font, text color, and alignment of the table content by modifying the `TextState` of the `TextFragment` objects added to the cells.
+ج: لتعديل مظهر الجدول، يمكنك تعيين خصائص مختلفة للجدول`Aspose.Pdf.Table` وخلاياه. على سبيل المثال، يمكنك ضبط`BackgroundColor` خاصية الخلايا لتغيير لون خلفيتها. يمكنك أيضًا ضبط`Border` خاصية الجدول أو الخلايا الفردية لإضافة الحدود. بالإضافة إلى ذلك، يمكنك تخصيص الخط ولون النص ومحاذاة محتوى الجدول عن طريق تعديل`TextState` التابع`TextFragment` الكائنات المضافة إلى الخلايا.
 
-#### Q: Can I add headers or footers to the table?
+#### س: هل يمكنني إضافة رؤوس أو تذييلات إلى الجدول؟
 
-A: Yes, you can add headers or footers to the table by creating additional rows at the beginning or end of the table and setting the appropriate content in the cells. You can customize the headers or footers independently from the rest of the table content by adding different styles or content to these specific rows.
+ج: نعم، يمكنك إضافة رؤوس أو تذييلات إلى الجدول عن طريق إنشاء صفوف إضافية في بداية الجدول أو نهايته وتعيين المحتوى المناسب في الخلايا. يمكنك تخصيص الرؤوس أو التذييلات بشكل مستقل عن بقية محتوى الجدول عن طريق إضافة أنماط أو محتوى مختلف إلى هذه الصفوف المحددة.
 
-#### Q: How can I control the table's position on the page?
+#### س: كيف يمكنني التحكم في موضع الجدول في الصفحة؟
 
-A: To control the table's position on the page, you can adjust the `MarginInfo` of the `PageInfo` object. The `MarginInfo` allows you to set the left, right, top, and bottom margins of the page, which affects the available space for the table. You can also use the `PositioningType` property of the `Aspose.Pdf.Table` to control its horizontal and vertical alignment within the page's content area.
+ ج: للتحكم في موضع الجدول في الصفحة، يمكنك ضبط`MarginInfo` التابع`PageInfo` هدف. ال`MarginInfo`يسمح لك بتعيين الهوامش اليسرى واليمنى والعلوية والسفلى للصفحة، مما يؤثر على المساحة المتوفرة للجدول. يمكنك أيضًا استخدام`PositioningType` ملكية`Aspose.Pdf.Table` للتحكم في محاذاتها الأفقية والرأسية داخل منطقة محتوى الصفحة.
 
-#### Q: Can I export the table to different file formats, such as Excel or CSV?
+#### س: هل يمكنني تصدير الجدول إلى تنسيقات ملفات مختلفة، مثل Excel أو CSV؟
 
-A: Aspose.PDF for .NET is primarily designed for working with PDF documents. While it can export the PDF document as an image or XPS, it does not directly support exporting tables to formats like Excel or CSV. To export the table data to different file formats, you may need to use additional libraries or methods to convert the PDF content to the desired format.
+ج: تم تصميم Aspose.PDF for .NET بشكل أساسي للعمل مع مستندات PDF. على الرغم من أنه يمكنه تصدير مستند PDF كصورة أو XPS، إلا أنه لا يدعم بشكل مباشر تصدير الجداول إلى تنسيقات مثل Excel أو CSV. لتصدير بيانات الجدول إلى تنسيقات ملفات مختلفة، قد تحتاج إلى استخدام مكتبات أو طرق إضافية لتحويل محتوى PDF إلى التنسيق المطلوب.
 
-#### Q: How can I add hyperlinks to the table cells?
+#### س: كيف يمكنني إضافة ارتباطات تشعبية إلى خلايا الجدول؟
 
-A: To add hyperlinks to the table cells, you can use the `Aspose.Pdf.WebHyperlink` class to create a hyperlink and then add it as an anchor to the `TextFragment` inside the cell. This allows you to associate a URL or link target with specific text or content within the cell, creating clickable hyperlinks.
+ ج: لإضافة ارتباطات تشعبية إلى خلايا الجدول، يمكنك استخدام`Aspose.Pdf.WebHyperlink` فئة لإنشاء ارتباط تشعبي ثم إضافته كمرساة إلى ملف`TextFragment`داخل الخلية. يتيح لك ذلك ربط عنوان URL أو الارتباط المستهدف بنص أو محتوى محدد داخل الخلية، مما يؤدي إلى إنشاء ارتباطات تشعبية قابلة للنقر عليها.

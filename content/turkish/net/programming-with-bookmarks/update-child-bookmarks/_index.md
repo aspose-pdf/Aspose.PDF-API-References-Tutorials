@@ -1,57 +1,57 @@
 ---
-title: Update Child Bookmarks In PDF File
-linktitle: Update Child Bookmarks In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily update child bookmarks in PDF file with Aspose.PDF for .NET.
+title: PDF Dosyasındaki Alt Yer İşaretlerini Güncelle
+linktitle: PDF Dosyasındaki Alt Yer İşaretlerini Güncelle
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile PDF dosyasındaki alt yer imlerini kolayca güncelleyin.
 type: docs
 weight: 110
 url: /tr/net/programming-with-bookmarks/update-child-bookmarks/
 ---
-Updating child bookmarks in PDF file allows you to modify the properties of specific bookmarks within a parent bookmark. With Aspose.PDF for .NET, you can easily update child bookmarks by following the following source code:
+PDF dosyasındaki alt yer imlerini güncellemek, ana yer imindeki belirli yer imlerinin özelliklerini değiştirmenize olanak tanır. Aspose.PDF for .NET ile aşağıdaki kaynak kodunu takip ederek alt yer imlerini kolayca güncelleyebilirsiniz:
 
-## Step 1: Import required libraries
+## 1. Adım: Gerekli kitaplıkları içe aktarın
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Başlamadan önce C# projeniz için gerekli kütüphaneleri içe aktarmanız gerekir. Gerekli ithalat direktifi aşağıdadır:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## 2. Adım: Belgeler klasörünün yolunu ayarlayın
 
-In this step, you need to specify the path to the folder containing the PDF file you want to update. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ Bu adımda güncellemek istediğiniz PDF dosyasının bulunduğu klasörün yolunu belirtmeniz gerekmektedir. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"`belgeler klasörünüzün gerçek yolunu içeren aşağıdaki kodda:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## 3. Adım: PDF belgesini açın
 
-Now we will open the PDF document we want to update using the following code:
+Şimdi aşağıdaki kodu kullanarak güncellemek istediğimiz PDF belgesini açacağız:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "UpdateChildBookmarks.pdf");
 ```
 
-## Step 4: Get parent bookmark object
+## 4. Adım: Ana yer imi nesnesini alın
 
-In this step, we are going to get the specific parent bookmark object from which we want to update the child bookmarks. In the example below, we retrieve the parent bookmark at index 1 (the second bookmark in the bookmarks collection). You can adjust the index according to your needs. Here is the corresponding code:
+Bu adımda, alt yer imlerini güncellemek istediğimiz belirli ana yer imi nesnesini alacağız. Aşağıdaki örnekte, dizin 1'deki ana yer imini alıyoruz (yer imleri koleksiyonundaki ikinci yer imi). Endeksi ihtiyaçlarınıza göre ayarlayabilirsiniz. İşte ilgili kod:
 
 ```csharp
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
 ```
 
-## Step 5: Get Child Bookmark Object
+## Adım 5: Çocuk Yer İşareti Nesnesini Alın
 
-Now let's get the specific child bookmark object we want to update. In the example below, we retrieve the child bookmark at index 1 (the second child bookmark in the collection of child bookmarks of the parent bookmark). You can adjust the index according to your needs. Here is the corresponding code:
+Şimdi güncellemek istediğimiz belirli alt yer imi nesnesini alalım. Aşağıdaki örnekte, dizin 1'deki alt yer imini alıyoruz (ana yer iminin alt yer imleri koleksiyonundaki ikinci alt yer imi). Endeksi ihtiyaçlarınıza göre ayarlayabilirsiniz. İşte ilgili kod:
 
 ```csharp
 OutlineItemCollection childOutline = pdfOutline[1];
 ```
 
-## Step 6: Update child bookmark properties
+## 6. Adım: Alt yer imi özelliklerini güncelleyin
 
-Now let's update the child bookmark properties such as title, italic style, and bold style. You can adjust these properties according to your needs. Here is the corresponding code:
+Şimdi başlık, italik stil ve kalın stil gibi alt yer imi özelliklerini güncelleyelim. Bu özellikleri ihtiyaçlarınıza göre ayarlayabilirsiniz. İşte ilgili kod:
 
 ```csharp
 childOutline.Title = "Updated Outline";
@@ -59,93 +59,93 @@ childOutline. Italic = true;
 childOutline. Bold = true;
 ```
 
-## Step 7: Save the updated file
+## 7. Adım: Güncellenen dosyayı kaydedin
 
-Now let's save the updated PDF file using the `Save` method of the `pdfDocument` object. Here is the corresponding code:
+ Şimdi güncellenen PDF dosyasını kullanarak kaydedelim.`Save` yöntemi`pdfDocument` nesne. İşte ilgili kod:
 
 ```csharp
 dataDir = dataDir + "UpdateChildBookmarks_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Update Child Bookmarks using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Alt Yer İşaretlerini Güncelleme için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir + "UpdateChildBookmarks.pdf");
-// Get a bookmark object
+// Bir yer imi nesnesi alın
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
-// Get child bookmark object
+//Alt yer imi nesnesini al
 OutlineItemCollection childOutline = pdfOutline[1];
 childOutline.Title = "Updated Outline";
 childOutline.Italic = true;
 childOutline.Bold = true;
 dataDir = dataDir + "UpdateChildBookmarks_out.pdf";            
-// Save output
+// Çıktıyı kaydet
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nChild bookmarks updated successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulation ! You now have a step-by-step guide to updating child bookmarks with Aspose.PDF for .NET. You can use this code to modify the properties of child bookmarks in your PDF documents.
+Tebrikler! Artık alt yer imlerini Aspose.PDF for .NET ile güncellemek için adım adım bir kılavuza sahipsiniz. PDF belgelerinizdeki alt yer imlerinin özelliklerini değiştirmek için bu kodu kullanabilirsiniz.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Gelişmiş yer imi düzenleme özellikleri hakkında daha fazla bilgi için resmi Aspose.PDF belgelerine göz atmayı unutmayın.
 
-### FAQ's for update child bookmarks in PDF file
+### PDF dosyasındaki alt yer işaretlerini güncellemeye ilişkin SSS
 
-#### Q: What are child bookmarks in a PDF file?
+#### S: PDF dosyasındaki alt yer imleri nedir?
 
-A: Child bookmarks are bookmarks that are nested within a parent bookmark. They allow you to create a hierarchical structure for navigating through a PDF document's content.
+C: Alt yer imleri, bir üst yer iminin içine yerleştirilmiş yer imleridir. Bir PDF belgesinin içeriğinde gezinmek için hiyerarşik bir yapı oluşturmanıza olanak tanır.
 
-#### Q: Why would I need to update child bookmarks?
+#### S: Alt yer işaretlerini neden güncellemem gerekiyor?
 
-A: Updating child bookmarks is useful when you want to modify the properties, titles, or styles of specific bookmarks within a parent bookmark. This helps customize the document's navigational structure.
+C: Alt yer imlerini güncellemek, bir ana yer imindeki belirli yer imlerinin özelliklerini, başlıklarını veya stillerini değiştirmek istediğinizde kullanışlıdır. Bu, belgenin gezinme yapısını özelleştirmeye yardımcı olur.
 
-#### Q: How do I import the required libraries for my C# project?
+#### S: C# projem için gerekli kitaplıkları nasıl içeri aktarabilirim?
 
-A: To import the necessary libraries for your C# project, include the following import directive:
+C: C# projeniz için gerekli kitaplıkları içe aktarmak için aşağıdaki içe aktarma yönergesini ekleyin:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This directive enables you to access the classes and methods needed for working with PDF documents and bookmarks.
+Bu yönerge, PDF belgeleri ve yer imleriyle çalışmak için gereken sınıflara ve yöntemlere erişmenizi sağlar.
 
-#### Q: How do I specify the path to the documents folder?
+#### S: Belgeler klasörünün yolunu nasıl belirlerim?
 
-A: Replace `"YOUR DOCUMENT DIRECTORY"` in the provided source code with the actual path to the folder containing the PDF file you want to update.
+ C: Değiştir`"YOUR DOCUMENT DIRECTORY"` sağlanan kaynak kodunda, güncellemek istediğiniz PDF dosyasını içeren klasörün gerçek yolunu belirtin.
 
-#### Q: How do I open a PDF document for updating child bookmarks?
+#### S: Alt yer imlerini güncellemek için bir PDF belgesini nasıl açarım?
 
-A: To open a PDF document for updating child bookmarks, use the following code:
+C: Alt yer imlerini güncellemek amacıyla bir PDF belgesi açmak için aşağıdaki kodu kullanın:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "UpdateChildBookmarks.pdf");
 ```
 
-Replace `"UpdateChildBookmarks.pdf"` with the actual file name.
+ Yer değiştirmek`"UpdateChildBookmarks.pdf"` gerçek dosya adı ile.
 
-#### Q: How do I get the parent bookmark object from which I want to update child bookmarks?
+#### S: Alt yer imlerini güncellemek istediğim ana yer imi nesnesini nasıl edinebilirim?
 
-A: To retrieve a specific parent bookmark for updating child bookmarks, access the `Outlines` property of the `pdfDocument` object. In the example below, we retrieve the parent bookmark at index 1:
+ C: Alt yer imlerini güncellemek amacıyla belirli bir ana yer imini almak için`Outlines` mülkiyeti`pdfDocument` nesne. Aşağıdaki örnekte, dizin 1'deki ana yer imini alıyoruz:
 
 ```csharp
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
 ```
 
-#### Q: How do I get the child bookmark object I want to update?
+#### S: Güncellemek istediğim alt yer imi nesnesini nasıl edinebilirim?
 
-A: To retrieve a specific child bookmark for updating, access the `OutlineItemCollection` of the parent bookmark. In the example below, we retrieve the child bookmark at index 1:
+ C: Güncelleme amacıyla belirli bir alt yer imini almak için`OutlineItemCollection` ana yer iminin. Aşağıdaki örnekte, dizin 1'deki alt yer imini alıyoruz:
 
 ```csharp
 OutlineItemCollection childOutline = pdfOutline[1];
 ```
 
-#### Q: What child bookmark properties can I update?
+#### S: Hangi alt yer imi özelliklerini güncelleyebilirim?
 
-A: You can update various properties of a child bookmark, such as its title, italic style, and bold style. Customize these properties according to your needs:
+C: Bir alt yer iminin başlığı, italik stili ve kalın stili gibi çeşitli özelliklerini güncelleyebilirsiniz. Bu özellikleri ihtiyaçlarınıza göre özelleştirin:
 
 ```csharp
 childOutline.Title = "Updated Outline";
@@ -153,13 +153,13 @@ childOutline.Italic = true;
 childOutline.Bold = true;
 ```
 
-#### Q: Can I update multiple child bookmarks using this method?
+#### S: Bu yöntemi kullanarak birden fazla alt yer imini güncelleyebilir miyim?
 
-A: Yes, you can repeat steps 4 to 7 for each child bookmark you want to update. Modify the parent index and child index as needed.
+C: Evet, güncellemek istediğiniz her alt yer imi için 4'ten 7'ye kadar olan adımları tekrarlayabilirsiniz. Gerektiğinde üst dizini ve alt dizini değiştirin.
 
-#### Q: How do I save the updated PDF file?
+#### S: Güncellenen PDF dosyasını nasıl kaydederim?
 
-A: Save the updated PDF file using the `Save` method of the `pdfDocument` object:
+ C: Güncellenen PDF dosyasını kullanarak kaydedin.`Save` yöntemi`pdfDocument` nesne:
 
 ```csharp
 dataDir = dataDir + "UpdateChildBookmarks_out.pdf";

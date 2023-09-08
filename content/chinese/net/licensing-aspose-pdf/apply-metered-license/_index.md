@@ -1,128 +1,128 @@
 ---
-title: Configure Metered License Keys In PDF File
-linktitle: Configure Metered License Keys In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to set up a metered license keys in PDF file with Aspose.PDF for .NET and benefit from advanced features.
+title: 在 PDF 文件中配置计量许可证密钥
+linktitle: 在 PDF 文件中配置计量许可证密钥
+second_title: Aspose.PDF for .NET API 参考
+description: 使用 Aspose.PDF for .NET 在 PDF 文件中设置计量许可证密钥并受益于高级功能的分步指南。
 type: docs
 weight: 10
 url: /zh/net/licensing-aspose-pdf/configure-metered-license/
 ---
-In this tutorial, we will walk you through step-by-step how to set up a metered license keys in PDF file with Aspose.PDF for .NET. The metered license allows you to use the advanced features of Aspose.PDF based on your actual consumption.
+在本教程中，我们将逐步引导您了解如何使用 Aspose.PDF for .NET 在 PDF 文件中设置计量许可证密钥。计量许可证允许您根据实际用量使用 Aspose.PDF 的高级功能。
 
-### Step 1: Configuring License Keys
+### 第 1 步：配置许可证密钥
 
-In the source code provided, you must specify the public and private keys of the metered license. Replace the "*****" values with your own keys. These keys will be provided to you when you purchase a metered license from Aspose.
+在提供的源代码中，您必须指定计量许可证的公钥和私钥。更换 ”*****“值与您自己的密钥。当您从 Aspose 购买计量许可证时，将向您提供这些密钥。
 
 ```csharp
 Aspose.Pdf.Metered metered = new Aspose.Pdf.Metered();
 metered.SetMeteredKey("PUBLIC_KEY", "PRIVATE_KEY");
 ```
 
-### Step 2: Loading the document
+### 第 2 步：加载文档
 
-Load the PDF document from disk using the `Document` class of Aspose.PDF.
+使用以下命令从磁盘加载 PDF 文档`Document`Aspose.PDF 类。
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-### Step 3: Get Document Page Count
+### 第 3 步：获取文档页数
 
-Use the `Count` property of the `Pages` collection to get the total number of pages in the document.
+使用`Count`的财产`Pages`集合以获取文档中的总页数。
 
 ```csharp
 Console.WriteLine(doc.Pages.Count);
 ```
 
-### Sample source code for Configure Metered License using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 配置计量许可证的示例源代码 
 
 ```csharp
 
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// set metered public and private keys
+//设置计量公钥和私钥
 Aspose.Pdf.Metered metered = new Aspose.Pdf.Metered();
-// Access the setMeteredKey property and pass public and private keys as parameters
+//访问 setMeteredKey 属性并将公钥和私钥作为参数传递
 metered.SetMeteredKey("*****", "*****");
-// Load the document from disk.
+//从磁盘加载文档。
 Document doc = new Document(dataDir + "input.pdf");
-//Get the page count of document
+//获取文档的页数
 Console.WriteLine(doc.Pages.Count);
 
 ```
 
-## Conclusion
+## 结论
 
-In this tutorial, we explained how to set up a metered license with Aspose.PDF for .NET. By using a metered license, you can benefit from the advanced features of Aspose.PDF based on your actual usage. Make sure to provide valid license keys to use Aspose.PDF with all its features.
+在本教程中，我们解释了如何使用 Aspose.PDF for .NET 设置计量许可证。通过使用计量许可证，您可以根据实际使用情况从 Aspose.PDF 的高级功能中受益。确保提供有效的许可证密钥以使用 Aspose.PDF 及其所有功能。
 
-### FAQ's for configure metered license keys in PDF file
+### 在 PDF 文件中配置计量许可证密钥的常见问题解答
 
-#### Q: What is a metered license in Aspose.PDF?
+#### 问：Aspose.PDF 中的计量许可证是什么？
 
-A: A metered license in Aspose.PDF is a licensing model that allows you to pay based on your actual consumption of features rather than a fixed license fee. It enables you to use advanced features of Aspose.PDF while paying only for what you use.
+答：Aspose.PDF 中的计量许可证是一种许可模式，允许您根据实际使用的功能而不是固定的许可费来付费。它使您能够使用 Aspose.PDF 的高级功能，同时只需为您使用的内容付费。
 
-#### Q: Why should I use a metered license for Aspose.PDF?
+#### 问：为什么我应该使用 Aspose.PDF 的计量许可证？
 
-A: Using a metered license offers cost savings and flexibility. You pay only for the features you use, making it suitable for projects with varying demands. It eliminates the need for upfront licensing fees and allows you to access advanced PDF features.
+答：使用计量许可证可以节省成本并提高灵活性。您只需为您使用的功能付费，使其适合具有不同需求的项目。它无需预先支付许可费用，并允许您访问高级 PDF 功能。
 
-#### Q: How do I obtain metered license keys?
+#### 问：如何获取计量许可证密钥？
 
-A: When you purchase a metered license from Aspose, you will receive a pair of public and private keys. These keys will be used to authenticate and enable metered licensing for your Aspose.PDF application.
+答：当您从 Aspose 购买计量许可证时，您将收到一对公钥和私钥。这些密钥将用于验证您的 Aspose.PDF 应用程序并启用计量许可。
 
-#### Q: How do I configure metered license keys in Aspose.PDF for .NET?
+#### 问：如何在 Aspose.PDF for .NET 中配置计量许可证密钥？
 
-A: To configure metered license keys, use the `SetMeteredKey` method of the `Aspose.Pdf.Metered` class. Replace `"PUBLIC_KEY"` and `"PRIVATE_KEY"` with your actual keys.
+答：要配置计量许可证密钥，请使用`SetMeteredKey`的方法`Aspose.Pdf.Metered`班级。代替`"PUBLIC_KEY"`和`"PRIVATE_KEY"`用你的实际钥匙。
 
 ```csharp
 Aspose.Pdf.Metered metered = new Aspose.Pdf.Metered();
 metered.SetMeteredKey("PUBLIC_KEY", "PRIVATE_KEY");
 ```
 
-#### Q: How do I load a PDF document using Aspose.PDF for .NET?
+#### 问：如何使用 Aspose.PDF for .NET 加载 PDF 文档？
 
-A: To load a PDF document from disk, use the `Document` class of Aspose.PDF and provide the file path.
+答：要从磁盘加载 PDF 文档，请使用`Document`Aspose.PDF 类并提供文件路径。
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-#### Q: How do I get the total page count of a PDF document?
+#### 问：如何获取 PDF 文档的总页数？
 
-A: To get the total page count of a PDF document, use the `Count` property of the `Pages` collection.
+答：要获取 PDF 文档的总页数，请使用`Count`的财产`Pages`收藏。
 
 ```csharp
 int pageCount = doc.Pages.Count;
 Console.WriteLine("Total pages: " + pageCount);
 ```
 
-#### Q: Can I use metered licensing for other Aspose products?
+#### 问：我可以对其他 Aspose 产品使用计量许可吗？
 
-A: Yes, metered licensing is available for various Aspose products, allowing you to pay based on your usage for a wide range of features.
+答：是的，各种 Aspose 产品均提供计量许可，允许您根据各种功能的使用情况付费。
 
-#### Q: Is a metered license suitable for all types of projects?
+#### 问：计量许可证是否适合所有类型的项目？
 
-A: Metered licensing is suitable for projects with varying feature usage. It may not be cost-effective for projects with consistent, high-feature usage.
+答：计量许可适用于具有不同功能使用情况的项目。对于具有一致、高功能使用的项目来说，这可能不具有成本效益。
 
-#### Q: Where can I find more information about Aspose.PDF metered licensing?
+#### 问：在哪里可以找到有关 Aspose.PDF 计量许可的更多信息？
 
-A: For more information about metered licensing, pricing, and benefits, visit the [Aspose.PDF Metered Licensing](https://purchase.aspose.com/pricing/pdf/net) page.
+答：有关计量许可、定价和优势的更多信息，请访问[Aspose.PDF 计量许可](https://purchase.aspose.com/pricing/pdf/net)页。
 
-#### Q: How do I ensure the security of my metered license keys?
+#### 问：如何确保计量许可证密钥的安全？
 
-A: Metered license keys are used for authentication and are sensitive information. Ensure they are kept confidential and not shared publicly.
+答：计量许可证密钥用于身份验证，属于敏感信息。确保它们保密并且不公开分享。
 
-#### Q: Can I switch between traditional and metered licensing?
+#### 问：我可以在传统许可和计量许可之间切换吗？
 
-A: Yes, you can switch between traditional licensing and metered licensing for Aspose.PDF based on your project's requirements.
+答：是的，您可以根据项目的要求在 Aspose.PDF 的传统许可和计量许可之间切换。
 
-#### Q: Can I use a trial version before purchasing a metered license?
+#### 问：在购买计量许可证之前我可以使用试用版吗？
 
-A: Yes, you can try the [free trial version](https://products.aspose.com/pdf/net) of Aspose.PDF to evaluate its features and functionality before purchasing a metered license.
+答： 是的，你可以尝试一下[免费试用版](https://products.aspose.com/pdf/net)在购买计量许可证之前，使用 Aspose.PDF 来评估其特性和功能。
 
-#### Q: How often should I configure metered license keys?
+#### 问：我应该多久配置一次计量许可证密钥？
 
-A: You need to configure metered license keys only once when your application starts. It provides access to the advanced features throughout the application's runtime.
+答：您只需在应用程序启动时配置一次计量许可证密钥。它允许在应用程序的整个运行时访问高级功能。
 
-#### Q: Can I apply metered licensing to an existing application?
+#### 问：我可以对现有应用程序应用计量许可吗？
 
-A: Yes, you can integrate metered licensing into an existing Aspose.PDF application to benefit from its advantages.
+答：是的，您可以将计量许可集成到现有的 Aspose.PDF 应用程序中，以受益于其优势。

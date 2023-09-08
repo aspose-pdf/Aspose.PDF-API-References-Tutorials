@@ -1,33 +1,33 @@
 ---
-title: Flatten Forms In PDF Document
-linktitle: Flatten Forms In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Easily flatten forms in PDF document using Aspose.PDF for .NET.
+title: Formulare im PDF-Dokument reduzieren
+linktitle: Formulare im PDF-Dokument reduzieren
+second_title: Aspose.PDF für .NET API-Referenz
+description: Reduzieren Sie Formulare in PDF-Dokumenten ganz einfach mit Aspose.PDF für .NET.
 type: docs
 weight: 100
 url: /de/net/programming-with-forms/flatten-forms/
 ---
-In this tutorial, we will show you how to flatten forms using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+In diesem Tutorial zeigen wir Ihnen, wie Sie Formulare mit Aspose.PDF für .NET reduzieren. Wir erklären Ihnen Schritt für Schritt den C#-Quellcode, um Sie durch diesen Prozess zu führen.
 
-## Step 1: Preparation
+## Schritt 1: Vorbereitung
 
-First, make sure you have imported the necessary libraries and set the path to the documents directory:
+Stellen Sie zunächst sicher, dass Sie die erforderlichen Bibliotheken importiert haben und legen Sie den Pfad zum Dokumentenverzeichnis fest:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load source PDF form
+## Schritt 2: Laden Sie das Quell-PDF-Formular
 
-Load the source PDF form:
+Laden Sie das Quell-PDF-Formular:
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 3: Flatten the forms
+## Schritt 3: Glätten Sie die Formen
 
-First check if there are any form fields in the document. If so, iterate through each field and apply flattening:
+Überprüfen Sie zunächst, ob das Dokument Formularfelder enthält. Wenn ja, durchlaufen Sie jedes Feld und wenden Sie die Reduzierung an:
 
 ```csharp
 if (doc.Form.Fields.Count() > 0)
@@ -39,22 +39,22 @@ item. Flatten();
 }
 ```
 
-## Step 4: Save the updated document
+## Schritt 4: Speichern Sie das aktualisierte Dokument
 
-Save the updated PDF document:
+Speichern Sie das aktualisierte PDF-Dokument:
 
 ```csharp
 dataDir = dataDir + "FlattenForms_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Flatten Forms using Aspose.PDF for .NET 
+### Beispielquellcode für Flatten Forms mit Aspose.PDF für .NET 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load source PDF form
+// Laden Sie das Quell-PDF-Formular
 Document doc = new Document(dataDir + "input.pdf");
-// Flatten Forms
+// Formen abflachen
 if (doc.Form.Fields.Count() > 0)
 {
 	foreach (var item in doc.Form.Fields)
@@ -63,33 +63,33 @@ if (doc.Form.Fields.Count() > 0)
 	}
 }
 dataDir = dataDir + "FlattenForms_out.pdf";
-// Save the updated document
+// Speichern Sie das aktualisierte Dokument
 doc.Save(dataDir);
 Console.WriteLine("\nForms flattened successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Abschluss
 
-In this tutorial, we learned how to flatten forms using Aspose.PDF for .NET. By following these steps, you can easily flatten forms in your PDF documents, making fields uneditable and merging annotations with document content.
+In diesem Tutorial haben wir gelernt, wie man Formulare mit Aspose.PDF für .NET reduziert. Wenn Sie diese Schritte befolgen, können Sie Formulare in Ihren PDF-Dokumenten ganz einfach reduzieren, Felder nicht mehr bearbeiten und Anmerkungen mit Dokumentinhalten zusammenführen.
 
-### FAQ's
+### FAQs
 
-#### Q: What does "flattening forms" mean in Aspose.PDF for .NET?
+#### F: Was bedeutet „Formulare reduzieren“ in Aspose.PDF für .NET?
 
-A: Flattening forms in Aspose.PDF for .NET refers to the process of making form fields in a PDF document uneditable and merging annotations (such as form fields, annotations, and digital signatures) with the document's content. Once forms are flattened, users cannot modify the form fields, and the visual appearance of the form fields becomes a part of the static content of the PDF document.
+A: Das Reduzieren von Formularen in Aspose.PDF für .NET bezieht sich auf den Prozess, Formularfelder in einem PDF-Dokument nicht mehr bearbeitbar zu machen und Anmerkungen (z. B. Formularfelder, Anmerkungen und digitale Signaturen) mit dem Inhalt des Dokuments zusammenzuführen. Sobald Formulare reduziert sind, können Benutzer die Formularfelder nicht mehr ändern und das visuelle Erscheinungsbild der Formularfelder wird Teil des statischen Inhalts des PDF-Dokuments.
 
-#### Q: Can I reverse the flattening process and make the form fields editable again?
+#### F: Kann ich den Reduziervorgang umkehren und die Formularfelder wieder bearbeitbar machen?
 
-A: No, once the form fields are flattened, the process is irreversible using Aspose.PDF for .NET. Flattening permanently merges the form fields' appearance with the PDF's content, and the individual form field elements are no longer accessible or editable.
+A: Nein, sobald die Formularfelder reduziert sind, kann der Vorgang mit Aspose.PDF für .NET nicht mehr rückgängig gemacht werden. Durch die Reduzierung wird das Erscheinungsbild der Formularfelder dauerhaft mit dem Inhalt der PDF-Datei verschmolzen und die einzelnen Formularfeldelemente sind nicht mehr zugänglich oder bearbeitbar.
 
-#### Q: When should I flatten forms in a PDF document?
+#### F: Wann sollte ich Formulare in einem PDF-Dokument reduzieren?
 
-A: Flattening forms is useful when you want to preserve the visual appearance of form fields and annotations in a PDF document while preventing users from modifying the data. This is commonly done when you want to share a PDF document with pre-filled form data or annotations that should not be altered by the recipients.
+A: Das Reduzieren von Formularen ist nützlich, wenn Sie das visuelle Erscheinungsbild von Formularfeldern und Anmerkungen in einem PDF-Dokument beibehalten und gleichzeitig verhindern möchten, dass Benutzer die Daten ändern. Dies geschieht häufig, wenn Sie ein PDF-Dokument mit vorab ausgefüllten Formulardaten oder Anmerkungen teilen möchten, die von den Empfängern nicht geändert werden sollen.
 
-#### Q: Will flattening forms affect other annotations, such as digital signatures?
+#### F: Wird sich das Reduzieren von Formularen auf andere Anmerkungen wie digitale Signaturen auswirken?
 
-A: Yes, flattening forms will merge all annotations, including digital signatures, with the PDF's content. Once the forms are flattened, any existing digital signatures will become a permanent part of the document, and users cannot modify or remove them.
+A: Ja, durch das Reduzieren von Formularen werden alle Anmerkungen, einschließlich digitaler Signaturen, mit dem Inhalt der PDF-Datei zusammengeführt. Sobald die Formulare vereinfacht sind, werden alle vorhandenen digitalen Signaturen zu einem dauerhaften Bestandteil des Dokuments und Benutzer können sie nicht ändern oder entfernen.
 
-#### Q: Can I selectively flatten specific form fields and leave others editable?
+#### F: Kann ich bestimmte Formularfelder gezielt reduzieren und andere bearbeitbar lassen?
 
-A: Yes, you can selectively flatten specific form fields in a PDF document while leaving others editable. Instead of using the code to flatten all form fields, you can choose to flatten only the desired form fields based on their names or other criteria.
+A: Ja, Sie können bestimmte Formularfelder in einem PDF-Dokument gezielt reduzieren, während andere bearbeitbar bleiben. Anstatt den Code zum Reduzieren aller Formularfelder zu verwenden, können Sie auch nur die gewünschten Formularfelder basierend auf ihren Namen oder anderen Kriterien reduzieren.

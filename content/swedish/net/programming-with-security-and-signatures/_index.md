@@ -1,27 +1,27 @@
 ---
-title: Programming with Security and Signatures
-linktitle: Programming with Security and Signatures
+title: Programmering med säkerhet och signaturer
+linktitle: Programmering med säkerhet och signaturer
 type: docs
 weight: 17
 url: /sv/net/programming-with-security-and-signatures/
-description: Programming with Security and Signatures tutorial teaches you how to secure and sign your PDF documents, ensuring confidentiality and authenticity.
+description: Handledningen Programmering med säkerhet och signaturer lär dig hur du säkrar och signerar dina PDF-dokument, vilket säkerställer konfidentialitet och äkthet.
 ---
-Programming with Security and Signatures tutorial walks you through security and signatures features for PDF documents. You will learn how to protect your PDF files with passwords, add digital signatures and verify the integrity of signed documents.
+Handledning för programmering med säkerhet och signaturer leder dig genom säkerhets- och signaturfunktioner för PDF-dokument. Du kommer att lära dig hur du skyddar dina PDF-filer med lösenord, lägger till digitala signaturer och verifierar integriteten hos signerade dokument.
 
-The tutorial gives you a detailed overview of methods and techniques to ensure the confidentiality and authenticity of your PDF files. You'll learn how to manage digital certificates, add security permissions, apply security policies, and more. Using these tutorials, you will be able to secure your PDF documents reliably and professionally.
+Handledningen ger dig en detaljerad översikt över metoder och tekniker för att säkerställa konfidentialitet och äkthet för dina PDF-filer. Du lär dig hur du hanterar digitala certifikat, lägger till säkerhetsbehörigheter, tillämpar säkerhetspolicyer och mer. Med hjälp av dessa handledningar kommer du att kunna säkra dina PDF-dokument på ett tillförlitligt och professionellt sätt.
 
-## Tutorials
-| Title | Description |
+## Handledningar
+| Titel | Beskrivning |
 | --- | --- | 
-| [Change Password In PDF File](./change-password/) | Learn how to change the password in PDF file using Aspose.PDF for .NET. |  
-| [Decrypt PDF File](./decrypt/) | Learn how to decrypt PDF file using Aspose.PDF for .NET. |  
-| [Determine Correct Password In PDF File](./determine-correct-password/) | Learn how to determine the correct password in PDF file with Aspose.PDF for .NET. |  
-| [Digitally Sign In PDF File](./digitally-sign/) | Learn how to digitally sign in PDF file with Aspose.PDF for .NET. |  
-| [Digitally Sign With Time Stamp In PDF File](./digitally-sign-with-time-stamp/) | Learn how to perform a digital signature with time stamp in PDF file using Aspose.PDF for .NET. |  
-| [Encrypt PDF File](./encrypt/) | Securely encrypt your PDF files with Aspose.PDF for .NET. |  
-| [Extracting Image](./extracting-image/) | Easily extract images from PDF documents with Aspose.PDF for .NET. |  
-| [Extract Signature Info](./extract-signature-info/) | Extracting signature information using Aspose.PDF for .NET. |  
-| [Is Password Protected](./is-password-protected/) | Easily check if a PDF document is password protected with Aspose.PDF for .NET. |  
-| [Set Privileges In PDF File](./set-privileges/) | Easily set access privileges in PDF file with Aspose.PDF for .NET. |  
-| [Sign With Smart Card Using Pdf File Signature](./sign-with-smart-card-using-pdf-file-signature/) | Sign your PDF files securely with a smart card using Aspose.PDF for .NET. |  
-| [Sign With Smart Card Using Signature Field](./sign-with-smart-card-using-signature-field/) | Sign your PDF files securely with a smart card using Aspose.PDF for .NET. |  
+| [Ändra lösenord i PDF-fil](./change-password/) | Lär dig hur du ändrar lösenordet i PDF-filen med Aspose.PDF för .NET. |  
+| [Dekryptera PDF-fil](./decrypt/) | Lär dig hur du dekrypterar en PDF-fil med Aspose.PDF för .NET. |  
+| [Bestäm rätt lösenord i PDF-fil](./determine-correct-password/) | Lär dig hur du bestämmer rätt lösenord i PDF-filen med Aspose.PDF för .NET. |  
+| [Logga in digitalt PDF-fil](./digitally-sign/) | Lär dig hur du loggar in en PDF-fil digitalt med Aspose.PDF för .NET. |  
+| [Signera digitalt med tidsstämpel i PDF-fil](./digitally-sign-with-time-stamp/) | Lär dig hur du utför en digital signatur med tidsstämpel i PDF-fil med Aspose.PDF för .NET. |  
+| [Kryptera PDF-fil](./encrypt/) | Kryptera dina PDF-filer säkert med Aspose.PDF för .NET. |  
+| [Extraherar bild](./extracting-image/) | Extrahera enkelt bilder från PDF-dokument med Aspose.PDF för .NET. |  
+| [Extrahera signaturinformation](./extract-signature-info/) | Extrahera signaturinformation med Aspose.PDF för .NET. |  
+| [Är lösenordsskyddad](./is-password-protected/) | Kontrollera enkelt om ett PDF-dokument är lösenordsskyddat med Aspose.PDF för .NET. |  
+| [Ställ in privilegier i PDF-fil](./set-privileges/) | Ställ enkelt in åtkomstprivilegier i PDF-fil med Aspose.PDF för .NET. |  
+| [Sign med smartkort med pdf-filsignatur](./sign-with-smart-card-using-pdf-file-signature/) | Signera dina PDF-filer säkert med ett smartkort med Aspose.PDF för .NET. |  
+| [Med Smart Card Använda Signaturfältet](./sign-with-smart-card-using-signature-field/) | Signera dina PDF-filer säkert med ett smartkort med Aspose.PDF för .NET. |  

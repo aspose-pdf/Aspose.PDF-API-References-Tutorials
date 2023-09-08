@@ -1,49 +1,49 @@
 ---
-title: Expand Bookmarks In PDF File
-linktitle: Expand Bookmarks In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily expand bookmarks in PDF file for improved navigation with Aspose.PDF for .NET.
+title: Espandi Segnalibri nel file PDF
+linktitle: Espandi Segnalibri nel file PDF
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Espandi facilmente i segnalibri nel file PDF per una migliore navigazione con Aspose.PDF per .NET.
 type: docs
 weight: 50
 url: /it/net/programming-with-bookmarks/expand-bookmarks/
 ---
-Expanding bookmarks in PDF file will display all open bookmarks by default. With Aspose.PDF for .NET, you can easily expand bookmarks by following the following source code:
+L'espansione dei segnalibri nel file PDF visualizzerà tutti i segnalibri aperti per impostazione predefinita. Con Aspose.PDF per .NET, puoi facilmente espandere i segnalibri seguendo il seguente codice sorgente:
 
-## Step 1: Import required libraries
+## Passaggio 1: importa le librerie richieste
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Prima di iniziare, devi importare le librerie necessarie per il tuo progetto C#. Ecco la necessaria direttiva sulle importazioni:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## Passaggio 2: imposta il percorso della cartella dei documenti
 
-In this step, you need to specify the path to the folder containing the PDF file whose bookmarks you want to expand. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ In questo passaggio, devi specificare il percorso della cartella contenente il file PDF di cui desideri espandere i segnalibri. Sostituire`"YOUR DOCUMENT DIRECTORY"`nel seguente codice con il percorso effettivo della cartella dei documenti:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Passaggio 3: apri il documento PDF
 
-Now we will open the PDF document whose bookmarks we want to expand using the following code:
+Ora apriremo il documento PDF di cui vogliamo espandere i segnalibri utilizzando il seguente codice:
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 4: Set Page Display Mode
+## Passaggio 4: impostare la modalità di visualizzazione della pagina
 
-In this step, we will set the page display mode to show bookmarks by default. We use the `PageMode` property of the `doc` object to set the desired page mode. Here is the corresponding code:
+In questo passaggio, imposteremo la modalità di visualizzazione della pagina per mostrare i segnalibri per impostazione predefinita. Noi usiamo il`PageMode` proprietà del`doc` oggetto per impostare la modalità di pagina desiderata. Ecco il codice corrispondente:
 
 ```csharp
 doc.PageMode = PageMode.UseOutlines;
 ```
 
-## Step 5: Browse bookmarks and expand them
+## Passaggio 5: sfoglia i segnalibri ed espandili
 
-Now we'll loop through each bookmark item in the document's bookmarks collection and set each item's open state to `true` to expand them by default. Here is the corresponding code:
+ Ora scorreremo ogni elemento segnalibro nella raccolta di segnalibri del documento e imposteremo lo stato aperto di ciascun elemento su`true` per espanderli per impostazione predefinita. Ecco il codice corrispondente:
 
 ```csharp
 foreach(OutlineItemCollection item in doc.Outlines)
@@ -52,86 +52,86 @@ foreach(OutlineItemCollection item in doc.Outlines)
 }
 ```
 
-## Step 6: Save the updated file
+## Passaggio 6: salva il file aggiornato
 
-Finally, we save the updated PDF file using the `Save` method of the `doc` object. Here is the corresponding code:
+ Infine, salviamo il file PDF aggiornato utilizzando il file`Save` metodo del`doc` oggetto. Ecco il codice corrispondente:
 
 ```csharp
 dataDir = dataDir + "ExpandBookmarks_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Expand Bookmarks using Aspose.PDF for .NET 
+### Codice sorgente di esempio per espandere i segnalibri utilizzando Aspose.PDF per .NET 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Apri documento
 Document doc = new Document(dataDir + "input.pdf");
-// Set page view mode i.e. show thumbnails, full-screen, show attachment panel
+// Imposta la modalità di visualizzazione della pagina, ad esempio mostra miniature, schermo intero, mostra pannello allegati
 doc.PageMode = PageMode.UseOutlines;
-// Traverse through each Ouline item in outlines collection of PDF file
+// Attraversa ogni elemento Ouline nella raccolta di contorni del file PDF
 foreach (OutlineItemCollection item in doc.Outlines)
 {
-	// Set open status for outline item
+	// Imposta lo stato aperto per l'elemento del contorno
 	item.Open = true;
 }
 dataDir = dataDir + "ExpandBookmarks_out.pdf";
-// Save output
+// Salva l'output
 doc.Save(dataDir);
 Console.WriteLine("\nBookmarks expanded successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Conclusione
 
-Congratulation ! You now have a step-by-step guide to developing bookmarks with Aspose.PDF for .NET. You can use this code to show all default bookmarks in your PDF documents.
+Congratulazioni! Ora hai una guida passo passo per sviluppare segnalibri con Aspose.PDF per .NET. Puoi utilizzare questo codice per mostrare tutti i segnalibri predefiniti nei tuoi documenti PDF.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Assicurati di controllare la documentazione ufficiale Aspose.PDF per ulteriori informazioni sulle funzionalità avanzate di manipolazione dei segnalibri.
 
-### FAQ's for expand bookmarks in PDF file
+### Domande frequenti per espandere i segnalibri nel file PDF
 
-#### Q: What are bookmarks in a PDF file?
+#### D: Cosa sono i segnalibri in un file PDF?
 
-A: Bookmarks in a PDF file are navigational aids that allow users to quickly jump to specific sections or pages within the document. They provide a convenient way to access different parts of a document.
+R: I segnalibri in un file PDF sono aiuti alla navigazione che consentono agli utenti di passare rapidamente a sezioni o pagine specifiche all'interno del documento. Forniscono un modo conveniente per accedere a diverse parti di un documento.
 
-#### Q: Why would I want to expand bookmarks in a PDF file?
+#### D: Perché dovrei espandere i segnalibri in un file PDF?
 
-A: Expanding bookmarks can improve the user experience by displaying all bookmarks in an expanded state by default. This gives users a clear overview of the document's structure and allows them to easily navigate to different sections.
+R: L'espansione dei segnalibri può migliorare l'esperienza dell'utente visualizzando tutti i segnalibri in uno stato espanso per impostazione predefinita. Ciò offre agli utenti una chiara panoramica della struttura del documento e consente loro di navigare facilmente tra le diverse sezioni.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### D: Come posso importare le librerie necessarie per il mio progetto C#?
 
-A: To import the required library for your C# project, use the following import directive:
+R: Per importare la libreria richiesta per il tuo progetto C#, utilizza la seguente direttiva di importazione:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This directive allows you to utilize the classes and methods provided by Aspose.PDF for .NET.
+Questa direttiva consente di utilizzare le classi e i metodi forniti da Aspose.PDF per .NET.
 
-#### Q: How do I specify the path to the documents folder?
+#### D: Come posso specificare il percorso della cartella dei documenti?
 
-A: In the provided source code, replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file that you want to work with. This ensures that the code can locate the target PDF file.
+ R: Nel codice sorgente fornito, sostituisci`"YOUR DOCUMENT DIRECTORY"` con il percorso effettivo della cartella contenente il file PDF con cui desideri lavorare. Ciò garantisce che il codice possa individuare il file PDF di destinazione.
 
-#### Q: How do I open a PDF document to expand its bookmarks?
+#### D: Come posso aprire un documento PDF per espandere i suoi segnalibri?
 
-A: To open a PDF document for expanding bookmarks, use the following code:
+R: Per aprire un documento PDF per espandere i segnalibri, utilizzare il seguente codice:
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-Replace `"input.pdf"` with the actual file name.
+ Sostituire`"input.pdf"` con il nome effettivo del file.
 
-#### Q: How do I set the page display mode to show bookmarks by default?
+#### D: Come posso impostare la modalità di visualizzazione della pagina per mostrare i segnalibri per impostazione predefinita?
 
-A: To set the page display mode to show bookmarks by default, use the `PageMode` property of the `doc` object:
+R: Per impostare la modalità di visualizzazione della pagina in modo che mostri i segnalibri per impostazione predefinita, utilizzare il file`PageMode` proprietà del`doc` oggetto:
 
 ```csharp
 doc.PageMode = PageMode.UseOutlines;
 ```
 
-#### Q: How do I expand all bookmarks in the PDF document?
+#### D: Come posso espandere tutti i segnalibri nel documento PDF?
 
-A: To expand all bookmarks, loop through each bookmark item in the document's outlines collection and set the `Open` property to `true`:
+ R: Per espandere tutti i segnalibri, scorrere ciascun elemento segnalibro nella raccolta delle strutture del documento e impostare il file`Open` proprietà a`true`:
 
 ```csharp
 foreach (OutlineItemCollection item in doc.Outlines)
@@ -140,19 +140,19 @@ foreach (OutlineItemCollection item in doc.Outlines)
 }
 ```
 
-#### Q: What happens if a bookmark has nested child bookmarks?
+#### D: Cosa succede se un segnalibro contiene segnalibri secondari nidificati?
 
-A: If a bookmark has nested child bookmarks, expanding the parent bookmark will also expand its child bookmarks, providing a comprehensive view of the document's structure.
+R: Se un segnalibro ha segnalibri secondari nidificati, l'espansione del segnalibro principale espanderà anche i suoi segnalibri secondari, fornendo una visualizzazione completa della struttura del documento.
 
-#### Q: How do I save the updated PDF file after expanding bookmarks?
+#### D: Come posso salvare il file PDF aggiornato dopo aver espanso i segnalibri?
 
-A: To save the updated PDF file after expanding bookmarks, use the following code:
+R: Per salvare il file PDF aggiornato dopo aver espanso i segnalibri, utilizzare il seguente codice:
 
 ```csharp
 dataDir = dataDir + "ExpandBookmarks_out.pdf";
 doc.Save(dataDir);
 ```
 
-#### Q: Can I customize the appearance of expanded bookmarks?
+#### D: Posso personalizzare l'aspetto dei segnalibri espansi?
 
-A: While this tutorial focuses on expanding bookmarks by default, you can customize the appearance of bookmarks using Aspose.PDF's other features and properties.
+R: Sebbene questo tutorial si concentri sull'espansione dei segnalibri per impostazione predefinita, puoi personalizzare l'aspetto dei segnalibri utilizzando le altre funzionalità e proprietà di Aspose.PDF.

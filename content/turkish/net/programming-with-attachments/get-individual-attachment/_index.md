@@ -1,50 +1,50 @@
 ---
-title: Get Individual Attachment In PDF File
-linktitle: Get Individual Attachment In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to get an individual attachment in PDF file with Aspose.PDF for .NET. 
+title: PDF Dosyasında Bireysel Ek Alın
+linktitle: PDF Dosyasında Bireysel Ek Alın
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile PDF dosyasında ayrı bir ekin nasıl alınacağını öğrenin.
 type: docs
 weight: 60
 url: /tr/net/programming-with-attachments/get-individual-attachment/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to get an individual attachment of a PDF file using Aspose.PDF for .NET.
+Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF dosyasının ayrı bir ekini almak için aşağıdaki C# kaynak kodunu size adım adım anlatacağız.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Başlamadan önce Aspose.PDF kütüphanesini kurduğunuzdan ve geliştirme ortamınızı kurduğunuzdan emin olun. Ayrıca temel C# programlama bilgisine sahip olmak.
 
-### Step 1: Document Directory Setup
+### Adım 1: Belge Dizini Kurulumu
 
-In the provided source code, you need to specify the directory where the PDF file is located from which you want to get the individual attachment. Change the "dataDir" variable to the desired directory.
+Sağlanan kaynak kodunda, bireysel eki almak istediğiniz PDF dosyasının bulunduğu dizini belirtmeniz gerekir. "dataDir" değişkenini istediğiniz dizine değiştirin.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### Step 2: Open the existing PDF document
+### 2. Adım: Mevcut PDF belgesini açın
 
-We open the existing PDF document using the specified path.
+Mevcut PDF belgesini belirtilen yolu kullanarak açıyoruz.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetIndividualAttachment.pdf");
 ```
 
-### Step 3: Obtaining a Specific Attachment
+### Adım 3: Belirli Bir Ekin Edinilmesi
 
-We retrieve a specific attachment from the document's attachments collection. In this example, we get the first attachment using index 1.
+Belgenin ekler koleksiyonundan belirli bir eki alıyoruz. Bu örnekte, dizin 1'i kullanarak ilk eki alıyoruz.
 
 ```csharp
 FileSpecification fileSpecification = pdfDocument.EmbeddedFiles[1];
 ```
 
-### Step 4: Get File Properties
+### Adım 4: Dosya Özelliklerini Alın
 
-We display attachment properties such as name, description, MIME type, control hash, date created, date modified, and size.
+Ad, açıklama, MIME türü, kontrol karması, oluşturulma tarihi, değiştirilme tarihi ve boyut gibi ek özelliklerini görüntüleriz.
 
 ```csharp
 Console.WriteLine("Name: {0}", fileSpecification.Name);
 Console.WriteLine("Description: {0}", fileSpecification.Description);
 Console.WriteLine("MIME Type: {0}", fileSpecification.MIMEType);
 
-// Check if object parameters contain additional information
+// Nesne parametrelerinin ek bilgi içerip içermediğini kontrol edin
 if (fileSpecification.Params != null)
 {
 Console.WriteLine("Check Hash: {0}", fileSpecification.Params.CheckSum);
@@ -54,9 +54,9 @@ Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
 }
 ```
 
-### Step 5: Retrieve attachment and save to file
+### 5. Adım: Eki alın ve dosyaya kaydedin
 
-We retrieve the content of the attachment and save it to a text file. In this example, the file is saved with the name "test_out.txt".
+Ekin içeriğini alıp bir metin dosyasına kaydediyoruz. Bu örnekte dosya "test_out.txt" adıyla kaydedilmiştir.
 
 ```csharp
 byte[] fileContent = new byte[fileSpecification.Contents.Length];
@@ -66,21 +66,21 @@ fileStream.Write(fileContent, 0, fileContent.Length);
 fileStream.Close();
 ```
 
-### Sample source code for Get Individual Attachment using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Bireysel Ek Al için örnek kaynak kodu 
 
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir + "GetIndividualAttachment.pdf");
-// Get particular embedded file
+// Belirli bir gömülü dosyayı alın
 FileSpecification fileSpecification = pdfDocument.EmbeddedFiles[1];
-// Get the file properties
+// Dosya özelliklerini alın
 Console.WriteLine("Name: {0}", fileSpecification.Name);
 Console.WriteLine("Description: {0}", fileSpecification.Description);
 Console.WriteLine("Mime Type: {0}", fileSpecification.MIMEType);
-// Check if parameter object contains the parameters
+//Parametre nesnesinin parametreleri içerip içermediğini kontrol edin
 if (fileSpecification.Params != null)
 {
 	Console.WriteLine("CheckSum: {0}",
@@ -91,7 +91,7 @@ if (fileSpecification.Params != null)
 	fileSpecification.Params.ModDate);
 	Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
 }
-// Get the attachment and write to file or stream
+// Eki alın ve dosyaya veya akışa yazın
 byte[] fileContent = new byte[fileSpecification.Contents.Length];
 fileSpecification.Contents.Read(fileContent, 0, fileContent.Length);
 FileStream fileStream = new FileStream(dataDir + "test_out" + ".txt", FileMode.Create);
@@ -100,44 +100,44 @@ fileStream.Close();
 
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we explained how to get an individual attachment from a PDF file using Aspose.PDF for .NET. You can now use this knowledge to extract and save attachments from your PDF files.
+Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF dosyasından ayrı bir ekin nasıl alınacağını açıkladık. Artık bu bilgiyi PDF dosyalarınızdaki ekleri çıkarmak ve kaydetmek için kullanabilirsiniz.
 
-### FAQs for get individual attachment in PDF file
+### PDF dosyasında bireysel ek almak için SSS
 
-#### Q: What is the purpose of getting an individual attachment from a PDF document?
+#### S: Bir PDF belgesinden tek bir ek almanın amacı nedir?
 
-A: Getting an individual attachment allows you to extract and save a specific embedded file within a PDF, which can be useful for further analysis or manipulation.
+C: Bireysel bir ek almak, PDF içindeki belirli bir gömülü dosyayı çıkarmanıza ve kaydetmenize olanak tanır; bu, daha ileri analiz veya manipülasyon için yararlı olabilir.
 
-#### Q: How can I benefit from this tutorial in my PDF-related tasks?
+#### S: PDF ile ilgili görevlerimde bu eğitimden nasıl yararlanabilirim?
 
-A: This tutorial provides step-by-step instructions and C# source code to retrieve and save a particular attachment from a PDF document using Aspose.PDF for .NET.
+C: Bu eğitim, Aspose.PDF for .NET kullanarak bir PDF belgesinden belirli bir eki almak ve kaydetmek için adım adım talimatlar ve C# kaynak kodu sağlar.
 
-#### Q: What attachment properties can I access using this tutorial?
+#### S: Bu öğreticiyi kullanarak hangi ek özelliklerine erişebilirim?
 
-A: You can access attachment properties such as name, description, MIME type, control hash, creation date, modification date, and size of the specific attachment.
+C: Belirli bir ekin adı, açıklaması, MIME türü, kontrol karması, oluşturulma tarihi, değiştirilme tarihi ve boyutu gibi ek özelliklerine erişebilirsiniz.
 
-#### Q: Can I modify the code to get attachments other than the first attachment?
+#### S: İlk ekin dışındaki ekleri almak için kodu değiştirebilir miyim?
 
-A: Absolutely, you can adjust the index (e.g., `pdfDocument.EmbeddedFiles[1]`) to retrieve attachments at different indices within the PDF.
+ C: Kesinlikle endeksi ayarlayabilirsiniz (ör.`pdfDocument.EmbeddedFiles[1]`) PDF içindeki farklı dizinlerdeki ekleri almak için.
 
-#### Q: How do I save the retrieved attachment to a file?
+#### S: Alınan eki bir dosyaya nasıl kaydederim?
 
-A: This tutorial provides code to retrieve the attachment's content and save it to a text file with a specified name.
+C: Bu eğitim, ekin içeriğini almak ve bunu belirtilen adla bir metin dosyasına kaydetmek için kod sağlar.
 
-#### Q: What is the significance of the "Check Hash" property in attachment information?
+#### S: Ek bilgilerindeki "Karma Kontrolü" özelliğinin önemi nedir?
 
-A: The "Check Hash" property represents the control hash value of the attachment, which can be used to verify the integrity of the attachment.
+C: "Karma Kontrolü" özelliği, ekin bütünlüğünü doğrulamak için kullanılabilen ekin kontrol karma değerini temsil eder.
 
-#### Q: Can I extend this knowledge to extract attachments with specific criteria, such as file type?
+#### S: Bu bilgiyi, dosya türü gibi belirli ölçütlere sahip ekleri ayıklamak için genişletebilir miyim?
 
-A: Yes, you can enhance the code to filter attachments based on specific criteria such as file type or other properties.
+C: Evet, ekleri dosya türü veya diğer özellikler gibi belirli ölçütlere göre filtrelemek için kodu geliştirebilirsiniz.
 
-#### Q: How does Aspose.PDF for .NET simplify the process of extracting individual attachments?
+#### S: Aspose.PDF for .NET, tek tek eklerin çıkarılması sürecini nasıl basitleştirir?
 
-A: Aspose.PDF for .NET provides a user-friendly API that facilitates the extraction and manipulation of attachments within PDF documents.
+C: Aspose.PDF for .NET, PDF belgelerindeki eklerin çıkarılmasını ve değiştirilmesini kolaylaştıran kullanıcı dostu bir API sağlar.
 
-#### Q: Is this tutorial relevant for password-protected PDF files as well?
+#### S: Bu eğitim parola korumalı PDF dosyaları için de geçerli mi?
 
-A: Yes, you can adapt similar techniques to retrieve individual attachments from password-protected PDF files using Aspose.PDF for .NET.
+C: Evet, Aspose.PDF for .NET'i kullanarak şifre korumalı PDF dosyalarından tek tek ekleri almak için benzer teknikleri uyarlayabilirsiniz.

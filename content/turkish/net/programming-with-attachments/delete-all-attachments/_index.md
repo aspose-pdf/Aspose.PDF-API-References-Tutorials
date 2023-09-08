@@ -1,101 +1,101 @@
 ---
-title: Delete All Attachments In PDF File
-linktitle: Delete All Attachments In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to remove all attachments in PDF file using Aspose.PDF for .NET. Step-by-step guide for easy handling.
+title: PDF Dosyasındaki Tüm Ekleri Sil
+linktitle: PDF Dosyasındaki Tüm Ekleri Sil
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF dosyasındaki tüm ekleri nasıl kaldıracağınızı öğrenin. Kolay kullanım için adım adım kılavuz.
 type: docs
 weight: 20
 url: /tr/net/programming-with-attachments/delete-all-attachments/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to remove all attachments in PDF file using Aspose.PDF for .NET.
+Bu eğitimde, Aspose.PDF for .NET kullanarak PDF dosyasındaki tüm ekleri kaldırmak için aşağıdaki C# kaynak kodunu adım adım anlatacağız.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Başlamadan önce Aspose.PDF kütüphanesini kurduğunuzdan ve geliştirme ortamınızı kurduğunuzdan emin olun. Ayrıca temel C# programlama bilgisine sahip olmak.
 
-### Step 1: Document Directory Setup
+### Adım 1: Belge Dizini Kurulumu
 
-In the provided source code, you need to specify the directory where the PDF file is located from which you want to remove the attachments. Change the "dataDir" variable to the desired directory.
+Sağlanan kaynak kodunda, ekleri kaldırmak istediğiniz PDF dosyasının bulunduğu dizini belirtmeniz gerekir. "dataDir" değişkenini istediğiniz dizine değiştirin.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### Step 2: Open the existing PDF document
+### 2. Adım: Mevcut PDF belgesini açın
 
-We open the existing PDF document using the specified path.
+Mevcut PDF belgesini belirtilen yolu kullanarak açıyoruz.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "DeleteAllAttachments.pdf");
 ```
 
-### Step 3: Remove all attachments
+### 3. Adım: Tüm ekleri kaldırın
 
-We remove all attachments from the document.
+Belgedeki tüm ekleri kaldırıyoruz.
 
 ```csharp
 pdfDocument.EmbeddedFiles.Delete();
 ```
 
-### Step 4: Save the Updated File
+### Adım 4: Güncellenmiş Dosyayı Kaydedin
 
-Finally, we save the updated PDF file with the name "DeleteAllAttachments_out.pdf" in the specified directory.
+Son olarak güncellenen PDF dosyasını "DeleteAllAttachments_out.pdf" ismiyle belirtilen dizine kaydediyoruz.
 
 ```csharp
 pdfDocument.Save(dataDir + "DeleteAllAttachments_out.pdf");
 ```
 
-### Sample source code for Delete All Attachments using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Tüm Eklerin Silinmesi için örnek kaynak kodu 
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir + "DeleteAllAttachments.pdf");
-// Delete all attachments
+// Tüm ekleri sil
 pdfDocument.EmbeddedFiles.Delete();
 dataDir = dataDir + "DeleteAllAttachments_out.pdf";
-// Save updated file
+// Güncellenen dosyayı kaydet
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nAll attachments deleted successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we have explained how to remove all attachments from a PDF file using Aspose.PDF for .NET. You can now use this knowledge to clean up your PDF documents by removing all unwanted attachments.
+Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF dosyasındaki tüm eklerin nasıl kaldırılacağını açıkladık. Artık bu bilgiyi tüm istenmeyen ekleri kaldırarak PDF belgelerinizi temizlemek için kullanabilirsiniz.
 
-## FAQ's for delete all attachments in PDF file
+## PDF dosyasındaki tüm eklerin silinmesine ilişkin SSS
 
-#### Q: Why would I need to remove all attachments from a PDF file?
+#### S: Neden bir PDF dosyasındaki tüm ekleri kaldırmam gerekiyor?
 
-A: Removing all attachments from a PDF file can help streamline the document, reduce file size, and eliminate any unnecessary or outdated supplementary materials.
+C: Bir PDF dosyasındaki tüm eklerin kaldırılması, belgenin daha verimli hale getirilmesine, dosya boyutunun küçültülmesine ve gereksiz veya güncelliğini yitirmiş ek materyallerin ortadan kaldırılmasına yardımcı olabilir.
 
-#### Q: How does Aspose.PDF for .NET simplify the process of removing all attachments?
+#### S: Aspose.PDF for .NET tüm eklerin kaldırılması sürecini nasıl basitleştirir?
 
-A: Aspose.PDF for .NET provides a user-friendly API that allows you to easily remove all attachments from a PDF file. The provided source code demonstrates the step-by-step process.
+C: Aspose.PDF for .NET, bir PDF dosyasındaki tüm ekleri kolayca kaldırmanıza olanak tanıyan kullanıcı dostu bir API sağlar. Sağlanan kaynak kodu, işlemi adım adım göstermektedir.
 
-#### Q: Can I selectively remove specific attachments using this tutorial?
+#### S: Bu öğreticiyi kullanarak belirli ekleri seçerek kaldırabilir miyim?
 
-A: No, this tutorial focuses on removing all attachments from a PDF document. If you need to remove specific attachments, you can explore Aspose.PDF for .NET's API for more advanced attachment management.
+C: Hayır, bu eğitim bir PDF belgesindeki tüm eklerin kaldırılmasına odaklanmaktadır. Belirli ekleri kaldırmanız gerekiyorsa, daha gelişmiş ek yönetimi için Aspose.PDF for .NET'in API'sini inceleyebilirsiniz.
 
-#### Q: Is there a limit to the number of attachments that can be removed using this method?
+#### S: Bu yöntemle kaldırılabilecek eklerin sayısında bir sınır var mı?
 
-A: There is no strict limit to the number of attachments that can be removed using this method. However, it's important to note that all attachments within the PDF document will be deleted.
+C: Bu yöntem kullanılarak kaldırılabilecek eklerin sayısında kesin bir sınır yoktur. Ancak PDF belgesindeki tüm eklerin silineceğini unutmamak önemlidir.
 
-#### Q: Will removing attachments affect the main content of the PDF document?
+#### S: Eklerin kaldırılması PDF belgesinin ana içeriğini etkiler mi?
 
-A: No, removing attachments will not affect the main content of the PDF document. Only the attachments, such as additional files or materials, will be removed.
+C: Hayır, eklerin kaldırılması PDF belgesinin ana içeriğini etkilemez. Yalnızca ek dosyalar veya materyaller gibi ekler kaldırılacaktır.
 
-#### Q: How can I verify that all attachments have been successfully removed?
+#### S: Tüm eklerin başarıyla kaldırıldığını nasıl doğrulayabilirim?
 
-A: After following the provided source code, you can open the resulting PDF file to confirm that the attachments have been removed from the document.
+C: Sağlanan kaynak kodunu izledikten sonra, eklerin belgeden kaldırıldığını onaylamak için ortaya çıkan PDF dosyasını açabilirsiniz.
 
-#### Q: Can I undo the removal of attachments once it's done?
+#### S: Eklerin kaldırılması işlemi tamamlandıktan sonra geri alabilir miyim?
 
-A: No, once attachments are removed from the PDF file, the action is irreversible. Make sure to back up your original PDF file before performing this action.
+C: Hayır, ekler PDF dosyasından kaldırıldığında işlem geri alınamaz. Bu eylemi gerçekleştirmeden önce orijinal PDF dosyanızı yedeklediğinizden emin olun.
 
-#### Q: Are there any file size considerations when removing attachments?
+#### S: Ekleri kaldırırken dosya boyutuna dikkat edilmesi gereken noktalar var mı?
 
-A: Removing attachments can reduce the overall file size of the PDF document, which may lead to improved document performance and sharing efficiency.
+C: Eklerin kaldırılması, PDF belgesinin genel dosya boyutunu azaltabilir ve bu da belge performansının ve paylaşım verimliliğinin artmasını sağlayabilir.
 
-#### Q: Can I automate the process of removing attachments for multiple PDF files?
-A: Yes, you can create a script or program using Aspose.PDF for .NET to automate the process of removing attachments from multiple PDF files in a batch.
+#### S: Birden fazla PDF dosyasındaki ekleri kaldırma işlemini otomatikleştirebilir miyim?
+C: Evet, birden fazla PDF dosyasındaki ekleri toplu olarak kaldırma işlemini otomatikleştirmek için Aspose.PDF for .NET'i kullanarak bir komut dosyası veya program oluşturabilirsiniz.

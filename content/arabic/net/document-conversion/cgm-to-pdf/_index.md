@@ -1,76 +1,76 @@
 ---
-title: CGM To PDF Files
-linktitle: CGM To PDF Files
-second_title: Aspose.PDF for .NET API Reference
-description: Easily convert CGM files to PDF using Aspose.PDF for .NET.
+title: CGM إلى ملفات PDF
+linktitle: CGM إلى ملفات PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: قم بتحويل ملفات CGM إلى PDF بسهولة باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 20
 url: /ar/net/document-conversion/cgm-to-pdf/
 ---
-In this tutorial, we will guide you step by step to convert CGM to PDF files using Aspose.PDF for .NET. We'll explain the provided C# source code and provide step-by-step instructions to help you follow along easily.
+في هذا البرنامج التعليمي، سنرشدك خطوة بخطوة لتحويل ملفات CGM إلى ملفات PDF باستخدام Aspose.PDF لـ .NET. سنشرح كود مصدر C# المقدم ونقدم إرشادات خطوة بخطوة لمساعدتك على المتابعة بسهولة.
 
-## Introduction
+## مقدمة
 
-Converting a CGM file to PDF allows you to share and view your technical drawings universally. With Aspose.PDF for .NET, you can easily perform this conversion and get high quality PDF files.
+يتيح لك تحويل ملف CGM إلى PDF مشاركة رسوماتك الفنية وعرضها عالميًا. باستخدام Aspose.PDF for .NET، يمكنك إجراء هذا التحويل بسهولة والحصول على ملفات PDF عالية الجودة.
 
-## Environment setup
+## إعداد البيئة
 
-Before you start, make sure you have configured your development environment to work with Aspose.PDF for .NET. Follow the steps below:
+قبل البدء، تأكد من تكوين بيئة التطوير الخاصة بك للعمل مع Aspose.PDF لـ .NET. اتبع الخطوات التالية:
 
-1. Install Visual Studio or another IDE compatible with C# development.
-2. Create a new C# project.
-3. Install the Aspose.PDF for .NET package via NuGet to add the necessary dependencies.
+1. قم بتثبيت Visual Studio أو IDE آخر متوافق مع تطوير C#.
+2. إنشاء مشروع C# جديد.
+3. قم بتثبيت Aspose.PDF لحزمة .NET عبر NuGet لإضافة التبعيات الضرورية.
 
-## Convert CGM file to PDF
+## تحويل ملف CGM إلى PDF
 
-To convert a CGM file to PDF, follow these steps:
+لتحويل ملف CGM إلى PDF، اتبع الخطوات التالية:
 
 ```csharp
-// Path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Instantiate a LoadOption object using CGMLoadOption
+// إنشاء مثيل لكائن LoadOption باستخدام CGMLoadOption
 Aspose.Pdf.CgmLoadOptions cgmload = new Aspose.Pdf.CgmLoadOptions();
-// Instantiate a Document object
+// إنشاء مثيل لكائن المستند
 Document doc = new Document(dataDir + "CGMToPDF.CGM", cgmload);
-// Save the resulting PDF document
+// احفظ مستند PDF الناتج
 doc.Save(dataDir + "TECHDRAW_out.pdf");
 ```
 
-In the code above, be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual path to the directory where your CGM file to convert is located. This code loads the CGM file using the `CgmLoadOptions` class, then creates a PDF document using the `Document` object. Finally, the resulting PDF document is saved.
+ في الكود أعلاه، تأكد من استبداله`"YOUR DOCUMENTS DIRECTORY"`بالمسار الفعلي إلى الدليل الذي يوجد به ملف CGM المراد تحويله. يقوم هذا الرمز بتحميل ملف CGM باستخدام ملف`CgmLoadOptions` class، ثم يقوم بإنشاء مستند PDF باستخدام الملف`Document` هدف. وأخيرًا، يتم حفظ مستند PDF الناتج.
 
-### Example source code for CGM to PDF using Aspose.PDF for .NET
+### مثال على التعليمات البرمجية المصدر لـ CGM إلى PDF باستخدام Aspose.PDF لـ .NET
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate LoadOption object using CGMLoadOption
+// إنشاء كائن LoadOption باستخدام CGMLoadOption
 Aspose.Pdf.CgmLoadOptions cgmload = new Aspose.Pdf.CgmLoadOptions();
-// Instantiate Document object
+// إنشاء مثيل لكائن المستند
 Document doc = new Document(dataDir + "CGMToPDF.CGM", cgmload);
-// Save the resultant PDF document
+// احفظ مستند PDF الناتج
 doc.Save(dataDir+ "TECHDRAW_out.pdf");
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! Now you know how to convert a CGM file to PDF using Aspose.PDF for .NET. We've gone through every step of the process, from initializing the CGM load options to saving the resulting PDF document. Use the provided code samples to integrate this functionality into your own projects. Experiment with Aspose.PDF for .NET and discover the extended possibilities it offers for manipulating PDF files.
+تهنئة ! الآن أنت تعرف كيفية تحويل ملف CGM إلى PDF باستخدام Aspose.PDF لـ .NET. لقد مررنا بكل خطوة من العملية، بدءًا من تهيئة خيارات تحميل CGM وحتى حفظ مستند PDF الناتج. استخدم نماذج التعليمات البرمجية المتوفرة لدمج هذه الوظيفة في مشاريعك الخاصة. قم بتجربة Aspose.PDF لـ .NET واكتشف الإمكانيات الموسعة التي يوفرها لمعالجة ملفات PDF.
 
-### FAQ's for CGM to PDF files
+### الأسئلة الشائعة لملفات CGM إلى PDF
 
-#### Q: What is CGM?
+#### س: ما هو CGM؟
 
-A: CGM stands for Computer Graphics Metafile. It is a file format used for storing 2D vector graphics, such as technical drawings and diagrams. CGM files are commonly used in various industries for sharing and exchanging graphical information.
+ج: يشير CGM إلى ملف تعريف رسومات الكمبيوتر. وهو تنسيق ملف يستخدم لتخزين الرسومات المتجهة ثنائية الأبعاد، مثل الرسومات الفنية والرسوم البيانية. تُستخدم ملفات CGM بشكل شائع في مختلف الصناعات لمشاركة وتبادل المعلومات الرسومية.
 
-#### Q: Why convert CGM files to PDF?
+#### س: لماذا تحويل ملفات CGM إلى PDF؟
 
-A: Converting CGM files to PDF allows you to share technical drawings and diagrams universally, as PDF is a widely supported format across different platforms and devices. PDF files also offer better compression and higher quality output, making them suitable for archiving and distribution.
+ج: يتيح لك تحويل ملفات CGM إلى PDF مشاركة الرسومات الفنية والرسوم البيانية عالميًا، حيث أن PDF هو تنسيق مدعوم على نطاق واسع عبر الأنظمة الأساسية والأجهزة المختلفة. توفر ملفات PDF أيضًا ضغطًا أفضل وإخراجًا عالي الجودة، مما يجعلها مناسبة للأرشفة والتوزيع.
 
-#### Q: Can I customize the conversion process using Aspose.PDF for .NET?
+#### س: هل يمكنني تخصيص عملية التحويل باستخدام Aspose.PDF لـ .NET؟
 
-A: Yes, Aspose.PDF for .NET provides various options and settings to customize the conversion process. For example, you can specify the page size, orientation, resolution, and other properties of the resulting PDF document.
+ج: نعم، يوفر Aspose.PDF for .NET خيارات وإعدادات متنوعة لتخصيص عملية التحويل. على سبيل المثال، يمكنك تحديد حجم الصفحة، والاتجاه، والدقة، والخصائص الأخرى لمستند PDF الناتج.
 
-#### Q: Can Aspose.PDF for .NET handle large CGM files?
+#### س: هل يستطيع Aspose.PDF for .NET التعامل مع ملفات CGM الكبيرة؟
 
-A: Yes, Aspose.PDF for .NET is designed to handle large CGM files efficiently. It utilizes optimized algorithms to process and convert CGM files to PDF without any performance issues.
+ج: نعم، تم تصميم Aspose.PDF for .NET للتعامل مع ملفات CGM الكبيرة بكفاءة. ويستخدم خوارزميات محسنة لمعالجة ملفات CGM وتحويلها إلى PDF دون أي مشاكل في الأداء.

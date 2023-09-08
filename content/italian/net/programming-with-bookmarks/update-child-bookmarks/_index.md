@@ -1,57 +1,57 @@
 ---
-title: Update Child Bookmarks In PDF File
-linktitle: Update Child Bookmarks In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily update child bookmarks in PDF file with Aspose.PDF for .NET.
+title: Aggiorna i segnalibri secondari nel file PDF
+linktitle: Aggiorna i segnalibri secondari nel file PDF
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Aggiorna facilmente i segnalibri secondari nel file PDF con Aspose.PDF per .NET.
 type: docs
 weight: 110
 url: /it/net/programming-with-bookmarks/update-child-bookmarks/
 ---
-Updating child bookmarks in PDF file allows you to modify the properties of specific bookmarks within a parent bookmark. With Aspose.PDF for .NET, you can easily update child bookmarks by following the following source code:
+L'aggiornamento dei segnalibri secondari nel file PDF consente di modificare le proprietà di segnalibri specifici all'interno di un segnalibro principale. Con Aspose.PDF per .NET, puoi aggiornare facilmente i segnalibri secondari seguendo il seguente codice sorgente:
 
-## Step 1: Import required libraries
+## Passaggio 1: importa le librerie richieste
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Prima di iniziare, devi importare le librerie necessarie per il tuo progetto C#. Ecco la necessaria direttiva sulle importazioni:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## Passaggio 2: imposta il percorso della cartella dei documenti
 
-In this step, you need to specify the path to the folder containing the PDF file you want to update. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ In questo passaggio, devi specificare il percorso della cartella contenente il file PDF che desideri aggiornare. Sostituire`"YOUR DOCUMENT DIRECTORY"`nel seguente codice con il percorso effettivo della cartella dei documenti:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Passaggio 3: apri il documento PDF
 
-Now we will open the PDF document we want to update using the following code:
+Ora apriremo il documento PDF che vogliamo aggiornare utilizzando il seguente codice:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "UpdateChildBookmarks.pdf");
 ```
 
-## Step 4: Get parent bookmark object
+## Passaggio 4: ottieni l'oggetto segnalibro principale
 
-In this step, we are going to get the specific parent bookmark object from which we want to update the child bookmarks. In the example below, we retrieve the parent bookmark at index 1 (the second bookmark in the bookmarks collection). You can adjust the index according to your needs. Here is the corresponding code:
+In questo passaggio, otterremo l'oggetto segnalibro genitore specifico da cui vogliamo aggiornare i segnalibri figli. Nell'esempio seguente, recuperiamo il segnalibro principale all'indice 1 (il secondo segnalibro nella raccolta di segnalibri). Puoi regolare l'indice in base alle tue esigenze. Ecco il codice corrispondente:
 
 ```csharp
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
 ```
 
-## Step 5: Get Child Bookmark Object
+## Passaggio 5: ottieni l'oggetto segnalibro figlio
 
-Now let's get the specific child bookmark object we want to update. In the example below, we retrieve the child bookmark at index 1 (the second child bookmark in the collection of child bookmarks of the parent bookmark). You can adjust the index according to your needs. Here is the corresponding code:
+Ora prendiamo l'oggetto segnalibro figlio specifico che vogliamo aggiornare. Nell'esempio seguente, recuperiamo il segnalibro figlio all'indice 1 (il secondo segnalibro figlio nella raccolta di segnalibri figli del segnalibro padre). Puoi regolare l'indice in base alle tue esigenze. Ecco il codice corrispondente:
 
 ```csharp
 OutlineItemCollection childOutline = pdfOutline[1];
 ```
 
-## Step 6: Update child bookmark properties
+## Passaggio 6: aggiorna le proprietà del segnalibro secondario
 
-Now let's update the child bookmark properties such as title, italic style, and bold style. You can adjust these properties according to your needs. Here is the corresponding code:
+Ora aggiorniamo le proprietà del segnalibro figlio come titolo, stile corsivo e stile grassetto. Puoi modificare queste proprietà in base alle tue esigenze. Ecco il codice corrispondente:
 
 ```csharp
 childOutline.Title = "Updated Outline";
@@ -59,93 +59,93 @@ childOutline. Italic = true;
 childOutline. Bold = true;
 ```
 
-## Step 7: Save the updated file
+## Passaggio 7: salva il file aggiornato
 
-Now let's save the updated PDF file using the `Save` method of the `pdfDocument` object. Here is the corresponding code:
+ Ora salviamo il file PDF aggiornato utilizzando il file`Save` metodo del`pdfDocument` oggetto. Ecco il codice corrispondente:
 
 ```csharp
 dataDir = dataDir + "UpdateChildBookmarks_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Update Child Bookmarks using Aspose.PDF for .NET 
+### Codice sorgente di esempio per Aggiorna segnalibri secondari utilizzando Aspose.PDF per .NET 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Apri documento
 Document pdfDocument = new Document(dataDir + "UpdateChildBookmarks.pdf");
-// Get a bookmark object
+// Ottieni un oggetto segnalibro
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
-// Get child bookmark object
+//Ottieni l'oggetto segnalibro figlio
 OutlineItemCollection childOutline = pdfOutline[1];
 childOutline.Title = "Updated Outline";
 childOutline.Italic = true;
 childOutline.Bold = true;
 dataDir = dataDir + "UpdateChildBookmarks_out.pdf";            
-// Save output
+// Salva l'output
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nChild bookmarks updated successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Conclusione
 
-Congratulation ! You now have a step-by-step guide to updating child bookmarks with Aspose.PDF for .NET. You can use this code to modify the properties of child bookmarks in your PDF documents.
+Congratulazioni! Ora hai una guida passo passo per aggiornare i segnalibri secondari con Aspose.PDF per .NET. Puoi utilizzare questo codice per modificare le proprietà dei segnalibri secondari nei tuoi documenti PDF.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Assicurati di controllare la documentazione ufficiale Aspose.PDF per ulteriori informazioni sulle funzionalità avanzate di manipolazione dei segnalibri.
 
-### FAQ's for update child bookmarks in PDF file
+### Domande frequenti per l'aggiornamento dei segnalibri secondari nel file PDF
 
-#### Q: What are child bookmarks in a PDF file?
+#### D: Cosa sono i segnalibri secondari in un file PDF?
 
-A: Child bookmarks are bookmarks that are nested within a parent bookmark. They allow you to create a hierarchical structure for navigating through a PDF document's content.
+R: I segnalibri secondari sono segnalibri nidificati all'interno di un segnalibro principale. Ti consentono di creare una struttura gerarchica per navigare nel contenuto di un documento PDF.
 
-#### Q: Why would I need to update child bookmarks?
+#### D: Perché dovrei aggiornare i segnalibri secondari?
 
-A: Updating child bookmarks is useful when you want to modify the properties, titles, or styles of specific bookmarks within a parent bookmark. This helps customize the document's navigational structure.
+R: L'aggiornamento dei segnalibri secondari è utile quando desideri modificare le proprietà, i titoli o gli stili di segnalibri specifici all'interno di un segnalibro principale. Ciò aiuta a personalizzare la struttura di navigazione del documento.
 
-#### Q: How do I import the required libraries for my C# project?
+#### D: Come posso importare le librerie richieste per il mio progetto C#?
 
-A: To import the necessary libraries for your C# project, include the following import directive:
+R: Per importare le librerie necessarie per il tuo progetto C#, includi la seguente direttiva di importazione:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This directive enables you to access the classes and methods needed for working with PDF documents and bookmarks.
+Questa direttiva consente di accedere alle classi e ai metodi necessari per lavorare con documenti PDF e segnalibri.
 
-#### Q: How do I specify the path to the documents folder?
+#### D: Come posso specificare il percorso della cartella dei documenti?
 
-A: Replace `"YOUR DOCUMENT DIRECTORY"` in the provided source code with the actual path to the folder containing the PDF file you want to update.
+ R: Sostituisci`"YOUR DOCUMENT DIRECTORY"` nel codice sorgente fornito con il percorso effettivo della cartella contenente il file PDF che desideri aggiornare.
 
-#### Q: How do I open a PDF document for updating child bookmarks?
+#### D: Come posso aprire un documento PDF per aggiornare i segnalibri secondari?
 
-A: To open a PDF document for updating child bookmarks, use the following code:
+R: Per aprire un documento PDF per aggiornare i segnalibri secondari, utilizzare il seguente codice:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "UpdateChildBookmarks.pdf");
 ```
 
-Replace `"UpdateChildBookmarks.pdf"` with the actual file name.
+ Sostituire`"UpdateChildBookmarks.pdf"` con il nome effettivo del file.
 
-#### Q: How do I get the parent bookmark object from which I want to update child bookmarks?
+#### D: Come posso ottenere l'oggetto segnalibro principale da cui desidero aggiornare i segnalibri secondari?
 
-A: To retrieve a specific parent bookmark for updating child bookmarks, access the `Outlines` property of the `pdfDocument` object. In the example below, we retrieve the parent bookmark at index 1:
+ R: Per recuperare uno specifico segnalibro principale per aggiornare i segnalibri secondari, accedi a`Outlines` proprietà del`pdfDocument` oggetto. Nell'esempio seguente, recuperiamo il segnalibro principale all'indice 1:
 
 ```csharp
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
 ```
 
-#### Q: How do I get the child bookmark object I want to update?
+#### D: Come posso ottenere l'oggetto segnalibro figlio che desidero aggiornare?
 
-A: To retrieve a specific child bookmark for updating, access the `OutlineItemCollection` of the parent bookmark. In the example below, we retrieve the child bookmark at index 1:
+ R: Per recuperare un segnalibro figlio specifico da aggiornare, accedere a`OutlineItemCollection` del segnalibro genitore. Nell'esempio seguente, recuperiamo il segnalibro figlio all'indice 1:
 
 ```csharp
 OutlineItemCollection childOutline = pdfOutline[1];
 ```
 
-#### Q: What child bookmark properties can I update?
+#### D: Quali proprietà dei segnalibri secondari posso aggiornare?
 
-A: You can update various properties of a child bookmark, such as its title, italic style, and bold style. Customize these properties according to your needs:
+R: Puoi aggiornare varie proprietà di un segnalibro secondario, come il titolo, lo stile corsivo e lo stile grassetto. Personalizza questi immobili in base alle tue esigenze:
 
 ```csharp
 childOutline.Title = "Updated Outline";
@@ -153,13 +153,13 @@ childOutline.Italic = true;
 childOutline.Bold = true;
 ```
 
-#### Q: Can I update multiple child bookmarks using this method?
+#### D: Posso aggiornare più segnalibri secondari utilizzando questo metodo?
 
-A: Yes, you can repeat steps 4 to 7 for each child bookmark you want to update. Modify the parent index and child index as needed.
+R: Sì, puoi ripetere i passaggi da 4 a 7 per ciascun segnalibro secondario che desideri aggiornare. Modificare l'indice principale e l'indice secondario secondo necessità.
 
-#### Q: How do I save the updated PDF file?
+#### D: Come posso salvare il file PDF aggiornato?
 
-A: Save the updated PDF file using the `Save` method of the `pdfDocument` object:
+ R: Salva il file PDF aggiornato utilizzando il file`Save` metodo del`pdfDocument` oggetto:
 
 ```csharp
 dataDir = dataDir + "UpdateChildBookmarks_out.pdf";

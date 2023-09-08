@@ -1,64 +1,64 @@
 ---
-title: Style Table Element
-linktitle: Style Table Element
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to format table element with Aspose.PDF for .NET. Step-by-step guide to customize styles and properties.
+title: عنصر جدول النمط
+linktitle: عنصر جدول النمط
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية تنسيق عنصر الجدول باستخدام Aspose.PDF لـ .NET. دليل خطوة بخطوة لتخصيص الأنماط والخصائص.
 type: docs
 weight: 170
 url: /ar/net/programming-with-tagged-pdf/style-table-element/
 ---
-In this detailed tutorial, we will walk you through the provided C# source code step by step to format the array element using Aspose.PDF for .NET. Follow the instructions below to understand how to customize the styles and properties of the array element.
+في هذا البرنامج التعليمي التفصيلي، سنرشدك عبر كود مصدر C# المقدم خطوة بخطوة لتنسيق عنصر المصفوفة باستخدام Aspose.PDF لـ .NET. اتبع الإرشادات أدناه لفهم كيفية تخصيص أنماط وخصائص عنصر المصفوفة.
 
-## Step 1: Setting up the environment
+## الخطوة 1: تهيئة البيئة
 
-Before you begin, make sure you've configured your development environment to use Aspose.PDF for .NET. This includes installing the Aspose.PDF library and configuring your project to reference it.
+قبل أن تبدأ، تأكد من تكوين بيئة التطوير الخاصة بك لاستخدام Aspose.PDF لـ .NET. يتضمن ذلك تثبيت مكتبة Aspose.PDF وتكوين مشروعك للرجوع إليه.
 
-## Step 2: Creating a document
+## الخطوة 2: إنشاء مستند
 
-In this step, we will create a new document object Aspose.PDF.
+في هذه الخطوة، سنقوم بإنشاء كائن مستند جديد Aspose.PDF.
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Document creation
+// إنشاء الوثيقة
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example of table formatting");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-We have created a new document and set the document title and language.
+لقد أنشأنا مستندًا جديدًا وقمنا بتعيين عنوان المستند ولغته.
 
-## Step 3: Obtaining the root structure element
+## الخطوة 3: الحصول على عنصر البنية الجذرية
 
-In this step we will get the root structure element for our document.
+في هذه الخطوة سوف نحصل على عنصر البنية الجذرية لمستندنا.
 
 ```csharp
-// Obtain the root structure element
+//الحصول على عنصر البنية الجذرية
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-We got the root structure element which will serve as a container for the array element.
+لقد حصلنا على عنصر البنية الجذرية الذي سيكون بمثابة حاوية لعنصر المصفوفة.
 
-## Step 4: Creating the array structure element
+## الخطوة 4: إنشاء عنصر هيكل الصفيف
 
-Now let's create a new table structure element for our document.
+لنقم الآن بإنشاء عنصر هيكل جدول جديد لمستندنا.
 
 ```csharp
-// Create the array structure element
+// إنشاء عنصر هيكل الصفيف
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 ```
 
-We have created a new array structure element and added it to the root structure element.
+لقد أنشأنا عنصر بنية صفيف جديدًا وأضفناه إلى عنصر البنية الجذرية.
 
-## Step 5: Customizing Array Element Styles and Properties
+## الخطوة 5: تخصيص أنماط وخصائص عناصر المصفوفة
 
-In this step, we will customize the styles and properties of the array element.
+في هذه الخطوة، سنقوم بتخصيص أنماط وخصائص عنصر المصفوفة.
 
 ```csharp
-// Customize the styles and properties of the array element
+// تخصيص أنماط وخصائص عنصر الصفيف
 tableElement.BackgroundColor = Color.Beige;
 tableElement.Border = new BorderInfo(BorderSide.All, 0.80F, Color.Gray);
 tableElement. Alignment = HorizontalAlignment. Center;
@@ -77,30 +77,30 @@ tableElement. Top = 40F;
 tableElement.RepeatingColumnsCount = 2;
 tableElement.RepeatingRowsCount = 3;
 
-// Customize the style of repeated lines
+// تخصيص نمط الخطوط المتكررة
 TextState rowStyle = new TextState();
 rowStyle.BackgroundColor = Color.LightCoral;
 tableElement.RepeatingRowsStyle = rowStyle;
 ```
 
-We used various properties to customize the table element, such as background color, borders, alignment, default cell style, margins, column width, etc.
+استخدمنا خصائص مختلفة لتخصيص عنصر الجدول، مثل لون الخلفية، والحدود، والمحاذاة، ونمط الخلية الافتراضي، والهوامش، وعرض العمود، وما إلى ذلك.
 
-## Step 6: Add table headers, body and footer
+## الخطوة 6: إضافة رؤوس الجدول والنص والتذييل
 
-Now let's add the table headers, body and footer to the table element.
+لنقم الآن بإضافة رؤوس الجدول ونصه وتذييله إلى عنصر الجدول.
 ```csharp
-// Add table headers
+// إضافة رؤوس الجدول
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
 TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
 TableTFootElement tableTFootElement = tableElement.CreateTFoot();
 
-// Number of rows and columns in the table
+// عدد الصفوف والأعمدة في الجدول
 int rowCount = 10;
 int colCount = 5;
 int rowIndex;
 int colIndex;
 
-// Create the table header row
+// قم بإنشاء صف رأس الجدول
 TableTRElement headTrElement = tableTHeadElement.CreateTR();
 headTrElement.AlternativeText = "Header Row";
 
@@ -110,7 +110,7 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
      theElement.SetText(string.Format("Header {0}", colIndex));
 }
 
-// Add the rows of the table body
+//أضف صفوف نص الجدول
 for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
 {
      TableTRElement trElement = tableTBodyElement.CreateTR();
@@ -123,7 +123,7 @@ for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
      }
 }
 
-// Add the footing line of the table
+// أضف خط الأساس للجدول
 TableTRElement footTrElement = tableTFootElement.CreateTR();
 footTrElement.AlternativeText = "Footline";
 
@@ -134,49 +134,49 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 }
 ```
 
-We added the headers, body rows, and footer row to the table using the corresponding elements.
+أضفنا الرؤوس وصفوف النص وصف التذييل إلى الجدول باستخدام العناصر المقابلة.
 
-## Step 7: Saving the tagged PDF document
+## الخطوة 7: حفظ وثيقة PDF ذات العلامات
 
-Now that we've created our document with the styled table element, we'll save it as a tagged PDF document.
+الآن بعد أن أنشأنا مستندنا باستخدام عنصر الجدول المصمم، سنقوم بحفظه كمستند PDF ذو علامات.
 
 ```csharp
-// Save the tagged PDF document
+// احفظ مستند PDF الذي تم وضع علامة عليه
 document.Save(dataDir + "StyleTableElement.pdf");
 ```
 
-We saved the tagged PDF document in the specified directory.
+لقد حفظنا مستند PDF الذي تم وضع علامة عليه في الدليل المحدد.
 
-## Step 8: PDF/UA compliance validation
+## الخطوة 8: التحقق من صحة التوافق مع PDF/UA
 
-Next, we will validate the PDF/UA conformity of our document.
+بعد ذلك، سوف نقوم بالتحقق من مطابقة PDF/UA لوثيقتنا.
 
 ```csharp
-// PDF/UA compliance check
+// فحص التوافق مع PDF/UA
 document = new Document(dataDir + "StyleTableElement.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableElement.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(string.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
 ```
 
-We uploaded the tagged PDF document and validated its PDF/UA compliance by generating an XML report.
+لقد قمنا بتحميل مستند PDF الذي تم وضع علامة عليه وتحققنا من امتثاله لـ PDF/UA من خلال إنشاء تقرير XML.
 
-### Sample source code for Style Table Element using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لعنصر Style Table باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create document
+// إنشاء مستند
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example table style");
 taggedContent.SetLanguage("en-US");
 
-// Get root structure element
+// الحصول على عنصر هيكل الجذر
 StructureElement rootElement = taggedContent.RootElement;
 
-// Create table structure element
+// إنشاء عنصر هيكل الجدول
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 tableElement.BackgroundColor = Color.Beige;
@@ -231,62 +231,62 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 	tdElement.SetText(String.Format("Foot {0}", colIndex));
 }
 
-// Save Tagged Pdf Document
+// حفظ وثيقة PDF ذات العلامات
 document.Save(dataDir + "StyleTableElement.pdf");
 
-// Checking PDF/UA compliance
+// التحقق من توافق PDF/UA
 document = new Document(dataDir + "StyleTableElement.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableElement.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we learned how to format the array element with Aspose.PDF for .NET. We customized the styles and properties of the table element, added headers, body rows, and a footer, saved the tagged PDF document, and validated its PDF/UA compliance.
+في هذا البرنامج التعليمي، تعلمنا كيفية تنسيق عنصر المصفوفة باستخدام Aspose.PDF لـ .NET. لقد قمنا بتخصيص أنماط وخصائص عنصر الجدول، وإضافة الرؤوس، وصفوف النص، والتذييل، وحفظنا مستند PDF الذي تم وضع علامة عليه، والتحقق من توافقه مع PDF/UA.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of this tutorial on formatting the array element using Aspose.PDF for .NET?
+#### س: ما هو الغرض من هذا البرنامج التعليمي حول تنسيق عنصر الصفيف باستخدام Aspose.PDF لـ .NET؟
 
-A: The goal of this tutorial is to guide you through the process of formatting the array element in a PDF document using Aspose.PDF for .NET. It provides step-by-step instructions and C# source code examples to help you customize the styles and properties of the array element.
+ج: الهدف من هذا البرنامج التعليمي هو إرشادك خلال عملية تنسيق عنصر المصفوفة في مستند PDF باستخدام Aspose.PDF لـ .NET. فهو يوفر إرشادات خطوة بخطوة وأمثلة التعليمات البرمجية المصدر لـ C# لمساعدتك على تخصيص أنماط وخصائص عنصر الصفيف.
 
-#### Q: What are the prerequisites for following this tutorial?
+#### س: ما هي المتطلبات الأساسية لمتابعة هذا البرنامج التعليمي؟
 
-A: Before you start, ensure that you have set up your development environment to use Aspose.PDF for .NET. This involves installing the Aspose.PDF library and configuring your project to reference it.
+ج: قبل البدء، تأكد من أنك قمت بإعداد بيئة التطوير الخاصة بك لاستخدام Aspose.PDF لـ .NET. يتضمن ذلك تثبيت مكتبة Aspose.PDF وتكوين مشروعك للرجوع إليه.
 
-#### Q: How can I create a new PDF document and set its title and language using Aspose.PDF for .NET?
+#### س: كيف يمكنني إنشاء مستند PDF جديد وتعيين عنوانه ولغته باستخدام Aspose.PDF لـ .NET؟
 
-A: To create a new PDF document, you need to create a `Document` object from the Aspose.PDF library. The tutorial's provided C# source code demonstrates how to create a document and set its title and language properties.
+ ج: لإنشاء مستند PDF جديد، تحتاج إلى إنشاء ملف`Document` كائن من مكتبة Aspose.PDF. يوضح الكود المصدري لـ C# المقدم في البرنامج التعليمي كيفية إنشاء مستند وتعيين عنوانه وخصائص اللغة الخاصة به.
 
-#### Q: What is the significance of the root structure element in a PDF document?
+#### س: ما هي أهمية عنصر البنية الجذرية في مستند PDF؟
 
-A: The root structure element acts as a container for other structure elements, helping to organize and categorize the content of the PDF document. It plays a crucial role in establishing the logical structure of the document.
+ج: يعمل عنصر البنية الجذرية كحاوية لعناصر البنية الأخرى، مما يساعد على تنظيم وتصنيف محتوى مستند PDF. إنه يلعب دورًا حاسمًا في إنشاء البنية المنطقية للوثيقة.
 
-#### Q: How do I create and customize an array structure element using Aspose.PDF for .NET?
+#### س: كيف يمكنني إنشاء عنصر بنية صفيف وتخصيصه باستخدام Aspose.PDF لـ .NET؟
 
-A: You can create an array structure element using the `CreateTableElement()` method. The tutorial's source code provides examples of customizing various properties of the table element, such as background color, borders, alignment, column width, and more.
+ ج: يمكنك إنشاء عنصر بنية صفيف باستخدام ملف`CreateTableElement()` طريقة. يوفر الكود المصدري للبرنامج التعليمي أمثلة لتخصيص خصائص مختلفة لعنصر الجدول، مثل لون الخلفية والحدود والمحاذاة وعرض العمود والمزيد.
 
-#### Q: Can I customize the styles and properties of table cells within the array element?
+#### س: هل يمكنني تخصيص أنماط وخصائص خلايا الجدول داخل عنصر الصفيف؟
 
-A: Yes, the tutorial covers how to customize the styles and properties of the entire table element, including headers, body rows, and footer. However, it doesn't specifically address customizing individual table cells.
+ج: نعم، يغطي البرنامج التعليمي كيفية تخصيص أنماط وخصائص عنصر الجدول بأكمله، بما في ذلك الرؤوس وصفوف النص والتذييل. ومع ذلك، فهو لا يتناول تخصيص خلايا الجدول الفردية على وجه التحديد.
 
-#### Q: How can I add headers, body rows, and a footer to the table element?
+#### س: كيف يمكنني إضافة رؤوس وصفوف نص وتذييل إلى عنصر الجدول؟
 
-A: The tutorial explains how to create and add headers, body rows, and a footer to the table element using the appropriate methods provided by Aspose.PDF for .NET.
+ج: يشرح البرنامج التعليمي كيفية إنشاء وإضافة الرؤوس وصفوف النص والتذييل إلى عنصر الجدول باستخدام الطرق المناسبة التي يوفرها Aspose.PDF لـ .NET.
 
-#### Q: What is PDF/UA compliance, and how can I validate it for my tagged PDF document?
+#### س: ما هو توافق PDF/UA، وكيف يمكنني التحقق من صحته بالنسبة لمستند PDF الذي تم وضع علامة عليه؟
 
-A: PDF/UA compliance ensures that the PDF document conforms to accessibility standards, making it more accessible to users with disabilities. The tutorial demonstrates how to validate PDF/UA conformity using the `Validate()` method and generate an XML compliance report.
+ ج: يضمن التوافق مع PDF/UA أن مستند PDF يتوافق مع معايير إمكانية الوصول، مما يجعله في متناول المستخدمين ذوي الإعاقة. يوضح البرنامج التعليمي كيفية التحقق من صحة مطابقة PDF/UA باستخدام ملف`Validate()` الطريقة وإنشاء تقرير امتثال XML.
 
-#### Q: How can I incorporate these concepts into my own .NET applications?
+#### س: كيف يمكنني دمج هذه المفاهيم في تطبيقات .NET الخاصة بي؟
 
-A: You can use the provided C# source code examples as a guide to implementing array element formatting in your own .NET applications. Modify and adapt the code to match your requirements and integrate it into your projects.
+ج: يمكنك استخدام أمثلة التعليمات البرمجية المصدر لـ C# كدليل لتنفيذ تنسيق عناصر المصفوفة في تطبيقات .NET الخاصة بك. قم بتعديل الكود وتكييفه ليتوافق مع متطلباتك ودمجه في مشاريعك.
 
-#### Q: Are there any recommended best practices for formatting array elements in PDF documents?
+#### س: هل هناك أي أفضل الممارسات الموصى بها لتنسيق عناصر المصفوفة في مستندات PDF؟
 
-A: When formatting array elements (tables), consider the readability and accessibility of the content. Use clear and legible fonts, appropriate colors, and maintain a consistent layout. Validate PDF/UA compliance to ensure accessibility standards are met.
+ج: عند تنسيق عناصر المصفوفة (الجداول)، ضع في الاعتبار إمكانية قراءة المحتوى وإمكانية الوصول إليه. استخدم خطوطًا واضحة ومقروءة وألوانًا مناسبة وحافظ على تخطيط متسق. التحقق من صحة توافق PDF/UA لضمان استيفاء معايير إمكانية الوصول.
 
-#### Q: What other features of Aspose.PDF for .NET can I explore for PDF document customization?
+#### س: ما هي الميزات الأخرى لـ Aspose.PDF لـ .NET التي يمكنني استكشافها لتخصيص مستند PDF؟
 
-A: Aspose.PDF for .NET offers a range of features for PDF document customization, including text manipulation, image insertion, form field management, digital signatures, annotations, and more. Consult the official documentation and resources to explore additional functionalities.
+ج: يوفر Aspose.PDF for .NET مجموعة من الميزات لتخصيص مستندات PDF، بما في ذلك معالجة النص وإدراج الصور وإدارة حقل النموذج والتوقيعات الرقمية والتعليقات التوضيحية والمزيد. راجع الوثائق والموارد الرسمية لاستكشاف وظائف إضافية.

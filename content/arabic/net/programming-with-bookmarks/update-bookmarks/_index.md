@@ -1,49 +1,49 @@
 ---
-title: Update Bookmarks In PDF File
-linktitle: Update Bookmarks In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily update bookmarks in PDF file with Aspose.PDF for .NET.
+title: تحديث الإشارات المرجعية في ملف PDF
+linktitle: تحديث الإشارات المرجعية في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: قم بتحديث الإشارات المرجعية في ملف PDF بسهولة باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 100
 url: /ar/net/programming-with-bookmarks/update-bookmarks/
 ---
-Updating bookmarks in PDF file is often necessary to reflect changes or updates in the structure or content of the document. With Aspose.PDF for .NET, you can easily update bookmarks by following the following source code:
+غالبًا ما يكون تحديث الإشارات المرجعية في ملف PDF ضروريًا ليعكس التغييرات أو التحديثات في بنية المستند أو محتواه. باستخدام Aspose.PDF for .NET، يمكنك بسهولة تحديث الإشارات المرجعية باتباع التعليمات البرمجية المصدر التالية:
 
-## Step 1: Import required libraries
+## الخطوة 1: استيراد المكتبات المطلوبة
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+قبل أن تبدأ، تحتاج إلى استيراد المكتبات اللازمة لمشروع C# الخاص بك. فيما يلي توجيه الاستيراد الضروري:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## الخطوة 2: تعيين المسار إلى مجلد المستندات
 
-In this step, you need to specify the path to the folder containing the PDF file you want to update. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ في هذه الخطوة، تحتاج إلى تحديد المسار إلى المجلد الذي يحتوي على ملف PDF الذي تريد تحديثه. يستبدل`"YOUR DOCUMENT DIRECTORY"`في الكود التالي مع المسار الفعلي لمجلد المستندات الخاص بك:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## الخطوة 3: افتح مستند PDF
 
-Now we will open the PDF document we want to update using the following code:
+سنقوم الآن بفتح مستند PDF الذي نريد تحديثه باستخدام الكود التالي:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "UpdateBookmarks.pdf");
 ```
 
-## Step 4: Get bookmark object
+## الخطوة 4: الحصول على كائن الإشارة المرجعية
 
-In this step, we'll get the specific bookmark object we want to update. In the example below, we retrieve the bookmark at index 1 (the second bookmark in the bookmarks collection). You can adjust the index according to your needs. Here is the corresponding code:
+في هذه الخطوة، سنحصل على كائن الإشارة المرجعية المحدد الذي نريد تحديثه. في المثال أدناه، نقوم باسترداد الإشارة المرجعية في الفهرس 1 (الإشارة المرجعية الثانية في مجموعة الإشارات المرجعية). يمكنك ضبط الفهرس وفقًا لاحتياجاتك. هنا هو الكود المقابل:
 
 ```csharp
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
 ```
 
-## Step 5: Update bookmark properties
+## الخطوة 5: تحديث خصائص الإشارة المرجعية
 
-Now let's update the bookmark properties such as title, italic style, and bold style. You can adjust these properties according to your needs. Here is the corresponding code:
+لنقم الآن بتحديث خصائص الإشارة المرجعية مثل العنوان والنمط المائل والنمط الغامق. يمكنك ضبط هذه الخصائص وفقًا لاحتياجاتك. هنا هو الكود المقابل:
 
 ```csharp
 pdfOutline.Title = "Updated Outline";
@@ -51,79 +51,79 @@ pdfOutline. Italic = true;
 pdfOutline. Bold = true;
 ```
 
-## Step 6: Save the updated file
+## الخطوة 6: احفظ الملف المحدث
 
-Now let's save the updated PDF file using the `Save` method of the `pdfDocument` object. Here is the corresponding code:
+ الآن دعونا نحفظ ملف PDF المحدث باستخدام ملف`Save` طريقة`pdfDocument` هدف. هنا هو الكود المقابل:
 
 ```csharp
 dataDir = dataDir + "UpdateBookmarks_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Update Bookmarks using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لتحديث الإشارات المرجعية باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "UpdateBookmarks.pdf");
-// Get a bookmark object
+// الحصول على كائن الإشارة المرجعية
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
 pdfOutline.Title = "Updated Outline";
 pdfOutline.Italic = true;
 pdfOutline.Bold = true;
 dataDir = dataDir + "UpdateBookmarks_out.pdf";
-// Save output
+// حفظ الإخراج
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nBookmarks updated successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! Now you have a step-by-step guide to updating bookmarks with Aspose.PDF for .NET. You can use this code to change the titles and styles of bookmarks in your PDF documents.
+تهنئة ! لديك الآن دليل خطوة بخطوة لتحديث الإشارات المرجعية باستخدام Aspose.PDF لـ .NET. يمكنك استخدام هذا الرمز لتغيير عناوين وأنماط الإشارات المرجعية في مستندات PDF الخاصة بك.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+تأكد من مراجعة وثائق Aspose.PDF الرسمية لمزيد من المعلومات حول ميزات معالجة الإشارات المرجعية المتقدمة.
 
-### FAQ's for update bookmarks in PDF file
+### الأسئلة الشائعة لتحديث الإشارات المرجعية في ملف PDF
 
-#### Q: Why would I need to update bookmarks in a PDF file?
+#### س: لماذا أحتاج إلى تحديث الإشارات المرجعية في ملف PDF؟
 
-A: Updating bookmarks is essential when you want to reflect changes or updates in the structure, content, or appearance of a PDF document. It ensures that the bookmarks accurately represent the document's organization.
+ج: يعد تحديث الإشارات المرجعية أمرًا ضروريًا عندما تريد عكس التغييرات أو التحديثات في بنية مستند PDF أو محتواه أو مظهره. فهو يضمن أن الإشارات المرجعية تمثل تنظيم المستند بدقة.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### س: كيف يمكنني استيراد المكتبات اللازمة لمشروع C# الخاص بي؟
 
-A: To import the required libraries for your C# project, include the following import directive:
+ج: لاستيراد المكتبات المطلوبة لمشروع C# الخاص بك، قم بتضمين توجيه الاستيراد التالي:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This directive allows you to access the classes and methods needed to work with PDF documents and bookmarks.
+يتيح لك هذا التوجيه الوصول إلى الفئات والأساليب اللازمة للعمل مع مستندات PDF والإشارات المرجعية.
 
-#### Q: How do I specify the path to the documents folder?
+#### س: كيف أحدد المسار إلى مجلد المستندات؟
 
-A: Replace `"YOUR DOCUMENT DIRECTORY"` in the provided source code with the actual path to the folder containing the PDF file you want to update.
+ ج: استبدال`"YOUR DOCUMENT DIRECTORY"` في الكود المصدري المقدم مع المسار الفعلي إلى المجلد الذي يحتوي على ملف PDF الذي تريد تحديثه.
 
-#### Q: How do I open a PDF document for updating bookmarks?
+#### س: كيف يمكنني فتح مستند PDF لتحديث الإشارات المرجعية؟
 
-A: To open a PDF document for updating bookmarks, use the following code:
+ج: لفتح مستند PDF لتحديث الإشارات المرجعية، استخدم الكود التالي:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "UpdateBookmarks.pdf");
 ```
 
-Replace `"UpdateBookmarks.pdf"` with the actual file name.
+ يستبدل`"UpdateBookmarks.pdf"` مع اسم الملف الفعلي.
 
-#### Q: How do I get the bookmark object I want to update?
+#### س: كيف يمكنني الحصول على كائن الإشارة المرجعية الذي أريد تحديثه؟
 
-A: To retrieve a specific bookmark for updating, access the `Outlines` property of the `pdfDocument` object. In the example below, we retrieve the bookmark at index 1:
+ ج: لاسترداد إشارة مرجعية محددة للتحديث، قم بالوصول إلى`Outlines` ملكية`pdfDocument` هدف. في المثال أدناه، نقوم باسترداد الإشارة المرجعية في الفهرس 1:
 
 ```csharp
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
 ```
 
-#### Q: What bookmark properties can I update?
+#### س: ما هي خصائص الإشارات المرجعية التي يمكنني تحديثها؟
 
-A: You can update various properties of a bookmark, such as its title, italic style, and bold style. Customize these properties according to your needs:
+ج: يمكنك تحديث الخصائص المختلفة للإشارة المرجعية، مثل عنوانها ونمطها المائل ونمطها الغامق. قم بتخصيص هذه الخصائص وفقًا لاحتياجاتك:
 
 ```csharp
 pdfOutline.Title = "Updated Outline";
@@ -131,23 +131,23 @@ pdfOutline.Italic = true;
 pdfOutline.Bold = true;
 ```
 
-#### Q: How do I save the updated PDF file?
+#### س: كيف يمكنني حفظ ملف PDF المحدث؟
 
-A: Save the updated PDF file using the `Save` method of the `pdfDocument` object:
+ ج: احفظ ملف PDF المحدث باستخدام الملف`Save` طريقة`pdfDocument` هدف:
 
 ```csharp
 dataDir = dataDir + "UpdateBookmarks_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-#### Q: Can I update multiple bookmarks using this method?
+#### س: هل يمكنني تحديث إشارات مرجعية متعددة باستخدام هذه الطريقة؟
 
-A: Yes, you can repeat steps 4 to 6 for each bookmark you want to update. Modify the index and properties as needed.
+ج: نعم، يمكنك تكرار الخطوات من 4 إلى 6 لكل إشارة مرجعية تريد تحديثها. قم بتعديل الفهرس والخصائص حسب الحاجة.
 
-#### Q: Is there a limit to the number of bookmarks I can update?
+#### س: هل هناك حد لعدد الإشارات المرجعية التي يمكنني تحديثها؟
 
-A: There is typically no strict limit to the number of bookmarks you can update. However, very large documents with numerous bookmarks may require efficient memory management.
+ج: لا يوجد عادةً حد صارم لعدد الإشارات المرجعية التي يمكنك تحديثها. ومع ذلك، قد تتطلب المستندات الكبيرة جدًا والتي تحتوي على العديد من الإشارات المرجعية إدارة فعالة للذاكرة.
 
-#### Q: How can I confirm that the bookmarks have been updated?
+#### س: كيف يمكنني التأكد من تحديث الإشارات المرجعية؟
 
-A: Open the generated PDF file to verify that the specified bookmark updates have been applied.
+ج: افتح ملف PDF الذي تم إنشاؤه للتحقق من تطبيق تحديثات الإشارات المرجعية المحددة.

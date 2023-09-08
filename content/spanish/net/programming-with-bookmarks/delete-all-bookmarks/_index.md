@@ -1,136 +1,136 @@
 ---
-title: Delete All Bookmarks In PDF File
-linktitle: Delete All Bookmarks In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily delete all bookmarks in PDF file with Aspose.PDF for .NET.
+title: Eliminar todos los marcadores en un archivo PDF
+linktitle: Eliminar todos los marcadores en un archivo PDF
+second_title: Aspose.PDF para referencia de API .NET
+description: Elimine fácilmente todos los marcadores en un archivo PDF con Aspose.PDF para .NET.
 type: docs
 weight: 30
 url: /es/net/programming-with-bookmarks/delete-all-bookmarks/
 ---
-# Delete all bookmarks with Aspose.PDF for .NET
+# Eliminar todos los marcadores con Aspose.PDF para .NET
 
-Deleting bookmarks in PDF file may be necessary in some cases. With Aspose.PDF for .NET, you can easily remove all bookmarks by following the following source code:
+En algunos casos, puede ser necesario eliminar marcadores en un archivo PDF. Con Aspose.PDF para .NET, puede eliminar fácilmente todos los marcadores siguiendo el siguiente código fuente:
 
-## Step 1: Import required libraries
+## Paso 1: importar las bibliotecas necesarias
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Antes de comenzar, debe importar las bibliotecas necesarias para su proyecto C#. Aquí está la directiva de importación necesaria:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## Paso 2: establezca la ruta a la carpeta de documentos
 
-In this step, you need to specify the path to the folder containing the PDF file from which you want to remove bookmarks. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ En este paso, debe especificar la ruta a la carpeta que contiene el archivo PDF del que desea eliminar los marcadores. Reemplazar`"YOUR DOCUMENT DIRECTORY"`en el siguiente código con la ruta real a su carpeta de documentos:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Paso 3: abre el documento PDF
 
-Now we are going to open the PDF document from which we want to remove the bookmarks using the following code:
+Ahora vamos a abrir el documento PDF del cual queremos eliminar los marcadores usando el siguiente código:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "DeleteAllBookmarks.pdf");
 ```
 
-## Step 4: Delete all bookmarks
+## Paso 4: eliminar todos los marcadores
 
-In this step, we delete all bookmarks from the document using the `Delete` method of the `Outlines` property. Here is the corresponding code:
+ En este paso, eliminamos todos los marcadores del documento usando el`Delete` método de la`Outlines` propiedad. Aquí está el código correspondiente:
 
 ```csharp
 pdfDocument.Outlines.Delete();
 ```
 
-## Step 5: Save the updated file
+## Paso 5: guarde el archivo actualizado
 
-Finally, we save the updated PDF file using the `Save` method of the `pdfDocument` object. Here is the corresponding code:
+ Finalmente, guardamos el archivo PDF actualizado usando el`Save` método de la`pdfDocument` objeto. Aquí está el código correspondiente:
 
 ```csharp
 dataDir = dataDir + "DeleteAllBookmarks_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Delete All Bookmarks using Aspose.PDF for .NET 
+### Código fuente de muestra para Eliminar todos los marcadores usando Aspose.PDF para .NET 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Abrir documento
 Document pdfDocument = new Document(dataDir + "DeleteAllBookmarks.pdf");
-// Delete all bookmarks
+// Eliminar todos los marcadores
 pdfDocument.Outlines.Delete();
 dataDir = dataDir + "DeleteAllBookmarks_out.pdf";
-// Save updated file
+// Guardar archivo actualizado
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nAll bookmarks deleted successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Conclusión
 
-Congratulation ! Now you have a step by step guide to remove all bookmarks with Aspose.PDF for .NET. You can use this code to clean up your PDF documents by deleting all existing bookmarks.
+¡Enhorabuena! Ahora tienes una guía paso a paso para eliminar todos los marcadores con Aspose.PDF para .NET. Puede utilizar este código para limpiar sus documentos PDF eliminando todos los marcadores existentes.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Asegúrese de consultar la documentación oficial de Aspose.PDF para obtener más información sobre las funciones avanzadas de manipulación de marcadores.
 
-### FAQ's for delete all bookmarks in PDF file
+### Preguntas frecuentes para eliminar todos los marcadores en un archivo PDF
 
-#### Q: What are bookmarks in a PDF file?
+#### P: ¿Qué son los marcadores en un archivo PDF?
 
-A: Bookmarks in a PDF file are navigational aids that allow users to quickly jump to specific sections or pages within the document. They help organize and enhance the user experience when navigating through lengthy content.
+R: Los marcadores en un archivo PDF son ayudas de navegación que permiten a los usuarios saltar rápidamente a secciones o páginas específicas dentro del documento. Ayudan a organizar y mejorar la experiencia del usuario al navegar por contenido extenso.
 
-#### Q: Why would I need to delete all bookmarks from a PDF file?
+#### P: ¿Por qué necesitaría eliminar todos los marcadores de un archivo PDF?
 
-A: There might be cases where you want to remove all bookmarks from a PDF document to simplify its navigation, reorganize its structure, or prepare it for a specific purpose where bookmarks are not needed.
+R: Puede haber casos en los que desee eliminar todos los marcadores de un documento PDF para simplificar su navegación, reorganizar su estructura o prepararlo para un propósito específico donde no se necesitan marcadores.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### P: ¿Cómo importo las bibliotecas necesarias para mi proyecto C#?
 
-A: To import the required library for your C# project, you can use the following import directive:
+R: Para importar la biblioteca requerida para su proyecto C#, puede usar la siguiente directiva de importación:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This library provides the classes and methods needed to work with PDF documents.
+Esta biblioteca proporciona las clases y métodos necesarios para trabajar con documentos PDF.
 
-#### Q: How do I specify the path to the documents folder?
+#### P: ¿Cómo especifico la ruta a la carpeta de documentos?
 
-A: In the source code provided, you need to replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file from which you want to remove bookmarks. This ensures that the code can locate the target PDF file.
+ R: En el código fuente proporcionado, debe reemplazar`"YOUR DOCUMENT DIRECTORY"` con la ruta real a la carpeta que contiene el archivo PDF del que desea eliminar los marcadores. Esto garantiza que el código pueda localizar el archivo PDF de destino.
 
-#### Q: How do I open a PDF document for bookmark removal?
+#### P: ¿Cómo abro un documento PDF para eliminarlo como favorito?
 
-A: To open a PDF document for bookmark removal, use the following code:
+R: Para abrir un documento PDF y eliminarlo como favorito, utilice el siguiente código:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "DeleteAllBookmarks.pdf");
 ```
 
-Replace `"DeleteAllBookmarks.pdf"` with the actual file name.
+ Reemplazar`"DeleteAllBookmarks.pdf"` con el nombre del archivo real.
 
-#### Q: How do I delete all bookmarks from the PDF document?
+#### P: ¿Cómo elimino todos los marcadores del documento PDF?
 
-A: To remove all bookmarks from the PDF document, use the `Delete` method of the `Outlines` property:
+ R: Para eliminar todos los marcadores del documento PDF, utilice el`Delete` método de la`Outlines` propiedad:
 
 ```csharp
 pdfDocument.Outlines.Delete();
 ```
 
-#### Q: What happens to the rest of the content when bookmarks are deleted?
+#### P: ¿Qué sucede con el resto del contenido cuando se eliminan los marcadores?
 
-A: Deleting bookmarks does not affect the content or layout of the PDF document. Only the navigation bookmarks are removed, leaving the actual content intact.
+R: Eliminar marcadores no afecta el contenido ni el diseño del documento PDF. Sólo se eliminan los marcadores de navegación, dejando intacto el contenido real.
 
-#### Q: How do I save the updated PDF file after removing bookmarks?
+#### P: ¿Cómo guardo el archivo PDF actualizado después de eliminar los marcadores?
 
-A: To save the updated PDF file after deleting bookmarks, use the following code:
+R: Para guardar el archivo PDF actualizado después de eliminar los marcadores, utilice el siguiente código:
 
 ```csharp
 dataDir = dataDir + "DeleteAllBookmarks_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-#### Q: Can I selectively delete specific bookmarks instead of all of them?
+#### P: ¿Puedo eliminar de forma selectiva marcadores específicos en lugar de todos?
 
-A: Yes, you can selectively delete specific bookmarks by targeting them using their index or other properties. The provided source code demonstrates how to delete all bookmarks, but you can modify it to suit your needs.
+R: Sí, puede eliminar selectivamente marcadores específicos apuntándolos mediante su índice u otras propiedades. El código fuente proporcionado muestra cómo eliminar todos los marcadores, pero puede modificarlo según sus necesidades.
 
-#### Q: Are there any precautions I should take before deleting bookmarks?
+#### P: ¿Debo tomar alguna precaución antes de eliminar marcadores?
 
-A: Before deleting bookmarks, make sure to review the document to ensure that bookmark removal will not impact the document's usability or navigation. Consider making a backup of the original document before proceeding.
+R: Antes de eliminar marcadores, asegúrese de revisar el documento para asegurarse de que la eliminación de marcadores no afecte la usabilidad o navegación del documento. Considere hacer una copia de seguridad del documento original antes de continuar.

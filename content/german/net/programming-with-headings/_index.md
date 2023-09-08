@@ -1,16 +1,16 @@
 ---
-title: Programming with Headings
-linktitle: Programming with Headings
+title: Programmieren mit Überschriften
+linktitle: Programmieren mit Überschriften
 type: docs
 weight: 20
 url: /de/net/programming-with-headings/
-description: The Aspose.PDF for .NET tutorials walk you through using headings to improve the structure of your PDF documents.
+description: Die Aspose.PDF für .NET-Tutorials führen Sie durch die Verwendung von Überschriften, um die Struktur Ihrer PDF-Dokumente zu verbessern.
 ---
-The Aspose.PDF for .NET tutorials take you step-by-step to master programming with headings in your PDF documents. Learn how to add, style and manipulate headings to improve the structure of your PDF files.
+Die Aspose.PDF für .NET-Tutorials führen Sie Schritt für Schritt zum Meistern der Programmierung mit Überschriften in Ihren PDF-Dokumenten. Erfahren Sie, wie Sie Überschriften hinzufügen, formatieren und bearbeiten, um die Struktur Ihrer PDF-Dateien zu verbessern.
 
-Explore the features of Aspose.PDF for .NET with dedicated tutorials. Learn how to work with headings in your PDF documents, using practical examples and step-by-step explanations. Improve the readability and navigation of your PDF files with these comprehensive resources.
+Entdecken Sie die Funktionen von Aspose.PDF für .NET mit speziellen Tutorials. Erfahren Sie anhand praktischer Beispiele und Schritt-für-Schritt-Erklärungen, wie Sie mit Überschriften in Ihren PDF-Dokumenten arbeiten. Verbessern Sie die Lesbarkeit und Navigation Ihrer PDF-Dateien mit diesen umfassenden Ressourcen.
 
 ## Tutorials
-| Title | Description |
+| Titel | Beschreibung |
 | --- | --- | 
-| [Apply Number Style In PDF File](./apply-number-style/) | Learn how to apply a numbering style to headings in PDF file using Aspose.PDF for .NET. Step by step guide. |   
+| [Zahlenstil in PDF-Datei anwenden](./apply-number-style/) | Erfahren Sie, wie Sie mit Aspose.PDF für .NET einen Nummerierungsstil auf Überschriften in einer PDF-Datei anwenden. Schritt für Schritt Anleitung. |   

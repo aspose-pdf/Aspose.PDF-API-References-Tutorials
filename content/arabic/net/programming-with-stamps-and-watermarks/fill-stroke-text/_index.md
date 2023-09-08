@@ -1,165 +1,165 @@
 ---
-title: Fill Stroke Text In PDF File
-linktitle: Fill Stroke Text In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to easily fill and outline text in PDF file with Aspose.PDF for .NET.
+title: ملء نص السكتة الدماغية في ملف PDF
+linktitle: ملء نص السكتة الدماغية في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية تعبئة النص وتحديد الخطوط العريضة له بسهولة في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 90
 url: /ar/net/programming-with-stamps-and-watermarks/fill-stroke-text/
 ---
-In this tutorial, we will take you step by step on how to fill and outline text in PDF file using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to apply fill and outline colors to text in the PDF file.
+في هذا البرنامج التعليمي، سنأخذك خطوة بخطوة حول كيفية ملء النص وتخطيطه في ملف PDF باستخدام Aspose.PDF for .NET. سنوضح لك كيفية استخدام كود مصدر C# المتوفر لتطبيق ألوان التعبئة والمخطط التفصيلي على النص في ملف PDF.
 
-## Step 1: Setting up the environment
+## الخطوة 1: تهيئة البيئة
 
-Before you begin, make sure you have the following:
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- بيئة تطوير .NET مثبتة.
+- تم تنزيل مكتبة Aspose.PDF الخاصة بـ .NET والإشارة إليها في مشروعك.
 
-## Step 2: Creating the TextState Object
+## الخطوة 2: إنشاء كائن TextState
 
-The first step is to create a TextState object to pass the advanced properties. Here's how:
+الخطوة الأولى هي إنشاء كائن TextState لتمرير الخصائص المتقدمة. إليك الطريقة:
 
 ```csharp
-// Create TextState object to transfer advanced properties
+// قم بإنشاء كائن TextState لنقل الخصائص المتقدمة
 TextState ts = new TextState();
 
-// Set outline color
+// تعيين لون المخطط التفصيلي
 ts.StrokingColor = Color.Gray;
 
-// Define the text rendering mode
+// تحديد وضع عرض النص
 ts.RenderingMode = TextRenderingMode.StrokeText;
 ```
 
-The above code creates a new TextState object and sets the outline color as well as how the text is rendered.
+يقوم التعليمة البرمجية أعلاه بإنشاء كائن TextState جديد وتعيين لون المخطط التفصيلي بالإضافة إلى كيفية عرض النص.
 
-## Step 3: Loading the PDF document
+## الخطوة 3: تحميل وثيقة PDF
 
-Now that the TextState object is ready, we can load the PDF document where we want to apply the text fill and outline. Here's how:
+الآن بعد أن أصبح كائن TextState جاهزًا، يمكننا تحميل مستند PDF حيث نريد تطبيق تعبئة النص والمخطط التفصيلي. إليك الطريقة:
 
 ```csharp
-// Load the PDF document as input
+// قم بتحميل مستند PDF كمدخل
 Facades.PdfFileStamp fileStamp = new Facades.PdfFileStamp(new Aspose.Pdf.Document(dataDir + "input.pdf"));
 ```
 
-The code above loads the existing PDF document using the PdfFileStamp class from the Aspose.PDF.Facades library.
+يقوم الكود أعلاه بتحميل مستند PDF الموجود باستخدام فئة PdfFileStamp من مكتبة Aspose.PDF.Facades.
 
-## Step 4: Add Fill and Stroke to Text
+## الخطوة 4: إضافة التعبئة والحد إلى النص
 
-Now that the PDF document is loaded, we can add the fill and outline to the text. Here's how:
+الآن بعد أن تم تحميل مستند PDF، يمكننا إضافة التعبئة والمخطط التفصيلي للنص. إليك الطريقة:
 
 ```csharp
-// Create a stamp (Stamp) with the defined text and properties
+// قم بإنشاء ختم (Stamp) بالنص والخصائص المحددة
 Aspose.Pdf.Facades.Stamp stamp = new Aspose.Pdf.Facades.Stamp();
 stamp.BindLogo(new Facades.FormattedText("PAID IN FULL", System.Drawing.Color.Gray, "Arial", Facades.EncodingType.Winansi, true, 78));
 
-// Bind the TextState object
+// ربط كائن TextState
 stamp.BindTextState(ts);
 
-// Set origin X, Y
+// تعيين الأصل X، Y
 stamp.SetOrigin(100, 100);
 stamp. Opacity = 5;
 stamp.BlendingSpace = Facades.BlendingColorSpace.DeviceRGB;
 stamp.Rotation = 45.0F;
 stamp. IsBackground = false;
 
-// Add the stamp to the document
+// أضف الختم إلى المستند
 fileStamp.AddStamp(stamp);
 ```
 
-The above code creates a Stamp with the specified text and defined Fill and Stroke properties.
+يقوم الكود أعلاه بإنشاء ختم بالنص المحدد وخصائص التعبئة والحد المحددة.
 
-## Step 5: Save the output document
+## الخطوة 5: احفظ مستند الإخراج
 
-Once the text stamp is added, we can save the modified PDF document. Here's how:
+بمجرد إضافة ختم النص، يمكننا حفظ مستند PDF المعدل. إليك الطريقة:
 
 ```csharp
-// Save the modified document
+// احفظ المستند المعدل
 fileStamp.Save(dataDir + "output_out.pdf");
 fileStamp.Close();
 ```
 
-The above code saves the edited PDF document to the specified directory.
+يحفظ الكود أعلاه مستند PDF المحرر في الدليل المحدد.
 
-### Sample source code for Fill Stroke Text using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لتعبئة النص باستخدام Aspose.PDF لـ .NET 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create TextState object to transfer advanced properties
+// قم بإنشاء كائن TextState لنقل الخصائص المتقدمة
 TextState ts = new TextState();
 
-// Set color for stroke
+// ضبط اللون للسكتة الدماغية
 ts.StrokingColor = Color.Gray;
 
-// Set text rendering mode
+// ضبط وضع عرض النص
 ts.RenderingMode = TextRenderingMode.StrokeText;
 
-// Load an input PDF document
+// قم بتحميل مستند PDF للإدخال
 Facades.PdfFileStamp fileStamp = new Facades.PdfFileStamp(new Aspose.Pdf.Document(dataDir + "input.pdf"));
 Aspose.Pdf.Facades.Stamp stamp = new Aspose.Pdf.Facades.Stamp();
 stamp.BindLogo(new Facades.FormattedText("PAID IN FULL", System.Drawing.Color.Gray, "Arial", Facades.EncodingType.Winansi, true, 78));
 
-// Bind TextState
+// ربط حالة النص
 stamp.BindTextState(ts);
 
-// Set X,Y origin
+// تعيين الأصل X، Y
 stamp.SetOrigin(100, 100);
 stamp.Opacity = 5;
 stamp.BlendingSpace = Facades.BlendingColorSpace.DeviceRGB;
 stamp.Rotation = 45.0F;
 stamp.IsBackground = false;
 
-// Add Stamp
+// أضف ختم
 fileStamp.AddStamp(stamp);
 fileStamp.Save(dataDir + "ouput_out.pdf");
 fileStamp.Close();
 
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You have learned how to fill and outline text in a PDF document using Aspose.PDF for .NET. Now you can apply this knowledge to customize fill and outline colors in your PDF documents.
+تهنئة ! لقد تعلمت كيفية تعبئة النص وتحديد الخطوط العريضة له في مستند PDF باستخدام Aspose.PDF لـ .NET. يمكنك الآن تطبيق هذه المعرفة لتخصيص ألوان التعبئة والمخطط التفصيلي في مستندات PDF الخاصة بك.
 
-### FAQ's for fill stroke text in PDF file
+### الأسئلة الشائعة حول تعبئة النص في ملف PDF
 
-#### Q: What does it mean to fill and outline text in a PDF document, and when might I need to do so?
+#### س: ماذا يعني ملء النص وتحديد الخطوط العريضة له في مستند PDF، ومتى قد أحتاج إلى القيام بذلك؟
 
-A: Filling and outlining text in a PDF document involves applying colors to the interior of the text characters (fill) and to the borders around the text (outline). This can be used to enhance the visual appearance of the text, create emphasis, or highlight specific content within the PDF.
+ج: تتضمن تعبئة النص وتحديده في مستند PDF تطبيق الألوان على الجزء الداخلي من أحرف النص (التعبئة) وعلى الحدود المحيطة بالنص (المخطط التفصيلي). يمكن استخدام ذلك لتحسين المظهر المرئي للنص، أو إنشاء التركيز، أو تمييز محتوى معين داخل ملف PDF.
 
-#### Q: How does the provided C# source code accomplish filling and outlining text in a PDF file?
+#### س: كيف يقوم كود مصدر C# المقدم بإنجاز عملية ملء النص وتحديد الخطوط العريضة له في ملف PDF؟
 
-A: The provided source code demonstrates how to create a `TextState` object to define advanced text properties, such as outline color and rendering mode. It then uses Aspose.PDF.Facades to load an existing PDF document, create a stamp containing the text with specified fill and stroke properties, and add the stamp to the document.
+ ج: يوضح الكود المصدري المقدم كيفية إنشاء ملف`TextState` كائن لتحديد خصائص النص المتقدمة، مثل لون المخطط التفصيلي ووضع العرض. ثم يستخدم Aspose.PDF.Facades لتحميل مستند PDF موجود، وإنشاء ختم يحتوي على النص بخصائص التعبئة والحد المحددة، وإضافة الختم إلى المستند.
 
-#### Q: What is the purpose of the `TextState` object in the code?
+####  س: ما هو الغرض من`TextState` object in the code?
 
-A: The `TextState` object is used to define advanced text properties, including the color of the text outline (stroke) and the rendering mode. It allows you to customize how the text appears in terms of stroke and fill.
+ ج: ال`TextState`يتم استخدام الكائن لتحديد خصائص النص المتقدمة، بما في ذلك لون مخطط النص (الحد) ووضع العرض. يسمح لك بتخصيص كيفية ظهور النص من حيث الحد والتعبئة.
 
-#### Q: Can I apply different fill and outline colors to different parts of the same text?
+#### س: هل يمكنني تطبيق ألوان تعبئة ومخططات تفصيلية مختلفة على أجزاء مختلفة من نفس النص؟
 
-A: Yes, you can modify the code to create different `TextState` objects with distinct fill and outline colors and apply them to specific parts of the text using separate `Stamp` objects.
+ ج: نعم، يمكنك تعديل الكود لإنشاء كود مختلف`TextState` كائنات ذات ألوان تعبئة ومخطط تفصيلي مميزة وتطبيقها على أجزاء معينة من النص باستخدام منفصلة`Stamp` أشياء.
 
-#### Q: Can I apply fill and outline colors to text that is already present in the PDF document?
+#### س: هل يمكنني تطبيق ألوان التعبئة والمخطط التفصيلي على النص الموجود بالفعل في مستند PDF؟
 
-A: Yes, you can use similar principles to apply fill and outline colors to existing text in the PDF document by selecting the appropriate text objects and adding them as stamps with the desired `TextState` properties.
+ ج: نعم، يمكنك استخدام مبادئ مماثلة لتطبيق ألوان التعبئة والمخطط التفصيلي على النص الموجود في مستند PDF عن طريق تحديد كائنات النص المناسبة وإضافتها كطوابع بالمواصفات المطلوبة`TextState` ملكيات.
 
-#### Q: How can I adjust the opacity and blending of the filled and outlined text?
+#### س: كيف يمكنني ضبط العتامة والمزج للنص المعبأ والمحدد؟
 
-A: The provided code allows you to set the opacity and blending properties of the stamp using the `Opacity` and `BlendingSpace` properties, respectively. You can adjust these values to achieve the desired visual effect.
+ ج: يسمح لك الكود المقدم بضبط خصائص العتامة والمزج للختم باستخدام`Opacity` و`BlendingSpace`الخصائص، على التوالي. يمكنك ضبط هذه القيم لتحقيق التأثير المرئي المطلوب.
 
-#### Q: How can I apply different fill and outline colors to multiple stamps within the same PDF document?
+#### س: كيف يمكنني تطبيق ألوان تعبئة ومخطط تفصيلي مختلفة على طوابع متعددة داخل مستند PDF نفسه؟
 
-A: You can create multiple `TextState` objects with different fill and outline colors, and then create separate `Stamp` objects for each set of text with distinct colors. Add these stamps to the same PDF document using the `PdfFileStamp` class.
+ ج: يمكنك إنشاء عدة`TextState` كائنات ذات ألوان تعبئة ومخطط تفصيلي مختلفة، ثم قم بإنشاء كائنات منفصلة`Stamp` كائنات لكل مجموعة من النصوص بألوان مميزة. أضف هذه الطوابع إلى نفس مستند PDF باستخدام ملف`PdfFileStamp` فصل.
 
-#### Q: Can I use fonts other than Arial for the outlined and filled text?
+#### س: هل يمكنني استخدام خطوط أخرى غير Arial للنص المحدد والمعبأ؟
 
-A: Yes, you can change the font by modifying the font name parameter in the `FormattedText` constructor when creating the stamp. You can use any font available on your system.
+ ج: نعم، يمكنك تغيير الخط عن طريق تعديل معلمة اسم الخط في ملف`FormattedText` منشئ عند إنشاء الطوابع. يمكنك استخدام أي خط متاح على نظامك.
 
-#### Q: How can I modify the rotation angle of the outlined and filled text?
+#### س: كيف يمكنني تعديل زاوية التدوير للنص المحدد والمملوء؟
 
-A: The provided code allows you to set the rotation angle of the stamp using the `Rotation` property. You can adjust this property to specify the desired rotation angle for the text.
+ ج: يسمح لك الكود المقدم بضبط زاوية دوران الختم باستخدام`Rotation` ملكية. يمكنك ضبط هذه الخاصية لتحديد زاوية التدوير المطلوبة للنص.
 
-#### Q: How can I control the position and size of the outlined and filled text on the page?
+#### س: كيف يمكنني التحكم في موضع وحجم النص المحدد والمعبأ في الصفحة؟
 
-A: You can use the `SetOrigin` method of the `Stamp` object to set the X and Y coordinates of the stamp's position on the page. Additionally, you can adjust the font size in the `FormattedText` constructor to control the size of the text.
+ج: يمكنك استخدام`SetOrigin` طريقة`Stamp` كائن لتعيين إحداثيات X وY لموضع الختم على الصفحة. بالإضافة إلى ذلك، يمكنك ضبط حجم الخط في`FormattedText` منشئ للتحكم في حجم النص.

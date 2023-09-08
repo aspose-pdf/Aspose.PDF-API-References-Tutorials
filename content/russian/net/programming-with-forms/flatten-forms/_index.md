@@ -1,33 +1,33 @@
 ---
-title: Flatten Forms In PDF Document
-linktitle: Flatten Forms In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Easily flatten forms in PDF document using Aspose.PDF for .NET.
+title: Сведение форм в PDF-документе
+linktitle: Сведение форм в PDF-документе
+second_title: Справочник по Aspose.PDF для .NET API
+description: Легко выравнивайте формы в PDF-документе с помощью Aspose.PDF для .NET.
 type: docs
 weight: 100
 url: /ru/net/programming-with-forms/flatten-forms/
 ---
-In this tutorial, we will show you how to flatten forms using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+В этом уроке мы покажем вам, как сводить формы с помощью Aspose.PDF для .NET. Мы шаг за шагом объясним исходный код C#, чтобы помочь вам в этом процессе.
 
-## Step 1: Preparation
+## Шаг 1: Подготовка
 
-First, make sure you have imported the necessary libraries and set the path to the documents directory:
+Сначала убедитесь, что вы импортировали необходимые библиотеки и задали путь к каталогу документов:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load source PDF form
+## Шаг 2. Загрузите исходную PDF-форму.
 
-Load the source PDF form:
+Загрузите исходную PDF-форму:
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 3: Flatten the forms
+## Шаг 3: Сгладьте формы
 
-First check if there are any form fields in the document. If so, iterate through each field and apply flattening:
+Сначала проверьте, есть ли в документе поля формы. Если да, пройдитесь по каждому полю и примените выравнивание:
 
 ```csharp
 if (doc.Form.Fields.Count() > 0)
@@ -39,22 +39,22 @@ item. Flatten();
 }
 ```
 
-## Step 4: Save the updated document
+## Шаг 4. Сохраните обновленный документ.
 
-Save the updated PDF document:
+Сохраните обновленный PDF-документ:
 
 ```csharp
 dataDir = dataDir + "FlattenForms_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Flatten Forms using Aspose.PDF for .NET 
+### Пример исходного кода для Flatten Forms с использованием Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load source PDF form
+// Загрузить исходную PDF-форму
 Document doc = new Document(dataDir + "input.pdf");
-// Flatten Forms
+// Сгладить формы
 if (doc.Form.Fields.Count() > 0)
 {
 	foreach (var item in doc.Form.Fields)
@@ -63,33 +63,33 @@ if (doc.Form.Fields.Count() > 0)
 	}
 }
 dataDir = dataDir + "FlattenForms_out.pdf";
-// Save the updated document
+// Сохраните обновленный документ
 doc.Save(dataDir);
 Console.WriteLine("\nForms flattened successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, we learned how to flatten forms using Aspose.PDF for .NET. By following these steps, you can easily flatten forms in your PDF documents, making fields uneditable and merging annotations with document content.
+В этом уроке мы узнали, как сводить формы с помощью Aspose.PDF для .NET. Следуя этим шагам, вы можете легко сгладить формы в PDF-документах, сделав поля нередактируемыми и объединив аннотации с содержимым документа.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What does "flattening forms" mean in Aspose.PDF for .NET?
+#### Вопрос: Что означает «сведение форм» в Aspose.PDF для .NET?
 
-A: Flattening forms in Aspose.PDF for .NET refers to the process of making form fields in a PDF document uneditable and merging annotations (such as form fields, annotations, and digital signatures) with the document's content. Once forms are flattened, users cannot modify the form fields, and the visual appearance of the form fields becomes a part of the static content of the PDF document.
+О: Сведение форм в Aspose.PDF для .NET означает процесс запрета редактирования полей формы в PDF-документе и объединения аннотаций (таких как поля формы, аннотации и цифровые подписи) с содержимым документа. После выравнивания форм пользователи не могут изменять поля формы, а внешний вид полей формы становится частью статического содержимого PDF-документа.
 
-#### Q: Can I reverse the flattening process and make the form fields editable again?
+#### Вопрос: Могу ли я отменить процесс выравнивания и снова сделать поля формы редактируемыми?
 
-A: No, once the form fields are flattened, the process is irreversible using Aspose.PDF for .NET. Flattening permanently merges the form fields' appearance with the PDF's content, and the individual form field elements are no longer accessible or editable.
+О: Нет, после выравнивания полей формы процесс становится необратимым при использовании Aspose.PDF для .NET. При выравнивании внешний вид полей формы окончательно объединяется с содержимым PDF-файла, а отдельные элементы полей формы больше не доступны и не редактируются.
 
-#### Q: When should I flatten forms in a PDF document?
+#### Вопрос: Когда следует сводить формы в PDF-документе?
 
-A: Flattening forms is useful when you want to preserve the visual appearance of form fields and annotations in a PDF document while preventing users from modifying the data. This is commonly done when you want to share a PDF document with pre-filled form data or annotations that should not be altered by the recipients.
+О: Сведение форм полезно, если вы хотите сохранить внешний вид полей формы и аннотаций в PDF-документе, не позволяя пользователям изменять данные. Обычно это делается, когда вы хотите поделиться PDF-документом с предварительно заполненными данными формы или аннотациями, которые получатели не должны изменять.
 
-#### Q: Will flattening forms affect other annotations, such as digital signatures?
+#### Вопрос: Повлияет ли объединение форм на другие аннотации, например цифровые подписи?
 
-A: Yes, flattening forms will merge all annotations, including digital signatures, with the PDF's content. Once the forms are flattened, any existing digital signatures will become a permanent part of the document, and users cannot modify or remove them.
+О: Да, при объединении форм все аннотации, включая цифровые подписи, объединяются с содержимым PDF-файла. Как только формы будут объединены, любые существующие цифровые подписи станут постоянной частью документа, и пользователи не смогут их изменять или удалять.
 
-#### Q: Can I selectively flatten specific form fields and leave others editable?
+#### Вопрос: Могу ли я выборочно сгладить определенные поля формы и оставить другие редактируемыми?
 
-A: Yes, you can selectively flatten specific form fields in a PDF document while leaving others editable. Instead of using the code to flatten all form fields, you can choose to flatten only the desired form fields based on their names or other criteria.
+О: Да, вы можете выборочно выравнивать определенные поля формы в PDF-документе, оставляя другие редактируемыми. Вместо использования кода для выравнивания всех полей формы вы можете выбрать выравнивание только нужных полей формы на основе их имен или других критериев.

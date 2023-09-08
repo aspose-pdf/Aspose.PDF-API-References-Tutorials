@@ -1,42 +1,42 @@
 ---
-title: Add Bookmark In PDF File
-linktitle: Add Bookmark In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily add bookmark in PDF file for improved navigation with Aspose.PDF for .NET.
+title: PDF Dosyasına Yer İşareti Ekle
+linktitle: PDF Dosyasına Yer İşareti Ekle
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile gelişmiş gezinme için PDF dosyasına kolayca yer işareti ekleyin.
 type: docs
 weight: 10
 url: /tr/net/programming-with-bookmarks/add-bookmark/
 ---
-Adding bookmarks in a PDF file allows easy and quick navigation. With Aspose.PDF for .NET, you can easily add a bookmark in PDF file by following the following source code:
+Bir PDF dosyasına yer imleri eklemek, kolay ve hızlı gezinmeye olanak tanır. Aspose.PDF for .NET ile aşağıdaki kaynak kodunu izleyerek PDF dosyasına kolayca yer imi ekleyebilirsiniz:
 
-## Step 1: Import required libraries
+## 1. Adım: Gerekli kitaplıkları içe aktarın
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Başlamadan önce C# projeniz için gerekli kütüphaneleri içe aktarmanız gerekir. Gerekli ithalat direktifi aşağıdadır:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-## Step 2: Set path to documents folder
+## 2. Adım: Belgeler klasörünün yolunu ayarlayın
 
-In this step, you need to specify the path to the folder containing the PDF file you want to add a bookmark to. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ Bu adımda, yer imi eklemek istediğiniz PDF dosyasının bulunduğu klasörün yolunu belirtmeniz gerekir. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"`belgeler klasörünüzün gerçek yolunu içeren aşağıdaki kodda:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## 3. Adım: PDF belgesini açın
 
-Now we will open the PDF document to which we want to add a bookmark using the following code:
+Şimdi yer imi eklemek istediğimiz PDF belgesini aşağıdaki kodu kullanarak açacağız:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "AddBookmark.pdf");
 ```
 
-## Step 4: Create bookmark object
+## 4. Adım: Yer imi nesnesi oluşturun
 
-In this step, we will create a bookmark object using `OutlineItemCollection` class and set its properties such as title, italic attribute, bold attribute and action to perform when clicked. Here is the corresponding code:
+ Bu adımda, kullanarak bir yer imi nesnesi oluşturacağız.`OutlineItemCollection` sınıfını seçin ve tıklandığında gerçekleştirilecek başlık, italik özellik, kalın özellik ve eylem gibi özelliklerini ayarlayın. İşte ilgili kod:
 
 ```csharp
 OutlineItemCollection pdfOutline = new OutlineItemCollection(pdfDocument.Outlines);
@@ -46,80 +46,80 @@ pdfOutline. Bold = true;
 pdfOutline.Action = new GoToAction(pdfDocument.Pages[1]);
 ```
 
-## Step 5: Add bookmark to document
+## 5. Adım: Belgeye yer işareti ekleyin
 
-Finally, we add the created bookmark to the document's bookmark collection using the `Add` method of the `Outlines` property. Here is the corresponding code:
+ Son olarak, oluşturulan yer imini belgenin yer imi koleksiyonuna şunu kullanarak ekliyoruz:`Add` yöntemi`Outlines` mülk. İşte ilgili kod:
 
 ```csharp
 pdfDocument.Outlines.Add(pdfOutline);
 ```
 
-### Sample source code for Add Bookmark using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Yer İşareti Ekleme için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir + "AddBookmark.pdf");
-// Create a bookmark object
+// Yer imi nesnesi oluşturma
 OutlineItemCollection pdfOutline = new OutlineItemCollection(pdfDocument.Outlines);
 pdfOutline.Title = "Test Outline";
 pdfOutline.Italic = true;
 pdfOutline.Bold = true;
-// Set the destination page number
+// Hedef sayfa numarasını ayarlayın
 pdfOutline.Action = new GoToAction(pdfDocument.Pages[1]);
-// Add bookmark in the document's outline collection.
+// Belgenin anahat koleksiyonuna yer işareti ekleyin.
 pdfDocument.Outlines.Add(pdfOutline);
 dataDir = dataDir + "AddBookmark_out.pdf";
-// Save output
+// Çıktıyı kaydet
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nBookmark added successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulation ! Now you have a step by step guide to add a bookmark using Aspose.PDF for .NET. You can use this code to improve navigation in your PDF documents by adding custom bookmarks.
+Tebrikler! Artık Aspose.PDF for .NET'i kullanarak yer imi eklemek için adım adım bir kılavuza sahipsiniz. Özel yer imleri ekleyerek PDF belgelerinizdeki gezinmeyi geliştirmek için bu kodu kullanabilirsiniz.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Gelişmiş yer imi düzenleme özellikleri hakkında daha fazla bilgi için resmi Aspose.PDF belgelerine göz atmayı unutmayın.
 
 
-### FAQ's for add bookmark in PDF file
+### PDF dosyasına yer işareti eklemek için SSS
 
-#### Q: What are bookmarks in a PDF file?
+#### S: PDF dosyasındaki yer işaretleri nedir?
 
-A: Bookmarks, also known as outlines, are interactive elements that provide navigation and structure within a PDF document. They allow users to quickly jump to specific sections or pages.
+C: Ana hatlar olarak da bilinen yer imleri, bir PDF belgesinde gezinme ve yapı sağlayan etkileşimli öğelerdir. Kullanıcıların belirli bölümlere veya sayfalara hızlı bir şekilde atlamasına olanak tanır.
 
-#### Q: Why would I need to add bookmarks to a PDF file?
+#### S: Neden bir PDF dosyasına yer imleri eklemem gerekiyor?
 
-A: Adding bookmarks to a PDF file improves user experience and makes it easier for readers to navigate through the document's content. Bookmarks can serve as a table of contents or provide quick access to important sections.
+C: Bir PDF dosyasına yer imleri eklemek, kullanıcı deneyimini geliştirir ve okuyucuların belge içeriğinde gezinmesini kolaylaştırır. Yer imleri, içindekiler tablosu görevi görebilir veya önemli bölümlere hızlı erişim sağlayabilir.
 
-#### Q: How do I import the required libraries for my C# project?
+#### S: C# projem için gerekli kitaplıkları nasıl içeri aktarabilirim?
 
-A: To import the necessary libraries for your C# project, include the following import directives:
+C: C# projeniz için gerekli kitaplıkları içe aktarmak için aşağıdaki içe aktarma yönergelerini ekleyin:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-These directives enable you to access the classes and methods needed for working with PDF documents and bookmarks.
+Bu yönergeler, PDF belgeleri ve yer imleriyle çalışmak için gereken sınıflara ve yöntemlere erişmenizi sağlar.
 
-#### Q: How do I specify the path to the documents folder?
+#### S: Belgeler klasörünün yolunu nasıl belirlerim?
 
-A: Replace `"YOUR DOCUMENT DIRECTORY"` in the provided source code with the actual path to the folder containing the PDF file you want to add a bookmark to.
+ C: Değiştir`"YOUR DOCUMENT DIRECTORY"` sağlanan kaynak kodunda, yer işareti eklemek istediğiniz PDF dosyasını içeren klasörün gerçek yolunu belirtin.
 
-#### Q: How do I open a PDF document for adding bookmarks?
+#### S: Yer imleri eklemek için bir PDF belgesini nasıl açarım?
 
-A: To open a PDF document for adding bookmarks, use the following code:
+C: Yer imleri eklemek amacıyla bir PDF belgesi açmak için aşağıdaki kodu kullanın:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "AddBookmark.pdf");
 ```
 
-Replace `"AddBookmark.pdf"` with the actual file name.
+ Yer değiştirmek`"AddBookmark.pdf"` gerçek dosya adı ile.
 
-#### Q: How do I create a bookmark object?
+#### S: Bir yer imi nesnesini nasıl oluşturabilirim?
 
-A: To create a bookmark object, use the `OutlineItemCollection` class. Customize its properties such as title, italic style, bold style, and action to perform when clicked.
+ C: Bir yer imi nesnesi oluşturmak için`OutlineItemCollection` sınıf. Başlık, italik stil, kalın stil ve tıklandığında gerçekleştirilecek eylem gibi özelliklerini özelleştirin.
 
 ```csharp
 OutlineItemCollection pdfOutline = new OutlineItemCollection(pdfDocument.Outlines);
@@ -129,39 +129,39 @@ pdfOutline.Bold = true;
 pdfOutline.Action = new GoToAction(pdfDocument.Pages[1]);
 ```
 
-#### Q: What is the purpose of the `Action` property in a bookmark?
+####  Soru: Programın amacı nedir?`Action` property in a bookmark?
 
-A: The `Action` property specifies the action to be performed when the bookmark is clicked. In this example, we use the `GoToAction` class to navigate to a specific page (page 2 in this case).
+ C:`Action` özelliği, yer işaretine tıklandığında gerçekleştirilecek eylemi belirtir. Bu örnekte, şunu kullanıyoruz:`GoToAction`Belirli bir sayfaya gitmek için class'ı kullanın (bu durumda sayfa 2).
 
-#### Q: How do I add the bookmark to the document?
+#### S: Yer işaretini belgeye nasıl eklerim?
 
-A: Use the `Add` method of the `Outlines` property to add the created bookmark to the document's bookmark collection.
+ C: Kullan`Add` yöntemi`Outlines` oluşturulan yer imini belgenin yer imi koleksiyonuna ekleme özelliği.
 
 ```csharp
 pdfDocument.Outlines.Add(pdfOutline);
 ```
 
-#### Q: Can I add multiple bookmarks using this method?
+#### S: Bu yöntemi kullanarak birden fazla yer imi ekleyebilir miyim?
 
-A: Yes, you can repeat steps 4 to 8 to add multiple bookmarks to the document. Customize each bookmark's properties and actions as needed.
+C: Evet, belgeye birden fazla yer imi eklemek için 4'ten 8'e kadar olan adımları tekrarlayabilirsiniz. Her yer iminin özelliklerini ve eylemlerini gerektiği gibi özelleştirin.
 
-#### Q: How do I save the updated PDF file?
+#### S: Güncellenen PDF dosyasını nasıl kaydederim?
 
-A: Save the updated PDF file using the `Save` method of the `pdfDocument` object:
+ C: Güncellenen PDF dosyasını kullanarak kaydedin.`Save` yöntemi`pdfDocument` nesne:
 
 ```csharp
 dataDir = dataDir + "AddBookmark_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-#### Q: How can I confirm that the bookmarks have been added?
+#### S: Yer imlerinin eklendiğini nasıl doğrulayabilirim?
 
-A: Open the generated PDF file to verify that the specified bookmarks have been added to the document.
+C: Belirtilen yer imlerinin belgeye eklendiğini doğrulamak için oluşturulan PDF dosyasını açın.
 
-#### Q: Is there a limit to the number of bookmarks I can add?
+#### S: Ekleyebileceğim yer işareti sayısında bir sınır var mı?
 
-A: There is generally no strict limit to the number of bookmarks you can add, but consider the document's size and complexity for optimal performance.
+C: Ekleyebileceğiniz yer imlerinin sayısı konusunda genel olarak kesin bir sınır yoktur ancak en iyi performansı elde etmek için belgenin boyutunu ve karmaşıklığını göz önünde bulundurun.
 
-#### Q: Can I customize the appearance of bookmarks?
+#### S: Yer imlerinin görünümünü özelleştirebilir miyim?
 
-A: Yes, you can further customize bookmark appearance, color, style, and other attributes using Aspose.PDF features.
+C: Evet, Aspose.PDF özelliklerini kullanarak yer imi görünümünü, rengini, stilini ve diğer niteliklerini daha da özelleştirebilirsiniz.

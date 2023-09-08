@@ -1,38 +1,38 @@
 ---
-title: Text Box
-linktitle: Text Box
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to create a text field in a PDF document using Aspose.PDF for .NET.
+title: 文本框
+linktitle: 文本框
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 在 PDF 文档中创建文本字段。
 type: docs
 weight: 290
 url: /zh/net/programming-with-forms/text-box/
 ---
-In this guide, we will explain step by step how to use the Aspose.PDF library for .NET to create a text field in a PDF document. We'll show you how to open the document, create the text field, customize its properties, and save the edited PDF.
+在本指南中，我们将逐步解释如何使用 .NET 的 Aspose.PDF 库在 PDF 文档中创建文本字段。我们将向您展示如何打开文档、创建文本字段、自定义其属性以及保存编辑后的 PDF。
 
-## Step 1: Configuring the document directory
+## 第1步：配置文档目录
 
-The first step is to configure the document directory where the PDF file you want to work on is located. You can use the `dataDir` variable to specify the directory path.
+第一步是配置您要处理的 PDF 文件所在的文档目录。您可以使用`dataDir`变量来指定目录路径。
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual path to your documents directory.
+一定要更换`"YOUR DOCUMENTS DIRECTORY"`与文档目录的实际路径。
 
-## Step 2: Opening the PDF document
+## 步骤 2：打开 PDF 文档
 
-In this step, we will open the PDF document using the `Document` class of Aspose.PDF.
+在此步骤中，我们将使用以下命令打开 PDF 文档`Document`Aspose.PDF 类。
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "TextField.pdf");
 ```
 
-Make sure that the PDF file is present in the specified documents directory.
+确保指定的文档目录中存在 PDF 文件。
 
-## Step 3: Creating the text field
+## 第 3 步：创建文本字段
 
-We will create a text field using the `TextBoxField` class. You can specify position coordinates and field size using the `Rectangle` class.
+我们将使用以下命令创建一个文本字段`TextBoxField`班级。您可以使用指定位置坐标和字段大小`Rectangle`班级。
 
 ```csharp
 TextBoxField textBoxField = new TextBoxField(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(100, 200, 300, 300));
@@ -40,11 +40,11 @@ textBoxField. PartialName = "textbox1";
 textBoxField.Value = "Text Field";
 ```
 
-Customize the coordinates, size, partial name and text field value as needed.
+根据需要自定义坐标、大小、部分名称和文本字段值。
 
-## Step 4: Customize text field properties
+## 步骤 4：自定义文本字段属性
 
-In this step, we will customize the text field properties such as border, color, etc.
+在此步骤中，我们将自定义文本字段属性，例如边框、颜色等。
 
 ```csharp
 Border border = new Border(textBoxField);
@@ -54,73 +54,73 @@ textBoxField. Border = border;
 textBoxField.Color = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Green);
 ```
 
-Customize the text field properties according to your preferences.
+根据您的喜好自定义文本字段属性。
 
-## Step 5: Adding the field to the document
+## 步骤 5：将字段添加到文档中
 
-Now that we have created and configured the text field, we can add it to the PDF document.
+现在我们已经创建并配置了文本字段，我们可以将其添加到 PDF 文档中。
 
 ```csharp
 pdfDocument.Form.Add(textBoxField, 1);
 ```
 
-## Step 6: Saving the modified PDF
+## 第6步：保存修改后的PDF
 
-Finally, we can save the modified PDF using the `Save` method of the `Document` class.
+最后，我们可以使用以下命令保存修改后的PDF`Save`的方法`Document`班级。
 
 ```csharp
 dataDir = dataDir + "TextBox_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-Be sure to specify the full path and filename for the edited PDF.
+请务必指定已编辑 PDF 的完整路径和文件名。
 
-### Sample source code for Text Box using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 的文本框示例源代码 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+//打开文档
 Document pdfDocument = new Document(dataDir + "TextField.pdf");
-// Create a field
+//创建一个字段
 TextBoxField textBoxField = new TextBoxField(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(100, 200, 300, 300));
 textBoxField.PartialName = "textbox1";
 textBoxField.Value = "Text Box";
-// TextBoxField.Border = new Border(
+//TextBoxField.Border = 新边框(
 Border border = new Border(textBoxField);
 border.Width = 5;
 border.Dash = new Dash(1, 1);
 textBoxField.Border = border;
 textBoxField.Color = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Green);
-// Add field to the document
+//将字段添加到文档
 pdfDocument.Form.Add(textBoxField, 1);
 dataDir = dataDir + "TextBox_out.pdf";
-// Save modified PDF
+//保存修改后的 PDF
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nTextbox field added successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## 结论
 
-In this guide, we learned how to use the Aspose.PDF library for .NET to create a text field in a PDF document. By following the described steps, you can customize the properties of the text field and add it to the document as needed. Feel free to further explore the features of Aspose.PDF for .NET to expand the possibilities of manipulating PDF files.
+在本指南中，我们学习了如何使用 .NET 的 Aspose.PDF 库在 PDF 文档中创建文本字段。通过执行所描述的步骤，您可以自定义文本字段的属性并根据需要将其添加到文档中。请随意进一步探索 Aspose.PDF for .NET 的功能，以扩展处理 PDF 文件的可能性。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: Can I use Aspose.PDF for .NET to create multiple text fields in a single PDF document?
+#### 问：我可以使用 Aspose.PDF for .NET 在单个 PDF 文档中创建多个文本字段吗？
 
-A: Yes, you can create multiple text fields in a single PDF document using Aspose.PDF for .NET. Simply repeat the process of creating and customizing text fields for each desired location in the document.
+答：是的，您可以使用 Aspose.PDF for .NET 在单个 PDF 文档中创建多个文本字段。只需重复为文档中每个所需位置创建和自定义文本字段的过程即可。
 
-#### Q: How can I customize the appearance of the text field, such as font size and color?
+#### 问：如何自定义文本字段的外观，例如字体大小和颜色？
 
-A: You can customize the appearance of the text field by adjusting its properties, such as font size, font style, color, border style, background color, and more. In the sample source code provided, the border width, border dash pattern, and text color are customized.
+答：您可以通过调整文本字段的属性来自定义文本字段的外观，例如字体大小、字体样式、颜色、边框样式、背景颜色等。在提供的示例源代码中，边框宽度、边框虚线图案和文本颜色都是自定义的。
 
-#### Q: Is it possible to extract the user-entered text from the created text field?
+#### 问：是否可以从创建的文本字段中提取用户输入的文本？
 
-A: Yes, you can extract the user-entered text from the created text field. After users fill in the text field in the PDF document, you can programmatically retrieve the field value using Aspose.PDF for .NET.
+答：是的，您可以从创建的文本字段中提取用户输入的文本。用户填写 PDF 文档中的文本字段后，您可以使用 Aspose.PDF for .NET 以编程方式检索字段值。
 
-#### Q: Can I add text fields to an existing PDF document without creating a new one?
+#### 问：我可以将文本字段添加到现有 PDF 文档而不创建新文档吗？
 
-A: Yes, you can add text fields to an existing PDF document without creating a new one. Aspose.PDF for .NET provides the ability to modify existing PDF documents, including adding text fields, checkboxes, and other form elements.
+答：是的，您可以将文本字段添加到现有 PDF 文档，而无需创建新文档。 Aspose.PDF for .NET 提供了修改现有 PDF 文档的功能，包括添加文本字段、复选框和其他表单元素。
 
-#### Q: Does Aspose.PDF for .NET support other types of form fields, such as checkboxes and radio buttons?
+#### 问：Aspose.PDF for .NET 是否支持其他类型的表单字段，例如复选框和单选按钮？
 
-A: Yes, Aspose.PDF for .NET supports various types of form fields, including checkboxes, radio buttons, dropdown lists, and more. You can use the library to work with different types of form elements in PDF documents.
+答：是的，Aspose.PDF for .NET 支持各种类型的表单字段，包括复选框、单选按钮、下拉列表等。您可以使用该库来处理 PDF 文档中不同类型的表单元素。

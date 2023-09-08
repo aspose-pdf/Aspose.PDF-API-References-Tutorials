@@ -1,57 +1,57 @@
 ---
-title: Get Bookmark Page Number In PDF File
-linktitle: Get Bookmark Page Number In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily get bookmark page number in PDF file with Aspose.PDF for .NET.
+title: احصل على رقم صفحة الإشارة المرجعية في ملف PDF
+linktitle: احصل على رقم صفحة الإشارة المرجعية في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: احصل بسهولة على رقم صفحة الإشارة المرجعية في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 60
 url: /ar/net/programming-with-bookmarks/get-bookmark-page-number/
 ---
-Retrieving page numbers associated with bookmarks in PDF file can be useful for navigation. With Aspose.PDF for .NET, you can easily get the page number of bookmarks by following the following source code:
+يمكن أن يكون استرداد أرقام الصفحات المرتبطة بالإشارات المرجعية في ملف PDF مفيدًا للتنقل. باستخدام Aspose.PDF for .NET، يمكنك بسهولة الحصول على رقم صفحة الإشارات المرجعية باتباع كود المصدر التالي:
 
-## Step 1: Import required libraries
+## الخطوة 1: استيراد المكتبات المطلوبة
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+قبل أن تبدأ، تحتاج إلى استيراد المكتبات اللازمة لمشروع C# الخاص بك. فيما يلي توجيه الاستيراد الضروري:
 
 ```csharp
 using Aspose.Pdf.Facades;
 ```
 
-## Step 2: Set path to documents folder
+## الخطوة 2: تعيين المسار إلى مجلد المستندات
 
-In this step, you need to specify the path to the folder containing the PDF file you want to extract the bookmark page numbers from. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ في هذه الخطوة، تحتاج إلى تحديد المسار إلى المجلد الذي يحتوي على ملف PDF الذي تريد استخراج أرقام صفحات الإشارات المرجعية منه. يستبدل`"YOUR DOCUMENT DIRECTORY"`في الكود التالي مع المسار الفعلي لمجلد المستندات الخاص بك:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Create the bookmark editor
+## الخطوة 3: إنشاء محرر الإشارات المرجعية
 
-Now we will create a `PdfBookmarkEditor` object to manipulate the bookmarks of the document. Use the following code:
+ الآن سوف نقوم بإنشاء`PdfBookmarkEditor` كائن لمعالجة الإشارات المرجعية للمستند. استخدم الكود التالي:
 
 ```csharp
 PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
 ```
 
-## Step 4: Open the PDF File
+## الخطوة 4: افتح ملف PDF
 
-In this step, we open the PDF file using the `BindPdf` method of the bookmark editor. Here is the corresponding code:
+ في هذه الخطوة نقوم بفتح ملف PDF باستخدام ملف`BindPdf` طريقة محرر الإشارات المرجعية. هنا هو الكود المقابل:
 
 ```csharp
 bookmarkEditor.BindPdf(dataDir + "GetBookmarks.pdf");
 ```
 
-## Step 5: Extract bookmarks
+## الخطوة 5: استخراج الإشارات المرجعية
 
-Now we will extract the bookmarks from the document using the `ExtractBookmarks` method of the bookmark editor. Here is the corresponding code:
+ الآن سنقوم باستخراج الإشارات المرجعية من المستند باستخدام الملف`ExtractBookmarks` طريقة محرر الإشارات المرجعية. هنا هو الكود المقابل:
 
 ```csharp
 Bookmarks bookmarks = bookmarkEditor.ExtractBookmarks();
 ```
 
-## Step 6: Browse bookmarks and get page numbers
+## الخطوة 6: تصفح الإشارات المرجعية واحصل على أرقام الصفحات
 
-Finally, we loop through the extracted bookmarks and get the page numbers associated with each bookmark using a `foreach` loop. Here is the corresponding code:
+ أخيرًا، نقوم بالتمرير عبر الإشارات المرجعية المستخرجة ونحصل على أرقام الصفحات المرتبطة بكل إشارة مرجعية باستخدام ملف`foreach` حلقة. هنا هو الكود المقابل:
 
 ```csharp
 foreach (Bookmark bookmark in bookmarks)
@@ -67,15 +67,15 @@ foreach (Bookmark bookmark in bookmarks)
 }
 ```
 
-### Sample source code for Get Bookmark Page Number using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر للحصول على رقم صفحة الإشارة المرجعية باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create PdfBookmarkEditor
+// إنشاء محرر PdfBookmarkEditor
 PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
-// Open PDF file
+// افتح ملف PDF
 bookmarkEditor.BindPdf(dataDir + "GetBookmarks.pdf");
-// Extract bookmarks
+// استخراج الإشارات المرجعية
 Aspose.Pdf.Facades.Bookmarks bookmarks = bookmarkEditor.ExtractBookmarks();
 foreach (Aspose.Pdf.Facades.Bookmark bookmark in bookmarks)
 {
@@ -90,65 +90,65 @@ foreach (Aspose.Pdf.Facades.Bookmark bookmark in bookmarks)
 }
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! Now you have a step by step guide to getting bookmark page numbers with Aspose.PDF for .NET. You can use this code to retrieve the navigation information associated with each bookmark in your PDF documents.
+تهنئة ! الآن لديك دليل خطوة بخطوة للحصول على أرقام صفحات الإشارات المرجعية باستخدام Aspose.PDF لـ .NET. يمكنك استخدام هذا الرمز لاسترداد معلومات التنقل المرتبطة بكل إشارة مرجعية في مستندات PDF الخاصة بك.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+تأكد من مراجعة وثائق Aspose.PDF الرسمية لمزيد من المعلومات حول ميزات معالجة الإشارات المرجعية المتقدمة.
 
-### FAQ's for get bookmark page number in PDF file
+### الأسئلة الشائعة للحصول على رقم صفحة الإشارة المرجعية في ملف PDF
 
-#### Q: What are bookmarks in a PDF file?
+#### س: ما هي الإشارات المرجعية في ملف PDF؟
 
-A: Bookmarks in a PDF file are navigational aids that allow users to quickly jump to specific sections or pages within the document. They enhance the user experience by providing shortcuts to relevant content.
+ج: الإشارات المرجعية الموجودة في ملف PDF هي أدوات مساعدة للتنقل تتيح للمستخدمين الانتقال بسرعة إلى أقسام أو صفحات محددة داخل المستند. إنها تعزز تجربة المستخدم من خلال توفير اختصارات للمحتوى ذي الصلة.
 
-#### Q: Why would I want to retrieve bookmark page numbers from a PDF file?
+#### س: لماذا أرغب في استرداد أرقام صفحات الإشارات المرجعية من ملف PDF؟
 
-A: Retrieving bookmark page numbers helps users navigate through a document more effectively, providing a clear indication of where each bookmark leads. This is particularly useful for longer documents with multiple sections.
+ج: يساعد استرداد أرقام صفحات الإشارات المرجعية المستخدمين على التنقل عبر المستند بشكل أكثر فعالية، مما يوفر إشارة واضحة إلى المكان الذي تؤدي إليه كل إشارة مرجعية. وهذا مفيد بشكل خاص للمستندات الأطول التي تحتوي على أقسام متعددة.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### س: كيف يمكنني استيراد المكتبات اللازمة لمشروع C# الخاص بي؟
 
-A: To import the required library for your C# project, use the following import directive:
+ج: لاستيراد المكتبة المطلوبة لمشروع C# الخاص بك، استخدم توجيه الاستيراد التالي:
 
 ```csharp
 using Aspose.Pdf.Facades;
 ```
 
-This directive allows you to utilize the classes and methods provided by Aspose.PDF for .NET.
+يتيح لك هذا التوجيه الاستفادة من الفئات والأساليب التي يوفرها Aspose.PDF لـ .NET.
 
-#### Q: How do I specify the path to the documents folder?
+#### س: كيف أحدد المسار إلى مجلد المستندات؟
 
-A: In the provided source code, replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file from which you want to extract bookmark page numbers. This ensures that the code can locate the target PDF file.
+ ج: في كود المصدر المقدم، استبدل`"YOUR DOCUMENT DIRECTORY"`بالمسار الفعلي إلى المجلد الذي يحتوي على ملف PDF الذي تريد استخراج أرقام صفحات الإشارات المرجعية منه. وهذا يضمن أن الكود يمكنه تحديد موقع ملف PDF المستهدف.
 
-#### Q: How do I create a bookmark editor?
+#### س: كيف أقوم بإنشاء محرر الإشارات المرجعية؟
 
-A: To create a bookmark editor, use the following code:
+ج: لإنشاء محرر الإشارات المرجعية، استخدم الكود التالي:
 
 ```csharp
 PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
 ```
 
-#### Q: How do I open a PDF file for bookmark manipulation?
+#### س: كيف يمكنني فتح ملف PDF لمعالجة الإشارات المرجعية؟
 
-A: To open a PDF file for extracting bookmark information, use the following code:
+ج: لفتح ملف PDF لاستخراج معلومات الإشارة المرجعية، استخدم الكود التالي:
 
 ```csharp
 bookmarkEditor.BindPdf(dataDir + "GetBookmarks.pdf");
 ```
 
-Replace `"GetBookmarks.pdf"` with the actual file name.
+ يستبدل`"GetBookmarks.pdf"` مع اسم الملف الفعلي.
 
-#### Q: How do I extract bookmarks from the PDF file?
+#### س: كيف يمكنني استخراج الإشارات المرجعية من ملف PDF؟
 
-A: To extract bookmarks from the PDF file, use the `ExtractBookmarks` method of the bookmark editor:
+ ج: لاستخراج الإشارات المرجعية من ملف PDF، استخدم الملف`ExtractBookmarks` طريقة محرر الإشارات المرجعية:
 
 ```csharp
 Bookmarks bookmarks = bookmarkEditor.ExtractBookmarks();
 ```
 
-#### Q: How do I retrieve and display bookmark page numbers?
+#### س: كيف يمكنني استرداد وعرض أرقام صفحات الإشارات المرجعية؟
 
-A: Loop through the extracted bookmarks using a `foreach` loop and access the `PageNumber` property of each bookmark to retrieve and display its associated page number:
+ ج: قم بالتمرير عبر الإشارات المرجعية المستخرجة باستخدام ملف`foreach` حلقة والوصول إلى`PageNumber` خاصية كل إشارة مرجعية لاسترداد وعرض رقم الصفحة المرتبطة بها:
 
 ```csharp
 foreach (Bookmark bookmark in bookmarks)
@@ -159,10 +159,10 @@ foreach (Bookmark bookmark in bookmarks)
 }
 ```
 
-#### Q: Can I modify bookmark properties using this approach?
+#### س: هل يمكنني تعديل خصائص الإشارة المرجعية باستخدام هذا الأسلوب؟
 
-A: While this tutorial focuses on retrieving bookmark page numbers, you can modify other bookmark properties using the same `Bookmark` object and associated properties.
+ ج: بينما يركز هذا البرنامج التعليمي على استرداد أرقام صفحات الإشارات المرجعية، يمكنك تعديل خصائص الإشارات المرجعية الأخرى باستخدام نفس الخصائص`Bookmark`الكائن والخصائص المرتبطة به.
 
-#### Q: How do I save the updated PDF file after extracting bookmark information?
+#### س: كيف يمكنني حفظ ملف PDF المحدث بعد استخراج معلومات الإشارة المرجعية؟
 
-A: Bookmark extraction does not modify the original PDF file. If you want to save any changes, you can do so using other methods provided by Aspose.PDF for .NET.
+ج: لا يؤدي استخراج الإشارة المرجعية إلى تعديل ملف PDF الأصلي. إذا كنت تريد حفظ أية تغييرات، فيمكنك القيام بذلك باستخدام طرق أخرى يوفرها Aspose.PDF لـ .NET.

@@ -1,26 +1,26 @@
 ---
-title: Extract Columns Text In PDF File
-linktitle: Extract Columns Text In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract columns text in PDF file using Aspose.PDF for .NET.
+title: Sütun Metnini PDF Dosyasından Çıkartın
+linktitle: Sütun Metnini PDF Dosyasından Çıkartın
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF dosyasındaki sütun metinlerini nasıl çıkaracağınızı öğrenin.
 type: docs
 weight: 150
 url: /tr/net/programming-with-text/extract-columns-text/
 ---
-This tutorial will guide you through the process of extracting columns text in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+Bu eğitim, Aspose.PDF for .NET'i kullanarak PDF dosyasındaki sütun metnini çıkarma sürecinde size rehberlik edecektir. Sağlanan C# kaynak kodu gerekli adımları gösterir.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## Gereksinimler
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Makinenizde kurulu Visual Studio veya başka herhangi bir C# derleyicisi.
+- Aspose.PDF for .NET kitaplığı. Resmi Aspose web sitesinden indirebilir veya yüklemek için NuGet gibi bir paket yöneticisi kullanabilirsiniz.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## 1. Adım: Projeyi ayarlayın
+1. Tercih ettiğiniz geliştirme ortamında yeni bir C# projesi oluşturun.
+2. Aspose.PDF for .NET kitaplığına bir referans ekleyin.
 
-## Step 2: Import required namespaces
-In the code file where you want to extract columns text, add the following using directives at the top of the file:
+## 2. Adım: Gerekli ad alanlarını içe aktarın
+Sütun metnini çıkarmak istediğiniz kod dosyasında, dosyanın en üstüne aşağıdaki kullanma yönergelerini ekleyin:
 
 ```csharp
 using Aspose.Pdf;
@@ -28,18 +28,18 @@ using Aspose.Pdf.Text;
 using System.IO;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## 3. Adım: Belge dizinini ayarlayın
+ Kodda yazan satırı bulun`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` belgelerinizin saklandığı dizinin yolu ile birlikte.
 
-## Step 4: Open the PDF document
-Open an existing PDF document using the `Document` constructor and passing the path to the input PDF file.
+## 4. Adım: PDF belgesini açın
+ Mevcut bir PDF belgesini kullanarak açın.`Document`yapıcı ve yolu giriş PDF dosyasına geçirme.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");
 ```
 
-## Step 5: Adjust the font size
-Reduce the font size of the text fragments by a factor of 0.7 to enhance readability and better represent columnar text.
+## 5. Adım: Yazı tipi boyutunu ayarlayın
+Okunabilirliği artırmak ve sütunlu metni daha iyi temsil etmek için metin parçalarının yazı tipi boyutunu 0,7 kat azaltın.
 
 ```csharp
 TextFragmentAbsorber tfa = new TextFragmentAbsorber();
@@ -51,8 +51,8 @@ foreach(TextFragment tf in tfc)
 }
 ```
 
-## Step 6: Extract text from columns
-Save the modified PDF document to a memory stream and reload it as a new document. Then, use the `TextAbsorber` class to extract text from the columns.
+## 6. Adım: Sütunlardan metni çıkarın
+ Değiştirilen PDF belgesini bir bellek akışına kaydedin ve yeni bir belge olarak yeniden yükleyin. Daha sonra şunu kullanın:`TextAbsorber` Sütunlardan metin çıkarmak için sınıf.
 
 ```csharp
 Stream st = new MemoryStream();
@@ -64,8 +64,8 @@ String extractedText = textAbsorber.Text;
 textAbsorber.Visit(pdfDocument);
 ```
 
-## Step 7: Save the extracted text
-Save the extracted text to a text file at the specified output file path.
+## 7. Adım: Çıkarılan metni kaydedin
+Çıkarılan metni belirtilen çıktı dosyası yolundaki bir metin dosyasına kaydedin.
 
 ```csharp
 dataDir = dataDir + "ExtractColumnsText_out.txt";
@@ -73,18 +73,18 @@ File.WriteAllText(dataDir, extractedText);
 Console.WriteLine("\nColumns text extracted successfully from Pages of PDF Document.\nFile saved at " + dataDir);
 ```
 
-### Sample source code for Extract Columns Text using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Sütun Metnini Çıkart için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");                
 TextFragmentAbsorber tfa = new TextFragmentAbsorber();
 pdfDocument.Pages.Accept(tfa);
 TextFragmentCollection tfc = tfa.TextFragments;
 foreach (TextFragment tf in tfc)
 {
-	// Need to reduce font size at least for 70%
+	// Yazı tipi boyutunu en az %70 oranında küçültmeniz gerekiyor
 	tf.TextState.FontSize = tf.TextState.FontSize * 0.7f;
 }
 Stream st = new MemoryStream();
@@ -99,18 +99,18 @@ System.IO.File.WriteAllText(dataDir, extractedText);
 Console.WriteLine("\nColumns text extracted successfully from Pages of PDF Document.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
-You have successfully extracted columns text from a PDF document using Aspose.PDF for .NET. The extracted text has been saved to the specified output file.
+## Çözüm
+Aspose.PDF for .NET'i kullanarak bir PDF belgesinden sütun metinlerini başarıyla çıkardınız. Çıkarılan metin belirtilen çıktı dosyasına kaydedildi.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the purpose of this tutorial?
+#### S: Bu eğitimin amacı nedir?
 
-A: This tutorial offers a step-by-step guide on extracting columns of text from a PDF file using Aspose.PDF for .NET. The accompanying C# source code provides a practical demonstration of the required procedures.
+C: Bu eğitim, Aspose.PDF for .NET kullanarak bir PDF dosyasından metin sütunlarının çıkarılması konusunda adım adım bir kılavuz sunar. Ekteki C# kaynak kodu, gerekli prosedürlerin pratik bir gösterimini sağlar.
 
-#### Q: What namespaces should I import?
+#### S: Hangi ad alanlarını içe aktarmalıyım?
 
-A: In the code file where you intend to extract columns of text, include the following using directives at the beginning of the file:
+C: Metin sütunlarını çıkarmayı planladığınız kod dosyasında, dosyanın başına aşağıdaki kullanma yönergelerini ekleyin:
 
 ```csharp
 using Aspose.Pdf;
@@ -118,30 +118,30 @@ using Aspose.Pdf.Text;
 using System.IO;
 ```
 
-#### Q: How do I specify the document directory?
+#### S: Belge dizinini nasıl belirlerim?
 
-A: Locate the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` in the code and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ A: Çizgiyi bulun`string dataDir = "YOUR DOCUMENT DIRECTORY";` kodda ve değiştirin`"YOUR DOCUMENT DIRECTORY"` belge dizininizin gerçek yolu ile.
 
-#### Q: How do I open an existing PDF document?
+#### S: Mevcut bir PDF belgesini nasıl açarım?
 
-A: In Step 4, you'll open an existing PDF document using the `Document` constructor and providing the path to the input PDF file.
+ C: 4. Adımda, mevcut bir PDF belgesini aşağıdaki komutu kullanarak açacaksınız:`Document` yapıcı ve giriş PDF dosyasının yolunu sağlama.
 
-#### Q: Why is the font size adjusted?
+#### S: Yazı tipi boyutu neden ayarlandı?
 
-A: Step 5 involves reducing the font size of text fragments by a factor of 0.7. This adjustment enhances readability and more accurately represents columnar text.
+C: Adım 5, metin parçalarının yazı tipi boyutunun 0,7 kat azaltılmasını içerir. Bu ayarlama okunabilirliği artırır ve sütunlu metni daha doğru şekilde temsil eder.
 
-#### Q: How do I extract text from columns?
+#### S: Sütunlardan metni nasıl ayıklayabilirim?
 
-A: Step 6 consists of saving the modified PDF document to a memory stream, reloading it as a new document, and then using the `TextAbsorber` class to extract text from the columns.
+ C: Adım 6, değiştirilmiş PDF belgesinin bir bellek akışına kaydedilmesini, yeni bir belge olarak yeniden yüklenmesini ve ardından`TextAbsorber` Sütunlardan metin çıkarmak için sınıf.
 
-#### Q: What is the purpose of saving the extracted text?
+#### S: Çıkarılan metni kaydetmenin amacı nedir?
 
-A: In Step 7, you'll save the extracted text to a text file at the specified output file path.
+C: 7. Adımda, çıkarılan metni belirtilen çıktı dosyası yolundaki bir metin dosyasına kaydedeceksiniz.
 
-#### Q: Why reduce the font size before extraction?
+#### S: Çıkartmadan önce neden yazı tipi boyutunu küçültmelisiniz?
 
-A: Reducing the font size helps ensure that the extracted text aligns properly within the columns, providing a more accurate representation of the original layout.
+C: Yazı tipi boyutunun küçültülmesi, çıkarılan metnin sütunlar içinde düzgün şekilde hizalanmasını sağlayarak orijinal düzenin daha doğru bir temsilini sağlar.
 
-#### Q: What is the key takeaway from this tutorial?
+#### S: Bu eğitimden çıkarılacak önemli sonuç nedir?
 
-A: By following this tutorial, you've acquired the knowledge and skills needed to extract columns of text from a PDF document using Aspose.PDF for .NET. The resulting text has been saved to the specified output file.
+C: Bu eğitimi takip ederek Aspose.PDF for .NET kullanarak bir PDF belgesinden metin sütunları çıkarmak için gereken bilgi ve becerileri edindiniz. Ortaya çıkan metin belirtilen çıktı dosyasına kaydedildi.

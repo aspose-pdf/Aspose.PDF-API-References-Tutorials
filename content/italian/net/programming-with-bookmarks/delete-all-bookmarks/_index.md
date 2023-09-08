@@ -1,136 +1,136 @@
 ---
-title: Delete All Bookmarks In PDF File
-linktitle: Delete All Bookmarks In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily delete all bookmarks in PDF file with Aspose.PDF for .NET.
+title: Elimina tutti i segnalibri nel file PDF
+linktitle: Elimina tutti i segnalibri nel file PDF
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Elimina facilmente tutti i segnalibri nel file PDF con Aspose.PDF per .NET.
 type: docs
 weight: 30
 url: /it/net/programming-with-bookmarks/delete-all-bookmarks/
 ---
-# Delete all bookmarks with Aspose.PDF for .NET
+# Elimina tutti i segnalibri con Aspose.PDF per .NET
 
-Deleting bookmarks in PDF file may be necessary in some cases. With Aspose.PDF for .NET, you can easily remove all bookmarks by following the following source code:
+In alcuni casi potrebbe essere necessario eliminare i segnalibri nel file PDF. Con Aspose.PDF per .NET, puoi rimuovere facilmente tutti i segnalibri seguendo il seguente codice sorgente:
 
-## Step 1: Import required libraries
+## Passaggio 1: importa le librerie richieste
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Prima di iniziare, devi importare le librerie necessarie per il tuo progetto C#. Ecco la necessaria direttiva sulle importazioni:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## Passaggio 2: imposta il percorso della cartella dei documenti
 
-In this step, you need to specify the path to the folder containing the PDF file from which you want to remove bookmarks. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ In questo passaggio, devi specificare il percorso della cartella contenente il file PDF da cui desideri rimuovere i segnalibri. Sostituire`"YOUR DOCUMENT DIRECTORY"`nel seguente codice con il percorso effettivo della cartella dei documenti:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Passaggio 3: apri il documento PDF
 
-Now we are going to open the PDF document from which we want to remove the bookmarks using the following code:
+Ora apriremo il documento PDF dal quale vogliamo rimuovere i segnalibri utilizzando il seguente codice:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "DeleteAllBookmarks.pdf");
 ```
 
-## Step 4: Delete all bookmarks
+## Passaggio 4: elimina tutti i segnalibri
 
-In this step, we delete all bookmarks from the document using the `Delete` method of the `Outlines` property. Here is the corresponding code:
+ In questo passaggio, eliminiamo tutti i segnalibri dal documento utilizzando il file`Delete` metodo del`Outlines` proprietà. Ecco il codice corrispondente:
 
 ```csharp
 pdfDocument.Outlines.Delete();
 ```
 
-## Step 5: Save the updated file
+## Passaggio 5: salva il file aggiornato
 
-Finally, we save the updated PDF file using the `Save` method of the `pdfDocument` object. Here is the corresponding code:
+ Infine, salviamo il file PDF aggiornato utilizzando il file`Save` metodo del`pdfDocument` oggetto. Ecco il codice corrispondente:
 
 ```csharp
 dataDir = dataDir + "DeleteAllBookmarks_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Delete All Bookmarks using Aspose.PDF for .NET 
+### Codice sorgente di esempio per Elimina tutti i segnalibri utilizzando Aspose.PDF per .NET 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Apri documento
 Document pdfDocument = new Document(dataDir + "DeleteAllBookmarks.pdf");
-// Delete all bookmarks
+// Elimina tutti i segnalibri
 pdfDocument.Outlines.Delete();
 dataDir = dataDir + "DeleteAllBookmarks_out.pdf";
-// Save updated file
+// Salva file aggiornato
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nAll bookmarks deleted successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Conclusione
 
-Congratulation ! Now you have a step by step guide to remove all bookmarks with Aspose.PDF for .NET. You can use this code to clean up your PDF documents by deleting all existing bookmarks.
+Congratulazioni! Ora hai una guida passo passo per rimuovere tutti i segnalibri con Aspose.PDF per .NET. Puoi utilizzare questo codice per ripulire i tuoi documenti PDF eliminando tutti i segnalibri esistenti.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Assicurati di controllare la documentazione ufficiale Aspose.PDF per ulteriori informazioni sulle funzionalità avanzate di manipolazione dei segnalibri.
 
-### FAQ's for delete all bookmarks in PDF file
+### Domande frequenti sull'eliminazione di tutti i segnalibri nel file PDF
 
-#### Q: What are bookmarks in a PDF file?
+#### D: Cosa sono i segnalibri in un file PDF?
 
-A: Bookmarks in a PDF file are navigational aids that allow users to quickly jump to specific sections or pages within the document. They help organize and enhance the user experience when navigating through lengthy content.
+R: I segnalibri in un file PDF sono aiuti alla navigazione che consentono agli utenti di passare rapidamente a sezioni o pagine specifiche all'interno del documento. Aiutano a organizzare e migliorare l'esperienza dell'utente durante la navigazione attraverso contenuti lunghi.
 
-#### Q: Why would I need to delete all bookmarks from a PDF file?
+#### D: Perché dovrei eliminare tutti i segnalibri da un file PDF?
 
-A: There might be cases where you want to remove all bookmarks from a PDF document to simplify its navigation, reorganize its structure, or prepare it for a specific purpose where bookmarks are not needed.
+R: Potrebbero esserci casi in cui desideri rimuovere tutti i segnalibri da un documento PDF per semplificarne la navigazione, riorganizzarne la struttura o prepararlo per uno scopo specifico in cui i segnalibri non sono necessari.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### D: Come posso importare le librerie necessarie per il mio progetto C#?
 
-A: To import the required library for your C# project, you can use the following import directive:
+R: Per importare la libreria richiesta per il tuo progetto C#, puoi utilizzare la seguente direttiva di importazione:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This library provides the classes and methods needed to work with PDF documents.
+Questa libreria fornisce le classi e i metodi necessari per lavorare con i documenti PDF.
 
-#### Q: How do I specify the path to the documents folder?
+#### D: Come posso specificare il percorso della cartella dei documenti?
 
-A: In the source code provided, you need to replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file from which you want to remove bookmarks. This ensures that the code can locate the target PDF file.
+ R: Nel codice sorgente fornito, è necessario sostituire`"YOUR DOCUMENT DIRECTORY"` con il percorso effettivo della cartella contenente il file PDF da cui desideri rimuovere i segnalibri. Ciò garantisce che il codice possa individuare il file PDF di destinazione.
 
-#### Q: How do I open a PDF document for bookmark removal?
+#### D: Come posso aprire un documento PDF per rimuovere i segnalibri?
 
-A: To open a PDF document for bookmark removal, use the following code:
+R: Per aprire un documento PDF per la rimozione dei segnalibri, utilizzare il seguente codice:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "DeleteAllBookmarks.pdf");
 ```
 
-Replace `"DeleteAllBookmarks.pdf"` with the actual file name.
+ Sostituire`"DeleteAllBookmarks.pdf"` con il nome effettivo del file.
 
-#### Q: How do I delete all bookmarks from the PDF document?
+#### D: Come posso eliminare tutti i segnalibri dal documento PDF?
 
-A: To remove all bookmarks from the PDF document, use the `Delete` method of the `Outlines` property:
+ R: Per rimuovere tutti i segnalibri dal documento PDF, utilizzare il file`Delete` metodo del`Outlines` proprietà:
 
 ```csharp
 pdfDocument.Outlines.Delete();
 ```
 
-#### Q: What happens to the rest of the content when bookmarks are deleted?
+#### D: Cosa succede al resto del contenuto quando i segnalibri vengono eliminati?
 
-A: Deleting bookmarks does not affect the content or layout of the PDF document. Only the navigation bookmarks are removed, leaving the actual content intact.
+R: L'eliminazione dei segnalibri non influisce sul contenuto o sul layout del documento PDF. Vengono rimossi solo i segnalibri di navigazione, lasciando intatto il contenuto effettivo.
 
-#### Q: How do I save the updated PDF file after removing bookmarks?
+#### D: Come posso salvare il file PDF aggiornato dopo aver rimosso i segnalibri?
 
-A: To save the updated PDF file after deleting bookmarks, use the following code:
+R: Per salvare il file PDF aggiornato dopo aver eliminato i segnalibri, utilizzare il seguente codice:
 
 ```csharp
 dataDir = dataDir + "DeleteAllBookmarks_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-#### Q: Can I selectively delete specific bookmarks instead of all of them?
+#### D: Posso eliminare selettivamente segnalibri specifici anziché tutti?
 
-A: Yes, you can selectively delete specific bookmarks by targeting them using their index or other properties. The provided source code demonstrates how to delete all bookmarks, but you can modify it to suit your needs.
+R: Sì, puoi eliminare selettivamente segnalibri specifici selezionandoli come target utilizzando il loro indice o altre proprietà. Il codice sorgente fornito mostra come eliminare tutti i segnalibri, ma puoi modificarlo in base alle tue esigenze.
 
-#### Q: Are there any precautions I should take before deleting bookmarks?
+#### D: Ci sono delle precauzioni che dovrei prendere prima di eliminare i segnalibri?
 
-A: Before deleting bookmarks, make sure to review the document to ensure that bookmark removal will not impact the document's usability or navigation. Consider making a backup of the original document before proceeding.
+R: Prima di eliminare i segnalibri, assicurati di rivedere il documento per assicurarti che la rimozione dei segnalibri non influisca sull'usabilità o sulla navigazione del documento. Valuta la possibilità di eseguire un backup del documento originale prima di procedere.

@@ -1,31 +1,31 @@
 ---
-title: lnk Annotation Line Width
-linktitle: lnk Annotation Line Width
-second_title: Aspose.PDF for .NET API Reference
-description: This article provides a step-by-step guide for setting the line width of the lnk Annotation using Aspose.PDF for .NET.
+title: lnk 注释线宽
+linktitle: lnk 注释线宽
+second_title: Aspose.PDF for .NET API 参考
+description: 本文提供了使用 Aspose.PDF for .NET 设置 lnk 注释线宽的分步指南。
 type: docs
 weight: 110
 url: /zh/net/annotations/lnkannotationlinewidth/
 ---
-Aspose.PDF is a powerful and widely-used tool for working with PDF files in .NET applications. It provides a variety of features for creating, editing, and manipulating PDF files, including the ability to add annotations to pages. In this tutorial, we will explain how to set the line width of a link annotation using Aspose.PDF for .NET.
+Aspose.PDF 是一个功能强大且广泛使用的工具，用于在 .NET 应用程序中处理 PDF 文件。它提供了用于创建、编辑和操作 PDF 文件的各种功能，包括向页面添加注释的功能。在本教程中，我们将解释如何使用 Aspose.PDF for .NET 设置链接注释的线宽。
 
-Once you have these prerequisites, create a new console application project in Visual Studio. Then, add a reference to the Aspose.PDF for .NET library by right-clicking on the project in the Solution Explorer, selecting "Manage NuGet Packages," and searching for "Aspose.PDF" in the NuGet Package Manager.
+满足这些先决条件后，请在 Visual Studio 中创建一个新的控制台应用程序项目。然后，通过右键单击解决方案资源管理器中的项目，选择“管理 NuGet 包”并在 NuGet 包管理器中搜索“Aspose.PDF”，添加对 Aspose.PDF for .NET 库的引用。
 
-To add a lnk annotation to a PDF document, follow these steps:
+要向 PDF 文档添加 lnk 注释，请按照下列步骤操作：
 
-## Step 1: Create a new `Document` object.
+## 第 1 步：创建一个新的`Document` object.
 ```csharp
 Document doc = new Document();
 ```
-## Step 2: Add a new page to the document.
+## 步骤 2：向文档添加新页面。
 ```csharp
 doc.Pages.Add();
 ```
-## Step 3: Create a list of `Point` arrays that represent the ink gesture for the annotation.
+## 第 3 步：创建一个列表`Point` arrays that represent the ink gesture for the annotation.
 ```csharp
 IList<Point[]> inkList = new List<Point[]>();
 ```
-## Step 4: Create a new `LineInfo` object that defines the properties of the ink gesture.
+## 第 4 步：创建一个新的`LineInfo` object that defines the properties of the ink gesture.
 ```csharp
 LineInfo lineInfo = new LineInfo();
 lineInfo.VerticeCoordinate = new float[] { 55, 55, 70, 70, 70, 90, 150, 60 };
@@ -33,7 +33,7 @@ lineInfo.Visibility = true;
 lineInfo.LineColor = System.Drawing.Color.Red;
 lineInfo.LineWidth = 2;
 ```
-## Step 5: Create a new `Aspose.Pdf.Point` array that represents the gesture from the `LineInfo` object.
+## 第 5 步：创建一个新的`Aspose.Pdf.Point` array that represents the gesture from the `LineInfo` object.
 ```csharp
 int length = lineInfo.VerticeCoordinate.Length / 2;
 Aspose.Pdf.Point[] gesture = new Aspose.Pdf.Point[length];
@@ -42,24 +42,24 @@ for (int i = 0; i < length; i++)
     gesture[i] = new Aspose.Pdf.Point(lineInfo.VerticeCoordinate[2 * i], lineInfo.VerticeCoordinate[2 * i + 1]);
 }
 ```
-## Step 6: Add the gesture to the list of ink gestures.
+## 步骤 6：将手势添加到墨迹手势列表中。
 ```csharp
 inkList.Add(gesture);
 ```
-## Step 7: Create a new `InkAnnotation` object that represents the link annotation.
+## 第 7 步：创建一个新的`InkAnnotation` object that represents the link annotation.
 ```csharp
 InkAnnotation a1 = new InkAnnotation(doc.Pages[1], new Aspose.Pdf.Rectangle(100, 100, 300, 300), inkList);
 ```
-## Step 8: Set the subject and title of the annotation.
+## 步骤8：设置注释的主题和标题。
 ```csharp
 a1.Subject = "Test";
 a1.Title = "Title";
 ```
-## Step 9: Set the color of the annotation.
+## 步骤9：设置注释的颜色。
 ```csharp
 a1.Color = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Green);
 ```
-## Step 10: Create a new `Border` object that defines the properties of the annotation's border.
+## 第10步：创建一个新的`Border` object that defines the properties of the annotation's border.
 ```csharp
 Border border = new Border(a1);
 border.Width = 3;
@@ -67,21 +67,21 @@ border.Effect = BorderEffect.Cloudy;
 border.Dash = new Dash(1, 1);
 border.Style = BorderStyle.Solid;
 ```
-## Step 11: Add the annotation to the page.
+## 第11步：将注释添加到页面。
 ```csharp
 doc.Pages[1].Annotations.Add(a1);
 ```
-## Step 12: Save the document to a file.
+## 第 12 步：将文档保存到文件中。
 ```csharp
-// Save output file
+//保存输出文件
 doc.Save(dataDir);
 
 
 ```
-### The example shows lnk Annotation Line Width with Aspose.PDF for .NET
+### 该示例显示了 Aspose.PDF for .NET 的 lnk 注释线宽
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 Document doc = new Document();
@@ -112,32 +112,32 @@ border.Style = BorderStyle.Solid;
 doc.Pages[1].Annotations.Add(a1);
 
 dataDir = dataDir + "lnkAnnotationLineWidth_out.pdf";
-// Save output file
+//保存输出文件
 doc.Save(dataDir);
 ```
 
-## Conclusion
+## 结论
 
-In this tutorial, we learned how to set the line width of a link annotation in a PDF document using Aspose.PDF for .NET. Aspose.PDF for .NET provides a wide range of tools and features for working with PDF documents, including the ability to create and customize link annotations. By following the step-by-step guide and using the provided C# source code, developers can easily add interactive links to their PDF documents, enhancing the user experience and interactivity of their applications. Aspose.PDF for .NET is a versatile library that empowers .NET developers to work with PDF files efficiently and effectively.
+在本教程中，我们学习了如何使用 Aspose.PDF for .NET 设置 PDF 文档中链接注释的线宽。 Aspose.PDF for .NET 提供了广泛的工具和功能来处理 PDF 文档，包括创建和自定义链接注释的能力。通过遵循分步指南并使用提供的 C# 源代码，开发人员可以轻松地向 PDF 文档添加交互式链接，从而增强应用程序的用户体验和交互性。 Aspose.PDF for .NET 是一个多功能库，使 .NET 开发人员能够高效且有效地处理 PDF 文件。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What is a link annotation in a PDF document?
+#### 问：什么是PDF文档中的链接注释？
 
-A: A link annotation in a PDF document is an interactive element that allows you to create hyperlinks or actions that direct the user to another location within the same document, an external website, or a different PDF document.
+答：PDF 文档中的链接注释是一种交互式元素，允许您创建超链接或操作，将用户引导至同一文档中的另一个位置、外部网站或不同的 PDF 文档。
 
-#### Q: How can I set the line width of a link annotation using Aspose.PDF for .NET?
+#### 问：如何使用 Aspose.PDF for .NET 设置链接注释的线宽？
 
-A: To set the line width of a link annotation using Aspose.PDF for .NET, you can create an `InkAnnotation` object and specify the line width property.
+答：要使用 Aspose.PDF for .NET 设置链接注释的线宽，您可以创建一个`InkAnnotation`对象并指定线宽属性。
 
-#### Q: What properties can be customized for a link annotation in Aspose.PDF for .NET?
+#### 问：可以为 Aspose.PDF for .NET 中的链接注释自定义哪些属性？
 
-A: You can customize various properties of a link annotation in Aspose.PDF for .NET, such as its location, size, color, border properties (width, style, dash pattern, and effect), subject, title, and visibility.
+答：您可以在 Aspose.PDF for .NET 中自定义链接注释的各种属性，例如其位置、大小、颜色、边框属性（宽度、样式、虚线图案和效果）、主题、标题和可见性。
 
-#### Q: Can I create a link annotation that contains multiple ink gestures?
+#### 问：我可以创建包含多个墨迹手势的链接注释吗？
 
-A: Yes, you can create a link annotation that contains multiple ink gestures by adding multiple `Point` arrays to the `InkAnnotation` object.
+答：是的，您可以通过添加多个来创建包含多个墨迹手势的链接注释`Point`数组到`InkAnnotation`目的。
 
-#### Q: How can I add a link annotation to a specific page of the PDF document?
+#### 问：如何为PDF文档的特定页面添加链接注释？
 
-A: To add a link annotation to a specific page of the PDF document, you need to specify the page number when creating the `InkAnnotation` object. For example, `new InkAnnotation(doc.Pages[1], ...)` adds the link annotation to the first page.
+ A：要为PDF文档的特定页面添加链接注释，需要在创建PDF文档时指定页码`InkAnnotation`目的。例如，`new InkAnnotation(doc.Pages[1], ...)`将链接注释添加到第一页。

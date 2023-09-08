@@ -1,26 +1,26 @@
 ---
-title: Extract Text Using Text Device
-linktitle: Extract Text Using Text Device
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract text from a PDF document using the Text Device in Aspose.PDF for .NET.
+title: Metin Aygıtını Kullanarak Metni Çıkarma
+linktitle: Metin Aygıtını Kullanarak Metni Çıkarma
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET'teki Metin Aygıtını kullanarak bir PDF belgesinden nasıl metin çıkaracağınızı öğrenin.
 type: docs
 weight: 210
 url: /tr/net/programming-with-text/extract-text-using-text-device/
 ---
-This tutorial will guide you through the process of extracting text from a PDF document using the Text Device in Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+Bu eğitim, Aspose.PDF for .NET'teki Metin Aygıtını kullanarak bir PDF belgesinden metin çıkarma sürecinde size rehberlik edecektir. Sağlanan C# kaynak kodu gerekli adımları gösterir.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## Gereksinimler
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Makinenizde kurulu Visual Studio veya başka herhangi bir C# derleyicisi.
+- Aspose.PDF for .NET kitaplığı. Resmi Aspose web sitesinden indirebilir veya yüklemek için NuGet gibi bir paket yöneticisi kullanabilirsiniz.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## 1. Adım: Projeyi ayarlayın
+1. Tercih ettiğiniz geliştirme ortamında yeni bir C# projesi oluşturun.
+2. Aspose.PDF for .NET kitaplığına bir referans ekleyin.
 
-## Step 2: Import required namespaces
-In the code file where you want to extract text, add the following using directives at the top of the file:
+## 2. Adım: Gerekli ad alanlarını içe aktarın
+Metni çıkarmak istediğiniz kod dosyasında, dosyanın en üstüne aşağıdaki kullanma yönergelerini ekleyin:
 
 ```csharp
 using Aspose.Pdf;
@@ -29,18 +29,18 @@ using System.IO;
 using System.Text;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## 3. Adım: Belge dizinini ayarlayın
+ Kodda yazan satırı bulun`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` belgelerinizin saklandığı dizinin yolu ile birlikte.
 
-## Step 4: Open the PDF document
-Open an existing PDF document using the `Document` constructor and passing the path to the input PDF file.
+## 4. Adım: PDF belgesini açın
+ Mevcut bir PDF belgesini kullanarak açın.`Document`yapıcı ve yolu giriş PDF dosyasına geçirme.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "input.pdf");
 ```
 
-## Step 5: Extract text using Text Device
-Create a `StringBuilder` object to hold the extracted text. Iterate through each page of the document and use a `TextDevice` to extract the text from each page.
+## Adım 5: Metin Aygıtını kullanarak metni çıkarın
+ Oluşturmak`StringBuilder` Çıkarılan metni tutacak nesne. Belgenin her sayfasını yineleyin ve bir`TextDevice` Metni her sayfadan çıkarmak için.
 
 ```csharp
 StringBuilder builder = new StringBuilder();
@@ -60,62 +60,62 @@ builder. Append(extractedText);
 }
 ```
 
-## Step 6: Save the extracted text
-Specify the output file path and save the extracted text to a text file using the `File.WriteAllText` method.
+## 6. Adım: Çıkarılan metni kaydedin
+ Çıktı dosyası yolunu belirtin ve çıkartılan metni kullanarak bir metin dosyasına kaydedin.`File.WriteAllText` yöntem.
 
 ```csharp
 dataDir = dataDir + "input_Text_Extracted_out.txt";
 File.WriteAllText(dataDir, builder.ToString());
 ```
 
-### Sample source code for Extract Text Using Text Device using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Metin Aygıtını Kullanarak Metin Çıkarma için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document( dataDir + "input.pdf");
 System.Text.StringBuilder builder = new System.Text.StringBuilder();
-// String to hold extracted text
+//Çıkarılan metni tutacak dize
 string extractedText = "";
 foreach (Page pdfPage in pdfDocument.Pages)
 {
 	using (MemoryStream textStream = new MemoryStream())
 	{
-		// Create text device
+		// Metin cihazı oluştur
 		TextDevice textDevice = new TextDevice();
-		// Set text extraction options - set text extraction mode (Raw or Pure)
+		// Metin çıkarma seçeneklerini ayarlayın - metin çıkarma modunu ayarlayın (Ham veya Saf)
 		TextExtractionOptions textExtOptions = new
 		TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure);
 		textDevice.ExtractionOptions = textExtOptions;
-		// Convert a particular page and save text to the stream
+		// Belirli bir sayfayı dönüştürün ve metni akışa kaydedin
 		textDevice.Process(pdfPage, textStream);
-		// Convert a particular page and save text to the stream
+		// Belirli bir sayfayı dönüştürün ve metni akışa kaydedin
 		textDevice.Process(pdfDocument.Pages[1], textStream);
-		// Close memory stream
+		// Bellek akışını kapat
 		textStream.Close();
-		// Get text from memory stream
+		// Bellek akışından metin alın
 		extractedText = Encoding.Unicode.GetString(textStream.ToArray());
 	}
 	builder.Append(extractedText);
 }
 dataDir = dataDir + "input_Text_Extracted_out.txt";
-// Save the extracted text in text file
+// Çıkarılan metni metin dosyasına kaydedin
 File.WriteAllText(dataDir, builder.ToString());
 Console.WriteLine("\nText extracted successfully using text device from page of PDF Document.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
-You have successfully extracted text from a PDF document using the Text Device in Aspose.PDF for .NET. The extracted text has been saved to the specified output file.
+## Çözüm
+Aspose.PDF for .NET'teki Metin Aygıtını kullanarak bir PDF belgesinden metni başarıyla çıkardınız. Çıkarılan metin belirtilen çıktı dosyasına kaydedildi.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the purpose of this tutorial?
+#### S: Bu eğitimin amacı nedir?
 
-A: This tutorial provides guidance on extracting text from a PDF document using the Text Device feature in Aspose.PDF for .NET. The accompanying C# source code demonstrates the necessary steps to achieve this task.
+C: Bu eğitim, Aspose.PDF for .NET'teki Metin Aygıtı özelliğini kullanarak bir PDF belgesinden metin çıkarma konusunda rehberlik sağlar. Ekteki C# kaynak kodu, bu görevi gerçekleştirmek için gerekli adımları gösterir.
 
-#### Q: What namespaces should I import?
+#### S: Hangi ad alanlarını içe aktarmalıyım?
 
-A: In the code file where you plan to extract text, include the following using directives at the beginning of the file:
+C: Metni çıkarmayı planladığınız kod dosyasında, dosyanın başına aşağıdaki kullanma yönergelerini ekleyin:
 
 ```csharp
 using Aspose.Pdf;
@@ -124,22 +124,22 @@ using System.IO;
 using System.Text;
 ```
 
-#### Q: How do I specify the document directory?
+#### S: Belge dizinini nasıl belirlerim?
 
-A: In the code, find the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ C: Kodda şunu yazan satırı bulun:`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` belge dizininizin gerçek yolu ile.
 
-#### Q: How do I open an existing PDF document?
+#### S: Mevcut bir PDF belgesini nasıl açarım?
 
-A: In Step 4, you'll open an existing PDF document using the `Document` constructor and providing the path to the input PDF file.
+ C: 4. Adımda, mevcut bir PDF belgesini aşağıdaki komutu kullanarak açacaksınız:`Document` yapıcı ve giriş PDF dosyasının yolunu sağlama.
 
-#### Q: How do I extract text using the Text Device?
+#### S: Metin Aygıtını kullanarak nasıl metin ayıklayabilirim?
 
-A: Step 5 involves creating a `StringBuilder` object to hold the extracted text. You'll then iterate through each page of the document and use a `TextDevice` along with `TextExtractionOptions` to extract text from each page.
+ C: Adım 5, bir`StringBuilder` Çıkarılan metni tutacak nesne. Daha sonra belgenin her sayfasını yineleyecek ve bir`TextDevice` ile birlikte`TextExtractionOptions` Her sayfadan metin çıkarmak için.
 
-#### Q: How do I save the extracted text to a file?
+#### S: Çıkarılan metni bir dosyaya nasıl kaydederim?
 
-A: In Step 6, you'll specify the output file path and use the `File.WriteAllText` method to save the extracted text to a text file.
+ C: 6. Adımda çıktı dosyasının yolunu belirleyecek ve`File.WriteAllText`Çıkarılan metni bir metin dosyasına kaydetme yöntemi.
 
-#### Q: What is the key takeaway from this tutorial?
+#### S: Bu eğitimden çıkarılacak önemli sonuç nedir?
 
-A: By following this tutorial, you've learned how to leverage the Text Device feature in Aspose.PDF for .NET to extract text from a PDF document. The extracted text has been saved to a specified output file, enabling you to manipulate and utilize the extracted content as needed.
+C: Bu eğitimi takip ederek Aspose.PDF for .NET'teki Metin Aygıtı özelliğini kullanarak bir PDF belgesinden metin çıkarmayı öğrendiniz. Çıkarılan metin, belirtilen çıktı dosyasına kaydedilerek, çıkarılan içeriği gerektiği gibi değiştirmenize ve kullanmanıza olanak tanır.

@@ -1,145 +1,145 @@
 ---
-title: Specify Page When Viewing
-linktitle: Specify Page When Viewing
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to specify a page when viewing a PDF using Aspose.PDF for .NET.
+title: حدد الصفحة عند المشاهدة
+linktitle: حدد الصفحة عند المشاهدة
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية تحديد صفحة عند عرض ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 110
 url: /ar/net/programming-with-links-and-actions/specify-page-when-viewing/
 ---
-Learn how to specify a page when viewing a PDF file using Aspose.PDF for .NET with this step-by-step guide.
+تعرف على كيفية تحديد صفحة عند عرض ملف PDF باستخدام Aspose.PDF لـ .NET باستخدام هذا الدليل التفصيلي خطوة بخطوة.
 
-## Step 1: Setting up the environment
+## الخطوة 1: تهيئة البيئة
 
-Make sure you have set up your development environment with a C# project and the appropriate Aspose.PDF references.
+تأكد من أنك قمت بإعداد بيئة التطوير الخاصة بك باستخدام مشروع C# ومراجع Aspose.PDF المناسبة.
 
-## Step 2: Loading the PDF file
+## الخطوة 2: تحميل ملف PDF
 
-Set the directory path of your documents and upload the PDF file using the following code:
+قم بتعيين مسار الدليل لمستنداتك وقم بتحميل ملف PDF باستخدام الكود التالي:
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Load the PDF file
+// قم بتحميل ملف PDF
 Document doc = new Document(dataDir + "SpecifyPageWhenViewing.pdf");
 ```
 
-## Step 3: Specifying the target page
+## الخطوة 3: تحديد الصفحة المستهدفة
 
-Get the target page instance using the following code:
+احصل على مثيل الصفحة المستهدفة باستخدام الكود التالي:
 
 ```csharp
 Page page2 = doc.Pages[2];
 ```
 
-You can adjust the index `[2]` to select the desired page.
+ يمكنك ضبط الفهرس`[2]` لتحديد الصفحة المطلوبة.
 
-## Step 4: Configuring the zoom setting
+## الخطوة 4: تكوين إعداد التكبير/التصغير
 
-Create a variable to set the target page zoom factor:
+قم بإنشاء متغير لتعيين عامل تكبير الصفحة المستهدفة:
 
 ```csharp
 double zoom = 1;
 ```
 
-You can adjust the zoom value according to your needs.
+يمكنك ضبط قيمة التكبير/التصغير وفقًا لاحتياجاتك.
 
-## Step 5: Create the navigation action
+## الخطوة 5: إنشاء إجراء التنقل
 
-Create an instance of the navigation action using the specified target page:
+قم بإنشاء مثيل لإجراء التنقل باستخدام الصفحة المستهدفة المحددة:
 
 ```csharp
 GoToAction action = new GoToAction(doc.Pages[2]);
 ```
 
-## Step 6: Setting the destination
+## الخطوة 6: تحديد الوجهة
 
-Set the destination to go to the target page using coordinates and zoom:
+قم بتعيين الوجهة للانتقال إلى الصفحة المستهدفة باستخدام الإحداثيات والتكبير/التصغير:
 
 ```csharp
 action.Destination = new XYZExplicitDestination(page2, 0, page2.Rect.Height, zoom);
 ```
 
-## Step 7: Configuring the Document Open Action
+## الخطوة 7: تكوين إجراء فتح المستند
 
-Set the document open action with the created navigation action:
+قم بتعيين إجراء فتح المستند باستخدام إجراء التنقل الذي تم إنشاؤه:
 
 ```csharp
 doc. OpenAction = action;
 ```
 
-## Step 8: Save the updated document
+## الخطوة 8: احفظ المستند المحدث
 
-Save the updated document using the `Save` method:
+ احفظ المستند المحدث باستخدام ملف`Save` طريقة:
 
 ```csharp
 doc.Save(dataDir + "goto2page_out.pdf");
 ```
 
-### Sample source code for Specify Page When Viewing using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لتحديد الصفحة عند العرض باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load the PDF file
+// قم بتحميل ملف PDF
 Document doc = new Document(dataDir + "SpecifyPageWhenViewing.pdf");
-// Get the instance of second page of document
+// احصل على مثيل الصفحة الثانية من المستند
 Page page2 = doc.Pages[2];
-// Create the variable to set the zoom factor of target page
+// قم بإنشاء المتغير لتعيين عامل التكبير/التصغير للصفحة المستهدفة
 double zoom = 1;
-// Create GoToAction instance
+// إنشاء مثيل GoToAction
 GoToAction action = new GoToAction(doc.Pages[2]);
-// Go to 2 page
+// انتقل إلى الصفحة 2
 action.Destination = new XYZExplicitDestination(page2, 0, page2.Rect.Height, zoom);
-// Set the document open action
+// قم بتعيين إجراء فتح المستند
 doc.OpenAction = action;
-// Save updated document
+// حفظ المستند المحدث
 doc.Save(dataDir + "goto2page_out.pdf");
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You now know how to specify a page when viewing a PDF using Aspose.PDF for .NET. Use this knowledge to customize the user viewing experience in your PDF documents.
+تهنئة ! أنت تعرف الآن كيفية تحديد صفحة عند عرض ملف PDF باستخدام Aspose.PDF لـ .NET. استخدم هذه المعرفة لتخصيص تجربة عرض المستخدم في مستندات PDF الخاصة بك.
 
-Now that you've completed this guide, you can apply these concepts to your own projects and further explore the features offered by Aspose.PDF for .NET.
+الآن وبعد أن أكملت هذا الدليل، يمكنك تطبيق هذه المفاهيم على مشاريعك الخاصة واستكشاف الميزات التي يقدمها Aspose.PDF لـ .NET بشكل أكبر.
 
-### FAQ's 
+### الأسئلة الشائعة 
 
-#### Q: What is the purpose of specifying a target page when viewing a PDF file?
+#### س: ما هو الغرض من تحديد الصفحة المستهدفة عند عرض ملف PDF؟
 
-A: Specifying a target page allows you to control which page of a PDF document is displayed when the file is opened. This can enhance the user experience by directing them to a specific page of interest.
+ج: يتيح لك تحديد الصفحة المستهدفة التحكم في أي صفحة من مستند PDF يتم عرضها عند فتح الملف. يمكن أن يؤدي ذلك إلى تحسين تجربة المستخدم من خلال توجيهه إلى صفحة معينة محل اهتمام.
 
-#### Q: How can specifying a target page be useful in PDF documents?
+#### س: كيف يمكن أن يكون تحديد الصفحة المستهدفة مفيدًا في مستندات PDF؟
 
-A: Specifying a target page is beneficial when you want to guide users to a particular section or content within a PDF document without requiring them to manually navigate through the pages.
+ج: يعد تحديد الصفحة المستهدفة مفيدًا عندما تريد توجيه المستخدمين إلى قسم أو محتوى معين داخل مستند PDF دون مطالبتهم بالتنقل يدويًا عبر الصفحات.
 
-#### Q: How does Aspose.PDF for .NET facilitate specifying a target page for viewing?
+#### س: كيف يسهل Aspose.PDF for .NET تحديد الصفحة المستهدفة للعرض؟
 
-A: Aspose.PDF for .NET provides APIs that allow you to set the initial view of a PDF document, including the target page, zoom level, and other display properties.
+ج: يوفر Aspose.PDF for .NET واجهات برمجة التطبيقات التي تسمح لك بتعيين العرض الأولي لمستند PDF، بما في ذلك الصفحة المستهدفة ومستوى التكبير/التصغير وخصائص العرض الأخرى.
 
-#### Q: Can I specify any page to be the target page?
+#### س: هل يمكنني تحديد أي صفحة لتكون الصفحة المستهدفة؟
 
-A: Yes, you can specify any page within the PDF document as the target page for viewing. Simply use the appropriate index to select the desired page.
+ج: نعم، يمكنك تحديد أي صفحة ضمن مستند PDF لتكون الصفحة المستهدفة للعرض. ما عليك سوى استخدام الفهرس المناسب لتحديد الصفحة المطلوبة.
 
-#### Q: What is the significance of the zoom factor when specifying a target page?
+#### س: ما أهمية عامل التكبير عند تحديد الصفحة المستهدفة؟
 
-A: The zoom factor determines the level of magnification applied to the target page when the PDF document is opened. It controls how much content is displayed within the viewport.
+ج: يحدد عامل التكبير/التصغير مستوى التكبير المطبق على الصفحة المستهدفة عند فتح مستند PDF. فهو يتحكم في مقدار المحتوى الذي يتم عرضه داخل إطار العرض.
 
-#### Q: Can I set different zoom factors for different target pages?
+#### س: هل يمكنني ضبط عوامل تكبير مختلفة لصفحات مستهدفة مختلفة؟
 
-A: Yes, you can set different zoom factors for different target pages by creating separate `GoToAction` instances and configuring their destinations accordingly.
+ج: نعم، يمكنك تعيين عوامل تكبير مختلفة لصفحات مستهدفة مختلفة عن طريق إنشاء صفحات منفصلة`GoToAction` الحالات وتكوين وجهاتها وفقًا لذلك.
 
-#### Q: Are there any limitations to specifying a target page?
+#### س: هل هناك أي قيود على تحديد الصفحة المستهدفة؟
 
-A: Specifying a target page is limited to controlling the initial view when the PDF is opened. It does not affect user interactions or navigation once the PDF is displayed.
+ج: يقتصر تحديد الصفحة المستهدفة على التحكم في العرض الأولي عند فتح ملف PDF. ولا يؤثر على تفاعلات المستخدم أو التنقل بمجرد عرض ملف PDF.
 
-#### Q: Can I use this feature to create presentations within a PDF document?
+#### س: هل يمكنني استخدام هذه الميزة لإنشاء عروض تقديمية ضمن مستند PDF؟
 
-A: Yes, you can use this feature to create presentation-like experiences within a PDF document, guiding users through different sections or topics.
+ج: نعم، يمكنك استخدام هذه الميزة لإنشاء تجارب تشبه العرض التقديمي داخل مستند PDF، وتوجيه المستخدمين عبر أقسام أو مواضيع مختلفة.
 
-#### Q: Can I customize other aspects of the initial view, such as page layout?
+#### س: هل يمكنني تخصيص جوانب أخرى من العرض الأولي، مثل تخطيط الصفحة؟
 
-A: Yes, Aspose.PDF for .NET provides properties to customize other aspects of the initial view, including page layout, page mode, and more.
+ج: نعم، يوفر Aspose.PDF for .NET خصائص لتخصيص جوانب أخرى من العرض الأولي، بما في ذلك تخطيط الصفحة ووضع الصفحة والمزيد.
 
-#### Q: How can I test if the specified target page and zoom factor are working as intended?
+#### س: كيف يمكنني اختبار ما إذا كانت الصفحة المستهدفة المحددة وعامل التكبير/التصغير يعملان على النحو المنشود؟
 
-A: After applying the provided code to specify the target page and zoom factor, open the modified PDF file and verify that it opens with the correct page and zoom level.
+ج: بعد تطبيق الكود المقدم لتحديد الصفحة المستهدفة وعامل التكبير/التصغير، افتح ملف PDF المعدل وتأكد من أنه يفتح بالصفحة الصحيحة ومستوى التكبير/التصغير الصحيح.

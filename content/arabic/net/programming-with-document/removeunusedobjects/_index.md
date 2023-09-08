@@ -1,33 +1,33 @@
 ---
-title: Remove Unused Objects In PDF File
-linktitle: Remove Unused Objects In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use Aspose.PDF for .NET to remove unused objects in PDF file with this step-by-step guide.
+title: إزالة الكائنات غير المستخدمة في ملف PDF
+linktitle: إزالة الكائنات غير المستخدمة في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية استخدام Aspose.PDF لـ .NET لإزالة الكائنات غير المستخدمة في ملف PDF باستخدام هذا الدليل التفصيلي خطوة بخطوة.
 type: docs
 weight: 260
 url: /ar/net/programming-with-document/removeunusedobjects/
 ---
-If you're looking for a way to remove unused objects in your PDF file using Aspose.PDF for .NET, you're in the right place. This step-by-step guide will show you how to use the C# source code provided to accomplish this task.
+إذا كنت تبحث عن طريقة لإزالة الكائنات غير المستخدمة في ملف PDF الخاص بك باستخدام Aspose.PDF لـ .NET، فأنت في المكان الصحيح. سيوضح لك هذا الدليل خطوة بخطوة كيفية استخدام كود مصدر C# المقدم لإنجاز هذه المهمة.
 
-## Step 1: Set the directory path
+## الخطوة 1: قم بتعيين مسار الدليل
 
-First, you need to set the path to your document directory by replacing "YOUR DOCUMENT DIRECTORY" with the appropriate path.
+أولاً، تحتاج إلى تعيين المسار إلى دليل المستندات الخاص بك عن طريق استبدال "YOUR DOCUMENT DIRECTORY" بالمسار المناسب.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Open the PDF document
+## الخطوة 2: افتح مستند PDF
 
-Next, you need to open the PDF document that you want to optimize by using the following code:
+بعد ذلك، تحتاج إلى فتح مستند PDF الذي تريد تحسينه باستخدام الكود التالي:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 ```
 
-## Step 3: Set RemoveUnusedObjects option
+## الخطوة 3: قم بتعيين خيار RemoveUnusedObjects
 
-To remove unused objects in your PDF document, you need to set the RemoveUnusedObjects option to "true" as follows:
+لإزالة الكائنات غير المستخدمة في مستند PDF الخاص بك، تحتاج إلى ضبط خيار RemoveUnusedObjects على "true" كما يلي:
 
 ```csharp
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
@@ -36,58 +36,58 @@ var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 };
 ```
 
-## Step 4: Optimize PDF document using OptimizationOptions
+## الخطوة 4: تحسين مستند PDF باستخدام OptimizationOptions
 
-Now, you can optimize your PDF document by using the OptimizeResources method with the optimization options you just set:
+الآن، يمكنك تحسين مستند PDF الخاص بك باستخدام طريقة OptimizeResources مع خيارات التحسين التي قمت بتعيينها للتو:
 
 ```csharp
 pdfDocument.OptimizeResources(optimizeOptions);
 ```
 
-## Step 5: Save the updated document
+## الخطوة 5: احفظ المستند المحدث
 
-Finally, you can save the updated document with the following code:
+وأخيرًا، يمكنك حفظ المستند المحدث بالكود التالي:
 
 ```csharp
 dataDir = dataDir + "OptimizeDocument_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-That's it! You've successfully removed unused objects from your PDF document using Aspose.PDF for .NET.
+هذا كل شيء! لقد نجحت في إزالة الكائنات غير المستخدمة من مستند PDF الخاص بك باستخدام Aspose.PDF لـ .NET.
 
-### Example source code for Remove Unused Objects using Aspose.PDF for .NET:
+### مثال على التعليمات البرمجية المصدر لإزالة الكائنات غير المستخدمة باستخدام Aspose.PDF لـ .NET:
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-// Set RemoveUsedObject option 
+// قم بتعيين خيار RemoveUsedObject
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 {
 	RemoveUnusedObjects = true
 };
-// Optimize PDF document using OptimizationOptions
+// تحسين مستند PDF باستخدام OptimizationOptions
 pdfDocument.OptimizeResources(optimizeOptions);
 dataDir = dataDir + "OptimizeDocument_out.pdf";
-// Save updated document
+// حفظ المستند المحدث
 pdfDocument.Save(dataDir);
 ```
 
-## Conclusion
+## خاتمة
 
-Optimizing PDF documents by removing unused objects is an essential step to improve file size and overall performance. Aspose.PDF for .NET simplifies this process by providing a straightforward method to remove unused objects using the `OptimizationOptions`. By following the step-by-step guide and using the provided C# source code, developers can easily optimize their PDF documents and achieve more efficient and faster PDF processing in their .NET applications.
+ يعد تحسين مستندات PDF عن طريق إزالة الكائنات غير المستخدمة خطوة أساسية لتحسين حجم الملف والأداء العام. يعمل Aspose.PDF for .NET على تبسيط هذه العملية من خلال توفير طريقة مباشرة لإزالة الكائنات غير المستخدمة باستخدام`OptimizationOptions`. باتباع الدليل الموضح خطوة بخطوة واستخدام كود مصدر C# المقدم، يمكن للمطورين تحسين مستندات PDF الخاصة بهم بسهولة وتحقيق معالجة أكثر كفاءة وسرعة لملفات PDF في تطبيقات .NET الخاصة بهم.
 
-### FAQ's for remove unused objects in PDF file
+### الأسئلة الشائعة لإزالة الكائنات غير المستخدمة في ملف PDF
 
-#### Q: What are unused objects in a PDF document?
+#### س: ما هي الكائنات غير المستخدمة في مستند PDF؟
 
-A: Unused objects in a PDF document are elements such as fonts, images, annotations, or other resources that are no longer referenced or used in the document's content. Removing these unused objects can significantly reduce the file size and optimize the PDF document.
+ج: الكائنات غير المستخدمة في مستند PDF هي عناصر مثل الخطوط أو الصور أو التعليقات التوضيحية أو الموارد الأخرى التي لم يعد يتم الرجوع إليها أو استخدامها في محتوى المستند. يمكن أن تؤدي إزالة هذه الكائنات غير المستخدمة إلى تقليل حجم الملف بشكل كبير وتحسين مستند PDF.
 
-#### Q: How does removing unused objects benefit PDF documents?
+#### س: كيف تفيد إزالة الكائنات غير المستخدمة مستندات PDF؟
 
-A: Removing unused objects from a PDF document reduces its file size, leading to faster loading times, improved performance, and reduced storage space. It also helps in ensuring a more efficient user experience when sharing or distributing the PDF files.
+ج: تؤدي إزالة الكائنات غير المستخدمة من مستند PDF إلى تقليل حجم الملف، مما يؤدي إلى أوقات تحميل أسرع وتحسين الأداء وتقليل مساحة التخزين. كما أنه يساعد في ضمان تجربة مستخدم أكثر كفاءة عند مشاركة ملفات PDF أو توزيعها.
 
-#### Q: Can developers control which unused objects to remove using Aspose.PDF for .NET?
+#### س: هل يمكن للمطورين التحكم في الكائنات غير المستخدمة التي سيتم إزالتها باستخدام Aspose.PDF لـ .NET؟
 
-A: Yes, developers can control the removal of unused objects by setting the `RemoveUnusedObjects` option in the `OptimizationOptions`. This allows them to decide whether to remove all unused objects or retain certain objects based on their specific requirements.
+ ج: نعم، يمكن للمطورين التحكم في إزالة الكائنات غير المستخدمة عن طريق تعيين`RemoveUnusedObjects` الخيار في`OptimizationOptions`. يتيح لهم ذلك تحديد ما إذا كانوا يريدون إزالة جميع الكائنات غير المستخدمة أو الاحتفاظ بكائنات معينة بناءً على متطلباتهم المحددة.

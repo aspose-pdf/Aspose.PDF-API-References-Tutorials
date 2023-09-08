@@ -1,119 +1,119 @@
 ---
-title: Add Drawing In PDF File
-linktitle: Add Drawing In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add drawing in PDF file using Aspose.PDF for .NET. Follow this step-by-step guide to create attractive PDF documents with drawing features.
+title: PDF Dosyasına Çizim Ekle
+linktitle: PDF Dosyasına Çizim Ekle
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF dosyasına nasıl çizim ekleyeceğinizi öğrenin. Çizim özelliklerine sahip çekici PDF belgeleri oluşturmak için bu adım adım kılavuzu izleyin.
 type: docs
 weight: 10
 url: /tr/net/programming-with-graphs/add-drawing/
 ---
-Application development often requires adding features such as drawings and graphics to make documents more attractive and informative. In this article, we will guide you step by step to explain the C# source code to add drawing to programming with graphics using Aspose.PDF for .NET.
+Uygulama geliştirme genellikle belgeleri daha çekici ve bilgilendirici hale getirmek için çizim ve grafik gibi özelliklerin eklenmesini gerektirir. Bu makalede, Aspose.PDF for .NET kullanarak grafiklerle programlamaya çizim eklemek için C# kaynak kodunu açıklama konusunda size adım adım rehberlik edeceğiz.
 
-Before you start, make sure you have installed the Aspose.PDF library and set up your development environment. Also, make sure you have basic knowledge of C# programming.
+Başlamadan önce Aspose.PDF kütüphanesini kurduğunuzdan ve geliştirme ortamınızı kurduğunuzdan emin olun. Ayrıca temel C# programlama bilgisine sahip olduğunuzdan emin olun.
 
-## Step 1: Introduction to Aspose.PDF for .NET and its features
+## Adım 1: Aspose.PDF for .NET'e giriş ve özellikleri
 
-Aspose.PDF is a powerful and versatile library for creating, manipulating and converting PDF files in .NET applications. It offers a wide range of features for working with PDF documents, including adding drawings, graphics, text, etc.
+Aspose.PDF, .NET uygulamalarında PDF dosyalarını oluşturmak, değiştirmek ve dönüştürmek için kullanılan güçlü ve çok yönlü bir kütüphanedir. PDF belgeleriyle çalışmak için çizim, grafik, metin vb. ekleme dahil çok çeşitli özellikler sunar.
 
-## Step 2: Understand the source code to add drawings using Aspose.PDF
+## Adım 2: Aspose.PDF kullanarak çizim eklemek için kaynak kodunu anlayın
 
-The provided source code uses the Aspose.PDF library to create a simple drawing in a PDF document. We will now examine each step of the code in detail.
+Sağlanan kaynak kodu, bir PDF belgesinde basit bir çizim oluşturmak için Aspose.PDF kütüphanesini kullanır. Şimdi kodun her adımını detaylı olarak inceleyeceğiz.
 
-## Step 3: Configuring the documents directory and initializing the variables
+## 3. Adım: Belgeler dizinini yapılandırma ve değişkenleri başlatma
 
-In the source code, you need to specify the directory where you want to save the resulting PDF file. You can modify the "dataDir" variable to indicate the desired directory.
+Kaynak kodunda, ortaya çıkan PDF dosyasını kaydetmek istediğiniz dizini belirtmeniz gerekir. İstediğiniz dizini belirtmek için "dataDir" değişkenini değiştirebilirsiniz.
 
-Additionally, the code initializes variables for the alpha, red, green, and blue color components.
+Ek olarak kod, alfa, kırmızı, yeşil ve mavi renk bileşenleri için değişkenleri başlatır.
 
-## Step 4: Creating a Color Object with Alpha RGB
+## Adım 4: Alfa RGB ile Renkli Nesne Oluşturma
 
-The following line of code creates a Color object using the specified alpha, red, green, and blue values:
+Aşağıdaki kod satırı, belirtilen alfa, kırmızı, yeşil ve mavi değerlerini kullanarak bir Color nesnesi oluşturur:
 
 ```csharp
 Aspose.Pdf.Color alphaColor = Aspose.Pdf.Color.FromArgb(alpha, red, green, blue);
 ```
 
-This allows to define a color with an alpha channel, which means that the color can be partially transparent.
+Bu, alfa kanalıyla bir rengin tanımlanmasına olanak tanır; bu, rengin kısmen şeffaf olabileceği anlamına gelir.
 
-## Step 5: Instantiating a Document Object
+## Adım 5: Bir Belge Nesnesinin Örneklenmesi
 
-To start working with Aspose.PDF, we need to create an instance of the Document class. This represents our PDF document.
+Aspose.PDF ile çalışmaya başlamak için Document sınıfının bir örneğini oluşturmamız gerekiyor. Bu bizim PDF belgemizi temsil eder.
 
 ```csharp
 Document document = new Document();
 ```
 
-## Step 6: Adding a page to the PDF file
+## Adım 6: PDF dosyasına sayfa ekleme
 
-We need to add a page to the PDF file where we want to display our drawing.
+Çizimimizi görüntülemek istediğimiz PDF dosyasına bir sayfa eklememiz gerekiyor.
 
 ```csharp
 Page page = document.Pages.Add();
 ```
 
-## Step 7: Creating a Graph Object with Dimensions
+## Adım 7: Boyutlarla Grafik Nesnesi Oluşturma
 
-In this step, we create a Graph object with specified dimensions. This object will serve as a container for our drawing.
+Bu adımda belirtilen boyutlara sahip bir Graph nesnesi oluşturuyoruz. Bu nesne çizimimiz için bir kap görevi görecek.
 
 ```csharp
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(300, 400);
 ```
 
-## Step 8: Setting the border for the Drawing object
+## Adım 8: Çizim nesnesinin kenarlığını ayarlama
 
-We can set the border of the Drawing object using the BorderInfo class.
+Çizim nesnesinin kenarlığını BorderInfo sınıfını kullanarak ayarlayabiliriz.
 
 ```csharp
 graph.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Aspose.Pdf.Color.Black);
 ```
 
-This will set a black border around our drawing.
+Bu, çizimimizin etrafına siyah bir kenarlık oluşturacaktır.
 
-## Step 9: Adding the graph object to the page
+## Adım 9: Grafik nesnesini sayfaya ekleme
 
-Now we add the graph object to the paragraphs collection of the Page class instance.
+Şimdi grafik nesnesini Page sınıfı örneğinin paragraf koleksiyonuna ekliyoruz.
 
 ```csharp
 page.Paragraphs.Add(graph);
 ```
 
-## Step 10: Creating a Rectangle Object with Dimensions
+## Adım 10: Boyutlu Dikdörtgen Nesne Oluşturma
 
-We create a Rectangle object with specified dimensions. This rectangle will be added to our drawing.
+Belirtilen boyutlara sahip bir Rectangle nesnesi oluşturuyoruz. Bu dikdörtgen çizimimize eklenecek.
 
 ```csharp
 Aspose.Pdf.Drawing.Rectangle rectangle = new Aspose.Pdf.Drawing.Rectangle(0, 0, 100, 50);
 ```
 
-## Step 11: Creating a GraphInfo object for the Rectangle instance
+## Adım 11: Rectangle örneği için GraphInfo nesnesi oluşturma
 
-We need to create a GraphInfo object for the Rectangle instance to configure its graph properties.
+Rectangle örneğinin grafik özelliklerini yapılandırmak için GraphInfo nesnesi oluşturmamız gerekiyor.
 
 ```csharp
 Aspose.Pdf.GraphInfo graphInfo = rectangle.GraphInfo;
 ```
 
-## Step 12: Configuring color information for the GraphInfo object
+## Adım 12: GraphInfo nesnesi için renk bilgilerini yapılandırma
 
-We can configure the color information for the GraphInfo object using the Color and FillColor properties.
+GraphInfo nesnesinin renk bilgisini Color ve FillColor özelliklerini kullanarak yapılandırabiliriz.
 
 ```csharp
 graphInfo.Color = Aspose.Pdf.Color.Red;
 graphInfo. FillColor = alphaColor;
 ```
 
-This will set the rectangle border color to red and the fill color to the specified alpha color.
+Bu, dikdörtgen kenarlık rengini kırmızıya ve dolgu rengini belirtilen alfa rengine ayarlayacaktır.
 
-## Step 13: Adding the rectangle shape to the graph object
+## Adım 13: Dikdörtgen şeklini grafik nesnesine ekleme
 
-Now we add the rectangle shape to the shape collection of the graph object.
+Şimdi dikdörtgen şeklini grafik nesnesinin şekil koleksiyonuna ekliyoruz.
 
 ```csharp
 graph.Shapes.Add(rectangle);
 ```
-## Step 14: Save PDF file and display success message
+## Adım 14: PDF dosyasını kaydedin ve başarı mesajını görüntüleyin
 
-Finally, we save the PDF file and display a message that the drawing was added successfully.
+Son olarak PDF dosyasını kaydediyoruz ve çizimin başarıyla eklendiğine dair bir mesaj görüntülüyoruz.
 
 ```csharp
 dataDir = dataDir + "AddDrawing_out.pdf";
@@ -121,64 +121,64 @@ document. Save(dataDir);
 Console.WriteLine("\nSuccessfully added drawing with transparent color.\nFile saved to location: " + dataDir);
 ```
 
-### Sample source code for Add Drawing using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Çizim Ekleme için örnek kaynak kodu 
 
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 int alpha = 10;
 int green = 0;
 int red = 100;
 int blue = 0;
-// Create Color object using Alpha RGB 
-Aspose.Pdf.Color alphaColor = Aspose.Pdf.Color.FromArgb(alpha, red, green, blue); // Provide alpha channel
-// Instantiate Document object
+// Alpha RGB kullanarak Renk nesnesi oluşturma
+Aspose.Pdf.Color alphaColor = Aspose.Pdf.Color.FromArgb(alpha, red, green, blue); // Alfa kanalı sağlayın
+// Belge nesnesini somutlaştır
 Document document = new Document();
-// Add page to pages collection of PDF file
+// PDF dosyasının sayfa koleksiyonuna sayfa ekle
 Page page = document.Pages.Add();
-// Create Graph object with certain dimensions
+//Belirli boyutlara sahip Grafik nesnesi oluşturma
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(300, 400);
-// Set border for Drawing object
+// Çizim nesnesi için kenarlığı ayarla
 graph.Border = (new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Aspose.Pdf.Color.Black));
-// Add graph object to paragraphs collection of Page instance
+// Sayfa örneğinin paragraf koleksiyonuna grafik nesnesi ekleme
 page.Paragraphs.Add(graph);
-// Create Rectangle object with certain dimensions
+// Belirli boyutlara sahip Dikdörtgen nesnesi oluşturun
 Aspose.Pdf.Drawing.Rectangle rectangle = new Aspose.Pdf.Drawing.Rectangle(0, 0, 100, 50);
-// Create graphInfo object for Rectangle instance
+// Rectangle örneği için graphInfo nesnesi oluşturun
 Aspose.Pdf.GraphInfo graphInfo = rectangle.GraphInfo;
-// Set color information for GraphInfo instance
+// GraphInfo örneği için renk bilgilerini ayarlayın
 graphInfo.Color = (Aspose.Pdf.Color.Red);
-// Set fill color for GraphInfo
+// GraphInfo için dolgu rengini ayarlama
 graphInfo.FillColor = (alphaColor);
-// Add rectangle shape to shapes collection of graph object
+// Grafik nesnesinin şekiller koleksiyonuna dikdörtgen şekli ekleme
 graph.Shapes.Add(rectangle);
 dataDir = dataDir + "AddDrawing_out.pdf";
-// Save PDF file
+// PDF dosyasını kaydet
 document.Save(dataDir);
 Console.WriteLine("\nDrawing added successfully with transparent color.\nFile saved at " + dataDir);            
 
 ```
 
-## Conclusion
+## Çözüm
 
-In this article, we learned how to add drawing to programming with graphics using Aspose.PDF for .NET. We followed a step-by-step guide to understand the source code and the various steps involved in adding a drawing to a PDF file. Using the powerful features of Aspose.PDF, you can create attractive and interactive PDF documents in your .NET applications.
+Bu yazıda Aspose.PDF for .NET kullanarak grafikli programlamaya çizim eklemeyi öğrendik. Kaynak kodunu ve bir PDF dosyasına çizim eklemenin çeşitli adımlarını anlamak için adım adım bir kılavuz izledik. Aspose.PDF'in güçlü özelliklerini kullanarak .NET uygulamalarınızda ilgi çekici ve etkileşimli PDF belgeleri oluşturabilirsiniz.
 
 
-### FAQ's for add drawing in PDF file
+### PDF dosyasına çizim eklemek için SSS
 
-#### Q: What is Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET nedir?
 
-A: Aspose.PDF for .NET is a powerful library that enables the creation, manipulation, and conversion of PDF files within .NET applications.
+C: Aspose.PDF for .NET, .NET uygulamalarında PDF dosyalarının oluşturulmasına, işlenmesine ve dönüştürülmesine olanak tanıyan güçlü bir kitaplıktır.
 
-#### Q: Can I adjust the transparency of colors in my drawings?
+#### S: Çizimlerimdeki renklerin şeffaflığını ayarlayabilir miyim?
 
-A: Yes, by using the alpha channel in the Color object, you can create partially transparent colors for your drawings.
+C: Evet, Renk nesnesindeki alfa kanalını kullanarak çizimleriniz için kısmen şeffaf renkler oluşturabilirsiniz.
 
-#### Q: How do I add a border to a drawing in a PDF document?
+#### S: PDF belgesindeki bir çizime nasıl kenarlık eklerim?
 
-A: You can set the border of a Drawing object using the BorderInfo class, allowing you to define border properties such as color and style.
+C: BorderInfo sınıfını kullanarak bir Çizim nesnesinin kenarlığını ayarlayabilirsiniz; bu, renk ve stil gibi kenarlık özelliklerini tanımlamanıza olanak tanır.
 
-#### Q: Is Aspose.PDF suitable for beginners in C# programming?
+#### S: Aspose.PDF, C# programlamaya yeni başlayanlar için uygun mudur?
 
-A: Aspose.PDF offers a wide range of features, including drawing, and may require a basic understanding of C# programming to fully utilize its capabilities.
+C: Aspose.PDF, çizim de dahil olmak üzere çok çeşitli özellikler sunar ve yeteneklerini tam olarak kullanabilmek için C# programlamanın temel düzeyde anlaşılmasını gerektirebilir.

@@ -1,101 +1,101 @@
 ---
-title: Delete All Attachments In PDF File
-linktitle: Delete All Attachments In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to remove all attachments in PDF file using Aspose.PDF for .NET. Step-by-step guide for easy handling.
+title: حذف كافة المرفقات في ملف PDF
+linktitle: حذف كافة المرفقات في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إزالة جميع المرفقات في ملف PDF باستخدام Aspose.PDF لـ .NET. دليل خطوة بخطوة لسهولة التعامل.
 type: docs
 weight: 20
 url: /ar/net/programming-with-attachments/delete-all-attachments/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to remove all attachments in PDF file using Aspose.PDF for .NET.
+في هذا البرنامج التعليمي، سنرشدك عبر التعليمات البرمجية المصدر لـ C# التالية خطوة بخطوة لإزالة جميع المرفقات في ملف PDF باستخدام Aspose.PDF لـ .NET.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+تأكد من تثبيت مكتبة Aspose.PDF وإعداد بيئة التطوير الخاصة بك قبل البدء. لديك أيضًا معرفة أساسية ببرمجة C#.
 
-### Step 1: Document Directory Setup
+### الخطوة 1: إعداد دليل المستندات
 
-In the provided source code, you need to specify the directory where the PDF file is located from which you want to remove the attachments. Change the "dataDir" variable to the desired directory.
+في الكود المصدري المقدم، تحتاج إلى تحديد الدليل الذي يوجد به ملف PDF الذي تريد إزالة المرفقات منه. قم بتغيير المتغير "dataDir" إلى الدليل المطلوب.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### Step 2: Open the existing PDF document
+### الخطوة 2: افتح مستند PDF الموجود
 
-We open the existing PDF document using the specified path.
+نفتح مستند PDF الموجود باستخدام المسار المحدد.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "DeleteAllAttachments.pdf");
 ```
 
-### Step 3: Remove all attachments
+### الخطوة 3: إزالة كافة المرفقات
 
-We remove all attachments from the document.
+نقوم بإزالة جميع المرفقات من المستند.
 
 ```csharp
 pdfDocument.EmbeddedFiles.Delete();
 ```
 
-### Step 4: Save the Updated File
+### الخطوة 4: احفظ الملف المحدث
 
-Finally, we save the updated PDF file with the name "DeleteAllAttachments_out.pdf" in the specified directory.
+أخيرًا، نقوم بحفظ ملف PDF المحدث بالاسم "DeleteAllAttachments_out.pdf" في الدليل المحدد.
 
 ```csharp
 pdfDocument.Save(dataDir + "DeleteAllAttachments_out.pdf");
 ```
 
-### Sample source code for Delete All Attachments using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لحذف كافة المرفقات باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "DeleteAllAttachments.pdf");
-// Delete all attachments
+// حذف كافة المرفقات
 pdfDocument.EmbeddedFiles.Delete();
 dataDir = dataDir + "DeleteAllAttachments_out.pdf";
-// Save updated file
+// حفظ الملف المحدث
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nAll attachments deleted successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we have explained how to remove all attachments from a PDF file using Aspose.PDF for .NET. You can now use this knowledge to clean up your PDF documents by removing all unwanted attachments.
+في هذا البرنامج التعليمي، شرحنا كيفية إزالة كافة المرفقات من ملف PDF باستخدام Aspose.PDF لـ .NET. يمكنك الآن استخدام هذه المعرفة لتنظيف مستندات PDF الخاصة بك عن طريق إزالة جميع المرفقات غير المرغوب فيها.
 
-## FAQ's for delete all attachments in PDF file
+## الأسئلة الشائعة حول حذف كافة المرفقات في ملف PDF
 
-#### Q: Why would I need to remove all attachments from a PDF file?
+#### س: لماذا أحتاج إلى إزالة جميع المرفقات من ملف PDF؟
 
-A: Removing all attachments from a PDF file can help streamline the document, reduce file size, and eliminate any unnecessary or outdated supplementary materials.
+ج: يمكن أن تساعد إزالة جميع المرفقات من ملف PDF في تبسيط المستند وتقليل حجم الملف وإزالة أي مواد تكميلية غير ضرورية أو قديمة.
 
-#### Q: How does Aspose.PDF for .NET simplify the process of removing all attachments?
+#### س: كيف يعمل Aspose.PDF for .NET على تبسيط عملية إزالة كافة المرفقات؟
 
-A: Aspose.PDF for .NET provides a user-friendly API that allows you to easily remove all attachments from a PDF file. The provided source code demonstrates the step-by-step process.
+ج: يوفر Aspose.PDF for .NET واجهة برمجة تطبيقات سهلة الاستخدام تسمح لك بإزالة كافة المرفقات من ملف PDF بسهولة. يوضح الكود المصدري المقدم العملية خطوة بخطوة.
 
-#### Q: Can I selectively remove specific attachments using this tutorial?
+#### س: هل يمكنني إزالة مرفقات محددة بشكل انتقائي باستخدام هذا البرنامج التعليمي؟
 
-A: No, this tutorial focuses on removing all attachments from a PDF document. If you need to remove specific attachments, you can explore Aspose.PDF for .NET's API for more advanced attachment management.
+ج: لا، يركز هذا البرنامج التعليمي على إزالة جميع المرفقات من مستند PDF. إذا كنت بحاجة إلى إزالة مرفقات معينة، فيمكنك استكشاف Aspose.PDF لـ .NET's API لإدارة المرفقات بشكل أكثر تقدمًا.
 
-#### Q: Is there a limit to the number of attachments that can be removed using this method?
+#### س: هل هناك حد لعدد المرفقات التي يمكن إزالتها بهذه الطريقة؟
 
-A: There is no strict limit to the number of attachments that can be removed using this method. However, it's important to note that all attachments within the PDF document will be deleted.
+ج: لا يوجد حد صارم لعدد المرفقات التي يمكن إزالتها باستخدام هذه الطريقة. ومع ذلك، من المهم ملاحظة أنه سيتم حذف جميع المرفقات الموجودة في مستند PDF.
 
-#### Q: Will removing attachments affect the main content of the PDF document?
+#### س: هل تؤثر إزالة المرفقات على المحتوى الرئيسي لمستند PDF؟
 
-A: No, removing attachments will not affect the main content of the PDF document. Only the attachments, such as additional files or materials, will be removed.
+ج: لا، لن تؤثر إزالة المرفقات على المحتوى الرئيسي لمستند PDF. ستتم إزالة المرفقات فقط، مثل الملفات أو المواد الإضافية.
 
-#### Q: How can I verify that all attachments have been successfully removed?
+#### س: كيف يمكنني التحقق من أن كافة المرفقات قد تمت إزالتها بنجاح؟
 
-A: After following the provided source code, you can open the resulting PDF file to confirm that the attachments have been removed from the document.
+ج: بعد اتباع التعليمات البرمجية المصدر المقدمة، يمكنك فتح ملف PDF الناتج للتأكد من إزالة المرفقات من المستند.
 
-#### Q: Can I undo the removal of attachments once it's done?
+#### س: هل يمكنني التراجع عن إزالة المرفقات بعد الانتهاء منها؟
 
-A: No, once attachments are removed from the PDF file, the action is irreversible. Make sure to back up your original PDF file before performing this action.
+ج: لا، بمجرد إزالة المرفقات من ملف PDF، يصبح هذا الإجراء لا رجعة فيه. تأكد من عمل نسخة احتياطية من ملف PDF الأصلي قبل تنفيذ هذا الإجراء.
 
-#### Q: Are there any file size considerations when removing attachments?
+#### س: هل هناك أي اعتبارات لحجم الملف عند إزالة المرفقات؟
 
-A: Removing attachments can reduce the overall file size of the PDF document, which may lead to improved document performance and sharing efficiency.
+ج: يمكن أن تؤدي إزالة المرفقات إلى تقليل الحجم الإجمالي للملف في مستند PDF، مما قد يؤدي إلى تحسين أداء المستند وكفاءة المشاركة.
 
-#### Q: Can I automate the process of removing attachments for multiple PDF files?
-A: Yes, you can create a script or program using Aspose.PDF for .NET to automate the process of removing attachments from multiple PDF files in a batch.
+#### س: هل يمكنني أتمتة عملية إزالة المرفقات لملفات PDF متعددة؟
+ج: نعم، يمكنك إنشاء برنامج نصي أو برنامج باستخدام Aspose.PDF لـ .NET لأتمتة عملية إزالة المرفقات من ملفات PDF متعددة دفعة واحدة.

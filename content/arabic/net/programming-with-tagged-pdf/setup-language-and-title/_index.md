@@ -1,180 +1,180 @@
 ---
-title: Setup Language And Title
-linktitle: Setup Language And Title
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to configure the language and title of a PDF document with Aspose.PDF for .NET. Create personalized multilingual documents.
+title: لغة الإعداد والعنوان
+linktitle: لغة الإعداد والعنوان
+second_title: Aspose.PDF لمرجع .NET API
+description: دليل خطوة بخطوة لتكوين لغة وعنوان مستند PDF باستخدام Aspose.PDF لـ .NET. إنشاء مستندات مخصصة متعددة اللغات.
 type: docs
 weight: 140
 url: /ar/net/programming-with-tagged-pdf/setup-language-and-title/
 ---
-In this guide, we are going to tell you how to configure the language and title of a PDF document using the Aspose.PDF library for .NET. Aspose.PDF is a powerful library that lets you programmatically create, manipulate, and convert PDF files.
+سنخبرك في هذا الدليل بكيفية تكوين لغة وعنوان مستند PDF باستخدام مكتبة Aspose.PDF لـ .NET. Aspose.PDF هي مكتبة قوية تتيح لك إنشاء ملفات PDF ومعالجتها وتحويلها برمجيًا.
 
-Let's dive into the code and learn how to configure the language and title of a PDF document using Aspose.PDF for .NET.
+دعنا نتعمق في التعليمات البرمجية ونتعلم كيفية تكوين لغة وعنوان مستند PDF باستخدام Aspose.PDF لـ .NET.
 
-## Prerequisites
+## المتطلبات الأساسية
 
-Before you start, make sure you have installed Aspose.PDF for .NET and set up your development environment.
+قبل البدء، تأكد من تثبيت Aspose.PDF لـ .NET وإعداد بيئة التطوير الخاصة بك.
 
-## Step 1: Creating the document
+## الخطوة 1: إنشاء الوثيقة
 
-The first step is to create a new PDF document using the `Document` class.
+ الخطوة الأولى هي إنشاء مستند PDF جديد باستخدام الملف`Document` فصل.
 
 ```csharp
-// Create the PDF document
+// قم بإنشاء مستند PDF
 Document document = new Document();
 ```
 
-## Step 2: Access tagged content
+## الخطوة 2: الوصول إلى المحتوى الموسوم
 
-Next, we access the tagged content of the document using the `ITaggedContent` object.
+ بعد ذلك، نصل إلى المحتوى المميز للمستند باستخدام الملف`ITaggedContent` هدف.
 
 ```csharp
-// Access tagged content
+// الوصول إلى المحتوى الموسوم
 Tagged.ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-## Step 3: Set title and language
+## الخطوة 3: تحديد العنوان واللغة
 
-Now we can set the document title and language using the `SetTitle` and `SetLanguage` methods of the `ITaggedContent` object.
+ يمكننا الآن ضبط عنوان المستند ولغته باستخدام الأمر`SetTitle` و`SetLanguage` أساليب`ITaggedContent` هدف.
 
 ```csharp
-// Define the title of the document
+// تحديد عنوان الوثيقة
 taggedContent.SetTitle("Example of tagged document");
 
-// Set the document language
+// ضبط لغة الوثيقة
 taggedContent.SetLanguage("fr-FR");
 ```
 
-## Step 4: Add multilingual content
+## الخطوة 4: إضافة محتوى متعدد اللغات
 
-Next, we add multilingual content to the document using paragraph elements for each language.
+بعد ذلك، نضيف محتوى متعدد اللغات إلى المستند باستخدام عناصر الفقرة لكل لغة.
 
 ```csharp
-// Add a paragraph in English
+// إضافة فقرة باللغة الإنجليزية
 LogicalStructure.ParagraphElement pEN = taggedContent.CreateParagraphElement();
 pEN.SetText("Hello, World!");
 pEN.Language = "en-US";
 taggedContent.RootElement.AppendChild(pEN);
 
-// Add a paragraph in German
+// إضافة فقرة باللغة الألمانية
 LogicalStructure.ParagraphElement pDE = taggedContent.CreateParagraphElement();
 pDE.SetText("Hello Welt!");
 pDE.Language = "de-DE";
 taggedContent.RootElement.AppendChild(pDE);
 
-// Add a paragraph in French
+//إضافة فقرة باللغة الفرنسية
 LogicalStructure.ParagraphElement pFR = taggedContent.CreateParagraphElement();
 pFR.SetText("Hello world!");
 pFR.Language = "fr-FR";
 taggedContent.RootElement.AppendChild(pFR);
 
-// Add a paragraph in Spanish
+// إضافة فقرة باللغة الإسبانية
 LogicalStructure.ParagraphElement pSP = taggedContent.CreateParagraphElement();
 pSP.SetText("¡Hola Mundo!");
 pSP.Language = "es-ES";
 taggedContent.RootElement.AppendChild(pSP);
 ```
 
-## Step 5: Save the tagged PDF document
+## الخطوة 5: احفظ مستند PDF الذي تم وضع علامة عليه
 
-Finally, we save the tagged PDF document.
+وأخيرًا، نقوم بحفظ مستند PDF الذي تم وضع علامة عليه.
 
 ```csharp
-// Save the tagged PDF document
+// احفظ مستند PDF الذي تم وضع علامة عليه
 document.Save(dataDir + "SetupLanguageAndTitle.pdf");
 ```
 
-### Sample source code for Setup Language And Title using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لإعداد اللغة والعنوان باستخدام Aspose.PDF لـ .NET 
 ```csharp
 
 Document document = new Document();
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Get TaggedContent
+// احصل على المحتوى الموسوم
 Tagged.ITaggedContent taggedContent = document.TaggedContent;
 
-// Set Title and Language
+// تعيين العنوان واللغة
 taggedContent.SetTitle("Example Tagged Document");
 taggedContent.SetLanguage("en-US");
 
-// Header (en-US, inherited from document)
+// الرأس (en-US، موروث من المستند)
 LogicalStructure.HeaderElement h1 = taggedContent.CreateHeaderElement(1);
 h1.SetText("Phrase on different languages");
 taggedContent.RootElement.AppendChild(h1);
 
-// Paragraph (English)
+// الفقرة (الإنجليزية)
 LogicalStructure.ParagraphElement pEN = taggedContent.CreateParagraphElement();
 pEN.SetText("Hello, World!");
 pEN.Language = "en-US";
 taggedContent.RootElement.AppendChild(pEN);
 
-// Paragraph (German)
+// الفقرة (الألمانية)
 LogicalStructure.ParagraphElement pDE = taggedContent.CreateParagraphElement();
 pDE.SetText("Hallo Welt!");
 pDE.Language = "de-DE";
 taggedContent.RootElement.AppendChild(pDE);
 
-// Paragraph (French)
+// الفقرة (الفرنسية)
 LogicalStructure.ParagraphElement pFR = taggedContent.CreateParagraphElement();
 pFR.SetText("Bonjour le monde!");
 pFR.Language = "fr-FR";
 taggedContent.RootElement.AppendChild(pFR);
 
-// Paragraph (Spanish)
+// الفقرة (الإسبانية)
 LogicalStructure.ParagraphElement pSP = taggedContent.CreateParagraphElement();
 pSP.SetText("¡Hola Mundo!");
 pSP.Language = "es-ES";
 taggedContent.RootElement.AppendChild(pSP);
 
-// Save Tagged Pdf Document
+// حفظ وثيقة PDF ذات العلامات
 document.Save(dataDir + "SetupLanguageAndTitle.pdf");
 
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You now know how to configure the language and title of a PDF document using Aspose.PDF for .NET. You can further explore the features of Aspose.PDF to create personalized and multilingual PDF documents.
+تهنئة ! أنت تعرف الآن كيفية تكوين لغة وعنوان مستند PDF باستخدام Aspose.PDF لـ .NET. يمكنك أيضًا استكشاف ميزات Aspose.PDF لإنشاء مستندات PDF مخصصة ومتعددة اللغات.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the significance of configuring the language and title of a PDF document?
+#### س: ما أهمية تكوين لغة وعنوان مستند PDF؟
 
-A: Configuring the language and title of a PDF document is important for accessibility and metadata. Setting the correct language ensures proper language tagging and text extraction, while providing an appropriate title enhances document identification and organization.
+ج: يعد تكوين لغة وعنوان مستند PDF أمرًا مهمًا لإمكانية الوصول والبيانات التعريفية. يضمن تحديد اللغة الصحيحة وضع علامات مناسبة على اللغة واستخراج النص، بينما يؤدي توفير عنوان مناسب إلى تحسين تعريف المستند وتنظيمه.
 
-#### Q: How does Aspose.PDF for .NET facilitate the configuration of document language and title?
+#### س: كيف يسهل Aspose.PDF for .NET تكوين لغة المستند وعنوانه؟
 
-A: Aspose.PDF for .NET provides APIs to easily set the document's title and language using the `SetTitle` and `SetLanguage` methods of the `ITaggedContent` object. This allows you to ensure accurate language representation and meaningful document titles.
+ ج: يوفر Aspose.PDF for .NET واجهات برمجة التطبيقات لتعيين عنوان المستند ولغته بسهولة باستخدام`SetTitle` و`SetLanguage` أساليب`ITaggedContent` هدف. يتيح لك ذلك ضمان التمثيل اللغوي الدقيق وعناوين المستندات ذات المعنى.
 
-#### Q: Can I set different languages for specific parts of a PDF document using Aspose.PDF for .NET?
+#### س: هل يمكنني تعيين لغات مختلفة لأجزاء معينة من مستند PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: Yes, you can set different languages for specific parts of a PDF document using Aspose.PDF for .NET. By applying the `Language` property to paragraph elements, you can specify the language for each part of the content, enabling multilingual documents.
+ ج: نعم، يمكنك تعيين لغات مختلفة لأجزاء معينة من مستند PDF باستخدام Aspose.PDF لـ .NET. من خلال تطبيق`Language` لعناصر الفقرة، يمكنك تحديد اللغة لكل جزء من المحتوى، مما يتيح المستندات متعددة اللغات.
 
-#### Q: Why is multilingual content important, and how can I add it to a PDF document using Aspose.PDF for .NET?
+#### س: ما سبب أهمية المحتوى متعدد اللغات، وكيف يمكنني إضافته إلى مستند PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: Multilingual content enhances the accessibility and global reach of PDF documents. Aspose.PDF for .NET allows you to add multilingual content by creating paragraph elements for each language, setting the text and language properties accordingly.
+ج: يعمل المحتوى متعدد اللغات على تحسين إمكانية الوصول إلى مستندات PDF والوصول إليها عالميًا. يتيح لك Aspose.PDF for .NET إضافة محتوى متعدد اللغات عن طريق إنشاء عناصر فقرة لكل لغة، وتعيين خصائص النص واللغة وفقًا لذلك.
 
-#### Q: How does the `SetTitle` method contribute to improving document accessibility and organization?
+####  س: كيف`SetTitle` method contribute to improving document accessibility and organization?
 
-A: The `SetTitle` method sets the title of a PDF document, which is used for document identification, search results, and organization. Providing a clear and meaningful title enhances document accessibility and improves user experience.
+ ج: ال`SetTitle` تحدد هذه الطريقة عنوان مستند PDF، والذي يُستخدم لتحديد المستند ونتائج البحث والتنظيم. يؤدي توفير عنوان واضح وهادف إلى تعزيز إمكانية الوصول إلى المستندات وتحسين تجربة المستخدم.
 
-#### Q: What is the role of the `SetLanguage` method in PDF document configuration?
+####  س: ما هو دور`SetLanguage` method in PDF document configuration?
 
-A: The `SetLanguage` method sets the default language for the PDF document, ensuring accurate language tagging and text extraction. It helps maintain language consistency and accessibility across the document.
+ ج: ال`SetLanguage` تقوم الطريقة بتعيين اللغة الافتراضية لمستند PDF، مما يضمن وضع علامات دقيقة على اللغة واستخراج النص. فهو يساعد في الحفاظ على اتساق اللغة وإمكانية الوصول إليها عبر المستند.
 
-#### Q: Can I use Aspose.PDF for .NET to dynamically set the document title and language based on user preferences?
+#### س: هل يمكنني استخدام Aspose.PDF لـ .NET لتعيين عنوان المستند ولغته ديناميكيًا بناءً على تفضيلات المستخدم؟
 
-A: Yes, you can dynamically set the document title and language based on user preferences using Aspose.PDF for .NET. By integrating user input or system data, you can customize the document title and language accordingly.
+ج: نعم، يمكنك تعيين عنوان المستند ولغته ديناميكيًا بناءً على تفضيلات المستخدم باستخدام Aspose.PDF لـ .NET. من خلال دمج مدخلات المستخدم أو بيانات النظام، يمكنك تخصيص عنوان المستند واللغة وفقًا لذلك.
 
-#### Q: How can I verify that the language and title configuration has been applied correctly to the PDF document?
+#### س: كيف يمكنني التحقق من تطبيق تكوين اللغة والعنوان بشكل صحيح على مستند PDF؟
 
-A: You can verify the language and title configuration by examining the PDF document's properties and metadata. You can also use PDF viewers or text extraction tools to ensure that the language tagging and document title are accurate.
+ج: يمكنك التحقق من تكوين اللغة والعنوان من خلال فحص خصائص مستند PDF وبياناته التعريفية. يمكنك أيضًا استخدام عارضات PDF أو أدوات استخراج النص للتأكد من دقة علامات اللغة وعنوان المستند.
 
-#### Q: Are there any best practices to follow when configuring the language and title of a PDF document?
+#### س: هل هناك أي أفضل الممارسات التي يجب اتباعها عند تكوين لغة وعنوان مستند PDF؟
 
-A: When configuring the language and title, consider the intended audience, document content, and accessibility requirements. Choose descriptive titles and accurate language settings to enhance document usability and accessibility.
+ج: عند تكوين اللغة والعنوان، ضع في اعتبارك الجمهور المستهدف ومحتوى المستند ومتطلبات إمكانية الوصول. اختر عناوين وصفية وإعدادات لغة دقيقة لتحسين سهولة استخدام المستند وإمكانية الوصول إليه.
 
-#### Q: Can I modify the language and title of an existing PDF document using Aspose.PDF for .NET?
+#### س: هل يمكنني تعديل لغة وعنوان مستند PDF موجود باستخدام Aspose.PDF لـ .NET؟
 
-A: Yes, you can modify the language and title of an existing PDF document using Aspose.PDF for .NET. By loading the document, accessing its tagged content, and using the `SetTitle` and `SetLanguage` methods, you can update these attributes as needed.
+ ج: نعم، يمكنك تعديل لغة وعنوان مستند PDF موجود باستخدام Aspose.PDF لـ .NET. عن طريق تحميل المستند، والوصول إلى محتواه المميز، واستخدام`SetTitle` و`SetLanguage`الطرق، يمكنك تحديث هذه السمات حسب الحاجة.

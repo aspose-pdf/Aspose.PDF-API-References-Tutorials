@@ -1,85 +1,85 @@
 ---
-title: Set Default Font In PDF File
-linktitle: Set Default Font In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set the default font in a PDF file using Aspose.PDF for .NET with this step-by-step guide.
+title: Установить шрифт по умолчанию в PDF-файле
+linktitle: Установить шрифт по умолчанию в PDF-файле
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как установить шрифт по умолчанию в PDF-файле с помощью Aspose.PDF для .NET, с помощью этого пошагового руководства.
 type: docs
 weight: 280
 url: /ru/net/programming-with-document/setdefaultfont/
 ---
-If you're working with PDF documents in .NET, you may encounter issues where the font used in the PDF is not available on the system where it is being viewed or printed. This can result in the text appearing incorrectly or not at all. Aspose.PDF for .NET provides a solution to this problem by allowing you to set a default font for the document. In this example, how to set the default font using Aspose.PDF for .NET.
+Если вы работаете с PDF-документами в .NET, вы можете столкнуться с проблемами, когда шрифт, используемый в PDF-файле, недоступен в системе, где он просматривается или печатается. Это может привести к тому, что текст будет отображаться неправильно или вообще отсутствовать. Aspose.PDF для .NET предлагает решение этой проблемы, позволяя вам установить для документа шрифт по умолчанию. В этом примере показано, как установить шрифт по умолчанию с помощью Aspose.PDF для .NET.
 
-## Step 1: Set the path to the document directory
+## Шаг 1. Установите путь к каталогу документов.
 
-we need to set the path to the directory where our PDF document is located. We will store this path in a variable called "dataDir".
+нам нужно указать путь к каталогу, в котором находится наш PDF-документ. Мы сохраним этот путь в переменной с именем «dataDir».
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load the PDF document
+## Шаг 2. Загрузите PDF-документ.
 
-We'll start by loading an existing PDF document that has missing fonts. In this example, we'll assume that the PDF document is located in the directory specified by the `dataDir` variable.
+ Мы начнем с загрузки существующего PDF-документа, в котором отсутствуют шрифты. В этом примере мы предполагаем, что PDF-документ находится в каталоге, указанном параметром`dataDir` переменная.
 
 ```csharp
 string documentName = dataDir + "input.pdf";
 using (System.IO.FileStream fs = new System.IO.FileStream(documentName, System.IO.FileMode.Open))
 using (Document document = new Document(fs))
 {
-    // code goes here
+    // код идет здесь
 }
 ```
 
-## Step 3: Set the default font
+## Шаг 3. Установите шрифт по умолчанию.
 
-Next, we'll set the default font for the PDF document using the `PdfSaveOptions` class. In this example, we'll set the default font to "Arial".
+ Далее мы установим шрифт по умолчанию для PDF-документа, используя`PdfSaveOptions` сорт. В этом примере мы установим шрифт по умолчанию «Arial».
 
 ```csharp
 PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
 pdfSaveOptions.DefaultFontName = "Arial";
 ```
 
-## Step 4: Save the updated document
+## Шаг 4. Сохраните обновленный документ.
 
-Finally, we'll save the updated document to a new file. In this example, we'll save the updated document to a file named "output_out.pdf" in the same directory as the input file.
+Наконец, мы сохраним обновленный документ в новый файл. В этом примере мы сохраним обновленный документ в файле с именем «output_out.pdf» в том же каталоге, что и входной файл.
 
 ```csharp
 document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
 ```
 
-### Example Source Code for Set Default Font using Aspose.PDF for .NET
+### Пример исходного кода для установки шрифта по умолчанию с использованием Aspose.PDF для .NET
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load an existing PDF document with missing font
+// Загрузите существующий PDF-документ с отсутствующим шрифтом
 string documentName = dataDir + "input.pdf";
 string newName = "Arial";
 using (System.IO.FileStream fs = new System.IO.FileStream(documentName, System.IO.FileMode.Open))
 using (Document document = new Document(fs))
 {
 	PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
-	// Specify Default Font Name
+	// Укажите имя шрифта по умолчанию
 	pdfSaveOptions.DefaultFontName = newName;
 	document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
 }
 ```
 
-## Conclusion
+## Заключение
 
-Setting a default font in PDF documents using Aspose.PDF for .NET is a simple and effective way to ensure that the text is displayed correctly, even if the original fonts are not available. By following the step-by-step guide and using the provided C# source code, developers can easily set the default font and create PDFs that offer a consistent and reliable viewing experience across different environments. This feature is particularly useful in scenarios where the PDFs will be viewed or printed on various systems that may have different font sets installed.
+Установка шрифта по умолчанию в PDF-документах с помощью Aspose.PDF для .NET — это простой и эффективный способ обеспечить правильное отображение текста, даже если исходные шрифты недоступны. Следуя пошаговому руководству и используя предоставленный исходный код C#, разработчики могут легко установить шрифт по умолчанию и создавать PDF-файлы, обеспечивающие единообразный и надежный просмотр в различных средах. Эта функция особенно полезна в сценариях, когда PDF-файлы будут просматриваться или распечатываться в различных системах, в которых могут быть установлены разные наборы шрифтов.
 
-### FAQ's for set default font in PDF file
+### Часто задаваемые вопросы по установке шрифта по умолчанию в файле PDF
 
-#### Q: Why is setting a default font important in PDF documents?
+#### Вопрос: Почему установка шрифта по умолчанию важна в PDF-документах?
 
-A: Setting a default font in PDF documents is important because it ensures that the text will be displayed correctly even if the original fonts are not available on the system where the PDF is being viewed or printed. It helps prevent issues like missing or garbled text, ensuring a consistent and reliable viewing experience.
+О: Установка шрифта по умолчанию в PDF-документах важна, поскольку она гарантирует, что текст будет отображаться правильно, даже если исходные шрифты недоступны в системе, где PDF-файл просматривается или печатается. Это помогает предотвратить такие проблемы, как отсутствие или искажение текста, обеспечивая единообразие и надежность просмотра.
 
-#### Q: Can I choose any font as the default font using Aspose.PDF for .NET?
+#### Вопрос: Могу ли я выбрать любой шрифт в качестве шрифта по умолчанию, используя Aspose.PDF для .NET?
 
-A: Yes, you can choose any font that is available on the system as the default font using Aspose.PDF for .NET. Simply specify the name of the font in the `DefaultFontName` property of the `PdfSaveOptions` class.
+ О: Да, вы можете выбрать любой шрифт, доступный в системе, в качестве шрифта по умолчанию, используя Aspose.PDF для .NET. Просто укажите название шрифта в`DefaultFontName` собственность`PdfSaveOptions` сорт.
 
-#### Q: What happens if the specified default font is not available on the system?
+#### Вопрос: Что произойдет, если указанный шрифт по умолчанию недоступен в системе?
 
-A: If the specified default font is not available on the system, the PDF viewer will use a fallback font to display the text. It is advisable to choose a commonly available font like Arial or Times New Roman to ensure compatibility across different systems.
+О: Если указанный шрифт по умолчанию недоступен в системе, программа просмотра PDF будет использовать резервный шрифт для отображения текста. Целесообразно выбрать общедоступный шрифт, например Arial или Times New Roman, чтобы обеспечить совместимость с различными системами.

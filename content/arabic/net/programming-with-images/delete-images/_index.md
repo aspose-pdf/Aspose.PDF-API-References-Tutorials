@@ -1,96 +1,96 @@
 ---
-title: Delete Images From PDF File
-linktitle: Delete Images From PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily delete images from PDF file with Aspose.PDF for .NET.
+title: حذف الصور من ملف PDF
+linktitle: حذف الصور من ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: احذف الصور بسهولة من ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 110
 url: /ar/net/programming-with-images/delete-images/
 ---
-This guide will take you step by step how to delete images from PDF file using Aspose.PDF for .NET. Make sure you have already set up your environment and follow the steps below:
+سيأخذك هذا الدليل خطوة بخطوة حول كيفية حذف الصور من ملف PDF باستخدام Aspose.PDF لـ .NET. تأكد من أنك قمت بالفعل بإعداد بيئتك واتبع الخطوات التالية:
 
-## Step 1: Define the document directory
+## الخطوة 1: تحديد دليل المستند
 
-Before you start, make sure you set the correct directory for the documents. Replace `"YOUR DOCUMENT DIRECTORY"` in the code with the path to the directory where your PDF document is located.
+ قبل البدء، تأكد من تعيين الدليل الصحيح للمستندات. يستبدل`"YOUR DOCUMENT DIRECTORY"` في الكود الذي يحتوي على المسار إلى الدليل الذي يوجد به مستند PDF الخاص بك.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Open the PDF document
+## الخطوة 2: افتح مستند PDF
 
-In this step, we will open the PDF document using the `Document` class of Aspose.PDF. Use the `Document` constructor and pass the path to the PDF document.
+في هذه الخطوة، سنقوم بفتح مستند PDF باستخدام الملف`Document` فئة Aspose.PDF. استخدم ال`Document` منشئ وتمرير المسار إلى وثيقة PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "DeleteImages.pdf");
 
 ```
 
-## Step 3: Delete a specific image
+## الخطوة 3: حذف صورة معينة
 
-In this step, we are going to delete a specific image from a particular page. Use the `Delete` method of the page resource `Images` object to delete the image. In the example below, we delete the image with index 1 from the first page.
+ في هذه الخطوة، سنقوم بحذف صورة معينة من صفحة معينة. استخدم ال`Delete` طريقة مورد الصفحة`Images` كائن لحذف الصورة. في المثال أدناه، نقوم بحذف الصورة ذات الفهرس 1 من الصفحة الأولى.
 
 ```csharp
 pdfDocument.Pages[1].Resources.Images.Delete(1);
 ```
 
-## Step 4: Save the updated PDF file
+## الخطوة 4: احفظ ملف PDF المحدث
 
-Save the updated PDF file using the `Save` method of the `pdfDocument` object. Specify the output path for the PDF file.
+ احفظ ملف PDF المحدث باستخدام ملف`Save` طريقة`pdfDocument` هدف. حدد مسار الإخراج لملف PDF.
 
 ```csharp
 dataDir = dataDir + "DeleteImages_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Delete Images using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لحذف الصور باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir+ "DeleteImages.pdf");
-// Delete a particular image
+// حذف صورة معينة
 pdfDocument.Pages[1].Resources.Images.Delete(1);
 dataDir = dataDir + "DeleteImages_out.pdf";
-// Save updated PDF file
+// حفظ ملف PDF المحدث
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nImages deleted successfully.\nFile saved at " + dataDir); 
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You have successfully deleted images from a PDF file using Aspose.PDF for .NET. The updated PDF file is saved in the specified directory. You can now use this PDF file without the deleted images.
+تهنئة ! لقد قمت بحذف الصور من ملف PDF بنجاح باستخدام Aspose.PDF لـ .NET. يتم حفظ ملف PDF المحدث في الدليل المحدد. يمكنك الآن استخدام ملف PDF هذا بدون الصور المحذوفة.
 
-### FAQ's for delete images from PDF file
+### الأسئلة الشائعة حول حذف الصور من ملف PDF
 
-#### Q: What is the purpose of deleting images from a PDF file using Aspose.PDF for .NET?
+#### س: ما هو الغرض من حذف الصور من ملف PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: Deleting images from a PDF file can help you remove specific visual content from the document, whether for editing, redaction, or other purposes.
+ج: يمكن أن يساعدك حذف الصور من ملف PDF على إزالة محتوى مرئي محدد من المستند، سواء للتحرير أو التنقيح أو لأغراض أخرى.
 
-#### Q: How does Aspose.PDF for .NET assist in deleting images from a PDF document?
+#### س: كيف يساعد Aspose.PDF for .NET في حذف الصور من مستند PDF؟
 
-A: Aspose.PDF for .NET provides a step-by-step process to open a PDF document, identify and delete specific images from it, and save the modified PDF document.
+ج: يوفر Aspose.PDF for .NET عملية خطوة بخطوة لفتح مستند PDF، وتحديد وحذف صور معينة منه، وحفظ مستند PDF المعدل.
 
-#### Q: Why is it important to define the document directory before starting the deletion of images?
+#### س: لماذا من المهم تحديد دليل المستندات قبل البدء في حذف الصور؟
 
-A: Defining the document directory ensures that the PDF document is correctly located, and the modified PDF file is saved in the desired output path.
+ج: يضمن تحديد دليل المستند تحديد موقع مستند PDF بشكل صحيح، وحفظ ملف PDF المعدل في مسار الإخراج المطلوب.
 
-#### Q: How does the `Document` class in Aspose.PDF for .NET help in deleting images from a PDF file?
+####  س: كيف`Document` class in Aspose.PDF for .NET help in deleting images from a PDF file?
 
-A: The `Document` class allows you to open and manipulate PDF documents. In this case, it is used to load the PDF file from which images will be deleted.
+ ج: ال`Document`يتيح لك الفصل فتح مستندات PDF ومعالجتها. وفي هذه الحالة، يتم استخدامه لتحميل ملف PDF الذي سيتم حذف الصور منه.
 
-#### Q: How do I select a specific image to delete from the PDF document?
+#### س: كيف يمكنني تحديد صورة معينة لحذفها من مستند PDF؟
 
-A: You can use the `Delete` method of the `Images` object within the `Resources` of a particular page to delete a specific image by its index.
+ج: يمكنك استخدام`Delete` طريقة`Images` الكائن داخل`Resources` لصفحة معينة لحذف صورة معينة من خلال فهرسها.
 
-#### Q: Can I delete images from any page in the PDF document?
+#### س: هل يمكنني حذف الصور من أي صفحة في مستند PDF؟
 
-A: Yes, you can delete images from any page in the PDF document by specifying the desired page index and the index of the image to be deleted.
+ج: نعم، يمكنك حذف الصور من أي صفحة في مستند PDF عن طريق تحديد فهرس الصفحة المطلوب وفهرس الصورة المراد حذفها.
 
-#### Q: Is it possible to delete multiple images from different pages in a single process?
+#### س: هل من الممكن حذف صور متعددة من صفحات مختلفة في عملية واحدة؟
 
-A: Yes, you can use the `Delete` method on multiple pages to delete images from different pages in the same process.
+ ج: نعم، يمكنك استخدام`Delete` طريقة على صفحات متعددة لحذف الصور من صفحات مختلفة في نفس العملية.
 
-#### Q: What happens to the layout and formatting of the PDF document after images are deleted?
+#### س: ماذا يحدث لتخطيط وتنسيق مستند PDF بعد حذف الصور؟
 
-A: Deleting images may affect the layout and formatting of the PDF document, especially if the deleted images were part of the content layout.
+ج: قد يؤثر حذف الصور على تخطيط مستند PDF وتنسيقه، خاصة إذا كانت الصور المحذوفة جزءًا من تخطيط المحتوى.

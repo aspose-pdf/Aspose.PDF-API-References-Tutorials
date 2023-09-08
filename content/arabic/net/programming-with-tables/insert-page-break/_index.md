@@ -1,19 +1,19 @@
 ---
-title: Insert Page Break In PDF File
-linktitle: Insert Page Break In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to insert a page break in PDF file using Aspose.PDF for .NET.
+title: إدراج فاصل الصفحات في ملف PDF
+linktitle: إدراج فاصل الصفحات في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إدراج فاصل صفحات في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 110
 url: /ar/net/programming-with-tables/insert-page-break/
 ---
-In this tutorial, we will learn how to insert a page break in PDF file using Aspose.PDF for .NET. We will explain the source code in C# step by step. At the end of this tutorial, you will know how to add a page break after a certain number of lines in a table of a PDF document. Let's start!
+في هذا البرنامج التعليمي، سوف نتعلم كيفية إدراج فاصل صفحات في ملف PDF باستخدام Aspose.PDF لـ .NET. سنشرح الكود المصدري في لغة C# خطوة بخطوة. في نهاية هذا البرنامج التعليمي، ستعرف كيفية إضافة فاصل صفحات بعد عدد معين من الأسطر في جدول مستند PDF. لنبدأ!
 
-## Step 1: Setting up the environment
-Make sure you have configured your C# development environment with Aspose.PDF for .NET. Add the reference to the library and import the necessary namespaces.
+## الخطوة 1: تهيئة البيئة
+تأكد من أنك قمت بتكوين بيئة تطوير C# الخاصة بك باستخدام Aspose.PDF لـ .NET. أضف المرجع إلى المكتبة واستورد مساحات الأسماء الضرورية.
 
-## Step 2: Creating the Document and Table
-We create a new Document instance and add a page to this document. Next, we create a Table instance to represent our table in the PDF document. We also define the border styles for the table.
+## الخطوة 2: إنشاء المستند والجدول
+نقوم بإنشاء نسخة مستند جديدة ونضيف صفحة إلى هذا المستند. بعد ذلك، نقوم بإنشاء مثيل جدول لتمثيل جدولنا في مستند PDF. نحدد أيضًا أنماط الحدود للجدول.
 
 ```csharp
 Document doc = new Document();
@@ -25,8 +25,8 @@ tab.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Asp
 tab. ColumnWidths = "100 100";
 ```
 
-## Step 3: Add rows to table
-We use a loop to add 200 rows to the array. For each row, we create an instance of Row and add two cells with text content.
+## الخطوة 3: إضافة صفوف إلى الجدول
+نستخدم حلقة لإضافة 200 صف إلى المصفوفة. لكل صف، نقوم بإنشاء مثيل للصف وإضافة خليتين بمحتوى نصي.
 
 ```csharp
 for (int counter = 0; counter <= 200; counter++)
@@ -42,45 +42,45 @@ for (int counter = 0; counter <= 200; counter++)
      cell2.Paragraphs.Add(new TextFragment("Cell " + counter + ", 1"));
      row. Cells. Add(cell2);
     
-     // When 10 lines are added, we insert a new page break
+     // عند إضافة 10 أسطر، نقوم بإدراج فاصل صفحة جديد
      if (counter % 10 == 0 && counter != 0)
          row. IsInNewPage = true;
 }
 ```
 
-## Step 4: Adding the table to the document
-We add the table to the paragraphs collection of the document page.
+## الخطوة 4: إضافة الجدول إلى المستند
+نضيف الجدول إلى مجموعة الفقرات بصفحة الوثيقة.
 
 ```csharp
 doc.Pages[1].Paragraphs.Add(tab);
 ```
 
-## Step 5: Save the document
-We save the PDF document with the page break inserted.
+## الخطوة 5: احفظ المستند
+نقوم بحفظ مستند PDF مع إدراج فاصل الصفحات.
 
 ```csharp
 doc.Save(dataDir + "InsertPageBreak_out.pdf");
 ```
 
-### Example source code for Insert Page Break using Aspose.PDF for .NET
+### مثال على التعليمات البرمجية المصدر لإدراج فاصل الصفحات باستخدام Aspose.PDF لـ .NET
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate Document instance
+// إنشاء مثيل للمستند
 Document doc = new Document();
-// Add page to pages collection of PDF file
+// إضافة صفحة إلى مجموعة الصفحات من ملف PDF
 doc.Pages.Add();
-// Create table instance
+// إنشاء مثيل الجدول
 Aspose.Pdf.Table tab = new Aspose.Pdf.Table();
-// Set border style for table
+// تعيين نمط الحدود للجدول
 tab.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Aspose.Pdf.Color.Red);
-// Set default border style for table with border color as Red
+// قم بتعيين نمط الحدود الافتراضي للجدول بلون الحدود باللون الأحمر
 tab.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Aspose.Pdf.Color.Red);
-// Specify table columsn widht
+// تحديد عرض أعمدة الجدول
 tab.ColumnWidths = "100 100";
-// Create a loop to add 200 rows for table
+// قم بإنشاء حلقة لإضافة 200 صف للجدول
 for (int counter = 0; counter <= 200; counter++)
 {
 	Aspose.Pdf.Row row = new Aspose.Pdf.Row();
@@ -90,55 +90,55 @@ for (int counter = 0; counter <= 200; counter++)
 	row.Cells.Add(cell1); Aspose.Pdf.Cell cell2 = new Aspose.Pdf.Cell();
 	cell2.Paragraphs.Add(new TextFragment("Cell " + counter + ", 1"));
 	row.Cells.Add(cell2);
-	// When 10 rows are added, render new row in new page
+	// عند إضافة 10 صفوف، قم بعرض صف جديد في صفحة جديدة
 	if (counter % 10 == 0 && counter != 0) row.IsInNewPage = true;
 }
-// Add table to paragraphs collection of PDF file
+// إضافة جدول إلى مجموعة الفقرات من ملف PDF
 doc.Pages[1].Paragraphs.Add(tab);
 
 dataDir = dataDir + "InsertPageBreak_out.pdf";
-// Save the PDF document
+// احفظ مستند PDF
 doc.Save(dataDir);
 
 Console.WriteLine("\nPage break inserted successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
-In this tutorial, we learned how to insert a page break in a PDF document using Aspose.PDF for .NET. You can use this step-by-step guide to add a page break after a certain number of lines in a table in a PDF document using C#.
+## خاتمة
+في هذا البرنامج التعليمي، تعلمنا كيفية إدراج فاصل صفحات في مستند PDF باستخدام Aspose.PDF لـ .NET. يمكنك استخدام هذا الدليل التفصيلي لإضافة فاصل صفحات بعد عدد معين من الأسطر في جدول في مستند PDF باستخدام C#.
 
-### FAQ's for insert page break in PDF file
+### الأسئلة الشائعة حول إدراج فاصل الصفحات في ملف PDF
 
-#### Q: How can I change the page size for the new pages created after the page break?
+#### س: كيف يمكنني تغيير حجم الصفحة للصفحات الجديدة التي تم إنشاؤها بعد فاصل الصفحات؟
 
-A: To change the page size for the new pages created after the page break, you can set the `PageSize` property of the `Page` object. For example, you can use the following code to set the page size to A4:
+ ج: لتغيير حجم الصفحة للصفحات الجديدة التي تم إنشاؤها بعد فاصل الصفحات، يمكنك تعيين`PageSize` ملكية`Page` هدف. على سبيل المثال، يمكنك استخدام الكود التالي لتعيين حجم الصفحة إلى A4:
 
 ```csharp
-// Set the page size to A4
+// اضبط حجم الصفحة على A4
 doc.Pages[1].SetPageSize(PageSize.A4);
 ```
 
-#### Q: Can I control the page margins for the new pages after the page break?
+#### س: هل يمكنني التحكم في هوامش الصفحة للصفحات الجديدة بعد فاصل الصفحات؟
 
-A: Yes, you can control the page margins for the new pages after the page break. Use the `Margin` property of the `Page` object to set the page margins. For example, to set all margins to 10 points, you can use the following code:
+ ج: نعم، يمكنك التحكم في هوامش الصفحة للصفحات الجديدة بعد فاصل الصفحات. استخدم ال`Margin` ملكية`Page` كائن لتعيين هوامش الصفحة. على سبيل المثال، لتعيين كافة الهوامش إلى 10 نقاط، يمكنك استخدام الكود التالي:
 
 ```csharp
-// Set all margins to 10 points
+// اضبط جميع الهوامش على 10 نقاط
 doc.Pages[1].Margin = new MarginInfo(10, 10, 10, 10);
 ```
 
-#### Q: Is it possible to add headers and footers to the new pages after the page break?
+#### س: هل من الممكن إضافة رؤوس وتذييلات للصفحات الجديدة بعد فاصل الصفحات؟
 
-A: Yes, you can add headers and footers to the new pages after the page break. Use the `Page.Header` and `Page.Footer` properties to add content to the header and footer sections of the page. For example:
+ ج: نعم، يمكنك إضافة رؤوس وتذييلات للصفحات الجديدة بعد فاصل الصفحات. استخدم ال`Page.Header` و`Page.Footer` خصائص لإضافة محتوى إلى أقسام الرأس والتذييل في الصفحة. على سبيل المثال:
 
 ```csharp
-// Add header to the new pages
+// أضف رأسًا إلى الصفحات الجديدة
 doc.Pages[1].Header = new HeaderFooter()
 {
     Margin = new MarginInfo(10, 10, 10, 10),
     Paragraphs = { new TextFragment("Header content") }
 };
 
-// Add footer to the new pages
+// إضافة تذييل إلى الصفحات الجديدة
 doc.Pages[1].Footer = new HeaderFooter()
 {
     Margin = new MarginInfo(10, 10, 10, 10),
@@ -146,10 +146,10 @@ doc.Pages[1].Footer = new HeaderFooter()
 };
 ```
 
-#### Q: Can I insert page breaks at specific locations other than after a certain number of rows?
+#### س: هل يمكنني إدراج فواصل الصفحات في مواقع محددة بخلاف عدد معين من الصفوف؟
 
-A: Yes, you can insert page breaks at specific locations other than after a certain number of rows. You can set the `IsInNewPage` property of a row to `true` to force the table to start a new page after that row.
+ ج: نعم، يمكنك إدراج فواصل الصفحات في مواقع محددة بخلاف عدد معين من الصفوف. يمكنك ضبط`IsInNewPage` خاصية صف ل`true` لإجبار الجدول على بدء صفحة جديدة بعد هذا الصف.
 
-#### Q: How can I adjust the page break behavior based on content height?
+#### س: كيف يمكنني ضبط سلوك فاصل الصفحات بناءً على ارتفاع المحتوى؟
 
-A: You can use the `IsBroken` property of the table to enable or disable automatic row breaking across pages. When set to `true`, it allows rows to break across pages based on content height.
+ج: يمكنك استخدام`IsBroken` خاصية الجدول لتمكين أو تعطيل فصل الصفوف التلقائي عبر الصفحات. عند التعيين على`true`، فهو يسمح للصفوف بالتقاطع عبر الصفحات بناءً على ارتفاع المحتوى.

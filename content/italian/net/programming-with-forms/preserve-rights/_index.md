@@ -1,34 +1,34 @@
 ---
-title: Preserve Rights
-linktitle: Preserve Rights
-second_title: Aspose.PDF for .NET API Reference
-description: Preserve form rights in your PDF documents with Aspose.PDF for .NET.
+title: Preservare i diritti
+linktitle: Preservare i diritti
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Conserva i diritti dei moduli nei tuoi documenti PDF con Aspose.PDF per .NET.
 type: docs
 weight: 210
 url: /it/net/programming-with-forms/preserve-rights/
 ---
-In this tutorial, we will show you how to preserve form rights in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+In questo tutorial, ti mostreremo come preservare i diritti del modulo in un documento PDF utilizzando Aspose.PDF per .NET. Spiegheremo il codice sorgente C# passo dopo passo per guidarti attraverso questo processo.
 
-## Step 1: Preparation
+## Passaggio 1: preparazione
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+Assicurati di aver importato le librerie necessarie e di impostare il percorso della directory dei documenti:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Open the document
+## Passaggio 2: apri il documento
 
-Open the source PDF document using a `FileStream` with read and write permission:
+ Aprire il documento PDF di origine utilizzando a`FileStream` con permesso di lettura e scrittura:
 
 ```csharp
 FileStream fs = new FileStream(dataDir + "input.pdf", FileMode.Open, FileAccess.ReadWrite);
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(fs);
 ```
 
-## Step 3: Edit Form Fields
+## Passaggio 3: modifica i campi del modulo
 
-Go through all the form fields in the document and make the necessary changes. In this example, we're changing the value of a form field that has "A1" in its name:
+Esamina tutti i campi del modulo nel documento e apporta le modifiche necessarie. In questo esempio, stiamo modificando il valore di un campo modulo che ha "A1" nel nome:
 
 ```csharp
 foreach(Field formField in pdfDocument.Form)
@@ -41,73 +41,73 @@ textBoxField.Value = "Testing";
 }
 ```
 
-## Step 4: Save the updated document
+## Passaggio 4: salva il documento aggiornato
 
-Save the modified PDF document:
+Salvare il documento PDF modificato:
 
 ```csharp
 pdfDocument.Save();
 ```
 
-## Step 5: Close the `FileStream`
+##  Passaggio 5: chiudere il`FileStream`
 
-Don't forget to close the `FileStream` object when you're done:
+ Non dimenticare di chiudere il`FileStream` obietta quando hai finito:
 
 ```csharp
 fs. Close();
 ```
 
-### Sample source code for Preserve Rights using Aspose.PDF for .NET 
+### Codice sorgente di esempio per Preserve Rights utilizzando Aspose.PDF per .NET 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Read the source PDF form with FileAccess of Read and Write.
-// We need ReadWrite permission because after modification,
-// We need to save the updated contents in same document/file.
+// Leggi il modulo PDF di origine con FileAccess di Lettura e Scrittura.
+// Abbiamo bisogno dell'autorizzazione ReadWrite perché dopo la modifica,
+// Dobbiamo salvare i contenuti aggiornati nello stesso documento/file.
 FileStream fs = new FileStream(dataDir + "input.pdf", FileMode.Open, FileAccess.ReadWrite);
-// Instantiate Document instance
+// Istanziare l'istanza del documento
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(fs);
-// Get values from all fields
+// Ottieni valori da tutti i campi
 foreach (Field formField in pdfDocument.Form)
 {
-	// If the fullname of field contains A1, perform the operation
+	// Se il nome completo del campo contiene A1, eseguire l'operazione
 	if (formField.FullName.Contains("A1"))
 	{
-		// Cast form field as TextBox
+		// Trasmetti il campo modulo come TextBox
 		TextBoxField textBoxField = formField as TextBoxField;
-		// Modify field value
+		// Modifica il valore del campo
 		textBoxField.Value = "Testing";
 	}
 }
-// Save the updated document in save FileStream
+// Salvare il documento aggiornato in Save FileStream
 pdfDocument.Save();
-// Close the File Stream object
+// Chiudere l'oggetto File Stream
 fs.Close();
 ```
 
-## Conclusion
+## Conclusione
 
-In this tutorial, we learned how to preserve the rights of a form in a PDF document using Aspose.PDF for .NET. By following these steps, you can easily access form fields and make specific changes while preserving access and write permissions.
+In questo tutorial, abbiamo imparato come preservare i diritti di un modulo in un documento PDF utilizzando Aspose.PDF per .NET. Seguendo questi passaggi, puoi accedere facilmente ai campi del modulo e apportare modifiche specifiche preservando l'accesso e le autorizzazioni di scrittura.
 
 
-### FAQ's
+### Domande frequenti
 
-#### Q: Can I preserve the rights of specific form fields without affecting others in the PDF document?
+#### D: Posso preservare i diritti di campi modulo specifici senza incidere sugli altri nel documento PDF?
 
-A: Yes, by using the `FullName` property of the form fields, you can target specific form fields for preservation while leaving others unaffected.
+ R: Sì, utilizzando il file`FullName` proprietà dei campi del modulo, è possibile scegliere come target campi modulo specifici per la conservazione lasciando inalterati gli altri.
 
-#### Q: Can I preserve the rights of a form in a password-protected PDF document?
+#### D: Posso preservare i diritti di un modulo in un documento PDF protetto da password?
 
-A: Yes, Aspose.PDF for .NET allows you to preserve the rights of a form even in password-protected PDF documents, as long as you provide the correct password to access and modify the file.
+R: Sì, Aspose.PDF per .NET ti consente di preservare i diritti di un modulo anche in documenti PDF protetti da password, purché fornisci la password corretta per accedere e modificare il file.
 
-#### Q: What happens if I attempt to modify form fields without the appropriate access rights?
+#### D: Cosa succede se provo a modificare i campi del modulo senza i diritti di accesso appropriati?
 
-A: If you attempt to modify form fields without the appropriate access rights, the changes will not be saved in the PDF document, and you may receive an exception or an error message.
+R: Se tenti di modificare i campi del modulo senza i diritti di accesso appropriati, le modifiche non verranno salvate nel documento PDF e potresti ricevere un'eccezione o un messaggio di errore.
 
-#### Q: Is Aspose.PDF for .NET compatible with all versions of .NET Framework?
+#### D: Aspose.PDF per .NET è compatibile con tutte le versioni di .NET Framework?
 
-A: Yes, Aspose.PDF for .NET is compatible with all versions of .NET Framework, including .NET Core and .NET Standard.
+R: Sì, Aspose.PDF per .NET è compatibile con tutte le versioni di .NET Framework, inclusi .NET Core e .NET Standard.
 
-#### Q: Can I preserve form rights in a PDF document programmatically in other programming languages besides C#?
+#### D: Posso preservare i diritti del modulo in un documento PDF a livello di codice in altri linguaggi di programmazione oltre a C#?
 
-A: Yes, Aspose.PDF for .NET supports various programming languages, such as VB.NET and ASP.NET, in addition to C#.
+R: Sì, Aspose.PDF per .NET supporta vari linguaggi di programmazione, come VB.NET e ASP.NET, oltre a C#.

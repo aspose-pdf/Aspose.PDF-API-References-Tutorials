@@ -1,43 +1,43 @@
 ---
-title: Get All The Attachments In PDF File
-linktitle: Get All The Attachments In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to get all attachments in PDF file with Aspose.PDF for .NET. Step-by-step guide for easy handling.
+title: Hämta alla bilagor i PDF-fil
+linktitle: Hämta alla bilagor i PDF-fil
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du får alla bilagor i PDF-fil med Aspose.PDF för .NET. Steg-för-steg-guide för enkel hantering.
 type: docs
 weight: 40
 url: /sv/net/programming-with-attachments/get-all-the-attachments/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to get all attachments in PDF file using Aspose.PDF for .NET.
+den här handledningen går vi igenom följande C#-källkod steg för steg för att få alla bilagor i PDF-fil med Aspose.PDF för .NET.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Se till att du har installerat Aspose.PDF-biblioteket och ställt in din utvecklingsmiljö innan du börjar. Har även grundläggande kunskaper i C#-programmering.
 
-### Step 1: Document Directory Setup
+### Steg 1: Installation av dokumentkatalog
 
-In the provided source code, you need to specify the directory where the PDF file is located from which you want to get the attachments. Change the "dataDir" variable to the desired directory.
+I den medföljande källkoden måste du ange katalogen där PDF-filen finns från vilken du vill hämta bilagorna. Ändra variabeln "dataDir" till önskad katalog.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### Step 2: Open the existing PDF document
+### Steg 2: Öppna det befintliga PDF-dokumentet
 
-We open the existing PDF document using the specified path.
+Vi öppnar det befintliga PDF-dokumentet med den angivna sökvägen.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
 ```
 
-### Step 3: Obtaining the Attachments Collection
+### Steg 3: Skaffa bilagasamlingen
 
-We get the collection of attachments from the document.
+Vi hämtar insamlingen av bilagor från dokumentet.
 
 ```csharp
 EmbeddedFileCollection embeddedFiles = pdfDocument.EmbeddedFiles;
 ```
 
-### Step 4: Retrieving attachments
+### Steg 4: Hämta bilagor
 
-We go through the collection to get all the attachments and display their information. We also save attachments in individual files.
+Vi går igenom samlingen för att få alla bilagor och visa deras information. Vi sparar även bilagor i enskilda filer.
 
 ```csharp
 int count = 1;
@@ -47,7 +47,7 @@ Console.WriteLine("Name: {0}", fileSpecification.Name);
 Console.WriteLine("Description: {0}", fileSpecification.Description);
 Console.WriteLine("MIME Type: {0}", fileSpecification.MIMEType);
 
-// Check if object parameters contain additional information
+// Kontrollera om objektparametrar innehåller ytterligare information
 if (fileSpecification.Params != null)
 {
 Console.WriteLine("CheckSum: {0}", fileSpecification.Params.CheckSum);
@@ -56,7 +56,7 @@ Console.WriteLine("Modified date: {0}", fileSpecification.Params.ModDate);
 Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
 }
 
-// Retrieve the attachment and save in a file
+// Hämta bilagan och spara i en fil
 byte[] fileContent = new byte[fileSpecification.Contents.Length];
 fileSpecification.Contents.Read(fileContent, 0, fileContent.Length);
 FileStream fileStream = new FileStream(dataDir + count + "_out" + ".txt", FileMode.Create);
@@ -68,27 +68,27 @@ count += 1;
 ```
 
 
-### Sample source code for Get Allthe Attachments using Aspose.PDF for .NET 
+### Exempel på källkod för Get Allthe Attachments med Aspose.PDF för .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Öppna dokumentet
 Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
-// Get embedded files collection
+// Få inbäddade filer samling
 EmbeddedFileCollection embeddedFiles = pdfDocument.EmbeddedFiles;
-// Get count of the embedded files
+// Få räkning av de inbäddade filerna
 Console.WriteLine("Total files : {0}", embeddedFiles.Count);
 int count = 1;
-// Loop through the collection to get all the attachments
+// Gå igenom samlingen för att få alla bilagor
 foreach (FileSpecification fileSpecification in embeddedFiles)
 {
 	Console.WriteLine("Name: {0}", fileSpecification.Name);
 	Console.WriteLine("Description: {0}",
 	fileSpecification.Description);
 	Console.WriteLine("Mime Type: {0}", fileSpecification.MIMEType);
-	// Check if parameter object contains the parameters
+	//Kontrollera om parameterobjektet innehåller parametrarna
 	if (fileSpecification.Params != null)
 	{
 		Console.WriteLine("CheckSum: {0}",
@@ -99,7 +99,7 @@ foreach (FileSpecification fileSpecification in embeddedFiles)
 		fileSpecification.Params.ModDate);
 		Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
 	}
-	// Get the attachment and write to file or stream
+	// Hämta bilagan och skriv till fil eller stream
 	byte[] fileContent = new byte[fileSpecification.Contents.Length];
 	fileSpecification.Contents.Read(fileContent, 0,
 	fileContent.Length);
@@ -112,44 +112,44 @@ foreach (FileSpecification fileSpecification in embeddedFiles)
 
 ```
 
-## Conclusion
+## Slutsats
 
-In this tutorial, we explained how to get all attachments from a PDF file using Aspose.PDF for .NET. You can now use this knowledge to extract and manipulate attachments from your PDF files.
+I den här handledningen förklarade vi hur man hämtar alla bilagor från en PDF-fil med Aspose.PDF för .NET. Du kan nu använda denna kunskap för att extrahera och manipulera bilagor från dina PDF-filer.
 
-## FAQ's for get all the attachments in PDF file
+## Vanliga frågor för att få alla bilagor i PDF-fil
 
-#### Q: Why would I need to retrieve all attachments from a PDF document?
+#### F: Varför skulle jag behöva hämta alla bilagor från ett PDF-dokument?
 
-A: Retrieving attachments allows you to access and manipulate additional files embedded within a PDF, which can be useful for archiving, sharing, or further processing.
+S: Genom att hämta bilagor kan du komma åt och manipulera ytterligare filer inbäddade i en PDF, vilket kan vara användbart för arkivering, delning eller vidare bearbetning.
 
-#### Q: What types of files can be attached to a PDF document?
+#### F: Vilka typer av filer kan bifogas till ett PDF-dokument?
 
-A: PDF documents can contain a wide range of attached files, including images, documents, spreadsheets, audio files, and more.
+S: PDF-dokument kan innehålla ett brett utbud av bifogade filer, inklusive bilder, dokument, kalkylblad, ljudfiler och mer.
 
-#### Q: How does this tutorial help me retrieve attachments from a PDF using Aspose.PDF for .NET?
+#### F: Hur hjälper den här handledningen mig att hämta bilagor från en PDF med Aspose.PDF för .NET?
 
-A: This tutorial provides step-by-step instructions and C# source code to access and retrieve all attachments within a PDF document.
+S: Denna handledning innehåller steg-för-steg-instruktioner och C#-källkod för att komma åt och hämta alla bilagor i ett PDF-dokument.
 
-#### Q: Can I retrieve specific attachments instead of all attachments using this tutorial?
+#### F: Kan jag hämta specifika bilagor istället för alla bilagor med den här handledningen?
 
-A: Yes, you can modify the provided code to selectively retrieve attachments based on your requirements.
+S: Ja, du kan ändra den medföljande koden för att selektivt hämta bilagor baserat på dina krav.
 
-#### Q: What information about each attachment can I obtain using this tutorial?
+#### F: Vilken information om varje bilaga kan jag få med den här handledningen?
 
-A: This tutorial demonstrates how to retrieve and display details such as the attachment's name, description, MIME type, creation date, modification date, and size.
+S: Denna handledning visar hur man hämtar och visar detaljer som bilagans namn, beskrivning, MIME-typ, skapandedatum, ändringsdatum och storlek.
 
-#### Q: How are the retrieved attachments saved using this tutorial?
+#### F: Hur sparas de hämtade bilagorna med den här handledningen?
 
-A: The tutorial guides you through saving each retrieved attachment as a separate file in the specified directory.
+S: Handledningen guidar dig genom att spara varje hämtad bilaga som en separat fil i den angivna katalogen.
 
-#### Q: Can I use this knowledge to extract attachments from password-protected PDF files?
+#### F: Kan jag använda denna kunskap för att extrahera bilagor från lösenordsskyddade PDF-filer?
 
-A: Yes, you can apply similar principles to retrieve attachments from password-protected PDF files using Aspose.PDF for .NET.
+S: Ja, du kan tillämpa liknande principer för att hämta bilagor från lösenordsskyddade PDF-filer med Aspose.PDF för .NET.
 
-#### Q: How does Aspose.PDF for .NET facilitate attachment retrieval?
+#### F: Hur underlättar Aspose.PDF för .NET hämtning av bilagor?
 
-A: Aspose.PDF for .NET provides an intuitive API that allows you to access and manipulate attachments in PDF documents easily.
+S: Aspose.PDF för .NET tillhandahåller ett intuitivt API som gör att du enkelt kan komma åt och manipulera bilagor i PDF-dokument.
 
-#### Q: Are there specific scenarios where retrieving attachments is recommended?
+#### F: Finns det specifika scenarier där det rekommenderas att hämta bilagor?
 
-A: Retrieving attachments is useful when you need to access files embedded within a PDF, such as extracting images, audio files, or additional documents.
+S: Att hämta bilagor är användbart när du behöver komma åt filer inbäddade i en PDF, som att extrahera bilder, ljudfiler eller ytterligare dokument.

@@ -1,237 +1,237 @@
 ---
-title: Export Excel Worksheet Data To Table
-linktitle: Export Excel Worksheet Data To Table
-second_title: Aspose.PDF for .NET API Reference
-description: Export data from an Excel sheet to a PDF table using Aspose.PDF for .NET.
+title: Экспорт данных листа Excel в таблицу
+linktitle: Экспорт данных листа Excel в таблицу
+second_title: Справочник по Aspose.PDF для .NET API
+description: Экспортируйте данные из листа Excel в таблицу PDF с помощью Aspose.PDF для .NET.
 type: docs
 weight: 70
 url: /ru/net/programming-with-tables/export-excel-worksheet-data-to-table/
 ---
-In this tutorial, we will learn how to export data from an Excel worksheet and create a table in a PDF document using the Aspose.PDF for .NET library. We will walk through the source code step by step and explain each section in detail. By the end of this tutorial, you will be able to generate PDF files with tables containing data from Excel worksheets. Let's get started!
+В этом уроке мы научимся экспортировать данные из листа Excel и создавать таблицу в PDF-документе с помощью библиотеки Aspose.PDF для .NET. Мы шаг за шагом пройдемся по исходному коду и подробно объясним каждый раздел. К концу этого руководства вы сможете создавать PDF-файлы с таблицами, содержащими данные из листов Excel. Давайте начнем!
 
-## Requirements
-Before we begin, make sure you have the following:
+## Требования
+Прежде чем мы начнем, убедитесь, что у вас есть следующее:
 
-- Basic knowledge of C# programming language
-- Visual Studio installed on your machine
-- Aspose.PDF for .NET library added to your project
+- Базовые знания языка программирования C#.
+- Visual Studio установлена на вашем компьютере
+- Библиотека Aspose.PDF для .NET добавлена в ваш проект.
 
-## Step 1: Setting up the Environment
-To begin, create a new C# project in Visual Studio. Add the reference to the Aspose.PDF for .NET library by right-clicking on your project in the Solution Explorer, selecting "Manage NuGet Packages," and searching for "Aspose.PDF." Install the package and you're ready to go.
+## Шаг 1: Настройка среды
+Для начала создайте новый проект C# в Visual Studio. Добавьте ссылку на библиотеку Aspose.PDF для .NET, щелкнув правой кнопкой мыши свой проект в обозревателе решений, выбрав «Управление пакетами NuGet» и выполнив поиск «Aspose.PDF». Установите пакет, и все готово.
 
-## Step 2: Loading the Excel Worksheet
-In the first step of our code, we define the path to the directory containing the Excel document. Replace "YOUR DOCUMENT DIRECTORY" with the actual directory path where your Excel file is located.
+## Шаг 2. Загрузка листа Excel
+На первом этапе нашего кода мы определяем путь к каталогу, содержащему документ Excel. Замените «ВАШ КАТАЛОГ ДОКУМЕНТОВ» фактическим путем к каталогу, в котором находится ваш файл Excel.
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 Aspose.Cells.Workbook workbook = new Aspose.Cells.Workbook(new FileStream(dataDir + "newBook1.xlsx", FileMode.Open));
 ```
 
-Here, we use the Aspose.Cells library to load the Excel workbook. Make sure to replace "newBook1.xlsx" with the name of your Excel file.
+Здесь мы используем библиотеку Aspose.Cells для загрузки книги Excel. Обязательно замените «newBook1.xlsx» именем вашего файла Excel.
 
-## Step 3: Accessing the Worksheet
-Next, we need to access the first worksheet in the Excel file. We do this using the `Worksheets` collection of the `Workbook` object.
+## Шаг 3. Доступ к рабочему листу
+ Далее нам нужно получить доступ к первому листу в файле Excel. Мы делаем это с помощью`Worksheets` коллекция`Workbook` объект.
 
 ```csharp
-// Accessing the first worksheet in the Excel file
+// Доступ к первому листу в файле Excel
 Aspose.Cells.Worksheet worksheet = workbook.Worksheets[0];
 ```
 
-If your Excel file contains multiple worksheets, you can change the index value `[0]` to access a different worksheet.
+ Если ваш файл Excel содержит несколько листов, вы можете изменить значение индекса.`[0]` для доступа к другому рабочему листу.
 
-## Step 4: Exporting Data to DataTable
-Now, we will export the contents of the Excel worksheet to a `DataTable` object. We specify the range of cells to export using the `ExportDataTable` method.
+## Шаг 4. Экспорт данных в DataTable
+ Теперь мы экспортируем содержимое листа Excel в файл.`DataTable` объект. Мы указываем диапазон ячеек для экспорта, используя`ExportDataTable` метод.
 
 ```csharp
-// Exporting the contents of 7 rows and 2 columns starting from 1st cell to DataTable
+// Экспорт содержимого 7 строк и 2 столбцов, начиная с 1-й ячейки, в DataTable.
 DataTable dataTable = worksheet.Cells.ExportDataTable(0, 0, worksheet.Cells.MaxRow + 1, worksheet.Cells.MaxColumn + 1, true);
 ```
 
-In this example, we export all rows and columns starting from the first cell (0, 0) to the last cell in the worksheet. Set the appropriate range based on your requirements.
+В этом примере мы экспортируем все строки и столбцы, начиная с первой ячейки (0, 0) до последней ячейки на листе. Установите соответствующий диапазон в соответствии с вашими требованиями.
 
-## Step 5: Creating a PDF Document
-Now, we will create a new PDF document using the Aspose.PDF library.
+## Шаг 5. Создание PDF-документа
+Теперь мы создадим новый PDF-документ, используя библиотеку Aspose.PDF.
 
 ```csharp
-// Instantiate a Document instance
+// Создать экземпляр экземпляра документа
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 ```
 
-This creates an empty PDF document where we can add content.
+При этом создается пустой PDF-документ, в который мы можем добавить контент.
 
-## Step 6: Adding a Page and Table
-To display the data in a table format, we need to add a page and a table to the PDF document.
+## Шаг 6. Добавление страницы и таблицы
+Чтобы отобразить данные в формате таблицы, нам нужно добавить страницу и таблицу в документ PDF.
 
 ```csharp
-// Create a page in the document instance
+// Создать страницу в экземпляре документа
 Aspose.Pdf.Page sec1 = pdf1.Pages.Add();
 
-// Create a Table object
+// Создайте объект таблицы
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
-// Add the Table object in the paragraphs collection of the section
+// Добавьте объект Table в коллекцию абзацев раздела.
 sec1.Paragraphs.Add(tab1);
 ```
 
-Here, we create a new page and a table object. We then add the table to the paragraphs collection of the page.
+Здесь мы создаем новую страницу и объект таблицы. Затем мы добавляем таблицу в коллекцию абзацев страницы.
 
-## Step 7: Setting Table Properties
-Before importing the data, we need to set some properties of the table, such as column widths and default cell borders.
+## Шаг 7. Настройка свойств таблицы
+Прежде чем импортировать данные, нам необходимо установить некоторые свойства таблицы, такие как ширина столбцов и границы ячеек по умолчанию.
 
 ```csharp
-// Set column widths of the table
+// Установить ширину столбцов таблицы
 tab1.ColumnWidths = "40 100 100";
 
-// Set default cell border of the table using BorderInfo object
+// Установите границу ячейки таблицы по умолчанию с помощью объекта BorderInfo
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 ```
 
-In this example, we set the column widths to 40, 100, and 100 units. Adjust the values based on your data. We also set the default cell border to display borders on all sides of each cell.
+В этом примере мы установили ширину столбца на 40, 100 и 100 единиц. Отрегулируйте значения на основе ваших данных. Мы также установили границу ячейки по умолчанию, чтобы отображать границы со всех сторон каждой ячейки.
 
-## Step 8: Importing Data to the Table
-Now, we will import the data from the `DataTable` object into the table using the `ImportDataTable` method.
+## Шаг 8: Импорт данных в таблицу
+ Теперь мы импортируем данные из`DataTable` объект в таблицу с помощью`ImportDataTable` метод.
 
 ```csharp
-// Import data into the Table object from the DataTable created above
+// Импортируйте данные в объект Table из DataTable, созданного выше.
 tab1.ImportDataTable(dataTable, true, 0, 0, dataTable.Rows.Count + 1, dataTable.Columns.Count);
 ```
 
-Here, we specify the range of rows and columns to import. In this example, we import all rows and columns from the `dataTable` object.
+ Здесь мы указываем диапазон строк и столбцов для импорта. В этом примере мы импортируем все строки и столбцы из`dataTable` объект.
 
-## Step 9: Formatting the Table
-To enhance the appearance of the table, we can apply formatting to specific cells or rows. In this step, we will format the first row and alternate rows of the table.
+## Шаг 9: Форматирование таблицы
+Чтобы улучшить внешний вид таблицы, мы можем применить форматирование к определенным ячейкам или строкам. На этом этапе мы отформатируем первую строку и дополнительные строки таблицы.
 
 ```csharp
-// Get 1st row from the table
+// Получить 1-ю строку из таблицы
 Aspose.Pdf.Row row1 = tab1.Rows[0];
 
-// Format the first row
+// Форматируем первую строку
 foreach(Aspose.Pdf.Cell curCell in row1.Cells)
 {
-     // Set the background color of the cells in the first row
-     curCell.BackgroundColor = Color.Blue;// Set the face for the cells in the first row
+     // Установите цвет фона ячеек в первой строке
+     curCell.BackgroundColor = Color.Blue;// Установите грань для ячеек в первой строке
      curCell.DefaultCellTextState.Font = Aspose.Pdf.Text.FontRepository.FindFont("Helvetica-Oblique");
     
-     // Set the font color of the cells in the first row
+     // Установите цвет шрифта ячеек в первой строке
      curCell.DefaultCellTextState.ForegroundColor = Color.Yellow;
     
-     // Set the text alignment for the cells in the first row
+     // Установите выравнивание текста для ячеек в первой строке
      curCell.DefaultCellTextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 }
 
-// Alternate row format
+// Альтернативный формат строки
 for (int All_Rows = 1; All_Rows <= dataTable.Rows.Count; All_Rows++)
 {
      foreach(Aspose.Pdf.Cell curCell in tab1.Rows[All_Rows].Cells)
      {
-         // Set the background color of the cells in alternate rows
+         // Установите цвет фона ячеек в чередующихся строках
          curCell.BackgroundColor = Color.Gray;
         
-         // Set the text color of the cells in alternate rows
+         // Установите цвет текста ячеек в чередующихся строках
          curCell.DefaultCellTextState.ForegroundColor = Color.White;
      }
 }
 ```
 
-Here, we iterate through the cells in the first row and set their background color, font face, font color, and text alignment. Then, we iterate through all cells in the alternate rows and set their background and text color.
+Здесь мы перебираем ячейки в первой строке и устанавливаем для них цвет фона, начертание шрифта, цвет шрифта и выравнивание текста. Затем мы перебираем все ячейки в альтернативных строках и устанавливаем для них цвет фона и текста.
 
-## Step 10: Saving the PDF Document
-Finally, we save the PDF document to the specified location.
+## Шаг 10: Сохранение PDF-документа
+Наконец, мы сохраняем PDF-документ в указанное место.
 
 ```csharp
-// Save the PDF
+// Сохраните PDF-файл
 pdf1.Save(dataDir + @"Exceldata_toPdf_table.pdf");
 ```
 
-Make sure to replace "YOUR DOCUMENT DIRECTORY" with the desired directory path and filename for the output PDF file.
+Обязательно замените «ВАШ КАТАЛОГ ДОКУМЕНТОВ» на желаемый путь к каталогу и имя файла для выходного PDF-файла.
 
-### Example source code for Export Excel Worksheet Data To Table using Aspose.PDF for .NET
+### Пример исходного кода для экспорта данных листа Excel в таблицу с использованием Aspose.PDF для .NET
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 Aspose.Cells.Workbook workbook = new Aspose.Cells.Workbook(new FileStream(dataDir + "newBook1.xlsx", FileMode.Open));
-// Accessing the first worksheet in the Excel file
+// Доступ к первому листу в файле Excel
 Aspose.Cells.Worksheet worksheet = workbook.Worksheets[0];
-// Exporting the contents of 7 rows and 2 columns starting from 1st cell to DataTable
+// Экспорт содержимого 7 строк и 2 столбцов, начиная с 1-й ячейки, в DataTable.
 DataTable dataTable = worksheet.Cells.ExportDataTable(0, 0, worksheet.Cells.MaxRow + 1, worksheet.Cells.MaxColumn + 1, true);
 
-// Instantiate a Document instanc
+// Создать экземпляр документа
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
-// Create a page in the document instance
+// Создать страницу в экземпляре документа
 Aspose.Pdf.Page sec1 = pdf1.Pages.Add();
 
-// Create a Table object
+// Создайте объект таблицы
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
-// Add the Table object in the paragraphs collection of the section
+// Добавьте объект Table в коллекцию абзацев раздела.
 sec1.Paragraphs.Add(tab1);
 
-// Set column widths of the table.  We need to specify the ColumnCount manually.
-// As the curent excel worksheet has three columsn, so we are specifying the same count
+// Установите ширину столбцов таблицы. Нам нужно указать ColumnCount вручную.
+// Поскольку текущий лист Excel имеет три столбца, мы указываем одинаковое количество.
 tab1.ColumnWidths = "40 100 100";
 
-// Set default cell border of the table using BorderInfo object
+// Установите границу ячейки таблицы по умолчанию с помощью объекта BorderInfo
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 
-// Import data into the Table object from the DataTable created above
+// Импортируйте данные в объект Table из DataTable, созданного выше.
 tab1.ImportDataTable(dataTable, true, 0, 0, dataTable.Rows.Count + 1, dataTable.Columns.Count);
-// Get 1st row from the table
+// Получить 1-ю строку из таблицы
 Aspose.Pdf.Row row1 = tab1.Rows[0];
 
-// Iterate through all cells in the 1st row and set their background color to blue
+// Перебрать все ячейки в первой строке и установить для них синий цвет фона.
 foreach (Aspose.Pdf.Cell curCell in row1.Cells)
 {
-	// Set the background of all the cells in 1st row of the table.
+	// Установите фон всех ячеек в 1-й строке таблицы.
 	curCell.BackgroundColor = Color.Blue;
-	// Set the font face for the cells of 1st row in the table.
+	// Установите шрифт для ячеек 1-й строки таблицы.
 	curCell.DefaultCellTextState.Font = Aspose.Pdf.Text.FontRepository.FindFont("Helvetica-Oblique");
-	// Set the font Color of all the cells in 1st row of the table.
+	// Установите цвет шрифта для всех ячеек в 1-й строке таблицы.
 	curCell.DefaultCellTextState.ForegroundColor = Color.Yellow;
-	// Set the text allignment for the cells of 1st row as Center.
+	// Установите выравнивание текста для ячеек 1-й строки по центру.
 	curCell.DefaultCellTextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 }
 
 for (int All_Rows = 1; All_Rows <= dataTable.Rows.Count; All_Rows++)
 {
-	// Iterate through all cells in the 1st row and set their background color to blue
+	// Перебрать все ячейки в первой строке и установить для них синий цвет фона.
 	foreach (Aspose.Pdf.Cell curCell in tab1.Rows[All_Rows].Cells)
 	{
-		// Set the background color of all the cells except of the 1st row.
+		// Установите цвет фона для всех ячеек, кроме первой строки.
 		curCell.BackgroundColor = Color.Gray;
-		// Set the Text color of all the cells except the 1st row.
+		// Установите цвет текста для всех ячеек, кроме первой строки.
 		curCell.DefaultCellTextState.ForegroundColor = Color.White;
 	}
 }
 
-// Save the Pdf
+// Сохраните PDF-файл
 pdf1.Save(dataDir + @"Exceldata_toPdf_table.pdf");
 ```
 
-## Conclusion
-In this tutorial, we learned how to export data from an Excel worksheet to a PDF table using the Aspose.PDF for .NET library. We covered the step-by-step process of loading the Excel worksheet, creating a PDF document, adding a table, importing data, andformatting the table. You can now generate PDF files with tables containing Excel data programmatically.
+## Заключение
+В этом уроке мы узнали, как экспортировать данные из листа Excel в таблицу PDF с помощью библиотеки Aspose.PDF для .NET. Мы рассмотрели пошаговый процесс загрузки листа Excel, создания PDF-документа, добавления таблицы, импорта данных и форматирования таблицы. Теперь вы можете программно создавать PDF-файлы с таблицами, содержащими данные Excel.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is the purpose of exporting Excel worksheet data to a PDF table?
+#### Вопрос: Какова цель экспорта данных листа Excel в таблицу PDF?
 
-A: Exporting Excel worksheet data to a PDF table allows you to present the data in a structured and organized format. It enables you to generate PDF files with tables that contain data from Excel worksheets, making it easier to share and preserve information in a portable document format.
+Ответ: Экспорт данных листа Excel в таблицу PDF позволяет представить данные в структурированном и организованном формате. Он позволяет создавать PDF-файлы с таблицами, содержащими данные из листов Excel, что упрощает обмен и сохранение информации в портативном формате документа.
 
-#### Q: Can I customize the appearance of the PDF table?
+#### Вопрос: Могу ли я настроить внешний вид таблицы PDF?
 
-A: Yes, you can customize the appearance of the PDF table using various properties provided by Aspose.PDF for .NET. In the provided C# source code, you can modify the column widths, cell borders, text alignment, font style, and more to suit your specific requirements.
+О: Да, вы можете настроить внешний вид таблицы PDF, используя различные свойства, предоставляемые Aspose.PDF для .NET. В предоставленном исходном коде C# вы можете изменить ширину столбцов, границы ячеек, выравнивание текста, стиль шрифта и многое другое в соответствии с вашими конкретными требованиями.
 
-#### Q: How do I handle Excel files with multiple worksheets?
+#### Вопрос: Как обрабатывать файлы Excel с несколькими листами?
 
-A: In the provided C# code, we accessed the first worksheet in the Excel file using the index `[0]`. If your Excel file contains multiple worksheets, you can access them by changing the index value accordingly, such as `[1]` for the second worksheet or `[2]` for the third worksheet.
+ Ответ: В предоставленном коде C# мы получили доступ к первому листу в файле Excel, используя индекс`[0]` . Если ваш файл Excel содержит несколько листов, вы можете получить к ним доступ, соответствующим образом изменив значение индекса, например:`[1]` для второго рабочего листа или`[2]` для третьего рабочего листа.
 
-#### Q: Can I apply different formatting to specific rows or cells in the PDF table?
+#### Вопрос: Могу ли я применить другое форматирование к определенным строкам или ячейкам в таблице PDF?
 
-A: Yes, you can apply different formatting to specific rows or cells in the PDF table. In the provided C# source code, we demonstrated how to format the first row and alternate rows differently by changing their background color, font style, and font color. You can apply similar formatting techniques to any specific rows or cells as needed.
+О: Да, вы можете применить различное форматирование к определенным строкам или ячейкам в таблице PDF. В предоставленном исходном коде C# мы продемонстрировали, как по-разному форматировать первую и альтернативные строки, изменяя цвет их фона, стиль и цвет шрифта. При необходимости вы можете применять аналогичные методы форматирования к любым конкретным строкам или ячейкам.
 
-#### Q: Is Aspose.PDF for .NET the only library that allows exporting Excel data to a PDF table?
+#### Вопрос: Является ли Aspose.PDF для .NET единственной библиотекой, которая позволяет экспортировать данные Excel в таблицу PDF?
 
-A: Aspose.PDF for .NET is a powerful library for working with PDF documents in .NET applications. While there might be other libraries available, Aspose.PDF for .NET offers a wide range of features and capabilities for generating, manipulating, and exporting PDF files with tables from Excel data, making it a popular choice for such tasks.
+О: Aspose.PDF for .NET — это мощная библиотека для работы с PDF-документами в .NET-приложениях. Хотя могут быть доступны и другие библиотеки, Aspose.PDF для .NET предлагает широкий спектр функций и возможностей для создания, управления и экспорта файлов PDF с таблицами из данных Excel, что делает его популярным выбором для таких задач.

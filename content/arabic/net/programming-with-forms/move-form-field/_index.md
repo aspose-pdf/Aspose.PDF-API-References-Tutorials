@@ -1,90 +1,90 @@
 ---
-title: Move Form Field
-linktitle: Move Form Field
-second_title: Aspose.PDF for .NET API Reference
-description: Easily move form fields around in your PDF documents with Aspose.PDF for .NET.
+title: نقل حقل النموذج
+linktitle: نقل حقل النموذج
+second_title: Aspose.PDF لمرجع .NET API
+description: انقل حقول النموذج بسهولة في مستندات PDF الخاصة بك باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 200
 url: /ar/net/programming-with-forms/move-form-field/
 ---
-In this tutorial, we will show you how to move a form field in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+سنوضح لك في هذا البرنامج التعليمي كيفية نقل حقل نموذج في مستند PDF باستخدام Aspose.PDF لـ .NET. سنشرح لك كود مصدر C# خطوة بخطوة لإرشادك خلال هذه العملية.
 
-## Step 1: Preparation
+## الخطوة 1: التحضير
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+تأكد من استيراد المكتبات الضرورية وتعيين المسار إلى دليل المستندات الخاص بك:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Load the document
+## الخطوة 2: قم بتحميل المستند
 
-Load the existing PDF document:
+قم بتحميل مستند PDF الموجود:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "MoveFormField.pdf");
 ```
 
-## Step 3: Get the form field
+## الخطوة 3: الحصول على حقل النموذج
 
-Get the form field you want to move:
+احصل على حقل النموذج الذي تريد نقله:
 
 ```csharp
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
 ```
 
-## Step 4: Change Field Location
+## الخطوة 4: تغيير موقع الحقل
 
-Change the location of the form field by defining a new rectangular area:
+قم بتغيير موقع حقل النموذج عن طريق تحديد منطقة مستطيلة جديدة:
 
 ```csharp
 textBoxField.Rect = new Aspose.Pdf.Rectangle(300, 400, 600, 500);
 ```
 
-## Step 5: Save the edited document
+## الخطوة 5: احفظ المستند الذي تم تحريره
 
-Save the modified PDF document:
+احفظ مستند PDF المعدل:
 
 ```csharp
 dataDir = dataDir + "MoveFormField_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Move Form Field using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لنقل حقل النموذج باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "MoveFormField.pdf");
-// Get a field
+// احصل على حقل
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
-// Modify field location
+// تعديل موقع الحقل
 textBoxField.Rect = new Aspose.Pdf.Rectangle(300, 400, 600, 500);
 dataDir = dataDir + "MoveFormField_out.pdf";
-// Save modified document
+// حفظ الوثيقة المعدلة
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nForm field moved successfully to a new location.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we learned how to move a form field in a PDF document using Aspose.PDF for .NET. By following these steps, you can easily navigate to a specific field and change its location as needed.
+في هذا البرنامج التعليمي، تعلمنا كيفية نقل حقل نموذج في مستند PDF باستخدام Aspose.PDF لـ .NET. باتباع هذه الخطوات، يمكنك التنقل بسهولة إلى حقل معين وتغيير موقعه حسب الحاجة.
 
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: Can I move multiple form fields within a single PDF document using Aspose.PDF for .NET?
+#### س: هل يمكنني نقل حقول نماذج متعددة داخل مستند PDF واحد باستخدام Aspose.PDF لـ .NET؟
 
-A: Yes, you can move multiple form fields within a single PDF document using Aspose.PDF for .NET. Simply repeat the process for each form field you want to relocate.
+ج: نعم، يمكنك نقل حقول نماذج متعددة داخل مستند PDF واحد باستخدام Aspose.PDF لـ .NET. ما عليك سوى تكرار العملية لكل حقل نموذج تريد نقله.
 
-#### Q: Will moving a form field affect its associated data or functionality?
+#### س: هل سيؤثر نقل حقل النموذج على البيانات أو الوظائف المرتبطة به؟
 
-A: No, moving a form field does not affect its associated data or functionality. The form field retains all its properties and values after being moved to a new location.
+ج: لا، لا يؤثر نقل حقل النموذج على البيانات أو الوظائف المرتبطة به. يحتفظ حقل النموذج بجميع خصائصه وقيمه بعد نقله إلى موقع جديد.
 
-#### Q: How can I determine the exact coordinates for the new location of the form field?
+#### س: كيف يمكنني تحديد الإحداثيات الدقيقة للموقع الجديد لحقل النموذج؟
 
-A: You can specify the new location using the `Aspose.Pdf.Rectangle` class, where you define the X and Y coordinates of the top-left corner and the X and Y coordinates of the bottom-right corner of the rectangular area.
+ ج: يمكنك تحديد الموقع الجديد باستخدام`Aspose.Pdf.Rectangle` فئة، حيث يمكنك تحديد إحداثيات X وY للزاوية العلوية اليسرى وإحداثيات X وY للركن الأيمن السفلي من المنطقة المستطيلة.
 
-#### Q: Is Aspose.PDF for .NET compatible with both Windows and Linux environments?
+#### س: هل يتوافق Aspose.PDF for .NET مع بيئتي Windows وLinux؟
 
-A: Yes, Aspose.PDF for .NET is compatible with both Windows and Linux environments, providing flexibility for developers to work in their preferred operating systems.
+ج: نعم، Aspose.PDF for .NET متوافق مع كل من بيئات Windows وLinux، مما يوفر المرونة للمطورين للعمل في أنظمة التشغيل المفضلة لديهم.

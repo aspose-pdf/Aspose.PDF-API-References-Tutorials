@@ -1,98 +1,98 @@
 ---
-title: Manipulate Table In PDF File
-linktitle: Manipulate Table In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily manipulate tables in PDF file with Aspose.PDF for .NET.
+title: Manipular tabla en archivo PDF
+linktitle: Manipular tabla en archivo PDF
+second_title: Aspose.PDF para referencia de API .NET
+description: Manipule fácilmente tablas en archivos PDF con Aspose.PDF para .NET.
 type: docs
 weight: 130
 url: /es/net/programming-with-tables/manipulate-table/
 ---
-In this tutorial, we will walk you through the step-by-step process of manipulating tables in PDF file using Aspose.PDF for .NET. Tables are a common element in PDF documents, and being able to modify their content programmatically can be highly beneficial in various scenarios. We will use the C# source code provided to demonstrate the process.
+En este tutorial, lo guiaremos a través del proceso paso a paso de manipular tablas en un archivo PDF usando Aspose.PDF para .NET. Las tablas son un elemento común en los documentos PDF y poder modificar su contenido mediante programación puede resultar muy beneficioso en varios escenarios. Usaremos el código fuente de C# proporcionado para demostrar el proceso.
 
-## Requirements
+## Requisitos
 
-Before we begin, make sure you have the following:
+Antes de comenzar, asegúrese de tener lo siguiente:
 
-- Visual Studio or any other C# development environment installed.
-- Aspose.PDF for .NET library added as a reference to your project.
+- Visual Studio o cualquier otro entorno de desarrollo C# instalado.
+- Se agregó la biblioteca Aspose.PDF para .NET como referencia a su proyecto.
 
-Now, let's dive into the steps required to manipulate tables in a PDF document using Aspose.PDF for .NET.
+Ahora, profundicemos en los pasos necesarios para manipular tablas en un documento PDF usando Aspose.PDF para .NET.
 
-## Step 1: Loading the PDF Document
+## Paso 1: cargar el documento PDF
 
-The first step is to load the existing PDF document into your C# application. You need to provide the path to the directory where your document is located.
+El primer paso es cargar el documento PDF existente en su aplicación C#. Debe proporcionar la ruta al directorio donde se encuentra su documento.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "input.pdf");
 ```
 
-Replace "YOUR DOCUMENT DIRECTORY" with the actual path to the directory where your PDF document is located.
+Reemplace "SU DIRECTORIO DE DOCUMENTOS" con la ruta real al directorio donde se encuentra su documento PDF.
 
-## Step 2: Finding Tables in the Document
+## Paso 2: buscar tablas en el documento
 
-To manipulate tables, we need to find them within the PDF document. Aspose.PDF for .NET provides a TableAbsorber class that allows us to extract tables from the document. We will create an instance of the TableAbsorber class and visit the desired page of the document.
+Para manipular tablas, necesitamos encontrarlas dentro del documento PDF. Aspose.PDF para .NET proporciona una clase TableAbsorber que nos permite extraer tablas del documento. Crearemos una instancia de la clase TableAbsorber y visitaremos la página deseada del documento.
 
 ```csharp
 TableAbsorber absorber = new TableAbsorber();
 absorb.Visit(pdfDocument.Pages[1]);
 ```
 
-In this example, we are visiting the first page of the document. You can change the page number as per your requirements.
+En este ejemplo, estamos visitando la primera página del documento. Puede cambiar el número de página según sus requisitos.
 
-## Step 3: Accessing Table Cells and Text Fragments
+## Paso 3: acceder a celdas de tabla y fragmentos de texto
 
-Once we have the tables, we can access their cells and text fragments for manipulation. In the provided source code, we are accessing the first table, the first cell of its first row, and the second text fragment within that cell.
+Una vez que tengamos las tablas, podremos acceder a sus celdas y fragmentos de texto para su manipulación. En el código fuente proporcionado, accedemos a la primera tabla, la primera celda de su primera fila y el segundo fragmento de texto dentro de esa celda.
 
 ```csharp
 TextFragment fragment = absorb.TableList[0].RowList[0].CellList[0].TextFragments[1];
 ```
 
-You can modify the code to target different tables, cells, or text fragments based on your specific needs.
+Puede modificar el código para apuntar a diferentes tablas, celdas o fragmentos de texto según sus necesidades específicas.
 
-## Step 4: Manipulating Table Text
+## Paso 4: Manipular el texto de la tabla
 
-With the text fragment accessed, we can now modify its content. In the given example, we are changing the text to "hi world".
+Una vez accedido al fragmento de texto, ya podemos modificar su contenido. En el ejemplo dado, cambiaremos el texto a "hola mundo".
 
 ```csharp
 fragment.Text = "hi world";
 ```
 
-Feel free to replace "hi world" with your desired text.
+No dudes en reemplazar "hola mundo" con el texto que desees.
 
-## Step 5: Saving the Modified Document
+## Paso 5: guardar el documento modificado
 
-Once the desired modifications are made, we need to save the modified PDF document.
+Una vez realizadas las modificaciones deseadas, debemos guardar el documento PDF modificado.
 
 ```csharp
 dataDir = dataDir + "ManipulateTable_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-Ensure you provide the path and filename for the modified document.
+Asegúrese de proporcionar la ruta y el nombre de archivo del documento modificado.
 
 
-### Example source code for Manipulate Table using Aspose.PDF for .NET
+### Código fuente de ejemplo para Manipulate Table usando Aspose.PDF para .NET
 
 ```csharp
 try
 {
 	
-	// The path to the documents directory.
+	// La ruta al directorio de documentos.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Load existing PDF file
+	// Cargar archivo PDF existente
 	Document pdfDocument = new Document(dataDir + "input.pdf");
-	// Create TableAbsorber object to find tables
+	// Crear un objeto TableAbsorber para buscar tablas
 	TableAbsorber absorber = new TableAbsorber();
 
-	// Visit first page with absorber
+	// Visita la primera página con absorbente
 	absorber.Visit(pdfDocument.Pages[1]);
 
-	// Get access to first table on page, their first cell and text fragments in it
+	// Obtenga acceso a la primera tabla de la página, su primera celda y fragmentos de texto en ella
 	TextFragment fragment = absorber.TableList[0].RowList[0].CellList[0].TextFragments[1];
 
-	// Change text of the first text fragment in the cell
+	// Cambiar el texto del primer fragmento de texto en la celda.
 	fragment.Text = "hi world";
 	dataDir = dataDir + "ManipulateTable_out.pdf";
 	pdfDocument.Save(dataDir);
@@ -105,28 +105,28 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Conclusión
 
-In this tutorial, we have learned how to manipulate tables in a PDF document using Aspose.PDF for .NET. By following the step-by-step guide, you can easily load a PDF document, find tables, access cells and text fragments, modify table content, and save the modified document. This approach provides flexibility and efficiency when dealing with table manipulation in PDF documents.
+En este tutorial, hemos aprendido cómo manipular tablas en un documento PDF usando Aspose.PDF para .NET. Siguiendo la guía paso a paso, puede cargar fácilmente un documento PDF, buscar tablas, acceder a celdas y fragmentos de texto, modificar el contenido de la tabla y guardar el documento modificado. Este enfoque proporciona flexibilidad y eficiencia a la hora de manipular tablas en documentos PDF.
 
-### FAQ's for manipulate table in PDF file
+### Preguntas frecuentes sobre manipular tabla en un archivo PDF
 
-#### Q: Can I manipulate tables in multi-page PDF documents?
+#### P: ¿Puedo manipular tablas en documentos PDF de varias páginas?
 
-A: Yes, you can manipulate tables in multi-page PDF documents using Aspose.PDF for .NET. In the provided example, we visited the first page of the document (`pdfDocument.Pages[1]`), but you can loop through all the pages and manipulate tables on each page as needed.
+R: Sí, puede manipular tablas en documentos PDF de varias páginas utilizando Aspose.PDF para .NET. En el ejemplo proporcionado, visitamos la primera página del documento (`pdfDocument.Pages[1]`), pero puede recorrer todas las páginas y manipular tablas en cada página según sea necesario.
 
-#### Q: How can I add new rows or columns to an existing table?
+#### P: ¿Cómo puedo agregar nuevas filas o columnas a una tabla existente?
 
-A: To add new rows or columns to an existing table, you can use the APIs provided by Aspose.PDF for .NET. You can access the `RowList` and `CellList` properties of the `TableAbsorber.TableList` to add new rows and cells programmatically. Refer to the Aspose.PDF for .NET documentation for detailed information and code examples.
+ R: Para agregar nuevas filas o columnas a una tabla existente, puede usar las API proporcionadas por Aspose.PDF para .NET. Puedes acceder al`RowList` y`CellList` propiedades de la`TableAbsorber.TableList` para agregar nuevas filas y celdas mediante programación. Consulte la documentación de Aspose.PDF para .NET para obtener información detallada y ejemplos de código.
 
-#### Q: Is it possible to remove a table from a PDF document?
+#### P: ¿Es posible eliminar una tabla de un documento PDF?
 
-A: Yes, you can remove a table from a PDF document using Aspose.PDF for .NET. To achieve this, you can remove the specific `Table` object from the `Page.Paragraphs` collection. You can identify the table to remove by using properties like `Table.NumberOfColumns`, `Table.NumberOfRows`, and other unique identifiers.
+ R: Sí, puede eliminar una tabla de un documento PDF usando Aspose.PDF para .NET. Para lograr esto, puede eliminar el específico`Table` objeto de la`Page.Paragraphs` recopilación. Puede identificar la tabla que desea eliminar utilizando propiedades como`Table.NumberOfColumns`, `Table.NumberOfRows`y otros identificadores únicos.
 
-#### Q: Can I change the formatting (font, color, alignment) of the table text?
+#### P: ¿Puedo cambiar el formato (fuente, color, alineación) del texto de la tabla?
 
-A: Yes, you can change the formatting of the table text using Aspose.PDF for .NET. You can access the `TextState` property of the `TextFragment` object to modify the font, font size, color, and alignment of the text.
+ R: Sí, puede cambiar el formato del texto de la tabla usando Aspose.PDF para .NET. Puedes acceder al`TextState` propiedad de la`TextFragment` objeto para modificar la fuente, el tamaño de fuente, el color y la alineación del texto.
 
-#### Q: Does Aspose.PDF for .NET support working with tables in PDF forms (AcroForms)?
+#### P: ¿Aspose.PDF para .NET admite el trabajo con tablas en formularios PDF (AcroForms)?
 
-A: Yes, Aspose.PDF for .NET supports working with tables in PDF forms (AcroForms). You can access and manipulate table elements in PDF forms similar to the approach demonstrated in this tutorial. Aspose.PDF for .NET provides extensive support for working with AcroForms and form fields.
+R: Sí, Aspose.PDF para .NET admite trabajar con tablas en formularios PDF (AcroForms). Puede acceder y manipular elementos de tabla en formularios PDF de forma similar al enfoque demostrado en este tutorial. Aspose.PDF para .NET proporciona un amplio soporte para trabajar con AcroForms y campos de formulario.

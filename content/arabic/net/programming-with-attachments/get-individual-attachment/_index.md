@@ -1,50 +1,50 @@
 ---
-title: Get Individual Attachment In PDF File
-linktitle: Get Individual Attachment In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to get an individual attachment in PDF file with Aspose.PDF for .NET. 
+title: احصل على مرفق فردي في ملف PDF
+linktitle: احصل على مرفق فردي في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية الحصول على مرفق فردي في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 60
 url: /ar/net/programming-with-attachments/get-individual-attachment/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to get an individual attachment of a PDF file using Aspose.PDF for .NET.
+في هذا البرنامج التعليمي، سنرشدك عبر التعليمات البرمجية المصدر لـ C# التالية خطوة بخطوة للحصول على مرفق فردي لملف PDF باستخدام Aspose.PDF لـ .NET.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+تأكد من تثبيت مكتبة Aspose.PDF وإعداد بيئة التطوير الخاصة بك قبل البدء. لديك أيضًا معرفة أساسية ببرمجة C#.
 
-### Step 1: Document Directory Setup
+### الخطوة 1: إعداد دليل المستندات
 
-In the provided source code, you need to specify the directory where the PDF file is located from which you want to get the individual attachment. Change the "dataDir" variable to the desired directory.
+في الكود المصدري المقدم، تحتاج إلى تحديد الدليل الذي يوجد به ملف PDF الذي تريد الحصول على المرفق الفردي منه. قم بتغيير المتغير "dataDir" إلى الدليل المطلوب.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### Step 2: Open the existing PDF document
+### الخطوة 2: افتح مستند PDF الموجود
 
-We open the existing PDF document using the specified path.
+نفتح مستند PDF الموجود باستخدام المسار المحدد.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetIndividualAttachment.pdf");
 ```
 
-### Step 3: Obtaining a Specific Attachment
+### الخطوة 3: الحصول على مرفق محدد
 
-We retrieve a specific attachment from the document's attachments collection. In this example, we get the first attachment using index 1.
+نقوم باسترجاع مرفق محدد من مجموعة مرفقات الوثيقة. في هذا المثال، نحصل على المرفق الأول باستخدام الفهرس 1.
 
 ```csharp
 FileSpecification fileSpecification = pdfDocument.EmbeddedFiles[1];
 ```
 
-### Step 4: Get File Properties
+### الخطوة 4: الحصول على خصائص الملف
 
-We display attachment properties such as name, description, MIME type, control hash, date created, date modified, and size.
+نعرض خصائص المرفقات مثل الاسم والوصف ونوع MIME وتجزئة التحكم وتاريخ الإنشاء وتاريخ التعديل والحجم.
 
 ```csharp
 Console.WriteLine("Name: {0}", fileSpecification.Name);
 Console.WriteLine("Description: {0}", fileSpecification.Description);
 Console.WriteLine("MIME Type: {0}", fileSpecification.MIMEType);
 
-// Check if object parameters contain additional information
+// تحقق مما إذا كانت معلمات الكائن تحتوي على معلومات إضافية
 if (fileSpecification.Params != null)
 {
 Console.WriteLine("Check Hash: {0}", fileSpecification.Params.CheckSum);
@@ -54,9 +54,9 @@ Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
 }
 ```
 
-### Step 5: Retrieve attachment and save to file
+### الخطوة 5: استرجاع المرفق وحفظه في الملف
 
-We retrieve the content of the attachment and save it to a text file. In this example, the file is saved with the name "test_out.txt".
+نقوم باسترجاع محتوى المرفق وحفظه في ملف نصي. في هذا المثال، يتم حفظ الملف بالاسم "test_out.txt".
 
 ```csharp
 byte[] fileContent = new byte[fileSpecification.Contents.Length];
@@ -66,21 +66,21 @@ fileStream.Write(fileContent, 0, fileContent.Length);
 fileStream.Close();
 ```
 
-### Sample source code for Get Individual Attachment using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر للحصول على مرفق فردي باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "GetIndividualAttachment.pdf");
-// Get particular embedded file
+// احصل على ملف مضمن معين
 FileSpecification fileSpecification = pdfDocument.EmbeddedFiles[1];
-// Get the file properties
+// الحصول على خصائص الملف
 Console.WriteLine("Name: {0}", fileSpecification.Name);
 Console.WriteLine("Description: {0}", fileSpecification.Description);
 Console.WriteLine("Mime Type: {0}", fileSpecification.MIMEType);
-// Check if parameter object contains the parameters
+//تحقق مما إذا كان كائن المعلمة يحتوي على المعلمات
 if (fileSpecification.Params != null)
 {
 	Console.WriteLine("CheckSum: {0}",
@@ -91,7 +91,7 @@ if (fileSpecification.Params != null)
 	fileSpecification.Params.ModDate);
 	Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
 }
-// Get the attachment and write to file or stream
+// احصل على المرفق واكتبه في ملف أو دفق
 byte[] fileContent = new byte[fileSpecification.Contents.Length];
 fileSpecification.Contents.Read(fileContent, 0, fileContent.Length);
 FileStream fileStream = new FileStream(dataDir + "test_out" + ".txt", FileMode.Create);
@@ -100,44 +100,44 @@ fileStream.Close();
 
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we explained how to get an individual attachment from a PDF file using Aspose.PDF for .NET. You can now use this knowledge to extract and save attachments from your PDF files.
+في هذا البرنامج التعليمي، شرحنا كيفية الحصول على مرفق فردي من ملف PDF باستخدام Aspose.PDF لـ .NET. يمكنك الآن استخدام هذه المعرفة لاستخراج المرفقات وحفظها من ملفات PDF الخاصة بك.
 
-### FAQs for get individual attachment in PDF file
+### الأسئلة الشائعة للحصول على مرفق فردي في ملف PDF
 
-#### Q: What is the purpose of getting an individual attachment from a PDF document?
+#### س: ما هو الغرض من الحصول على مرفق فردي من مستند PDF؟
 
-A: Getting an individual attachment allows you to extract and save a specific embedded file within a PDF, which can be useful for further analysis or manipulation.
+ج: الحصول على مرفق فردي يسمح لك باستخراج وحفظ ملف مضمن محدد داخل ملف PDF، وهو ما يمكن أن يكون مفيدًا لمزيد من التحليل أو المعالجة.
 
-#### Q: How can I benefit from this tutorial in my PDF-related tasks?
+#### س: كيف يمكنني الاستفادة من هذا البرنامج التعليمي في مهامي المتعلقة بملف PDF؟
 
-A: This tutorial provides step-by-step instructions and C# source code to retrieve and save a particular attachment from a PDF document using Aspose.PDF for .NET.
+ج: يوفر هذا البرنامج التعليمي إرشادات خطوة بخطوة وكود مصدر C# لاسترداد مرفق معين وحفظه من مستند PDF باستخدام Aspose.PDF لـ .NET.
 
-#### Q: What attachment properties can I access using this tutorial?
+#### س: ما هي خصائص المرفقات التي يمكنني الوصول إليها باستخدام هذا البرنامج التعليمي؟
 
-A: You can access attachment properties such as name, description, MIME type, control hash, creation date, modification date, and size of the specific attachment.
+ج: يمكنك الوصول إلى خصائص المرفق مثل الاسم والوصف ونوع MIME وتجزئة التحكم وتاريخ الإنشاء وتاريخ التعديل وحجم المرفق المحدد.
 
-#### Q: Can I modify the code to get attachments other than the first attachment?
+#### س: هل يمكنني تعديل الكود للحصول على مرفقات غير المرفق الأول؟
 
-A: Absolutely, you can adjust the index (e.g., `pdfDocument.EmbeddedFiles[1]`) to retrieve attachments at different indices within the PDF.
+ ج: بالتأكيد، يمكنك ضبط الفهرس (على سبيل المثال،`pdfDocument.EmbeddedFiles[1]`) لاسترداد المرفقات بمؤشرات مختلفة داخل ملف PDF.
 
-#### Q: How do I save the retrieved attachment to a file?
+#### س: كيف يمكنني حفظ المرفق المسترد في ملف؟
 
-A: This tutorial provides code to retrieve the attachment's content and save it to a text file with a specified name.
+ج: يوفر هذا البرنامج التعليمي رمزًا لاسترداد محتوى المرفق وحفظه في ملف نصي باسم محدد.
 
-#### Q: What is the significance of the "Check Hash" property in attachment information?
+#### س: ما أهمية خاصية "التحقق من التجزئة" في المعلومات المرفقة؟
 
-A: The "Check Hash" property represents the control hash value of the attachment, which can be used to verify the integrity of the attachment.
+ج: تمثل خاصية "التحقق من التجزئة" قيمة تجزئة التحكم الخاصة بالمرفق، والتي يمكن استخدامها للتحقق من سلامة المرفق.
 
-#### Q: Can I extend this knowledge to extract attachments with specific criteria, such as file type?
+#### س: هل يمكنني توسيع هذه المعرفة لاستخراج المرفقات بمعايير محددة، مثل نوع الملف؟
 
-A: Yes, you can enhance the code to filter attachments based on specific criteria such as file type or other properties.
+ج: نعم، يمكنك تحسين التعليمات البرمجية لتصفية المرفقات بناءً على معايير محددة مثل نوع الملف أو خصائص أخرى.
 
-#### Q: How does Aspose.PDF for .NET simplify the process of extracting individual attachments?
+#### س: كيف يعمل Aspose.PDF for .NET على تبسيط عملية استخراج المرفقات الفردية؟
 
-A: Aspose.PDF for .NET provides a user-friendly API that facilitates the extraction and manipulation of attachments within PDF documents.
+ج: يوفر Aspose.PDF for .NET واجهة برمجة تطبيقات سهلة الاستخدام تسهل استخراج المرفقات ومعالجتها داخل مستندات PDF.
 
-#### Q: Is this tutorial relevant for password-protected PDF files as well?
+#### س: هل هذا البرنامج التعليمي مناسب لملفات PDF المحمية بكلمة مرور أيضًا؟
 
-A: Yes, you can adapt similar techniques to retrieve individual attachments from password-protected PDF files using Aspose.PDF for .NET.
+ج: نعم، يمكنك تكييف تقنيات مماثلة لاسترداد المرفقات الفردية من ملفات PDF المحمية بكلمة مرور باستخدام Aspose.PDF لـ .NET.

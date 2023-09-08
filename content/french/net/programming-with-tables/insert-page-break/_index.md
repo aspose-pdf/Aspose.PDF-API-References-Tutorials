@@ -1,19 +1,19 @@
 ---
-title: Insert Page Break In PDF File
-linktitle: Insert Page Break In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to insert a page break in PDF file using Aspose.PDF for .NET.
+title: Insérer un saut de page dans un fichier PDF
+linktitle: Insérer un saut de page dans un fichier PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment insérer un saut de page dans un fichier PDF à l'aide d'Aspose.PDF pour .NET.
 type: docs
 weight: 110
 url: /fr/net/programming-with-tables/insert-page-break/
 ---
-In this tutorial, we will learn how to insert a page break in PDF file using Aspose.PDF for .NET. We will explain the source code in C# step by step. At the end of this tutorial, you will know how to add a page break after a certain number of lines in a table of a PDF document. Let's start!
+Dans ce didacticiel, nous apprendrons comment insérer un saut de page dans un fichier PDF à l'aide d'Aspose.PDF pour .NET. Nous expliquerons le code source en C# étape par étape. A la fin de ce tutoriel, vous saurez comment ajouter un saut de page après un certain nombre de lignes dans un tableau d'un document PDF. Commençons!
 
-## Step 1: Setting up the environment
-Make sure you have configured your C# development environment with Aspose.PDF for .NET. Add the reference to the library and import the necessary namespaces.
+## Étape 1 : Configuration de l'environnement
+Assurez-vous d'avoir configuré votre environnement de développement C# avec Aspose.PDF pour .NET. Ajoutez la référence à la bibliothèque et importez les espaces de noms nécessaires.
 
-## Step 2: Creating the Document and Table
-We create a new Document instance and add a page to this document. Next, we create a Table instance to represent our table in the PDF document. We also define the border styles for the table.
+## Étape 2 : Création du document et du tableau
+Nous créons une nouvelle instance de document et ajoutons une page à ce document. Ensuite, nous créons une instance Table pour représenter notre table dans le document PDF. Nous définissons également les styles de bordure du tableau.
 
 ```csharp
 Document doc = new Document();
@@ -25,8 +25,8 @@ tab.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Asp
 tab. ColumnWidths = "100 100";
 ```
 
-## Step 3: Add rows to table
-We use a loop to add 200 rows to the array. For each row, we create an instance of Row and add two cells with text content.
+## Étape 3 : Ajouter des lignes au tableau
+Nous utilisons une boucle pour ajouter 200 lignes au tableau. Pour chaque ligne, nous créons une instance de Row et ajoutons deux cellules avec du contenu textuel.
 
 ```csharp
 for (int counter = 0; counter <= 200; counter++)
@@ -42,45 +42,45 @@ for (int counter = 0; counter <= 200; counter++)
      cell2.Paragraphs.Add(new TextFragment("Cell " + counter + ", 1"));
      row. Cells. Add(cell2);
     
-     // When 10 lines are added, we insert a new page break
+     // Lorsque 10 lignes sont ajoutées, nous insérons un nouveau saut de page
      if (counter % 10 == 0 && counter != 0)
          row. IsInNewPage = true;
 }
 ```
 
-## Step 4: Adding the table to the document
-We add the table to the paragraphs collection of the document page.
+## Étape 4 : Ajout du tableau au document
+Nous ajoutons le tableau à la collection de paragraphes de la page du document.
 
 ```csharp
 doc.Pages[1].Paragraphs.Add(tab);
 ```
 
-## Step 5: Save the document
-We save the PDF document with the page break inserted.
+## Étape 5 : Enregistrez le document
+Nous enregistrons le document PDF avec le saut de page inséré.
 
 ```csharp
 doc.Save(dataDir + "InsertPageBreak_out.pdf");
 ```
 
-### Example source code for Insert Page Break using Aspose.PDF for .NET
+### Exemple de code source pour insérer un saut de page à l'aide d'Aspose.PDF pour .NET
 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate Document instance
+// Instancier une instance de document
 Document doc = new Document();
-// Add page to pages collection of PDF file
+// Ajouter une page à la collection de pages du fichier PDF
 doc.Pages.Add();
-// Create table instance
+// Créer une instance de table
 Aspose.Pdf.Table tab = new Aspose.Pdf.Table();
-// Set border style for table
+// Définir le style de bordure pour le tableau
 tab.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Aspose.Pdf.Color.Red);
-// Set default border style for table with border color as Red
+// Définir le style de bordure par défaut pour le tableau avec la couleur de bordure rouge
 tab.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Aspose.Pdf.Color.Red);
-// Specify table columsn widht
+// Spécifier la largeur des colonnes du tableau
 tab.ColumnWidths = "100 100";
-// Create a loop to add 200 rows for table
+// Créez une boucle pour ajouter 200 lignes pour le tableau
 for (int counter = 0; counter <= 200; counter++)
 {
 	Aspose.Pdf.Row row = new Aspose.Pdf.Row();
@@ -90,55 +90,55 @@ for (int counter = 0; counter <= 200; counter++)
 	row.Cells.Add(cell1); Aspose.Pdf.Cell cell2 = new Aspose.Pdf.Cell();
 	cell2.Paragraphs.Add(new TextFragment("Cell " + counter + ", 1"));
 	row.Cells.Add(cell2);
-	// When 10 rows are added, render new row in new page
+	// Lorsque 10 lignes sont ajoutées, affichez une nouvelle ligne dans une nouvelle page
 	if (counter % 10 == 0 && counter != 0) row.IsInNewPage = true;
 }
-// Add table to paragraphs collection of PDF file
+// Ajouter un tableau à la collection de paragraphes du fichier PDF
 doc.Pages[1].Paragraphs.Add(tab);
 
 dataDir = dataDir + "InsertPageBreak_out.pdf";
-// Save the PDF document
+// Enregistrez le document PDF
 doc.Save(dataDir);
 
 Console.WriteLine("\nPage break inserted successfully.\nFile saved at " + dataDir);
 ```
 
 ## Conclusion
-In this tutorial, we learned how to insert a page break in a PDF document using Aspose.PDF for .NET. You can use this step-by-step guide to add a page break after a certain number of lines in a table in a PDF document using C#.
+Dans ce didacticiel, nous avons appris à insérer un saut de page dans un document PDF à l'aide d'Aspose.PDF pour .NET. Vous pouvez utiliser ce guide étape par étape pour ajouter un saut de page après un certain nombre de lignes dans un tableau d'un document PDF en utilisant C#.
 
-### FAQ's for insert page break in PDF file
+### FAQ pour insérer un saut de page dans un fichier PDF
 
-#### Q: How can I change the page size for the new pages created after the page break?
+#### Q : Comment puis-je modifier la taille des nouvelles pages créées après le saut de page ?
 
-A: To change the page size for the new pages created after the page break, you can set the `PageSize` property of the `Page` object. For example, you can use the following code to set the page size to A4:
+ R : Pour modifier la taille des nouvelles pages créées après le saut de page, vous pouvez définir la taille`PageSize` propriété du`Page` objet. Par exemple, vous pouvez utiliser le code suivant pour définir la taille de la page sur A4 :
 
 ```csharp
-// Set the page size to A4
+// Définir la taille de la page sur A4
 doc.Pages[1].SetPageSize(PageSize.A4);
 ```
 
-#### Q: Can I control the page margins for the new pages after the page break?
+#### Q : Puis-je contrôler les marges des nouvelles pages après le saut de page ?
 
-A: Yes, you can control the page margins for the new pages after the page break. Use the `Margin` property of the `Page` object to set the page margins. For example, to set all margins to 10 points, you can use the following code:
+ R : Oui, vous pouvez contrôler les marges des nouvelles pages après le saut de page. Utilisez le`Margin` propriété du`Page` objet pour définir les marges de la page. Par exemple, pour définir toutes les marges à 10 points, vous pouvez utiliser le code suivant :
 
 ```csharp
-// Set all margins to 10 points
+// Fixez toutes les marges à 10 points
 doc.Pages[1].Margin = new MarginInfo(10, 10, 10, 10);
 ```
 
-#### Q: Is it possible to add headers and footers to the new pages after the page break?
+#### Q : Est-il possible d'ajouter des en-têtes et des pieds de page aux nouvelles pages après le saut de page ?
 
-A: Yes, you can add headers and footers to the new pages after the page break. Use the `Page.Header` and `Page.Footer` properties to add content to the header and footer sections of the page. For example:
+ R : Oui, vous pouvez ajouter des en-têtes et des pieds de page aux nouvelles pages après le saut de page. Utilisez le`Page.Header` et`Page.Footer` propriétés pour ajouter du contenu aux sections d’en-tête et de pied de page de la page. Par exemple:
 
 ```csharp
-// Add header to the new pages
+// Ajouter un en-tête aux nouvelles pages
 doc.Pages[1].Header = new HeaderFooter()
 {
     Margin = new MarginInfo(10, 10, 10, 10),
     Paragraphs = { new TextFragment("Header content") }
 };
 
-// Add footer to the new pages
+// Ajouter un pied de page aux nouvelles pages
 doc.Pages[1].Footer = new HeaderFooter()
 {
     Margin = new MarginInfo(10, 10, 10, 10),
@@ -146,10 +146,10 @@ doc.Pages[1].Footer = new HeaderFooter()
 };
 ```
 
-#### Q: Can I insert page breaks at specific locations other than after a certain number of rows?
+#### Q : Puis-je insérer des sauts de page à des emplacements spécifiques autres qu'après un certain nombre de lignes ?
 
-A: Yes, you can insert page breaks at specific locations other than after a certain number of rows. You can set the `IsInNewPage` property of a row to `true` to force the table to start a new page after that row.
+ R : Oui, vous pouvez insérer des sauts de page à des emplacements spécifiques autres qu'après un certain nombre de lignes. Vous pouvez définir le`IsInNewPage` propriété d'une ligne à`true` pour forcer le tableau à démarrer une nouvelle page après cette ligne.
 
-#### Q: How can I adjust the page break behavior based on content height?
+#### Q : Comment puis-je ajuster le comportement des sauts de page en fonction de la hauteur du contenu ?
 
-A: You can use the `IsBroken` property of the table to enable or disable automatic row breaking across pages. When set to `true`, it allows rows to break across pages based on content height.
+R : Vous pouvez utiliser le`IsBroken` propriété du tableau pour activer ou désactiver la séparation automatique des lignes entre les pages. Lorsqu'il est réglé sur`true`, il permet aux lignes de se répartir sur les pages en fonction de la hauteur du contenu.

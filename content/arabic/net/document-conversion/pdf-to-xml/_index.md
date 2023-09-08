@@ -1,72 +1,72 @@
 ---
-title: PDF To XML
-linktitle: PDF To XML
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to convert PDF to XML using Aspose.PDF for .NET.
+title: قوات الدفاع الشعبي إلى XML
+linktitle: قوات الدفاع الشعبي إلى XML
+second_title: Aspose.PDF لمرجع .NET API
+description: دليل خطوة بخطوة لتحويل PDF إلى XML باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 210
 url: /ar/net/document-conversion/pdf-to-xml/
 ---
-In this tutorial, we'll walk you through the process of converting a PDF file to XML format using Aspose.PDF for .NET. XML (eXtensible Markup Language) is a data format used to store and exchange structured information. By following the steps below, you will be able to convert a PDF file to XML format.
+في هذا البرنامج التعليمي، سنرشدك خلال عملية تحويل ملف PDF إلى تنسيق XML باستخدام Aspose.PDF لـ .NET. XML (لغة التوصيف الموسعة) هي تنسيق بيانات يستخدم لتخزين وتبادل المعلومات المنظمة. باتباع الخطوات أدناه، ستتمكن من تحويل ملف PDF إلى تنسيق XML.
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## المتطلبات الأساسية
+قبل البدء، تأكد من استيفاء المتطلبات الأساسية التالية:
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- المعرفة الأساسية بلغة البرمجة C#.
+- مكتبة Aspose.PDF لـ .NET مثبتة على نظامك.
+- بيئة تطوير مثل Visual Studio.
 
-## Step 1: Loading the PDF document
-In this step we will load the source PDF file using Aspose.PDF for .NET. Follow the code below:
+## الخطوة 1: تحميل وثيقة PDF
+في هذه الخطوة سنقوم بتحميل ملف PDF المصدر باستخدام Aspose.PDF لـ .NET. اتبع الكود أدناه:
 
 ```csharp
-// Path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Load the PDF document
+// قم بتحميل مستند PDF
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where your PDF file is located.
+ تأكد من استبدال`"YOUR DOCUMENTS DIRECTORY"` مع الدليل الفعلي الذي يوجد به ملف PDF الخاص بك.
 
-## Step 2: Saving the resulting XML file
-Now we will save the converted PDF file in XML format. Use the following code:
+## الخطوة 2: حفظ ملف XML الناتج
+سنقوم الآن بحفظ ملف PDF المحول بتنسيق XML. استخدم الكود التالي:
 
 ```csharp
-// Save output as XML
+// حفظ الإخراج بتنسيق XML
 doc.Save(dataDir + "PDFToXML_out.xml", SaveFormat.MobiXml);
 ```
 
-The above code saves the converted PDF file in XML format with the filename `"PDFToXML_out.xml"`.
+ يحفظ الكود أعلاه ملف PDF المحول بتنسيق XML باسم الملف`"PDFToXML_out.xml"`.
 
-### Example source code for PDF to XML using Aspose.PDF for .NET
+### مثال على التعليمات البرمجية المصدر لـ PDF إلى XML باستخدام Aspose.PDF لـ .NET
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";            
-// Load source PDF file
+// تحميل ملف PDF المصدر
 Document doc = new Document(dataDir + "input.pdf");
-// Save output in XML format
+// حفظ الإخراج بتنسيق XML
 doc.Save(dataDir + "PDFToXML_out.xml", SaveFormat.MobiXml);
 ```
 
-## Conclusion
-In this tutorial, we covered the step-by-step process of converting a PDF file to XML using Aspose.PDF for .NET. By following the instructions outlined above, you should now be able to convert a PDF file to XML format. This feature is useful when you want to extract structured content from a PDF file and process it into an XML format for later use.
+## خاتمة
+في هذا البرنامج التعليمي، قمنا بتغطية عملية تحويل ملف PDF إلى XML خطوة بخطوة باستخدام Aspose.PDF لـ .NET. باتباع الإرشادات الموضحة أعلاه، يجب أن تكون الآن قادرًا على تحويل ملف PDF إلى تنسيق XML. تكون هذه الميزة مفيدة عندما تريد استخراج محتوى منظم من ملف PDF ومعالجته إلى تنسيق XML لاستخدامه لاحقًا.
 
-### FAQs
+### الأسئلة الشائعة
 
-#### Q: Can Aspose.PDF for .NET handle complex PDF files with multiple pages and structures during XML conversion?
+#### س: هل يمكن لـ Aspose.PDF لـ .NET التعامل مع ملفات PDF المعقدة ذات الصفحات والهياكل المتعددة أثناء تحويل XML؟
 
-A: Yes, Aspose.PDF for .NET is capable of handling complex PDF files with multiple pages and various structures during XML conversion. It accurately extracts and represents the content and structure of the PDF in XML format, maintaining the hierarchy of elements and pages.
+ج: نعم، Aspose.PDF for .NET قادر على التعامل مع ملفات PDF المعقدة ذات الصفحات المتعددة والهياكل المختلفة أثناء تحويل XML. فهو يستخرج ويمثل محتوى وبنية ملف PDF بدقة بتنسيق XML، مع الحفاظ على التسلسل الهرمي للعناصر والصفحات.
 
-#### Q: What happens if the PDF contains images or non-textual content?
+#### س: ماذا يحدث إذا كان ملف PDF يحتوي على صور أو محتوى غير نصي؟
 
-A: During the PDF to XML conversion process, Aspose.PDF for .NET primarily focuses on extracting textual and structural content. Non-textual content, such as images or complex graphics, might not be preserved in the resulting XML file. The XML output will primarily represent the textual and structural elements of the PDF.
+ج: أثناء عملية التحويل من PDF إلى XML، يركز Aspose.PDF for .NET بشكل أساسي على استخراج المحتوى النصي والهيكلي. قد لا يتم الاحتفاظ بالمحتوى غير النصي، مثل الصور أو الرسومات المعقدة، في ملف XML الناتج. سيمثل مخرج XML في المقام الأول العناصر النصية والهيكلية لملف PDF.
 
-#### Q: Can I control the XML output format and structure during the conversion?
+#### س: هل يمكنني التحكم في تنسيق إخراج XML وبنيته أثناء التحويل؟
 
-A: Aspose.PDF for .NET provides some level of control over the XML output format and structure. You can use the `SaveOptions` class to specify the desired `SaveFormat` and choose between different XML formats, such as MobiXml or StandardXml. However, the extent of control over the XML structure might be limited due to the nature of PDF content.
+ ج: يوفر Aspose.PDF for .NET مستوى معينًا من التحكم في تنسيق إخراج XML وبنيته. يمكنك استخدام ال`SaveOptions` فئة لتحديد المطلوب`SaveFormat` واختر من بين تنسيقات XML المختلفة، مثل MobiXml أو StandardXml. ومع ذلك، قد يكون مدى التحكم في بنية XML محدودًا نظرًا لطبيعة محتوى PDF.
 
-#### Q: Is it possible to convert password-protected PDFs to XML format using Aspose.PDF for .NET?
+#### س: هل من الممكن تحويل ملفات PDF المحمية بكلمة مرور إلى تنسيق XML باستخدام Aspose.PDF لـ .NET؟
 
-A: Yes, Aspose.PDF for .NET supports converting password-protected PDFs to XML format. When loading a password-protected PDF, you can provide the password using the `Document` class constructor or by setting the `Password` property before loading the PDF.
+ ج: نعم، يدعم Aspose.PDF for .NET تحويل ملفات PDF المحمية بكلمة مرور إلى تنسيق XML. عند تحميل ملف PDF محمي بكلمة مرور، يمكنك توفير كلمة المرور باستخدام`Document` منشئ الفصل أو عن طريق تعيين`Password` الخاصية قبل تحميل ملف PDF.

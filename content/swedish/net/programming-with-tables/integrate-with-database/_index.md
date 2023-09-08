@@ -1,19 +1,19 @@
 ---
-title: Integrate With Database In PDF File
-linktitle: Integrate With Database In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Embed data from a database in PDF file using Aspose.PDF for .NET.
+title: Integrera med databas i PDF-fil
+linktitle: Integrera med databas i PDF-fil
+second_title: Aspose.PDF för .NET API Referens
+description: Bädda in data från en databas i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 120
 url: /sv/net/programming-with-tables/integrate-with-database/
 ---
-In this tutorial, we will learn how to embed data from a database in PDF file using Aspose.PDF for .NET. We will explain the source code in C# step by step. At the end of this tutorial, you will know how to import table data from a database into a PDF document. Let's start!
+I den här handledningen kommer vi att lära oss hur man bäddar in data från en databas i en PDF-fil med Aspose.PDF för .NET. Vi kommer att förklara källkoden i C# steg för steg. I slutet av denna handledning kommer du att veta hur du importerar tabelldata från en databas till ett PDF-dokument. Låt oss börja!
 
-## Step 1: Setting up the environment
-Make sure you have configured your C# development environment with Aspose.PDF for .NET. Add the reference to the library and import the necessary namespaces.
+## Steg 1: Sätta upp miljön
+Se till att du har konfigurerat din C#-utvecklingsmiljö med Aspose.PDF för .NET. Lägg till referensen till biblioteket och importera de nödvändiga namnrymden.
 
-## Step 2: Creating the DataTable
-We create an instance of DataTable to represent the data we want to embed in the PDF document. In this example, we create a DataTable with three columns: Employee_ID, Employee_Name, and Gender. We also add two rows to the DataTable with dummy data.
+## Steg 2: Skapa datatabellen
+Vi skapar en instans av DataTable för att representera de data vi vill bädda in i PDF-dokumentet. I det här exemplet skapar vi en datatabell med tre kolumner: Employee_ID, Employee_Name och Gender. Vi lägger också till två rader i DataTable med dummydata.
 
 ```csharp
 DataTable dt = new DataTable("Employee");
@@ -34,8 +34,8 @@ dr[2] = "Female";
 dt.Rows.Add(dr);
 ```
 
-## Step 3: Creating the PDF Document and Table
-We create an instance of Document and add a page to this document. Next, we create a Table instance to represent our table in the PDF document. We define table column widths and border styles.
+## Steg 3: Skapa PDF-dokumentet och tabellen
+Vi skapar en instans av Document och lägger till en sida i detta dokument. Därefter skapar vi en tabellinstans för att representera vår tabell i PDF-dokumentet. Vi definierar tabellkolumnbredder och kantstilar.
 
 ```csharp
 Document doc = new Document();
@@ -47,40 +47,40 @@ table.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.
 table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
 ```
 
-## Step 4: Importing data from the DataTable into the table
-We use the ImportDataTable method to import the data from the DataTable into the table in the PDF document.
+## Steg 4: Importera data från DataTable till tabellen
+Vi använder ImportDataTable-metoden för att importera data från DataTable till tabellen i PDF-dokumentet.
 
 ```csharp
 table.ImportDataTable(dt, true, 0, 1, 3, 3);
 ```
 
-## Step 5: Adding the table to the document
-We add the table to the paragraphs collection of the document page.
+## Steg 5: Lägga till tabellen i dokumentet
+Vi lägger till tabellen i styckesamlingen på dokumentsidan.
 
 ```csharp
 doc.Pages[1].Paragraphs.Add(table);
 ```
 
-## Step 6: Save the document
-We save the PDF document with the data from the embedded database.
+## Steg 6: Spara dokumentet
+Vi sparar PDF-dokumentet med data från den inbäddade databasen.
 
 ```csharp
 doc.Save(dataDir + "DataIntegrated_out.pdf");
 ```
 
-Congratulations! You now know how to embed database data into a PDF document using Aspose.PDF for .NET.
+Grattis! Du vet nu hur du bäddar in databasdata i ett PDF-dokument med Aspose.PDF för .NET.
 
-### Example source code for Integrate With Database using Aspose.PDF for .NET
+### Exempel på källkod för Integrate With Database med Aspose.PDF för .NET
 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 DataTable dt = new DataTable("Employee");
 dt.Columns.Add("Employee_ID", typeof(Int32));
 dt.Columns.Add("Employee_Name", typeof(string));
 dt.Columns.Add("Gender", typeof(string));
-// Add 2 rows into the DataTable object programmatically
+// Lägg till 2 rader i DataTable-objektet programmatiskt
 DataRow dr = dt.NewRow();
 dr[0] = 1;
 dr[1] = "John Smith";
@@ -91,49 +91,49 @@ dr[0] = 2;
 dr[1] = "Mary Miller";
 dr[2] = "Female";
 dt.Rows.Add(dr);
-// Create Document instance
+// Skapa dokumentinstans
 Document doc = new Document();
 doc.Pages.Add();
-// Initializes a new instance of the Table
+// Initierar en ny instans av tabellen
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-// Set column widths of the table
+// Ställ in tabellens kolumnbredd
 table.ColumnWidths = "40 100 100 100";
-// Set the table border color as LightGray
+// Ställ in bordets kantfärg som ljusgrå
 table.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
-// Set the border for table cells
+// Ställ in gränsen för tabellceller
 table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
 table.ImportDataTable(dt, true, 0, 1, 3, 3);
 
-// Add table object to first page of input document
+// Lägg till tabellobjekt på första sidan i inmatningsdokumentet
 doc.Pages[1].Paragraphs.Add(table);
 dataDir = dataDir + "DataIntegrated_out.pdf";
-// Save updated document containing table object
+// Spara uppdaterat dokument som innehåller tabellobjekt
 doc.Save(dataDir);
 
 Console.WriteLine("\nDatabase integrated successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
-In this tutorial, we learned how to embed data from a database into a PDF document using Aspose.PDF for .NET. You can use this step-by-step guide to import the data from your own database and display them in PDF documents. Explore the Aspose.PDF documentation further to discover other features and possibilities offered by this powerful library.
+## Slutsats
+den här handledningen lärde vi oss hur man bäddar in data från en databas i ett PDF-dokument med Aspose.PDF för .NET. Du kan använda den här steg-för-steg-guiden för att importera data från din egen databas och visa dem i PDF-dokument. Utforska Aspose.PDF-dokumentationen ytterligare för att upptäcka andra funktioner och möjligheter som detta kraftfulla bibliotek erbjuder.
 
-### FAQ's for integrate with database in PDF file
+### Vanliga frågor för att integrera med databasen i PDF-fil
 
-#### Q: Can I use Aspose.PDF for .NET with different database types like MySQL, SQL Server, or Oracle?
+#### F: Kan jag använda Aspose.PDF för .NET med olika databastyper som MySQL, SQL Server eller Oracle?
 
-A: Yes, you can use Aspose.PDF for .NET with different database types like MySQL, SQL Server, Oracle, and others. Aspose.PDF for .NET provides functionalities to read data from various data sources, including databases, XML files, and more. You can retrieve data from your desired database type and populate it into a DataTable or any other data structure compatible with Aspose.PDF for .NET.
+S: Ja, du kan använda Aspose.PDF för .NET med olika databastyper som MySQL, SQL Server, Oracle och andra. Aspose.PDF för .NET tillhandahåller funktioner för att läsa data från olika datakällor, inklusive databaser, XML-filer och mer. Du kan hämta data från din önskade databastyp och fylla i den i en DataTable eller någon annan datastruktur som är kompatibel med Aspose.PDF för .NET.
 
-#### Q: How can I customize the appearance of the table in the PDF document?
+#### F: Hur kan jag anpassa utseendet på tabellen i PDF-dokumentet?
 
-A: You can customize the appearance of the table in the PDF document using various properties provided by the Aspose.PDF for .NET library. For example, you can set different border styles, background colors, font styles, and alignment for the table and its cells. Refer to the Aspose.PDF for .NET documentation for more details on customizing table appearance.
+S: Du kan anpassa utseendet på tabellen i PDF-dokumentet med hjälp av olika egenskaper som tillhandahålls av Aspose.PDF för .NET-biblioteket. Du kan till exempel ställa in olika ramstilar, bakgrundsfärger, teckensnittsstilar och justering för tabellen och dess celler. Se Aspose.PDF för .NET-dokumentationen för mer information om hur du anpassar tabellens utseende.
 
-#### Q: Is it possible to add hyperlinks or interactive elements to the data imported from the database?
+#### F: Är det möjligt att lägga till hyperlänkar eller interaktiva element till data som importeras från databasen?
 
-A: Yes, you can add hyperlinks or other interactive elements to the data imported from the database. Aspose.PDF for .NET supports adding hyperlinks, bookmarks, and other interactive elements to the PDF document. You can manipulate the content in the DataTable before importing it into the table and include hyperlinks or other interactive features.
+S: Ja, du kan lägga till hyperlänkar eller andra interaktiva element till data som importeras från databasen. Aspose.PDF för .NET stöder att lägga till hyperlänkar, bokmärken och andra interaktiva element till PDF-dokumentet. Du kan manipulera innehållet i DataTable innan du importerar det till tabellen och inkludera hyperlänkar eller andra interaktiva funktioner.
 
-#### Q: Can I paginate the table if it exceeds a certain number of rows?
+#### F: Kan jag paginera tabellen om den överskrider ett visst antal rader?
 
-A: Yes, you can paginate the table if it exceeds a certain number of rows. To achieve this, you can use the `IsInNewPage` property of the Row object to indicate that a new page should start after a specific row. You can calculate the number of rows to display per page and set the `IsInNewPage` property accordingly.
+ S: Ja, du kan paginera tabellen om den överskrider ett visst antal rader. För att uppnå detta kan du använda`IsInNewPage`egenskapen för Row-objektet för att indikera att en ny sida ska starta efter en specifik rad. Du kan beräkna antalet rader som ska visas per sida och ställa in`IsInNewPage` egendom i enlighet därmed.
 
-#### Q: How can I export the PDF document with embedded database data to different file formats like DOCX or XLSX?
+#### F: Hur kan jag exportera PDF-dokumentet med inbäddad databasdata till olika filformat som DOCX eller XLSX?
 
-A: Aspose.PDF for .NET allows you to convert PDF documents to various other file formats, including DOCX (Microsoft Word) and XLSX (Microsoft Excel). You can use the Aspose.PDF for .NET library in combination with other Aspose libraries such as Aspose.Words and Aspose.Cells to achieve this. First, save the PDF document with embedded database data, and then use the respective Aspose library to convert it to your desired file format.
+S: Aspose.PDF för .NET låter dig konvertera PDF-dokument till olika andra filformat, inklusive DOCX (Microsoft Word) och XLSX (Microsoft Excel). Du kan använda Aspose.PDF för .NET-biblioteket i kombination med andra Aspose-bibliotek som Aspose.Words och Aspose.Cells för att uppnå detta. Spara först PDF-dokumentet med inbäddade databasdata och använd sedan respektive Aspose-bibliotek för att konvertera det till önskat filformat.

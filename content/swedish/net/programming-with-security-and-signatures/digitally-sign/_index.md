@@ -1,28 +1,28 @@
 ---
-title: Digitally Sign In PDF File
-linktitle: Digitally Sign In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to digitally sign in PDF file with Aspose.PDF for .NET.
+title: Logga in digitalt PDF-fil
+linktitle: Logga in digitalt PDF-fil
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du loggar in en PDF-fil digitalt med Aspose.PDF för .NET.
 type: docs
 weight: 40
 url: /sv/net/programming-with-security-and-signatures/digitally-sign/
 ---
-In this tutorial, we will walk you through the process of digitally signing in PDF file using Aspose.PDF for .NET. The digital signature guarantees the authenticity and integrity of the document, by adding a unique electronic fingerprint.
+I den här handledningen går vi igenom processen att digitalt logga in en PDF-fil med Aspose.PDF för .NET. Den digitala signaturen garanterar dokumentets äkthet och integritet genom att lägga till ett unikt elektroniskt fingeravtryck.
 
-## Step 1: Prerequisites
+## Steg 1: Förutsättningar
 
-Before you begin, make sure you have the following prerequisites:
+Innan du börjar, se till att du har följande förutsättningar:
 
-- Basic knowledge of the C# programming language
-- Installing Visual Studio on your machine
-- Aspose.PDF library for .NET installed
+- Grundläggande kunskaper i programmeringsspråket C#
+- Installera Visual Studio på din dator
+- Aspose.PDF-bibliotek för .NET installerat
 
-## Step 2: Environment setup
+## Steg 2: Miljöinställning
 
-To get started, follow these steps to set up your development environment:
+För att komma igång, följ dessa steg för att konfigurera din utvecklingsmiljö:
 
-1. Open Visual Studio and create a new C# project.
-2. Import the required namespaces into your code file:
+1. Öppna Visual Studio och skapa ett nytt C#-projekt.
+2. Importera de nödvändiga namnrymden till din kodfil:
 
 ```csharp
 using Aspose.Pdf;
@@ -30,9 +30,9 @@ using Aspose.Pdf.Forms;
 using System.Collections.Generic;
 ```
 
-## Step 3: Digital signature
+## Steg 3: Digital signatur
 
-The first step is to digitally sign the PDF file. The provided code shows how to make a digital signature with Aspose.PDF for .NET.
+Det första steget är att digitalt signera PDF-filen. Den medföljande koden visar hur man gör en digital signatur med Aspose.PDF för .NET.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -53,11 +53,11 @@ using (Document document = new Document(inFile))
 }
 ```
 
-This code loads a PDF file, creates a digital signature with a specified appearance, then saves the PDF file with the added signature.
+Den här koden laddar en PDF-fil, skapar en digital signatur med ett specificerat utseende och sparar sedan PDF-filen med den tillagda signaturen.
 
-## Step 4: Signature Verification
+## Steg 4: Signaturverifiering
 
-After adding the digital signature, you can check if the PDF file contains a valid signature.
+När du har lagt till den digitala signaturen kan du kontrollera om PDF-filen innehåller en giltig signatur.
 
 ```csharp
 using(Document document = new Document(outFile))
@@ -73,7 +73,7 @@ using(Document document = new Document(outFile))
                  {
                      if (signature.GetAccessPermissions() == DocMDPAccessPermissions.FillingInForms)
                      {
-                         // Do something
+                         // Göra någonting
                      }
                  }
              }
@@ -82,13 +82,13 @@ using(Document document = new Document(outFile))
 }
 ```
 
-This code verifies the first signature of the PDF file and performs additional actions if the signature is certified and has specific permissions.
+Den här koden verifierar PDF-filens första signatur och utför ytterligare åtgärder om signaturen är certifierad och har specifika behörigheter.
 
-### Sample source code for Digitally Sign using Aspose.PDF for .NET 
+### Exempel på källkod för digital signering med Aspose.PDF för .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Sökvägen till dokumentkatalogen.
 	string dataDir = "YOUR DOCUMENTS DIRECTORY";
 	string pbxFile = "";
 	string inFile = dataDir + @"DigitallySign.pdf";
@@ -97,14 +97,14 @@ try
 	{
 		using (PdfFileSignature signature = new PdfFileSignature(document))
 		{
-			PKCS7 pkcs = new PKCS7(pbxFile, "WebSales"); // Use PKCS7/PKCS7Detached objects
+			PKCS7 pkcs = new PKCS7(pbxFile, "WebSales"); // Använd PKCS7/PKCS7Fristående objekt
 			DocMDPSignature docMdpSignature = new DocMDPSignature(pkcs, DocMDPAccessPermissions.FillingInForms);
 			System.Drawing.Rectangle rect = new System.Drawing.Rectangle(100, 100, 200, 100);
-			// Set signature appearance
+			// Ställ in signaturutseende
 			signature.SignatureAppearance = dataDir + @"aspose-logo.jpg";
-			// Create any of the three signature types
+			// Skapa någon av de tre signaturtyperna
 			signature.Certify(1, "Signature Reason", "Contact", "Location", true, rect, docMdpSignature);
-			// Save output PDF file
+			// Spara utdata PDF-fil
 			signature.Save(outFile);
 		}
 	}
@@ -113,15 +113,15 @@ try
 		using (PdfFileSignature signature = new PdfFileSignature(document))
 		{
 			IList<string> sigNames = signature.GetSignNames();
-			if (sigNames.Count > 0) // Any signatures?
+			if (sigNames.Count > 0) // Några signaturer?
 			{
-				if (signature.VerifySigned(sigNames[0] as string)) // Verify first one
+				if (signature.VerifySigned(sigNames[0] as string)) // Verifiera den första
 				{
-					if (signature.IsCertified) // Certified?
+					if (signature.IsCertified) // Auktoriserad?
 					{
-						if (signature.GetAccessPermissions() == DocMDPAccessPermissions.FillingInForms) // Get access permission
+						if (signature.GetAccessPermissions() == DocMDPAccessPermissions.FillingInForms) // Få åtkomstbehörighet
 						{
-							// Do something
+							// Göra någonting
 						}
 					}
 				}
@@ -135,48 +135,48 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Slutsats
 
-Congratulation ! You have successfully performed a digital signature on a PDF file using Aspose.PDF for .NET. This tutorial covered the step-by-step process, from adding the digital signature to verifying its validity. You can now use this feature to secure your PDF files with digital signatures.
+Grattis! Du har framgångsrikt utfört en digital signatur på en PDF-fil med Aspose.PDF för .NET. Denna handledning täckte steg-för-steg-processen, från att lägga till den digitala signaturen till att verifiera dess giltighet. Du kan nu använda den här funktionen för att säkra dina PDF-filer med digitala signaturer.
 
 ### FAQ's
 
-#### Q: What is the purpose of this tutorial?
+#### F: Vad är syftet med denna handledning?
 
-A: This tutorial guides you through the process of digitally signing a PDF file using Aspose.PDF for .NET. Digital signatures add an electronic fingerprint to ensure the authenticity and integrity of the document.
+S: Denna handledning guidar dig genom processen att digitalt signera en PDF-fil med Aspose.PDF för .NET. Digitala signaturer lägger till ett elektroniskt fingeravtryck för att säkerställa dokumentets äkthet och integritet.
 
-#### Q: What prerequisites are required before starting?
+#### F: Vilka förutsättningar krävs innan start?
 
-A: Before you begin, ensure you have a basic understanding of the C# programming language, have Visual Studio installed, and have the Aspose.PDF library for .NET installed.
+S: Innan du börjar, se till att du har en grundläggande förståelse för programmeringsspråket C#, har Visual Studio installerat och har Aspose.PDF-biblioteket för .NET installerat.
 
-#### Q: How do I set up the development environment?
+#### F: Hur ställer jag in utvecklingsmiljön?
 
-A: Follow the provided steps to set up your development environment, including creating a new C# project in Visual Studio, and importing the required namespaces.
+S: Följ de medföljande stegen för att ställa in din utvecklingsmiljö, inklusive att skapa ett nytt C#-projekt i Visual Studio och importera de nödvändiga namnområdena.
 
-#### Q: How do I add a digital signature to a PDF file?
+#### F: Hur lägger jag till en digital signatur i en PDF-fil?
 
-A: The provided sample code demonstrates how to load a PDF file, create a digital signature, specify appearance, and save the signed PDF file. The digital signature is added using the `Certify` method of the `PdfFileSignature` object.
+ S: Den medföljande exempelkoden visar hur man laddar en PDF-fil, skapar en digital signatur, anger utseende och sparar den signerade PDF-filen. Den digitala signaturen läggs till med hjälp av`Certify` metod för`PdfFileSignature` objekt.
 
-#### Q: How do I verify the validity of a digital signature?
+#### F: Hur verifierar jag giltigheten av en digital signatur?
 
-A: After adding the digital signature, you can use the sample code to verify the validity of the signature. It checks if the signature is certified and has specific access permissions.
+S: När du har lagt till den digitala signaturen kan du använda exempelkoden för att verifiera signaturens giltighet. Den kontrollerar om signaturen är certifierad och har specifika åtkomstbehörigheter.
 
-#### Q: What does the `PKCS7` object represent?
+####  F: Vad betyder`PKCS7` object represent?
 
-A: The `PKCS7` object is used to provide the cryptographic functionality for digital signatures. It is used to create the digital signature in the provided sample code.
+ A: Den`PKCS7` objekt används för att tillhandahålla den kryptografiska funktionen för digitala signaturer. Den används för att skapa den digitala signaturen i den medföljande exempelkoden.
 
-#### Q: Can I customize the appearance of the digital signature?
+#### F: Kan jag anpassa utseendet på den digitala signaturen?
 
-A: Yes, you can customize the appearance of the digital signature by specifying the path to an image in the `SignatureAppearance` property of the `PdfFileSignature` object.
+ S: Ja, du kan anpassa utseendet på den digitala signaturen genom att ange sökvägen till en bild i`SignatureAppearance` egendom av`PdfFileSignature` objekt.
 
-#### Q: What happens if the signature is not valid?
+#### F: Vad händer om signaturen inte är giltig?
 
-A: If the signature is not valid, the verification process will fail, and the corresponding actions within the verification code block will not be executed.
+S: Om signaturen inte är giltig kommer verifieringsprocessen att misslyckas, och motsvarande åtgärder inom verifieringskodblocket kommer inte att utföras.
 
-#### Q: How can I ensure the security of my digital signatures?
+#### F: Hur kan jag säkerställa säkerheten för mina digitala signaturer?
 
-A: Digital signatures are secure by design and use cryptographic techniques to ensure authenticity and integrity. Ensure that you keep your private key secure and follow best practices for handling digital signatures.
+S: Digitala signaturer är säkra genom design och använder kryptografiska tekniker för att säkerställa autenticitet och integritet. Se till att du håller din privata nyckel säker och följer bästa praxis för hantering av digitala signaturer.
 
-#### Q: Can I add multiple digital signatures to a PDF?
+#### F: Kan jag lägga till flera digitala signaturer i en PDF?
 
-A: Yes, you can add multiple digital signatures to a PDF file using the `PdfFileSignature` object's `Sign` or `Certify` methods. Each signature will have its own appearance and configuration.
+ S: Ja, du kan lägga till flera digitala signaturer till en PDF-fil med hjälp av`PdfFileSignature` föremål`Sign` eller`Certify` metoder. Varje signatur kommer att ha sitt eget utseende och konfiguration.

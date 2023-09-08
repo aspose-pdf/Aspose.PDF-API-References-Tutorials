@@ -1,129 +1,129 @@
 ---
-title: Image and Page Number in Header Footer Section Inline
-linktitle: Image and Page Number in Header Footer Section Inline
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add image and page number in header and footer using inline paragraphs with Aspose.PDF for .NET.
+title: الصورة ورقم الصفحة في قسم تذييل الرأس مضمن
+linktitle: الصورة ورقم الصفحة في قسم تذييل الرأس مضمن
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إضافة صورة ورقم الصفحة في الرأس والتذييل باستخدام الفقرات المضمنة مع Aspose.PDF لـ .NET.
 type: docs
 weight: 120
 url: /ar/net/programming-with-stamps-and-watermarks/image-and-page-number-in-header-footer-section-inline/
 ---
-In this tutorial, we will guide you step by step on how to add image and page number in header and footer section of PDF document using Aspose.PDF for .NET. We will use the provided C# source code to create a page, set header and footer, add image and text using inline paragraphs in the header of the PDF document.
+في هذا البرنامج التعليمي، سنرشدك خطوة بخطوة حول كيفية إضافة صورة ورقم الصفحة في قسم الرأس والتذييل لمستند PDF باستخدام Aspose.PDF لـ .NET. سنستخدم كود مصدر C# المقدم لإنشاء صفحة وتعيين الرأس والتذييل وإضافة صورة ونص باستخدام الفقرات المضمنة في رأس مستند PDF.
 
-## Step 1: Setting up the environment
+## الخطوة 1: تهيئة البيئة
 
-Before you begin, make sure you have the following:
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- بيئة تطوير .NET مثبتة.
+- تم تنزيل مكتبة Aspose.PDF الخاصة بـ .NET والإشارة إليها في مشروعك.
 
-## Step 2: Creating the PDF Document and Page
+## الخطوة 2: إنشاء مستند وصفحة PDF
 
-The first step is to create a new Document object and a page in the PDF document. Here's how:
+الخطوة الأولى هي إنشاء كائن مستند جديد وصفحة في مستند PDF. إليك الطريقة:
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Create a new Document object
+// قم بإنشاء كائن مستند جديد
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 
-// Create a page in the document
+// إنشاء صفحة في المستند
 Aspose.Pdf.Page page = pdf1.Pages.Add();
 ```
 
-The code above creates a new Document object and an empty page in the PDF document.
+يقوم الكود أعلاه بإنشاء كائن مستند جديد وصفحة فارغة في مستند PDF.
 
-## Step 3: Adding the header with an image and inline text
+## الخطوة 3: إضافة الرأس مع صورة ونص مضمّن
 
-Now that the page is created, we can add a header section with an image and text using inline paragraphs. Here's how:
+الآن بعد أن تم إنشاء الصفحة، يمكننا إضافة قسم رأس يحتوي على صورة ونص باستخدام الفقرات المضمنة. إليك الطريقة:
 
 ```csharp
-// Create a header section
+// إنشاء قسم الرأس
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-// Set the page header
+// قم بتعيين رأس الصفحة
 page. Header = header;
 
-// Create a TextFragment object for the first inline text
+// قم بإنشاء كائن TextFragment للنص المضمن الأول
 Aspose.Pdf.Text.TextFragment txt1 = new Aspose.Pdf.Text.TextFragment("Aspose.Pdf is a robust component developed by");
 
-// Specify text color
+// تحديد لون النص
 txt1.TextState.ForegroundColor = Color.Blue;
 txt1.IsInLineParagraph = true;
 
-// Create an Image object for the image
+// قم بإنشاء كائن صورة للصورة
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 
-// Set image path
+// ضبط مسار الصورة
 image1.File = dataDir + "aspose-logo.jpg";
 
-// Define the dimensions of the image
+// تحديد أبعاد الصورة
 image1.FixWidth = 50;
 image1.FixHeight = 20;
 
-// Indicate that the first inline text is an image
+// أشر إلى أن النص المضمن الأول هو صورة
 image1.IsInLineParagraph = true;
 
-// Create a second inline text
+// قم بإنشاء نص مضمن ثانٍ
 Aspose.Pdf.Text.TextFragment txt2 = new Aspose.Pdf.Text.TextFragment(" Pty Ltd.");
 txt2.IsInLineParagraph = true;
 txt2.TextState.ForegroundColor = Color.Maroon;
 
-// Add items to header
+// إضافة عناصر إلى الرأس
 header.Paragraphs.Add(txt1);
 header.Paragraphs.Add(image1);
 header.Paragraphs.Add(txt2);
 ```
 
-The code above creates a header section, sets the page header with this section, adds a TextFragment with inline text and an inline Image object.
+يقوم الكود أعلاه بإنشاء قسم رأس، وتعيين رأس الصفحة مع هذا القسم، وإضافة TextFragment مع نص مضمن وكائن صورة مضمن.
 
-## Step 4: Saving the modified PDF document
+## الخطوة 4: حفظ مستند PDF المعدل
 
-Once the header with the image and inline text is added, we can save the modified PDF document. Here's how:
+بمجرد إضافة الرأس الذي يحتوي على الصورة والنص المضمن، يمكننا حفظ مستند PDF المعدل. إليك الطريقة:
 
 ```csharp
-// Save the modified PDF document
+// احفظ مستند PDF المعدل
 pdf1.Save(dataDir + "ImageAndPageNumberInHeaderFooter_UsingInlineParagraph_out.pdf");
 ```
 
-The above code saves the edited PDF document to the specified directory.
+يحفظ الكود أعلاه مستند PDF المحرر في الدليل المحدد.
 
-### Sample source code for Imageand Page Numberin Header Footersection Inline using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لـ Imageand Page Numberin Header Footersection Inline باستخدام Aspose.PDF لـ .NET 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate a Document object by calling its empty constructor
+// قم بإنشاء مثيل لكائن مستند عن طريق استدعاء منشئه الفارغ
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 
-// Create a page in the Pdf object
+// قم بإنشاء صفحة في كائن Pdf
 Aspose.Pdf.Page page = pdf1.Pages.Add();
 
-// Create Header Section of the document
+// إنشاء قسم رأس الوثيقة
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-// Set the header for the PDF file
+// قم بتعيين الرأس لملف PDF
 page.Header = header;
 
-// Create a Text object
+// قم بإنشاء كائن نصي
 Aspose.Pdf.Text.TextFragment txt1 = new Aspose.Pdf.Text.TextFragment("Aspose.Pdf is a Robust component by");
 
-// Specify the color
+// تحديد اللون
 txt1.TextState.ForegroundColor = Color.Blue;
 txt1.IsInLineParagraph = true;
 
-// Create an image object in the section
+// قم بإنشاء كائن صورة في القسم
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 
-// Set the path of image file
+// ضبط مسار ملف الصورة
 image1.File = dataDir + "aspose-logo.jpg";
 
-// Set the image width Information
+// ضبط معلومات عرض الصورة
 image1.FixWidth = 50;
 image1.FixHeight = 20;
 
-// Indicate seg1's InlineParagraph is a image.
+// أشر إلى أن InlineParagraph الخاص بـ seg1 عبارة عن صورة.
 image1.IsInLineParagraph = true;
 Aspose.Pdf.Text.TextFragment txt2 = new Aspose.Pdf.Text.TextFragment(" Pty Ltd.");
 txt2.IsInLineParagraph = true;
@@ -132,53 +132,53 @@ header.Paragraphs.Add(txt1);
 header.Paragraphs.Add(image1);
 header.Paragraphs.Add(txt2);
 
-// Save the Pdf
+// احفظ ملف PDF
 pdf1.Save(dataDir + "ImageAndPageNumberInHeaderFooter_UsingInlineParagraph_out.pdf");
 
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You have learned how to add an image and page number in the header and footer section of a PDF document using inline paragraphs with Aspose.PDF for .NET. You can now customize the header and footer of your PDF documents flexibly.
+تهنئة ! لقد تعلمت كيفية إضافة صورة ورقم صفحة في قسم الرأس والتذييل لمستند PDF باستخدام الفقرات المضمنة مع Aspose.PDF لـ .NET. يمكنك الآن تخصيص رأس وتذييل مستندات PDF الخاصة بك بمرونة.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the advantage of using inline paragraphs for adding an image and text to the header of a PDF document?
+#### س: ما هي ميزة استخدام الفقرات المضمنة لإضافة صورة ونص إلى رأس مستند PDF؟
 
-A: Using inline paragraphs allows you to seamlessly integrate images and text within the same paragraph, providing precise control over their placement and formatting. This method is especially useful for creating customized headers with visual elements.
+ج: يتيح لك استخدام الفقرات المضمنة دمج الصور والنص بسلاسة داخل الفقرة نفسها، مما يوفر تحكمًا دقيقًا في موضعها وتنسيقها. تعتبر هذه الطريقة مفيدة بشكل خاص لإنشاء رؤوس مخصصة تحتوي على عناصر مرئية.
 
-#### Q: How does the provided C# source code achieve inline paragraphs for the header in a PDF document?
+#### س: كيف يحقق كود مصدر C# المقدم فقرات مضمنة للرأس في مستند PDF؟
 
-A: The provided code demonstrates how to create a PDF document, add a page, and customize the header using inline paragraphs. It adds a TextFragment with inline text, an inline image, and another inline TextFragment.
+ج: يوضح الكود المقدم كيفية إنشاء مستند PDF وإضافة صفحة وتخصيص الرأس باستخدام الفقرات المضمنة. يقوم بإضافة TextFragment مع نص مضمن وصورة مضمنة وTextFragment مضمنة أخرى.
 
-#### Q: How do I specify the color of the inline text in the header?
+#### س: كيف يمكنني تحديد لون النص المضمن في الرأس؟
 
-A: The color of the inline text is specified using the `ForegroundColor` property of the `TextState` of the `TextFragment` object.
+ ج: يتم تحديد لون النص المضمن باستخدام`ForegroundColor` ملكية`TextState` التابع`TextFragment` هدف.
 
-#### Q: Can I adjust the dimensions of the inline image in the header?
+#### س: هل يمكنني ضبط أبعاد الصورة المضمنة في الرأس؟
 
-A: Yes, you can adjust the dimensions of the inline image using the `FixWidth` and `FixHeight` properties of the `Image` object. This allows you to control the width and height of the image within the header.
+ ج: نعم، يمكنك ضبط أبعاد الصورة المضمنة باستخدام`FixWidth` و`FixHeight` خصائص`Image` هدف. يتيح لك ذلك التحكم في عرض الصورة وارتفاعها داخل الرأس.
 
-#### Q: Can I include additional inline elements, such as hyperlinks or different font styles, in the header?
+#### س: هل يمكنني تضمين عناصر سطرية إضافية، مثل الارتباطات التشعبية أو أنماط الخطوط المختلفة، في الرأس؟
 
-A: Yes, you can include additional inline elements in the header by creating more `TextFragment` or `Image` objects with the desired properties. This allows you to customize the header further, including hyperlinks, different font styles, or other visual elements.
+ ج: نعم، يمكنك تضمين عناصر إضافية مضمنة في الرأس عن طريق إنشاء المزيد`TextFragment` أو`Image` الكائنات مع الخصائص المطلوبة. يتيح لك هذا تخصيص الرأس بشكل أكبر، بما في ذلك الارتباطات التشعبية أو أنماط الخطوط المختلفة أو العناصر المرئية الأخرى.
 
-#### Q: How can I ensure that the inline image and text remain properly aligned and formatted across different devices and viewers?
+#### س: كيف يمكنني التأكد من أن الصورة والنص المضمنين يظلان محاذيين ومنسقين بشكل صحيح عبر أجهزة وعارضين مختلفين؟
 
-A: Aspose.PDF for .NET ensures that inline images and text are properly aligned and formatted, resulting in consistent appearance across different devices and PDF viewers.
+ج: يضمن Aspose.PDF for .NET محاذاة الصور والنصوص المضمنة وتنسيقها بشكل صحيح، مما يؤدي إلى ظهور متسق عبر الأجهزة المختلفة وعارضات PDF.
 
-#### Q: Can I apply inline paragraphs to the footer section as well?
+#### س: هل يمكنني تطبيق الفقرات المضمنة على قسم التذييل أيضًا؟
 
-A: Yes, you can apply the same technique of using inline paragraphs to the footer section by creating a `Footer` object and adding inline elements such as text and images to it.
+ ج: نعم، يمكنك تطبيق نفس الأسلوب المتمثل في استخدام الفقرات المضمنة في قسم التذييل عن طريق إنشاء ملف`Footer` كائن وإضافة عناصر مضمنة مثل النص والصور إليه.
 
-#### Q: Is it possible to combine inline paragraphs with other header or footer customization methods?
+#### س: هل من الممكن دمج الفقرات المضمنة مع طرق تخصيص الرأس أو التذييل الأخرى؟
 
-A: Yes, you can combine inline paragraphs with other header or footer customization methods provided by Aspose.PDF for .NET to create more complex and tailored header or footer designs.
+ج: نعم، يمكنك دمج الفقرات المضمنة مع طرق تخصيص الرأس أو التذييل الأخرى التي يوفرها Aspose.PDF لـ .NET لإنشاء تصميمات أكثر تعقيدًا وتخصيصًا للرأس أو التذييل.
 
-#### Q: Can I remove or clear the inline elements from the header if needed?
+#### س: هل يمكنني إزالة العناصر المضمنة أو مسحها من الرأس إذا لزم الأمر؟
 
-A: Yes, you can remove or clear the inline elements by modifying the contents of the `HeaderFooter` object and removing the respective inline paragraphs.
+ ج: نعم، يمكنك إزالة العناصر المضمنة أو مسحها عن طريق تعديل محتويات الملف`HeaderFooter` كائن وإزالة الفقرات المضمنة المعنية.
 
-#### Q: How can I apply inline paragraphs to specific pages of the PDF document?
+#### س: كيف يمكنني تطبيق فقرات مضمنة على صفحات معينة من مستند PDF؟
 
-A: To apply inline paragraphs to specific pages, you can create separate `HeaderFooter` objects for each page and assign them using the `Header` property of the respective `Aspose.Pdf.Page` objects.
+ ج: لتطبيق فقرات مضمنة على صفحات معينة، يمكنك إنشاء فقرات منفصلة`HeaderFooter` كائنات لكل صفحة وتعيينها باستخدام`Header` ممتلكات المعنيين`Aspose.Pdf.Page` أشياء.

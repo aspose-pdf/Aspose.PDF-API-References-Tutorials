@@ -1,58 +1,58 @@
 ---
-title: Convert Page Region To DOM
-linktitle: Convert Page Region To DOM
-second_title: Aspose.PDF for .NET API Reference
-description: Easily convert a specific region of a PDF page to a Document Object Model (DOM) with Aspose.PDF for .NET.
+title: تحويل منطقة الصفحة إلى DOM
+linktitle: تحويل منطقة الصفحة إلى DOM
+second_title: Aspose.PDF لمرجع .NET API
+description: يمكنك بسهولة تحويل منطقة معينة من صفحة PDF إلى نموذج كائن المستند (DOM) باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 80
 url: /ar/net/programming-with-images/convert-page-region-to-dom/
 ---
-This guide will take you step by step how to convert a specific region of a page to a Document Object Model (DOM) using Aspose.PDF for .NET. Make sure you have already set up your environment and follow the steps below:
+سيأخذك هذا الدليل خطوة بخطوة حول كيفية تحويل منطقة معينة من الصفحة إلى نموذج كائن المستند (DOM) باستخدام Aspose.PDF لـ .NET. تأكد من أنك قمت بالفعل بإعداد بيئتك واتبع الخطوات التالية:
 
-## Step 1: Define the document directory
+## الخطوة 1: تحديد دليل المستند
 
-Before you start, make sure you set the correct directory for the documents. Replace `"YOUR DOCUMENT DIRECTORY"` in the code with the path to the directory where your PDF document is located.
+ قبل البدء، تأكد من تعيين الدليل الصحيح للمستندات. يستبدل`"YOUR DOCUMENT DIRECTORY"` في الكود الذي يحتوي على المسار إلى الدليل الذي يوجد به مستند PDF الخاص بك.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Open the document
+## الخطوة 2: افتح المستند
 
-In this step, we will open the PDF document using the `Document` class of Aspose.PDF. Use the `Document` constructor and pass the path to the PDF document.
+في هذه الخطوة، سنقوم بفتح مستند PDF باستخدام الملف`Document` فئة Aspose.PDF. استخدم ال`Document` منشئ وتمرير المسار إلى وثيقة PDF.
 
 ```csharp
 Document document = new Document(dataDir + "AddImage.pdf");
 ```
 
-## Step 3: Get Page Region Rectangle
+## الخطوة 3: الحصول على مستطيل منطقة الصفحة
 
-In this step, we will define a rectangle representing the specific region of the page that we want to convert to DOM. Use the `Aspose.Pdf.Rectangle` class to define the coordinates of the rectangle.
+ في هذه الخطوة، سنحدد مستطيلًا يمثل المنطقة المحددة من الصفحة التي نريد تحويلها إلى DOM. استخدم ال`Aspose.Pdf.Rectangle` فئة لتحديد إحداثيات المستطيل.
 
 ```csharp
 Aspose.Pdf.Rectangle pageRect = new Aspose.Pdf.Rectangle(20, 671, 693, 1125);
 ```
 
-## Step 4: Define the crop area of the page
+## الخطوة 4: تحديد مساحة الاقتصاص في الصفحة
 
-Use the `CropBox` property of the `Page` object to set the crop box of the page to the desired region rectangle.
+ استخدم ال`CropBox` ملكية`Page` كائن لتعيين مربع القطع الخاص بالصفحة على مستطيل المنطقة المطلوبة.
 
 ```csharp
 document.Pages[1].CropBox = pageRect;
 ```
 
-## Step 5: Save the cropped PDF document to a stream
+## الخطوة 5: احفظ مستند PDF الذي تم اقتصاصه في دفق
 
-In this step, we will save the cropped PDF document to a stream using the `MemoryStream` class.
+ في هذه الخطوة، سنقوم بحفظ مستند PDF الذي تم اقتصاصه في دفق باستخدام الملف`MemoryStream` فصل.
 
 ```csharp
 MemoryStream ms = new MemoryStream();
 document.Save(ms);
 ```
 
-## Step 6: Open the cropped PDF document and convert it to an image
+## الخطوة 6: افتح مستند PDF الذي تم اقتصاصه وقم بتحويله إلى صورة
 
-Open the cropped PDF document using the `Document` class and convert it to an image. We will use a resolution of 300 dpi.
+ افتح مستند PDF الذي تم اقتصاصه باستخدام الملف`Document` فئة وتحويلها إلى صورة. سوف نستخدم دقة 300 نقطة في البوصة.
 
 ```csharp
 document = newDocument(ms);
@@ -60,79 +60,79 @@ Resolution resolution = new Resolution(300);
 PngDevice pngDevice = new PngDevice(resolution);
 ```
 
-## Step 7: Convert the specific page to an image
+## الخطوة 7: تحويل الصفحة المحددة إلى صورة
 
-Convert the specific page to an image using the `Process` method of the `pngDevice` object. Specify the image output path.
+ تحويل الصفحة المحددة إلى صورة باستخدام`Process` طريقة`pngDevice`هدف. تحديد مسار إخراج الصورة.
 
 ```csharp
 dataDir = dataDir + "ConvertPageRegionToDOM_out.png";
 pngDevice.Process(document.Pages[1], dataDir);
 ```
 
-### Sample source code for Convert Page Region To DOM using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لتحويل منطقة الصفحة إلى DOM باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document document = new Document( dataDir + "AddImage.pdf");
-// Get rectangle of particular page region
+// الحصول على مستطيل لمنطقة صفحة معينة
 Aspose.Pdf.Rectangle pageRect = new Aspose.Pdf.Rectangle(20, 671, 693, 1125);
-// Set CropBox value as per rectangle of desired page region
+// قم بتعيين قيمة CropBox حسب مستطيل منطقة الصفحة المطلوبة
 document.Pages[1].CropBox = pageRect;
-// Save cropped document into stream
+// حفظ المستند الذي تم اقتصاصه في الدفق
 MemoryStream ms = new MemoryStream();
 document.Save(ms);
-// Open cropped PDF document and convert to image
+// افتح مستند PDF الذي تم اقتصاصه وقم بتحويله إلى صورة
 document = new Document(ms);
-// Create Resolution object
+// إنشاء كائن القرار
 Resolution resolution = new Resolution(300);
-// Create PNG device with specified attributes
+// قم بإنشاء جهاز PNG بالسمات المحددة
 PngDevice pngDevice = new PngDevice(resolution);
 dataDir = dataDir + "ConvertPageRegionToDOM_out.png";
-// Convert a particular page and save the image to stream
+//تحويل صفحة معينة وحفظ الصورة للبث
 pngDevice.Process(document.Pages[1], dataDir);
 ms.Close();
 Console.WriteLine("\nPage region converted to DOM successfully.\nFile saved at " + dataDir); 
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You have successfully converted a specific region of a page to a Document Object Model (DOM) using Aspose.PDF for .NET. The resulting image is saved in the specified directory. You can now use this image in your projects or applications.
+تهنئة ! لقد نجحت في تحويل منطقة معينة من الصفحة إلى نموذج كائن المستند (DOM) باستخدام Aspose.PDF لـ .NET. يتم حفظ الصورة الناتجة في الدليل المحدد. يمكنك الآن استخدام هذه الصورة في مشاريعك أو تطبيقاتك.
 
-## FAQ's
+## الأسئلة الشائعة
 
-#### Q: What is the purpose of converting a specific region of a page to a Document Object Model (DOM) using Aspose.PDF for .NET?
+#### س: ما هو الغرض من تحويل منطقة معينة من الصفحة إلى نموذج كائن المستند (DOM) باستخدام Aspose.PDF لـ .NET؟
 
-A: Converting a specific region of a PDF page to a Document Object Model (DOM) can be helpful for extracting and manipulating a particular section of content within a PDF document.
+ج: يمكن أن يكون تحويل منطقة معينة من صفحة PDF إلى نموذج كائن المستند (DOM) مفيدًا في استخراج قسم معين من المحتوى ومعالجته داخل مستند PDF.
 
-#### Q: How does Aspose.PDF for .NET facilitate the conversion of a specific page region to a DOM?
+#### س: كيف يسهل Aspose.PDF for .NET تحويل منطقة صفحة معينة إلى DOM؟
 
-A: Aspose.PDF for .NET provides a step-by-step process to define the desired page region, set the crop area, save the cropped PDF document to a stream, and convert the specified page region to an image.
+ج: يوفر Aspose.PDF for .NET عملية خطوة بخطوة لتحديد منطقة الصفحة المطلوبة، وتعيين منطقة الاقتصاص، وحفظ مستند PDF الذي تم اقتصاصه في دفق، وتحويل منطقة الصفحة المحددة إلى صورة.
 
-#### Q: Why is it important to define the document directory before starting the conversion process?
+#### س: لماذا من المهم تحديد دليل المستند قبل بدء عملية التحويل؟
 
-A: Specifying the document directory ensures that the PDF document and the resulting image are correctly located in the desired output path.
+ج: يضمن تحديد دليل المستند أن يكون مستند PDF والصورة الناتجة موجودين بشكل صحيح في مسار الإخراج المطلوب.
 
-#### Q: How does the `Document` class in Aspose.PDF for .NET help in the conversion process?
+####  س: كيف`Document` class in Aspose.PDF for .NET help in the conversion process?
 
-A: The `Document` class allows you to open, manipulate, and save PDF documents. In this case, it is used to load the PDF document and create a cropped version of it.
+ ج: ال`Document` يتيح لك الفصل فتح مستندات PDF ومعالجتها وحفظها. في هذه الحالة، يتم استخدامه لتحميل مستند PDF وإنشاء نسخة مقصوصة منه.
 
-#### Q: What is the purpose of the `Rectangle` class in the page region conversion process?
+####  س: ما هو الغرض من`Rectangle` class in the page region conversion process?
 
-A: The `Rectangle` class defines the coordinates of the specific region on the PDF page that you want to convert to a DOM. It helps in accurately specifying the crop area.
+ ج: ال`Rectangle` تحدد الفئة إحداثيات المنطقة المحددة على صفحة PDF التي تريد تحويلها إلى DOM. يساعد في تحديد مساحة المحاصيل بدقة.
 
-#### Q: How is the crop area of the page set to the desired region in the conversion process?
+#### س: كيف يتم تعيين مساحة الاقتصاص في الصفحة على المنطقة المطلوبة في عملية التحويل؟
 
-A: The `CropBox` property of the `Page` object is used to set the crop area of the page to the defined rectangle representing the specific region.
+ ج: ال`CropBox` ملكية`Page` يتم استخدام الكائن لتعيين مساحة الاقتصاص للصفحة على المستطيل المحدد الذي يمثل المنطقة المحددة.
 
-#### Q: How is the cropped PDF document saved to a stream during the conversion process?
+#### س: كيف يتم حفظ مستند PDF الذي تم اقتصاصه في التدفق أثناء عملية التحويل؟
 
-A: The cropped PDF document is saved to a `MemoryStream` object, which allows for efficient manipulation of the PDF content.
+ ج: يتم حفظ مستند PDF الذي تم اقتصاصه في ملف`MemoryStream` الكائن، والذي يسمح بالمعالجة الفعالة لمحتوى PDF.
 
-#### Q: What role does the `PngDevice` class play in the page region to DOM conversion process?
+####  س: ما هو الدور الذي يقوم به`PngDevice` class play in the page region to DOM conversion process?
 
-A: The `PngDevice` class helps convert the cropped PDF document into an image format, such as PNG, allowing you to visualize the specific page region.
+ ج: ال`PngDevice` يساعد الفصل على تحويل مستند PDF الذي تم اقتصاصه إلى تنسيق صورة، مثل PNG، مما يسمح لك بتصور منطقة معينة من الصفحة.
 
-#### Q: Can I adjust the resolution or other attributes of the resulting image during the conversion process?
+#### س: هل يمكنني ضبط الدقة أو السمات الأخرى للصورة الناتجة أثناء عملية التحويل؟
 
-A: Yes, you can modify the resolution and other attributes of the resulting image by configuring the `PngDevice` object before converting the page.
+ ج: نعم، يمكنك تعديل الدقة والسمات الأخرى للصورة الناتجة عن طريق تكوين`PngDevice` الكائن قبل تحويل الصفحة.

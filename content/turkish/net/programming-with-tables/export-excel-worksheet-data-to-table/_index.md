@@ -1,237 +1,237 @@
 ---
-title: Export Excel Worksheet Data To Table
-linktitle: Export Excel Worksheet Data To Table
-second_title: Aspose.PDF for .NET API Reference
-description: Export data from an Excel sheet to a PDF table using Aspose.PDF for .NET.
+title: Excel Çalışma Sayfası Verilerini Tabloya Aktarma
+linktitle: Excel Çalışma Sayfası Verilerini Tabloya Aktarma
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET'i kullanarak verileri bir Excel sayfasından PDF tablosuna aktarın.
 type: docs
 weight: 70
 url: /tr/net/programming-with-tables/export-excel-worksheet-data-to-table/
 ---
-In this tutorial, we will learn how to export data from an Excel worksheet and create a table in a PDF document using the Aspose.PDF for .NET library. We will walk through the source code step by step and explain each section in detail. By the end of this tutorial, you will be able to generate PDF files with tables containing data from Excel worksheets. Let's get started!
+Bu eğitimde, Aspose.PDF for .NET kitaplığını kullanarak bir Excel çalışma sayfasından verileri nasıl dışa aktaracağımızı ve bir PDF belgesinde nasıl tablo oluşturacağımızı öğreneceğiz. Kaynak kodunu adım adım inceleyeceğiz ve her bölümü ayrıntılı olarak açıklayacağız. Bu eğitimin sonunda Excel çalışma sayfalarından veri içeren tablolar içeren PDF dosyaları oluşturabileceksiniz. Başlayalım!
 
-## Requirements
-Before we begin, make sure you have the following:
+## Gereksinimler
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- Basic knowledge of C# programming language
-- Visual Studio installed on your machine
-- Aspose.PDF for .NET library added to your project
+- C# programlama dili hakkında temel bilgi
+- Makinenizde Visual Studio yüklü
+- Aspose.PDF for .NET kütüphanesi projenize eklendi
 
-## Step 1: Setting up the Environment
-To begin, create a new C# project in Visual Studio. Add the reference to the Aspose.PDF for .NET library by right-clicking on your project in the Solution Explorer, selecting "Manage NuGet Packages," and searching for "Aspose.PDF." Install the package and you're ready to go.
+## 1. Adım: Ortamı Ayarlama
+Başlamak için Visual Studio'da yeni bir C# projesi oluşturun. Solution Explorer'da projenize sağ tıklayıp "NuGet Paketlerini Yönet" seçeneğini seçip "Aspose.PDF" ifadesini arayarak Aspose.PDF for .NET kitaplığına referansı ekleyin. Paketi yükleyin ve başlamaya hazırsınız.
 
-## Step 2: Loading the Excel Worksheet
-In the first step of our code, we define the path to the directory containing the Excel document. Replace "YOUR DOCUMENT DIRECTORY" with the actual directory path where your Excel file is located.
+## Adım 2: Excel Çalışma Sayfasını Yükleme
+Kodumuzun ilk adımında Excel belgesinin bulunduğu dizinin yolunu tanımlıyoruz. "BELGE DİZİNİNİZ" ifadesini Excel dosyanızın bulunduğu gerçek dizin yolu ile değiştirin.
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 Aspose.Cells.Workbook workbook = new Aspose.Cells.Workbook(new FileStream(dataDir + "newBook1.xlsx", FileMode.Open));
 ```
 
-Here, we use the Aspose.Cells library to load the Excel workbook. Make sure to replace "newBook1.xlsx" with the name of your Excel file.
+Burada Excel çalışma kitabını yüklemek için Aspose.Cells kütüphanesini kullanıyoruz. "newBook1.xlsx" ifadesini Excel dosyanızın adıyla değiştirdiğinizden emin olun.
 
-## Step 3: Accessing the Worksheet
-Next, we need to access the first worksheet in the Excel file. We do this using the `Worksheets` collection of the `Workbook` object.
+## Adım 3: Çalışma Sayfasına Erişim
+ Daha sonra Excel dosyasındaki ilk çalışma sayfasına erişmemiz gerekiyor. Bunu kullanarak yapıyoruz`Worksheets` koleksiyonu`Workbook` nesne.
 
 ```csharp
-// Accessing the first worksheet in the Excel file
+// Excel dosyasındaki ilk çalışma sayfasına erişme
 Aspose.Cells.Worksheet worksheet = workbook.Worksheets[0];
 ```
 
-If your Excel file contains multiple worksheets, you can change the index value `[0]` to access a different worksheet.
+ Excel dosyanız birden fazla çalışma sayfası içeriyorsa dizin değerini değiştirebilirsiniz`[0]` Farklı bir çalışma sayfasına erişmek için.
 
-## Step 4: Exporting Data to DataTable
-Now, we will export the contents of the Excel worksheet to a `DataTable` object. We specify the range of cells to export using the `ExportDataTable` method.
+## Adım 4: Verileri DataTable'a Aktarma
+ Şimdi Excel çalışma sayfasının içeriğini bir dosyaya aktaracağız.`DataTable` nesne. Dışa aktarılacak hücre aralığını kullanarak belirleriz.`ExportDataTable` yöntem.
 
 ```csharp
-// Exporting the contents of 7 rows and 2 columns starting from 1st cell to DataTable
+// 1. hücreden başlayarak 7 satır ve 2 sütunun içeriğini DataTable'a aktarma
 DataTable dataTable = worksheet.Cells.ExportDataTable(0, 0, worksheet.Cells.MaxRow + 1, worksheet.Cells.MaxColumn + 1, true);
 ```
 
-In this example, we export all rows and columns starting from the first cell (0, 0) to the last cell in the worksheet. Set the appropriate range based on your requirements.
+Bu örnekte, çalışma sayfasındaki ilk hücreden (0, 0) son hücreye kadar tüm satır ve sütunları dışa aktarıyoruz. Gereksinimlerinize göre uygun aralığı ayarlayın.
 
-## Step 5: Creating a PDF Document
-Now, we will create a new PDF document using the Aspose.PDF library.
+## Adım 5: PDF Belgesi Oluşturma
+Şimdi Aspose.PDF kütüphanesini kullanarak yeni bir PDF belgesi oluşturacağız.
 
 ```csharp
-// Instantiate a Document instance
+// Bir Belge örneği oluşturun
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 ```
 
-This creates an empty PDF document where we can add content.
+Bu, içerik ekleyebileceğimiz boş bir PDF belgesi oluşturur.
 
-## Step 6: Adding a Page and Table
-To display the data in a table format, we need to add a page and a table to the PDF document.
+## Adım 6: Sayfa ve Tablo Ekleme
+Verileri tablo formatında görüntülemek için PDF belgesine bir sayfa ve bir tablo eklememiz gerekir.
 
 ```csharp
-// Create a page in the document instance
+// Belge örneğinde bir sayfa oluşturun
 Aspose.Pdf.Page sec1 = pdf1.Pages.Add();
 
-// Create a Table object
+// Tablo nesnesi oluşturma
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
-// Add the Table object in the paragraphs collection of the section
+// Tablo nesnesini bölümün paragraf koleksiyonuna ekleyin
 sec1.Paragraphs.Add(tab1);
 ```
 
-Here, we create a new page and a table object. We then add the table to the paragraphs collection of the page.
+Burada yeni bir sayfa ve tablo nesnesi oluşturuyoruz. Daha sonra tabloyu sayfanın paragraf koleksiyonuna ekliyoruz.
 
-## Step 7: Setting Table Properties
-Before importing the data, we need to set some properties of the table, such as column widths and default cell borders.
+## Adım 7: Tablo Özelliklerini Ayarlama
+Verileri içe aktarmadan önce tablonun sütun genişlikleri ve varsayılan hücre sınırları gibi bazı özelliklerini ayarlamamız gerekir.
 
 ```csharp
-// Set column widths of the table
+// Tablonun sütun genişliklerini ayarlayın
 tab1.ColumnWidths = "40 100 100";
 
-// Set default cell border of the table using BorderInfo object
+// BorderInfo nesnesini kullanarak tablonun varsayılan hücre kenarlığını ayarlayın
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 ```
 
-In this example, we set the column widths to 40, 100, and 100 units. Adjust the values based on your data. We also set the default cell border to display borders on all sides of each cell.
+Bu örnekte sütun genişliklerini 40, 100 ve 100 birime ayarladık. Verilerinize göre değerleri ayarlayın. Ayrıca, her hücrenin her tarafında kenarlıklar görüntülenecek şekilde varsayılan hücre kenarlığını da ayarladık.
 
-## Step 8: Importing Data to the Table
-Now, we will import the data from the `DataTable` object into the table using the `ImportDataTable` method.
+## Adım 8: Verileri Tabloya Aktarma
+ Şimdi verileri dosyadan içe aktaracağız.`DataTable` kullanarak tabloya nesne ekleyin.`ImportDataTable` yöntem.
 
 ```csharp
-// Import data into the Table object from the DataTable created above
+// Yukarıda oluşturulan DataTable'dan Table nesnesine veri aktarın
 tab1.ImportDataTable(dataTable, true, 0, 0, dataTable.Rows.Count + 1, dataTable.Columns.Count);
 ```
 
-Here, we specify the range of rows and columns to import. In this example, we import all rows and columns from the `dataTable` object.
+ Burada içe aktarılacak satır ve sütun aralığını belirtiyoruz. Bu örnekte, tüm satırları ve sütunları içe aktarıyoruz.`dataTable` nesne.
 
-## Step 9: Formatting the Table
-To enhance the appearance of the table, we can apply formatting to specific cells or rows. In this step, we will format the first row and alternate rows of the table.
+## Adım 9: Tabloyu Biçimlendirmek
+Tablonun görünümünü geliştirmek için belirli hücrelere veya satırlara biçimlendirme uygulayabiliriz. Bu adımda tablonun ilk satırını ve alternatif satırlarını biçimlendireceğiz.
 
 ```csharp
-// Get 1st row from the table
+// Tablodan 1. satırı alın
 Aspose.Pdf.Row row1 = tab1.Rows[0];
 
-// Format the first row
+// İlk satırı biçimlendir
 foreach(Aspose.Pdf.Cell curCell in row1.Cells)
 {
-     // Set the background color of the cells in the first row
-     curCell.BackgroundColor = Color.Blue;// Set the face for the cells in the first row
+     // İlk satırdaki hücrelerin arka plan rengini ayarlayın
+     curCell.BackgroundColor = Color.Blue;// İlk satırdaki hücrelerin yüzünü ayarlayın
      curCell.DefaultCellTextState.Font = Aspose.Pdf.Text.FontRepository.FindFont("Helvetica-Oblique");
     
-     // Set the font color of the cells in the first row
+     // İlk satırdaki hücrelerin yazı tipi rengini ayarlayın
      curCell.DefaultCellTextState.ForegroundColor = Color.Yellow;
     
-     // Set the text alignment for the cells in the first row
+     // İlk satırdaki hücrelerin metin hizalamasını ayarlama
      curCell.DefaultCellTextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 }
 
-// Alternate row format
+// Alternatif satır biçimi
 for (int All_Rows = 1; All_Rows <= dataTable.Rows.Count; All_Rows++)
 {
      foreach(Aspose.Pdf.Cell curCell in tab1.Rows[All_Rows].Cells)
      {
-         // Set the background color of the cells in alternate rows
+         // Alternatif satırlardaki hücrelerin arka plan rengini ayarlama
          curCell.BackgroundColor = Color.Gray;
         
-         // Set the text color of the cells in alternate rows
+         // Alternatif satırlardaki hücrelerin metin rengini ayarlama
          curCell.DefaultCellTextState.ForegroundColor = Color.White;
      }
 }
 ```
 
-Here, we iterate through the cells in the first row and set their background color, font face, font color, and text alignment. Then, we iterate through all cells in the alternate rows and set their background and text color.
+Burada, ilk satırdaki hücreler arasında geçiş yapıyoruz ve bunların arka plan rengini, yazı tipi yüzünü, yazı tipi rengini ve metin hizalamasını ayarlıyoruz. Daha sonra alternatif satırlardaki tüm hücreleri yineleyerek arka planlarını ve metin renklerini ayarlıyoruz.
 
-## Step 10: Saving the PDF Document
-Finally, we save the PDF document to the specified location.
+## Adım 10: PDF Belgesini Kaydetme
+Son olarak PDF belgesini belirtilen konuma kaydediyoruz.
 
 ```csharp
-// Save the PDF
+// PDF'yi kaydet
 pdf1.Save(dataDir + @"Exceldata_toPdf_table.pdf");
 ```
 
-Make sure to replace "YOUR DOCUMENT DIRECTORY" with the desired directory path and filename for the output PDF file.
+Çıktı PDF dosyası için "BELGE DİZİNİ"ni istediğiniz dizin yolu ve dosya adı ile değiştirdiğinizden emin olun.
 
-### Example source code for Export Excel Worksheet Data To Table using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak Excel Çalışma Sayfası Verilerini Tabloya Dışa Aktarma için örnek kaynak kodu
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 Aspose.Cells.Workbook workbook = new Aspose.Cells.Workbook(new FileStream(dataDir + "newBook1.xlsx", FileMode.Open));
-// Accessing the first worksheet in the Excel file
+// Excel dosyasındaki ilk çalışma sayfasına erişme
 Aspose.Cells.Worksheet worksheet = workbook.Worksheets[0];
-// Exporting the contents of 7 rows and 2 columns starting from 1st cell to DataTable
+// 1. hücreden başlayarak 7 satır ve 2 sütunun içeriğini DataTable'a aktarma
 DataTable dataTable = worksheet.Cells.ExportDataTable(0, 0, worksheet.Cells.MaxRow + 1, worksheet.Cells.MaxColumn + 1, true);
 
-// Instantiate a Document instanc
+// Bir Belge örneğini örnekleyin
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
-// Create a page in the document instance
+// Belge örneğinde bir sayfa oluşturun
 Aspose.Pdf.Page sec1 = pdf1.Pages.Add();
 
-// Create a Table object
+// Tablo nesnesi oluşturma
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
-// Add the Table object in the paragraphs collection of the section
+// Tablo nesnesini bölümün paragraf koleksiyonuna ekleyin
 sec1.Paragraphs.Add(tab1);
 
-// Set column widths of the table.  We need to specify the ColumnCount manually.
-// As the curent excel worksheet has three columsn, so we are specifying the same count
+// Tablonun sütun genişliklerini ayarlayın. ColumnCount'u manuel olarak belirtmemiz gerekiyor.
+// Mevcut excel çalışma sayfasında üç sütun olduğundan aynı sayıyı belirtiyoruz
 tab1.ColumnWidths = "40 100 100";
 
-// Set default cell border of the table using BorderInfo object
+// BorderInfo nesnesini kullanarak tablonun varsayılan hücre kenarlığını ayarlayın
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 
-// Import data into the Table object from the DataTable created above
+// Yukarıda oluşturulan DataTable'dan Table nesnesine veri aktarın
 tab1.ImportDataTable(dataTable, true, 0, 0, dataTable.Rows.Count + 1, dataTable.Columns.Count);
-// Get 1st row from the table
+// Tablodan 1. satırı alın
 Aspose.Pdf.Row row1 = tab1.Rows[0];
 
-// Iterate through all cells in the 1st row and set their background color to blue
+// 1. satırdaki tüm hücreleri yineleyin ve arka plan rengini mavi olarak ayarlayın
 foreach (Aspose.Pdf.Cell curCell in row1.Cells)
 {
-	// Set the background of all the cells in 1st row of the table.
+	// Tablonun 1. satırındaki tüm hücrelerin arka planını ayarlayın.
 	curCell.BackgroundColor = Color.Blue;
-	// Set the font face for the cells of 1st row in the table.
+	// Tablonun 1. satırındaki hücrelerin yazı tipi yüzünü ayarlayın.
 	curCell.DefaultCellTextState.Font = Aspose.Pdf.Text.FontRepository.FindFont("Helvetica-Oblique");
-	// Set the font Color of all the cells in 1st row of the table.
+	// Tablonun 1. satırındaki tüm hücrelerin yazı tipi rengini ayarlayın.
 	curCell.DefaultCellTextState.ForegroundColor = Color.Yellow;
-	// Set the text allignment for the cells of 1st row as Center.
+	// 1. satırdaki hücrelerin metin hizalamasını Orta olarak ayarlayın.
 	curCell.DefaultCellTextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 }
 
 for (int All_Rows = 1; All_Rows <= dataTable.Rows.Count; All_Rows++)
 {
-	// Iterate through all cells in the 1st row and set their background color to blue
+	// 1. satırdaki tüm hücreleri yineleyin ve arka plan rengini mavi olarak ayarlayın
 	foreach (Aspose.Pdf.Cell curCell in tab1.Rows[All_Rows].Cells)
 	{
-		// Set the background color of all the cells except of the 1st row.
+		// 1. satır dışındaki tüm hücrelerin arka plan rengini ayarlayın.
 		curCell.BackgroundColor = Color.Gray;
-		// Set the Text color of all the cells except the 1st row.
+		// 1. satır dışındaki tüm hücrelerin Metin rengini ayarlayın.
 		curCell.DefaultCellTextState.ForegroundColor = Color.White;
 	}
 }
 
-// Save the Pdf
+// PDF'yi kaydet
 pdf1.Save(dataDir + @"Exceldata_toPdf_table.pdf");
 ```
 
-## Conclusion
-In this tutorial, we learned how to export data from an Excel worksheet to a PDF table using the Aspose.PDF for .NET library. We covered the step-by-step process of loading the Excel worksheet, creating a PDF document, adding a table, importing data, andformatting the table. You can now generate PDF files with tables containing Excel data programmatically.
+## Çözüm
+Bu eğitimde, Aspose.PDF for .NET kütüphanesini kullanarak bir Excel çalışma sayfasındaki verileri bir PDF tablosuna nasıl aktaracağımızı öğrendik. Excel çalışma sayfasını yükleme, PDF belgesi oluşturma, tablo ekleme, verileri içe aktarma ve tabloyu biçimlendirme işlemlerini adım adım ele aldık. Artık program aracılığıyla Excel verilerini içeren tablolarla PDF dosyaları oluşturabilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the purpose of exporting Excel worksheet data to a PDF table?
+#### S: Excel çalışma sayfası verilerini PDF tablosuna aktarmanın amacı nedir?
 
-A: Exporting Excel worksheet data to a PDF table allows you to present the data in a structured and organized format. It enables you to generate PDF files with tables that contain data from Excel worksheets, making it easier to share and preserve information in a portable document format.
+C: Excel çalışma sayfası verilerini bir PDF tablosuna aktarmak, verileri yapılandırılmış ve düzenli bir biçimde sunmanıza olanak tanır. Excel çalışma sayfalarından veri içeren tablolarla PDF dosyaları oluşturmanıza olanak tanır ve bilgilerin taşınabilir bir belge biçiminde paylaşılmasını ve korunmasını kolaylaştırır.
 
-#### Q: Can I customize the appearance of the PDF table?
+#### S: PDF tablosunun görünümünü özelleştirebilir miyim?
 
-A: Yes, you can customize the appearance of the PDF table using various properties provided by Aspose.PDF for .NET. In the provided C# source code, you can modify the column widths, cell borders, text alignment, font style, and more to suit your specific requirements.
+C: Evet, Aspose.PDF for .NET tarafından sağlanan çeşitli özellikleri kullanarak PDF tablosunun görünümünü özelleştirebilirsiniz. Sağlanan C# kaynak kodunda sütun genişliklerini, hücre kenarlıklarını, metin hizalamasını, yazı tipi stilini ve daha fazlasını özel gereksinimlerinize uyacak şekilde değiştirebilirsiniz.
 
-#### Q: How do I handle Excel files with multiple worksheets?
+#### S: Birden fazla çalışma sayfası içeren Excel dosyalarını nasıl yönetirim?
 
-A: In the provided C# code, we accessed the first worksheet in the Excel file using the index `[0]`. If your Excel file contains multiple worksheets, you can access them by changing the index value accordingly, such as `[1]` for the second worksheet or `[2]` for the third worksheet.
+ C: Sağlanan C# kodunda, dizini kullanarak Excel dosyasındaki ilk çalışma sayfasına eriştik.`[0]` . Excel dosyanız birden fazla çalışma sayfası içeriyorsa, dizin değerini uygun şekilde değiştirerek bunlara erişebilirsiniz.`[1]` ikinci çalışma sayfası için veya`[2]` üçüncü çalışma sayfası için.
 
-#### Q: Can I apply different formatting to specific rows or cells in the PDF table?
+#### S: PDF tablosundaki belirli satırlara veya hücrelere farklı formatlama uygulayabilir miyim?
 
-A: Yes, you can apply different formatting to specific rows or cells in the PDF table. In the provided C# source code, we demonstrated how to format the first row and alternate rows differently by changing their background color, font style, and font color. You can apply similar formatting techniques to any specific rows or cells as needed.
+C: Evet, PDF tablosundaki belirli satırlara veya hücrelere farklı formatlama uygulayabilirsiniz. Sağlanan C# kaynak kodunda, arka plan rengini, yazı tipi stilini ve yazı tipi rengini değiştirerek ilk satırın ve alternatif satırların nasıl farklı şekilde biçimlendirileceğini gösterdik. Gerektiğinde belirli satırlara veya hücrelere benzer biçimlendirme tekniklerini uygulayabilirsiniz.
 
-#### Q: Is Aspose.PDF for .NET the only library that allows exporting Excel data to a PDF table?
+#### S: Aspose.PDF for .NET, Excel verilerinin PDF tablosuna aktarılmasına izin veren tek kitaplık mıdır?
 
-A: Aspose.PDF for .NET is a powerful library for working with PDF documents in .NET applications. While there might be other libraries available, Aspose.PDF for .NET offers a wide range of features and capabilities for generating, manipulating, and exporting PDF files with tables from Excel data, making it a popular choice for such tasks.
+C: Aspose.PDF for .NET, .NET uygulamalarında PDF belgeleriyle çalışmak için güçlü bir kütüphanedir. Başka kütüphaneler de mevcut olsa da, Aspose.PDF for .NET, Excel verilerinden tablolar içeren PDF dosyaları oluşturmak, düzenlemek ve dışa aktarmak için çok çeşitli özellikler ve yetenekler sunar ve bu da onu bu tür görevler için popüler bir seçim haline getirir.

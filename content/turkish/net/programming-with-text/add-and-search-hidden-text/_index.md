@@ -1,34 +1,34 @@
 ---
-title: Add And Search Hidden Text In PDF File
-linktitle: Add And Search Hidden Text In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to add and search hidden text in PDF file using Aspose.PDF for .NET.
+title: PDF Dosyasına Gizli Metin Ekleme ve Arama
+linktitle: PDF Dosyasına Gizli Metin Ekleme ve Arama
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF dosyasına gizli metin ekleme ve arama yapma konusunda adım adım kılavuz.
 type: docs
 weight: 20
 url: /tr/net/programming-with-text/add-and-search-hidden-text/
 ---
-In this tutorial, we will walk you through how to add and search hidden text in PDF file using Aspose.PDF for .NET. Follow these steps to perform this operation easily.
+Bu eğitimde, Aspose.PDF for .NET kullanarak PDF dosyasındaki gizli metni nasıl ekleyeceğinizi ve arayacağınızı anlatacağız. Bu işlemi kolayca gerçekleştirmek için aşağıdaki adımları izleyin.
 
-## 1. Prerequisites
+## 1. Önkoşullar
 
-Before you begin, make sure you have the following:
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- Visual Studio or any other development environment installed and configured.
-- A basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed. You can download it from Aspose official website.
+- Visual Studio veya kurulu ve yapılandırılmış başka bir geliştirme ortamı.
+- C# programlama dili hakkında temel bilgi.
+- .NET için Aspose.PDF kütüphanesi kuruldu. Aspose'un resmi web sitesinden indirebilirsiniz.
 
-## 2. Creating the PDF document with hidden text
+## 2. Gizli metin içeren PDF belgesi oluşturma
 
-To get started, use the following code to create a new PDF document containing hidden text:
+Başlamak için gizli metin içeren yeni bir PDF belgesi oluşturmak üzere aşağıdaki kodu kullanın:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Create a document
+// Belge oluştur
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 Page page = doc.Pages.Add();
 TextFragment frag1 = new TextFragment("This is common text.");
 TextFragment frag2 = new TextFragment("This is invisible text.");
-// Set text property - invisible
+// Metin özelliğini ayarla - görünmez
 frag2.TextState.Invisible = true;
 page.Paragraphs.Add(frag1);
 page.Paragraphs.Add(frag2);
@@ -36,11 +36,11 @@ doc.Save(dataDir + "39400_out.pdf");
 doc.Dispose();
 ```
 
-Be sure to provide the desired path and filename for the PDF document.
+PDF belgesi için istediğiniz yolu ve dosya adını sağladığınızdan emin olun.
 
-## 3. Search for text in the document
+## 3. Belgede metin arayın
 
-Next, we will search the hidden text in the PDF document. Use the following code:
+Daha sonra PDF belgesindeki gizli metni arayacağız. Aşağıdaki kodu kullanın:
 
 ```csharp
 doc = new Aspose.Pdf.Document(dataDir + "39400_out.pdf");
@@ -48,61 +48,61 @@ TextFragmentAbsorber absorb = new TextFragmentAbsorber();
 absorb.Visit(doc.Pages[1]);
 foreach(TextFragment fragment in absorber.TextFragments)
 {
-// Do something with the fragments
+//Parçalarla bir şeyler yapın
 Console.WriteLine("Text '{0}' at position {1}, invisibility: {2} ",
 fragment.Text, fragment.Position.ToString(), fragment.TextState.Invisible);
 }
 doc.Dispose();
 ```
 
-This will search the hidden text in the second page of the PDF document and display the relevant information.
+Bu, PDF belgesinin ikinci sayfasındaki gizli metni arayacak ve ilgili bilgileri görüntüleyecektir.
 
-### Sample source code for Add And Search Hidden Text using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Gizli Metin Ekleme ve Arama için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-//Create document with hidden text
+//Gizli metin içeren belge oluştur
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 Page page = doc.Pages.Add();
 TextFragment frag1 = new TextFragment("This is common text.");
 TextFragment frag2 = new TextFragment("This is invisible text.");
-//Set text property - invisible
+//Metin özelliğini ayarla - görünmez
 frag2.TextState.Invisible = true;
 page.Paragraphs.Add(frag1);
 page.Paragraphs.Add(frag2);
 doc.Save(dataDir + "39400_out.pdf");
 doc.Dispose();
-//Search text in the document
+//Belgede metin arayın
 doc = new Aspose.Pdf.Document(dataDir + "39400_out.pdf");
 TextFragmentAbsorber absorber = new TextFragmentAbsorber();
 absorber.Visit(doc.Pages[1]);
 foreach (TextFragment fragment in absorber.TextFragments)
 {
-	//Do something with fragments
+	//Parçalarla bir şeyler yapın
 	Console.WriteLine("Text '{0}' on pos {1} invisibility: {2} ",
 	fragment.Text, fragment.Position.ToString(), fragment.TextState.Invisible);
 }
 doc.Dispose();
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulation ! You have successfully added and found hidden text in a PDF document using Aspose.PDF for .NET. You can now apply this method to your own projects to manipulate and search hidden text in PDF files.
+Tebrikler! Aspose.PDF for .NET'i kullanarak bir PDF belgesine başarıyla eklediniz ve gizli metni buldunuz. Artık PDF dosyalarındaki gizli metni değiştirmek ve aramak için bu yöntemi kendi projelerinize uygulayabilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET nedir?
 
-A: Aspose.PDF for .NET is a robust library that empowers developers to create, manipulate, and transform PDF documents within .NET applications.
+C: Aspose.PDF for .NET, geliştiricilerin .NET uygulamaları içinde PDF belgeleri oluşturmasına, işlemesine ve dönüştürmesine olanak tanıyan güçlü bir kitaplıktır.
 
-#### Q: Can hidden text be used for watermarking purposes?
+#### S: Gizli metin filigran amacıyla kullanılabilir mi?
 
-A: Absolutely! Hidden text can serve as an effective means of watermarking PDF documents, adding an extra layer of security.
+C: Kesinlikle! Gizli metin, ekstra bir güvenlik katmanı ekleyerek PDF belgelerine filigran eklemenin etkili bir yolu olarak kullanılabilir.
 
-#### Q: Is it possible to reveal hidden text in a PDF document?
+#### S: Bir PDF belgesindeki gizli metni ortaya çıkarmak mümkün müdür?
 
-A: Yes, the process of searching and revealing hidden text within a PDF document can be achieved using the techniques outlined in this tutorial.
+C: Evet, bir PDF belgesindeki gizli metni arama ve ortaya çıkarma işlemi, bu eğitimde özetlenen teknikler kullanılarak gerçekleştirilebilir.
 
-#### Q: What other functionalities does Aspose.PDF for .NET offer?
+#### S: Aspose.PDF for .NET başka hangi işlevleri sunuyor?
 
-A: Beyond hidden text manipulation, Aspose.PDF for .NET provides a wide array of features, including PDF generation, conversion, encryption, and more.
+C: Aspose.PDF for .NET, gizli metin manipülasyonunun ötesinde, PDF oluşturma, dönüştürme, şifreleme ve daha fazlasını içeren çok çeşitli özellikler sunar.

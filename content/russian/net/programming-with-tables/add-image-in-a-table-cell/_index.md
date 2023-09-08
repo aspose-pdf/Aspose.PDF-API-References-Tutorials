@@ -1,180 +1,180 @@
 ---
-title: Add Image in a Table Cell
-linktitle: Add Image in a Table Cell
-second_title: Aspose.PDF for .NET API Reference
-description: Add an image in a table cell with Aspose.PDF for .NET a step-by-step guide for precise manipulation of images in PDF documents.
+title: Добавить изображение в ячейку таблицы
+linktitle: Добавить изображение в ячейку таблицы
+second_title: Справочник по Aspose.PDF для .NET API
+description: Добавьте изображение в ячейку таблицы с помощью Aspose.PDF для .NET — пошагового руководства для точного манипулирования изображениями в PDF-документах.
 type: docs
 weight: 10
 url: /ru/net/programming-with-tables/add-image-in-a-table-cell/
 ---
-In this tutorial, we will guide you through the process of adding an image to a table cell using Aspose.PDF for .NET. The provided C# source code demonstrates how to achieve this functionality. By following the steps outlined below, you will be able to incorporate images into your table cells effectively.
+В этом уроке мы проведем вас через процесс добавления изображения в ячейку таблицы с помощью Aspose.PDF для .NET. Приведенный исходный код C# демонстрирует, как реализовать эту функциональность. Выполнив шаги, описанные ниже, вы сможете эффективно включать изображения в ячейки таблицы.
 
-Before we dive into the code, make sure you have the Aspose.PDF for .NET library installed and referenced in your project.
+Прежде чем мы углубимся в код, убедитесь, что у вас установлена библиотека Aspose.PDF for .NET и на нее есть ссылка в вашем проекте.
 
-## Step 1: Setting up the Document
+## Шаг 1: Настройка документа
 
-To begin, we need to create a new instance of the `Document` class from the Aspose.Pdf namespace. This class represents a PDF document.
+ Для начала нам нужно создать новый экземпляр`Document` класс из пространства имен Aspose.Pdf. Этот класс представляет PDF-документ.
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate a Document object
+// Создать экземпляр объекта Document
 Document pdfDocument = new Document();
 ```
 
-## Step 2: Creating a Page
+## Шаг 2: Создание страницы
 
-Next, we need to add a page to the PDF document. A page serves as a container for the table and other elements.
+Далее нам нужно добавить страницу в PDF-документ. Страница служит контейнером для таблицы и других элементов.
 
 ```csharp
-// Create a page in the pdf document
+// Создать страницу в pdf документе
 Page sec1 = pdfDocument.Pages.Add();
 ```
 
-## Step 3: Adding a Table
+## Шаг 3: Добавление таблицы
 
-In this step, we will create a table by instantiating the `Table` class from the Aspose.Pdf namespace.
+ На этом этапе мы создадим таблицу, создав экземпляр`Table` класс из пространства имен Aspose.Pdf.
 
 ```csharp
-// Instantiate a table object
+// Создать экземпляр табличного объекта
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 ```
 
-## Step 4: Setting Default Cell Border
+## Шаг 4. Установка границы ячейки по умолчанию
 
-To ensure consistency, we can set a default cell border using the `DefaultCellBorder` property of the table's `BorderInfo` object.
+ Чтобы обеспечить согласованность, мы можем установить границу ячейки по умолчанию, используя`DefaultCellBorder`свойство таблицы`BorderInfo` объект.
 
 ```csharp
-// Set default cell border using BorderInfo object
+// Установите границу ячейки по умолчанию, используя объект BorderInfo
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 ```
 
-## Step 5: Setting Column Widths
+## Шаг 5. Установка ширины столбцов
 
-To define the width of each column in the table, we can set the `ColumnWidths` property. Specify the widths as a string with space-separated values.
+ Чтобы определить ширину каждого столбца в таблице, мы можем установить`ColumnWidths` свойство. Укажите ширину в виде строки со значениями, разделенными пробелами.
 
 ```csharp
-// Set with column widths of the table
+// Задается шириной столбца таблицы
 tab1.ColumnWidths = "100 100 120";
 ```
 
-## Step 6: Adding an Image to a Table Cell
+## Шаг 6. Добавление изображения в ячейку таблицы
 
-Now comes the exciting part, adding an image to a table cell. To do this, we will follow these sub-steps:
+Теперь наступает самое интересное — добавление изображения в ячейку таблицы. Для этого мы выполним следующие подэтапы:
 
-## Step 6.1: Creating an Image Object
+## Шаг 6.1: Создание объекта изображения
 
-Create an instance of the `Image` class from the Aspose.Pdf namespace. Set the `File` property to the path of the image file you want to add.
+ Создайте экземпляр`Image` класс из пространства имен Aspose.Pdf. Установить`File` укажите путь к файлу изображения, который вы хотите добавить.
 
 ```csharp
-// Create an Image object
+// Создайте объект изображения
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
 img.File = dataDir + "aspose.jpg";
 ```
 
-## Step 6.2: Creating a Row and Cells
+## Шаг 6.2: Создание строки и ячеек
 
-To add the image to the table, we first need to create a row and the necessary cells.
+Чтобы добавить изображение в таблицу, нам сначала нужно создать строку и необходимые ячейки.
 
 ```csharp
-// Create a row in the table
+// Создать строку в таблице
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 
-// Add a text cell to the row
+// Добавить текстовую ячейку в строку
 row1.Cells.Add("Sample text in cell");
 
-// Add the cell which holds the image
+// Добавьте ячейку, содержащую изображение
 Aspose.Pdf.Cell cell2 = row1.Cells.Add();
 ```
 
-## Step 6.3: Adding the Image to the Table Cell
+## Шаг 6.3: Добавление изображения в ячейку таблицы
 
-Finally, we can add the image to the table cell by adding it as a paragraph within the cell.
+Наконец, мы можем добавить изображение в ячейку таблицы, добавив его в качестве абзаца внутри ячейки.
 
 ```csharp
-// Add the image to the table cell
+// Добавьте изображение в ячейку таблицы
 cell2.Paragraphs.Add(img);
 ```
 
-## Step 6.4: Adding Additional Cells
+## Шаг 6.4: Добавление дополнительных ячеек
 
-After adding the image cell, we can add more cells to the row if needed.
+После добавления ячейки изображения мы можем добавить в строку дополнительные ячейки, если это необходимо.
 
 ```csharp
-// Add another cell to the row
+//Добавить еще одну ячейку в строку
 row1.Cells.Add("Previous cell with image");
 
-// Adjust the vertical alignment of the third cell
+// Отрегулируйте вертикальное выравнивание третьей ячейки
 row1.Cells[2].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
 ```
 
-## Step 7: Saving the Document
+## Шаг 7: Сохранение документа
 
-Finally, we can save the modified document to a specified location using the `Save` method.
+ Наконец, мы можем сохранить измененный документ в указанном месте, используя команду`Save` метод.
 
 ```csharp
-// Save the Document
+// Сохраните документ
 pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 ```
 
-Congratulations! You have successfully learned how to add an image to a table cell using Aspose.PDF for .NET. Feel free to explore further customization options and integrate this functionality into your projects.
+Поздравляем! Вы успешно научились добавлять изображение в ячейку таблицы с помощью Aspose.PDF для .NET. Не стесняйтесь изучать дополнительные возможности настройки и интегрировать эту функциональность в свои проекты.
 
-### Example source code for add image in a table cell using Aspose.PDF for .NET
+### Пример исходного кода для добавления изображения в ячейку таблицы с использованием Aspose.PDF для .NET
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate a Document object
+// Создать экземпляр объекта Document
 Document pdfDocument = new Document();
-// Create a page in the pdf document
+// Создать страницу в pdf документе
 Page sec1 = pdfDocument.Pages.Add();
-// Instantiate a table object
+// Создать экземпляр табличного объекта
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
-// Add the table in paragraphs collection of the desired page
+// Добавьте таблицу в коллекцию абзацев нужной страницы.
 sec1.Paragraphs.Add(tab1);
-// Set default cell border using BorderInfo object
+// Установите границу ячейки по умолчанию, используя объект BorderInfo
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
-// Set with column widths of the table
+// Задается шириной столбца таблицы
 tab1.ColumnWidths = "100 100 120";
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
 img.File = dataDir + "aspose.jpg";
-// Create rows in the table and then cells in the rows
+// Создайте строки в таблице, а затем ячейки в строках.
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("Sample text in cell");
-// Add the cell which holds the image
+// Добавьте ячейку, содержащую изображение
 Aspose.Pdf.Cell cell2 = row1.Cells.Add();
-// Add the image to the table cell
+// Добавьте изображение в ячейку таблицы
 cell2.Paragraphs.Add(img);
 row1.Cells.Add("Previous cell with image");
 row1.Cells[2].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
-// Save the Document
+// Сохраните документ
 pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, we covered a step-by-step guide on how to add an image to a table cell using Aspose.PDF for .NET. We started by setting up the document, creating a page, and adding a table. Then, we set the default cell border and column widths. We demonstrated how to add an image to a table cell and adjust the cell's vertical alignment. Finally, we saved the modified document. By following these steps, you can enhance your PDF documents with images in table cells efficiently.
+В этом уроке мы рассмотрели пошаговое руководство о том, как добавить изображение в ячейку таблицы с помощью Aspose.PDF для .NET. Мы начали с настройки документа, создания страницы и добавления таблицы. Затем мы устанавливаем границу ячейки и ширину столбца по умолчанию. Мы продемонстрировали, как добавить изображение в ячейку таблицы и настроить вертикальное выравнивание ячейки. Наконец, мы сохранили измененный документ. Следуя этим шагам, вы сможете эффективно улучшить свои PDF-документы с помощью изображений в ячейках таблицы.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: Can I add multiple images to different cells within the same table using Aspose.PDF for .NET?
+#### Вопрос: Могу ли я добавить несколько изображений в разные ячейки одной таблицы, используя Aspose.PDF для .NET?
 
-A: Yes, you can add multiple images to different cells within the same table using Aspose.PDF for .NET. Simply follow the same process demonstrated in the tutorial for each image you want to add to the table.
+О: Да, вы можете добавить несколько изображений в разные ячейки одной таблицы, используя Aspose.PDF для .NET. Просто следуйте тому же процессу, который показан в руководстве, для каждого изображения, которое вы хотите добавить в таблицу.
 
-#### Q: Can I customize the image size and position within the table cell?
+#### Вопрос: Могу ли я настроить размер и положение изображения в ячейке таблицы?
 
-A: Yes, you can customize the image size and position within the table cell by adjusting the properties of the `Image` object. You can set the image width and height, as well as the alignment within the cell.
+ О: Да, вы можете настроить размер и положение изображения в ячейке таблицы, настроив свойства`Image`объект. Вы можете установить ширину и высоту изображения, а также выравнивание внутри ячейки.
 
-#### Q: Can I add images to a table with a dynamic number of rows and columns?
+#### Вопрос: Могу ли я добавлять изображения в таблицу с динамическим количеством строк и столбцов?
 
-A: Yes, you can add images to a table with a dynamic number of rows and columns. Aspose.PDF for .NET provides flexibility in creating tables with varying dimensions. You can add rows and cells as needed, and then add images to specific cells accordingly.
+О: Да, вы можете добавлять изображения в таблицу с динамическим количеством строк и столбцов. Aspose.PDF для .NET обеспечивает гибкость при создании таблиц различных размеров. Вы можете добавлять строки и ячейки по мере необходимости, а затем соответствующим образом добавлять изображения в определенные ячейки.
 
-#### Q: What image formats are supported by Aspose.PDF for .NET for adding images to table cells?
+#### Вопрос: Какие форматы изображений поддерживаются Aspose.PDF для .NET для добавления изображений в ячейки таблицы?
 
-A: Aspose.PDF for .NET supports a wide range of image formats, including JPEG, PNG, GIF, BMP, and TIFF. You can use images of any of these formats to add them to table cells.
+О: Aspose.PDF для .NET поддерживает широкий спектр форматов изображений, включая JPEG, PNG, GIF, BMP и TIFF. Вы можете использовать изображения любого из этих форматов, чтобы добавлять их в ячейки таблицы.
 
-#### Q: Can I add images to tables in an existing PDF document?
+#### Вопрос: Могу ли я добавлять изображения в таблицы существующего PDF-документа?
 
-A: Yes, you can add images to tables in an existing PDF document using Aspose.PDF for .NET. Simply load the existing document and follow the same steps to add images to the table as demonstrated in the tutorial.
+О: Да, вы можете добавлять изображения в таблицы существующего PDF-документа, используя Aspose.PDF для .NET. Просто загрузите существующий документ и выполните те же действия, чтобы добавить изображения в таблицу, как показано в руководстве.

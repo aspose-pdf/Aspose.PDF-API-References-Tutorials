@@ -1,28 +1,28 @@
 ---
-title: Access Children Elements
-linktitle: Access Children Elements
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to accessing and editing child elements of a PDF document using Aspose.PDF for .NET. Personalize your PDF content.
+title: Accéder aux éléments enfants
+linktitle: Accéder aux éléments enfants
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Guide étape par étape pour accéder et modifier les éléments enfants d'un document PDF à l'aide d'Aspose.PDF pour .NET. Personnalisez votre contenu PDF.
 type: docs
 weight: 10
 url: /fr/net/programming-with-tagged-pdf/access-children-elements/
 ---
-In this tutorial, we will provide you with a step-by-step guide on accessing child elements of a PDF document using Aspose.PDF for .NET. Aspose.PDF is a powerful library that allows you to create, manipulate and convert PDF documents programmatically. Using the marked content structure features of Aspose.PDF, you can access and modify the properties of structured elements in a PDF document.
+Dans ce didacticiel, nous vous fournirons un guide étape par étape sur l'accès aux éléments enfants d'un document PDF à l'aide d'Aspose.PDF pour .NET. Aspose.PDF est une bibliothèque puissante qui vous permet de créer, manipuler et convertir des documents PDF par programme. À l'aide des fonctionnalités de structure de contenu marquées d'Aspose.PDF, vous pouvez accéder et modifier les propriétés des éléments structurés dans un document PDF.
 
-## Prerequisites
+## Conditions préalables
 
-Before you begin, make sure you have the following prerequisites in place:
+Avant de commencer, assurez-vous que les conditions préalables suivantes sont remplies :
 
-1. Visual Studio installed with .NET framework.
-2. The Aspose.PDF library for .NET.
+1. Visual Studio installé avec le framework .NET.
+2. La bibliothèque Aspose.PDF pour .NET.
 
-## Step 1: Project Setup
+## Étape 1 : Configuration du projet
 
-To get started, create a new project in Visual Studio and add a reference to the Aspose.PDF for .NET library. You can download the library from Aspose official website and install it on your machine.
+Pour commencer, créez un nouveau projet dans Visual Studio et ajoutez une référence à la bibliothèque Aspose.PDF pour .NET. Vous pouvez télécharger la bibliothèque depuis le site officiel d'Aspose et l'installer sur votre ordinateur.
 
-## Step 2: Import the necessary namespaces
+## Étape 2 : Importez les espaces de noms nécessaires
 
-In your C# code file, import the namespaces required to access the classes and methods provided by Aspose.PDF:
+Dans votre fichier de code C#, importez les espaces de noms requis pour accéder aux classes et méthodes fournies par Aspose.PDF :
 
 ```csharp
 using System;
@@ -30,9 +30,9 @@ using Aspose.Pdf;
 using Aspose.Pdf.Tagged;
 ```
 
-## Step 3: Loading the PDF Document and Accessing Child Elements
+## Étape 3 : chargement du document PDF et accès aux éléments enfants
 
-Use the following code to load the PDF document and access the child elements:
+Utilisez le code suivant pour charger le document PDF et accéder aux éléments enfants :
 
 ```csharp
 string dataDir = "YOUR_DIRECTORY_OF_DOCUMENTS";
@@ -45,7 +45,7 @@ foreach(Element element in elementList)
 if (element is StructureElement)
 {
 StructureElement structureElement = element as StructureElement;
-// Access the properties of the element
+// Accéder aux propriétés de l'élément
 string title = structureElement.Title;
 string language = structureElement.Language;
 string actualText = structureElement.ActualText;
@@ -55,11 +55,11 @@ string alternativeText = structureElement.AlternativeText;
 }
 ```
 
-This code allows you to access the child elements of the root of the PDF document structure and get the properties of each element.
+Ce code permet d'accéder aux éléments enfants de la racine de la structure du document PDF et d'obtenir les propriétés de chaque élément.
 
-## Step 4: Accessing Root Element Children and Changing Properties
+## Étape 4 : accès aux enfants de l'élément racine et modification des propriétés
 
-Use the following code to access the children of the root element and modify the properties:
+Utilisez le code suivant pour accéder aux enfants de l'élément racine et modifier les propriétés :
 
 ```csharp
 elementList = taggedContent.RootElement.ChildElements[1].ChildElements;
@@ -69,7 +69,7 @@ foreach(Element element in elementList)
 if (element is StructureElement)
 {
 StructureElement structureElement = element as StructureElement;
-// Modify the properties of the element
+// Modifier les propriétés de l'élément
 structureElement.Title = "title";
 structureElement.Language = "fr-FR";
 structureElement.ActualText = "actual text";
@@ -79,25 +79,25 @@ structureElement.AlternativeText = "alt";
 }
 ```
 
-This code allows you to access the children of the first element of the root element and modify the properties of each element.
+Ce code permet d'accéder aux enfants du premier élément de l'élément racine et de modifier les propriétés de chaque élément.
 
 
-### Sample source code for Access Children Elements using Aspose.PDF for .NET 
+### Exemple de code source pour Access Children Elements à l’aide d’Aspose.PDF pour .NET 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open Pdf Document
+// Ouvrir un document PDF
 Document document = new Document(dataDir + "StructureElementsTree.pdf");
-// Get Content for work with TaggedPdf
+// Obtenez du contenu pour travailler avec TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
-// Access to root element(s)
+// Accès aux éléments racine
 ElementList elementList = taggedContent.StructTreeRootElement.ChildElements;
 foreach (Element element in elementList)
 {
 	if (element is StructureElement)
 	{
 		StructureElement structureElement = element as StructureElement;
-		// Get properties
+		// Obtenir des propriétés
 		string title = structureElement.Title;
 		string language = structureElement.Language;
 		string actualText = structureElement.ActualText;
@@ -105,14 +105,14 @@ foreach (Element element in elementList)
 		string alternativeText = structureElement.AlternativeText;
 	}
 }
-// Access to children elements of first element in root element
+// Accès aux éléments enfants du premier élément de l'élément racine
 elementList = taggedContent.RootElement.ChildElements[1].ChildElements;
 foreach (Element element in elementList)
 {
 	if (element is StructureElement)
 	{
 		StructureElement structureElement = element as StructureElement;
-		// Set properties
+		// Définir les propriétés
 		structureElement.Title = "title";
 		structureElement.Language = "fr-FR";
 		structureElement.ActualText = "actual text";
@@ -120,43 +120,43 @@ foreach (Element element in elementList)
 		structureElement.AlternativeText = "alt";
 	}
 }
-// Save Tagged Pdf Document
+// Enregistrer le document PDF balisé
 document.Save(dataDir + "AccessChildrenElements.pdf");
 ```
 
 ## Conclusion
 
-In this tutorial, you learned how to access child elements of a PDF document and how to modify element properties using Aspose.PDF for .NET. This allows you to customize and manipulate the structured elements in a PDF document according to your needs.
+Dans ce didacticiel, vous avez appris comment accéder aux éléments enfants d'un document PDF et comment modifier les propriétés des éléments à l'aide d'Aspose.PDF pour .NET. Cela vous permet de personnaliser et de manipuler les éléments structurés d'un document PDF en fonction de vos besoins.
 
-### FAQ's
+### FAQ
 
-#### Q: What is the purpose of accessing child elements in a PDF document using Aspose.PDF for .NET?
+#### Q : Quel est le but d'accéder aux éléments enfants dans un document PDF à l'aide d'Aspose.PDF pour .NET ?
 
-A: Accessing child elements in a PDF document using Aspose.PDF for .NET allows you to programmatically manipulate and customize the structured elements within the document. This can include modifying properties, such as titles, languages, actual text, expansion text, and alternative text, to enhance the accessibility and presentation of the document.
+R : L'accès aux éléments enfants dans un document PDF à l'aide d'Aspose.PDF pour .NET vous permet de manipuler et de personnaliser par programme les éléments structurés du document. Cela peut inclure la modification de propriétés, telles que les titres, les langues, le texte réel, le texte d'extension et le texte alternatif, pour améliorer l'accessibilité et la présentation du document.
 
-#### Q: What is the role of the Aspose.PDF library in this process?
+#### Q : Quel est le rôle de la bibliothèque Aspose.PDF dans ce processus ?
 
-A: Aspose.PDF for .NET is a powerful library that provides various features for creating, manipulating, and converting PDF documents programmatically. In this tutorial, the library is used to load a PDF document, access tagged content and structured elements, and modify their properties.
+R : Aspose.PDF pour .NET est une bibliothèque puissante qui fournit diverses fonctionnalités pour créer, manipuler et convertir des documents PDF par programme. Dans ce didacticiel, la bibliothèque est utilisée pour charger un document PDF, accéder au contenu balisé et aux éléments structurés et modifier leurs propriétés.
 
-#### Q: What are the prerequisites for working with child elements in a PDF document using Aspose.PDF for .NET?
+#### Q : Quelles sont les conditions préalables pour travailler avec des éléments enfants dans un document PDF à l'aide d'Aspose.PDF pour .NET ?
 
-A: Before you begin, ensure that you have Visual Studio installed with the .NET framework and have the Aspose.PDF library for .NET referenced in your project.
+R : Avant de commencer, assurez-vous que Visual Studio est installé avec le framework .NET et que la bibliothèque Aspose.PDF pour .NET est référencée dans votre projet.
 
-#### Q: How does the provided C# code allow for accessing and modifying child elements in a PDF document?
+#### Q : Comment le code C# fourni permet-il d'accéder et de modifier les éléments enfants dans un document PDF ?
 
-A: The code demonstrates how to load a PDF document, access the tagged content, and traverse through the child elements of the root and specific elements. It showcases how to retrieve properties of structured elements and how to modify those properties to customize the document.
+R : Le code montre comment charger un document PDF, accéder au contenu balisé et parcourir les éléments enfants des éléments racine et spécifiques. Il montre comment récupérer les propriétés des éléments structurés et comment modifier ces propriétés pour personnaliser le document.
 
-#### Q: Can I access and modify other properties of the child elements beyond the ones shown in the code?
+#### Q : Puis-je accéder et modifier d’autres propriétés des éléments enfants au-delà de celles affichées dans le code ?
 
-A: Yes, you can access and modify various other properties of the child elements using similar techniques. The properties demonstrated in the code (title, language, actual text, etc.) are just examples, and you can explore the Aspose.PDF documentation to discover more properties and methods available for manipulation.
+R : Oui, vous pouvez accéder et modifier diverses autres propriétés des éléments enfants en utilisant des techniques similaires. Les propriétés démontrées dans le code (titre, langue, texte réel, etc.) ne sont que des exemples, et vous pouvez explorer la documentation Aspose.PDF pour découvrir plus de propriétés et de méthodes disponibles pour la manipulation.
 
-#### Q: How do I identify which child elements I want to access within the PDF document?
-A: The code provides an example of accessing the child elements of the root element and a specific element within it. You can identify the elements you want to access based on their hierarchy and structure within the tagged content of the PDF document.
+#### Q : Comment puis-je identifier les éléments enfants auxquels je souhaite accéder dans le document PDF ?
+R : Le code fournit un exemple d'accès aux éléments enfants de l'élément racine et à un élément spécifique qu'il contient. Vous pouvez identifier les éléments auxquels vous souhaitez accéder en fonction de leur hiérarchie et de leur structure dans le contenu balisé du document PDF.
 
-#### Q: Is it possible to add new child elements or delete existing ones using this approach?
+#### Q : Est-il possible d'ajouter de nouveaux éléments enfants ou de supprimer des éléments existants en utilisant cette approche ?
 
-A: While the provided code focuses on accessing and modifying existing child elements, you can extend the approach to add new child elements or delete existing ones by using appropriate methods provided by the Aspose.PDF library.
+R : Bien que le code fourni se concentre sur l'accès et la modification des éléments enfants existants, vous pouvez étendre l'approche pour ajouter de nouveaux éléments enfants ou supprimer des éléments enfants existants en utilisant les méthodes appropriées fournies par la bibliothèque Aspose.PDF.
 
-#### Q: Can I use this approach to work with nested child elements within the PDF document?
+#### Q : Puis-je utiliser cette approche pour travailler avec des éléments enfants imbriqués dans le document PDF ?
 
-A: Yes, you can apply similar techniques to access and modify nested child elements within the PDF document's structure. By traversing through the hierarchy of elements, you can access and manipulate elements at various levels.
+R : Oui, vous pouvez appliquer des techniques similaires pour accéder et modifier les éléments enfants imbriqués dans la structure du document PDF. En parcourant la hiérarchie des éléments, vous pouvez accéder et manipuler des éléments à différents niveaux.

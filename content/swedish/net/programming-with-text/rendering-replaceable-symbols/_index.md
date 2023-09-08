@@ -1,49 +1,49 @@
 ---
-title: Rendering Replaceable Symbols In PDF File
-linktitle: Rendering Replaceable Symbols In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to render replaceable symbols in PDF file using Aspose.PDF for .NET.
+title: Återge utbytbara symboler i PDF-fil
+linktitle: Återge utbytbara symboler i PDF-fil
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du renderar utbytbara symboler i PDF-filer med Aspose.PDF för .NET.
 type: docs
 weight: 310
 url: /sv/net/programming-with-text/rendering-replaceable-symbols/
 ---
-In this tutorial, we will explain how to render replaceable symbols in PDF file using the Aspose.PDF library for .NET. We will go through the step-by-step process of creating a PDF, adding a text fragment with newline markers, setting text properties, positioning the text, and saving the PDF using the provided C# source code.
+I den här handledningen kommer vi att förklara hur man renderar utbytbara symboler i PDF-fil med Aspose.PDF-biblioteket för .NET. Vi kommer att gå igenom steg-för-steg-processen för att skapa en PDF, lägga till ett textfragment med nyradsmarkörer, ställa in textegenskaper, placera texten och spara PDF:en med den medföljande C#-källkoden.
 
-## Prerequisites
+## Förutsättningar
 
-Before you begin, ensure that you have the following:
+Innan du börjar, se till att du har följande:
 
-- The Aspose.PDF for .NET library installed.
-- A basic understanding of C# programming.
+- Aspose.PDF för .NET-biblioteket installerat.
+- En grundläggande förståelse för C#-programmering.
 
-## Step 1: Set up the Document Directory
+## Steg 1: Konfigurera dokumentkatalogen
 
-First, you need to set the path to the directory where you want to save the generated PDF file. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your desired directory.
+ Först måste du ställa in sökvägen till katalogen där du vill spara den genererade PDF-filen. Byta ut`"YOUR DOCUMENT DIRECTORY"` i`dataDir`variabel med sökvägen till din önskade katalog.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Create a PDF Document and Page
+## Steg 2: Skapa ett PDF-dokument och en sida
 
-Next, we create a new PDF document and add a page to it using the `Document` class and `Page` class from the Aspose.PDF library.
+ Därefter skapar vi ett nytt PDF-dokument och lägger till en sida till det med hjälp av`Document` klass och`Page` klass från Aspose.PDF-biblioteket.
 
 ```csharp
 Aspose.Pdf.Document pdfApplicationDoc = new Aspose.Pdf.Document();
 Aspose.Pdf.Page applicationFirstPage = (Aspose.Pdf.Page)pdfApplicationDoc.Pages.Add();
 ```
 
-## Step 3: Add Text Fragment with Newline Markers
+## Steg 3: Lägg till textfragment med Newline Markers
 
-We create a `TextFragment` object and set its text to include newline markers (`Environment.NewLine`) to represent multiple lines of text.
+ Vi skapar en`TextFragment`objekt och ställ in dess text så att den inkluderar nyradsmarkörer (`Environment.NewLine`) för att representera flera textrader.
 
 ```csharp
 Aspose.Pdf.Text.TextFragment textFragment = new Aspose.Pdf.Text.TextFragment("Applicant Name: " + Environment.NewLine + " Joe Smoe");
 ```
 
-## Step 4: Set Text Fragment Properties
+## Steg 4: Ställ in egenskaper för textfragment
 
-We can set various properties for the text fragment if desired, such as font size, font, background color, and foreground color.
+Vi kan ställa in olika egenskaper för textfragmentet om så önskas, såsom teckenstorlek, teckensnitt, bakgrundsfärg och förgrundsfärg.
 
 ```csharp
 textFragment.TextState.FontSize = 12;
@@ -52,9 +52,9 @@ textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
 textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
 ```
 
-## Step 5: Create Text Paragraph and Position
+## Steg 5: Skapa textstycke och position
 
-We create a `TextParagraph` object, append the text fragment to the paragraph, and set the position of the paragraph on the page.
+ Vi skapar en`TextParagraph` objekt, lägg till textfragmentet till stycket och ställ in styckets position på sidan.
 
 ```csharp
 TextParagraph par = new TextParagraph();
@@ -62,18 +62,18 @@ par.AppendLine(textFragment);
 par.Position = new Aspose.Pdf.Text.Position(100, 600);
 ```
 
-## Step 6: Add Text Paragraph to the Page
+## Steg 6: Lägg till textstycke på sidan
 
-We create a `TextBuilder` object with the page and append the text paragraph to the text builder.
+ Vi skapar en`TextBuilder` objekt med sidan och lägg till textstycket i textbyggaren.
 
 ```csharp
 TextBuilder textBuilder = new TextBuilder(applicationFirstPage);
 textBuilder.AppendParagraph(par);
 ```
 
-## Step 7: Save the PDF Document
+## Steg 7: Spara PDF-dokumentet
 
-Finally, we save the PDF document to the specified output file.
+Slutligen sparar vi PDF-dokumentet till den angivna utdatafilen.
 
 ```csharp
 dataDir = dataDir + "RenderingReplaceableSymbols_out.pdf";
@@ -81,82 +81,82 @@ pdfApplicationDoc.Save(dataDir);
 Console.WriteLine("\nReplaceable symbols rendered successfully during PDF creation.\nFile saved at " + dataDir);
 ```
 
-### Sample source code for Rendering Replaceable Symbols using Aspose.PDF for .NET 
+### Exempel på källkod för att rendera utbytbara symboler med Aspose.PDF för .NET 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document pdfApplicationDoc = new Aspose.Pdf.Document();
 Aspose.Pdf.Page applicationFirstPage = (Aspose.Pdf.Page)pdfApplicationDoc.Pages.Add();
-// Initialize new TextFragment with text containing required newline markers
+// Initiera nytt TextFragment med text som innehåller obligatoriska nyradsmarkörer
 Aspose.Pdf.Text.TextFragment textFragment = new Aspose.Pdf.Text.TextFragment("Applicant Name: " + Environment.NewLine + " Joe Smoe");
-// Set text fragment properties if necessary
+// Ställ in egenskaper för textfragment om det behövs
 textFragment.TextState.FontSize = 12;
 textFragment.TextState.Font = Aspose.Pdf.Text.FontRepository.FindFont("TimesNewRoman");
 textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
 textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
-// Create TextParagraph object
+// Skapa TextParagraph-objekt
 TextParagraph par = new TextParagraph();
-// Add new TextFragment to paragraph
+// Lägg till nytt textfragment till stycket
 par.AppendLine(textFragment);
-// Set paragraph position
+// Ställ in styckeposition
 par.Position = new Aspose.Pdf.Text.Position(100, 600);
-// Create TextBuilder object
+// Skapa TextBuilder-objekt
 TextBuilder textBuilder = new TextBuilder(applicationFirstPage);
-// Add the TextParagraph using TextBuilder
+// Lägg till TextParagraph med TextBuilder
 textBuilder.AppendParagraph(par);
 dataDir = dataDir + "RenderingReplaceableSymbols_out.pdf";
 pdfApplicationDoc.Save(dataDir);
 Console.WriteLine("\nReplaceable symbols render successfully duing pdf creation.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Slutsats
 
-In this tutorial, you have learned how to render replaceable symbols in a PDF document using the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can create a PDF, add text with newline markers, set text properties, position the text on the page, and save the PDF.
+den här handledningen har du lärt dig hur du renderar utbytbara symboler i ett PDF-dokument med Aspose.PDF-biblioteket för .NET. Genom att följa den steg-för-steg-guide och köra den medföljande C#-koden kan du skapa en PDF, lägga till text med nyradsmarkörer, ställa in textegenskaper, placera texten på sidan och spara PDF:en.
 
 ### FAQ's
 
-#### Q: What is the purpose of the "Rendering Replaceable Symbols In PDF File" tutorial?
+#### F: Vad är syftet med handledningen "Återgivning av utbytbara symboler i PDF-fil"?
 
-A: The "Rendering Replaceable Symbols In PDF File" tutorial demonstrates how to use the Aspose.PDF library for .NET to create a PDF document that includes replaceable symbols. These symbols are represented as text fragments with newline markers to create multi-line content.
+S: Handledningen "Rendera utbytbara symboler i PDF-fil" visar hur man använder Aspose.PDF-biblioteket för .NET för att skapa ett PDF-dokument som innehåller utbytbara symboler. Dessa symboler representeras som textfragment med nyradsmarkörer för att skapa flerradsinnehåll.
 
-#### Q: Why would I want to render replaceable symbols in a PDF document?
+#### F: Varför skulle jag vilja återge utbytbara symboler i ett PDF-dokument?
 
-A: Rendering replaceable symbols is useful when you need to dynamically generate PDF content that includes variable or user-specific information. These symbols act as placeholders that can be replaced with actual data during runtime, such as form field values or personalized details.
+S: Att rendera utbytbara symboler är användbart när du dynamiskt behöver generera PDF-innehåll som innehåller variabel eller användarspecifik information. Dessa symboler fungerar som platshållare som kan ersättas med faktiska data under körning, såsom formulärfältsvärden eller personliga detaljer.
 
-#### Q: How do I set up the document directory?
+#### F: Hur ställer jag in dokumentkatalogen?
 
-A: To set up the document directory:
+S: Så här ställer du in dokumentkatalogen:
 
-1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where you want to save the generated PDF file.
+1.  Byta ut`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till katalogen där du vill spara den genererade PDF-filen.
 
-#### Q: How do I render replaceable symbols in a PDF document using the Aspose.PDF library?
+#### F: Hur återger jag utbytbara symboler i ett PDF-dokument med Aspose.PDF-biblioteket?
 
-A: The tutorial guides you through the process step by step:
+S: Handledningen guidar dig genom processen steg för steg:
 
-1. Create a new PDF document using the `Document` class.
-2. Add a page to the document using the `Page` class.
-3. Create a `TextFragment` object with newline markers (`Environment.NewLine`) to represent multi-line content.
-4. Customize the text fragment's properties such as font size, font, background color, and foreground color.
-5. Create a `TextParagraph` object, append the text fragment to it, and set the position of the paragraph on the page.
-6. Create a `TextBuilder` object with the page and append the text paragraph to it.
-7. Save the PDF document.
+1.  Skapa ett nytt PDF-dokument med hjälp av`Document` klass.
+2.  Lägg till en sida i dokumentet med hjälp av`Page` klass.
+3.  Skapa en`TextFragment` objekt med nyradsmarkörer (`Environment.NewLine`) för att representera innehåll med flera rader.
+4. Anpassa textfragmentets egenskaper som teckenstorlek, teckensnitt, bakgrundsfärg och förgrundsfärg.
+5.  Skapa en`TextParagraph` objekt, lägg till textfragmentet till det och ställ in styckets position på sidan.
+6.  Skapa en`TextBuilder` objekt med sidan och lägg till textstycket till det.
+7. Spara PDF-dokumentet.
 
-#### Q: What is the purpose of using newline markers (`Environment.NewLine`) in the text fragment?
+#### F: Vad är syftet med att använda nyradsmarkörer (`Environment.NewLine`) in the text fragment?
 
-A: Newline markers are used to create multi-line content within a single text fragment. By using `Environment.NewLine`, you can indicate where line breaks should occur in the text.
+ S: Nyradsmarkörer används för att skapa flerradsinnehåll i ett enda textfragment. Genom att använda`Environment.NewLine`, kan du ange var radbrytningar ska förekomma i texten.
 
-#### Q: Can I customize the appearance of the replaceable symbols?
+#### F: Kan jag anpassa utseendet på de utbytbara symbolerna?
 
-A: Yes, you can customize various properties of the text fragment, such as font size, font, background color, and foreground color. These properties determine the visual appearance of the replaceable symbols in the PDF document.
+S: Ja, du kan anpassa olika egenskaper för textfragmentet, såsom teckenstorlek, teckensnitt, bakgrundsfärg och förgrundsfärg. Dessa egenskaper bestämmer det visuella utseendet på de utbytbara symbolerna i PDF-dokumentet.
 
-#### Q: How do I specify the position of the text on the page?
+#### F: Hur anger jag positionen för texten på sidan?
 
-A: You can set the position of the text by creating a `TextParagraph` object and using the `Position` property to specify the X and Y coordinates on the page where the paragraph should be positioned.
+ S: Du kan ställa in textens position genom att skapa en`TextParagraph` objekt och använda`Position` egenskap för att ange X- och Y-koordinaterna på sidan där stycket ska placeras.
 
-#### Q: What is the expected outcome of executing the provided code?
+#### F: Vad är det förväntade resultatet av att exekvera den tillhandahållna koden?
 
-A: By following the tutorial and running the provided C# code, you will create a PDF document that includes replaceable symbols. The replaceable symbols will be represented as text fragments with newline markers and customized properties.
+S: Genom att följa handledningen och köra den medföljande C#-koden skapar du ett PDF-dokument som innehåller utbytbara symboler. De utbytbara symbolerna kommer att representeras som textfragment med nyradsmarkörer och anpassade egenskaper.
 
-#### Q: Can I use this approach to dynamically generate personalized PDF documents?
+#### F: Kan jag använda detta tillvägagångssätt för att dynamiskt generera personliga PDF-dokument?
 
-A: Yes, this approach is suitable for dynamically generating PDF documents with personalized information. By replacing the replaceable symbols with actual data, you can create customized PDF content for each user or scenario.
+S: Ja, det här tillvägagångssättet är lämpligt för att dynamiskt generera PDF-dokument med personlig information. Genom att ersätta de utbytbara symbolerna med faktiska data kan du skapa anpassat PDF-innehåll för varje användare eller scenario.

@@ -1,53 +1,53 @@
 ---
-title: Control Rectangle Z Order In PDF File
-linktitle: Control Rectangle Z Order In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to control the Z-order of rectangles in a PDF file using Aspose.PDF for .NET. 
+title: Steuern Sie die Z-Reihenfolge des Rechtecks in der PDF-Datei
+linktitle: Steuern Sie die Z-Reihenfolge des Rechtecks in der PDF-Datei
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie, wie Sie die Z-Reihenfolge von Rechtecken in einer PDF-Datei mit Aspose.PDF für .NET steuern.
 type: docs
 weight: 40
 url: /de/net/programming-with-graphs/control-rectangle-z-order/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to control the Z-order of rectangles using Aspose.PDF for .NET.
+In diesem Tutorial führen wir Sie Schritt für Schritt durch den folgenden C#-Quellcode, um die Z-Reihenfolge von Rechtecken mithilfe von Aspose.PDF für .NET zu steuern.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Stellen Sie sicher, dass Sie die Aspose.PDF-Bibliothek installiert und Ihre Entwicklungsumgebung eingerichtet haben, bevor Sie beginnen. Außerdem verfügen Sie über Grundkenntnisse der C#-Programmierung.
 
-## Step 1: Document Directory Setup
+## Schritt 1: Einrichten des Dokumentenverzeichnisses
 
-In the provided source code, you need to specify the directory where you want to save the resulting PDF file. Change the "dataDir" variable to the desired directory.
+Im bereitgestellten Quellcode müssen Sie das Verzeichnis angeben, in dem Sie die resultierende PDF-Datei speichern möchten. Ändern Sie die Variable „dataDir“ in das gewünschte Verzeichnis.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Instantiating a Document Object and Adding a Page
+## Schritt 2: Instanziieren eines Dokumentobjekts und Hinzufügen einer Seite
 
-We create an instance of the Document class and add a page to this document.
+Wir erstellen eine Instanz der Document-Klasse und fügen diesem Dokument eine Seite hinzu.
 
 ```csharp
 Document doc1 = new Document();
 Aspose.Pdf.Page page1 = doc1.Pages.Add();
 ```
 
-## Step 3: Setting up the page size
+## Schritt 3: Einrichten der Seitengröße
 
-We set the PDF page size using the SetPageSize method.
+Wir legen die PDF-Seitengröße mit der SetPageSize-Methode fest.
 
 ```csharp
 page1.SetPageSize(375, 300);
 ```
 
-## Step 4: Setting Page Margins
+## Schritt 4: Seitenränder festlegen
 
-We can configure the page margins using the properties of the PageInfo object.
+Wir können die Seitenränder mithilfe der Eigenschaften des PageInfo-Objekts konfigurieren.
 
 ```csharp
 page1.PageInfo.Margin.Left = 0;
 page1.PageInfo.Margin.Top = 0;
 ```
 
-## Step 5: Add Rectangles with Specified Z Order
+## Schritt 5: Fügen Sie Rechtecke mit der angegebenen Z-Reihenfolge hinzu
 
-We create and add rectangles to the page with different colors and specified Z orders.
+Wir erstellen und fügen der Seite Rechtecke mit unterschiedlichen Farben und bestimmten Z-Reihenfolgen hinzu.
 
 ```csharp
 AddRectangle(page1, 50, 40, 60, 40, Aspose.Pdf.Color.Red, 2);
@@ -55,75 +55,75 @@ AddRectangle(page1, 20, 20, 30, 30, Aspose.Pdf.Color.Blue, 1);
 AddRectangle(page1, 40, 40, 60, 30, Aspose.Pdf.Color.Green, 0);
 ```
 
-## Step 6: Saving the Resulting PDF File
+## Schritt 6: Speichern der resultierenden PDF-Datei
 
-Finally, we save the resulting PDF file with the name "ControlRectangleZOrder_out.pdf" in the specified directory.
+Abschließend speichern wir die resultierende PDF-Datei mit dem Namen „ControlRectangleZOrder_out.pdf“ im angegebenen Verzeichnis.
 
 ```csharp
 doc1.Save(dataDir);
 ```
-### Sample source code for Control Rectangle Z Order using Aspose.PDF for .NET 
+### Beispielquellcode für die Z-Reihenfolge des Steuerrechtecks mit Aspose.PDF für .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Instantiate Document class object
+// Instanziieren Sie ein Document-Klassenobjekt
 Document doc1 = new Document();
-/// Add page to pages collection of PDF file
+/// Seite zur Seitensammlung der PDF-Datei hinzufügen
 Aspose.Pdf.Page page1 = doc1.Pages.Add();
-// Set size of PDF page
+// Legen Sie die Größe der PDF-Seite fest
 page1.SetPageSize(375, 300);
-// Set left margin for page object as 0
+// Legen Sie den linken Rand für das Seitenobjekt auf 0 fest
 page1.PageInfo.Margin.Left = 0;
-// Set top margin of page object as 0
+// Legen Sie den oberen Rand des Seitenobjekts auf 0 fest
 page1.PageInfo.Margin.Top = 0;
-// Create a new rectangle with Color as Red, Z-Order as 0 and certain dimensions
+// Erstellen Sie ein neues Rechteck mit der Farbe Rot, der Z-Reihenfolge 0 und bestimmten Abmessungen
 AddRectangle(page1, 50, 40, 60, 40, Aspose.Pdf.Color.Red, 2);
-// Create a new rectangle with Color as Blue, Z-Order as 0 and certain dimensions
+// Erstellen Sie ein neues Rechteck mit der Farbe Blau, der Z-Reihenfolge 0 und bestimmten Abmessungen
 AddRectangle(page1, 20, 20, 30, 30, Aspose.Pdf.Color.Blue, 1);
-// Create a new rectangle with Color as Green, Z-Order as 0 and certain dimensions
+//Erstellen Sie ein neues Rechteck mit der Farbe Grün, der Z-Reihenfolge 0 und bestimmten Abmessungen
 AddRectangle(page1, 40, 40, 60, 30, Aspose.Pdf.Color.Green, 0);
 dataDir = dataDir + "ControlRectangleZOrder_out.pdf";
-// Save resultant PDF file
+// Speichern Sie die resultierende PDF-Datei
 doc1.Save(dataDir);
 
 ```
 
-## Conclusion
+## Abschluss
 
-In this tutorial, we explained how to control the Z-order of rectangles using Aspose.PDF for .NET. You can now use this knowledge to arrange and layer rectangles in your PDF files with precision.
+In diesem Tutorial haben wir erklärt, wie Sie die Z-Reihenfolge von Rechtecken mithilfe von Aspose.PDF für .NET steuern. Mit diesem Wissen können Sie nun Rechtecke in Ihren PDF-Dateien präzise anordnen und schichten.
 
-### FAQ's control rectangle z order in PDF file
+### Häufig gestellte Fragen zur Z-Reihenfolge des Kontrollrechtecks in einer PDF-Datei
 
-#### Q: What is the purpose of this tutorial?
+#### F: Was ist der Zweck dieses Tutorials?
 
-A: This tutorial aims to guide you through the process of controlling the Z-order of rectangles using Aspose.PDF for .NET, allowing you to arrange and layer rectangles in your PDF files.
+A: Dieses Tutorial soll Sie durch den Prozess der Steuerung der Z-Reihenfolge von Rechtecken mit Aspose.PDF für .NET führen und es Ihnen ermöglichen, Rechtecke in Ihren PDF-Dateien anzuordnen und übereinander zu schichten.
 
-#### Q: What prerequisites are required before starting?
+#### F: Welche Voraussetzungen sind vor dem Start erforderlich?
 
-A: Before you begin, ensure that you have installed the Aspose.PDF library and set up your development environment. Additionally, having a basic understanding of C# programming is recommended.
+A: Bevor Sie beginnen, stellen Sie sicher, dass Sie die Aspose.PDF-Bibliothek installiert und Ihre Entwicklungsumgebung eingerichtet haben. Darüber hinaus werden grundlegende Kenntnisse der C#-Programmierung empfohlen.
 
-#### Q: How do I specify the directory for saving the PDF file?
+#### F: Wie lege ich das Verzeichnis zum Speichern der PDF-Datei fest?
 
-A: In the provided source code, you can modify the "dataDir" variable to indicate the directory where you want to save the resulting PDF file.
+A: Im bereitgestellten Quellcode können Sie die Variable „dataDir“ ändern, um das Verzeichnis anzugeben, in dem Sie die resultierende PDF-Datei speichern möchten.
 
-#### Q: What is the purpose of setting page size and margins?
+#### F: Zu welchem Zweck werden Seitengröße und Ränder festgelegt?
 
-A: Setting the page size and margins helps configure the layout of the PDF page and provides a canvas on which you can arrange the rectangles.
+A: Durch das Festlegen der Seitengröße und der Ränder können Sie das Layout der PDF-Seite konfigurieren und eine Leinwand bereitstellen, auf der Sie die Rechtecke anordnen können.
 
-#### Q: How do I add rectangles with specified Z order?
+#### F: Wie füge ich Rechtecke mit einer bestimmten Z-Reihenfolge hinzu?
 
-A: You can create and add rectangles to the page using the `AddRectangle` method, specifying the position, dimensions, color, and Z order for each rectangle.
+ A: Sie können mit dem Rechtecke erstellen und zur Seite hinzufügen`AddRectangle` -Methode, die die Position, Abmessungen, Farbe und Z-Reihenfolge für jedes Rechteck angibt.
 
-#### Q: What is Z-order, and why is it important?
+#### F: Was ist die Z-Reihenfolge und warum ist sie wichtig?
 
-A: Z-order determines the stacking order of objects on a page. Objects with higher Z-order values are positioned on top of objects with lower Z-order values, affecting their visibility and layering.
+A: Die Z-Reihenfolge bestimmt die Stapelreihenfolge von Objekten auf einer Seite. Objekte mit höheren Z-Ordnungswerten werden über Objekten mit niedrigeren Z-Ordnungswerten positioniert, was sich auf deren Sichtbarkeit und Schichtung auswirkt.
 
-#### Q: Can I customize the colors and dimensions of the rectangles?
+#### F: Kann ich die Farben und Abmessungen der Rechtecke anpassen?
 
-A: Yes, you can customize the colors, positions, and dimensions of the rectangles by modifying the parameters passed to the `AddRectangle` method.
+ A: Ja, Sie können die Farben, Positionen und Abmessungen der Rechtecke anpassen, indem Sie die an übergebenen Parameter ändern`AddRectangle` Methode.
 
-#### Q: How do I save the resulting PDF file after arranging the rectangles?
+#### F: Wie speichere ich die resultierende PDF-Datei, nachdem ich die Rechtecke angeordnet habe?
 
-A: After arranging the rectangles, you can save the resulting PDF file using the `doc1.Save(dataDir);` line in the provided source code.
+ A: Nachdem Sie die Rechtecke angeordnet haben, können Sie die resultierende PDF-Datei mit speichern`doc1.Save(dataDir);` Zeile im bereitgestellten Quellcode.

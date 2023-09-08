@@ -1,49 +1,49 @@
 ---
-title: Expand Bookmarks In PDF File
-linktitle: Expand Bookmarks In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily expand bookmarks in PDF file for improved navigation with Aspose.PDF for .NET.
+title: Erweitern Sie Lesezeichen in der PDF-Datei
+linktitle: Erweitern Sie Lesezeichen in der PDF-Datei
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erweitern Sie Lesezeichen in PDF-Dateien ganz einfach, um die Navigation mit Aspose.PDF für .NET zu verbessern.
 type: docs
 weight: 50
 url: /de/net/programming-with-bookmarks/expand-bookmarks/
 ---
-Expanding bookmarks in PDF file will display all open bookmarks by default. With Aspose.PDF for .NET, you can easily expand bookmarks by following the following source code:
+Durch Erweitern der Lesezeichen in einer PDF-Datei werden standardmäßig alle geöffneten Lesezeichen angezeigt. Mit Aspose.PDF für .NET können Sie Lesezeichen ganz einfach erweitern, indem Sie dem folgenden Quellcode folgen:
 
-## Step 1: Import required libraries
+## Schritt 1: Erforderliche Bibliotheken importieren
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Bevor Sie beginnen, müssen Sie die erforderlichen Bibliotheken für Ihr C#-Projekt importieren. Hier ist die notwendige Importanweisung:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## Schritt 2: Legen Sie den Pfad zum Dokumentenordner fest
 
-In this step, you need to specify the path to the folder containing the PDF file whose bookmarks you want to expand. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ In diesem Schritt müssen Sie den Pfad zu dem Ordner angeben, der die PDF-Datei enthält, deren Lesezeichen Sie erweitern möchten. Ersetzen`"YOUR DOCUMENT DIRECTORY"`Geben Sie im folgenden Code den tatsächlichen Pfad zu Ihrem Dokumentenordner ein:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Schritt 3: Öffnen Sie das PDF-Dokument
 
-Now we will open the PDF document whose bookmarks we want to expand using the following code:
+Nun öffnen wir das PDF-Dokument, dessen Lesezeichen wir erweitern möchten, mit folgendem Code:
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 4: Set Page Display Mode
+## Schritt 4: Stellen Sie den Seitenanzeigemodus ein
 
-In this step, we will set the page display mode to show bookmarks by default. We use the `PageMode` property of the `doc` object to set the desired page mode. Here is the corresponding code:
+In diesem Schritt stellen wir den Seitenanzeigemodus so ein, dass standardmäßig Lesezeichen angezeigt werden. Wir benutzen das`PageMode` Eigentum der`doc` Objekt, um den gewünschten Seitenmodus festzulegen. Hier ist der entsprechende Code:
 
 ```csharp
 doc.PageMode = PageMode.UseOutlines;
 ```
 
-## Step 5: Browse bookmarks and expand them
+## Schritt 5: Durchsuchen Sie die Lesezeichen und erweitern Sie sie
 
-Now we'll loop through each bookmark item in the document's bookmarks collection and set each item's open state to `true` to expand them by default. Here is the corresponding code:
+ Jetzt durchlaufen wir jedes Lesezeichenelement in der Lesezeichensammlung des Dokuments und setzen den geöffneten Status jedes Elements auf`true` um sie standardmäßig zu erweitern. Hier ist der entsprechende Code:
 
 ```csharp
 foreach(OutlineItemCollection item in doc.Outlines)
@@ -52,86 +52,86 @@ foreach(OutlineItemCollection item in doc.Outlines)
 }
 ```
 
-## Step 6: Save the updated file
+## Schritt 6: Speichern Sie die aktualisierte Datei
 
-Finally, we save the updated PDF file using the `Save` method of the `doc` object. Here is the corresponding code:
+ Abschließend speichern wir die aktualisierte PDF-Datei mit`Save` Methode der`doc` Objekt. Hier ist der entsprechende Code:
 
 ```csharp
 dataDir = dataDir + "ExpandBookmarks_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Expand Bookmarks using Aspose.PDF for .NET 
+### Beispielquellcode für „Lesezeichen erweitern“ mit Aspose.PDF für .NET 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Dokument öffnen
 Document doc = new Document(dataDir + "input.pdf");
-// Set page view mode i.e. show thumbnails, full-screen, show attachment panel
+// Stellen Sie den Seitenansichtsmodus ein, z. B. Miniaturansichten anzeigen, Vollbild anzeigen, Anhangsbereich anzeigen
 doc.PageMode = PageMode.UseOutlines;
-// Traverse through each Ouline item in outlines collection of PDF file
+// Durchsuchen Sie jedes Ouline-Element in der Gliederungssammlung der PDF-Datei
 foreach (OutlineItemCollection item in doc.Outlines)
 {
-	// Set open status for outline item
+	// Offenen Status für Gliederungselement festlegen
 	item.Open = true;
 }
 dataDir = dataDir + "ExpandBookmarks_out.pdf";
-// Save output
+// Ausgabe speichern
 doc.Save(dataDir);
 Console.WriteLine("\nBookmarks expanded successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Abschluss
 
-Congratulation ! You now have a step-by-step guide to developing bookmarks with Aspose.PDF for .NET. You can use this code to show all default bookmarks in your PDF documents.
+Herzlichen Glückwunsch! Sie haben jetzt eine Schritt-für-Schritt-Anleitung zum Entwickeln von Lesezeichen mit Aspose.PDF für .NET. Mit diesem Code können Sie alle Standardlesezeichen in Ihren PDF-Dokumenten anzeigen.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Weitere Informationen zu erweiterten Funktionen zur Lesezeichenmanipulation finden Sie unbedingt in der offiziellen Aspose.PDF-Dokumentation.
 
-### FAQ's for expand bookmarks in PDF file
+### FAQs zum Erweitern von Lesezeichen in PDF-Dateien
 
-#### Q: What are bookmarks in a PDF file?
+#### F: Was sind Lesezeichen in einer PDF-Datei?
 
-A: Bookmarks in a PDF file are navigational aids that allow users to quickly jump to specific sections or pages within the document. They provide a convenient way to access different parts of a document.
+A: Lesezeichen in einer PDF-Datei sind Navigationshilfen, die es Benutzern ermöglichen, schnell zu bestimmten Abschnitten oder Seiten innerhalb des Dokuments zu springen. Sie bieten eine bequeme Möglichkeit, auf verschiedene Teile eines Dokuments zuzugreifen.
 
-#### Q: Why would I want to expand bookmarks in a PDF file?
+#### F: Warum sollte ich Lesezeichen in einer PDF-Datei erweitern?
 
-A: Expanding bookmarks can improve the user experience by displaying all bookmarks in an expanded state by default. This gives users a clear overview of the document's structure and allows them to easily navigate to different sections.
+A: Das Erweitern von Lesezeichen kann die Benutzererfahrung verbessern, indem alle Lesezeichen standardmäßig im erweiterten Zustand angezeigt werden. Dadurch erhalten Benutzer einen klaren Überblick über die Struktur des Dokuments und können problemlos zu verschiedenen Abschnitten navigieren.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### F: Wie importiere ich die erforderlichen Bibliotheken für mein C#-Projekt?
 
-A: To import the required library for your C# project, use the following import directive:
+A: Um die erforderliche Bibliothek für Ihr C#-Projekt zu importieren, verwenden Sie die folgende Importanweisung:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This directive allows you to utilize the classes and methods provided by Aspose.PDF for .NET.
+Mit dieser Direktive können Sie die von Aspose.PDF für .NET bereitgestellten Klassen und Methoden verwenden.
 
-#### Q: How do I specify the path to the documents folder?
+#### F: Wie lege ich den Pfad zum Dokumentenordner fest?
 
-A: In the provided source code, replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file that you want to work with. This ensures that the code can locate the target PDF file.
+ A: Ersetzen Sie im bereitgestellten Quellcode`"YOUR DOCUMENT DIRECTORY"` mit dem tatsächlichen Pfad zu dem Ordner, der die PDF-Datei enthält, mit der Sie arbeiten möchten. Dadurch wird sichergestellt, dass der Code die Ziel-PDF-Datei finden kann.
 
-#### Q: How do I open a PDF document to expand its bookmarks?
+#### F: Wie öffne ich ein PDF-Dokument, um seine Lesezeichen zu erweitern?
 
-A: To open a PDF document for expanding bookmarks, use the following code:
+A: Um ein PDF-Dokument zum Erweitern von Lesezeichen zu öffnen, verwenden Sie den folgenden Code:
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-Replace `"input.pdf"` with the actual file name.
+ Ersetzen`"input.pdf"` mit dem tatsächlichen Dateinamen.
 
-#### Q: How do I set the page display mode to show bookmarks by default?
+#### F: Wie stelle ich den Seitenanzeigemodus so ein, dass standardmäßig Lesezeichen angezeigt werden?
 
-A: To set the page display mode to show bookmarks by default, use the `PageMode` property of the `doc` object:
+A: Um den Seitenanzeigemodus so einzustellen, dass standardmäßig Lesezeichen angezeigt werden, verwenden Sie die`PageMode` Eigentum der`doc` Objekt:
 
 ```csharp
 doc.PageMode = PageMode.UseOutlines;
 ```
 
-#### Q: How do I expand all bookmarks in the PDF document?
+#### F: Wie erweitere ich alle Lesezeichen im PDF-Dokument?
 
-A: To expand all bookmarks, loop through each bookmark item in the document's outlines collection and set the `Open` property to `true`:
+ A: Um alle Lesezeichen zu erweitern, durchlaufen Sie jedes Lesezeichenelement in der Gliederungssammlung des Dokuments und legen Sie fest`Open` Eigentum zu`true`:
 
 ```csharp
 foreach (OutlineItemCollection item in doc.Outlines)
@@ -140,19 +140,19 @@ foreach (OutlineItemCollection item in doc.Outlines)
 }
 ```
 
-#### Q: What happens if a bookmark has nested child bookmarks?
+#### F: Was passiert, wenn ein Lesezeichen verschachtelte untergeordnete Lesezeichen hat?
 
-A: If a bookmark has nested child bookmarks, expanding the parent bookmark will also expand its child bookmarks, providing a comprehensive view of the document's structure.
+A: Wenn ein Lesezeichen über verschachtelte untergeordnete Lesezeichen verfügt, werden beim Erweitern des übergeordneten Lesezeichens auch die untergeordneten Lesezeichen erweitert, sodass eine umfassende Ansicht der Struktur des Dokuments angezeigt wird.
 
-#### Q: How do I save the updated PDF file after expanding bookmarks?
+#### F: Wie speichere ich die aktualisierte PDF-Datei, nachdem ich die Lesezeichen erweitert habe?
 
-A: To save the updated PDF file after expanding bookmarks, use the following code:
+A: Um die aktualisierte PDF-Datei nach dem Erweitern der Lesezeichen zu speichern, verwenden Sie den folgenden Code:
 
 ```csharp
 dataDir = dataDir + "ExpandBookmarks_out.pdf";
 doc.Save(dataDir);
 ```
 
-#### Q: Can I customize the appearance of expanded bookmarks?
+#### F: Kann ich das Erscheinungsbild erweiterter Lesezeichen anpassen?
 
-A: While this tutorial focuses on expanding bookmarks by default, you can customize the appearance of bookmarks using Aspose.PDF's other features and properties.
+A: Während sich dieses Tutorial auf das standardmäßige Erweitern von Lesezeichen konzentriert, können Sie das Erscheinungsbild von Lesezeichen mithilfe der anderen Funktionen und Eigenschaften von Aspose.PDF anpassen.

@@ -1,98 +1,98 @@
 ---
-title: Manipulate Table In PDF File
-linktitle: Manipulate Table In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily manipulate tables in PDF file with Aspose.PDF for .NET.
+title: التعامل مع الجدول في ملف PDF
+linktitle: التعامل مع الجدول في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: يمكنك التعامل بسهولة مع الجداول في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 130
 url: /ar/net/programming-with-tables/manipulate-table/
 ---
-In this tutorial, we will walk you through the step-by-step process of manipulating tables in PDF file using Aspose.PDF for .NET. Tables are a common element in PDF documents, and being able to modify their content programmatically can be highly beneficial in various scenarios. We will use the C# source code provided to demonstrate the process.
+في هذا البرنامج التعليمي، سنرشدك خلال عملية التعامل مع الجداول في ملف PDF خطوة بخطوة باستخدام Aspose.PDF لـ .NET. تعد الجداول عنصرًا شائعًا في مستندات PDF، والقدرة على تعديل محتواها برمجيًا يمكن أن تكون مفيدة للغاية في سيناريوهات مختلفة. سوف نستخدم كود مصدر C# المقدم لتوضيح العملية.
 
-## Requirements
+## متطلبات
 
-Before we begin, make sure you have the following:
+قبل أن نبدأ، تأكد من أن لديك ما يلي:
 
-- Visual Studio or any other C# development environment installed.
-- Aspose.PDF for .NET library added as a reference to your project.
+- تم تثبيت Visual Studio أو أي بيئة تطوير C# أخرى.
+- تمت إضافة Aspose.PDF لمكتبة .NET كمرجع لمشروعك.
 
-Now, let's dive into the steps required to manipulate tables in a PDF document using Aspose.PDF for .NET.
+الآن، دعنا نتعمق في الخطوات المطلوبة لمعالجة الجداول في مستند PDF باستخدام Aspose.PDF لـ .NET.
 
-## Step 1: Loading the PDF Document
+## الخطوة 1: تحميل وثيقة PDF
 
-The first step is to load the existing PDF document into your C# application. You need to provide the path to the directory where your document is located.
+الخطوة الأولى هي تحميل مستند PDF الموجود في تطبيق C# الخاص بك. تحتاج إلى توفير المسار إلى الدليل الذي يوجد به المستند الخاص بك.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "input.pdf");
 ```
 
-Replace "YOUR DOCUMENT DIRECTORY" with the actual path to the directory where your PDF document is located.
+استبدل "دليل المستندات الخاص بك" بالمسار الفعلي للدليل الذي يوجد به مستند PDF الخاص بك.
 
-## Step 2: Finding Tables in the Document
+## الخطوة 2: البحث عن الجداول في المستند
 
-To manipulate tables, we need to find them within the PDF document. Aspose.PDF for .NET provides a TableAbsorber class that allows us to extract tables from the document. We will create an instance of the TableAbsorber class and visit the desired page of the document.
+للتعامل مع الجداول، نحتاج إلى العثور عليها داخل مستند PDF. يوفر Aspose.PDF for .NET فئة TableAbsorter التي تسمح لنا باستخراج الجداول من المستند. سنقوم بإنشاء مثيل لفئة TableAbsorter ونزور الصفحة المطلوبة من المستند.
 
 ```csharp
 TableAbsorber absorber = new TableAbsorber();
 absorb.Visit(pdfDocument.Pages[1]);
 ```
 
-In this example, we are visiting the first page of the document. You can change the page number as per your requirements.
+في هذا المثال، نقوم بزيارة الصفحة الأولى من المستند. يمكنك تغيير رقم الصفحة حسب متطلباتك.
 
-## Step 3: Accessing Table Cells and Text Fragments
+## الخطوة 3: الوصول إلى خلايا الجدول وأجزاء النص
 
-Once we have the tables, we can access their cells and text fragments for manipulation. In the provided source code, we are accessing the first table, the first cell of its first row, and the second text fragment within that cell.
+بمجرد حصولنا على الجداول، يمكننا الوصول إلى خلاياها وأجزاء النص الخاصة بها للتلاعب بها. في الكود المصدري المقدم، نقوم بالوصول إلى الجدول الأول، والخلية الأولى من صفه الأول، وجزء النص الثاني داخل تلك الخلية.
 
 ```csharp
 TextFragment fragment = absorb.TableList[0].RowList[0].CellList[0].TextFragments[1];
 ```
 
-You can modify the code to target different tables, cells, or text fragments based on your specific needs.
+يمكنك تعديل التعليمات البرمجية لاستهداف جداول أو خلايا أو أجزاء نصية مختلفة بناءً على احتياجاتك المحددة.
 
-## Step 4: Manipulating Table Text
+## الخطوة 4: معالجة نص الجدول
 
-With the text fragment accessed, we can now modify its content. In the given example, we are changing the text to "hi world".
+بعد الوصول إلى جزء النص، يمكننا الآن تعديل محتواه. في المثال المعطى، نقوم بتغيير النص إلى "مرحبا بالعالم".
 
 ```csharp
 fragment.Text = "hi world";
 ```
 
-Feel free to replace "hi world" with your desired text.
+لا تتردد في استبدال "hi World" بالنص الذي تريده.
 
-## Step 5: Saving the Modified Document
+## الخطوة 5: حفظ المستند المعدل
 
-Once the desired modifications are made, we need to save the modified PDF document.
+بمجرد إجراء التعديلات المطلوبة، نحتاج إلى حفظ مستند PDF المعدل.
 
 ```csharp
 dataDir = dataDir + "ManipulateTable_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-Ensure you provide the path and filename for the modified document.
+تأكد من توفير المسار واسم الملف للمستند المعدل.
 
 
-### Example source code for Manipulate Table using Aspose.PDF for .NET
+### مثال على التعليمات البرمجية المصدر لـ Manipulate Table باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 try
 {
 	
-	// The path to the documents directory.
+	// المسار إلى دليل المستندات.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Load existing PDF file
+	// قم بتحميل ملف PDF الموجود
 	Document pdfDocument = new Document(dataDir + "input.pdf");
-	// Create TableAbsorber object to find tables
+	// قم بإنشاء كائن TableAbsorter للعثور على الجداول
 	TableAbsorber absorber = new TableAbsorber();
 
-	// Visit first page with absorber
+	// قم بزيارة الصفحة الأولى مع الممتص
 	absorber.Visit(pdfDocument.Pages[1]);
 
-	// Get access to first table on page, their first cell and text fragments in it
+	// يمكنك الوصول إلى الجدول الأول في الصفحة، والخلية الأولى وأجزاء النص فيه
 	TextFragment fragment = absorber.TableList[0].RowList[0].CellList[0].TextFragments[1];
 
-	// Change text of the first text fragment in the cell
+	// تغيير نص جزء النص الأول في الخلية
 	fragment.Text = "hi world";
 	dataDir = dataDir + "ManipulateTable_out.pdf";
 	pdfDocument.Save(dataDir);
@@ -105,28 +105,28 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we have learned how to manipulate tables in a PDF document using Aspose.PDF for .NET. By following the step-by-step guide, you can easily load a PDF document, find tables, access cells and text fragments, modify table content, and save the modified document. This approach provides flexibility and efficiency when dealing with table manipulation in PDF documents.
+في هذا البرنامج التعليمي، تعلمنا كيفية التعامل مع الجداول في مستند PDF باستخدام Aspose.PDF لـ .NET. باتباع الدليل الموضح خطوة بخطوة، يمكنك بسهولة تحميل مستند PDF، والعثور على الجداول، والوصول إلى الخلايا وأجزاء النص، وتعديل محتوى الجدول، وحفظ المستند المعدل. يوفر هذا الأسلوب المرونة والكفاءة عند التعامل مع معالجة الجدول في مستندات PDF.
 
-### FAQ's for manipulate table in PDF file
+### الأسئلة الشائعة للتعامل مع الجدول في ملف PDF
 
-#### Q: Can I manipulate tables in multi-page PDF documents?
+#### س: هل يمكنني التعامل مع الجداول في مستندات PDF متعددة الصفحات؟
 
-A: Yes, you can manipulate tables in multi-page PDF documents using Aspose.PDF for .NET. In the provided example, we visited the first page of the document (`pdfDocument.Pages[1]`), but you can loop through all the pages and manipulate tables on each page as needed.
+ج: نعم، يمكنك التعامل مع الجداول في مستندات PDF متعددة الصفحات باستخدام Aspose.PDF لـ .NET. في المثال المقدم، قمنا بزيارة الصفحة الأولى من المستند (`pdfDocument.Pages[1]`)، ولكن يمكنك تكرار جميع الصفحات ومعالجة الجداول في كل صفحة حسب الحاجة.
 
-#### Q: How can I add new rows or columns to an existing table?
+#### س: كيف يمكنني إضافة صفوف أو أعمدة جديدة إلى جدول موجود؟
 
-A: To add new rows or columns to an existing table, you can use the APIs provided by Aspose.PDF for .NET. You can access the `RowList` and `CellList` properties of the `TableAbsorber.TableList` to add new rows and cells programmatically. Refer to the Aspose.PDF for .NET documentation for detailed information and code examples.
+ ج: لإضافة صفوف أو أعمدة جديدة إلى جدول موجود، يمكنك استخدام واجهات برمجة التطبيقات التي يوفرها Aspose.PDF لـ .NET. يمكنك الوصول إلى`RowList` و`CellList` خصائص`TableAbsorber.TableList` لإضافة صفوف وخلايا جديدة برمجياً. راجع Aspose.PDF للحصول على وثائق .NET للحصول على معلومات تفصيلية وأمثلة على التعليمات البرمجية.
 
-#### Q: Is it possible to remove a table from a PDF document?
+#### س: هل من الممكن إزالة جدول من مستند PDF؟
 
-A: Yes, you can remove a table from a PDF document using Aspose.PDF for .NET. To achieve this, you can remove the specific `Table` object from the `Page.Paragraphs` collection. You can identify the table to remove by using properties like `Table.NumberOfColumns`, `Table.NumberOfRows`, and other unique identifiers.
+ ج: نعم، يمكنك إزالة جدول من مستند PDF باستخدام Aspose.PDF لـ .NET. لتحقيق ذلك، يمكنك إزالة محددة`Table` كائن من`Page.Paragraphs` مجموعة. يمكنك تحديد الجدول المراد إزالته باستخدام خصائص مثل`Table.NumberOfColumns`, `Table.NumberOfRows`والمعرفات الفريدة الأخرى.
 
-#### Q: Can I change the formatting (font, color, alignment) of the table text?
+#### س: هل يمكنني تغيير التنسيق (الخط واللون والمحاذاة) لنص الجدول؟
 
-A: Yes, you can change the formatting of the table text using Aspose.PDF for .NET. You can access the `TextState` property of the `TextFragment` object to modify the font, font size, color, and alignment of the text.
+ ج: نعم، يمكنك تغيير تنسيق نص الجدول باستخدام Aspose.PDF لـ .NET. يمكنك الوصول إلى`TextState` ملكية`TextFragment` كائن لتعديل الخط وحجم الخط واللون ومحاذاة النص.
 
-#### Q: Does Aspose.PDF for .NET support working with tables in PDF forms (AcroForms)?
+#### س: هل يدعم Aspose.PDF for .NET العمل مع الجداول في نماذج PDF (AcroForms)؟
 
-A: Yes, Aspose.PDF for .NET supports working with tables in PDF forms (AcroForms). You can access and manipulate table elements in PDF forms similar to the approach demonstrated in this tutorial. Aspose.PDF for .NET provides extensive support for working with AcroForms and form fields.
+ج: نعم، يدعم Aspose.PDF for .NET العمل مع الجداول في نماذج PDF (AcroForms). يمكنك الوصول إلى عناصر الجدول ومعالجتها في نماذج PDF على غرار الطريقة الموضحة في هذا البرنامج التعليمي. يوفر Aspose.PDF for .NET دعمًا شاملاً للعمل مع AcroForms وحقول النماذج.

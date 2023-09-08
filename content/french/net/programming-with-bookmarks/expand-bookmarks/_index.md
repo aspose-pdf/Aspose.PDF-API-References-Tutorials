@@ -1,49 +1,49 @@
 ---
-title: Expand Bookmarks In PDF File
-linktitle: Expand Bookmarks In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily expand bookmarks in PDF file for improved navigation with Aspose.PDF for .NET.
+title: Développer les signets dans le fichier PDF
+linktitle: Développer les signets dans le fichier PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Développez facilement les signets dans un fichier PDF pour une navigation améliorée avec Aspose.PDF pour .NET.
 type: docs
 weight: 50
 url: /fr/net/programming-with-bookmarks/expand-bookmarks/
 ---
-Expanding bookmarks in PDF file will display all open bookmarks by default. With Aspose.PDF for .NET, you can easily expand bookmarks by following the following source code:
+Le développement des signets dans un fichier PDF affichera tous les signets ouverts par défaut. Avec Aspose.PDF pour .NET, vous pouvez facilement développer les signets en suivant le code source suivant :
 
-## Step 1: Import required libraries
+## Étape 1 : Importer les bibliothèques requises
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Avant de commencer, vous devez importer les bibliothèques nécessaires à votre projet C#. Voici la directive d'importation nécessaire :
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## Étape 2 : Définir le chemin d'accès au dossier de documents
 
-In this step, you need to specify the path to the folder containing the PDF file whose bookmarks you want to expand. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ Dans cette étape, vous devez spécifier le chemin d'accès au dossier contenant le fichier PDF dont vous souhaitez développer les signets. Remplacer`"YOUR DOCUMENT DIRECTORY"`dans le code suivant avec le chemin réel de votre dossier de documents :
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Étape 3 : Ouvrez le document PDF
 
-Now we will open the PDF document whose bookmarks we want to expand using the following code:
+Nous allons maintenant ouvrir le document PDF dont nous souhaitons développer les signets en utilisant le code suivant :
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 4: Set Page Display Mode
+## Étape 4 : Définir le mode d'affichage de la page
 
-In this step, we will set the page display mode to show bookmarks by default. We use the `PageMode` property of the `doc` object to set the desired page mode. Here is the corresponding code:
+Dans cette étape, nous définirons le mode d'affichage de la page pour afficher les signets par défaut. Nous utilisons le`PageMode` propriété du`doc` objet pour définir le mode de page souhaité. Voici le code correspondant :
 
 ```csharp
 doc.PageMode = PageMode.UseOutlines;
 ```
 
-## Step 5: Browse bookmarks and expand them
+## Étape 5 : Parcourir les favoris et les développer
 
-Now we'll loop through each bookmark item in the document's bookmarks collection and set each item's open state to `true` to expand them by default. Here is the corresponding code:
+ Nous allons maintenant parcourir chaque élément de signet dans la collection de signets du document et définir l'état ouvert de chaque élément sur`true` pour les développer par défaut. Voici le code correspondant :
 
 ```csharp
 foreach(OutlineItemCollection item in doc.Outlines)
@@ -52,86 +52,86 @@ foreach(OutlineItemCollection item in doc.Outlines)
 }
 ```
 
-## Step 6: Save the updated file
+## Étape 6 : Enregistrez le fichier mis à jour
 
-Finally, we save the updated PDF file using the `Save` method of the `doc` object. Here is the corresponding code:
+ Enfin, nous enregistrons le fichier PDF mis à jour en utilisant le`Save` méthode du`doc` objet. Voici le code correspondant :
 
 ```csharp
 dataDir = dataDir + "ExpandBookmarks_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Expand Bookmarks using Aspose.PDF for .NET 
+### Exemple de code source pour développer les signets à l'aide d'Aspose.PDF pour .NET 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Ouvrir le document
 Document doc = new Document(dataDir + "input.pdf");
-// Set page view mode i.e. show thumbnails, full-screen, show attachment panel
+// Définir le mode d'affichage de la page, c'est-à-dire afficher les vignettes, le plein écran, afficher le panneau des pièces jointes
 doc.PageMode = PageMode.UseOutlines;
-// Traverse through each Ouline item in outlines collection of PDF file
+// Parcourez chaque élément Ouline dans la collection de contours du fichier PDF
 foreach (OutlineItemCollection item in doc.Outlines)
 {
-	// Set open status for outline item
+	// Définir le statut ouvert pour l'élément de plan
 	item.Open = true;
 }
 dataDir = dataDir + "ExpandBookmarks_out.pdf";
-// Save output
+// Enregistrer la sortie
 doc.Save(dataDir);
 Console.WriteLine("\nBookmarks expanded successfully.\nFile saved at " + dataDir);
 ```
 
 ## Conclusion
 
-Congratulation ! You now have a step-by-step guide to developing bookmarks with Aspose.PDF for .NET. You can use this code to show all default bookmarks in your PDF documents.
+Félicitation ! Vous disposez désormais d'un guide étape par étape pour développer des signets avec Aspose.PDF pour .NET. Vous pouvez utiliser ce code pour afficher tous les signets par défaut dans vos documents PDF.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Assurez-vous de consulter la documentation officielle Aspose.PDF pour plus d'informations sur les fonctionnalités avancées de manipulation de signets.
 
-### FAQ's for expand bookmarks in PDF file
+### FAQ pour développer les signets dans un fichier PDF
 
-#### Q: What are bookmarks in a PDF file?
+#### Q : Que sont les signets dans un fichier PDF ?
 
-A: Bookmarks in a PDF file are navigational aids that allow users to quickly jump to specific sections or pages within the document. They provide a convenient way to access different parts of a document.
+R : Les signets dans un fichier PDF sont des aides à la navigation qui permettent aux utilisateurs d'accéder rapidement à des sections ou des pages spécifiques du document. Ils offrent un moyen pratique d’accéder à différentes parties d’un document.
 
-#### Q: Why would I want to expand bookmarks in a PDF file?
+#### Q : Pourquoi voudrais-je développer les signets dans un fichier PDF ?
 
-A: Expanding bookmarks can improve the user experience by displaying all bookmarks in an expanded state by default. This gives users a clear overview of the document's structure and allows them to easily navigate to different sections.
+R : Le développement des signets peut améliorer l'expérience utilisateur en affichant par défaut tous les signets dans un état développé. Cela donne aux utilisateurs un aperçu clair de la structure du document et leur permet de naviguer facilement entre les différentes sections.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### Q : Comment importer les bibliothèques nécessaires pour mon projet C# ?
 
-A: To import the required library for your C# project, use the following import directive:
+R : Pour importer la bibliothèque requise pour votre projet C#, utilisez la directive d'importation suivante :
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This directive allows you to utilize the classes and methods provided by Aspose.PDF for .NET.
+Cette directive vous permet d'utiliser les classes et méthodes fournies par Aspose.PDF pour .NET.
 
-#### Q: How do I specify the path to the documents folder?
+#### Q : Comment puis-je spécifier le chemin d'accès au dossier de documents ?
 
-A: In the provided source code, replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file that you want to work with. This ensures that the code can locate the target PDF file.
+ R : Dans le code source fourni, remplacez`"YOUR DOCUMENT DIRECTORY"` avec le chemin réel du dossier contenant le fichier PDF avec lequel vous souhaitez travailler. Cela garantit que le code peut localiser le fichier PDF cible.
 
-#### Q: How do I open a PDF document to expand its bookmarks?
+#### Q : Comment puis-je ouvrir un document PDF pour développer ses signets ?
 
-A: To open a PDF document for expanding bookmarks, use the following code:
+R : Pour ouvrir un document PDF afin de développer les signets, utilisez le code suivant :
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-Replace `"input.pdf"` with the actual file name.
+ Remplacer`"input.pdf"` avec le nom réel du fichier.
 
-#### Q: How do I set the page display mode to show bookmarks by default?
+#### Q : Comment puis-je définir le mode d'affichage des pages pour afficher les favoris par défaut ?
 
-A: To set the page display mode to show bookmarks by default, use the `PageMode` property of the `doc` object:
+R : Pour définir le mode d'affichage de la page afin qu'il affiche les signets par défaut, utilisez l'option`PageMode` propriété du`doc` objet:
 
 ```csharp
 doc.PageMode = PageMode.UseOutlines;
 ```
 
-#### Q: How do I expand all bookmarks in the PDF document?
+#### Q : Comment puis-je développer tous les signets dans le document PDF ?
 
-A: To expand all bookmarks, loop through each bookmark item in the document's outlines collection and set the `Open` property to `true`:
+ R : Pour développer tous les signets, parcourez chaque élément de signet dans la collection de plans du document et définissez le`Open` propriété à`true`:
 
 ```csharp
 foreach (OutlineItemCollection item in doc.Outlines)
@@ -140,19 +140,19 @@ foreach (OutlineItemCollection item in doc.Outlines)
 }
 ```
 
-#### Q: What happens if a bookmark has nested child bookmarks?
+#### Q : Que se passe-t-il si un signet contient des signets enfants imbriqués ?
 
-A: If a bookmark has nested child bookmarks, expanding the parent bookmark will also expand its child bookmarks, providing a comprehensive view of the document's structure.
+R : Si un signet comporte des signets enfants imbriqués, le développement du signet parent développera également ses signets enfants, offrant ainsi une vue complète de la structure du document.
 
-#### Q: How do I save the updated PDF file after expanding bookmarks?
+#### Q : Comment puis-je enregistrer le fichier PDF mis à jour après avoir développé les favoris ?
 
-A: To save the updated PDF file after expanding bookmarks, use the following code:
+R : Pour enregistrer le fichier PDF mis à jour après avoir développé les signets, utilisez le code suivant :
 
 ```csharp
 dataDir = dataDir + "ExpandBookmarks_out.pdf";
 doc.Save(dataDir);
 ```
 
-#### Q: Can I customize the appearance of expanded bookmarks?
+#### Q : Puis-je personnaliser l’apparence des signets développés ?
 
-A: While this tutorial focuses on expanding bookmarks by default, you can customize the appearance of bookmarks using Aspose.PDF's other features and properties.
+R : Bien que ce didacticiel se concentre sur le développement des signets par défaut, vous pouvez personnaliser l'apparence des signets à l'aide des autres fonctionnalités et propriétés d'Aspose.PDF.

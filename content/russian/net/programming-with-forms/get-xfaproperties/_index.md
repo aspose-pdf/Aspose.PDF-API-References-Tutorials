@@ -1,107 +1,107 @@
 ---
-title: Get XFAProperties
-linktitle: Get XFAProperties
-second_title: Aspose.PDF for .NET API Reference
-description: Easily get XFA properties of form fields in your PDF documents with Aspose.PDF for .NET.
+title: Получить свойства XFA
+linktitle: Получить свойства XFA
+second_title: Справочник по Aspose.PDF для .NET API
+description: Легко получайте свойства XFA полей формы в ваших PDF-документах с помощью Aspose.PDF для .NET.
 type: docs
 weight: 160
 url: /ru/net/programming-with-forms/get-xfaproperties/
 ---
-In this tutorial, we will show you how to get XFA properties of form fields in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+В этом уроке мы покажем вам, как получить свойства XFA полей формы в PDF-документе с помощью Aspose.PDF для .NET. Мы шаг за шагом объясним исходный код C#, чтобы помочь вам в этом процессе.
 
-## Step 1: Preparation
+## Шаг 1: Подготовка
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+Убедитесь, что вы импортировали необходимые библиотеки и указали путь к каталогу с вашими документами:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Load the XFA form
+## Шаг 2. Загрузите форму XFA.
 
-Load the XFA form from the PDF document:
+Загрузите форму XFA из PDF-документа:
 
 ```csharp
 Document doc = new Document(dataDir + "GetXFAProperties.pdf");
 ```
 
-## Step 3: Get field names
+## Шаг 3. Получите имена полей
 
-Get XFA field names:
+Получите имена полей XFA:
 
 ```csharp
 string[] names = doc.Form.XFA.FieldNames;
 ```
 
-## Step 4: Set Field Values
+## Шаг 4. Установите значения полей
 
-Set values for XFA fields:
+Установите значения для полей XFA:
 
 ```csharp
 doc.Form.XFA[names[0]] = "Field 0";
 doc.Form.XFA[names[1]] = "Field 1";
 ```
 
-## Step 5: Get fields position
+## Шаг 5: Получите положение полей
 
-Get the position of XFA fields:
+Получите положение полей XFA:
 
 ```csharp
 Console.WriteLine(doc.Form.XFA.GetFieldTemplate(names[0]).Attributes["x"].Value);
 Console.WriteLine(doc.Form.XFA.GetFieldTemplate(names[0]).Attributes["y"].Value);
 ```
 
-## Step 6: Save the updated document
+## Шаг 6. Сохраните обновленный документ.
 
-Save the updated PDF document:
+Сохраните обновленный PDF-документ:
 
 ```csharp
 dataDir = dataDir + "Filled_XFA_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Get XFAProperties using Aspose.PDF for .NET 
+### Пример исходного кода для получения XFAProperties с использованием Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load XFA form
+// Загрузить форму XFA
 Document doc = new Document(dataDir + "GetXFAProperties.pdf");
 string[] names = doc.Form.XFA.FieldNames;
-// Set field values
+// Установить значения полей
 doc.Form.XFA[names[0]] = "Field 0";
 doc.Form.XFA[names[1]] = "Field 1";
-// Get field position
+// Получить позицию на поле
 Console.WriteLine(doc.Form.XFA.GetFieldTemplate(names[0]).Attributes["x"].Value);
-// Get field position
+// Получить позицию на поле
 Console.WriteLine(doc.Form.XFA.GetFieldTemplate(names[0]).Attributes["y"].Value);
 dataDir = dataDir + "Filled_XFA_out.pdf";
-// Save the updated document
+// Сохраните обновленный документ
 doc.Save(dataDir);
 Console.WriteLine("\nXFA fields properties retrieved successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, we learned how to get XFA properties of form fields in a PDF document using Aspose.PDF for .NET. By following these steps, you can easily extract XFA field information, such as positions, from PDF documents using Aspose.PDF.
+В этом уроке мы узнали, как получить свойства XFA полей формы в PDF-документе с помощью Aspose.PDF для .NET. Выполнив эти шаги, вы можете легко извлечь информацию о полях XFA, например позиции, из PDF-документов с помощью Aspose.PDF.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What are XFA properties in a PDF document?
+#### Вопрос: Что такое свойства XFA в документе PDF?
 
-A: XFA (XML Forms Architecture) properties in a PDF document refer to the XML-based structure used to define dynamic forms with complex layouts and interactive features. XFA allows for rich form design and data handling in PDF documents, enabling features such as calculations, validations, and dynamic content. Aspose.PDF for .NET provides APIs to work with XFA forms and retrieve various properties, including field names, values, positions, and more.
+О: Свойства XFA (архитектура форм XML) в PDF-документе относятся к структуре на основе XML, используемой для определения динамических форм со сложным макетом и интерактивными функциями. XFA позволяет создавать расширенные формы и обрабатывать данные в документах PDF, обеспечивая такие функции, как вычисления, проверки и динамическое содержимое. Aspose.PDF для .NET предоставляет API для работы с формами XFA и получения различных свойств, включая имена полей, значения, позиции и многое другое.
 
-#### Q: Can I modify XFA properties using Aspose.PDF for .NET?
+#### Вопрос: Могу ли я изменить свойства XFA с помощью Aspose.PDF для .NET?
 
-A: Yes, you can modify XFA properties using Aspose.PDF for .NET. The API allows you to access and update the values of XFA form fields programmatically. You can set new values for XFA fields, update their positions, change appearances, and perform other actions to customize the XFA form dynamically.
+О: Да, вы можете изменять свойства XFA с помощью Aspose.PDF для .NET. API позволяет вам получать доступ к значениям полей формы XFA и обновлять их программным способом. Вы можете установить новые значения для полей XFA, обновить их положение, изменить внешний вид и выполнить другие действия для динамической настройки формы XFA.
 
-#### Q: How can I determine if a PDF document contains XFA forms?
+#### Вопрос: Как определить, содержит ли PDF-документ формы XFA?
 
-A: To determine if a PDF document contains XFA forms, you can check whether the `Form` property of the `Document` object is null or not. If the document contains XFA forms, the `Form` property will be available, and you can proceed with further XFA-related operations.
+ О: Чтобы определить, содержит ли PDF-документ формы XFA, вы можете проверить, есть ли`Form` собственность`Document`объект имеет значение null или нет. Если документ содержит формы XFA,`Form` Свойство будет доступно, и вы сможете продолжить дальнейшие операции, связанные с XFA.
 
-#### Q: Are XFA forms supported in all PDF viewers and applications?
+#### Вопрос: Поддерживаются ли формы XFA во всех программах просмотра PDF-файлов и приложениях?
 
-A: While XFA forms provide rich interactive form features, they may not be supported in all PDF viewers and applications. Some PDF viewers may only support AcroForm-based forms, which are another form type used in PDF documents. It's essential to consider the compatibility of XFA forms with the target audience and the intended use of the PDF document.
+О: Хотя формы XFA предоставляют богатые интерактивные функции, они могут поддерживаться не всеми программами и приложениями для просмотра PDF-файлов. Некоторые средства просмотра PDF-файлов могут поддерживать только формы на основе AcroForm, которые представляют собой еще один тип форм, используемый в документах PDF. Очень важно учитывать совместимость форм XFA с целевой аудиторией и предполагаемым использованием PDF-документа.
 
-#### Q: Can I convert XFA forms to AcroForm-based forms using Aspose.PDF for .NET?
+#### Вопрос: Могу ли я преобразовать формы XFA в формы на основе AcroForm с помощью Aspose.PDF для .NET?
 
-A: Aspose.PDF for .NET provides capabilities to convert XFA forms to AcroForm-based forms. By converting XFA forms to AcroForm, you can ensure broader compatibility with various PDF viewers and applications that may not fully support XFA. You can follow the appropriate APIs and techniques to perform the conversion as per your requirements.
+О: Aspose.PDF для .NET предоставляет возможности преобразования форм XFA в формы на основе AcroForm. Преобразовав формы XFA в AcroForm, вы можете обеспечить более широкую совместимость с различными программами просмотра PDF-файлов и приложениями, которые могут не полностью поддерживать XFA. Вы можете использовать соответствующие API и методы для выполнения преобразования в соответствии с вашими требованиями.

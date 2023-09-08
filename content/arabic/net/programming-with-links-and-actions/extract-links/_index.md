@@ -1,42 +1,42 @@
 ---
-title: Extract Links In PDF File
-linktitle: Extract Links In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily extract links in PDF file using Aspose.PDF for .NET.
+title: استخراج الروابط في ملف PDF
+linktitle: استخراج الروابط في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: قم باستخراج الروابط بسهولة في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 50
 url: /ar/net/programming-with-links-and-actions/extract-links/
 ---
-Extracting links in PDF file allows you to recover all the hypertext links present in the document. With Aspose.PDF for .NET, you can easily extract these links by following the following source code:
+يتيح لك استخراج الروابط في ملف PDF استعادة جميع روابط النص التشعبي الموجودة في المستند. باستخدام Aspose.PDF for .NET، يمكنك بسهولة استخراج هذه الروابط باتباع التعليمات البرمجية المصدر التالية:
 
-## Step 1: Import Required Libraries
+## الخطوة 1: استيراد المكتبات المطلوبة
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+قبل أن تبدأ، تحتاج إلى استيراد المكتبات اللازمة لمشروع C# الخاص بك. فيما يلي توجيه الاستيراد الضروري:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Annotations;
 ```
 
-## Step 2: Set path to documents folder
+## الخطوة 2: تعيين المسار إلى مجلد المستندات
 
-In this step, you need to specify the path to the folder containing the PDF file from which you want to extract the links. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ في هذه الخطوة، تحتاج إلى تحديد المسار إلى المجلد الذي يحتوي على ملف PDF الذي تريد استخراج الروابط منه. يستبدل`"YOUR DOCUMENT DIRECTORY"`في الكود التالي مع المسار الفعلي لمجلد المستندات الخاص بك:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## الخطوة 3: افتح مستند PDF
 
-We will open the PDF document using the `Document` class. Here is the corresponding code:
+سنقوم بفتح مستند PDF باستخدام`Document` فصل. هنا هو الكود المقابل:
 
 ```csharp
 Document document = new Document(dataDir + "ExtractLinks.pdf");
 ```
 
-## Step 4: Extract links
+## الخطوة 4: استخراج الروابط
 
-In this step, we will extract the links present in the PDF document using the `AnnotationSelector` class. Here is the corresponding code:
+ في هذه الخطوة، سنقوم باستخراج الروابط الموجودة في مستند PDF باستخدام الملف`AnnotationSelector` فصل. هنا هو الكود المقابل:
 
 ```csharp
 Page page = document.Pages[1];
@@ -46,73 +46,73 @@ IList<Annotation> list = selector. Selected;
 Annotation annotation = (Annotation)list[0];
 ```
 
-## Step 5: Save the updated document
+## الخطوة 5: احفظ المستند المحدث
 
-Now let's save the updated PDF file using the `Save` method of the `document` object. Here is the corresponding code:
+ الآن دعونا نحفظ ملف PDF المحدث باستخدام ملف`Save` طريقة`document` هدف. هنا هو الكود المقابل:
 
 ```csharp
 dataDir = dataDir + "ExtractLinks_out.pdf";
 document. Save(dataDir);
 ```
 
-### Sample source code for Extract Links using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لاستخراج الروابط باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document document = new Document(dataDir+ "ExtractLinks.pdf");
-// Extract actions
+// استخراج الإجراءات
 Page page = document.Pages[1];
 AnnotationSelector selector = new AnnotationSelector(new LinkAnnotation(page, Aspose.Pdf.Rectangle.Trivial));
 page.Accept(selector);
 IList<Annotation> list = selector.Selected;
 Annotation annotation = (Annotation)list[0];
 dataDir = dataDir + "ExtractLinks_out.pdf";
-// Save updated document
+// حفظ المستند المحدث
 document.Save(dataDir);
 Console.WriteLine("\nLinks extracted successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You now have a step-by-step guide to extract links from a PDF document using Aspose.PDF for .NET. You can use this code to retrieve all the hyperlinks present in the document.
+تهنئة ! لديك الآن دليل خطوة بخطوة لاستخراج الروابط من مستند PDF باستخدام Aspose.PDF لـ .NET. يمكنك استخدام هذا الرمز لاسترداد كافة الارتباطات التشعبية الموجودة في المستند.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced link extraction features.
+تأكد من مراجعة وثائق Aspose.PDF الرسمية لمزيد من المعلومات حول ميزات استخراج الروابط المتقدمة.
 
-### FAQ's for extract links in PDF file
+### الأسئلة الشائعة لاستخراج الروابط في ملف PDF
 
-#### Q: What is link extraction in a PDF file?
+#### س: ما هو استخراج الارتباط في ملف PDF؟
 
-A: Link extraction in a PDF file refers to the process of recovering all the hypertext links present within the document. This allows you to retrieve URLs, internal document links, and other interactive elements.
+ج: يشير استخراج الارتباط في ملف PDF إلى عملية استعادة جميع روابط النص التشعبي الموجودة داخل المستند. يتيح لك ذلك استرداد عناوين URL وروابط المستندات الداخلية والعناصر التفاعلية الأخرى.
 
-#### Q: How can link extraction benefit my PDF document analysis?
+#### س: كيف يمكن أن يفيد استخراج الارتباط تحليل مستند PDF الخاص بي؟
 
-A: Link extraction is valuable for various purposes, such as content validation, data mining, and analysis. It enables you to identify and catalog all the links within a PDF document for further exploration.
+ج: يعد استخراج الارتباط ذا قيمة لأغراض متعددة، مثل التحقق من صحة المحتوى واستخراج البيانات والتحليل. فهو يمكّنك من تحديد وفهرسة جميع الروابط داخل مستند PDF لمزيد من الاستكشاف.
 
-#### Q: How does Aspose.PDF for .NET support link extraction?
+#### س: كيف يدعم Aspose.PDF for .NET استخراج الارتباط؟
 
-A: Aspose.PDF for .NET provides powerful APIs to extract links from PDF documents with ease. The step-by-step tutorial outlined in this guide demonstrates how to extract links using C#.
+ج: يوفر Aspose.PDF for .NET واجهات برمجة تطبيقات قوية لاستخراج الروابط من مستندات PDF بسهولة. يوضح البرنامج التعليمي خطوة بخطوة الموضح في هذا الدليل كيفية استخراج الروابط باستخدام C#.
 
-#### Q: Can I extract specific types of links, such as hyperlinks or internal document links?
+#### س: هل يمكنني استخراج أنواع معينة من الروابط، مثل الارتباطات التشعبية أو روابط المستندات الداخلية؟
 
-A: Yes, you can selectively extract specific types of links using the `AnnotationSelector` class. This allows you to filter and retrieve the desired links based on your requirements.
+ ج: نعم، يمكنك استخراج أنواع معينة من الروابط بشكل انتقائي باستخدام ملف`AnnotationSelector` فصل. يتيح لك ذلك تصفية الروابط المطلوبة واسترجاعها بناءً على متطلباتك.
 
-#### Q: Is it possible to extract links from specific pages of a PDF document?
+#### س: هل من الممكن استخراج الروابط من صفحات معينة من وثيقة PDF؟
 
-A: Absolutely! You can extract links from specific pages of a PDF document by specifying the target page using the `Document.Pages` collection. This enables you to focus on particular sections.
+ ج: بالتأكيد! يمكنك استخراج الروابط من صفحات معينة من مستند PDF عن طريق تحديد الصفحة المستهدفة باستخدام الملف`Document.Pages` مجموعة. يتيح لك هذا التركيز على أقسام معينة.
 
-#### Q: What format are the extracted links returned in?
+#### س: ما هو التنسيق الذي يتم إرجاع الروابط المستخرجة به؟
 
-A: The extracted links are returned as instances of the `Annotation` class. You can process and analyze these annotations to retrieve link details, including target URLs and link types.
+ ج: يتم إرجاع الروابط المستخرجة كمثيلات لـ`Annotation` فصل. يمكنك معالجة هذه التعليقات التوضيحية وتحليلها لاسترداد تفاصيل الارتباط، بما في ذلك عناوين URL المستهدفة وأنواع الارتباطات.
 
-#### Q: How can I verify that link extraction is accurate?
+#### س: كيف يمكنني التحقق من دقة استخراج الرابط؟
 
-A: By following the tutorial and sample code provided, you can ensure accurate link extraction. You can analyze the extracted annotations and validate the URLs and link attributes.
+ج: باتباع البرنامج التعليمي ونموذج التعليمات البرمجية المقدمين، يمكنك ضمان استخراج الرابط بدقة. يمكنك تحليل التعليقات التوضيحية المستخرجة والتحقق من صحة عناوين URL وسمات الارتباط.
 
-#### Q: Are there any limitations when extracting links?
+#### س: هل هناك أي قيود عند استخراج الروابط؟
 
-A: While link extraction is a powerful feature, it's important to consider the structure of the PDF document. Links embedded within images, tables, or multimedia content may require additional handling.
+ج: على الرغم من أن استخراج الارتباط يعد ميزة قوية، فمن المهم مراعاة بنية مستند PDF. قد تتطلب الروابط المضمنة في الصور أو الجداول أو محتوى الوسائط المتعددة معالجة إضافية.
 
-#### Q: Can I extract links from password-protected PDF documents?
+#### س: هل يمكنني استخراج الروابط من مستندات PDF محمية بكلمة مرور؟
 
-A: Aspose.PDF for .NET can extract links from password-protected PDF documents as long as you provide the necessary authentication credentials when opening the document.
+ج: يمكن لـ Aspose.PDF for .NET استخراج الروابط من مستندات PDF المحمية بكلمة مرور طالما أنك توفر بيانات اعتماد المصادقة اللازمة عند فتح المستند.

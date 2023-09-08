@@ -1,27 +1,27 @@
 ---
-title: Get SVG Dimensions
-linktitle: Get SVG Dimensions
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to getting SVG dimensions using Aspose.PDF for .NET.
+title: Ottieni dimensioni SVG
+linktitle: Ottieni dimensioni SVG
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Guida passo passo per ottenere dimensioni SVG utilizzando Aspose.PDF per .NET.
 type: docs
 weight: 40
 url: /it/net/document-conversion/get-svg-dimensions/
 ---
-## Introduction
-In this tutorial, we'll walk you through the process of getting the dimensions of an SVG file using Aspose.PDF for .NET. SVG (Scalable Vector Graphics) is an XML-based image format used to represent vector graphics. Using the steps below, you will be able to get the dimensions of an SVG file and save them as a PDF.
+## introduzione
+In questo tutorial ti guideremo attraverso il processo per ottenere le dimensioni di un file SVG utilizzando Aspose.PDF per .NET. SVG (Scalable Vector Graphics) è un formato immagine basato su XML utilizzato per rappresentare la grafica vettoriale. Utilizzando i passaggi seguenti, sarai in grado di ottenere le dimensioni di un file SVG e salvarle come PDF.
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## Prerequisiti
+Prima di iniziare, assicurati di soddisfare i seguenti prerequisiti:
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- Conoscenza base del linguaggio di programmazione C#.
+- Libreria Aspose.PDF per .NET installata sul tuo sistema.
+- Un ambiente di sviluppo come Visual Studio.
 
-## Step 1: Loading SVG file
-In this step, we will load the SVG file using Aspose.PDF for .NET. Follow the code below:
+## Passaggio 1: caricamento del file SVG
+In questo passaggio, caricheremo il file SVG utilizzando Aspose.PDF per .NET. Segui il codice qui sotto:
 
 ```csharp
-// Path to the documents directory.
+// Percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 var loadopt = new SvgLoadOptions();
@@ -29,10 +29,10 @@ loadopt.AdjustPageSize = true;
 var svgDoc = new Document(dataDir + "GetSVGDimensions.svg", loadopt);
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where your SVG file is located.
+ Assicurati di sostituire`"YOUR DOCUMENTS DIRECTORY"` con la directory effettiva in cui si trova il file SVG.
 
-## Step 2: Page size adjustment
-Now that we've loaded the SVG file, we can adjust the page size to accommodate the SVG content. Use the following code:
+## Passaggio 2: regolazione delle dimensioni della pagina
+Ora che abbiamo caricato il file SVG, possiamo regolare le dimensioni della pagina per adattarla al contenuto SVG. Utilizza il seguente codice:
 
 ```csharp
 svgDoc.Pages[1].PageInfo.Margin.Top = 0;
@@ -41,21 +41,21 @@ svgDoc.Pages[1].PageInfo.Margin.Bottom = 0;
 svgDoc.Pages[1].PageInfo.Margin.Right = 0;
 ```
 
-The code above sets the page margins to zero, allowing the page size to adjust based on the SVG content.
+Il codice sopra imposta i margini della pagina su zero, consentendo alla dimensione della pagina di adattarsi in base al contenuto SVG.
 
-## Step 3: Saving the resulting PDF
-After adjusting the page size, we can now save the resulting PDF document. Here is the last step:
+## Passaggio 3: salvataggio del PDF risultante
+Dopo aver regolato le dimensioni della pagina, ora possiamo salvare il documento PDF risultante. Ecco l'ultimo passaggio:
 
 ```csharp
 svgDoc.Save(dataDir + "GetSVGDimensions_out.pdf");
 ```
 
-Replace `"YOUR DOCUMENTS DIRECTORY"` with the desired directory where you want to save the output PDF file.
+ Sostituire`"YOUR DOCUMENTS DIRECTORY"` con la directory desiderata in cui desideri salvare il file PDF di output.
   
-### Example source code for Get SVG Dimensions using Aspose.PDF for .NET
+### Codice sorgente di esempio per Ottieni dimensioni SVG utilizzando Aspose.PDF per .NET
 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 var loadopt = new SvgLoadOptions();
@@ -68,23 +68,23 @@ svgDoc.Pages[1].PageInfo.Margin.Right = 0;
 svgDoc.Save(dataDir + "GetSVGDimensions_out.pdf");
 ```
 
-## Conclusion
-In this tutorial, we've covered the step-by-step process of getting the dimensions of an SVG file using Aspose.PDF for .NET. By following the instructions outlined above, you should now be able to get the dimensions of an SVG file and save them to the PDF Format. This feature can be useful when you need to measure the dimensions of a vector graphic.
+## Conclusione
+In questo tutorial, abbiamo trattato il processo passo passo per ottenere le dimensioni di un file SVG utilizzando Aspose.PDF per .NET. Seguendo le istruzioni sopra descritte, ora dovresti essere in grado di ottenere le dimensioni di un file SVG e salvarle nel formato PDF. Questa funzionalità può essere utile quando è necessario misurare le dimensioni di un'immagine vettoriale.
 
-### FAQ's
+### Domande frequenti
 
-#### Q: What is SVG?
+#### D: Cos'è SVG?
 
-A: SVG (Scalable Vector Graphics) is an XML-based image format used to represent vector graphics. Unlike raster images, SVG files are resolution-independent and can be scaled without losing quality. SVG is widely used for displaying graphics on the web and can be edited and manipulated with ease.
+R: SVG (Scalable Vector Graphics) è un formato immagine basato su XML utilizzato per rappresentare la grafica vettoriale. A differenza delle immagini raster, i file SVG sono indipendenti dalla risoluzione e possono essere ridimensionati senza perdere qualità. SVG è ampiamente utilizzato per visualizzare la grafica sul Web e può essere modificato e manipolato con facilità.
 
-#### Q: Why use Aspose.PDF for .NET for SVG to PDF conversion?
+#### D: Perché utilizzare Aspose.PDF per .NET per la conversione da SVG a PDF?
 
-A: Aspose.PDF for .NET provides a reliable and efficient way to handle SVG files and convert them to PDF format. It offers various options and settings to customize the conversion process, such as adjusting page size, margins, and other properties to ensure accurate representation in the PDF.
+R: Aspose.PDF per .NET fornisce un modo affidabile ed efficiente per gestire i file SVG e convertirli in formato PDF. Offre varie opzioni e impostazioni per personalizzare il processo di conversione, come la regolazione delle dimensioni della pagina, dei margini e di altre proprietà per garantire una rappresentazione accurata nel PDF.
 
-#### Q: Can I convert SVG files with complex graphics and text?
+#### D: Posso convertire file SVG con grafica e testo complessi?
 
-A: Yes, Aspose.PDF for .NET can handle SVG files with complex graphics, text, and vector elements. It accurately preserves the details and quality of the SVG content during the conversion process, resulting in high-quality PDF documents.
+R: Sì, Aspose.PDF per .NET può gestire file SVG con grafica, testo ed elementi vettoriali complessi. Conserva accuratamente i dettagli e la qualità del contenuto SVG durante il processo di conversione, ottenendo documenti PDF di alta qualità.
 
-#### Q: Is it possible to extract text from SVG files with Aspose.PDF for .NET?
+#### D: È possibile estrarre testo da file SVG con Aspose.PDF per .NET?
 
-A: Yes, Aspose.PDF for .NET allows you to extract text from SVG files. You can use the library's text extraction features to extract text elements from SVG and save them separately for further processing.
+R: Sì, Aspose.PDF per .NET ti consente di estrarre testo da file SVG. Puoi utilizzare le funzionalità di estrazione del testo della libreria per estrarre elementi di testo da SVG e salvarli separatamente per un'ulteriore elaborazione.

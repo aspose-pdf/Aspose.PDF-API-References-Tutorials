@@ -1,38 +1,38 @@
 ---
-title: Set Default Font Name
-linktitle: Set Default Font Name
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to set default font name in PDF file using Aspose.PDF for .NET.
+title: تعيين اسم الخط الافتراضي
+linktitle: تعيين اسم الخط الافتراضي
+second_title: Aspose.PDF لمرجع .NET API
+description: دليل خطوة بخطوة لتعيين اسم الخط الافتراضي في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 270
 url: /ar/net/document-conversion/set-default-font-name/
 ---
-In this tutorial, we will show you how to set the default font name in a PDF file using Aspose.PDF for .NET. Sometimes when you extract images from a PDF file, you may encounter missing font issues. By specifying a default font name, you can ensure that extracted text will be displayed correctly. Follow the steps below to set the default font name in a PDF file.
+سنوضح لك في هذا البرنامج التعليمي كيفية تعيين اسم الخط الافتراضي في ملف PDF باستخدام Aspose.PDF لـ .NET. في بعض الأحيان، عند قيامك باستخراج صور من ملف PDF، قد تواجه مشكلات الخط المفقود. من خلال تحديد اسم الخط الافتراضي، يمكنك التأكد من عرض النص المستخرج بشكل صحيح. اتبع الخطوات أدناه لتعيين اسم الخط الافتراضي في ملف PDF.
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## المتطلبات الأساسية
+قبل البدء، تأكد من استيفاء المتطلبات الأساسية التالية:
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- المعرفة الأساسية بلغة البرمجة C#.
+- مكتبة Aspose.PDF لـ .NET مثبتة على نظامك.
+- بيئة تطوير مثل Visual Studio.
 
-## Step 1: Loading the PDF document
-The first step is to load the PDF document into a `Document` object. Use the following code:
+## الخطوة 1: تحميل وثيقة PDF
+ الخطوة الأولى هي تحميل مستند PDF إلى ملف`Document` هدف. استخدم الكود التالي:
 
 ```csharp
-// Path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 using (Document pdfDocument = new Document(dataDir + "input.pdf"))
 {
-     // Code to add
+     // كود للإضافة
 }
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where your PDF file is located.
+ تأكد من استبدال`"YOUR DOCUMENTS DIRECTORY"` مع الدليل الفعلي الذي يوجد به ملف PDF الخاص بك.
 
-## Step 2: Set default font name
-Next, we'll set the default font name using the `DefaultFontName` option of the `RenderingOptions` object. Use the following code:
+## الخطوة 2: تعيين اسم الخط الافتراضي
+ بعد ذلك، سنقوم بتعيين اسم الخط الافتراضي باستخدام`DefaultFontName` خيار`RenderingOptions` هدف. استخدم الكود التالي:
 
 ```csharp
 using (Document pdfDocument = new Document(dataDir + "input.pdf"))
@@ -45,26 +45,26 @@ using (Document pdfDocument = new Document(dataDir + "input.pdf"))
          ro.DefaultFontName = "Arial";
          pngDevice.RenderingOptions = ro;
         
-         // Code to add
+         // كود للإضافة
      }
 }
 ```
 
-Be sure to replace `"Arial"` with the desired font name.
+ تأكد من استبدال`"Arial"` مع اسم الخط المطلوب
 
-## Step 3: Image Extraction
-Next, we will extract the image from the specified page of the PDF document. Use the following code:
+## الخطوة 3: استخراج الصور
+بعد ذلك، سنقوم باستخراج الصورة من الصفحة المحددة لمستند PDF. استخدم الكود التالي:
 
 ```csharp
 pngDevice.Process(pdfDocument.Pages[1], imageStream);
 ```
 
-Be sure to specify the correct page number in `pdfDocument.Pages[1]`.
+ تأكد من تحديد رقم الصفحة الصحيح في`pdfDocument.Pages[1]`.
 
-### Example source code for Set Default Font Name using Aspose.PDF for .NET
+### مثال على التعليمات البرمجية المصدر لتعيين اسم الخط الافتراضي باستخدام Aspose.PDF لـ .NET
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 using (Document pdfDocument = new Document(dataDir + "input.pdf"))
@@ -81,27 +81,27 @@ using (Document pdfDocument = new Document(dataDir + "input.pdf"))
 }
 ```
 
-## Conclusion
-In this tutorial, we learned how to set the default font name in a PDF file using Aspose.PDF for .NET. By specifying a default font name, you can ensure that extracted text will be displayed correctly. Use this method to resolve missing font issues when extracting images from PDF files.
+## خاتمة
+في هذا البرنامج التعليمي، تعلمنا كيفية تعيين اسم الخط الافتراضي في ملف PDF باستخدام Aspose.PDF لـ .NET. من خلال تحديد اسم الخط الافتراضي، يمكنك التأكد من عرض النص المستخرج بشكل صحيح. استخدم هذه الطريقة لحل مشكلات الخطوط المفقودة عند استخراج الصور من ملفات PDF.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is Aspose.PDF for .NET?
+#### س: ما هو Aspose.PDF لـ .NET؟
 
-A: Aspose.PDF for .NET is a powerful library that enables developers to work with PDF documents in C# applications. It offers various functionalities, including setting the default font name in a PDF file.
+ج: Aspose.PDF for .NET هي مكتبة قوية تمكن المطورين من العمل مع مستندات PDF في تطبيقات C#. وهو يوفر وظائف متنوعة، بما في ذلك تحديد اسم الخط الافتراضي في ملف PDF.
 
-#### Q: Why would I need to set the default font name in a PDF file?
+#### س: لماذا أحتاج إلى تعيين اسم الخط الافتراضي في ملف PDF؟
 
-A: Setting the default font name is useful when extracting text from a PDF document. If the PDF contains text with fonts that are not available on the extraction machine, specifying a default font name ensures correct text display.
+ج: يعد تعيين اسم الخط الافتراضي مفيدًا عند استخراج النص من مستند PDF. إذا كان ملف PDF يحتوي على نص بخطوط غير متوفرة على آلة الاستخراج، فإن تحديد اسم الخط الافتراضي يضمن عرض النص الصحيح.
 
-#### Q: How can I load a PDF document and set the default font name using Aspose.PDF for .NET?
+#### س: كيف يمكنني تحميل مستند PDF وتعيين اسم الخط الافتراضي باستخدام Aspose.PDF لـ .NET؟
 
-A: To load a PDF document and set the default font name, you can use the `Document` class to load the PDF file and the `RenderingOptions.DefaultFontName` property to specify the desired default font name.
+ ج: لتحميل مستند PDF وتعيين اسم الخط الافتراضي، يمكنك استخدام`Document`فئة لتحميل ملف PDF و`RenderingOptions.DefaultFontName` الخاصية لتحديد اسم الخط الافتراضي المطلوب.
 
-#### Q: Can I choose any font as the default font name?
+#### س: هل يمكنني اختيار أي خط كاسم الخط الافتراضي؟
 
-A:Yes, you can choose any font that is available on the extraction machine as the default font name. Use a font that closely matches the missing fonts in the original PDF to ensure accurate text rendering.
+ج: نعم، يمكنك اختيار أي خط متوفر على جهاز الاستخراج كاسم الخط الافتراضي. استخدم خطًا يتطابق بشكل وثيق مع الخطوط المفقودة في ملف PDF الأصلي لضمان عرض النص بدقة.
 
-#### Q: Is setting the default font name a permanent change to the PDF file?
+#### س: هل يعد تعيين اسم الخط الافتراضي تغييرًا دائمًا لملف PDF؟
 
-A: No, setting the default font name using Aspose.PDF for .NET is a temporary change made during text extraction. It does not modify the original PDF file.
+ج: لا، يعد تعيين اسم الخط الافتراضي باستخدام Aspose.PDF لـ .NET بمثابة تغيير مؤقت يتم إجراؤه أثناء استخراج النص. لا يقوم بتعديل ملف PDF الأصلي.

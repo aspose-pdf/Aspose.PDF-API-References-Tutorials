@@ -1,75 +1,75 @@
 ---
-title: Get Resource Of Annotation
-linktitle: Get Resource Of Annotation
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to retrieve the resource of an annotation using Aspose.PDF for .NET with this step-by-step guide.
+title: Obtener recurso de anotación
+linktitle: Obtener recurso de anotación
+second_title: Aspose.PDF para referencia de API .NET
+description: Aprenda cómo recuperar el recurso de una anotación usando Aspose.PDF para .NET con esta guía paso a paso.
 type: docs
 weight: 90
 url: /es/net/annotations/getresourceofannotation/
 ---
-The example shows how to get resource of annotation with Aspose.PDF for .NET. To get the resource of an annotation using Aspose.PDF for .NET, follow these steps:
+El ejemplo muestra cómo obtener recursos de anotación con Aspose.PDF para .NET. Para obtener el recurso de una anotación usando Aspose.PDF para .NET, siga estos pasos:
 
-## Step 1: Set the path of the directory where the document is located.
+## Paso 1: establezca la ruta del directorio donde se encuentra el documento.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Open the PDF document that contains the annotation whose resource you want to get.
+## Paso 2: abra el documento PDF que contiene la anotación cuyo recurso desea obtener.
 
 ```csharp
 Document doc = new Document(dataDir + "AddAnnotation.pdf");
 ```
 
-## Step 3: Create an annotation.
+## Paso 3: crea una anotación.
 
 ```csharp
 ScreenAnnotation sa = new ScreenAnnotation(doc.Pages[1], new Rectangle(100, 400, 300, 600), dataDir + "AddSwfFileAsAnnotation.swf");
 ```
 
-## Step 4: Add the annotation to a page in the document.
+## Paso 4: agregue la anotación a una página del documento.
 
 ```csharp
 doc.Pages[1].Annotations.Add(sa);
 ```
 
-## Step 5: Save the document.
+## Paso 5: guarde el documento.
 
 ```csharp
 doc.Save(dataDir + "GetResourceOfAnnotation_Out.pdf");
 ```
 
-## Step 6: Open the modified document.
+## Paso 6: abre el documento modificado.
 
 ```csharp
 Document doc1 = new Document(dataDir + "GetResourceOfAnnotation_Out.pdf");
 ```
 
-## Step 7: Get the action of the annotation.
+## Paso 7: obtenga la acción de la anotación.
 
 ```csharp
 RenditionAction action = (doc.Pages[1].Annotations[1] as ScreenAnnotation).Action as RenditionAction;
 ```
 
-## Step 7: Get the rendition of the action.
+## Paso 7: obtenga la representación de la acción.
 
 ```csharp
 Rendition rendition = ((doc.Pages[1].Annotations[1] as ScreenAnnotation).Action as RenditionAction).Rendition;
 ```
 
-## Step 8: Get the media clip.
+## Paso 8: obtenga el clip multimedia.
 
 ```csharp
 MediaClip clip = (rendition as MediaRendition).MediaClip;
 ```
 
-## Step 9: Get the file specification.
+## Paso 9: obtenga la especificación del archivo.
 
 ```csharp
 FileSpecification data = (clip as MediaClipData).Data;
 ```
 
-## Step 10: Read the data of the media.
+## Paso 10: Leer los datos de los medios.
 
 ```csharp
 MemoryStream ms = new MemoryStream();
@@ -82,41 +82,41 @@ while ((read = source.Read(buffer, 0, buffer.Length)) > 0)
 }
 ```
 
-## Step 11: Print the name of the rendition and the rendition operation.
+## Paso 11: imprima el nombre de la representación y la operación de representación.
 
 ```csharp
 Console.WriteLine(rendition.Name);
 Console.WriteLine(action.RenditionOperation);
 ```
 
-By following these steps, you can easily get the resource of an annotation in a PDF document using Aspose.PDF for .NET.
+Siguiendo estos pasos, puede obtener fácilmente el recurso de una anotación en un documento PDF usando Aspose.PDF para .NET.
 
-### Example source code for Get Resource Of Annotation using Aspose.PDF for .NET:
+### Código fuente de ejemplo para Obtener recurso de anotación usando Aspose.PDF para .NET:
 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Abrir documento
 Document doc = new Document(dataDir + "AddAnnotation.pdf");
-//Create annotation
+//Crear anotación
 ScreenAnnotation sa = new ScreenAnnotation(doc.Pages[1], new Rectangle(100, 400, 300, 600), dataDir + "AddSwfFileAsAnnotation.swf");
 doc.Pages[1].Annotations.Add(sa);
-// Save Doucument
+// Guardar documento
 doc.Save(dataDir + "GetResourceOfAnnotation_Out.pdf");
-// Open document
+// Abrir documento
 Document doc1 = new Document(dataDir + "GetResourceOfAnnotation_Out.pdf");
-//Get action of the annotation
+//Obtener acción de la anotación.
 RenditionAction action = (doc.Pages[1].Annotations[1] as ScreenAnnotation).Action as RenditionAction;
-//Get rendition of the rendition action
+//Obtener la representación de la acción de representación
 Rendition rendition = ((doc.Pages[1].Annotations[1] as ScreenAnnotation).Action as RenditionAction).Rendition;
-//Media Clip 
+// Clip multimedia
 MediaClip clip = (rendition as MediaRendition).MediaClip;
 FileSpecification data = (clip as MediaClipData).Data;
 MemoryStream ms = new MemoryStream();
 byte[] buffer = new byte[1024];
 int read = 0;
-//Data of media are accessible in FileSpecification.Contents
+//Se puede acceder a los datos de los medios en FileSpecification.Contents
 Stream source = data.Contents;
 while ((read = source.Read(buffer, 0, buffer.Length)) > 0)
 {
@@ -126,28 +126,28 @@ Console.WriteLine(rendition.Name);
 Console.WriteLine(action.RenditionOperation);
 ```
 
-## Conclusion
+## Conclusión
 
-In this tutorial, we explored how to get the resource of a particular annotation from a PDF document using Aspose.PDF for .NET. By following the step-by-step guide and using the provided C# source code, developers can easily access and manage annotations, including rendition annotations, in their PDF documents.
+En este tutorial, exploramos cómo obtener el recurso de una anotación particular de un documento PDF usando Aspose.PDF para .NET. Siguiendo la guía paso a paso y utilizando el código fuente C# proporcionado, los desarrolladores pueden acceder y administrar fácilmente las anotaciones, incluidas las anotaciones de representación, en sus documentos PDF.
 
-### FAQ's
+### Preguntas frecuentes
 
-#### Q: What is a rendition in the context of PDF annotations?
+#### P: ¿Qué es una interpretación en el contexto de las anotaciones de PDF?
 
-A: In the context of PDF annotations, a rendition is a multimedia content presentation. It allows for embedding multimedia, such as audio or video, within the PDF document. The rendition annotation specifies the media to be presented and how it should be played.
+R: En el contexto de las anotaciones en PDF, una interpretación es una presentación de contenido multimedia. Permite incrustar multimedia, como audio o vídeo, dentro del documento PDF. La anotación de interpretación especifica los medios que se presentarán y cómo se deben reproducir.
 
-#### Q: Can I get the name of the media file associated with a rendition annotation?
+#### P: ¿Puedo obtener el nombre del archivo multimedia asociado con una anotación de representación?
 
-A: Yes, you can get the name of the media file associated with a rendition annotation using Aspose.PDF for .NET. The media file name can be accessed through the `FileSpecification` of the `MediaClip` object.
+R: Sí, puede obtener el nombre del archivo multimedia asociado con una anotación de representación utilizando Aspose.PDF para .NET. Se puede acceder al nombre del archivo multimedia a través del`FileSpecification` del`MediaClip` objeto.
 
-#### Q: Can Aspose.PDF for .NET extract media files from a rendition annotation?
+#### P: ¿Puede Aspose.PDF para .NET extraer archivos multimedia de una anotación de representación?
 
-A: Yes, Aspose.PDF for .NET can extract the media data from a rendition annotation, which includes audio or video content, and save it as a separate file.
+R: Sí, Aspose.PDF para .NET puede extraer los datos multimedia de una anotación de representación, que incluye contenido de audio o video, y guardarlos como un archivo separado.
 
-#### Q: How can I access the media data of a rendition annotation?
+#### P: ¿Cómo puedo acceder a los datos multimedia de una anotación de interpretación?
 
-A: The media data of a rendition annotation can be accessed through the `FileSpecification.Contents` property of the `MediaClipData` object.
+ R: Se puede acceder a los datos multimedia de una anotación de interpretación a través del`FileSpecification.Contents` propiedad de la`MediaClipData` objeto.
 
-#### Q: Can I modify the media associated with a rendition annotation using Aspose.PDF for .NET?
+#### P: ¿Puedo modificar los medios asociados con una anotación de representación usando Aspose.PDF para .NET?
 
-A: Aspose.PDF for .NET provides methods to access and modify the media data associated with a rendition annotation. You can update or replace the media file used by a rendition annotation.
+R: Aspose.PDF para .NET proporciona métodos para acceder y modificar los datos multimedia asociados con una anotación de representación. Puede actualizar o reemplazar el archivo multimedia utilizado por una anotación de representación.

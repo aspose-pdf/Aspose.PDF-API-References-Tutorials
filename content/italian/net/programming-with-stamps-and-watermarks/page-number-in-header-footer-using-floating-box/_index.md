@@ -1,141 +1,141 @@
 ---
-title: Page Number In Header Footer Using Floating Box
-linktitle: Page Number In Header Footer Using Floating Box
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add the page number in the header and footer of a PDF document with Aspose.PDF for .NET.
+title: Numero di pagina nel piè di pagina dell'intestazione utilizzando la casella mobile
+linktitle: Numero di pagina nel piè di pagina dell'intestazione utilizzando la casella mobile
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Scopri come aggiungere il numero di pagina nell'intestazione e nel piè di pagina di un documento PDF con Aspose.PDF per .NET.
 type: docs
 weight: 150
 url: /it/net/programming-with-stamps-and-watermarks/page-number-in-header-footer-using-floating-box/
 ---
-In this tutorial, we will guide you step by step on how to add page number in header and footer of a PDF document using FloatingBox with Aspose.PDF for .NET. We will use the provided C# source code to create a PDF document, add a page, create a FloatingBox, set its position and add the page number to it, then save the modified PDF document.
+In questo tutorial, ti guideremo passo dopo passo su come aggiungere il numero di pagina nell'intestazione e nel piè di pagina di un documento PDF utilizzando FloatingBox con Aspose.PDF per .NET. Utilizzeremo il codice sorgente C# fornito per creare un documento PDF, aggiungere una pagina, creare un FloatingBox, impostarne la posizione e aggiungervi il numero di pagina, quindi salvare il documento PDF modificato.
 
-## Step 1: Setting up the environment
+## Passaggio 1: configurazione dell'ambiente
 
-Before you begin, make sure you have the following:
+Prima di iniziare, assicurati di avere quanto segue:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Un ambiente di sviluppo .NET installato.
+- La libreria Aspose.PDF per .NET scaricata e a cui si fa riferimento nel progetto.
 
-## Step 2: Creating the PDF document and adding a page
+## Passaggio 2: creazione del documento PDF e aggiunta di una pagina
 
-The first step is to create an instance of the PDF document and add a page to it. Here's how:
+Il primo passo è creare un'istanza del documento PDF e aggiungervi una pagina. Ecco come:
 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Instantiate the PDF document
+// Creare un'istanza del documento PDF
 Aspose.Pdf.Document pdf = new Aspose.Pdf.Document();
 
-// Add a page to the PDF document
+// Aggiungi una pagina al documento PDF
 Aspose.Pdf.Page page = pdf.Pages.Add();
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where you want to save the PDF document.
+Assicurati di sostituire "LA TUA DIRECTORY DOCUMENTI" con il percorso effettivo della directory in cui desideri salvare il documento PDF.
 
-## Step 3: Creating the FloatingBox and adding the page number
+## Passaggio 3: creazione del FloatingBox e aggiunta del numero di pagina
 
-Now that the page is added to the PDF document, we can create a FloatingBox, set its position, and add the page number to it. Here's how:
+Ora che la pagina è stata aggiunta al documento PDF, possiamo creare un FloatingBox, impostarne la posizione e aggiungervi il numero di pagina. Ecco come:
 
 ```csharp
-// Create a FloatingBox with a width of 140 and a height of 80
+// Crea un FloatingBox con una larghezza di 140 e un'altezza di 80
 Aspose.Pdf.FloatingBox box1 = new Aspose.Pdf.FloatingBox(140, 80);
 
-// Set the left position of the paragraph
+// Imposta la posizione sinistra del paragrafo
 box1. Left = 2;
 
-// Set the top position of the paragraph
+// Imposta la prima posizione del paragrafo
 box1. Top = 10;
 
-// Add the page number to the FloatingBox
+// Aggiungi il numero di pagina al FloatingBox
 box1.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("Page: ($p/ $P )"));
 
-// Add the FloatingBox to the page
+// Aggiungi il FloatingBox alla pagina
 page.Paragraphs.Add(box1);
 ```
 
-The code above creates a FloatingBox with a width of 140 and a height of 80. Next, we set its position by specifying the left and top values. Finally, we add the page number to the FloatingBox using a TextFragment containing the syntax "($p/ $P )" which will be replaced with the current page number and the total number of pages.
+Il codice sopra crea un FloatingBox con una larghezza di 140 e un'altezza di 80. Successivamente, impostiamo la sua posizione specificando i valori sinistro e superiore. Infine, aggiungiamo il numero di pagina al FloatingBox utilizzando un TextFragment contenente la sintassi "($p/ $P )" che verrà sostituita con il numero di pagina corrente e il numero totale di pagine.
 
-## Step 4: Saving the modified PDF document
+## Passaggio 4: salvataggio del documento PDF modificato
 
-Once the page number is added to the header or footer using the FloatingBox, we can save the modified PDF document. Here's how:
+Una volta aggiunto il numero di pagina all'intestazione o al piè di pagina utilizzando FloatingBox, possiamo salvare il documento PDF modificato. Ecco come:
 
 ```csharp
-// Save the modified PDF document
+// Salva il documento PDF modificato
 pdf.Save(dataDir + "PageNumberinHeaderFooterUsingFloatingBox_out.pdf");
 ```
 
-The above code saves the edited PDF document to the specified directory.
+Il codice precedente salva il documento PDF modificato nella directory specificata.
 
-### Sample source code for Page Numberin Header Footer Using Floating Box using Aspose.PDF for .NET 
+### Codice sorgente di esempio per il numero di pagina nel piè di pagina dell'intestazione utilizzando la casella mobile utilizzando Aspose.PDF per .NET 
 ```csharp
 
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate Document instance
+// Istanziare l'istanza del documento
 Aspose.Pdf.Document pdf = new Aspose.Pdf.Document();
 
-// Add a Page into the pdf document
+// Aggiungi una pagina al documento PDF
 Aspose.Pdf.Page page = pdf.Pages.Add();
 
-// Initializes a new instance of the FloatingBox class
+//Inizializza una nuova istanza della classe FloatingBox
 Aspose.Pdf.FloatingBox box1 = new Aspose.Pdf.FloatingBox(140, 80);
 
-// Float value that indicates left position of the paragraph
+// Valore float che indica la posizione a sinistra del paragrafo
 box1.Left = 2;
 
-// Float value that indicates top position of the paragraph
+// Valore float che indica la posizione iniziale del paragrafo
 box1.Top = 10;
 
-// Add the macros to the paragraphs collection of the FloatingBox
+// Aggiungi le macro alla raccolta paragrafi di FloatingBox
 box1.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("Page: ($p/ $P )"));
 
-// Add a floatingBox to the page
+// Aggiungi un floatBox alla pagina
 page.Paragraphs.Add(box1);
 
-// Save the document
+// Salva il documento
 pdf.Save(dataDir + "PageNumberinHeaderFooterUsingFloatingBox_out.pdf");
 
 ```
 
-## Conclusion
+## Conclusione
 
-Congratulation ! You have learned how to add page number in header and footer of PDF document using FloatingBox with Aspose.PDF for .NET. You can now customize your headers and footers by adding dynamic information such as page number.
+Congratulazioni! Hai imparato come aggiungere il numero di pagina nell'intestazione e nel piè di pagina del documento PDF utilizzando FloatingBox con Aspose.PDF per .NET. Ora puoi personalizzare intestazioni e piè di pagina aggiungendo informazioni dinamiche come il numero di pagina.
 
-### FAQ's
+### Domande frequenti
 
-#### Q: What is a FloatingBox, and how is it used to add page numbers in the header or footer of a PDF document?
+#### D: Cos'è un FloatingBox e come viene utilizzato per aggiungere numeri di pagina nell'intestazione o nel piè di pagina di un documento PDF?
 
-A: A FloatingBox is a versatile layout element in Aspose.PDF that can hold various content, including text and images. In this tutorial, it's used to create a container for the page number, allowing you to dynamically insert the current page number and total page count into the header or footer.
+R: Un FloatingBox è un elemento di layout versatile in Aspose.PDF che può contenere vari contenuti, inclusi testo e immagini. In questo tutorial viene utilizzato per creare un contenitore per il numero di pagina, consentendo di inserire dinamicamente il numero di pagina corrente e il conteggio totale delle pagine nell'intestazione o nel piè di pagina.
 
-#### Q: How does the provided C# source code achieve adding page numbers using a FloatingBox?
+#### D: In che modo il codice sorgente C# fornito riesce ad aggiungere numeri di pagina utilizzando un FloatingBox?
 
-A: The code snippet demonstrates how to create a PDF document, add a page, create a FloatingBox, set its position within the page, and insert the page number using a TextFragment. The syntax "($p/ $P )" in the TextFragment is replaced with the current page number and total page count.
+R: Lo snippet di codice mostra come creare un documento PDF, aggiungere una pagina, creare un FloatingBox, impostarne la posizione all'interno della pagina e inserire il numero di pagina utilizzando un TextFragment. La sintassi "($p/ $P )" nel TextFragment viene sostituita con il numero di pagina corrente e il conteggio totale delle pagine.
 
-#### Q: Can I customize the appearance and formatting of the page number added using the FloatingBox?
+#### D: Posso personalizzare l'aspetto e la formattazione del numero di pagina aggiunto utilizzando FloatingBox?
 
-A: Yes, you can customize the appearance of the page number by modifying the properties of the TextFragment within the FloatingBox. You can change font size, color, style, alignment, and other formatting options.
+R: Sì, puoi personalizzare l'aspetto del numero di pagina modificando le proprietà di TextFragment all'interno di FloatingBox. Puoi modificare la dimensione, il colore, lo stile, l'allineamento e altre opzioni di formattazione del carattere.
 
-#### Q: Is it possible to add different dynamic elements, such as date and time, to the header or footer using a similar approach?
+#### D: È possibile aggiungere diversi elementi dinamici, come data e ora, all'intestazione o al piè di pagina utilizzando un approccio simile?
 
-A: Absolutely, you can add different dynamic elements like date, time, document metadata, or custom text by modifying the TextFragment content within the FloatingBox. You can use macros like "($p/ $P )" for page numbers or "($date)" for the current date.
+R: Assolutamente, puoi aggiungere diversi elementi dinamici come data, ora, metadati del documento o testo personalizzato modificando il contenuto TextFragment all'interno di FloatingBox. Puoi utilizzare macro come "($p/ $P )" per i numeri di pagina o "($date)" per la data corrente.
 
-#### Q: How do I specify the position of the FloatingBox within the header or footer section?
-A: The provided code sets the position of the FloatingBox using the `Left` and `Top` properties. You can adjust these values to position the FloatingBox as desired within the header or footer section.
+#### D: Come posso specificare la posizione del FloatingBox all'interno della sezione dell'intestazione o del piè di pagina?
+ R: Il codice fornito imposta la posizione del FloatingBox utilizzando il file`Left` E`Top` proprietà. È possibile modificare questi valori per posizionare FloatingBox come desiderato all'interno della sezione dell'intestazione o del piè di pagina.
 
-#### Q: Can I use a different font or style for the page number in the header or footer?
+#### D: Posso utilizzare un carattere o uno stile diverso per il numero di pagina nell'intestazione o nel piè di pagina?
 
-A: Yes, you can customize the font, style, and other formatting properties of the page number text by modifying the TextFragment properties within the FloatingBox.
+R: Sì, puoi personalizzare il carattere, lo stile e altre proprietà di formattazione del testo del numero di pagina modificando le proprietà TextFragment all'interno di FloatingBox.
 
-#### Q: What happens if the content in the FloatingBox exceeds its dimensions?
+#### D: Cosa succede se il contenuto del FloatingBox supera le sue dimensioni?
 
-A: If the content within the FloatingBox exceeds its dimensions, it may be cut off or layout issues may arise. Ensure that the dimensions of the FloatingBox are suitable for accommodating the content, and consider adjusting the page layout if needed.
+R: Se il contenuto all'interno del FloatingBox supera le sue dimensioni, potrebbe essere tagliato o potrebbero verificarsi problemi di layout. Assicurati che le dimensioni del FloatingBox siano adatte ad accogliere il contenuto e valuta la possibilità di modificare il layout della pagina, se necessario.
 
-#### Q: Is it possible to add multiple FloatingBoxes with different content to the header or footer of the same page?
+#### D: È possibile aggiungere più FloatingBox con contenuti diversi nell'intestazione o nel piè di pagina della stessa pagina?
 
-A: Yes, you can add multiple FloatingBoxes with different content to the header or footer of the same page by creating separate FloatingBox instances and adding them to the page's Paragraphs collection.
+R: Sì, puoi aggiungere più FloatingBox con contenuti diversi all'intestazione o al piè di pagina della stessa pagina creando istanze FloatingBox separate e aggiungendole alla raccolta Paragraphs della pagina.
 
-#### Q: Can I use the FloatingBox approach to add content to other sections of the PDF document, such as the body or margins?
+#### D: Posso utilizzare l'approccio FloatingBox per aggiungere contenuto ad altre sezioni del documento PDF, come il corpo o i margini?
 
-A: While FloatingBoxes are commonly used for headers and footers, you can also use them to add content to other sections of the PDF document, such as the body or margins, by positioning them accordingly within the page.
+R: Sebbene i FloatingBox siano comunemente utilizzati per intestazioni e piè di pagina, puoi anche utilizzarli per aggiungere contenuto ad altre sezioni del documento PDF, come il corpo o i margini, posizionandoli di conseguenza all'interno della pagina.

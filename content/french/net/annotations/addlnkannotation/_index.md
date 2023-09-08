@@ -1,23 +1,23 @@
 ---
-title: Add lnk Annotation
-linktitle: Add lnk Annotation
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add Ink Annotation feature to PDF documents in C# using Aspose.PDF for .NET with step-by-step guide and full source code.
+title: Ajouter une annotation de lien
+linktitle: Ajouter une annotation de lien
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment ajouter la fonctionnalité d'annotation manuscrite aux documents PDF en C# à l'aide d'Aspose.PDF pour .NET avec un guide étape par étape et un code source complet.
 type: docs
 weight: 20
 url: /fr/net/annotations/addlnkannotation/
 ---
-Aspose.PDF for .NET is a powerful library that enables developers to perform various PDF operations. One such operation is adding Ink Annotation to PDF documents. In this article, we will provide a step-by-step guide to explain the C# source code for adding Ink Annotation using Aspose.PDF for .NET. Let's get started!
+Aspose.PDF pour .NET est une bibliothèque puissante qui permet aux développeurs d'effectuer diverses opérations PDF. L’une de ces opérations consiste à ajouter une annotation manuscrite aux documents PDF. Dans cet article, nous fournirons un guide étape par étape pour expliquer le code source C# pour l'ajout d'annotations manuscrites à l'aide d'Aspose.PDF pour .NET. Commençons!
 
-## Understanding the Ink Annotation Feature of Aspose.PDF for .NET
+## Comprendre la fonctionnalité d'annotation manuscrite d'Aspose.PDF pour .NET
 
-Before diving into the C# source code, let's first understand what Ink Annotation is and its uses.
+Avant de plonger dans le code source C#, comprenons d'abord ce qu'est l'annotation Ink et ses utilisations.
 
-Ink Annotation is a way to draw freeform ink annotations on PDF documents. It allows you to create annotations with a stylus or a mouse. This feature is useful in situations where you need to draw diagrams, sketches, or other types of annotations.
+L'annotation à l'encre est un moyen de dessiner des annotations à l'encre de forme libre sur des documents PDF. Il permet de créer des annotations avec un stylet ou une souris. Cette fonctionnalité est utile dans les situations où vous devez dessiner des diagrammes, des croquis ou d'autres types d'annotations.
 
-## Step 1: Creating a New Document
+## Étape 1 : Création d'un nouveau document
 
-The first step in adding Ink Annotation to a PDF document is to create a new instance of the Document class. This is achieved using the following code snippet:
+La première étape de l’ajout d’une annotation Ink à un document PDF consiste à créer une nouvelle instance de la classe Document. Ceci est réalisé à l'aide de l'extrait de code suivant :
 
 ```csharp
 string dataDir = "YOUR DATA DIRECTORY";
@@ -25,11 +25,11 @@ Document doc = new Document();
 Page pdfPage = doc.Pages.Add();
 ```
 
-Here, we create a new instance of the Document class and add a new page to it.
+Ici, nous créons une nouvelle instance de la classe Document et y ajoutons une nouvelle page.
 
-## Step 2: Creating Ink Annotation
+## Étape 2 : Création d'une annotation manuscrite
 
-The next step is to create an instance of the InkAnnotation class. This is done using the following code snippet:
+L'étape suivante consiste à créer une instance de la classe InkAnnotation. Cela se fait à l'aide de l'extrait de code suivant :
 
 ```csharp
 System.Drawing.Rectangle drect = new System.Drawing.Rectangle();
@@ -46,7 +46,7 @@ arrpt[1] = new Aspose.Pdf.Point(200, 800);
 arrpt[2] = new Aspose.Pdf.Point(200, 700);
 InkAnnotation ia = new InkAnnotation(pdfPage, arect, inkList);
 ia.Title = "XXX";
-ia.Color = Aspose.Pdf.Color.LightBlue; // (GetColorFromString(stroke.InkColor));
+ia.Color = Aspose.Pdf.Color.LightBlue; // (GetColorFromString(AVC.InkColor));
 ia.CapStyle = CapStyle.Rounded;
 Border border = new Border(ia);
 border.Width = 25;
@@ -54,25 +54,25 @@ ia.Opacity = 0.5;
 pdfPage.Annotations.Add(ia);
 ```
 
-Here, we first create a rectangle using the System.Drawing.Rectangle class and convert it to Aspose.Pdf.Rectangle using the FromRect method. We then create an instance of the InkAnnotation class using the rectangle, a list of points, and the page where the annotation is added.
+Ici, nous créons d’abord un rectangle à l’aide de la classe System.Drawing.Rectangle et le convertissons en Aspose.Pdf.Rectangle à l’aide de la méthode FromRect. Nous créons ensuite une instance de la classe InkAnnotation en utilisant le rectangle, une liste de points et la page où l'annotation est ajoutée.
 
-We then set various properties of the InkAnnotation, such as the title, color, cap style, border, and opacity. Finally, we add the annotation to the page using the Annotations.Add method.
+Nous définissons ensuite diverses propriétés de InkAnnotation, telles que le titre, la couleur, le style de majuscule, la bordure et l'opacité. Enfin, nous ajoutons l'annotation à la page à l'aide de la méthode Annotations.Add.
 
-## Step 3: Saving the Document
+## Étape 3 : enregistrement du document
 
-The final step is to save the PDF document with the Ink Annotation added. This is achieved using the following code snippet:
+La dernière étape consiste à enregistrer le document PDF avec l'annotation à l'encre ajoutée. Ceci est réalisé à l'aide de l'extrait de code suivant :
 
 ```csharp
 dataDir = dataDir + "AddlnkAnnotation_out.pdf";
 doc.Save(dataDir);
 ```
 
-Here, we concatenate the output file name to the data directory and save the document using the Save method.
+Ici, nous concaténons le nom du fichier de sortie au répertoire de données et enregistrons le document à l'aide de la méthode Save.
 
-### Example source code for Adding Ink Annotation using Aspose.PDF for .NET
+### Exemple de code source pour l'ajout d'annotations manuscrites à l'aide d'Aspose.PDF pour .NET
 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DATA DIRECTORY";
 
 
@@ -92,7 +92,7 @@ arrpt[1] = new Aspose.Pdf.Point(200, 800);
 arrpt[2] = new Aspose.Pdf.Point(200, 700);
 InkAnnotation ia = new InkAnnotation(pdfPage, arect, inkList);
 ia.Title = "XXX";
-ia.Color = Aspose.Pdf.Color.LightBlue; // (GetColorFromString(stroke.InkColor));
+ia.Color = Aspose.Pdf.Color.LightBlue; // (GetColorFromString(AVC.InkColor));
 ia.CapStyle = CapStyle.Rounded;
 Border border = new Border(ia);
 border.Width = 25;
@@ -100,32 +100,32 @@ ia.Opacity = 0.5;
 pdfPage.Annotations.Add(ia);
 
 dataDir = dataDir + "AddlnkAnnotation_out.pdf";
-// Save output file
+// Enregistrer le fichier de sortie
 doc.Save(dataDir);
 ```
 
 ## Conclusion
 
-In this tutorial, we explored how to add Ink Annotations to a PDF document using Aspose.PDF for .NET. By following the step-by-step guide and C# source code provided, developers can easily implement Ink Annotation functionality in their PDF processing applications.
+Dans ce didacticiel, nous avons expliqué comment ajouter des annotations manuscrites à un document PDF à l'aide d'Aspose.PDF pour .NET. En suivant le guide étape par étape et le code source C# fournis, les développeurs peuvent facilement implémenter la fonctionnalité d'annotation manuscrite dans leurs applications de traitement PDF.
 
-### FAQ's
+### FAQ
 
-#### Q: What is an Ink Annotation in a PDF document?
+#### Q : Qu'est-ce qu'une annotation manuscrite dans un document PDF ?
 
-A: An Ink Annotation in a PDF document allows users to draw freeform ink annotations using a stylus or mouse. It is commonly used to add hand-drawn sketches, diagrams, or other freehand annotations to a PDF.
+R : Une annotation manuscrite dans un document PDF permet aux utilisateurs de dessiner des annotations manuscrites de forme libre à l'aide d'un stylet ou d'une souris. Il est couramment utilisé pour ajouter des croquis, des diagrammes ou d'autres annotations dessinées à la main à un PDF.
 
-#### Q: Can I customize the appearance of the Ink Annotation?
+#### Q : Puis-je personnaliser l’apparence de l’annotation manuscrite ?
 
-A: Yes, Aspose.PDF for .NET provides various properties to customize the appearance of the Ink Annotation, such as color, opacity, cap style, border width, and more. Developers can adjust these properties to meet their specific requirements.
+R : Oui, Aspose.PDF pour .NET fournit diverses propriétés pour personnaliser l'apparence de l'annotation manuscrite, telles que la couleur, l'opacité, le style de majuscule, la largeur de la bordure, etc. Les développeurs peuvent ajuster ces propriétés pour répondre à leurs besoins spécifiques.
 
-#### Q: Is it possible to add multiple Ink Annotations to a single PDF page?
+#### Q : Est-il possible d'ajouter plusieurs annotations manuscrites à une seule page PDF ?
 
-A: Yes, you can add multiple Ink Annotations to a single PDF page using Aspose.PDF for .NET. Each Ink Annotation can have its own set of points and customized appearance.
+: Oui, vous pouvez ajouter plusieurs annotations manuscrites à une seule page PDF à l'aide d'Aspose.PDF pour .NET. Chaque annotation manuscrite peut avoir son propre ensemble de points et son apparence personnalisée.
 
-#### Q: Can I add Ink Annotations to existing PDF documents?
+#### Q : Puis-je ajouter des annotations manuscrites à des documents PDF existants ?
 
-A: Yes, Aspose.PDF for .NET allows you to add Ink Annotations to both newly created PDF documents and existing PDF files. You can open an existing PDF, add Ink Annotations, and save the updated document.
+R : Oui, Aspose.PDF pour .NET vous permet d'ajouter des annotations manuscrites aux documents PDF nouvellement créés et aux fichiers PDF existants. Vous pouvez ouvrir un PDF existant, ajouter des annotations manuscrites et enregistrer le document mis à jour.
 
-#### Q: What are some common use cases for Ink Annotations in PDF documents?
+#### Q : Quels sont les cas d'utilisation courants des annotations manuscrites dans les documents PDF ?
 
-A: Ink Annotations are useful for a wide range of applications, including adding signatures or handwritten notes to PDF forms, annotating architectural blueprints or engineering drawings, and marking up documents for collaborative review.
+R : Les annotations à l'encre sont utiles pour un large éventail d'applications, notamment l'ajout de signatures ou de notes manuscrites à des formulaires PDF, l'annotation de plans architecturaux ou de dessins techniques et le balisage de documents pour une révision collaborative.

@@ -1,27 +1,27 @@
 ---
-title: Programming with Security and Signatures
-linktitle: Programming with Security and Signatures
+title: 使用安全性和签名进行编程
+linktitle: 使用安全性和签名进行编程
 type: docs
 weight: 17
 url: /zh/net/programming-with-security-and-signatures/
-description: Programming with Security and Signatures tutorial teaches you how to secure and sign your PDF documents, ensuring confidentiality and authenticity.
+description: 使用安全和签名进行编程教程教您如何保护和签署 PDF 文档，确保机密性和真实性。
 ---
-Programming with Security and Signatures tutorial walks you through security and signatures features for PDF documents. You will learn how to protect your PDF files with passwords, add digital signatures and verify the integrity of signed documents.
+使用安全性和签名进行编程教程将引导您了解 PDF 文档的安全性和签名功能。您将学习如何使用密码保护 PDF 文件、添加数字签名以及验证签名文档的完整性。
 
-The tutorial gives you a detailed overview of methods and techniques to ensure the confidentiality and authenticity of your PDF files. You'll learn how to manage digital certificates, add security permissions, apply security policies, and more. Using these tutorials, you will be able to secure your PDF documents reliably and professionally.
+本教程详细概述了确保 PDF 文件的机密性和真实性的方法和技术。您将了解如何管理数字证书、添加安全权限、应用安全策略等等。使用这些教程，您将能够可靠且专业地保护您的 PDF 文档。
 
-## Tutorials
-| Title | Description |
+## 教程
+| 标题 | 描述 |
 | --- | --- | 
-| [Change Password In PDF File](./change-password/) | Learn how to change the password in PDF file using Aspose.PDF for .NET. |  
-| [Decrypt PDF File](./decrypt/) | Learn how to decrypt PDF file using Aspose.PDF for .NET. |  
-| [Determine Correct Password In PDF File](./determine-correct-password/) | Learn how to determine the correct password in PDF file with Aspose.PDF for .NET. |  
-| [Digitally Sign In PDF File](./digitally-sign/) | Learn how to digitally sign in PDF file with Aspose.PDF for .NET. |  
-| [Digitally Sign With Time Stamp In PDF File](./digitally-sign-with-time-stamp/) | Learn how to perform a digital signature with time stamp in PDF file using Aspose.PDF for .NET. |  
-| [Encrypt PDF File](./encrypt/) | Securely encrypt your PDF files with Aspose.PDF for .NET. |  
-| [Extracting Image](./extracting-image/) | Easily extract images from PDF documents with Aspose.PDF for .NET. |  
-| [Extract Signature Info](./extract-signature-info/) | Extracting signature information using Aspose.PDF for .NET. |  
-| [Is Password Protected](./is-password-protected/) | Easily check if a PDF document is password protected with Aspose.PDF for .NET. |  
-| [Set Privileges In PDF File](./set-privileges/) | Easily set access privileges in PDF file with Aspose.PDF for .NET. |  
-| [Sign With Smart Card Using Pdf File Signature](./sign-with-smart-card-using-pdf-file-signature/) | Sign your PDF files securely with a smart card using Aspose.PDF for .NET. |  
-| [Sign With Smart Card Using Signature Field](./sign-with-smart-card-using-signature-field/) | Sign your PDF files securely with a smart card using Aspose.PDF for .NET. |  
+| [更改 PDF 文件中的密码](./change-password/) | 了解如何使用 Aspose.PDF for .NET 更改 PDF 文件中的密码。 |  
+| [解密PDF文件](./decrypt/) | 了解如何使用 Aspose.PDF for .NET 解密 PDF 文件。 |  
+| [确定 PDF 文件中的正确密码](./determine-correct-password/) | 了解如何使用 Aspose.PDF for .NET 确定 PDF 文件中的正确密码。 |  
+| [数字登录 PDF 文件](./digitally-sign/) | 了解如何使用 Aspose.PDF for .NET 对 PDF 文件进行数字签名。 |  
+| [在 PDF 文件中使用时间戳进行数字签名](./digitally-sign-with-time-stamp/) | 了解如何使用 Aspose.PDF for .NET 在 PDF 文件中执行带时间戳的数字签名。 |  
+| [加密 PDF 文件](./encrypt/) | 使用 Aspose.PDF for .NET 安全加密您的 PDF 文件。 |  
+| [提取图像](./extracting-image/) | 使用 Aspose.PDF for .NET 轻松从 PDF 文档中提取图像。 |  
+| [提取签名信息](./extract-signature-info/) | 使用 Aspose.PDF for .NET 提取签名信息。 |  
+| [受密码保护](./is-password-protected/) | 使用 Aspose.PDF for .NET 轻松检查 PDF 文档是否受密码保护。 |  
+| [在 PDF 文件中设置权限](./set-privileges/) | 使用 Aspose.PDF for .NET 轻松设置 PDF 文件的访问权限。 |  
+| [使用 Pdf 文件签名通过智能卡进行签名](./sign-with-smart-card-using-pdf-file-signature/) | 使用 Aspose.PDF for .NET 通过智能卡安全地签署您的 PDF 文件。 |  
+| [使用签名字段通过智能卡进行签名](./sign-with-smart-card-using-signature-field/) | 使用 Aspose.PDF for .NET 通过智能卡安全地签署您的 PDF 文件。 |  

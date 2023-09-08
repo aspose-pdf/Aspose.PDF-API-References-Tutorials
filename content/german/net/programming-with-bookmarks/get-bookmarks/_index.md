@@ -1,41 +1,41 @@
 ---
-title: Get Bookmarks In PDF File
-linktitle: Get Bookmarks In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily get bookmark in PDF file with Aspose.PDF for .NET.
+title: Holen Sie sich Lesezeichen in eine PDF-Datei
+linktitle: Holen Sie sich Lesezeichen in eine PDF-Datei
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erstellen Sie ganz einfach Lesezeichen in einer PDF-Datei mit Aspose.PDF für .NET.
 type: docs
 weight: 70
 url: /de/net/programming-with-bookmarks/get-bookmarks/
 ---
-Retrieving bookmark in PDF file can be useful for analyzing the document's structure and navigational information. With Aspose.PDF for .NET, you can easily get the bookmarks by following the following source code:
+Das Abrufen von Lesezeichen in einer PDF-Datei kann für die Analyse der Dokumentstruktur und der Navigationsinformationen hilfreich sein. Mit Aspose.PDF für .NET können Sie die Lesezeichen ganz einfach abrufen, indem Sie dem folgenden Quellcode folgen:
 
-## Step 1: Import required libraries
+## Schritt 1: Erforderliche Bibliotheken importieren
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Bevor Sie beginnen, müssen Sie die erforderlichen Bibliotheken für Ihr C#-Projekt importieren. Hier ist die notwendige Importanweisung:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## Schritt 2: Legen Sie den Pfad zum Dokumentenordner fest
 
-In this step, you need to specify the path to the folder containing the PDF file you want to extract the bookmarks from. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ In diesem Schritt müssen Sie den Pfad zu dem Ordner angeben, der die PDF-Datei enthält, aus der Sie die Lesezeichen extrahieren möchten. Ersetzen`"YOUR DOCUMENT DIRECTORY"`Geben Sie im folgenden Code den tatsächlichen Pfad zu Ihrem Dokumentenordner ein:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Schritt 3: Öffnen Sie das PDF-Dokument
 
-Now we are going to open the PDF document from which we want to extract the bookmarks using the following code:
+Jetzt öffnen wir das PDF-Dokument, aus dem wir die Lesezeichen extrahieren möchten, mit dem folgenden Code:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetBookmarks.pdf");
 ```
 
-## Step 4: Browse Bookmarks
+## Schritt 4: Lesezeichen durchsuchen
 
-In this step, we will iterate over all the bookmarks in the document using a `foreach` loop. For each bookmark, we will display the information such as title, italic style, bold style and color. Here is the corresponding code:
+ In diesem Schritt werden wir alle Lesezeichen im Dokument mit a durchlaufen`foreach`Schleife. Für jedes Lesezeichen zeigen wir Informationen wie Titel, Kursivschrift, Fettschrift und Farbe an. Hier ist der entsprechende Code:
 
 ```csharp
 foreach(OutlineItemCollection outlineItem in pdfDocument.Outlines)
@@ -47,13 +47,13 @@ foreach(OutlineItemCollection outlineItem in pdfDocument.Outlines)
 }
 ```
 
-### Sample source code for Get Bookmarks using Aspose.PDF for .NET 
+### Beispielquellcode für „Lesezeichen abrufen“ mit Aspose.PDF für .NET 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Dokument öffnen
 Document pdfDocument = new Document(dataDir + "GetBookmarks.pdf");
-// Loop through all the bookmarks
+// Gehen Sie alle Lesezeichen durch
 foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
 {
 	Console.WriteLine(outlineItem.Title);
@@ -63,49 +63,49 @@ foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
 }
 ```
 
-## Conclusion
+## Abschluss
 
-Congratulation ! Now you have a step by step guide to get bookmarks with Aspose.PDF for .NET. You can use this code to parse bookmarks and extract information associated with each bookmark in your PDF documents.
+Herzlichen Glückwunsch! Jetzt haben Sie eine Schritt-für-Schritt-Anleitung zum Erstellen von Lesezeichen mit Aspose.PDF für .NET. Mit diesem Code können Sie Lesezeichen analysieren und Informationen zu jedem Lesezeichen in Ihren PDF-Dokumenten extrahieren.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Weitere Informationen zu erweiterten Funktionen zur Lesezeichenmanipulation finden Sie unbedingt in der offiziellen Aspose.PDF-Dokumentation.
 
-### FAQ's for get bookmarks in PDF file
+### FAQs zum Abrufen von Lesezeichen in einer PDF-Datei
 
-#### Q: What are bookmarks in a PDF file?
+#### F: Was sind Lesezeichen in einer PDF-Datei?
 
-A: Bookmarks in a PDF file are interactive elements that allow users to quickly navigate to specific sections or pages within the document. Bookmarks enhance the user experience by providing shortcuts to relevant content.
+A: Lesezeichen in einer PDF-Datei sind interaktive Elemente, die es Benutzern ermöglichen, schnell zu bestimmten Abschnitten oder Seiten innerhalb des Dokuments zu navigieren. Lesezeichen verbessern das Benutzererlebnis, indem sie Verknüpfungen zu relevanten Inhalten bereitstellen.
 
-#### Q: Why would I want to retrieve bookmarks from a PDF file?
+#### F: Warum sollte ich Lesezeichen aus einer PDF-Datei abrufen?
 
-A: Retrieving bookmarks helps you analyze the organization of a document and understand its hierarchy. It's particularly useful for documents with complex structures or multiple sections.
+A: Das Abrufen von Lesezeichen hilft Ihnen, die Organisation eines Dokuments zu analysieren und seine Hierarchie zu verstehen. Dies ist besonders nützlich für Dokumente mit komplexen Strukturen oder mehreren Abschnitten.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### F: Wie importiere ich die erforderlichen Bibliotheken für mein C#-Projekt?
 
-A: To import the required library for your C# project, use the following import directive:
+A: Um die erforderliche Bibliothek für Ihr C#-Projekt zu importieren, verwenden Sie die folgende Importanweisung:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This directive enables you to access the classes and methods provided by Aspose.PDF for .NET.
+Mit dieser Direktive können Sie auf die von Aspose.PDF für .NET bereitgestellten Klassen und Methoden zugreifen.
 
-#### Q: How do I specify the path to the documents folder?
+#### F: Wie lege ich den Pfad zum Dokumentenordner fest?
 
-A: In the provided source code, replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file from which you want to extract bookmarks. This ensures that the code can locate the target PDF file.
+ A: Ersetzen Sie im bereitgestellten Quellcode`"YOUR DOCUMENT DIRECTORY"` mit dem tatsächlichen Pfad zu dem Ordner, der die PDF-Datei enthält, aus der Sie Lesezeichen extrahieren möchten. Dadurch wird sichergestellt, dass der Code die Ziel-PDF-Datei finden kann.
 
-#### Q: How do I open a PDF document to extract bookmarks?
+#### F: Wie öffne ich ein PDF-Dokument, um Lesezeichen zu extrahieren?
 
-A: To open a PDF document for bookmark extraction, use the following code:
+A: Um ein PDF-Dokument zum Extrahieren von Lesezeichen zu öffnen, verwenden Sie den folgenden Code:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetBookmarks.pdf");
 ```
 
-Replace `"GetBookmarks.pdf"` with the actual file name.
+ Ersetzen`"GetBookmarks.pdf"` mit dem tatsächlichen Dateinamen.
 
-#### Q: How do I iterate through and display bookmark information?
+#### F: Wie kann ich Lesezeicheninformationen durchlaufen und anzeigen?
 
-A: Loop through all the bookmarks in the document using a `foreach` loop. For each bookmark, display information such as the title, italic style, bold style, and color:
+ A: Durchlaufen Sie alle Lesezeichen im Dokument mit a`foreach` Schleife. Zeigen Sie für jedes Lesezeichen Informationen wie Titel, Kursivschrift, Fettschrift und Farbe an:
 
 ```csharp
 foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
@@ -117,18 +117,18 @@ foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
 }
 ```
 
-#### Q: Can I extract other properties of bookmarks using a similar approach?
+#### F: Kann ich mit einem ähnlichen Ansatz andere Eigenschaften von Lesezeichen extrahieren?
 
-A: Yes, you can extract various properties of bookmarks using the `OutlineItemCollection` object. Refer to the Aspose.PDF documentation for a comprehensive list of available properties.
+ A: Ja, Sie können verschiedene Eigenschaften von Lesezeichen mit extrahieren`OutlineItemCollection` Objekt. Eine umfassende Liste der verfügbaren Eigenschaften finden Sie in der Aspose.PDF-Dokumentation.
 
-#### Q: How do I save changes to the PDF file after extracting bookmark information?
+#### F: Wie speichere ich Änderungen an der PDF-Datei, nachdem ich die Lesezeicheninformationen extrahiert habe?
 
-A: Bookmark extraction does not modify the original PDF file. If you want to save any changes or perform other operations, you can explore additional methods provided by Aspose.PDF for .NET.
+A: Durch die Lesezeichenextraktion wird die ursprüngliche PDF-Datei nicht verändert. Wenn Sie Änderungen speichern oder andere Vorgänge ausführen möchten, können Sie die zusätzlichen Methoden von Aspose.PDF für .NET erkunden.
 
-#### Q: What if the document has nested bookmarks?
+#### F: Was passiert, wenn das Dokument verschachtelte Lesezeichen enthält?
 
-A: If the document has nested bookmarks, the provided code will still iterate through and display each bookmark's information, including nested bookmarks.
+A: Wenn das Dokument über verschachtelte Lesezeichen verfügt, durchläuft der bereitgestellte Code dennoch alle Lesezeicheninformationen und zeigt sie an, einschließlich der verschachtelten Lesezeichen.
 
-#### Q: Is there a limit to the number of bookmarks I can retrieve?
+#### F: Gibt es eine Begrenzung für die Anzahl der Lesezeichen, die ich abrufen kann?
 
-A: There is typically no strict limit to the number of bookmarks you can retrieve using this method. However, very large documents with an excessive number of bookmarks may require efficient memory management.
+A: Normalerweise gibt es keine strenge Begrenzung für die Anzahl der Lesezeichen, die Sie mit dieser Methode abrufen können. Allerdings erfordern sehr große Dokumente mit einer übermäßigen Anzahl an Lesezeichen möglicherweise eine effiziente Speicherverwaltung.

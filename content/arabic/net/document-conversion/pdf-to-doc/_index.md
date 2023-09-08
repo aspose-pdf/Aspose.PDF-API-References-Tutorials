@@ -1,76 +1,76 @@
 ---
-title: PDF To DOC
-linktitle: PDF To DOC
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to convert PDF to DOC using Aspose.PDF for .NET.
+title: PDF إلى DOC
+linktitle: PDF إلى DOC
+second_title: Aspose.PDF لمرجع .NET API
+description: دليل خطوة بخطوة لتحويل PDF إلى DOC باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 110
 url: /ar/net/document-conversion/pdf-to-doc/
 ---
-In this tutorial, we will guide you through the process of converting a PDF file to DOC format using Aspose.PDF for .NET. PDF files are commonly used to view and share documents universally, while DOC format is specific to Microsoft Word. By following the steps below, you will be able to convert PDF files to DOC format.
+في هذا البرنامج التعليمي، سنرشدك خلال عملية تحويل ملف PDF إلى تنسيق DOC باستخدام Aspose.PDF لـ .NET. تُستخدم ملفات PDF بشكل شائع لعرض المستندات ومشاركتها عالميًا، بينما يكون تنسيق DOC خاصًا ببرنامج Microsoft Word. باتباع الخطوات أدناه، ستتمكن من تحويل ملفات PDF إلى تنسيق DOC.
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## المتطلبات الأساسية
+قبل البدء، تأكد من استيفاء المتطلبات الأساسية التالية:
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- المعرفة الأساسية بلغة البرمجة C#.
+- مكتبة Aspose.PDF لـ .NET مثبتة على نظامك.
+- بيئة تطوير مثل Visual Studio.
 
-## Step 1: Opening the source PDF document
-In this step, we will open the source PDF file using Aspose.PDF for .NET. Follow the code below:
+## الخطوة 1: فتح مستند PDF المصدر
+في هذه الخطوة، سنقوم بفتح ملف PDF المصدر باستخدام Aspose.PDF لـ .NET. اتبع الكود أدناه:
 
 ```csharp
-// Path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the source PDF document
+// افتح مستند PDF المصدر
 Document pdfDocument = new Document(dataDir + "PDFToDOC.pdf");
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where your PDF file is located.
+ تأكد من استبدال`"YOUR DOCUMENTS DIRECTORY"` مع الدليل الفعلي الذي يوجد به ملف PDF الخاص بك.
 
-## Step 2: Convert PDF to DOC format
-After opening the PDF file, we can proceed with the conversion to DOC format. Use the following code:
+## الخطوة 2: تحويل PDF إلى تنسيق DOC
+بعد فتح ملف PDF، يمكننا متابعة التحويل إلى تنسيق DOC. استخدم الكود التالي:
 
 ```csharp
-// Save the file in MS document format
+// احفظ الملف بتنسيق مستند MS
 pdfDocument.Save(dataDir + "PDFToDOC_out.doc", SaveFormat.Doc);
 ```
 
-The code above converts the PDF file to DOC format and saves it as the filename `"PDFToDOC_out.doc"`.
+ يقوم الكود أعلاه بتحويل ملف PDF إلى تنسيق DOC وحفظه كاسم الملف`"PDFToDOC_out.doc"`.
 
-Replace `"YOUR DOCUMENTS DIRECTORY"` with the desired directory where you want to save the output DOC file.
+ يستبدل`"YOUR DOCUMENTS DIRECTORY"` بالدليل المطلوب حيث تريد حفظ ملف DOC الناتج.
 
-### Example source code for PDF to DOC using Aspose.PDF for .NET
+### مثال على الكود المصدري لتحويل PDF إلى DOC باستخدام Aspose.PDF لـ .NET
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";          
 
-// Open the source PDF document
+// افتح مستند PDF المصدر
 Document pdfDocument = new Document(dataDir + "PDFToDOC.pdf");
 
-// Save the file into MS document format
+// احفظ الملف بتنسيق مستند MS
 pdfDocument.Save(dataDir + "PDFToDOC_out.doc", SaveFormat.Doc);
 ```
 
-## Conclusion
-In this tutorial, we covered the step-by-step process of converting a PDF file to DOC format using Aspose.PDF for .NET. By following the instructions outlined above, you should now be able to convert PDF files to DOC format. This feature can be useful when you need to work with PDF files in Microsoft Word or other applications that support the DOC format.
+## خاتمة
+في هذا البرنامج التعليمي، قمنا بتغطية عملية تحويل ملف PDF إلى تنسيق DOC خطوة بخطوة باستخدام Aspose.PDF لـ .NET. باتباع الإرشادات الموضحة أعلاه، يجب أن تكون الآن قادرًا على تحويل ملفات PDF إلى تنسيق DOC. يمكن أن تكون هذه الميزة مفيدة عندما تحتاج إلى العمل مع ملفات PDF في Microsoft Word أو التطبيقات الأخرى التي تدعم تنسيق DOC.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: Can I convert password-protected PDF files to DOC format using Aspose.PDF for .NET?
+#### س: هل يمكنني تحويل ملفات PDF المحمية بكلمة مرور إلى تنسيق DOC باستخدام Aspose.PDF لـ .NET؟
 
-A: Yes, Aspose.PDF for .NET provides support for converting password-protected PDF files to DOC format. You can specify the password using the appropriate method or property in the `Document` class before loading the PDF file. This allows you to convert secured PDFs to DOC format with the required password.
+ج: نعم، يوفر Aspose.PDF for .NET الدعم لتحويل ملفات PDF المحمية بكلمة مرور إلى تنسيق DOC. يمكنك تحديد كلمة المرور باستخدام الطريقة أو الخاصية المناسبة في ملف`Document` الطبقة قبل تحميل ملف PDF. يتيح لك هذا تحويل ملفات PDF المؤمنة إلى تنسيق DOC باستخدام كلمة المرور المطلوبة.
 
-#### Q: Are there any limitations when converting complex PDFs to DOC format?
+#### س: هل هناك أي قيود عند تحويل ملفات PDF المعقدة إلى تنسيق DOC؟
 
-A: While Aspose.PDF for .NET offers robust PDF to DOC conversion capabilities, there might be certain complex PDFs with intricate layouts, graphics, or custom fonts that could have limitations during the conversion process. It's recommended to test your specific PDF files to ensure the output DOC format meets your requirements.
+ج: على الرغم من أن Aspose.PDF for .NET يوفر إمكانات تحويل قوية من PDF إلى DOC، فقد تكون هناك بعض ملفات PDF المعقدة ذات التخطيطات المعقدة أو الرسومات أو الخطوط المخصصة التي قد تكون لها قيود أثناء عملية التحويل. يوصى باختبار ملفات PDF المحددة الخاصة بك للتأكد من أن تنسيق DOC الناتج يلبي متطلباتك.
 
-#### Q: Can I preserve formatting and layout during the PDF to DOC conversion?
+#### س: هل يمكنني الحفاظ على التنسيق والتخطيط أثناء تحويل PDF إلى DOC؟
 
-A: Yes, Aspose.PDF for .NET attempts to preserve as much formatting and layout as possible during the PDF to DOC conversion. However, the exact preservation of formatting may vary depending on the complexity of the original PDF file and the differences in the PDF and DOC formats.
+ج: نعم، يحاول Aspose.PDF for .NET الحفاظ على أكبر قدر ممكن من التنسيق والتخطيط أثناء تحويل PDF إلى DOC. ومع ذلك، قد يختلف الحفاظ الدقيق على التنسيق اعتمادًا على مدى تعقيد ملف PDF الأصلي والاختلافات في تنسيقات PDF وDOC.
 
-#### Q: Does Aspose.PDF for .NET support batch conversion of multiple PDF files to DOC format?
+#### س: هل يدعم Aspose.PDF for .NET التحويل المجمع لملفات PDF المتعددة إلى تنسيق DOC؟
 
-A: Yes, Aspose.PDF for .NET supports batch conversion, allowing you to convert multiple PDF files to DOC format in a single execution. You can loop through a list of PDF files and perform the conversion process for each file accordingly.
+ج: نعم، يدعم Aspose.PDF for .NET تحويل الدُفعات، مما يسمح لك بتحويل ملفات PDF متعددة إلى تنسيق DOC في عملية تنفيذ واحدة. يمكنك استعراض قائمة ملفات PDF وإجراء عملية التحويل لكل ملف وفقًا لذلك.

@@ -1,66 +1,66 @@
 ---
-title: EPUB To PDF
-linktitle: EPUB To PDF
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to convert EPUB to PDF using Aspose.PDF for .NET.
+title: EPUB إلى PDF
+linktitle: EPUB إلى PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: دليل خطوة بخطوة لتحويل EPUB إلى PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 30
 url: /ar/net/document-conversion/epub-to-pdf/
 ---
-In this tutorial, we will guide you through the process of converting an EPUB file to PDF using the Aspose.PDF library for .NET. EPUB (Electronic Publication) is a widely used format for electronic books, while PDF (Portable Document Format) is a document exchange standard. By following the steps given below, you will be able to convert EPUB files to PDF format effortlessly.
+في هذا البرنامج التعليمي، سنرشدك خلال عملية تحويل ملف EPUB إلى PDF باستخدام مكتبة Aspose.PDF لـ .NET. يعد EPUB (النشر الإلكتروني) تنسيقًا مستخدمًا على نطاق واسع للكتب الإلكترونية، بينما يعد PDF (تنسيق المستندات المحمولة) معيارًا لتبادل المستندات. باتباع الخطوات الموضحة أدناه، ستتمكن من تحويل ملفات EPUB إلى تنسيق PDF دون عناء.
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## المتطلبات الأساسية
+قبل البدء، تأكد من استيفاء المتطلبات الأساسية التالية:
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- المعرفة الأساسية بلغة البرمجة C#.
+- مكتبة Aspose.PDF لـ .NET مثبتة على نظامك.
+- بيئة تطوير مثل Visual Studio.
 
-## Step 1: Upload EPUB file
-At this step, we will upload the EPUB file using Aspose.PDF for .NET. Follow the code below:
+## الخطوة 1: تحميل ملف EPUB
+في هذه الخطوة، سنقوم بتحميل ملف EPUB باستخدام Aspose.PDF لـ .NET. اتبع الكود أدناه:
 
 ```csharp
-// Path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Instantiate the LoadOption object using the EPUB load option
+// قم بإنشاء كائن LoadOption باستخدام خيار تحميل EPUB
 EpubLoadOptions epubload = new EpubLoadOptions();
 
-// Create a Document object
+// قم بإنشاء كائن مستند
 Aspose.Pdf.Document pdf = new Aspose.Pdf.Document(dataDir + "EPUBToPDF.epub", epubload);
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where your EPUB file is located.
+ تأكد من استبدال`"YOUR DOCUMENTS DIRECTORY"` مع الدليل الفعلي الذي يوجد به ملف EPUB الخاص بك.
 
-## Step 2: EPUB to PDF conversion
-Now that we have uploaded the EPUB file, we can proceed with the conversion to PDF. Use the following code:
+## الخطوة 2: تحويل EPUB إلى PDF
+الآن بعد أن قمنا بتحميل ملف EPUB، يمكننا متابعة التحويل إلى PDF. استخدم الكود التالي:
 
 ```csharp
-// Save the resulting PDF document
+// احفظ مستند PDF الناتج
 pdf. Save(dataDir + "EPUBToPDF_out.pdf");
 ```
 
-The above code converts the EP file EPUB loaded in PDF format and saves it as filename `"EPUBToPDF_out.pdf"`. Be sure to provide the correct path and filename for the output PDF file.
+ يقوم الكود أعلاه بتحويل ملف EP EPUB الذي تم تحميله بتنسيق PDF وحفظه كاسم ملف`"EPUBToPDF_out.pdf"`. تأكد من توفير المسار الصحيح واسم الملف لملف PDF الناتج.
 
 
-Replace `"YOUR DOCUMENTS DIRECTORY"` with the desired directory where you want to save the output PDF file.
+ يستبدل`"YOUR DOCUMENTS DIRECTORY"` مع الدليل المطلوب حيث تريد حفظ ملف PDF الناتج.
 
-### Example source code for EPUB to PDF using Aspose.PDF for .NET
+### مثال على التعليمات البرمجية المصدر لـ EPUB إلى PDF باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 try
 {
 	
-	// The path to the documents directory.
+	// المسار إلى دليل المستندات.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Instantiate LoadOption object using EPUB load option
+	// إنشاء كائن LoadOption باستخدام خيار تحميل EPUB
 	EpubLoadOptions epubload = new EpubLoadOptions();
 
-	// Create Document object
+	// إنشاء كائن المستند
 	Aspose.Pdf.Document pdf = new Aspose.Pdf.Document(dataDir + "EPUBToPDF.epub", epubload);
 
-	// Save the resultant PDF document
+	// احفظ مستند PDF الناتج
 	pdf.Save(dataDir + "EPUBToPDF_out.pdf");
 	
 }
@@ -71,23 +71,23 @@ catch (Exception ex)
 
 ```
 
-## Conclusion
-In this tutorial, we covered the step-by-step process of converting an EPUB file to PDF using the Aspose.PDF library for .NET. By following the instructions outlined above, you should now be able to convert EPUB files to PDF format effortlessly. This conversion opens up possibilities for sharing, printing and archiving your documents.
+## خاتمة
+في هذا البرنامج التعليمي، قمنا بتغطية عملية تحويل ملف EPUB إلى PDF خطوة بخطوة باستخدام مكتبة Aspose.PDF لـ .NET. باتباع الإرشادات الموضحة أعلاه، من المفترض أن تكون الآن قادرًا على تحويل ملفات EPUB إلى تنسيق PDF دون عناء. يفتح هذا التحويل إمكانيات مشاركة مستنداتك وطباعتها وأرشفتها.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is EPUB?
+#### س: ما هو EPUB؟
 
-A: EPUB (Electronic Publication) is a widely used digital book format designed for reflowable content, meaning it can adapt to different screen sizes and orientations. EPUB is commonly used for ebooks and allows readers to adjust the font size, font style, and layout according to their preferences.
+ج: EPUB (النشر الإلكتروني) هو تنسيق كتاب رقمي يستخدم على نطاق واسع ومصمم للمحتوى القابل لإعادة التدفق، مما يعني أنه يمكن أن يتكيف مع أحجام واتجاهات الشاشات المختلفة. يُستخدم EPUB بشكل شائع للكتب الإلكترونية ويسمح للقراء بضبط حجم الخط ونمط الخط والتخطيط وفقًا لتفضيلاتهم.
 
-#### Q: Why convert EPUB to PDF?
+#### س: لماذا تحويل EPUB إلى PDF؟
 
-A: Converting EPUB to PDF allows you to create a fixed-layout document suitable for printing or sharing without worrying about the display format on different devices. PDF (Portable Document Format) ensures that the document's layout and formatting remain consistent across various platforms.
+ج: يتيح لك تحويل EPUB إلى PDF إنشاء مستند ذو تخطيط ثابت مناسب للطباعة أو المشاركة دون القلق بشأن تنسيق العرض على الأجهزة المختلفة. يضمن PDF (تنسيق المستند المحمول) أن يظل تخطيط المستند وتنسيقه متسقًا عبر الأنظمة الأساسية المختلفة.
 
-#### Q: Can Aspose.PDF for .NET handle complex EPUB files?
+#### س: هل يستطيع Aspose.PDF لـ .NET التعامل مع ملفات EPUB المعقدة؟
 
-A: Yes, Aspose.PDF for .NET is designed to handle complex EPUB files efficiently. It can accurately convert EPUB files with complex layouts, images, and multimedia elements to PDF format.
+ج: نعم، تم تصميم Aspose.PDF for .NET للتعامل مع ملفات EPUB المعقدة بكفاءة. يمكنه تحويل ملفات EPUB بدقة ذات تخطيطات وصور وعناصر وسائط متعددة معقدة إلى تنسيق PDF.
 
-#### Q:: Can I customize the conversion process using Aspose.PDF for .NET?
+#### س:: Can I customize the conversion process using Aspose.PDF for .NET?
 
-A: Yes, Aspose.PDF for .NET provides various options and settings to customize the conversion process. You can specify the output PDF page size, margins, image quality, and other properties to meet your specific requirements.
+ج: نعم، يوفر Aspose.PDF for .NET خيارات وإعدادات متنوعة لتخصيص عملية التحويل. يمكنك تحديد حجم صفحة PDF الناتجة والهوامش وجودة الصورة والخصائص الأخرى لتلبية متطلباتك المحددة.

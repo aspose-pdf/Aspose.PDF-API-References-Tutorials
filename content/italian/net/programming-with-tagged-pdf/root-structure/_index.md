@@ -1,135 +1,135 @@
 ---
-title: Root Structure
-linktitle: Root Structure
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to using root structure elements with Aspose.PDF for .NET to access the root and StructTreeRoot object of the PDF document.
+title: Struttura della radice
+linktitle: Struttura della radice
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Guida passo passo all'utilizzo degli elementi della struttura radice con Aspose.PDF per .NET per accedere alla radice e all'oggetto StructTreeRoot del documento PDF.
 type: docs
 weight: 130
 url: /it/net/programming-with-tagged-pdf/root-structure/
 ---
-In this step-by-step guide, we are going to show you how to use root structure elements with Aspose.PDF for .NET. Aspose.PDF is a powerful library that lets you create and manipulate PDF documents programmatically. Root structure elements allow you to access the StructTreeRoot object of the PDF document and the root structure element.
+In questa guida passo passo, ti mostreremo come utilizzare gli elementi della struttura radice con Aspose.PDF per .NET. Aspose.PDF è una potente libreria che ti consente di creare e manipolare documenti PDF a livello di codice. Gli elementi della struttura radice consentono di accedere all'oggetto StructTreeRoot del documento PDF e all'elemento della struttura radice.
 
-Let's dive into the code and learn how to use root structure elements with Aspose.PDF for .NET.
+Immergiamoci nel codice e impariamo come utilizzare gli elementi della struttura radice con Aspose.PDF per .NET.
 
-## Prerequisites
+## Prerequisiti
 
-Before you begin, make sure you have the following:
+Prima di iniziare, assicurati di avere quanto segue:
 
-1. Aspose.PDF library for .NET installed.
-2. A basic knowledge of the C# programming language.
+1. Libreria Aspose.PDF per .NET installata.
+2. Conoscenza base del linguaggio di programmazione C#.
 
-## Step 1: Setting up the environment
+## Passaggio 1: configurazione dell'ambiente
 
-To get started, open your C# development environment and create a new project. Make sure you have added a reference to the Aspose.PDF library for .NET in your project.
+Per iniziare, apri il tuo ambiente di sviluppo C# e crea un nuovo progetto. Assicurati di aver aggiunto un riferimento alla libreria Aspose.PDF per .NET nel tuo progetto.
 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Creating the document
+## Passaggio 2: creazione del documento
 
-The first step is to create a new PDF document using the `Document` class.
+ Il primo passo è creare un nuovo documento PDF utilizzando il file`Document` classe.
 
 ```csharp
-// Create the PDF document
+// Crea il documento PDF
 Document document = new Document();
 ```
 
-## Step 3: Work with tagged content
+## Passaggio 3: lavora con i contenuti taggati
 
-Then we get the tagged content of the document to work with.
+Quindi otteniamo il contenuto taggato del documento con cui lavorare.
 
 ```csharp
-// Get the tagged content of the document
+// Ottieni il contenuto taggato del documento
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-## Step 4: Set document title and language
+## Passaggio 4: imposta il titolo e la lingua del documento
 
-We can now set the document title and language.
+Ora possiamo impostare il titolo e la lingua del documento.
 
 ```csharp
-// Define the document title and language
+// Definire il titolo e la lingua del documento
 taggedContent.SetTitle("Tagged PDF document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-## Step 5: Access the root structure element
+## Passaggio 5: accedi all'elemento della struttura radice
 
-Now we can access the document's StructTreeRoot object and root structure element.
+Ora possiamo accedere all'oggetto StructTreeRoot del documento e all'elemento della struttura radice.
 
 ```csharp
-// Access the root structure element
+// Accedi all'elemento della struttura radice
 StructTreeRootElement structTreeRootElement = taggedContent.StructTreeRootElement;
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-### Sample source code for Root Structure using Aspose.PDF for .NET 
+### Codice sorgente di esempio per la struttura radice utilizzando Aspose.PDF per .NET 
 ```csharp
 
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create Pdf Document
+// Crea documento PDF
 Document document = new Document();
 
-// Get Content for work with TaggedPdf
+// Ottieni contenuti per lavorare con TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Set Title and Language for Documnet
+// Imposta titolo e lingua per Documnet
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 
-// Properties StructTreeRootElement and RootElement are used for access to 
-// StructTreeRoot object of pdf document and to root structure element (Document structure element).
+// Per l'accesso vengono utilizzate le proprietà StructTreeRootElement e RootElement
+// Oggetto StructTreeRoot del documento pdf e elemento della struttura radice (elemento della struttura del documento).
 StructTreeRootElement structTreeRootElement = taggedContent.StructTreeRootElement;
 StructureElement rootElement = taggedContent.RootElement;
 
 ```
 
-## Conclusion
+## Conclusione
 
-Congratulation ! You have learned how to use root structure elements with Aspose.PDF for .NET. You can now access the PDF document's StructTreeRoot object and root structure element to perform advanced operations on the document structure.
+Congratulazioni! Hai imparato come utilizzare gli elementi della struttura radice con Aspose.PDF per .NET. È ora possibile accedere all'oggetto StructTreeRoot del documento PDF e all'elemento della struttura radice per eseguire operazioni avanzate sulla struttura del documento.
 
-### FAQ's
+### Domande frequenti
 
-#### Q: What are root structure elements in a PDF document, and how do they provide access to the document's structure?
+#### D: Cosa sono gli elementi della struttura radice in un documento PDF e come forniscono l'accesso alla struttura del documento?
 
-A: Root structure elements in a PDF document provide access to the document's structure, allowing you to interact with the StructTreeRoot object. They serve as entry points to the logical structure of the document, enabling advanced operations on the document's content.
+R: Gli elementi della struttura radice in un documento PDF forniscono l'accesso alla struttura del documento, consentendoti di interagire con l'oggetto StructTreeRoot. Fungono da punti di ingresso alla struttura logica del documento, consentendo operazioni avanzate sul contenuto del documento.
 
-#### Q: How does Aspose.PDF for .NET facilitate working with root structure elements?
+#### D: In che modo Aspose.PDF per .NET facilita il lavoro con gli elementi della struttura radice?
 
-A: Aspose.PDF for .NET simplifies working with root structure elements by providing APIs to access the StructTreeRoot object and root structure element. This allows you to navigate and manipulate the document's logical structure programmatically.
+R: Aspose.PDF per .NET semplifica il lavoro con gli elementi della struttura radice fornendo API per accedere all'oggetto StructTreeRoot e all'elemento della struttura radice. Ciò consente di esplorare e manipolare la struttura logica del documento a livello di codice.
 
-#### Q: What is the significance of the StructTreeRoot object in a PDF document's logical structure?
+#### D: Qual è il significato dell'oggetto StructTreeRoot nella struttura logica di un documento PDF?
 
-A: The StructTreeRoot object represents the root of the document's logical structure hierarchy. It contains a collection of structure elements that define the organization and relationships between different parts of the document.
+R: L'oggetto StructTreeRoot rappresenta la radice della gerarchia della struttura logica del documento. Contiene una raccolta di elementi strutturali che definiscono l'organizzazione e le relazioni tra le diverse parti del documento.
 
-#### Q: How can root structure elements be useful in PDF document manipulation?
+#### D: In che modo gli elementi della struttura radice possono essere utili nella manipolazione dei documenti PDF?
 
-A: Root structure elements offer a way to programmatically access and modify the underlying structure of a PDF document. This can be valuable for tasks such as adding, rearranging, or modifying the document's content while preserving its logical structure.
+R: Gli elementi della struttura radice offrono un modo per accedere e modificare a livello di codice la struttura sottostante di un documento PDF. Ciò può essere utile per attività quali aggiungere, riorganizzare o modificare il contenuto del documento preservandone la struttura logica.
 
-#### Q: Can I use root structure elements to access metadata or properties of a PDF document?
+#### D: Posso utilizzare gli elementi della struttura radice per accedere ai metadati o alle proprietà di un documento PDF?
 
-A: While root structure elements primarily focus on the document's logical structure, you can use them to access metadata and properties indirectly. By navigating the document's structure, you can retrieve information associated with different structure elements.
+R: Sebbene gli elementi della struttura radice si concentrino principalmente sulla struttura logica del documento, puoi utilizzarli per accedere indirettamente a metadati e proprietà. Navigando nella struttura del documento, puoi recuperare informazioni associate a diversi elementi della struttura.
 
-#### Q: How does the StructTreeRootElement object relate to the root structure element?
+#### D: In che modo l'oggetto StructTreeRootElement è correlato all'elemento della struttura radice?
 
-A: The StructTreeRootElement object is the entry point for accessing the StructTreeRoot object, which represents the highest level of the document's logical structure. The root structure element, on the other hand, represents the root element of the document's structure hierarchy.
+R: L'oggetto StructTreeRootElement è il punto di ingresso per accedere all'oggetto StructTreeRoot, che rappresenta il livello più alto della struttura logica del documento. L'elemento radice della struttura, invece, rappresenta l'elemento radice della gerarchia della struttura del documento.
 
-#### Q: Can I perform advanced operations on a PDF document's logical structure using root structure elements?
+#### D: Posso eseguire operazioni avanzate sulla struttura logica di un documento PDF utilizzando gli elementi della struttura radice?
 
-A: Yes, you can perform advanced operations on a PDF document's logical structure using root structure elements. You can traverse the hierarchy, add new structure elements, modify existing ones, and establish relationships between different parts of the document.
+R: Sì, puoi eseguire operazioni avanzate sulla struttura logica di un documento PDF utilizzando gli elementi della struttura radice. Puoi attraversare la gerarchia, aggiungere nuovi elementi della struttura, modificare quelli esistenti e stabilire relazioni tra le diverse parti del documento.
 
-#### Q: Is it possible to create custom structure elements within the PDF document using root structure elements?
+#### D: È possibile creare elementi di struttura personalizzati all'interno del documento PDF utilizzando elementi di struttura radice?
 
-A: Yes, you can create custom structure elements within the PDF document using root structure elements. This allows you to define and organize the document's structure according to your specific requirements.
+R: Sì, puoi creare elementi di struttura personalizzati all'interno del documento PDF utilizzando gli elementi di struttura radice. Ciò consente di definire e organizzare la struttura del documento in base alle proprie esigenze specifiche.
 
-#### Q: Are there any precautions to consider when working with root structure elements in Aspose.PDF for .NET?
+#### D: Ci sono delle precauzioni da considerare quando si lavora con gli elementi della struttura radice in Aspose.PDF per .NET?
 
-A: When working with root structure elements, it's important to understand the PDF document's logical structure and the relationships between different elements. Be mindful of the hierarchy and the impact of modifications on the overall document structure.
+R: Quando si lavora con elementi della struttura radice, è importante comprendere la struttura logica del documento PDF e le relazioni tra i diversi elementi. Prestare attenzione alla gerarchia e all'impatto delle modifiche sulla struttura complessiva del documento.
 
-#### Q: How do root structure elements contribute to making PDF document manipulation more efficient and precise?
+#### D: In che modo gli elementi della struttura radice contribuiscono a rendere la manipolazione dei documenti PDF più efficiente e precisa?
 
-A: Root structure elements provide a structured approach to manipulating PDF documents. They enable targeted modifications by allowing you to access specific parts of the document's logical structure, leading to more efficient and precise document manipulation.
+R: Gli elementi della struttura radice forniscono un approccio strutturato alla manipolazione dei documenti PDF. Consentono modifiche mirate consentendo di accedere a parti specifiche della struttura logica del documento, portando a una manipolazione del documento più efficiente e precisa.

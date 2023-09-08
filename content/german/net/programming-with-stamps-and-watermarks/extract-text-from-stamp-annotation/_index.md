@@ -1,57 +1,57 @@
 ---
-title: Extract Text From Stamp Annotation
-linktitle: Extract Text From Stamp Annotation
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to easily extract text from a stamp annotation in your PDF documents with Aspose.PDF for .NET.
+title: Extrahieren Sie Text aus Stempelanmerkungen
+linktitle: Extrahieren Sie Text aus Stempelanmerkungen
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET ganz einfach Text aus einer Stempelanmerkung in Ihren PDF-Dokumenten extrahieren.
 type: docs
 weight: 80
 url: /de/net/programming-with-stamps-and-watermarks/extract-text-from-stamp-annotation/
 ---
-In this tutorial, we will take you step by step on how to extract text from a stamp annotation in a PDF document using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to extract the text from a specific stamp annotation on a given page of the PDF document.
+In diesem Tutorial zeigen wir Ihnen Schritt für Schritt, wie Sie mit Aspose.PDF für .NET Text aus einer Stempelanmerkung in einem PDF-Dokument extrahieren. Wir zeigen Ihnen, wie Sie den bereitgestellten C#-Quellcode verwenden, um den Text aus einer bestimmten Stempelanmerkung auf einer bestimmten Seite des PDF-Dokuments zu extrahieren.
 
-## Step 1: Setting up the environment
+## Schritt 1: Einrichten der Umgebung
 
-Before you begin, make sure you have the following:
+Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Eine installierte .NET-Entwicklungsumgebung.
+- Die Aspose.PDF-Bibliothek für .NET wurde heruntergeladen und in Ihrem Projekt referenziert.
 
-## Step 2: Loading the PDF document
+## Schritt 2: Laden des PDF-Dokuments
 
-The first step is to load the existing PDF document into your project. Here's how:
+Der erste Schritt besteht darin, das vorhandene PDF-Dokument in Ihr Projekt zu laden. Hier ist wie:
 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Load the document
+// Laden Sie das Dokument
 Document doc = new Document(dataDir + "test.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+Ersetzen Sie „IHR DOKUMENTENVERZEICHNIS“ unbedingt durch den tatsächlichen Pfad zu dem Verzeichnis, in dem sich Ihr PDF-Dokument befindet.
 
-## Step 3: Extract text from stamp annotation
+## Schritt 3: Extrahieren Sie Text aus der Stempelanmerkung
 
-Now that you have loaded the PDF document, you can extract the text from the specific stamp annotation. Here's how:
+Nachdem Sie das PDF-Dokument geladen haben, können Sie den Text aus der spezifischen Stempelanmerkung extrahieren. Hier ist wie:
 
 ```csharp
-// Retrieve buffer annotation
+// Pufferanmerkung abrufen
 StampAnnotation annot = doc.Pages[1].Annotations[3] as StampAnnotation;
 
-// Create a text absorber
+// Erstellen Sie einen Textabsorber
 TextAbsorber ta = new TextAbsorber();
 
-// Visit the appearance of the annotation
+// Sehen Sie sich das Erscheinungsbild der Anmerkung an
 XForm ap = annot. Appearance["N"];
 ta.Visit(ap);
 
-// Display the extracted text
+// Zeigen Sie den extrahierten Text an
 Console.WriteLine(ta.Text);
 ```
 
-The code above retrieves the stamp annotation from the specified page of the PDF document and then uses a text absorber to extract the text from the appearance of the annotation. The extracted text is then displayed in the output.
+Der obige Code ruft die Stempelanmerkung von der angegebenen Seite des PDF-Dokuments ab und verwendet dann einen Textabsorber, um den Text aus dem Erscheinungsbild der Anmerkung zu extrahieren. Der extrahierte Text wird dann in der Ausgabe angezeigt.
 
-### Sample source code for Extract Text From Stamp Annotation using Aspose.PDF for .NET 
+### Beispielquellcode zum Extrahieren von Text aus Stempelanmerkungen mit Aspose.PDF für .NET 
 ```csharp
 
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -64,44 +64,44 @@ Console.WriteLine(ta.Text);
 
 ```
 
-## Conclusion
+## Abschluss
 
-Congratulation ! You have learned how to extract text from a stamp annotation in a PDF document using Aspose.PDF for .NET. You can now use this method to extract text from other annotations in your PDF documents.
+Herzlichen Glückwunsch! Sie haben gelernt, wie Sie mit Aspose.PDF für .NET Text aus einer Stempelanmerkung in einem PDF-Dokument extrahieren. Mit dieser Methode können Sie jetzt Text aus anderen Anmerkungen in Ihren PDF-Dokumenten extrahieren.
 
-### FAQ's for extract text from stamp annotation
+### FAQs zum Extrahieren von Text aus Stempelanmerkungen
 
-#### Q: What is a stamp annotation in a PDF document, and why would I need to extract text from it?
+#### F: Was ist eine Stempelanmerkung in einem PDF-Dokument und warum sollte ich Text daraus extrahieren?
 
-A: A stamp annotation in a PDF document is a graphical element that can be used to provide additional information, such as a watermark or a rubber stamp. Extracting text from a stamp annotation is useful when you want to retrieve text-based content from these annotations, which can include notes, labels, or other textual information.
+A: Eine Stempelanmerkung in einem PDF-Dokument ist ein grafisches Element, das zur Bereitstellung zusätzlicher Informationen verwendet werden kann, beispielsweise ein Wasserzeichen oder ein Gummistempel. Das Extrahieren von Text aus einer Stempelanmerkung ist nützlich, wenn Sie textbasierten Inhalt aus diesen Anmerkungen abrufen möchten, zu dem Notizen, Beschriftungen oder andere Textinformationen gehören können.
 
-#### Q: How does the provided C# source code extract text from a stamp annotation?
+#### F: Wie extrahiert der bereitgestellte C#-Quellcode Text aus einer Stempelanmerkung?
 
-A: The provided source code demonstrates how to extract text from a specific stamp annotation on a given page of a PDF document. It uses the Aspose.PDF library to retrieve the stamp annotation, visit its appearance using a `TextAbsorber`, and then displays the extracted text in the output.
+ A: Der bereitgestellte Quellcode zeigt, wie Text aus einer bestimmten Stempelanmerkung auf einer bestimmten Seite eines PDF-Dokuments extrahiert wird. Es verwendet die Aspose.PDF-Bibliothek, um die Stempelanmerkung abzurufen und ihr Erscheinungsbild mithilfe von a zu überprüfen`TextAbsorber`und zeigt dann den extrahierten Text in der Ausgabe an.
 
-#### Q: Can I extract text from different types of annotations using a similar approach?
+#### F: Kann ich mit einem ähnlichen Ansatz Text aus verschiedenen Arten von Anmerkungen extrahieren?
 
-A: Yes, you can use a similar approach to extract text from other types of annotations, such as text annotations or popup annotations. You would need to modify the code to target the specific type of annotation you want to extract text from.
+A: Ja, Sie können einen ähnlichen Ansatz verwenden, um Text aus anderen Arten von Anmerkungen zu extrahieren, z. B. Textanmerkungen oder Popup-Anmerkungen. Sie müssten den Code so ändern, dass er auf den spezifischen Anmerkungstyp abzielt, aus dem Sie Text extrahieren möchten.
 
-#### Q: What is the purpose of the `TextAbsorber` class in the code?
+####  F: Was ist der Zweck des`TextAbsorber` class in the code?
 
-A: The `TextAbsorber` class is used to extract text from different parts of a PDF document, including stamp annotations. It "absorbs" or captures the text content found in the specified area or element of the PDF.
+ A: Die`TextAbsorber` Die Klasse wird verwendet, um Text aus verschiedenen Teilen eines PDF-Dokuments zu extrahieren, einschließlich Stempelanmerkungen. Es „absorbiert“ oder erfasst den Textinhalt, der im angegebenen Bereich oder Element der PDF-Datei gefunden wird.
 
-#### Q: How do I identify the specific stamp annotation I want to extract text from?
+#### F: Wie identifiziere ich die spezifische Stempelanmerkung, aus der ich Text extrahieren möchte?
 
-A: In the provided code, the stamp annotation is identified by accessing the `Annotations` collection of a specific page and using the index to retrieve the desired annotation. You can adjust the index or use other criteria to identify the target annotation.
+ A: Im bereitgestellten Code wird die Stempelanmerkung durch Zugriff auf identifiziert`Annotations` Sammlung einer bestimmten Seite und Verwendung des Index zum Abrufen der gewünschten Anmerkung. Sie können den Index anpassen oder andere Kriterien verwenden, um die Zielanmerkung zu identifizieren.
 
-#### Q: Can I extract text from multiple stamp annotations on the same page?
+#### F: Kann ich Text aus mehreren Stempelanmerkungen auf derselben Seite extrahieren?
 
-A: Yes, you can modify the code to loop through the `Annotations` collection of a page, filter out stamp annotations, and extract text from each of them.
+ A: Ja, Sie können den Code so ändern, dass er die Schleife durchläuft`Annotations`Sammlung einer Seite, Filtern Sie Stempelanmerkungen heraus und extrahieren Sie Text aus jeder Seite.
 
-#### Q: What if the stamp annotation has no textual content? Will the code still work?
+#### F: Was passiert, wenn die Stempelanmerkung keinen Textinhalt hat? Funktioniert der Code weiterhin?
 
-A: The code will still work, but it will extract and display an empty string if the stamp annotation's appearance does not contain any textual content.
+A: Der Code funktioniert weiterhin, extrahiert jedoch eine leere Zeichenfolge und zeigt sie an, wenn das Erscheinungsbild der Stempelanmerkung keinen Textinhalt enthält.
 
-#### Q: How can I save the extracted text to a file instead of displaying it in the output?
+#### F: Wie kann ich den extrahierten Text in einer Datei speichern, anstatt ihn in der Ausgabe anzuzeigen?
 
-A: You can modify the code to save the extracted text to a file instead of displaying it in the console. Simply replace the `Console.WriteLine` statement with code to write the text to a file.
+ A: Sie können den Code ändern, um den extrahierten Text in einer Datei zu speichern, anstatt ihn in der Konsole anzuzeigen. Ersetzen Sie einfach die`Console.WriteLine` Anweisung mit Code zum Schreiben des Textes in eine Datei.
 
-#### Q: How can I use the extracted text in further processing or analysis?
+#### F: Wie kann ich den extrahierten Text zur weiteren Verarbeitung oder Analyse verwenden?
 
-A: Once you have extracted the text using the provided method, you can store it in a variable, manipulate it, analyze it, or integrate it into other parts of your application as needed.
+A: Sobald Sie den Text mit der bereitgestellten Methode extrahiert haben, können Sie ihn bei Bedarf in einer Variablen speichern, manipulieren, analysieren oder in andere Teile Ihrer Anwendung integrieren.

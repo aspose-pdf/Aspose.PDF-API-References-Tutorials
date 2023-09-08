@@ -1,37 +1,37 @@
 ---
-title: Digitally Sign With Time Stamp In PDF File
-linktitle: Digitally Sign With Time Stamp In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to perform a digital signature with time stamp in PDF file using Aspose.PDF for .NET.
+title: PDF Dosyasında Zaman Damgasıyla Dijital Olarak İmzalayın
+linktitle: PDF Dosyasında Zaman Damgasıyla Dijital Olarak İmzalayın
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF dosyasında zaman damgalı dijital imzanın nasıl gerçekleştirileceğini öğrenin.
 type: docs
 weight: 50
 url: /tr/net/programming-with-security-and-signatures/digitally-sign-with-time-stamp/
 ---
-In this tutorial, we will walk you through the process of digitally signing in PDF file with time stamp using Aspose.PDF for .NET. The digital signature with timestamp guarantees the authenticity and integrity of the document, by adding an electronic fingerprint with a timestamp.
+Bu eğitimde, Aspose.PDF for .NET'i kullanarak zaman damgalı PDF dosyasını dijital olarak imzalama sürecinde size yol göstereceğiz. Zaman damgalı dijital imza, zaman damgalı elektronik parmak izi ekleyerek belgenin gerçekliğini ve bütünlüğünü garanti eder.
 
-## Step 1: Prerequisites
+## 1. Adım: Önkoşullar
 
-Before you begin, make sure you have the following prerequisites:
+Başlamadan önce aşağıdaki önkoşullara sahip olduğunuzdan emin olun:
 
-- Basic knowledge of the C# programming language
-- Installing Visual Studio on your machine
-- Aspose.PDF library for .NET installed
+- C# programlama dili hakkında temel bilgi
+- Visual Studio'yu makinenize yükleme
+- .NET için Aspose.PDF kütüphanesi kuruldu
 
-## Step 2: Environment setup
+## 2. Adım: Ortam kurulumu
 
-To get started, follow these steps to set up your development environment:
+Başlamak için geliştirme ortamınızı ayarlamak üzere şu adımları izleyin:
 
-1. Open Visual Studio and create a new C# project.
-2. Import the required namespaces into your code file:
+1. Visual Studio'yu açın ve yeni bir C# projesi oluşturun.
+2. Gerekli ad alanlarını kod dosyanıza aktarın:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Forms;
 ```
 
-## Step 3: Digital signature with timestamp
+## 3. Adım: Zaman damgasıyla dijital imza
 
-The first step is to perform the digital signature with timestamp on the PDF file. The provided code shows how to achieve this signature with Aspose.PDF for .NET.
+İlk adım, PDF dosyasında zaman damgasıyla dijital imzayı gerçekleştirmektir. Sağlanan kod, bu imzanın Aspose.PDF for .NET ile nasıl elde edileceğini gösterir.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -50,11 +50,11 @@ using (Document document = new Document(dataDir + @"DigitallySign.pdf"))
 }
 ```
 
-This code loads a PDF file, creates a digital signature with timestamp using a PFX file (private key) and the specified timestamp parameters. The signature is then added to the PDF file and saved with the suffix "_out".
+Bu kod bir PDF dosyası yükler, PFX dosyasını (özel anahtar) ve belirtilen zaman damgası parametrelerini kullanarak zaman damgasına sahip bir dijital imza oluşturur. İmza daha sonra PDF dosyasına eklenir ve " sonekiyle kaydedilir._dışarı".
 
-### Sample source code for Digitally Sign With Time Stamp using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Digitally Sign With Time Stamp için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 string pfxFile = "";
 using (Document document = new Document(dataDir + @"DigitallySign.pdf"))
@@ -62,66 +62,66 @@ using (Document document = new Document(dataDir + @"DigitallySign.pdf"))
 	using (PdfFileSignature signature = new PdfFileSignature(document))
 	{
 		PKCS7 pkcs = new PKCS7(pfxFile, "pfx_password");
-		TimestampSettings timestampSettings = new TimestampSettings("https:\\your_timestamp_settings", "user:password"); // User/Password can be omitted
+		TimestampSettings timestampSettings = new TimestampSettings("https:\\your_timestamp_settings", "user:password"); // Kullanıcı/Şifre atlanabilir
 		pkcs.TimestampSettings = timestampSettings;
 		System.Drawing.Rectangle rect = new System.Drawing.Rectangle(100, 100, 200, 100);
-		// Create any of the three signature types
+		// Üç imza türünden herhangi birini oluşturun
 		signature.Sign(1, "Signature Reason", "Contact", "Location", true, rect, pkcs);
-		// Save output PDF file
+		// Çıktı PDF dosyasını kaydet
 		signature.Save(dataDir + "DigitallySignWithTimeStamp_out.pdf");
 	}
 }
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulation ! You have successfully performed a digital signature with timestamp on a PDF file using Aspose.PDF for .NET. This tutorial covered the step-by-step process from creating the signature to saving the updated PDF file. You can now use this feature to add digital signatures with timestamp to your PDF files.
+Tebrikler! Aspose.PDF for .NET'i kullanarak bir PDF dosyasında zaman damgalı dijital imzayı başarıyla gerçekleştirdiniz. Bu eğitimde imzanın oluşturulmasından güncellenmiş PDF dosyasının kaydedilmesine kadar adım adım süreç anlatılmıştır. Artık bu özelliği, PDF dosyalarınıza zaman damgası içeren dijital imzalar eklemek için kullanabilirsiniz.
 
-### FAQ's for digitally sign with time stamp in PDF file
+### PDF dosyasında zaman damgasıyla dijital olarak imzalamaya ilişkin SSS
 
-#### Q: What is the purpose of digitally signing with a timestamp?
+#### S: Zaman damgasıyla dijital olarak imzalamanın amacı nedir?
 
-A: Digitally signing with a timestamp adds an electronic fingerprint with a timestamp to a PDF file, ensuring the document's authenticity and integrity at a specific point in time.
+C: Zaman damgasıyla dijital imzalama, PDF dosyasına zaman damgasıyla birlikte elektronik bir parmak izi ekleyerek belgenin belirli bir zaman noktasında orijinalliğini ve bütünlüğünü garanti eder.
 
-#### Q: What prerequisites are needed to start this tutorial?
+#### S: Bu eğitime başlamak için hangi önkoşullar gerekiyor?
 
-A: Before you begin, ensure you have a basic understanding of the C# programming language, have Visual Studio installed, and have the Aspose.PDF library for .NET installed.
+C: Başlamadan önce, C# programlama dilini temel düzeyde anladığınızdan, Visual Studio'nun kurulu olduğundan ve Aspose.PDF kütüphanesinin .NET'in kurulu olduğundan emin olun.
 
-#### Q: How can I set up my development environment?
+#### S: Geliştirme ortamımı nasıl kurabilirim?
 
-A: Follow the provided steps to set up your development environment, including creating a new C# project in Visual Studio and importing the necessary namespaces.
+C: Visual Studio'da yeni bir C# projesi oluşturma ve gerekli ad alanlarını içe aktarma da dahil olmak üzere geliştirme ortamınızı kurmak için sağlanan adımları izleyin.
 
-#### Q: How do I add a digital signature with a timestamp to a PDF?
+#### S: PDF'ye zaman damgası içeren dijital imzayı nasıl eklerim?
 
-A: The provided sample code demonstrates how to load a PDF file, create a digital signature with a timestamp using a PFX file (private key) and specified timestamp settings, add the signature to the PDF file, and save the updated file.
+C: Sağlanan örnek kod, bir PDF dosyasının nasıl yükleneceğini, PFX dosyası (özel anahtar) ve belirtilen zaman damgası ayarlarını kullanarak zaman damgasıyla dijital imzanın nasıl oluşturulacağını, imzanın PDF dosyasına nasıl ekleneceğini ve güncellenen dosyanın nasıl kaydedileceğini gösterir.
 
-#### Q: What is a PFX file, and why is it used in the example?
+#### S: PFX dosyası nedir ve örnekte neden kullanılıyor?
 
-A: A PFX (Personal Exchange Format) file contains a private key and certificate. It's used here to provide cryptographic functionality for digital signatures. Ensure you replace the placeholder with your PFX file and password.
+C: Bir PFX (Kişisel Değişim Formatı) dosyası özel bir anahtar ve sertifika içerir. Burada dijital imzalara yönelik şifreleme işlevselliği sağlamak için kullanılır. Yer tutucuyu PFX dosyanız ve parolanızla değiştirdiğinizden emin olun.
 
-#### Q: What are TimestampSettings?
+#### S: Zaman Damgası Ayarları nedir?
 
-A: TimestampSettings define the settings for the timestamp server used to add the electronic timestamp to the signature. It includes the timestamp server URL and optional user credentials.
+C: TimestampSettings, elektronik zaman damgasını imzaya eklemek için kullanılan zaman damgası sunucusunun ayarlarını tanımlar. Zaman damgası sunucusu URL'sini ve isteğe bağlı kullanıcı kimlik bilgilerini içerir.
 
-#### Q: Can I use a timestamp server other than the one in the example?
-A: Yes, you can use any compatible timestamp server. Replace the URL and, if required, provide the appropriate user credentials in the `TimestampSettings` object.
+#### S: Örnektekinin dışında bir zaman damgası sunucusu kullanabilir miyim?
+ C: Evet, uyumlu herhangi bir zaman damgası sunucusunu kullanabilirsiniz. URL'yi değiştirin ve gerekirse uygun kullanıcı kimlik bilgilerini sağlayın.`TimestampSettings` nesne.
 
-#### Q: What is the purpose of specifying the signature rectangle?
+#### S: İmza dikdörtgenini belirtmenin amacı nedir?
 
-A: The signature rectangle defines the position and dimensions of the digital signature appearance on the PDF page. Adjust these values to position the signature as desired.
+C: İmza dikdörtgeni, PDF sayfasındaki dijital imza görünümünün konumunu ve boyutlarını tanımlar. İmzayı istediğiniz gibi konumlandırmak için bu değerleri ayarlayın.
 
-#### Q: What happens if the timestamp server is unavailable during signing?
+#### S: İmzalama sırasında zaman damgası sunucusu kullanılamıyorsa ne olur?
 
-A: If the timestamp server is unavailable during signing, the process may fail or take longer. Ensure your timestamp server is reliable and accessible.
+C: İmzalama sırasında zaman damgası sunucusu kullanılamıyorsa işlem başarısız olabilir veya daha uzun sürebilir. Zaman damgası sunucunuzun güvenilir ve erişilebilir olduğundan emin olun.
 
-#### Q: How can I verify the presence of a timestamp in the signed PDF?
+#### S: İmzalı PDF'de zaman damgasının varlığını nasıl doğrulayabilirim?
 
-A: You can examine the signed PDF using the sample code provided. The `TimestampSettings` you used during signing should be available in the signature details.
+ C: İmzalı PDF'yi sağlanan örnek kodu kullanarak inceleyebilirsiniz.`TimestampSettings` İmzalama sırasında kullandığınız bilgilerin imza detaylarında mevcut olması gerekir.
 
-#### Q: Are digital signatures with timestamps legally binding?
+#### S: Zaman damgası içeren dijital imzalar yasal olarak bağlayıcı mıdır?
 
-A: Digital signatures with timestamps hold legal value in many jurisdictions and are often considered more reliable than simple digital signatures. Consult legal experts in your jurisdiction for specific regulations.
+C: Zaman damgalı dijital imzalar birçok yargı alanında yasal değere sahiptir ve genellikle basit dijital imzalardan daha güvenilir kabul edilir. Belirli düzenlemeler için yargı bölgenizdeki hukuk uzmanlarına danışın.
 
-#### Q: Can I add multiple digital signatures with timestamps to a PDF?
+#### S: Bir PDF'ye zaman damgası içeren birden fazla dijital imza ekleyebilir miyim?
 
-A: Yes, you can add multiple digital signatures with timestamps to a PDF file by calling the signature creation process multiple times. Each signature will have its own timestamp.
+C: Evet, imza oluşturma işlemini birden çok kez çağırarak bir PDF dosyasına zaman damgaları içeren birden çok dijital imza ekleyebilirsiniz. Her imzanın kendi zaman damgası olacaktır.

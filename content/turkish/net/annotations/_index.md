@@ -1,29 +1,29 @@
 ---
-title: Programming with Annotations
-linktitle: Programming with Annotations
+title: Ek Açıklamalarla Programlama
+linktitle: Ek Açıklamalarla Programlama
 type: docs
 weight: 12
 url: /tr/net/annotations/
-description: Programming with Annotations includes API Tutorials and code-snippets of Aspose.PDF for .NET that includes adding annotation, deleting annotation, getting annotation info, and many more.
+description: Ek Açıklamalarla Programlama, API Eğitimlerini ve Aspose.PDF for .NET kod parçacıklarını içerir; bunlar arasında açıklama ekleme, açıklama silme, açıklama bilgisi alma ve çok daha fazlası yer alır.
 ---
-A comprehensive collection of tutorials showcasing how to work with annotations in PDF documents using Aspose.PDF for .NET. It provides a wide range of code snippets demonstrating how to create and manipulate various types of annotations such as text, line, circle, rectangle, polygon, hyperlink, and many more. Each example includes the complete C# code along with a detailed explanation of the code's functionality and the expected output. Its an excellent resource for .NET developers who want to learn how to work with annotations in PDF documents using Aspose.PDF.
+Aspose.PDF for .NET kullanılarak PDF belgelerindeki açıklamalarla nasıl çalışılacağını gösteren kapsamlı eğitim koleksiyonu. Metin, çizgi, daire, dikdörtgen, çokgen, köprü ve çok daha fazlası gibi çeşitli ek açıklama türlerinin nasıl oluşturulacağını ve değiştirileceğini gösteren çok çeşitli kod parçacıkları sağlar. Her örnek, kodun işlevselliğinin ve beklenen çıktının ayrıntılı bir açıklamasıyla birlikte C# kodunun tamamını içerir. Aspose.PDF kullanarak PDF belgelerindeki açıklamalarla nasıl çalışılacağını öğrenmek isteyen .NET geliştiricileri için mükemmel bir kaynak.
 
-## Tutorials
-| Title | Description |
+## Öğreticiler
+| Başlık | Tanım |
 | --- | --- | 
-| [Add PDF Annotation](./addannotation/) | Learn how to add text PDF annotations with Aspose.PDF for .NET using this C# source code. Customize your annotations with specific details and icons. |  
-| [Add lnk Annotation](./addlnkannotation/) | Learn how to add Ink Annotation feature to PDF documents in C# using Aspose.PDF for .NET with step-by-step guide and full source code. |  
-| [Add Swf File As PDF Annotation](./addswffileasannotation/) | Learn how to add SWF files as PDF annotations in Aspose.PDF for .NET with this step-by-step guide. |  
-| [Delete All Annotations From Page](./deleteallannotationsfrompage/) | Learn how to delete all annotations from a PDF page with Aspose.PDF for .NET using this step-by-step guide. |  
-| [Delete Particular Annotation In PDF File](./deleteparticularannotation/) | Learn how to delete a particular annotation in PDF file using Aspose.PDF for .NET with this step-by-step guide. |  
-| [Extract Highlighted Text In PDF File](./extracthighlightedtext/) | Learn how to extract highlighted text in PDF file using Aspose.PDF for .NET with this step-by-step guide. |  
-| [Get All Annotations From Page](./getallannotationsfrompage/) | Learn how to use Aspose.PDF for .NET to retrieve all annotations from a PDF page with this step-by-step guide. |  
-| [Get Particular Annotation In PDF File](./getparticularannotation/) | Learn how to use Aspose.PDF for .NET to get particular annotation in PDF file with this step-by-step guide.  |  
-| [Get Resource Of Annotation](./getresourceofannotation/) | Learn how to retrieve the resource of an annotation using Aspose.PDF for .NET with this step-by-step guide.  |  
-| [Invisible Annotation In PDF File](./invisibleannotation/) | Learn how to invisible annotation in PDF file using C# source code with Aspose.PDF for .NET. Step-by-step guide. |  
-| [lnk Annotation Line Width](./lnkannotationlinewidth/) | This article provides a step-by-step guide for setting the line width of the lnk Annotation using Aspose.PDF for .NET. |  
-| [Redact Page](./redactpage/) | This article explains how to redact a PDF page using Aspose.PDF for .NET, including step-by-step instructions and example source code. |  
-| [Set Callout Property In PDF File](./setcalloutproperty/) | Learn how to set Callout Property in PDF file using Aspose.PDF for .NET. Customize annotations with callout lines, text color, and ending styles. |  
-| [Set Free Text Annotation Formatting](./setfreetextannotationformatting/) | This article provides a step-by-step guide on how to create a free text annotation and specify its contents using Aspose.PDF for .NET. |  
-| [Strike Out Words](./strikeoutwords/) | This article provides a step-by-step guide to using Aspose.PDF for .NET's Strike Out Words feature, including step by step guide and explanations. |  
-| [Update Free Text PDF Annotation](./updatefreetextannotation/) | Learn how to update free text PDF annotation feature of Aspose.PDF for .NET using C# source code. |  
+| [PDF Açıklaması Ekle](./addannotation/) | Bu C# kaynak kodunu kullanarak Aspose.PDF for .NET ile metin PDF açıklamalarını nasıl ekleyeceğinizi öğrenin. Ek açıklamalarınızı belirli ayrıntılar ve simgelerle özelleştirin. |  
+| [lnk Ek Açıklaması Ekle](./addlnkannotation/) | Adım adım kılavuz ve tam kaynak koduyla Aspose.PDF for .NET kullanarak C#'ta PDF belgelerine Mürekkep Açıklaması özelliğini nasıl ekleyeceğinizi öğrenin. |  
+| [Swf Dosyasını PDF Açıklaması Olarak Ekle](./addswffileasannotation/) | Bu adım adım kılavuzla Aspose.PDF for .NET'te SWF dosyalarını PDF açıklamaları olarak nasıl ekleyeceğinizi öğrenin. |  
+| [Sayfadaki Tüm Ek Açıklamaları Sil](./deleteallannotationsfrompage/) | Bu adım adım kılavuzu kullanarak Aspose.PDF for .NET ile bir PDF sayfasındaki tüm açıklamaları nasıl sileceğinizi öğrenin. |  
+| [PDF Dosyasındaki Belirli Açıklamaları Sil](./deleteparticularannotation/) | Bu adım adım kılavuzla Aspose.PDF for .NET kullanarak PDF dosyasındaki belirli bir açıklamayı nasıl sileceğinizi öğrenin. |  
+| [Vurgulanan Metni PDF Dosyasından Çıkart](./extracthighlightedtext/) | Bu adım adım kılavuzla Aspose.PDF for .NET kullanarak PDF dosyasındaki vurgulanan metni nasıl çıkaracağınızı öğrenin. |  
+| [Tüm Ek Açıklamaları Sayfadan Al](./getallannotationsfrompage/) | Bu adım adım kılavuzla bir PDF sayfasındaki tüm açıklamaları almak için Aspose.PDF for .NET'i nasıl kullanacağınızı öğrenin. |  
+| [PDF Dosyasında Özel Açıklama Alın](./getparticularannotation/) | Bu adım adım kılavuzla, PDF dosyasında belirli açıklamaları almak için Aspose.PDF for .NET'i nasıl kullanacağınızı öğrenin.  |  
+| [Ek Açıklamanın Kaynağını Alın](./getresourceofannotation/) | Bu adım adım kılavuzla Aspose.PDF for .NET kullanarak bir açıklamanın kaynağını nasıl alacağınızı öğrenin.  |  
+| [PDF Dosyasında Görünmez Açıklama](./invisibleannotation/) | Aspose.PDF for .NET ile C# kaynak kodunu kullanarak PDF dosyasında açıklamaların nasıl görünmez hale getirileceğini öğrenin. Adım adım rehber. |  
+| [lnk Açıklama Çizgisi Genişliği](./lnkannotationlinewidth/) | Bu makale, Aspose.PDF for .NET kullanarak lnk Açıklamasının çizgi genişliğini ayarlamak için adım adım bir kılavuz sağlar. |  
+| [Sayfayı Redakte Et](./redactpage/) | Bu makalede, Aspose.PDF for .NET kullanılarak bir PDF sayfasının nasıl redaksiyona tabi tutulacağı, adım adım talimatlar ve örnek kaynak koduyla birlikte açıklanmaktadır. |  
+| [PDF Dosyasında Belirtme Özelliğini Ayarlama](./setcalloutproperty/) | Aspose.PDF for .NET'i kullanarak PDF dosyasında Bilgi Özelliğini nasıl ayarlayacağınızı öğrenin. Ek açıklamaları belirtme çizgileri, metin rengi ve bitiş stilleriyle özelleştirin. |  
+| [Serbest Metin Açıklaması Biçimlendirmesini Ayarlama](./setfreetextannotationformatting/) | Bu makale, Aspose.PDF for .NET kullanılarak serbest metin açıklamasının nasıl oluşturulacağı ve içeriğinin nasıl belirleneceği konusunda adım adım bir kılavuz sunmaktadır. |  
+| [Kelimelerin Üstünü Çizin](./strikeoutwords/) | Bu makale, Aspose.PDF for .NET'in Sözcüklerin Üzerini Çiz özelliğinin kullanımıyla ilgili adım adım kılavuz ve açıklamalar içeren adım adım bir kılavuz sağlar. |  
+| [Serbest Metin PDF Ek Açıklamasını Güncelle](./updatefreetextannotation/) | Aspose.PDF for .NET'in serbest metin PDF açıklama özelliğini C# kaynak kodunu kullanarak nasıl güncelleyeceğinizi öğrenin. |  

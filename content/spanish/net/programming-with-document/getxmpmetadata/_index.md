@@ -1,39 +1,39 @@
 ---
-title: Get XMP Metadata
-linktitle: Get XMP Metadata
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use the GetXmpMetadata feature of Aspose.PDF for .NET to extract XMP metadata from a PDF document using C# source code.
+title: Obtener metadatos XMP
+linktitle: Obtener metadatos XMP
+second_title: Aspose.PDF para referencia de API .NET
+description: Aprenda a utilizar la función GetXmpMetadata de Aspose.PDF para .NET para extraer metadatos XMP de un documento PDF utilizando el código fuente C#.
 type: docs
 weight: 200
 url: /es/net/programming-with-document/getxmpmetadata/
 ---
-Aspose.PDF for .NET is a popular PDF manipulation library that enables developers to create, edit, and convert PDF files in their .NET applications. One of the features offered by this library is the ability to extract XMP metadata from a PDF document. This tutorial will guide you through the steps of using the `GetXmpMetadata` feature of Aspose.PDF for .NET to extract XMP metadata from a PDF document.
+ Aspose.PDF para .NET es una popular biblioteca de manipulación de PDF que permite a los desarrolladores crear, editar y convertir archivos PDF en sus aplicaciones .NET. Una de las características que ofrece esta biblioteca es la capacidad de extraer metadatos XMP de un documento PDF. Este tutorial lo guiará a través de los pasos para usar el`GetXmpMetadata` característica de Aspose.PDF para .NET para extraer metadatos XMP de un documento PDF.
 
-## Step 1: Install Aspose.PDF for .NET
+## Paso 1: Instale Aspose.PDF para .NET
 
-To use Aspose.PDF for .NET in your .NET applications, you must first install the library. You can download the latest version of the library from the [Aspose.PDF for .NET download page](https://releases.aspose.com/pdf/net).
+ Para utilizar Aspose.PDF para .NET en sus aplicaciones .NET, primero debe instalar la biblioteca. Puede descargar la última versión de la biblioteca desde[Página de descarga de Aspose.PDF para .NET](https://releases.aspose.com/pdf/net).
 
-Once you have downloaded the library, extract the contents of the ZIP file to a folder on your computer. You will then need to add a reference to the Aspose.PDF for .NET DLL in your .NET project.
+Una vez que haya descargado la biblioteca, extraiga el contenido del archivo ZIP a una carpeta en su computadora. Luego deberá agregar una referencia a Aspose.PDF para .NET DLL en su proyecto .NET.
 
-## Step 2: Load the PDF Document
+## Paso 2: cargue el documento PDF
 
-Once you have installed Aspose.PDF for .NET and added a reference to the DLL in your .NET project, you can begin using the `GetXmpMetadata` feature to extract XMP metadata from a PDF document.
+Una vez que haya instalado Aspose.PDF para .NET y haya agregado una referencia a la DLL en su proyecto .NET, puede comenzar a usar el`GetXmpMetadata` función para extraer metadatos XMP de un documento PDF.
 
-The first step in using this feature is to load the PDF document that you want to extract XMP metadata from. To do this, you can use the following code:
+El primer paso para utilizar esta función es cargar el documento PDF del que desea extraer metadatos XMP. Para hacer esto, puedes usar el siguiente código:
 
 ```csharp
-// The path to the PDF document
+// La ruta al documento PDF.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open the PDF document
+//Abrir el documento PDF
 Document pdfDocument = new Document(dataDir + "GetXMPMetadata.pdf");
 ```
 
-In the above code, replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your PDF document is located. This code will load the PDF document into a `Document` object, which you can then use to extract XMP metadata.
+ En el código anterior, reemplace`"YOUR DOCUMENT DIRECTORY"` con la ruta al directorio donde se encuentra su documento PDF. Este código cargará el documento PDF en un`Document` objeto, que luego puede utilizar para extraer metadatos XMP.
 
-## Step 3: Extract XMP Metadata
+## Paso 3: extraer metadatos XMP
 
-To extract XMP metadata from a PDF document, you can use the following code:
+Para extraer metadatos XMP de un documento PDF, puede utilizar el siguiente código:
 
 ```csharp
 Console.WriteLine(pdfDocument.Metadata["xmp:CreateDate"]);
@@ -41,45 +41,45 @@ Console.WriteLine(pdfDocument.Metadata["xmp:Nickname"]);
 Console.WriteLine(pdfDocument.Metadata["xmp:CustomProperty"]);
 ```
 
-In the above code, `xmp:CreateDate`, `xmp:Nickname`, and `xmp:CustomProperty` are examples of XMP metadata properties that you can extract from a PDF document. You can replace these property names with the names of any other XMP metadata properties that you want to extract.
+ En el código anterior,`xmp:CreateDate`, `xmp:Nickname` , y`xmp:CustomProperty` son ejemplos de propiedades de metadatos XMP que puede extraer de un documento PDF. Puede reemplazar estos nombres de propiedades con los nombres de cualquier otra propiedad de metadatos XMP que desee extraer.
 
-### Example Source Code for Get XMP Metadata using Aspose.PDF for .NET
+### Código fuente de ejemplo para obtener metadatos XMP usando Aspose.PDF para .NET
 
-Here is the full source code for extracting XMP metadata from a PDF document using the `GetXmpMetadata` feature of Aspose.PDF for .NET:
+ Aquí está el código fuente completo para extraer metadatos XMP de un documento PDF usando el`GetXmpMetadata` característica de Aspose.PDF para .NET:
 
 ```csharp
-// The path to the PDF document
+// La ruta al documento PDF.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open the PDF document
+//Abrir el documento PDF
 Document pdfDocument = new Document(dataDir + "GetXMPMetadata.pdf");
 
-// Extract XMP metadata
+// Extraer metadatos XMP
 Console.WriteLine(pdfDocument.Metadata["xmp:CreateDate"]);
 Console.WriteLine(pdfDocument.Metadata["xmp:Nickname"]);
 Console.WriteLine(pdfDocument.Metadata["xmp:CustomProperty"]);
 ```
 
-In the above code, replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your PDF document is located. This code will extract XMP metadata from the PDF document and output it to the console.
+ En el código anterior, reemplace`"YOUR DOCUMENT DIRECTORY"` con la ruta al directorio donde se encuentra su documento PDF. Este código extraerá metadatos XMP del documento PDF y los enviará a la consola.
 
-## Conclusion
+## Conclusión
 
-In this tutorial, we have discussed how to use Aspose.PDF for .NET to extract XMP metadata from a PDF document. XMP metadata provides valuable information about a document, and Aspose.PDF for .NET allows developers to access this information and use it in their applications as needed. By extracting XMP metadata, developers can gain insights into a document's creation date, author, and other descriptive data. This information can be used to enhance the functionality and user experience of PDF applications. Aspose.PDF for .NET provides a simple and straightforward API to access XMP metadata, making it easy to integrate this feature into .NET applications.
+En este tutorial, analizamos cómo utilizar Aspose.PDF para .NET para extraer metadatos XMP de un documento PDF. Los metadatos XMP proporcionan información valiosa sobre un documento y Aspose.PDF para .NET permite a los desarrolladores acceder a esta información y utilizarla en sus aplicaciones según sea necesario. Al extraer metadatos XMP, los desarrolladores pueden obtener información sobre la fecha de creación, el autor y otros datos descriptivos de un documento. Esta información se puede utilizar para mejorar la funcionalidad y la experiencia del usuario de las aplicaciones PDF. Aspose.PDF para .NET proporciona una API sencilla y directa para acceder a metadatos XMP, lo que facilita la integración de esta función en aplicaciones .NET.
 
-### FAQ's
+### Preguntas frecuentes
 
-#### Q: What is XMP metadata in a PDF document?
+#### P: ¿Qué son los metadatos XMP en un documento PDF?
 
-A: XMP metadata in a PDF document refers to Extensible Metadata Platform (XMP) information that is embedded within the document. XMP metadata provides a standard way to store information about the document, such as author, creation date, keywords, and other descriptive data. It allows for easy retrieval and exchange of metadata across different systems and applications.
+R: Los metadatos XMP en un documento PDF se refieren a la información de la Plataforma de metadatos extensible (XMP) que está incrustada en el documento. Los metadatos XMP proporcionan una forma estándar de almacenar información sobre el documento, como el autor, la fecha de creación, las palabras clave y otros datos descriptivos. Permite una fácil recuperación e intercambio de metadatos entre diferentes sistemas y aplicaciones.
 
-#### Q: What type of information can be extracted using the GetXmpMetadata feature?
+#### P: ¿Qué tipo de información se puede extraer utilizando la función GetXmpMetadata?
 
-A: The GetXmpMetadata feature allows developers to extract various XMP metadata properties from a PDF document. Some examples of XMP metadata properties that can be extracted are `xmp:CreateDate`, `xmp:Nickname`, and `xmp:CustomProperty`. Developers can access these properties and use them in their applications as needed.
+ R: La función GetXmpMetadata permite a los desarrolladores extraer varias propiedades de metadatos XMP de un documento PDF. Algunos ejemplos de propiedades de metadatos XMP que se pueden extraer son`xmp:CreateDate`, `xmp:Nickname` , y`xmp:CustomProperty`. Los desarrolladores pueden acceder a estas propiedades y utilizarlas en sus aplicaciones según sea necesario.
 
-#### Q: Can I extract custom XMP metadata properties using Aspose.PDF for .NET?
+#### P: ¿Puedo extraer propiedades de metadatos XMP personalizadas usando Aspose.PDF para .NET?
 
-A: Yes, you can extract custom XMP metadata properties using Aspose.PDF for .NET. Custom XMP metadata properties can be included in a PDF document to store additional information specific to your application or requirements. You can extract and use these custom properties as needed.
+R: Sí, puede extraer propiedades de metadatos XMP personalizadas utilizando Aspose.PDF para .NET. Se pueden incluir propiedades de metadatos XMP personalizadas en un documento PDF para almacenar información adicional específica de su aplicación o requisitos. Puede extraer y utilizar estas propiedades personalizadas según sea necesario.
 
-#### Q: Is Aspose.PDF for .NET capable of extracting other metadata information from a PDF document?
+#### P: ¿Aspose.PDF para .NET es capaz de extraer otra información de metadatos de un documento PDF?
 
-A: Yes, Aspose.PDF for .NET provides various features to extract metadata information from a PDF document. Apart from XMP metadata, you can also extract information like Document Information (title, author, subject, keywords), PDF version, encryption details, and more.
+R: Sí, Aspose.PDF para .NET proporciona varias funciones para extraer información de metadatos de un documento PDF. Además de los metadatos XMP, también puede extraer información como información del documento (título, autor, tema, palabras clave), versión PDF, detalles de cifrado y más.

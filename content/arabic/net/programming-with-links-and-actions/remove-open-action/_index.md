@@ -1,107 +1,107 @@
 ---
-title: Remove Open Action
-linktitle: Remove Open Action
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to remove the open action from a PDF using Aspose.PDF for .NET.
+title: إزالة الإجراء المفتوح
+linktitle: إزالة الإجراء المفتوح
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إزالة الإجراء المفتوح من ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 80
 url: /ar/net/programming-with-links-and-actions/remove-open-action/
 ---
-Learn how to remove the open action from a PDF file using Aspose.PDF for .NET with this step-by-step guide.
+تعرف على كيفية إزالة الإجراء المفتوح من ملف PDF باستخدام Aspose.PDF لـ .NET باستخدام هذا الدليل التفصيلي خطوة بخطوة.
 
-## Step 1: Setting up the environment
+## الخطوة 1: تهيئة البيئة
 
-Make sure you have set up your development environment with a C# project and the appropriate Aspose.PDF references.
+تأكد من أنك قمت بإعداد بيئة التطوير الخاصة بك باستخدام مشروع C# ومراجع Aspose.PDF المناسبة.
 
-## Step 2: Loading the PDF file
+## الخطوة 2: تحميل ملف PDF
 
-Set the directory path of your documents and upload the PDF file using the following code:
+قم بتعيين مسار الدليل لمستنداتك وقم بتحميل ملف PDF باستخدام الكود التالي:
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Open the document
+// افتح المستند
 Document document = new Document(dataDir + "RemoveOpenAction.pdf");
 ```
 
-## Step 3: Deleting the open action
+## الخطوة 3: حذف الإجراء المفتوح
 
-Remove the open action from the document by setting the `OpenAction` property to null:
+ قم بإزالة الإجراء المفتوح من المستند عن طريق تعيين`OpenAction` الخاصية إلى فارغة:
 
 ```csharp
 document. OpenAction = null;
 ```
 
-## Step 4: Save the updated document
+## الخطوة 4: احفظ المستند المحدث
 
-Save the updated document using the `Save` method:
+ احفظ المستند المحدث باستخدام ملف`Save` طريقة:
 
 ```csharp
 dataDir = dataDir + "RemoveOpenAction_out.pdf";
 document. Save(dataDir);
 ```
 
-## Step 5: Displaying the result
+## الخطوة 5: عرض النتيجة
 
-Display a message indicating that the open action was successfully removed and specify the location of the saved file:
+اعرض رسالة تشير إلى أنه تمت إزالة الإجراء المفتوح بنجاح وحدد موقع الملف المحفوظ:
 
 ```csharp
 Console.WriteLine("\nOpen action deleted successfully.\nFile saved to location: " + dataDir);
 ```
 
-### Sample source code for Remove Open Action using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لإزالة الإجراء المفتوح باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document document = new Document(dataDir + "RemoveOpenAction.pdf");
-// Remove document open action
+// إزالة الإجراء المفتوح للمستند
 document.OpenAction = null;
 dataDir = dataDir + "RemoveOpenAction_out.pdf";
-// Save updated document
+// حفظ المستند المحدث
 document.Save(dataDir);
 Console.WriteLine("\nOpen action removed successfully.\nFile saved at " + dataDir); 
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! Now you know how to remove the open action from a PDF using Aspose.PDF for .NET. Use this knowledge to customize the properties and behavior of PDF files in your projects.
+تهنئة ! أنت الآن تعرف كيفية إزالة الإجراء المفتوح من ملف PDF باستخدام Aspose.PDF لـ .NET. استخدم هذه المعرفة لتخصيص خصائص وسلوك ملفات PDF في مشاريعك.
 
-Now that you've completed this guide, you can apply these concepts to your own projects and further explore the features offered by Aspose.PDF for .NET.
+الآن وبعد أن أكملت هذا الدليل، يمكنك تطبيق هذه المفاهيم على مشاريعك الخاصة واستكشاف الميزات التي يقدمها Aspose.PDF لـ .NET بشكل أكبر.
 
-### FAQ's 
+### الأسئلة الشائعة 
 
-#### Q: What is the "open action" in a PDF file?
+#### س: ما هو "الإجراء المفتوح" في ملف PDF؟
 
-A: The "open action" in a PDF file is an instruction that specifies what should happen when the PDF is opened. It can include actions like navigating to a specific page or location within the document, launching an external application, or displaying a specific view.
+ج: إن "الإجراء المفتوح" في ملف PDF عبارة عن تعليمات تحدد ما يجب أن يحدث عند فتح ملف PDF. يمكن أن يتضمن إجراءات مثل الانتقال إلى صفحة أو موقع معين داخل المستند، أو تشغيل تطبيق خارجي، أو عرض طريقة عرض معينة.
 
-#### Q: Why would I want to remove the open action from a PDF file?
+#### س: لماذا أرغب في إزالة الإجراء المفتوح من ملف PDF؟
 
-A: Removing the open action can enhance security, user experience, and control over how the PDF is presented when opened. For example, you might want to prevent automatic navigation or disable certain actions upon opening the document.
+ج: يمكن أن تؤدي إزالة الإجراء المفتوح إلى تحسين الأمان وتجربة المستخدم والتحكم في كيفية عرض ملف PDF عند فتحه. على سبيل المثال، قد ترغب في منع التنقل التلقائي أو تعطيل إجراءات معينة عند فتح المستند.
 
-#### Q: How does Aspose.PDF for .NET help in removing the open action?
+#### س: كيف يساعد Aspose.PDF for .NET في إزالة الإجراء المفتوح؟
 
-A: Aspose.PDF for .NET provides APIs to manipulate various aspects of PDF files. This tutorial demonstrates how to remove the open action using C# code.
+ج: يوفر Aspose.PDF for .NET واجهات برمجة التطبيقات لمعالجة الجوانب المختلفة لملفات PDF. يوضح هذا البرنامج التعليمي كيفية إزالة الإجراء المفتوح باستخدام كود C#.
 
-#### Q: Are there any potential risks or considerations when removing the open action?
+#### س: هل هناك أي مخاطر أو اعتبارات محتملة عند إزالة الإجراء المفتوح؟
 
-A: Removing the open action can alter the default behavior of the PDF, so ensure that it aligns with the intended user experience. Test the modified PDF thoroughly to confirm that the removal does not affect other functionalities.
+ج: يمكن أن تؤدي إزالة الإجراء المفتوح إلى تغيير السلوك الافتراضي لملف PDF، لذا تأكد من توافقه مع تجربة المستخدم المقصودة. اختبر ملف PDF المعدل جيدًا للتأكد من أن الإزالة لا تؤثر على الوظائف الأخرى.
 
-#### Q: Can I customize the open action to perform other actions?
+#### س: هل يمكنني تخصيص الإجراء المفتوح لتنفيذ إجراءات أخرى؟
 
-A: Yes, Aspose.PDF for .NET enables you to customize the open action by setting it to various types of actions, such as navigating to a specific page or executing JavaScript.
+ج: نعم، يمكّنك Aspose.PDF for .NET من تخصيص الإجراء المفتوح من خلال تعيينه على أنواع مختلفة من الإجراءات، مثل الانتقال إلى صفحة معينة أو تنفيذ JavaScript.
 
-#### Q: Can I remove open actions from password-protected PDFs?
-A: Yes, you can remove open actions from password-protected PDFs as long as you provide the appropriate credentials to access and modify the document.
+#### س: هل يمكنني إزالة الإجراءات المفتوحة من ملفات PDF المحمية بكلمة مرور؟
+ج: نعم، يمكنك إزالة الإجراءات المفتوحة من ملفات PDF المحمية بكلمة مرور طالما أنك توفر بيانات الاعتماد المناسبة للوصول إلى المستند وتعديله.
 
-#### Q: Is the open action removal reversible?
+#### س: هل يمكن التراجع عن إزالة الإجراء المفتوح؟
 
-A: No, once the open action is removed and the PDF is saved, the original open action cannot be restored from the modified PDF.
+ج: لا، بمجرد إزالة الإجراء المفتوح وحفظ ملف PDF، لا يمكن استعادة الإجراء المفتوح الأصلي من ملف PDF المعدل.
 
-#### Q: How do I verify that the open action was successfully removed?
+#### س: كيف يمكنني التحقق من إزالة الإجراء المفتوح بنجاح؟
 
-A: After removing the open action using the provided code, open the modified PDF and confirm that no specific action occurs upon opening.
+ج: بعد إزالة الإجراء المفتوح باستخدام الكود المقدم، افتح ملف PDF المعدل وتأكد من عدم حدوث أي إجراء محدد عند الفتح.
 
-#### Q: Can I remove open actions from multiple PDF files simultaneously?
+#### س: هل يمكنني إزالة الإجراءات المفتوحة من ملفات PDF متعددة في وقت واحد؟
 
-A: Yes, you can use the same approach to remove open actions from multiple PDF files in a batch processing scenario.
+ج: نعم، يمكنك استخدام نفس الأسلوب لإزالة الإجراءات المفتوحة من ملفات PDF متعددة في سيناريو المعالجة المجمعة.

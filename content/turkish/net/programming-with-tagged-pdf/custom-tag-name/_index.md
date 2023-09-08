@@ -1,66 +1,66 @@
 ---
-title: Custom Tag Name
-linktitle: Custom Tag Name
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to using a custom tag name with Aspose.PDF for .NET. Improve the structure of your PDFs with custom tags.
+title: Özel Etiket Adı
+linktitle: Özel Etiket Adı
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile özel etiket adı kullanma konusunda adım adım kılavuz. Özel etiketlerle PDF'lerinizin yapısını geliştirin.
 type: docs
 weight: 90
 url: /tr/net/programming-with-tagged-pdf/custom-tag-name/
 ---
-In this step-by-step guide, we'll walk you through how to use a custom tag name with Aspose.PDF for .NET. Aspose.PDF is a powerful library that lets you manipulate PDF documents programmatically. Using custom tags allows you to add specific structural information to your PDF document, making it easier to use and easier to access.
+Bu adım adım kılavuzda, Aspose.PDF for .NET ile özel etiket adının nasıl kullanılacağı konusunda size yol göstereceğiz. Aspose.PDF, PDF belgelerini programlı olarak değiştirmenizi sağlayan güçlü bir kütüphanedir. Özel etiketlerin kullanılması, PDF belgenize belirli yapısal bilgiler eklemenizi sağlayarak, belgenin kullanımını ve erişimini kolaylaştırır.
 
-Let's dive into the code and learn how to use a custom tag name with Aspose.PDF for .NET.
+Haydi kodun derinliklerine inelim ve Aspose.PDF for .NET ile özel etiket adının nasıl kullanılacağını öğrenelim.
 
-## Prerequisites
+## Önkoşullar
 
-Before you begin, make sure you have the following:
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-1. Aspose.PDF library for .NET installed.
-2. A basic knowledge of the C# programming language.
+1. .NET için Aspose.PDF kütüphanesi kuruldu.
+2. C# programlama dili hakkında temel bilgi.
 
-## Step 1: Setting up the environment
+## 1. Adım: Ortamı ayarlama
 
-To get started, open your C# development environment and create a new project. Make sure you have added a reference to the Aspose.PDF library for .NET in your project.
+Başlamak için C# geliştirme ortamınızı açın ve yeni bir proje oluşturun. Projenize .NET için Aspose.PDF kütüphanesine bir referans eklediğinizden emin olun.
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Creating the document
+## Adım 2: Belgeyi oluşturma
 
-The first step is to create a new PDF document using the `Document` class.
+ İlk adım, kullanarak yeni bir PDF belgesi oluşturmaktır.`Document` sınıf.
 
 ```csharp
-// Create the PDF document
+// PDF belgesini oluşturun
 Document document = new Document();
 ```
 
-## Step 3: Work with tagged content
+## 3. Adım: Etiketli içerikle çalışın
 
-Then we get the tagged content of the document to work with.
+Daha sonra üzerinde çalışacağımız belgenin etiketli içeriğini alıyoruz.
 
 ```csharp
-// Get the tagged content of the document
+// Belgenin etiketli içeriğini alın
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-## Step 4: Set document title and language
+## 4. Adım: Belge başlığını ve dilini ayarlayın
 
-We can now set the document title and language.
+Artık belge başlığını ve dilini ayarlayabiliriz.
 
 ```csharp
-// Define the document title and language
+// Belge başlığını ve dilini tanımlayın
 taggedContent.SetTitle("Tagged PDF document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-## Step 5: Create Logical Structure Elements
+## Adım 5: Mantıksal Yapı Öğeleri Oluşturun
 
-Now let's create some logical structure elements to organize our content.
+Şimdi içeriğimizi düzenlemek için bazı mantıksal yapı öğeleri oluşturalım.
 
 ```csharp
-// Create logical structure elements
+// Mantıksal yapı öğeleri oluşturma
 SectElement sect = taggedContent.CreateSectElement();
 taggedContent.RootElement.AppendChild(sect);
 ParagraphElement p1 = taggedContent.CreateParagraphElement();
@@ -97,34 +97,34 @@ p3.AppendChild(span3);
 p4.AppendChild(span4);
 ```
 
-Here we create paragraph elements and span elements for our content, and assign custom tags to them.
+Burada içeriğimiz için paragraf öğeleri ve yayılma öğeleri oluşturup bunlara özel etiketler atadık.
 
-## Step 6: Save the tagged PDF document
+## 6. Adım: Etiketli PDF belgesini kaydedin
 
-Finally, we save the tagged PDF document.
+Son olarak etiketlenen PDF belgesini kaydediyoruz.
 
 ```csharp
-// Save the tagged PDF document
+// Etiketli PDF belgesini kaydedin
 document.Save(dataDir + "CustomTag.pdf");
 ```
 
-### Sample source code for Custom Tag Name using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanan Özel Etiket Adı için örnek kaynak kodu 
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create Pdf Document
+// Pdf Belgesi Oluştur
 Document document = new Document();
 
-// Get Content for work with TaggedPdf
+// TaggedPdf ile çalışmaya yönelik İçerik edinin
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Set Title and Language for Documnet
+// Documnet için Başlığı ve Dili Ayarlayın
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 
-// Create Logical Structure Elements
+// Mantıksal Yapı Öğeleri Oluşturun
 SectElement sect = taggedContent.CreateSectElement();
 taggedContent.RootElement.AppendChild(sect);
 ParagraphElement p1 = taggedContent.CreateParagraphElement();
@@ -160,53 +160,53 @@ p2.AppendChild(span2);
 p3.AppendChild(span3);
 p4.AppendChild(span4);
 
-// Save Tagged Pdf Document
+// Etiketli Pdf Belgesini Kaydet
 document.Save(dataDir + "CustomTag.pdf");
 
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulation ! You have learned how to use a custom tag name with Aspose.PDF for .NET. You can now add specific structural information to your PDF document using custom tags. Explore more features of Aspose.PDF to discover its full potential.
+Tebrikler! Aspose.PDF for .NET ile özel etiket adının nasıl kullanılacağını öğrendiniz. Artık özel etiketleri kullanarak PDF belgenize belirli yapısal bilgiler ekleyebilirsiniz. Aspose.PDF'in tüm potansiyelini keşfetmek için diğer özelliklerini keşfedin.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is a custom tag name in the context of PDF documents, and why would I use it with Aspose.PDF for .NET?
+#### S: PDF belgeleri bağlamında özel etiket adı nedir ve onu neden Aspose.PDF for .NET ile kullanayım?
 
-A: A custom tag name in a PDF document is a user-defined label that provides specific structural information to the document's content. Using custom tag names with Aspose.PDF for .NET allows you to enhance the accessibility and organization of the PDF document, making it easier to navigate, understand, and interact with.
+C: PDF belgesindeki özel etiket adı, belgenin içeriğine ilişkin belirli yapısal bilgiler sağlayan kullanıcı tanımlı bir etikettir. Aspose.PDF for .NET ile özel etiket adları kullanmak, PDF belgesinin erişilebilirliğini ve organizasyonunu geliştirerek gezinmeyi, anlamayı ve etkileşimi kolaylaştırmanıza olanak tanır.
 
-#### Q: How does Aspose.PDF for .NET facilitate the use of custom tag names in PDF documents?
+#### S: Aspose.PDF for .NET, PDF belgelerinde özel etiket adlarının kullanımını nasıl kolaylaştırır?
 
-A: Aspose.PDF for .NET provides a set of classes and methods that enable you to create, manipulate, and assign custom tag names to different structural elements within a PDF document. This helps you add semantic meaning and context to the document's content.
+C: Aspose.PDF for .NET, bir PDF belgesi içindeki farklı yapısal öğelere özel etiket adları oluşturmanıza, değiştirmenize ve atamanıza olanak tanıyan bir dizi sınıf ve yöntem sağlar. Bu, belgenin içeriğine anlamsal anlam ve bağlam eklemenize yardımcı olur.
 
-#### Q: What role does the `taggedContent` object play in using custom tag names?
+####  S: Hangi rol`taggedContent` object play in using custom tag names?
 
-A: The `taggedContent` object, obtained from the document's `TaggedContent` property, allows you to work with structured elements in the PDF document. You can create, organize, and assign custom tag names to these elements, enhancing the document's semantic structure.
+ C:`taggedContent` belgeden elde edilen nesne`TaggedContent` özelliği, PDF belgesindeki yapılandırılmış öğelerle çalışmanıza olanak tanır. Belgenin anlamsal yapısını geliştirerek bu öğelere özel etiket adları oluşturabilir, düzenleyebilir ve atayabilirsiniz.
 
-#### Q: How do custom tag names improve document accessibility and usability?
+#### S: Özel etiket adları belgenin erişilebilirliğini ve kullanılabilirliğini nasıl artırır?
 
-A: Custom tag names provide additional context and semantics to the document's content, which improves its accessibility for assistive technologies and enhances the overall user experience. Screen readers and other assistive devices can use custom tag names to convey meaningful information to users.
+C: Özel etiket adları, belgenin içeriğine ek bağlam ve anlam bilgisi sağlar, bu da yardımcı teknolojiler için erişilebilirliği artırır ve genel kullanıcı deneyimini geliştirir. Ekran okuyucular ve diğer yardımcı cihazlar, kullanıcılara anlamlı bilgiler iletmek için özel etiket adlarını kullanabilir.
 
-#### Q: Can I use custom tag names for various types of structural elements in a PDF document?
+#### S: Bir PDF belgesindeki çeşitli yapısal öğe türleri için özel etiket adlarını kullanabilir miyim?
 
-A: Yes, you can assign custom tag names to a wide range of structural elements, including paragraphs, spans, sections, and more. This allows you to categorize and label different parts of the document's content, creating a more organized and understandable layout.
+C: Evet, paragraflar, açıklıklar, bölümler ve daha fazlasını içeren çok çeşitli yapısal öğelere özel etiket adları atayabilirsiniz. Bu, belge içeriğinin farklı bölümlerini kategorilere ayırmanıza ve etiketlemenize olanak tanıyarak daha düzenli ve anlaşılır bir düzen oluşturmanıza olanak tanır.
 
-#### Q: How do I define and assign custom tag names to elements in a PDF document using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'i kullanarak bir PDF belgesindeki öğelere özel etiket adlarını nasıl tanımlayabilirim ve atayabilirim?
 
-A: You can define and assign custom tag names by creating logical structure elements, such as paragraphs and spans, and then using the `SetTag` method to assign the desired custom tag name to these elements. The provided code example demonstrates this process.
+ C: Paragraflar ve aralıklar gibi mantıksal yapı öğeleri oluşturarak ve ardından Özel etiket adlarını tanımlayabilir ve atayabilirsiniz.`SetTag` bu öğelere istenen özel etiket adını atama yöntemini kullanın. Sağlanan kod örneği bu işlemi göstermektedir.
 
-#### Q: How do I ensure that the custom tag names I use are compatible with accessibility standards and best practices?
+#### S: Kullandığım özel etiket adlarının erişilebilirlik standartları ve en iyi uygulamalarla uyumlu olduğundan nasıl emin olabilirim?
 
-A: When choosing custom tag names, it's recommended to follow accessibility guidelines and use descriptive and meaningful labels that accurately represent the content. Consulting relevant accessibility standards and documentation can help you select appropriate custom tag names.
+C: Özel etiket adlarını seçerken erişilebilirlik kurallarına uymanız ve içeriği doğru şekilde temsil eden açıklayıcı ve anlamlı etiketler kullanmanız önerilir. İlgili erişilebilirlik standartlarına ve belgelere başvurmak, uygun özel etiket adlarını seçmenize yardımcı olabilir.
 
-#### Q: Can I combine the use of custom tag names with other PDF manipulation features offered by Aspose.PDF for .NET?
+#### S: Özel etiket adlarının kullanımını Aspose.PDF for .NET'in sunduğu diğer PDF işleme özellikleriyle birleştirebilir miyim?
 
-A: Absolutely! You can combine the use of custom tag names with other features of Aspose.PDF for .NET, such as creating tables, adding images, inserting hyperlinks, and more. This allows you to create rich and accessible PDF documents with structured content.
+C: Kesinlikle! Özel etiket adlarının kullanımını Aspose.PDF for .NET'in tablo oluşturma, resim ekleme, köprü ekleme ve daha fazlası gibi diğer özellikleriyle birleştirebilirsiniz. Bu, yapılandırılmış içeriğe sahip zengin ve erişilebilir PDF belgeleri oluşturmanıza olanak tanır.
 
-#### Q: How can I validate the effectiveness of using custom tag names for accessibility and usability in my PDF documents?
+#### S: PDF belgelerimde erişilebilirlik ve kullanılabilirlik için özel etiket adları kullanmanın etkinliğini nasıl doğrulayabilirim?
 
-A: You can validate the effectiveness of custom tag names by using assistive technologies like screen readers to navigate and interact with the PDF document. Additionally, you can test the document's compliance with accessibility standards and guidelines using tools and validators.
+C: PDF belgesinde gezinmek ve belgeyle etkileşimde bulunmak için ekran okuyucular gibi yardımcı teknolojileri kullanarak özel etiket adlarının etkinliğini doğrulayabilirsiniz. Ayrıca araçları ve doğrulayıcıları kullanarak belgenin erişilebilirlik standartlarına ve yönergelere uygunluğunu test edebilirsiniz.
 
-#### Q: How can I extend this knowledge to create more complex document structures and utilize custom tag names for advanced scenarios?
+#### S: Bu bilgiyi daha karmaşık belge yapıları oluşturacak ve gelişmiş senaryolar için özel etiket adlarını kullanacak şekilde nasıl genişletebilirim?
 
-A: You can extend this knowledge by exploring additional features of Aspose.PDF for .NET, such as creating nested structure elements, using custom tags for form fields, incorporating multimedia elements, and more. The library's documentation and examples provide guidance for these advanced scenarios.
+C: Aspose.PDF for .NET'in iç içe yapı elemanları oluşturma, form alanları için özel etiketler kullanma, multimedya elemanları ekleme ve daha fazlası gibi ek özelliklerini keşfederek bu bilgiyi genişletebilirsiniz. Kitaplığın belgeleri ve örnekleri bu gelişmiş senaryolar için rehberlik sağlar.

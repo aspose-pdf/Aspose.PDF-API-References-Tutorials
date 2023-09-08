@@ -1,51 +1,51 @@
 ---
-title: Determine Line Break In PDF File
-linktitle: Determine Line Break In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to determine line breaks in PDF file using Aspose.PDF for .NET.
+title: PDF Dosyasında Satır Sonunu Belirleme
+linktitle: PDF Dosyasında Satır Sonunu Belirleme
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF dosyasındaki satır sonlarını nasıl belirleyeceğinizi öğrenin.
 type: docs
 weight: 130
 url: /tr/net/programming-with-text/determine-line-break/
 ---
-This tutorial will guide you through the process of determining line breaks in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+Bu eğitim, Aspose.PDF for .NET kullanarak PDF dosyasındaki satır sonlarını belirleme sürecinde size rehberlik edecektir. Sağlanan C# kaynak kodu gerekli adımları gösterir.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## Gereksinimler
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Makinenizde kurulu Visual Studio veya başka herhangi bir C# derleyicisi.
+- Aspose.PDF for .NET kitaplığı. Resmi Aspose web sitesinden indirebilir veya yüklemek için NuGet gibi bir paket yöneticisi kullanabilirsiniz.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## 1. Adım: Projeyi ayarlayın
+1. Tercih ettiğiniz geliştirme ortamında yeni bir C# projesi oluşturun.
+2. Aspose.PDF for .NET kitaplığına bir referans ekleyin.
 
-## Step 2: Import required namespaces
-In the code file where you want to determine line breaks, add the following using directives at the top of the file:
+## 2. Adım: Gerekli ad alanlarını içe aktarın
+Satır sonlarını belirlemek istediğiniz kod dosyasında, dosyanın en üstüne aşağıdaki kullanma yönergelerini ekleyin:
 
 ```csharp
 using Aspose.Pdf;
 using System.IO;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## 3. Adım: Belge dizinini ayarlayın
+ Kodda yazan satırı bulun`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` belgelerinizin saklandığı dizinin yolu ile birlikte.
 
-## Step 4: Create a new Document instance
-Instantiate a new `Document` object by adding the following line of code:
+## 4. Adım: Yeni bir Belge örneği oluşturun
+ Yeni bir örnek oluştur`Document` Aşağıdaki kod satırını ekleyerek nesne:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 5: Add a page to the document
-Add a new page to the document using the `Add` method of the `Pages` collection. In the provided code, the new page is assigned to the variable `page`.
+## 5. Adım: Belgeye bir sayfa ekleyin
+ kullanarak belgeye yeni bir sayfa ekleyin.`Add` yöntemi`Pages`Toplamak. Verilen kodda yeni sayfa değişkene atanır.`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
-## Step 6: Add text fragments with line breaks
-Create a loop to add multiple text fragments to the page, each containing a paragraph with line breaks.
+## 6. Adım: Satır sonlarıyla metin parçaları ekleyin
+Sayfaya, her biri satır sonları içeren bir paragraf içeren birden çok metin parçası eklemek için bir döngü oluşturun.
 
 ```csharp
 for (int i = 0; i < 4; i++)
@@ -56,8 +56,8 @@ for (int i = 0; i < 4; i++)
 }
 ```
 
-## Step 7: Save the PDF document and extract line break information
-Save the PDF document using the `Save` method of the `Document` object. Then, extract the line break information using the `GetNotifications` method of the desired page.
+## Adım 7: PDF belgesini kaydedin ve satır sonu bilgilerini çıkarın
+ PDF belgesini kullanarak kaydedin.`Save` yöntemi`Document` nesne. Daha sonra satır sonu bilgisini aşağıdaki komutu kullanarak çıkarın.`GetNotifications` İstenilen sayfanın yöntemi.
 
 ```csharp
 doc.Save(dataDir + "DetermineLineBreak_out.pdf");
@@ -65,9 +65,9 @@ string notifications = doc.Pages[1].GetNotifications();
 File.WriteAllText(dataDir + "notifications_out.txt", notifications);
 ```
 
-### Sample source code for Determine Line Break using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Satır Sonunu Belirleme için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 Page page = doc.Pages.Add();
@@ -82,48 +82,48 @@ string notifications = doc.Pages[1].GetNotifications();
 File.WriteAllText(dataDir + "notifications_out.txt", notifications);
 ```
 
-## Conclusion
-You have successfully determined line breaks in a PDF document using Aspose.PDF for .NET. The line break information has been extracted and saved to a text file.
+## Çözüm
+Aspose.PDF for .NET'i kullanarak bir PDF belgesinde satır sonlarını başarıyla belirlediniz. Satır sonu bilgisi çıkarıldı ve bir metin dosyasına kaydedildi.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the main focus of this tutorial?
+#### S: Bu eğitimin ana odağı nedir?
 
-A: This tutorial is focused on guiding you through the process of determining line breaks in a PDF file using the Aspose.PDF for .NET library. The provided C# source code demonstrates the necessary steps to achieve this.
+C: Bu eğitim, Aspose.PDF for .NET kütüphanesini kullanarak bir PDF dosyasındaki satır sonlarını belirleme sürecinde size rehberlik etmeye odaklanmıştır. Sağlanan C# kaynak kodu, bunu başarmak için gerekli adımları gösterir.
 
-#### Q: Which namespaces should I import for this tutorial?
+#### S: Bu eğitim için hangi ad alanlarını içe aktarmalıyım?
 
-A: In the code file where you want to determine line breaks, import the following namespaces at the beginning of the file:
+C: Satır sonlarını belirlemek istediğiniz kod dosyasında, dosyanın başında aşağıdaki ad alanlarını içe aktarın:
 
 ```csharp
 using Aspose.Pdf;
 using System.IO;
 ```
 
-#### Q: How do I specify the document directory?
+#### S: Belge dizinini nasıl belirlerim?
 
-A: In the code, find the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ A: Kodda satırı bulun`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` belge dizininizin gerçek yolu ile.
 
-#### Q: How do I create a new Document instance?
+#### S: Yeni bir Belge örneğini nasıl oluşturabilirim?
 
-A: In Step 4, you'll instantiate a new `Document` object using the provided code.
+ C: 4. Adımda yeni bir örnek oluşturacaksınız.`Document` sağlanan kodu kullanarak nesne.
 
-#### Q: How do I add a page to the document?
+#### S: Belgeye nasıl sayfa eklerim?
 
-A: In Step 5, you'll add a new page to the document using the `Add` method of the `Pages` collection.
+ C: 5. Adımda belgeye yeni bir sayfa ekleyeceksiniz.`Add` yöntemi`Pages` Toplamak.
 
-#### Q: How do I add text fragments with line breaks?
+#### S: Satır sonları olan metin parçalarını nasıl eklerim?
 
-A: In Step 6, you'll create a loop to add multiple text fragments to the page, each containing a paragraph with line breaks.
+C: 6. Adımda, sayfaya her biri satır sonları olan bir paragraf içeren birden çok metin parçası eklemek için bir döngü oluşturacaksınız.
 
-#### Q: How do I save the PDF document and extract line break information?
+#### S: PDF belgesini nasıl kaydederim ve satır sonu bilgilerini nasıl çıkarırım?
 
-A: In Step 7, you'll save the PDF document using the `Save` method of the `Document` object. Then, you'll extract the line break information using the `GetNotifications` method of the desired page and save it to a text file.
+ C: 7. Adımda, PDF belgesini aşağıdaki komutu kullanarak kaydedeceksiniz:`Save` yöntemi`Document` nesne. Daha sonra satır sonu bilgisini kullanarak çıkaracaksınız.`GetNotifications` İstediğiniz sayfanın yöntemini seçin ve bir metin dosyasına kaydedin.
 
-#### Q: What is the purpose of the extracted line break information?
+#### S: Çıkarılan satır sonu bilgilerinin amacı nedir?
 
-A: The extracted line break information provides details about the line breaks and notifications present in the PDF document. This can be useful for analyzing and understanding how text and paragraphs are structured within the document.
+C: Çıkarılan satır sonu bilgileri, PDF belgesinde bulunan satır sonları ve bildirimler hakkında ayrıntılı bilgi sağlar. Bu, belgedeki metin ve paragrafların nasıl yapılandırıldığını analiz etmek ve anlamak için yararlı olabilir.
 
-#### Q: What is the main takeaway from this tutorial?
+#### S: Bu eğitimden çıkan ana sonuç nedir?
 
-A: By following this tutorial, you've learned how to determine line breaks in a PDF document using Aspose.PDF for .NET. You can use this knowledge to extract and analyze line break information from PDF files programmatically.
+C: Bu eğitimi takip ederek Aspose.PDF for .NET kullanarak bir PDF belgesindeki satır sonlarını nasıl belirleyeceğinizi öğrendiniz. Bu bilgiyi, PDF dosyalarından satır sonu bilgilerini programlı olarak çıkarmak ve analiz etmek için kullanabilirsiniz.

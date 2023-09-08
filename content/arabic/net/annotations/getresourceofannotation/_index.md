@@ -1,75 +1,75 @@
 ---
-title: Get Resource Of Annotation
-linktitle: Get Resource Of Annotation
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to retrieve the resource of an annotation using Aspose.PDF for .NET with this step-by-step guide.
+title: الحصول على الموارد من الشرح
+linktitle: الحصول على الموارد من الشرح
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية استرداد مصدر التعليق التوضيحي باستخدام Aspose.PDF لـ .NET باستخدام هذا الدليل التفصيلي خطوة بخطوة.
 type: docs
 weight: 90
 url: /ar/net/annotations/getresourceofannotation/
 ---
-The example shows how to get resource of annotation with Aspose.PDF for .NET. To get the resource of an annotation using Aspose.PDF for .NET, follow these steps:
+يوضح المثال كيفية الحصول على مصدر التعليقات التوضيحية باستخدام Aspose.PDF لـ .NET. للحصول على مصدر التعليق التوضيحي باستخدام Aspose.PDF لـ .NET، اتبع الخطوات التالية:
 
-## Step 1: Set the path of the directory where the document is located.
+## الخطوة 1: قم بتعيين مسار الدليل الذي يوجد به المستند.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Open the PDF document that contains the annotation whose resource you want to get.
+## الخطوة 2: افتح مستند PDF الذي يحتوي على التعليق التوضيحي الذي تريد الحصول على مصدره.
 
 ```csharp
 Document doc = new Document(dataDir + "AddAnnotation.pdf");
 ```
 
-## Step 3: Create an annotation.
+## الخطوة 3: إنشاء تعليق توضيحي.
 
 ```csharp
 ScreenAnnotation sa = new ScreenAnnotation(doc.Pages[1], new Rectangle(100, 400, 300, 600), dataDir + "AddSwfFileAsAnnotation.swf");
 ```
 
-## Step 4: Add the annotation to a page in the document.
+## الخطوة 4: أضف التعليق التوضيحي إلى صفحة في المستند.
 
 ```csharp
 doc.Pages[1].Annotations.Add(sa);
 ```
 
-## Step 5: Save the document.
+## الخطوة 5: احفظ المستند.
 
 ```csharp
 doc.Save(dataDir + "GetResourceOfAnnotation_Out.pdf");
 ```
 
-## Step 6: Open the modified document.
+## الخطوة 6: افتح المستند المعدل.
 
 ```csharp
 Document doc1 = new Document(dataDir + "GetResourceOfAnnotation_Out.pdf");
 ```
 
-## Step 7: Get the action of the annotation.
+## الخطوة 7: احصل على إجراء التعليق التوضيحي.
 
 ```csharp
 RenditionAction action = (doc.Pages[1].Annotations[1] as ScreenAnnotation).Action as RenditionAction;
 ```
 
-## Step 7: Get the rendition of the action.
+## الخطوة 7: احصل على عرض الإجراء.
 
 ```csharp
 Rendition rendition = ((doc.Pages[1].Annotations[1] as ScreenAnnotation).Action as RenditionAction).Rendition;
 ```
 
-## Step 8: Get the media clip.
+## الخطوة 8: احصل على مقطع الوسائط.
 
 ```csharp
 MediaClip clip = (rendition as MediaRendition).MediaClip;
 ```
 
-## Step 9: Get the file specification.
+## الخطوة 9: الحصول على مواصفات الملف.
 
 ```csharp
 FileSpecification data = (clip as MediaClipData).Data;
 ```
 
-## Step 10: Read the data of the media.
+## الخطوة 10: قراءة بيانات الوسائط.
 
 ```csharp
 MemoryStream ms = new MemoryStream();
@@ -82,41 +82,41 @@ while ((read = source.Read(buffer, 0, buffer.Length)) > 0)
 }
 ```
 
-## Step 11: Print the name of the rendition and the rendition operation.
+## الخطوة 11: اطبع اسم التسليم وعملية التسليم.
 
 ```csharp
 Console.WriteLine(rendition.Name);
 Console.WriteLine(action.RenditionOperation);
 ```
 
-By following these steps, you can easily get the resource of an annotation in a PDF document using Aspose.PDF for .NET.
+باتباع هذه الخطوات، يمكنك بسهولة الحصول على مصدر التعليق التوضيحي في مستند PDF باستخدام Aspose.PDF لـ .NET.
 
-### Example source code for Get Resource Of Annotation using Aspose.PDF for .NET:
+### مثال على التعليمات البرمجية المصدر للحصول على مورد التعليق التوضيحي باستخدام Aspose.PDF لـ .NET:
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// افتح المستند
 Document doc = new Document(dataDir + "AddAnnotation.pdf");
-//Create annotation
+//إنشاء تعليق توضيحي
 ScreenAnnotation sa = new ScreenAnnotation(doc.Pages[1], new Rectangle(100, 400, 300, 600), dataDir + "AddSwfFileAsAnnotation.swf");
 doc.Pages[1].Annotations.Add(sa);
-// Save Doucument
+// حفظ المستند
 doc.Save(dataDir + "GetResourceOfAnnotation_Out.pdf");
-// Open document
+// افتح المستند
 Document doc1 = new Document(dataDir + "GetResourceOfAnnotation_Out.pdf");
-//Get action of the annotation
+//الحصول على إجراء للتعليق التوضيحي
 RenditionAction action = (doc.Pages[1].Annotations[1] as ScreenAnnotation).Action as RenditionAction;
-//Get rendition of the rendition action
+//الحصول على التسليم لإجراء التسليم
 Rendition rendition = ((doc.Pages[1].Annotations[1] as ScreenAnnotation).Action as RenditionAction).Rendition;
-//Media Clip 
+// مقطع الوسائط
 MediaClip clip = (rendition as MediaRendition).MediaClip;
 FileSpecification data = (clip as MediaClipData).Data;
 MemoryStream ms = new MemoryStream();
 byte[] buffer = new byte[1024];
 int read = 0;
-//Data of media are accessible in FileSpecification.Contents
+//يمكن الوصول إلى بيانات الوسائط في FileSpecification.Contents
 Stream source = data.Contents;
 while ((read = source.Read(buffer, 0, buffer.Length)) > 0)
 {
@@ -126,28 +126,28 @@ Console.WriteLine(rendition.Name);
 Console.WriteLine(action.RenditionOperation);
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we explored how to get the resource of a particular annotation from a PDF document using Aspose.PDF for .NET. By following the step-by-step guide and using the provided C# source code, developers can easily access and manage annotations, including rendition annotations, in their PDF documents.
+في هذا البرنامج التعليمي، اكتشفنا كيفية الحصول على مصدر تعليق توضيحي معين من مستند PDF باستخدام Aspose.PDF لـ .NET. من خلال اتباع الدليل خطوة بخطوة واستخدام كود مصدر C# المقدم، يمكن للمطورين الوصول بسهولة إلى التعليقات التوضيحية وإدارتها، بما في ذلك التعليقات التوضيحية الخاصة بالتسليم، في مستندات PDF الخاصة بهم.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is a rendition in the context of PDF annotations?
+#### س: ما هو التسليم في سياق التعليقات التوضيحية بتنسيق PDF؟
 
-A: In the context of PDF annotations, a rendition is a multimedia content presentation. It allows for embedding multimedia, such as audio or video, within the PDF document. The rendition annotation specifies the media to be presented and how it should be played.
+ج: في سياق التعليقات التوضيحية بتنسيق PDF، يعتبر التسليم عرضًا تقديميًا لمحتوى الوسائط المتعددة. فهو يسمح بتضمين الوسائط المتعددة، مثل الصوت أو الفيديو، داخل مستند PDF. يحدد التعليق التوضيحي للتسليم الوسائط التي سيتم تقديمها وكيفية تشغيلها.
 
-#### Q: Can I get the name of the media file associated with a rendition annotation?
+#### س: هل يمكنني الحصول على اسم ملف الوسائط المرتبط بالتعليق التوضيحي للتسليم؟
 
-A: Yes, you can get the name of the media file associated with a rendition annotation using Aspose.PDF for .NET. The media file name can be accessed through the `FileSpecification` of the `MediaClip` object.
+ج: نعم، يمكنك الحصول على اسم ملف الوسائط المرتبط بالتعليق التوضيحي للتسليم باستخدام Aspose.PDF لـ .NET. يمكن الوصول إلى اسم ملف الوسائط من خلال`FileSpecification` التابع`MediaClip` هدف.
 
-#### Q: Can Aspose.PDF for .NET extract media files from a rendition annotation?
+#### س: هل يمكن لـ Aspose.PDF لـ .NET استخراج ملفات الوسائط من تعليق توضيحي للتسليم؟
 
-A: Yes, Aspose.PDF for .NET can extract the media data from a rendition annotation, which includes audio or video content, and save it as a separate file.
+ج: نعم، يمكن لـ Aspose.PDF for .NET استخراج بيانات الوسائط من تعليق توضيحي للتسليم، والذي يتضمن محتوى صوتي أو فيديو، وحفظه كملف منفصل.
 
-#### Q: How can I access the media data of a rendition annotation?
+#### س: كيف يمكنني الوصول إلى بيانات الوسائط الخاصة بالتعليق التوضيحي للتسليم؟
 
-A: The media data of a rendition annotation can be accessed through the `FileSpecification.Contents` property of the `MediaClipData` object.
+ ج: يمكن الوصول إلى بيانات الوسائط الخاصة بالتعليق التوضيحي للتسليم من خلال`FileSpecification.Contents` ملكية`MediaClipData` هدف.
 
-#### Q: Can I modify the media associated with a rendition annotation using Aspose.PDF for .NET?
+#### س: هل يمكنني تعديل الوسائط المرتبطة بالتعليق التوضيحي للتسليم باستخدام Aspose.PDF لـ .NET؟
 
-A: Aspose.PDF for .NET provides methods to access and modify the media data associated with a rendition annotation. You can update or replace the media file used by a rendition annotation.
+ج: يوفر Aspose.PDF for .NET طرقًا للوصول إلى بيانات الوسائط المرتبطة بالتعليق التوضيحي للتسليم وتعديلها. يمكنك تحديث أو استبدال ملف الوسائط الذي يستخدمه التعليق التوضيحي للتسليم.

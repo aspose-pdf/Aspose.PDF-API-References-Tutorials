@@ -1,43 +1,43 @@
 ---
-title: Get All The Attachments In PDF File
-linktitle: Get All The Attachments In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to get all attachments in PDF file with Aspose.PDF for .NET. Step-by-step guide for easy handling.
+title: 获取PDF文件中的所有附件
+linktitle: 获取PDF文件中的所有附件
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 获取 PDF 文件中的所有附件。分步指南，方便操作。
 type: docs
 weight: 40
 url: /zh/net/programming-with-attachments/get-all-the-attachments/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to get all attachments in PDF file using Aspose.PDF for .NET.
+在本教程中，我们将引导您逐步完成以下 C# 源代码，以使用 Aspose.PDF for .NET 获取 PDF 文件中的所有附件。
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+在开始之前，请确保您已经安装了 Aspose.PDF 库并设置了开发环境。还具备 C# 编程的基础知识。
 
-### Step 1: Document Directory Setup
+### 第 1 步：文档目录设置
 
-In the provided source code, you need to specify the directory where the PDF file is located from which you want to get the attachments. Change the "dataDir" variable to the desired directory.
+在提供的源代码中，您需要指定要从中获取附件的 PDF 文件所在的目录。将“dataDir”变量更改为所需的目录。
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### Step 2: Open the existing PDF document
+### 步骤 2：打开现有 PDF 文档
 
-We open the existing PDF document using the specified path.
+我们使用指定的路径打开现有的 PDF 文档。
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
 ```
 
-### Step 3: Obtaining the Attachments Collection
+### 第三步：获取附件集合
 
-We get the collection of attachments from the document.
+我们从文档中获取附件集合。
 
 ```csharp
 EmbeddedFileCollection embeddedFiles = pdfDocument.EmbeddedFiles;
 ```
 
-### Step 4: Retrieving attachments
+### 第 4 步：检索附件
 
-We go through the collection to get all the attachments and display their information. We also save attachments in individual files.
+我们浏览集合以获取所有附件并显示它们的信息。我们还将附件保存在单独的文件中。
 
 ```csharp
 int count = 1;
@@ -47,7 +47,7 @@ Console.WriteLine("Name: {0}", fileSpecification.Name);
 Console.WriteLine("Description: {0}", fileSpecification.Description);
 Console.WriteLine("MIME Type: {0}", fileSpecification.MIMEType);
 
-// Check if object parameters contain additional information
+//检查对象参数是否包含附加信息
 if (fileSpecification.Params != null)
 {
 Console.WriteLine("CheckSum: {0}", fileSpecification.Params.CheckSum);
@@ -56,7 +56,7 @@ Console.WriteLine("Modified date: {0}", fileSpecification.Params.ModDate);
 Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
 }
 
-// Retrieve the attachment and save in a file
+//检索附件并保存在文件中
 byte[] fileContent = new byte[fileSpecification.Contents.Length];
 fileSpecification.Contents.Read(fileContent, 0, fileContent.Length);
 FileStream fileStream = new FileStream(dataDir + count + "_out" + ".txt", FileMode.Create);
@@ -68,27 +68,27 @@ count += 1;
 ```
 
 
-### Sample source code for Get Allthe Attachments using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 获取所有附件的示例源代码 
 
 ```csharp
 
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+//打开文档
 Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
-// Get embedded files collection
+//获取嵌入文件集合
 EmbeddedFileCollection embeddedFiles = pdfDocument.EmbeddedFiles;
-// Get count of the embedded files
+//获取嵌入文件的数量
 Console.WriteLine("Total files : {0}", embeddedFiles.Count);
 int count = 1;
-// Loop through the collection to get all the attachments
+//循环遍历集合以获取所有附件
 foreach (FileSpecification fileSpecification in embeddedFiles)
 {
 	Console.WriteLine("Name: {0}", fileSpecification.Name);
 	Console.WriteLine("Description: {0}",
 	fileSpecification.Description);
 	Console.WriteLine("Mime Type: {0}", fileSpecification.MIMEType);
-	// Check if parameter object contains the parameters
+	//检查参数对象是否包含参数
 	if (fileSpecification.Params != null)
 	{
 		Console.WriteLine("CheckSum: {0}",
@@ -99,7 +99,7 @@ foreach (FileSpecification fileSpecification in embeddedFiles)
 		fileSpecification.Params.ModDate);
 		Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
 	}
-	// Get the attachment and write to file or stream
+	//获取附件并写入文件或流
 	byte[] fileContent = new byte[fileSpecification.Contents.Length];
 	fileSpecification.Contents.Read(fileContent, 0,
 	fileContent.Length);
@@ -112,44 +112,44 @@ foreach (FileSpecification fileSpecification in embeddedFiles)
 
 ```
 
-## Conclusion
+## 结论
 
-In this tutorial, we explained how to get all attachments from a PDF file using Aspose.PDF for .NET. You can now use this knowledge to extract and manipulate attachments from your PDF files.
+在本教程中，我们解释了如何使用 Aspose.PDF for .NET 从 PDF 文件中获取所有附件。您现在可以使用这些知识从 PDF 文件中提取和操作附件。
 
-## FAQ's for get all the attachments in PDF file
+## 获取 PDF 文件中所有附件的常见问题解答
 
-#### Q: Why would I need to retrieve all attachments from a PDF document?
+#### 问：为什么我需要从 PDF 文档中检索所有附件？
 
-A: Retrieving attachments allows you to access and manipulate additional files embedded within a PDF, which can be useful for archiving, sharing, or further processing.
+答：检索附件允许您访问和操作 PDF 中嵌入的其他文件，这对于存档、共享或进一步处理非常有用。
 
-#### Q: What types of files can be attached to a PDF document?
+#### 问：PDF 文档中可以附加哪些类型的文件？
 
-A: PDF documents can contain a wide range of attached files, including images, documents, spreadsheets, audio files, and more.
+答：PDF 文档可以包含各种附加文件，包括图像、文档、电子表格、音频文件等。
 
-#### Q: How does this tutorial help me retrieve attachments from a PDF using Aspose.PDF for .NET?
+#### 问：本教程如何帮助我使用 Aspose.PDF for .NET 从 PDF 检索附件？
 
-A: This tutorial provides step-by-step instructions and C# source code to access and retrieve all attachments within a PDF document.
+答：本教程提供了访问和检索 PDF 文档中所有附件的分步说明和 C# 源代码。
 
-#### Q: Can I retrieve specific attachments instead of all attachments using this tutorial?
+#### 问：我可以使用本教程检索特定附件而不是所有附件吗？
 
-A: Yes, you can modify the provided code to selectively retrieve attachments based on your requirements.
+答：是的，您可以修改提供的代码以根据您的要求有选择地检索附件。
 
-#### Q: What information about each attachment can I obtain using this tutorial?
+#### 问：使用本教程我可以获得有关每个附件的哪些信息？
 
-A: This tutorial demonstrates how to retrieve and display details such as the attachment's name, description, MIME type, creation date, modification date, and size.
+答：本教程演示如何检索和显示附件的名称、描述、MIME 类型、创建日期、修改日期和大小等详细信息。
 
-#### Q: How are the retrieved attachments saved using this tutorial?
+#### 问：如何使用本教程保存检索到的附件？
 
-A: The tutorial guides you through saving each retrieved attachment as a separate file in the specified directory.
+答：本教程将指导您将每个检索到的附件另存为指定目录中的单独文件。
 
-#### Q: Can I use this knowledge to extract attachments from password-protected PDF files?
+#### 问：我可以使用这些知识从受密码保护的 PDF 文件中提取附件吗？
 
-A: Yes, you can apply similar principles to retrieve attachments from password-protected PDF files using Aspose.PDF for .NET.
+答：是的，您可以应用类似的原理，使用 Aspose.PDF for .NET 从受密码保护的 PDF 文件中检索附件。
 
-#### Q: How does Aspose.PDF for .NET facilitate attachment retrieval?
+#### 问：Aspose.PDF for .NET 如何促进附件检索？
 
-A: Aspose.PDF for .NET provides an intuitive API that allows you to access and manipulate attachments in PDF documents easily.
+答：Aspose.PDF for .NET 提供了直观的 API，使您可以轻松访问和操作 PDF 文档中的附件。
 
-#### Q: Are there specific scenarios where retrieving attachments is recommended?
+#### 问：是否存在建议检索附件的特定场景？
 
-A: Retrieving attachments is useful when you need to access files embedded within a PDF, such as extracting images, audio files, or additional documents.
+答：当您需要访问 PDF 中嵌入的文件（例如提取图像、音频文件或其他文档）时，检索附件非常有用。

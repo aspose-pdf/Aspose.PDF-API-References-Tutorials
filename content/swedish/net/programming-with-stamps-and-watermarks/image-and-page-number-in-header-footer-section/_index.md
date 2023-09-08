@@ -1,178 +1,178 @@
 ---
-title: Image and Page Number in Header Footer Section
-linktitle: Image and Page Number in Header Footer Section
-second_title: Aspose.PDF for .NET API Reference
-description: Find out how to add an image and a page number in the header and footer of a PDF document with Aspose.
+title: Bild och sidnummer i sidhuvudsavsnittet
+linktitle: Bild och sidnummer i sidhuvudsavsnittet
+second_title: Aspose.PDF för .NET API Referens
+description: Ta reda på hur du lägger till en bild och ett sidnummer i sidhuvudet och sidfoten i ett PDF-dokument med Aspose.
 type: docs
 weight: 110
 url: /sv/net/programming-with-stamps-and-watermarks/image-and-page-number-in-header-footer-section/
 ---
-In this tutorial, we will guide you step by step on how to add an image and page number in the header and footer section of a PDF document using Aspose.PDF for .NET. We will show you how to use provided C# source code to create a page, set header and footer, add image to header and text with page number to document footer PDF.
+den här handledningen guidar vi dig steg för steg om hur du lägger till en bild och sidnummer i sidhuvudet och sidfoten i ett PDF-dokument med Aspose.PDF för .NET. Vi kommer att visa dig hur du använder den medföljande C#-källkoden för att skapa en sida, ställa in sidhuvud och sidfot, lägga till bild i sidhuvud och text med sidnummer för att dokumentera sidfot PDF.
 
-## Step 1: Setting up the environment
+## Steg 1: Sätta upp miljön
 
-Before you begin, make sure you have the following:
+Innan du börjar, se till att du har följande:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- En installerad .NET-utvecklingsmiljö.
+- Aspose.PDF-biblioteket för .NET laddas ner och refereras till i ditt projekt.
 
-## Step 2: Creating the PDF Document and Page
+## Steg 2: Skapa PDF-dokumentet och -sidan
 
-The first step is to create a new Document object and a page in the PDF document. Here's how:
+Det första steget är att skapa ett nytt dokumentobjekt och en sida i PDF-dokumentet. Här är hur:
 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Create a new Document object
+// Skapa ett nytt dokumentobjekt
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
-// Create a page in the document
+// Skapa en sida i dokumentet
 Aspose.Pdf.Page page = doc.Pages.Add();
 ```
 
-The code above creates a new Document object and an empty page in the PDF document.
+Koden ovan skapar ett nytt dokumentobjekt och en tom sida i PDF-dokumentet.
 
-## Step 3: Adding the header with an image
+## Steg 3: Lägga till rubriken med en bild
 
-Now that the page is created, we can add a header section with an image. Here's how:
+Nu när sidan är skapad kan vi lägga till en rubriksektion med en bild. Här är hur:
 
 ```csharp
-// Create a header section
+// Skapa en rubriksektion
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-// Set the page header
+// Ställ in sidhuvudet
 page. Header = header;
 
-// Create an Image object
+// Skapa ett bildobjekt
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 
-// Set image path
+// Ställ in bildsökväg
 image1.File = dataDir + "aspose-logo.jpg";
 
-// Add the image to the page header of the PDF document
+// Lägg till bilden i sidhuvudet i PDF-dokumentet
 header.Paragraphs.Add(image1);
 ```
 
-The code above creates a header section, sets the page header with this section, and adds an image to the header.
+Koden ovan skapar ett rubrikavsnitt, ställer in sidhuvudet med det här avsnittet och lägger till en bild i sidhuvudet.
 
-## Step 4: Adding the footer with the page number
+## Steg 4: Lägga till sidfoten med sidnumret
 
-Now that the header is added, we can add a footer section with a page number. Here's how:
+Nu när sidhuvudet har lagts till kan vi lägga till en sidfotssektion med ett sidnummer. Här är hur:
 
 ```csharp
-// Create a footer section
+// Skapa en sidfotssektion
 Aspose.Pdf.HeaderFooter footer = new Aspose.Pdf.HeaderFooter();
 
-// Define the footer of the PDF document
+// Definiera sidfoten för PDF-dokumentet
 page. Footer = footer;
 
-// Create a TextFragment object
+// Skapa ett TextFragment-objekt
 Aspose.Pdf.Text.TextFragment txt = new Aspose.Pdf.Text.TextFragment("Page: ($p of $P)");
 
-// Add the text with the page number to the footer of the PDF document
+// Lägg till texten med sidnumret i sidfoten i PDF-dokumentet
 footer.Paragraphs.Add(txt);
 ```
 
-The above code creates a footer section, sets the footer of the page with this section and adds a TextFragment containing the text "Page: ($p of $P )"
+Ovanstående kod skapar en sidfotssektion, ställer in sidfoten på sidan med detta avsnitt och lägger till ett TextFragment som innehåller texten "Page: ($p of $P )"
 
-  which displays the page number.
+  som visar sidnumret.
 
-## Step 5: Saving the modified PDF document
+## Steg 5: Spara det ändrade PDF-dokumentet
 
-Once the header and footer are added, we can save the modified PDF document. Here's how:
+När sidhuvudet och sidfoten har lagts till kan vi spara det ändrade PDF-dokumentet. Här är hur:
 
 ```csharp
-// Save the modified PDF document
+// Spara det ändrade PDF-dokumentet
 doc.Save(dataDir + "ImageAndPageNumberInHeaderFooter_out.pdf");
 ```
 
-The above code saves the edited PDF document to the specified directory.
+Ovanstående kod sparar det redigerade PDF-dokumentet i den angivna katalogen.
 
-### Sample source code for Imageand Page Numberin Header Footersection using Aspose.PDF for .NET 
+### Exempel på källkod för bild och sidnummer i sidhuvudsfotsektionen med Aspose.PDF för .NET 
 ```csharp
 
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
-// Create a page in the document object
+// Skapa en sida i dokumentobjektet
 Aspose.Pdf.Page page = doc.Pages.Add();
 
-// Create Header Section of the document
+// Skapa rubriksektion för dokumentet
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-// Set the header for the PDF file
+// Ställ in rubriken för PDF-filen
 page.Header = header;
 
-// Create an image object in the page
+// Skapa ett bildobjekt på sidan
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 
-// Set the path of image file
+// Ställ in sökvägen till bildfilen
 image1.File = dataDir + "aspose-logo.jpg";
 
-// Add image to Header page of the Pdf file
+// Lägg till bild på sidhuvudet i pdf-filen
 header.Paragraphs.Add(image1);
 
-// Create a Footer Section of the document
+//Skapa en sidfotssektion av dokumentet
 Aspose.Pdf.HeaderFooter footer = new Aspose.Pdf.HeaderFooter();
 
-// Set the footer of the PDF file
+// Ställ in sidfoten för PDF-filen
 page.Footer = footer;
 
-// Create a Text object
+// Skapa ett textobjekt
 Aspose.Pdf.Text.TextFragment txt = new Aspose.Pdf.Text.TextFragment("Page: ($p of $P ) ");
 
-// Add text to Header section of the Pdf file
+// Lägg till text i rubrikavsnittet i pdf-filen
 footer.Paragraphs.Add(txt);
 
-// Save the Pdf file
+// Spara pdf-filen
 doc.Save(dataDir + "ImageAndPageNumberInHeaderFooter_out.pdf");
 
 ```
 
-## Conclusion
+## Slutsats
 
-Congratulation ! You have learned how to add an image and page number in the header and footer section of a PDF document using Aspose.PDF for .NET. Now you can use this method to customize header and footer in your PDF documents.
+Grattis! Du har lärt dig hur du lägger till en bild och sidnummer i sidhuvudet och sidfoten i ett PDF-dokument med Aspose.PDF för .NET. Nu kan du använda den här metoden för att anpassa sidhuvud och sidfot i dina PDF-dokument.
 
 ### FAQ's
 
-#### Q: What is the purpose of adding an image and page number in the header and footer section of a PDF document?
+#### F: Vad är syftet med att lägga till en bild och sidnummer i sidhuvudet och sidfoten i ett PDF-dokument?
 
-A: Adding an image and page number in the header and footer section of a PDF document can enhance its visual appeal, branding, and navigational elements. An image can represent a logo, watermark, or any graphical element, while a page number helps users track their progress and locate specific pages.
+S: Att lägga till en bild och sidnummer i sidhuvuds- och sidfotsavsnittet i ett PDF-dokument kan förbättra dess visuella dragningskraft, varumärke och navigeringselement. En bild kan representera en logotyp, vattenstämpel eller vilket grafiskt element som helst, medan ett sidnummer hjälper användare att spåra deras framsteg och hitta specifika sidor.
 
-#### Q: How does the provided C# source code help in adding an image and page number to the header and footer of a PDF document?
+#### F: Hur hjälper den medföljande C#-källkoden till att lägga till en bild och sidnummer i sidhuvudet och sidfoten i ett PDF-dokument?
 
-A: The provided code demonstrates how to create a PDF document, add a page, and then customize the header and footer sections. It shows how to add an image to the header and a text fragment with page numbering to the footer.
+S: Den medföljande koden visar hur man skapar ett PDF-dokument, lägger till en sida och sedan anpassar sidhuvuds- och sidfotsavsnitten. Den visar hur man lägger till en bild i sidhuvudet och ett textfragment med sidnumrering i sidfoten.
 
-#### Q: Can I use any image format for the header, and how do I specify its path?
+#### F: Kan jag använda vilket bildformat som helst för rubriken, och hur anger jag dess sökväg?
 
-A: Yes, you can use various image formats (such as JPEG, PNG, GIF, etc.) for the header image. The image's path is specified using the `File` property of the `Aspose.Pdf.Image` object.
+ S: Ja, du kan använda olika bildformat (som JPEG, PNG, GIF, etc.) för huvudbilden. Bildens sökväg anges med hjälp av`File` egendom av`Aspose.Pdf.Image` objekt.
 
-#### Q: How do I customize the appearance and positioning of the image in the header section?
+#### F: Hur anpassar jag utseendet och placeringen av bilden i rubriken?
 
-A: You can customize the appearance and positioning of the image by adjusting the properties of the `Aspose.Pdf.Image` object before adding it to the header section. For example, you can set the image's dimensions, alignment, rotation, opacity, etc.
+ S: Du kan anpassa bildens utseende och placering genom att justera egenskaperna för bilden`Aspose.Pdf.Image` objekt innan du lägger till det i rubriksektionen. Du kan till exempel ställa in bildens mått, justering, rotation, opacitet osv.
 
-#### Q: What is the purpose of the `TextFragment` object used for the footer?
+####  F: Vad är syftet med`TextFragment` object used for the footer?
 
-A: The `TextFragment` object is used to create and format text that will be displayed in the footer section. In the provided code, it is used to display the page number and total page count.
+ A: Den`TextFragment` objekt används för att skapa och formatera text som kommer att visas i sidfotssektionen. I den medföljande koden används den för att visa sidnummer och totalt antal sidor.
 
-#### Q: Can I modify the footer text to include additional information or formatting?
+#### F: Kan jag ändra sidfoten så att den innehåller ytterligare information eller formatering?
 
-A: Yes, you can modify the footer text by modifying the contents of the `TextFragment` object. You can add additional text, change fonts, colors, and formatting according to your requirements.
+ S: Ja, du kan ändra sidfoten genom att ändra innehållet i`TextFragment` objekt. Du kan lägga till ytterligare text, ändra teckensnitt, färger och formatering enligt dina krav.
 
-#### Q: Can I apply different header and footer contents to different pages of the PDF document?
+#### F: Kan jag använda olika sidhuvud och sidfotsinnehåll på olika sidor i PDF-dokumentet?
 
-A: Yes, you can apply different header and footer contents to different pages by creating separate `HeaderFooter` objects and assigning them to specific pages using the `Header` and `Footer` properties of the `Aspose.Pdf.Page` object.
+ S: Ja, du kan använda olika sidhuvud och sidfotsinnehåll på olika sidor genom att skapa separata`HeaderFooter` objekt och tilldela dem till specifika sidor med hjälp av`Header` och`Footer` egenskaper hos`Aspose.Pdf.Page` objekt.
 
-#### Q: How can I further customize the header and footer, such as changing font styles or adding additional elements?
+#### F: Hur kan jag anpassa sidhuvudet och sidfoten ytterligare, som att ändra teckensnittsstil eller lägga till ytterligare element?
 
-A: You can customize the header and footer by using various classes and properties provided by Aspose.PDF for .NET. For example, you can use different text formatting options, add more paragraphs, images, or even tables to the header and footer sections.
+S: Du kan anpassa sidhuvudet och sidfoten genom att använda olika klasser och egenskaper som tillhandahålls av Aspose.PDF för .NET. Du kan till exempel använda olika textformateringsalternativ, lägga till fler stycken, bilder eller till och med tabeller i sidhuvuds- och sidfotsavsnitten.
 
-#### Q: Can I remove or clear the header and footer sections if needed?
+#### F: Kan jag ta bort eller rensa sidhuvuds- och sidfotsavsnitten om det behövs?
 
-A: Yes, you can remove or clear the header and footer sections by setting the `Header` and `Footer` properties of the `Aspose.Pdf.Page` object to `null`.
+S: Ja, du kan ta bort eller rensa sidhuvuds- och sidfotssektionerna genom att ställa in`Header` och`Footer` egenskaper hos`Aspose.Pdf.Page` invända mot`null`.
 
-#### Q: How can I ensure that the added image and page number remain consistent across different devices and viewers?
+#### F: Hur kan jag säkerställa att den tillagda bilden och sidnumret förblir konsekventa på olika enheter och tittare?
 
-A: Aspose.PDF for .NET provides functionality to create standardized and consistent PDF documents, ensuring that the added image and page number will appear consistently across different devices and PDF viewers.
+S: Aspose.PDF för .NET tillhandahåller funktionalitet för att skapa standardiserade och konsekventa PDF-dokument, vilket säkerställer att den tillagda bilden och sidnumret visas konsekvent på olika enheter och PDF-visare.

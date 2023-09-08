@@ -1,52 +1,52 @@
 ---
-title: Add Image Stamp In PDF File
-linktitle: Add Image Stamp In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to easily add an image stamp in PDF file with Aspose.PDF for .NET.
+title: PDF Dosyasına Resim Damgası Ekleme
+linktitle: PDF Dosyasına Resim Damgası Ekleme
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile PDF dosyasına nasıl kolayca resim damgası ekleyeceğinizi öğrenin.
 type: docs
 weight: 20
 url: /tr/net/programming-with-stamps-and-watermarks/add-image-stamp/
 ---
-In this tutorial, we will take you step by step on how to add an image buffer in PDF file using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to add a custom image buffer to a specific page in the PDF file.
+Bu eğitimde, Aspose.PDF for .NET kullanarak PDF dosyasına nasıl görüntü arabelleği ekleyeceğinizi adım adım anlatacağız. PDF dosyasındaki belirli bir sayfaya özel bir görüntü arabelleği eklemek için sağlanan C# kaynak kodunu nasıl kullanacağınızı size göstereceğiz.
 
-## Step 1: Setting up the environment
+## 1. Adım: Ortamı ayarlama
 
-Before you begin, make sure you have the following:
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Kurulu bir .NET geliştirme ortamı.
+- .NET için Aspose.PDF kütüphanesini indirip projenizde referans olarak kullanabilirsiniz.
 
-## Step 2: Loading the PDF document
+## Adım 2: PDF belgesini yükleme
 
-The first step is to load the existing PDF document into your project. Here's how:
+İlk adım mevcut PDF belgesini projenize yüklemektir. İşte nasıl:
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir + "AddImageStamp.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+"BELGELERİNİZ DİZİNİ"ni, PDF belgenizin bulunduğu dizine giden gerçek yolla değiştirdiğinizden emin olun.
 
-## Step 3: Creating the framebuffer
+## Adım 3: Çerçeve arabelleğini oluşturma
 
-Now that you have uploaded the PDF document, you can create the image stamp to add. Here's how to do it:
+Artık PDF belgesini yüklediğinize göre eklenecek resim damgasını oluşturabilirsiniz. Bunu nasıl yapacağınız aşağıda açıklanmıştır:
 
 ```csharp
-// Create the frame buffer
+// Çerçeve arabelleğini oluşturun
 ImageStamp imageStamp = new ImageStamp(dataDir + "aspose-logo.jpg");
 ```
 
-The code above creates a new image buffer using the "aspose-logo.jpg" file. Make sure the image file path is correct.
+Yukarıdaki kod "aspose-logo.jpg" dosyasını kullanarak yeni bir görüntü arabelleği oluşturur. Görüntü dosyası yolunun doğru olduğundan emin olun.
 
-## Step 4: Configuring Image Buffer Properties
+## Adım 4: Görüntü Arabelleği Özelliklerini Yapılandırma
 
-Before adding the image stamp to the PDF document, you can configure various properties of the stamp, such as opacity, size, position, etc. Here's how:
+Görüntü damgasını PDF belgesine eklemeden önce damganın opaklık, boyut, konum vb. çeşitli özelliklerini yapılandırabilirsiniz. Bunu şu şekilde yapabilirsiniz:
 
 ```csharp
-// Configure image buffer properties
+// Görüntü arabelleği özelliklerini yapılandırma
 imageStamp. Background = true;
 imageStamp. XIndent = 100;
 imageStamp. YIndent = 100;
@@ -56,40 +56,40 @@ imageStamp.Rotate = Rotate.on270;
 imageStamp. Opacity = 0.5;
 ```
 
-You can adjust these properties according to your needs.
+Bu özellikleri ihtiyaçlarınıza göre ayarlayabilirsiniz.
 
-## Step 5: Adding the image stamp to the PDF
+## 5. Adım: Görüntü damgasını PDF'ye ekleme
 
-Now that the image stamp is ready, you can add it to a specific page of the PDF document. Here's how:
+Artık görüntü damgası hazır olduğuna göre onu PDF belgesinin belirli bir sayfasına ekleyebilirsiniz. İşte nasıl:
 
 ```csharp
-// Add the frame buffer to the specific page
+// Çerçeve arabelleğini belirli bir sayfaya ekleyin
 pdfDocument.Pages[1].AddStamp(imageStamp);
 ```
 
-The code above adds the image buffer to the first page of the PDF document. You can specify another page if needed.
+Yukarıdaki kod, görüntü arabelleğini PDF belgesinin ilk sayfasına ekler. Gerekirse başka bir sayfa belirtebilirsiniz.
 
-## Step 6: Save the output document
+## Adım 6: Çıktı belgesini kaydedin
 
-Once you have added the image buffer, you can save the modified PDF document. Here's how:
+Görüntü arabelleğini ekledikten sonra değiştirilen PDF belgesini kaydedebilirsiniz. İşte nasıl:
 
 ```csharp
-// Save the output document
+// Çıktı belgesini kaydet
 pdfDocument.Save(dataDir);
 ```
 
-The above code saves the edited PDF document to the specified directory.
+Yukarıdaki kod, düzenlenen PDF belgesini belirtilen dizine kaydeder.
 
-### Sample source code for Add Image Stamp using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Resim Damgası Ekleme için örnek kaynak kodu 
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir+ "AddImageStamp.pdf");
 
-// Create image stamp
+// Resim damgası oluştur
 ImageStamp imageStamp = new ImageStamp(dataDir + "aspose-logo.jpg");
 imageStamp.Background = true;
 imageStamp.XIndent = 100;
@@ -99,53 +99,53 @@ imageStamp.Width = 300;
 imageStamp.Rotate = Rotation.on270;
 imageStamp.Opacity = 0.5;
 
-// Add stamp to particular page
+// Belirli bir sayfaya damga ekle
 pdfDocument.Pages[1].AddStamp(imageStamp);
 dataDir = dataDir + "AddImageStamp_out.pdf";
 
-// Save output document
+// Çıktı belgesini kaydet
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nImage stamp added successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulation ! You have learned how to add an image buffer using Aspose.PDF for .NET. Now you can apply this knowledge to your own projects to add custom image stamps to PDF documents.
+Tebrikler! Aspose.PDF for .NET'i kullanarak görüntü arabelleğinin nasıl ekleneceğini öğrendiniz. Artık PDF belgelerine özel görüntü damgaları eklemek için bu bilgiyi kendi projelerinize uygulayabilirsiniz.
 
-### FAQ's for add image stamp in PDF file
+### PDF dosyasına resim damgası eklemek için SSS
 
-#### Q: What is the purpose of adding an image buffer to a PDF document using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET kullanarak bir PDF belgesine görüntü arabelleği eklemenin amacı nedir?
 
-A: Adding an image buffer to a PDF document allows you to incorporate custom images into the document, enhancing its visual appeal and conveying specific information or branding. This feature is useful for adding logos, watermarks, or other graphical elements to the PDF.
+C: Bir PDF belgesine görüntü arabelleği eklemek, belgeye özel görüntüler eklemenizi, görsel çekiciliğini artırmanızı ve belirli bilgileri veya markayı aktarmanızı sağlar. Bu özellik, PDF'ye logo, filigran veya diğer grafik öğeleri eklemek için kullanışlıdır.
 
-#### Q: Can I add multiple image buffers to different pages of the same PDF document?
+#### S: Aynı PDF belgesinin farklı sayfalarına birden fazla görüntü arabelleği ekleyebilir miyim?
 
-A: Yes, you can add multiple image buffers to different pages of the same PDF document. The provided C# source code allows you to specify the target page for adding the image stamp, making it versatile for different pages within the document.
+C: Evet, aynı PDF belgesinin farklı sayfalarına birden fazla görüntü arabelleği ekleyebilirsiniz. Sağlanan C# kaynak kodu, görüntü damgasını eklemek için hedef sayfayı belirtmenize olanak tanıyarak belge içindeki farklı sayfalar için çok yönlü olmasını sağlar.
 
-#### Q: How can I adjust the position and size of the image buffer within the PDF document?
+#### S: PDF belgesindeki görüntü arabelleğinin konumunu ve boyutunu nasıl ayarlayabilirim?
 
-A: You can customize the position and size of the image buffer by modifying the properties of the `ImageStamp` object. The code provided in the tutorial demonstrates how to set properties such as `XIndent`, `YIndent`, `Height`, and `Width` to control the positioning and dimensions of the image stamp.
+ C: Görüntü arabelleğinin özelliklerini değiştirerek, görüntü arabelleğinin konumunu ve boyutunu özelleştirebilirsiniz.`ImageStamp` nesne. Öğreticide sağlanan kod, aşağıdaki gibi özelliklerin nasıl ayarlanacağını gösterir:`XIndent`, `YIndent`, `Height` , Ve`Width` görüntü damgasının konumunu ve boyutlarını kontrol etmek için.
 
-#### Q: Is it possible to rotate the image buffer when adding it to the PDF document?
+#### S: Görüntü arabelleğini PDF belgesine eklerken döndürmek mümkün mü?
 
-A: Yes, you can rotate the image buffer before adding it to the PDF document by setting the `Rotate` property of the `ImageStamp` object. The code in the tutorial showcases how to rotate the image stamp using values like `Rotation.on270`, but you can adjust the rotation angle as needed.
+ C: Evet, PDF belgesine eklemeden önce görüntü arabelleğini ayarlayarak döndürebilirsiniz.`Rotate` mülkiyeti`ImageStamp` nesne. Öğreticideki kod, aşağıdaki gibi değerleri kullanarak görüntü damgasının nasıl döndürüleceğini gösterir:`Rotation.on270`ancak dönüş açısını gerektiği gibi ayarlayabilirsiniz.
 
-#### Q: Can I control the opacity of the image buffer when adding it to the PDF document?
+#### S: Görüntü arabelleğini PDF belgesine eklerken opaklığını kontrol edebilir miyim?
 
-A: Absolutely, you can control the opacity of the image buffer by adjusting the `Opacity` property of the `ImageStamp` object. The provided C# source code demonstrates how to set the opacity level, allowing you to achieve the desired transparency effect.
+ C: Kesinlikle, görüntü arabelleğinin opaklığını ayarlayarak kontrol edebilirsiniz.`Opacity` mülkiyeti`ImageStamp` nesne. Sağlanan C# kaynak kodu, opaklık düzeyinin nasıl ayarlanacağını göstererek istediğiniz şeffaflık efektini elde etmenize olanak tanır.
 
-#### Q: How can I integrate this method into my own projects to add image buffers to PDF documents?
+#### S: PDF belgelerine görüntü arabellekleri eklemek için bu yöntemi kendi projelerime nasıl entegre edebilirim?
 
-A: To integrate this method, follow the provided steps and adapt the code to match your project's structure. By adding image buffers to PDF documents, you can enhance their visual presentation and convey specific branding or information.
+C: Bu yöntemi entegre etmek için verilen adımları izleyin ve kodu projenizin yapısına uyacak şekilde uyarlayın. PDF belgelerine görüntü arabellekleri ekleyerek görsel sunumlarını geliştirebilir ve belirli marka veya bilgileri iletebilirsiniz.
 
-#### Q: Are there any considerations or limitations when adding image buffers to PDF documents?
+#### S: PDF belgelerine görüntü arabellekleri eklerken dikkat edilmesi gereken noktalar veya sınırlamalar var mı?
 
-A: While adding image buffers is straightforward, consider the overall layout and content of the PDF document. Ensure that the added image buffers do not obstruct critical information or negatively affect the document's readability.
+C: Görüntü arabelleklerini eklemek basit olsa da, PDF belgesinin genel düzenini ve içeriğini göz önünde bulundurun. Eklenen görüntü arabelleklerinin kritik bilgileri engellemediğinden veya belgenin okunabilirliğini olumsuz etkilemediğinden emin olun.
 
-#### Q: Can I use this method to add images other than logos, such as watermarks or custom graphics?
+#### S: Bu yöntemi logo dışında filigran veya özel grafikler gibi resimler eklemek için kullanabilir miyim?
 
-A: Yes, you can use this method to add various types of images, including watermarks, custom graphics, or any other visual elements. The tutorial's code can be customized to add the desired images to your PDF documents.
+C: Evet, filigranlar, özel grafikler veya diğer görsel öğeler de dahil olmak üzere çeşitli türde görseller eklemek için bu yöntemi kullanabilirsiniz. Öğreticinin kodu, istenen görüntüleri PDF belgelerinize eklemek için özelleştirilebilir.
 
-#### Q: Is it possible to automate the process of adding image buffers to multiple PDF documents?
+#### S: Birden fazla PDF belgesine görüntü arabellekleri ekleme işlemini otomatikleştirmek mümkün müdür?
 
-A: Yes, you can automate the process of adding image buffers to multiple PDF documents by creating a script or program that iterates through a list of documents and applies the same image stamping process to each one.
+C: Evet, bir belge listesi boyunca yinelenen ve her birine aynı görüntü damgalama işlemini uygulayan bir komut dosyası veya program oluşturarak birden çok PDF belgesine görüntü arabellekleri ekleme işlemini otomatikleştirebilirsiniz.

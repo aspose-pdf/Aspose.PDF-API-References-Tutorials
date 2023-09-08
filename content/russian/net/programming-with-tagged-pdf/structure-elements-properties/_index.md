@@ -1,61 +1,61 @@
 ---
-title: Structure Elements Properties In PDF File
-linktitle: Structure Elements Properties In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to working with structural element properties in PDF file with Aspose.PDF for .NET. Create information-rich structural elements.
+title: Свойства элементов конструкции в PDF-файле
+linktitle: Свойства элементов конструкции в PDF-файле
+second_title: Справочник по Aspose.PDF для .NET API
+description: Пошаговое руководство по работе со свойствами элемента конструкции в PDF-файле с помощью Aspose.PDF для .NET. Создавайте насыщенные информацией структурные элементы.
 type: docs
 weight: 150
 url: /ru/net/programming-with-tagged-pdf/structure-elements-properties/
 ---
-In this guide, we are going to show you how to work with structural element properties in PDF file using the Aspose.PDF library for .NET. Aspose.PDF is a powerful library that lets you programmatically create, manipulate, and convert PDF files.
+В этом руководстве мы покажем вам, как работать со свойствами структурных элементов в файле PDF с использованием библиотеки Aspose.PDF для .NET. Aspose.PDF — это мощная библиотека, которая позволяет программно создавать, манипулировать и конвертировать PDF-файлы.
 
-Let's dive into the code and learn how to work with structure element properties in a PDF document using Aspose.PDF for .NET.
+Давайте углубимся в код и узнаем, как работать со свойствами элемента структуры в PDF-документе с помощью Aspose.PDF для .NET.
 
-## Prerequisites
+## Предварительные условия
 
-Before you start, make sure you have installed Aspose.PDF for .NET and set up your development environment.
+Прежде чем начать, убедитесь, что вы установили Aspose.PDF для .NET и настроили среду разработки.
 
-## Step 1: Creating the document
+## Шаг 1: Создание документа
 
-The first step is to create a new PDF document using the `Document` class.
+ Первым шагом является создание нового PDF-документа с помощью`Document` сорт.
 
 ```csharp
-// Create the PDF document
+// Создайте PDF-документ
 Document document = new Document();
 ```
 
-## Step 2: Access tagged content
+## Шаг 2. Доступ к контенту с тегами
 
-Next, we access the tagged content of the document using the `ITaggedContent` object.
+ Далее мы получаем доступ к размеченному содержимому документа с помощью`ITaggedContent` объект.
 
 ```csharp
-// Access tagged content
+// Доступ к контенту с тегами
 Tagged.ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-## Step 3: Set title and language
+## Шаг 3. Установите название и язык.
 
-Now we can set the document title and language using the `SetTitle` and `SetLanguage` methods of the `ITaggedContent` object.
+ Теперь мы можем установить заголовок и язык документа, используя`SetTitle` и`SetLanguage` методы`ITaggedContent` объект.
 
 ```csharp
-// Define the title of the document
+// Определите название документа
 taggedContent.SetTitle("Tagged PDF document");
 
-// Set the document language
+// Установите язык документа
 taggedContent.SetLanguage("fr-FR");
 ```
 
-## Step 4: Creating structural elements
+## Шаг 4. Создание структурных элементов
 
-Then we create the structural elements in the PDF document. In this example, we will create a section element (`SectElement`) and a header element (`HeaderElement`).
+Затем мы создаем структурные элементы в PDF-документе. В этом примере мы создадим элемент раздела (`SectElement`) и элемент заголовка (`HeaderElement`).
 
 ```csharp
-// Create a section element
+// Создать элемент раздела
 StructureElement rootElement = taggedContent.RootElement;
 SectElement sect = taggedContent.CreateSectElement();
 rootElement.AppendChild(sect);
 
-// Create a header element
+// Создайте элемент заголовка
 HeaderElement h1 = taggedContent.CreateHeaderElement(1);
 sect.AppendChild(h1);
 h1.SetText("Header");
@@ -66,32 +66,32 @@ h1.ExpansionText = "Expansion Text";
 h1.ActualText = "Actual Text";
 ```
 
-## Step 5: Save the tagged PDF document
+## Шаг 5. Сохраните PDF-документ с тегами.
 
-Finally, we save the tagged PDF document.
+Наконец, мы сохраняем PDF-документ с тегами.
 
 ```csharp
-// Save the tagged PDF document
+// Сохраните PDF-документ с тегами
 document.Save(dataDir + "StructureElementsProperties.pdf");
 ```
 
-### Sample source code for Structure Elements Properties using Aspose.PDF for .NET 
+### Пример исходного кода для свойств элементов структуры с использованием Aspose.PDF для .NET 
 ```csharp
 
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create Pdf Document
+// Создать PDF-документ
 Document document = new Document();
 
-// Get Content for work with TaggedPdf
+// Получить контент для работы с TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Set Title and Language for Documnet
+// Установите заголовок и язык для Documentnet
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 
-// Create Structure Elements
+// Создание элементов структуры
 StructureElement rootElement = taggedContent.RootElement;
 SectElement sect = taggedContent.CreateSectElement();
 rootElement.AppendChild(sect);
@@ -104,53 +104,53 @@ h1.AlternativeText = "Alternative Text";
 h1.ExpansionText = "Expansion Text";
 h1.ActualText = "Actual Text";
 
-// Save Tagged Pdf Document
+// Сохранить PDF-документ с тегами
 document.Save(dataDir + "StructureElementsProperties.pdf");
 
 ```
 
-## Conclusion
+## Заключение
 
-Congratulation ! You now know how to work with structural element properties in a PDF document using Aspose.PDF for .NET. You can further explore the features of Aspose.PDF to create personalized PDF documents with information-rich structure elements.
+Поздравляем! Теперь вы знаете, как работать со свойствами структурных элементов в PDF-документе с помощью Aspose.PDF для .NET. Вы можете дополнительно изучить возможности Aspose.PDF для создания персонализированных PDF-документов с информативными структурными элементами.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What are structural element properties in a PDF document, and why are they important?
+#### Вопрос: Каковы свойства структурных элементов в PDF-документе и почему они важны?
 
-A: Structural element properties define characteristics of elements in a tagged PDF document, enhancing accessibility and organization. Properties such as title, language, alternative text, expansion text, and actual text provide context and assistive information for users.
+Ответ: Свойства структурных элементов определяют характеристики элементов в PDF-документе с тегами, улучшая доступность и организацию. Такие свойства, как заголовок, язык, альтернативный текст, текст расширения и фактический текст, предоставляют пользователям контекстную и вспомогательную информацию.
 
-#### Q: How does Aspose.PDF for .NET help work with structural element properties in a PDF document?
+#### Вопрос: Как Aspose.PDF для .NET помогает работать со свойствами структурных элементов в PDF-документе?
 
-A: Aspose.PDF for .NET provides APIs to create and manipulate structural elements with various properties. You can set properties such as title, language, alternative text, expansion text, and actual text to enhance the semantic structure and accessibility of the document.
+О: Aspose.PDF для .NET предоставляет API для создания структурных элементов с различными свойствами и управления ими. Вы можете установить такие свойства, как заголовок, язык, альтернативный текст, текст расширения и фактический текст, чтобы улучшить семантическую структуру и доступность документа.
 
-#### Q: What is the role of the `SetTitle` and `SetLanguage` methods in working with structural element properties?
+####  Вопрос: Какова роль`SetTitle` and `SetLanguage` methods in working with structural element properties?
 
-A: The `SetTitle` and `SetLanguage` methods of the `ITaggedContent` object allow you to set the document title and language, which influence structural element properties. Setting the title and language ensures consistency and meaningful metadata for the document.
+ А:`SetTitle` и`SetLanguage` методы`ITaggedContent`позволяют задать заголовок и язык документа, которые влияют на свойства структурного элемента. Установка заголовка и языка обеспечивает согласованность и значимость метаданных для документа.
 
-#### Q: How can I create and manipulate structural elements in a PDF document using Aspose.PDF for .NET?
+#### Вопрос: Как создавать структурные элементы в PDF-документе и манипулировать ими с помощью Aspose.PDF for .NET?
 
-A: You can create and manipulate structural elements using Aspose.PDF for .NET by accessing the tagged content of the document. Create structural elements, such as `SectElement` and `HeaderElement`, and set properties like text, title, language, alternative text, expansion text, and actual text.
+ О: Вы можете создавать структурные элементы и манипулировать ими с помощью Aspose.PDF для .NET, обращаясь к тегированному содержимому документа. Создайте структурные элементы, такие как`SectElement` и`HeaderElement`и установите такие свойства, как текст, заголовок, язык, альтернативный текст, текст расширения и фактический текст.
 
-#### Q: Can I specify different properties for different structural elements in a PDF document?
+#### Вопрос: Могу ли я указать разные свойства для разных структурных элементов в PDF-документе?
 
-A: Yes, you can specify different properties for different structural elements in a PDF document. For example, you can set unique titles, languages, and accessibility properties for each structural element to provide comprehensive context for assistive technologies.
+О: Да, вы можете указать разные свойства для разных структурных элементов в PDF-документе. Например, вы можете установить уникальные заголовки, языки и свойства доступности для каждого структурного элемента, чтобы обеспечить комплексный контекст для вспомогательных технологий.
 
-#### Q: What is the purpose of alternative text, expansion text, and actual text in structural elements?
+#### Вопрос: Какова цель альтернативного текста, текста расширения и фактического текста в структурных элементах?
 
-A: Alternative text provides a descriptive alternative for images or non-text elements, aiding accessibility. Expansion text offers additional information when content is expanded. Actual text specifies the text equivalent of a visual element, enhancing text extraction and search capabilities.
+О: Альтернативный текст представляет собой описательную альтернативу изображениям или нетекстовым элементам, что повышает доступность. Текст расширения предлагает дополнительную информацию при расширении содержимого. Фактический текст определяет текстовый эквивалент визуального элемента, расширяя возможности извлечения и поиска текста.
 
-#### Q: How can I ensure that the structural element properties I set are properly reflected in the final PDF document?
+#### Вопрос: Как я могу гарантировать, что заданные мной свойства структурного элемента будут правильно отражены в окончательном PDF-документе?
 
-A: You can verify the structural element properties by examining the PDF document's properties and metadata. Additionally, you can use PDF viewers, accessibility tools, or text extraction to confirm that the set properties are accurately represented.
+О: Вы можете проверить свойства элемента конструкции, изучив свойства и метаданные PDF-документа. Кроме того, вы можете использовать средства просмотра PDF-файлов, инструменты специальных возможностей или извлечение текста, чтобы убедиться, что заданные свойства представлены точно.
 
-#### Q: Are there any best practices to follow when working with structural element properties in a PDF document?
+#### Вопрос: Существуют ли какие-либо рекомендации, которым следует следовать при работе со свойствами структурных элементов в документе PDF?
 
-A: When working with structural element properties, consider the needs of diverse users. Provide meaningful titles, accurate languages, and descriptive alternative text to ensure accessibility and an enhanced user experience.
+Ответ: При работе со свойствами структурных элементов учитывайте потребности различных пользователей. Обеспечьте осмысленные заголовки, точные языки и описательный альтернативный текст, чтобы обеспечить доступность и удобство работы с пользователем.
 
-#### Q: Can I modify or update the properties of existing structural elements in a PDF document using Aspose.PDF for .NET?
+#### Вопрос: Могу ли я изменить или обновить свойства существующих структурных элементов в PDF-документе с помощью Aspose.PDF для .NET?
 
-A: Yes, you can modify or update the properties of existing structural elements using Aspose.PDF for .NET. Load the document, access the tagged content, navigate to the desired structural element, and use the available methods to update its properties.
+О: Да, вы можете изменять или обновлять свойства существующих структурных элементов, используя Aspose.PDF для .NET. Загрузите документ, получите доступ к размеченному содержимому, перейдите к нужному структурному элементу и используйте доступные методы для обновления его свойств.
 
-#### Q: How can I use structural element properties to create information-rich PDF documents?
+#### Вопрос: Как использовать свойства структурных элементов для создания насыщенных информацией PDF-документов?
 
-A: By leveraging structural element properties, you can create information-rich PDF documents that offer enhanced accessibility and context. Use properties such as title, language, and alternative text to provide comprehensive details about document structure and content.
+О: Используя свойства структурных элементов, вы можете создавать насыщенные информацией PDF-документы, которые обеспечивают улучшенную доступность и контекст. Используйте такие свойства, как заголовок, язык и альтернативный текст, чтобы предоставить подробные сведения о структуре и содержимом документа.

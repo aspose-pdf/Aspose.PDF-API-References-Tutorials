@@ -1,29 +1,29 @@
 ---
-title: Add Repeating Column In PDF Document
-linktitle: Add Repeating Column In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add a repeating column in PDF document using Aspose.PDF for .NET.
+title: Aggiungi colonna ripetuta nel documento PDF
+linktitle: Aggiungi colonna ripetuta nel documento PDF
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Scopri come aggiungere una colonna ripetuta nel documento PDF utilizzando Aspose.PDF per .NET.
 type: docs
 weight: 20
 url: /it/net/programming-with-tables/add-repeating-column/
 ---
-In this tutorial, we are going to learn how to add a repeating column in PDF document using Aspose.PDF for .NET. We will explain the source code in C# step by step. At the end of this tutorial, you will know how to create a table with a repeating column in a PDF document. Let's start!
+In questo tutorial impareremo come aggiungere una colonna ripetuta nel documento PDF utilizzando Aspose.PDF per .NET. Spiegheremo passo dopo passo il codice sorgente in C#. Alla fine di questo tutorial, saprai come creare una tabella con una colonna ripetuta in un documento PDF. Iniziamo!
 
-## Step 1: Setting up the environment
-First, make sure you've set up your C# development environment with Aspose.PDF for .NET. Add the reference to the library and import the necessary namespaces.
+## Passaggio 1: configurazione dell'ambiente
+Innanzitutto, assicurati di aver configurato il tuo ambiente di sviluppo C# con Aspose.PDF per .NET. Aggiungi il riferimento alla libreria e importa gli spazi dei nomi necessari.
 
-## Step 2: Creating the PDF document
-In this step, we create a new PDF document.
+## Passaggio 2: creazione del documento PDF
+In questo passaggio creiamo un nuovo documento PDF.
 
 ```csharp
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-We have created an empty PDF document where we can add content.
+Abbiamo creato un documento PDF vuoto in cui possiamo aggiungere contenuto.
 
-## Step 3: Creating the tables
-In this step we create a main table (`outerTable`) and a nested table (`mytable`) which will be repeated in the column.
+## Passaggio 3: creazione delle tabelle
+In questo passaggio creiamo una tabella principale (`outerTable`) e una tabella nidificata (`mytable`) che verrà ripetuto nella colonna.
 
 ```csharp
 Table outerTable = new Table();
@@ -35,10 +35,10 @@ mytable.Broken = TableBroken.VerticalInSamePage;
 mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;
 ```
 
-We specified table properties such as column width and nested table break mode.
+Abbiamo specificato le proprietà della tabella come la larghezza delle colonne e la modalità di interruzione delle tabelle nidificate.
 
-## Step 4: Adding the tables to the document
-Now we add the created tables to the PDF document.
+## Passaggio 4: aggiunta delle tabelle al documento
+Ora aggiungiamo le tabelle create al documento PDF.
 
 ```csharp
 page.Paragraphs.Add(outerTable);
@@ -49,10 +49,10 @@ mytable.RepeatingColumnsCount = 5;
 page.Paragraphs.Add(mytable);
 ```
 
-We first add the main table (`outerTable`) to the PDF document. Next, we add the nested table (`mytable`) as a paragraph in a cell in the main table. We also specify the number of repeated columns for `mytable` (in this example, 5 columns).
+Per prima cosa aggiungiamo la tabella principale (`outerTable`) al documento PDF. Successivamente, aggiungiamo la tabella nidificata (`mytable` ) come paragrafo in una cella nella tabella principale. Specifichiamo anche il numero di colonne ripetute per`mytable` (in questo esempio, 5 colonne).
 
-## Step 5: Adding headers and lines
-Now we add the headers and rows to the table.
+## Passaggio 5: aggiunta di intestazioni e righe
+Ora aggiungiamo le intestazioni e le righe alla tabella.
 
 ```csharp
 Row headerRow = mytable.Rows.Add();
@@ -60,7 +60,7 @@ headerRow.Cells.Add("header 1");
 headerRow.Cells.Add("header 2");
 headerRow.Cells.Add("header 3");
 // ...
-// Add other headers here
+// Aggiungi altre intestazioni qui
 
 for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
 {
@@ -69,45 +69,45 @@ for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
      row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
      row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
      // ...
-     // Add the other columns here
+     // Aggiungi le altre colonne qui
 }
 ```
 
-We first add the headers to the first row of the table (`headerRow`). Then we add the rows of data from a loop. In this example, we add 6 rows of data.
+Per prima cosa aggiungiamo le intestazioni alla prima riga della tabella (`headerRow`). Quindi aggiungiamo le righe di dati da un ciclo. In questo esempio aggiungiamo 6 righe di dati.
 
-## Step 6: Saving the PDF document
-Finally, we save the PDF document to the specified file.
+## Passaggio 6: salvataggio del documento PDF
+Infine, salviamo il documento PDF nel file specificato.
 
 ```csharp
 string outFile = dataDir + "AddRepeatingColumn_out.pdf";
 doc.Save(outFile);
 ```
 
-Make sure to specify the correct directory and filename to save the output PDF file.
+Assicurati di specificare la directory e il nome file corretti per salvare il file PDF di output.
 
-### Example source code for add repeating column using Aspose.PDF for .NET
+### Codice sorgente di esempio per aggiungere colonne ripetute utilizzando Aspose.PDF per .NET
 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 string outFile = dataDir + "AddRepeatingColumn_out.pdf";
-// Create a new document
+// Crea un nuovo documento
 Document doc = new Document();
 Aspose.Pdf.Page page = doc.Pages.Add();
 
-// Instantiate an outer table that takes up the entire page
+// Crea un'istanza di una tabella esterna che occupa l'intera pagina
 Aspose.Pdf.Table outerTable = new Aspose.Pdf.Table();
 outerTable.ColumnWidths = "100%";
 outerTable.HorizontalAlignment = HorizontalAlignment.Left;
 
-// Instantiate a table object that will be nested inside outerTable that will break inside the same page
+//Crea un'istanza di un oggetto tabella che verrà annidato all'interno di externalTable e che si interromperà all'interno della stessa pagina
 Aspose.Pdf.Table mytable = new Aspose.Pdf.Table();
 mytable.Broken = TableBroken.VerticalInSamePage;
 mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;
 
-// Add the outerTable to the page paragraphs
-// Add mytable to outerTable
+// Aggiungi la tabella esterna ai paragrafi della pagina
+// Aggiungi mytable a externalTable
 page.Paragraphs.Add(outerTable);
 var bodyRow = outerTable.Rows.Add();
 var bodyCell = bodyRow.Cells.Add();
@@ -115,7 +115,7 @@ bodyCell.Paragraphs.Add(mytable);
 mytable.RepeatingColumnsCount = 5;
 page.Paragraphs.Add(mytable);
 
-// Add header Row
+// Aggiungi riga di intestazione
 Aspose.Pdf.Row row = mytable.Rows.Add();
 row.Cells.Add("header 1");
 row.Cells.Add("header 2");
@@ -135,7 +135,7 @@ row.Cells.Add("header 17");
 for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
 
 {
-	// Create rows in the table and then cells in the rows 
+	// Crea righe nella tabella e poi celle nelle righe
 	Aspose.Pdf.Row row1 = mytable.Rows.Add();
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
@@ -155,27 +155,27 @@ for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
 doc.Save(outFile);
 ```
 
-## Conclusion
-In this tutorial, we learned how to add a repeating column in a PDF document using Aspose.PDF for .NET. You can use this step-by-step guide to create tables with repeating columns in your own C# projects.
+## Conclusione
+In questo tutorial, abbiamo imparato come aggiungere una colonna ripetuta in un documento PDF utilizzando Aspose.PDF per .NET. Puoi utilizzare questa guida passo passo per creare tabelle con colonne ripetute nei tuoi progetti C#.
 
-### FAQ's for add repeating column in PDF document
+### Domande frequenti per aggiungere colonne ripetute nel documento PDF
 
-#### Q: Can I customize the number of repeated columns in the nested table?
+#### D: Posso personalizzare il numero di colonne ripetute nella tabella nidificata?
 
-A: Yes, you can customize the number of repeated columns in the nested table. In the provided example, we set `mytable.RepeatingColumnsCount = 5;`, which means there will be 5 repeated columns. You can change this value to any desired number.
+ R: Sì, puoi personalizzare il numero di colonne ripetute nella tabella nidificata. Nell'esempio fornito, impostiamo`mytable.RepeatingColumnsCount = 5;`, il che significa che ci saranno 5 colonne ripetute. È possibile modificare questo valore con qualsiasi numero desiderato.
 
-#### Q: Is it possible to add more rows to the nested table dynamically?
+#### D: È possibile aggiungere dinamicamente più righe alla tabella nidificata?
 
-A: Yes, you can dynamically add more rows to the nested table in the same way as shown in the tutorial. You can use loops or any other logic to add rows based on your data.
+R: Sì, puoi aggiungere dinamicamente più righe alla tabella nidificata nello stesso modo mostrato nel tutorial. Puoi utilizzare loop o qualsiasi altra logica per aggiungere righe in base ai tuoi dati.
 
-#### Q: Can I apply styles and formatting to the table and its cells?
+#### D: Posso applicare stili e formattazione alla tabella e alle sue celle?
 
-A: Yes, you can apply styles and formatting to the table and its cells using Aspose.PDF for .NET. The library provides various properties and methods to customize the appearance of the table and its contents.
+R: Sì, puoi applicare stili e formattazione alla tabella e alle sue celle utilizzando Aspose.PDF per .NET. La libreria fornisce varie proprietà e metodi per personalizzare l'aspetto della tabella e il suo contenuto.
 
-#### Q: Is Aspose.PDF for .NET compatible with .NET Core?
+#### D: Aspose.PDF per .NET è compatibile con .NET Core?
 
-A: Yes, Aspose.PDF for .NET is compatible with .NET Core. You can use it in both .NET Framework and .NET Core applications.
+R: Sì, Aspose.PDF per .NET è compatibile con .NET Core. È possibile usarlo sia nelle applicazioni .NET Framework che .NET Core.
 
-#### Q: Can I use this approach to add repeating columns in an existing PDF document?
+#### D: Posso utilizzare questo approccio per aggiungere colonne ripetute in un documento PDF esistente?
 
-A: Yes, you can use this approach to add repeating columns in an existing PDF document. Simply load the existing document using Aspose.PDF for .NET and follow the same steps to create and add the repeating column.
+R: Sì, puoi utilizzare questo approccio per aggiungere colonne ripetute in un documento PDF esistente. Carica semplicemente il documento esistente utilizzando Aspose.PDF per .NET e segui gli stessi passaggi per creare e aggiungere la colonna ripetuta.

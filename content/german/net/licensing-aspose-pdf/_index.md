@@ -1,18 +1,18 @@
 ---
-title: Licensing Aspose.PDF for .NET
-linktitle: Licensing Aspose.PDF for .NET
+title: Lizenzierung von Aspose.PDF für .NET
+linktitle: Lizenzierung von Aspose.PDF für .NET
 type: docs
 weight: 21
 url: /de/net/licensing-aspose-pdf/
-description: Licensing Aspose.PDF for .NET tutorials walk you through managing the license to use Aspose.PDF for .NET, including loading and applying the license.
+description: Die Tutorials zur Lizenzierung von Aspose.PDF für .NET führen Sie durch die Verwaltung der Lizenz zur Verwendung von Aspose.PDF für .NET, einschließlich des Ladens und Anwendens der Lizenz.
 ---
-The "Licensing Aspose.PDF for .NET" tutorials explain in detail how to manage the license to use Aspose.PDF for .NET. These tutorials walk you through the various methods of uploading and applying a license, including using an external license file or an embedded license chain. You will also learn how to check your license status and manage license exceptions. These resources will help you understand the essential aspects of managing the Aspose.PDF for .NET license in your projects.
+In den Tutorials „Lizenzierung von Aspose.PDF für .NET“ wird ausführlich erläutert, wie Sie die Lizenz für die Nutzung von Aspose.PDF für .NET verwalten. Diese Tutorials führen Sie durch die verschiedenen Methoden zum Hochladen und Anwenden einer Lizenz, einschließlich der Verwendung einer externen Lizenzdatei oder einer eingebetteten Lizenzkette. Außerdem erfahren Sie, wie Sie Ihren Lizenzstatus überprüfen und Lizenzausnahmen verwalten. Diese Ressourcen helfen Ihnen, die wesentlichen Aspekte der Verwaltung der Aspose.PDF für .NET-Lizenz in Ihren Projekten zu verstehen.
 
 ## Tutorials
-| Title | Description |
+| Titel | Beschreibung |
 | --- | --- | 
-| [Configure Metered License Keys In PDF File](./configure-metered-license/) | Step-by-step guide to set up a metered license keys in PDF file with Aspose.PDF for .NET and benefit from advanced features. |  
-| [Load License From File](./load-license-from-file/) | Step by step guide to load license from file using Aspose.PDF for .NET. Unlock additional features and use Aspose.PDF optimally. |  
-| [Load License From Stream Object](./load-license-from-stream-object/) | Step-by-step guide to load a license from a Stream object using Aspose.PDF for .NET. Unlock additional features. |  
-| [Secure License In PDF File](./secure-license/) | Step-by-step guide to securing a license in PDF file using Aspose.PDF for .NET. Protect your PDF application from unauthorized access. |  
-| [Set License Using Embedded Resource](./set-license-using-embedded-resource/) | Step-by-step guide to setting a license using an embedded resource with Aspose.PDF for .NET. Unlock full features. |  
+| [Konfigurieren Sie gemessene Lizenzschlüssel in einer PDF-Datei](./configure-metered-license/) | Schritt-für-Schritt-Anleitung zum Einrichten eines gemessenen Lizenzschlüssels in einer PDF-Datei mit Aspose.PDF für .NET und zum Profitieren von erweiterten Funktionen. |  
+| [Lizenz aus Datei laden](./load-license-from-file/) | Schritt-für-Schritt-Anleitung zum Laden einer Lizenz aus einer Datei mit Aspose.PDF für .NET. Schalten Sie zusätzliche Funktionen frei und nutzen Sie Aspose.PDF optimal. |  
+| [Lizenz aus Stream-Objekt laden](./load-license-from-stream-object/) | Schritt-für-Schritt-Anleitung zum Laden einer Lizenz aus einem Stream-Objekt mit Aspose.PDF für .NET. Schalten Sie zusätzliche Funktionen frei. |  
+| [Sichere Lizenz in PDF-Datei](./secure-license/) | Schritt-für-Schritt-Anleitung zum Sichern einer Lizenz in einer PDF-Datei mit Aspose.PDF für .NET. Schützen Sie Ihre PDF-Bewerbung vor unbefugtem Zugriff. |  
+| [Legen Sie die Lizenz mithilfe der eingebetteten Ressource fest](./set-license-using-embedded-resource/) | Schritt-für-Schritt-Anleitung zum Festlegen einer Lizenz mithilfe einer eingebetteten Ressource mit Aspose.PDF für .NET. Schalten Sie alle Funktionen frei. |  

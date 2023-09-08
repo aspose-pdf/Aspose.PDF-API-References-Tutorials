@@ -1,32 +1,32 @@
 ---
-title: Hidden Text Block In PDF File
-linktitle: Hidden Text Block In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to create hidden text blocks in PDF file using Aspose.PDF for .NET.
+title: Bloque de texto oculto en archivo PDF
+linktitle: Bloque de texto oculto en archivo PDF
+second_title: Aspose.PDF para referencia de API .NET
+description: Aprenda a crear bloques de texto ocultos en un archivo PDF usando Aspose.PDF para .NET.
 type: docs
 weight: 230
 url: /es/net/programming-with-text/hidden-text-block/
 ---
-In this tutorial, we will explain how to create a hidden text block in PDF file using the Aspose.PDF library for .NET. A hidden text block is a floating text that becomes visible when the mouse cursor hovers over a specific area. We will go through the step-by-step process of creating the hidden text block using the provided C# source code.
+En este tutorial, explicaremos cómo crear un bloque de texto oculto en un archivo PDF usando la biblioteca Aspose.PDF para .NET. Un bloque de texto oculto es un texto flotante que se vuelve visible cuando el cursor del mouse pasa sobre un área específica. Revisaremos el proceso paso a paso de creación del bloque de texto oculto utilizando el código fuente C# proporcionado.
 
-## Requirements
+## Requisitos
 
-Before you begin, ensure that you have the following:
+Antes de comenzar, asegúrese de tener lo siguiente:
 
-- The Aspose.PDF for .NET library installed.
-- A basic understanding of C# programming.
+- La biblioteca Aspose.PDF para .NET instalada.
+- Un conocimiento básico de la programación en C#.
 
-## Step 1: Set up the Document Directory
+## Paso 1: configurar el directorio de documentos
 
-First, you need to set the path to the directory where you want to save the generated PDF file. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your desired directory.
+ Primero, debe establecer la ruta al directorio donde desea guardar el archivo PDF generado. Reemplazar`"YOUR DOCUMENT DIRECTORY"` en el`dataDir`variable con la ruta al directorio deseado.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Create a Sample Document
+## Paso 2: cree un documento de muestra
 
-In this step, we create a sample PDF document and add a text fragment to it. The text fragment will serve as the trigger for displaying the hidden text block.
+En este paso, creamos un documento PDF de muestra y le agregamos un fragmento de texto. El fragmento de texto servirá como activador para mostrar el bloque de texto oculto.
 
 ```csharp
 string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
@@ -35,17 +35,17 @@ doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to d
 doc.Save(outputFile);
 ```
 
-## Step 3: Open the Document
+## Paso 3: abra el documento
 
-Now, we open the previously created document using the `Document` class.
+ Ahora, abrimos el documento creado previamente usando el`Document` clase.
 
 ```csharp
 Document document = new Document(outputFile);
 ```
 
-## Step 4: Find the Text Fragment
+## Paso 4: busque el fragmento de texto
 
-We use a `TextFragmentAbsorber` object to find the text fragment that will trigger the display of the hidden text block. In this case, we are searching for the exact text "Move the mouse cursor here to display floating text".
+ Usamos un`TextFragmentAbsorber` objeto para encontrar el fragmento de texto que activará la visualización del bloque de texto oculto. En este caso, estamos buscando el texto exacto "Mueva el cursor del mouse aquí para mostrar texto flotante".
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
@@ -54,9 +54,9 @@ TextFragmentCollection textFragments = absorb.TextFragments;
 TextFragment fragment = textFragments[1];
 ```
 
-## Step 5: Create the Hidden Text Field
+## Paso 5: cree el campo de texto oculto
 
-We create a `TextBoxField` object to represent the hidden text field. This field will contain the text that becomes visible when the mouse cursor hovers over the trigger text.
+ Creamos un`TextBoxField` objeto para representar el campo de texto oculto. Este campo contendrá el texto que se vuelve visible cuando el cursor del mouse pasa sobre el texto del activador.
 
 ```csharp
 TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
@@ -72,17 +72,17 @@ floatingField.Border.Width = 1;
 floatingField. Multiline = true;
 ```
 
-## Step 6: Add the Hidden Text Field to the Document
+## Paso 6: agregue el campo de texto oculto al documento
 
-We add the hidden text field to the document's form collection.
+Agregamos el campo de texto oculto a la colección de formularios del documento.
 
 ```csharp
 document.Form.Add(floatingField);
 ```
 
-## Step 7: Create the Invisible Button
+## Paso 7: crea el botón invisible
 
-We create an invisible button field that will be positioned on top of the trigger text fragment. This button field will have actions associated with mouse enter and exit events.
+Creamos un campo de botón invisible que se colocará encima del fragmento de texto del activador. Este campo de botón tendrá acciones asociadas con eventos de entrada y salida del mouse.
 
 ```csharp
 ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
@@ -91,104 +91,104 @@ buttonField.Actions.OnExit = new HideAction(floatingField);
 document.Form.Add(buttonField);
 ```
 
-## Step 8: Save the Document
+## Paso 8: guarde el documento
 
-Finally, we save the modified document with the hidden text block.
+Finalmente guardamos el documento modificado con el bloque de texto oculto.
 
 ```csharp
 document. Save(outputFile);
 ```
 
-### Sample source code for Hidden Text Block using Aspose.PDF for .NET 
+### Código fuente de muestra para bloque de texto oculto usando Aspose.PDF para .NET 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
-// Create sample document with text
+// Crear documento de muestra con texto
 Document doc = new Document();
 doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display floating text"));
 doc.Save(outputFile);
-// Open document with text
+// Abrir documento con texto
 Document document = new Document(outputFile);
-// Create TextAbsorber object to find all the phrases matching the regular expression
+// Cree un objeto TextAbsorber para encontrar todas las frases que coincidan con la expresión regular
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
-// Accept the absorber for the document pages
+// Aceptar el absorbente para las páginas del documento.
 document.Pages.Accept(absorber);
-// Get the first extracted text fragment
+// Obtenga el primer fragmento de texto extraído
 TextFragmentCollection textFragments = absorber.TextFragments;
 TextFragment fragment = textFragments[1];
-// Create hidden text field for floating text in the specified rectangle of the page
+// Cree un campo de texto oculto para texto flotante en el rectángulo especificado de la página
 TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
-// Set text to be displayed as field value
+// Establecer el texto que se mostrará como valor de campo
 floatingField.Value = "This is the \"floating text field\".";
-// We recommend to make field 'readonly' for this scenario
+// Recomendamos hacer que el campo sea de "solo lectura" para este escenario.
 floatingField.ReadOnly = true;
-// Set 'hidden' flag to make field invisible on document opening
+// Establecer bandera 'oculta' para hacer que el campo sea invisible al abrir el documento
 floatingField.Flags |= AnnotationFlags.Hidden;
-// Setting a unique field name isn't necessary but allowed
+// No es necesario establecer un nombre de campo único, pero está permitido
 floatingField.PartialName = "FloatingField_1";
-// Setting characteristics of field appearance isn't necessary but makes it better
+// No es necesario configurar las características de la apariencia del campo, pero lo mejora.
 floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, System.Drawing.Color.Blue);
 floatingField.Characteristics.Background = System.Drawing.Color.LightBlue;
 floatingField.Characteristics.Border = System.Drawing.Color.DarkBlue;
 floatingField.Border = new Border(floatingField);
 floatingField.Border.Width = 1;
 floatingField.Multiline = true;
-// Add text field to the document
+// Agregar campo de texto al documento
 document.Form.Add(floatingField);
-// Create invisible button on text fragment position
+// Crear botón invisible en la posición del fragmento de texto
 ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
-// Create new hide action for specified field (annotation) and invisibility flag.
-// (You also may reffer floating field by the name if you specified it above.)
-// Add actions on mouse enter/exit at the invisible button field
+// Cree una nueva acción de ocultación para el campo especificado (anotación) y el indicador de invisibilidad.
+//(También puede hacer referencia al campo flotante por el nombre si lo especificó anteriormente).
+// Agregar acciones al ingresar/salir del mouse en el campo del botón invisible
 buttonField.Actions.OnEnter = new HideAction(floatingField, false);
 buttonField.Actions.OnExit = new HideAction(floatingField);
-// Add button field to the document
+// Agregar campo de botón al documento
 document.Form.Add(buttonField);
-// Save document
+// guardar documento
 document.Save(outputFile);
 ```
 
-## Conclusion
+## Conclusión
 
-In this tutorial, you have learned how to create a hidden text block using the Aspose.PDF for .NET library. By following the step-by-step guide, you can generate a PDF document with a hidden text field that becomes visible when the mouse cursor hovers over a specific area. You can customize the appearance and behavior of the hidden text block according to your requirements.
+En este tutorial, ha aprendido cómo crear un bloque de texto oculto utilizando la biblioteca Aspose.PDF para .NET. Siguiendo la guía paso a paso, puede generar un documento PDF con un campo de texto oculto que se vuelve visible cuando el cursor del mouse pasa sobre un área específica. Puede personalizar la apariencia y el comportamiento del bloque de texto oculto según sus requisitos.
 
-### FAQ's
+### Preguntas frecuentes
 
-#### Q: What is the purpose of the "Hidden Text Block In PDF File" tutorial?
+#### P: ¿Cuál es el propósito del tutorial "Bloque de texto oculto en un archivo PDF"?
 
-A: The "Hidden Text Block In PDF File" tutorial explains how to create a hidden text block in a PDF file using the Aspose.PDF library for .NET. A hidden text block is a floating text that becomes visible when the mouse cursor hovers over a specific area. This tutorial provides a step-by-step guide using C# source code.
+R: El tutorial "Bloque de texto oculto en un archivo PDF" explica cómo crear un bloque de texto oculto en un archivo PDF utilizando la biblioteca Aspose.PDF para .NET. Un bloque de texto oculto es un texto flotante que se vuelve visible cuando el cursor del mouse pasa sobre un área específica. Este tutorial proporciona una guía paso a paso utilizando el código fuente de C#.
 
-#### Q: Why would I want to create a hidden text block in a PDF file?
+#### P: ¿Por qué querría crear un bloque de texto oculto en un archivo PDF?
 
-A: Creating a hidden text block can be useful for interactive PDF documents where you want to provide additional information or context that only becomes visible when a user hovers their mouse cursor over a designated area.
+R: Crear un bloque de texto oculto puede ser útil para documentos PDF interactivos en los que desea proporcionar información adicional o contexto que solo se vuelve visible cuando un usuario coloca el cursor del mouse sobre un área designada.
 
-#### Q: How do I set up the document directory?
+#### P: ¿Cómo configuro el directorio de documentos?
 
-A: To set up the document directory:
+R: Para configurar el directorio de documentos:
 
-1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where you want to save the generated PDF file.
+1.  Reemplazar`"YOUR DOCUMENT DIRECTORY"` en el`dataDir` variable con la ruta al directorio donde desea guardar el archivo PDF generado.
 
-#### Q: How do I create a sample document and add a text fragment to it?
+#### P: ¿Cómo creo un documento de muestra y le agrego un fragmento de texto?
 
-A: In the tutorial, you use the `Document` class to create a sample PDF document and add a text fragment. This text fragment serves as the trigger for displaying the hidden text block.
+R: En el tutorial, utilizas el`Document` clase para crear un documento PDF de muestra y agregar un fragmento de texto. Este fragmento de texto sirve como activador para mostrar el bloque de texto oculto.
 
-#### Q: How do I find the text fragment that triggers the hidden text block?
+#### P: ¿Cómo encuentro el fragmento de texto que activa el bloque de texto oculto?
 
-A: The tutorial demonstrates how to use a `TextFragmentAbsorber` object to find the text fragment that triggers the display of the hidden text block. It searches for a specific text string within the PDF document.
+ R: El tutorial muestra cómo utilizar un`TextFragmentAbsorber` objeto para encontrar el fragmento de texto que activa la visualización del bloque de texto oculto. Busca una cadena de texto específica dentro del documento PDF.
 
-#### Q: How do I create and customize the hidden text field?
+#### P: ¿Cómo creo y personalizo el campo de texto oculto?
 
-A: You create a `TextBoxField` object to represent the hidden text field. The tutorial provides code to set various properties such as position, value, appearance, and behavior of the hidden text field.
+ R: Creas un`TextBoxField` objeto para representar el campo de texto oculto. El tutorial proporciona código para establecer varias propiedades, como la posición, el valor, la apariencia y el comportamiento del campo de texto oculto.
 
-#### Q: How do I create an invisible button associated with the hidden text block?
+#### P: ¿Cómo creo un botón invisible asociado con el bloque de texto oculto?
 
-A: An invisible button field is created using the `ButtonField` class. This button field is positioned on top of the trigger text fragment and has actions associated with mouse enter and exit events. These actions control the visibility of the hidden text block.
+ R: Se crea un campo de botón invisible usando el`ButtonField` clase. Este campo de botón está ubicado encima del fragmento de texto del activador y tiene acciones asociadas con eventos de entrada y salida del mouse. Estas acciones controlan la visibilidad del bloque de texto oculto.
 
-#### Q: Can I customize the appearance of the hidden text block and the trigger area?
+#### P: ¿Puedo personalizar la apariencia del bloque de texto oculto y el área de activación?
 
-A: Yes, you can customize various properties of both the hidden text field and the invisible button, including font, color, size, and positioning.
+R: Sí, puedes personalizar varias propiedades tanto del campo de texto oculto como del botón invisible, incluida la fuente, el color, el tamaño y la posición.
 
-#### Q: How do I save the modified document with the hidden text block?
+#### P: ¿Cómo guardo el documento modificado con el bloque de texto oculto?
 
-A: The tutorial demonstrates how to save the modified document using the `Save` method of the `Document` class.
+ R: El tutorial muestra cómo guardar el documento modificado usando el`Save` método de la`Document` clase.

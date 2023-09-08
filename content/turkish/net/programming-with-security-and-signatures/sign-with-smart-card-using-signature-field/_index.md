@@ -1,17 +1,17 @@
 ---
-title: Sign With Smart Card Using Signature Field
-linktitle: Sign With Smart Card Using Signature Field
-second_title: Aspose.PDF for .NET API Reference
-description: Sign your PDF files securely with a smart card using Aspose.PDF for .NET.
+title: İmza Alanını Kullanarak Akıllı Kartla İmzalama
+linktitle: İmza Alanını Kullanarak Akıllı Kartla İmzalama
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF dosyalarınızı akıllı kartla güvenli bir şekilde imzalayın.
 type: docs
 weight: 120
 url: /tr/net/programming-with-security-and-signatures/sign-with-smart-card-using-signature-field/
 ---
-Digital signing with a smart card is a secure way to sign PDF files. With Aspose.PDF for .NET, you can easily sign a PDF file using a signature field and a smart card by following the following source code:
+Akıllı kartla dijital imzalama, PDF dosyalarını imzalamanın güvenli bir yoludur. Aspose.PDF for .NET ile aşağıdaki kaynak kodunu takip ederek bir imza alanı ve akıllı kart kullanarak bir PDF dosyasını kolayca imzalayabilirsiniz:
 
-## Step 1: Import required libraries
+## 1. Adım: Gerekli kitaplıkları içe aktarın
 
-Before you begin, you need to import the necessary libraries for your C# project. Here are the necessary import directives:
+Başlamadan önce C# projeniz için gerekli kütüphaneleri içe aktarmanız gerekir. Gerekli ithalat direktifleri şunlardır:
 
 ```csharp
 using Aspose.Pdf;
@@ -19,17 +19,17 @@ using Aspose.Pdf.Forms;
 using System.Security.Cryptography.X509Certificates;
 ```
 
-## Step 2: Set path to documents folder
+## 2. Adım: Belgeler klasörünün yolunu ayarlayın
 
-In this step, you need to specify the path to the folder containing the PDF file you want to sign. Replace `"YOUR DOCUMENTS DIRECTORY"` in the following code with the actual path to your documents folder:
+ Bu adımda imzalamak istediğiniz PDF dosyasının bulunduğu klasörün yolunu belirtmeniz gerekiyor. Yer değiştirmek`"YOUR DOCUMENTS DIRECTORY"`belgeler klasörünüzün gerçek yolunu içeren aşağıdaki kodda:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 3: Copy and open the PDF document
+## 3. Adım: PDF belgesini kopyalayıp açın
 
-Now we will copy and open the PDF document to be signed using the following code:
+Şimdi aşağıdaki kodu kullanarak imzalanacak PDF belgesini kopyalayıp açacağız:
 
 ```csharp
 File.Copy(dataDir + "blank.pdf", dataDir + "externalSignature1.pdf", true);
@@ -38,15 +38,15 @@ using (FileStream fs = new FileStream(dataDir + "externalSignature1.pdf", FileMo
 {
      using (Document doc = new Document(fs))
      {
-         // Create a signature field
+         // İmza alanı oluşturma
          SignatureField field1 = new SignatureField(doc.Pages[1], new Rectangle(100, 400, 10, 10));
 
-         // Select the certificate in the store
+         // Mağazadaki sertifikayı seçin
          X509Store store = new X509Store(StoreLocation.CurrentUser);
          store.Open(OpenFlags.ReadOnly);
          X509Certificate2Collection sel = X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, X509SelectionFlag.SingleSelection);
         
-         // Create an external signature with the necessary information
+         // Gerekli bilgileri içeren harici bir imza oluşturun
          ExternalSignature externalSignature = new ExternalSignature(sel[0])
          {
              Authority = "Me",
@@ -62,9 +62,9 @@ using (FileStream fs = new FileStream(dataDir + "externalSignature1.pdf", FileMo
 }
 ```
 
-## Step 4: Verify Signature
+## 4. Adım: İmzayı Doğrulayın
 
-Finally, we verify the signature of the signed PDF file using the `PdfFileSignature` class. We get the signature names and check them one by one. If a signature fails verification, an exception is thrown. Here is the corresponding code:
+ Son olarak, imzalanan PDF dosyasının imzasını kullanarak doğrularız.`PdfFileSignature` sınıf. İmza isimlerini alıp tek tek kontrol ediyoruz. Bir imzanın doğrulaması başarısız olursa bir istisna oluşturulur. İşte ilgili kod:
 
 ```csharp
 using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "externalSignature1.pdf")))
@@ -80,9 +80,9 @@ using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "e
 }
 ```
 
-### Sample source code for Sign With Smart Card Using Signature Field using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak İmza Alanını Kullanarak Akıllı Kartla İmzalama için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 File.Copy(dataDir + "blank.pdf", dataDir + "externalSignature1.pdf", true);
 using (FileStream fs = new FileStream(dataDir + "externalSignature1.pdf", FileMode.Open, FileAccess.ReadWrite))
@@ -90,10 +90,10 @@ using (FileStream fs = new FileStream(dataDir + "externalSignature1.pdf", FileMo
 	using (Document doc = new Document(fs))
 	{
 		SignatureField field1 = new SignatureField(doc.Pages[1], new Rectangle(100, 400, 10, 10));
-		// Sign with certificate selection in the windows certificate store
+		// Windows sertifika deposunda sertifika seçimiyle imzalayın
 		System.Security.Cryptography.X509Certificates.X509Store store = new System.Security.Cryptography.X509Certificates.X509Store(System.Security.Cryptography.X509Certificates.StoreLocation.CurrentUser);
 		store.Open(System.Security.Cryptography.X509Certificates.OpenFlags.ReadOnly);
-		// Manually chose the certificate in the store
+		// Sertifikayı mağazada manuel olarak seçtiniz
 		System.Security.Cryptography.X509Certificates.X509Certificate2Collection sel = System.Security.Cryptography.X509Certificates.X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, System.Security.Cryptography.X509Certificates.X509SelectionFlag.SingleSelection);
 		Aspose.Pdf.Forms.ExternalSignature externalSignature = new Aspose.Pdf.Forms.ExternalSignature(sel[0])
 		{
@@ -120,50 +120,50 @@ using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "e
 }
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulation ! You now have a step-by-step guide to signing a PDF file with a smart card using a signature field with Aspose.PDF for .NET. You can use this code to add secure digital signatures to your PDF documents.
+Tebrikler! Artık Aspose.PDF for .NET'te bir imza alanını kullanarak bir PDF dosyasını akıllı kartla imzalamak için adım adım bir kılavuza sahipsiniz. PDF belgelerinize güvenli dijital imzalar eklemek için bu kodu kullanabilirsiniz.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced digital signature and certificate management features.
+Gelişmiş dijital imza ve sertifika yönetimi özellikleri hakkında daha fazla bilgi için resmi Aspose.PDF belgelerine göz atmayı unutmayın.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the benefit of using a signature field for digital signing with a smart card?
+#### S: Akıllı kartla dijital imzalama için imza alanı kullanmanın faydası nedir?
 
-A: Using a signature field for digital signing with a smart card provides a designated area within the PDF where the signature is applied. This enhances document clarity and ensures the signature's authenticity.
+C: Akıllı kartla dijital imzalama için bir imza alanının kullanılması, PDF içinde imzanın uygulandığı belirlenmiş bir alan sağlar. Bu, belgenin netliğini artırır ve imzanın orijinalliğini garanti eder.
 
-#### Q: How does the Aspose.PDF for .NET library facilitate smart card-based digital signing with a signature field?
+#### S: Aspose.PDF for .NET kütüphanesi, imza alanıyla akıllı kart tabanlı dijital imzalamayı nasıl kolaylaştırıyor?
 
-A: Aspose.PDF for .NET simplifies the process of creating a signature field, selecting a smart card certificate, and applying a digital signature to a specific area within the PDF document.
+C: Aspose.PDF for .NET, imza alanı oluşturma, akıllı kart sertifikası seçme ve PDF belgesindeki belirli bir alana dijital imza uygulama sürecini basitleştirir.
 
-#### Q: Why is selecting a specific certificate important for smart card-based signing?
+#### S: Akıllı kart tabanlı imzalama için belirli bir sertifikayı seçmek neden önemlidir?
 
-A: Selecting a specific certificate allows you to uniquely identify the signer and ensure the integrity of the signature. This helps establish trust and compliance with digital signing standards.
+C: Belirli bir sertifikayı seçmek, imzalayanı benzersiz bir şekilde tanımlamanıza ve imzanın bütünlüğünü sağlamanıza olanak tanır. Bu, güven oluşturulmasına ve dijital imzalama standartlarına uyum sağlanmasına yardımcı olur.
 
-#### Q: How does the provided source code handle the smart card-based signing process with a signature field?
+#### S: Sağlanan kaynak kodu, imza alanıyla akıllı kart tabanlı imzalama işlemini nasıl gerçekleştiriyor?
 
-A: The source code demonstrates how to create a signature field, select a smart card certificate, and apply a digital signature with specific signing information. It also shows how to verify the signature's validity.
+C: Kaynak kodu, imza alanının nasıl oluşturulacağını, akıllı kart sertifikasının nasıl seçileceğini ve belirli imzalama bilgileriyle dijital imzanın nasıl uygulanacağını gösterir. Ayrıca imzanın geçerliliğinin nasıl doğrulanacağını da gösterir.
 
-#### Q: Can I customize the appearance of the signature field?
+#### S: İmza alanının görünümünü özelleştirebilir miyim?
 
-A: Yes, you can customize the appearance of the signature field, such as its size, position, and visual representation, to align with your document's layout.
+C: Evet, imza alanının boyutunu, konumunu ve görsel gösterimini belgenizin düzeniyle hizalanacak şekilde görünümünü özelleştirebilirsiniz.
 
-#### Q: What happens if a signature fails verification during the verification step?
+#### S: Doğrulama adımı sırasında bir imzanın doğrulaması başarısız olursa ne olur?
 
-A: If a signature fails verification, an exception is thrown, indicating that the signature is not valid. This ensures that only valid and trusted signatures are accepted.
+C: Bir imzanın doğrulaması başarısız olursa imzanın geçerli olmadığını belirten bir istisna oluşturulur. Bu, yalnızca geçerli ve güvenilir imzaların kabul edilmesini sağlar.
 
-#### Q: Can I apply multiple signature fields and smart card-based signatures to a single PDF document?
+#### S: Tek bir PDF belgesine birden fazla imza alanı ve akıllı kart tabanlı imza uygulayabilir miyim?
 
-A: Absolutely, you can apply multiple signature fields and smart card-based signatures to different areas of the same PDF document, providing multiple layers of security.
+C: Kesinlikle, aynı PDF belgesinin farklı alanlarına birden fazla imza alanı ve akıllı kart tabanlı imza uygulayabilir, böylece birden fazla güvenlik katmanı sağlayabilirsiniz.
 
-#### Q: How does using a signature field enhance the overall document signing process?
+#### S: İmza alanı kullanmak genel belge imzalama sürecini nasıl geliştirir?
 
-A: Using a signature field streamlines the document signing process, as it guides the signer to place their signature in a designated area, making the signing process more organized and user-friendly.
+C: İmza alanı kullanmak, imzalayana imzasını belirlenmiş bir alana yerleştirme konusunda rehberlik ederek, imzalama sürecini daha düzenli ve kullanıcı dostu hale getirerek belge imzalama sürecini kolaylaştırır.
 
-#### Q: Are there any limitations to using signature fields with smart card-based signing?
+#### S: İmza alanlarını akıllı kart tabanlı imzalamayla kullanma konusunda herhangi bir sınırlama var mı?
 
-A: There are no inherent limitations to using signature fields with smart card-based signing. However, it's important to ensure that the chosen signature field location doesn't obscure important document content.
+C: İmza alanlarının akıllı kart tabanlı imzalamayla kullanılmasına ilişkin herhangi bir doğal sınırlama yoktur. Ancak seçilen imza alanı konumunun önemli belge içeriğini engellemediğinden emin olmak önemlidir.
 
-#### Q: Where can I find further assistance or support for implementing smart card-based signing with a signature field?
+#### S: İmza alanıyla akıllı kart tabanlı imzalamayı uygulamak için nereden daha fazla yardım veya destek bulabilirim?
 
-A: For additional guidance and support, you can refer to the official Aspose.PDF documentation and community forums, which offer valuable insights and solutions for implementing secure digital signatures.
+C: Daha fazla rehberlik ve destek için, güvenli dijital imzaların uygulanmasına yönelik değerli bilgiler ve çözümler sunan resmi Aspose.PDF belgelerine ve topluluk forumlarına başvurabilirsiniz.

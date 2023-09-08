@@ -1,51 +1,51 @@
 ---
-title: Add Subsequent Lines Indent In PDF File
-linktitle: Add Subsequent Lines Indent In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add subsequent lines indent to text in PDF file using Aspose.PDF for .NET.
+title: Fügen Sie nachfolgende Zeileneinzüge in der PDF-Datei hinzu
+linktitle: Fügen Sie nachfolgende Zeileneinzüge in der PDF-Datei hinzu
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET nachfolgende Zeileneinzüge zum Text in einer PDF-Datei hinzufügen.
 type: docs
 weight: 60
 url: /de/net/programming-with-text/add-subsequent-lines-indent/
 ---
-This tutorial will guide you through the process of adding subsequent lines indent to text in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+Dieses Tutorial führt Sie durch den Prozess des Hinzufügens nachfolgender Zeileneinzüge zum Text in einer PDF-Datei mit Aspose.PDF für .NET. Der bereitgestellte C#-Quellcode demonstriert die notwendigen Schritte.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## Anforderungen
+Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio oder ein anderer auf Ihrem Computer installierter C#-Compiler.
+- Aspose.PDF für .NET-Bibliothek. Sie können es von der offiziellen Aspose-Website herunterladen oder einen Paketmanager wie NuGet verwenden, um es zu installieren.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## Schritt 1: Richten Sie das Projekt ein
+1. Erstellen Sie ein neues C#-Projekt in Ihrer bevorzugten Entwicklungsumgebung.
+2. Fügen Sie einen Verweis auf die Aspose.PDF für .NET-Bibliothek hinzu.
 
-## Step 2: Import required namespaces
-In the code file where you want to add subsequent lines indent, add the following using directive at the top of the file:
+## Schritt 2: Erforderliche Namespaces importieren
+Fügen Sie in der Codedatei, in der Sie nachfolgende Zeilen einrücken möchten, die folgende using-Anweisung am Anfang der Datei hinzu:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## Schritt 3: Legen Sie das Dokumentverzeichnis fest
+ Suchen Sie im Code die Zeile mit der Aufschrift`string dataDir = "YOUR DOCUMENT DIRECTORY";` und ersetzen`"YOUR DOCUMENT DIRECTORY"` mit dem Pfad zu dem Verzeichnis, in dem Ihre Dokumente gespeichert sind.
 
-## Step 4: Create a new Document object
-Instantiate a new `Document` object by adding the following line of code:
+## Schritt 4: Erstellen Sie ein neues Dokumentobjekt
+ Instanziieren Sie eine neue`Document` Objekt durch Hinzufügen der folgenden Codezeile:
 
 ```csharp
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 ```
 
-## Step 5: Add a page to the document
-Add a new page to the document by using the `Add` method of the `Pages` collection. In the provided code, the new page is assigned to the variable `page`.
+## Schritt 5: Fügen Sie dem Dokument eine Seite hinzu
+ Fügen Sie dem Dokument eine neue Seite hinzu, indem Sie verwenden`Add` Methode der`Pages`Sammlung. Im bereitgestellten Code wird die neue Seite der Variablen zugewiesen`page`.
 
 ```csharp
 Aspose.Pdf.Page page = document.Pages.Add();
 ```
 
-## Step 6: Create a TextFragment with subsequent lines indent
-Instantiate a `TextFragment` object and provide the desired text. In the provided code, the text is assigned to the variable `text`. Then, initialize `TextFormattingOptions` for the `TextFragment` and specify the `SubsequentLinesIndent` value.
+## Schritt 6: Erstellen Sie ein TextFragment mit nachfolgendem Zeileneinzug
+ Instanziieren Sie a`TextFragment` widersprechen und den gewünschten Text angeben. Im bereitgestellten Code wird der Text der Variablen zugewiesen`text` . Dann initialisieren`TextFormattingOptions` für die`TextFragment`und spezifizieren Sie die`SubsequentLinesIndent` Wert.
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog." );
@@ -55,15 +55,15 @@ text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 };
 ```
 
-## Step 7: Add the TextFragment to the page
-Add the `TextFragment` object to the paragraphs collection of the page.
+## Schritt 7: Fügen Sie das TextFragment zur Seite hinzu
+ Ergänzen Sie die`TextFragment` Einspruch gegen die Absätze-Sammlung der Seite einlegen.
 
 ```csharp
 page.Paragraphs.Add(text);
 ```
 
-## Step 8: Repeat steps 6 and 7 for additional lines
-To add subsequent lines with the same indent, repeat steps 6 and 7 for each line. Update the text content as needed.
+## Schritt 8: Wiederholen Sie die Schritte 6 und 7 für weitere Zeilen
+Um weitere Zeilen mit demselben Einzug hinzuzufügen, wiederholen Sie die Schritte 6 und 7 für jede Zeile. Aktualisieren Sie den Textinhalt nach Bedarf.
 
 ```csharp
 text = new Aspose.Pdf.Text.TextFragment("Line2");
@@ -76,22 +76,22 @@ text = new Aspose.Pdf.Text.TextFragment("Line5");
 page.Paragraphs.Add(text);
 ```
 
-## Step 9: Save the PDF document
-Save the PDF document using the `Save` method of the `Document` object. Specify the output file path.
+## Schritt 9: Speichern Sie das PDF-Dokument
+ Speichern Sie das PDF-Dokument mit`Save` Methode der`Document` Objekt. Geben Sie den Pfad der Ausgabedatei an.
 
 ```csharp
 document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 ```
 
-### Sample source code for Add Subsequent Lines Indent using Aspose.PDF for .NET 
+### Beispielquellcode für das Hinzufügen nachfolgender Zeileneinzüge mit Aspose.PDF für .NET 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create new document object 
+// Neues Dokumentobjekt erstellen
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 Aspose.Pdf.Page page = document.Pages.Add();
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog.");
-// Initilize TextFormattingOptions for the text fragment and specify SubsequentLinesIndent value
+// Initialisieren Sie TextFormattingOptions für das Textfragment und geben Sie den SubsequentLinesIndent-Wert an
 text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 {
 	SubsequentLinesIndent = 20
@@ -108,47 +108,47 @@ page.Paragraphs.Add(text);
 document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 ```
 
-## Conclusion
-You have successfully added subsequent lines indent to text using Aspose.PDF for .NET. The resulting PDF file can now be found at the specified output file path.
+## Abschluss
+Sie haben mit Aspose.PDF für .NET erfolgreich den Einzug nachfolgender Zeilen in den Text eingefügt. Die resultierende PDF-Datei befindet sich nun im angegebenen Ausgabedateipfad.
 
-### FAQ's
+### FAQs
 
-#### Q: What is the focus of this tutorial?
+#### F: Was ist der Schwerpunkt dieses Tutorials?
 
-A: This tutorial provides a comprehensive guide on how to add subsequent lines indent to text in a PDF file using the Aspose.PDF for .NET library. It includes C# source code examples to illustrate the steps required for achieving this.
+A: Dieses Tutorial bietet eine umfassende Anleitung zum Hinzufügen nachfolgender Zeileneinzüge zum Text in einer PDF-Datei mithilfe der Aspose.PDF für .NET-Bibliothek. Es enthält Beispiele für C#-Quellcode, um die dafür erforderlichen Schritte zu veranschaulichen.
 
-#### Q: Which namespaces do I need to import for this tutorial?
+#### F: Welche Namespaces muss ich für dieses Tutorial importieren?
 
-A: In the code file where you intend to add subsequent lines indent, import the following namespaces at the beginning of the file:
+A: Importieren Sie in der Codedatei, in der Sie nachfolgende Zeileneinzüge hinzufügen möchten, die folgenden Namespaces am Anfang der Datei:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-#### Q: How do I specify the document directory?
+#### F: Wie lege ich das Dokumentenverzeichnis fest?
 
-A: In the code, locate the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ A: Suchen Sie im Code nach der Zeile`string dataDir = "YOUR DOCUMENT DIRECTORY";` und ersetzen`"YOUR DOCUMENT DIRECTORY"` mit dem tatsächlichen Pfad zu Ihrem Dokumentverzeichnis.
 
-#### Q: How do I create a Document object?
+#### F: Wie erstelle ich ein Document-Objekt?
 
-A: In Step 4, you'll instantiate a new `Document` object using the following line of code:
+ A: In Schritt 4 instanziieren Sie eine neue`Document` Objekt mithilfe der folgenden Codezeile:
 
 ```csharp
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 ```
 
-#### Q: How do I add a page to the document?
+#### F: Wie füge ich dem Dokument eine Seite hinzu?
 
-A: In Step 5, you'll add a new page to the document using the `Add` method of the `Pages` collection:
+ A: In Schritt 5 fügen Sie dem Dokument eine neue Seite hinzu`Add` Methode der`Pages` Sammlung:
 
 ```csharp
 Aspose.Pdf.Page page = document.Pages.Add();
 ```
 
-#### Q: How can I add subsequent lines indent to text?
+#### F: Wie kann ich dem Text nachfolgende Zeilen einrücken?
 
-A: In Step 6, you'll create a `TextFragment` object and assign the desired text to it. Then, you'll initialize `TextFormattingOptions` for the `TextFragment` and specify the `SubsequentLinesIndent` value:
+ A: In Schritt 6 erstellen Sie eine`TextFragment` Objekt und weisen Sie ihm den gewünschten Text zu. Anschließend führen Sie die Initialisierung durch`TextFormattingOptions` für die`TextFragment`und spezifizieren Sie die`SubsequentLinesIndent` Wert:
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("Your text here");
@@ -158,26 +158,26 @@ text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 };
 ```
 
-#### Q: How do I add the TextFragment to the PDF document?
+#### F: Wie füge ich das TextFragment zum PDF-Dokument hinzu?
 
-A: In Step 7, you'll add the `TextFragment` object (`text`) to the paragraphs collection of the page:
+ A: In Schritt 7 fügen Sie das hinzu`TextFragment` Objekt (`text`) zur Absatzsammlung der Seite:
 
 ```csharp
 page.Paragraphs.Add(text);
 ```
 
-#### Q: Can I repeat the process for additional lines?
+#### F: Kann ich den Vorgang für weitere Zeilen wiederholen?
 
-A: Yes, in Step 8, you can repeat the process for additional lines with the same indent by creating new `TextFragment` objects and adding them to the paragraphs collection of the page.
+ A: Ja, in Schritt 8 können Sie den Vorgang für weitere Zeilen mit demselben Einzug wiederholen, indem Sie neue erstellen`TextFragment` Objekte und fügt sie der Absatzsammlung der Seite hinzu.
 
-#### Q: How do I save the resulting PDF document?
+#### F: Wie speichere ich das resultierende PDF-Dokument?
 
-A: After adding the text with subsequent lines indent, use the `Save` method of the `Document` object to save the PDF document:
+ A: Nachdem Sie den Text mit dem Einzug nachfolgender Zeilen hinzugefügt haben, verwenden Sie die`Save` Methode der`Document` Objekt zum Speichern des PDF-Dokuments:
 
 ```csharp
 document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 ```
 
-#### Q: What is the key takeaway from this tutorial?
+#### F: Was ist die wichtigste Erkenntnis aus diesem Tutorial?
 
-A: By following this tutorial, you've successfully learned how to enhance the readability of text in a PDF document by adding subsequent lines indent using Aspose.PDF for .NET. This technique can be useful for various types of documents and reports.
+A: Durch die Befolgung dieses Tutorials haben Sie erfolgreich gelernt, wie Sie die Lesbarkeit von Text in einem PDF-Dokument verbessern, indem Sie mit Aspose.PDF für .NET nachfolgende Zeilen einrücken. Diese Technik kann für verschiedene Arten von Dokumenten und Berichten nützlich sein.

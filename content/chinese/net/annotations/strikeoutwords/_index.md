@@ -1,33 +1,33 @@
 ---
-title: Strike Out Words
-linktitle: Strike Out Words
-second_title: Aspose.PDF for .NET API Reference
-description: This article provides a step-by-step guide to using Aspose.PDF for .NET's Strike Out Words feature, including step by step guide and explanations
+title: 删除单词
+linktitle: 删除单词
+second_title: Aspose.PDF for .NET API 参考
+description: 本文提供了使用 Aspose.PDF for .NET 的删除单词功能的分步指南，包括分步指南和说明
 type: docs
 weight: 150
 url: /zh/net/annotations/strikeoutwords/
 ---
-Aspose.PDF for .NET is a PDF document manipulation and processing library that provides various features to create, modify, and convert PDF files. One of the useful features that Aspose.PDF provides is the ability to strike out words or phrases in a PDF document using C# source code. In this article, we will provide a step-by-step guide on how to strike out words using Aspose.PDF for .NET.
+Aspose.PDF for .NET 是一个 PDF 文档操作和处理库，它提供了创建、修改和转换 PDF 文件的各种功能。 Aspose.PDF 提供的有用功能之一是能够使用 C# 源代码删除 PDF 文档中的单词或短语。在本文中，我们将提供有关如何使用 Aspose.PDF for .NET 删除单词的分步指南。
 
-## Step 1: Loading the PDF document
-The first step is to load the PDF document that you want to modify. In this tutorial, we will load a PDF document named "input.pdf" from the "YOUR DOCUMENT DIRECTORY" folder. 
+## 第 1 步：加载 PDF 文档
+第一步是加载要修改的 PDF 文档。在本教程中，我们将从“您的文档目录”文件夹中加载名为“input.pdf”的 PDF 文档。 
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document document = new Document(dataDir + "input.pdf");
 ```
 
-## Step 2: Searching for text fragments
-To strike out specific words or phrases in the PDF document, you first need to search for them. Aspose.PDF provides a TextFragmentAbsorber class that can be used to search for a specific text fragment in the PDF document.
+## 第二步：搜索文本片段
+要删除 PDF 文档中的特定单词或短语，您首先需要搜索它们。 Aspose.PDF提供了一个TextFragmentAbsorber类，可用于搜索PDF文档中的特定文本片段。
 
 ```csharp
 Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.TextFragmentAbsorber("Estoque");
 ```
 
-In the above code, we are searching for the text fragment "Estoque" in the PDF document. You can modify this to search for any other word or phrase that you want to strike out.
+在上面的代码中，我们正在 PDF 文档中搜索文本片段“Estoque”。您可以修改此选项以搜索您想要删除的任何其他单词或短语。
 
-## Step 3: Striking out the text fragments
-After finding the text fragments, the next step is to strike them out. Aspose.PDF provides a StrikeOutAnnotation class that can be used to create a strike-out annotation for the text fragment. 
+## 第三步：删除文本片段
+找到文本片段后，下一步就是将它们删除。 Aspose.PDF提供了一个StrikeOutAnnotation类，可用于为文本片段创建删除线注释。 
 
 ```csharp
 Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle((float)textFragment.Position.XIndent, (float)textFragment.Position.YIndent, (float)textFragment.Position.XIndent + (float)textFragment.Rectangle.Width, (float)textFragment.Position.YIndent + (float)textFragment.Rectangle.Height);
@@ -39,46 +39,46 @@ strikeOut.Color = Aspose.Pdf.Color.Red;
 textFragment.Page.Annotations.Add(strikeOut);
 ```
 
-In the above code, we are creating a strike-out annotation for each text fragment that we found. We are setting the opacity, border, and color of the strike-out annotation as well.
+在上面的代码中，我们为找到的每个文本片段创建删除线注释。我们还设置删除线注释的不透明度、边框和颜色。
 
-## Step 4: Saving the modified PDF document
-After striking out the text fragments, the save the modified document.
+## 第四步：保存修改后的PDF文档
+删除文本片段后，保存修改后的文档。
 
 ```csharp
 dataDir = dataDir + "StrikeOutWords_out.pdf";
 document.Save(dataDir);
 ```
 
-### Example source code for Strike Out Words using Aspose.PDF for .NET
+### 使用 Aspose.PDF for .NET 删除单词的示例源代码
 
 
 ```csharp
 
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+//打开文档
 Document document = new Document(dataDir + "input.pdf");
 
-// Create TextFragment Absorber instance to search particular text fragment
+//创建 TextFragment Absorber 实例来搜索特定文本片段
 Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.TextFragmentAbsorber("Estoque");
-// Iterate through pages of PDF document
+//遍历 PDF 文档的页面
 for (int i = 1; i <= document.Pages.Count; i++)
 {
-	// Get first page of PDF document
+	//获取PDF文档的第一页
 	Page page = document.Pages[1];
 	page.Accept(textFragmentAbsorber);
 }
 
-// Create a collection of Absorbed text
+//创建吸收文本的集合
 Aspose.Pdf.Text.TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
 
-// Iterate on above collection
+//迭代上面的集合
 for (int j = 1; j <= textFragmentCollection.Count; j++)
 {
 	Aspose.Pdf.Text.TextFragment textFragment = textFragmentCollection[j];
 
-	// Get rectangular dimensions of TextFragment object  	
+	//获取 TextFragment 对象的矩形尺寸
 	Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle(
 				(float)textFragment.Position.XIndent,
 				(float)textFragment.Position.YIndent,
@@ -87,39 +87,39 @@ for (int j = 1; j <= textFragmentCollection.Count; j++)
 				(float)textFragment.Position.YIndent +
 				(float)textFragment.Rectangle.Height);
 
-	// Instantiate StrikeOut Annotation instance
+	//实例化删除线注释实例
 	StrikeOutAnnotation strikeOut = new StrikeOutAnnotation(textFragment.Page, rect);
-	// Set opacity for annotation
+	//设置注释的不透明度
 	strikeOut.Opacity = .80f;
-	// Set the border for annotation instance
+	//设置注释实例的边框
 	strikeOut.Border = new Border(strikeOut);
-	// Set the color of annotation
+	//设置注释颜色
 	strikeOut.Color = Aspose.Pdf.Color.Red;
-	// Add annotation to annotations collection of TextFragment
+	//将注释添加到 TextFragment 的注释集合中
 	textFragment.Page.Annotations.Add(strikeOut);
 }
 dataDir = dataDir + "StrikeOutWords_out.pdf";
 document.Save(dataDir);
 ```
 
-## Conclusion
+## 结论
 
-In this tutorial, we learned how to use Aspose.PDF for .NET to strike out specific words in a PDF document. By following the step-by-step guide and using the provided C# source code, you can easily load a PDF document, search for specific text fragments, and create strike-out annotations to visually mark and strike out those words. Aspose.PDF for .NET provides a simple and effective way to manipulate PDF documents programmatically, making it a valuable tool for developers working with PDF files in .NET applications.
+在本教程中，我们学习了如何使用 Aspose.PDF for .NET 删除 PDF 文档中的特定单词。通过遵循分步指南并使用提供的 C# 源代码，您可以轻松加载 PDF 文档、搜索特定文本片段并创建删除线注释以直观地标记和删除这些单词。 Aspose.PDF for .NET 提供了一种简单有效的方法来以编程方式操作 PDF 文档，使其成为开发人员在 .NET 应用程序中处理 PDF 文件的宝贵工具。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What is Aspose.PDF for .NET?
+#### 问：什么是 Aspose.PDF for .NET？
 
-A: Aspose.PDF for .NET is a powerful library that allows developers to create, edit, and manipulate PDF documents programmatically in .NET applications. It provides a wide range of features to work with PDF files, including text extraction, annotation handling, form filling, and much more.
+答：Aspose.PDF for .NET 是一个功能强大的库，允许开发人员在 .NET 应用程序中以编程方式创建、编辑和操作 PDF 文档。它提供了广泛的处理 PDF 文件的功能，包括文本提取、注释处理、表单填写等等。
 
-#### Q: Can I use Aspose.PDF for .NET to strike out specific words in a PDF document?
+#### 问：我可以使用 Aspose.PDF for .NET 删除 PDF 文档中的特定单词吗？
 
-A: Yes, Aspose.PDF for .NET provides functionality to search for specific text fragments in a PDF document and then create strike-out annotations to visually mark and strike out those words.
+答：是的，Aspose.PDF for .NET 提供了在 PDF 文档中搜索特定文本片段的功能，然后创建删除线注释以直观地标记和删除这些单词。
 
-#### Q: How do I specify the text I want to strike out in the PDF document?
+#### 问：如何在 PDF 文档中指定要删除的文本？
 
-A: To specify the text you want to strike out, you can use the `TextFragmentAbsorber` class provided by Aspose.PDF for .NET. It allows you to search for a specific text fragment in the PDF document based on your desired criteria.
+答：要指定要删除的文本，可以使用`TextFragmentAbsorber`Aspose.PDF for .NET 提供的类。它允许您根据所需的条件在 PDF 文档中搜索特定的文本片段。
 
-#### Q: Can I customize the appearance of the strike-out annotation?
+#### 问：我可以自定义删除线注释的外观吗？
 
-A: Yes, you can customize various properties of the strike-out annotation, such as the opacity, border style, and color. This allows you to tailor the appearance of the strike-out annotation to your specific requirements.
+答：是的，您可以自定义删除线注释的各种属性，例如不透明度、边框样式和颜色。这使您可以根据您的具体要求定制删除线注释的外观。

@@ -1,51 +1,51 @@
 ---
-title: Text In Footer Of PDF File
-linktitle: Text In Footer Of PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn to add text in the footer of PDF file with Aspose.PDF for .NET.
+title: Text i sidfot av PDF-fil
+linktitle: Text i sidfot av PDF-fil
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig att lägga till text i sidfoten i PDF-filen med Aspose.PDF för .NET.
 type: docs
 weight: 180
 url: /sv/net/programming-with-stamps-and-watermarks/text-in-footer/
 ---
-In this tutorial, we are going to learn how to add text in the footer of PDF file using Aspose.PDF for .NET. Follow the steps below:
+I den här handledningen kommer vi att lära oss hur du lägger till text i sidfoten i PDF-filen med Aspose.PDF för .NET. Följ stegen nedan:
 
-## Step 1: Project preparation
+## Steg 1: Projektförberedelser
 
-Make sure you have installed Aspose.PDF for .NET and created a C# project.
+Se till att du har installerat Aspose.PDF för .NET och skapat ett C#-projekt.
 
-## Step 2: Importing namespaces
+## Steg 2: Importera namnutrymmen
 
-Add the following namespaces to your C# source file:
+Lägg till följande namnområden till din C#-källfil:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Opening the document
+## Steg 3: Öppna dokumentet
 
-Open the existing PDF document using the path provided:
+Öppna det befintliga PDF-dokumentet med den angivna sökvägen:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document pdfDocument = new Document(dataDir + "TextinFooter.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to your documents directory.
+Se till att ersätta "DIN DOKUMENTKATOLOG" med den faktiska sökvägen till din dokumentkatalog.
 
-## Step 4: Create footer text
+## Steg 4: Skapa sidfotstext
 
-Create a new text stamp with the text you want to add in the footer:
+Skapa en ny textstämpel med texten du vill lägga till i sidfoten:
 
 ```csharp
 TextStamp textStamp = new TextStamp("footer text");
 ```
 
-You can customize the text by changing its properties like bottom margin, horizontal alignment, and vertical alignment.
+Du kan anpassa texten genom att ändra dess egenskaper som bottenmarginal, horisontell justering och vertikal justering.
 
-## Step 5: Add footer text to all pages
+## Steg 5: Lägg till sidfotstext på alla sidor
 
-Go through all the pages of the PDF document and add the text stamp in the footer:
+Gå igenom alla sidor i PDF-dokumentet och lägg till textstämpeln i sidfoten:
 
 ```csharp
 foreach(Page page in pdfDocument.Pages)
@@ -54,9 +54,9 @@ foreach(Page page in pdfDocument.Pages)
 }
 ```
 
-## Step 6: Saving the PDF Document
+## Steg 6: Spara PDF-dokumentet
 
-Once the footer text has been added on all pages, save the updated PDF document:
+När sidfoten har lagts till på alla sidor, spara det uppdaterade PDF-dokumentet:
 
 ```csharp
 dataDir = dataDir + "TextinFooter_out.pdf";
@@ -64,72 +64,72 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nText in footer added successfully.\nFile saved at: " + dataDir);
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where you want to save the PDF document.
+Var noga med att ersätta "DIN DOKUMENTKATOLOG" med den faktiska sökvägen till katalogen där du vill spara PDF-dokumentet.
 
-### Sample source code for Textin Footer using Aspose.PDF for .NET 
+### Exempel på källkod för Textin Footer med Aspose.PDF för .NET 
 ```csharp
 
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Öppna dokumentet
 Document pdfDocument = new Document(dataDir+ "TextinFooter.pdf");
 
-// Create footer
+// Skapa sidfot
 TextStamp textStamp = new TextStamp("Footer Text");
 
-// Set properties of the stamp
+// Ställ in egenskaper för stämpeln
 textStamp.BottomMargin = 10;
 textStamp.HorizontalAlignment = HorizontalAlignment.Center;
 textStamp.VerticalAlignment = VerticalAlignment.Bottom;
 
-// Add footer on all pages
+// Lägg till sidfot på alla sidor
 foreach (Page page in pdfDocument.Pages)
 {
 	page.AddStamp(textStamp);
 }
 dataDir = dataDir + "TextinFooter_out.pdf";
 
-// Save updated PDF file
+// Spara uppdaterad PDF-fil
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nText in footer added successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
+## Slutsats
 
-Congratulation ! You have learned how to add text in the footer of a PDF document using Aspose.PDF for .NET. You can now customize your footers by adding additional text to your PDF documents.
+Grattis! Du har lärt dig hur du lägger till text i sidfoten i ett PDF-dokument med Aspose.PDF för .NET. Du kan nu anpassa dina sidfötter genom att lägga till ytterligare text i dina PDF-dokument.
 
-### FAQ's for text in footer of PDF file
+### Vanliga frågor för text i sidfoten i PDF-filen
 
-#### Q: What is the purpose of adding text in the footer of a PDF document?
+#### F: Vad är syftet med att lägga till text i sidfoten i ett PDF-dokument?
 
-A: Adding text in the footer of a PDF document allows you to include important information, such as copyright notices, page numbers, document version, or any other text that you want to appear consistently at the bottom of each page.
+S: Genom att lägga till text i sidfoten i ett PDF-dokument kan du inkludera viktig information, såsom upphovsrättsmeddelanden, sidnummer, dokumentversion eller annan text som du vill ska visas konsekvent längst ned på varje sida.
 
-#### Q: How does the provided C# source code achieve the addition of text in the footer of a PDF document?
+#### F: Hur gör den medföljande C#-källkoden tillägg av text i sidfoten i ett PDF-dokument?
 
-A: The code demonstrates the process of opening an existing PDF document, creating a text stamp with the desired footer text, customizing the text properties, adding the text stamp to all pages, and finally saving the updated PDF document with the added footer text.
+S: Koden demonstrerar processen att öppna ett befintligt PDF-dokument, skapa en textstämpel med önskad sidfotstext, anpassa textegenskaperna, lägga till textstämpeln på alla sidor och slutligen spara det uppdaterade PDF-dokumentet med den tillagda sidfotstexten.
 
-#### Q: Can I modify the appearance of the footer text, such as its font, size, color, and alignment?
+#### F: Kan jag ändra utseendet på sidfotstexten, såsom teckensnitt, storlek, färg och justering?
 
-A: Yes, you can customize the appearance of the footer text by modifying the properties of the `TextStamp` object. The code example includes setting properties like bottom margin, horizontal alignment, and vertical alignment. You can also adjust the font, size, color, and other text-related properties.
+ S: Ja, du kan anpassa utseendet på sidfotstexten genom att ändra egenskaperna för`TextStamp` objekt. Kodexemplet inkluderar inställningsegenskaper som bottenmarginal, horisontell justering och vertikal justering. Du kan också justera teckensnitt, storlek, färg och andra textrelaterade egenskaper.
 
-#### Q: Is it possible to add different text to each page's footer?
+#### F: Är det möjligt att lägga till olika texter i sidfoten på varje sida?
 
-A: Yes, you can add different text to each page's footer by creating separate `TextStamp` objects with different text content or properties and then adding them to specific pages as needed.
+ S: Ja, du kan lägga till olika texter i sidfoten på varje sida genom att skapa separata`TextStamp` objekt med olika textinnehåll eller egenskaper och sedan lägga till dem på specifika sidor efter behov.
 
-#### Q: How do I ensure the footer text appears consistently on every page of the PDF document?
+#### F: Hur säkerställer jag att sidfoten visas konsekvent på varje sida i PDF-dokumentet?
 
-A: By using a loop that iterates through all the pages of the PDF document and adding the same text stamp to each page, you ensure that the footer text appears consistently on every page.
+S: Genom att använda en slinga som itererar genom alla sidor i PDF-dokumentet och lägga till samma textstämpel på varje sida säkerställer du att sidfoten visas konsekvent på varje sida.
 
-#### Q: Can I add multiple lines of text or format the footer text with line breaks?
+#### F: Kan jag lägga till flera rader text eller formatera sidfotstexten med radbrytningar?
 
-A: Yes, you can add multiple lines of text to the footer by including line breaks in the text string. For example, you can use the escape sequence `\n` to indicate a line break in the text.
+ S: Ja, du kan lägga till flera rader text i sidfoten genom att inkludera radbrytningar i textsträngen. Du kan till exempel använda flyktsekvensen`\n` för att indikera en radbrytning i texten.
 
-#### Q: What happens if I want to add different content to the header and footer of the same PDF document?
+#### F: Vad händer om jag vill lägga till olika innehåll i sidhuvudet och sidfoten i samma PDF-dokument?
 
-A: To add different content to the header and footer sections, you would follow similar steps for both sections. The code demonstrates adding text to the footer; you can use a similar approach to add text to the header.
+S: För att lägga till olika innehåll i sidhuvuds- och sidfotssektionerna, skulle du följa liknande steg för båda sektionerna. Koden visar hur man lägger till text i sidfoten; du kan använda ett liknande tillvägagångssätt för att lägga till text i rubriken.
 
-#### Q: Is it possible to add images or other elements alongside the footer text using this approach?
+#### F: Är det möjligt att lägga till bilder eller andra element vid sidan av sidfotstexten med detta tillvägagångssätt?
 
-A: While the provided code specifically demonstrates adding text to the footer, you can extend the approach to add other elements like images, lines, shapes, or any other content to the footer section using the Aspose.PDF library.
+S: Även om den medföljande koden specifikt demonstrerar att lägga till text i sidfoten, kan du utöka tillvägagångssättet för att lägga till andra element som bilder, linjer, former eller annat innehåll till sidfotssektionen med hjälp av biblioteket Aspose.PDF.

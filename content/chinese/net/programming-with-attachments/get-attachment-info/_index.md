@@ -1,50 +1,50 @@
 ---
-title: Get Attachment Info
-linktitle: Get Attachment Info
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to get information about a specific attachment in a PDF file with Aspose.PDF for .NET. Step by step guide.
+title: 获取附件信息
+linktitle: 获取附件信息
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 获取有关 PDF 文件中特定附件的信息。一步步指导。
 type: docs
 weight: 50
 url: /zh/net/programming-with-attachments/get-attachment-info/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to get the information about a specific attachment of a PDF file using Aspose.PDF for .NET.
+在本教程中，我们将引导您逐步完成以下 C# 源代码，以使用 Aspose.PDF for .NET 获取有关 PDF 文件的特定附件的信息。
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+在开始之前，请确保您已经安装了 Aspose.PDF 库并设置了开发环境。还具备 C# 编程的基础知识。
 
-### Step 1: Document Directory Setup
+### 第 1 步：文档目录设置
 
-In the source code provided, you need to specify the directory where the PDF file is located from which you want to get the attachment information. Change the "dataDir" variable to the desired directory.
+在提供的源代码中，您需要指定要从中获取附件信息的 PDF 文件所在的目录。将“dataDir”变量更改为所需的目录。
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### Step 2: Open the existing PDF document
+### 步骤 2：打开现有 PDF 文档
 
-We open the existing PDF document using the specified path.
+我们使用指定的路径打开现有的 PDF 文档。
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetAttachmentInfo.pdf");
 ```
 
-### Step 3: Obtaining a Specific Attachment
+### 第 3 步：获取特定附件
 
-We retrieve a specific attachment from the document's attachments collection. In this example, we get the first attachment using index 1.
+我们从文档的附件集合中检索特定的附件。在此示例中，我们使用索引 1 获取第一个附件。
 
 ```csharp
 FileSpecification fileSpecification = pdfDocument.EmbeddedFiles[1];
 ```
 
-### Step 4: Get File Properties
+### 第 4 步：获取文件属性
 
-We display attachment properties such as name, description, MIME type, control hash, date created, date modified, and size.
+我们显示附件属性，例如名称、描述、MIME 类型、控制哈希、创建日期、修改日期和大小。
 
 ```csharp
 Console.WriteLine("Name: {0}", fileSpecification.Name);
 Console.WriteLine("Description: {0}", fileSpecification.Description);
 Console.WriteLine("MIME Type: {0}", fileSpecification.MIMEType);
 
-// Check if object parameters contain additional information
+//检查对象参数是否包含附加信息
 if (fileSpecification.Params != null)
 {
 Console.WriteLine("Check Hash: {0}", fileSpecification.Params.CheckSum);
@@ -54,21 +54,21 @@ Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
 }
 ```
 
-### Sample source code for Get Attachment Info using Aspose.PDF for .NET
+### 使用 Aspose.PDF for .NET 获取附件信息的示例源代码
  
 ```csharp
 
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+//打开文档
 Document pdfDocument = new Document(dataDir + "GetAttachmentInfo.pdf");
-// Get particular embedded file
+//获取特定的嵌入文件
 FileSpecification fileSpecification = pdfDocument.EmbeddedFiles[1];
-// Get the file properties
+//获取文件属性
 Console.WriteLine("Name: {0}", fileSpecification.Name);
 Console.WriteLine("Description: {0}", fileSpecification.Description);
 Console.WriteLine("Mime Type: {0}", fileSpecification.MIMEType);
-// Check if parameter object contains the parameters
+//检查参数对象是否包含参数
 if (fileSpecification.Params != null)
 {
 	Console.WriteLine("CheckSum: {0}",
@@ -82,44 +82,44 @@ if (fileSpecification.Params != null)
 
 ```
 
-## Conclusion
+## 结论
 
-In this tutorial, we explained how to get the information about a specific attachment of a PDF file using Aspose.PDF for .NET. You can now use this knowledge to extract and view attachment information from your PDF files.
+在本教程中，我们解释了如何使用 Aspose.PDF for .NET 获取有关 PDF 文件的特定附件的信息。您现在可以使用这些知识从 PDF 文件中提取和查看附件信息。
 
-### FAQ's for get attachment info 
+### 获取附件信息的常见问题解答 
 
-#### Q: Why would I need to retrieve information about specific attachments in a PDF document?
+#### 问：为什么我需要检索有关 PDF 文档中特定附件的信息？
 
-A: Retrieving attachment information allows you to understand and analyze the details of embedded files within a PDF, helping you manage and work with attachments effectively.
+答：检索附件信息可以让您了解和分析 PDF 中嵌入文件的详细信息，帮助您有效管理和使用附件。
 
-#### Q: What type of information can I gather about a specific attachment using this tutorial?
+#### 问：使用本教程我可以收集有关特定附件的哪些类型的信息？
 
-A: This tutorial demonstrates how to retrieve and display attachment properties such as name, description, MIME type, control hash, creation date, modification date, and size.
+答：本教程演示如何检索和显示附件属性，例如名称、描述、MIME 类型、控制哈希、创建日期、修改日期和大小。
 
-#### Q: How does this tutorial help me gather attachment information using Aspose.PDF for .NET?
+#### 问：本教程如何帮助我使用 Aspose.PDF for .NET 收集附件信息？
 
-A: This tutorial provides step-by-step instructions and C# source code to access and display information about a specific attachment within a PDF document.
+答：本教程提供分步说明和 C# 源代码，用于访问和显示有关 PDF 文档中特定附件的信息。
 
-#### Q: Can I retrieve information about all attachments instead of a specific attachment using this tutorial?
+#### 问：我可以使用本教程检索有关所有附件而不是特定附件的信息吗？
 
-A: This tutorial is focused on obtaining information about a specific attachment, but you can adapt the code to loop through all attachments and gather their information.
+答：本教程的重点是获取有关特定附件的信息，但您可以调整代码以循环所有附件并收集其信息。
 
-#### Q: What is the purpose of the "Check Hash" property displayed in the attachment information?
+#### 问：附件信息中显示的“检查哈希值”属性的用途是什么？
 
-A: The "Check Hash" property represents the control hash value of the attachment, which can be used to verify the integrity of the attachment.
+答：“Check Hash”属性代表附件的控制哈希值，可用于验证附件的完整性。
 
-#### Q: How can I modify this code to retrieve information about attachments with different indices?
+#### 问：如何修改此代码以检索有关具有不同索引的附件的信息？
 
-A: You can change the index value (e.g., `pdfDocument.EmbeddedFiles[1]`) to retrieve information about attachments at different indices within the PDF document.
+答：您可以更改索引值（例如，`pdfDocument.EmbeddedFiles[1]`) 检索有关 PDF 文档中不同索引处的附件的信息。
 
-#### Q: Can I use this knowledge to gather information from password-protected PDF files?
+#### 问：我可以利用这些知识从受密码保护的 PDF 文件中收集信息吗？
 
-A: Yes, you can apply similar principles to gather attachment information from password-protected PDF files using Aspose.PDF for .NET.
+答：是的，您可以应用类似的原则，使用 Aspose.PDF for .NET 从受密码保护的 PDF 文件中收集附件信息。
 
-#### Q: How does Aspose.PDF for .NET simplify the process of obtaining attachment information?
+#### 问：Aspose.PDF for .NET 如何简化获取附件信息的过程？
 
-A: Aspose.PDF for .NET provides an intuitive API that allows you to access and manipulate attachment properties in PDF documents with ease.
+答：Aspose.PDF for .NET 提供了直观的 API，使您可以轻松访问和操作 PDF 文档中的附件属性。
 
-#### Q: Are there specific scenarios where gathering attachment information is recommended?
+#### 问：是否存在建议收集附件信息的特定场景？
 
-A: Gathering attachment information is valuable when you need to understand the details of embedded files, such as verifying their properties or auditing attachments in a document.
+答：当您需要了解嵌入文件的详细信息（例如验证其属性或审核文档中的附件）时，收集附件信息非常有价值。

@@ -1,33 +1,33 @@
 ---
-title: Add Image In PDF File
-linktitle: Add Image In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily add an image in PDF file using Aspose.PDF for .NET.
+title: إضافة صورة في ملف PDF
+linktitle: إضافة صورة في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: قم بإضافة صورة بسهولة في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 10
 url: /ar/net/programming-with-images/add-image/
 ---
-This guide will take you step by step how to add an image in PDF file using Aspose.PDF for .NET. Make sure you have already set up your environment and follow the steps below:
+سيرشدك هذا الدليل خطوة بخطوة إلى كيفية إضافة صورة في ملف PDF باستخدام Aspose.PDF لـ .NET. تأكد من أنك قمت بالفعل بإعداد بيئتك واتبع الخطوات التالية:
 
-## Step 1: Define the document directory
+## الخطوة 1: تحديد دليل المستند
 
-Before you start, make sure you set the correct directory for the documents. Replace `"YOUR DOCUMENT DIRECTORY"` in the code with the path to the directory where your PDF document is located.
+ قبل البدء، تأكد من تعيين الدليل الصحيح للمستندات. يستبدل`"YOUR DOCUMENT DIRECTORY"` في الكود الذي يحتوي على المسار إلى الدليل الذي يوجد به مستند PDF الخاص بك.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Open the document
+## الخطوة 2: افتح المستند
 
-In this step, we will open the PDF document using the `Document` class of Aspose.PDF. Use the `Document` constructor and pass the path to the PDF document.
+في هذه الخطوة، سنقوم بفتح مستند PDF باستخدام الملف`Document` فئة Aspose.PDF. استخدم ال`Document` منشئ وتمرير المسار إلى وثيقة PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "AddImage.pdf");
 ```
 
-## Step 3: Set Image Coordinates
+## الخطوة 3: تعيين إحداثيات الصورة
 
-Set the coordinates of the image you want to add. The variables `lowerLeftX`, `lowerLeftY`, `upperRightX` and `upperRightY` represent the coordinates of the lower left corner and the upper right corner of the image respectively.
+ قم بتعيين إحداثيات الصورة التي تريد إضافتها. المتغيرات`lowerLeftX`, `lowerLeftY`, `upperRightX` و`upperRightY` تمثل إحداثيات الزاوية اليسرى السفلى والزاوية اليمنى العليا من الصورة على التوالي.
 
 ```csharp
 int lowerLeftX = 100;
@@ -36,41 +36,41 @@ int upperRightX = 200;
 int upperRightY = 200;
 ```
 
-## Step 4: Get the page where the image should be added
+## الخطوة 4: احصل على الصفحة التي يجب إضافة الصورة إليها
 
-To add the image to a specific page of the PDF document, we first need to retrieve that page. In this example, we add the image to the second page (index 1) of the document.
+لإضافة الصورة إلى صفحة معينة من مستند PDF، نحتاج أولاً إلى استرداد تلك الصفحة. في هذا المثال، نضيف الصورة إلى الصفحة الثانية (الفهرس 1) من المستند.
 
 ```csharp
 Page page = pdfDocument.Pages[1];
 ```
 
-## Step 5: Load the image from a stream
+## الخطوة 5: تحميل الصورة من الدفق
 
-We will now load the image we want to add to the PDF document. This example assumes you have an image file named `aspose-logo.jpg` in the same directory as your document. Replace the file name if necessary.
+ سنقوم الآن بتحميل الصورة التي نريد إضافتها إلى مستند PDF. يفترض هذا المثال أن لديك ملف صورة اسمه`aspose-logo.jpg` في نفس الدليل مثل المستند الخاص بك. استبدل اسم الملف إذا لزم الأمر.
 
 ```csharp
 FileStream imageStream = new FileStream(dataDir + "aspose-logo.jpg", FileMode.Open);
 ```
 
-## Step 6: Add the Image to Page Assets
+## الخطوة 6: إضافة الصورة إلى أصول الصفحة
 
-To use the image in the PDF document, we need to add it to the page's resource image collection.
+لاستخدام الصورة في مستند PDF، نحتاج إلى إضافتها إلى مجموعة صور موارد الصفحة.
 
 ```csharp
 page.Resources.Images.Add(imageStream);
 ```
 
-## Step 7: Save current graphics state
+## الخطوة 7: حفظ حالة الرسومات الحالية
 
-Before drawing the image, we need to save the current graphics state using the `GSave` operator. This ensures that changes to the graphics state can be rolled back later.
+ قبل رسم الصورة، نحتاج إلى حفظ حالة الرسومات الحالية باستخدام ملف`GSave` المشغل أو العامل. وهذا يضمن إمكانية التراجع عن التغييرات التي تم إجراؤها على حالة الرسومات لاحقًا.
 
 ```csharp
 page.Contents.Add(new Aspose.Pdf.Operators.GSave());
 ```
 
-## Step 8: Create Rectangle and Matrix objects
+## الخطوة 8: إنشاء كائنات مستطيلة ومصفوفة
 
-We will now create a `Rectangle` object and a `Matrix` object. The rectangle represents the position and size of the image, while the matrix defines how the image should be placed.
+ سنقوم الآن بإنشاء ملف`Rectangle` كائن و`Matrix`هدف. يمثل المستطيل موضع الصورة وحجمها، بينما تحدد المصفوفة كيفية وضع الصورة.
 
 ```csharp
 Aspose.Pdf.Rectangle rectangle = new Aspose.Pdf.Rectangle(lower
@@ -79,121 +79,121 @@ LeftX, lowerLeftY, upperRightX, upperRightY);
 Matrix matrix = new Matrix(new double[] { rectangle.URX - rectangle.LLX, 0, 0, rectangle.URY - rectangle.LLY, rectangle.LLX, rectangle.LLY });
 ```
 
-## Step 9: Concatenate matrix for image placement
+## الخطوة 9: قم بتسلسل المصفوفة لوضع الصورة
 
-To specify how the image should be placed in the rectangle, we use the `ConcatenateMatrix` operator. This operator defines the transformation matrix that maps the coordinate space of the image to the coordinate space of the page.
+ لتحديد كيفية وضع الصورة في المستطيل، نستخدم`ConcatenateMatrix` المشغل أو العامل. يحدد هذا العامل مصفوفة التحويل التي تعين المساحة الإحداثية للصورة إلى المساحة الإحداثية للصفحة.
 
 ```csharp
 page.Contents.Add(new Aspose.Pdf.Operators.ConcatenateMatrix(matrix));
 ```
 
-## Step 10: Draw the image
+## الخطوة 10: ارسم الصورة
 
-In this step we will draw the image on the page using the `Do` operator. The `Do` operator takes the image name from the resources and draws it onto the page.
+ في هذه الخطوة سوف نقوم برسم الصورة على الصفحة باستخدام`Do` المشغل أو العامل. ال`Do` يأخذ عامل التشغيل اسم الصورة من الموارد ويرسمه على الصفحة.
 
 ```csharp
 XImage ximage = page.Resources.Images[page.Resources.Images.Count];
 page.Contents.Add(new Aspose.Pdf.Operators.Do(ximage.Name));
 ```
 
-## Step 11: Restore graphics state
+## الخطوة 11: استعادة حالة الرسومات
 
-After drawing the image, we need to restore the previous graphics state using the `GRestore` operator.
+ بعد رسم الصورة، نحتاج إلى استعادة حالة الرسومات السابقة باستخدام الأمر`GRestore` المشغل أو العامل.
 
 ```csharp
 page.Contents.Add(new Aspose.Pdf.Operators.GRestore());
 ```
 
-## Step 12: Save the updated document
+## الخطوة 12: احفظ المستند المحدث
 
-Finally, we'll save the updated document to a new file. Update the `dataDir` variable with the desired output directory and filename.
+ وأخيرًا، سنقوم بحفظ المستند المحدث في ملف جديد. تحديث`dataDir` متغير مع دليل الإخراج واسم الملف المطلوب.
 
 ```csharp
 dataDir = dataDir + "AddImage_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Add Image using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لإضافة صورة باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir+ "AddImage.pdf");
-// Set coordinates
+// تعيين الإحداثيات
 int lowerLeftX = 100;
 int lowerLeftY = 100;
 int upperRightX = 200;
 int upperRightY = 200;
-// Get the page where image needs to be added
+//احصل على الصفحة التي تريد إضافة الصورة إليها
 Page page = pdfDocument.Pages[1];
-// Load image into stream
+// تحميل الصورة في الدفق
 FileStream imageStream = new FileStream(dataDir + "aspose-logo.jpg", FileMode.Open);
-// Add image to Images collection of Page Resources
+// إضافة صورة إلى مجموعة الصور لموارد الصفحة
 page.Resources.Images.Add(imageStream);
-// Using GSave operator: this operator saves current graphics state
+// استخدام عامل تشغيل GSave: يقوم هذا المشغل بحفظ حالة الرسومات الحالية
 page.Contents.Add(new Aspose.Pdf.Operators.GSave());
-// Create Rectangle and Matrix objects
+// إنشاء كائنات مستطيلة ومصفوفة
 Aspose.Pdf.Rectangle rectangle = new Aspose.Pdf.Rectangle(lowerLeftX, lowerLeftY, upperRightX, upperRightY);
 Matrix matrix = new Matrix(new double[] { rectangle.URX - rectangle.LLX, 0, 0, rectangle.URY - rectangle.LLY, rectangle.LLX, rectangle.LLY });
-// Using ConcatenateMatrix (concatenate matrix) operator: defines how image must be placed
+// استخدام عامل ConcatenateMatrix (مصفوفة متسلسلة): يحدد كيفية وضع الصورة
 page.Contents.Add(new Aspose.Pdf.Operators.ConcatenateMatrix(matrix));
 XImage ximage = page.Resources.Images[page.Resources.Images.Count];
-// Using Do operator: this operator draws image
+// استخدام عامل التشغيل Do: يقوم هذا العامل برسم الصورة
 page.Contents.Add(new Aspose.Pdf.Operators.Do(ximage.Name));
-// Using GRestore operator: this operator restores graphics state
+// استخدام مشغل GRestore: يقوم هذا المشغل باستعادة حالة الرسومات
 page.Contents.Add(new Aspose.Pdf.Operators.GRestore());
 dataDir = dataDir + "AddImage_out.pdf";
-// Save updated document
+// حفظ المستند المحدث
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nImage added successfully.\nFile saved at " + dataDir); 
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we learned how to add an image to a PDF document using Aspose.PDF for .NET. We've covered every step in detail, from opening the document to saving the updated version. By following this guide, you should now be able to embed images into your PDF files programmatically using C# and Aspose.PDF.
+في هذا البرنامج التعليمي، تعلمنا كيفية إضافة صورة إلى مستند PDF باستخدام Aspose.PDF لـ .NET. لقد قمنا بتغطية كل خطوة بالتفصيل، بدءًا من فتح المستند وحتى حفظ النسخة المحدثة. باتباع هذا الدليل، يجب أن تكون الآن قادرًا على تضمين الصور في ملفات PDF الخاصة بك برمجيًا باستخدام C# وAspose.PDF.
 
-### FAQ's for add image in PDF file
+### الأسئلة الشائعة لإضافة صورة في ملف PDF
 
-#### Q: Why would I want to add an image to a PDF document?
+#### س: لماذا أرغب في إضافة صورة إلى مستند PDF؟
 
-A: Adding images to a PDF document can enhance visual content, provide additional context, or include logos and graphics in your PDF files.
+ج: يمكن أن تؤدي إضافة الصور إلى مستند PDF إلى تحسين المحتوى المرئي أو توفير سياق إضافي أو تضمين شعارات ورسومات في ملفات PDF الخاصة بك.
 
-#### Q: Can I add images to specific pages within a PDF document?
+#### س: هل يمكنني إضافة صور إلى صفحات معينة داخل مستند PDF؟
 
-A: Yes, you can specify the page where you want to add the image. In the provided code, the image is added to the second page of the PDF document.
+ج: نعم، يمكنك تحديد الصفحة التي تريد إضافة الصورة إليها. في الكود المقدم، تتم إضافة الصورة إلى الصفحة الثانية من مستند PDF.
 
-#### Q: How do I adjust the position and size of the added image?
+#### س: كيف يمكنني ضبط موضع وحجم الصورة المضافة؟
 
-A: You can modify the `lowerLeftX`, `lowerLeftY`, `upperRightX`, and `upperRightY` variables in the code to set the coordinates of the image and control its size and position on the page.
+ ج: يمكنك تعديل`lowerLeftX`, `lowerLeftY`, `upperRightX` ، و`upperRightY` المتغيرات الموجودة في الكود لتعيين إحداثيات الصورة والتحكم في حجمها وموضعها في الصفحة.
 
-#### Q: What type of image formats can I add using this method?
+#### س: ما نوع تنسيقات الصور التي يمكنني إضافتها باستخدام هذه الطريقة؟
 
-A: The provided code example assumes you are loading a JPG image (`aspose-logo.jpg`). Aspose.PDF for .NET supports various image formats, including PNG, BMP, GIF, and more.
+ج: يفترض مثال التعليمات البرمجية المقدم أنك تقوم بتحميل صورة JPG (`aspose-logo.jpg`). يدعم Aspose.PDF for .NET العديد من تنسيقات الصور، بما في ذلك PNG وBMP وGIF والمزيد.
 
-#### Q: How do I ensure that the added image fits within the specified coordinates?
+#### س: كيف أتأكد من أن الصورة المضافة تتناسب ضمن الإحداثيات المحددة؟
 
-A: Make sure to adjust the coordinates and size of the `Rectangle` object (`rectangle`) to match the dimensions of the image and its desired placement on the page.
+ ج: تأكد من ضبط إحداثيات وحجم`Rectangle` هدف (`rectangle`لتتناسب مع أبعاد الصورة وموضعها المطلوب في الصفحة.
 
-#### Q: Can I add multiple images to a single PDF page?
+#### س: هل يمكنني إضافة صور متعددة إلى صفحة PDF واحدة؟
 
-A: Yes, you can add multiple images to a single PDF page by repeating the process for each image and adjusting the coordinates and other parameters accordingly.
+ج: نعم، يمكنك إضافة صور متعددة إلى صفحة PDF واحدة عن طريق تكرار العملية لكل صورة وضبط الإحداثيات والمعلمات الأخرى وفقًا لذلك.
 
-#### Q: How does the `GSave` and `GRestore` operator work in the code?
+####  س: كيف`GSave` and `GRestore` operator work in the code?
 
-A: The `GSave` operator saves the current graphics state, allowing you to make changes without affecting the overall graphics context. The `GRestore` operator restores the previous graphics state after changes are made.
+ ج: ال`GSave` يقوم المشغل بحفظ حالة الرسومات الحالية، مما يسمح لك بإجراء تغييرات دون التأثير على سياق الرسومات العام. ال`GRestore` يقوم المشغل باستعادة حالة الرسومات السابقة بعد إجراء التغييرات.
 
-#### Q: What happens if the image file is not found at the specified path?
+#### س: ماذا يحدث إذا لم يتم العثور على ملف الصورة في المسار المحدد؟
 
-A: If the image file is not found at the specified path, the code will throw an exception when trying to load the image stream. Make sure the image file is located in the correct directory.
+ج: إذا لم يتم العثور على ملف الصورة في المسار المحدد، فسيطرح الكود استثناءً عند محاولة تحميل دفق الصورة. تأكد من وجود ملف الصورة في الدليل الصحيح.
 
-#### Q: Can I customize the image placement and appearance further?
+#### س: هل يمكنني تخصيص موضع الصورة ومظهرها بشكل أكبر؟
 
-A: Yes, you can customize the image appearance by modifying the `Matrix` object and adjusting other operators within the code. Refer to the Aspose.PDF documentation for advanced customization.
+ ج: نعم، يمكنك تخصيص مظهر الصورة عن طريق تعديل`Matrix`الكائن وضبط العوامل الأخرى داخل الكود. راجع وثائق Aspose.PDF للتخصيص المتقدم.
 
-#### Q: How can I test if the image was successfully added to the PDF?
+#### س: كيف يمكنني اختبار ما إذا تمت إضافة الصورة بنجاح إلى ملف PDF؟
 
-A: After applying the provided code to add the image, open the modified PDF file and verify that the image is displayed on the specified page with the correct placement.
+ج: بعد تطبيق الكود المقدم لإضافة الصورة، افتح ملف PDF المعدل وتأكد من عرض الصورة على الصفحة المحددة بالموضع الصحيح.
 
-#### Q: Does adding images affect the original content of the PDF document?
+#### س: هل تؤثر إضافة الصور على المحتوى الأصلي لمستند PDF؟
 
-A: Adding images does not affect the original content of the PDF document. It enhances the document by including visual elements.
+ج: لا تؤثر إضافة الصور على المحتوى الأصلي لمستند PDF. إنه يعزز الوثيقة من خلال تضمين العناصر المرئية.

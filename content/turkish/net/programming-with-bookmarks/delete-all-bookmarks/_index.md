@@ -1,136 +1,136 @@
 ---
-title: Delete All Bookmarks In PDF File
-linktitle: Delete All Bookmarks In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily delete all bookmarks in PDF file with Aspose.PDF for .NET.
+title: PDF Dosyasındaki Tüm Yer İşaretlerini Sil
+linktitle: PDF Dosyasındaki Tüm Yer İşaretlerini Sil
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile PDF dosyasındaki tüm yer imlerini kolayca silin.
 type: docs
 weight: 30
 url: /tr/net/programming-with-bookmarks/delete-all-bookmarks/
 ---
-# Delete all bookmarks with Aspose.PDF for .NET
+# Aspose.PDF for .NET ile tüm yer imlerini silin
 
-Deleting bookmarks in PDF file may be necessary in some cases. With Aspose.PDF for .NET, you can easily remove all bookmarks by following the following source code:
+Bazı durumlarda PDF dosyasındaki yer imlerinin silinmesi gerekli olabilir. Aspose.PDF for .NET ile aşağıdaki kaynak kodunu izleyerek tüm yer imlerini kolayca kaldırabilirsiniz:
 
-## Step 1: Import required libraries
+## 1. Adım: Gerekli kitaplıkları içe aktarın
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Başlamadan önce C# projeniz için gerekli kütüphaneleri içe aktarmanız gerekir. Gerekli ithalat direktifi aşağıdadır:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## 2. Adım: Belgeler klasörünün yolunu ayarlayın
 
-In this step, you need to specify the path to the folder containing the PDF file from which you want to remove bookmarks. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ Bu adımda yer imlerini kaldırmak istediğiniz PDF dosyasının bulunduğu klasörün yolunu belirtmeniz gerekir. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"`belgeler klasörünüzün gerçek yolunu içeren aşağıdaki kodda:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## 3. Adım: PDF belgesini açın
 
-Now we are going to open the PDF document from which we want to remove the bookmarks using the following code:
+Şimdi yer imlerini kaldırmak istediğimiz PDF belgesini aşağıdaki kodu kullanarak açacağız:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "DeleteAllBookmarks.pdf");
 ```
 
-## Step 4: Delete all bookmarks
+## 4. Adım: Tüm yer işaretlerini silin
 
-In this step, we delete all bookmarks from the document using the `Delete` method of the `Outlines` property. Here is the corresponding code:
+ Bu adımda, belgedeki tüm yer işaretlerini kullanarak sileriz.`Delete` yöntemi`Outlines` mülk. İşte ilgili kod:
 
 ```csharp
 pdfDocument.Outlines.Delete();
 ```
 
-## Step 5: Save the updated file
+## 5. Adım: Güncellenen dosyayı kaydedin
 
-Finally, we save the updated PDF file using the `Save` method of the `pdfDocument` object. Here is the corresponding code:
+ Son olarak, güncellenen PDF dosyasını kullanarak kaydediyoruz.`Save` yöntemi`pdfDocument` nesne. İşte ilgili kod:
 
 ```csharp
 dataDir = dataDir + "DeleteAllBookmarks_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Delete All Bookmarks using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Tüm Yer İşaretlerini Sil için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir + "DeleteAllBookmarks.pdf");
-// Delete all bookmarks
+// Tüm yer işaretlerini sil
 pdfDocument.Outlines.Delete();
 dataDir = dataDir + "DeleteAllBookmarks_out.pdf";
-// Save updated file
+// Güncellenen dosyayı kaydet
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nAll bookmarks deleted successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulation ! Now you have a step by step guide to remove all bookmarks with Aspose.PDF for .NET. You can use this code to clean up your PDF documents by deleting all existing bookmarks.
+Tebrikler! Artık Aspose.PDF for .NET ile tüm yer imlerini kaldırmak için adım adım bir kılavuza sahipsiniz. Mevcut tüm yer imlerini silerek PDF belgelerinizi temizlemek için bu kodu kullanabilirsiniz.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Gelişmiş yer imi düzenleme özellikleri hakkında daha fazla bilgi için resmi Aspose.PDF belgelerine göz atmayı unutmayın.
 
-### FAQ's for delete all bookmarks in PDF file
+### PDF dosyasındaki tüm yer işaretlerini silmek için SSS
 
-#### Q: What are bookmarks in a PDF file?
+#### S: PDF dosyasındaki yer işaretleri nedir?
 
-A: Bookmarks in a PDF file are navigational aids that allow users to quickly jump to specific sections or pages within the document. They help organize and enhance the user experience when navigating through lengthy content.
+C: Bir PDF dosyasındaki yer imleri, kullanıcıların belge içindeki belirli bölümlere veya sayfalara hızlı bir şekilde atlamasına olanak tanıyan gezinme yardımcılarıdır. Uzun içerikte gezinirken kullanıcı deneyimini düzenlemeye ve geliştirmeye yardımcı olurlar.
 
-#### Q: Why would I need to delete all bookmarks from a PDF file?
+#### S: Neden bir PDF dosyasındaki tüm yer işaretlerini silmem gerekiyor?
 
-A: There might be cases where you want to remove all bookmarks from a PDF document to simplify its navigation, reorganize its structure, or prepare it for a specific purpose where bookmarks are not needed.
+C: Gezinmeyi basitleştirmek, yapısını yeniden düzenlemek veya yer imlerine ihtiyaç duyulmayan belirli bir amaç için hazırlamak amacıyla bir PDF belgesindeki tüm yer imlerini kaldırmak isteyebileceğiniz durumlar olabilir.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### S: C# projem için gerekli kitaplıkları nasıl içeri aktarabilirim?
 
-A: To import the required library for your C# project, you can use the following import directive:
+C: C# projeniz için gerekli kitaplığı içe aktarmak için aşağıdaki içe aktarma yönergesini kullanabilirsiniz:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This library provides the classes and methods needed to work with PDF documents.
+Bu kitaplık, PDF belgeleriyle çalışmak için gereken sınıfları ve yöntemleri sağlar.
 
-#### Q: How do I specify the path to the documents folder?
+#### S: Belgeler klasörünün yolunu nasıl belirlerim?
 
-A: In the source code provided, you need to replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file from which you want to remove bookmarks. This ensures that the code can locate the target PDF file.
+ C: Sağlanan kaynak kodunda değiştirmeniz gerekir`"YOUR DOCUMENT DIRECTORY"` yer imlerini kaldırmak istediğiniz PDF dosyasını içeren klasörün gerçek yolunu belirtin. Bu, kodun hedef PDF dosyasını bulabilmesini sağlar.
 
-#### Q: How do I open a PDF document for bookmark removal?
+#### S: Yer işaretini kaldırmak için bir PDF belgesini nasıl açarım?
 
-A: To open a PDF document for bookmark removal, use the following code:
+C: Yer işaretini kaldırmak üzere bir PDF belgesini açmak için aşağıdaki kodu kullanın:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "DeleteAllBookmarks.pdf");
 ```
 
-Replace `"DeleteAllBookmarks.pdf"` with the actual file name.
+ Yer değiştirmek`"DeleteAllBookmarks.pdf"` gerçek dosya adı ile.
 
-#### Q: How do I delete all bookmarks from the PDF document?
+#### S: PDF belgesindeki tüm yer imlerini nasıl silerim?
 
-A: To remove all bookmarks from the PDF document, use the `Delete` method of the `Outlines` property:
+ C: PDF belgesindeki tüm yer işaretlerini kaldırmak için`Delete` yöntemi`Outlines` mülk:
 
 ```csharp
 pdfDocument.Outlines.Delete();
 ```
 
-#### Q: What happens to the rest of the content when bookmarks are deleted?
+#### S: Yer imleri silindiğinde içeriğin geri kalanına ne olur?
 
-A: Deleting bookmarks does not affect the content or layout of the PDF document. Only the navigation bookmarks are removed, leaving the actual content intact.
+C: Yer imlerinin silinmesi, PDF belgesinin içeriğini veya düzenini etkilemez. Yalnızca gezinme yer imleri kaldırılır ve gerçek içerik bozulmadan kalır.
 
-#### Q: How do I save the updated PDF file after removing bookmarks?
+#### S: Yer işaretlerini kaldırdıktan sonra güncellenen PDF dosyasını nasıl kaydedebilirim?
 
-A: To save the updated PDF file after deleting bookmarks, use the following code:
+C: Yer işaretlerini sildikten sonra güncellenen PDF dosyasını kaydetmek için aşağıdaki kodu kullanın:
 
 ```csharp
 dataDir = dataDir + "DeleteAllBookmarks_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-#### Q: Can I selectively delete specific bookmarks instead of all of them?
+#### S: Tümü yerine belirli yer işaretlerini seçerek silebilir miyim?
 
-A: Yes, you can selectively delete specific bookmarks by targeting them using their index or other properties. The provided source code demonstrates how to delete all bookmarks, but you can modify it to suit your needs.
+C: Evet, belirli yer işaretlerini, dizinlerini veya diğer özelliklerini kullanarak hedefleyerek seçerek silebilirsiniz. Sağlanan kaynak kodu, tüm yer imlerinin nasıl silineceğini gösterir, ancak bunu ihtiyaçlarınıza uyacak şekilde değiştirebilirsiniz.
 
-#### Q: Are there any precautions I should take before deleting bookmarks?
+#### S: Yer işaretlerini silmeden önce almam gereken herhangi bir önlem var mı?
 
-A: Before deleting bookmarks, make sure to review the document to ensure that bookmark removal will not impact the document's usability or navigation. Consider making a backup of the original document before proceeding.
+C: Yer imlerini silmeden önce, yer imlerinin kaldırılmasının belgenin kullanılabilirliğini veya gezinmesini etkilemeyeceğinden emin olmak için belgeyi incelediğinizden emin olun. Devam etmeden önce orijinal belgenin yedeğini almayı düşünün.

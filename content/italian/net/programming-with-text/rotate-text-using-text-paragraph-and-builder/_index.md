@@ -1,28 +1,28 @@
 ---
-title: Rotate Text Using Text Paragraph And Builder In PDF File
-linktitle: Rotate Text Using Text Paragraph And Builder In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to rotate text using text paragraph and builder in PDF file using Aspose.PDF for .NET.
+title: Ruota il testo utilizzando il paragrafo di testo e il generatore nel file PDF
+linktitle: Ruota il testo utilizzando il paragrafo di testo e il generatore nel file PDF
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Scopri come ruotare il testo utilizzando il paragrafo di testo e il generatore nel file PDF utilizzando Aspose.PDF per .NET.
 type: docs
 weight: 410
 url: /it/net/programming-with-text/rotate-text-using-text-paragraph-and-builder/
 ---
-This tutorial explains how to use Aspose.PDF for .NET to rotate text using text paragraphs and builders in PDF file. The provided C# source code demonstrates the process step by step.
+Questo tutorial spiega come utilizzare Aspose.PDF per .NET per ruotare il testo utilizzando paragrafi di testo e builder nel file PDF. Il codice sorgente C# fornito illustra il processo passo dopo passo.
 
-## Prerequisites
+## Prerequisiti
 
-Before proceeding with the tutorial, make sure you have the following:
+Prima di procedere con il tutorial, assicurati di avere quanto segue:
 
-- Basic knowledge of C# programming language.
-- Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to install it in your project.
+- Conoscenza base del linguaggio di programmazione C#.
+- Aspose.PDF per la libreria .NET installata. Puoi ottenerlo dal sito Web Aspose o utilizzare NuGet per installarlo nel tuo progetto.
 
-## Step 1: Set up the project
+## Passaggio 1: impostare il progetto
 
-Start by creating a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library.
+Inizia creando un nuovo progetto C# nel tuo ambiente di sviluppo integrato (IDE) preferito e aggiungi un riferimento alla libreria Aspose.PDF per .NET.
 
-## Step 2: Import necessary namespaces
+## Passaggio 2: importa gli spazi dei nomi necessari
 
-Add the following using directives at the beginning of your C# file to import the required namespaces:
+Aggiungi le seguenti direttive using all'inizio del file C# per importare gli spazi dei nomi richiesti:
 
 ```csharp
 using Aspose.Pdf;
@@ -30,28 +30,28 @@ using Aspose.Pdf.Text;
 using Aspose.Pdf.Text.TextBuilder;
 ```
 
-## Step 3: Create the PDF document
+## Passaggio 3: crea il documento PDF
 
-Initialize the `Document` object to create a new PDF document:
+ Inizializza il`Document` oggetto per creare un nuovo documento PDF:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document();
 ```
 
-Make sure to replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ Assicurati di sostituire`"YOUR DOCUMENT DIRECTORY"` con il percorso effettivo della directory dei documenti.
 
-## Step 4: Add a page
+## Passaggio 4: aggiungi una pagina
 
-Get a particular page from the document using the `Pages.Add()` method:
+ Ottieni una pagina particolare dal documento utilizzando il file`Pages.Add()` metodo:
 
 ```csharp
 Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
-## Step 5: Create and rotate text paragraphs
+## Passaggio 5: crea e ruota i paragrafi di testo
 
-Create a `for` loop to generate multiple text paragraphs with different rotations:
+ Creare un`for` loop per generare più paragrafi di testo con rotazioni diverse:
 
 ```csharp
 for (int i = 0; i < 4; i++)
@@ -61,11 +61,11 @@ for (int i = 0; i < 4; i++)
 	paragraph.Rotation = i * 90 + 45;
 ```
 
-Adjust the position and rotation values as per your requirements.
+Regola i valori di posizione e rotazione in base alle tue esigenze.
 
-## Step 6: Create and configure text fragments
+## Passaggio 6: crea e configura frammenti di testo
 
-Create multiple `TextFragment` objects, set their text and properties:
+ Crea multipli`TextFragment` oggetti, impostarne il testo e le proprietà:
 
 ```csharp
 TextFragment textFragment1 = new TextFragment("Paragraph Text");
@@ -88,11 +88,11 @@ textFragment3.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
 textFragment3.TextState.Underline = true;
 ```
 
-Adjust the text and other properties as desired.
+Modifica il testo e le altre proprietà come desideri.
 
-## Step 7: Append text fragments to the paragraph
+## Passaggio 7: aggiungi frammenti di testo al paragrafo
 
-Append the created text fragments to the paragraph using the `AppendLine` method:
+ Aggiungi i frammenti di testo creati al paragrafo utilizzando il comando`AppendLine` metodo:
 
 ```csharp
 paragraph.AppendLine(textFragment1);
@@ -100,9 +100,9 @@ paragraph.AppendLine(textFragment2);
 paragraph.AppendLine(textFragment3);
 ```
 
-## Step 8: Create a TextBuilder and append the paragraph
+## Passaggio 8: crea un TextBuilder e aggiungi il paragrafo
 
-Create a `TextBuilder` object using the `pdfPage` and append the text paragraph to the PDF page:
+ Creare un`TextBuilder` oggetto utilizzando il`pdfPage` e aggiungi il paragrafo di testo alla pagina PDF:
 
 ```csharp
 TextBuilder textBuilder = new TextBuilder(pdfPage);
@@ -110,46 +110,46 @@ textBuilder.AppendParagraph(paragraph);
 }
 ```
 
-## Step 9: Save the PDF document
+## Passaggio 9: salva il documento PDF
 
-Save the modified PDF document to a file using the `Save` method:
+ Salvare il documento PDF modificato in un file utilizzando l'estensione`Save` metodo:
 
 ```csharp
 pdfDocument.Save(dataDir + "TextFragmentTests_Rotated4_out.pdf");
 ```
 
-Make sure to replace `"TextFragmentTests_Rotated4_out.pdf"` with the desired output file name.
+ Assicurati di sostituire`"TextFragmentTests_Rotated4_out.pdf"` con il nome del file di output desiderato.
 
-### Sample source code for Rotate Text Using Text Paragraph And Builder using Aspose.PDF for .NET 
+### Codice sorgente di esempio per ruotare il testo utilizzando il paragrafo di testo e il generatore utilizzando Aspose.PDF per .NET 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Initialize document object
+// Inizializza l'oggetto documento
 Document pdfDocument = new Document();
-// Get particular page
+// Ottieni una pagina particolare
 Page pdfPage = (Page)pdfDocument.Pages.Add();
 for (int i = 0; i < 4; i++)
 {
 	TextParagraph paragraph = new TextParagraph();
 	paragraph.Position = new Position(200, 600);
-	// Specify rotation
+	// Specificare la rotazione
 	paragraph.Rotation = i * 90 + 45;
-	// Create text fragment
+	// Crea frammento di testo
 	TextFragment textFragment1 = new TextFragment("Paragraph Text");
-	// Create text fragment
+	// Crea frammento di testo
 	textFragment1.TextState.FontSize = 12;
 	textFragment1.TextState.Font = FontRepository.FindFont("TimesNewRoman");
 	textFragment1.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
 	textFragment1.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
-	// Create text fragment
+	// Crea frammento di testo
 	TextFragment textFragment2 = new TextFragment("Second line of text");
-	// Set text properties
+	// Imposta le proprietà del testo
 	textFragment2.TextState.FontSize = 12;
 	textFragment2.TextState.Font = FontRepository.FindFont("TimesNewRoman");
 	textFragment2.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
 	textFragment2.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
-	// Create text fragment
+	// Crea frammento di testo
 	TextFragment textFragment3 = new TextFragment("And some more text...");
-	// Set text properties
+	// Imposta le proprietà del testo
 	textFragment3.TextState.FontSize = 12;
 	textFragment3.TextState.Font = FontRepository.FindFont("TimesNewRoman");
 	textFragment3.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
@@ -158,49 +158,49 @@ for (int i = 0; i < 4; i++)
 	paragraph.AppendLine(textFragment1);
 	paragraph.AppendLine(textFragment2);
 	paragraph.AppendLine(textFragment3);
-	// Create TextBuilder object
+	// Crea un oggetto TextBuilder
 	TextBuilder textBuilder = new TextBuilder(pdfPage);
-	// Append the text fragment to the PDF page
+	// Aggiungi il frammento di testo alla pagina PDF
 	textBuilder.AppendParagraph(paragraph);
 }
-// Save document
+// Salva documento
 pdfDocument.Save(dataDir + "TextFragmentTests_Rotated4_out.pdf");
 ```
 
-## Conclusion
+## Conclusione
 
-Congratulations! You have successfully learned how to rotate text using text paragraphs and builders in a PDF document using Aspose.PDF for .NET. This tutorial provided a step-by-step guide, from creating the document to saving the modified version. You can now incorporate this code into your own C# projects to manipulate text rotation in PDF files.
+Congratulazioni! Hai imparato con successo come ruotare il testo utilizzando paragrafi di testo e builder in un documento PDF utilizzando Aspose.PDF per .NET. Questo tutorial fornisce una guida passo passo, dalla creazione del documento al salvataggio della versione modificata. Ora puoi incorporare questo codice nei tuoi progetti C# per manipolare la rotazione del testo nei file PDF.
 
-### FAQ's
+### Domande frequenti
 
-#### Q: What is the purpose of the "Rotate Text Using Text Paragraph And Builder" tutorial?
+#### D: Qual è lo scopo del tutorial "Ruota il testo utilizzando il paragrafo e il generatore di testo"?
 
-A: The "Rotate Text Using Text Paragraph And Builder" tutorial provides a comprehensive guide on how to use the Aspose.PDF library for .NET to rotate text using text paragraphs and builders within a PDF document. The tutorial demonstrates step-by-step instructions and includes sample C# code for achieving text rotation with paragraphs and custom formatting.
+R: Il tutorial "Ruota il testo utilizzando paragrafi di testo e builder" fornisce una guida completa su come utilizzare la libreria Aspose.PDF per .NET per ruotare il testo utilizzando paragrafi di testo e builder all'interno di un documento PDF. L'esercitazione illustra istruzioni dettagliate e include codice C# di esempio per ottenere la rotazione del testo con paragrafi e formattazione personalizzata.
 
-#### Q: How is this tutorial different from previous text rotation tutorials?
+#### D: In cosa differisce questo tutorial dai precedenti tutorial sulla rotazione del testo?
 
-A: Unlike previous tutorials, this tutorial combines the use of text paragraphs, builders, and rotation angles to achieve a more advanced text rotation effect. It demonstrates how to generate multiple text paragraphs with varying rotation angles and apply custom formatting to individual text fragments.
+R: A differenza dei tutorial precedenti, questo tutorial combina l'uso di paragrafi di testo, builder e angoli di rotazione per ottenere un effetto di rotazione del testo più avanzato. Dimostra come generare più paragrafi di testo con angoli di rotazione diversi e applicare la formattazione personalizzata a singoli frammenti di testo.
 
-#### Q: What is the significance of using text paragraphs and builders for text rotation?
+#### D: Qual è il significato dell'utilizzo di paragrafi di testo e builder per la rotazione del testo?
 
-A: Using text paragraphs and builders allows for enhanced control over text rotation and formatting. Text paragraphs offer a structured way to organize text fragments, while builders facilitate the creation and manipulation of text content within the PDF document.
+R: L'utilizzo di paragrafi e generatori di testo consente un maggiore controllo sulla rotazione e la formattazione del testo. I paragrafi di testo offrono un modo strutturato per organizzare i frammenti di testo, mentre i builder facilitano la creazione e la manipolazione del contenuto di testo all'interno del documento PDF.
 
-#### Q: Can I apply different rotation angles to each text paragraph?
+#### D: Posso applicare angoli di rotazione diversi a ciascun paragrafo di testo?
 
-A: Yes, you can apply different rotation angles to each text paragraph by setting the `Rotation` property of the `TextParagraph` object. This allows you to create diverse and dynamic text rotation effects within the PDF document.
+ R: Sì, puoi applicare diversi angoli di rotazione a ciascun paragrafo di testo impostando il`Rotation` proprietà del`TextParagraph` oggetto. Ciò consente di creare effetti di rotazione del testo diversi e dinamici all'interno del documento PDF.
 
-#### Q: How do I customize the formatting of text fragments within the text paragraphs?
+#### D: Come posso personalizzare la formattazione dei frammenti di testo all'interno dei paragrafi di testo?
 
-A: You can customize the formatting of text fragments by setting various properties of the `TextState` within each `TextFragment` object. Properties such as font size, font type, foreground and background colors, and underlining can be adjusted to achieve the desired visual effect.
+ R: Puoi personalizzare la formattazione dei frammenti di testo impostando varie proprietà del file`TextState` all'interno di ciascuno`TextFragment` oggetto. Proprietà come la dimensione del carattere, il tipo di carattere, i colori di primo piano e di sfondo e la sottolineatura possono essere regolati per ottenere l'effetto visivo desiderato.
 
-#### Q: Can I create more complex text rotation effects using this method?
+#### D: Posso creare effetti di rotazione del testo più complessi utilizzando questo metodo?
 
-A: Absolutely. By iteratively creating multiple text paragraphs with different rotation angles and formatting options, you can achieve complex and visually appealing text rotation effects that can enhance the readability and aesthetics of your PDF documents.
+R: Assolutamente. Creando in modo iterativo più paragrafi di testo con diversi angoli di rotazione e opzioni di formattazione, puoi ottenere effetti di rotazione del testo complessi e visivamente accattivanti che possono migliorare la leggibilità e l'estetica dei tuoi documenti PDF.
 
-#### Q: Is it possible to combine text rotation with other text manipulation techniques?
+#### D: È possibile combinare la rotazione del testo con altre tecniche di manipolazione del testo?
 
-A: Yes, you can combine text rotation with other text manipulation techniques provided by the Aspose.PDF library. This includes adding tables, images, hyperlinks, and more to create rich and informative PDF documents.
+R: Sì, puoi combinare la rotazione del testo con altre tecniche di manipolazione del testo fornite dalla libreria Aspose.PDF. Ciò include l'aggiunta di tabelle, immagini, collegamenti ipertestuali e altro per creare documenti PDF ricchi e informativi.
 
-#### Q: Do I need a special license to use the Aspose.PDF library in my project?
+#### D: Ho bisogno di una licenza speciale per utilizzare la libreria Aspose.PDF nel mio progetto?
 
-A: Yes, you need a valid Aspose license to use the Aspose.PDF library in your project. You can obtain a license from the Aspose website, which will provide you with the necessary credentials to integrate and use the library effectively.
+R: Sì, è necessaria una licenza Aspose valida per utilizzare la libreria Aspose.PDF nel tuo progetto. Puoi ottenere una licenza dal sito web Aspose, che ti fornirà le credenziali necessarie per integrare e utilizzare la libreria in modo efficace.

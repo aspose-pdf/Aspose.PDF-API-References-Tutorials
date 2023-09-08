@@ -1,141 +1,141 @@
 ---
-title: Image In Header
-linktitle: Image In Header
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add an image in the header section of a PDF document with Aspose.PDF for .NET.
+title: Изображение в заголовке
+linktitle: Изображение в заголовке
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как добавить изображение в раздел заголовка PDF-документа с помощью Aspose.PDF для .NET.
 type: docs
 weight: 140
 url: /ru/net/programming-with-stamps-and-watermarks/image-in-header/
 ---
-In this tutorial, we will guide you step by step on how to add an image in the header section of a PDF document using Aspose.PDF for .NET. We will use the provided C# source code to open an existing PDF document, create an image buffer, set its properties, and add it to all pages of the PDF document.
+В этом уроке мы шаг за шагом покажем вам, как добавить изображение в раздел заголовка PDF-документа с помощью Aspose.PDF для .NET. Мы будем использовать предоставленный исходный код C#, чтобы открыть существующий PDF-документ, создать буфер изображения, установить его свойства и добавить его на все страницы PDF-документа.
 
-## Step 1: Setting up the environment
+## Шаг 1. Настройка среды
 
-Before you begin, make sure you have the following:
+Прежде чем начать, убедитесь, что у вас есть следующее:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Установленная среда разработки .NET.
+- Библиотека Aspose.PDF для .NET загружена и используется в вашем проекте.
 
-## Step 2: Loading the existing PDF document
+## Шаг 2. Загрузка существующего PDF-документа.
 
-The first step is to load the existing PDF document into your project. Here's how:
+Первым шагом является загрузка существующего PDF-документа в ваш проект. Вот как:
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the existing PDF document
+// Откройте существующий PDF-документ
 Document pdfDocument = new Document(dataDir + "ImageinHeader.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+Обязательно замените «КАТАЛОГ ВАШИХ ДОКУМЕНТОВ» фактическим путем к каталогу, в котором находится ваш PDF-документ.
 
-## Step 3: Creating and adding the image in the header section
+## Шаг 3: Создание и добавление изображения в раздел заголовка
 
-Now that the PDF document is loaded, we can create an image buffer and add it to all pages of the document as a header section. Here's how:
+Теперь, когда документ PDF загружен, мы можем создать буфер изображения и добавить его на все страницы документа в качестве раздела заголовка. Вот как:
 
 ```csharp
-// Create the frame buffer
+// Создайте буфер кадра
 ImageStamp imageStamp = new ImageStamp(dataDir + "aspose-logo.jpg");
 
-// Set image buffer properties
+// Установите свойства буфера изображения
 imageStamp.TopMargin = 10;
 imageStamp.HorizontalAlignment = HorizontalAlignment.Center;
 imageStamp.VerticalAlignment = VerticalAlignment.Top;
 
-// Add image buffer to all pages
+// Добавить буфер изображения на все страницы
 foreach(Page page in pdfDocument.Pages)
 {
      page.AddStamp(imageStamp);
 }
 ```
 
-The above code creates an image buffer from the "aspose-logo.jpg" file and sets its properties, such as top margin, horizontal and vertical alignment. Then the image stamp is added to all pages of the PDF document as a header section.
+Приведенный выше код создает буфер изображения из файла «aspose-logo.jpg» и устанавливает его свойства, такие как верхнее поле, горизонтальное и вертикальное выравнивание. Затем штамп изображения добавляется на все страницы PDF-документа в качестве заголовка.
 
-## Step 4: Saving the modified PDF document
+## Шаг 4. Сохранение измененного PDF-документа.
 
-Once the image is added in the header section, we can save the modified PDF document. Here's how:
+Как только изображение будет добавлено в раздел заголовка, мы сможем сохранить измененный PDF-документ. Вот как:
 
 ```csharp
-// Save the modified PDF document
+// Сохраните измененный PDF-документ.
 pdfDocument.Save(dataDir + "ImageinHeader_out.pdf");
 ```
 
-The above code saves the edited PDF document to the specified directory.
+Приведенный выше код сохраняет отредактированный PDF-документ в указанный каталог.
 
-### Sample source code for Imagein Header using Aspose.PDF for .NET 
+### Пример исходного кода для заголовка Imagein с использованием Aspose.PDF для .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Открыть документ
 Document pdfDocument = new Document(dataDir+ "ImageinHeader.pdf");
 
-// Create header
+// Создать заголовок
 ImageStamp imageStamp = new ImageStamp(dataDir+ "aspose-logo.jpg");
 
-// Set properties of the stamp
+// Установить свойства штампа
 imageStamp.TopMargin = 10;
 imageStamp.HorizontalAlignment = HorizontalAlignment.Center;
 imageStamp.VerticalAlignment = VerticalAlignment.Top;
 
-// Add header on all pages
+// Добавить заголовок на все страницы
 foreach (Page page in pdfDocument.Pages)
 {
 	page.AddStamp(imageStamp);
 }
 dataDir = dataDir + "ImageinHeader_out.pdf";
 
-// Save updated document
+// Сохранить обновленный документ
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nImage in header added successfully.\nFile saved at " + dataDir);                        
 
 ```
 
-## Conclusion
+## Заключение
 
-Congratulation ! You have learned how to add an image in the header section of a PDF document using Aspose.PDF for .NET. You can now customize the headers of your PDF documents by adding images.
+Поздравляем! Вы узнали, как добавить изображение в раздел заголовка PDF-документа с помощью Aspose.PDF для .NET. Теперь вы можете настраивать заголовки PDF-документов, добавляя изображения.
 
-### FAQ's for image in header
+### FAQ по изображению в шапке
 
-#### Q: What is the purpose of adding an image in the header section of a PDF document?
+#### Вопрос: Какова цель добавления изображения в заголовок PDF-документа?
 
-A: Adding an image in the header section of a PDF document allows you to include visual elements, such as a logo or branding, at the top of every page. This can enhance the overall look and feel of the PDF content.
+О: Добавление изображения в раздел заголовка PDF-документа позволяет включать визуальные элементы, такие как логотип или фирменный знак, вверху каждой страницы. Это может улучшить общий вид содержимого PDF.
 
-#### Q: How does the provided C# source code achieve adding an image to the header section of a PDF document?
+#### Вопрос: Как предоставленный исходный код C# позволяет добавить изображение в раздел заголовка PDF-документа?
 
-A: The provided code demonstrates how to load an existing PDF document, create an `ImageStamp` object from an image file, set properties such as top margin and alignment, and then add the image stamp to the header of all pages.
+ О: Приведенный код демонстрирует, как загрузить существующий PDF-документ, создать`ImageStamp` объект из файла изображения, установите такие свойства, как верхнее поле и выравнивание, а затем добавьте отметку изображения в заголовок всех страниц.
 
-#### Q: Can I adjust the position and alignment of the image within the header section?
+#### Вопрос: Могу ли я настроить положение и выравнивание изображения в разделе заголовка?
 
-A: Yes, you can adjust the position and alignment of the image within the header section by modifying the properties of the `ImageStamp` object. The code snippet sets properties such as `TopMargin`, `HorizontalAlignment`, and `VerticalAlignment`.
+ О: Да, вы можете настроить положение и выравнивание изображения в разделе заголовка, изменив свойства`ImageStamp` объект. Фрагмент кода устанавливает такие свойства, как`TopMargin`, `HorizontalAlignment` , и`VerticalAlignment`.
 
-#### Q: Is it possible to add different images to the header section on different pages of the PDF document?
+#### Вопрос: Можно ли добавлять разные изображения в заголовок на разных страницах PDF-документа?
 
-A: Yes, you can add different images to the header section on different pages by creating separate `ImageStamp` objects with different image files and properties, and then adding them to specific pages.
+ О: Да, вы можете добавлять разные изображения в раздел шапки на разных страницах, создавая отдельные`ImageStamp` объекты с разными файлами изображений и свойствами, а затем добавляя их на определенные страницы.
 
-#### Q: How does the code ensure that the image is added to all pages of the PDF document's header section?
+#### Вопрос: Как код гарантирует, что изображение будет добавлено на все страницы раздела заголовка PDF-документа?
 
-A: The provided code uses a `foreach` loop to iterate through all pages of the PDF document and adds the same `ImageStamp` to each page's header section.
+О: В предоставленном коде используется`foreach` цикл для перебора всех страниц PDF-документа и добавляет тот же`ImageStamp`в раздел заголовка каждой страницы.
 
-#### Q: Can I add other elements, such as text or shapes, to the header section using a similar approach?
+#### Вопрос: Могу ли я добавить в раздел заголовка другие элементы, например текст или фигуры, используя аналогичный подход?
 
-A: Yes, you can add other elements like text or shapes to the header section using a similar approach by creating the appropriate stamp objects (e.g., `TextStamp`) and setting their properties accordingly.
+ О: Да, вы можете добавить в раздел заголовка другие элементы, такие как текст или фигуры, используя аналогичный подход, создав соответствующие объекты штампа (например,`TextStamp`) и соответствующим образом настроив их свойства.
 
-#### Q: How do I specify the path to the image file that I want to add to the header?
+#### Вопрос: Как указать путь к файлу изображения, который я хочу добавить в шапку?
 
-A: The path to the image file is specified when creating the `ImageStamp` object, as shown in the code. Make sure to provide the correct path to the image file.
+ О: Путь к файлу образа указывается при создании`ImageStamp` объект, как показано в коде. Обязательно укажите правильный путь к файлу изображения.
 
-#### Q: Can I customize the image's size within the header section?
+#### Вопрос: Могу ли я настроить размер изображения в разделе заголовка?
 
-A: Yes, you can customize the image's size within the header section by adjusting the dimensions of the `ImageStamp` using properties like `Width` and `Height`.
+ О: Да, вы можете настроить размер изображения в разделе заголовка, отрегулировав размеры`ImageStamp` используя такие свойства, как`Width` и`Height`.
 
-#### Q: Is it possible to remove or replace the image in the header section after it has been added?
+#### Вопрос: Можно ли удалить или заменить изображение в шапке после его добавления?
 
-A: Yes, you can remove or replace the image in the header section by modifying the contents of the `ImageStamp` object or removing the stamp from specific pages.
+ О: Да, вы можете удалить или заменить изображение в разделе заголовка, изменив содержимое файла.`ImageStamp` объект или удаление штампа с определенных страниц.
 
-#### Q: How does the code handle scenarios where the image's dimensions exceed the available space in the header?
+#### Вопрос: Как код обрабатывает сценарии, когда размеры изображения превышают доступное пространство в заголовке?
 
-A: The code sets properties such as `TopMargin`, `HorizontalAlignment`, and `VerticalAlignment` to control the positioning and alignment of the image. Ensure that these properties are adjusted to prevent any overlap or layout issues.
+ О: Код устанавливает такие свойства, как`TopMargin`, `HorizontalAlignment` , и`VerticalAlignment` для управления позиционированием и выравниванием изображения. Убедитесь, что эти свойства настроены, чтобы избежать проблем с перекрытием или макетом.

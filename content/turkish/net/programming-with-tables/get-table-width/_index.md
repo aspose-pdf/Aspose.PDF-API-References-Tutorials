@@ -1,27 +1,27 @@
 ---
-title: Get Table Width In PDF File
-linktitle: Get Table Width In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to get the width of a table in PDF file using Aspose.PDF for .NET.
+title: PDF Dosyasında Tablo Genişliğini Alın
+linktitle: PDF Dosyasında Tablo Genişliğini Alın
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF dosyasındaki bir tablonun genişliğini nasıl elde edeceğinizi öğrenin.
 type: docs
 weight: 90
 url: /tr/net/programming-with-tables/get-table-width/
 ---
-In this tutorial, we are going to learn how to get the width of a table in PDF file using Aspose.PDF for .NET. We will explain the source code in C# step by step. At the end of this tutorial, you will know how to get the width of a table in a PDF document. Let's start!
+Bu derste Aspose.PDF for .NET kullanarak PDF dosyasındaki bir tablonun genişliğini nasıl elde edeceğimizi öğreneceğiz. C#'ta kaynak kodunu adım adım anlatacağız. Bu eğitimin sonunda bir PDF belgesinde tablonun genişliğini nasıl elde edeceğinizi öğreneceksiniz. Hadi başlayalım!
 
-## Step 1: Setting up the environment
-First, make sure you've set up your C# development environment with Aspose.PDF for .NET. Add the reference to the library and import the necessary namespaces.
+## 1. Adım: Ortamı ayarlama
+Öncelikle Aspose.PDF for .NET ile C# geliştirme ortamınızı kurduğunuzdan emin olun. Referansı kitaplığa ekleyin ve gerekli ad alanlarını içe aktarın.
 
-## Step 2: Creating a New Document and Page
-We create a new PDF document and add a page in this document.
+## Adım 2: Yeni Bir Belge ve Sayfa Oluşturma
+Yeni bir PDF belgesi oluşturup bu belgeye bir sayfa ekliyoruz.
 
 ```csharp
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Step 3: Initializing a new table
-We initialize a new table and set the column fit to "AutoFitToContent".
+## 3. Adım: Yeni bir tablonun başlatılması
+Yeni bir tablo başlatıyoruz ve sütunu "AutoFitToContent" olarak ayarlıyoruz.
 
 ```csharp
 Table table = new Table
@@ -30,8 +30,8 @@ ColumnAdjustment = ColumnAdjustment.AutoFitToContent
 };
 ```
 
-## Step 4: Add row and cells in table
-We add a row in the table and add cells in that row.
+## Adım 4: Tabloya satır ve hücreler ekleyin
+Tabloya bir satır ekliyoruz ve o satıra hücreleri ekliyoruz.
 
 ```csharp
 Row row = table.Rows.Add();
@@ -39,57 +39,57 @@ Cell cell = row.Cells.Add("Text of cell 1");
 cell = row.Cells.Add("Text from cell 2");
 ```
 
-## Step 5: Get table width
-We use the "GetWidth()" method to get the width of the table.
+## 5. Adım: Tablo genişliğini alın
+Tablonun genişliğini elde etmek için "GetWidth()" yöntemini kullanıyoruz.
 
 ```csharp
 Console.WriteLine(table.GetWidth());
 ```
 
-### Example source code for get Table Width using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak Tablo Genişliğini elde etmek için örnek kaynak kodu
 
 ```csharp
-// Create a new document
+// Yeni bir belge oluştur
 Document doc = new Document();
-// Add page in document
+// Belgeye sayfa ekle
 Page page = doc.Pages.Add();
-// Initialize new table
+// Yeni tabloyu başlat
 Table table = new Table
 {
 	ColumnAdjustment = ColumnAdjustment.AutoFitToContent
 };
-// Add row in table 
+// Tabloya satır ekle
 Row row = table.Rows.Add();
-// Add cell in table
+// Tabloya hücre ekle
 Cell cell = row.Cells.Add("Cell 1 text");
 cell = row.Cells.Add("Cell 2 text");
-// Get table width
+// Tablo genişliğini al
 Console.WriteLine(table.GetWidth());
 
 System.Console.WriteLine("Extracted table width succesfully!");
 ```
 
-## Conclusion
-In this tutorial, we learned how to get the width of a table in a PDF document using Aspose.PDF for .NET. You can use this step-by-step guide to get table widths in your own C# projects.
+## Çözüm
+Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF belgesindeki tablonun genişliğini nasıl elde edeceğimizi öğrendik. Kendi C# projelerinizde tablo genişliklerini elde etmek için bu adım adım kılavuzu kullanabilirsiniz.
 
-### FAQ's for get table width in PDF file
+### PDF dosyasında tablo genişliğini almak için SSS
 
-#### Q: Can I modify the column adjustment of the table to a fixed width instead of AutoFitToContent?
+#### S: Tablonun sütun ayarını AutoFitToContent yerine sabit bir genişliğe ayarlayabilir miyim?
 
-A: Yes, you can adjust the column width to a fixed value by setting the `ColumnAdjustment` property to `ColumnAdjustment.FixedColumnWidth`. After setting this property, you can specify the desired width for each column using the `ColumnWidths` property of the table.
+ C: Evet, sütun genişliğini sabit bir değere ayarlayabilirsiniz.`ColumnAdjustment` mülkiyet`ColumnAdjustment.FixedColumnWidth` . Bu özelliği ayarladıktan sonra, her bir sütun için istenen genişliği aşağıdaki düğmeyi kullanarak belirleyebilirsiniz:`ColumnWidths` tablonun özelliği.
 
-#### Q: What if the table spans across multiple pages? Will the `GetWidth()` method still provide accurate results?
+####  S: Tablo birden fazla sayfaya yayılıyorsa ne olur? olacak mı`GetWidth()` method still provide accurate results?
 
-A: The `GetWidth()` method calculates the width of the table based on its content within the current page. If the table spans across multiple pages, you may need to iterate through each page and sum up the widths of the table on each page to get the overall width of the complete table.
+ C:`GetWidth()` yöntemi, geçerli sayfadaki içeriğine göre tablonun genişliğini hesaplar. Tablo birden fazla sayfaya yayılıyorsa, tablonun tamamının genel genişliğini elde etmek için her sayfayı yinelemeniz ve her sayfadaki tablonun genişliklerini toplamanız gerekebilir.
 
-#### Q: Can I get the individual column widths of the table using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'i kullanarak tablonun ayrı ayrı sütun genişliklerini alabilir miyim?
 
-A: Yes, you can retrieve the individual column widths of the table using the `ColumnWidths` property. It returns a string that represents the width of each column separated by spaces. You can then parse this string to get the width of each column.
+C: Evet, tablonun ayrı ayrı sütun genişliklerini aşağıdaki komutu kullanarak alabilirsiniz:`ColumnWidths` mülk. Boşluklarla ayrılmış her sütunun genişliğini temsil eden bir dize döndürür. Daha sonra her sütunun genişliğini elde etmek için bu dizeyi ayrıştırabilirsiniz.
 
-#### Q: Is it possible to get the height of the table using Aspose.PDF for .NET?
+#### S: Tablonun yüksekliğini Aspose.PDF for .NET kullanarak öğrenmek mümkün mü?
 
-A: Yes, you can get the height of the table using the `GetHeight()` method of the table. This method returns the total height of the table based on its content and layout.
+ C: Evet, tablonun yüksekliğini aşağıdakileri kullanarak bulabilirsiniz:`GetHeight()` tablo yöntemi. Bu yöntem, içeriğine ve düzenine bağlı olarak tablonun toplam yüksekliğini döndürür.
 
-#### Q: Can I adjust the table width based on specific content in each cell?
+#### S: Tablo genişliğini her hücredeki belirli içeriğe göre ayarlayabilir miyim?
 
-A: Yes, you can adjust the table width based on specific content in each cell by setting the `ColumnAdjustment` property to `ColumnAdjustment.AutoFitToContent`. Aspose.PDF for .NET will automatically adjust the column widths to fit the content in each cell.
+ C: Evet, tablo genişliğini her hücredeki belirli içeriğe göre ayarlayabilirsiniz.`ColumnAdjustment` mülkiyet`ColumnAdjustment.AutoFitToContent`. Aspose.PDF for .NET, her hücredeki içeriğe sığacak şekilde sütun genişliklerini otomatik olarak ayarlayacaktır.

@@ -1,33 +1,33 @@
 ---
-title: Get PDF Form Field Coordinates
-linktitle: Get PDF Form Field Coordinates
-second_title: Aspose.PDF for .NET API Reference
-description: Easily get PDF form field coordinates in your PDF documents with Aspose.PDF for .NET.
+title: احصل على إحداثيات حقل نموذج PDF
+linktitle: احصل على إحداثيات حقل نموذج PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: احصل بسهولة على إحداثيات حقل نموذج PDF في مستندات PDF الخاصة بك باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 120
 url: /ar/net/programming-with-forms/get-coordinates/
 ---
-In this tutorial, we will show you how to get PDF form field coordinates using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+سنوضح لك في هذا البرنامج التعليمي كيفية الحصول على إحداثيات حقل نموذج PDF باستخدام Aspose.PDF لـ .NET. سنشرح لك كود مصدر C# خطوة بخطوة لإرشادك خلال هذه العملية.
 
-## Step 1: Preparation
+## الخطوة 1: التحضير
 
-Make sure you have imported the necessary libraries and set the path to the documents directory:
+تأكد من استيراد المكتبات الضرورية وتعيين المسار إلى دليل المستندات:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load the output document
+## الخطوة 2: قم بتحميل مستند الإخراج
 
-Load the output PDF document:
+قم بتحميل مستند PDF الناتج:
 
 ```csharp
 Document doc1 = new Document(dataDir + "input.pdf");
 ```
 
-## Step 3: Find added fields
+## الخطوة 3: ابحث عن الحقول المضافة
 
-Find the added form fields (in this example, we're using the "Item1", "Item2", and "Item3" fields):
+ابحث عن حقول النموذج المضافة (في هذا المثال، نستخدم الحقول "Item1" و"Item2" و"Item3"):
 
 ```csharp
 RadioButtonField field0 = doc1.Form["Item1"] as RadioButtonField;
@@ -35,9 +35,9 @@ RadioButtonField field1 = doc1.Form["Item2"] as RadioButtonField;
 RadioButtonField field2 = doc1.Form["Item3"] as RadioButtonField;
 ```
 
-## Step 4: Display sub-item positions for each field
+## الخطوة 4: عرض مواضع العناصر الفرعية لكل حقل
 
-Cycle through the options for each field and view the coordinates for each sub-item:
+قم بالتنقل بين الخيارات الخاصة بكل حقل واعرض الإحداثيات الخاصة بكل عنصر فرعي:
 
 ```csharp
 foreach(RadioButtonOptionField option in field0)
@@ -54,19 +54,19 @@ Console.WriteLine(option.Rect);
 }
 ```
 
-### Sample source code for Get Coordinates using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر للحصول على الإحداثيات باستخدام Aspose.PDF لـ .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// المسار إلى دليل المستندات.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Load the output document 
+	// قم بتحميل مستند الإخراج
 	Document doc1 = new Document( dataDir + "input.pdf");
-	// Find added fields
+	// البحث عن الحقول المضافة
 	RadioButtonField field0 = doc1.Form["Item1"] as RadioButtonField;
 	RadioButtonField field1 = doc1.Form["Item2"] as RadioButtonField;
 	RadioButtonField field2 = doc1.Form["Item3"] as RadioButtonField;
-	// And show positions of sub items for each of them. 
+	// وإظهار مواضع العناصر الفرعية لكل منها.
 	foreach (RadioButtonOptionField option in field0)
 	{
 		Console.WriteLine(option.Rect);
@@ -86,28 +86,28 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we learned how to get form field coordinates using Aspose.PDF for .NET. By following these steps, you can easily retrieve the coordinates of your form fields' sub-elements in your PDF documents using Aspose.PDF.
+في هذا البرنامج التعليمي، تعلمنا كيفية الحصول على إحداثيات حقل النموذج باستخدام Aspose.PDF لـ .NET. باتباع هذه الخطوات، يمكنك بسهولة استرداد إحداثيات العناصر الفرعية لحقول النموذج الخاصة بك في مستندات PDF الخاصة بك باستخدام Aspose.PDF.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: Can I use this method to get coordinates for any type of form field in Aspose.PDF for .NET?
+#### س: هل يمكنني استخدام هذه الطريقة للحصول على إحداثيات لأي نوع من حقول النموذج في Aspose.PDF لـ .NET؟
 
-A: Yes, you can use this method to get coordinates for various types of form fields in Aspose.PDF for .NET. The provided C# source code demonstrates how to get coordinates for RadioButton fields, but you can adapt the same approach for other form field types, such as TextBox, CheckBox, ListBox, and more.
+ج: نعم، يمكنك استخدام هذه الطريقة للحصول على إحداثيات لأنواع مختلفة من حقول النماذج في Aspose.PDF لـ .NET. يوضح كود مصدر C# المقدم كيفية الحصول على إحداثيات لحقول RadioButton، ولكن يمكنك تكييف نفس الأسلوب مع أنواع حقول النموذج الأخرى، مثل TextBox وCheckBox وListBox والمزيد.
 
-#### Q: How can I modify or adjust the form field coordinates?
+#### س: كيف يمكنني تعديل أو ضبط إحداثيات حقل النموذج؟
 
-A: Form field coordinates are based on the PDF document's coordinate system, where the origin (0,0) is located at the bottom-left corner of the page. To modify or adjust the form field coordinates, you can update the `Rect` property of the respective form field or its sub-items, such as RadioButtonOptionField.
+ج: تعتمد إحداثيات حقل النموذج على النظام الإحداثي لمستند PDF، حيث يقع الأصل (0،0) في الركن السفلي الأيسر من الصفحة. لتعديل أو ضبط إحداثيات حقل النموذج، يمكنك تحديث`Rect` خاصية حقل النموذج المعني أو عناصره الفرعية، مثل RadioButtonOptionField.
 
-#### Q: Can I get the coordinates of form fields added programmatically to a PDF document?
+#### س: هل يمكنني إضافة إحداثيات حقول النموذج برمجياً إلى مستند PDF؟
 
-A: Yes, you can get the coordinates of form fields that were added programmatically to a PDF document. Aspose.PDF for .NET allows you to add form fields dynamically, and once added, you can retrieve their coordinates using the approach demonstrated in this tutorial.
+ج: نعم، يمكنك الحصول على إحداثيات حقول النموذج التي تمت إضافتها برمجيًا إلى مستند PDF. يتيح لك Aspose.PDF for .NET إضافة حقول النماذج ديناميكيًا، وبمجرد إضافتها، يمكنك استرداد إحداثياتها باستخدام الطريقة الموضحة في هذا البرنامج التعليمي.
 
-#### Q: What is the purpose of retrieving form field coordinates?
+#### س: ما هو الغرض من استرجاع إحداثيات حقل النموذج؟
 
-A: Retrieving form field coordinates can be helpful when you need to perform specific layout-related operations or validations on form fields within a PDF document. It allows you to accurately position and align form fields based on their coordinates, ensuring that they appear correctly in the document and provide a seamless user experience.
+ج: يمكن أن يكون استرداد إحداثيات حقل النموذج مفيدًا عندما تحتاج إلى إجراء عمليات محددة متعلقة بالتخطيط أو عمليات التحقق من الصحة في حقول النموذج داخل مستند PDF. فهو يسمح لك بتحديد موضع حقول النموذج ومحاذاتها بدقة بناءً على إحداثياتها، مما يضمن ظهورها بشكل صحيح في المستند وتوفير تجربة مستخدم سلسة.
 
-#### Q: Are the form field coordinates expressed in points or another unit?
+#### س: هل يتم التعبير عن إحداثيات حقل النموذج بالنقاط أم بوحدة أخرى؟
 
-A: The form field coordinates in Aspose.PDF for .NET are expressed in points. One point is equivalent to 1/72 inch, making it a standard unit of measurement in the PDF format.
+ج: يتم التعبير عن إحداثيات حقل النموذج في Aspose.PDF لـ .NET بالنقاط. النقطة الواحدة تعادل 1/72 بوصة، مما يجعلها وحدة قياس قياسية بتنسيق PDF.

@@ -1,21 +1,21 @@
 ---
-title: Programming with Attachments
-linktitle: Programming with Attachments
+title: Programmering med bilagor
+linktitle: Programmering med bilagor
 type: docs
 weight: 18
 url: /sv/net/programming-with-attachments/
-description: Learn how to manipulate attachments in PDF documents, including adding, extracting and deleting them, to improve the functionality of PDF files.
+description: Lär dig hur du manipulerar bilagor i PDF-dokument, inklusive att lägga till, extrahera och ta bort dem, för att förbättra funktionaliteten hos PDF-filer.
 ---
-The Aspose.PDF for .NET tutorials on programming with attachments provide step-by-step instructions for working with attachments in PDF documents. Learn how to add, extract and delete attachments, as well as manage their properties.
+Aspose.PDF för .NET-handledningarna om programmering med bilagor ger steg-för-steg-instruktioner för att arbeta med bilagor i PDF-dokument. Lär dig hur du lägger till, extraherar och tar bort bilagor, samt hanterar deras egenskaper.
 
-These tutorials will guide you through the different steps to manipulate attachments in your PDF documents, allowing you to improve the functionality and interactivity of your PDF files.
+Dessa handledningar guidar dig genom de olika stegen för att manipulera bilagor i dina PDF-dokument, så att du kan förbättra funktionaliteten och interaktiviteten hos dina PDF-filer.
 
-## Tutorials
-| Title | Description |
+## Handledningar
+| Titel | Beskrivning |
 | --- | --- | 
-| [Add Attachment In PDF File](./add-attachment/) | Learn how to add attachment in PDF file using Aspose.PDF for .NET.  |  
-| [Delete All Attachments In PDF File](./delete-all-attachments/) | Learn how to remove all attachments in PDF file using Aspose.PDF for .NET.  |  
-| [Disable Files Compression In PDF File](./disable-files-compression/) | Learn how to disable file compression in PDF file with Aspose.PDF for .NET.  |  
-| [Get All The Attachments In PDF File](./get-all-the-attachments/) | Learn how to get all attachments in PDF file with Aspose.PDF for .NET.  |  
-| [Get Attachment Info](./get-attachment-info/) | Learn how to get information about a specific attachment in a PDF file with Aspose.PDF for .NET. |  
-| [Get Individual Attachment In PDF File](./get-individual-attachment/) | Learn how to get an individual attachment in PDF file with Aspose.PDF for .NET.  |  
+| [Lägg till bilaga i PDF-fil](./add-attachment/) | Lär dig hur du lägger till bilagor i PDF-fil med Aspose.PDF för .NET.  |  
+| [Ta bort alla bilagor i PDF-fil](./delete-all-attachments/) | Lär dig hur du tar bort alla bilagor i PDF-filen med Aspose.PDF för .NET.  |  
+| [Inaktivera filkomprimering i PDF-fil](./disable-files-compression/) | Lär dig hur du inaktiverar filkomprimering i PDF-fil med Aspose.PDF för .NET.  |  
+| [Hämta alla bilagor i PDF-fil](./get-all-the-attachments/) | Lär dig hur du får alla bilagor i PDF-fil med Aspose.PDF för .NET.  |  
+| [Få bifogad information](./get-attachment-info/) | Lär dig hur du får information om en specifik bilaga i en PDF-fil med Aspose.PDF för .NET. |  
+| [Få individuell bilaga i PDF-fil](./get-individual-attachment/) | Lär dig hur du får en enskild bilaga i PDF-fil med Aspose.PDF för .NET.  |  

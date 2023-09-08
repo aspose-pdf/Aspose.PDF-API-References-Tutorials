@@ -1,71 +1,71 @@
 ---
-title: Select Radio Button In PDF Document
-linktitle: Select Radio Button In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to select a radio button in PDF document using Aspose.PDF for .NET.
+title: Выбрать переключатель в PDF-документе
+linktitle: Выбрать переключатель в PDF-документе
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как выбрать переключатель в PDF-документе с помощью Aspose.PDF для .NET.
 type: docs
 weight: 250
 url: /ru/net/programming-with-forms/select-radio-button/
 ---
-Here is a detailed tutorial on how to select a radio button using Aspose.PDF for .NET. Follow these steps:
+Вот подробное руководство о том, как выбрать переключатель с помощью Aspose.PDF для .NET. Следуй этим шагам:
 
-## Step 1: Start by defining the directory of your documents by specifying the path in the `dataDir` variable.
+##  Шаг 1. Начните с определения каталога ваших документов, указав путь в`dataDir` variable.
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Open the PDF document using the `Document` class and the document path.
+##  Шаг 2. Откройте PDF-документ с помощью`Document` class and the document path.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "RadioButton.pdf");
 ```
 
-## Step 3: Get the radio button field from the document form.
+## Шаг 3: Получите поле переключателя из формы документа.
 
 ```csharp
 RadioButtonField radioField = pdfDocument.Form["radio"] as RadioButtonField;
 ```
 
-## Step 4: Specify the index of the radio button to select from the group.
+## Шаг 4: Укажите индекс переключателя для выбора из группы.
 
 ```csharp
 radioField. Selected = 2;
 ```
 
-## Step 5: Set the output path for the edited PDF file.
+## Шаг 5. Установите путь вывода отредактированного PDF-файла.
 
 ```csharp
 dataDir = dataDir + "SelectRadioButton_out.pdf";
 ```
 
-## Step 6: Save the modified PDF file.
+## Шаг 6: Сохраните измененный PDF-файл.
 
 ```csharp
 pdfDocument.Save(dataDir);
 ```
 
-## Step 7: Display a confirmation message and the location of the saved file.
+## Шаг 7: Отобразите сообщение с подтверждением и местоположение сохраненного файла.
 
 ```csharp
 Console.WriteLine("\nRadio button successfully selected in group.\nFile saved to location: " + dataDir);
 ```
 
-### Sample source code for Select Radio Button using Aspose.PDF for .NET 
+### Пример исходного кода для кнопки выбора переключателя с использованием Aspose.PDF для .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Путь к каталогу документов.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Open document
+	// Открыть документ
 	Document pdfDocument = new Document(dataDir + "RadioButton.pdf");
-	// Get a field
+	// Получить поле
 	RadioButtonField radioField = pdfDocument.Form["radio"] as RadioButtonField;
-	// Specify the index of radio button from group
+	// Укажите индекс переключателя из группы
 	radioField.Selected = 2;
 	dataDir = dataDir + "SelectRadioButton_out.pdf";
-	// Save the PDF file
+	// Сохраните PDF-файл
 	pdfDocument.Save(dataDir);
 	Console.WriteLine("\nRadioButton from group selected successfully.\nFile saved at " + dataDir);
 }
@@ -75,29 +75,29 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, we learned how to select a radio button using Aspose.PDF for .NET. By following the steps outlined above, you can manipulate and modify radio buttons in your PDF documents using Aspose.PDF for .NET.
+В этом уроке мы узнали, как выбрать переключатель с помощью Aspose.PDF для .NET. Следуя шагам, описанным выше, вы можете манипулировать и изменять переключатели в ваших PDF-документах, используя Aspose.PDF для .NET.
 
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: Can I select multiple radio buttons in a group using Aspose.PDF for .NET?
+#### Вопрос: Могу ли я выбрать несколько переключателей в группе, используя Aspose.PDF для .NET?
 
-A: No, radio buttons in a group are designed to be mutually exclusive. You can only select one radio button at a time within a group, and selecting one will automatically deselect any previously selected radio button in the same group.
+О: Нет, переключатели в группе спроектированы так, чтобы быть взаимоисключающими. В группе можно выбрать только один переключатель за раз, и выбор одного автоматически отменит выбор любого ранее выбранного переключателя в той же группе.
 
-#### Q: How do I retrieve the selected radio button in a group using Aspose.PDF for .NET?
+#### Вопрос: Как получить выбранный переключатель в группе с помощью Aspose.PDF для .NET?
 
-A: To retrieve the selected radio button in a group, you can use the `Selected` property of the `RadioButtonField` class. It will return the index of the selected radio button within the group.
+ О: Чтобы получить выбранный переключатель в группе, вы можете использовать команду`Selected` собственность`RadioButtonField` сорт. Он вернет индекс выбранного переключателя в группе.
 
-#### Q: Can I customize the appearance of the selected radio button in the PDF document?
+#### Вопрос: Могу ли я настроить внешний вид выбранного переключателя в PDF-документе?
 
-A: Yes, you can customize the appearance of the selected radio button using Aspose.PDF for .NET. You can modify its color, size, border style, and other visual attributes to match your desired appearance.
+О: Да, вы можете настроить внешний вид выбранного переключателя с помощью Aspose.PDF для .NET. Вы можете изменить его цвет, размер, стиль границы и другие визуальные атрибуты в соответствии с желаемым внешним видом.
 
-#### Q: Is it possible to create new radio button groups programmatically using Aspose.PDF for .NET?
+#### Вопрос: Можно ли программно создавать новые группы переключателей с помощью Aspose.PDF для .NET?
 
-A: Yes, you can create new radio button groups programmatically using Aspose.PDF for .NET. You can add new radio buttons to the document's form and specify the same group name for each radio button to create a new group.
+О: Да, вы можете создавать новые группы переключателей программно, используя Aspose.PDF для .NET. Вы можете добавить новые переключатели в форму документа и указать одно и то же имя группы для каждого переключателя, чтобы создать новую группу.
 
-#### Q: Does Aspose.PDF for .NET support working with interactive PDF forms?
+#### Вопрос: Поддерживает ли Aspose.PDF for .NET работу с интерактивными PDF-формами?
 
-A: Yes, Aspose.PDF for .NET fully supports working with interactive PDF forms, including radio buttons, text fields, checkboxes, and other form elements. You can easily read, modify, and create interactive PDF forms using the library.
+О: Да, Aspose.PDF для .NET полностью поддерживает работу с интерактивными формами PDF, включая переключатели, текстовые поля, флажки и другие элементы форм. С помощью библиотеки вы можете легко читать, изменять и создавать интерактивные PDF-формы.

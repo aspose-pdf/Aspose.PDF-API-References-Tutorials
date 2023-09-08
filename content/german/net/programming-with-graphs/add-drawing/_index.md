@@ -1,119 +1,119 @@
 ---
-title: Add Drawing In PDF File
-linktitle: Add Drawing In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add drawing in PDF file using Aspose.PDF for .NET. Follow this step-by-step guide to create attractive PDF documents with drawing features.
+title: Zeichnung in PDF-Datei hinzufügen
+linktitle: Zeichnung in PDF-Datei hinzufügen
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET eine Zeichnung in eine PDF-Datei einfügen. Befolgen Sie diese Schritt-für-Schritt-Anleitung, um attraktive PDF-Dokumente mit Zeichenfunktionen zu erstellen.
 type: docs
 weight: 10
 url: /de/net/programming-with-graphs/add-drawing/
 ---
-Application development often requires adding features such as drawings and graphics to make documents more attractive and informative. In this article, we will guide you step by step to explain the C# source code to add drawing to programming with graphics using Aspose.PDF for .NET.
+Bei der Anwendungsentwicklung müssen häufig Funktionen wie Zeichnungen und Grafiken hinzugefügt werden, um Dokumente attraktiver und informativer zu gestalten. In diesem Artikel erklären wir Ihnen Schritt für Schritt den C#-Quellcode, um mithilfe von Aspose.PDF für .NET Zeichnung zur Programmierung mit Grafiken hinzuzufügen.
 
-Before you start, make sure you have installed the Aspose.PDF library and set up your development environment. Also, make sure you have basic knowledge of C# programming.
+Bevor Sie beginnen, stellen Sie sicher, dass Sie die Aspose.PDF-Bibliothek installiert und Ihre Entwicklungsumgebung eingerichtet haben. Stellen Sie außerdem sicher, dass Sie über Grundkenntnisse der C#-Programmierung verfügen.
 
-## Step 1: Introduction to Aspose.PDF for .NET and its features
+## Schritt 1: Einführung in Aspose.PDF für .NET und seine Funktionen
 
-Aspose.PDF is a powerful and versatile library for creating, manipulating and converting PDF files in .NET applications. It offers a wide range of features for working with PDF documents, including adding drawings, graphics, text, etc.
+Aspose.PDF ist eine leistungsstarke und vielseitige Bibliothek zum Erstellen, Bearbeiten und Konvertieren von PDF-Dateien in .NET-Anwendungen. Es bietet eine breite Palette von Funktionen für die Arbeit mit PDF-Dokumenten, einschließlich des Hinzufügens von Zeichnungen, Grafiken, Text usw.
 
-## Step 2: Understand the source code to add drawings using Aspose.PDF
+## Schritt 2: Verstehen Sie den Quellcode zum Hinzufügen von Zeichnungen mit Aspose.PDF
 
-The provided source code uses the Aspose.PDF library to create a simple drawing in a PDF document. We will now examine each step of the code in detail.
+Der bereitgestellte Quellcode verwendet die Aspose.PDF-Bibliothek, um eine einfache Zeichnung in einem PDF-Dokument zu erstellen. Wir werden nun jeden Schritt des Codes im Detail untersuchen.
 
-## Step 3: Configuring the documents directory and initializing the variables
+## Schritt 3: Konfigurieren des Dokumentenverzeichnisses und Initialisieren der Variablen
 
-In the source code, you need to specify the directory where you want to save the resulting PDF file. You can modify the "dataDir" variable to indicate the desired directory.
+Im Quellcode müssen Sie das Verzeichnis angeben, in dem Sie die resultierende PDF-Datei speichern möchten. Sie können die Variable „dataDir“ ändern, um das gewünschte Verzeichnis anzugeben.
 
-Additionally, the code initializes variables for the alpha, red, green, and blue color components.
+Darüber hinaus initialisiert der Code Variablen für die Farbkomponenten Alpha, Rot, Grün und Blau.
 
-## Step 4: Creating a Color Object with Alpha RGB
+## Schritt 4: Erstellen eines Farbobjekts mit Alpha RGB
 
-The following line of code creates a Color object using the specified alpha, red, green, and blue values:
+Die folgende Codezeile erstellt ein Farbobjekt mit den angegebenen Alpha-, Rot-, Grün- und Blauwerten:
 
 ```csharp
 Aspose.Pdf.Color alphaColor = Aspose.Pdf.Color.FromArgb(alpha, red, green, blue);
 ```
 
-This allows to define a color with an alpha channel, which means that the color can be partially transparent.
+Dies ermöglicht die Definition einer Farbe mit einem Alphakanal, was bedeutet, dass die Farbe teilweise transparent sein kann.
 
-## Step 5: Instantiating a Document Object
+## Schritt 5: Instanziieren eines Dokumentobjekts
 
-To start working with Aspose.PDF, we need to create an instance of the Document class. This represents our PDF document.
+Um mit Aspose.PDF arbeiten zu können, müssen wir eine Instanz der Document-Klasse erstellen. Dies stellt unser PDF-Dokument dar.
 
 ```csharp
 Document document = new Document();
 ```
 
-## Step 6: Adding a page to the PDF file
+## Schritt 6: Hinzufügen einer Seite zur PDF-Datei
 
-We need to add a page to the PDF file where we want to display our drawing.
+Wir müssen der PDF-Datei eine Seite hinzufügen, auf der wir unsere Zeichnung anzeigen möchten.
 
 ```csharp
 Page page = document.Pages.Add();
 ```
 
-## Step 7: Creating a Graph Object with Dimensions
+## Schritt 7: Erstellen eines Diagrammobjekts mit Dimensionen
 
-In this step, we create a Graph object with specified dimensions. This object will serve as a container for our drawing.
+In diesem Schritt erstellen wir ein Graph-Objekt mit angegebenen Abmessungen. Dieses Objekt dient als Container für unsere Zeichnung.
 
 ```csharp
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(300, 400);
 ```
 
-## Step 8: Setting the border for the Drawing object
+## Schritt 8: Festlegen des Rahmens für das Zeichnungsobjekt
 
-We can set the border of the Drawing object using the BorderInfo class.
+Wir können den Rahmen des Drawing-Objekts mithilfe der BorderInfo-Klasse festlegen.
 
 ```csharp
 graph.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Aspose.Pdf.Color.Black);
 ```
 
-This will set a black border around our drawing.
+Dadurch wird ein schwarzer Rand um unsere Zeichnung gelegt.
 
-## Step 9: Adding the graph object to the page
+## Schritt 9: Hinzufügen des Diagrammobjekts zur Seite
 
-Now we add the graph object to the paragraphs collection of the Page class instance.
+Jetzt fügen wir das Diagrammobjekt zur Absatzsammlung der Page-Klasseninstanz hinzu.
 
 ```csharp
 page.Paragraphs.Add(graph);
 ```
 
-## Step 10: Creating a Rectangle Object with Dimensions
+## Schritt 10: Erstellen eines rechteckigen Objekts mit Abmessungen
 
-We create a Rectangle object with specified dimensions. This rectangle will be added to our drawing.
+Wir erstellen ein Rechteckobjekt mit angegebenen Abmessungen. Dieses Rechteck wird unserer Zeichnung hinzugefügt.
 
 ```csharp
 Aspose.Pdf.Drawing.Rectangle rectangle = new Aspose.Pdf.Drawing.Rectangle(0, 0, 100, 50);
 ```
 
-## Step 11: Creating a GraphInfo object for the Rectangle instance
+## Schritt 11: Erstellen eines GraphInfo-Objekts für die Rechteckinstanz
 
-We need to create a GraphInfo object for the Rectangle instance to configure its graph properties.
+Wir müssen ein GraphInfo-Objekt für die Rechteckinstanz erstellen, um ihre Diagrammeigenschaften zu konfigurieren.
 
 ```csharp
 Aspose.Pdf.GraphInfo graphInfo = rectangle.GraphInfo;
 ```
 
-## Step 12: Configuring color information for the GraphInfo object
+## Schritt 12: Farbinformationen für das GraphInfo-Objekt konfigurieren
 
-We can configure the color information for the GraphInfo object using the Color and FillColor properties.
+Wir können die Farbinformationen für das GraphInfo-Objekt mithilfe der Eigenschaften Color und FillColor konfigurieren.
 
 ```csharp
 graphInfo.Color = Aspose.Pdf.Color.Red;
 graphInfo. FillColor = alphaColor;
 ```
 
-This will set the rectangle border color to red and the fill color to the specified alpha color.
+Dadurch wird die Randfarbe des Rechtecks auf Rot und die Füllfarbe auf die angegebene Alpha-Farbe gesetzt.
 
-## Step 13: Adding the rectangle shape to the graph object
+## Schritt 13: Hinzufügen der Rechteckform zum Diagrammobjekt
 
-Now we add the rectangle shape to the shape collection of the graph object.
+Jetzt fügen wir die Rechteckform zur Formensammlung des Diagrammobjekts hinzu.
 
 ```csharp
 graph.Shapes.Add(rectangle);
 ```
-## Step 14: Save PDF file and display success message
+## Schritt 14: PDF-Datei speichern und Erfolgsmeldung anzeigen
 
-Finally, we save the PDF file and display a message that the drawing was added successfully.
+Abschließend speichern wir die PDF-Datei und zeigen eine Meldung an, dass die Zeichnung erfolgreich hinzugefügt wurde.
 
 ```csharp
 dataDir = dataDir + "AddDrawing_out.pdf";
@@ -121,64 +121,64 @@ document. Save(dataDir);
 Console.WriteLine("\nSuccessfully added drawing with transparent color.\nFile saved to location: " + dataDir);
 ```
 
-### Sample source code for Add Drawing using Aspose.PDF for .NET 
+### Beispielquellcode für „Zeichnung hinzufügen“ mit Aspose.PDF für .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 int alpha = 10;
 int green = 0;
 int red = 100;
 int blue = 0;
-// Create Color object using Alpha RGB 
-Aspose.Pdf.Color alphaColor = Aspose.Pdf.Color.FromArgb(alpha, red, green, blue); // Provide alpha channel
-// Instantiate Document object
+// Erstellen Sie ein Farbobjekt mit Alpha RGB
+Aspose.Pdf.Color alphaColor = Aspose.Pdf.Color.FromArgb(alpha, red, green, blue); // Stellen Sie einen Alphakanal bereit
+// Dokumentobjekt instanziieren
 Document document = new Document();
-// Add page to pages collection of PDF file
+// Seite zur Seitensammlung der PDF-Datei hinzufügen
 Page page = document.Pages.Add();
-// Create Graph object with certain dimensions
+//Erstellen Sie ein Diagrammobjekt mit bestimmten Abmessungen
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(300, 400);
-// Set border for Drawing object
+// Legen Sie den Rahmen für das Zeichnungsobjekt fest
 graph.Border = (new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Aspose.Pdf.Color.Black));
-// Add graph object to paragraphs collection of Page instance
+// Fügen Sie ein Diagrammobjekt zur Absatzsammlung der Seiteninstanz hinzu
 page.Paragraphs.Add(graph);
-// Create Rectangle object with certain dimensions
+// Erstellen Sie ein rechteckiges Objekt mit bestimmten Abmessungen
 Aspose.Pdf.Drawing.Rectangle rectangle = new Aspose.Pdf.Drawing.Rectangle(0, 0, 100, 50);
-// Create graphInfo object for Rectangle instance
+// Erstellen Sie ein graphInfo-Objekt für die Rechteckinstanz
 Aspose.Pdf.GraphInfo graphInfo = rectangle.GraphInfo;
-// Set color information for GraphInfo instance
+// Legen Sie Farbinformationen für die GraphInfo-Instanz fest
 graphInfo.Color = (Aspose.Pdf.Color.Red);
-// Set fill color for GraphInfo
+// Füllfarbe für GraphInfo festlegen
 graphInfo.FillColor = (alphaColor);
-// Add rectangle shape to shapes collection of graph object
+// Fügen Sie der Formensammlung des Diagrammobjekts eine Rechteckform hinzu
 graph.Shapes.Add(rectangle);
 dataDir = dataDir + "AddDrawing_out.pdf";
-// Save PDF file
+// PDF-Datei speichern
 document.Save(dataDir);
 Console.WriteLine("\nDrawing added successfully with transparent color.\nFile saved at " + dataDir);            
 
 ```
 
-## Conclusion
+## Abschluss
 
-In this article, we learned how to add drawing to programming with graphics using Aspose.PDF for .NET. We followed a step-by-step guide to understand the source code and the various steps involved in adding a drawing to a PDF file. Using the powerful features of Aspose.PDF, you can create attractive and interactive PDF documents in your .NET applications.
+In diesem Artikel haben wir gelernt, wie man mithilfe von Aspose.PDF für .NET das Zeichnen mit Grafiken zum Programmieren hinzufügt. Wir folgten einer Schritt-für-Schritt-Anleitung, um den Quellcode und die verschiedenen Schritte zum Hinzufügen einer Zeichnung zu einer PDF-Datei zu verstehen. Mit den leistungsstarken Funktionen von Aspose.PDF können Sie attraktive und interaktive PDF-Dokumente in Ihren .NET-Anwendungen erstellen.
 
 
-### FAQ's for add drawing in PDF file
+### FAQs zum Hinzufügen einer Zeichnung in einer PDF-Datei
 
-#### Q: What is Aspose.PDF for .NET?
+#### F: Was ist Aspose.PDF für .NET?
 
-A: Aspose.PDF for .NET is a powerful library that enables the creation, manipulation, and conversion of PDF files within .NET applications.
+A: Aspose.PDF für .NET ist eine leistungsstarke Bibliothek, die die Erstellung, Bearbeitung und Konvertierung von PDF-Dateien in .NET-Anwendungen ermöglicht.
 
-#### Q: Can I adjust the transparency of colors in my drawings?
+#### F: Kann ich die Transparenz der Farben in meinen Zeichnungen anpassen?
 
-A: Yes, by using the alpha channel in the Color object, you can create partially transparent colors for your drawings.
+A: Ja, durch die Verwendung des Alphakanals im Farbobjekt können Sie teilweise transparente Farben für Ihre Zeichnungen erstellen.
 
-#### Q: How do I add a border to a drawing in a PDF document?
+#### F: Wie füge ich einer Zeichnung in einem PDF-Dokument einen Rahmen hinzu?
 
-A: You can set the border of a Drawing object using the BorderInfo class, allowing you to define border properties such as color and style.
+A: Sie können den Rahmen eines Drawing-Objekts mithilfe der BorderInfo-Klasse festlegen und so Rahmeneigenschaften wie Farbe und Stil definieren.
 
-#### Q: Is Aspose.PDF suitable for beginners in C# programming?
+#### F: Ist Aspose.PDF für Anfänger in der C#-Programmierung geeignet?
 
-A: Aspose.PDF offers a wide range of features, including drawing, and may require a basic understanding of C# programming to fully utilize its capabilities.
+A: Aspose.PDF bietet eine breite Palette an Funktionen, einschließlich Zeichnen, und erfordert möglicherweise grundlegende Kenntnisse der C#-Programmierung, um seine Funktionen vollständig nutzen zu können.

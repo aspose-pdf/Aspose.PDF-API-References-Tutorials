@@ -1,47 +1,47 @@
 ---
-title: Retrieve Form Field In Tab Order
-linktitle: Retrieve Form Field In Tab Order
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to retrieve form fields in tab order using Aspose.PDF for .NET.
+title: Recupera il campo del modulo nell'ordine di tabulazione
+linktitle: Recupera il campo del modulo nell'ordine di tabulazione
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Scopri come recuperare i campi del modulo in ordine di tabulazione utilizzando Aspose.PDF per .NET.
 type: docs
 weight: 240
 url: /it/net/programming-with-forms/retrieve-form-field-in-tab-order/
 ---
-When working with PDF documents in C# using Aspose.PDF for .NET, you may come across a scenario where you need to retrieve form fields in a specific tab order. This can be useful when you want to perform operations on form fields based on their tab sequence. In this tutorial, we will guide you step by step on how to retrieve form fields in tab order using Aspose.PDF for .NET.
+Quando lavori con documenti PDF in C# utilizzando Aspose.PDF per .NET, potresti imbatterti in uno scenario in cui è necessario recuperare i campi del modulo in un ordine di tabulazione specifico. Ciò può essere utile quando desideri eseguire operazioni sui campi del modulo in base alla sequenza di tabulazione. In questo tutorial, ti guideremo passo dopo passo su come recuperare i campi del modulo in ordine di tabulazione utilizzando Aspose.PDF per .NET.
 
-## Requirements
+## Requisiti
 
-Before we begin, make sure you have the following prerequisites:
+Prima di iniziare, assicurati di avere i seguenti prerequisiti:
 
-- Visual Studio installed on your system
-- Aspose.PDF for .NET library installed
+- Visual Studio installato nel sistema
+- Aspose.PDF per la libreria .NET installata
 
-Now, let's dive into the steps to retrieve form fields in tab order.
+Ora approfondiamo i passaggi per recuperare i campi del modulo in ordine di tabulazione.
 
-## Step 1: Setting the Document Directory
+## Passaggio 1: impostazione della directory dei documenti
 
-To start with, you need to set the document directory where your PDF document is located. You can do this by specifying the path to the directory in the `dataDir` variable.
+ Per cominciare, devi impostare la directory dei documenti in cui si trova il tuo documento PDF. Puoi farlo specificando il percorso della directory nel file`dataDir` variabile.
 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ Sostituire`"YOUR DOCUMENT DIRECTORY"` con il percorso effettivo della directory dei documenti.
 
-## Step 2: Loading the PDF Document
+## Passaggio 2: caricamento del documento PDF
 
-In this step, we will load the PDF document using Aspose.PDF for .NET. The `Document` class provides the ability to load and manipulate PDF documents.
+ In questo passaggio, caricheremo il documento PDF utilizzando Aspose.PDF per .NET. IL`Document` La classe offre la possibilità di caricare e manipolare documenti PDF.
 
 ```csharp
 Document doc = new Document(dataDir + "Test2.pdf");
 ```
 
-Here, `"Test2.pdf"` is the name of the PDF document you want to load. Make sure the document is present in the specified document directory.
+ Qui,`"Test2.pdf"`è il nome del documento PDF che desideri caricare. Assicurati che il documento sia presente nella directory dei documenti specificata.
 
-## Step 3: Retrieving Form Fields in Tab Order
+## Passaggio 3: recupero dei campi del modulo nell'ordine delle schede
 
-To retrieve form fields in tab order, we need to access the `FieldsInTabOrder` property of the `Page` class. This property returns a list of form fields sorted by their tab sequence.
+ Per recuperare i campi del modulo in ordine di tabulazione, dobbiamo accedere a`FieldsInTabOrder` proprietà del`Page` classe. Questa proprietà restituisce un elenco di campi modulo ordinati in base alla sequenza di tabulazione.
 
 ```csharp
 Page page = doc.Pages[1];
@@ -53,11 +53,11 @@ foreach (Field field in fields)
 }
 ```
 
-In the above code snippet, we retrieve the form fields from the second page (`doc.Pages[1]`) and iterate through each field to concatenate their partial names into the `s` variable. You can modify this code snippet based on your specific requirements.
+Nello snippet di codice sopra, recuperiamo i campi del modulo dalla seconda pagina (`doc.Pages[1]` ) e scorrere ciascun campo per concatenare i relativi nomi parziali nel file`s` variabile. Puoi modificare questo snippet di codice in base ai tuoi requisiti specifici.
 
-## Step 4: Modifying the Tab Order
+## Passaggio 4: modifica dell'ordine delle schede
 
-If you want to modify the tab order of form fields, you can do so by accessing the `TabOrder` property of each field and assigning a new tab order value. Here's an example:
+ Se desideri modificare l'ordine di tabulazione dei campi del modulo, puoi farlo accedendo al file`TabOrder` proprietà di ciascun campo e assegnando un nuovo valore dell'ordine di tabulazione. Ecco un esempio:
 
 ```csharp
 (doc.Form[3] as Field).TabOrder = 1;
@@ -65,21 +65,21 @@ If you want to modify the tab order of form fields, you can do so by accessing t
 (doc.Form[2] as Field).TabOrder = 3;
 ```
 
-In the above code snippet, we assign new tab order values to three form fields (`doc.Form[3]`, `doc.Form[1]`, and `doc.Form[2]`). Adjust the field indices and tab order values according to your specific requirements.
+Nello snippet di codice sopra, assegniamo nuovi valori dell'ordine di tabulazione a tre campi del modulo (`doc.Form[3]`, `doc.Form[1]` , E`doc.Form[2]`). Modifica gli indici dei campi e i valori dell'ordine di tabulazione in base ai tuoi requisiti specifici.
 
-## Step 5: Saving the Modified Document
+## Passaggio 5: salvataggio del documento modificato
 
-After modifying the tab order of form fields, you need to save the modified document. You can do this using the `Save` method of the `Document` class.
+ Dopo aver modificato l'ordine di tabulazione dei campi del modulo, è necessario salvare il documento modificato. Puoi farlo usando il file`Save` metodo del`Document` classe.
 
 ```csharp
 doc.Save(dataDir + "39522_out.pdf");
 ```
 
-Here, `"39522_out.pdf"` is the name of the output file where the modified document will be saved. Specify the desired name and location for the output file.
+ Qui,`"39522_out.pdf"` è il nome del file di output in cui verrà salvato il documento modificato. Specificare il nome e il percorso desiderati per il file di output.
 
-### Sample source code for Retrieve Form Field In Tab Order using Aspose.PDF for .NET 
+### Codice sorgente di esempio per Recupera campo modulo nell'ordine di tabulazione utilizzando Aspose.PDF per .NET 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "Test2.pdf");
 Page page = doc.Pages[1];
@@ -106,29 +106,29 @@ foreach (Field field in doc1.Form)
 }
 ```
 
-## Conclusion
+## Conclusione
 
-In this tutorial, we learned how to retrieve form fields in tab order using Aspose.PDF for .NET. We covered the steps involved in loading a PDF document, retrieving form fields in tab order, modifying the tab order, and saving the modified document. By following these steps, you can efficiently work with form fields and customize their tab sequence as per your requirements.
+In questo tutorial, abbiamo imparato come recuperare i campi del modulo in ordine di tabulazione utilizzando Aspose.PDF per .NET. Abbiamo coperto i passaggi necessari per caricare un documento PDF, recuperare i campi del modulo in ordine di tabulazione, modificare l'ordine di tabulazione e salvare il documento modificato. Seguendo questi passaggi, puoi lavorare in modo efficiente con i campi del modulo e personalizzare la sequenza delle schede in base alle tue esigenze.
 
 
-### FAQ's
+### Domande frequenti
 
-#### Q: How can I use the retrieved form fields in my C# code for further processing?
+#### D: Come posso utilizzare i campi del modulo recuperati nel mio codice C# per un'ulteriore elaborazione?
 
-A: You can use the retrieved form fields in your C# code by accessing their properties such as `Value`, `Name`, `Rect`, etc. These properties allow you to read and modify the form field data as needed.
+ R: Puoi utilizzare i campi del modulo recuperati nel codice C# accedendo alle loro proprietà come`Value`, `Name`, `Rect`ecc. Queste proprietà consentono di leggere e modificare i dati del campo modulo secondo necessità.
 
-#### Q: Can I retrieve form fields from all pages of the PDF document in tab order?
+#### D: Posso recuperare i campi modulo da tutte le pagine del documento PDF in ordine di tabulazione?
 
-A: Yes, you can retrieve form fields from all pages of the PDF document by iterating through each page and accessing the `FieldsInTabOrder` property as shown in the tutorial. This will give you form fields sorted by their tab sequence across all pages.
+ R: Sì, puoi recuperare i campi modulo da tutte le pagine del documento PDF scorrendo ciascuna pagina e accedendo al file`FieldsInTabOrder` proprietà come mostrato nel tutorial. Questo ti darà i campi del modulo ordinati in base alla sequenza di tabulazione su tutte le pagine.
 
-#### Q: Is it possible to retrieve only specific types of form fields, such as text fields or checkboxes, in tab order?
+#### D: È possibile recuperare solo tipi specifici di campi modulo, come campi di testo o caselle di controllo, in ordine di tabulazione?
 
-A: Yes, you can filter form fields based on their types, such as text fields or checkboxes, after retrieving them in tab order. You can use conditional statements to check the type of each form field and process them accordingly.
+R: Sì, puoi filtrare i campi del modulo in base al loro tipo, come campi di testo o caselle di controllo, dopo averli recuperati in ordine di tabulazione. È possibile utilizzare istruzioni condizionali per verificare il tipo di ciascun campo del modulo ed elaborarli di conseguenza.
 
-#### Q: Can I retrieve form fields based on their names instead of tab order?
+#### D: Posso recuperare i campi del modulo in base ai nomi anziché all'ordine di tabulazione?
 
-A: Yes, you can retrieve form fields based on their names by using the `doc.Form` collection and specifying the field name as an index. For example, `doc.Form["fieldName"]` will retrieve the form field with the specified name.
+ R: Sì, puoi recuperare i campi del modulo in base ai loro nomi utilizzando il file`doc.Form` collection e specificando il nome del campo come indice. Per esempio,`doc.Form["fieldName"]`recupererà il campo del modulo con il nome specificato.
 
-#### Q: Does Aspose.PDF for .NET support working with encrypted PDF documents?
+#### D: Aspose.PDF per .NET supporta il lavoro con documenti PDF crittografati?
 
-A: Yes, Aspose.PDF for .NET provides support for working with encrypted PDF documents. You can load and manipulate encrypted PDF files using appropriate password parameters.
+R: Sì, Aspose.PDF per .NET fornisce supporto per lavorare con documenti PDF crittografati. È possibile caricare e manipolare file PDF crittografati utilizzando parametri di password appropriati.

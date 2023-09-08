@@ -1,146 +1,146 @@
 ---
-title: Add PDF Page Stamp In PDF File
-linktitle: Add PDF Page Stamp In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to easily add a PDF page stamp in PDF file with Aspose.PDF for .NET.
+title: 在 PDF 文件中添加 PDF 页码
+linktitle: 在 PDF 文件中添加 PDF 页码
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 在 PDF 文件中轻松添加 PDF 页码。
 type: docs
 weight: 40
 url: /zh/net/programming-with-stamps-and-watermarks/add-pdf-page-stamp/
 ---
-In this tutorial, we will take you step by step on how to add a PDF page stamp in PDF file using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to add a custom stamp to a specific page of the PDF file.
+在本教程中，我们将逐步指导您如何使用 Aspose.PDF for .NET 在 PDF 文件中添加 PDF 页码。我们将向您展示如何使用提供的 C# 源代码将自定义图章添加到 PDF 文件的特定页面。
 
-## Step 1: Setting up the environment
+## 第一步：搭建环境
 
-Before you begin, make sure you have the following:
+在开始之前，请确保您具备以下条件：
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- 已安装的 .NET 开发环境。
+- 下载用于 .NET 的 Aspose.PDF 库并在您的项目中引用。
 
-## Step 2: Loading the PDF document
+## 第 2 步：加载 PDF 文档
 
-The first step is to load the existing PDF document into your project. Here's how:
+第一步是将现有的 PDF 文档加载到您的项目中。就是这样：
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the document
+//打开文档
 Document pdfDocument = new Document(dataDir + "PDFPageStamp.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+请务必将“您的文档目录”替换为 PDF 文档所在目录的实际路径。
 
-## Step 3: Creating the page buffer
+## 第三步：创建页面缓冲区
 
-Now that you have uploaded the PDF document, you can create the page stamp to add. Here's how to do it:
+现在您已经上传了 PDF 文档，您可以创建要添加的页戳。操作方法如下：
 
 ```csharp
-// Create the page buffer
+//创建页面缓冲区
 PdfPageStamp pageStamp = new PdfPageStamp(pdfDocument.Pages[1]);
 ```
 
-The code above creates a new page buffer using the first page of the PDF document.
+上面的代码使用 PDF 文档的第一页创建一个新的页面缓冲区。
 
-## Step 4: Configuring Page Buffer Properties
+## 步骤 4：配置页面缓冲区属性
 
-Before adding the page stamp to the PDF document, you can configure various properties of the stamp, such as background, position, rotation, etc. Here's how:
+在将页面图章添加到 PDF 文档之前，您可以配置图章的各种属性，例如背景、位置、旋转等。操作方法如下：
 
 ```csharp
-// Configure page buffer properties
+//配置页面缓冲区属性
 pageStamp. Background = true;
 pageStamp. XIndent = 100;
 pageStamp. YIndent = 100;
 pageStamp.Rotate = Rotate.on180;
 ```
 
-You can adjust these properties according to your needs.
+您可以根据需要调整这些属性。
 
-## Step 5: Adding the page stamp to the PDF
+## 步骤 5：将页码添加到 PDF
 
-Now that the page stamp is ready, you can add it to a specific page of the PDF document. Here's how:
+现在页面图章已准备就绪，您可以将其添加到 PDF 文档的特定页面。就是这样：
 
 ```csharp
-// Add page buffer to specific page
+//将页面缓冲区添加到特定页面
 pdfDocument.Pages[1].AddStamp(pageStamp);
 ```
 
-The above code adds the page stamp to the first page of the PDF document. You can specify another page if needed.
+上面的代码将页码添加到 PDF 文档的第一页。如果需要，您可以指定另一个页面。
 
-## Step 6: Save the output document
+## 步骤 6：保存输出文档
 
-Once you have added the page stamp, you can save the modified PDF document. Here's how:
+添加页戳后，您可以保存修改后的 PDF 文档。就是这样：
 
 ```csharp
-// Save the output document
+//保存输出文档
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Add PDFPage Stamp using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 添加 PDFPage Stamp 的示例源代码 
 ```csharp
 
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+//打开文档
 Document pdfDocument = new Document(dataDir+ "PDFPageStamp.pdf");
 
-// Create page stamp
+//创建页戳
 PdfPageStamp pageStamp = new PdfPageStamp(pdfDocument.Pages[1]);
 pageStamp.Background = true;
 pageStamp.XIndent = 100;
 pageStamp.YIndent = 100;
 pageStamp.Rotate = Rotation.on180;
 
-// Add stamp to particular page
+//添加图章到特定页面
 pdfDocument.Pages[1].AddStamp(pageStamp);
 dataDir = dataDir + "PDFPageStamp_out.pdf";
 
-// Save output document
+//保存输出文档
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nPdf page stamp added successfully.\nFile saved at " + dataDir);
 
 ```
 
-The above code saves the edited PDF document to the specified directory.
+上述代码将编辑后的PDF文档保存到指定目录。
 
-## Conclusion
+## 结论
 
-Congratulation ! You have learned how to add a PDF page stamp using Aspose.PDF for .NET. Now you can apply this knowledge to your own projects to add custom stamps to specific pages of your PDF documents.
+恭喜！您已经了解了如何使用 Aspose.PDF for .NET 添加 PDF 页戳。现在，您可以将这些知识应用到您自己的项目中，以将自定义图章添加到 PDF 文档的特定页面。
 
-### FAQ's for add PDF page stamp in PDF file
+### 在 PDF 文件中添加 PDF 页戳的常见问题解答
 
-#### Q: What is the purpose of adding a PDF page stamp using Aspose.PDF for .NET?
+#### 问：使用 Aspose.PDF for .NET 添加 PDF 页戳的目的是什么？
 
-A: Adding a PDF page stamp allows you to place a custom stamp on a specific page of a PDF document. This feature is useful for adding watermarks, logos, signatures, or any other visual elements to enhance the document's appearance and convey additional information.
+答：添加 PDF 页面图章允许您在 PDF 文档的特定页面上放置自定义图章。此功能对于添加水印、徽标、签名或任何其他视觉元素以增强文档的外观并传达附加信息非常有用。
 
-#### Q: Can I add multiple page stamps to different pages of the same PDF document?
+#### 问：我可以在同一 PDF 文档的不同页面上添加多个页面印记吗？
 
-A: Yes, you can add multiple page stamps to different pages of the same PDF document. The provided C# source code allows you to specify the target page for adding the page stamp, making it versatile for different pages within the document.
+答：是的，您可以将多个页面印记添加到同一 PDF 文档的不同页面。提供的 C# 源代码允许您指定添加页戳的目标页面，使其适用于文档中的不同页面。
 
-#### Q: How can I adjust the position and rotation of the page stamp within the PDF document?
+#### 问：如何调整 PDF 文档中页签的位置和旋转？
 
-A: You can customize the position and rotation of the page stamp by modifying the properties of the `PdfPageStamp` object. The code provided in the tutorial demonstrates how to set properties such as `XIndent`, `YIndent`, and `Rotate` to control the stamp's positioning and orientation.
+ A：您可以通过修改页签的属性来自定义页签的位置和旋转。`PdfPageStamp`目的。本教程中提供的代码演示了如何设置属性，例如`XIndent`, `YIndent`， 和`Rotate`控制印章的定位和方向。
 
-#### Q: Is it possible to have a transparent or semi-transparent background for the page stamp?
+#### 问：页面印记可以有透明或半透明的背景吗？
 
-A: Yes, you can set the `Background` property of the `PdfPageStamp` object to `true` to enable a transparent or semi-transparent background for the page stamp. This can be useful for watermarks or other stamps that should not fully obscure the content.
+答：是的，您可以设置`Background`的财产`PdfPageStamp`反对`true`为页面标记启用透明或半透明背景。这对于不应该完全遮盖内容的水印或其他图章很有用。
 
-#### Q: Can I apply this method to existing PDF documents to add page stamps?
+#### 问：我可以将此方法应用于现有 PDF 文档来添加页码吗？
 
-A: Absolutely, you can apply this method to existing PDF documents to add page stamps. The tutorial's provided code demonstrates how to load an existing PDF document and add a page stamp to a specific page.
+答：当然可以，您可以将此方法应用于现有的 PDF 文档来添加页签。本教程提供的代码演示了如何加载现有 PDF 文档并向特定页面添加页戳。
 
-#### Q: How do I specify the page to which I want to add a page stamp?
+#### 问：如何指定要添加页签的页面？
 
-A: You can specify the target page for adding a page stamp by referencing the desired page using the `pdfDocument.Pages[index]` syntax. The provided C# source code shows how to add a page stamp to the first page using `pdfDocument.Pages[1]`, but you can modify the index to target a different page.
+答：您可以通过使用引用所需的页面来指定添加页戳的目标页面。`pdfDocument.Pages[index]`句法。提供的 C# 源代码显示了如何使用以下命令将页码添加到第一页`pdfDocument.Pages[1]`，但您可以修改索引以定位不同的页面。
 
-#### Q: Can I use this method to add stamps other than watermarks, such as logos or signatures?
+#### 问：我可以使用此方法添加水印以外的印章，例如徽标或签名吗？
 
-A: Yes, you can use this method to add various types of stamps, including watermarks, logos, signatures, or any other visual elements. The tutorial's code can be customized to add the desired stamps to your PDF documents.
+答：是的，您可以使用此方法添加各种类型的图章，包括水印、徽标、签名或任何其他视觉元素。可以自定义教程的代码，以将所需的图章添加到您的 PDF 文档中。
 
-#### Q: Are there any considerations or limitations when adding page stamps to PDF documents?
+#### 问：向 PDF 文档添加页戳时有什么注意事项或限制吗？
 
-A: While adding page stamps is straightforward, consider the overall layout and content of the PDF document. Ensure that the added page stamps do not obstruct critical information or negatively affect the document's readability.
+答：虽然添加页戳很简单，但请考虑 PDF 文档的整体布局和内容。确保添加的页戳不会妨碍关键信息或对文档的可读性产生负面影响。
 
-#### Q: Can I automate the process of adding page stamps to multiple PDF documents?
+#### 问：我可以自动执行向多个 PDF 文档添加页戳的过程吗？
 
-A: Yes, you can automate the process of adding page stamps to multiple PDF documents by creating a script or program that iterates through a list of documents and applies the same page stamping process to each one.
+答：是的，您可以通过创建一个脚本或程序来自动执行向多个 PDF 文档添加页戳的过程，该脚本或程序会迭代文档列表并对每个文档应用相同的页戳过程。

@@ -1,49 +1,49 @@
 ---
-title: Rendering Replaceable Symbols In PDF File
-linktitle: Rendering Replaceable Symbols In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to render replaceable symbols in PDF file using Aspose.PDF for .NET.
+title: PDF Dosyasında Değiştirilebilir Sembollerin Oluşturulması
+linktitle: PDF Dosyasında Değiştirilebilir Sembollerin Oluşturulması
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF dosyasında değiştirilebilir sembollerin nasıl oluşturulacağını öğrenin.
 type: docs
 weight: 310
 url: /tr/net/programming-with-text/rendering-replaceable-symbols/
 ---
-In this tutorial, we will explain how to render replaceable symbols in PDF file using the Aspose.PDF library for .NET. We will go through the step-by-step process of creating a PDF, adding a text fragment with newline markers, setting text properties, positioning the text, and saving the PDF using the provided C# source code.
+Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak PDF dosyasında değiştirilebilir sembollerin nasıl oluşturulacağını açıklayacağız. PDF oluşturma, yeni satır işaretçileriyle bir metin parçası ekleme, metin özelliklerini ayarlama, metni konumlandırma ve sağlanan C# kaynak kodunu kullanarak PDF'yi kaydetme işlemlerini adım adım gerçekleştireceğiz.
 
-## Prerequisites
+## Önkoşullar
 
-Before you begin, ensure that you have the following:
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- The Aspose.PDF for .NET library installed.
-- A basic understanding of C# programming.
+- Aspose.PDF for .NET kütüphanesi kuruldu.
+- C# programlamanın temel anlayışı.
 
-## Step 1: Set up the Document Directory
+## 1. Adım: Belge Dizinini Ayarlayın
 
-First, you need to set the path to the directory where you want to save the generated PDF file. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your desired directory.
+ Öncelikle oluşturulan PDF dosyasını kaydetmek istediğiniz dizinin yolunu ayarlamanız gerekir. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir`İstediğiniz dizinin yolunu içeren değişken.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Create a PDF Document and Page
+## Adım 2: PDF Belgesi ve Sayfası Oluşturun
 
-Next, we create a new PDF document and add a page to it using the `Document` class and `Page` class from the Aspose.PDF library.
+ Daha sonra, yeni bir PDF belgesi oluşturup ona bir sayfa ekliyoruz.`Document` sınıf ve`Page` Aspose.PDF kütüphanesinden sınıf.
 
 ```csharp
 Aspose.Pdf.Document pdfApplicationDoc = new Aspose.Pdf.Document();
 Aspose.Pdf.Page applicationFirstPage = (Aspose.Pdf.Page)pdfApplicationDoc.Pages.Add();
 ```
 
-## Step 3: Add Text Fragment with Newline Markers
+## 3. Adım: Yeni Satır İşaretleyicileriyle Metin Parçası Ekleme
 
-We create a `TextFragment` object and set its text to include newline markers (`Environment.NewLine`) to represent multiple lines of text.
+ Biz bir yaratıyoruz`TextFragment`nesneyi seçin ve metnini yeni satır işaretçilerini içerecek şekilde ayarlayın (`Environment.NewLine`) birden fazla metin satırını temsil etmek için.
 
 ```csharp
 Aspose.Pdf.Text.TextFragment textFragment = new Aspose.Pdf.Text.TextFragment("Applicant Name: " + Environment.NewLine + " Joe Smoe");
 ```
 
-## Step 4: Set Text Fragment Properties
+## Adım 4: Metin Parçası Özelliklerini Ayarlayın
 
-We can set various properties for the text fragment if desired, such as font size, font, background color, and foreground color.
+İstenirse metin parçası için yazı tipi boyutu, yazı tipi, arka plan rengi ve ön plan rengi gibi çeşitli özellikleri ayarlayabiliriz.
 
 ```csharp
 textFragment.TextState.FontSize = 12;
@@ -52,9 +52,9 @@ textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
 textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
 ```
 
-## Step 5: Create Text Paragraph and Position
+## Adım 5: Metin Paragrafı ve Konumu Oluşturun
 
-We create a `TextParagraph` object, append the text fragment to the paragraph, and set the position of the paragraph on the page.
+ Biz bir yaratıyoruz`TextParagraph` nesnesini seçin, metin parçasını paragrafa ekleyin ve paragrafın sayfadaki konumunu ayarlayın.
 
 ```csharp
 TextParagraph par = new TextParagraph();
@@ -62,18 +62,18 @@ par.AppendLine(textFragment);
 par.Position = new Aspose.Pdf.Text.Position(100, 600);
 ```
 
-## Step 6: Add Text Paragraph to the Page
+## Adım 6: Sayfaya Metin Paragrafı Ekleme
 
-We create a `TextBuilder` object with the page and append the text paragraph to the text builder.
+ Biz bir yaratıyoruz`TextBuilder` sayfayla birlikte nesne oluşturun ve metin paragrafını metin oluşturucuya ekleyin.
 
 ```csharp
 TextBuilder textBuilder = new TextBuilder(applicationFirstPage);
 textBuilder.AppendParagraph(par);
 ```
 
-## Step 7: Save the PDF Document
+## Adım 7: PDF Belgesini Kaydedin
 
-Finally, we save the PDF document to the specified output file.
+Son olarak PDF belgesini belirtilen çıktı dosyasına kaydediyoruz.
 
 ```csharp
 dataDir = dataDir + "RenderingReplaceableSymbols_out.pdf";
@@ -81,82 +81,82 @@ pdfApplicationDoc.Save(dataDir);
 Console.WriteLine("\nReplaceable symbols rendered successfully during PDF creation.\nFile saved at " + dataDir);
 ```
 
-### Sample source code for Rendering Replaceable Symbols using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Değiştirilebilir Sembollerin Oluşturulması için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document pdfApplicationDoc = new Aspose.Pdf.Document();
 Aspose.Pdf.Page applicationFirstPage = (Aspose.Pdf.Page)pdfApplicationDoc.Pages.Add();
-// Initialize new TextFragment with text containing required newline markers
+// Gerekli yeni satır işaretçilerini içeren metinle yeni TextFragment'i başlatın
 Aspose.Pdf.Text.TextFragment textFragment = new Aspose.Pdf.Text.TextFragment("Applicant Name: " + Environment.NewLine + " Joe Smoe");
-// Set text fragment properties if necessary
+// Gerekirse metin parçası özelliklerini ayarlayın
 textFragment.TextState.FontSize = 12;
 textFragment.TextState.Font = Aspose.Pdf.Text.FontRepository.FindFont("TimesNewRoman");
 textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
 textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
-// Create TextParagraph object
+// TextParagraph nesnesi oluştur
 TextParagraph par = new TextParagraph();
-// Add new TextFragment to paragraph
+// Paragrafa yeni TextFragment ekle
 par.AppendLine(textFragment);
-// Set paragraph position
+// Paragraf konumunu ayarla
 par.Position = new Aspose.Pdf.Text.Position(100, 600);
-// Create TextBuilder object
+// TextBuilder nesnesi oluştur
 TextBuilder textBuilder = new TextBuilder(applicationFirstPage);
-// Add the TextParagraph using TextBuilder
+// TextBuilder'ı kullanarak TextParagraph'ı ekleme
 textBuilder.AppendParagraph(par);
 dataDir = dataDir + "RenderingReplaceableSymbols_out.pdf";
 pdfApplicationDoc.Save(dataDir);
 Console.WriteLine("\nReplaceable symbols render successfully duing pdf creation.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, you have learned how to render replaceable symbols in a PDF document using the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can create a PDF, add text with newline markers, set text properties, position the text on the page, and save the PDF.
+Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak bir PDF belgesinde değiştirilebilir sembollerin nasıl oluşturulacağını öğrendiniz. Adım adım kılavuzu izleyerek ve sağlanan C# kodunu çalıştırarak bir PDF oluşturabilir, yeni satır işaretçileriyle metin ekleyebilir, metin özelliklerini ayarlayabilir, metni sayfada konumlandırabilir ve PDF'yi kaydedebilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the purpose of the "Rendering Replaceable Symbols In PDF File" tutorial?
+#### S: "PDF Dosyasındaki Değiştirilebilir Sembolleri Oluşturma" eğitiminin amacı nedir?
 
-A: The "Rendering Replaceable Symbols In PDF File" tutorial demonstrates how to use the Aspose.PDF library for .NET to create a PDF document that includes replaceable symbols. These symbols are represented as text fragments with newline markers to create multi-line content.
+C: "PDF Dosyasında Değiştirilebilir Sembollerin Oluşturulması" eğitimi, değiştirilebilir semboller içeren bir PDF belgesi oluşturmak için Aspose.PDF kütüphanesinin .NET için nasıl kullanılacağını gösterir. Bu semboller, çok satırlı içerik oluşturmak için yeni satır işaretleyicileri olan metin parçaları olarak temsil edilir.
 
-#### Q: Why would I want to render replaceable symbols in a PDF document?
+#### S: Bir PDF belgesinde neden değiştirilebilir semboller oluşturmak isteyeyim?
 
-A: Rendering replaceable symbols is useful when you need to dynamically generate PDF content that includes variable or user-specific information. These symbols act as placeholders that can be replaced with actual data during runtime, such as form field values or personalized details.
+C: Değiştirilebilir sembollerin oluşturulması, değişken veya kullanıcıya özel bilgiler içeren PDF içeriğini dinamik olarak oluşturmanız gerektiğinde kullanışlıdır. Bu semboller, çalışma zamanı sırasında form alanı değerleri veya kişiselleştirilmiş ayrıntılar gibi gerçek verilerle değiştirilebilen yer tutucular görevi görür.
 
-#### Q: How do I set up the document directory?
+#### S: Belge dizinini nasıl ayarlarım?
 
-A: To set up the document directory:
+C: Belge dizinini ayarlamak için:
 
-1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where you want to save the generated PDF file.
+1.  Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` oluşturulan PDF dosyasını kaydetmek istediğiniz dizinin yolunu içeren değişken.
 
-#### Q: How do I render replaceable symbols in a PDF document using the Aspose.PDF library?
+#### S: Aspose.PDF kütüphanesini kullanarak bir PDF belgesindeki değiştirilebilir sembolleri nasıl işleyebilirim?
 
-A: The tutorial guides you through the process step by step:
+C: Eğitim, süreç boyunca size adım adım rehberlik eder:
 
-1. Create a new PDF document using the `Document` class.
-2. Add a page to the document using the `Page` class.
-3. Create a `TextFragment` object with newline markers (`Environment.NewLine`) to represent multi-line content.
-4. Customize the text fragment's properties such as font size, font, background color, and foreground color.
-5. Create a `TextParagraph` object, append the text fragment to it, and set the position of the paragraph on the page.
-6. Create a `TextBuilder` object with the page and append the text paragraph to it.
-7. Save the PDF document.
+1.  kullanarak yeni bir PDF belgesi oluşturun.`Document` sınıf.
+2.  kullanarak belgeye bir sayfa ekleyin.`Page` sınıf.
+3.  Oluşturmak`TextFragment` yeni satır işaretçilerine sahip nesne (`Environment.NewLine`) çok satırlı içeriği temsil etmek için.
+4. Metin parçasının yazı tipi boyutu, yazı tipi, arka plan rengi ve ön plan rengi gibi özelliklerini özelleştirin.
+5.  Oluşturmak`TextParagraph` nesneyi seçin, metin parçasını ona ekleyin ve paragrafın sayfadaki konumunu ayarlayın.
+6.  Oluşturmak`TextBuilder` sayfayla birlikte nesneyi seçin ve metin paragrafını ona ekleyin.
+7. PDF belgesini kaydedin.
 
-#### Q: What is the purpose of using newline markers (`Environment.NewLine`) in the text fragment?
+#### S: Yeni satır işaretçilerini kullanmanın amacı nedir (`Environment.NewLine`) in the text fragment?
 
-A: Newline markers are used to create multi-line content within a single text fragment. By using `Environment.NewLine`, you can indicate where line breaks should occur in the text.
+ C: Yeni satır işaretçileri, tek bir metin parçası içinde çok satırlı içerik oluşturmak için kullanılır. Kullanarak`Environment.NewLine`, metinde satır sonlarının nerede olması gerektiğini belirtebilirsiniz.
 
-#### Q: Can I customize the appearance of the replaceable symbols?
+#### S: Değiştirilebilir simgelerin görünümünü özelleştirebilir miyim?
 
-A: Yes, you can customize various properties of the text fragment, such as font size, font, background color, and foreground color. These properties determine the visual appearance of the replaceable symbols in the PDF document.
+C: Evet, metin parçasının yazı tipi boyutu, yazı tipi, arka plan rengi ve ön plan rengi gibi çeşitli özelliklerini özelleştirebilirsiniz. Bu özellikler, PDF belgesindeki değiştirilebilir sembollerin görsel görünümünü belirler.
 
-#### Q: How do I specify the position of the text on the page?
+#### S: Metnin sayfadaki konumunu nasıl belirlerim?
 
-A: You can set the position of the text by creating a `TextParagraph` object and using the `Position` property to specify the X and Y coordinates on the page where the paragraph should be positioned.
+ C: Bir metin oluşturarak metnin konumunu ayarlayabilirsiniz.`TextParagraph` nesneyi kullanmak ve`Position` Paragrafın konumlandırılması gereken sayfada X ve Y koordinatlarını belirtme özelliği.
 
-#### Q: What is the expected outcome of executing the provided code?
+#### S: Sağlanan kodu çalıştırmanın beklenen sonucu nedir?
 
-A: By following the tutorial and running the provided C# code, you will create a PDF document that includes replaceable symbols. The replaceable symbols will be represented as text fragments with newline markers and customized properties.
+C: Öğreticiyi takip ederek ve verilen C# kodunu çalıştırarak, değiştirilebilir semboller içeren bir PDF belgesi oluşturacaksınız. Değiştirilebilir semboller, yeni satır işaretçileri ve özelleştirilmiş özelliklere sahip metin parçaları olarak temsil edilecektir.
 
-#### Q: Can I use this approach to dynamically generate personalized PDF documents?
+#### S: Bu yaklaşımı dinamik olarak kişiselleştirilmiş PDF belgeleri oluşturmak için kullanabilir miyim?
 
-A: Yes, this approach is suitable for dynamically generating PDF documents with personalized information. By replacing the replaceable symbols with actual data, you can create customized PDF content for each user or scenario.
+C: Evet, bu yaklaşım, kişiselleştirilmiş bilgiler içeren PDF belgelerinin dinamik olarak oluşturulması için uygundur. Değiştirilebilir sembolleri gerçek verilerle değiştirerek her kullanıcı veya senaryo için özelleştirilmiş PDF içeriği oluşturabilirsiniz.

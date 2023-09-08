@@ -1,57 +1,57 @@
 ---
-title: Get Fields From Region In PDF File
-linktitle: Get Fields From Region In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily get fields from a specific region in PDF file with Aspose.PDF for .NET.
+title: Bölgeden Alanları PDF Dosyasında Al
+linktitle: Bölgeden Alanları PDF Dosyasında Al
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile PDF dosyasındaki belirli bir bölgedeki alanları kolayca alın.
 type: docs
 weight: 130
 url: /tr/net/programming-with-forms/get-fields-from-region/
 ---
-In this tutorial, we will show you how to get the fields of a specific region in PDF file using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+Bu derste size Aspose.PDF for .NET kullanarak PDF dosyasındaki belirli bir bölgenin alanlarını nasıl alacağınızı göstereceğiz. Bu süreçte size yol göstermek için C# kaynak kodunu adım adım açıklayacağız.
 
-## Step 1: Preparation
+## Adım 1: Hazırlık
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+Gerekli kitaplıkları içe aktardığınızdan ve belgeler dizininizin yolunu ayarladığınızdan emin olun:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Open the PDF file
+## 2. Adım: PDF dosyasını açın
 
-Open the PDF file:
+PDF dosyasını açın:
 
 ```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "GetFieldsFromRegion.pdf");
 ```
 
-## Step 3: Create a rectangle object to bound the region
+## 3. Adım: Bölgeyi sınırlamak için bir dikdörtgen nesnesi oluşturun
 
-Create a rectangle object to bound the region where you want to get the fields:
+Alanları almak istediğiniz bölgeyi sınırlamak için bir dikdörtgen nesnesi oluşturun:
 
 ```csharp
 Aspose.Pdf.Rectangle rectangle = new Aspose.Pdf.Rectangle(35, 30, 500, 500);
 ```
 
-## Step 4: Obtain the PDF form
+## 4. Adım: PDF formunu edinin
 
-Get the PDF form of the document:
+Belgenin PDF formunu alın:
 
 ```csharp
 Aspose.Pdf.Forms.Form form = doc.Form;
 ```
 
-## Step 5: Get the fields in the rectangular region
+## Adım 5: Dikdörtgen bölgedeki alanları alın
 
-Get the fields located in the specified rectangular region:
+Belirtilen dikdörtgen bölgede bulunan alanları alın:
 
 ```csharp
 Aspose.Pdf.Forms.Field[] fields = form.GetFieldsInRect(rectangle);
 ```
 
-## Step 6: Display field names and values
+## 6. Adım: Alan adlarını ve değerlerini görüntüleyin
 
-Iterate through the resulting fields and display their names and values:
+Ortaya çıkan alanları yineleyin ve adlarını ve değerlerini görüntüleyin:
 
 ```csharp
 foreach (Field field in fields)
@@ -60,48 +60,48 @@ Console.Out.WriteLine("Field name: " + field.FullName + "-" + "Field value: " + 
 }
 ```
 
-### Sample source code for Get Fields From Region using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Bölgeden Alan Al için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open pdf file
+// Pdf dosyasını aç
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "GetFieldsFromRegion.pdf");
-// Create rectangle object to get fields in that area
+// Bu alandaki alanları almak için dikdörtgen nesnesi oluşturun
 Aspose.Pdf.Rectangle rectangle = new Aspose.Pdf.Rectangle(35, 30, 500, 500);
-// Get the PDF form
+// PDF formunu edinin
 Aspose.Pdf.Forms.Form form = doc.Form;
-// Get fields in the rectangular area
+// Dikdörtgen alandaki alanları alın
 Aspose.Pdf.Forms.Field[] fields = form.GetFieldsInRect(rectangle);
-// Display Field names and values
+// Alan adlarını ve değerlerini görüntüle
 foreach (Field field in fields)
 {
-	// Display image placement properties for all placements
+	// Tüm yerleşimler için resim yerleşimi özelliklerini görüntüle
 	Console.Out.WriteLine("Field Name: " + field.FullName + "-" + "Field Value: " + field.Value);
 }
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we learned how to get the fields of a specific region in a PDF document using Aspose.PDF for .NET. By following these steps, you can easily extract the fields located in a given rectangular area of your PDF document using Aspose.PDF.
+Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF belgesinde belirli bir bölgenin alanlarını nasıl elde edeceğimizi öğrendik. Bu adımları takip ederek Aspose.PDF'yi kullanarak PDF belgenizin belirli bir dikdörtgen alanında bulunan alanları kolayca çıkarabilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: Can I use this method to get fields from a non-rectangular region in a PDF document?
+#### S: Bir PDF belgesinde dikdörtgen olmayan bir bölgeden alanlar almak için bu yöntemi kullanabilir miyim?
 
-A: No, the provided method `GetFieldsInRect` is specifically designed to retrieve fields located within a rectangular region in a PDF document. If you need to extract fields from a non-rectangular region, you would need to implement custom logic to identify and extract the fields based on other criteria, such as field coordinates or names.
+ C: Hayır, sağlanan yöntem`GetFieldsInRect` PDF belgesinde dikdörtgen bir bölge içinde bulunan alanları almak için özel olarak tasarlanmıştır. Dikdörtgen olmayan bir bölgeden alan çıkarmanız gerekiyorsa, alan koordinatları veya adları gibi diğer ölçütlere göre alanları tanımlamak ve çıkarmak için özel mantık uygulamanız gerekir.
 
-#### Q: How can I modify the size or position of the rectangle to get fields from a different region?
+#### S: Farklı bir bölgeden alanlar almak için dikdörtgenin boyutunu veya konumunu nasıl değiştirebilirim?
 
-A: To get fields from a different region, you can modify the `Aspose.Pdf.Rectangle` object's parameters used to define the bounding rectangle. The `Rectangle` constructor takes four parameters: `x`, `y`, `width`, and `height`, which represent the top-left corner coordinates and the dimensions of the rectangle. Adjusting these parameters will change the region from which fields are extracted.
+ C: Farklı bir bölgeden alanlar almak için`Aspose.Pdf.Rectangle` sınırlayıcı dikdörtgeni tanımlamak için kullanılan nesnenin parametreleri.`Rectangle` yapıcı dört parametre alır:`x`, `y`, `width` , Ve`height`sol üst köşe koordinatlarını ve dikdörtgenin boyutlarını temsil eder. Bu parametrelerin ayarlanması, alanların çıkarıldığı bölgeyi değiştirecektir.
 
-#### Q: What if there are no fields within the specified rectangular region?
+#### S: Belirtilen dikdörtgen bölge içerisinde hiçbir alan yoksa ne olur?
 
-A: If there are no fields within the specified rectangular region, the `GetFieldsInRect` method will return an empty array. You can check the length of the array to determine if there are any fields within the region.
+ C: Belirtilen dikdörtgen bölge içerisinde hiçbir alan yoksa,`GetFieldsInRect` yöntemi boş bir dizi döndürecektir. Bölgede herhangi bir alan olup olmadığını belirlemek için dizinin uzunluğunu kontrol edebilirsiniz.
 
-#### Q: Can I get fields from overlapping regions in a PDF document?
+#### S: Bir PDF belgesinde çakışan bölgelerden alanlar alabilir miyim?
 
-A: Yes, you can get fields from overlapping regions in a PDF document by creating multiple `Aspose.Pdf.Rectangle` objects and calling the `GetFieldsInRect` method for each of them. Overlapping regions will be handled independently, and you will receive separate arrays of fields for each region.
+ C: Evet, birden çok alan oluşturarak bir PDF belgesinde çakışan bölgelerden alanlar alabilirsiniz.`Aspose.Pdf.Rectangle` nesneleri çağırmak ve`GetFieldsInRect` Her biri için yöntem. Çakışan bölgeler bağımsız olarak ele alınacak ve her bölge için ayrı alan dizileri alacaksınız.
 
-#### Q: Is it possible to get fields from a specific page or multiple pages in the PDF document?
+#### S: PDF belgesindeki belirli bir sayfadan veya birden fazla sayfadan alan almak mümkün mü?
 
-A: Yes, you can get fields from a specific page or multiple pages in a PDF document. To achieve this, you can load the PDF document, access the desired pages using the `doc.Pages` collection, and then apply the `GetFieldsInRect` method to each page's specific region.
+C: Evet, alanları bir PDF belgesindeki belirli bir sayfadan veya birden çok sayfadan alabilirsiniz. Bunu başarmak için PDF belgesini yükleyebilir, istediğiniz sayfalara`doc.Pages` toplayın ve ardından uygulayın`GetFieldsInRect` yöntemi her sayfanın belirli bölgesine göre ayarlayın.

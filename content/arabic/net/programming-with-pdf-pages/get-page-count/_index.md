@@ -1,102 +1,102 @@
 ---
-title: Get Page Count In PDF File
-linktitle: Get Page Count In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to get the page count in PDF file using Aspose.PDF for .NET. Easy to follow and implement in your projects.
+title: الحصول على عدد الصفحات في ملف PDF
+linktitle: الحصول على عدد الصفحات في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: دليل خطوة بخطوة للحصول على عدد الصفحات في ملف PDF باستخدام Aspose.PDF لـ .NET. سهولة المتابعة والتنفيذ في مشاريعك.
 type: docs
 weight: 80
 url: /ar/net/programming-with-pdf-pages/get-page-count/
 ---
-In this tutorial, we'll walk you through the step-by-step process to get the page count in PDF file using Aspose.PDF for .NET. We'll explain the bundled C# source code and provide you with a comprehensive guide to help you understand and implement this feature in your own projects. At the end of this tutorial, you will know how to get the page count of a PDF file using Aspose.PDF for .NET.
+في هذا البرنامج التعليمي، سنرشدك خلال العملية خطوة بخطوة للحصول على عدد الصفحات في ملف PDF باستخدام Aspose.PDF لـ .NET. سنشرح لك التعليمات البرمجية المصدرية المجمعة لـ C# ونزودك بدليل شامل لمساعدتك على فهم هذه الميزة وتنفيذها في مشاريعك الخاصة. في نهاية هذا البرنامج التعليمي، ستعرف كيفية الحصول على عدد الصفحات لملف PDF باستخدام Aspose.PDF لـ .NET.
 
-## Prerequisites
-Before you begin, make sure you have the following:
+## المتطلبات الأساسية
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- A basic knowledge of the C# programming language
-- Aspose.PDF for .NET installed in your development environment
+- معرفة أساسية بلغة البرمجة C#
+- تم تثبيت Aspose.PDF لـ .NET في بيئة التطوير الخاصة بك
 
-## Step 1: Instantiate a Document object
-First, you need to instantiate a Document object using the Document class of Aspose.PDF.
+## الخطوة 1: إنشاء كائن مستند
+أولاً، تحتاج إلى إنشاء كائن مستند باستخدام فئة المستند في Aspose.PDF.
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 2: Add a page to the document
-Then you can add a page to the document using the `Add()` method of the document's Pages collection.
+## الخطوة 2: إضافة صفحة إلى المستند
+ ثم يمكنك إضافة صفحة إلى المستند باستخدام الملف`Add()` طريقة جمع صفحات الوثيقة.
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
-## Step 3: Create page content
-Now you can create page content by adding TextFragment objects to the Page object's Paragraphs collection. In this example, we add a TextFragment repeated 300 times to simulate a document with longer content.
+## الخطوة 3: إنشاء محتوى الصفحة
+يمكنك الآن إنشاء محتوى الصفحة عن طريق إضافة كائنات TextFragment إلى مجموعة الفقرات الخاصة بكائن الصفحة. في هذا المثال، قمنا بإضافة TextFragment مكررًا 300 مرة لمحاكاة مستند ذي محتوى أطول.
 
 ```csharp
 for (int i = 0; i < 300; i++)
 page.Paragraphs.Add(new TextFragment("Page count test"));
 ```
 
-## Step 4: Processing Paragraphs and Getting Page Count
-Once you have added the content to the page, you need to process the document paragraphs by calling the `ProcessParagraphs()` method. This allows Aspose.PDF to calculate the number of pages accurately.
+## الخطوة 4: معالجة الفقرات والحصول على عدد الصفحات
+ بمجرد إضافة المحتوى إلى الصفحة، ستحتاج إلى معالجة فقرات المستند عن طريق استدعاء`ProcessParagraphs()` طريقة. يتيح ذلك لـ Aspose.PDF حساب عدد الصفحات بدقة.
 
 ```csharp
 doc.ProcessParagraphs();
 ```
 
-## Step 5: Displaying the number of pages
-Finally, you can view the number of pages in the document by accessing the `Count` property of the Pages collection.
+## الخطوة 5: عرض عدد الصفحات
+ وأخيرًا، يمكنك عرض عدد الصفحات في المستند عن طريق الوصول إلى`Count` خاصية مجموعة الصفحات.
 
 ```csharp
 Console.WriteLine("Number of pages in document = " + doc.Pages.Count);
 ```
 
-### Sample source code for Get Page Count using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر للحصول على عدد الصفحات باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
 
-// Instantiate Document instance
+// إنشاء مثيل للمستند
 Document doc = new Document();
-// Add page to pages collection of PDF file
+// إضافة صفحة إلى مجموعة الصفحات من ملف PDF
 Page page = doc.Pages.Add();
-// Create loop instance
+// إنشاء مثيل حلقة
 for (int i = 0; i < 300; i++)
-	// Add TextFragment to paragraphs collection of page object
+	// إضافة TextFragment إلى مجموعة الفقرات من كائن الصفحة
 	page.Paragraphs.Add(new TextFragment("Pages count test"));
-// Process the paragraphs in PDF file to get accurate page count
+// قم بمعالجة الفقرات في ملف PDF للحصول على عدد صفحات دقيق
 doc.ProcessParagraphs();
-// Print number of pages in document
+// طباعة عدد الصفحات في الوثيقة
 Console.WriteLine("Number of pages in document = " + doc.Pages.Count);
 
 ```
 
-## Conclusion
-In this tutorial, we learned how to get the page count of a PDF file using Aspose.PDF for .NET. By following the steps outlined above, you can easily implement this functionality in your own projects. Feel free to explore the Aspose.PDF documentation further to discover other useful features for working with PDF files.
+## خاتمة
+في هذا البرنامج التعليمي، تعلمنا كيفية الحصول على عدد الصفحات لملف PDF باستخدام Aspose.PDF لـ .NET. باتباع الخطوات الموضحة أعلاه، يمكنك بسهولة تنفيذ هذه الوظيفة في مشاريعك الخاصة. لا تتردد في استكشاف وثائق Aspose.PDF بشكل أكبر لاكتشاف ميزات مفيدة أخرى للعمل مع ملفات PDF.
 
-### FAQ's for get page count in PDF file
+### الأسئلة الشائعة للحصول على عدد الصفحات في ملف PDF
 
-#### Q: How can I get the page count of a PDF file using Aspose.PDF for .NET?
+#### س: كيف يمكنني الحصول على عدد الصفحات لملف PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: To get the page count of a PDF file, you can follow these steps:
+ج: للحصول على عدد الصفحات لملف PDF، يمكنك اتباع الخطوات التالية:
 
-1. Instantiate a `Document` object using the `Document` class of Aspose.PDF.
-2. Add a page to the document using the `Add()` method of the document's `Pages` collection.
-3. Create page content by adding `TextFragment` objects to the `Page` object's `Paragraphs` collection.
-4. Process the document paragraphs by calling the `ProcessParagraphs()` method to calculate the number of pages accurately.
-5. Access the `Count` property of the `Pages` collection to view the number of pages in the document.
+1.  إنشاء مثيل أ`Document` كائن باستخدام`Document` فئة Aspose.PDF.
+2.  أضف صفحة إلى المستند باستخدام`Add()` طريقة الوثيقة`Pages` مجموعة.
+3.  إنشاء محتوى الصفحة عن طريق الإضافة`TextFragment` كائنات إلى`Page` أشياء`Paragraphs` مجموعة.
+4.  معالجة فقرات الوثيقة عن طريق استدعاء`ProcessParagraphs()` طريقة حساب عدد الصفحات بدقة.
+5.  الوصول إلى`Count` ملكية`Pages` مجموعة لعرض عدد الصفحات في المستند.
 
-#### Q: What if I add more content to the PDF document after processing paragraphs? Will the page count update automatically?
+#### س: ماذا لو قمت بإضافة المزيد من المحتوى إلى وثيقة PDF بعد معالجة الفقرات؟ هل سيتم تحديث عدد الصفحات تلقائيًا؟
 
-A: No, the page count will not update automatically if you add more content to the PDF document after processing paragraphs. To get an accurate page count, you need to call the `ProcessParagraphs()` method again after adding new content.
+ ج: لا، لن يتم تحديث عدد الصفحات تلقائيًا إذا قمت بإضافة المزيد من المحتوى إلى مستند PDF بعد معالجة الفقرات. للحصول على عدد صفحات دقيق، تحتاج إلى الاتصال بالرقم`ProcessParagraphs()` الطريقة مرة أخرى بعد إضافة محتوى جديد.
 
-#### Q: Can I use Aspose.PDF for .NET to get the page count of a password-protected PDF file?
+#### س: هل يمكنني استخدام Aspose.PDF لـ .NET للحصول على عدد الصفحات لملف PDF محمي بكلمة مرور؟
 
-A: Yes, you can use Aspose.PDF for .NET to get the page count of a password-protected PDF file, as long as you have the necessary permissions to open and process the document.
+ج: نعم، يمكنك استخدام Aspose.PDF لـ .NET للحصول على عدد الصفحات لملف PDF محمي بكلمة مرور، طالما أن لديك الأذونات اللازمة لفتح المستند ومعالجته.
 
-#### Q: Does Aspose.PDF for .NET provide methods to navigate to a specific page in the PDF document?
+#### س: هل يوفر Aspose.PDF for .NET طرقًا للانتقال إلى صفحة معينة في مستند PDF؟
 
-A: Yes, Aspose.PDF for .NET provides methods to navigate to a specific page in the PDF document. You can use the `Page` class and its properties to access and manipulate individual pages within the document.
+ ج: نعم، يوفر Aspose.PDF for .NET طرقًا للانتقال إلى صفحة معينة في مستند PDF. يمكنك استخدام ال`Page` فئة وخصائصها للوصول إلى الصفحات الفردية ومعالجتها داخل المستند.
 
-#### Q: Can I use Aspose.PDF for .NET to extract text or other content from a specific page in the PDF document?
+#### س: هل يمكنني استخدام Aspose.PDF لـ .NET لاستخراج نص أو محتوى آخر من صفحة معينة في مستند PDF؟
 
-A: Yes, Aspose.PDF for .NET provides powerful features to extract text, images, and other content from specific pages in a PDF document. You can use the `TextFragmentAbsorber` and other classes to achieve this.
+ ج: نعم، يوفر Aspose.PDF for .NET ميزات قوية لاستخراج النصوص والصور والمحتويات الأخرى من صفحات محددة في مستند PDF. يمكنك استخدام ال`TextFragmentAbsorber` وفئات أخرى لتحقيق ذلك.

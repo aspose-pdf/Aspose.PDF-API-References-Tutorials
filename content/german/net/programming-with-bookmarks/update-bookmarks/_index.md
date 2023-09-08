@@ -1,49 +1,49 @@
 ---
-title: Update Bookmarks In PDF File
-linktitle: Update Bookmarks In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily update bookmarks in PDF file with Aspose.PDF for .NET.
+title: Lesezeichen in PDF-Datei aktualisieren
+linktitle: Lesezeichen in PDF-Datei aktualisieren
+second_title: Aspose.PDF für .NET API-Referenz
+description: Aktualisieren Sie Lesezeichen in PDF-Dateien ganz einfach mit Aspose.PDF für .NET.
 type: docs
 weight: 100
 url: /de/net/programming-with-bookmarks/update-bookmarks/
 ---
-Updating bookmarks in PDF file is often necessary to reflect changes or updates in the structure or content of the document. With Aspose.PDF for .NET, you can easily update bookmarks by following the following source code:
+Das Aktualisieren von Lesezeichen in PDF-Dateien ist häufig erforderlich, um Änderungen oder Aktualisierungen in der Struktur oder im Inhalt des Dokuments widerzuspiegeln. Mit Aspose.PDF für .NET können Sie Lesezeichen ganz einfach aktualisieren, indem Sie dem folgenden Quellcode folgen:
 
-## Step 1: Import required libraries
+## Schritt 1: Erforderliche Bibliotheken importieren
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Bevor Sie beginnen, müssen Sie die erforderlichen Bibliotheken für Ihr C#-Projekt importieren. Hier ist die notwendige Importanweisung:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## Schritt 2: Legen Sie den Pfad zum Dokumentenordner fest
 
-In this step, you need to specify the path to the folder containing the PDF file you want to update. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ In diesem Schritt müssen Sie den Pfad zu dem Ordner angeben, der die PDF-Datei enthält, die Sie aktualisieren möchten. Ersetzen`"YOUR DOCUMENT DIRECTORY"`Geben Sie im folgenden Code den tatsächlichen Pfad zu Ihrem Dokumentenordner ein:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Schritt 3: Öffnen Sie das PDF-Dokument
 
-Now we will open the PDF document we want to update using the following code:
+Jetzt öffnen wir das PDF-Dokument, das wir aktualisieren möchten, mit dem folgenden Code:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "UpdateBookmarks.pdf");
 ```
 
-## Step 4: Get bookmark object
+## Schritt 4: Lesezeichenobjekt abrufen
 
-In this step, we'll get the specific bookmark object we want to update. In the example below, we retrieve the bookmark at index 1 (the second bookmark in the bookmarks collection). You can adjust the index according to your needs. Here is the corresponding code:
+In diesem Schritt erhalten wir das spezifische Lesezeichenobjekt, das wir aktualisieren möchten. Im folgenden Beispiel rufen wir das Lesezeichen an Index 1 ab (das zweite Lesezeichen in der Lesezeichensammlung). Sie können den Index Ihren Bedürfnissen entsprechend anpassen. Hier ist der entsprechende Code:
 
 ```csharp
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
 ```
 
-## Step 5: Update bookmark properties
+## Schritt 5: Lesezeicheneigenschaften aktualisieren
 
-Now let's update the bookmark properties such as title, italic style, and bold style. You can adjust these properties according to your needs. Here is the corresponding code:
+Jetzt aktualisieren wir die Lesezeicheneigenschaften wie Titel, Kursivschrift und Fettschrift. Sie können diese Eigenschaften entsprechend Ihren Bedürfnissen anpassen. Hier ist der entsprechende Code:
 
 ```csharp
 pdfOutline.Title = "Updated Outline";
@@ -51,79 +51,79 @@ pdfOutline. Italic = true;
 pdfOutline. Bold = true;
 ```
 
-## Step 6: Save the updated file
+## Schritt 6: Speichern Sie die aktualisierte Datei
 
-Now let's save the updated PDF file using the `Save` method of the `pdfDocument` object. Here is the corresponding code:
+ Speichern wir nun die aktualisierte PDF-Datei mit`Save` Methode der`pdfDocument` Objekt. Hier ist der entsprechende Code:
 
 ```csharp
 dataDir = dataDir + "UpdateBookmarks_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Update Bookmarks using Aspose.PDF for .NET 
+### Beispielquellcode für die Aktualisierung von Lesezeichen mit Aspose.PDF für .NET 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Dokument öffnen
 Document pdfDocument = new Document(dataDir + "UpdateBookmarks.pdf");
-// Get a bookmark object
+// Holen Sie sich ein Lesezeichenobjekt
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
 pdfOutline.Title = "Updated Outline";
 pdfOutline.Italic = true;
 pdfOutline.Bold = true;
 dataDir = dataDir + "UpdateBookmarks_out.pdf";
-// Save output
+// Ausgabe speichern
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nBookmarks updated successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Abschluss
 
-Congratulation ! Now you have a step-by-step guide to updating bookmarks with Aspose.PDF for .NET. You can use this code to change the titles and styles of bookmarks in your PDF documents.
+Herzlichen Glückwunsch! Jetzt haben Sie eine Schritt-für-Schritt-Anleitung zum Aktualisieren von Lesezeichen mit Aspose.PDF für .NET. Mit diesem Code können Sie die Titel und Stile von Lesezeichen in Ihren PDF-Dokumenten ändern.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Weitere Informationen zu erweiterten Funktionen zur Lesezeichenmanipulation finden Sie unbedingt in der offiziellen Aspose.PDF-Dokumentation.
 
-### FAQ's for update bookmarks in PDF file
+### FAQs zum Aktualisieren von Lesezeichen in PDF-Dateien
 
-#### Q: Why would I need to update bookmarks in a PDF file?
+#### F: Warum sollte ich Lesezeichen in einer PDF-Datei aktualisieren?
 
-A: Updating bookmarks is essential when you want to reflect changes or updates in the structure, content, or appearance of a PDF document. It ensures that the bookmarks accurately represent the document's organization.
+A: Das Aktualisieren von Lesezeichen ist wichtig, wenn Sie Änderungen oder Aktualisierungen in der Struktur, dem Inhalt oder dem Erscheinungsbild eines PDF-Dokuments widerspiegeln möchten. Dadurch wird sichergestellt, dass die Lesezeichen die Organisation des Dokuments genau wiedergeben.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### F: Wie importiere ich die erforderlichen Bibliotheken für mein C#-Projekt?
 
-A: To import the required libraries for your C# project, include the following import directive:
+A: Um die erforderlichen Bibliotheken für Ihr C#-Projekt zu importieren, fügen Sie die folgende Importanweisung ein:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This directive allows you to access the classes and methods needed to work with PDF documents and bookmarks.
+Mit dieser Direktive können Sie auf die Klassen und Methoden zugreifen, die zum Arbeiten mit PDF-Dokumenten und Lesezeichen erforderlich sind.
 
-#### Q: How do I specify the path to the documents folder?
+#### F: Wie lege ich den Pfad zum Dokumentenordner fest?
 
-A: Replace `"YOUR DOCUMENT DIRECTORY"` in the provided source code with the actual path to the folder containing the PDF file you want to update.
+ A: Ersetzen`"YOUR DOCUMENT DIRECTORY"` Geben Sie im bereitgestellten Quellcode den tatsächlichen Pfad zu dem Ordner an, der die PDF-Datei enthält, die Sie aktualisieren möchten.
 
-#### Q: How do I open a PDF document for updating bookmarks?
+#### F: Wie öffne ich ein PDF-Dokument zum Aktualisieren von Lesezeichen?
 
-A: To open a PDF document for updating bookmarks, use the following code:
+A: Um ein PDF-Dokument zum Aktualisieren von Lesezeichen zu öffnen, verwenden Sie den folgenden Code:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "UpdateBookmarks.pdf");
 ```
 
-Replace `"UpdateBookmarks.pdf"` with the actual file name.
+ Ersetzen`"UpdateBookmarks.pdf"` mit dem tatsächlichen Dateinamen.
 
-#### Q: How do I get the bookmark object I want to update?
+#### F: Wie erhalte ich das Lesezeichenobjekt, das ich aktualisieren möchte?
 
-A: To retrieve a specific bookmark for updating, access the `Outlines` property of the `pdfDocument` object. In the example below, we retrieve the bookmark at index 1:
+ A: Um ein bestimmtes Lesezeichen zum Aktualisieren abzurufen, greifen Sie auf zu`Outlines` Eigentum der`pdfDocument` Objekt. Im folgenden Beispiel rufen wir das Lesezeichen bei Index 1 ab:
 
 ```csharp
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
 ```
 
-#### Q: What bookmark properties can I update?
+#### F: Welche Lesezeicheneigenschaften kann ich aktualisieren?
 
-A: You can update various properties of a bookmark, such as its title, italic style, and bold style. Customize these properties according to your needs:
+A: Sie können verschiedene Eigenschaften eines Lesezeichens aktualisieren, z. B. den Titel, die Kursivschrift und die Fettschrift. Passen Sie diese Eigenschaften an Ihre Bedürfnisse an:
 
 ```csharp
 pdfOutline.Title = "Updated Outline";
@@ -131,23 +131,23 @@ pdfOutline.Italic = true;
 pdfOutline.Bold = true;
 ```
 
-#### Q: How do I save the updated PDF file?
+#### F: Wie speichere ich die aktualisierte PDF-Datei?
 
-A: Save the updated PDF file using the `Save` method of the `pdfDocument` object:
+ A: Speichern Sie die aktualisierte PDF-Datei mit`Save` Methode der`pdfDocument` Objekt:
 
 ```csharp
 dataDir = dataDir + "UpdateBookmarks_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-#### Q: Can I update multiple bookmarks using this method?
+#### F: Kann ich mit dieser Methode mehrere Lesezeichen aktualisieren?
 
-A: Yes, you can repeat steps 4 to 6 for each bookmark you want to update. Modify the index and properties as needed.
+A: Ja, Sie können die Schritte 4 bis 6 für jedes Lesezeichen wiederholen, das Sie aktualisieren möchten. Ändern Sie den Index und die Eigenschaften nach Bedarf.
 
-#### Q: Is there a limit to the number of bookmarks I can update?
+#### F: Gibt es eine Begrenzung für die Anzahl der Lesezeichen, die ich aktualisieren kann?
 
-A: There is typically no strict limit to the number of bookmarks you can update. However, very large documents with numerous bookmarks may require efficient memory management.
+A: Normalerweise gibt es keine strenge Begrenzung für die Anzahl der Lesezeichen, die Sie aktualisieren können. Allerdings erfordern sehr große Dokumente mit zahlreichen Lesezeichen möglicherweise eine effiziente Speicherverwaltung.
 
-#### Q: How can I confirm that the bookmarks have been updated?
+#### F: Wie kann ich bestätigen, dass die Lesezeichen aktualisiert wurden?
 
-A: Open the generated PDF file to verify that the specified bookmark updates have been applied.
+A: Öffnen Sie die generierte PDF-Datei, um zu überprüfen, ob die angegebenen Lesezeichenaktualisierungen angewendet wurden.

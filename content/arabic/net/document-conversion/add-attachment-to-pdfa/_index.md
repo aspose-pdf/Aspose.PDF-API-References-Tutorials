@@ -1,127 +1,127 @@
 ---
-title: Add Attachment to PDFA
-linktitle: Add Attachment to PDFA
-second_title: Aspose.PDF for .NET API Reference
-description: Easily add attachments to your PDF/A files using Aspose.PDF for .NET.
+title: إضافة مرفق إلى PDFA
+linktitle: إضافة مرفق إلى PDFA
+second_title: Aspose.PDF لمرجع .NET API
+description: قم بإضافة المرفقات بسهولة إلى ملفات PDF/A الخاصة بك باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 10
 url: /ar/net/document-conversion/add-attachment-to-pdfa/
 ---
-In this tutorial, we will guide you step by step on how to add an attachment to a PDF/A file using Aspose.PDF for .NET. We'll explain each step using C# code examples and provide step-by-step instructions to help you follow along easily.
+في هذا البرنامج التعليمي، سنرشدك خطوة بخطوة حول كيفية إضافة مرفق إلى ملف PDF/A باستخدام Aspose.PDF لـ .NET. سنشرح كل خطوة باستخدام أمثلة التعليمات البرمجية لـ C# ونقدم إرشادات خطوة بخطوة لمساعدتك على المتابعة بسهولة.
 
-## Introduction
+## مقدمة
 
-Attachments can be valuable additions to PDF files, as they allow you to include additional files such as relevant images, documents, or media. With Aspose.PDF for .NET, you can easily add attachments to your PDF files and ensure they are included in the final result.
+يمكن أن تكون المرفقات إضافات قيمة إلى ملفات PDF، لأنها تسمح لك بتضمين ملفات إضافية مثل الصور أو المستندات أو الوسائط ذات الصلة. باستخدام Aspose.PDF for .NET، يمكنك بسهولة إضافة المرفقات إلى ملفات PDF الخاصة بك والتأكد من تضمينها في النتيجة النهائية.
 
-## Environment setup
+## إعداد البيئة
 
-Before starting the implementation, let's first configure our development environment to work with Aspose.PDF for .NET.
+قبل البدء في التنفيذ، فلنقم أولاً بتكوين بيئة التطوير الخاصة بنا للعمل مع Aspose.PDF لـ .NET.
 
-1. Install Visual Studio or any other IDE suitable for C# development.
-2. Create a new C# project.
-3. Install the Aspose.PDF for .NET package via NuGet to add the necessary dependencies.
+1. قم بتثبيت Visual Studio أو أي بيئة تطوير متكاملة أخرى مناسبة لتطوير C#.
+2. إنشاء مشروع C# جديد.
+3. قم بتثبيت Aspose.PDF لحزمة .NET عبر NuGet لإضافة التبعيات الضرورية.
 
-## Step 1: Load existing PDF file
+## الخطوة 1: قم بتحميل ملف PDF الموجود
 
-To add an attachment, we first need to upload an existing PDF file. Follow these steps to upload the document using Aspose.PDF for .NET:
+لإضافة مرفق، نحتاج أولاً إلى تحميل ملف PDF موجود. اتبع هذه الخطوات لتحميل المستند باستخدام Aspose.PDF لـ .NET:
 
 ```csharp
-// Path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Instantiate a new Document instance to load the existing file
+// قم بإنشاء مثيل مستند جديد لتحميل الملف الموجود
 Aspose.Pdf.Document doc = new Document(dataDir + "input.pdf");
 ```
 
-In the code above, replace `"YOUR DOCUMENTS DIRECTORY"` with the actual path of the directory where your input PDF document is located. This code initializes a new instance of the `Document` class and loads the existing PDF file.
+ في الكود أعلاه، استبدل`"YOUR DOCUMENTS DIRECTORY"`بالمسار الفعلي للدليل الذي يوجد به مستند PDF الذي قمت بإدخاله. يقوم هذا الرمز بتهيئة مثيل جديد لـ`Document` فئة وتحميل ملف PDF الموجود.
 
-## Step 2: Creating the file specification for the attachment
+## الخطوة الثانية: إنشاء مواصفات الملف للمرفق
 
-To add an attachment, we need to create a file spec that defines the properties of the attachment. Follow these steps to create the file specification:
+لإضافة مرفق، نحتاج إلى إنشاء مواصفات ملف تحدد خصائص المرفق. اتبع الخطوات التالية لإنشاء مواصفات الملف:
 
 ```csharp
-// Path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Specify the new file to add as an attachment
+// حدد الملف الجديد لإضافته كمرفق
 FileSpecification fileSpecification = new FileSpecification(dataDir + "aspose-logo.jpg", "Large image file");
 ```
 
-In the code above, replace `"YOUR DOCUMENTS DIRECTORY"` with the actual path of the directory where your image file to add is located. The file specification is created using the `FileSpecification` class, specifying the file path and a description.
+ في الكود أعلاه، استبدل`"YOUR DOCUMENTS DIRECTORY"` بالمسار الفعلي للدليل الذي يوجد به ملف الصورة المراد إضافته. يتم إنشاء مواصفات الملف باستخدام`FileSpecification` فئة، وتحديد مسار الملف ووصفه.
 
-## Step 3: Adding the attachment to the document
+## الخطوة 3: إضافة المرفق إلى الوثيقة
 
-Now that we have the file specification, we can add it to the document's attachments collection. Follow these steps to add the attachment:
+الآن بعد أن حصلنا على مواصفات الملف، يمكننا إضافته إلى مجموعة مرفقات المستند. اتبع الخطوات التالية لإضافة المرفق:
 
 ```csharp
-// Add the attachment to the collection of
+// أضف المرفق إلى مجموعة
 
   document attachments
 doc.EmbeddedFiles.Add(fileSpecification);
 ```
 
-In the code above, we use the `Add` method of the document`s `EmbeddedFiles` collection to add the file specification as an attachment.
+ في الكود أعلاه نستخدم`Add` طريقة الوثيقة`s `مجموعة EmbeddedFiles لإضافة مواصفات الملف كمرفق.
 
-## Step 4: Convert to PDF/A_3a
+## الخطوة 4: التحويل إلى PDF/A_3a
 
-For the attachment to be included in the resulting file, we need to convert to PDF/A_3a format. Follow these steps to perform the conversion:
+لكي يتم تضمين المرفق في الملف الناتج، نحتاج إلى التحويل إلى تنسيق PDF/A_3a. اتبع الخطوات التالية لإجراء التحويل:
 
 ```csharp
-// Perform the conversion to PDF/A_3a format
+// قم بإجراء التحويل إلى تنسيق PDF/A_3a
 doc.Convert(dataDir + "log.txt", Aspose.Pdf.PdfFormat.PDF_A_3A, ConvertErrorAction.Delete);
 ```
 
-In the code above, we use the `Convert` method to convert the document using the `"log.txt"` log file. We specify the output format using the `PdfFormat.PDF_A_3A` enum and specify the action to take on conversion error with `ConvertErrorAction.Delete`.
+ في الكود أعلاه نستخدم`Convert` طريقة تحويل المستند باستخدام`"log.txt"` ملف تسجيل. نحدد تنسيق الإخراج باستخدام`PdfFormat.PDF_A_3A` تعداد وحدد الإجراء الذي يجب اتخاذه بشأن خطأ التحويل`ConvertErrorAction.Delete`.
 
-## Step 5: Save the resulting file
+## الخطوة 5: احفظ الملف الناتج
 
-Finally, we save the modified PDF document with the added attachment. Follow these steps to save the resulting file:
+وأخيرًا، نقوم بحفظ مستند PDF المعدل مع المرفق المضاف. اتبع هذه الخطوات لحفظ الملف الناتج:
 
 ```csharp
-// Save the resulting file
+// احفظ الملف الناتج
 doc.Save(dataDir + "AddAttachmentToPDFA_out.pdf");
 ```
 
-In the code above, we use the `Save` method to save the document with the file name `"AddAttachmentToPDFA_out.pdf"`. Be sure to specify the appropriate path where you want to save the resulting file.
+ في الكود أعلاه نستخدم`Save` طريقة حفظ المستند باسم الملف`"AddAttachmentToPDFA_out.pdf"`. تأكد من تحديد المسار المناسب حيث تريد حفظ الملف الناتج.
 
-### Example source code for add attachment to PDFA using Aspose.PDF for .NET
+### مثال على التعليمات البرمجية المصدر لإضافة مرفق إلى PDFA باستخدام Aspose.PDF لـ .NET
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate Document instance to load existing file
+// إنشاء مثيل للمستند لتحميل الملف الموجود
 Aspose.Pdf.Document doc = new Document(dataDir + "input.pdf");
-// Setup new file to be added as attachment
+// إعداد ملف جديد لإضافته كمرفق
 FileSpecification fileSpecification = new FileSpecification(dataDir + "aspose-logo.jpg", "Large Image file");
-// Add attachment to document's attachment collection
+//إضافة مرفق إلى مجموعة مرفقات المستند
 doc.EmbeddedFiles.Add(fileSpecification);
-// Perform conversion to PDF/A_3a so attachment is included in resultnat file
+// قم بإجراء التحويل إلى PDF/A_3a بحيث يتم تضمين المرفق في الملف الناتج
 doc.Convert(dataDir + "log.txt", Aspose.Pdf.PdfFormat.PDF_A_3A, ConvertErrorAction.Delete);
-// Save resultant file
+// حفظ الملف الناتج
 doc.Save(dataDir + "AddAttachmentToPDFA_out.pdf");
 
 Console.WriteLine("\nAttachment added successfully to PDF/A file.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, you learned how to add an attachment to a PDF/A file using Aspose.PDF for .NET. We've covered every step of the process, from loading the existing document to converting and saving the resulting file. Using the provided code examples, you can easily integrate this functionality into your own projects. Experiment with Aspose.PDF for .NET and discover the possibilities it offers for advanced manipulation of PDF files.
+في هذا البرنامج التعليمي، تعلمت كيفية إضافة مرفق إلى ملف PDF/A باستخدام Aspose.PDF لـ .NET. لقد قمنا بتغطية كل خطوة من خطوات العملية، بدءًا من تحميل المستند الموجود وحتى تحويل الملف الناتج وحفظه. باستخدام أمثلة التعليمات البرمجية المتوفرة، يمكنك بسهولة دمج هذه الوظيفة في مشاريعك الخاصة. قم بتجربة Aspose.PDF لـ .NET واكتشف الإمكانيات التي يوفرها للمعالجة المتقدمة لملفات PDF.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is Aspose.PDF for .NET?
+#### س: ما هو Aspose.PDF لـ .NET؟
 
-A: Aspose.PDF for .NET is a powerful PDF manipulation and processing library for .NET applications. It allows developers to create, edit, convert, and manipulate PDF files programmatically.
+ج: Aspose.PDF for .NET عبارة عن مكتبة قوية لمعالجة ومعالجة ملفات PDF لتطبيقات .NET. فهو يسمح للمطورين بإنشاء ملفات PDF وتحريرها وتحويلها ومعالجتها برمجياً.
 
-#### Q: What is the purpose of adding attachments to PDF files?
+#### س: ما هو الغرض من إضافة المرفقات إلى ملفات PDF؟
 
-A: Adding attachments to PDF files allows you to include additional files, such as images, documents, or media, within the PDF document. This can be useful for providing supplementary information or related resources.
+ج: تتيح لك إضافة مرفقات إلى ملفات PDF تضمين ملفات إضافية، مثل الصور أو المستندات أو الوسائط، داخل مستند PDF. يمكن أن يكون هذا مفيدًا لتوفير معلومات تكميلية أو موارد ذات صلة.
 
-#### Q: Can I add multiple attachments to a PDF document using Aspose.PDF for .NET?
+#### س: هل يمكنني إضافة عدة مرفقات إلى مستند PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: Yes, you can add multiple attachments to a PDF document using Aspose.PDF for .NET. Simply create multiple `FileSpecification` objects, each representing a different attachment, and add them to the `EmbeddedFiles` collection of the document.
+ ج: نعم، يمكنك إضافة عدة مرفقات إلى مستند PDF باستخدام Aspose.PDF لـ .NET. ببساطة قم بإنشاء عدة`FileSpecification` كائنات، يمثل كل منها مرفقًا مختلفًا، وقم بإضافتها إلى الملف`EmbeddedFiles` جمع الوثيقة.
 
-#### Q: How does the conversion to PDF/A_3a format impact the attachment?
+#### س: كيف يؤثر التحويل إلى تنسيق PDF/A_3a على المرفق؟
 
-A: The conversion to PDF/A_3a format ensures that the attachment is included in the resulting PDF/A document. PDF/A_3a is a standard for long-term archiving of electronic documents, and by converting to this format, the attachment becomes a permanent part of the PDF document.
+ج: يضمن التحويل إلى تنسيق PDF/A_3a تضمين المرفق في مستند PDF/A الناتج. يعد PDF/A_3a معيارًا لأرشفة المستندات الإلكترونية على المدى الطويل، ومن خلال التحويل إلى هذا التنسيق، يصبح المرفق جزءًا دائمًا من مستند PDF.

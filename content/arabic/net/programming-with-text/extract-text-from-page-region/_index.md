@@ -1,44 +1,44 @@
 ---
-title: Extract Text From Page Region In PDF File
-linktitle: Extract Text From Page Region In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract text from a specific region on a page in PDF file using Aspose.PDF for .NET.
+title: استخراج النص من منطقة الصفحة في ملف PDF
+linktitle: استخراج النص من منطقة الصفحة في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية استخراج النص من منطقة معينة على صفحة في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 190
 url: /ar/net/programming-with-text/extract-text-from-page-region/
 ---
-This tutorial will guide you through the process of extracting text from a specific region on a page in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+سيرشدك هذا البرنامج التعليمي خلال عملية استخراج النص من منطقة معينة على صفحة في ملف PDF باستخدام Aspose.PDF لـ .NET. يوضح كود مصدر C# المقدم الخطوات اللازمة.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## متطلبات
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio أو أي مترجم C# آخر مثبت على جهازك.
+- Aspose.PDF لمكتبة .NET. يمكنك تنزيله من موقع Aspose الرسمي أو استخدام مدير الحزم مثل NuGet لتثبيته.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## الخطوة 1: إعداد المشروع
+1. قم بإنشاء مشروع C# جديد في بيئة التطوير المفضلة لديك.
+2. قم بإضافة مرجع إلى Aspose.PDF لمكتبة .NET.
 
-## Step 2: Import required namespaces
-In the code file where you want to extract text, add the following using directives at the top of the file:
+## الخطوة 2: استيراد مساحات الأسماء المطلوبة
+في ملف التعليمات البرمجية الذي تريد استخراج النص منه، أضف ما يلي باستخدام التوجيهات الموجودة في الجزء العلوي من الملف:
 
 ```csharp
 using Aspose.Pdf;
 using System.IO;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## الخطوة 3: قم بتعيين دليل المستند
+ في الكود، حدد السطر الذي يقول`string dataDir = "YOUR DOCUMENT DIRECTORY";` واستبدال`"YOUR DOCUMENT DIRECTORY"` مع المسار إلى الدليل حيث يتم تخزين المستندات الخاصة بك.
 
-## Step 4: Open the PDF document
-Open an existing PDF document using the `Document` constructor and passing the path to the input PDF file.
+## الخطوة 4: افتح مستند PDF
+ افتح مستند PDF موجود باستخدام الملف`Document`منشئ وتمرير المسار إلى ملف PDF الإدخال.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ExtractTextAll.pdf");
 ```
 
-## Step 5: Extract text from a page region
-Create a `TextAbsorber` object to extract text from the document. Configure the `TextSearchOptions` to limit the search to a specific page region defined by a rectangle.
+## الخطوة 5: استخراج النص من منطقة الصفحة
+ إنشاء`TextAbsorber` كائن لاستخراج النص من المستند. تكوين`TextSearchOptions` لقصر البحث على منطقة صفحة معينة محددة بواسطة مستطيل.
 
 ```csharp
 TextAbsorber absorb = new TextAbsorber();
@@ -47,15 +47,15 @@ absorb.TextSearchOptions.Rectangle = new Aspose.Pdf.Rectangle(100, 200, 250, 350
 pdfDocument.Pages[1].Accept(absorb);
 ```
 
-## Step 6: Get the extracted text
-Access the extracted text from the `TextAbsorber` object.
+## الخطوة 6: الحصول على النص المستخرج
+ الوصول إلى النص المستخرج من`TextAbsorber` هدف.
 
 ```csharp
 string extractedText = absorb.Text;
 ```
 
-## Step 7: Save the extracted text
-Create a `TextWriter` and open the file where you want to save the extracted text. Write the extracted text to the file and close the stream.
+## الخطوة 7: احفظ النص المستخرج
+ إنشاء`TextWriter` وافتح الملف الذي تريد حفظ النص المستخرج فيه. اكتب النص المستخرج إلى الملف وأغلق الدفق.
 
 ```csharp
 TextWriter tw = new StreamWriter(dataDir + "extracted-text.txt");
@@ -63,66 +63,66 @@ tw.WriteLine(extractedText);
 tw. Close();
 ```
 
-### Sample source code for Extract Text From Page Region using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لاستخراج النص من منطقة الصفحة باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "ExtractTextAll.pdf");
-// Create TextAbsorber object to extract text
+// قم بإنشاء كائن TextAbsorter لاستخراج النص
 TextAbsorber absorber = new TextAbsorber();
 absorber.TextSearchOptions.LimitToPageBounds = true;
 absorber.TextSearchOptions.Rectangle = new Aspose.Pdf.Rectangle(100, 200, 250, 350);
-// Accept the absorber for first page
+// قبول الممتص للصفحة الأولى
 pdfDocument.Pages[1].Accept(absorber);
-// Get the extracted text
+// الحصول على النص المستخرج
 string extractedText = absorber.Text;
-// Create a writer and open the file
+// إنشاء كاتب وفتح الملف
 TextWriter tw = new StreamWriter(dataDir + "extracted-text.txt");
-// Write a line of text to the file
+// اكتب سطرًا من النص إلى الملف
 tw.WriteLine(extractedText);
-// Close the stream
+// أغلق الدفق
 tw.Close();
 ```
 
-## Conclusion
-You have successfully extracted text from a specific region on a page of a PDF document using Aspose.PDF for .NET. The extracted text has been saved to the specified output file.
+## خاتمة
+لقد نجحت في استخراج النص من منطقة معينة في صفحة مستند PDF باستخدام Aspose.PDF لـ .NET. تم حفظ النص المستخرج في ملف الإخراج المحدد.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of this tutorial?
+#### س: ما هو الغرض من هذا البرنامج التعليمي؟
 
-A: This tutorial aims to guide you through the process of extracting text from a specific region on a page in a PDF file using Aspose.PDF for .NET. The accompanying C# source code provides step-by-step instructions for accomplishing this task.
+ج: يهدف هذا البرنامج التعليمي إلى إرشادك خلال عملية استخراج النص من منطقة معينة على صفحة في ملف PDF باستخدام Aspose.PDF لـ .NET. يوفر كود مصدر C# المصاحب إرشادات خطوة بخطوة لإنجاز هذه المهمة.
 
-#### Q: What namespaces should I import?
+#### س: ما هي مساحات الأسماء التي يجب علي استيرادها؟
 
-A: In the code file where you intend to extract text, include the following using directives at the beginning of the file:
+ج: في ملف التعليمات البرمجية الذي تنوي استخراج النص منه، قم بتضمين ما يلي باستخدام التوجيهات في بداية الملف:
 
 ```csharp
 using Aspose.Pdf;
 using System.IO;
 ```
 
-#### Q: How do I specify the document directory?
+#### س: كيف أحدد دليل المستندات؟
 
-A: Locate the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` in the code and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ ج: تحديد موقع الخط`string dataDir = "YOUR DOCUMENT DIRECTORY";` في التعليمات البرمجية واستبدال`"YOUR DOCUMENT DIRECTORY"` بالمسار الفعلي إلى دليل المستندات الخاص بك.
 
-#### Q: How do I open an existing PDF document?
+#### س: كيف يمكنني فتح مستند PDF موجود؟
 
-A: In Step 4, you'll open an existing PDF document using the `Document` constructor and providing the path to the input PDF file.
+ ج: في الخطوة 4، ستفتح مستند PDF موجودًا باستخدام الملف`Document` منشئ وتوفير المسار إلى ملف PDF الإدخال.
 
-#### Q: How do I extract text from a specific page region?
+#### س: كيف يمكنني استخراج النص من منطقة صفحة معينة؟
 
-A: Step 5 involves creating a `TextAbsorber` object to extract text from the PDF document. You'll then configure the `TextSearchOptions` to define a specific rectangular region on the page using coordinates.
+ ج: تتضمن الخطوة 5 إنشاء ملف`TextAbsorber`كائن لاستخراج النص من وثيقة PDF. ستقوم بعد ذلك بتكوين`TextSearchOptions` لتحديد منطقة مستطيلة معينة على الصفحة باستخدام الإحداثيات.
 
-#### Q: How do I access the extracted text?
+#### س: كيف يمكنني الوصول إلى النص المستخرج؟
 
-A: Step 6 guides you through accessing the extracted text from the `TextAbsorber` object.
+ ج: ترشدك الخطوة 6 إلى كيفية الوصول إلى النص المستخرج من ملف`TextAbsorber` هدف.
 
-#### Q: How do I save the extracted text to a file?
+#### س: كيف يمكنني حفظ النص المستخرج في ملف؟
 
-A: In Step 7, you'll create a `TextWriter`, open the file where you want to save the extracted text, write the extracted text to the file, and then close the stream.
+ ج: في الخطوة 7، ستقوم بإنشاء ملف`TextWriter`، وافتح الملف الذي تريد حفظ النص المستخرج فيه، واكتب النص المستخرج في الملف، ثم أغلق الدفق.
 
-#### Q: What is the key takeaway from this tutorial?
+#### س: ما هي الوجبات الرئيسية من هذا البرنامج التعليمي؟
 
-A: By following this tutorial, you've learned how to extract text from a specific region on a page of a PDF document using Aspose.PDF for .NET. The extracted text has been saved to a specified output file, allowing you to precisely target and analyze the desired textual content.
+ج: باتباع هذا البرنامج التعليمي، تعلمت كيفية استخراج النص من منطقة معينة على صفحة مستند PDF باستخدام Aspose.PDF لـ .NET. تم حفظ النص المستخرج في ملف إخراج محدد، مما يسمح لك باستهداف المحتوى النصي المطلوب وتحليله بدقة.

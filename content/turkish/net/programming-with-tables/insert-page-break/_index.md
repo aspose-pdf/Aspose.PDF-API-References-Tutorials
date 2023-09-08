@@ -1,19 +1,19 @@
 ---
-title: Insert Page Break In PDF File
-linktitle: Insert Page Break In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to insert a page break in PDF file using Aspose.PDF for .NET.
+title: PDF Dosyasına Sayfa Sonu Ekle
+linktitle: PDF Dosyasına Sayfa Sonu Ekle
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF dosyasına nasıl sayfa sonu ekleyeceğinizi öğrenin.
 type: docs
 weight: 110
 url: /tr/net/programming-with-tables/insert-page-break/
 ---
-In this tutorial, we will learn how to insert a page break in PDF file using Aspose.PDF for .NET. We will explain the source code in C# step by step. At the end of this tutorial, you will know how to add a page break after a certain number of lines in a table of a PDF document. Let's start!
+Bu eğitimde Aspose.PDF for .NET kullanarak PDF dosyasına nasıl sayfa sonu ekleneceğini öğreneceğiz. C#'ta kaynak kodunu adım adım anlatacağız. Bu eğitimin sonunda, bir PDF belgesi tablosunda belirli sayıda satırdan sonra nasıl sayfa sonu ekleyeceğinizi öğreneceksiniz. Hadi başlayalım!
 
-## Step 1: Setting up the environment
-Make sure you have configured your C# development environment with Aspose.PDF for .NET. Add the reference to the library and import the necessary namespaces.
+## 1. Adım: Ortamı ayarlama
+Aspose.PDF for .NET ile C# geliştirme ortamınızı yapılandırdığınızdan emin olun. Referansı kitaplığa ekleyin ve gerekli ad alanlarını içe aktarın.
 
-## Step 2: Creating the Document and Table
-We create a new Document instance and add a page to this document. Next, we create a Table instance to represent our table in the PDF document. We also define the border styles for the table.
+## Adım 2: Belgeyi ve Tabloyu Oluşturma
+Yeni bir Document örneği oluşturup bu belgeye bir sayfa ekliyoruz. Daha sonra, tablomuzu PDF belgesinde temsil edecek bir Tablo örneği oluşturuyoruz. Ayrıca tablonun kenarlık stillerini de tanımlıyoruz.
 
 ```csharp
 Document doc = new Document();
@@ -25,8 +25,8 @@ tab.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Asp
 tab. ColumnWidths = "100 100";
 ```
 
-## Step 3: Add rows to table
-We use a loop to add 200 rows to the array. For each row, we create an instance of Row and add two cells with text content.
+## 3. Adım: Tabloya satır ekleyin
+Diziye 200 satır eklemek için bir döngü kullanıyoruz. Her satır için bir Row örneği oluşturuyoruz ve metin içeriğine sahip iki hücre ekliyoruz.
 
 ```csharp
 for (int counter = 0; counter <= 200; counter++)
@@ -42,45 +42,45 @@ for (int counter = 0; counter <= 200; counter++)
      cell2.Paragraphs.Add(new TextFragment("Cell " + counter + ", 1"));
      row. Cells. Add(cell2);
     
-     // When 10 lines are added, we insert a new page break
+     // 10 satır eklendiğinde yeni sayfa sonu ekliyoruz
      if (counter % 10 == 0 && counter != 0)
          row. IsInNewPage = true;
 }
 ```
 
-## Step 4: Adding the table to the document
-We add the table to the paragraphs collection of the document page.
+## Adım 4: Tabloyu belgeye ekleme
+Tabloyu belge sayfasının paragraf koleksiyonuna ekliyoruz.
 
 ```csharp
 doc.Pages[1].Paragraphs.Add(tab);
 ```
 
-## Step 5: Save the document
-We save the PDF document with the page break inserted.
+## 5. Adım: Belgeyi kaydedin
+PDF belgesini sayfa sonu eklenmiş olarak kaydediyoruz.
 
 ```csharp
 doc.Save(dataDir + "InsertPageBreak_out.pdf");
 ```
 
-### Example source code for Insert Page Break using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak Sayfa Sonu Ekleme için örnek kaynak kodu
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate Document instance
+// Belge örneğini oluştur
 Document doc = new Document();
-// Add page to pages collection of PDF file
+// PDF dosyasının sayfa koleksiyonuna sayfa ekle
 doc.Pages.Add();
-// Create table instance
+// Tablo örneği oluştur
 Aspose.Pdf.Table tab = new Aspose.Pdf.Table();
-// Set border style for table
+// Tablo için kenarlık stilini ayarla
 tab.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Aspose.Pdf.Color.Red);
-// Set default border style for table with border color as Red
+// Kenarlık renginin Kırmızı olduğu tablo için varsayılan kenarlık stilini ayarla
 tab.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Aspose.Pdf.Color.Red);
-// Specify table columsn widht
+// Tablo sütunlarının genişliğini belirtin
 tab.ColumnWidths = "100 100";
-// Create a loop to add 200 rows for table
+// Tabloya 200 satır eklemek için bir döngü oluşturun
 for (int counter = 0; counter <= 200; counter++)
 {
 	Aspose.Pdf.Row row = new Aspose.Pdf.Row();
@@ -90,55 +90,55 @@ for (int counter = 0; counter <= 200; counter++)
 	row.Cells.Add(cell1); Aspose.Pdf.Cell cell2 = new Aspose.Pdf.Cell();
 	cell2.Paragraphs.Add(new TextFragment("Cell " + counter + ", 1"));
 	row.Cells.Add(cell2);
-	// When 10 rows are added, render new row in new page
+	// 10 satır eklendiğinde yeni sayfada yeni satır oluştur
 	if (counter % 10 == 0 && counter != 0) row.IsInNewPage = true;
 }
-// Add table to paragraphs collection of PDF file
+// PDF dosyasının paragraf koleksiyonuna tablo ekleyin
 doc.Pages[1].Paragraphs.Add(tab);
 
 dataDir = dataDir + "InsertPageBreak_out.pdf";
-// Save the PDF document
+// PDF belgesini kaydedin
 doc.Save(dataDir);
 
 Console.WriteLine("\nPage break inserted successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
-In this tutorial, we learned how to insert a page break in a PDF document using Aspose.PDF for .NET. You can use this step-by-step guide to add a page break after a certain number of lines in a table in a PDF document using C#.
+## Çözüm
+Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF belgesine nasıl sayfa sonu ekleneceğini öğrendik. C# kullanarak bir PDF belgesindeki bir tablodaki belirli sayıda satırdan sonra sayfa sonu eklemek için bu adım adım kılavuzu kullanabilirsiniz.
 
-### FAQ's for insert page break in PDF file
+### PDF dosyasına sayfa sonu eklemeyle ilgili SSS
 
-#### Q: How can I change the page size for the new pages created after the page break?
+#### S: Sayfa sonundan sonra oluşturulan yeni sayfaların sayfa boyutunu nasıl değiştirebilirim?
 
-A: To change the page size for the new pages created after the page break, you can set the `PageSize` property of the `Page` object. For example, you can use the following code to set the page size to A4:
+ C: Sayfa sonundan sonra oluşturulan yeni sayfaların sayfa boyutunu değiştirmek için`PageSize` mülkiyeti`Page` nesne. Örneğin sayfa boyutunu A4 olarak ayarlamak için aşağıdaki kodu kullanabilirsiniz:
 
 ```csharp
-// Set the page size to A4
+// Sayfa boyutunu A4 olarak ayarlayın
 doc.Pages[1].SetPageSize(PageSize.A4);
 ```
 
-#### Q: Can I control the page margins for the new pages after the page break?
+#### S: Sayfa sonundan sonra yeni sayfalar için sayfa kenar boşluklarını kontrol edebilir miyim?
 
-A: Yes, you can control the page margins for the new pages after the page break. Use the `Margin` property of the `Page` object to set the page margins. For example, to set all margins to 10 points, you can use the following code:
+ C: Evet, sayfa sonundan sonra yeni sayfalar için sayfa kenar boşluklarını kontrol edebilirsiniz. Kullan`Margin` mülkiyeti`Page` Sayfa kenar boşluklarını ayarlamak için nesne. Örneğin, tüm kenar boşluklarını 10 puntoya ayarlamak için aşağıdaki kodu kullanabilirsiniz:
 
 ```csharp
-// Set all margins to 10 points
+// Tüm kenar boşluklarını 10 noktaya ayarla
 doc.Pages[1].Margin = new MarginInfo(10, 10, 10, 10);
 ```
 
-#### Q: Is it possible to add headers and footers to the new pages after the page break?
+#### S: Sayfa sonundan sonra yeni sayfalara üstbilgi ve altbilgi eklemek mümkün mü?
 
-A: Yes, you can add headers and footers to the new pages after the page break. Use the `Page.Header` and `Page.Footer` properties to add content to the header and footer sections of the page. For example:
+ C: Evet, sayfa sonundan sonra yeni sayfalara üstbilgi ve altbilgi ekleyebilirsiniz. Kullan`Page.Header` Ve`Page.Footer` sayfanın üstbilgi ve altbilgi bölümlerine içerik eklemek için özellikler. Örneğin:
 
 ```csharp
-// Add header to the new pages
+// Yeni sayfalara başlık ekleyin
 doc.Pages[1].Header = new HeaderFooter()
 {
     Margin = new MarginInfo(10, 10, 10, 10),
     Paragraphs = { new TextFragment("Header content") }
 };
 
-// Add footer to the new pages
+// Yeni sayfalara altbilgi ekleyin
 doc.Pages[1].Footer = new HeaderFooter()
 {
     Margin = new MarginInfo(10, 10, 10, 10),
@@ -146,10 +146,10 @@ doc.Pages[1].Footer = new HeaderFooter()
 };
 ```
 
-#### Q: Can I insert page breaks at specific locations other than after a certain number of rows?
+#### S: Belirli sayıda satırdan sonra değil, belirli konumlara sayfa sonları ekleyebilir miyim?
 
-A: Yes, you can insert page breaks at specific locations other than after a certain number of rows. You can set the `IsInNewPage` property of a row to `true` to force the table to start a new page after that row.
+ C: Evet, belirli sayıda satırdan sonra değil, belirli konumlara sayfa sonları ekleyebilirsiniz. Ayarlayabilirsiniz`IsInNewPage` bir satırın özelliği`true` tabloyu bu satırdan sonra yeni bir sayfa başlatmaya zorlamak için.
 
-#### Q: How can I adjust the page break behavior based on content height?
+#### S: İçerik yüksekliğine göre sayfa sonu davranışını nasıl ayarlayabilirim?
 
-A: You can use the `IsBroken` property of the table to enable or disable automatic row breaking across pages. When set to `true`, it allows rows to break across pages based on content height.
+C: Kullanabilirsiniz`IsBroken` Sayfalar arasında otomatik satır kesmeyi etkinleştirmek veya devre dışı bırakmak için tablonun özelliği. olarak ayarlandığında`true`, içerik yüksekliğine bağlı olarak satırların sayfalar arasında bölünmesine olanak tanır.

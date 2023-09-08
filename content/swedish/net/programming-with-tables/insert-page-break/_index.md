@@ -1,19 +1,19 @@
 ---
-title: Insert Page Break In PDF File
-linktitle: Insert Page Break In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to insert a page break in PDF file using Aspose.PDF for .NET.
+title: Infoga sidbrytning i PDF-fil
+linktitle: Infoga sidbrytning i PDF-fil
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du infogar en sidbrytning i PDF-filen med Aspose.PDF för .NET.
 type: docs
 weight: 110
 url: /sv/net/programming-with-tables/insert-page-break/
 ---
-In this tutorial, we will learn how to insert a page break in PDF file using Aspose.PDF for .NET. We will explain the source code in C# step by step. At the end of this tutorial, you will know how to add a page break after a certain number of lines in a table of a PDF document. Let's start!
+I den här handledningen kommer vi att lära oss hur man infogar en sidbrytning i PDF-filen med Aspose.PDF för .NET. Vi kommer att förklara källkoden i C# steg för steg. I slutet av denna handledning kommer du att veta hur du lägger till en sidbrytning efter ett visst antal rader i en tabell i ett PDF-dokument. Låt oss börja!
 
-## Step 1: Setting up the environment
-Make sure you have configured your C# development environment with Aspose.PDF for .NET. Add the reference to the library and import the necessary namespaces.
+## Steg 1: Sätta upp miljön
+Se till att du har konfigurerat din C#-utvecklingsmiljö med Aspose.PDF för .NET. Lägg till referensen till biblioteket och importera de nödvändiga namnrymden.
 
-## Step 2: Creating the Document and Table
-We create a new Document instance and add a page to this document. Next, we create a Table instance to represent our table in the PDF document. We also define the border styles for the table.
+## Steg 2: Skapa dokumentet och tabellen
+Vi skapar en ny dokumentinstans och lägger till en sida i detta dokument. Därefter skapar vi en tabellinstans för att representera vår tabell i PDF-dokumentet. Vi definierar också kantstilarna för tabellen.
 
 ```csharp
 Document doc = new Document();
@@ -25,8 +25,8 @@ tab.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Asp
 tab. ColumnWidths = "100 100";
 ```
 
-## Step 3: Add rows to table
-We use a loop to add 200 rows to the array. For each row, we create an instance of Row and add two cells with text content.
+## Steg 3: Lägg till rader i tabellen
+Vi använder en slinga för att lägga till 200 rader till arrayen. För varje rad skapar vi en instans av Row och lägger till två celler med textinnehåll.
 
 ```csharp
 for (int counter = 0; counter <= 200; counter++)
@@ -42,45 +42,45 @@ for (int counter = 0; counter <= 200; counter++)
      cell2.Paragraphs.Add(new TextFragment("Cell " + counter + ", 1"));
      row. Cells. Add(cell2);
     
-     // When 10 lines are added, we insert a new page break
+     // När 10 rader läggs till lägger vi in en ny sidbrytning
      if (counter % 10 == 0 && counter != 0)
          row. IsInNewPage = true;
 }
 ```
 
-## Step 4: Adding the table to the document
-We add the table to the paragraphs collection of the document page.
+## Steg 4: Lägga till tabellen i dokumentet
+Vi lägger till tabellen i styckesamlingen på dokumentsidan.
 
 ```csharp
 doc.Pages[1].Paragraphs.Add(tab);
 ```
 
-## Step 5: Save the document
-We save the PDF document with the page break inserted.
+## Steg 5: Spara dokumentet
+Vi sparar PDF-dokumentet med sidbrytningen inlagd.
 
 ```csharp
 doc.Save(dataDir + "InsertPageBreak_out.pdf");
 ```
 
-### Example source code for Insert Page Break using Aspose.PDF for .NET
+### Exempel på källkod för Insert Page Break med Aspose.PDF för .NET
 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate Document instance
+// Instantiera dokumentinstans
 Document doc = new Document();
-// Add page to pages collection of PDF file
+// Lägg till sida till sidor samling av PDF-fil
 doc.Pages.Add();
-// Create table instance
+// Skapa tabellinstans
 Aspose.Pdf.Table tab = new Aspose.Pdf.Table();
-// Set border style for table
+// Ställ in kantstil för bordet
 tab.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Aspose.Pdf.Color.Red);
-// Set default border style for table with border color as Red
+// Ställ in standard kantstil för tabell med kantfärg som röd
 tab.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Aspose.Pdf.Color.Red);
-// Specify table columsn widht
+// Ange bredd för tabellkolumner
 tab.ColumnWidths = "100 100";
-// Create a loop to add 200 rows for table
+// Skapa en slinga för att lägga till 200 rader för tabell
 for (int counter = 0; counter <= 200; counter++)
 {
 	Aspose.Pdf.Row row = new Aspose.Pdf.Row();
@@ -90,55 +90,55 @@ for (int counter = 0; counter <= 200; counter++)
 	row.Cells.Add(cell1); Aspose.Pdf.Cell cell2 = new Aspose.Pdf.Cell();
 	cell2.Paragraphs.Add(new TextFragment("Cell " + counter + ", 1"));
 	row.Cells.Add(cell2);
-	// When 10 rows are added, render new row in new page
+	// När 10 rader har lagts till, rendera ny rad på ny sida
 	if (counter % 10 == 0 && counter != 0) row.IsInNewPage = true;
 }
-// Add table to paragraphs collection of PDF file
+// Lägg till tabell till styckesamling av PDF-fil
 doc.Pages[1].Paragraphs.Add(tab);
 
 dataDir = dataDir + "InsertPageBreak_out.pdf";
-// Save the PDF document
+// Spara PDF-dokumentet
 doc.Save(dataDir);
 
 Console.WriteLine("\nPage break inserted successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
-In this tutorial, we learned how to insert a page break in a PDF document using Aspose.PDF for .NET. You can use this step-by-step guide to add a page break after a certain number of lines in a table in a PDF document using C#.
+## Slutsats
+I den här handledningen lärde vi oss hur man infogar en sidbrytning i ett PDF-dokument med Aspose.PDF för .NET. Du kan använda den här steg-för-steg-guiden för att lägga till en sidbrytning efter ett visst antal rader i en tabell i ett PDF-dokument med C#.
 
-### FAQ's for insert page break in PDF file
+### Vanliga frågor för att infoga sidbrytning i PDF-fil
 
-#### Q: How can I change the page size for the new pages created after the page break?
+#### F: Hur kan jag ändra sidstorleken för de nya sidorna som skapats efter sidbrytningen?
 
-A: To change the page size for the new pages created after the page break, you can set the `PageSize` property of the `Page` object. For example, you can use the following code to set the page size to A4:
+ S: För att ändra sidstorleken för de nya sidorna som skapats efter sidbrytningen kan du ställa in`PageSize` egendom av`Page` objekt. Du kan till exempel använda följande kod för att ställa in sidstorleken till A4:
 
 ```csharp
-// Set the page size to A4
+// Ställ in sidstorleken till A4
 doc.Pages[1].SetPageSize(PageSize.A4);
 ```
 
-#### Q: Can I control the page margins for the new pages after the page break?
+#### F: Kan jag kontrollera sidmarginalerna för de nya sidorna efter sidbrytningen?
 
-A: Yes, you can control the page margins for the new pages after the page break. Use the `Margin` property of the `Page` object to set the page margins. For example, to set all margins to 10 points, you can use the following code:
+ S: Ja, du kan styra sidmarginalerna för de nya sidorna efter sidbrytningen. Använd`Margin` egendom av`Page` objekt för att ställa in sidmarginalerna. Till exempel, för att ställa in alla marginaler till 10 poäng, kan du använda följande kod:
 
 ```csharp
-// Set all margins to 10 points
+// Ställ in alla marginaler till 10 poäng
 doc.Pages[1].Margin = new MarginInfo(10, 10, 10, 10);
 ```
 
-#### Q: Is it possible to add headers and footers to the new pages after the page break?
+#### F: Är det möjligt att lägga till sidhuvuden och sidfötter på de nya sidorna efter sidbrytningen?
 
-A: Yes, you can add headers and footers to the new pages after the page break. Use the `Page.Header` and `Page.Footer` properties to add content to the header and footer sections of the page. For example:
+ S: Ja, du kan lägga till sidhuvuden och sidfötter på de nya sidorna efter sidbrytningen. Använd`Page.Header` och`Page.Footer` egenskaper för att lägga till innehåll i sidhuvudet och sidfoten på sidan. Till exempel:
 
 ```csharp
-// Add header to the new pages
+// Lägg till rubrik på de nya sidorna
 doc.Pages[1].Header = new HeaderFooter()
 {
     Margin = new MarginInfo(10, 10, 10, 10),
     Paragraphs = { new TextFragment("Header content") }
 };
 
-// Add footer to the new pages
+// Lägg till sidfot på de nya sidorna
 doc.Pages[1].Footer = new HeaderFooter()
 {
     Margin = new MarginInfo(10, 10, 10, 10),
@@ -146,10 +146,10 @@ doc.Pages[1].Footer = new HeaderFooter()
 };
 ```
 
-#### Q: Can I insert page breaks at specific locations other than after a certain number of rows?
+#### F: Kan jag infoga sidbrytningar på specifika platser andra än efter ett visst antal rader?
 
-A: Yes, you can insert page breaks at specific locations other than after a certain number of rows. You can set the `IsInNewPage` property of a row to `true` to force the table to start a new page after that row.
+ S: Ja, du kan infoga sidbrytningar på specifika platser andra än efter ett visst antal rader. Du kan ställa in`IsInNewPage` egenskap hos en rad till`true` för att tvinga tabellen att starta en ny sida efter den raden.
 
-#### Q: How can I adjust the page break behavior based on content height?
+#### F: Hur kan jag justera sidbrytningsbeteendet baserat på innehållets höjd?
 
-A: You can use the `IsBroken` property of the table to enable or disable automatic row breaking across pages. When set to `true`, it allows rows to break across pages based on content height.
+S: Du kan använda`IsBroken` egenskapen för tabellen för att aktivera eller inaktivera automatisk radbrytning över sidor. När inställd på`true`, gör det att rader kan delas över sidor baserat på innehållets höjd.

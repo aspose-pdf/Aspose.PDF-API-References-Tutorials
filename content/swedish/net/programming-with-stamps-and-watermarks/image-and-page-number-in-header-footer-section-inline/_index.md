@@ -1,129 +1,129 @@
 ---
-title: Image and Page Number in Header Footer Section Inline
-linktitle: Image and Page Number in Header Footer Section Inline
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add image and page number in header and footer using inline paragraphs with Aspose.PDF for .NET.
+title: Bild och sidnummer i sidfotsavsnittet Inline
+linktitle: Bild och sidnummer i sidfotsavsnittet Inline
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du lägger till bild och sidnummer i sidhuvud och sidfot med hjälp av inline-stycken med Aspose.PDF för .NET.
 type: docs
 weight: 120
 url: /sv/net/programming-with-stamps-and-watermarks/image-and-page-number-in-header-footer-section-inline/
 ---
-In this tutorial, we will guide you step by step on how to add image and page number in header and footer section of PDF document using Aspose.PDF for .NET. We will use the provided C# source code to create a page, set header and footer, add image and text using inline paragraphs in the header of the PDF document.
+I den här handledningen guidar vi dig steg för steg om hur du lägger till bild och sidnummer i sidhuvudet och sidfoten i PDF-dokumentet med Aspose.PDF för .NET. Vi kommer att använda den medföljande C#-källkoden för att skapa en sida, ställa in sidhuvud och sidfot, lägga till bild och text med hjälp av inline-stycken i rubriken i PDF-dokumentet.
 
-## Step 1: Setting up the environment
+## Steg 1: Sätta upp miljön
 
-Before you begin, make sure you have the following:
+Innan du börjar, se till att du har följande:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- En installerad .NET-utvecklingsmiljö.
+- Aspose.PDF-biblioteket för .NET laddas ner och refereras till i ditt projekt.
 
-## Step 2: Creating the PDF Document and Page
+## Steg 2: Skapa PDF-dokumentet och -sidan
 
-The first step is to create a new Document object and a page in the PDF document. Here's how:
+Det första steget är att skapa ett nytt dokumentobjekt och en sida i PDF-dokumentet. Här är hur:
 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Create a new Document object
+// Skapa ett nytt dokumentobjekt
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 
-// Create a page in the document
+// Skapa en sida i dokumentet
 Aspose.Pdf.Page page = pdf1.Pages.Add();
 ```
 
-The code above creates a new Document object and an empty page in the PDF document.
+Koden ovan skapar ett nytt dokumentobjekt och en tom sida i PDF-dokumentet.
 
-## Step 3: Adding the header with an image and inline text
+## Steg 3: Lägga till rubriken med en bild och inbäddad text
 
-Now that the page is created, we can add a header section with an image and text using inline paragraphs. Here's how:
+Nu när sidan är skapad kan vi lägga till en rubrik med en bild och text med hjälp av inline-stycken. Här är hur:
 
 ```csharp
-// Create a header section
+// Skapa en rubriksektion
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-// Set the page header
+// Ställ in sidhuvudet
 page. Header = header;
 
-// Create a TextFragment object for the first inline text
+// Skapa ett TextFragment-objekt för den första infogade texten
 Aspose.Pdf.Text.TextFragment txt1 = new Aspose.Pdf.Text.TextFragment("Aspose.Pdf is a robust component developed by");
 
-// Specify text color
+// Ange textfärg
 txt1.TextState.ForegroundColor = Color.Blue;
 txt1.IsInLineParagraph = true;
 
-// Create an Image object for the image
+// Skapa ett bildobjekt för bilden
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 
-// Set image path
+// Ställ in bildsökväg
 image1.File = dataDir + "aspose-logo.jpg";
 
-// Define the dimensions of the image
+// Definiera bildens mått
 image1.FixWidth = 50;
 image1.FixHeight = 20;
 
-// Indicate that the first inline text is an image
+// Ange att den första infogade texten är en bild
 image1.IsInLineParagraph = true;
 
-// Create a second inline text
+// Skapa en andra inline-text
 Aspose.Pdf.Text.TextFragment txt2 = new Aspose.Pdf.Text.TextFragment(" Pty Ltd.");
 txt2.IsInLineParagraph = true;
 txt2.TextState.ForegroundColor = Color.Maroon;
 
-// Add items to header
+// Lägg till objekt i rubriken
 header.Paragraphs.Add(txt1);
 header.Paragraphs.Add(image1);
 header.Paragraphs.Add(txt2);
 ```
 
-The code above creates a header section, sets the page header with this section, adds a TextFragment with inline text and an inline Image object.
+Koden ovan skapar en rubriksektion, ställer in sidhuvudet med denna sektion, lägger till ett TextFragment med infogat text och ett infogat bildobjekt.
 
-## Step 4: Saving the modified PDF document
+## Steg 4: Spara det ändrade PDF-dokumentet
 
-Once the header with the image and inline text is added, we can save the modified PDF document. Here's how:
+När rubriken med bilden och den infogade texten har lagts till kan vi spara det ändrade PDF-dokumentet. Här är hur:
 
 ```csharp
-// Save the modified PDF document
+// Spara det ändrade PDF-dokumentet
 pdf1.Save(dataDir + "ImageAndPageNumberInHeaderFooter_UsingInlineParagraph_out.pdf");
 ```
 
-The above code saves the edited PDF document to the specified directory.
+Ovanstående kod sparar det redigerade PDF-dokumentet i den angivna katalogen.
 
-### Sample source code for Imageand Page Numberin Header Footersection Inline using Aspose.PDF for .NET 
+### Exempel på källkod för bild och sidnummer i sidhuvud Footersection Inline med Aspose.PDF för .NET 
 ```csharp
 
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate a Document object by calling its empty constructor
+// Instantiera ett dokumentobjekt genom att anropa dess tomma konstruktor
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 
-// Create a page in the Pdf object
+// Skapa en sida i Pdf-objektet
 Aspose.Pdf.Page page = pdf1.Pages.Add();
 
-// Create Header Section of the document
+// Skapa rubriksektion för dokumentet
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-// Set the header for the PDF file
+// Ställ in rubriken för PDF-filen
 page.Header = header;
 
-// Create a Text object
+// Skapa ett textobjekt
 Aspose.Pdf.Text.TextFragment txt1 = new Aspose.Pdf.Text.TextFragment("Aspose.Pdf is a Robust component by");
 
-// Specify the color
+// Ange färg
 txt1.TextState.ForegroundColor = Color.Blue;
 txt1.IsInLineParagraph = true;
 
-// Create an image object in the section
+// Skapa ett bildobjekt i avsnittet
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 
-// Set the path of image file
+// Ställ in sökvägen till bildfilen
 image1.File = dataDir + "aspose-logo.jpg";
 
-// Set the image width Information
+// Ställ in information om bildbredden
 image1.FixWidth = 50;
 image1.FixHeight = 20;
 
-// Indicate seg1's InlineParagraph is a image.
+// Ange att seg1s InlineParagraph är en bild.
 image1.IsInLineParagraph = true;
 Aspose.Pdf.Text.TextFragment txt2 = new Aspose.Pdf.Text.TextFragment(" Pty Ltd.");
 txt2.IsInLineParagraph = true;
@@ -132,53 +132,53 @@ header.Paragraphs.Add(txt1);
 header.Paragraphs.Add(image1);
 header.Paragraphs.Add(txt2);
 
-// Save the Pdf
+// Spara pdf
 pdf1.Save(dataDir + "ImageAndPageNumberInHeaderFooter_UsingInlineParagraph_out.pdf");
 
 ```
 
-## Conclusion
+## Slutsats
 
-Congratulation ! You have learned how to add an image and page number in the header and footer section of a PDF document using inline paragraphs with Aspose.PDF for .NET. You can now customize the header and footer of your PDF documents flexibly.
+Grattis! Du har lärt dig hur du lägger till en bild och sidnummer i sidhuvudet och sidfoten i ett PDF-dokument med hjälp av inline-stycken med Aspose.PDF för .NET. Du kan nu anpassa sidhuvudet och sidfoten på dina PDF-dokument flexibelt.
 
 ### FAQ's
 
-#### Q: What is the advantage of using inline paragraphs for adding an image and text to the header of a PDF document?
+#### F: Vad är fördelen med att använda inline-stycken för att lägga till en bild och text i rubriken på ett PDF-dokument?
 
-A: Using inline paragraphs allows you to seamlessly integrate images and text within the same paragraph, providing precise control over their placement and formatting. This method is especially useful for creating customized headers with visual elements.
+S: Genom att använda inline-stycken kan du sömlöst integrera bilder och text i samma stycke, vilket ger exakt kontroll över deras placering och formatering. Den här metoden är särskilt användbar för att skapa anpassade rubriker med visuella element.
 
-#### Q: How does the provided C# source code achieve inline paragraphs for the header in a PDF document?
+#### F: Hur uppnår den medföljande C#-källkoden inline-stycken för rubriken i ett PDF-dokument?
 
-A: The provided code demonstrates how to create a PDF document, add a page, and customize the header using inline paragraphs. It adds a TextFragment with inline text, an inline image, and another inline TextFragment.
+S: Den medföljande koden visar hur man skapar ett PDF-dokument, lägger till en sida och anpassar rubriken med hjälp av inline-stycken. Den lägger till ett TextFragment med inbäddad text, en inline-bild och ytterligare ett inline TextFragment.
 
-#### Q: How do I specify the color of the inline text in the header?
+#### F: Hur anger jag färgen på den infogade texten i rubriken?
 
-A: The color of the inline text is specified using the `ForegroundColor` property of the `TextState` of the `TextFragment` object.
+ S: Färgen på den infogade texten anges med hjälp av`ForegroundColor` egendom av`TextState` av`TextFragment` objekt.
 
-#### Q: Can I adjust the dimensions of the inline image in the header?
+#### F: Kan jag justera måtten på den infogade bilden i sidhuvudet?
 
-A: Yes, you can adjust the dimensions of the inline image using the `FixWidth` and `FixHeight` properties of the `Image` object. This allows you to control the width and height of the image within the header.
+ S: Ja, du kan justera måtten på den infogade bilden med hjälp av`FixWidth` och`FixHeight` egenskaper hos`Image` objekt. Detta gör att du kan styra bildens bredd och höjd i rubriken.
 
-#### Q: Can I include additional inline elements, such as hyperlinks or different font styles, in the header?
+#### F: Kan jag inkludera ytterligare inline-element, som hyperlänkar eller olika teckensnittsstilar, i rubriken?
 
-A: Yes, you can include additional inline elements in the header by creating more `TextFragment` or `Image` objects with the desired properties. This allows you to customize the header further, including hyperlinks, different font styles, or other visual elements.
+ S: Ja, du kan inkludera ytterligare inline-element i rubriken genom att skapa fler`TextFragment` eller`Image` objekt med önskade egenskaper. Detta gör att du kan anpassa rubriken ytterligare, inklusive hyperlänkar, olika teckensnittsstilar eller andra visuella element.
 
-#### Q: How can I ensure that the inline image and text remain properly aligned and formatted across different devices and viewers?
+#### F: Hur kan jag säkerställa att den infogade bilden och texten förblir korrekt justerade och formaterade på olika enheter och tittare?
 
-A: Aspose.PDF for .NET ensures that inline images and text are properly aligned and formatted, resulting in consistent appearance across different devices and PDF viewers.
+S: Aspose.PDF för .NET säkerställer att inline-bilder och text är korrekt justerade och formaterade, vilket resulterar i ett konsekvent utseende på olika enheter och PDF-visare.
 
-#### Q: Can I apply inline paragraphs to the footer section as well?
+#### F: Kan jag tillämpa inline-stycken på sidfotssektionen också?
 
-A: Yes, you can apply the same technique of using inline paragraphs to the footer section by creating a `Footer` object and adding inline elements such as text and images to it.
+ S: Ja, du kan använda samma teknik för att använda inline-stycken på sidfotssektionen genom att skapa en`Footer` objekt och lägga till inline-element som text och bilder till det.
 
-#### Q: Is it possible to combine inline paragraphs with other header or footer customization methods?
+#### F: Är det möjligt att kombinera inline-stycken med andra anpassningsmetoder för sidhuvud eller sidfot?
 
-A: Yes, you can combine inline paragraphs with other header or footer customization methods provided by Aspose.PDF for .NET to create more complex and tailored header or footer designs.
+S: Ja, du kan kombinera inline-stycken med andra anpassningsmetoder för sidhuvud eller sidfot som tillhandahålls av Aspose.PDF för .NET för att skapa mer komplexa och skräddarsydda sidhuvuds- eller sidfotsdesigner.
 
-#### Q: Can I remove or clear the inline elements from the header if needed?
+#### F: Kan jag ta bort eller rensa inline-elementen från rubriken om det behövs?
 
-A: Yes, you can remove or clear the inline elements by modifying the contents of the `HeaderFooter` object and removing the respective inline paragraphs.
+ S: Ja, du kan ta bort eller rensa inline-elementen genom att ändra innehållet i`HeaderFooter` objekt och ta bort respektive infogade stycken.
 
-#### Q: How can I apply inline paragraphs to specific pages of the PDF document?
+#### F: Hur kan jag tillämpa inline-stycken på specifika sidor i PDF-dokumentet?
 
-A: To apply inline paragraphs to specific pages, you can create separate `HeaderFooter` objects for each page and assign them using the `Header` property of the respective `Aspose.Pdf.Page` objects.
+ S: För att tillämpa inline-stycken på specifika sidor kan du skapa separata`HeaderFooter` objekt för varje sida och tilldela dem med hjälp av`Header` respektive egendom`Aspose.Pdf.Page` föremål.

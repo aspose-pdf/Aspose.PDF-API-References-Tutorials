@@ -1,56 +1,56 @@
 ---
-title: Text Alignment For Floating Box Contents In PDF File
-linktitle: Text Alignment For Floating Box Contents In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to align text within floating boxes in PDF file using Aspose.PDF for .NET.
+title: محاذاة النص لمحتويات المربع العائم في ملف PDF
+linktitle: محاذاة النص لمحتويات المربع العائم في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية محاذاة النص داخل المربعات العائمة في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 520
 url: /ar/net/programming-with-text/text-alignment-for-floating-box-contents/
 ---
-This tutorial explains how to align text within floating boxes in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the process step by step.
+يشرح هذا البرنامج التعليمي كيفية محاذاة النص داخل المربعات العائمة في ملف PDF باستخدام Aspose.PDF لـ .NET. يوضح كود مصدر C# المقدم العملية خطوة بخطوة.
 
-## Prerequisites
+## المتطلبات الأساسية
 
-Before proceeding with the tutorial, make sure you have the following:
+قبل متابعة البرنامج التعليمي، تأكد من أن لديك ما يلي:
 
-- Basic knowledge of C# programming language.
-- Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to install it in your project.
+- المعرفة الأساسية بلغة البرمجة C#.
+- تم تثبيت Aspose.PDF لمكتبة .NET. يمكنك الحصول عليه من موقع Aspose أو استخدام NuGet لتثبيته في مشروعك.
 
-## Step 1: Set up the project
+## الخطوة 1: إعداد المشروع
 
-Start by creating a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library.
+ابدأ بإنشاء مشروع C# جديد في بيئة التطوير المتكاملة المفضلة لديك (IDE) وأضف مرجعًا إلى مكتبة Aspose.PDF لـ .NET.
 
-## Step 2: Import necessary namespaces
+## الخطوة 2: استيراد مساحات الأسماء الضرورية
 
-Add the following using directives at the beginning of your C# file to import the required namespaces:
+أضف ما يلي باستخدام التوجيهات في بداية ملف C# الخاص بك لاستيراد مساحات الأسماء المطلوبة:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Set the path to the document directory
+## الخطوة 3: قم بتعيين المسار إلى دليل المستند
 
-Set the path to your document directory using the `dataDir` variable:
+ قم بتعيين المسار إلى دليل المستند الخاص بك باستخدام`dataDir` عامل:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ يستبدل`"YOUR DOCUMENT DIRECTORY"` بالمسار الفعلي إلى دليل المستندات الخاص بك.
 
-## Step 4: Create a new Document
+## الخطوة 4: إنشاء مستند جديد
 
-Create a new `Document` object:
+ إنشاء جديد`Document` هدف:
 
 ```csharp
 Aspose.Pdf.Document doc = new Document();
 doc.Pages.Add();
 ```
 
-## Step 5: Create Floating Boxes with Text Fragments
+## الخطوة 5: إنشاء مربعات عائمة تحتوي على أجزاء نصية
 
-Create multiple `FloatingBox` objects with different vertical alignments and horizontal alignments:
+ إنشاء متعددة`FloatingBox` كائنات ذات محاذاة رأسية ومحاذاة أفقية مختلفة:
 
 ```csharp
 Aspose.Pdf.FloatingBox floatBox = new Aspose.Pdf.FloatingBox(100, 100);
@@ -75,21 +75,21 @@ floatBox2.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Aspose.P
 doc.Pages[1].Paragraphs.Add(floatBox2);
 ```
 
-Modify the text and styling of the `TextFragment` objects as desired.
+ تعديل النص والنمط من`TextFragment` الكائنات حسب الرغبة.
 
-## Step 6: Save the PDF document
+## الخطوة 6: احفظ مستند PDF
 
-Save the modified PDF document:
+احفظ مستند PDF المعدل:
 
 ```csharp
 doc.Save(dataDir + "FloatingBox_alignment_review_out.pdf");
 ```
 
-Make sure to replace `"FloatingBox_alignment_review_out.pdf"` with the desired output file name.
+ تأكد من استبدال`"FloatingBox_alignment_review_out.pdf"` مع اسم ملف الإخراج المطلوب.
 
-### Sample source code for Text Alignment For Floating Box Contents using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لمحاذاة النص لمحتويات المربع العائم باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document doc = new Document();
 doc.Pages.Add();
@@ -114,44 +114,44 @@ doc.Pages[1].Paragraphs.Add(floatBox2);
 doc.Save(dataDir + "FloatingBox_alignment_review_out.pdf");
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulations! You have successfully learned how to align text within floating boxes in a PDF document using Aspose.PDF for .NET. This tutorial provided a step-by-step guide, from setting up the project to saving the modified document. You can now incorporate this code into your own C# projects to customize the alignment of text within floating boxes in PDF files.
+تهانينا! لقد تعلمت بنجاح كيفية محاذاة النص داخل المربعات العائمة في مستند PDF باستخدام Aspose.PDF لـ .NET. قدم هذا البرنامج التعليمي دليلاً خطوة بخطوة، بدءًا من إعداد المشروع وحتى حفظ المستند المعدل. يمكنك الآن دمج هذا الرمز في مشاريع C# الخاصة بك لتخصيص محاذاة النص داخل المربعات العائمة في ملفات PDF.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of the "Text Alignment For Floating Box Contents In PDF File" tutorial?
+#### س: ما هو الغرض من البرنامج التعليمي "محاذاة النص لمحتويات المربع العائم في ملف PDF"؟
 
-A: The "Text Alignment For Floating Box Contents In PDF File" tutorial aims to guide users on how to align text within floating boxes in a PDF document using Aspose.PDF for .NET. The tutorial provides step-by-step instructions and C# code samples to demonstrate the process.
+ج: يهدف البرنامج التعليمي "محاذاة النص لمحتويات المربع العائم في ملف PDF" إلى توجيه المستخدمين حول كيفية محاذاة النص داخل المربعات العائمة في مستند PDF باستخدام Aspose.PDF لـ .NET. يوفر البرنامج التعليمي إرشادات خطوة بخطوة ونماذج تعليمات برمجية C# لتوضيح العملية.
 
-#### Q: How does this tutorial help in aligning text within floating boxes?
+#### س: كيف يساعد هذا البرنامج التعليمي في محاذاة النص داخل المربعات العائمة؟
 
-A: This tutorial helps users understand how to utilize Aspose.PDF for .NET to align text within floating boxes in a PDF document. By following the provided steps and code examples, users can customize the vertical and horizontal alignment of text within floating boxes.
+ج: يساعد هذا البرنامج التعليمي المستخدمين على فهم كيفية استخدام Aspose.PDF لـ .NET لمحاذاة النص داخل المربعات العائمة في مستند PDF. باتباع الخطوات المتوفرة وأمثلة التعليمات البرمجية، يمكن للمستخدمين تخصيص المحاذاة الرأسية والأفقية للنص داخل المربعات العائمة.
 
-#### Q: What prerequisites are required to follow this tutorial?
+#### س: ما هي المتطلبات الأساسية المطلوبة لمتابعة هذا البرنامج التعليمي؟
 
-A: Before starting the tutorial, you should have a basic understanding of the C# programming language. Additionally, you need to have the Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or install it in your project using NuGet.
+ج: قبل البدء في البرنامج التعليمي، يجب أن يكون لديك فهم أساسي للغة البرمجة C#. بالإضافة إلى ذلك، تحتاج إلى تثبيت Aspose.PDF لمكتبة .NET. يمكنك الحصول عليه من موقع Aspose أو تثبيته في مشروعك باستخدام NuGet.
 
-#### Q: How do I set up my project to follow this tutorial?
+#### س: كيف أقوم بإعداد مشروعي لمتابعة هذا البرنامج التعليمي؟
 
-A: To get started, create a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library. This enables you to leverage the library's features for working with PDF documents and aligning text within floating boxes.
+ج: للبدء، قم بإنشاء مشروع C# جديد في بيئة التطوير المتكاملة المفضلة لديك (IDE) وأضف مرجعًا إلى مكتبة Aspose.PDF لـ .NET. يمكّنك هذا من الاستفادة من ميزات المكتبة للعمل مع مستندات PDF ومحاذاة النص داخل المربعات العائمة.
 
-#### Q: Can I use this tutorial to align text within any type of floating box?
+#### س: هل يمكنني استخدام هذا البرنامج التعليمي لمحاذاة النص داخل أي نوع من المربعات العائمة؟
 
-A: Yes, this tutorial provides instructions on how to align text within floating boxes in a PDF document using Aspose.PDF for .NET. You can use the provided code samples to customize the vertical and horizontal alignment of text within floating boxes.
+ج: نعم، يوفر هذا البرنامج التعليمي إرشادات حول كيفية محاذاة النص داخل المربعات العائمة في مستند PDF باستخدام Aspose.PDF لـ .NET. يمكنك استخدام نماذج التعليمات البرمجية المتوفرة لتخصيص المحاذاة الرأسية والأفقية للنص داخل المربعات العائمة.
 
-#### Q: How do I specify the alignment of text within a floating box?
+#### س: كيف يمكنني تحديد محاذاة النص داخل مربع عائم؟
 
-A: The tutorial demonstrates how to create `FloatingBox` objects and set their `VerticalAlignment` and `HorizontalAlignment` properties to control the alignment of the contained text. You can adjust these properties according to your requirements.
+ ج: يوضح البرنامج التعليمي كيفية الإنشاء`FloatingBox`الكائنات وتعيينها`VerticalAlignment` و`HorizontalAlignment` خصائص للتحكم في محاذاة النص الموجود. يمكنك ضبط هذه الخصائص وفقًا لمتطلباتك.
 
-#### Q: How can I customize the appearance of the floating boxes?
+#### س: كيف يمكنني تخصيص مظهر الصناديق العائمة؟
 
-A: You can customize the appearance of the floating boxes by modifying properties such as the border, size, and text content. The tutorial provides code samples that demonstrate how to create and style the `FloatingBox` objects.
+ ج: يمكنك تخصيص مظهر المربعات العائمة عن طريق تعديل خصائص مثل الحد والحجم ومحتوى النص. يوفر البرنامج التعليمي نماذج تعليمات برمجية توضح كيفية إنشاء وتصميم ملف`FloatingBox` أشياء.
 
-#### Q: Can I add multiple floating boxes with different alignments in the same PDF document?
+#### س: هل يمكنني إضافة مربعات عائمة متعددة بمحاذاة مختلفة في نفس مستند PDF؟
 
-A: Yes, the tutorial illustrates how to create multiple `FloatingBox` objects with different vertical and horizontal alignments and add them to the same PDF document. This allows you to see the effects of various alignments within the same document.
+ ج: نعم، يوضح البرنامج التعليمي كيفية إنشاء عدة`FloatingBox` كائنات ذات محاذاة رأسية وأفقية مختلفة وإضافتها إلى نفس مستند PDF. يتيح لك هذا رؤية تأثيرات المحاذاة المختلفة داخل نفس المستند.
 
-#### Q: How do I save the modified PDF document?
+#### س: كيف يمكنني حفظ مستند PDF المعدل؟
 
-A: To save the modified PDF document, you can use the `Save` method of the `Document` object. The tutorial provides code samples that demonstrate how to save the resulting PDF document.
+ ج: لحفظ مستند PDF المعدل، يمكنك استخدام الملف`Save` طريقة`Document` هدف. يوفر البرنامج التعليمي نماذج تعليمات برمجية توضح كيفية حفظ مستند PDF الناتج.

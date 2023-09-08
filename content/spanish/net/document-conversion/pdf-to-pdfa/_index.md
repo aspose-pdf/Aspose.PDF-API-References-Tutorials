@@ -1,93 +1,93 @@
 ---
-title: PDF To PDFA
-linktitle: PDF To PDFA
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to convert PDF to PDFA using Aspose.PDF for .NET.
+title: PDF a PDFA
+linktitle: PDF a PDFA
+second_title: Aspose.PDF para referencia de API .NET
+description: Guía paso a paso para convertir PDF a PDFA usando Aspose.PDF para .NET.
 type: docs
 weight: 140
 url: /es/net/document-conversion/pdf-to-pdfa/
 ---
-In this tutorial, we will walk you through the process of converting a PDF file to PDF/A format using Aspose.PDF for .NET. The PDF/A format is an ISO standard that guarantees the long-term preservation of electronic documents. By following the steps below, you will be able to convert PDF files to PDF/A format.
+En este tutorial, lo guiaremos a través del proceso de conversión de un archivo PDF a formato PDF/A usando Aspose.PDF para .NET. El formato PDF/A es un estándar ISO que garantiza la conservación a largo plazo de los documentos electrónicos. Siguiendo los pasos a continuación, podrá convertir archivos PDF al formato PDF/A.
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## Requisitos previos
+Antes de comenzar, asegúrese de cumplir con los siguientes requisitos previos:
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- Conocimientos básicos del lenguaje de programación C#.
+- Biblioteca Aspose.PDF para .NET instalada en su sistema.
+- Un entorno de desarrollo como Visual Studio.
 
-## Step 1: Opening the source PDF document
-In this step, we will open the source PDF file using Aspose.PDF for .NET. Follow the code below:
+## Paso 1: abrir el documento PDF de origen
+En este paso, abriremos el archivo PDF de origen usando Aspose.PDF para .NET. Siga el código a continuación:
 
 ```csharp
-// Path to the documents directory.
+// Ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the source PDF document
+// Abra el documento PDF de origen
 Document pdfDocument = new Document(dataDir + "PDFToPDFA.pdf");
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where your PDF file is located.
+ Asegúrate de reemplazar`"YOUR DOCUMENTS DIRECTORY"` con el directorio real donde se encuentra su archivo PDF.
 
-## Step 2: Conversion to PDF/A format
-After opening the PDF file, we can proceed with the conversion to PDF/A format. Use the following code:
+## Paso 2: Conversión a formato PDF/A
+Después de abrir el archivo PDF, podemos proceder con la conversión al formato PDF/A. Utilice el siguiente código:
 
 ```csharp
-// Convert to PDF/A compliant document
-// During the conversion process, validation is also performed
+// Convertir a documento compatible con PDF/A
+// Durante el proceso de conversión, también se realiza la validación.
 pdfDocument.Convert(dataDir + "log.xml", PdfFormat.PDF_A_1B, ConvertErrorAction.Delete);
 ```
 
-The above code converts the PDF file to PDF/A-1b format and also performs validation during the conversion process. Any errors are recorded in the `"log.xml"` file.
+El código anterior convierte el archivo PDF al formato PDF/A-1b y también realiza la validación durante el proceso de conversión. Cualquier error se registra en el`"log.xml"` archivo.
 
-## Step 3: Saving the resulting PDF/A file
-After the conversion is complete, we need to save the resulting PDF/A file. Here is the last step:
+## Paso 3: guardar el archivo PDF/A resultante
+Una vez completada la conversión, debemos guardar el archivo PDF/A resultante. Aquí está el último paso:
 
 ```csharp
 dataDir = dataDir + "PDFToPDFA_out.pdf";
-// Save the output document
+// Guarde el documento de salida
 pdfDocument.Save(dataDir);
 ```
 
-Replace `"YOUR DOCUMENTS DIRECTORY"` with the desired directory where you want to save the output PDF/A file.
+ Reemplazar`"YOUR DOCUMENTS DIRECTORY"` con el directorio deseado donde desea guardar el archivo PDF/A de salida.
 
-### Example source code for PDF to HTML using Aspose.PDF for .NET
+### Código fuente de ejemplo para PDF a HTML usando Aspose.PDF para .NET
 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Abrir documento
 Document pdfDocument = new Document(dataDir + "PDFToPDFA.pdf");
 
-// Convert to PDF/A compliant document
-// During conversion process, the validation is also performed
+// Convertir a documento compatible con PDF/A
+// Durante el proceso de conversión, también se realiza la validación.
 pdfDocument.Convert(dataDir + "log.xml", PdfFormat.PDF_A_1B, ConvertErrorAction.Delete);
 
 dataDir = dataDir + "PDFToPDFA_out.pdf";
-// Save output document
+// Guardar documento de salida
 pdfDocument.Save(dataDir);
 
 Console.WriteLine("\nPDF file converted to PDF/A-1b compliant PDF.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
-In this tutorial, we covered the step-by-step process of converting a PDF file to PDF/A format using Aspose.PDF for .NET. By following the instructions described above, you should now be able to convert PDF files to PDF/A format. This feature is useful when you want to ensure the long-term compliance of your electronic documents.
+## Conclusión
+En este tutorial, cubrimos el proceso paso a paso de convertir un archivo PDF a formato PDF/A usando Aspose.PDF para .NET. Siguiendo las instrucciones descritas anteriormente, ahora debería poder convertir archivos PDF al formato PDF/A. Esta característica es útil cuando desea garantizar el cumplimiento a largo plazo de sus documentos electrónicos.
 
-### FAQ's
+### Preguntas frecuentes
 
-#### Q: What is PDF/A, and why is it important?
+#### P: ¿Qué es PDF/A y por qué es importante?
 
-A: PDF/A is an ISO standard for archiving electronic documents. It ensures that documents are self-contained and can be reliably preserved over the long term. PDF/A compliance guarantees that the document's visual appearance, content, and structure remain consistent over time, making it suitable for archival and legal purposes.
+R: PDF/A es un estándar ISO para archivar documentos electrónicos. Garantiza que los documentos sean autónomos y puedan conservarse de forma fiable a largo plazo. El cumplimiento de PDF/A garantiza que la apariencia visual, el contenido y la estructura del documento se mantengan consistentes a lo largo del tiempo, lo que lo hace adecuado para fines legales y de archivo.
 
-#### Q: What are the different PDF/A conformance levels, and how do they differ?
+#### P: ¿Cuáles son los diferentes niveles de conformidad de PDF/A y en qué se diferencian?
 
-A: PDF/A comes in several conformance levels, such as PDF/A-1a, PDF/A-1b, PDF/A-2a, PDF/A-2b, PDF/A-2u, PDF/A-3a, PDF/A-3b, and PDF/A-3u. The main difference lies in the level of compliance and the requirements for metadata, color spaces, and other specific aspects of the PDF document. In this tutorial, we focused on converting to PDF/A-1b, which is widely accepted for long-term archiving.
+R: PDF/A viene en varios niveles de conformidad, como PDF/A-1a, PDF/A-1b, PDF/A-2a, PDF/A-2b, PDF/A-2u, PDF/A-3a, PDF. /A-3b y PDF/A-3u. La principal diferencia radica en el nivel de cumplimiento y los requisitos de metadatos, espacios de color y otros aspectos específicos del documento PDF. En este tutorial, nos centramos en la conversión a PDF/A-1b, que es ampliamente aceptado para archivado a largo plazo.
 
-#### Q: How does Aspose.PDF for .NET handle validation during the PDF to PDF/A conversion?
+#### P: ¿Cómo maneja Aspose.PDF para .NET la validación durante la conversión de PDF a PDF/A?
 
-A: Aspose.PDF for .NET performs validation during the PDF to PDF/A conversion process. If there are any issues or errors in the source PDF document that prevent it from being compliant with the chosen PDF/A standard, the library will log the errors in an XML file, as specified by the user. The `Convert` method's `ConvertErrorAction` parameter determines how to handle errors, such as ignoring them or deleting the pages with errors.
+R: Aspose.PDF para .NET realiza la validación durante el proceso de conversión de PDF a PDF/A. Si hay algún problema o error en el documento PDF de origen que impide que cumpla con el estándar PDF/A elegido, la biblioteca registrará los errores en un archivo XML, según lo especificado por el usuario. El`Convert` métodos`ConvertErrorAction` El parámetro determina cómo manejar los errores, como ignorarlos o eliminar las páginas con errores.
 
-#### Q: Can I customize the PDF/A conversion settings to meet specific requirements?
+#### P: ¿Puedo personalizar la configuración de conversión de PDF/A para cumplir requisitos específicos?
 
-A: Yes, Aspose.PDF for .NET provides various options to customize the PDF/A conversion settings. You can choose different PDF/A conformance levels, specify the output file name, control error handling, and more. The `Convert` method allows you to set the desired PDF/A format and other options, enabling you to tailor the conversion according to your specific needs.
+ R: Sí, Aspose.PDF para .NET proporciona varias opciones para personalizar la configuración de conversión de PDF/A. Puede elegir diferentes niveles de conformidad de PDF/A, especificar el nombre del archivo de salida, controlar el manejo de errores y más. El`Convert` El método le permite configurar el formato PDF/A deseado y otras opciones, lo que le permite personalizar la conversión según sus necesidades específicas.

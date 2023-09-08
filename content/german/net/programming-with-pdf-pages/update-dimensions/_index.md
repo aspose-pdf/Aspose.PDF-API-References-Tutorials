@@ -1,113 +1,113 @@
 ---
-title: Update PDF Page Dimensions
-linktitle: Update PDF Page Dimensions
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to update PDF page dimensions using Aspose.PDF for .NET. Check the dimensions according to your needs.
+title: Aktualisieren Sie die PDF-Seitenabmessungen
+linktitle: Aktualisieren Sie die PDF-Seitenabmessungen
+second_title: Aspose.PDF für .NET API-Referenz
+description: Schritt-für-Schritt-Anleitung zum Aktualisieren der PDF-Seitenabmessungen mit Aspose.PDF für .NET. Überprüfen Sie die Abmessungen entsprechend Ihren Anforderungen.
 type: docs
 weight: 150
 url: /de/net/programming-with-pdf-pages/update-dimensions/
 ---
-In this tutorial, we'll walk you through the step-by-step process to update page dimensions in a PDF document using Aspose.PDF for .NET. We'll explain the bundled C# source code and provide you with a comprehensive guide to help you understand and implement this feature in your own projects. At the end of this tutorial, you will know how to change page dimensions in a PDF document using Aspose.PDF for .NET.
+In diesem Tutorial führen wir Sie Schritt für Schritt durch den Prozess zum Aktualisieren der Seitenabmessungen in einem PDF-Dokument mit Aspose.PDF für .NET. Wir erklären Ihnen den gebündelten C#-Quellcode und stellen Ihnen eine umfassende Anleitung zur Verfügung, die Ihnen hilft, diese Funktion zu verstehen und in Ihren eigenen Projekten zu implementieren. Am Ende dieses Tutorials erfahren Sie, wie Sie die Seitenabmessungen in einem PDF-Dokument mit Aspose.PDF für .NET ändern.
 
-## Prerequisites
-Before you begin, make sure you have the following:
+## Voraussetzungen
+Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
-- A basic knowledge of the C# programming language
-- Aspose.PDF for .NET installed in your development environment
+- Grundkenntnisse der Programmiersprache C#
+- Aspose.PDF für .NET in Ihrer Entwicklungsumgebung installiert
 
-## Step 1: Define the document directory
-First, you need to set the path to your documents directory. This is the location where you want to save your edited PDF document. Replace "YOUR DOCUMENTS DIRECTORY" with the appropriate path.
+## Schritt 1: Definieren Sie das Dokumentenverzeichnis
+Zuerst müssen Sie den Pfad zu Ihrem Dokumentenverzeichnis festlegen. Dies ist der Ort, an dem Sie Ihr bearbeitetes PDF-Dokument speichern möchten. Ersetzen Sie „IHR DOKUMENTENVERZEICHNIS“ durch den entsprechenden Pfad.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Open the PDF document
-Then you can open the existing PDF document using the `Document` class of Aspose.PDF. Be sure to specify the correct document path.
+## Schritt 2: Öffnen Sie das PDF-Dokument
+ Anschließend können Sie das vorhandene PDF-Dokument mit öffnen`Document` Klasse von Aspose.PDF. Stellen Sie sicher, dass Sie den richtigen Dokumentpfad angeben.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "UpdateDimensions.pdf");
 ```
 
-## Step 3: Get the Page Collection
-Now you can access the pages collection of the PDF document using the `Pages` property of the `Document` class.
+## Schritt 3: Holen Sie sich die Seitensammlung
+ Jetzt können Sie mit auf die Seitensammlung des PDF-Dokuments zugreifen`Pages` Eigentum der`Document` Klasse.
 
 ```csharp
 PageCollection pageCollection = pdfDocument.Pages;
 ```
 
-## Step 4: Get a specific page
-Then you can select a specific page of the document using the index of the page in the collection. In this example, we are using the second page (index 1).
+## Schritt 4: Holen Sie sich eine bestimmte Seite
+Anschließend können Sie mithilfe des Index der Seite in der Sammlung eine bestimmte Seite des Dokuments auswählen. In diesem Beispiel verwenden wir die zweite Seite (Index 1).
 
 ```csharp
 Page pdfPage = pageCollection[1];
 ```
 
-## Step 5: Define the new page dimensions
-Now you can set the new page size using the `SetPageSize()` method of the `Page` object. In this example, we're setting the page dimensions to A4 (11.7 x 8.3 inches), converted to points (1 inch = 72 points).
+## Schritt 5: Definieren Sie die neuen Seitenabmessungen
+ Jetzt können Sie die neue Seitengröße mit einstellen`SetPageSize()` Methode der`Page`Objekt. In diesem Beispiel stellen wir die Seitenabmessungen auf A4 (11,7 x 8,3 Zoll) ein, konvertiert in Punkt (1 Zoll = 72 Punkt).
 
 ```csharp
 pdfPage.SetPageSize(597.6, 842.4);
 ```
 
-## Step 6: Save the updated document
-Finally, you can save the updated PDF document to a file using the `Save()` method of the `Document` class. Be sure to specify the correct path and file name.
+## Schritt 6: Speichern Sie das aktualisierte Dokument
+ Abschließend können Sie das aktualisierte PDF-Dokument mit in einer Datei speichern`Save()` Methode der`Document`Klasse. Stellen Sie sicher, dass Sie den richtigen Pfad und Dateinamen angeben.
 
 ```csharp
 dataDir = dataDir + "UpdateDimensions_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Update Dimensions using Aspose.PDF for .NET 
+### Beispielquellcode für „Update Dimensions“ mit Aspose.PDF für .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Dokument öffnen
 Document pdfDocument = new Document(dataDir + "UpdateDimensions.pdf");
-// Get page collection
+// Seitensammlung abrufen
 PageCollection pageCollection = pdfDocument.Pages;
-// Get particular page
+// Holen Sie sich eine bestimmte Seite
 Page pdfPage = pageCollection[1];
-// Set the page size as A4 (11.7 x 8.3 in) and in Aspose.Pdf, 1 inch = 72 points
-// So A4 dimensions in points will be (842.4, 597.6)
+// Stellen Sie die Seitengröße auf A4 (11,7 x 8,3 Zoll) und in Aspose.Pdf auf 1 Zoll = 72 Punkte ein
+// Die A4-Abmessungen in Punkt betragen also (842,4, 597,6).
 pdfPage.SetPageSize(597.6, 842.4);
 dataDir = dataDir + "UpdateDimensions_out.pdf";
-// Save the updated document
+// Speichern Sie das aktualisierte Dokument
 pdfDocument.Save(dataDir);
 System.Console.WriteLine("\nPage dimensions updated successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
-In this tutorial, we learned how to update the dimensions of a page in a PDF document using Aspose.PDF for .NET. By following this step-by-step guide, you can easily change the dimensions of a page in a PDF document as needed. Aspose.PDF offers a powerful and flexible API for working with PDF files and performing various manipulations, including changing page dimensions. With this knowledge, you can control and customize the dimensions of your PDF pages to meet your specific needs.
+## Abschluss
+In diesem Tutorial haben wir gelernt, wie man die Abmessungen einer Seite in einem PDF-Dokument mit Aspose.PDF für .NET aktualisiert. Wenn Sie dieser Schritt-für-Schritt-Anleitung folgen, können Sie die Abmessungen einer Seite in einem PDF-Dokument ganz einfach nach Bedarf ändern. Aspose.PDF bietet eine leistungsstarke und flexible API für die Arbeit mit PDF-Dateien und die Durchführung verschiedener Manipulationen, einschließlich der Änderung der Seitenabmessungen. Mit diesem Wissen können Sie die Abmessungen Ihrer PDF-Seiten steuern und an Ihre spezifischen Anforderungen anpassen.
 
-### FAQ's for update PDF page dimensions
+### FAQs zum Aktualisieren der PDF-Seitenabmessungen
 
-#### Q: How can I update the dimensions of a specific page in a PDF document using Aspose.PDF for .NET?
+#### F: Wie kann ich die Abmessungen einer bestimmten Seite in einem PDF-Dokument mit Aspose.PDF für .NET aktualisieren?
 
-A: To update the dimensions of a specific page in a PDF document using Aspose.PDF for .NET, you can follow these steps:
+A: Um die Abmessungen einer bestimmten Seite in einem PDF-Dokument mit Aspose.PDF für .NET zu aktualisieren, können Sie die folgenden Schritte ausführen:
 
-1. Set the document directory by specifying the path where your original PDF file is located and where you want to save the updated PDF file. Replace "YOUR DOCUMENTS DIRECTORY" with the appropriate path.
-2. Open the existing PDF document to update using the `Document` class of Aspose.PDF. Be sure to specify the correct path to the original PDF document.
-3. Access the pages collection of the PDF document using the `Pages` property of the `Document` class.
-4. Select the specific page you want to update from the page collection using the index of the page. In the provided C# source code, we are using the second page (index 1).
-5. Define the new page size using the `SetPageSize()` method of the `Page` object. In the example, we set the page dimensions to A4 size (11.7 x 8.3 inches), converted to points (1 inch = 72 points).
-6. Save the updated PDF document to a file using the `Save()` method of the `Document` class. Be sure to specify the correct path and file name.
+1. Legen Sie das Dokumentverzeichnis fest, indem Sie den Pfad angeben, in dem sich Ihre ursprüngliche PDF-Datei befindet und wo Sie die aktualisierte PDF-Datei speichern möchten. Ersetzen Sie „IHR DOKUMENTENVERZEICHNIS“ durch den entsprechenden Pfad.
+2.  Öffnen Sie das vorhandene PDF-Dokument, um es zu aktualisieren`Document` Klasse von Aspose.PDF. Stellen Sie sicher, dass Sie den korrekten Pfad zum Original-PDF-Dokument angeben.
+3.  Greifen Sie mit auf die Seitensammlung des PDF-Dokuments zu`Pages` Eigentum der`Document` Klasse.
+4. Wählen Sie mithilfe des Seitenindex die spezifische Seite aus der Seitensammlung aus, die Sie aktualisieren möchten. Im bereitgestellten C#-Quellcode verwenden wir die zweite Seite (Index 1).
+5.  Definieren Sie die neue Seitengröße mit`SetPageSize()` Methode der`Page` Objekt. Im Beispiel stellen wir die Seitenabmessungen auf die Größe A4 (11,7 x 8,3 Zoll) ein und konvertieren sie in Punkt (1 Zoll = 72 Punkt).
+6.  Speichern Sie das aktualisierte PDF-Dokument mit in einer Datei`Save()` Methode der`Document`Klasse. Stellen Sie sicher, dass Sie den richtigen Pfad und Dateinamen angeben.
 
-#### Q: Can I update the dimensions of multiple pages in the PDF document simultaneously?
+#### F: Kann ich die Abmessungen mehrerer Seiten im PDF-Dokument gleichzeitig aktualisieren?
 
-A: Yes, you can modify the provided source code to update the dimensions of multiple pages in the PDF document simultaneously. Instead of selecting a specific page (as shown in step 4), you can loop through all the pages in the page collection and set the desired page size for each page.
+A: Ja, Sie können den bereitgestellten Quellcode ändern, um die Abmessungen mehrerer Seiten im PDF-Dokument gleichzeitig zu aktualisieren. Anstatt eine bestimmte Seite auszuwählen (wie in Schritt 4 gezeigt), können Sie alle Seiten in der Seitensammlung durchlaufen und für jede Seite die gewünschte Seitengröße festlegen.
 
-#### Q: How do I convert page dimensions from inches to points when using Aspose.PDF for .NET?
+#### F: Wie konvertiere ich Seitenabmessungen von Zoll in Punkte, wenn ich Aspose.PDF für .NET verwende?
 
-A: In Aspose.PDF for .NET, the measurement unit used for page dimensions is points, where 1 inch is equivalent to 72 points. To convert inches to points, you can use the formula: `points = inches * 72`. For example, to set a page size of 11.7 x 8.3 inches, you can calculate the corresponding dimensions in points as (11.7 * 72) and (8.3 * 72).
+ A: In Aspose.PDF für .NET ist die für die Seitenabmessungen verwendete Maßeinheit Punkt, wobei 1 Zoll 72 Punkten entspricht. Um Zoll in Punkte umzurechnen, können Sie die Formel verwenden:`points = inches * 72`. Um beispielsweise eine Seitengröße von 11,7 x 8,3 Zoll festzulegen, können Sie die entsprechenden Abmessungen in Punkten als (11,7 * 72) und (8,3 * 72) berechnen.
 
-#### Q: Will updating the dimensions of a page affect the content layout of the PDF document?
+#### F: Hat die Aktualisierung der Seitenabmessungen Auswirkungen auf das Inhaltslayout des PDF-Dokuments?
 
-A: Yes, updating the dimensions of a page will affect the content layout of the PDF document on that specific page. When you change the page dimensions, the content on the page will be adjusted accordingly to fit within the new dimensions.
+A: Ja, das Aktualisieren der Abmessungen einer Seite wirkt sich auf das Inhaltslayout des PDF-Dokuments auf dieser bestimmten Seite aus. Wenn Sie die Seitenabmessungen ändern, wird der Inhalt der Seite entsprechend angepasst, um in die neuen Abmessungen zu passen.
 
-#### Q: Is it possible to revert the changes and restore the original page dimensions after updating them?
+#### F: Ist es möglich, die Änderungen rückgängig zu machen und die ursprünglichen Seitenabmessungen nach der Aktualisierung wiederherzustellen?
 
-A: Yes, if you want to revert the changes and restore the original page dimensions, you can either keep a copy of the original PDF document before making changes or re-open the original PDF document again without saving the changes. This way, the original dimensions will be preserved.
+A: Ja, wenn Sie die Änderungen rückgängig machen und die ursprünglichen Seitenabmessungen wiederherstellen möchten, können Sie entweder eine Kopie des ursprünglichen PDF-Dokuments aufbewahren, bevor Sie Änderungen vornehmen, oder das ursprüngliche PDF-Dokument erneut öffnen, ohne die Änderungen zu speichern. Dadurch bleiben die Originalmaße erhalten.

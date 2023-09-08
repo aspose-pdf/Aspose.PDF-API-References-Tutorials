@@ -1,51 +1,51 @@
 ---
-title: Remove Hyperlinks After Converting From Html
-linktitle: Remove Hyperlinks After Converting From Html
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to remove hyperlinks after converting HTML to PDF using Aspose.PDF for .NET.
+title: 从 Html 转换后删除超链接
+linktitle: 从 Html 转换后删除超链接
+second_title: Aspose.PDF for .NET API 参考
+description: 使用 Aspose.PDF for .NET 将 HTML 转换为 PDF 后删除超链接的分步指南。
 type: docs
 weight: 250
 url: /zh/net/document-conversion/remove-hyperlinks-after-converting-from-html/
 ---
-In this tutorial, we'll walk you through the process of removing hyperlinks from a PDF file generated from an HTML file using Aspose.PDF for .NET. Hyperlinks are clickable links that may redirect to other pages or websites. By following the steps below, you will be able to remove hyperlinks from the resulting PDF file.
+在本教程中，我们将引导您完成从使用 Aspose.PDF for .NET 从 HTML 文件生成的 PDF 文件中删除超链接的过程。超链接是可以重定向到其他页面或网站的可点击链接。通过执行以下步骤，您将能够从生成的 PDF 文件中删除超链接。
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## 先决条件
+在开始之前，请确保满足以下先决条件：
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- C# 编程语言的基础知识。
+- 您的系统上安装了适用于 .NET 的 Aspose.PDF 库。
+- 开发环境，例如 Visual Studio。
 
-## Step 1: Loading HTML file and removing hyperlinks
-At this step, we will load the HTML file and remove the hyperlinks from the resulting PDF document. Use the following code:
+## 第 1 步：加载 HTML 文件并删除超链接
+在此步骤中，我们将加载 HTML 文件并从生成的 PDF 文档中删除超链接。使用以下代码：
 
 ```csharp
-// Path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Load the HTML file using the HTML loading options
+//使用 HTML 加载选项加载 HTML 文件
 Document doc = new Document(dataDir + "SampleHtmlFile.html", new HtmlLoadOptions());
 
-// Browse the annotations of the first page of the document
+//浏览文档第一页的注释
 foreach(Annotation a in doc.Pages[1].Annotations)
 {
-     // Check if the annotation is a link
+     //检查注释是否是链接
      if (a.AnnotationType == AnnotationType.Link)
      {
          LinkAnnotation the = (LinkAnnotation)a;
         
-         // Check if the action is of type GoToURIAction
+         //检查操作是否属于 GoToURIAction 类型
          if (the.Action is GoToURIAction)
          {
              GoToURIAction gta = (GoToURIAction)the.Action;
              gta.URI = "";
             
-             // Use a text fragment absorber to find matching text fragments
+             //使用文本片段吸收器查找匹配的文本片段
              TextFragmentAbsorber tfa = new TextFragmentAbsorber();
              tfa.TextSearchOptions = new TextSearchOptions(a.Rect);
              doc.Pages[a.PageIndex].Accept(tfa);
             
-             // Loop through matching text fragments and remove attributes from hyperlinks
+             //循环遍历匹配的文本片段并从超链接中删除属性
              foreach(TextFragment tf in tfa.TextFragments)
              {
                  tf.TextState.Underline = false;
@@ -53,28 +53,28 @@ foreach(Annotation a in doc.Pages[1].Annotations)
              }
          }
         
-         // Remove the annotation from the page
+         //从页面中删除注释
          doc.Pages[a.PageIndex].Annotations.Delete(a);
      }
 }
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where your HTML file is located.
+一定要更换`"YOUR DOCUMENTS DIRECTORY"`与 HTML 文件所在的实际目录。
 
-## Step 2: Saving the resulting PDF file
-Finally, we'll save the resulting PDF file without the hyperlinks. Use the following code:
+## 第 2 步：保存生成的 PDF 文件
+最后，我们将保存生成的不带超链接的 PDF 文件。使用以下代码：
 
 ```csharp
-// Save the resulting PDF file
+//保存生成的 PDF 文件
 doc.Save(dataDir + "RemoveHyperlinksFromText_out.pdf");
 ```
 
-The code above saves the resulting PDF file with the filename `"RemoveHyperlinksFromText_out.pdf"`.
+上面的代码使用文件名保存生成的 PDF 文件`"RemoveHyperlinksFromText_out.pdf"`.
 
-### Example source code for Remove Hyperlinks After Converting From Html using Aspose.PDF for .NET
+### 使用 Aspose.PDF for .NET 从 Html 转换后删除超链接的示例源代码
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 Document doc = new Document(dataDir + "SampleHtmlFile.html", new HtmlLoadOptions());
@@ -103,27 +103,27 @@ foreach (Annotation a in doc.Pages[1].Annotations)
 doc.Save(dataDir + "RemoveHyperlinksFromText_out.pdf");
 ```
 
-## Conclusion
-In this tutorial, we covered the step-by-step process of removing hyperlinks from a PDF file generated from an HTML file using Aspose.PDF for .NET. By following the instructions described above, you will be able to successfully remove hyperlinks from the resulting PDF file.
+## 结论
+在本教程中，我们介绍了使用 Aspose.PDF for .NET 从 HTML 文件生成的 PDF 文件中删除超链接的分步过程。按照上述说明操作，您将能够成功从生成的 PDF 文件中删除超链接。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What is Aspose.PDF for .NET?
+#### 问：什么是 Aspose.PDF for .NET？
 
-A: Aspose.PDF for .NET is a powerful library that enables developers to work with PDF documents in C# applications. It offers a wide range of functionalities, including the ability to convert HTML files to PDF and manipulate PDF content.
+答：Aspose.PDF for .NET 是一个功能强大的库，使开发人员能够在 C# 应用程序中处理 PDF 文档。它提供了广泛的功能，包括将 HTML 文件转换为 PDF 和操作 PDF 内容的能力。
 
-#### Q: Why would I want to remove hyperlinks from a PDF file?
+#### 问：为什么我要从 PDF 文件中删除超链接？
 
-A: There are various reasons for removing hyperlinks from a PDF file. For example, you might want to eliminate external links for printing or archiving purposes or ensure that the PDF content is not navigable via hyperlinks.
+答：从 PDF 文件中删除超链接的原因有多种。例如，您可能希望消除用于打印或存档目的的外部链接，或者确保 PDF 内容无法通过超链接进行导航。
 
-#### Q: How can I load an HTML file and remove hyperlinks using Aspose.PDF for .NET?
+#### 问：如何使用 Aspose.PDF for .NET 加载 HTML 文件并删除超链接？
 
-A: To load an HTML file and remove hyperlinks, you can use Aspose.PDF for .NET's `HtmlLoadOptions` class. Iterate through the annotations of the PDF pages to find link annotations and modify their attributes.
+答：要加载 HTML 文件并删除超链接，您可以使用 Aspose.PDF for .NET`HtmlLoadOptions`班级。迭代 PDF 页面的注释以查找链接注释并修改其属性。
 
-#### Q: Can I customize the output filename for the resulting PDF?
+#### 问：我可以自定义生成的 PDF 的输出文件名吗？
 
-A: Yes, you can customize the output filename for the resulting PDF file by modifying the code that saves the PDF document. Simply change the desired filename in the `doc.Save()` method.
+答：是的，您可以通过修改保存 PDF 文档的代码来自定义生成的 PDF 文件的输出文件名。只需更改所需的文件名即可`doc.Save()`方法。
 
-#### Q: Is it possible to selectively remove hyperlinks based on certain criteria?
+#### 问：是否可以根据某些条件有选择地删除超链接？
 
-A: Yes, you can selectively remove hyperlinks based on specific criteria. For example, you can choose to remove only external links or links pointing to specific URLs.
+答：是的，您可以根据特定条件有选择地删除超链接。例如，您可以选择仅删除外部链接或指向特定 URL 的链接。

@@ -1,113 +1,113 @@
 ---
-title: Remove All Text From PDF
-linktitle: Remove All Text From PDF
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to remove all text from a PDF document using Aspose.PDF for .NET.
+title: 删除 PDF 中的所有文本
+linktitle: 删除 PDF 中的所有文本
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 从 PDF 文档中删除所有文本。
 type: docs
 weight: 290
 url: /zh/net/programming-with-text/remove-all-text-from-pdf/
 ---
-In this tutorial, we will explain how to remove all text from a PDF document using the Aspose.PDF library for .NET. We will go through the step-by-step process of opening a PDF, using a `TextFragmentAbsorber` to remove all text, and saving the modified PDF using the provided C# source code.
+在本教程中，我们将解释如何使用 .NET 的 Aspose.PDF 库从 PDF 文档中删除所有文本。我们将逐步完成使用 PDF 打开 PDF 的过程`TextFragmentAbsorber`删除所有文本，并使用提供的 C# 源代码保存修改后的 PDF。
 
-## Requirements
+## 要求
 
-Before you begin, ensure that you have the following:
+在开始之前，请确保您具备以下条件：
 
-- The Aspose.PDF for .NET library installed.
-- A basic understanding of C# programming.
+- 安装了 Aspose.PDF for .NET 库。
+- 对 C# 编程有基本了解。
 
-## Step 1: Set up the Document Directory
+## 第 1 步：设置文档目录
 
-First, you need to set the path to the directory where your PDF files are located. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your PDF files.
+首先，您需要设置 PDF 文件所在目录的路径。代替`"YOUR DOCUMENT DIRECTORY"`在里面`dataDir`变量包含 PDF 文件的路径。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Open the PDF Document
+## 第 2 步：打开 PDF 文档
 
-Next, we open the PDF document using the `Document` class from the Aspose.PDF library.
+接下来，我们使用以下命令打开 PDF 文档`Document`来自 Aspose.PDF 库的类。
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "RemoveAllText.pdf");
 ```
 
-## Step 3: Remove All Text
+## 第 3 步：删除所有文本
 
-We initialize a `TextFragmentAbsorber` object and use it to remove all absorbed text from the PDF document.
+我们初始化一个`TextFragmentAbsorber`对象并使用它从 PDF 文档中删除所有吸收的文本。
 
 ```csharp
 TextFragmentAbsorber absorb = new TextFragmentAbsorber();
 absorb. RemoveAllText(pdfDocument);
 ```
 
-## Step 4: Save the Modified PDF
+## 第4步：保存修改后的PDF
 
-Finally, we save the modified PDF document to the specified output file.
+最后，我们将修改后的PDF文档保存到指定的输出文件中。
 
 ```csharp
 pdfDocument.Save(dataDir + "RemoveAllText_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 ```
 
-### Sample source code for Remove All Text From PDF using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 从 PDF 中删除所有文本的示例源代码 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+//打开文档
 Document pdfDocument = new Document(dataDir + "RemoveAllText.pdf");
-// Initiate TextFragmentAbsorber
+//启动 TextFragmentAbsorber
 TextFragmentAbsorber absorber = new TextFragmentAbsorber();
-// Remove all absorbed text
+//删除所有吸收的文本
 absorber.RemoveAllText(pdfDocument);
-// Save the document
+//保存文档
 pdfDocument.Save(dataDir + "RemoveAllText_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 ```
 
-## Conclusion
+## 结论
 
-In this tutorial, you have learned how to remove all text from a PDF document using the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can open a PDF, remove all text using a `TextFragmentAbsorber`, and save the modified PDF.
+在本教程中，您学习了如何使用 .NET 的 Aspose.PDF 库从 PDF 文档中删除所有文本。通过遵循分步指南并执行提供的 C# 代码，您可以打开 PDF，使用`TextFragmentAbsorber`，并保存修改后的PDF。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What is the purpose of the "Remove All Text From PDF" tutorial?
+#### 问：“删除 PDF 中的所有文本”教程的目的是什么？
 
-A: The "Remove All Text From PDF" tutorial provides instructions on how to use the Aspose.PDF library for .NET to remove all text from a PDF document. The tutorial guides you through the process of opening a PDF, using a `TextFragmentAbsorber` to remove all text, and saving the modified PDF.
+答：“从 PDF 中删除所有文本”教程提供了有关如何使用 .NET 的 Aspose.PDF 库从 PDF 文档中删除所有文本的说明。本教程将指导您完成打开 PDF 的过程，使用`TextFragmentAbsorber`删除所有文本，并保存修改后的 PDF。
 
-#### Q: Why would I want to remove all text from a PDF document?
+#### 问：为什么我要删除 PDF 文档中的所有文本？
 
-A: Removing all text from a PDF document can be useful in scenarios where you need to create a version of the document without any textual content. This can be helpful for privacy reasons or to generate a visual representation of the document's layout without displaying its textual information.
+答：在您需要创建不包含任何文本内容的文档版本的情况下，从 PDF 文档中删除所有文本非常有用。这对于隐私原因或生成文档布局的视觉表示而不显示其文本信息可能很有帮助。
 
-#### Q: How do I set up the document directory?
+#### 问：如何设置文档目录？
 
-A: To set up the document directory:
+A：设置文档目录：
 
-1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where your PDF files are located.
+1. 代替`"YOUR DOCUMENT DIRECTORY"`在里面`dataDir`变量包含 PDF 文件所在目录的路径。
 
-#### Q: How do I remove all text from a PDF document using the Aspose.PDF library?
+#### 问：如何使用 Aspose.PDF 库删除 PDF 文档中的所有文本？
 
-A: The tutorial guides you through the process step by step:
+答：本教程将逐步指导您完成整个过程：
 
-1. Open the PDF document using the `Document` class.
-2. Initialize a `TextFragmentAbsorber` object.
-3. Use the absorber to remove all absorbed text from the PDF document.
-4. Save the modified PDF document.
+1. 使用以下命令打开 PDF 文档`Document`班级。
+2. 初始化一个`TextFragmentAbsorber`目的。
+3. 使用吸收器删除 PDF 文档中所有吸收的文本。
+4. 保存修改后的PDF文档。
 
-#### Q: Can I selectively remove text from specific areas of the document?
+#### 问：我可以有选择地删除文档特定区域的文本吗？
 
-A: The tutorial focuses on removing all text from the entire PDF document. If you want to selectively remove text from specific areas, you would need to modify the approach and use more complex logic to identify and remove specific text fragments.
+答：本教程的重点是从整个 PDF 文档中删除所有文本。如果您想有选择地从特定区域删除文本，则需要修改方法并使用更复杂的逻辑来识别和删除特定的文本片段。
 
-#### Q: How does the `TextFragmentAbsorber` work to remove text?
+#### 问：如何`TextFragmentAbsorber` work to remove text?
 
-A: The `TextFragmentAbsorber` is a class provided by the Aspose.PDF library that can absorb text fragments from a PDF document. By using the `RemoveAllText` method of the `TextFragmentAbsorber` class, you can remove all the absorbed text fragments from the document.
+答： 的`TextFragmentAbsorber`是Aspose.PDF库提供的一个类，可以从PDF文档中吸收文本片段。通过使用`RemoveAllText`的方法`TextFragmentAbsorber`类，您可以从文档中删除所有吸收的文本片段。
 
-#### Q: What is the expected outcome of executing the provided code?
+#### 问：执行所提供的代码的预期结果是什么？
 
-A: By following the tutorial and running the provided C# code, you will remove all text from the input PDF document and save the modified version as the output PDF file.
+答：通过遵循教程并运行提供的 C# 代码，您将从输入 PDF 文档中删除所有文本，并将修改后的版本保存为输出 PDF 文件。
 
-#### Q: Can I modify the code to remove text only from specific pages or areas?
+#### 问：我可以修改代码以仅删除特定页面或区域中的文本吗？
 
-A: Yes, you can modify the code to achieve that. For selective text removal, you need to adjust the code to target specific pages or regions within the PDF document.
+答：是的，您可以修改代码来实现这一点。对于选择性文本删除，您需要调整代码以定位 PDF 文档中的特定页面或区域。
 
-#### Q: Is a valid Aspose License required for this tutorial?
+#### 问：本教程需要有效的 Aspose 许可证吗？
 
-A: Yes, a valid Aspose License is necessary to execute the code successfully in this tutorial. You can obtain a full license or a 30-day temporary license from the Aspose website.
+答：是的，需要有效的 Aspose 许可证才能成功执行本教程中的代码。您可以从 Aspose 网站获取完整许可证或 30 天临时许可证。

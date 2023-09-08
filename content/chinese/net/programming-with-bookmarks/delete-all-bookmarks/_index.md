@@ -1,136 +1,136 @@
 ---
-title: Delete All Bookmarks In PDF File
-linktitle: Delete All Bookmarks In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily delete all bookmarks in PDF file with Aspose.PDF for .NET.
+title: 删除PDF文件中的所有书签
+linktitle: 删除PDF文件中的所有书签
+second_title: Aspose.PDF for .NET API 参考
+description: 使用 Aspose.PDF for .NET 轻松删除 PDF 文件中的所有书签。
 type: docs
 weight: 30
 url: /zh/net/programming-with-bookmarks/delete-all-bookmarks/
 ---
-# Delete all bookmarks with Aspose.PDF for .NET
+# 使用 Aspose.PDF for .NET 删除所有书签
 
-Deleting bookmarks in PDF file may be necessary in some cases. With Aspose.PDF for .NET, you can easily remove all bookmarks by following the following source code:
+在某些情况下，可能需要删除 PDF 文件中的书签。使用Aspose.PDF for .NET，您可以通过以下源代码轻松删除所有书签：
 
-## Step 1: Import required libraries
+## 第1步：导入所需的库
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+在开始之前，您需要为 C# 项目导入必要的库。这是必要的导入指令：
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## 步骤 2：设置文档文件夹路径
 
-In this step, you need to specify the path to the folder containing the PDF file from which you want to remove bookmarks. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+在此步骤中，您需要指定包含要从中删除书签的 PDF 文件的文件夹的路径。代替`"YOUR DOCUMENT DIRECTORY"`在以下代码中使用文档文件夹的实际路径：
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## 步骤 3：打开 PDF 文档
 
-Now we are going to open the PDF document from which we want to remove the bookmarks using the following code:
+现在我们将使用以下代码打开要从中删除书签的 PDF 文档：
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "DeleteAllBookmarks.pdf");
 ```
 
-## Step 4: Delete all bookmarks
+## 第 4 步：删除所有书签
 
-In this step, we delete all bookmarks from the document using the `Delete` method of the `Outlines` property. Here is the corresponding code:
+在此步骤中，我们使用以下命令删除文档中的所有书签`Delete`的方法`Outlines`财产。这是相应的代码：
 
 ```csharp
 pdfDocument.Outlines.Delete();
 ```
 
-## Step 5: Save the updated file
+## 第 5 步：保存更新的文件
 
-Finally, we save the updated PDF file using the `Save` method of the `pdfDocument` object. Here is the corresponding code:
+最后，我们使用以下命令保存更新后的 PDF 文件`Save`的方法`pdfDocument`目的。这是相应的代码：
 
 ```csharp
 dataDir = dataDir + "DeleteAllBookmarks_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Delete All Bookmarks using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 删除所有书签的示例源代码 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+//打开文档
 Document pdfDocument = new Document(dataDir + "DeleteAllBookmarks.pdf");
-// Delete all bookmarks
+//删除所有书签
 pdfDocument.Outlines.Delete();
 dataDir = dataDir + "DeleteAllBookmarks_out.pdf";
-// Save updated file
+//保存更新的文件
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nAll bookmarks deleted successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## 结论
 
-Congratulation ! Now you have a step by step guide to remove all bookmarks with Aspose.PDF for .NET. You can use this code to clean up your PDF documents by deleting all existing bookmarks.
+恭喜！现在您有了使用 Aspose.PDF for .NET 删除所有书签的分步指南。您可以使用此代码通过删除所有现有书签来清理 PDF 文档。
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+请务必查看官方 Aspose.PDF 文档，以获取有关高级书签操作功能的更多信息。
 
-### FAQ's for delete all bookmarks in PDF file
+### 删除 PDF 文件中所有书签的常见问题解答
 
-#### Q: What are bookmarks in a PDF file?
+#### 问：PDF 文件中的书签是什么？
 
-A: Bookmarks in a PDF file are navigational aids that allow users to quickly jump to specific sections or pages within the document. They help organize and enhance the user experience when navigating through lengthy content.
+答：PDF 文件中的书签是导航辅助工具，允许用户快速跳转到文档中的特定部分或页面。它们有助于在浏览冗长的内容时组织和增强用户体验。
 
-#### Q: Why would I need to delete all bookmarks from a PDF file?
+#### 问：为什么我需要删除 PDF 文件中的所有书签？
 
-A: There might be cases where you want to remove all bookmarks from a PDF document to simplify its navigation, reorganize its structure, or prepare it for a specific purpose where bookmarks are not needed.
+答：在某些情况下，您可能希望从 PDF 文档中删除所有书签，以简化其导航、重新组织其结构，或为不需要书签的特定用途做好准备。
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### 问：如何导入 C# 项目所需的库？
 
-A: To import the required library for your C# project, you can use the following import directive:
+答：要导入 C# 项目所需的库，您可以使用以下导入指令：
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This library provides the classes and methods needed to work with PDF documents.
+该库提供了处理 PDF 文档所需的类和方法。
 
-#### Q: How do I specify the path to the documents folder?
+#### 问：如何指定文档文件夹的路径？
 
-A: In the source code provided, you need to replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file from which you want to remove bookmarks. This ensures that the code can locate the target PDF file.
+ A：在提供的源码中，需要替换`"YOUR DOCUMENT DIRECTORY"`包含要从中删除书签的 PDF 文件的文件夹的实际路径。这可确保代码可以找到目标 PDF 文件。
 
-#### Q: How do I open a PDF document for bookmark removal?
+#### 问：如何打开 PDF 文档以删除书签？
 
-A: To open a PDF document for bookmark removal, use the following code:
+答：要打开 PDF 文档以删除书签，请使用以下代码：
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "DeleteAllBookmarks.pdf");
 ```
 
-Replace `"DeleteAllBookmarks.pdf"` with the actual file name.
+代替`"DeleteAllBookmarks.pdf"`与实际的文件名。
 
-#### Q: How do I delete all bookmarks from the PDF document?
+#### 问：如何删除 PDF 文档中的所有书签？
 
-A: To remove all bookmarks from the PDF document, use the `Delete` method of the `Outlines` property:
+答：要从 PDF 文档中删除所有书签，请使用`Delete`的方法`Outlines`财产：
 
 ```csharp
 pdfDocument.Outlines.Delete();
 ```
 
-#### Q: What happens to the rest of the content when bookmarks are deleted?
+#### 问：删除书签后，其余内容会怎样？
 
-A: Deleting bookmarks does not affect the content or layout of the PDF document. Only the navigation bookmarks are removed, leaving the actual content intact.
+答：删除书签不会影响PDF文档的内容或布局。仅删除导航书签，实际内容保持不变。
 
-#### Q: How do I save the updated PDF file after removing bookmarks?
+#### 问：删除书签后如何保存更新的 PDF 文件？
 
-A: To save the updated PDF file after deleting bookmarks, use the following code:
+答：要在删除书签后保存更新的 PDF 文件，请使用以下代码：
 
 ```csharp
 dataDir = dataDir + "DeleteAllBookmarks_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-#### Q: Can I selectively delete specific bookmarks instead of all of them?
+#### 问：我可以有选择地删除特定书签而不是全部书签吗？
 
-A: Yes, you can selectively delete specific bookmarks by targeting them using their index or other properties. The provided source code demonstrates how to delete all bookmarks, but you can modify it to suit your needs.
+答：是的，您可以通过使用索引或其他属性来定位特定书签，有选择地删除它们。提供的源代码演示了如何删除所有书签，但您可以对其进行修改以满足您的需要。
 
-#### Q: Are there any precautions I should take before deleting bookmarks?
+#### 问：删除书签之前有什么注意事项吗？
 
-A: Before deleting bookmarks, make sure to review the document to ensure that bookmark removal will not impact the document's usability or navigation. Consider making a backup of the original document before proceeding.
+答：在删除书签之前，请务必检查文档，以确保书签删除不会影响文档的可用性或导航。在继续之前请考虑对原始文档进行备份。

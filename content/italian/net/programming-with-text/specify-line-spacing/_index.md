@@ -1,28 +1,28 @@
 ---
-title: Specify Line Spacing In PDF File
-linktitle: Specify Line Spacing In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to specify line spacing in PDF file using Aspose.PDF for .NET.
+title: Specifica l'interlinea nel file PDF
+linktitle: Specifica l'interlinea nel file PDF
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Scopri come specificare l'interlinea nel file PDF utilizzando Aspose.PDF per .NET.
 type: docs
 weight: 510
 url: /it/net/programming-with-text/specify-line-spacing/
 ---
-This tutorial explains how to specify line spacing in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the process step by step.
+Questo tutorial spiega come specificare l'interlinea nel file PDF utilizzando Aspose.PDF per .NET. Il codice sorgente C# fornito illustra il processo passo dopo passo.
 
-## Prerequisites
+## Prerequisiti
 
-Before proceeding with the tutorial, make sure you have the following:
+Prima di procedere con il tutorial, assicurati di avere quanto segue:
 
-- Basic knowledge of C# programming language.
-- Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to install it in your project.
+- Conoscenza base del linguaggio di programmazione C#.
+- Aspose.PDF per la libreria .NET installata. Puoi ottenerlo dal sito Web Aspose o utilizzare NuGet per installarlo nel tuo progetto.
 
-## Step 1: Set up the project
+## Passaggio 1: impostare il progetto
 
-Start by creating a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library.
+Inizia creando un nuovo progetto C# nel tuo ambiente di sviluppo integrato (IDE) preferito e aggiungi un riferimento alla libreria Aspose.PDF per .NET.
 
-## Step 2: Import necessary namespaces
+## Passaggio 2: importa gli spazi dei nomi necessari
 
-Add the following using directives at the beginning of your C# file to import the required namespaces:
+Aggiungi le seguenti direttive using all'inizio del file C# per importare gli spazi dei nomi richiesti:
 
 ```csharp
 using Aspose.Pdf;
@@ -30,44 +30,44 @@ using Aspose.Pdf.Text;
 using System.IO;
 ```
 
-## Step 3: Set the path to the document directory
+## Passaggio 3: impostare il percorso della directory dei documenti
 
-Set the path to your document directory using the `dataDir` variable:
+ Imposta il percorso della directory dei documenti utilizzando il file`dataDir` variabile:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ Sostituire`"YOUR DOCUMENT DIRECTORY"` con il percorso effettivo della directory dei documenti.
 
-## Step 4: Load the input PDF file
+## Passaggio 4: carica il file PDF di input
 
-Load the input PDF file using the `Document` class:
+ Caricare il file PDF di input utilizzando il file`Document` classe:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 5: Create TextFormattingOptions
+## Passaggio 5: crea opzioni di formattazione del testo
 
-Create a `TextFormattingOptions` object and set the line spacing mode to `FullSize`:
+ Creare un`TextFormattingOptions` oggetto e impostare la modalità di interlinea su`FullSize`:
 
 ```csharp
 TextFormattingOptions formattingOptions = new TextFormattingOptions();
 formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
 ```
 
-## Step 6: Create a TextFragment
+## Passaggio 6: crea un TextFragment
 
-Create a `TextFragment` object and specify the text content:
+ Creare un`TextFragment` oggetto e specificare il contenuto del testo:
 
 ```csharp
 TextFragment textFragment = new TextFragment("Hello world");
 ```
 
-## Step 7: Load the font file (optional)
+## Passaggio 7: caricare il file del carattere (facoltativo)
 
-If you want to use a specific font for the text, load the TrueType font file into a `FileStream` object:
+ Se desideri utilizzare un carattere specifico per il testo, carica il file dei caratteri TrueType in un file`FileStream` oggetto:
 
 ```csharp
 string fontFile = dataDir + "HPSimplified.TTF";
@@ -77,111 +77,111 @@ using (FileStream fontStream = File.OpenRead(fontFile))
 }
 ```
 
-Replace `"HPSimplified.TTF"` with the actual font file name.
+ Sostituire`"HPSimplified.TTF"` con il nome effettivo del file del carattere.
 
-## Step 8: Specify the text position and line spacing
+## Passaggio 8: specificare la posizione del testo e l'interlinea
 
-Set the position for the text fragment and assign the `TextFormattingOptions` to the `TextState.FormattingOptions` property:
+ Imposta la posizione per il frammento di testo e assegna il`TextFormattingOptions` al`TextState.FormattingOptions` proprietà:
 
 ```csharp
 textFragment.Position = new Position(100, 600);
 textFragment.TextState.FormattingOptions = formattingOptions;
 ```
 
-## Step 9: Add the text to the document
+## Passaggio 9: aggiungi il testo al documento
 
-Add the text fragment to the document, either by appending it to a `TextBuilder` or directly to a page's `Paragraphs` collection:
+ Aggiungi il frammento di testo al documento, aggiungendolo a a`TextBuilder` o direttamente a una pagina`Paragraphs` collezione:
 
 ```csharp
 var page = doc.Pages.Add();
 page.Paragraphs.Add(textFragment);
 ```
 
-## Step 10: Save the resulting PDF document
+## Passaggio 10: salva il documento PDF risultante
 
-Save the modified PDF document:
+Salvare il documento PDF modificato:
 
 ```csharp
 dataDir = dataDir + "SpecifyLineSpacing_out.pdf";
 doc.Save(dataDir);
 ```
 
-Make sure to replace `"SpecifyLineSpacing_out.pdf"` with the desired output file name.
+ Assicurati di sostituire`"SpecifyLineSpacing_out.pdf"` con il nome del file di output desiderato.
 
-### Sample source code for Specify Line Spacing using Aspose.PDF for .NET 
+### Codice sorgente di esempio per specificare l'interlinea utilizzando Aspose.PDF per .NET 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string fontFile = dataDir + "HPSimplified.TTF";
-// Load input PDF file
+// Carica il file PDF di input
 Document doc = new Document();
-//Create TextFormattingOptions with LineSpacingMode.FullSize
+//Crea TextFormattingOptions con LineSpacingMode.FullSize
 TextFormattingOptions formattingOptions = new TextFormattingOptions();
 formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
-// Create text builder object for first page of document
+// Crea un oggetto generatore di testo per la prima pagina del documento
 //TextBuilder textBuilder = new TextBuilder(doc.Pages[1]);
-// Create text fragment with sample string
+// Crea un frammento di testo con una stringa di esempio
 TextFragment textFragment = new TextFragment("Hello world");
 if (fontFile != "")
 {
-	// Load the TrueType font into stream object
+	// Carica il carattere TrueType nell'oggetto stream
 	using (FileStream fontStream = System.IO.File.OpenRead(fontFile))
 	{
-		// Set the font name for text string
+		//Imposta il nome del carattere per la stringa di testo
 		textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
-		// Specify the position for Text Fragment
+		// Specificare la posizione per il frammento di testo
 		textFragment.Position = new Position(100, 600);
-		//Set TextFormattingOptions of current fragment to predefined(which points to LineSpacingMode.FullSize)
+		//Imposta TextFormattingOptions del frammento corrente su predefinito (che punta a LineSpacingMode.FullSize)
 		textFragment.TextState.FormattingOptions = formattingOptions;
-		// Add the text to TextBuilder so that it can be placed over the PDF file
+		// Aggiungi il testo a TextBuilder in modo che possa essere posizionato sul file PDF
 		//textBuilder.AppendText(textFragment);
 		var page = doc.Pages.Add();
 		page.Paragraphs.Add(textFragment);
 	}
 	dataDir = dataDir + "SpecifyLineSpacing_out.pdf";
-	// Save resulting PDF document
+	// Salva il documento PDF risultante
 	doc.Save(dataDir);
 }
 ```
 
-## Conclusion
+## Conclusione
 
-Congratulations! You have successfully learned how to specify line spacing in a PDF document using Aspose.PDF for .NET. This tutorial provided a step-by-step guide, from setting up the project to saving the modified document. You can now incorporate this code into your own C# projects to customize the line spacing of text in PDF files.
+Congratulazioni! Hai imparato con successo come specificare l'interlinea in un documento PDF utilizzando Aspose.PDF per .NET. Questo tutorial ha fornito una guida passo passo, dall'impostazione del progetto al salvataggio del documento modificato. Ora puoi incorporare questo codice nei tuoi progetti C# per personalizzare l'interlinea del testo nei file PDF.
 
-### FAQ's
+### Domande frequenti
 
-#### Q: What is the purpose of the "Specify Line Spacing In PDF File" tutorial?
+#### D: Qual è lo scopo del tutorial "Specifica l'interlinea nel file PDF"?
 
-A: The "Specify Line Spacing In PDF File" tutorial aims to guide users on how to use the Aspose.PDF library for .NET to customize the line spacing of text within a PDF document. The tutorial provides step-by-step instructions and C# code samples to demonstrate the process.
+R: Il tutorial "Specifica l'interlinea nel file PDF" mira a guidare gli utenti su come utilizzare la libreria Aspose.PDF per .NET per personalizzare l'interlinea del testo all'interno di un documento PDF. L'esercitazione fornisce istruzioni dettagliate ed esempi di codice C# per dimostrare il processo.
 
-#### Q: How does this tutorial help in specifying line spacing within a PDF document?
+#### D: In che modo questo tutorial aiuta a specificare l'interlinea all'interno di un documento PDF?
 
-A: This tutorial helps users understand how to utilize the capabilities of Aspose.PDF for .NET to specify line spacing for text in a PDF document. By following the provided steps and code examples, users can adjust the line spacing according to their preferences.
+R: Questo tutorial aiuta gli utenti a capire come utilizzare le funzionalità di Aspose.PDF per .NET per specificare l'interlinea per il testo in un documento PDF. Seguendo i passaggi forniti e gli esempi di codice, gli utenti possono regolare l'interlinea in base alle proprie preferenze.
 
-#### Q: What prerequisites are required to follow this tutorial?
+#### D: Quali prerequisiti sono richiesti per seguire questo tutorial?
 
-A: Before starting the tutorial, you should have a basic understanding of the C# programming language. Additionally, you need to have the Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or install it in your project using NuGet.
+R: Prima di iniziare il tutorial, dovresti avere una conoscenza di base del linguaggio di programmazione C#. Inoltre, è necessario che sia installata la libreria Aspose.PDF per .NET. È possibile ottenerlo dal sito Web Aspose o installarlo nel progetto utilizzando NuGet.
 
-#### Q: How do I set up my project to follow this tutorial?
+#### D: Come posso impostare il mio progetto per seguire questo tutorial?
 
-A: To get started, create a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library. This enables you to leverage the library's features for working with PDF documents and customizing line spacing.
+R: Per iniziare, crea un nuovo progetto C# nel tuo ambiente di sviluppo integrato (IDE) preferito e aggiungi un riferimento alla libreria Aspose.PDF per .NET. Ciò consente di sfruttare le funzionalità della libreria per lavorare con documenti PDF e personalizzare l'interlinea.
 
-#### Q: Can I use this tutorial to specify line spacing for any type of text?
+#### D: Posso utilizzare questo tutorial per specificare l'interlinea per qualsiasi tipo di testo?
 
-A: Yes, this tutorial provides instructions on how to specify line spacing for any text content within a PDF document using Aspose.PDF for .NET. You can use the provided code samples to adjust the line spacing of text according to your needs.
+R: Sì, questo tutorial fornisce istruzioni su come specificare l'interlinea per qualsiasi contenuto di testo all'interno di un documento PDF utilizzando Aspose.PDF per .NET. È possibile utilizzare gli esempi di codice forniti per regolare l'interlinea del testo in base alle proprie esigenze.
 
-#### Q: How do I specify the line spacing mode in the tutorial?
+#### D: Come posso specificare la modalità di interlinea nel tutorial?
 
-A: The tutorial demonstrates how to create a `TextFormattingOptions` object and set its `LineSpacing` property to `TextFormattingOptions.LineSpacingMode.FullSize`. This mode specifies full line spacing for the text content.
+ R: Il tutorial mostra come creare un file`TextFormattingOptions` oggetto e impostarlo`LineSpacing` proprietà a`TextFormattingOptions.LineSpacingMode.FullSize`. Questa modalità specifica l'interlinea completa per il contenuto del testo.
 
-#### Q: How can I load a specific font for the text?
+#### D: Come posso caricare un carattere specifico per il testo?
 
-A: If you wish to use a specific font for the text content, the tutorial provides guidance on how to load a TrueType font file into a `FileStream` object and set it as the font for the `TextFragment`. This enables you to customize the font of the text along with its line spacing.
+ R: Se desideri utilizzare un carattere specifico per il contenuto testuale, il tutorial fornisce indicazioni su come caricare un file di caratteri TrueType in un`FileStream` oggetto e impostarlo come carattere per il file`TextFragment`. Ciò consente di personalizzare il carattere del testo insieme alla sua interlinea.
 
-#### Q: How do I customize the position of the text within the PDF document?
+#### D: Come posso personalizzare la posizione del testo all'interno del documento PDF?
 
-A: To customize the position of the text, create a `TextFragment` object and set its `Position` property to the desired coordinates (X and Y). This allows you to control where the text is placed within the PDF document.
+ R: Per personalizzare la posizione del testo, crea a`TextFragment` oggetto e impostarlo`Position`proprietà alle coordinate desiderate (X e Y). Ciò consente di controllare dove viene posizionato il testo all'interno del documento PDF.
 
-#### Q: Can I apply these line spacing modifications to existing PDF documents?
+#### D: Posso applicare queste modifiche all'interlinea ai documenti PDF esistenti?
 
-A: Yes, you can modify line spacing for text in existing PDF documents. The tutorial demonstrates how to create a `TextFragment` with the specified line spacing and position, and then add it to a page's `Paragraphs` collection.
+ R: Sì, puoi modificare l'interlinea per il testo nei documenti PDF esistenti. Il tutorial mostra come creare un file`TextFragment` con l'interlinea e la posizione specificate, quindi aggiungerlo a una pagina`Paragraphs` collezione.

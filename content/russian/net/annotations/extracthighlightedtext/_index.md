@@ -1,58 +1,58 @@
 ---
-title: Extract Highlighted Text In PDF File
-linktitle: Extract Highlighted Text In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract highlighted text in PDF file using Aspose.PDF for .NET with this step-by-step guide.
+title: Извлечь выделенный текст в PDF-файл
+linktitle: Извлечь выделенный текст в PDF-файл
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как извлечь выделенный текст из PDF-файла с помощью Aspose.PDF для .NET, с помощью этого пошагового руководства.
 type: docs
 weight: 60
 url: /ru/net/annotations/extracthighlightedtext/
 ---
-To extract highlighted text in PDF file, you can use the Aspose.PDF for .NET API. This API provides a simple way to retrieve all the text that has been highlighted in a document.
+Чтобы извлечь выделенный текст в файл PDF, вы можете использовать API Aspose.PDF для .NET. Этот API предоставляет простой способ получить весь текст, выделенный в документе.
 
-## Step 1: Load the PDF document
+## Шаг 1. Загрузите PDF-документ.
 
-The first step in extracting highlighted text in PDF file is to load the document using the Aspose.PDF for .NET API. You can do this by creating a new instance of the `Document` class and passing the path to the PDF document as a parameter. 
+ Первым шагом в извлечении выделенного текста из PDF-файла является загрузка документа с помощью API Aspose.PDF для .NET. Вы можете сделать это, создав новый экземпляр`Document` class и передав путь к PDF-документу в качестве параметра. 
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir ="YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "ExtractHighlightedText.pdf");
 ```
 
-## Step 2: Loop through all annotations
+## Шаг 2. Просмотрите все аннотации
 
-The next step is to loop through all the annotations in the PDF document. You can do this using a `foreach` loop, like so:
+ Следующий шаг — просмотреть все аннотации в PDF-документе. Вы можете сделать это, используя`foreach` цикл, вот так:
 
 ```csharp
 foreach (Annotation annotation in doc.Pages[1].Annotations)
 {
-	// Code goes here
+	// Код находится здесь
 }
 ```
 
-## Step 3: Filter text markup annotations
+## Шаг 3. Фильтрация аннотаций текстовой разметки
 
-Inside the `foreach` loop, you will need to filter out all the annotations that are not text markup annotations. You can do this by checking if the annotation is an instance of the `TextMarkupAnnotation` class.
+ Внутри`foreach` цикле вам нужно будет отфильтровать все аннотации, которые не являются аннотациями текстовой разметки. Вы можете сделать это, проверив, является ли аннотация экземпляром`TextMarkupAnnotation` сорт.
 
 ```csharp
 if (annotation is TextMarkupAnnotation)
 {
-	// Code goes here
+	// Код находится здесь
 }
 ```
 
-## Step 4: Retrieve highlighted text fragments
+## Шаг 4. Получите выделенные фрагменты текста.
 
-Once you have filtered out all the text markup annotations, you can retrieve the highlighted text fragments for each annotation. You can do this by calling the `GetMarkedTextFragments()` method on the `TextMarkupAnnotation` object.
+ После того как вы отфильтровали все аннотации текстовой разметки, вы можете получить выделенные фрагменты текста для каждой аннотации. Вы можете сделать это, позвонив в`GetMarkedTextFragments()` метод на`TextMarkupAnnotation` объект.
 
 ```csharp
 TextMarkupAnnotation highlightedAnnotation = annotation as TextMarkupAnnotation;
 TextFragmentCollection collection = highlightedAnnotation.GetMarkedTextFragments();
 ```
 
-## Step 5: Display the highlighted text
+## Шаг 5. Отобразите выделенный текст
 
-Finally, you can display the highlighted text to the user. You can do this by looping through each `TextFragment` object in the `TextFragmentCollection` and calling the `Text` property.
+ Наконец, вы можете отобразить выделенный текст пользователю. Вы можете сделать это, просматривая каждый`TextFragment` объект в`TextFragmentCollection` и звоню в`Text` свойство.
 
 ```csharp
 foreach (TextFragment tf in collection)
@@ -61,10 +61,10 @@ foreach (TextFragment tf in collection)
 }
 ```
 
-### Example source code for Extract Highlighted Text using Aspose.PDF for .NET
+### Пример исходного кода для извлечения выделенного текста с использованием Aspose.PDF для .NET
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir ="YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "ExtractHighlightedText.pdf");
 
@@ -82,28 +82,28 @@ foreach (Annotation annotation in doc.Pages[1].Annotations)
 }
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, we explored how to extract highlighted text from a PDF document using Aspose.PDF for .NET. By following the step-by-step guide and using the provided C# source code, developers can easily extract and manage highlighted text in their PDF documents.
+В этом уроке мы рассмотрели, как извлечь выделенный текст из PDF-документа с помощью Aspose.PDF для .NET. Следуя пошаговому руководству и используя предоставленный исходный код C#, разработчики могут легко извлекать выделенный текст и управлять им в своих PDF-документах.
 
-### FAQ's for extract highlighted text in PDF file
+### Часто задаваемые вопросы по извлечению выделенного текста в файл PDF
 
-#### Q: What are text markup annotations in a PDF document?
+#### Вопрос: Что такое аннотации текстовой разметки в PDF-документе?
 
-A: Text markup annotations are annotations that highlight or mark specific text in a PDF document. Examples of text markup annotations include highlights, underlines, and strikethroughs.
+О: Аннотации текстовой разметки — это аннотации, которые выделяют или отмечают определенный текст в PDF-документе. Примеры аннотаций текстовой разметки включают выделение, подчеркивание и зачеркивание.
 
-#### Q: Can I extract text from other types of annotations using Aspose.PDF for .NET?
+#### Вопрос: Могу ли я извлечь текст из других типов аннотаций, используя Aspose.PDF для .NET?
 
-A: Yes, Aspose.PDF for .NET provides various methods to extract text from different types of annotations, including text markup annotations, free text annotations, and more.
+О: Да, Aspose.PDF для .NET предоставляет различные методы для извлечения текста из различных типов аннотаций, включая аннотации с текстовой разметкой, произвольные текстовые аннотации и многое другое.
 
-#### Q: Does Aspose.PDF for .NET support extracting text from password-protected PDF files?
+#### Вопрос: Поддерживает ли Aspose.PDF для .NET извлечение текста из PDF-файлов, защищенных паролем?
 
-A: Yes, Aspose.PDF for .NET supports extracting text from password-protected PDF files. You need to provide the correct password when loading the PDF document using the `Document` class.
+ О: Да, Aspose.PDF для .NET поддерживает извлечение текста из PDF-файлов, защищенных паролем. Вам необходимо указать правильный пароль при загрузке PDF-документа с помощью`Document` сорт.
 
-#### Q: Can I filter highlighted text based on other criteria, such as color or author?
+#### Вопрос: Могу ли я фильтровать выделенный текст по другим критериям, например по цвету или автору?
 
-A: Yes, you can filter highlighted text based on other criteria, such as color, author, or creation date. Aspose.PDF for .NET provides methods to access and filter annotations based on their properties.
+О: Да, вы можете фильтровать выделенный текст по другим критериям, таким как цвет, автор или дата создания. Aspose.PDF для .NET предоставляет методы для доступа и фильтрации аннотаций на основе их свойств.
 
-#### Q: Is it possible to save the extracted highlighted text to a separate file?
+#### Вопрос: Можно ли сохранить извлеченный выделенный текст в отдельный файл?
 
-A: Yes, you can save the extracted highlighted text to a separate file or store it in a data structure for further processing or analysis.
+О: Да, вы можете сохранить извлеченный выделенный текст в отдельный файл или сохранить его в структуре данных для дальнейшей обработки или анализа.

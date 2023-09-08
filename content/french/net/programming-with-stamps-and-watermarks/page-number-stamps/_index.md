@@ -1,59 +1,59 @@
 ---
-title: Page Number Stamps In PDF File
-linktitle: Page Number Stamps In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add page number stamps in PDF file with Aspose.PDF for .NET.
+title: Timbres de numéro de page dans un fichier PDF
+linktitle: Timbres de numéro de page dans un fichier PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment ajouter des tampons de numéro de page dans un fichier PDF avec Aspose.PDF pour .NET.
 type: docs
 weight: 160
 url: /fr/net/programming-with-stamps-and-watermarks/page-number-stamps/
 ---
-In this tutorial, we will guide you step by step on how to add page number stamps in PDF file using Aspose.PDF for .NET. We'll use the provided C# source code to open an existing PDF document, create a page number stamp, set its properties, and add it to a specific page in the PDF file.
+Dans ce didacticiel, nous vous guiderons étape par étape sur la façon d'ajouter des tampons de numéro de page dans un fichier PDF à l'aide d'Aspose.PDF pour .NET. Nous utiliserons le code source C# fourni pour ouvrir un document PDF existant, créer un tampon de numéro de page, définir ses propriétés et l'ajouter à une page spécifique du fichier PDF.
 
-## Step 1: Setting up the environment
+## Étape 1 : Configuration de l'environnement
 
-Before you begin, make sure you have the following:
+Avant de commencer, assurez-vous d'avoir les éléments suivants :
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Un environnement de développement .NET installé.
+- La bibliothèque Aspose.PDF pour .NET téléchargée et référencée dans votre projet.
 
-## Step 2: Loading the existing PDF document
+## Étape 2 : Chargement du document PDF existant
 
-The first step is to load the existing PDF document into your project. Here's how:
+La première étape consiste à charger le document PDF existant dans votre projet. Voici comment:
 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the existing PDF document
+// Ouvrir le document PDF existant
 Document pdfDocument = new Document(dataDir + "PageNumberStamp.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+Assurez-vous de remplacer « VOTRE RÉPERTOIRE DE DOCUMENTS » par le chemin d'accès réel au répertoire où se trouve votre document PDF.
 
-## Step 3: Creating and Configuring the Page Numbering Stamp
+## Étape 3 : Création et configuration du tampon de numérotation des pages
 
-Now that the PDF document is loaded, we can create a page numbering buffer and configure it according to our needs. Here's how:
+Maintenant que le document PDF est chargé, nous pouvons créer un tampon de numérotation des pages et le configurer selon nos besoins. Voici comment:
 
 ```csharp
-// Create a page number buffer
+// Créer un tampon de numéro de page
 PageNumberStamp pageNumberStamp = new PageNumberStamp();
 
-// Define if the buffer is in the background or not
+// Définir si le tampon est en arrière-plan ou non
 pageNumberStamp.Background = false;
 
-// Format of the page numbering buffer
+// Format du tampon de numérotation des pages
 pageNumberStamp.Format = "Page # of " + pdfDocument.Pages.Count;
 
-// Bottom margin of page numbering buffer
+// Marge inférieure du tampon de numérotation des pages
 pageNumberStamp.BottomMargin = 10;
 
-// Horizontal alignment of the page numbering buffer
+// Alignement horizontal du tampon de numérotation des pages
 pageNumberStamp.HorizontalAlignment = HorizontalAlignment.Center;
 
-// Start number of page numbering
+// Numéro de début de la numérotation des pages
 pageNumberStamp.StartingNumber = 1;
 
-// Set page number buffer text properties
+// Définir les propriétés du texte du tampon de numéro de page
 pageNumberStamp.TextState.Font = FontRepository.FindFont("Arial");
 pageNumberStamp.TextState.FontSize = 14.0F;
 pageNumberStamp.TextState.FontStyle = FontStyles.Bold;
@@ -61,61 +61,61 @@ pageNumberStamp.TextState.FontStyle = FontStyles.Italic;
 pageNumberStamp.TextState.ForegroundColor = Color.Aqua;
 ```
 
-The above code creates a page number stamp with properties like page number format, bottom margin, horizontal alignment, starting number and text properties.
+Le code ci-dessus crée un tampon de numéro de page avec des propriétés telles que le format du numéro de page, la marge inférieure, l'alignement horizontal, le numéro de départ et les propriétés du texte.
 
-## Step 4: Adding the page number stamp to a specific page
+## Étape 4 : Ajout du cachet du numéro de page à une page spécifique
 
-Once the page number stamp is configured, we can add it to a specific page of the PDF document. Here's how:
+Une fois le tampon du numéro de page configuré, nous pouvons l'ajouter à une page spécifique du document PDF. Voici comment:
 
 ```csharp
-// Add the page number buffer to a specific page
+// Ajouter le tampon de numéro de page à une page spécifique
 pdfDocument.Pages[1].AddStamp(pageNumberStamp);
 ```
 
-The above code adds the page number stamp to the first page of the PDF document. You can change the page number as needed.
+Le code ci-dessus ajoute le cachet du numéro de page à la première page du document PDF. Vous pouvez modifier le numéro de page selon vos besoins.
 
-## Step 5: Saving the modified PDF document
+## Étape 5 : Sauvegarde du document PDF modifié
 
-Once the page number stamp is added to the PDF document, we can save the modified PDF document. Here's how:
+Une fois le tampon du numéro de page ajouté au document PDF, nous pouvons enregistrer le document PDF modifié. Voici comment:
 
 ```csharp
-// Save the modified PDF document
+// Enregistrez le document PDF modifié
 pdfDocument.Save(dataDir + "PageNumberStamp_out.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where you want to save the edited PDF document.
+Assurez-vous de remplacer « VOTRE RÉPERTOIRE DE DOCUMENTS » par le chemin réel du répertoire dans lequel vous souhaitez enregistrer le document PDF modifié.
 
-### Sample source code for Page Number Stamps using Aspose.PDF for .NET 
+### Exemple de code source pour les tampons de numéro de page utilisant Aspose.PDF pour .NET 
 ```csharp
 
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Ouvrir le document
 Document pdfDocument = new Document(dataDir+ "PageNumberStamp.pdf");
 
-// Create page number stamp
+// Créer un tampon de numéro de page
 PageNumberStamp pageNumberStamp = new PageNumberStamp();
 
-// Whether the stamp is background
+// Si le timbre est en arrière-plan
 pageNumberStamp.Background = false;
 pageNumberStamp.Format = "Page # of " + pdfDocument.Pages.Count;
 pageNumberStamp.BottomMargin = 10;
 pageNumberStamp.HorizontalAlignment = HorizontalAlignment.Center;
 pageNumberStamp.StartingNumber = 1;
 
-// Set text properties
+// Définir les propriétés du texte
 pageNumberStamp.TextState.Font = FontRepository.FindFont("Arial");
 pageNumberStamp.TextState.FontSize = 14.0F;
 pageNumberStamp.TextState.FontStyle = FontStyles.Bold;
 pageNumberStamp.TextState.FontStyle = FontStyles.Italic;
 pageNumberStamp.TextState.ForegroundColor = Color.Aqua;
 
-// Add stamp to particular page
+// Ajouter un tampon à une page particulière
 pdfDocument.Pages[1].AddStamp(pageNumberStamp);
 dataDir = dataDir + "PageNumberStamp_out.pdf";
 
-// Save output document
+// Enregistrer le document de sortie
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nPage number stamp added successfully.\nFile saved at " + dataDir);
 
@@ -123,46 +123,46 @@ Console.WriteLine("\nPage number stamp added successfully.\nFile saved at " + da
 
 ## Conclusion
 
-Congratulation ! You have learned how to add page number stamps to a PDF document using Aspose.PDF for .NET. You can now personalize your PDF documents by adding clear and informative page numbers.
+Félicitation ! Vous avez appris à ajouter des tampons de numéro de page à un document PDF à l'aide d'Aspose.PDF pour .NET. Vous pouvez désormais personnaliser vos documents PDF en ajoutant des numéros de page clairs et informatifs.
 
-### FAQ's for page number stamps in PDF file
+### FAQ sur les tampons de numéro de page dans un fichier PDF
 
-#### Q: What is a Page Number Stamp, and how is it used to add page numbers to a PDF file?
+#### Q : Qu'est-ce qu'un tampon de numéro de page et comment est-il utilisé pour ajouter des numéros de page à un fichier PDF ?
 
-A: A Page Number Stamp is a feature in Aspose.PDF that allows you to add dynamic page numbers to specific pages of a PDF document. In this tutorial, it's achieved by creating a PageNumberStamp object, configuring its properties, and adding it to a designated page.
+R : Un tampon de numéro de page est une fonctionnalité d'Aspose.PDF qui vous permet d'ajouter des numéros de page dynamiques à des pages spécifiques d'un document PDF. Dans ce didacticiel, cela est réalisé en créant un objet PageNumberStamp, en configurant ses propriétés et en l'ajoutant à une page désignée.
 
-#### Q: How does the provided C# source code accomplish adding page number stamps to a PDF file?
+#### Q : Comment le code source C# fourni permet-il d'ajouter des tampons de numéro de page à un fichier PDF ?
 
-A: The code demonstrates how to load an existing PDF document, create a PageNumberStamp, set various properties (such as format, font, alignment, etc.), and then add the stamp to a specific page. The stamp automatically calculates the total page count and inserts the correct page numbers.
+R : Le code montre comment charger un document PDF existant, créer un PageNumberStamp, définir diverses propriétés (telles que le format, la police, l'alignement, etc.), puis ajouter le tampon à une page spécifique. Le tampon calcule automatiquement le nombre total de pages et insère les numéros de page corrects.
 
-#### Q: Can I customize the appearance of the page number, such as font style, color, and size?
+#### Q : Puis-je personnaliser l’apparence du numéro de page, comme le style, la couleur et la taille de la police ?
 
-A: Absolutely, you can customize the appearance of the page number stamp by adjusting properties like font, font size, font style (bold, italic, etc.), and text color.
+R : Absolument, vous pouvez personnaliser l'apparence du cachet du numéro de page en ajustant les propriétés telles que la police, la taille de la police, le style de police (gras, italique, etc.) et la couleur du texte.
 
-#### Q: Is it possible to add page number stamps to multiple pages within a PDF document?
+#### Q : Est-il possible d'ajouter des tampons de numéro de page à plusieurs pages d'un document PDF ?
 
-A: Yes, you can add page number stamps to multiple pages by creating multiple PageNumberStamp objects and adding each one to the desired pages.
+R : Oui, vous pouvez ajouter des tampons de numéro de page à plusieurs pages en créant plusieurs objets PageNumberStamp et en ajoutant chacun aux pages souhaitées.
 
-#### Q: Can I choose whether the page number stamp appears as part of the page's content or as a background element?
+#### Q : Puis-je choisir si le cachet du numéro de page apparaît dans le contenu de la page ou comme élément d'arrière-plan ?
 
-A: Yes, you can control whether the page number stamp appears as part of the page's content or as a background element by setting the `Background` property of the PageNumberStamp.
+ R : Oui, vous pouvez contrôler si le cachet du numéro de page apparaît dans le cadre du contenu de la page ou comme élément d'arrière-plan en définissant l'option`Background` propriété du PageNumberStamp.
 
-#### Q: How do I specify the format of the page number, including the total page count?
+#### Q : Comment puis-je spécifier le format du numéro de page, y compris le nombre total de pages ?
 
-A: The code uses the `Format` property of the PageNumberStamp to specify the format of the page number. The macro "# of" is used to represent the total page count.
+ R : Le code utilise le`Format`propriété de PageNumberStamp pour spécifier le format du numéro de page. La macro « # de » est utilisée pour représenter le nombre total de pages.
 
-#### Q: What happens if I add the same page number stamp to multiple pages?
+#### Q : Que se passe-t-il si j'ajoute le même tampon de numéro de page sur plusieurs pages ?
 
-A: Adding the same PageNumberStamp instance to multiple pages will display the correct page numbers for each page. The stamp automatically adjusts the page number and total page count.
+R : L'ajout de la même instance de PageNumberStamp à plusieurs pages affichera les numéros de page corrects pour chaque page. Le tampon ajuste automatiquement le numéro de page et le nombre total de pages.
 
-#### Q: Can I add page number stamps to header or footer sections of a PDF document?
+#### Q : Puis-je ajouter des tampons de numéro de page aux sections d'en-tête ou de pied de page d'un document PDF ?
 
-A: While PageNumberStamps are typically added directly to the page's content, you can use FloatingBox or other techniques to position them in header or footer sections.
+R : Bien que les PageNumberStamps soient généralement ajoutés directement au contenu de la page, vous pouvez utiliser FloatingBox ou d'autres techniques pour les positionner dans les sections d'en-tête ou de pied de page.
 
-#### Q: How do I specify the position of the page number stamp on the page?
+#### Q : Comment puis-je spécifier la position du cachet du numéro de page sur la page ?
 
-A: The `BottomMargin` and `HorizontalAlignment` properties of the PageNumberStamp allow you to control the position of the stamp within the page.
+ R : Le`BottomMargin` et`HorizontalAlignment` Les propriétés du PageNumberStamp vous permettent de contrôler la position du tampon dans la page.
 
-#### Q: What if I want to start page numbering from a different number rather than 1?
+#### Q : Que se passe-t-il si je souhaite commencer la numérotation des pages à partir d'un numéro différent plutôt que de 1 ?
 
-A: You can set the `StartingNumber` property of the PageNumberStamp to specify the starting page number.
+ R : Vous pouvez définir le`StartingNumber`propriété de PageNumberStamp pour spécifier le numéro de page de début.

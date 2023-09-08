@@ -1,76 +1,76 @@
 ---
-title: Replace Text Page In PDF File
-linktitle: Replace Text Page In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to replace text on a specific page in PDF file using Aspose.PDF for .NET.
+title: استبدال صفحة النص في ملف PDF
+linktitle: استبدال صفحة النص في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية استبدال النص في صفحة معينة في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 370
 url: /ar/net/programming-with-text/replace-text-page/
 ---
-This tutorial explains how to use Aspose.PDF for .NET to replace text on a specific page in PDF file. The provided C# source code demonstrates the process step by step.
+يشرح هذا البرنامج التعليمي كيفية استخدام Aspose.PDF لـ .NET لاستبدال النص الموجود على صفحة معينة في ملف PDF. يوضح كود مصدر C# المقدم العملية خطوة بخطوة.
 
-## Prerequisites
+## المتطلبات الأساسية
 
-Before proceeding with the tutorial, make sure you have the following:
+قبل متابعة البرنامج التعليمي، تأكد من أن لديك ما يلي:
 
-- Basic knowledge of C# programming language.
-- Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to install it in your project.
+- المعرفة الأساسية بلغة البرمجة C#.
+- تم تثبيت Aspose.PDF لمكتبة .NET. يمكنك الحصول عليه من موقع Aspose أو استخدام NuGet لتثبيته في مشروعك.
 
-## Step 1: Set up the project
+## الخطوة 1: إعداد المشروع
 
-Start by creating a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library.
+ابدأ بإنشاء مشروع C# جديد في بيئة التطوير المتكاملة المفضلة لديك (IDE) وأضف مرجعًا إلى مكتبة Aspose.PDF لـ .NET.
 
-## Step 2: Import necessary namespaces
+## الخطوة 2: استيراد مساحات الأسماء الضرورية
 
-Add the following using directives at the beginning of your C# file to import the required namespaces:
+أضف ما يلي باستخدام التوجيهات في بداية ملف C# الخاص بك لاستيراد مساحات الأسماء المطلوبة:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Load the PDF document
+## الخطوة 3: قم بتحميل مستند PDF
 
-Set the path to your PDF document directory and load the document using the `Document` class:
+ قم بتعيين المسار إلى دليل مستند PDF الخاص بك وقم بتحميل المستند باستخدام ملف`Document` فصل:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 ```
 
-Make sure to replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ تأكد من استبدال`"YOUR DOCUMENT DIRECTORY"` بالمسار الفعلي إلى دليل المستندات الخاص بك.
 
-## Step 4: Find and replace text
+## الخطوة 4: البحث عن النص واستبداله
 
-Create a `TextFragmentAbsorber` object to find all instances of the input search phrase:
+ إنشاء`TextFragmentAbsorber` كائن للعثور على كافة مثيلات عبارة البحث المدخلة:
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
 ```
 
-Replace `"text"` with the actual text you want to search for and replace.
+ يستبدل`"text"` بالنص الفعلي الذي تريد البحث عنه واستبداله.
 
-## Step 5: Specify the target page
+## الخطوة 5: تحديد الصفحة المستهدفة
 
-Accept the absorber for a particular page by accessing the `Pages` collection of the `pdfDocument` object and calling the `Accept` method:
+ قم بقبول المستوعب لصفحة معينة عن طريق الوصول إلى`Pages` جمع من`pdfDocument` كائن واستدعاء`Accept` طريقة:
 
 ```csharp
 pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 ```
 
-Replace `2` with the page number where you want to replace the text. Note that page numbers are zero-based, so `0` represents the first page.
+ يستبدل`2` برقم الصفحة التي تريد استبدال النص فيها. لاحظ أن أرقام الصفحات تعتمد على الصفر، لذلك`0` يمثل الصفحة الأولى.
 
-## Step 6: Retrieve extracted text fragments
+## الخطوة 6: استرداد أجزاء النص المستخرجة
 
-Get the extracted text fragments using the `TextFragments` property of the `TextFragmentAbsorber` object:
+احصل على أجزاء النص المستخرجة باستخدام`TextFragments` ملكية`TextFragmentAbsorber` هدف:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
 ```
 
-## Step 7: Iterate through the text fragments
+## الخطوة 7: التكرار من خلال أجزاء النص
 
-Loop through the retrieved text fragments and update the text and other properties as desired:
+قم بالمراجعة عبر أجزاء النص المستردة وقم بتحديث النص والخصائص الأخرى حسب الرغبة:
 
 ```csharp
 foreach (TextFragment textFragment in textFragmentCollection)
@@ -83,34 +83,34 @@ foreach (TextFragment textFragment in textFragmentCollection)
 }
 ```
 
-In the above code snippet, replace `"New Phrase"` with the replacement text you want to use. You can also customize other properties such as font, font size, foreground color, and background color.
+ في مقتطف الكود أعلاه، استبدل`"New Phrase"` بالنص البديل الذي تريد استخدامه. يمكنك أيضًا تخصيص خصائص أخرى مثل الخط وحجم الخط ولون المقدمة ولون الخلفية.
 
-## Step 8: Save the modified PDF
+## الخطوة 8: احفظ ملف PDF المعدل
 
-Save the modified PDF document to a new file using the `Save` method:
+ احفظ مستند PDF المعدل في ملف جديد باستخدام الملف`Save` طريقة:
 
 ```csharp
 pdfDocument.Save(dataDir + "ReplaceTextPage_out.pdf");
 ```
 
-Make sure to replace `"ReplaceTextPage_out.pdf"` with the desired output file name.
+ تأكد من استبدال`"ReplaceTextPage_out.pdf"` مع اسم ملف الإخراج المطلوب.
 
-### Sample source code for Replace Text Page using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لاستبدال صفحة النص باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
-// Create TextAbsorber object to find all instances of the input search phrase
+// قم بإنشاء كائن TextAbsorter للعثور على كافة مثيلات عبارة البحث المدخلة
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
-// Accept the absorber for a particular page
+//قبول الممتص لصفحة معينة
 pdfDocument.Pages[2].Accept(textFragmentAbsorber);
-// Get the extracted text fragments
+// احصل على أجزاء النص المستخرجة
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-// Loop through the fragments
+// حلقة من خلال الشظايا
 foreach (TextFragment textFragment in textFragmentCollection)
 {
-	// Update text and other properties
+	// تحديث النص والخصائص الأخرى
 	textFragment.Text = "New Phrase";
 	textFragment.TextState.Font = FontRepository.FindFont("Verdana");
 	textFragment.TextState.FontSize = 22;
@@ -120,57 +120,57 @@ foreach (TextFragment textFragment in textFragmentCollection)
 pdfDocument.Save(dataDir + "ReplaceTextPage_out.pdf");
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulations! You have successfully learned how to replace text on a specific page of a PDF document using Aspose.PDF for .NET. This tutorial provided a step-by-step guide, from loading the document to saving the modified version. You can now incorporate this code into your own C# projects to automate text replacement in PDF files.
+تهانينا! لقد تعلمت بنجاح كيفية استبدال النص في صفحة معينة من مستند PDF باستخدام Aspose.PDF لـ .NET. قدم هذا البرنامج التعليمي دليلاً خطوة بخطوة، بدءًا من تحميل المستند وحتى حفظ النسخة المعدلة. يمكنك الآن دمج هذا الرمز في مشاريع C# الخاصة بك لأتمتة استبدال النص في ملفات PDF.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of the "Replace Text Page In PDF File" tutorial?
+#### س: ما هو الغرض من البرنامج التعليمي "استبدال الصفحة النصية في ملف PDF"؟
 
-A: The "Replace Text Page In PDF File" tutorial aims to guide you through the process of using the Aspose.PDF library for .NET to replace text on a specific page in a PDF file. It provides a step-by-step guide along with sample C# code.
+ج: يهدف البرنامج التعليمي "استبدال صفحة النص في ملف PDF" إلى إرشادك خلال عملية استخدام مكتبة Aspose.PDF لـ .NET لاستبدال النص في صفحة معينة في ملف PDF. فهو يوفر دليلاً خطوة بخطوة مع نموذج كود C#.
 
-#### Q: Why would I want to replace text on a specific page in a PDF document?
+#### س: لماذا أرغب في استبدال النص الموجود في صفحة معينة في مستند PDF؟
 
-A: Replacing text on a specific page is useful when you need to update content on a particular page of a PDF document while leaving other pages untouched. This is commonly used for making targeted changes to a specific page's content.
+ج: يعد استبدال النص في صفحة معينة مفيدًا عندما تحتاج إلى تحديث المحتوى على صفحة معينة من مستند PDF مع ترك الصفحات الأخرى دون تغيير. يُستخدم هذا عادةً لإجراء تغييرات مستهدفة على محتوى صفحة معينة.
 
-#### Q4: How do I set up the project for the tutorial?
+#### س4: كيف أقوم بإعداد المشروع للبرنامج التعليمي؟
 
-A: To set up the project:
+ج: لإعداد المشروع:
 
-1. Create a new C# project in your preferred integrated development environment (IDE).
-2. Add a reference to the Aspose.PDF for .NET library.
+1. قم بإنشاء مشروع C# جديد في بيئة التطوير المتكاملة المفضلة لديك (IDE).
+2. قم بإضافة مرجع إلى Aspose.PDF لمكتبة .NET.
 
-#### Q: Why are the `Aspose.Pdf` and `Aspose.Pdf.Text` namespaces imported?
+####  س: لماذا`Aspose.Pdf` and `Aspose.Pdf.Text` namespaces imported?
 
-A: These namespaces are imported to give you access to the classes and methods provided by the Aspose.PDF library that are necessary for loading, modifying, and saving PDF documents, as well as working with text fragments.
+ج: يتم استيراد مساحات الأسماء هذه لتمنحك إمكانية الوصول إلى الفئات والأساليب التي توفرها مكتبة Aspose.PDF والضرورية لتحميل مستندات PDF وتعديلها وحفظها، بالإضافة إلى العمل مع أجزاء النص.
 
-#### Q: How do I load a PDF document using Aspose.PDF?
+#### س: كيف يمكنني تحميل مستند PDF باستخدام Aspose.PDF؟
 
-A: You can load a PDF document using the `Document` class and specifying the path to the PDF file:
+ ج: يمكنك تحميل مستند PDF باستخدام`Document` فئة وتحديد المسار إلى ملف PDF:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 ```
 
-Replace `"ReplaceTextPage.pdf"` with the actual file name.
+ يستبدل`"ReplaceTextPage.pdf"` مع اسم الملف الفعلي.
 
-#### Q: Can I replace text on multiple pages using this approach?
+#### س: هل يمكنني استبدال النص في صفحات متعددة باستخدام هذا الأسلوب؟
 
-A: Yes, you can replace text on multiple pages by repeating the process for each desired page. Modify the page index (e.g., `pdfDocument.Pages[2]`) to specify the page you want to work on.
+ ج: نعم، يمكنك استبدال النص الموجود في صفحات متعددة عن طريق تكرار العملية لكل صفحة مطلوبة. تعديل فهرس الصفحة (على سبيل المثال،`pdfDocument.Pages[2]`) لتحديد الصفحة التي تريد العمل عليها.
 
-#### Q: What if I want to replace text with different formatting?
+#### س: ماذا لو أردت استبدال النص بتنسيق مختلف؟
 
-A: You can update the properties of the `TextFragment` objects, such as font, font size, foreground color, and background color, to achieve the desired formatting for the replaced text.
+ ج: يمكنك تحديث خصائص`TextFragment` كائنات، مثل الخط وحجم الخط ولون المقدمة ولون الخلفية، لتحقيق التنسيق المطلوب للنص المستبدل.
 
-#### Q: What happens if the search phrase is not found on the specified page?
+#### س: ماذا يحدث إذا لم يتم العثور على عبارة البحث في الصفحة المحددة؟
 
-A: If the search phrase is not found on the specified page, the `TextFragmentCollection` will be empty, and no replacements will be made. Make sure the search phrase exists on the page you're targeting.
+ ج: إذا لم يتم العثور على عبارة البحث في الصفحة المحددة، فسيتم`TextFragmentCollection` ستكون فارغة، ولن يتم إجراء أي بدائل. تأكد من وجود عبارة البحث في الصفحة التي تستهدفها.
 
-#### Q: How can I customize the replacement text for each text fragment?
+#### س: كيف يمكنني تخصيص النص البديل لكل جزء من النص؟
 
-A: Within the loop that iterates through the `TextFragmentCollection`, you can customize the replacement text for each `TextFragment` individually by assigning a different string to the `Text` property.
+ج: داخل الحلقة التي تتكرر من خلال`TextFragmentCollection` ، يمكنك تخصيص النص البديل لكل منها`TextFragment` بشكل فردي عن طريق تعيين سلسلة مختلفة لـ`Text` ملكية.
 
-#### Q: Is it possible to replace text based on a case-insensitive search?
+#### س: هل من الممكن استبدال النص بناءً على بحث غير حساس لحالة الأحرف؟
 
-A: Yes, you can perform a case-insensitive search by modifying the regular expression pattern. For instance, you can use `"text"` instead of `"text"` in the `TextFragmentAbsorber` constructor.
+ ج: نعم، يمكنك إجراء بحث غير حساس لحالة الأحرف عن طريق تعديل نمط التعبير العادي. على سبيل المثال، يمكنك استخدام`"text"` بدلاً من`"text"` في ال`TextFragmentAbsorber` البناء.

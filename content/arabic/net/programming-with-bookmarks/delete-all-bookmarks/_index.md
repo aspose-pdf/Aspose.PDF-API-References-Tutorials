@@ -1,136 +1,136 @@
 ---
-title: Delete All Bookmarks In PDF File
-linktitle: Delete All Bookmarks In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily delete all bookmarks in PDF file with Aspose.PDF for .NET.
+title: حذف كافة الإشارات المرجعية في ملف PDF
+linktitle: حذف كافة الإشارات المرجعية في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: احذف جميع الإشارات المرجعية في ملف PDF بسهولة باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 30
 url: /ar/net/programming-with-bookmarks/delete-all-bookmarks/
 ---
-# Delete all bookmarks with Aspose.PDF for .NET
+# احذف كافة الإشارات المرجعية باستخدام Aspose.PDF لـ .NET
 
-Deleting bookmarks in PDF file may be necessary in some cases. With Aspose.PDF for .NET, you can easily remove all bookmarks by following the following source code:
+قد يكون حذف الإشارات المرجعية في ملف PDF ضروريًا في بعض الحالات. باستخدام Aspose.PDF for .NET، يمكنك بسهولة إزالة كافة الإشارات المرجعية باتباع التعليمات البرمجية المصدر التالية:
 
-## Step 1: Import required libraries
+## الخطوة 1: استيراد المكتبات المطلوبة
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+قبل أن تبدأ، تحتاج إلى استيراد المكتبات اللازمة لمشروع C# الخاص بك. فيما يلي توجيه الاستيراد الضروري:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## الخطوة 2: تعيين المسار إلى مجلد المستندات
 
-In this step, you need to specify the path to the folder containing the PDF file from which you want to remove bookmarks. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ في هذه الخطوة، تحتاج إلى تحديد المسار إلى المجلد الذي يحتوي على ملف PDF الذي تريد إزالة الإشارات المرجعية منه. يستبدل`"YOUR DOCUMENT DIRECTORY"`في الكود التالي مع المسار الفعلي لمجلد المستندات الخاص بك:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## الخطوة 3: افتح مستند PDF
 
-Now we are going to open the PDF document from which we want to remove the bookmarks using the following code:
+سنقوم الآن بفتح مستند PDF الذي نريد إزالة الإشارات المرجعية منه باستخدام الكود التالي:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "DeleteAllBookmarks.pdf");
 ```
 
-## Step 4: Delete all bookmarks
+## الخطوة 4: حذف كافة الإشارات المرجعية
 
-In this step, we delete all bookmarks from the document using the `Delete` method of the `Outlines` property. Here is the corresponding code:
+ في هذه الخطوة، نقوم بحذف جميع الإشارات المرجعية من المستند باستخدام الملف`Delete` طريقة`Outlines` ملكية. هنا هو الكود المقابل:
 
 ```csharp
 pdfDocument.Outlines.Delete();
 ```
 
-## Step 5: Save the updated file
+## الخطوة 5: احفظ الملف المحدث
 
-Finally, we save the updated PDF file using the `Save` method of the `pdfDocument` object. Here is the corresponding code:
+ أخيرًا، نقوم بحفظ ملف PDF المحدث باستخدام ملف`Save` طريقة`pdfDocument` هدف. هنا هو الكود المقابل:
 
 ```csharp
 dataDir = dataDir + "DeleteAllBookmarks_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Delete All Bookmarks using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لحذف جميع الإشارات المرجعية باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "DeleteAllBookmarks.pdf");
-// Delete all bookmarks
+// حذف كافة الإشارات المرجعية
 pdfDocument.Outlines.Delete();
 dataDir = dataDir + "DeleteAllBookmarks_out.pdf";
-// Save updated file
+// حفظ الملف المحدث
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nAll bookmarks deleted successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! Now you have a step by step guide to remove all bookmarks with Aspose.PDF for .NET. You can use this code to clean up your PDF documents by deleting all existing bookmarks.
+تهنئة ! الآن لديك دليل خطوة بخطوة لإزالة كافة الإشارات المرجعية باستخدام Aspose.PDF لـ .NET. يمكنك استخدام هذا الرمز لتنظيف مستندات PDF الخاصة بك عن طريق حذف جميع الإشارات المرجعية الموجودة.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+تأكد من مراجعة وثائق Aspose.PDF الرسمية لمزيد من المعلومات حول ميزات معالجة الإشارات المرجعية المتقدمة.
 
-### FAQ's for delete all bookmarks in PDF file
+### الأسئلة الشائعة حول حذف كافة الإشارات المرجعية في ملف PDF
 
-#### Q: What are bookmarks in a PDF file?
+#### س: ما هي الإشارات المرجعية في ملف PDF؟
 
-A: Bookmarks in a PDF file are navigational aids that allow users to quickly jump to specific sections or pages within the document. They help organize and enhance the user experience when navigating through lengthy content.
+ج: الإشارات المرجعية الموجودة في ملف PDF هي أدوات مساعدة للتنقل تتيح للمستخدمين الانتقال بسرعة إلى أقسام أو صفحات محددة داخل المستند. فهي تساعد في تنظيم تجربة المستخدم وتحسينها عند التنقل عبر المحتوى المطول.
 
-#### Q: Why would I need to delete all bookmarks from a PDF file?
+#### س: لماذا أحتاج إلى حذف جميع الإشارات المرجعية من ملف PDF؟
 
-A: There might be cases where you want to remove all bookmarks from a PDF document to simplify its navigation, reorganize its structure, or prepare it for a specific purpose where bookmarks are not needed.
+ج: قد تكون هناك حالات تريد فيها إزالة كافة الإشارات المرجعية من مستند PDF لتبسيط عملية التنقل فيه، أو إعادة تنظيم بنيته، أو إعداده لغرض محدد حيث لا تكون هناك حاجة إلى الإشارات المرجعية.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### س: كيف يمكنني استيراد المكتبات اللازمة لمشروع C# الخاص بي؟
 
-A: To import the required library for your C# project, you can use the following import directive:
+ج: لاستيراد المكتبة المطلوبة لمشروعك C#، يمكنك استخدام توجيه الاستيراد التالي:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This library provides the classes and methods needed to work with PDF documents.
+توفر هذه المكتبة الفئات والأساليب اللازمة للعمل مع مستندات PDF.
 
-#### Q: How do I specify the path to the documents folder?
+#### س: كيف أحدد المسار إلى مجلد المستندات؟
 
-A: In the source code provided, you need to replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file from which you want to remove bookmarks. This ensures that the code can locate the target PDF file.
+ ج: في التعليمات البرمجية المصدر المقدمة، تحتاج إلى استبدال`"YOUR DOCUMENT DIRECTORY"` بالمسار الفعلي إلى المجلد الذي يحتوي على ملف PDF الذي تريد إزالة الإشارات المرجعية منه. وهذا يضمن أن الكود يمكنه تحديد موقع ملف PDF المستهدف.
 
-#### Q: How do I open a PDF document for bookmark removal?
+#### س: كيف يمكنني فتح مستند PDF لإزالة الإشارة المرجعية؟
 
-A: To open a PDF document for bookmark removal, use the following code:
+ج: لفتح مستند PDF لإزالة الإشارة المرجعية، استخدم الكود التالي:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "DeleteAllBookmarks.pdf");
 ```
 
-Replace `"DeleteAllBookmarks.pdf"` with the actual file name.
+ يستبدل`"DeleteAllBookmarks.pdf"` مع اسم الملف الفعلي.
 
-#### Q: How do I delete all bookmarks from the PDF document?
+#### س: كيف يمكنني حذف جميع الإشارات المرجعية من مستند PDF؟
 
-A: To remove all bookmarks from the PDF document, use the `Delete` method of the `Outlines` property:
+ ج: لإزالة كافة الإشارات المرجعية من مستند PDF، استخدم`Delete` طريقة`Outlines` ملكية:
 
 ```csharp
 pdfDocument.Outlines.Delete();
 ```
 
-#### Q: What happens to the rest of the content when bookmarks are deleted?
+#### س: ماذا يحدث لبقية المحتوى عند حذف الإشارات المرجعية؟
 
-A: Deleting bookmarks does not affect the content or layout of the PDF document. Only the navigation bookmarks are removed, leaving the actual content intact.
+ج: لا يؤثر حذف الإشارات المرجعية على محتوى مستند PDF أو تخطيطه. تتم إزالة إشارات التنقل فقط، مع ترك المحتوى الفعلي كما هو.
 
-#### Q: How do I save the updated PDF file after removing bookmarks?
+#### س: كيف يمكنني حفظ ملف PDF المحدث بعد إزالة الإشارات المرجعية؟
 
-A: To save the updated PDF file after deleting bookmarks, use the following code:
+ج: لحفظ ملف PDF المحدث بعد حذف الإشارات المرجعية، استخدم الكود التالي:
 
 ```csharp
 dataDir = dataDir + "DeleteAllBookmarks_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-#### Q: Can I selectively delete specific bookmarks instead of all of them?
+#### س: هل يمكنني حذف إشارات مرجعية معينة بشكل انتقائي بدلاً من حذفها جميعًا؟
 
-A: Yes, you can selectively delete specific bookmarks by targeting them using their index or other properties. The provided source code demonstrates how to delete all bookmarks, but you can modify it to suit your needs.
+ج: نعم، يمكنك حذف إشارات مرجعية محددة بشكل انتقائي من خلال استهدافها باستخدام فهرسها أو خصائص أخرى. يوضح رمز المصدر المقدم كيفية حذف جميع الإشارات المرجعية، ولكن يمكنك تعديله ليناسب احتياجاتك.
 
-#### Q: Are there any precautions I should take before deleting bookmarks?
+#### س: هل هناك أي احتياطات يجب علي اتخاذها قبل حذف الإشارات المرجعية؟
 
-A: Before deleting bookmarks, make sure to review the document to ensure that bookmark removal will not impact the document's usability or navigation. Consider making a backup of the original document before proceeding.
+ج: قبل حذف الإشارات المرجعية، تأكد من مراجعة المستند للتأكد من أن إزالة الإشارة المرجعية لن تؤثر على سهولة استخدام المستند أو التنقل فيه. فكر في عمل نسخة احتياطية من المستند الأصلي قبل المتابعة.

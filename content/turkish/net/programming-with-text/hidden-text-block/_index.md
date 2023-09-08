@@ -1,32 +1,32 @@
 ---
-title: Hidden Text Block In PDF File
-linktitle: Hidden Text Block In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to create hidden text blocks in PDF file using Aspose.PDF for .NET.
+title: PDF Dosyasındaki Gizli Metin Bloğu
+linktitle: PDF Dosyasındaki Gizli Metin Bloğu
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF dosyasında gizli metin bloklarının nasıl oluşturulacağını öğrenin.
 type: docs
 weight: 230
 url: /tr/net/programming-with-text/hidden-text-block/
 ---
-In this tutorial, we will explain how to create a hidden text block in PDF file using the Aspose.PDF library for .NET. A hidden text block is a floating text that becomes visible when the mouse cursor hovers over a specific area. We will go through the step-by-step process of creating the hidden text block using the provided C# source code.
+Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak PDF dosyasında gizli bir metin bloğunun nasıl oluşturulacağını açıklayacağız. Gizli metin bloğu, fare imleci belirli bir alanın üzerine geldiğinde görünür hale gelen kayan bir metindir. Sağlanan C# kaynak kodunu kullanarak gizli metin bloğunu oluşturma işlemini adım adım gerçekleştireceğiz.
 
-## Requirements
+## Gereksinimler
 
-Before you begin, ensure that you have the following:
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- The Aspose.PDF for .NET library installed.
-- A basic understanding of C# programming.
+- Aspose.PDF for .NET kütüphanesi kuruldu.
+- C# programlamanın temel anlayışı.
 
-## Step 1: Set up the Document Directory
+## 1. Adım: Belge Dizinini Ayarlayın
 
-First, you need to set the path to the directory where you want to save the generated PDF file. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your desired directory.
+ Öncelikle oluşturulan PDF dosyasını kaydetmek istediğiniz dizinin yolunu ayarlamanız gerekir. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir`İstediğiniz dizinin yolunu içeren değişken.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Create a Sample Document
+## Adım 2: Örnek Belge Oluşturun
 
-In this step, we create a sample PDF document and add a text fragment to it. The text fragment will serve as the trigger for displaying the hidden text block.
+Bu adımda örnek bir PDF belgesi oluşturup ona bir metin parçası ekliyoruz. Metin parçası, gizli metin bloğunun görüntülenmesi için tetikleyici görevi görecektir.
 
 ```csharp
 string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
@@ -35,17 +35,17 @@ doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to d
 doc.Save(outputFile);
 ```
 
-## Step 3: Open the Document
+## 3. Adım: Belgeyi Açın
 
-Now, we open the previously created document using the `Document` class.
+ Şimdi daha önce oluşturduğumuz belgeyi kullanarak açıyoruz.`Document` sınıf.
 
 ```csharp
 Document document = new Document(outputFile);
 ```
 
-## Step 4: Find the Text Fragment
+## 4. Adım: Metin Parçasını Bulun
 
-We use a `TextFragmentAbsorber` object to find the text fragment that will trigger the display of the hidden text block. In this case, we are searching for the exact text "Move the mouse cursor here to display floating text".
+ Bir kullanıyoruz`TextFragmentAbsorber` Gizli metin bloğunun görüntülenmesini tetikleyecek metin parçasını bulmak için nesneyi kullanın. Bu durumda, "Kayan metni görüntülemek için fare imlecini buraya taşıyın" metnini arıyoruz.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
@@ -54,9 +54,9 @@ TextFragmentCollection textFragments = absorb.TextFragments;
 TextFragment fragment = textFragments[1];
 ```
 
-## Step 5: Create the Hidden Text Field
+## Adım 5: Gizli Metin Alanını Oluşturun
 
-We create a `TextBoxField` object to represent the hidden text field. This field will contain the text that becomes visible when the mouse cursor hovers over the trigger text.
+ Biz bir yaratıyoruz`TextBoxField` gizli metin alanını temsil edecek nesne. Bu alan, fare imleci tetikleyici metnin üzerine geldiğinde görünür hale gelen metni içerecektir.
 
 ```csharp
 TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
@@ -72,17 +72,17 @@ floatingField.Border.Width = 1;
 floatingField. Multiline = true;
 ```
 
-## Step 6: Add the Hidden Text Field to the Document
+## Adım 6: Gizli Metin Alanını Belgeye Ekleme
 
-We add the hidden text field to the document's form collection.
+Gizli metin alanını belgenin form koleksiyonuna ekliyoruz.
 
 ```csharp
 document.Form.Add(floatingField);
 ```
 
-## Step 7: Create the Invisible Button
+## Adım 7: Görünmez Düğmeyi Oluşturun
 
-We create an invisible button field that will be positioned on top of the trigger text fragment. This button field will have actions associated with mouse enter and exit events.
+Tetikleyici metin parçasının üstüne yerleştirilecek görünmez bir buton alanı oluşturuyoruz. Bu düğme alanı, fareye giriş ve çıkış olaylarıyla ilişkili eylemlere sahip olacaktır.
 
 ```csharp
 ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
@@ -91,104 +91,104 @@ buttonField.Actions.OnExit = new HideAction(floatingField);
 document.Form.Add(buttonField);
 ```
 
-## Step 8: Save the Document
+## Adım 8: Belgeyi Kaydedin
 
-Finally, we save the modified document with the hidden text block.
+Son olarak değiştirilen belgeyi gizli metin bloğuyla kaydediyoruz.
 
 ```csharp
 document. Save(outputFile);
 ```
 
-### Sample source code for Hidden Text Block using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanan Gizli Metin Bloğu için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
-// Create sample document with text
+// Metin içeren örnek belge oluşturun
 Document doc = new Document();
 doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display floating text"));
 doc.Save(outputFile);
-// Open document with text
+// Metin içeren belgeyi aç
 Document document = new Document(outputFile);
-// Create TextAbsorber object to find all the phrases matching the regular expression
+// Normal ifadeyle eşleşen tüm ifadeleri bulmak için TextAbsorber nesnesi oluşturun
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
-// Accept the absorber for the document pages
+// Belge sayfaları için emiciyi kabul edin
 document.Pages.Accept(absorber);
-// Get the first extracted text fragment
+// Çıkarılan ilk metin parçasını alın
 TextFragmentCollection textFragments = absorber.TextFragments;
 TextFragment fragment = textFragments[1];
-// Create hidden text field for floating text in the specified rectangle of the page
+// Sayfanın belirtilen dikdörtgeninde kayan metin için gizli metin alanı oluşturun
 TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
-// Set text to be displayed as field value
+// Alan değeri olarak görüntülenecek metni ayarlayın
 floatingField.Value = "This is the \"floating text field\".";
-// We recommend to make field 'readonly' for this scenario
+// Bu senaryo için alanı 'salt okunur' yapmanızı öneririz
 floatingField.ReadOnly = true;
-// Set 'hidden' flag to make field invisible on document opening
+// Alanı belge açılışında görünmez hale getirmek için 'gizli' bayrağını ayarlayın
 floatingField.Flags |= AnnotationFlags.Hidden;
-// Setting a unique field name isn't necessary but allowed
+// Benzersiz bir alan adı ayarlamak gerekli değildir ancak buna izin verilir
 floatingField.PartialName = "FloatingField_1";
-// Setting characteristics of field appearance isn't necessary but makes it better
+// Alan görünümünün özelliklerini ayarlamak gerekli değildir ancak daha iyi hale getirir
 floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, System.Drawing.Color.Blue);
 floatingField.Characteristics.Background = System.Drawing.Color.LightBlue;
 floatingField.Characteristics.Border = System.Drawing.Color.DarkBlue;
 floatingField.Border = new Border(floatingField);
 floatingField.Border.Width = 1;
 floatingField.Multiline = true;
-// Add text field to the document
+// Belgeye metin alanı ekleme
 document.Form.Add(floatingField);
-// Create invisible button on text fragment position
+// Metin parçası konumunda görünmez düğme oluşturun
 ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
-// Create new hide action for specified field (annotation) and invisibility flag.
-// (You also may reffer floating field by the name if you specified it above.)
-// Add actions on mouse enter/exit at the invisible button field
+// Belirtilen alan (açıklama) ve görünmezlik bayrağı için yeni gizleme eylemi oluşturun.
+//(Yukarıda belirttiyseniz, kayan alana ismiyle de başvurabilirsiniz.)
+// Görünmez düğme alanına fare giriş/çıkış işlemlerine eylemler ekleyin
 buttonField.Actions.OnEnter = new HideAction(floatingField, false);
 buttonField.Actions.OnExit = new HideAction(floatingField);
-// Add button field to the document
+// Belgeye düğme alanı ekleyin
 document.Form.Add(buttonField);
-// Save document
+// Belgeyi kaydet
 document.Save(outputFile);
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, you have learned how to create a hidden text block using the Aspose.PDF for .NET library. By following the step-by-step guide, you can generate a PDF document with a hidden text field that becomes visible when the mouse cursor hovers over a specific area. You can customize the appearance and behavior of the hidden text block according to your requirements.
+Bu eğitimde Aspose.PDF for .NET kütüphanesini kullanarak gizli bir metin bloğunun nasıl oluşturulacağını öğrendiniz. Adım adım kılavuzu izleyerek, fare imleci belirli bir alanın üzerine geldiğinde görünür hale gelen gizli metin alanına sahip bir PDF belgesi oluşturabilirsiniz. Gizli metin bloğunun görünümünü ve davranışını gereksinimlerinize göre özelleştirebilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the purpose of the "Hidden Text Block In PDF File" tutorial?
+#### S: "PDF Dosyasındaki Gizli Metin Bloğu" eğitiminin amacı nedir?
 
-A: The "Hidden Text Block In PDF File" tutorial explains how to create a hidden text block in a PDF file using the Aspose.PDF library for .NET. A hidden text block is a floating text that becomes visible when the mouse cursor hovers over a specific area. This tutorial provides a step-by-step guide using C# source code.
+C: "PDF Dosyasında Gizli Metin Bloğu" eğitiminde, .NET için Aspose.PDF kütüphanesini kullanarak bir PDF dosyasında gizli metin bloğunun nasıl oluşturulacağı açıklanmaktadır. Gizli metin bloğu, fare imleci belirli bir alanın üzerine geldiğinde görünür hale gelen kayan bir metindir. Bu öğretici, C# kaynak kodunu kullanan adım adım bir kılavuz sağlar.
 
-#### Q: Why would I want to create a hidden text block in a PDF file?
+#### S: Bir PDF dosyasında neden gizli bir metin bloğu oluşturmak isteyeyim?
 
-A: Creating a hidden text block can be useful for interactive PDF documents where you want to provide additional information or context that only becomes visible when a user hovers their mouse cursor over a designated area.
+C: Gizli bir metin bloğu oluşturmak, yalnızca kullanıcı fare imlecini belirlenmiş bir alanın üzerine getirdiğinde görünür hale gelen ek bilgi veya bağlam sağlamak istediğiniz etkileşimli PDF belgeleri için yararlı olabilir.
 
-#### Q: How do I set up the document directory?
+#### S: Belge dizinini nasıl ayarlarım?
 
-A: To set up the document directory:
+C: Belge dizinini ayarlamak için:
 
-1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where you want to save the generated PDF file.
+1.  Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` oluşturulan PDF dosyasını kaydetmek istediğiniz dizinin yolunu içeren değişken.
 
-#### Q: How do I create a sample document and add a text fragment to it?
+#### S: Örnek bir belgeyi nasıl oluşturabilirim ve ona bir metin parçasını nasıl eklerim?
 
-A: In the tutorial, you use the `Document` class to create a sample PDF document and add a text fragment. This text fragment serves as the trigger for displaying the hidden text block.
+C: Eğitimde şunları kullanacaksınız:`Document` Örnek bir PDF belgesi oluşturmak ve bir metin parçası eklemek için sınıfı kullanın. Bu metin parçası, gizli metin bloğunun görüntülenmesi için tetikleyici görevi görür.
 
-#### Q: How do I find the text fragment that triggers the hidden text block?
+#### S: Gizli metin bloğunu tetikleyen metin parçasını nasıl bulurum?
 
-A: The tutorial demonstrates how to use a `TextFragmentAbsorber` object to find the text fragment that triggers the display of the hidden text block. It searches for a specific text string within the PDF document.
+ C: Eğitimde bir uygulamanın nasıl kullanılacağı gösterilmektedir.`TextFragmentAbsorber` Gizli metin bloğunun görüntülenmesini tetikleyen metin parçasını bulmak için nesneyi kullanın. PDF belgesinde belirli bir metin dizesini arar.
 
-#### Q: How do I create and customize the hidden text field?
+#### S: Gizli metin alanını nasıl oluşturup özelleştirebilirim?
 
-A: You create a `TextBoxField` object to represent the hidden text field. The tutorial provides code to set various properties such as position, value, appearance, and behavior of the hidden text field.
+ C: Siz bir`TextBoxField` gizli metin alanını temsil edecek nesne. Öğretici, gizli metin alanının konumu, değeri, görünümü ve davranışı gibi çeşitli özellikleri ayarlamak için kod sağlar.
 
-#### Q: How do I create an invisible button associated with the hidden text block?
+#### S: Gizli metin bloğuyla ilişkili görünmez bir düğmeyi nasıl oluşturabilirim?
 
-A: An invisible button field is created using the `ButtonField` class. This button field is positioned on top of the trigger text fragment and has actions associated with mouse enter and exit events. These actions control the visibility of the hidden text block.
+ C: Görünmez bir düğme alanı kullanılarak oluşturulur.`ButtonField` sınıf. Bu düğme alanı, tetikleyici metin parçasının üstünde konumlandırılmıştır ve fareye giriş ve çıkış olaylarıyla ilişkili eylemleri içerir. Bu eylemler gizli metin bloğunun görünürlüğünü kontrol eder.
 
-#### Q: Can I customize the appearance of the hidden text block and the trigger area?
+#### S: Gizli metin bloğunun ve tetikleyici alanın görünümünü özelleştirebilir miyim?
 
-A: Yes, you can customize various properties of both the hidden text field and the invisible button, including font, color, size, and positioning.
+C: Evet, hem gizli metin alanının hem de görünmez düğmenin yazı tipi, renk, boyut ve konumlandırma gibi çeşitli özelliklerini özelleştirebilirsiniz.
 
-#### Q: How do I save the modified document with the hidden text block?
+#### S: Değiştirilen belgeyi gizli metin bloğuyla nasıl kaydederim?
 
-A: The tutorial demonstrates how to save the modified document using the `Save` method of the `Document` class.
+ C: Eğitimde, değiştirilen belgenin aşağıdaki komut kullanılarak nasıl kaydedileceği gösterilmektedir:`Save` yöntemi`Document` sınıf.

@@ -1,92 +1,92 @@
 ---
-title: Radio Button
-linktitle: Radio Button
-second_title: Aspose.PDF for .NET API Reference
-description: Easily add radio buttons to your PDF documents with Aspose.PDF for .NET.
+title: Переключатель
+linktitle: Переключатель
+second_title: Справочник по Aspose.PDF для .NET API
+description: Легко добавляйте переключатели в ваши PDF-документы с помощью Aspose.PDF для .NET.
 type: docs
 weight: 220
 url: /ru/net/programming-with-forms/radio-button/
 ---
-In this tutorial, we will show you how to add a radio button in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+В этом уроке мы покажем вам, как добавить переключатель в PDF-документ с помощью Aspose.PDF для .NET. Мы шаг за шагом объясним исходный код C#, чтобы помочь вам в этом процессе.
 
-## Step 1: Preparation
+## Шаг 1: Подготовка
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+Убедитесь, что вы импортировали необходимые библиотеки и указали путь к каталогу с вашими документами:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Instantiate a Document Object
+## Шаг 2. Создайте экземпляр объекта документа
 
-Instantiate a Document object to create a new PDF document:
+Создайте экземпляр объекта Document для создания нового PDF-документа:
 
 ```csharp
 Document pdfDocument = new Document();
 ```
 
-## Step 3: Add a page
+## Шаг 3. Добавьте страницу
 
-Add a page to the PDF document:
+Добавьте страницу в PDF-документ:
 
 ```csharp
 pdfDocument.Pages.Add();
 ```
 
-## Step 4: Instantiate a RadioButtonField Object
+## Шаг 4. Создайте экземпляр объекта RadioButtonField
 
-Instantiate a RadioButtonField object specifying the page number as an argument:
+Создайте экземпляр объекта RadioButtonField, указав номер страницы в качестве аргумента:
 
 ```csharp
 RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
 ```
 
-## Step 5: Add radio button options
+## Шаг 5. Добавьте параметры переключателя
 
-Add radio button options to the RadioButtonField object by specifying the coordinates of each option with a Rectangle object:
+Добавьте параметры переключателя в объект RadioButtonField, указав координаты каждого параметра с помощью объекта Rectangle:
 
 ```csharp
 radio.AddOption("Test", new Rectangle(0, 0, 20, 20));
 radio.AddOption("Test1", new Rectangle(20, 20, 40, 40));
 ```
 
-## Step 6: Add the radio button to the form
+## Шаг 6. Добавьте переключатель в форму.
 
-Add the radio button to the document's Form object:
+Добавьте переключатель в объект формы документа:
 
 ```csharp
 pdfDocument.Form.Add(radio);
 ```
 
-## Step 7: Save the PDF Document
+## Шаг 7. Сохраните PDF-документ.
 
-Save the created PDF document:
+Сохраните созданный PDF-документ:
 
 ```csharp
 dataDir = dataDir + "RadioButton_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Radio Button using Aspose.PDF for .NET 
+### Пример исходного кода для переключателя с использованием Aspose.PDF для .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Путь к каталогу документов.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Instantiate Document object
+	// Создать экземпляр объекта документа
 	Document pdfDocument = new Document();
-	// Add a page to PDF file
+	// Добавить страницу в PDF-файл
 	pdfDocument.Pages.Add();
-	// Instatiate RadioButtonField object with page number as argument
+	// Создать объект RadioButtonField с номером страницы в качестве аргумента.
 	RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
-	// Add first radio button option and also specify its origin using Rectangle object
+	// Добавьте первый параметр переключателя, а также укажите его начало с помощью объекта Rectangle.
 	radio.AddOption("Test", new Rectangle(0, 0, 20, 20));
-	// Add second radio button option
+	// Добавить второй вариант переключателя
 	radio.AddOption("Test1", new Rectangle(20, 20, 40, 40));
-	// Add radio button to form object of Document object
+	// Добавить переключатель для формирования объекта объекта документа.
 	pdfDocument.Form.Add(radio);
 	dataDir = dataDir + "RadioButton_out.pdf";
-	// Save the PDF file
+	// Сохраните PDF-файл
 	pdfDocument.Save(dataDir);
 	Console.WriteLine("\nRadio button field added successfully.\nFile saved at " + dataDir);
 }
@@ -96,29 +96,29 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, we learned how to add a radio button in a PDF document using Aspose.PDF for .NET. By following these steps, you can easily create a radio button and place it on a specific page in your PDF document.
+В этом уроке мы узнали, как добавить переключатель в документ PDF с помощью Aspose.PDF для .NET. Выполнив эти шаги, вы можете легко создать переключатель и разместить его на определенной странице PDF-документа.
 
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: Can I customize the appearance of the radio button, such as its size and color?
+#### Вопрос: Могу ли я настроить внешний вид переключателя, например его размер и цвет?
 
-A: Yes, you can customize the appearance of the radio button using the `Rectangle` object's coordinates to define its size and position. Aspose.PDF for .NET allows you to adjust the radio button's appearance to suit your needs.
+ О: Да, вы можете настроить внешний вид переключателя с помощью`Rectangle` координаты объекта для определения его размера и положения. Aspose.PDF для .NET позволяет вам настроить внешний вид переключателя в соответствии с вашими потребностями.
 
-#### Q: Can I add multiple radio buttons with different groups on the same page?
+#### Вопрос: Могу ли я добавить несколько переключателей с разными группами на одной странице?
 
-A: Yes, you can add multiple radio buttons with different groups on the same page. Each group of radio buttons can have a unique name, and only one option within each group can be selected at a time.
+О: Да, вы можете добавить несколько переключателей в разные группы на одной странице. Каждая группа переключателей может иметь уникальное имя, и одновременно можно выбрать только один параметр в каждой группе.
 
-#### Q: How can I add a label or text description to the radio button options?
+#### Вопрос: Как добавить метку или текстовое описание к параметрам переключателя?
 
-A: To add a label or text description to the radio button options, you can use the `TextStamp` class from Aspose.PDF for .NET to overlay text on the PDF document at specific coordinates.
+ О: Чтобы добавить метку или текстовое описание к опциям переключателя, вы можете использовать`TextStamp`класс из Aspose.PDF для .NET для наложения текста на PDF-документ по определенным координатам.
 
-#### Q: Is Aspose.PDF for .NET compatible with all versions of .NET Framework?
+#### Вопрос: Совместим ли Aspose.PDF для .NET со всеми версиями .NET Framework?
 
-A: Yes, Aspose.PDF for .NET is compatible with all versions of .NET Framework, including .NET Core and .NET Standard.
+О: Да, Aspose.PDF для .NET совместим со всеми версиями .NET Framework, включая .NET Core и .NET Standard.
 
-#### Q: Can I programmatically control the selection of a radio button option in the PDF document?
+#### Вопрос: Могу ли я программно управлять выбором переключателя в PDF-документе?
 
-A: Yes, you can programmatically control the selection of a radio button option using the `IsSelected` property of the `RadioButtonOption` class. This property allows you to set a specific option as selected.
+ О: Да, вы можете программно управлять выбором опции переключателя с помощью`IsSelected` собственность`RadioButtonOption` сорт. Это свойство позволяет вам установить выбранную конкретную опцию.

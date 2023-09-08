@@ -1,49 +1,49 @@
 ---
-title: Replace Fonts In PDF File
-linktitle: Replace Fonts In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to replace fonts in PDF file using Aspose.PDF for .NET.
+title: Remplacer les polices dans un fichier PDF
+linktitle: Remplacer les polices dans un fichier PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment remplacer les polices dans un fichier PDF à l'aide d'Aspose.PDF pour .NET.
 type: docs
 weight: 340
 url: /fr/net/programming-with-text/replace-fonts/
 ---
-In this tutorial, we will explain how to replace specific fonts in PDF file using the Aspose.PDF library for .NET. We will go through the step-by-step process of loading a PDF document, searching for text fragments, identifying the fonts to replace, replacing the fonts, and saving the modified PDF using the provided C# source code.
+Dans ce didacticiel, nous expliquerons comment remplacer des polices spécifiques dans un fichier PDF à l'aide de la bibliothèque Aspose.PDF pour .NET. Nous passerons en revue le processus étape par étape de chargement d'un document PDF, de recherche de fragments de texte, d'identification des polices à remplacer, de remplacement des polices et d'enregistrement du PDF modifié à l'aide du code source C# fourni.
 
-## Prerequisites
+## Conditions préalables
 
-Before you begin, ensure that you have the following:
+Avant de commencer, assurez-vous d'avoir les éléments suivants :
 
-- The Aspose.PDF for .NET library installed.
-- A basic understanding of C# programming.
+- La bibliothèque Aspose.PDF pour .NET installée.
+- Une compréhension de base de la programmation C#.
 
-## Step 1: Set up the Document Directory
+## Étape 1 : configurer le répertoire de documents
 
-First, you need to set the path to the directory where you have the input PDF file. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your PDF file.
+ Tout d’abord, vous devez définir le chemin d’accès au répertoire dans lequel se trouve le fichier PDF d’entrée. Remplacer`"YOUR DOCUMENT DIRECTORY"` dans le`dataDir` variable avec le chemin d'accès à votre fichier PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load the PDF Document
+## Étape 2 : Charger le document PDF
 
-Next, we load the PDF document using the `Document` class from the Aspose.PDF library.
+ Ensuite, nous chargeons le document PDF en utilisant le`Document` classe de la bibliothèque Aspose.PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 ```
 
-## Step 3: Search and Replace Fonts
+## Étape 3 : Rechercher et remplacer les polices
 
-We create a `TextFragmentAbsorber` object and set the edit option to remove unused fonts. Then, we accept the absorber for all the pages of the PDF document to search for text fragments.
+ Nous créons un`TextFragmentAbsorber`objet et définissez l’option d’édition pour supprimer les polices inutilisées. Ensuite, nous acceptons l'absorbeur de toutes les pages du document PDF pour rechercher des fragments de texte.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));
 pdfDocument.Pages.Accept(absorber);
 ```
 
-## Step 4: Replace Fonts
+## Étape 4 : Remplacer les polices
 
-We traverse through all the text fragments identified by the absorber. If the font name of a text fragment matches the desired font to replace, we replace it with the new font.
+Nous parcourons tous les fragments de texte identifiés par l’absorbeur. Si le nom de police d'un fragment de texte correspond à la police que vous souhaitez remplacer, nous le remplaçons par la nouvelle police.
 
 ```csharp
 foreach (TextFragment textFragment in absorber.TextFragments)
@@ -55,9 +55,9 @@ foreach (TextFragment textFragment in absorber.TextFragments)
 }
 ```
 
-## Step 5: Save the Modified PDF
+## Étape 5 : Enregistrez le PDF modifié
 
-Finally, we save the modified PDF document to the specified output file.
+Enfin, nous enregistrons le document PDF modifié dans le fichier de sortie spécifié.
 
 ```csharp
 dataDir = dataDir + "ReplaceFonts_out.pdf";
@@ -65,29 +65,29 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nFonts replaced successfully in the PDF document.\nFile saved at " + dataDir);
 ```
 
-### Sample source code for Replace Fonts using Aspose.PDF for .NET 
+### Exemple de code source pour remplacer les polices à l’aide d’Aspose.PDF pour .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Le chemin d'accès au répertoire des documents.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Load source PDF file
+	// Charger le fichier PDF source
 	Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
-	// Search text fragments and set edit option as remove unused fonts
+	// Rechercher des fragments de texte et définir l'option d'édition pour supprimer les polices inutilisées
 	TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));
-	// Accept the absorber for all the pages
+	// Acceptez l'absorbeur pour toutes les pages
 	pdfDocument.Pages.Accept(absorber);
-	// Traverse through all the TextFragments
+	// Parcourez tous les TextFragments
 	foreach (TextFragment textFragment in absorber.TextFragments)
 	{
-		// If the font name is ArialMT, replace font name with Arial
+		// Si le nom de la police est ArialMT, remplacez le nom de la police par Arial
 		if (textFragment.TextState.Font.FontName == "Arial,Bold")
 		{
 			textFragment.TextState.Font = FontRepository.FindFont("Arial");
 		}
 	}
 	dataDir = dataDir + "ReplaceFonts_out.pdf";
-	// Save updated document
+	// Enregistrer le document mis à jour
 	pdfDocument.Save(dataDir);
 	Console.WriteLine("\nFonts replaced successfully in pdf document.\nFile saved at " + dataDir);
 }
@@ -99,52 +99,52 @@ catch (Exception ex)
 
 ## Conclusion
 
-In this tutorial, you have learned how to replace specific fonts in a PDF document using the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can load a PDF document, search for text fragments, identify and replace specific fonts, and save the modified PDF.
+Dans ce didacticiel, vous avez appris à remplacer des polices spécifiques dans un document PDF à l'aide de la bibliothèque Aspose.PDF pour .NET. En suivant le guide étape par étape et en exécutant le code C# fourni, vous pouvez charger un document PDF, rechercher des fragments de texte, identifier et remplacer des polices spécifiques et enregistrer le PDF modifié.
 
-### FAQ's
+### FAQ
 
-#### Q: What is the purpose of the "Replace Fonts In PDF File" tutorial?
+#### Q : Quel est l'objectif du didacticiel « Remplacer les polices dans un fichier PDF » ?
 
-A: The "Replace Fonts In PDF File" tutorial demonstrates how to use the Aspose.PDF library for .NET to replace specific fonts in a PDF document. It provides a step-by-step guide on how to load a PDF document, search for text fragments, identify fonts to replace, replace the fonts, and save the modified PDF.
+: Le didacticiel « Remplacer les polices dans un fichier PDF » montre comment utiliser la bibliothèque Aspose.PDF pour .NET pour remplacer des polices spécifiques dans un document PDF. Il fournit un guide étape par étape sur la façon de charger un document PDF, de rechercher des fragments de texte, d'identifier les polices à remplacer, de remplacer les polices et d'enregistrer le PDF modifié.
 
-#### Q: Why would I want to replace fonts in a PDF document?
+#### Q : Pourquoi voudrais-je remplacer les polices dans un document PDF ?
 
-A: Replacing fonts in a PDF document can be necessary when you want to standardize the appearance of the text or improve the compatibility of the document across different devices and platforms. It allows you to ensure consistent typography and formatting.
+R : Le remplacement des polices dans un document PDF peut être nécessaire lorsque vous souhaitez standardiser l'apparence du texte ou améliorer la compatibilité du document sur différents appareils et plates-formes. Il vous permet de garantir une typographie et un formatage cohérents.
 
-#### Q: How do I set up the document directory?
+#### Q : Comment configurer le répertoire de documents ?
 
-A: To set up the document directory:
+R : Pour configurer le répertoire de documents :
 
-1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where your input PDF file is located.
+1.  Remplacer`"YOUR DOCUMENT DIRECTORY"` dans le`dataDir` variable avec le chemin d’accès au répertoire où se trouve votre fichier PDF d’entrée.
 
-#### Q: How do I replace specific fonts in a PDF document?
+#### Q : Comment remplacer des polices spécifiques dans un document PDF ?
 
-A: The tutorial guides you through the process step by step:
+R : Le didacticiel vous guide étape par étape tout au long du processus :
 
-1. Load the PDF document using the `Document` class.
-2. Create a `TextFragmentAbsorber` object and set the edit option to remove unused fonts. Accept the absorber for all the pages to search for text fragments.
-3. Traverse through the identified text fragments. If the font name of a text fragment matches the font you want to replace, replace it with the new font.
+1.  Chargez le document PDF à l'aide du`Document` classe.
+2.  Créer un`TextFragmentAbsorber` objet et définissez l’option d’édition pour supprimer les polices inutilisées. Acceptez l'absorbeur de toutes les pages pour rechercher des fragments de texte.
+3. Parcourez les fragments de texte identifiés. Si le nom de police d'un fragment de texte correspond à la police que vous souhaitez remplacer, remplacez-le par la nouvelle police.
 
-#### Q: What is the purpose of using `TextFragmentAbsorber` with font replacement options?
+####  Q : Quel est le but de l'utilisation`TextFragmentAbsorber` with font replacement options?
 
-A: The `TextFragmentAbsorber` with font replacement options allows you to locate text fragments and simultaneously remove unused fonts. This is important to ensure that the replaced fonts are not added as additional resources in the PDF.
+ R : Le`TextFragmentAbsorber` avec les options de remplacement de police, vous permet de localiser des fragments de texte et de supprimer simultanément les polices inutilisées. Ceci est important pour garantir que les polices remplacées ne soient pas ajoutées en tant que ressources supplémentaires dans le PDF.
 
-#### Q: How do I identify specific fonts to replace?
+#### Q : Comment puis-je identifier les polices spécifiques à remplacer ?
 
-A: By traversing through the text fragments identified by the absorber, you can access the font information for each text fragment. If the font name matches the font you want to replace, you can perform the replacement.
+R : En parcourant les fragments de texte identifiés par l'absorbeur, vous pouvez accéder aux informations de police pour chaque fragment de texte. Si le nom de la police correspond à la police que vous souhaitez remplacer, vous pouvez effectuer le remplacement.
 
-#### Q: What happens if the font to be replaced is not found in a text fragment?
+#### Q : Que se passe-t-il si la police à remplacer n'est pas trouvée dans un fragment de texte ?
 
-A: If the font to be replaced is not found in a text fragment, the text fragment's font remains unchanged. The replacement will only occur if the font name matches.
+R : Si la police à remplacer n'est pas trouvée dans un fragment de texte, la police du fragment de texte reste inchangée. Le remplacement n'aura lieu que si le nom de la police correspond.
 
-#### Q: Is there a limitation to replacing fonts in this tutorial?
+#### Q : Y a-t-il une limitation au remplacement des polices dans ce didacticiel ?
 
-A: This tutorial focuses on replacing specific fonts in text fragments. If you need to replace fonts in other contexts, such as annotations or form fields, you would need to extend the approach accordingly.
+R : Ce didacticiel se concentre sur le remplacement de polices spécifiques dans des fragments de texte. Si vous devez remplacer des polices dans d'autres contextes, tels que des annotations ou des champs de formulaire, vous devrez étendre l'approche en conséquence.
 
-#### Q: What is the expected outcome of executing the provided code?
+#### Q : Quel est le résultat attendu de l’exécution du code fourni ?
 
-A: By following the tutorial and running the provided C# code, you will replace specific fonts in the PDF document. The fonts identified by the criteria you set will be replaced with the new font you specify.
+R : En suivant le didacticiel et en exécutant le code C# fourni, vous remplacerez des polices spécifiques dans le document PDF. Les polices identifiées par les critères que vous avez définis seront remplacées par la nouvelle police que vous spécifiez.
 
-#### Q: Can I use this approach to replace fonts throughout the entire PDF document?
+#### Q : Puis-je utiliser cette approche pour remplacer les polices dans l’ensemble du document PDF ?
 
-A: Yes, you can adapt the code to replace fonts throughout the entire PDF document by traversing through all text fragments and applying the font replacement logic.
+R : Oui, vous pouvez adapter le code pour remplacer les polices dans l'ensemble du document PDF en parcourant tous les fragments de texte et en appliquant la logique de remplacement des polices.

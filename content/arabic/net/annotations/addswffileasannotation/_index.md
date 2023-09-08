@@ -1,122 +1,122 @@
 ---
-title: Add Swf File As PDF Annotation
-linktitle: Add Swf File As Annotation
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add SWF files as PDF annotations in Aspose.PDF for .NET with this step-by-step guide.
+title: أضف ملف Swf كتعليق توضيحي بتنسيق PDF
+linktitle: أضف ملف Swf كتعليق توضيحي
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إضافة ملفات SWF كتعليقات توضيحية بتنسيق PDF في Aspose.PDF لـ .NET باستخدام هذا الدليل التفصيلي خطوة بخطوة.
 type: docs
 weight: 30
 url: /ar/net/annotations/addswffileasannotation/
 ---
-If you're a .NET developer looking to add a SWF multimedia file as PDF annotation to your PDF document using Aspose.PDF for .NET, this step-by-step guide is for you. In this article, we'll explain how to add SWF files as annotations in your PDF documents using the C# programming language. 
+إذا كنت مطور .NET وتتطلع إلى إضافة ملف وسائط SWF كتعليق توضيحي بتنسيق PDF إلى مستند PDF الخاص بك باستخدام Aspose.PDF لـ .NET، فهذا الدليل المفصل خطوة بخطوة مناسب لك. سنشرح في هذه المقالة كيفية إضافة ملفات SWF كتعليقات توضيحية في مستندات PDF الخاصة بك باستخدام لغة البرمجة C#. 
 
-Follow the below steps to add an SWF file as an annotation in your PDF document using Aspose.PDF for .NET:
+اتبع الخطوات التالية لإضافة ملف SWF كتعليق توضيحي في مستند PDF الخاص بك باستخدام Aspose.PDF لـ .NET:
 
-## Step 1: Set the directory path
+## الخطوة 1: قم بتعيين مسار الدليل
 
-First, we need to set the directory path where the PDF file and SWF file are stored. 
+أولاً، نحتاج إلى تعيين مسار الدليل حيث يتم تخزين ملف PDF وملف SWF. 
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace "YOUR DOCUMENT DIRECTORY" with the path to your document directory.
+استبدل "YOUR DOCUMENT DIRECTORY" بالمسار إلى دليل المستند الخاص بك.
 
-## Step 2: Load the PDF document
+## الخطوة 2: قم بتحميل مستند PDF
 
-Next, we need to load the PDF document using the following code:
+بعد ذلك، نحتاج إلى تحميل مستند PDF باستخدام الكود التالي:
 
 ```csharp
 Document doc = new Document(dataDir + "AddSwfFileAsAnnotation.pdf");
 ```
 
-This code will load the "AddSwfFileAsAnnotation.pdf" file from the document directory.
+سيقوم هذا الرمز بتحميل الملف "AddSwfFileAsAnnotation.pdf" من دليل المستند.
 
-## Step 3: Get the page to add annotation
+## الخطوة 3: احصل على الصفحة لإضافة تعليق توضيحي
 
-Now, we need to get the reference of the page to which we want to add the annotation. In this tutorial, we'll add the annotation to the first page of the document.
+الآن، نحتاج إلى الحصول على مرجع الصفحة التي نريد إضافة التعليق التوضيحي إليها. في هذا البرنامج التعليمي، سنقوم بإضافة التعليق التوضيحي إلى الصفحة الأولى من المستند.
 
 ```csharp
 Page page = doc.Pages[1];
 ```
 
-## Step 4: Create a ScreenAnnotation object
+## الخطوة 4: إنشاء كائن ScreenAnnotation
 
-We can now create a `ScreenAnnotation` object with the SWF file as an argument.
+ يمكننا الآن إنشاء`ScreenAnnotation` كائن مع ملف SWF كوسيطة.
 
 ```csharp
 ScreenAnnotation annotation = new ScreenAnnotation(page, new Aspose.Pdf.Rectangle(0, 400, 600, 700), dataDir + "input.swf");
 ```
 
-The `ScreenAnnotation` constructor takes three arguments:
+ ال`ScreenAnnotation` يأخذ المنشئ ثلاث حجج:
 
-- `page`: The page to which the annotation will be added.
-- `rectangle`: The rectangle in which the SWF file will be displayed on the page.
-- `dataDir + "input.swf"`: The path to the SWF file.
+- `page`: الصفحة التي سيتم إضافة التعليق التوضيحي إليها.
+- `rectangle`: المستطيل الذي سيتم فيه عرض ملف SWF على الصفحة.
+- `dataDir + "input.swf"`: المسار إلى ملف SWF.
 
-## Step 5: Add the annotation to the page
+## الخطوة 5: أضف التعليق التوضيحي إلى الصفحة
 
-Now, we can add the annotation to the annotations collection of the page.
+الآن، يمكننا إضافة التعليق التوضيحي إلى مجموعة التعليقات التوضيحية للصفحة.
 
 ```csharp
 page.Annotations.Add(annotation);
 ```
 
-## Step 6: Save the updated PDF document
+## الخطوة 6: احفظ مستند PDF المحدث
 
-Finally, we need to save the updated PDF document with the annotation using the following code:
+أخيرًا، نحتاج إلى حفظ مستند PDF المحدث مع التعليق التوضيحي باستخدام الكود التالي:
 
 ```csharp
 dataDir = dataDir + "AddSwfFileAsAnnotation_out.pdf";
 doc.Save(dataDir);
 ```
 
-This code will save the updated PDF document with the annotation as "AddSwfFileAsAnnotation_out.pdf" in the document directory.
+سيحفظ هذا الرمز مستند PDF المحدث مع التعليق التوضيحي باسم "AddSwfFileAsAnnotation_out.pdf" في دليل المستند.
 
-### Example source code for Adding SWF file as an annotation using Aspose.PDF for .NET
+### مثال على التعليمات البرمجية المصدر لإضافة ملف SWF كتعليق توضيحي باستخدام Aspose.PDF لـ .NET
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open the PDF document
+//افتح مستند بي دي إف
 Document doc = new Document(dataDir + "AddSwfFileAsAnnotation.pdf");
 
-// Get reference of the page to which you need to add the annotation
+// احصل على مرجع للصفحة التي تريد إضافة التعليق التوضيحي إليها
 Page page = doc.Pages[1];
 
-// Create ScreenAnnotation object with .swf multimedia file as an argument
+// قم بإنشاء كائن ScreenAnnotation باستخدام ملف الوسائط المتعددة ‎.swf كوسيطة
 ScreenAnnotation annotation = new ScreenAnnotation(page, new Aspose.Pdf.Rectangle(0, 400, 600, 700), dataDir + "input.swf");
 
-// Add the annotation to annotations collection of page
+// أضف التعليق التوضيحي إلى مجموعة التعليقات التوضيحية للصفحة
 page.Annotations.Add(annotation);
 
 dataDir = dataDir + "AddSwfFileAsAnnotation_out.pdf";
-// Save the update PDF document with annotation
+// احفظ مستند PDF المحدث مع التعليق التوضيحي
 doc.Save(dataDir);
 ```        
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we explored how to add SWF files as annotations to PDF documents using Aspose.PDF for .NET. By following the step-by-step guide and using the provided C# source code, .NET developers can easily integrate multimedia content and interactive elements into their PDF files.
+في هذا البرنامج التعليمي، اكتشفنا كيفية إضافة ملفات SWF كتعليقات توضيحية إلى مستندات PDF باستخدام Aspose.PDF لـ .NET. باتباع الدليل الموضح خطوة بخطوة واستخدام كود مصدر C# المقدم، يمكن لمطوري .NET دمج محتوى الوسائط المتعددة والعناصر التفاعلية بسهولة في ملفات PDF الخاصة بهم.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is a SWF file, and why would I add it as an annotation to a PDF document?
+#### س: ما هو ملف SWF، ولماذا أقوم بإضافته كتعليق توضيحي إلى مستند PDF؟
 
-A: A SWF file is a multimedia file format used for animated graphics, videos, and interactive content. Adding SWF files as annotations to a PDF document can enhance the visual experience by including interactive elements, multimedia, or animations within the PDF.
+ج: ملف SWF هو تنسيق ملف متعدد الوسائط يُستخدم للرسومات المتحركة ومقاطع الفيديو والمحتوى التفاعلي. يمكن أن تؤدي إضافة ملفات SWF كتعليقات توضيحية إلى مستند PDF إلى تحسين التجربة المرئية من خلال تضمين عناصر تفاعلية أو وسائط متعددة أو رسوم متحركة داخل ملف PDF.
 
-#### Q: Can I add multiple SWF files as annotations to a single PDF page?
+#### س: هل يمكنني إضافة ملفات SWF متعددة كتعليقات توضيحية إلى صفحة PDF واحدة؟
 
-A: Yes, you can add multiple SWF files as annotations to a single PDF page. Each SWF file will be displayed in its designated rectangle on the page.
+ج: نعم، يمكنك إضافة ملفات SWF متعددة كتعليقات توضيحية إلى صفحة PDF واحدة. سيتم عرض كل ملف SWF في المستطيل المخصص له على الصفحة.
 
-#### Q: Are there any limitations or considerations when adding SWF files as annotations?
+#### س: هل هناك أي قيود أو اعتبارات عند إضافة ملفات SWF كتعليقات توضيحية؟
 
-A: While adding SWF files as annotations can enhance PDFs, it's essential to consider the file size and compatibility with different PDF viewers. Some PDF viewers may not support SWF annotations, and large SWF files could increase the PDF's overall size.
+ج: على الرغم من أن إضافة ملفات SWF كتعليقات توضيحية يمكن أن يؤدي إلى تحسين ملفات PDF، إلا أنه من الضروري مراعاة حجم الملف وتوافقه مع برامج عرض PDF المختلفة. قد لا تدعم بعض برامج عرض PDF التعليقات التوضيحية لـ SWF، وقد تؤدي ملفات SWF الكبيرة إلى زيادة الحجم الإجمالي لملف PDF.
 
-#### Q: Can I specify the position and size of the SWF file within the PDF page?
+#### س: هل يمكنني تحديد موضع وحجم ملف SWF داخل صفحة PDF؟
 
-A: Yes, when creating a `ScreenAnnotation` object, you can specify the position and size of the rectangle where the SWF file will be displayed on the PDF page.
+ ج: نعم، عند إنشاء`ScreenAnnotation` الكائن، يمكنك تحديد موضع وحجم المستطيل الذي سيتم فيه عرض ملف SWF على صفحة PDF.
 
-#### Q: Can Aspose.PDF for .NET handle other multimedia formats for annotations?
+#### س: هل يستطيع Aspose.PDF for .NET التعامل مع تنسيقات الوسائط المتعددة الأخرى للتعليقات التوضيحية؟
 
-A: Aspose.PDF for .NET supports adding various multimedia formats as annotations, including audio and video files. You can follow similar steps to add audio or video annotations to your PDF documents.
+ج: يدعم Aspose.PDF for .NET إضافة العديد من تنسيقات الوسائط المتعددة كتعليقات توضيحية، بما في ذلك ملفات الصوت والفيديو. يمكنك اتباع خطوات مماثلة لإضافة تعليقات توضيحية بالصوت أو الفيديو إلى مستندات PDF الخاصة بك.

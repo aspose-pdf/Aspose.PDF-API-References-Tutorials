@@ -1,40 +1,40 @@
 ---
-title: Highlight Character In PDF File
-linktitle: Highlight Character In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to highlight characters in PDF file using Aspose.PDF for .NET.
+title: Markieren Sie Zeichen in der PDF-Datei
+linktitle: Markieren Sie Zeichen in der PDF-Datei
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET Zeichen in einer PDF-Datei hervorheben.
 type: docs
 weight: 240
 url: /de/net/programming-with-text/highlight-character-in-pdf/
 ---
-In this tutorial, we will explain how to highlight characters in a PDF file using the Aspose.PDF library for .NET. We will go through the step-by-step process of highlighting characters in a PDF using the provided C# source code.
+In diesem Tutorial erklären wir, wie Sie Zeichen in einer PDF-Datei mithilfe der Aspose.PDF-Bibliothek für .NET hervorheben. Wir werden den Prozess der Hervorhebung von Zeichen in einer PDF-Datei mithilfe des bereitgestellten C#-Quellcodes Schritt für Schritt durchgehen.
 
-## Requirements
+## Anforderungen
 
-Before you begin, ensure that you have the following:
+Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
-- The Aspose.PDF for .NET library installed.
-- A basic understanding of C# programming.
+- Die Aspose.PDF für .NET-Bibliothek installiert.
+- Ein grundlegendes Verständnis der C#-Programmierung.
 
-## Step 1: Set up the Document Directory
+## Schritt 1: Richten Sie das Dokumentenverzeichnis ein
 
-First, you need to set the path to the directory where your input PDF file is located. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your PDF file.
+ Zuerst müssen Sie den Pfad zu dem Verzeichnis festlegen, in dem sich Ihre Eingabe-PDF-Datei befindet. Ersetzen`"YOUR DOCUMENT DIRECTORY"` im`dataDir` Variable mit dem Pfad zu Ihrer PDF-Datei.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load the PDF Document
+## Schritt 2: Laden Sie das PDF-Dokument
 
-Next, we load the input PDF document using the `Aspose.Pdf.Document` class.
+ Als nächstes laden wir das Eingabe-PDF-Dokument mit`Aspose.Pdf.Document` Klasse.
 
 ```csharp
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(dataDir + "input.pdf");
 ```
 
-## Step 3: Convert PDF to Image
+## Schritt 3: PDF in Bild konvertieren
 
-To highlight characters, we convert the PDF document to an image using the `PdfConverter` class. We set the resolution for the conversion and retrieve the image as a `Bitmap` object.
+ Um Zeichen hervorzuheben, konvertieren wir das PDF-Dokument mit in ein Bild`PdfConverter` Klasse. Wir legen die Auflösung für die Konvertierung fest und rufen das Bild als ab`Bitmap` Objekt.
 
 ```csharp
 int resolution = 150;
@@ -46,34 +46,34 @@ using (MemoryStream ms = new MemoryStream())
      Bitmap bmp = (Bitmap)Bitmap.FromStream(ms);
 ```
 
-## Step 4: Highlight Characters
+## Schritt 4: Markieren Sie Zeichen
 
-We loop through each page of the PDF document and use a `TextFragmentAbsorber` object to find all the words in the page. We then iterate over the text fragments, segments, and characters to highlight them using rectangles.
+ Wir durchlaufen jede Seite des PDF-Dokuments und verwenden a`TextFragmentAbsorber` Objekt, um alle Wörter auf der Seite zu finden. Anschließend durchlaufen wir die Textfragmente, Segmente und Zeichen, um sie mithilfe von Rechtecken hervorzuheben.
 
 ```csharp
 using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
 {
-     // Set scale and transform
+     //Maßstab festlegen und transformieren
      float scale = resolution / 72f;
      gr.Transform = new System.Drawing.Drawing2D.Matrix(scale, 0, 0, -scale, 0, bmp.Height);
 
-     // Loop through pages
+     // Blättern Sie durch die Seiten
      for (int i = 0; i < pdfDocument.Pages.Count; i++)
      {
          Page page = pdfDocument.Pages[1];
 
-         // Find all words in the page
+         // Finden Sie alle Wörter auf der Seite
          TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
          textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
          page. Accept(textFragmentAbsorber);
          TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
 
-         // Loop through text fragments
+         // Durchlaufen Sie Textfragmente
          foreach(TextFragment textFragment in textFragmentCollection)
          {
              if (i == 0)
              {
-                 // Highlight characters
+                 // Markieren Sie Zeichen
                  gr.DrawRectangle(
                      Think.Yellow,
                      (float)textFragment.Position.XIndent,
@@ -81,10 +81,10 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
                      (float)textFragment.Rectangle.Width,
                      (float)textFragment.Rectangle.Height);
 
-                 // Loop through segments
+                 // Durchlaufen Sie die Segmente
                  foreach(TextSegment segment in textFragment.Segments)
                  {
-                     // Highlight segment
+                     // Markieren Sie das Segment
                      gr.DrawRectangle(
                          Think Green,
                          (float)segment.Rectangle.LLX,
@@ -92,10 +92,10 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
                          (float)segment.Rectangle.Width,
                          (float)segment.Rectangle.Height);
 
-                     // Loop through characters
+                     // Durchlaufen Sie die Zeichen
                      foreach(CharInfo characterInfo in segment.Characters)
                      {
-                         // Highlightcharacter
+                         // Markieren Sie den Charakter
                          gr.DrawRectangle(
                              Think.Black,
                              (float)characterInfo.Rectangle.LLx,
@@ -110,20 +110,20 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
 }
 ```
 
-## Step 5: Save the Output Image
+## Schritt 5: Speichern Sie das Ausgabebild
 
-Finally, we save the modified image with the highlighted characters to the specified output file.
+Abschließend speichern wir das geänderte Bild mit den hervorgehobenen Zeichen in der angegebenen Ausgabedatei.
 
 ```csharp
 dataDir = dataDir + "HighlightCharacterInPDF_out.png";
 bmp.Save(dataDir, System.Drawing.Imaging.ImageFormat.Png);
 ```
 
-### Sample source code for Highlight Character In PDF using Aspose.PDF for .NET 
+### Beispielquellcode zum Hervorheben von Zeichen in PDF mit Aspose.PDF für .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Der Pfad zum Dokumentenverzeichnis.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
 	int resolution = 150;
 	Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(dataDir + "input.pdf");
@@ -140,13 +140,13 @@ try
 			for (int i = 0; i < pdfDocument.Pages.Count; i++)
 			{
 				Page page = pdfDocument.Pages[1];
-				// Create TextAbsorber object to find all words
+				// Erstellen Sie ein TextAbsorber-Objekt, um alle Wörter zu finden
 				TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
 				textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
 				page.Accept(textFragmentAbsorber);
-				// Get the extracted text fragments
+				// Holen Sie sich die extrahierten Textfragmente
 				TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-				// Loop through the fragments
+				// Durchlaufe die Fragmente
 				foreach (TextFragment textFragment in textFragmentCollection)
 				{
 					if (i == 0)
@@ -195,42 +195,42 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Abschluss
 
-In this tutorial, you have learned how to highlight characters in a PDF document using the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can highlight characters in a PDF and save the output as an image.
+In diesem Tutorial haben Sie gelernt, wie Sie mithilfe der Aspose.PDF-Bibliothek für .NET Zeichen in einem PDF-Dokument hervorheben. Indem Sie der Schritt-für-Schritt-Anleitung folgen und den bereitgestellten C#-Code ausführen, können Sie Zeichen in einer PDF-Datei hervorheben und die Ausgabe als Bild speichern.
 
-### FAQ's
+### FAQs
 
-#### Q: What is the purpose of the "Highlight Character In PDF File" tutorial?
+#### F: Was ist der Zweck des Tutorials „Zeichen in PDF-Datei hervorheben“?
 
-A: The "Highlight Character In PDF File" tutorial explains how to use the Aspose.PDF library for .NET to highlight characters within a PDF document. The tutorial provides a step-by-step guide and C# source code to achieve this.
+A: Das Tutorial „Zeichen in PDF-Datei hervorheben“ erklärt, wie Sie die Aspose.PDF-Bibliothek für .NET verwenden, um Zeichen in einem PDF-Dokument hervorzuheben. Das Tutorial bietet eine Schritt-für-Schritt-Anleitung und C#-Quellcode, um dies zu erreichen.
 
-#### Q: Why would I want to highlight characters in a PDF document?
+#### F: Warum sollte ich Zeichen in einem PDF-Dokument hervorheben?
 
-A: Highlighting characters in a PDF document can be useful for various purposes, such as emphasizing specific content or making certain text more visible and distinguishable.
+A: Das Hervorheben von Zeichen in einem PDF-Dokument kann für verschiedene Zwecke nützlich sein, beispielsweise um bestimmte Inhalte hervorzuheben oder bestimmte Texte besser sichtbar und unterscheidbar zu machen.
 
-#### Q: How do I set up the document directory?
+#### F: Wie richte ich das Dokumentenverzeichnis ein?
 
-A: To set up the document directory:
+A: So richten Sie das Dokumentenverzeichnis ein:
 
-1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where your input PDF file is located.
+1.  Ersetzen`"YOUR DOCUMENT DIRECTORY"` im`dataDir` Variable mit dem Pfad zu dem Verzeichnis, in dem sich Ihre Eingabe-PDF-Datei befindet.
 
-#### Q: How do I load the PDF document and convert it to an image?
+#### F: Wie lade ich das PDF-Dokument und konvertiere es in ein Bild?
 
-A: In the tutorial, the `Aspose.Pdf.Document` class is used to load the input PDF document. Then, the `PdfConverter` class is employed to convert the PDF document to an image. The resolution of the image is set, and the image is retrieved as a `Bitmap` object.
+ A: Im Tutorial ist das`Aspose.Pdf.Document` Die Klasse wird zum Laden des Eingabe-PDF-Dokuments verwendet. Dann ist die`PdfConverter` Die Klasse wird verwendet, um das PDF-Dokument in ein Bild zu konvertieren. Die Auflösung des Bildes wird eingestellt und das Bild wird als abgerufen`Bitmap` Objekt.
 
-#### Q: How do I highlight characters in the PDF document image?
+#### F: Wie hebe ich Zeichen im PDF-Dokumentbild hervor?
 
-A: The tutorial guides you through the process of looping through each page of the PDF document, finding words using a `TextFragmentAbsorber`, and iterating through text fragments, segments, and characters to highlight them using rectangles.
+A: Das Tutorial führt Sie durch den Prozess des Durchgehens jeder Seite des PDF-Dokuments und der Suche nach Wörtern mithilfe von a`TextFragmentAbsorber`und Durchlaufen von Textfragmenten, Segmenten und Zeichen, um sie mithilfe von Rechtecken hervorzuheben.
 
-#### Q: Can I customize the appearance of the highlighted characters and segments?
+#### F: Kann ich das Erscheinungsbild der hervorgehobenen Zeichen und Segmente anpassen?
 
-A: Yes, you can customize the appearance of the highlighted characters and segments by modifying the colors and styles used in the drawing operations.
+A: Ja, Sie können das Erscheinungsbild der hervorgehobenen Zeichen und Segmente anpassen, indem Sie die Farben und Stile ändern, die bei den Zeichenvorgängen verwendet werden.
 
-#### Q: How do I save the modified image with the highlighted characters?
+#### F: Wie speichere ich das geänderte Bild mit den hervorgehobenen Zeichen?
 
-A: The tutorial demonstrates how to save the modified image with the highlighted characters to the specified output file using the `Save` method of the `Bitmap` class.
+ A: Das Tutorial zeigt, wie Sie das geänderte Bild mit den hervorgehobenen Zeichen mithilfe von in der angegebenen Ausgabedatei speichern`Save` Methode der`Bitmap` Klasse.
 
-#### Q: Is a valid Aspose License required for this tutorial?
+#### F: Ist für dieses Tutorial eine gültige Aspose-Lizenz erforderlich?
 
-A: Yes, a valid Aspose License is required for this tutorial to work correctly. You can purchase a full license or obtain a 30-day temporary license from the Aspose website.
+A: Ja, eine gültige Aspose-Lizenz ist erforderlich, damit dieses Tutorial ordnungsgemäß funktioniert. Sie können eine Volllizenz erwerben oder eine 30-tägige temporäre Lizenz auf der Aspose-Website erwerben.

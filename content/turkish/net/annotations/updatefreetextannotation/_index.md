@@ -1,42 +1,42 @@
 ---
-title: Update Free Text PDF Annotation
-linktitle: Update Free Text PDF Annotation
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to update free text PDF annotation feature of Aspose.PDF for .NET using C# source code.
+title: Serbest Metin PDF Ek Açıklamasını Güncelle
+linktitle: Serbest Metin PDF Ek Açıklamasını Güncelle
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET'in serbest metin PDF açıklama özelliğini C# kaynak kodunu kullanarak nasıl güncelleyeceğinizi öğrenin.
 type: docs
 weight: 160
 url: /tr/net/annotations/updatefreetextannotation/
 ---
-In this article, we will provide a step-by-step guide to explain the following C# source code of Update Free Text Annotation feature of Aspose.PDF for .NET. We will go through each line of code and explain what it does, so even beginners can understand it.
+Bu makalede Aspose.PDF for .NET'in Serbest Metin Açıklamasını Güncelle özelliğinin aşağıdaki C# kaynak kodunu açıklayan adım adım bir kılavuz sunacağız. Yeni başlayanların bile anlayabilmesi için her kod satırını inceleyip ne işe yaradığını açıklayacağız.
 
-Now let's explain each line of the code above step by step:
+Şimdi yukarıdaki kodun her satırını adım adım açıklayalım:
 
-## Step 1: Setting the document directory
+## Adım 1: Belge dizinini ayarlama
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-In this line, we are setting the path to the directory that contains the PDF document that we want to update.
+Bu satırda güncellemek istediğimiz PDF belgesinin bulunduğu dizinin yolunu ayarlıyoruz.
 
-## Step 2: Opening the PDF document
+## Adım 2: PDF belgesini açma
 
 ```csharp
 Document doc1 = new Document(dataDir + "input.pdf");
 ```
 
-Here we are opening the PDF document using Aspose.PDF's `Document` class and specifying the path to the input PDF file.
+ Burada Aspose.PDF'i kullanarak PDF belgesini açıyoruz.`Document`sınıf ve giriş PDF dosyasının yolunu belirtme.
 
-## Step 3: Updating the font size and color of the free text annotation
+## 3. Adım: Serbest metin açıklamasının yazı tipi boyutunu ve rengini güncelleme
 
 ```csharp
 (doc1.Pages[1].Annotations[0] as FreeTextAnnotation).TextStyle.FontSize = 18;
 (doc1.Pages[1].Annotations[0] as FreeTextAnnotation).TextStyle.Color = System.Drawing.Color.Green;
 ```
 
-In this step, we are updating the font size and color of the first free text annotation on the second page of the PDF document. We are doing this by accessing the `TextStyle` property of the `FreeTextAnnotation` object and setting its `FontSize` and `Color` properties to 18 and Green, respectively.
+ Bu adımda PDF belgesinin ikinci sayfasındaki ilk serbest metin açıklamasının yazı tipi boyutunu ve rengini güncelliyoruz. Bunu şuraya erişerek yapıyoruz:`TextStyle` mülkiyeti`FreeTextAnnotation` nesne ve onun ayarlanması`FontSize` Ve`Color` özellikleri sırasıyla 18 ve Green'e.
 
-## Step 4: Handling Exceptions
+## Adım 4: İstisnaları Ele Alma
 
 ```csharp
 catch (Exception ex)
@@ -45,22 +45,22 @@ catch (Exception ex)
 }
 ```
 
-This is a standard `try-catch` block that catches any exceptions that may occur while executing the code and prints the error message to the console.
+ Bu bir standart`try-catch` Kodun yürütülmesi sırasında oluşabilecek istisnaları yakalayan ve hata mesajını konsola yazdıran blok.
 
-### Example source code for Update Free Text Annotation using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak Serbest Metin Açıklamasını Güncelleme için örnek kaynak kodu
 
-Before diving into the explanation of the code, let's first take a look at the code itself. This code example shows how to update the properties of a free text annotation in a PDF document using Aspose.PDF for .NET.
+Kodun açıklamasına geçmeden önce kodun kendisine bir göz atalım. Bu kod örneği, Aspose.PDF for .NET kullanılarak bir PDF belgesindeki serbest metin açıklamasının özelliklerinin nasıl güncelleneceğini gösterir.
 
 ```csharp
 try
 {
-    // The path to the documents directory.
+    // Belgeler dizininin yolu.
     string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-    // Open document
+    // Belgeyi aç
     Document doc1 = new Document(dataDir + "input.pdf");
 
-    // Set font size and color of the annotation:
+    // Ek açıklamanın yazı tipi boyutunu ve rengini ayarlayın:
     (doc1.Pages[1].Annotations[0] as FreeTextAnnotation).TextStyle.FontSize = 18;
     (doc1.Pages[1].Annotations[0] as FreeTextAnnotation).TextStyle.Color = System.Drawing.Color.Green;
                 
@@ -71,24 +71,24 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Çözüm
 
-In this article, we have provided a step-by-step guide to explain the C# source code of the Update Free Text Annotation feature of Aspose.PDF for .NET. By following these steps, you can easily update the font size and color of free text annotations in your PDF documents using Aspose.PDF for .NET.
+Bu makalede, Aspose.PDF for .NET'in Serbest Metin Açıklamasını Güncelle özelliğinin C# kaynak kodunu açıklayan adım adım bir kılavuz sunduk. Bu adımları izleyerek Aspose.PDF for .NET'i kullanarak PDF belgelerinizdeki serbest metin açıklamalarının yazı tipi boyutunu ve rengini kolayca güncelleyebilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET nedir?
 
-A: Aspose.PDF for .NET is a robust PDF manipulation and processing library for .NET applications. It allows developers to create, edit, convert, and manipulate PDF documents programmatically.
+C: Aspose.PDF for .NET, .NET uygulamalarına yönelik güçlü bir PDF işleme ve işleme kütüphanesidir. Geliştiricilerin PDF belgelerini programlı olarak oluşturmasına, düzenlemesine, dönüştürmesine ve değiştirmesine olanak tanır.
 
-#### Q: Can I update the properties of a free text annotation in a PDF document using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'i kullanarak bir PDF belgesindeki serbest metin açıklamasının özelliklerini güncelleyebilir miyim?
 
-A: Yes, Aspose.PDF for .NET provides functionality to update the properties of free text annotations in a PDF document. This includes changing the font size, font color, and other text styling options.
+C: Evet, Aspose.PDF for .NET, bir PDF belgesindeki serbest metin açıklamalarının özelliklerini güncelleme işlevi sağlar. Buna yazı tipi boyutunun, yazı tipi renginin ve diğer metin stili seçeneklerinin değiştirilmesi de dahildir.
 
-#### Q: How do I specify the annotation I want to update in the PDF document?
+#### S: PDF belgesinde güncellemek istediğim açıklamayı nasıl belirtebilirim?
 
-A: To update the properties of a specific annotation in the PDF document, you can access the annotation object using its index in the `Annotations` collection of a particular page. Then, you can modify its properties as needed.
+C: PDF belgesindeki belirli bir ek açıklamanın özelliklerini güncellemek için, ek açıklama nesnesine,`Annotations` belirli bir sayfanın toplanması. Daha sonra özelliklerini gerektiği gibi değiştirebilirsiniz.
 
-#### Q: What happens if an error occurs during the update process?
+#### S: Güncelleme işlemi sırasında bir hata oluşursa ne olur?
 
-A: If an error occurs during the update process, the code uses a `try-catch` block to handle the exception and prints the error message to the console. This helps to identify and troubleshoot any issues that may arise.
+ C: Güncelleme işlemi sırasında bir hata oluşursa kod bir`try-catch` istisnayı işlemek için bloğu çalıştırır ve hata mesajını konsola yazdırır. Bu, ortaya çıkabilecek sorunların belirlenmesine ve giderilmesine yardımcı olur.

@@ -1,74 +1,74 @@
 ---
-title: Replace Missing Fonts
-linktitle: Replace Missing Fonts
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to replace missing fonts in a PDF file using Aspose.PDF for .NET.
+title: Заменить отсутствующие шрифты
+linktitle: Заменить отсутствующие шрифты
+second_title: Справочник по Aspose.PDF для .NET API
+description: Пошаговое руководство по замене отсутствующих шрифтов в файле PDF с помощью Aspose.PDF для .NET.
 type: docs
 weight: 260
 url: /ru/net/document-conversion/replace-missing-fonts/
 ---
-In this tutorial, we will walk you through the process of replacing missing fonts in a PDF file using Aspose.PDF for .NET. When you open a PDF file on a machine where a specific font is missing, there may be font display issues. In such cases, it is possible to substitute the missing font with another font available on the machine. By following the steps below, you will be able to replace missing fonts in a PDF file.
+В этом уроке мы покажем вам процесс замены отсутствующих шрифтов в PDF-файле с помощью Aspose.PDF для .NET. Когда вы открываете PDF-файл на компьютере, где отсутствует определенный шрифт, могут возникнуть проблемы с отображением шрифта. В таких случаях можно заменить отсутствующий шрифт другим шрифтом, имеющимся на компьютере. Выполнив следующие действия, вы сможете заменить отсутствующие шрифты в PDF-файле.
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## Предварительные условия
+Прежде чем начать, убедитесь, что вы соответствуете следующим предварительным условиям:
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- Базовые знания языка программирования C#.
+- Библиотека Aspose.PDF для .NET, установленная в вашей системе.
+- Среда разработки, такая как Visual Studio.
 
-## Step 1: Finding the missing font
-The first step is to find the missing font in the PDF file. Use the following code:
+## Шаг 1. Найдите недостающий шрифт
+Первый шаг — найти недостающий шрифт в PDF-файле. Используйте следующий код:
 
 ```csharp
-// Path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 Aspose.Pdf.Text.Font originalFont = null;
 try
 {
-     // Find the original font
+     // Найдите оригинальный шрифт
      originalFont = FontRepository.FindFont("AgencyFB");
 }
 catch(Exception)
 {
-     // The font is missing on the destination machine
-     // Add simple font substitution
+     // Шрифт отсутствует на целевом компьютере
+     // Добавьте простую замену шрифта
      FontRepository.Substitutions.Add(new SimpleFontSubstitution("AgencyFB", "Arial"));
 }
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where your PDF file is located.
+ Обязательно замените`"YOUR DOCUMENTS DIRECTORY"` с фактическим каталогом, в котором находится ваш PDF-файл.
 
-## Step 2: Replace missing font
-Next, we'll replace the missing font with another available font. Use the following code:
+## Шаг 2. Замените отсутствующий шрифт
+Далее мы заменим отсутствующий шрифт другим доступным шрифтом. Используйте следующий код:
 
 ```csharp
 var fileNew = new FileInfo(dataDir + "newfile_out.pdf");
 var pdf = new Document(dataDir + "input.pdf");
 
-// Convert the PDF file to PDF/A format with error removal
+// Конвертируйте PDF-файл в формат PDF/A с удалением ошибок.
 pdf.Convert(dataDir + "log.xml", PdfFormat.PDF_A_1B, ConvertErrorAction.Delete);
 
-// Save the resulting PDF file
+// Сохраните полученный PDF-файл.
 pdf.Save(fileNew.FullName);
 ```
 
-Be sure to replace `"input.pdf"` with the actual path to your original PDF file and `"newfile_out.pdf"` with the desired name for the resulting PDF file.
+ Обязательно замените`"input.pdf"` с фактическим путем к исходному PDF-файлу и`"newfile_out.pdf"` с желаемым именем полученного PDF-файла.
 
-## Step 3: Saving the resulting PDF file
-Finally, we'll save the resulting PDF file with the replaced font. Use the following code:
+## Шаг 3. Сохранение полученного PDF-файла.
+Наконец, мы сохраним полученный PDF-файл с замененным шрифтом. Используйте следующий код:
 
 ```csharp
-// Save the resulting PDF file
+// Сохраните полученный PDF-файл.
 pdf.Save(fileNew.FullName);
 ```
 
-Ensures make sure you have set the correct destination path for the resulting PDF file.
+Гарантирует, что вы установили правильный путь назначения для полученного PDF-файла.
 
-### Example source code for Replace Missing Fonts using Aspose.PDF for .NET
+### Пример исходного кода для замены отсутствующих шрифтов с помощью Aspose.PDF для .NET
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 Aspose.Pdf.Text.Font originalFont = null;
@@ -78,7 +78,7 @@ try
 }
 catch (Exception)
 {
-	// Font is missing on destination machine
+	// Шрифт отсутствует на целевом компьютере
 	FontRepository.Substitutions.Add(new SimpleFontSubstitution("AgencyFB", "Arial"));
 }
 var fileNew = new FileInfo(dataDir + "newfile_out.pdf");
@@ -87,27 +87,27 @@ pdf.Convert( dataDir +  "log.xml", PdfFormat.PDF_A_1B, ConvertErrorAction.Delete
 pdf.Save(fileNew.FullName);
 ```
 
-## Conclusion
-In this tutorial, we covered the step-by-step process of replacing missing fonts in a PDF file using Aspose.PDF for .NET. By following the instructions outlined above, you will be able to successfully replace missing fonts in your PDF file.
+## Заключение
+В этом уроке мы рассмотрели пошаговый процесс замены отсутствующих шрифтов в файле PDF с помощью Aspose.PDF для .NET. Следуя инструкциям, изложенным выше, вы сможете успешно заменить отсутствующие шрифты в вашем PDF-файле.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is Aspose.PDF for .NET?
+#### Вопрос: Что такое Aspose.PDF для .NET?
 
-A: Aspose.PDF for .NET is a powerful library that enables developers to work with PDF documents in C# applications. It offers various functionalities, including the ability to replace missing fonts in PDF files.
+О: Aspose.PDF for .NET — это мощная библиотека, позволяющая разработчикам работать с PDF-документами в приложениях C#. Он предлагает различные функции, включая возможность замены отсутствующих шрифтов в файлах PDF.
 
-#### Q: Why would I encounter missing fonts in a PDF file?
+#### Вопрос: Почему я могу столкнуться с отсутствием шрифтов в PDF-файле?
 
-A: Missing fonts in a PDF file can occur when the file is opened on a machine that does not have the necessary fonts installed. This can lead to font substitution, affecting the visual appearance of the document.
+О: Отсутствующие шрифты в PDF-файле могут возникнуть, если файл открыт на компьютере, на котором не установлены необходимые шрифты. Это может привести к подмене шрифта, влияющей на внешний вид документа.
 
-#### Q: How can I find and replace missing fonts in a PDF file using Aspose.PDF for .NET?
+#### Вопрос: Как найти и заменить отсутствующие шрифты в PDF-файле с помощью Aspose.PDF для .NET?
 
-A: To find and replace missing fonts, you can use the `FontRepository.FindFont` method to check for the presence of the required font. If the font is missing, you can add a font substitution using the `FontRepository.Substitutions` property.
+ О: Чтобы найти и заменить отсутствующие шрифты, вы можете использовать`FontRepository.FindFont` метод проверки наличия необходимого шрифта. Если шрифт отсутствует, вы можете добавить замену шрифта, используя`FontRepository.Substitutions` свойство.
 
-#### Q: Can I customize the font substitution process?
+#### Вопрос: Могу ли я настроить процесс замены шрифта?
 
-A: Yes, you can customize the font substitution process by specifying a different font for the substitution. In the code provided, we used Arial as the substitute for the missing "AgencyFB" font, but you can choose a different font according to your preferences.
+О: Да, вы можете настроить процесс замены шрифта, указав для замены другой шрифт. В предоставленном коде мы использовали Arial вместо отсутствующего шрифта «AgencyFB», но вы можете выбрать другой шрифт в соответствии со своими предпочтениями.
 
-#### Q: How can I ensure the accuracy of font rendering after substitution?
+#### Вопрос: Как обеспечить точность отрисовки шрифта после замены?
 
-A: Aspose.PDF for .NET provides robust font handling capabilities, ensuring accurate font rendering after substitution. You can preview the resulting PDF file to verify the font replacement.
+О: Aspose.PDF для .NET предоставляет надежные возможности обработки шрифтов, гарантируя точную визуализацию шрифтов после замены. Вы можете просмотреть полученный PDF-файл, чтобы проверить замену шрифта.

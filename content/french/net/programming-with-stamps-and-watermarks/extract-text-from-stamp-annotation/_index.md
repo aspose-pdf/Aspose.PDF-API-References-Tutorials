@@ -1,57 +1,57 @@
 ---
-title: Extract Text From Stamp Annotation
-linktitle: Extract Text From Stamp Annotation
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to easily extract text from a stamp annotation in your PDF documents with Aspose.PDF for .NET.
+title: Extraire le texte de l'annotation du tampon
+linktitle: Extraire le texte de l'annotation du tampon
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment extraire facilement le texte d'une annotation de tampon dans vos documents PDF avec Aspose.PDF pour .NET.
 type: docs
 weight: 80
 url: /fr/net/programming-with-stamps-and-watermarks/extract-text-from-stamp-annotation/
 ---
-In this tutorial, we will take you step by step on how to extract text from a stamp annotation in a PDF document using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to extract the text from a specific stamp annotation on a given page of the PDF document.
+Dans ce didacticiel, nous vous expliquerons étape par étape comment extraire le texte d'une annotation de tampon dans un document PDF à l'aide d'Aspose.PDF pour .NET. Nous allons vous montrer comment utiliser le code source C# fourni pour extraire le texte d'une annotation de tampon spécifique sur une page donnée du document PDF.
 
-## Step 1: Setting up the environment
+## Étape 1 : Configuration de l'environnement
 
-Before you begin, make sure you have the following:
+Avant de commencer, assurez-vous d'avoir les éléments suivants :
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Un environnement de développement .NET installé.
+- La bibliothèque Aspose.PDF pour .NET téléchargée et référencée dans votre projet.
 
-## Step 2: Loading the PDF document
+## Étape 2 : Chargement du document PDF
 
-The first step is to load the existing PDF document into your project. Here's how:
+La première étape consiste à charger le document PDF existant dans votre projet. Voici comment:
 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Load the document
+// Charger le document
 Document doc = new Document(dataDir + "test.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+Assurez-vous de remplacer « VOTRE RÉPERTOIRE DE DOCUMENTS » par le chemin d'accès réel au répertoire où se trouve votre document PDF.
 
-## Step 3: Extract text from stamp annotation
+## Étape 3 : Extraire le texte de l'annotation du tampon
 
-Now that you have loaded the PDF document, you can extract the text from the specific stamp annotation. Here's how:
+Maintenant que vous avez chargé le document PDF, vous pouvez extraire le texte de l'annotation spécifique du tampon. Voici comment:
 
 ```csharp
-// Retrieve buffer annotation
+// Récupérer l'annotation du tampon
 StampAnnotation annot = doc.Pages[1].Annotations[3] as StampAnnotation;
 
-// Create a text absorber
+// Créer un absorbeur de texte
 TextAbsorber ta = new TextAbsorber();
 
-// Visit the appearance of the annotation
+// Visitez l'apparence de l'annotation
 XForm ap = annot. Appearance["N"];
 ta.Visit(ap);
 
-// Display the extracted text
+// Afficher le texte extrait
 Console.WriteLine(ta.Text);
 ```
 
-The code above retrieves the stamp annotation from the specified page of the PDF document and then uses a text absorber to extract the text from the appearance of the annotation. The extracted text is then displayed in the output.
+Le code ci-dessus récupère l'annotation du tampon de la page spécifiée du document PDF, puis utilise un absorbeur de texte pour extraire le texte de l'apparence de l'annotation. Le texte extrait est ensuite affiché dans la sortie.
 
-### Sample source code for Extract Text From Stamp Annotation using Aspose.PDF for .NET 
+### Exemple de code source pour extraire le texte d’une annotation de tampon à l’aide d’Aspose.PDF pour .NET 
 ```csharp
 
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -66,42 +66,42 @@ Console.WriteLine(ta.Text);
 
 ## Conclusion
 
-Congratulation ! You have learned how to extract text from a stamp annotation in a PDF document using Aspose.PDF for .NET. You can now use this method to extract text from other annotations in your PDF documents.
+Félicitation ! Vous avez appris à extraire le texte d'une annotation de tampon dans un document PDF à l'aide d'Aspose.PDF pour .NET. Vous pouvez désormais utiliser cette méthode pour extraire le texte d'autres annotations dans vos documents PDF.
 
-### FAQ's for extract text from stamp annotation
+### FAQ pour extraire le texte d'une annotation de tampon
 
-#### Q: What is a stamp annotation in a PDF document, and why would I need to extract text from it?
+#### Q : Qu'est-ce qu'une annotation de tampon dans un document PDF et pourquoi aurais-je besoin d'en extraire du texte ?
 
-A: A stamp annotation in a PDF document is a graphical element that can be used to provide additional information, such as a watermark or a rubber stamp. Extracting text from a stamp annotation is useful when you want to retrieve text-based content from these annotations, which can include notes, labels, or other textual information.
+R : Une annotation de tampon dans un document PDF est un élément graphique qui peut être utilisé pour fournir des informations supplémentaires, comme un filigrane ou un tampon. L'extraction de texte à partir d'une annotation de tampon est utile lorsque vous souhaitez récupérer du contenu textuel à partir de ces annotations, qui peut inclure des notes, des étiquettes ou d'autres informations textuelles.
 
-#### Q: How does the provided C# source code extract text from a stamp annotation?
+#### Q : Comment le code source C# fourni extrait-il le texte d'une annotation de tampon ?
 
-A: The provided source code demonstrates how to extract text from a specific stamp annotation on a given page of a PDF document. It uses the Aspose.PDF library to retrieve the stamp annotation, visit its appearance using a `TextAbsorber`, and then displays the extracted text in the output.
+ R : Le code source fourni montre comment extraire le texte d'une annotation de tampon spécifique sur une page donnée d'un document PDF. Il utilise la bibliothèque Aspose.PDF pour récupérer l'annotation du tampon, visiter son apparence à l'aide d'un`TextAbsorber`, puis affiche le texte extrait dans la sortie.
 
-#### Q: Can I extract text from different types of annotations using a similar approach?
+#### Q : Puis-je extraire du texte à partir de différents types d’annotations en utilisant une approche similaire ?
 
-A: Yes, you can use a similar approach to extract text from other types of annotations, such as text annotations or popup annotations. You would need to modify the code to target the specific type of annotation you want to extract text from.
+R : Oui, vous pouvez utiliser une approche similaire pour extraire du texte à partir d'autres types d'annotations, telles que des annotations de texte ou des annotations contextuelles. Vous devrez modifier le code pour cibler le type spécifique d'annotation dont vous souhaitez extraire le texte.
 
-#### Q: What is the purpose of the `TextAbsorber` class in the code?
+####  Q : Quel est le but du`TextAbsorber` class in the code?
 
-A: The `TextAbsorber` class is used to extract text from different parts of a PDF document, including stamp annotations. It "absorbs" or captures the text content found in the specified area or element of the PDF.
+ R : Le`TextAbsorber` La classe est utilisée pour extraire le texte de différentes parties d'un document PDF, y compris les annotations de tampon. Il « absorbe » ou capture le contenu textuel trouvé dans la zone ou l'élément spécifié du PDF.
 
-#### Q: How do I identify the specific stamp annotation I want to extract text from?
+#### Q : Comment puis-je identifier l'annotation de tampon spécifique dont je souhaite extraire le texte ?
 
-A: In the provided code, the stamp annotation is identified by accessing the `Annotations` collection of a specific page and using the index to retrieve the desired annotation. You can adjust the index or use other criteria to identify the target annotation.
+ R : Dans le code fourni, l'annotation du tampon est identifiée en accédant au`Annotations` collection d'une page spécifique et en utilisant l'index pour récupérer l'annotation souhaitée. Vous pouvez ajuster l'index ou utiliser d'autres critères pour identifier l'annotation cible.
 
-#### Q: Can I extract text from multiple stamp annotations on the same page?
+#### Q : Puis-je extraire le texte de plusieurs annotations de tampon sur la même page ?
 
-A: Yes, you can modify the code to loop through the `Annotations` collection of a page, filter out stamp annotations, and extract text from each of them.
+ R : Oui, vous pouvez modifier le code pour parcourir le`Annotations`collection d'une page, filtrer les annotations de tampon et extraire le texte de chacune d'elles.
 
-#### Q: What if the stamp annotation has no textual content? Will the code still work?
+#### Q : Que se passe-t-il si l'annotation du tampon n'a aucun contenu textuel ? Le code fonctionnera-t-il toujours ?
 
-A: The code will still work, but it will extract and display an empty string if the stamp annotation's appearance does not contain any textual content.
+R : Le code fonctionnera toujours, mais il extraira et affichera une chaîne vide si l'apparence de l'annotation du tampon ne contient aucun contenu textuel.
 
-#### Q: How can I save the extracted text to a file instead of displaying it in the output?
+#### Q : Comment puis-je enregistrer le texte extrait dans un fichier au lieu de l'afficher dans la sortie ?
 
-A: You can modify the code to save the extracted text to a file instead of displaying it in the console. Simply replace the `Console.WriteLine` statement with code to write the text to a file.
+ R : Vous pouvez modifier le code pour enregistrer le texte extrait dans un fichier au lieu de l'afficher dans la console. Remplacez simplement le`Console.WriteLine` instruction avec du code pour écrire le texte dans un fichier.
 
-#### Q: How can I use the extracted text in further processing or analysis?
+#### Q : Comment puis-je utiliser le texte extrait dans un traitement ou une analyse ultérieur ?
 
-A: Once you have extracted the text using the provided method, you can store it in a variable, manipulate it, analyze it, or integrate it into other parts of your application as needed.
+R : Une fois que vous avez extrait le texte à l'aide de la méthode fournie, vous pouvez le stocker dans une variable, le manipuler, l'analyser ou l'intégrer dans d'autres parties de votre application selon vos besoins.

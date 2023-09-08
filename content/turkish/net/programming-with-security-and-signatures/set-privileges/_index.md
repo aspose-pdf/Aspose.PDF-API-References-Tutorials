@@ -1,117 +1,117 @@
 ---
-title: Set Privileges In PDF File
-linktitle: Set Privileges In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily set access privileges in PDF file with Aspose.PDF for .NET.
+title: PDF Dosyasında Ayrıcalıkları Ayarlayın
+linktitle: PDF Dosyasında Ayrıcalıkları Ayarlayın
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile PDF dosyasındaki erişim ayrıcalıklarını kolayca ayarlayın.
 type: docs
 weight: 100
 url: /tr/net/programming-with-security-and-signatures/set-privileges/
 ---
-It is often necessary to set specific access privileges in PDF file. With Aspose.PDF for .NET, you can easily set access privileges using the following source code:
+PDF dosyasında genellikle belirli erişim ayrıcalıklarının ayarlanması gerekir. Aspose.PDF for .NET ile aşağıdaki kaynak kodunu kullanarak erişim ayrıcalıklarını kolayca ayarlayabilirsiniz:
 
-## Step 1: Import required libraries
+## 1. Adım: Gerekli kitaplıkları içe aktarın
 
-Before you begin, you need to import the necessary libraries for your C# project. Here are the necessary import directives:
+Başlamadan önce C# projeniz için gerekli kütüphaneleri içe aktarmanız gerekir. Gerekli ithalat direktifleri şunlardır:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## 2. Adım: Belgeler klasörünün yolunu ayarlayın
 
-In this step, you need to specify the path to the folder containing the PDF file you want to edit. Replace `"YOUR DOCUMENTS DIRECTORY"` in the following code with the actual path to your documents folder:
+ Bu adımda düzenlemek istediğiniz PDF dosyasının bulunduğu klasörün yolunu belirtmeniz gerekiyor. Yer değiştirmek`"YOUR DOCUMENTS DIRECTORY"`belgeler klasörünüzün gerçek yolunu içeren aşağıdaki kodda:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 3: Load source PDF file
+## 3. Adım: Kaynak PDF dosyasını yükleyin
 
-Now we will load the source PDF file using the following code:
+Şimdi kaynak PDF dosyasını aşağıdaki kodu kullanarak yükleyeceğiz:
 
 ```csharp
 using (Document document = new Document(dataDir + "input.pdf"))
 ```
 
-## Step 4: Set Access Privileges
+## 4. Adım: Erişim Ayrıcalıklarını Ayarlayın
 
-In this step, we will instantiate the `DocumentPrivilege` object to set the desired access privileges. You can apply restrictions on all privileges using `DocumentPrivilege.ForbidAll`. For example, if you want to only allow screen reading, you can set `AllowScreenReaders` to `true`. Here is the corresponding code:
+ Bu adımda, örneği oluşturacağız.`DocumentPrivilege` İstenilen erişim ayrıcalıklarını ayarlamak için nesne. Kullanarak tüm ayrıcalıklara kısıtlamalar uygulayabilirsiniz.`DocumentPrivilege.ForbidAll` . Örneğin, yalnızca ekran okumaya izin vermek istiyorsanız,`AllowScreenReaders` ile`true`. İşte ilgili kod:
 
 ```csharp
 DocumentPrivilege documentPrivilege = DocumentPrivilege.ForbidAll;
 documentPrivilege.AllowScreenReaders = true;
 ```
 
-## Step 5: Encrypt and save the document
+## 5. Adım: Belgeyi şifreleyin ve kaydedin
 
-Finally, we can encrypt the PDF document with a user and owner password using `Encrypt` and specifying the desired encryption algorithm. Then we save the updated document. Here is the corresponding code:
+ Son olarak, PDF belgesini bir kullanıcı ve sahip şifresiyle şifreleyebiliriz.`Encrypt` ve istenilen şifreleme algoritmasının belirtilmesi. Daha sonra güncellenen belgeyi kaydediyoruz. İşte ilgili kod:
 
 ```csharp
 document.Encrypt("user", "owner", documentPrivilege, CryptoAlgorithm.AESx128, false);
 document.Save(dataDir + "SetPrivileges_out.pdf");
 ```
 
-### Sample source code for Set Privileges using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Ayrıcalıkları Ayarlamak için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Load a source PDF file
+// Kaynak PDF dosyasını yükleyin
 using (Document document = new Document(dataDir + "input.pdf"))
 {
-	// Instantiate Document Privileges object
-	// Apply restrictions on all privileges
+	// Belge Ayrıcalıkları nesnesini somutlaştır
+	// Tüm ayrıcalıklara kısıtlamalar uygula
 	DocumentPrivilege documentPrivilege = DocumentPrivilege.ForbidAll;
-	// Only allow screen reading
+	// Yalnızca ekran okumaya izin ver
 	documentPrivilege.AllowScreenReaders = true;
-	// Encrypt the file with User and Owner password.
-	// Need to set the password, so that once the user views the file with user password,
-	// Only screen reading option is enabled
+	// Dosyayı Kullanıcı ve Sahip parolasıyla şifreleyin.
+	// Parolayı ayarlamanız gerekir, böylece kullanıcı dosyayı kullanıcı parolasıyla görüntülediğinde,
+	// Yalnızca ekran okuma seçeneği etkin
 	document.Encrypt("user", "owner", documentPrivilege, CryptoAlgorithm.AESx128, false);
-	// Save updated document
+	// Güncellenen belgeyi kaydet
 	document.Save(dataDir + "SetPrivileges_out.pdf");
 }
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulation ! You now have a step-by-step guide to set access privileges for a PDF document using Aspose.PDF for .NET. You can use this code to apply specific restrictions and protect your PDF files as needed.
+Tebrikler! Artık Aspose.PDF for .NET kullanarak bir PDF belgesine erişim ayrıcalıklarını ayarlamak için adım adım kılavuza sahipsiniz. Gerektiğinde belirli kısıtlamalar uygulamak ve PDF dosyalarınızı korumak için bu kodu kullanabilirsiniz.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced PDF document security and access privilege management features.
+Gelişmiş PDF belge güvenliği ve erişim ayrıcalığı yönetimi özellikleri hakkında daha fazla bilgi için resmi Aspose.PDF belgelerine göz atmayı unutmayın.
 
-### FAQ's for set privileges in PDF file
+### PDF dosyasında ayrıcalıkları ayarlamak için SSS
 
-#### Q: Why would I need to set access privileges in a PDF file?
+#### S: Neden bir PDF dosyasında erişim ayrıcalıklarını ayarlamam gerekiyor?
 
-A: Setting access privileges allows you to control how users interact with your PDF documents. You can restrict actions like printing, copying, and editing to enhance document security.
+C: Erişim ayrıcalıklarını ayarlamak, kullanıcıların PDF belgelerinizle nasıl etkileşimde bulunacağını kontrol etmenize olanak tanır. Belge güvenliğini artırmak için yazdırma, kopyalama ve düzenleme gibi eylemleri kısıtlayabilirsiniz.
 
-#### Q: How can I benefit from setting access privileges using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'i kullanarak erişim ayrıcalıklarını ayarlamaktan nasıl yararlanabilirim?
 
-A: Aspose.PDF for .NET provides a straightforward way to implement access privileges, giving you the power to customize user permissions and protect sensitive content.
+C: Aspose.PDF for .NET, erişim ayrıcalıklarını uygulamanın basit bir yolunu sunarak size kullanıcı izinlerini özelleştirme ve hassas içeriği koruma gücü verir.
 
-#### Q: Can I apply different privileges for different users?
+#### S: Farklı kullanıcılara farklı ayrıcalıklar uygulayabilir miyim?
 
-A: Yes, you can set specific access privileges for different user groups, enabling you to fine-tune document access based on user roles.
+C: Evet, farklı kullanıcı grupları için özel erişim ayrıcalıkları belirleyerek kullanıcı rollerine göre belge erişiminde ince ayar yapabilirsiniz.
 
-#### Q: What are some common access privileges I can set?
+#### S: Ayarlayabileceğim bazı genel erişim ayrıcalıkları nelerdir?
 
-A: Common access privileges include allowing or forbidding actions such as printing, copying text or images, modifying the document, and filling form fields.
+C: Ortak erişim ayrıcalıkları arasında yazdırma, metin veya görüntüleri kopyalama, belgeyi değiştirme ve form alanlarını doldurma gibi eylemlere izin verme veya yasaklama yer alır.
 
-#### Q: How does setting screen reading privilege enhance document accessibility?
+#### S: Ekran okuma ayrıcalığının ayarlanması belge erişilebilirliğini nasıl artırır?
 
-A: Enabling screen reading privilege ensures that users can access the content of the PDF using screen readers, enhancing accessibility for visually impaired individuals.
+C: Ekran okuma ayrıcalığının etkinleştirilmesi, kullanıcıların ekran okuyucuları kullanarak PDF içeriğine erişebilmesini sağlar ve görme engelli kişiler için erişilebilirliği artırır.
 
-#### Q: Can I set password protection along with access privileges?
+#### S: Erişim ayrıcalıklarıyla birlikte şifre koruması da ayarlayabilir miyim?
 
-A: Absolutely, you can encrypt your PDF document with passwords while applying access privileges. This provides an extra layer of security.
+C: Kesinlikle, erişim ayrıcalıklarını uygularken PDF belgenizi şifrelerle şifreleyebilirsiniz. Bu ekstra bir güvenlik katmanı sağlar.
 
-#### Q: Is there a way to revoke access privileges after applying them?
+#### S: Erişim ayrıcalıklarını uyguladıktan sonra iptal etmenin bir yolu var mı?
 
-A: Once access privileges are applied and the document is encrypted, users will need the appropriate password to access the content. The privileges can be modified by altering the source code.
+C: Erişim ayrıcalıkları uygulanıp belge şifrelendikten sonra kullanıcıların içeriğe erişmek için uygun parolaya ihtiyacı olacaktır. Ayrıcalıklar kaynak kodu değiştirilerek değiştirilebilir.
 
-#### Q: Are there any performance considerations when setting access privileges?
+#### S: Erişim ayrıcalıklarını ayarlarken performansla ilgili hususlar var mı?
 
-A: The performance impact is minimal, as the access privilege settings are applied during encryption, which is a swift process.
+C: Erişim ayrıcalığı ayarları hızlı bir işlem olan şifreleme sırasında uygulandığından performans etkisi minimum düzeydedir.
 
-#### Q: Can I apply access privileges to an existing PDF document?
+#### S: Erişim ayrıcalıklarını mevcut bir PDF belgesine uygulayabilir miyim?
 
-A: Yes, you can use Aspose.PDF for .NET to apply access privileges to both new and existing PDF documents.
+C: Evet, hem yeni hem de mevcut PDF belgelerine erişim ayrıcalıkları uygulamak için Aspose.PDF for .NET'i kullanabilirsiniz.

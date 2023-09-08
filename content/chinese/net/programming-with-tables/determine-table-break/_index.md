@@ -1,28 +1,28 @@
 ---
-title: Determine Table Break In PDF File
-linktitle: Determine Table Break In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to determine table breaks in PDF file using Aspose.PDF for .NET.
+title: 确定 PDF 文件中的表格中断
+linktitle: 确定 PDF 文件中的表格中断
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 确定 PDF 文件中的换表符。
 type: docs
 weight: 60
 url: /zh/net/programming-with-tables/determine-table-break/
 ---
-In this tutorial, we are going to learn how to determine table breaks in PDF file using Aspose.PDF for .NET. We will explain the source code in C# step by step. At the end of this tutorial, you will know how to determine if a table exceeds the page margins. Let's start!
+在本教程中，我们将学习如何使用 Aspose.PDF for .NET 确定 PDF 文件中的换表符。我们将一步步解释C#的源代码。在本教程结束时，您将了解如何确定表格是否超出页边距。开始吧！
 
-## Step 1: Setting up the environment
-First, make sure you've set up your C# development environment with Aspose.PDF for .NET. Add the reference to the library and import the necessary namespaces.
+## 第一步：搭建环境
+首先，确保您已使用 Aspose.PDF for .NET 设置 C# 开发环境。添加对库的引用并导入必要的命名空间。
 
-## Step 2: Creating the PDF document
-In this step, we create a new `Document` object to represent the PDF document.
+## 第 2 步：创建 PDF 文档
+在这一步中，我们创建一个新的`Document`代表 PDF 文档的对象。
 
 ```csharp
 pdf-Document = new Document();
 ```
 
-This document will be used to add sections and tables.
+该文档将用于添加部分和表格。
 
-## Step 3: Adding a section and a table
-Now we are going to add a section to our PDF document and create a table inside this section.
+## 步骤 3：添加部分和表格
+现在我们将向 PDF 文档添加一个部分，并在该部分内创建一个表格。
 
 ```csharp
 Page page = pdf.Pages.Add();
@@ -31,10 +31,10 @@ table1. Margin. Top = 300;
 page.Paragraphs.Add(table1);
 ```
 
-We also specify a top margin of 300 points for the table. You can adjust this value according to your needs.
+我们还指定表格的上边距为 300 点。您可以根据需要调整该值。
 
-## Step 4: Table Setup
-In this step, we configure table properties, such as column widths and borders.
+## 第 4 步：表格设置
+在此步骤中，我们配置表格属性，例如列宽和边框。
 
 ```csharp
 table1. ColumnWidths = "100 100 100";
@@ -42,10 +42,10 @@ table1.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1F);
 table1.Border = new BorderInfo(BorderSide.All, 1F);
 ```
 
-Here we define the width of the table columns and the cell borders. You can adjust these values according to your preferences.
+这里我们定义表格列和单元格边框的宽度。您可以根据自己的喜好调整这些值。
 
-## Step 5: Add rows and cells to the table
-Now we will create rows and cells in the table using a loop.
+## 步骤 5：向表格添加行和单元格
+现在我们将使用循环在表中创建行和单元格。
 
 ```csharp
 for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
@@ -57,10 +57,10 @@ for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
 }
 ```
 
-Here we create 17 rows in the table and add three cells to each row. You can adjust the buckle according to your needs.
+此处，我们在表中创建 17 行，并向每行添加三个单元格。您可以根据需要调整带扣。
 
-## Step 6: Determining Table Breaks
-Now we will determine if the table exceeds the page margins by comparing the height of the page with the total height of the objects in the table.
+## 第 6 步：确定表中断
+现在，我们将通过将页面高度与表格中对象的总高度进行比较来确定表格是否超出页边距。
 
 ```csharp
 float PageHeight = (float)pdf.PageInfo.Height;
@@ -70,10 +70,10 @@ if ((PageHeight - TotalObjectsHeight) <= 10)
      Console.WriteLine("The height of the page - Height of objects < 10, the table will be truncated");
 ```
 
-We calculate the height of the page and the total height of the objects taking into account the margins. If the difference is 10 or less, the table exceeds the page margins.
+我们计算页面的高度和对象的总高度，同时考虑边距。如果差异为 10 或更少，则表格超出页边距。
 
-## Step 7: Saving the PDF document
-Finally, we save the PDF document with the results.
+## 步骤7：保存PDF文档
+最后，我们将结果保存为 PDF 文档。
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -82,95 +82,95 @@ pdf.Save(dataDir);
 Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dataDir);
 ```
 
-Be sure to specify the correct document directory. The resulting PDF file will be saved with the determined table breaks.
+请务必指定正确的文档目录。生成的 PDF 文件将与确定的表格分隔符一起保存。
 
-### Example source code for Determine Table Break using Aspose.PDF for .NET
+### 使用 Aspose.PDF for .NET 确定表中断的示例源代码
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate an object PDF class
+//实例化对象 PDF 类
 Document pdf = new Document();
-// Add the section to PDF document sections collection
+//将部分添加到 PDF 文档部分集合
 Aspose.Pdf.Page page = pdf.Pages.Add();
-// Instantiate a table object
+//实例化一个表对象
 Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
 table1.Margin.Top = 300;
-// Add the table in paragraphs collection of the desired section
+//将表格添加到所需部分的段落集合中
 page.Paragraphs.Add(table1);
-// Set with column widths of the table
+//设置表格的列宽
 table1.ColumnWidths = "100 100 100";
-// Set default cell border using BorderInfo object
+//使用 BorderInfo 对象设置默认单元格边框
 table1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
-// Set table border using another customized BorderInfo object
+//使用另一个自定义的 BorderInfo 对象设置表格边框
 table1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
-// Create MarginInfo object and set its left, bottom, right and top margins
+//创建 MarginInfo 对象并设置其左、下、右、上边距
 Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
 margin.Top = 5f;
 margin.Left = 5f;
 margin.Right = 5f;
 margin.Bottom = 5f;
-// Set the default cell padding to the MarginInfo object
+//将默认单元格填充设置为 MarginInfo 对象
 table1.DefaultCellPadding = margin;
-// If you increase the counter to 17, table will break 
-// Because it cannot be accommodated any more over this page
+//如果将计数器增加到 17，桌子就会损坏
+//因为这个页面已经无法容纳更多内容了
 for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
 {
-	// Create rows in the table and then cells in the rows
+	//在表中创建行，然后在行中创建单元格
 	Aspose.Pdf.Row row1 = table1.Rows.Add();
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
 }
-// Get the Page Height information
+//获取页面高度信息
 float PageHeight = (float)pdf.PageInfo.Height;
-// Get the total height information of Page Top & Bottom margin,
-// Table Top margin and table height.
+//获取页面上下边距的总高度信息，
+//表格顶部边距和表格高度。
 float TotalObjectsHeight = (float)page.PageInfo.Margin.Top + (float)page.PageInfo.Margin.Bottom + (float)table1.Margin.Top + (float)table1.GetHeight();
 
-// Display Page Height, Table Height, table Top margin and Page Top 
-// And Bottom margin information
+//显示页面高度、表格高度、表格上边距和页面顶部
+//和下边距信息
 Console.WriteLine("PDF document Height = " + pdf.PageInfo.Height.ToString() + "\nTop Margin Info = " + page.PageInfo.Margin.Top.ToString() + "\nBottom Margin Info = " + page.PageInfo.Margin.Bottom.ToString() + "\n\nTable-Top Margin Info = " + table1.Margin.Top.ToString() + "\nAverage Row Height = " + table1.Rows[0].MinRowHeight.ToString() + " \nTable height " + table1.GetHeight().ToString() + "\n ----------------------------------------" + "\nTotal Page Height =" + PageHeight.ToString() + "\nCummulative height including Table =" + TotalObjectsHeight.ToString());
 
-// Check if we deduct the sume of Page top margin + Page Bottom margin
-// + Table Top margin and table height from Page height and its less
-// Than 10 (an average row can be greater than 10)
+//检查是否扣除页面上边距 + 页面下边距之和
+// 表格顶部边距和表格高度与页面高度及其减去值
+//超过 10（平均行可以大于 10）
 if ((PageHeight - TotalObjectsHeight) <= 10)
-	// If the value is less than 10, then display the message. 
-	// Which shows that another row can not be placed and if we add new 
-	// Row, table will break. It depends upon the row height value.
+	//如果该值小于 10，则显示该消息。
+	//这表明不能放置另一行，如果我们添加新的
+	//行、表都会断。这取决于行高值。
 	Console.WriteLine("Page Height - Objects Height < 10, so table will break");
 
 
 dataDir = dataDir + "DetermineTableBreak_out.pdf";
-// Save the pdf document
+//保存pdf文档
 pdf.Save(dataDir);
 
 Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
-In this tutorial, we learned how to determine table breaks in a PDF document using Aspose.PDF for .NET. You can use this step-by-step guide to check if a table exceeds the page margins in your own C# projects.
+## 结论
+在本教程中，我们学习了如何使用 Aspose.PDF for .NET 确定 PDF 文档中的换表符。您可以使用此分步指南来检查表格是否超出您自己的 C# 项目中的页边距。
 
-### FAQ's for determine table break in PDF file
+### 确定 PDF 文件中表格中断的常见问题解答
 
-#### Q: What is the purpose of determining table breaks in a PDF document?
+#### 问：确定 PDF 文档中的换表符的目的是什么？
 
-A: The purpose of determining table breaks in a PDF document is to check if the table exceeds the page margins. This ensures that the table's content is correctly displayed within the available page space. By detecting table breaks, you can handle the content overflow and adjust the table layout accordingly.
+答：确定 PDF 文档中的表格分隔符的目的是检查表格是否超出页边距。这可确保表的内容在可用页面空间内正确显示。通过检测表格中断，您可以处理内容溢出并相应地调整表格布局。
 
-#### Q: How can I adjust the top margin of the table?
+#### 问：如何调整表格的上边距？
 
-A: In the provided C# source code, you can adjust the top margin of the table by modifying the value of the `table1.Margin.Top` property. Increase or decrease the value as needed to set the desired top margin for the table.
+ A：在提供的C#源代码中，可以通过修改`table1.Margin.Top`财产。根据需要增加或减少该值以设置所需的表格上边距。
 
-#### Q: Can I customize the appearance of the table, such as cell colors and font size?
+#### 问：我可以自定义表格的外观，例如单元格颜色和字体大小吗？
 
-A: Yes, you can customize the appearance of the table and its cells using various properties and methods provided by Aspose.PDF for .NET. For example, you can change cell background colors, font size, font family, text alignment, and more. Refer to the official documentation for more information on how to customize the table appearance.
+答：是的，您可以使用 Aspose.PDF for .NET 提供的各种属性和方法来自定义表格及其单元格的外观。例如，您可以更改单元格背景颜色、字体大小、字体系列、文本对齐方式等。有关如何自定义表格外观的更多信息，请参阅官方文档。
 
-#### Q: What happens if the table exceeds the page margins?
+#### 问：如果表格超出页边距怎么办？
 
-A: If the table exceeds the page margins, it may result in content truncation or overlapping, making the PDF document less readable and organized. By detecting table breaks and handling the overflow, you can ensure that the content remains properly displayed within the available page area.
+答：如果表格超出页边距，可能会导致内容截断或重叠，从而降低 PDF 文档的可读性和组织性。通过检测表格中断并处理溢出，您可以确保内容在可用页面区域内保持正确显示。
 
-#### Q: Can I determine table breaks for multiple tables in the same PDF document?
+#### 问：我可以确定同一 PDF 文档中多个表格的表格分隔符吗？
 
-A: Yes, you can determine table breaks for multiple tables in the same PDF document. Simply repeat the steps for each table you want to analyze and adjust the table layout as necessary to prevent content overflow.
+答：是的，您可以确定同一 PDF 文档中多个表格的表格分隔符。只需对要分析的每个表格重复这些步骤，并根据需要调整表格布局以防止内容溢出。

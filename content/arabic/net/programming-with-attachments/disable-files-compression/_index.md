@@ -1,123 +1,123 @@
 ---
-title: Disable Files Compression In PDF File
-linktitle: Disable Files Compression In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to disable file compression in PDF file with Aspose.PDF for .NET. Step-by-step guide for easy handling.
+title: تعطيل ضغط الملفات في ملف PDF
+linktitle: تعطيل ضغط الملفات في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية تعطيل ضغط الملفات في ملف PDF باستخدام Aspose.PDF لـ .NET. دليل خطوة بخطوة لسهولة التعامل.
 type: docs
 weight: 30
 url: /ar/net/programming-with-attachments/disable-files-compression/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to disable file compression in PDF using Aspose.PDF for .NET.
+في هذا البرنامج التعليمي، سنرشدك عبر التعليمات البرمجية المصدر لـ C# التالية خطوة بخطوة لتعطيل ضغط الملفات في PDF باستخدام Aspose.PDF لـ .NET.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+تأكد من تثبيت مكتبة Aspose.PDF وإعداد بيئة التطوير الخاصة بك قبل البدء. لديك أيضًا معرفة أساسية ببرمجة C#.
 
-### Step 1: Document Directory Setup
+### الخطوة 1: إعداد دليل المستندات
 
-In the provided source code, you need to specify the directory where the PDF file is located that you want to disable file compression. Change the "dataDir" variable to the desired directory.
+في التعليمات البرمجية المصدر المتوفرة، تحتاج إلى تحديد الدليل الذي يوجد به ملف PDF الذي تريد تعطيل ضغط الملف فيه. قم بتغيير المتغير "dataDir" إلى الدليل المطلوب.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### Step 2: Open the existing PDF document
+### الخطوة 2: افتح مستند PDF الموجود
 
-We open the existing PDF document using the specified path.
+نفتح مستند PDF الموجود باستخدام المسار المحدد.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
 ```
 
-### Step 3: Setting up the new file to add as an attachment
+### الخطوة 3: إعداد الملف الجديد لإضافته كمرفق
 
-We configure the new file that we want to add as an attachment. In this example, we add a text file with the name "test_out.txt" and a description "Example text file".
+نقوم بتكوين الملف الجديد الذي نريد إضافته كمرفق. في هذا المثال، قمنا بإضافة ملف نصي بالاسم "test_out.txt" ووصف "مثال لملف نصي".
 
 ```csharp
 FileSpecification fileSpecification = new FileSpecification("test_out.txt", "Sample text file");
 ```
 
-### Step 4: Disable File Compression
+### الخطوة 4: تعطيل ضغط الملفات
 
-We disable file compression by setting the Encoding property of the FileSpecification object to FileEncoding.None.
+نقوم بتعطيل ضغط الملفات عن طريق تعيين خاصية التشفير لكائن FileSpecification على FileEncoding.None.
 
 ```csharp
 fileSpecification.Encoding = FileEncoding.None;
 ```
 
-### Step 5: Adding the attachment to the document's attachments collection
+### الخطوة 5: إضافة المرفق إلى مجموعة مرفقات المستند
 
-We add the attachment to the document's attachments collection.
+نقوم بإضافة المرفق إلى مجموعة مرفقات الوثيقة.
 
 ```csharp
 pdfDocument.EmbeddedFiles.Add(fileSpecification);
 ```
 
-### Step 6: Save the new output file
+### الخطوة 6: احفظ ملف الإخراج الجديد
 
-Finally, we save the resulting new PDF file with the name "DisableFilesCompression_out.pdf" in the specified directory.
+أخيرًا، نقوم بحفظ ملف PDF الجديد الناتج بالاسم "DisableFilesCompression_out.pdf" في الدليل المحدد.
 
 ```csharp
 pdfDocument.Save(dataDir + "DisableFilesCompression_out.pdf");
 ```
 
 
-### Sample source code for Disable Files Compression using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لتعطيل ضغط الملفات باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
-// Setup new file to be added as attachment
+// إعداد ملف جديد لإضافته كمرفق
 FileSpecification fileSpecification = new FileSpecification("test_out.txt", "Sample text file");
-// Specify Encoding proparty setting it to FileEncoding.None
+// حدد طرف التشفير واضبطه على FileEncoding.None
 fileSpecification.Encoding = FileEncoding.None;
-// Add attachment to document's attachment collection
+//إضافة مرفق إلى مجموعة مرفقات المستند
 pdfDocument.EmbeddedFiles.Add(fileSpecification);
 dataDir = dataDir + "DisableFilesCompression_out.pdf";
-// Save new output
+// حفظ الإخراج الجديد
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nFile compression disabled successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we explained how to disable file compression in a PDF using Aspose.PDF for .NET. You can now use this knowledge to maintain the integrity of attached files without compression.
+في هذا البرنامج التعليمي، شرحنا كيفية تعطيل ضغط الملفات في ملف PDF باستخدام Aspose.PDF لـ .NET. يمكنك الآن استخدام هذه المعرفة للحفاظ على سلامة الملفات المرفقة دون ضغط.
 
-## FAQ's for disable files compression in PDF file
+## الأسئلة الشائعة لتعطيل ضغط الملفات في ملف PDF
 
-#### Q: Why would I want to disable file compression in a PDF document?
+#### س: لماذا أرغب في تعطيل ضغط الملفات في مستند PDF؟
 
-A: Disabling file compression ensures that attached files within a PDF document remain uncompressed, preserving their original quality and content.
+ج: يضمن تعطيل ضغط الملفات بقاء الملفات المرفقة في مستند PDF غير مضغوطة، مع الحفاظ على جودتها ومحتواها الأصليين.
 
-#### Q: How does disabling file compression benefit PDF attachments?
+#### س: كيف يفيد تعطيل ضغط الملفات مرفقات PDF؟
 
-A: Disabling compression prevents any loss of data or quality that can occur during the compression process, ensuring that attached files are presented as-is.
+ج: يؤدي تعطيل الضغط إلى منع أي فقدان للبيانات أو الجودة يمكن أن يحدث أثناء عملية الضغط، مما يضمن تقديم الملفات المرفقة كما هي.
 
-#### Q: Can I selectively disable compression for specific attachments using this tutorial?
+#### س: هل يمكنني تعطيل الضغط بشكل انتقائي لمرفقات معينة باستخدام هذا البرنامج التعليمي؟
 
-A: Yes, this tutorial guides you through disabling file compression for individual attachments in a PDF document, providing fine-grained control.
+ج: نعم، يرشدك هذا البرنامج التعليمي عبر تعطيل ضغط الملفات للمرفقات الفردية في مستند PDF، مما يوفر تحكمًا دقيقًا.
 
-#### Q: What types of attachments can I disable compression for?
+#### س: ما هي أنواع المرفقات التي يمكنني تعطيل ضغطها؟
 
-A: You can disable compression for any type of attachment, such as images, documents, spreadsheets, and more, ensuring their integrity is maintained.
+ج: يمكنك تعطيل ضغط أي نوع من المرفقات، مثل الصور والمستندات وجداول البيانات والمزيد، مما يضمن الحفاظ على سلامتها.
 
-#### Q: Does disabling compression affect the overall file size of the PDF document?
+#### س: هل يؤثر تعطيل الضغط على الحجم الإجمالي للملف في مستند PDF؟
 
-A: Disabling compression for attachments might lead to a slight increase in the overall file size of the PDF document, as uncompressed files take up more space.
+ج: قد يؤدي تعطيل ضغط المرفقات إلى زيادة طفيفة في الحجم الإجمالي للملف في مستند PDF، حيث تشغل الملفات غير المضغوطة مساحة أكبر.
 
-#### Q: How does Aspose.PDF for .NET facilitate the process of disabling file compression?
+#### س: كيف يسهل Aspose.PDF for .NET عملية تعطيل ضغط الملفات؟
 
-A: Aspose.PDF for .NET provides an easy-to-use API that allows you to disable file compression for attachments, as demonstrated in the provided source code.
+ج: يوفر Aspose.PDF for .NET واجهة برمجة تطبيقات سهلة الاستخدام تسمح لك بتعطيل ضغط الملفات للمرفقات، كما هو موضح في التعليمات البرمجية المصدر المتوفرة.
 
-#### Q: Can I re-enable compression for attachments later if needed?
+#### س: هل يمكنني إعادة تمكين ضغط المرفقات لاحقًا إذا لزم الأمر؟
 
-A: Yes, you can modify the attachment's settings to enable compression again if necessary.
+ج: نعم، يمكنك تعديل إعدادات المرفقات لتمكين الضغط مرة أخرى إذا لزم الأمر.
 
-#### Q: What happens if I open the PDF on a device or software that supports compression?
+#### س: ماذا يحدث إذا قمت بفتح ملف PDF على جهاز أو برنامج يدعم الضغط؟
 
-A: If you open the PDF on a device or software that supports compression, the attachment might be displayed uncompressed, potentially affecting file size and rendering performance.
+ج: إذا قمت بفتح ملف PDF على جهاز أو برنامج يدعم الضغط، فقد يتم عرض المرفق غير مضغوط، مما قد يؤثر على حجم الملف وأداء العرض.
 
-#### Q: Are there specific scenarios where disabling compression is recommended?
+#### س: هل هناك سيناريوهات محددة يوصى فيها بتعطيل الضغط؟
 
-A: Disabling compression is recommended for attachments where maintaining the original quality and data integrity is a priority, such as high-resolution images or sensitive documents.
+ج: يوصى بتعطيل الضغط للمرفقات التي يكون فيها الحفاظ على الجودة الأصلية وتكامل البيانات أولوية، مثل الصور عالية الدقة أو المستندات الحساسة.

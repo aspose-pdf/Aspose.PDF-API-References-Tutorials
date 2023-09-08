@@ -1,81 +1,81 @@
 ---
-title: Validate PDF Files A Standard
-linktitle: Validate PDF A Standard
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use Aspose.PDF for .NET to validate PDF files for PDFAStandard with this step-by-step guide.
+title: التحقق من صحة ملفات PDF كمعيار
+linktitle: التحقق من صحة PDF معيار
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية استخدام Aspose.PDF لـ .NET للتحقق من صحة ملفات PDF لـ PDFAStandard باستخدام هذا الدليل التفصيلي خطوة بخطوة.
 type: docs
 weight: 390
 url: /ar/net/programming-with-document/validatepdfastandard/
 ---
-Aspose.PDF for .NET is a powerful library that allows you to create, edit, and manipulate PDF files programmatically using the C# language. One of the key features of Aspose.PDF for .NET is the ability to validate PDF files against various PDF standards, including PDF/A-1a. In this article, we will provide a step-by-step guide on how to use the "Get Validate PDFAStandard" feature of Aspose.PDF for .NET. 
+Aspose.PDF for .NET هي مكتبة قوية تتيح لك إنشاء ملفات PDF وتحريرها ومعالجتها برمجيًا باستخدام لغة C#. إحدى الميزات الرئيسية لـ Aspose.PDF for .NET هي القدرة على التحقق من صحة ملفات PDF مقابل معايير PDF المختلفة، بما في ذلك PDF/A-1a. في هذه المقالة، سنقدم دليلًا خطوة بخطوة حول كيفية استخدام ميزة "الحصول على التحقق من صحة PDFAStandard" في Aspose.PDF لـ .NET. 
 
-## Step 1: Defining the Document Directory Path
+## الخطوة 1: تحديد مسار دليل المستندات
 
-we need to define the path to the directory where our PDF document is located. You can do this by adding the following code snippet:
+نحتاج إلى تحديد المسار إلى الدليل الذي يوجد به مستند PDF الخاص بنا. يمكنك القيام بذلك عن طريق إضافة مقتطف التعليمات البرمجية التالي:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
-After installing Aspose.PDF for .NET, you need to add a reference to the library in your project. To do this, open your C# project in Visual Studio and right-click on the "References" folder in the Solution Explorer. Select "Add Reference" from the context menu and browse to the location where you installed Aspose.PDF for .NET. Select the "Aspose.PDF.dll" file and click "OK" to add the reference to your project.
+بعد تثبيت Aspose.PDF لـ .NET، تحتاج إلى إضافة مرجع إلى المكتبة في مشروعك. للقيام بذلك، افتح مشروع C# الخاص بك في Visual Studio وانقر بزر الماوس الأيمن على المجلد "References" في Solution Explorer. حدد "إضافة مرجع" من قائمة السياق وانتقل إلى الموقع الذي قمت بتثبيت Aspose.PDF لـ .NET فيه. حدد الملف "Aspose.PDF.dll" وانقر فوق "موافق" لإضافة المرجع إلى مشروعك.
 
-## Step 2: Opening the PDF Document
+## الخطوة 2: فتح مستند PDF
 
-To validate a PDF document using Aspose.PDF for .NET, you first need to load the PDF document into the memory. In the example code provided, the path to the PDF document is specified using the "dataDir" variable. Replace this variable with the actual path to your PDF document.
+للتحقق من صحة مستند PDF باستخدام Aspose.PDF لـ .NET، تحتاج أولاً إلى تحميل مستند PDF في الذاكرة. في رمز المثال المقدم، يتم تحديد المسار إلى مستند PDF باستخدام المتغير "dataDir". استبدل هذا المتغير بالمسار الفعلي لمستند PDF الخاص بك.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ValidatePDFAStandard.pdf");
 ```
 
-## Step 3: Validating the PDF Document
+## الخطوة 3: التحقق من صحة وثيقة PDF
 
-After loading the PDF document, you can use the "Validate" method of the "Document" class to validate the document against the PDF/A-1a standard. In the example code provided, the validation result is saved to an XML file named "validation-result-A1A.xml" in the same directory as the PDF document.
+بعد تحميل مستند PDF، يمكنك استخدام طريقة "التحقق من الصحة" لفئة "المستند" للتحقق من صحة المستند مقابل معيار PDF/A-1a. في رمز المثال المقدم، يتم حفظ نتيجة التحقق من الصحة في ملف XML يسمى "validation-result-A1A.xml" في نفس الدليل مثل مستند PDF.
 
 ```csharp
-// Validate PDF for PDF/A-1a
+// التحقق من صحة PDF لـ PDF/A-1a
 pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1A);
 ```
 
-### Example source code for Get Validate PDFAStandard using Aspose.PDF for .NET
+### مثال على التعليمات البرمجية المصدر للحصول على التحقق من صحة PDFAStandard باستخدام Aspose.PDF لـ .NET
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "ValidatePDFAStandard.pdf");
 
-// Validate PDF for PDF/A-1a
+// التحقق من صحة PDF لـ PDF/A-1a
 pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1A);
 ```
 
-## Conclusion
+## خاتمة
 
-Validating PDF files against various PDF standards is an important aspect of working with PDF files in a professional environment. Aspose.PDF for .NET provides a powerful and easy-to-use API for validating PDF files against various PDF standards, including PDF/A-1a. By following the step-by-step guide provided in this article, you can quickly and easily validate your PDF files using Aspose.PDF for .NET.
+يعد التحقق من صحة ملفات PDF وفقًا لمعايير PDF المختلفة جانبًا مهمًا للعمل مع ملفات PDF في بيئة احترافية. يوفر Aspose.PDF for .NET واجهة برمجة تطبيقات قوية وسهلة الاستخدام للتحقق من صحة ملفات PDF مقابل معايير PDF المختلفة، بما في ذلك PDF/A-1a. باتباع الدليل التفصيلي الموجود في هذه المقالة، يمكنك التحقق من صحة ملفات PDF الخاصة بك بسرعة وسهولة باستخدام Aspose.PDF لـ .NET.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the significance of validating PDF files against PDF/A-1a standard?
+#### س: ما أهمية التحقق من صحة ملفات PDF مقابل معيار PDF/A-1a؟
 
-A: Validating PDF files against the PDF/A-1a standard ensures that the documents comply with specific archiving standards. This standard is designed for long-term preservation and ensures that PDFs maintain their integrity and accessibility over time.
+ج: إن التحقق من صحة ملفات PDF وفقًا لمعيار PDF/A-1a يضمن امتثال المستندات لمعايير الأرشفة المحددة. تم تصميم هذا المعيار للحفظ على المدى الطويل ويضمن احتفاظ ملفات PDF بسلامتها وإمكانية الوصول إليها بمرور الوقت.
 
-#### Q: How do I define the document directory path in the C# code?
+#### س: كيف يمكنني تحديد مسار دليل المستند في كود C#؟
 
-A: To define the path to the directory where your PDF document is located, use the following code snippet:
+ج: لتحديد المسار إلى الدليل الذي يوجد به مستند PDF الخاص بك، استخدم مقتطف التعليمات البرمجية التالي:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace "YOUR DOCUMENT DIRECTORY" with the actual path to the directory containing your PDF document.
+استبدل "دليل المستندات الخاص بك" بالمسار الفعلي للدليل الذي يحتوي على مستند PDF الخاص بك.
 
-#### Q: Is it necessary to add a reference to Aspose.PDF for .NET in my project?
+#### س: هل من الضروري إضافة مرجع إلى Aspose.PDF لـ .NET في مشروعي؟
 
-A: Yes, after installing Aspose.PDF for .NET, you need to add a reference to the library in your project. This can be done in Visual Studio by right-clicking on the "References" folder in the Solution Explorer, selecting "Add Reference," and browsing to the location of "Aspose.PDF.dll."
+ج: نعم، بعد تثبيت Aspose.PDF لـ .NET، تحتاج إلى إضافة مرجع إلى المكتبة في مشروعك. يمكن القيام بذلك في Visual Studio عن طريق النقر بزر الماوس الأيمن فوق المجلد "References" في Solution Explorer، وتحديد "Add Reference"، والتصفح للوصول إلى موقع "Aspose.PDF.dll".
 
-#### Q: Can I validate PDF files against other PDF standards using Aspose.PDF for .NET?
+#### س: هل يمكنني التحقق من صحة ملفات PDF مقابل معايير PDF الأخرى باستخدام Aspose.PDF لـ .NET؟
 
-A: Yes, Aspose.PDF for .NET supports validation against various PDF standards, including PDF/A-1b and PDF/X standards. You can specify the desired standard when using the `Validate` method.
+ ج: نعم، يدعم Aspose.PDF for .NET التحقق من الصحة مقابل معايير PDF المختلفة، بما في ذلك معايير PDF/A-1b وPDF/X. يمكنك تحديد المعيار المطلوب عند استخدام`Validate` طريقة.
 
-#### Q: Where does the validation result get saved after using the `Validate` method?
+####  س: أين يتم حفظ نتيجة التحقق من الصحة بعد استخدام`Validate` method?
 
-A: The validation result is saved to an XML file named "validation-result-A1A.xml," which will be located in the same directory as the PDF document being validated.
+ج: يتم حفظ نتيجة التحقق من الصحة في ملف XML باسم "validation-result-A1A.xml"، والذي سيكون موجودًا في نفس الدليل الذي يوجد به مستند PDF الذي يتم التحقق من صحته.

@@ -1,117 +1,117 @@
 ---
-title: Fill Stroke Text In PDF File
-linktitle: Fill Stroke Text In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to easily fill and outline text in PDF file with Aspose.PDF for .NET.
+title: Remplir le texte du trait dans un fichier PDF
+linktitle: Remplir le texte du trait dans un fichier PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Apprenez à remplir et à décrire facilement du texte dans un fichier PDF avec Aspose.PDF pour .NET.
 type: docs
 weight: 90
 url: /fr/net/programming-with-stamps-and-watermarks/fill-stroke-text/
 ---
-In this tutorial, we will take you step by step on how to fill and outline text in PDF file using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to apply fill and outline colors to text in the PDF file.
+Dans ce didacticiel, nous vous expliquerons étape par étape comment remplir et décrire le texte d'un fichier PDF à l'aide d'Aspose.PDF pour .NET. Nous allons vous montrer comment utiliser le code source C# fourni pour appliquer des couleurs de remplissage et de contour au texte du fichier PDF.
 
-## Step 1: Setting up the environment
+## Étape 1 : Configuration de l'environnement
 
-Before you begin, make sure you have the following:
+Avant de commencer, assurez-vous d'avoir les éléments suivants :
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Un environnement de développement .NET installé.
+- La bibliothèque Aspose.PDF pour .NET téléchargée et référencée dans votre projet.
 
-## Step 2: Creating the TextState Object
+## Étape 2 : Création de l'objet TextState
 
-The first step is to create a TextState object to pass the advanced properties. Here's how:
+La première étape consiste à créer un objet TextState pour transmettre les propriétés avancées. Voici comment:
 
 ```csharp
-// Create TextState object to transfer advanced properties
+// Créer un objet TextState pour transférer les propriétés avancées
 TextState ts = new TextState();
 
-// Set outline color
+// Définir la couleur du contour
 ts.StrokingColor = Color.Gray;
 
-// Define the text rendering mode
+// Définir le mode de rendu du texte
 ts.RenderingMode = TextRenderingMode.StrokeText;
 ```
 
-The above code creates a new TextState object and sets the outline color as well as how the text is rendered.
+Le code ci-dessus crée un nouvel objet TextState et définit la couleur du contour ainsi que la façon dont le texte est rendu.
 
-## Step 3: Loading the PDF document
+## Étape 3 : Chargement du document PDF
 
-Now that the TextState object is ready, we can load the PDF document where we want to apply the text fill and outline. Here's how:
+Maintenant que l'objet TextState est prêt, nous pouvons charger le document PDF où nous souhaitons appliquer le remplissage et le contour du texte. Voici comment:
 
 ```csharp
-// Load the PDF document as input
+// Charger le document PDF en entrée
 Facades.PdfFileStamp fileStamp = new Facades.PdfFileStamp(new Aspose.Pdf.Document(dataDir + "input.pdf"));
 ```
 
-The code above loads the existing PDF document using the PdfFileStamp class from the Aspose.PDF.Facades library.
+Le code ci-dessus charge le document PDF existant à l'aide de la classe PdfFileStamp de la bibliothèque Aspose.PDF.Facades.
 
-## Step 4: Add Fill and Stroke to Text
+## Étape 4 : Ajouter un remplissage et un contour au texte
 
-Now that the PDF document is loaded, we can add the fill and outline to the text. Here's how:
+Maintenant que le document PDF est chargé, nous pouvons ajouter le remplissage et le contour au texte. Voici comment:
 
 ```csharp
-// Create a stamp (Stamp) with the defined text and properties
+// Créer un tampon (Stamp) avec le texte et les propriétés définis
 Aspose.Pdf.Facades.Stamp stamp = new Aspose.Pdf.Facades.Stamp();
 stamp.BindLogo(new Facades.FormattedText("PAID IN FULL", System.Drawing.Color.Gray, "Arial", Facades.EncodingType.Winansi, true, 78));
 
-// Bind the TextState object
+// Lier l'objet TextState
 stamp.BindTextState(ts);
 
-// Set origin X, Y
+// Définir l'origine X, Y
 stamp.SetOrigin(100, 100);
 stamp. Opacity = 5;
 stamp.BlendingSpace = Facades.BlendingColorSpace.DeviceRGB;
 stamp.Rotation = 45.0F;
 stamp. IsBackground = false;
 
-// Add the stamp to the document
+// Ajouter le cachet au document
 fileStamp.AddStamp(stamp);
 ```
 
-The above code creates a Stamp with the specified text and defined Fill and Stroke properties.
+Le code ci-dessus crée un tampon avec le texte spécifié et les propriétés de remplissage et de contour définies.
 
-## Step 5: Save the output document
+## Étape 5 : Enregistrez le document de sortie
 
-Once the text stamp is added, we can save the modified PDF document. Here's how:
+Une fois le tampon de texte ajouté, nous pouvons enregistrer le document PDF modifié. Voici comment:
 
 ```csharp
-// Save the modified document
+// Enregistrez le document modifié
 fileStamp.Save(dataDir + "output_out.pdf");
 fileStamp.Close();
 ```
 
-The above code saves the edited PDF document to the specified directory.
+Le code ci-dessus enregistre le document PDF modifié dans le répertoire spécifié.
 
-### Sample source code for Fill Stroke Text using Aspose.PDF for .NET 
+### Exemple de code source pour Fill Stroke Text à l’aide d’Aspose.PDF pour .NET 
 ```csharp
 
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create TextState object to transfer advanced properties
+// Créer un objet TextState pour transférer les propriétés avancées
 TextState ts = new TextState();
 
-// Set color for stroke
+// Définir la couleur du trait
 ts.StrokingColor = Color.Gray;
 
-// Set text rendering mode
+// Définir le mode de rendu du texte
 ts.RenderingMode = TextRenderingMode.StrokeText;
 
-// Load an input PDF document
+// Charger un document PDF d'entrée
 Facades.PdfFileStamp fileStamp = new Facades.PdfFileStamp(new Aspose.Pdf.Document(dataDir + "input.pdf"));
 Aspose.Pdf.Facades.Stamp stamp = new Aspose.Pdf.Facades.Stamp();
 stamp.BindLogo(new Facades.FormattedText("PAID IN FULL", System.Drawing.Color.Gray, "Arial", Facades.EncodingType.Winansi, true, 78));
 
-// Bind TextState
+// Lier l'état de texte
 stamp.BindTextState(ts);
 
-// Set X,Y origin
+// Définir l'origine X,Y
 stamp.SetOrigin(100, 100);
 stamp.Opacity = 5;
 stamp.BlendingSpace = Facades.BlendingColorSpace.DeviceRGB;
 stamp.Rotation = 45.0F;
 stamp.IsBackground = false;
 
-// Add Stamp
+// Ajouter un tampon
 fileStamp.AddStamp(stamp);
 fileStamp.Save(dataDir + "ouput_out.pdf");
 fileStamp.Close();
@@ -120,46 +120,46 @@ fileStamp.Close();
 
 ## Conclusion
 
-Congratulation ! You have learned how to fill and outline text in a PDF document using Aspose.PDF for .NET. Now you can apply this knowledge to customize fill and outline colors in your PDF documents.
+Félicitation ! Vous avez appris à remplir et à décrire le texte d'un document PDF à l'aide d'Aspose.PDF pour .NET. Vous pouvez désormais appliquer ces connaissances pour personnaliser les couleurs de remplissage et de contour de vos documents PDF.
 
-### FAQ's for fill stroke text in PDF file
+### FAQ pour remplir le texte du trait dans un fichier PDF
 
-#### Q: What does it mean to fill and outline text in a PDF document, and when might I need to do so?
+#### Q : Que signifie remplir et mettre en surbrillance du texte dans un document PDF, et quand dois-je le faire ?
 
-A: Filling and outlining text in a PDF document involves applying colors to the interior of the text characters (fill) and to the borders around the text (outline). This can be used to enhance the visual appearance of the text, create emphasis, or highlight specific content within the PDF.
+R : Le remplissage et le contour du texte dans un document PDF impliquent l'application de couleurs à l'intérieur des caractères du texte (remplissage) et aux bordures autour du texte (contour). Cela peut être utilisé pour améliorer l’apparence visuelle du texte, mettre l’accent ou mettre en évidence un contenu spécifique dans le PDF.
 
-#### Q: How does the provided C# source code accomplish filling and outlining text in a PDF file?
+#### Q : Comment le code source C# fourni permet-il de remplir et de décrire le texte dans un fichier PDF ?
 
-A: The provided source code demonstrates how to create a `TextState` object to define advanced text properties, such as outline color and rendering mode. It then uses Aspose.PDF.Facades to load an existing PDF document, create a stamp containing the text with specified fill and stroke properties, and add the stamp to the document.
+ R : Le code source fourni montre comment créer un`TextState` objet pour définir des propriétés de texte avancées, telles que la couleur du contour et le mode de rendu. Il utilise ensuite Aspose.PDF.Facades pour charger un document PDF existant, créer un tampon contenant le texte avec les propriétés de remplissage et de contour spécifiées et ajouter le tampon au document.
 
-#### Q: What is the purpose of the `TextState` object in the code?
+####  Q : Quel est le but du`TextState` object in the code?
 
-A: The `TextState` object is used to define advanced text properties, including the color of the text outline (stroke) and the rendering mode. It allows you to customize how the text appears in terms of stroke and fill.
+ R : Le`TextState`L'objet est utilisé pour définir les propriétés avancées du texte, notamment la couleur du contour du texte (trait) et le mode de rendu. Il vous permet de personnaliser l'apparence du texte en termes de contour et de remplissage.
 
-#### Q: Can I apply different fill and outline colors to different parts of the same text?
+#### Q : Puis-je appliquer différentes couleurs de remplissage et de contour à différentes parties du même texte ?
 
-A: Yes, you can modify the code to create different `TextState` objects with distinct fill and outline colors and apply them to specific parts of the text using separate `Stamp` objects.
+ R : Oui, vous pouvez modifier le code pour créer différents`TextState` objets avec des couleurs de remplissage et de contour distinctes et appliquez-les à des parties spécifiques du texte en utilisant des`Stamp` objets.
 
-#### Q: Can I apply fill and outline colors to text that is already present in the PDF document?
+#### Q : Puis-je appliquer des couleurs de remplissage et de contour au texte déjà présent dans le document PDF ?
 
-A: Yes, you can use similar principles to apply fill and outline colors to existing text in the PDF document by selecting the appropriate text objects and adding them as stamps with the desired `TextState` properties.
+ R : Oui, vous pouvez utiliser des principes similaires pour appliquer des couleurs de remplissage et de contour au texte existant dans le document PDF en sélectionnant les objets texte appropriés et en les ajoutant sous forme de tampons avec le texte souhaité.`TextState` propriétés.
 
-#### Q: How can I adjust the opacity and blending of the filled and outlined text?
+#### Q : Comment puis-je ajuster l'opacité et la fusion du texte rempli et souligné ?
 
-A: The provided code allows you to set the opacity and blending properties of the stamp using the `Opacity` and `BlendingSpace` properties, respectively. You can adjust these values to achieve the desired visual effect.
+ R : Le code fourni vous permet de définir les propriétés d'opacité et de fusion du tampon à l'aide du`Opacity` et`BlendingSpace`propriétés, respectivement. Vous pouvez ajuster ces valeurs pour obtenir l'effet visuel souhaité.
 
-#### Q: How can I apply different fill and outline colors to multiple stamps within the same PDF document?
+#### Q : Comment puis-je appliquer différentes couleurs de remplissage et de contour à plusieurs tampons dans le même document PDF ?
 
-A: You can create multiple `TextState` objects with different fill and outline colors, and then create separate `Stamp` objects for each set of text with distinct colors. Add these stamps to the same PDF document using the `PdfFileStamp` class.
+ R : Vous pouvez créer plusieurs`TextState` objets avec des couleurs de remplissage et de contour différentes, puis créez des`Stamp` objets pour chaque ensemble de texte avec des couleurs distinctes. Ajoutez ces tampons au même document PDF à l'aide du`PdfFileStamp` classe.
 
-#### Q: Can I use fonts other than Arial for the outlined and filled text?
+#### Q : Puis-je utiliser des polices autres qu'Arial pour le texte souligné et rempli ?
 
-A: Yes, you can change the font by modifying the font name parameter in the `FormattedText` constructor when creating the stamp. You can use any font available on your system.
+ R : Oui, vous pouvez changer la police en modifiant le paramètre de nom de police dans le`FormattedText` constructeur lors de la création du tampon. Vous pouvez utiliser n'importe quelle police disponible sur votre système.
 
-#### Q: How can I modify the rotation angle of the outlined and filled text?
+#### Q : Comment puis-je modifier l'angle de rotation du texte entouré et rempli ?
 
-A: The provided code allows you to set the rotation angle of the stamp using the `Rotation` property. You can adjust this property to specify the desired rotation angle for the text.
+ R : Le code fourni vous permet de définir l'angle de rotation du tampon à l'aide du`Rotation` propriété. Vous pouvez ajuster cette propriété pour spécifier l'angle de rotation souhaité pour le texte.
 
-#### Q: How can I control the position and size of the outlined and filled text on the page?
+#### Q : Comment puis-je contrôler la position et la taille du texte souligné et rempli sur la page ?
 
-A: You can use the `SetOrigin` method of the `Stamp` object to set the X and Y coordinates of the stamp's position on the page. Additionally, you can adjust the font size in the `FormattedText` constructor to control the size of the text.
+R : Vous pouvez utiliser le`SetOrigin` méthode du`Stamp` objet pour définir les coordonnées X et Y de la position du tampon sur la page. De plus, vous pouvez ajuster la taille de la police dans le`FormattedText` constructeur pour contrôler la taille du texte.

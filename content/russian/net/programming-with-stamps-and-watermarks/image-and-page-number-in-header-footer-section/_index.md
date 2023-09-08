@@ -1,178 +1,178 @@
 ---
-title: Image and Page Number in Header Footer Section
-linktitle: Image and Page Number in Header Footer Section
-second_title: Aspose.PDF for .NET API Reference
-description: Find out how to add an image and a page number in the header and footer of a PDF document with Aspose.
+title: Изображение и номер страницы в разделе верхнего колонтитула
+linktitle: Изображение и номер страницы в разделе верхнего колонтитула
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как добавить изображение и номер страницы в верхний и нижний колонтитулы PDF-документа с помощью Aspose.
 type: docs
 weight: 110
 url: /ru/net/programming-with-stamps-and-watermarks/image-and-page-number-in-header-footer-section/
 ---
-In this tutorial, we will guide you step by step on how to add an image and page number in the header and footer section of a PDF document using Aspose.PDF for .NET. We will show you how to use provided C# source code to create a page, set header and footer, add image to header and text with page number to document footer PDF.
+В этом уроке мы шаг за шагом покажем вам, как добавить изображение и номер страницы в раздел верхнего и нижнего колонтитула PDF-документа с помощью Aspose.PDF для .NET. Мы покажем вам, как использовать предоставленный исходный код C# для создания страницы, установки верхнего и нижнего колонтитула, добавления изображения в верхний колонтитул и текста с номером страницы в нижний колонтитул документа PDF.
 
-## Step 1: Setting up the environment
+## Шаг 1. Настройка среды
 
-Before you begin, make sure you have the following:
+Прежде чем начать, убедитесь, что у вас есть следующее:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Установленная среда разработки .NET.
+- Библиотека Aspose.PDF для .NET загружена и используется в вашем проекте.
 
-## Step 2: Creating the PDF Document and Page
+## Шаг 2. Создание PDF-документа и страницы
 
-The first step is to create a new Document object and a page in the PDF document. Here's how:
+Первым шагом является создание нового объекта Document и страницы в документе PDF. Вот как:
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Create a new Document object
+// Создайте новый объект документа.
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
-// Create a page in the document
+// Создать страницу в документе
 Aspose.Pdf.Page page = doc.Pages.Add();
 ```
 
-The code above creates a new Document object and an empty page in the PDF document.
+Приведенный выше код создает новый объект Document и пустую страницу в документе PDF.
 
-## Step 3: Adding the header with an image
+## Шаг 3. Добавление заголовка с изображением
 
-Now that the page is created, we can add a header section with an image. Here's how:
+Теперь, когда страница создана, мы можем добавить раздел заголовка с изображением. Вот как:
 
 ```csharp
-// Create a header section
+// Создайте раздел заголовка
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-// Set the page header
+// Установить заголовок страницы
 page. Header = header;
 
-// Create an Image object
+// Создайте объект изображения
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 
-// Set image path
+// Установить путь к изображению
 image1.File = dataDir + "aspose-logo.jpg";
 
-// Add the image to the page header of the PDF document
+// Добавьте изображение в заголовок страницы PDF-документа.
 header.Paragraphs.Add(image1);
 ```
 
-The code above creates a header section, sets the page header with this section, and adds an image to the header.
+Приведенный выше код создает раздел заголовка, устанавливает заголовок страницы с этим разделом и добавляет изображение в заголовок.
 
-## Step 4: Adding the footer with the page number
+## Шаг 4. Добавляем нижний колонтитул с номером страницы.
 
-Now that the header is added, we can add a footer section with a page number. Here's how:
+Теперь, когда заголовок добавлен, мы можем добавить нижний колонтитул с номером страницы. Вот как:
 
 ```csharp
-// Create a footer section
+// Создайте раздел нижнего колонтитула
 Aspose.Pdf.HeaderFooter footer = new Aspose.Pdf.HeaderFooter();
 
-// Define the footer of the PDF document
+// Определите нижний колонтитул PDF-документа
 page. Footer = footer;
 
-// Create a TextFragment object
+// Создайте объект TextFragment.
 Aspose.Pdf.Text.TextFragment txt = new Aspose.Pdf.Text.TextFragment("Page: ($p of $P)");
 
-// Add the text with the page number to the footer of the PDF document
+// Добавьте текст с номером страницы в нижний колонтитул PDF-документа.
 footer.Paragraphs.Add(txt);
 ```
 
-The above code creates a footer section, sets the footer of the page with this section and adds a TextFragment containing the text "Page: ($p of $P )"
+Приведенный выше код создает раздел нижнего колонтитула, устанавливает нижний колонтитул страницы с этим разделом и добавляет TextFragment, содержащий текст «Page: ($p of $P)»
 
-  which displays the page number.
+  который отображает номер страницы.
 
-## Step 5: Saving the modified PDF document
+## Шаг 5. Сохранение измененного PDF-документа.
 
-Once the header and footer are added, we can save the modified PDF document. Here's how:
+После добавления верхнего и нижнего колонтитула мы можем сохранить измененный PDF-документ. Вот как:
 
 ```csharp
-// Save the modified PDF document
+// Сохраните измененный PDF-документ.
 doc.Save(dataDir + "ImageAndPageNumberInHeaderFooter_out.pdf");
 ```
 
-The above code saves the edited PDF document to the specified directory.
+Приведенный выше код сохраняет отредактированный PDF-документ в указанный каталог.
 
-### Sample source code for Imageand Page Numberin Header Footersection using Aspose.PDF for .NET 
+### Пример исходного кода для изображения и номера страницы в нижнем колонтитуле с использованием Aspose.PDF для .NET 
 ```csharp
 
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
-// Create a page in the document object
+// Создать страницу в объекте документа
 Aspose.Pdf.Page page = doc.Pages.Add();
 
-// Create Header Section of the document
+// Создать раздел заголовка документа
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-// Set the header for the PDF file
+// Установите заголовок для PDF-файла
 page.Header = header;
 
-// Create an image object in the page
+// Создайте объект изображения на странице
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 
-// Set the path of image file
+// Установите путь к файлу изображения
 image1.File = dataDir + "aspose-logo.jpg";
 
-// Add image to Header page of the Pdf file
+// Добавьте изображение на страницу заголовка PDF-файла.
 header.Paragraphs.Add(image1);
 
-// Create a Footer Section of the document
+//Создайте нижний колонтитул документа.
 Aspose.Pdf.HeaderFooter footer = new Aspose.Pdf.HeaderFooter();
 
-// Set the footer of the PDF file
+// Установите нижний колонтитул PDF-файла
 page.Footer = footer;
 
-// Create a Text object
+// Создать текстовый объект
 Aspose.Pdf.Text.TextFragment txt = new Aspose.Pdf.Text.TextFragment("Page: ($p of $P ) ");
 
-// Add text to Header section of the Pdf file
+// Добавьте текст в раздел заголовка PDF-файла.
 footer.Paragraphs.Add(txt);
 
-// Save the Pdf file
+// Сохраните PDF-файл
 doc.Save(dataDir + "ImageAndPageNumberInHeaderFooter_out.pdf");
 
 ```
 
-## Conclusion
+## Заключение
 
-Congratulation ! You have learned how to add an image and page number in the header and footer section of a PDF document using Aspose.PDF for .NET. Now you can use this method to customize header and footer in your PDF documents.
+Поздравляем! Вы узнали, как добавить изображение и номер страницы в верхний и нижний колонтитулы PDF-документа с помощью Aspose.PDF для .NET. Теперь вы можете использовать этот метод для настройки верхнего и нижнего колонтитула в PDF-документах.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is the purpose of adding an image and page number in the header and footer section of a PDF document?
+#### Вопрос: Какова цель добавления изображения и номера страницы в верхний и нижний колонтитулы PDF-документа?
 
-A: Adding an image and page number in the header and footer section of a PDF document can enhance its visual appeal, branding, and navigational elements. An image can represent a logo, watermark, or any graphical element, while a page number helps users track their progress and locate specific pages.
+О: Добавление изображения и номера страницы в верхний и нижний колонтитулы PDF-документа может повысить его визуальную привлекательность, фирменный стиль и элементы навигации. Изображение может представлять собой логотип, водяной знак или любой графический элемент, а номер страницы помогает пользователям отслеживать прогресс и находить определенные страницы.
 
-#### Q: How does the provided C# source code help in adding an image and page number to the header and footer of a PDF document?
+#### Вопрос: Как предоставленный исходный код C# помогает добавить изображение и номер страницы в верхний и нижний колонтитул PDF-документа?
 
-A: The provided code demonstrates how to create a PDF document, add a page, and then customize the header and footer sections. It shows how to add an image to the header and a text fragment with page numbering to the footer.
+О: Приведенный код демонстрирует, как создать PDF-документ, добавить страницу, а затем настроить разделы верхнего и нижнего колонтитула. Там показано, как добавить изображение в шапку и фрагмент текста с нумерацией страниц в подвал.
 
-#### Q: Can I use any image format for the header, and how do I specify its path?
+#### Вопрос: Могу ли я использовать любой формат изображения для заголовка и как указать путь к нему?
 
-A: Yes, you can use various image formats (such as JPEG, PNG, GIF, etc.) for the header image. The image's path is specified using the `File` property of the `Aspose.Pdf.Image` object.
+ О: Да, для изображения заголовка вы можете использовать различные форматы изображений (например, JPEG, PNG, GIF и т. д.). Путь к изображению указывается с помощью`File` собственность`Aspose.Pdf.Image` объект.
 
-#### Q: How do I customize the appearance and positioning of the image in the header section?
+#### Вопрос: Как настроить внешний вид и расположение изображения в разделе заголовка?
 
-A: You can customize the appearance and positioning of the image by adjusting the properties of the `Aspose.Pdf.Image` object before adding it to the header section. For example, you can set the image's dimensions, alignment, rotation, opacity, etc.
+ О: Вы можете настроить внешний вид и расположение изображения, настроив свойства`Aspose.Pdf.Image` объект перед добавлением его в раздел заголовка. Например, вы можете установить размеры изображения, выравнивание, поворот, непрозрачность и т. д.
 
-#### Q: What is the purpose of the `TextFragment` object used for the footer?
+####  Вопрос: Какова цель`TextFragment` object used for the footer?
 
-A: The `TextFragment` object is used to create and format text that will be displayed in the footer section. In the provided code, it is used to display the page number and total page count.
+ А:`TextFragment` Объект используется для создания и форматирования текста, который будет отображаться в нижнем колонтитуле. В предоставленном коде он используется для отображения номера страницы и общего количества страниц.
 
-#### Q: Can I modify the footer text to include additional information or formatting?
+#### Вопрос: Могу ли я изменить текст нижнего колонтитула, включив в него дополнительную информацию или форматирование?
 
-A: Yes, you can modify the footer text by modifying the contents of the `TextFragment` object. You can add additional text, change fonts, colors, and formatting according to your requirements.
+ О: Да, вы можете изменить текст нижнего колонтитула, изменив содержимое файла`TextFragment` объект. Вы можете добавить дополнительный текст, изменить шрифты, цвета и форматирование в соответствии с вашими требованиями.
 
-#### Q: Can I apply different header and footer contents to different pages of the PDF document?
+#### Вопрос: Могу ли я применить разное содержимое верхнего и нижнего колонтитула к разным страницам PDF-документа?
 
-A: Yes, you can apply different header and footer contents to different pages by creating separate `HeaderFooter` objects and assigning them to specific pages using the `Header` and `Footer` properties of the `Aspose.Pdf.Page` object.
+ О: Да, вы можете применять разное содержимое верхнего и нижнего колонтитула к разным страницам, создавая отдельные`HeaderFooter` объекты и назначение их конкретным страницам с помощью`Header` и`Footer` свойства`Aspose.Pdf.Page` объект.
 
-#### Q: How can I further customize the header and footer, such as changing font styles or adding additional elements?
+#### Вопрос: Как я могу дополнительно настроить верхний и нижний колонтитулы, например изменить стили шрифта или добавить дополнительные элементы?
 
-A: You can customize the header and footer by using various classes and properties provided by Aspose.PDF for .NET. For example, you can use different text formatting options, add more paragraphs, images, or even tables to the header and footer sections.
+О: Вы можете настроить верхний и нижний колонтитулы, используя различные классы и свойства, предоставляемые Aspose.PDF для .NET. Например, вы можете использовать различные параметры форматирования текста, добавлять больше абзацев, изображений или даже таблиц в разделы верхнего и нижнего колонтитула.
 
-#### Q: Can I remove or clear the header and footer sections if needed?
+#### Вопрос: Могу ли я удалить или очистить разделы верхнего и нижнего колонтитула, если это необходимо?
 
-A: Yes, you can remove or clear the header and footer sections by setting the `Header` and `Footer` properties of the `Aspose.Pdf.Page` object to `null`.
+О: Да, вы можете удалить или очистить разделы верхнего и нижнего колонтитула, установив`Header` и`Footer` свойства`Aspose.Pdf.Page` Возражать`null`.
 
-#### Q: How can I ensure that the added image and page number remain consistent across different devices and viewers?
+#### Вопрос: Как я могу гарантировать, что добавленное изображение и номер страницы будут одинаковыми на разных устройствах и в различных программах просмотра?
 
-A: Aspose.PDF for .NET provides functionality to create standardized and consistent PDF documents, ensuring that the added image and page number will appear consistently across different devices and PDF viewers.
+О: Aspose.PDF для .NET предоставляет функциональные возможности для создания стандартизированных и согласованных PDF-документов, гарантируя, что добавленное изображение и номер страницы будут одинаково отображаться на разных устройствах и в программах просмотра PDF.

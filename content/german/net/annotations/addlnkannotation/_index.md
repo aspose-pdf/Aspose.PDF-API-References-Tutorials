@@ -1,23 +1,23 @@
 ---
-title: Add lnk Annotation
-linktitle: Add lnk Annotation
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add Ink Annotation feature to PDF documents in C# using Aspose.PDF for .NET with step-by-step guide and full source code.
+title: Fügen Sie eine lnk-Anmerkung hinzu
+linktitle: Fügen Sie eine lnk-Anmerkung hinzu
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie mit einer Schritt-für-Schritt-Anleitung und vollständigem Quellcode, wie Sie mit Aspose.PDF für .NET die Funktion „Ink Annotation“ zu PDF-Dokumenten in C# hinzufügen.
 type: docs
 weight: 20
 url: /de/net/annotations/addlnkannotation/
 ---
-Aspose.PDF for .NET is a powerful library that enables developers to perform various PDF operations. One such operation is adding Ink Annotation to PDF documents. In this article, we will provide a step-by-step guide to explain the C# source code for adding Ink Annotation using Aspose.PDF for .NET. Let's get started!
+Aspose.PDF für .NET ist eine leistungsstarke Bibliothek, die Entwicklern die Durchführung verschiedener PDF-Vorgänge ermöglicht. Ein solcher Vorgang ist das Hinzufügen von Freihandanmerkungen zu PDF-Dokumenten. In diesem Artikel stellen wir eine Schritt-für-Schritt-Anleitung zur Erläuterung des C#-Quellcodes zum Hinzufügen von Ink Annotation mit Aspose.PDF für .NET bereit. Lass uns anfangen!
 
-## Understanding the Ink Annotation Feature of Aspose.PDF for .NET
+## Grundlegendes zur Freihandanmerkungsfunktion von Aspose.PDF für .NET
 
-Before diving into the C# source code, let's first understand what Ink Annotation is and its uses.
+Bevor wir uns mit dem C#-Quellcode befassen, wollen wir zunächst verstehen, was Ink Annotation ist und welche Verwendung es hat.
 
-Ink Annotation is a way to draw freeform ink annotations on PDF documents. It allows you to create annotations with a stylus or a mouse. This feature is useful in situations where you need to draw diagrams, sketches, or other types of annotations.
+Ink Annotation ist eine Möglichkeit, Freihand-Anmerkungen in PDF-Dokumenten zu zeichnen. Sie können Anmerkungen mit einem Stift oder einer Maus erstellen. Diese Funktion ist in Situationen nützlich, in denen Sie Diagramme, Skizzen oder andere Arten von Anmerkungen zeichnen müssen.
 
-## Step 1: Creating a New Document
+## Schritt 1: Erstellen eines neuen Dokuments
 
-The first step in adding Ink Annotation to a PDF document is to create a new instance of the Document class. This is achieved using the following code snippet:
+Der erste Schritt beim Hinzufügen von Ink Annotation zu einem PDF-Dokument besteht darin, eine neue Instanz der Document-Klasse zu erstellen. Dies wird mithilfe des folgenden Codeausschnitts erreicht:
 
 ```csharp
 string dataDir = "YOUR DATA DIRECTORY";
@@ -25,11 +25,11 @@ Document doc = new Document();
 Page pdfPage = doc.Pages.Add();
 ```
 
-Here, we create a new instance of the Document class and add a new page to it.
+Hier erstellen wir eine neue Instanz der Document-Klasse und fügen ihr eine neue Seite hinzu.
 
-## Step 2: Creating Ink Annotation
+## Schritt 2: Freihandanmerkung erstellen
 
-The next step is to create an instance of the InkAnnotation class. This is done using the following code snippet:
+Der nächste Schritt besteht darin, eine Instanz der InkAnnotation-Klasse zu erstellen. Dies geschieht mithilfe des folgenden Codeausschnitts:
 
 ```csharp
 System.Drawing.Rectangle drect = new System.Drawing.Rectangle();
@@ -46,7 +46,7 @@ arrpt[1] = new Aspose.Pdf.Point(200, 800);
 arrpt[2] = new Aspose.Pdf.Point(200, 700);
 InkAnnotation ia = new InkAnnotation(pdfPage, arect, inkList);
 ia.Title = "XXX";
-ia.Color = Aspose.Pdf.Color.LightBlue; // (GetColorFromString(stroke.InkColor));
+ia.Color = Aspose.Pdf.Color.LightBlue; // (GetColorFromString(Stroke.InkColor));
 ia.CapStyle = CapStyle.Rounded;
 Border border = new Border(ia);
 border.Width = 25;
@@ -54,25 +54,25 @@ ia.Opacity = 0.5;
 pdfPage.Annotations.Add(ia);
 ```
 
-Here, we first create a rectangle using the System.Drawing.Rectangle class and convert it to Aspose.Pdf.Rectangle using the FromRect method. We then create an instance of the InkAnnotation class using the rectangle, a list of points, and the page where the annotation is added.
+Hier erstellen wir zunächst ein Rechteck mit der Klasse System.Drawing.Rectangle und konvertieren es mit der Methode FromRect in Aspose.Pdf.Rectangle. Anschließend erstellen wir eine Instanz der InkAnnotation-Klasse unter Verwendung des Rechtecks, einer Liste von Punkten und der Seite, auf der die Anmerkung hinzugefügt wird.
 
-We then set various properties of the InkAnnotation, such as the title, color, cap style, border, and opacity. Finally, we add the annotation to the page using the Annotations.Add method.
+Anschließend legen wir verschiedene Eigenschaften der InkAnnotation fest, z. B. Titel, Farbe, Kappenstil, Rahmen und Deckkraft. Abschließend fügen wir die Anmerkung mit der Methode „Annotations.Add“ zur Seite hinzu.
 
-## Step 3: Saving the Document
+## Schritt 3: Speichern des Dokuments
 
-The final step is to save the PDF document with the Ink Annotation added. This is achieved using the following code snippet:
+Der letzte Schritt besteht darin, das PDF-Dokument mit der hinzugefügten Tintenanmerkung zu speichern. Dies wird mithilfe des folgenden Codeausschnitts erreicht:
 
 ```csharp
 dataDir = dataDir + "AddlnkAnnotation_out.pdf";
 doc.Save(dataDir);
 ```
 
-Here, we concatenate the output file name to the data directory and save the document using the Save method.
+Hier verketten wir den Namen der Ausgabedatei mit dem Datenverzeichnis und speichern das Dokument mit der Save-Methode.
 
-### Example source code for Adding Ink Annotation using Aspose.PDF for .NET
+### Beispielquellcode für das Hinzufügen von Freihandanmerkungen mit Aspose.PDF für .NET
 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DATA DIRECTORY";
 
 
@@ -92,7 +92,7 @@ arrpt[1] = new Aspose.Pdf.Point(200, 800);
 arrpt[2] = new Aspose.Pdf.Point(200, 700);
 InkAnnotation ia = new InkAnnotation(pdfPage, arect, inkList);
 ia.Title = "XXX";
-ia.Color = Aspose.Pdf.Color.LightBlue; // (GetColorFromString(stroke.InkColor));
+ia.Color = Aspose.Pdf.Color.LightBlue; // (GetColorFromString(Stroke.InkColor));
 ia.CapStyle = CapStyle.Rounded;
 Border border = new Border(ia);
 border.Width = 25;
@@ -100,32 +100,32 @@ ia.Opacity = 0.5;
 pdfPage.Annotations.Add(ia);
 
 dataDir = dataDir + "AddlnkAnnotation_out.pdf";
-// Save output file
+// Ausgabedatei speichern
 doc.Save(dataDir);
 ```
 
-## Conclusion
+## Abschluss
 
-In this tutorial, we explored how to add Ink Annotations to a PDF document using Aspose.PDF for .NET. By following the step-by-step guide and C# source code provided, developers can easily implement Ink Annotation functionality in their PDF processing applications.
+In diesem Tutorial haben wir untersucht, wie man mit Aspose.PDF für .NET Freihandanmerkungen zu einem PDF-Dokument hinzufügt. Durch Befolgen der Schritt-für-Schritt-Anleitung und des bereitgestellten C#-Quellcodes können Entwickler die Ink Annotation-Funktionalität problemlos in ihre PDF-Verarbeitungsanwendungen implementieren.
 
-### FAQ's
+### FAQs
 
-#### Q: What is an Ink Annotation in a PDF document?
+#### F: Was ist eine Freihandanmerkung in einem PDF-Dokument?
 
-A: An Ink Annotation in a PDF document allows users to draw freeform ink annotations using a stylus or mouse. It is commonly used to add hand-drawn sketches, diagrams, or other freehand annotations to a PDF.
+A: Eine Freihandanmerkung in einem PDF-Dokument ermöglicht es Benutzern, Freiform-Freihandanmerkungen mit einem Stift oder einer Maus zu zeichnen. Es wird häufig verwendet, um handgezeichnete Skizzen, Diagramme oder andere freihändige Anmerkungen zu einer PDF-Datei hinzuzufügen.
 
-#### Q: Can I customize the appearance of the Ink Annotation?
+#### F: Kann ich das Erscheinungsbild der Freihandanmerkung anpassen?
 
-A: Yes, Aspose.PDF for .NET provides various properties to customize the appearance of the Ink Annotation, such as color, opacity, cap style, border width, and more. Developers can adjust these properties to meet their specific requirements.
+A: Ja, Aspose.PDF für .NET bietet verschiedene Eigenschaften, um das Erscheinungsbild der Freihandanmerkung anzupassen, wie z. B. Farbe, Deckkraft, Versalstil, Rahmenbreite und mehr. Entwickler können diese Eigenschaften an ihre spezifischen Anforderungen anpassen.
 
-#### Q: Is it possible to add multiple Ink Annotations to a single PDF page?
+#### F: Ist es möglich, einer einzelnen PDF-Seite mehrere Freihandanmerkungen hinzuzufügen?
 
-A: Yes, you can add multiple Ink Annotations to a single PDF page using Aspose.PDF for .NET. Each Ink Annotation can have its own set of points and customized appearance.
+A: Ja, Sie können mit Aspose.PDF für .NET mehrere Freihandanmerkungen zu einer einzelnen PDF-Seite hinzufügen. Jede Freihandanmerkung kann über einen eigenen Satz von Punkten und ein individuelles Erscheinungsbild verfügen.
 
-#### Q: Can I add Ink Annotations to existing PDF documents?
+#### F: Kann ich Freihandanmerkungen zu vorhandenen PDF-Dokumenten hinzufügen?
 
-A: Yes, Aspose.PDF for .NET allows you to add Ink Annotations to both newly created PDF documents and existing PDF files. You can open an existing PDF, add Ink Annotations, and save the updated document.
+A: Ja, mit Aspose.PDF für .NET können Sie Freihandanmerkungen sowohl zu neu erstellten PDF-Dokumenten als auch zu vorhandenen PDF-Dateien hinzufügen. Sie können eine vorhandene PDF-Datei öffnen, Freihandanmerkungen hinzufügen und das aktualisierte Dokument speichern.
 
-#### Q: What are some common use cases for Ink Annotations in PDF documents?
+#### F: Was sind einige häufige Anwendungsfälle für Freihandanmerkungen in PDF-Dokumenten?
 
-A: Ink Annotations are useful for a wide range of applications, including adding signatures or handwritten notes to PDF forms, annotating architectural blueprints or engineering drawings, and marking up documents for collaborative review.
+A: Tintenanmerkungen sind für eine Vielzahl von Anwendungen nützlich, darunter das Hinzufügen von Unterschriften oder handschriftlichen Notizen zu PDF-Formularen, das Kommentieren von Architekturplänen oder technischen Zeichnungen und das Markieren von Dokumenten für die gemeinsame Überprüfung.

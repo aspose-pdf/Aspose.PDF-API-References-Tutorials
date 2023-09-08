@@ -1,85 +1,85 @@
 ---
-title: Set Target Link In PDF File
-linktitle: Set Target Link In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set a target link in PDF file using Aspose.PDF for .NET.
+title: Définir le lien cible dans le fichier PDF
+linktitle: Définir le lien cible dans le fichier PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment définir un lien cible dans un fichier PDF à l'aide d'Aspose.PDF pour .NET.
 type: docs
 weight: 100
 url: /fr/net/programming-with-links-and-actions/set-target-link/
 ---
-Learn how to set a target link in PDF file using Aspose.PDF for .NET with this step-by-step guide.
+Découvrez comment définir un lien cible dans un fichier PDF à l'aide d'Aspose.PDF pour .NET avec ce guide étape par étape.
 
-## Step 1: Setting up the environment
+## Étape 1 : Configuration de l'environnement
 
-Make sure you have set up your development environment with a C# project and the appropriate Aspose.PDF references.
+Assurez-vous d'avoir configuré votre environnement de développement avec un projet C# et les références Aspose.PDF appropriées.
 
-## Step 2: Loading the PDF file
+## Étape 2 : Chargement du fichier PDF
 
-Set the directory path of your documents and upload the PDF file using the following code:
+Définissez le chemin du répertoire de vos documents et téléchargez le fichier PDF en utilisant le code suivant :
 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Load the PDF file
+// Charger le fichier PDF
 Document document = new Document(dataDir + "UpdateLinks.pdf");
 ```
 
-## Step 3: Editing the target link
+## Étape 3 : Modification du lien cible
 
-Get the link annotation to modify using the following code:
+Récupérez l'annotation du lien à modifier à l'aide du code suivant :
 
 ```csharp
 LinkAnnotation linkAnnot = (LinkAnnotation)document.Pages[1].Annotations[1];
 GoToRemoteAction goToR = (GoToRemoteAction)linkAnnot.Action;
 ```
 
-You can adjust the `[1]` indices to select a specific page or annotation.
+ Vous pouvez ajuster le`[1]` index pour sélectionner une page ou une annotation spécifique.
 
-Next, update the destination without updating the file:
+Ensuite, mettez à jour la destination sans mettre à jour le fichier :
 
 ```csharp
 goToR.Destination = new XYZExplicitDestination(2, 0, 0, 1.5);
 ```
 
-And if you also want to update the file:
+Et si vous souhaitez également mettre à jour le fichier :
 
 ```csharp
 goToR.File = new FileSpecification(dataDir + "input.pdf");
 ```
 
-## Step 4: Save the document with the updated link
+## Étape 4 : Enregistrez le document avec le lien mis à jour
 
-Save the document with the updated link using the `Save` method:
+ Enregistrez le document avec le lien mis à jour en utilisant le`Save` méthode:
 
 ```csharp
 dataDir = dataDir + "SetTargetLink_out.pdf";
 document. Save(dataDir);
 ```
 
-## Step 5: Displaying the result
+## Étape 5 : Affichage du résultat
 
-Display a message indicating that the target link was successfully configured and specify the location of the saved file:
+Affichez un message indiquant que le lien cible a été configuré avec succès et précisez l'emplacement du fichier enregistré :
 
 ```csharp
 Console.WriteLine("\nConfiguration of target link successful.\nFile saved at location: " + dataDir);
 ```
 
-### Sample source code for Set Target Link using Aspose.PDF for .NET 
+### Exemple de code source pour définir le lien cible à l'aide d'Aspose.PDF pour .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Le chemin d'accès au répertoire des documents.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Load the PDF file
+	// Charger le fichier PDF
 	Document document = new Document(dataDir + "UpdateLinks.pdf");
 	LinkAnnotation linkAnnot = (LinkAnnotation)document.Pages[1].Annotations[1];
 	GoToRemoteAction goToR = (GoToRemoteAction)linkAnnot.Action;
-	// Next line update destination, do not update file
+	// Destination de mise à jour de la ligne suivante, ne pas mettre à jour le fichier
 	goToR.Destination = new XYZExplicitDestination(2, 0, 0, 1.5);
-	// Next line update file
+	// Fichier de mise à jour de la ligne suivante
 	goToR.File = new FileSpecification(dataDir +  "input.pdf");
 	dataDir = dataDir + "SetTargetLink_out.pdf";
-	// Save the document with updated link
+	// Enregistrez le document avec le lien mis à jour
 	document.Save(dataDir);
 	Console.WriteLine("\nTarget link setup successfully.\nFile saved at " + dataDir);
 }
@@ -91,52 +91,52 @@ catch (Exception ex)
 
 ## Conclusion
 
-Congratulation ! You now know how to set a target link in a PDF file using Aspose.PDF for .NET. Use this knowledge to customize links in your PDF documents and create interactive experiences for users.
+Félicitation ! Vous savez maintenant comment définir un lien cible dans un fichier PDF à l'aide d'Aspose.PDF pour .NET. Utilisez ces connaissances pour personnaliser les liens dans vos documents PDF et créer des expériences interactives pour les utilisateurs.
 
-Now that you've completed this guide, you can apply these concepts to your own projects and further explore the features offered by Aspose.PDF for .NET.
+Maintenant que vous avez terminé ce guide, vous pouvez appliquer ces concepts à vos propres projets et explorer davantage les fonctionnalités offertes par Aspose.PDF pour .NET.
 
-### FAQ's for set target link in PDF file
+### FAQ pour définir le lien cible dans un fichier PDF
 
-#### Q: What is a target link in a PDF file?
+#### Q : Qu'est-ce qu'un lien cible dans un fichier PDF ?
 
-A: A target link in a PDF file is a clickable link that navigates the reader to a specific destination within the same document or to another PDF file.
+R : Un lien cible dans un fichier PDF est un lien cliquable qui dirige le lecteur vers une destination spécifique dans le même document ou vers un autre fichier PDF.
 
-#### Q: Why would I want to set a target link in a PDF file?
+#### Q : Pourquoi voudrais-je définir un lien cible dans un fichier PDF ?
 
-A: Setting target links allows you to create a seamless navigation experience within a PDF document or link to specific sections or pages within other PDF files.
+R : La définition de liens cibles vous permet de créer une expérience de navigation transparente dans un document PDF ou de créer des liens vers des sections ou des pages spécifiques dans d'autres fichiers PDF.
 
-#### Q: How does Aspose.PDF for .NET help in setting target links?
+#### Q : Comment Aspose.PDF pour .NET aide-t-il à définir les liens cibles ?
 
-A: Aspose.PDF for .NET provides APIs to manipulate various aspects of PDF files, including creating and modifying links. This tutorial demonstrates how to set a target link using C# code.
+R : Aspose.PDF pour .NET fournit des API pour manipuler divers aspects des fichiers PDF, notamment la création et la modification de liens. Ce didacticiel montre comment définir un lien cible à l'aide du code C#.
 
-#### Q: Can I set target links to navigate to specific pages within the same document?
+#### Q : Puis-je définir des liens cibles pour accéder à des pages spécifiques du même document ?
 
-A: Yes, Aspose.PDF for .NET enables you to set target links to navigate to specific pages within the same document.
+R : Oui, Aspose.PDF pour .NET vous permet de définir des liens cibles pour accéder à des pages spécifiques du même document.
 
-#### Q: Can I set target links to navigate to specific pages in another PDF file?
+#### Q : Puis-je définir des liens cibles pour accéder à des pages spécifiques dans un autre fichier PDF ?
 
-A: Yes, you can set target links to navigate to specific pages within another PDF file using Aspose.PDF for .NET.
+R : Oui, vous pouvez définir des liens cibles pour accéder à des pages spécifiques d'un autre fichier PDF à l'aide d'Aspose.PDF pour .NET.
 
-#### Q: Are there any limitations to setting target links?
+#### Q : Existe-t-il des limites à la définition de liens cibles ?
 
-A: Target links can only navigate within the same document or to specific pages within other PDF files. They cannot directly link to specific content within other documents.
+R : Les liens cibles ne peuvent naviguer que dans le même document ou vers des pages spécifiques d'autres fichiers PDF. Ils ne peuvent pas créer de lien direct vers un contenu spécifique dans d’autres documents.
 
-#### Q: How can I customize the appearance of a target link?
+#### Q : Comment puis-je personnaliser l’apparence d’un lien cible ?
 
-A: The appearance of a target link, such as its color and style, can be customized using the properties provided by Aspose.PDF for .NET.
+: L'apparence d'un lien cible, comme sa couleur et son style, peut être personnalisée à l'aide des propriétés fournies par Aspose.PDF pour .NET.
 
-#### Q: Can I set multiple target links in the same PDF document?
+#### Q : Puis-je définir plusieurs liens cibles dans le même document PDF ?
 
-A: Yes, you can set multiple target links in the same PDF document. Simply repeat the process for each link you want to create.
+R : Oui, vous pouvez définir plusieurs liens cibles dans le même document PDF. Répétez simplement le processus pour chaque lien que vous souhaitez créer.
 
-#### Q: Can I set a target link using a specific shape or text?
+#### Q : Puis-je définir un lien cible à l’aide d’une forme ou d’un texte spécifique ?
 
-A: Yes, you can attach a target link to specific shapes or text within the PDF document using the appropriate properties and methods provided by Aspose.PDF for .NET.
+R : Oui, vous pouvez attacher un lien cible à des formes ou du texte spécifiques dans le document PDF à l'aide des propriétés et méthodes appropriées fournies par Aspose.PDF pour .NET.
 
-#### Q: How can I test if the target link is working as intended?
+#### Q : Comment puis-je tester si le lien cible fonctionne comme prévu ?
 
-A: After setting the target link using the provided code, open the modified PDF and click on the link to ensure it navigates to the desired destination.
+R : Après avoir défini le lien cible à l'aide du code fourni, ouvrez le PDF modifié et cliquez sur le lien pour vous assurer qu'il dirige vers la destination souhaitée.
 
-#### Q: Can I set target links in password-protected PDFs?
+#### Q : Puis-je définir des liens cibles dans des PDF protégés par mot de passe ?
 
-A: Yes, you can set target links in password-protected PDFs as long as you provide the appropriate credentials to access and modify the document.
+R : Oui, vous pouvez définir des liens cibles dans des PDF protégés par mot de passe à condition de fournir les informations d'identification appropriées pour accéder au document et le modifier.

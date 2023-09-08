@@ -1,57 +1,57 @@
 ---
-title: Update Child Bookmarks In PDF File
-linktitle: Update Child Bookmarks In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily update child bookmarks in PDF file with Aspose.PDF for .NET.
+title: تحديث الإشارات المرجعية التابعة في ملف PDF
+linktitle: تحديث الإشارات المرجعية التابعة في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: يمكنك بسهولة تحديث الإشارات المرجعية الفرعية في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 110
 url: /ar/net/programming-with-bookmarks/update-child-bookmarks/
 ---
-Updating child bookmarks in PDF file allows you to modify the properties of specific bookmarks within a parent bookmark. With Aspose.PDF for .NET, you can easily update child bookmarks by following the following source code:
+يتيح لك تحديث الإشارات المرجعية الفرعية في ملف PDF تعديل خصائص إشارات مرجعية معينة داخل الإشارة المرجعية الأصلية. باستخدام Aspose.PDF for .NET، يمكنك بسهولة تحديث الإشارات المرجعية الفرعية باتباع التعليمات البرمجية المصدر التالية:
 
-## Step 1: Import required libraries
+## الخطوة 1: استيراد المكتبات المطلوبة
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+قبل أن تبدأ، تحتاج إلى استيراد المكتبات اللازمة لمشروع C# الخاص بك. فيما يلي توجيه الاستيراد الضروري:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## الخطوة 2: تعيين المسار إلى مجلد المستندات
 
-In this step, you need to specify the path to the folder containing the PDF file you want to update. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ في هذه الخطوة، تحتاج إلى تحديد المسار إلى المجلد الذي يحتوي على ملف PDF الذي تريد تحديثه. يستبدل`"YOUR DOCUMENT DIRECTORY"`في الكود التالي مع المسار الفعلي لمجلد المستندات الخاص بك:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## الخطوة 3: افتح مستند PDF
 
-Now we will open the PDF document we want to update using the following code:
+سنقوم الآن بفتح مستند PDF الذي نريد تحديثه باستخدام الكود التالي:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "UpdateChildBookmarks.pdf");
 ```
 
-## Step 4: Get parent bookmark object
+## الخطوة 4: الحصول على كائن الإشارة المرجعية الأصل
 
-In this step, we are going to get the specific parent bookmark object from which we want to update the child bookmarks. In the example below, we retrieve the parent bookmark at index 1 (the second bookmark in the bookmarks collection). You can adjust the index according to your needs. Here is the corresponding code:
+في هذه الخطوة، سنحصل على كائن الإشارة المرجعية الأصل المحدد الذي نريد تحديث الإشارات المرجعية الفرعية منه. في المثال أدناه، نقوم باسترداد الإشارة المرجعية الأصلية في الفهرس 1 (الإشارة المرجعية الثانية في مجموعة الإشارات المرجعية). يمكنك ضبط الفهرس وفقًا لاحتياجاتك. هنا هو الكود المقابل:
 
 ```csharp
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
 ```
 
-## Step 5: Get Child Bookmark Object
+## الخطوة 5: الحصول على كائن الإشارة المرجعية التابعة
 
-Now let's get the specific child bookmark object we want to update. In the example below, we retrieve the child bookmark at index 1 (the second child bookmark in the collection of child bookmarks of the parent bookmark). You can adjust the index according to your needs. Here is the corresponding code:
+الآن لنحصل على كائن الإشارة المرجعية الفرعي المحدد الذي نريد تحديثه. في المثال أدناه، نقوم باسترداد الإشارة المرجعية الفرعية في الفهرس 1 (الإشارة المرجعية الفرعية الثانية في مجموعة الإشارات المرجعية الفرعية للإشارة المرجعية الأصلية). يمكنك ضبط الفهرس وفقًا لاحتياجاتك. هنا هو الكود المقابل:
 
 ```csharp
 OutlineItemCollection childOutline = pdfOutline[1];
 ```
 
-## Step 6: Update child bookmark properties
+## الخطوة 6: تحديث خصائص الإشارة المرجعية الفرعية
 
-Now let's update the child bookmark properties such as title, italic style, and bold style. You can adjust these properties according to your needs. Here is the corresponding code:
+لنقم الآن بتحديث خصائص الإشارة المرجعية الفرعية مثل العنوان والنمط المائل والنمط الغامق. يمكنك ضبط هذه الخصائص وفقًا لاحتياجاتك. هنا هو الكود المقابل:
 
 ```csharp
 childOutline.Title = "Updated Outline";
@@ -59,93 +59,93 @@ childOutline. Italic = true;
 childOutline. Bold = true;
 ```
 
-## Step 7: Save the updated file
+## الخطوة 7: احفظ الملف المحدث
 
-Now let's save the updated PDF file using the `Save` method of the `pdfDocument` object. Here is the corresponding code:
+ الآن دعونا نحفظ ملف PDF المحدث باستخدام ملف`Save` طريقة`pdfDocument` هدف. هنا هو الكود المقابل:
 
 ```csharp
 dataDir = dataDir + "UpdateChildBookmarks_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Update Child Bookmarks using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لتحديث الإشارات المرجعية التابعة باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "UpdateChildBookmarks.pdf");
-// Get a bookmark object
+// الحصول على كائن الإشارة المرجعية
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
-// Get child bookmark object
+//الحصول على كائن الإشارة المرجعية التابعة
 OutlineItemCollection childOutline = pdfOutline[1];
 childOutline.Title = "Updated Outline";
 childOutline.Italic = true;
 childOutline.Bold = true;
 dataDir = dataDir + "UpdateChildBookmarks_out.pdf";            
-// Save output
+// حفظ الإخراج
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nChild bookmarks updated successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You now have a step-by-step guide to updating child bookmarks with Aspose.PDF for .NET. You can use this code to modify the properties of child bookmarks in your PDF documents.
+تهنئة ! لديك الآن دليل خطوة بخطوة لتحديث الإشارات المرجعية الفرعية باستخدام Aspose.PDF لـ .NET. يمكنك استخدام هذا الرمز لتعديل خصائص الإشارات المرجعية الفرعية في مستندات PDF الخاصة بك.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+تأكد من مراجعة وثائق Aspose.PDF الرسمية لمزيد من المعلومات حول ميزات معالجة الإشارات المرجعية المتقدمة.
 
-### FAQ's for update child bookmarks in PDF file
+### الأسئلة الشائعة لتحديث الإشارات المرجعية الفرعية في ملف PDF
 
-#### Q: What are child bookmarks in a PDF file?
+#### س: ما هي الإشارات المرجعية الفرعية في ملف PDF؟
 
-A: Child bookmarks are bookmarks that are nested within a parent bookmark. They allow you to create a hierarchical structure for navigating through a PDF document's content.
+ج: الإشارات المرجعية الفرعية هي إشارات مرجعية متداخلة داخل الإشارة المرجعية الأصلية. إنها تسمح لك بإنشاء هيكل هرمي للتنقل عبر محتوى مستند PDF.
 
-#### Q: Why would I need to update child bookmarks?
+#### س: لماذا أحتاج إلى تحديث الإشارات المرجعية الفرعية؟
 
-A: Updating child bookmarks is useful when you want to modify the properties, titles, or styles of specific bookmarks within a parent bookmark. This helps customize the document's navigational structure.
+ج: يعد تحديث الإشارات المرجعية الفرعية مفيدًا عندما تريد تعديل الخصائص أو العناوين أو أنماط الإشارات المرجعية المحددة داخل الإشارة المرجعية الأصلية. يساعد هذا في تخصيص بنية التنقل للمستند.
 
-#### Q: How do I import the required libraries for my C# project?
+#### س: كيف يمكنني استيراد المكتبات المطلوبة لمشروع C# الخاص بي؟
 
-A: To import the necessary libraries for your C# project, include the following import directive:
+ج: لاستيراد المكتبات اللازمة لمشروع C# الخاص بك، قم بتضمين توجيه الاستيراد التالي:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This directive enables you to access the classes and methods needed for working with PDF documents and bookmarks.
+يمكّنك هذا التوجيه من الوصول إلى الفئات والأساليب اللازمة للعمل مع مستندات PDF والإشارات المرجعية.
 
-#### Q: How do I specify the path to the documents folder?
+#### س: كيف أحدد المسار إلى مجلد المستندات؟
 
-A: Replace `"YOUR DOCUMENT DIRECTORY"` in the provided source code with the actual path to the folder containing the PDF file you want to update.
+ ج: استبدال`"YOUR DOCUMENT DIRECTORY"` في الكود المصدري المقدم مع المسار الفعلي إلى المجلد الذي يحتوي على ملف PDF الذي تريد تحديثه.
 
-#### Q: How do I open a PDF document for updating child bookmarks?
+#### س: كيف يمكنني فتح مستند PDF لتحديث الإشارات المرجعية الفرعية؟
 
-A: To open a PDF document for updating child bookmarks, use the following code:
+ج: لفتح مستند PDF لتحديث الإشارات المرجعية الفرعية، استخدم الكود التالي:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "UpdateChildBookmarks.pdf");
 ```
 
-Replace `"UpdateChildBookmarks.pdf"` with the actual file name.
+ يستبدل`"UpdateChildBookmarks.pdf"` مع اسم الملف الفعلي.
 
-#### Q: How do I get the parent bookmark object from which I want to update child bookmarks?
+#### س: كيف يمكنني الحصول على كائن الإشارة المرجعية الأصل الذي أريد تحديث الإشارات المرجعية الفرعية منه؟
 
-A: To retrieve a specific parent bookmark for updating child bookmarks, access the `Outlines` property of the `pdfDocument` object. In the example below, we retrieve the parent bookmark at index 1:
+ ج: لاسترداد إشارة مرجعية أصل محددة لتحديث الإشارات المرجعية الفرعية، قم بالوصول إلى`Outlines` ملكية`pdfDocument` هدف. في المثال أدناه، نقوم باسترداد الإشارة المرجعية الأصلية في الفهرس 1:
 
 ```csharp
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
 ```
 
-#### Q: How do I get the child bookmark object I want to update?
+#### س: كيف يمكنني الحصول على كائن الإشارة المرجعية الفرعي الذي أريد تحديثه؟
 
-A: To retrieve a specific child bookmark for updating, access the `OutlineItemCollection` of the parent bookmark. In the example below, we retrieve the child bookmark at index 1:
+ ج: لاسترداد إشارة مرجعية فرعية محددة للتحديث، قم بالوصول إلى`OutlineItemCollection` من الإشارة المرجعية الأصل. في المثال أدناه، نقوم باسترداد الإشارة المرجعية الفرعية في الفهرس 1:
 
 ```csharp
 OutlineItemCollection childOutline = pdfOutline[1];
 ```
 
-#### Q: What child bookmark properties can I update?
+#### س: ما هي خصائص الإشارات المرجعية الفرعية التي يمكنني تحديثها؟
 
-A: You can update various properties of a child bookmark, such as its title, italic style, and bold style. Customize these properties according to your needs:
+ج: يمكنك تحديث الخصائص المختلفة للإشارة المرجعية التابعة، مثل عنوانها ونمطها المائل ونمطها الغامق. قم بتخصيص هذه الخصائص وفقًا لاحتياجاتك:
 
 ```csharp
 childOutline.Title = "Updated Outline";
@@ -153,13 +153,13 @@ childOutline.Italic = true;
 childOutline.Bold = true;
 ```
 
-#### Q: Can I update multiple child bookmarks using this method?
+#### س: هل يمكنني تحديث إشارات فرعية متعددة باستخدام هذه الطريقة؟
 
-A: Yes, you can repeat steps 4 to 7 for each child bookmark you want to update. Modify the parent index and child index as needed.
+ج: نعم، يمكنك تكرار الخطوات من 4 إلى 7 لكل إشارة مرجعية فرعية تريد تحديثها. قم بتعديل الفهرس الأصلي والفهرس الفرعي حسب الحاجة.
 
-#### Q: How do I save the updated PDF file?
+#### س: كيف يمكنني حفظ ملف PDF المحدث؟
 
-A: Save the updated PDF file using the `Save` method of the `pdfDocument` object:
+ ج: احفظ ملف PDF المحدث باستخدام الملف`Save` طريقة`pdfDocument` هدف:
 
 ```csharp
 dataDir = dataDir + "UpdateChildBookmarks_out.pdf";

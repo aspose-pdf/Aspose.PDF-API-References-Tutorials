@@ -1,57 +1,57 @@
 ---
-title: Get Bookmark Page Number In PDF File
-linktitle: Get Bookmark Page Number In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily get bookmark page number in PDF file with Aspose.PDF for .NET.
+title: Ottieni il numero di pagina del segnalibro nel file PDF
+linktitle: Ottieni il numero di pagina del segnalibro nel file PDF
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Ottieni facilmente il numero di pagina del segnalibro nel file PDF con Aspose.PDF per .NET.
 type: docs
 weight: 60
 url: /it/net/programming-with-bookmarks/get-bookmark-page-number/
 ---
-Retrieving page numbers associated with bookmarks in PDF file can be useful for navigation. With Aspose.PDF for .NET, you can easily get the page number of bookmarks by following the following source code:
+Il recupero dei numeri di pagina associati ai segnalibri nel file PDF può essere utile per la navigazione. Con Aspose.PDF per .NET, puoi facilmente ottenere il numero di pagina dei segnalibri seguendo il seguente codice sorgente:
 
-## Step 1: Import required libraries
+## Passaggio 1: importa le librerie richieste
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Prima di iniziare, devi importare le librerie necessarie per il tuo progetto C#. Ecco la necessaria direttiva sulle importazioni:
 
 ```csharp
 using Aspose.Pdf.Facades;
 ```
 
-## Step 2: Set path to documents folder
+## Passaggio 2: imposta il percorso della cartella dei documenti
 
-In this step, you need to specify the path to the folder containing the PDF file you want to extract the bookmark page numbers from. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ In questo passaggio, devi specificare il percorso della cartella contenente il file PDF da cui desideri estrarre i numeri di pagina dei segnalibri. Sostituire`"YOUR DOCUMENT DIRECTORY"`nel seguente codice con il percorso effettivo della cartella dei documenti:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Create the bookmark editor
+## Passaggio 3: crea l'editor dei segnalibri
 
-Now we will create a `PdfBookmarkEditor` object to manipulate the bookmarks of the document. Use the following code:
+ Ora creeremo un`PdfBookmarkEditor` oggetto per manipolare i segnalibri del documento. Utilizza il seguente codice:
 
 ```csharp
 PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
 ```
 
-## Step 4: Open the PDF File
+## Passaggio 4: apri il file PDF
 
-In this step, we open the PDF file using the `BindPdf` method of the bookmark editor. Here is the corresponding code:
+ In questo passaggio, apriamo il file PDF utilizzando il file`BindPdf` metodo dell'editor dei segnalibri. Ecco il codice corrispondente:
 
 ```csharp
 bookmarkEditor.BindPdf(dataDir + "GetBookmarks.pdf");
 ```
 
-## Step 5: Extract bookmarks
+## Passaggio 5: estrai i segnalibri
 
-Now we will extract the bookmarks from the document using the `ExtractBookmarks` method of the bookmark editor. Here is the corresponding code:
+ Ora estrarremo i segnalibri dal documento utilizzando il file`ExtractBookmarks` metodo dell'editor dei segnalibri. Ecco il codice corrispondente:
 
 ```csharp
 Bookmarks bookmarks = bookmarkEditor.ExtractBookmarks();
 ```
 
-## Step 6: Browse bookmarks and get page numbers
+## Passaggio 6: sfoglia i segnalibri e ottieni i numeri di pagina
 
-Finally, we loop through the extracted bookmarks and get the page numbers associated with each bookmark using a `foreach` loop. Here is the corresponding code:
+ Infine, passiamo in rassegna i segnalibri estratti e otteniamo i numeri di pagina associati a ciascun segnalibro utilizzando a`foreach` ciclo continuo. Ecco il codice corrispondente:
 
 ```csharp
 foreach (Bookmark bookmark in bookmarks)
@@ -67,15 +67,15 @@ foreach (Bookmark bookmark in bookmarks)
 }
 ```
 
-### Sample source code for Get Bookmark Page Number using Aspose.PDF for .NET 
+### Codice sorgente di esempio per Ottieni numero di pagina del segnalibro utilizzando Aspose.PDF per .NET 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create PdfBookmarkEditor
+// Crea PdfBookmarkEditor
 PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
-// Open PDF file
+// Apri il file PDF
 bookmarkEditor.BindPdf(dataDir + "GetBookmarks.pdf");
-// Extract bookmarks
+// Estrai segnalibri
 Aspose.Pdf.Facades.Bookmarks bookmarks = bookmarkEditor.ExtractBookmarks();
 foreach (Aspose.Pdf.Facades.Bookmark bookmark in bookmarks)
 {
@@ -90,65 +90,65 @@ foreach (Aspose.Pdf.Facades.Bookmark bookmark in bookmarks)
 }
 ```
 
-## Conclusion
+## Conclusione
 
-Congratulation ! Now you have a step by step guide to getting bookmark page numbers with Aspose.PDF for .NET. You can use this code to retrieve the navigation information associated with each bookmark in your PDF documents.
+Congratulazioni! Ora hai una guida passo passo per ottenere i numeri di pagina dei segnalibri con Aspose.PDF per .NET. Puoi utilizzare questo codice per recuperare le informazioni di navigazione associate a ciascun segnalibro nei tuoi documenti PDF.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Assicurati di controllare la documentazione ufficiale Aspose.PDF per ulteriori informazioni sulle funzionalità avanzate di manipolazione dei segnalibri.
 
-### FAQ's for get bookmark page number in PDF file
+### Domande frequenti per ottenere il numero di pagina del segnalibro nel file PDF
 
-#### Q: What are bookmarks in a PDF file?
+#### D: Cosa sono i segnalibri in un file PDF?
 
-A: Bookmarks in a PDF file are navigational aids that allow users to quickly jump to specific sections or pages within the document. They enhance the user experience by providing shortcuts to relevant content.
+R: I segnalibri in un file PDF sono aiuti alla navigazione che consentono agli utenti di passare rapidamente a sezioni o pagine specifiche all'interno del documento. Migliorano l'esperienza dell'utente fornendo scorciatoie ai contenuti pertinenti.
 
-#### Q: Why would I want to retrieve bookmark page numbers from a PDF file?
+#### D: Perché dovrei recuperare i numeri di pagina dei segnalibri da un file PDF?
 
-A: Retrieving bookmark page numbers helps users navigate through a document more effectively, providing a clear indication of where each bookmark leads. This is particularly useful for longer documents with multiple sections.
+R: Il recupero dei numeri di pagina dei segnalibri aiuta gli utenti a navigare in un documento in modo più efficace, fornendo un'indicazione chiara della direzione in cui conduce ciascun segnalibro. Ciò è particolarmente utile per documenti più lunghi con più sezioni.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### D: Come posso importare le librerie necessarie per il mio progetto C#?
 
-A: To import the required library for your C# project, use the following import directive:
+R: Per importare la libreria richiesta per il tuo progetto C#, utilizza la seguente direttiva di importazione:
 
 ```csharp
 using Aspose.Pdf.Facades;
 ```
 
-This directive allows you to utilize the classes and methods provided by Aspose.PDF for .NET.
+Questa direttiva consente di utilizzare le classi e i metodi forniti da Aspose.PDF per .NET.
 
-#### Q: How do I specify the path to the documents folder?
+#### D: Come posso specificare il percorso della cartella dei documenti?
 
-A: In the provided source code, replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file from which you want to extract bookmark page numbers. This ensures that the code can locate the target PDF file.
+ R: Nel codice sorgente fornito, sostituisci`"YOUR DOCUMENT DIRECTORY"`con il percorso effettivo della cartella contenente il file PDF da cui si desidera estrarre i numeri di pagina dei segnalibri. Ciò garantisce che il codice possa individuare il file PDF di destinazione.
 
-#### Q: How do I create a bookmark editor?
+#### D: Come posso creare un editor di segnalibri?
 
-A: To create a bookmark editor, use the following code:
+R: Per creare un editor di segnalibri, utilizzare il seguente codice:
 
 ```csharp
 PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
 ```
 
-#### Q: How do I open a PDF file for bookmark manipulation?
+#### D: Come posso aprire un file PDF per manipolare i segnalibri?
 
-A: To open a PDF file for extracting bookmark information, use the following code:
+R: Per aprire un file PDF per estrarre le informazioni sui segnalibri, utilizzare il seguente codice:
 
 ```csharp
 bookmarkEditor.BindPdf(dataDir + "GetBookmarks.pdf");
 ```
 
-Replace `"GetBookmarks.pdf"` with the actual file name.
+ Sostituire`"GetBookmarks.pdf"` con il nome effettivo del file.
 
-#### Q: How do I extract bookmarks from the PDF file?
+#### D: Come posso estrarre i segnalibri dal file PDF?
 
-A: To extract bookmarks from the PDF file, use the `ExtractBookmarks` method of the bookmark editor:
+ R: Per estrarre i segnalibri dal file PDF, utilizzare il file`ExtractBookmarks` metodo dell'editor dei segnalibri:
 
 ```csharp
 Bookmarks bookmarks = bookmarkEditor.ExtractBookmarks();
 ```
 
-#### Q: How do I retrieve and display bookmark page numbers?
+#### D: Come posso recuperare e visualizzare i numeri delle pagine dei segnalibri?
 
-A: Loop through the extracted bookmarks using a `foreach` loop and access the `PageNumber` property of each bookmark to retrieve and display its associated page number:
+ R: Passa in rassegna i segnalibri estratti utilizzando a`foreach` loop e accedi a`PageNumber` proprietà di ciascun segnalibro per recuperare e visualizzare il numero di pagina associato:
 
 ```csharp
 foreach (Bookmark bookmark in bookmarks)
@@ -159,10 +159,10 @@ foreach (Bookmark bookmark in bookmarks)
 }
 ```
 
-#### Q: Can I modify bookmark properties using this approach?
+#### D: Posso modificare le proprietà dei segnalibri utilizzando questo approccio?
 
-A: While this tutorial focuses on retrieving bookmark page numbers, you can modify other bookmark properties using the same `Bookmark` object and associated properties.
+ R: Anche se questo tutorial si concentra sul recupero dei numeri di pagina dei segnalibri, puoi modificare altre proprietà dei segnalibri utilizzando lo stesso`Bookmark`oggetto e proprietà associate.
 
-#### Q: How do I save the updated PDF file after extracting bookmark information?
+#### D: Come posso salvare il file PDF aggiornato dopo aver estratto le informazioni sui segnalibri?
 
-A: Bookmark extraction does not modify the original PDF file. If you want to save any changes, you can do so using other methods provided by Aspose.PDF for .NET.
+R: L'estrazione dei segnalibri non modifica il file PDF originale. Se desideri salvare eventuali modifiche, puoi farlo utilizzando altri metodi forniti da Aspose.PDF per .NET.

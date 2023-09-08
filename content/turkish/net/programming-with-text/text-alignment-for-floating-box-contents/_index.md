@@ -1,56 +1,56 @@
 ---
-title: Text Alignment For Floating Box Contents In PDF File
-linktitle: Text Alignment For Floating Box Contents In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to align text within floating boxes in PDF file using Aspose.PDF for .NET.
+title: PDF Dosyasındaki Kayan Kutu İçerikleri İçin Metin Hizalaması
+linktitle: PDF Dosyasındaki Kayan Kutu İçerikleri İçin Metin Hizalaması
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET'i kullanarak PDF dosyasındaki kayan kutular içindeki metni nasıl hizalayacağınızı öğrenin.
 type: docs
 weight: 520
 url: /tr/net/programming-with-text/text-alignment-for-floating-box-contents/
 ---
-This tutorial explains how to align text within floating boxes in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the process step by step.
+Bu eğitimde Aspose.PDF for .NET kullanılarak PDF dosyasındaki kayan kutular içindeki metnin nasıl hizalanacağı açıklanmaktadır. Sağlanan C# kaynak kodu süreci adım adım gösterir.
 
-## Prerequisites
+## Önkoşullar
 
-Before proceeding with the tutorial, make sure you have the following:
+Eğiticiye devam etmeden önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- Basic knowledge of C# programming language.
-- Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to install it in your project.
+- Temel C# programlama dili bilgisi.
+- Aspose.PDF for .NET kütüphanesi kuruldu. Bunu Aspose web sitesinden edinebilir veya projenize kurmak için NuGet'i kullanabilirsiniz.
 
-## Step 1: Set up the project
+## 1. Adım: Projeyi ayarlayın
 
-Start by creating a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library.
+Tercih ettiğiniz entegre geliştirme ortamında (IDE) yeni bir C# projesi oluşturarak başlayın ve Aspose.PDF for .NET kitaplığına bir referans ekleyin.
 
-## Step 2: Import necessary namespaces
+## 2. Adım: Gerekli ad alanlarını içe aktarın
 
-Add the following using directives at the beginning of your C# file to import the required namespaces:
+Gerekli ad alanlarını içe aktarmak için C# dosyanızın başına aşağıdaki kullanma yönergelerini ekleyin:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Set the path to the document directory
+## 3. Adım: Belge dizininin yolunu ayarlayın
 
-Set the path to your document directory using the `dataDir` variable:
+ kullanarak belge dizininizin yolunu ayarlayın.`dataDir` değişken:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` belge dizininizin gerçek yolu ile.
 
-## Step 4: Create a new Document
+## 4. Adım: Yeni bir Belge oluşturun
 
-Create a new `Document` object:
+ Yeni bir tane oluştur`Document` nesne:
 
 ```csharp
 Aspose.Pdf.Document doc = new Document();
 doc.Pages.Add();
 ```
 
-## Step 5: Create Floating Boxes with Text Fragments
+## Adım 5: Metin Parçalarıyla Kayan Kutular Oluşturun
 
-Create multiple `FloatingBox` objects with different vertical alignments and horizontal alignments:
+ Birden fazla oluştur`FloatingBox` farklı dikey hizalamalara ve yatay hizalamalara sahip nesneler:
 
 ```csharp
 Aspose.Pdf.FloatingBox floatBox = new Aspose.Pdf.FloatingBox(100, 100);
@@ -75,21 +75,21 @@ floatBox2.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Aspose.P
 doc.Pages[1].Paragraphs.Add(floatBox2);
 ```
 
-Modify the text and styling of the `TextFragment` objects as desired.
+ Metnini ve stilini değiştirin`TextFragment` nesneleri istediğiniz gibi seçin.
 
-## Step 6: Save the PDF document
+## Adım 6: PDF belgesini kaydedin
 
-Save the modified PDF document:
+Değiştirilen PDF belgesini kaydedin:
 
 ```csharp
 doc.Save(dataDir + "FloatingBox_alignment_review_out.pdf");
 ```
 
-Make sure to replace `"FloatingBox_alignment_review_out.pdf"` with the desired output file name.
+ Değiştirdiğinizden emin olun`"FloatingBox_alignment_review_out.pdf"` İstenilen çıktı dosyası adı ile.
 
-### Sample source code for Text Alignment For Floating Box Contents using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Kayan Kutu İçeriği İçin Metin Hizalama için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document doc = new Document();
 doc.Pages.Add();
@@ -114,44 +114,44 @@ doc.Pages[1].Paragraphs.Add(floatBox2);
 doc.Save(dataDir + "FloatingBox_alignment_review_out.pdf");
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulations! You have successfully learned how to align text within floating boxes in a PDF document using Aspose.PDF for .NET. This tutorial provided a step-by-step guide, from setting up the project to saving the modified document. You can now incorporate this code into your own C# projects to customize the alignment of text within floating boxes in PDF files.
+Tebrikler! Aspose.PDF for .NET'i kullanarak bir PDF belgesindeki kayan kutular içindeki metni nasıl hizalayacağınızı başarıyla öğrendiniz. Bu eğitimde, projenin kurulumundan değiştirilen belgenin kaydedilmesine kadar adım adım bir kılavuz sağlanmıştır. PDF dosyalarındaki kayan kutular içindeki metnin hizalamasını özelleştirmek için artık bu kodu kendi C# projelerinize dahil edebilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the purpose of the "Text Alignment For Floating Box Contents In PDF File" tutorial?
+#### S: "PDF Dosyasındaki Kayan Kutu İçerikleri İçin Metin Hizalama" eğitiminin amacı nedir?
 
-A: The "Text Alignment For Floating Box Contents In PDF File" tutorial aims to guide users on how to align text within floating boxes in a PDF document using Aspose.PDF for .NET. The tutorial provides step-by-step instructions and C# code samples to demonstrate the process.
+C: "PDF Dosyasındaki Kayan Kutu İçeriği İçin Metin Hizalama" eğitimi, kullanıcılara Aspose.PDF for .NET kullanarak bir PDF belgesindeki kayan kutular içindeki metni nasıl hizalayacakları konusunda rehberlik etmeyi amaçlamaktadır. Öğretici, süreci göstermek için adım adım talimatlar ve C# kod örnekleri sağlar.
 
-#### Q: How does this tutorial help in aligning text within floating boxes?
+#### S: Bu eğitim, kayan kutulardaki metnin hizalanmasına nasıl yardımcı olur?
 
-A: This tutorial helps users understand how to utilize Aspose.PDF for .NET to align text within floating boxes in a PDF document. By following the provided steps and code examples, users can customize the vertical and horizontal alignment of text within floating boxes.
+C: Bu eğitim, kullanıcıların bir PDF belgesindeki kayan kutular içindeki metni hizalamak için Aspose.PDF for .NET'i nasıl kullanacaklarını anlamalarına yardımcı olur. Sağlanan adımları ve kod örneklerini takip ederek kullanıcılar, kayan kutular içindeki metnin dikey ve yatay hizalamasını özelleştirebilir.
 
-#### Q: What prerequisites are required to follow this tutorial?
+#### S: Bu öğreticiyi takip etmek için hangi ön koşullar gereklidir?
 
-A: Before starting the tutorial, you should have a basic understanding of the C# programming language. Additionally, you need to have the Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or install it in your project using NuGet.
+C: Eğitime başlamadan önce C# programlama dili hakkında temel bilgiye sahip olmanız gerekir. Ayrıca Aspose.PDF for .NET kütüphanesinin de kurulu olması gerekir. Bunu Aspose web sitesinden edinebilir veya NuGet'i kullanarak projenize yükleyebilirsiniz.
 
-#### Q: How do I set up my project to follow this tutorial?
+#### S: Projemi bu öğreticiyi takip edecek şekilde nasıl ayarlayabilirim?
 
-A: To get started, create a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library. This enables you to leverage the library's features for working with PDF documents and aligning text within floating boxes.
+C: Başlamak için tercih ettiğiniz entegre geliştirme ortamında (IDE) yeni bir C# projesi oluşturun ve Aspose.PDF for .NET kütüphanesine bir referans ekleyin. Bu, kitaplığın PDF belgeleriyle çalışma ve kayan kutular içindeki metni hizalama özelliklerinden yararlanmanıza olanak tanır.
 
-#### Q: Can I use this tutorial to align text within any type of floating box?
+#### S: Bu öğreticiyi herhangi bir kayan kutu türündeki metni hizalamak için kullanabilir miyim?
 
-A: Yes, this tutorial provides instructions on how to align text within floating boxes in a PDF document using Aspose.PDF for .NET. You can use the provided code samples to customize the vertical and horizontal alignment of text within floating boxes.
+C: Evet, bu eğitimde Aspose.PDF for .NET kullanılarak bir PDF belgesindeki kayan kutular içindeki metnin nasıl hizalanacağına ilişkin talimatlar verilmektedir. Kayan kutular içindeki metnin dikey ve yatay hizalamasını özelleştirmek için sağlanan kod örneklerini kullanabilirsiniz.
 
-#### Q: How do I specify the alignment of text within a floating box?
+#### S: Kayan bir kutu içindeki metnin hizalamasını nasıl belirlerim?
 
-A: The tutorial demonstrates how to create `FloatingBox` objects and set their `VerticalAlignment` and `HorizontalAlignment` properties to control the alignment of the contained text. You can adjust these properties according to your requirements.
+ C: Eğitimde nasıl oluşturulacağı gösteriliyor`FloatingBox`nesneleri ve bunların ayarlarını yapın`VerticalAlignment` Ve`HorizontalAlignment` içerilen metnin hizalamasını kontrol eden özellikler. Bu özellikleri ihtiyaçlarınıza göre ayarlayabilirsiniz.
 
-#### Q: How can I customize the appearance of the floating boxes?
+#### S: Yüzen kutuların görünümünü nasıl özelleştirebilirim?
 
-A: You can customize the appearance of the floating boxes by modifying properties such as the border, size, and text content. The tutorial provides code samples that demonstrate how to create and style the `FloatingBox` objects.
+ C: Kenarlık, boyut ve metin içeriği gibi özellikleri değiştirerek kayan kutuların görünümünü özelleştirebilirsiniz. Öğreticide, öğenin nasıl oluşturulacağını ve stillendirileceğini gösteren kod örnekleri sağlanır.`FloatingBox` nesneler.
 
-#### Q: Can I add multiple floating boxes with different alignments in the same PDF document?
+#### S: Aynı PDF belgesine farklı hizalamalara sahip birden fazla kayan kutu ekleyebilir miyim?
 
-A: Yes, the tutorial illustrates how to create multiple `FloatingBox` objects with different vertical and horizontal alignments and add them to the same PDF document. This allows you to see the effects of various alignments within the same document.
+ C: Evet, eğitimde birden fazla öğenin nasıl oluşturulacağı gösterilmektedir`FloatingBox` Farklı dikey ve yatay hizalamalara sahip nesneleri seçin ve bunları aynı PDF belgesine ekleyin. Bu, aynı belgedeki çeşitli hizalamaların etkilerini görmenize olanak tanır.
 
-#### Q: How do I save the modified PDF document?
+#### S: Değiştirilen PDF belgesini nasıl kaydederim?
 
-A: To save the modified PDF document, you can use the `Save` method of the `Document` object. The tutorial provides code samples that demonstrate how to save the resulting PDF document.
+ C: Değiştirilen PDF belgesini kaydetmek için`Save` yöntemi`Document` nesne. Eğitimde, ortaya çıkan PDF belgesinin nasıl kaydedileceğini gösteren kod örnekleri sağlanır.

@@ -1,44 +1,44 @@
 ---
-title: Get Hyperlink Text In PDF File
-linktitle: Get Hyperlink Text In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract hyperlink text in PDF file using Aspose.PDF for .NET.
+title: Hämta hyperlänktext i PDF-fil
+linktitle: Hämta hyperlänktext i PDF-fil
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du extraherar hyperlänktext i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 70
 url: /sv/net/programming-with-links-and-actions/get-hyperlink-text/
 ---
-Learn how to extract text from hyperlinks in PDF file using Aspose.PDF for .NET with this step-by-step guide.
+Lär dig hur du extraherar text från hyperlänkar i PDF-fil med Aspose.PDF för .NET med denna steg-för-steg-guide.
 
-## Step 1: Setting up the environment
+## Steg 1: Sätta upp miljön
 
-Make sure you have set up your development environment with a C# project and the appropriate Aspose.PDF references.
+Se till att du har konfigurerat din utvecklingsmiljö med ett C#-projekt och lämpliga Aspose.PDF-referenser.
 
-## Step 2: Loading the PDF file
+## Steg 2: Laddar PDF-filen
 
-Set the directory path of your documents and upload the PDF file using the following code:
+Ställ in katalogsökvägen för dina dokument och ladda upp PDF-filen med följande kod:
 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Load the PDF file
+// Ladda PDF-filen
 Document document = new Document(dataDir + "input.pdf");
 ```
 
-## Step 3: Navigating through the pages of the document
+## Steg 3: Navigera genom dokumentets sidor
 
-Iterate through each page of the document using a `foreach` loop:
+ Iterera genom varje sida i dokumentet med hjälp av en`foreach` slinga:
 
 ```csharp
 foreach(Page page in document.Pages)
 {
-     // Display link annotations
+     // Visa länkkommentarer
      ShowLinkAnnotations(page);
 }
 ```
 
-## Step 4: Error Handling
+## Steg 4: Felhantering
 
-Add error handling to catch any exception and display the corresponding error message:
+Lägg till felhantering för att fånga eventuella undantag och visa motsvarande felmeddelande:
 
 ```csharp
 catch (Exception ex)
@@ -47,18 +47,18 @@ catch (Exception ex)
 }
 ```
 
-### Sample source code for Get Hyperlink Text using Aspose.PDF for .NET 
+### Exempel på källkod för Get Hyperlink Text med Aspose.PDF för .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Sökvägen till dokumentkatalogen.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Load the PDF file
+	// Ladda PDF-filen
 	Document document = new Document(dataDir + "input.pdf");
-	// Iterate through each page of PDF
+	// Iterera genom varje sida i PDF
 	foreach (Page page in document.Pages)
 	{
-		// Show link annotation
+		// Visa länkkommentar
 		ShowLinkAnnotations(page);
 	}
 }
@@ -68,42 +68,42 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Slutsats
 
-Congratulation ! You now know how to extract hyperlink text from a PDF file using Aspose.PDF for .NET. You can use this knowledge to deal with hyperlinks in your projects and automate tasks related to PDF files.
+Grattis! Du vet nu hur man extraherar hyperlänktext från en PDF-fil med Aspose.PDF för .NET. Du kan använda denna kunskap för att hantera hyperlänkar i dina projekt och automatisera uppgifter relaterade till PDF-filer.
 
-Now that you've completed this guide, you can apply these concepts to your own projects and further explore the features offered by Aspose.PDF for .NET.
+Nu när du har slutfört den här guiden kan du tillämpa dessa koncept på dina egna projekt och utforska funktionerna som erbjuds av Aspose.PDF för .NET.
 
-### FAQs for get hyperlink text in PDF file
+### Vanliga frågor för att få hyperlänktext i PDF-fil
 
-#### Q: What is hyperlink text in a PDF file?
+#### F: Vad är hyperlänktext i en PDF-fil?
 
-A: Hyperlink text in a PDF file refers to the visible text that users click on to navigate to a specific location or resource, such as a URL, another page in the same document, or an external document.
+S: Hyperlänktext i en PDF-fil hänvisar till den synliga text som användare klickar på för att navigera till en specifik plats eller resurs, till exempel en URL, en annan sida i samma dokument eller ett externt dokument.
 
-#### Q: How does extracting hyperlink text benefit my PDF document analysis?
+#### F: Hur gynnar det min PDF-dokumentanalys att extrahera hyperlänktext?
 
-A: Extracting hyperlink text allows you to gather and analyze the descriptive labels of hyperlinks within a PDF document. This information can be used for link validation, content categorization, and metadata extraction.
+S: Att extrahera hyperlänktext låter dig samla in och analysera de beskrivande etiketterna för hyperlänkar i ett PDF-dokument. Denna information kan användas för länkvalidering, innehållskategorisering och extrahering av metadata.
 
-#### Q: How can Aspose.PDF for .NET help in extracting hyperlink text?
+#### F: Hur kan Aspose.PDF för .NET hjälpa till att extrahera hyperlänktext?
 
-A: Aspose.PDF for .NET provides robust APIs for extracting hyperlink text. This tutorial provides a step-by-step guide on how to accomplish this task using C#.
+S: Aspose.PDF för .NET tillhandahåller robusta API:er för att extrahera hyperlänktext. Denna handledning ger en steg-för-steg-guide om hur du utför denna uppgift med C#.
 
-#### Q: Can I extract hyperlink text selectively based on specific criteria?
+#### F: Kan jag extrahera hyperlänktext selektivt baserat på specifika kriterier?
 
-A: Yes, you can selectively extract hyperlink text by iterating through each page of the PDF document and accessing the text associated with hyperlink annotations.
+S: Ja, du kan selektivt extrahera hyperlänkstext genom att iterera genom varje sida i PDF-dokumentet och komma åt texten som är kopplad till hyperlänksanteckningar.
 
-#### Q: Are there any limitations when extracting hyperlink text?
+#### F: Finns det några begränsningar när du extraherar hyperlänktext?
 
-A: The accuracy of hyperlink text extraction depends on the formatting and layout of the PDF document. Complex graphical elements or non-standard hyperlink representations might require additional handling.
+S: Exaktheten av hyperlänktextextraktion beror på formateringen och layouten av PDF-dokumentet. Komplexa grafiska element eller icke-standardiserade hyperlänksrepresentationer kan kräva ytterligare hantering.
 
-#### Q: Can I extract hyperlink text from password-protected PDF documents?
+#### F: Kan jag extrahera hyperlänktext från lösenordsskyddade PDF-dokument?
 
-A: Aspose.PDF for .NET can extract hyperlink text from password-protected PDF documents as long as you provide the appropriate authentication credentials when loading the document.
+S: Aspose.PDF för .NET kan extrahera hyperlänktext från lösenordsskyddade PDF-dokument så länge du tillhandahåller lämplig autentiseringsinformation när du laddar dokumentet.
 
-#### Q: How can I utilize the extracted hyperlink text in my application?
+#### F: Hur kan jag använda den extraherade hyperlänkstexten i min applikation?
 
-A: Once you've extracted the hyperlink text, you can analyze, categorize, or display it as needed within your application. You can also incorporate it into reports or data analysis.
+S: När du har extraherat hyperlänkstexten kan du analysera, kategorisera eller visa den efter behov i din applikation. Du kan också infoga det i rapporter eller dataanalys.
 
-#### Q: Is it possible to extract other attributes of hyperlinks, such as URLs or destinations?
+#### F: Är det möjligt att extrahera andra attribut för hyperlänkar, till exempel webbadresser eller destinationer?
 
-A: This tutorial focuses on extracting hyperlink text. To extract other attributes like URLs or destinations, you can refer to the official Aspose.PDF documentation for advanced hyperlink handling.
+S: Denna handledning fokuserar på att extrahera hyperlänktext. För att extrahera andra attribut som URL:er eller destinationer kan du se den officiella Aspose.PDF-dokumentationen för avancerad hyperlänkshantering.

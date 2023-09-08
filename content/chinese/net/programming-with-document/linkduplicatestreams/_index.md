@@ -1,97 +1,97 @@
 ---
-title: Link Duplicate Streams
-linktitle: Link Duplicate Streams
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use Aspose.PDF for .NET Link Duplicate Streams feature to optimize your PDF documents with this step-by-step guide.
+title: 链接重复的流
+linktitle: 链接重复的流
+second_title: Aspose.PDF for .NET API 参考
+description: 通过此分步指南，了解如何使用 Aspose.PDF for .NET Link Duplicate Streams 功能来优化您的 PDF 文档。
 type: docs
 weight: 230
 url: /zh/net/programming-with-document/linkduplicatestreams/
 ---
-Aspose.PDF for .NET is a comprehensive and powerful library that provides a variety of features to work with PDF files. One of its key features is the ability to optimize PDF files. In this article, we will explain how to use the Link Duplicate Streams feature of Aspose.PDF for .NET to optimize PDF files. We will provide step-by-step instructions and include a full source code example to make it easy for developers to follow along.
+Aspose.PDF for .NET 是一个全面而强大的库，提供了多种处理 PDF 文件的功能。其主要功能之一是优化 PDF 文件的能力。在本文中，我们将解释如何使用 Aspose.PDF for .NET 的链接重复流功能来优化 PDF 文件。我们将提供分步说明并包含完整的源代码示例，以便开发人员轻松遵循。
 
-## Step 1: Opening the PDF Document
+## 第 1 步：打开 PDF 文档
 
-To open the PDF document using Aspose.PDF for .NET, follow these steps:
+要使用 Aspose.PDF for .NET 打开 PDF 文档，请按照下列步骤操作：
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+//打开文档
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 ```
 
-In the code above, replace "YOUR DOCUMENT DIRECTORY" with the path to your project directory.
+在上面的代码中，将“YOUR DOCUMENT DIRECTORY”替换为项目目录的路径。
 
-## Step 2: Setting the LinkDuplicateStreams Option
+## 步骤 2：设置 LinkDuplicateStreams 选项
 
-To set the LinkDuplicateStreams option, follow these steps:
+要设置 LinkDuplicateStreams 选项，请按照下列步骤操作：
 
 ```csharp
-// Set LinkDuplcateStreams option 
+//设置 LinkDuplicateStreams 选项
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 {
     LinkDuplcateStreams = true
 };
 ```
 
-In the code above, we created a new instance of OptimizationOptions and set the LinkDuplicateStreams option to true.
+在上面的代码中，我们创建了 OptimizationOptions 的新实例并将 LinkDuplicateStreams 选项设置为 true。
 
-## Step 3: Optimizing the PDF Document
+## 步骤 3：优化 PDF 文档
 
-To optimize the PDF document, follow these steps:
+要优化 PDF 文档，请按照下列步骤操作：
 
 ```csharp
-// Optimize PDF document using OptimizationOptions
+//使用 OptimizationOptions 优化 PDF 文档
 pdfDocument.OptimizeResources(optimizeOptions);
 ```
 
-In the code above, we used the OptimizeResources method of the pdfDocument object to optimize the PDF document using the OptimizationOptions we created earlier.
+在上面的代码中，我们使用 pdfDocument 对象的 OptimizeResources 方法，通过之前创建的 OptimizationOptions 来优化 PDF 文档。
 
-## Step 4: Saving the Updated Document
+## 步骤 4：保存更新后的文档
 
-To save the updated document, follow these steps:
+要保存更新的文档，请按照下列步骤操作：
 
 ```csharp
 dataDir = dataDir + "OptimizeDocument_out.pdf";
-// Save updated document
+//保存更新的文档
 pdfDocument.Save(dataDir);
 ```
 
-In the code above, we used the Save method of the pdfDocument object to save the updated document to a new file named "OptimizeDocument_out.pdf" in the project directory.
+在上面的代码中，我们使用 pdfDocument 对象的 Save 方法将更新的文档保存到项目目录中名为“OptimizeDocument_out.pdf”的新文件中。
 
-### Example Source Code for Link Duplicate Streams using Aspose.PDF for .NET
+### 使用 Aspose.PDF for .NET 链接重复流的示例源代码
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+//打开文档
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-// Set LinkDuplcateStreams option 
+//设置 LinkDuplicateStreams 选项
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 {
 	LinkDuplcateStreams = true
 };
-// Optimize PDF document using OptimizationOptions
+//使用 OptimizationOptions 优化 PDF 文档
 pdfDocument.OptimizeResources(optimizeOptions);
 dataDir = dataDir + "OptimizeDocument_out.pdf";
-// Save updated document
+//保存更新的文档
 pdfDocument.Save(dataDir);
 ```
 
-## Conclusion
+## 结论
 
-The Link Duplicate Streams feature of Aspose.PDF for .NET provides an effective way to optimize PDF files by reducing their size. By identifying and linking duplicate streams, the library helps create more efficient PDF documents without sacrificing data integrity or visual quality. Developers can easily implement this feature using the provided steps and source code example, enhancing the performance and storage efficiency of their PDF files.
+Aspose.PDF for .NET 的链接重复流功能提供了一种通过减小 PDF 文件大小来优化 PDF 文件的有效方法。通过识别和链接重复流，该库有助于创建更高效的 PDF 文档，而不会牺牲数据完整性或视觉质量。开发人员可以使用提供的步骤和源代码示例轻松实现此功能，从而提高 PDF 文件的性能和存储效率。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What is the purpose of the Link Duplicate Streams feature in Aspose.PDF for .NET?
+#### 问：Aspose.PDF for .NET 中的链接重复流功能的用途是什么？
 
-A: The Link Duplicate Streams feature in Aspose.PDF for .NET is used to optimize PDF files by identifying and linking duplicate streams within the document. In a PDF file, there may be duplicate streams (such as images or fonts) that consume unnecessary space. By linking these duplicate streams, the file size can be reduced, resulting in a more efficient and smaller PDF document.
+答：Aspose.PDF for .NET 中的链接重复流功能用于通过识别和链接文档中的重复流来优化 PDF 文件。在 PDF 文件中，可能存在重复的流（例如图像或字体），从而消耗不必要的空间。通过链接这些重复的流，可以减小文件大小，从而生成更高效且更小的 PDF 文档。
 
-#### Q: How does the Link Duplicate Streams feature work?
+#### 问：链接重复流功能如何工作？
 
-A: The Link Duplicate Streams feature works by analyzing the content streams of the PDF document and identifying duplicate streams that have the same content. Instead of storing these duplicate streams separately, the feature creates a link between them, effectively sharing the same content. This optimization technique reduces the overall size of the PDF document without affecting its visual appearance or functionality.
+答：“链接重复流”功能的工作原理是分析 PDF 文档的内容流并识别具有相同内容的重复流。该功能不是单独存储这些重复的流，而是在它们之间创建链接，从而有效地共享相同的内容。这种优化技术可以减小 PDF 文档的整体大小，而不影响其视觉外观或功能。
 
-#### Q: Can the Link Duplicate Streams feature cause any loss of data or quality in the PDF document?
+#### 问：“链接重复流”功能是否会导致 PDF 文档中的数据或质量丢失？
 
-A: No, the Link Duplicate Streams feature does not cause any loss of data or quality in the PDF document. It only optimizes the file size by linking duplicate streams, without altering the content or visual appearance of the document. The feature is designed to ensure that the PDF document remains intact and maintains its original quality.
+答：不会，链接重复流功能不会导致 PDF 文档中的任何数据或质量损失。它仅通过链接重复的流来优化文件大小，而不改变文档的内容或视觉外观。该功能旨在确保 PDF 文档保持完整并保持其原始质量。

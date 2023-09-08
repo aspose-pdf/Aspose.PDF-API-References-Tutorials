@@ -1,74 +1,74 @@
 ---
-title: Delete Form Field In PDF Document
-linktitle: Delete Form Field In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Easily remove unwanted form fields in PDF document using Aspose.PDF for .NET.
+title: حذف حقل النموذج في وثيقة PDF
+linktitle: حذف حقل النموذج في وثيقة PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: قم بإزالة حقول النموذج غير المرغوب فيها بسهولة في مستند PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 50
 url: /ar/net/programming-with-forms/delete-form-field/
 ---
-In this tutorial, we will show you how to delete a form field using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+سنوضح لك في هذا البرنامج التعليمي كيفية حذف حقل نموذج باستخدام Aspose.PDF لـ .NET. سنشرح لك كود مصدر C# خطوة بخطوة لإرشادك خلال هذه العملية.
 
-## Step 1: Preparation
+## الخطوة 1: التحضير
 
-First, make sure you have imported the necessary libraries and set the path to the documents directory:
+أولاً، تأكد من استيراد المكتبات اللازمة وتعيين المسار إلى دليل المستندات:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Open the document
+## الخطوة 2: افتح المستند
 
-Open the existing PDF document:
+افتح مستند PDF الموجود:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "DeleteFormField.pdf");
 ```
 
-## Step 3: Delete a particular field
+## الخطوة 3: حذف حقل معين
 
-Delete a particular form field using its name:
+حذف حقل نموذج معين باستخدام اسمه:
 
 ```csharp
 pdfDocument.Form.Delete("textbox1");
 ```
 
-## Step 4: Save the edited document
+## الخطوة 4: احفظ المستند الذي تم تحريره
 
-Save the modified PDF document:
+احفظ مستند PDF المعدل:
 
 ```csharp
 dataDir = dataDir + "DeleteFormField_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Delete Form Field using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لحذف حقل النموذج باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "DeleteFormField.pdf");
-// Delete a particular field by name
+// حذف حقل معين بالاسم
 pdfDocument.Form.Delete("textbox1");
 dataDir = dataDir + "DeleteFormField_out.pdf";
-// Save modified document
+// حفظ الوثيقة المعدلة
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nParticular field deleted successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we learned how to delete a form field using Aspose.PDF for .NET. By following these steps, you can easily remove unwanted form fields from your PDF documents using Aspose.PDF.
+في هذا البرنامج التعليمي، تعلمنا كيفية حذف حقل نموذج باستخدام Aspose.PDF لـ .NET. باتباع هذه الخطوات، يمكنك بسهولة إزالة حقول النماذج غير المرغوب فيها من مستندات PDF الخاصة بك باستخدام Aspose.PDF.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: Can I delete multiple form fields at once using Aspose.PDF for .NET?
+#### س: هل يمكنني حذف حقول نماذج متعددة مرة واحدة باستخدام Aspose.PDF لـ .NET؟
 
-A: Yes, you can delete multiple form fields at once using Aspose.PDF for .NET. Simply call the `Delete` method for each form field you want to remove.
+ ج: نعم، يمكنك حذف حقول نماذج متعددة مرة واحدة باستخدام Aspose.PDF لـ .NET. ما عليك سوى الاتصال بـ`Delete` طريقة لكل حقل نموذج تريد إزالته.
 
-#### Q: How can I check if a form field exists before attempting to delete it?
+#### س: كيف يمكنني التحقق من وجود حقل النموذج قبل محاولة حذفه؟
 
-A: You can check if a form field exists before attempting to delete it by using the `Contains` method of the `Form` property. For example:
+ ج: يمكنك التحقق من وجود حقل نموذج قبل محاولة حذفه باستخدام الملف`Contains` طريقة`Form` ملكية. على سبيل المثال:
 
 ```csharp
 if (pdfDocument.Form.Contains("textbox1"))
@@ -77,14 +77,14 @@ if (pdfDocument.Form.Contains("textbox1"))
 }
 ```
 
-#### Q: What happens if I try to delete a form field that does not exist in the PDF document?
+#### س: ماذا يحدث إذا حاولت حذف حقل نموذج غير موجود في مستند PDF؟
 
-A: If you try to delete a form field that does not exist in the PDF document, the `Delete` method will not throw an error or exception. It will simply do nothing, as there is no field to delete.
+ ج: إذا حاولت حذف حقل نموذج غير موجود في مستند PDF، فسيتم حذف حقل النموذج`Delete` لن ترمي الطريقة خطأ أو استثناء. ببساطة لن يفعل شيئًا، حيث لا يوجد حقل لحذفه.
 
-#### Q: Can I delete form fields of different types, such as text fields, checkboxes, and radio buttons?
+#### س: هل يمكنني حذف حقول النموذج من أنواع مختلفة، مثل حقول النص وخانات الاختيار وأزرار الاختيار؟
 
-A: Yes, you can delete form fields of different types, such as text fields, checkboxes, and radio buttons, using the same `Delete` method in Aspose.PDF for .NET. Just pass the name of the field you want to delete as a parameter to the method.
+ ج: نعم، يمكنك حذف حقول النموذج بأنواعها المختلفة، مثل الحقول النصية وخانات الاختيار وأزرار الاختيار، باستخدام نفس الطريقة`Delete` الطريقة في Aspose.PDF لـ .NET. ما عليك سوى تمرير اسم الحقل الذي تريد حذفه كمعلمة للطريقة.
 
-#### Q: Is it possible to undo the deletion of a form field in the PDF document?
+#### س: هل من الممكن التراجع عن حذف حقل النموذج في وثيقة PDF؟
 
-A: No, once a form field is deleted using Aspose.PDF for .NET, it cannot be undone programmatically. It is recommended to create a backup of the PDF document before making any changes to it, so you can revert to the original document if needed.
+ج: لا، بمجرد حذف حقل نموذج باستخدام Aspose.PDF لـ .NET، لا يمكن التراجع عن ذلك برمجيًا. يوصى بإنشاء نسخة احتياطية من مستند PDF قبل إجراء أي تغييرات عليه، حتى تتمكن من العودة إلى المستند الأصلي إذا لزم الأمر.

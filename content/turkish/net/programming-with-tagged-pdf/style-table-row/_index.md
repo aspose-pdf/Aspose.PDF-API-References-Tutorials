@@ -1,64 +1,64 @@
 ---
-title: Style Table Row
-linktitle: Style Table Row
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to customize table rows with Aspose.PDF for .NET step by step guide to styling and formatting rows.
+title: Stil Tablosu Satırı
+linktitle: Stil Tablosu Satırı
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile tablo satırlarını nasıl özelleştireceğinizi adım adım satır şekillendirme ve formatlama kılavuzuyla öğrenin.
 type: docs
 weight: 180
 url: /tr/net/programming-with-tagged-pdf/style-table-row/
 ---
-In this detailed tutorial, we will walk you through the provided C# source code step by step to format the table row using Aspose.PDF for .NET. Follow the instructions below to understand how to customize table row styles and properties.
+Bu ayrıntılı eğitimde, Aspose.PDF for .NET'i kullanarak tablo satırını biçimlendirmek için sağlanan C# kaynak kodunu size adım adım anlatacağız. Tablo satır stillerinin ve özelliklerinin nasıl özelleştirileceğini anlamak için aşağıdaki talimatları izleyin.
 
-## Step 1: Setting up the environment
+## 1. Adım: Ortamı ayarlama
 
-Before you begin, make sure you've configured your development environment to use Aspose.PDF for .NET. This includes installing the Aspose.PDF library and configuring your project to reference it.
+Başlamadan önce geliştirme ortamınızı Aspose.PDF for .NET'i kullanacak şekilde yapılandırdığınızdan emin olun. Buna Aspose.PDF kütüphanesinin kurulması ve projenizin buna referans verecek şekilde yapılandırılması da dahildir.
 
-## Step 2: Creating a document
+## 2. Adım: Belge oluşturma
 
-In this step, we will create a new document object Aspose.PDF.
+Bu adımda yeni bir belge nesnesi Aspose.PDF oluşturacağız.
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Document creation
+// Belge oluşturma
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example of Table Row Formatting");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-We have created a new document and set the document title and language.
+Yeni bir belge oluşturduk ve belge başlığını ve dilini belirledik.
 
-## Step 3: Obtaining the root structure element
+## Adım 3: Kök yapı öğesinin elde edilmesi
 
-In this step we will get the root structure element for our document.
+Bu adımda belgemiz için kök yapı elemanını alacağız.
 
 ```csharp
-// Obtain the root structure element
+//Kök yapı öğesini edinin
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-We got the root structure element which will serve as a container for the array element.
+Dizi elemanı için kap görevi görecek kök yapı elemanını elde ettik.
 
-## Step 4: Creating the array structure element
+## Adım 4: Dizi yapısı öğesinin oluşturulması
 
-Now let's create a new table structure element for our document.
+Şimdi belgemiz için yeni bir tablo yapısı öğesi oluşturalım.
 
 ```csharp
-// Create the array structure element
+// Dizi yapısı öğesini oluşturun
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 ```
 
-We have created a new array structure element and added it to the root structure element.
+Yeni bir dizi yapısı elemanı oluşturduk ve onu kök yapı elemanına ekledik.
 
-## Step 5: Customize table row styles and properties
+## 5. Adım: Tablo satırı stillerini ve özelliklerini özelleştirin
 
-In this step, we will customize the table row styles and properties.
+Bu adımda tablo satır stillerini ve özelliklerini özelleştireceğiz.
 
 ```csharp
-// Customize table row styles and properties
+// Tablo satırı stillerini ve özelliklerini özelleştirme
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
 TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
 TableTFootElement tableTFootElement = tableElement.CreateTFoot();
@@ -68,7 +68,7 @@ int colCount = 3;
 int rowIndex;
 int colIndex;
 
-// Create the table header row
+// Tablo başlığı satırını oluşturun
 TableTRElement headTrElement = tableTHeadElement.CreateTR();
 headTrElement.AlternativeText = "Header Row";
 
@@ -78,7 +78,7 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
      theElement.SetText(string.Format("Header {0}", colIndex));
 }
 
-// Customize the rows of the body of the table
+// Tablo gövdesinin satırlarını özelleştirme
 for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
 {
      TableTRElement trElement = tableTBodyElement.CreateTR();
@@ -103,7 +103,7 @@ for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
      }
 }
 
-// Create the footer line of the table
+// Tablonun altbilgi satırını oluşturun
 TableTRElement footTrElement = tableTFootElement.CreateTR();
 footTrElement.AlternativeText = "Footline";
 
@@ -114,48 +114,48 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 }
 ```
 
-We've customized various aspects of the table row, such as background color, borders, row height, pagination, default cell style, and more.
+Tablo satırının arka plan rengi, kenarlıklar, satır yüksekliği, sayfalandırma, varsayılan hücre stili ve daha fazlası gibi çeşitli yönlerini özelleştirdik.
 
-## Step 6: Saving the tagged PDF document
+## Adım 6: Etiketli PDF belgesini kaydetme
 
-Now that we've created our document with the styled table row, we'll save it as a tagged PDF document.
+Artık belgemizi stillendirilmiş tablo satırıyla oluşturduğumuza göre, onu etiketli bir PDF belgesi olarak kaydedeceğiz.
 ```csharp
-// Save the tagged PDF document
+// Etiketli PDF belgesini kaydedin
 document.Save(dataDir + "StyleTableRow.pdf");
 ```
 
-We saved the tagged PDF document in the specified directory.
+Etiketli PDF belgesini belirtilen dizine kaydettik.
 
-## Step 7: PDF/UA compliance validation
+## 7. Adım: PDF/UA uyumluluk doğrulaması
 
-Next, we will validate the PDF/UA conformity of our document.
+Daha sonra belgemizin PDF/UA uygunluğunu doğrulayacağız.
 
 ```csharp
-// PDF/UA compliance check
+// PDF/UA uyumluluk kontrolü
 document = new Document(dataDir + "StyleTableRow.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableRow.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(string.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
 ```
 
-We uploaded the tagged PDF document and validated its PDF/UA compliance by generating an XML report.
+Etiketli PDF belgesini yükledik ve bir XML raporu oluşturarak PDF/UA uyumluluğunu doğruladık.
 
 
-### Sample source code for Style Table Row using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanan Stil Tablosu Satırı için örnek kaynak kodu 
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create document
+// Doküman oluştur
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example table row style");
 taggedContent.SetLanguage("en-US");
 
-// Get root structure element
+// Kök yapı öğesini alın
 StructureElement rootElement = taggedContent.RootElement;
 
-// Create table structure element
+// Tablo yapısı öğesi oluştur
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
@@ -202,62 +202,62 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 	tdElement.SetText(String.Format("Foot {0}", colIndex));
 }
 
-// Save Tagged Pdf Document
+// Etiketli Pdf Belgesini Kaydet
 document.Save(dataDir + "StyleTableRow.pdf");
 
-// Checking PDF/UA compliance
+// PDF/UA uyumluluğunu kontrol etme
 document = new Document(dataDir + "StyleTableRow.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableRow.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we learned how to format table row with Aspose.PDF for .NET. We customized the table row styles and properties, added the headers, body rows, and footer, saved the tagged PDF document, and validated its PDF/UA compliance.
+Bu eğitimde Aspose.PDF for .NET ile tablo satırlarının nasıl formatlanacağını öğrendik. Tablo satırı stillerini ve özelliklerini özelleştirdik, üstbilgileri, gövde satırlarını ve altbilgiyi ekledik, etiketli PDF belgesini kaydettik ve PDF/UA uyumluluğunu doğruladık.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the purpose of this tutorial on formatting table rows using Aspose.PDF for .NET?
+#### S: Tablo satırlarını Aspose.PDF for .NET kullanarak biçimlendirmeye yönelik bu eğitimin amacı nedir?
 
-A: The purpose of this tutorial is to guide you through the process of formatting table rows in a PDF document using Aspose.PDF for .NET. It provides step-by-step instructions and C# source code examples to help you customize table row styles and properties.
+C: Bu eğitimin amacı, Aspose.PDF for .NET kullanarak bir PDF belgesindeki tablo satırlarını biçimlendirme sürecinde size rehberlik etmektir. Tablo satırı stillerini ve özelliklerini özelleştirmenize yardımcı olmak için adım adım talimatlar ve C# kaynak kodu örnekleri sağlar.
 
-#### Q: What are the prerequisites for following this tutorial?
+#### S: Bu eğitimi takip etmenin önkoşulları nelerdir?
 
-A: Before you start, ensure that you have set up your development environment to use Aspose.PDF for .NET. This involves installing the Aspose.PDF library and configuring your project to reference it.
+C: Başlamadan önce, geliştirme ortamınızı Aspose.PDF for .NET'i kullanacak şekilde ayarladığınızdan emin olun. Bu, Aspose.PDF kütüphanesinin kurulmasını ve projenizin buna referans verecek şekilde yapılandırılmasını içerir.
 
-#### Q: How can I create a new PDF document and set its title and language using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'i kullanarak yeni bir PDF belgesini nasıl oluşturabilir ve başlığını ve dilini nasıl ayarlayabilirim?
 
-A: To create a new PDF document, you need to create a `Document` object from the Aspose.PDF library. The tutorial's provided C# source code demonstrates how to create a document and set its title and language properties.
+ C: Yeni bir PDF belgesi oluşturmak için bir`Document` Aspose.PDF kütüphanesinden nesne. Eğitimde sağlanan C# kaynak kodu, bir belgenin nasıl oluşturulacağını ve başlık ve dil özelliklerinin nasıl ayarlanacağını gösterir.
 
-#### Q: What is the significance of the root structure element in a PDF document?
+#### S: Bir PDF belgesindeki kök yapı öğesinin önemi nedir?
 
-A: The root structure element acts as a container for other structure elements, helping to organize and categorize the content of the PDF document. It plays a crucial role in establishing the logical structure of the document.
+C: Kök yapı öğesi, diğer yapı öğeleri için bir kap görevi görerek PDF belgesinin içeriğinin düzenlenmesine ve kategorize edilmesine yardımcı olur. Belgenin mantıksal yapısının oluşturulmasında çok önemli bir rol oynar.
 
-#### Q: How do I create and customize a table structure element to format table rows using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'i kullanarak tablo satırlarını formatlamak için bir tablo yapısı öğesini nasıl oluşturup özelleştirebilirim?
 
-A: The tutorial explains how to create a table structure element and customize its properties to format table rows. It covers aspects such as background color, borders, row height, pagination, default cell style, and more.
+C: Eğitimde bir tablo yapısı öğesinin nasıl oluşturulacağı ve tablo satırlarını biçimlendirmek için özelliklerinin nasıl özelleştirileceği açıklanmaktadır. Arka plan rengi, kenarlıklar, satır yüksekliği, sayfalandırma, varsayılan hücre stili ve daha fazlası gibi hususları kapsar.
 
-#### Q: Can I customize the styles and properties of individual cells within a table row?
+#### S: Bir tablo satırındaki tek tek hücrelerin stillerini ve özelliklerini özelleştirebilir miyim?
 
-A: Yes, you can customize the styles and properties of individual cells within a table row. The tutorial demonstrates how to set properties such as background color, borders, text color, padding, and more for table cells within the formatted table row.
+C: Evet, bir tablo satırındaki tek tek hücrelerin stillerini ve özelliklerini özelleştirebilirsiniz. Öğretici, biçimlendirilmiş tablo satırındaki tablo hücreleri için arka plan rengi, kenarlıklar, metin rengi, dolgu ve daha fazlası gibi özelliklerin nasıl ayarlanacağını gösterir.
 
-#### Q: How can I add headers, body rows, and a footer to the formatted table row?
+#### S: Biçimlendirilmiş tablo satırına üstbilgileri, gövde satırlarını ve altbilgiyi nasıl ekleyebilirim?
 
-A: The tutorial provides examples of creating and adding headers, body rows, and a footer to the table structure element. These elements can be customized further using the properties described in the tutorial.
+C: Öğreticide, tablo yapısı öğesine başlıklar, gövde satırları ve alt bilgi oluşturma ve ekleme örnekleri verilmektedir. Bu öğeler, eğitimde açıklanan özellikler kullanılarak daha da özelleştirilebilir.
 
-#### Q: What is PDF/UA compliance, and how can I validate it for my tagged PDF document?
+#### S: PDF/UA uyumluluğu nedir ve bunu etiketli PDF belgem için nasıl doğrulayabilirim?
 
-A: PDF/UA compliance ensures that the PDF document conforms to accessibility standards, making it more accessible to users with disabilities. The tutorial demonstrates how to validate PDF/UA conformity using the `Validate()` method and generate an XML compliance report.
+ C: PDF/UA uyumluluğu, PDF belgesinin erişilebilirlik standartlarına uygun olmasını sağlayarak onu engelli kullanıcılar için daha erişilebilir hale getirir. Eğitimde PDF/UA uyumluluğunun nasıl doğrulanacağı gösterilmektedir.`Validate()` yöntemini kullanın ve bir XML uyumluluk raporu oluşturun.
 
-#### Q: How can I incorporate these concepts into my own .NET applications?
+#### S: Bu kavramları kendi .NET uygulamalarıma nasıl dahil edebilirim?
 
-A: You can use the provided C# source code examples as a guide to implementing table row formatting in your own .NET applications. Modify and adapt the code to match your requirements and integrate it into your projects.
+C: Sağlanan C# kaynak kodu örneklerini, kendi .NET uygulamalarınızda tablo satırı biçimlendirmesini uygulamaya yönelik bir kılavuz olarak kullanabilirsiniz. Kodu gereksinimlerinize uyacak şekilde değiştirin ve uyarlayın ve projelerinize entegre edin.
 
-#### Q: Are there any recommended best practices for formatting table rows in PDF documents?
+#### S: PDF belgelerindeki tablo satırlarını biçimlendirmek için önerilen en iyi uygulamalar var mı?
 
-A: When formatting table rows, consider the readability and accessibility of the content. Ensure that colors have sufficient contrast, use clear and legible fonts, and maintain a consistent layout. Validate PDF/UA compliance to ensure accessibility standards are met.
+C: Tablo satırlarını biçimlendirirken içeriğin okunabilirliğini ve erişilebilirliğini göz önünde bulundurun. Renklerin yeterli kontrasta sahip olduğundan emin olun, net ve okunaklı yazı tipleri kullanın ve tutarlı bir düzen sağlayın. Erişilebilirlik standartlarının karşılandığından emin olmak için PDF/UA uyumluluğunu doğrulayın.
 
-#### Q: What other features of Aspose.PDF for .NET can I explore for PDF document customization?
+#### S: PDF belge özelleştirmesi için Aspose.PDF for .NET'in başka hangi özelliklerini keşfedebilirim?
 
-A: Aspose.PDF for .NET offers a wide range of features for PDF document customization, including text manipulation, image insertion, form field management, digital signatures, annotations, and more. Consult the official documentation and resources to explore additional functionalities.
+C: Aspose.PDF for .NET, PDF belgesi özelleştirmesi için metin işleme, görüntü ekleme, form alanı yönetimi, dijital imzalar, açıklamalar ve daha fazlasını içeren çok çeşitli özellikler sunar. Ek işlevleri keşfetmek için resmi belgelere ve kaynaklara bakın.

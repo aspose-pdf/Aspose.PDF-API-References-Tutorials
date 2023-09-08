@@ -1,37 +1,37 @@
 ---
-title: Embed Font In PDF File
-linktitle: Embed Font In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to embed fonts in a PDF file using Aspose.PDF for .NET with this step-by-step guide. Ensure your documents are displayed correctly on any device.
+title: Вставить шрифт в PDF-файл
+linktitle: Вставить шрифт в PDF-файл
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как встроить шрифты в PDF-файл с помощью Aspose.PDF для .NET, с помощью этого пошагового руководства. Убедитесь, что ваши документы корректно отображаются на любом устройстве.
 type: docs
 weight: 120
 url: /ru/net/programming-with-document/embedfont/
 ---
-In this tutorial, we will discuss how to embed fonts in a PDF file using Aspose.PDF for .NET. Aspose.PDF for .NET is a powerful library that allows developers to create, edit, and manipulate PDF documents programmatically. This library provides a wide range of features to work with PDF documents, including adding text, images, tables, and much more. Embedding fonts in a PDF file is a common requirement for developers who want to ensure that the PDF file is displayed correctly on different devices, regardless of whether the required fonts are installed on those devices or not.
+В этом уроке мы обсудим, как встраивать шрифты в файл PDF с помощью Aspose.PDF для .NET. Aspose.PDF для .NET — это мощная библиотека, которая позволяет разработчикам программно создавать, редактировать и манипулировать PDF-документами. Эта библиотека предоставляет широкий спектр функций для работы с PDF-документами, включая добавление текста, изображений, таблиц и многое другое. Встраивание шрифтов в PDF-файл — обычное требование для разработчиков, которые хотят обеспечить правильное отображение PDF-файла на разных устройствах, независимо от того, установлены ли на этих устройствах необходимые шрифты или нет.
 
-## Step 1: Create a new C# Console Application
-To get started, create a new C# Console Application in Visual Studio. You can name it whatever you like. Once the project is created, you need to add a reference to the Aspose.PDF for .NET library.
+## Шаг 1. Создайте новое консольное приложение C#.
+Для начала создайте новое консольное приложение C# в Visual Studio. Вы можете назвать его как угодно. После создания проекта вам необходимо добавить ссылку на библиотеку Aspose.PDF for .NET.
 
-## Step 2: Import the Aspose.PDF Namespace
-Add the following line of code at the top of your C# file to import the Aspose.PDF namespace:
+## Шаг 2. Импортируйте пространство имен Aspose.PDF.
+Добавьте следующую строку кода в начало вашего файла C#, чтобы импортировать пространство имен Aspose.PDF:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 3: Load an Existing PDF File
-To embed fonts in an existing PDF file, you need to load that file using the Document class. The following code demonstrates how to load an existing PDF file:
+## Шаг 3. Загрузите существующий PDF-файл
+Чтобы встроить шрифты в существующий PDF-файл, вам необходимо загрузить этот файл с помощью класса Document. Следующий код демонстрирует, как загрузить существующий PDF-файл:
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Load an existing PDF file
+// Загрузите существующий PDF-файл
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 4: Iterate through all the Pages
-Once you have loaded the PDF file, you need to iterate through all the pages in the document. For each page, you need to check if any fonts are used, and if so, you need to embed those fonts. The following code demonstrates how to iterate through all the pages in the PDF file and embed the fonts:
+## Шаг 4. Пройдитесь по всем страницам.
+После загрузки PDF-файла вам необходимо просмотреть все страницы документа. Для каждой страницы вам необходимо проверить, используются ли какие-либо шрифты, и если да, то вам необходимо встроить эти шрифты. Следующий код демонстрирует, как перебрать все страницы PDF-файла и встроить шрифты:
 
 ```csharp
 foreach (Page page in doc.Pages)
@@ -40,20 +40,20 @@ foreach (Page page in doc.Pages)
     {
         foreach (Aspose.Pdf.Text.Font pageFont in page.Resources.Fonts)
         {
-            // Check if font is already embedded
+            // Проверьте, встроен ли уже шрифт
             if (!pageFont.IsEmbedded)
                 pageFont.IsEmbedded = true;
         }
     }
 
-    // Check for the Form objects
+    // Проверьте объекты формы
     foreach (XForm form in page.Resources.Forms)
     {
         if (form.Resources.Fonts != null)
         {
             foreach (Aspose.Pdf.Text.Font formFont in form.Resources.Fonts)
             {
-                // Check if the font is embedded
+                // Проверьте, встроен ли шрифт
                 if (!formFont.IsEmbedded)
                     formFont.IsEmbedded = true;
             }
@@ -62,50 +62,50 @@ foreach (Page page in doc.Pages)
 }
 ```
 
-## Step 5: Save the PDF Document
-Once you have embedded all the fonts in the PDF file, you need to save the document. The following code demonstrates how to save the PDF file:
+## Шаг 5. Сохраните PDF-документ.
+После того как вы встроили все шрифты в PDF-файл, вам необходимо сохранить документ. Следующий код демонстрирует, как сохранить файл PDF:
 
 ```csharp
 dataDir = dataDir + "EmbedFont_out.pdf";
-// Save PDF Document
+// Сохранить PDF-документ
 doc.Save(dataDir);
 
 Console.WriteLine("\nFont embedded successfully in a PDF file.\nFile saved at " + dataDir);
 ```
 
-### Example source code for Embed Font using Aspose.PDF for .NET
+### Пример исходного кода для встраивания шрифта с использованием Aspose.PDF для .NET
 
-Here is the full source code for embedding a font using Aspose.PDF for .NET.
+Вот полный исходный код для встраивания шрифта с помощью Aspose.PDF для .NET.
 
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Load an existing PDF files
+// Загрузить существующие PDF-файлы
 Document doc = new Document(dataDir + "input.pdf");
 
-// Iterate through all the pages
+// Перебрать все страницы
 foreach (Page page in doc.Pages)
 {
 	if (page.Resources.Fonts != null)
 	{
 		foreach (Aspose.Pdf.Text.Font pageFont in page.Resources.Fonts)
 		{
-			// Check if font is already embedded
+			// Проверьте, встроен ли уже шрифт
 			if (!pageFont.IsEmbedded)
 				pageFont.IsEmbedded = true;
 		}
 	}
 
-	// Check for the Form objects
+	// Проверьте объекты формы
 	foreach (XForm form in page.Resources.Forms)
 	{
 		if (form.Resources.Fonts != null)
 		{
 			foreach (Aspose.Pdf.Text.Font formFont in form.Resources.Fonts)
 			{
-				// Check if the font is embedded
+				// Проверьте, встроен ли шрифт
 				if (!formFont.IsEmbedded)
 					formFont.IsEmbedded = true;
 			}
@@ -113,34 +113,34 @@ foreach (Page page in doc.Pages)
 	}
 }
 dataDir = dataDir + "EmbedFont_out.pdf";
-// Save PDF Document
+// Сохранить PDF-документ
 doc.Save(dataDir);
 
 Console.WriteLine("\nFont embedded successfully in a PDF file.\nFile saved at " + dataDir);
 ```
 
 
-## Conclusion embed font in PDF file
-In this article, we have discussed how to embed fonts in a PDF file using Aspose.PDF for .NET. Aspose.PDF for .NET provides a simple and easy-to-use API to work with PDF documents, including adding and embedding fonts. Embedding fonts in a PDF file is an important step to ensure that the document is displayed correctly on different devices, regardless of whether the required fonts are installed on those devices
+## Заключение: вставить шрифт в PDF-файл
+В этой статье мы обсудили, как встраивать шрифты в файл PDF с помощью Aspose.PDF для .NET. Aspose.PDF для .NET предоставляет простой и удобный API для работы с PDF-документами, включая добавление и встраивание шрифтов. Встраивание шрифтов в PDF-файл — важный шаг для обеспечения корректного отображения документа на разных устройствах, независимо от того, установлены ли на этих устройствах необходимые шрифты.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: Why is embedding fonts in a PDF file important?
+#### Вопрос: Почему важно встраивать шрифты в PDF-файл?
 
-A: Embedding fonts in a PDF file is essential to ensure that the document appears correctly on different devices and systems. When fonts are embedded, they become a part of the PDF file, eliminating the dependency on external fonts installed on the viewing device.
+О: Встраивание шрифтов в PDF-файл необходимо для обеспечения правильного отображения документа на различных устройствах и системах. Встроенные шрифты становятся частью PDF-файла, устраняя зависимость от внешних шрифтов, установленных на устройстве просмотра.
 
-#### Q: Can I embed all fonts used in a PDF file?
+#### Вопрос: Могу ли я встроить все используемые шрифты в PDF-файл?
 
-A: Yes, you can embed all fonts used in a PDF file. Aspose.PDF for .NET provides a straightforward approach to iterate through all the fonts used in a PDF file and embed them to ensure accurate rendering on various devices.
+О: Да, вы можете встроить все шрифты, используемые в PDF-файл. Aspose.PDF для .NET обеспечивает простой подход к перебору всех шрифтов, используемых в PDF-файле, и их встраиванию для обеспечения точного рендеринга на различных устройствах.
 
-#### Q: Is Aspose.PDF for .NET compatible with different font formats?
+#### Вопрос: Совместим ли Aspose.PDF для .NET с различными форматами шрифтов?
 
-A: Yes, Aspose.PDF for .NET supports various font formats, including TrueType, OpenType, Type 1, and CFF fonts. It can embed fonts in the PDF file regardless of their format.
+О: Да, Aspose.PDF для .NET поддерживает различные форматы шрифтов, включая шрифты TrueType, OpenType, Type 1 и CFF. Он может вставлять шрифты в файл PDF независимо от их формата.
 
-#### Q: Does embedding fonts increase the file size of the PDF document?
+#### Вопрос: Увеличивает ли встраивание шрифтов размер файла PDF-документа?
 
-A: Yes, embedding fonts in a PDF document can increase the file size, as the font data is included within the PDF file itself. However, this ensures that the document's appearance remains consistent, regardless of the font availability on the viewing device.
+О: Да, встраивание шрифтов в PDF-документ может увеличить размер файла, поскольку данные шрифта включены в сам PDF-файл. Однако это гарантирует, что внешний вид документа останется неизменным независимо от наличия шрифта на устройстве просмотра.
 
-#### Q: Can I customize the font embedding process?
+#### Вопрос: Могу ли я настроить процесс встраивания шрифтов?
 
-A: Yes, Aspose.PDF for .NET allows you to customize the font embedding process. You can choose which fonts to embed, exclude specific fonts, or embed only specific subsets of a font to optimize the file size.
+О: Да, Aspose.PDF для .NET позволяет вам настраивать процесс встраивания шрифтов. Вы можете выбрать, какие шрифты встраивать, исключить определенные шрифты или встроить только определенные подмножества шрифта, чтобы оптимизировать размер файла.

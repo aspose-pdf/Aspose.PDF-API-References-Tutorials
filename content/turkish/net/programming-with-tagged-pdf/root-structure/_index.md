@@ -1,135 +1,135 @@
 ---
-title: Root Structure
-linktitle: Root Structure
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to using root structure elements with Aspose.PDF for .NET to access the root and StructTreeRoot object of the PDF document.
+title: Kök Yapısı
+linktitle: Kök Yapısı
+second_title: .NET API Referansı için Aspose.PDF
+description: PDF belgesinin köküne ve StructTreeRoot nesnesine erişmek için Aspose.PDF for .NET ile kök yapı öğelerini kullanma konusunda adım adım kılavuz.
 type: docs
 weight: 130
 url: /tr/net/programming-with-tagged-pdf/root-structure/
 ---
-In this step-by-step guide, we are going to show you how to use root structure elements with Aspose.PDF for .NET. Aspose.PDF is a powerful library that lets you create and manipulate PDF documents programmatically. Root structure elements allow you to access the StructTreeRoot object of the PDF document and the root structure element.
+Bu adım adım kılavuzda, kök yapı elemanlarını Aspose.PDF for .NET ile nasıl kullanacağınızı göstereceğiz. Aspose.PDF, PDF belgelerini programlı olarak oluşturmanıza ve değiştirmenize olanak tanıyan güçlü bir kütüphanedir. Kök yapı öğeleri, PDF belgesinin StructTreeRoot nesnesine ve kök yapı öğesine erişmenizi sağlar.
 
-Let's dive into the code and learn how to use root structure elements with Aspose.PDF for .NET.
+Kodun derinliklerine inelim ve Aspose.PDF for .NET ile kök yapı elemanlarının nasıl kullanılacağını öğrenelim.
 
-## Prerequisites
+## Önkoşullar
 
-Before you begin, make sure you have the following:
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-1. Aspose.PDF library for .NET installed.
-2. A basic knowledge of the C# programming language.
+1. .NET için Aspose.PDF kütüphanesi kuruldu.
+2. C# programlama dili hakkında temel bilgi.
 
-## Step 1: Setting up the environment
+## 1. Adım: Ortamı ayarlama
 
-To get started, open your C# development environment and create a new project. Make sure you have added a reference to the Aspose.PDF library for .NET in your project.
+Başlamak için C# geliştirme ortamınızı açın ve yeni bir proje oluşturun. Projenize .NET için Aspose.PDF kütüphanesine bir referans eklediğinizden emin olun.
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Creating the document
+## Adım 2: Belgeyi oluşturma
 
-The first step is to create a new PDF document using the `Document` class.
+ İlk adım, kullanarak yeni bir PDF belgesi oluşturmaktır.`Document` sınıf.
 
 ```csharp
-// Create the PDF document
+// PDF belgesini oluşturun
 Document document = new Document();
 ```
 
-## Step 3: Work with tagged content
+## 3. Adım: Etiketli içerikle çalışın
 
-Then we get the tagged content of the document to work with.
+Daha sonra üzerinde çalışacağımız belgenin etiketli içeriğini alıyoruz.
 
 ```csharp
-// Get the tagged content of the document
+// Belgenin etiketli içeriğini alın
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-## Step 4: Set document title and language
+## 4. Adım: Belge başlığını ve dilini ayarlayın
 
-We can now set the document title and language.
+Artık belge başlığını ve dilini ayarlayabiliriz.
 
 ```csharp
-// Define the document title and language
+// Belge başlığını ve dilini tanımlayın
 taggedContent.SetTitle("Tagged PDF document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-## Step 5: Access the root structure element
+## Adım 5: Kök yapı öğesine erişin
 
-Now we can access the document's StructTreeRoot object and root structure element.
+Artık belgenin StructTreeRoot nesnesine ve kök yapı öğesine erişebiliriz.
 
 ```csharp
-// Access the root structure element
+// Kök yapı öğesine erişme
 StructTreeRootElement structTreeRootElement = taggedContent.StructTreeRootElement;
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-### Sample source code for Root Structure using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanılarak Kök Yapı için örnek kaynak kodu 
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create Pdf Document
+// Pdf Belgesi Oluştur
 Document document = new Document();
 
-// Get Content for work with TaggedPdf
+// TaggedPdf ile çalışmaya yönelik İçerik edinin
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Set Title and Language for Documnet
+// Documnet için Başlığı ve Dili Ayarlayın
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 
-// Properties StructTreeRootElement and RootElement are used for access to 
-// StructTreeRoot object of pdf document and to root structure element (Document structure element).
+// StructTreeRootElement ve RootElement özellikleri erişim için kullanılır
+// pdf belgesinin StructTreeRoot nesnesine ve kök yapı öğesine (Belge yapı öğesi).
 StructTreeRootElement structTreeRootElement = taggedContent.StructTreeRootElement;
 StructureElement rootElement = taggedContent.RootElement;
 
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulation ! You have learned how to use root structure elements with Aspose.PDF for .NET. You can now access the PDF document's StructTreeRoot object and root structure element to perform advanced operations on the document structure.
+Tebrikler! Aspose.PDF for .NET ile kök yapı elemanlarının nasıl kullanılacağını öğrendiniz. Artık belge yapısı üzerinde gelişmiş işlemler gerçekleştirmek için PDF belgesinin StructTreeRoot nesnesine ve kök yapı öğesine erişebilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What are root structure elements in a PDF document, and how do they provide access to the document's structure?
+#### S: Bir PDF belgesindeki kök yapı öğeleri nelerdir ve belgenin yapısına nasıl erişim sağlarlar?
 
-A: Root structure elements in a PDF document provide access to the document's structure, allowing you to interact with the StructTreeRoot object. They serve as entry points to the logical structure of the document, enabling advanced operations on the document's content.
+C: Bir PDF belgesindeki kök yapı öğeleri, belgenin yapısına erişim sağlayarak StructTreeRoot nesnesiyle etkileşim kurmanıza olanak tanır. Belgenin mantıksal yapısına giriş noktaları görevi görerek belgenin içeriği üzerinde gelişmiş işlemlere olanak tanırlar.
 
-#### Q: How does Aspose.PDF for .NET facilitate working with root structure elements?
+#### S: Aspose.PDF for .NET kök yapı elemanlarıyla çalışmayı nasıl kolaylaştırır?
 
-A: Aspose.PDF for .NET simplifies working with root structure elements by providing APIs to access the StructTreeRoot object and root structure element. This allows you to navigate and manipulate the document's logical structure programmatically.
+C: Aspose.PDF for .NET, StructTreeRoot nesnesine ve kök yapı öğesine erişim için API'ler sağlayarak kök yapı öğeleriyle çalışmayı basitleştirir. Bu, belgenin mantıksal yapısında programlı olarak gezinmenize ve bunları değiştirmenize olanak tanır.
 
-#### Q: What is the significance of the StructTreeRoot object in a PDF document's logical structure?
+#### S: Bir PDF belgesinin mantıksal yapısında StructTreeRoot nesnesinin önemi nedir?
 
-A: The StructTreeRoot object represents the root of the document's logical structure hierarchy. It contains a collection of structure elements that define the organization and relationships between different parts of the document.
+C: StructTreeRoot nesnesi, belgenin mantıksal yapı hiyerarşisinin kökünü temsil eder. Belgenin farklı bölümleri arasındaki düzeni ve ilişkileri tanımlayan yapı öğelerinin bir koleksiyonunu içerir.
 
-#### Q: How can root structure elements be useful in PDF document manipulation?
+#### S: Kök yapı öğeleri PDF belgesinin işlenmesinde nasıl faydalı olabilir?
 
-A: Root structure elements offer a way to programmatically access and modify the underlying structure of a PDF document. This can be valuable for tasks such as adding, rearranging, or modifying the document's content while preserving its logical structure.
+C: Kök yapı öğeleri, bir PDF belgesinin temel yapısına programlı olarak erişmenin ve onu değiştirmenin bir yolunu sunar. Bu, mantıksal yapısını korurken belgenin içeriğini ekleme, yeniden düzenleme veya değiştirme gibi görevler için değerli olabilir.
 
-#### Q: Can I use root structure elements to access metadata or properties of a PDF document?
+#### S: Bir PDF belgesinin meta verilerine veya özelliklerine erişmek için kök yapı öğelerini kullanabilir miyim?
 
-A: While root structure elements primarily focus on the document's logical structure, you can use them to access metadata and properties indirectly. By navigating the document's structure, you can retrieve information associated with different structure elements.
+C: Kök yapı öğeleri öncelikle belgenin mantıksal yapısına odaklanırken, bunları meta verilere ve özelliklere dolaylı olarak erişmek için kullanabilirsiniz. Belgenin yapısında gezinerek farklı yapı öğeleriyle ilişkili bilgilere ulaşabilirsiniz.
 
-#### Q: How does the StructTreeRootElement object relate to the root structure element?
+#### S: StructTreeRootElement nesnesinin kök yapı öğesiyle ilişkisi nedir?
 
-A: The StructTreeRootElement object is the entry point for accessing the StructTreeRoot object, which represents the highest level of the document's logical structure. The root structure element, on the other hand, represents the root element of the document's structure hierarchy.
+C: StructTreeRootElement nesnesi, belgenin mantıksal yapısının en yüksek düzeyini temsil eden StructTreeRoot nesnesine erişim için giriş noktasıdır. Kök yapı öğesi ise belgenin yapı hiyerarşisinin kök öğesini temsil eder.
 
-#### Q: Can I perform advanced operations on a PDF document's logical structure using root structure elements?
+#### S: Kök yapı öğelerini kullanarak bir PDF belgesinin mantıksal yapısı üzerinde gelişmiş işlemler gerçekleştirebilir miyim?
 
-A: Yes, you can perform advanced operations on a PDF document's logical structure using root structure elements. You can traverse the hierarchy, add new structure elements, modify existing ones, and establish relationships between different parts of the document.
+C: Evet, kök yapı öğelerini kullanarak bir PDF belgesinin mantıksal yapısı üzerinde gelişmiş işlemler gerçekleştirebilirsiniz. Hiyerarşide geçiş yapabilir, yeni yapı öğeleri ekleyebilir, mevcut öğeleri değiştirebilir ve belgenin farklı bölümleri arasında ilişkiler kurabilirsiniz.
 
-#### Q: Is it possible to create custom structure elements within the PDF document using root structure elements?
+#### S: PDF belgesinde kök yapı öğelerini kullanarak özel yapı öğeleri oluşturmak mümkün müdür?
 
-A: Yes, you can create custom structure elements within the PDF document using root structure elements. This allows you to define and organize the document's structure according to your specific requirements.
+C: Evet, kök yapı öğelerini kullanarak PDF belgesinde özel yapı öğeleri oluşturabilirsiniz. Bu, belgenin yapısını özel gereksinimlerinize göre tanımlamanıza ve düzenlemenize olanak tanır.
 
-#### Q: Are there any precautions to consider when working with root structure elements in Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'te kök yapı elemanlarıyla çalışırken dikkate alınması gereken herhangi bir önlem var mı?
 
-A: When working with root structure elements, it's important to understand the PDF document's logical structure and the relationships between different elements. Be mindful of the hierarchy and the impact of modifications on the overall document structure.
+C: Kök yapı öğeleriyle çalışırken PDF belgesinin mantıksal yapısını ve farklı öğeler arasındaki ilişkileri anlamak önemlidir. Hiyerarşiye ve değişikliklerin genel belge yapısı üzerindeki etkisine dikkat edin.
 
-#### Q: How do root structure elements contribute to making PDF document manipulation more efficient and precise?
+#### S: Kök yapı öğeleri, PDF belgesi manipülasyonunun daha verimli ve kesin olmasına nasıl katkıda bulunur?
 
-A: Root structure elements provide a structured approach to manipulating PDF documents. They enable targeted modifications by allowing you to access specific parts of the document's logical structure, leading to more efficient and precise document manipulation.
+C: Kök yapı öğeleri, PDF belgelerinin işlenmesine yönelik yapılandırılmış bir yaklaşım sağlar. Belgenin mantıksal yapısının belirli bölümlerine erişmenize izin vererek hedeflenen değişiklikleri mümkün kılar, böylece belgenin daha verimli ve hassas şekilde işlenmesine olanak sağlarlar.

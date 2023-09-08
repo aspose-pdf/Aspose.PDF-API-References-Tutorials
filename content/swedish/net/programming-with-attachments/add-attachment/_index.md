@@ -1,113 +1,113 @@
 ---
-title: Add Attachment In PDF File
-linktitle: Add Attachment In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add attachment in PDF file using Aspose.PDF for .NET. Step-by-step guide for easy handling.
+title: Lägg till bilaga i PDF-fil
+linktitle: Lägg till bilaga i PDF-fil
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du lägger till bilagor i PDF-fil med Aspose.PDF för .NET. Steg-för-steg-guide för enkel hantering.
 type: docs
 weight: 10
 url: /sv/net/programming-with-attachments/add-attachment/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to add an attachment in PDF file using Aspose.PDF for .NET.
+I den här handledningen går vi igenom följande C#-källkod steg för steg för att lägga till en bilaga i PDF-fil med Aspose.PDF för .NET.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Se till att du har installerat Aspose.PDF-biblioteket och ställt in din utvecklingsmiljö innan du börjar. Har även grundläggande kunskaper i C#-programmering.
 
-### Step 1: Document Directory Setup
+### Steg 1: Installation av dokumentkatalog
 
-In the provided source code, you need to specify the directory where the PDF file you want to add the attachment is located. Change the "dataDir" variable to the desired directory.
+I den medföljande källkoden måste du ange katalogen där PDF-filen som du vill lägga till bilagan finns. Ändra variabeln "dataDir" till önskad katalog.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### Step 2: Open the existing PDF document
+### Steg 2: Öppna det befintliga PDF-dokumentet
 
-We open the existing PDF document using the specified path.
+Vi öppnar det befintliga PDF-dokumentet med den angivna sökvägen.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "AddAttachment.pdf");
 ```
 
-### Step 3: Setting up the new file to add as an attachment
+### Steg 3: Konfigurera den nya filen för att lägga till som en bilaga
 
-We configure the new file that we want to add as an attachment. In this example, we add a text file with the name "test.txt" and a description "Example text file".
+Vi konfigurerar den nya filen som vi vill lägga till som en bilaga. I det här exemplet lägger vi till en textfil med namnet "test.txt" och en beskrivning "Exempeltextfil".
 
 ```csharp
 FileSpecification fileSpecification = new FileSpecification(dataDir + "test.txt", "Sample text file");
 ```
 
-### Step 4: Adding the attachment to the document's attachments collection
+### Steg 4: Lägga till bilagan i dokumentets samling av bilagor
 
-We add the attachment to the document's attachments collection.
+Vi lägger till bilagan i dokumentets bilagasamling.
 
 ```csharp
 pdfDocument.EmbeddedFiles.Add(fileSpecification);
 ```
 
-### Step 5: Saving the new output file
+### Steg 5: Spara den nya utdatafilen
 
-Finally, we save the resulting new PDF file with the name "AddAttachment_out.pdf" in the specified directory.
+Slutligen sparar vi den resulterande nya PDF-filen med namnet "AddAttachment_out.pdf" i den angivna katalogen.
 
 ```csharp
 pdfDocument.Save(dataDir + "AddAttachment_out.pdf");
 ```
 
-### Sample source code for Add Attachment using Aspose.PDF for .NET
+### Exempel på källkod för Lägg till bilaga med Aspose.PDF för .NET
  
 ```csharp
 
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Öppna dokumentet
 Document pdfDocument = new Document(dataDir + "AddAttachment.pdf");
-// Setup new file to be added as attachment
+// Konfigurera ny fil som ska läggas till som bilaga
 FileSpecification fileSpecification = new FileSpecification(dataDir + "test.txt", "Sample text file");
-// Add attachment to document's attachment collection
+//Lägg till bilaga till dokumentets bilagasamling
 pdfDocument.EmbeddedFiles.Add(fileSpecification);
 dataDir = dataDir + "AddAttachment_out.pdf";
-// Save new output
+// Spara ny utgång
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nSample text file attached successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
+## Slutsats
 
-In this tutorial, we explained how to add an attachment to a PDF file using Aspose.PDF for .NET. You can now use this knowledge to add additional files as attachments to your PDF documents.
+I den här handledningen förklarade vi hur man lägger till en bilaga till en PDF-fil med Aspose.PDF för .NET. Du kan nu använda denna kunskap för att lägga till ytterligare filer som bilagor till dina PDF-dokument.
 
-### FAQ's for add attachment in PDF file
+### Vanliga frågor för att lägga till bilaga i PDF-fil
 
-#### Q: Why would I need to add attachments to a PDF file?
+#### F: Varför skulle jag behöva lägga till bilagor till en PDF-fil?
 
-A: Adding attachments to a PDF file allows you to include supplementary materials, such as supporting documents, images, or files, which can provide additional context or information to the PDF's content.
+S: Genom att lägga till bilagor till en PDF-fil kan du inkludera kompletterande material, såsom stöddokument, bilder eller filer, som kan ge ytterligare sammanhang eller information till PDF:s innehåll.
 
-#### Q: How does Aspose.PDF for .NET simplify the process of adding attachments?
+#### F: Hur förenklar Aspose.PDF för .NET processen att lägga till bilagor?
 
-A: Aspose.PDF for .NET provides a streamlined API that allows you to easily add attachments to PDF files. The provided source code demonstrates step-by-step how to accomplish this task.
+S: Aspose.PDF för .NET tillhandahåller ett strömlinjeformat API som gör att du enkelt kan lägga till bilagor till PDF-filer. Den medföljande källkoden visar steg-för-steg hur man utför denna uppgift.
 
-#### Q: What types of files can be attached to a PDF using Aspose.PDF for .NET?
+#### F: Vilka typer av filer kan bifogas till en PDF med Aspose.PDF för .NET?
 
-A: Aspose.PDF for .NET supports attaching various types of files, including text files, images, documents, spreadsheets, and more, as long as they are accessible from your development environment.
+S: Aspose.PDF för .NET stöder att bifoga olika typer av filer, inklusive textfiler, bilder, dokument, kalkylblad och mer, så länge de är tillgängliga från din utvecklingsmiljö.
 
-#### Q: Is there a limit to the number of attachments that can be added to a PDF file?
+#### F: Finns det en gräns för antalet bilagor som kan läggas till en PDF-fil?
 
-A: There is no strict limit to the number of attachments that can be added, but it's important to consider the overall file size and potential impact on document performance.
+S: Det finns ingen strikt gräns för antalet bilagor som kan läggas till, men det är viktigt att ta hänsyn till den övergripande filstorleken och den potentiella inverkan på dokumentets prestanda.
 
-#### Q: Can I customize the description of the attached files?
+#### F: Kan jag anpassa beskrivningen av de bifogade filerna?
 
-A: Yes, you can customize the description of each attached file. This description provides additional context for the attached file and helps users understand its purpose.
+S: Ja, du kan anpassa beskrivningen av varje bifogad fil. Den här beskrivningen ger ytterligare sammanhang för den bifogade filen och hjälper användarna att förstå dess syfte.
 
-#### Q: Are there any file size considerations when adding attachments?
+#### F: Finns det några filstorleksöverväganden när du lägger till bilagor?
 
-A: While attachments can increase the overall file size of the PDF, Aspose.PDF for .NET ensures efficient attachment handling to minimize any negative impact on document performance.
+S: Även om bilagor kan öka den totala filstorleken på PDF:en, säkerställer Aspose.PDF för .NET effektiv hantering av bilagor för att minimera eventuell negativ påverkan på dokumentets prestanda.
 
-#### Q: Can attachments be added to specific pages within the PDF document?
+#### F: Kan bilagor läggas till på specifika sidor i PDF-dokumentet?
 
-A: Attachments are associated with the entire PDF document, rather than specific pages. They are accessible to users through the attachment panel in PDF viewers.
+S: Bilagor är kopplade till hela PDF-dokumentet, snarare än specifika sidor. De är tillgängliga för användare via bilagapanelen i PDF-läsare.
 
-#### Q: How can I verify that the attachment was added successfully?
+#### F: Hur kan jag verifiera att bilagan har lagts till?
 
-A: After following the provided source code, you can open the resulting PDF file to confirm that the attached file is accessible through the attachment panel.
+S: Efter att ha följt den medföljande källkoden kan du öppna den resulterande PDF-filen för att bekräfta att den bifogade filen är tillgänglig via bilagapanelen.
 
-#### Q: Can I remove or update attachments after they have been added?
+#### F: Kan jag ta bort eller uppdatera bilagor efter att de har lagts till?
 
-A: Yes, you can modify or remove attachments from a PDF file using Aspose.PDF for .NET's API, giving you flexibility in managing attachments as needed.
+S: Ja, du kan ändra eller ta bort bilagor från en PDF-fil med Aspose.PDF för .NET:s API, vilket ger dig flexibilitet i att hantera bilagor efter behov.

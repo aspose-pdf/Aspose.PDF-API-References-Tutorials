@@ -1,26 +1,26 @@
 ---
-title: Extract Text Using Text Device
-linktitle: Extract Text Using Text Device
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract text from a PDF document using the Text Device in Aspose.PDF for .NET.
+title: Извлечение текста с помощью текстового устройства
+linktitle: Извлечение текста с помощью текстового устройства
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как извлечь текст из PDF-документа с помощью текстового устройства в Aspose.PDF для .NET.
 type: docs
 weight: 210
 url: /ru/net/programming-with-text/extract-text-using-text-device/
 ---
-This tutorial will guide you through the process of extracting text from a PDF document using the Text Device in Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+Это руководство проведет вас через процесс извлечения текста из PDF-документа с помощью текстового устройства в Aspose.PDF для .NET. Приведенный исходный код C# демонстрирует необходимые шаги.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## Требования
+Прежде чем начать, убедитесь, что у вас есть следующее:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio или любой другой компилятор C#, установленный на вашем компьютере.
+- Aspose.PDF для библиотеки .NET. Вы можете скачать его с официального сайта Aspose или использовать для установки менеджер пакетов, например NuGet.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## Шаг 1. Настройте проект
+1. Создайте новый проект C# в предпочитаемой вами среде разработки.
+2. Добавьте ссылку на библиотеку Aspose.PDF для .NET.
 
-## Step 2: Import required namespaces
-In the code file where you want to extract text, add the following using directives at the top of the file:
+## Шаг 2. Импортируйте необходимые пространства имен.
+В файл кода, из которого вы хотите извлечь текст, добавьте следующие директивы в верхней части файла:
 
 ```csharp
 using Aspose.Pdf;
@@ -29,18 +29,18 @@ using System.IO;
 using System.Text;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## Шаг 3. Установите каталог документов.
+ В коде найдите строку с надписью`string dataDir = "YOUR DOCUMENT DIRECTORY";` и заменить`"YOUR DOCUMENT DIRECTORY"` с путем к каталогу, в котором хранятся ваши документы.
 
-## Step 4: Open the PDF document
-Open an existing PDF document using the `Document` constructor and passing the path to the input PDF file.
+## Шаг 4. Откройте PDF-документ.
+ Откройте существующий PDF-документ с помощью`Document`конструктор и передав путь к входному PDF-файлу.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "input.pdf");
 ```
 
-## Step 5: Extract text using Text Device
-Create a `StringBuilder` object to hold the extracted text. Iterate through each page of the document and use a `TextDevice` to extract the text from each page.
+## Шаг 5. Извлеките текст с помощью текстового устройства
+ Создать`StringBuilder` объект для хранения извлеченного текста. Перебирайте каждую страницу документа и используйте`TextDevice` для извлечения текста с каждой страницы.
 
 ```csharp
 StringBuilder builder = new StringBuilder();
@@ -60,62 +60,62 @@ builder. Append(extractedText);
 }
 ```
 
-## Step 6: Save the extracted text
-Specify the output file path and save the extracted text to a text file using the `File.WriteAllText` method.
+## Шаг 6: Сохраните извлеченный текст
+ Укажите путь к выходному файлу и сохраните извлеченный текст в текстовый файл, используя команду`File.WriteAllText` метод.
 
 ```csharp
 dataDir = dataDir + "input_Text_Extracted_out.txt";
 File.WriteAllText(dataDir, builder.ToString());
 ```
 
-### Sample source code for Extract Text Using Text Device using Aspose.PDF for .NET 
+### Пример исходного кода для извлечения текста с помощью текстового устройства с использованием Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Открыть документ
 Document pdfDocument = new Document( dataDir + "input.pdf");
 System.Text.StringBuilder builder = new System.Text.StringBuilder();
-// String to hold extracted text
+//Строка для хранения извлеченного текста
 string extractedText = "";
 foreach (Page pdfPage in pdfDocument.Pages)
 {
 	using (MemoryStream textStream = new MemoryStream())
 	{
-		// Create text device
+		// Создать текстовое устройство
 		TextDevice textDevice = new TextDevice();
-		// Set text extraction options - set text extraction mode (Raw or Pure)
+		// Установить параметры извлечения текста — установить режим извлечения текста (Raw или Pure)
 		TextExtractionOptions textExtOptions = new
 		TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure);
 		textDevice.ExtractionOptions = textExtOptions;
-		// Convert a particular page and save text to the stream
+		// Конвертируйте определенную страницу и сохраняйте текст в поток.
 		textDevice.Process(pdfPage, textStream);
-		// Convert a particular page and save text to the stream
+		// Конвертируйте определенную страницу и сохраняйте текст в поток.
 		textDevice.Process(pdfDocument.Pages[1], textStream);
-		// Close memory stream
+		// Закрыть поток памяти
 		textStream.Close();
-		// Get text from memory stream
+		// Получить текст из потока памяти
 		extractedText = Encoding.Unicode.GetString(textStream.ToArray());
 	}
 	builder.Append(extractedText);
 }
 dataDir = dataDir + "input_Text_Extracted_out.txt";
-// Save the extracted text in text file
+// Сохраните извлеченный текст в текстовый файл
 File.WriteAllText(dataDir, builder.ToString());
 Console.WriteLine("\nText extracted successfully using text device from page of PDF Document.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
-You have successfully extracted text from a PDF document using the Text Device in Aspose.PDF for .NET. The extracted text has been saved to the specified output file.
+## Заключение
+Вы успешно извлекли текст из PDF-документа с помощью текстового устройства в Aspose.PDF для .NET. Извлеченный текст был сохранен в указанный выходной файл.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is the purpose of this tutorial?
+#### Вопрос: Какова цель этого урока?
 
-A: This tutorial provides guidance on extracting text from a PDF document using the Text Device feature in Aspose.PDF for .NET. The accompanying C# source code demonstrates the necessary steps to achieve this task.
+О: В этом руководстве представлены инструкции по извлечению текста из PDF-документа с использованием функции текстового устройства в Aspose.PDF для .NET. Сопровождающий исходный код C# демонстрирует необходимые шаги для решения этой задачи.
 
-#### Q: What namespaces should I import?
+#### Вопрос: Какие пространства имен мне следует импортировать?
 
-A: In the code file where you plan to extract text, include the following using directives at the beginning of the file:
+О: В файле кода, из которого вы планируете извлечь текст, включите в начало файла следующие директивы using:
 
 ```csharp
 using Aspose.Pdf;
@@ -124,22 +124,22 @@ using System.IO;
 using System.Text;
 ```
 
-#### Q: How do I specify the document directory?
+#### Вопрос: Как указать каталог документа?
 
-A: In the code, find the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ О: В коде найдите строку, в которой написано`string dataDir = "YOUR DOCUMENT DIRECTORY";` и заменить`"YOUR DOCUMENT DIRECTORY"` с фактическим путем к каталогу вашего документа.
 
-#### Q: How do I open an existing PDF document?
+#### Вопрос: Как открыть существующий PDF-документ?
 
-A: In Step 4, you'll open an existing PDF document using the `Document` constructor and providing the path to the input PDF file.
+ О: На шаге 4 вы откроете существующий PDF-документ, используя`Document` конструктор и указав путь к входному PDF-файлу.
 
-#### Q: How do I extract text using the Text Device?
+#### Вопрос: Как извлечь текст с помощью текстового устройства?
 
-A: Step 5 involves creating a `StringBuilder` object to hold the extracted text. You'll then iterate through each page of the document and use a `TextDevice` along with `TextExtractionOptions` to extract text from each page.
+ О: Шаг 5 предполагает создание`StringBuilder` объект для хранения извлеченного текста. Затем вы будете перебирать каждую страницу документа и использовать`TextDevice` вместе с`TextExtractionOptions` для извлечения текста с каждой страницы.
 
-#### Q: How do I save the extracted text to a file?
+#### Вопрос: Как сохранить извлеченный текст в файл?
 
-A: In Step 6, you'll specify the output file path and use the `File.WriteAllText` method to save the extracted text to a text file.
+ О: На шаге 6 вы укажете путь к выходному файлу и воспользуетесь`File.WriteAllText`метод сохранения извлеченного текста в текстовый файл.
 
-#### Q: What is the key takeaway from this tutorial?
+#### Вопрос: Каков основной вывод из этого урока?
 
-A: By following this tutorial, you've learned how to leverage the Text Device feature in Aspose.PDF for .NET to extract text from a PDF document. The extracted text has been saved to a specified output file, enabling you to manipulate and utilize the extracted content as needed.
+О: Следуя этому руководству, вы узнали, как использовать функцию текстового устройства в Aspose.PDF для .NET для извлечения текста из PDF-документа. Извлеченный текст сохраняется в указанном выходном файле, что позволяет вам манипулировать и использовать извлеченный контент по мере необходимости.

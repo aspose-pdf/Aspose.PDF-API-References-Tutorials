@@ -1,35 +1,35 @@
 ---
-title: Add TOC To PDF File
-linktitle: Add TOC To PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add a table of contents to PDF file using Aspose.PDF for .NET. Step-by-step guide with example source code. Boost document navigation!
+title: Ajouter la table des matières au fichier PDF
+linktitle: Ajouter la table des matières au fichier PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment ajouter une table des matières à un fichier PDF à l'aide d'Aspose.PDF pour .NET. Guide étape par étape avec un exemple de code source. Boostez la navigation dans les documents !
 type: docs
 weight: 40
 url: /fr/net/programming-with-document/addtoc/
 ---
-In this tutorial, we will explore how to use the Add TOC (Table of Contents) to PDF file feature of Aspose.PDF for .NET to add a table of contents to PDF documents. We will provide a step-by-step guide and explain the C# source code required to achieve this. By the end of this tutorial, you will be able to generate a PDF document with a table of contents using Aspose.PDF for .NET.
+Dans ce didacticiel, nous explorerons comment utiliser la fonctionnalité Ajouter une table des matières (table des matières) au fichier PDF d'Aspose.PDF pour .NET pour ajouter une table des matières aux documents PDF. Nous fournirons un guide étape par étape et expliquerons le code source C# requis pour y parvenir. À la fin de ce didacticiel, vous serez en mesure de générer un document PDF avec une table des matières à l'aide d'Aspose.PDF pour .NET.
 
 
-## Step 1: Load the existing PDF file
+## Étape 1 : Charger le fichier PDF existant
 
-To get started, we need to load an existing PDF file. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your PDF file:
+ Pour commencer, nous devons charger un fichier PDF existant. Remplacer`"YOUR DOCUMENT DIRECTORY"` dans le code suivant avec le chemin réel de votre fichier PDF :
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "AddTOC.pdf");
 ```
 
-## Step 2: Create a new page for the table of contents
+## Étape 2 : Créez une nouvelle page pour la table des matières
 
-We will create a new page to hold the table of contents. The following code inserts a new page at index 1:
+Nous allons créer une nouvelle page pour contenir la table des matières. Le code suivant insère une nouvelle page à l'index 1 :
 
 ```csharp
 Page tocPage = doc.Pages.Insert(1);
 ```
 
-## Step 3: Define the table of contents information
+## Étape 3 : Définir les informations de la table des matières
 
-Next, we need to define the table of contents information. We will set the title and other properties of the table of contents. Add the following code:
+Ensuite, nous devons définir les informations de la table des matières. Nous définirons le titre et d'autres propriétés de la table des matières. Ajoutez le code suivant :
 
 ```csharp
 TocInfo tocInfo = new TocInfo();
@@ -41,9 +41,9 @@ tocInfo.Title = title;
 tocPage.TocInfo = tocInfo;
 ```
 
-## Step 4: Create TOC elements
+## Étape 4 : Créer des éléments de la table des matières
 
-Now, we will create the elements of the table of contents. In this tutorial, we will create four TOC elements corresponding to different pages. Modify the following code as per your requirements:
+Nous allons maintenant créer les éléments de la table des matières. Dans ce tutoriel, nous allons créer quatre éléments TOC correspondant à différentes pages. Modifiez le code suivant selon vos besoins :
 
 ```csharp
 string[] titles = new string[4];
@@ -67,9 +67,9 @@ for (int i = 0; i < 2; i++)
 }
 ```
 
-## Step 5: Save the updated document
+## Étape 5 : Enregistrez le document mis à jour
 
-Finally, we need to save the modified document with the table of contents. Replace `"YOUR DOCUMENT DIRECTORY"` in the code below with the desired output file path:
+ Enfin, nous devons enregistrer le document modifié avec la table des matières. Remplacer`"YOUR DOCUMENT DIRECTORY"` dans le code ci-dessous avec le chemin du fichier de sortie souhaité :
 
 ```csharp
 dataDir = dataDir + "TOC_out.pdf";
@@ -77,30 +77,30 @@ doc.Save(dataDir);
 Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at " + dataDir);
 ```
 
-### Example source code for Adding TOC to PDF documents using Aspose.PDF for .NET
+### Exemple de code source pour l'ajout d'une table des matières aux documents PDF à l'aide d'Aspose.PDF pour .NET
 
 ```csharp
 
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Load an existing PDF files
+// Charger un fichier PDF existant
 Document doc = new Document(dataDir + "AddTOC.pdf");
 
-// Get access to first page of PDF file
+// Accédez à la première page du fichier PDF
 Page tocPage = doc.Pages.Insert(1);
 
-// Create object to represent TOC information
+// Créer un objet pour représenter les informations de la table des matières
 TocInfo tocInfo = new TocInfo();
 TextFragment title = new TextFragment("Table Of Contents");
 title.TextState.FontSize = 20;
 title.TextState.FontStyle = FontStyles.Bold;
 
-// Set the title for TOC
+// Définir le titre de la table des matières
 tocInfo.Title = title;
 tocPage.TocInfo = tocInfo;
 
-// Create string objects which will be used as TOC elements
+//Créer des objets chaîne qui seront utilisés comme éléments TOC
 string[] titles = new string[4];
 titles[0] = "First page";
 titles[1] = "Second page";
@@ -108,26 +108,26 @@ titles[2] = "Third page";
 titles[3] = "Fourth page";
 for (int i = 0; i < 2; i++)
 {
-	// Create Heading object
+	// Créer un objet de titre
 	Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
 	TextSegment segment2 = new TextSegment();
 	heading2.TocPage = tocPage;
 	heading2.Segments.Add(segment2);
 
-	// Specify the destination page for heading object
+	// Spécifier la page de destination pour l'objet d'en-tête
 	heading2.DestinationPage = doc.Pages[i + 2];
 
-	// Destination page
+	// Page de destination
 	heading2.Top = doc.Pages[i + 2].Rect.Height;
 
-	// Destination coordinate
+	// Coordonnées de destination
 	segment2.Text = titles[i];
 
-	// Add heading to page containing TOC
+	// Ajouter un en-tête à la page contenant la table des matières
 	tocPage.Paragraphs.Add(heading2);
 }
 dataDir = dataDir + "TOC_out.pdf";
-// Save the updated document
+// Enregistrez le document mis à jour
 doc.Save(dataDir);
 
 Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at " + dataDir);
@@ -135,26 +135,26 @@ Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at "
 
 ## Conclusion
 
-In this tutorial, we explored how to add a table of contents (TOC) to PDF documents using Aspose.PDF for .NET. By following the step-by-step guide and utilizing the provided C# source code, you can easily generate a PDF document with a table of contents. The TOC enhances the document's usability, allowing users to navigate to specific sections or pages more efficiently. Aspose.PDF for .NET provides a robust and user-friendly solution for working with PDF files in .NET applications, enabling you to create dynamic and interactive PDF documents with ease.
+Dans ce didacticiel, nous avons exploré comment ajouter une table des matières (TOC) aux documents PDF à l'aide d'Aspose.PDF pour .NET. En suivant le guide étape par étape et en utilisant le code source C# fourni, vous pouvez facilement générer un document PDF avec une table des matières. La table des matières améliore la convivialité du document, permettant aux utilisateurs de naviguer plus efficacement vers des sections ou des pages spécifiques. Aspose.PDF pour .NET fournit une solution robuste et conviviale pour travailler avec des fichiers PDF dans des applications .NET, vous permettant de créer facilement des documents PDF dynamiques et interactifs.
 
-### FAQ's for add TOC to PDF file
+### FAQ pour ajouter une table des matières à un fichier PDF
 
-#### Q: What is Aspose.PDF for .NET?
+#### Q : Qu'est-ce qu'Aspose.PDF pour .NET ?
 
-A: Aspose.PDF for .NET is a powerful library that allows developers to work with PDF files in .NET applications effectively. It provides a wide range of features for creating, manipulating, and managing PDF documents programmatically.
+R : Aspose.PDF pour .NET est une bibliothèque puissante qui permet aux développeurs de travailler efficacement avec des fichiers PDF dans des applications .NET. Il offre un large éventail de fonctionnalités pour créer, manipuler et gérer des documents PDF par programmation.
 
-#### Q: What is the purpose of adding a table of contents (TOC) to a PDF document?
+#### Q : A quoi sert l'ajout d'une table des matières (TOC) à un document PDF ?
 
-A: The table of contents (TOC) provides a navigational aid for users, enabling them to quickly jump to specific sections or pages within the PDF document. It improves the document's usability and user experience.
+R : La table des matières (TOC) fournit une aide à la navigation pour les utilisateurs, leur permettant d'accéder rapidement à des sections ou des pages spécifiques du document PDF. Cela améliore la convivialité du document et l’expérience utilisateur.
 
-#### Q: How do I add a table of contents to a PDF document using Aspose.PDF for .NET?
+#### Q : Comment ajouter une table des matières à un document PDF à l'aide d'Aspose.PDF pour .NET ?
 
-A: To add a table of contents to a PDF document using Aspose.PDF for .NET, you need to create a new page to hold the TOC, define the table of contents information, and then create TOC elements that correspond to specific pages or sections in the document.
+R : Pour ajouter une table des matières à un document PDF à l'aide d'Aspose.PDF pour .NET, vous devez créer une nouvelle page pour contenir la table des matières, définir les informations de la table des matières, puis créer des éléments de table des matières qui correspondent à des pages ou des pages spécifiques. sections du document.
 
-#### Q: Can I customize the appearance of the table of contents?
+#### Q : Puis-je personnaliser l’apparence de la table des matières ?
 
-A: Yes, you can customize the appearance of the table of contents by setting various properties of the TOC elements, such as font size, font style, and alignment. Aspose.PDF for .NET provides flexibility in designing the TOC to match your desired look and feel.
+: Oui, vous pouvez personnaliser l'apparence de la table des matières en définissant diverses propriétés des éléments de la table des matières, telles que la taille de la police, le style de police et l'alignement. Aspose.PDF pour .NET offre une flexibilité dans la conception de la table des matières pour qu'elle corresponde à l'apparence souhaitée.
 
-#### Q: Is Aspose.PDF for .NET suitable for adding advanced features to PDF documents?
+#### Q : Aspose.PDF pour .NET est-il adapté à l'ajout de fonctionnalités avancées aux documents PDF ?
 
-A: Absolutely, Aspose.PDF for .NET is a feature-rich library that allows you to add advanced functionalities to PDF documents, including interactive elements, form fields, digital signatures, and more.
+R : Absolument, Aspose.PDF pour .NET est une bibliothèque riche en fonctionnalités qui vous permet d'ajouter des fonctionnalités avancées aux documents PDF, notamment des éléments interactifs, des champs de formulaire, des signatures numériques, etc.

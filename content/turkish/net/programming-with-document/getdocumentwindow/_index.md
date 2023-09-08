@@ -1,42 +1,42 @@
 ---
-title: Get Document Window
-linktitle: Get Document Window
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use the GetDocumentWindow feature of Aspose.PDF for .NET to retrieve information about a PDF document's window properties.
+title: Belgeyi Al Penceresi
+linktitle: Belgeyi Al Penceresi
+second_title: .NET API Referansı için Aspose.PDF
+description: Bir PDF belgesinin pencere özellikleri hakkında bilgi almak için Aspose.PDF for .NET'in GetDocumentWindow özelliğini nasıl kullanacağınızı öğrenin.
 type: docs
 weight: 170
 url: /tr/net/programming-with-document/getdocumentwindow/
 ---
-Aspose.PDF for .NET is a powerful PDF manipulation library that allows developers to create, edit, and convert PDF files in their .NET applications. One of the features offered by this library is the ability to retrieve information about a document's window properties. This tutorial will guide you through the steps of using the `GetDocumentWindow` feature of Aspose.PDF for .NET to retrieve information about a PDF document's window properties.
+ Aspose.PDF for .NET, geliştiricilerin .NET uygulamalarında PDF dosyaları oluşturmasına, düzenlemesine ve dönüştürmesine olanak tanıyan güçlü bir PDF işleme kitaplığıdır. Bu kitaplığın sunduğu özelliklerden biri, belgenin pencere özellikleri hakkında bilgi alabilme yeteneğidir. Bu eğitim, kullanımın adımları konusunda size rehberlik edecektir.`GetDocumentWindow` Aspose.PDF for .NET'in bir PDF belgesinin pencere özellikleri hakkında bilgi alma özelliği.
 
-## Step 1: Install Aspose.PDF for .NET
+## Adım 1: Aspose.PDF for .NET'i yükleyin
 
-To use Aspose.PDF for .NET in your .NET applications, you must first install the library. You can download the latest version of the library from the [Aspose.PDF for .NET download page](https://releases.aspose.com/pdf/net).
+ Aspose.PDF for .NET'i .NET uygulamalarınızda kullanmak için öncelikle kütüphaneyi kurmanız gerekir. Kütüphanenin en son sürümünü adresinden indirebilirsiniz.[Aspose.PDF for .NET indirme sayfası](https://releases.aspose.com/pdf/net).
 
-Once you have downloaded the library, extract the contents of the ZIP file to a folder on your computer. You will then need to add a reference to the Aspose.PDF for .NET DLL in your .NET project.
+Kütüphaneyi indirdikten sonra ZIP dosyasının içeriğini bilgisayarınızdaki bir klasöre çıkarın. Daha sonra .NET projenize Aspose.PDF for .NET DLL dosyasına bir referans eklemeniz gerekecektir.
 
-## Step 2: Load the PDF Document
+## Adım 2: PDF Belgesini Yükleyin
 
-Once you have installed Aspose.PDF for .NET and added a reference to the DLL in your .NET project, you can begin using the `GetDocumentWindow` feature to retrieve information about a PDF document's window properties.
+Aspose.PDF for .NET'i yükledikten ve .NET projenize DLL'ye bir referans ekledikten sonra, kullanmaya başlayabilirsiniz.`GetDocumentWindow` PDF belgesinin pencere özellikleri hakkında bilgi alma özelliği.
 
-The first step in using this feature is to load the PDF document that you want to retrieve information about. To do this, you can use the following code:
+Bu özelliği kullanmanın ilk adımı, hakkında bilgi almak istediğiniz PDF belgesini yüklemektir. Bunu yapmak için aşağıdaki kodu kullanabilirsiniz:
 
 ```csharp
-// The path to the PDF document
+// PDF belgesinin yolu
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open the PDF document
+//PDF belgesini açın
 Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
 ```
 
-In the above code, replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your PDF document is located. This code will load the PDF document into a `Document` object, which you can then use to retrieve information about the document's window properties.
+ Yukarıdaki kodda değiştirin`"YOUR DOCUMENT DIRECTORY"` PDF belgenizin bulunduğu dizinin yolu ile birlikte. Bu kod, PDF belgesini bir`Document` daha sonra belgenin pencere özellikleri hakkında bilgi almak için kullanabileceğiniz nesne.
 
-## Step 3: Retrieve the Document's Window Properties
+## 3. Adım: Belgenin Pencere Özelliklerini Alın
 
-To retrieve information about a PDF document's window properties, you can use the following code:
+Bir PDF belgesinin pencere özellikleri hakkında bilgi almak için aşağıdaki kodu kullanabilirsiniz:
 
 ```csharp
-// Retrieve the document's window properties
+// Belgenin pencere özelliklerini alın
 Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
 Console.WriteLine("Direction : {0}", pdfDocument.Direction);
 Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
@@ -49,74 +49,74 @@ Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
 Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
 ```
 
-In the above code, each line retrieves a different window property of the PDF document and outputs it to the console. You can customize this code to retrieve only the properties that you are interested in.
+Yukarıdaki kodda, her satır PDF belgesinin farklı bir pencere özelliğini alır ve bunu konsola çıkarır. Yalnızca ilgilendiğiniz özellikleri almak için bu kodu özelleştirebilirsiniz.
 
-### Example source code for get document window of PDF file using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak PDF dosyasının belgeyi al penceresi için örnek kaynak kodu 
 
-Here is the full source code for retrieving a PDF document's window properties using the `GetDocumentWindow` feature of Aspose.PDF for .NET:
+ Burada, bir PDF belgesinin pencere özelliklerini almak için kullanılan kaynak kodun tamamı bulunmaktadır.`GetDocumentWindow` Aspose.PDF for .NET'in özelliği:
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
 
-// Get different document properties
-// Position of document's window - Default: false
+// Farklı belge özellikleri edinin
+// Belge penceresinin konumu - Varsayılan: false
 Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
 
-// Predominant reading order; determins the position of page
-// When displayed side by side - Default: L2R
+// Baskın okuma sırası; sayfanın konumunu belirler
+// Yan yana görüntülendiğinde - Varsayılan: L2R
 Console.WriteLine("Direction : {0}", pdfDocument.Direction);
 
-// Whether window's title bar should display document title
-// If false, title bar displays PDF file name - Default: false
+// Pencerenin başlık çubuğunun belge başlığını görüntülemesi gerekip gerekmediği
+// Yanlışsa başlık çubuğunda PDF dosya adı görüntülenir - Varsayılan: false
 Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
 
-// Whether to resize the document's window to fit the size of
-// First displayed page - Default: false
+// Belgenin penceresinin boyutuna uyacak şekilde yeniden boyutlandırılıp boyutlandırılmayacağı
+// İlk görüntülenen sayfa - Varsayılan: false
 Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
 
-// Whether to hide menu bar of the viewer application - Default: false
+// Görüntüleyici uygulamasının menü çubuğunun gizlenip gizlenmeyeceği - Varsayılan: false
 Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
 
-// Whether to hide tool bar of the viewer application - Default: false
+//Görüntüleyici uygulamasının araç çubuğunun gizlenip gizlenmeyeceği - Varsayılan: false
 Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
 
-// Whether to hide UI elements like scroll bars
-// And leaving only the page contents displayed - Default: false
+// Kaydırma çubukları gibi kullanıcı arayüzü öğelerinin gizlenip gizlenmeyeceği
+// Ve yalnızca sayfa içeriğinin görüntülenmesine izin verilir - Varsayılan: false
 Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
 
-// Document's page mode. How to display document on exiting full-screen mode.
+// Belgenin sayfa modu. Tam ekran modundan çıkıldığında belge nasıl görüntülenir?
 Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
 
-// The page layout i.e. single page, one column
+// Sayfa düzeni yani tek sayfa, bir sütun
 Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
 
-// How the document should display when opened
-// I.e. show thumbnails, full-screen, show attachment panel
+// Belge açıldığında nasıl görüntülenmeli?
+// Yani küçük resimleri göster, tam ekran, ek panelini göster
 Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we have learned how to use Aspose.PDF for .NET to retrieve information about a PDF document's window properties. By loading a PDF document and accessing its window properties, you can gather information about how the document should be displayed when opened in a viewer application. Aspose.PDF for .NET provides a powerful set of features for working with PDF files programmatically, making it a valuable tool for PDF manipulation in .NET applications.
+Bu eğitimde, bir PDF belgesinin pencere özellikleri hakkında bilgi almak için Aspose.PDF for .NET'in nasıl kullanılacağını öğrendik. Bir PDF belgesi yükleyerek ve pencere özelliklerine erişerek, belgenin bir görüntüleyici uygulamada açıldığında nasıl görüntülenmesi gerektiği hakkında bilgi toplayabilirsiniz. Aspose.PDF for .NET, PDF dosyalarıyla programlı olarak çalışmak için güçlü bir dizi özellik sunar ve bu da onu .NET uygulamalarında PDF manipülasyonu için değerli bir araç haline getirir.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the purpose of retrieving a PDF document's window properties?
+#### S: Bir PDF belgesinin pencere özelliklerini almanın amacı nedir?
 
-A: Retrieving a PDF document's window properties allows you to gather information about how the PDF document should be displayed when opened in a viewer application. These properties control various aspects such as window position, display mode, and visibility of UI elements.
+C: Bir PDF belgesinin pencere özelliklerini almak, PDF belgesinin bir görüntüleyici uygulamada açıldığında nasıl görüntülenmesi gerektiği hakkında bilgi toplamanıza olanak tanır. Bu özellikler, pencere konumu, görüntüleme modu ve kullanıcı arayüzü öğelerinin görünürlüğü gibi çeşitli hususları kontrol eder.
 
-#### Q: How can I install Aspose.PDF for .NET in my .NET project?
+#### S: Aspose.PDF for .NET'i .NET projeme nasıl kurabilirim?
 
-A: To install Aspose.PDF for .NET, you need to download the library from the [Aspose.PDF for .NET download page](https://releases.aspose.com/pdf/net). After downloading, extract the contents of the ZIP file and add a reference to the Aspose.PDF for .NET DLL in your .NET project.
+ C: Aspose.PDF for .NET'i kurmak için kütüphaneyi şuradan indirmeniz gerekir:[Aspose.PDF for .NET indirme sayfası](https://releases.aspose.com/pdf/net). İndirdikten sonra ZIP dosyasının içeriğini çıkarın ve .NET projenize Aspose.PDF for .NET DLL dosyasına bir referans ekleyin.
 
-#### Q: Can I customize the code to retrieve specific window properties only?
+#### S: Kodu yalnızca belirli pencere özelliklerini alacak şekilde özelleştirebilir miyim?
 
-A: Yes, you can customize the code to retrieve specific window properties by commenting out the lines that you don't need. Each line in the code corresponds to a specific window property, so you can include or exclude properties based on your requirements.
+C: Evet, ihtiyacınız olmayan satırlara yorum ekleyerek belirli pencere özelliklerini almak için kodu özelleştirebilirsiniz. Koddaki her satır belirli bir pencere özelliğine karşılık gelir; böylece gereksinimlerinize göre özellikleri dahil edebilir veya hariç tutabilirsiniz.
 
-#### Q: What types of window properties can I retrieve using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'i kullanarak ne tür pencere özelliklerine ulaşabilirim?
 
-A: Using Aspose.PDF for .NET, you can retrieve various window properties of a PDF document, including centering the window, setting the page layout, controlling the display of toolbars and menu bars, and more.
+C: Aspose.PDF for .NET'i kullanarak, bir PDF belgesinin pencereyi ortalamak, sayfa düzenini ayarlamak, araç çubuklarının ve menü çubuklarının görünümünü kontrol etmek ve daha fazlası dahil olmak üzere çeşitli pencere özelliklerini alabilirsiniz.

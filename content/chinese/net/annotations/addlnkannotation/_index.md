@@ -1,23 +1,23 @@
 ---
-title: Add lnk Annotation
-linktitle: Add lnk Annotation
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add Ink Annotation feature to PDF documents in C# using Aspose.PDF for .NET with step-by-step guide and full source code.
+title: 添加lnk注释
+linktitle: 添加lnk注释
+second_title: Aspose.PDF for .NET API 参考
+description: 通过分步指南和完整源代码，了解如何使用 Aspose.PDF for .NET 在 C# 中向 PDF 文档添加墨迹注释功能。
 type: docs
 weight: 20
 url: /zh/net/annotations/addlnkannotation/
 ---
-Aspose.PDF for .NET is a powerful library that enables developers to perform various PDF operations. One such operation is adding Ink Annotation to PDF documents. In this article, we will provide a step-by-step guide to explain the C# source code for adding Ink Annotation using Aspose.PDF for .NET. Let's get started!
+Aspose.PDF for .NET 是一个功能强大的库，使开发人员能够执行各种 PDF 操作。其中一项操作就是向 PDF 文档添加墨迹注释。在本文中，我们将提供分步指南来解释使用 Aspose.PDF for .NET 添加墨迹注释的 C# 源代码。让我们开始吧！
 
-## Understanding the Ink Annotation Feature of Aspose.PDF for .NET
+## 了解 Aspose.PDF for .NET 的墨迹注释功能
 
-Before diving into the C# source code, let's first understand what Ink Annotation is and its uses.
+在深入研究 C# 源代码之前，我们首先了解什么是 Ink Annotation 及其用途。
 
-Ink Annotation is a way to draw freeform ink annotations on PDF documents. It allows you to create annotations with a stylus or a mouse. This feature is useful in situations where you need to draw diagrams, sketches, or other types of annotations.
+墨迹注释是一种在 PDF 文档上绘制自由格式墨迹注释的方法。它允许您使用手写笔或鼠标创建注释。当您需要绘制图表、草图或其他类型的注释时，此功能非常有用。
 
-## Step 1: Creating a New Document
+## 第 1 步：创建新文档
 
-The first step in adding Ink Annotation to a PDF document is to create a new instance of the Document class. This is achieved using the following code snippet:
+将墨迹注释添加到 PDF 文档的第一步是创建 Document 类的新实例。这是使用以下代码片段实现的：
 
 ```csharp
 string dataDir = "YOUR DATA DIRECTORY";
@@ -25,11 +25,11 @@ Document doc = new Document();
 Page pdfPage = doc.Pages.Add();
 ```
 
-Here, we create a new instance of the Document class and add a new page to it.
+在这里，我们创建 Document 类的一个新实例并向其添加一个新页面。
 
-## Step 2: Creating Ink Annotation
+## 第 2 步：创建墨迹注释
 
-The next step is to create an instance of the InkAnnotation class. This is done using the following code snippet:
+下一步是创建 InkAnnotation 类的实例。这是使用以下代码片段完成的：
 
 ```csharp
 System.Drawing.Rectangle drect = new System.Drawing.Rectangle();
@@ -46,7 +46,7 @@ arrpt[1] = new Aspose.Pdf.Point(200, 800);
 arrpt[2] = new Aspose.Pdf.Point(200, 700);
 InkAnnotation ia = new InkAnnotation(pdfPage, arect, inkList);
 ia.Title = "XXX";
-ia.Color = Aspose.Pdf.Color.LightBlue; // (GetColorFromString(stroke.InkColor));
+ia.Color = Aspose.Pdf.Color.LightBlue; // (GetColorFromString(笔划.InkColor));
 ia.CapStyle = CapStyle.Rounded;
 Border border = new Border(ia);
 border.Width = 25;
@@ -54,25 +54,25 @@ ia.Opacity = 0.5;
 pdfPage.Annotations.Add(ia);
 ```
 
-Here, we first create a rectangle using the System.Drawing.Rectangle class and convert it to Aspose.Pdf.Rectangle using the FromRect method. We then create an instance of the InkAnnotation class using the rectangle, a list of points, and the page where the annotation is added.
+在这里，我们首先使用 System.Drawing.Rectangle 类创建一个矩形，并使用 FromRect 方法将其转换为 Aspose.Pdf.Rectangle。然后，我们使用矩形、点列表以及添加注释的页面创建 InkAnnotation 类的实例。
 
-We then set various properties of the InkAnnotation, such as the title, color, cap style, border, and opacity. Finally, we add the annotation to the page using the Annotations.Add method.
+然后，我们设置 InkAnnotation 的各种属性，例如标题、颜色、大头样式、边框和不透明度。最后，我们使用 Annotations.Add 方法将注释添加到页面。
 
-## Step 3: Saving the Document
+## 第 3 步：保存文档
 
-The final step is to save the PDF document with the Ink Annotation added. This is achieved using the following code snippet:
+最后一步是保存添加了墨迹注释的 PDF 文档。这是使用以下代码片段实现的：
 
 ```csharp
 dataDir = dataDir + "AddlnkAnnotation_out.pdf";
 doc.Save(dataDir);
 ```
 
-Here, we concatenate the output file name to the data directory and save the document using the Save method.
+在这里，我们将输出文件名连接到数据目录，并使用 Save 方法保存文档。
 
-### Example source code for Adding Ink Annotation using Aspose.PDF for .NET
+### 使用 Aspose.PDF for .NET 添加墨迹注释的示例源代码
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DATA DIRECTORY";
 
 
@@ -92,7 +92,7 @@ arrpt[1] = new Aspose.Pdf.Point(200, 800);
 arrpt[2] = new Aspose.Pdf.Point(200, 700);
 InkAnnotation ia = new InkAnnotation(pdfPage, arect, inkList);
 ia.Title = "XXX";
-ia.Color = Aspose.Pdf.Color.LightBlue; // (GetColorFromString(stroke.InkColor));
+ia.Color = Aspose.Pdf.Color.LightBlue; // (GetColorFromString(笔划.InkColor));
 ia.CapStyle = CapStyle.Rounded;
 Border border = new Border(ia);
 border.Width = 25;
@@ -100,32 +100,32 @@ ia.Opacity = 0.5;
 pdfPage.Annotations.Add(ia);
 
 dataDir = dataDir + "AddlnkAnnotation_out.pdf";
-// Save output file
+//保存输出文件
 doc.Save(dataDir);
 ```
 
-## Conclusion
+## 结论
 
-In this tutorial, we explored how to add Ink Annotations to a PDF document using Aspose.PDF for .NET. By following the step-by-step guide and C# source code provided, developers can easily implement Ink Annotation functionality in their PDF processing applications.
+在本教程中，我们探讨了如何使用 Aspose.PDF for .NET 将墨迹注释添加到 PDF 文档。通过遵循提供的分步指南和 C# 源代码，开发人员可以轻松在 PDF 处理应用程序中实现墨迹注释功能。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What is an Ink Annotation in a PDF document?
+#### 问：什么是 PDF 文档中的墨迹注释？
 
-A: An Ink Annotation in a PDF document allows users to draw freeform ink annotations using a stylus or mouse. It is commonly used to add hand-drawn sketches, diagrams, or other freehand annotations to a PDF.
+答：PDF 文档中的墨迹注释允许用户使用手写笔或鼠标绘制自由格式的墨迹注释。它通常用于向 PDF 添加手绘草图、图表或其他手绘注释。
 
-#### Q: Can I customize the appearance of the Ink Annotation?
+#### 问：我可以自定义墨迹注释的外观吗？
 
-A: Yes, Aspose.PDF for .NET provides various properties to customize the appearance of the Ink Annotation, such as color, opacity, cap style, border width, and more. Developers can adjust these properties to meet their specific requirements.
+答：是的，Aspose.PDF for .NET 提供了各种属性来自定义墨迹注释的外观，例如颜色、不透明度、大头样式、边框宽度等。开发人员可以调整这些属性以满足他们的特定要求。
 
-#### Q: Is it possible to add multiple Ink Annotations to a single PDF page?
+#### 问：是否可以将多个墨迹注释添加到单个 PDF 页面？
 
-A: Yes, you can add multiple Ink Annotations to a single PDF page using Aspose.PDF for .NET. Each Ink Annotation can have its own set of points and customized appearance.
+答：是的，您可以使用 Aspose.PDF for .NET 将多个墨迹注释添加到单个 PDF 页面。每个墨迹注释都可以有自己的一组点和自定义外观。
 
-#### Q: Can I add Ink Annotations to existing PDF documents?
+#### 问：我可以在现有 PDF 文档中添加墨迹注释吗？
 
-A: Yes, Aspose.PDF for .NET allows you to add Ink Annotations to both newly created PDF documents and existing PDF files. You can open an existing PDF, add Ink Annotations, and save the updated document.
+答：是的，Aspose.PDF for .NET 允许您将墨迹注释添加到新创建的 PDF 文档和现有 PDF 文件中。您可以打开现有 PDF、添加墨迹注释并保存更新的文档。
 
-#### Q: What are some common use cases for Ink Annotations in PDF documents?
+#### 问：PDF 文档中墨迹注释有哪些常见用例？
 
-A: Ink Annotations are useful for a wide range of applications, including adding signatures or handwritten notes to PDF forms, annotating architectural blueprints or engineering drawings, and marking up documents for collaborative review.
+答：墨迹注释适用于多种应用，包括向 PDF 表单添加签名或手写注释、注释建筑蓝图或工程图以及标记文档以供协作审阅。

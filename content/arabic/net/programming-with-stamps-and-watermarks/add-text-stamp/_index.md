@@ -1,52 +1,52 @@
 ---
-title: Add Text Stamp In PDF File
-linktitle: Add Text Stamp In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to easily add a text stamp in PDF file with Aspose.PDF for .NET.
+title: إضافة ختم النص في ملف PDF
+linktitle: إضافة ختم النص في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إضافة طابع نصي بسهولة إلى ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 50
 url: /ar/net/programming-with-stamps-and-watermarks/add-text-stamp/
 ---
-In this tutorial, we will take you step by step on how to add a text stamp in PDF file using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to add a custom text stamp to a specific page of the PDF file.
+في هذا البرنامج التعليمي، سنأخذك خطوة بخطوة حول كيفية إضافة ختم نصي في ملف PDF باستخدام Aspose.PDF لـ .NET. سنوضح لك كيفية استخدام كود مصدر C# المقدم لإضافة طابع نصي مخصص إلى صفحة معينة من ملف PDF.
 
-## Step 1: Setting up the environment
+## الخطوة 1: تهيئة البيئة
 
-Before you begin, make sure you have the following:
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- بيئة تطوير .NET مثبتة.
+- تم تنزيل مكتبة Aspose.PDF الخاصة بـ .NET والإشارة إليها في مشروعك.
 
-## Step 2: Loading the PDF document
+## الخطوة 2: تحميل مستند PDF
 
-The first step is to load the existing PDF document into your project. Here's how:
+الخطوة الأولى هي تحميل مستند PDF الموجود في مشروعك. إليك الطريقة:
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "AddTextStamp.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+تأكد من استبدال "دليل المستندات الخاص بك" بالمسار الفعلي للدليل الذي يوجد به مستند PDF الخاص بك.
 
-## Step 3: Creating the text buffer
+## الخطوة 3: إنشاء المخزن المؤقت للنص
 
-Now that you have uploaded the PDF document, you can create the text stamp to add. Here's how to do it:
+الآن بعد أن قمت بتحميل مستند PDF، يمكنك إنشاء ختم النص لإضافته. هيريس كيفية القيام بذلك:
 
 ```csharp
-// Create the text buffer
+// إنشاء المخزن المؤقت للنص
 TextStamp textStamp = new TextStamp("Example Stamp");
 ```
 
-The code above creates a new text buffer containing the specified text.
+يقوم الكود أعلاه بإنشاء مخزن مؤقت نصي جديد يحتوي على النص المحدد.
 
-## Step 4: Configuring Text Stamp Properties
+## الخطوة 4: تكوين خصائص ختم النص
 
-Before adding the text stamp to the PDF document, you can configure various properties of the stamp, such as background, position, rotation, font, size, etc. Here's how:
+قبل إضافة ختم النص إلى مستند PDF، يمكنك تكوين خصائص مختلفة للختم، مثل الخلفية والموضع والتدوير والخط والحجم وما إلى ذلك. وإليك الطريقة:
 
 ```csharp
-// Configure text buffer properties
+// تكوين خصائص المخزن المؤقت للنص
 textStamp. Background = true;
 textStamp. XIndent = 100;
 textStamp. YIndent = 100;
@@ -57,107 +57,107 @@ textStamp.TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;
 textStamp.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Aqua);
 ```
 
-You can adjust these properties according to your needs.
+يمكنك ضبط هذه الخصائص وفقًا لاحتياجاتك.
 
-## Step 5: Add Text Stamp to PDF
+## الخطوة 5: إضافة ختم النص إلى PDF
 
-Now that the text stamp is ready, you can add it to a specific page of the PDF document. Here's how:
+الآن بعد أن أصبح ختم النص جاهزًا، يمكنك إضافته إلى صفحة معينة من مستند PDF. إليك الطريقة:
 
 ```csharp
-// Add text buffer to specific page
+//إضافة المخزن المؤقت للنص إلى صفحة معينة
 pdfDocument.Pages[1].AddStamp(textStamp);
 ```
 
-The code above adds the text stamp to the first page of the PDF document. You can specify another page if needed.
+يضيف الكود أعلاه ختم النص إلى الصفحة الأولى من مستند PDF. يمكنك تحديد صفحة أخرى إذا لزم الأمر.
 
-## Step 6: Save the output document
+## الخطوة 6: احفظ مستند الإخراج
 
-Once you have added the text stamp, you can save the edited PDF document. Here's how:
+بمجرد إضافة ختم النص، يمكنك حفظ مستند PDF الذي تم تحريره. إليك الطريقة:
 
 ```csharp
-// Save the output document
+// احفظ مستند الإخراج
 pdfDocument.Save(dataDir);
 ```
 
-The code above saves the modified PDF document in the specified directory.
+يحفظ الكود أعلاه مستند PDF المعدل في الدليل المحدد.
 
-### Sample source code for Add Text Stamp using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لإضافة ختم نصي باستخدام Aspose.PDF لـ .NET 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir+ "AddTextStamp.pdf");
 
-// Create text stamp
+// إنشاء ختم النص
 TextStamp textStamp = new TextStamp("Sample Stamp");
 
-// Set whether stamp is background
+// تعيين ما إذا كان الختم هو الخلفية
 textStamp.Background = true;
 
-// Set origin
+// تعيين الأصل
 textStamp.XIndent = 100;
 textStamp.YIndent = 100;
 
-// Rotate stamp
+// تدوير الختم
 textStamp.Rotate = Rotation.on90;
 
-// Set text properties
+// تعيين خصائص النص
 textStamp.TextState.Font = FontRepository.FindFont("Arial");
 textStamp.TextState.FontSize = 14.0F;
 textStamp.TextState.FontStyle = FontStyles.Bold;
 textStamp.TextState.FontStyle = FontStyles.Italic;
 textStamp.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Aqua);
 
-// Add stamp to particular page
+// إضافة طابع إلى صفحة معينة
 pdfDocument.Pages[1].AddStamp(textStamp);
 dataDir = dataDir + "AddTextStamp_out.pdf";
 
-// Save output document
+// حفظ مستند الإخراج
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nText stamp added successfully.\nFile saved at " + dataDir);            
 
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You have learned how to add a text stamp using Aspose.PDF for .NET. Now you can apply this knowledge to your own projects to add custom text stamps to PDF documents.
+تهنئة ! لقد تعلمت كيفية إضافة طابع نصي باستخدام Aspose.PDF لـ .NET. يمكنك الآن تطبيق هذه المعرفة على مشاريعك الخاصة لإضافة طوابع نصية مخصصة إلى مستندات PDF.
 
-### FAQ's for add text stamp in PDF file
+### الأسئلة الشائعة لإضافة ختم نصي في ملف PDF
 
-#### Q: What is the purpose of adding a text stamp in a PDF file using Aspose.PDF for .NET?
+#### س: ما هو الغرض من إضافة ختم نصي في ملف PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: Adding a text stamp allows you to place custom text on a specific page of a PDF document. This feature is useful for adding labels, comments, watermarks, or any other textual information to enhance the document's content and provide additional context.
+ج: تتيح لك إضافة ختم نصي وضع نص مخصص على صفحة معينة من مستند PDF. تعد هذه الميزة مفيدة لإضافة تسميات أو تعليقات أو علامات مائية أو أي معلومات نصية أخرى لتحسين محتوى المستند وتوفير سياق إضافي.
 
-#### Q: Can I customize the appearance of the text stamp, such as font, size, color, and rotation?
+#### س: هل يمكنني تخصيص مظهر ختم النص، مثل الخط والحجم واللون والتدوير؟
 
-A: Yes, you can fully customize the appearance of the text stamp. The provided C# source code demonstrates how to set various properties of the `TextStamp` object, including font, font size, font style, text color, background color, and rotation.
+ ج: نعم، يمكنك تخصيص مظهر ختم النص بالكامل. يوضح كود مصدر C# المقدم كيفية تعيين خصائص مختلفة لملف`TextStamp` الكائن، بما في ذلك الخط وحجم الخط ونمط الخط ولون النص ولون الخلفية والتدوير.
 
-#### Q: Is it possible to add multiple text stamps to different pages of the same PDF document?
+#### س: هل من الممكن إضافة طوابع نصية متعددة إلى صفحات مختلفة من نفس مستند PDF؟
 
-A: Absolutely, you can add multiple text stamps to different pages of the same PDF document. The tutorial's provided code allows you to specify the target page for adding the text stamp, making it versatile for different pages within the document.
+ج: بالتأكيد، يمكنك إضافة طوابع نصية متعددة إلى صفحات مختلفة من نفس مستند PDF. يسمح لك الكود المقدم في البرنامج التعليمي بتحديد الصفحة المستهدفة لإضافة ختم النص، مما يجعلها متعددة الاستخدامات لصفحات مختلفة داخل المستند.
 
-#### Q: How do I specify the position of the text stamp within the PDF document?
+#### س: كيف يمكنني تحديد موضع ختم النص داخل مستند PDF؟
 
-A: You can customize the position of the text stamp by modifying the `XIndent` and `YIndent` properties of the `TextStamp` object. These properties define the coordinates of the stamp's top-left corner relative to the origin of the page.
+ ج: يمكنك تخصيص موضع ختم النص عن طريق تعديل`XIndent` و`YIndent` خصائص`TextStamp` هدف. تحدد هذه الخصائص إحداثيات الزاوية العلوية اليسرى للختم بالنسبة إلى أصل الصفحة.
 
-#### Q: Can I apply this method to existing PDF documents to add text stamps?
+#### س: هل يمكنني تطبيق هذه الطريقة على مستندات PDF الموجودة لإضافة طوابع نصية؟
 
-A: Yes, you can apply this method to existing PDF documents to add text stamps. The tutorial's provided code demonstrates how to load an existing PDF document and add a text stamp to a specific page.
+ج: نعم، يمكنك تطبيق هذه الطريقة على مستندات PDF الموجودة لإضافة طوابع نصية. يوضح الكود المقدم في البرنامج التعليمي كيفية تحميل مستند PDF موجود وإضافة ختم نصي إلى صفحة معينة.
 
-#### Q: Can I add both background and foreground colors to the text stamp?
+#### س: هل يمكنني إضافة ألوان الخلفية والمقدمة إلى ختم النص؟
 
-A: Yes, you can add both background and foreground colors to the text stamp. By setting the `Background` property to `true`, you can provide a colored background for the text stamp. Additionally, you can set the `TextState.ForegroundColor` property to specify the color of the text itself.
+ ج: نعم، يمكنك إضافة كل من الألوان الخلفية والمقدمة إلى ختم النص. من خلال تعيين`Background` الملكية ل`true` ، يمكنك توفير خلفية ملونة لختم النص. بالإضافة إلى ذلك، يمكنك ضبط`TextState.ForegroundColor` خاصية تحديد لون النص نفسه.
 
-#### Q: How can I ensure that the text stamp does not obscure the underlying content of the PDF document?
+#### س: كيف يمكنني التأكد من أن ختم النص لا يحجب المحتوى الأساسي لمستند PDF؟
 
-A: When adding a text stamp, be mindful of its placement to ensure that it does not obstruct critical information or negatively affect the document's readability. You can adjust the `XIndent` and `YIndent` properties to position the text stamp appropriately.
+ ج: عند إضافة ختم نصي، انتبه إلى موضعه للتأكد من أنه لا يعيق المعلومات الهامة أو يؤثر سلبًا على إمكانية قراءة المستند. يمكنك ضبط`XIndent` و`YIndent` خصائص لوضع ختم النص بشكل مناسب.
 
-#### Q: Can I use this method to add stamps other than text, such as images or logos?
+#### س: هل يمكنني استخدام هذه الطريقة لإضافة طوابع غير النصوص، مثل الصور أو الشعارات؟
 
-A: This specific tutorial focuses on adding text stamps, but you can similarly add other types of stamps, such as images or logos, using Aspose.PDF for .NET. The process involves creating the appropriate stamp object and configuring its properties.
+ج: يركز هذا البرنامج التعليمي المحدد على إضافة طوابع نصية، ولكن يمكنك بالمثل إضافة أنواع أخرى من الطوابع، مثل الصور أو الشعارات، باستخدام Aspose.PDF لـ .NET. تتضمن العملية إنشاء كائن الطابع المناسب وتكوين خصائصه.
 
-#### Q: How can I automate the process of adding text stamps to multiple PDF documents?
+#### س: كيف يمكنني أتمتة عملية إضافة طوابع نصية إلى مستندات PDF متعددة؟
 
-A: You can automate the process of adding text stamps to multiple PDF documents by creating a script or program that iterates through a list of documents and applies the same text stamping process to each one.
+ج: يمكنك أتمتة عملية إضافة طوابع نصية إلى مستندات PDF متعددة عن طريق إنشاء برنامج نصي أو برنامج يتكرر خلال قائمة المستندات ويطبق نفس عملية ختم النص على كل منها.

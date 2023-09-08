@@ -1,28 +1,28 @@
 ---
-title: PDF Operators
-linktitle: PDF Operators
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to using PDF operators with Aspose.PDF for .NET. Add an image to a PDF page and specify its position.
+title: مشغلي قوات الدفاع الشعبي
+linktitle: مشغلي قوات الدفاع الشعبي
+second_title: Aspose.PDF لمرجع .NET API
+description: دليل خطوة بخطوة لاستخدام عوامل تشغيل PDF مع Aspose.PDF لـ .NET. أضف صورة إلى صفحة PDF وحدد موضعها.
 type: docs
 weight: 20
 url: /ar/net/programming-with-operators/pdf-operators/
 ---
-In this tutorial, we will provide you with a step-by-step guide on how to use PDF operators using Aspose.PDF for .NET. PDF operators allow you to manipulate and add content to PDF documents in a precise and controlled way. Using the operators provided by Aspose.PDF, you can add an image to a PDF page and specify its position precisely.
+في هذا البرنامج التعليمي، سنزودك بدليل خطوة بخطوة حول كيفية استخدام عوامل تشغيل PDF باستخدام Aspose.PDF لـ .NET. تسمح لك عوامل تشغيل PDF بمعالجة المحتوى وإضافته إلى مستندات PDF بطريقة دقيقة ومضبوطة. باستخدام عوامل التشغيل التي يوفرها Aspose.PDF، يمكنك إضافة صورة إلى صفحة PDF وتحديد موضعها بدقة.
 
-## Prerequisites
+## المتطلبات الأساسية
 
-Before you begin, make sure you have the following prerequisites in place:
+قبل البدء، تأكد من توفر المتطلبات الأساسية التالية:
 
-1. Visual Studio installed with .NET framework.
-2. The Aspose.PDF library for .NET.
+1. تم تثبيت Visual Studio مع إطار عمل .NET.
+2. مكتبة Aspose.PDF لـ .NET.
 
-## Step 1: Project Setup
+## الخطوة 1: إعداد المشروع
 
-To get started, create a new project in Visual Studio and add a reference to the Aspose.PDF for .NET library. You can download the library from Aspose official website and install it on your machine.
+للبدء، قم بإنشاء مشروع جديد في Visual Studio وقم بإضافة مرجع إلى مكتبة Aspose.PDF لـ .NET. يمكنك تنزيل المكتبة من موقع Aspose الرسمي وتثبيتها على جهازك.
 
-## Step 2: Import the necessary namespaces
+## الخطوة 2: استيراد مساحات الأسماء الضرورية
 
-In your C# code file, import the namespaces required to access the classes and methods provided by Aspose.PDF:
+في ملف التعليمات البرمجية C# الخاص بك، قم باستيراد مساحات الأسماء المطلوبة للوصول إلى الفئات والأساليب التي يوفرها Aspose.PDF:
 
 ```csharp
 using System;
@@ -31,20 +31,20 @@ using Aspose.Pdf;
 using Aspose.Pdf.Operators;
 ```
 
-## Step 3: Loading the PDF document
+## الخطوة 3: تحميل وثيقة PDF
 
-Use the following code to load the PDF document:
+استخدم الكود التالي لتحميل مستند PDF:
 
 ```csharp
 string dataDir = "YOUR_DIRECTORY_OF_DOCUMENTS";
 Document pdfDocument = new Document(dataDir + "PDFOperators.pdf");
 ```
 
-Be sure to specify the actual path to the PDF file on your machine.
+تأكد من تحديد المسار الفعلي لملف PDF الموجود على جهازك.
 
-## Step 4: Loading the image and adding it to the page
+## الخطوة 4: تحميل الصورة وإضافتها إلى الصفحة
 
-Use the following code to load an image from a file and add it to the PDF page:
+استخدم الكود التالي لتحميل صورة من ملف وإضافتها إلى صفحة PDF:
 
 ```csharp
 int lowerLeftX = 100;
@@ -70,59 +70,59 @@ page.Contents.Add(new Do(ximage.Name));
 page. Contents. Add(new GRestore());
 ```
 
-Be sure to specify the actual paths of PDF and image files on your machine. You can also adjust the `lowerLeftX`, `lowerLeftY`, `upperRightX` and `upperRightY` coordinates to position the image as needed.
+ تأكد من تحديد المسارات الفعلية لملفات PDF والصور الموجودة على جهازك. يمكنك أيضًا ضبط`lowerLeftX`, `lowerLeftY`, `upperRightX` و`upperRightY`إحداثيات لوضع الصورة حسب الحاجة.
 
-### Sample source code for PDF Operators using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لمشغلي PDF باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir+ "PDFOperators.pdf");
-// Set coordinates
+// تعيين الإحداثيات
 int lowerLeftX = 100;
 int lowerLeftY = 100;
 int upperRightX = 200;
 int upperRightY = 200;
-// Get the page where image needs to be added
+//احصل على الصفحة التي تريد إضافة الصورة إليها
 Page page = pdfDocument.Pages[1];
-// Load image into stream
+// تحميل الصورة في الدفق
 FileStream imageStream = new FileStream(dataDir + "PDFOperators.jpg", FileMode.Open);
-// Add image to Images collection of Page Resources
+// إضافة صورة إلى مجموعة الصور لموارد الصفحة
 page.Resources.Images.Add(imageStream);
-// Using GSave operator: this operator saves current graphics state
+// استخدام عامل تشغيل GSave: يقوم هذا المشغل بحفظ حالة الرسومات الحالية
 page.Contents.Add(new Aspose.Pdf.Operators.GSave());
-// Create Rectangle and Matrix objects
+// إنشاء كائنات مستطيلة ومصفوفة
 Aspose.Pdf.Rectangle rectangle = new Aspose.Pdf.Rectangle(lowerLeftX, lowerLeftY, upperRightX, upperRightY);
 Matrix matrix = new Matrix(new double[] { rectangle.URX - rectangle.LLX, 0, 0, rectangle.URY - rectangle.LLY, rectangle.LLX, rectangle.LLY });
-// Using ConcatenateMatrix (concatenate matrix) operator: defines how image must be placed
+// استخدام عامل ConcatenateMatrix (مصفوفة متسلسلة): يحدد كيفية وضع الصورة
 page.Contents.Add(new Aspose.Pdf.Operators.ConcatenateMatrix(matrix));
 XImage ximage = page.Resources.Images[page.Resources.Images.Count];
-// Using Do operator: this operator draws image
+// استخدام عامل التشغيل Do: يقوم هذا العامل برسم الصورة
 page.Contents.Add(new Aspose.Pdf.Operators.Do(ximage.Name));
-// Using GRestore operator: this operator restores graphics state
+// استخدام مشغل GRestore: يقوم هذا المشغل باستعادة حالة الرسومات
 page.Contents.Add(new Aspose.Pdf.Operators.GRestore());
 dataDir = dataDir + "PDFOperators_out.pdf";
-// Save updated document
+// حفظ المستند المحدث
 pdfDocument.Save(dataDir);
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, you learned how to use PDF operators using Aspose.PDF for .NET. By following the steps described, you will be able to add an image to a PDF page and specify its position precisely. PDF Operators provide granular control over the manipulation of PDF documents, allowing you to customize your content.
+في هذا البرنامج التعليمي، تعلمت كيفية استخدام عوامل تشغيل PDF باستخدام Aspose.PDF لـ .NET. باتباع الخطوات الموضحة، ستتمكن من إضافة صورة إلى صفحة PDF وتحديد موضعها بدقة. توفر عوامل تشغيل PDF تحكمًا دقيقًا في معالجة مستندات PDF، مما يسمح لك بتخصيص المحتوى الخاص بك.
 
-### FAQ's for PDF operators
+### الأسئلة الشائعة لمشغلي PDF
 
-#### Q: What are PDF operators in Aspose.PDF?
+#### س: ما هي عوامل تشغيل PDF في Aspose.PDF؟
 
-A: PDF operators are commands used to manipulate and add content to PDF documents. They provide precise control over various aspects of a PDF, such as graphics, text, and positioning.
+ج: إن عوامل تشغيل PDF هي أوامر تُستخدم لمعالجة المحتوى وإضافته إلى مستندات PDF. إنها توفر تحكمًا دقيقًا في الجوانب المختلفة لملف PDF، مثل الرسومات والنص وتحديد المواقع.
 
-#### Q: Why would I use PDF operators in my PDF documents?
+#### س: لماذا أستخدم عوامل تشغيل PDF في مستندات PDF الخاصة بي؟
 
-A: PDF operators offer granular control over PDF content, allowing you to achieve specific layout, positioning, and styling effects that might not be achievable through high-level functions alone.
+ج: توفر عوامل تشغيل PDF تحكمًا دقيقًا في محتوى PDF، مما يسمح لك بتحقيق تأثيرات تخطيط وموضع وتصميم محددة قد لا يمكن تحقيقها من خلال الوظائف عالية المستوى وحدها.
 
-#### Q: How do I import the necessary namespaces for using PDF operators?
+#### س: كيف يمكنني استيراد مساحات الأسماء اللازمة لاستخدام عوامل تشغيل PDF؟
 
-A: In your C# code file, use the `using` directive to import the required namespaces for accessing the classes and methods provided by Aspose.PDF:
+ ج: في ملف التعليمات البرمجية C# الخاص بك، استخدم ملف`using` توجيه لاستيراد مساحات الأسماء المطلوبة للوصول إلى الفئات والأساليب التي يوفرها Aspose.PDF:
 ```csharp
 using System;
 using System.IO;
@@ -130,42 +130,42 @@ using Aspose.Pdf;
 using Aspose.Pdf.Operators;
 ```
 
-#### Q: How do PDF operators provide precise positioning of content?
+#### س: كيف يوفر مشغلو PDF تحديدًا دقيقًا للمحتوى؟
 
-A: PDF operators like `ConcatenateMatrix` allow you to define transformation matrices to precisely position and transform content within a PDF document.
+ ج: مشغلي PDF يحبون`ConcatenateMatrix` تسمح لك بتحديد مصفوفات التحويل لتحديد موضع المحتوى وتحويله بدقة داخل مستند PDF.
 
-#### Q: Can I add an image to a PDF page using PDF operators?
+#### س: هل يمكنني إضافة صورة إلى صفحة PDF باستخدام عوامل تشغيل PDF؟
 
-A: Yes, you can use PDF operators to add an image to a PDF page and control its exact position, size, and orientation.
+ج: نعم، يمكنك استخدام عوامل تشغيل PDF لإضافة صورة إلى صفحة PDF والتحكم في موضعها وحجمها واتجاهها بدقة.
 
-#### Q: How do I use PDF operators to add an image to a PDF page?
+#### س: كيف يمكنني استخدام عوامل تشغيل PDF لإضافة صورة إلى صفحة PDF؟
 
-A: You can follow the steps outlined in the tutorial to load an image from a file and use PDF operators like `GSave`, `ConcatenateMatrix`, and `Do` to add the image to a specific location on a PDF page.
+ ج: يمكنك اتباع الخطوات الموضحة في البرنامج التعليمي لتحميل صورة من ملف واستخدام عوامل تشغيل PDF مثل`GSave`, `ConcatenateMatrix` ، و`Do` لإضافة الصورة إلى موقع محدد على صفحة PDF.
 
-#### Q: What is the purpose of the GSave and GRestore operators?
+#### س: ما هو الغرض من مشغلي GSave وGRestore؟
 
-A: The `GSave` and `GRestore` operators in Aspose.PDF are used to save and restore the graphics state. They help ensure that transformations and settings applied to one section of the content do not affect subsequent sections.
+ ج: ال`GSave` و`GRestore`يتم استخدام عوامل التشغيل في Aspose.PDF لحفظ حالة الرسومات واستعادتها. فهي تساعد على التأكد من أن التحويلات والإعدادات المطبقة على قسم واحد من المحتوى لا تؤثر على الأقسام اللاحقة.
 
-#### Q: How can I adjust the position of the added image on the PDF page?
+#### س: كيف يمكنني ضبط موضع الصورة المضافة على صفحة PDF؟
 
-A: You can modify the `lowerLeftX`, `lowerLeftY`, `upperRightX`, and `upperRightY` coordinates in the sample code to control the position and size of the added image.
+ ج: يمكنك تعديل`lowerLeftX`, `lowerLeftY`, `upperRightX` ، و`upperRightY` الإحداثيات في نموذج التعليمات البرمجية للتحكم في موضع الصورة المضافة وحجمها.
 
-#### Q: Can I use PDF operators to manipulate text content as well?
+#### س: هل يمكنني استخدام عوامل تشغيل PDF لمعالجة محتوى النص أيضًا؟
 
-A: Yes, PDF operators can be used to manipulate text content, allowing you to customize fonts, styles, and positioning.
+ج: نعم، يمكن استخدام عوامل تشغيل PDF لمعالجة محتوى النص، مما يسمح لك بتخصيص الخطوط والأنماط والموضع.
 
-#### Q: Is it possible to apply transparency or blending effects using PDF operators?
+#### س: هل من الممكن تطبيق تأثيرات الشفافية أو المزج باستخدام عوامل تشغيل PDF؟
 
-A: Yes, PDF operators like `SetAlpha`, `SetBlendMode`, and others can be used to apply transparency and blending effects to content.
+ ج: نعم، مشغلي PDF يحبون ذلك`SetAlpha`, `SetBlendMode`، ويمكن استخدام الآخرين لتطبيق تأثيرات الشفافية والمزج على المحتوى.
 
-#### Q: Can I use PDF operators to create interactive elements in a PDF document?
+#### س: هل يمكنني استخدام عوامل تشغيل PDF لإنشاء عناصر تفاعلية في مستند PDF؟
 
-A: Yes, PDF operators can be used to create interactive elements such as annotations, form fields, and hyperlinks.
+ج: نعم، يمكن استخدام عوامل تشغيل PDF لإنشاء عناصر تفاعلية مثل التعليقات التوضيحية وحقول النماذج والارتباطات التشعبية.
 
-#### Q: Are PDF operators suitable for complex PDF manipulation tasks?
+#### س: هل عوامل تشغيل PDF مناسبة لمهام معالجة PDF المعقدة؟
 
-A: Yes, PDF operators provide a low-level approach to PDF manipulation and are suitable for complex tasks that require precise control over content.
+ج: نعم، توفر عوامل تشغيل PDF أسلوبًا منخفض المستوى لمعالجة ملفات PDF وهي مناسبة للمهام المعقدة التي تتطلب تحكمًا دقيقًا في المحتوى.
 
-#### Q: Can I use PDF operators with encrypted or password-protected PDFs?
+#### س: هل يمكنني استخدام عوامل تشغيل PDF مع ملفات PDF المشفرة أو المحمية بكلمة مرور؟
 
-A: Yes, PDF operators can be used with encrypted PDFs, but you need to ensure proper authentication and permissions to modify the content.
+ج: نعم، يمكن استخدام عوامل تشغيل PDF مع ملفات PDF المشفرة، ولكن عليك التأكد من المصادقة والأذونات المناسبة لتعديل المحتوى.

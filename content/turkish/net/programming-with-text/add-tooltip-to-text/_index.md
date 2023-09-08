@@ -1,26 +1,26 @@
 ---
-title: Add Tooltip To Text In PDF File
-linktitle: Add Tooltip To Text In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add tooltips to text in PDF file using Aspose.PDF for .NET.
+title: PDF Dosyasındaki Metne Araç İpucu Ekle
+linktitle: PDF Dosyasındaki Metne Araç İpucu Ekle
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF dosyasındaki metne nasıl araç ipuçları ekleyeceğinizi öğrenin.
 type: docs
 weight: 90
 url: /tr/net/programming-with-text/add-tooltip-to-text/
 ---
-This tutorial will guide you through the process of adding tooltips to text in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+Bu eğitim, Aspose.PDF for .NET kullanarak PDF dosyasındaki metne araç ipuçları ekleme sürecinde size rehberlik edecektir. Sağlanan C# kaynak kodu gerekli adımları gösterir.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## Gereksinimler
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Makinenizde kurulu Visual Studio veya başka herhangi bir C# derleyicisi.
+- Aspose.PDF for .NET kitaplığı. Resmi Aspose web sitesinden indirebilir veya yüklemek için NuGet gibi bir paket yöneticisi kullanabilirsiniz.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## 1. Adım: Projeyi ayarlayın
+1. Tercih ettiğiniz geliştirme ortamında yeni bir C# projesi oluşturun.
+2. Aspose.PDF for .NET kitaplığına bir referans ekleyin.
 
-## Step 2: Import required namespaces
-In the code file where you want to add tooltips to text, add the following using directives at the top of the file:
+## 2. Adım: Gerekli ad alanlarını içe aktarın
+Metne araç ipuçları eklemek istediğiniz kod dosyasında, dosyanın en üstüne aşağıdaki kullanarak yönergeleri ekleyin:
 
 ```csharp
 using Aspose.Pdf;
@@ -28,11 +28,11 @@ using Aspose.Pdf.Forms;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## 3. Adım: Belge dizinini ayarlayın
+ Kodda yazan satırı bulun`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` belgelerinizin saklandığı dizinin yolu ile birlikte.
 
-## Step 4: Create a sample document with text
-Create a new `Document` object and add pages with text fragments. In the provided code, two text fragments are added to the document with the respective tooltip text.
+## 4. Adım: Metin içeren örnek bir belge oluşturun
+ Yeni bir tane oluştur`Document` nesne ve metin parçaları içeren sayfalar ekleyin. Sağlanan kodda, ilgili araç ipucu metnini içeren iki metin parçası belgeye eklenir.
 
 ```csharp
 Document doc = new Document();
@@ -41,8 +41,8 @@ doc.Pages[1].Paragraphs.Add(new TextFragment("Move the mouse cursor here to disp
 doc.Save(outputFile);
 ```
 
-## Step 5: Open the document and find the text fragments
-Load the created document using the `Document` constructor and find the text fragments that need tooltips using `TextFragmentAbsorber`.
+## Adım 5: Belgeyi açın ve metin parçalarını bulun
+ Oluşturulan belgeyi kullanarak yükleyin.`Document` yapıcıyı kullanarak araç ipuçlarına ihtiyaç duyan metin parçalarını bulun.`TextFragmentAbsorber`.
 
 ```csharp
 Document document = new Document(outputFile);
@@ -51,8 +51,8 @@ document.Pages.Accept(absorb);
 TextFragmentCollection textFragments = absorb.TextFragments;
 ```
 
-## Step 6: Add tooltips to the text fragments
-Loop through the extracted text fragments and create invisible buttons at their positions. Assign the desired tooltip text to the `AlternateName` property of the `ButtonField`. Add the button fields to the document's form.
+## 6. Adım: Metin parçalarına araç ipuçları ekleyin
+ Çıkarılan metin parçaları arasında dolaşın ve konumlarında görünmez düğmeler oluşturun. İstediğiniz araç ipucu metnini`AlternateName` mülkiyeti`ButtonField`. Düğme alanlarını belgenin formuna ekleyin.
 
 ```csharp
 foreach(TextFragment fragment in textFragments)
@@ -63,8 +63,8 @@ foreach(TextFragment fragment in textFragments)
 }
 ```
 
-## Step 7: Repeat for additional text fragments with long tooltips
-Repeat steps 5 and 6 for text fragments with long tooltips. Modify the search criteria and tooltip text accordingly.
+## 7. Adım: Uzun araç ipuçlarına sahip ek metin parçaları için tekrarlayın
+Uzun araç ipuçlarına sahip metin parçaları için 5. ve 6. adımları tekrarlayın. Arama kriterlerini ve araç ipucu metnini buna göre değiştirin.
 
 ```csharp
 absorb = new TextFragmentAbsorber("Move the mouse cursor here to display a very long tooltip");
@@ -79,49 +79,49 @@ foreach(TextFragment fragment in textFragments)
 }
 ```
 
-## Step 8: Save the modified document
-Save the modified PDF document using the `Save` method of the `Document` object.
+## Adım 8: Değiştirilen belgeyi kaydedin
+ Değiştirilen PDF belgesini kullanarak kaydedin.`Save` yöntemi`Document` nesne.
 
 ```csharp
 document. Save(outputFile);
 ```
 
-### Sample source code for Add Tooltip To Text using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Metne Araç İpucu Ekleme için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outputFile = dataDir + "Tooltip_out.pdf";
-// Create sample document with text
+// Metin içeren örnek belge oluşturun
 Document doc = new Document();
 doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display a tooltip"));
 doc.Pages[1].Paragraphs.Add(new TextFragment("Move the mouse cursor here to display a very long tooltip"));
 doc.Save(outputFile);
-// Open document with text
+// Metin içeren belgeyi aç
 Document document = new Document(outputFile);
-// Create TextAbsorber object to find all the phrases matching the regular expression
+// Normal ifadeyle eşleşen tüm ifadeleri bulmak için TextAbsorber nesnesi oluşturun
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a tooltip");
-// Accept the absorber for the document pages
+// Belge sayfaları için emiciyi kabul edin
 document.Pages.Accept(absorber);
-// Get the extracted text fragments
+// Çıkarılan metin parçalarını alın
 TextFragmentCollection textFragments = absorber.TextFragments;
-// Loop through the fragments
+// Parçalar arasında döngü yapın
 foreach (TextFragment fragment in textFragments)
 {
-	// Create invisible button on text fragment position
+	// Metin parçası konumunda görünmez düğme oluşturun
 	ButtonField field = new ButtonField(fragment.Page, fragment.Rectangle);
-	// AlternateName value will be displayed as tooltip by a viewer application
+	// AlternateName değeri bir görüntüleyici uygulaması tarafından ipucu olarak görüntülenecektir
 	field.AlternateName = "Tooltip for text.";
-	// Add button field to the document
+	// Belgeye düğme alanı ekleyin
 	document.Form.Add(field);
 }
-// Next will be sapmle of very long tooltip
+// Sırada çok uzun bir araç ipucunun örneği olacak
 absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a very long tooltip");
 document.Pages.Accept(absorber);
 textFragments = absorber.TextFragments;
 foreach (TextFragment fragment in textFragments)
 {
 	ButtonField field = new ButtonField(fragment.Page, fragment.Rectangle);
-	// Set very long text
+	// Çok uzun metin ayarla
 	field.AlternateName = "Lorem ipsum dolor sit amet, consectetur adipiscing elit," +
 							" sed do eiusmod tempor incididunt ut labore et dolore magna" +
 							" aliqua. Ut enim ad minim veniam, quis nostrud exercitation" +
@@ -132,22 +132,22 @@ foreach (TextFragment fragment in textFragments)
 							" deserunt mollit anim id est laborum.";
 	document.Form.Add(field);
 }
-// Save document
+// Belgeyi kaydet
 document.Save(outputFile);
 ```
 
-## Conclusion
-You have successfully added tooltips to text in a PDF document using Aspose.PDF for .NET. The resulting PDF file can now be found at the specified output file path.
+## Çözüm
+Aspose.PDF for .NET'i kullanarak bir PDF belgesindeki metne başarıyla araç ipuçları eklediniz. Ortaya çıkan PDF dosyası artık belirtilen çıktı dosyası yolunda bulunabilir.
 
-## FAQs
+## SSS
 
-#### Q: What is the focus of this tutorial?
+#### S: Bu eğitimin odak noktası nedir?
 
-A: This tutorial focuses on adding tooltips to text within a PDF file using the Aspose.PDF for .NET library. The provided C# source code demonstrates the steps required to achieve this.
+C: Bu eğitim, Aspose.PDF for .NET kütüphanesini kullanarak bir PDF dosyası içindeki metne araç ipuçları eklemeye odaklanmaktadır. Sağlanan C# kaynak kodu, bunu başarmak için gereken adımları gösterir.
 
-#### Q: Which namespaces need to be imported for this tutorial?
+#### S: Bu eğitim için hangi ad alanlarının içe aktarılması gerekiyor?
 
-A: In the code file where you want to add tooltips to text, import the following namespaces at the beginning of the file:
+C: Metne araç ipuçları eklemek istediğiniz kod dosyasında, dosyanın başında aşağıdaki ad alanlarını içe aktarın:
 
 ```csharp
 using Aspose.Pdf;
@@ -155,30 +155,30 @@ using Aspose.Pdf.Forms;
 using Aspose.Pdf.Text;
 ```
 
-#### Q: How do I specify the document directory?
+#### S: Belge dizinini nasıl belirlerim?
 
-A: In the code, find the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ A: Kodda satırı bulun`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` belge dizininizin gerçek yolu ile.
 
-#### Q: How can I create a sample document with text?
+#### S: Metin içeren örnek bir belgeyi nasıl oluşturabilirim?
 
-A: In Step 4, you'll create a new `Document` object and add pages with text fragments. The code provided adds two text fragments with respective tooltip text.
+ C: 4. Adımda yeni bir`Document` nesne ve metin parçaları içeren sayfalar ekleyin. Sağlanan kod, ilgili araç ipucu metniyle birlikte iki metin parçası ekler.
 
-#### Q: How do I open the document and find the text fragments?
+#### S: Belgeyi nasıl açarım ve metin parçalarını nasıl bulurum?
 
-A: In Step 5, you'll load the created document using the `Document` constructor and find the text fragments requiring tooltips using the `TextFragmentAbsorber`.
+ C: 5. Adımda, oluşturulan belgeyi aşağıdaki komutu kullanarak yükleyeceksiniz:`Document` yapıcıyı kullanın ve araç ipuçlarını gerektiren metin parçalarını bulun.`TextFragmentAbsorber`.
 
-#### Q: How do I add tooltips to the text fragments?
+#### S: Metin parçalarına nasıl araç ipuçları eklerim?
 
-A: In Step 6, you'll loop through the extracted text fragments and create invisible buttons at their positions. The tooltip text is assigned to the `AlternateName` property of the `ButtonField`, which is added to the document's form.
+ C: 6. Adımda, çıkarılan metin parçaları arasında geçiş yapacak ve konumlarında görünmez düğmeler oluşturacaksınız. Araç ipucu metni şuraya atanır:`AlternateName` mülkiyeti`ButtonField`belgenin formuna eklenir.
 
-#### Q: How do I repeat the process for additional text fragments with long tooltips?
+#### S: Uzun araç ipuçlarına sahip ek metin parçaları için işlemi nasıl tekrarlayabilirim?
 
-A: For text fragments with long tooltips, repeat Steps 5 and 6. Modify the search criteria and tooltip text accordingly.
+C: Uzun araç ipuçlarına sahip metin parçaları için 5. ve 6. Adımları tekrarlayın. Arama kriterlerini ve araç ipucu metnini buna göre değiştirin.
 
-#### Q: How do I save the modified document?
+#### S: Değiştirilen belgeyi nasıl kaydedebilirim?
 
-A: In Step 8, you'll save the modified PDF document using the `Save` method of the `Document` object.
+ C: 8. Adımda, değiştirilen PDF belgesini aşağıdaki komutu kullanarak kaydedeceksiniz:`Save` yöntemi`Document` nesne.
 
-#### Q: What is the main takeaway from this tutorial?
+#### S: Bu eğitimden çıkan ana sonuç nedir?
 
-A: By following this tutorial, you've learned how to enhance your PDF document by adding tooltips to text using Aspose.PDF for .NET. This can provide valuable additional information for readers when they interact with the PDF content.
+C: Bu eğitimi takip ederek Aspose.PDF for .NET kullanarak metne araç ipuçları ekleyerek PDF belgenizi nasıl geliştireceğinizi öğrendiniz. Bu, PDF içeriğiyle etkileşime girdiklerinde okuyuculara değerli ek bilgiler sağlayabilir.

@@ -1,52 +1,52 @@
 ---
-title: Create Table Element
-linktitle: Create Table Element
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to create an array element with Aspose.PDF for .NET. Generate dynamic PDFs with tables easily.
+title: إنشاء عنصر الجدول
+linktitle: إنشاء عنصر الجدول
+second_title: Aspose.PDF لمرجع .NET API
+description: دليل خطوة بخطوة لإنشاء عنصر مصفوفة باستخدام Aspose.PDF لـ .NET. قم بإنشاء ملفات PDF ديناميكية باستخدام الجداول بسهولة.
 type: docs
 weight: 80
 url: /ar/net/programming-with-tagged-pdf/create-table-element/
 ---
-In this step-by-step guide, we'll walk you through the process of creating an array element using Aspose.PDF for .NET. Aspose.PDF is a powerful library that lets you manipulate PDF documents programmatically. Creating an array element is a common requirement when generating dynamic PDFs, and Aspose.PDF offers an easy and efficient way to accomplish this.
+في هذا الدليل خطوة بخطوة، سنرشدك خلال عملية إنشاء عنصر مصفوفة باستخدام Aspose.PDF لـ .NET. Aspose.PDF هي مكتبة قوية تتيح لك التعامل مع مستندات PDF برمجيًا. يعد إنشاء عنصر مصفوفة مطلبًا شائعًا عند إنشاء ملفات PDF ديناميكية، ويوفر Aspose.PDF طريقة سهلة وفعالة لتحقيق ذلك.
 
-Let's dive into the code and learn how to create an array element using Aspose.PDF for .NET.
+دعنا نتعمق في التعليمات البرمجية ونتعلم كيفية إنشاء عنصر مصفوفة باستخدام Aspose.PDF لـ .NET.
 
-## Prerequisites
+## المتطلبات الأساسية
 
-Before you begin, make sure you have the following:
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-1. Aspose.PDF library for .NET installed.
-2. A basic knowledge of the C# programming language.
+1. تم تثبيت مكتبة Aspose.PDF لـ .NET.
+2. معرفة أساسية بلغة البرمجة C#.
 
-## Step 1: Setting up the environment
+## الخطوة 1: تهيئة البيئة
 
-To get started, open your C# development environment and create a new project. Make sure you have added a reference to the Aspose.PDF library for .NET in your project.
+للبدء، افتح بيئة تطوير C# الخاصة بك وقم بإنشاء مشروع جديد. تأكد من إضافة مرجع إلى مكتبة Aspose.PDF لـ .NET في مشروعك.
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Creating the document
+## الخطوة 2: إنشاء الوثيقة
 
-The first step is to create a new PDF document using the `Document` class.
+ الخطوة الأولى هي إنشاء مستند PDF جديد باستخدام الملف`Document` فصل.
 
 ```csharp
-// Create the document
+// قم بإنشاء المستند
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example Array");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-Here we also set the title and language for the tagged content.
+هنا نقوم أيضًا بتعيين عنوان ولغة المحتوى الذي تم وضع علامة عليه.
 
-## Step 3: Creating the array element
+## الخطوة 3: إنشاء عنصر المصفوفة
 
-Next, we need to create the array element and add it to the document. We start by getting the root structure element, then we create a new table element using the `CreateTableElement` method.
+بعد ذلك، نحتاج إلى إنشاء عنصر المصفوفة وإضافته إلى المستند. نبدأ بالحصول على عنصر البنية الجذرية، ثم نقوم بإنشاء عنصر جدول جديد باستخدام التابع`CreateTableElement` طريقة.
 
 ```csharp
-// Get the root structure element
+// الحصول على عنصر هيكل الجذر
 StructureElement rootElement = taggedContent.RootElement;
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
@@ -129,27 +129,27 @@ StructureAttribute summaryAttribute = new StructureAttribute(AttributeKey.Summar
 summaryAttribute.SetStringValue("The summary text for the table");
 tableAttributes.SetAttribute(summaryAttribute);
 
-// Save the tagged PDF document
+// احفظ مستند PDF الذي تم وضع علامة عليه
 document.Save(dataDir + "CreateTableElement.pdf");
 
-// PDF/UA compliance check
+// فحص التوافق مع PDF/UA
 document = new Document(dataDir + "CreateTableElement.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "table.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
 ```
 
-### Sample source code for Create Table Element using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لإنشاء عنصر جدول باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create document
+// إنشاء مستند
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example table");
 taggedContent.SetLanguage("en-US");
 
-// Get root structure element
+// الحصول على عنصر هيكل الجذر
 StructureElement rootElement = taggedContent.RootElement;
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
@@ -230,58 +230,58 @@ StructureAttribute summaryAttribute = new StructureAttribute(AttributeKey.Summar
 summaryAttribute.SetStringValue("The summary text for table");
 tableAttributes.SetAttribute(summaryAttribute);
 
-// Save Tagged Pdf Document
+// حفظ وثيقة PDF ذات العلامات
 document.Save(dataDir + "CreateTableElement.pdf");
 
-// Checking PDF/UA compliance
+// التحقق من توافق PDF/UA
 document = new Document(dataDir + "CreateTableElement.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "table.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ```
 
-## Conclusion
+## خاتمة
 
-You have learned how to create an array element using Aspose.PDF for .NET. You can now generate PDF documents with dynamic tables using this method. Feel free to explore more features of Aspose.PDF to discover its full potential.
+لقد تعلمت كيفية إنشاء عنصر صفيف باستخدام Aspose.PDF لـ .NET. يمكنك الآن إنشاء مستندات PDF بجداول ديناميكية باستخدام هذه الطريقة. لا تتردد في استكشاف المزيد من ميزات Aspose.PDF لاكتشاف إمكاناته الكاملة.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is an array element in a PDF document, and why would I need to create one using Aspose.PDF for .NET?
+#### س: ما هو عنصر المصفوفة في مستند PDF، ولماذا أحتاج إلى إنشاء عنصر باستخدام Aspose.PDF لـ .NET؟
 
-A: An array element in a PDF document represents a structured collection of data, often used for creating tables or grids. You might need to create an array element using Aspose.PDF for .NET when generating dynamic PDFs that require structured data presentation, such as tabular information or grids.
+ج: يمثل عنصر المصفوفة في مستند PDF مجموعة منظمة من البيانات، وغالبًا ما تستخدم لإنشاء الجداول أو الشبكات. قد تحتاج إلى إنشاء عنصر صفيف باستخدام Aspose.PDF لـ .NET عند إنشاء ملفات PDF ديناميكية تتطلب عرض بيانات منظمة، مثل المعلومات الجدولية أو الشبكات.
 
-#### Q: How does Aspose.PDF for .NET simplify the process of creating an array element?
+#### س: كيف يعمل Aspose.PDF for .NET على تبسيط عملية إنشاء عنصر صفيف؟
 
-A: Aspose.PDF for .NET provides a comprehensive set of classes and methods that allow you to create, customize, and manage array elements (tables) in a PDF document programmatically. This eliminates the need for manual PDF manipulation and streamlines the creation of structured data representations.
+ج: يوفر Aspose.PDF for .NET مجموعة شاملة من الفئات والأساليب التي تسمح لك بإنشاء عناصر المصفوفة (الجداول) وتخصيصها وإدارتها في مستند PDF برمجيًا. وهذا يلغي الحاجة إلى معالجة ملفات PDF يدويًا ويبسط عملية إنشاء تمثيلات البيانات المنظمة.
 
-#### Q: What are the key steps involved in creating an array element using Aspose.PDF for .NET?
+#### س: ما هي الخطوات الأساسية المتبعة في إنشاء عنصر مصفوفة باستخدام Aspose.PDF لـ .NET؟
 
-A: The key steps include setting up the environment, creating the document, obtaining the root structure element, creating a table element, defining rows and cells within the table, and specifying formatting and properties for the elements. The provided code example demonstrates these steps.
+ج: تتضمن الخطوات الأساسية إعداد البيئة، وإنشاء المستند، والحصول على عنصر البنية الجذرية، وإنشاء عنصر جدول، وتحديد الصفوف والخلايا داخل الجدول، وتحديد تنسيق العناصر وخصائصها. يوضح المثال التعليمات البرمجية المتوفرة هذه الخطوات.
 
-#### Q: What role does the `taggedContent` object play in creating an array element?
+####  س: ما هو الدور الذي يقوم به`taggedContent` object play in creating an array element?
 
-A: The `taggedContent` object, obtained from the document's `TaggedContent` property, allows you to define the structure of the tagged content within the PDF document. This includes creating and organizing array elements and their child elements in a hierarchical manner.
+ ج: ال`taggedContent` الكائن، الذي تم الحصول عليه من الوثيقة`TaggedContent`تتيح لك الخاصية تحديد بنية المحتوى الذي تم وضع علامة عليه داخل مستند PDF. يتضمن ذلك إنشاء وتنظيم عناصر المصفوفة وعناصرها الفرعية بطريقة هرمية.
 
-#### Q: How does the code ensure accessibility and semantics of the created array element?
+#### س: كيف يضمن الكود إمكانية الوصول ودلالات عنصر الصفيف الذي تم إنشاؤه؟
 
-A: The code sets attributes such as `AlternativeText`, `BackgroundColor`, `Border`, `Margin`, `Alignment`, and `ColSpan` to enhance the accessibility and semantics of the array element. These attributes contribute to a well-structured, informative, and visually appealing representation of data.
+ ج: يقوم الكود بتعيين سمات مثل`AlternativeText`, `BackgroundColor`, `Border`, `Margin`, `Alignment` ، و`ColSpan` لتعزيز إمكانية الوصول ودلالات عنصر الصفيف. تساهم هذه السمات في تمثيل البيانات بشكل جيد التنظيم وغني بالمعلومات وجذاب بصريًا.
 
-#### Q: What is the significance of PDF/UA compliance in the context of creating array elements?
+#### س: ما هي أهمية التوافق مع PDF/UA في سياق إنشاء عناصر الصفيف؟
 
-A: PDF/UA (Universal Accessibility) compliance ensures that the generated PDF documents are accessible to users with disabilities and meet certain accessibility standards. The code example checks PDF/UA compliance using the `Validate` method, helping you create documents that are inclusive and accessible.
+ ج: يضمن التوافق مع PDF/UA (إمكانية الوصول الشامل) إمكانية وصول المستخدمين ذوي الإعاقة إلى مستندات PDF التي تم إنشاؤها وتلبية معايير معينة لإمكانية الوصول. يتحقق مثال التعليمات البرمجية من توافق PDF/UA باستخدام ملف`Validate` الطريقة، مما يساعدك على إنشاء مستندات شاملة ويمكن الوصول إليها.
 
-#### Q: Can I customize the formatting and appearance of the array elements further?
+#### س: هل يمكنني تخصيص تنسيق ومظهر عناصر المصفوفة بشكل أكبر؟
 
-A: Yes, you can customize the formatting and appearance of the array elements by adjusting attributes such as background color, border style, font size, and alignment. Aspose.PDF for .NET provides a wide range of properties to tailor the visual presentation to your requirements.
+ج: نعم، يمكنك تخصيص تنسيق عناصر الصفيف ومظهرها عن طريق ضبط السمات مثل لون الخلفية ونمط الحدود وحجم الخط والمحاذاة. يوفر Aspose.PDF for .NET نطاقًا واسعًا من الخصائص لتخصيص العرض التقديمي المرئي وفقًا لمتطلباتك.
 
-#### Q: How can I extend this knowledge to create more complex table structures or incorporate array elements into larger PDF documents?
+#### س: كيف يمكنني توسيع هذه المعرفة لإنشاء هياكل جدول أكثر تعقيدًا أو دمج عناصر المصفوفة في مستندات PDF أكبر؟
 
-A: You can extend this knowledge by exploring additional features of Aspose.PDF for .NET, such as merging multiple array elements, creating nested tables, adding headers and footers, and integrating array elements into larger PDF layouts. The library's documentation and examples provide guidance for these advanced scenarios.
+ج: يمكنك توسيع هذه المعرفة من خلال استكشاف ميزات إضافية لـ Aspose.PDF لـ .NET، مثل دمج عناصر مصفوفة متعددة وإنشاء جداول متداخلة وإضافة رؤوس وتذييلات ودمج عناصر المصفوفة في تخطيطات PDF أكبر. توفر وثائق المكتبة وأمثلتها إرشادات لهذه السيناريوهات المتقدمة.
 
-#### Q: Is it possible to import data from external sources, such as databases or spreadsheets, to populate the array elements?
+#### س: هل من الممكن استيراد البيانات من مصادر خارجية، مثل قواعد البيانات أو جداول البيانات، لملء عناصر الصفيف؟
 
-A: Yes, you can import data from external sources to populate array elements. You can use data retrieval and transformation techniques in C# to fetch data from databases, spreadsheets, or other sources and then populate the array elements accordingly.
+ج: نعم، يمكنك استيراد البيانات من مصادر خارجية لملء عناصر المصفوفة. يمكنك استخدام تقنيات استرجاع البيانات وتحويلها في لغة C# لجلب البيانات من قواعد البيانات أو جداول البيانات أو المصادر الأخرى ثم تعبئة عناصر الصفيف وفقًا لذلك.
 
-#### Q: How can I use the knowledge gained from this tutorial to enhance the quality and usability of PDF documents I create programmatically?
+#### س: كيف يمكنني استخدام المعرفة المكتسبة من هذا البرنامج التعليمي لتحسين جودة وسهولة استخدام مستندات PDF التي أقوم بإنشائها برمجيًا؟
 
-A: The knowledge gained from this tutorial allows you to create structured and visually appealing array elements (tables) in PDF documents. By incorporating these techniques, you can improve the readability, accessibility, and user experience of dynamically generated PDFs, making them more informative and user-friendly.
+ج: تتيح لك المعرفة المكتسبة من هذا البرنامج التعليمي إنشاء عناصر مصفوفة (جداول) منظمة وجذابة بصريًا في مستندات PDF. من خلال دمج هذه التقنيات، يمكنك تحسين إمكانية القراءة وإمكانية الوصول وتجربة المستخدم لملفات PDF التي تم إنشاؤها ديناميكيًا، مما يجعلها أكثر إفادة وسهولة في الاستخدام.

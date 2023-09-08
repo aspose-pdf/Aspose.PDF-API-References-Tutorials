@@ -1,35 +1,35 @@
 ---
-title: Add TOC To PDF File
-linktitle: Add TOC To PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add a table of contents to PDF file using Aspose.PDF for .NET. Step-by-step guide with example source code. Boost document navigation!
+title: 添加目录到 PDF 文件
+linktitle: 添加目录到 PDF 文件
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 将目录添加到 PDF 文件。带有示例源代码的分步指南。增强文档导航！
 type: docs
 weight: 40
 url: /zh/net/programming-with-document/addtoc/
 ---
-In this tutorial, we will explore how to use the Add TOC (Table of Contents) to PDF file feature of Aspose.PDF for .NET to add a table of contents to PDF documents. We will provide a step-by-step guide and explain the C# source code required to achieve this. By the end of this tutorial, you will be able to generate a PDF document with a table of contents using Aspose.PDF for .NET.
+在本教程中，我们将探讨如何使用 Aspose.PDF for .NET 的“将 TOC（目录）添加到 PDF 文件”功能将目录添加到 PDF 文档。我们将提供分步指南并解释实现此目的所需的 C# 源代码。在本教程结束时，您将能够使用 Aspose.PDF for .NET 生成带有目录的 PDF 文档。
 
 
-## Step 1: Load the existing PDF file
+## 第 1 步：加载现有 PDF 文件
 
-To get started, we need to load an existing PDF file. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your PDF file:
+首先，我们需要加载现有的 PDF 文件。代替`"YOUR DOCUMENT DIRECTORY"`在以下代码中添加 PDF 文件的实际路径：
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "AddTOC.pdf");
 ```
 
-## Step 2: Create a new page for the table of contents
+## 步骤 2：为目录创建一个新页面
 
-We will create a new page to hold the table of contents. The following code inserts a new page at index 1:
+我们将创建一个新页面来保存目录。以下代码在索引 1 处插入一个新页面：
 
 ```csharp
 Page tocPage = doc.Pages.Insert(1);
 ```
 
-## Step 3: Define the table of contents information
+## 步骤 3：定义目录信息
 
-Next, we need to define the table of contents information. We will set the title and other properties of the table of contents. Add the following code:
+接下来，我们需要定义目录信息。我们将设置目录的标题和其他属性。添加以下代码：
 
 ```csharp
 TocInfo tocInfo = new TocInfo();
@@ -41,9 +41,9 @@ tocInfo.Title = title;
 tocPage.TocInfo = tocInfo;
 ```
 
-## Step 4: Create TOC elements
+## 第 4 步：创建目录元素
 
-Now, we will create the elements of the table of contents. In this tutorial, we will create four TOC elements corresponding to different pages. Modify the following code as per your requirements:
+现在，我们将创建目录的元素。在本教程中，我们将创建对应于不同页面的四个目录元素。根据您的要求修改以下代码：
 
 ```csharp
 string[] titles = new string[4];
@@ -67,9 +67,9 @@ for (int i = 0; i < 2; i++)
 }
 ```
 
-## Step 5: Save the updated document
+## 步骤 5：保存更新后的文档
 
-Finally, we need to save the modified document with the table of contents. Replace `"YOUR DOCUMENT DIRECTORY"` in the code below with the desired output file path:
+最后，我们需要将修改后的文档与目录一起保存。代替`"YOUR DOCUMENT DIRECTORY"`在下面的代码中使用所需的输出文件路径：
 
 ```csharp
 dataDir = dataDir + "TOC_out.pdf";
@@ -77,30 +77,30 @@ doc.Save(dataDir);
 Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at " + dataDir);
 ```
 
-### Example source code for Adding TOC to PDF documents using Aspose.PDF for .NET
+### 使用 Aspose.PDF for .NET 将 TOC 添加到 PDF 文档的示例源代码
 
 ```csharp
 
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Load an existing PDF files
+//加载现有的 PDF 文件
 Document doc = new Document(dataDir + "AddTOC.pdf");
 
-// Get access to first page of PDF file
+//访问 PDF 文件的第一页
 Page tocPage = doc.Pages.Insert(1);
 
-// Create object to represent TOC information
+//创建对象来表示 TOC 信息
 TocInfo tocInfo = new TocInfo();
 TextFragment title = new TextFragment("Table Of Contents");
 title.TextState.FontSize = 20;
 title.TextState.FontStyle = FontStyles.Bold;
 
-// Set the title for TOC
+//设置目录标题
 tocInfo.Title = title;
 tocPage.TocInfo = tocInfo;
 
-// Create string objects which will be used as TOC elements
+//创建将用作目录元素的字符串对象
 string[] titles = new string[4];
 titles[0] = "First page";
 titles[1] = "Second page";
@@ -108,53 +108,53 @@ titles[2] = "Third page";
 titles[3] = "Fourth page";
 for (int i = 0; i < 2; i++)
 {
-	// Create Heading object
+	//创建标题对象
 	Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
 	TextSegment segment2 = new TextSegment();
 	heading2.TocPage = tocPage;
 	heading2.Segments.Add(segment2);
 
-	// Specify the destination page for heading object
+	//指定标题对象的目标页面
 	heading2.DestinationPage = doc.Pages[i + 2];
 
-	// Destination page
+	//目的地页面
 	heading2.Top = doc.Pages[i + 2].Rect.Height;
 
-	// Destination coordinate
+	//目的地坐标
 	segment2.Text = titles[i];
 
-	// Add heading to page containing TOC
+	//将标题添加到包含目录的页面
 	tocPage.Paragraphs.Add(heading2);
 }
 dataDir = dataDir + "TOC_out.pdf";
-// Save the updated document
+//保存更新后的文档
 doc.Save(dataDir);
 
 Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## 结论
 
-In this tutorial, we explored how to add a table of contents (TOC) to PDF documents using Aspose.PDF for .NET. By following the step-by-step guide and utilizing the provided C# source code, you can easily generate a PDF document with a table of contents. The TOC enhances the document's usability, allowing users to navigate to specific sections or pages more efficiently. Aspose.PDF for .NET provides a robust and user-friendly solution for working with PDF files in .NET applications, enabling you to create dynamic and interactive PDF documents with ease.
+在本教程中，我们探讨了如何使用 Aspose.PDF for .NET 将目录 (TOC) 添加到 PDF 文档。通过遵循分步指南并利用提供的 C# 源代码，您可以轻松生成带有目录的 PDF 文档。 TOC 增强了文档的可用性，允许用户更有效地导航到特定部分或页面。 Aspose.PDF for .NET 提供了一个强大且用户友好的解决方案，用于在 .NET 应用程序中处理 PDF 文件，使您能够轻松创建动态和交互式 PDF 文档。
 
-### FAQ's for add TOC to PDF file
+### 将目录添加到 PDF 文件的常见问题解答
 
-#### Q: What is Aspose.PDF for .NET?
+#### 问：什么是 Aspose.PDF for .NET？
 
-A: Aspose.PDF for .NET is a powerful library that allows developers to work with PDF files in .NET applications effectively. It provides a wide range of features for creating, manipulating, and managing PDF documents programmatically.
+答：Aspose.PDF for .NET 是一个功能强大的库，允许开发人员在 .NET 应用程序中有效地处理 PDF 文件。它提供了广泛的功能，用于以编程方式创建、操作和管理 PDF 文档。
 
-#### Q: What is the purpose of adding a table of contents (TOC) to a PDF document?
+#### 问：向 PDF 文档添加目录 (TOC) 的目的是什么？
 
-A: The table of contents (TOC) provides a navigational aid for users, enabling them to quickly jump to specific sections or pages within the PDF document. It improves the document's usability and user experience.
+答：目录 (TOC) 为用户提供导航帮助，使他们能够快速跳转到 PDF 文档中的特定部分或页面。它提高了文档的可用性和用户体验。
 
-#### Q: How do I add a table of contents to a PDF document using Aspose.PDF for .NET?
+#### 问：如何使用 Aspose.PDF for .NET 将目录添加到 PDF 文档？
 
-A: To add a table of contents to a PDF document using Aspose.PDF for .NET, you need to create a new page to hold the TOC, define the table of contents information, and then create TOC elements that correspond to specific pages or sections in the document.
+答：要使用 Aspose.PDF for .NET 将目录添加到 PDF 文档中，您需要创建一个新页面来保存 TOC，定义目录信息，然后创建与特定页面或对应的 TOC 元素文档中的部分。
 
-#### Q: Can I customize the appearance of the table of contents?
+#### 问：我可以自定义目录的外观吗？
 
-A: Yes, you can customize the appearance of the table of contents by setting various properties of the TOC elements, such as font size, font style, and alignment. Aspose.PDF for .NET provides flexibility in designing the TOC to match your desired look and feel.
+答：是的，您可以通过设置目录元素的各种属性（例如字体大小、字体样式和对齐方式）来自定义目录的外观。 Aspose.PDF for .NET 提供了设计目录的灵活性，以匹配您所需的外观和感觉。
 
-#### Q: Is Aspose.PDF for .NET suitable for adding advanced features to PDF documents?
+#### 问：Aspose.PDF for .NET 是否适合向 PDF 文档添加高级功能？
 
-A: Absolutely, Aspose.PDF for .NET is a feature-rich library that allows you to add advanced functionalities to PDF documents, including interactive elements, form fields, digital signatures, and more.
+答：当然，Aspose.PDF for .NET 是一个功能丰富的库，允许您向 PDF 文档添加高级功能，包括交互元素、表单字段、数字签名等。

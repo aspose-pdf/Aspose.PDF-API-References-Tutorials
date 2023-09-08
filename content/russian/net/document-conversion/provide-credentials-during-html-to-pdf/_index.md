@@ -1,50 +1,50 @@
 ---
-title: Provide Credentials During HTML To PDF
-linktitle: Provide Credentials During HTML To PDF
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to convert HTML to PDF by providing credentials with Aspose.PDF for .NET.
+title: Предоставление учетных данных при преобразовании HTML в PDF
+linktitle: Предоставление учетных данных при преобразовании HTML в PDF
+second_title: Справочник по Aspose.PDF для .NET API
+description: Пошаговое руководство по преобразованию HTML в PDF путем предоставления учетных данных с помощью Aspose.PDF для .NET.
 type: docs
 weight: 240
 url: /ru/net/document-conversion/provide-credentials-during-html-to-pdf/
 ---
-In this tutorial, we will walk you through the process of converting an HTML file to PDF while providing credentials when accessing a secure URL using Aspose.PDF for .NET. By following the steps below, you will be able to convert HTML content to PDF using the appropriate credentials.
+В этом руководстве мы покажем вам процесс преобразования HTML-файла в PDF, предоставив учетные данные при доступе к защищенному URL-адресу с помощью Aspose.PDF для .NET. Выполнив следующие шаги, вы сможете конвертировать HTML-контент в PDF, используя соответствующие учетные данные.
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## Предварительные условия
+Прежде чем начать, убедитесь, что вы соответствуете следующим предварительным условиям:
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- Базовые знания языка программирования C#.
+- Библиотека Aspose.PDF для .NET, установленная в вашей системе.
+- Среда разработки, такая как Visual Studio.
 
-## Step 1: Fetch secure HTML content
-In this step, we'll fetch secure HTML content from a URL using the appropriate credentials. Use the following code:
+## Шаг 1. Получите безопасный HTML-контент
+На этом этапе мы получим защищенный HTML-контент по URL-адресу, используя соответствующие учетные данные. Используйте следующий код:
 
 ```csharp
-// Path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Create a request for the URL.
+// Создайте запрос URL-адреса.
 WebRequest request = WebRequest.Create("http://My.signchart.com/Report/PrintBook.asp?ProjectGuid=6FB9DBB0-");
-// If needed for server, set credentials.
+// Если необходимо для сервера, установите учетные данные.
 request.Credentials = CredentialCache.DefaultCredentials;
-// Get the response.
+// Получите ответ.
 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 
-// Get the stream containing the content returned by the server.
+// Получите поток, содержащий содержимое, возвращенное сервером.
 Stream dataStream = response. GetResponseStream();
-// Open the stream using a StreamReader for easy access.
+// Откройте поток с помощью StreamReader для быстрого доступа.
 StreamReader reader = new StreamReader(dataStream);
-// Read the content.
+// Прочтите содержание.
 string responseFromServer = reader.ReadToEnd();
 reader. Close();
 dataStream.Close();
 response. Close();
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where you want to save the resulting PDF file.
+ Обязательно замените`"YOUR DOCUMENTS DIRECTORY"` с фактическим каталогом, в котором вы хотите сохранить полученный PDF-файл.
 
-## Step 2: Convert HTML to PDF by providing credentials
-Now we will load the retrieved HTML content and convert it to PDF format while providing the appropriate credentials. Use the following code:
+## Шаг 2. Конвертируйте HTML в PDF, предоставив учетные данные.
+Теперь мы загрузим полученное содержимое HTML и преобразуем его в формат PDF, предоставив соответствующие учетные данные. Используйте следующий код:
 
 ```csharp
 MemoryStream stream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(responseFromServer));
@@ -52,41 +52,41 @@ MemoryStream stream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(respon
 HtmlLoadOptions options = new HtmlLoadOptions("http://My.signchart.com/");
 options.ExternalResourcesCredentials = CredentialCache.DefaultCredentials;
 
-// Load the HTML file
+// Загрузите HTML-файл
 Document pdfDocument = new Document(stream, options);
 ```
 
-## Step 3: Saving the resulting PDF file
-Finally, we will save the resulting PDF file. Use the following code:
+## Шаг 3. Сохранение полученного PDF-файла.
+Наконец, мы сохраним полученный PDF-файл. Используйте следующий код:
 
 ```csharp
-// Save the resulting PDF file
+// Сохраните полученный PDF-файл.
 pdfDocument.Save(dataDir + "ProvideCredentialsDuringHTMLToPDF_out.pdf");
 ```
 
-The code above saves the resulting PDF file with the filename `"ProvideCredentialsDuringHTMLToPDF_out.pdf"`.
+ Приведенный выше код сохраняет полученный PDF-файл с именем файла.`"ProvideCredentialsDuringHTMLToPDF_out.pdf"`.
 
-### Example source code for Provide Credentials During HTML to PDF using Aspose.PDF for .NET
+### Пример исходного кода для предоставления учетных данных при преобразовании HTML в PDF с использованием Aspose.PDF для .NET
 
 ```csharp
 try
 {
 	
-	// The path to the documents directory.
+	// Путь к каталогу документов.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Create a request for the URL.
+	// Создайте запрос URL-адреса.
 	WebRequest request = WebRequest.Create("http:// My.signchart.com/Report/PrintBook.asp?ProjectGuid=6FB9DBB0-");
-	// If required by the server, set the credentials.
+	// Если этого требует сервер, задайте учетные данные.
 	request.Credentials = CredentialCache.DefaultCredentials;
-	// Get the response.
+	// Получите ответ.
 	HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 
-	// Get the stream containing content returned by the server.
+	// Получите поток, содержащий контент, возвращенный сервером.
 	Stream dataStream = response.GetResponseStream();
-	// Open the stream using a StreamReader for easy access.
+	// Откройте поток с помощью StreamReader для быстрого доступа.
 	StreamReader reader = new StreamReader(dataStream);
-	// Read the content.
+	// Прочтите содержание.
 	string responseFromServer = reader.ReadToEnd();
 	reader.Close();
 	dataStream.Close();
@@ -97,9 +97,9 @@ try
 	HtmlLoadOptions options = new HtmlLoadOptions("http:// My.signchart.com/");
 	options.ExternalResourcesCredentials = CredentialCache.DefaultCredentials;
 
-	// Load HTML file
+	// Загрузить HTML-файл
 	Document pdfDocument = new Document(stream, options);
-	// Save resultant file
+	// Сохранить полученный файл
 	pdfDocument.Save("ProvideCredentialsDuringHTMLToPDF_out.pdf");
 	
 }
@@ -109,31 +109,31 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
-In this tutorial, we covered the step-by-step process of converting an HTML file to PDF while providing credentials when accessing a secure URL using Aspose.PDF for .NET. By following the instructions outlined above, you will be able to successfully convert HTML content to PDF while providing the correct credentials.
+## Заключение
+В этом руководстве мы рассмотрели пошаговый процесс преобразования HTML-файла в PDF с предоставлением учетных данных при доступе к защищенному URL-адресу с использованием Aspose.PDF для .NET. Следуя инструкциям, изложенным выше, вы сможете успешно преобразовать содержимое HTML в PDF, предоставив правильные учетные данные.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is Aspose.PDF for .NET?
+#### Вопрос: Что такое Aspose.PDF для .NET?
 
-A: Aspose.PDF for .NET is a robust library that empowers developers to work with PDF documents in C# applications. It offers a wide range of functionalities, including HTML to PDF conversion.
+О: Aspose.PDF для .NET — это надежная библиотека, которая позволяет разработчикам работать с PDF-документами в приложениях C#. Он предлагает широкий спектр функций, включая преобразование HTML в PDF.
 
-#### Q: How can I fetch secure HTML content from a URL?
+#### Вопрос: Как получить защищенный HTML-контент по URL-адресу?
 
-A: To fetch secure HTML content from a URL, you can use the `WebRequest` class in C#. Make sure to set the appropriate credentials using the `Credentials` property.
+ О: Чтобы получить защищенный HTML-контент с URL-адреса, вы можете использовать команду`WebRequest` класс на C#. Обязательно установите соответствующие учетные данные, используя`Credentials` свойство.
 
-#### Q: What are the prerequisites for this tutorial?
+#### Вопрос: Каковы предварительные условия для этого урока?
 
-A: Before proceeding with the tutorial, ensure that you have the following prerequisites:
+О: Прежде чем приступить к изучению руководства, убедитесь, что у вас есть следующие предварительные условия:
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- Базовые знания языка программирования C#.
+- Библиотека Aspose.PDF для .NET, установленная в вашей системе.
+- Среда разработки, такая как Visual Studio.
 
-#### Q: How does Aspose.PDF for .NET handle external resources while converting HTML to PDF?
+#### Вопрос: Как Aspose.PDF for .NET обрабатывает внешние ресурсы при преобразовании HTML в PDF?
 
-A: Aspose.PDF for .NET provides the `HtmlLoadOptions` class to handle external resources during HTML to PDF conversion. You can set the external resource credentials using the `ExternalResourcesCredentials` property.
+ О: Aspose.PDF для .NET предоставляет`HtmlLoadOptions`класс для обработки внешних ресурсов во время преобразования HTML в PDF. Вы можете установить учетные данные внешнего ресурса, используя`ExternalResourcesCredentials` свойство.
 
-#### Q: Can I customize the filename for the resulting PDF file?
+#### Вопрос: Могу ли я настроить имя полученного PDF-файла?
 
-A: Yes, you can customize the filename for the resulting PDF file by modifying the code that saves the PDF document. Simply change the desired filename in the `pdfDocument.Save()` method.
+ О: Да, вы можете настроить имя полученного PDF-файла, изменив код, сохраняющий PDF-документ. Просто измените желаемое имя файла в`pdfDocument.Save()` метод.

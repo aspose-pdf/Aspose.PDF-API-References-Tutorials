@@ -1,53 +1,53 @@
 ---
-title: Create Structure Elements Tree
-linktitle: Create Structure Elements Tree
-second_title: Aspose.PDF for .NET API Reference
-description: Create a structure of tree elements using Aspose.PDF for .NET. Step by step guide to create a structured PDF document.
+title: إنشاء شجرة عناصر الهيكل
+linktitle: إنشاء شجرة عناصر الهيكل
+second_title: Aspose.PDF لمرجع .NET API
+description: قم بإنشاء بنية لعناصر الشجرة باستخدام Aspose.PDF لـ .NET. دليل خطوة بخطوة لإنشاء مستند PDF منظم.
 type: docs
 weight: 70
 url: /ar/net/programming-with-tagged-pdf/create-structure-elements-tree/
 ---
-In this step-by-step guide, we will explain the source code in C# to create a structure of tree elements using Aspose.PDF for .NET. We will show you how to create a PDF document with structured elements and how to organize them hierarchically. Using the Aspose.PDF library greatly simplifies the manipulation of PDF elements and provides advanced functionality for working with structured documents.
+في هذا الدليل خطوة بخطوة، سنشرح الكود المصدري في لغة C# لإنشاء بنية من عناصر الشجرة باستخدام Aspose.PDF لـ .NET. سنوضح لك كيفية إنشاء مستند PDF بعناصر منظمة وكيفية تنظيمها بشكل هرمي. يؤدي استخدام مكتبة Aspose.PDF إلى تبسيط عملية معالجة عناصر PDF إلى حد كبير وتوفير وظائف متقدمة للعمل مع المستندات المنظمة.
 
-## Step 1: Setting up the environment
-Before you begin, make sure you've set up your development environment with Aspose.PDF for .NET. Also make sure you have the path to your documents directory set in the `dataDir` variable.
+## الخطوة 1: تهيئة البيئة
+ قبل أن تبدأ، تأكد من إعداد بيئة التطوير الخاصة بك باستخدام Aspose.PDF لـ .NET. تأكد أيضًا من تعيين المسار إلى دليل المستندات الخاص بك في ملف`dataDir` عامل.
 
-## Step 2: Creating a PDF Document
-To start, we'll create a new PDF document using the `Document` class provided by Aspose.PDF. Here is the code for this step:
+## الخطوة 2: إنشاء مستند PDF
+ للبدء، سنقوم بإنشاء مستند PDF جديد باستخدام الملف`Document` الطبقة المقدمة من Aspose.PDF. إليك الكود الخاص بهذه الخطوة:
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Create a PDF document
+// إنشاء مستند PDF
 Document document = new Document();
 ```
 
-## Step 3: Getting content to work with TaggedPdf
-The Aspose.PDF library allows working with structured PDF documents using the concept of Tagged PDF. For this, we need to get a reference to the tagged content item using the document's `TaggedContent` property. Here is the code for this step:
+## الخطوة 3: جعل المحتوى يعمل مع TaggedPdf
+ تتيح مكتبة Aspose.PDF العمل مع مستندات PDF المنظمة باستخدام مفهوم Tagged PDF. لهذا، نحتاج إلى الحصول على مرجع لعنصر المحتوى الموسوم باستخدام المستند`TaggedContent`ملكية. إليك الكود الخاص بهذه الخطوة:
 
 ```csharp
-// Get content to work with TaggedPdf
+// احصل على محتوى للعمل مع TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-## Step 4: Set document title and language
-Before we start creating the structure of the elements, we need to define the title and the language of the document. This can be done using the `SetTitle` and `SetLanguage` methods of the `taggedContent` object. Here is the code for this step:
+## الخطوة 4: تعيين عنوان المستند واللغة
+ قبل أن نبدأ في إنشاء بنية العناصر، نحتاج إلى تحديد عنوان المستند ولغته. ويمكن القيام بذلك باستخدام`SetTitle` و`SetLanguage` أساليب`taggedContent` هدف. إليك الكود الخاص بهذه الخطوة:
 
 ```csharp
-// Define the document title and language
+// تحديد عنوان الوثيقة واللغة
 taggedContent.SetTitle("Structured PDF Document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-## Step 5: Creating Logical Structure Elements
-Now that we've set up our document and set the title and language, we can start creating logical structure elements. These elements will be organized hierarchically to form the structure tree. Here is the code for this step:
+## الخطوة 5: إنشاء عناصر البنية المنطقية
+الآن بعد أن قمنا بإعداد المستند الخاص بنا وتعيين العنوان واللغة، يمكننا البدء في إنشاء عناصر البنية المنطقية. سيتم تنظيم هذه العناصر بشكل هرمي لتكوين شجرة الهيكل. إليك الكود الخاص بهذه الخطوة:
 
 ```csharp
-// Obtain the root structure element (Document)
+// الحصول على عنصر البنية الجذرية (المستند)
 StructureElement rootElement = taggedContent.RootElement;
 
-// Create the logical structure
+// إنشاء البنية المنطقية
 SectElement sect1 = taggedContent.CreateSectElement();
 rootElement.AppendChild(sect1);
 
@@ -87,29 +87,29 @@ DivElement div31 = taggedContent.CreateDivElement();
 sect3.AppendChild(div31);
 ```
 
-## Step 6: Saving the tagged PDF document
-Once we have created the element structure, we can save the PDF document. Use the `Save` method of the `document` object to specify the path and name of the PDF file to save. Here is the code for this step:
+## الخطوة 6: حفظ وثيقة PDF ذات العلامات
+ بمجرد إنشاء بنية العنصر، يمكننا حفظ مستند PDF. استخدم ال`Save` طريقة`document` كائن لتحديد مسار واسم ملف PDF المراد حفظه. إليك الكود الخاص بهذه الخطوة:
 
 ```csharp
-// Save the tagged PDF document
+// احفظ مستند PDF الذي تم وضع علامة عليه
 document.Save(dataDir + "StructureElementsTree.pdf");
 ```
 
-### Sample source code for Create Structure Elements Tree using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لإنشاء شجرة عناصر الهيكل باستخدام Aspose.PDF لـ .NET 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create Pdf Document
+// إنشاء مستند PDF
 Document document = new Document();
-// Get Content for work with TaggedPdf
+// احصل على محتوى للعمل مع TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
-// Set Title and Language for Documnet
+// قم بتعيين العنوان واللغة لـ Documnet
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
-// Get root structure element (Document)
+// الحصول على عنصر البنية الجذرية (المستند)
 StructureElement rootElement = taggedContent.RootElement;
-// Create Logical Structure
+// إنشاء البنية المنطقية
 SectElement sect1 = taggedContent.CreateSectElement();
 rootElement.AppendChild(sect1);
 SectElement sect2 = taggedContent.CreateSectElement();
@@ -134,52 +134,52 @@ SectElement sect3 = taggedContent.CreateSectElement();
 rootElement.AppendChild(sect3);
 DivElement div31 = taggedContent.CreateDivElement();
 sect3.AppendChild(div31);
-// Save Tagged Pdf Document
+// حفظ وثيقة PDF ذات العلامات
 document.Save(dataDir + "StructureElementsTree.pdf");
 
 ```
 
-## Conclusion
-You have learned how to create a structure of tree elements using Aspose.PDF for .NET. This guide has shown you the steps needed to set up a PDF document, create logical structure elements, and save the final document. By using Aspose.PDF, you can easily manipulate PDF elements and create structured documents.
+## خاتمة
+لقد تعلمت كيفية إنشاء بنية لعناصر الشجرة باستخدام Aspose.PDF لـ .NET. يوضح لك هذا الدليل الخطوات اللازمة لإعداد مستند PDF وإنشاء عناصر بنية منطقية وحفظ المستند النهائي. باستخدام Aspose.PDF، يمكنك بسهولة التعامل مع عناصر PDF وإنشاء مستندات منظمة.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of creating a structure of tree elements in a PDF document using Aspose.PDF for .NET?
+#### س: ما هو الغرض من إنشاء بنية من العناصر الشجرية في مستند PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: Creating a structure of tree elements in a PDF document using Aspose.PDF for .NET allows you to organize the content hierarchically. This structured approach improves document accessibility, navigation, and semantics, making it easier for users and assistive technologies to interpret and interact with the content.
+ج: يتيح لك إنشاء بنية من العناصر الشجرية في مستند PDF باستخدام Aspose.PDF لـ .NET تنظيم المحتوى بشكل هرمي. يعمل هذا النهج المنظم على تحسين إمكانية الوصول إلى المستندات والتنقل ودلالاتها، مما يسهل على المستخدمين والتقنيات المساعدة تفسير المحتوى والتفاعل معه.
 
-#### Q: How does the provided C# code create a structure of tree elements in a PDF document?
+#### س: كيف يقوم كود C# المقدم بإنشاء بنية من العناصر الشجرية في مستند PDF؟
 
-A: The code example demonstrates how to create a hierarchical structure of logical elements using the `SectElement`, `DivElement`, and `ArtElement` classes provided by Aspose.PDF. These elements are organized as parent and child nodes, forming a tree-like structure within the document.
+ج: يوضح مثال التعليمات البرمجية كيفية إنشاء بنية هرمية للعناصر المنطقية باستخدام`SectElement`, `DivElement` ، و`ArtElement` الفصول المقدمة من Aspose.PDF. يتم تنظيم هذه العناصر كعقد أصل وعقد فرعية، لتشكل بنية تشبه الشجرة داخل المستند.
 
-#### Q: How does the `TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
+####  س: كيف`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
 
-A: The `TaggedContent` property provides access to the tagged content features of the PDF document. This allows you to create and manipulate structured elements, define their relationships, and organize them hierarchically, enhancing the document's structure and accessibility.
+ ج: ال`TaggedContent` توفر الخاصية إمكانية الوصول إلى ميزات المحتوى ذات العلامات في مستند PDF. يتيح لك ذلك إنشاء العناصر المنظمة ومعالجتها، وتحديد علاقاتها، وتنظيمها بشكل هرمي، مما يعزز بنية المستند وإمكانية الوصول إليه.
 
-#### Q: Why is it important to set the document's title and language using the `SetTitle` and `SetLanguage` methods?
+####  س: لماذا من المهم تعيين عنوان المستند ولغته باستخدام`SetTitle` and `SetLanguage` methods?
 
-A: Setting the document's title and language using the `SetTitle` and `SetLanguage` methods enhances the accessibility and semantics of the document. It helps users and assistive technologies understand the purpose and language of the document.
+ ج: قم بتعيين عنوان المستند ولغته باستخدام`SetTitle` و`SetLanguage` تعمل الأساليب على تحسين إمكانية الوصول إلى المستند ودلالاته. فهو يساعد المستخدمين والتقنيات المساعدة على فهم الغرض من المستند ولغته.
 
-#### Q: How are `SectElement`, `DivElement`, and `ArtElement` used to create the structure tree?
+####  س: كيف حالك`SectElement`, `DivElement`, and `ArtElement` used to create the structure tree?
 
-A: These classes represent different types of structure elements. `SectElement` is used to create sections, `DivElement` for divisions within sections, and `ArtElement` for artwork or illustrations. By appending child elements to parent elements, you establish a hierarchical structure.
+ ج: تمثل هذه الفئات أنواعًا مختلفة من عناصر البنية.`SectElement` يستخدم لإنشاء الأقسام،`DivElement` للانقسامات داخل الأقسام، و`ArtElement` للأعمال الفنية أو الرسوم التوضيحية. من خلال إلحاق العناصر الفرعية بالعناصر الأصلية، يمكنك إنشاء بنية هرمية.
 
-#### Q: What are the benefits of organizing elements hierarchically in a PDF document?
+#### س: ما هي فوائد تنظيم العناصر بشكل هرمي في وثيقة PDF؟
 
-A: Organizing elements hierarchically improves document organization, navigation, and semantics. It allows users and assistive technologies to comprehend the content's structure and relationships, enhancing the overall user experience.
+ج: يؤدي تنظيم العناصر بشكل هرمي إلى تحسين تنظيم المستند والتنقل فيه ودلالاته. فهو يسمح للمستخدمين والتقنيات المساعدة بفهم بنية المحتوى وعلاقاته، مما يعزز تجربة المستخدم الشاملة.
 
-#### Q: How does the `Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
+####  س: كيف`Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
 
-A: The `Save` method saves the PDF document along with the hierarchical structure created using the `AppendChild` method. This ensures that the structure remains intact, making the document accessible and well-organized.
+ ج: ال`Save` تقوم الطريقة بحفظ مستند PDF مع البنية الهرمية التي تم إنشاؤها باستخدام ملف PDF`AppendChild` طريقة. وهذا يضمن بقاء الهيكل سليمًا، مما يجعل الوثيقة سهلة الوصول ومنظمة بشكل جيد.
 
-#### Q: Can I customize the structure tree further by adding other types of logical elements?
+#### س: هل يمكنني تخصيص شجرة البنية بشكل أكبر عن طريق إضافة أنواع أخرى من العناصر المنطقية؟
 
-A: Yes, you can customize the structure tree further by adding other types of logical elements provided by Aspose.PDF, such as headers, paragraphs, figures, and more. You can experiment with different element types to create a tailored structure.
+ج: نعم، يمكنك تخصيص شجرة البنية بشكل أكبر عن طريق إضافة أنواع أخرى من العناصر المنطقية التي يوفرها Aspose.PDF، مثل الرؤوس والفقرات والأشكال والمزيد. يمكنك تجربة أنواع عناصر مختلفة لإنشاء هيكل مخصص.
 
-#### Q: How can the created structured tree improve document accessibility and usability?
+#### س: كيف يمكن للشجرة المنظمة التي تم إنشاؤها تحسين إمكانية الوصول إلى المستندات وسهولة استخدامها؟
 
-A: The structured tree enhances document accessibility by providing a clear hierarchy and semantic meaning to the content. Assistive technologies and users can navigate, understand, and interpret the document's structure and relationships more effectively.
+ج: تعمل الشجرة المنظمة على تحسين إمكانية الوصول إلى المستندات من خلال توفير تسلسل هرمي واضح ومعنى دلالي للمحتوى. يمكن للتقنيات المساعدة والمستخدمين التنقل وفهم وتفسير بنية الوثيقة وعلاقاتها بشكل أكثر فعالية.
 
-#### Q: How can I apply this knowledge to create complex structured PDF documents for various use cases?
+#### س: كيف يمكنني تطبيق هذه المعرفة لإنشاء مستندات PDF منظمة ومعقدة لحالات الاستخدام المختلفة؟
 
-A: You can build upon this knowledge by combining different types of structure elements and arranging them hierarchically to match the desired content organization. This approach is valuable for creating complex documents such as reports, articles, manuals, and more.
+ج: يمكنك البناء على هذه المعرفة من خلال الجمع بين أنواع مختلفة من عناصر البنية وترتيبها هرميًا لتتناسب مع تنظيم المحتوى المطلوب. يعد هذا الأسلوب مفيدًا لإنشاء مستندات معقدة مثل التقارير والمقالات والأدلة والمزيد.

@@ -1,85 +1,85 @@
 ---
-title: PDFA To PDF
-linktitle: PDFA To PDF
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to convert PDFA to PDF using Aspose.PDF for .NET.
+title: PDFA'dan PDF'ye
+linktitle: PDFA'dan PDF'ye
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDFA'yı PDF'ye dönüştürmek için adım adım kılavuz.
 type: docs
 weight: 100
 url: /tr/net/document-conversion/pdfa-to-pdf/
 ---
-In this tutorial, we'll walk you through the process of converting a PDFA (PDF/A) file to standard PDF format using Aspose.PDF for .NET. The PDFA format is a specific version of the PDF format used to guarantee the long-term archiving of documents. By following the steps below, you will be able to convert a PDFA file to PDF format.
+Bu eğitimde, Aspose.PDF for .NET'i kullanarak bir PDFA (PDF/A) dosyasını standart PDF formatına dönüştürme sürecinde size yol göstereceğiz. PDFA formatı, belgelerin uzun vadeli arşivlenmesini garanti etmek için kullanılan PDF formatının özel bir sürümüdür. Aşağıdaki adımları takip ederek bir PDFA dosyasını PDF formatına dönüştürebileceksiniz.
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## Önkoşullar
+Başlamadan önce aşağıdaki önkoşulları karşıladığınızdan emin olun:
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- C# programlama dili hakkında temel bilgiler.
+- Sisteminizde yüklü olan .NET için Aspose.PDF kütüphanesi.
+- Visual Studio gibi bir geliştirme ortamı.
 
-## Step 1: Loading the PDFA document
-In this step, we will load the source PDFA file using Aspose.PDF for .NET. Follow the code below:
+## 1. Adım: PDFA belgesini yükleme
+Bu adımda kaynak PDFA dosyasını Aspose.PDF for .NET kullanarak yükleyeceğiz. Aşağıdaki kodu izleyin:
 
 ```csharp
-// Path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Load the PDFA document
+// PDFA belgesini yükleyin
 Document doc = new Document(dataDir + "PDFAToPDF.pdf");
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where your PDFA file is located.
+ Değiştirdiğinizden emin olun`"YOUR DOCUMENTS DIRECTORY"` PDFA dosyanızın bulunduğu gerçek dizinle.
 
-## Step 2: Removal of PDF/A compliance information
-Now we are going to remove the PDF/A compliance information from the document. Use the following code:
+## 2. Adım: PDF/A uyumluluk bilgilerinin kaldırılması
+Şimdi PDF/A uyumluluk bilgilerini belgeden kaldıracağız. Aşağıdaki kodu kullanın:
 
 ```csharp
-// Delete PDF/A compliance information
+// PDF/A uyumluluk bilgilerini silin
 doc.RemovePdfaCompliance();
 ```
 
-## Step 3: Saving the resulting PDF file
-Finally, we will save the converted PDFA file to PDF format. Use the following code:
+## 3. Adım: Ortaya çıkan PDF dosyasını kaydetme
+Son olarak dönüştürülen PDFA dosyasını PDF formatına kaydedeceğiz. Aşağıdaki kodu kullanın:
 
 ```csharp
-// Save the updated document in PDF format
+// Güncellenen belgeyi PDF formatında kaydedin
 doc.Save(dataDir + "PDFAToPDF_out.pdf");
 ```
 
-The code above saves the converted PDFA file to PDF format with the file name `"PDFAToPDF_out.pdf"`.
+ Yukarıdaki kod, dönüştürülen PDFA dosyasını dosya adıyla PDF formatına kaydeder.`"PDFAToPDF_out.pdf"`.
 
-### Example source code for PDFA to PDF using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak PDFA'dan PDF'ye dönüştürme için örnek kaynak kodu
 
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Belgeyi aç
 Document doc = new Document(dataDir + "PDFAToPDF.pdf");
 
-// Remove PDF/A compliance information
+// PDF/A uyumluluk bilgilerini kaldırın
 doc.RemovePdfaCompliance();
-// Save updated document 
+// Güncellenen belgeyi kaydet
 doc.Save(dataDir + "PDFAToPDF_out.pdf");
 ```
 
-## Conclusion
-In this tutorial, we covered the step-by-step process of converting a PDFA file to PDF format using Aspose.PDF for .NET. By following the instructions outlined above, you should now be able to convert a PDFA file to standard PDF format. This feature is useful when you want to remove PDF/A compliance restrictions from a document for more flexible use.
+## Çözüm
+Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDFA dosyasını PDF formatına dönüştürmenin adım adım sürecini ele aldık. Yukarıda özetlenen talimatları izleyerek artık bir PDFA dosyasını standart PDF formatına dönüştürebilmelisiniz. Bu özellik, daha esnek kullanım için bir belgedeki PDF/A uyumluluk kısıtlamalarını kaldırmak istediğinizde kullanışlıdır.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the difference between PDF/A and standard PDF formats?
+#### S: PDF/A ile standart PDF formatları arasındaki fark nedir?
 
-A: PDF/A is a specific version of the PDF format designed for long-term archiving and preservation of electronic documents. It restricts certain features and requires specific elements to ensure the document's future accessibility and reproducibility. Standard PDF, on the other hand, refers to regular PDF documents without the specific requirements and restrictions of PDF/A. Standard PDF files may include interactive elements and features that are not allowed in PDF/A to ensure long-term document preservation.
+C: PDF/A, elektronik belgelerin uzun süreli arşivlenmesi ve korunması için tasarlanmış PDF formatının özel bir sürümüdür. Belirli özellikleri kısıtlar ve belgenin gelecekte erişilebilirliğini ve çoğaltılabilirliğini sağlamak için belirli öğeler gerektirir. Standart PDF ise PDF/A'nın özel gereklilikleri ve kısıtlamaları olmayan normal PDF belgelerini ifade eder. Standart PDF dosyaları, belgenin uzun süreli korunmasını sağlamak için PDF/A'da izin verilmeyen etkileşimli öğeler ve özellikler içerebilir.
 
-#### Q: Can the PDF/A compliance information be added back to the converted PDF file if needed?
+#### S: Gerekirse PDF/A uyumluluk bilgileri dönüştürülen PDF dosyasına tekrar eklenebilir mi?
 
-A: Yes, if required, the PDF/A compliance information can be added back to the converted PDF file using Aspose.PDF for .NET. The library provides methods and options to set PDF/A compliance and convert standard PDF files to PDF/A format.
+C: Evet, gerekirse PDF/A uyumluluk bilgileri Aspose.PDF for .NET kullanılarak dönüştürülen PDF dosyasına geri eklenebilir. Kitaplık, PDF/A uyumluluğunu ayarlamak ve standart PDF dosyalarını PDF/A formatına dönüştürmek için yöntemler ve seçenekler sağlar.
 
-#### Q: Is it possible to convert encrypted PDF/A files to standard PDF format?
+#### S: Şifrelenmiş PDF/A dosyalarını standart PDF formatına dönüştürmek mümkün mü?
 
-A: Aspose.PDF for .NET can handle encrypted PDF/A files during the conversion process. However, the conversion may require providing the correct password for decryption, depending on the encryption method used in the original PDF/A file.
+C: Aspose.PDF for .NET, dönüştürme işlemi sırasında şifrelenmiş PDF/A dosyalarını işleyebilir. Ancak dönüştürme, orijinal PDF/A dosyasında kullanılan şifreleme yöntemine bağlı olarak şifre çözme için doğru parolanın sağlanmasını gerektirebilir.
 
-#### Q: What are the benefits of converting a PDFA file to standard PDF format?
+#### S: Bir PDFA dosyasını standart PDF formatına dönüştürmenin faydaları nelerdir?
 
-A: Converting a PDFA file to standard PDF format removes the PDF/A compliance restrictions, allowing for more flexibility in using the document. Standard PDFs can include interactive elements, multimedia, and advanced features that are not supported in PDF/A. This conversion is useful when you want to edit or modify the document, add annotations, or include dynamic content not allowed in the PDF/A format.
+C: Bir PDFA dosyasını standart PDF formatına dönüştürmek, PDF/A uyumluluk kısıtlamalarını ortadan kaldırarak belgenin kullanımında daha fazla esneklik sağlar. Standart PDF'ler etkileşimli öğeler, multimedya ve PDF/A'da desteklenmeyen gelişmiş özellikler içerebilir. Bu dönüştürme, belgeyi düzenlemek veya değiştirmek, ek açıklamalar eklemek veya PDF/A formatında izin verilmeyen dinamik içerik eklemek istediğinizde kullanışlıdır.

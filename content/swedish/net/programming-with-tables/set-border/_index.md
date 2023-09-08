@@ -1,87 +1,87 @@
 ---
-title: Set Border In PDF To Table
-linktitle: Set Border In PDF To Table
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set a border in PDF to table with Aspose.PDF for .NET.
+title: Ställ in kant i PDF till tabell
+linktitle: Ställ in kant i PDF till tabell
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du ställer in en ram i PDF till tabell med Aspose.PDF för .NET.
 type: docs
 weight: 200
 url: /sv/net/programming-with-tables/set-border/
 ---
-In this tutorial, we will guide you step by step to set a border in a table of a PDF document using Aspose.PDF for .NET. We'll explain the provided C# source code and show you how to implement it.
+I den här handledningen guidar vi dig steg för steg för att sätta en ram i en tabell för ett PDF-dokument med Aspose.PDF för .NET. Vi kommer att förklara den medföljande C#-källkoden och visa dig hur du implementerar den.
 
-## Step 1: Instantiating the Document object
-First, we'll instantiate a Document object:
+## Steg 1: Instantiera dokumentobjektet
+Först instansierar vi ett dokumentobjekt:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 2: Adding a page to the PDF document
-Next, we'll add a page to the PDF document:
+## Steg 2: Lägga till en sida i PDF-dokumentet
+Därefter lägger vi till en sida i PDF-dokumentet:
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
-## Step 3: Creating the BorderInfo object
-We will now create a BorderInfo object to define the border of the table:
+## Steg 3: Skapa BorderInfo-objektet
+Vi kommer nu att skapa ett BorderInfo-objekt för att definiera tabellens kant:
 
 ```csharp
 Aspose.Pdf.BorderInfo border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All);
 ```
 
-## Step 4: Specifying top and bottom borders
-We'll specify that the top and bottom borders will be double:
+## Steg 4: Ange övre och nedre kanter
+Vi kommer att specificera att de övre och nedre gränserna kommer att vara dubbla:
 
 ```csharp
 border.Top.IsDoubled = true;
 border.Bottom.IsDoubled = true;
 ```
 
-## Step 5: Instantiating the Table object
-Now let's instantiate a Table object:
+## Steg 5: Instantiera tabellobjektet
+Låt oss nu instansiera ett tabellobjekt:
 
 ```csharp
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
 ```
 
-## Step 6: Specifying column widths
-We will specify the widths of the columns of the table:
+## Steg 6: Ange kolumnbredder
+Vi kommer att ange bredden på kolumnerna i tabellen:
 
 ```csharp
 table. ColumnWidths = "100";
 ```
 
-## Step 7: Creating the Row Object
-We will create a Row object:
+## Steg 7: Skapa radobjektet
+Vi kommer att skapa ett radobjekt:
 
 ```csharp
 Aspose.Pdf.Row row = table.Rows.Add();
 ```
 
-## Step 8: Adding a cell to the row
-Next, we'll add a cell to the row:
+## Steg 8: Lägga till en cell i raden
+Därefter lägger vi till en cell i raden:
 
 ```csharp
 Aspose.Pdf.Cell cell = row.Cells.Add("some text");
 ```
 
-## Step 9: Setting the cell border
-We are going to define the border of the cell (double border):
+## Steg 9: Ställ in cellkanten
+Vi kommer att definiera cellens kant (dubbel kant):
 
 ```csharp
 cell. Border = border;
 ```
 
-## Step 10: Adding the table to the page
-Now let's add the table to the document page:
+## Steg 10: Lägga till tabellen på sidan
+Låt oss nu lägga till tabellen på dokumentsidan:
 
 ```csharp
 page.Paragraphs.Add(table);
 ```
 
-## Step 11: Save PDF document
-Finally, we will save the PDF document:
+## Steg 11: Spara PDF-dokument
+Slutligen kommer vi att spara PDF-dokumentet:
 
 ```csharp
 dataDir = dataDir + "TableBorderTest_out.pdf";
@@ -90,62 +90,62 @@ doc.Save(dataDir);
 Console.WriteLine("\nBorder setup successfully.\nFile saved at " + dataDir);
 ```
 
-### Example source code for Set Border using Aspose.PDF for .NET
+### Exempel på källkod för Set Border med Aspose.PDF för .NET
 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate Document object
+// Instantiera dokumentobjekt
 Document doc = new Document();
-// Add page to PDF document
+// Lägg till sida till PDF-dokument
 Page page = doc.Pages.Add();
-// Create BorderInfo object
+// Skapa BorderInfo-objekt
 Aspose.Pdf.BorderInfo border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All);
-// Specify that Top border will be double
+//Ange att den övre kanten ska vara dubbel
 border.Top.IsDoubled = true;
-// Specify that bottom border will be double
+// Ange att den nedre kanten ska vara dubbel
 border.Bottom.IsDoubled = true;
-// Instantiate Table object
+// Instantiera tabellobjekt
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-// Specify Columns width information
+// Ange information om kolumnerbredd
 table.ColumnWidths = "100";
-// Create Row object
+// Skapa radobjekt
 Aspose.Pdf.Row row = table.Rows.Add();
-// Add a Table cell to cells collection of row
+// Lägg till en tabellcell till cellsamlingen av rad
 Aspose.Pdf.Cell cell = row.Cells.Add("some text");
-// Set the border for cell object (double border)
+// Ställ in ram för cellobjekt (dubbel ram)
 cell.Border = border;
-// Add table to paragraphs collection of Page
+// Lägg till tabell i styckesamlingen på sidan
 page.Paragraphs.Add(table);
 dataDir = dataDir + "TableBorderTest_out.pdf";
-// Save the PDF document
+// Spara PDF-dokumentet
 doc.Save(dataDir);
 
 Console.WriteLine("\nBorder setup successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
-Congratulation ! You have now learned how to set a border in a table of a PDF document using Aspose.PDF for .NET. This step-by-step guide showed you how to create a document, add a page, configure the table border, and save the PDF document. Now you can apply this knowledge to your own projects.
+## Slutsats
+Grattis! Du har nu lärt dig hur du ställer in en ram i en tabell i ett PDF-dokument med Aspose.PDF för .NET. Den här steg-för-steg-guiden visade hur du skapar ett dokument, lägger till en sida, konfigurerar tabellkanten och sparar PDF-dokumentet. Nu kan du tillämpa denna kunskap i dina egna projekt.
 
 ### FAQ's
 
-#### Q: Can I set different border styles (e.g., dashed or dotted) for the table's top and bottom borders?
+#### F: Kan jag ställa in olika kantstilar (t.ex. streckade eller prickade) för tabellens övre och nedre kanter?
 
-A: Yes, you can set different border styles for the table's top and bottom borders by modifying the `border.Top.Style` and `border.Bottom.Style` properties in the provided C# source code. Aspose.PDF for .NET allows you to choose from various border styles, including Solid, Dashed, Dotted, Double, and more.
+ S: Ja, du kan ställa in olika kantstilar för tabellens övre och nedre kanter genom att ändra`border.Top.Style` och`border.Bottom.Style`egenskaper i den medföljande C#-källkoden. Aspose.PDF för .NET låter dig välja mellan olika kantstilar, inklusive Solid, Streckad, Dotted, Double och mer.
 
-#### Q: How can I set the color of the table's border?
+#### F: Hur kan jag ställa in färgen på bordets kant?
 
-A: You can set the color of the table's border by modifying the `border.Color` property in the C# source code. Simply provide the desired color, such as `Aspose.Pdf.Color.Red` or any other valid color representation, to customize the border color.
+ S: Du kan ställa in färgen på tabellens kant genom att ändra`border.Color` egenskapen i C#-källkoden. Ange helt enkelt önskad färg, som t.ex`Aspose.Pdf.Color.Red` eller någon annan giltig färgrepresentation, för att anpassa kantfärgen.
 
-#### Q: Is it possible to apply borders to individual cells within the table with different settings (e.g., different colors or border styles)?
+#### F: Är det möjligt att tillämpa ramar på enskilda celler i tabellen med olika inställningar (t.ex. olika färger eller kantstilar)?
 
-A: Yes, you can apply borders to individual cells within the table with different settings by configuring the `cell.Border` property for each cell individually. This allows you to have cell-specific border styles and colors based on your requirements.
+ S: Ja, du kan tillämpa ramar på enskilda celler i tabellen med olika inställningar genom att konfigurera`cell.Border` egenskap för varje cell individuellt. Detta gör att du kan ha cellspecifika kantstilar och färger baserat på dina krav.
 
-#### Q: Can I remove the border from specific sides of the table (e.g., left and right borders)?
+#### F: Kan jag ta bort kanten från specifika sidor av bordet (t.ex. vänster och höger kant)?
 
-A: Yes, you can remove the border from specific sides of the table by modifying the `border.Left`, `border.Right`, `border.Top`, and `border.Bottom` properties in the C# source code. Setting these properties to `null` will remove the border from the corresponding sides of the table.
+ S: Ja, du kan ta bort gränsen från specifika sidor av tabellen genom att ändra`border.Left`, `border.Right`, `border.Top` , och`border.Bottom`egenskaper i C#-källkoden. Ställer in dessa egenskaper till`null` kommer att ta bort gränsen från motsvarande sidor av bordet.
 
-#### Q: How can I adjust the thickness of the table's border?
+#### F: Hur kan jag justera tjockleken på bordets kant?
 
-A: You can adjust the thickness of the table's border by modifying the `border.Width` property in the C# source code. Simply set the desired border width (in points) to achieve the desired thickness.
+ S: Du kan justera tjockleken på bordets kant genom att ändra`border.Width` egenskapen i C#-källkoden. Ställ bara in önskad kantbredd (i punkter) för att uppnå önskad tjocklek.

@@ -1,38 +1,38 @@
 ---
-title: Set Radio Button Caption
-linktitle: Set Radio Button Caption
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use Aspose.PDF for .NET to set the caption for a radio button in a PDF form.
+title: Imposta la didascalia del pulsante di opzione
+linktitle: Imposta la didascalia del pulsante di opzione
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Scopri come utilizzare Aspose.PDF per .NET per impostare la didascalia per un pulsante di opzione in un modulo PDF.
 type: docs
 weight: 280
 url: /it/net/programming-with-forms/set-radio-button-caption/
 ---
-In this guide, we will explain step by step how to use the Aspose.PDF library for .NET to define the caption of a radio button in a PDF form. We'll show you how to access the radio button field, create a new radio button option, and customize the button caption.
+In questa guida spiegheremo passo dopo passo come utilizzare la libreria Aspose.PDF per .NET per definire la didascalia di un pulsante di opzione in un modulo PDF. Ti mostreremo come accedere al campo del pulsante di opzione, creare una nuova opzione del pulsante di opzione e personalizzare la didascalia del pulsante.
 
-## Step 1: Configuring the document directory
+## Passaggio 1: configurazione della directory dei documenti
 
-The first step is to configure the document directory where the PDF form you want to work on is located. You can use the `dataDir` variable to specify the directory path.
+ Il primo passo è configurare la directory dei documenti in cui si trova il modulo PDF su cui vuoi lavorare. Puoi usare il`dataDir` variabile per specificare il percorso della directory.
 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual path to your documents directory.
+ Assicurati di sostituire`"YOUR DOCUMENTS DIRECTORY"` con il percorso effettivo della directory dei documenti.
 
-## Step 2: Loading the source PDF form
+## Passaggio 2: caricamento del modulo PDF di origine
 
-In this step, we will load the source PDF form using the `Aspose.Pdf.Facades.Form` class of Aspose.PDF.
+ In questo passaggio, caricheremo il modulo PDF di origine utilizzando il file`Aspose.Pdf.Facades.Form` classe di Aspose.PDF.
 
 ```csharp
 Aspose.Pdf.Facades.Form form1 = new Aspose.Pdf.Facades.Form(dataDir + "RadioButtonField.pdf");
 ```
 
-Make sure that the PDF file containing the form is present in the specified documents directory.
+Assicurati che il file PDF contenente il modulo sia presente nella directory dei documenti specificata.
 
-## Step 3: Editing the radio button caption
+## Passaggio 3: modifica della didascalia del pulsante di opzione
 
-We'll loop through the form field names and search for radio button fields. If a matching field is found, we'll create a new radio button option with a custom caption and add it to the existing field.
+Esamineremo i nomi dei campi del modulo e cercheremo i campi dei pulsanti di opzione. Se viene trovato un campo corrispondente, creeremo una nuova opzione del pulsante di opzione con una didascalia personalizzata e la aggiungeremo al campo esistente.
 
 ```csharp
 foreach(var item in form1.FieldNames)
@@ -47,15 +47,15 @@ var updatedFragment = new Aspose.Pdf.Text.TextFragment("test123");
 updatedFragment.TextState.Font = FontRepository.FindFont("Arial");
 updatedFragment.TextState.FontSize = 10;
 updatedFragment.TextState.LineSpacing = 6.32f;
-// Create a TextParagraph object
+// Crea un oggetto TextParagraph
 TextParagraph par = new TextParagraph();
-// Set paragraph position
+// Imposta la posizione del paragrafo
 par.Position = new Position(field0.Rect.LLX, field0.Rect.LLY + updatedFragment.TextState.FontSize);
-// Specify word wrap mode
+// Specificare la modalità di ritorno a capo automatico
 by.FormattingOptions.WrapMode = TextFormattingOptions.WordWrapMode.ByWords;
-// Add the new TextFragment to the paragraph
+// Aggiungi il nuovo TextFragment al paragrafo
 par.AppendLine(updatedFragment);
-// Add the TextParagraph using TextBuilder
+// Aggiungi TextParagraph utilizzando TextBuilder
 TextBuilder textBuilder = new TextBuilder(PDF_Template_PDF_HTML.Pages[1]);
 textBuilder.AppendParagraph(par);
 field0.DeleteOption("item1");
@@ -63,23 +63,23 @@ field0.DeleteOption("item1");
 }
 ```
 
-Customize the caption radio button and other settings as needed.
+Personalizza il pulsante di opzione dei sottotitoli e altre impostazioni secondo necessità.
 
-## Step 4: Saving the Resulting PDF
+## Passaggio 4: salvataggio del PDF risultante
 
-Now that we are done modifying the radio button caption, we can save the resulting PDF using the `Save` method of the `Document` class.
+ Ora che abbiamo finito di modificare la didascalia del pulsante di opzione, possiamo salvare il PDF risultante utilizzando il file`Save` metodo del`Document` classe.
 
 ```csharp
 PDF_Template_PDF_HTML.Save(dataDir + "RadioButtonField_out.pdf");
 ```
 
-Be sure to specify the full path and filename for the resulting PDF.
+Assicurati di specificare il percorso completo e il nome file per il PDF risultante.
 
-### Sample source code for Set Radio Button Caption using Aspose.PDF for .NET 
+### Codice sorgente di esempio per Imposta didascalia del pulsante di opzione utilizzando Aspose.PDF per .NET 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load source PDF form
+// Carica il modulo PDF di origine
 Aspose.Pdf.Facades.Form form1 = new Aspose.Pdf.Facades.Form(dataDir + "RadioButtonField.pdf");
 Document PDF_Template_PDF_HTML = new Document(dataDir + "RadioButtonField.pdf");
 foreach (var item in form1.FieldNames)
@@ -96,15 +96,15 @@ foreach (var item in form1.FieldNames)
 		updatedFragment.TextState.Font = FontRepository.FindFont("Arial");
 		updatedFragment.TextState.FontSize = 10;
 		updatedFragment.TextState.LineSpacing = 6.32f;
-		// Create TextParagraph object
+		// Crea un oggetto TextParagraph
 		TextParagraph par = new TextParagraph();
-		// Set paragraph position
+		// Imposta la posizione del paragrafo
 		par.Position = new Position(field0.Rect.LLX, field0.Rect.LLY + updatedFragment.TextState.FontSize);
-		// Specify word wraping mode
+		// Specificare la modalità di ritorno a capo
 		par.FormattingOptions.WrapMode = TextFormattingOptions.WordWrapMode.ByWords;
-		// Add new TextFragment to paragraph
+		// Aggiungi un nuovo TextFragment al paragrafo
 		par.AppendLine(updatedFragment);
-		// Add the TextParagraph using TextBuilder
+		// Aggiungi TextParagraph utilizzando TextBuilder
 		TextBuilder textBuilder = new TextBuilder(PDF_Template_PDF_HTML.Pages[1]);
 		textBuilder.AppendParagraph(par);
 		field0.DeleteOption("item1");
@@ -113,28 +113,28 @@ foreach (var item in form1.FieldNames)
 PDF_Template_PDF_HTML.Save(dataDir + "RadioButtonField_out.pdf");
 ```
 
-## Conclusion
+## Conclusione
 
-In this guide, we learned how to use the Aspose.PDF library for .NET to set the caption for a radio button in a PDF form. By following the described steps, you can customize the radio button options and change the caption as needed. Feel free to further explore the features of Aspose.PDF for .NET to expand the possibilities of manipulating PDF files.
+In questa guida, abbiamo imparato come utilizzare la libreria Aspose.PDF per .NET per impostare la didascalia per un pulsante di opzione in un modulo PDF. Seguendo i passaggi descritti, puoi personalizzare le opzioni dei pulsanti di opzione e modificare la didascalia secondo necessità. Sentiti libero di esplorare ulteriormente le funzionalità di Aspose.PDF per .NET per espandere le possibilità di manipolazione dei file PDF.
 
-### FAQ's
+### Domande frequenti
 
-#### Q: Can I use Aspose.PDF for .NET to set captions for radio buttons in a PDF form?
+#### D: Posso utilizzare Aspose.PDF per .NET per impostare didascalie per i pulsanti di opzione in un modulo PDF?
 
-A: Yes, you can use Aspose.PDF for .NET to set captions for radio buttons in a PDF form. The provided sample source code demonstrates how to access the radio button field, create a new radio button option with a custom caption, and update the existing field.
+R: Sì, puoi utilizzare Aspose.PDF per .NET per impostare didascalie per i pulsanti di opzione in un modulo PDF. Il codice sorgente di esempio fornito dimostra come accedere al campo del pulsante di opzione, creare una nuova opzione del pulsante di opzione con una didascalia personalizzata e aggiornare il campo esistente.
 
-#### Q: How can I customize the appearance of the radio button caption, such as font size and color?
+#### D: Come posso personalizzare l'aspetto della didascalia del pulsante di opzione, ad esempio la dimensione e il colore del carattere?
 
-A: You can customize the appearance of the radio button caption by adjusting the properties of the `TextFragment` used for the caption. For example, you can set the font, font size, color, line spacing, and other text formatting options.
+ R: Puoi personalizzare l'aspetto della didascalia del pulsante di opzione modificando le proprietà del`TextFragment` utilizzato per la didascalia. Ad esempio, puoi impostare il carattere, la dimensione del carattere, il colore, l'interlinea e altre opzioni di formattazione del testo.
 
-#### Q: Is it possible to add multiple radio button options with different captions to a single radio button group?
+#### D: È possibile aggiungere più opzioni di pulsanti di opzione con didascalie diverse a un singolo gruppo di pulsanti di opzione?
 
-A: Yes, you can add multiple radio button options with different captions to a single radio button group. Each option will represent a different choice, and users can select only one option from the group.
+R: Sì, puoi aggiungere più opzioni di pulsanti di opzione con didascalie diverse a un singolo gruppo di pulsanti di opzione. Ciascuna opzione rappresenterà una scelta diversa e gli utenti potranno selezionare solo un'opzione dal gruppo.
 
-#### Q: Can I use Aspose.PDF for .NET to modify other form fields in a PDF document?
+#### D: Posso utilizzare Aspose.PDF per .NET per modificare altri campi modulo in un documento PDF?
 
-A: Yes, Aspose.PDF for .NET provides a comprehensive set of features to manipulate various form fields in a PDF document, such as text fields, checkboxes, dropdown lists, and more. You can use the library to set values, modify appearances, and add interactivity to form fields.
+R: Sì, Aspose.PDF per .NET fornisce un set completo di funzionalità per manipolare vari campi modulo in un documento PDF, come campi di testo, caselle di controllo, elenchi a discesa e altro. È possibile utilizzare la libreria per impostare valori, modificare aspetti e aggiungere interattività ai campi del modulo.
 
-#### Q: Does Aspose.PDF for .NET support working with PDFs generated from other sources, such as scanned documents?
+#### D: Aspose.PDF per .NET supporta l'utilizzo di PDF generati da altre fonti, come documenti scansionati?
 
-A: Yes, Aspose.PDF for .NET supports working with PDFs generated from various sources, including scanned documents. The library provides OCR (Optical Character Recognition) capabilities to extract text from scanned PDFs and manipulate the content programmatically.
+R: Sì, Aspose.PDF per .NET supporta il lavoro con PDF generati da varie fonti, inclusi i documenti scansionati. La libreria fornisce funzionalità OCR (riconoscimento ottico dei caratteri) per estrarre testo dai PDF scansionati e manipolare il contenuto in modo programmatico.

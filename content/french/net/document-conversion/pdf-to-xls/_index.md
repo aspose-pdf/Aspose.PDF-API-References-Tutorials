@@ -1,85 +1,85 @@
 ---
-title: PDF To XLS
-linktitle: PDF To XLS
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to convert PDF to XLS using Aspose.PDF for .NET.
+title: PDF en XLS
+linktitle: PDF en XLS
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Guide étape par étape pour convertir un PDF en XLS à l'aide d'Aspose.PDF pour .NET.
 type: docs
 weight: 200
 url: /fr/net/document-conversion/pdf-to-xls/
 ---
-In this tutorial, we'll walk you through the process of converting a PDF file to XLS (Microsoft Excel) format using Aspose.PDF for .NET. By following the steps below, you will be able to convert a PDF file to XLS format.
+Dans ce didacticiel, nous vous guiderons tout au long du processus de conversion d'un fichier PDF au format XLS (Microsoft Excel) à l'aide d'Aspose.PDF pour .NET. En suivant les étapes ci-dessous, vous pourrez convertir un fichier PDF au format XLS.
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## Conditions préalables
+Avant de commencer, assurez-vous de remplir les conditions préalables suivantes :
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- Connaissance de base du langage de programmation C#.
+- Bibliothèque Aspose.PDF pour .NET installée sur votre système.
+- Un environnement de développement tel que Visual Studio.
 
-## Step 1: Loading the PDF document
-In this step we will load the source PDF file using Aspose.PDF for .NET. Follow the code below:
+## Étape 1 : Chargement du document PDF
+Dans cette étape, nous allons charger le fichier PDF source à l'aide d'Aspose.PDF pour .NET. Suivez le code ci-dessous :
 
 ```csharp
-// Path to the documents directory.
+// Chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Load the PDF document
+// Charger le document PDF
 Document pdfDocument = new Document(dataDir + "input.pdf");
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where your PDF file is located.
+ Assurez-vous de remplacer`"YOUR DOCUMENTS DIRECTORY"` avec le répertoire réel où se trouve votre fichier PDF.
 
-## Step 2: Instantiate Excel backup options
-After loading the PDF file, we will instantiate the Excel save options. Use the following code:
+## Étape 2 : Instancier les options de sauvegarde Excel
+Après avoir chargé le fichier PDF, nous instancierons les options de sauvegarde Excel. Utilisez le code suivant :
 
 ```csharp
-// Instantiate an ExcelSaveOptions object
+// Instancier un objet ExcelSaveOptions
 Aspose.Pdf.ExcelSaveOptions excelsave = new ExcelSaveOptions();
 ```
 
-## Step 3: Saving the resulting XLS file
-Now we will save the converted PDF file in XLS format. Use the following code:
+## Étape 3 : Enregistrement du fichier XLS résultant
+Nous allons maintenant enregistrer le fichier PDF converti au format XLS. Utilisez le code suivant :
 
 ```csharp
-// Save the output in XLS format
+// Enregistrez la sortie au format XLS
 pdfDocument.Save("PDFToXLS_out.xls", excelsave);
 ```
 
-The above code saves the converted PDF file in XLS format with the filename `"PDFToXLS_out.xls"`.
+ Le code ci-dessus enregistre le fichier PDF converti au format XLS avec le nom de fichier`"PDFToXLS_out.xls"`.
 
-### Example source code for PDF to XLS using Aspose.PDF for .NET
+### Exemple de code source pour PDF vers XLS à l'aide d'Aspose.PDF pour .NET
 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Load PDF document
+// Charger un document PDF
 Document pdfDocument = new Document(dataDir + "input.pdf");
 
-// Instantiate ExcelSave Option object
+// Instancier l'objet ExcelSave Option
 Aspose.Pdf.ExcelSaveOptions excelsave = new ExcelSaveOptions();
 
-// Save the output in XLS format
+// Enregistrez la sortie au format XLS
 pdfDocument.Save("PDFToXLS_out.xls", excelsave);
 ```
 
 ## Conclusion
-In this tutorial, we covered the step-by-step process of converting a PDF file to XLS format using Aspose.PDF for .NET. By following the instructions outlined above, you should now be able to convert a PDF file to XLS format. This feature is useful when you want to extract tabular data from a PDF file and use it in Microsoft Excel.
+Dans ce didacticiel, nous avons couvert le processus étape par étape de conversion d'un fichier PDF au format XLS à l'aide d'Aspose.PDF pour .NET. En suivant les instructions décrites ci-dessus, vous devriez maintenant pouvoir convertir un fichier PDF au format XLS. Cette fonctionnalité est utile lorsque vous souhaitez extraire des données tabulaires d'un fichier PDF et les utiliser dans Microsoft Excel.
 
-### FAQ's
+### FAQ
 
-#### Q: Can Aspose.PDF for .NET convert PDFs with complex tables and formatting to XLS format?
+#### Q : Aspose.PDF pour .NET peut-il convertir des PDF contenant des tableaux et un formatage complexes au format XLS ?
 
-A: Yes, Aspose.PDF for .NET is designed to handle PDFs with complex tables and formatting. During the conversion process to XLS format, Aspose.PDF for .NET tries to preserve the layout and structure of tables as accurately as possible, ensuring that tabular data is extracted effectively.
+R : Oui, Aspose.PDF pour .NET est conçu pour gérer les PDF avec des tableaux et un formatage complexes. Pendant le processus de conversion au format XLS, Aspose.PDF pour .NET essaie de préserver la disposition et la structure des tableaux aussi précisément que possible, garantissant ainsi que les données tabulaires sont extraites efficacement.
 
-#### Q: What happens if the PDF contains images or non-tabular content?
+#### Q : Que se passe-t-il si le PDF contient des images ou du contenu non tabulaire ?
 
-A: When converting a PDF to XLS format, Aspose.PDF for .NET primarily focuses on extracting tabular data. Non-tabular content, such as images, annotations, or free-form text, might not be preserved in the XLS file. The resulting XLS file will primarily contain tabular data extracted from the PDF.
+: Lors de la conversion d'un PDF au format XLS, Aspose.PDF pour .NET se concentre principalement sur l'extraction de données tabulaires. Le contenu non tabulaire, tel que les images, les annotations ou le texte libre, peut ne pas être conservé dans le fichier XLS. Le fichier XLS résultant contiendra principalement des données tabulaires extraites du PDF.
 
-#### Q: Is it possible to customize the appearance and layout of the XLS file during conversion?
+#### Q : Est-il possible de personnaliser l'apparence et la mise en page du fichier XLS lors de la conversion ?
 
-A: Aspose.PDF for .NET provides options to customize the appearance and layout of the resulting XLS file. You can adjust various settings using properties of the `ExcelSaveOptions` class, such as specifying the starting cell for the table, setting text encoding, and controlling other output-related options.
+ R : Aspose.PDF pour .NET fournit des options pour personnaliser l'apparence et la mise en page du fichier XLS résultant. Vous pouvez ajuster divers paramètres à l'aide des propriétés du`ExcelSaveOptions` classe, comme la spécification de la cellule de départ du tableau, la définition du codage du texte et le contrôle d'autres options liées à la sortie.
 
-#### Q: Can I convert password-protected PDFs to XLS format using Aspose.PDF for .NET?
+#### Q : Puis-je convertir des PDF protégés par mot de passe au format XLS à l'aide d'Aspose.PDF pour .NET ?
 
-A: Yes, Aspose.PDF for .NET supports converting password-protected PDFs to XLS format. When loading a password-protected PDF, you can provide the password using the `Document` class constructor or by setting the `Password` property before loading the PDF.
+ R : Oui, Aspose.PDF pour .NET prend en charge la conversion des PDF protégés par mot de passe au format XLS. Lors du chargement d'un PDF protégé par mot de passe, vous pouvez fournir le mot de passe à l'aide du`Document` constructeur de classe ou en définissant le`Password` propriété avant de charger le PDF.

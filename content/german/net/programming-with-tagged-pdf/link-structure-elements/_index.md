@@ -1,71 +1,71 @@
 ---
-title: Link Structure Elements
-linktitle: Link Structure Elements
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to using link structure elements with Aspose.PDF for .NET. Create hyperlinks in your PDF documents.
+title: Strukturelemente verknüpfen
+linktitle: Strukturelemente verknüpfen
+second_title: Aspose.PDF für .NET API-Referenz
+description: Schritt-für-Schritt-Anleitung zur Verwendung von Linkstrukturelementen mit Aspose.PDF für .NET. Erstellen Sie Hyperlinks in Ihren PDF-Dokumenten.
 type: docs
 weight: 120
 url: /de/net/programming-with-tagged-pdf/link-structure-elements/
 ---
-In this step-by-step guide, we'll show you how to use link structure elements with Aspose.PDF for .NET. Aspose.PDF is a powerful library that lets you create and manipulate PDF documents programmatically. Link structure elements allow you to add hyperlinks to your PDF document, allowing users to click the links and navigate to online resources.
+In dieser Schritt-für-Schritt-Anleitung zeigen wir Ihnen, wie Sie Linkstrukturelemente mit Aspose.PDF für .NET verwenden. Aspose.PDF ist eine leistungsstarke Bibliothek, mit der Sie PDF-Dokumente programmgesteuert erstellen und bearbeiten können. Mithilfe von Linkstrukturelementen können Sie Hyperlinks zu Ihrem PDF-Dokument hinzufügen, sodass Benutzer auf die Links klicken und zu Online-Ressourcen navigieren können.
 
-Let's dive into the code and learn how to use link structure elements with Aspose.PDF for .NET.
+Lassen Sie uns in den Code eintauchen und lernen, wie Sie Linkstrukturelemente mit Aspose.PDF für .NET verwenden.
 
-## Prerequisites
+## Voraussetzungen
 
-Before you begin, make sure you have the following:
+Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
-1. Aspose.PDF library for .NET installed.
-2. A basic knowledge of the C# programming language.
+1. Aspose.PDF-Bibliothek für .NET installiert.
+2. Grundkenntnisse der Programmiersprache C#.
 
-## Step 1: Setting up the environment
+## Schritt 1: Einrichten der Umgebung
 
-To get started, open your C# development environment and create a new project. Make sure you have added a reference to the Aspose.PDF library for .NET in your project.
+Öffnen Sie zunächst Ihre C#-Entwicklungsumgebung und erstellen Sie ein neues Projekt. Stellen Sie sicher, dass Sie in Ihrem Projekt einen Verweis auf die Aspose.PDF-Bibliothek für .NET hinzugefügt haben.
 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 string outFile = dataDir + "LinkStructureElements_Output.pdf";
 string logFile = dataDir + "46035_log.xml";
 string imgFile = dataDir + "google-icon-512.png";
 ```
 
-## Step 2: Creating the document
+## Schritt 2: Erstellen des Dokuments
 
-The first step is to create a new PDF document using the `Document` class.
+ Der erste Schritt besteht darin, ein neues PDF-Dokument mit zu erstellen`Document` Klasse.
 
 ```csharp
-// Create the PDF document
+// Erstellen Sie das PDF-Dokument
 Document document = new Document();
 ```
 
-## Step 3: Work with tagged content
+## Schritt 3: Arbeiten Sie mit getaggten Inhalten
 
-Then we get the tagged content of the document to work with.
+Dann erhalten wir den getaggten Inhalt des Dokuments, mit dem wir arbeiten können.
 
 ```csharp
-// Get the tagged content of the document
+// Rufen Sie den getaggten Inhalt des Dokuments ab
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-## Step 4: Set document title and language
+## Schritt 4: Dokumenttitel und Sprache festlegen
 
-We can now set the document title and language.
+Wir können nun den Titel und die Sprache des Dokuments festlegen.
 
 ```csharp
-// Define the document title and language
+// Definieren Sie den Titel und die Sprache des Dokuments
 taggedContent.SetTitle("Example Link Items");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-## Step 5: Add link structure elements
+## Schritt 5: Linkstrukturelemente hinzufügen
 
-Now let's add link structure elements to our document. We will create different types of links, including simple text links, image links, and multi-line links.
+Fügen wir nun Linkstrukturelemente zu unserem Dokument hinzu. Wir erstellen verschiedene Arten von Links, darunter einfache Textlinks, Bildlinks und mehrzeilige Links.
 ```csharp
-// Get the root structure element (document structure element)
+// Holen Sie sich das Stammstrukturelement (Dokumentstrukturelement)
 StructureElement rootElement = taggedContent.RootElement;
 
-// Add a paragraph with a hyperlink
+// Fügen Sie einen Absatz mit einem Hyperlink hinzu
 ParagraphElement p1 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p1);
 LinkElement link1 = taggedContent.CreateLinkElement();
@@ -74,7 +74,7 @@ link1.Hyperlink = new WebHyperlink("http://google.com");
 link1.SetText("Google");
 link1.AlternateDescriptions = "Link to Google";
 
-// Add a paragraph with a hyperlink containing rich text
+// Fügen Sie einen Absatz mit einem Hyperlink hinzu, der Rich Text enthält
 ParagraphElement p2 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p2);
 LinkElement link2 = taggedContent.CreateLinkElement();
@@ -85,7 +85,7 @@ span2.SetText("Google");
 link2.AppendChild(span2);
 link2.AlternateDescriptions = "Link to Google";
 
-// Add a paragraph with a hyperlink containing partially formatted text
+// Fügen Sie einen Absatz mit einem Hyperlink hinzu, der teilweise formatierten Text enthält
 ParagraphElement p3 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p3);
 LinkElement link3 = taggedContent.CreateLinkElement();
@@ -100,7 +100,7 @@ link3.SetText("-");
 link3.AppendChild(span32);
 link3.AlternateDescriptions = "Link to Google";
 
-// Add a paragraph with a multiline hyperlink
+// Fügen Sie einen Absatz mit einem mehrzeiligen Hyperlink hinzu
 ParagraphElement p4 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p4);
 LinkElement link4 = taggedContent.CreateLinkElement();
@@ -109,7 +109,7 @@ link4.Hyperlink = new WebHyperlink("http://google.com");
 link4.SetText("The multiline link: Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google");
 link4.AlternateDescriptions = "Link to Google (multiline)";
 
-// Add a paragraph with a hyperlink containing an image
+// Fügen Sie einen Absatz mit einem Hyperlink hinzu, der ein Bild enthält
 ParagraphElement p5 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p5);
 LinkElement link5 = taggedContent.CreateLinkElement();
@@ -126,45 +126,45 @@ link5.AppendChild(figure5);
 link5.AlternateDescriptions = "Link to Google";
 ```
 
-## Step 6: Save the tagged PDF document
+## Schritt 6: Speichern Sie das getaggte PDF-Dokument
 
-Finally, we save the tagged PDF document.
+Abschließend speichern wir das getaggte PDF-Dokument.
 
 ```csharp
-// Save the tagged PDF document
+// Speichern Sie das getaggte PDF-Dokument
 document. Save(outFile);
 ```
 
-## Step 7: Check PDF/UA compliance
+## Schritt 7: Überprüfen Sie die PDF/UA-Konformität
 
-We can also check the document for PDF/UA compliance using the `Validate` method of the `Document` class.
+ Wir können das Dokument auch mit dem auf PDF/UA-Konformität überprüfen`Validate` Methode der`Document` Klasse.
 
 ```csharp
-// Check PDF/UA compliance
+// Überprüfen Sie die PDF/UA-Konformität
 document = new Document(outFile);
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
 ```
 
 
-### Sample source code for Link Structure Elements using Aspose.PDF for .NET 
+### Beispielquellcode für Link-Strukturelemente mit Aspose.PDF für .NET 
 ```csharp
 
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "LinkStructureElements_Output.pdf";
 string logFile = dataDir + "46035_log.xml";
 string imgFile = dataDir + "google-icon-512.png";
 
-// Creation document and getting Tagged Pdf Content
+// Erstellungsdokument und Abrufen getaggter PDF-Inhalte
 Document document = new Document(); 
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Setting Title and Nature Language for document
+// Festlegen der Titel- und Natursprache für das Dokument
 taggedContent.SetTitle("Link Elements Example");
 taggedContent.SetLanguage("en-US");
 
-// Getting Root structure element (Document structure element)
+// Root-Strukturelement (Dokumentstrukturelement) abrufen
 StructureElement rootElement = taggedContent.RootElement;
 ParagraphElement p1 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p1);
@@ -217,56 +217,56 @@ linkLayoutAttributes.SetAttribute(placementAttribute);
 link5.AppendChild(figure5);
 link5.AlternateDescriptions = "Link to Google";
 
-// Save Tagged Pdf Document
+// Markiertes PDF-Dokument speichern
 document.Save(outFile);
 
-// Checking PDF/UA compliance
+// Überprüfung der PDF/UA-Konformität
 document = new Document(outFile);
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ```
-## Conclusion
+## Abschluss
 
-Congratulation ! You have learned how to use link structure elements with Aspose.PDF for .NET. Now you can create hyperlinks in your PDF documents, allowing users to navigate to online resources. Experiment and explore more features of Aspose.PDF to create interactive and enriched PDF documents.
+Herzlichen Glückwunsch! Sie haben gelernt, wie Sie Linkstrukturelemente mit Aspose.PDF für .NET verwenden. Jetzt können Sie Hyperlinks in Ihren PDF-Dokumenten erstellen, sodass Benutzer zu Online-Ressourcen navigieren können. Experimentieren Sie und erkunden Sie weitere Funktionen von Aspose.PDF, um interaktive und angereicherte PDF-Dokumente zu erstellen.
 
-### FAQ's
+### FAQs
 
-#### Q: What are link structure elements in a PDF document, and how do they enhance document interactivity?
+#### F: Was sind Linkstrukturelemente in einem PDF-Dokument und wie verbessern sie die Dokumentinteraktivität?
 
-A: Link structure elements in a PDF document are used to create hyperlinks that allow users to navigate to online resources or specific locations within the document. These elements enhance interactivity by providing clickable links that enable users to access related content or external websites.
+A: Linkstrukturelemente in einem PDF-Dokument werden verwendet, um Hyperlinks zu erstellen, die es Benutzern ermöglichen, zu Online-Ressourcen oder bestimmten Stellen innerhalb des Dokuments zu navigieren. Diese Elemente verbessern die Interaktivität, indem sie anklickbare Links bereitstellen, die es Benutzern ermöglichen, auf verwandte Inhalte oder externe Websites zuzugreifen.
 
-#### Q: How can link structure elements be beneficial in a PDF document?
+#### F: Wie können Linkstrukturelemente in einem PDF-Dokument von Vorteil sein?
 
-A: Link structure elements enhance the user experience by making the PDF document interactive. They provide quick access to additional information, related content, external websites, or specific sections within the document, improving navigation and facilitating information retrieval.
+A: Linkstrukturelemente verbessern das Benutzererlebnis, indem sie das PDF-Dokument interaktiv machen. Sie bieten schnellen Zugriff auf zusätzliche Informationen, verwandte Inhalte, externe Websites oder bestimmte Abschnitte innerhalb des Dokuments, verbessern die Navigation und erleichtern das Abrufen von Informationen.
 
-#### Q: Can I create different types of hyperlinks using link structure elements in Aspose.PDF for .NET?
+#### F: Kann ich mithilfe von Linkstrukturelementen in Aspose.PDF für .NET verschiedene Arten von Hyperlinks erstellen?
 
-A: Yes, you can create various types of hyperlinks using link structure elements. Aspose.PDF for .NET allows you to create hyperlinks with plain text, rich text, images, and multi-line descriptions, offering versatility in how you link to external content or locations within the document.
+A: Ja, Sie können mithilfe von Linkstrukturelementen verschiedene Arten von Hyperlinks erstellen. Mit Aspose.PDF für .NET können Sie Hyperlinks mit einfachem Text, Rich Text, Bildern und mehrzeiligen Beschreibungen erstellen und bieten so Vielseitigkeit bei der Verknüpfung mit externen Inhalten oder Stellen innerhalb des Dokuments.
 
-#### Q: How do I set up and initialize link structure elements in a PDF document using Aspose.PDF for .NET?
+#### F: Wie richte ich Linkstrukturelemente in einem PDF-Dokument mit Aspose.PDF für .NET ein und initialisiere sie?
 
-A: To use link structure elements, you first need to create a new PDF document using the `Document` class. Then, obtain the tagged content using the `TaggedContent` property of the document. From there, you can create and customize link structure elements and add them to the root structure element.
+ A: Um Linkstrukturelemente verwenden zu können, müssen Sie zunächst ein neues PDF-Dokument mit erstellen`Document` Klasse. Rufen Sie dann den getaggten Inhalt mithilfe von ab`TaggedContent`Eigentum des Dokuments. Von dort aus können Sie Link-Strukturelemente erstellen und anpassen und sie dem Root-Strukturelement hinzufügen.
 
-#### Q: How can I create a simple text hyperlink using link structure elements?
-A: You can create a simple text hyperlink by creating a `LinkElement` and setting its `Hyperlink` property to a `WebHyperlink` with the URL you want to link to. You can also set the display text of the link using the `SetText` method.
+#### F: Wie kann ich mithilfe von Linkstrukturelementen einen einfachen Text-Hyperlink erstellen?
+ A: Sie können einen einfachen Text-Hyperlink erstellen, indem Sie einen erstellen`LinkElement` und dessen Einstellung`Hyperlink` Eigentum an a`WebHyperlink` mit der URL, auf die Sie verlinken möchten. Sie können den Anzeigetext des Links auch über festlegen`SetText` Methode.
 
-#### Q: Is it possible to create hyperlinks with images using link structure elements?
+#### F: Ist es möglich, Hyperlinks mit Bildern mithilfe von Linkstrukturelementen zu erstellen?
 
-A: Yes, you can create hyperlinks with images using link structure elements. You would create a `LinkElement` and then append a `FigureElement` with an image to it. This allows you to create an image-based hyperlink.
+ A: Ja, Sie können mithilfe von Linkstrukturelementen Hyperlinks mit Bildern erstellen. Sie würden eine erstellen`LinkElement` und dann a anhängen`FigureElement` mit einem Bild dazu. Dadurch können Sie einen bildbasierten Hyperlink erstellen.
 
-#### Q: How can I ensure that my PDF document with hyperlinks is compliant with the PDF/UA standard for accessibility?
+#### F: Wie kann ich sicherstellen, dass mein PDF-Dokument mit Hyperlinks dem PDF/UA-Standard für Barrierefreiheit entspricht?
 
-A: Aspose.PDF for .NET provides the ability to validate your PDF document's compliance with the PDF/UA standard using the `Validate` method of the `Document` class. This ensures that the document's hyperlinks are accessible to users with disabilities.
+ A: Aspose.PDF für .NET bietet die Möglichkeit, die Konformität Ihres PDF-Dokuments mit dem PDF/UA-Standard mithilfe von zu überprüfen`Validate` Methode der`Document`Klasse. Dadurch wird sichergestellt, dass die Hyperlinks des Dokuments für Benutzer mit Behinderungen zugänglich sind.
 
-#### Q: What are alternate descriptions for link structure elements, and why are they important?
+#### F: Was sind alternative Beschreibungen für Linkstrukturelemente und warum sind sie wichtig?
 
-A: Alternate descriptions (alt text) for link structure elements provide textual descriptions of the hyperlinks. These descriptions are essential for accessibility, allowing users with visual impairments to understand the purpose of the link and its destination.
+A: Alternative Beschreibungen (Alt-Text) für Linkstrukturelemente bieten textliche Beschreibungen der Hyperlinks. Diese Beschreibungen sind für die Barrierefreiheit unerlässlich und ermöglichen Benutzern mit Sehbehinderungen, den Zweck des Links und sein Ziel zu verstehen.
 
-#### Q: Can I customize the appearance and behavior of hyperlinks created using link structure elements?
+#### F: Kann ich das Erscheinungsbild und Verhalten von Hyperlinks anpassen, die mithilfe von Linkstrukturelementen erstellt wurden?
 
-A: While link structure elements primarily focus on creating hyperlinks, you can customize the appearance and behavior of hyperlinks further using other features offered by Aspose.PDF for .NET. This includes specifying colors, styles, and link actions.
+A: Während sich Linkstrukturelemente in erster Linie auf die Erstellung von Hyperlinks konzentrieren, können Sie das Erscheinungsbild und Verhalten von Hyperlinks mithilfe anderer von Aspose.PDF für .NET angebotener Funktionen weiter anpassen. Dazu gehört die Angabe von Farben, Stilen und Linkaktionen.
 
-#### Q: How do link structure elements contribute to making PDF documents more interactive and user-friendly?
+#### F: Wie tragen Linkstrukturelemente dazu bei, PDF-Dokumente interaktiver und benutzerfreundlicher zu machen?
 
-A: Link structure elements transform static PDF documents into interactive experiences by adding clickable hyperlinks. This interactivity improves user engagement, enables seamless navigation between related content, and enhances the overall usability of the document.
+A: Linkstrukturelemente verwandeln statische PDF-Dokumente in interaktive Erlebnisse, indem sie anklickbare Hyperlinks hinzufügen. Diese Interaktivität verbessert die Benutzereinbindung, ermöglicht eine nahtlose Navigation zwischen verwandten Inhalten und verbessert die allgemeine Benutzerfreundlichkeit des Dokuments.

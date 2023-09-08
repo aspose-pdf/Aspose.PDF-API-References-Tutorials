@@ -1,42 +1,42 @@
 ---
-title: Add Child Bookmark In PDF File
-linktitle: Add Child Bookmark In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily add child bookmark in PDF file for more organized browsing with Aspose.PDF for .NET.
+title: 在 PDF 文件中添加子书签
+linktitle: 在 PDF 文件中添加子书签
+second_title: Aspose.PDF for .NET API 参考
+description: 使用 Aspose.PDF for .NET 在 PDF 文件中轻松添加子书签，以便更有条理地浏览。
 type: docs
 weight: 20
 url: /zh/net/programming-with-bookmarks/add-child-bookmark/
 ---
-Adding child bookmarks in PDF file allows for more structured organization and navigation. With Aspose.PDF for .NET, you can easily add a sub-bookmark by following the following source code:
+在 PDF 文件中添加子书签可以实现更加结构化的组织和导航。使用Aspose.PDF for .NET，您可以通过以下源代码轻松添加子书签：
 
-## Step 1: Import required libraries
+## 第1步：导入所需的库
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+在开始之前，您需要为 C# 项目导入必要的库。这是必要的导入指令：
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-## Step 2: Set path to documents folder
+## 步骤 2：设置文档文件夹路径
 
-In this step, you need to specify the path to the folder containing the PDF file you want to add a sub-bookmark. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+在此步骤中，您需要指定包含要添加子书签的 PDF 文件的文件夹的路径。代替`"YOUR DOCUMENT DIRECTORY"`在以下代码中使用文档文件夹的实际路径：
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## 步骤 3：打开 PDF 文档
 
-Now we will open the PDF document to which we want to add a sub-bookmark using the following code:
+现在我们将使用以下代码打开要添加子书签的PDF文档：
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "AddChildBookmark.pdf");
 ```
 
-## Step 4: Create parent bookmark object
+## 第4步：创建父书签对象
 
-In this step, we will create a parent bookmark object using the `OutlineItemCollection` class and set its properties such as title, italic attribute and bold attribute. Here is the corresponding code:
+在此步骤中，我们将使用以下方法创建一个父书签对象`OutlineItemCollection`类并设置其属性，如标题、斜体属性和粗体属性。这是相应的代码：
 
 ```csharp
 OutlineItemCollection pdfOutline = new OutlineItemCollection(pdfDocument.Outlines);
@@ -45,9 +45,9 @@ pdfOutline. Italic = true;
 pdfOutline. Bold = true;
 ```
 
-## Step 5: Create Child Bookmark Object
+## 第5步：创建子书签对象
 
-In this step, we will create a sub-bookmark object again using the `OutlineItemCollection` class and set its properties. Here is the corresponding code:
+在此步骤中，我们将使用以下方法再次创建一个子书签对象`OutlineItemCollection`类并设置其属性。这是相应的代码：
 
 ```csharp
 OutlineItemCollection pdfChildOutline = new OutlineItemCollection(pdfDocument.Outlines);
@@ -56,95 +56,95 @@ pdfChildOutline. Italic = true;
 pdfChildOutline. Bold = true;
 ```
 
-## Step 6: Add the sub-bookmark to the parent bookmark
+## 第6步：将子书签添加到父书签中
 
-Finally, we add the created subbookmark to the parent bookmark's subbookmark collection using the `Add` method of the parent object. Here is the corresponding code:
+最后，我们使用以下命令将创建的子书签添加到父书签的子书签集合中`Add`父对象的方法。这是相应的代码：
 
 ```csharp
 pdfOutline.Add(pdfChildOutline);
 ```
 
-## Step 7: Add the parent bookmark to the document's bookmark collection
+## 步骤 7：将父书签添加到文档的书签集合中
 
-Finally, we add the parent bookmark to the document's bookmark collection using the `Add` method of the `Outlines` property. Here is the corresponding code:
+最后，我们使用以下命令将父书签添加到文档的书签集合中：`Add`的方法`Outlines`财产。这是相应的代码：
 
 ```csharp
 pdfDocument.Outlines.Add(pdfOutline);
 ```
 
-### Sample source code for Add Child Bookmark using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 添加子书签的示例源代码 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+//打开文档
 Document pdfDocument = new Document(dataDir + "AddChildBookmark.pdf");
-// Create a parent bookmark object
+//创建父书签对象
 OutlineItemCollection pdfOutline = new OutlineItemCollection(pdfDocument.Outlines);
 pdfOutline.Title = "Parent Outline";
 pdfOutline.Italic = true;
 pdfOutline.Bold = true;      
-// Create a child bookmark object
+//创建子书签对象
 OutlineItemCollection pdfChildOutline = new OutlineItemCollection(pdfDocument.Outlines);
 pdfChildOutline.Title = "Child Outline";
 pdfChildOutline.Italic = true;
 pdfChildOutline.Bold = true;
-// Add child bookmark in parent bookmark's collection
+//在父书签集合中添加子书签
 pdfOutline.Add(pdfChildOutline);
-// Add parent bookmark in the document's outline collection.
+//在文档的大纲集合中添加父书签。
 pdfDocument.Outlines.Add(pdfOutline);
 dataDir = dataDir + "AddChildBookmark_out.pdf";
-// Save output
+//保存输出
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nChild bookmark added successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## 结论
 
-Congratulation ! Now you have a step by step guide to add a sub-bookmark with Aspose.PDF for .NET. You can use this code to organize and structure your bookmarks in your PDF documents.
+恭喜！现在您有了使用 Aspose.PDF for .NET 添加子书签的分步指南。您可以使用此代码来组织和构建 PDF 文档中的书签。
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+请务必查看官方 Aspose.PDF 文档，以获取有关高级书签操作功能的更多信息。
 
-### FAQ's for add child bookmark in PDF file
+### 在 PDF 文件中添加子书签的常见问题解答
 
-#### Q: What are child bookmarks in a PDF file?
+#### 问：什么是 PDF 文件中的子书签？
 
-A: Child bookmarks, also known as sub-bookmarks, are navigational elements within a PDF document that are hierarchically structured under a parent bookmark. They provide a way to create a more organized and detailed table of contents for the document.
+答：子书签也称为子书签，是 PDF 文档中的导航元素，在父书签下按层次结构排列。它们提供了一种为文档创建更有组织、更详细的目录的方法。
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### 问：如何导入 C# 项目所需的库？
 
-A: To import the required libraries for your C# project, you can use the following import directive:
+答：要导入 C# 项目所需的库，您可以使用以下导入指令：
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-These libraries provide the necessary classes and functions for working with PDF documents and interactive features.
+这些库提供了处理 PDF 文档和交互功能所需的类和函数。
 
-#### Q: How do I specify the path to the documents folder?
+#### 问：如何指定文档文件夹的路径？
 
-A: In the source code provided, you need to replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file you want to work with. This ensures that the code correctly locates the target PDF file.
+ A：在提供的源码中，需要替换`"YOUR DOCUMENT DIRECTORY"`包含您要使用的 PDF 文件的文件夹的实际路径。这可确保代码正确定位目标 PDF 文件。
 
-#### Q: Can I create multiple levels of child bookmarks?
+#### 问：我可以创建多个级别的子书签吗？
 
-A: Yes, you can create multiple levels of child bookmarks by extending the process outlined in the tutorial. By creating parent bookmarks with sub-bookmarks and further nesting them, you can create a hierarchical structure of bookmarks for complex PDF documents.
+答：是的，您可以通过扩展教程中概述的过程来创建多个级别的子书签。通过创建带有子书签的父书签并进一步嵌套它们，您可以为复杂的 PDF 文档创建书签的层次结构。
 
-#### Q: What is the purpose of the `OutlineItemCollection` class?
+#### 问：这样做的目的是什么`OutlineItemCollection` class?
 
-A: The `OutlineItemCollection` class in Aspose.PDF for .NET is used to create and manage outlines, which are essentially bookmarks in a PDF document. This class allows you to set properties such as title, font style, and actions for bookmarks.
+答： 的`OutlineItemCollection` Aspose.PDF for .NET 中的类用于创建和管理大纲，大纲本质上是 PDF 文档中的书签。此类允许您设置书签的属性，例如标题、字体样式和操作。
 
-#### Q: How do I add a sub-bookmark to a parent bookmark?
+#### 问：如何将子书签添加到父书签中？
 
-A: To add a sub-bookmark to a parent bookmark, you create a new `OutlineItemCollection` object for the sub-bookmark and set its properties. Then, you use the `Add` method of the parent bookmark's `OutlineItemCollection` to add the sub-bookmark to the parent's collection.
+答：要将子书签添加到父书签，您需要创建一个新书签`OutlineItemCollection`子书签的对象并设置其属性。然后，您使用`Add`父书签的方法`OutlineItemCollection`将子书签添加到父书签中。
 
-#### Q: Can I customize the appearance of child bookmarks?
+#### 问：我可以自定义子书签的外观吗？
 
-A: Yes, similar to parent bookmarks, you can customize the appearance of child bookmarks by setting properties such as title, font style, and other attributes. This allows you to create visually distinctive and informative bookmarks.
+答：是的，与父书签类似，您可以通过设置标题、字体样式等属性来自定义子书签的外观。这使您可以创建视觉上独特且信息丰富的书签。
 
-#### Q: Is Aspose.PDF for .NET compatible with other programming languages?
+#### 问：Aspose.PDF for .NET 与其他编程语言兼容吗？
 
-A: Aspose.PDF for .NET is specifically designed for C# and .NET environments. However, Aspose offers similar libraries for other programming languages such as Java and Android, each tailored to their respective platforms.
+答：Aspose.PDF for .NET 是专门为 C# 和 .NET 环境设计的。然而，Aspose 为其他编程语言（例如 Java 和 Android）提供了类似的库，每种语言都针对各自的平台进行了定制。
 
-#### Q: How do child bookmarks improve PDF navigation?
+#### 问：子书签如何改进 PDF 导航？
 
-A: Child bookmarks improve PDF navigation by providing a more structured and organized table of contents. Users can quickly access specific sections of the document through the hierarchical bookmark structure.
+答：子书签通过提供更加结构化和有条理的目录来改进 PDF 导航。用户可以通过分层书签结构快速访问文档的特定部分。

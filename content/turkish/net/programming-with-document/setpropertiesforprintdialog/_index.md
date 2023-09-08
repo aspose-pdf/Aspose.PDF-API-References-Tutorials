@@ -1,49 +1,49 @@
 ---
-title: Set Properties For Print Dialog
-linktitle: Set Properties For Print Dialog
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set properties for print dialog in Aspose.PDF for .NET using step-by-step guide.
+title: Yazdırma İletişim Kutusunun Özelliklerini Ayarlama
+linktitle: Yazdırma İletişim Kutusunun Özelliklerini Ayarlama
+second_title: .NET API Referansı için Aspose.PDF
+description: Adım adım kılavuzu kullanarak Aspose.PDF for .NET'te yazdırma iletişim kutusunun özelliklerini nasıl ayarlayacağınızı öğrenin.
 type: docs
 weight: 320
 url: /tr/net/programming-with-document/setpropertiesforprintdialog/
 ---
-here's a step-by-step guide for setting properties for the print dialog using Aspose.PDF for .NET:
+Aspose.PDF for .NET kullanarak yazdırma iletişim kutusunun özelliklerini ayarlamak için adım adım kılavuz:
 
 
-## Step 1: Define the directory where your PDF document is located:
+## Adım 1: PDF belgenizin bulunduğu dizini tanımlayın:
 
 ```csharp
 var dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
    
-## Step 2: Create a new instance of the `Document` class:
+##  Adım 2: Yeni bir örneğini oluşturun`Document` class:
 
 ```csharp
 using (Document doc = new Document())
 {
-  // Code here
+  // Burayı kodlayın
 }
 ```
    
-## Step 3: Add a new page to the document:
+## Adım 3: Belgeye yeni bir sayfa ekleyin:
 
 ```csharp
 doc.Pages.Add();
 ```
    
-## Step 4: Set the duplex property to `DuplexFlipLongEdge`:
+##  4. Adım: Çift yönlü özelliğini şu şekilde ayarlayın:`DuplexFlipLongEdge`:
 
 ```csharp
 doc.Duplex = PrintDuplex.DuplexFlipLongEdge;
 ```
    
-## Step 5: Save the document with the specified file name and format:
+## Adım 5: Belgeyi belirtilen dosya adı ve biçimiyle kaydedin:
 
 ```csharp
 doc.Save(dataDir + "35297_out.pdf", SaveFormat.Pdf);
 ```
 
-### Example source code for Set Properties For Print Dialog using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak Yazdırma İletişim Kutusu Özelliklerini Ayarla için örnek kaynak kodu
 
 ```csharp
 var dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -56,20 +56,20 @@ using (Document doc = new Document())
 }
 ```
 
-## Conclusion
+## Çözüm
 
-Aspose.PDF for .NET makes it easy to set properties for the print dialog in your PDF files. By following the step-by-step guide above, you can quickly optimize your PDF files for printing.
+Aspose.PDF for .NET, PDF dosyalarınızdaki yazdırma iletişim kutusunun özelliklerini ayarlamanızı kolaylaştırır. Yukarıdaki adım adım kılavuzu izleyerek PDF dosyalarınızı yazdırma için hızlı bir şekilde optimize edebilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: Can I set other print dialog properties besides duplex mode using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'i kullanarak çift yönlü modun yanı sıra diğer yazdırma iletişim kutusu özelliklerini de ayarlayabilir miyim?
 
-A: Yes, besides setting the duplex mode, Aspose.PDF for .NET allows you to set various other properties for the print dialog. Some examples include setting the print quality, page range, number of copies, paper size, and more. You can refer to the Aspose.PDF for .NET documentation to explore the full list of available properties.
+C: Evet, çift yönlü modu ayarlamanın yanı sıra Aspose.PDF for .NET, yazdırma iletişim kutusu için çeşitli diğer özellikleri de ayarlamanıza olanak tanır. Bazı örnekler arasında baskı kalitesinin, sayfa aralığının, kopya sayısının, kağıt boyutunun ve daha fazlasının ayarlanması yer alır. Mevcut özelliklerin tam listesini keşfetmek için Aspose.PDF for .NET belgelerine başvurabilirsiniz.
 
-#### Q: How can I set the print quality when printing the PDF document?
+#### S: PDF belgesini yazdırırken baskı kalitesini nasıl ayarlayabilirim?
 
-A: To set the print quality, you can use the `PrintQuality` property of the `Document` class in Aspose.PDF for .NET. You can choose from different print quality options such as high, medium, or low, based on your requirements.
+ C: Baskı kalitesini ayarlamak için`PrintQuality` mülkiyeti`Document` Aspose.PDF for .NET'teki sınıf. Gereksinimlerinize göre yüksek, orta veya düşük gibi farklı baskı kalitesi seçenekleri arasından seçim yapabilirsiniz.
 
-#### Q: Is it possible to specify custom print settings for different pages in the PDF document?
+#### S: PDF belgesindeki farklı sayfalar için özel yazdırma ayarları belirlemek mümkün müdür?
 
-A: Yes, you can set custom print settings for different pages in the PDF document using Aspose.PDF for .NET. You can access individual pages through the `doc.Pages` collection and set specific print settings for each page separately.
+ C: Evet, Aspose.PDF for .NET'i kullanarak PDF belgesindeki farklı sayfalar için özel yazdırma ayarları belirleyebilirsiniz. Tek tek sayfalara şu adresten erişebilirsiniz:`doc.Pages` toplayın ve her sayfa için ayrı ayrı özel yazdırma ayarlarını yapın.

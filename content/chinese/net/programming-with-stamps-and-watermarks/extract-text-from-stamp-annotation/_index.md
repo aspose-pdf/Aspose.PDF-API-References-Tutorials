@@ -1,57 +1,57 @@
 ---
-title: Extract Text From Stamp Annotation
-linktitle: Extract Text From Stamp Annotation
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to easily extract text from a stamp annotation in your PDF documents with Aspose.PDF for .NET.
+title: 从图章注释中提取文本
+linktitle: 从图章注释中提取文本
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 从 PDF 文档中的图章注释中轻松提取文本。
 type: docs
 weight: 80
 url: /zh/net/programming-with-stamps-and-watermarks/extract-text-from-stamp-annotation/
 ---
-In this tutorial, we will take you step by step on how to extract text from a stamp annotation in a PDF document using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to extract the text from a specific stamp annotation on a given page of the PDF document.
+在本教程中，我们将逐步指导您如何使用 Aspose.PDF for .NET 从 PDF 文档中的图章注释中提取文本。我们将向您展示如何使用提供的 C# 源代码从 PDF 文档给定页面上的特定图章注释中提取文本。
 
-## Step 1: Setting up the environment
+## 第一步：搭建环境
 
-Before you begin, make sure you have the following:
+在开始之前，请确保您具备以下条件：
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- 已安装的 .NET 开发环境。
+- 下载用于 .NET 的 Aspose.PDF 库并在您的项目中引用。
 
-## Step 2: Loading the PDF document
+## 第 2 步：加载 PDF 文档
 
-The first step is to load the existing PDF document into your project. Here's how:
+第一步是将现有的 PDF 文档加载到您的项目中。就是这样：
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Load the document
+//加载文档
 Document doc = new Document(dataDir + "test.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+请务必将“您的文档目录”替换为 PDF 文档所在目录的实际路径。
 
-## Step 3: Extract text from stamp annotation
+## 步骤 3：从图章注释中提取文本
 
-Now that you have loaded the PDF document, you can extract the text from the specific stamp annotation. Here's how:
+现在您已经加载了 PDF 文档，您可以从特定图章注释中提取文本。就是这样：
 
 ```csharp
-// Retrieve buffer annotation
+//检索缓冲区注释
 StampAnnotation annot = doc.Pages[1].Annotations[3] as StampAnnotation;
 
-// Create a text absorber
+//创建文本吸收器
 TextAbsorber ta = new TextAbsorber();
 
-// Visit the appearance of the annotation
+//访问注释的外观
 XForm ap = annot. Appearance["N"];
 ta.Visit(ap);
 
-// Display the extracted text
+//显示提取的文本
 Console.WriteLine(ta.Text);
 ```
 
-The code above retrieves the stamp annotation from the specified page of the PDF document and then uses a text absorber to extract the text from the appearance of the annotation. The extracted text is then displayed in the output.
+上面的代码从 PDF 文档的指定页面检索图章注释，然后使用文本吸收器从注释的外观中提取文本。然后，提取的文本将显示在输出中。
 
-### Sample source code for Extract Text From Stamp Annotation using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 从图章注释中提取文本的示例源代码 
 ```csharp
 
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -64,44 +64,44 @@ Console.WriteLine(ta.Text);
 
 ```
 
-## Conclusion
+## 结论
 
-Congratulation ! You have learned how to extract text from a stamp annotation in a PDF document using Aspose.PDF for .NET. You can now use this method to extract text from other annotations in your PDF documents.
+恭喜！您已了解如何使用 Aspose.PDF for .NET 从 PDF 文档中的图章注释中提取文本。您现在可以使用此方法从 PDF 文档中的其他注释中提取文本。
 
-### FAQ's for extract text from stamp annotation
+### 从图章注释中提取文本的常见问题解答
 
-#### Q: What is a stamp annotation in a PDF document, and why would I need to extract text from it?
+#### 问：什么是 PDF 文档中的图章注释？为什么需要从中提取文本？
 
-A: A stamp annotation in a PDF document is a graphical element that can be used to provide additional information, such as a watermark or a rubber stamp. Extracting text from a stamp annotation is useful when you want to retrieve text-based content from these annotations, which can include notes, labels, or other textual information.
+答：PDF 文档中的图章注释是一种图形元素，可用于提供附加信息，例如水印或橡皮图章。当您想要从这些注释中检索基于文本的内容（其中可能包括注释、标签或其他文本信息）时，从图章注释中提取文本非常有用。
 
-#### Q: How does the provided C# source code extract text from a stamp annotation?
+#### 问：提供的 C# 源代码如何从图章注释中提取文本？
 
-A: The provided source code demonstrates how to extract text from a specific stamp annotation on a given page of a PDF document. It uses the Aspose.PDF library to retrieve the stamp annotation, visit its appearance using a `TextAbsorber`, and then displays the extracted text in the output.
+答：提供的源代码演示了如何从 PDF 文档的给定页面上的特定图章注释中提取文本。它使用 Aspose.PDF 库来检索图章注释，使用`TextAbsorber`，然后在输出中显示提取的文本。
 
-#### Q: Can I extract text from different types of annotations using a similar approach?
+#### 问：我可以使用类似的方法从不同类型的注释中提取文本吗？
 
-A: Yes, you can use a similar approach to extract text from other types of annotations, such as text annotations or popup annotations. You would need to modify the code to target the specific type of annotation you want to extract text from.
+答：是的，您可以使用类似的方法从其他类型的注释中提取文本，例如文本注释或弹出注释。您需要修改代码以定位要从中提取文本的特定注释类型。
 
-#### Q: What is the purpose of the `TextAbsorber` class in the code?
+#### 问：这样做的目的是什么`TextAbsorber` class in the code?
 
-A: The `TextAbsorber` class is used to extract text from different parts of a PDF document, including stamp annotations. It "absorbs" or captures the text content found in the specified area or element of the PDF.
+答： 的`TextAbsorber`类用于从 PDF 文档的不同部分提取文本，包括图章注释。它“吸收”或捕获 PDF 指定区域或元素中的文本内容。
 
-#### Q: How do I identify the specific stamp annotation I want to extract text from?
+#### 问：如何识别要从中提取文本的特定图章注释？
 
-A: In the provided code, the stamp annotation is identified by accessing the `Annotations` collection of a specific page and using the index to retrieve the desired annotation. You can adjust the index or use other criteria to identify the target annotation.
+答：在提供的代码中，通过访问标记注释来识别`Annotations`特定页面的集合并使用索引来检索所需的注释。您可以调整索引或使用其他标准来识别目标注释。
 
-#### Q: Can I extract text from multiple stamp annotations on the same page?
+#### 问：我可以从同一页面上的多个图章注释中提取文本吗？
 
-A: Yes, you can modify the code to loop through the `Annotations` collection of a page, filter out stamp annotations, and extract text from each of them.
+ A：是的，你可以修改代码来循环遍历`Annotations`页面的集合，过滤掉图章注释，并从每个页面中提取文本。
 
-#### Q: What if the stamp annotation has no textual content? Will the code still work?
+#### 问：印章注释没有文字怎么办？代码仍然有效吗？
 
-A: The code will still work, but it will extract and display an empty string if the stamp annotation's appearance does not contain any textual content.
+答：该代码仍然可以工作，但如果图章注释的外观不包含任何文本内容，它将提取并显示一个空字符串。
 
-#### Q: How can I save the extracted text to a file instead of displaying it in the output?
+#### 问：如何将提取的文本保存到文件而不是在输出中显示？
 
-A: You can modify the code to save the extracted text to a file instead of displaying it in the console. Simply replace the `Console.WriteLine` statement with code to write the text to a file.
+答：您可以修改代码，将提取的文本保存到文件中，而不是将其显示在控制台中。只需更换`Console.WriteLine`带有将文本写入文件的代码的语句。
 
-#### Q: How can I use the extracted text in further processing or analysis?
+#### 问：如何使用提取的文本进行进一步处理或分析？
 
-A: Once you have extracted the text using the provided method, you can store it in a variable, manipulate it, analyze it, or integrate it into other parts of your application as needed.
+答：使用提供的方法提取文本后，您可以将其存储在变量中，对其进行操作、分析，或根据需要将其集成到应用程序的其他部分。

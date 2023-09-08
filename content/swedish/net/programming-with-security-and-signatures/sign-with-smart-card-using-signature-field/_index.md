@@ -1,17 +1,17 @@
 ---
-title: Sign With Smart Card Using Signature Field
-linktitle: Sign With Smart Card Using Signature Field
-second_title: Aspose.PDF for .NET API Reference
-description: Sign your PDF files securely with a smart card using Aspose.PDF for .NET.
+title: Med Smart Card Använda Signaturfältet
+linktitle: Med Smart Card Använda Signaturfältet
+second_title: Aspose.PDF för .NET API Referens
+description: Signera dina PDF-filer säkert med ett smartkort med Aspose.PDF för .NET.
 type: docs
 weight: 120
 url: /sv/net/programming-with-security-and-signatures/sign-with-smart-card-using-signature-field/
 ---
-Digital signing with a smart card is a secure way to sign PDF files. With Aspose.PDF for .NET, you can easily sign a PDF file using a signature field and a smart card by following the following source code:
+Digital signering med ett smartkort är ett säkert sätt att signera PDF-filer. Med Aspose.PDF för .NET kan du enkelt signera en PDF-fil med ett signaturfält och ett smartkort genom att följa följande källkod:
 
-## Step 1: Import required libraries
+## Steg 1: Importera nödvändiga bibliotek
 
-Before you begin, you need to import the necessary libraries for your C# project. Here are the necessary import directives:
+Innan du börjar måste du importera de nödvändiga biblioteken för ditt C#-projekt. Här är de nödvändiga importdirektiven:
 
 ```csharp
 using Aspose.Pdf;
@@ -19,17 +19,17 @@ using Aspose.Pdf.Forms;
 using System.Security.Cryptography.X509Certificates;
 ```
 
-## Step 2: Set path to documents folder
+## Steg 2: Ange sökväg till dokumentmappen
 
-In this step, you need to specify the path to the folder containing the PDF file you want to sign. Replace `"YOUR DOCUMENTS DIRECTORY"` in the following code with the actual path to your documents folder:
+ I det här steget måste du ange sökvägen till mappen som innehåller PDF-filen du vill signera. Byta ut`"YOUR DOCUMENTS DIRECTORY"` följande kod med den faktiska sökvägen till din dokumentmapp:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 3: Copy and open the PDF document
+## Steg 3: Kopiera och öppna PDF-dokumentet
 
-Now we will copy and open the PDF document to be signed using the following code:
+Nu kommer vi att kopiera och öppna PDF-dokumentet som ska signeras med följande kod:
 
 ```csharp
 File.Copy(dataDir + "blank.pdf", dataDir + "externalSignature1.pdf", true);
@@ -38,15 +38,15 @@ using (FileStream fs = new FileStream(dataDir + "externalSignature1.pdf", FileMo
 {
      using (Document doc = new Document(fs))
      {
-         // Create a signature field
+         // Skapa ett signaturfält
          SignatureField field1 = new SignatureField(doc.Pages[1], new Rectangle(100, 400, 10, 10));
 
-         // Select the certificate in the store
+         // Välj certifikatet i butiken
          X509Store store = new X509Store(StoreLocation.CurrentUser);
          store.Open(OpenFlags.ReadOnly);
          X509Certificate2Collection sel = X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, X509SelectionFlag.SingleSelection);
         
-         // Create an external signature with the necessary information
+         // Skapa en extern signatur med nödvändig information
          ExternalSignature externalSignature = new ExternalSignature(sel[0])
          {
              Authority = "Me",
@@ -62,9 +62,9 @@ using (FileStream fs = new FileStream(dataDir + "externalSignature1.pdf", FileMo
 }
 ```
 
-## Step 4: Verify Signature
+## Steg 4: Verifiera signaturen
 
-Finally, we verify the signature of the signed PDF file using the `PdfFileSignature` class. We get the signature names and check them one by one. If a signature fails verification, an exception is thrown. Here is the corresponding code:
+ Slutligen verifierar vi signaturen för den signerade PDF-filen med hjälp av`PdfFileSignature` klass. Vi tar fram signaturnamnen och kontrollerar dem en efter en. Om en signatur misslyckas med verifiering skapas ett undantag. Här är motsvarande kod:
 
 ```csharp
 using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "externalSignature1.pdf")))
@@ -80,9 +80,9 @@ using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "e
 }
 ```
 
-### Sample source code for Sign With Smart Card Using Signature Field using Aspose.PDF for .NET 
+### Exempel på källkod för Sign With Smart Card som använder signaturfält med Aspose.PDF för .NET 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 File.Copy(dataDir + "blank.pdf", dataDir + "externalSignature1.pdf", true);
 using (FileStream fs = new FileStream(dataDir + "externalSignature1.pdf", FileMode.Open, FileAccess.ReadWrite))
@@ -90,10 +90,10 @@ using (FileStream fs = new FileStream(dataDir + "externalSignature1.pdf", FileMo
 	using (Document doc = new Document(fs))
 	{
 		SignatureField field1 = new SignatureField(doc.Pages[1], new Rectangle(100, 400, 10, 10));
-		// Sign with certificate selection in the windows certificate store
+		// Signera med certifikatval i Windows certifikatbutik
 		System.Security.Cryptography.X509Certificates.X509Store store = new System.Security.Cryptography.X509Certificates.X509Store(System.Security.Cryptography.X509Certificates.StoreLocation.CurrentUser);
 		store.Open(System.Security.Cryptography.X509Certificates.OpenFlags.ReadOnly);
-		// Manually chose the certificate in the store
+		// Välj certifikat manuellt i butiken
 		System.Security.Cryptography.X509Certificates.X509Certificate2Collection sel = System.Security.Cryptography.X509Certificates.X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, System.Security.Cryptography.X509Certificates.X509SelectionFlag.SingleSelection);
 		Aspose.Pdf.Forms.ExternalSignature externalSignature = new Aspose.Pdf.Forms.ExternalSignature(sel[0])
 		{
@@ -120,50 +120,50 @@ using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "e
 }
 ```
 
-## Conclusion
+## Slutsats
 
-Congratulation ! You now have a step-by-step guide to signing a PDF file with a smart card using a signature field with Aspose.PDF for .NET. You can use this code to add secure digital signatures to your PDF documents.
+Grattis! Du har nu en steg-för-steg-guide för att signera en PDF-fil med ett smartkort med hjälp av ett signaturfält med Aspose.PDF för .NET. Du kan använda den här koden för att lägga till säkra digitala signaturer till dina PDF-dokument.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced digital signature and certificate management features.
+Se till att kolla in den officiella Aspose.PDF-dokumentationen för mer information om avancerade funktioner för digital signatur och certifikathantering.
 
 ### FAQ's
 
-#### Q: What is the benefit of using a signature field for digital signing with a smart card?
+#### F: Vad är fördelen med att använda ett signaturfält för digital signering med ett smartkort?
 
-A: Using a signature field for digital signing with a smart card provides a designated area within the PDF where the signature is applied. This enhances document clarity and ensures the signature's authenticity.
+S: Att använda ett signaturfält för digital signering med ett smartkort ger ett angivet område i PDF:en där signaturen tillämpas. Detta förbättrar dokumentets tydlighet och säkerställer signaturens äkthet.
 
-#### Q: How does the Aspose.PDF for .NET library facilitate smart card-based digital signing with a signature field?
+#### F: Hur underlättar Aspose.PDF för .NET-biblioteket smartkortsbaserad digital signering med ett signaturfält?
 
-A: Aspose.PDF for .NET simplifies the process of creating a signature field, selecting a smart card certificate, and applying a digital signature to a specific area within the PDF document.
+S: Aspose.PDF för .NET förenklar processen att skapa ett signaturfält, välja ett smartkortcertifikat och tillämpa en digital signatur på ett specifikt område i PDF-dokumentet.
 
-#### Q: Why is selecting a specific certificate important for smart card-based signing?
+#### F: Varför är det viktigt att välja ett specifikt certifikat för smartkortsbaserad signering?
 
-A: Selecting a specific certificate allows you to uniquely identify the signer and ensure the integrity of the signature. This helps establish trust and compliance with digital signing standards.
+S: Genom att välja ett specifikt certifikat kan du unikt identifiera undertecknaren och säkerställa signaturens integritet. Detta hjälper till att skapa förtroende och överensstämmelse med standarder för digital signering.
 
-#### Q: How does the provided source code handle the smart card-based signing process with a signature field?
+#### F: Hur hanterar den medföljande källkoden den smartkortbaserade signeringsprocessen med ett signaturfält?
 
-A: The source code demonstrates how to create a signature field, select a smart card certificate, and apply a digital signature with specific signing information. It also shows how to verify the signature's validity.
+S: Källkoden visar hur man skapar ett signaturfält, väljer ett smartkortcertifikat och tillämpar en digital signatur med specifik signeringsinformation. Den visar också hur man verifierar signaturens giltighet.
 
-#### Q: Can I customize the appearance of the signature field?
+#### F: Kan jag anpassa utseendet på signaturfältet?
 
-A: Yes, you can customize the appearance of the signature field, such as its size, position, and visual representation, to align with your document's layout.
+S: Ja, du kan anpassa utseendet på signaturfältet, t.ex. dess storlek, position och visuella representation, så att det passar ditt dokuments layout.
 
-#### Q: What happens if a signature fails verification during the verification step?
+#### F: Vad händer om en signatur misslyckas med verifiering under verifieringssteget?
 
-A: If a signature fails verification, an exception is thrown, indicating that the signature is not valid. This ensures that only valid and trusted signatures are accepted.
+S: Om en signatur misslyckas med verifiering, skapas ett undantag, vilket indikerar att signaturen inte är giltig. Detta säkerställer att endast giltiga och pålitliga signaturer accepteras.
 
-#### Q: Can I apply multiple signature fields and smart card-based signatures to a single PDF document?
+#### F: Kan jag använda flera signaturfält och smartkortbaserade signaturer på ett enda PDF-dokument?
 
-A: Absolutely, you can apply multiple signature fields and smart card-based signatures to different areas of the same PDF document, providing multiple layers of security.
+S: Absolut, du kan använda flera signaturfält och smartkortbaserade signaturer på olika delar av samma PDF-dokument, vilket ger flera säkerhetslager.
 
-#### Q: How does using a signature field enhance the overall document signing process?
+#### F: Hur förbättrar användningen av ett signaturfält den övergripande dokumentsigneringsprocessen?
 
-A: Using a signature field streamlines the document signing process, as it guides the signer to place their signature in a designated area, making the signing process more organized and user-friendly.
+S: Att använda ett signaturfält effektiviserar dokumentsigneringsprocessen, eftersom det vägleder undertecknaren att placera sin signatur på ett avsett område, vilket gör signeringsprocessen mer organiserad och användarvänlig.
 
-#### Q: Are there any limitations to using signature fields with smart card-based signing?
+#### F: Finns det några begränsningar för att använda signaturfält med smartkortsbaserad signering?
 
-A: There are no inherent limitations to using signature fields with smart card-based signing. However, it's important to ensure that the chosen signature field location doesn't obscure important document content.
+S: Det finns inga inneboende begränsningar för att använda signaturfält med smartkortsbaserad signering. Det är dock viktigt att se till att den valda platsen för signaturfältet inte skymmer viktigt dokumentinnehåll.
 
-#### Q: Where can I find further assistance or support for implementing smart card-based signing with a signature field?
+#### F: Var kan jag hitta ytterligare hjälp eller support för att implementera smartkortsbaserad signering med ett signaturfält?
 
-A: For additional guidance and support, you can refer to the official Aspose.PDF documentation and community forums, which offer valuable insights and solutions for implementing secure digital signatures.
+S: För ytterligare vägledning och support kan du hänvisa till den officiella Aspose.PDF-dokumentationen och gemenskapsforum, som erbjuder värdefulla insikter och lösningar för att implementera säkra digitala signaturer.

@@ -1,35 +1,35 @@
 ---
-title: Add TOC To PDF File
-linktitle: Add TOC To PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add a table of contents to PDF file using Aspose.PDF for .NET. Step-by-step guide with example source code. Boost document navigation!
+title: إضافة TOC إلى ملف PDF
+linktitle: إضافة TOC إلى ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إضافة جدول محتويات إلى ملف PDF باستخدام Aspose.PDF لـ .NET. دليل خطوة بخطوة مع مثال التعليمات البرمجية المصدر. تعزيز التنقل في المستندات!
 type: docs
 weight: 40
 url: /ar/net/programming-with-document/addtoc/
 ---
-In this tutorial, we will explore how to use the Add TOC (Table of Contents) to PDF file feature of Aspose.PDF for .NET to add a table of contents to PDF documents. We will provide a step-by-step guide and explain the C# source code required to achieve this. By the end of this tutorial, you will be able to generate a PDF document with a table of contents using Aspose.PDF for .NET.
+في هذا البرنامج التعليمي، سنستكشف كيفية استخدام ميزة Add TOC (جدول المحتويات) إلى ملف PDF في Aspose.PDF لـ .NET لإضافة جدول محتويات إلى مستندات PDF. سنقدم دليلًا خطوة بخطوة ونشرح كود مصدر C# المطلوب لتحقيق ذلك. بنهاية هذا البرنامج التعليمي، ستكون قادرًا على إنشاء مستند PDF بجدول محتويات باستخدام Aspose.PDF for .NET.
 
 
-## Step 1: Load the existing PDF file
+## الخطوة 1: قم بتحميل ملف PDF الموجود
 
-To get started, we need to load an existing PDF file. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your PDF file:
+ للبدء، نحتاج إلى تحميل ملف PDF موجود. يستبدل`"YOUR DOCUMENT DIRECTORY"` في الكود التالي مع المسار الفعلي لملف PDF الخاص بك:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "AddTOC.pdf");
 ```
 
-## Step 2: Create a new page for the table of contents
+## الخطوة 2: إنشاء صفحة جديدة لجدول المحتويات
 
-We will create a new page to hold the table of contents. The following code inserts a new page at index 1:
+سنقوم بإنشاء صفحة جديدة لجدول المحتويات. يقوم التعليمة البرمجية التالية بإدراج صفحة جديدة في الفهرس 1:
 
 ```csharp
 Page tocPage = doc.Pages.Insert(1);
 ```
 
-## Step 3: Define the table of contents information
+## الخطوة 3: تحديد معلومات جدول المحتويات
 
-Next, we need to define the table of contents information. We will set the title and other properties of the table of contents. Add the following code:
+بعد ذلك، نحتاج إلى تحديد معلومات جدول المحتويات. سنقوم بتعيين العنوان والخصائص الأخرى لجدول المحتويات. أضف الكود التالي:
 
 ```csharp
 TocInfo tocInfo = new TocInfo();
@@ -41,9 +41,9 @@ tocInfo.Title = title;
 tocPage.TocInfo = tocInfo;
 ```
 
-## Step 4: Create TOC elements
+## الخطوة 4: إنشاء عناصر جدول المحتويات
 
-Now, we will create the elements of the table of contents. In this tutorial, we will create four TOC elements corresponding to different pages. Modify the following code as per your requirements:
+الآن، سوف نقوم بإنشاء عناصر جدول المحتويات. في هذا البرنامج التعليمي، سنقوم بإنشاء أربعة عناصر جدول محتويات تتوافق مع صفحات مختلفة. قم بتعديل الكود التالي حسب متطلباتك:
 
 ```csharp
 string[] titles = new string[4];
@@ -67,9 +67,9 @@ for (int i = 0; i < 2; i++)
 }
 ```
 
-## Step 5: Save the updated document
+## الخطوة 5: احفظ المستند المحدث
 
-Finally, we need to save the modified document with the table of contents. Replace `"YOUR DOCUMENT DIRECTORY"` in the code below with the desired output file path:
+ وأخيرا، نحن بحاجة إلى حفظ الوثيقة المعدلة مع جدول المحتويات. يستبدل`"YOUR DOCUMENT DIRECTORY"` في الكود أدناه مع مسار ملف الإخراج المطلوب:
 
 ```csharp
 dataDir = dataDir + "TOC_out.pdf";
@@ -77,30 +77,30 @@ doc.Save(dataDir);
 Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at " + dataDir);
 ```
 
-### Example source code for Adding TOC to PDF documents using Aspose.PDF for .NET
+### مثال على الكود المصدري لإضافة جدول محتويات إلى مستندات PDF باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Load an existing PDF files
+// قم بتحميل ملفات PDF الموجودة
 Document doc = new Document(dataDir + "AddTOC.pdf");
 
-// Get access to first page of PDF file
+// الوصول إلى الصفحة الأولى من ملف PDF
 Page tocPage = doc.Pages.Insert(1);
 
-// Create object to represent TOC information
+// قم بإنشاء كائن لتمثيل معلومات جدول المحتويات
 TocInfo tocInfo = new TocInfo();
 TextFragment title = new TextFragment("Table Of Contents");
 title.TextState.FontSize = 20;
 title.TextState.FontStyle = FontStyles.Bold;
 
-// Set the title for TOC
+// قم بتعيين عنوان جدول المحتويات
 tocInfo.Title = title;
 tocPage.TocInfo = tocInfo;
 
-// Create string objects which will be used as TOC elements
+//قم بإنشاء كائنات سلسلة سيتم استخدامها كعناصر جدول المحتويات
 string[] titles = new string[4];
 titles[0] = "First page";
 titles[1] = "Second page";
@@ -108,53 +108,53 @@ titles[2] = "Third page";
 titles[3] = "Fourth page";
 for (int i = 0; i < 2; i++)
 {
-	// Create Heading object
+	// إنشاء كائن العنوان
 	Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
 	TextSegment segment2 = new TextSegment();
 	heading2.TocPage = tocPage;
 	heading2.Segments.Add(segment2);
 
-	// Specify the destination page for heading object
+	// حدد الصفحة الوجهة لكائن العنوان
 	heading2.DestinationPage = doc.Pages[i + 2];
 
-	// Destination page
+	// صفحة الوجهة
 	heading2.Top = doc.Pages[i + 2].Rect.Height;
 
-	// Destination coordinate
+	// تنسيق الوجهة
 	segment2.Text = titles[i];
 
-	// Add heading to page containing TOC
+	// أضف عنوانًا إلى الصفحة التي تحتوي على جدول المحتويات
 	tocPage.Paragraphs.Add(heading2);
 }
 dataDir = dataDir + "TOC_out.pdf";
-// Save the updated document
+// احفظ المستند المحدث
 doc.Save(dataDir);
 
 Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we explored how to add a table of contents (TOC) to PDF documents using Aspose.PDF for .NET. By following the step-by-step guide and utilizing the provided C# source code, you can easily generate a PDF document with a table of contents. The TOC enhances the document's usability, allowing users to navigate to specific sections or pages more efficiently. Aspose.PDF for .NET provides a robust and user-friendly solution for working with PDF files in .NET applications, enabling you to create dynamic and interactive PDF documents with ease.
+في هذا البرنامج التعليمي، اكتشفنا كيفية إضافة جدول محتويات (TOC) إلى مستندات PDF باستخدام Aspose.PDF لـ .NET. باتباع الدليل الموضح خطوة بخطوة واستخدام كود مصدر C# المتوفر، يمكنك بسهولة إنشاء مستند PDF مع جدول محتويات. يعمل جدول المحتويات على تحسين إمكانية استخدام المستند، مما يسمح للمستخدمين بالانتقال إلى أقسام أو صفحات معينة بشكل أكثر كفاءة. يوفر Aspose.PDF for .NET حلاً قويًا وسهل الاستخدام للعمل مع ملفات PDF في تطبيقات .NET، مما يتيح لك إنشاء مستندات PDF ديناميكية وتفاعلية بسهولة.
 
-### FAQ's for add TOC to PDF file
+### الأسئلة الشائعة لإضافة جدول المحتويات إلى ملف PDF
 
-#### Q: What is Aspose.PDF for .NET?
+#### س: ما هو Aspose.PDF لـ .NET؟
 
-A: Aspose.PDF for .NET is a powerful library that allows developers to work with PDF files in .NET applications effectively. It provides a wide range of features for creating, manipulating, and managing PDF documents programmatically.
+ج: Aspose.PDF for .NET هي مكتبة قوية تتيح للمطورين العمل مع ملفات PDF في تطبيقات .NET بشكل فعال. فهو يوفر مجموعة واسعة من الميزات لإنشاء مستندات PDF ومعالجتها وإدارتها برمجيًا.
 
-#### Q: What is the purpose of adding a table of contents (TOC) to a PDF document?
+#### س: ما هو الغرض من إضافة جدول محتويات (TOC) إلى مستند PDF؟
 
-A: The table of contents (TOC) provides a navigational aid for users, enabling them to quickly jump to specific sections or pages within the PDF document. It improves the document's usability and user experience.
+ج: يوفر جدول المحتويات (TOC) وسيلة مساعدة للمستخدمين، مما يمكّنهم من الانتقال بسرعة إلى أقسام أو صفحات محددة داخل مستند PDF. يعمل على تحسين سهولة استخدام المستند وتجربة المستخدم.
 
-#### Q: How do I add a table of contents to a PDF document using Aspose.PDF for .NET?
+#### س: كيف يمكنني إضافة جدول محتويات إلى مستند PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: To add a table of contents to a PDF document using Aspose.PDF for .NET, you need to create a new page to hold the TOC, define the table of contents information, and then create TOC elements that correspond to specific pages or sections in the document.
+ج: لإضافة جدول محتويات إلى مستند PDF باستخدام Aspose.PDF لـ .NET، تحتاج إلى إنشاء صفحة جديدة للاحتفاظ بجدول المحتويات، وتحديد معلومات جدول المحتويات، ثم إنشاء عناصر جدول المحتويات التي تتوافق مع صفحات معينة أو الأقسام في الوثيقة.
 
-#### Q: Can I customize the appearance of the table of contents?
+#### س: هل يمكنني تخصيص مظهر جدول المحتويات؟
 
-A: Yes, you can customize the appearance of the table of contents by setting various properties of the TOC elements, such as font size, font style, and alignment. Aspose.PDF for .NET provides flexibility in designing the TOC to match your desired look and feel.
+ج: نعم، يمكنك تخصيص مظهر جدول المحتويات عن طريق تعيين خصائص مختلفة لعناصر جدول المحتويات، مثل حجم الخط ونمط الخط والمحاذاة. يوفر Aspose.PDF for .NET المرونة في تصميم جدول المحتويات ليتوافق مع الشكل والمظهر المطلوبين.
 
-#### Q: Is Aspose.PDF for .NET suitable for adding advanced features to PDF documents?
+#### س: هل Aspose.PDF for .NET مناسب لإضافة ميزات متقدمة إلى مستندات PDF؟
 
-A: Absolutely, Aspose.PDF for .NET is a feature-rich library that allows you to add advanced functionalities to PDF documents, including interactive elements, form fields, digital signatures, and more.
+ج: بالتأكيد، Aspose.PDF for .NET هي مكتبة غنية بالميزات تسمح لك بإضافة وظائف متقدمة إلى مستندات PDF، بما في ذلك العناصر التفاعلية وحقول النماذج والتوقيعات الرقمية والمزيد.

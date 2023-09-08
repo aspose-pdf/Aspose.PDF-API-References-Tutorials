@@ -1,33 +1,33 @@
 ---
-title: TIFF To PDF Performance Improvement
-linktitle: TIFF To PDF Performance Improvement
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to improve TIFF to PDF conversion performance with Aspose.PDF for .NET.
+title: TIFF'den PDF'ye Performans İyileştirmesi
+linktitle: TIFF'den PDF'ye Performans İyileştirmesi
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile TIFF'den PDF'ye dönüştürme performansını artırmak için adım adım kılavuz.
 type: docs
 weight: 310
 url: /tr/net/document-conversion/tiff-to-pdf-performance-improvement/
 ---
-In this tutorial, we will walk you through step-by-step how to improve the performance of converting TIFF files to PDF using the Aspose.PDF library for .NET. We'll detail the provided C# source code and show you how to implement it in your own projects. By the end of this tutorial, you will be able to perform faster and more efficient conversions of TIFF files to PDF.
+Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak TIFF dosyalarını PDF'ye dönüştürme performansını nasıl artırabileceğinizi adım adım anlatacağız. Sağlanan C# kaynak kodunu ayrıntılarıyla anlatacağız ve bunu kendi projelerinizde nasıl uygulayacağınızı göstereceğiz. Bu eğitimin sonunda, TIFF dosyalarının PDF'ye dönüştürülmesini daha hızlı ve daha etkili bir şekilde gerçekleştirebileceksiniz.
 
-## Step 1: Set Documents Directory
+## 1. Adım: Belge Dizinini Ayarlayın
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
-Replace `"YOUR DOCUMENTS DIRECTORY"` with the path where you saved your files.
+ Yer değiştirmek`"YOUR DOCUMENTS DIRECTORY"` dosyalarınızı kaydettiğiniz yolla.
 
-## Step 2: Get List of TIFF Files
+## Adım 2: TIFF Dosyalarının Listesini Alın
 ```csharp
 string[] files = System.IO.Directory.GetFiles(dataDir, "*.tif");
 ```
-Get a list of TIFF files present in the specified directory.
+Belirtilen dizinde bulunan TIFF dosyalarının listesini alın.
 
-## Step 3: Instantiate a Document object
+## 3. Adım: Bir Belge nesnesinin örneğini oluşturun
 ```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 ```
-Create an instance of the Document object.
+Document nesnesinin bir örneğini oluşturun.
 
-## Step 4: Browse Files and Add to PDF Document
+## 4. Adım: Dosyalara Göz Atın ve PDF Belgesine Ekleyin
 ```csharp
 foreach (string myFile in files)
 {
@@ -56,41 +56,41 @@ foreach (string myFile in files)
      image1.ImageScale = 0.95F;
 }
 ```
-Go through each TIFF file, load it as a `Bitmap` object, then add it to the PDF document. Parameters such as margins, resolution and scale of the image are also configured.
+ Her TIFF dosyasını gözden geçirin, onu bir`Bitmap` nesneyi seçin ve ardından onu PDF belgesine ekleyin. Görüntünün kenar boşlukları, çözünürlüğü ve ölçeği gibi parametreler de yapılandırılır.
 
-## Step 5: Save the Resulting PDF File
+## Adım 5: Ortaya Çıkan PDF Dosyasını Kaydedin
 ```csharp
 doc.Save(dataDir + "PerformaceImprovement_out.pdf");
 ```
-Save the resulting PDF document to the specified directory.
+Ortaya çıkan PDF belgesini belirtilen dizine kaydedin.
 
-### Example source code for TIFF to PDF Performance Improvement using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak TIFF'den PDF'ye Performans İyileştirmesi için örnek kaynak kodu
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Get a list of tiff image files
+// tiff resim dosyalarının bir listesini alın
 string[] files = System.IO.Directory.GetFiles(dataDir, "*.tif");
 
-// Instantiate a Document object
+// Bir Belge nesnesinin örneğini oluşturma
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
-// Navigate through the files and them in the pdf file
+// PDF dosyasındaki dosyalar ve dosyalar arasında gezinin
 foreach (string myFile in files)
 {
 
-	// Load all tiff files in byte array
+	// Tüm tiff dosyalarını bayt dizisine yükle
 	FileStream fs = new FileStream(myFile, FileMode.Open, FileAccess.Read);
 	byte[] tmpBytes = new byte[fs.Length];
 	fs.Read(tmpBytes, 0, Convert.ToInt32(fs.Length));
 
 	MemoryStream mystream = new MemoryStream(tmpBytes);
 	Bitmap b = new Bitmap(mystream);
-	// Create a new Page in the Pdf document
+	// Pdf belgesinde yeni bir Sayfa oluşturun
 	Aspose.Pdf.Page currpage = doc.Pages.Add();
 
-	// Set margins so image will fit, etc.
+	// Kenar boşluklarını görüntünün sığacağı vb. şekilde ayarlayın.
 	currpage.PageInfo.Margin.Top = 5;
 	currpage.PageInfo.Margin.Bottom = 5;
 	currpage.PageInfo.Margin.Left = 5;
@@ -99,45 +99,45 @@ foreach (string myFile in files)
 	currpage.PageInfo.Width = (b.Width / b.HorizontalResolution) * 72;
 	currpage.PageInfo.Height = (b.Height / b.VerticalResolution) * 72;
 
-	// Create an image object
+	// Bir görüntü nesnesi oluşturun
 	Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 
-	// Add the image into paragraphs collection of the page
+	// Resmi sayfanın paragraf koleksiyonuna ekleyin
 	currpage.Paragraphs.Add(image1);
 
-	// Set IsBlackWhite property to true for performance improvement
+	// Performans iyileştirmesi için IsBlackWhite özelliğini true olarak ayarlayın
 	image1.IsBlackWhite = true;
-	// Set the ImageStream to a MemoryStream object
+	// ImageStream'i bir MemoryStream nesnesine ayarlayın
 	image1.ImageStream = mystream;
-	// Set desired image scale
+	// İstenilen görüntü ölçeğini ayarlayın
 	image1.ImageScale = 0.95F;
 }
 
-// Save the Pdf
+// PDF'yi kaydet
 doc.Save(dataDir + "PerformaceImprovement_out.pdf");
 ```
 
-## Conclusion
-In this tutorial, we learned how to improve the performance of converting TIFF files to PDF using the Aspose.PDF library for .NET. By following the steps provided, you will be able to achieve faster and more efficient conversions of TIFF files to PDF. Obtain precise and professional results while optimizing the performance of your application
+## Çözüm
+Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak TIFF dosyalarını PDF'ye dönüştürme performansını nasıl geliştirebileceğimizi öğrendik. Verilen adımları takip ederek TIFF dosyalarının PDF'ye daha hızlı ve daha verimli dönüştürülmesini gerçekleştirebileceksiniz. Uygulamanızın performansını optimize ederken hassas ve profesyonel sonuçlar elde edin
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET nedir?
 
-A: Aspose.PDF for .NET is a powerful library that enables developers to work with PDF documents in C# applications. It offers various functionalities, including converting TIFF files to PDF.
+C: Aspose.PDF for .NET, geliştiricilerin C# uygulamalarında PDF belgeleriyle çalışmasına olanak tanıyan güçlü bir kitaplıktır. TIFF dosyalarını PDF'ye dönüştürmek de dahil olmak üzere çeşitli işlevler sunar.
 
-#### Q: Why would I want to improve the performance of TIFF to PDF conversion?
+#### S: TIFF'den PDF'ye dönüştürme performansını neden artırmak isteyeyim?
 
-A: Improving the performance of TIFF to PDF conversion can significantly enhance the efficiency of your application, especially when dealing with a large number of TIFF files. Faster conversions result in improved user experience and reduced processing time.
+C: TIFF'den PDF'ye dönüştürme performansını artırmak, özellikle çok sayıda TIFF dosyasıyla çalışırken uygulamanızın verimliliğini önemli ölçüde artırabilir. Daha hızlı dönüşümler, daha iyi kullanıcı deneyimi ve daha kısa işlem süresi sağlar.
 
-#### Q: How can I set the directory for the TIFF files?
+#### S: TIFF dosyalarının dizinini nasıl ayarlayabilirim?
 
-A: You can set the directory for the TIFF files by replacing the `"YOUR DOCUMENTS DIRECTORY"` placeholder in the code with the actual path where your TIFF files are located.
+ C: TIFF dosyalarının dizinini değiştirerek ayarlayabilirsiniz.`"YOUR DOCUMENTS DIRECTORY"` TIFF dosyalarınızın bulunduğu gerçek yolu içeren koddaki yer tutucu.
 
-#### Q: What optimizations are applied in the code snippet to improve performance?
+#### S: Performansı artırmak için kod pasajında hangi optimizasyonlar uygulandı?
 
-A: The code snippet uses various techniques to enhance the conversion performance, such as setting margins, configuring image resolution and scale, and setting the `IsBlackWhite` property to true. These optimizations help streamline the conversion process.
+ C: Kod pasajı, dönüştürme performansını artırmak için kenar boşluklarını ayarlama, görüntü çözünürlüğünü ve ölçeğini yapılandırma ve görüntü boyutunu ayarlama gibi çeşitli teknikler kullanır.`IsBlackWhite`özellik doğru. Bu optimizasyonlar dönüşüm sürecini kolaylaştırmaya yardımcı olur.
 
-#### Q: Can I customize the image properties in the resulting PDF?
+#### S: Ortaya çıkan PDF'deki görüntü özelliklerini özelleştirebilir miyim?
 
-A: Yes, you can customize the image properties in the resulting PDF, such as scale, resolution, and margins, to achieve the desired layout and appearance.
+C: Evet, istenen düzeni ve görünümü elde etmek için ortaya çıkan PDF'deki ölçek, çözünürlük ve kenar boşlukları gibi görüntü özelliklerini özelleştirebilirsiniz.

@@ -1,91 +1,91 @@
 ---
-title: Add Line Object In PDF File
-linktitle: Add Line Object In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add a custom line object in a PDF file using Aspose.PDF for .NET.
+title: Ajouter un objet ligne dans un fichier PDF
+linktitle: Ajouter un objet ligne dans un fichier PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment ajouter un objet ligne personnalisé dans un fichier PDF à l'aide d'Aspose.PDF pour .NET.
 type: docs
 weight: 30
 url: /fr/net/programming-with-graphs/add-line-object/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to add a line object using Aspose.PDF for .NET.
+Dans ce didacticiel, nous vous guiderons pas à pas à travers le code source C# suivant pour ajouter un objet ligne à l'aide d'Aspose.PDF pour .NET.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Assurez-vous d'avoir installé la bibliothèque Aspose.PDF et configuré votre environnement de développement avant de commencer. Posséder également des connaissances de base en programmation C#.
 
-## Step 1: Document Directory Setup
+## Étape 1 : configuration du répertoire de documents
 
-In the provided source code, you need to specify the directory where you want to save the resulting PDF file. Change the "dataDir" variable to the desired directory.
+Dans le code source fourni, vous devez spécifier le répertoire dans lequel vous souhaitez enregistrer le fichier PDF résultant. Remplacez la variable "dataDir" par le répertoire souhaité.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Creating a Document Instance and Adding a Page
+## Étape 2 : création d'une instance de document et ajout d'une page
 
-We create an instance of the Document class and add a page to this document.
+Nous créons une instance de la classe Document et ajoutons une page à ce document.
 
 ```csharp
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Step 3: Creating a Graph Object and adding it to the page
+## Étape 3 : Créer un objet graphique et l'ajouter à la page
 
-We create a Graph object with specified dimensions and add it to the page's paragraph collection.
+Nous créons un objet Graph avec des dimensions spécifiées et l'ajoutons à la collection de paragraphes de la page.
 
 ```csharp
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(100, 400);
 page.Paragraphs.Add(graph);
 ```
 
-## Step 4: Create Line Object and Add to Chart
+## Étape 4 : Créer un objet linéaire et l'ajouter au graphique
 
-We create a Line object with the specified coordinates and add it to the chart's shape collection.
+Nous créons un objet Line avec les coordonnées spécifiées et l'ajoutons à la collection de formes du graphique.
 
 ```csharp
 Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { 100, 100, 200, 100 });
 graph.Shapes.Add(line);
 ```
 
-## Step 5: Line Setup
+## Étape 5 : Configuration de la ligne
 
-We can specify properties for the line, such as dash type and dash phase.
+Nous pouvons spécifier des propriétés pour la ligne, telles que le type de tiret et la phase du tiret.
 
 ```csharp
 line.GraphInfo.DashArray = new int[] { 0, 1, 0 };
 line.GraphInfo.DashPhase = 1;
 ```
 
-## Step 6: Saving the PDF File
+## Étape 6 : Enregistrement du fichier PDF
 
-Finally, we save the resulting PDF file with the name "AddLineObject_out.pdf" in the specified directory.
+Enfin, nous enregistrons le fichier PDF résultant sous le nom "AddLineObject_out.pdf" dans le répertoire spécifié.
 
 ```csharp
 doc.Save(dataDir + "AddLineObject_out.pdf");
 ```
 
-### Sample source code for Add Line Object using Aspose.PDF for .NET 
+### Exemple de code source pour Ajouter un objet de ligne à l'aide d'Aspose.PDF pour .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create Document instance
+// Créer une instance de document
 Document doc = new Document();
-// Add page to pages collection of PDF file
+// Ajouter une page à la collection de pages du fichier PDF
 Page page = doc.Pages.Add();
-// Create Graph instance
+// Créer une instance de graphique
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(100, 400);
-// Add graph object to paragraphs collection of page instance
+// Ajouter un objet graphique à la collection de paragraphes de l'instance de page
 page.Paragraphs.Add(graph);
-// Create Rectangle instance
+// Créer une instance de rectangle
 Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { 100, 100, 200, 100 });
-// Specify fill color for Graph object
+// Spécifier la couleur de remplissage pour l'objet graphique
 line.GraphInfo.DashArray = new int[] { 0, 1, 0 };
 line.GraphInfo.DashPhase = 1;
-// Add rectangle object to shapes collection of Graph object
+// Ajouter un objet rectangle à la collection de formes de l'objet Graph
 graph.Shapes.Add(line);
 dataDir = dataDir + "AddLineObject_out.pdf";
-// Save PDF file
+// Enregistrer le fichier PDF
 doc.Save(dataDir);
 Console.WriteLine("\nLine object added successfully to pdf.\nFile saved at " + dataDir);            
 
@@ -93,42 +93,42 @@ Console.WriteLine("\nLine object added successfully to pdf.\nFile saved at " + d
 
 ## Conclusion
 
-In this tutorial, we have explained step by step how to add a line object using Aspose.PDF for .NET. You can now use this knowledge to create PDF documents with custom lines in your applications.
+Dans ce didacticiel, nous avons expliqué étape par étape comment ajouter un objet ligne à l'aide d'Aspose.PDF pour .NET. Vous pouvez désormais utiliser ces connaissances pour créer des documents PDF avec des lignes personnalisées dans vos applications.
 
-### FAQ's for add line object in PDF file
+### FAQ pour ajouter un objet ligne dans un fichier PDF
 
-#### Q: What is the purpose of this tutorial?
+#### Q : Quel est le but de ce tutoriel ?
 
-A: This tutorial aims to guide you through the process of adding a line object using Aspose.PDF for .NET to enhance your PDF documents.
+R : Ce didacticiel vise à vous guider tout au long du processus d'ajout d'un objet ligne à l'aide d'Aspose.PDF for .NET afin d'améliorer vos documents PDF.
 
-#### Q: What prerequisites are required before starting?
+#### Q : Quels sont les prérequis requis avant de commencer ?
 
-A: Before you begin, make sure you have installed the Aspose.PDF library and set up your development environment. Additionally, having a basic understanding of C# programming is recommended.
+R : Avant de commencer, assurez-vous d'avoir installé la bibliothèque Aspose.PDF et configuré votre environnement de développement. De plus, il est recommandé d’avoir une compréhension de base de la programmation C#.
 
-#### Q: How do I specify the directory for saving the PDF file?
+#### Q : Comment puis-je spécifier le répertoire d'enregistrement du fichier PDF ?
 
-A: In the provided source code, you can modify the "dataDir" variable to indicate the directory where you want to save the resulting PDF file.
+R : Dans le code source fourni, vous pouvez modifier la variable « dataDir » pour indiquer le répertoire dans lequel vous souhaitez enregistrer le fichier PDF résultant.
 
-#### Q: What is the purpose of the Graph object?
+#### Q : Quel est le but de l’objet Graph ?
 
-A: The Graph object serves as a container for drawing elements. It is created with specified dimensions and added to the page's paragraph collection.
+R : L'objet Graph sert de conteneur pour les éléments de dessin. Il est créé avec des dimensions spécifiées et ajouté à la collection de paragraphes de la page.
 
-#### Q: How can I add a line object to the PDF document?
+#### Q : Comment puis-je ajouter un objet ligne au document PDF ?
 
-A: To add a line object, create an instance of the Line class with specified coordinates and add it to the graph's shape collection.
+R : Pour ajouter un objet ligne, créez une instance de la classe Line avec les coordonnées spécifiées et ajoutez-la à la collection de formes du graphique.
 
-#### Q: Can I customize the appearance of the line?
+#### Q : Puis-je personnaliser l’apparence de la ligne ?
 
-A: Yes, you can customize the appearance of the line by setting properties such as dash type and dash phase using the GraphInfo property of the Line object.
+: Oui, vous pouvez personnaliser l'apparence de la ligne en définissant des propriétés telles que le type de tiret et la phase du tiret à l'aide de la propriété GraphInfo de l'objet Line.
 
-#### Q: What is the purpose of specifying the dash array and dash phase?
+#### Q : A quoi sert de spécifier le tableau de bord et la phase du tableau de bord ?
 
-A: The dash array and dash phase properties allow you to create dashed or dotted lines with specific patterns.
+R : Les propriétés de tableau de tirets et de phase de tiret vous permettent de créer des lignes pointillées ou pointillées avec des motifs spécifiques.
 
-#### Q: How can I save the PDF file after adding the line object?
+#### Q : Comment puis-je enregistrer le fichier PDF après avoir ajouté l'objet ligne ?
 
-A: After adding the line object, you can save the resulting PDF file using the `doc.Save(dataDir + "AddLineObject_out.pdf");` line in the provided source code.
+ R : Après avoir ajouté l'objet ligne, vous pouvez enregistrer le fichier PDF résultant à l'aide du`doc.Save(dataDir + "AddLineObject_out.pdf");` ligne dans le code source fourni.
 
-#### Q: Is there a sample source code available?
+#### Q : Existe-t-il un exemple de code source disponible ?
 
-A: Yes, the tutorial includes a sample source code that you can refer to for implementing the steps described.
+R : Oui, le didacticiel comprend un exemple de code source auquel vous pouvez vous référer pour mettre en œuvre les étapes décrites.

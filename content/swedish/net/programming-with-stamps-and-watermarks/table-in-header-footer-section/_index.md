@@ -1,86 +1,86 @@
 ---
-title: Table In Header Footer Section
-linktitle: Table In Header Footer Section
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add a table in the header/footer section of a PDF document with Aspose.PDF for .NET.
+title: Tabell i sidhuvud
+linktitle: Tabell i sidhuvud
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du lägger till en tabell i sidhuvudet/sidfoten i ett PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 170
 url: /sv/net/programming-with-stamps-and-watermarks/table-in-header-footer-section/
 ---
-In this tutorial, we will guide you step by step on how to add a table in the header or footer section of a PDF document using Aspose.PDF for .NET. The provided C# source code shows you how to create an empty PDF document, add a page, configure the header section, create a table, add rows and cells to the table, and finally save the PDF document.
+I den här handledningen guidar vi dig steg för steg om hur du lägger till en tabell i sidhuvudet eller sidfoten i ett PDF-dokument med Aspose.PDF för .NET. Den medföljande C#-källkoden visar hur du skapar ett tomt PDF-dokument, lägger till en sida, konfigurerar rubriksektionen, skapar en tabell, lägger till rader och celler i tabellen och slutligen sparar PDF-dokumentet.
 
-## Step 1: Setting up the environment
+## Steg 1: Sätta upp miljön
 
-Before you begin, make sure you have the following:
+Innan du börjar, se till att du har följande:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- En installerad .NET-utvecklingsmiljö.
+- Aspose.PDF-biblioteket för .NET laddas ner och refereras till i ditt projekt.
 
-## Step 2: Creating the PDF Document and Page
+## Steg 2: Skapa PDF-dokumentet och -sidan
 
-The first step is to create an instance of the `Document` class and add a page to the document. Here's how:
+ Det första steget är att skapa en instans av`Document` klass och lägg till en sida i dokumentet. Här är hur:
 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Instantiate a Document object
+// Instantiera ett dokumentobjekt
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document();
 
-// Create a page in the PDF document
+// Skapa en sida i PDF-dokumentet
 Aspose.Pdf.Page page = pdfDocument.Pages.Add();
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where you want to save the PDF document.
+Var noga med att ersätta "DIN DOKUMENTKATOLOG" med den faktiska sökvägen till katalogen där du vill spara PDF-dokumentet.
 
-## Step 3: Configuring the header section
+## Steg 3: Konfigurera rubriksektionen
 
-Now we will configure the header section of the PDF document by creating an instance of the `HeaderFooter` class. Here's how:
+ Nu kommer vi att konfigurera rubriken i PDF-dokumentet genom att skapa en instans av`HeaderFooter` klass. Här är hur:
 
 ```csharp
-// Create a header section for the PDF file
+// Skapa en rubriksektion för PDF-filen
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-// Define the header section for the page
+// Definiera sidhuvudsektionen för sidan
 page. Header = header;
 
-// Set the top margin of the header section
+// Ställ in den övre marginalen på rubriksektionen
 header. Margin. Top = 20;
 ```
 
-## Step 4: Creating the table
+## Steg 4: Skapa tabellen
 
-Now we are going to create a table using the `Table` class and add it to the heading section's paragraph collection. Here's how:
+ Nu ska vi skapa en tabell med hjälp av`Table` klass och lägg till den i rubriksektionens styckesamling. Här är hur:
 
 ```csharp
-// Instantiate a Table object
+// Instantiera ett tabellobjekt
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
-// Add the table to the paragraphs collection of the header section
+// Lägg till tabellen i styckesamlingen i rubriksektionen
 header.Paragraphs.Add(tab1);
 
-// Define the widths of the columns of the table
+// Definiera bredden på tabellens kolumner
 tab1.ColumnWidths = "60,300";
 ```
 
-The code above creates a table with two columns of specified widths.
+Koden ovan skapar en tabell med två kolumner med specificerade bredder.
 
-## Step 5: Add rows and cells to the table
+## Steg 5: Lägg till rader och celler i tabellen
 
-Now we will add rows and cells to the table using the `Row` class and the `Cell` class. Here's how:
+ Nu kommer vi att lägga till rader och celler i tabellen med hjälp av`Row` klass och`Cell` klass. Här är hur:
 
 ```csharp
-// Create a row in the table and add cells
+// Skapa en rad i tabellen och lägg till celler
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("Table in header section");
 row1.BackgroundColor = Color.Gray;
 
-// Merge the first cell of the first row
+// Slå samman den första cellen i den första raden
 tab1.Rows[0].Cells[0].ColSpan = 2;
 tab1.Rows[0].Cells[0].DefaultCellTextState.ForegroundColor = Color.Cyan;
 tab1.Rows[0].Cells[0].DefaultCellTextState.Font = FontRepository.FindFont("Helvetica");
 
-// Create another row in the table and add a cell with an image
+// Skapa ytterligare en rad i tabellen och lägg till en cell med en bild
 Aspose.Pdf.Row row2 = tab1.Rows.Add();
 row2.BackgroundColor = Color.White;
 Aspose.Pdf.Cell cell2 = row2.Cells.Add();
@@ -94,128 +94,128 @@ row2.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
 row2.Cells[1].Alignment = Aspose.Pdf.HorizontalAlignment.Center;
 ```
 
-## Step 6: Saving the PDF Document
+## Steg 6: Spara PDF-dokumentet
 
-Once the table has been added to the header section, we can save the PDF document. Here's how:
+När tabellen har lagts till i rubriken kan vi spara PDF-dokumentet. Här är hur:
 
 ```csharp
-// Save the PDF file
+// Spara PDF-filen
 pdfDocument.Save(dataDir + "TableInHeaderFooterSection_out.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where you want to save the PDF document.
+Var noga med att ersätta "DIN DOKUMENTKATOLOG" med den faktiska sökvägen till katalogen där du vill spara PDF-dokumentet.
 
-### Sample source code for Table In Header Footer Section using Aspose.PDF for .NET 
+### Exempel på källkod för tabell i sidhuvudssektionen med Aspose.PDF för .NET 
 ```csharp
 
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate Document instance by calling empty constructor
+// Instantiera Document-instansen genom att anropa den tomma konstruktorn
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document();
 
-// Create a page in the pdf document
+// Skapa en sida i pdf-dokumentet
 Aspose.Pdf.Page page = pdfDocument.Pages.Add();
 
-// Create a Header Section of the PDF file
+// Skapa en rubriksektion av PDF-filen
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-// Set the Odd Header for the PDF file
+//Ställ in udda rubrik för PDF-filen
 page.Header = header;
 
-// Set the top margin for the header section
+// Ställ in den övre marginalen för rubriksektionen
 header.Margin.Top = 20;
 
-// Instantiate a table object
+// Instantiera ett tabellobjekt
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
-// Add the table in paragraphs collection of the desired section
+// Lägg till tabellen i styckesamlingen av önskat avsnitt
 header.Paragraphs.Add(tab1);
 
-// Set default cell border using BorderInfo object
+// Ställ in standardcellkant med hjälp av BorderInfo-objektet
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 
-// Set with column widths of the table
+// Ställ in med tabellens kolumnbredder
 tab1.ColumnWidths = "60 300";
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
 img.File = dataDir + "aspose-logo.jpg";
 
-// Create rows in the table and then cells in the rows
+// Skapa rader i tabellen och sedan celler i raderna
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("Table in Header Section");
 row1.BackgroundColor = Color.Gray;
 
-// Set the row span value for first row as 2
+// Ställ in radintervallvärdet för första raden som 2
 tab1.Rows[0].Cells[0].ColSpan = 2;
 tab1.Rows[0].Cells[0].DefaultCellTextState.ForegroundColor = Color.Cyan;
 tab1.Rows[0].Cells[0].DefaultCellTextState.Font = FontRepository.FindFont("Helvetica");
 
-// Create rows in the table and then cells in the rows
+// Skapa rader i tabellen och sedan celler i raderna
 Aspose.Pdf.Row row2 = tab1.Rows.Add();
 
-// Set the background color for Row2
+// Ställ in bakgrundsfärgen för Row2
 row2.BackgroundColor = Color.White;
 
-// Add the cell which holds the image
+// Lägg till cellen som innehåller bilden
 Aspose.Pdf.Cell cell2 = row2.Cells.Add();
 
-// Set the image width to 60
+// Ställ in bildens bredd till 60
 img.FixWidth = 60;
 
-// Add the image to the table cell
+// Lägg till bilden i tabellcellen
 cell2.Paragraphs.Add(img);
 row2.Cells.Add("Logo is looking fine !");
 row2.Cells[1].DefaultCellTextState.Font = FontRepository.FindFont("Helvetica");
 
-// Set the vertical allignment of the text as center alligned
+// Ställ in den vertikala justeringen av texten som mittjusterad
 row2.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
 row2.Cells[1].Alignment = Aspose.Pdf.HorizontalAlignment.Center;
 
-// Save the Pdf file
+// Spara pdf-filen
 pdfDocument.Save(dataDir + "TableInHeaderFooterSection_out.pdf");
 
 ```
 
-## Conclusion
+## Slutsats
 
-Congratulation ! You have learned how to add a table in the header or footer section of a PDF document using Aspose.PDF for .NET. You can now customize your headers and footers by adding tables to display additional information in your PDF documents.
+Grattis! Du har lärt dig hur du lägger till en tabell i sidhuvudet eller sidfoten i ett PDF-dokument med Aspose.PDF för .NET. Du kan nu anpassa dina sidhuvuden och sidfötter genom att lägga till tabeller för att visa ytterligare information i dina PDF-dokument.
 
-### FAQ's for table in header footer section
+### Vanliga frågor för tabeller i sidhuvudet
 
-#### Q: What is the purpose of adding a table in the header or footer section of a PDF document?
+#### F: Vad är syftet med att lägga till en tabell i sidhuvudet eller sidfoten i ett PDF-dokument?
 
-A: Adding a table in the header or footer section of a PDF document allows you to display structured and organized information such as titles, subtitles, logos, or any other content that you want to appear consistently on each page of the document.
+S: Genom att lägga till en tabell i sidhuvudet eller sidfoten i ett PDF-dokument kan du visa strukturerad och organiserad information som titlar, undertexter, logotyper eller annat innehåll som du vill ska visas konsekvent på varje sida i dokumentet.
 
-#### Q: How does the provided C# source code achieve the addition of a table in the header or footer section of a PDF document?
+#### F: Hur kan den medföljande C#-källkoden lägga till en tabell i sidhuvudet eller sidfoten i ett PDF-dokument?
 
-A: The code demonstrates the process of creating an empty PDF document, adding a page, configuring the header section, creating a table with rows and cells, and finally saving the PDF document. The result is a table displayed in the header section of the PDF document.
+S: Koden visar processen att skapa ett tomt PDF-dokument, lägga till en sida, konfigurera rubriksektionen, skapa en tabell med rader och celler och slutligen spara PDF-dokumentet. Resultatet är en tabell som visas i rubriken i PDF-dokumentet.
 
-#### Q: Can I customize the appearance of the table cells, such as borders, background color, and text style?
+#### F: Kan jag anpassa utseendet på tabellcellerna, som kanter, bakgrundsfärg och textstil?
 
-A: Yes, you can customize the appearance of the table cells by setting properties like cell borders, background color, text style, font, font size, and more.
+S: Ja, du kan anpassa utseendet på tabellcellerna genom att ställa in egenskaper som cellkanter, bakgrundsfärg, textstil, teckensnitt, teckenstorlek och mer.
 
-#### Q: How is the table added to the header section of the PDF document?
+#### F: Hur läggs tabellen till i rubriken i PDF-dokumentet?
 
-A: The code adds the table to the paragraphs collection of the header section, which ensures that the table is displayed in the header of each page.
+S: Koden lägger till tabellen till styckesamlingen i rubriksektionen, vilket säkerställer att tabellen visas i rubriken på varje sida.
 
-#### Q: Can I add more rows and cells to the table as needed?
+#### F: Kan jag lägga till fler rader och celler i tabellen efter behov?
 
-A: Absolutely, you can add more rows and cells to the table by using the `Rows.Add()` and `Cells.Add()` methods. This allows you to structure the table content as desired.
+ S: Absolut, du kan lägga till fler rader och celler i tabellen genom att använda`Rows.Add()` och`Cells.Add()` metoder. Detta gör att du kan strukturera tabellinnehållet efter önskemål.
 
-#### Q: Is it possible to adjust the width of the table columns?
-A: Yes, you can adjust the width of the table columns using the `ColumnWidths` property. This enables you to control the layout of the table.
+#### F: Är det möjligt att justera bredden på tabellkolumnerna?
+ S: Ja, du kan justera bredden på tabellkolumnerna med hjälp av`ColumnWidths` fast egendom. Detta gör att du kan styra tabellens layout.
 
-#### Q: How can I span cells across multiple columns or rows within the table?
-A: To span cells across multiple columns, you can use the `ColSpan` property of the corresponding cell. Similarly, you can use the `RowSpan` property to span cells across multiple rows.
+#### F: Hur kan jag spänna över celler över flera kolumner eller rader i tabellen?
+ S: För att spänna över celler över flera kolumner kan du använda`ColSpan` egenskap hos motsvarande cell. På samma sätt kan du använda`RowSpan` egenskap som spänner över celler över flera rader.
 
-#### Q: What happens if I want to add a table to both the header and footer sections of the PDF document?
+#### F: Vad händer om jag vill lägga till en tabell i både sidhuvudet och sidfoten i PDF-dokumentet?
 
-A: You can follow a similar approach for both the header and footer sections. Simply create a `HeaderFooter` instance for the footer, configure it, and add the table to its paragraphs collection.
+S: Du kan följa ett liknande tillvägagångssätt för både sidhuvuds- och sidfotssektionerna. Skapa helt enkelt en`HeaderFooter` instans för sidfoten, konfigurera den och lägg till tabellen i dess styckesamling.
 
-#### Q: Can I use images within the table cells, and how is that achieved?
+#### F: Kan jag använda bilder i tabellcellerna, och hur uppnås det?
 
-A: Yes, you can add images within table cells. The code example demonstrates adding an image to a cell by creating an `Image` object, setting its file path and dimensions, and then adding it to a cell's paragraphs.
+ S: Ja, du kan lägga till bilder i tabellceller. Kodexemplet visar hur man lägger till en bild i en cell genom att skapa en`Image` objekt, ange dess sökväg och dimensioner och sedan lägga till det i en cells stycken.
 
-#### Q: How do I ensure the table appears consistently across all pages in the PDF document?
+#### F: Hur säkerställer jag att tabellen visas konsekvent på alla sidor i PDF-dokumentet?
 
-A: When you add the table to the header or footer section using the `HeaderFooter` instance, Aspose.PDF ensures that the table appears consistently on each page, providing a uniform layout.
+ S: När du lägger till tabellen i sidhuvudet eller sidfoten med hjälp av`HeaderFooter` Aspose.PDF säkerställer till exempel att tabellen visas konsekvent på varje sida, vilket ger en enhetlig layout.

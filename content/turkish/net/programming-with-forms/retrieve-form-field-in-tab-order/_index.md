@@ -1,47 +1,47 @@
 ---
-title: Retrieve Form Field In Tab Order
-linktitle: Retrieve Form Field In Tab Order
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to retrieve form fields in tab order using Aspose.PDF for .NET.
+title: Form Alanını Sekme Sırasında Al
+linktitle: Form Alanını Sekme Sırasında Al
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET'i kullanarak form alanlarını sekme sırasıyla nasıl alacağınızı öğrenin.
 type: docs
 weight: 240
 url: /tr/net/programming-with-forms/retrieve-form-field-in-tab-order/
 ---
-When working with PDF documents in C# using Aspose.PDF for .NET, you may come across a scenario where you need to retrieve form fields in a specific tab order. This can be useful when you want to perform operations on form fields based on their tab sequence. In this tutorial, we will guide you step by step on how to retrieve form fields in tab order using Aspose.PDF for .NET.
+Aspose.PDF for .NET kullanarak C#'ta PDF belgeleriyle çalışırken, form alanlarını belirli bir sekme sırasıyla almanız gereken bir senaryoyla karşılaşabilirsiniz. Bu, form alanlarında sekme sırasına göre işlemler gerçekleştirmek istediğinizde yararlı olabilir. Bu eğitimde, Aspose.PDF for .NET'i kullanarak form alanlarının sekme sırasına göre nasıl alınacağı konusunda size adım adım rehberlik edeceğiz.
 
-## Requirements
+## Gereksinimler
 
-Before we begin, make sure you have the following prerequisites:
+Başlamadan önce aşağıdaki önkoşullara sahip olduğunuzdan emin olun:
 
-- Visual Studio installed on your system
-- Aspose.PDF for .NET library installed
+- Sisteminizde Visual Studio yüklü
+- Aspose.PDF for .NET kütüphanesi kuruldu
 
-Now, let's dive into the steps to retrieve form fields in tab order.
+Şimdi form alanlarını sekme sırasına göre alma adımlarına geçelim.
 
-## Step 1: Setting the Document Directory
+## Adım 1: Belge Dizinini Ayarlama
 
-To start with, you need to set the document directory where your PDF document is located. You can do this by specifying the path to the directory in the `dataDir` variable.
+ Başlangıç olarak PDF belgenizin bulunduğu belge dizinini ayarlamanız gerekir. Bunu, dizinin yolunu belirterek yapabilirsiniz.`dataDir` değişken.
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` belge dizininizin gerçek yolu ile.
 
-## Step 2: Loading the PDF Document
+## Adım 2: PDF Belgesini Yükleme
 
-In this step, we will load the PDF document using Aspose.PDF for .NET. The `Document` class provides the ability to load and manipulate PDF documents.
+ Bu adımda Aspose.PDF for .NET kullanarak PDF belgesini yükleyeceğiz.`Document` class, PDF belgelerini yükleme ve değiştirme yeteneği sağlar.
 
 ```csharp
 Document doc = new Document(dataDir + "Test2.pdf");
 ```
 
-Here, `"Test2.pdf"` is the name of the PDF document you want to load. Make sure the document is present in the specified document directory.
+ Burada,`"Test2.pdf"`yüklemek istediğiniz PDF belgesinin adıdır. Belgenin belirtilen belge dizininde bulunduğundan emin olun.
 
-## Step 3: Retrieving Form Fields in Tab Order
+## 3. Adım: Form Alanlarını Sekme Sırasıyla Alma
 
-To retrieve form fields in tab order, we need to access the `FieldsInTabOrder` property of the `Page` class. This property returns a list of form fields sorted by their tab sequence.
+ Form alanlarını sekme sırasına göre almak için şuraya erişmemiz gerekir:`FieldsInTabOrder` mülkiyeti`Page` sınıf. Bu özellik, sekme sırasına göre sıralanmış form alanlarının bir listesini döndürür.
 
 ```csharp
 Page page = doc.Pages[1];
@@ -53,11 +53,11 @@ foreach (Field field in fields)
 }
 ```
 
-In the above code snippet, we retrieve the form fields from the second page (`doc.Pages[1]`) and iterate through each field to concatenate their partial names into the `s` variable. You can modify this code snippet based on your specific requirements.
+Yukarıdaki kod parçasında form alanlarını ikinci sayfadan alıyoruz (`doc.Pages[1]` ) ve kısmi adlarını birleştirmek için her alanı yineleyin.`s` değişken. Bu kod pasajını özel gereksinimlerinize göre değiştirebilirsiniz.
 
-## Step 4: Modifying the Tab Order
+## Adım 4: Sekme Sırasını Değiştirme
 
-If you want to modify the tab order of form fields, you can do so by accessing the `TabOrder` property of each field and assigning a new tab order value. Here's an example:
+ Form alanlarının sekme sırasını değiştirmek istiyorsanız bunu şu adrese erişerek yapabilirsiniz:`TabOrder` her alanın özelliği ve yeni bir sekme sırası değeri atanması. İşte bir örnek:
 
 ```csharp
 (doc.Form[3] as Field).TabOrder = 1;
@@ -65,21 +65,21 @@ If you want to modify the tab order of form fields, you can do so by accessing t
 (doc.Form[2] as Field).TabOrder = 3;
 ```
 
-In the above code snippet, we assign new tab order values to three form fields (`doc.Form[3]`, `doc.Form[1]`, and `doc.Form[2]`). Adjust the field indices and tab order values according to your specific requirements.
+Yukarıdaki kod parçacığında, üç form alanına (`doc.Form[3]`, `doc.Form[1]` , Ve`doc.Form[2]`). Alan endekslerini ve sekme sırası değerlerini özel gereksinimlerinize göre ayarlayın.
 
-## Step 5: Saving the Modified Document
+## Adım 5: Değiştirilen Belgeyi Kaydetme
 
-After modifying the tab order of form fields, you need to save the modified document. You can do this using the `Save` method of the `Document` class.
+ Form alanlarının sekme sırasını değiştirdikten sonra değiştirilen belgeyi kaydetmeniz gerekir. Bunu kullanarak yapabilirsiniz`Save` yöntemi`Document` sınıf.
 
 ```csharp
 doc.Save(dataDir + "39522_out.pdf");
 ```
 
-Here, `"39522_out.pdf"` is the name of the output file where the modified document will be saved. Specify the desired name and location for the output file.
+ Burada,`"39522_out.pdf"` değiştirilen belgenin kaydedileceği çıktı dosyasının adıdır. Çıktı dosyası için istediğiniz adı ve konumu belirtin.
 
-### Sample source code for Retrieve Form Field In Tab Order using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Sekme Sırasındaki Form Alanını Alma için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "Test2.pdf");
 Page page = doc.Pages[1];
@@ -106,29 +106,29 @@ foreach (Field field in doc1.Form)
 }
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we learned how to retrieve form fields in tab order using Aspose.PDF for .NET. We covered the steps involved in loading a PDF document, retrieving form fields in tab order, modifying the tab order, and saving the modified document. By following these steps, you can efficiently work with form fields and customize their tab sequence as per your requirements.
+Bu eğitimde Aspose.PDF for .NET kullanarak form alanlarının sekme sırasına göre nasıl alınacağını öğrendik. Bir PDF belgesi yükleme, form alanlarını sekme sırasına göre alma, sekme sırasını değiştirme ve değiştirilen belgeyi kaydetme ile ilgili adımları ele aldık. Bu adımları izleyerek form alanlarıyla verimli bir şekilde çalışabilir ve sekme sırasını ihtiyaçlarınıza göre özelleştirebilirsiniz.
 
 
-### FAQ's
+### SSS'ler
 
-#### Q: How can I use the retrieved form fields in my C# code for further processing?
+#### S: C# kodumda alınan form alanlarını daha ileri işlemler için nasıl kullanabilirim?
 
-A: You can use the retrieved form fields in your C# code by accessing their properties such as `Value`, `Name`, `Rect`, etc. These properties allow you to read and modify the form field data as needed.
+ C: Alınan form alanlarını C# kodunuzdaki gibi özelliklerine erişerek kullanabilirsiniz.`Value`, `Name`, `Rect`vb. Bu özellikler, form alanı verilerini gerektiği gibi okumanıza ve değiştirmenize olanak tanır.
 
-#### Q: Can I retrieve form fields from all pages of the PDF document in tab order?
+#### S: Form alanlarını PDF belgesinin tüm sayfalarından sekme sırasına göre alabilir miyim?
 
-A: Yes, you can retrieve form fields from all pages of the PDF document by iterating through each page and accessing the `FieldsInTabOrder` property as shown in the tutorial. This will give you form fields sorted by their tab sequence across all pages.
+ C: Evet, her sayfayı yineleyerek ve PDF belgesinin tüm sayfalarından form alanlarına erişerek form alanlarını alabilirsiniz.`FieldsInTabOrder` özelliği öğreticide gösterildiği gibi. Bu size tüm sayfalarda sekme sırasına göre sıralanmış form alanları verecektir.
 
-#### Q: Is it possible to retrieve only specific types of form fields, such as text fields or checkboxes, in tab order?
+#### S: Metin alanları veya onay kutuları gibi yalnızca belirli türdeki form alanlarını sekme sırasına göre almak mümkün müdür?
 
-A: Yes, you can filter form fields based on their types, such as text fields or checkboxes, after retrieving them in tab order. You can use conditional statements to check the type of each form field and process them accordingly.
+C: Evet, form alanlarını sekme sırasına göre aldıktan sonra metin alanları veya onay kutuları gibi türlerine göre filtreleyebilirsiniz. Her form alanının türünü kontrol etmek ve bunları buna göre işlemek için koşullu ifadeleri kullanabilirsiniz.
 
-#### Q: Can I retrieve form fields based on their names instead of tab order?
+#### S: Form alanlarını sekme sırası yerine adlarına göre alabilir miyim?
 
-A: Yes, you can retrieve form fields based on their names by using the `doc.Form` collection and specifying the field name as an index. For example, `doc.Form["fieldName"]` will retrieve the form field with the specified name.
+ C: Evet, form alanlarını isimlerine göre alabilirsiniz.`doc.Form` toplama ve alan adının indeks olarak belirtilmesi. Örneğin,`doc.Form["fieldName"]`belirtilen addaki form alanını alacaktır.
 
-#### Q: Does Aspose.PDF for .NET support working with encrypted PDF documents?
+#### S: Aspose.PDF for .NET şifreli PDF belgeleriyle çalışmayı destekliyor mu?
 
-A: Yes, Aspose.PDF for .NET provides support for working with encrypted PDF documents. You can load and manipulate encrypted PDF files using appropriate password parameters.
+C: Evet, Aspose.PDF for .NET şifreli PDF belgeleriyle çalışma desteği sağlar. Uygun şifre parametrelerini kullanarak şifrelenmiş PDF dosyalarını yükleyebilir ve değiştirebilirsiniz.

@@ -1,119 +1,119 @@
 ---
-title: Add Drawing In PDF File
-linktitle: Add Drawing In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add drawing in PDF file using Aspose.PDF for .NET. Follow this step-by-step guide to create attractive PDF documents with drawing features.
+title: إضافة الرسم في ملف PDF
+linktitle: إضافة الرسم في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إضافة رسم في ملف PDF باستخدام Aspose.PDF لـ .NET. اتبع هذا الدليل التفصيلي خطوة بخطوة لإنشاء مستندات PDF جذابة مع ميزات الرسم.
 type: docs
 weight: 10
 url: /ar/net/programming-with-graphs/add-drawing/
 ---
-Application development often requires adding features such as drawings and graphics to make documents more attractive and informative. In this article, we will guide you step by step to explain the C# source code to add drawing to programming with graphics using Aspose.PDF for .NET.
+غالبًا ما يتطلب تطوير التطبيقات إضافة ميزات مثل الرسومات والرسومات لجعل المستندات أكثر جاذبية وغنية بالمعلومات. في هذه المقالة، سنرشدك خطوة بخطوة لشرح الكود المصدري لـ C# لإضافة الرسم إلى البرمجة باستخدام الرسومات باستخدام Aspose.PDF for .NET.
 
-Before you start, make sure you have installed the Aspose.PDF library and set up your development environment. Also, make sure you have basic knowledge of C# programming.
+قبل البدء، تأكد من تثبيت مكتبة Aspose.PDF وإعداد بيئة التطوير الخاصة بك. تأكد أيضًا من أن لديك المعرفة الأساسية ببرمجة C#.
 
-## Step 1: Introduction to Aspose.PDF for .NET and its features
+## الخطوة 1: مقدمة إلى Aspose.PDF لـ .NET وميزاته
 
-Aspose.PDF is a powerful and versatile library for creating, manipulating and converting PDF files in .NET applications. It offers a wide range of features for working with PDF documents, including adding drawings, graphics, text, etc.
+Aspose.PDF هي مكتبة قوية ومتعددة الاستخدامات لإنشاء ملفات PDF ومعالجتها وتحويلها في تطبيقات .NET. فهو يوفر مجموعة واسعة من الميزات للعمل مع مستندات PDF، بما في ذلك إضافة الرسومات والرسومات والنصوص وما إلى ذلك.
 
-## Step 2: Understand the source code to add drawings using Aspose.PDF
+## الخطوة 2: فهم الكود المصدري لإضافة رسومات باستخدام Aspose.PDF
 
-The provided source code uses the Aspose.PDF library to create a simple drawing in a PDF document. We will now examine each step of the code in detail.
+يستخدم الكود المصدري المقدم مكتبة Aspose.PDF لإنشاء رسم بسيط في مستند PDF. سنقوم الآن بدراسة كل خطوة من خطوات الكود بالتفصيل.
 
-## Step 3: Configuring the documents directory and initializing the variables
+## الخطوة 3: تكوين دليل المستندات وتهيئة المتغيرات
 
-In the source code, you need to specify the directory where you want to save the resulting PDF file. You can modify the "dataDir" variable to indicate the desired directory.
+في الكود المصدري، تحتاج إلى تحديد الدليل الذي تريد حفظ ملف PDF الناتج فيه. يمكنك تعديل المتغير "dataDir" للإشارة إلى الدليل المطلوب.
 
-Additionally, the code initializes variables for the alpha, red, green, and blue color components.
+بالإضافة إلى ذلك، يقوم الكود بتهيئة المتغيرات لمكونات الألوان ألفا، والأحمر، والأخضر، والأزرق.
 
-## Step 4: Creating a Color Object with Alpha RGB
+## الخطوة 4: إنشاء كائن ملون باستخدام Alpha RGB
 
-The following line of code creates a Color object using the specified alpha, red, green, and blue values:
+يقوم السطر التالي من التعليمات البرمجية بإنشاء كائن اللون باستخدام قيم ألفا والأحمر والأخضر والأزرق المحددة:
 
 ```csharp
 Aspose.Pdf.Color alphaColor = Aspose.Pdf.Color.FromArgb(alpha, red, green, blue);
 ```
 
-This allows to define a color with an alpha channel, which means that the color can be partially transparent.
+يسمح هذا بتحديد لون بقناة ألفا، مما يعني أن اللون يمكن أن يكون شفافًا جزئيًا.
 
-## Step 5: Instantiating a Document Object
+## الخطوة 5: إنشاء مثيل لكائن المستند
 
-To start working with Aspose.PDF, we need to create an instance of the Document class. This represents our PDF document.
+لبدء العمل مع Aspose.PDF، نحتاج إلى إنشاء مثيل لفئة Document. وهذا يمثل مستند PDF الخاص بنا.
 
 ```csharp
 Document document = new Document();
 ```
 
-## Step 6: Adding a page to the PDF file
+## الخطوة 6: إضافة صفحة إلى ملف PDF
 
-We need to add a page to the PDF file where we want to display our drawing.
+نحتاج إلى إضافة صفحة إلى ملف PDF حيث نريد عرض الرسم الخاص بنا.
 
 ```csharp
 Page page = document.Pages.Add();
 ```
 
-## Step 7: Creating a Graph Object with Dimensions
+## الخطوة 7: إنشاء كائن رسم بياني بأبعاد
 
-In this step, we create a Graph object with specified dimensions. This object will serve as a container for our drawing.
+في هذه الخطوة، نقوم بإنشاء كائن رسم بياني بأبعاد محددة. سيكون هذا الكائن بمثابة حاوية لرسمنا.
 
 ```csharp
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(300, 400);
 ```
 
-## Step 8: Setting the border for the Drawing object
+## الخطوة 8: تعيين الحدود للكائن الرسومي
 
-We can set the border of the Drawing object using the BorderInfo class.
+يمكننا ضبط حدود الكائن الرسومي باستخدام فئة BorderInfo.
 
 ```csharp
 graph.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Aspose.Pdf.Color.Black);
 ```
 
-This will set a black border around our drawing.
+سيؤدي هذا إلى تعيين حد أسود حول رسمنا.
 
-## Step 9: Adding the graph object to the page
+## الخطوة 9: إضافة كائن الرسم البياني إلى الصفحة
 
-Now we add the graph object to the paragraphs collection of the Page class instance.
+نقوم الآن بإضافة كائن الرسم البياني إلى مجموعة الفقرات الخاصة بمثيل فئة الصفحة.
 
 ```csharp
 page.Paragraphs.Add(graph);
 ```
 
-## Step 10: Creating a Rectangle Object with Dimensions
+## الخطوة 10: إنشاء كائن مستطيل بأبعاد
 
-We create a Rectangle object with specified dimensions. This rectangle will be added to our drawing.
+نقوم بإنشاء كائن مستطيل بأبعاد محددة. سيتم إضافة هذا المستطيل إلى الرسم لدينا.
 
 ```csharp
 Aspose.Pdf.Drawing.Rectangle rectangle = new Aspose.Pdf.Drawing.Rectangle(0, 0, 100, 50);
 ```
 
-## Step 11: Creating a GraphInfo object for the Rectangle instance
+## الخطوة 11: إنشاء كائن GraphInfo لمثيل المستطيل
 
-We need to create a GraphInfo object for the Rectangle instance to configure its graph properties.
+نحتاج إلى إنشاء كائن GraphInfo لمثيل Rectangle لتكوين خصائص الرسم البياني الخاص به.
 
 ```csharp
 Aspose.Pdf.GraphInfo graphInfo = rectangle.GraphInfo;
 ```
 
-## Step 12: Configuring color information for the GraphInfo object
+## الخطوة 12: تكوين معلومات اللون لكائن GraphInfo
 
-We can configure the color information for the GraphInfo object using the Color and FillColor properties.
+يمكننا تكوين معلومات اللون لكائن GraphInfo باستخدام خصائص اللون وFillColor.
 
 ```csharp
 graphInfo.Color = Aspose.Pdf.Color.Red;
 graphInfo. FillColor = alphaColor;
 ```
 
-This will set the rectangle border color to red and the fill color to the specified alpha color.
+سيؤدي هذا إلى تعيين لون حدود المستطيل إلى اللون الأحمر ولون التعبئة إلى لون ألفا المحدد.
 
-## Step 13: Adding the rectangle shape to the graph object
+## الخطوة 13: إضافة الشكل المستطيل إلى كائن الرسم البياني
 
-Now we add the rectangle shape to the shape collection of the graph object.
+نضيف الآن الشكل المستطيل إلى مجموعة أشكال كائن الرسم البياني.
 
 ```csharp
 graph.Shapes.Add(rectangle);
 ```
-## Step 14: Save PDF file and display success message
+## الخطوة 14: احفظ ملف PDF واعرض رسالة النجاح
 
-Finally, we save the PDF file and display a message that the drawing was added successfully.
+أخيرًا، نقوم بحفظ ملف PDF ونعرض رسالة تفيد بأنه تمت إضافة الرسم بنجاح.
 
 ```csharp
 dataDir = dataDir + "AddDrawing_out.pdf";
@@ -121,64 +121,64 @@ document. Save(dataDir);
 Console.WriteLine("\nSuccessfully added drawing with transparent color.\nFile saved to location: " + dataDir);
 ```
 
-### Sample source code for Add Drawing using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لإضافة رسم باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 int alpha = 10;
 int green = 0;
 int red = 100;
 int blue = 0;
-// Create Color object using Alpha RGB 
-Aspose.Pdf.Color alphaColor = Aspose.Pdf.Color.FromArgb(alpha, red, green, blue); // Provide alpha channel
-// Instantiate Document object
+// قم بإنشاء كائن اللون باستخدام Alpha RGB
+Aspose.Pdf.Color alphaColor = Aspose.Pdf.Color.FromArgb(alpha, red, green, blue); // توفير قناة ألفا
+// إنشاء مثيل لكائن المستند
 Document document = new Document();
-// Add page to pages collection of PDF file
+// إضافة صفحة إلى مجموعة الصفحات من ملف PDF
 Page page = document.Pages.Add();
-// Create Graph object with certain dimensions
+//إنشاء كائن رسم بياني بأبعاد معينة
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(300, 400);
-// Set border for Drawing object
+// تعيين الحدود لكائن الرسم
 graph.Border = (new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Aspose.Pdf.Color.Black));
-// Add graph object to paragraphs collection of Page instance
+// إضافة كائن الرسم البياني إلى مجموعة الفقرات من مثيل الصفحة
 page.Paragraphs.Add(graph);
-// Create Rectangle object with certain dimensions
+// إنشاء كائن مستطيل بأبعاد معينة
 Aspose.Pdf.Drawing.Rectangle rectangle = new Aspose.Pdf.Drawing.Rectangle(0, 0, 100, 50);
-// Create graphInfo object for Rectangle instance
+// قم بإنشاء كائن graphInfo لمثيل المستطيل
 Aspose.Pdf.GraphInfo graphInfo = rectangle.GraphInfo;
-// Set color information for GraphInfo instance
+// قم بتعيين معلومات اللون لمثيل GraphInfo
 graphInfo.Color = (Aspose.Pdf.Color.Red);
-// Set fill color for GraphInfo
+// تعيين لون التعبئة لـ GraphInfo
 graphInfo.FillColor = (alphaColor);
-// Add rectangle shape to shapes collection of graph object
+// إضافة شكل مستطيل إلى مجموعة أشكال كائن الرسم البياني
 graph.Shapes.Add(rectangle);
 dataDir = dataDir + "AddDrawing_out.pdf";
-// Save PDF file
+// حفظ ملف PDF
 document.Save(dataDir);
 Console.WriteLine("\nDrawing added successfully with transparent color.\nFile saved at " + dataDir);            
 
 ```
 
-## Conclusion
+## خاتمة
 
-In this article, we learned how to add drawing to programming with graphics using Aspose.PDF for .NET. We followed a step-by-step guide to understand the source code and the various steps involved in adding a drawing to a PDF file. Using the powerful features of Aspose.PDF, you can create attractive and interactive PDF documents in your .NET applications.
+تعلمنا في هذه المقالة كيفية إضافة الرسم إلى البرمجة باستخدام الرسومات باستخدام Aspose.PDF لـ .NET. لقد اتبعنا دليلاً خطوة بخطوة لفهم الكود المصدري والخطوات المختلفة المتضمنة في إضافة رسم إلى ملف PDF. باستخدام الميزات القوية لـ Aspose.PDF، يمكنك إنشاء مستندات PDF جذابة وتفاعلية في تطبيقات .NET الخاصة بك.
 
 
-### FAQ's for add drawing in PDF file
+### الأسئلة الشائعة لإضافة رسم في ملف PDF
 
-#### Q: What is Aspose.PDF for .NET?
+#### س: ما هو Aspose.PDF لـ .NET؟
 
-A: Aspose.PDF for .NET is a powerful library that enables the creation, manipulation, and conversion of PDF files within .NET applications.
+ج: Aspose.PDF for .NET هي مكتبة قوية تتيح إنشاء ملفات PDF ومعالجتها وتحويلها داخل تطبيقات .NET.
 
-#### Q: Can I adjust the transparency of colors in my drawings?
+#### س: هل يمكنني ضبط شفافية الألوان في رسوماتي؟
 
-A: Yes, by using the alpha channel in the Color object, you can create partially transparent colors for your drawings.
+ج: نعم، باستخدام قناة ألفا في كائن اللون، يمكنك إنشاء ألوان شفافة جزئيًا لرسوماتك.
 
-#### Q: How do I add a border to a drawing in a PDF document?
+#### س: كيف يمكنني إضافة حد إلى رسم في مستند PDF؟
 
-A: You can set the border of a Drawing object using the BorderInfo class, allowing you to define border properties such as color and style.
+ج: يمكنك تعيين حدود كائن رسومي باستخدام فئة BorderInfo، مما يتيح لك تحديد خصائص الحدود مثل اللون والنمط.
 
-#### Q: Is Aspose.PDF suitable for beginners in C# programming?
+#### س: هل Aspose.PDF مناسب للمبتدئين في برمجة C#؟
 
-A: Aspose.PDF offers a wide range of features, including drawing, and may require a basic understanding of C# programming to fully utilize its capabilities.
+ج: يوفر Aspose.PDF نطاقًا واسعًا من الميزات، بما في ذلك الرسم، وقد يتطلب فهمًا أساسيًا لبرمجة C# للاستفادة الكاملة من إمكانياته.

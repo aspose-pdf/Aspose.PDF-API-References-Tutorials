@@ -1,27 +1,27 @@
 ---
-title: Render Table In PDF Document
-linktitle: Render Table In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to display a table in PDF document using Aspose.PDF for .NET.
+title: 在 PDF 文档中渲染表格
+linktitle: 在 PDF 文档中渲染表格
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 在 PDF 文档中显示表格。
 type: docs
 weight: 170
 url: /zh/net/programming-with-tables/render-table/
 ---
-In this tutorial, we will guide you step by step to display a table in PDF document using Aspose.PDF for .NET. We'll explain the provided C# source code and show you how to implement it.
+在本教程中，我们将逐步指导您使用 Aspose.PDF for .NET 在 PDF 文档中显示表格。我们将解释提供的 C# 源代码并向您展示如何实现它。
 
-## Step 1: Creating the document
-First, we'll create a new PDF document:
+## 第 1 步：创建文档
+首先，我们将创建一个新的 PDF 文档：
 
 ```csharp
-// Path to the documents directory
+//文档目录的路径
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Create a new document
+//创建一个新文档
 Document doc = new Document();
 ```
 
-## Step 2: Configuring page margins and orientation
-Next, we'll configure the page margins and set the orientation to landscape mode:
+## 步骤 2：配置页边距和方向
+接下来，我们将配置页边距并将方向设置为横向模式：
 
 ```csharp
 PageInfo pageInfo = doc.PageInfo;
@@ -35,16 +35,16 @@ marginInfo.Bottom = 37;
 pageInfo.IsLandscape = true;
 ```
 
-## Step 3: Creating the table and columns
-Now let's create a table and set the column widths:
+## 步骤 3：创建表和列
+现在让我们创建一个表并设置列宽：
 
 ```csharp
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
 table. ColumnWidths = "50 100";
 ```
 
-## Step 4: Add rows and cells to the table
-Next, we'll add rows and cells to the table using a loop:
+## 步骤 4：向表格添加行和单元格
+接下来，我们将使用循环将行和单元格添加到表中：
 
 ```csharp
 for (int i = 1; i <= 120; i++)
@@ -58,8 +58,8 @@ for (int i = 1; i <= 120; i++)
 }
 ```
 
-## Step 5: Adding the table to the page
-Now let's add the table to the document page:
+## 第5步：将表格添加到页面
+现在让我们将表格添加到文档页面：
 
 ```csharp
 Page curPage = doc.Pages.Add();
@@ -67,8 +67,8 @@ Aspose.Pdf.Paragraphs paragraphs = curPage.Paragraphs;
 paragraphs. Add(table);
 ```
 
-## Step 6: Displaying the table on a new page
-Next, we'll create a new table and set the "IsInNewPage" property to "true" to display the table on a new page:
+## 步骤 6：在新页面上显示表格
+接下来，我们将创建一个新表并将“IsInNewPage”属性设置为“true”以在新页面上显示该表：
 
 ```csharp
 Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
@@ -85,8 +85,8 @@ table1.IsInNewPage = true;
 paragraphs. Add(table1);
 ```
 
-## Step 7: Save PDF
-Finally, we save the PDF document:
+## 第7步：保存PDF
+最后，我们保存PDF文档：
 
 ```csharp
 dataDir = dataDir + "IsNewPageProperty_Test_out.pdf";
@@ -95,10 +95,10 @@ doc.Save(dataDir);
 Console.WriteLine("\nTable displayed successfully on a page.\nFile saved at location: " + dataDir);
 ```
 
-### Example source code for Render Table using Aspose.PDF for .NET
+### 使用 Aspose.PDF for .NET 的渲染表示例源代码
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 Document doc = new Document();
@@ -114,7 +114,7 @@ pageInfo.IsLandscape = true;
 
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
 table.ColumnWidths = "50 100";
-// Added page.
+//添加页面。
 Page curPage = doc.Pages.Add();
 for (int i = 1; i <= 120; i++)
 {
@@ -139,7 +139,7 @@ for (int i = 1; i <= 10; i++)
 	cell2.Paragraphs.Add(new TextFragment("LAAGGGGGG"));
 }
 table1.IsInNewPage = true;
-// I want to keep table 1 to next page please...
+//我想将表 1 保留到下一页...
 paragraphs.Add(table1);
 dataDir = dataDir + "IsNewPageProperty_Test_out.pdf";
 doc.Save(dataDir);
@@ -147,27 +147,27 @@ doc.Save(dataDir);
 Console.WriteLine("\nTable render successfully on a page.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
-Congratulation ! You have now learned how to display a table in a PDF document using Aspose.PDF for .NET. This step-by-step guide showed you how to create a document, configure page margins and orientation, add a table, and display a table on a new page. Now you can apply this knowledge to your own projects.
+## 结论
+恭喜！您现在已经了解了如何使用 Aspose.PDF for .NET 在 PDF 文档中显示表格。本分步指南向您展示了如何创建文档、配置页边距和方向、添加表格以及在新页面上显示表格。现在您可以将这些知识应用到您自己的项目中。
 
-### FAQ's for render table in PDF document
+### PDF 文档中渲染表的常见问题解答
 
-#### Q: How can I modify the table's appearance, such as changing cell colors or adding borders?
+#### 问：如何修改表格的外观，例如更改单元格颜色或添加边框？
 
-A: To modify the table's appearance, you can set various properties of the `Aspose.Pdf.Table` and its cells. For example, you can set the `BackgroundColor` property of cells to change their background color. You can also set the `Border` property of the table or individual cells to add borders. Additionally, you can customize the font, text color, and alignment of the table content by modifying the `TextState` of the `TextFragment` objects added to the cells.
+A：要修改表格的外观，可以设置表格的各种属性`Aspose.Pdf.Table`及其细胞。例如，您可以设置`BackgroundColor`单元格的属性来更改其背景颜色。您还可以设置`Border`表格或单个单元格的属性来添加边框。此外，您还可以通过修改表格内容来自定义字体、文本颜色和对齐方式。`TextState`的`TextFragment`添加到单元格的对象。
 
-#### Q: Can I add headers or footers to the table?
+#### 问：我可以在表格中添加页眉或页脚吗？
 
-A: Yes, you can add headers or footers to the table by creating additional rows at the beginning or end of the table and setting the appropriate content in the cells. You can customize the headers or footers independently from the rest of the table content by adding different styles or content to these specific rows.
+答：是的，您可以通过在表格的开头或结尾创建附加行并在单元格中设置适当的内容来向表格添加页眉或页脚。您可以通过向这些特定行添加不同的样式或内容来独立于表格内容的其余部分自定义页眉或页脚。
 
-#### Q: How can I control the table's position on the page?
+#### 问：如何控制表格在页面上的位置？
 
-A: To control the table's position on the page, you can adjust the `MarginInfo` of the `PageInfo` object. The `MarginInfo` allows you to set the left, right, top, and bottom margins of the page, which affects the available space for the table. You can also use the `PositioningType` property of the `Aspose.Pdf.Table` to control its horizontal and vertical alignment within the page's content area.
+ A：要控制表格在页面上的位置，您可以调整`MarginInfo`的`PageInfo`目的。这`MarginInfo`允许您设置页面的左、右、上、下边距，这会影响表格的可用空间。您还可以使用`PositioningType`的财产`Aspose.Pdf.Table`控制其在页面内容区域内的水平和垂直对齐。
 
-#### Q: Can I export the table to different file formats, such as Excel or CSV?
+#### 问：我可以将表格导出为不同的文件格式，例如 Excel 或 CSV 吗？
 
-A: Aspose.PDF for .NET is primarily designed for working with PDF documents. While it can export the PDF document as an image or XPS, it does not directly support exporting tables to formats like Excel or CSV. To export the table data to different file formats, you may need to use additional libraries or methods to convert the PDF content to the desired format.
+答：Aspose.PDF for .NET 主要是为处理 PDF 文档而设计的。虽然它可以将 PDF 文档导出为图像或 XPS，但它不直接支持将表格导出为 Excel 或 CSV 等格式。要将表格数据导出为不同的文件格式，您可能需要使用其他库或方法将 PDF 内容转换为所需的格式。
 
-#### Q: How can I add hyperlinks to the table cells?
+#### 问：如何向表格单元格添加超链接？
 
-A: To add hyperlinks to the table cells, you can use the `Aspose.Pdf.WebHyperlink` class to create a hyperlink and then add it as an anchor to the `TextFragment` inside the cell. This allows you to associate a URL or link target with specific text or content within the cell, creating clickable hyperlinks.
+答：要向表格单元格添加超链接，您可以使用`Aspose.Pdf.WebHyperlink`类来创建超链接，然后将其作为锚点添加到`TextFragment`细胞内。这允许您将 URL 或链接目标与单元格内的特定文本或内容相关联，从而创建可单击的超链接。

@@ -1,19 +1,19 @@
 ---
-title: HTML Tags Inside Table In PDF File
-linktitle: HTML Tags Inside Table In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use HTML tags inside a table in PDF file with Aspose.PDF for .NET.
+title: Etiquetas HTML dentro de la tabla en un archivo PDF
+linktitle: Etiquetas HTML dentro de la tabla en un archivo PDF
+second_title: Aspose.PDF para referencia de API .NET
+description: Aprenda a utilizar etiquetas HTML dentro de una tabla en un archivo PDF con Aspose.PDF para .NET.
 type: docs
 weight: 100
 url: /es/net/programming-with-tables/html-tags-inside-table/
 ---
-In this tutorial, we are going to learn how to use HTML tags inside a table in a PDF document using Aspose.PDF for .NET. We will explain the source code in C# step by step. At the end of this tutorial, you will know how to insert HTML content into a table in a PDF document. Let's start!
+En este tutorial, aprenderemos cómo usar etiquetas HTML dentro de una tabla en un documento PDF usando Aspose.PDF para .NET. Explicaremos el código fuente en C# paso a paso. Al final de este tutorial, sabrá cómo insertar contenido HTML en una tabla en un documento PDF. ¡Empecemos!
 
-## Step 1: Setting up the environment
-Make sure you have configured your C# development environment with Aspose.PDF for .NET. Add the reference to the library and import the necessary namespaces.
+## Paso 1: configurar el entorno
+Asegúrese de haber configurado su entorno de desarrollo C# con Aspose.PDF para .NET. Agregue la referencia a la biblioteca e importe los espacios de nombres necesarios.
 
-## Step 2: Creating table data
-We create a DataTable containing a "data" column of type String. We then add rows to this DataTable using HTML content.
+## Paso 2: crear datos de tabla
+Creamos un DataTable que contiene una columna de "datos" de tipo String. Luego agregamos filas a este DataTable usando contenido HTML.
 
 ```csharp
 DataTable dt = new DataTable("Employee");
@@ -30,8 +30,8 @@ dr[0] = "<li>UPHS/Presbyterian - Dept. of Emergency Medicine: 51 N. 39th Street 
 dt.Rows.Add(dr);
 ```
 
-## Step 3: Creating the Document and Table
-We create a new PDF document and add a page in this document. Next, we initialize an instance of the Table class and set the table properties.
+## Paso 3: crear el documento y la tabla
+Creamos un nuevo documento PDF y agregamos una página en este documento. A continuación, inicializamos una instancia de la clase Tabla y configuramos las propiedades de la tabla.
 
 ```csharp
 Document doc = new Document();
@@ -48,31 +48,31 @@ margin. Bottom = 1.0F;
 tableProvider. DefaultCellPadding = margin;
 ```
 
-## Step 4: Importing data into the table
-We import the data from the DataTable into the table using the "ImportDataTable" method. We specify method parameters to indicate which range of rows and columns of the DataTable should be imported.
+## Paso 4: importar datos a la tabla
+Importamos los datos del DataTable a la tabla usando el método "ImportDataTable". Especificamos parámetros del método para indicar qué rango de filas y columnas de DataTable deben importarse.
 
 ```csharp
 tableProvider.ImportDataTable(dt, false, 0, 0, 3, 1, true);
 ```
 
-## Step 5: Adding the table to the document
-We add the table to the document page.
+## Paso 5: Agregar la tabla al documento
+Agregamos la tabla a la página del documento.
 
 ```csharp
 doc.Pages[1].Paragraphs.Add(tableProvider);
 ```
 
-## Stage 6: Saving the document
-We save the PDF document with the table containing HTML content.
+## Etapa 6: Guardar el documento
+Guardamos el documento PDF con la tabla que contiene el contenido HTML.
 
 ```csharp
 doc.Save(dataDir + "HTMLInsideTableCell_out.pdf");
 ```
 
-### Example source code for HTML Tags Inside Table using Aspose.PDF for .NET
+### Código fuente de ejemplo para etiquetas HTML dentro de la tabla usando Aspose.PDF para .NET
 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 DataTable dt = new DataTable("Employee");
@@ -90,13 +90,13 @@ dt.Rows.Add(dr);
 
 Document doc = new Document();
 doc.Pages.Add();
-// Initializes a new instance of the Table
+// Inicializa una nueva instancia de la tabla.
 Aspose.Pdf.Table tableProvider = new Aspose.Pdf.Table();
-//Set column widths of the table
+//Establecer anchos de columna de la tabla
 tableProvider.ColumnWidths = "400 50 ";
-// Set the table border color as LightGray
+// Establecer el color del borde de la mesa como LightGray
 tableProvider.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.5F, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
-// Set the border for table cells
+// Establecer el borde de las celdas de la tabla
 tableProvider.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.5F, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
 Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
 margin.Top = 2.5F;
@@ -110,27 +110,27 @@ doc.Pages[1].Paragraphs.Add(tableProvider);
 doc.Save(dataDir + "HTMLInsideTableCell_out.pdf");
 ```
 
-## Conclusion
-In this tutorial, we learned how to use HTML tags inside a table in a PDF document using Aspose.PDF for .NET. You can use this step-by-step guide to insert HTML content into table cells in a PDF document using C#.
+## Conclusión
+En este tutorial, aprendimos cómo usar etiquetas HTML dentro de una tabla en un documento PDF usando Aspose.PDF para .NET. Puede utilizar esta guía paso a paso para insertar contenido HTML en celdas de una tabla en un documento PDF usando C#.
 
-### FAQs for HTML tags inside table in PDF file
+### Preguntas frecuentes sobre etiquetas HTML dentro de la tabla en un archivo PDF
 
-#### Q: Can I use other HTML tags and attributes inside the table cells?
+#### P: ¿Puedo utilizar otras etiquetas y atributos HTML dentro de las celdas de la tabla?
 
-A: Yes, you can use various HTML tags and attributes inside the table cells, such as `<b>`, `<i>`, `<a>`, and many more. Aspose.PDF for .NET supports a wide range of HTML elements and styles that you can use to format the content within the table cells.
+ R: Sí, puede utilizar varias etiquetas y atributos HTML dentro de las celdas de la tabla, como`<b>`, `<i>`, `<a>`y muchos más. Aspose.PDF para .NET admite una amplia gama de elementos y estilos HTML que puede utilizar para formatear el contenido dentro de las celdas de la tabla.
 
-#### Q: Can I apply CSS styles to the HTML content inside the table cells?
+#### P: ¿Puedo aplicar estilos CSS al contenido HTML dentro de las celdas de la tabla?
 
-A: Yes, you can apply CSS styles to the HTML content inside the table cells. Aspose.PDF for .NET provides support for basic CSS styles that can be applied to the HTML elements.
+R: Sí, puedes aplicar estilos CSS al contenido HTML dentro de las celdas de la tabla. Aspose.PDF para .NET brinda soporte para estilos CSS básicos que se pueden aplicar a los elementos HTML.
 
-#### Q: Is it possible to add images along with HTML content inside the table cells?
+#### P: ¿Es posible agregar imágenes junto con contenido HTML dentro de las celdas de la tabla?
 
-A: Yes, you can add images along with HTML content inside the table cells. You can use HTML `<img>` tags to include images from various sources, such as local files or URLs.
+ R: Sí, puedes agregar imágenes junto con contenido HTML dentro de las celdas de la tabla. Puedes usar HTML`<img>` etiquetas para incluir imágenes de diversas fuentes, como archivos locales o URL.
 
-#### Q: How can I specify different column widths for the table?
+#### P: ¿Cómo puedo especificar diferentes anchos de columna para la tabla?
 
-A: You can specify different column widths for the table using the `ColumnWidths` property of the table. The property takes a string containing space-separated values, where each value represents the width of a column in points.
+ R: Puede especificar diferentes anchos de columna para la tabla usando el`ColumnWidths` propiedad de la mesa. La propiedad toma una cadena que contiene valores separados por espacios, donde cada valor representa el ancho de una columna en puntos.
 
-#### Q: Can I use nested tables inside a cell with HTML content?
+#### P: ¿Puedo usar tablas anidadas dentro de una celda con contenido HTML?
 
-A: Yes, you can use nested tables inside a cell with HTML content. You can create separate table instances and add them as part of the HTML content inside a cell to achieve the nesting effect.
+R: Sí, puedes usar tablas anidadas dentro de una celda con contenido HTML. Puede crear instancias de tablas separadas y agregarlas como parte del contenido HTML dentro de una celda para lograr el efecto de anidamiento.

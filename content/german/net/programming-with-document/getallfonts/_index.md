@@ -1,42 +1,42 @@
 ---
-title: Get All Fonts In PDF File
-linktitle: Get All Fonts In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use Aspose.PDF for .NET to get all the fonts used in a PDF file programmatically with this step-by-step guide and example code.
+title: Holen Sie sich alle Schriftarten in eine PDF-Datei
+linktitle: Holen Sie sich alle Schriftarten in eine PDF-Datei
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie mit dieser Schritt-für-Schritt-Anleitung und dem Beispielcode, wie Sie Aspose.PDF für .NET verwenden, um alle in einer PDF-Datei verwendeten Schriftarten programmgesteuert abzurufen.
 type: docs
 weight: 160
 url: /de/net/programming-with-document/getallfonts/
 ---
-Aspose.PDF for .NET is a powerful library that enables developers to work with PDF file programmatically. One of the features that it provides is the ability to get all the fonts used in a PDF file. This can be useful if you need to programmatically analyze or manipulate the fonts in a PDF file.
+Aspose.PDF für .NET ist eine leistungsstarke Bibliothek, die es Entwicklern ermöglicht, programmgesteuert mit PDF-Dateien zu arbeiten. Eine der Funktionen, die es bietet, ist die Möglichkeit, alle in einer PDF-Datei verwendeten Schriftarten abzurufen. Dies kann nützlich sein, wenn Sie die Schriftarten in einer PDF-Datei programmgesteuert analysieren oder bearbeiten müssen.
 
-In this tutorial, we will discuss how to use Aspose.PDF for .NET to get all the fonts used in a PDF document. We will provide a step-by-step guide on how to do this, along with example source code.
+In diesem Tutorial besprechen wir, wie Sie Aspose.PDF für .NET verwenden, um alle in einem PDF-Dokument verwendeten Schriftarten abzurufen. Wir stellen Ihnen dazu eine Schritt-für-Schritt-Anleitung sowie einen Beispielquellcode zur Verfügung.
 
-## Step 1: Create a new C# Console Application
-To get started, create a new C# Console Application in Visual Studio. You can name it whatever you like. Once the project is created, you need to add a reference to the Aspose.PDF for .NET library.
+## Schritt 1: Erstellen Sie eine neue C#-Konsolenanwendung
+Erstellen Sie zunächst eine neue C#-Konsolenanwendung in Visual Studio. Sie können es beliebig benennen. Sobald das Projekt erstellt ist, müssen Sie einen Verweis auf die Bibliothek Aspose.PDF für .NET hinzufügen.
 
-## Step 2: Import the Aspose.PDF Namespace
-Add the following line of code at the top of your C# file to import the Aspose.PDF namespace:
+## Schritt 2: Importieren Sie den Aspose.PDF-Namespace
+Fügen Sie oben in Ihrer C#-Datei die folgende Codezeile hinzu, um den Aspose.PDF-Namespace zu importieren:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 3: Load the PDF Document
-Load the PDF document that you want to get the fonts from:
+## Schritt 3: Laden Sie das PDF-Dokument
+Laden Sie das PDF-Dokument, aus dem Sie die Schriftarten erhalten möchten:
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 4: Get All the Fonts
-Get all the fonts used in the PDF document:
+## Schritt 4: Holen Sie sich alle Schriftarten
+Holen Sie sich alle im PDF-Dokument verwendeten Schriftarten:
 
 ```csharp
 Aspose.Pdf.Text.Font[] fonts = doc.FontUtilities.GetAllFonts();
 ```
 
-## Step 5: Print All the Fonts
-Print all the fonts used in the PDF document:
+## Schritt 5: Drucken Sie alle Schriftarten
+Drucken Sie alle im PDF-Dokument verwendeten Schriftarten:
 
 ```csharp
 foreach (Aspose.Pdf.Text.Font font in fonts)
@@ -45,9 +45,9 @@ foreach (Aspose.Pdf.Text.Font font in fonts)
 }
 ```
 
-### Example source code for Get All Fonts using Aspose.PDF for .NET
+### Beispielquellcode für „Get All Fonts“ mit Aspose.PDF für .NET
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "input.pdf");
 Aspose.Pdf.Text.Font[] fonts = doc.FontUtilities.GetAllFonts();
@@ -57,23 +57,23 @@ foreach (Aspose.Pdf.Text.Font font in fonts)
 }
 ```
 
-## Conclusion
-In this tutorial, we have discussed how to get all the fonts used in a PDF document using Aspose.PDF for .NET. Getting all the fonts used in a PDF document can be useful if you need to programmatically analyze or manipulate the fonts in a PDF document. Aspose.PDF for .NET provides a simple and easy-to-use API to work with PDF documents, including getting all the fonts used in a PDF document.
+## Abschluss
+In diesem Tutorial haben wir besprochen, wie Sie mit Aspose.PDF für .NET alle in einem PDF-Dokument verwendeten Schriftarten abrufen. Das Abrufen aller in einem PDF-Dokument verwendeten Schriftarten kann hilfreich sein, wenn Sie die Schriftarten in einem PDF-Dokument programmgesteuert analysieren oder bearbeiten müssen. Aspose.PDF für .NET bietet eine einfache und benutzerfreundliche API für die Arbeit mit PDF-Dokumenten, einschließlich des Abrufens aller in einem PDF-Dokument verwendeten Schriftarten.
 
-### FAQ's
+### FAQs
 
-#### Q: Why would I need to get all the fonts used in a PDF document?
+#### F: Warum sollte ich alle in einem PDF-Dokument verwendeten Schriftarten benötigen?
 
-A: Getting all the fonts used in a PDF document can be useful if you need to programmatically analyze or manipulate the fonts for various purposes, such as font replacement or font customization.
+A: Das Abrufen aller in einem PDF-Dokument verwendeten Schriftarten kann nützlich sein, wenn Sie die Schriftarten für verschiedene Zwecke programmgesteuert analysieren oder bearbeiten müssen, beispielsweise zum Ersetzen oder Anpassen von Schriftarten.
 
-#### Q: How can I get all the fonts used in a PDF document using Aspose.PDF for .NET?
+#### F: Wie kann ich mit Aspose.PDF für .NET alle in einem PDF-Dokument verwendeten Schriftarten abrufen?
 
-A: You can get all the fonts used in a PDF document using Aspose.PDF for .NET by calling the `GetAllFonts` method of the `FontUtilities` class. This method returns an array of `Aspose.Pdf.Text.Font` objects, which represent the fonts used in the PDF document.
+ A: Sie können alle in einem PDF-Dokument verwendeten Schriftarten mit Aspose.PDF für .NET abrufen, indem Sie die aufrufen`GetAllFonts` Methode der`FontUtilities` Klasse. Diese Methode gibt ein Array von zurück`Aspose.Pdf.Text.Font` Objekte, die die im PDF-Dokument verwendeten Schriftarten darstellen.
 
-#### Q: Can I filter fonts based on certain criteria?
+#### F: Kann ich Schriftarten nach bestimmten Kriterien filtern?
 
-A: Yes, you can filter fonts based on certain criteria using Aspose.PDF for .NET. After getting all the fonts, you can programmatically analyze the fonts and apply filtering logic as needed.
+A: Ja, Sie können Schriftarten anhand bestimmter Kriterien filtern, indem Sie Aspose.PDF für .NET verwenden. Nachdem Sie alle Schriftarten erhalten haben, können Sie die Schriftarten programmgesteuert analysieren und nach Bedarf Filterlogik anwenden.
 
-#### Q: Is Aspose.PDF for .NET compatible with various font formats?
+#### F: Ist Aspose.PDF für .NET mit verschiedenen Schriftformaten kompatibel?
 
-A: Yes, Aspose.PDF for .NET is compatible with various font formats, including TrueType, OpenType, and Type 1 fonts. It can work with different font formats and handle them during PDF document manipulation.
+A: Ja, Aspose.PDF für .NET ist mit verschiedenen Schriftformaten kompatibel, darunter TrueType-, OpenType- und Type-1-Schriftarten. Es kann mit verschiedenen Schriftformaten arbeiten und diese bei der Bearbeitung von PDF-Dokumenten verarbeiten.

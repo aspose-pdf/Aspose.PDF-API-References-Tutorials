@@ -1,141 +1,141 @@
 ---
-title: Page Number In Header Footer Using Floating Box
-linktitle: Page Number In Header Footer Using Floating Box
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add the page number in the header and footer of a PDF document with Aspose.PDF for .NET.
+title: رقم الصفحة في تذييل الصفحة باستخدام المربع العائم
+linktitle: رقم الصفحة في تذييل الصفحة باستخدام المربع العائم
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إضافة رقم الصفحة في رأس وتذييل مستند PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 150
 url: /ar/net/programming-with-stamps-and-watermarks/page-number-in-header-footer-using-floating-box/
 ---
-In this tutorial, we will guide you step by step on how to add page number in header and footer of a PDF document using FloatingBox with Aspose.PDF for .NET. We will use the provided C# source code to create a PDF document, add a page, create a FloatingBox, set its position and add the page number to it, then save the modified PDF document.
+في هذا البرنامج التعليمي، سنرشدك خطوة بخطوة حول كيفية إضافة رقم الصفحة في رأس وتذييل مستند PDF باستخدام FloatingBox مع Aspose.PDF لـ .NET. سنستخدم كود مصدر C# المقدم لإنشاء مستند PDF، وإضافة صفحة، وإنشاء FloatingBox، وتعيين موضعه وإضافة رقم الصفحة إليه، ثم حفظ مستند PDF المعدل.
 
-## Step 1: Setting up the environment
+## الخطوة 1: تهيئة البيئة
 
-Before you begin, make sure you have the following:
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- بيئة تطوير .NET مثبتة.
+- تم تنزيل مكتبة Aspose.PDF الخاصة بـ .NET والإشارة إليها في مشروعك.
 
-## Step 2: Creating the PDF document and adding a page
+## الخطوة 2: إنشاء مستند PDF وإضافة صفحة
 
-The first step is to create an instance of the PDF document and add a page to it. Here's how:
+الخطوة الأولى هي إنشاء مثيل لمستند PDF وإضافة صفحة إليه. إليك الطريقة:
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Instantiate the PDF document
+// إنشاء مثيل لمستند PDF
 Aspose.Pdf.Document pdf = new Aspose.Pdf.Document();
 
-// Add a page to the PDF document
+// إضافة صفحة إلى وثيقة PDF
 Aspose.Pdf.Page page = pdf.Pages.Add();
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where you want to save the PDF document.
+تأكد من استبدال "دليل المستندات الخاص بك" بالمسار الفعلي للدليل الذي تريد حفظ مستند PDF فيه.
 
-## Step 3: Creating the FloatingBox and adding the page number
+## الخطوة 3: إنشاء FloatingBox وإضافة رقم الصفحة
 
-Now that the page is added to the PDF document, we can create a FloatingBox, set its position, and add the page number to it. Here's how:
+الآن بعد أن تمت إضافة الصفحة إلى مستند PDF، يمكننا إنشاء FloatingBox وتعيين موضعه وإضافة رقم الصفحة إليه. إليك الطريقة:
 
 ```csharp
-// Create a FloatingBox with a width of 140 and a height of 80
+// قم بإنشاء صندوق عائم بعرض 140 وارتفاع 80
 Aspose.Pdf.FloatingBox box1 = new Aspose.Pdf.FloatingBox(140, 80);
 
-// Set the left position of the paragraph
+// ضبط الموضع الأيسر للفقرة
 box1. Left = 2;
 
-// Set the top position of the paragraph
+// تعيين الموضع العلوي للفقرة
 box1. Top = 10;
 
-// Add the page number to the FloatingBox
+// أضف رقم الصفحة إلى FloatingBox
 box1.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("Page: ($p/ $P )"));
 
-// Add the FloatingBox to the page
+// أضف FloatingBox إلى الصفحة
 page.Paragraphs.Add(box1);
 ```
 
-The code above creates a FloatingBox with a width of 140 and a height of 80. Next, we set its position by specifying the left and top values. Finally, we add the page number to the FloatingBox using a TextFragment containing the syntax "($p/ $P )" which will be replaced with the current page number and the total number of pages.
+يقوم الكود أعلاه بإنشاء صندوق عائم بعرض 140 وارتفاع 80. بعد ذلك، نقوم بتعيين موضعه عن طريق تحديد القيم اليسرى والعليا. أخيرًا، نضيف رقم الصفحة إلى FloatingBox باستخدام TextFragment الذي يحتوي على الصيغة "($p/ $P )" والتي سيتم استبدالها برقم الصفحة الحالية والعدد الإجمالي للصفحات.
 
-## Step 4: Saving the modified PDF document
+## الخطوة 4: حفظ مستند PDF المعدل
 
-Once the page number is added to the header or footer using the FloatingBox, we can save the modified PDF document. Here's how:
+بمجرد إضافة رقم الصفحة إلى الرأس أو التذييل باستخدام FloatingBox، يمكننا حفظ مستند PDF المعدل. إليك الطريقة:
 
 ```csharp
-// Save the modified PDF document
+// احفظ مستند PDF المعدل
 pdf.Save(dataDir + "PageNumberinHeaderFooterUsingFloatingBox_out.pdf");
 ```
 
-The above code saves the edited PDF document to the specified directory.
+يحفظ الكود أعلاه مستند PDF المحرر في الدليل المحدد.
 
-### Sample source code for Page Numberin Header Footer Using Floating Box using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لتذييل رأس الصفحة Numberin باستخدام Floating Box باستخدام Aspose.PDF لـ .NET 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate Document instance
+// إنشاء مثيل للمستند
 Aspose.Pdf.Document pdf = new Aspose.Pdf.Document();
 
-// Add a Page into the pdf document
+// أضف صفحة إلى مستند pdf
 Aspose.Pdf.Page page = pdf.Pages.Add();
 
-// Initializes a new instance of the FloatingBox class
+//تهيئة مثيل جديد لفئة FloatingBox
 Aspose.Pdf.FloatingBox box1 = new Aspose.Pdf.FloatingBox(140, 80);
 
-// Float value that indicates left position of the paragraph
+// القيمة العائمة التي تشير إلى الموضع الأيسر للفقرة
 box1.Left = 2;
 
-// Float value that indicates top position of the paragraph
+// القيمة العائمة التي تشير إلى الموضع العلوي للفقرة
 box1.Top = 10;
 
-// Add the macros to the paragraphs collection of the FloatingBox
+// أضف وحدات الماكرو إلى مجموعة الفقرات في FloatingBox
 box1.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("Page: ($p/ $P )"));
 
-// Add a floatingBox to the page
+// أضف صندوقًا عائمًا إلى الصفحة
 page.Paragraphs.Add(box1);
 
-// Save the document
+// احفظ المستند
 pdf.Save(dataDir + "PageNumberinHeaderFooterUsingFloatingBox_out.pdf");
 
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You have learned how to add page number in header and footer of PDF document using FloatingBox with Aspose.PDF for .NET. You can now customize your headers and footers by adding dynamic information such as page number.
+تهنئة ! لقد تعلمت كيفية إضافة رقم الصفحة في رأس وتذييل مستند PDF باستخدام FloatingBox مع Aspose.PDF لـ .NET. يمكنك الآن تخصيص الرؤوس والتذييلات الخاصة بك عن طريق إضافة معلومات ديناميكية مثل رقم الصفحة.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is a FloatingBox, and how is it used to add page numbers in the header or footer of a PDF document?
+#### س: ما هو FloatingBox، وكيف يتم استخدامه لإضافة أرقام الصفحات في رأس أو تذييل مستند PDF؟
 
-A: A FloatingBox is a versatile layout element in Aspose.PDF that can hold various content, including text and images. In this tutorial, it's used to create a container for the page number, allowing you to dynamically insert the current page number and total page count into the header or footer.
+ج: يعد FloatingBox عنصر تخطيط متعدد الاستخدامات في Aspose.PDF يمكنه الاحتفاظ بمحتوى متنوع، بما في ذلك النصوص والصور. في هذا البرنامج التعليمي، يتم استخدامه لإنشاء حاوية لرقم الصفحة، مما يسمح لك بإدراج رقم الصفحة الحالية وإجمالي عدد الصفحات ديناميكيًا في الرأس أو التذييل.
 
-#### Q: How does the provided C# source code achieve adding page numbers using a FloatingBox?
+#### س: كيف يحقق كود مصدر C# المقدم إضافة أرقام الصفحات باستخدام FloatingBox؟
 
-A: The code snippet demonstrates how to create a PDF document, add a page, create a FloatingBox, set its position within the page, and insert the page number using a TextFragment. The syntax "($p/ $P )" in the TextFragment is replaced with the current page number and total page count.
+ج: يوضح مقتطف الكود كيفية إنشاء مستند PDF، وإضافة صفحة، وإنشاء FloatingBox، وتعيين موضعه داخل الصفحة، وإدراج رقم الصفحة باستخدام TextFragment. يتم استبدال بناء الجملة "($p/ $P )" في TextFragment برقم الصفحة الحالية وإجمالي عدد الصفحات.
 
-#### Q: Can I customize the appearance and formatting of the page number added using the FloatingBox?
+#### س: هل يمكنني تخصيص مظهر وتنسيق رقم الصفحة المضافة باستخدام FloatingBox؟
 
-A: Yes, you can customize the appearance of the page number by modifying the properties of the TextFragment within the FloatingBox. You can change font size, color, style, alignment, and other formatting options.
+ج: نعم، يمكنك تخصيص مظهر رقم الصفحة عن طريق تعديل خصائص TextFragment داخل FloatingBox. يمكنك تغيير حجم الخط واللون والنمط والمحاذاة وخيارات التنسيق الأخرى.
 
-#### Q: Is it possible to add different dynamic elements, such as date and time, to the header or footer using a similar approach?
+#### س: هل من الممكن إضافة عناصر ديناميكية مختلفة، مثل التاريخ والوقت، إلى الرأس أو التذييل باستخدام أسلوب مماثل؟
 
-A: Absolutely, you can add different dynamic elements like date, time, document metadata, or custom text by modifying the TextFragment content within the FloatingBox. You can use macros like "($p/ $P )" for page numbers or "($date)" for the current date.
+ج: بالتأكيد، يمكنك إضافة عناصر ديناميكية مختلفة مثل التاريخ أو الوقت أو بيانات تعريف المستند أو النص المخصص عن طريق تعديل محتوى TextFragment داخل FloatingBox. يمكنك استخدام وحدات الماكرو مثل "($p/ $P )" لأرقام الصفحات أو "($date)" للتاريخ الحالي.
 
-#### Q: How do I specify the position of the FloatingBox within the header or footer section?
-A: The provided code sets the position of the FloatingBox using the `Left` and `Top` properties. You can adjust these values to position the FloatingBox as desired within the header or footer section.
+#### س: كيف يمكنني تحديد موضع FloatingBox داخل قسم الرأس أو التذييل؟
+ ج: يقوم الكود المقدم بتعيين موضع FloatingBox باستخدام ملف`Left` و`Top` ملكيات. يمكنك ضبط هذه القيم لوضع FloatingBox حسب الرغبة داخل قسم الرأس أو التذييل.
 
-#### Q: Can I use a different font or style for the page number in the header or footer?
+#### س: هل يمكنني استخدام خط أو نمط مختلف لرقم الصفحة في الرأس أو التذييل؟
 
-A: Yes, you can customize the font, style, and other formatting properties of the page number text by modifying the TextFragment properties within the FloatingBox.
+ج: نعم، يمكنك تخصيص الخط والنمط وخصائص التنسيق الأخرى لنص رقم الصفحة عن طريق تعديل خصائص TextFragment داخل FloatingBox.
 
-#### Q: What happens if the content in the FloatingBox exceeds its dimensions?
+#### س: ماذا يحدث إذا تجاوز المحتوى الموجود في FloatingBox أبعاده؟
 
-A: If the content within the FloatingBox exceeds its dimensions, it may be cut off or layout issues may arise. Ensure that the dimensions of the FloatingBox are suitable for accommodating the content, and consider adjusting the page layout if needed.
+ج: إذا تجاوز المحتوى الموجود داخل FloatingBox أبعاده، فقد يتم قطعه أو قد تنشأ مشكلات في التخطيط. تأكد من أن أبعاد FloatingBox مناسبة لاستيعاب المحتوى، وفكر في تعديل تخطيط الصفحة إذا لزم الأمر.
 
-#### Q: Is it possible to add multiple FloatingBoxes with different content to the header or footer of the same page?
+#### س: هل من الممكن إضافة مربعات عائمة متعددة ذات محتوى مختلف إلى رأس أو تذييل الصفحة نفسها؟
 
-A: Yes, you can add multiple FloatingBoxes with different content to the header or footer of the same page by creating separate FloatingBox instances and adding them to the page's Paragraphs collection.
+ج: نعم، يمكنك إضافة عدة FloatingBoxes بمحتوى مختلف إلى رأس أو تذييل الصفحة نفسها عن طريق إنشاء مثيلات FloatingBox منفصلة وإضافتها إلى مجموعة الفقرات الخاصة بالصفحة.
 
-#### Q: Can I use the FloatingBox approach to add content to other sections of the PDF document, such as the body or margins?
+#### س: هل يمكنني استخدام أسلوب FloatingBox لإضافة محتوى إلى أقسام أخرى من مستند PDF، مثل النص الأساسي أو الهوامش؟
 
-A: While FloatingBoxes are commonly used for headers and footers, you can also use them to add content to other sections of the PDF document, such as the body or margins, by positioning them accordingly within the page.
+ج: على الرغم من استخدام FloatingBoxes بشكل شائع للرؤوس والتذييلات، يمكنك أيضًا استخدامها لإضافة محتوى إلى أقسام أخرى من مستند PDF، مثل النص الأساسي أو الهوامش، عن طريق وضعها وفقًا لذلك داخل الصفحة.

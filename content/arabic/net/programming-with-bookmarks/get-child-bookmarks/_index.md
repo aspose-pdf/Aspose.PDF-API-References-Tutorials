@@ -1,41 +1,41 @@
 ---
-title: Get Child Bookmarks In PDF File
-linktitle: Get Child Bookmarks In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily get child bookmarks in PDF file with Aspose.PDF for .NET.
+title: الحصول على الإشارات المرجعية للأطفال في ملف PDF
+linktitle: الحصول على الإشارات المرجعية للأطفال في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: احصل بسهولة على الإشارات المرجعية الفرعية في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 80
 url: /ar/net/programming-with-bookmarks/get-child-bookmarks/
 ---
-Retrieving child bookmarks in PDF file can be useful for exploring the hierarchical structure of bookmarks. With Aspose.PDF for .NET, you can easily get the child bookmarks by following the following source code:
+يمكن أن يكون استرداد الإشارات المرجعية الفرعية في ملف PDF مفيدًا لاستكشاف البنية الهرمية للإشارات المرجعية. باستخدام Aspose.PDF for .NET، يمكنك بسهولة الحصول على الإشارات المرجعية الفرعية باتباع كود المصدر التالي:
 
-## Step 1: Import required libraries
+## الخطوة 1: استيراد المكتبات المطلوبة
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+قبل أن تبدأ، تحتاج إلى استيراد المكتبات اللازمة لمشروع C# الخاص بك. فيما يلي توجيه الاستيراد الضروري:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## الخطوة 2: تعيين المسار إلى مجلد المستندات
 
-In this step, you need to specify the path to the folder containing the PDF file you want to extract the bookmarks from. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ في هذه الخطوة، تحتاج إلى تحديد المسار إلى المجلد الذي يحتوي على ملف PDF الذي تريد استخراج الإشارات المرجعية منه. يستبدل`"YOUR DOCUMENT DIRECTORY"`في الكود التالي مع المسار الفعلي لمجلد المستندات الخاص بك:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## الخطوة 3: افتح مستند PDF
 
-Now we are going to open the PDF document from which we want to extract the bookmarks using the following code:
+سنقوم الآن بفتح مستند PDF الذي نريد استخراج الإشارات المرجعية منه باستخدام الكود التالي:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetChildBookmarks.pdf");
 ```
 
-## Step 4: Browse bookmarks and child bookmarks
+## الخطوة 4: تصفح الإشارات المرجعية والإشارات المرجعية الفرعية
 
-In this step, we will iterate over all the bookmarks in the document using a `foreach` loop. For each bookmark, we will display the information such as title, italic style, bold style and color. If the bookmark has child bookmarks, we'll display those as well. Here is the corresponding code:
+ في هذه الخطوة، سنقوم بالتكرار على جميع الإشارات المرجعية الموجودة في المستند باستخدام ملف`foreach` حلقة. بالنسبة لكل إشارة مرجعية، سنعرض المعلومات مثل العنوان والنمط المائل والنمط الغامق واللون. إذا كانت الإشارة المرجعية تحتوي على إشارات مرجعية فرعية، فسنعرضها أيضًا. هنا هو الكود المقابل:
 
 ```csharp
 foreach(OutlineItemCollection outlineItem in pdfDocument.Outlines)
@@ -49,7 +49,7 @@ foreach(OutlineItemCollection outlineItem in pdfDocument.Outlines)
      {
          Console.WriteLine("Child bookmarks");
         
-         // Browse child bookmarks as well
+         // تصفح الإشارات المرجعية للأطفال أيضًا
          foreach(OutlineItemCollection childOutline in outlineItem)
          {
              Console.WriteLine(childOutline.Title);
@@ -61,13 +61,13 @@ foreach(OutlineItemCollection outlineItem in pdfDocument.Outlines)
 }
 ```
 
-### Sample source code for Get Child Bookmarks using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر للحصول على الإشارات المرجعية التابعة باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "GetChildBookmarks.pdf");
-// Loop through all the bookmarks
+// قم بالمرور عبر جميع الإشارات المرجعية
 foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
 {
 	Console.WriteLine(outlineItem.Title);
@@ -77,7 +77,7 @@ foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
 	if (outlineItem.Count > 0)
 	{
 		Console.WriteLine("Child Bookmarks");
-		// There are child bookmarks then loop through that as well
+		// توجد إشارات مرجعية فرعية ثم يتم تكرارها من خلال ذلك أيضًا
 		foreach (OutlineItemCollection childOutline in outlineItem)
 		{
 			Console.WriteLine(childOutline.Title);
@@ -89,49 +89,49 @@ foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
 }
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! Now you have a step by step guide to get child bookmarks with Aspose.PDF for .NET. You can use this code to explore the hierarchical structure of bookmarks and get detailed information about each bookmark and its child bookmarks in your PDF documents.
+تهنئة ! الآن لديك دليل خطوة بخطوة للحصول على الإشارات المرجعية الفرعية باستخدام Aspose.PDF لـ .NET. يمكنك استخدام هذا الرمز لاستكشاف البنية الهرمية للإشارات المرجعية والحصول على معلومات مفصلة حول كل إشارة مرجعية وإشاراتها المرجعية الفرعية في مستندات PDF الخاصة بك.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+تأكد من مراجعة وثائق Aspose.PDF الرسمية لمزيد من المعلومات حول ميزات معالجة الإشارات المرجعية المتقدمة.
 
-### FAQ's for get child bookmarks in PDF file
+### الأسئلة الشائعة للحصول على إشارات مرجعية فرعية في ملف PDF
 
-#### Q: What are child bookmarks in a PDF file?
+#### س: ما هي الإشارات المرجعية الفرعية في ملف PDF؟
 
-A: Child bookmarks are bookmarks that are nested under a parent bookmark. They create a hierarchical structure, allowing for a more organized and detailed navigation experience within the PDF document.
+ج: الإشارات المرجعية الفرعية هي إشارات مرجعية متداخلة أسفل الإشارة المرجعية الأصلية. إنها تنشئ هيكلًا هرميًا، مما يسمح بتجربة تنقل أكثر تنظيمًا وتفصيلاً داخل مستند PDF.
 
-#### Q: Why would I want to retrieve child bookmarks from a PDF file?
+#### س: لماذا أرغب في استرداد الإشارات المرجعية الفرعية من ملف PDF؟
 
-A: Retrieving child bookmarks helps you understand the relationships and hierarchy between different sections of a document. This information can be especially useful for documents with complex structures or multiple levels of organization.
+ج: يساعدك استرداد الإشارات المرجعية الفرعية على فهم العلاقات والتسلسل الهرمي بين الأقسام المختلفة للمستند. يمكن أن تكون هذه المعلومات مفيدة بشكل خاص للمستندات ذات الهياكل المعقدة أو مستويات التنظيم المتعددة.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### س: كيف يمكنني استيراد المكتبات اللازمة لمشروع C# الخاص بي؟
 
-A: To import the required library for your C# project, use the following import directive:
+ج: لاستيراد المكتبة المطلوبة لمشروع C# الخاص بك، استخدم توجيه الاستيراد التالي:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This directive enables you to access the classes and methods provided by Aspose.PDF for .NET.
+يمكّنك هذا التوجيه من الوصول إلى الفئات والأساليب التي يوفرها Aspose.PDF لـ .NET.
 
-#### Q: How do I specify the path to the documents folder?
+#### س: كيف أحدد المسار إلى مجلد المستندات؟
 
-A: In the provided source code, replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file from which you want to extract child bookmarks. This ensures that the code can locate the target PDF file.
+ ج: في كود المصدر المقدم، استبدل`"YOUR DOCUMENT DIRECTORY"` بالمسار الفعلي إلى المجلد الذي يحتوي على ملف PDF الذي تريد استخراج الإشارات المرجعية الفرعية منه. وهذا يضمن أن الكود يمكنه تحديد موقع ملف PDF المستهدف.
 
-#### Q: How do I open a PDF document to extract child bookmarks?
+#### س: كيف يمكنني فتح مستند PDF لاستخراج الإشارات المرجعية الفرعية؟
 
-A: To open a PDF document for bookmark extraction, use the following code:
+ج: لفتح مستند PDF لاستخراج الإشارة المرجعية، استخدم الكود التالي:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetChildBookmarks.pdf");
 ```
 
-Replace `"GetChildBookmarks.pdf"` with the actual file name.
+ يستبدل`"GetChildBookmarks.pdf"` مع اسم الملف الفعلي.
 
-#### Q: How do I iterate through and display child bookmark information?
+#### س: كيف يمكنني التكرار وعرض معلومات الإشارة المرجعية التابعة؟
 
-A: Loop through all the bookmarks in the document using a `foreach` loop. For each bookmark, display information such as the title, italic style, bold style, color, and if it has child bookmarks, iterate through them as well:
+ ج: قم بالتمرير عبر كافة الإشارات المرجعية الموجودة في المستند باستخدام ملف`foreach` حلقة. بالنسبة لكل إشارة مرجعية، اعرض معلومات مثل العنوان والنمط المائل والنمط الغامق واللون، وإذا كانت تحتوي على إشارات مرجعية فرعية، فقم بالتكرار من خلالها أيضًا:
 
 ```csharp
 foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
@@ -145,7 +145,7 @@ foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
     {
         Console.WriteLine("Child bookmarks");
         
-        // Browse child bookmarks as well
+        // تصفح الإشارات المرجعية للأطفال أيضًا
         foreach (OutlineItemCollection childOutline in outlineItem)
         {
             Console.WriteLine(childOutline.Title);
@@ -157,18 +157,18 @@ foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
 }
 ```
 
-#### Q: Can I extract other properties of child bookmarks using a similar approach?
+#### س: هل يمكنني استخراج خصائص أخرى للإشارات المرجعية الفرعية باستخدام أسلوب مماثل؟
 
-A: Yes, you can extract various properties of child bookmarks using the `OutlineItemCollection` object. Refer to the Aspose.PDF documentation for a comprehensive list of available properties.
+ ج: نعم، يمكنك استخراج خصائص مختلفة للإشارات المرجعية الفرعية باستخدام الملف`OutlineItemCollection` هدف. راجع وثائق Aspose.PDF للحصول على قائمة شاملة بالخصائص المتاحة.
 
-#### Q: Is there a limit to the number of child bookmarks I can retrieve?
+#### س: هل هناك حد لعدد الإشارات المرجعية الفرعية التي يمكنني استردادها؟
 
-A: There is typically no strict limit to the number of child bookmarks you can retrieve using this method. However, very large documents with an excessive number of child bookmarks may require efficient memory management.
+ج: لا يوجد عادةً حد صارم لعدد الإشارات المرجعية الفرعية التي يمكنك استردادها باستخدام هذه الطريقة. ومع ذلك، قد تتطلب المستندات الكبيرة جدًا التي تحتوي على عدد زائد من الإشارات المرجعية الفرعية إدارة فعالة للذاكرة.
 
-#### Q: What if the child bookmarks have further nested child bookmarks?
+#### س: ماذا لو كانت الإشارات المرجعية الفرعية تحتوي على المزيد من الإشارات المرجعية الفرعية المتداخلة؟
 
-A: The provided code will recursively iterate through all levels of child bookmarks, allowing you to retrieve information from nested child bookmarks as well.
+ج: سيتم تكرار التعليمات البرمجية المقدمة بشكل متكرر عبر جميع مستويات الإشارات المرجعية الفرعية، مما يسمح لك باسترداد المعلومات من الإشارات المرجعية الفرعية المتداخلة أيضًا.
 
-#### Q: How can I use the extracted child bookmark information?
+#### س: كيف يمكنني استخدام معلومات الإشارة المرجعية الفرعية المستخرجة؟
 
-A: You can use the extracted child bookmark information for analysis, documentation, or creating custom navigation interfaces within your applications.
+ج: يمكنك استخدام معلومات الإشارات المرجعية الفرعية المستخرجة للتحليل أو التوثيق أو إنشاء واجهات تنقل مخصصة داخل تطبيقاتك.

@@ -1,96 +1,96 @@
 ---
-title: Horizontally And Vertically Radio Buttons
-linktitle: Horizontally And Vertically Radio Buttons
-second_title: Aspose.PDF for .NET API Reference
-description: Easily create horizontal and vertical radio buttons in your PDF documents with Aspose.PDF for .NET.
+title: أزرار الراديو أفقيًا وعموديًا
+linktitle: أزرار الراديو أفقيًا وعموديًا
+second_title: Aspose.PDF لمرجع .NET API
+description: قم بإنشاء أزرار اختيار أفقية ورأسية بسهولة في مستندات PDF الخاصة بك باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 180
 url: /ar/net/programming-with-forms/horizontally-and-vertically-radio-buttons/
 ---
-In this tutorial, we will show you how to create horizontally and vertically arranged radio buttons in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+سنوضح لك في هذا البرنامج التعليمي كيفية إنشاء أزرار اختيار مرتبة أفقيًا وعموديًا في مستند PDF باستخدام Aspose.PDF لـ .NET. سنشرح لك كود مصدر C# خطوة بخطوة لإرشادك خلال هذه العملية.
 
-## Step 1: Preparation
+## الخطوة 1: التحضير
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+تأكد من استيراد المكتبات الضرورية وتعيين المسار إلى دليل المستندات الخاص بك:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Load the document
+## الخطوة 2: قم بتحميل المستند
 
-Load the existing PDF document:
+قم بتحميل مستند PDF الموجود:
 
 ```csharp
 FormEditor formEditor = new FormEditor();
 formEditor.BindPdf(dataDir + "input.pdf");
 ```
 
-## Step 3: Customize radio button options
+## الخطوة 3: تخصيص خيارات زر الاختيار
 
-Customize radio button options by setting the following properties:
+قم بتخصيص خيارات زر الاختيار عن طريق تعيين الخصائص التالية:
 
 ```csharp
-formEditor. RadioGap = 4; // Distance between two radio button options
-formEditor. RadioHoriz = true; // Horizontal layout of radio buttons
-formEditor.RadioButtonItemSize = 20; // Size of radio buttons
-formEditor.Facade.BorderWidth = 1; // Width of radio button border
-formEditor.Facade.BorderColor = System.Drawing.Color.Black; // Radio button border color
+formEditor. RadioGap = 4; // المسافة بين خيارين لزر الاختيار
+formEditor. RadioHoriz = true; //التخطيط الأفقي لأزرار الاختيار
+formEditor.RadioButtonItemSize = 20; // حجم أزرار الراديو
+formEditor.Facade.BorderWidth = 1; // عرض حدود زر الاختيار
+formEditor.Facade.BorderColor = System.Drawing.Color.Black; // لون حدود زر الاختيار
 ```
 
-## Step 4: Add Horizontal Radio Buttons
+## الخطوة 4: إضافة أزرار الراديو الأفقية
 
-Add radio buttons arranged horizontally by specifying the options and position of the field:
+أضف أزرار الاختيار مرتبة أفقيًا من خلال تحديد الخيارات وموضع الحقل:
 
 ```csharp
 formEditor.Items = new string[] { "First", "Second", "Third" };
 formEditor.AddField(FieldType.Radio, "NewField1", 1, 40, 600, 120, 620);
 ```
 
-## Step 5: Add vertical radio buttons
+## الخطوة 5: إضافة أزرار الاختيار العمودية
 
-Add radio buttons arranged vertically by specifying the options and position of the field:
+أضف أزرار الاختيار مرتبة عموديًا من خلال تحديد الخيارات وموضع الحقل:
 
 ```csharp
-formEditor. RadioHoriz = false; // Vertical layout of radio buttons
+formEditor. RadioHoriz = false; // التخطيط الرأسي لأزرار الاختيار
 formEditor.Items = new string[] { "First", "Second", "Third" };
 formEditor.AddField(FieldType.Radio, "NewField2", 1, 40, 500, 60, 550);
 ```
 
-## Step 6: Save the document
+## الخطوة 6: احفظ المستند
 
-Save the modified PDF document:
+احفظ مستند PDF المعدل:
 
 ```csharp
 dataDir = dataDir + "HorizontallyAndVerticallyRadioButtons_out.pdf";
 formEditor.Save(dataDir);
 ```
 
-### Sample source code for Horizontally And Vertically Radio Buttons using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لأزرار الاختيار الأفقية والعمودية باستخدام Aspose.PDF لـ .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// المسار إلى دليل المستندات.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Load the previously saved document
+	// قم بتحميل المستند المحفوظ مسبقًا
 	FormEditor formEditor = new FormEditor();
 	formEditor.BindPdf(dataDir + "input.pdf");
-	// RadioGap is distance between two radio button options. 
+	// RadioGap هي المسافة بين خيارين لزر الاختيار.
 	formEditor.RadioGap = 4;
-	// Add horizontal radio button
+	// إضافة زر الاختيار الأفقي
 	formEditor.RadioHoriz = true;
-	// RadioButtonItemSize if size of radio button item.
+	// RadioButtonItemSize إذا كان حجم عنصر زر الاختيار.
 	formEditor.RadioButtonItemSize = 20;
 	formEditor.Facade.BorderWidth = 1;
 	formEditor.Facade.BorderColor = System.Drawing.Color.Black;
 	formEditor.Items = new string[] { "First", "Second", "Third" };
 	formEditor.AddField(FieldType.Radio, "NewField1", 1, 40, 600, 120, 620);
-	// Add other radio button situated vertically
+	// أضف زر اختيار آخر يقع عموديًا
 	formEditor.RadioHoriz = false;
 	formEditor.Items = new string[] { "First", "Second", "Third" };
 	formEditor.AddField(FieldType.Radio, "NewField2", 1, 40, 500, 60, 550);
 	dataDir = dataDir + "HorizontallyAndVerticallyRadioButtons_out.pdf";
-	// Save the PDF document
+	// احفظ مستند PDF
 	formEditor.Save(dataDir);
 	Console.WriteLine("\nHorizontally and vertically laid out radio buttons successfully.\nFile saved at " + dataDir);
 }
@@ -100,28 +100,28 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we learned how to create horizontally and vertically arranged radio buttons in a PDF document using Aspose.PDF for .NET. By following these steps, you can easily customize the layout of radio buttons and add them to your PDF documents using Aspose.PDF.
+في هذا البرنامج التعليمي، تعلمنا كيفية إنشاء أزرار اختيار مرتبة أفقيًا وعموديًا في مستند PDF باستخدام Aspose.PDF لـ .NET. باتباع هذه الخطوات، يمكنك بسهولة تخصيص تخطيط أزرار الاختيار وإضافتها إلى مستندات PDF الخاصة بك باستخدام Aspose.PDF.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What are horizontally and vertically arranged radio buttons in a PDF document?
+#### س: ما هي أزرار الاختيار المرتبة أفقيًا وعموديًا في مستند PDF؟
 
-A: Horizontally and vertically arranged radio buttons in a PDF document refer to the layout orientation of radio button options. Horizontal layout places the radio button options side by side, allowing users to make a selection from left to right. Vertical layout, on the other hand, stacks the radio button options on top of each other, enabling users to make a selection from top to bottom.
+ج: تشير أزرار الاختيار المرتبة أفقيًا وعموديًا في مستند PDF إلى اتجاه تخطيط خيارات زر الاختيار. يضع التخطيط الأفقي خيارات زر الاختيار جنبًا إلى جنب، مما يسمح للمستخدمين بالاختيار من اليسار إلى اليمين. من ناحية أخرى، يعمل التخطيط الرأسي على تكديس خيارات زر الاختيار فوق بعضها البعض، مما يمكّن المستخدمين من الاختيار من الأعلى إلى الأسفل.
 
-#### Q: How do I customize the appearance of radio button options in Aspose.PDF for .NET?
+#### س: كيف يمكنني تخصيص مظهر خيارات زر الاختيار في Aspose.PDF لـ .NET؟
 
-A: You can customize the appearance of radio button options in Aspose.PDF for .NET by adjusting several properties. The API provides options to set the distance between two radio button options (`RadioGap`), the layout orientation (`RadioHoriz`), the size of radio button items (`RadioButtonItemSize`), the border width and color of radio buttons, and more.
+ج: يمكنك تخصيص مظهر خيارات زر الاختيار في Aspose.PDF لـ .NET عن طريق ضبط العديد من الخصائص. توفر واجهة برمجة التطبيقات (API) خيارات لتعيين المسافة بين خيارين لزر الاختيار (`RadioGap`)، اتجاه التخطيط (`RadioHoriz`)، وحجم عناصر زر الاختيار (`RadioButtonItemSize`)، وعرض الحدود ولون أزرار الاختيار، والمزيد.
 
-#### Q: Can I add both horizontal and vertical radio buttons to the same PDF document?
+#### س: هل يمكنني إضافة أزرار الاختيار الأفقية والرأسية إلى نفس مستند PDF؟
 
-A: Yes, you can add both horizontal and vertical radio buttons to the same PDF document using Aspose.PDF for .NET. The sample source code provided in the tutorial demonstrates how to first add radio buttons arranged horizontally and then add another set of radio buttons arranged vertically to the same PDF document.
+ج: نعم، يمكنك إضافة أزرار الاختيار الأفقية والرأسية إلى نفس مستند PDF باستخدام Aspose.PDF لـ .NET. يوضح نموذج التعليمات البرمجية المصدر الموجود في البرنامج التعليمي كيفية إضافة أزرار الاختيار مرتبة أفقيًا أولاً ثم إضافة مجموعة أخرى من أزرار الاختيار مرتبة رأسيًا إلى نفس مستند PDF.
 
-#### Q: Can I set different radio button options for each group of radio buttons?
+#### س: هل يمكنني تعيين خيارات مختلفة لأزرار الاختيار لكل مجموعة من أزرار الاختيار؟
 
-A: Yes, you can set different radio button options for each group of radio buttons. Each group should have a unique `RadioButtonField` object, and the `RadioButtonOptionField` objects within each group should share the same page and unique names for their options. This ensures that the radio buttons within each group function correctly, and the selections are mutually exclusive.
+ ج: نعم، يمكنك تعيين خيارات مختلفة لأزرار الاختيار لكل مجموعة من أزرار الاختيار. يجب أن يكون لكل مجموعة فريدة من نوعها`RadioButtonField` الكائن، و`RadioButtonOptionField` يجب أن تشترك الكائنات الموجودة داخل كل مجموعة في نفس الصفحة والأسماء الفريدة لخياراتها. وهذا يضمن أن أزرار الاختيار الموجودة داخل كل مجموعة تعمل بشكل صحيح، وأن التحديدات حصرية بشكل متبادل.
 
-#### Q: Are the layout and appearance settings of radio buttons supported in all PDF viewers and applications?
+#### س: هل يتم دعم إعدادات التخطيط والمظهر لأزرار الاختيار في جميع برامج عرض وتطبيقات PDF؟
 
-A: Yes, the layout and appearance settings of radio buttons are supported in all standard-compliant PDF viewers and applications. The PDF specification defines radio buttons and their various attributes, making them universally recognized in the PDF format. However, it's essential to test the appearance and behavior of radio buttons in different PDF viewers to ensure consistent rendering across various platforms.
+ج: نعم، يتم دعم إعدادات التخطيط والمظهر لأزرار الاختيار في جميع برامج عرض وتطبيقات PDF المتوافقة مع المعايير. تحدد مواصفات PDF أزرار الاختيار وخصائصها المختلفة، مما يجعلها معترف بها عالميًا بتنسيق PDF. ومع ذلك، من الضروري اختبار مظهر وسلوك أزرار الاختيار في برامج عرض PDF المختلفة لضمان العرض المتسق عبر الأنظمة الأساسية المختلفة.

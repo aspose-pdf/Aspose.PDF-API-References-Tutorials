@@ -1,120 +1,120 @@
 ---
-title: Add Date Time Stamp In PDF File
-linktitle: Add Date Time Stamp In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to easily add a date and time stamp in PDF file with Aspose.PDF for .NET.
+title: 在 PDF 文件中添加日期时间戳
+linktitle: 在 PDF 文件中添加日期时间戳
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 在 PDF 文件中轻松添加日期和时间戳。
 type: docs
 weight: 10
 url: /zh/net/programming-with-stamps-and-watermarks/add-date-time-stamp/
 ---
-In this article, we will take you step by step on how to add a date and time stamp in PDF file using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to add a date and time stamp to an existing PDF file.
+在本文中，我们将逐步指导您如何使用 Aspose.PDF for .NET 在 PDF 文件中添加日期和时间戳。我们将向您展示如何使用提供的 C# 源代码向现有 PDF 文件添加日期和时间戳。
 
-## Requirements
+## 要求
 
-Before you begin, make sure you have the following:
+在开始之前，请确保您具备以下条件：
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- 已安装的 .NET 开发环境。
+- 下载用于 .NET 的 Aspose.PDF 库并在您的项目中引用。
 
-## Step 1: Setting up the environment
+## 第一步：搭建环境
 
-Before you can add a date and time stamp to a PDF document, you need to set up your development environment. Here are the steps to follow:
+在向 PDF 文档添加日期和时间戳之前，您需要设置开发环境。以下是要遵循的步骤：
 
-1. Open your favorite IDE (Integrated Development Environment).
-2. Create a new C# project.
-3. Make sure you have added a reference to the Aspose.PDF library for .NET.
+1. 打开您最喜欢的 IDE（集成开发环境）。
+2. 创建一个新的 C# 项目。
+3. 确保您已添加对 .NET 的 Aspose.PDF 库的引用。
 
-## Step 2: Adding the Aspose.PDF library
+## 第2步：添加Aspose.PDF库
 
-The Aspose.PDF library for .NET is required to work with PDF documents in your project.
+需要使用适用于 .NET 的 Aspose.PDF 库来处理项目中的 PDF 文档。
 
-## Step 3: Loading the PDF document
+## 第 3 步：加载 PDF 文档
 
-The first step to adding a date and time stamp is to load the existing PDF document into your project. Here's how:
+添加日期和时间戳的第一步是将现有 PDF 文档加载到您的项目中。就是这样：
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the document
+//打开文档
 Document pdfDocument = new Document(dataDir + "AddTextStamp.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+请务必将“您的文档目录”替换为 PDF 文档所在目录的实际路径。
 
-## Step 4: Creating the date and time stamp
+## 步骤 4：创建日期和时间戳
 
-Now that you have uploaded the document
+现在您已经上传了文档
 
-  PDF, you can create the date and time stamp to add. Here's how to do it:
+  PDF，您可以创建要添加的日期和时间戳。操作方法如下：
 
 ```csharp
 string annotationText = string.Empty;
 annotationText = DateTime.Now.ToString("MM/dd/yy hh:mm:ss tt");
 
-// Create a text buffer
+//创建文本缓冲区
 TextStamp textStamp = new TextStamp(annotationText);
 ```
 
-The code above creates a new text buffer containing the current date and time.
+上面的代码创建一个包含当前日期和时间的新文本缓冲区。
 
-## Step 5: Configuring Stamp Properties
+## 步骤 5：配置图章属性
 
-Before adding the stamp to the PDF document, you can configure various properties of the stamp, such as margin, horizontal and vertical alignment, etc. Here's how:
+在将图章添加到 PDF 文档之前，您可以配置图章的各种属性，例如边距、水平和垂直对齐方式等。操作方法如下：
 
 ```csharp
-// Set buffer properties
+//设置缓冲区属性
 textStamp.BottomMargin = 10;
 textStamp. RightMargin = 20;
 textStamp.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Right;
 textStamp.VerticalAlignment = VerticalAlignment.Bottom;
 ```
 
-You can adjust these properties according to your needs.
+您可以根据需要调整这些属性。
 
-## Step 6: Add Stamp to PDF
+## 第 6 步：将图章添加到 PDF
 
-Now that the date and time stamp is ready, you can add it to a specific page of the PDF document. Here's how:
+现在日期和时间戳已准备就绪，您可以将其添加到 PDF 文档的特定页面。就是这样：
 
 ```csharp
-// Add the stamp to the page's stamp collection
+//将图章添加到页面的图章集中
 pdfDocument.Pages[1].AddStamp(textStamp);
 ```
 
-The code above adds the stamp to the first page of the PDF document. You can specify another page if needed.
+上面的代码将图章添加到 PDF 文档的第一页。如果需要，您可以指定另一个页面。
 
-## Step 7: Save the output document
+## 步骤7：保存输出文档
 
-Once you have added the date and time stamp, you can save the modified PDF document. Here's how:
+添加日期和时间戳后，您可以保存修改后的 PDF 文档。就是这样：
 
 ```csharp
-// Save the output document
+//保存输出文档
 pdfDocument.Save(dataDir);
 ```
 
-The above code saves the edited PDF document to the specified directory.
+上述代码将编辑后的PDF文档保存到指定目录。
 
-### Sample source code for Add Date Time Stamp using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 添加日期时间戳的示例源代码 
 ```csharp
 
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+//打开文档
 Document pdfDocument = new Document(dataDir+ "AddTextStamp.pdf");
 string annotationText = string.Empty;
 annotationText = DateTime.Now.ToString("MM/dd/yy hh:mm:ss tt ");
 
-// Create text stamp
+//创建文本印章
 TextStamp textStamp = new TextStamp(annotationText);
 
-// Set properties of the stamp
+//设置图章的属性
 textStamp.BottomMargin = 10;
 textStamp.RightMargin = 20;
 textStamp.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Right;
 textStamp.VerticalAlignment = VerticalAlignment.Bottom;
 
-// Adding stamp on stamp collection
+//在集邮上添加邮票
 pdfDocument.Pages[1].AddStamp(textStamp);
 DefaultAppearance default_appearance = new DefaultAppearance("Arial", 6, System.Drawing.Color.Black);
 FreeTextAnnotation textAnnotation = new FreeTextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(0, 0, 0, 0), default_appearance);
@@ -130,50 +130,50 @@ textAnnotation.Rect = new Aspose.Pdf.Rectangle(0, 0, 0, 0);
 pdfDocument.Pages[1].Annotations.Add(textAnnotation);
 dataDir = dataDir + "AddDateTimeStamp_out.pdf";
 
-// Save output document
+//保存输出文档
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nDate time stamp added successfully.\nFile saved at " + dataDir);  
           
 ```
 
-## Conclusion
+## 结论
 
-Congratulation ! You have learned how to add a date and time stamp using Aspose.PDF for .NET. Now you can apply this knowledge to your own projects to add date and time stamps to PDF documents.
+恭喜！您已经了解了如何使用 Aspose.PDF for .NET 添加日期和时间戳。现在您可以将这些知识应用到您自己的项目中，以向 PDF 文档添加日期和时间戳。
 
-### FAQ's for add date time stamp in PDF file
+### 在 PDF 文件中添加日期时间戳的常见问题解答
 
-#### Q: What is the purpose of adding a date and time stamp to a PDF document using Aspose.PDF for .NET?
+#### 问：使用 Aspose.PDF for .NET 向 PDF 文档添加日期和时间戳的目的是什么？
 
-A: Adding a date and time stamp to a PDF document enhances its informational value by indicating when the document was modified or created. This feature is useful for tracking document changes and providing a reference point for document history.
+答：向 PDF 文档添加日期和时间戳可以指示文档的修改或创建时间，从而增强其信息价值。此功能对于跟踪文档更改并为文档历史记录提供参考点非常有用。
 
-#### Q: Can I customize the format of the date and time stamp to match specific requirements?
+#### 问：我可以自定义日期和时间戳的格式以满足特定要求吗？
 
-A: Yes, you can customize the format of the date and time stamp according to your preferences. The provided C# source code uses the `DateTime.Now.ToString()` method to generate the timestamp in a specific format. You can modify this code to format the timestamp as needed.
+答：是的，您可以根据您的喜好自定义日期和时间戳的格式。提供的 C# 源代码使用`DateTime.Now.ToString()`方法生成特定格式的时间戳。您可以修改此代码以根据需要格式化时间戳。
 
-#### Q: Is it possible to add the date and time stamp to a specific location on a PDF page?
+#### 问：是否可以将日期和时间戳添加到 PDF 页面上的特定位置？
 
-A: Absolutely, you can adjust the placement of the date and time stamp on the PDF page by modifying the properties of the `TextStamp` object. The code provided in the tutorial demonstrates how to set properties such as margin, alignment, and vertical positioning.
+答：当然可以，您可以通过修改 PDF 页面的属性来调整日期和时间戳在 PDF 页面上的位置。`TextStamp`目的。本教程中提供的代码演示了如何设置边距、对齐方式和垂直定位等属性。
 
-#### Q: Can I add multiple date and time stamps to different pages of the same PDF document?
+#### 问：我可以在同一 PDF 文档的不同页面上添加多个日期和时间戳吗？
 
-A: Yes, you can add multiple date and time stamps to different pages of the same PDF document. Simply repeat the process of creating a `TextStamp` object and configuring its properties for each desired page.
+答：是的，您可以将多个日期和时间戳添加到同一 PDF 文档的不同页面。只需重复创建的过程`TextStamp`对象并为每个所需页面配置其属性。
 
-#### Q: How can I change the font, size, or color of the date and time stamp text?
+#### 问：如何更改日期和时间戳文本的字体、大小或颜色？
 
-A: To modify the font, size, or color of the date and time stamp text, you can customize the properties of the `DefaultAppearance` object used to create the `TextStamp`. Adjust the font name, size, and color values to achieve the desired appearance.
+答：要修改日期和时间戳文本的字体、大小或颜色，您可以自定义日期和时间戳文本的属性。`DefaultAppearance`用于创建的对象`TextStamp`。调整字体名称、大小和颜色值以获得所需的外观。
 
-#### Q: Is it possible to add other types of annotations or stamps to a PDF document using Aspose.PDF for .NET?
+#### 问：是否可以使用 Aspose.PDF for .NET 将其他类型的注释或图章添加到 PDF 文档中？
 
-A: Yes, Aspose.PDF for .NET provides a wide range of annotation types that you can add to PDF documents, including text annotations, stamps, lines, shapes, and more. You can explore the Aspose.PDF documentation for further details on working with annotations.
+答：是的，Aspose.PDF for .NET 提供了多种注释类型，您可以将其添加到 PDF 文档中，包括文本注释、图章、线条、形状等。您可以浏览 Aspose.PDF 文档以获取有关使用注释的更多详细信息。
 
-#### Q: Are there any limitations or considerations when adding a date and time stamp to a PDF document?
+#### 问：向 PDF 文档添加日期和时间戳时有任何限制或注意事项吗？
 
-A: While adding a date and time stamp is straightforward, consider factors such as the document's layout and existing content. Make sure the placement of the stamp does not obscure important information or affect the readability of the document.
+答：虽然添加日期和时间戳很简单，但请考虑文档布局和现有内容等因素。确保印章的位置不会掩盖重要信息或影响文档的可读性。
 
-#### Q: How can I integrate this method into my own projects to add date and time stamps to PDF documents?
+#### 问：如何将此方法集成到我自己的项目中，为 PDF 文档添加日期和时间戳？
 
-A: To integrate this method, follow the provided steps and adjust the code to fit your project's structure. You can add date and time stamps to existing PDF documents to enhance their usefulness and provide a clear timeline of changes.
+答：要集成此方法，请按照提供的步骤操作并调整代码以适合您的项目结构。您可以向现有 PDF 文档添加日期和时间戳，以增强其实用性并提供清晰的更改时间表。
 
-#### Q: Can I automate the process of adding date and time stamps to multiple PDF documents?
+#### 问：我可以自动执行向多个 PDF 文档添加日期和时间戳的过程吗？
 
-A: Yes, you can automate the process of adding date and time stamps to multiple PDF documents by creating a script or program that iterates through a list of documents and applies the same stamping process to each one.
+答：是的，您可以通过创建一个脚本或程序来自动执行向多个 PDF 文档添加日期和时间戳的过程，该脚本或程序会迭代文档列表并对每个文档应用相同的标记过程。

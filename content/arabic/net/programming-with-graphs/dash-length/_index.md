@@ -1,45 +1,45 @@
 ---
-title: Dash Length
-linktitle: Dash Length
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set the length of dashes with Aspose.PDF for .NET. Step by step guide to customize dash patterns.
+title: طول الشرطة
+linktitle: طول الشرطة
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية ضبط طول الشرطات باستخدام Aspose.PDF لـ .NET. دليل خطوة بخطوة لتخصيص أنماط الشرطة.
 type: docs
 weight: 70
 url: /ar/net/programming-with-graphs/dash-length/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to set the length of dashes using Aspose.PDF for .NET.
+في هذا البرنامج التعليمي، سنرشدك عبر التعليمات البرمجية المصدر لـ C# التالية خطوة بخطوة لتعيين طول الشرطات باستخدام Aspose.PDF لـ .NET.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+تأكد من تثبيت مكتبة Aspose.PDF وإعداد بيئة التطوير الخاصة بك قبل البدء. لديك أيضًا معرفة أساسية ببرمجة C#.
 
-## Step 1: Document Directory Setup
+## الخطوة 1: إعداد دليل المستندات
 
-In the provided source code, you need to specify the directory where you want to save the resulting PDF file. Change the "dataDir" variable to the desired directory.
+في كود المصدر المقدم، تحتاج إلى تحديد الدليل الذي تريد حفظ ملف PDF الناتج فيه. قم بتغيير المتغير "dataDir" إلى الدليل المطلوب.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Instantiating a Document Object and Adding a Page
+## الخطوة 2: إنشاء كائن مستند وإضافة صفحة
 
-We create an instance of the Document class and add a page to this document.
+نقوم بإنشاء مثيل لفئة المستند وإضافة صفحة إلى هذا المستند.
 
 ```csharp
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Step 3: Creating a Graph Object and adding it to the page
+## الخطوة 3: إنشاء كائن رسم بياني وإضافته إلى الصفحة
 
-We create a Graph object with specified dimensions and add it to the page's paragraph collection.
+نقوم بإنشاء كائن رسم بياني بأبعاد محددة ونضيفه إلى مجموعة فقرات الصفحة.
 
 ```csharp
 Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
 page.Paragraphs.Add(canvas);
 ```
 
-## Step 4: Creating a Line Object and Configuring
+## الخطوة 4: إنشاء كائن خط وتكوينه
 
-We create a Line object with the specified coordinates and configure the color and length of the dashes.
+نقوم بإنشاء كائن خطي بالإحداثيات المحددة ونقوم بتكوين لون الشرطات وطولها.
 
 ```csharp
 Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { 100, 100, 200, 100 });
@@ -48,79 +48,79 @@ line.GraphInfo.DashArray = new int[] { 0, 1, 0 };
 line.GraphInfo.DashPhase = 1;
 ```
 
-## Step 5: Adding the Line to the Graph Object
+## الخطوة 5: إضافة الخط إلى كائن الرسم البياني
 
-We add the line to the shape collection of the Graph object.
+نضيف السطر إلى مجموعة أشكال كائن الرسم البياني.
 
 ```csharp
 canvas.Shapes.Add(line);
 ```
 
-## Step 6: Saving the Resulting PDF File
+## الخطوة 6: حفظ ملف PDF الناتج
 
-Finally, we save the resulting PDF file with the name "DashLength_out.pdf" in the specified directory.
+أخيرًا، نقوم بحفظ ملف PDF الناتج بالاسم "DashLength_out.pdf" في الدليل المحدد.
 
 ```csharp
 doc.Save(dataDir + "DashLength_out.pdf");
 ```
 
-### Sample source code for Dash Length using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لـ Dash Length باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Instantiate Document instance
+// إنشاء مثيل للمستند
 Document doc = new Document();
-// Add page to pages collection of Document object
+// إضافة صفحة إلى مجموعة صفحات كائن المستند
 Page page = doc.Pages.Add();
-// Create Drawing object with certain dimensions
+// إنشاء كائن رسومي بأبعاد معينة
 Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
-// Add drawing object to paragraphs collection of page instance
+// إضافة كائن رسومي إلى مجموعة الفقرات من مثيل الصفحة
 page.Paragraphs.Add(canvas);
-// Create Line object
+// إنشاء كائن الخط
 Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { 100, 100, 200, 100 });
-// Set color for Line object
+// تعيين اللون لكائن الخط
 line.GraphInfo.Color = Aspose.Pdf.Color.Red;
-// Specify dash array for line object
+// تحديد صفيف الشرطة لكائن الخط
 line.GraphInfo.DashArray = new int[] { 0, 1, 0 };
-// Set the dash phase for Line instance
+// قم بتعيين مرحلة الشرطة لمثيل الخط
 line.GraphInfo.DashPhase = 1;
-// Add line to shapes collection of drawing object
+// إضافة خط إلى مجموعة أشكال الكائن الرسومي
 canvas.Shapes.Add(line);
 dataDir = dataDir + "DashLength_out.pdf";
-// Save PDF document
+// حفظ وثيقة PDF
 doc.Save(dataDir);
 Console.WriteLine("\nLength dashed successfully in black and white.\nFile saved at " + dataDir);            
 
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we explained how to set the length of dashes using Aspose.PDF for .NET. Now you can use this knowledge to create lines with custom dash patterns in your PDF files.
+في هذا البرنامج التعليمي، شرحنا كيفية ضبط طول الشرطات باستخدام Aspose.PDF لـ .NET. يمكنك الآن استخدام هذه المعرفة لإنشاء خطوط بأنماط الشرطة المخصصة في ملفات PDF الخاصة بك.
 
-## FAQs
+## الأسئلة الشائعة
 
-#### Q: What is the purpose of this tutorial?
+#### س: ما هو الغرض من هذا البرنامج التعليمي؟
 
-A: This tutorial's purpose is to guide you through the process of setting the length of dashes for lines using Aspose.PDF for .NET. You'll learn how to create lines with custom dash patterns in your PDF files.
+ج: الغرض من هذا البرنامج التعليمي هو إرشادك خلال عملية تعيين طول الشرطات للأسطر باستخدام Aspose.PDF لـ .NET. ستتعلم كيفية إنشاء خطوط بأنماط متقطعة مخصصة في ملفات PDF الخاصة بك.
 
-#### Q: What prerequisites are required before starting?
+#### س: ما هي المتطلبات الأساسية المطلوبة قبل البدء؟
 
-A: Before you start, ensure that you have installed the Aspose.PDF library and set up your development environment. A basic understanding of C# programming is also recommended.
+ج: قبل البدء، تأكد من تثبيت مكتبة Aspose.PDF وإعداد بيئة التطوير الخاصة بك. يوصى أيضًا بالفهم الأساسي لبرمجة C#.
 
-#### Q: How do I specify the directory for saving the PDF file?
+#### س: كيف أحدد الدليل لحفظ ملف PDF؟
 
-A: Modify the "dataDir" variable in the provided source code to indicate the directory where you want to save the resulting PDF file.
+ج: قم بتعديل متغير "dataDir" في كود المصدر المقدم للإشارة إلى الدليل الذي تريد حفظ ملف PDF الناتج فيه.
 
-#### Q: How do I create a line with custom dash patterns?
+#### س: كيف يمكنني إنشاء خط بأنماط متقطعة مخصصة؟
 
-A: The tutorial demonstrates creating a Line object and configuring its color, dash array, and dash phase using the `GraphInfo` object. Modify these settings to achieve the desired dash pattern.
+ ج: يوضح البرنامج التعليمي إنشاء كائن خطي وتكوين لونه ومصفوفة الشرطة ومرحلة الشرطة باستخدام`GraphInfo` هدف. قم بتعديل هذه الإعدادات لتحقيق نمط الشرطة المطلوب.
 
-#### Q: Can I customize the color of the line?
+#### س: هل يمكنني تخصيص لون الخط؟
 
-A: Yes, you can customize the color of the line by setting the `Color` property of the `GraphInfo` object associated with the Line.
+ ج: نعم، يمكنك تخصيص لون الخط عن طريق ضبط اللون`Color` ملكية`GraphInfo` الكائن المرتبط بالخط.
 
-#### Q: How do I save the PDF document after setting the dash length?
+#### س: كيف يمكنني حفظ مستند PDF بعد ضبط طول الشرطة؟
 
-A: After configuring the Line object with the desired dash pattern, you can save the resulting PDF document using the `doc.Save(dataDir + "DashLength_out.pdf");` line in the provided source code.
+ ج: بعد تكوين كائن الخط بنمط الشرطة المرغوب فيه، يمكنك حفظ مستند PDF الناتج باستخدام الملف`doc.Save(dataDir + "DashLength_out.pdf");` سطر في كود المصدر المقدم.

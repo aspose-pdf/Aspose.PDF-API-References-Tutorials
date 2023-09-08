@@ -1,21 +1,21 @@
 ---
-title: Programming with Attachments
-linktitle: Programming with Attachments
+title: Eklerle Programlama
+linktitle: Eklerle Programlama
 type: docs
 weight: 18
 url: /tr/net/programming-with-attachments/
-description: Learn how to manipulate attachments in PDF documents, including adding, extracting and deleting them, to improve the functionality of PDF files.
+description: PDF dosyalarının işlevselliğini geliştirmek için PDF belgelerindeki ekleri ekleme, çıkarma ve silme dahil olmak üzere nasıl değiştireceğinizi öğrenin.
 ---
-The Aspose.PDF for .NET tutorials on programming with attachments provide step-by-step instructions for working with attachments in PDF documents. Learn how to add, extract and delete attachments, as well as manage their properties.
+Eklerle programlamaya ilişkin Aspose.PDF for .NET eğitimleri, PDF belgelerindeki eklerle çalışmaya yönelik adım adım talimatlar sağlar. Ekleri nasıl ekleyeceğinizi, çıkaracağınızı ve sileceğinizi ve bunların özelliklerini nasıl yöneteceğinizi öğrenin.
 
-These tutorials will guide you through the different steps to manipulate attachments in your PDF documents, allowing you to improve the functionality and interactivity of your PDF files.
+Bu eğitimler, PDF belgelerinizdeki ekleri düzenlemeye yönelik farklı adımlarda size rehberlik ederek PDF dosyalarınızın işlevselliğini ve etkileşimini geliştirmenize olanak tanır.
 
-## Tutorials
-| Title | Description |
+## Öğreticiler
+| Başlık | Tanım |
 | --- | --- | 
-| [Add Attachment In PDF File](./add-attachment/) | Learn how to add attachment in PDF file using Aspose.PDF for .NET.  |  
-| [Delete All Attachments In PDF File](./delete-all-attachments/) | Learn how to remove all attachments in PDF file using Aspose.PDF for .NET.  |  
-| [Disable Files Compression In PDF File](./disable-files-compression/) | Learn how to disable file compression in PDF file with Aspose.PDF for .NET.  |  
-| [Get All The Attachments In PDF File](./get-all-the-attachments/) | Learn how to get all attachments in PDF file with Aspose.PDF for .NET.  |  
-| [Get Attachment Info](./get-attachment-info/) | Learn how to get information about a specific attachment in a PDF file with Aspose.PDF for .NET. |  
-| [Get Individual Attachment In PDF File](./get-individual-attachment/) | Learn how to get an individual attachment in PDF file with Aspose.PDF for .NET.  |  
+| [PDF Dosyasına Ek Ekle](./add-attachment/) | Aspose.PDF for .NET kullanarak PDF dosyasına nasıl eklenti ekleyeceğinizi öğrenin.  |  
+| [PDF Dosyasındaki Tüm Ekleri Sil](./delete-all-attachments/) | Aspose.PDF for .NET kullanarak PDF dosyasındaki tüm ekleri nasıl kaldıracağınızı öğrenin.  |  
+| [PDF Dosyasında Dosya Sıkıştırmayı Devre Dışı Bırak](./disable-files-compression/) | Aspose.PDF for .NET ile PDF dosyasında dosya sıkıştırmasını nasıl devre dışı bırakacağınızı öğrenin.  |  
+| [Tüm Ekleri PDF Dosyasında Alın](./get-all-the-attachments/) | Aspose.PDF for .NET ile tüm ekleri PDF dosyasına nasıl alacağınızı öğrenin.  |  
+| [Ek Bilgisini Al](./get-attachment-info/) | Aspose.PDF for .NET ile bir PDF dosyasındaki belirli bir ek hakkında nasıl bilgi alacağınızı öğrenin. |  
+| [PDF Dosyasında Bireysel Ek Alın](./get-individual-attachment/) | Aspose.PDF for .NET ile PDF dosyasında ayrı bir ekin nasıl alınacağını öğrenin.  |  

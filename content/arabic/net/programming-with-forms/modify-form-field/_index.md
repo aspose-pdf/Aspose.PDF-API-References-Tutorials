@@ -1,103 +1,103 @@
 ---
-title: Modify Form Field In PDF Document
-linktitle: Modify Form Field In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Easily edit form fields in PDF document with Aspose.PDF for .NET.
+title: تعديل حقل النموذج في وثيقة PDF
+linktitle: تعديل حقل النموذج في وثيقة PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: قم بتحرير حقول النموذج في مستند PDF بسهولة باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 190
 url: /ar/net/programming-with-forms/modify-form-field/
 ---
-In this tutorial, we will show you how to edit a form field in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+سنوضح لك في هذا البرنامج التعليمي كيفية تحرير حقل نموذج في مستند PDF باستخدام Aspose.PDF لـ .NET. سنشرح لك كود مصدر C# خطوة بخطوة لإرشادك خلال هذه العملية.
 
-## Step 1: Preparation
+## الخطوة 1: التحضير
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+تأكد من استيراد المكتبات الضرورية وتعيين المسار إلى دليل المستندات الخاص بك:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Load the document
+## الخطوة 2: قم بتحميل المستند
 
-Load the existing PDF document:
+قم بتحميل مستند PDF الموجود:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ModifyFormField.pdf");
 ```
 
-## Step 3: Get the form field
+## الخطوة 3: الحصول على حقل النموذج
 
-Get the form field you want to edit:
+احصل على حقل النموذج الذي تريد تحريره:
 
 ```csharp
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
 ```
 
-## Step 4: Change the field value
+## الخطوة 4: تغيير قيمة الحقل
 
-Change the form field value:
+تغيير قيمة حقل النموذج:
 
 ```csharp
 textBoxField.Value = "New Value";
 ```
 
-## Step 5: Edit Field Properties
+## الخطوة 5: تحرير خصائص الحقل
 
-Modify additional form field properties as needed. For example, you can make it read-only:
+قم بتعديل خصائص حقل النموذج الإضافية حسب الحاجة. على سبيل المثال، يمكنك جعله للقراءة فقط:
 
 ```csharp
 textBoxField.ReadOnly = true;
 ```
 
-## Step 6: Save the edited document
+## الخطوة 6: احفظ المستند الذي تم تحريره
 
-Save the modified PDF document:
+احفظ مستند PDF المعدل:
 
 ```csharp
 dataDir = dataDir + "ModifyFormField_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Modify Form Field using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لتعديل حقل النموذج باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "ModifyFormField.pdf");
-// Get a field
+// احصل على حقل
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
-// Modify field value
+// تعديل قيمة الحقل
 textBoxField.Value = "New Value";
 textBoxField.ReadOnly = true;
 dataDir = dataDir + "ModifyFormField_out.pdf";
-// Save updated document
+// حفظ المستند المحدث
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nForm field modified successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we learned how to edit a form field in a PDF document using Aspose.PDF for .NET. By following these steps, you can easily navigate to a specific field, change its value, and adjust its properties as needed.
+في هذا البرنامج التعليمي، تعلمنا كيفية تحرير حقل نموذج في مستند PDF باستخدام Aspose.PDF لـ .NET. باتباع هذه الخطوات، يمكنك التنقل بسهولة إلى حقل معين وتغيير قيمته وضبط خصائصه حسب الحاجة.
 
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: Can I edit multiple form fields within a single PDF document using Aspose.PDF for .NET?
+#### س: هل يمكنني تحرير حقول نماذج متعددة داخل مستند PDF واحد باستخدام Aspose.PDF لـ .NET؟
 
-A: Yes, you can edit multiple form fields within a single PDF document using Aspose.PDF for .NET. Simply repeat the process for each form field you want to modify.
+ج: نعم، يمكنك تحرير حقول نماذج متعددة داخل مستند PDF واحد باستخدام Aspose.PDF لـ .NET. ما عليك سوى تكرار العملية لكل حقل نموذج تريد تعديله.
 
-#### Q: Is Aspose.PDF for .NET compatible with all versions of .NET Framework?
+#### س: هل يتوافق Aspose.PDF for .NET مع كافة إصدارات .NET Framework؟
 
-A: Yes, Aspose.PDF for .NET is compatible with all versions of .NET Framework, including .NET Core and .NET Standard.
+ج: نعم، Aspose.PDF for .NET متوافق مع كافة إصدارات .NET Framework، بما في ذلك .NET Core و.NET Standard.
 
-#### Q: Can I modify other types of form fields, such as checkboxes or radio buttons, using Aspose.PDF for .NET?
+#### س: هل يمكنني تعديل أنواع أخرى من حقول النماذج، مثل مربعات الاختيار أو أزرار الاختيار، باستخدام Aspose.PDF لـ .NET؟
 
-A: Yes, Aspose.PDF for .NET supports modifying various types of form fields, including checkboxes, radio buttons, and more.
+ج: نعم، يدعم Aspose.PDF for .NET تعديل أنواع مختلفة من حقول النماذج، بما في ذلك مربعات الاختيار وأزرار الاختيار والمزيد.
 
-#### Q: How can I add new form fields to a PDF document using Aspose.PDF for .NET?
+#### س: كيف يمكنني إضافة حقول نموذج جديدة إلى مستند PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: To add new form fields to a PDF document, you can use the `Form` property of the `Document` class to access the `Field` collection and then add new form fields programmatically.
+ ج: لإضافة حقول نموذج جديدة إلى مستند PDF، يمكنك استخدام`Form` ملكية`Document` الصف للوصول إلى`Field` المجموعة ثم قم بإضافة حقول نموذج جديدة برمجياً.
 
-#### Q: Does Aspose.PDF for .NET support other programming languages besides C#?
+#### س: هل يدعم Aspose.PDF for .NET لغات البرمجة الأخرى إلى جانب C#؟
 
-A: Yes, Aspose.PDF for .NET supports various programming languages, such as VB.NET and ASP.NET, in addition to C#.
+ج: نعم، يدعم Aspose.PDF for .NET لغات البرمجة المختلفة، مثل VB.NET وASP.NET، بالإضافة إلى C#.

@@ -1,41 +1,41 @@
 ---
-title: Get Child Bookmarks In PDF File
-linktitle: Get Child Bookmarks In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily get child bookmarks in PDF file with Aspose.PDF for .NET.
+title: Ottieni segnalibri secondari nel file PDF
+linktitle: Ottieni segnalibri secondari nel file PDF
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Ottieni facilmente i segnalibri secondari nel file PDF con Aspose.PDF per .NET.
 type: docs
 weight: 80
 url: /it/net/programming-with-bookmarks/get-child-bookmarks/
 ---
-Retrieving child bookmarks in PDF file can be useful for exploring the hierarchical structure of bookmarks. With Aspose.PDF for .NET, you can easily get the child bookmarks by following the following source code:
+Il recupero dei segnalibri secondari nel file PDF può essere utile per esplorare la struttura gerarchica dei segnalibri. Con Aspose.PDF per .NET, puoi facilmente ottenere i segnalibri secondari seguendo il seguente codice sorgente:
 
-## Step 1: Import required libraries
+## Passaggio 1: importa le librerie richieste
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Prima di iniziare, devi importare le librerie necessarie per il tuo progetto C#. Ecco la necessaria direttiva sulle importazioni:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## Passaggio 2: imposta il percorso della cartella dei documenti
 
-In this step, you need to specify the path to the folder containing the PDF file you want to extract the bookmarks from. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ In questo passaggio, devi specificare il percorso della cartella contenente il file PDF da cui desideri estrarre i segnalibri. Sostituire`"YOUR DOCUMENT DIRECTORY"`nel seguente codice con il percorso effettivo della cartella dei documenti:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Passaggio 3: apri il documento PDF
 
-Now we are going to open the PDF document from which we want to extract the bookmarks using the following code:
+Ora andremo ad aprire il documento PDF da cui vogliamo estrarre i segnalibri utilizzando il seguente codice:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetChildBookmarks.pdf");
 ```
 
-## Step 4: Browse bookmarks and child bookmarks
+## Passaggio 4: sfoglia i segnalibri e i segnalibri secondari
 
-In this step, we will iterate over all the bookmarks in the document using a `foreach` loop. For each bookmark, we will display the information such as title, italic style, bold style and color. If the bookmark has child bookmarks, we'll display those as well. Here is the corresponding code:
+ In questo passaggio, ripeteremo tutti i segnalibri nel documento utilizzando a`foreach` ciclo continuo. Per ogni segnalibro verranno visualizzate informazioni quali titolo, stile corsivo, stile grassetto e colore. Se il segnalibro ha segnalibri secondari, verranno visualizzati anche quelli. Ecco il codice corrispondente:
 
 ```csharp
 foreach(OutlineItemCollection outlineItem in pdfDocument.Outlines)
@@ -49,7 +49,7 @@ foreach(OutlineItemCollection outlineItem in pdfDocument.Outlines)
      {
          Console.WriteLine("Child bookmarks");
         
-         // Browse child bookmarks as well
+         // Sfoglia anche i segnalibri secondari
          foreach(OutlineItemCollection childOutline in outlineItem)
          {
              Console.WriteLine(childOutline.Title);
@@ -61,13 +61,13 @@ foreach(OutlineItemCollection outlineItem in pdfDocument.Outlines)
 }
 ```
 
-### Sample source code for Get Child Bookmarks using Aspose.PDF for .NET 
+### Codice sorgente di esempio per Ottieni segnalibri secondari utilizzando Aspose.PDF per .NET 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Apri documento
 Document pdfDocument = new Document(dataDir + "GetChildBookmarks.pdf");
-// Loop through all the bookmarks
+// Passa in rassegna tutti i segnalibri
 foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
 {
 	Console.WriteLine(outlineItem.Title);
@@ -77,7 +77,7 @@ foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
 	if (outlineItem.Count > 0)
 	{
 		Console.WriteLine("Child Bookmarks");
-		// There are child bookmarks then loop through that as well
+		// Ci sono segnalibri secondari, quindi puoi scorrere anche quelli
 		foreach (OutlineItemCollection childOutline in outlineItem)
 		{
 			Console.WriteLine(childOutline.Title);
@@ -89,49 +89,49 @@ foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
 }
 ```
 
-## Conclusion
+## Conclusione
 
-Congratulation ! Now you have a step by step guide to get child bookmarks with Aspose.PDF for .NET. You can use this code to explore the hierarchical structure of bookmarks and get detailed information about each bookmark and its child bookmarks in your PDF documents.
+Congratulazioni! Ora hai una guida passo passo per ottenere segnalibri figlio con Aspose.PDF per .NET. Puoi utilizzare questo codice per esplorare la struttura gerarchica dei segnalibri e ottenere informazioni dettagliate su ciascun segnalibro e sui relativi segnalibri secondari nei tuoi documenti PDF.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Assicurati di controllare la documentazione ufficiale Aspose.PDF per ulteriori informazioni sulle funzionalità avanzate di manipolazione dei segnalibri.
 
-### FAQ's for get child bookmarks in PDF file
+### Domande frequenti su come ottenere i segnalibri secondari nel file PDF
 
-#### Q: What are child bookmarks in a PDF file?
+#### D: Cosa sono i segnalibri secondari in un file PDF?
 
-A: Child bookmarks are bookmarks that are nested under a parent bookmark. They create a hierarchical structure, allowing for a more organized and detailed navigation experience within the PDF document.
+R: I segnalibri secondari sono segnalibri nidificati sotto un segnalibro principale. Creano una struttura gerarchica, consentendo un'esperienza di navigazione più organizzata e dettagliata all'interno del documento PDF.
 
-#### Q: Why would I want to retrieve child bookmarks from a PDF file?
+#### D: Perché dovrei recuperare i segnalibri secondari da un file PDF?
 
-A: Retrieving child bookmarks helps you understand the relationships and hierarchy between different sections of a document. This information can be especially useful for documents with complex structures or multiple levels of organization.
+R: Il recupero dei segnalibri secondari ti aiuta a comprendere le relazioni e la gerarchia tra le diverse sezioni di un documento. Queste informazioni possono essere particolarmente utili per documenti con strutture complesse o più livelli di organizzazione.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### D: Come posso importare le librerie necessarie per il mio progetto C#?
 
-A: To import the required library for your C# project, use the following import directive:
+R: Per importare la libreria richiesta per il tuo progetto C#, utilizza la seguente direttiva di importazione:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This directive enables you to access the classes and methods provided by Aspose.PDF for .NET.
+Questa direttiva consente di accedere alle classi e ai metodi forniti da Aspose.PDF per .NET.
 
-#### Q: How do I specify the path to the documents folder?
+#### D: Come posso specificare il percorso della cartella dei documenti?
 
-A: In the provided source code, replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file from which you want to extract child bookmarks. This ensures that the code can locate the target PDF file.
+ R: Nel codice sorgente fornito, sostituisci`"YOUR DOCUMENT DIRECTORY"` con il percorso effettivo della cartella contenente il file PDF da cui desideri estrarre i segnalibri secondari. Ciò garantisce che il codice possa individuare il file PDF di destinazione.
 
-#### Q: How do I open a PDF document to extract child bookmarks?
+#### D: Come posso aprire un documento PDF per estrarre i segnalibri secondari?
 
-A: To open a PDF document for bookmark extraction, use the following code:
+R: Per aprire un documento PDF per l'estrazione dei segnalibri, utilizzare il seguente codice:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetChildBookmarks.pdf");
 ```
 
-Replace `"GetChildBookmarks.pdf"` with the actual file name.
+ Sostituire`"GetChildBookmarks.pdf"` con il nome effettivo del file.
 
-#### Q: How do I iterate through and display child bookmark information?
+#### D: Come posso scorrere e visualizzare le informazioni sui segnalibri secondari?
 
-A: Loop through all the bookmarks in the document using a `foreach` loop. For each bookmark, display information such as the title, italic style, bold style, color, and if it has child bookmarks, iterate through them as well:
+ R: Passa in rassegna tutti i segnalibri nel documento utilizzando a`foreach` ciclo continuo. Per ogni segnalibro, visualizza informazioni come titolo, stile corsivo, stile grassetto, colore e, se ha segnalibri secondari, scorri anche loro:
 
 ```csharp
 foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
@@ -145,7 +145,7 @@ foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
     {
         Console.WriteLine("Child bookmarks");
         
-        // Browse child bookmarks as well
+        // Sfoglia anche i segnalibri secondari
         foreach (OutlineItemCollection childOutline in outlineItem)
         {
             Console.WriteLine(childOutline.Title);
@@ -157,18 +157,18 @@ foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
 }
 ```
 
-#### Q: Can I extract other properties of child bookmarks using a similar approach?
+#### D: Posso estrarre altre proprietà dei segnalibri secondari utilizzando un approccio simile?
 
-A: Yes, you can extract various properties of child bookmarks using the `OutlineItemCollection` object. Refer to the Aspose.PDF documentation for a comprehensive list of available properties.
+ R: Sì, puoi estrarre varie proprietà dei segnalibri secondari utilizzando il file`OutlineItemCollection` oggetto. Fare riferimento alla documentazione Aspose.PDF per un elenco completo delle proprietà disponibili.
 
-#### Q: Is there a limit to the number of child bookmarks I can retrieve?
+#### D: Esiste un limite al numero di segnalibri secondari che posso recuperare?
 
-A: There is typically no strict limit to the number of child bookmarks you can retrieve using this method. However, very large documents with an excessive number of child bookmarks may require efficient memory management.
+R: In genere non esiste un limite rigido al numero di segnalibri secondari che è possibile recuperare utilizzando questo metodo. Tuttavia, documenti molto grandi con un numero eccessivo di segnalibri secondari potrebbero richiedere una gestione efficiente della memoria.
 
-#### Q: What if the child bookmarks have further nested child bookmarks?
+#### D: Cosa succede se i segnalibri secondari hanno ulteriori segnalibri secondari nidificati?
 
-A: The provided code will recursively iterate through all levels of child bookmarks, allowing you to retrieve information from nested child bookmarks as well.
+R: Il codice fornito eseguirà l'iterazione ricorsiva attraverso tutti i livelli dei segnalibri secondari, consentendoti di recuperare informazioni anche dai segnalibri secondari nidificati.
 
-#### Q: How can I use the extracted child bookmark information?
+#### D: Come posso utilizzare le informazioni estratte sui segnalibri secondari?
 
-A: You can use the extracted child bookmark information for analysis, documentation, or creating custom navigation interfaces within your applications.
+R: Puoi utilizzare le informazioni estratte sui segnalibri secondari per analisi, documentazione o per creare interfacce di navigazione personalizzate all'interno delle tue applicazioni.

@@ -1,54 +1,54 @@
 ---
-title: Validate PDF File
-linktitle: Validate PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to validate a PDF file with Aspose.PDF for .NET. Check its compliance with standards and generate a validation report.
+title: Проверка PDF-файла
+linktitle: Проверка PDF-файла
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как проверить файл PDF с помощью Aspose.PDF для .NET. Проверьте его соответствие стандартам и сформируйте отчет о проверке.
 type: docs
 weight: 240
 url: /ru/net/programming-with-tagged-pdf/validate-pdf/
 ---
-In this tutorial, we will walk you through how to validate a PDF file using Aspose.PDF for .NET. Follow the instructions below to understand how to use the provided C# source code to validate a PDF file and generate a validation report.
+В этом руководстве мы покажем вам, как проверить PDF-файл с помощью Aspose.PDF для .NET. Следуйте инструкциям ниже, чтобы понять, как использовать предоставленный исходный код C# для проверки файла PDF и создания отчета о проверке.
 
-## Step 1: Setting up the environment
+## Шаг 1. Настройка среды
 
-Before you begin, make sure you've configured your development environment to use Aspose.PDF for .NET. This includes installing the Aspose.PDF library and configuring your project to reference it.
+Прежде чем начать, убедитесь, что вы настроили свою среду разработки для использования Aspose.PDF для .NET. Это включает в себя установку библиотеки Aspose.PDF и настройку вашего проекта для ссылки на нее.
 
-## Step 2: Preparing the PDF document
+## Шаг 2. Подготовка PDF-документа
 
-Place your PDF file to be validated in the specified directory. Be sure to adjust the file path in the source code using your own docs directory.
+Поместите PDF-файл для проверки в указанный каталог. Обязательно измените путь к файлу в исходном коде, используя собственный каталог документации.
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// PDF input file path
+// Путь к входному файлу PDF
 string inputFileName = dataDir + "StructureElements.pdf";
 
-// Path of the validation report output file
+// Путь к выходному файлу отчета о проверке
 string outputLogName = dataDir + "ua-20.xml";
 ```
 
-Make sure that your PDF file to be validated is correctly specified in the source code.
+Убедитесь, что ваш PDF-файл, подлежащий проверке, правильно указан в исходном коде.
 
-## Step 3: PDF Validation
+## Шаг 3. Проверка PDF-файла
 
-In this step, we will use Aspose.PDF for .NET to validate the specified PDF document and generate a validation report.
+На этом этапе мы будем использовать Aspose.PDF для .NET для проверки указанного PDF-документа и создания отчета о проверке.
 
 ```csharp
-// Open the PDF document
+//Откройте PDF-документ
 using (var document = new Aspose.Pdf.Document(inputFileName))
 {
-// Validate the PDF document
+// Подтвердите PDF-документ
 bool isValid = document.Validate(outputLogName, Aspose.Pdf.PdfFormat.PDF_UA_1);
 }
 ```
 
-We opened the PDF document and validated its format using Aspose.PDF for .NET. The validation result will be stored in the specified report file.
+Мы открыли PDF-документ и проверили его формат с помощью Aspose.PDF для .NET. Результат проверки будет сохранен в указанном файле отчета.
 
-### Sample source code for Validate PDF using Aspose.PDF for .NET 
+### Пример исходного кода для проверки PDF с использованием Aspose.PDF для .NET 
 ```csharp
 
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string inputFileName = dataDir + "StructureElements.pdf";
 string outputLogName = dataDir + "ua-20.xml";
@@ -60,40 +60,40 @@ using (var document = new Aspose.Pdf.Document(inputFileName))
 
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, we learned how to use Aspose.PDF for .NET to validate a PDF document and generate a validation report. Validating the PDF allows you to ensure that it conforms to standards and guarantees its accessibility. Use these features to improve the quality of your PDF documents.
+В этом руководстве мы узнали, как использовать Aspose.PDF для .NET для проверки PDF-документа и создания отчета о проверке. Проверка PDF-файла позволяет убедиться в его соответствии стандартам и гарантирует его доступность. Используйте эти функции, чтобы улучшить качество ваших PDF-документов.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is the purpose of this tutorial on validating a PDF file using Aspose.PDF for .NET?
+#### Вопрос: Какова цель этого руководства по проверке PDF-файла с помощью Aspose.PDF для .NET?
 
-A: The primary goal of this tutorial is to guide you through the process of validating a PDF file using Aspose.PDF for .NET. By following the provided instructions and using the provided C# source code, you can ensure that your PDF document adheres to specified standards and generate a validation report.
+О: Основная цель этого руководства — провести вас через процесс проверки PDF-файла с помощью Aspose.PDF для .NET. Следуя предоставленным инструкциям и используя предоставленный исходный код C#, вы можете убедиться, что ваш PDF-документ соответствует указанным стандартам, и создать отчет о проверке.
 
-#### Q: What are the prerequisites for validating a PDF file using Aspose.PDF for .NET?
+#### Вопрос: Каковы предварительные условия для проверки PDF-файла с помощью Aspose.PDF for .NET?
 
-A: Before you begin, ensure that you have set up your development environment to use Aspose.PDF for .NET. This involves installing the Aspose.PDF library and configuring your project to reference it.
+О: Прежде чем начать, убедитесь, что вы настроили свою среду разработки для использования Aspose.PDF для .NET. Это включает в себя установку библиотеки Aspose.PDF и настройку вашего проекта для ссылки на нее.
 
-#### Q: How do I prepare the PDF document for validation using Aspose.PDF for .NET?
+#### Вопрос: Как подготовить PDF-документ к проверке с помощью Aspose.PDF для .NET?
 
-A: You need to place the PDF file you want to validate in the specified directory. Adjust the file path in the source code to point to your PDF document. The tutorial provides the necessary source code and guidance.
+О: Вам необходимо поместить PDF-файл, который вы хотите проверить, в указанный каталог. Измените путь к файлу в исходном коде, чтобы он указывал на ваш PDF-документ. Учебное пособие содержит необходимый исходный код и рекомендации.
 
-#### Q: What does the PDF validation process involve using Aspose.PDF for .NET?
+#### Вопрос: Что включает в себя процесс проверки PDF с использованием Aspose.PDF для .NET?
 
-A: The tutorial demonstrates how to use Aspose.PDF for .NET to open and validate a specified PDF document. The validation process ensures that the PDF conforms to a specific standard (PDF/UA-1 in this case). The result of the validation is stored in a validation report.
+О: В руководстве показано, как использовать Aspose.PDF для .NET для открытия и проверки указанного PDF-документа. Процесс проверки гарантирует, что PDF-файл соответствует определенному стандарту (в данном случае PDF/UA-1). Результат проверки сохраняется в отчете о проверке.
 
-#### Q: How can I generate a validation report for a PDF document using Aspose.PDF for .NET?
+#### Вопрос: Как создать отчет о проверке PDF-документа с помощью Aspose.PDF для .NET?
 
-A: The provided C# source code examples show how to open a PDF document, validate it using Aspose.PDF for .NET, and generate a validation report. The `Validate` method is used for this purpose.
+ О: В предоставленных примерах исходного кода C# показано, как открыть PDF-документ, проверить его с помощью Aspose.PDF для .NET и создать отчет о проверке.`Validate` Для этой цели используется метод.
 
-#### Q: What is the significance of PDF validation and generating a validation report?
+#### Вопрос: Каково значение проверки PDF и создания отчета о проверке?
 
-A: Validating a PDF document ensures that it adheres to standards and guidelines, such as PDF/UA, which is specifically focused on accessibility. A validation report provides valuable information about any issues or areas of non-compliance within the PDF document.
+Ответ: Проверка PDF-документа гарантирует его соответствие стандартам и рекомендациям, таким как PDF/UA, который специально ориентирован на доступность. Отчет о проверке предоставляет ценную информацию о любых проблемах или областях несоответствия в документе PDF.
 
-#### Q: Can I customize the validation process or specify different standards for validation using Aspose.PDF for .NET?
+#### Вопрос: Могу ли я настроить процесс проверки или указать другие стандарты проверки с помощью Aspose.PDF для .NET?
 
-A: Yes, you can customize the validation process by choosing different validation standards, such as PDF/A or PDF/X, and by configuring additional validation options. The provided C# source code focuses on PDF/UA validation, but you can explore the official documentation for more options.
+О: Да, вы можете настроить процесс проверки, выбрав различные стандарты проверки, например PDF/A или PDF/X, а также настроив дополнительные параметры проверки. Предоставленный исходный код C# ориентирован на проверку PDF/UA, но вы можете изучить официальную документацию для получения дополнительных опций.
 
-#### Q: How can I interpret and utilize the validation report generated by Aspose.PDF for .NET?
+#### Вопрос: Как я могу интерпретировать и использовать отчет о проверке, созданный Aspose.PDF для .NET?
 
-A: The validation report provides detailed information about any validation errors or warnings within the PDF document. It helps you identify and address issues related to accessibility and compliance. You can review the report to make necessary improvements.
+О: Отчет о проверке предоставляет подробную информацию о любых ошибках или предупреждениях проверки в PDF-документе. Это помогает вам выявлять и решать проблемы, связанные с доступностью и соответствием требованиям. Вы можете просмотреть отчет, чтобы внести необходимые улучшения.

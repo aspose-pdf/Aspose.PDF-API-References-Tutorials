@@ -1,89 +1,89 @@
 ---
-title: Delete All Annotations From Page
-linktitle: Delete All Annotations From Page
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to delete all annotations from a PDF page with Aspose.PDF for .NET using this step-by-step guide.
+title: Удалить все аннотации со страницы
+linktitle: Удалить все аннотации со страницы
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как удалить все аннотации со страницы PDF с помощью Aspose.PDF для .NET, используя это пошаговое руководство.
 type: docs
 weight: 40
 url: /ru/net/annotations/deleteallannotationsfrompage/
 ---
-Aspose.PDF for .NET is a powerful library that allows developers to create, manipulate, and transform PDF files. In this article, we will explore how to use Aspose.PDF for .NET to delete all annotations from a specific page of a PDF document. We will provide a step-by-step guide to help you understand the process.
+Aspose.PDF для .NET — это мощная библиотека, которая позволяет разработчикам создавать, манипулировать и преобразовывать файлы PDF. В этой статье мы рассмотрим, как использовать Aspose.PDF для .NET для удаления всех аннотаций с определенной страницы PDF-документа. Мы предоставим пошаговое руководство, которое поможет вам понять этот процесс.
 
-Follow the below steps for Delete All Annotations From Page Using Aspose.PDF for .NET
+Выполните следующие шаги, чтобы удалить все аннотации со страницы с помощью Aspose.PDF для .NET.
 
-## Step 1: Install Aspose.PDF for .NET
+## Шаг 1. Установите Aspose.PDF для .NET.
 
-To use Aspose.PDF for .NET, you need to install the library first. You can [download](https://releases.aspose.com/pdf/net/) the library from the Aspose releases and install it on your computer. After installation, you need to add a reference to the library in your project.
+ Чтобы использовать Aspose.PDF для .NET, вам необходимо сначала установить библиотеку. Ты можешь[скачать](https://releases.aspose.com/pdf/net/)библиотеку из выпусков Aspose и установите ее на свой компьютер. После установки вам необходимо добавить ссылку на библиотеку в ваш проект.
 
-## Step 2: Create a New Console Application
+## Шаг 2. Создайте новое консольное приложение
 
-Create a new console application in Visual Studio and add a reference to the Aspose.PDF library. In this tutorial, we will use C# language.
+Создайте новое консольное приложение в Visual Studio и добавьте ссылку на библиотеку Aspose.PDF. В этом уроке мы будем использовать язык C#.
 
-## Step 3: Load the PDF Document
+## Шаг 3. Загрузите PDF-документ
 
-In the source code provided, the first thing we do is specify the path to the PDF document. You need to replace "YOUR DOCUMENT DIRECTORY" with the actual path to the PDF document on your computer. Then, we create a new instance of the Document class and load the PDF document.
+В предоставленном исходном коде первое, что мы делаем, это указываем путь к PDF-документу. Вам необходимо заменить «ВАШ КАТАЛОГ ДОКУМЕНТОВ» фактическим путем к PDF-документу на вашем компьютере. Затем мы создаем новый экземпляр класса Document и загружаем документ PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "DeleteAllAnnotationsFromPage.pdf");
 ```
 
-## Step 4: Delete All Annotations from a Page
+## Шаг 4. Удаление всех аннотаций со страницы
 
-To delete all annotations from a specific page of the PDF document, we need to access the Annotations collection of the Page object and call the Delete() method. In the source code provided, we delete all annotations from the second page (index 1) of the PDF document.
+Чтобы удалить все аннотации с определенной страницы PDF-документа, нам нужно получить доступ к коллекции Annotations объекта Page и вызвать метод Delete(). В предоставленном исходном коде мы удаляем все аннотации со второй страницы (индекс 1) PDF-документа.
 
 ```csharp
 pdfDocument.Pages[1].Annotations.Delete();
 ```
 
-## Step 5: Save the Updated PDF Document
+## Шаг 5. Сохраните обновленный PDF-документ.
 
-After deleting the annotations, we need to save the updated PDF document. In the source code provided, we specify the path to the output PDF document and call the Save() method.
+После удаления аннотаций нам необходимо сохранить обновленный PDF-документ. В предоставленном исходном коде мы указываем путь к выходному PDF-документу и вызываем метод Save().
 
 ```csharp
 dataDir = dataDir + "DeleteAllAnnotationsFromPage_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Example Source Code for Delete All Annotations From Page Using Aspose.PDF for .NET
+### Пример исходного кода для удаления всех аннотаций со страницы с использованием Aspose.PDF для .NET
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Открыть документ
 Document pdfDocument = new Document(dataDir + "DeleteAllAnnotationsFromPage.pdf");
 
-// Delete particular annotation
+// Удалить определенную аннотацию
 pdfDocument.Pages[1].Annotations.Delete();
 
 dataDir = dataDir + "DeleteAllAnnotationsFromPage_out.pdf";
-// Save updated document
+// Сохранить обновленный документ
 pdfDocument.Save(dataDir);
 ``` 
 
-## Conclusion
+## Заключение
 
-In this article, we have provided a step-by-step guide to help you understand how to delete all annotations from a specific page of a PDF document using Aspose.PDF for .NET. By following the steps outlined in this guide, you can easily implement this feature in your own project.
+В этой статье мы предоставили пошаговое руководство, которое поможет вам понять, как удалить все аннотации с определенной страницы PDF-документа с помощью Aspose.PDF для .NET. Следуя инструкциям, описанным в этом руководстве, вы сможете легко реализовать эту функцию в своем собственном проекте.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What are annotations in a PDF document?
+#### Вопрос: Что такое аннотации в PDF-документе?
 
-A: Annotations in a PDF document are interactive elements that provide additional information, notes, or comments on specific parts of the document. Annotations can include text notes, comments, highlights, and other interactive elements.
+О: Аннотации в PDF-документе — это интерактивные элементы, которые предоставляют дополнительную информацию, примечания или комментарии к определенным частям документа. Аннотации могут включать текстовые примечания, комментарии, выделения и другие интерактивные элементы.
 
-#### Q: Can I delete annotations from specific pages only?
+#### Вопрос: Могу ли я удалить аннотации только с определенных страниц?
 
-A: Yes, with Aspose.PDF for .NET, you can delete annotations from specific pages or even from the entire document, depending on your requirements.
+О: Да, с помощью Aspose.PDF для .NET вы можете удалять аннотации с определенных страниц или даже из всего документа, в зависимости от ваших требований.
 
-#### Q: What happens if there are no annotations on the specified page?
+#### Вопрос: Что произойдет, если на указанной странице нет аннотаций?
 
-A: If there are no annotations on the specified page, calling the `Delete()` method will not have any effect, and the page will remain unchanged.
+ О: Если на указанной странице нет аннотаций, вызов`Delete()` метод не окажет никакого эффекта, и страница останется неизменной.
 
-#### Q: Is it possible to delete specific types of annotations instead of all annotations?
+#### Вопрос: Можно ли удалить определенные типы аннотаций вместо всех аннотаций?
 
-A: Yes, Aspose.PDF for .NET provides methods to access and delete specific types of annotations, such as text annotations, highlight annotations, etc.
+О: Да, Aspose.PDF для .NET предоставляет методы для доступа и удаления определенных типов аннотаций, таких как текстовые аннотации, выделенные аннотации и т. д.
 
-#### Q: Does Aspose.PDF for .NET support other operations on annotations?
+#### Вопрос: Поддерживает ли Aspose.PDF for .NET другие операции с аннотациями?
 
-A: Yes, Aspose.PDF for .NET offers various methods to manipulate and customize annotations, such as adding, modifying, moving, or resizing annotations.
+О: Да, Aspose.PDF для .NET предлагает различные методы управления и настройки аннотаций, такие как добавление, изменение, перемещение или изменение размера аннотаций.

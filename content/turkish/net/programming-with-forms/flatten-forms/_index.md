@@ -1,33 +1,33 @@
 ---
-title: Flatten Forms In PDF Document
-linktitle: Flatten Forms In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Easily flatten forms in PDF document using Aspose.PDF for .NET.
+title: PDF Belgesindeki Formları Düzleştir
+linktitle: PDF Belgesindeki Formları Düzleştir
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET'i kullanarak PDF belgesindeki formları kolayca düzleştirin.
 type: docs
 weight: 100
 url: /tr/net/programming-with-forms/flatten-forms/
 ---
-In this tutorial, we will show you how to flatten forms using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+Bu eğitimde size Aspose.PDF for .NET kullanarak formları nasıl düzleştireceğinizi göstereceğiz. Bu süreçte size yol göstermek için C# kaynak kodunu adım adım açıklayacağız.
 
-## Step 1: Preparation
+## Adım 1: Hazırlık
 
-First, make sure you have imported the necessary libraries and set the path to the documents directory:
+Öncelikle gerekli kitaplıkları içe aktardığınızdan ve belgeler dizininin yolunu ayarladığınızdan emin olun:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load source PDF form
+## 2. Adım: Kaynak PDF formunu yükleyin
 
-Load the source PDF form:
+Kaynak PDF formunu yükleyin:
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 3: Flatten the forms
+## 3. Adım: Formları düzleştirin
 
-First check if there are any form fields in the document. If so, iterate through each field and apply flattening:
+Öncelikle belgede herhangi bir form alanı olup olmadığını kontrol edin. Öyleyse, her alanda yineleme yapın ve düzleştirme uygulayın:
 
 ```csharp
 if (doc.Form.Fields.Count() > 0)
@@ -39,22 +39,22 @@ item. Flatten();
 }
 ```
 
-## Step 4: Save the updated document
+## 4. Adım: Güncellenen belgeyi kaydedin
 
-Save the updated PDF document:
+Güncellenen PDF belgesini kaydedin:
 
 ```csharp
 dataDir = dataDir + "FlattenForms_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Flatten Forms using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Formları Düzleştirme için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load source PDF form
+// Kaynak PDF formunu yükle
 Document doc = new Document(dataDir + "input.pdf");
-// Flatten Forms
+// Formları Düzleştir
 if (doc.Form.Fields.Count() > 0)
 {
 	foreach (var item in doc.Form.Fields)
@@ -63,33 +63,33 @@ if (doc.Form.Fields.Count() > 0)
 	}
 }
 dataDir = dataDir + "FlattenForms_out.pdf";
-// Save the updated document
+// Güncellenen belgeyi kaydet
 doc.Save(dataDir);
 Console.WriteLine("\nForms flattened successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we learned how to flatten forms using Aspose.PDF for .NET. By following these steps, you can easily flatten forms in your PDF documents, making fields uneditable and merging annotations with document content.
+Bu eğitimde Aspose.PDF for .NET kullanarak formları nasıl düzleştireceğimizi öğrendik. Bu adımları izleyerek PDF belgelerinizdeki formları kolayca düzleştirerek alanları düzenlenemez hale getirebilir ve ek açıklamaları belge içeriğiyle birleştirebilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What does "flattening forms" mean in Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'te "formları düzleştirmek" ne anlama geliyor?
 
-A: Flattening forms in Aspose.PDF for .NET refers to the process of making form fields in a PDF document uneditable and merging annotations (such as form fields, annotations, and digital signatures) with the document's content. Once forms are flattened, users cannot modify the form fields, and the visual appearance of the form fields becomes a part of the static content of the PDF document.
+C: Aspose.PDF for .NET'te formların düzleştirilmesi, bir PDF belgesindeki form alanlarını düzenlenemez hale getirme ve ek açıklamaları (form alanları, ek açıklamalar ve dijital imzalar gibi) belgenin içeriğiyle birleştirme işlemini ifade eder. Formlar düzleştirildikten sonra kullanıcılar form alanlarını değiştiremez ve form alanlarının görsel görünümü PDF belgesinin statik içeriğinin bir parçası haline gelir.
 
-#### Q: Can I reverse the flattening process and make the form fields editable again?
+#### S: Düzleştirme işlemini tersine çevirerek form alanlarını yeniden düzenlenebilir hale getirebilir miyim?
 
-A: No, once the form fields are flattened, the process is irreversible using Aspose.PDF for .NET. Flattening permanently merges the form fields' appearance with the PDF's content, and the individual form field elements are no longer accessible or editable.
+C: Hayır, form alanları düzleştirildikten sonra Aspose.PDF for .NET kullanılarak süreç geri döndürülemez. Düzleştirme, form alanlarının görünümünü PDF'nin içeriğiyle kalıcı olarak birleştirir ve tek tek form alanı öğelerine artık erişilemez veya düzenlenemez.
 
-#### Q: When should I flatten forms in a PDF document?
+#### S: Bir PDF belgesindeki formları ne zaman düzleştirmeliyim?
 
-A: Flattening forms is useful when you want to preserve the visual appearance of form fields and annotations in a PDF document while preventing users from modifying the data. This is commonly done when you want to share a PDF document with pre-filled form data or annotations that should not be altered by the recipients.
+C: Form alanlarının ve ek açıklamaların görsel görünümünü bir PDF belgesinde korumak ve kullanıcıların verileri değiştirmesini engellemek istediğinizde formları düzleştirmek kullanışlıdır. Bu genellikle, önceden doldurulmuş form verileri veya alıcılar tarafından değiştirilmemesi gereken açıklamalar içeren bir PDF belgesini paylaşmak istediğinizde yapılır.
 
-#### Q: Will flattening forms affect other annotations, such as digital signatures?
+#### S: Formların düzleştirilmesi dijital imzalar gibi diğer açıklamaları etkiler mi?
 
-A: Yes, flattening forms will merge all annotations, including digital signatures, with the PDF's content. Once the forms are flattened, any existing digital signatures will become a permanent part of the document, and users cannot modify or remove them.
+C: Evet, formları düzleştirmek, dijital imzalar da dahil olmak üzere tüm ek açıklamaları PDF'nin içeriğiyle birleştirecektir. Formlar düzleştirildikten sonra mevcut dijital imzalar belgenin kalıcı bir parçası haline gelir ve kullanıcılar bunları değiştiremez veya kaldıramaz.
 
-#### Q: Can I selectively flatten specific form fields and leave others editable?
+#### S: Belirli form alanlarını seçerek düzleştirebilir ve diğerlerini düzenlenebilir bırakabilir miyim?
 
-A: Yes, you can selectively flatten specific form fields in a PDF document while leaving others editable. Instead of using the code to flatten all form fields, you can choose to flatten only the desired form fields based on their names or other criteria.
+C: Evet, bir PDF belgesindeki belirli form alanlarını seçerek düzleştirebilir, diğerlerini düzenlenebilir bırakabilirsiniz. Kodu tüm form alanlarını düzleştirmek için kullanmak yerine, yalnızca istediğiniz form alanlarını adlarına veya diğer ölçütlere göre düzleştirmeyi seçebilirsiniz.

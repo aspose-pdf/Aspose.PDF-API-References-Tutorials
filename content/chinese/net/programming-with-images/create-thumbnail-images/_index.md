@@ -1,84 +1,84 @@
 ---
-title: Create Thumbnail Images In PDF File
-linktitle: Create Thumbnail Images In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily create thumbnail image in PDF file with Aspose.PDF for .NET.
+title: 在 PDF 文件中创建缩略图
+linktitle: 在 PDF 文件中创建缩略图
+second_title: Aspose.PDF for .NET API 参考
+description: 使用 Aspose.PDF for .NET 在 PDF 文件中轻松创建缩略图。
 type: docs
 weight: 100
 url: /zh/net/programming-with-images/create-thumbnail-images/
 ---
-This guide will take you step by step how to create thumbnail image in PDF file using Aspose.PDF for .NET. Make sure you have already set up your environment and follow the steps below:
+本指南将逐步指导您如何使用 Aspose.PDF for .NET 在 PDF 文件中创建缩略图。确保您已设置环境并按照以下步骤操作：
 
-## Step 1: Define the document directory
+## 第1步：定义文档目录
 
-Before you start, make sure you set the correct directory for the documents. Replace `"YOUR DOCUMENT DIRECTORY"` in the code with the path to the directory containing your PDF files.
+开始之前，请确保为文档设置正确的目录。代替`"YOUR DOCUMENT DIRECTORY"`在代码中包含包含 PDF 文件的目录路径。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Get the names of all PDF files in a directory
+## 步骤2：获取目录中所有PDF文件的名称
 
-In this step, we will retrieve the names of all PDF files present in the specified directory using C#'s `Directory` class. Files will be stored in an array of strings.
+在此步骤中，我们将使用 C# 检索指定目录中存在的所有 PDF 文件的名称`Directory`班级。文件将存储在字符串数组中。
 
 ```csharp
 string[] fileEntries = Directory.GetFiles(dataDir, "*.pdf");
 ```
 
-## Step 3: Browse all PDF files and their pages
+## 第 3 步：浏览所有 PDF 文件及其页面
 
-In this step, we will go through all PDF files and their pages to create image thumbnails. We will use a `for` loop to iterate through all the files.
+在此步骤中，我们将遍历所有 PDF 文件及其页面来创建图像缩略图。我们将使用一个`for`循环遍历所有文件。
 
 ```csharp
 for (int counter = 0; counter < fileEntries.Length; counter++)
 {
-     // Open the PDF document
+     //打开 PDF 文档
      Document pdfDocument = new Document(fileEntries[counter]);
     
-     // Go through all the pages of the document
+     //浏览文档的所有页面
      for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
      {
-         // Create a stream to save the thumbnail image
+         //创建一个流来保存缩略图
          using (FileStream imageStream = new FileStream(dataDir + "\\Thumbnails" + counter.ToString() + "_" + pageCount + ".jpg", FileMode.Create))
          {
-             // Create a Resolution object
+             //创建分辨率对象
              Resolution resolution = new Resolution(300);
             
-             // Create a JPEG device with the specified attributes
+             //创建具有指定属性的 JPEG 设备
              JpegDevice jpegDevice = new JpegDevice(45, 59, resolution, 100);
             
-             // Convert a specific page and save the image to the stream
+             //转换特定页面并将图像保存到流中
              jpegDevice.Process(pdfDocument.Pages[pageCount], imageStream);
             
-             // Close the stream
+             //关闭流
              imageStream.Close();
          }
      }
 }
 ```
 
-### Sample source code for Create Thumbnail Images using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 创建缩略图的示例源代码 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Retrieve names of all the PDF files in a particular directory
+//检索特定目录中所有 PDF 文件的名称
 string[] fileEntries = Directory.GetFiles(dataDir, "*.pdf");
-// Iterate through all the files entries in array
+//遍历数组中的所有文件条目
 for (int counter = 0; counter < fileEntries.Length; counter++)
 {
-	//Open document
+	//打开文档
 	Document pdfDocument = new Document(fileEntries[counter]);
 	for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 	{
 		using (FileStream imageStream = new FileStream(dataDir + "\\Thumbanils" + counter.ToString() + "_" + pageCount + ".jpg", FileMode.Create))
 		{
-			//Create Resolution object
+			//创建分辨率对象
 			Resolution resolution = new Resolution(300);
-			//JpegDevice jpegDevice = new JpegDevice(500, 700, resolution, 100);
+			//JpegDevice jpegDevice = new JpegDevice(500, 700, 分辨率, 100);
 			JpegDevice jpegDevice = new JpegDevice(45, 59, resolution, 100);
-			//Convert a particular page and save the image to stream
+			//转换特定页面并将图像保存到流中
 			jpegDevice.Process(pdfDocument.Pages[pageCount], imageStream);
-			//Close stream
+			//关闭流
 			imageStream.Close();
 		}
 	}
@@ -86,44 +86,44 @@ for (int counter = 0; counter < fileEntries.Length; counter++)
 System.Console.WriteLine("PDF pages are converted to thumbnails successfully!");
 ```
 
-## Conclusion
+## 结论
 
-Congratulation ! You have successfully created image thumbnails from PDF files using Aspose.PDF for .NET. Image thumbnails are saved in the specified directory. You can now use these thumbnails to display a visual preview of your PDF files.
+恭喜！您已使用 Aspose.PDF for .NET 从 PDF 文件成功创建图像缩略图。图像缩略图保存在指定目录中。您现在可以使用这些缩略图来显示 PDF 文件的视觉预览。
 
-### FAQ's for create thumbnail images in PDF file
+### 在 PDF 文件中创建缩略图的常见问题解答
 
-#### Q: What is the purpose of creating thumbnail images from PDF files using Aspose.PDF for .NET?
+#### 问：使用 Aspose.PDF for .NET 从 PDF 文件创建缩略图的目的是什么？
 
-A: Creating thumbnail images from PDF files allows you to generate small visual previews of each page in the PDF, which can be useful for quickly previewing and navigating through the content.
+答：从 PDF 文件创建缩略图允许您生成 PDF 中每个页面的小型视觉预览，这对于快速预览和浏览内容非常有用。
 
-#### Q: How does Aspose.PDF for .NET facilitate the creation of thumbnail images from PDF files?
+#### 问：Aspose.PDF for .NET 如何促进从 PDF 文件创建缩略图？
 
-A: Aspose.PDF for .NET provides a step-by-step process to open PDF documents, iterate through their pages, create thumbnail images, and save them to a specified directory using the `JpegDevice` class.
+答：Aspose.PDF for .NET 提供了一个分步过程来打开 PDF 文档、遍历其页面、创建缩略图并使用以下命令将它们保存到指定目录：`JpegDevice`班级。
 
-#### Q: Why is it important to define the document directory before starting the creation of thumbnail images?
+#### 问：为什么在开始创建缩略图之前定义文档目录很重要？
 
-A: Specifying the document directory ensures that the PDF files are correctly located, and the resulting thumbnail images are saved in the desired output path.
+答：指定文档目录可确保 PDF 文件正确定位，并将生成的缩略图保存在所需的输出路径中。
 
-#### Q: How does the `Document` class in Aspose.PDF for .NET help in the creation of thumbnail images?
+#### 问：如何`Document` class in Aspose.PDF for .NET help in the creation of thumbnail images?
 
-A: The `Document` class allows you to open and manipulate PDF documents. In this case, it is used to load the PDF files from which thumbnail images will be created.
+答： 的`Document`类允许您打开和操作 PDF 文档。在本例中，它用于加载从中创建缩略图的 PDF 文件。
 
-#### Q: What role does the `JpegDevice` class play in the creation of thumbnail images?
+#### 问： 有何作用`JpegDevice` class play in the creation of thumbnail images?
 
-A: The `JpegDevice` class is responsible for converting PDF pages to JPEG images, which are used as thumbnail images. It allows you to specify attributes such as width, height, resolution, and quality.
+答： 的`JpegDevice`类负责将 PDF 页面转换为 JPEG 图像，这些图像用作缩略图。它允许您指定宽度、高度、分辨率和质量等属性。
 
-#### Q: How is each page of the PDF document converted to an individual thumbnail image?
+#### 问：如何将 PDF 文档的每一页转换为单独的缩略图？
 
-A: A nested `for` loop is used to iterate through each PDF file and its pages. For each page, a JPEG device is created with specified attributes, and the `Process` method is used to convert the page to a thumbnail image and save it to the stream.
+答：嵌套的`for`循环用于迭代每个 PDF 文件及其页面。对于每个页面，都会创建一个具有指定属性的 JPEG 设备，并且`Process`方法用于将页面转换为缩略图并将其保存到流中。
 
-#### Q: Can I adjust the resolution or quality of the resulting thumbnail images during the creation process?
+#### 问：我可以在创建过程中调整生成的缩略图的分辨率或质量吗？
 
-A: Yes, you can modify attributes such as resolution, width, height, and quality by configuring the `JpegDevice` object before converting each page.
+ A：是的，您可以通过配置来修改分辨率、宽度、高度、质量等属性`JpegDevice`转换每个页面之前的对象。
 
-#### Q: How can I utilize the generated thumbnail images in my projects or applications after the creation process?
+#### 问：创建过程后如何在我的项目或应用程序中使用生成的缩略图？
 
-A: The resulting thumbnail images can be used to provide a visual preview of PDF files, helping users quickly identify and navigate through the content.
+答：生成的缩略图可用于提供 PDF 文件的视觉预览，帮助用户快速识别和浏览内容。
 
-#### : Is there any limit to the number of thumbnail images that can be generated from PDF files using this creation process?
+#### ：使用此创建过程从 PDF 文件生成的缩略图的数量有限制吗？
 
-A: The number of thumbnail images generated depends on the number of pages in each PDF document. Each page will be converted into a separate thumbnail image.
+答：生成的缩略图的数量取决于每个 PDF 文档的页数。每个页面将被转换为单独的缩略图。

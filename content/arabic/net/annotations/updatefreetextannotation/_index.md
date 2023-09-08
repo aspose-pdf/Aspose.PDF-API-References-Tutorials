@@ -1,42 +1,42 @@
 ---
-title: Update Free Text PDF Annotation
-linktitle: Update Free Text PDF Annotation
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to update free text PDF annotation feature of Aspose.PDF for .NET using C# source code.
+title: تحديث التعليقات التوضيحية النصية المجانية بتنسيق PDF
+linktitle: تحديث التعليقات التوضيحية النصية المجانية بتنسيق PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية تحديث ميزة التعليقات التوضيحية النصية المجانية بتنسيق PDF في Aspose.PDF لـ .NET باستخدام كود مصدر C#.
 type: docs
 weight: 160
 url: /ar/net/annotations/updatefreetextannotation/
 ---
-In this article, we will provide a step-by-step guide to explain the following C# source code of Update Free Text Annotation feature of Aspose.PDF for .NET. We will go through each line of code and explain what it does, so even beginners can understand it.
+في هذه المقالة، سنقدم دليلًا خطوة بخطوة لشرح التعليمات البرمجية المصدر لـ C# التالية لميزة Update Free Text Annotation الخاصة بـ Aspose.PDF لـ .NET. سنراجع كل سطر من التعليمات البرمجية ونشرح ما يفعله، حتى يتمكن المبتدئون من فهمه.
 
-Now let's explain each line of the code above step by step:
+الآن دعونا نشرح كل سطر من الكود أعلاه خطوة بخطوة:
 
-## Step 1: Setting the document directory
+## الخطوة 1: إعداد دليل المستندات
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-In this line, we are setting the path to the directory that contains the PDF document that we want to update.
+في هذا السطر، نقوم بتعيين المسار إلى الدليل الذي يحتوي على مستند PDF الذي نريد تحديثه.
 
-## Step 2: Opening the PDF document
+## الخطوة 2: فتح مستند PDF
 
 ```csharp
 Document doc1 = new Document(dataDir + "input.pdf");
 ```
 
-Here we are opening the PDF document using Aspose.PDF's `Document` class and specifying the path to the input PDF file.
+ نحن هنا نفتح مستند PDF باستخدام Aspose.PDF`Document`فئة وتحديد المسار إلى ملف PDF الإدخال.
 
-## Step 3: Updating the font size and color of the free text annotation
+## الخطوة 3: تحديث حجم الخط ولون التعليق التوضيحي للنص المجاني
 
 ```csharp
 (doc1.Pages[1].Annotations[0] as FreeTextAnnotation).TextStyle.FontSize = 18;
 (doc1.Pages[1].Annotations[0] as FreeTextAnnotation).TextStyle.Color = System.Drawing.Color.Green;
 ```
 
-In this step, we are updating the font size and color of the first free text annotation on the second page of the PDF document. We are doing this by accessing the `TextStyle` property of the `FreeTextAnnotation` object and setting its `FontSize` and `Color` properties to 18 and Green, respectively.
+ في هذه الخطوة، نقوم بتحديث حجم الخط ولون التعليق التوضيحي للنص الحر الأول في الصفحة الثانية من مستند PDF. نحن نقوم بذلك عن طريق الوصول إلى`TextStyle` ملكية`FreeTextAnnotation` الكائن وتعيينه`FontSize` و`Color` الخصائص إلى 18 والأخضر على التوالي.
 
-## Step 4: Handling Exceptions
+## الخطوة 4: التعامل مع الاستثناءات
 
 ```csharp
 catch (Exception ex)
@@ -45,22 +45,22 @@ catch (Exception ex)
 }
 ```
 
-This is a standard `try-catch` block that catches any exceptions that may occur while executing the code and prints the error message to the console.
+ هذا هو المعيار`try-catch` كتلة تلتقط أي استثناءات قد تحدث أثناء تنفيذ التعليمات البرمجية وتطبع رسالة الخطأ إلى وحدة التحكم.
 
-### Example source code for Update Free Text Annotation using Aspose.PDF for .NET
+### مثال على التعليمات البرمجية المصدر لتحديث التعليقات التوضيحية النصية المجانية باستخدام Aspose.PDF لـ .NET
 
-Before diving into the explanation of the code, let's first take a look at the code itself. This code example shows how to update the properties of a free text annotation in a PDF document using Aspose.PDF for .NET.
+قبل التعمق في شرح الكود، دعونا أولاً نلقي نظرة على الكود نفسه. يوضح مثال التعليمات البرمجية هذا كيفية تحديث خصائص التعليق التوضيحي النصي الحر في مستند PDF باستخدام Aspose.PDF لـ .NET.
 
 ```csharp
 try
 {
-    // The path to the documents directory.
+    // المسار إلى دليل المستندات.
     string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-    // Open document
+    // افتح المستند
     Document doc1 = new Document(dataDir + "input.pdf");
 
-    // Set font size and color of the annotation:
+    // ضبط حجم الخط ولون التعليق التوضيحي:
     (doc1.Pages[1].Annotations[0] as FreeTextAnnotation).TextStyle.FontSize = 18;
     (doc1.Pages[1].Annotations[0] as FreeTextAnnotation).TextStyle.Color = System.Drawing.Color.Green;
                 
@@ -71,24 +71,24 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## خاتمة
 
-In this article, we have provided a step-by-step guide to explain the C# source code of the Update Free Text Annotation feature of Aspose.PDF for .NET. By following these steps, you can easily update the font size and color of free text annotations in your PDF documents using Aspose.PDF for .NET.
+في هذه المقالة، قدمنا دليلًا خطوة بخطوة لشرح الكود المصدري لـ C# لميزة تحديث التعليقات التوضيحية للنص الحر في Aspose.PDF لـ .NET. باتباع هذه الخطوات، يمكنك بسهولة تحديث حجم الخط ولون التعليقات التوضيحية النصية المجانية في مستندات PDF الخاصة بك باستخدام Aspose.PDF for .NET.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is Aspose.PDF for .NET?
+#### س: ما هو Aspose.PDF لـ .NET؟
 
-A: Aspose.PDF for .NET is a robust PDF manipulation and processing library for .NET applications. It allows developers to create, edit, convert, and manipulate PDF documents programmatically.
+ج: Aspose.PDF for .NET عبارة عن مكتبة قوية لمعالجة ومعالجة ملفات PDF لتطبيقات .NET. فهو يسمح للمطورين بإنشاء مستندات PDF وتحريرها وتحويلها ومعالجتها برمجيًا.
 
-#### Q: Can I update the properties of a free text annotation in a PDF document using Aspose.PDF for .NET?
+#### س: هل يمكنني تحديث خصائص التعليق التوضيحي للنص الحر في مستند PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: Yes, Aspose.PDF for .NET provides functionality to update the properties of free text annotations in a PDF document. This includes changing the font size, font color, and other text styling options.
+ج: نعم، يوفر Aspose.PDF for .NET وظيفة لتحديث خصائص التعليقات التوضيحية النصية الحرة في مستند PDF. يتضمن ذلك تغيير حجم الخط ولون الخط وخيارات تصميم النص الأخرى.
 
-#### Q: How do I specify the annotation I want to update in the PDF document?
+#### س: كيف أحدد التعليق التوضيحي الذي أريد تحديثه في مستند PDF؟
 
-A: To update the properties of a specific annotation in the PDF document, you can access the annotation object using its index in the `Annotations` collection of a particular page. Then, you can modify its properties as needed.
+ج: لتحديث خصائص تعليق توضيحي محدد في مستند PDF، يمكنك الوصول إلى كائن التعليق التوضيحي باستخدام الفهرس الخاص به في ملف PDF.`Annotations` مجموعة من صفحة معينة. وبعد ذلك، يمكنك تعديل خصائصه حسب الحاجة.
 
-#### Q: What happens if an error occurs during the update process?
+#### س: ماذا يحدث إذا حدث خطأ أثناء عملية التحديث؟
 
-A: If an error occurs during the update process, the code uses a `try-catch` block to handle the exception and prints the error message to the console. This helps to identify and troubleshoot any issues that may arise.
+ ج: في حالة حدوث خطأ أثناء عملية التحديث، يستخدم الرمز ملف`try-catch` block لمعالجة الاستثناء وطباعة رسالة الخطأ إلى وحدة التحكم. وهذا يساعد على تحديد واستكشاف أية مشكلات قد تنشأ وإصلاحها.

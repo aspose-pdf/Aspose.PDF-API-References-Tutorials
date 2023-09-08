@@ -1,58 +1,58 @@
 ---
-title: Extract Highlighted Text In PDF File
-linktitle: Extract Highlighted Text In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract highlighted text in PDF file using Aspose.PDF for .NET with this step-by-step guide.
+title: استخراج النص المميز في ملف PDF
+linktitle: استخراج النص المميز في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية استخراج النص المميز في ملف PDF باستخدام Aspose.PDF لـ .NET باستخدام هذا الدليل التفصيلي خطوة بخطوة.
 type: docs
 weight: 60
 url: /ar/net/annotations/extracthighlightedtext/
 ---
-To extract highlighted text in PDF file, you can use the Aspose.PDF for .NET API. This API provides a simple way to retrieve all the text that has been highlighted in a document.
+لاستخراج النص المميز في ملف PDF، يمكنك استخدام Aspose.PDF for .NET API. توفر واجهة برمجة التطبيقات هذه طريقة بسيطة لاسترداد كل النص الذي تم تمييزه في المستند.
 
-## Step 1: Load the PDF document
+## الخطوة 1: قم بتحميل مستند PDF
 
-The first step in extracting highlighted text in PDF file is to load the document using the Aspose.PDF for .NET API. You can do this by creating a new instance of the `Document` class and passing the path to the PDF document as a parameter. 
+ الخطوة الأولى في استخراج النص المميز في ملف PDF هي تحميل المستند باستخدام Aspose.PDF لـ .NET API. يمكنك القيام بذلك عن طريق إنشاء مثيل جديد لـ`Document` class وتمرير المسار إلى مستند PDF كمعلمة. 
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir ="YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "ExtractHighlightedText.pdf");
 ```
 
-## Step 2: Loop through all annotations
+## الخطوة 2: قم بتكرار جميع التعليقات التوضيحية
 
-The next step is to loop through all the annotations in the PDF document. You can do this using a `foreach` loop, like so:
+ الخطوة التالية هي تكرار جميع التعليقات التوضيحية في مستند PDF. يمكنك القيام بذلك باستخدام`foreach` حلقة، مثل ذلك:
 
 ```csharp
 foreach (Annotation annotation in doc.Pages[1].Annotations)
 {
-	// Code goes here
+	// الكود يذهب هنا
 }
 ```
 
-## Step 3: Filter text markup annotations
+## الخطوة 3: تصفية التعليقات التوضيحية لترميز النص
 
-Inside the `foreach` loop, you will need to filter out all the annotations that are not text markup annotations. You can do this by checking if the annotation is an instance of the `TextMarkupAnnotation` class.
+ داخل`foreach` حلقة، ستحتاج إلى تصفية جميع التعليقات التوضيحية التي ليست تعليقات توضيحية لترميز النص. يمكنك القيام بذلك عن طريق التحقق مما إذا كان التعليق التوضيحي هو مثيل لـ`TextMarkupAnnotation` فصل.
 
 ```csharp
 if (annotation is TextMarkupAnnotation)
 {
-	// Code goes here
+	// الكود يذهب هنا
 }
 ```
 
-## Step 4: Retrieve highlighted text fragments
+## الخطوة 4: استرداد أجزاء النص المميزة
 
-Once you have filtered out all the text markup annotations, you can retrieve the highlighted text fragments for each annotation. You can do this by calling the `GetMarkedTextFragments()` method on the `TextMarkupAnnotation` object.
+ بمجرد تصفية جميع التعليقات التوضيحية لترميز النص، يمكنك استرداد أجزاء النص المميزة لكل تعليق توضيحي. يمكنك القيام بذلك عن طريق الاتصال بـ`GetMarkedTextFragments()` الطريقة على`TextMarkupAnnotation` هدف.
 
 ```csharp
 TextMarkupAnnotation highlightedAnnotation = annotation as TextMarkupAnnotation;
 TextFragmentCollection collection = highlightedAnnotation.GetMarkedTextFragments();
 ```
 
-## Step 5: Display the highlighted text
+## الخطوة 5: عرض النص المميز
 
-Finally, you can display the highlighted text to the user. You can do this by looping through each `TextFragment` object in the `TextFragmentCollection` and calling the `Text` property.
+ وأخيرا، يمكنك عرض النص المميز للمستخدم. يمكنك القيام بذلك عن طريق التكرار خلال كل منها`TextFragment` كائن في`TextFragmentCollection` والاتصال ب`Text` ملكية.
 
 ```csharp
 foreach (TextFragment tf in collection)
@@ -61,10 +61,10 @@ foreach (TextFragment tf in collection)
 }
 ```
 
-### Example source code for Extract Highlighted Text using Aspose.PDF for .NET
+### مثال على التعليمات البرمجية المصدر لاستخراج النص المميز باستخدام Aspose.PDF لـ .NET
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir ="YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "ExtractHighlightedText.pdf");
 
@@ -82,28 +82,28 @@ foreach (Annotation annotation in doc.Pages[1].Annotations)
 }
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we explored how to extract highlighted text from a PDF document using Aspose.PDF for .NET. By following the step-by-step guide and using the provided C# source code, developers can easily extract and manage highlighted text in their PDF documents.
+في هذا البرنامج التعليمي، اكتشفنا كيفية استخراج النص المميز من مستند PDF باستخدام Aspose.PDF لـ .NET. باتباع الدليل الموضح خطوة بخطوة واستخدام كود مصدر C# المقدم، يمكن للمطورين بسهولة استخراج النص المميز وإدارته في مستندات PDF الخاصة بهم.
 
-### FAQ's for extract highlighted text in PDF file
+### الأسئلة الشائعة لاستخراج النص المميز في ملف PDF
 
-#### Q: What are text markup annotations in a PDF document?
+#### س: ما هي التعليقات التوضيحية لترميز النص في مستند PDF؟
 
-A: Text markup annotations are annotations that highlight or mark specific text in a PDF document. Examples of text markup annotations include highlights, underlines, and strikethroughs.
+ج: التعليقات التوضيحية لترميز النص هي تعليقات توضيحية تقوم بتمييز نص معين أو وضع علامة عليه في مستند PDF. تتضمن أمثلة التعليقات التوضيحية لترميز النص التمييزات والتسطير والشطب.
 
-#### Q: Can I extract text from other types of annotations using Aspose.PDF for .NET?
+#### س: هل يمكنني استخراج النص من أنواع أخرى من التعليقات التوضيحية باستخدام Aspose.PDF لـ .NET؟
 
-A: Yes, Aspose.PDF for .NET provides various methods to extract text from different types of annotations, including text markup annotations, free text annotations, and more.
+ج: نعم، يوفر Aspose.PDF for .NET طرقًا متنوعة لاستخراج النص من أنواع مختلفة من التعليقات التوضيحية، بما في ذلك التعليقات التوضيحية لترميز النص، والتعليقات التوضيحية النصية المجانية، والمزيد.
 
-#### Q: Does Aspose.PDF for .NET support extracting text from password-protected PDF files?
+#### س: هل يدعم Aspose.PDF for .NET استخراج النص من ملفات PDF المحمية بكلمة مرور؟
 
-A: Yes, Aspose.PDF for .NET supports extracting text from password-protected PDF files. You need to provide the correct password when loading the PDF document using the `Document` class.
+ ج: نعم، يدعم Aspose.PDF for .NET استخراج النص من ملفات PDF المحمية بكلمة مرور. يتعين عليك تقديم كلمة المرور الصحيحة عند تحميل مستند PDF باستخدام ملف`Document` فصل.
 
-#### Q: Can I filter highlighted text based on other criteria, such as color or author?
+#### س: هل يمكنني تصفية النص المميز بناءً على معايير أخرى، مثل اللون أو المؤلف؟
 
-A: Yes, you can filter highlighted text based on other criteria, such as color, author, or creation date. Aspose.PDF for .NET provides methods to access and filter annotations based on their properties.
+ج: نعم، يمكنك تصفية النص المميز بناءً على معايير أخرى، مثل اللون أو المؤلف أو تاريخ الإنشاء. يوفر Aspose.PDF for .NET طرقًا للوصول إلى التعليقات التوضيحية وتصفيتها استنادًا إلى خصائصها.
 
-#### Q: Is it possible to save the extracted highlighted text to a separate file?
+#### س: هل من الممكن حفظ النص المميز المستخرج في ملف منفصل؟
 
-A: Yes, you can save the extracted highlighted text to a separate file or store it in a data structure for further processing or analysis.
+ج: نعم، يمكنك حفظ النص المميز المستخرج في ملف منفصل أو تخزينه في بنية بيانات لمزيد من المعالجة أو التحليل.

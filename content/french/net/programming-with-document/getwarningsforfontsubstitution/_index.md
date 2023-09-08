@@ -1,47 +1,47 @@
 ---
-title: Get Warnings For Font Substitution
-linktitle: Get Warnings For Font Substitution
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use the GetWarningsForFontSubstitution feature of Aspose.PDF for .NET to detect font substitution warnings when opening a PDF document.
+title: Recevez des avertissements concernant la substitution de polices
+linktitle: Recevez des avertissements concernant la substitution de polices
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment utiliser la fonctionnalité GetWarningsForFontSubstitution d'Aspose.PDF pour .NET pour détecter les avertissements de substitution de police lors de l'ouverture d'un document PDF.
 type: docs
 weight: 190
 url: /fr/net/programming-with-document/getwarningsforfontsubstitution/
 ---
-Aspose.PDF for .NET is a popular PDF manipulation library that enables developers to create, edit, and convert PDF files in their .NET applications. One of the features offered by this library is the ability to detect font substitution warnings when a PDF document is opened. This tutorial will guide you through the steps of using the `GetWarningsForFontSubstitution` feature of Aspose.PDF for .NET to detect font substitution warnings when opening a PDF document.
+Aspose.PDF pour .NET est une bibliothèque de manipulation PDF populaire qui permet aux développeurs de créer, modifier et convertir des fichiers PDF dans leurs applications .NET. L'une des fonctionnalités offertes par cette bibliothèque est la possibilité de détecter les avertissements de substitution de police lors de l'ouverture d'un document PDF. Ce tutoriel vous guidera à travers les étapes d'utilisation du`GetWarningsForFontSubstitution` fonctionnalité d'Aspose.PDF pour .NET pour détecter les avertissements de substitution de police lors de l'ouverture d'un document PDF.
 
-## Step 1: Install Aspose.PDF for .NET
+## Étape 1 : Installer Aspose.PDF pour .NET
 
-To use Aspose.PDF for .NET in your .NET applications, you must first install the library. You can download the latest version of the library from the [Aspose.PDF for .NET download page](https://relases.aspose.com/pdf/net).
+ Pour utiliser Aspose.PDF pour .NET dans vos applications .NET, vous devez d'abord installer la bibliothèque. Vous pouvez télécharger la dernière version de la bibliothèque à partir du[Page de téléchargement Aspose.PDF pour .NET](https://relases.aspose.com/pdf/net).
 
-Once you have downloaded the library, extract the contents of the ZIP file to a folder on your computer. You will then need to add a reference to the Aspose.PDF for .NET DLL in your .NET project.
+Une fois que vous avez téléchargé la bibliothèque, extrayez le contenu du fichier ZIP dans un dossier sur votre ordinateur. Vous devrez ensuite ajouter une référence à la DLL Aspose.PDF pour .NET dans votre projet .NET.
 
-## Step 2: Load the PDF Document
+## Étape 2 : Charger le document PDF
 
-Once you have installed Aspose.PDF for .NET and added a reference to the DLL in your .NET project, you can begin using the `GetWarningsForFontSubstitution` feature to detect font substitution warnings when opening a PDF document.
+Une fois que vous avez installé Aspose.PDF pour .NET et ajouté une référence à la DLL dans votre projet .NET, vous pouvez commencer à utiliser le`GetWarningsForFontSubstitution` fonctionnalité pour détecter les avertissements de substitution de police lors de l’ouverture d’un document PDF.
 
-The first step in using this feature is to load the PDF document that you want to detect font substitution warnings for. To do this, you can use the following code:
+La première étape de l'utilisation de cette fonctionnalité consiste à charger le document PDF pour lequel vous souhaitez détecter les avertissements de substitution de police. Pour ce faire, vous pouvez utiliser le code suivant :
 
 ```csharp
-// The path to the PDF document
+// Le chemin d'accès au document PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open the PDF document
+//Ouvrez le document PDF
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-In the above code, replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your PDF document is located. This code will load the PDF document into a `Document` object, which you can then use to detect font substitution warnings.
+ Dans le code ci-dessus, remplacez`"YOUR DOCUMENT DIRECTORY"` avec le chemin d'accès au répertoire où se trouve votre document PDF. Ce code chargera le document PDF dans un`Document` objet, que vous pouvez ensuite utiliser pour détecter les avertissements de substitution de police.
 
-## Step 3: Detect Font Substitution Warnings
+## Étape 3 : Détecter les avertissements de substitution de polices
 
-To detect font substitution warnings when opening a PDF document, you can use the following code:
+Pour détecter les avertissements de substitution de police lors de l'ouverture d'un document PDF, vous pouvez utiliser le code suivant :
 
 ```csharp
 doc.FontSubstitution += new Document.FontSubstitutionHandler(OnFontSubstitution);
 ```
 
-In the above code, `OnFontSubstitution` is a method that will be called whenever a font substitution warning is detected. You can customize this method to handle the font substitution warning in any way that you like.
+ Dans le code ci-dessus,`OnFontSubstitution`est une méthode qui sera appelée chaque fois qu'un avertissement de substitution de police est détecté. Vous pouvez personnaliser cette méthode pour gérer l’avertissement de substitution de police comme bon vous semble.
 
-Here is an example implementation of the `OnFontSubstitution` method:
+ Voici un exemple de mise en œuvre de`OnFontSubstitution` méthode:
 
 ```csharp
 private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArgs e)
@@ -50,23 +50,23 @@ private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArg
 }
 ```
 
-In the above code, the `OnFontSubstitution` method simply outputs the original font name and the substituted font name to the console whenever a font substitution warning is detected. You can customize this method to handle the font substitution warning in any way that you like.
+ Dans le code ci-dessus, le`OnFontSubstitution` La méthode affiche simplement le nom de la police d'origine et le nom de la police substituée sur la console chaque fois qu'un avertissement de substitution de police est détecté. Vous pouvez personnaliser cette méthode pour gérer l’avertissement de substitution de police comme bon vous semble.
 
-### Example source code for Get Warnings For Font Substitution using Aspose.NET for PDF
+### Exemple de code source pour obtenir des avertissements concernant la substitution de polices à l'aide d'Aspose.NET pour PDF
 
-Here is the full source code for detecting font substitution warnings when opening a PDF document using the `GetWarningsForFontSubstitution` feature of Aspose.PDF for .NET:
+ Voici le code source complet pour détecter les avertissements de substitution de police lors de l'ouverture d'un document PDF à l'aide de l'outil`GetWarningsForFontSubstitution` fonctionnalité d'Aspose.PDF pour .NET :
 
 ```csharp
-// The path to the PDF document
+// Le chemin d'accès au document PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open the PDF document
+//Ouvrez le document PDF
 Document doc = new Document(dataDir + "input.pdf");
 
-// Detect font substitution warnings
+// Détecter les avertissements de substitution de police
 doc.FontSubstitution += new Document.FontSubstitutionHandler(OnFontSubstitution);
 
-// Handle font substitution warning
+// Gérer l'avertissement de substitution de police
 private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArgs e)
 {
     Console.WriteLine("Font substitution: {0} => {1}", e.OriginalFontName, e.SubstitutedFontName);
@@ -75,22 +75,22 @@ private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArg
 
 ## Conclusion
 
-In this tutorial, we have discussed how to use Aspose.PDF for .NET to detect font substitution warnings when opening a PDF document. By subscribing to the `FontSubstitution` event, developers can detect font substitution situations and handle them according to their application's needs. Aspose.PDF for .NET provides a straightforward API to detect and handle font substitution warnings, helping developers ensure the visual fidelity and consistency of PDF documents across different systems.
+ Dans ce didacticiel, nous avons expliqué comment utiliser Aspose.PDF pour .NET pour détecter les avertissements de substitution de police lors de l'ouverture d'un document PDF. En vous abonnant au`FontSubstitution`événement, les développeurs peuvent détecter les situations de substitution de polices et les gérer en fonction des besoins de leur application. Aspose.PDF pour .NET fournit une API simple pour détecter et gérer les avertissements de substitution de polices, aidant ainsi les développeurs à garantir la fidélité visuelle et la cohérence des documents PDF sur différents systèmes.
 
-### FAQ's
+### FAQ
 
-#### Q: What is font substitution in a PDF document?
+#### Q : Qu'est-ce que la substitution de police dans un document PDF ?
 
-A: Font substitution in a PDF document occurs when a font used in the document is not available or embedded in the file. In such cases, the viewer or printer substitutes the missing font with a similar one that is available on the system. Font substitution can affect the appearance and layout of the document.
+R : La substitution de police dans un document PDF se produit lorsqu'une police utilisée dans le document n'est pas disponible ou intégrée dans le fichier. Dans de tels cas, le visualiseur ou l'imprimante remplace la police manquante par une police similaire disponible sur le système. La substitution de police peut affecter l'apparence et la mise en page du document.
 
-#### Q: Why is font substitution important to detect?
+#### Q : Pourquoi la substitution de polices est-elle importante à détecter ?
 
-A: Font substitution is important to detect because it can impact the visual fidelity and layout of the PDF document. Detecting font substitution warnings allows developers to identify situations where fonts are being substituted and take appropriate actions to ensure the document's visual appearance is consistent across different systems.
+R : Il est important de détecter la substitution de polices car elle peut avoir un impact sur la fidélité visuelle et la mise en page du document PDF. La détection des avertissements de substitution de polices permet aux développeurs d'identifier les situations dans lesquelles des polices sont remplacées et de prendre les mesures appropriées pour garantir la cohérence de l'apparence visuelle du document sur les différents systèmes.
 
-#### Q: How can I handle font substitution warnings?
+#### Q : Comment puis-je gérer les avertissements de substitution de police ?
 
-A: You can handle font substitution warnings by subscribing to the `FontSubstitution` event of the `Document` class and providing a custom method to handle the event. In this custom method, you can log the font substitution warnings, notify users, or take other actions based on your application's requirements.
+ R : Vous pouvez gérer les avertissements de substitution de polices en vous abonnant au`FontSubstitution` événement de la`Document` classe et fournissant une méthode personnalisée pour gérer l’événement. Dans cette méthode personnalisée, vous pouvez enregistrer les avertissements de substitution de police, avertir les utilisateurs ou effectuer d'autres actions en fonction des exigences de votre application.
 
-#### Q: Can I customize the handling of font substitution warnings?
+#### Q : Puis-je personnaliser la gestion des avertissements de substitution de police ?
 
-A: Yes, you can customize the handling of font substitution warnings by providing a custom method to handle the `FontSubstitution` event. In this custom method, you can log the font substitution warnings, notify users, or take any other appropriate actions based on your application's requirements.
+ R : Oui, vous pouvez personnaliser la gestion des avertissements de substitution de polices en fournissant une méthode personnalisée pour gérer les`FontSubstitution`événement. Dans cette méthode personnalisée, vous pouvez enregistrer les avertissements de substitution de police, avertir les utilisateurs ou prendre toute autre action appropriée en fonction des exigences de votre application.

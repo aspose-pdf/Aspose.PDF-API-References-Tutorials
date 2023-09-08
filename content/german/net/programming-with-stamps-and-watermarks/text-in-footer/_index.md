@@ -1,51 +1,51 @@
 ---
-title: Text In Footer Of PDF File
-linktitle: Text In Footer Of PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn to add text in the footer of PDF file with Aspose.PDF for .NET.
+title: Text in der Fußzeile der PDF-Datei
+linktitle: Text in der Fußzeile der PDF-Datei
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET Text in die Fußzeile einer PDF-Datei einfügen.
 type: docs
 weight: 180
 url: /de/net/programming-with-stamps-and-watermarks/text-in-footer/
 ---
-In this tutorial, we are going to learn how to add text in the footer of PDF file using Aspose.PDF for .NET. Follow the steps below:
+In diesem Tutorial lernen wir, wie man mit Aspose.PDF für .NET Text in die Fußzeile einer PDF-Datei einfügt. Folgen Sie den unteren Schritten:
 
-## Step 1: Project preparation
+## Schritt 1: Projektvorbereitung
 
-Make sure you have installed Aspose.PDF for .NET and created a C# project.
+Stellen Sie sicher, dass Sie Aspose.PDF für .NET installiert und ein C#-Projekt erstellt haben.
 
-## Step 2: Importing namespaces
+## Schritt 2: Namespaces importieren
 
-Add the following namespaces to your C# source file:
+Fügen Sie Ihrer C#-Quelldatei die folgenden Namespaces hinzu:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Opening the document
+## Schritt 3: Öffnen des Dokuments
 
-Open the existing PDF document using the path provided:
+Öffnen Sie das vorhandene PDF-Dokument über den angegebenen Pfad:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document pdfDocument = new Document(dataDir + "TextinFooter.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to your documents directory.
+Stellen Sie sicher, dass Sie „IHR DOKUMENTENVERZEICHNIS“ durch den tatsächlichen Pfad zu Ihrem Dokumentenverzeichnis ersetzen.
 
-## Step 4: Create footer text
+## Schritt 4: Fußzeilentext erstellen
 
-Create a new text stamp with the text you want to add in the footer:
+Erstellen Sie einen neuen Textstempel mit dem Text, den Sie in der Fußzeile hinzufügen möchten:
 
 ```csharp
 TextStamp textStamp = new TextStamp("footer text");
 ```
 
-You can customize the text by changing its properties like bottom margin, horizontal alignment, and vertical alignment.
+Sie können den Text anpassen, indem Sie seine Eigenschaften wie den unteren Rand, die horizontale Ausrichtung und die vertikale Ausrichtung ändern.
 
-## Step 5: Add footer text to all pages
+## Schritt 5: Fußzeilentext zu allen Seiten hinzufügen
 
-Go through all the pages of the PDF document and add the text stamp in the footer:
+Gehen Sie alle Seiten des PDF-Dokuments durch und fügen Sie den Textstempel in der Fußzeile ein:
 
 ```csharp
 foreach(Page page in pdfDocument.Pages)
@@ -54,9 +54,9 @@ foreach(Page page in pdfDocument.Pages)
 }
 ```
 
-## Step 6: Saving the PDF Document
+## Schritt 6: Speichern des PDF-Dokuments
 
-Once the footer text has been added on all pages, save the updated PDF document:
+Sobald der Fußzeilentext auf allen Seiten hinzugefügt wurde, speichern Sie das aktualisierte PDF-Dokument:
 
 ```csharp
 dataDir = dataDir + "TextinFooter_out.pdf";
@@ -64,72 +64,72 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nText in footer added successfully.\nFile saved at: " + dataDir);
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where you want to save the PDF document.
+Ersetzen Sie unbedingt „VERZEICHNIS IHRER DOKUMENTE“ durch den tatsächlichen Pfad zu dem Verzeichnis, in dem Sie das PDF-Dokument speichern möchten.
 
-### Sample source code for Textin Footer using Aspose.PDF for .NET 
+### Beispielquellcode für Textin Footer mit Aspose.PDF für .NET 
 ```csharp
 
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Dokument öffnen
 Document pdfDocument = new Document(dataDir+ "TextinFooter.pdf");
 
-// Create footer
+// Fußzeile erstellen
 TextStamp textStamp = new TextStamp("Footer Text");
 
-// Set properties of the stamp
+// Legen Sie die Eigenschaften des Stempels fest
 textStamp.BottomMargin = 10;
 textStamp.HorizontalAlignment = HorizontalAlignment.Center;
 textStamp.VerticalAlignment = VerticalAlignment.Bottom;
 
-// Add footer on all pages
+// Fußzeile auf allen Seiten hinzufügen
 foreach (Page page in pdfDocument.Pages)
 {
 	page.AddStamp(textStamp);
 }
 dataDir = dataDir + "TextinFooter_out.pdf";
 
-// Save updated PDF file
+// Speichern Sie die aktualisierte PDF-Datei
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nText in footer added successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
+## Abschluss
 
-Congratulation ! You have learned how to add text in the footer of a PDF document using Aspose.PDF for .NET. You can now customize your footers by adding additional text to your PDF documents.
+Herzlichen Glückwunsch! Sie haben gelernt, wie Sie mit Aspose.PDF für .NET Text in die Fußzeile eines PDF-Dokuments einfügen. Sie können jetzt Ihre Fußzeilen anpassen, indem Sie Ihren PDF-Dokumenten zusätzlichen Text hinzufügen.
 
-### FAQ's for text in footer of PDF file
+### FAQs zum Text in der Fußzeile einer PDF-Datei
 
-#### Q: What is the purpose of adding text in the footer of a PDF document?
+#### F: Welchen Zweck hat das Hinzufügen von Text in der Fußzeile eines PDF-Dokuments?
 
-A: Adding text in the footer of a PDF document allows you to include important information, such as copyright notices, page numbers, document version, or any other text that you want to appear consistently at the bottom of each page.
+A: Durch das Hinzufügen von Text in der Fußzeile eines PDF-Dokuments können Sie wichtige Informationen wie Urheberrechtshinweise, Seitenzahlen, Dokumentversion oder jeden anderen Text einfügen, der am Ende jeder Seite einheitlich angezeigt werden soll.
 
-#### Q: How does the provided C# source code achieve the addition of text in the footer of a PDF document?
+#### F: Wie erreicht der bereitgestellte C#-Quellcode das Hinzufügen von Text in der Fußzeile eines PDF-Dokuments?
 
-A: The code demonstrates the process of opening an existing PDF document, creating a text stamp with the desired footer text, customizing the text properties, adding the text stamp to all pages, and finally saving the updated PDF document with the added footer text.
+A: Der Code demonstriert den Vorgang des Öffnens eines vorhandenen PDF-Dokuments, des Erstellens eines Textstempels mit dem gewünschten Fußzeilentext, des Anpassens der Texteigenschaften, des Hinzufügens des Textstempels zu allen Seiten und schließlich des Speicherns des aktualisierten PDF-Dokuments mit dem hinzugefügten Fußzeilentext.
 
-#### Q: Can I modify the appearance of the footer text, such as its font, size, color, and alignment?
+#### F: Kann ich das Erscheinungsbild des Fußzeilentexts ändern, z. B. Schriftart, Größe, Farbe und Ausrichtung?
 
-A: Yes, you can customize the appearance of the footer text by modifying the properties of the `TextStamp` object. The code example includes setting properties like bottom margin, horizontal alignment, and vertical alignment. You can also adjust the font, size, color, and other text-related properties.
+ A: Ja, Sie können das Erscheinungsbild des Fußzeilentexts anpassen, indem Sie die Eigenschaften des ändern`TextStamp` Objekt. Das Codebeispiel umfasst das Festlegen von Eigenschaften wie unterem Rand, horizontaler Ausrichtung und vertikaler Ausrichtung. Sie können auch Schriftart, Größe, Farbe und andere textbezogene Eigenschaften anpassen.
 
-#### Q: Is it possible to add different text to each page's footer?
+#### F: Ist es möglich, der Fußzeile jeder Seite einen anderen Text hinzuzufügen?
 
-A: Yes, you can add different text to each page's footer by creating separate `TextStamp` objects with different text content or properties and then adding them to specific pages as needed.
+ A: Ja, Sie können der Fußzeile jeder Seite unterschiedlichen Text hinzufügen, indem Sie einen separaten Text erstellen`TextStamp` Objekte mit unterschiedlichem Textinhalt oder unterschiedlichen Eigenschaften erstellen und sie dann nach Bedarf zu bestimmten Seiten hinzufügen.
 
-#### Q: How do I ensure the footer text appears consistently on every page of the PDF document?
+#### F: Wie stelle ich sicher, dass der Fußzeilentext auf jeder Seite des PDF-Dokuments konsistent angezeigt wird?
 
-A: By using a loop that iterates through all the pages of the PDF document and adding the same text stamp to each page, you ensure that the footer text appears consistently on every page.
+A: Indem Sie eine Schleife verwenden, die alle Seiten des PDF-Dokuments durchläuft und jeder Seite den gleichen Textstempel hinzufügt, stellen Sie sicher, dass der Fußzeilentext auf jeder Seite konsistent angezeigt wird.
 
-#### Q: Can I add multiple lines of text or format the footer text with line breaks?
+#### F: Kann ich mehrere Textzeilen hinzufügen oder den Fußzeilentext mit Zeilenumbrüchen formatieren?
 
-A: Yes, you can add multiple lines of text to the footer by including line breaks in the text string. For example, you can use the escape sequence `\n` to indicate a line break in the text.
+ A: Ja, Sie können der Fußzeile mehrere Textzeilen hinzufügen, indem Sie Zeilenumbrüche in die Textzeichenfolge einfügen. Sie können beispielsweise die Escape-Sequenz verwenden`\n` um einen Zeilenumbruch im Text anzuzeigen.
 
-#### Q: What happens if I want to add different content to the header and footer of the same PDF document?
+#### F: Was passiert, wenn ich der Kopf- und Fußzeile desselben PDF-Dokuments unterschiedliche Inhalte hinzufügen möchte?
 
-A: To add different content to the header and footer sections, you would follow similar steps for both sections. The code demonstrates adding text to the footer; you can use a similar approach to add text to the header.
+A: Um den Kopf- und Fußzeilenabschnitten unterschiedliche Inhalte hinzuzufügen, führen Sie für beide Abschnitte ähnliche Schritte aus. Der Code demonstriert das Hinzufügen von Text zur Fußzeile. Sie können einen ähnlichen Ansatz verwenden, um Text zur Kopfzeile hinzuzufügen.
 
-#### Q: Is it possible to add images or other elements alongside the footer text using this approach?
+#### F: Ist es mit diesem Ansatz möglich, Bilder oder andere Elemente neben dem Fußzeilentext hinzuzufügen?
 
-A: While the provided code specifically demonstrates adding text to the footer, you can extend the approach to add other elements like images, lines, shapes, or any other content to the footer section using the Aspose.PDF library.
+A: Während der bereitgestellte Code speziell das Hinzufügen von Text zur Fußzeile demonstriert, können Sie den Ansatz mithilfe der Aspose.PDF-Bibliothek erweitern, um andere Elemente wie Bilder, Linien, Formen oder andere Inhalte zum Fußzeilenabschnitt hinzuzufügen.

@@ -1,57 +1,57 @@
 ---
-title: Update Child Bookmarks In PDF File
-linktitle: Update Child Bookmarks In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily update child bookmarks in PDF file with Aspose.PDF for .NET.
+title: Обновить дочерние закладки в PDF-файле
+linktitle: Обновить дочерние закладки в PDF-файле
+second_title: Справочник по Aspose.PDF для .NET API
+description: Легко обновляйте дочерние закладки в PDF-файле с помощью Aspose.PDF для .NET.
 type: docs
 weight: 110
 url: /ru/net/programming-with-bookmarks/update-child-bookmarks/
 ---
-Updating child bookmarks in PDF file allows you to modify the properties of specific bookmarks within a parent bookmark. With Aspose.PDF for .NET, you can easily update child bookmarks by following the following source code:
+Обновление дочерних закладок в PDF-файле позволяет вам изменять свойства определенных закладок в родительской закладке. С помощью Aspose.PDF для .NET вы можете легко обновить дочерние закладки, выполнив следующий исходный код:
 
-## Step 1: Import required libraries
+## Шаг 1. Импортируйте необходимые библиотеки.
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Прежде чем начать, вам необходимо импортировать необходимые библиотеки для вашего проекта C#. Вот необходимая директива импорта:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## Шаг 2. Установите путь к папке с документами.
 
-In this step, you need to specify the path to the folder containing the PDF file you want to update. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ На этом этапе вам необходимо указать путь к папке, содержащей PDF-файл, который вы хотите обновить. Заменять`"YOUR DOCUMENT DIRECTORY"`в следующем коде с фактическим путем к папке ваших документов:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Шаг 3. Откройте PDF-документ.
 
-Now we will open the PDF document we want to update using the following code:
+Теперь мы откроем PDF-документ, который хотим обновить, используя следующий код:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "UpdateChildBookmarks.pdf");
 ```
 
-## Step 4: Get parent bookmark object
+## Шаг 4. Получите объект родительской закладки
 
-In this step, we are going to get the specific parent bookmark object from which we want to update the child bookmarks. In the example below, we retrieve the parent bookmark at index 1 (the second bookmark in the bookmarks collection). You can adjust the index according to your needs. Here is the corresponding code:
+На этом этапе мы собираемся получить конкретный объект родительской закладки, из которого мы хотим обновить дочерние закладки. В приведенном ниже примере мы извлекаем родительскую закладку с индексом 1 (вторая закладка в коллекции закладок). Вы можете настроить индекс в соответствии с вашими потребностями. Вот соответствующий код:
 
 ```csharp
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
 ```
 
-## Step 5: Get Child Bookmark Object
+## Шаг 5: Получите объект дочерней закладки
 
-Now let's get the specific child bookmark object we want to update. In the example below, we retrieve the child bookmark at index 1 (the second child bookmark in the collection of child bookmarks of the parent bookmark). You can adjust the index according to your needs. Here is the corresponding code:
+Теперь давайте получим конкретный объект дочерней закладки, который мы хотим обновить. В приведенном ниже примере мы извлекаем дочернюю закладку с индексом 1 (вторая дочерняя закладка в коллекции дочерних закладок родительской закладки). Вы можете настроить индекс в соответствии с вашими потребностями. Вот соответствующий код:
 
 ```csharp
 OutlineItemCollection childOutline = pdfOutline[1];
 ```
 
-## Step 6: Update child bookmark properties
+## Шаг 6. Обновите свойства дочерней закладки
 
-Now let's update the child bookmark properties such as title, italic style, and bold style. You can adjust these properties according to your needs. Here is the corresponding code:
+Теперь давайте обновим свойства дочерней закладки, такие как заголовок, курсив и полужирный стиль. Вы можете настроить эти свойства в соответствии с вашими потребностями. Вот соответствующий код:
 
 ```csharp
 childOutline.Title = "Updated Outline";
@@ -59,93 +59,93 @@ childOutline. Italic = true;
 childOutline. Bold = true;
 ```
 
-## Step 7: Save the updated file
+## Шаг 7. Сохраните обновленный файл.
 
-Now let's save the updated PDF file using the `Save` method of the `pdfDocument` object. Here is the corresponding code:
+ Теперь давайте сохраним обновленный PDF-файл, используя`Save` метод`pdfDocument` объект. Вот соответствующий код:
 
 ```csharp
 dataDir = dataDir + "UpdateChildBookmarks_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Update Child Bookmarks using Aspose.PDF for .NET 
+### Пример исходного кода для обновления дочерних закладок с помощью Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Открыть документ
 Document pdfDocument = new Document(dataDir + "UpdateChildBookmarks.pdf");
-// Get a bookmark object
+// Получить объект закладки
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
-// Get child bookmark object
+//Получить объект дочерней закладки
 OutlineItemCollection childOutline = pdfOutline[1];
 childOutline.Title = "Updated Outline";
 childOutline.Italic = true;
 childOutline.Bold = true;
 dataDir = dataDir + "UpdateChildBookmarks_out.pdf";            
-// Save output
+// Сохранить вывод
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nChild bookmarks updated successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Заключение
 
-Congratulation ! You now have a step-by-step guide to updating child bookmarks with Aspose.PDF for .NET. You can use this code to modify the properties of child bookmarks in your PDF documents.
+Поздравляем! Теперь у вас есть пошаговое руководство по обновлению дочерних закладок с помощью Aspose.PDF для .NET. Вы можете использовать этот код для изменения свойств дочерних закладок в ваших PDF-документах.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Обязательно ознакомьтесь с официальной документацией Aspose.PDF для получения дополнительной информации о расширенных функциях управления закладками.
 
-### FAQ's for update child bookmarks in PDF file
+### Часто задаваемые вопросы по обновлению дочерних закладок в PDF-файле
 
-#### Q: What are child bookmarks in a PDF file?
+#### Вопрос: Что такое дочерние закладки в PDF-файле?
 
-A: Child bookmarks are bookmarks that are nested within a parent bookmark. They allow you to create a hierarchical structure for navigating through a PDF document's content.
+О: Дочерние закладки — это закладки, вложенные в родительскую закладку. Они позволяют создать иерархическую структуру для навигации по содержимому PDF-документа.
 
-#### Q: Why would I need to update child bookmarks?
+#### Вопрос: Зачем мне обновлять дочерние закладки?
 
-A: Updating child bookmarks is useful when you want to modify the properties, titles, or styles of specific bookmarks within a parent bookmark. This helps customize the document's navigational structure.
+О: Обновление дочерних закладок полезно, если вы хотите изменить свойства, заголовки или стили определенных закладок в родительской закладке. Это помогает настроить навигационную структуру документа.
 
-#### Q: How do I import the required libraries for my C# project?
+#### Вопрос: Как мне импортировать необходимые библиотеки для моего проекта C#?
 
-A: To import the necessary libraries for your C# project, include the following import directive:
+О: Чтобы импортировать необходимые библиотеки для вашего проекта C#, включите следующую директиву импорта:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This directive enables you to access the classes and methods needed for working with PDF documents and bookmarks.
+Эта директива позволяет вам получить доступ к классам и методам, необходимым для работы с PDF-документами и закладками.
 
-#### Q: How do I specify the path to the documents folder?
+#### Вопрос: Как указать путь к папке с документами?
 
-A: Replace `"YOUR DOCUMENT DIRECTORY"` in the provided source code with the actual path to the folder containing the PDF file you want to update.
+ А: заменить`"YOUR DOCUMENT DIRECTORY"` в предоставленном исходном коде с указанием фактического пути к папке, содержащей PDF-файл, который вы хотите обновить.
 
-#### Q: How do I open a PDF document for updating child bookmarks?
+#### Вопрос: Как открыть PDF-документ для обновления дочерних закладок?
 
-A: To open a PDF document for updating child bookmarks, use the following code:
+О: Чтобы открыть PDF-документ для обновления дочерних закладок, используйте следующий код:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "UpdateChildBookmarks.pdf");
 ```
 
-Replace `"UpdateChildBookmarks.pdf"` with the actual file name.
+ Заменять`"UpdateChildBookmarks.pdf"` с фактическим именем файла.
 
-#### Q: How do I get the parent bookmark object from which I want to update child bookmarks?
+#### Вопрос: Как мне получить объект родительской закладки, из которого я хочу обновить дочерние закладки?
 
-A: To retrieve a specific parent bookmark for updating child bookmarks, access the `Outlines` property of the `pdfDocument` object. In the example below, we retrieve the parent bookmark at index 1:
+ О: Чтобы получить определенную родительскую закладку для обновления дочерних закладок, откройте`Outlines` собственность`pdfDocument` объект. В приведенном ниже примере мы извлекаем родительскую закладку с индексом 1:
 
 ```csharp
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
 ```
 
-#### Q: How do I get the child bookmark object I want to update?
+#### Вопрос: Как мне получить объект дочерней закладки, который я хочу обновить?
 
-A: To retrieve a specific child bookmark for updating, access the `OutlineItemCollection` of the parent bookmark. In the example below, we retrieve the child bookmark at index 1:
+ О: Чтобы получить определенную дочернюю закладку для обновления, откройте`OutlineItemCollection` родительской закладки. В приведенном ниже примере мы извлекаем дочернюю закладку с индексом 1:
 
 ```csharp
 OutlineItemCollection childOutline = pdfOutline[1];
 ```
 
-#### Q: What child bookmark properties can I update?
+#### Вопрос: Какие свойства дочерних закладок я могу обновить?
 
-A: You can update various properties of a child bookmark, such as its title, italic style, and bold style. Customize these properties according to your needs:
+О: Вы можете обновить различные свойства дочерней закладки, такие как заголовок, курсив и полужирный стиль. Настройте эти свойства в соответствии с вашими потребностями:
 
 ```csharp
 childOutline.Title = "Updated Outline";
@@ -153,13 +153,13 @@ childOutline.Italic = true;
 childOutline.Bold = true;
 ```
 
-#### Q: Can I update multiple child bookmarks using this method?
+#### Вопрос: Могу ли я обновить несколько дочерних закладок этим методом?
 
-A: Yes, you can repeat steps 4 to 7 for each child bookmark you want to update. Modify the parent index and child index as needed.
+О: Да, вы можете повторить шаги с 4 по 7 для каждой дочерней закладки, которую хотите обновить. При необходимости измените родительский и дочерний индексы.
 
-#### Q: How do I save the updated PDF file?
+#### Вопрос: Как сохранить обновленный PDF-файл?
 
-A: Save the updated PDF file using the `Save` method of the `pdfDocument` object:
+ О: Сохраните обновленный PDF-файл, используя`Save` метод`pdfDocument` объект:
 
 ```csharp
 dataDir = dataDir + "UpdateChildBookmarks_out.pdf";

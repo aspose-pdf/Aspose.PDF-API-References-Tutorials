@@ -1,44 +1,44 @@
 ---
-title: Programming with Forms
-linktitle: Programming with Forms
+title: Programmation avec des formulaires
+linktitle: Programmation avec des formulaires
 type: docs
 weight: 13
 url: /fr/net/programming-with-forms/
-description: Check out programming tutorials with Aspose.PDF Forms for .NET to create and manage interactive forms in your PDF files.
+description: Consultez les didacticiels de programmation avec Aspose.PDF Forms for .NET pour créer et gérer des formulaires interactifs dans vos fichiers PDF.
 ---
-The Aspose.PDF for .NET "Programming with Forms" tutorials are essential resources for developers looking to create and manipulate interactive PDF forms. These tutorials provide a detailed introduction to the functionality of creating, editing, and filling out PDF forms using the Aspose.PDF library for .NET. You will learn how to create form fields, add buttons, perform validations and calculations, and extract data from completed forms. With these tutorials, you will be able to develop powerful applications for manipulating PDF forms in your .NET project.
+Les didacticiels Aspose.PDF pour .NET « Programmation avec des formulaires » sont des ressources essentielles pour les développeurs souhaitant créer et manipuler des formulaires PDF interactifs. Ces didacticiels fournissent une introduction détaillée aux fonctionnalités de création, de modification et de remplissage de formulaires PDF à l'aide de la bibliothèque Aspose.PDF pour .NET. Vous apprendrez à créer des champs de formulaire, à ajouter des boutons, à effectuer des validations et des calculs et à extraire des données des formulaires remplis. Avec ces tutoriels, vous pourrez développer des applications puissantes pour manipuler des formulaires PDF dans votre projet .NET.
 
-These tutorials also provide detailed code examples, clear explanations, and illustrations to make it easier for you to understand and learn. You will be guided step by step through the various steps of programming with PDF forms, allowing you to quickly master the concepts and techniques necessary to create effective and personalized interactive PDF forms. Whether you are a beginner or an experienced developer, these tutorials will help you improve your programming skills with PDF forms using Aspose.PDF for .NET.
+Ces didacticiels fournissent également des exemples de code détaillés, des explications claires et des illustrations pour vous faciliter la compréhension et l'apprentissage. Vous serez guidé pas à pas à travers les différentes étapes de programmation avec des formulaires PDF, vous permettant de maîtriser rapidement les concepts et techniques nécessaires pour créer des formulaires PDF interactifs efficaces et personnalisés. Que vous soyez débutant ou développeur expérimenté, ces didacticiels vous aideront à améliorer vos compétences en programmation avec des formulaires PDF à l'aide d'Aspose.PDF pour .NET.
 
-## Tutorials
-| Title | Description |
+## Tutoriels
+| Titre | Description |
 | --- | --- | 
-| [Add Tooltip To Field](./add-tooltip-to-field/) | Learn how to add a tooltip to a field with Aspose.PDF for .NET. |  
-| [Arabic Text Filling](./arabic-text-filling/) | Easily populate PDF form fields with Arabic text using Aspose.PDF for .NET. |  
-| [Combo Box](./combo-box/) | Easily create combo box list in your PDF documents using Aspose.PDF for .NET. |  
-| [Create Document](./create-doc/) | Easily create a document with radio buttons using Aspose.PDF for .NET. |  
-| [Delete Form Field In PDF Document](./delete-form-field/) | Easily remove unwanted form fields in PDF document using Aspose.PDF for .NET. |  
-| [Determine Required Field In PDF Form](./determine-required-field/) | Easily determine required fields in PDF form using Aspose.PDF for .NET. |  
-| [Dynamic XFA To Acro Form](./dynamic-xfa-to-acro-form/) | Easily convert dynamic XFATo forms to standard AcroForm forms with Aspose.PDF for .NET. |  
-| [Fill PDF Form Field](./fill-form-field/) | Easily fill out form fields in your PDF documents using Aspose.PDF for .NET. |  
-| [Fill XFAFields](./fill-xfafields/) | Easily fill XFA fields in your PDF documents using Aspose.PDF for .NET. |  
-| [Flatten Forms In PDF Document](./flatten-forms/) | Easily flatten forms in PDF document using Aspose.PDF for .NET. |  
-| [Form Field Font 14](./form-field-font-14/) | Easily configure the font of form fields in your PDF documents with Aspose.PDF for .NET. |  
-| [Get PDF Form Field Coordinates](./get-coordinates/) | Easily get PDF form field coordinates in your PDF documents with Aspose.PDF for .NET. |  
-| [Get Fields From Region In PDF File](./get-fields-from-region/) | Easily get fields from a specific region in PDF file with Aspose.PDF for .NET. |  
-| [Get Value From Field In PDF Document](./get-value-from-field/) | Easily get the value of a form field in PDF document with Aspose.PDF for .NET. |  
-| [Get Values From All Fields In PDF Document](./get-values-from-all-fields/) | Easily get the values of all form fields in PDF document with Aspose.PDF for .NET. |  
-| [Get XFAProperties](./get-xfaproperties/) | Easily get XFA properties of form fields in your PDF documents with Aspose.PDF for .NET. |  
-| [Grouped Check Boxes In PDF Document](./grouped-check-boxes/) | Easily create grouped checkboxes in PDF document with Aspose.PDF for .NET. |  
-| [Horizontally And Vertically Radio Buttons](./horizontally-and-vertically-radio-buttons/) | Easily create horizontal and vertical radio buttons in your PDF documents with Aspose.PDF for .NET. |  
-| [Modify Form Field In PDF Document](./modify-form-field/) | Easily edit form fields in PDF document with Aspose.PDF for .NET. |  
-| [Move Form Field](./move-form-field/) | Easily move form fields around in your PDF documents with Aspose.PDF for .NET. |  
-| [Preserve Rights](./preserve-rights/) | Preserve form rights in your PDF documents with Aspose.PDF for .NET. |  
-| [Radio Button](./radio-button/) | Easily add radio buttons to your PDF documents with Aspose.PDF for .NET. |  
-| [Radio Button With Options](./radio-button-with-options/) | Easily add a radio button with options to a PDF document using Aspose.PDF for .NET. |  
-| [Retrieve Form Field In Tab Order](./retrieve-form-field-in-tab-order/) | Learn how to retrieve form fields in tab order using Aspose.PDF for .NET. |  
-| [Select Radio Button In PDF Document](./select-radio-button/) | Learn how to select a radio button in PDF document using Aspose.PDF for .NET. |  
-| [Set Field Limit](./set-field-limit/) | Learn how to set a field boundary in a PDF document using Aspose.PDF for .NET. |  
-| [Set Java Script](./set-java-script/) | Learn how to use Aspose.PDF for .NET to set JavaScript in form fields in PDF files. |  
-| [Set Radio Button Caption](./set-radio-button-caption/) | Learn how to use Aspose.PDF for .NET to set the caption for a radio button in a PDF form. |  
-| [Text Box](./text-box/) | Learn how to create a text field in a PDF document using Aspose.PDF for .NET. |  
+| [Ajouter une info-bulle au champ](./add-tooltip-to-field/) | Découvrez comment ajouter une info-bulle à un champ avec Aspose.PDF pour .NET. |  
+| [Remplissage de texte arabe](./arabic-text-filling/) | Remplissez facilement les champs du formulaire PDF avec du texte arabe à l'aide d'Aspose.PDF pour .NET. |  
+| [Boîte combo](./combo-box/) | Créez facilement une liste de zones de liste déroulante dans vos documents PDF à l'aide d'Aspose.PDF pour .NET. |  
+| [Créer un document](./create-doc/) | Créez facilement un document avec des boutons radio à l'aide d'Aspose.PDF pour .NET. |  
+| [Supprimer le champ du formulaire dans un document PDF](./delete-form-field/) | Supprimez facilement les champs de formulaire indésirables dans un document PDF à l'aide d'Aspose.PDF pour .NET. |  
+| [Déterminer le champ obligatoire dans le formulaire PDF](./determine-required-field/) | Déterminez facilement les champs obligatoires dans le formulaire PDF à l’aide d’Aspose.PDF pour .NET. |  
+| [Formulaire XFA dynamique vers Acro](./dynamic-xfa-to-acro-form/) | Convertissez facilement les formulaires XFATo dynamiques en formulaires AcroForm standard avec Aspose.PDF pour .NET. |  
+| [Remplir le champ du formulaire PDF](./fill-form-field/) | Remplissez facilement les champs de formulaire de vos documents PDF à l'aide d'Aspose.PDF pour .NET. |  
+| [Remplir les champs XFA](./fill-xfafields/) | Remplissez facilement les champs XFA dans vos documents PDF à l'aide d'Aspose.PDF pour .NET. |  
+| [Aplatir les formulaires dans un document PDF](./flatten-forms/) | Aplatissez facilement les formulaires dans un document PDF à l'aide d'Aspose.PDF pour .NET. |  
+| [Police du champ de formulaire 14](./form-field-font-14/) | Configurez facilement la police des champs de formulaire dans vos documents PDF avec Aspose.PDF pour .NET. |  
+| [Obtenir les coordonnées des champs du formulaire PDF](./get-coordinates/) | Obtenez facilement les coordonnées des champs de formulaire PDF dans vos documents PDF avec Aspose.PDF pour .NET. |  
+| [Obtenir les champs de la région dans un fichier PDF](./get-fields-from-region/) | Obtenez facilement les champs d'une région spécifique dans un fichier PDF avec Aspose.PDF pour .NET. |  
+| [Obtenir la valeur du champ dans un document PDF](./get-value-from-field/) | Obtenez facilement la valeur d'un champ de formulaire dans un document PDF avec Aspose.PDF pour .NET. |  
+| [Obtenir les valeurs de tous les champs du document PDF](./get-values-from-all-fields/) | Obtenez facilement les valeurs de tous les champs de formulaire dans un document PDF avec Aspose.PDF pour .NET. |  
+| [Obtenir les propriétés XFA](./get-xfaproperties/) | Obtenez facilement les propriétés XFA des champs de formulaire dans vos documents PDF avec Aspose.PDF pour .NET. |  
+| [Cases à cocher regroupées dans un document PDF](./grouped-check-boxes/) | Créez facilement des cases à cocher groupées dans un document PDF avec Aspose.PDF pour .NET. |  
+| [Boutons radio horizontaux et verticaux](./horizontally-and-vertically-radio-buttons/) | Créez facilement des boutons radio horizontaux et verticaux dans vos documents PDF avec Aspose.PDF pour .NET. |  
+| [Modifier le champ du formulaire dans un document PDF](./modify-form-field/) | Modifiez facilement les champs de formulaire dans un document PDF avec Aspose.PDF pour .NET. |  
+| [Déplacer le champ du formulaire](./move-form-field/) | Déplacez facilement les champs de formulaire dans vos documents PDF avec Aspose.PDF pour .NET. |  
+| [Préserver les droits](./preserve-rights/) | Préservez les droits de formulaire dans vos documents PDF avec Aspose.PDF pour .NET. |  
+| [Bouton radio](./radio-button/) | Ajoutez facilement des boutons radio à vos documents PDF avec Aspose.PDF pour .NET. |  
+| [Bouton radio avec options](./radio-button-with-options/) | Ajoutez facilement un bouton radio avec des options à un document PDF à l'aide d'Aspose.PDF pour .NET. |  
+| [Récupérer le champ du formulaire dans l'ordre de tabulation](./retrieve-form-field-in-tab-order/) | Découvrez comment récupérer les champs de formulaire par ordre de tabulation à l'aide d'Aspose.PDF pour .NET. |  
+| [Sélectionnez le bouton radio dans le document PDF](./select-radio-button/) | Découvrez comment sélectionner un bouton radio dans un document PDF à l'aide d'Aspose.PDF pour .NET. |  
+| [Définir la limite du champ](./set-field-limit/) | Découvrez comment définir une limite de champ dans un document PDF à l'aide d'Aspose.PDF pour .NET. |  
+| [Définir JavaScript](./set-java-script/) | Découvrez comment utiliser Aspose.PDF pour .NET pour définir JavaScript dans les champs de formulaire des fichiers PDF. |  
+| [Définir la légende du bouton radio](./set-radio-button-caption/) | Découvrez comment utiliser Aspose.PDF pour .NET pour définir la légende d’un bouton radio dans un formulaire PDF. |  
+| [Zone de texte](./text-box/) | Découvrez comment créer un champ de texte dans un document PDF à l'aide d'Aspose.PDF pour .NET. |  

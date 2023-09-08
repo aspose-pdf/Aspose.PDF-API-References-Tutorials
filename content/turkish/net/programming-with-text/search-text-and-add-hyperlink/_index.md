@@ -1,28 +1,28 @@
 ---
-title: Search Text And Add Hyperlink
-linktitle: Search Text And Add Hyperlink
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to search for text in a PDF, add hyperlinks to the found text, and save the modified document using Aspose.PDF for .NET.
+title: Metin Arayın ve Köprü Ekleyin
+linktitle: Metin Arayın ve Köprü Ekleyin
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET'i kullanarak PDF'de metin aramayı, bulunan metne köprüler eklemeyi ve değiştirilen belgeyi kaydetmeyi öğrenin.
 type: docs
 weight: 450
 url: /tr/net/programming-with-text/search-text-and-add-hyperlink/
 ---
-This tutorial explains how to use Aspose.PDF for .NET to search for specific text in a PDF document, add a hyperlink to the found text, and save the modified document. The provided C# source code demonstrates the process step by step.
+Bu eğitimde, bir PDF belgesinde belirli bir metni aramak, bulunan metne bir köprü eklemek ve değiştirilen belgeyi kaydetmek için Aspose.PDF for .NET'in nasıl kullanılacağı açıklanmaktadır. Sağlanan C# kaynak kodu süreci adım adım gösterir.
 
-## Prerequisites
+## Önkoşullar
 
-Before proceeding with the tutorial, make sure you have the following:
+Eğiticiye devam etmeden önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- Basic knowledge of C# programming language.
-- Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to install it in your project.
+- Temel C# programlama dili bilgisi.
+- Aspose.PDF for .NET kütüphanesi kuruldu. Bunu Aspose web sitesinden edinebilir veya projenize kurmak için NuGet'i kullanabilirsiniz.
 
-## Step 1: Set up the project
+## 1. Adım: Projeyi ayarlayın
 
-Start by creating a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library.
+Tercih ettiğiniz entegre geliştirme ortamında (IDE) yeni bir C# projesi oluşturarak başlayın ve Aspose.PDF for .NET kitaplığına bir referans ekleyin.
 
-## Step 2: Import necessary namespaces
+## 2. Adım: Gerekli ad alanlarını içe aktarın
 
-Add the following using directives at the beginning of your C# file to import the required namespaces:
+Gerekli ad alanlarını içe aktarmak için C# dosyanızın başına aşağıdaki kullanma yönergelerini ekleyin:
 
 ```csharp
 using Aspose.Pdf;
@@ -31,77 +31,77 @@ using Aspose.Pdf.Facades;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Set the path to the document directory
+## 3. Adım: Belge dizininin yolunu ayarlayın
 
-Set the path to your document directory using the `dataDir` variable:
+ kullanarak belge dizininizin yolunu ayarlayın.`dataDir` değişken:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` belge dizininizin gerçek yolu ile.
 
-## Step 4: Create a TextFragmentAbsorber
+## 4. Adım: TextFragmentAbsorber oluşturun
 
-Create a `TextFragmentAbsorber` object to find all instances of the input search phrase:
+ Oluşturmak`TextFragmentAbsorber` giriş arama ifadesinin tüm örneklerini bulmak için nesne:
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("\\d{4}-\\d{4}");
 ```
 
-Replace `"\\d{4}-\\d{4}"` with your desired regular expression pattern.
+ Yer değiştirmek`"\\d{4}-\\d{4}"` İstediğiniz düzenli ifade modeliyle.
 
-## Step 5: Enable regular expression search
+## 5. Adım: Normal ifade aramasını etkinleştirin
 
-Enable regular expression search by setting the `TextSearchOptions` property of the absorber:
+ Ayarlayarak normal ifade aramasını etkinleştirin`TextSearchOptions` emicinin özelliği:
 
 ```csharp
 absorber.TextSearchOptions = new TextSearchOptions(true);
 ```
 
-## Step 6: Open and bind the PDF document
+## 6. Adım: PDF belgesini açın ve bağlayın
 
-Create a `PdfContentEditor` object and bind it to the source PDF file:
+ Oluşturmak`PdfContentEditor` nesnesini oluşturun ve onu kaynak PDF dosyasına bağlayın:
 
 ```csharp
 PdfContentEditor editor = new PdfContentEditor();
 editor.BindPdf(dataDir + "SearchRegularExpressionPage.pdf");
 ```
 
-Replace `"SearchRegularExpressionPage.pdf"` with the actual name of your PDF file.
+ Yer değiştirmek`"SearchRegularExpressionPage.pdf"` PDF dosyanızın gerçek adıyla.
 
-## Step 7: Accept the absorber for the page
+## 7. Adım: Sayfanın emicisini kabul edin
 
-Accept the absorber for the desired page of the document:
+Belgenin istenen sayfası için emiciyi kabul edin:
 
 ```csharp
 editor.Document.Pages[1].Accept(absorber);
 ```
 
-Replace `1` with the desired page number.
+ Yer değiştirmek`1` İstenilen sayfa numarasıyla.
 
-## Step 8: Add hyperlinks to the found text
+## 8. Adım: Bulunan metne köprüler ekleyin
 
-Loop through the retrieved text fragments and add hyperlinks to them:
+Alınan metin parçaları arasında dolaşın ve bunlara köprüler ekleyin:
 
 ```csharp
 foreach (TextFragment textFragment in absorber.TextFragments)
 {
     textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
-    // Create a rectangle based on the text fragment's position
+    // Metin parçasının konumuna göre bir dikdörtgen oluşturun
     System.Drawing.Rectangle rect = new System.Drawing.Rectangle((int)textFragment.Rectangle.LLX,
         (int)Math.Round(textFragment.Rectangle.LLY), (int)Math.Round(textFragment.Rectangle.Width + 2),
         (int)Math.Round(textFragment.Rectangle.Height + 1));
-    // Add a web link to the rectangle
+    //Dikdörtgene bir web bağlantısı ekleyin
     editor.CreateWebLink(rect, "http://www.aspose.com", 1, System.Drawing.Color.Blue);
 }
 ```
 
-Replace `"http://www.aspose.com"` with the desired hyperlink URL.
+ Yer değiştirmek`"http://www.aspose.com"` istenen köprü URL'si ile.
 
-## Step 9: Save and close the modified document
+## 9. Adım: Değiştirilen belgeyi kaydedin ve kapatın
 
-Save the modified document and close the editor:
+Değiştirilen belgeyi kaydedin ve düzenleyiciyi kapatın:
 
 ```csharp
 dataDir = dataDir + "SearchTextAndAddHyperlink_out.pdf";
@@ -110,26 +110,26 @@ editor.Close();
 Console.WriteLine("\nText replaced and hyperlink added successfully based on a regular expression.\nFile saved at " + dataDir);
 ```
 
-Make sure to replace `"SearchTextAndAddHyperlink_out.pdf"` with the desired output file name.
+ Değiştirdiğinizden emin olun`"SearchTextAndAddHyperlink_out.pdf"` İstenilen çıktı dosyası adı ile.
 
-### Sample source code for Search Text And Add Hyperlink using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Metin Arama ve Köprü Ekleme için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create absorber object to find all instances of the input search phrase
+// Giriş arama ifadesinin tüm örneklerini bulmak için emici nesne oluşturun
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("\\d{4}-\\d{4}");
-// Enable regular expression search
+// Normal ifade aramasını etkinleştir
 absorber.TextSearchOptions = new TextSearchOptions(true);
-// Open document
+// Belgeyi aç
 PdfContentEditor editor = new PdfContentEditor();
-// Bind source PDF file
+// Kaynak PDF dosyasını bağlayın
 editor.BindPdf(dataDir + "SearchRegularExpressionPage.pdf");
-// Accept the absorber for the page
+// Sayfanın emicisini kabul edin
 editor.Document.Pages[1].Accept(absorber);
 int[] dashArray = { };
 String[] LEArray = { };
 System.Drawing.Color blue = System.Drawing.Color.Blue;
-// Loop through the fragments
+// Parçalar arasında döngü yapın
 foreach (TextFragment textFragment in absorber.TextFragments)
 {
 	textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
@@ -147,44 +147,44 @@ editor.Close();
 Console.WriteLine("\nText replaced and hyperlink added successfully based on a regular expression.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulations! You have successfully learned how to search for specific text in a PDF document, add hyperlinks to the found text, and save the modified document using Aspose.PDF for .NET. This tutorial provided a step-by-step guide, from setting up the project to performing the required actions. You can now incorporate this code into your own C# projects to manipulate text and add hyperlinks in PDF files.
+Tebrikler! Aspose.PDF for .NET'i kullanarak bir PDF belgesinde belirli bir metni nasıl arayacağınızı, bulunan metne köprüler eklemeyi ve değiştirilen belgeyi nasıl kaydedeceğinizi başarıyla öğrendiniz. Bu eğitimde, projenin kurulumundan gerekli eylemlerin gerçekleştirilmesine kadar adım adım bir kılavuz sağlanmıştır. Artık metni değiştirmek ve PDF dosyalarına köprüler eklemek için bu kodu kendi C# projelerinize dahil edebilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the purpose of the "Search Text And Add Hyperlink" tutorial?
+#### S: "Metin Arama ve Köprü Ekleme" eğitiminin amacı nedir?
 
-A: The "Search Text And Add Hyperlink" tutorial aims to demonstrate how to use the Aspose.PDF library for .NET to search for specific text within a PDF document, add hyperlinks to the found text, and then save the modified document. The tutorial provides a comprehensive guide and C# code samples to illustrate the step-by-step process.
+C: "Metin Arama ve Köprü Ekleme" eğitimi, bir PDF belgesinde belirli bir metni aramak, bulunan metne köprüler eklemek ve ardından değiştirilen belgeyi kaydetmek için Aspose.PDF kütüphanesinin .NET için nasıl kullanılacağını göstermeyi amaçlamaktadır. Öğretici, süreci adım adım göstermek için kapsamlı bir kılavuz ve C# kod örnekleri sağlar.
 
-#### Q: How does this tutorial help in adding hyperlinks to specific text in a PDF document?
+#### S: Bu eğitim, bir PDF belgesindeki belirli metne köprüler eklemeye nasıl yardımcı olur?
 
-A: This tutorial guides you through the process of using the Aspose.PDF library to locate specific text in a PDF document, apply a hyperlink to the identified text, and save the modified PDF. It covers essential steps such as setting up the project, loading the document, enabling regular expression search, and adding hyperlinks to the found text.
+C: Bu eğitim, bir PDF belgesinde belirli bir metni bulmak, tanımlanan metne bir köprü uygulamak ve değiştirilen PDF'yi kaydetmek için Aspose.PDF kütüphanesini kullanma sürecinde size rehberlik eder. Projenin kurulması, belgenin yüklenmesi, normal ifade aramasının etkinleştirilmesi ve bulunan metne köprülerin eklenmesi gibi temel adımları kapsar.
 
-#### Q: What prerequisites are needed to follow this tutorial?
+#### S: Bu öğreticiyi takip etmek için hangi önkoşullar gereklidir?
 
-A: Before you start, you should have a basic understanding of the C# programming language. Additionally, you need to have the Aspose.PDF for .NET library installed, which can be obtained from the Aspose website or installed using NuGet in your project.
+C: Başlamadan önce C# programlama dili hakkında temel bilgiye sahip olmalısınız. Ayrıca, Aspose web sitesinden edinebileceğiniz veya projenizde NuGet kullanarak kurabileceğiniz Aspose.PDF for .NET kütüphanesinin de kurulu olması gerekir.
 
-#### Q: How do I set up my project to follow this tutorial?
+#### S: Projemi bu öğreticiyi takip edecek şekilde nasıl ayarlayabilirim?
 
-A: Begin by creating a new C# project in your preferred integrated development environment (IDE). Then, add a reference to the Aspose.PDF for .NET library, which will enable you to utilize the library's capabilities in your project.
+C: Tercih ettiğiniz tümleşik geliştirme ortamında (IDE) yeni bir C# projesi oluşturarak başlayın. Ardından Aspose.PDF for .NET kütüphanesine, kütüphanenin yeteneklerini projenizde kullanmanızı sağlayacak bir referans ekleyin.
 
-#### Q: Can I add hyperlinks to specific text using this tutorial?
+#### S: Bu öğreticiyi kullanarak belirli bir metne köprüler ekleyebilir miyim?
 
-A: Yes, this tutorial specifically focuses on adding hyperlinks to specific text in a PDF document. It demonstrates how to find and extract the desired text using regular expressions, create hyperlinks associated with the text fragments, and save the modified PDF.
+C: Evet, bu eğitim özellikle bir PDF belgesindeki belirli metne köprüler eklemeye odaklanmaktadır. Düzenli ifadeler kullanarak istenen metnin nasıl bulunacağını ve çıkarılacağını, metin parçalarıyla ilişkili köprülerin nasıl oluşturulacağını ve değiştirilen PDF'nin nasıl kaydedileceğini gösterir.
 
-#### Q: How do I define the text I want to search for and add a hyperlink to?
+#### S: Aramak ve köprü eklemek istediğim metni nasıl tanımlarım?
 
-A: To specify the text you want to search for and add a hyperlink to, create a `TextFragmentAbsorber` object and set its pattern using the `Text` parameter. Replace the default pattern `"\\d{4}-\\d{4}"` in the tutorial's code with your desired regular expression pattern.
+ C: Aramak ve köprü eklemek istediğiniz metni belirtmek için bir`TextFragmentAbsorber` kullanarak nesneyi seçin ve desenini ayarlayın.`Text` parametre. Varsayılan deseni değiştir`"\\d{4}-\\d{4}"` öğreticinin kodunda istediğiniz normal ifade düzeniyle.
 
-#### Q: How can I enable regular expression search for text?
+#### S: Metin için normal ifade aramasını nasıl etkinleştirebilirim?
 
-A: Regular expression search is enabled by creating a `TextSearchOptions` object and setting its value to `true`. Assign this object to the `TextSearchOptions` property of the `TextFragmentAbsorber` instance. This ensures that the regular expression pattern is applied during text search.
+ C: Normal ifade araması, bir`TextSearchOptions` nesne ve değerini ayarlama`true` . Bu nesneyi şuraya atayın:`TextSearchOptions` mülkiyeti`TextFragmentAbsorber` misal. Bu, metin araması sırasında normal ifade modelinin uygulanmasını sağlar.
 
-#### Q: How do I add hyperlinks to the found text?
+#### S: Bulunan metne nasıl köprü eklerim?
 
-A: After identifying the text fragments using the `TextFragmentAbsorber`, the tutorial provides a loop to iterate through these fragments. For each text fragment, the tutorial demonstrates how to set the text color to blue and create a hyperlink using the `CreateWebLink` method.
+ C: Metin parçalarını tanımladıktan sonra`TextFragmentAbsorber` , öğretici bu parçalar arasında yineleme yapmak için bir döngü sağlar. Eğitimde her metin parçası için metin renginin nasıl maviye ayarlanacağı ve aşağıdaki komutu kullanarak bir köprü oluşturulacağı gösterilmektedir:`CreateWebLink` yöntem.
 
-#### Q: What are the steps to save the modified PDF with hyperlinks?
+#### S: Değiştirilen PDF'yi köprülerle kaydetme adımları nelerdir?
 
-A: After adding hyperlinks to the desired text fragments, use the `PdfContentEditor` class to save the modified document. The tutorial's sample code showcases how to save the edited PDF, close the editor, and display a success message.
+ C: İstediğiniz metin parçalarına köprüler ekledikten sonra,`PdfContentEditor` Değiştirilen belgeyi kaydetmek için sınıf. Eğitimin örnek kodu, düzenlenen PDF'nin nasıl kaydedileceğini, düzenleyicinin nasıl kapatılacağını ve bir başarı mesajının nasıl görüntüleneceğini gösterir.

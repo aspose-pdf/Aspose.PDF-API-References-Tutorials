@@ -1,40 +1,40 @@
 ---
-title: Remove Unused Fonts In PDF File
-linktitle: Remove Unused Fonts In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to remove unused fonts in PDF file using Aspose.PDF for .NET.
+title: Rimuovi i caratteri inutilizzati nel file PDF
+linktitle: Rimuovi i caratteri inutilizzati nel file PDF
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Scopri come rimuovere i caratteri inutilizzati nel file PDF utilizzando Aspose.PDF per .NET.
 type: docs
 weight: 300
 url: /it/net/programming-with-text/remove-unused-fonts/
 ---
-In this tutorial, we will explain how to remove unused fonts in PDF file using the Aspose.PDF library for .NET. We will go through the step-by-step process of loading a PDF, identifying and removing unused fonts, and saving the updated PDF using the provided C# source code.
+In questo tutorial, spiegheremo come rimuovere i caratteri inutilizzati nel file PDF utilizzando la libreria Aspose.PDF per .NET. Seguiremo il processo passo passo di caricamento di un PDF, identificazione e rimozione dei caratteri inutilizzati e salvataggio del PDF aggiornato utilizzando il codice sorgente C# fornito.
 
-## Requirements
+## Requisiti
 
-Before you begin, ensure that you have the following:
+Prima di iniziare, assicurati di avere quanto segue:
 
-- The Aspose.PDF for .NET library installed.
-- A basic understanding of C# programming.
+- La libreria Aspose.PDF per .NET installata.
+- Una conoscenza di base della programmazione C#.
 
-## Step 1: Set up the Document Directory
+## Passaggio 1: impostare la directory dei documenti
 
-First, you need to set the path to the directory where your PDF files are located. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your PDF files.
+ Innanzitutto, devi impostare il percorso della directory in cui si trovano i file PDF. Sostituire`"YOUR DOCUMENT DIRECTORY"` nel`dataDir` variabile con il percorso dei file PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load the Source PDF
+## Passaggio 2: carica il PDF di origine
 
-Next, we load the source PDF document using the `Document` class from the Aspose.PDF library.
+ Successivamente, carichiamo il documento PDF di origine utilizzando il file`Document` classe dalla libreria Aspose.PDF.
 
 ```csharp
 Document doc = new Document(dataDir + "ReplaceTextPage.pdf");
 ```
 
-## Step 3: Identify and Remove Unused Fonts
+## Passaggio 3: identificare e rimuovere i caratteri inutilizzati
 
-We create a `TextFragmentAbsorber` object with the `TextEditOptions` parameter set to `TextEditOptions.FontReplace.RemoveUnusedFonts`. This option allows us to identify and remove unused fonts in the PDF document. We then iterate through all the `TextFragments` and set the font to a desired font.
+ Creiamo un`TextFragmentAbsorber` oggetto con il`TextEditOptions` parametro impostato su`TextEditOptions.FontReplace.RemoveUnusedFonts` . Questa opzione ci consente di identificare e rimuovere i caratteri inutilizzati nel documento PDF. Quindi iteriamo attraverso tutto il file`TextFragments` e impostare il carattere su quello desiderato.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));
@@ -46,9 +46,9 @@ foreach(TextFragment textFragment in absorber.TextFragments)
 }
 ```
 
-## Step 4: Save the Updated PDF
+## Passaggio 4: salva il PDF aggiornato
 
-Finally, we save the updated PDF document to the specified output file.
+Infine, salviamo il documento PDF aggiornato nel file di output specificato.
 
 ```csharp
 dataDir = dataDir + "RemoveUnusedFonts_out.pdf";
@@ -56,23 +56,23 @@ doc.Save(dataDir);
 Console.WriteLine("\nUnused fonts removed successfully from the PDF document.\nFile saved at " + dataDir);
 ```
 
-### Sample source code for Remove Unused Fonts using Aspose.PDF for .NET 
+### Codice sorgente di esempio per rimuovere i caratteri inutilizzati utilizzando Aspose.PDF per .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Il percorso della directory dei documenti.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Load source PDF file
+	// Carica il file PDF di origine
 	Document doc = new Document(dataDir + "ReplaceTextPage.pdf");
 	TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));
 	doc.Pages.Accept(absorber);
-	// Iterate through all the TextFragments
+	// Scorri tutti i TextFragments
 	foreach (TextFragment textFragment in absorber.TextFragments)
 	{
 		textFragment.TextState.Font = FontRepository.FindFont("Arial, Bold");
 	}
 	dataDir = dataDir + "RemoveUnusedFonts_out.pdf";
-	// Save updated document
+	// Salva documento aggiornato
 	doc.Save(dataDir);
 	Console.WriteLine("\nUnused fonts removed successfully from pdf document.\nFile saved at " + dataDir);
 }
@@ -82,52 +82,52 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Conclusione
 
-In this tutorial, you have learned how to remove unused fonts from a PDF document using the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can load a PDF, identify and remove unused fonts, and save the updated PDF.
+In questo tutorial, hai imparato come rimuovere i caratteri inutilizzati da un documento PDF utilizzando la libreria Aspose.PDF per .NET. Seguendo la guida passo passo ed eseguendo il codice C# fornito, puoi caricare un PDF, identificare e rimuovere i caratteri inutilizzati e salvare il PDF aggiornato.
 
-### FAQ's
+### Domande frequenti
 
-#### Q: What is the purpose of the "Remove Unused Fonts In PDF File" tutorial?
+#### D: Qual è lo scopo del tutorial "Rimuovi caratteri inutilizzati nel file PDF"?
 
-A: The "Remove Unused Fonts In PDF File" tutorial explains how to use the Aspose.PDF library for .NET to remove unused fonts from a PDF document. The tutorial guides you through the process of loading a PDF, identifying and removing unused fonts, and saving the updated PDF.
+R: Il tutorial "Rimuovi caratteri inutilizzati nel file PDF" spiega come utilizzare la libreria Aspose.PDF per .NET per rimuovere i caratteri inutilizzati da un documento PDF. Il tutorial ti guida attraverso il processo di caricamento di un PDF, identificando e rimuovendo i caratteri inutilizzati e salvando il PDF aggiornato.
 
-#### Q: Why would I want to remove unused fonts from a PDF document?
+#### D: Perché dovrei rimuovere i caratteri inutilizzati da un documento PDF?
 
-A: Removing unused fonts from a PDF document can help reduce the file size and optimize the document for better performance. This is particularly useful when dealing with PDFs that contain embedded fonts that are not actually used in the document's content.
+R: La rimozione dei caratteri inutilizzati da un documento PDF può aiutare a ridurre le dimensioni del file e ottimizzare il documento per prestazioni migliori. Ciò è particolarmente utile quando si ha a che fare con PDF che contengono caratteri incorporati che non vengono effettivamente utilizzati nel contenuto del documento.
 
-#### Q: How do I set up the document directory?
+#### D: Come posso impostare la directory dei documenti?
 
-A: To set up the document directory:
+R: Per impostare la directory dei documenti:
 
-1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where your PDF files are located.
+1.  Sostituire`"YOUR DOCUMENT DIRECTORY"` nel`dataDir` variabile con il percorso della directory in cui si trovano i file PDF.
 
-#### Q: How do I remove unused fonts from a PDF document using the Aspose.PDF library?
+#### D: Come posso rimuovere i caratteri inutilizzati da un documento PDF utilizzando la libreria Aspose.PDF?
 
-A: The tutorial guides you through the process step by step:
+R: Il tutorial ti guida attraverso il processo passo dopo passo:
 
-1. Open the PDF document using the `Document` class.
-2. Create a `TextFragmentAbsorber` object with `TextEditOptions` set to `FontReplace.RemoveUnusedFonts`.
-3. Accept the absorber to identify and remove unused fonts from the PDF.
-4. Iterate through all `TextFragments` and set the font to a desired font.
-5. Save the updated PDF document.
+1.  Aprire il documento PDF utilizzando il file`Document` classe.
+2.  Creare un`TextFragmentAbsorber` oggetto con`TextEditOptions` impostato`FontReplace.RemoveUnusedFonts`.
+3. Accettare l'assorbitore per identificare e rimuovere i caratteri inutilizzati dal PDF.
+4.  Ripeti tutto`TextFragments` e impostare il carattere su quello desiderato.
+5. Salva il documento PDF aggiornato.
 
-#### Q: What is the purpose of the `TextEditOptions.FontReplace.RemoveUnusedFonts` parameter?
+####  D: Qual è lo scopo di`TextEditOptions.FontReplace.RemoveUnusedFonts` parameter?
 
-A: The `TextEditOptions.FontReplace.RemoveUnusedFonts` parameter instructs the `TextFragmentAbsorber` to identify and remove unused fonts from the PDF document.
+ R: Il`TextEditOptions.FontReplace.RemoveUnusedFonts` il parametro istruisce il`TextFragmentAbsorber` per identificare e rimuovere i caratteri inutilizzati dal documento PDF.
 
-#### Q: Can I replace unused fonts with a font of my choice?
+#### D: Posso sostituire i caratteri inutilizzati con un carattere di mia scelta?
 
-A: Yes, you can modify the code to replace unused fonts with a font of your choice. In the provided sample code, the font "Arial, Bold" is used as a replacement.
+R: Sì, puoi modificare il codice per sostituire i caratteri non utilizzati con un carattere a tua scelta. Nel codice di esempio fornito, il carattere "Arial, Bold" viene utilizzato in sostituzione.
 
-#### Q: How does the `TextFragmentAbsorber` work to remove unused fonts?
+####  D: Come funziona il`TextFragmentAbsorber` work to remove unused fonts?
 
-A: The `TextFragmentAbsorber` is configured with the `TextEditOptions.FontReplace.RemoveUnusedFonts` parameter, which identifies unused fonts within the text fragments of the PDF. After absorption, you can iterate through the `TextFragments` and set their fonts to desired replacement fonts.
+ R: Il`TextFragmentAbsorber` è configurato con il`TextEditOptions.FontReplace.RemoveUnusedFonts` parametro, che identifica i caratteri inutilizzati all'interno dei frammenti di testo del PDF. Dopo l'assorbimento, è possibile scorrere il file`TextFragments` e impostare i caratteri sui caratteri sostitutivi desiderati.
 
-#### Q: What is the expected outcome of executing the provided code?
+#### D: Qual è il risultato previsto dell'esecuzione del codice fornito?
 
-A: By following the tutorial and running the provided C# code, you will remove unused fonts from the input PDF document and save the updated version as the output PDF file.
+R: Seguendo il tutorial ed eseguendo il codice C# fornito, rimuoverai i caratteri inutilizzati dal documento PDF di input e salverai la versione aggiornata come file PDF di output.
 
-#### Q: Can I modify the code to remove fonts only from specific pages or areas?
+#### D: Posso modificare il codice per rimuovere i caratteri solo da pagine o aree specifiche?
 
-A: The provided code focuses on removing unused fonts from the entire PDF document. If you want to target specific pages or regions for font removal, you would need to modify the approach and use more complex logic to identify unused fonts in those areas.
+R: Il codice fornito si concentra sulla rimozione dei caratteri inutilizzati dall'intero documento PDF. Se desideri scegliere come target pagine o aree specifiche per la rimozione dei caratteri, dovrai modificare l'approccio e utilizzare una logica più complessa per identificare i caratteri inutilizzati in quelle aree.

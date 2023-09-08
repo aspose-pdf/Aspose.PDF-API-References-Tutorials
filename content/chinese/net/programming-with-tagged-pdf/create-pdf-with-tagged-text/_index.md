@@ -1,28 +1,28 @@
 ---
-title: Create PDF with Tagged Text
-linktitle: Create PDF with Tagged Text
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to create a PDF with tagged text using Aspose.PDF for .NET.
+title: 创建带有标记文本的 PDF
+linktitle: 创建带有标记文本的 PDF
+second_title: Aspose.PDF for .NET API 参考
+description: 使用 Aspose.PDF for .NET 创建带有标记文本的 PDF 的分步指南。
 type: docs
 weight: 50
 url: /zh/net/programming-with-tagged-pdf/create-pdf-with-tagged-text/
 ---
-In this tutorial, we will provide you with a step-by-step guide on how to create a PDF document with tagged text using Aspose.PDF for .NET. Aspose.PDF is a powerful library that allows you to create, manipulate and convert PDF documents programmatically. Using the tagged content structure features of Aspose.PDF, you can add tagged text to your PDF document.
+在本教程中，我们将为您提供有关如何使用 Aspose.PDF for .NET 创建带有标记文本的 PDF 文档的分步指南。 Aspose.PDF 是一个功能强大的库，允许您以编程方式创建、操作和转换 PDF 文档。使用Aspose.PDF的标记内容结构功能，您可以将标记文本添加到PDF文档中。
 
-## Prerequisites
+## 先决条件
 
-Before you begin, make sure you have the following prerequisites in place:
+在开始之前，请确保您具备以下先决条件：
 
-1. Visual Studio installed with .NET framework.
-2. The Aspose.PDF library for .NET.
+1. 随 .NET Framework 安装的 Visual Studio。
+2. 适用于 .NET 的 Aspose.PDF 库。
 
-## Step 1: Project Setup
+## 第 1 步：项目设置
 
-To get started, create a new project in Visual Studio and add a reference to the Aspose.PDF for .NET library. You can download the library from Aspose official website and install it on your machine.
+首先，在 Visual Studio 中创建一个新项目并添加对 Aspose.PDF for .NET 库的引用。您可以从Aspose官方网站下载该库并将其安装到您的计算机上。
 
-## Step 2: Import the necessary namespaces
+## 第 2 步：导入必要的命名空间
 
-In your C# code file, import the namespaces required to access the classes and methods provided by Aspose.PDF:
+在您的 C# 代码文件中，导入访问 Aspose.PDF 提供的类和方法所需的命名空间：
 
 ```csharp
 using System;
@@ -30,9 +30,9 @@ using Aspose.Pdf;
 using Aspose.Pdf.Tagged;
 ```
 
-## Step 3: Creating the PDF document with tagged text
+## 步骤 3：创建带有标记文本的 PDF 文档
 
-Use the following code to create a PDF document with tagged text:
+使用以下代码创建带有标记文本的 PDF 文档：
 
 ```csharp
 string dataDir = "YOUR_DIRECTORY_OF_DOCUMENTS";
@@ -47,27 +47,27 @@ headerElement.ActualText = "Header 1";
 ParagraphElement paragraphElement1 = taggedContent.CreateParagraphElement();
 paragraphElement1.ActualText = "test1";
 
-// Add more paragraphs here
+//在此添加更多段落
 
-// Save the PDF document
+//保存 PDF 文档
 document.Save(dataDir + "PDFwithTagText.pdf");
 ```
 
-This code creates an empty PDF document and adds tagged text using the methods provided by Aspose.PDF. You can add other tagged text elements such as headings and paragraphs using the appropriate methods.
+此代码创建一个空 PDF 文档，并使用 Aspose.PDF 提供的方法添加标记文本。您可以使用适当的方法添加其他标记的文本元素，例如标题和段落。
 
-### Sample source code for Create PDFwith Tagged Text using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 创建带有标记文本的 PDF 的示例源代码 
 ```csharp
 
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create Pdf Document
+//创建 PDF 文档
 Document document = new Document();
-// Get Content for work with TaggedPdf
+//获取与 TaggedPdf 一起使用的内容
 ITaggedContent taggedContent = document.TaggedContent;
-// Set Title and Language for Documnet
+//设置文档网的标题和语言
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
-// Create Text Block-Level Structure Elements
+//创建文本块级结构元素
 HeaderElement headerElement = taggedContent.CreateHeaderElement();
 headerElement.ActualText = "Heading 1";
 ParagraphElement paragraphElement1 = taggedContent.CreateParagraphElement();
@@ -84,53 +84,53 @@ ParagraphElement paragraphElement6 = taggedContent.CreateParagraphElement();
 paragraphElement6.ActualText = "test 6";
 ParagraphElement paragraphElement7 = taggedContent.CreateParagraphElement();
 paragraphElement7.ActualText = "test 7";
-// Save PDF Document
+//保存 PDF 文档
 document.Save( dataDir + "PDFwithTaggedText.pdf");
 
 ```
 
-## Conclusion
+## 结论
 
-In this tutorial, you learned how to create a PDF document with tagged text using Aspose.PDF for .NET. Aspose.PDF's marked content structure features allow you to structure and organize your text for better accessibility and semantics.
+在本教程中，您学习了如何使用 Aspose.PDF for .NET 创建带有标记文本的 PDF 文档。 Aspose.PDF 的标记内容结构功能允许您构建和组织文本，以获得更好的可访问性和语义。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What is the purpose of creating a PDF document with tagged text using Aspose.PDF for .NET?
+#### 问：使用 Aspose.PDF for .NET 创建带有标记文本的 PDF 文档的目的是什么？
 
-A: Creating a PDF document with tagged text using Aspose.PDF for .NET allows you to structure and organize your text content within the PDF document. Tagged text adds semantic meaning and improves accessibility for users, especially those using assistive technologies.
+答：使用 Aspose.PDF for .NET 创建带有标记文本的 PDF 文档，您可以在 PDF 文档中构建和组织文本内容。带标签的文本增加了语义意义并提高了用户的可访问性，尤其是那些使用辅助技术的用户。
 
-#### Q: How does Aspose.PDF assist in creating a PDF document with tagged text?
+#### 问：Aspose.PDF 如何协助创建带有标记文本的 PDF 文档？
 
-A: Aspose.PDF for .NET is a powerful library that provides functionalities for creating, manipulating, and converting PDF documents programmatically. In this tutorial, the library's tagged content structure features are used to add structured and semantically meaningful text to the PDF document.
+答：Aspose.PDF for .NET 是一个功能强大的库，提供以编程方式创建、操作和转换 PDF 文档的功能。在本教程中，库的标记内容结构功能用于向 PDF 文档添加结构化且具有语义意义的文本。
 
-#### Q: What are the prerequisites for creating a PDF document with tagged text using Aspose.PDF for .NET?
+#### 问：使用 Aspose.PDF for .NET 创建带有标记文本的 PDF 文档有哪些先决条件？
 
-A: Before you begin, ensure you have Visual Studio installed with the .NET framework and have the Aspose.PDF library for .NET referenced in your project.
+答：开始之前，请确保您已安装了带有 .NET 框架的 Visual Studio，并在项目中引用了适用于 .NET 的 Aspose.PDF 库。
 
-#### Q: How does the provided C# code create a PDF document with tagged text?
+#### 问：提供的 C# 代码如何创建带有标记文本的 PDF 文档？
 
-A: The code example demonstrates how to create a PDF document, define various tagged text elements (such as headers and paragraphs), and add them to the document's content. This is achieved using the tagged content structure features provided by Aspose.PDF.
+答：代码示例演示了如何创建 PDF 文档、定义各种标记文本元素（例如标题和段落）并将它们添加到文档的内容中。这是使用 Aspose.PDF 提供的标记内容结构功能来实现的。
 
-#### Q: How can I customize the tagged text elements, such as headers and paragraphs?
+#### 问：如何自定义标记的文本元素，例如标题和段落？
 
-A: You can customize the tagged text elements by using appropriate methods, such as `CreateHeaderElement` and `CreateParagraphElement`, and setting properties like `ActualText` to provide meaningful text and semantics.
+ A：您可以通过适当的方法自定义标记的文本元素，例如`CreateHeaderElement`和`CreateParagraphElement`，并设置属性，例如`ActualText`提供有意义的文本和语义。
 
-#### Q: Can I add other tagged text elements, such as lists or links, using similar techniques?
+#### 问：我可以使用类似的技术添加其他标记文本元素，例如列表或链接吗？
 
-A: Yes, you can add other tagged text elements like lists, links, or other custom structures using similar techniques. Aspose.PDF provides various methods to create different types of tagged content, allowing you to enhance document semantics.
+答：是的，您可以使用类似的技术添加其他标记文本元素，例如列表、链接或其他自定义结构。 Aspose.PDF提供了各种方法来创建不同类型的标记内容，使您能够增强文档语义。
 
-#### Q: How does the `SetTitle` method contribute to the PDF document's tagged text?
+#### 问：如何`SetTitle` method contribute to the PDF document's tagged text?
 
-A: The `SetTitle` method sets the title of the PDF document's tagged content, providing a brief description of the document's purpose or subject. This information helps users understand the context of the tagged text.
+答： 的`SetTitle`方法设置 PDF 文档标记内容的标题，提供文档目的或主题的简要描述。此信息可帮助用户理解标记文本的上下文。
 
-#### Q: How does using tagged text improve accessibility in PDF documents?
+#### 问：使用标记文本如何提高 PDF 文档的可访问性？
 
-A: Tagged text adds semantic meaning to the document, making it more accessible to users with disabilities or those using assistive technologies. Screen readers and other assistive devices can interpret and present tagged text for improved user experience.
+答：标记文本为文档添加了语义含义，使残障用户或使用辅助技术的用户更容易访问该文档。屏幕阅读器和其他辅助设备可以解释和呈现标记文本，以改善用户体验。
 
-#### Q: How does the `SetLanguage` method enhance the tagged text in a PDF document?
+#### 问：如何`SetLanguage` method enhance the tagged text in a PDF document?
 
-A: The `SetLanguage` method sets the language attribute of the PDF document's tagged content. This helps indicate the language in which the tagged text is written, improving accessibility and enabling proper language-specific rendering.
+答： 的`SetLanguage`方法设置 PDF 文档标记内容的语言属性。这有助于指示编写标记文本所用的语言，从而提高可访问性并实现正确的特定于语言的呈现。
 
-#### Q: Is it possible to add other elements, such as images or multimedia, alongside tagged text using similar techniques?
+#### 问：是否可以使用类似技术在标记文本旁边添加其他元素，例如图像或多媒体？
 
-A: Yes, you can add other elements like images, multimedia, or annotations alongside tagged text using similar techniques. Aspose.PDF offers a wide range of features to combine different types of content within the document.
+答：是的，您可以使用类似的技术在标记文本旁边添加其他元素，例如图像、多媒体或注释。 Aspose.PDF 提供了广泛的功能来组合文档中不同类型的内容。

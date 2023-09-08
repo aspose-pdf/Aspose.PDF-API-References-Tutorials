@@ -1,17 +1,17 @@
 ---
-title: Sign With Smart Card Using PDF File Signature
-linktitle: Sign With Smart Card Using PDF File Signature
-second_title: Aspose.PDF for .NET API Reference
-description: Sign your PDF files securely with a smart card using Aspose.PDF for .NET.
+title: 使用 PDF 文件签名通过智能卡进行签名
+linktitle: 使用 PDF 文件签名通过智能卡进行签名
+second_title: Aspose.PDF for .NET API 参考
+description: 使用 Aspose.PDF for .NET 通过智能卡安全地签署您的 PDF 文件。
 type: docs
 weight: 110
 url: /zh/net/programming-with-security-and-signatures/sign-with-smart-card-using-pdf-file-signature/
 ---
-Digital signing with a smart card is a secure way to sign PDF files. With Aspose.PDF for .NET, you can easily sign a PDF file using a smart card by following the following source code:
+使用智能卡进行数字签名是签署 PDF 文件的安全方式。借助 Aspose.PDF for .NET，您可以按照以下源代码轻松使用智能卡对 PDF 文件进行签名：
 
-## Step 1: Import required libraries
+## 第1步：导入所需的库
 
-Before you begin, you need to import the necessary libraries for your C# project. Here are the necessary import directives:
+在开始之前，您需要为 C# 项目导入必要的库。以下是必要的导入指令：
 
 ```csharp
 using Aspose.Pdf;
@@ -20,32 +20,32 @@ using Aspose.Pdf.Forms;
 using System.Security.Cryptography.X509Certificates;
 ```
 
-## Step 2: Set path to documents folder
+## 步骤 2：设置文档文件夹路径
 
-In this step, you need to specify the path to the folder containing the PDF file you want to sign. Replace `"YOUR DOCUMENTS DIRECTORY"` in the following code with the actual path to your documents folder:
+在此步骤中，您需要指定包含要签名的 PDF 文件的文件夹的路径。代替`"YOUR DOCUMENTS DIRECTORY"`在以下代码中使用文档文件夹的实际路径：
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 3: Load the PDF document
+## 第 3 步：加载 PDF 文档
 
-Now we will load the PDF document to be signed using the following code:
+现在我们将使用以下代码加载要签名的 PDF 文档：
 
 ```csharp
 Document doc = new Document(dataDir + "blank.pdf");
 ```
 
-## Step 4: Perform the signature with the smart card
+## 步骤4：使用智能卡进行签名
 
-In this step, we will perform the signature with the smart card using the `PdfFileSignature` class from the `Facades` library. We select the smart card certificate from the Windows certificate store and specify the necessary signing information. Here is the corresponding code:
+在此步骤中，我们将使用智能卡执行签名`PdfFileSignature`类来自`Facades`图书馆。我们从 Windows 证书存储中选择智能卡证书并指定必要的签名信息。这是相应的代码：
 
 ```csharp
 using (PdfFileSignature pdfSign = new PdfFileSignature())
 {
      pdfSign.BindPdf(doc);
 
-     // Select the certificate in the store
+     //选择商店中的证书
      X509Store store = new X509Store(StoreLocation.CurrentUser);
      store.Open(OpenFlags.ReadOnly);
      X509Certificate2Collection sel = X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, X509SelectionFlag.SingleSelection);
@@ -57,9 +57,9 @@ using (PdfFileSignature pdfSign = new PdfFileSignature())
 }
 ```
 
-## Step 5: Verify Signature
+## 第 5 步：验证签名
 
-Finally, we verify the signature of the signed PDF file using the `PdfFileSignature` class. We get the signature names and check them one by one. If a signature fails verification, an exception is thrown. Here is the corresponding code:
+最后，我们使用以下命令验证已签名 PDF 文件的签名：`PdfFileSignature`班级。我们拿到签名名字，一一核对。如果签名验证失败，则会抛出异常。这是相应的代码：
 
 ```csharp
 using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "externalSignature2.pdf")))
@@ -75,18 +75,18 @@ using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "e
 }
 ```
 
-### Sample source code for Sign With Smart Card Using Pdf File Signature using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 使用 Pdf 文件签名通过智能卡进行签名的示例源代码 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document doc = new Document(dataDir + "blank.pdf");
 using (Facades.PdfFileSignature pdfSign = new Facades.PdfFileSignature())
 {
 	pdfSign.BindPdf(doc);
-	// Sign with certificate selection in the windows certificate store
+	//使用 Windows 证书存储中的证书选择进行签名
 	System.Security.Cryptography.X509Certificates.X509Store store = new System.Security.Cryptography.X509Certificates.X509Store(System.Security.Cryptography.X509Certificates.StoreLocation.CurrentUser);
 	store.Open(System.Security.Cryptography.X509Certificates.OpenFlags.ReadOnly);
-	// Manually chose the certificate in the store
+	//手动选择商店中的证书
 	System.Security.Cryptography.X509Certificates.X509Certificate2Collection sel = System.Security.Cryptography.X509Certificates.X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, System.Security.Cryptography.X509Certificates.X509SelectionFlag.SingleSelection);
 	Aspose.Pdf.Forms.ExternalSignature externalSignature = new Aspose.Pdf.Forms.ExternalSignature(sel[0]);
 	pdfSign.SignatureAppearance = dataDir + "demo.png";
@@ -106,50 +106,50 @@ using (Facades.PdfFileSignature pdfSign = new Facades.PdfFileSignature(new Docum
 }
 ```
 
-## Conclusion
+## 结论
 
-Congratulation! You now have a step-by-step guide to signing a PDF file with a smart card using Aspose.PDF for .NET. You can use this code to add secure digital signatures to your PDF documents.
+恭喜！现在，您已获得使用 Aspose.PDF for .NET 通过智能卡对 PDF 文件进行签名的分步指南。您可以使用此代码向 PDF 文档添加安全数字签名。
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced digital signature and certificate management features.
+请务必查看官方 Aspose.PDF 文档，以获取有关高级数字签名和证书管理功能的更多信息。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: Why should I consider signing PDF files with a smart card?
+#### 问：为什么我应该考虑使用智能卡签署 PDF 文件？
 
-A: Signing PDF files with a smart card enhances security by ensuring the authenticity and integrity of the document. Smart card-based signatures provide a higher level of trust and compliance.
+答：使用智能卡签署 PDF 文件可以确保文档的真实性和完整性，从而增强安全性。基于智能卡的签名提供了更高级别的信任和合规性。
 
-#### Q: How does smart card-based digital signing work?
+#### 问：基于智能卡的数字签名如何工作？
 
-A: Smart card-based digital signing involves using a cryptographic key stored on a smart card to create a unique digital signature. This signature is attached to the PDF file, allowing recipients to verify the document's origin and integrity.
+答：基于智能卡的数字签名涉及使用存储在智能卡上的加密密钥来创建唯一的数字签名。此签名附加到 PDF 文件中，允许收件人验证文档的来源和完整性。
 
-#### Q: What is the role of Aspose.PDF for .NET in smart card-based signing?
+#### 问：Aspose.PDF for .NET 在基于智能卡的签名中的作用是什么？
 
-A: Aspose.PDF for .NET provides a comprehensive set of tools and libraries to facilitate smart card-based digital signing of PDF files. It simplifies the process and ensures secure document signing.
+答：Aspose.PDF for .NET 提供了一套全面的工具和库，以促进 PDF 文件基于智能卡的数字签名。它简化了流程并确保安全的文档签名。
 
-#### Q: Can I choose a specific smart card certificate for signing?
+#### 问：我可以选择特定的智能卡证书进行签名吗？
 
-A: Yes, you can select a specific smart card certificate from the Windows certificate store for signing. Aspose.PDF for .NET allows you to seamlessly integrate certificate selection into your application.
+答：是的，您可以从 Windows 证书存储区中选择特定的智能卡证书进行签名。 Aspose.PDF for .NET 允许您将证书选择无缝集成到您的应用程序中。
 
-#### Q: How does the provided source code handle smart card-based signing?
+#### 问：所提供的源代码如何处理基于智能卡的签名？
 
-A: The source code demonstrates how to bind a PDF document, select a smart card certificate, specify signing information, and create a digital signature. It also shows how to verify the signature's validity.
+答：源代码演示了如何绑定PDF文档、选择智能卡证书、指定签名信息以及创建数字签名。它还展示了如何验证签名的有效性。
 
-#### Q: Can I apply multiple signatures using smart cards in a single PDF file?
+#### 问：我可以使用智能卡在单个 PDF 文件中应用多个签名吗？
 
-A: Absolutely, you can apply multiple smart card-based signatures to a single PDF file. Each signature is unique and contributes to the document's overall security.
+答：当然，您可以将多个基于智能卡的签名应用于单个 PDF 文件。每个签名都是唯一的，有助于提高文档的整体安全性。
 
-#### Q: What if a signature fails verification during the verification step?
+#### 问：如果签名在验证过程中验证失败怎么办？
 
-A: If a signature fails verification, an exception is thrown, indicating that the signature is not valid. This ensures that only valid and trusted signatures are accepted.
+答：如果签名验证失败，会抛出异常，表明签名无效。这确保了仅接受有效且可信的签名。
 
-#### Q: Is smart card-based signing compatible with all types of PDF documents?
+#### 问：基于智能卡的签名是否与所有类型的 PDF 文档兼容？
 
-A: Yes, smart card-based signing is compatible with all types of PDF documents. You can apply digital signatures to various types of PDF files, including forms, reports, and more.
+答：是的，基于智能卡的签名与所有类型的 PDF 文档兼容。您可以将数字签名应用于各种类型的 PDF 文件，包括表单、报告等。
 
-#### Q: How can I learn more about advanced digital signature and certificate management?
+#### 问：如何了解有关高级数字签名和证书管理的更多信息？
 
-A: Explore the official Aspose.PDF documentation for detailed insights into advanced digital signature features, certificate management, and best practices for ensuring document security.
+答：浏览 Aspose.PDF 官方文档，详细了解高级数字签名功能、证书管理和确保文档安全的最佳实践。
 
-#### Q: Where can I find further assistance or support for implementing smart card-based signing?
+#### 问：在哪里可以找到实施基于智能卡的签名的进一步帮助或支持？
 
-A: For additional guidance and support, reach out to the Aspose.PDF community forums or refer to the documentation for comprehensive information on smart card-based signing.
+答：如需更多指导和支持，请访问 Aspose.PDF 社区论坛或参阅文档以获取有关基于智能卡的签名的全面信息。

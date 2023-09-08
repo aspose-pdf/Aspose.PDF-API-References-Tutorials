@@ -1,161 +1,161 @@
 ---
-title: Convert Image Stream to PDF File
-linktitle: Convert Image Stream to PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily convert an image stream to PDF file with Aspose.PDF for .NET.
+title: Преобразование потока изображений в PDF-файл
+linktitle: Преобразование потока изображений в PDF-файл
+second_title: Справочник по Aspose.PDF для .NET API
+description: Легко конвертируйте поток изображений в файл PDF с помощью Aspose.PDF для .NET.
 type: docs
 weight: 70
 url: /ru/net/programming-with-images/convert-image-stream-to-pdf/
 ---
-This guide will take you step by step how to convert an image stream to PDF file using Aspose.PDF for .NET. Make sure you have already set up your environment and follow the steps below:
+В этом руководстве шаг за шагом вы узнаете, как преобразовать поток изображений в файл PDF с помощью Aspose.PDF для .NET. Убедитесь, что вы уже настроили свою среду, и выполните следующие действия:
 
-## Step 1: Define the document directory
+## Шаг 1. Определите каталог документов.
 
-Before you start, make sure you set the correct directory for the documents. Replace `"YOUR DOCUMENT DIRECTORY"` in the code with the path to the directory where your image is located.
+ Прежде чем начать, убедитесь, что вы установили правильный каталог для документов. Заменять`"YOUR DOCUMENT DIRECTORY"` в коде укажите путь к каталогу, где находится ваше изображение.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Instantiate a Document object
+## Шаг 2. Создайте экземпляр объекта Document
 
-In this step, we will instantiate a `Document` object using the empty constructor of the `Aspose.Pdf.Document` class.
+ На этом этапе мы создадим экземпляр`Document` объект, используя пустой конструктор`Aspose.Pdf.Document` сорт.
 
 ```csharp
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 ```
 
-## Step 3: Add a page to the PDF document
+## Шаг 3. Добавьте страницу в PDF-документ.
 
-Add a page to the PDF document using the `Add` method of the `Pages` object of `pdf1`.
+ Добавьте страницу в документ PDF с помощью`Add` метод`Pages` объект`pdf1`.
 
 ```csharp
 Aspose.Pdf.Page sec = pdf1.Pages.Add();
 ```
 
-## Step 4: Read the image stream
+## Шаг 4. Прочтите поток изображений
 
-In this step we will create a `FileStream` object to read the image file from the stream.
+ На этом этапе мы создадим`FileStream` объект для чтения файла изображения из потока.
 
 ```csharp
 FileStream fs = File.OpenRead(dataDir + "aspose.jpg");
 ```
 
-## Step 5: Read the image into a byte array
+## Шаг 5. Считайте изображение в массив байтов.
 
-Read the image from the stream and store it in a byte array using the `Read` method of the `fs` object.
+ Считайте изображение из потока и сохраните его в массиве байтов, используя метод`Read` метод`fs` объект.
 
 ```csharp
 byte[] data = new byte[fs.Length];
 fs.Read(data, 0, data.Length);
 ```
 
-## Step 6: Create a MemoryStream object from the byte array
+## Шаг 6. Создайте объект MemoryStream из массива байтов.
 
-Create a `MemoryStream` object from the byte array containing the image.
+ Создать`MemoryStream` объект из массива байтов, содержащего изображение.
 
 ```csharp
 MemoryStream ms = new MemoryStream(data);
 ```
 
-## Step 7: Create an Image Object
+## Шаг 7. Создайте объект изображения
 
-In this step, we will create an `Image` object using the `Aspose.Pdf.Image` class. Specify the stream of the image using the `ImageStream` property and pass the `ms` object we created earlier.
+ На этом этапе мы создадим`Image` объект с помощью`Aspose.Pdf.Image` сорт. Укажите поток изображения с помощью`ImageStream` имущество и передать`ms` объект, который мы создали ранее.
 
 ```csharp
 Aspose.Pdf.Image imageht = new Aspose.Pdf.Image();
 imageht. ImageStream = ms;
 ```
 
-## Step 8: Add the Image object to the Paragraphs collection
+## Шаг 8. Добавьте объект Image в коллекцию Paragraphs.
 
-Add the `imageht` object to the `Paragraphs` collection of the `sec` section.
+ Добавить`imageht` возражать против`Paragraphs` коллекция`sec` раздел.
 
 ```csharp
 sec.Paragraphs.Add(imageht);
 ```
 
-## Step 9: Save the PDF document
+## Шаг 9. Сохраните PDF-документ.
 
-Save the PDF document using the `Save` method of the `pdf1` object. Specify the output path of the PDF file.
+ Сохраните PDF-документ, используя`Save` метод`pdf1` объект. Укажите путь вывода PDF-файла.
 
 ```csharp
 pdf1.Save(dataDir + "ConvertMemoryStreamImageToPdf_out.pdf");
 ```
 
-## Step 10: Close the MemoryStream object
+## Шаг 10. Закройте объект MemoryStream.
 
-Close the `ms` object using the `Close` method to release the resources.
+ Закрой`ms` объект с помощью`Close` метод освобождения ресурсов.
 
 ```csharp
 ms. Close();
 ```
 
-### Sample source code for Convert Image Stream to PDF using Aspose.PDF for .NET 
+### Пример исходного кода для преобразования потока изображений в PDF с использованием Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Instantiate Document instance by calling its empty constructor
+//Создайте экземпляр экземпляра документа, вызвав его пустой конструктор.
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
-// Add a Page into the pdf document
+// Добавить страницу в документ PDF
 Aspose.Pdf.Page sec = pdf1.Pages.Add();
-// Create a FileStream object to read the imag file
+// Создайте объект FileStream для чтения файла изображения.
 FileStream fs = File.OpenRead(dataDir + "aspose.jpg");
-// Read the image into Byte array
+// Считайте изображение в массив байтов
 byte[] data = new byte[fs.Length];
 fs.Read(data, 0, data.Length);
-// Create a MemoryStream object from image Byte array
+// Создайте объект MemoryStream из массива байтов изображения.
 MemoryStream ms = new MemoryStream(data);
-// Create an image object
+// Создайте объект изображения
 Aspose.Pdf.Image imageht = new Aspose.Pdf.Image();
-// Specify the image source as MemoryStream
+// Укажите источник изображения как MemoryStream.
 imageht.ImageStream = ms;
-// Add image object into the Paragraphs collection of the section
+// Добавьте объект изображения в коллекцию Paragraphs раздела.
 sec.Paragraphs.Add(imageht);
-// Save the Pdf
+// Сохраните PDF-файл
 pdf1.Save(dataDir + "ConvertMemoryStreamImageToPdf_out.pdf");
-// Close the MemoryStream Object
+// Закройте объект MemoryStream.
 ms.Close();
 ```
 
-## Conclusion
+## Заключение
 
-Congratulation ! You have successfully converted an image stream to a PDF file using Aspose.PDF for .NET. The generated PDF file is saved in the specified directory. You can now use this PDF file in your projects or applications.
+Поздравляем! Вы успешно преобразовали поток изображений в файл PDF с помощью Aspose.PDF для .NET. Сгенерированный PDF-файл сохраняется в указанном каталоге. Теперь вы можете использовать этот PDF-файл в своих проектах или приложениях.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is the purpose of converting an image stream to a PDF file using Aspose.PDF for .NET?
+#### Вопрос: Какова цель преобразования потока изображений в файл PDF с помощью Aspose.PDF для .NET?
 
-A: Converting an image stream to a PDF file can be useful for incorporating images into PDF documents, creating image-based PDFs, or embedding images within textual content.
+О: Преобразование потока изображений в файл PDF может быть полезно для включения изображений в документы PDF, создания PDF-файлов на основе изображений или встраивания изображений в текстовый контент.
 
-#### Q: How does Aspose.PDF for .NET assist in the conversion of an image stream to a PDF file?
+#### Вопрос: Как Aspose.PDF for .NET помогает преобразовать поток изображений в файл PDF?
 
-A: Aspose.PDF for .NET provides a convenient and step-by-step process to create a PDF document, read an image stream, and embed the image into the PDF file.
+О: Aspose.PDF для .NET предоставляет удобный и пошаговый процесс создания PDF-документа, чтения потока изображений и встраивания изображения в PDF-файл.
 
-#### Q: Why is defining the document directory important in the image stream to PDF conversion process?
+#### Вопрос: Почему определение каталога документов важно в процессе преобразования потока изображений в PDF?
 
-A: Specifying the document directory ensures that the image stream and the resulting PDF file are correctly located in the desired output path.
+О: Указание каталога документа гарантирует, что поток изображений и результирующий PDF-файл будут правильно расположены в желаемом пути вывода.
 
-#### Q: How do I create a PDF document using Aspose.PDF for .NET in the image stream to PDF conversion process?
+#### Вопрос: Как создать PDF-документ с помощью Aspose.PDF для .NET в процессе преобразования потока изображений в PDF?
 
-A: Instantiate a `Document` object using the `Aspose.Pdf.Document` class's empty constructor to create the PDF document.
+ A: Создать экземпляр`Document` объект с помощью`Aspose.Pdf.Document` пустой конструктор класса для создания PDF-документа.
 
-#### Q: What is the role of the `Pages` object in the image stream to PDF conversion process?
+####  Вопрос: Какова роль`Pages` object in the image stream to PDF conversion process?
 
-A: The `Pages` object allows you to add pages to the PDF document and manage its content.
+ А:`Pages` Объект позволяет добавлять страницы в документ PDF и управлять его содержимым.
 
-#### Q: How does the image stream read and processed in the image stream to PDF conversion process?
+#### Вопрос: Как поток изображений считывается и обрабатывается в процессе преобразования потока изображений в PDF?
 
-A: The image stream is read using a `FileStream` object, and its contents are stored in a byte array. The byte array is then used to create a `MemoryStream` object, which is subsequently used to create an `Image` object.
+ О: Поток изображений считывается с помощью`FileStream` объект, а его содержимое хранится в массиве байтов. Затем массив байтов используется для создания`MemoryStream` объект, который впоследствии используется для создания`Image` объект.
 
-#### Q: How is the image embedded in the PDF document during the conversion process?
+#### Вопрос: Как изображение внедряется в PDF-документ в процессе преобразования?
 
-A: An `Image` object is created using the `Aspose.Pdf.Image` class, and the image stream is assigned to the `ImageStream` property. The `Image` object is then added to the `Paragraphs` collection of the PDF document.
+ А: Ан`Image` объект создается с помощью`Aspose.Pdf.Image` класс, а поток изображений назначается`ImageStream` свойство.`Image` объект затем добавляется в`Paragraphs` коллекция PDF-документа.
 
-#### Q: Can I customize the image's position, size, or other attributes in the resulting PDF file?
+#### Вопрос: Могу ли я настроить положение, размер или другие атрибуты изображения в полученном PDF-файле?
 
-A: Yes, you can modify the image's position, size, and other attributes by adjusting the properties of the `Image` object before adding it to the `Paragraphs` collection.
+ О: Да, вы можете изменить положение, размер и другие атрибуты изображения, настроив свойства изображения.`Image` объект перед добавлением его в`Paragraphs` коллекция.
 
-#### Q: What is the final step in the image stream to PDF conversion process?
+#### Вопрос: Каков последний этап процесса преобразования потока изображений в PDF?
 
-A: The PDF document is saved using the `Save` method of the `Document` object, and the `MemoryStream` object is closed using the `Close` method to release resources.
+ О: PDF-документ сохраняется с использованием`Save` метод`Document` объект, и`MemoryStream` объект закрывается с помощью`Close` метод освобождения ресурсов.

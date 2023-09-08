@@ -1,87 +1,87 @@
 ---
-title: Set Border In PDF To Table
-linktitle: Set Border In PDF To Table
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set a border in PDF to table with Aspose.PDF for .NET.
+title: PDF'deki Kenarlığı Tabloya Ayarla
+linktitle: PDF'deki Kenarlığı Tabloya Ayarla
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile PDF'de tabloya nasıl kenarlık ayarlayacağınızı öğrenin.
 type: docs
 weight: 200
 url: /tr/net/programming-with-tables/set-border/
 ---
-In this tutorial, we will guide you step by step to set a border in a table of a PDF document using Aspose.PDF for .NET. We'll explain the provided C# source code and show you how to implement it.
+Bu eğitimde, Aspose.PDF for .NET'i kullanarak bir PDF belgesinin tablosunda kenarlık ayarlama konusunda size adım adım rehberlik edeceğiz. Sağlanan C# kaynak kodunu açıklayacağız ve size nasıl uygulayacağınızı göstereceğiz.
 
-## Step 1: Instantiating the Document object
-First, we'll instantiate a Document object:
+## Adım 1: Belge nesnesini örneklendirme
+İlk olarak bir Document nesnesini başlatacağız:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 2: Adding a page to the PDF document
-Next, we'll add a page to the PDF document:
+## Adım 2: PDF belgesine sayfa ekleme
+Daha sonra PDF belgesine bir sayfa ekleyeceğiz:
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
-## Step 3: Creating the BorderInfo object
-We will now create a BorderInfo object to define the border of the table:
+## Adım 3: BorderInfo nesnesini oluşturma
+Şimdi tablonun kenarlığını tanımlamak için bir BorderInfo nesnesi oluşturacağız:
 
 ```csharp
 Aspose.Pdf.BorderInfo border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All);
 ```
 
-## Step 4: Specifying top and bottom borders
-We'll specify that the top and bottom borders will be double:
+## 4. Adım: Üst ve alt kenarlıkları belirtme
+Üst ve alt kenarlıkların çift olacağını belirteceğiz:
 
 ```csharp
 border.Top.IsDoubled = true;
 border.Bottom.IsDoubled = true;
 ```
 
-## Step 5: Instantiating the Table object
-Now let's instantiate a Table object:
+## Adım 5: Tablo nesnesini örneklendirme
+Şimdi bir Table nesnesini başlatalım:
 
 ```csharp
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
 ```
 
-## Step 6: Specifying column widths
-We will specify the widths of the columns of the table:
+## Adım 6: Sütun genişliklerini belirtme
+Tablonun sütunlarının genişliklerini belirleyeceğiz:
 
 ```csharp
 table. ColumnWidths = "100";
 ```
 
-## Step 7: Creating the Row Object
-We will create a Row object:
+## Adım 7: Satır Nesnesini Oluşturma
+Bir Row nesnesi oluşturacağız:
 
 ```csharp
 Aspose.Pdf.Row row = table.Rows.Add();
 ```
 
-## Step 8: Adding a cell to the row
-Next, we'll add a cell to the row:
+## Adım 8: Satıra hücre ekleme
+Daha sonra satıra bir hücre ekleyeceğiz:
 
 ```csharp
 Aspose.Pdf.Cell cell = row.Cells.Add("some text");
 ```
 
-## Step 9: Setting the cell border
-We are going to define the border of the cell (double border):
+## Adım 9: Hücre kenarlığını ayarlama
+Hücrenin kenarlığını (çift kenarlık) tanımlayacağız:
 
 ```csharp
 cell. Border = border;
 ```
 
-## Step 10: Adding the table to the page
-Now let's add the table to the document page:
+## Adım 10: Tabloyu sayfaya ekleme
+Şimdi tabloyu belge sayfasına ekleyelim:
 
 ```csharp
 page.Paragraphs.Add(table);
 ```
 
-## Step 11: Save PDF document
-Finally, we will save the PDF document:
+## Adım 11: PDF belgesini kaydedin
+Son olarak PDF belgesini kaydedeceğiz:
 
 ```csharp
 dataDir = dataDir + "TableBorderTest_out.pdf";
@@ -90,62 +90,62 @@ doc.Save(dataDir);
 Console.WriteLine("\nBorder setup successfully.\nFile saved at " + dataDir);
 ```
 
-### Example source code for Set Border using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak Set Border için örnek kaynak kodu
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate Document object
+// Belge nesnesini somutlaştır
 Document doc = new Document();
-// Add page to PDF document
+// PDF belgesine sayfa ekle
 Page page = doc.Pages.Add();
-// Create BorderInfo object
+// BorderInfo nesnesi oluştur
 Aspose.Pdf.BorderInfo border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All);
-// Specify that Top border will be double
+//Üst sınırın çift olacağını belirtin
 border.Top.IsDoubled = true;
-// Specify that bottom border will be double
+// Alt kenarlığın çift olacağını belirtin
 border.Bottom.IsDoubled = true;
-// Instantiate Table object
+// Tablo nesnesini somutlaştır
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-// Specify Columns width information
+// Sütun genişliği bilgisini belirtin
 table.ColumnWidths = "100";
-// Create Row object
+// Satır nesnesi oluştur
 Aspose.Pdf.Row row = table.Rows.Add();
-// Add a Table cell to cells collection of row
+// Satırın hücre koleksiyonuna bir Tablo hücresi ekleme
 Aspose.Pdf.Cell cell = row.Cells.Add("some text");
-// Set the border for cell object (double border)
+// Hücre nesnesinin kenarlığını ayarlayın (çift kenarlık)
 cell.Border = border;
-// Add table to paragraphs collection of Page
+// Sayfanın paragraf koleksiyonuna tablo ekleyin
 page.Paragraphs.Add(table);
 dataDir = dataDir + "TableBorderTest_out.pdf";
-// Save the PDF document
+// PDF belgesini kaydedin
 doc.Save(dataDir);
 
 Console.WriteLine("\nBorder setup successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
-Congratulation ! You have now learned how to set a border in a table of a PDF document using Aspose.PDF for .NET. This step-by-step guide showed you how to create a document, add a page, configure the table border, and save the PDF document. Now you can apply this knowledge to your own projects.
+## Çözüm
+Tebrikler! Artık Aspose.PDF for .NET kullanarak bir PDF belgesinin tablosunda nasıl kenarlık ayarlayacağınızı öğrendiniz. Bu adım adım kılavuz size nasıl belge oluşturacağınızı, sayfa ekleyeceğinizi, tablo kenarlığını nasıl yapılandıracağınızı ve PDF belgesini nasıl kaydedeceğinizi gösterdi. Artık bu bilgiyi kendi projelerinize uygulayabilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: Can I set different border styles (e.g., dashed or dotted) for the table's top and bottom borders?
+#### S: Tablonun üst ve alt kenarları için farklı kenarlık stilleri (ör. kesikli veya noktalı) ayarlayabilir miyim?
 
-A: Yes, you can set different border styles for the table's top and bottom borders by modifying the `border.Top.Style` and `border.Bottom.Style` properties in the provided C# source code. Aspose.PDF for .NET allows you to choose from various border styles, including Solid, Dashed, Dotted, Double, and more.
+ C: Evet, tablonun üst ve alt kenarlıkları için farklı kenar stilleri ayarlayabilirsiniz.`border.Top.Style` Ve`border.Bottom.Style`Sağlanan C# kaynak kodundaki özellikler. Aspose.PDF for .NET, Düz, Kesikli, Noktalı, Çift ve daha fazlası dahil olmak üzere çeşitli kenarlık stilleri arasından seçim yapmanızı sağlar.
 
-#### Q: How can I set the color of the table's border?
+#### S: Tablonun kenarlığının rengini nasıl ayarlayabilirim?
 
-A: You can set the color of the table's border by modifying the `border.Color` property in the C# source code. Simply provide the desired color, such as `Aspose.Pdf.Color.Red` or any other valid color representation, to customize the border color.
+ C: Tablonun kenarlığının rengini değiştirerek ayarlayabilirsiniz.`border.Color` C# kaynak kodundaki özellik. Basitçe istediğiniz rengi sağlayın, örneğin`Aspose.Pdf.Color.Red` veya kenarlık rengini özelleştirmek için geçerli herhangi bir renk gösterimi.
 
-#### Q: Is it possible to apply borders to individual cells within the table with different settings (e.g., different colors or border styles)?
+#### S: Tablo içindeki tek tek hücrelere farklı ayarlarla (örneğin, farklı renkler veya kenarlık stilleri) kenarlıklar uygulamak mümkün müdür?
 
-A: Yes, you can apply borders to individual cells within the table with different settings by configuring the `cell.Border` property for each cell individually. This allows you to have cell-specific border styles and colors based on your requirements.
+ C: Evet, tablodaki ayrı ayrı hücrelere farklı ayarlarla kenarlıklar uygulayabilirsiniz.`cell.Border` Her hücre için ayrı ayrı özellik. Bu, gereksinimlerinize göre hücreye özgü kenarlık stillerine ve renklerine sahip olmanızı sağlar.
 
-#### Q: Can I remove the border from specific sides of the table (e.g., left and right borders)?
+#### S: Tablonun belirli taraflarındaki kenarlığı kaldırabilir miyim (örn. sol ve sağ kenarlıklar)?
 
-A: Yes, you can remove the border from specific sides of the table by modifying the `border.Left`, `border.Right`, `border.Top`, and `border.Bottom` properties in the C# source code. Setting these properties to `null` will remove the border from the corresponding sides of the table.
+ C: Evet, tablonun belirli taraflarındaki kenarlığı, kenarlığı değiştirerek kaldırabilirsiniz.`border.Left`, `border.Right`, `border.Top` , Ve`border.Bottom`C# kaynak kodundaki özellikler. Bu özelliklerin ayarlanması`null` tablonun karşılık gelen kenarlarındaki kenarlığı kaldıracaktır.
 
-#### Q: How can I adjust the thickness of the table's border?
+#### S: Tablonun kenarlığının kalınlığını nasıl ayarlayabilirim?
 
-A: You can adjust the thickness of the table's border by modifying the `border.Width` property in the C# source code. Simply set the desired border width (in points) to achieve the desired thickness.
+ C: Tablonun kenarlığının kalınlığını değiştirerek ayarlayabilirsiniz.`border.Width` C# kaynak kodundaki özellik. İstenilen kalınlığı elde etmek için istenilen kenar genişliğini (nokta olarak) ayarlamanız yeterlidir.

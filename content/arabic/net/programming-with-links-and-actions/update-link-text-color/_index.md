@@ -1,39 +1,39 @@
 ---
-title: Update Link Text Color In PDF File
-linktitle: Update Link Text Color In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to update the text color of links in PDF file with Aspose.PDF for .NET.
+title: تحديث لون نص الرابط في ملف PDF
+linktitle: تحديث لون نص الرابط في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية تحديث لون نص الروابط في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 130
 url: /ar/net/programming-with-links-and-actions/update-link-text-color/
 ---
-Learn how to update the text color of links in PDF file using Aspose.PDF for .NET with this step-by-step guide.
+تعرف على كيفية تحديث لون نص الروابط في ملف PDF باستخدام Aspose.PDF لـ .NET باستخدام هذا الدليل التفصيلي خطوة بخطوة.
 
-## Step 1: Setting up the environment
+## الخطوة 1: تهيئة البيئة
 
-Make sure you have set up your development environment with a C# project and the appropriate Aspose.PDF references.
+تأكد من أنك قمت بإعداد بيئة التطوير الخاصة بك باستخدام مشروع C# ومراجع Aspose.PDF المناسبة.
 
-## Step 2: Loading the PDF file
+## الخطوة 2: تحميل ملف PDF
 
-Set the directory path of your documents and upload the PDF file using the following code:
+قم بتعيين مسار الدليل لمستنداتك وقم بتحميل ملف PDF باستخدام الكود التالي:
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Load the PDF file
+// قم بتحميل ملف PDF
 Document doc = new Document(dataDir + "UpdateLinks.pdf");
 ```
 
-## Step 3: Navigating Link Annotations
+## الخطوة 3: التنقل في التعليقات التوضيحية للارتباط
 
-Loop through all the link annotations on the second page of the document using the following code:
+قم بالمراجعة عبر جميع التعليقات التوضيحية للارتباط في الصفحة الثانية من المستند باستخدام الكود التالي:
 
 ```csharp
 foreach(Annotation annotation in doc.Pages[1].Annotations)
 {
      if (annotation is LinkAnnotation)
      {
-         // Find the text under the annotation
+         // ابحث عن النص أسفل التعليق التوضيحي
          TextFragmentAbsorber ta = new TextFragmentAbsorber();
          Rectangle rect = annotation.Rect;
          rect.LLX -= 10;
@@ -42,7 +42,7 @@ foreach(Annotation annotation in doc.Pages[1].Annotations)
          rect.URY += 10;
          ta.TextSearchOptions = new TextSearchOptions(rect);
          your.Visit(doc.Pages[1]);
-         // Change text color.
+         // تغيير لون النص.
          foreach(TextFragment tf in ta.TextFragments)
          {
              tf.TextState.ForegroundColor = Color.Red;
@@ -51,36 +51,36 @@ foreach(Annotation annotation in doc.Pages[1].Annotations)
 }
 ```
 
-## Step 4: Save document with updated link text
+## الخطوة 4: احفظ المستند بنص الرابط المحدث
 
-Save the document with the updated link text using the `Save` method:
+ احفظ المستند بنص الرابط المحدث باستخدام الملف`Save` طريقة:
 
 ```csharp
 dataDir = dataDir + "UpdateLinkTextColor_out.pdf";
 doc.Save(dataDir);
 ```
 
-## Step 5: Displaying the result
+## الخطوة 5: عرض النتيجة
 
-Display a message that the link annotation text color was updated successfully and specify the location of the saved file:
+اعرض رسالة تفيد بأنه تم تحديث لون نص التعليق التوضيحي للارتباط بنجاح وحدد موقع الملف المحفوظ:
 
 ```csharp
 Console.WriteLine("\nText color of link annotations updated successfully.\nFile saved to location: " + dataDir);
 ```
 
-### Sample source code for Update Link Text Color using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لتحديث لون نص الرابط باستخدام Aspose.PDF لـ .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// المسار إلى دليل المستندات.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Load the PDF file
+	// قم بتحميل ملف PDF
 	Document doc = new Document(dataDir + "UpdateLinks.pdf");
 	foreach (Annotation annotation in doc.Pages[1].Annotations)
 	{
 		if (annotation is LinkAnnotation)
 		{
-			// Search the text under the annotation
+			// ابحث في النص تحت التعليق التوضيحي
 			TextFragmentAbsorber ta = new TextFragmentAbsorber();
 			Rectangle rect = annotation.Rect;
 			rect.LLX -= 10;
@@ -89,7 +89,7 @@ try
 			rect.URY += 10;
 			ta.TextSearchOptions = new TextSearchOptions(rect);
 			ta.Visit(doc.Pages[1]);
-			// Change color of the text.
+			//تغيير لون النص.
 			foreach (TextFragment tf in ta.TextFragments)
 			{
 				tf.TextState.ForegroundColor = Color.Red;
@@ -97,7 +97,7 @@ try
 		}
 	}
 	dataDir = dataDir + "UpdateLinkTextColor_out.pdf";
-	// Save the document with updated link
+	// احفظ المستند بالرابط المحدث
 	doc.Save(dataDir);
 	Console.WriteLine("\nLinkAnnotation text color updated successfully.\nFile saved at " + dataDir);
 }
@@ -107,46 +107,46 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You now know how to update the text color of links in a PDF file using Aspose.PDF for .NET. Use this knowledge to customize the appearance of your links in PDF documents.
+تهنئة ! أنت تعرف الآن كيفية تحديث لون نص الروابط في ملف PDF باستخدام Aspose.PDF لـ .NET. استخدم هذه المعرفة لتخصيص مظهر الروابط الخاصة بك في مستندات PDF.
 
-Now that you've completed this guide, you can apply these concepts to your own projects and further explore the features offered by Aspose.PDF for .NET.
+الآن وبعد أن أكملت هذا الدليل، يمكنك تطبيق هذه المفاهيم على مشاريعك الخاصة واستكشاف الميزات التي يقدمها Aspose.PDF لـ .NET بشكل أكبر.
 
-### FAQ's for update link text color in PDF file 
+### الأسئلة الشائعة حول لون نص رابط التحديث في ملف PDF 
 
-#### Q: Why would I want to update the text color of links in a PDF document?
+#### س: لماذا أرغب في تحديث لون نص الروابط في مستند PDF؟
 
-A: Updating the text color of links allows you to visually emphasize and customize the appearance of hyperlinks within your PDF document, making them more noticeable and enhancing the user experience.
+ج: يتيح لك تحديث لون نص الارتباطات التركيز بشكل مرئي على مظهر الارتباطات التشعبية وتخصيصه داخل مستند PDF الخاص بك، مما يجعلها أكثر وضوحًا ويعزز تجربة المستخدم.
 
-#### Q: How does changing the text color of links benefit the user experience?
+#### س: كيف يفيد تغيير لون نص الروابط تجربة المستخدم؟
 
-A: Changing the text color of links can help users easily identify and interact with clickable elements, improving navigation and engagement within the PDF document.
+ج: يمكن أن يساعد تغيير لون نص الروابط المستخدمين على التعرف على العناصر القابلة للنقر والتفاعل معها بسهولة، مما يؤدي إلى تحسين التنقل والمشاركة داخل مستند PDF.
 
-#### Q: Can I change the text color of specific links or all links in the document?
+#### س: هل يمكنني تغيير لون نص روابط معينة أو جميع الروابط الموجودة في المستند؟
 
-A: This tutorial focuses on changing the text color of specific links. However, you can modify the provided code to iterate through all link annotations if you wish to change the text color of all links.
+ج: يركز هذا البرنامج التعليمي على تغيير لون نص روابط معينة. ومع ذلك، يمكنك تعديل التعليمات البرمجية المقدمة للتكرار من خلال جميع التعليقات التوضيحية للارتباط إذا كنت ترغب في تغيير لون النص لجميع الروابط.
 
-#### Q: What does the `TextFragmentAbsorber` class do in the provided code?
+####  س: ماذا يفعل`TextFragmentAbsorber` class do in the provided code?
 
-A: The `TextFragmentAbsorber` class is used to search for text fragments within a specified region, which in this case corresponds to the area of the link annotation. It helps identify and target the text associated with the link.
+ ج: ال`TextFragmentAbsorber` يتم استخدام الفئة للبحث عن أجزاء النص داخل منطقة محددة، والتي تتوافق في هذه الحالة مع منطقة التعليق التوضيحي للارتباط. يساعد في تحديد واستهداف النص المرتبط بالارتباط.
 
-#### Q: How can I adjust the size of the area considered for changing the text color?
+#### س: كيف يمكنني ضبط حجم المساحة المستخدمة لتغيير لون النص؟
 
-A: The size of the area is adjusted by modifying the `rect` object in the provided code. You can change the coordinates to expand or shrink the search area around the link annotation.
+ ج: يتم تعديل حجم المنطقة عن طريق تعديل`rect` الكائن في الكود المقدم. يمكنك تغيير الإحداثيات لتوسيع أو تقليص منطقة البحث حول التعليق التوضيحي للرابط.
 
-#### Q: Can I change the text color to a color other than red?
+#### س: هل يمكنني تغيير لون النص إلى لون آخر غير اللون الأحمر؟
 
-A: Yes, you can customize the text color by modifying the `tf.TextState.ForegroundColor` property. You can set it to any desired color using the `Color` class from the System.Drawing namespace.
+ ج: نعم، يمكنك تخصيص لون النص عن طريق تعديل`tf.TextState.ForegroundColor` ملكية. يمكنك ضبطه على أي لون تريده باستخدام`Color` فئة من مساحة الاسم System.Drawing.
 
-#### Q: Are there any limitations to changing the text color of links?
+#### س: هل هناك أي قيود على تغيير لون نص الروابط؟
 
-A: Changing the text color of links is limited to modifying their appearance. It does not affect the link's destination or behavior.
+ج: يقتصر تغيير لون نص الروابط على تعديل مظهرها. ولا يؤثر على وجهة الارتباط أو سلوكه.
 
-#### Q: How can I test if the text color of link annotations has been successfully updated?
+#### س: كيف يمكنني اختبار ما إذا كان قد تم تحديث لون نص التعليقات التوضيحية للارتباط بنجاح؟
 
-A: After applying the provided code to update the text color, open the modified PDF file and verify that the text color of the specified links has changed as expected.
+ج: بعد تطبيق الكود المقدم لتحديث لون النص، افتح ملف PDF المعدل وتحقق من أن لون نص الروابط المحددة قد تغير كما هو متوقع.
 
-#### Q: Is there a way to revert the text color of links to the original color?
+#### س: هل هناك طريقة لإعادة لون نص الروابط إلى اللون الأصلي؟
 
-A: Yes, you can modify the code to store the original text color before updating it and then use that information to revert the text color if needed.
+ج: نعم، يمكنك تعديل الكود لتخزين لون النص الأصلي قبل تحديثه ثم استخدام تلك المعلومات لإرجاع لون النص إذا لزم الأمر.

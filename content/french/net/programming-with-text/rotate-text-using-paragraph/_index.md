@@ -1,28 +1,28 @@
 ---
-title: Rotate Text Using Paragraph In PDF File
-linktitle: Rotate Text Using Paragraph In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to rotate text using paragraphs in PDF file using Aspose.PDF for .NET.
+title: Faire pivoter le texte à l'aide d'un paragraphe dans un fichier PDF
+linktitle: Faire pivoter le texte à l'aide d'un paragraphe dans un fichier PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment faire pivoter du texte à l'aide de paragraphes dans un fichier PDF à l'aide d'Aspose.PDF pour .NET.
 type: docs
 weight: 380
 url: /fr/net/programming-with-text/rotate-text-using-paragraph/
 ---
-This tutorial explains how to use Aspose.PDF for .NET to rotate text using paragraphs. The provided C# source code demonstrates the process step by step.
+Ce didacticiel explique comment utiliser Aspose.PDF pour .NET pour faire pivoter du texte à l'aide de paragraphes. Le code source C# fourni illustre le processus étape par étape.
 
-## Prerequisites
+## Conditions préalables
 
-Before proceeding with the tutorial, make sure you have the following:
+Avant de poursuivre le didacticiel, assurez-vous d'avoir les éléments suivants :
 
-- Basic knowledge of C# programming language.
-- Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to install it in your project.
+- Connaissance de base du langage de programmation C#.
+- Aspose.PDF pour la bibliothèque .NET installée. Vous pouvez l'obtenir sur le site Web Aspose ou utiliser NuGet pour l'installer dans votre projet.
 
-## Step 1: Set up the project
+## Étape 1 : Configurer le projet
 
-Start by creating a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library.
+Commencez par créer un nouveau projet C# dans votre environnement de développement intégré (IDE) préféré et ajoutez une référence à la bibliothèque Aspose.PDF pour .NET.
 
-## Step 2: Import necessary namespaces
+## Étape 2 : Importer les espaces de noms nécessaires
 
-Add the following using directives at the beginning of your C# file to import the required namespaces:
+Ajoutez les directives using suivantes au début de votre fichier C# pour importer les espaces de noms requis :
 
 ```csharp
 using Aspose.Pdf;
@@ -30,39 +30,39 @@ using Aspose.Pdf.Text;
 using Aspose.Pdf.Text.TextBuilder;
 ```
 
-## Step 3: Create the PDF document
+## Étape 3 : Créer le document PDF
 
-Initialize the `Document` object to create a new PDF document:
+ Initialisez le`Document` objet pour créer un nouveau document PDF :
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document();
 ```
 
-Make sure to replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ Assurez-vous de remplacer`"YOUR DOCUMENT DIRECTORY"` avec le chemin réel vers votre répertoire de documents.
 
-## Step 4: Add a page
+## Étape 4 : Ajouter une page
 
-Get a particular page from the document using the `Pages.Add()` method:
+ Obtenez une page particulière du document en utilisant le`Pages.Add()` méthode:
 
 ```csharp
 Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
-## Step 5: Create the text paragraph
+## Étape 5 : Créer le paragraphe de texte
 
-Create a `TextParagraph` object and set its position on the page:
+ Créer un`TextParagraph` objet et définissez sa position sur la page :
 
 ```csharp
 TextParagraph paragraph = new TextParagraph();
 paragraph.Position = new Position(200, 600);
 ```
 
-Adjust the position values as per your requirements.
+Ajustez les valeurs de position selon vos besoins.
 
-## Step 6: Create and configure text fragments
+## Étape 6 : Créer et configurer des fragments de texte
 
-Create multiple `TextFragment` objects and set their text and properties:
+ Créer plusieurs`TextFragment` objets et définir leur texte et leurs propriétés :
 
 ```csharp
 TextFragment textFragment1 = new TextFragment("rotated text");
@@ -80,11 +80,11 @@ textFragment3.TextState.Font = FontRepository.FindFont("TimesNewRoman");
 textFragment3.TextState.Rotation = -45;
 ```
 
-Adjust the text and other properties as desired.
+Ajustez le texte et les autres propriétés comme vous le souhaitez.
 
-## Step 7: Append text fragments to the paragraph
+## Étape 7 : Ajouter des fragments de texte au paragraphe
 
-Append the created text fragments to the paragraph using the `AppendLine` method:
+ Ajoutez les fragments de texte créés au paragraphe à l'aide du`AppendLine` méthode:
 
 ```csharp
 paragraph.AppendLine(textFragment1);
@@ -92,105 +92,105 @@ paragraph.AppendLine(textFragment2);
 paragraph.AppendLine(textFragment3);
 ```
 
-## Step 8: Create a TextBuilder and append the paragraph
+## Étape 8 : Créez un TextBuilder et ajoutez le paragraphe
 
-Create a `TextBuilder` object using the `pdfPage` and append the text paragraph to the PDF page:
+ Créer un`TextBuilder` objet à l'aide du`pdfPage` et ajoutez le paragraphe de texte à la page PDF :
 
 ```csharp
 TextBuilder textBuilder = new TextBuilder(pdfPage);
 textBuilder.AppendParagraph(paragraph);
 ```
 
-## Step 9: Save the PDF document
+## Étape 9 : Enregistrez le document PDF
 
-Save the modified PDF document to a file using the `Save` method:
+ Enregistrez le document PDF modifié dans un fichier à l'aide du`Save` méthode:
 
 ```csharp
 pdfDocument.Save(dataDir + "TextFragmentTests_Rotated2_out.pdf");
 ```
 
-Make sure to replace `"TextFragmentTests_Rotated2_out.pdf"` with the desired output file name.
+ Assurez-vous de remplacer`"TextFragmentTests_Rotated2_out.pdf"` avec le nom du fichier de sortie souhaité.
 
-### Sample source code for Rotate Text Using Paragraph using Aspose.PDF for .NET 
+### Exemple de code source pour faire pivoter le texte à l’aide d’un paragraphe à l’aide d’Aspose.PDF pour .NET 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Initialize document object
+// Initialiser l'objet document
 Document pdfDocument = new Document();
-// Get particular page
+// Obtenir une page particulière
 Page pdfPage = (Page)pdfDocument.Pages.Add();
 TextParagraph paragraph = new TextParagraph();
 paragraph.Position = new Position(200, 600);
-// Create text fragment
+// Créer un fragment de texte
 TextFragment textFragment1 = new TextFragment("rotated text");
-// Set text properties
+// Définir les propriétés du texte
 textFragment1.TextState.FontSize = 12;
 textFragment1.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-// Set rotation
+// Définir la rotation
 textFragment1.TextState.Rotation = 45;
-// Create text fragment
+// Créer un fragment de texte
 TextFragment textFragment2 = new TextFragment("main text");
-// Set text properties
+// Définir les propriétés du texte
 textFragment2.TextState.FontSize = 12;
 textFragment2.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-// Create text fragment
+// Créer un fragment de texte
 TextFragment textFragment3 = new TextFragment("another rotated text");
-// Set text properties
+// Définir les propriétés du texte
 textFragment3.TextState.FontSize = 12;
 textFragment3.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-// Set rotation
+// Définir la rotation
 textFragment3.TextState.Rotation = -45;
-// Append the text fragments to the paragraph
+// Ajouter les fragments de texte au paragraphe
 paragraph.AppendLine(textFragment1);
 paragraph.AppendLine(textFragment2);
 paragraph.AppendLine(textFragment3);
-// Create TextBuilder object
+// Créer un objet TextBuilder
 TextBuilder textBuilder = new TextBuilder(pdfPage);
-// Append the text paragraph to the PDF page
+// Ajouter le paragraphe de texte à la page PDF
 textBuilder.AppendParagraph(paragraph);
-// Save document
+// Enregistrer le document
 pdfDocument.Save(dataDir + "TextFragmentTests_Rotated2_out.pdf");
 ```
 
 
 ## Conclusion
 
-Congratulations! You have successfully learned how to rotate text using paragraphs in a PDF document using Aspose.PDF for .NET. This tutorial provided a step-by-step guide, from creating the document to saving the modified version. You can now incorporate this code into your own C# projects to manipulate text rotation in PDF files.
+Toutes nos félicitations! Vous avez appris avec succès comment faire pivoter du texte à l'aide de paragraphes dans un document PDF à l'aide d'Aspose.PDF pour .NET. Ce didacticiel fournit un guide étape par étape, depuis la création du document jusqu'à l'enregistrement de la version modifiée. Vous pouvez désormais intégrer ce code dans vos propres projets C# pour manipuler la rotation du texte dans les fichiers PDF.
 
-### FAQ's
+### FAQ
 
-#### Q: What is the purpose of the "Rotate Text Using Paragraph" tutorial?
+#### Q : Quel est l'objectif du didacticiel « Rotation du texte à l'aide d'un paragraphe » ?
 
-A: The "Rotate Text Using Paragraph" tutorial aims to guide you through the process of using the Aspose.PDF library for .NET to rotate text using text paragraphs in a PDF document. The tutorial provides step-by-step instructions and sample code to achieve this functionality.
+: Le didacticiel « Faire pivoter le texte à l'aide d'un paragraphe » vise à vous guider tout au long du processus d'utilisation de la bibliothèque Aspose.PDF pour .NET afin de faire pivoter du texte à l'aide de paragraphes de texte dans un document PDF. Le didacticiel fournit des instructions étape par étape et un exemple de code pour réaliser cette fonctionnalité.
 
-#### Q: What is meant by "rotating text using paragraphs"?
+#### Q : Qu'entend-on par « rotation du texte à l'aide de paragraphes » ?
 
-A: Rotating text using paragraphs refers to the ability to apply rotation to text within a PDF document using text paragraphs. This technique allows you to orient text at different angles or positions within the PDF content.
+R : La rotation du texte à l'aide de paragraphes fait référence à la possibilité d'appliquer une rotation au texte d'un document PDF à l'aide de paragraphes de texte. Cette technique vous permet d'orienter le texte selon différents angles ou positions dans le contenu PDF.
 
-#### Q: Why would I want to rotate text in a PDF document?
+#### Q : Pourquoi voudrais-je faire pivoter le texte dans un document PDF ?
 
-A: Rotating text in a PDF document can be useful for various purposes, such as emphasizing specific content, creating artistic designs, or improving layout and readability.
+R : La rotation du texte dans un document PDF peut être utile à diverses fins, telles que mettre en valeur un contenu spécifique, créer des conceptions artistiques ou améliorer la mise en page et la lisibilité.
 
-#### Q: How can I create a new PDF document?
+#### Q : Comment puis-je créer un nouveau document PDF ?
 
-A: To create a new PDF document, initialize a `Document` object from the Aspose.PDF library. You can use this object to add pages and content to the PDF.
+ R : Pour créer un nouveau document PDF, initialisez un`Document`objet de la bibliothèque Aspose.PDF. Vous pouvez utiliser cet objet pour ajouter des pages et du contenu au PDF.
 
-#### Q: How do I rotate text using paragraphs?
+#### Q : Comment faire pivoter du texte à l’aide de paragraphes ?
 
-A: To rotate text using paragraphs:
+R : Pour faire pivoter du texte à l’aide de paragraphes :
 
-1. Create a `TextParagraph` object.
-2. Create `TextFragment` objects with the desired text and rotation angles.
-3. Append the text fragments to the text paragraph.
-4. Create a `TextBuilder` object and append the text paragraph to a specific PDF page.
+1.  Créer un`TextParagraph` objet.
+2.  Créer`TextFragment` objets avec le texte et les angles de rotation souhaités.
+3. Ajoutez les fragments de texte au paragraphe de texte.
+4.  Créer un`TextBuilder` objet et ajoutez le paragraphe de texte à une page PDF spécifique.
 
-#### Q: Can I control the rotation angle of individual text fragments?
+#### Q : Puis-je contrôler l’angle de rotation de fragments de texte individuels ?
 
-A: Yes, you can control the rotation angle of individual `TextFragment` objects by setting the `TextState.Rotation` property. Positive values indicate clockwise rotation, while negative values indicate counterclockwise rotation.
+ R : Oui, vous pouvez contrôler l’angle de rotation de l’individu`TextFragment` objets en définissant le`TextState.Rotation` propriété. Les valeurs positives indiquent une rotation dans le sens des aiguilles d'une montre, tandis que les valeurs négatives indiquent une rotation dans le sens inverse des aiguilles d'une montre.
 
-#### Q: Can I apply different rotation angles to different text fragments within the same paragraph?
+#### Q : Puis-je appliquer différents angles de rotation à différents fragments de texte dans le même paragraphe ?
 
-A: Yes, you can apply different rotation angles to different `TextFragment` objects within the same paragraph by setting the `TextState.Rotation` property of each fragment accordingly.
+ R : Oui, vous pouvez appliquer différents angles de rotation à différents`TextFragment` objets dans le même paragraphe en définissant le`TextState.Rotation` propriété de chaque fragment en conséquence.
 
-#### Q: How do I save the rotated PDF document?
+#### Q : Comment puis-je enregistrer le document PDF pivoté ?
 
-A: To save the rotated PDF document, use the `Save` method of the `Document` object and provide the desired output file path and name.
+R : Pour enregistrer le document PDF pivoté, utilisez le`Save` méthode du`Document` objet et fournissez le chemin et le nom du fichier de sortie souhaité.

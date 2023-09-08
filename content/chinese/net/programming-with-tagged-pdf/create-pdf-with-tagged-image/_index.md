@@ -1,28 +1,28 @@
 ---
-title: Create PDF with Tagged Image
-linktitle: Create PDF with Tagged Image
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to create PDF with tagged image using Aspose.PDF for .NET.
+title: 使用标记图像创建 PDF
+linktitle: 使用标记图像创建 PDF
+second_title: Aspose.PDF for .NET API 参考
+description: 使用 Aspose.PDF for .NET 创建带有标记图像的 PDF 的分步指南。
 type: docs
 weight: 40
 url: /zh/net/programming-with-tagged-pdf/create-pdf-with-tagged-image/
 ---
-In this tutorial, we will provide you with a step-by-step guide on how to create a PDF document with a tagged image using Aspose.PDF for .NET. Aspose.PDF is a powerful library that allows you to create, manipulate and convert PDF documents programmatically. Using the tagged content structure features of Aspose.PDF, you can add tagged images to your PDF document.
+在本教程中，我们将为您提供有关如何使用 Aspose.PDF for .NET 创建带有标记图像的 PDF 文档的分步指南。 Aspose.PDF 是一个功能强大的库，允许您以编程方式创建、操作和转换 PDF 文档。使用Aspose.PDF的标记内容结构功能，您可以将标记图像添加到PDF文档中。
 
-## Prerequisites
+## 先决条件
 
-Before you begin, make sure you have the following prerequisites in place:
+在开始之前，请确保您具备以下先决条件：
 
-1. Visual Studio installed with .NET framework.
-2. The Aspose.PDF library for .NET.
+1. 随 .NET Framework 安装的 Visual Studio。
+2. 适用于 .NET 的 Aspose.PDF 库。
 
-## Step 1: Project Setup
+## 第 1 步：项目设置
 
-To get started, create a new project in Visual Studio and add a reference to the Aspose.PDF for .NET library. You can download the library from Aspose official website and install it on your machine.
+首先，在 Visual Studio 中创建一个新项目并添加对 Aspose.PDF for .NET 库的引用。您可以从Aspose官方网站下载该库并将其安装到您的计算机上。
 
-## Step 2: Import the necessary namespaces
+## 第 2 步：导入必要的命名空间
 
-In your C# code file, import the namespaces required to access the classes and methods provided by Aspose.PDF:
+在您的 C# 代码文件中，导入访问 Aspose.PDF 提供的类和方法所需的命名空间：
 
 ```csharp
 using System;
@@ -30,9 +30,9 @@ using Aspose.Pdf;
 using Aspose.Pdf.Tagged;
 ```
 
-## Step 3: Creating the PDF document with a tagged image
+## 步骤 3：创建带有标记图像的 PDF 文档
 
-Use the following code to create a PDF document with a tagged image:
+使用以下代码创建带有标记图像的 PDF 文档：
 
 ```csharp
 string dataDir = "YOUR_DIRECTORY_OF_DOCUMENTS";
@@ -49,22 +49,22 @@ figure1.SetTag("Fig");
 figure1.SetImage(dataDir + @"aspose-logo.jpg");
 ```
 
-This code creates an empty PDF document and adds a tagged image using the methods provided by Aspose.PDF. The image is specified with alt text, title, and tag.
+此代码创建一个空 PDF 文档，并使用 Aspose.PDF 提供的方法添加标记图像。该图像由替代文本、标题和标签指定。
 
-## Step 4: Saving the PDF Document
+## 步骤 4：保存 PDF 文档
 
-Use the following code to save the PDF document:
+使用以下代码保存PDF文档：
 
 ```csharp
 document.Save(dataDir + "PDFwithTaggedImage.pdf");
 ```
 
-This code saves the PDF document with the tagged image to a specified file.
+此代码将带有标记图像的 PDF 文档保存到指定文件中。
 
-### Sample source code for Create PDFwith Tagged Image using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 创建带有标记图像的 PDF 的示例源代码 
 ```csharp
 
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
@@ -75,55 +75,55 @@ taggedContent.RootElement.AppendChild(figure1);
 figure1.AlternativeText = "Aspose Logo";
 figure1.Title = "Image 1";
 figure1.SetTag("Fig");
-// Add image with resolution 300 DPI (by default)
+//添加分辨率为 300 DPI 的图像（默认）
 figure1.SetImage(dataDir + @"aspose-logo.jpg");
-// Save PDF Document
+//保存 PDF 文档
 document.Save(dataDir + "PDFwithTaggedImage.pdf");
 
 ```
 
-## Conclusion
+## 结论
 
-In this tutorial, you learned how to create a PDF document with a tagged image using Aspose.PDF for .NET. Tagged images add additional, structured information to your PDF document.
+在本教程中，您学习了如何使用 Aspose.PDF for .NET 创建带有标记图像的 PDF 文档。带标签的图像向您的 PDF 文档添加附加的结构化信息。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What is the purpose of creating a PDF document with a tagged image using Aspose.PDF for .NET?
+#### 问：使用 Aspose.PDF for .NET 创建带有标记图像的 PDF 文档的目的是什么？
 
-A: Creating a PDF document with a tagged image using Aspose.PDF for .NET allows you to add tagged images to the document's content. Tagged images provide structured information, such as alt text and titles, enhancing accessibility and organization.
+答：使用 Aspose.PDF for .NET 创建带有标记图像的 PDF 文档允许您将标记图像添加到文档的内容中。标记图像提供结构化信息，例如替代文本和标题，从而增强可访问性和组织性。
 
-#### Q: How does the Aspose.PDF library assist in creating a PDF document with a tagged image?
+#### 问：Aspose.PDF 库如何协助创建带有标记图像的 PDF 文档？
 
-A: Aspose.PDF for .NET is a robust library that provides functionalities for creating, manipulating, and converting PDF documents programmatically. In this tutorial, the library's tagged content structure features are used to add a tagged image to the PDF document.
+答：Aspose.PDF for .NET 是一个强大的库，提供以编程方式创建、操作和转换 PDF 文档的功能。在本教程中，库的标记内容结构功能用于将标记图像添加到 PDF 文档。
 
-#### Q: What are the prerequisites for creating a PDF document with a tagged image using Aspose.PDF for .NET?
+#### 问：使用 Aspose.PDF for .NET 创建带有标记图像的 PDF 文档有哪些先决条件？
 
-A: Before you begin, ensure that you have Visual Studio installed with the .NET framework and have the Aspose.PDF library for .NET referenced in your project.
+答：开始之前，请确保您已安装了带有 .NET 框架的 Visual Studio，并在项目中引用了适用于 .NET 的 Aspose.PDF 库。
 
-#### Q: How does the provided C# code create a PDF document with a tagged image?
+#### 问：提供的 C# 代码如何创建带有标记图像的 PDF 文档？
 
-A: The code demonstrates how to create a PDF document, define a tagged image element, and add it to the document's content. The tagged image includes alt text, a title, and a tag using methods provided by Aspose.PDF.
+答：该代码演示了如何创建 PDF 文档、定义标记图像元素并将其添加到文档内容中。带标签的图像包括替代文本、标题和使用 Aspose.PDF 提供的方法的标签。
 
-#### Q: Can I use different image formats for the tagged image?
+#### 问：我可以为标记的图像使用不同的图像格式吗？
 
-A: Yes, you can use different image formats for the tagged image, such as JPEG, PNG, GIF, etc. The code example provided in the tutorial uses a JPEG image, but you can replace it with the path to an image file in your preferred format.
+答：是的，您可以为标记的图像使用不同的图像格式，例如 JPEG、PNG、GIF 等。教程中提供的代码示例使用 JPEG 图像，但您可以将其替换为中的图像文件的路径您的首选格式。
 
-#### Q: How is the alternative text (alt text) used in tagged images?
+#### 问：如何在标记图像中使用替代文本（alt text）？
 
-A: Alt text provides a textual description of the image, which is read aloud by screen readers for visually impaired users. In the provided code, the alt text is set using the `AlternativeText` property of the `IllustrationElement` representing the tagged image.
+答：替代文本提供图像的文字描述，由屏幕阅读器为视障用户大声朗读。在提供的代码中，替代文本是使用`AlternativeText`的财产`IllustrationElement`代表标记图像。
 
-#### Q: How does the `SetTitle` method contribute to the PDF document's tagged image?
+#### 问：如何`SetTitle` method contribute to the PDF document's tagged image?
 
-A: The `SetTitle` method sets the title of the PDF document's tagged content, providing additional context for the tagged image. This title can help identify the purpose or subject of the tagged content.
+答： 的`SetTitle`方法设置 PDF 文档标记内容的标题，为标记图像提供附加上下文。此标题可以帮助识别标记内容的目的或主题。
 
-#### Q: Can I customize the tag and title of the tagged image?
+#### 问：我可以自定义标记图像的标签和标题吗？
 
-A: Yes, you can customize the tag and title of the tagged image using the `SetTag` and `Title` methods of the `IllustrationElement`. The code example demonstrates how to set the tag to "Fig" and the title to "Picture 1."
+答：是的，您可以使用以下命令自定义标记图像的标签和标题`SetTag`和`Title`的方法`IllustrationElement`。该代码示例演示了如何将标签设置为“Fig”并将标题设置为“Picture 1”。
 
-#### Q: How can I ensure that the tagged image is accessible and compliant with accessibility standards?
+#### 问：如何确保标记的图像可访问并符合可访问性标准？
 
-A: By using the tagged content structure features of Aspose.PDF and providing alt text and other relevant information, you contribute to the accessibility of the tagged image. Ensuring compliance with accessibility standards involves following best practices for alt text and document structure.
+答：通过使用 Aspose.PDF 的标记内容结构功能并提供替代文本和其他相关信息，您可以为标记图像的可访问性做出贡献。确保符合辅助功能标准涉及遵循替代文本和文档结构的最佳实践。
 
-#### Q: Is it possible to add multiple tagged images to the same PDF document using similar techniques?
+#### 问：是否可以使用类似的技术将多个标记图像添加到同一个 PDF 文档中？
 
-A: Yes, you can add multiple tagged images to the same PDF document using similar techniques. You would create additional `IllustrationElement` instances for each tagged image and customize their properties as needed.
+答：是的，您可以使用类似的技术将多个标记图像添加到同一个 PDF 文档中。您将创建额外的`IllustrationElement`每个标记图像的实例并根据需要自定义其属性。

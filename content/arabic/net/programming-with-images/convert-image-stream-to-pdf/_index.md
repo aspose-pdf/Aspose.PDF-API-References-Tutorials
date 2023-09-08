@@ -1,161 +1,161 @@
 ---
-title: Convert Image Stream to PDF File
-linktitle: Convert Image Stream to PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily convert an image stream to PDF file with Aspose.PDF for .NET.
+title: تحويل دفق الصور إلى ملف PDF
+linktitle: تحويل دفق الصور إلى ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: قم بتحويل تدفق الصور بسهولة إلى ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 70
 url: /ar/net/programming-with-images/convert-image-stream-to-pdf/
 ---
-This guide will take you step by step how to convert an image stream to PDF file using Aspose.PDF for .NET. Make sure you have already set up your environment and follow the steps below:
+سيأخذك هذا الدليل خطوة بخطوة حول كيفية تحويل دفق الصور إلى ملف PDF باستخدام Aspose.PDF لـ .NET. تأكد من أنك قمت بالفعل بإعداد بيئتك واتبع الخطوات التالية:
 
-## Step 1: Define the document directory
+## الخطوة 1: تحديد دليل المستند
 
-Before you start, make sure you set the correct directory for the documents. Replace `"YOUR DOCUMENT DIRECTORY"` in the code with the path to the directory where your image is located.
+ قبل البدء، تأكد من تعيين الدليل الصحيح للمستندات. يستبدل`"YOUR DOCUMENT DIRECTORY"` في الكود مع المسار إلى الدليل الذي توجد به صورتك.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Instantiate a Document object
+## الخطوة 2: إنشاء كائن مستند
 
-In this step, we will instantiate a `Document` object using the empty constructor of the `Aspose.Pdf.Document` class.
+ في هذه الخطوة، سوف نقوم بإنشاء مثيل`Document` كائن باستخدام المُنشئ الفارغ لـ`Aspose.Pdf.Document` فصل.
 
 ```csharp
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 ```
 
-## Step 3: Add a page to the PDF document
+## الخطوة 3: إضافة صفحة إلى مستند PDF
 
-Add a page to the PDF document using the `Add` method of the `Pages` object of `pdf1`.
+ أضف صفحة إلى مستند PDF باستخدام`Add` طريقة`Pages` موضوع`pdf1`.
 
 ```csharp
 Aspose.Pdf.Page sec = pdf1.Pages.Add();
 ```
 
-## Step 4: Read the image stream
+## الخطوة 4: قراءة دفق الصور
 
-In this step we will create a `FileStream` object to read the image file from the stream.
+ في هذه الخطوة سوف نقوم بإنشاء`FileStream` كائن لقراءة ملف الصورة من الدفق.
 
 ```csharp
 FileStream fs = File.OpenRead(dataDir + "aspose.jpg");
 ```
 
-## Step 5: Read the image into a byte array
+## الخطوة 5: قراءة الصورة في مصفوفة بايت
 
-Read the image from the stream and store it in a byte array using the `Read` method of the `fs` object.
+ اقرأ الصورة من الدفق وقم بتخزينها في مصفوفة بايت باستخدام الملف`Read` طريقة`fs` هدف.
 
 ```csharp
 byte[] data = new byte[fs.Length];
 fs.Read(data, 0, data.Length);
 ```
 
-## Step 6: Create a MemoryStream object from the byte array
+## الخطوة 6: إنشاء كائن MemoryStream من صفيف البايت
 
-Create a `MemoryStream` object from the byte array containing the image.
+ إنشاء`MemoryStream` كائن من مجموعة البايت التي تحتوي على الصورة.
 
 ```csharp
 MemoryStream ms = new MemoryStream(data);
 ```
 
-## Step 7: Create an Image Object
+## الخطوة 7: إنشاء كائن صورة
 
-In this step, we will create an `Image` object using the `Aspose.Pdf.Image` class. Specify the stream of the image using the `ImageStream` property and pass the `ms` object we created earlier.
+ في هذه الخطوة سوف نقوم بإنشاء`Image` كائن باستخدام`Aspose.Pdf.Image` فصل. حدد دفق الصورة باستخدام`ImageStream` الممتلكات وتمرير`ms` الكائن الذي أنشأناه سابقًا.
 
 ```csharp
 Aspose.Pdf.Image imageht = new Aspose.Pdf.Image();
 imageht. ImageStream = ms;
 ```
 
-## Step 8: Add the Image object to the Paragraphs collection
+## الخطوة 8: أضف كائن الصورة إلى مجموعة الفقرات
 
-Add the `imageht` object to the `Paragraphs` collection of the `sec` section.
+ أضف ال`imageht` يعترض على`Paragraphs` جمع من`sec` قسم.
 
 ```csharp
 sec.Paragraphs.Add(imageht);
 ```
 
-## Step 9: Save the PDF document
+## الخطوة 9: احفظ مستند PDF
 
-Save the PDF document using the `Save` method of the `pdf1` object. Specify the output path of the PDF file.
+ احفظ مستند PDF باستخدام`Save` طريقة`pdf1` هدف. حدد مسار الإخراج لملف PDF.
 
 ```csharp
 pdf1.Save(dataDir + "ConvertMemoryStreamImageToPdf_out.pdf");
 ```
 
-## Step 10: Close the MemoryStream object
+## الخطوة 10: أغلق كائن MemoryStream
 
-Close the `ms` object using the `Close` method to release the resources.
+ أقفل ال`ms` كائن باستخدام`Close` طريقة تحرير الموارد.
 
 ```csharp
 ms. Close();
 ```
 
-### Sample source code for Convert Image Stream to PDF using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لتحويل Image Stream إلى PDF باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Instantiate Document instance by calling its empty constructor
+//إنشاء مثيل للمستند عن طريق استدعاء منشئه الفارغ
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
-// Add a Page into the pdf document
+// أضف صفحة إلى مستند pdf
 Aspose.Pdf.Page sec = pdf1.Pages.Add();
-// Create a FileStream object to read the imag file
+// قم بإنشاء كائن FileStream لقراءة ملف الصورة
 FileStream fs = File.OpenRead(dataDir + "aspose.jpg");
-// Read the image into Byte array
+// قراءة الصورة في مجموعة بايت
 byte[] data = new byte[fs.Length];
 fs.Read(data, 0, data.Length);
-// Create a MemoryStream object from image Byte array
+// قم بإنشاء كائن MemoryStream من صفيف بايت الصورة
 MemoryStream ms = new MemoryStream(data);
-// Create an image object
+// إنشاء كائن الصورة
 Aspose.Pdf.Image imageht = new Aspose.Pdf.Image();
-// Specify the image source as MemoryStream
+// حدد مصدر الصورة كـ MemoryStream
 imageht.ImageStream = ms;
-// Add image object into the Paragraphs collection of the section
+// أضف كائن صورة إلى مجموعة الفقرات الخاصة بالقسم
 sec.Paragraphs.Add(imageht);
-// Save the Pdf
+// احفظ ملف PDF
 pdf1.Save(dataDir + "ConvertMemoryStreamImageToPdf_out.pdf");
-// Close the MemoryStream Object
+// أغلق كائن MemoryStream
 ms.Close();
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You have successfully converted an image stream to a PDF file using Aspose.PDF for .NET. The generated PDF file is saved in the specified directory. You can now use this PDF file in your projects or applications.
+تهنئة ! لقد نجحت في تحويل تدفق الصور إلى ملف PDF باستخدام Aspose.PDF لـ .NET. يتم حفظ ملف PDF الذي تم إنشاؤه في الدليل المحدد. يمكنك الآن استخدام ملف PDF هذا في مشاريعك أو تطبيقاتك.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of converting an image stream to a PDF file using Aspose.PDF for .NET?
+#### س: ما هو الغرض من تحويل دفق الصور إلى ملف PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: Converting an image stream to a PDF file can be useful for incorporating images into PDF documents, creating image-based PDFs, or embedding images within textual content.
+ج: يمكن أن يكون تحويل دفق الصور إلى ملف PDF مفيدًا لدمج الصور في مستندات PDF، أو إنشاء ملفات PDF قائمة على الصور، أو تضمين الصور في محتوى نصي.
 
-#### Q: How does Aspose.PDF for .NET assist in the conversion of an image stream to a PDF file?
+#### س: كيف يساعد Aspose.PDF for .NET في تحويل تدفق الصور إلى ملف PDF؟
 
-A: Aspose.PDF for .NET provides a convenient and step-by-step process to create a PDF document, read an image stream, and embed the image into the PDF file.
+ج: يوفر Aspose.PDF for .NET عملية مريحة وخطوة بخطوة لإنشاء مستند PDF وقراءة تدفق الصور وتضمين الصورة في ملف PDF.
 
-#### Q: Why is defining the document directory important in the image stream to PDF conversion process?
+#### س: ما سبب أهمية تحديد دليل المستند في عملية تحويل دفق الصور إلى PDF؟
 
-A: Specifying the document directory ensures that the image stream and the resulting PDF file are correctly located in the desired output path.
+ج: يضمن تحديد دليل المستند أن يكون تدفق الصورة وملف PDF الناتج موجودين بشكل صحيح في مسار الإخراج المطلوب.
 
-#### Q: How do I create a PDF document using Aspose.PDF for .NET in the image stream to PDF conversion process?
+#### س: كيف يمكنني إنشاء مستند PDF باستخدام Aspose.PDF لـ .NET في عملية تحويل دفق الصور إلى PDF؟
 
-A: Instantiate a `Document` object using the `Aspose.Pdf.Document` class's empty constructor to create the PDF document.
+ ج: إنشاء مثيل أ`Document` كائن باستخدام`Aspose.Pdf.Document` منشئ الفصل الفارغ لإنشاء مستند PDF.
 
-#### Q: What is the role of the `Pages` object in the image stream to PDF conversion process?
+####  س: ما هو دور`Pages` object in the image stream to PDF conversion process?
 
-A: The `Pages` object allows you to add pages to the PDF document and manage its content.
+ ج: ال`Pages` يتيح لك الكائن إضافة صفحات إلى مستند PDF وإدارة محتواه.
 
-#### Q: How does the image stream read and processed in the image stream to PDF conversion process?
+#### س: كيف تتم قراءة دفق الصور ومعالجته في عملية تحويل دفق الصور إلى PDF؟
 
-A: The image stream is read using a `FileStream` object, and its contents are stored in a byte array. The byte array is then used to create a `MemoryStream` object, which is subsequently used to create an `Image` object.
+ ج: تتم قراءة دفق الصور باستخدام ملف`FileStream` الكائن، ويتم تخزين محتوياته في مصفوفة بايت. يتم بعد ذلك استخدام مصفوفة البايت لإنشاء ملف`MemoryStream` كائن، والذي يتم استخدامه لاحقًا لإنشاء`Image` هدف.
 
-#### Q: How is the image embedded in the PDF document during the conversion process?
+#### س: كيف يتم تضمين الصورة في مستند PDF أثناء عملية التحويل؟
 
-A: An `Image` object is created using the `Aspose.Pdf.Image` class, and the image stream is assigned to the `ImageStream` property. The `Image` object is then added to the `Paragraphs` collection of the PDF document.
+ ج: ان`Image` يتم إنشاء الكائن باستخدام`Aspose.Pdf.Image` فئة، ويتم تعيين دفق الصورة إلى`ImageStream` ملكية. ال`Image` ثم يتم إضافة الكائن إلى`Paragraphs` جمع وثيقة PDF.
 
-#### Q: Can I customize the image's position, size, or other attributes in the resulting PDF file?
+#### س: هل يمكنني تخصيص موضع الصورة أو حجمها أو سماتها الأخرى في ملف PDF الناتج؟
 
-A: Yes, you can modify the image's position, size, and other attributes by adjusting the properties of the `Image` object before adding it to the `Paragraphs` collection.
+ ج: نعم، يمكنك تعديل موضع الصورة وحجمها وسماتها الأخرى عن طريق ضبط خصائص الصورة`Image` الكائن قبل إضافته إلى`Paragraphs` مجموعة.
 
-#### Q: What is the final step in the image stream to PDF conversion process?
+#### س: ما هي الخطوة الأخيرة في عملية تحويل دفق الصور إلى PDF؟
 
-A: The PDF document is saved using the `Save` method of the `Document` object, and the `MemoryStream` object is closed using the `Close` method to release resources.
+ ج: يتم حفظ مستند PDF باستخدام الملف`Save` طريقة`Document` الكائن، و`MemoryStream` تم إغلاق الكائن باستخدام`Close` طريقة تحرير الموارد.

@@ -1,59 +1,59 @@
 ---
-title: Page Number Stamps In PDF File
-linktitle: Page Number Stamps In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add page number stamps in PDF file with Aspose.PDF for .NET.
+title: PDF Dosyasındaki Sayfa Numarası Damgaları
+linktitle: PDF Dosyasındaki Sayfa Numarası Damgaları
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile PDF dosyasına sayfa numarası damgalarının nasıl ekleneceğini öğrenin.
 type: docs
 weight: 160
 url: /tr/net/programming-with-stamps-and-watermarks/page-number-stamps/
 ---
-In this tutorial, we will guide you step by step on how to add page number stamps in PDF file using Aspose.PDF for .NET. We'll use the provided C# source code to open an existing PDF document, create a page number stamp, set its properties, and add it to a specific page in the PDF file.
+Bu eğitimde, Aspose.PDF for .NET kullanarak PDF dosyasına sayfa numarası damgalarının nasıl ekleneceği konusunda size adım adım rehberlik edeceğiz. Mevcut bir PDF belgesini açmak, sayfa numarası damgası oluşturmak, özelliklerini ayarlamak ve bunu PDF dosyasındaki belirli bir sayfaya eklemek için sağlanan C# kaynak kodunu kullanacağız.
 
-## Step 1: Setting up the environment
+## 1. Adım: Ortamı ayarlama
 
-Before you begin, make sure you have the following:
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Kurulu bir .NET geliştirme ortamı.
+- .NET için Aspose.PDF kütüphanesini indirip projenizde referans olarak kullanabilirsiniz.
 
-## Step 2: Loading the existing PDF document
+## Adım 2: Mevcut PDF belgesini yükleme
 
-The first step is to load the existing PDF document into your project. Here's how:
+İlk adım mevcut PDF belgesini projenize yüklemektir. İşte nasıl:
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the existing PDF document
+// Mevcut PDF belgesini aç
 Document pdfDocument = new Document(dataDir + "PageNumberStamp.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+"BELGELERİNİZ DİZİNİ"ni, PDF belgenizin bulunduğu dizine giden gerçek yolla değiştirdiğinizden emin olun.
 
-## Step 3: Creating and Configuring the Page Numbering Stamp
+## Adım 3: Sayfa Numaralandırma Damgasını Oluşturma ve Yapılandırma
 
-Now that the PDF document is loaded, we can create a page numbering buffer and configure it according to our needs. Here's how:
+Artık PDF belgesi yüklendiğine göre bir sayfa numaralandırma arabelleği oluşturabilir ve bunu ihtiyaçlarımıza göre yapılandırabiliriz. İşte nasıl:
 
 ```csharp
-// Create a page number buffer
+// Sayfa numarası arabelleği oluşturma
 PageNumberStamp pageNumberStamp = new PageNumberStamp();
 
-// Define if the buffer is in the background or not
+// Tamponun arka planda olup olmadığını tanımlayın
 pageNumberStamp.Background = false;
 
-// Format of the page numbering buffer
+// Sayfa numaralandırma arabelleğinin formatı
 pageNumberStamp.Format = "Page # of " + pdfDocument.Pages.Count;
 
-// Bottom margin of page numbering buffer
+// Sayfa numaralandırma arabelleğinin alt kenar boşluğu
 pageNumberStamp.BottomMargin = 10;
 
-// Horizontal alignment of the page numbering buffer
+// Sayfa numaralandırma arabelleğinin yatay hizalanması
 pageNumberStamp.HorizontalAlignment = HorizontalAlignment.Center;
 
-// Start number of page numbering
+// Sayfa numaralandırmanın başlangıç sayısı
 pageNumberStamp.StartingNumber = 1;
 
-// Set page number buffer text properties
+// Sayfa numarası arabellek metni özelliklerini ayarlama
 pageNumberStamp.TextState.Font = FontRepository.FindFont("Arial");
 pageNumberStamp.TextState.FontSize = 14.0F;
 pageNumberStamp.TextState.FontStyle = FontStyles.Bold;
@@ -61,108 +61,108 @@ pageNumberStamp.TextState.FontStyle = FontStyles.Italic;
 pageNumberStamp.TextState.ForegroundColor = Color.Aqua;
 ```
 
-The above code creates a page number stamp with properties like page number format, bottom margin, horizontal alignment, starting number and text properties.
+Yukarıdaki kod, sayfa numarası formatı, alt kenar boşluğu, yatay hizalama, başlangıç numarası ve metin özellikleri gibi özelliklere sahip bir sayfa numarası damgası oluşturur.
 
-## Step 4: Adding the page number stamp to a specific page
+## 4. Adım: Sayfa numarası damgasını belirli bir sayfaya ekleme
 
-Once the page number stamp is configured, we can add it to a specific page of the PDF document. Here's how:
+Sayfa numarası damgası yapılandırıldıktan sonra bunu PDF belgesinin belirli bir sayfasına ekleyebiliriz. İşte nasıl:
 
 ```csharp
-// Add the page number buffer to a specific page
+// Sayfa numarası arabelleğini belirli bir sayfaya ekleme
 pdfDocument.Pages[1].AddStamp(pageNumberStamp);
 ```
 
-The above code adds the page number stamp to the first page of the PDF document. You can change the page number as needed.
+Yukarıdaki kod, sayfa numarası damgasını PDF belgesinin ilk sayfasına ekler. Sayfa numarasını gerektiği gibi değiştirebilirsiniz.
 
-## Step 5: Saving the modified PDF document
+## Adım 5: Değiştirilen PDF belgesini kaydetme
 
-Once the page number stamp is added to the PDF document, we can save the modified PDF document. Here's how:
+Sayfa numarası damgası PDF belgesine eklendikten sonra değiştirilen PDF belgesini kaydedebiliriz. İşte nasıl:
 
 ```csharp
-// Save the modified PDF document
+// Değiştirilen PDF belgesini kaydedin
 pdfDocument.Save(dataDir + "PageNumberStamp_out.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where you want to save the edited PDF document.
+"BELGELERİNİZ DİZİNİ"ni, düzenlenen PDF belgesini kaydetmek istediğiniz dizinin gerçek yolu ile değiştirdiğinizden emin olun.
 
-### Sample source code for Page Number Stamps using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanan Sayfa Numarası Damgaları için örnek kaynak kodu 
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir+ "PageNumberStamp.pdf");
 
-// Create page number stamp
+// Sayfa numarası damgası oluştur
 PageNumberStamp pageNumberStamp = new PageNumberStamp();
 
-// Whether the stamp is background
+// Damganın arka planda olup olmadığı
 pageNumberStamp.Background = false;
 pageNumberStamp.Format = "Page # of " + pdfDocument.Pages.Count;
 pageNumberStamp.BottomMargin = 10;
 pageNumberStamp.HorizontalAlignment = HorizontalAlignment.Center;
 pageNumberStamp.StartingNumber = 1;
 
-// Set text properties
+// Metin özelliklerini ayarlama
 pageNumberStamp.TextState.Font = FontRepository.FindFont("Arial");
 pageNumberStamp.TextState.FontSize = 14.0F;
 pageNumberStamp.TextState.FontStyle = FontStyles.Bold;
 pageNumberStamp.TextState.FontStyle = FontStyles.Italic;
 pageNumberStamp.TextState.ForegroundColor = Color.Aqua;
 
-// Add stamp to particular page
+// Belirli bir sayfaya damga ekle
 pdfDocument.Pages[1].AddStamp(pageNumberStamp);
 dataDir = dataDir + "PageNumberStamp_out.pdf";
 
-// Save output document
+// Çıktı belgesini kaydet
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nPage number stamp added successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulation ! You have learned how to add page number stamps to a PDF document using Aspose.PDF for .NET. You can now personalize your PDF documents by adding clear and informative page numbers.
+Tebrikler! Aspose.PDF for .NET kullanarak bir PDF belgesine sayfa numarası damgalarının nasıl ekleneceğini öğrendiniz. Artık anlaşılır ve bilgilendirici sayfa numaraları ekleyerek PDF belgelerinizi kişiselleştirebilirsiniz.
 
-### FAQ's for page number stamps in PDF file
+### PDF dosyasındaki sayfa numarası damgaları için SSS
 
-#### Q: What is a Page Number Stamp, and how is it used to add page numbers to a PDF file?
+#### S: Sayfa Numarası Damgası nedir ve bir PDF dosyasına sayfa numaraları eklemek için nasıl kullanılır?
 
-A: A Page Number Stamp is a feature in Aspose.PDF that allows you to add dynamic page numbers to specific pages of a PDF document. In this tutorial, it's achieved by creating a PageNumberStamp object, configuring its properties, and adding it to a designated page.
+C: Sayfa Numarası Damgası, Aspose.PDF'de bir PDF belgesinin belirli sayfalarına dinamik sayfa numaraları eklemenizi sağlayan bir özelliktir. Bu öğreticide bu, bir PageNumberStamp nesnesi oluşturularak, özelliklerinin yapılandırılmasıyla ve belirlenen sayfaya eklenmesiyle gerçekleştirilir.
 
-#### Q: How does the provided C# source code accomplish adding page number stamps to a PDF file?
+#### S: Sağlanan C# kaynak kodu, bir PDF dosyasına sayfa numarası damgaları eklemeyi nasıl başarır?
 
-A: The code demonstrates how to load an existing PDF document, create a PageNumberStamp, set various properties (such as format, font, alignment, etc.), and then add the stamp to a specific page. The stamp automatically calculates the total page count and inserts the correct page numbers.
+C: Kod, mevcut bir PDF belgesinin nasıl yükleneceğini, PageNumberStamp'ın nasıl oluşturulacağını, çeşitli özelliklerin (biçim, yazı tipi, hizalama vb. gibi) nasıl ayarlanacağını ve ardından damganın belirli bir sayfaya nasıl ekleneceğini gösterir. Damga, toplam sayfa sayısını otomatik olarak hesaplar ve doğru sayfa numaralarını ekler.
 
-#### Q: Can I customize the appearance of the page number, such as font style, color, and size?
+#### S: Sayfa numarasının yazı tipi stili, rengi ve boyutu gibi görünümünü özelleştirebilir miyim?
 
-A: Absolutely, you can customize the appearance of the page number stamp by adjusting properties like font, font size, font style (bold, italic, etc.), and text color.
+C: Kesinlikle, yazı tipi, yazı tipi boyutu, yazı tipi stili (kalın, italik vb.) ve metin rengi gibi özellikleri ayarlayarak sayfa numarası damgasının görünümünü özelleştirebilirsiniz.
 
-#### Q: Is it possible to add page number stamps to multiple pages within a PDF document?
+#### S: Bir PDF belgesindeki birden fazla sayfaya sayfa numarası damgaları eklemek mümkün müdür?
 
-A: Yes, you can add page number stamps to multiple pages by creating multiple PageNumberStamp objects and adding each one to the desired pages.
+C: Evet, birden çok PageNumberStamp nesnesi oluşturup her birini istediğiniz sayfalara ekleyerek birden çok sayfaya sayfa numarası damgaları ekleyebilirsiniz.
 
-#### Q: Can I choose whether the page number stamp appears as part of the page's content or as a background element?
+#### S: Sayfa numarası damgasının sayfa içeriğinin bir parçası olarak mı yoksa bir arka plan öğesi olarak mı görüneceğini seçebilir miyim?
 
-A: Yes, you can control whether the page number stamp appears as part of the page's content or as a background element by setting the `Background` property of the PageNumberStamp.
+ C: Evet, sayfa numarası damgasının sayfa içeriğinin bir parçası olarak mı yoksa arka plan öğesi olarak mı görüneceğini ayarlayarak kontrol edebilirsiniz.`Background` PageNumberStamp'ın özelliği.
 
-#### Q: How do I specify the format of the page number, including the total page count?
+#### S: Toplam sayfa sayısı da dahil olmak üzere sayfa numarasının biçimini nasıl belirleyebilirim?
 
-A: The code uses the `Format` property of the PageNumberStamp to specify the format of the page number. The macro "# of" is used to represent the total page count.
+ C: Kod şunları kullanır:`Format`Sayfa numarasının biçimini belirtmek için PageNumberStamp özelliği. "# of" makrosu toplam sayfa sayısını temsil etmek için kullanılır.
 
-#### Q: What happens if I add the same page number stamp to multiple pages?
+#### S: Aynı sayfa numarası damgasını birden fazla sayfaya eklersem ne olur?
 
-A: Adding the same PageNumberStamp instance to multiple pages will display the correct page numbers for each page. The stamp automatically adjusts the page number and total page count.
+C: Aynı PageNumberStamp örneğini birden fazla sayfaya eklemek, her sayfa için doğru sayfa numaralarını görüntüleyecektir. Damga, sayfa numarasını ve toplam sayfa sayısını otomatik olarak ayarlar.
 
-#### Q: Can I add page number stamps to header or footer sections of a PDF document?
+#### S: Bir PDF belgesinin üstbilgi veya altbilgi bölümlerine sayfa numarası damgaları ekleyebilir miyim?
 
-A: While PageNumberStamps are typically added directly to the page's content, you can use FloatingBox or other techniques to position them in header or footer sections.
+C: PageNumberStamp'lar genellikle doğrudan sayfanın içeriğine eklenirken, bunları üstbilgi veya altbilgi bölümlerine konumlandırmak için FloatingBox'ı veya diğer teknikleri kullanabilirsiniz.
 
-#### Q: How do I specify the position of the page number stamp on the page?
+#### S: Sayfa numarası damgasının sayfadaki konumunu nasıl belirlerim?
 
-A: The `BottomMargin` and `HorizontalAlignment` properties of the PageNumberStamp allow you to control the position of the stamp within the page.
+ C:`BottomMargin` Ve`HorizontalAlignment` PageNumberStamp'ın özellikleri damganın sayfa içindeki konumunu kontrol etmenize olanak tanır.
 
-#### Q: What if I want to start page numbering from a different number rather than 1?
+#### S: Sayfa numaralandırmasını 1 yerine farklı bir numaradan başlatmak istersem ne olur?
 
-A: You can set the `StartingNumber` property of the PageNumberStamp to specify the starting page number.
+ C: Ayarlayabilirsiniz`StartingNumber`Başlangıç sayfa numarasını belirtmek için PageNumberStamp özelliği.

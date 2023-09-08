@@ -1,49 +1,49 @@
 ---
-title: Expand Bookmarks In PDF File
-linktitle: Expand Bookmarks In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily expand bookmarks in PDF file for improved navigation with Aspose.PDF for .NET.
+title: Expandera bokmärken i PDF-fil
+linktitle: Expandera bokmärken i PDF-fil
+second_title: Aspose.PDF för .NET API Referens
+description: Expandera enkelt bokmärken i PDF-fil för förbättrad navigering med Aspose.PDF för .NET.
 type: docs
 weight: 50
 url: /sv/net/programming-with-bookmarks/expand-bookmarks/
 ---
-Expanding bookmarks in PDF file will display all open bookmarks by default. With Aspose.PDF for .NET, you can easily expand bookmarks by following the following source code:
+Om du expanderar bokmärken i PDF-filen visas alla öppna bokmärken som standard. Med Aspose.PDF för .NET kan du enkelt utöka bokmärken genom att följa följande källkod:
 
-## Step 1: Import required libraries
+## Steg 1: Importera nödvändiga bibliotek
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Innan du börjar måste du importera de nödvändiga biblioteken för ditt C#-projekt. Här är det nödvändiga importdirektivet:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## Steg 2: Ange sökväg till dokumentmappen
 
-In this step, you need to specify the path to the folder containing the PDF file whose bookmarks you want to expand. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ I det här steget måste du ange sökvägen till mappen som innehåller PDF-filen vars bokmärken du vill expandera. Byta ut`"YOUR DOCUMENT DIRECTORY"` följande kod med den faktiska sökvägen till din dokumentmapp:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Steg 3: Öppna PDF-dokumentet
 
-Now we will open the PDF document whose bookmarks we want to expand using the following code:
+Nu kommer vi att öppna PDF-dokumentet vars bokmärken vi vill utöka med följande kod:
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 4: Set Page Display Mode
+## Steg 4: Ställ in sidvisningsläge
 
-In this step, we will set the page display mode to show bookmarks by default. We use the `PageMode` property of the `doc` object to set the desired page mode. Here is the corresponding code:
+ det här steget kommer vi att ställa in sidvisningsläget för att visa bokmärken som standard. Vi använder`PageMode` egendom av`doc` objekt för att ställa in önskat sidläge. Här är motsvarande kod:
 
 ```csharp
 doc.PageMode = PageMode.UseOutlines;
 ```
 
-## Step 5: Browse bookmarks and expand them
+## Steg 5: Bläddra bland bokmärken och expandera dem
 
-Now we'll loop through each bookmark item in the document's bookmarks collection and set each item's open state to `true` to expand them by default. Here is the corresponding code:
+ Nu går vi igenom varje bokmärkesobjekt i dokumentets bokmärkessamling och ställer in varje objekts öppet tillstånd till`true` för att utöka dem som standard. Här är motsvarande kod:
 
 ```csharp
 foreach(OutlineItemCollection item in doc.Outlines)
@@ -52,86 +52,86 @@ foreach(OutlineItemCollection item in doc.Outlines)
 }
 ```
 
-## Step 6: Save the updated file
+## Steg 6: Spara den uppdaterade filen
 
-Finally, we save the updated PDF file using the `Save` method of the `doc` object. Here is the corresponding code:
+ Slutligen sparar vi den uppdaterade PDF-filen med hjälp av`Save` metod för`doc` objekt. Här är motsvarande kod:
 
 ```csharp
 dataDir = dataDir + "ExpandBookmarks_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Expand Bookmarks using Aspose.PDF for .NET 
+### Exempel på källkod för Expand Bookmarks med Aspose.PDF för .NET 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Öppna dokumentet
 Document doc = new Document(dataDir + "input.pdf");
-// Set page view mode i.e. show thumbnails, full-screen, show attachment panel
+// Ställ in sidvisningsläge, dvs visa miniatyrer, helskärm, visa bilagapanel
 doc.PageMode = PageMode.UseOutlines;
-// Traverse through each Ouline item in outlines collection of PDF file
+// Gå igenom varje Ouline-objekt i kontursamling av PDF-fil
 foreach (OutlineItemCollection item in doc.Outlines)
 {
-	// Set open status for outline item
+	// Ställ in öppen status för dispositionsobjektet
 	item.Open = true;
 }
 dataDir = dataDir + "ExpandBookmarks_out.pdf";
-// Save output
+// Spara utdata
 doc.Save(dataDir);
 Console.WriteLine("\nBookmarks expanded successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Slutsats
 
-Congratulation ! You now have a step-by-step guide to developing bookmarks with Aspose.PDF for .NET. You can use this code to show all default bookmarks in your PDF documents.
+Grattis! Du har nu en steg-för-steg-guide för att utveckla bokmärken med Aspose.PDF för .NET. Du kan använda den här koden för att visa alla standardbokmärken i dina PDF-dokument.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Se till att kolla in den officiella Aspose.PDF-dokumentationen för mer information om avancerade bokmärkesmanipuleringsfunktioner.
 
-### FAQ's for expand bookmarks in PDF file
+### Vanliga frågor för att expandera bokmärken i PDF-fil
 
-#### Q: What are bookmarks in a PDF file?
+#### F: Vad är bokmärken i en PDF-fil?
 
-A: Bookmarks in a PDF file are navigational aids that allow users to quickly jump to specific sections or pages within the document. They provide a convenient way to access different parts of a document.
+S: Bokmärken i en PDF-fil är navigeringshjälpmedel som gör att användare snabbt kan hoppa till specifika avsnitt eller sidor i dokumentet. De ger ett bekvämt sätt att komma åt olika delar av ett dokument.
 
-#### Q: Why would I want to expand bookmarks in a PDF file?
+#### F: Varför skulle jag vilja expandera bokmärken i en PDF-fil?
 
-A: Expanding bookmarks can improve the user experience by displaying all bookmarks in an expanded state by default. This gives users a clear overview of the document's structure and allows them to easily navigate to different sections.
+S: Att expandera bokmärken kan förbättra användarupplevelsen genom att visa alla bokmärken i utökat tillstånd som standard. Detta ger användarna en tydlig överblick över dokumentets struktur och gör att de enkelt kan navigera till olika avsnitt.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### F: Hur importerar jag de nödvändiga biblioteken för mitt C#-projekt?
 
-A: To import the required library for your C# project, use the following import directive:
+S: För att importera det nödvändiga biblioteket för ditt C#-projekt, använd följande importdirektiv:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This directive allows you to utilize the classes and methods provided by Aspose.PDF for .NET.
+Detta direktiv låter dig använda klasserna och metoderna som tillhandahålls av Aspose.PDF för .NET.
 
-#### Q: How do I specify the path to the documents folder?
+#### F: Hur anger jag sökvägen till dokumentmappen?
 
-A: In the provided source code, replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file that you want to work with. This ensures that the code can locate the target PDF file.
+ S: I den medföljande källkoden, ersätt`"YOUR DOCUMENT DIRECTORY"` med den faktiska sökvägen till mappen som innehåller PDF-filen som du vill arbeta med. Detta säkerställer att koden kan hitta mål-PDF-filen.
 
-#### Q: How do I open a PDF document to expand its bookmarks?
+#### F: Hur öppnar jag ett PDF-dokument för att utöka dess bokmärken?
 
-A: To open a PDF document for expanding bookmarks, use the following code:
+S: För att öppna ett PDF-dokument för att expandera bokmärken, använd följande kod:
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-Replace `"input.pdf"` with the actual file name.
+ Byta ut`"input.pdf"` med det faktiska filnamnet.
 
-#### Q: How do I set the page display mode to show bookmarks by default?
+#### F: Hur ställer jag in sidvisningsläget så att bokmärken visas som standard?
 
-A: To set the page display mode to show bookmarks by default, use the `PageMode` property of the `doc` object:
+S: För att ställa in sidvisningsläget för att visa bokmärken som standard, använd`PageMode` egendom av`doc` objekt:
 
 ```csharp
 doc.PageMode = PageMode.UseOutlines;
 ```
 
-#### Q: How do I expand all bookmarks in the PDF document?
+#### F: Hur utökar jag alla bokmärken i PDF-dokumentet?
 
-A: To expand all bookmarks, loop through each bookmark item in the document's outlines collection and set the `Open` property to `true`:
+ S: För att utöka alla bokmärken, gå igenom varje bokmärkesobjekt i dokumentets kontursamling och ställ in`Open` egendom till`true`:
 
 ```csharp
 foreach (OutlineItemCollection item in doc.Outlines)
@@ -140,19 +140,19 @@ foreach (OutlineItemCollection item in doc.Outlines)
 }
 ```
 
-#### Q: What happens if a bookmark has nested child bookmarks?
+#### F: Vad händer om ett bokmärke har kapslade underordnade bokmärken?
 
-A: If a bookmark has nested child bookmarks, expanding the parent bookmark will also expand its child bookmarks, providing a comprehensive view of the document's structure.
+S: Om ett bokmärke har kapslade underordnade bokmärken, expanderar det överordnade bokmärket också dess underordnade bokmärken, vilket ger en heltäckande bild av dokumentets struktur.
 
-#### Q: How do I save the updated PDF file after expanding bookmarks?
+#### F: Hur sparar jag den uppdaterade PDF-filen efter att ha expanderat bokmärken?
 
-A: To save the updated PDF file after expanding bookmarks, use the following code:
+S: För att spara den uppdaterade PDF-filen efter att ha expanderat bokmärken, använd följande kod:
 
 ```csharp
 dataDir = dataDir + "ExpandBookmarks_out.pdf";
 doc.Save(dataDir);
 ```
 
-#### Q: Can I customize the appearance of expanded bookmarks?
+#### F: Kan jag anpassa utseendet på utökade bokmärken?
 
-A: While this tutorial focuses on expanding bookmarks by default, you can customize the appearance of bookmarks using Aspose.PDF's other features and properties.
+S: Även om den här handledningen fokuserar på att expandera bokmärken som standard, kan du anpassa utseendet på bokmärken med Aspose.PDFs andra funktioner och egenskaper.

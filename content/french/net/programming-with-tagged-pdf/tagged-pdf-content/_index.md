@@ -1,126 +1,126 @@
 ---
-title: Tagged PDF Content
-linktitle: Tagged PDF Content
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to work with tagged content in a PDF document with Aspose.PDF for .NET. A step-by-step guide to using tags.
+title: Contenu PDF balisé
+linktitle: Contenu PDF balisé
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Apprenez à utiliser du contenu balisé dans un document PDF avec Aspose.PDF pour .NET. Un guide étape par étape pour utiliser les balises.
 type: docs
 weight: 200
 url: /fr/net/programming-with-tagged-pdf/tagged-pdf-content/
 ---
-In this detailed tutorial, we will walk you through the provided C# source code step by step for working with marked up content of a PDF document using Aspose.PDF for .NET. Follow the instructions below to understand how to use the tag for PDF content.
+Dans ce didacticiel détaillé, nous vous guiderons étape par étape à travers le code source C# fourni pour travailler avec le contenu balisé d'un document PDF à l'aide d'Aspose.PDF pour .NET. Suivez les instructions ci-dessous pour comprendre comment utiliser la balise pour le contenu PDF.
 
-## Step 1: Setting up the environment
+## Étape 1 : Configuration de l'environnement
 
-Before you begin, make sure you've configured your development environment to use Aspose.PDF for .NET. This includes installing the Aspose.PDF library and configuring your project to reference it.
+Avant de commencer, assurez-vous d'avoir configuré votre environnement de développement pour utiliser Aspose.PDF pour .NET. Cela inclut l'installation de la bibliothèque Aspose.PDF et la configuration de votre projet pour le référencer.
 
-## Step 2: Creating the PDF document
+## Étape 2 : Création du document PDF
 
-In this step, we will create a new PDF document object with Aspose.PDF.
+Dans cette étape, nous allons créer un nouvel objet document PDF avec Aspose.PDF.
 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Create the PDF document
+// Créer le document PDF
 Document document = new Document();
 ```
 
-We have created a new PDF document with Aspose.PDF.
+Nous avons créé un nouveau document PDF avec Aspose.PDF.
 
-## Step 3: Get content to work with the tagged PDF
+## Étape 3 : Faire fonctionner le contenu avec le PDF balisé
 
-In this step, we will get the contents of the PDF document to work with the tagged PDF.
+Dans cette étape, nous ferons fonctionner le contenu du document PDF avec le PDF balisé.
 
 ```csharp
-// Get the content to work with the tagged PDF
+// Faire fonctionner le contenu avec le PDF balisé
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-We got the contents of the PDF document to work with the tagged PDF.
+Nous avons fait fonctionner le contenu du document PDF avec le PDF balisé.
 
-## Step 4: Work with PDF Tagged Content
+## Étape 4 : Travailler avec du contenu PDF balisé
 
-Now we will work with the tagged content of the PDF using the appropriate tags.
+Nous allons maintenant travailler avec le contenu balisé du PDF en utilisant les balises appropriées.
 
 ```csharp
-// Work with the tagged content of the PDF
+// Travailler avec le contenu balisé du PDF
 taggedContent.SetTitle("Simple tagged PDF document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-We have set the title and language of the tagged PDF document.
+Nous avons défini le titre et la langue du document PDF balisé.
 
-## Step 5: Saving the tagged PDF document
+## Étape 5 : Enregistrer le document PDF balisé
 
-Now that we've worked with the tagged content of the PDF document, let's save it as a tagged PDF document.
+Maintenant que nous avons travaillé avec le contenu balisé du document PDF, enregistrons-le en tant que document PDF balisé.
 
 ```csharp
-// Save the tagged PDF document
+// Enregistrez le document PDF balisé
 document.Save(dataDir + "ContentPDFTag.pdf");
 ```
 
-We saved the tagged PDF document in the specified directory.
+Nous avons enregistré le document PDF balisé dans le répertoire spécifié.
 
-### Sample source code for Tagged PDFContent using Aspose.PDF for .NET 
+### Exemple de code source pour Tagged PDFContent utilisant Aspose.PDF pour .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create Pdf Document
+// Créer un document PDF
 Document document = new Document();
 
-// Get Content for work with TaggedPdf
+// Obtenez du contenu pour travailler avec TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Work with Tagged Pdf content
-// Set Title and Language for Documnet
+// Travailler avec du contenu PDF balisé
+// Définir le titre et la langue du document
 taggedContent.SetTitle("Simple Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 
-// Save Tagged Pdf Document
+// Enregistrer le document PDF balisé
 document.Save(dataDir + "TaggedPDFContent.pdf");
 
 ```
 ## Conclusion
 
-In this tutorial, we learned how to work with marked up content in a PDF document using Aspose.PDF for .NET. You can now use Aspose.PDF to create PDF documents with appropriate tagged content.
+Dans ce didacticiel, nous avons appris à utiliser du contenu balisé dans un document PDF à l'aide d'Aspose.PDF pour .NET. Vous pouvez désormais utiliser Aspose.PDF pour créer des documents PDF avec un contenu balisé approprié.
 
-### FAQ's
+### FAQ
 
-#### Q: What is the main focus of this tutorial on working with tagged PDF content using Aspose.PDF for .NET?
+#### Q : Quel est l'objectif principal de ce didacticiel sur l'utilisation de contenu PDF balisé à l'aide d'Aspose.PDF pour .NET ?
 
-A: This tutorial is primarily focused on guiding you through the process of working with marked up content within a PDF document using Aspose.PDF for .NET. The tutorial provides step-by-step instructions and C# source code examples to help you understand how to use tags to define and manipulate the content of a PDF document.
+R : Ce didacticiel vise principalement à vous guider tout au long du processus de travail avec du contenu balisé dans un document PDF à l'aide d'Aspose.PDF pour .NET. Le didacticiel fournit des instructions étape par étape et des exemples de code source C# pour vous aider à comprendre comment utiliser les balises pour définir et manipuler le contenu d'un document PDF.
 
-#### Q: What are the prerequisites for following this tutorial on tagged PDF content manipulation with Aspose.PDF for .NET?
+#### Q : Quelles sont les conditions préalables pour suivre ce didacticiel sur la manipulation de contenu PDF balisé avec Aspose.PDF pour .NET ?
 
-A: Before you begin, ensure that you have set up your development environment to use Aspose.PDF for .NET. This involves installing the Aspose.PDF library and configuring your project to reference it.
+: Avant de commencer, assurez-vous d'avoir configuré votre environnement de développement pour utiliser Aspose.PDF pour .NET. Cela implique d'installer la bibliothèque Aspose.PDF et de configurer votre projet pour le référencer.
 
-#### Q: How can I create a new PDF document and work with its tagged content using Aspose.PDF for .NET?
+#### Q : Comment puis-je créer un nouveau document PDF et travailler avec son contenu balisé à l'aide d'Aspose.PDF pour .NET ?
 
-A: The tutorial provides C# source code examples that demonstrate how to create a new PDF document and access its tagged content for further manipulation.
+R : Le didacticiel fournit des exemples de code source C# qui montrent comment créer un nouveau document PDF et accéder à son contenu balisé pour une manipulation ultérieure.
 
-#### Q: What is the significance of working with tagged content in a PDF document?
+#### Q : Quelle est l'importance de travailler avec du contenu balisé dans un document PDF ?
 
-A: Working with tagged content in a PDF document involves using structured tags to define the semantic meaning of the document's elements. This is particularly important for accessibility and content extraction, as it enables screen readers and other technologies to interpret the document's content correctly.
+R : Travailler avec du contenu balisé dans un document PDF implique l'utilisation de balises structurées pour définir la signification sémantique des éléments du document. Ceci est particulièrement important pour l'accessibilité et l'extraction de contenu, car cela permet aux lecteurs d'écran et à d'autres technologies d'interpréter correctement le contenu du document.
 
-#### Q: How can I set the title and language for a tagged PDF document using Aspose.PDF for .NET?
+#### Q : Comment puis-je définir le titre et la langue d'un document PDF balisé à l'aide d'Aspose.PDF pour .NET ?
 
-A: The tutorial includes C# source code examples that illustrate how to set the title and language for a tagged PDF document using Aspose.PDF for .NET.
+R : Le didacticiel comprend des exemples de code source C# qui illustrent comment définir le titre et la langue d'un document PDF balisé à l'aide d'Aspose.PDF pour .NET.
 
-#### Q: What is the process of saving a tagged PDF document after working with its tagged content?
+#### Q : Quel est le processus d'enregistrement d'un document PDF balisé après avoir travaillé avec son contenu balisé ?
 
-A: After making modifications to the tagged content of a PDF document, you can use the provided C# source code examples to save the modified document using the `Save()` method.
+ R : Après avoir apporté des modifications au contenu balisé d'un document PDF, vous pouvez utiliser les exemples de code source C# fournis pour enregistrer le document modifié à l'aide de l'option`Save()` méthode.
 
-#### Q: How does the sample source code provided in the tutorial help in working with tagged PDF content?
+#### Q : Comment l'exemple de code source fourni dans le didacticiel aide-t-il à travailler avec du contenu PDF balisé ?
 
-A: The sample source code serves as a practical reference for implementing tagged content manipulation using Aspose.PDF for .NET. You can use this code as a starting point and modify it according to your specific requirements.
+R : L'exemple de code source sert de référence pratique pour implémenter la manipulation de contenu balisé à l'aide d'Aspose.PDF pour .NET. Vous pouvez utiliser ce code comme point de départ et le modifier en fonction de vos besoins spécifiques.
 
-#### Q: Can I apply similar techniques to other types of elements in a PDF document, not just text and language settings?
+#### Q : Puis-je appliquer des techniques similaires à d’autres types d’éléments dans un document PDF, pas seulement aux paramètres de texte et de langue ?
 
-A: Yes, the techniques demonstrated in this tutorial can be adapted to work with various types of elements within a PDF document. You can use similar principles to manipulate text, images, tables, and more, while utilizing tags to define their roles and attributes.
+: Oui, les techniques démontrées dans ce didacticiel peuvent être adaptées pour travailler avec différents types d'éléments dans un document PDF. Vous pouvez utiliser des principes similaires pour manipuler du texte, des images, des tableaux, etc., tout en utilisant des balises pour définir leurs rôles et attributs.
 
-#### Q: How can I use Aspose.PDF for .NET to further enhance and customize PDF documents beyond tagged content?
+#### Q : Comment puis-je utiliser Aspose.PDF pour .NET pour améliorer et personnaliser davantage les documents PDF au-delà du contenu balisé ?
 
-A: Aspose.PDF for .NET offers a wide range of features for PDF document manipulation, including adding text, images, tables, hyperlinks, annotations, form fields, watermarks, digital signatures, and more. You can explore the official documentation and resources for a comprehensive understanding of the library's capabilities.
+R : Aspose.PDF pour .NET offre un large éventail de fonctionnalités pour la manipulation de documents PDF, notamment l'ajout de texte, d'images, de tableaux, de liens hypertexte, d'annotations, de champs de formulaire, de filigranes, de signatures numériques, etc. Vous pouvez explorer la documentation et les ressources officielles pour une compréhension complète des capacités de la bibliothèque.

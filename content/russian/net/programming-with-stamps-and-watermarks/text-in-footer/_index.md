@@ -1,51 +1,51 @@
 ---
-title: Text In Footer Of PDF File
-linktitle: Text In Footer Of PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn to add text in the footer of PDF file with Aspose.PDF for .NET.
+title: Текст в нижнем колонтитуле PDF-файла
+linktitle: Текст в нижнем колонтитуле PDF-файла
+second_title: Справочник по Aspose.PDF для .NET API
+description: Научитесь добавлять текст в нижний колонтитул PDF-файла с помощью Aspose.PDF для .NET.
 type: docs
 weight: 180
 url: /ru/net/programming-with-stamps-and-watermarks/text-in-footer/
 ---
-In this tutorial, we are going to learn how to add text in the footer of PDF file using Aspose.PDF for .NET. Follow the steps below:
+В этом уроке мы научимся добавлять текст в нижний колонтитул PDF-файла с помощью Aspose.PDF для .NET. Выполните следующие действия:
 
-## Step 1: Project preparation
+## Шаг 1: Подготовка проекта
 
-Make sure you have installed Aspose.PDF for .NET and created a C# project.
+Убедитесь, что вы установили Aspose.PDF для .NET и создали проект C#.
 
-## Step 2: Importing namespaces
+## Шаг 2. Импорт пространств имен
 
-Add the following namespaces to your C# source file:
+Добавьте следующие пространства имен в исходный файл C#:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Opening the document
+## Шаг 3: Открытие документа
 
-Open the existing PDF document using the path provided:
+Откройте существующий PDF-документ, используя указанный путь:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document pdfDocument = new Document(dataDir + "TextinFooter.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to your documents directory.
+Обязательно замените «КАТАЛОГ ВАШИХ ДОКУМЕНТОВ» фактическим путем к каталогу ваших документов.
 
-## Step 4: Create footer text
+## Шаг 4. Создайте текст нижнего колонтитула
 
-Create a new text stamp with the text you want to add in the footer:
+Создайте новый текстовый штамп с текстом, который вы хотите добавить в нижний колонтитул:
 
 ```csharp
 TextStamp textStamp = new TextStamp("footer text");
 ```
 
-You can customize the text by changing its properties like bottom margin, horizontal alignment, and vertical alignment.
+Вы можете настроить текст, изменив его свойства, такие как нижнее поле, горизонтальное и вертикальное выравнивание.
 
-## Step 5: Add footer text to all pages
+## Шаг 5. Добавьте текст нижнего колонтитула на все страницы.
 
-Go through all the pages of the PDF document and add the text stamp in the footer:
+Просмотрите все страницы PDF-документа и добавьте текстовый штамп в нижний колонтитул:
 
 ```csharp
 foreach(Page page in pdfDocument.Pages)
@@ -54,9 +54,9 @@ foreach(Page page in pdfDocument.Pages)
 }
 ```
 
-## Step 6: Saving the PDF Document
+## Шаг 6. Сохранение PDF-документа
 
-Once the footer text has been added on all pages, save the updated PDF document:
+После добавления текста нижнего колонтитула на все страницы сохраните обновленный PDF-документ:
 
 ```csharp
 dataDir = dataDir + "TextinFooter_out.pdf";
@@ -64,72 +64,72 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nText in footer added successfully.\nFile saved at: " + dataDir);
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where you want to save the PDF document.
+Обязательно замените «КАТАЛОГ ВАШИХ ДОКУМЕНТОВ» фактическим путем к каталогу, в котором вы хотите сохранить PDF-документ.
 
-### Sample source code for Textin Footer using Aspose.PDF for .NET 
+### Пример исходного кода для нижнего колонтитула Textin с использованием Aspose.PDF для .NET 
 ```csharp
 
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Открыть документ
 Document pdfDocument = new Document(dataDir+ "TextinFooter.pdf");
 
-// Create footer
+// Создать нижний колонтитул
 TextStamp textStamp = new TextStamp("Footer Text");
 
-// Set properties of the stamp
+// Установить свойства штампа
 textStamp.BottomMargin = 10;
 textStamp.HorizontalAlignment = HorizontalAlignment.Center;
 textStamp.VerticalAlignment = VerticalAlignment.Bottom;
 
-// Add footer on all pages
+// Добавить нижний колонтитул на все страницы
 foreach (Page page in pdfDocument.Pages)
 {
 	page.AddStamp(textStamp);
 }
 dataDir = dataDir + "TextinFooter_out.pdf";
 
-// Save updated PDF file
+// Сохранить обновленный PDF-файл
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nText in footer added successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
+## Заключение
 
-Congratulation ! You have learned how to add text in the footer of a PDF document using Aspose.PDF for .NET. You can now customize your footers by adding additional text to your PDF documents.
+Поздравляем! Вы узнали, как добавить текст в нижний колонтитул PDF-документа с помощью Aspose.PDF для .NET. Теперь вы можете настроить нижние колонтитулы, добавив дополнительный текст в PDF-документы.
 
-### FAQ's for text in footer of PDF file
+### Часто задаваемые вопросы по тексту в нижнем колонтитуле PDF-файла
 
-#### Q: What is the purpose of adding text in the footer of a PDF document?
+#### Вопрос: Какова цель добавления текста в нижний колонтитул PDF-документа?
 
-A: Adding text in the footer of a PDF document allows you to include important information, such as copyright notices, page numbers, document version, or any other text that you want to appear consistently at the bottom of each page.
+О: Добавление текста в нижний колонтитул PDF-документа позволяет вам включить важную информацию, такую как уведомления об авторских правах, номера страниц, версию документа или любой другой текст, который вы хотите последовательно отображать внизу каждой страницы.
 
-#### Q: How does the provided C# source code achieve the addition of text in the footer of a PDF document?
+#### Вопрос: Как предоставленный исходный код C# обеспечивает добавление текста в нижний колонтитул PDF-документа?
 
-A: The code demonstrates the process of opening an existing PDF document, creating a text stamp with the desired footer text, customizing the text properties, adding the text stamp to all pages, and finally saving the updated PDF document with the added footer text.
+О: Код демонстрирует процесс открытия существующего PDF-документа, создания текстовой отметки с нужным текстом нижнего колонтитула, настройки свойств текста, добавления текстовой отметки на все страницы и, наконец, сохранения обновленного PDF-документа с добавленным текстом нижнего колонтитула.
 
-#### Q: Can I modify the appearance of the footer text, such as its font, size, color, and alignment?
+#### Вопрос: Могу ли я изменить внешний вид текста нижнего колонтитула, например его шрифт, размер, цвет и выравнивание?
 
-A: Yes, you can customize the appearance of the footer text by modifying the properties of the `TextStamp` object. The code example includes setting properties like bottom margin, horizontal alignment, and vertical alignment. You can also adjust the font, size, color, and other text-related properties.
+ О: Да, вы можете настроить внешний вид текста нижнего колонтитула, изменив свойства`TextStamp` объект. Пример кода включает настройку таких свойств, как нижнее поле, горизонтальное и вертикальное выравнивание. Вы также можете настроить шрифт, размер, цвет и другие свойства, связанные с текстом.
 
-#### Q: Is it possible to add different text to each page's footer?
+#### Вопрос: Можно ли добавить разный текст в нижний колонтитул каждой страницы?
 
-A: Yes, you can add different text to each page's footer by creating separate `TextStamp` objects with different text content or properties and then adding them to specific pages as needed.
+ О: Да, вы можете добавить разный текст в нижний колонтитул каждой страницы, создав отдельный`TextStamp` объекты с различным текстовым содержимым или свойствами, а затем добавляя их на определенные страницы по мере необходимости.
 
-#### Q: How do I ensure the footer text appears consistently on every page of the PDF document?
+#### Вопрос: Как обеспечить единообразное отображение текста нижнего колонтитула на каждой странице PDF-документа?
 
-A: By using a loop that iterates through all the pages of the PDF document and adding the same text stamp to each page, you ensure that the footer text appears consistently on every page.
+О: Используя цикл, который проходит по всем страницам PDF-документа и добавляя один и тот же текстовый штамп на каждую страницу, вы гарантируете, что текст нижнего колонтитула будет отображаться одинаково на каждой странице.
 
-#### Q: Can I add multiple lines of text or format the footer text with line breaks?
+#### Вопрос: Могу ли я добавить несколько строк текста или отформатировать текст нижнего колонтитула с помощью разрывов строк?
 
-A: Yes, you can add multiple lines of text to the footer by including line breaks in the text string. For example, you can use the escape sequence `\n` to indicate a line break in the text.
+ О: Да, вы можете добавить несколько строк текста в нижний колонтитул, включив разрывы строк в текстовую строку. Например, вы можете использовать escape-последовательность`\n` для обозначения разрыва строки в тексте.
 
-#### Q: What happens if I want to add different content to the header and footer of the same PDF document?
+#### Вопрос: Что произойдет, если я захочу добавить разное содержимое в верхний и нижний колонтитулы одного и того же PDF-документа?
 
-A: To add different content to the header and footer sections, you would follow similar steps for both sections. The code demonstrates adding text to the footer; you can use a similar approach to add text to the header.
+О: Чтобы добавить разное содержимое в разделы верхнего и нижнего колонтитула, вам следует выполнить аналогичные действия для обоих разделов. Код демонстрирует добавление текста в нижний колонтитул; вы можете использовать аналогичный подход для добавления текста в заголовок.
 
-#### Q: Is it possible to add images or other elements alongside the footer text using this approach?
+#### Вопрос: Можно ли с помощью этого подхода добавлять изображения или другие элементы рядом с текстом нижнего колонтитула?
 
-A: While the provided code specifically demonstrates adding text to the footer, you can extend the approach to add other elements like images, lines, shapes, or any other content to the footer section using the Aspose.PDF library.
+О: Хотя предоставленный код специально демонстрирует добавление текста в нижний колонтитул, вы можете расширить этот подход, добавив в раздел нижнего колонтитула другие элементы, такие как изображения, линии, фигуры или любой другой контент, используя библиотеку Aspose.PDF.

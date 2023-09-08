@@ -1,90 +1,90 @@
 ---
-title: Move Form Field
-linktitle: Move Form Field
-second_title: Aspose.PDF for .NET API Reference
-description: Easily move form fields around in your PDF documents with Aspose.PDF for .NET.
+title: Sposta campo modulo
+linktitle: Sposta campo modulo
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Sposta facilmente i campi del modulo nei tuoi documenti PDF con Aspose.PDF per .NET.
 type: docs
 weight: 200
 url: /it/net/programming-with-forms/move-form-field/
 ---
-In this tutorial, we will show you how to move a form field in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+In questo tutorial, ti mostreremo come spostare un campo modulo in un documento PDF utilizzando Aspose.PDF per .NET. Spiegheremo il codice sorgente C# passo dopo passo per guidarti attraverso questo processo.
 
-## Step 1: Preparation
+## Passaggio 1: preparazione
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+Assicurati di aver importato le librerie necessarie e di impostare il percorso della directory dei documenti:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Load the document
+## Passaggio 2: caricare il documento
 
-Load the existing PDF document:
+Carica il documento PDF esistente:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "MoveFormField.pdf");
 ```
 
-## Step 3: Get the form field
+## Passaggio 3: ottieni il campo del modulo
 
-Get the form field you want to move:
+Ottieni il campo modulo che desideri spostare:
 
 ```csharp
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
 ```
 
-## Step 4: Change Field Location
+## Passaggio 4: modifica la posizione del campo
 
-Change the location of the form field by defining a new rectangular area:
+Modificare la posizione del campo modulo definendo una nuova area rettangolare:
 
 ```csharp
 textBoxField.Rect = new Aspose.Pdf.Rectangle(300, 400, 600, 500);
 ```
 
-## Step 5: Save the edited document
+## Passaggio 5: salva il documento modificato
 
-Save the modified PDF document:
+Salvare il documento PDF modificato:
 
 ```csharp
 dataDir = dataDir + "MoveFormField_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Move Form Field using Aspose.PDF for .NET 
+### Codice sorgente di esempio per Sposta campo modulo utilizzando Aspose.PDF per .NET 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Apri documento
 Document pdfDocument = new Document(dataDir + "MoveFormField.pdf");
-// Get a field
+// Prendi un campo
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
-// Modify field location
+// Modifica la posizione del campo
 textBoxField.Rect = new Aspose.Pdf.Rectangle(300, 400, 600, 500);
 dataDir = dataDir + "MoveFormField_out.pdf";
-// Save modified document
+// Salva il documento modificato
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nForm field moved successfully to a new location.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Conclusione
 
-In this tutorial, we learned how to move a form field in a PDF document using Aspose.PDF for .NET. By following these steps, you can easily navigate to a specific field and change its location as needed.
+In questo tutorial, abbiamo imparato come spostare un campo modulo in un documento PDF utilizzando Aspose.PDF per .NET. Seguendo questi passaggi, puoi facilmente accedere a un campo specifico e modificarne la posizione secondo necessità.
 
 
-### FAQ's
+### Domande frequenti
 
-#### Q: Can I move multiple form fields within a single PDF document using Aspose.PDF for .NET?
+#### D: Posso spostare più campi modulo all'interno di un singolo documento PDF utilizzando Aspose.PDF per .NET?
 
-A: Yes, you can move multiple form fields within a single PDF document using Aspose.PDF for .NET. Simply repeat the process for each form field you want to relocate.
+R: Sì, puoi spostare più campi modulo all'interno di un singolo documento PDF utilizzando Aspose.PDF per .NET. Ripeti semplicemente la procedura per ciascun campo del modulo che desideri riposizionare.
 
-#### Q: Will moving a form field affect its associated data or functionality?
+#### D: Lo spostamento di un campo modulo influirà sui dati o sulle funzionalità associati?
 
-A: No, moving a form field does not affect its associated data or functionality. The form field retains all its properties and values after being moved to a new location.
+R: No, lo spostamento di un campo modulo non influisce sui dati o sulle funzionalità associati. Il campo modulo conserva tutte le sue proprietà e valori dopo essere stato spostato in una nuova posizione.
 
-#### Q: How can I determine the exact coordinates for the new location of the form field?
+#### D: Come posso determinare le coordinate esatte per la nuova posizione del campo modulo?
 
-A: You can specify the new location using the `Aspose.Pdf.Rectangle` class, where you define the X and Y coordinates of the top-left corner and the X and Y coordinates of the bottom-right corner of the rectangular area.
+ R: Puoi specificare la nuova posizione utilizzando il file`Aspose.Pdf.Rectangle` classe, in cui definisci le coordinate X e Y dell'angolo in alto a sinistra e le coordinate X e Y dell'angolo in basso a destra dell'area rettangolare.
 
-#### Q: Is Aspose.PDF for .NET compatible with both Windows and Linux environments?
+#### D: Aspose.PDF per .NET è compatibile con ambienti Windows e Linux?
 
-A: Yes, Aspose.PDF for .NET is compatible with both Windows and Linux environments, providing flexibility for developers to work in their preferred operating systems.
+R: Sì, Aspose.PDF per .NET è compatibile sia con gli ambienti Windows che Linux, offrendo agli sviluppatori la flessibilità di lavorare nei loro sistemi operativi preferiti.

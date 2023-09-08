@@ -1,17 +1,17 @@
 ---
-title: Extracting Image
-linktitle: Extracting Image
-second_title: Aspose.PDF for .NET API Reference
-description: Easily extract images from PDF documents with Aspose.PDF for .NET.
+title: Извлечение изображения
+linktitle: Извлечение изображения
+second_title: Справочник по Aspose.PDF для .NET API
+description: Легко извлекайте изображения из PDF-документов с помощью Aspose.PDF для .NET.
 type: docs
 weight: 70
 url: /ru/net/programming-with-security-and-signatures/extracting-image/
 ---
-Extracting images from a PDF document can be useful in many cases. With Aspose.PDF for .NET, you can extract images easily using the following source code:
+Извлечение изображений из PDF-документа может оказаться полезным во многих случаях. С помощью Aspose.PDF для .NET вы можете легко извлекать изображения, используя следующий исходный код:
 
-## Step 1: Import required libraries
+## Шаг 1. Импортируйте необходимые библиотеки.
 
-Before you begin, you need to import the necessary libraries for your C# project. Here are the necessary import directives:
+Прежде чем начать, вам необходимо импортировать необходимые библиотеки для вашего проекта C#. Вот необходимые директивы импорта:
 
 ```csharp
 using Aspose.Pdf;
@@ -19,18 +19,18 @@ using System.Drawing;
 using System.Drawing.Imaging;
 ```
 
-## Step 2: Set path to documents folder
+## Шаг 2. Установите путь к папке с документами.
 
-In this step, you need to specify the path to the folder containing the PDF file from which you want to extract the image. Replace `"YOUR DOCUMENTS DIRECTORY"` in the following code with the actual path to your documents folder:
+ На этом этапе вам необходимо указать путь к папке, содержащей PDF-файл, из которого вы хотите извлечь изображение. Заменять`"YOUR DOCUMENTS DIRECTORY"`в следующем коде с фактическим путем к папке ваших документов:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 string input = dataDir + @"ExtractingImage.pdf";
 ```
 
-## Step 3: Extract image from PDF document
+## Шаг 3. Извлеките изображение из PDF-документа.
 
-Now we will extract the image from the PDF document using the following code:
+Теперь мы извлечем изображение из PDF-документа, используя следующий код:
 
 ```csharp
 using (Document pdfDocument = new Document(input))
@@ -56,11 +56,11 @@ image.Save(outFile, ImageFormat.Jpeg);
 }
 ```
 
-In this example, we loop through each field of the form in the PDF document. If a signature field is found, we extract the associated image and save it to a JPEG file.
+В этом примере мы просматриваем каждое поле формы в PDF-документе. Если поле подписи найдено, мы извлекаем связанное изображение и сохраняем его в файл JPEG.
 
-### Sample source code for Extracting Image using Aspose.PDF for .NET 
+### Пример исходного кода для извлечения изображения с использованием Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 string input = dataDir+ @"ExtractingImage.pdf";
 using (Document pdfDocument = new Document(input))
@@ -86,31 +86,31 @@ using (Document pdfDocument = new Document(input))
 }
 ```
 
-## Conclusion
+## Заключение
 
-Congratulation ! Now you have a step by step guide to extract images from a PDF document using Aspose.PDF for .NET. You can integrate this code into your own projects to extract images and use them as needed.
+Поздравляем! Теперь у вас есть пошаговое руководство по извлечению изображений из PDF-документа с помощью Aspose.PDF для .NET. Вы можете интегрировать этот код в свои собственные проекты, чтобы извлекать изображения и использовать их по мере необходимости.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced image extraction and PDF document manipulation features.
+Обязательно ознакомьтесь с официальной документацией Aspose.PDF для получения дополнительной информации о расширенных функциях извлечения изображений и манипулирования PDF-документами.
 
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: Is Aspose.PDF for .NET suitable for beginners?
+#### Вопрос: Подходит ли Aspose.PDF для .NET новичкам?
 
-A: While some familiarity with C# programming is helpful, our tutorial is designed to be beginner-friendly, guiding you through each step.
+О: Хотя некоторое знакомство с программированием на C# полезно, наше руководство предназначено для новичков и поможет вам пройти каждый шаг.
 
-#### Q: Can I extract multiple images at once?
+#### Вопрос: Могу ли я извлечь несколько изображений одновременно?
 
-A: Absolutely! By implementing loops and adapting the provided code, you can extract multiple images from a single PDF document.
+А: Абсолютно! Используя циклы и адаптируя предоставленный код, вы можете извлекать несколько изображений из одного PDF-документа.
 
-#### Q: Is Aspose.PDF for .NET the only solution for image extraction?
+#### Вопрос: Является ли Aspose.PDF для .NET единственным решением для извлечения изображений?
 
-A: While there are other tools available, Aspose.PDF for .NET is renowned for its efficiency and comprehensive features.
+О: Несмотря на то, что существуют и другие инструменты, Aspose.PDF для .NET известен своей эффективностью и комплексными функциями.
 
-#### Q: Can I use the extracted images for commercial purposes?
+#### Вопрос: Могу ли я использовать извлеченные изображения в коммерческих целях?
 
-A: Yes, once extracted, the images are yours to use as needed, including for commercial projects.
+О: Да, после извлечения изображения вы можете использовать их по мере необходимости, в том числе для коммерческих проектов.
 
-#### Q: Where can I find more resources on PDF manipulation with Aspose.PDF?
+#### Вопрос: Где я могу найти дополнительные ресурсы по работе с PDF-файлами с помощью Aspose.PDF?
 
-A: Visit our official documentation for a wealth of resources and insights on advanced PDF manipulation with Aspose.PDF for .NET.
+О: Посетите нашу официальную документацию, где вы найдете множество ресурсов и информацию о расширенных манипуляциях с PDF-файлами с помощью Aspose.PDF для .NET.

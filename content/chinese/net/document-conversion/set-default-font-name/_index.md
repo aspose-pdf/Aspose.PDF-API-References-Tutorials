@@ -1,38 +1,38 @@
 ---
-title: Set Default Font Name
-linktitle: Set Default Font Name
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to set default font name in PDF file using Aspose.PDF for .NET.
+title: 设置默认字体名称
+linktitle: 设置默认字体名称
+second_title: Aspose.PDF for .NET API 参考
+description: 使用 Aspose.PDF for .NET 在 PDF 文件中设置默认字体名称的分步指南。
 type: docs
 weight: 270
 url: /zh/net/document-conversion/set-default-font-name/
 ---
-In this tutorial, we will show you how to set the default font name in a PDF file using Aspose.PDF for .NET. Sometimes when you extract images from a PDF file, you may encounter missing font issues. By specifying a default font name, you can ensure that extracted text will be displayed correctly. Follow the steps below to set the default font name in a PDF file.
+在本教程中，我们将向您展示如何使用 Aspose.PDF for .NET 在 PDF 文件中设置默认字体名称。有时，当您从 PDF 文件中提取图像时，可能会遇到缺少字体的问题。通过指定默认字体名称，您可以确保提取的文本能够正确显示。按照以下步骤设置 PDF 文件中的默认字体名称。
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## 先决条件
+在开始之前，请确保满足以下先决条件：
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- C# 编程语言的基础知识。
+- 您的系统上安装了适用于 .NET 的 Aspose.PDF 库。
+- 开发环境，例如 Visual Studio。
 
-## Step 1: Loading the PDF document
-The first step is to load the PDF document into a `Document` object. Use the following code:
+## 第 1 步：加载 PDF 文档
+第一步是将 PDF 文档加载到`Document`目的。使用以下代码：
 
 ```csharp
-// Path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 using (Document pdfDocument = new Document(dataDir + "input.pdf"))
 {
-     // Code to add
+     //要添加的代码
 }
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where your PDF file is located.
+一定要更换`"YOUR DOCUMENTS DIRECTORY"`与您的 PDF 文件所在的实际目录。
 
-## Step 2: Set default font name
-Next, we'll set the default font name using the `DefaultFontName` option of the `RenderingOptions` object. Use the following code:
+## 第2步：设置默认字体名称
+接下来，我们将使用以下命令设置默认字体名称`DefaultFontName`的选项`RenderingOptions`目的。使用以下代码：
 
 ```csharp
 using (Document pdfDocument = new Document(dataDir + "input.pdf"))
@@ -45,26 +45,26 @@ using (Document pdfDocument = new Document(dataDir + "input.pdf"))
          ro.DefaultFontName = "Arial";
          pngDevice.RenderingOptions = ro;
         
-         // Code to add
+         //要添加的代码
      }
 }
 ```
 
-Be sure to replace `"Arial"` with the desired font name.
+一定要更换`"Arial"`与所需的字体名称。
 
-## Step 3: Image Extraction
-Next, we will extract the image from the specified page of the PDF document. Use the following code:
+## 第三步：图像提取
+接下来，我们将从PDF文档的指定页面中提取图像。使用以下代码：
 
 ```csharp
 pngDevice.Process(pdfDocument.Pages[1], imageStream);
 ```
 
-Be sure to specify the correct page number in `pdfDocument.Pages[1]`.
+请务必在中指定正确的页码`pdfDocument.Pages[1]`.
 
-### Example source code for Set Default Font Name using Aspose.PDF for .NET
+### 使用 Aspose.PDF for .NET 设置默认字体名称的示例源代码
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 using (Document pdfDocument = new Document(dataDir + "input.pdf"))
@@ -81,27 +81,27 @@ using (Document pdfDocument = new Document(dataDir + "input.pdf"))
 }
 ```
 
-## Conclusion
-In this tutorial, we learned how to set the default font name in a PDF file using Aspose.PDF for .NET. By specifying a default font name, you can ensure that extracted text will be displayed correctly. Use this method to resolve missing font issues when extracting images from PDF files.
+## 结论
+在本教程中，我们学习了如何使用 Aspose.PDF for .NET 在 PDF 文件中设置默认字体名称。通过指定默认字体名称，您可以确保提取的文本能够正确显示。使用此方法可以解决从 PDF 文件中提取图像时丢失字体的问题。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What is Aspose.PDF for .NET?
+#### 问：什么是 Aspose.PDF for .NET？
 
-A: Aspose.PDF for .NET is a powerful library that enables developers to work with PDF documents in C# applications. It offers various functionalities, including setting the default font name in a PDF file.
+答：Aspose.PDF for .NET 是一个功能强大的库，使开发人员能够在 C# 应用程序中处理 PDF 文档。它提供各种功能，包括设置 PDF 文件中的默认字体名称。
 
-#### Q: Why would I need to set the default font name in a PDF file?
+#### 问：为什么需要在 PDF 文件中设置默认字体名称？
 
-A: Setting the default font name is useful when extracting text from a PDF document. If the PDF contains text with fonts that are not available on the extraction machine, specifying a default font name ensures correct text display.
+答：从 PDF 文档中提取文本时，设置默认字体名称非常有用。如果 PDF 包含提取机上不可用的字体的文本，则指定默认字体名称可确保正确的文本显示。
 
-#### Q: How can I load a PDF document and set the default font name using Aspose.PDF for .NET?
+#### 问：如何使用 Aspose.PDF for .NET 加载 PDF 文档并设置默认字体名称？
 
-A: To load a PDF document and set the default font name, you can use the `Document` class to load the PDF file and the `RenderingOptions.DefaultFontName` property to specify the desired default font name.
+ A：要加载PDF文档并设置默认字体名称，您可以使用`Document`类来加载 PDF 文件和`RenderingOptions.DefaultFontName`属性来指定所需的默认字体名称。
 
-#### Q: Can I choose any font as the default font name?
+#### 问：我可以选择任何字体作为默认字体名称吗？
 
-A:Yes, you can choose any font that is available on the extraction machine as the default font name. Use a font that closely matches the missing fonts in the original PDF to ensure accurate text rendering.
+答：是的，您可以选择提取机上可用的任何字体作为默认字体名称。使用与原始 PDF 中缺失字体紧密匹配的字体，以确保准确的文本呈现。
 
-#### Q: Is setting the default font name a permanent change to the PDF file?
+#### 问：设置默认字体名称是否会永久更改 PDF 文件？
 
-A: No, setting the default font name using Aspose.PDF for .NET is a temporary change made during text extraction. It does not modify the original PDF file.
+答：不，使用 Aspose.PDF for .NET 设置默认字体名称是在文本提取过程中进行的临时更改。它不会修改原始 PDF 文件。

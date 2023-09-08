@@ -1,28 +1,28 @@
 ---
-title: Extract Border In PDF File
-linktitle: Extract Border In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract the border in PDF file using Aspose.PDF for .NET.
+title: PDF Dosyasındaki Kenarlığı Çıkart
+linktitle: PDF Dosyasındaki Kenarlığı Çıkart
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF dosyasındaki kenarlığı nasıl çıkaracağınızı öğrenin.
 type: docs
 weight: 80
 url: /tr/net/programming-with-tables/extract-border/
 ---
-In this tutorial, we are going to learn how to extract the border in PDF file using Aspose.PDF for .NET. We will explain the source code in C# step by step. At the end of this tutorial, you will know how to extract the border from a PDF document and save it as an image. Let's start!
+Bu derste Aspose.PDF for .NET kullanarak PDF dosyasındaki kenarlığın nasıl çıkarılacağını öğreneceğiz. C#'ta kaynak kodunu adım adım anlatacağız. Bu eğitimin sonunda, bir PDF belgesinden kenarlığı nasıl çıkaracağınızı ve onu resim olarak nasıl kaydedeceğinizi öğreneceksiniz. Hadi başlayalım!
 
-## Step 1: Setting up the environment
-First, make sure you've set up your C# development environment with Aspose.PDF for .NET. Add the reference to the library and import the necessary namespaces.
+## 1. Adım: Ortamı ayarlama
+Öncelikle Aspose.PDF for .NET ile C# geliştirme ortamınızı kurduğunuzdan emin olun. Referansı kitaplığa ekleyin ve gerekli ad alanlarını içe aktarın.
 
-## Step 2: Loading the PDF Document
-In this step, we load the PDF document from the specified file.
+## Adım 2: PDF Belgesini Yükleme
+Bu adımda belirtilen dosyadan PDF belgesini yüklüyoruz.
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENT DIRECTORY" with the actual directory where your PDF file is located.
+"BELGE DİZİNİ"ni PDF dosyanızın bulunduğu gerçek dizinle değiştirdiğinizden emin olun.
 
-## Step 3: Edge Extraction
-We will extract the border from the PDF document by iterating over the operations contained in the document.
+## Adım 3: Kenar Çıkarma
+Belgede yer alan işlemleri yineleyerek PDF belgesinden kenarlığı çıkaracağız.
 
 ```csharp
 Stack graphicsState = new Stack();
@@ -36,38 +36,38 @@ System.Drawing.Color strokeColor = System.Drawing.Color.FromArgb(0, 0, 0);
 
 using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 {
-     // Process all content operations
+     // Tüm içerik işlemlerini işleyin
      foreach(Operator op in doc.Pages[1].Contents)
      {
-         // Check the type of operation
+         // İşlem türünü kontrol edin
          // ...
-         // Add code to process each operation
+         // Her işlemi işlemek için kod ekleyin
      }
 }
 ```
 
-We create a `graphicsState` stack to store graphics states, a bitmap image to capture the extracted border, a `GraphicsPath` object to store drawing paths, and other variables to track state and colors.
+ Biz bir yaratıyoruz`graphicsState` grafik durumlarını depolamak için yığın, çıkarılan sınırı yakalamak için bir bitmap görüntüsü,`GraphicsPath` çizim yollarını depolamak için nesneyi ve durumu ve renkleri izlemek için diğer değişkenleri içerir.
 
-## Step 4: Transaction Processing
-In this step, we process each operation of the document to extract the border.
+## Adım 4: İşlem İşleme
+Bu adımda, belgenin kenarlığını çıkarmak için yapılan her işlemi işliyoruz.
 
 ```csharp
-// Check the type of operation
+// İşlem türünü kontrol edin
 if (opSaveState != null)
 {
-     // Save the previous state and push the current state to the top of the stack
+     // Önceki durumu kaydedin ve mevcut durumu yığının en üstüne itin
      graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
      lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 }
 else if (opRestoreState != null)
 {
-     // Delete the current state and restore previous state
+     // Mevcut durumu silin ve önceki durumu geri yükleyin
      graphicsState. Pop();
      lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 }
 else if (opCtm != null)
 {
-     // Retrieve the current transformation matrix
+     // Geçerli dönüşüm matrisini alın
      System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
          (float)opCtm.Matrix.A,
          (float)opCtm.Matrix.B,
@@ -76,41 +76,41 @@ else if (opCtm != null)
          (float)opCtm.Matrix.E,
          (float)opCtm.Matrix.F);
 
-     // Multiply the current matrix with the state matrix
+     // Mevcut matrisi durum matrisiyle çarpın
      ((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
      lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 }
 else if (opMoveTo != null)
 {
-     // Update the last drawing point
+     // Son çizim noktasını güncelle
      lastPoint = new System.Drawing.PointF((float)opMoveTo.X, (float)opMoveTo.Y);
 }
 else if (opLineTo != null)
 {
-     // Process the drawing of a line
+     // Çizgi çizimini işleme
      // ...
-     // Add code to handle drawing a line
+     // Çizgi çizmeyi yönetmek için kod ekleyin
 }
 // ...
-// Add else if blocks for other operations
+// Diğer işlemler için else if bloklarını ekleyin
 ```
 
-We check the type of operation using conditions and run the appropriate code for each operation.
+Koşulları kullanarak işlem türünü kontrol ediyoruz ve her işlem için uygun kodu çalıştırıyoruz.
 
-## Step 5: Backup Image
-Finally, we save the bitmap image containing the extracted border to a specified file.
+## Adım 5: Yedekleme İmajı
+Son olarak, çıkarılan kenarlığı içeren bitmap görüntüsünü belirtilen bir dosyaya kaydediyoruz.
 
 ```csharp
 dataDir = dataDir + "ExtractBorder_out.png";
 bitmap.Save(dataDir, ImageFormat.Png);
 ```
 
-Be sure to specify the correct directory and filename to save the output image.
+Çıktı görüntüsünü kaydetmek için doğru dizini ve dosya adını belirttiğinizden emin olun.
 
-### Example source code for Extract Border using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak Kenar Çıkarma için örnek kaynak kodu
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 Document doc = new Document(dataDir + "input.pdf");
@@ -118,9 +118,9 @@ Document doc = new Document(dataDir + "input.pdf");
 Stack graphicsState = new Stack();
 System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap((int)doc.Pages[1].PageInfo.Width, (int)doc.Pages[1].PageInfo.Height);
 System.Drawing.Drawing2D.GraphicsPath graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
-// Default ctm matrix value is 1,0,0,1,0,0
+// Varsayılan ctm matris değeri 1,0,0,1,0,0'dır
 System.Drawing.Drawing2D.Matrix lastCTM = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, 0);
-// System.Drawing coordinate system is top left based, while pdf coordinate system is low left based, so we have to apply the inversion matrix
+//System.Drawing koordinat sistemi sol üst tabanlı, pdf koordinat sistemi ise sol alt tabanlı olduğundan ters çevirme matrisini uygulamamız gerekiyor
 System.Drawing.Drawing2D.Matrix inversionMatrix = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, (float)doc.Pages[1].PageInfo.Height);
 System.Drawing.PointF lastPoint = new System.Drawing.PointF(0, 0);
 System.Drawing.Color fillColor = System.Drawing.Color.FromArgb(0, 0, 0);
@@ -131,7 +131,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 	gr.SmoothingMode = SmoothingMode.HighQuality;
 	graphicsState.Push(new System.Drawing.Drawing2D.Matrix(1, 0, 0, 1, 0, 0));
 
-	// Process all the contents commands
+	// Tüm içerik komutlarını işle
 	foreach (Operator op in doc.Pages[1].Contents)
 	{
 		Aspose.Pdf.Operators.GSave opSaveState = op as Aspose.Pdf.Operators.GSave;
@@ -149,13 +149,13 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 
 		if (opSaveState != null)
 		{
-			// Save previous state and push current state to the top of the stack
+			//Önceki durumu kaydedin ve mevcut durumu yığının en üstüne itin
 			graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
 			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 		}
 		else if (opRestoreState != null)
 		{
-			// Throw away current state and restore previous one
+			// Mevcut durumu atın ve öncekini geri yükleyin
 			graphicsState.Pop();
 			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 		}
@@ -169,7 +169,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 				(float)opCtm.Matrix.E,
 				(float)opCtm.Matrix.F);
 
-			// Multiply current matrix with the state matrix
+			// Mevcut matrisi durum matrisiyle çarpın
 			((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
 			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 		}
@@ -232,27 +232,27 @@ bitmap.Save(dataDir, ImageFormat.Png);
 Console.WriteLine("\nBorder extracted successfully as image.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
-In this tutorial, we learned how to extract the border from a PDF document using Aspose.PDF for .NET. You can use this step-by-step guide to extract border from other PDF documents.
+## Çözüm
+Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF belgesinden kenarlığın nasıl çıkarılacağını öğrendik. Diğer PDF belgelerinden kenarlık çıkarmak için bu adım adım kılavuzu kullanabilirsiniz.
 
-### FAQ's for extract border in PDF file
+### PDF dosyasındaki kenarlığı ayıklamak için SSS
 
-#### Q: What is the purpose of extracting the border from a PDF file?
+#### S: Bir PDF dosyasından kenarlığı çıkarmanın amacı nedir?
 
-A: Extracting the border from a PDF file can be useful for various purposes. It allows you to isolate and analyze the structural elements of the document, such as tables, diagrams, or graphical elements. You can use the extracted border to identify the layout, dimensions, and positioning of the content within the PDF document.
+C: Kenarlığın bir PDF dosyasından çıkarılması çeşitli amaçlar için yararlı olabilir. Belgenin tablolar, diyagramlar veya grafik öğeler gibi yapısal öğelerini ayırmanıza ve analiz etmenize olanak tanır. PDF belgesindeki içeriğin düzenini, boyutlarını ve konumunu belirlemek için çıkarılan kenarlığı kullanabilirsiniz.
 
-#### Q: Can I extract the border from specific pages or areas within the PDF document?
+#### S: Kenarlığı PDF belgesindeki belirli sayfalardan veya alanlardan çıkarabilir miyim?
 
-A: Yes, you can modify the provided C# source code to extract the border from specific pages or regions within the PDF document. By manipulating the `doc.Pages` collection and specifying custom criteria, you can choose to extract the border from particular pages or areas of interest.
+C: Evet, PDF belgesindeki belirli sayfalardan veya bölgelerden kenarlığı çıkarmak için sağlanan C# kaynak kodunu değiştirebilirsiniz. Manipüle ederek`doc.Pages` toplama ve özel ölçütler belirleyerek, belirli sayfalardan veya ilgi alanlarından kenarlığı çıkarmayı seçebilirsiniz.
 
-#### Q: How can I customize the output image format and quality?
+#### S: Çıktı görüntü formatını ve kalitesini nasıl özelleştirebilirim?
 
-A: In the provided C# code, the extracted border is saved as a PNG image. If you want to change the output image format, you can modify the `ImageFormat.Png` parameter in the `bitmap.Save` method to other supported image formats, such as JPEG, BMP, or GIF. Additionally, you can adjust the image quality or compression settings based on your requirements.
+ C: Sağlanan C# kodunda, çıkarılan kenarlık PNG görüntüsü olarak kaydedilir. Çıktı görüntü formatını değiştirmek isterseniz,`ImageFormat.Png` parametresi`bitmap.Save` yöntemi JPEG, BMP veya GIF gibi desteklenen diğer görüntü formatlarına dönüştürür. Ek olarak, gereksinimlerinize göre görüntü kalitesini veya sıkıştırma ayarlarını ayarlayabilirsiniz.
 
-#### Q: What other operations can I perform on the extracted border?
+#### S: Çıkarılan sınırda başka hangi işlemleri yapabilirim?
 
-A: Once you have extracted the border as an image, you can further process it using image processing libraries or algorithms. You can analyze the image, apply image filters, detect patterns, or perform OCR (Optical Character Recognition) to extract text from the image if needed.
+C: Kenarlığı bir görüntü olarak çıkardıktan sonra, görüntü işleme kitaplıklarını veya algoritmalarını kullanarak onu daha fazla işleyebilirsiniz. Gerekirse görüntüden metin çıkarmak için görüntüyü analiz edebilir, görüntü filtreleri uygulayabilir, desenleri tespit edebilir veya OCR (Optik Karakter Tanıma) gerçekleştirebilirsiniz.
 
-#### Q: Are there any limitations or considerations when extracting borders from complex PDF documents?
+#### S: Karmaşık PDF belgelerinden kenarlıkları çıkarırken herhangi bir sınırlama veya dikkate alınması gereken noktalar var mı?
 
-A: The extraction process may vary depending on the complexity of the PDF document. Complex PDFs with multiple layers, transparency, or advanced graphics might require additional processing or adjustments to accurately extract the border. It's essential to thoroughly test the extraction process on various PDF documents to ensure reliable results.
+C: Çıkarma işlemi, PDF belgesinin karmaşıklığına bağlı olarak değişebilir. Birden çok katmana, şeffaflığa veya gelişmiş grafiklere sahip karmaşık PDF'ler, kenarlığın doğru şekilde çıkarılması için ek işlem veya ayarlamalar gerektirebilir. Güvenilir sonuçlar elde etmek için çıkarma işlemini çeşitli PDF belgelerinde kapsamlı bir şekilde test etmek önemlidir.

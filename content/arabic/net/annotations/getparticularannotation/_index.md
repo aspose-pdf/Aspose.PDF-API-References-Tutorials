@@ -1,36 +1,36 @@
 ---
-title: Get Particular Annotation In PDF File
-linktitle: Get Particular Annotation In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use Aspose.PDF for .NET to get particular annotation in PDF file with this step-by-step guide. 
+title: احصل على تعليق توضيحي خاص في ملف PDF
+linktitle: احصل على تعليق توضيحي خاص في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية استخدام Aspose.PDF لـ .NET للحصول على تعليق توضيحي محدد في ملف PDF باستخدام هذا الدليل التفصيلي خطوة بخطوة.
 type: docs
 weight: 80
 url: /ar/net/annotations/getparticularannotation/
 ---
-If you're working with PDFs in .NET, you might come across a need to get a particular annotation in a PDF file. In this guide, we'll show you how to use Aspose.PDF for .NET to get a particular annotation from a PDF document using C#.
+إذا كنت تعمل مع ملفات PDF في .NET، فقد تحتاج إلى الحصول على تعليق توضيحي معين في ملف PDF. سنوضح لك في هذا الدليل كيفية استخدام Aspose.PDF لـ .NET للحصول على تعليق توضيحي معين من مستند PDF باستخدام لغة C#.
 
-Follow these simple steps to get a particular annotation from a PDF document:
+اتبع هذه الخطوات البسيطة للحصول على تعليق توضيحي معين من مستند PDF:
 
-## Step 1: Get Particular Annotation from PDF Document
+## الخطوة 1: احصل على تعليق توضيحي خاص من مستند PDF
 
-First, make sure you have the Aspose.PDF for .NET library installed and referenced in your project.
+أولاً، تأكد من تثبيت مكتبة Aspose.PDF for .NET والإشارة إليها في مشروعك.
 
-Next, create a new instance of the Document class and load your PDF document using the path to the document directory.
+بعد ذلك، قم بإنشاء مثيل جديد لفئة المستند وقم بتحميل مستند PDF الخاص بك باستخدام المسار إلى دليل المستند.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "GetParticularAnnotation.pdf");
 ```
 
-## Step 2: You can get a particular annotation using the following code:
+## الخطوة 2: يمكنك الحصول على تعليق توضيحي معين باستخدام الكود التالي:
 
 ```csharp
 TextAnnotation textAnnotation = (TextAnnotation)pdfDocument.Pages[1].Annotations[1];
 ```
 
-This code retrieves the second annotation on the second page of the PDF document.
+يسترد هذا الرمز التعليق التوضيحي الثاني في الصفحة الثانية من مستند PDF.
 
-## Step 3: Finally, you can get the properties of the annotation using the following code:
+## الخطوة 3: أخيرًا، يمكنك الحصول على خصائص التعليق التوضيحي باستخدام الكود التالي:
 
 ```csharp
 Console.WriteLine("Title : {0} ", textAnnotation.Title);
@@ -38,49 +38,49 @@ Console.WriteLine("Subject : {0} ", textAnnotation.Subject);
 Console.WriteLine("Contents : {0} ", textAnnotation.Contents);
 ```
 
-This code displays the title, subject, and contents of the annotation in the console.
+يعرض هذا الرمز عنوان التعليق التوضيحي وموضوعه ومحتوياته في وحدة التحكم.
 
 
-### Example Source Code for Get Particular Annotation using Aspose.PDF for .NET
+### مثال على كود المصدر للحصول على تعليق توضيحي خاص باستخدام Aspose.PDF لـ .NET
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "GetParticularAnnotation.pdf");
 
-// Get particular annotation
+// الحصول على تعليق توضيحي خاص
 TextAnnotation textAnnotation = (TextAnnotation)pdfDocument.Pages[1].Annotations[1];
 
-// Get annotation properties
+// الحصول على خصائص التعليق التوضيحي
 Console.WriteLine("Title : {0} ", textAnnotation.Title);
 Console.WriteLine("Subject : {0} ", textAnnotation.Subject);
 Console.WriteLine("Contents : {0} ", textAnnotation.Contents);
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we demonstrated how to get a particular annotation from a PDF document using Aspose.PDF for .NET. By following the step-by-step guide and using the provided C# source code, developers can easily access and manage annotations in their PDF documents.
+في هذا البرنامج التعليمي، أوضحنا كيفية الحصول على تعليق توضيحي معين من مستند PDF باستخدام Aspose.PDF لـ .NET. باتباع الدليل الموضح خطوة بخطوة واستخدام كود مصدر C# المقدم، يمكن للمطورين الوصول بسهولة إلى التعليقات التوضيحية وإدارتها في مستندات PDF الخاصة بهم.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is a Text Annotation in a PDF document?
+#### س: ما هو التعليق التوضيحي النصي في مستند PDF؟
 
-A: A Text Annotation in a PDF document is a type of annotation that provides additional information or comments on specific text in the document. It can be used to highlight, underline, or strike through text, as well as add notes or comments related to the text.
+ج: التعليق التوضيحي النصي في مستند PDF هو نوع من التعليق التوضيحي الذي يوفر معلومات أو تعليقات إضافية على نص معين في المستند. يمكن استخدامه لتمييز النص أو تسطيره أو شطبه، بالإضافة إلى إضافة ملاحظات أو تعليقات متعلقة بالنص.
 
-#### Q: Can I get annotations from different pages of the PDF document?
+#### س: هل يمكنني الحصول على تعليقات توضيحية من صفحات مختلفة من مستند PDF؟
 
-A: Yes, with Aspose.PDF for .NET, you can get annotations from different pages of the PDF document. You can loop through the pages and retrieve annotations from each page as needed.
+ج: نعم، باستخدام Aspose.PDF for .NET، يمكنك الحصول على التعليقات التوضيحية من صفحات مختلفة من مستند PDF. يمكنك تكرار الصفحات واسترداد التعليقات التوضيحية من كل صفحة حسب الحاجة.
 
-#### Q: Is it possible to get annotations based on their properties, such as title or subject?
+#### س: هل من الممكن الحصول على التعليقات التوضيحية بناءً على خصائصها، مثل العنوان أو الموضوع؟
 
-A: Yes, Aspose.PDF for .NET provides methods to access and filter annotations based on their properties, such as title, subject, or contents. You can loop through all annotations and check for the specific properties you want to filter.
+ج: نعم، يوفر Aspose.PDF for .NET طرقًا للوصول إلى التعليقات التوضيحية وتصفيتها استنادًا إلى خصائصها، مثل العنوان أو الموضوع أو المحتويات. يمكنك تكرار جميع التعليقات التوضيحية والتحقق من الخصائص المحددة التي تريد تصفيتها.
 
-#### Q: Does Aspose.PDF for .NET support getting annotations from password-protected PDF files?
+#### س: هل يدعم Aspose.PDF for .NET الحصول على التعليقات التوضيحية من ملفات PDF محمية بكلمة مرور؟
 
-A: Yes, Aspose.PDF for .NET supports getting annotations from password-protected PDF files. You need to provide the correct password when loading the PDF document using the `Document` class.
+ ج: نعم، يدعم Aspose.PDF for .NET الحصول على التعليقات التوضيحية من ملفات PDF محمية بكلمة مرور. يتعين عليك تقديم كلمة المرور الصحيحة عند تحميل مستند PDF باستخدام ملف`Document` فصل.
 
-#### Q: Can I retrieve annotations of specific types from the PDF document?
+#### س: هل يمكنني استرداد التعليقات التوضيحية لأنواع معينة من مستند PDF؟
 
-A: Yes, Aspose.PDF for .NET provides methods to retrieve annotations of specific types, such as text annotations, highlight annotations, etc.
+ج: نعم، يوفر Aspose.PDF for .NET طرقًا لاسترداد التعليقات التوضيحية لأنواع معينة، مثل التعليقات التوضيحية النصية، والتعليقات التوضيحية المميزة، وما إلى ذلك.

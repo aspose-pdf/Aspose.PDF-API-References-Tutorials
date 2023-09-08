@@ -1,91 +1,91 @@
 ---
-title: Text To PDF
-linktitle: Text To PDF
-second_title: Aspose.PDF for .NET API Reference
-description: Simple and efficient conversion of text files to PDF using Aspose.PDF for .NET.
+title: Metni PDF'ye Dönüştürme
+linktitle: Metni PDF'ye Dönüştürme
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak metin dosyalarının PDF'ye basit ve verimli dönüştürülmesi.
 type: docs
 weight: 300
 url: /tr/net/document-conversion/text-to-pdf/
 ---
-This tutorial will walk you through the steps to convert a text file to a PDF file using Aspose.PDF for .NET. Aspose.PDF offers a simple and effective solution for converting plain text to PDF while preserving text formatting and presentation. Follow the steps below to perform this conversion.
+Bu eğitim, Aspose.PDF for .NET kullanarak bir metin dosyasını PDF dosyasına dönüştürme adımlarında size yol gösterecektir. Aspose.PDF, metin formatını ve sunumunu korurken düz metni PDF'ye dönüştürmek için basit ve etkili bir çözüm sunar. Bu dönüşümü gerçekleştirmek için aşağıdaki adımları izleyin.
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## Önkoşullar
+Başlamadan önce aşağıdaki önkoşulları karşıladığınızdan emin olun:
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- C# programlama dili hakkında temel bilgiler.
+- Sisteminizde yüklü olan .NET için Aspose.PDF kütüphanesi.
+- Visual Studio gibi bir geliştirme ortamı.
 
-## Step 1: Reading the text file
-The first step is to read the contents of the text file using the `StreamReader` class. Use the following code:
+## Adım 1: Metin dosyasını okuma
+ İlk adım, metin dosyasının içeriğini aşağıdaki komutu kullanarak okumaktır:`StreamReader` sınıf. Aşağıdaki kodu kullanın:
 
 ```csharp
-// Path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Read the text file
+// Metin dosyasını okuyun
 TextReader tr = new StreamReader(dataDir + "log.txt");
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where your text file is located.
+ Değiştirdiğinizden emin olun`"YOUR DOCUMENTS DIRECTORY"`metin dosyanızın bulunduğu gerçek dizinle.
 
-## Step 2: Creating the PDF document
-The second step is to create a `Document` object which will represent the final PDF document. Use the following code:
+## Adım 2: PDF belgesini oluşturma
+ İkinci adım bir oluşturmaktır.`Document` son PDF belgesini temsil edecek nesne. Aşağıdaki kodu kullanın:
 
 ```csharp
-// Create a Document object
+// Belge nesnesi oluşturma
 Document doc = new Document();
 ```
 
-## Step 3: Add text to document
-The third step is to add the read text to the page of the PDF document. Use the following code:
+## 3. Adım: Belgeye metin ekleyin
+Üçüncü adım, okunan metni PDF belgesinin sayfasına eklemektir. Aşağıdaki kodu kullanın:
 
 ```csharp
-// Add a new page to the document
+//Belgeye yeni bir sayfa ekleme
 Page page = doc.Pages.Add();
 
-// Create a TextFragment object and pass the read text as an argument
+// Bir TextFragment nesnesi oluşturun ve okunan metni argüman olarak iletin
 TextFragment text = new TextFragment(tr.ReadToEnd());
 
-// Add the text paragraph to the page
+// Metin paragrafını sayfaya ekleyin
 page.Paragraphs.Add(text);
 ```
 
-## Step 4: Saving the PDF file
-Finally, save the resulting PDF file by specifying the desired path and file name. Use the following code:
+## Adım 4: PDF dosyasını kaydetme
+Son olarak, istediğiniz yolu ve dosya adını belirterek ortaya çıkan PDF dosyasını kaydedin. Aşağıdaki kodu kullanın:
 
 ```csharp
-// Save the resulting PDF file
+// Ortaya çıkan PDF dosyasını kaydedin
 doc.Save(dataDir + "TexttoPDF_out.pdf");
 ```
 
-Be sure to specify the desired path and filename for the resulting PDF file.
+Ortaya çıkan PDF dosyası için istediğiniz yolu ve dosya adını belirttiğinizden emin olun.
 
-### Example source code for Text to PDF using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak Metinden PDF'ye dönüştürme için örnek kaynak kodu
 
 ```csharp
 try
 {
 	
-	// The path to the documents directory.
+	// Belgeler dizininin yolu.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Read the source text file
+	// Kaynak metin dosyasını okuyun
 	TextReader tr = new StreamReader(dataDir + "log.txt");
 
-	// Instantiate a Document object by calling its empty constructor
+	// Boş yapıcısını çağırarak bir Document nesnesinin örneğini oluşturun
 	Document doc = new Document();
 
-	// Add a new page in Pages collection of Document
+	// Belgenin Pages koleksiyonuna yeni bir sayfa ekleme
 	Page page = doc.Pages.Add();
 
-	// Create an instance of TextFragmet and pass the text from reader object to its constructor as argument
+	// Bir TextFragmet örneği oluşturun ve metni okuyucu nesnesinden argüman olarak yapıcısına iletin
 	TextFragment text = new TextFragment(tr.ReadToEnd());
-	// Text.TextState.Font = FontRepository.FindFont("Arial Unicode MS");
+	//Text.TextState.Font = FontRepository.FindFont("Arial Unicode MS");
 
-	// Add a new text paragraph in paragraphs collection and pass the TextFragment object
+	// Paragraf koleksiyonuna yeni bir metin paragrafı ekleyin ve TextFragment nesnesini iletin
 	page.Paragraphs.Add(text);
 
-	// Save resultant PDF file
+	// Ortaya çıkan PDF dosyasını kaydedin
 	doc.Save(dataDir + "TexttoPDF_out.pdf"); 
 	
 }
@@ -95,27 +95,27 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
-In this tutorial, we learned how to convert a text file to a PDF file using Aspose.PDF for .NET. By following the steps given above, you can easily perform this conversion. Use this method to convert your text files to PDF and enjoy the flexibility and quality of Aspose.PDF.
+## Çözüm
+Bu eğitimde Aspose.PDF for .NET kullanarak bir metin dosyasını PDF dosyasına nasıl dönüştüreceğimizi öğrendik. Yukarıda verilen adımları takip ederek bu dönüşümü kolaylıkla gerçekleştirebilirsiniz. Metin dosyalarınızı PDF'ye dönüştürmek için bu yöntemi kullanın ve Aspose.PDF'in esnekliğinin ve kalitesinin keyfini çıkarın.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET nedir?
 
-A: Aspose.PDF for .NET is a powerful library that enables developers to work with PDF documents in C# applications. It offers various functionalities, including converting plain text to PDF.
+C: Aspose.PDF for .NET, geliştiricilerin C# uygulamalarında PDF belgeleriyle çalışmasına olanak tanıyan güçlü bir kitaplıktır. Düz metni PDF'ye dönüştürmek de dahil olmak üzere çeşitli işlevler sunar.
 
-#### Q: Why would I want to convert a text file to a PDF?
+#### S: Bir metin dosyasını neden PDF'ye dönüştürmek isteyeyim?
 
-A: Converting text files to PDF format allows for better document management, sharing, and distribution. PDF files offer consistent formatting across different devices and operating systems.
+C: Metin dosyalarını PDF formatına dönüştürmek daha iyi belge yönetimine, paylaşımına ve dağıtımına olanak tanır. PDF dosyaları farklı cihazlar ve işletim sistemleri arasında tutarlı biçimlendirme sunar.
 
-#### Q: How can I load a text file and convert it to a PDF using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'i kullanarak bir metin dosyasını nasıl yükleyip PDF'ye dönüştürebilirim?
 
-A: To load a text file, you can use the `StreamReader` class to read the contents of the file. Then, create a `Document` object to represent the PDF document. Add a new page and a `TextFragment` containing the text from the text file. Finally, save the resulting PDF using the `Save` method of the `Document` object.
+C: Bir metin dosyasını yüklemek için`StreamReader` Dosyanın içeriğini okumak için sınıf. Ardından, bir`Document` PDF belgesini temsil edecek nesne. Yeni bir sayfa ekleyin ve`TextFragment` metin dosyasındaki metni içerir. Son olarak, ortaya çıkan PDF'yi kullanarak kaydedin.`Save` yöntemi`Document` nesne.
 
-#### Q: Can I customize the appearance of the text in the PDF?
+#### S: PDF'deki metnin görünümünü özelleştirebilir miyim?
 
-A: Yes, Aspose.PDF for .NET provides various options to customize the appearance of text in the resulting PDF, such as font style, size, color, and alignment.
+C: Evet, Aspose.PDF for .NET, ortaya çıkan PDF'deki metnin görünümünü özelleştirmek için yazı tipi stili, boyutu, rengi ve hizalaması gibi çeşitli seçenekler sunar.
 
-#### Q: Is the text formatting preserved in the resulting PDF?
+#### S: Ortaya çıkan PDF'de metin formatı korunuyor mu?
 
-A: Yes, Aspose.PDF for .NET preserves the text formatting and layout during the text to PDF conversion, ensuring accurate representation of the original content.
+C: Evet, Aspose.PDF for .NET, metinden PDF'ye dönüştürme sırasında metin formatını ve düzenini koruyarak orijinal içeriğin doğru şekilde temsil edilmesini sağlar.

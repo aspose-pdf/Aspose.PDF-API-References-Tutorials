@@ -1,29 +1,29 @@
 ---
-title: Programming with Annotations
-linktitle: Programming with Annotations
+title: البرمجة مع التعليقات التوضيحية
+linktitle: البرمجة مع التعليقات التوضيحية
 type: docs
 weight: 12
 url: /ar/net/annotations/
-description: Programming with Annotations includes API Tutorials and code-snippets of Aspose.PDF for .NET that includes adding annotation, deleting annotation, getting annotation info, and many more.
+description: تتضمن البرمجة باستخدام التعليقات التوضيحية دروس API ومقتطفات التعليمات البرمجية لـ Aspose.PDF لـ .NET والتي تتضمن إضافة تعليق توضيحي وحذف التعليق التوضيحي والحصول على معلومات التعليق التوضيحي وغير ذلك الكثير.
 ---
-A comprehensive collection of tutorials showcasing how to work with annotations in PDF documents using Aspose.PDF for .NET. It provides a wide range of code snippets demonstrating how to create and manipulate various types of annotations such as text, line, circle, rectangle, polygon, hyperlink, and many more. Each example includes the complete C# code along with a detailed explanation of the code's functionality and the expected output. Its an excellent resource for .NET developers who want to learn how to work with annotations in PDF documents using Aspose.PDF.
+مجموعة شاملة من البرامج التعليمية التي تعرض كيفية التعامل مع التعليقات التوضيحية في مستندات PDF باستخدام Aspose.PDF لـ .NET. فهو يوفر نطاقًا واسعًا من مقتطفات التعليمات البرمجية التي توضح كيفية إنشاء أنواع مختلفة من التعليقات التوضيحية ومعالجتها مثل النص والخط والدائرة والمستطيل والمضلع والارتباط التشعبي وغير ذلك الكثير. يتضمن كل مثال كود C# الكامل بالإضافة إلى شرح تفصيلي لوظيفة الكود والمخرجات المتوقعة. إنه مصدر ممتاز لمطوري .NET الذين يرغبون في تعلم كيفية التعامل مع التعليقات التوضيحية في مستندات PDF باستخدام Aspose.PDF.
 
-## Tutorials
-| Title | Description |
+## دروس
+| عنوان | وصف |
 | --- | --- | 
-| [Add PDF Annotation](./addannotation/) | Learn how to add text PDF annotations with Aspose.PDF for .NET using this C# source code. Customize your annotations with specific details and icons. |  
-| [Add lnk Annotation](./addlnkannotation/) | Learn how to add Ink Annotation feature to PDF documents in C# using Aspose.PDF for .NET with step-by-step guide and full source code. |  
-| [Add Swf File As PDF Annotation](./addswffileasannotation/) | Learn how to add SWF files as PDF annotations in Aspose.PDF for .NET with this step-by-step guide. |  
-| [Delete All Annotations From Page](./deleteallannotationsfrompage/) | Learn how to delete all annotations from a PDF page with Aspose.PDF for .NET using this step-by-step guide. |  
-| [Delete Particular Annotation In PDF File](./deleteparticularannotation/) | Learn how to delete a particular annotation in PDF file using Aspose.PDF for .NET with this step-by-step guide. |  
-| [Extract Highlighted Text In PDF File](./extracthighlightedtext/) | Learn how to extract highlighted text in PDF file using Aspose.PDF for .NET with this step-by-step guide. |  
-| [Get All Annotations From Page](./getallannotationsfrompage/) | Learn how to use Aspose.PDF for .NET to retrieve all annotations from a PDF page with this step-by-step guide. |  
-| [Get Particular Annotation In PDF File](./getparticularannotation/) | Learn how to use Aspose.PDF for .NET to get particular annotation in PDF file with this step-by-step guide.  |  
-| [Get Resource Of Annotation](./getresourceofannotation/) | Learn how to retrieve the resource of an annotation using Aspose.PDF for .NET with this step-by-step guide.  |  
-| [Invisible Annotation In PDF File](./invisibleannotation/) | Learn how to invisible annotation in PDF file using C# source code with Aspose.PDF for .NET. Step-by-step guide. |  
-| [lnk Annotation Line Width](./lnkannotationlinewidth/) | This article provides a step-by-step guide for setting the line width of the lnk Annotation using Aspose.PDF for .NET. |  
-| [Redact Page](./redactpage/) | This article explains how to redact a PDF page using Aspose.PDF for .NET, including step-by-step instructions and example source code. |  
-| [Set Callout Property In PDF File](./setcalloutproperty/) | Learn how to set Callout Property in PDF file using Aspose.PDF for .NET. Customize annotations with callout lines, text color, and ending styles. |  
-| [Set Free Text Annotation Formatting](./setfreetextannotationformatting/) | This article provides a step-by-step guide on how to create a free text annotation and specify its contents using Aspose.PDF for .NET. |  
-| [Strike Out Words](./strikeoutwords/) | This article provides a step-by-step guide to using Aspose.PDF for .NET's Strike Out Words feature, including step by step guide and explanations. |  
-| [Update Free Text PDF Annotation](./updatefreetextannotation/) | Learn how to update free text PDF annotation feature of Aspose.PDF for .NET using C# source code. |  
+| [إضافة شرح PDF](./addannotation/) | تعرف على كيفية إضافة تعليقات توضيحية نصية بتنسيق PDF باستخدام Aspose.PDF لـ .NET باستخدام كود مصدر C# هذا. قم بتخصيص التعليقات التوضيحية الخاصة بك بتفاصيل وأيقونات محددة. |  
+| [إضافة تعليق توضيحي لـ LNK](./addlnkannotation/) | تعرف على كيفية إضافة ميزة Ink Annotation إلى مستندات PDF في C# باستخدام Aspose.PDF لـ .NET مع دليل خطوة بخطوة وكود المصدر الكامل. |  
+| [أضف ملف Swf كتعليق توضيحي بتنسيق PDF](./addswffileasannotation/) | تعرف على كيفية إضافة ملفات SWF كتعليقات توضيحية بتنسيق PDF في Aspose.PDF لـ .NET باستخدام هذا الدليل التفصيلي خطوة بخطوة. |  
+| [حذف كافة التعليقات التوضيحية من الصفحة](./deleteallannotationsfrompage/) | تعرف على كيفية حذف كافة التعليقات التوضيحية من صفحة PDF باستخدام Aspose.PDF لـ .NET باستخدام هذا الدليل التفصيلي خطوة بخطوة. |  
+| [حذف تعليق توضيحي معين في ملف PDF](./deleteparticularannotation/) | تعرف على كيفية حذف تعليق توضيحي معين في ملف PDF باستخدام Aspose.PDF لـ .NET باستخدام هذا الدليل التفصيلي خطوة بخطوة. |  
+| [استخراج النص المميز في ملف PDF](./extracthighlightedtext/) | تعرف على كيفية استخراج النص المميز في ملف PDF باستخدام Aspose.PDF لـ .NET باستخدام هذا الدليل التفصيلي خطوة بخطوة. |  
+| [احصل على جميع التعليقات التوضيحية من الصفحة](./getallannotationsfrompage/) | تعرف على كيفية استخدام Aspose.PDF لـ .NET لاسترداد كافة التعليقات التوضيحية من صفحة PDF باستخدام هذا الدليل التفصيلي خطوة بخطوة. |  
+| [احصل على تعليق توضيحي خاص في ملف PDF](./getparticularannotation/) | تعرف على كيفية استخدام Aspose.PDF لـ .NET للحصول على تعليق توضيحي محدد في ملف PDF باستخدام هذا الدليل التفصيلي خطوة بخطوة.  |  
+| [الحصول على الموارد من الشرح](./getresourceofannotation/) | تعرف على كيفية استرداد مصدر التعليق التوضيحي باستخدام Aspose.PDF لـ .NET باستخدام هذا الدليل التفصيلي خطوة بخطوة.  |  
+| [تعليق توضيحي غير مرئي في ملف PDF](./invisibleannotation/) | تعرف على كيفية إخفاء التعليقات التوضيحية في ملف PDF باستخدام كود مصدر C# باستخدام Aspose.PDF لـ .NET. دليل خطوة بخطوة. |  
+| [عرض خط التعليق التوضيحي lnk](./lnkannotationlinewidth/) | توفر هذه المقالة دليلاً خطوة بخطوة لتعيين عرض سطر التعليق التوضيحي lnk باستخدام Aspose.PDF لـ .NET. |  
+| [تنقيح الصفحة](./redactpage/) | تشرح هذه المقالة كيفية تنقيح صفحة PDF باستخدام Aspose.PDF لـ .NET، بما في ذلك الإرشادات خطوة بخطوة ومثال للتعليمات البرمجية المصدر. |  
+| [تعيين خاصية وسيلة الشرح في ملف PDF](./setcalloutproperty/) | تعرف على كيفية تعيين خاصية وسيلة الشرح في ملف PDF باستخدام Aspose.PDF لـ .NET. قم بتخصيص التعليقات التوضيحية باستخدام خطوط وسائل الشرح ولون النص وأنماط النهاية. |  
+| [تعيين تنسيق التعليقات التوضيحية للنص مجانًا](./setfreetextannotationformatting/) | توفر هذه المقالة دليلاً خطوة بخطوة حول كيفية إنشاء تعليق توضيحي للنص الحر وتحديد محتوياته باستخدام Aspose.PDF لـ .NET. |  
+| [شطب الكلمات](./strikeoutwords/) | توفر هذه المقالة دليلاً خطوة بخطوة لاستخدام Aspose.PDF لميزة شطب الكلمات الخاصة بـ .NET، بما في ذلك الدليل والشروحات خطوة بخطوة. |  
+| [تحديث التعليقات التوضيحية النصية المجانية بتنسيق PDF](./updatefreetextannotation/) | تعرف على كيفية تحديث ميزة التعليقات التوضيحية النصية المجانية بتنسيق PDF في Aspose.PDF لـ .NET باستخدام كود مصدر C#. |  

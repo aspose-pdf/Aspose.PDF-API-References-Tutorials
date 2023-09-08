@@ -1,41 +1,41 @@
 ---
-title: Get Child Bookmarks In PDF File
-linktitle: Get Child Bookmarks In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily get child bookmarks in PDF file with Aspose.PDF for .NET.
+title: Получить дочерние закладки в PDF-файле
+linktitle: Получить дочерние закладки в PDF-файле
+second_title: Справочник по Aspose.PDF для .NET API
+description: Легко получайте дочерние закладки в PDF-файле с помощью Aspose.PDF для .NET.
 type: docs
 weight: 80
 url: /ru/net/programming-with-bookmarks/get-child-bookmarks/
 ---
-Retrieving child bookmarks in PDF file can be useful for exploring the hierarchical structure of bookmarks. With Aspose.PDF for .NET, you can easily get the child bookmarks by following the following source code:
+Получение дочерних закладок в файле PDF может быть полезно для изучения иерархической структуры закладок. С помощью Aspose.PDF для .NET вы можете легко получить дочерние закладки, выполнив следующий исходный код:
 
-## Step 1: Import required libraries
+## Шаг 1. Импортируйте необходимые библиотеки.
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Прежде чем начать, вам необходимо импортировать необходимые библиотеки для вашего проекта C#. Вот необходимая директива импорта:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## Шаг 2. Установите путь к папке с документами.
 
-In this step, you need to specify the path to the folder containing the PDF file you want to extract the bookmarks from. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ На этом этапе вам необходимо указать путь к папке, содержащей PDF-файл, из которого вы хотите извлечь закладки. Заменять`"YOUR DOCUMENT DIRECTORY"`в следующем коде с фактическим путем к папке ваших документов:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Шаг 3. Откройте PDF-документ.
 
-Now we are going to open the PDF document from which we want to extract the bookmarks using the following code:
+Теперь мы собираемся открыть PDF-документ, из которого хотим извлечь закладки, используя следующий код:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetChildBookmarks.pdf");
 ```
 
-## Step 4: Browse bookmarks and child bookmarks
+## Шаг 4. Просмотрите закладки и дочерние закладки
 
-In this step, we will iterate over all the bookmarks in the document using a `foreach` loop. For each bookmark, we will display the information such as title, italic style, bold style and color. If the bookmark has child bookmarks, we'll display those as well. Here is the corresponding code:
+ На этом этапе мы пройдемся по всем закладкам в документе, используя`foreach` петля. Для каждой закладки мы будем отображать такую информацию, как заголовок, курсив, жирный шрифт и цвет. Если у закладки есть дочерние закладки, мы также отобразим их. Вот соответствующий код:
 
 ```csharp
 foreach(OutlineItemCollection outlineItem in pdfDocument.Outlines)
@@ -49,7 +49,7 @@ foreach(OutlineItemCollection outlineItem in pdfDocument.Outlines)
      {
          Console.WriteLine("Child bookmarks");
         
-         // Browse child bookmarks as well
+         // Просматривайте также дочерние закладки
          foreach(OutlineItemCollection childOutline in outlineItem)
          {
              Console.WriteLine(childOutline.Title);
@@ -61,13 +61,13 @@ foreach(OutlineItemCollection outlineItem in pdfDocument.Outlines)
 }
 ```
 
-### Sample source code for Get Child Bookmarks using Aspose.PDF for .NET 
+### Пример исходного кода для получения дочерних закладок с помощью Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Открыть документ
 Document pdfDocument = new Document(dataDir + "GetChildBookmarks.pdf");
-// Loop through all the bookmarks
+// Перебрать все закладки
 foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
 {
 	Console.WriteLine(outlineItem.Title);
@@ -77,7 +77,7 @@ foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
 	if (outlineItem.Count > 0)
 	{
 		Console.WriteLine("Child Bookmarks");
-		// There are child bookmarks then loop through that as well
+		// Есть дочерние закладки, их тоже можно просмотреть
 		foreach (OutlineItemCollection childOutline in outlineItem)
 		{
 			Console.WriteLine(childOutline.Title);
@@ -89,49 +89,49 @@ foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
 }
 ```
 
-## Conclusion
+## Заключение
 
-Congratulation ! Now you have a step by step guide to get child bookmarks with Aspose.PDF for .NET. You can use this code to explore the hierarchical structure of bookmarks and get detailed information about each bookmark and its child bookmarks in your PDF documents.
+Поздравляем! Теперь у вас есть пошаговое руководство по получению дочерних закладок с помощью Aspose.PDF для .NET. Вы можете использовать этот код для изучения иерархической структуры закладок и получения подробной информации о каждой закладке и ее дочерних закладках в ваших PDF-документах.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Обязательно ознакомьтесь с официальной документацией Aspose.PDF для получения дополнительной информации о расширенных функциях управления закладками.
 
-### FAQ's for get child bookmarks in PDF file
+### Часто задаваемые вопросы по получению дочерних закладок в PDF-файле
 
-#### Q: What are child bookmarks in a PDF file?
+#### Вопрос: Что такое дочерние закладки в PDF-файле?
 
-A: Child bookmarks are bookmarks that are nested under a parent bookmark. They create a hierarchical structure, allowing for a more organized and detailed navigation experience within the PDF document.
+О: Дочерние закладки — это закладки, вложенные в родительскую закладку. Они создают иерархическую структуру, обеспечивающую более организованную и подробную навигацию в PDF-документе.
 
-#### Q: Why would I want to retrieve child bookmarks from a PDF file?
+#### Вопрос: Зачем мне извлекать дочерние закладки из PDF-файла?
 
-A: Retrieving child bookmarks helps you understand the relationships and hierarchy between different sections of a document. This information can be especially useful for documents with complex structures or multiple levels of organization.
+О: Получение дочерних закладок помогает понять связи и иерархию между различными разделами документа. Эта информация может быть особенно полезна для документов со сложной структурой или несколькими уровнями организации.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### Вопрос: Как мне импортировать необходимые библиотеки для моего проекта C#?
 
-A: To import the required library for your C# project, use the following import directive:
+О: Чтобы импортировать необходимую библиотеку для вашего проекта C#, используйте следующую директиву импорта:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This directive enables you to access the classes and methods provided by Aspose.PDF for .NET.
+Эта директива позволяет вам получить доступ к классам и методам, предоставляемым Aspose.PDF для .NET.
 
-#### Q: How do I specify the path to the documents folder?
+#### Вопрос: Как указать путь к папке с документами?
 
-A: In the provided source code, replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file from which you want to extract child bookmarks. This ensures that the code can locate the target PDF file.
+ О: В предоставленном исходном коде замените`"YOUR DOCUMENT DIRECTORY"` с фактическим путем к папке, содержащей файл PDF, из которого вы хотите извлечь дочерние закладки. Это гарантирует, что код сможет найти целевой PDF-файл.
 
-#### Q: How do I open a PDF document to extract child bookmarks?
+#### Вопрос: Как открыть PDF-документ, чтобы извлечь дочерние закладки?
 
-A: To open a PDF document for bookmark extraction, use the following code:
+О: Чтобы открыть PDF-документ для извлечения закладок, используйте следующий код:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetChildBookmarks.pdf");
 ```
 
-Replace `"GetChildBookmarks.pdf"` with the actual file name.
+ Заменять`"GetChildBookmarks.pdf"` с фактическим именем файла.
 
-#### Q: How do I iterate through and display child bookmark information?
+#### Вопрос: Как перебирать и отображать информацию о дочерних закладках?
 
-A: Loop through all the bookmarks in the document using a `foreach` loop. For each bookmark, display information such as the title, italic style, bold style, color, and if it has child bookmarks, iterate through them as well:
+ A: Прокрутите все закладки в документе, используя`foreach` петля. Для каждой закладки отображайте такую информацию, как заголовок, курсив, жирный стиль, цвет, а если у нее есть дочерние закладки, также просматривайте их:
 
 ```csharp
 foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
@@ -145,7 +145,7 @@ foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
     {
         Console.WriteLine("Child bookmarks");
         
-        // Browse child bookmarks as well
+        // Просматривайте также дочерние закладки
         foreach (OutlineItemCollection childOutline in outlineItem)
         {
             Console.WriteLine(childOutline.Title);
@@ -157,18 +157,18 @@ foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
 }
 ```
 
-#### Q: Can I extract other properties of child bookmarks using a similar approach?
+#### Вопрос: Могу ли я извлечь другие свойства дочерних закладок, используя аналогичный подход?
 
-A: Yes, you can extract various properties of child bookmarks using the `OutlineItemCollection` object. Refer to the Aspose.PDF documentation for a comprehensive list of available properties.
+ О: Да, вы можете извлечь различные свойства дочерних закладок, используя команду`OutlineItemCollection` объект. Полный список доступных свойств см. в документации Aspose.PDF.
 
-#### Q: Is there a limit to the number of child bookmarks I can retrieve?
+#### Вопрос: Существует ли ограничение на количество дочерних закладок, которые я могу получить?
 
-A: There is typically no strict limit to the number of child bookmarks you can retrieve using this method. However, very large documents with an excessive number of child bookmarks may require efficient memory management.
+О. Обычно нет строгих ограничений на количество дочерних закладок, которые можно получить с помощью этого метода. Однако очень большие документы с чрезмерным количеством дочерних закладок могут потребовать эффективного управления памятью.
 
-#### Q: What if the child bookmarks have further nested child bookmarks?
+#### Вопрос: Что делать, если дочерние закладки имеют дополнительные вложенные дочерние закладки?
 
-A: The provided code will recursively iterate through all levels of child bookmarks, allowing you to retrieve information from nested child bookmarks as well.
+О: Предоставленный код будет рекурсивно проходить через все уровни дочерних закладок, позволяя вам также получать информацию из вложенных дочерних закладок.
 
-#### Q: How can I use the extracted child bookmark information?
+#### Вопрос: Как я могу использовать извлеченную информацию о дочерних закладках?
 
-A: You can use the extracted child bookmark information for analysis, documentation, or creating custom navigation interfaces within your applications.
+О: Вы можете использовать извлеченную информацию о дочерних закладках для анализа, документирования или создания пользовательских интерфейсов навигации в своих приложениях.

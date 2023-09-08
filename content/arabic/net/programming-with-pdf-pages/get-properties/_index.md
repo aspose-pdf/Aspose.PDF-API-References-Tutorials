@@ -1,50 +1,50 @@
 ---
-title: Get PDF Properties
-linktitle: Get PDF Properties
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to get PDF properties like box dimensions and rotation using Aspose.PDF for .NET.
+title: الحصول على خصائص PDF
+linktitle: الحصول على خصائص PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: دليل خطوة بخطوة للحصول على خصائص PDF مثل أبعاد الصندوق والتدوير باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 100
 url: /ar/net/programming-with-pdf-pages/get-properties/
 ---
-In this tutorial, we'll walk you through the step-by-step process to get the properties of a PDF using Aspose.PDF for .NET. We'll explain the bundled C# source code and provide you with a comprehensive guide to help you understand and implement this feature in your own projects. At the end of this tutorial, you will know how to access different properties of a PDF page such as art box, crop box, crop box, etc., using Aspose.PDF for .NET.
+في هذا البرنامج التعليمي، سنرشدك خلال العملية خطوة بخطوة للحصول على خصائص ملف PDF باستخدام Aspose.PDF لـ .NET. سنشرح لك التعليمات البرمجية المصدرية المجمعة لـ C# ونزودك بدليل شامل لمساعدتك على فهم هذه الميزة وتنفيذها في مشاريعك الخاصة. في نهاية هذا البرنامج التعليمي، ستعرف كيفية الوصول إلى خصائص مختلفة لصفحة PDF مثل المربع الفني، ومربع الاقتصاص، ومربع الاقتصاص، وما إلى ذلك، باستخدام Aspose.PDF لـ .NET.
 
-## Prerequisites
-Before you begin, make sure you have the following:
+## المتطلبات الأساسية
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- A basic knowledge of the C# programming language
-- Aspose.PDF for .NET installed in your development environment
+- معرفة أساسية بلغة البرمجة C#
+- تم تثبيت Aspose.PDF لـ .NET في بيئة التطوير الخاصة بك
 
-## Step 1: Set document directory
-First, you need to set the path to your documents directory. This is the location of the PDF file whose properties you want to get. Replace "YOUR DOCUMENTS DIRECTORY" with the appropriate path.
+## الخطوة 1: قم بتعيين دليل المستندات
+أولاً، تحتاج إلى تعيين المسار إلى دليل المستندات الخاص بك. هذا هو موقع ملف PDF الذي تريد الحصول على خصائصه. استبدل "دليل المستندات الخاصة بك" بالمسار المناسب.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Open the PDF document
-Next, you need to open the PDF document using the `Document` class of Aspose.PDF. Be sure to specify the correct path to the PDF file.
+## الخطوة 2: افتح مستند PDF
+ بعد ذلك، تحتاج إلى فتح مستند PDF باستخدام الملف`Document` فئة Aspose.PDF. تأكد من تحديد المسار الصحيح لملف PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetProperties.pdf");
 ```
 
-## Step 3: Access the Page Collection
-Now you can access the document's pages collection using the `Pages` property of the `pdfDocument` object.
+## الخطوة 3: الوصول إلى مجموعة الصفحات
+ يمكنك الآن الوصول إلى مجموعة صفحات المستند باستخدام الملف`Pages` ملكية`pdfDocument` هدف.
 
 ```csharp
 PageCollection pageCollection = pdfDocument.Pages;
 ```
 
-## Step 4: Go to a specific page
-Then you can jump to a specific page using the index of the page in the collection. In the example below, we access the second page (index 1).
+## الخطوة 4: انتقل إلى صفحة محددة
+ثم يمكنك الانتقال إلى صفحة معينة باستخدام فهرس الصفحة الموجودة في المجموعة. في المثال أدناه، نصل إلى الصفحة الثانية (الفهرس 1).
 
 ```csharp
 Page pdfPage = pageCollection[1];
 ```
 
-## Step 5: Get page properties
-Now you can get the different properties of the PDF page, such as art box, crop box, crop box, etc., by using the corresponding properties of the `pdfPage` object.
+## الخطوة 5: الحصول على خصائص الصفحة
+ يمكنك الآن الحصول على الخصائص المختلفة لصفحة PDF، مثل المربع الفني، ومربع الاقتصاص، ومربع الاقتصاص، وما إلى ذلك، باستخدام الخصائص المقابلة لـ`pdfPage` هدف.
 
 ```csharp
 Console.WriteLine("ArtBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.ArtBox.Height, pdfPage.ArtBox.Width, pdfPage.ArtBox.LLX, pdfPage.ArtBox.LLY, pdfPage.ArtBox.URX, pdfPage.ArtBox.URY);
@@ -59,19 +59,19 @@ Console.WriteLine("Page number: {0}", pdfPage.Number);
 Console.WriteLine("Rotate: {0}", pdfPage.Rotate);
 ```
 
-### Sample source code for Get Properties using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لـ Get Properties باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "GetProperties.pdf");
-// Get page collection
+// الحصول على مجموعة الصفحات
 PageCollection pageCollection = pdfDocument.Pages;
-// Get particular page
+// الحصول على صفحة معينة
 Page pdfPage = pageCollection[1];
-// Get page properties
+// الحصول على خصائص الصفحة
 System.Console.WriteLine("ArtBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.ArtBox.Height, pdfPage.ArtBox.Width, pdfPage.ArtBox.LLX, pdfPage.ArtBox.LLY, pdfPage.ArtBox.URX, pdfPage.ArtBox.URY);
 System.Console.WriteLine("BleedBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.BleedBox.Height, pdfPage.BleedBox.Width, pdfPage.BleedBox.LLX, pdfPage.BleedBox.LLY, pdfPage.BleedBox.URX, pdfPage.BleedBox.URY);
 System.Console.WriteLine("CropBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.CropBox.Height, pdfPage.CropBox.Width, pdfPage.CropBox.LLX, pdfPage.CropBox.LLY, pdfPage.CropBox.URX, pdfPage.CropBox.URY);
@@ -83,44 +83,44 @@ System.Console.WriteLine("Rotate : {0}", pdfPage.Rotate);
 
 ```
 
-## Conclusion
-Congratulation ! You have successfully obtained the properties of a PDF using Aspose.PDF for .NET. You learned how to open a PDF document, navigate to a specific page, and get various page properties, such as dimension boxes and rotation. You can now use this information to customize the handling of your PDF files based on their properties.
+## خاتمة
+تهنئة ! لقد نجحت في الحصول على خصائص ملف PDF باستخدام Aspose.PDF لـ .NET. لقد تعلمت كيفية فتح مستند PDF، والانتقال إلى صفحة معينة، والحصول على خصائص الصفحة المختلفة، مثل مربعات الأبعاد والتدوير. يمكنك الآن استخدام هذه المعلومات لتخصيص التعامل مع ملفات PDF الخاصة بك بناءً على خصائصها.
 
-Be sure to check out the official Aspose.PDF for .NET documentation for more information on advanced features and customization possibilities.
+تأكد من مراجعة وثائق Aspose.PDF الرسمية لـ .NET لمزيد من المعلومات حول الميزات المتقدمة وإمكانيات التخصيص.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: How can I get the properties of a PDF using Aspose.PDF for .NET?
+#### س: كيف يمكنني الحصول على خصائص ملف PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: To get the properties of a PDF using Aspose.PDF for .NET, you can follow these steps:
+ج: للحصول على خصائص ملف PDF باستخدام Aspose.PDF لـ .NET، يمكنك اتباع الخطوات التالية:
 
-1. Set the document directory by specifying the path to the PDF file whose properties you want to retrieve.
-2. Open the PDF document using the `Document` class of Aspose.PDF, providing the correct path to the PDF file.
-3. Access the document's pages collection using the `Pages` property of the `pdfDocument` object.
-4. Jump to a specific page using the index of the page in the collection (indexing starts from 1).
-5. Get the different properties of the PDF page, such as ArtBox, BleedBox, CropBox, MediaBox, TrimBox, Rect, Page Number, and Rotation, by using the corresponding properties of the `pdfPage` object.
+1. قم بتعيين دليل المستند عن طريق تحديد المسار إلى ملف PDF الذي تريد استرداد خصائصه.
+2.  افتح مستند PDF باستخدام`Document` فئة Aspose.PDF، مما يوفر المسار الصحيح لملف PDF.
+3.  قم بالوصول إلى مجموعة صفحات المستند باستخدام`Pages` ملكية`pdfDocument` هدف.
+4. انتقل إلى صفحة محددة باستخدام فهرس الصفحة الموجودة في المجموعة (تبدأ الفهرسة من 1).
+5.  احصل على الخصائص المختلفة لصفحة PDF، مثل ArtBox وBleedBox وCropBox وMediaBox وTrimBox وRect وPage Number وRotation، وذلك باستخدام الخصائص المقابلة لصفحة PDF.`pdfPage` هدف.
 
-#### Q: What are the different properties of a PDF page that I can retrieve using Aspose.PDF for .NET?
+#### س: ما هي الخصائص المختلفة لصفحة PDF التي يمكنني استردادها باستخدام Aspose.PDF لـ .NET؟
 
-A: You can retrieve various properties of a PDF page using Aspose.PDF for .NET, such as:
+ج: يمكنك استرداد خصائص مختلفة لصفحة PDF باستخدام Aspose.PDF لـ .NET، مثل:
 
-- ArtBox: Represents the dimensions of the page's artwork.
-- BleedBox: Represents the dimensions of the page's bleed.
-- CropBox: Represents the dimensions of the page's visible content after cropping.
-- MediaBox: Represents the dimensions of the page's physical media.
-- TrimBox: Represents the dimensions of the page's trimmed content.
-- Rect: Represents the dimensions of the page's bounding box.
-- Page Number: Represents the page number in the document.
-- Rotate: Represents the rotation angle of the page.
+- ArtBox: يمثل أبعاد العمل الفني للصفحة.
+- BleedBox: يمثل أبعاد نزيف الصفحة.
+- CropBox: يمثل أبعاد المحتوى المرئي للصفحة بعد الاقتصاص.
+- MediaBox: يمثل أبعاد الوسائط الفعلية للصفحة.
+- TrimBox: يمثل أبعاد محتوى الصفحة المقطوع.
+- المستطيل: يمثل أبعاد المربع المحيط بالصفحة.
+- رقم الصفحة: يمثل رقم الصفحة في المستند.
+- التدوير: يمثل زاوية دوران الصفحة.
 
-#### Q: How do I access a specific page in the PDF document to retrieve its properties?
+#### س: كيف يمكنني الوصول إلى صفحة معينة في وثيقة PDF لاستعادة خصائصها؟
 
-A: To access a specific page in the PDF document and retrieve its properties, you can use the `Pages` property of the `pdfDocument` object to access the document's pages collection. Then, you can use the index of the page in the collection to jump to the desired page. For example, to access the second page, you can use `pdfDocument.Pages[1]` (indexing starts from 1).
+ ج: للوصول إلى صفحة معينة في مستند PDF واسترداد خصائصها، يمكنك استخدام`Pages` ملكية`pdfDocument` كائن للوصول إلى مجموعة صفحات المستند. وبعد ذلك، يمكنك استخدام فهرس الصفحة الموجودة في المجموعة للانتقال إلى الصفحة المطلوبة. على سبيل المثال، للوصول إلى الصفحة الثانية، يمكنك استخدام`pdfDocument.Pages[1]` (الفهرسة تبدأ من 1).
 
-#### Q: Can I perform operations on the retrieved properties, such as modifying or resizing the page boxes?
+#### س: هل يمكنني إجراء عمليات على الخصائص المستردة، مثل تعديل أو تغيير حجم مربعات الصفحة؟
 
-A: Yes, once you retrieve the properties of a PDF page using Aspose.PDF for .NET, you can perform various operations on them. For example, you can modify the dimensions of the page boxes, rotate the page, or use the retrieved information for custom processing and manipulation of the PDF document.
+ج: نعم، بمجرد استرداد خصائص صفحة PDF باستخدام Aspose.PDF لـ .NET، يمكنك إجراء عمليات مختلفة عليها. على سبيل المثال، يمكنك تعديل أبعاد مربعات الصفحة، أو تدوير الصفحة، أو استخدام المعلومات المستردة للمعالجة المخصصة ومعالجة مستند PDF.
 
-#### Q: Does Aspose.PDF for .NET support extracting properties from encrypted or password-protected PDF files?
+#### س: هل يدعم Aspose.PDF for .NET استخراج الخصائص من ملفات PDF المشفرة أو المحمية بكلمة مرور؟
 
-A: Yes, Aspose.PDF for .NET supports extracting properties from encrypted or password-protected PDF files. As long as you provide the correct password to open the PDF document, you can access and retrieve its properties using the same approach demonstrated in the tutorial.
+ج: نعم، يدعم Aspose.PDF for .NET استخراج الخصائص من ملفات PDF المشفرة أو المحمية بكلمة مرور. طالما قمت بتوفير كلمة المرور الصحيحة لفتح مستند PDF، يمكنك الوصول إلى خصائصه واستردادها باستخدام نفس الطريقة الموضحة في البرنامج التعليمي.

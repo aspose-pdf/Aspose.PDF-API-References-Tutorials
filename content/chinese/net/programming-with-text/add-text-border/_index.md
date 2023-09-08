@@ -1,59 +1,59 @@
 ---
-title: Add Text Border In PDF File
-linktitle: Add Text Border In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add a text border in PDF file using Aspose.PDF for .NET.
+title: 在 PDF 文件中添加文本边框
+linktitle: 在 PDF 文件中添加文本边框
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 在 PDF 文件中添加文本边框。
 type: docs
 weight: 70
 url: /zh/net/programming-with-text/add-text-border/
 ---
-This tutorial will guide you through the process of adding a text border in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+本教程将指导您完成使用 Aspose.PDF for .NET 在 PDF 文件中添加文本边框的过程。提供的 C# 源代码演示了必要的步骤。
 
-## Requirements
-Before you begin, ensure that you have the following:
+## 要求
+在开始之前，请确保您具备以下条件：
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio 或计算机上安装的任何其他 C# 编译器。
+- Aspose.PDF for .NET 库。您可以从 Aspose 官方网站下载它或使用 NuGet 等包管理器来安装它。
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## 第 1 步：设置项目
+1. 在您首选的开发环境中创建一个新的 C# 项目。
+2. 添加对 Aspose.PDF for .NET 库的引用。
 
-## Step 2: Import required namespaces
-In the code file where you want to add the text border, add the following using directive at the top of the file:
+## 第2步：导入所需的命名空间
+在要添加文本边框的代码文件中，在文件顶部添加以下 using 指令：
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## 第三步：设置文档目录
+在代码中，找到显示以下内容的行`string dataDir = "YOUR DOCUMENT DIRECTORY";`并替换`"YOUR DOCUMENT DIRECTORY"`以及存储文档的目录的路径。
 
-## Step 4: Create a new Document object
-Instantiate a new `Document` object by adding the following line of code:
+## 步骤 4：创建一个新的 Document 对象
+实例化一个新的`Document`对象，添加以下代码行：
 
 ```csharp
 Document pdfDocument = new Document();
 ```
 
-## Step 5: Add a page to the document
-Add a new page to the document by using the `Add` method of the `Pages` collection. In the provided code, the new page is assigned to the variable `pdfPage`.
+## 步骤 5：向文档添加页面
+使用以下命令将新页面添加到文档中`Add`的方法`Pages`收藏。在提供的代码中，新页面被分配给变量`pdfPage`.
 
 ```csharp
 Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
-## Step 6: Create a TextFragment
-Create a `TextFragment` object and provide the desired text. Set the position of the text fragment using the `Position` property. In the provided code, the text is set to "main text" and positioned at (100, 600) on the page.
+## 第 6 步：创建一个 TextFragment
+创建一个`TextFragment`对象并提供所需的文本。使用设置文本片段的位置`Position`财产。在提供的代码中，文本设置为“主文本”并位于页面上的 (100, 600) 处。
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
 textFragment.Position = new Position(100, 600);
 ```
 
-## Step 7: Set text properties
-Customize the text properties such as font size, font type, background color, foreground color, etc. In the provided code, properties such as font size, font, background color, foreground color, and stroking color are set for the text fragment.
+## 第 7 步：设置文本属性
+自定义文本属性，如字体大小、字体类型、背景颜色、前景色等。在提供的代码中，为文本片段设置字体大小、字体、背景颜色、前景色和描边颜色等属性。
 
 ```csharp
 textFragment.TextState.FontSize = 12;
@@ -63,104 +63,104 @@ textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
 textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
 ```
 
-## Step 8: Enable text border
-To enable the text border, set the `DrawTextRectangleBorder` property of the text fragment's `TextState` to `true`.
+## 第 8 步：启用文本边框
+要启用文本边框，请设置`DrawTextRectangleBorder`文本片段的属性`TextState`到`true`.
 
 ```csharp
 textFragment.TextState.DrawTextRectangleBorder = true;
 ```
 
-## Step 9: Add the TextFragment to the page
-Use the `TextBuilder` class to add the `TextFragment` object to the page.
+## 第9步：将TextFragment添加到页面
+使用`TextBuilder`类来添加`TextFragment`反对该页面。
 
 ```csharp
 TextBuilder tb = new TextBuilder(pdfPage);
 tb.AppendText(textFragment);
 ```
 
-## Step 10: Save the PDF document
-Save the PDF document using the `Save` method of the `Document` object. Specify the output file path that you set in Step 3.
+## 第10步：保存PDF文档
+使用以下命令保存 PDF 文档`Save`的方法`Document`目的。指定您在步骤 3 中设置的输出文件路径。
 
 ```csharp
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
 ```
 
-### Sample source code for Add Text Border using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 添加文本边框的示例源代码 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create new document object 
+//创建新文档对象
 Document pdfDocument = new Document();
-// Get particular page
+//获取特定页面
 Page pdfPage = (Page)pdfDocument.Pages.Add();
-// Create text fragment
+//创建文本片段
 TextFragment textFragment = new TextFragment("main text");
 textFragment.Position = new Position(100, 600);
-// Set text properties
+//设置文本属性
 textFragment.TextState.FontSize = 12;
 textFragment.TextState.Font = FontRepository.FindFont("TimesNewRoman");
 textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
 textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
-// Set StrokingColor property for drawing border (stroking) around text rectangle
+//设置 StrokingColor 属性以在文本矩形周围绘制边框（描边）
 textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
-// Set DrawTextRectangleBorder property value to true
+//将 DrawTextRectangleBorder 属性值设置为 true
 textFragment.TextState.DrawTextRectangleBorder = true;
 TextBuilder tb = new TextBuilder(pdfPage);
 tb.AppendText(textFragment);
-// Save the document
+//保存文档
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
 ```
 
-## Conclusion
-You have successfully added a text border to your PDF document using Aspose.PDF for .NET. The resulting PDF file can now be found at the specified output file path.
+## 结论
+您已使用 Aspose.PDF for .NET 成功向 PDF 文档添加文本边框。现在可以在指定的输出文件路径中找到生成的 PDF 文件。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What is the main focus of this tutorial?
+#### 问：本教程的主要重点是什么？
 
-A: This tutorial guides you through the process of adding a text border to a PDF file using the Aspose.PDF for .NET library. The provided C# source code demonstrates the necessary steps to achieve this.
+答：本教程将指导您完成使用 Aspose.PDF for .NET 库向 PDF 文件添加文本边框的过程。提供的 C# 源代码演示了实现此目的的必要步骤。
 
-#### Q: Which namespaces do I need to import for this tutorial?
+#### 问：本教程需要导入哪些命名空间？
 
-A: In the code file where you want to add the text border, import the following namespaces at the beginning of the file:
+A：在要添加文本边框的代码文件中，在文件开头导入以下命名空间：
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-#### Q: How do I specify the document directory?
+#### 问：如何指定文档目录？
 
-A: In the code, locate the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ A：在代码中，找到行`string dataDir = "YOUR DOCUMENT DIRECTORY";`并替换`"YOUR DOCUMENT DIRECTORY"`与文档目录的实际路径。
 
-#### Q: How do I create a Document object?
+#### 问：如何创建 Document 对象？
 
-A: In Step 4, you'll instantiate a new `Document` object using the following line of code:
+答：在第 4 步中，您将实例化一个新的`Document`使用以下代码行对象：
 
 ```csharp
 Document pdfDocument = new Document();
 ```
 
-#### Q: How do I add a page to the document?
+#### 问：如何向文档添加页面？
 
-A: In Step 5, you'll add a new page to the document using the `Add` method of the `Pages` collection:
+答：在第 5 步中，您将使用`Add`的方法`Pages`收藏：
 
 ```csharp
 Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
-#### Q: How do I create a TextFragment and set its position?
+#### 问：如何创建 TextFragment 并设置其位置？
 
-A: In Step 6, you'll create a `TextFragment` object and set its position on the page using the `Position` property:
+答：在第 6 步中，您将创建一个`TextFragment`对象并使用以下命令设置其在页面上的位置`Position`财产：
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
 textFragment.Position = new Position(100, 600);
 ```
 
-#### Q: How can I customize the text properties, including the text border?
+#### 问：如何自定义文本属性，包括文本边框？
 
-A: In Step 7, you'll customize various text properties such as font size, font type, background color, foreground color, and text border:
+答：在步骤 7 中，您将自定义各种文本属性，例如字体大小、字体类型、背景颜色、前景色和文本边框：
 
 ```csharp
 textFragment.TextState.FontSize = 12;
@@ -171,23 +171,23 @@ textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
 textFragment.TextState.DrawTextRectangleBorder = true;
 ```
 
-#### Q: How do I add the TextFragment to the PDF document?
+#### 问：如何将 TextFragment 添加到 PDF 文档中？
 
-A: In Step 9, you'll use the `TextBuilder` class to add the `TextFragment` object to the page:
+答：在第 9 步中，您将使用`TextBuilder`类来添加`TextFragment`页面对象：
 
 ```csharp
 TextBuilder tb = new TextBuilder(pdfPage);
 tb.AppendText(textFragment);
 ```
 
-#### Q: How do I save the resulting PDF document?
+#### 问：如何保存生成的 PDF 文档？
 
-A: After adding the text with a border, use the `Save` method of the `Document` object to save the PDF document:
+ A：添加带边框的文本后，使用`Save`的方法`Document`保存 PDF 文档的对象：
 
 ```csharp
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
 ```
 
-#### Q: What is the main takeaway from this tutorial?
+#### 问：本教程的主要内容是什么？
 
-A: By following this tutorial, you've successfully learned how to enhance your PDF document by adding a text border using Aspose.PDF for .NET. This can be particularly useful for emphasizing specific text content within your PDF files.
+答：通过学习本教程，您已经成功学习了如何使用 Aspose.PDF for .NET 添加文本边框来增强 PDF 文档。这对于强调 PDF 文件中的特定文本内容特别有用。

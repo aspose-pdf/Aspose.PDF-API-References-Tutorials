@@ -1,36 +1,36 @@
 ---
-title: Fit Page Contents In PDF File
-linktitle: Fit Page Contents In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Detailed step-by-step guide to adjusting page contents in PDF file using Aspose.PDF for .NET. Easy implementation and rewarding conclusion.
+title: احتواء محتويات الصفحة في ملف PDF
+linktitle: احتواء محتويات الصفحة في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: دليل تفصيلي خطوة بخطوة لضبط محتويات الصفحة في ملف PDF باستخدام Aspose.PDF لـ .NET. سهولة التنفيذ وخاتمة مجزية.
 type: docs
 weight: 50
 url: /ar/net/programming-with-pdf-pages/fit-page-contents/
 ---
-In this tutorial, we'll walk you through the step-by-step process to adjust page contents in PDF file using Aspose.PDF for .NET. We'll explain the bundled C# source code and provide you with a comprehensive guide to help you understand and implement this feature in your own projects. At the end of this tutorial, you will know how to adjust the content of PDF pages using Aspose.PDF for .NET.
+في هذا البرنامج التعليمي، سنرشدك خلال العملية خطوة بخطوة لضبط محتويات الصفحة في ملف PDF باستخدام Aspose.PDF لـ .NET. سنشرح لك التعليمات البرمجية المصدرية المجمعة لـ C# ونزودك بدليل شامل لمساعدتك على فهم هذه الميزة وتنفيذها في مشاريعك الخاصة. في نهاية هذا البرنامج التعليمي، ستعرف كيفية ضبط محتوى صفحات PDF باستخدام Aspose.PDF لـ .NET.
 
-## Prerequisites
-Before you begin, make sure you have the following:
+## المتطلبات الأساسية
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- A basic knowledge of the C# programming language
-- Aspose.PDF for .NET installed in your development environment
+- معرفة أساسية بلغة البرمجة C#
+- تم تثبيت Aspose.PDF لـ .NET في بيئة التطوير الخاصة بك
 
-## Step 1: Define the document directory
-First, you need to set the path to your documents directory. This is the location where your input PDF file is located. Replace "YOUR DOCUMENTS DIRECTORY" with the appropriate path.
+## الخطوة 1: تحديد دليل المستند
+أولاً، تحتاج إلى تعيين المسار إلى دليل المستندات الخاص بك. هذا هو الموقع الذي يوجد به ملف PDF المدخل الخاص بك. استبدل "دليل المستندات الخاصة بك" بالمسار المناسب.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Load the PDF document
-Then you can load the PDF document using the `Document` class of Aspose.PDF. Be sure to specify the correct path to the input PDF file.
+## الخطوة 2: قم بتحميل مستند PDF
+ ثم يمكنك تحميل مستند PDF باستخدام`Document` فئة Aspose.PDF. تأكد من تحديد المسار الصحيح لملف PDF المدخل.
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 3: Adjust page content
-Now you can cycle through all the pages of the document and adjust the content of each page according to the size of the media box. In the example provided, we adjust the width of the page to render it in landscape mode (landscape) keeping the same height. The new width is calculated based on the aspect ratio of the media box.
+## الخطوة 3: ضبط محتوى الصفحة
+يمكنك الآن التنقل بين جميع صفحات المستند وضبط محتوى كل صفحة وفقًا لحجم صندوق الوسائط. في المثال المقدم، نقوم بضبط عرض الصفحة لعرضها في الوضع الأفقي (أفقي) مع الحفاظ على نفس الارتفاع. يتم حساب العرض الجديد بناءً على نسبة العرض إلى الارتفاع لصندوق الوسائط.
 
 ```csharp
 foreach(Page page in doc.Pages)
@@ -41,46 +41,46 @@ foreach(Page page in doc.Pages)
 }
 ```
 
-### Sample source code for Fit Page Contents using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لمحتويات الصفحة الملائمة باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "input.pdf");
 foreach (Page page in doc.Pages)
 {
 	Rectangle r = page.MediaBox;
-	// New height the same
+	// الارتفاع الجديد نفسه
 	double newHeight = r.Height;
-	// New width is expanded proportionally to make orientation landscape
-	// (we assume that previous orientation is portrait)
+	// يتم توسيع العرض الجديد بشكل متناسب لجعل الاتجاه أفقيًا
+	// (نفترض أن الاتجاه السابق هو عمودي)
 	double newWidth = r.Height * r.Height / r.Width;
 }          
 
 ```
 
-## Conclusion
-In this tutorial, we learned how to adjust PDF page content using Aspose.PDF for .NET. By following the steps outlined above, you can easily implement this functionality in your own projects. Feel free to explore the Aspose.PDF documentation further to discover other useful features for working with PDF files.
+## خاتمة
+في هذا البرنامج التعليمي، تعلمنا كيفية ضبط محتوى صفحة PDF باستخدام Aspose.PDF لـ .NET. باتباع الخطوات الموضحة أعلاه، يمكنك بسهولة تنفيذ هذه الوظيفة في مشاريعك الخاصة. لا تتردد في استكشاف وثائق Aspose.PDF بشكل أكبر لاكتشاف ميزات مفيدة أخرى للعمل مع ملفات PDF.
 
-### FAQ's for fit page contents in PDF file
+### الأسئلة الشائعة لمحتويات الصفحة الملائمة في ملف PDF
 
-#### Q: What does the "media box" represent in the context of PDF pages?
+#### س: ماذا يمثل "مربع الوسائط" في سياق صفحات PDF؟
 
-A: In the context of PDF pages, the "media box" represents the bounding box that defines the physical dimensions of the page content. It defines the width, height, and location of the page content within the PDF document.
+ج: في سياق صفحات PDF، يمثل "مربع الوسائط" المربع المحيط الذي يحدد الأبعاد المادية لمحتوى الصفحة. فهو يحدد العرض والارتفاع وموقع محتوى الصفحة داخل مستند PDF.
 
-#### Q: How does the provided C# source code adjust the page content?
+#### س: كيف يقوم كود المصدر C# المقدم بضبط محتوى الصفحة؟
 
-A: The provided C# source code adjusts the page content by resizing each page's width to make it appear in landscape mode while keeping the same height. The new width is calculated based on the aspect ratio of the media box, ensuring that the content retains its original proportions.
+ج: يقوم كود المصدر C# المقدم بضبط محتوى الصفحة عن طريق تغيير حجم عرض كل صفحة لجعلها تظهر في الوضع الأفقي مع الحفاظ على نفس الارتفاع. يتم حساب العرض الجديد بناءً على نسبة العرض إلى الارتفاع لصندوق الوسائط، مما يضمن احتفاظ المحتوى بنسبه الأصلية.
 
-#### Q: Can I adjust the page content to fit a specific size or aspect ratio?
+#### س: هل يمكنني ضبط محتوى الصفحة ليناسب حجمًا أو نسبة عرض إلى ارتفاع معينة؟
 
-A: Yes, you can adjust the page content to fit a specific size or aspect ratio by modifying the calculation in the provided C# source code. For example, if you want to fit the page content into a fixed size (e.g., 8.5 x 11 inches), you can calculate the new width and height accordingly.
+ج: نعم، يمكنك ضبط محتوى الصفحة ليناسب حجمًا معينًا أو نسبة عرض إلى ارتفاع معينة عن طريق تعديل الحساب في كود مصدر C# المقدم. على سبيل المثال، إذا كنت تريد احتواء محتوى الصفحة في حجم ثابت (على سبيل المثال، 8.5 × 11 بوصة)، فيمكنك حساب العرض والارتفاع الجديد وفقًا لذلك.
 
-#### Q: What will happen to the content on the page after adjusting the page size?
+#### س: ماذا سيحدث لمحتوى الصفحة بعد تعديل حجم الصفحة؟
 
-A: After adjusting the page size using the provided C# source code, the content on the page will be resized proportionally. If the original content's aspect ratio differs significantly from the new aspect ratio, the content may appear stretched or compressed.
+ج: بعد ضبط حجم الصفحة باستخدام كود مصدر C# المقدم، سيتم تغيير حجم محتوى الصفحة بشكل متناسب. إذا كانت نسبة العرض إلى الارتفاع للمحتوى الأصلي تختلف بشكل كبير عن نسبة العرض إلى الارتفاع الجديدة، فقد يظهر المحتوى ممتدًا أو مضغوطًا.
 
-#### Q: Can I adjust the content of specific pages instead of all pages in the PDF document?
+#### س: هل يمكنني ضبط محتوى صفحات معينة بدلاً من جميع الصفحات في مستند PDF؟
 
-A: Yes, you can adjust the content of specific pages instead of all pages in the PDF document. In the provided C# source code, the "foreach" loop iterates through all pages in the document. To adjust the content of specific pages, you can use conditional statements within the loop to target only the desired pages.
+ج: نعم، يمكنك ضبط محتوى صفحات معينة بدلاً من كل الصفحات الموجودة في مستند PDF. في كود مصدر C# المقدم، تتكرر حلقة "foreach" عبر كافة الصفحات الموجودة في المستند. لضبط محتوى صفحات معينة، يمكنك استخدام العبارات الشرطية داخل الحلقة لاستهداف الصفحات المطلوبة فقط.

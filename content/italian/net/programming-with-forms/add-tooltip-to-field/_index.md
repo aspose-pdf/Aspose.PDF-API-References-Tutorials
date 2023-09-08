@@ -1,100 +1,100 @@
 ---
-title: Add Tooltip To Field
-linktitle: Add Tooltip To Field
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add a tooltip to a field with Aspose.PDF for .NET.
+title: Aggiungi descrizione comando al campo
+linktitle: Aggiungi descrizione comando al campo
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Scopri come aggiungere una descrizione comando a un campo con Aspose.PDF per .NET.
 type: docs
 weight: 10
 url: /it/net/programming-with-forms/add-tooltip-to-field/
 ---
-Aspose.PDF for .NET is a powerful library that allows developers to manipulate PDF documents programmatically. In this tutorial, we will walk through the process of adding a tooltip to a field using Aspose.PDF for .NET. We will provide a step-by-step guide to help you understand and implement this functionality in your C# code.
+Aspose.PDF per .NET è una potente libreria che consente agli sviluppatori di manipolare i documenti PDF a livello di codice. In questo tutorial, esamineremo il processo di aggiunta di una descrizione comando a un campo utilizzando Aspose.PDF per .NET. Forniremo una guida passo passo per aiutarti a comprendere e implementare questa funzionalità nel tuo codice C#.
 
-## Step 1: Setting up the project and including Aspose.PDF for .NET
+## Passaggio 1: impostazione del progetto e inclusione di Aspose.PDF per .NET
 
-Before we begin, make sure you have Aspose.PDF for .NET installed in your development environment. You can download the library from the official website and follow the installation instructions provided.
+Prima di iniziare, assicurati di avere Aspose.PDF per .NET installato nel tuo ambiente di sviluppo. È possibile scaricare la libreria dal sito Web ufficiale e seguire le istruzioni di installazione fornite.
 
-Once you have installed Aspose.PDF for .NET, create a new C# project in your preferred Integrated Development Environment (IDE). Add a reference to the Aspose.PDF.dll file in your project to access the library's functionality.
+Dopo aver installato Aspose.PDF per .NET, crea un nuovo progetto C# nel tuo ambiente di sviluppo integrato (IDE) preferito. Aggiungi un riferimento al file Aspose.PDF.dll nel tuo progetto per accedere alle funzionalità della libreria.
 
-## Step 2: Loading the source PDF form
+## Passaggio 2: caricamento del modulo PDF di origine
 
-In this step, we will load the source PDF form that contains the field to which we want to add a tooltip. First, ensure that you have the source PDF form file available in your project directory. You can obtain a sample PDF form or use your own existing form.
+In questo passaggio, caricheremo il modulo PDF di origine che contiene il campo a cui vogliamo aggiungere un tooltip. Innanzitutto, assicurati di avere il file del modulo PDF di origine disponibile nella directory del progetto. È possibile ottenere un modulo PDF di esempio o utilizzare il modulo esistente.
 
-To load the PDF form, use the following code:
+Per caricare il modulo PDF, utilizzare il seguente codice:
 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load source PDF form
+// Carica il modulo PDF di origine
 Document doc = new Document(dataDir + "AddTooltipToField.pdf");
 ```
 
-Make sure to replace `"AddTooltipToField.pdf"` with the actual filename of your source PDF form.
+ Assicurati di sostituire`"AddTooltipToField.pdf"` con il nome file effettivo del modulo PDF di origine.
 
-## Step 3: Adding a tooltip to a text field
+## Passaggio 3: aggiunta di una descrizione comando a un campo di testo
 
-Now that we have loaded the source PDF form, we can proceed to add a tooltip to a specific text field. In this example, let's assume that the text field's name is "textbox1".
+Ora che abbiamo caricato il modulo PDF di origine, possiamo procedere ad aggiungere un tooltip a un campo di testo specifico. In questo esempio, supponiamo che il nome del campo di testo sia "textbox1".
 
-To add a tooltip to the text field, use the following code:
+Per aggiungere una descrizione comando al campo di testo, utilizzare il seguente codice:
 
 ```csharp
-// Set the tooltip for textfield
+// Imposta la descrizione comando per il campo di testo
 (doc.Form["textbox1"] as Field).AlternateName = "Text box tool tip";
 ```
 
-Replace `"textbox1"` with the actual name of the text field to which you want to add the tooltip. Also, customize the tooltip text by modifying the value assigned to `AlternateName`.
+ Sostituire`"textbox1"` con il nome effettivo del campo di testo a cui vuoi aggiungere il tooltip. Inoltre, personalizza il testo della descrizione comando modificando il valore assegnato a`AlternateName`.
 
-## Step 4: Saving the updated document
+## Passaggio 4: salvataggio del documento aggiornato
 
-After adding the tooltip to the field, we need to save the updated document. Specify the output file path where you want to save the modified PDF form.
+Dopo aver aggiunto il tooltip al campo, dobbiamo salvare il documento aggiornato. Specificare il percorso del file di output in cui si desidera salvare il modulo PDF modificato.
 
-To save the updated document, use the following code:
+Per salvare il documento aggiornato, utilizzare il seguente codice:
 
 ```csharp
 dataDir = dataDir + "AddTooltipToField_out.pdf";
-// Save the updated document
+// Salva il documento aggiornato
 doc.Save(dataDir);
 Console.WriteLine("\nTooltip added successfully.\nFile saved at " + dataDir);
 ```
 
-Make sure to provide the desired output file name and path. After executing this code, the modified PDF form with the added tooltip will be saved to the specified location.
+Assicurati di fornire il nome e il percorso del file di output desiderati. Dopo aver eseguito questo codice, il modulo PDF modificato con il suggerimento aggiunto verrà salvato nella posizione specificata.
 
-### Sample source code for Add Tooltip To Field using Aspose.PDF for .NET 
+### Codice sorgente di esempio per Aggiungi descrizione comando al campo utilizzando Aspose.PDF per .NET 
 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load source PDF form
+// Carica il modulo PDF di origine
 Document doc = new Document(dataDir + "AddTooltipToField.pdf");
-// Set the tooltip for textfield
+// Imposta la descrizione comando per il campo di testo
 (doc.Form["textbox1"] as Field).AlternateName = "Text box tool tip";
 dataDir = dataDir + "AddTooltipToField_out.pdf";
-// Save the updated document
+// Salva il documento aggiornato
 doc.Save(dataDir);
 Console.WriteLine("\nTooltip added successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Conclusione
 
-Congratulations! You have successfully learned how to add a tooltip to a field using Aspose.PDF for .NET. By following the step-by-step guide in this tutorial, you can enhance your PDF forms with tooltips to provide additional information or guidance to the users. Remember to explore the documentation and examples provided by Aspose.PDF for .NET to discover more advanced features and functionalities offered by the library.
+Congratulazioni! Hai imparato con successo come aggiungere una descrizione comando a un campo utilizzando Aspose.PDF per .NET. Seguendo la guida passo passo contenuta in questo tutorial, puoi migliorare i tuoi moduli PDF con descrizioni comandi per fornire ulteriori informazioni o indicazioni agli utenti. Ricordati di esplorare la documentazione e gli esempi forniti da Aspose.PDF per .NET per scoprire caratteristiche e funzionalità più avanzate offerte dalla libreria.
 
-### FAQ's
+### Domande frequenti
 
-#### Q: What is a tooltip in a PDF form, and why would I use it?
+#### D: Che cos'è una descrizione comando in un modulo PDF e perché dovrei utilizzarla?
 
-A: A tooltip in a PDF form is a small pop-up box that appears when the user hovers their mouse over a specific field. It provides additional information or instructions related to that field. Tooltips are helpful for guiding users, providing explanations, or offering context-specific help in PDF forms.
+R: Una descrizione comando in un modulo PDF è una piccola finestra popup che appare quando l'utente passa il mouse su un campo specifico. Fornisce ulteriori informazioni o istruzioni relative a quel campo. Le descrizioni comandi sono utili per guidare gli utenti, fornire spiegazioni o offrire aiuto specifico al contesto nei moduli PDF.
 
-#### Q: Can I customize the appearance and behavior of the tooltip?
+#### D: Posso personalizzare l'aspetto e il comportamento della descrizione comando?
 
-A: Yes, with Aspose.PDF for .NET, you can customize the appearance and behavior of the tooltip. You can set the tooltip text, font, color, and other attributes to match your application's design and requirements.
+R: Sì, con Aspose.PDF per .NET, puoi personalizzare l'aspetto e il comportamento del suggerimento. Puoi impostare il testo della descrizione comando, il carattere, il colore e altri attributi in modo che corrispondano al design e ai requisiti della tua applicazione.
 
-#### Q: Is Aspose.PDF for .NET compatible with other programming languages besides C#?
+#### D: Aspose.PDF per .NET è compatibile con altri linguaggi di programmazione oltre a C#?
 
-A: Yes, Aspose.PDF for .NET is designed to work with other .NET languages such as VB.NET, F#, and more. The library provides consistent functionality across these languages.
+R: Sì, Aspose.PDF per .NET è progettato per funzionare con altri linguaggi .NET come VB.NET, F# e altri. La libreria fornisce funzionalità coerenti tra questi linguaggi.
 
-#### Q: Can I add tooltips to other types of form fields, such as checkboxes or radio buttons?
+#### D: Posso aggiungere descrizioni comando ad altri tipi di campi modulo, come caselle di controllo o pulsanti di opzione?
 
-A: Yes, you can add tooltips to various types of form fields, including text fields, checkboxes, radio buttons, combo boxes, and more. The process is similar, and you can access different types of form fields using their names or IDs.
+R: Sì, puoi aggiungere descrizioni comandi a vari tipi di campi modulo, inclusi campi di testo, caselle di controllo, pulsanti di opzione, caselle combinate e altro. Il processo è simile e puoi accedere a diversi tipi di campi modulo utilizzando i loro nomi o ID.
 
-#### Q: Can I remove or modify the tooltip after it has been added to the field?
+#### D: Posso rimuovere o modificare il tooltip dopo che è stato aggiunto al campo?
 
-A: Yes, you can modify or remove the tooltip from a field even after it has been added using Aspose.PDF for .NET. Simply access the field and update its `AlternateName` property with the new tooltip text or set it to an empty string to remove the tooltip.
+ R: Sì, puoi modificare o rimuovere la descrizione comando da un campo anche dopo che è stato aggiunto utilizzando Aspose.PDF per .NET. Basta accedere al campo e aggiornarlo`AlternateName` proprietà con il nuovo testo della descrizione comando oppure impostala su una stringa vuota per rimuovere la descrizione comando.

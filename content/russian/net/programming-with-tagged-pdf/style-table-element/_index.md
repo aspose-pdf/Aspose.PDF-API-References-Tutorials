@@ -1,64 +1,64 @@
 ---
-title: Style Table Element
-linktitle: Style Table Element
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to format table element with Aspose.PDF for .NET. Step-by-step guide to customize styles and properties.
+title: Элемент таблицы стилей
+linktitle: Элемент таблицы стилей
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как форматировать элемент таблицы с помощью Aspose.PDF для .NET. Пошаговое руководство по настройке стилей и свойств.
 type: docs
 weight: 170
 url: /ru/net/programming-with-tagged-pdf/style-table-element/
 ---
-In this detailed tutorial, we will walk you through the provided C# source code step by step to format the array element using Aspose.PDF for .NET. Follow the instructions below to understand how to customize the styles and properties of the array element.
+В этом подробном руководстве мы шаг за шагом познакомим вас с предоставленным исходным кодом C# для форматирования элемента массива с помощью Aspose.PDF для .NET. Следуйте инструкциям ниже, чтобы понять, как настроить стили и свойства элемента массива.
 
-## Step 1: Setting up the environment
+## Шаг 1. Настройка среды
 
-Before you begin, make sure you've configured your development environment to use Aspose.PDF for .NET. This includes installing the Aspose.PDF library and configuring your project to reference it.
+Прежде чем начать, убедитесь, что вы настроили свою среду разработки для использования Aspose.PDF для .NET. Это включает в себя установку библиотеки Aspose.PDF и настройку вашего проекта для ссылки на нее.
 
-## Step 2: Creating a document
+## Шаг 2. Создание документа
 
-In this step, we will create a new document object Aspose.PDF.
+На этом этапе мы создадим новый объект документа Aspose.PDF.
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Document creation
+// Создание документа
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example of table formatting");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-We have created a new document and set the document title and language.
+Мы создали новый документ и установили заголовок и язык документа.
 
-## Step 3: Obtaining the root structure element
+## Шаг 3: Получение корневого элемента структуры
 
-In this step we will get the root structure element for our document.
+На этом этапе мы получим корневой элемент структуры для нашего документа.
 
 ```csharp
-// Obtain the root structure element
+//Получить корневой элемент структуры
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-We got the root structure element which will serve as a container for the array element.
+Мы получили корневой элемент структуры, который будет служить контейнером для элемента массива.
 
-## Step 4: Creating the array structure element
+## Шаг 4: Создание элемента структуры массива
 
-Now let's create a new table structure element for our document.
+Теперь давайте создадим новый элемент структуры таблицы для нашего документа.
 
 ```csharp
-// Create the array structure element
+// Создайте элемент структуры массива
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 ```
 
-We have created a new array structure element and added it to the root structure element.
+Мы создали новый элемент структуры массива и добавили его в корневой элемент структуры.
 
-## Step 5: Customizing Array Element Styles and Properties
+## Шаг 5. Настройка стилей и свойств элементов массива
 
-In this step, we will customize the styles and properties of the array element.
+На этом этапе мы настроим стили и свойства элемента массива.
 
 ```csharp
-// Customize the styles and properties of the array element
+// Настройте стили и свойства элемента массива
 tableElement.BackgroundColor = Color.Beige;
 tableElement.Border = new BorderInfo(BorderSide.All, 0.80F, Color.Gray);
 tableElement. Alignment = HorizontalAlignment. Center;
@@ -77,30 +77,30 @@ tableElement. Top = 40F;
 tableElement.RepeatingColumnsCount = 2;
 tableElement.RepeatingRowsCount = 3;
 
-// Customize the style of repeated lines
+// Настройте стиль повторяющихся линий
 TextState rowStyle = new TextState();
 rowStyle.BackgroundColor = Color.LightCoral;
 tableElement.RepeatingRowsStyle = rowStyle;
 ```
 
-We used various properties to customize the table element, such as background color, borders, alignment, default cell style, margins, column width, etc.
+Для настройки элемента таблицы мы использовали различные свойства, такие как цвет фона, границы, выравнивание, стиль ячейки по умолчанию, поля, ширина столбца и т. д.
 
-## Step 6: Add table headers, body and footer
+## Шаг 6. Добавьте заголовки, тело и нижний колонтитул таблицы.
 
-Now let's add the table headers, body and footer to the table element.
+Теперь давайте добавим заголовки, тело и нижний колонтитул таблицы к элементу таблицы.
 ```csharp
-// Add table headers
+// Добавьте заголовки таблиц
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
 TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
 TableTFootElement tableTFootElement = tableElement.CreateTFoot();
 
-// Number of rows and columns in the table
+// Количество строк и столбцов в таблице
 int rowCount = 10;
 int colCount = 5;
 int rowIndex;
 int colIndex;
 
-// Create the table header row
+// Создайте строку заголовка таблицы
 TableTRElement headTrElement = tableTHeadElement.CreateTR();
 headTrElement.AlternativeText = "Header Row";
 
@@ -110,7 +110,7 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
      theElement.SetText(string.Format("Header {0}", colIndex));
 }
 
-// Add the rows of the table body
+//Добавьте строки тела таблицы
 for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
 {
      TableTRElement trElement = tableTBodyElement.CreateTR();
@@ -123,7 +123,7 @@ for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
      }
 }
 
-// Add the footing line of the table
+// Добавьте нижнюю строку таблицы
 TableTRElement footTrElement = tableTFootElement.CreateTR();
 footTrElement.AlternativeText = "Footline";
 
@@ -134,49 +134,49 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 }
 ```
 
-We added the headers, body rows, and footer row to the table using the corresponding elements.
+Мы добавили в таблицу заголовки, строки тела и строку нижнего колонтитула, используя соответствующие элементы.
 
-## Step 7: Saving the tagged PDF document
+## Шаг 7. Сохранение PDF-документа с тегами
 
-Now that we've created our document with the styled table element, we'll save it as a tagged PDF document.
+Теперь, когда мы создали документ со стилизованным элементом таблицы, мы сохраним его как PDF-документ с тегами.
 
 ```csharp
-// Save the tagged PDF document
+// Сохраните PDF-документ с тегами
 document.Save(dataDir + "StyleTableElement.pdf");
 ```
 
-We saved the tagged PDF document in the specified directory.
+Мы сохранили PDF-документ с тегами в указанном каталоге.
 
-## Step 8: PDF/UA compliance validation
+## Шаг 8. Проверка соответствия PDF/UA
 
-Next, we will validate the PDF/UA conformity of our document.
+Далее мы проверим соответствие нашего документа PDF/UA.
 
 ```csharp
-// PDF/UA compliance check
+// Проверка соответствия PDF/UA
 document = new Document(dataDir + "StyleTableElement.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableElement.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(string.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
 ```
 
-We uploaded the tagged PDF document and validated its PDF/UA compliance by generating an XML report.
+Мы загрузили PDF-документ с тегами и проверили его соответствие PDF/UA, создав отчет XML.
 
-### Sample source code for Style Table Element using Aspose.PDF for .NET 
+### Пример исходного кода для элемента таблицы стилей с использованием Aspose.PDF для .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create document
+// Создать документ
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example table style");
 taggedContent.SetLanguage("en-US");
 
-// Get root structure element
+// Получить элемент корневой структуры
 StructureElement rootElement = taggedContent.RootElement;
 
-// Create table structure element
+// Создать элемент структуры таблицы
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 tableElement.BackgroundColor = Color.Beige;
@@ -231,62 +231,62 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 	tdElement.SetText(String.Format("Foot {0}", colIndex));
 }
 
-// Save Tagged Pdf Document
+// Сохранить PDF-документ с тегами
 document.Save(dataDir + "StyleTableElement.pdf");
 
-// Checking PDF/UA compliance
+// Проверка соответствия PDF/UA
 document = new Document(dataDir + "StyleTableElement.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableElement.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, we learned how to format the array element with Aspose.PDF for .NET. We customized the styles and properties of the table element, added headers, body rows, and a footer, saved the tagged PDF document, and validated its PDF/UA compliance.
+В этом уроке мы узнали, как отформатировать элемент массива с помощью Aspose.PDF для .NET. Мы настроили стили и свойства элемента таблицы, добавили заголовки, основные строки и нижний колонтитул, сохранили PDF-документ с тегами и проверили его соответствие PDF/UA.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is the purpose of this tutorial on formatting the array element using Aspose.PDF for .NET?
+#### Вопрос: Какова цель этого руководства по форматированию элемента массива с использованием Aspose.PDF для .NET?
 
-A: The goal of this tutorial is to guide you through the process of formatting the array element in a PDF document using Aspose.PDF for .NET. It provides step-by-step instructions and C# source code examples to help you customize the styles and properties of the array element.
+О: Цель этого руководства — провести вас через процесс форматирования элемента массива в PDF-документе с помощью Aspose.PDF для .NET. Он содержит пошаговые инструкции и примеры исходного кода C#, которые помогут вам настроить стили и свойства элемента массива.
 
-#### Q: What are the prerequisites for following this tutorial?
+#### Вопрос: Каковы необходимые условия для изучения этого руководства?
 
-A: Before you start, ensure that you have set up your development environment to use Aspose.PDF for .NET. This involves installing the Aspose.PDF library and configuring your project to reference it.
+О: Прежде чем начать, убедитесь, что вы настроили свою среду разработки для использования Aspose.PDF для .NET. Это включает в себя установку библиотеки Aspose.PDF и настройку вашего проекта для ссылки на нее.
 
-#### Q: How can I create a new PDF document and set its title and language using Aspose.PDF for .NET?
+#### Вопрос: Как создать новый PDF-документ и установить его заголовок и язык с помощью Aspose.PDF для .NET?
 
-A: To create a new PDF document, you need to create a `Document` object from the Aspose.PDF library. The tutorial's provided C# source code demonstrates how to create a document and set its title and language properties.
+ О: Чтобы создать новый PDF-документ, вам необходимо создать`Document` объект из библиотеки Aspose.PDF. Приведенный в руководстве исходный код C# демонстрирует, как создать документ и установить его заголовок и свойства языка.
 
-#### Q: What is the significance of the root structure element in a PDF document?
+#### Вопрос: Каково значение элемента корневой структуры в PDF-документе?
 
-A: The root structure element acts as a container for other structure elements, helping to organize and categorize the content of the PDF document. It plays a crucial role in establishing the logical structure of the document.
+Ответ: Элемент корневой структуры действует как контейнер для других элементов структуры, помогая организовать и классифицировать содержимое PDF-документа. Он играет решающую роль в установлении логической структуры документа.
 
-#### Q: How do I create and customize an array structure element using Aspose.PDF for .NET?
+#### Вопрос: Как создать и настроить элемент структуры массива с помощью Aspose.PDF для .NET?
 
-A: You can create an array structure element using the `CreateTableElement()` method. The tutorial's source code provides examples of customizing various properties of the table element, such as background color, borders, alignment, column width, and more.
+ О: Создать элемент структуры массива можно с помощью`CreateTableElement()` метод. Исходный код руководства содержит примеры настройки различных свойств элемента таблицы, таких как цвет фона, границы, выравнивание, ширина столбца и т. д.
 
-#### Q: Can I customize the styles and properties of table cells within the array element?
+#### Вопрос: Могу ли я настроить стили и свойства ячеек таблицы внутри элемента массива?
 
-A: Yes, the tutorial covers how to customize the styles and properties of the entire table element, including headers, body rows, and footer. However, it doesn't specifically address customizing individual table cells.
+О: Да, в этом руководстве рассказывается, как настроить стили и свойства всего элемента таблицы, включая заголовки, основные строки и нижний колонтитул. Однако здесь не рассматривается настройка отдельных ячеек таблицы.
 
-#### Q: How can I add headers, body rows, and a footer to the table element?
+#### Вопрос: Как добавить заголовки, основные строки и нижний колонтитул к элементу таблицы?
 
-A: The tutorial explains how to create and add headers, body rows, and a footer to the table element using the appropriate methods provided by Aspose.PDF for .NET.
+О: В руководстве объясняется, как создавать и добавлять заголовки, строки текста и нижний колонтитул к элементу таблицы, используя соответствующие методы, предоставляемые Aspose.PDF для .NET.
 
-#### Q: What is PDF/UA compliance, and how can I validate it for my tagged PDF document?
+#### Вопрос: Что такое соответствие PDF/UA и как я могу проверить его для моего PDF-документа с тегами?
 
-A: PDF/UA compliance ensures that the PDF document conforms to accessibility standards, making it more accessible to users with disabilities. The tutorial demonstrates how to validate PDF/UA conformity using the `Validate()` method and generate an XML compliance report.
+ Ответ: Соответствие PDF/UA гарантирует, что PDF-документ соответствует стандартам доступности, что делает его более доступным для пользователей с ограниченными возможностями. В этом руководстве показано, как проверить соответствие PDF/UA с помощью`Validate()` метод и сгенерируйте отчет о соответствии XML.
 
-#### Q: How can I incorporate these concepts into my own .NET applications?
+#### Вопрос: Как я могу включить эти концепции в свои собственные .NET-приложения?
 
-A: You can use the provided C# source code examples as a guide to implementing array element formatting in your own .NET applications. Modify and adapt the code to match your requirements and integrate it into your projects.
+О: Вы можете использовать предоставленные примеры исходного кода C# в качестве руководства по реализации форматирования элементов массива в ваших собственных .NET-приложениях. Измените и адаптируйте код в соответствии с вашими требованиями и интегрируйте его в свои проекты.
 
-#### Q: Are there any recommended best practices for formatting array elements in PDF documents?
+#### Вопрос: Существуют ли какие-либо рекомендации по форматированию элементов массива в документах PDF?
 
-A: When formatting array elements (tables), consider the readability and accessibility of the content. Use clear and legible fonts, appropriate colors, and maintain a consistent layout. Validate PDF/UA compliance to ensure accessibility standards are met.
+О: При форматировании элементов массива (таблиц) учитывайте читаемость и доступность содержимого. Используйте четкие и разборчивые шрифты, подходящие цвета и сохраняйте единообразие макета. Проверьте соответствие PDF/UA, чтобы обеспечить соблюдение стандартов доступности.
 
-#### Q: What other features of Aspose.PDF for .NET can I explore for PDF document customization?
+#### Вопрос: Какие еще функции Aspose.PDF для .NET я могу изучить для настройки PDF-документа?
 
-A: Aspose.PDF for .NET offers a range of features for PDF document customization, including text manipulation, image insertion, form field management, digital signatures, annotations, and more. Consult the official documentation and resources to explore additional functionalities.
+О: Aspose.PDF для .NET предлагает ряд функций для настройки PDF-документов, включая манипулирование текстом, вставку изображений, управление полями формы, цифровые подписи, аннотации и многое другое. Обратитесь к официальной документации и ресурсам, чтобы изучить дополнительные функции.

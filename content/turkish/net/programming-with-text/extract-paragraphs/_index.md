@@ -1,26 +1,26 @@
 ---
-title: Extract Paragraphs In PDF File
-linktitle: Extract Paragraphs In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract paragraphs in PDF file using Aspose.PDF for .NET.
+title: PDF Dosyasındaki Paragrafları Çıkart
+linktitle: PDF Dosyasındaki Paragrafları Çıkart
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF dosyasındaki paragrafları nasıl çıkaracağınızı öğrenin.
 type: docs
 weight: 160
 url: /tr/net/programming-with-text/extract-paragraphs/
 ---
-This tutorial will guide you through the process of extracting paragraphs in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+Bu eğitim, Aspose.PDF for .NET'i kullanarak PDF dosyasındaki paragrafları çıkarma sürecinde size rehberlik edecektir. Sağlanan C# kaynak kodu gerekli adımları gösterir.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## Gereksinimler
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Makinenizde kurulu Visual Studio veya başka herhangi bir C# derleyicisi.
+- Aspose.PDF for .NET kitaplığı. Resmi Aspose web sitesinden indirebilir veya yüklemek için NuGet gibi bir paket yöneticisi kullanabilirsiniz.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## 1. Adım: Projeyi ayarlayın
+1. Tercih ettiğiniz geliştirme ortamında yeni bir C# projesi oluşturun.
+2. Aspose.PDF for .NET kitaplığına bir referans ekleyin.
 
-## Step 2: Import required namespaces
-In the code file where you want to extract paragraphs, add the following using directives at the top of the file:
+## 2. Adım: Gerekli ad alanlarını içe aktarın
+Paragrafları çıkarmak istediğiniz kod dosyasında, dosyanın en üstüne aşağıdaki kullanma yönergelerini ekleyin:
 
 ```csharp
 using Aspose.Pdf;
@@ -28,26 +28,26 @@ using System;
 using System.Text;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## 3. Adım: Belge dizinini ayarlayın
+ Kodda yazan satırı bulun`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` belgelerinizin saklandığı dizinin yolu ile birlikte.
 
-## Step 4: Open the PDF document
-Open an existing PDF document using the `Document` constructor and passing the path to the input PDF file.
+## 4. Adım: PDF belgesini açın
+ Mevcut bir PDF belgesini kullanarak açın.`Document`yapıcı ve yolu giriş PDF dosyasına geçirme.
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 5: Extract paragraphs
-Instantiate the `ParagraphAbsorber` class and use its `Visit` method to extract paragraphs from the document.
+## 5. Adım: Paragrafları çıkarın
+ Örnekleyin`ParagraphAbsorber` sınıf ve onu kullanın`Visit` Belgeden paragrafları çıkarma yöntemi.
 
 ```csharp
 ParagraphAbsorber absorb = new ParagraphAbsorber();
 absorb.Visit(doc);
 ```
 
-## Step 6: Iterate through paragraphs
-Loop through the extracted paragraphs to access the text contents. Use nested loops to traverse through sections and lines within each paragraph.
+## Adım 6: Paragrafları yineleyin
+Metin içeriğine erişmek için çıkarılan paragraflar arasında dolaşın. Her paragraftaki bölümler ve çizgiler arasında geçiş yapmak için iç içe geçmiş döngüleri kullanın.
 
 ```csharp
 foreach(PageMarkup markup in absorber.PageMarkups)
@@ -77,13 +77,13 @@ foreach(PageMarkup markup in absorber.PageMarkups)
 }
 ```
 
-### Sample source code for Extract Paragraphs using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Paragraf Çıkarma için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open an existing PDF file
+//Mevcut bir PDF dosyasını açın
 Document doc = new Document(dataDir + "input.pdf");
-// Instantiate ParagraphAbsorber
+// Paragraf Emiciyi Örneklendir
 ParagraphAbsorber absorber = new ParagraphAbsorber();
 absorber.Visit(doc);
 foreach (PageMarkup markup in absorber.PageMarkups)
@@ -113,18 +113,18 @@ foreach (PageMarkup markup in absorber.PageMarkups)
 }
 ```
 
-## Conclusion
-You have successfully extracted paragraphs from a PDF document using Aspose.PDF for .NET. The extracted paragraphs have been displayed in the console window.
+## Çözüm
+Aspose.PDF for .NET'i kullanarak bir PDF belgesinden paragrafları başarıyla çıkardınız. Çıkarılan paragraflar konsol penceresinde görüntülendi.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the purpose of this tutorial?
+#### S: Bu eğitimin amacı nedir?
 
-A: This tutorial aims to guide you through the process of extracting paragraphs from a PDF file using Aspose.PDF for .NET. The accompanying C# source code provides practical steps for achieving this task.
+C: Bu eğitimin amacı, Aspose.PDF for .NET kullanarak bir PDF dosyasından paragraf çıkarma sürecinde size rehberlik etmektir. Ekteki C# kaynak kodu, bu görevi gerçekleştirmek için pratik adımlar sağlar.
 
-#### Q: What namespaces should I import?
+#### S: Hangi ad alanlarını içe aktarmalıyım?
 
-A: In the code file where you intend to extract paragraphs, include the following using directives at the beginning of the file:
+C: Paragrafları çıkarmak istediğiniz kod dosyasında, dosyanın başına aşağıdaki kullanma yönergelerini ekleyin:
 
 ```csharp
 using Aspose.Pdf;
@@ -132,22 +132,22 @@ using System;
 using System.Text;
 ```
 
-#### Q: How do I specify the document directory?
+#### S: Belge dizinini nasıl belirlerim?
 
-A: Locate the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` in the code and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ A: Çizgiyi bulun`string dataDir = "YOUR DOCUMENT DIRECTORY";` kodda ve değiştirin`"YOUR DOCUMENT DIRECTORY"` belge dizininizin gerçek yolu ile.
 
-#### Q: How do I open an existing PDF document?
+#### S: Mevcut bir PDF belgesini nasıl açarım?
 
-A: In Step 4, you'll open an existing PDF document using the `Document` constructor and providing the path to the input PDF file.
+ C: 4. Adımda, mevcut bir PDF belgesini aşağıdaki komutu kullanarak açacaksınız:`Document` yapıcı ve giriş PDF dosyasının yolunu sağlama.
 
-#### Q: How do I extract paragraphs from the document?
+#### S: Belgeden paragrafları nasıl çıkarabilirim?
 
-A: Step 5 involves creating an instance of the `ParagraphAbsorber` class and using its `Visit` method to extract paragraphs from the PDF document.
+ C: Adım 5, bir örneğinin oluşturulmasını içerir.`ParagraphAbsorber` sınıf ve onu kullanma`Visit` PDF belgesinden paragrafları çıkarma yöntemi.
 
-#### Q: How do I iterate through the extracted paragraphs?
+#### S: Çıkarılan paragraflar arasında nasıl yineleme yaparım?
 
-A: Step 6 guides you through looping through the extracted paragraphs. Nested loops are used to traverse sections and lines within each paragraph, ultimately accessing and displaying the text contents.
+C: Adım 6, çıkarılan paragraflar arasında geçiş yapmanızda size rehberlik eder. İç içe döngüler, her paragraf içindeki bölümleri ve satırları geçmek, sonuçta metin içeriğine erişmek ve görüntülemek için kullanılır.
 
-#### Q: What is the key takeaway from this tutorial?
+#### S: Bu eğitimden çıkarılacak önemli sonuç nedir?
 
-A: By following this tutorial, you've learned how to extract paragraphs from a PDF document using Aspose.PDF for .NET. The extracted paragraphs have been displayed in the console window, providing you with valuable insight into the document's content structure.
+C: Bu eğitimi takip ederek Aspose.PDF for .NET kullanarak bir PDF belgesinden paragrafların nasıl çıkarılacağını öğrendiniz. Çıkarılan paragraflar konsol penceresinde görüntülenerek belgenin içerik yapısına ilişkin değerli bilgiler sağlanmıştır.

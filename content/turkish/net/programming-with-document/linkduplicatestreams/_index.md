@@ -1,97 +1,97 @@
 ---
-title: Link Duplicate Streams
-linktitle: Link Duplicate Streams
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use Aspose.PDF for .NET Link Duplicate Streams feature to optimize your PDF documents with this step-by-step guide.
+title: Yinelenen Akışları Bağlama
+linktitle: Yinelenen Akışları Bağlama
+second_title: .NET API Referansı için Aspose.PDF
+description: Bu adım adım kılavuzla PDF belgelerinizi optimize etmek için Aspose.PDF for .NET Link Çoğaltılmış Akışlar özelliğini nasıl kullanacağınızı öğrenin.
 type: docs
 weight: 230
 url: /tr/net/programming-with-document/linkduplicatestreams/
 ---
-Aspose.PDF for .NET is a comprehensive and powerful library that provides a variety of features to work with PDF files. One of its key features is the ability to optimize PDF files. In this article, we will explain how to use the Link Duplicate Streams feature of Aspose.PDF for .NET to optimize PDF files. We will provide step-by-step instructions and include a full source code example to make it easy for developers to follow along.
+Aspose.PDF for .NET, PDF dosyalarıyla çalışmak için çeşitli özellikler sağlayan kapsamlı ve güçlü bir kütüphanedir. En önemli özelliklerinden biri PDF dosyalarını optimize edebilme yeteneğidir. Bu makalede, Aspose.PDF for .NET'in PDF dosyalarını optimize etmek için Çoğaltılmış Akışlara Bağlantı Verme özelliğinin nasıl kullanılacağını açıklayacağız. Geliştiricilerin takip etmesini kolaylaştırmak için adım adım talimatlar sunacağız ve tam bir kaynak kodu örneği ekleyeceğiz.
 
-## Step 1: Opening the PDF Document
+## Adım 1: PDF Belgesini Açma
 
-To open the PDF document using Aspose.PDF for .NET, follow these steps:
+PDF belgesini Aspose.PDF for .NET kullanarak açmak için şu adımları izleyin:
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 ```
 
-In the code above, replace "YOUR DOCUMENT DIRECTORY" with the path to your project directory.
+Yukarıdaki kodda, "BELGE DİZİNİ"ni proje dizininizin yolu ile değiştirin.
 
-## Step 2: Setting the LinkDuplicateStreams Option
+## Adım 2: LinkDuplicateStreams Seçeneğinin Ayarlanması
 
-To set the LinkDuplicateStreams option, follow these steps:
+LinkDuplicateStreams seçeneğini ayarlamak için şu adımları izleyin:
 
 ```csharp
-// Set LinkDuplcateStreams option 
+// LinkDuplcateStreams seçeneğini ayarlayın
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 {
     LinkDuplcateStreams = true
 };
 ```
 
-In the code above, we created a new instance of OptimizationOptions and set the LinkDuplicateStreams option to true.
+Yukarıdaki kodda OptimizationOptions'ın yeni bir örneğini oluşturduk ve LinkDuplicateStreams seçeneğini true olarak ayarladık.
 
-## Step 3: Optimizing the PDF Document
+## 3. Adım: PDF Belgesini Optimize Etme
 
-To optimize the PDF document, follow these steps:
+PDF belgesini optimize etmek için şu adımları izleyin:
 
 ```csharp
-// Optimize PDF document using OptimizationOptions
+// OptimizationOptions'ı kullanarak PDF belgesini optimize edin
 pdfDocument.OptimizeResources(optimizeOptions);
 ```
 
-In the code above, we used the OptimizeResources method of the pdfDocument object to optimize the PDF document using the OptimizationOptions we created earlier.
+Yukarıdaki kodda, daha önce oluşturduğumuz OptimizationOptions'ı kullanarak PDF belgesini optimize etmek için pdfDocument nesnesinin OptimizeResources yöntemini kullandık.
 
-## Step 4: Saving the Updated Document
+## Adım 4: Güncellenen Belgeyi Kaydetme
 
-To save the updated document, follow these steps:
+Güncellenen belgeyi kaydetmek için şu adımları izleyin:
 
 ```csharp
 dataDir = dataDir + "OptimizeDocument_out.pdf";
-// Save updated document
+// Güncellenen belgeyi kaydet
 pdfDocument.Save(dataDir);
 ```
 
-In the code above, we used the Save method of the pdfDocument object to save the updated document to a new file named "OptimizeDocument_out.pdf" in the project directory.
+Yukarıdaki kodda güncellenen belgeyi proje dizininde "OptimizeDocument_out.pdf" isimli yeni bir dosyaya kaydetmek için pdfDocument nesnesinin Save yöntemini kullandık.
 
-### Example Source Code for Link Duplicate Streams using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak Yinelenen Akışları Bağlamak için Örnek Kaynak Kodu
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-// Set LinkDuplcateStreams option 
+// LinkDuplcateStreams seçeneğini ayarlayın
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 {
 	LinkDuplcateStreams = true
 };
-// Optimize PDF document using OptimizationOptions
+// OptimizationOptions'ı kullanarak PDF belgesini optimize edin
 pdfDocument.OptimizeResources(optimizeOptions);
 dataDir = dataDir + "OptimizeDocument_out.pdf";
-// Save updated document
+// Güncellenen belgeyi kaydet
 pdfDocument.Save(dataDir);
 ```
 
-## Conclusion
+## Çözüm
 
-The Link Duplicate Streams feature of Aspose.PDF for .NET provides an effective way to optimize PDF files by reducing their size. By identifying and linking duplicate streams, the library helps create more efficient PDF documents without sacrificing data integrity or visual quality. Developers can easily implement this feature using the provided steps and source code example, enhancing the performance and storage efficiency of their PDF files.
+Aspose.PDF for .NET'in Yinelenen Akışları Bağlama özelliği, PDF dosyalarının boyutlarını küçülterek optimize etmenin etkili bir yolunu sunar. Kitaplık, yinelenen akışları tanımlayıp bağlayarak, veri bütünlüğünden veya görsel kaliteden ödün vermeden daha verimli PDF belgeleri oluşturmaya yardımcı olur. Geliştiriciler, sağlanan adımları ve kaynak kodu örneğini kullanarak bu özelliği kolayca uygulayabilir ve PDF dosyalarının performansını ve depolama verimliliğini artırabilir.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the purpose of the Link Duplicate Streams feature in Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'teki Yinelenen Akışları Bağlama özelliğinin amacı nedir?
 
-A: The Link Duplicate Streams feature in Aspose.PDF for .NET is used to optimize PDF files by identifying and linking duplicate streams within the document. In a PDF file, there may be duplicate streams (such as images or fonts) that consume unnecessary space. By linking these duplicate streams, the file size can be reduced, resulting in a more efficient and smaller PDF document.
+C: Aspose.PDF for .NET'teki Yinelenen Akışları Bağla özelliği, belge içindeki yinelenen akışları tanımlayıp bağlayarak PDF dosyalarını optimize etmek için kullanılır. Bir PDF dosyasında gereksiz yer kaplayan yinelenen akışlar (resimler veya yazı tipleri gibi) olabilir. Bu yinelenen akışları bağlayarak dosya boyutu küçültülebilir ve sonuçta daha verimli ve daha küçük bir PDF belgesi elde edilebilir.
 
-#### Q: How does the Link Duplicate Streams feature work?
+#### S: Yinelenen Akışlara Bağlantı Verme özelliği nasıl çalışır?
 
-A: The Link Duplicate Streams feature works by analyzing the content streams of the PDF document and identifying duplicate streams that have the same content. Instead of storing these duplicate streams separately, the feature creates a link between them, effectively sharing the same content. This optimization technique reduces the overall size of the PDF document without affecting its visual appearance or functionality.
+C: Yinelenen Akışları Bağlama özelliği, PDF belgesinin içerik akışlarını analiz ederek ve aynı içeriğe sahip yinelenen akışları belirleyerek çalışır. Bu özellik, bu kopya akışları ayrı ayrı depolamak yerine aralarında bir bağlantı oluşturarak aynı içeriği etkili bir şekilde paylaşıyor. Bu optimizasyon tekniği, görsel görünümünü veya işlevselliğini etkilemeden PDF belgesinin genel boyutunu azaltır.
 
-#### Q: Can the Link Duplicate Streams feature cause any loss of data or quality in the PDF document?
+#### S: Yinelenen Akışları Bağlama özelliği PDF belgesinde herhangi bir veri veya kalite kaybına neden olabilir mi?
 
-A: No, the Link Duplicate Streams feature does not cause any loss of data or quality in the PDF document. It only optimizes the file size by linking duplicate streams, without altering the content or visual appearance of the document. The feature is designed to ensure that the PDF document remains intact and maintains its original quality.
+C: Hayır, Çoğaltılmış Akışları Bağlama özelliği PDF belgesinde herhangi bir veri veya kalite kaybına neden olmaz. Belgenin içeriğini veya görsel görünümünü değiştirmeden, yalnızca yinelenen akışları bağlayarak dosya boyutunu optimize eder. Bu özellik, PDF belgesinin bozulmadan kalmasını ve orijinal kalitesini korumasını sağlayacak şekilde tasarlanmıştır.

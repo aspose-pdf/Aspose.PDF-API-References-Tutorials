@@ -1,111 +1,111 @@
 ---
-title: Remove Table In PDF Document
-linktitle: Remove Table In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to remove a table in PDF document using Aspose.PDF for .NET.
+title: إزالة الجدول في وثيقة PDF
+linktitle: إزالة الجدول في وثيقة PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إزالة جدول في مستند PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 160
 url: /ar/net/programming-with-tables/remove-table/
 ---
-In this tutorial, we will guide you step by step to remove a table in PDF document using Aspose.PDF for .NET. We'll explain the provided C# source code and show you how to implement it.
+في هذا البرنامج التعليمي، سنرشدك خطوة بخطوة لإزالة جدول في مستند PDF باستخدام Aspose.PDF لـ .NET. سنشرح لك كود مصدر C# المقدم ونوضح لك كيفية تنفيذه.
 
-## Step 1: Loading the existing PDF document
-First, you need to load the existing PDF document using the following code:
+## الخطوة 1: تحميل مستند PDF الموجود
+أولاً، تحتاج إلى تحميل مستند PDF الموجود باستخدام الكود التالي:
 
 ```csharp
-// Path to the documents directory
+// المسار إلى دليل المستندات
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Load the existing PDF document
+// قم بتحميل مستند PDF الموجود
 Document pdfDocument = new Document(dataDir + "Table_input.pdf");
 ```
 
-## Step 2: Creating the TableAbsorber object to find the tables
-Next, we'll create a TableAbsorber object to find the tables in the PDF document:
+## الخطوة 2: إنشاء كائن TableAbsorter للعثور على الجداول
+بعد ذلك، سنقوم بإنشاء كائن TableAbsorter للعثور على الجداول في مستند PDF:
 
 ```csharp
-// Create a TableAbsorber object to find the tables
+// قم بإنشاء كائن TableAbsorter للعثور على الجداول
 TableAbsorber absorber = new TableAbsorber();
 ```
 
-## Step 3: Visit the first page with the absorber
-We will now visit the first page of the PDF document using the absorber:
+## الخطوة 3: قم بزيارة الصفحة الأولى مع الممتص
+سنقوم الآن بزيارة الصفحة الأولى من مستند PDF باستخدام أداة الامتصاص:
 
 ```csharp
-// Visit the first page with the absorber
+// قم بزيارة الصفحة الأولى مع الممتص
 absorb.Visit(pdfDocument.Pages[1]);
 ```
 
-## Step 4: Getting the first table on the page
-To be able to remove the table, we will obtain the first table of the page:
+## الخطوة 4: الحصول على الجدول الأول في الصفحة
+لكي نتمكن من إزالة الجدول، سنحصل على الجدول الأول من الصفحة:
 
 ```csharp
-// Get the first table on the page
+// احصل على الجدول الأول على الصفحة
 AbsorbedTable table = absorb.TableList[0];
 ```
 
-## Step 5: Deleting the table
-Now let's remove the table using the absorber:
+## الخطوة 5: حذف الجدول
+الآن دعونا نزيل الطاولة باستخدام أداة الامتصاص:
 
 ```csharp
-// remove the table
+// إزالة الجدول
 absorb.Remove(table);
 ```
 
-## Step 6: Save PDF
-Finally, we save the modified PDF document:
+## الخطوة 6: حفظ ملف PDF
+وأخيرًا، نقوم بحفظ مستند PDF المعدل:
 
 ```csharp
-// Save the PDF
+// احفظ ملف PDF
 pdfDocument.Save(dataDir + "Table_out.pdf");
 ```
 
-### Example source code for Remove Table using Aspose.PDF for .NET
+### مثال على التعليمات البرمجية المصدر لإزالة الجدول باستخدام Aspose.PDF لـ .NET
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Load existing PDF document
+// قم بتحميل مستند PDF الموجود
 Document pdfDocument = new Document(dataDir + "Table_input.pdf");
 
-// Create TableAbsorber object to find tables
+// قم بإنشاء كائن TableAbsorter للعثور على الجداول
 TableAbsorber absorber = new TableAbsorber();
 
-// Visit first page with absorber
+// قم بزيارة الصفحة الأولى مع الممتص
 absorber.Visit(pdfDocument.Pages[1]);
 
-// Get first table on the page
+// الحصول على الجدول الأول على الصفحة
 AbsorbedTable table = absorber.TableList[0];
 
-// Remove the table
+// قم بإزالة الجدول
 absorber.Remove(table);
 
-// Save PDF
+// حفظ قوات الدفاع الشعبي
 pdfDocument.Save(dataDir + "Table_out.pdf");
 ```
 
-## Conclusion
-Congratulation ! You have now learned how to remove a table in a PDF document using Aspose.PDF for .NET. This step-by-step guide showed you how to load the document, find the table, and remove it. Now you can apply this knowledge to your own projects.
+## خاتمة
+تهنئة ! لقد تعلمت الآن كيفية إزالة جدول في مستند PDF باستخدام Aspose.PDF لـ .NET. يوضح لك هذا الدليل خطوة بخطوة كيفية تحميل المستند والعثور على الجدول وإزالته. الآن يمكنك تطبيق هذه المعرفة على مشاريعك الخاصة.
 
-### FAQ's for remove table in PDF document
+### الأسئلة الشائعة لإزالة الجدول في مستند PDF
 
-#### Q: Can I remove multiple tables from a PDF document using this method?
+#### س: هل يمكنني إزالة جداول متعددة من مستند PDF باستخدام هذه الطريقة؟
 
-A: No, the provided example code is designed to remove only one table from the PDF document. If you want to remove multiple tables, you need to modify the code accordingly. One approach is to loop through the `absorb.TableList` and remove each table one by one. However, keep in mind that removing multiple tables may require additional logic and considerations to avoid unintended consequences.
+ ج: لا، تم تصميم رمز المثال المقدم لإزالة جدول واحد فقط من مستند PDF. إذا كنت تريد إزالة جداول متعددة، فستحتاج إلى تعديل التعليمات البرمجية وفقًا لذلك. أحد الأساليب هو التكرار عبر`absorb.TableList` وإزالة كل جدول واحدا تلو الآخر. ومع ذلك، ضع في اعتبارك أن إزالة جداول متعددة قد تتطلب منطقًا واعتبارات إضافية لتجنب العواقب غير المقصودة.
 
-#### Q: What happens if the specified page does not contain any tables?
+#### س: ماذا يحدث إذا كانت الصفحة المحددة لا تحتوي على أية جداول؟
 
-A: If the specified page does not contain any tables, the code will throw an `IndexOutOfRangeException` when attempting to access `absorb.TableList[0]`. To avoid this issue, you should check if `absorb.TableList` contains any elements before accessing the table.
+ ج: إذا كانت الصفحة المحددة لا تحتوي على أي جداول، فسيقوم الكود بطرح خطأ`IndexOutOfRangeException` عند محاولة الوصول`absorb.TableList[0]` . لتجنب هذه المشكلة، يجب عليك التحقق مما إذا`absorb.TableList`يحتوي على أي عناصر قبل الوصول إلى الجدول.
 
-#### Q: Can I remove tables from pages other than the first page?
+#### س: هل يمكنني إزالة الجداول من صفحات غير الصفحة الأولى؟
 
-A: Yes, you can remove tables from pages other than the first page by changing the page index in `pdfDocument.Pages[1]`. For example, to remove a table from the second page, use `pdfDocument.Pages[2]`.
+ ج: نعم، يمكنك إزالة الجداول من صفحات أخرى غير الصفحة الأولى عن طريق تغيير فهرس الصفحات الموجود فيها`pdfDocument.Pages[1]` . على سبيل المثال، لإزالة جدول من الصفحة الثانية، استخدم`pdfDocument.Pages[2]`.
 
-#### Q: Will removing a table affect the layout and formatting of the remaining content in the PDF document?
+#### س: هل تؤثر إزالة الجدول على تخطيط وتنسيق المحتوى المتبقي في مستند PDF؟
 
-A: Yes, removing a table will impact the layout and formatting of the remaining content in the PDF document. When a table is removed, the content below the table may shift up to fill the empty space. This can lead to changes in the overall appearance of the document. It is essential to consider the document's structure and layout before removing any table.
+ج: نعم، ستؤثر إزالة الجدول على تخطيط وتنسيق المحتوى المتبقي في مستند PDF. عند إزالة جدول، قد يتحرك المحتوى الموجود أسفل الجدول لأعلى لملء المساحة الفارغة. يمكن أن يؤدي هذا إلى تغييرات في المظهر العام للمستند. من الضروري مراعاة بنية المستند وتخطيطه قبل إزالة أي جدول.
 
-#### Q: Can I undo the removal of a table after saving the document?
+#### س: هل يمكنني التراجع عن إزالة جدول بعد حفظ المستند؟
 
-A: No, once you save the modified PDF document after removing a table, the changes are permanent, and you cannot undo the removal of the table. Therefore, it is crucial to make backups of your original documents before performing any modifications to ensure data integrity.
+ج: لا، بمجرد حفظ مستند PDF المعدل بعد إزالة جدول، تصبح التغييرات دائمة، ولا يمكنك التراجع عن إزالة الجدول. لذلك، من الضروري عمل نسخ احتياطية من مستنداتك الأصلية قبل إجراء أي تعديلات لضمان سلامة البيانات.

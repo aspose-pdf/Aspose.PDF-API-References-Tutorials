@@ -1,96 +1,96 @@
 ---
-title: Delete Images From PDF File
-linktitle: Delete Images From PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily delete images from PDF file with Aspose.PDF for .NET.
+title: Supprimer des images d'un fichier PDF
+linktitle: Supprimer des images d'un fichier PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Supprimez facilement des images d'un fichier PDF avec Aspose.PDF pour .NET.
 type: docs
 weight: 110
 url: /fr/net/programming-with-images/delete-images/
 ---
-This guide will take you step by step how to delete images from PDF file using Aspose.PDF for .NET. Make sure you have already set up your environment and follow the steps below:
+Ce guide vous expliquera étape par étape comment supprimer des images d'un fichier PDF à l'aide d'Aspose.PDF pour .NET. Assurez-vous d'avoir déjà configuré votre environnement et suivez les étapes ci-dessous :
 
-## Step 1: Define the document directory
+## Étape 1 : Définir le répertoire des documents
 
-Before you start, make sure you set the correct directory for the documents. Replace `"YOUR DOCUMENT DIRECTORY"` in the code with the path to the directory where your PDF document is located.
+ Avant de commencer, assurez-vous de définir le bon répertoire pour les documents. Remplacer`"YOUR DOCUMENT DIRECTORY"` dans le code avec le chemin d'accès au répertoire où se trouve votre document PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Open the PDF document
+## Étape 2 : Ouvrez le document PDF
 
-In this step, we will open the PDF document using the `Document` class of Aspose.PDF. Use the `Document` constructor and pass the path to the PDF document.
+Dans cette étape, nous ouvrirons le document PDF en utilisant le`Document` classe d’Aspose.PDF. Utilisez le`Document` constructeur et transmettez le chemin d’accès au document PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "DeleteImages.pdf");
 
 ```
 
-## Step 3: Delete a specific image
+## Étape 3 : Supprimer une image spécifique
 
-In this step, we are going to delete a specific image from a particular page. Use the `Delete` method of the page resource `Images` object to delete the image. In the example below, we delete the image with index 1 from the first page.
+ Dans cette étape, nous allons supprimer une image spécifique d'une page particulière. Utilisez le`Delete` méthode de la ressource page`Images` objet pour supprimer l’image. Dans l'exemple ci-dessous, nous supprimons l'image d'index 1 de la première page.
 
 ```csharp
 pdfDocument.Pages[1].Resources.Images.Delete(1);
 ```
 
-## Step 4: Save the updated PDF file
+## Étape 4 : Enregistrez le fichier PDF mis à jour
 
-Save the updated PDF file using the `Save` method of the `pdfDocument` object. Specify the output path for the PDF file.
+ Enregistrez le fichier PDF mis à jour à l'aide du`Save` méthode du`pdfDocument` objet. Spécifiez le chemin de sortie du fichier PDF.
 
 ```csharp
 dataDir = dataDir + "DeleteImages_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Delete Images using Aspose.PDF for .NET 
+### Exemple de code source pour supprimer des images à l’aide d’Aspose.PDF pour .NET 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Ouvrir le document
 Document pdfDocument = new Document(dataDir+ "DeleteImages.pdf");
-// Delete a particular image
+// Supprimer une image particulière
 pdfDocument.Pages[1].Resources.Images.Delete(1);
 dataDir = dataDir + "DeleteImages_out.pdf";
-// Save updated PDF file
+// Enregistrer le fichier PDF mis à jour
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nImages deleted successfully.\nFile saved at " + dataDir); 
 ```
 
 ## Conclusion
 
-Congratulation ! You have successfully deleted images from a PDF file using Aspose.PDF for .NET. The updated PDF file is saved in the specified directory. You can now use this PDF file without the deleted images.
+Félicitation ! Vous avez supprimé avec succès des images d'un fichier PDF à l'aide d'Aspose.PDF pour .NET. Le fichier PDF mis à jour est enregistré dans le répertoire spécifié. Vous pouvez désormais utiliser ce fichier PDF sans les images supprimées.
 
-### FAQ's for delete images from PDF file
+### FAQ pour supprimer des images d'un fichier PDF
 
-#### Q: What is the purpose of deleting images from a PDF file using Aspose.PDF for .NET?
+#### Q : Quel est le but de supprimer des images d'un fichier PDF à l'aide d'Aspose.PDF pour .NET ?
 
-A: Deleting images from a PDF file can help you remove specific visual content from the document, whether for editing, redaction, or other purposes.
+R : La suppression d'images d'un fichier PDF peut vous aider à supprimer un contenu visuel spécifique du document, que ce soit à des fins d'édition, de rédaction ou à d'autres fins.
 
-#### Q: How does Aspose.PDF for .NET assist in deleting images from a PDF document?
+#### Q : Comment Aspose.PDF pour .NET aide-t-il à supprimer des images d'un document PDF ?
 
-A: Aspose.PDF for .NET provides a step-by-step process to open a PDF document, identify and delete specific images from it, and save the modified PDF document.
+R : Aspose.PDF pour .NET fournit un processus étape par étape pour ouvrir un document PDF, identifier et supprimer des images spécifiques et enregistrer le document PDF modifié.
 
-#### Q: Why is it important to define the document directory before starting the deletion of images?
+#### Q : Pourquoi est-il important de définir le répertoire des documents avant de lancer la suppression des images ?
 
-A: Defining the document directory ensures that the PDF document is correctly located, and the modified PDF file is saved in the desired output path.
+R : La définition du répertoire du document garantit que le document PDF est correctement localisé et que le fichier PDF modifié est enregistré dans le chemin de sortie souhaité.
 
-#### Q: How does the `Document` class in Aspose.PDF for .NET help in deleting images from a PDF file?
+####  Q : Comment le`Document` class in Aspose.PDF for .NET help in deleting images from a PDF file?
 
-A: The `Document` class allows you to open and manipulate PDF documents. In this case, it is used to load the PDF file from which images will be deleted.
+ R : Le`Document`La classe vous permet d'ouvrir et de manipuler des documents PDF. Dans ce cas, il sert à charger le fichier PDF à partir duquel les images seront supprimées.
 
-#### Q: How do I select a specific image to delete from the PDF document?
+#### Q : Comment sélectionner une image spécifique à supprimer du document PDF ?
 
-A: You can use the `Delete` method of the `Images` object within the `Resources` of a particular page to delete a specific image by its index.
+R : Vous pouvez utiliser le`Delete` méthode du`Images` objet dans le`Resources` d'une page particulière pour supprimer une image spécifique par son index.
 
-#### Q: Can I delete images from any page in the PDF document?
+#### Q : Puis-je supprimer des images de n’importe quelle page du document PDF ?
 
-A: Yes, you can delete images from any page in the PDF document by specifying the desired page index and the index of the image to be deleted.
+R : Oui, vous pouvez supprimer des images de n'importe quelle page du document PDF en spécifiant l'index de page souhaité et l'index de l'image à supprimer.
 
-#### Q: Is it possible to delete multiple images from different pages in a single process?
+#### Q : Est-il possible de supprimer plusieurs images de différentes pages en un seul processus ?
 
-A: Yes, you can use the `Delete` method on multiple pages to delete images from different pages in the same process.
+ R : Oui, vous pouvez utiliser le`Delete` méthode sur plusieurs pages pour supprimer des images de différentes pages dans le même processus.
 
-#### Q: What happens to the layout and formatting of the PDF document after images are deleted?
+#### Q : Qu'arrive-t-il à la mise en page et au formatage du document PDF une fois les images supprimées ?
 
-A: Deleting images may affect the layout and formatting of the PDF document, especially if the deleted images were part of the content layout.
+R : La suppression d'images peut affecter la mise en page et le formatage du document PDF, surtout si les images supprimées faisaient partie de la mise en page du contenu.

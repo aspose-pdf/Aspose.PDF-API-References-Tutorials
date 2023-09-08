@@ -1,28 +1,28 @@
 ---
-title: Create PDF with Tagged Text
-linktitle: Create PDF with Tagged Text
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to create a PDF with tagged text using Aspose.PDF for .NET.
+title: Crear PDF con texto etiquetado
+linktitle: Crear PDF con texto etiquetado
+second_title: Aspose.PDF para referencia de API .NET
+description: Guía paso a paso para crear un PDF con texto etiquetado usando Aspose.PDF para .NET.
 type: docs
 weight: 50
 url: /es/net/programming-with-tagged-pdf/create-pdf-with-tagged-text/
 ---
-In this tutorial, we will provide you with a step-by-step guide on how to create a PDF document with tagged text using Aspose.PDF for .NET. Aspose.PDF is a powerful library that allows you to create, manipulate and convert PDF documents programmatically. Using the tagged content structure features of Aspose.PDF, you can add tagged text to your PDF document.
+En este tutorial, le proporcionaremos una guía paso a paso sobre cómo crear un documento PDF con texto etiquetado usando Aspose.PDF para .NET. Aspose.PDF es una poderosa biblioteca que le permite crear, manipular y convertir documentos PDF mediante programación. Utilizando las funciones de estructura de contenido etiquetado de Aspose.PDF, puede agregar texto etiquetado a su documento PDF.
 
-## Prerequisites
+## Requisitos previos
 
-Before you begin, make sure you have the following prerequisites in place:
+Antes de comenzar, asegúrese de cumplir con los siguientes requisitos previos:
 
-1. Visual Studio installed with .NET framework.
-2. The Aspose.PDF library for .NET.
+1. Visual Studio instalado con .NET framework.
+2. La biblioteca Aspose.PDF para .NET.
 
-## Step 1: Project Setup
+## Paso 1: configuración del proyecto
 
-To get started, create a new project in Visual Studio and add a reference to the Aspose.PDF for .NET library. You can download the library from Aspose official website and install it on your machine.
+Para comenzar, cree un nuevo proyecto en Visual Studio y agregue una referencia a la biblioteca Aspose.PDF para .NET. Puede descargar la biblioteca desde el sitio web oficial de Aspose e instalarla en su máquina.
 
-## Step 2: Import the necessary namespaces
+## Paso 2: importe los espacios de nombres necesarios
 
-In your C# code file, import the namespaces required to access the classes and methods provided by Aspose.PDF:
+En su archivo de código C#, importe los espacios de nombres necesarios para acceder a las clases y métodos proporcionados por Aspose.PDF:
 
 ```csharp
 using System;
@@ -30,9 +30,9 @@ using Aspose.Pdf;
 using Aspose.Pdf.Tagged;
 ```
 
-## Step 3: Creating the PDF document with tagged text
+## Paso 3: crear el documento PDF con texto etiquetado
 
-Use the following code to create a PDF document with tagged text:
+Utilice el siguiente código para crear un documento PDF con texto etiquetado:
 
 ```csharp
 string dataDir = "YOUR_DIRECTORY_OF_DOCUMENTS";
@@ -47,27 +47,27 @@ headerElement.ActualText = "Header 1";
 ParagraphElement paragraphElement1 = taggedContent.CreateParagraphElement();
 paragraphElement1.ActualText = "test1";
 
-// Add more paragraphs here
+// Añade más párrafos aquí.
 
-// Save the PDF document
+// Guarde el documento PDF
 document.Save(dataDir + "PDFwithTagText.pdf");
 ```
 
-This code creates an empty PDF document and adds tagged text using the methods provided by Aspose.PDF. You can add other tagged text elements such as headings and paragraphs using the appropriate methods.
+Este código crea un documento PDF vacío y agrega texto etiquetado utilizando los métodos proporcionados por Aspose.PDF. Puede agregar otros elementos de texto etiquetados, como títulos y párrafos, utilizando los métodos adecuados.
 
-### Sample source code for Create PDFwith Tagged Text using Aspose.PDF for .NET 
+### Código fuente de muestra para crear PDF con texto etiquetado usando Aspose.PDF para .NET 
 ```csharp
 
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create Pdf Document
+// Crear documento PDF
 Document document = new Document();
-// Get Content for work with TaggedPdf
+// Obtenga contenido para trabajar con TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
-// Set Title and Language for Documnet
+// Establecer título e idioma para Documnet
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
-// Create Text Block-Level Structure Elements
+// Crear elementos de estructura a nivel de bloque de texto
 HeaderElement headerElement = taggedContent.CreateHeaderElement();
 headerElement.ActualText = "Heading 1";
 ParagraphElement paragraphElement1 = taggedContent.CreateParagraphElement();
@@ -84,53 +84,53 @@ ParagraphElement paragraphElement6 = taggedContent.CreateParagraphElement();
 paragraphElement6.ActualText = "test 6";
 ParagraphElement paragraphElement7 = taggedContent.CreateParagraphElement();
 paragraphElement7.ActualText = "test 7";
-// Save PDF Document
+// Guardar documento PDF
 document.Save( dataDir + "PDFwithTaggedText.pdf");
 
 ```
 
-## Conclusion
+## Conclusión
 
-In this tutorial, you learned how to create a PDF document with tagged text using Aspose.PDF for .NET. Aspose.PDF's marked content structure features allow you to structure and organize your text for better accessibility and semantics.
+En este tutorial, aprendió cómo crear un documento PDF con texto etiquetado usando Aspose.PDF para .NET. Las características marcadas de estructura de contenido de Aspose.PDF le permiten estructurar y organizar su texto para una mejor accesibilidad y semántica.
 
-### FAQ's
+### Preguntas frecuentes
 
-#### Q: What is the purpose of creating a PDF document with tagged text using Aspose.PDF for .NET?
+#### P: ¿Cuál es el propósito de crear un documento PDF con texto etiquetado usando Aspose.PDF para .NET?
 
-A: Creating a PDF document with tagged text using Aspose.PDF for .NET allows you to structure and organize your text content within the PDF document. Tagged text adds semantic meaning and improves accessibility for users, especially those using assistive technologies.
+R: Crear un documento PDF con texto etiquetado usando Aspose.PDF para .NET le permite estructurar y organizar su contenido de texto dentro del documento PDF. El texto etiquetado añade significado semántico y mejora la accesibilidad para los usuarios, especialmente aquellos que utilizan tecnologías de asistencia.
 
-#### Q: How does Aspose.PDF assist in creating a PDF document with tagged text?
+#### P: ¿Cómo ayuda Aspose.PDF a crear un documento PDF con texto etiquetado?
 
-A: Aspose.PDF for .NET is a powerful library that provides functionalities for creating, manipulating, and converting PDF documents programmatically. In this tutorial, the library's tagged content structure features are used to add structured and semantically meaningful text to the PDF document.
+R: Aspose.PDF para .NET es una poderosa biblioteca que proporciona funcionalidades para crear, manipular y convertir documentos PDF mediante programación. En este tutorial, las funciones de estructura de contenido etiquetado de la biblioteca se utilizan para agregar texto estructurado y semánticamente significativo al documento PDF.
 
-#### Q: What are the prerequisites for creating a PDF document with tagged text using Aspose.PDF for .NET?
+#### P: ¿Cuáles son los requisitos previos para crear un documento PDF con texto etiquetado usando Aspose.PDF para .NET?
 
-A: Before you begin, ensure you have Visual Studio installed with the .NET framework and have the Aspose.PDF library for .NET referenced in your project.
+R: Antes de comenzar, asegúrese de tener Visual Studio instalado con .NET framework y de tener referenciada la biblioteca Aspose.PDF para .NET en su proyecto.
 
-#### Q: How does the provided C# code create a PDF document with tagged text?
+#### P: ¿Cómo crea el código C# proporcionado un documento PDF con texto etiquetado?
 
-A: The code example demonstrates how to create a PDF document, define various tagged text elements (such as headers and paragraphs), and add them to the document's content. This is achieved using the tagged content structure features provided by Aspose.PDF.
+R: El ejemplo de código demuestra cómo crear un documento PDF, definir varios elementos de texto etiquetados (como encabezados y párrafos) y agregarlos al contenido del documento. Esto se logra utilizando las funciones de estructura de contenido etiquetado proporcionadas por Aspose.PDF.
 
-#### Q: How can I customize the tagged text elements, such as headers and paragraphs?
+#### P: ¿Cómo puedo personalizar los elementos de texto etiquetados, como encabezados y párrafos?
 
-A: You can customize the tagged text elements by using appropriate methods, such as `CreateHeaderElement` and `CreateParagraphElement`, and setting properties like `ActualText` to provide meaningful text and semantics.
+ R: Puede personalizar los elementos de texto etiquetados utilizando métodos apropiados, como`CreateHeaderElement` y`CreateParagraphElement` y establecer propiedades como`ActualText` para proporcionar texto y semántica significativa.
 
-#### Q: Can I add other tagged text elements, such as lists or links, using similar techniques?
+#### P: ¿Puedo agregar otros elementos de texto etiquetados, como listas o enlaces, usando técnicas similares?
 
-A: Yes, you can add other tagged text elements like lists, links, or other custom structures using similar techniques. Aspose.PDF provides various methods to create different types of tagged content, allowing you to enhance document semantics.
+R: Sí, puedes agregar otros elementos de texto etiquetados como listas, enlaces u otras estructuras personalizadas utilizando técnicas similares. Aspose.PDF proporciona varios métodos para crear diferentes tipos de contenido etiquetado, lo que le permite mejorar la semántica del documento.
 
-#### Q: How does the `SetTitle` method contribute to the PDF document's tagged text?
+####  P: ¿Cómo funciona el`SetTitle` method contribute to the PDF document's tagged text?
 
-A: The `SetTitle` method sets the title of the PDF document's tagged content, providing a brief description of the document's purpose or subject. This information helps users understand the context of the tagged text.
+ R: El`SetTitle` El método establece el título del contenido etiquetado del documento PDF, proporcionando una breve descripción del propósito o tema del documento. Esta información ayuda a los usuarios a comprender el contexto del texto etiquetado.
 
-#### Q: How does using tagged text improve accessibility in PDF documents?
+#### P: ¿Cómo mejora la accesibilidad en los documentos PDF el uso de texto etiquetado?
 
-A: Tagged text adds semantic meaning to the document, making it more accessible to users with disabilities or those using assistive technologies. Screen readers and other assistive devices can interpret and present tagged text for improved user experience.
+R: El texto etiquetado agrega significado semántico al documento, haciéndolo más accesible para usuarios con discapacidades o aquellos que utilizan tecnologías de asistencia. Los lectores de pantalla y otros dispositivos de asistencia pueden interpretar y presentar texto etiquetado para mejorar la experiencia del usuario.
 
-#### Q: How does the `SetLanguage` method enhance the tagged text in a PDF document?
+####  P: ¿Cómo funciona el`SetLanguage` method enhance the tagged text in a PDF document?
 
-A: The `SetLanguage` method sets the language attribute of the PDF document's tagged content. This helps indicate the language in which the tagged text is written, improving accessibility and enabling proper language-specific rendering.
+ R: El`SetLanguage`El método establece el atributo de idioma del contenido etiquetado del documento PDF. Esto ayuda a indicar el idioma en el que está escrito el texto etiquetado, mejorando la accesibilidad y permitiendo una representación adecuada específica del idioma.
 
-#### Q: Is it possible to add other elements, such as images or multimedia, alongside tagged text using similar techniques?
+#### P: ¿Es posible agregar otros elementos, como imágenes o multimedia, junto con el texto etiquetado utilizando técnicas similares?
 
-A: Yes, you can add other elements like images, multimedia, or annotations alongside tagged text using similar techniques. Aspose.PDF offers a wide range of features to combine different types of content within the document.
+R: Sí, puedes agregar otros elementos como imágenes, multimedia o anotaciones junto con el texto etiquetado usando técnicas similares. Aspose.PDF ofrece una amplia gama de funciones para combinar diferentes tipos de contenido dentro del documento.

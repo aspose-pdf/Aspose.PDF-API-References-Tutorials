@@ -1,182 +1,182 @@
 ---
-title: Add SVG Object In PDF File
-linktitle: Add SVG Object In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily add SVG objects in PDF file using Aspose.PDF for .NET.
+title: PDF Dosyasına SVG Nesnesi Ekle
+linktitle: PDF Dosyasına SVG Nesnesi Ekle
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak SVG nesnelerini PDF dosyasına kolayca ekleyin.
 type: docs
 weight: 30
 url: /tr/net/programming-with-tables/add-svg-object/
 ---
-In this tutorial, we will learn how to add an SVG object in PDF file using the Aspose.PDF for .NET library. SVG (Scalable Vector Graphics) is a popular format for vector graphics that can be easily scaled without losing quality. With Aspose.PDF, you can add SVG objects to your PDF documents programmatically.
+Bu eğitimde Aspose.PDF for .NET kütüphanesini kullanarak PDF dosyasına SVG nesnesinin nasıl ekleneceğini öğreneceğiz. SVG (Ölçeklenebilir Vektör Grafikleri), kalite kaybı olmadan kolayca ölçeklenebilen popüler bir vektör grafik formatıdır. Aspose.PDF ile SVG nesnelerini PDF belgelerinize programlı olarak ekleyebilirsiniz.
 
-## Requirements
+## Gereksinimler
 
-Before we begin, make sure you have the following:
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- Visual Studio installed
-- Aspose.PDF for .NET library installed
+- Visual Studio yüklü
+- Aspose.PDF for .NET kütüphanesi kuruldu
 
-## Step 1: Set up the Environment
+## 1. Adım: Ortamı Ayarlayın
 
-First, let's set up the environment by creating a new C# project in Visual Studio. Open Visual Studio and follow these steps:
+Öncelikle Visual Studio'da yeni bir C# projesi oluşturarak ortamı ayarlayalım. Visual Studio'yu açın ve şu adımları izleyin:
 
-1. Click on "File" > "New" > "Project" to create a new project.
-2. Select "Console App (.NET Framework)" or "Console App (.NET Core)" template, depending on your setup.
-3. Choose a suitable name and location for your project, then click "Create."
+1. Yeni bir proje oluşturmak için "Dosya" > "Yeni" > "Proje"ye tıklayın.
+2. Kurulumunuza bağlı olarak "Konsol Uygulaması (.NET Framework)" veya "Konsol Uygulaması (.NET Core)" şablonunu seçin.
+3. Projeniz için uygun bir ad ve konum seçin ve ardından "Oluştur"u tıklayın.
 
-## Step 2: Create Document and Image Objects
+## Adım 2: Belge ve Görüntü Nesneleri Oluşturun
 
-In this step, we will create the necessary objects for our PDF document and SVG image. Open the C# file of your project and add the following code:
+Bu adımda PDF belgemiz ve SVG görselimiz için gerekli nesneleri oluşturacağız. Projenizin C# dosyasını açın ve aşağıdaki kodu ekleyin:
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instant Document object
+// Anında Belge nesnesi
 Document doc = new Document();
-// Create an image instance
+// Bir görüntü örneği oluşturun
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
 ```
 
-## Step 3: Set Image Properties
+## 3. Adım: Görüntü Özelliklerini Ayarlayın
 
-Next, we will set the properties for our SVG image. We will specify the file type as SVG, the path to the SVG file, and the dimensions of the image. Add the following code after the previous step:
+Daha sonra SVG imajımızın özelliklerini ayarlayacağız. Dosya tipini SVG olarak, SVG dosyasının yolunu ve görselin boyutlarını belirteceğiz. Önceki adımın sonrasına aşağıdaki kodu ekleyin:
 
 ```csharp
-// Set image type as SVG
+// Resim türünü SVG olarak ayarla
 img.FileType = Aspose.Pdf.ImageFileType.Svg;
-// Path for source file
+// Kaynak dosyanın yolu
 img.File = dataDir + "SVGToPDF.svg";
-// Set width for image instance
+// Resim örneği için genişliği ayarlayın
 img. FixWidth = 50;
-// Set height for image instance
+// Resim örneği için yüksekliği ayarlayın
 img.FixHeight = 50;
 ```
 
-## Step 4: Create and Configure the Table
+## Adım 4: Tabloyu Oluşturun ve Yapılandırın
 
-Now, let's create a table object and set the column widths. We will create a table with two columns, each with a width of 100 units. Add the following code:
+Şimdi bir tablo nesnesi oluşturalım ve sütun genişliklerini ayarlayalım. Her biri 100 birim genişliğinde iki sütunlu bir tablo oluşturacağız. Aşağıdaki kodu ekleyin:
 
 ```csharp
-// Create instance table
+// Örnek tablosu oluştur
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-// Set width for table cells
+// Tablo hücreleri için genişliği ayarlama
 table. ColumnWidths = "100 100";
 ```
 
-## Step 5: Add Cells to the Table
+## Adım 5: Tabloya Hücre Ekleme
 
-In this step, we will add a row and cells to the table. Each row represents a horizontal row in the table, and cells are added to the rows. Add the following code:
+Bu adımda tabloya bir satır ve hücreler ekleyeceğiz. Her satır, tabloda yatay bir satırı temsil eder ve satırlara hücreler eklenir. Aşağıdaki kodu ekleyin:
 
 ```csharp
-// Create row object and add it to table instance
+//Satır nesnesi oluşturun ve onu tablo örneğine ekleyin
 Aspose.Pdf.Row row = table.Rows.Add();
-// Create cell object and add it to row instance
+// Hücre nesnesi oluşturun ve onu satır örneğine ekleyin
 Aspose.Pdf.Cell cell = row.Cells.Add();
 ```
 
-## Step 6: Add Text and Image to Cells
+## Adım 6: Hücrelere Metin ve Resim Ekleme
 
-Next, let's add text and the SVG image to the cells of the table. We will add the text "First cell" to the first cell and the SVG image to the second cell. Add the following code:
+Daha sonra tablonun hücrelerine metin ve SVG resmini ekleyelim. İlk hücreye "İlk hücre" metnini, ikinci hücreye ise SVG görselini ekleyeceğiz. Aşağıdaki kodu ekleyin:
 
 ```csharp
-// Add textfragment to paragraphs collection of cell object
+// Hücre nesnesinin paragraf koleksiyonuna metin parçası ekleme
 cell.Paragraphs.Add(new TextFragment("First cell"));
-// Add another cell to row object
+// Satır nesnesine başka bir hücre ekle
 cell = row. Cells. Add();
-// Add SVG image to paragraphs collection of recently added cell instance
+// Yakın zamanda eklenen hücre örneğinin paragraf koleksiyonuna SVG resmi ekleyin
 cell.Paragraphs.Add(img);
 ```
 
-## Step 7: Create and Add a Page to the Document
+## Adım 7: Belgeye Sayfa Oluşturun ve Ekleyin
 
-Now, let's create a page object and add it to the document. The table will be added to the paragraphs collection of the page. Add the following code:
+Şimdi bir sayfa nesnesi oluşturup onu belgeye ekleyelim. Tablo, sayfanın paragraf koleksiyonuna eklenecektir. Aşağıdaki kodu ekleyin:
 
 ```csharp
-// Create page object and add it to pages collection of document instance
+// Sayfa nesnesi oluşturun ve onu belge örneğinin sayfa koleksiyonuna ekleyin
 Page page = doc.Pages.Add();
-// Add table to paragraphs collection of page object
+// Sayfa nesnesinin paragraf koleksiyonuna tablo ekleyin
 page.Paragraphs.Add(table);
 ```
 
-## Step 8: Save the PDF File
+## Adım 8: PDF Dosyasını Kaydedin
 
-Finally, we will save the PDF file to the specified location. Add the following code:
+Son olarak PDF dosyasını belirtilen konuma kaydedeceğiz. Aşağıdaki kodu ekleyin:
 
 ```csharp
 dataDir = dataDir + "AddSVGObject_out.pdf";
-// Save PDF file
+// PDF dosyasını kaydet
 doc.Save(dataDir);
 
 Console.WriteLine("\nSVG image added successfully inside a table cell.\nFile saved at " + dataDir);
 ```
 
-### Example source code for add SVG object using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak SVG nesnesi eklemek için örnek kaynak kodu
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate Document object
+// Belge nesnesini somutlaştır
 Document doc = new Document();
-// Create an image instance
+// Bir görüntü örneği oluşturun
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
-// Set image type as SVG
+// Resim türünü SVG olarak ayarla
 img.FileType = Aspose.Pdf.ImageFileType.Svg;
-// Path for source file
+// Kaynak dosyanın yolu
 img.File = dataDir + "SVGToPDF.svg";
-// Set width for image instance
+// Resim örneği için genişliği ayarlayın
 img.FixWidth = 50;
-// Set height for image instance
+// Resim örneği için yüksekliği ayarlayın
 img.FixHeight = 50;
-// Create table instance
+// Tablo örneği oluştur
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-// Set width for table cells
+// Tablo hücreleri için genişliği ayarlama
 table.ColumnWidths = "100 100";
-// Create row object and add it to table instance
+//Satır nesnesi oluşturun ve onu tablo örneğine ekleyin
 Aspose.Pdf.Row row = table.Rows.Add();
-// Create cell object and add it to row instance
+// Hücre nesnesi oluşturun ve onu satır örneğine ekleyin
 Aspose.Pdf.Cell cell = row.Cells.Add();
-// Add textfragment to paragraphs collection of cell object
+// Hücre nesnesinin paragraf koleksiyonuna metin parçası ekleme
 cell.Paragraphs.Add(new TextFragment("First cell"));
-// Add another cell to row object
+// Satır nesnesine başka bir hücre ekle
 cell = row.Cells.Add();
-// Add SVG image to paragraphs collection of recently added cell instance
+// Yakın zamanda eklenen hücre örneğinin paragraf koleksiyonuna SVG resmi ekleyin
 cell.Paragraphs.Add(img);
-// Create page object and add it to pages collection of document instance
+// Sayfa nesnesi oluşturun ve onu belge örneğinin sayfa koleksiyonuna ekleyin
 Page page = doc.Pages.Add();
-// Add table to paragraphs collection of page object
+// Sayfa nesnesinin paragraf koleksiyonuna tablo ekleyin
 page.Paragraphs.Add(table);
 
 dataDir = dataDir + "AddSVGObject_out.pdf";
-// Save PDF file
+// PDF dosyasını kaydet
 doc.Save(dataDir);
 
 Console.WriteLine("\nSVG image added successfully inside a table cell.\nFile saved at " + dataDir);            
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we have learned how to add an SVG object to a PDF file using the Aspose.PDF for .NET library. We covered the step-by-step process of creating a document, setting up the environment, adding an SVG image to a table cell, and saving the PDF file. Now you can incorporate SVG objects into your PDF documents programmatically.
+Bu eğitimde Aspose.PDF for .NET kütüphanesini kullanarak bir PDF dosyasına SVG nesnesinin nasıl ekleneceğini öğrendik. Belge oluşturma, ortamı ayarlama, tablo hücresine SVG görüntüsü ekleme ve PDF dosyasını kaydetme sürecini adım adım ele aldık. Artık SVG nesnelerini PDF belgelerinize programlı olarak dahil edebilirsiniz.
 
-### FAQ's for add SVG object in PDF file
+### PDF dosyasına SVG nesnesi eklemeyle ilgili SSS
 
-#### Q: Can I add multiple SVG objects to the PDF document?
+#### S: PDF belgesine birden fazla SVG nesnesi ekleyebilir miyim?
 
-A: Yes, you can add multiple SVG objects to the PDF document. Simply create and configure additional `Aspose.Pdf.Image` instances for each SVG image you want to add and then add them to the desired table cells or paragraphs in the PDF document.
+ C: Evet, PDF belgesine birden fazla SVG nesnesi ekleyebilirsiniz. Basitçe ek oluşturun ve yapılandırın`Aspose.Pdf.Image` Eklemek istediğiniz her SVG görüntüsü için örnekler oluşturun ve ardından bunları PDF belgesindeki istediğiniz tablo hücrelerine veya paragraflara ekleyin.
 
-#### Q: How can I adjust the size and position of the SVG image in the table cell?
+#### S: Tablo hücresindeki SVG görüntüsünün boyutunu ve konumunu nasıl ayarlayabilirim?
 
-A: To adjust the size and position of the SVG image in the table cell, you can modify the `FixWidth` and `FixHeight` properties of the `Aspose.Pdf.Image` instance. You can also use other properties like `HorizontalAlignment` and `VerticalAlignment` of the table cell to control the positioning.
+ C: Tablo hücresindeki SVG görüntüsünün boyutunu ve konumunu ayarlamak için`FixWidth` Ve`FixHeight` özellikleri`Aspose.Pdf.Image`misal. Ayrıca aşağıdaki gibi diğer özellikleri de kullanabilirsiniz`HorizontalAlignment` Ve`VerticalAlignment` Konumlandırmayı kontrol etmek için tablo hücresinin.
 
-#### Q: Is it possible to add text alongside the SVG image in the same table cell?
+#### S: Aynı tablo hücresinde SVG görüntüsünün yanına metin eklemek mümkün müdür?
 
-A: Yes, it is possible to add text alongside the SVG image in the same table cell. You can use the `cell.Paragraphs.Add(new TextFragment("Your Text Here"));` method to add text to the cell along with the SVG image.
+ C: Evet, aynı tablo hücresinde SVG görüntüsünün yanına metin eklemek mümkündür. Şunu kullanabilirsiniz:`cell.Paragraphs.Add(new TextFragment("Your Text Here"));` SVG görüntüsüyle birlikte hücreye metin ekleme yöntemi.
 
-#### Q: Can I add hyperlinks to the SVG image?
+#### S: SVG görüntüsüne köprüler ekleyebilir miyim?
 
-A: Yes, you can add hyperlinks to the SVG image by using the `Hyperlink` property of the `Aspose.Pdf.Image` instance. Set the hyperlink URL or action to make the image clickable.
+ C: Evet, kullanarak SVG görüntüsüne köprüler ekleyebilirsiniz.`Hyperlink` mülkiyeti`Aspose.Pdf.Image` misal. Resmin tıklanabilir olması için köprü URL'sini veya eylemi ayarlayın.
 
-#### Q: Is Aspose.PDF for .NET compatible with .NET Core 3.1 or later versions?
+#### S: Aspose.PDF for .NET, .NET Core 3.1 veya sonraki sürümlerle uyumlu mu?
 
-A: Yes, Aspose.PDF for .NET is compatible with .NET Core 3.1 and later versions. You can use it in both .NET Framework and .NET Core applications.
+C: Evet, Aspose.PDF for .NET, .NET Core 3.1 ve sonraki sürümlerle uyumludur. Hem .NET Framework hem de .NET Core uygulamalarında kullanabilirsiniz.

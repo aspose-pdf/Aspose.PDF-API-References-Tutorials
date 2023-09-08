@@ -1,103 +1,103 @@
 ---
-title: Modify Form Field In PDF Document
-linktitle: Modify Form Field In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Easily edit form fields in PDF document with Aspose.PDF for .NET.
+title: Formularfeld im PDF-Dokument ändern
+linktitle: Formularfeld im PDF-Dokument ändern
+second_title: Aspose.PDF für .NET API-Referenz
+description: Bearbeiten Sie Formularfelder in PDF-Dokumenten ganz einfach mit Aspose.PDF für .NET.
 type: docs
 weight: 190
 url: /de/net/programming-with-forms/modify-form-field/
 ---
-In this tutorial, we will show you how to edit a form field in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+In diesem Tutorial zeigen wir Ihnen, wie Sie mit Aspose.PDF für .NET ein Formularfeld in einem PDF-Dokument bearbeiten. Wir erklären Ihnen Schritt für Schritt den C#-Quellcode, um Sie durch diesen Prozess zu führen.
 
-## Step 1: Preparation
+## Schritt 1: Vorbereitung
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+Stellen Sie sicher, dass Sie die erforderlichen Bibliotheken importiert und den Pfad zu Ihrem Dokumentenverzeichnis festgelegt haben:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Load the document
+## Schritt 2: Laden Sie das Dokument
 
-Load the existing PDF document:
+Laden Sie das vorhandene PDF-Dokument:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ModifyFormField.pdf");
 ```
 
-## Step 3: Get the form field
+## Schritt 3: Holen Sie sich das Formularfeld
 
-Get the form field you want to edit:
+Holen Sie sich das Formularfeld, das Sie bearbeiten möchten:
 
 ```csharp
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
 ```
 
-## Step 4: Change the field value
+## Schritt 4: Ändern Sie den Feldwert
 
-Change the form field value:
+Ändern Sie den Formularfeldwert:
 
 ```csharp
 textBoxField.Value = "New Value";
 ```
 
-## Step 5: Edit Field Properties
+## Schritt 5: Feldeigenschaften bearbeiten
 
-Modify additional form field properties as needed. For example, you can make it read-only:
+Ändern Sie nach Bedarf weitere Formularfeldeigenschaften. Sie können es beispielsweise schreibgeschützt machen:
 
 ```csharp
 textBoxField.ReadOnly = true;
 ```
 
-## Step 6: Save the edited document
+## Schritt 6: Speichern Sie das bearbeitete Dokument
 
-Save the modified PDF document:
+Speichern Sie das geänderte PDF-Dokument:
 
 ```csharp
 dataDir = dataDir + "ModifyFormField_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Modify Form Field using Aspose.PDF for .NET 
+### Beispielquellcode für „Formularfeld ändern“ mit Aspose.PDF für .NET 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Dokument öffnen
 Document pdfDocument = new Document(dataDir + "ModifyFormField.pdf");
-// Get a field
+// Holen Sie sich ein Feld
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
-// Modify field value
+// Feldwert ändern
 textBoxField.Value = "New Value";
 textBoxField.ReadOnly = true;
 dataDir = dataDir + "ModifyFormField_out.pdf";
-// Save updated document
+// Aktualisiertes Dokument speichern
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nForm field modified successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Abschluss
 
-In this tutorial, we learned how to edit a form field in a PDF document using Aspose.PDF for .NET. By following these steps, you can easily navigate to a specific field, change its value, and adjust its properties as needed.
+In diesem Tutorial haben wir gelernt, wie man mit Aspose.PDF für .NET ein Formularfeld in einem PDF-Dokument bearbeitet. Wenn Sie diese Schritte befolgen, können Sie ganz einfach zu einem bestimmten Feld navigieren, seinen Wert ändern und seine Eigenschaften nach Bedarf anpassen.
 
 
-### FAQ's
+### FAQs
 
-#### Q: Can I edit multiple form fields within a single PDF document using Aspose.PDF for .NET?
+#### F: Kann ich mit Aspose.PDF für .NET mehrere Formularfelder in einem einzelnen PDF-Dokument bearbeiten?
 
-A: Yes, you can edit multiple form fields within a single PDF document using Aspose.PDF for .NET. Simply repeat the process for each form field you want to modify.
+A: Ja, Sie können mit Aspose.PDF für .NET mehrere Formularfelder in einem einzigen PDF-Dokument bearbeiten. Wiederholen Sie den Vorgang einfach für jedes Formularfeld, das Sie ändern möchten.
 
-#### Q: Is Aspose.PDF for .NET compatible with all versions of .NET Framework?
+#### F: Ist Aspose.PDF für .NET mit allen Versionen von .NET Framework kompatibel?
 
-A: Yes, Aspose.PDF for .NET is compatible with all versions of .NET Framework, including .NET Core and .NET Standard.
+A: Ja, Aspose.PDF für .NET ist mit allen Versionen von .NET Framework kompatibel, einschließlich .NET Core und .NET Standard.
 
-#### Q: Can I modify other types of form fields, such as checkboxes or radio buttons, using Aspose.PDF for .NET?
+#### F: Kann ich mit Aspose.PDF für .NET andere Arten von Formularfeldern ändern, z. B. Kontrollkästchen oder Optionsfelder?
 
-A: Yes, Aspose.PDF for .NET supports modifying various types of form fields, including checkboxes, radio buttons, and more.
+A: Ja, Aspose.PDF für .NET unterstützt das Ändern verschiedener Arten von Formularfeldern, einschließlich Kontrollkästchen, Optionsfeldern und mehr.
 
-#### Q: How can I add new form fields to a PDF document using Aspose.PDF for .NET?
+#### F: Wie kann ich mit Aspose.PDF für .NET neue Formularfelder zu einem PDF-Dokument hinzufügen?
 
-A: To add new form fields to a PDF document, you can use the `Form` property of the `Document` class to access the `Field` collection and then add new form fields programmatically.
+ A: Um einem PDF-Dokument neue Formularfelder hinzuzufügen, können Sie das verwenden`Form` Eigentum der`Document` Klasse, um auf die zuzugreifen`Field` Sammlung und fügen Sie dann programmgesteuert neue Formularfelder hinzu.
 
-#### Q: Does Aspose.PDF for .NET support other programming languages besides C#?
+#### F: Unterstützt Aspose.PDF für .NET neben C# auch andere Programmiersprachen?
 
-A: Yes, Aspose.PDF for .NET supports various programming languages, such as VB.NET and ASP.NET, in addition to C#.
+A: Ja, Aspose.PDF für .NET unterstützt neben C# auch verschiedene Programmiersprachen wie VB.NET und ASP.NET.

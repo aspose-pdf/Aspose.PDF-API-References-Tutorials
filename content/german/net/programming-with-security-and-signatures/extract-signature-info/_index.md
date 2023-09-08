@@ -1,45 +1,45 @@
 ---
-title: Extract Signature Info
-linktitle: Extract Signature Info
-second_title: Aspose.PDF for .NET API Reference
-description: Extracting signature information using Aspose.PDF for .NET.
+title: Signaturinformationen extrahieren
+linktitle: Signaturinformationen extrahieren
+second_title: Aspose.PDF für .NET API-Referenz
+description: Extrahieren von Signaturinformationen mit Aspose.PDF für .NET.
 type: docs
 weight: 80
 url: /de/net/programming-with-security-and-signatures/extract-signature-info/
 ---
-The process of extracting signature information from a PDF document can be quite useful in various scenarios. Whether you need to validate the authenticity of a signed document or analyze the certificate used for the signature, the Aspose.PDF for .NET library provides a convenient solution. In this tutorial, we will guide you through the step-by-step process of extracting signature information using the C# source code provided.
+Das Extrahieren von Signaturinformationen aus einem PDF-Dokument kann in verschiedenen Szenarien sehr nützlich sein. Unabhängig davon, ob Sie die Authentizität eines signierten Dokuments überprüfen oder das für die Signatur verwendete Zertifikat analysieren müssen, bietet die Bibliothek Aspose.PDF für .NET eine praktische Lösung. In diesem Tutorial führen wir Sie Schritt für Schritt durch den Prozess der Extraktion von Signaturinformationen mithilfe des bereitgestellten C#-Quellcodes.
 
-## Requirements
+## Anforderungen
 
-Before we begin, make sure you have the following prerequisites in place:
+Bevor wir beginnen, stellen Sie sicher, dass die folgenden Voraussetzungen erfüllt sind:
 
-1. Basic knowledge of C# programming language.
-2. Aspose.PDF for .NET library installed on your system.
-3. A valid PDF document with one or more signature fields.
+1. Grundkenntnisse der Programmiersprache C#.
+2. Aspose.PDF für .NET-Bibliothek auf Ihrem System installiert.
+3. Ein gültiges PDF-Dokument mit einem oder mehreren Signaturfeldern.
 
-Now, let's dive into the implementation details.
+Kommen wir nun zu den Implementierungsdetails.
 
-## Step 1: Importing the Required Libraries
+## Schritt 1: Importieren der erforderlichen Bibliotheken
 
-To get started, you need to import the necessary libraries into your C# project. In this case, we need to import the `Aspose.Pdf` and `System.IO` namespaces. This can be done by adding the following code at the beginning of your C# file:
+ Um zu beginnen, müssen Sie die erforderlichen Bibliotheken in Ihr C#-Projekt importieren. In diesem Fall müssen wir die importieren`Aspose.Pdf` Und`System.IO` Namensräume. Dies können Sie erreichen, indem Sie den folgenden Code am Anfang Ihrer C#-Datei hinzufügen:
 
 ```csharp
 using Aspose.Pdf;
 using System.IO;
 ```
 
-## Step 2: Setting the Document Path
+## Schritt 2: Festlegen des Dokumentpfads
 
-Next, you need to set the path to the PDF document you want to extract the signature information from. Replace `"YOUR DOCUMENTS DIRECTORY"` in the following code snippet with the actual path to your document:
+Als Nächstes müssen Sie den Pfad zu dem PDF-Dokument festlegen, aus dem Sie die Signaturinformationen extrahieren möchten. Ersetzen`"YOUR DOCUMENTS DIRECTORY"` im folgenden Codeausschnitt mit dem tatsächlichen Pfad zu Ihrem Dokument:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 string input = dataDir + "ExtractSignatureInfo.pdf";
 ```
 
-## Step 3: Extracting Signature Information
+## Schritt 3: Signaturinformationen extrahieren
 
-Now, let's move on to the main part of the code where we extract the signature information from the PDF document. We iterate through each field in the document's form and check if it is a signature field. If a signature field is found, we proceed with extracting the certificate. Add the following code snippet:
+Kommen wir nun zum Hauptteil des Codes, in dem wir die Signaturinformationen aus dem PDF-Dokument extrahieren. Wir durchlaufen jedes Feld im Formular des Dokuments und prüfen, ob es sich um ein Signaturfeld handelt. Wenn ein Signaturfeld gefunden wird, fahren wir mit der Extraktion des Zertifikats fort. Fügen Sie den folgenden Codeausschnitt hinzu:
 
 ```csharp
 using (Document pdfDocument = new Document(input))
@@ -49,7 +49,7 @@ using (Document pdfDocument = new Document(input))
          SignatureField sf = field as SignatureField;
          if (sf != null)
          {
-             // Extract the certificate
+             // Extrahieren Sie das Zertifikat
              Stream cerStream = sf.ExtractCertificate();
              if (cerStream != null)
              {
@@ -68,9 +68,9 @@ using (Document pdfDocument = new Document(input))
 }
 ```
 
-## Step 4: Extracting the Certificate
+## Schritt 4: Extrahieren des Zertifikats
 
-In this step, we extract the certificate from the signature field and save it as a file. The extracted certificate can be further analyzed or used for validation purposes. The code snippet below demonstrates the extraction and saving process:
+In diesem Schritt extrahieren wir das Zertifikat aus dem Signaturfeld und speichern es als Datei. Das extrahierte Zertifikat kann weiter analysiert oder zu Validierungszwecken verwendet werden. Der folgende Codeausschnitt veranschaulicht den Extraktions- und Speichervorgang:
 
 ```csharp
 Stream cerStream = sf.ExtractCertificate();
@@ -88,11 +88,11 @@ if (cerStream != null)
 }
 ```
 
-## Step 5
+## Schritt 5
 
-: Saving the Certificate
+: Speichern des Zertifikats
 
-Finally, we save the extracted certificate as a file. In this example, the certificate is saved with the name "input.cer" in the specified directory. You can modify the code to suit your requirements. Here's the code snippet for saving the certificate:
+Abschließend speichern wir das extrahierte Zertifikat als Datei. In diesem Beispiel wird das Zertifikat unter dem Namen „input.cer“ im angegebenen Verzeichnis gespeichert. Sie können den Code an Ihre Anforderungen anpassen. Hier ist der Codeausschnitt zum Speichern des Zertifikats:
 
 ```csharp
 using (FileStream fs = new FileStream(dataDir + @"input.cer", FileMode.CreateNew))
@@ -101,13 +101,13 @@ using (FileStream fs = new FileStream(dataDir + @"input.cer", FileMode.CreateNew
 }
 ```
 
-That's it! You have successfully extracted signature information using Aspose.PDF for .NET. Feel free to integrate this code into your own applications or modify it according to your needs.
+Das ist es! Sie haben die Signaturinformationen mit Aspose.PDF für .NET erfolgreich extrahiert. Sie können diesen Code gerne in Ihre eigenen Anwendungen integrieren oder ihn entsprechend Ihren Bedürfnissen modifizieren.
 
-### Sample source code for Extract Signature Info using Aspose.PDF for .NET 
+### Beispielquellcode zum Extrahieren von Signaturinformationen mit Aspose.PDF für .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Der Pfad zum Dokumentenverzeichnis.
 	string dataDir = "YOUR DOCUMENTS DIRECTORY";
 	string input = dataDir + "ExtractSignatureInfo.pdf";
 	using (Document pdfDocument = new Document(input))
@@ -140,72 +140,72 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Abschluss
 
-In this tutorial, we walked through a step-by-step guide on how to extract signature information from a PDF document using the Aspose.PDF for .NET library. We covered the process of importing the required libraries, setting the document path, extracting signature information, extracting the certificate, and saving it to a file. By following these steps, you can easily retrieve signature details and work with them as needed.
+In diesem Tutorial haben wir eine Schritt-für-Schritt-Anleitung zum Extrahieren von Signaturinformationen aus einem PDF-Dokument mithilfe der Aspose.PDF für .NET-Bibliothek besprochen. Wir haben den Prozess des Importierens der erforderlichen Bibliotheken, des Festlegens des Dokumentpfads, des Extrahierens von Signaturinformationen, des Extrahierens des Zertifikats und des Speicherns in einer Datei behandelt. Wenn Sie diese Schritte befolgen, können Sie Signaturdetails einfach abrufen und bei Bedarf damit arbeiten.
 
-### FAQ's
+### FAQs
 
-#### Q: Why would I need to extract signature information from a PDF document?
+#### F: Warum sollte ich Signaturinformationen aus einem PDF-Dokument extrahieren?
 
-A: Extracting signature information from a PDF document is useful for validating the authenticity of a signed document and analyzing the certificate used for the signature. This process helps ensure the integrity of the signed content and can be essential for legal and security purposes.
+A: Das Extrahieren von Signaturinformationen aus einem PDF-Dokument ist nützlich, um die Authentizität eines signierten Dokuments zu überprüfen und das für die Signatur verwendete Zertifikat zu analysieren. Dieser Prozess trägt dazu bei, die Integrität des signierten Inhalts sicherzustellen und kann aus rechtlichen und sicherheitstechnischen Gründen von entscheidender Bedeutung sein.
 
-#### Q: What is Aspose.PDF for .NET?
+#### F: Was ist Aspose.PDF für .NET?
 
-A: Aspose.PDF for .NET is a library that enables developers to work with PDF documents in .NET applications. It provides a wide range of features for creating, modifying, and interacting with PDF files programmatically.
+A: Aspose.PDF für .NET ist eine Bibliothek, die es Entwicklern ermöglicht, mit PDF-Dokumenten in .NET-Anwendungen zu arbeiten. Es bietet eine breite Palette von Funktionen zum programmgesteuerten Erstellen, Ändern und Interagieren mit PDF-Dateien.
 
-#### Q: What are the prerequisites for extracting signature information using Aspose.PDF for .NET?
+#### F: Was sind die Voraussetzungen zum Extrahieren von Signaturinformationen mit Aspose.PDF für .NET?
 
-A: To extract signature information, you need a basic knowledge of the C# programming language, the Aspose.PDF for .NET library installed on your system, and a valid PDF document containing one or more signature fields.
+A: Um Signaturinformationen zu extrahieren, benötigen Sie Grundkenntnisse der Programmiersprache C#, die auf Ihrem System installierte Aspose.PDF für .NET-Bibliothek und ein gültiges PDF-Dokument, das ein oder mehrere Signaturfelder enthält.
 
-#### Q: How do I import the required libraries for the extraction process?
+#### F: Wie importiere ich die erforderlichen Bibliotheken für den Extraktionsprozess?
 
-A: You can import the necessary libraries by adding the `using` directives for `Aspose.Pdf` and `System.IO` at the beginning of your C# file. These directives enable you to use the classes and methods required for extracting signature information.
+A: Sie können die erforderlichen Bibliotheken importieren, indem Sie die hinzufügen`using` Richtlinien für`Aspose.Pdf` Und`System.IO` am Anfang Ihrer C#-Datei. Mit diesen Anweisungen können Sie die zum Extrahieren von Signaturinformationen erforderlichen Klassen und Methoden verwenden.
 
-#### Q: How do I specify the PDF document for extracting signature information?
+#### F: Wie spezifiziere ich das PDF-Dokument zum Extrahieren von Signaturinformationen?
 
-A: You can set the path to the PDF document by replacing `"YOUR DOCUMENTS DIRECTORY"` with the actual path to your document in the code snippet provided. This path is used to load the PDF document that you want to extract signature information from.
+ A: Sie können den Pfad zum PDF-Dokument durch Ersetzen festlegen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Pfad zu Ihrem Dokument im bereitgestellten Code-Snippet. Dieser Pfad wird zum Laden des PDF-Dokuments verwendet, aus dem Sie Signaturinformationen extrahieren möchten.
 
-#### Q: What is the process of extracting signature information from a PDF document?
+#### F: Wie werden Signaturinformationen aus einem PDF-Dokument extrahiert?
 
-A: The extraction process involves iterating through the form fields of the PDF document, checking if each field is a signature field, and if so, extracting the associated certificate. The extracted certificate can be saved as a file for further analysis or validation.
+A: Der Extraktionsprozess umfasst das Durchlaufen der Formularfelder des PDF-Dokuments, die Prüfung, ob es sich bei jedem Feld um ein Signaturfeld handelt, und gegebenenfalls das Extrahieren des zugehörigen Zertifikats. Das extrahierte Zertifikat kann zur weiteren Analyse oder Validierung als Datei gespeichert werden.
 
-#### Q: How is the certificate extracted from a signature field?
+#### F: Wie wird das Zertifikat aus einem Signaturfeld extrahiert?
 
-A: The certificate is extracted from a signature field using the `ExtractCertificate()` method provided by the `SignatureField` class in Aspose.PDF for .NET. This method returns a stream containing the certificate data.
+A: Das Zertifikat wird mithilfe von aus einem Signaturfeld extrahiert`ExtractCertificate()` Methode, die von der bereitgestellt wird`SignatureField` Klasse in Aspose.PDF für .NET. Diese Methode gibt einen Stream zurück, der die Zertifikatsdaten enthält.
 
-#### Q: How do I save the extracted certificate as a file?
+#### F: Wie speichere ich das extrahierte Zertifikat als Datei?
 
-A: You can save the extracted certificate as a file by reading the certificate stream and writing its contents to a file using the `FileStream` class. The code provided in the tutorial demonstrates this process.
+ A: Sie können das extrahierte Zertifikat als Datei speichern, indem Sie den Zertifikatsstream lesen und seinen Inhalt mithilfe von in eine Datei schreiben`FileStream` Klasse. Der im Tutorial bereitgestellte Code veranschaulicht diesen Prozess.
 
-#### Q: Can I use this extracted certificate for signature validation?
+#### F: Kann ich dieses extrahierte Zertifikat zur Signaturvalidierung verwenden?
 
-A: Yes, the extracted certificate can be used for signature validation. You can analyze the certificate's details and verify its authenticity to ensure the integrity of the signed document.
+A: Ja, das extrahierte Zertifikat kann zur Signaturvalidierung verwendet werden. Sie können die Details des Zertifikats analysieren und seine Authentizität überprüfen, um die Integrität des signierten Dokuments sicherzustellen.
 
-#### Q: How can I integrate this code into my own applications?
+#### F: Wie kann ich diesen Code in meine eigenen Anwendungen integrieren?
 
-A: You can integrate the provided code into your own C# applications by following the step-by-step guide. Modify the paths and filenames as needed, and incorporate the code into your existing projects.
+A: Sie können den bereitgestellten Code in Ihre eigenen C#-Anwendungen integrieren, indem Sie der Schritt-für-Schritt-Anleitung folgen. Ändern Sie die Pfade und Dateinamen nach Bedarf und integrieren Sie den Code in Ihre vorhandenen Projekte.
 
-#### Q: Are there other features in Aspose.PDF for .NET related to signature management?
+#### F: Gibt es in Aspose.PDF für .NET weitere Funktionen im Zusammenhang mit der Signaturverwaltung?
 
-A: Yes, Aspose.PDF for .NET provides a range of features for working with digital signatures, including signing documents, verifying signatures, and adding timestamp information. You can explore the official documentation for more details on these features.
+A: Ja, Aspose.PDF für .NET bietet eine Reihe von Funktionen für die Arbeit mit digitalen Signaturen, darunter das Signieren von Dokumenten, das Überprüfen von Signaturen und das Hinzufügen von Zeitstempelinformationen. Weitere Einzelheiten zu diesen Funktionen finden Sie in der offiziellen Dokumentation.
 
-#### Q: Where can I find additional resources for using Aspose.PDF for .NET?
+#### F: Wo finde ich zusätzliche Ressourcen für die Verwendung von Aspose.PDF für .NET?
 
-A: For more information, tutorials, and resources on using Aspose.PDF for .NET, [Aspose.PDF for .NET](https://reference.aspose.com/pdf/net/).
+ A: Weitere Informationen, Tutorials und Ressourcen zur Verwendung von Aspose.PDF für .NET finden Sie unter[Aspose.PDF für .NET](https://reference.aspose.com/pdf/net/).
 
-#### Q: Is it possible to extract signatures from encrypted PDF documents?
+#### F: Ist es möglich, Signaturen aus verschlüsselten PDF-Dokumenten zu extrahieren?
 
-A: The ability to extract signatures from encrypted PDF documents may depend on the encryption settings and permissions of the document. You may need to ensure that you have the necessary permissions to access and extract signature information.
+A: Die Möglichkeit, Signaturen aus verschlüsselten PDF-Dokumenten zu extrahieren, kann von den Verschlüsselungseinstellungen und Berechtigungen des Dokuments abhängen. Möglicherweise müssen Sie sicherstellen, dass Sie über die erforderlichen Berechtigungen verfügen, um auf Signaturinformationen zuzugreifen und diese zu extrahieren.
 
-#### Q: Can I extract multiple signatures from a single PDF document?
+#### F: Kann ich mehrere Signaturen aus einem einzelnen PDF-Dokument extrahieren?
 
-A: Yes, you can modify the provided code to iterate through all signature fields in the PDF document and extract signature information from each one. This allows you to extract information about multiple signatures present in the document.
+A: Ja, Sie können den bereitgestellten Code ändern, um alle Signaturfelder im PDF-Dokument zu durchlaufen und Signaturinformationen aus jedem einzelnen zu extrahieren. Dadurch können Sie Informationen über mehrere im Dokument vorhandene Signaturen extrahieren.
 
-#### Q: What are some practical use cases for extracting signature information?
+#### F: Welche praktischen Anwendungsfälle gibt es für die Extraktion von Signaturinformationen?
 
-A: Some practical use cases for extracting signature information include validating the authenticity of digitally signed documents, analyzing certificate details for compliance purposes, and maintaining a record of signatures and signatories for auditing purposes.
+A: Einige praktische Anwendungsfälle zum Extrahieren von Signaturinformationen umfassen die Validierung der Authentizität digital signierter Dokumente, die Analyse von Zertifikatsdetails für Compliance-Zwecke und die Führung einer Aufzeichnung von Signaturen und Unterzeichnern für Prüfzwecke.
 
-#### Q: Are there any legal considerations when extracting signature information?
+#### F: Gibt es rechtliche Aspekte beim Extrahieren von Signaturinformationen?
 
-A: Extracting signature information may have legal implications, especially when handling legally binding documents. Ensure that you comply with relevant regulations and laws related to electronic signatures and document authenticity in your jurisdiction.
+A: Das Extrahieren von Signaturinformationen kann rechtliche Auswirkungen haben, insbesondere beim Umgang mit rechtsverbindlichen Dokumenten. Stellen Sie sicher, dass Sie die relevanten Vorschriften und Gesetze in Bezug auf elektronische Signaturen und Dokumentenauthentizität in Ihrem Land einhalten.

@@ -1,28 +1,28 @@
 ---
-title: Create PDF with Tagged Text
-linktitle: Create PDF with Tagged Text
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to create a PDF with tagged text using Aspose.PDF for .NET.
+title: Créer un PDF avec du texte balisé
+linktitle: Créer un PDF avec du texte balisé
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Guide étape par étape pour créer un PDF avec du texte balisé à l'aide d'Aspose.PDF pour .NET.
 type: docs
 weight: 50
 url: /fr/net/programming-with-tagged-pdf/create-pdf-with-tagged-text/
 ---
-In this tutorial, we will provide you with a step-by-step guide on how to create a PDF document with tagged text using Aspose.PDF for .NET. Aspose.PDF is a powerful library that allows you to create, manipulate and convert PDF documents programmatically. Using the tagged content structure features of Aspose.PDF, you can add tagged text to your PDF document.
+Dans ce didacticiel, nous vous fournirons un guide étape par étape sur la façon de créer un document PDF avec du texte balisé à l'aide d'Aspose.PDF pour .NET. Aspose.PDF est une bibliothèque puissante qui vous permet de créer, manipuler et convertir des documents PDF par programme. Grâce aux fonctionnalités de structure de contenu balisé d'Aspose.PDF, vous pouvez ajouter du texte balisé à votre document PDF.
 
-## Prerequisites
+## Conditions préalables
 
-Before you begin, make sure you have the following prerequisites in place:
+Avant de commencer, assurez-vous que les conditions préalables suivantes sont remplies :
 
-1. Visual Studio installed with .NET framework.
-2. The Aspose.PDF library for .NET.
+1. Visual Studio installé avec le framework .NET.
+2. La bibliothèque Aspose.PDF pour .NET.
 
-## Step 1: Project Setup
+## Étape 1 : Configuration du projet
 
-To get started, create a new project in Visual Studio and add a reference to the Aspose.PDF for .NET library. You can download the library from Aspose official website and install it on your machine.
+Pour commencer, créez un nouveau projet dans Visual Studio et ajoutez une référence à la bibliothèque Aspose.PDF pour .NET. Vous pouvez télécharger la bibliothèque depuis le site officiel d'Aspose et l'installer sur votre ordinateur.
 
-## Step 2: Import the necessary namespaces
+## Étape 2 : Importez les espaces de noms nécessaires
 
-In your C# code file, import the namespaces required to access the classes and methods provided by Aspose.PDF:
+Dans votre fichier de code C#, importez les espaces de noms requis pour accéder aux classes et méthodes fournies par Aspose.PDF :
 
 ```csharp
 using System;
@@ -30,9 +30,9 @@ using Aspose.Pdf;
 using Aspose.Pdf.Tagged;
 ```
 
-## Step 3: Creating the PDF document with tagged text
+## Étape 3 : Création du document PDF avec le texte balisé
 
-Use the following code to create a PDF document with tagged text:
+Utilisez le code suivant pour créer un document PDF avec du texte balisé :
 
 ```csharp
 string dataDir = "YOUR_DIRECTORY_OF_DOCUMENTS";
@@ -47,27 +47,27 @@ headerElement.ActualText = "Header 1";
 ParagraphElement paragraphElement1 = taggedContent.CreateParagraphElement();
 paragraphElement1.ActualText = "test1";
 
-// Add more paragraphs here
+// Ajoutez plus de paragraphes ici
 
-// Save the PDF document
+// Enregistrez le document PDF
 document.Save(dataDir + "PDFwithTagText.pdf");
 ```
 
-This code creates an empty PDF document and adds tagged text using the methods provided by Aspose.PDF. You can add other tagged text elements such as headings and paragraphs using the appropriate methods.
+Ce code crée un document PDF vide et ajoute du texte balisé à l'aide des méthodes fournies par Aspose.PDF. Vous pouvez ajouter d'autres éléments de texte balisés tels que des titres et des paragraphes en utilisant les méthodes appropriées.
 
-### Sample source code for Create PDFwith Tagged Text using Aspose.PDF for .NET 
+### Exemple de code source pour créer un PDF avec du texte balisé à l'aide d'Aspose.PDF pour .NET 
 ```csharp
 
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create Pdf Document
+// Créer un document PDF
 Document document = new Document();
-// Get Content for work with TaggedPdf
+// Obtenez du contenu pour travailler avec TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
-// Set Title and Language for Documnet
+// Définir le titre et la langue du document
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
-// Create Text Block-Level Structure Elements
+// Créer des éléments de structure au niveau des blocs de texte
 HeaderElement headerElement = taggedContent.CreateHeaderElement();
 headerElement.ActualText = "Heading 1";
 ParagraphElement paragraphElement1 = taggedContent.CreateParagraphElement();
@@ -84,53 +84,53 @@ ParagraphElement paragraphElement6 = taggedContent.CreateParagraphElement();
 paragraphElement6.ActualText = "test 6";
 ParagraphElement paragraphElement7 = taggedContent.CreateParagraphElement();
 paragraphElement7.ActualText = "test 7";
-// Save PDF Document
+// Enregistrer le document PDF
 document.Save( dataDir + "PDFwithTaggedText.pdf");
 
 ```
 
 ## Conclusion
 
-In this tutorial, you learned how to create a PDF document with tagged text using Aspose.PDF for .NET. Aspose.PDF's marked content structure features allow you to structure and organize your text for better accessibility and semantics.
+Dans ce didacticiel, vous avez appris à créer un document PDF avec du texte balisé à l'aide d'Aspose.PDF pour .NET. Les fonctionnalités de structure de contenu marquée d'Aspose.PDF vous permettent de structurer et d'organiser votre texte pour une meilleure accessibilité et une meilleure sémantique.
 
-### FAQ's
+### FAQ
 
-#### Q: What is the purpose of creating a PDF document with tagged text using Aspose.PDF for .NET?
+#### Q : Quel est le but de créer un document PDF avec du texte balisé à l'aide d'Aspose.PDF pour .NET ?
 
-A: Creating a PDF document with tagged text using Aspose.PDF for .NET allows you to structure and organize your text content within the PDF document. Tagged text adds semantic meaning and improves accessibility for users, especially those using assistive technologies.
+R : La création d'un document PDF avec du texte balisé à l'aide d'Aspose.PDF pour .NET vous permet de structurer et d'organiser votre contenu texte dans le document PDF. Le texte balisé ajoute une signification sémantique et améliore l'accessibilité pour les utilisateurs, en particulier ceux qui utilisent des technologies d'assistance.
 
-#### Q: How does Aspose.PDF assist in creating a PDF document with tagged text?
+#### Q : Comment Aspose.PDF aide-t-il à créer un document PDF avec du texte balisé ?
 
-A: Aspose.PDF for .NET is a powerful library that provides functionalities for creating, manipulating, and converting PDF documents programmatically. In this tutorial, the library's tagged content structure features are used to add structured and semantically meaningful text to the PDF document.
+R : Aspose.PDF pour .NET est une bibliothèque puissante qui fournit des fonctionnalités permettant de créer, manipuler et convertir des documents PDF par programme. Dans ce didacticiel, les fonctionnalités de structure de contenu balisé de la bibliothèque sont utilisées pour ajouter un texte structuré et sémantiquement significatif au document PDF.
 
-#### Q: What are the prerequisites for creating a PDF document with tagged text using Aspose.PDF for .NET?
+#### Q : Quelles sont les conditions préalables à la création d'un document PDF avec du texte balisé à l'aide d'Aspose.PDF pour .NET ?
 
-A: Before you begin, ensure you have Visual Studio installed with the .NET framework and have the Aspose.PDF library for .NET referenced in your project.
+R : Avant de commencer, assurez-vous que Visual Studio est installé avec le framework .NET et que la bibliothèque Aspose.PDF pour .NET est référencée dans votre projet.
 
-#### Q: How does the provided C# code create a PDF document with tagged text?
+#### Q : Comment le code C# fourni crée-t-il un document PDF avec du texte balisé ?
 
-A: The code example demonstrates how to create a PDF document, define various tagged text elements (such as headers and paragraphs), and add them to the document's content. This is achieved using the tagged content structure features provided by Aspose.PDF.
+R : L'exemple de code montre comment créer un document PDF, définir divers éléments de texte balisés (tels que des en-têtes et des paragraphes) et les ajouter au contenu du document. Ceci est réalisé en utilisant les fonctionnalités de structure de contenu balisées fournies par Aspose.PDF.
 
-#### Q: How can I customize the tagged text elements, such as headers and paragraphs?
+#### Q : Comment puis-je personnaliser les éléments de texte balisés, tels que les en-têtes et les paragraphes ?
 
-A: You can customize the tagged text elements by using appropriate methods, such as `CreateHeaderElement` and `CreateParagraphElement`, and setting properties like `ActualText` to provide meaningful text and semantics.
+ R : Vous pouvez personnaliser les éléments de texte balisés en utilisant des méthodes appropriées, telles que`CreateHeaderElement` et`CreateParagraphElement` , et en définissant des propriétés telles que`ActualText` pour fournir un texte et une sémantique significatifs.
 
-#### Q: Can I add other tagged text elements, such as lists or links, using similar techniques?
+#### Q : Puis-je ajouter d'autres éléments de texte balisés, tels que des listes ou des liens, en utilisant des techniques similaires ?
 
-A: Yes, you can add other tagged text elements like lists, links, or other custom structures using similar techniques. Aspose.PDF provides various methods to create different types of tagged content, allowing you to enhance document semantics.
+: Oui, vous pouvez ajouter d'autres éléments de texte balisés comme des listes, des liens ou d'autres structures personnalisées en utilisant des techniques similaires. Aspose.PDF fournit diverses méthodes pour créer différents types de contenu balisé, vous permettant d'améliorer la sémantique des documents.
 
-#### Q: How does the `SetTitle` method contribute to the PDF document's tagged text?
+####  Q : Comment le`SetTitle` method contribute to the PDF document's tagged text?
 
-A: The `SetTitle` method sets the title of the PDF document's tagged content, providing a brief description of the document's purpose or subject. This information helps users understand the context of the tagged text.
+ R : Le`SetTitle` La méthode définit le titre du contenu balisé du document PDF, fournissant une brève description de l'objectif ou du sujet du document. Ces informations aident les utilisateurs à comprendre le contexte du texte balisé.
 
-#### Q: How does using tagged text improve accessibility in PDF documents?
+#### Q : Comment l'utilisation de texte balisé améliore-t-elle l'accessibilité dans les documents PDF ?
 
-A: Tagged text adds semantic meaning to the document, making it more accessible to users with disabilities or those using assistive technologies. Screen readers and other assistive devices can interpret and present tagged text for improved user experience.
+R : Le texte balisé ajoute une signification sémantique au document, le rendant plus accessible aux utilisateurs handicapés ou à ceux utilisant des technologies d'assistance. Les lecteurs d'écran et autres appareils d'assistance peuvent interpréter et présenter du texte balisé pour une expérience utilisateur améliorée.
 
-#### Q: How does the `SetLanguage` method enhance the tagged text in a PDF document?
+####  Q : Comment le`SetLanguage` method enhance the tagged text in a PDF document?
 
-A: The `SetLanguage` method sets the language attribute of the PDF document's tagged content. This helps indicate the language in which the tagged text is written, improving accessibility and enabling proper language-specific rendering.
+ R : Le`SetLanguage`La méthode définit l'attribut de langue du contenu balisé du document PDF. Cela permet d'indiquer la langue dans laquelle le texte balisé est écrit, améliorant ainsi l'accessibilité et permettant un rendu approprié spécifique à la langue.
 
-#### Q: Is it possible to add other elements, such as images or multimedia, alongside tagged text using similar techniques?
+#### Q : Est-il possible d'ajouter d'autres éléments, tels que des images ou du multimédia, à côté du texte balisé en utilisant des techniques similaires ?
 
-A: Yes, you can add other elements like images, multimedia, or annotations alongside tagged text using similar techniques. Aspose.PDF offers a wide range of features to combine different types of content within the document.
+R : Oui, vous pouvez ajouter d'autres éléments tels que des images, du multimédia ou des annotations à côté du texte balisé en utilisant des techniques similaires. Aspose.PDF offre un large éventail de fonctionnalités pour combiner différents types de contenu au sein du document.

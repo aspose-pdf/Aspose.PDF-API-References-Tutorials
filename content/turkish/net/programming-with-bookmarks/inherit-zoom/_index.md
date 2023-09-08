@@ -1,178 +1,178 @@
 ---
-title: Inherit Zoom In PDF File
-linktitle: Inherit Zoom In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily inherit bookmark zoom in PDF file with Aspose.PDF for .NET.
+title: PDF Dosyasını Yakınlaştır'ı Devral
+linktitle: PDF Dosyasını Yakınlaştır'ı Devral
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile PDF dosyasındaki yer imi yakınlaştırmasını kolayca devralın.
 type: docs
 weight: 90
 url: /tr/net/programming-with-bookmarks/inherit-zoom/
 ---
-Zoom inheritance in PDF file allows you to specify a default zoom level for bookmarks. With Aspose.PDF for .NET, you can easily inherit zoom by following the following source code:
+PDF dosyasındaki yakınlaştırmayı devralma, yer imleri için varsayılan bir yakınlaştırma düzeyi belirtmenize olanak tanır. Aspose.PDF for .NET ile aşağıdaki kaynak kodunu izleyerek yakınlaştırmayı kolayca devralabilirsiniz:
 
-## Step 1: Import required libraries
+## 1. Adım: Gerekli kitaplıkları içe aktarın
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Başlamadan önce C# projeniz için gerekli kütüphaneleri içe aktarmanız gerekir. Gerekli ithalat direktifi aşağıdadır:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-## Step 2: Set path to documents folder
+## 2. Adım: Belgeler klasörünün yolunu ayarlayın
 
-In this step, you need to specify the path to the folder containing the PDF file you want to inherit the zoom from. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ Bu adımda yakınlaştırmayı devralmak istediğiniz PDF dosyasını içeren klasörün yolunu belirtmeniz gerekir. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"`belgeler klasörünüzün gerçek yolunu içeren aşağıdaki kodda:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## 3. Adım: PDF belgesini açın
 
-Now we are going to open the PDF document on which we want to inherit the zoom using the following code:
+Şimdi yakınlaştırmayı devralmak istediğimiz PDF belgesini aşağıdaki kodu kullanarak açacağız:
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 4: Get Bookmarks Collection
+## 4. Adım: Yer İmleri Koleksiyonunu Alın
 
-In this step, we will get the collection of bookmarks or landmarks of the document using the `Outlines` property of the `doc` object. Here is the corresponding code:
+ Bu adımda, belgenin yer imlerinin veya yer işaretlerinin koleksiyonunu kullanarak alacağız.`Outlines` mülkiyeti`doc` nesne. İşte ilgili kod:
 
 ```csharp
 OutlineItemCollection item = new OutlineItemCollection(doc.Outlines);
 ```
 
-## Step 5: Set Zoom Level
+## Adım 5: Yakınlaştırma Düzeyini Ayarlayın
 
-Now we will set the zoom level by creating an `XYZExplicitDestination` object with the specified x, y and z coordinates. Here we use the coordinates (100, 100, 0) with a zoom of 2. Here is the corresponding code:
+ Şimdi bir yakınlaştırma düzeyi oluşturarak ayarlayacağız.`XYZExplicitDestination` belirtilen x, y ve z koordinatlarına sahip nesne. Burada koordinatları (100, 100, 0) 2 yakınlaştırmayla kullanıyoruz. İlgili kod:
 
 ```csharp
 XYZExplicitDestination dest = new XYZExplicitDestination(2, 100, 100, 0);
 ```
 
-## Step 6: Add Zoom Level to Bookmarks
+## Adım 6: Yer İmlerine Yakınlaştırma Düzeyi Ekleme
 
-In this step, we add the `XYZExplicitDestination` object as an action to the bookmarks of the `item` collection. Here is the corresponding code:
+ Bu adımda şunu ekliyoruz`XYZExplicitDestination` yer imlerine bir eylem olarak nesne`item` Toplamak. İşte ilgili kod:
 
 ```csharp
 item. Action = new GoToAction(dest);
 ```
 
-## Step 7: Add the updated bookmarks to the document
+## 7. Adım: Güncellenen yer işaretlerini belgeye ekleyin
 
-Finally, we add the updated bookmarks to the document's bookmarks collection using the `Add` method of the `doc.Outlines` object. Here is the corresponding code:
+ Son olarak, güncellenen yer imlerini belgenin yer imleri koleksiyonuna şunu kullanarak ekliyoruz:`Add` yöntemi`doc.Outlines` nesne. İşte ilgili kod:
 
 ```csharp
 doc. Outlines. Add(item);
 ```
 
-## Step 8: Save the updated file
+## 8. Adım: Güncellenen dosyayı kaydedin
 
-Now let's save the updated PDF file using the `Save` method of the `doc` object. Here is the corresponding code:
+ Şimdi güncellenen PDF dosyasını kullanarak kaydedelim.`Save` yöntemi`doc` nesne. İşte ilgili kod:
 
 ```csharp
 dataDir = dataDir + "InheritZoom_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Inherit Zoom using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Inherit Zoom için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Belgeyi aç
 Document doc = new Document(dataDir + "input.pdf");
-// Get outlines/bookmarks collection of PDF file
+// PDF dosyasının ana hatlarını/yer imleri koleksiyonunu alın
 OutlineItemCollection item = new OutlineItemCollection(doc.Outlines);
-// Set zoom level as 0
+// Yakınlaştırma düzeyini 0 olarak ayarla
 XYZExplicitDestination dest = new XYZExplicitDestination(2, 100, 100, 0);
-// Add XYZExplicitDestination as action to outlines collection of PDF
+// PDF koleksiyonunun ana hatlarını oluşturmak için XYZExplicitDestination'ı eylem olarak ekleyin
 item.Action = new GoToAction(dest);
-// Add item to outlines collection of PDF file
+// PDF dosyasının ana hatlar koleksiyonuna öğe ekle
 doc.Outlines.Add(item);
 dataDir = dataDir + "InheritZoom_out.pdf";
-// Save output
+// Çıktıyı kaydet
 doc.Save(dataDir);
 Console.WriteLine("\nBookmarks updated successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulation ! Now you have a step by step guide to Inherit Zoom with Aspose.PDF for .NET. You can use this code to specify a default zoom level for bookmarks in your PDF documents.
+Tebrikler! Artık Aspose.PDF for .NET ile Zoom'u Devralmak için adım adım bir kılavuza sahipsiniz. PDF belgelerinizdeki yer imleri için varsayılan yakınlaştırma düzeyini belirlemek amacıyla bu kodu kullanabilirsiniz.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Gelişmiş yer imi düzenleme özellikleri hakkında daha fazla bilgi için resmi Aspose.PDF belgelerine göz atmayı unutmayın.
 
-### FAQ's for inherit zoom in PDF file
+### PDF dosyasındaki yakınlaştırmanın devralınması ile ilgili SSS
 
-#### Q: What is zoom inheritance in a PDF file?
+#### S: PDF dosyasında yakınlaştırmayı devralma nedir?
 
-A: Zoom inheritance refers to the ability to specify a default zoom level for bookmarks in a PDF document. This allows for consistent and user-friendly navigation when users interact with the bookmarks.
+C: Yakınlaştırmayı devralma, bir PDF belgesindeki yer imleri için varsayılan yakınlaştırma düzeyini belirtme yeteneğini ifade eder. Bu, kullanıcılar yer imleriyle etkileşime girdiğinde tutarlı ve kullanıcı dostu gezinmeye olanak tanır.
 
-#### Q: Why would I want to inherit zoom levels for bookmarks?
+#### S: Yer imlerinin yakınlaştırma düzeylerini neden devralmak isteyeyim?
 
-A: Inheriting zoom levels ensures that users have a consistent viewing experience when navigating through bookmarks in a PDF document. It can be particularly useful when you want to provide a specific view for different sections of a document.
+C: Yakınlaştırma düzeylerini devralmak, kullanıcıların bir PDF belgesindeki yer imleri arasında gezinirken tutarlı bir görüntüleme deneyimi yaşamasını sağlar. Bir belgenin farklı bölümleri için belirli bir görünüm sağlamak istediğinizde özellikle yararlı olabilir.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### S: C# projem için gerekli kitaplıkları nasıl içeri aktarabilirim?
 
-A: To import the required libraries for your C# project, include the following import directives:
+C: C# projeniz için gerekli kitaplıkları içe aktarmak için aşağıdaki içe aktarma yönergelerini ekleyin:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-These directives enable you to access the classes and methods needed to work with PDF documents and bookmarks.
+Bu yönergeler, PDF belgeleri ve yer imleriyle çalışmak için gereken sınıflara ve yöntemlere erişmenizi sağlar.
 
-#### Q: How do I specify the path to the documents folder?
+#### S: Belgeler klasörünün yolunu nasıl belirlerim?
 
-A: In the provided source code, replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file for which you want to inherit zoom levels.
+ C: Sağlanan kaynak kodunda değiştirin`"YOUR DOCUMENT DIRECTORY"` yakınlaştırma düzeylerini devralmak istediğiniz PDF dosyasını içeren klasörün gerçek yolunu belirtin.
 
-#### Q: How do I open a PDF document to inherit zoom levels?
+#### S: Yakınlaştırma düzeylerini devralmak için bir PDF belgesini nasıl açarım?
 
-A: To open a PDF document for inheriting zoom levels, use the following code:
+C: Yakınlaştırma düzeylerini devralmak üzere bir PDF belgesi açmak için aşağıdaki kodu kullanın:
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-Replace `"input.pdf"` with the actual file name.
+ Yer değiştirmek`"input.pdf"` gerçek dosya adı ile.
 
-#### Q: How do I set the zoom level for bookmarks?
+#### S: Yer imlerinin yakınlaştırma düzeyini nasıl ayarlarım?
 
-A: To set the zoom level, create an `XYZExplicitDestination` object with the desired coordinates and zoom factor. Here's an example:
+ C: Yakınlaştırma düzeyini ayarlamak için bir`XYZExplicitDestination` İstenilen koordinatlara ve yakınlaştırma faktörüne sahip nesne. İşte bir örnek:
 
 ```csharp
 XYZExplicitDestination dest = new XYZExplicitDestination(2, 100, 100, 0);
 ```
 
-This sets the zoom level to 2 at coordinates (100, 100).
+Bu, yakınlaştırma düzeyini koordinatlarda (100, 100) 2'ye ayarlar.
 
-#### Q: How do I add the zoom level to bookmarks?
+#### S: Yakınlaştırma düzeyini yer imlerine nasıl eklerim?
 
-A: Add the `XYZExplicitDestination` object as an action to the bookmarks collection:
+ C: Ekle`XYZExplicitDestination` yer imleri koleksiyonuna bir eylem olarak nesne:
 
 ```csharp
 item.Action = new GoToAction(dest);
 ```
 
-Where `item` is an `OutlineItemCollection` representing a bookmark.
+ Nerede`item` bir`OutlineItemCollection` bir yer imini temsil ediyor.
 
-#### Q: How do I save the updated PDF file?
+#### S: Güncellenen PDF dosyasını nasıl kaydederim?
 
-A: Save the updated PDF file using the `Save` method of the `doc` object:
+ C: Güncellenen PDF dosyasını kullanarak kaydedin.`Save` yöntemi`doc` nesne:
 
 ```csharp
 dataDir = dataDir + "InheritZoom_out.pdf";
 doc.Save(dataDir);
 ```
 
-#### Q: Can I customize zoom levels for different bookmarks?
+#### S: Farklı yer imleri için yakınlaştırma düzeylerini özelleştirebilir miyim?
 
-A: Yes, you can customize the zoom levels for different bookmarks by creating multiple `XYZExplicitDestination` objects with different coordinates and zoom factors.
+ C: Evet, birden fazla yer işareti oluşturarak farklı yer imleri için yakınlaştırma düzeylerini özelleştirebilirsiniz.`XYZExplicitDestination` farklı koordinatlara ve yakınlaştırma faktörlerine sahip nesneler.
 
-#### Q: Is there a limit to the number of bookmarks I can apply zoom inheritance to?
+#### S: Yakınlaştırma devralmasını uygulayabileceğim yer işareti sayısında bir sınır var mı?
 
-A: There is typically no strict limit to the number of bookmarks you can apply zoom inheritance to. However, very large documents with an excessive number of bookmarks may require efficient memory management.
+C: Yakınlaştırma devralmasını uygulayabileceğiniz yer imlerinin sayısı konusunda genellikle kesin bir sınır yoktur. Ancak, aşırı sayıda yer imine sahip çok büyük belgeler, etkin bellek yönetimi gerektirebilir.
 
-#### Q: How can I confirm that the zoom inheritance has been applied?
+#### S: Yakınlaştırma devralmasının uygulandığını nasıl doğrulayabilirim?
 
-A: Open the generated PDF file to verify that the specified zoom levels have been inherited by the bookmarks.
+C: Belirtilen yakınlaştırma düzeylerinin yer imleri tarafından devralındığını doğrulamak için oluşturulan PDF dosyasını açın.

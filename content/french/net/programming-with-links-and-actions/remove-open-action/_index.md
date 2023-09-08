@@ -1,107 +1,107 @@
 ---
-title: Remove Open Action
-linktitle: Remove Open Action
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to remove the open action from a PDF using Aspose.PDF for .NET.
+title: Supprimer l'action d'ouverture
+linktitle: Supprimer l'action d'ouverture
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment supprimer l’action d’ouverture d’un PDF à l’aide d’Aspose.PDF pour .NET.
 type: docs
 weight: 80
 url: /fr/net/programming-with-links-and-actions/remove-open-action/
 ---
-Learn how to remove the open action from a PDF file using Aspose.PDF for .NET with this step-by-step guide.
+Découvrez comment supprimer l'action d'ouverture d'un fichier PDF à l'aide d'Aspose.PDF pour .NET avec ce guide étape par étape.
 
-## Step 1: Setting up the environment
+## Étape 1 : Configuration de l'environnement
 
-Make sure you have set up your development environment with a C# project and the appropriate Aspose.PDF references.
+Assurez-vous d'avoir configuré votre environnement de développement avec un projet C# et les références Aspose.PDF appropriées.
 
-## Step 2: Loading the PDF file
+## Étape 2 : Chargement du fichier PDF
 
-Set the directory path of your documents and upload the PDF file using the following code:
+Définissez le chemin du répertoire de vos documents et téléchargez le fichier PDF en utilisant le code suivant :
 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Open the document
+// Ouvrir le document
 Document document = new Document(dataDir + "RemoveOpenAction.pdf");
 ```
 
-## Step 3: Deleting the open action
+## Étape 3 : Supprimer l'action d'ouverture
 
-Remove the open action from the document by setting the `OpenAction` property to null:
+ Supprimez l'action d'ouverture du document en définissant le`OpenAction` propriété à null :
 
 ```csharp
 document. OpenAction = null;
 ```
 
-## Step 4: Save the updated document
+## Étape 4 : Enregistrez le document mis à jour
 
-Save the updated document using the `Save` method:
+ Enregistrez le document mis à jour à l'aide du`Save` méthode:
 
 ```csharp
 dataDir = dataDir + "RemoveOpenAction_out.pdf";
 document. Save(dataDir);
 ```
 
-## Step 5: Displaying the result
+## Étape 5 : Affichage du résultat
 
-Display a message indicating that the open action was successfully removed and specify the location of the saved file:
+Affichez un message indiquant que l'action d'ouverture a été supprimée avec succès et spécifiez l'emplacement du fichier enregistré :
 
 ```csharp
 Console.WriteLine("\nOpen action deleted successfully.\nFile saved to location: " + dataDir);
 ```
 
-### Sample source code for Remove Open Action using Aspose.PDF for .NET 
+### Exemple de code source pour Supprimer l’action ouverte à l’aide d’Aspose.PDF pour .NET 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Ouvrir le document
 Document document = new Document(dataDir + "RemoveOpenAction.pdf");
-// Remove document open action
+// Supprimer l'action d'ouverture du document
 document.OpenAction = null;
 dataDir = dataDir + "RemoveOpenAction_out.pdf";
-// Save updated document
+// Enregistrer le document mis à jour
 document.Save(dataDir);
 Console.WriteLine("\nOpen action removed successfully.\nFile saved at " + dataDir); 
 ```
 
 ## Conclusion
 
-Congratulation ! Now you know how to remove the open action from a PDF using Aspose.PDF for .NET. Use this knowledge to customize the properties and behavior of PDF files in your projects.
+Félicitation ! Vous savez maintenant comment supprimer l'action d'ouverture d'un PDF à l'aide d'Aspose.PDF pour .NET. Utilisez ces connaissances pour personnaliser les propriétés et le comportement des fichiers PDF dans vos projets.
 
-Now that you've completed this guide, you can apply these concepts to your own projects and further explore the features offered by Aspose.PDF for .NET.
+Maintenant que vous avez terminé ce guide, vous pouvez appliquer ces concepts à vos propres projets et explorer davantage les fonctionnalités offertes par Aspose.PDF pour .NET.
 
-### FAQ's 
+### FAQ 
 
-#### Q: What is the "open action" in a PDF file?
+#### Q : Qu'est-ce que « l'action d'ouverture » dans un fichier PDF ?
 
-A: The "open action" in a PDF file is an instruction that specifies what should happen when the PDF is opened. It can include actions like navigating to a specific page or location within the document, launching an external application, or displaying a specific view.
+R : L'« action d'ouverture » dans un fichier PDF est une instruction qui spécifie ce qui doit se produire lorsque le PDF est ouvert. Cela peut inclure des actions telles que la navigation vers une page ou un emplacement spécifique dans le document, le lancement d'une application externe ou l'affichage d'une vue spécifique.
 
-#### Q: Why would I want to remove the open action from a PDF file?
+#### Q : Pourquoi voudrais-je supprimer l’action d’ouverture d’un fichier PDF ?
 
-A: Removing the open action can enhance security, user experience, and control over how the PDF is presented when opened. For example, you might want to prevent automatic navigation or disable certain actions upon opening the document.
+R : La suppression de l'action d'ouverture peut améliorer la sécurité, l'expérience utilisateur et le contrôle sur la façon dont le PDF est présenté une fois ouvert. Par exemple, vous souhaiterez peut-être empêcher la navigation automatique ou désactiver certaines actions lors de l'ouverture du document.
 
-#### Q: How does Aspose.PDF for .NET help in removing the open action?
+#### Q : Comment Aspose.PDF pour .NET aide-t-il à supprimer l'action d'ouverture ?
 
-A: Aspose.PDF for .NET provides APIs to manipulate various aspects of PDF files. This tutorial demonstrates how to remove the open action using C# code.
+: Aspose.PDF pour .NET fournit des API pour manipuler divers aspects des fichiers PDF. Ce didacticiel montre comment supprimer l'action d'ouverture à l'aide du code C#.
 
-#### Q: Are there any potential risks or considerations when removing the open action?
+#### Q : Existe-t-il des risques ou des considérations potentiels lors de la suppression de l'action ouverte ?
 
-A: Removing the open action can alter the default behavior of the PDF, so ensure that it aligns with the intended user experience. Test the modified PDF thoroughly to confirm that the removal does not affect other functionalities.
+R : La suppression de l'action d'ouverture peut modifier le comportement par défaut du PDF, alors assurez-vous qu'il correspond à l'expérience utilisateur souhaitée. Testez minutieusement le PDF modifié pour confirmer que la suppression n’affecte pas les autres fonctionnalités.
 
-#### Q: Can I customize the open action to perform other actions?
+#### Q : Puis-je personnaliser l'action d'ouverture pour effectuer d'autres actions ?
 
-A: Yes, Aspose.PDF for .NET enables you to customize the open action by setting it to various types of actions, such as navigating to a specific page or executing JavaScript.
+R : Oui, Aspose.PDF pour .NET vous permet de personnaliser l'action d'ouverture en la définissant sur différents types d'actions, telles que la navigation vers une page spécifique ou l'exécution de JavaScript.
 
-#### Q: Can I remove open actions from password-protected PDFs?
-A: Yes, you can remove open actions from password-protected PDFs as long as you provide the appropriate credentials to access and modify the document.
+#### Q : Puis-je supprimer les actions ouvertes des PDF protégés par mot de passe ?
+R : Oui, vous pouvez supprimer les actions ouvertes des PDF protégés par mot de passe à condition de fournir les informations d'identification appropriées pour accéder au document et le modifier.
 
-#### Q: Is the open action removal reversible?
+#### Q : Le retrait par action ouverte est-il réversible ?
 
-A: No, once the open action is removed and the PDF is saved, the original open action cannot be restored from the modified PDF.
+R : Non, une fois l'action d'ouverture supprimée et le PDF enregistré, l'action d'ouverture d'origine ne peut pas être restaurée à partir du PDF modifié.
 
-#### Q: How do I verify that the open action was successfully removed?
+#### Q : Comment puis-je vérifier que l'action d'ouverture a été supprimée avec succès ?
 
-A: After removing the open action using the provided code, open the modified PDF and confirm that no specific action occurs upon opening.
+R : Après avoir supprimé l'action d'ouverture à l'aide du code fourni, ouvrez le PDF modifié et confirmez qu'aucune action spécifique ne se produit lors de l'ouverture.
 
-#### Q: Can I remove open actions from multiple PDF files simultaneously?
+#### Q : Puis-je supprimer les actions ouvertes de plusieurs fichiers PDF simultanément ?
 
-A: Yes, you can use the same approach to remove open actions from multiple PDF files in a batch processing scenario.
+R : Oui, vous pouvez utiliser la même approche pour supprimer les actions ouvertes de plusieurs fichiers PDF dans un scénario de traitement par lots.

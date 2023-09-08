@@ -1,54 +1,54 @@
 ---
-title: Auto Fit To Window
-linktitle: Auto Fit To Window
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to use Aspose.PDF for .NET and achieve auto fit to window in PDF generation.
+title: Autopassa till fönster
+linktitle: Autopassa till fönster
+second_title: Aspose.PDF för .NET API Referens
+description: Steg-för-steg guide för att använda Aspose.PDF för .NET och uppnå autopassning till fönster i PDF-generering.
 type: docs
 weight: 50
 url: /sv/net/programming-with-tables/auto-fit-to-window/
 ---
-The following article is a step-by-step guide on how to use the provided C# source code to achieve Auto Fit To Window functionality using the Aspose.PDF library for .NET. The Auto Fit To Window function allows you to generate PDF files with a layout adapted to the viewing window. This feature is particularly useful when you want your PDF document to automatically adjust to the size of the PDF reader window used by the user.
+Följande artikel är en steg-för-steg-guide om hur du använder den medföljande C#-källkoden för att uppnå Autopassa till fönster-funktionalitet med Aspose.PDF-biblioteket för .NET. Funktionen Autopassa till fönster låter dig generera PDF-filer med en layout anpassad till visningsfönstret. Den här funktionen är särskilt användbar när du vill att ditt PDF-dokument ska anpassas automatiskt till storleken på PDF-läsarfönstret som används av användaren.
 
-## Step 1: Setting up the Environment
+## Steg 1: Konfigurera miljön
 
-Before you start, you need to install the Aspose.PDF library for .NET on your machine. Also make sure to import the necessary namespaces into your project.
+Innan du börjar måste du installera Aspose.PDF-biblioteket för .NET på din maskin. Se också till att importera de nödvändiga namnrymden till ditt projekt.
 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Creating a PDF Document
+## Steg 2: Skapa ett PDF-dokument
 
-To start, you need to create a `Document` object by calling its default constructor.
+ För att börja måste du skapa en`Document` objekt genom att anropa dess standardkonstruktor.
 
 ```csharp
 Document doc = new Document();
 ```
 
-Next, create a section in the `Pdf` object.
+ Skapa sedan en sektion i`Pdf` objekt.
 
 ```csharp
 Page sec1 = doc.Pages.Add();
 ```
 
-## Step 3: Adding a Table to the Document
+## Steg 3: Lägga till en tabell i dokumentet
 
-In this step, we are going to add a table to our PDF document. First create a `Table` object.
+ I det här steget kommer vi att lägga till en tabell i vårt PDF-dokument. Skapa först en`Table` objekt.
 
 ```csharp
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 ```
 
-Next, add the table to the section's paragraph collection.
+Lägg sedan till tabellen i avsnittets styckesamling.
 
 ```csharp
 sec1.Paragraphs.Add(tab1);
 ```
 
-##  Step 4: Customizing Table Appearance
+##  Steg 4: Anpassa tabellens utseende
 
-You can customize the appearance of the table by setting properties such as cell borders and margin.
+Du kan anpassa utseendet på tabellen genom att ställa in egenskaper som cellkanter och marginal.
 
 ```csharp
 tab1. ColumnWidths = "50 50 50";
@@ -66,9 +66,9 @@ margin. Bottom = 5f;
 tab1. DefaultCellPadding = margin;
 ```
 
-##  Step 4: Adding Rows and Cells to the Table
+##  Steg 4: Lägga till rader och celler i tabellen
 
-Now let's add rows and cells to our table. Start by creating a row and adding cells to that row.
+Låt oss nu lägga till rader och celler i vår tabell. Börja med att skapa en rad och lägga till celler i den raden.
 
 ```csharp
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
@@ -82,51 +82,51 @@ row2.Cells.Add("item2");
 row2.Cells.Add("item3");
 ```
 
-## Step 5: Saving the Document
+## Steg 5: Spara dokumentet
 
-Finally, specify the output file path and save the document.
+Ange slutligen sökvägen till utdatafilen och spara dokumentet.
 
 ```csharp
 dataDir = dataDir + "AutoFitToWindow_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Example source code for Auto Fit To Window using Aspose.PDF for .NET
+### Exempel på källkod för Auto Fit To Window med Aspose.PDF för .NET
 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instntiate the Pdf object by calling its empty constructor
+// Instntiera Pdf-objektet genom att anropa dess tomma konstruktor
 Document doc = new Document();
-// Create the section in the Pdf object
+// Skapa avsnittet i Pdf-objektet
 Page sec1 = doc.Pages.Add();
 
-// Instantiate a table object
+// Instantiera ett tabellobjekt
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
-// Add the table in paragraphs collection of the desired section
+// Lägg till tabellen i styckesamlingen av önskat avsnitt
 sec1.Paragraphs.Add(tab1);
 
-// Set with column widths of the table
+// Ställ in med tabellens kolumnbredder
 tab1.ColumnWidths = "50 50 50";
 tab1.ColumnAdjustment = ColumnAdjustment.AutoFitToWindow;
 
-// Set default cell border using BorderInfo object
+// Ställ in standardcellkant med hjälp av BorderInfo-objektet
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 
-// Set table border using another customized BorderInfo object
+// Ställ in tabellkanten med ett annat anpassat BorderInfo-objekt
 tab1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
-// Create MarginInfo object and set its left, bottom, right and top margins
+// Skapa MarginInfo-objekt och ställ in dess vänstra, nedre, högra och övre marginaler
 Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
 margin.Top = 5f;
 margin.Left = 5f;
 margin.Right = 5f;
 margin.Bottom = 5f;
 
-// Set the default cell padding to the MarginInfo object
+// Ställ in standardcellutfyllnad till MarginInfo-objektet
 tab1.DefaultCellPadding = margin;
 
-// Create rows in the table and then cells in the rows
+// Skapa rader i tabellen och sedan celler i raderna
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
@@ -137,32 +137,32 @@ row2.Cells.Add("item2");
 row2.Cells.Add("item3");
 
 dataDir = dataDir + "AutoFitToWindow_out.pdf";
-// Save updated document containing table object
+// Spara uppdaterat dokument som innehåller tabellobjekt
 doc.Save(dataDir);
 ```
 
-## Conclusion
+## Slutsats
 
-In this tutorial, we learned how to use Aspose.PDF for .NET to generate a PDF file with Auto Fit To Window feature. This feature is extremely useful when you want your PDF document to automatically adjust to the size of the viewing window. Aspose.PDF for .NET offers many other powerful features for generating and manipulating PDF files. I encourage you to explore this library further to discover all of its capabilities.
+den här handledningen lärde vi oss hur man använder Aspose.PDF för .NET för att generera en PDF-fil med funktionen Autopassa till fönster. Den här funktionen är extremt användbar när du vill att ditt PDF-dokument ska anpassas automatiskt till storleken på visningsfönstret. Aspose.PDF för .NET erbjuder många andra kraftfulla funktioner för att generera och manipulera PDF-filer. Jag uppmuntrar dig att utforska det här biblioteket ytterligare för att upptäcka alla dess funktioner.
 
 ### FAQ's
 
-#### Q: What is the purpose of the Auto Fit To Window feature in PDF generation?
+#### F: Vad är syftet med funktionen Autopassa till fönster i PDF-generering?
 
-A: The Auto Fit To Window feature in PDF generation ensures that the layout of the PDF document automatically adjusts to the size of the PDF reader window used by the user. This allows for better viewing and ensures that the content fits perfectly within the available viewing area.
+S: Funktionen Autopassa till fönster i PDF-generering säkerställer att layouten för PDF-dokumentet automatiskt anpassas till storleken på PDF-läsarfönstret som används av användaren. Detta möjliggör bättre visning och säkerställer att innehållet passar perfekt inom det tillgängliga visningsområdet.
 
-#### Q: Can I customize the appearance of the table, such as font size and colors?
+#### F: Kan jag anpassa utseendet på tabellen, till exempel teckenstorlek och färger?
 
-A: Yes, you can customize the appearance of the table in the PDF document using Aspose.PDF for .NET. The provided code snippet demonstrates how to set properties like cell borders, margins, and column widths. You can further customize the font size, colors, and other styling aspects of the table and its content.
+S: Ja, du kan anpassa utseendet på tabellen i PDF-dokumentet med Aspose.PDF för .NET. Det medföljande kodavsnittet visar hur man ställer in egenskaper som cellkanter, marginaler och kolumnbredder. Du kan ytterligare anpassa teckensnittsstorlek, färger och andra stilaspekter av tabellen och dess innehåll.
 
-#### Q: How do I integrate Aspose.PDF for .NET into my C# project?
+#### F: Hur integrerar jag Aspose.PDF för .NET i mitt C#-projekt?
 
-A: To use Aspose.PDF for .NET in your C# project, you need to first install the Aspose.PDF library for .NET on your machine. Then, you can add a reference to the library in your C# project. Finally, import the necessary namespaces to access the classes and methods provided by Aspose.PDF for .NET.
+S: För att använda Aspose.PDF för .NET i ditt C#-projekt måste du först installera Aspose.PDF-biblioteket för .NET på din maskin. Sedan kan du lägga till en referens till biblioteket i ditt C#-projekt. Importera slutligen de nödvändiga namnområdena för att komma åt klasserna och metoderna som tillhandahålls av Aspose.PDF för .NET.
 
-#### Q: Is Aspose.PDF for .NET compatible with .NET Core applications?
+#### F: Är Aspose.PDF för .NET kompatibelt med .NET Core-applikationer?
 
-A: Yes, Aspose.PDF for .NET is compatible with .NET Core applications. It supports various .NET platforms, including .NET Framework, .NET Core, and .NET 5.0+.
+S: Ja, Aspose.PDF för .NET är kompatibelt med .NET Core-applikationer. Den stöder olika .NET-plattformar, inklusive .NET Framework, .NET Core och .NET 5.0+.
 
-#### Q: Can I add more tables to the PDF document?
+#### F: Kan jag lägga till fler tabeller i PDF-dokumentet?
 
-A: Yes, you can add multiple tables to a PDF document by following similar steps as demonstrated in the code snippet. Simply create new instances of the `Aspose.Pdf.Table` class and add them to different sections or pages of the PDF document.
+S: Ja, du kan lägga till flera tabeller i ett PDF-dokument genom att följa liknande steg som visas i kodavsnittet. Skapa helt enkelt nya instanser av`Aspose.Pdf.Table` klass och lägg till dem i olika avsnitt eller sidor i PDF-dokumentet.

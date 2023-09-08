@@ -1,45 +1,45 @@
 ---
-title: Text Alignment For Table Row Content
-linktitle: Text Alignment For Table Row Content
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to align row content in a PDF table using Aspose.PDF for .NET.
+title: محاذاة النص لمحتوى صف الجدول
+linktitle: محاذاة النص لمحتوى صف الجدول
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية محاذاة محتوى الصف في جدول PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 210
 url: /ar/net/programming-with-tables/text-alignment-for-table-row-content/
 ---
-In this tutorial, we will guide you step by step to align the contents of a row in a table of a PDF document using Aspose.PDF for .NET. We'll explain the provided C# source code and show you how to implement it.
+في هذا البرنامج التعليمي، سنرشدك خطوة بخطوة لمحاذاة محتويات صف في جدول مستند PDF باستخدام Aspose.PDF لـ .NET. سنشرح لك كود مصدر C# المقدم ونوضح لك كيفية تنفيذه.
 
-## Step 1: Creating the PDF document
-First, we'll create the PDF document:
+## الخطوة 1: إنشاء وثيقة PDF
+أولاً، سنقوم بإنشاء مستند PDF:
 
 ```csharp
 var dataDir = "YOUR DOCUMENTS DIRECTORY";
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 ```
 
-## Step 2: Table initialization
-Next, we will initialize the table:
+## الخطوة 2: تهيئة الجدول
+بعد ذلك، سنقوم بتهيئة الجدول:
 
 ```csharp
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
 ```
 
-## Step 3: Setting the table border color
-We will configure the table border color:
+## الخطوة 3: تحديد لون حدود الجدول
+سنقوم بتكوين لون حدود الجدول:
 
 ```csharp
 table.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
 ```
 
-## Step 4: Configuring the table cell border
-We are going to configure the table cell border:
+## الخطوة 4: تكوين حدود خلية الجدول
+سنقوم بتكوين حدود خلية الجدول:
 
 ```csharp
 table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
 ```
 
-## Step 5: Loop to add 10 rows to the table
-We will now use a loop to add 10 rows to the table:
+## الخطوة 5: حلقة لإضافة 10 صفوف إلى الجدول
+سنستخدم الآن حلقة لإضافة 10 صفوف إلى الجدول:
 
 ```csharp
 for (int row_count = 0; row_count < 10; row_count++)
@@ -53,15 +53,15 @@ for (int row_count = 0; row_count < 10; row_count++)
 }
 ```
 
-## Step 6: Configuring the vertical line alignment
-We are going to configure the vertical alignment of the rows of the table:
+## الخطوة 6: تكوين محاذاة الخط العمودي
+سنقوم بتكوين المحاذاة الرأسية لصفوف الجدول:
 
 ```csharp
 row.VerticalAlignment = VerticalAlignment.Center;
 ```
 
-## Step 7: Adding content to row cells
-We are going to add content to the row cells:
+## الخطوة 7: إضافة محتوى إلى خلايا الصف
+سنقوم بإضافة محتوى إلى خلايا الصف:
 
 ```csharp
 row.Cells.Add("Column("+row_count+",1)"+DateTime.Now.Ticks);
@@ -69,38 +69,38 @@ row.Cells.Add("Column("+row_count+",2)");
 row.Cells.Add("Column("+row_count+",3)");
 ```
 
-## Step 8: Adding the table to the document page
-Now let's add the table to the document page:
+## الخطوة 8: إضافة الجدول إلى صفحة المستند
+الآن دعونا نضيف الجدول إلى صفحة المستند:
 
 ```csharp
 Page tocPage = doc.Pages.Add();
 tocPage.Paragraphs.Add(table);
 ```
 
-## Step 9: Saving the PDF document
-Finally, we will save the PDF document:
+## الخطوة 9: حفظ مستند PDF
+أخيرًا، سنقوم بحفظ مستند PDF:
 
 ```csharp
 doc.Save(dataDir + "43620_ByWords_out.pdf");
 ```
 
-### Example source code for Text Alignment For Table Row Content using Aspose.PDF for .NET
+### مثال على التعليمات البرمجية المصدر لمحاذاة النص لمحتوى صف الجدول باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 var dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create PDF document
+// إنشاء وثيقة PDF
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
-// Initializes a new instance of the Table
+// تهيئة مثيل جديد للجدول
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-// Set the table border color as LightGray
+// قم بتعيين لون حدود الجدول باللون LightGray
 table.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
-// set the border for table cells
+// تعيين الحدود لخلايا الجدول
 table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
-// create a loop to add 10 rows
+// إنشاء حلقة لإضافة 10 صفوف
 for (int row_count = 0; row_count < 10; row_count++)
 {
-	// add row to table
+	// إضافة صف إلى الجدول
 	Aspose.Pdf.Row row = table.Rows.Add();
 	row.VerticalAlignment = VerticalAlignment.Center;
 
@@ -109,33 +109,33 @@ for (int row_count = 0; row_count < 10; row_count++)
 	row.Cells.Add("Column (" + row_count + ", 3)");
 }
 Page tocPage = doc.Pages.Add();
-// Add table object to first page of input document
+// إضافة كائن جدول إلى الصفحة الأولى من مستند الإدخال
 tocPage.Paragraphs.Add(table);
-// Save updated document containing table object
+// حفظ المستند المحدث الذي يحتوي على كائن الجدول
 doc.Save(dataDir + "43620_ByWords_out.pdf");
 ```
 
-## Conclusion
-Congratulation ! You have now learned how to align the contents of a row in a table in a PDF document using Aspose.PDF for .NET. This step-by-step guide showed you how to create a document, initialize a table, configure border and alignment, add content, and save the PDF document. Now you can apply this knowledge to your own projects.
+## خاتمة
+تهنئة ! لقد تعلمت الآن كيفية محاذاة محتويات صف في جدول في مستند PDF باستخدام Aspose.PDF لـ .NET. يوضح لك هذا الدليل خطوة بخطوة كيفية إنشاء مستند، وتهيئة جدول، وتكوين الحدود والمحاذاة، وإضافة محتوى، وحفظ مستند PDF. الآن يمكنك تطبيق هذه المعرفة على مشاريعك الخاصة.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: How can I align the contents of the table cells horizontally?
+#### س: كيف يمكنني محاذاة محتويات خلايا الجدول أفقيًا؟
 
-A: You can align the contents of the table cells horizontally by setting the `HorizontalAlign` property of the cell's `TextState` object. For example, to center-align the text, use `cell.TextState.HorizontalAlignment = HorizontalAlignment.Center`. You can also set it to `HorizontalAlignment.Left` or `HorizontalAlignment.Right` for left and right alignment, respectively.
+ ج: يمكنك محاذاة محتويات خلايا الجدول أفقيًا عن طريق ضبط الإعداد`HorizontalAlign` خاصية الخلية`TextState` هدف. على سبيل المثال، لمحاذاة النص إلى المنتصف، استخدم`cell.TextState.HorizontalAlignment = HorizontalAlignment.Center` . يمكنك أيضًا ضبطه على`HorizontalAlignment.Left` أو`HorizontalAlignment.Right` للمحاذاة اليسرى واليمنى، على التوالي.
 
-#### Q: Can I apply different border styles and colors to individual cells within the table?
+#### س: هل يمكنني تطبيق أنماط وألوان حدود مختلفة على الخلايا الفردية داخل الجدول؟
 
-A: Yes, you can apply different border styles and colors to individual cells within the table. To customize the border for a specific cell, set the `cell.Border` property to a new `BorderInfo` object with the desired settings, such as border sides, width, and color.
+ ج: نعم، يمكنك تطبيق أنماط وألوان حدود مختلفة على الخلايا الفردية داخل الجدول. لتخصيص الحدود لخلية معينة، قم بتعيين`cell.Border` الملكية إلى جديد`BorderInfo`الكائن بالإعدادات المطلوبة، مثل جوانب الحدود والعرض واللون.
 
-#### Q: How can I adjust the vertical alignment of the table content within the cells?
+#### س: كيف يمكنني ضبط المحاذاة الرأسية لمحتوى الجدول داخل الخلايا؟
 
-A: You can adjust the vertical alignment of the table content within the cells by setting the `VerticalAlignment` property of the row to `VerticalAlignment.Center`, `VerticalAlignment.Top`, or `VerticalAlignment.Bottom`. This property controls the vertical alignment of all cells in that row.
+ ج: يمكنك ضبط المحاذاة الرأسية لمحتوى الجدول داخل الخلايا عن طريق ضبط الإعداد`VerticalAlignment` خاصية الصف ل`VerticalAlignment.Center`, `VerticalAlignment.Top` ، أو`VerticalAlignment.Bottom`. تتحكم هذه الخاصية في المحاذاة العمودية لجميع الخلايا في هذا الصف.
 
-#### Q: Is it possible to add more columns or rows to the table dynamically?
+#### س: هل من الممكن إضافة المزيد من الأعمدة أو الصفوف إلى الجدول ديناميكيًا؟
 
-A: Yes, you can add more columns and rows to the table dynamically by using the `table.Rows.Add()` method to add new rows and the `row.Cells.Add()` method to add new cells to the rows. You can do this inside loops or based on your specific requirements.
+ ج: نعم، يمكنك إضافة المزيد من الأعمدة والصفوف إلى الجدول ديناميكيًا باستخدام الأمر`table.Rows.Add()` طريقة لإضافة صفوف جديدة و`row.Cells.Add()` طريقة إضافة خلايا جديدة إلى الصفوف. يمكنك القيام بذلك داخل الحلقات أو بناءً على متطلباتك المحددة.
 
-#### Q: How can I set a background color for specific cells or the entire table?
+#### س: كيف يمكنني تعيين لون خلفية لخلايا معينة أو للجدول بأكمله؟
 
-A: To set a background color for specific cells or the entire table, use the `BackgroundColor` property of the `Cell` or `Table` object. For example, to set the background color of a cell, use `cell.BackgroundColor = Aspose.Pdf.Color.LightBlue`.
+ ج: لتعيين لون خلفية لخلايا معينة أو للجدول بأكمله، استخدم الخيار`BackgroundColor` ملكية`Cell` أو`Table` هدف. على سبيل المثال، لتعيين لون خلفية الخلية، استخدم`cell.BackgroundColor = Aspose.Pdf.Color.LightBlue`.

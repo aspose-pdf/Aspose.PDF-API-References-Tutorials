@@ -1,74 +1,74 @@
 ---
-title: Get Hyperlink Destinations In PDF File
-linktitle: Get Hyperlink Destinations In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract hyperlink destinations in PDF file using Aspose.PDF for .NET.
+title: PDF Dosyasında Köprü Hedeflerini Alın
+linktitle: PDF Dosyasında Köprü Hedeflerini Alın
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF dosyasındaki köprü hedeflerini nasıl çıkaracağınızı öğrenin.
 type: docs
 weight: 60
 url: /tr/net/programming-with-links-and-actions/get-hyperlink-destinations/
 ---
-Aspose.PDF for .NET is a powerful library for manipulating and extracting information in PDF file using the C# programming language. In this tutorial, we will focus on extracting hyperlink destinations from a PDF file using Aspose.PDF for .NET.
+Aspose.PDF for .NET, C# programlama dilini kullanarak PDF dosyasındaki bilgileri düzenlemek ve çıkarmak için kullanılan güçlü bir kütüphanedir. Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF dosyasından köprü hedeflerini çıkarmaya odaklanacağız.
 
-## Prerequisites
+## Önkoşullar
 
-Before you begin, make sure you have the following:
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- An integrated development environment (IDE) such as Visual Studio.
-- The Aspose.PDF library for .NET installed on your machine.
+- Visual Studio gibi entegre bir geliştirme ortamı (IDE).
+- .NET için Aspose.PDF kütüphanesi makinenizde yüklü.
 
-## Step 1: Setting up the development environment
+## 1. Adım: Geliştirme ortamını ayarlama
 
-Before you start writing code, you need to set up your development environment by creating a new C# project in your favorite IDE.
+Kod yazmaya başlamadan önce favori IDE'nizde yeni bir C# projesi oluşturarak geliştirme ortamınızı ayarlamanız gerekir.
 
-## Step 2: Import Aspose.PDF references
+## Adım 2: Aspose.PDF referanslarını içe aktarın
 
-To use Aspose.PDF for .NET, you need to add the appropriate references to your project. Follow the steps below to import the necessary references:
+Aspose.PDF for .NET'i kullanmak için projenize uygun referansları eklemeniz gerekir. Gerekli referansları içe aktarmak için aşağıdaki adımları izleyin:
 
-1. In your project, right-click "References" and select "Add Reference".
-2. In the "Add Reference" window, locate and select the DLL files of Aspose.PDF for .NET.
-3. Click "OK" to import the references into your project.
+1. Projenizde "Referanslar"a sağ tıklayın ve "Referans Ekle"yi seçin.
+2. "Referans Ekle" penceresinde Aspose.PDF for .NET'in DLL dosyalarını bulun ve seçin.
+3. Referansları projenize aktarmak için "Tamam"ı tıklayın.
 
-## Step 3: Loading the PDF File
+## Adım 3: PDF Dosyasını Yükleme
 
-Before you can extract hyperlink destinations, you must load the PDF file into your application. Use the following code to load the PDF file:
+Köprü hedeflerini ayıklamadan önce PDF dosyasını uygulamanıza yüklemelisiniz. PDF dosyasını yüklemek için aşağıdaki kodu kullanın:
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Load the PDF file
+// PDF dosyasını yükleyin
 Document document = new Document(dataDir + "input.pdf");
 ```
 
-Be sure to specify the correct path to your document directory and the PDF file you want to process.
+Belge dizininizin ve işlemek istediğiniz PDF dosyasının doğru yolunu belirttiğinizden emin olun.
 
-## Step 4: Navigating the pages of the document
+## Adım 4: Belgenin sayfalarında gezinme
 
-Now that the PDF file is loaded, you need to go through all the pages of the document. This will allow you to get
+Artık PDF dosyası yüklendiğine göre belgenin tüm sayfalarını gözden geçirmeniz gerekiyor. Bu, şunları elde etmenizi sağlayacaktır:
 
-ir the hyperlink annotations present on each page. Use the following code to iterate through the pages of the document:
+her sayfada bulunan köprü açıklamaları. Belgenin sayfaları arasında yineleme yapmak için aşağıdaki kodu kullanın:
 
 ```csharp
 foreach(Aspose.Pdf.Page page in document.Pages)
 {
-     // Get the link annotations of a specific page
+     // Belirli bir sayfanın bağlantı açıklamalarını alın
      AnnotationSelector selector = new AnnotationSelector(new Aspose.Pdf.Annotations.LinkAnnotation(page, Aspose.Pdf.Rectangle.Trivial));
      page. Accept(selector);
-     // Create a list to store all the links
+     // Tüm bağlantıları saklamak için bir liste oluşturun
      IList<Annotation> list = selector. Selected;
-     // Loop through each item in the list
+     // Listedeki her öğe arasında dolaşın
      foreach(LinkAnnotation a in list)
      {
-         // Print destination URL
+         // Hedef URL'yi yazdır
          Console.WriteLine("\nDestination: " + (a.Action as Aspose.Pdf.Annotations.GoToURIAction).URI + "\n");
      }
 }
 ```
 
-This code loops through each page of the document and selects the hyperlink annotations present on each page. Then it stores these annotations in a list and prints the destination URL for each link.
+Bu kod, belgenin her sayfasında döngü yapar ve her sayfada bulunan köprü açıklamalarını seçer. Daha sonra bu ek açıklamaları bir listede saklar ve her bağlantı için hedef URL'yi yazdırır.
 
-## Step 5: Obtaining Hyperlink Destinations
+## Adım 5: Köprü Hedeflerini Alma
 
-The last step is to extract the hyperlink destinations from the hyperlink annotations. The following code shows you how to do it:
+Son adım, köprü hedeflerini köprü ek açıklamalarından çıkarmaktır. Aşağıdaki kod bunu nasıl yapacağınızı gösterir:
 
 ```csharp
 foreach(Aspose.Pdf.Page page in document.Pages)
@@ -79,33 +79,33 @@ foreach(Aspose.Pdf.Page page in document.Pages)
      foreach(LinkAnnotation a in list)
      {
          string destination = (a.Action as Aspose.Pdf.Annotations.GoToURIAction).URI;
-         // Use the destination as you wish
+         // Hedefi dilediğiniz gibi kullanın
      }
 }
 ```
 
-In this code, we get each hyperlink destination from the link annotations and store the destination in a variable. You can then use this destination as you wish in your application.
+Bu kodda, her bir köprü hedefini bağlantı açıklamalarından alıyoruz ve hedefi bir değişkende saklıyoruz. Daha sonra bu hedefi uygulamanızda dilediğiniz gibi kullanabilirsiniz.
 
-### Sample source code for Get Hyperlink Destinations using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Köprü Hedefleri Alma için örnek kaynak kodu 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Belgeler dizininin yolu.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Load the PDF file
+	// PDF dosyasını yükleyin
 	Document document = new Document(dataDir + "input.pdf");
-	// Traverse through all the page of PDF
+	// PDF'nin tüm sayfasını dolaşın
 	foreach (Aspose.Pdf.Page page in document.Pages)
 	{
-		// Get the link annotations from particular page
+		// Belirli bir sayfadan bağlantı açıklamalarını alın
 		AnnotationSelector selector = new AnnotationSelector(new Aspose.Pdf.Annotations.LinkAnnotation(page, Aspose.Pdf.Rectangle.Trivial));
 		page.Accept(selector);
-		// Create list holding all the links
+		// Tüm bağlantıları tutan bir liste oluşturun
 		IList<Annotation> list = selector.Selected;
-		// Iterate through invidiaul item inside list
+		// Liste içindeki bireysel öğeyi yineleyin
 		foreach (LinkAnnotation a in list)
 		{
-			// Print the destination URL
+			// Hedef URL'yi yazdır
 			Console.WriteLine("\nDestination: " + (a.Action as Aspose.Pdf.Annotations.GoToURIAction).URI + "\n");
 		}
 	}
@@ -116,36 +116,36 @@ catch (Exception ex)
 }
 ```
 
-### FAQs for get hyperlink destinations in PDF file
+### PDF dosyasında köprü hedeflerini almaya ilişkin SSS
 
-#### Q: What is a hyperlink destination in a PDF file?
+#### S: PDF dosyasındaki köprü hedefi nedir?
 
-A: A hyperlink destination in a PDF file is a specific location or target that a hyperlink points to. It could be a URL, a page within the same document, or an external document.
+C: PDF dosyasındaki köprü hedefi, köprünün işaret ettiği belirli bir konum veya hedeftir. Bu bir URL, aynı belge içindeki bir sayfa veya harici bir belge olabilir.
 
-#### Q: How can extracting hyperlink destinations benefit my PDF document analysis?
+#### S: Köprü hedeflerini ayıklamak PDF belge analizime nasıl fayda sağlayabilir?
 
-A: Extracting hyperlink destinations allows you to identify and catalog all the targets that hyperlinks point to within a PDF document. This information can be useful for content validation, link verification, and data analysis.
+C: Köprü hedeflerini çıkarmak, bir PDF belgesinde köprülerin işaret ettiği tüm hedefleri tanımlamanıza ve kataloglamanıza olanak tanır. Bu bilgiler içerik doğrulama, bağlantı doğrulama ve veri analizi için yararlı olabilir.
 
-#### Q: How does Aspose.PDF for .NET assist in extracting hyperlink destinations?
+#### S: Aspose.PDF for .NET, köprü hedeflerinin çıkarılmasına nasıl yardımcı olur?
 
-A: Aspose.PDF for .NET provides powerful APIs to extract hyperlink destinations with ease. This tutorial demonstrates step-by-step how to extract hyperlink destinations using C#.
+C: Aspose.PDF for .NET, köprü hedeflerini kolaylıkla çıkarmak için güçlü API'ler sağlar. Bu öğretici, C# kullanarak köprü hedeflerinin nasıl çıkarılacağını adım adım gösterir.
 
-#### Q: Can I selectively extract hyperlink destinations based on certain criteria?
+#### S: Köprü hedeflerini belirli kriterlere göre seçerek çıkarabilir miyim?
 
-A: Yes, you can selectively extract hyperlink destinations by iterating through the pages of the PDF document and filtering the desired hyperlink annotations based on your criteria.
+C: Evet, PDF belgesinin sayfalarını yineleyerek ve kriterlerinize göre istenen köprü ek açıklamalarını filtreleyerek köprü hedeflerini seçerek çıkarabilirsiniz.
 
-#### Q: Is it possible to extract hyperlink destinations from password-protected PDF documents?
+#### S: Parola korumalı PDF belgelerinden köprü hedeflerini çıkarmak mümkün müdür?
 
-A: Aspose.PDF for .NET can extract hyperlink destinations from password-protected PDF documents as long as you provide the necessary authentication credentials when opening the document.
+C: Aspose.PDF for .NET, belgeyi açarken gerekli kimlik doğrulama bilgilerini sağladığınız sürece parola korumalı PDF belgelerinden köprü hedeflerini çıkarabilir.
 
-#### Q: How can I utilize the extracted hyperlink destinations in my application?
+#### S: Çıkarılan köprü hedeflerini uygulamamda nasıl kullanabilirim?
 
-A: Once you've extracted the hyperlink destinations, you can use them to perform various actions, such as validating link URLs, creating reports, or implementing custom navigation.
+C: Köprü hedeflerini çıkardıktan sonra bunları, bağlantı URL'lerini doğrulamak, raporlar oluşturmak veya özel gezinmeyi uygulamak gibi çeşitli eylemleri gerçekleştirmek için kullanabilirsiniz.
 
-#### Q: Are there any limitations when extracting hyperlink destinations?
+#### S: Köprü hedeflerini çıkarırken herhangi bir sınırlama var mı?
 
-A: While hyperlink destination extraction is powerful, it's essential to consider the structure of the PDF document. Hyperlinks embedded within complex graphics or multimedia content may require additional handling.
+C: Köprü hedefinin çıkarılması güçlü olsa da, PDF belgesinin yapısını dikkate almak önemlidir. Karmaşık grafiklere veya multimedya içeriğine gömülü köprüler ek işlem gerektirebilir.
 
-#### Q: Can I extract other attributes of hyperlinks, such as link types or coordinates?
+#### S: Bağlantı türleri veya koordinatlar gibi köprülerin diğer özelliklerini çıkarabilir miyim?
 
-A: The tutorial focuses on extracting hyperlink destinations. However, you can refer to the official Aspose.PDF documentation to explore advanced features, including extracting link types and coordinates.
+C: Eğitim, köprü hedeflerini çıkarmaya odaklanıyor. Ancak bağlantı türleri ve koordinatların çıkarılması da dahil olmak üzere gelişmiş özellikleri keşfetmek için resmi Aspose.PDF belgelerine başvurabilirsiniz.

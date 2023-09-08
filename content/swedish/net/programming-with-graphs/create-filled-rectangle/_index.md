@@ -1,124 +1,124 @@
 ---
-title: Create Filled Rectangle
-linktitle: Create Filled Rectangle
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to create a filled rectangle with Aspose.PDF for .NET. Step by step guide to customize fill color.
+title: Skapa fylld rektangel
+linktitle: Skapa fylld rektangel
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du skapar en fylld rektangel med Aspose.PDF för .NET. Steg för steg guide för att anpassa fyllningsfärgen.
 type: docs
 weight: 50
 url: /sv/net/programming-with-graphs/create-filled-rectangle/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to create a filled rectangle using Aspose.PDF for .NET.
+I den här handledningen går vi igenom följande C#-källkod steg för steg för att skapa en fylld rektangel med Aspose.PDF för .NET.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Se till att du har installerat Aspose.PDF-biblioteket och ställt in din utvecklingsmiljö innan du börjar. Har även grundläggande kunskaper i C#-programmering.
 
-## Step 1: Document Directory Setup
+## Steg 1: Installation av dokumentkatalog
 
-In the provided source code, you need to specify the directory where you want to save the resulting PDF file. Change the "dataDir" variable to the desired directory.
+den medföljande källkoden måste du ange katalogen där du vill spara den resulterande PDF-filen. Ändra variabeln "dataDir" till önskad katalog.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Creating a Document Instance and Adding a Page
+## Steg 2: Skapa en dokumentinstans och lägga till en sida
 
-We create an instance of the Document class and add a page to this document.
+Vi skapar en instans av klassen Document och lägger till en sida i detta dokument.
 
 ```csharp
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Step 3: Creating a Graph Object and Adding it to the Page
+## Steg 3: Skapa ett grafobjekt och lägga till det på sidan
 
-We create a Graph object with specified dimensions and add it to the page's paragraph collection.
+Vi skapar ett Graph-objekt med specificerade mått och lägger till det i sidans styckesamling.
 
 ```csharp
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(100, 400);
 page.Paragraphs.Add(graph);
 ```
 
-## Step 4: Create Rectangle Object and Add to Chart
+## Steg 4: Skapa rektangelobjekt och lägg till i diagram
 
-We create a Rectangle object with the specified dimensions and add it to the chart's shape collection.
+Vi skapar ett rektangelobjekt med de angivna måtten och lägger till det i diagrammets formsamling.
 
 ```csharp
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 200, 120);
 graph.Shapes.Add(rect);
 ```
 
-## Step 5: Setting the fill color
+## Steg 5: Ställ in fyllningsfärgen
 
-We can specify the fill color for the rectangle using the FillColor property of the GraphInfo object.
+Vi kan specificera fyllningsfärgen för rektangeln med FillColor-egenskapen för GraphInfo-objektet.
 
 ```csharp
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.Red;
 ```
 
-## Step 6: Saving the Resulting PDF File
+## Steg 6: Spara den resulterande PDF-filen
 
-Finally, we save the resulting PDF file with the name "CreateFilledRectangle_out.pdf" in the specified directory.
+Slutligen sparar vi den resulterande PDF-filen med namnet "CreateFilledRectangle_out.pdf" i den angivna katalogen.
 
 ```csharp
 doc.Save(dataDir + "CreateFilledRectangle_out.pdf");
 ```
 
-### Sample source code for Create Filled Rectangle using Aspose.PDF for .NET 
+### Exempel på källkod för Skapa fylld rektangel med Aspose.PDF för .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create Document instance
+// Skapa dokumentinstans
 Document doc = new Document();
-// Add page to pages collection of PDF file
+// Lägg till sida till sidor samling av PDF-fil
 Page page = doc.Pages.Add();
-// Create Graph instance
+// Skapa Graph-instans
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(100, 400);
-// Add graph object to paragraphs collection of page instance
+// Lägg till grafobjekt till styckesamling av sidinstanser
 page.Paragraphs.Add(graph);
-// Create Rectangle instance
+// Skapa rektangelinstans
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 200, 120);
-// Specify fill color for Graph object
+// Ange fyllningsfärg för Graph-objektet
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.Red;
-// Add rectangle object to shapes collection of Graph object
+// Lägg till rektangelobjekt i formsamlingen av Graph-objekt
 graph.Shapes.Add(rect);
 dataDir = dataDir + "CreateFilledRectangle_out.pdf";
-// Save PDF file
+// Spara PDF-fil
 doc.Save(dataDir);
 Console.WriteLine("\nFilled rectangle object created successfully.\nFile saved at " + dataDir);            
 
 ```
 
-## Conclusion
+## Slutsats
 
-In this tutorial, we explained how to create a filled rectangle using Aspose.PDF for .NET. You can now use this knowledge to create geometric shapes with custom fill colors in your PDF files.
+I den här handledningen förklarade vi hur man skapar en fylld rektangel med Aspose.PDF för .NET. Du kan nu använda denna kunskap för att skapa geometriska former med anpassade fyllningsfärger i dina PDF-filer.
 
 ## FAQ's
 
-#### Q: What is the purpose of this tutorial?
+#### F: Vad är syftet med denna handledning?
 
-A: The purpose of this tutorial is to guide you through the process of creating a filled rectangle using Aspose.PDF for .NET, enabling you to add custom geometric shapes with fill colors to your PDF files.
+S: Syftet med denna handledning är att guida dig genom processen att skapa en fylld rektangel med Aspose.PDF för .NET, vilket gör att du kan lägga till anpassade geometriska former med fyllningsfärger till dina PDF-filer.
 
-#### Q: What prerequisites are required before starting?
+#### F: Vilka förutsättningar krävs innan start?
 
-A: Before you begin, ensure that you have installed the Aspose.PDF library and set up your development environment. Additionally, having a basic understanding of C# programming is recommended.
+S: Innan du börjar, se till att du har installerat Aspose.PDF-biblioteket och ställt in din utvecklingsmiljö. Dessutom rekommenderas att ha en grundläggande förståelse för C#-programmering.
 
-#### Q: How do I specify the directory for saving the PDF file?
+#### F: Hur anger jag katalogen för att spara PDF-filen?
 
-A: In the provided source code, you can modify the "dataDir" variable to indicate the directory where you want to save the resulting PDF file.
+S: I den medföljande källkoden kan du ändra variabeln "dataDir" för att ange katalogen där du vill spara den resulterande PDF-filen.
 
-#### Q: What is the purpose of the Graph object?
+#### F: Vad är syftet med Graph-objektet?
 
-A: The Graph object acts as a container for drawing elements. It is created with specified dimensions and added to the page's paragraph collection.
+S: Graph-objektet fungerar som en behållare för att rita element. Den skapas med specificerade mått och läggs till sidans styckesamling.
 
-#### Q: How can I add a filled rectangle to the PDF document?
+#### F: Hur kan jag lägga till en fylld rektangel till PDF-dokumentet?
 
-A: To add a filled rectangle, create an instance of the Rectangle class with specified dimensions and fill color, and add it to the graph's shape collection.
+S: För att lägga till en fylld rektangel, skapa en instans av klassen Rectangle med specificerade dimensioner och fyllningsfärg och lägg till den i grafens formsamling.
 
-#### Q: Can I customize the dimensions and fill color of the rectangle?
+#### F: Kan jag anpassa måtten och fyllningsfärgen för rektangeln?
 
-A: Yes, you can customize the dimensions and fill color of the rectangle by modifying the parameters passed to the `Aspose.Pdf.Drawing.Rectangle` constructor and setting the FillColor property.
+ S: Ja, du kan anpassa måtten och fyllningsfärgen för rektangeln genom att ändra parametrarna som skickas till`Aspose.Pdf.Drawing.Rectangle` konstruktor och ställer in egenskapen FillColor.
 
-#### Q: How do I save the resulting PDF file after creating the filled rectangle?
+#### F: Hur sparar jag den resulterande PDF-filen efter att ha skapat den fyllda rektangeln?
 
-A: After creating the filled rectangle, you can save the resulting PDF file using the `doc.Save(dataDir + "CreateFilledRectangle_out.pdf");` line in the provided source code.
+ S: Efter att ha skapat den fyllda rektangeln kan du spara den resulterande PDF-filen med hjälp av`doc.Save(dataDir + "CreateFilledRectangle_out.pdf");` rad i den medföljande källkoden.

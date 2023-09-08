@@ -1,41 +1,41 @@
 ---
-title: Extract Images From PDF File
-linktitle: Extract Images From PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily extract images from PDF file with Aspose.PDF for .NET.
+title: استخراج الصور من ملف PDF
+linktitle: استخراج الصور من ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: قم باستخراج الصور بسهولة من ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 120
 url: /ar/net/programming-with-images/extract-images/
 ---
-This guide will take you step by step how to extract images from PDF file using Aspose.PDF for .NET. Make sure you have already set up your environment and follow the steps below:
+سيأخذك هذا الدليل خطوة بخطوة حول كيفية استخراج الصور من ملف PDF باستخدام Aspose.PDF لـ .NET. تأكد من أنك قمت بالفعل بإعداد بيئتك واتبع الخطوات التالية:
 
-## Step 1: Define the document directory
+## الخطوة 1: تحديد دليل المستند
 
-Before you start, make sure you set the correct directory for the documents. Replace `"YOUR DOCUMENT DIRECTORY"` in the code with the path to the directory where your PDF document is located.
+ قبل البدء، تأكد من تعيين الدليل الصحيح للمستندات. يستبدل`"YOUR DOCUMENT DIRECTORY"` في الكود الذي يحتوي على المسار إلى الدليل الذي يوجد به مستند PDF الخاص بك.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Open the PDF document
+## الخطوة 2: افتح مستند PDF
 
-In this step, we will open the PDF document using the `Document` class of Aspose.PDF. Use the `Document` constructor and pass the path to the PDF document.
+في هذه الخطوة، سنقوم بفتح مستند PDF باستخدام الملف`Document` فئة Aspose.PDF. استخدم ال`Document` منشئ وتمرير المسار إلى وثيقة PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ExtractImages.pdf");
 ```
 
-## Step 3: Extract a specific image
+## الخطوة 3: استخراج صورة محددة
 
-In this step, we are going to extract a specific image from a particular page. Use the `Images` collection of the page`s `Resources` object to access the desired image. In the example below, we extract the image with index 1 from the first page.
+ في هذه الخطوة، سنقوم باستخراج صورة معينة من صفحة معينة. استخدم ال`Images` مجموعة من الصفحة`s `كائن الموارد للوصول إلى الصورة المطلوبة. في المثال أدناه، نقوم باستخراج الصورة ذات الفهرس 1 من الصفحة الأولى.
 
 ```csharp
 XImage xImage = pdfDocument.Pages[1].Resources.Images[1];
 ```
 
-## Step 4: Save the extracted image
+## الخطوة 4: احفظ الصورة المستخرجة
 
-Save the extracted image to a file using the `Save` method of the `xImage` object. Specify the output path and image format (in this example we are using JPEG format).
+ احفظ الصورة المستخرجة في ملف باستخدام ملف`Save` طريقة`xImage` هدف. حدد مسار الإخراج وتنسيق الصورة (في هذا المثال نستخدم تنسيق JPEG).
 
 ```csharp
 FileStream outputImage = new FileStream(dataDir + "output.jpg", FileMode.Create);
@@ -43,71 +43,71 @@ xImage.Save(outputImage, ImageFormat.Jpeg);
 outputImage.Close();
 ```
 
-## Step 5: Save the updated PDF file
+## الخطوة 5: احفظ ملف PDF المحدث
 
-Save the updated PDF file using the `Save` method of the `pdfDocument` object. Specify the output path for the PDF file.
+ احفظ ملف PDF المحدث باستخدام ملف`Save` طريقة`pdfDocument` هدف. حدد مسار الإخراج لملف PDF.
 
 ```csharp
 dataDir = dataDir + "ExtractImages_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Extract Images using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لاستخراج الصور باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir+ "ExtractImages.pdf");
-// Extract a particular image
+// استخراج صورة معينة
 XImage xImage = pdfDocument.Pages[1].Resources.Images[1];
 FileStream outputImage = new FileStream(dataDir + "output.jpg", FileMode.Create);
-// Save output image
+// حفظ صورة الإخراج
 xImage.Save(outputImage, ImageFormat.Jpeg);
 outputImage.Close();
 dataDir = dataDir + "ExtractImages_out.pdf";
-// Save updated PDF file
+// حفظ ملف PDF المحدث
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nImages extracted successfully.\nFile saved at " + dataDir); 
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You have successfully extracted images from a PDF using Aspose.PDF for .NET. The extracted image is saved in the specified directory and the updated PDF file is also saved. You can now use these files for your specific needs.
+تهنئة ! لقد نجحت في استخراج الصور من ملف PDF باستخدام Aspose.PDF لـ .NET. يتم حفظ الصورة المستخرجة في الدليل المحدد ويتم أيضًا حفظ ملف PDF المحدث. يمكنك الآن استخدام هذه الملفات لتلبية احتياجاتك المحددة.
 
-### FAQ's for extract images from PDF file
+### الأسئلة الشائعة حول استخراج الصور من ملف PDF
 
-#### Q: Why would I want to extract images from a PDF file using Aspose.PDF for .NET?
+#### س: لماذا أرغب في استخراج الصور من ملف PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: Extracting images from a PDF file can be useful for various purposes such as archiving, reusing images in other documents, analyzing content, or performing image processing tasks.
+ج: يمكن أن يكون استخراج الصور من ملف PDF مفيدًا لأغراض متعددة مثل الأرشفة أو إعادة استخدام الصور في مستندات أخرى أو تحليل المحتوى أو تنفيذ مهام معالجة الصور.
 
-#### Q: How does Aspose.PDF for .NET facilitate the extraction of images from a PDF document?
+#### س: كيف يسهل Aspose.PDF for .NET استخراج الصور من مستند PDF؟
 
-A: Aspose.PDF for .NET provides a step-by-step process to open a PDF document, access specific images, and save them to image files using various formats.
+ج: يوفر Aspose.PDF for .NET عملية خطوة بخطوة لفتح مستند PDF والوصول إلى صور معينة وحفظها في ملفات صور باستخدام تنسيقات مختلفة.
 
-#### Q: What role does the `Document` class in Aspose.PDF for .NET play in image extraction?
+####  س: ما هو الدور الذي يقوم به`Document` class in Aspose.PDF for .NET play in image extraction?
 
-A: The `Document` class is used to load and manipulate PDF documents. In this context, it helps in opening the PDF document from which images will be extracted.
+ ج: ال`Document` يتم استخدام الفئة لتحميل ومعالجة مستندات PDF. وفي هذا السياق، يساعد في فتح مستند PDF الذي سيتم استخراج الصور منه.
 
-#### Q: How do I specify the specific image I want to extract from a PDF page?
+#### س: كيف أحدد الصورة المحددة التي أريد استخراجها من صفحة PDF؟
 
-A: You can use the `Images` collection of the page's `Resources` object to access the desired image by its index. For example, `pdfDocument.Pages[1].Resources.Images[1]` accesses the first image on the first page.
+ج: يمكنك استخدام`Images` مجموعة من الصفحة`Resources` كائن للوصول إلى الصورة المطلوبة من خلال فهرسها. على سبيل المثال،`pdfDocument.Pages[1].Resources.Images[1]` يصل إلى الصورة الأولى في الصفحة الأولى.
 
-#### Q: Can I extract images from any page in the PDF document?
+#### س: هل يمكنني استخراج الصور من أي صفحة في وثيقة PDF؟
 
-A: Yes, you can extract images from any page in the PDF document by specifying the desired page index and the index of the image to be extracted.
+ج: نعم، يمكنك استخراج الصور من أي صفحة في مستند PDF عن طريق تحديد فهرس الصفحة المطلوب وفهرس الصورة المراد استخراجها.
 
-#### Q: What image formats can I save the extracted images in?
+#### س: ما هي تنسيقات الصور التي يمكنني حفظ الصور المستخرجة بها؟
 
-A: You can save the extracted images in various formats supported by the `ImageFormat` enum, such as JPEG, PNG, BMP, and more.
+ ج: يمكنك حفظ الصور المستخرجة بتنسيقات مختلفة يدعمها ملف`ImageFormat` التعداد، مثل JPEG، PNG، BMP، والمزيد.
 
-#### Q: How can I use the extracted images after saving them to files?
+#### س: كيف يمكنني استخدام الصور المستخرجة بعد حفظها في الملفات؟
 
-A: The extracted images can be utilized like any other image files. You can view, edit, share, or incorporate them into other documents or projects.
+ج: يمكن استخدام الصور المستخرجة مثل أي ملفات صور أخرى. يمكنك عرضها أو تحريرها أو مشاركتها أو دمجها في مستندات أو مشاريع أخرى.
 
-#### Q: Does extracting images from a PDF affect the layout or content of the original PDF document?
+#### س: هل يؤثر استخراج الصور من ملف PDF على تخطيط أو محتوى مستند PDF الأصلي؟
 
-A: No, extracting images from a PDF does not affect the layout or content of the original PDF document. Only the extracted images are affected.
+ج: لا، لا يؤثر استخراج الصور من ملف PDF على تخطيط أو محتوى مستند PDF الأصلي. تتأثر الصور المستخرجة فقط.
 
-#### Q: Can I extract multiple images from different pages in a single process?
+#### س: هل يمكنني استخراج صور متعددة من صفحات مختلفة في عملية واحدة؟
 
-A: Yes, you can use the same process to extract images from multiple pages by iterating through different page indices.
+ج: نعم، يمكنك استخدام نفس العملية لاستخراج الصور من صفحات متعددة عن طريق التكرار عبر فهارس صفحات مختلفة.

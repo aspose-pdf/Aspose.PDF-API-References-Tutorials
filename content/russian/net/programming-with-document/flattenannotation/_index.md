@@ -1,35 +1,35 @@
 ---
-title: Flatten Annotation In PDF File
-linktitle: Flatten Annotation In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to flatten annotations in PDF file using Aspose.PDF for .NET. Preserve annotations and prevent accidental alteration.
+title: Сгладить аннотацию в PDF-файле
+linktitle: Сгладить аннотацию в PDF-файле
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как сгладить аннотации в PDF-файле с помощью Aspose.PDF для .NET. Сохраняйте аннотации и предотвращайте случайное изменение.
 type: docs
 weight: 150
 url: /ru/net/programming-with-document/flattenannotation/
 ---
-Aspose.PDF for .NET is a powerful library that enables developers to work with PDF file programmatically. One of the features that it provides is the ability to flatten annotations in PDF file. Flattening annotations in a PDF document means that the annotations become part of the document content and can no longer be edited or deleted. This is useful when you want to ensure that the annotations are preserved and cannot be accidentally altered.
+Aspose.PDF для .NET — это мощная библиотека, которая позволяет разработчикам программно работать с файлами PDF. Одной из функций, которые он предоставляет, является возможность выравнивания аннотаций в PDF-файле. Сведение аннотаций в PDF-документе означает, что аннотации становятся частью содержимого документа и их больше нельзя редактировать или удалять. Это полезно, если вы хотите гарантировать, что аннотации будут сохранены и их нельзя будет случайно изменить.
 
-In this tutorial, we will discuss how to use Aspose.PDF for .NET to flatten annotations in a PDF document. We will provide a step-by-step guide on how to do this, along with example source code.
+В этом уроке мы обсудим, как использовать Aspose.PDF для .NET для выравнивания аннотаций в PDF-документе. Мы предоставим пошаговое руководство о том, как это сделать, а также пример исходного кода.
 
-## Step 1: Create a new C# Console Application
-To get started, create a new C# Console Application in Visual Studio. You can name it whatever you like. Once the project is created, you need to add a reference to the Aspose.PDF for .NET library.
+## Шаг 1. Создайте новое консольное приложение C#.
+Для начала создайте новое консольное приложение C# в Visual Studio. Вы можете назвать его как угодно. После создания проекта вам необходимо добавить ссылку на библиотеку Aspose.PDF for .NET.
 
-## Step 2: Import the Aspose.PDF Namespace
-Add the following line of code at the top of your C# file to import the Aspose.PDF namespace:
+## Шаг 2. Импортируйте пространство имен Aspose.PDF.
+Добавьте следующую строку кода в начало вашего файла C#, чтобы импортировать пространство имен Aspose.PDF:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 3: Open the PDF Document
-Open the PDF document that you want to flatten:
+## Шаг 3. Откройте PDF-документ.
+Откройте PDF-документ, который вы хотите свести:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 ```
 
-## Step 4: Flatten the Annotations
-Flatten the annotations in the PDF document:
+## Шаг 4. Сгладьте аннотации
+Сгладьте аннотации в PDF-документе:
 
 ```csharp
 foreach (var page in pdfDocument.Pages)
@@ -41,22 +41,22 @@ foreach (var page in pdfDocument.Pages)
 }
 ```
 
-## Step 5: Save the Updated Document
-Save the updated document:
+## Шаг 5. Сохраните обновленный документ
+Сохраните обновленный документ:
 
 ```csharp
 pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
 Console.WriteLine("\nFlattened annotation successfully.\nFile saved at " + dataDir);
 ```
 
-### Example source code for Flatten Annotation using Aspose.PDF for .NET
+### Пример исходного кода для Flatten Annotation с использованием Aspose.PDF для .NET
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Открыть документ
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-// Flatten annotations
+// Сведение аннотаций
 foreach (var page in pdfDocument.Pages)
 {
 	foreach (var annotation in page.Annotations)
@@ -65,25 +65,25 @@ foreach (var page in pdfDocument.Pages)
 	}
 
 }
-// Save updated document
+// Сохранить обновленный документ
 pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
 
 Console.WriteLine("\nFlattened annotation successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
-In this tutorial, we have discussed how to flatten annotations in a PDF document using Aspose.PDF for .NET. Flattening annotations in a PDF document is a useful feature that ensures that the annotations are preserved and cannot be accidentally altered. Aspose.PDF for .NET provides a simple and easy-to-use API to work with PDF documents, including flattening annotations. 
+## Заключение
+В этом уроке мы обсудили, как сгладить аннотации в PDF-документе с помощью Aspose.PDF для .NET. Сведение аннотаций в PDF-документе — это полезная функция, которая гарантирует, что аннотации будут сохранены и не смогут быть случайно изменены. Aspose.PDF для .NET предоставляет простой и удобный API для работы с PDF-документами, включая выравнивание аннотаций. 
 
-### FAQ's for flatten annotation in PDF file
+### Часто задаваемые вопросы по объединению аннотаций в PDF-файле
 
-#### Q: What are annotations in a PDF document?
+#### Вопрос: Что такое аннотации в PDF-документе?
 
-A: Annotations in a PDF document are additional elements or notes that can be added to the document to provide extra information or interactivity. Annotations can include text, images, links, comments, and more.
+О: Аннотации в PDF-документе — это дополнительные элементы или примечания, которые можно добавлять в документ для предоставления дополнительной информации или интерактивности. Аннотации могут включать текст, изображения, ссылки, комментарии и многое другое.
 
-#### Q: Why would I want to flatten annotations in a PDF document?
+#### Вопрос: Зачем мне сглаживать аннотации в PDF-документе?
 
-A: Flattening annotations in a PDF document is useful when you want to ensure that the annotations become a part of the document content and cannot be edited or deleted. It helps in preserving the annotations as part of the document.
+О: Сведение аннотаций в PDF-документе полезно, если вы хотите, чтобы аннотации стали частью содержимого документа и их нельзя было редактировать или удалить. Это помогает сохранить аннотации как часть документа.
 
-#### Q: Can I selectively flatten annotations in a PDF document?
+#### Вопрос: Могу ли я выборочно свести аннотации в PDF-документе?
 
-A: Yes, you can selectively flatten annotations in a PDF document using Aspose.PDF for .NET. You can choose to flatten specific annotations or all annotations on a particular page or across the entire document.
+О: Да, вы можете выборочно выравнивать аннотации в PDF-документе, используя Aspose.PDF для .NET. Вы можете свести отдельные аннотации или все аннотации на определенной странице или во всем документе.

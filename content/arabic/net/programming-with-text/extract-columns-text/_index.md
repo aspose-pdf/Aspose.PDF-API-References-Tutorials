@@ -1,26 +1,26 @@
 ---
-title: Extract Columns Text In PDF File
-linktitle: Extract Columns Text In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract columns text in PDF file using Aspose.PDF for .NET.
+title: استخراج نص الأعمدة في ملف PDF
+linktitle: استخراج نص الأعمدة في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية استخراج نص الأعمدة في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 150
 url: /ar/net/programming-with-text/extract-columns-text/
 ---
-This tutorial will guide you through the process of extracting columns text in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+سيرشدك هذا البرنامج التعليمي خلال عملية استخراج نص الأعمدة في ملف PDF باستخدام Aspose.PDF لـ .NET. يوضح كود مصدر C# المقدم الخطوات اللازمة.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## متطلبات
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio أو أي مترجم C# آخر مثبت على جهازك.
+- Aspose.PDF لمكتبة .NET. يمكنك تنزيله من موقع Aspose الرسمي أو استخدام مدير الحزم مثل NuGet لتثبيته.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## الخطوة 1: إعداد المشروع
+1. قم بإنشاء مشروع C# جديد في بيئة التطوير المفضلة لديك.
+2. قم بإضافة مرجع إلى Aspose.PDF لمكتبة .NET.
 
-## Step 2: Import required namespaces
-In the code file where you want to extract columns text, add the following using directives at the top of the file:
+## الخطوة 2: استيراد مساحات الأسماء المطلوبة
+في ملف التعليمات البرمجية الذي تريد استخراج نص الأعمدة منه، أضف ما يلي باستخدام التوجيهات الموجودة في الجزء العلوي من الملف:
 
 ```csharp
 using Aspose.Pdf;
@@ -28,18 +28,18 @@ using Aspose.Pdf.Text;
 using System.IO;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## الخطوة 3: قم بتعيين دليل المستند
+ في الكود، حدد السطر الذي يقول`string dataDir = "YOUR DOCUMENT DIRECTORY";` واستبدال`"YOUR DOCUMENT DIRECTORY"` مع المسار إلى الدليل حيث يتم تخزين المستندات الخاصة بك.
 
-## Step 4: Open the PDF document
-Open an existing PDF document using the `Document` constructor and passing the path to the input PDF file.
+## الخطوة 4: افتح مستند PDF
+ افتح مستند PDF موجود باستخدام الملف`Document`منشئ وتمرير المسار إلى ملف PDF الإدخال.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");
 ```
 
-## Step 5: Adjust the font size
-Reduce the font size of the text fragments by a factor of 0.7 to enhance readability and better represent columnar text.
+## الخطوة 5: ضبط حجم الخط
+قم بتقليل حجم الخط لأجزاء النص بمعامل 0.7 لتحسين إمكانية القراءة وتمثيل النص العمودي بشكل أفضل.
 
 ```csharp
 TextFragmentAbsorber tfa = new TextFragmentAbsorber();
@@ -51,8 +51,8 @@ foreach(TextFragment tf in tfc)
 }
 ```
 
-## Step 6: Extract text from columns
-Save the modified PDF document to a memory stream and reload it as a new document. Then, use the `TextAbsorber` class to extract text from the columns.
+## الخطوة 6: استخراج النص من الأعمدة
+ احفظ مستند PDF المعدل في دفق الذاكرة وأعد تحميله كمستند جديد. ثم استخدم`TextAbsorber` فئة لاستخراج النص من الأعمدة.
 
 ```csharp
 Stream st = new MemoryStream();
@@ -64,8 +64,8 @@ String extractedText = textAbsorber.Text;
 textAbsorber.Visit(pdfDocument);
 ```
 
-## Step 7: Save the extracted text
-Save the extracted text to a text file at the specified output file path.
+## الخطوة 7: احفظ النص المستخرج
+احفظ النص المستخرج في ملف نصي في مسار ملف الإخراج المحدد.
 
 ```csharp
 dataDir = dataDir + "ExtractColumnsText_out.txt";
@@ -73,18 +73,18 @@ File.WriteAllText(dataDir, extractedText);
 Console.WriteLine("\nColumns text extracted successfully from Pages of PDF Document.\nFile saved at " + dataDir);
 ```
 
-### Sample source code for Extract Columns Text using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لاستخراج نص الأعمدة باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");                
 TextFragmentAbsorber tfa = new TextFragmentAbsorber();
 pdfDocument.Pages.Accept(tfa);
 TextFragmentCollection tfc = tfa.TextFragments;
 foreach (TextFragment tf in tfc)
 {
-	// Need to reduce font size at least for 70%
+	// تحتاج إلى تقليل حجم الخط بنسبة 70% على الأقل
 	tf.TextState.FontSize = tf.TextState.FontSize * 0.7f;
 }
 Stream st = new MemoryStream();
@@ -99,18 +99,18 @@ System.IO.File.WriteAllText(dataDir, extractedText);
 Console.WriteLine("\nColumns text extracted successfully from Pages of PDF Document.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
-You have successfully extracted columns text from a PDF document using Aspose.PDF for .NET. The extracted text has been saved to the specified output file.
+## خاتمة
+لقد نجحت في استخراج نص الأعمدة من مستند PDF باستخدام Aspose.PDF لـ .NET. تم حفظ النص المستخرج في ملف الإخراج المحدد.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of this tutorial?
+#### س: ما هو الغرض من هذا البرنامج التعليمي؟
 
-A: This tutorial offers a step-by-step guide on extracting columns of text from a PDF file using Aspose.PDF for .NET. The accompanying C# source code provides a practical demonstration of the required procedures.
+ج: يقدم هذا البرنامج التعليمي دليلاً خطوة بخطوة حول استخراج أعمدة النص من ملف PDF باستخدام Aspose.PDF لـ .NET. يوفر كود مصدر C# المصاحب عرضًا عمليًا للإجراءات المطلوبة.
 
-#### Q: What namespaces should I import?
+#### س: ما هي مساحات الأسماء التي يجب علي استيرادها؟
 
-A: In the code file where you intend to extract columns of text, include the following using directives at the beginning of the file:
+ج: في ملف التعليمات البرمجية الذي تنوي استخراج أعمدة نصية فيه، قم بتضمين ما يلي باستخدام التوجيهات في بداية الملف:
 
 ```csharp
 using Aspose.Pdf;
@@ -118,30 +118,30 @@ using Aspose.Pdf.Text;
 using System.IO;
 ```
 
-#### Q: How do I specify the document directory?
+#### س: كيف أحدد دليل المستندات؟
 
-A: Locate the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` in the code and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ ج: تحديد موقع الخط`string dataDir = "YOUR DOCUMENT DIRECTORY";` في التعليمات البرمجية واستبدال`"YOUR DOCUMENT DIRECTORY"` بالمسار الفعلي إلى دليل المستندات الخاص بك.
 
-#### Q: How do I open an existing PDF document?
+#### س: كيف يمكنني فتح مستند PDF موجود؟
 
-A: In Step 4, you'll open an existing PDF document using the `Document` constructor and providing the path to the input PDF file.
+ ج: في الخطوة 4، ستفتح مستند PDF موجودًا باستخدام الملف`Document` منشئ وتوفير المسار إلى ملف PDF الإدخال.
 
-#### Q: Why is the font size adjusted?
+#### س: لماذا تم تعديل حجم الخط؟
 
-A: Step 5 involves reducing the font size of text fragments by a factor of 0.7. This adjustment enhances readability and more accurately represents columnar text.
+ج: تتضمن الخطوة 5 تقليل حجم خط أجزاء النص بمعامل 0.7. يعمل هذا التعديل على تحسين إمكانية القراءة ويمثل النص العمودي بدقة أكبر.
 
-#### Q: How do I extract text from columns?
+#### س: كيف يمكنني استخراج النص من الأعمدة؟
 
-A: Step 6 consists of saving the modified PDF document to a memory stream, reloading it as a new document, and then using the `TextAbsorber` class to extract text from the columns.
+ ج: تتكون الخطوة 6 من حفظ مستند PDF المعدل في دفق الذاكرة، وإعادة تحميله كمستند جديد، ثم استخدام`TextAbsorber` فئة لاستخراج النص من الأعمدة.
 
-#### Q: What is the purpose of saving the extracted text?
+#### س: ما الهدف من حفظ النص المستخرج؟
 
-A: In Step 7, you'll save the extracted text to a text file at the specified output file path.
+ج: في الخطوة 7، ستحفظ النص المستخرج في ملف نصي في مسار ملف الإخراج المحدد.
 
-#### Q: Why reduce the font size before extraction?
+#### س: لماذا تقليل حجم الخط قبل الاستخراج؟
 
-A: Reducing the font size helps ensure that the extracted text aligns properly within the columns, providing a more accurate representation of the original layout.
+ج: يساعد تقليل حجم الخط على التأكد من محاذاة النص المستخرج بشكل صحيح داخل الأعمدة، مما يوفر تمثيلاً أكثر دقة للتخطيط الأصلي.
 
-#### Q: What is the key takeaway from this tutorial?
+#### س: ما هي الوجبات الرئيسية من هذا البرنامج التعليمي؟
 
-A: By following this tutorial, you've acquired the knowledge and skills needed to extract columns of text from a PDF document using Aspose.PDF for .NET. The resulting text has been saved to the specified output file.
+ج: باتباع هذا البرنامج التعليمي، تكون قد اكتسبت المعرفة والمهارات اللازمة لاستخراج أعمدة النص من مستند PDF باستخدام Aspose.PDF لـ .NET. تم حفظ النص الناتج في ملف الإخراج المحدد.

@@ -1,61 +1,61 @@
 ---
-title: Identify Images In PDF File
-linktitle: Identify Images In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily identify images in PDF file and determine their color type with Aspose.PDF for .NET.
+title: تحديد الصور في ملف PDF
+linktitle: تحديد الصور في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: يمكنك التعرف بسهولة على الصور في ملف PDF وتحديد نوع لونها باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 150
 url: /ar/net/programming-with-images/identify-images/
 ---
-This guide will take you step by step how to identify images in PDF file using Aspose.PDF for .NET. Make sure you have already set up your environment and follow the steps below:
+سيأخذك هذا الدليل خطوة بخطوة حول كيفية التعرف على الصور في ملف PDF باستخدام Aspose.PDF لـ .NET. تأكد من أنك قمت بالفعل بإعداد بيئتك واتبع الخطوات التالية:
 
-## Step 1: Define the document directory
+## الخطوة 1: تحديد دليل المستند
 
-Make sure to set the correct document directory. Replace `"YOUR DOCUMENT DIRECTORY"` in the code with the path to the directory where your PDF document is located.
+ تأكد من تعيين دليل المستند الصحيح. يستبدل`"YOUR DOCUMENT DIRECTORY"` في الكود الذي يحتوي على المسار إلى الدليل الذي يوجد به مستند PDF الخاص بك.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Initialize the counters
+## الخطوة الثانية: تهيئة العدادات
 
-In this step, we will initialize the counters for grayscale images and RGB images.
+في هذه الخطوة، سنقوم بتهيئة العدادات للصور ذات التدرج الرمادي وصور RGB.
 
 ```csharp
-int grayscaled = 0; // Counter for grayscale images
-int rdg = 0; // Counter for RGB images
+int grayscaled = 0; // عداد للصور ذات التدرج الرمادي
+int rdg = 0; // عداد للصور RGB
 ```
 
-## Step 3: Open the PDF document
+## الخطوة 3: افتح مستند PDF
 
-In this step, we will open the PDF document using the `Document` class of Aspose.PDF. Use the `Document` constructor and pass the path to the PDF document.
+في هذه الخطوة، سنقوم بفتح مستند PDF باستخدام الملف`Document` فئة Aspose.PDF. استخدم ال`Document` منشئ وتمرير المسار إلى وثيقة PDF.
 
 ```csharp
 using (Document document = new Document(dataDir + "ExtractImages.pdf"))
 {
 ```
 
-## Step 4: Browse Document Pages
+## الخطوة 4: تصفح صفحات المستندات
 
-In this step, we will go through all the pages of the PDF document and identify the images on each page.
+في هذه الخطوة، سنستعرض جميع صفحات مستند PDF ونحدد الصور الموجودة في كل صفحة.
 
 ```csharp
 foreach(Page page in document.Pages)
 {
 ```
 
-## Step 5: Retrieve image placements
+## الخطوة 5: استرداد مواضع الصور
 
-In this step, we will use `ImagePlacementAbsorber` to retrieve image placements on each page.
+ في هذه الخطوة سوف نستخدم`ImagePlacementAbsorber` لاسترداد مواضع الصور في كل صفحة.
 
 ```csharp
 ImagePlacementAbsorber abs = new ImagePlacementAbsorber();
 page. Accept(abs);
 ```
 
-## Step 6: Count the images and identify their color type
+## الخطوة 6: عد الصور وحدد نوع لونها
 
-In this step, we will count the number of images on each page and identify their color type (grayscale or RGB).
+في هذه الخطوة، سنقوم بإحصاء عدد الصور في كل صفحة وتحديد نوع لونها (تدرج الرمادي أو RGB).
 
 ```csharp
 Console.WriteLine("Total Images = {0} on page number {1}", abs.ImagePlacements.Count, page.Number);
@@ -78,13 +78,13 @@ foreach(ImagePlacement ia in abs.ImagePlacements)
 }
 ```
 
-### Sample source code for Identify Images using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لتحديد الصور باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Counter for grayscale images
+// عداد للصور ذات التدرج الرمادي
 int grayscaled = 0;
-// Counter for RGB images
+// عداد للصور RGB
 int rgd = 0;
 using (Document document = new Document(dataDir + "ExtractImages.pdf"))
 {
@@ -93,7 +93,7 @@ using (Document document = new Document(dataDir + "ExtractImages.pdf"))
 		Console.WriteLine("--------------------------------");
 		ImagePlacementAbsorber abs = new ImagePlacementAbsorber();
 		page.Accept(abs);
-		// Get the count of images over specific page
+		// الحصول على عدد الصور على صفحة معينة
 		Console.WriteLine("Total Images = {0} over page number {1}", abs.ImagePlacements.Count, page.Number);
 		// Document.Pages[29].Accept(abs);
 		int image_counter = 1;
@@ -117,44 +117,44 @@ using (Document document = new Document(dataDir + "ExtractImages.pdf"))
 }
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You have successfully identified images in a PDF using Aspose.PDF for .NET. The images were counted and their color type (grayscale or RGB) was identified. You can now use this information for your specific needs.
+تهنئة ! لقد نجحت في تحديد الصور في ملف PDF باستخدام Aspose.PDF لـ .NET. تم حساب الصور وتحديد نوع اللون (تدرج الرمادي أو RGB). يمكنك الآن استخدام هذه المعلومات لاحتياجاتك المحددة.
 
-### FAQ's for identify images in PDF file
+### الأسئلة الشائعة لتحديد الصور في ملف PDF
 
-#### Q: What is the purpose of identifying images in a PDF document?
+#### س: ما هو الغرض من تحديد الصور في وثيقة PDF؟
 
-A: Identifying images in a PDF document helps users analyze and categorize the images based on their color type (grayscale or RGB). This information can be useful for various purposes, such as image processing, data analysis, or quality control.
+ج: يساعد تحديد الصور في مستند PDF المستخدمين على تحليل الصور وتصنيفها بناءً على نوع اللون (تدرج الرمادي أو RGB). يمكن أن تكون هذه المعلومات مفيدة لأغراض مختلفة، مثل معالجة الصور أو تحليل البيانات أو مراقبة الجودة.
 
-#### Q: How does Aspose.PDF for .NET assist in identifying images within a PDF document?
+#### س: كيف يساعد Aspose.PDF for .NET في تحديد الصور داخل مستند PDF؟
 
-A: Aspose.PDF for .NET provides a straightforward process to open a PDF document, iterate through its pages, and identify images using the `ImagePlacementAbsorber` class.
+ ج: يوفر Aspose.PDF for .NET عملية مباشرة لفتح مستند PDF، والتكرار عبر صفحاته، وتحديد الصور باستخدام`ImagePlacementAbsorber` فصل.
 
-#### Q: What is the significance of differentiating between grayscale and RGB images?
+#### س: ما أهمية التمييز بين الصور ذات التدرج الرمادي وصور RGB؟
 
-A: Differentiating between grayscale and RGB images helps in understanding the color composition of images within the PDF document. Grayscale images contain only shades of gray, while RGB images consist of red, green, and blue color channels.
+ج: يساعد التمييز بين الصور ذات التدرج الرمادي وصور RGB في فهم تركيبة ألوان الصور داخل مستند PDF. تحتوي الصور ذات التدرج الرمادي على ظلال اللون الرمادي فقط، بينما تتكون صور RGB من قنوات الألوان الأحمر والأخضر والأزرق.
 
-#### Q: How are grayscale and RGB images counted and identified using Aspose.PDF for .NET?
+#### س: كيف يتم حساب الصور ذات التدرج الرمادي وRGB وتحديدها باستخدام Aspose.PDF لـ .NET؟
 
-A: The `ImagePlacementAbsorber` class is used to retrieve image placements on each page. The `GetColorType()` method is then applied to each image placement to determine whether it is grayscale or RGB.
+ ج: ال`ImagePlacementAbsorber` يتم استخدام الفئة لاسترداد مواضع الصور في كل صفحة. ال`GetColorType()` يتم بعد ذلك تطبيق الطريقة على كل موضع صورة لتحديد ما إذا كانت ذات تدرج رمادي أو RGB.
 
-#### Q: Can I modify the code to perform additional actions based on image color type?
+#### س: هل يمكنني تعديل الكود لتنفيذ إجراءات إضافية بناءً على نوع لون الصورة؟
 
-A: Yes, you can customize the code to perform specific actions based on the image color type. For example, you can extract grayscale images for further processing or apply different optimization techniques based on color type.
+ج: نعم، يمكنك تخصيص التعليمات البرمجية لتنفيذ إجراءات محددة بناءً على نوع لون الصورة. على سبيل المثال، يمكنك استخراج صور ذات تدرج رمادي لمزيد من المعالجة أو تطبيق تقنيات تحسين مختلفة بناءً على نوع اللون.
 
-#### Q: How does the `ImagePlacementAbsorber` class contribute to identifying images?
+####  س: كيف`ImagePlacementAbsorber` class contribute to identifying images?
 
-A: The `ImagePlacementAbsorber` class scans a page for image placements, allowing you to retrieve information about images, including their color type.
+ ج: ال`ImagePlacementAbsorber` يقوم الفصل بمسح الصفحة بحثًا عن مواضع الصور، مما يسمح لك باسترداد معلومات حول الصور، بما في ذلك نوع ألوانها.
 
-#### Q: Is the identified image count cumulative across all pages of the PDF document?
+#### س: هل عدد الصور المحددة تراكمي عبر جميع صفحات مستند PDF؟
 
-A: Yes, the image count is cumulative across all pages. The code iterates through each page of the PDF document and counts the images on each page.
+ج: نعم، عدد الصور تراكمي عبر جميع الصفحات. يتكرر الكود خلال كل صفحة من مستند PDF ويحسب الصور الموجودة في كل صفحة.
 
-#### Q: Can I use this image identification for automating image-related tasks in PDF documents?
+#### س: هل يمكنني استخدام تعريف الصورة هذا لأتمتة المهام المتعلقة بالصور في مستندات PDF؟
 
-A: Yes, identifying images in PDF documents can be useful for automating tasks such as image extraction, conversion, or manipulation based on color type.
+ج: نعم، يمكن أن يكون تحديد الصور في مستندات PDF مفيدًا لأتمتة المهام مثل استخراج الصور أو تحويلها أو معالجتها بناءً على نوع اللون.
 
-#### Q: How does this image identification process benefit PDF document processing?
+#### س: كيف تفيد عملية تحديد الصورة معالجة مستندات PDF؟
 
-A: Image identification provides valuable insights into the color composition of images, enabling better understanding and processing of PDF documents containing images.
+ج: يوفر تعريف الصورة رؤى قيمة حول تركيبة ألوان الصور، مما يتيح فهم ومعالجة مستندات PDF التي تحتوي على صور بشكل أفضل.

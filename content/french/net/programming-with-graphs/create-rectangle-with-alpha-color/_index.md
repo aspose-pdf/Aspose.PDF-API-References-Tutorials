@@ -1,61 +1,61 @@
 ---
-title: Create Rectangle With Alpha Color
-linktitle: Create Rectangle With Alpha Color
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to create a rectangle with transparent color using Aspose.PDF for .NET. Step-by-step guide to customize transparency.
+title: Créer un rectangle avec la couleur alpha
+linktitle: Créer un rectangle avec la couleur alpha
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Apprenez à créer un rectangle de couleur transparente à l'aide d'Aspose.PDF pour .NET. Guide étape par étape pour personnaliser la transparence.
 type: docs
 weight: 60
 url: /fr/net/programming-with-graphs/create-rectangle-with-alpha-color/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to create a rectangle with alpha color using Aspose.PDF for .NET.
+Dans ce didacticiel, nous vous guiderons pas à pas à travers le code source C# suivant pour créer un rectangle avec une couleur alpha à l'aide d'Aspose.PDF pour .NET.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Assurez-vous d'avoir installé la bibliothèque Aspose.PDF et configuré votre environnement de développement avant de commencer. Posséder également des connaissances de base en programmation C#.
 
-## Step 1: Document Directory Setup
+## Étape 1 : configuration du répertoire de documents
 
-In the provided source code, you need to specify the directory where you want to save the resulting PDF file. Change the "dataDir" variable to the desired directory.
+Dans le code source fourni, vous devez spécifier le répertoire dans lequel vous souhaitez enregistrer le fichier PDF résultant. Remplacez la variable "dataDir" par le répertoire souhaité.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Instantiating a Document Object and Adding a Page
+## Étape 2 : instanciation d'un objet de document et ajout d'une page
 
-We create an instance of the Document class and add a page to this document.
+Nous créons une instance de la classe Document et ajoutons une page à ce document.
 
 ```csharp
 Document doc = new Document();
 Aspose.Pdf.Page page = doc.Pages.Add();
 ```
 
-## Step 3: Creating a Graph Object and a Rectangle
+## Étape 3 : Création d'un objet graphique et d'un rectangle
 
-We create a Graph object with specified dimensions and a rectangle with specific dimensions.
+Nous créons un objet Graph avec des dimensions spécifiées et un rectangle avec des dimensions spécifiques.
 
 ```csharp
 Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 200, 100);
 ```
 
-## Step 4: Setting up the alpha color for the rectangle
+## Étape 4 : Configuration de la couleur alpha du rectangle
 
-We can specify an alpha color for the rectangle using the FromArgb method of the System.Drawing.Color class.
+Nous pouvons spécifier une couleur alpha pour le rectangle en utilisant la méthode FromArgb de la classe System.Drawing.Color.
 
 ```csharp
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
 ```
 
-## Step 5: Adding the Rectangle to the Graph Object
+## Étape 5 : Ajout du rectangle à l'objet graphique
 
-We add the rectangle to the shape collection of the Graph object.
+Nous ajoutons le rectangle à la collection de formes de l'objet Graph.
 
 ```csharp
 canvas.Shapes.Add(rect);
 ```
 
-## Step 6: Creating a second rectangle with a different alpha color
+## Étape 6 : Création d'un deuxième rectangle avec une couleur alpha différente
 
-We create a second rectangle with specific dimensions and another alpha color.
+Nous créons un deuxième rectangle avec des dimensions spécifiques et une autre couleur alpha.
 
 ```csharp
 Aspose.Pdf.Drawing.Rectangle rect1 = new Aspose.Pdf.Drawing.Rectangle(200, 150, 200, 100);
@@ -63,48 +63,48 @@ rect1.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromAr
 canvas.Shapes.Add(rect1);
 ```
 
-## Step 7: Adding the Graph Object to the Page
+## Étape 7 : ajout de l'objet graphique à la page
 
-We add the Graph object to the Page object's Paragraph collection.
+Nous ajoutons l’objet Graph à la collection Paragraph de l’objet Page.
 
 ```csharp
 page.Paragraphs.Add(canvas);
 ```
 
-## Step 8: Saving the Resulting PDF File
+## Étape 8 : Enregistrement du fichier PDF résultant
 
-Finally, we save the resulting PDF file with the name "CreateRectangleWithAlphaColor_out.pdf" in the specified directory.
+Enfin, nous enregistrons le fichier PDF résultant sous le nom "CreateRectangleWithAlphaColor_out.pdf" dans le répertoire spécifié.
 
 ```csharp
 doc.Save(dataDir + "CreateRectangleWithAlphaColor_out.pdf");
 ```
 
-### Sample source code for Create Rectangle With Alpha Color using Aspose.PDF for .NET 
+### Exemple de code source pour créer un rectangle avec une couleur alpha à l'aide d'Aspose.PDF pour .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Instantiate Document instance
+// Instancier une instance de document
 Document doc = new Document();
-// Add page to pages collection of PDF file
+// Ajouter une page à la collection de pages du fichier PDF
 Aspose.Pdf.Page page = doc.Pages.Add();
-// Create Graph instance
+// Créer une instance de graphique
 Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
-// Create rectangle object with specific dimensions
+// Créer un objet rectangle avec des dimensions spécifiques
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 200, 100);
-// Set graph fill color from System.Drawing.Color structure from a 32-bit ARGB value
+//Définir la couleur de remplissage du graphique à partir de la structure System.Drawing.Color à partir d'une valeur ARGB 32 bits
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
-// Add rectangle object to shapes collection of Graph instance
+// Ajouter un objet rectangle à la collection de formes de l'instance Graph
 canvas.Shapes.Add(rect);
-// Create second rectangle object
+// Créer un deuxième objet rectangle
 Aspose.Pdf.Drawing.Rectangle rect1 = new Aspose.Pdf.Drawing.Rectangle(200, 150, 200, 100);
 rect1.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(16118015)));
 canvas.Shapes.Add(rect1);
-// Add graph instance to paragraph collection of page object
+// Ajouter une instance de graphique à la collection de paragraphes de l'objet de page
 page.Paragraphs.Add(canvas);
 dataDir = dataDir + "CreateRectangleWithAlphaColor_out.pdf";
-// Save PDF file
+// Enregistrer le fichier PDF
 doc.Save(dataDir);
 Console.WriteLine("\nRectangle object created successfully with alpha color.\nFile saved at " + dataDir);            
 
@@ -112,34 +112,34 @@ Console.WriteLine("\nRectangle object created successfully with alpha color.\nFi
 
 ## Conclusion
 
-In this tutorial, we explained how to create a rectangle with alpha color using Aspose.PDF for .NET. You can now use this knowledge to create geometric shapes with transparent colors in your PDF files.
+Dans ce didacticiel, nous avons expliqué comment créer un rectangle avec une couleur alpha à l'aide d'Aspose.PDF pour .NET. Vous pouvez désormais utiliser ces connaissances pour créer des formes géométriques aux couleurs transparentes dans vos fichiers PDF.
 
-## FAQ's
+## FAQ
 
-#### Q: What is the purpose of this tutorial?
+#### Q : Quel est le but de ce tutoriel ?
 
-A: This tutorial aims to guide you through the process of creating a rectangle with alpha color using Aspose.PDF for .NET. You'll learn how to add geometric shapes with transparent colors to your PDF files.
+R : Ce didacticiel vise à vous guider tout au long du processus de création d'un rectangle avec une couleur alpha à l'aide d'Aspose.PDF pour .NET. Vous apprendrez à ajouter des formes géométriques avec des couleurs transparentes à vos fichiers PDF.
 
-#### Q: What prerequisites are required before starting?
+#### Q : Quels sont les prérequis requis avant de commencer ?
 
-A: Before you begin, ensure that you have installed the Aspose.PDF library and set up your development environment. Additionally, having a basic understanding of C# programming is recommended.
+R : Avant de commencer, assurez-vous d'avoir installé la bibliothèque Aspose.PDF et configuré votre environnement de développement. De plus, il est recommandé d’avoir une compréhension de base de la programmation C#.
 
-#### Q: How do I specify the directory for saving the PDF file?
+#### Q : Comment puis-je spécifier le répertoire d'enregistrement du fichier PDF ?
 
-A: In the provided source code, you can modify the "dataDir" variable to indicate the directory where you want to save the resulting PDF file.
+R : Dans le code source fourni, vous pouvez modifier la variable « dataDir » pour indiquer le répertoire dans lequel vous souhaitez enregistrer le fichier PDF résultant.
 
-#### Q: What is the purpose of the Graph object and Rectangle?
+#### Q : Quel est le but de l’objet Graph et du Rectangle ?
 
-A: The Graph object acts as a container for drawing elements, while the Rectangle represents the geometric shape that you'll be adding to the PDF.
+R : L'objet Graph agit comme un conteneur pour les éléments de dessin, tandis que le Rectangle représente la forme géométrique que vous allez ajouter au PDF.
 
-#### Q: How can I set up an alpha color for the rectangle?
+#### Q : Comment puis-je définir une couleur alpha pour le rectangle ?
 
-A: You can specify an alpha color for the rectangle using the `FillColor` property of the `GraphInfo` object and the `Color.FromRgb` method with an ARGB value.
+R : Vous pouvez spécifier une couleur alpha pour le rectangle à l'aide du`FillColor` propriété du`GraphInfo` l'objet et le`Color.FromRgb` méthode avec une valeur ARGB.
 
-#### Q: Can I create multiple rectangles with different alpha colors?
+#### Q : Puis-je créer plusieurs rectangles avec différentes couleurs alpha ?
 
-A: Yes, you can create multiple rectangles with different alpha colors by following similar steps as demonstrated in the tutorial.
+R : Oui, vous pouvez créer plusieurs rectangles avec différentes couleurs alpha en suivant les étapes similaires à celles illustrées dans le didacticiel.
 
-#### Q: How do I save the resulting PDF file after creating rectangles with alpha colors?
+#### Q : Comment puis-je enregistrer le fichier PDF obtenu après avoir créé des rectangles avec des couleurs alpha ?
 
-A: After creating the rectangles with alpha colors, you can save the resulting PDF file using the `doc.Save(dataDir + "CreateRectangleWithAlphaColor_out.pdf");` line in the provided source code.
+ R : Après avoir créé les rectangles avec les couleurs alpha, vous pouvez enregistrer le fichier PDF résultant à l'aide du`doc.Save(dataDir + "CreateRectangleWithAlphaColor_out.pdf");` ligne dans le code source fourni.

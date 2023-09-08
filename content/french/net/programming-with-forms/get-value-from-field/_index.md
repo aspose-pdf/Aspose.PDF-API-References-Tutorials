@@ -1,82 +1,82 @@
 ---
-title: Get Value From Field In PDF Document
-linktitle: Get Value From Field In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Easily get the value of a form field in PDF document with Aspose.PDF for .NET.
+title: Obtenir la valeur du champ dans un document PDF
+linktitle: Obtenir la valeur du champ dans un document PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Obtenez facilement la valeur d'un champ de formulaire dans un document PDF avec Aspose.PDF pour .NET.
 type: docs
 weight: 140
 url: /fr/net/programming-with-forms/get-value-from-field/
 ---
-In this tutorial, we will show you how to get the value of a form field using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+Dans ce didacticiel, nous allons vous montrer comment obtenir la valeur d'un champ de formulaire à l'aide d'Aspose.PDF pour .NET. Nous expliquerons le code source C# étape par étape pour vous guider tout au long de ce processus.
 
-## Step 1: Preparation
+## Étape 1 : Préparation
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+Assurez-vous d'avoir importé les bibliothèques nécessaires et défini le chemin d'accès à votre répertoire de documents :
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Open the document
+## Étape 2 : ouvrez le document
 
-Open the PDF document:
+Ouvrez le document PDF :
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetValueFromField.pdf");
 ```
 
-## Step 3: Get Field
+## Étape 3 : Obtenir le champ
 
-Get the desired form field (in this example, we're using the "textbox1" field):
+Obtenez le champ de formulaire souhaité (dans cet exemple, nous utilisons le champ "textbox1") :
 
 ```csharp
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
 ```
 
-## Step 4: Get field value
+## Étape 4 : Obtenir la valeur du champ
 
-Get the field value using the `Value` property:
+ Obtenez la valeur du champ en utilisant le`Value` propriété:
 
 ```csharp
 Console.WriteLine("PartialName: {0}", textBoxField.PartialName);
 Console.WriteLine("Value: {0}", textBoxField.Value);
 ```
 
-### Sample source code for Get Value From Field using Aspose.PDF for .NET 
+### Exemple de code source pour obtenir la valeur d'un champ à l'aide d'Aspose.PDF pour .NET 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Ouvrir le document
 Document pdfDocument = new Document(dataDir + "GetValueFromField.pdf");
-// Get a field
+// Obtenez un champ
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
-// Get field value
+// Obtenir la valeur du champ
 Console.WriteLine("PartialName : {0} ", textBoxField.PartialName);
 Console.WriteLine("Value : {0} ", textBoxField.Value);
 ```
 
 ## Conclusion
 
-In this tutorial, we learned how to get the value of a form field using Aspose.PDF for .NET. By following these steps, you can easily extract the value of a specific form field in your PDF documents using Aspose.PDF.
+Dans ce didacticiel, nous avons appris comment obtenir la valeur d'un champ de formulaire à l'aide d'Aspose.PDF pour .NET. En suivant ces étapes, vous pouvez facilement extraire la valeur d'un champ de formulaire spécifique dans vos documents PDF à l'aide d'Aspose.PDF.
 
-### FAQ's
+### FAQ
 
-#### Q: Can I get the value of a form field without knowing its name beforehand?
+#### : Puis-je obtenir la valeur d’un champ de formulaire sans connaître au préalable son nom ?
 
-A: No, you need to know the name or partial name of the form field to get its value using Aspose.PDF for .NET. The `pdfDocument.Form["fieldname"]` syntax requires the exact name or partial name of the form field to access its properties, including the value.
+ R : Non, vous devez connaître le nom ou le nom partiel du champ du formulaire pour obtenir sa valeur à l'aide d'Aspose.PDF pour .NET. Le`pdfDocument.Form["fieldname"]` La syntaxe nécessite le nom exact ou le nom partiel du champ du formulaire pour accéder à ses propriétés, y compris la valeur.
 
-#### Q: What if the form field does not exist in the PDF document?
+#### Q : Que se passe-t-il si le champ du formulaire n'existe pas dans le document PDF ?
 
-A: If the form field does not exist in the PDF document, the `pdfDocument.Form["fieldname"]` syntax will return `null`. It's essential to handle such cases by checking for `null` before accessing the properties of the form field to avoid exceptions.
+ R : Si le champ du formulaire n'existe pas dans le document PDF, le`pdfDocument.Form["fieldname"]` la syntaxe reviendra`null` . Il est essentiel de traiter de tels cas en vérifiant`null` avant d'accéder aux propriétés du champ du formulaire pour éviter les exceptions.
 
-#### Q: How can I handle different types of form fields (e.g., checkboxes, radio buttons) to get their values?
+#### Q : Comment puis-je gérer différents types de champs de formulaire (par exemple, cases à cocher, boutons radio) pour obtenir leurs valeurs ?
 
-A: To handle different types of form fields, you can use the appropriate field classes available in Aspose.PDF for .NET. For example, use `CheckBoxField` to work with checkboxes and `RadioButtonField` to work with radio buttons. Once you have the correct field object, you can access its properties, including the value.
+ R : Pour gérer différents types de champs de formulaire, vous pouvez utiliser les classes de champs appropriées disponibles dans Aspose.PDF pour .NET. Par exemple, utilisez`CheckBoxField` travailler avec des cases à cocher et`RadioButtonField`pour travailler avec les boutons radio. Une fois que vous disposez du bon objet de champ, vous pouvez accéder à ses propriétés, y compris la valeur.
 
-#### Q: Can I get the values of multiple form fields at once?
+#### Q : Puis-je obtenir les valeurs de plusieurs champs de formulaire à la fois ?
 
-A: Yes, you can get the values of multiple form fields at once by iterating through the form fields collection using a loop or LINQ queries. This way, you can access the value of each form field in the PDF document programmatically.
+R : Oui, vous pouvez obtenir les valeurs de plusieurs champs de formulaire à la fois en parcourant la collection de champs de formulaire à l'aide d'une boucle ou de requêtes LINQ. De cette façon, vous pouvez accéder par programmation à la valeur de chaque champ de formulaire dans le document PDF.
 
-#### Q: Is it possible to modify the value of a form field and save the changes back to the PDF document?
+#### Q : Est-il possible de modifier la valeur d'un champ de formulaire et d'enregistrer les modifications dans le document PDF ?
 
-A: Yes, you can modify the value of a form field using Aspose.PDF for .NET and save the changes back to the PDF document. After updating the `Value` property of the form field, you can use the `pdfDocument.Save()` method to save the changes to the original PDF document.
+ R : Oui, vous pouvez modifier la valeur d'un champ de formulaire à l'aide d'Aspose.PDF pour .NET et enregistrer les modifications dans le document PDF. Après avoir mis à jour le`Value` propriété du champ du formulaire, vous pouvez utiliser la`pdfDocument.Save()` méthode pour enregistrer les modifications apportées au document PDF original.

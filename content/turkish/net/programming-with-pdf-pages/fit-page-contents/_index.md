@@ -1,36 +1,36 @@
 ---
-title: Fit Page Contents In PDF File
-linktitle: Fit Page Contents In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Detailed step-by-step guide to adjusting page contents in PDF file using Aspose.PDF for .NET. Easy implementation and rewarding conclusion.
+title: Sayfa İçeriklerini PDF Dosyasına Sığdır
+linktitle: Sayfa İçeriklerini PDF Dosyasına Sığdır
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF dosyasındaki sayfa içeriklerini ayarlamak için ayrıntılı adım adım kılavuz. Kolay uygulama ve ödüllendirici sonuç.
 type: docs
 weight: 50
 url: /tr/net/programming-with-pdf-pages/fit-page-contents/
 ---
-In this tutorial, we'll walk you through the step-by-step process to adjust page contents in PDF file using Aspose.PDF for .NET. We'll explain the bundled C# source code and provide you with a comprehensive guide to help you understand and implement this feature in your own projects. At the end of this tutorial, you will know how to adjust the content of PDF pages using Aspose.PDF for .NET.
+Bu eğitimde, Aspose.PDF for .NET'i kullanarak PDF dosyasındaki sayfa içeriğini ayarlamak için size adım adım yol göstereceğiz. Birlikte verilen C# kaynak kodunu açıklayacağız ve bu özelliği anlamanıza ve kendi projelerinizde uygulamanıza yardımcı olacak kapsamlı bir kılavuz sunacağız. Bu eğitimin sonunda Aspose.PDF for .NET kullanarak PDF sayfalarının içeriğini nasıl ayarlayacağınızı öğreneceksiniz.
 
-## Prerequisites
-Before you begin, make sure you have the following:
+## Önkoşullar
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- A basic knowledge of the C# programming language
-- Aspose.PDF for .NET installed in your development environment
+- C# programlama dili hakkında temel bilgi
+- Aspose.PDF for .NET, geliştirme ortamınızda yüklü
 
-## Step 1: Define the document directory
-First, you need to set the path to your documents directory. This is the location where your input PDF file is located. Replace "YOUR DOCUMENTS DIRECTORY" with the appropriate path.
+## 1. Adım: Belge dizinini tanımlayın
+Öncelikle belgeler dizininizin yolunu ayarlamanız gerekir. Bu, giriş PDF dosyanızın bulunduğu konumdur. "BELGELERİNİZ DİZİNİ"ni uygun yolla değiştirin.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Load the PDF document
-Then you can load the PDF document using the `Document` class of Aspose.PDF. Be sure to specify the correct path to the input PDF file.
+## 2. Adım: PDF belgesini yükleyin
+ Daha sonra PDF belgesini kullanarak yükleyebilirsiniz.`Document` Aspose.PDF sınıfı. Giriş PDF dosyasının doğru yolunu belirttiğinizden emin olun.
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 3: Adjust page content
-Now you can cycle through all the pages of the document and adjust the content of each page according to the size of the media box. In the example provided, we adjust the width of the page to render it in landscape mode (landscape) keeping the same height. The new width is calculated based on the aspect ratio of the media box.
+## 3. Adım: Sayfa içeriğini ayarlayın
+Artık belgenin tüm sayfaları arasında geçiş yapabilir ve her sayfanın içeriğini ortam kutusunun boyutuna göre ayarlayabilirsiniz. Verilen örnekte, sayfanın genişliğini aynı yüksekliği koruyarak yatay modda (manzara) oluşturacak şekilde ayarlıyoruz. Yeni genişlik, medya kutusunun en boy oranına göre hesaplanır.
 
 ```csharp
 foreach(Page page in doc.Pages)
@@ -41,46 +41,46 @@ foreach(Page page in doc.Pages)
 }
 ```
 
-### Sample source code for Fit Page Contents using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanan Fit Page Contents için örnek kaynak kodu 
 
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "input.pdf");
 foreach (Page page in doc.Pages)
 {
 	Rectangle r = page.MediaBox;
-	// New height the same
+	// Yeni yükseklik aynı
 	double newHeight = r.Height;
-	// New width is expanded proportionally to make orientation landscape
-	// (we assume that previous orientation is portrait)
+	// Yönlendirmeyi yatay hale getirmek için yeni genişlik orantılı olarak genişletilir
+	// (önceki yönlendirmenin dikey olduğunu varsayıyoruz)
 	double newWidth = r.Height * r.Height / r.Width;
 }          
 
 ```
 
-## Conclusion
-In this tutorial, we learned how to adjust PDF page content using Aspose.PDF for .NET. By following the steps outlined above, you can easily implement this functionality in your own projects. Feel free to explore the Aspose.PDF documentation further to discover other useful features for working with PDF files.
+## Çözüm
+Bu eğitimde Aspose.PDF for .NET kullanarak PDF sayfa içeriğini nasıl ayarlayacağımızı öğrendik. Yukarıda özetlenen adımları takip ederek bu işlevselliği kendi projelerinizde kolaylıkla uygulayabilirsiniz. PDF dosyalarıyla çalışmaya yönelik diğer kullanışlı özellikleri keşfetmek için Aspose.PDF belgelerini daha ayrıntılı olarak incelemekten çekinmeyin.
 
-### FAQ's for fit page contents in PDF file
+### PDF dosyasındaki sayfa içeriklerine uygun SSS'ler
 
-#### Q: What does the "media box" represent in the context of PDF pages?
+#### S: PDF sayfaları bağlamında "medya kutusu" neyi temsil eder?
 
-A: In the context of PDF pages, the "media box" represents the bounding box that defines the physical dimensions of the page content. It defines the width, height, and location of the page content within the PDF document.
+C: PDF sayfaları bağlamında "medya kutusu", sayfa içeriğinin fiziksel boyutlarını tanımlayan sınırlayıcı kutuyu temsil eder. PDF belgesindeki sayfa içeriğinin genişliğini, yüksekliğini ve konumunu tanımlar.
 
-#### Q: How does the provided C# source code adjust the page content?
+#### S: Sağlanan C# kaynak kodu sayfa içeriğini nasıl ayarlar?
 
-A: The provided C# source code adjusts the page content by resizing each page's width to make it appear in landscape mode while keeping the same height. The new width is calculated based on the aspect ratio of the media box, ensuring that the content retains its original proportions.
+C: Sağlanan C# kaynak kodu, aynı yüksekliği korurken yatay modda görünmesini sağlamak için her sayfanın genişliğini yeniden boyutlandırarak sayfa içeriğini ayarlar. Yeni genişlik, medya kutusunun en boy oranına göre hesaplanır ve içeriğin orijinal oranlarını koruması sağlanır.
 
-#### Q: Can I adjust the page content to fit a specific size or aspect ratio?
+#### S: Sayfa içeriğini belirli bir boyuta veya en boy oranına uyacak şekilde ayarlayabilir miyim?
 
-A: Yes, you can adjust the page content to fit a specific size or aspect ratio by modifying the calculation in the provided C# source code. For example, if you want to fit the page content into a fixed size (e.g., 8.5 x 11 inches), you can calculate the new width and height accordingly.
+C: Evet, sağlanan C# kaynak kodundaki hesaplamayı değiştirerek sayfa içeriğini belirli bir boyuta veya en boy oranına uyacak şekilde ayarlayabilirsiniz. Örneğin sayfa içeriğini sabit bir boyuta sığdırmak istiyorsanız (örn. 8,5 x 11 inç), yeni genişlik ve yüksekliği buna göre hesaplayabilirsiniz.
 
-#### Q: What will happen to the content on the page after adjusting the page size?
+#### S: Sayfa boyutunu ayarladıktan sonra sayfadaki içeriğe ne olacak?
 
-A: After adjusting the page size using the provided C# source code, the content on the page will be resized proportionally. If the original content's aspect ratio differs significantly from the new aspect ratio, the content may appear stretched or compressed.
+C: Sağlanan C# kaynak kodunu kullanarak sayfa boyutunu ayarladıktan sonra sayfadaki içerik orantılı olarak yeniden boyutlandırılacaktır. Orijinal içeriğin en boy oranı yeni en boy oranından önemli ölçüde farklıysa içerik uzatılmış veya sıkıştırılmış görünebilir.
 
-#### Q: Can I adjust the content of specific pages instead of all pages in the PDF document?
+#### S: PDF belgesindeki tüm sayfalar yerine belirli sayfaların içeriğini ayarlayabilir miyim?
 
-A: Yes, you can adjust the content of specific pages instead of all pages in the PDF document. In the provided C# source code, the "foreach" loop iterates through all pages in the document. To adjust the content of specific pages, you can use conditional statements within the loop to target only the desired pages.
+C: Evet, PDF belgesindeki tüm sayfalar yerine belirli sayfaların içeriğini ayarlayabilirsiniz. Sağlanan C# kaynak kodunda "foreach" döngüsü belgedeki tüm sayfalar boyunca yinelenir. Belirli sayfaların içeriğini ayarlamak için yalnızca istediğiniz sayfaları hedeflemek amacıyla döngü içindeki koşullu ifadeleri kullanabilirsiniz.

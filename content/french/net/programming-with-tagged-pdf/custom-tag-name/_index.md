@@ -1,66 +1,66 @@
 ---
-title: Custom Tag Name
-linktitle: Custom Tag Name
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to using a custom tag name with Aspose.PDF for .NET. Improve the structure of your PDFs with custom tags.
+title: Nom de la balise personnalisée
+linktitle: Nom de la balise personnalisée
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Guide étape par étape pour utiliser un nom de balise personnalisé avec Aspose.PDF pour .NET. Améliorez la structure de vos PDF avec des balises personnalisées.
 type: docs
 weight: 90
 url: /fr/net/programming-with-tagged-pdf/custom-tag-name/
 ---
-In this step-by-step guide, we'll walk you through how to use a custom tag name with Aspose.PDF for .NET. Aspose.PDF is a powerful library that lets you manipulate PDF documents programmatically. Using custom tags allows you to add specific structural information to your PDF document, making it easier to use and easier to access.
+Dans ce guide étape par étape, nous vous expliquerons comment utiliser un nom de balise personnalisé avec Aspose.PDF pour .NET. Aspose.PDF est une bibliothèque puissante qui vous permet de manipuler des documents PDF par programme. L'utilisation de balises personnalisées vous permet d'ajouter des informations structurelles spécifiques à votre document PDF, le rendant ainsi plus facile à utiliser et plus facile d'accès.
 
-Let's dive into the code and learn how to use a custom tag name with Aspose.PDF for .NET.
+Plongeons dans le code et apprenons à utiliser un nom de balise personnalisé avec Aspose.PDF pour .NET.
 
-## Prerequisites
+## Conditions préalables
 
-Before you begin, make sure you have the following:
+Avant de commencer, assurez-vous d'avoir les éléments suivants :
 
-1. Aspose.PDF library for .NET installed.
-2. A basic knowledge of the C# programming language.
+1. Bibliothèque Aspose.PDF pour .NET installée.
+2. Une connaissance de base du langage de programmation C#.
 
-## Step 1: Setting up the environment
+## Étape 1 : Configuration de l'environnement
 
-To get started, open your C# development environment and create a new project. Make sure you have added a reference to the Aspose.PDF library for .NET in your project.
+Pour commencer, ouvrez votre environnement de développement C# et créez un nouveau projet. Assurez-vous d'avoir ajouté une référence à la bibliothèque Aspose.PDF pour .NET dans votre projet.
 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Creating the document
+## Étape 2 : Création du document
 
-The first step is to create a new PDF document using the `Document` class.
+ La première étape consiste à créer un nouveau document PDF à l'aide du`Document` classe.
 
 ```csharp
-// Create the PDF document
+// Créer le document PDF
 Document document = new Document();
 ```
 
-## Step 3: Work with tagged content
+## Étape 3 : Travailler avec du contenu balisé
 
-Then we get the tagged content of the document to work with.
+Ensuite, nous obtenons le contenu balisé du document avec lequel travailler.
 
 ```csharp
-// Get the tagged content of the document
+// Récupérer le contenu balisé du document
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-## Step 4: Set document title and language
+## Étape 4 : Définir le titre et la langue du document
 
-We can now set the document title and language.
+Nous pouvons maintenant définir le titre et la langue du document.
 
 ```csharp
-// Define the document title and language
+// Définir le titre et la langue du document
 taggedContent.SetTitle("Tagged PDF document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-## Step 5: Create Logical Structure Elements
+## Étape 5 : Créer des éléments de structure logique
 
-Now let's create some logical structure elements to organize our content.
+Créons maintenant quelques éléments de structure logique pour organiser notre contenu.
 
 ```csharp
-// Create logical structure elements
+// Créer des éléments de structure logique
 SectElement sect = taggedContent.CreateSectElement();
 taggedContent.RootElement.AppendChild(sect);
 ParagraphElement p1 = taggedContent.CreateParagraphElement();
@@ -97,34 +97,34 @@ p3.AppendChild(span3);
 p4.AppendChild(span4);
 ```
 
-Here we create paragraph elements and span elements for our content, and assign custom tags to them.
+Ici, nous créons des éléments de paragraphe et des éléments étendus pour notre contenu, et leur attribuons des balises personnalisées.
 
-## Step 6: Save the tagged PDF document
+## Étape 6 : Enregistrez le document PDF balisé
 
-Finally, we save the tagged PDF document.
+Enfin, nous enregistrons le document PDF balisé.
 
 ```csharp
-// Save the tagged PDF document
+// Enregistrez le document PDF balisé
 document.Save(dataDir + "CustomTag.pdf");
 ```
 
-### Sample source code for Custom Tag Name using Aspose.PDF for .NET 
+### Exemple de code source pour le nom de balise personnalisé à l'aide d'Aspose.PDF pour .NET 
 ```csharp
 
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create Pdf Document
+// Créer un document PDF
 Document document = new Document();
 
-// Get Content for work with TaggedPdf
+// Obtenez du contenu pour travailler avec TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Set Title and Language for Documnet
+// Définir le titre et la langue du document
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 
-// Create Logical Structure Elements
+// Créer des éléments de structure logique
 SectElement sect = taggedContent.CreateSectElement();
 taggedContent.RootElement.AppendChild(sect);
 ParagraphElement p1 = taggedContent.CreateParagraphElement();
@@ -160,53 +160,53 @@ p2.AppendChild(span2);
 p3.AppendChild(span3);
 p4.AppendChild(span4);
 
-// Save Tagged Pdf Document
+// Enregistrer le document PDF balisé
 document.Save(dataDir + "CustomTag.pdf");
 
 ```
 
 ## Conclusion
 
-Congratulation ! You have learned how to use a custom tag name with Aspose.PDF for .NET. You can now add specific structural information to your PDF document using custom tags. Explore more features of Aspose.PDF to discover its full potential.
+Félicitation ! Vous avez appris à utiliser un nom de balise personnalisé avec Aspose.PDF pour .NET. Vous pouvez désormais ajouter des informations structurelles spécifiques à votre document PDF à l'aide de balises personnalisées. Explorez plus de fonctionnalités d’Aspose.PDF pour découvrir tout son potentiel.
 
-### FAQ's
+### FAQ
 
-#### Q: What is a custom tag name in the context of PDF documents, and why would I use it with Aspose.PDF for .NET?
+#### Q : Qu'est-ce qu'un nom de balise personnalisé dans le contexte des documents PDF et pourquoi devrais-je l'utiliser avec Aspose.PDF pour .NET ?
 
-A: A custom tag name in a PDF document is a user-defined label that provides specific structural information to the document's content. Using custom tag names with Aspose.PDF for .NET allows you to enhance the accessibility and organization of the PDF document, making it easier to navigate, understand, and interact with.
+R : Un nom de balise personnalisé dans un document PDF est une étiquette définie par l'utilisateur qui fournit des informations structurelles spécifiques sur le contenu du document. L'utilisation de noms de balises personnalisés avec Aspose.PDF pour .NET vous permet d'améliorer l'accessibilité et l'organisation du document PDF, en le rendant plus facile à naviguer, à comprendre et à interagir avec.
 
-#### Q: How does Aspose.PDF for .NET facilitate the use of custom tag names in PDF documents?
+#### Q : Comment Aspose.PDF pour .NET facilite-t-il l'utilisation de noms de balises personnalisés dans les documents PDF ?
 
-A: Aspose.PDF for .NET provides a set of classes and methods that enable you to create, manipulate, and assign custom tag names to different structural elements within a PDF document. This helps you add semantic meaning and context to the document's content.
+R : Aspose.PDF pour .NET fournit un ensemble de classes et de méthodes qui vous permettent de créer, manipuler et attribuer des noms de balises personnalisés à différents éléments structurels dans un document PDF. Cela vous aide à ajouter une signification sémantique et un contexte au contenu du document.
 
-#### Q: What role does the `taggedContent` object play in using custom tag names?
+####  Q : Quel rôle joue le`taggedContent` object play in using custom tag names?
 
-A: The `taggedContent` object, obtained from the document's `TaggedContent` property, allows you to work with structured elements in the PDF document. You can create, organize, and assign custom tag names to these elements, enhancing the document's semantic structure.
+ R : Le`taggedContent` objet, obtenu à partir du document`TaggedContent` propriété, vous permet de travailler avec des éléments structurés dans le document PDF. Vous pouvez créer, organiser et attribuer des noms de balises personnalisés à ces éléments, améliorant ainsi la structure sémantique du document.
 
-#### Q: How do custom tag names improve document accessibility and usability?
+#### Q : Comment les noms de balises personnalisés améliorent-ils l'accessibilité et la convivialité des documents ?
 
-A: Custom tag names provide additional context and semantics to the document's content, which improves its accessibility for assistive technologies and enhances the overall user experience. Screen readers and other assistive devices can use custom tag names to convey meaningful information to users.
+R : Les noms de balises personnalisées fournissent un contexte et une sémantique supplémentaires au contenu du document, ce qui améliore son accessibilité pour les technologies d'assistance et améliore l'expérience utilisateur globale. Les lecteurs d'écran et autres appareils d'assistance peuvent utiliser des noms de balises personnalisés pour transmettre des informations significatives aux utilisateurs.
 
-#### Q: Can I use custom tag names for various types of structural elements in a PDF document?
+#### Q : Puis-je utiliser des noms de balises personnalisés pour différents types d'éléments structurels dans un document PDF ?
 
-A: Yes, you can assign custom tag names to a wide range of structural elements, including paragraphs, spans, sections, and more. This allows you to categorize and label different parts of the document's content, creating a more organized and understandable layout.
+R : Oui, vous pouvez attribuer des noms de balises personnalisés à un large éventail d’éléments structurels, notamment des paragraphes, des travées, des sections, etc. Cela vous permet de catégoriser et d'étiqueter différentes parties du contenu du document, créant ainsi une mise en page plus organisée et plus compréhensible.
 
-#### Q: How do I define and assign custom tag names to elements in a PDF document using Aspose.PDF for .NET?
+#### Q : Comment définir et attribuer des noms de balises personnalisés aux éléments d'un document PDF à l'aide d'Aspose.PDF pour .NET ?
 
-A: You can define and assign custom tag names by creating logical structure elements, such as paragraphs and spans, and then using the `SetTag` method to assign the desired custom tag name to these elements. The provided code example demonstrates this process.
+ R : Vous pouvez définir et attribuer des noms de balises personnalisés en créant des éléments de structure logique, tels que des paragraphes et des étendues, puis en utilisant l'option`SetTag` méthode pour attribuer le nom de balise personnalisée souhaitée à ces éléments. L'exemple de code fourni illustre ce processus.
 
-#### Q: How do I ensure that the custom tag names I use are compatible with accessibility standards and best practices?
+#### Q : Comment puis-je m'assurer que les noms de balises personnalisées que j'utilise sont compatibles avec les normes d'accessibilité et les meilleures pratiques ?
 
-A: When choosing custom tag names, it's recommended to follow accessibility guidelines and use descriptive and meaningful labels that accurately represent the content. Consulting relevant accessibility standards and documentation can help you select appropriate custom tag names.
+R : Lorsque vous choisissez des noms de balises personnalisés, il est recommandé de suivre les directives d'accessibilité et d'utiliser des étiquettes descriptives et significatives qui représentent avec précision le contenu. La consultation des normes et de la documentation d'accessibilité pertinentes peut vous aider à sélectionner des noms de balises personnalisées appropriés.
 
-#### Q: Can I combine the use of custom tag names with other PDF manipulation features offered by Aspose.PDF for .NET?
+#### Q : Puis-je combiner l'utilisation de noms de balises personnalisés avec d'autres fonctionnalités de manipulation de PDF proposées par Aspose.PDF pour .NET ?
 
-A: Absolutely! You can combine the use of custom tag names with other features of Aspose.PDF for .NET, such as creating tables, adding images, inserting hyperlinks, and more. This allows you to create rich and accessible PDF documents with structured content.
+R : Absolument ! Vous pouvez combiner l'utilisation de noms de balises personnalisés avec d'autres fonctionnalités d'Aspose.PDF pour .NET, telles que la création de tableaux, l'ajout d'images, l'insertion de liens hypertexte, etc. Cela vous permet de créer des documents PDF riches et accessibles avec un contenu structuré.
 
-#### Q: How can I validate the effectiveness of using custom tag names for accessibility and usability in my PDF documents?
+#### Q : Comment puis-je valider l'efficacité de l'utilisation de noms de balises personnalisés pour l'accessibilité et la convivialité dans mes documents PDF ?
 
-A: You can validate the effectiveness of custom tag names by using assistive technologies like screen readers to navigate and interact with the PDF document. Additionally, you can test the document's compliance with accessibility standards and guidelines using tools and validators.
+R : Vous pouvez valider l'efficacité des noms de balises personnalisés en utilisant des technologies d'assistance telles que des lecteurs d'écran pour naviguer et interagir avec le document PDF. De plus, vous pouvez tester la conformité du document aux normes et directives d'accessibilité à l'aide d'outils et de validateurs.
 
-#### Q: How can I extend this knowledge to create more complex document structures and utilize custom tag names for advanced scenarios?
+#### Q : Comment puis-je étendre ces connaissances pour créer des structures de documents plus complexes et utiliser des noms de balises personnalisés pour des scénarios avancés ?
 
-A: You can extend this knowledge by exploring additional features of Aspose.PDF for .NET, such as creating nested structure elements, using custom tags for form fields, incorporating multimedia elements, and more. The library's documentation and examples provide guidance for these advanced scenarios.
+R : Vous pouvez étendre ces connaissances en explorant les fonctionnalités supplémentaires d'Aspose.PDF pour .NET, telles que la création d'éléments de structure imbriqués, l'utilisation de balises personnalisées pour les champs de formulaire, l'incorporation d'éléments multimédias, etc. La documentation et les exemples de la bibliothèque fournissent des conseils pour ces scénarios avancés.

@@ -1,178 +1,178 @@
 ---
-title: Image and Page Number in Header Footer Section
-linktitle: Image and Page Number in Header Footer Section
-second_title: Aspose.PDF for .NET API Reference
-description: Find out how to add an image and a page number in the header and footer of a PDF document with Aspose.
+title: الصورة ورقم الصفحة في قسم تذييل الرأس
+linktitle: الصورة ورقم الصفحة في قسم تذييل الرأس
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إضافة صورة ورقم صفحة في رأس وتذييل مستند PDF باستخدام Aspose.
 type: docs
 weight: 110
 url: /ar/net/programming-with-stamps-and-watermarks/image-and-page-number-in-header-footer-section/
 ---
-In this tutorial, we will guide you step by step on how to add an image and page number in the header and footer section of a PDF document using Aspose.PDF for .NET. We will show you how to use provided C# source code to create a page, set header and footer, add image to header and text with page number to document footer PDF.
+في هذا البرنامج التعليمي، سنرشدك خطوة بخطوة حول كيفية إضافة صورة ورقم صفحة في قسم الرأس والتذييل لمستند PDF باستخدام Aspose.PDF لـ .NET. سنوضح لك كيفية استخدام كود مصدر C# لإنشاء صفحة، وتعيين الرأس والتذييل، وإضافة صورة إلى الرأس والنص مع رقم الصفحة لتذييل مستند PDF.
 
-## Step 1: Setting up the environment
+## الخطوة 1: تهيئة البيئة
 
-Before you begin, make sure you have the following:
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- بيئة تطوير .NET مثبتة.
+- تم تنزيل مكتبة Aspose.PDF الخاصة بـ .NET والإشارة إليها في مشروعك.
 
-## Step 2: Creating the PDF Document and Page
+## الخطوة 2: إنشاء مستند وصفحة PDF
 
-The first step is to create a new Document object and a page in the PDF document. Here's how:
+الخطوة الأولى هي إنشاء كائن مستند جديد وصفحة في مستند PDF. إليك الطريقة:
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Create a new Document object
+// قم بإنشاء كائن مستند جديد
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
-// Create a page in the document
+// إنشاء صفحة في المستند
 Aspose.Pdf.Page page = doc.Pages.Add();
 ```
 
-The code above creates a new Document object and an empty page in the PDF document.
+يقوم الكود أعلاه بإنشاء كائن مستند جديد وصفحة فارغة في مستند PDF.
 
-## Step 3: Adding the header with an image
+## الخطوة 3: إضافة الرأس مع الصورة
 
-Now that the page is created, we can add a header section with an image. Here's how:
+الآن بعد أن تم إنشاء الصفحة، يمكننا إضافة قسم رأس مع صورة. إليك الطريقة:
 
 ```csharp
-// Create a header section
+// إنشاء قسم الرأس
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-// Set the page header
+// قم بتعيين رأس الصفحة
 page. Header = header;
 
-// Create an Image object
+// إنشاء كائن صورة
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 
-// Set image path
+// ضبط مسار الصورة
 image1.File = dataDir + "aspose-logo.jpg";
 
-// Add the image to the page header of the PDF document
+// أضف الصورة إلى رأس صفحة مستند PDF
 header.Paragraphs.Add(image1);
 ```
 
-The code above creates a header section, sets the page header with this section, and adds an image to the header.
+يقوم الكود أعلاه بإنشاء قسم رأس، وتعيين رأس الصفحة مع هذا القسم، وإضافة صورة إلى الرأس.
 
-## Step 4: Adding the footer with the page number
+## الخطوة 4: إضافة تذييل مع رقم الصفحة
 
-Now that the header is added, we can add a footer section with a page number. Here's how:
+الآن وبعد إضافة الرأس، يمكننا إضافة قسم تذييل برقم الصفحة. إليك الطريقة:
 
 ```csharp
-// Create a footer section
+// إنشاء قسم تذييل
 Aspose.Pdf.HeaderFooter footer = new Aspose.Pdf.HeaderFooter();
 
-// Define the footer of the PDF document
+// حدد تذييل مستند PDF
 page. Footer = footer;
 
-// Create a TextFragment object
+// قم بإنشاء كائن TextFragment
 Aspose.Pdf.Text.TextFragment txt = new Aspose.Pdf.Text.TextFragment("Page: ($p of $P)");
 
-// Add the text with the page number to the footer of the PDF document
+// أضف النص الذي يحتوي على رقم الصفحة إلى تذييل مستند PDF
 footer.Paragraphs.Add(txt);
 ```
 
-The above code creates a footer section, sets the footer of the page with this section and adds a TextFragment containing the text "Page: ($p of $P )"
+يقوم التعليمة البرمجية أعلاه بإنشاء قسم تذييل، وتعيين تذييل الصفحة مع هذا القسم وإضافة TextFragment الذي يحتوي على النص "الصفحة: ($p of $P )"
 
-  which displays the page number.
+  الذي يعرض رقم الصفحة.
 
-## Step 5: Saving the modified PDF document
+## الخطوة 5: حفظ مستند PDF المعدل
 
-Once the header and footer are added, we can save the modified PDF document. Here's how:
+بمجرد إضافة الرأس والتذييل، يمكننا حفظ مستند PDF المعدل. إليك الطريقة:
 
 ```csharp
-// Save the modified PDF document
+// احفظ مستند PDF المعدل
 doc.Save(dataDir + "ImageAndPageNumberInHeaderFooter_out.pdf");
 ```
 
-The above code saves the edited PDF document to the specified directory.
+يحفظ الكود أعلاه مستند PDF المحرر في الدليل المحدد.
 
-### Sample source code for Imageand Page Numberin Header Footersection using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لقسم تذييلات رأس الصورة ورقم الصفحة باستخدام Aspose.PDF لـ .NET 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
-// Create a page in the document object
+// قم بإنشاء صفحة في كائن المستند
 Aspose.Pdf.Page page = doc.Pages.Add();
 
-// Create Header Section of the document
+// إنشاء قسم رأس الوثيقة
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-// Set the header for the PDF file
+// قم بتعيين الرأس لملف PDF
 page.Header = header;
 
-// Create an image object in the page
+// قم بإنشاء كائن صورة في الصفحة
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 
-// Set the path of image file
+// ضبط مسار ملف الصورة
 image1.File = dataDir + "aspose-logo.jpg";
 
-// Add image to Header page of the Pdf file
+// إضافة صورة إلى الصفحة الرئيسية لملف Pdf
 header.Paragraphs.Add(image1);
 
-// Create a Footer Section of the document
+//قم بإنشاء قسم تذييل للمستند
 Aspose.Pdf.HeaderFooter footer = new Aspose.Pdf.HeaderFooter();
 
-// Set the footer of the PDF file
+// قم بتعيين تذييل ملف PDF
 page.Footer = footer;
 
-// Create a Text object
+// قم بإنشاء كائن نصي
 Aspose.Pdf.Text.TextFragment txt = new Aspose.Pdf.Text.TextFragment("Page: ($p of $P ) ");
 
-// Add text to Header section of the Pdf file
+// أضف نصًا إلى قسم الرأس في ملف Pdf
 footer.Paragraphs.Add(txt);
 
-// Save the Pdf file
+// احفظ ملف PDF
 doc.Save(dataDir + "ImageAndPageNumberInHeaderFooter_out.pdf");
 
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You have learned how to add an image and page number in the header and footer section of a PDF document using Aspose.PDF for .NET. Now you can use this method to customize header and footer in your PDF documents.
+تهنئة ! لقد تعلمت كيفية إضافة صورة ورقم صفحة في قسم الرأس والتذييل لمستند PDF باستخدام Aspose.PDF لـ .NET. يمكنك الآن استخدام هذه الطريقة لتخصيص الرأس والتذييل في مستندات PDF الخاصة بك.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of adding an image and page number in the header and footer section of a PDF document?
+#### س: ما هو الغرض من إضافة صورة ورقم الصفحة في قسم الرأس والتذييل لمستند PDF؟
 
-A: Adding an image and page number in the header and footer section of a PDF document can enhance its visual appeal, branding, and navigational elements. An image can represent a logo, watermark, or any graphical element, while a page number helps users track their progress and locate specific pages.
+ج: يمكن أن تؤدي إضافة صورة ورقم صفحة في قسم الرأس والتذييل لمستند PDF إلى تحسين جاذبيته المرئية وعلامته التجارية وعناصر التنقل. يمكن أن تمثل الصورة شعارًا أو علامة مائية أو أي عنصر رسومي، بينما يساعد رقم الصفحة المستخدمين على تتبع تقدمهم وتحديد صفحات معينة.
 
-#### Q: How does the provided C# source code help in adding an image and page number to the header and footer of a PDF document?
+#### س: كيف يساعد كود مصدر C# المقدم في إضافة صورة ورقم صفحة إلى رأس وتذييل مستند PDF؟
 
-A: The provided code demonstrates how to create a PDF document, add a page, and then customize the header and footer sections. It shows how to add an image to the header and a text fragment with page numbering to the footer.
+ج: يوضح الكود المقدم كيفية إنشاء مستند PDF، وإضافة صفحة، ثم تخصيص أقسام الرأس والتذييل. يوضح كيفية إضافة صورة إلى الرأس وجزء نصي مع ترقيم الصفحات في التذييل.
 
-#### Q: Can I use any image format for the header, and how do I specify its path?
+#### س: هل يمكنني استخدام أي تنسيق صورة للرأس، وكيف أحدد مساره؟
 
-A: Yes, you can use various image formats (such as JPEG, PNG, GIF, etc.) for the header image. The image's path is specified using the `File` property of the `Aspose.Pdf.Image` object.
+ ج: نعم، يمكنك استخدام تنسيقات صور مختلفة (مثل JPEG وPNG وGIF وما إلى ذلك) لصورة الرأس. يتم تحديد مسار الصورة باستخدام`File` ملكية`Aspose.Pdf.Image` هدف.
 
-#### Q: How do I customize the appearance and positioning of the image in the header section?
+#### س: كيف يمكنني تخصيص مظهر الصورة وموضعها في قسم الرأس؟
 
-A: You can customize the appearance and positioning of the image by adjusting the properties of the `Aspose.Pdf.Image` object before adding it to the header section. For example, you can set the image's dimensions, alignment, rotation, opacity, etc.
+ ج: يمكنك تخصيص مظهر الصورة وموضعها عن طريق ضبط خصائص الصورة`Aspose.Pdf.Image` الكائن قبل إضافته إلى قسم الرأس. على سبيل المثال، يمكنك ضبط أبعاد الصورة، والمحاذاة، والتدوير، والتعتيم، وما إلى ذلك.
 
-#### Q: What is the purpose of the `TextFragment` object used for the footer?
+####  س: ما هو الغرض من`TextFragment` object used for the footer?
 
-A: The `TextFragment` object is used to create and format text that will be displayed in the footer section. In the provided code, it is used to display the page number and total page count.
+ ج: ال`TextFragment` يتم استخدام الكائن لإنشاء وتنسيق النص الذي سيتم عرضه في قسم التذييل. وفي الكود المقدم، يتم استخدامه لعرض رقم الصفحة وإجمالي عدد الصفحات.
 
-#### Q: Can I modify the footer text to include additional information or formatting?
+#### س: هل يمكنني تعديل نص التذييل ليشمل معلومات إضافية أو تنسيقًا؟
 
-A: Yes, you can modify the footer text by modifying the contents of the `TextFragment` object. You can add additional text, change fonts, colors, and formatting according to your requirements.
+ ج: نعم، يمكنك تعديل نص التذييل عن طريق تعديل محتويات الملف`TextFragment` هدف. يمكنك إضافة نص إضافي وتغيير الخطوط والألوان والتنسيق وفقًا لمتطلباتك.
 
-#### Q: Can I apply different header and footer contents to different pages of the PDF document?
+#### س: هل يمكنني تطبيق محتويات مختلفة للرأس والتذييل على صفحات مختلفة من مستند PDF؟
 
-A: Yes, you can apply different header and footer contents to different pages by creating separate `HeaderFooter` objects and assigning them to specific pages using the `Header` and `Footer` properties of the `Aspose.Pdf.Page` object.
+ ج: نعم، يمكنك تطبيق محتويات مختلفة للرأس والتذييل على صفحات مختلفة عن طريق إنشاء صفحات منفصلة`HeaderFooter` الكائنات وتخصيصها لصفحات محددة باستخدام`Header` و`Footer` خصائص`Aspose.Pdf.Page` هدف.
 
-#### Q: How can I further customize the header and footer, such as changing font styles or adding additional elements?
+#### س: كيف يمكنني تخصيص الرأس والتذييل بشكل أكبر، مثل تغيير أنماط الخطوط أو إضافة عناصر إضافية؟
 
-A: You can customize the header and footer by using various classes and properties provided by Aspose.PDF for .NET. For example, you can use different text formatting options, add more paragraphs, images, or even tables to the header and footer sections.
+ج: يمكنك تخصيص الرأس والتذييل باستخدام الفئات والخصائص المتنوعة التي يوفرها Aspose.PDF لـ .NET. على سبيل المثال، يمكنك استخدام خيارات مختلفة لتنسيق النص، أو إضافة المزيد من الفقرات، أو الصور، أو حتى الجداول إلى أقسام الرأس والتذييل.
 
-#### Q: Can I remove or clear the header and footer sections if needed?
+#### س: هل يمكنني إزالة أو مسح أقسام الرأس والتذييل إذا لزم الأمر؟
 
-A: Yes, you can remove or clear the header and footer sections by setting the `Header` and `Footer` properties of the `Aspose.Pdf.Page` object to `null`.
+ج: نعم، يمكنك إزالة أو مسح أقسام الرأس والتذييل عن طريق تعيين`Header` و`Footer` خصائص`Aspose.Pdf.Page` يعترض على`null`.
 
-#### Q: How can I ensure that the added image and page number remain consistent across different devices and viewers?
+#### س: كيف يمكنني التأكد من أن الصورة المضافة ورقم الصفحة يظلان متسقين عبر الأجهزة والمشاهدين المختلفين؟
 
-A: Aspose.PDF for .NET provides functionality to create standardized and consistent PDF documents, ensuring that the added image and page number will appear consistently across different devices and PDF viewers.
+ج: يوفر Aspose.PDF for .NET وظيفة لإنشاء مستندات PDF موحدة ومتسقة، مما يضمن ظهور الصورة المضافة ورقم الصفحة بشكل متسق عبر الأجهزة المختلفة وعارضات PDF.

@@ -1,84 +1,84 @@
 ---
-title: Set Zoom Factor In PDF File
-linktitle: Set Zoom Factor In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set the zoom factor in PDF file using Aspose.PDF for .NET with our step-by-step guide.
+title: Установить коэффициент масштабирования в PDF-файле
+linktitle: Установить коэффициент масштабирования в PDF-файле
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как установить коэффициент масштабирования в PDF-файле с помощью Aspose.PDF для .NET, с помощью нашего пошагового руководства.
 type: docs
 weight: 340
 url: /ru/net/programming-with-document/setzoomfactor/
 ---
-Aspose.PDF for .NET is a powerful API that allows developers to work with PDF documents in their .NET applications. One of the features it provides is the ability to set the zoom factor of a PDF document. In this step-by-step guide, we will explain how to use Aspose.PDF for .NET to set the zoom factor of a PDF document using the provided C# source code.
+Aspose.PDF для .NET — это мощный API, который позволяет разработчикам работать с PDF-документами в своих .NET-приложениях. Одной из предоставляемых функций является возможность установки коэффициента масштабирования PDF-документа. В этом пошаговом руководстве мы объясним, как использовать Aspose.PDF для .NET для установки коэффициента масштабирования PDF-документа, используя предоставленный исходный код C#.
 
-## Step 1: Set the path to the document directory
+## Шаг 1. Установите путь к каталогу документов.
 
-The first step is to set the path to the directory where the PDF document is located. This can be done by setting the `dataDir` variable to the directory path. 
+ Первый шаг — указать путь к каталогу, в котором находится PDF-документ. Это можно сделать, установив`dataDir` переменная пути к каталогу. 
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace "YOUR DOCUMENT DIRECTORY" with the actual directory path where your PDF document is located.
+Замените «ВАШ КАТАЛОГ ДОКУМЕНТОВ» фактическим путем к каталогу, в котором находится ваш PDF-документ.
 
-## Step 2: Instantiate a new Document object
+## Шаг 2. Создайте экземпляр нового объекта Document.
 
-To work with a PDF document using Aspose.PDF for .NET, we need to create a new `Document` object and load the PDF file into it. 
+ Чтобы работать с PDF-документом с помощью Aspose.PDF for .NET, нам нужно создать новый`Document` объект и загрузите в него PDF-файл. 
 
 ```csharp
 Document doc = new Document(dataDir + "SetZoomFactor.pdf");
 ```
 
-This code will create a new `Document` object and load the PDF file named "SetZoomFactor.pdf" from the `dataDir` directory into it.
+ Этот код создаст новый`Document` объект и загрузите PDF-файл с именем «SetZoomFactor.pdf» из`dataDir` каталог в него.
 
-## Step 3: Set the zoom factor
+## Шаг 3. Установите коэффициент масштабирования.
 
-Once the `Document` object is created, we can set the zoom factor of the PDF document. In the following code, we set the zoom factor to 50%.
+ Однажды`Document`объект создан, мы можем установить коэффициент масштабирования PDF-документа. В следующем коде мы устанавливаем коэффициент масштабирования на 50%.
 
 ```csharp
 GoToAction action = new GoToAction(new XYZExplicitDestination(1, 0, 0, .5));
 doc.OpenAction = action;
 ```
 
-This code sets the zoom factor to 50% by creating a new `GoToAction` object and passing a `XYZExplicitDestination` object with a zoom factor of 50% to it. The `OpenAction` property of the `Document` object is then set to this `GoToAction` object.
+ Этот код устанавливает коэффициент масштабирования на 50%, создавая новый`GoToAction` объект и передача`XYZExplicitDestination` объект с коэффициентом масштабирования 50%.`OpenAction` собственность`Document` объект затем устанавливается на это`GoToAction` объект.
 
-## Step 4: Save the PDF document
+## Шаг 4. Сохраните PDF-документ.
 
-Finally, we can save the modified PDF document to a new file. In the following code, we save the PDF document to a new file named "Zoomed_pdf_out.pdf" in the `dataDir` directory.
+ Наконец, мы можем сохранить измененный PDF-документ в новый файл. В следующем коде мы сохраняем PDF-документ в новый файл с именем «Zoomed_pdf_out.pdf» в папке`dataDir` каталог.
 
 ```csharp
 dataDir = dataDir + "Zoomed_pdf_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Example source code for Set Zoom Factor using Aspose.PDF for .NET
+### Пример исходного кода для установки коэффициента масштабирования с использованием Aspose.PDF для .NET
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate new Document object
+// Создать экземпляр нового объекта документа
 Document doc = new Document(dataDir + "SetZoomFactor.pdf");
 
 GoToAction action = new GoToAction(new XYZExplicitDestination(1, 0, 0, .5));
 doc.OpenAction = action;
 dataDir = dataDir + "Zoomed_pdf_out.pdf";
-// Save the document
+// Сохраните документ
 doc.Save(dataDir);
 ```
 
-## Conclusion
+## Заключение
 
-Aspose.PDF for .NET provides a simple and efficient way to set the zoom factor of a PDF document using C# code. By following the above steps, you can easily modify the zoom factor of any PDF document in your .NET application.
+Aspose.PDF для .NET предоставляет простой и эффективный способ установки коэффициента масштабирования PDF-документа с помощью кода C#. Выполнив описанные выше шаги, вы можете легко изменить коэффициент масштабирования любого PDF-документа в вашем приложении .NET.
 
-### FAQs
+### Часто задаваемые вопросы
 
-#### Q: What is the zoom factor in a PDF document, and how does it affect viewing?
+#### Вопрос: Что такое коэффициент масштабирования PDF-документа и как он влияет на просмотр?
 
-A: The zoom factor in a PDF document determines the level of magnification when the document is viewed. It specifies the scale at which the document is displayed, affecting how large or small the content appears on the screen. A zoom factor of 1.0 represents 100% zoom (actual size), while a factor greater than 1.0 zooms in, and a factor less than 1.0 zooms out.
+О: Коэффициент масштабирования PDF-документа определяет уровень увеличения при просмотре документа. Он определяет масштаб отображения документа, влияя на то, насколько большим или маленьким будет содержимое на экране. Коэффициент масштабирования 1,0 соответствует 100% масштабу (фактический размер), коэффициент больше 1,0 увеличивает масштаб, а коэффициент меньше 1,0 уменьшает масштаб.
 
-#### Q: Can I set a specific zoom factor for different pages within the same PDF document?
+#### Вопрос: Могу ли я установить определенный коэффициент масштабирования для разных страниц одного PDF-документа?
 
-A: Yes, with Aspose.PDF for .NET, you can set different zoom factors for different pages within the same PDF document. The example source code provided demonstrates how to set the zoom factor for the first page using the `GoToAction` object. You can modify the code to set different zoom factors for other pages as needed.
+ О: Да, с помощью Aspose.PDF для .NET вы можете устанавливать разные коэффициенты масштабирования для разных страниц одного и того же PDF-документа. В приведенном примере исходного кода показано, как установить коэффициент масштабирования для первой страницы с помощью`GoToAction` объект. Вы можете изменить код, чтобы при необходимости установить различные коэффициенты масштабирования для других страниц.
 
-#### Q: How does changing the zoom factor affect printing and saving the PDF document?
+#### Вопрос: Как изменение коэффициента масштабирования влияет на печать и сохранение PDF-документа?
 
-A: Changing the zoom factor using Aspose.PDF for .NET does not affect the actual content of the PDF document itself. It only affects the viewing experience when the document is opened in a PDF viewer. The zoom factor set programmatically will not impact the printed output or the saved PDF file.
+О: Изменение коэффициента масштабирования с помощью Aspose.PDF для .NET не влияет на фактическое содержимое самого PDF-документа. Это влияет на качество просмотра только при открытии документа в программе просмотра PDF. Коэффициент масштабирования, установленный программно, не повлияет на распечатку или сохраненный файл PDF.

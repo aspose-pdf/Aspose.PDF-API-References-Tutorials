@@ -1,57 +1,57 @@
 ---
-title: Get All Annotations From Page
-linktitle: Get All Annotations From Page
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use Aspose.PDF for .NET to retrieve all annotations from a PDF page with this step-by-step guide.
+title: Tüm Ek Açıklamaları Sayfadan Al
+linktitle: Tüm Ek Açıklamaları Sayfadan Al
+second_title: .NET API Referansı için Aspose.PDF
+description: Bu adım adım kılavuzla bir PDF sayfasındaki tüm açıklamaları almak için Aspose.PDF for .NET'i nasıl kullanacağınızı öğrenin.
 type: docs
 weight: 70
 url: /tr/net/annotations/getallannotationsfrompage/
 ---
-This article will guide you through the process of extracting all annotations from a PDF page using Aspose.PDF for .NET. Aspose.PDF for .NET is a library that allows developers to create, edit, and convert PDF documents. With the help of this guide, you will be able to get all the annotations from a specific PDF page using the provided C# source code.
+Bu makale, Aspose.PDF for .NET kullanarak bir PDF sayfasındaki tüm açıklamaları çıkarma sürecinde size rehberlik edecektir. Aspose.PDF for .NET, geliştiricilerin PDF belgeleri oluşturmasına, düzenlemesine ve dönüştürmesine olanak tanıyan bir kitaplıktır. Bu kılavuzun yardımıyla, sağlanan C# kaynak kodunu kullanarak belirli bir PDF sayfasındaki tüm ek açıklamaları alabileceksiniz.
 
-Follow the below steps how to get all Annotations for a PDF page using Aspose.PDF for .NET:
+Aspose.PDF for .NET kullanarak bir PDF sayfasındaki tüm Ek Açıklamaları almak için aşağıdaki adımları izleyin:
 
-## Step 1: The Path to the Documents Directory
+## Adım 1: Belgeler Dizininin Yolu
 
-The first step in getting all annotations from a PDF page using Aspose.PDF for .NET is to set the path to the documents directory where your PDF files are stored. You can do this by modifying the following line of code:
+Aspose.PDF for .NET kullanarak bir PDF sayfasından tüm açıklamaları almanın ilk adımı, PDF dosyalarınızın depolandığı belgeler dizininin yolunu ayarlamaktır. Bunu aşağıdaki kod satırını değiştirerek yapabilirsiniz:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
-## Step 2: Your PDF files are stored
+## 2. Adım: PDF dosyalarınız saklanır
 
-Replace "YOUR DOCUMENT DIRECTORY" with the path to the folder where your PDF files are stored. For example:
+"BELGE DİZİNİNİZ" ifadesini, PDF dosyalarınızın depolandığı klasörün yolu ile değiştirin. Örneğin:
 
 ```csharp
 string dataDir = @"C:\Users\JohnDoe\Documents\PDFs\";
 ```
 
-## Step 3: Open Document
+## 3. Adım: Belgeyi Açın
 
-The next step is to open the PDF document that contains the annotations you want to extract. You can do this by adding the following code:
+Bir sonraki adım, çıkarmak istediğiniz ek açıklamaları içeren PDF belgesini açmaktır. Bunu aşağıdaki kodu ekleyerek yapabilirsiniz:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetAllAnnotationsFromPage.pdf");
 ```
 
-This line of code initializes a new instance of the Document class and loads the PDF document "GetAllAnnotationsFromPage.pdf". Replace this filename with the name of your PDF file.
+Bu kod satırı, Document sınıfının yeni bir örneğini başlatır ve "GetAllAnnotationsFromPage.pdf" PDF belgesini yükler. Bu dosya adını PDF dosyanızın adıyla değiştirin.
 
-## Step 4: Loop through All Annotations
+## Adım 4: Tüm Ek Açıklamalarda Döngü Yapın
 
-Once you have opened the PDF document, you can loop through all the annotations on a specific page. For example, to loop through all the annotations on the first page of the PDF document, add the following code:
+PDF belgesini açtıktan sonra belirli bir sayfadaki tüm ek açıklamalar arasında geçiş yapabilirsiniz. Örneğin, PDF belgesinin ilk sayfasındaki tüm ek açıklamalar arasında geçiş yapmak için aşağıdaki kodu ekleyin:
 
 ```csharp
 foreach (MarkupAnnotation annotation in pdfDocument.Pages[1].Annotations)
 {
-    // Code goes here
+    // Kod buraya gelecek
 }
 ```
 
-This code loops through all the annotations on the first page of the PDF document and assigns each annotation to the "annotation" variable.
+Bu kod, PDF belgesinin ilk sayfasındaki tüm ek açıklamalar arasında geçiş yapar ve her ek açıklamayı "ek açıklama" değişkenine atar.
 
-## Step 5: Get Annotation Properties
+## Adım 5: Ek Açıklama Özelliklerini Alın
 
-To extract the properties of each annotation, you can add the following code inside the foreach loop:
+Her bir açıklamanın özelliklerini çıkarmak için foreach döngüsünün içine aşağıdaki kodu ekleyebilirsiniz:
 
 ```csharp
 Console.WriteLine("Title : {0} ", annotation.Title);
@@ -59,51 +59,51 @@ Console.WriteLine("Subject : {0} ", annotation.Subject);
 Console.WriteLine("Contents : {0} ", annotation.Contents);
 ```
 
-This code writes the Title, Subject, and Contents of each annotation to the console.
+Bu kod, her ek açıklamanın Başlığını, Konusunu ve İçeriğini konsola yazar.
 
-### Example Source Code for Get All Annotations From Page using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak Sayfadan Tüm Ek Açıklamaları Almak için Örnek Kaynak Kodu
 
-Here is the complete source code for getting all annotations from a PDF page using Aspose.PDF for .NET:
+Aspose.PDF for .NET kullanarak bir PDF sayfasındaki tüm açıklamaları almak için tam kaynak kodunu burada bulabilirsiniz:
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir + "GetAllAnnotationsFromPage.pdf");
 
-// Loop through all the annotations
+// Tüm ek açıklamalar arasında dolaşın
 foreach (MarkupAnnotation annotation in pdfDocument.Pages[1].Annotations)
 {
-	// Get annotation properties
+	// Ek açıklama özelliklerini alma
 	Console.WriteLine("Title : {0} ", annotation.Title);
 	Console.WriteLine("Subject : {0} ", annotation.Subject);
 	Console.WriteLine("Contents : {0} ", annotation.Contents);                
 }
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we explored how to get all annotations from a specific page of a PDF document using Aspose.PDF for .NET. By following the step-by-step guide and using the provided C# source code, developers can easily extract and manage annotations from their PDF documents.
+Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF belgesinin belirli bir sayfasındaki tüm açıklamaların nasıl alınacağını araştırdık. Geliştiriciler, adım adım kılavuzu izleyerek ve sağlanan C# kaynak kodunu kullanarak, PDF belgelerinden ek açıklamaları kolayca çıkarabilir ve yönetebilir.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What are annotations in a PDF document?
+#### S: PDF belgesindeki ek açıklamalar nelerdir?
 
-A: Annotations in a PDF document are interactive elements that provide additional information, comments, or notes on specific parts of the document. Annotations can include text notes, comments, highlights, and other interactive elements.
+C: Bir PDF belgesindeki ek açıklamalar, belgenin belirli bölümleri hakkında ek bilgi, yorum veya notlar sağlayan etkileşimli öğelerdir. Ek açıklamalar metin notlarını, yorumları, vurguları ve diğer etkileşimli öğeleri içerebilir.
 
-#### Q: Can I get annotations from specific pages only?
+#### S: Yalnızca belirli sayfalardan ek açıklamalar alabilir miyim?
 
-A: Yes, with Aspose.PDF for .NET, you can get annotations from specific pages or even from the entire document, depending on your requirements.
+C: Evet, Aspose.PDF for .NET ile gereksinimlerinize bağlı olarak belirli sayfalardan, hatta belgenin tamamından açıklamalar alabilirsiniz.
 
-#### Q: Does Aspose.PDF for .NET support extracting annotations from password-protected PDF files?
+#### S: Aspose.PDF for .NET, parola korumalı PDF dosyalarından açıklamaların çıkarılmasını destekliyor mu?
 
-A: Yes, Aspose.PDF for .NET supports extracting annotations from password-protected PDF files. You need to provide the correct password when loading the PDF document using the `Document` class.
+ C: Evet, Aspose.PDF for .NET, parola korumalı PDF dosyalarından açıklamaların çıkarılmasını destekler. PDF belgesini kullanarak yüklerken doğru şifreyi girmeniz gerekir.`Document` sınıf.
 
-#### Q: Can I filter annotations based on their properties, such as content or author?
+#### S: Ek açıklamaları içerik veya yazar gibi özelliklerine göre filtreleyebilir miyim?
 
-A: Yes, Aspose.PDF for .NET provides methods to access and filter annotations based on their properties, such as content, author, or creation date. You can loop through all annotations and check for the specific properties you want to filter.
+C: Evet, Aspose.PDF for .NET, içerik, yazar veya oluşturulma tarihi gibi özelliklerine göre açıklamalara erişme ve bunları filtreleme yöntemleri sağlar. Tüm ek açıklamalar arasında geçiş yapabilir ve filtrelemek istediğiniz belirli özellikleri kontrol edebilirsiniz.
 
-#### Q: Does Aspose.PDF for .NET support extracting annotations from different types of PDF documents?
+#### S: Aspose.PDF for .NET, farklı türdeki PDF belgelerinden açıklamaların çıkarılmasını destekliyor mu?
 
-A: Yes, Aspose.PDF for .NET provides various methods to extract annotations from different types of PDF documents, including text markup annotations, free text annotations, and more.
+C: Evet, Aspose.PDF for .NET, metin işaretleme açıklamaları, serbest metin açıklamaları ve daha fazlasını içeren, farklı PDF belge türlerinden açıklamaları çıkarmak için çeşitli yöntemler sağlar.

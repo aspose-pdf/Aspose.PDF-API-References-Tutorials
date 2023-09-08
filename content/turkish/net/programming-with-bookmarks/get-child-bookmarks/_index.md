@@ -1,41 +1,41 @@
 ---
-title: Get Child Bookmarks In PDF File
-linktitle: Get Child Bookmarks In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily get child bookmarks in PDF file with Aspose.PDF for .NET.
+title: PDF Dosyasında Çocuk Yer İmlerini Alın
+linktitle: PDF Dosyasında Çocuk Yer İmlerini Alın
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile PDF dosyasındaki alt yer imlerini kolayca edinin.
 type: docs
 weight: 80
 url: /tr/net/programming-with-bookmarks/get-child-bookmarks/
 ---
-Retrieving child bookmarks in PDF file can be useful for exploring the hierarchical structure of bookmarks. With Aspose.PDF for .NET, you can easily get the child bookmarks by following the following source code:
+Alt yer imlerini PDF dosyasından almak, yer imlerinin hiyerarşik yapısını keşfetmek için yararlı olabilir. Aspose.PDF for .NET ile aşağıdaki kaynak kodunu izleyerek alt yer işaretlerini kolayca alabilirsiniz:
 
-## Step 1: Import required libraries
+## 1. Adım: Gerekli kitaplıkları içe aktarın
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Başlamadan önce C# projeniz için gerekli kütüphaneleri içe aktarmanız gerekir. Gerekli ithalat direktifi aşağıdadır:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## 2. Adım: Belgeler klasörünün yolunu ayarlayın
 
-In this step, you need to specify the path to the folder containing the PDF file you want to extract the bookmarks from. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ Bu adımda, yer imlerini çıkarmak istediğiniz PDF dosyasını içeren klasörün yolunu belirtmeniz gerekir. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"`belgeler klasörünüzün gerçek yolunu içeren aşağıdaki kodda:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## 3. Adım: PDF belgesini açın
 
-Now we are going to open the PDF document from which we want to extract the bookmarks using the following code:
+Şimdi yer işaretlerini çıkarmak istediğimiz PDF belgesini aşağıdaki kodu kullanarak açacağız:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetChildBookmarks.pdf");
 ```
 
-## Step 4: Browse bookmarks and child bookmarks
+## 4. Adım: Yer imlerine ve alt yer imlerine göz atın
 
-In this step, we will iterate over all the bookmarks in the document using a `foreach` loop. For each bookmark, we will display the information such as title, italic style, bold style and color. If the bookmark has child bookmarks, we'll display those as well. Here is the corresponding code:
+ Bu adımda, bir belge kullanarak belgedeki tüm yer imlerini yineleyeceğiz.`foreach` döngü. Her yer imi için başlık, italik stil, kalın stil ve renk gibi bilgileri görüntüleyeceğiz. Yer iminde alt yer imleri varsa bunları da görüntüleriz. İşte ilgili kod:
 
 ```csharp
 foreach(OutlineItemCollection outlineItem in pdfDocument.Outlines)
@@ -49,7 +49,7 @@ foreach(OutlineItemCollection outlineItem in pdfDocument.Outlines)
      {
          Console.WriteLine("Child bookmarks");
         
-         // Browse child bookmarks as well
+         // Çocuk yer imlerine de göz atın
          foreach(OutlineItemCollection childOutline in outlineItem)
          {
              Console.WriteLine(childOutline.Title);
@@ -61,13 +61,13 @@ foreach(OutlineItemCollection outlineItem in pdfDocument.Outlines)
 }
 ```
 
-### Sample source code for Get Child Bookmarks using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Çocuk Yer İşaretlerini Al için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir + "GetChildBookmarks.pdf");
-// Loop through all the bookmarks
+// Tüm yer imleri arasında dolaşın
 foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
 {
 	Console.WriteLine(outlineItem.Title);
@@ -77,7 +77,7 @@ foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
 	if (outlineItem.Count > 0)
 	{
 		Console.WriteLine("Child Bookmarks");
-		// There are child bookmarks then loop through that as well
+		// Çocuk yer imleri var, sonra da bunların arasında dolaşın
 		foreach (OutlineItemCollection childOutline in outlineItem)
 		{
 			Console.WriteLine(childOutline.Title);
@@ -89,49 +89,49 @@ foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
 }
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulation ! Now you have a step by step guide to get child bookmarks with Aspose.PDF for .NET. You can use this code to explore the hierarchical structure of bookmarks and get detailed information about each bookmark and its child bookmarks in your PDF documents.
+Tebrikler! Artık Aspose.PDF for .NET ile alt yer imlerini almak için adım adım bir kılavuza sahipsiniz. Bu kodu, yer işaretlerinin hiyerarşik yapısını keşfetmek ve PDF belgelerinizdeki her yer işareti ve onun alt yer imleri hakkında ayrıntılı bilgi almak için kullanabilirsiniz.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Gelişmiş yer imi düzenleme özellikleri hakkında daha fazla bilgi için resmi Aspose.PDF belgelerine göz atmayı unutmayın.
 
-### FAQ's for get child bookmarks in PDF file
+### PDF dosyasındaki alt yer işaretlerini almak için SSS
 
-#### Q: What are child bookmarks in a PDF file?
+#### S: PDF dosyasındaki alt yer imleri nedir?
 
-A: Child bookmarks are bookmarks that are nested under a parent bookmark. They create a hierarchical structure, allowing for a more organized and detailed navigation experience within the PDF document.
+C: Alt yer imleri, bir üst yer iminin altına yerleştirilen yer imleridir. PDF belgesinde daha düzenli ve ayrıntılı bir gezinme deneyimine olanak tanıyan hiyerarşik bir yapı oluştururlar.
 
-#### Q: Why would I want to retrieve child bookmarks from a PDF file?
+#### S: Neden bir PDF dosyasından alt yer imlerini almak isteyeyim?
 
-A: Retrieving child bookmarks helps you understand the relationships and hierarchy between different sections of a document. This information can be especially useful for documents with complex structures or multiple levels of organization.
+C: Alt yer işaretlerini almak, bir belgenin farklı bölümleri arasındaki ilişkileri ve hiyerarşiyi anlamanıza yardımcı olur. Bu bilgiler özellikle karmaşık yapılara veya çok düzeyli organizasyonlara sahip belgeler için yararlı olabilir.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### S: C# projem için gerekli kitaplıkları nasıl içeri aktarabilirim?
 
-A: To import the required library for your C# project, use the following import directive:
+C: C# projeniz için gerekli kitaplığı içe aktarmak için aşağıdaki içe aktarma yönergesini kullanın:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This directive enables you to access the classes and methods provided by Aspose.PDF for .NET.
+Bu yönerge Aspose.PDF for .NET tarafından sağlanan sınıflara ve yöntemlere erişmenizi sağlar.
 
-#### Q: How do I specify the path to the documents folder?
+#### S: Belgeler klasörünün yolunu nasıl belirlerim?
 
-A: In the provided source code, replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file from which you want to extract child bookmarks. This ensures that the code can locate the target PDF file.
+ C: Sağlanan kaynak kodunda değiştirin`"YOUR DOCUMENT DIRECTORY"` alt yer imlerini çıkarmak istediğiniz PDF dosyasını içeren klasörün gerçek yolunu belirtin. Bu, kodun hedef PDF dosyasını bulabilmesini sağlar.
 
-#### Q: How do I open a PDF document to extract child bookmarks?
+#### S: Alt yer işaretlerini çıkarmak için bir PDF belgesini nasıl açarım?
 
-A: To open a PDF document for bookmark extraction, use the following code:
+C: Yer imi çıkarmak amacıyla bir PDF belgesi açmak için aşağıdaki kodu kullanın:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetChildBookmarks.pdf");
 ```
 
-Replace `"GetChildBookmarks.pdf"` with the actual file name.
+ Yer değiştirmek`"GetChildBookmarks.pdf"` gerçek dosya adı ile.
 
-#### Q: How do I iterate through and display child bookmark information?
+#### S: Alt yer imi bilgilerini nasıl yineleyebilirim ve görüntüleyebilirim?
 
-A: Loop through all the bookmarks in the document using a `foreach` loop. For each bookmark, display information such as the title, italic style, bold style, color, and if it has child bookmarks, iterate through them as well:
+ C: Bir belge kullanarak belgedeki tüm yer imleri arasında dolaşın.`foreach` döngü. Her yer işareti için başlık, italik stil, kalın stil, renk gibi bilgileri görüntüleyin ve alt yer imleri varsa bunları da yineleyin:
 
 ```csharp
 foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
@@ -145,7 +145,7 @@ foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
     {
         Console.WriteLine("Child bookmarks");
         
-        // Browse child bookmarks as well
+        // Çocuk yer imlerine de göz atın
         foreach (OutlineItemCollection childOutline in outlineItem)
         {
             Console.WriteLine(childOutline.Title);
@@ -157,18 +157,18 @@ foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
 }
 ```
 
-#### Q: Can I extract other properties of child bookmarks using a similar approach?
+#### S: Benzer bir yaklaşım kullanarak alt yer imlerinin diğer özelliklerini çıkarabilir miyim?
 
-A: Yes, you can extract various properties of child bookmarks using the `OutlineItemCollection` object. Refer to the Aspose.PDF documentation for a comprehensive list of available properties.
+ C: Evet, alt yer imlerinin çeşitli özelliklerini kullanarak çıkarabilirsiniz.`OutlineItemCollection` nesne. Mevcut özelliklerin kapsamlı bir listesi için Aspose.PDF belgelerine bakın.
 
-#### Q: Is there a limit to the number of child bookmarks I can retrieve?
+#### S: Alabileceğim alt yer imlerinin sayısında bir sınır var mı?
 
-A: There is typically no strict limit to the number of child bookmarks you can retrieve using this method. However, very large documents with an excessive number of child bookmarks may require efficient memory management.
+C: Bu yöntemi kullanarak alabileceğiniz alt yer imlerinin sayısı konusunda genellikle kesin bir sınır yoktur. Ancak, aşırı sayıda alt yer iminin bulunduğu çok büyük belgeler, etkili bellek yönetimi gerektirebilir.
 
-#### Q: What if the child bookmarks have further nested child bookmarks?
+#### S: Alt yer imlerinde iç içe geçmiş başka alt yer imleri varsa ne olur?
 
-A: The provided code will recursively iterate through all levels of child bookmarks, allowing you to retrieve information from nested child bookmarks as well.
+C: Sağlanan kod, tüm alt yer imleri düzeylerinde yinelemeli olarak yinelenecek ve iç içe geçmiş alt yer imlerinden de bilgi almanıza olanak tanıyacaktır.
 
-#### Q: How can I use the extracted child bookmark information?
+#### S: Çıkarılan alt yer imi bilgilerini nasıl kullanabilirim?
 
-A: You can use the extracted child bookmark information for analysis, documentation, or creating custom navigation interfaces within your applications.
+C: Çıkarılan alt yer imi bilgilerini analiz etmek, belgelemek veya uygulamalarınızda özel gezinme arayüzleri oluşturmak için kullanabilirsiniz.

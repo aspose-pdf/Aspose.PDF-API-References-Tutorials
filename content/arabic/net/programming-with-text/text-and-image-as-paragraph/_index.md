@@ -1,28 +1,28 @@
 ---
-title: Text And Image As Paragraph In PDF File
-linktitle: Text And Image As Paragraph In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add text and an image as inline paragraphs in PDF file using Aspose.PDF for .NET.
+title: النص والصورة كفقرة في ملف PDF
+linktitle: النص والصورة كفقرة في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إضافة نص وصورة كفقرات مضمنة في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 530
 url: /ar/net/programming-with-text/text-and-image-as-paragraph/
 ---
-This tutorial explains how to add text and an image as inline paragraphs in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the process step by step.
+يشرح هذا البرنامج التعليمي كيفية إضافة نص وصورة كفقرات مضمنة في ملف PDF باستخدام Aspose.PDF لـ .NET. يوضح كود مصدر C# المقدم العملية خطوة بخطوة.
 
-## Prerequisites
+## المتطلبات الأساسية
 
-Before proceeding with the tutorial, make sure you have the following:
+قبل متابعة البرنامج التعليمي، تأكد من أن لديك ما يلي:
 
-- Basic knowledge of C# programming language.
-- Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to install it in your project.
+- المعرفة الأساسية بلغة البرمجة C#.
+- تم تثبيت Aspose.PDF لمكتبة .NET. يمكنك الحصول عليه من موقع Aspose أو استخدام NuGet لتثبيته في مشروعك.
 
-## Step 1: Set up the project
+## الخطوة 1: إعداد المشروع
 
-Start by creating a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library.
+ابدأ بإنشاء مشروع C# جديد في بيئة التطوير المتكاملة المفضلة لديك (IDE) وأضف مرجعًا إلى مكتبة Aspose.PDF لـ .NET.
 
-## Step 2: Import necessary namespaces
+## الخطوة 2: استيراد مساحات الأسماء الضرورية
 
-Add the following using directives at the beginning of your C# file to import the required namespaces:
+أضف ما يلي باستخدام التوجيهات في بداية ملف C# الخاص بك لاستيراد مساحات الأسماء المطلوبة:
 
 ```csharp
 using Aspose.Pdf;
@@ -30,52 +30,52 @@ using Aspose.Pdf.Text;
 using Aspose.Pdf.Drawing;
 ```
 
-## Step 3: Set the path to the document directory
+## الخطوة 3: قم بتعيين المسار إلى دليل المستند
 
-Set the path to your document directory using the `dataDir` variable:
+ قم بتعيين المسار إلى دليل المستند الخاص بك باستخدام`dataDir` عامل:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ يستبدل`"YOUR DOCUMENT DIRECTORY"` بالمسار الفعلي إلى دليل المستندات الخاص بك.
 
-## Step 4: Create a new Document and Page
+## الخطوة 4: إنشاء مستند وصفحة جديدة
 
-Create a new `Document` object and add a page to its pages collection:
+ إنشاء جديد`Document` كائن وإضافة صفحة إلى مجموعة الصفحات الخاصة بها:
 
 ```csharp
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Step 5: Create a TextFragment and add it as a paragraph
+## الخطوة 5: إنشاء TextFragment وإضافته كفقرة
 
-Create a `TextFragment` object and add it to the paragraphs collection of the page:
+ إنشاء`TextFragment` الكائن وإضافته إلى مجموعة الفقرات بالصفحة:
 
 ```csharp
 TextFragment text = new TextFragment("Hello World.. ");
 page.Paragraphs.Add(text);
 ```
 
-## Step 6: Add an image as an inline paragraph
+## الخطوة 6: إضافة صورة كفقرة مضمنة
 
-Create an `Aspose.Pdf.Image` object and set it as an inline paragraph so that it appears right after the previous paragraph:
+ يخترع`Aspose.Pdf.Image` كائن وقم بتعيينه كفقرة مضمنة بحيث تظهر مباشرة بعد الفقرة السابقة:
 
 ```csharp
 Aspose.Pdf.Image image = new Aspose.Pdf.Image();
 image.IsInLineParagraph = true;
 image.File = dataDir + "aspose-logo.jpg";
-image.FixHeight = 30; // Optional: Set image height
-image.FixWidth = 100; // Optional: Set image width
+image.FixHeight = 30; // اختياري: ضبط ارتفاع الصورة
+image.FixWidth = 100; // اختياري: ضبط عرض الصورة
 page.Paragraphs.Add(image);
 ```
 
-Replace `"aspose-logo.jpg"` with the actual image file name and adjust the optional image height and width as desired.
+ يستبدل`"aspose-logo.jpg"` باستخدام اسم ملف الصورة الفعلي وضبط ارتفاع الصورة وعرضها الاختياريين حسب الرغبة.
 
-## Step 7: Add another TextFragment as an inline paragraph
+## الخطوة 7: أضف TextFragment آخر كفقرة مضمنة
 
-Re-initialize the `TextFragment` object with different content and add it as an inline paragraph:
+ إعادة تهيئة`TextFragment` كائن بمحتوى مختلف وإضافته كفقرة مضمنة:
 
 ```csharp
 text = new TextFragment(" Hello Again..");
@@ -83,87 +83,87 @@ text.IsInLineParagraph = true;
 page.Paragraphs.Add(text);
 ```
 
-## Step 8: Save the PDF document
+## الخطوة 8: احفظ مستند PDF
 
-Save the modified PDF document:
+احفظ مستند PDF المعدل:
 
 ```csharp
 dataDir = dataDir + "TextAndImageAsParagraph_out.pdf";
 doc.Save(dataDir);
 ```
 
-Make sure to replace `"TextAndImageAsParagraph_out.pdf"` with the desired output file name.
+ تأكد من استبدال`"TextAndImageAsParagraph_out.pdf"` مع اسم ملف الإخراج المطلوب.
 
-### Sample source code for Text And Image As Paragraph using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر للنص والصورة كفقرة باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Instantiate Document instance
+// إنشاء مثيل للمستند
 Document doc = new Document();
-// Add page to pages collection of Document instance
+// إضافة صفحة إلى مجموعة الصفحات من مثيل المستند
 Page page = doc.Pages.Add();
-// Create TextFragmnet
+// إنشاء TextFragmnet
 TextFragment text = new TextFragment("Hello World.. ");
-// Add text fragment to paragraphs collection of Page object
+// إضافة جزء نص إلى مجموعة الفقرات من كائن الصفحة
 page.Paragraphs.Add(text);
-// Create an image instance
+// إنشاء مثيل الصورة
 Aspose.Pdf.Image image = new Aspose.Pdf.Image();
-// Set image as inline paragraph so that it appears right after 
-// The previous paragraph object (TextFragment)
+// قم بتعيين الصورة كفقرة مضمنة بحيث تظهر بعدها مباشرة
+// كائن الفقرة السابقة (TextFragment)
 image.IsInLineParagraph = true;
-// Specify image file path 
+// تحديد مسار ملف الصورة
 image.File = dataDir + "aspose-logo.jpg";
-// Set image Height (optional)
+// ضبط ارتفاع الصورة (اختياري)
 image.FixHeight = 30;
-// Set Image Width (optional)
+// ضبط عرض الصورة (اختياري)
 image.FixWidth = 100;
-// Add image to paragraphs collection of page object
+// إضافة صورة إلى مجموعة الفقرات من كائن الصفحة
 page.Paragraphs.Add(image);
-// Re-initialize TextFragment object with different contents
+// إعادة تهيئة كائن TextFragment بمحتويات مختلفة
 text = new TextFragment(" Hello Again..");
-// Set TextFragment as inline paragraph
+// قم بتعيين TextFragment كفقرة مضمنة
 text.IsInLineParagraph = true;
-// Add newly created TextFragment to paragraphs collection of page
+// أضف TextFragment الذي تم إنشاؤه حديثًا إلى مجموعة الفقرات من الصفحة
 page.Paragraphs.Add(text);
 dataDir = dataDir + "TextAndImageAsParagraph_out.pdf";
 doc.Save(dataDir);
 Console.WriteLine("\nText and image added successfully as an inline paragraphs.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulations! You have successfully learned how to add text and an image as inline paragraphs in a PDF document using Aspose.PDF for .NET. This tutorial provided a step-by-step guide, from setting up the project to saving the modified document. You can now incorporate this code into your own C# projects to customize the layout of text and images in PDF files.
+تهانينا! لقد تعلمت بنجاح كيفية إضافة نص وصورة كفقرات مضمنة في مستند PDF باستخدام Aspose.PDF لـ .NET. قدم هذا البرنامج التعليمي دليلاً خطوة بخطوة، بدءًا من إعداد المشروع وحتى حفظ المستند المعدل. يمكنك الآن دمج هذا الرمز في مشاريع C# الخاصة بك لتخصيص تخطيط النص والصور في ملفات PDF.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of the "Text And Image As Paragraph In PDF File" tutorial?
+#### س: ما هو الغرض من البرنامج التعليمي "النص والصورة كفقرة في ملف PDF"؟
 
-A: The "Text And Image As Paragraph In PDF File" tutorial aims to guide users on how to add both text and images as inline paragraphs within a PDF document using Aspose.PDF for .NET. The tutorial provides step-by-step instructions and C# code samples to demonstrate the process.
+ج: يهدف البرنامج التعليمي "النص والصورة كفقرة في ملف PDF" إلى توجيه المستخدمين حول كيفية إضافة كل من النص والصور كفقرات مضمنة داخل مستند PDF باستخدام Aspose.PDF لـ .NET. يوفر البرنامج التعليمي إرشادات خطوة بخطوة ونماذج تعليمات برمجية C# لتوضيح العملية.
 
-#### Q: How does this tutorial help in adding text and images as inline paragraphs?
+#### س: كيف يساعد هذا البرنامج التعليمي في إضافة النص والصور كفقرات مضمنة؟
 
-A: This tutorial helps users understand how to use Aspose.PDF for .NET to incorporate both text and images as inline paragraphs within a PDF document. By following the provided steps and code examples, users can create PDF files with custom layouts that combine text and images.
+ج: يساعد هذا البرنامج التعليمي المستخدمين على فهم كيفية استخدام Aspose.PDF لـ .NET لدمج كل من النص والصور كفقرات سطرية داخل مستند PDF. باتباع الخطوات المتوفرة وأمثلة التعليمات البرمجية، يمكن للمستخدمين إنشاء ملفات PDF بتخطيطات مخصصة تجمع بين النص والصور.
 
-#### Q: What prerequisites are required to follow this tutorial?
+#### س: ما هي المتطلبات الأساسية المطلوبة لمتابعة هذا البرنامج التعليمي؟
 
-A: Before starting the tutorial, you should have a basic understanding of the C# programming language. Additionally, you need to have the Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or install it in your project using NuGet.
+ج: قبل البدء في البرنامج التعليمي، يجب أن يكون لديك فهم أساسي للغة البرمجة C#. بالإضافة إلى ذلك، تحتاج إلى تثبيت Aspose.PDF لمكتبة .NET. يمكنك الحصول عليه من موقع Aspose أو تثبيته في مشروعك باستخدام NuGet.
 
-#### Q: How do I set up my project to follow this tutorial?
+#### س: كيف أقوم بإعداد مشروعي لمتابعة هذا البرنامج التعليمي؟
 
-A: To begin, create a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library. This allows you to utilize the library's features for working with PDF documents, text fragments, and images.
+ج: للبدء، قم بإنشاء مشروع C# جديد في بيئة التطوير المتكاملة المفضلة لديك (IDE) وأضف مرجعًا إلى مكتبة Aspose.PDF لـ .NET. يتيح لك ذلك الاستفادة من ميزات المكتبة للعمل مع مستندات PDF وأجزاء النص والصور.
 
-#### Q: Can I use this tutorial to add multiple text and image paragraphs in a PDF?
+#### س: هل يمكنني استخدام هذا البرنامج التعليمي لإضافة عدة فقرات نصية وصورية في ملف PDF؟
 
-A: Yes, you can use the provided code samples to add multiple instances of both text and image paragraphs within the same PDF document. This tutorial demonstrates how to create inline paragraphs, making it easy to include different combinations of text and images.
+ج: نعم، يمكنك استخدام نماذج التعليمات البرمجية المتوفرة لإضافة مثيلات متعددة لكل من فقرات النص والصورة داخل مستند PDF نفسه. يوضح هذا البرنامج التعليمي كيفية إنشاء فقرات مضمنة، مما يجعل من السهل تضمين مجموعات مختلفة من النص والصور.
 
-#### Q: How do I specify the content and appearance of the text paragraphs and images?
+#### س: كيف أحدد محتوى ومظهر فقرات النص والصور؟
 
-A: The tutorial demonstrates how to create `TextFragment` objects to represent text paragraphs and `Aspose.Pdf.Image` objects to represent images. You can customize the content, dimensions, and appearance of both text and images using the provided code samples.
+ ج: يوضح البرنامج التعليمي كيفية الإنشاء`TextFragment`كائنات لتمثيل فقرات النص و`Aspose.Pdf.Image` كائنات لتمثيل الصور. يمكنك تخصيص المحتوى والأبعاد والمظهر لكل من النص والصور باستخدام نماذج التعليمات البرمجية المتوفرة.
 
-#### Q: Can I adjust the layout of the inline paragraphs?
+#### س: هل يمكنني ضبط تخطيط الفقرات المضمنة؟
 
-A: Yes, you can adjust the layout of inline paragraphs by controlling their positioning, dimensions, and order within the page. The tutorial shows how to set inline attributes, such as `IsInLineParagraph`, to control the layout of text and image paragraphs.
+ ج: نعم، يمكنك ضبط تخطيط الفقرات المضمنة عن طريق التحكم في موضعها وأبعادها وترتيبها داخل الصفحة. يوضح البرنامج التعليمي كيفية تعيين السمات المضمنة، مثل`IsInLineParagraph`، للتحكم في تخطيط فقرات النص والصورة.
 
-#### Q: How do I save the modified PDF document?
+#### س: كيف يمكنني حفظ مستند PDF المعدل؟
 
-A: To save the modified PDF document, you can use the `Save` method of the `Document` object. The tutorial provides code samples that demonstrate how to save the resulting PDF document.
+ ج: لحفظ مستند PDF المعدل، يمكنك استخدام الملف`Save` طريقة`Document` هدف. يوفر البرنامج التعليمي نماذج تعليمات برمجية توضح كيفية حفظ مستند PDF الناتج.

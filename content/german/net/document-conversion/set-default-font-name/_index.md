@@ -1,38 +1,38 @@
 ---
-title: Set Default Font Name
-linktitle: Set Default Font Name
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to set default font name in PDF file using Aspose.PDF for .NET.
+title: Legen Sie den Standardschriftnamen fest
+linktitle: Legen Sie den Standardschriftnamen fest
+second_title: Aspose.PDF für .NET API-Referenz
+description: Schritt-für-Schritt-Anleitung zum Festlegen des Standardschriftnamens in einer PDF-Datei mit Aspose.PDF für .NET.
 type: docs
 weight: 270
 url: /de/net/document-conversion/set-default-font-name/
 ---
-In this tutorial, we will show you how to set the default font name in a PDF file using Aspose.PDF for .NET. Sometimes when you extract images from a PDF file, you may encounter missing font issues. By specifying a default font name, you can ensure that extracted text will be displayed correctly. Follow the steps below to set the default font name in a PDF file.
+In diesem Tutorial zeigen wir Ihnen, wie Sie mit Aspose.PDF für .NET den Standardschriftnamen in einer PDF-Datei festlegen. Manchmal kann es beim Extrahieren von Bildern aus einer PDF-Datei zu Problemen mit fehlenden Schriftarten kommen. Durch die Angabe eines Standardschriftnamens können Sie sicherstellen, dass extrahierter Text korrekt angezeigt wird. Führen Sie die folgenden Schritte aus, um den Standardschriftnamen in einer PDF-Datei festzulegen.
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## Voraussetzungen
+Bevor Sie beginnen, stellen Sie sicher, dass Sie die folgenden Voraussetzungen erfüllen:
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- Grundkenntnisse der Programmiersprache C#.
+- Aspose.PDF-Bibliothek für .NET auf Ihrem System installiert.
+- Eine Entwicklungsumgebung wie Visual Studio.
 
-## Step 1: Loading the PDF document
-The first step is to load the PDF document into a `Document` object. Use the following code:
+## Schritt 1: Laden des PDF-Dokuments
+ Der erste Schritt besteht darin, das PDF-Dokument in ein zu laden`Document` Objekt. Verwenden Sie den folgenden Code:
 
 ```csharp
-// Path to the documents directory.
+// Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 using (Document pdfDocument = new Document(dataDir + "input.pdf"))
 {
-     // Code to add
+     // Code zum Hinzufügen
 }
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where your PDF file is located.
+ Unbedingt ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre PDF-Datei befindet.
 
-## Step 2: Set default font name
-Next, we'll set the default font name using the `DefaultFontName` option of the `RenderingOptions` object. Use the following code:
+## Schritt 2: Legen Sie den Standardschriftnamen fest
+ Als Nächstes legen wir den Standardschriftnamen mithilfe von fest`DefaultFontName` Option der`RenderingOptions` Objekt. Verwenden Sie den folgenden Code:
 
 ```csharp
 using (Document pdfDocument = new Document(dataDir + "input.pdf"))
@@ -45,26 +45,26 @@ using (Document pdfDocument = new Document(dataDir + "input.pdf"))
          ro.DefaultFontName = "Arial";
          pngDevice.RenderingOptions = ro;
         
-         // Code to add
+         // Code zum Hinzufügen
      }
 }
 ```
 
-Be sure to replace `"Arial"` with the desired font name.
+ Unbedingt ersetzen`"Arial"` mit dem gewünschten Schriftartnamen.
 
-## Step 3: Image Extraction
-Next, we will extract the image from the specified page of the PDF document. Use the following code:
+## Schritt 3: Bildextraktion
+Als nächstes extrahieren wir das Bild von der angegebenen Seite des PDF-Dokuments. Verwenden Sie den folgenden Code:
 
 ```csharp
 pngDevice.Process(pdfDocument.Pages[1], imageStream);
 ```
 
-Be sure to specify the correct page number in `pdfDocument.Pages[1]`.
+ Stellen Sie sicher, dass Sie die richtige Seitenzahl angeben`pdfDocument.Pages[1]`.
 
-### Example source code for Set Default Font Name using Aspose.PDF for .NET
+### Beispielquellcode für „Standardschriftnamen festlegen“ mit Aspose.PDF für .NET
 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 using (Document pdfDocument = new Document(dataDir + "input.pdf"))
@@ -81,27 +81,27 @@ using (Document pdfDocument = new Document(dataDir + "input.pdf"))
 }
 ```
 
-## Conclusion
-In this tutorial, we learned how to set the default font name in a PDF file using Aspose.PDF for .NET. By specifying a default font name, you can ensure that extracted text will be displayed correctly. Use this method to resolve missing font issues when extracting images from PDF files.
+## Abschluss
+In diesem Tutorial haben wir gelernt, wie man mit Aspose.PDF für .NET den Standardschriftnamen in einer PDF-Datei festlegt. Durch die Angabe eines Standardschriftnamens können Sie sicherstellen, dass extrahierter Text korrekt angezeigt wird. Verwenden Sie diese Methode, um Probleme mit fehlenden Schriftarten beim Extrahieren von Bildern aus PDF-Dateien zu beheben.
 
-### FAQ's
+### FAQs
 
-#### Q: What is Aspose.PDF for .NET?
+#### F: Was ist Aspose.PDF für .NET?
 
-A: Aspose.PDF for .NET is a powerful library that enables developers to work with PDF documents in C# applications. It offers various functionalities, including setting the default font name in a PDF file.
+A: Aspose.PDF für .NET ist eine leistungsstarke Bibliothek, die Entwicklern die Arbeit mit PDF-Dokumenten in C#-Anwendungen ermöglicht. Es bietet verschiedene Funktionen, einschließlich der Festlegung des Standardschriftnamens in einer PDF-Datei.
 
-#### Q: Why would I need to set the default font name in a PDF file?
+#### F: Warum sollte ich den Standardschriftnamen in einer PDF-Datei festlegen?
 
-A: Setting the default font name is useful when extracting text from a PDF document. If the PDF contains text with fonts that are not available on the extraction machine, specifying a default font name ensures correct text display.
+A: Das Festlegen des Standardschriftnamens ist beim Extrahieren von Text aus einem PDF-Dokument hilfreich. Wenn die PDF-Datei Text mit Schriftarten enthält, die auf der Extraktionsmaschine nicht verfügbar sind, stellt die Angabe eines Standardschriftnamens sicher, dass der Text korrekt angezeigt wird.
 
-#### Q: How can I load a PDF document and set the default font name using Aspose.PDF for .NET?
+#### F: Wie kann ich mit Aspose.PDF für .NET ein PDF-Dokument laden und den Standardschriftnamen festlegen?
 
-A: To load a PDF document and set the default font name, you can use the `Document` class to load the PDF file and the `RenderingOptions.DefaultFontName` property to specify the desired default font name.
+ A: Um ein PDF-Dokument zu laden und den Standardschriftnamen festzulegen, können Sie die verwenden`Document`Klasse zum Laden der PDF-Datei und der`RenderingOptions.DefaultFontName` -Eigenschaft, um den gewünschten Standardschriftnamen anzugeben.
 
-#### Q: Can I choose any font as the default font name?
+#### F: Kann ich eine beliebige Schriftart als Standardschriftnamen auswählen?
 
-A:Yes, you can choose any font that is available on the extraction machine as the default font name. Use a font that closely matches the missing fonts in the original PDF to ensure accurate text rendering.
+A:Ja, Sie können jede Schriftart, die auf dem Extraktionscomputer verfügbar ist, als Standardschriftartnamen auswählen. Verwenden Sie eine Schriftart, die den fehlenden Schriftarten im Original-PDF möglichst genau entspricht, um eine genaue Textwiedergabe zu gewährleisten.
 
-#### Q: Is setting the default font name a permanent change to the PDF file?
+#### F: Ist das Festlegen des Standardschriftnamens eine dauerhafte Änderung der PDF-Datei?
 
-A: No, setting the default font name using Aspose.PDF for .NET is a temporary change made during text extraction. It does not modify the original PDF file.
+A: Nein, das Festlegen des Standardschriftnamens mit Aspose.PDF für .NET ist eine vorübergehende Änderung, die während der Textextraktion vorgenommen wird. Die ursprüngliche PDF-Datei wird dadurch nicht verändert.

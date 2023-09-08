@@ -1,43 +1,43 @@
 ---
-title: Get All The Attachments In PDF File
-linktitle: Get All The Attachments In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to get all attachments in PDF file with Aspose.PDF for .NET. Step-by-step guide for easy handling.
+title: Получить все вложения в PDF-файле
+linktitle: Получить все вложения в PDF-файле
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как получить все вложения в файл PDF с помощью Aspose.PDF для .NET. Пошаговое руководство для облегчения работы.
 type: docs
 weight: 40
 url: /ru/net/programming-with-attachments/get-all-the-attachments/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to get all attachments in PDF file using Aspose.PDF for .NET.
+В этом руководстве мы шаг за шагом проведем вас по следующему исходному коду C#, чтобы получить все вложения в файл PDF с помощью Aspose.PDF для .NET.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Прежде чем начать, убедитесь, что вы установили библиотеку Aspose.PDF и настроили среду разработки. Также есть базовые знания программирования на C#.
 
-### Step 1: Document Directory Setup
+### Шаг 1. Настройка каталога документов
 
-In the provided source code, you need to specify the directory where the PDF file is located from which you want to get the attachments. Change the "dataDir" variable to the desired directory.
+В предоставленном исходном коде вам необходимо указать каталог, в котором находится PDF-файл, из которого вы хотите получить вложения. Измените переменную dataDir на нужный каталог.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### Step 2: Open the existing PDF document
+### Шаг 2. Откройте существующий PDF-документ.
 
-We open the existing PDF document using the specified path.
+Открываем существующий PDF-документ по указанному пути.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
 ```
 
-### Step 3: Obtaining the Attachments Collection
+### Шаг 3. Получение коллекции вложений
 
-We get the collection of attachments from the document.
+Получаем коллекцию вложений из документа.
 
 ```csharp
 EmbeddedFileCollection embeddedFiles = pdfDocument.EmbeddedFiles;
 ```
 
-### Step 4: Retrieving attachments
+### Шаг 4. Получение вложений
 
-We go through the collection to get all the attachments and display their information. We also save attachments in individual files.
+Мы просматриваем коллекцию, чтобы получить все вложения и отобразить их информацию. Мы также сохраняем вложения в отдельных файлах.
 
 ```csharp
 int count = 1;
@@ -47,7 +47,7 @@ Console.WriteLine("Name: {0}", fileSpecification.Name);
 Console.WriteLine("Description: {0}", fileSpecification.Description);
 Console.WriteLine("MIME Type: {0}", fileSpecification.MIMEType);
 
-// Check if object parameters contain additional information
+// Проверьте, содержат ли параметры объекта дополнительную информацию
 if (fileSpecification.Params != null)
 {
 Console.WriteLine("CheckSum: {0}", fileSpecification.Params.CheckSum);
@@ -56,7 +56,7 @@ Console.WriteLine("Modified date: {0}", fileSpecification.Params.ModDate);
 Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
 }
 
-// Retrieve the attachment and save in a file
+// Получите вложение и сохраните его в файле.
 byte[] fileContent = new byte[fileSpecification.Contents.Length];
 fileSpecification.Contents.Read(fileContent, 0, fileContent.Length);
 FileStream fileStream = new FileStream(dataDir + count + "_out" + ".txt", FileMode.Create);
@@ -68,27 +68,27 @@ count += 1;
 ```
 
 
-### Sample source code for Get Allthe Attachments using Aspose.PDF for .NET 
+### Пример исходного кода для получения всех вложений с помощью Aspose.PDF для .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Открыть документ
 Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
-// Get embedded files collection
+// Получить коллекцию встроенных файлов
 EmbeddedFileCollection embeddedFiles = pdfDocument.EmbeddedFiles;
-// Get count of the embedded files
+// Получить количество встроенных файлов
 Console.WriteLine("Total files : {0}", embeddedFiles.Count);
 int count = 1;
-// Loop through the collection to get all the attachments
+// Просмотрите коллекцию, чтобы получить все вложения.
 foreach (FileSpecification fileSpecification in embeddedFiles)
 {
 	Console.WriteLine("Name: {0}", fileSpecification.Name);
 	Console.WriteLine("Description: {0}",
 	fileSpecification.Description);
 	Console.WriteLine("Mime Type: {0}", fileSpecification.MIMEType);
-	// Check if parameter object contains the parameters
+	//Проверьте, содержит ли объект параметра параметры
 	if (fileSpecification.Params != null)
 	{
 		Console.WriteLine("CheckSum: {0}",
@@ -99,7 +99,7 @@ foreach (FileSpecification fileSpecification in embeddedFiles)
 		fileSpecification.Params.ModDate);
 		Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
 	}
-	// Get the attachment and write to file or stream
+	// Получите вложение и запишите в файл или поток.
 	byte[] fileContent = new byte[fileSpecification.Contents.Length];
 	fileSpecification.Contents.Read(fileContent, 0,
 	fileContent.Length);
@@ -112,44 +112,44 @@ foreach (FileSpecification fileSpecification in embeddedFiles)
 
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, we explained how to get all attachments from a PDF file using Aspose.PDF for .NET. You can now use this knowledge to extract and manipulate attachments from your PDF files.
+В этом уроке мы объяснили, как получить все вложения из файла PDF с помощью Aspose.PDF для .NET. Теперь вы можете использовать эти знания для извлечения вложений из ваших PDF-файлов и управления ими.
 
-## FAQ's for get all the attachments in PDF file
+## Часто задаваемые вопросы по получению всех вложений в PDF-файле
 
-#### Q: Why would I need to retrieve all attachments from a PDF document?
+#### Вопрос: Зачем мне извлекать все вложения из PDF-документа?
 
-A: Retrieving attachments allows you to access and manipulate additional files embedded within a PDF, which can be useful for archiving, sharing, or further processing.
+О: Получение вложений позволяет вам получать доступ к дополнительным файлам, встроенным в PDF-файл, и манипулировать ими, что может быть полезно для архивирования, совместного использования или дальнейшей обработки.
 
-#### Q: What types of files can be attached to a PDF document?
+#### Вопрос: Какие типы файлов можно прикреплять к PDF-документу?
 
-A: PDF documents can contain a wide range of attached files, including images, documents, spreadsheets, audio files, and more.
+О: Документы PDF могут содержать широкий спектр вложенных файлов, включая изображения, документы, электронные таблицы, аудиофайлы и многое другое.
 
-#### Q: How does this tutorial help me retrieve attachments from a PDF using Aspose.PDF for .NET?
+#### Вопрос: Как это руководство поможет мне получить вложения из PDF-файла с помощью Aspose.PDF для .NET?
 
-A: This tutorial provides step-by-step instructions and C# source code to access and retrieve all attachments within a PDF document.
+О: В этом руководстве представлены пошаговые инструкции и исходный код C# для доступа и извлечения всех вложений в PDF-документе.
 
-#### Q: Can I retrieve specific attachments instead of all attachments using this tutorial?
+#### Вопрос: Могу ли я получить определенные вложения вместо всех вложений, используя это руководство?
 
-A: Yes, you can modify the provided code to selectively retrieve attachments based on your requirements.
+О: Да, вы можете изменить предоставленный код, чтобы выборочно получать вложения в соответствии с вашими требованиями.
 
-#### Q: What information about each attachment can I obtain using this tutorial?
+#### Вопрос: Какую информацию о каждом вложении я могу получить с помощью этого руководства?
 
-A: This tutorial demonstrates how to retrieve and display details such as the attachment's name, description, MIME type, creation date, modification date, and size.
+О: В этом руководстве показано, как получить и отобразить такие сведения, как имя вложения, описание, тип MIME, дата создания, дата изменения и размер.
 
-#### Q: How are the retrieved attachments saved using this tutorial?
+#### Вопрос: Как сохраняются вложения, полученные с помощью этого руководства?
 
-A: The tutorial guides you through saving each retrieved attachment as a separate file in the specified directory.
+О: В руководстве рассказывается, как сохранить каждое полученное вложение в виде отдельного файла в указанном каталоге.
 
-#### Q: Can I use this knowledge to extract attachments from password-protected PDF files?
+#### Вопрос: Могу ли я использовать эти знания для извлечения вложений из PDF-файлов, защищенных паролем?
 
-A: Yes, you can apply similar principles to retrieve attachments from password-protected PDF files using Aspose.PDF for .NET.
+О: Да, вы можете применить аналогичные принципы для извлечения вложений из PDF-файлов, защищенных паролем, с помощью Aspose.PDF для .NET.
 
-#### Q: How does Aspose.PDF for .NET facilitate attachment retrieval?
+#### Вопрос: Как Aspose.PDF for .NET облегчает извлечение вложений?
 
-A: Aspose.PDF for .NET provides an intuitive API that allows you to access and manipulate attachments in PDF documents easily.
+О: Aspose.PDF для .NET предоставляет интуитивно понятный API, который позволяет легко получать доступ к вложениям в PDF-документах и манипулировать ими.
 
-#### Q: Are there specific scenarios where retrieving attachments is recommended?
+#### Вопрос. Существуют ли конкретные сценарии, в которых рекомендуется извлекать вложения?
 
-A: Retrieving attachments is useful when you need to access files embedded within a PDF, such as extracting images, audio files, or additional documents.
+О: Извлечение вложений полезно, когда вам нужно получить доступ к файлам, встроенным в PDF-файл, например для извлечения изображений, аудиофайлов или дополнительных документов.

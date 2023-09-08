@@ -1,69 +1,69 @@
 ---
-title: Inline Structure Elements
-linktitle: Inline Structure Elements
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to using online structural elements with Aspose.PDF for .NET. Organize your PDFs with headings and paragraphs.
+title: Inline-Strukturelemente
+linktitle: Inline-Strukturelemente
+second_title: Aspose.PDF für .NET API-Referenz
+description: Schritt-für-Schritt-Anleitung zur Verwendung von Online-Strukturelementen mit Aspose.PDF für .NET. Organisieren Sie Ihre PDFs mit Überschriften und Absätzen.
 type: docs
 weight: 110
 url: /de/net/programming-with-tagged-pdf/inline-structure-elements/
 ---
-In this step-by-step guide, we'll show you how to use inline structure elements with Aspose.PDF for .NET. Aspose.PDF is a powerful library that lets you manipulate PDF documents programmatically. Inline structure elements allow you to create a hierarchical structure in your PDF document using headings of different levels and paragraphs.
+In dieser Schritt-für-Schritt-Anleitung zeigen wir Ihnen, wie Sie Inline-Strukturelemente mit Aspose.PDF für .NET verwenden. Aspose.PDF ist eine leistungsstarke Bibliothek, mit der Sie PDF-Dokumente programmgesteuert bearbeiten können. Mit Inline-Strukturelementen können Sie eine hierarchische Struktur in Ihrem PDF-Dokument erstellen, indem Sie Überschriften verschiedener Ebenen und Absätze verwenden.
 
-Let's dive into the code and learn how to use inline structure elements with Aspose.PDF for .NET.
+Lassen Sie uns in den Code eintauchen und lernen, wie Sie Inline-Strukturelemente mit Aspose.PDF für .NET verwenden.
 
-## Prerequisites
+## Voraussetzungen
 
-Before you begin, make sure you have the following:
+Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
-1. Aspose.PDF library for .NET installed.
-2. A basic knowledge of the C# programming language.
+1. Aspose.PDF-Bibliothek für .NET installiert.
+2. Grundkenntnisse der Programmiersprache C#.
 
-## Step 1: Setting up the environment
+## Schritt 1: Einrichten der Umgebung
 
-To get started, open your C# development environment and create a new project. Make sure you have added a reference to the Aspose.PDF library for .NET in your project.
+Öffnen Sie zunächst Ihre C#-Entwicklungsumgebung und erstellen Sie ein neues Projekt. Stellen Sie sicher, dass Sie in Ihrem Projekt einen Verweis auf die Aspose.PDF-Bibliothek für .NET hinzugefügt haben.
 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Creating the document
+## Schritt 2: Erstellen des Dokuments
 
-The first step is to create a new PDF document using the `Document` class.
+ Der erste Schritt besteht darin, ein neues PDF-Dokument mit zu erstellen`Document` Klasse.
 
 ```csharp
-// Create the PDF document
+// Erstellen Sie das PDF-Dokument
 Document document = new Document();
 ```
 
-## Step 3: Work with tagged content
+## Schritt 3: Arbeiten Sie mit getaggten Inhalten
 
-Then we get the tagged content of the document to work with.
+Dann erhalten wir den getaggten Inhalt des Dokuments, mit dem wir arbeiten können.
 
 ```csharp
-// Get the tagged content of the document
+// Rufen Sie den getaggten Inhalt des Dokuments ab
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-## Step 4: Set document title and language
+## Schritt 4: Dokumenttitel und Sprache festlegen
 
-We can now set the document title and language.
+Wir können nun den Titel und die Sprache des Dokuments festlegen.
 
 ```csharp
-// Define the document title and language
+// Definieren Sie den Titel und die Sprache des Dokuments
 taggedContent.SetTitle("Tagged PDF document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-## Step 5: Add structural elements online
+## Schritt 5: Strukturelemente online hinzufügen
 
-Now we are going to add inline structure elements such as headings of different levels and paragraphs to our document.
+Jetzt fügen wir unserem Dokument Inline-Strukturelemente wie Überschriften verschiedener Ebenen und Absätze hinzu.
 
 ```csharp
-// Get the root structure element
+// Holen Sie sich das Stammstrukturelement
 StructureElement rootElement = taggedContent.RootElement;
 
-// Add headers of different levels
+// Fügen Sie Überschriften verschiedener Ebenen hinzu
 HeaderElement h1 = taggedContent.CreateHeaderElement(1);
 HeaderElement h2 = taggedContent.CreateHeaderElement(2);
 HeaderElement h3 = taggedContent.CreateHeaderElement(3);
@@ -77,7 +77,7 @@ rootElement.AppendChild(h4);
 rootElement.AppendChild(h5);
 rootElement.AppendChild(h6);
 
-// Add content to each header
+// Fügen Sie Inhalt zu jeder Kopfzeile hinzu
 SpanElement spanH11 = taggedContent.CreateSpanElement();
 spanH11.SetText("H1.");
 h1.AppendChild(spanH11);
@@ -120,12 +120,12 @@ SpanElement spanH62 = taggedContent.CreateSpanElement();
 spanH62.SetText("Heading level 6");
 h6.AppendChild(spanH62);
 
-// Add a paragraph
+// Fügen Sie einen Absatz hinzu
 ParagraphElement p = taggedContent.CreateParagraphElement();
 p.SetText("P.");
 rootElement.AppendChild(p);
 
-// Add content to the paragraph
+// Fügen Sie Inhalt zum Absatz hinzu
 SpanElement span1 = taggedContent.CreateSpanElement();
 span1.SetText("Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
 p.AppendChild(span1);
@@ -158,35 +158,35 @@ span10.SetText("Sed vulputate, quam sed lacinia luctus, ipsum nibh fringilla pur
 p.AppendChild(span10);
 ```
 
-Here we create inline structure elements, such as headings of different levels and a paragraph, and add content to them.
+Hier erstellen wir Inline-Strukturelemente, wie Überschriften verschiedener Ebenen und einen Absatz, und ergänzen diese mit Inhalten.
 
-## Step 6: Save the tagged PDF document
+## Schritt 6: Speichern Sie das getaggte PDF-Dokument
 
-Finally, we save the tagged PDF document.
+Abschließend speichern wir das getaggte PDF-Dokument.
 
 ```csharp
-// Save the tagged PDF document
+// Speichern Sie das getaggte PDF-Dokument
 document.Save(dataDir + "InlineStructureElements.pdf");
 ```
 
-### Sample source code for Inline Structure Elements using Aspose.PDF for .NET 
+### Beispielquellcode für Inline-Strukturelemente mit Aspose.PDF für .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create Pdf Document
+// Erstellen Sie ein PDF-Dokument
 Document document = new Document();
 
-// Get Content for work with TaggedPdf
+// Holen Sie sich Inhalte für die Arbeit mit TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Set Title and Language for Documnet
+// Legen Sie Titel und Sprache für Documentt fest
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 
-// Get Root Structure Element
+// Stammstrukturelement abrufen
 StructureElement rootElement = taggedContent.RootElement;
 HeaderElement h1 = taggedContent.CreateHeaderElement(1);
 HeaderElement h2 = taggedContent.CreateHeaderElement(2);
@@ -270,53 +270,53 @@ SpanElement span10 = taggedContent.CreateSpanElement();
 span10.SetText("Sed vulputate, quam sed lacinia luctus, ipsum nibh fringilla purus, vitae posuere risus odio id massa. Cras sed venenatis lacus.");
 p.AppendChild(span10);
 
-// Save Tagged Pdf Document
+// Markiertes PDF-Dokument speichern
 document.Save(dataDir + "InlineStructureElements.pdf");
 
 ```
 
-## Conclusion
+## Abschluss
 
-Congratulation ! You have learned how to use inline structure elements with Aspose.PDF for .NET. You can now create a hierarchical structure in your PDF document by using headings of different levels and paragraphs. Explore more features of Aspose.PDF to discover its full potential.
+Herzlichen Glückwunsch! Sie haben gelernt, wie Sie Inline-Strukturelemente mit Aspose.PDF für .NET verwenden. Sie können nun eine hierarchische Struktur in Ihrem PDF-Dokument erstellen, indem Sie Überschriften verschiedener Ebenen und Absätze verwenden. Entdecken Sie weitere Funktionen von Aspose.PDF, um sein volles Potenzial zu entdecken.
 
-### FAQ's
+### FAQs
 
-#### Q: What are inline structure elements in a PDF document, and how do they contribute to creating a hierarchical structure?
+#### F: Was sind Inline-Strukturelemente in einem PDF-Dokument und wie tragen sie zur Schaffung einer hierarchischen Struktur bei?
 
-A: Inline structure elements in a PDF document, such as headings of different levels and paragraphs, are used to create a hierarchical structure that organizes and presents content in a structured manner. These elements allow you to establish a clear hierarchy and flow of information within the document.
+A: Inline-Strukturelemente in einem PDF-Dokument, wie z. B. Überschriften verschiedener Ebenen und Absätze, werden verwendet, um eine hierarchische Struktur zu erstellen, die Inhalte strukturiert organisiert und präsentiert. Mit diesen Elementen können Sie eine klare Hierarchie und einen klaren Informationsfluss innerhalb des Dokuments etablieren.
 
-#### Q: How can inline structure elements enhance the readability and organization of a PDF document?
+#### F: Wie können Inline-Strukturelemente die Lesbarkeit und Organisation eines PDF-Dokuments verbessern?
 
-A: Inline structure elements, particularly headings and paragraphs, help improve the readability and organization of a PDF document by providing a logical structure. Headings indicate different levels of importance and help readers navigate the content, while paragraphs group related information together.
+A: Inline-Strukturelemente, insbesondere Überschriften und Absätze, tragen dazu bei, die Lesbarkeit und Organisation eines PDF-Dokuments zu verbessern, indem sie eine logische Struktur bereitstellen. Überschriften weisen auf unterschiedliche Wichtigkeitsstufen hin und helfen den Lesern, sich im Inhalt zurechtzufinden, während Absätze zusammengehörige Informationen gruppieren.
 
-#### Q: How does Aspose.PDF for .NET facilitate the use of inline structure elements?
+#### F: Wie erleichtert Aspose.PDF für .NET die Verwendung von Inline-Strukturelementen?
 
-A: Aspose.PDF for .NET offers classes and methods to create and manipulate inline structure elements, such as headings and paragraphs. These elements can be customized, organized hierarchically, and enriched with content to improve the visual presentation and accessibility of the document.
+A: Aspose.PDF für .NET bietet Klassen und Methoden zum Erstellen und Bearbeiten von Inline-Strukturelementen wie Überschriften und Absätzen. Diese Elemente können individuell angepasst, hierarchisch organisiert und mit Inhalten angereichert werden, um die visuelle Darstellung und Zugänglichkeit des Dokuments zu verbessern.
 
-#### Q: What is the purpose of the `taggedContent` object in relation to inline structure elements?
+####  F: Was ist der Zweck des`taggedContent` object in relation to inline structure elements?
 
-A: The `taggedContent` object, obtained from the `TaggedContent` property of a `Document`, allows you to work with structured elements, including inline structure elements. It enables you to create, customize, and organize headings and paragraphs within the document.
+ A: Die`taggedContent` Objekt, erhalten aus dem`TaggedContent` Eigentum eines`Document`ermöglicht Ihnen die Arbeit mit strukturierten Elementen, einschließlich Inline-Strukturelementen. Es ermöglicht Ihnen, Überschriften und Absätze innerhalb des Dokuments zu erstellen, anzupassen und zu organisieren.
 
-#### Q: How do inline structure elements aid in creating a clear document hierarchy?
+#### F: Wie helfen Inline-Strukturelemente beim Erstellen einer klaren Dokumenthierarchie?
 
-A: Inline structure elements, such as headings of varying levels, contribute to establishing a clear and well-defined hierarchy in the document. Readers can quickly identify the main topics, subtopics, and related content, making the document easier to navigate and comprehend.
+A: Inline-Strukturelemente, wie z. B. Überschriften unterschiedlicher Ebenen, tragen dazu bei, eine klare und klar definierte Hierarchie im Dokument zu etablieren. Leser können die Hauptthemen, Unterthemen und zugehörigen Inhalte schnell identifizieren, wodurch das Dokument einfacher zu navigieren und zu verstehen ist.
 
-#### Q: Can I customize the appearance and formatting of inline structure elements using Aspose.PDF for .NET?
+#### F: Kann ich das Erscheinungsbild und die Formatierung von Inline-Strukturelementen mit Aspose.PDF für .NET anpassen?
 
-A: Yes, you can customize the appearance and formatting of inline structure elements. You can set properties such as font styles, sizes, colors, alignment, indentation, and spacing to achieve the desired visual presentation for headings and paragraphs.
+A: Ja, Sie können das Erscheinungsbild und die Formatierung von Inline-Strukturelementen anpassen. Sie können Eigenschaften wie Schriftarten, Größen, Farben, Ausrichtung, Einrückung und Abstände festlegen, um die gewünschte visuelle Darstellung für Überschriften und Absätze zu erreichen.
 
-#### Q: How do I create and add headings of different levels to a PDF document using inline structure elements in Aspose.PDF for .NET?
+#### F: Wie erstelle und füge ich Überschriften verschiedener Ebenen zu einem PDF-Dokument hinzu, indem ich Inline-Strukturelemente in Aspose.PDF für .NET verwende?
 
-A: You can create headings of different levels using the `CreateHeaderElement` method and then append them to the root structure element. Subsequently, you can add content to each heading element using the `CreateSpanElement` method to create spans of text.
+ A: Mit dem können Sie Überschriften auf verschiedenen Ebenen erstellen`CreateHeaderElement` Methode und hängen Sie sie dann an das Wurzelstrukturelement an. Anschließend können Sie mit dem Inhalt zu jedem Überschriftenelement hinzufügen`CreateSpanElement` Methode zum Erstellen von Textabschnitten.
 
-#### Q: Can I use inline structure elements to create lists, bullet points, or other types of content organization in a PDF document?
+#### F: Kann ich Inline-Strukturelemente verwenden, um Listen, Aufzählungspunkte oder andere Arten der Inhaltsorganisation in einem PDF-Dokument zu erstellen?
 
-A: While inline structure elements themselves are primarily used for headings and paragraphs, you can use them in combination with other features offered by Aspose.PDF for .NET to create lists, bullet points, tables, and other types of content organization for a comprehensive document structure.
+A: Während Inline-Strukturelemente selbst hauptsächlich für Überschriften und Absätze verwendet werden, können Sie sie in Kombination mit anderen von Aspose.PDF für .NET angebotenen Funktionen verwenden, um Listen, Aufzählungspunkte, Tabellen und andere Arten der Inhaltsorganisation für eine umfassende Erstellung zu erstellen Dokumentstruktur.
 
-#### Q: How do inline structure elements contribute to document accessibility?
+#### F: Wie tragen Inline-Strukturelemente zur Barrierefreiheit von Dokumenten bei?
 
-A: Inline structure elements play a crucial role in enhancing document accessibility. Properly structured headings and paragraphs provide a clear document hierarchy that aids screen readers and other assistive technologies in accurately interpreting and conveying the content to users with disabilities.
+A: Inline-Strukturelemente spielen eine entscheidende Rolle bei der Verbesserung der Dokumentenzugänglichkeit. Richtig strukturierte Überschriften und Absätze sorgen für eine klare Dokumenthierarchie, die Screenreadern und anderen unterstützenden Technologien dabei hilft, den Inhalt genau zu interpretieren und Benutzern mit Behinderungen zu vermitteln.
 
-#### Q: Can I explore more advanced uses of inline structure elements, such as creating interactive elements or embedding multimedia?
+#### F: Kann ich fortgeschrittenere Einsatzmöglichkeiten von Inline-Strukturelementen erkunden, etwa das Erstellen interaktiver Elemente oder das Einbetten von Multimedia?
 
-A: Absolutely! While this tutorial focuses on creating headings and paragraphs, Aspose.PDF for .NET offers advanced features to create interactive elements, embed multimedia, add hyperlinks, and more. Check the library's documentation and examples to delve into these advanced capabilities.
+A: Auf jeden Fall! Während sich dieses Tutorial auf das Erstellen von Überschriften und Absätzen konzentriert, bietet Aspose.PDF für .NET erweiterte Funktionen zum Erstellen interaktiver Elemente, zum Einbetten von Multimedia, zum Hinzufügen von Hyperlinks und mehr. Sehen Sie sich die Dokumentation und Beispiele der Bibliothek an, um mehr über diese erweiterten Funktionen zu erfahren.

@@ -1,42 +1,42 @@
 ---
-title: Add Bookmark In PDF File
-linktitle: Add Bookmark In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily add bookmark in PDF file for improved navigation with Aspose.PDF for .NET.
+title: إضافة إشارة مرجعية في ملف PDF
+linktitle: إضافة إشارة مرجعية في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: أضف إشارة مرجعية بسهولة في ملف PDF لتحسين التنقل باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 10
 url: /ar/net/programming-with-bookmarks/add-bookmark/
 ---
-Adding bookmarks in a PDF file allows easy and quick navigation. With Aspose.PDF for .NET, you can easily add a bookmark in PDF file by following the following source code:
+تتيح إضافة الإشارات المرجعية في ملف PDF التنقل السهل والسريع. باستخدام Aspose.PDF for .NET، يمكنك بسهولة إضافة إشارة مرجعية في ملف PDF باتباع التعليمات البرمجية المصدر التالية:
 
-## Step 1: Import required libraries
+## الخطوة 1: استيراد المكتبات المطلوبة
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+قبل أن تبدأ، تحتاج إلى استيراد المكتبات اللازمة لمشروع C# الخاص بك. فيما يلي توجيه الاستيراد الضروري:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-## Step 2: Set path to documents folder
+## الخطوة 2: تعيين المسار إلى مجلد المستندات
 
-In this step, you need to specify the path to the folder containing the PDF file you want to add a bookmark to. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ في هذه الخطوة، تحتاج إلى تحديد المسار إلى المجلد الذي يحتوي على ملف PDF الذي تريد إضافة إشارة مرجعية إليه. يستبدل`"YOUR DOCUMENT DIRECTORY"`في الكود التالي مع المسار الفعلي لمجلد المستندات الخاص بك:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## الخطوة 3: افتح مستند PDF
 
-Now we will open the PDF document to which we want to add a bookmark using the following code:
+سنفتح الآن مستند PDF الذي نريد إضافة إشارة مرجعية إليه باستخدام الكود التالي:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "AddBookmark.pdf");
 ```
 
-## Step 4: Create bookmark object
+## الخطوة 4: إنشاء كائن الإشارة المرجعية
 
-In this step, we will create a bookmark object using `OutlineItemCollection` class and set its properties such as title, italic attribute, bold attribute and action to perform when clicked. Here is the corresponding code:
+ في هذه الخطوة، سنقوم بإنشاء كائن إشارة مرجعية باستخدام`OutlineItemCollection` فئة وقم بتعيين خصائصها مثل العنوان والسمة المائلة والسمة الغامقة والإجراء الذي سيتم تنفيذه عند النقر عليه. هنا هو الكود المقابل:
 
 ```csharp
 OutlineItemCollection pdfOutline = new OutlineItemCollection(pdfDocument.Outlines);
@@ -46,80 +46,80 @@ pdfOutline. Bold = true;
 pdfOutline.Action = new GoToAction(pdfDocument.Pages[1]);
 ```
 
-## Step 5: Add bookmark to document
+## الخطوة 5: إضافة إشارة مرجعية إلى المستند
 
-Finally, we add the created bookmark to the document's bookmark collection using the `Add` method of the `Outlines` property. Here is the corresponding code:
+ وأخيرًا، نضيف الإشارة المرجعية التي تم إنشاؤها إلى مجموعة الإشارات المرجعية للمستند باستخدام`Add` طريقة`Outlines` ملكية. هنا هو الكود المقابل:
 
 ```csharp
 pdfDocument.Outlines.Add(pdfOutline);
 ```
 
-### Sample source code for Add Bookmark using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لإضافة إشارة مرجعية باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "AddBookmark.pdf");
-// Create a bookmark object
+// قم بإنشاء كائن إشارة مرجعية
 OutlineItemCollection pdfOutline = new OutlineItemCollection(pdfDocument.Outlines);
 pdfOutline.Title = "Test Outline";
 pdfOutline.Italic = true;
 pdfOutline.Bold = true;
-// Set the destination page number
+// قم بتعيين رقم الصفحة الوجهة
 pdfOutline.Action = new GoToAction(pdfDocument.Pages[1]);
-// Add bookmark in the document's outline collection.
+// أضف إشارة مرجعية في مجموعة المخطط التفصيلي للمستند.
 pdfDocument.Outlines.Add(pdfOutline);
 dataDir = dataDir + "AddBookmark_out.pdf";
-// Save output
+// حفظ الإخراج
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nBookmark added successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! Now you have a step by step guide to add a bookmark using Aspose.PDF for .NET. You can use this code to improve navigation in your PDF documents by adding custom bookmarks.
+تهنئة ! الآن لديك دليل خطوة بخطوة لإضافة إشارة مرجعية باستخدام Aspose.PDF لـ .NET. يمكنك استخدام هذا الرمز لتحسين التنقل في مستندات PDF الخاصة بك عن طريق إضافة إشارات مرجعية مخصصة.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+تأكد من مراجعة وثائق Aspose.PDF الرسمية لمزيد من المعلومات حول ميزات معالجة الإشارات المرجعية المتقدمة.
 
 
-### FAQ's for add bookmark in PDF file
+### الأسئلة الشائعة لإضافة إشارة مرجعية في ملف PDF
 
-#### Q: What are bookmarks in a PDF file?
+#### س: ما هي الإشارات المرجعية في ملف PDF؟
 
-A: Bookmarks, also known as outlines, are interactive elements that provide navigation and structure within a PDF document. They allow users to quickly jump to specific sections or pages.
+ج: الإشارات المرجعية، والمعروفة أيضًا باسم الخطوط العريضة، هي عناصر تفاعلية توفر التنقل والبنية داخل مستند PDF. أنها تسمح للمستخدمين بالانتقال بسرعة إلى أقسام أو صفحات محددة.
 
-#### Q: Why would I need to add bookmarks to a PDF file?
+#### س: لماذا أحتاج إلى إضافة إشارات مرجعية إلى ملف PDF؟
 
-A: Adding bookmarks to a PDF file improves user experience and makes it easier for readers to navigate through the document's content. Bookmarks can serve as a table of contents or provide quick access to important sections.
+ج: تعمل إضافة الإشارات المرجعية إلى ملف PDF على تحسين تجربة المستخدم وتسهل على القراء التنقل عبر محتوى المستند. يمكن أن تكون الإشارات المرجعية بمثابة جدول محتويات أو توفر وصولاً سريعًا إلى الأقسام المهمة.
 
-#### Q: How do I import the required libraries for my C# project?
+#### س: كيف يمكنني استيراد المكتبات المطلوبة لمشروع C# الخاص بي؟
 
-A: To import the necessary libraries for your C# project, include the following import directives:
+ج: لاستيراد المكتبات اللازمة لمشروع C# الخاص بك، قم بتضمين توجيهات الاستيراد التالية:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-These directives enable you to access the classes and methods needed for working with PDF documents and bookmarks.
+تمكنك هذه التوجيهات من الوصول إلى الفئات والأساليب اللازمة للعمل مع مستندات PDF والإشارات المرجعية.
 
-#### Q: How do I specify the path to the documents folder?
+#### س: كيف أحدد المسار إلى مجلد المستندات؟
 
-A: Replace `"YOUR DOCUMENT DIRECTORY"` in the provided source code with the actual path to the folder containing the PDF file you want to add a bookmark to.
+ ج: استبدال`"YOUR DOCUMENT DIRECTORY"` في الكود المصدري المقدم مع المسار الفعلي إلى المجلد الذي يحتوي على ملف PDF الذي تريد إضافة إشارة مرجعية إليه.
 
-#### Q: How do I open a PDF document for adding bookmarks?
+#### س: كيف يمكنني فتح مستند PDF لإضافة الإشارات المرجعية؟
 
-A: To open a PDF document for adding bookmarks, use the following code:
+ج: لفتح مستند PDF لإضافة إشارات مرجعية، استخدم الكود التالي:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "AddBookmark.pdf");
 ```
 
-Replace `"AddBookmark.pdf"` with the actual file name.
+ يستبدل`"AddBookmark.pdf"` مع اسم الملف الفعلي.
 
-#### Q: How do I create a bookmark object?
+#### س: كيف أقوم بإنشاء كائن إشارة مرجعية؟
 
-A: To create a bookmark object, use the `OutlineItemCollection` class. Customize its properties such as title, italic style, bold style, and action to perform when clicked.
+ ج: لإنشاء كائن إشارة مرجعية، استخدم`OutlineItemCollection` فصل. قم بتخصيص خصائصه مثل العنوان والنمط المائل والنمط الغامق والإجراء الذي سيتم تنفيذه عند النقر عليه.
 
 ```csharp
 OutlineItemCollection pdfOutline = new OutlineItemCollection(pdfDocument.Outlines);
@@ -129,39 +129,39 @@ pdfOutline.Bold = true;
 pdfOutline.Action = new GoToAction(pdfDocument.Pages[1]);
 ```
 
-#### Q: What is the purpose of the `Action` property in a bookmark?
+####  س: ما هو الغرض من`Action` property in a bookmark?
 
-A: The `Action` property specifies the action to be performed when the bookmark is clicked. In this example, we use the `GoToAction` class to navigate to a specific page (page 2 in this case).
+ ج: ال`Action` تحدد الخاصية الإجراء الذي سيتم تنفيذه عند النقر فوق الإشارة المرجعية. في هذا المثال نستخدم`GoToAction`للانتقال إلى صفحة معينة (الصفحة 2 في هذه الحالة).
 
-#### Q: How do I add the bookmark to the document?
+#### س: كيف يمكنني إضافة الإشارة المرجعية إلى المستند؟
 
-A: Use the `Add` method of the `Outlines` property to add the created bookmark to the document's bookmark collection.
+ ج: استخدم`Add` طريقة`Outlines` الخاصية لإضافة الإشارة المرجعية التي تم إنشاؤها إلى مجموعة الإشارات المرجعية للمستند.
 
 ```csharp
 pdfDocument.Outlines.Add(pdfOutline);
 ```
 
-#### Q: Can I add multiple bookmarks using this method?
+#### س: هل يمكنني إضافة إشارات مرجعية متعددة باستخدام هذه الطريقة؟
 
-A: Yes, you can repeat steps 4 to 8 to add multiple bookmarks to the document. Customize each bookmark's properties and actions as needed.
+ج: نعم، يمكنك تكرار الخطوات من 4 إلى 8 لإضافة إشارات مرجعية متعددة إلى المستند. قم بتخصيص خصائص وإجراءات كل إشارة مرجعية حسب الحاجة.
 
-#### Q: How do I save the updated PDF file?
+#### س: كيف يمكنني حفظ ملف PDF المحدث؟
 
-A: Save the updated PDF file using the `Save` method of the `pdfDocument` object:
+ ج: احفظ ملف PDF المحدث باستخدام الملف`Save` طريقة`pdfDocument` هدف:
 
 ```csharp
 dataDir = dataDir + "AddBookmark_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-#### Q: How can I confirm that the bookmarks have been added?
+#### س: كيف يمكنني التأكد من إضافة الإشارات المرجعية؟
 
-A: Open the generated PDF file to verify that the specified bookmarks have been added to the document.
+ج: افتح ملف PDF الذي تم إنشاؤه للتحقق من إضافة الإشارات المرجعية المحددة إلى المستند.
 
-#### Q: Is there a limit to the number of bookmarks I can add?
+#### س: هل هناك حد لعدد الإشارات المرجعية التي يمكنني إضافتها؟
 
-A: There is generally no strict limit to the number of bookmarks you can add, but consider the document's size and complexity for optimal performance.
+ج: لا يوجد عمومًا حد صارم لعدد الإشارات المرجعية التي يمكنك إضافتها، ولكن خذ في الاعتبار حجم المستند وتعقيده للحصول على الأداء الأمثل.
 
-#### Q: Can I customize the appearance of bookmarks?
+#### س: هل يمكنني تخصيص مظهر الإشارات المرجعية؟
 
-A: Yes, you can further customize bookmark appearance, color, style, and other attributes using Aspose.PDF features.
+ج: نعم، يمكنك تخصيص مظهر الإشارة المرجعية واللون والنمط والسمات الأخرى باستخدام ميزات Aspose.PDF.

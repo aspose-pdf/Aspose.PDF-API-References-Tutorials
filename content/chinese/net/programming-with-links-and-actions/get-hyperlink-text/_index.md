@@ -1,44 +1,44 @@
 ---
-title: Get Hyperlink Text In PDF File
-linktitle: Get Hyperlink Text In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract hyperlink text in PDF file using Aspose.PDF for .NET.
+title: 获取PDF文件中的超链接文本
+linktitle: 获取PDF文件中的超链接文本
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 提取 PDF 文件中的超链接文本。
 type: docs
 weight: 70
 url: /zh/net/programming-with-links-and-actions/get-hyperlink-text/
 ---
-Learn how to extract text from hyperlinks in PDF file using Aspose.PDF for .NET with this step-by-step guide.
+通过此分步指南，了解如何使用 Aspose.PDF for .NET 从 PDF 文件中的超链接中提取文本。
 
-## Step 1: Setting up the environment
+## 第一步：搭建环境
 
-Make sure you have set up your development environment with a C# project and the appropriate Aspose.PDF references.
+确保您已使用 C# 项目和适当的 Aspose.PDF 参考设置开发环境。
 
-## Step 2: Loading the PDF file
+## 第 2 步：加载 PDF 文件
 
-Set the directory path of your documents and upload the PDF file using the following code:
+使用以下代码设置文档的目录路径并上传 PDF 文件：
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Load the PDF file
+//加载 PDF 文件
 Document document = new Document(dataDir + "input.pdf");
 ```
 
-## Step 3: Navigating through the pages of the document
+## 步骤 3：浏览文档页面
 
-Iterate through each page of the document using a `foreach` loop:
+使用循环遍历文档的每一页`foreach`环形：
 
 ```csharp
 foreach(Page page in document.Pages)
 {
-     // Display link annotations
+     //显示链接注释
      ShowLinkAnnotations(page);
 }
 ```
 
-## Step 4: Error Handling
+## 第 4 步：错误处理
 
-Add error handling to catch any exception and display the corresponding error message:
+添加错误处理以捕获任何异常并显示相应的错误消息：
 
 ```csharp
 catch (Exception ex)
@@ -47,18 +47,18 @@ catch (Exception ex)
 }
 ```
 
-### Sample source code for Get Hyperlink Text using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 获取超链接文本的示例源代码 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	//文档目录的路径。
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Load the PDF file
+	//加载 PDF 文件
 	Document document = new Document(dataDir + "input.pdf");
-	// Iterate through each page of PDF
+	//遍历 PDF 的每一页
 	foreach (Page page in document.Pages)
 	{
-		// Show link annotation
+		//显示链接注释
 		ShowLinkAnnotations(page);
 	}
 }
@@ -68,42 +68,42 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## 结论
 
-Congratulation ! You now know how to extract hyperlink text from a PDF file using Aspose.PDF for .NET. You can use this knowledge to deal with hyperlinks in your projects and automate tasks related to PDF files.
+恭喜！您现在知道如何使用 Aspose.PDF for .NET 从 PDF 文件中提取超链接文本。您可以使用这些知识来处理项目中的超链接并自动执行与 PDF 文件相关的任务。
 
-Now that you've completed this guide, you can apply these concepts to your own projects and further explore the features offered by Aspose.PDF for .NET.
+现在您已经完成了本指南，您可以将这些概念应用到您自己的项目中，并进一步探索 Aspose.PDF for .NET 提供的功能。
 
-### FAQs for get hyperlink text in PDF file
+### 获取 PDF 文件中的超链接文本的常见问题解答
 
-#### Q: What is hyperlink text in a PDF file?
+#### 问：PDF 文件中的超链接文本是什么？
 
-A: Hyperlink text in a PDF file refers to the visible text that users click on to navigate to a specific location or resource, such as a URL, another page in the same document, or an external document.
+答：PDF 文件中的超链接文本是指用户单击以导航到特定位置或资源的可见文本，例如 URL、同一文档中的另一页面或外部文档。
 
-#### Q: How does extracting hyperlink text benefit my PDF document analysis?
+#### 问：提取超链接文本对我的 PDF 文档分析有何帮助？
 
-A: Extracting hyperlink text allows you to gather and analyze the descriptive labels of hyperlinks within a PDF document. This information can be used for link validation, content categorization, and metadata extraction.
+答：通过提取超链接文本，您可以收集和分析 PDF 文档中超链接的描述性标签。此信息可用于链接验证、内容分类和元数据提取。
 
-#### Q: How can Aspose.PDF for .NET help in extracting hyperlink text?
+#### 问：Aspose.PDF for .NET 如何帮助提取超链接文本？
 
-A: Aspose.PDF for .NET provides robust APIs for extracting hyperlink text. This tutorial provides a step-by-step guide on how to accomplish this task using C#.
+答：Aspose.PDF for .NET 提供了强大的 API 来提取超链接文本。本教程提供有关如何使用 C# 完成此任务的分步指南。
 
-#### Q: Can I extract hyperlink text selectively based on specific criteria?
+#### 问：我可以根据特定条件有选择地提取超链接文本吗？
 
-A: Yes, you can selectively extract hyperlink text by iterating through each page of the PDF document and accessing the text associated with hyperlink annotations.
+答：是的，您可以通过迭代 PDF 文档的每个页面并访问与超链接注释关联的文本来选择性地提取超链接文本。
 
-#### Q: Are there any limitations when extracting hyperlink text?
+#### 问：提取超链接文本有什么限制吗？
 
-A: The accuracy of hyperlink text extraction depends on the formatting and layout of the PDF document. Complex graphical elements or non-standard hyperlink representations might require additional handling.
+答：超链接文本提取的准确性取决于 PDF 文档的格式和布局。复杂的图形元素或非标准超链接表示可能需要额外的处理。
 
-#### Q: Can I extract hyperlink text from password-protected PDF documents?
+#### 问：我可以从受密码保护的 PDF 文档中提取超链接文本吗？
 
-A: Aspose.PDF for .NET can extract hyperlink text from password-protected PDF documents as long as you provide the appropriate authentication credentials when loading the document.
+答：只要您在加载文档时提供适当的身份验证凭据，Aspose.PDF for .NET 就可以从受密码保护的 PDF 文档中提取超链接文本。
 
-#### Q: How can I utilize the extracted hyperlink text in my application?
+#### 问：如何在我的应用程序中使用提取的超链接文本？
 
-A: Once you've extracted the hyperlink text, you can analyze, categorize, or display it as needed within your application. You can also incorporate it into reports or data analysis.
+答：提取超链接文本后，您可以根据需要在应用程序中对其进行分析、分类或显示。您还可以将其合并到报告或数据分析中。
 
-#### Q: Is it possible to extract other attributes of hyperlinks, such as URLs or destinations?
+#### 问：是否可以提取超链接的其他属性，例如 URL 或目的地？
 
-A: This tutorial focuses on extracting hyperlink text. To extract other attributes like URLs or destinations, you can refer to the official Aspose.PDF documentation for advanced hyperlink handling.
+答：本教程重点介绍提取超链接文本。要提取 URL 或目的地等其他属性，您可以参阅官方 Aspose.PDF 文档以进行高级超链接处理。

@@ -1,122 +1,122 @@
 ---
-title: Convert All Pages To EMF
-linktitle: Convert All Pages To EMF
-second_title: Aspose.PDF for .NET API Reference
-description: Easily convert all pages of a PDF document to EMF files with Aspose.PDF for .NET.
+title: تحويل كافة الصفحات إلى EMF
+linktitle: تحويل كافة الصفحات إلى EMF
+second_title: Aspose.PDF لمرجع .NET API
+description: يمكنك بسهولة تحويل جميع صفحات مستند PDF إلى ملفات EMF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 50
 url: /ar/net/programming-with-images/convert-all-pages-to-emf/
 ---
-This guide will take you step by step how to convert all pages of a PDF document to EMF (Enhanced Metafile) files using Aspose.PDF for .NET. Make sure you have already set up your environment and follow the steps below:
+سيأخذك هذا الدليل خطوة بخطوة حول كيفية تحويل جميع صفحات مستند PDF إلى ملفات EMF (ملف التعريف المحسن) باستخدام Aspose.PDF لـ .NET. تأكد من أنك قمت بالفعل بإعداد بيئتك واتبع الخطوات التالية:
 
-## Step 1: Define the document directory
+## الخطوة 1: تحديد دليل المستند
 
-Before you start, make sure you set the correct directory for the documents. Replace `"YOUR DOCUMENT DIRECTORY"` in the code with the path to the directory where your PDF document is located.
+ قبل البدء، تأكد من تعيين الدليل الصحيح للمستندات. يستبدل`"YOUR DOCUMENT DIRECTORY"` في الكود الذي يحتوي على المسار إلى الدليل الذي يوجد به مستند PDF الخاص بك.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Open the document
+## الخطوة 2: افتح المستند
 
-In this step, we will open the PDF document using the `Document` class of Aspose.PDF. Use the `Document` constructor and pass the path to the PDF document.
+في هذه الخطوة، سنقوم بفتح مستند PDF باستخدام الملف`Document` فئة Aspose.PDF. استخدم ال`Document` منشئ وتمرير المسار إلى وثيقة PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ConvertAllPagesToEMF.pdf");
 ```
 
-## Step 3: Convert each page to EMF
+## الخطوة 3: تحويل كل صفحة إلى EMF
 
-In this step, we will go through each page of the PDF document and convert them into individual EMF files. We will use a `for` loop to iterate through all the pages.
+ في هذه الخطوة، سنراجع كل صفحة من مستند PDF ونقوم بتحويلها إلى ملفات EMF فردية. سوف نستخدم أ`for` حلقة للتكرار عبر جميع الصفحات.
 
 ```csharp
 for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 {
-     // Create a stream to save the EMF image
+     // قم بإنشاء دفق لحفظ صورة EMF
      using (FileStream imageStream = new FileStream(dataDir + "image" + pageCount + "_out" + ".emf", FileMode.Create))
      {
-         // Create a Resolution object
+         // إنشاء كائن القرار
          Resolution resolution = new Resolution(300);
         
-         // Create an EMF device with the specified attributes
-         // Width, Height, Resolution
+         // قم بإنشاء جهاز EMF بالسمات المحددة
+         // العرض، الارتفاع، الدقة
          EmfDevice emfDevice = new EmfDevice(500, 700, resolution);
         
-         // Convert a specific page and save the image to the stream
+         // تحويل صفحة معينة وحفظ الصورة في الدفق
          emfDevice.Process(pdfDocument.Pages[pageCount], imageStream);
         
-         // Close the stream
+         // أغلق الدفق
          imageStream.Close();
      }
 }
 ```
 
-### Sample source code for Convert All Pages To EMF using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لتحويل كافة الصفحات إلى EMF باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir+ "ConvertAllPagesToEMF.pdf");
 for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 {
 	using (FileStream imageStream = new FileStream(dataDir + "image" + pageCount + "_out" + ".emf", FileMode.Create))
 	{
-		// Create Resolution object
+		// إنشاء كائن القرار
 		Resolution resolution = new Resolution(300);
-		// Create PNG device with specified attributes
-		// Width, Height, Resolution
+		// قم بإنشاء جهاز PNG بالسمات المحددة
+		// العرض، الارتفاع، الدقة
 		EmfDevice emfDevice = new EmfDevice(500, 700, resolution);
-		// Convert a particular page and save the image to stream
+		//تحويل صفحة معينة وحفظ الصورة للبث
 		emfDevice.Process(pdfDocument.Pages[pageCount], imageStream);
-		// Close stream
+		// إغلاق الدفق
 		imageStream.Close();
 	}
 }
 System.Console.WriteLine("PDF pages are converted to EMF successfully!");
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You have successfully converted all pages of a PDF document to EMF files using Aspose.PDF for .NET. Individual EMF files are saved in the specified directory. You can now use these EMF files in your projects or applications.
+تهنئة ! لقد نجحت في تحويل كافة صفحات مستند PDF إلى ملفات EMF باستخدام Aspose.PDF لـ .NET. يتم حفظ ملفات EMF الفردية في الدليل المحدد. يمكنك الآن استخدام ملفات EMF هذه في مشاريعك أو تطبيقاتك.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is EMF, and why would I need to convert PDF pages to EMF files?
+#### س: ما هو EMF، ولماذا أحتاج إلى تحويل صفحات PDF إلى ملفات EMF؟
 
-A: EMF stands for Enhanced Metafile, a vector graphics file format widely used for storing graphical images. Converting PDF pages to EMF format can be beneficial for preserving vector-based graphics and facilitating further editing or integration.
+ج: يشير EMF إلى Enhanced Metafile، وهو تنسيق ملف رسومات متجه يستخدم على نطاق واسع لتخزين الصور الرسومية. يمكن أن يكون تحويل صفحات PDF إلى تنسيق EMF مفيدًا للحفاظ على الرسومات المستندة إلى المتجهات وتسهيل المزيد من التحرير أو التكامل.
 
-#### Q: How does Aspose.PDF for .NET assist in the conversion of PDF pages to EMF files?
+#### س: كيف يساعد Aspose.PDF for .NET في تحويل صفحات PDF إلى ملفات EMF؟
 
-A: Aspose.PDF for .NET offers a straightforward approach to convert each page of a PDF document to individual EMF files, making the process efficient and user-friendly.
+ج: يوفر Aspose.PDF for .NET أسلوبًا مباشرًا لتحويل كل صفحة من مستند PDF إلى ملفات EMF فردية، مما يجعل العملية فعالة وسهلة الاستخدام.
 
-#### Q: Why is defining the document directory important in the PDF to EMF conversion process?
+#### س: لماذا يعتبر تحديد دليل المستند مهمًا في عملية تحويل PDF إلى EMF؟
 
-A: Specifying the document directory ensures that the PDF document is correctly located, and the resulting EMF files are saved in the desired output path.
+ج: يضمن تحديد دليل المستند تحديد موقع مستند PDF بشكل صحيح، ويتم حفظ ملفات EMF الناتجة في مسار الإخراج المطلوب.
 
-#### Q: How do I open a PDF document using Aspose.PDF for .NET in the PDF to EMF conversion process?
+#### س: كيف يمكنني فتح مستند PDF باستخدام Aspose.PDF لـ .NET في عملية التحويل من PDF إلى EMF؟
 
-A: Use the `Document` class to open the PDF document, which serves as the input for the conversion process.
+ ج: استخدم`Document` فئة لفتح مستند PDF، الذي يعمل كمدخل لعملية التحويل.
 
-#### Q: How does the conversion of each PDF page to individual EMF files work?
+#### س: كيف يتم تحويل كل صفحة PDF إلى ملفات EMF فردية؟
 
-A: A `for` loop iterates through each page of the PDF document. For each page, an EMF image is generated using the `EmfDevice`, and the resulting image is saved in the specified output directory.
+ ج: أ`for` تتكرر التكرارات خلال كل صفحة من مستند PDF. لكل صفحة، يتم إنشاء صورة EMF باستخدام`EmfDevice`، ويتم حفظ الصورة الناتجة في دليل الإخراج المحدد.
 
-#### Q: Can I customize the attributes of the EMF files during the conversion process?
+#### س: هل يمكنني تخصيص سمات ملفات EMF أثناء عملية التحويل؟
 
-A: Yes, you can customize attributes such as width, height, and resolution of the EMF files to meet your specific requirements.
+ج: نعم، يمكنك تخصيص سمات مثل العرض والارتفاع ودقة ملفات EMF لتلبية متطلباتك المحددة.
 
-#### Q: Is batch processing supported for converting multiple PDF documents to EMF files?
+#### س: هل يتم دعم المعالجة المجمعة لتحويل مستندات PDF متعددة إلى ملفات EMF؟
 
-A: While the provided code snippet is designed for individual PDF documents, you can implement batch processing by extending the logic to handle multiple PDF files.
+ج: على الرغم من أن مقتطف التعليمات البرمجية المقدم مصمم لمستندات PDF الفردية، إلا أنه يمكنك تنفيذ المعالجة المجمعة عن طريق توسيع المنطق للتعامل مع ملفات PDF متعددة.
 
-#### Q: How can I use the generated EMF files in my projects or applications?
+#### س: كيف يمكنني استخدام ملفات EMF التي تم إنشاؤها في مشاريعي أو تطبيقاتي؟
 
-A: The EMF files generated through this process can be seamlessly integrated into your projects or applications, allowing you to leverage vector graphics for various purposes.
+ج: يمكن دمج ملفات EMF التي تم إنشاؤها من خلال هذه العملية بسلاسة في مشاريعك أو تطبيقاتك، مما يسمح لك بالاستفادة من الرسومات المتجهة لأغراض متعددة.
 
-#### Q: What advantages does the EMF format offer compared to other image formats?
+#### س: ما هي المزايا التي يقدمها تنسيق EMF مقارنة بتنسيقات الصور الأخرى؟
 
-A: EMF is a vector graphics format, offering scalability and the ability to preserve image quality when resized, making it suitable for diagrams, charts, and illustrations.
+ج: EMF هو تنسيق رسومات متجهة، يوفر قابلية التوسع والقدرة على الحفاظ على جودة الصورة عند تغيير حجمها، مما يجعله مناسبًا للرسوم البيانية والمخططات والرسوم التوضيحية.
 
-#### Q: Are there any limitations to the PDF to EMF conversion process using Aspose.PDF for .NET?
+#### س: هل هناك أي قيود على عملية التحويل من PDF إلى EMF باستخدام Aspose.PDF لـ .NET؟
 
-A: Aspose.PDF for .NET is a powerful tool, but the complexity of the PDF content may impact the accuracy and fidelity of the resulting EMF files.
+ج: يعد Aspose.PDF for .NET أداة قوية، ولكن تعقيد محتوى PDF قد يؤثر على دقة وإخلاص ملفات EMF الناتجة.

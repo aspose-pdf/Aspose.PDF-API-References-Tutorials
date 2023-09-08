@@ -1,40 +1,40 @@
 ---
-title: Highlight Character In PDF File
-linktitle: Highlight Character In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to highlight characters in PDF file using Aspose.PDF for .NET.
+title: تسليط الضوء على الحرف في ملف PDF
+linktitle: تسليط الضوء على الحرف في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية تمييز الأحرف في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 240
 url: /ar/net/programming-with-text/highlight-character-in-pdf/
 ---
-In this tutorial, we will explain how to highlight characters in a PDF file using the Aspose.PDF library for .NET. We will go through the step-by-step process of highlighting characters in a PDF using the provided C# source code.
+سنشرح في هذا البرنامج التعليمي كيفية تمييز الأحرف في ملف PDF باستخدام مكتبة Aspose.PDF لـ .NET. سنتابع عملية تمييز الأحرف خطوة بخطوة في ملف PDF باستخدام كود مصدر C# المقدم.
 
-## Requirements
+## متطلبات
 
-Before you begin, ensure that you have the following:
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- The Aspose.PDF for .NET library installed.
-- A basic understanding of C# programming.
+- تم تثبيت Aspose.PDF لمكتبة .NET.
+- فهم أساسي للبرمجة C#.
 
-## Step 1: Set up the Document Directory
+## الخطوة 1: إعداد دليل المستندات
 
-First, you need to set the path to the directory where your input PDF file is located. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your PDF file.
+ أولاً، تحتاج إلى تعيين المسار إلى الدليل الذي يوجد به ملف PDF الذي قمت بإدخاله. يستبدل`"YOUR DOCUMENT DIRECTORY"` في ال`dataDir` متغير مع المسار إلى ملف PDF الخاص بك.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load the PDF Document
+## الخطوة 2: قم بتحميل مستند PDF
 
-Next, we load the input PDF document using the `Aspose.Pdf.Document` class.
+ بعد ذلك، نقوم بتحميل مستند PDF المدخل باستخدام ملف`Aspose.Pdf.Document` فصل.
 
 ```csharp
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(dataDir + "input.pdf");
 ```
 
-## Step 3: Convert PDF to Image
+## الخطوة 3: تحويل PDF إلى صورة
 
-To highlight characters, we convert the PDF document to an image using the `PdfConverter` class. We set the resolution for the conversion and retrieve the image as a `Bitmap` object.
+ لتسليط الضوء على الحروف، نقوم بتحويل وثيقة PDF إلى صورة باستخدام`PdfConverter` فصل. قمنا بتعيين دقة التحويل واسترجاع الصورة كملف`Bitmap` هدف.
 
 ```csharp
 int resolution = 150;
@@ -46,34 +46,34 @@ using (MemoryStream ms = new MemoryStream())
      Bitmap bmp = (Bitmap)Bitmap.FromStream(ms);
 ```
 
-## Step 4: Highlight Characters
+## الخطوة 4: تسليط الضوء على الشخصيات
 
-We loop through each page of the PDF document and use a `TextFragmentAbsorber` object to find all the words in the page. We then iterate over the text fragments, segments, and characters to highlight them using rectangles.
+ نقوم بالتكرار خلال كل صفحة من مستند PDF ونستخدم ملف`TextFragmentAbsorber` كائن للعثور على جميع الكلمات في الصفحة. نقوم بعد ذلك بالتكرار على أجزاء النص والأجزاء والأحرف لتمييزها باستخدام المستطيلات.
 
 ```csharp
 using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
 {
-     // Set scale and transform
+     //ضبط الحجم والتحويل
      float scale = resolution / 72f;
      gr.Transform = new System.Drawing.Drawing2D.Matrix(scale, 0, 0, -scale, 0, bmp.Height);
 
-     // Loop through pages
+     // حلقة من خلال الصفحات
      for (int i = 0; i < pdfDocument.Pages.Count; i++)
      {
          Page page = pdfDocument.Pages[1];
 
-         // Find all words in the page
+         // البحث عن جميع الكلمات في الصفحة
          TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
          textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
          page. Accept(textFragmentAbsorber);
          TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
 
-         // Loop through text fragments
+         // حلقة من خلال أجزاء النص
          foreach(TextFragment textFragment in textFragmentCollection)
          {
              if (i == 0)
              {
-                 // Highlight characters
+                 // تسليط الضوء على الشخصيات
                  gr.DrawRectangle(
                      Think.Yellow,
                      (float)textFragment.Position.XIndent,
@@ -81,10 +81,10 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
                      (float)textFragment.Rectangle.Width,
                      (float)textFragment.Rectangle.Height);
 
-                 // Loop through segments
+                 // حلقة من خلال القطاعات
                  foreach(TextSegment segment in textFragment.Segments)
                  {
-                     // Highlight segment
+                     // تسليط الضوء على الجزء
                      gr.DrawRectangle(
                          Think Green,
                          (float)segment.Rectangle.LLX,
@@ -92,10 +92,10 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
                          (float)segment.Rectangle.Width,
                          (float)segment.Rectangle.Height);
 
-                     // Loop through characters
+                     // حلقة من خلال الشخصيات
                      foreach(CharInfo characterInfo in segment.Characters)
                      {
-                         // Highlightcharacter
+                         // تسليط الضوء على الحرف
                          gr.DrawRectangle(
                              Think.Black,
                              (float)characterInfo.Rectangle.LLx,
@@ -110,20 +110,20 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
 }
 ```
 
-## Step 5: Save the Output Image
+## الخطوة 5: احفظ صورة الإخراج
 
-Finally, we save the modified image with the highlighted characters to the specified output file.
+وأخيرًا، نقوم بحفظ الصورة المعدلة بالأحرف المميزة في ملف الإخراج المحدد.
 
 ```csharp
 dataDir = dataDir + "HighlightCharacterInPDF_out.png";
 bmp.Save(dataDir, System.Drawing.Imaging.ImageFormat.Png);
 ```
 
-### Sample source code for Highlight Character In PDF using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لـ Highlight Character In PDF باستخدام Aspose.PDF لـ .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// المسار إلى دليل المستندات.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
 	int resolution = 150;
 	Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(dataDir + "input.pdf");
@@ -140,13 +140,13 @@ try
 			for (int i = 0; i < pdfDocument.Pages.Count; i++)
 			{
 				Page page = pdfDocument.Pages[1];
-				// Create TextAbsorber object to find all words
+				// قم بإنشاء كائن TextAbsorter للعثور على جميع الكلمات
 				TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
 				textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
 				page.Accept(textFragmentAbsorber);
-				// Get the extracted text fragments
+				// احصل على أجزاء النص المستخرجة
 				TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-				// Loop through the fragments
+				// حلقة من خلال الشظايا
 				foreach (TextFragment textFragment in textFragmentCollection)
 				{
 					if (i == 0)
@@ -195,42 +195,42 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, you have learned how to highlight characters in a PDF document using the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can highlight characters in a PDF and save the output as an image.
+في هذا البرنامج التعليمي، تعلمت كيفية تمييز الأحرف في مستند PDF باستخدام مكتبة Aspose.PDF لـ .NET. باتباع الدليل الموضح خطوة بخطوة وتنفيذ كود C# المقدم، يمكنك تمييز الأحرف في ملف PDF وحفظ الإخراج كصورة.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of the "Highlight Character In PDF File" tutorial?
+#### س: ما هو الغرض من البرنامج التعليمي "تمييز الأحرف في ملف PDF"؟
 
-A: The "Highlight Character In PDF File" tutorial explains how to use the Aspose.PDF library for .NET to highlight characters within a PDF document. The tutorial provides a step-by-step guide and C# source code to achieve this.
+ج: يشرح البرنامج التعليمي "Highlight Character In PDF File" كيفية استخدام مكتبة Aspose.PDF لـ .NET لتمييز الأحرف داخل مستند PDF. يوفر البرنامج التعليمي دليلاً خطوة بخطوة وكود مصدر C# لتحقيق ذلك.
 
-#### Q: Why would I want to highlight characters in a PDF document?
+#### س: لماذا أرغب في تمييز الأحرف في مستند PDF؟
 
-A: Highlighting characters in a PDF document can be useful for various purposes, such as emphasizing specific content or making certain text more visible and distinguishable.
+ج: يمكن أن يكون تمييز الأحرف في مستند PDF مفيدًا لأغراض متعددة، مثل إبراز محتوى معين أو جعل نص معين أكثر وضوحًا وتمييزًا.
 
-#### Q: How do I set up the document directory?
+#### س: كيف أقوم بإعداد دليل المستندات؟
 
-A: To set up the document directory:
+ج: لإعداد دليل المستندات:
 
-1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where your input PDF file is located.
+1.  يستبدل`"YOUR DOCUMENT DIRECTORY"` في ال`dataDir` متغير مع المسار إلى الدليل حيث يوجد ملف PDF المدخل الخاص بك.
 
-#### Q: How do I load the PDF document and convert it to an image?
+#### س: كيف يمكنني تحميل مستند PDF وتحويله إلى صورة؟
 
-A: In the tutorial, the `Aspose.Pdf.Document` class is used to load the input PDF document. Then, the `PdfConverter` class is employed to convert the PDF document to an image. The resolution of the image is set, and the image is retrieved as a `Bitmap` object.
+ ج: في البرنامج التعليمي،`Aspose.Pdf.Document` يتم استخدام الفئة لتحميل مستند PDF الإدخال. ثم،`PdfConverter` يتم استخدام الفصل لتحويل مستند PDF إلى صورة. يتم تعيين دقة الصورة، ويتم استرداد الصورة كملف`Bitmap` هدف.
 
-#### Q: How do I highlight characters in the PDF document image?
+#### س: كيف يمكنني تمييز الأحرف في صورة مستند PDF؟
 
-A: The tutorial guides you through the process of looping through each page of the PDF document, finding words using a `TextFragmentAbsorber`, and iterating through text fragments, segments, and characters to highlight them using rectangles.
+ج: يرشدك البرنامج التعليمي خلال عملية التكرار خلال كل صفحة من مستند PDF، والبحث عن الكلمات باستخدام ملف`TextFragmentAbsorber`، والتكرار عبر أجزاء النص والأجزاء والأحرف لتمييزها باستخدام المستطيلات.
 
-#### Q: Can I customize the appearance of the highlighted characters and segments?
+#### س: هل يمكنني تخصيص مظهر الشخصيات والمقاطع المميزة؟
 
-A: Yes, you can customize the appearance of the highlighted characters and segments by modifying the colors and styles used in the drawing operations.
+ج: نعم، يمكنك تخصيص مظهر الأحرف والمقاطع المميزة عن طريق تعديل الألوان والأنماط المستخدمة في عمليات الرسم.
 
-#### Q: How do I save the modified image with the highlighted characters?
+#### س: كيف أحفظ الصورة المعدلة بالأحرف المميزة؟
 
-A: The tutorial demonstrates how to save the modified image with the highlighted characters to the specified output file using the `Save` method of the `Bitmap` class.
+ ج: يوضح البرنامج التعليمي كيفية حفظ الصورة المعدلة بالأحرف المميزة في ملف الإخراج المحدد باستخدام ملف`Save` طريقة`Bitmap` فصل.
 
-#### Q: Is a valid Aspose License required for this tutorial?
+#### س: هل يلزم وجود ترخيص Aspose صالح لهذا البرنامج التعليمي؟
 
-A: Yes, a valid Aspose License is required for this tutorial to work correctly. You can purchase a full license or obtain a 30-day temporary license from the Aspose website.
+ج: نعم، يلزم وجود ترخيص Aspose صالح حتى يعمل هذا البرنامج التعليمي بشكل صحيح. يمكنك شراء ترخيص كامل أو الحصول على ترخيص مؤقت لمدة 30 يومًا من موقع Aspose.

@@ -1,37 +1,37 @@
 ---
-title: Digitally Sign With Time Stamp In PDF File
-linktitle: Digitally Sign With Time Stamp In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to perform a digital signature with time stamp in PDF file using Aspose.PDF for .NET.
+title: 在 PDF 文件中使用时间戳进行数字签名
+linktitle: 在 PDF 文件中使用时间戳进行数字签名
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 在 PDF 文件中执行带时间戳的数字签名。
 type: docs
 weight: 50
 url: /zh/net/programming-with-security-and-signatures/digitally-sign-with-time-stamp/
 ---
-In this tutorial, we will walk you through the process of digitally signing in PDF file with time stamp using Aspose.PDF for .NET. The digital signature with timestamp guarantees the authenticity and integrity of the document, by adding an electronic fingerprint with a timestamp.
+在本教程中，我们将引导您完成使用 Aspose.PDF for .NET 对带有时间戳的 PDF 文件进行数字签名的过程。带时间戳的数字签名通过添加带时间戳的电子指纹来保证文档的真实性和完整性。
 
-## Step 1: Prerequisites
+## 第 1 步：先决条件
 
-Before you begin, make sure you have the following prerequisites:
+在开始之前，请确保您具备以下先决条件：
 
-- Basic knowledge of the C# programming language
-- Installing Visual Studio on your machine
-- Aspose.PDF library for .NET installed
+- C# 编程语言的基础知识
+- 在您的计算机上安装 Visual Studio
+- 已安装适用于 .NET 的 Aspose.PDF 库
 
-## Step 2: Environment setup
+## 第2步：环境设置
 
-To get started, follow these steps to set up your development environment:
+首先，请按照以下步骤设置您的开发环境：
 
-1. Open Visual Studio and create a new C# project.
-2. Import the required namespaces into your code file:
+1. 打开 Visual Studio 并创建一个新的 C# 项目。
+2. 将所需的命名空间导入到您的代码文件中：
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Forms;
 ```
 
-## Step 3: Digital signature with timestamp
+## 第3步：带时间戳的数字签名
 
-The first step is to perform the digital signature with timestamp on the PDF file. The provided code shows how to achieve this signature with Aspose.PDF for .NET.
+第一步是对 PDF 文件执行带时间戳的数字签名。提供的代码展示了如何使用 Aspose.PDF for .NET 实现此签名。
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -50,11 +50,11 @@ using (Document document = new Document(dataDir + @"DigitallySign.pdf"))
 }
 ```
 
-This code loads a PDF file, creates a digital signature with timestamp using a PFX file (private key) and the specified timestamp parameters. The signature is then added to the PDF file and saved with the suffix "_out".
+此代码加载 PDF 文件，使用 PFX 文件（私钥）和指定的时间戳参数创建带时间戳的数字签名。然后将签名添加到 PDF 文件中并以后缀“”保存_出去”。
 
-### Sample source code for Digitally Sign With Time Stamp using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 进行数字签名的示例源代码 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 string pfxFile = "";
 using (Document document = new Document(dataDir + @"DigitallySign.pdf"))
@@ -62,66 +62,66 @@ using (Document document = new Document(dataDir + @"DigitallySign.pdf"))
 	using (PdfFileSignature signature = new PdfFileSignature(document))
 	{
 		PKCS7 pkcs = new PKCS7(pfxFile, "pfx_password");
-		TimestampSettings timestampSettings = new TimestampSettings("https:\\your_timestamp_settings", "user:password"); // User/Password can be omitted
+		TimestampSettings timestampSettings = new TimestampSettings("https:\\your_timestamp_settings", "user:password"); //用户/密码可以省略
 		pkcs.TimestampSettings = timestampSettings;
 		System.Drawing.Rectangle rect = new System.Drawing.Rectangle(100, 100, 200, 100);
-		// Create any of the three signature types
+		//创建三种签名类型中的任意一种
 		signature.Sign(1, "Signature Reason", "Contact", "Location", true, rect, pkcs);
-		// Save output PDF file
+		//保存输出 PDF 文件
 		signature.Save(dataDir + "DigitallySignWithTimeStamp_out.pdf");
 	}
 }
 ```
 
-## Conclusion
+## 结论
 
-Congratulation ! You have successfully performed a digital signature with timestamp on a PDF file using Aspose.PDF for .NET. This tutorial covered the step-by-step process from creating the signature to saving the updated PDF file. You can now use this feature to add digital signatures with timestamp to your PDF files.
+恭喜！您已使用 Aspose.PDF for .NET 对 PDF 文件成功执行了带时间戳的数字签名。本教程介绍了从创建签名到保存更新的 PDF 文件的分步过程。您现在可以使用此功能向 PDF 文件添加带有时间戳的数字签名。
 
-### FAQ's for digitally sign with time stamp in PDF file
+### 在 PDF 文件中使用时间戳进行数字签名的常见问题解答
 
-#### Q: What is the purpose of digitally signing with a timestamp?
+#### 问：使用时间戳进行数字签名的目的是什么？
 
-A: Digitally signing with a timestamp adds an electronic fingerprint with a timestamp to a PDF file, ensuring the document's authenticity and integrity at a specific point in time.
+答：时间戳数字签名是在 PDF 文件中添加带有时间戳的电子指纹，确保文档在特定时间点的真实性和完整性。
 
-#### Q: What prerequisites are needed to start this tutorial?
+#### 问：开始本教程需要什么先决条件？
 
-A: Before you begin, ensure you have a basic understanding of the C# programming language, have Visual Studio installed, and have the Aspose.PDF library for .NET installed.
+答：开始之前，请确保您对 C# 编程语言有基本的了解，已安装 Visual Studio，并安装了适用于 .NET 的 Aspose.PDF 库。
 
-#### Q: How can I set up my development environment?
+#### 问：如何设置我的开发环境？
 
-A: Follow the provided steps to set up your development environment, including creating a new C# project in Visual Studio and importing the necessary namespaces.
+答：按照提供的步骤设置您的开发环境，包括在 Visual Studio 中创建新的 C# 项目并导入必要的命名空间。
 
-#### Q: How do I add a digital signature with a timestamp to a PDF?
+#### 问：如何向 PDF 添加带有时间戳的数字签名？
 
-A: The provided sample code demonstrates how to load a PDF file, create a digital signature with a timestamp using a PFX file (private key) and specified timestamp settings, add the signature to the PDF file, and save the updated file.
+答：提供的示例代码演示了如何加载 PDF 文件、使用 PFX 文件（私钥）和指定的时间戳设置创建带有时间戳的数字签名、将签名添加到 PDF 文件并保存更新的文件。
 
-#### Q: What is a PFX file, and why is it used in the example?
+#### 问：什么是 PFX 文件，为什么在示例中使用它？
 
-A: A PFX (Personal Exchange Format) file contains a private key and certificate. It's used here to provide cryptographic functionality for digital signatures. Ensure you replace the placeholder with your PFX file and password.
+答：PFX（个人交换格式）文件包含私钥和证书。它在这里用于为数字签名提供加密功能。确保将占位符替换为您的 PFX 文件和密码。
 
-#### Q: What are TimestampSettings?
+#### 问：什么是时间戳设置？
 
-A: TimestampSettings define the settings for the timestamp server used to add the electronic timestamp to the signature. It includes the timestamp server URL and optional user credentials.
+答：TimestampSettings 定义用于将电子时间戳添加到签名的时间戳服务器的设置。它包括时间戳服务器 URL 和可选的用户凭据。
 
-#### Q: Can I use a timestamp server other than the one in the example?
-A: Yes, you can use any compatible timestamp server. Replace the URL and, if required, provide the appropriate user credentials in the `TimestampSettings` object.
+#### 问：除了示例中的服务器之外，我还可以使用其他时间戳服务器吗？
+答：是的，您可以使用任何兼容的时间戳服务器。替换 URL，并根据需要在中提供适当的用户凭据`TimestampSettings`目的。
 
-#### Q: What is the purpose of specifying the signature rectangle?
+#### 问：指定签名矩形的目的是什么？
 
-A: The signature rectangle defines the position and dimensions of the digital signature appearance on the PDF page. Adjust these values to position the signature as desired.
+答：签名矩形定义了 PDF 页面上数字签名外观的位置和尺寸。调整这些值以根据需要放置签名。
 
-#### Q: What happens if the timestamp server is unavailable during signing?
+#### 问：如果签名期间时间戳服务器不可用怎么办？
 
-A: If the timestamp server is unavailable during signing, the process may fail or take longer. Ensure your timestamp server is reliable and accessible.
+答：如果签名过程中时间戳服务器不可用，则该过程可能会失败或需要更长的时间。确保您的时间戳服务器可靠且可访问。
 
-#### Q: How can I verify the presence of a timestamp in the signed PDF?
+#### 问：如何验证签名 PDF 中是否存在时间戳？
 
-A: You can examine the signed PDF using the sample code provided. The `TimestampSettings` you used during signing should be available in the signature details.
+答：您可以使用提供的示例代码检查签名的 PDF。这`TimestampSettings`您在签名期间使用的内容应该可以在签名详细信息中找到。
 
-#### Q: Are digital signatures with timestamps legally binding?
+#### 问：带有时间戳的数字签名具有法律约束力吗？
 
-A: Digital signatures with timestamps hold legal value in many jurisdictions and are often considered more reliable than simple digital signatures. Consult legal experts in your jurisdiction for specific regulations.
+答：带有时间戳的数字签名在许多司法管辖区都具有法律价值，并且通常被认为比简单的数字签名更可靠。请咨询您所在司法管辖区的法律专家以了解具体规定。
 
-#### Q: Can I add multiple digital signatures with timestamps to a PDF?
+#### 问：我可以在 PDF 中添加多个带时间戳的数字签名吗？
 
-A: Yes, you can add multiple digital signatures with timestamps to a PDF file by calling the signature creation process multiple times. Each signature will have its own timestamp.
+答：是的，您可以通过多次调用签名创建过程，向 PDF 文件添加多个带时间戳的数字签名。每个签名都有自己的时间戳。

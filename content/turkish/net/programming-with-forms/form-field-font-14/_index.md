@@ -1,57 +1,57 @@
 ---
-title: Form Field Font 14
-linktitle: Form Field Font 14
-second_title: Aspose.PDF for .NET API Reference
-description: Easily configure the font of form fields in your PDF documents with Aspose.PDF for .NET.
+title: Form Alanı Yazı Tipi 14
+linktitle: Form Alanı Yazı Tipi 14
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile PDF belgelerinizdeki form alanlarının yazı tipini kolayca yapılandırın.
 type: docs
 weight: 110
 url: /tr/net/programming-with-forms/form-field-font-14/
 ---
-In this tutorial, we will show you how to configure the font of a form field using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+Bu eğitimde size Aspose.PDF for .NET kullanarak bir form alanının yazı tipini nasıl yapılandıracağınızı göstereceğiz. Bu süreçte size yol göstermek için C# kaynak kodunu adım adım açıklayacağız.
 
-## Step 1: Preparation
+## Adım 1: Hazırlık
 
-First, make sure you have imported the necessary libraries and set the path to the documents directory:
+Öncelikle gerekli kitaplıkları içe aktardığınızdan ve belgeler dizininin yolunu ayarladığınızdan emin olun:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Open the document
+## 2. Adım: Belgeyi açın
 
-Open the existing PDF document:
+Mevcut PDF belgesini açın:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "FormFieldFont14.pdf");
 ```
 
-## Step 3: Get a particular form field
+## 3. Adım: Belirli bir form alanı edinin
 
-Get the desired form field (in this example, we're using the "textbox1" field):
+İstediğiniz form alanını alın (bu örnekte "textbox1" alanını kullanıyoruz):
 
 ```csharp
 Aspose.Pdf.Forms.Field field = pdfDocument.Form["textbox1"] as Aspose.Pdf.Forms.Field;
 ```
 
-## Step 4: Create a font object
+## 4. Adım: Bir yazı tipi nesnesi oluşturun
 
-Create a font object for the new font you want to use (for example, "ComicSansMS"):
+Kullanmak istediğiniz yeni yazı tipi için bir yazı tipi nesnesi oluşturun (örneğin, "ComicSansMS"):
 
 ```csharp
 Aspose.Pdf.Text.Font font = FontRepository.FindFont("ComicSansMS");
 ```
 
-## Step 5: Configure font information for the form field
+## 5. Adım: Form alanı için yazı tipi bilgilerini yapılandırma
 
-Configure the font information for the form field using the font created earlier:
+Daha önce oluşturulan yazı tipini kullanarak form alanı için yazı tipi bilgilerini yapılandırın:
 
 ```csharp
 field.DefaultAppearance = new Aspose.Pdf.Forms.DefaultAppearance(font, 14, System.Drawing.Color.Black);
 ```
 
-## Step 6: Save the updated document
+## 6. Adım: Güncellenen belgeyi kaydedin
 
-Save the updated PDF document:
+Güncellenen PDF belgesini kaydedin:
 
 ```csharp
 dataDir = dataDir + "FormFieldFont14_out.pdf";
@@ -59,46 +59,46 @@ pdfDocument.Save(dataDir);
 ```
 
 
-### Sample source code for Form Field Font 14 using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanan Form Field Font 14 için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir + "FormFieldFont14.pdf");
-// Get particular form field from document
+// Belgeden belirli bir form alanı alın
 Aspose.Pdf.Forms.Field field = pdfDocument.Form["textbox1"] as Aspose.Pdf.Forms.Field;
-// Create font object
+// Yazı tipi nesnesi oluştur
 Aspose.Pdf.Text.Font font = FontRepository.FindFont("ComicSansMS");
-// Set the font information for form field
+// Form alanı için yazı tipi bilgilerini ayarlama
 // Field.DefaultAppearance = new Aspose.Pdf.Forms.in.DefaultAppearance(font, 10, System.Drawing.Color.Black);
 dataDir = dataDir + "FormFieldFont14_out.pdf";
-// Save updated document
+// Güncellenen belgeyi kaydet
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nForm field font setup successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we learned how to configure the font of a form field using Aspose.PDF for .NET. By following these steps, you can easily specify the font and font size for form fields in your PDF documents using Aspose.PDF.
+Bu eğitimde Aspose.PDF for .NET kullanarak bir form alanının yazı tipini nasıl yapılandıracağımızı öğrendik. Bu adımları takip ederek Aspose.PDF'i kullanarak PDF belgelerinizdeki form alanları için yazı tipini ve yazı tipi boyutunu kolayca belirleyebilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: Can I use any font for form fields in Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'teki form alanları için herhangi bir yazı tipini kullanabilir miyim?
 
-A: Yes, you can use any TrueType or OpenType font for form fields in Aspose.PDF for .NET. As long as the font is available and installed on the system or accessible through the FontRepository, you can use it to customize the appearance of form field text.
+C: Evet, Aspose.PDF for .NET'teki form alanları için herhangi bir TrueType veya OpenType yazı tipini kullanabilirsiniz. Font mevcut olduğu ve sistemde yüklü olduğu veya FontRepository aracılığıyla erişilebilir olduğu sürece form alanı metninin görünümünü özelleştirmek için kullanabilirsiniz.
 
-#### Q: How do I find the available fonts in Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'te mevcut yazı tiplerini nasıl bulabilirim?
 
-A: To find the available fonts in Aspose.PDF for .NET, you can use the `FontRepository.GetAvailableFonts()` method. This method returns an array of available fonts that you can use for form fields or any other text-related operations in your PDF document.
+ C: Aspose.PDF for .NET'te mevcut yazı tiplerini bulmak için`FontRepository.GetAvailableFonts()`yöntem. Bu yöntem, form alanları veya PDF belgenizdeki metinle ilgili diğer işlemler için kullanabileceğiniz bir dizi mevcut yazı tipini döndürür.
 
-#### Q: Can I change the font size for form fields to any value?
+#### S: Form alanlarının yazı tipi boyutunu herhangi bir değerle değiştirebilir miyim?
 
-A: Yes, you can change the font size for form fields to any positive numeric value using Aspose.PDF for .NET. However, it is essential to ensure that the font size is appropriate for the specific form field and does not lead to text truncation or overlapping with other elements in the document.
+C: Evet, Aspose.PDF for .NET'i kullanarak form alanlarının yazı tipi boyutunu herhangi bir pozitif sayısal değerle değiştirebilirsiniz. Ancak yazı tipi boyutunun belirli form alanına uygun olduğundan ve metnin kesilmesine veya belgedeki diğer öğelerle çakışmasına yol açmadığından emin olmak önemlidir.
 
-#### Q: Can I change the font color for form fields?
+#### S: Form alanlarının yazı tipi rengini değiştirebilir miyim?
 
-A: Yes, you can change the font color for form fields using Aspose.PDF for .NET. In the provided C# source code, the font color is set to black (`System.Drawing.Color.Black`), but you can customize it to any other valid color value.
+C: Evet, Aspose.PDF for .NET'i kullanarak form alanlarının yazı tipi rengini değiştirebilirsiniz. Sağlanan C# kaynak kodunda yazı tipi rengi siyah olarak ayarlanmıştır (`System.Drawing.Color.Black`), ancak bunu herhangi bir geçerli renk değerine göre özelleştirebilirsiniz.
 
-#### Q: How can I align the text within the form field?
+#### S: Form alanı içindeki metni nasıl hizalayabilirim?
 
-A: To align the text within the form field, you can use the `Multiline` property of the form field and set it to true. This property enables multiline text within the form field, allowing you to control the text alignment with line breaks and carriage returns.
+ C: Metni form alanı içinde hizalamak için`Multiline`form alanının özelliğini seçin ve true olarak ayarlayın. Bu özellik, form alanı içinde çok satırlı metni etkinleştirerek satır sonları ve satırbaşları ile metin hizalamasını kontrol etmenize olanak tanır.

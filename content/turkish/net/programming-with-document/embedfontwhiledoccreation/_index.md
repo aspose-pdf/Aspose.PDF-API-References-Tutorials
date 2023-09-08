@@ -1,48 +1,48 @@
 ---
-title: Embed Font While PDF Doc Creation
-linktitle: Embed Font While PDF Doc Creation
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to embed a font while creating a PDF document using Aspose.PDF for .NET. Ensure correct display on different devices.
+title: PDF Belgesi Oluşturulurken Yazı Tipini Göm
+linktitle: PDF Belgesi Oluşturulurken Yazı Tipini Göm
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF belgesi oluştururken yazı tipini nasıl yerleştireceğinizi öğrenin. Farklı cihazlarda doğru görüntülendiğinden emin olun.
 type: docs
 weight: 140
 url: /tr/net/programming-with-document/embedfontwhiledoccreation/
 ---
-In this tutorial, we will discuss how to embed a font while creating a PDF document using Aspose.PDF for .NET. Aspose.PDF for .NET is a powerful library that allows developers to create, edit, and manipulate PDF documents programmatically. This library provides a wide range of features to work with PDF documents, including adding text, images, tables, and much more. Embedding fonts while creating a PDF document is a common requirement for developers who want to ensure that the PDF document displays correctly on different devices, regardless of whether the required fonts are installed on those devices or not.
+Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF belgesi oluştururken yazı tipinin nasıl gömüleceğini tartışacağız. Aspose.PDF for .NET, geliştiricilerin PDF belgelerini programlı olarak oluşturmasına, düzenlemesine ve değiştirmesine olanak tanıyan güçlü bir kitaplıktır. Bu kitaplık, PDF belgeleriyle çalışmak için metin, resim, tablo ekleme ve çok daha fazlasını içeren çok çeşitli özellikler sunar. PDF belgesi oluştururken yazı tiplerini gömmek, gerekli yazı tiplerinin bu aygıtlarda yüklü olup olmadığına bakılmaksızın, PDF belgesinin farklı aygıtlarda doğru şekilde görüntülendiğinden emin olmak isteyen geliştiriciler için ortak bir gereksinimdir.
 
-## Step 1: Create a new C# Console Application
-To get started, create a new C# Console Application in Visual Studio. You can name it whatever you like. Once the project is created, you need to add a reference to the Aspose.PDF for .NET library.
+## 1. Adım: Yeni bir C# Konsol Uygulaması oluşturun
+Başlamak için Visual Studio'da yeni bir C# Konsol Uygulaması oluşturun. İstediğiniz ismi verebilirsiniz. Proje oluşturulduktan sonra Aspose.PDF for .NET kütüphanesine bir referans eklemeniz gerekir.
 
-## Step 2: Import the Aspose.PDF Namespace
-Add the following line of code at the top of your C# file to import the Aspose.PDF namespace:
+## Adım 2: Aspose.PDF Ad Alanını İçe Aktarın
+Aspose.PDF ad alanını içe aktarmak için C# dosyanızın en üstüne aşağıdaki kod satırını ekleyin:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 3: Instantiate a Pdf Object
-Instantiate a Pdf object by calling its empty constructor:
+## 3. Adım: Bir PDF Nesnesini Örneklendirin
+Boş yapıcısını çağırarak bir Pdf nesnesinin örneğini oluşturun:
 
 ```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 ```
 
-## Step 4: Create a Section in the Pdf Object
-Create a section in the Pdf object:
+## Adım 4: Pdf Nesnesinde Bölüm Oluşturun
+Pdf nesnesinde bir bölüm oluşturun:
 
 ```csharp
 Aspose.Pdf.Page page = doc.Pages.Add();
 ```
 
-## Step 5: Add Text to the Section
-Add text to the section:
+## Adım 5: Bölüme Metin Ekleme
+Bölüme metin ekleyin:
 
 ```csharp
 Aspose.Pdf.Text.TextFragment fragment = new Aspose.Pdf.Text.TextFragment("");
 Aspose.Pdf.Text.TextSegment segment = new Aspose.Pdf.Text.TextSegment(" This is a sample text using Custom font.");
 ```
 
-## Step 6: Set the Font and Embed It
-Set the font and embed it:
+## Adım 6: Yazı Tipini Ayarlayın ve Gömün
+Yazı tipini ayarlayın ve gömün:
 
 ```csharp
 Aspose.Pdf.Text.TextState ts = new Aspose.Pdf.Text.TextState();
@@ -53,25 +53,25 @@ fragment.Segments.Add(segment);
 page.Paragraphs.Add(fragment);
 ```
 
-## Step 7: Save the PDF Document
-Once you have embedded the font while creating the PDF document, you need to save the document:
+## Adım 7: PDF Belgesini Kaydedin
+PDF belgesini oluştururken yazı tipini gömdükten sonra belgeyi kaydetmeniz gerekir:
 
 ```csharp
 dataDir = dataDir + "EmbedFontWhileDocCreation_out.pdf";
-// Save PDF Document
+// PDF Belgesini Kaydet
 doc.Save(dataDir);
 ```
 
-### Example Source Code for Embed Font While Doc Creation using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak Belge Oluşturma Sırasında Gömülü Yazı Tipi için Örnek Kaynak Kodu
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate Pdf object by calling its empty constructor
+// Boş yapıcısını çağırarak Pdf nesnesini örnekleyin
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
-// Create a section in the Pdf object
+// Pdf nesnesinde bir bölüm oluşturun
 Aspose.Pdf.Page page = doc.Pages.Add();
 
 Aspose.Pdf.Text.TextFragment fragment = new Aspose.Pdf.Text.TextFragment("");
@@ -85,31 +85,31 @@ fragment.Segments.Add(segment);
 page.Paragraphs.Add(fragment);
 
 dataDir = dataDir + "EmbedFontWhileDocCreation_out.pdf";
-// Save PDF Document
+// PDF Belgesini Kaydet
 doc.Save(dataDir);
 ```
 
-## Conclusion
-In this tutorial, we have discussed how to embed a font while creating a PDF document using Aspose.PDF for .NET. Aspose.PDF for .NET provides a simple and easy-to-use API to work with PDF documents, including adding and embedding fonts. Embedding fonts while creating a PDF document is an important step to ensure that the document is displayed correctly on different devices, regardless of whether the required fonts are installed on those devices or not.
+## Çözüm
+Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF belgesi oluştururken yazı tipinin nasıl gömüleceğini tartıştık. Aspose.PDF for .NET, yazı tipi ekleme ve gömme de dahil olmak üzere PDF belgeleriyle çalışmak için basit ve kullanımı kolay bir API sağlar. PDF belgesi oluştururken yazı tiplerini gömmek, gerekli yazı tiplerinin bu aygıtlarda yüklü olup olmadığına bakılmaksızın, belgenin farklı aygıtlarda doğru şekilde görüntülenmesini sağlamak için önemli bir adımdır.
 
-### FAQ's for embed font while PDF doc creation
+### PDF belgesi oluştururken yazı tipi yerleştirmeyle ilgili SSS
 
-#### Q: Why is embedding fonts while creating a PDF document important?
+#### S: PDF belgesi oluştururken yazı tiplerini gömmek neden önemlidir?
 
-A: Embedding fonts while creating a PDF document is important to ensure that the document is displayed correctly on different devices, even if the required fonts are not installed on those devices. This helps maintain the document's intended appearance and prevents font substitution issues.
+C: PDF belgesi oluştururken yazı tiplerini gömmek, gerekli yazı tipleri bu aygıtlarda yüklü olmasa bile belgenin farklı aygıtlarda doğru şekilde görüntülenmesini sağlamak açısından önemlidir. Bu, belgenin amaçlanan görünümünün korunmasına yardımcı olur ve yazı tipi değiştirme sorunlarını önler.
 
-#### Q: How can I embed fonts while creating a PDF document using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET kullanarak bir PDF belgesi oluştururken yazı tiplerini nasıl gömebilirim?
 
-A: You can embed fonts while creating a PDF document using Aspose.PDF for .NET by specifying the font and setting the `IsEmbedded` property to `true`. This ensures that the font data is embedded in the PDF file.
+C: Aspose.PDF for .NET'i kullanarak bir PDF belgesi oluştururken yazı tipini belirleyerek ve yazı tipini ayarlayarak yazı tiplerini gömebilirsiniz.`IsEmbedded` mülkiyet`true`. Bu, yazı tipi verilerinin PDF dosyasına gömülmesini sağlar.
 
-#### Q: Can I specify a custom font while embedding it in a PDF document?
+#### S: Bir PDF belgesine gömerken özel bir yazı tipi belirtebilir miyim?
 
-A: Yes, you can specify a custom font while embedding it in a PDF document using Aspose.PDF for .NET. This allows you to use specific fonts that suit your design requirements.
+C: Evet, Aspose.PDF for .NET'i kullanarak bir PDF belgesine gömerken özel bir yazı tipi belirleyebilirsiniz. Bu, tasarım gereksinimlerinize uygun belirli yazı tiplerini kullanmanıza olanak tanır.
 
-#### Q: Is Aspose.PDF for .NET compatible with various font formats?
+#### S: Aspose.PDF for .NET çeşitli yazı tipi formatlarıyla uyumlu mudur?
 
-A: Yes, Aspose.PDF for .NET is compatible with various font formats, including TrueType, OpenType, and Type 1 fonts. It can embed fonts in a PDF document regardless of their format.
+C: Evet, Aspose.PDF for .NET; TrueType, OpenType ve Type 1 yazı tipleri de dahil olmak üzere çeşitli yazı tipi formatlarıyla uyumludur. Formatlarından bağımsız olarak yazı tiplerini bir PDF belgesine gömebilir.
 
-#### Q: Can I customize the font embedding process?
+#### S: Yazı tipi yerleştirme işlemini özelleştirebilir miyim?
 
-A: Yes, you can customize the font embedding process using Aspose.PDF for .NET. You can specify the font and set properties such as `IsEmbedded` to control how the font is embedded in the PDF document.
+ C: Evet, Aspose.PDF for .NET'i kullanarak yazı tipi yerleştirme işlemini özelleştirebilirsiniz. Yazı tipini belirtebilir ve aşağıdaki gibi özellikleri ayarlayabilirsiniz:`IsEmbedded` Yazı tipinin PDF belgesine nasıl gömüleceğini kontrol etmek için.

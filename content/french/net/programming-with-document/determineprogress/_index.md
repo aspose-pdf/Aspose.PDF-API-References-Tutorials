@@ -1,44 +1,44 @@
 ---
-title: Determine Progress To PDF File
-linktitle: Determine Progress To PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to determine the progress to a PDF file conversion process using Aspose.PDF for .NET with this step-by-step guide and code example.
+title: Déterminer la progression vers le fichier PDF
+linktitle: Déterminer la progression vers le fichier PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment déterminer la progression d'un processus de conversion de fichier PDF à l'aide d'Aspose.PDF pour .NET avec ce guide étape par étape et cet exemple de code.
 type: docs
 weight: 110
 url: /fr/net/programming-with-document/determineprogress/
 ---
-Aspose.PDF for .NET provides a feature that allows you to determine the progress of a PDF file conversion process. In this tutorial, we will provide a step-by-step guide on how to implement this feature using C# and Aspose.PDF for .NET.
+Aspose.PDF pour .NET fournit une fonctionnalité qui vous permet de déterminer la progression d'un processus de conversion de fichier PDF. Dans ce didacticiel, nous fournirons un guide étape par étape sur la façon d'implémenter cette fonctionnalité à l'aide de C# et Aspose.PDF pour .NET.
 
-## Step 1: Loading the PDF document
+## Étape 1 : Chargement du document PDF
 
-The first step is to load the PDF document that you want to convert. For this tutorial, we will use the file "AddTOC.pdf". Replace the path to this file with the path to your own PDF document.
+La première étape consiste à charger le document PDF que vous souhaitez convertir. Pour ce tutoriel, nous utiliserons le fichier « AddTOC.pdf ». Remplacez le chemin d'accès à ce fichier par le chemin d'accès à votre propre document PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "AddTOC.pdf");
 ```
 
-## Step 2: Setting up the custom progress handler
+## Étape 2 : Configuration du gestionnaire de progression personnalisé
 
-Next, we need to set up the custom progress handler that will be called during the conversion process. In this tutorial, we will use the `ConversionProgressEventHandler` delegate provided by Aspose.PDF for .NET.
+Ensuite, nous devons configurer le gestionnaire de progression personnalisé qui sera appelé pendant le processus de conversion. Dans ce tutoriel, nous utiliserons le`ConversionProgressEventHandler` délégué fourni par Aspose.PDF pour .NET.
 
 ```csharp
 DocSaveOptions saveOptions = new DocSaveOptions();
 saveOptions.CustomProgressHandler = new UnifiedSaveOptions.ConversionProgressEventHandler(ShowProgressOnConsole);
 ```
 
-## Step 3: Saving the PDF document
+## Étape 3 : Sauvegarde du document PDF
 
-Finally, we need to save the PDF document using the `Save()` method of the `Document` object. We will pass in the custom progress handler that we set up in the previous step as a parameter.
+ Enfin, nous devons enregistrer le document PDF en utilisant le`Save()` méthode du`Document` objet. Nous transmettrons le gestionnaire de progression personnalisé que nous avons configuré à l’étape précédente en tant que paramètre.
 
 ```csharp
 dataDir = dataDir + "DetermineProgress_out.pdf";
 pdfDocument.Save(dataDir, saveOptions);
 ```
 
-## Step 4: Implementing the progress handler
+## Étape 4 : Implémentation du gestionnaire de progression
 
-To implement the progress handler, we need to define a method that takes a single parameter of type `ConversionProgressEventArgs`. This method will be called during the conversion process to report the progress of the conversion.
+ Pour implémenter le gestionnaire de progression, nous devons définir une méthode qui prend un seul paramètre de type`ConversionProgressEventArgs`. Cette méthode sera appelée pendant le processus de conversion pour signaler la progression de la conversion.
 
 ```csharp
 private void ShowProgressOnConsole(ConversionProgressEventArgs args)
@@ -47,13 +47,13 @@ private void ShowProgressOnConsole(ConversionProgressEventArgs args)
 }
 ```
 
-### Example source code for Determine Progress using Aspose.PDF for .NET
+### Exemple de code source pour déterminer la progression à l'aide d'Aspose.PDF pour .NET
 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Ouvrir le document
 Document pdfDocument = new Document(dataDir + "AddTOC.pdf");
 DocSaveOptions saveOptions = new DocSaveOptions();
 saveOptions.CustomProgressHandler = new UnifiedSaveOptions.ConversionProgressEventHandler(ShowProgressOnConsole);
@@ -70,22 +70,22 @@ private void ShowProgressOnConsole(ConversionProgressEventArgs args)
 
 ## Conclusion
 
-In this tutorial, we have provided a step-by-step guide on how to determine the progress of a PDF document's conversion process using Aspose.PDF for .NET. We have also provided a code example that you can use as a reference when implementing this feature in your own application.
+Dans ce didacticiel, nous avons fourni un guide étape par étape sur la façon de déterminer la progression du processus de conversion d'un document PDF à l'aide d'Aspose.PDF pour .NET. Nous avons également fourni un exemple de code que vous pouvez utiliser comme référence lors de l'implémentation de cette fonctionnalité dans votre propre application.
 
-### FAQ's
+### FAQ
 
-#### Q: Why is it important to determine the progress of a PDF conversion process?
+#### Q : Pourquoi est-il important de déterminer la progression d’un processus de conversion PDF ?
 
-A: Determining the progress of a PDF conversion process is essential for providing feedback to users and monitoring the performance of the conversion. It helps users understand the current status of the conversion and estimate the remaining time.
+R : Déterminer la progression d'un processus de conversion PDF est essentiel pour fournir des commentaires aux utilisateurs et surveiller les performances de la conversion. Il aide les utilisateurs à comprendre l'état actuel de la conversion et à estimer le temps restant.
 
-#### Q: How can I determine the progress of a PDF conversion using Aspose.PDF for .NET?
+#### Q : Comment puis-je déterminer la progression d'une conversion PDF à l'aide d'Aspose.PDF pour .NET ?
 
-A: Aspose.PDF for .NET provides a custom progress handler feature that allows you to determine the progress of a PDF conversion process. You can set up a custom progress handler using the `ConversionProgressEventHandler` delegate and pass it to the `DocSaveOptions` while saving the PDF document.
+ R : Aspose.PDF pour .NET fournit une fonctionnalité de gestionnaire de progression personnalisée qui vous permet de déterminer la progression d'un processus de conversion PDF. Vous pouvez configurer un gestionnaire de progression personnalisé à l'aide du`ConversionProgressEventHandler` délégué et transmettez-le au`DocSaveOptions` lors de l'enregistrement du document PDF.
 
-#### Q: What is a progress handler in Aspose.PDF for .NET?
+#### Q : Qu'est-ce qu'un gestionnaire de progression dans Aspose.PDF pour .NET ?
 
-A: A progress handler in Aspose.PDF for .NET is a method that is called during a conversion process to report the progress of the conversion. You can define a progress handler using the `ConversionProgressEventHandler` delegate.
+ R : Un gestionnaire de progression dans Aspose.PDF pour .NET est une méthode appelée lors d'un processus de conversion pour signaler la progression de la conversion. Vous pouvez définir un gestionnaire de progression à l'aide du`ConversionProgressEventHandler` déléguer.
 
-#### Q: Is Aspose.PDF for .NET suitable for professional projects involving PDF conversion?
+#### Q : Aspose.PDF pour .NET est-il adapté aux projets professionnels impliquant la conversion de PDF ?
 
-A: Absolutely, Aspose.PDF for .NET is a powerful library that is widely used in professional projects for PDF conversion and manipulation tasks. It provides comprehensive functionalities and excellent performance for working with PDF files in .NET applications.
+R : Absolument, Aspose.PDF pour .NET est une bibliothèque puissante largement utilisée dans les projets professionnels pour les tâches de conversion et de manipulation de PDF. Il offre des fonctionnalités complètes et d'excellentes performances pour travailler avec des fichiers PDF dans des applications .NET.

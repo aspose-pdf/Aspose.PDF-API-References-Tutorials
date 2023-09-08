@@ -1,19 +1,19 @@
 ---
-title: Insert Page Break In PDF File
-linktitle: Insert Page Break In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to insert a page break in PDF file using Aspose.PDF for .NET.
+title: Вставить разрыв страницы в PDF-файл
+linktitle: Вставить разрыв страницы в PDF-файл
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как вставить разрыв страницы в файл PDF с помощью Aspose.PDF для .NET.
 type: docs
 weight: 110
 url: /ru/net/programming-with-tables/insert-page-break/
 ---
-In this tutorial, we will learn how to insert a page break in PDF file using Aspose.PDF for .NET. We will explain the source code in C# step by step. At the end of this tutorial, you will know how to add a page break after a certain number of lines in a table of a PDF document. Let's start!
+В этом уроке мы научимся вставлять разрыв страницы в PDF-файл с помощью Aspose.PDF для .NET. Мы объясним исходный код на C# шаг за шагом. В конце этого урока вы узнаете, как добавить разрыв страницы после определенного количества строк в таблице PDF-документа. Давайте начнем!
 
-## Step 1: Setting up the environment
-Make sure you have configured your C# development environment with Aspose.PDF for .NET. Add the reference to the library and import the necessary namespaces.
+## Шаг 1. Настройка среды
+Убедитесь, что вы настроили свою среду разработки C# с помощью Aspose.PDF для .NET. Добавьте ссылку на библиотеку и импортируйте необходимые пространства имен.
 
-## Step 2: Creating the Document and Table
-We create a new Document instance and add a page to this document. Next, we create a Table instance to represent our table in the PDF document. We also define the border styles for the table.
+## Шаг 2. Создание документа и таблицы
+Мы создаем новый экземпляр документа и добавляем страницу в этот документ. Затем мы создаем экземпляр Table для представления нашей таблицы в PDF-документе. Мы также определяем стили границ для таблицы.
 
 ```csharp
 Document doc = new Document();
@@ -25,8 +25,8 @@ tab.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Asp
 tab. ColumnWidths = "100 100";
 ```
 
-## Step 3: Add rows to table
-We use a loop to add 200 rows to the array. For each row, we create an instance of Row and add two cells with text content.
+## Шаг 3. Добавьте строки в таблицу
+Мы используем цикл для добавления 200 строк в массив. Для каждой строки мы создаем экземпляр Row и добавляем две ячейки с текстовым содержимым.
 
 ```csharp
 for (int counter = 0; counter <= 200; counter++)
@@ -42,45 +42,45 @@ for (int counter = 0; counter <= 200; counter++)
      cell2.Paragraphs.Add(new TextFragment("Cell " + counter + ", 1"));
      row. Cells. Add(cell2);
     
-     // When 10 lines are added, we insert a new page break
+     // При добавлении 10 строк мы вставляем новый разрыв страницы.
      if (counter % 10 == 0 && counter != 0)
          row. IsInNewPage = true;
 }
 ```
 
-## Step 4: Adding the table to the document
-We add the table to the paragraphs collection of the document page.
+## Шаг 4. Добавление таблицы в документ
+Мы добавляем таблицу в коллекцию абзацев страницы документа.
 
 ```csharp
 doc.Pages[1].Paragraphs.Add(tab);
 ```
 
-## Step 5: Save the document
-We save the PDF document with the page break inserted.
+## Шаг 5: Сохраните документ
+Сохраняем PDF-документ со вставленным разрывом страницы.
 
 ```csharp
 doc.Save(dataDir + "InsertPageBreak_out.pdf");
 ```
 
-### Example source code for Insert Page Break using Aspose.PDF for .NET
+### Пример исходного кода для вставки разрыва страницы с использованием Aspose.PDF для .NET
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate Document instance
+// Создать экземпляр экземпляра документа
 Document doc = new Document();
-// Add page to pages collection of PDF file
+// Добавить страницу в коллекцию страниц PDF-файла
 doc.Pages.Add();
-// Create table instance
+// Создать экземпляр таблицы
 Aspose.Pdf.Table tab = new Aspose.Pdf.Table();
-// Set border style for table
+// Установить стиль границы для таблицы
 tab.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Aspose.Pdf.Color.Red);
-// Set default border style for table with border color as Red
+// Установите стиль границы по умолчанию для таблицы с красным цветом границы.
 tab.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Aspose.Pdf.Color.Red);
-// Specify table columsn widht
+// Укажите ширину столбцов таблицы
 tab.ColumnWidths = "100 100";
-// Create a loop to add 200 rows for table
+// Создайте цикл для добавления 200 строк в таблицу.
 for (int counter = 0; counter <= 200; counter++)
 {
 	Aspose.Pdf.Row row = new Aspose.Pdf.Row();
@@ -90,55 +90,55 @@ for (int counter = 0; counter <= 200; counter++)
 	row.Cells.Add(cell1); Aspose.Pdf.Cell cell2 = new Aspose.Pdf.Cell();
 	cell2.Paragraphs.Add(new TextFragment("Cell " + counter + ", 1"));
 	row.Cells.Add(cell2);
-	// When 10 rows are added, render new row in new page
+	// Когда добавлено 10 строк, отобразите новую строку на новой странице.
 	if (counter % 10 == 0 && counter != 0) row.IsInNewPage = true;
 }
-// Add table to paragraphs collection of PDF file
+// Добавить таблицу в коллекцию абзацев PDF-файла
 doc.Pages[1].Paragraphs.Add(tab);
 
 dataDir = dataDir + "InsertPageBreak_out.pdf";
-// Save the PDF document
+// Сохраните PDF-документ
 doc.Save(dataDir);
 
 Console.WriteLine("\nPage break inserted successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
-In this tutorial, we learned how to insert a page break in a PDF document using Aspose.PDF for .NET. You can use this step-by-step guide to add a page break after a certain number of lines in a table in a PDF document using C#.
+## Заключение
+В этом уроке мы узнали, как вставить разрыв страницы в PDF-документ с помощью Aspose.PDF для .NET. Вы можете использовать это пошаговое руководство, чтобы добавить разрыв страницы после определенного количества строк в таблице в документе PDF с помощью C#.
 
-### FAQ's for insert page break in PDF file
+### Часто задаваемые вопросы по вставке разрыва страницы в файл PDF
 
-#### Q: How can I change the page size for the new pages created after the page break?
+#### Вопрос: Как изменить размер новых страниц, созданных после разрыва страницы?
 
-A: To change the page size for the new pages created after the page break, you can set the `PageSize` property of the `Page` object. For example, you can use the following code to set the page size to A4:
+ О: Чтобы изменить размер новых страниц, созданных после разрыва страницы, вы можете установить`PageSize` собственность`Page` объект. Например, вы можете использовать следующий код, чтобы установить размер страницы A4:
 
 ```csharp
-// Set the page size to A4
+// Установите размер страницы А4.
 doc.Pages[1].SetPageSize(PageSize.A4);
 ```
 
-#### Q: Can I control the page margins for the new pages after the page break?
+#### Вопрос: Могу ли я контролировать поля для новых страниц после разрыва страницы?
 
-A: Yes, you can control the page margins for the new pages after the page break. Use the `Margin` property of the `Page` object to set the page margins. For example, to set all margins to 10 points, you can use the following code:
+ О: Да, вы можете контролировать поля для новых страниц после разрыва страницы. Использовать`Margin` собственность`Page` объект для установки полей страницы. Например, чтобы установить все поля в 10 пунктов, вы можете использовать следующий код:
 
 ```csharp
-// Set all margins to 10 points
+// Установите все поля на 10 пунктов
 doc.Pages[1].Margin = new MarginInfo(10, 10, 10, 10);
 ```
 
-#### Q: Is it possible to add headers and footers to the new pages after the page break?
+#### Вопрос: Можно ли добавлять верхние и нижние колонтитулы на новые страницы после разрыва страницы?
 
-A: Yes, you can add headers and footers to the new pages after the page break. Use the `Page.Header` and `Page.Footer` properties to add content to the header and footer sections of the page. For example:
+ О: Да, вы можете добавлять верхние и нижние колонтитулы на новые страницы после разрыва страницы. Использовать`Page.Header` и`Page.Footer` свойства для добавления содержимого в разделы верхнего и нижнего колонтитула страницы. Например:
 
 ```csharp
-// Add header to the new pages
+// Добавить заголовок на новые страницы
 doc.Pages[1].Header = new HeaderFooter()
 {
     Margin = new MarginInfo(10, 10, 10, 10),
     Paragraphs = { new TextFragment("Header content") }
 };
 
-// Add footer to the new pages
+// Добавляйте нижний колонтитул на новые страницы
 doc.Pages[1].Footer = new HeaderFooter()
 {
     Margin = new MarginInfo(10, 10, 10, 10),
@@ -146,10 +146,10 @@ doc.Pages[1].Footer = new HeaderFooter()
 };
 ```
 
-#### Q: Can I insert page breaks at specific locations other than after a certain number of rows?
+#### Вопрос: Могу ли я вставлять разрывы страниц в определенных местах, кроме определенного количества строк?
 
-A: Yes, you can insert page breaks at specific locations other than after a certain number of rows. You can set the `IsInNewPage` property of a row to `true` to force the table to start a new page after that row.
+ О: Да, вы можете вставлять разрывы страниц в определенных местах, кроме определенного количества строк. Вы можете установить`IsInNewPage` свойство строки для`true` чтобы заставить таблицу начать новую страницу после этой строки.
 
-#### Q: How can I adjust the page break behavior based on content height?
+#### Вопрос: Как настроить поведение разрыва страницы в зависимости от высоты содержимого?
 
-A: You can use the `IsBroken` property of the table to enable or disable automatic row breaking across pages. When set to `true`, it allows rows to break across pages based on content height.
+О: Вы можете использовать`IsBroken` свойство таблицы, позволяющее включить или отключить автоматическое разбиение строк по страницам. Если установлено значение`true`, он позволяет разбивать строки по страницам в зависимости от высоты содержимого.

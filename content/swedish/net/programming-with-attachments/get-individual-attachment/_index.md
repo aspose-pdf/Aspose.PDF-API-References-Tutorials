@@ -1,50 +1,50 @@
 ---
-title: Get Individual Attachment In PDF File
-linktitle: Get Individual Attachment In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to get an individual attachment in PDF file with Aspose.PDF for .NET. 
+title: Få individuell bilaga i PDF-fil
+linktitle: Få individuell bilaga i PDF-fil
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du får en enskild bilaga i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 60
 url: /sv/net/programming-with-attachments/get-individual-attachment/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to get an individual attachment of a PDF file using Aspose.PDF for .NET.
+I den här handledningen går vi igenom följande C#-källkod steg för steg för att få en individuell bifogad PDF-fil med Aspose.PDF för .NET.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Se till att du har installerat Aspose.PDF-biblioteket och ställt in din utvecklingsmiljö innan du börjar. Har även grundläggande kunskaper i C#-programmering.
 
-### Step 1: Document Directory Setup
+### Steg 1: Installation av dokumentkatalog
 
-In the provided source code, you need to specify the directory where the PDF file is located from which you want to get the individual attachment. Change the "dataDir" variable to the desired directory.
+I den medföljande källkoden måste du ange den katalog där PDF-filen finns från vilken du vill hämta den enskilda bilagan. Ändra variabeln "dataDir" till önskad katalog.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### Step 2: Open the existing PDF document
+### Steg 2: Öppna det befintliga PDF-dokumentet
 
-We open the existing PDF document using the specified path.
+Vi öppnar det befintliga PDF-dokumentet med den angivna sökvägen.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetIndividualAttachment.pdf");
 ```
 
-### Step 3: Obtaining a Specific Attachment
+### Steg 3: Skaffa en specifik bilaga
 
-We retrieve a specific attachment from the document's attachments collection. In this example, we get the first attachment using index 1.
+Vi hämtar en specifik bilaga från dokumentets bilagasamling. I det här exemplet får vi den första bilagan med hjälp av index 1.
 
 ```csharp
 FileSpecification fileSpecification = pdfDocument.EmbeddedFiles[1];
 ```
 
-### Step 4: Get File Properties
+### Steg 4: Hämta filegenskaper
 
-We display attachment properties such as name, description, MIME type, control hash, date created, date modified, and size.
+Vi visar bifogade egenskaper som namn, beskrivning, MIME-typ, kontrollhash, datum skapat, ändringsdatum och storlek.
 
 ```csharp
 Console.WriteLine("Name: {0}", fileSpecification.Name);
 Console.WriteLine("Description: {0}", fileSpecification.Description);
 Console.WriteLine("MIME Type: {0}", fileSpecification.MIMEType);
 
-// Check if object parameters contain additional information
+// Kontrollera om objektparametrar innehåller ytterligare information
 if (fileSpecification.Params != null)
 {
 Console.WriteLine("Check Hash: {0}", fileSpecification.Params.CheckSum);
@@ -54,9 +54,9 @@ Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
 }
 ```
 
-### Step 5: Retrieve attachment and save to file
+### Steg 5: Hämta bilaga och spara till fil
 
-We retrieve the content of the attachment and save it to a text file. In this example, the file is saved with the name "test_out.txt".
+Vi hämtar innehållet i bilagan och sparar den i en textfil. I det här exemplet sparas filen med namnet "test_out.txt".
 
 ```csharp
 byte[] fileContent = new byte[fileSpecification.Contents.Length];
@@ -66,21 +66,21 @@ fileStream.Write(fileContent, 0, fileContent.Length);
 fileStream.Close();
 ```
 
-### Sample source code for Get Individual Attachment using Aspose.PDF for .NET 
+### Exempel på källkod för Get Individual Attachment med Aspose.PDF för .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Öppna dokumentet
 Document pdfDocument = new Document(dataDir + "GetIndividualAttachment.pdf");
-// Get particular embedded file
+// Skaffa en speciell inbäddad fil
 FileSpecification fileSpecification = pdfDocument.EmbeddedFiles[1];
-// Get the file properties
+// Hämta filegenskaperna
 Console.WriteLine("Name: {0}", fileSpecification.Name);
 Console.WriteLine("Description: {0}", fileSpecification.Description);
 Console.WriteLine("Mime Type: {0}", fileSpecification.MIMEType);
-// Check if parameter object contains the parameters
+//Kontrollera om parameterobjektet innehåller parametrarna
 if (fileSpecification.Params != null)
 {
 	Console.WriteLine("CheckSum: {0}",
@@ -91,7 +91,7 @@ if (fileSpecification.Params != null)
 	fileSpecification.Params.ModDate);
 	Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
 }
-// Get the attachment and write to file or stream
+// Hämta bilagan och skriv till fil eller stream
 byte[] fileContent = new byte[fileSpecification.Contents.Length];
 fileSpecification.Contents.Read(fileContent, 0, fileContent.Length);
 FileStream fileStream = new FileStream(dataDir + "test_out" + ".txt", FileMode.Create);
@@ -100,44 +100,44 @@ fileStream.Close();
 
 ```
 
-## Conclusion
+## Slutsats
 
-In this tutorial, we explained how to get an individual attachment from a PDF file using Aspose.PDF for .NET. You can now use this knowledge to extract and save attachments from your PDF files.
+I den här handledningen förklarade vi hur man får en enskild bilaga från en PDF-fil med Aspose.PDF för .NET. Du kan nu använda denna kunskap för att extrahera och spara bilagor från dina PDF-filer.
 
-### FAQs for get individual attachment in PDF file
+### Vanliga frågor för att få individuell bilaga i PDF-fil
 
-#### Q: What is the purpose of getting an individual attachment from a PDF document?
+#### F: Vad är syftet med att få en enskild bilaga från ett PDF-dokument?
 
-A: Getting an individual attachment allows you to extract and save a specific embedded file within a PDF, which can be useful for further analysis or manipulation.
+S: Genom att få en enskild bilaga kan du extrahera och spara en specifik inbäddad fil i en PDF, vilket kan vara användbart för ytterligare analys eller manipulation.
 
-#### Q: How can I benefit from this tutorial in my PDF-related tasks?
+#### F: Hur kan jag dra nytta av den här handledningen i mina PDF-relaterade uppgifter?
 
-A: This tutorial provides step-by-step instructions and C# source code to retrieve and save a particular attachment from a PDF document using Aspose.PDF for .NET.
+S: Denna handledning innehåller steg-för-steg-instruktioner och C#-källkod för att hämta och spara en viss bilaga från ett PDF-dokument med Aspose.PDF för .NET.
 
-#### Q: What attachment properties can I access using this tutorial?
+#### F: Vilka bifogade egenskaper kan jag komma åt med den här handledningen?
 
-A: You can access attachment properties such as name, description, MIME type, control hash, creation date, modification date, and size of the specific attachment.
+S: Du kan komma åt bifogade egenskaper som namn, beskrivning, MIME-typ, kontrollhash, skapandedatum, ändringsdatum och storleken på den specifika bilagan.
 
-#### Q: Can I modify the code to get attachments other than the first attachment?
+#### F: Kan jag ändra koden för att få andra bilagor än den första bilagan?
 
-A: Absolutely, you can adjust the index (e.g., `pdfDocument.EmbeddedFiles[1]`) to retrieve attachments at different indices within the PDF.
+ A: Absolut, du kan justera indexet (t.ex.`pdfDocument.EmbeddedFiles[1]`) för att hämta bilagor vid olika index i PDF:en.
 
-#### Q: How do I save the retrieved attachment to a file?
+#### F: Hur sparar jag den hämtade bilagan till en fil?
 
-A: This tutorial provides code to retrieve the attachment's content and save it to a text file with a specified name.
+S: Denna handledning tillhandahåller kod för att hämta bilagans innehåll och spara den i en textfil med ett angivet namn.
 
-#### Q: What is the significance of the "Check Hash" property in attachment information?
+#### F: Vilken betydelse har egenskapen "Check Hash" i bifogad information?
 
-A: The "Check Hash" property represents the control hash value of the attachment, which can be used to verify the integrity of the attachment.
+S: Egenskapen "Check Hash" representerar kontrollhashvärdet för bilagan, som kan användas för att verifiera bilagans integritet.
 
-#### Q: Can I extend this knowledge to extract attachments with specific criteria, such as file type?
+#### F: Kan jag utöka denna kunskap till att extrahera bilagor med specifika kriterier, till exempel filtyp?
 
-A: Yes, you can enhance the code to filter attachments based on specific criteria such as file type or other properties.
+S: Ja, du kan förbättra koden för att filtrera bilagor baserat på specifika kriterier som filtyp eller andra egenskaper.
 
-#### Q: How does Aspose.PDF for .NET simplify the process of extracting individual attachments?
+#### F: Hur förenklar Aspose.PDF för .NET processen att extrahera enskilda bilagor?
 
-A: Aspose.PDF for .NET provides a user-friendly API that facilitates the extraction and manipulation of attachments within PDF documents.
+S: Aspose.PDF för .NET tillhandahåller ett användarvänligt API som underlättar extrahering och manipulering av bilagor i PDF-dokument.
 
-#### Q: Is this tutorial relevant for password-protected PDF files as well?
+#### F: Är denna handledning relevant för lösenordsskyddade PDF-filer också?
 
-A: Yes, you can adapt similar techniques to retrieve individual attachments from password-protected PDF files using Aspose.PDF for .NET.
+S: Ja, du kan anpassa liknande tekniker för att hämta enskilda bilagor från lösenordsskyddade PDF-filer med Aspose.PDF för .NET.

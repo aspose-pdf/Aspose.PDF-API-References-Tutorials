@@ -1,113 +1,113 @@
 ---
-title: Add Attachment In PDF File
-linktitle: Add Attachment In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add attachment in PDF file using Aspose.PDF for .NET. Step-by-step guide for easy handling.
+title: 在 PDF 文件中添加附件
+linktitle: 在 PDF 文件中添加附件
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 在 PDF 文件中添加附件。分步指南，方便操作。
 type: docs
 weight: 10
 url: /zh/net/programming-with-attachments/add-attachment/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to add an attachment in PDF file using Aspose.PDF for .NET.
+在本教程中，我们将引导您逐步完成以下 C# 源代码，以使用 Aspose.PDF for .NET 在 PDF 文件中添加附件。
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+在开始之前，请确保您已经安装了 Aspose.PDF 库并设置了开发环境。还具备 C# 编程的基础知识。
 
-### Step 1: Document Directory Setup
+### 第 1 步：文档目录设置
 
-In the provided source code, you need to specify the directory where the PDF file you want to add the attachment is located. Change the "dataDir" variable to the desired directory.
+在提供的源代码中，您需要指定要添加附件的PDF文件所在的目录。将“dataDir”变量更改为所需的目录。
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### Step 2: Open the existing PDF document
+### 步骤 2：打开现有 PDF 文档
 
-We open the existing PDF document using the specified path.
+我们使用指定的路径打开现有的 PDF 文档。
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "AddAttachment.pdf");
 ```
 
-### Step 3: Setting up the new file to add as an attachment
+### 步骤 3：设置新文件以添加为附件
 
-We configure the new file that we want to add as an attachment. In this example, we add a text file with the name "test.txt" and a description "Example text file".
+我们配置要添加为附件的新文件。在此示例中，我们添加一个名为“test.txt”和描述“示例文本文件”的文本文件。
 
 ```csharp
 FileSpecification fileSpecification = new FileSpecification(dataDir + "test.txt", "Sample text file");
 ```
 
-### Step 4: Adding the attachment to the document's attachments collection
+### 步骤 4：将附件添加到文档的附件集合中
 
-We add the attachment to the document's attachments collection.
+我们将附件添加到文档的附件集合中。
 
 ```csharp
 pdfDocument.EmbeddedFiles.Add(fileSpecification);
 ```
 
-### Step 5: Saving the new output file
+### 第 5 步：保存新的输出文件
 
-Finally, we save the resulting new PDF file with the name "AddAttachment_out.pdf" in the specified directory.
+最后，我们将生成的新 PDF 文件以名称“AddAttachment_out.pdf”保存在指定目录中。
 
 ```csharp
 pdfDocument.Save(dataDir + "AddAttachment_out.pdf");
 ```
 
-### Sample source code for Add Attachment using Aspose.PDF for .NET
+### 使用 Aspose.PDF for .NET 添加附件的示例源代码
  
 ```csharp
 
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+//打开文档
 Document pdfDocument = new Document(dataDir + "AddAttachment.pdf");
-// Setup new file to be added as attachment
+//设置要添加为附件的新文件
 FileSpecification fileSpecification = new FileSpecification(dataDir + "test.txt", "Sample text file");
-// Add attachment to document's attachment collection
+//将附件添加到文档的附件集合
 pdfDocument.EmbeddedFiles.Add(fileSpecification);
 dataDir = dataDir + "AddAttachment_out.pdf";
-// Save new output
+//保存新输出
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nSample text file attached successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
+## 结论
 
-In this tutorial, we explained how to add an attachment to a PDF file using Aspose.PDF for .NET. You can now use this knowledge to add additional files as attachments to your PDF documents.
+在本教程中，我们解释了如何使用 Aspose.PDF for .NET 将附件添加到 PDF 文件。您现在可以使用这些知识将其他文件作为附件添加到 PDF 文档中。
 
-### FAQ's for add attachment in PDF file
+### 在 PDF 文件中添加附件的常见问题解答
 
-#### Q: Why would I need to add attachments to a PDF file?
+#### 问：为什么需要向 PDF 文件添加附件？
 
-A: Adding attachments to a PDF file allows you to include supplementary materials, such as supporting documents, images, or files, which can provide additional context or information to the PDF's content.
+答：通过向 PDF 文件添加附件，您可以添加补充材料，例如支持文档、图像或文件，这些材料可以为 PDF 的内容提供额外的上下文或信息。
 
-#### Q: How does Aspose.PDF for .NET simplify the process of adding attachments?
+#### 问：Aspose.PDF for .NET 如何简化添加附件的过程？
 
-A: Aspose.PDF for .NET provides a streamlined API that allows you to easily add attachments to PDF files. The provided source code demonstrates step-by-step how to accomplish this task.
+答：Aspose.PDF for .NET 提供了简化的 API，使您可以轻松地将附件添加到 PDF 文件。提供的源代码逐步演示了如何完成此任务。
 
-#### Q: What types of files can be attached to a PDF using Aspose.PDF for .NET?
+#### 问：使用 Aspose.PDF for .NET 可以将哪些类型的文件附加到 PDF？
 
-A: Aspose.PDF for .NET supports attaching various types of files, including text files, images, documents, spreadsheets, and more, as long as they are accessible from your development environment.
+答：Aspose.PDF for .NET 支持附加各种类型的文件，包括文本文件、图像、文档、电子表格等，只要它们可以从您的开发环境访问即可。
 
-#### Q: Is there a limit to the number of attachments that can be added to a PDF file?
+#### 问：PDF 文件中可以添加的附件数量有限制吗？
 
-A: There is no strict limit to the number of attachments that can be added, but it's important to consider the overall file size and potential impact on document performance.
+答：对可以添加的附件数量没有严格限制，但重要的是要考虑总体文件大小以及对文档性能的潜在影响。
 
-#### Q: Can I customize the description of the attached files?
+#### 问：我可以自定义附件的描述吗？
 
-A: Yes, you can customize the description of each attached file. This description provides additional context for the attached file and helps users understand its purpose.
+答：是的，您可以自定义每个附件的描述。此说明为附加文件提供了附加上下文，并帮助用户了解其用途。
 
-#### Q: Are there any file size considerations when adding attachments?
+#### 问：添加附件时是否需要考虑文件大小？
 
-A: While attachments can increase the overall file size of the PDF, Aspose.PDF for .NET ensures efficient attachment handling to minimize any negative impact on document performance.
+答：虽然附件会增加 PDF 的整体文件大小，但 Aspose.PDF for .NET 可确保高效的附件处理，以尽量减少对文档性能的负面影响。
 
-#### Q: Can attachments be added to specific pages within the PDF document?
+#### 问：PDF 文档中的特定页面可以添加附件吗？
 
-A: Attachments are associated with the entire PDF document, rather than specific pages. They are accessible to users through the attachment panel in PDF viewers.
+答：附件与整个 PDF 文档相关，而不是与特定页面相关。用户可以通过 PDF 查看器中的附件面板访问它们。
 
-#### Q: How can I verify that the attachment was added successfully?
+#### 问：如何验证附件是否添加成功？
 
-A: After following the provided source code, you can open the resulting PDF file to confirm that the attached file is accessible through the attachment panel.
+答：按照提供的源代码操作后，您可以打开生成的 PDF 文件，以确认可以通过附件面板访问附件。
 
-#### Q: Can I remove or update attachments after they have been added?
+#### 问：添加附件后我可以删除或更新附件吗？
 
-A: Yes, you can modify or remove attachments from a PDF file using Aspose.PDF for .NET's API, giving you flexibility in managing attachments as needed.
+答：是的，您可以使用 Aspose.PDF for .NET 的 API 修改或删除 PDF 文件中的附件，从而使您可以根据需要灵活地管理附件。

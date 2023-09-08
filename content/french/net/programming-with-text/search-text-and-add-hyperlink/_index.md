@@ -1,28 +1,28 @@
 ---
-title: Search Text And Add Hyperlink
-linktitle: Search Text And Add Hyperlink
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to search for text in a PDF, add hyperlinks to the found text, and save the modified document using Aspose.PDF for .NET.
+title: Rechercher du texte et ajouter un lien hypertexte
+linktitle: Rechercher du texte et ajouter un lien hypertexte
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment rechercher du texte dans un PDF, ajouter des hyperliens vers le texte trouvé et enregistrer le document modifié à l'aide d'Aspose.PDF pour .NET.
 type: docs
 weight: 450
 url: /fr/net/programming-with-text/search-text-and-add-hyperlink/
 ---
-This tutorial explains how to use Aspose.PDF for .NET to search for specific text in a PDF document, add a hyperlink to the found text, and save the modified document. The provided C# source code demonstrates the process step by step.
+Ce didacticiel explique comment utiliser Aspose.PDF pour .NET pour rechercher un texte spécifique dans un document PDF, ajouter un lien hypertexte vers le texte trouvé et enregistrer le document modifié. Le code source C# fourni illustre le processus étape par étape.
 
-## Prerequisites
+## Conditions préalables
 
-Before proceeding with the tutorial, make sure you have the following:
+Avant de poursuivre le didacticiel, assurez-vous d'avoir les éléments suivants :
 
-- Basic knowledge of C# programming language.
-- Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to install it in your project.
+- Connaissance de base du langage de programmation C#.
+- Aspose.PDF pour la bibliothèque .NET installée. Vous pouvez l'obtenir sur le site Web Aspose ou utiliser NuGet pour l'installer dans votre projet.
 
-## Step 1: Set up the project
+## Étape 1 : Configurer le projet
 
-Start by creating a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library.
+Commencez par créer un nouveau projet C# dans votre environnement de développement intégré (IDE) préféré et ajoutez une référence à la bibliothèque Aspose.PDF pour .NET.
 
-## Step 2: Import necessary namespaces
+## Étape 2 : Importer les espaces de noms nécessaires
 
-Add the following using directives at the beginning of your C# file to import the required namespaces:
+Ajoutez les directives using suivantes au début de votre fichier C# pour importer les espaces de noms requis :
 
 ```csharp
 using Aspose.Pdf;
@@ -31,77 +31,77 @@ using Aspose.Pdf.Facades;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Set the path to the document directory
+## Étape 3 : Définir le chemin d'accès au répertoire de documents
 
-Set the path to your document directory using the `dataDir` variable:
+ Définissez le chemin d'accès à votre répertoire de documents à l'aide du`dataDir` variable:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ Remplacer`"YOUR DOCUMENT DIRECTORY"` avec le chemin réel vers votre répertoire de documents.
 
-## Step 4: Create a TextFragmentAbsorber
+## Étape 4 : Créer un TextFragmentAbsorber
 
-Create a `TextFragmentAbsorber` object to find all instances of the input search phrase:
+ Créer un`TextFragmentAbsorber` objet pour trouver toutes les instances de la phrase de recherche saisie :
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("\\d{4}-\\d{4}");
 ```
 
-Replace `"\\d{4}-\\d{4}"` with your desired regular expression pattern.
+ Remplacer`"\\d{4}-\\d{4}"` avec le modèle d'expression régulière souhaité.
 
-## Step 5: Enable regular expression search
+## Étape 5 : Activer la recherche d'expressions régulières
 
-Enable regular expression search by setting the `TextSearchOptions` property of the absorber:
+ Activez la recherche d'expressions régulières en définissant le`TextSearchOptions` propriété de l'absorbeur :
 
 ```csharp
 absorber.TextSearchOptions = new TextSearchOptions(true);
 ```
 
-## Step 6: Open and bind the PDF document
+## Étape 6 : Ouvrir et lier le document PDF
 
-Create a `PdfContentEditor` object and bind it to the source PDF file:
+ Créer un`PdfContentEditor` objet et liez-le au fichier PDF source :
 
 ```csharp
 PdfContentEditor editor = new PdfContentEditor();
 editor.BindPdf(dataDir + "SearchRegularExpressionPage.pdf");
 ```
 
-Replace `"SearchRegularExpressionPage.pdf"` with the actual name of your PDF file.
+ Remplacer`"SearchRegularExpressionPage.pdf"` avec le nom réel de votre fichier PDF.
 
-## Step 7: Accept the absorber for the page
+## Étape 7 : Acceptez l'absorbeur pour la page
 
-Accept the absorber for the desired page of the document:
+Acceptez l'absorbeur pour la page souhaitée du document :
 
 ```csharp
 editor.Document.Pages[1].Accept(absorber);
 ```
 
-Replace `1` with the desired page number.
+ Remplacer`1` avec le numéro de page souhaité.
 
-## Step 8: Add hyperlinks to the found text
+## Étape 8 : Ajouter des hyperliens au texte trouvé
 
-Loop through the retrieved text fragments and add hyperlinks to them:
+Parcourez les fragments de texte récupérés et ajoutez-y des hyperliens :
 
 ```csharp
 foreach (TextFragment textFragment in absorber.TextFragments)
 {
     textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
-    // Create a rectangle based on the text fragment's position
+    // Créez un rectangle basé sur la position du fragment de texte
     System.Drawing.Rectangle rect = new System.Drawing.Rectangle((int)textFragment.Rectangle.LLX,
         (int)Math.Round(textFragment.Rectangle.LLY), (int)Math.Round(textFragment.Rectangle.Width + 2),
         (int)Math.Round(textFragment.Rectangle.Height + 1));
-    // Add a web link to the rectangle
+    //Ajouter un lien web au rectangle
     editor.CreateWebLink(rect, "http://www.aspose.com", 1, System.Drawing.Color.Blue);
 }
 ```
 
-Replace `"http://www.aspose.com"` with the desired hyperlink URL.
+ Remplacer`"http://www.aspose.com"` avec l’URL du lien hypertexte souhaité.
 
-## Step 9: Save and close the modified document
+## Étape 9 : Enregistrez et fermez le document modifié
 
-Save the modified document and close the editor:
+Enregistrez le document modifié et fermez l'éditeur :
 
 ```csharp
 dataDir = dataDir + "SearchTextAndAddHyperlink_out.pdf";
@@ -110,26 +110,26 @@ editor.Close();
 Console.WriteLine("\nText replaced and hyperlink added successfully based on a regular expression.\nFile saved at " + dataDir);
 ```
 
-Make sure to replace `"SearchTextAndAddHyperlink_out.pdf"` with the desired output file name.
+ Assurez-vous de remplacer`"SearchTextAndAddHyperlink_out.pdf"` avec le nom du fichier de sortie souhaité.
 
-### Sample source code for Search Text And Add Hyperlink using Aspose.PDF for .NET 
+### Exemple de code source pour rechercher du texte et ajouter un lien hypertexte à l'aide d'Aspose.PDF pour .NET 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create absorber object to find all instances of the input search phrase
+// Créez un objet absorbeur pour trouver toutes les instances de la phrase de recherche saisie
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("\\d{4}-\\d{4}");
-// Enable regular expression search
+// Activer la recherche d'expressions régulières
 absorber.TextSearchOptions = new TextSearchOptions(true);
-// Open document
+// Ouvrir le document
 PdfContentEditor editor = new PdfContentEditor();
-// Bind source PDF file
+// Lier le fichier PDF source
 editor.BindPdf(dataDir + "SearchRegularExpressionPage.pdf");
-// Accept the absorber for the page
+// Acceptez l'absorbeur pour la page
 editor.Document.Pages[1].Accept(absorber);
 int[] dashArray = { };
 String[] LEArray = { };
 System.Drawing.Color blue = System.Drawing.Color.Blue;
-// Loop through the fragments
+// Parcourez les fragments
 foreach (TextFragment textFragment in absorber.TextFragments)
 {
 	textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
@@ -137,7 +137,7 @@ foreach (TextFragment textFragment in absorber.TextFragments)
 		(int)Math.Round(textFragment.Rectangle.LLY), (int)Math.Round(textFragment.Rectangle.Width + 2),
 		(int)Math.Round(textFragment.Rectangle.Height + 1));
 	Enum[] actionName = new Enum[2] { Aspose.Pdf.Annotations.PredefinedAction.Document_AttachFile, Aspose.Pdf.Annotations.PredefinedAction.Document_ExtractPages };
-	editor.CreateWebLink(rect, "http:// Www.aspose.com", 1, blue, actionName);
+	editor.CreateWebLink(rect, "http:// Www.aspose.com", 1, bleu, actionName);
 	editor.CreateLine(rect, "", (float)textFragment.Rectangle.LLX + 1, (float)textFragment.Rectangle.LLY - 1,
 		(float)textFragment.Rectangle.URX, (float)textFragment.Rectangle.LLY - 1, 1, 1, blue, "S", dashArray, LEArray);
 }
@@ -149,42 +149,42 @@ Console.WriteLine("\nText replaced and hyperlink added successfully based on a r
 
 ## Conclusion
 
-Congratulations! You have successfully learned how to search for specific text in a PDF document, add hyperlinks to the found text, and save the modified document using Aspose.PDF for .NET. This tutorial provided a step-by-step guide, from setting up the project to performing the required actions. You can now incorporate this code into your own C# projects to manipulate text and add hyperlinks in PDF files.
+Toutes nos félicitations! Vous avez appris avec succès comment rechercher un texte spécifique dans un document PDF, ajouter des hyperliens vers le texte trouvé et enregistrer le document modifié à l'aide d'Aspose.PDF pour .NET. Ce didacticiel fournit un guide étape par étape, depuis la configuration du projet jusqu'à l'exécution des actions requises. Vous pouvez désormais intégrer ce code dans vos propres projets C# pour manipuler du texte et ajouter des hyperliens dans les fichiers PDF.
 
-### FAQ's
+### FAQ
 
-#### Q: What is the purpose of the "Search Text And Add Hyperlink" tutorial?
+#### Q : Quel est l'objectif du didacticiel « Rechercher du texte et ajouter un lien hypertexte » ?
 
-A: The "Search Text And Add Hyperlink" tutorial aims to demonstrate how to use the Aspose.PDF library for .NET to search for specific text within a PDF document, add hyperlinks to the found text, and then save the modified document. The tutorial provides a comprehensive guide and C# code samples to illustrate the step-by-step process.
+R : Le didacticiel « Rechercher du texte et ajouter un lien hypertexte » vise à montrer comment utiliser la bibliothèque Aspose.PDF pour .NET pour rechercher un texte spécifique dans un document PDF, ajouter des hyperliens au texte trouvé, puis enregistrer le document modifié. Le didacticiel fournit un guide complet et des exemples de code C# pour illustrer le processus étape par étape.
 
-#### Q: How does this tutorial help in adding hyperlinks to specific text in a PDF document?
+#### Q : Comment ce didacticiel aide-t-il à ajouter des hyperliens vers du texte spécifique dans un document PDF ?
 
-A: This tutorial guides you through the process of using the Aspose.PDF library to locate specific text in a PDF document, apply a hyperlink to the identified text, and save the modified PDF. It covers essential steps such as setting up the project, loading the document, enabling regular expression search, and adding hyperlinks to the found text.
+R : Ce didacticiel vous guide tout au long du processus d'utilisation de la bibliothèque Aspose.PDF pour localiser un texte spécifique dans un document PDF, appliquer un lien hypertexte vers le texte identifié et enregistrer le PDF modifié. Il couvre les étapes essentielles telles que la configuration du projet, le chargement du document, l'activation de la recherche d'expressions régulières et l'ajout d'hyperliens vers le texte trouvé.
 
-#### Q: What prerequisites are needed to follow this tutorial?
+#### Q : Quels prérequis sont nécessaires pour suivre ce tutoriel ?
 
-A: Before you start, you should have a basic understanding of the C# programming language. Additionally, you need to have the Aspose.PDF for .NET library installed, which can be obtained from the Aspose website or installed using NuGet in your project.
+R : Avant de commencer, vous devez avoir une compréhension de base du langage de programmation C#. De plus, vous devez installer la bibliothèque Aspose.PDF pour .NET, qui peut être obtenue sur le site Web Aspose ou installée à l'aide de NuGet dans votre projet.
 
-#### Q: How do I set up my project to follow this tutorial?
+#### Q : Comment configurer mon projet pour suivre ce tutoriel ?
 
-A: Begin by creating a new C# project in your preferred integrated development environment (IDE). Then, add a reference to the Aspose.PDF for .NET library, which will enable you to utilize the library's capabilities in your project.
+R : Commencez par créer un nouveau projet C# dans votre environnement de développement intégré (IDE) préféré. Ensuite, ajoutez une référence à la bibliothèque Aspose.PDF pour .NET, ce qui vous permettra d'utiliser les fonctionnalités de la bibliothèque dans votre projet.
 
-#### Q: Can I add hyperlinks to specific text using this tutorial?
+#### Q : Puis-je ajouter des hyperliens vers un texte spécifique à l’aide de ce didacticiel ?
 
-A: Yes, this tutorial specifically focuses on adding hyperlinks to specific text in a PDF document. It demonstrates how to find and extract the desired text using regular expressions, create hyperlinks associated with the text fragments, and save the modified PDF.
+R : Oui, ce didacticiel se concentre spécifiquement sur l'ajout d'hyperliens vers un texte spécifique dans un document PDF. Il montre comment rechercher et extraire le texte souhaité à l'aide d'expressions régulières, créer des hyperliens associés aux fragments de texte et enregistrer le PDF modifié.
 
-#### Q: How do I define the text I want to search for and add a hyperlink to?
+#### Q : Comment définir le texte que je souhaite rechercher et auquel ajouter un lien hypertexte ?
 
-A: To specify the text you want to search for and add a hyperlink to, create a `TextFragmentAbsorber` object and set its pattern using the `Text` parameter. Replace the default pattern `"\\d{4}-\\d{4}"` in the tutorial's code with your desired regular expression pattern.
+ R : Pour spécifier le texte que vous souhaitez rechercher et ajouter un lien hypertexte, créez un`TextFragmentAbsorber` objet et définissez son motif à l'aide du`Text` paramètre. Remplacer le modèle par défaut`"\\d{4}-\\d{4}"` dans le code du didacticiel avec le modèle d'expression régulière souhaité.
 
-#### Q: How can I enable regular expression search for text?
+#### Q : Comment puis-je activer la recherche d'expressions régulières pour du texte ?
 
-A: Regular expression search is enabled by creating a `TextSearchOptions` object and setting its value to `true`. Assign this object to the `TextSearchOptions` property of the `TextFragmentAbsorber` instance. This ensures that the regular expression pattern is applied during text search.
+ R : La recherche d'expressions régulières est activée en créant un`TextSearchOptions` objet et en définissant sa valeur sur`true` . Attribuez cet objet au`TextSearchOptions` propriété du`TextFragmentAbsorber` exemple. Cela garantit que le modèle d'expression régulière est appliqué lors de la recherche de texte.
 
-#### Q: How do I add hyperlinks to the found text?
+#### Q : Comment puis-je ajouter des hyperliens au texte trouvé ?
 
-A: After identifying the text fragments using the `TextFragmentAbsorber`, the tutorial provides a loop to iterate through these fragments. For each text fragment, the tutorial demonstrates how to set the text color to blue and create a hyperlink using the `CreateWebLink` method.
+ R : Après avoir identifié les fragments de texte à l'aide du`TextFragmentAbsorber` , le didacticiel fournit une boucle pour parcourir ces fragments. Pour chaque fragment de texte, le didacticiel montre comment définir la couleur du texte sur bleu et créer un lien hypertexte à l'aide de l'option`CreateWebLink` méthode.
 
-#### Q: What are the steps to save the modified PDF with hyperlinks?
+#### Q : Quelles sont les étapes pour enregistrer le PDF modifié avec des hyperliens ?
 
-A: After adding hyperlinks to the desired text fragments, use the `PdfContentEditor` class to save the modified document. The tutorial's sample code showcases how to save the edited PDF, close the editor, and display a success message.
+ R : Après avoir ajouté des hyperliens vers les fragments de texte souhaités, utilisez le`PdfContentEditor` classe pour enregistrer le document modifié. L'exemple de code du didacticiel montre comment enregistrer le PDF modifié, fermer l'éditeur et afficher un message de réussite.

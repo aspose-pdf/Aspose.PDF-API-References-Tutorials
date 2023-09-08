@@ -1,29 +1,29 @@
 ---
-title: Add Repeating Column In PDF Document
-linktitle: Add Repeating Column In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add a repeating column in PDF document using Aspose.PDF for .NET.
+title: 在 PDF 文档中添加重复列
+linktitle: 在 PDF 文档中添加重复列
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 在 PDF 文档中添加重复列。
 type: docs
 weight: 20
 url: /zh/net/programming-with-tables/add-repeating-column/
 ---
-In this tutorial, we are going to learn how to add a repeating column in PDF document using Aspose.PDF for .NET. We will explain the source code in C# step by step. At the end of this tutorial, you will know how to create a table with a repeating column in a PDF document. Let's start!
+在本教程中，我们将学习如何使用 Aspose.PDF for .NET 在 PDF 文档中添加重复列。我们将一步步解释C#的源代码。在本教程结束时，您将了解如何在 PDF 文档中创建带有重复列的表格。开始吧！
 
-## Step 1: Setting up the environment
-First, make sure you've set up your C# development environment with Aspose.PDF for .NET. Add the reference to the library and import the necessary namespaces.
+## 第一步：搭建环境
+首先，确保您已使用 Aspose.PDF for .NET 设置 C# 开发环境。添加对库的引用并导入必要的命名空间。
 
-## Step 2: Creating the PDF document
-In this step, we create a new PDF document.
+## 第 2 步：创建 PDF 文档
+在此步骤中，我们创建一个新的 PDF 文档。
 
 ```csharp
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-We have created an empty PDF document where we can add content.
+我们创建了一个空的 PDF 文档，可以在其中添加内容。
 
-## Step 3: Creating the tables
-In this step we create a main table (`outerTable`) and a nested table (`mytable`) which will be repeated in the column.
+## 第 3 步：创建表
+在此步骤中，我们创建一个主表（`outerTable`）和嵌套表（`mytable`）这将在该列中重复。
 
 ```csharp
 Table outerTable = new Table();
@@ -35,10 +35,10 @@ mytable.Broken = TableBroken.VerticalInSamePage;
 mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;
 ```
 
-We specified table properties such as column width and nested table break mode.
+我们指定了表属性，例如列宽和嵌套表分隔模式。
 
-## Step 4: Adding the tables to the document
-Now we add the created tables to the PDF document.
+## 步骤 4：将表格添加到文档中
+现在我们将创建的表格添加到 PDF 文档中。
 
 ```csharp
 page.Paragraphs.Add(outerTable);
@@ -49,10 +49,10 @@ mytable.RepeatingColumnsCount = 5;
 page.Paragraphs.Add(mytable);
 ```
 
-We first add the main table (`outerTable`) to the PDF document. Next, we add the nested table (`mytable`) as a paragraph in a cell in the main table. We also specify the number of repeated columns for `mytable` (in this example, 5 columns).
+我们首先添加主表（`outerTable`) 到 PDF 文档。接下来，我们添加嵌套表（`mytable` ) 作为主表单元格中的一个段落。我们还指定重复列的数量`mytable`（在本例中为 5 列）。
 
-## Step 5: Adding headers and lines
-Now we add the headers and rows to the table.
+## 第 5 步：添加标题和行
+现在我们将标题和行添加到表中。
 
 ```csharp
 Row headerRow = mytable.Rows.Add();
@@ -60,7 +60,7 @@ headerRow.Cells.Add("header 1");
 headerRow.Cells.Add("header 2");
 headerRow.Cells.Add("header 3");
 // ...
-// Add other headers here
+//在这里添加其他标题
 
 for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
 {
@@ -69,45 +69,45 @@ for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
      row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
      row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
      // ...
-     // Add the other columns here
+     //在此处添加其他列
 }
 ```
 
-We first add the headers to the first row of the table (`headerRow`). Then we add the rows of data from a loop. In this example, we add 6 rows of data.
+我们首先将标题添加到表格的第一行（`headerRow`）。然后我们添加循环中的数据行。在此示例中，我们添加 6 行数据。
 
-## Step 6: Saving the PDF document
-Finally, we save the PDF document to the specified file.
+## 第6步：保存PDF文档
+最后，我们将PDF文档保存到指定的文件中。
 
 ```csharp
 string outFile = dataDir + "AddRepeatingColumn_out.pdf";
 doc.Save(outFile);
 ```
 
-Make sure to specify the correct directory and filename to save the output PDF file.
+确保指定正确的目录和文件名来保存输出 PDF 文件。
 
-### Example source code for add repeating column using Aspose.PDF for .NET
+### 使用 Aspose.PDF for .NET 添加重复列的示例源代码
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 string outFile = dataDir + "AddRepeatingColumn_out.pdf";
-// Create a new document
+//创建一个新文档
 Document doc = new Document();
 Aspose.Pdf.Page page = doc.Pages.Add();
 
-// Instantiate an outer table that takes up the entire page
+//实例化一个占据整个页面的外表
 Aspose.Pdf.Table outerTable = new Aspose.Pdf.Table();
 outerTable.ColumnWidths = "100%";
 outerTable.HorizontalAlignment = HorizontalAlignment.Left;
 
-// Instantiate a table object that will be nested inside outerTable that will break inside the same page
+//实例化一个表格对象，该对象将嵌套在outerTable中，该对象将在同一页面内中断
 Aspose.Pdf.Table mytable = new Aspose.Pdf.Table();
 mytable.Broken = TableBroken.VerticalInSamePage;
 mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;
 
-// Add the outerTable to the page paragraphs
-// Add mytable to outerTable
+//将outerTable添加到页面段落中
+//将 mytable 添加到outerTable
 page.Paragraphs.Add(outerTable);
 var bodyRow = outerTable.Rows.Add();
 var bodyCell = bodyRow.Cells.Add();
@@ -115,7 +115,7 @@ bodyCell.Paragraphs.Add(mytable);
 mytable.RepeatingColumnsCount = 5;
 page.Paragraphs.Add(mytable);
 
-// Add header Row
+//添加标题行
 Aspose.Pdf.Row row = mytable.Rows.Add();
 row.Cells.Add("header 1");
 row.Cells.Add("header 2");
@@ -135,7 +135,7 @@ row.Cells.Add("header 17");
 for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
 
 {
-	// Create rows in the table and then cells in the rows 
+	//在表中创建行，然后在行中创建单元格
 	Aspose.Pdf.Row row1 = mytable.Rows.Add();
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
@@ -155,27 +155,27 @@ for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
 doc.Save(outFile);
 ```
 
-## Conclusion
-In this tutorial, we learned how to add a repeating column in a PDF document using Aspose.PDF for .NET. You can use this step-by-step guide to create tables with repeating columns in your own C# projects.
+## 结论
+在本教程中，我们学习了如何使用 Aspose.PDF for .NET 在 PDF 文档中添加重复列。您可以使用此分步指南在您自己的 C# 项目中创建具有重复列的表。
 
-### FAQ's for add repeating column in PDF document
+### 在 PDF 文档中添加重复列的常见问题解答
 
-#### Q: Can I customize the number of repeated columns in the nested table?
+#### 问：我可以自定义嵌套表中重复列的数量吗？
 
-A: Yes, you can customize the number of repeated columns in the nested table. In the provided example, we set `mytable.RepeatingColumnsCount = 5;`, which means there will be 5 repeated columns. You can change this value to any desired number.
+答：是的，您可以自定义嵌套表中重复列的数量。在提供的示例中，我们设置`mytable.RepeatingColumnsCount = 5;`，这意味着将有 5 个重复列。您可以将此值更改为任何所需的数字。
 
-#### Q: Is it possible to add more rows to the nested table dynamically?
+#### 问：是否可以动态向嵌套表添加更多行？
 
-A: Yes, you can dynamically add more rows to the nested table in the same way as shown in the tutorial. You can use loops or any other logic to add rows based on your data.
+答：是的，您可以按照教程中所示的相同方式向嵌套表动态添加更多行。您可以使用循环或任何其他逻辑根据您的数据添加行。
 
-#### Q: Can I apply styles and formatting to the table and its cells?
+#### 问：我可以将样式和格式应用于表格及其单元格吗？
 
-A: Yes, you can apply styles and formatting to the table and its cells using Aspose.PDF for .NET. The library provides various properties and methods to customize the appearance of the table and its contents.
+答：是的，您可以使用 Aspose.PDF for .NET 将样式和格式应用于表格及其单元格。该库提供了各种属性和方法来自定义表及其内容的外观。
 
-#### Q: Is Aspose.PDF for .NET compatible with .NET Core?
+#### 问：Aspose.PDF for .NET 与 .NET Core 兼容吗？
 
-A: Yes, Aspose.PDF for .NET is compatible with .NET Core. You can use it in both .NET Framework and .NET Core applications.
+答：是的，Aspose.PDF for .NET 与 .NET Core 兼容。您可以在 .NET Framework 和 .NET Core 应用程序中使用它。
 
-#### Q: Can I use this approach to add repeating columns in an existing PDF document?
+#### 问：我可以使用此方法在现有 PDF 文档中添加重复列吗？
 
-A: Yes, you can use this approach to add repeating columns in an existing PDF document. Simply load the existing document using Aspose.PDF for .NET and follow the same steps to create and add the repeating column.
+答：是的，您可以使用此方法在现有 PDF 文档中添加重复列。只需使用 Aspose.PDF for .NET 加载现有文档，然后按照相同的步骤创建和添加重复列。

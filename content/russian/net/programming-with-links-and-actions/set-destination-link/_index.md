@@ -1,76 +1,76 @@
 ---
-title: Set Destination Link In PDF File
-linktitle: Set Destination Link In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set a destination link in PDF file using Aspose.PDF for .NET.
+title: Установить ссылку назначения в PDF-файле
+linktitle: Установить ссылку назначения в PDF-файле
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как установить ссылку назначения в PDF-файле с помощью Aspose.PDF для .NET.
 type: docs
 weight: 90
 url: /ru/net/programming-with-links-and-actions/set-destination-link/
 ---
-Learn how to set a destination link in PDF file using Aspose.PDF for .NET with this step-by-step guide.
+Узнайте, как установить ссылку назначения в PDF-файле с помощью Aspose.PDF для .NET, с помощью этого пошагового руководства.
 
-## Step 1: Setting up the environment
+## Шаг 1. Настройка среды
 
-Make sure you have set up your development environment with a C# project and the appropriate Aspose.PDF references.
+Убедитесь, что вы настроили свою среду разработки с помощью проекта C# и соответствующих ссылок на Aspose.PDF.
 
-## Step 2: Loading the PDF file
+## Шаг 2. Загрузка PDF-файла
 
-Set the directory path of your documents and upload the PDF file using the following code:
+Задайте путь к каталогу ваших документов и загрузите PDF-файл, используя следующий код:
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Load the PDF file
+// Загрузите PDF-файл
 Document doc = new Document(dataDir + "UpdateLinks.pdf");
 ```
 
-## Step 3: Editing the destination link
+## Шаг 3. Редактирование целевой ссылки
 
-Get the link annotation to modify using the following code:
+Получите аннотацию ссылки для изменения, используя следующий код:
 
 ```csharp
 LinkAnnotation linkAnnot = (LinkAnnotation)doc.Pages[1].Annotations[1];
 ```
 
-You can adjust the `[1]` indices to select a specific page or annotation.
+ Вы можете настроить`[1]` индексы для выбора конкретной страницы или аннотации.
 
-Next, edit the link by changing the link action and setting the target as a web address:
+Затем отредактируйте ссылку, изменив действие ссылки и указав в качестве цели веб-адрес:
 
 ```csharp
 linkAnnot.Action = new GoToURIAction("www.aspose.com");
 ```
 
-## Step 4: Save the document with the updated link
+## Шаг 4. Сохраните документ с обновленной ссылкой.
 
-Save the document with the updated link using the `Save` method:
+ Сохраните документ с обновленной ссылкой, используя кнопку`Save` метод:
 
 ```csharp
 dataDir = dataDir + "SetDestinationLink_out.pdf";
 doc.Save(dataDir);
 ```
 
-## Step 5: Displaying the result
+## Шаг 5: Отображение результата
 
-Display a message indicating that the destination link was successfully configured and specify the location of the saved file:
+Выведите сообщение о том, что целевая ссылка успешно настроена, и укажите местоположение сохраненного файла:
 
 ```csharp
 Console.WriteLine("\nDestination link configured successfully.\nFile saved to location: " + dataDir);
 ```
 
-### Sample source code for Set Destination Link using Aspose.PDF for .NET 
+### Пример исходного кода для установки целевой ссылки с помощью Aspose.PDF для .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Путь к каталогу документов.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Load the PDF file
+	// Загрузите PDF-файл
 	Document doc = new Document(dataDir + "UpdateLinks.pdf");
-	// Get the first link annotation from first page of document
+	// Получите аннотацию первой ссылки с первой страницы документа.
 	LinkAnnotation linkAnnot = (LinkAnnotation)doc.Pages[1].Annotations[1];
-	// Modification link: change link action and set target as web address
+	// Ссылка на модификацию: измените действие ссылки и установите цель в качестве веб-адреса.
 	linkAnnot.Action = new GoToURIAction("www.aspose.com");           
 	dataDir = dataDir + "SetDestinationLink_out.pdf";
-	// Save the document with updated link
+	// Сохраните документ с обновленной ссылкой.
 	doc.Save(dataDir);
 	Console.WriteLine("\nDestination link setup successfully.\nFile saved at " + dataDir);
 }
@@ -80,53 +80,53 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Заключение
 
-Congratulation ! You now know how to set a destination link in a PDF file using Aspose.PDF for .NET. Use this knowledge to customize links in your PDF documents and create interactive experiences for users.
+Поздравляем! Теперь вы знаете, как установить ссылку назначения в файле PDF с помощью Aspose.PDF для .NET. Используйте эти знания для настройки ссылок в PDF-документах и создания интерактивных возможностей для пользователей.
 
-Now that you've completed this guide, you can apply these concepts to your own projects and further explore the features offered by Aspose.PDF for .NET.
+Теперь, когда вы завершили работу с этим руководством, вы можете применить эти концепции к своим собственным проектам и продолжить изучение функций, предлагаемых Aspose.PDF для .NET.
 
-### FAQ's for set destination link in PDF file
+### Часто задаваемые вопросы по установке ссылки назначения в PDF-файле
 
-#### Q: What is a destination link in a PDF file?
+#### Вопрос: Что такое целевая ссылка в PDF-файле?
 
-A: A destination link in a PDF file is a clickable link that navigates the reader to a specific destination within the same document or to an external web address.
+Ответ: Ссылка на место назначения в PDF-файле — это кликабельная ссылка, которая направляет читателя к определенному месту назначения в том же документе или к внешнему веб-адресу.
 
-#### Q: Why would I want to set a destination link in a PDF file?
+#### Вопрос: Зачем мне устанавливать ссылку назначения в файле PDF?
 
-A: Setting destination links allows you to create a seamless navigation experience within a PDF document. It's particularly useful for creating table of contents, index pages, or linking to relevant external resources.
+О: Установка ссылок назначения позволяет создать удобную навигацию в PDF-документе. Это особенно полезно для создания оглавления, индексных страниц или ссылок на соответствующие внешние ресурсы.
 
-#### Q: How does Aspose.PDF for .NET help in setting destination links?
-A: Aspose.PDF for .NET provides APIs to manipulate various aspects of PDF files, including creating and modifying links. This tutorial demonstrates how to set a destination link using C# code.
+#### Вопрос: Как Aspose.PDF for .NET помогает в настройке целевых ссылок?
+О: Aspose.PDF для .NET предоставляет API для управления различными аспектами файлов PDF, включая создание и изменение ссылок. В этом руководстве показано, как установить ссылку назначения с помощью кода C#.
 
-#### Q: Can I set destination links to navigate to specific pages within the same document?
+#### Вопрос: Могу ли я установить ссылки назначения для перехода к определенным страницам одного и того же документа?
 
-A: Yes, Aspose.PDF for .NET enables you to set destination links to navigate to specific pages within the same document.
+О: Да, Aspose.PDF для .NET позволяет вам устанавливать ссылки назначения для перехода к определенным страницам в одном документе.
 
-#### Q: Can I set destination links to navigate to external web addresses?
+#### Вопрос: Могу ли я установить ссылки назначения для перехода на внешние веб-адреса?
 
-A: Yes, you can set destination links to navigate to external web addresses, allowing users to access online resources directly from the PDF.
+О: Да, вы можете установить ссылки назначения для перехода на внешние веб-адреса, позволяя пользователям получать доступ к онлайн-ресурсам непосредственно из PDF-файла.
 
-#### Q: Are there any limitations to setting destination links?
+#### Вопрос: Существуют ли какие-либо ограничения на установку целевых ссылок?
 
-A: Destination links can only navigate within the same document or to external URLs. They cannot directly link to specific content within other documents.
+О: Ссылки назначения могут переходить только внутри одного документа или на внешние URL-адреса. Они не могут напрямую ссылаться на определенное содержимое других документов.
 
-#### Q: How do I customize the appearance of a destination link?
+#### Вопрос: Как настроить внешний вид целевой ссылки?
 
-A: The appearance of a destination link, such as its color and style, can be customized using the properties provided by Aspose.PDF for .NET.
+О: Внешний вид целевой ссылки, например ее цвет и стиль, можно настроить с помощью свойств, предоставляемых Aspose.PDF для .NET.
 
-#### Q: Can I set multiple destination links in the same PDF document?
+#### Вопрос: Могу ли я установить несколько целевых ссылок в одном PDF-документе?
 
-A: Yes, you can set multiple destination links in the same PDF document. Simply repeat the process for each link you want to create.
+О: Да, вы можете установить несколько ссылок назначения в одном PDF-документе. Просто повторите процесс для каждой ссылки, которую вы хотите создать.
 
-#### Q: Can I set a destination link using a specific shape or text?
+#### Вопрос: Могу ли я установить ссылку назначения, используя определенную форму или текст?
 
-A: Yes, you can attach a destination link to specific shapes or text within the PDF document using the appropriate properties and methods provided by Aspose.PDF for .NET.
+О: Да, вы можете прикрепить ссылку назначения к определенным фигурам или тексту в PDF-документе, используя соответствующие свойства и методы, предоставляемые Aspose.PDF для .NET.
 
-#### Q: How can I test if the destination link is working as intended?
+#### Вопрос: Как я могу проверить, работает ли целевая ссылка должным образом?
 
-A: After setting the destination link using the provided code, open the modified PDF and click on the link to ensure it navigates to the desired destination.
+О: После установки ссылки назначения с помощью предоставленного кода откройте измененный PDF-файл и щелкните ссылку, чтобы убедиться, что она ведет к нужному месту назначения.
 
-#### Q: Can I set destination links in password-protected PDFs?
+#### Вопрос: Могу ли я установить ссылки на места назначения в PDF-файлах, защищенных паролем?
 
-A: Yes, you can set destination links in password-protected PDFs as long as you provide the appropriate credentials to access and modify the document.
+О: Да, вы можете устанавливать ссылки назначения в PDF-файлах, защищенных паролем, при условии, что вы предоставляете соответствующие учетные данные для доступа и изменения документа.

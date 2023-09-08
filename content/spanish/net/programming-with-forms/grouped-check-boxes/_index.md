@@ -1,49 +1,49 @@
 ---
-title: Grouped Check Boxes In PDF Document
-linktitle: Grouped Check Boxes In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Easily create grouped checkboxes in PDF document with Aspose.PDF for .NET.
+title: Casillas de verificación agrupadas en un documento PDF
+linktitle: Casillas de verificación agrupadas en un documento PDF
+second_title: Aspose.PDF para referencia de API .NET
+description: Cree fácilmente casillas de verificación agrupadas en un documento PDF con Aspose.PDF para .NET.
 type: docs
 weight: 170
 url: /es/net/programming-with-forms/grouped-check-boxes/
 ---
-In this tutorial, we will show you how to create grouped checkboxes in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+En este tutorial, le mostraremos cómo crear casillas de verificación agrupadas en un documento PDF usando Aspose.PDF para .NET. Explicaremos el código fuente de C# paso a paso para guiarlo a través de este proceso.
 
-## Step 1: Preparation
+## Paso 1: preparación
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+Asegúrese de haber importado las bibliotecas necesarias y establecer la ruta a su directorio de documentos:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Instantiate a Document Object
+## Paso 2: crear una instancia de un objeto de documento
 
-Instantiate a Document object:
+Crear una instancia de un objeto de documento:
 
 ```csharp
 Document pdfDocument = new Document();
 ```
 
-## Step 3: Add page to PDF document
+## Paso 3: agregar página al documento PDF
 
-Add a page to the PDF document:
+Agregue una página al documento PDF:
 
 ```csharp
 Page page = pdfDocument.Pages.Add();
 ```
 
-## Step 4: Instantiate a RadioButtonField Object
+## Paso 4: crear una instancia de un objeto RadioButtonField
 
-Instantiate a RadioButtonField object with the page number as argument:
+Cree una instancia de un objeto RadioButtonField con el número de página como argumento:
 
 ```csharp
 RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
 ```
 
-## Step 5: Add radio button options
+## Paso 5: agregue opciones de botón de opción
 
-Add radio button options using the RadioButtonOptionField object and specify their position using the Rectangle object:
+Agregue opciones de botón de opción usando el objeto RadioButtonOptionField y especifique su posición usando el objeto Rectángulo:
 
 ```csharp
 RadioButtonOptionField opt1 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(0, 0, 20, 20));
@@ -54,9 +54,9 @@ radio.Add(opt1);
 radio.Add(opt2);
 ```
 
-## Step 6: Customize radio button options
+## Paso 6: personaliza las opciones del botón de opción
 
-Customize radio button options by setting their style, border, and appearance:
+Personalice las opciones de los botones de opción configurando su estilo, borde y apariencia:
 
 ```csharp
 opt1.Style = BoxStyle.Square;
@@ -69,36 +69,36 @@ opt2.Border.Width = 1;
 opt2.Border.Style = BorderStyle.Solid;
 ```
 
-## Step 7: Add the radio buttons to the form
+## Paso 7: agregue los botones de opción al formulario
 
-Add the radio buttons to the document form object:
+Agregue los botones de opción al objeto de formulario de documento:
 
 ```csharp
 pdfDocument.Form.Add(radio);
 ```
 
-## Step 8: Save the document
+## Paso 8: guarde el documento
 
-Save the PDF document:
+Guarde el documento PDF:
 
 ```csharp
 dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Grouped Check Boxes using Aspose.PDF for .NET 
+### Código fuente de muestra para casillas de verificación agrupadas usando Aspose.PDF para .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// La ruta al directorio de documentos.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Instantiate Document object
+	// Crear una instancia del objeto Documento
 	Document pdfDocument = new Document();
-	// Add a page to PDF file
+	// Agregar una página al archivo PDF
 	Page page = pdfDocument.Pages.Add();
-	// Instatiate RadioButtonField object with page number as argument
+	// Instalar el objeto RadioButtonField con el número de página como argumento
 	RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
-	// Add first radio button option and also specify its origin using Rectangle object
+	// Agregue la primera opción de botón de opción y también especifique su origen usando el objeto Rectángulo
 	RadioButtonOptionField opt1 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(0, 0, 20, 20));
 	RadioButtonOptionField opt2 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(100, 0, 120, 20));
 	opt1.OptionName = "Test1";
@@ -117,10 +117,10 @@ try
 	opt2.Border.Width = 1;
 	opt2.Border.Style = BorderStyle.Solid;
 	opt2.Characteristics.Border = System.Drawing.Color.Black;
-	// Add radio button to form object of Document object
+	// Agregar botón de opción para formar el objeto del objeto Documento
 	pdfDocument.Form.Add(radio);
 	dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
-	// Save the PDF document
+	// Guarde el documento PDF
 	pdfDocument.Save(dataDir);
 	Console.WriteLine("\nGrouped checkboxes added successfully.\nFile saved at " + dataDir);
 }
@@ -130,28 +130,28 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Conclusión
 
-In this tutorial, we learned how to create grouped checkboxes in a PDF document using Aspose.PDF for .NET. By following these steps, you can easily add custom radio button options and bundle them in your PDF documents using Aspose.PDF.
+En este tutorial, aprendimos cómo crear casillas de verificación agrupadas en un documento PDF usando Aspose.PDF para .NET. Si sigue estos pasos, puede agregar fácilmente opciones de botones de opción personalizados y agruparlas en sus documentos PDF usando Aspose.PDF.
 
-### FAQ's
+### Preguntas frecuentes
 
-#### Q: What are grouped checkboxes in a PDF document?
+#### P: ¿Qué son las casillas de verificación agrupadas en un documento PDF?
 
-A: Grouped checkboxes in a PDF document refer to a set of radio button options that are grouped together. Radio buttons allow users to select only one option from a group of mutually exclusive choices. When one radio button is selected, the others in the same group are automatically deselected. This grouping behavior is useful when you want to present users with multiple options but limit their selection to one choice only.
+R: Las casillas de verificación agrupadas en un documento PDF se refieren a un conjunto de opciones de botones de opción que están agrupadas. Los botones de opción permiten a los usuarios seleccionar solo una opción de un grupo de opciones mutuamente excluyentes. Cuando se selecciona un botón de opción, los demás en el mismo grupo se deseleccionan automáticamente. Este comportamiento de agrupación es útil cuando desea presentar a los usuarios múltiples opciones pero limitar su selección a una sola opción.
 
-#### Q: Can I customize the appearance of grouped checkboxes in Aspose.PDF for .NET?
+#### P: ¿Puedo personalizar la apariencia de las casillas de verificación agrupadas en Aspose.PDF para .NET?
 
-A: Yes, you can customize the appearance of grouped checkboxes in Aspose.PDF for .NET. The API provides various options to set the style, border, and appearance of radio button options. You can define the position of each option, choose between different box styles (e.g., square, circle, cross), and adjust the border properties to achieve the desired visual representation.
+R: Sí, puede personalizar la apariencia de las casillas de verificación agrupadas en Aspose.PDF para .NET. La API proporciona varias opciones para configurar el estilo, el borde y la apariencia de las opciones de los botones de opción. Puede definir la posición de cada opción, elegir entre diferentes estilos de cuadro (por ejemplo, cuadrado, círculo, cruz) y ajustar las propiedades del borde para lograr la representación visual deseada.
 
-#### Q: How do I add grouped checkboxes to a specific page in a PDF document?
+#### P: ¿Cómo agrego casillas de verificación agrupadas a una página específica en un documento PDF?
 
-A: To add grouped checkboxes to a specific page in a PDF document, you need to instantiate a `RadioButtonField` object with the desired page number as an argument. Then, create `RadioButtonOptionField` objects representing each radio button option and specify their position using the `Rectangle` object. Finally, add these options to the `RadioButtonField` and customize their appearance as needed before adding the `RadioButtonField` to the document form.
+R: Para agregar casillas de verificación agrupadas a una página específica en un documento PDF, necesita crear una instancia de una`RadioButtonField` objeto con el número de página deseado como argumento. Luego, crea`RadioButtonOptionField` objetos que representan cada opción de botón de opción y especificar su posición usando el`Rectangle` objeto. Finalmente, agregue estas opciones al`RadioButtonField` y personalizar su apariencia según sea necesario antes de agregar el`RadioButtonField` al formulario del documento.
 
-#### Q: Can I add multiple groups of checkboxes to a single PDF document?
+#### P: ¿Puedo agregar varios grupos de casillas de verificación a un solo documento PDF?
 
-A: Yes, you can add multiple groups of checkboxes to a single PDF document. Each group should have a unique `RadioButtonField` object, and the `RadioButtonOptionField` objects within each group should share the same page and unique names for their options. This ensures that the radio buttons within each group function correctly, and the selections are mutually exclusive.
+ R: Sí, puedes agregar varios grupos de casillas de verificación a un solo documento PDF. Cada grupo debe tener un único`RadioButtonField` objeto, y el`RadioButtonOptionField` Los objetos dentro de cada grupo deben compartir la misma página y nombres únicos para sus opciones. Esto garantiza que los botones de opción dentro de cada grupo funcionen correctamente y que las selecciones sean mutuamente excluyentes.
 
-#### Q: Are grouped checkboxes supported in all PDF viewers and applications?
+#### P: ¿Se admiten casillas de verificación agrupadas en todos los visores y aplicaciones de PDF?
 
-A: Yes, grouped checkboxes are supported in all standard-compliant PDF viewers and applications. The PDF specification defines radio buttons and their grouping behavior, making them universally recognized in the PDF format. However, it's essential to test the functionality in different PDF viewers to ensure consistent behavior across various platforms.
+R: Sí, las casillas de verificación agrupadas son compatibles con todos los visores y aplicaciones de PDF compatibles con los estándares. La especificación PDF define los botones de opción y su comportamiento de agrupación, haciéndolos universalmente reconocidos en el formato PDF. Sin embargo, es esencial probar la funcionalidad en diferentes visores de PDF para garantizar un comportamiento coherente en las distintas plataformas.

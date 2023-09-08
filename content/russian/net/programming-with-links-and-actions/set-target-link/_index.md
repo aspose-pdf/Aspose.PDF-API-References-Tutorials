@@ -1,85 +1,85 @@
 ---
-title: Set Target Link In PDF File
-linktitle: Set Target Link In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set a target link in PDF file using Aspose.PDF for .NET.
+title: Установить целевую ссылку в PDF-файле
+linktitle: Установить целевую ссылку в PDF-файле
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как установить целевую ссылку в PDF-файле с помощью Aspose.PDF для .NET.
 type: docs
 weight: 100
 url: /ru/net/programming-with-links-and-actions/set-target-link/
 ---
-Learn how to set a target link in PDF file using Aspose.PDF for .NET with this step-by-step guide.
+Узнайте, как установить целевую ссылку в PDF-файле с помощью Aspose.PDF для .NET, с помощью этого пошагового руководства.
 
-## Step 1: Setting up the environment
+## Шаг 1. Настройка среды
 
-Make sure you have set up your development environment with a C# project and the appropriate Aspose.PDF references.
+Убедитесь, что вы настроили свою среду разработки с помощью проекта C# и соответствующих ссылок на Aspose.PDF.
 
-## Step 2: Loading the PDF file
+## Шаг 2. Загрузка PDF-файла
 
-Set the directory path of your documents and upload the PDF file using the following code:
+Задайте путь к каталогу ваших документов и загрузите PDF-файл, используя следующий код:
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Load the PDF file
+// Загрузите PDF-файл
 Document document = new Document(dataDir + "UpdateLinks.pdf");
 ```
 
-## Step 3: Editing the target link
+## Шаг 3. Редактирование целевой ссылки
 
-Get the link annotation to modify using the following code:
+Получите аннотацию ссылки для изменения, используя следующий код:
 
 ```csharp
 LinkAnnotation linkAnnot = (LinkAnnotation)document.Pages[1].Annotations[1];
 GoToRemoteAction goToR = (GoToRemoteAction)linkAnnot.Action;
 ```
 
-You can adjust the `[1]` indices to select a specific page or annotation.
+ Вы можете настроить`[1]` индексы для выбора конкретной страницы или аннотации.
 
-Next, update the destination without updating the file:
+Затем обновите место назначения, не обновляя файл:
 
 ```csharp
 goToR.Destination = new XYZExplicitDestination(2, 0, 0, 1.5);
 ```
 
-And if you also want to update the file:
+И если вы также хотите обновить файл:
 
 ```csharp
 goToR.File = new FileSpecification(dataDir + "input.pdf");
 ```
 
-## Step 4: Save the document with the updated link
+## Шаг 4. Сохраните документ с обновленной ссылкой.
 
-Save the document with the updated link using the `Save` method:
+ Сохраните документ с обновленной ссылкой, используя кнопку`Save` метод:
 
 ```csharp
 dataDir = dataDir + "SetTargetLink_out.pdf";
 document. Save(dataDir);
 ```
 
-## Step 5: Displaying the result
+## Шаг 5: Отображение результата
 
-Display a message indicating that the target link was successfully configured and specify the location of the saved file:
+Выведите сообщение о том, что целевая ссылка успешно настроена, и укажите местоположение сохраненного файла:
 
 ```csharp
 Console.WriteLine("\nConfiguration of target link successful.\nFile saved at location: " + dataDir);
 ```
 
-### Sample source code for Set Target Link using Aspose.PDF for .NET 
+### Пример исходного кода для установки целевой ссылки с использованием Aspose.PDF для .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Путь к каталогу документов.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Load the PDF file
+	// Загрузите PDF-файл
 	Document document = new Document(dataDir + "UpdateLinks.pdf");
 	LinkAnnotation linkAnnot = (LinkAnnotation)document.Pages[1].Annotations[1];
 	GoToRemoteAction goToR = (GoToRemoteAction)linkAnnot.Action;
-	// Next line update destination, do not update file
+	// Назначение обновления следующей строки, не обновлять файл
 	goToR.Destination = new XYZExplicitDestination(2, 0, 0, 1.5);
-	// Next line update file
+	// Файл обновления следующей строки
 	goToR.File = new FileSpecification(dataDir +  "input.pdf");
 	dataDir = dataDir + "SetTargetLink_out.pdf";
-	// Save the document with updated link
+	// Сохраните документ с обновленной ссылкой.
 	document.Save(dataDir);
 	Console.WriteLine("\nTarget link setup successfully.\nFile saved at " + dataDir);
 }
@@ -89,54 +89,54 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Заключение
 
-Congratulation ! You now know how to set a target link in a PDF file using Aspose.PDF for .NET. Use this knowledge to customize links in your PDF documents and create interactive experiences for users.
+Поздравляем! Теперь вы знаете, как установить целевую ссылку в файле PDF с помощью Aspose.PDF для .NET. Используйте эти знания для настройки ссылок в PDF-документах и создания интерактивных возможностей для пользователей.
 
-Now that you've completed this guide, you can apply these concepts to your own projects and further explore the features offered by Aspose.PDF for .NET.
+Теперь, когда вы завершили работу с этим руководством, вы можете применить эти концепции к своим собственным проектам и продолжить изучение функций, предлагаемых Aspose.PDF для .NET.
 
-### FAQ's for set target link in PDF file
+### Часто задаваемые вопросы по установке целевой ссылки в PDF-файле
 
-#### Q: What is a target link in a PDF file?
+#### Вопрос: Что такое целевая ссылка в PDF-файле?
 
-A: A target link in a PDF file is a clickable link that navigates the reader to a specific destination within the same document or to another PDF file.
+Ответ: Целевая ссылка в PDF-файле — это кликабельная ссылка, которая направляет читателя к определенному месту назначения в том же документе или к другому PDF-файлу.
 
-#### Q: Why would I want to set a target link in a PDF file?
+#### Вопрос: Зачем мне устанавливать целевую ссылку в файле PDF?
 
-A: Setting target links allows you to create a seamless navigation experience within a PDF document or link to specific sections or pages within other PDF files.
+О: Установка целевых ссылок позволяет создать удобную навигацию в PDF-документе или создать ссылки на определенные разделы или страницы в других PDF-файлах.
 
-#### Q: How does Aspose.PDF for .NET help in setting target links?
+#### Вопрос: Как Aspose.PDF for .NET помогает в настройке целевых ссылок?
 
-A: Aspose.PDF for .NET provides APIs to manipulate various aspects of PDF files, including creating and modifying links. This tutorial demonstrates how to set a target link using C# code.
+О: Aspose.PDF для .NET предоставляет API для управления различными аспектами файлов PDF, включая создание и изменение ссылок. В этом руководстве показано, как установить целевую ссылку с помощью кода C#.
 
-#### Q: Can I set target links to navigate to specific pages within the same document?
+#### Вопрос: Могу ли я установить целевые ссылки для перехода к определенным страницам одного и того же документа?
 
-A: Yes, Aspose.PDF for .NET enables you to set target links to navigate to specific pages within the same document.
+О: Да, Aspose.PDF для .NET позволяет вам устанавливать целевые ссылки для перехода к определенным страницам в одном документе.
 
-#### Q: Can I set target links to navigate to specific pages in another PDF file?
+#### Вопрос: Могу ли я установить целевые ссылки для перехода к определенным страницам в другом PDF-файле?
 
-A: Yes, you can set target links to navigate to specific pages within another PDF file using Aspose.PDF for .NET.
+О: Да, вы можете установить целевые ссылки для перехода к определенным страницам в другом PDF-файле, используя Aspose.PDF для .NET.
 
-#### Q: Are there any limitations to setting target links?
+#### Вопрос: Есть ли какие-либо ограничения на установку целевых ссылок?
 
-A: Target links can only navigate within the same document or to specific pages within other PDF files. They cannot directly link to specific content within other documents.
+О: Целевые ссылки могут переходить только внутри одного и того же документа или на определенные страницы других PDF-файлов. Они не могут напрямую ссылаться на определенное содержимое других документов.
 
-#### Q: How can I customize the appearance of a target link?
+#### Вопрос: Как настроить внешний вид целевой ссылки?
 
-A: The appearance of a target link, such as its color and style, can be customized using the properties provided by Aspose.PDF for .NET.
+О: Внешний вид целевой ссылки, например ее цвет и стиль, можно настроить с помощью свойств, предоставляемых Aspose.PDF для .NET.
 
-#### Q: Can I set multiple target links in the same PDF document?
+#### Вопрос: Могу ли я установить несколько целевых ссылок в одном PDF-документе?
 
-A: Yes, you can set multiple target links in the same PDF document. Simply repeat the process for each link you want to create.
+О: Да, вы можете установить несколько целевых ссылок в одном PDF-документе. Просто повторите процесс для каждой ссылки, которую вы хотите создать.
 
-#### Q: Can I set a target link using a specific shape or text?
+#### Вопрос: Могу ли я установить целевую ссылку, используя определенную форму или текст?
 
-A: Yes, you can attach a target link to specific shapes or text within the PDF document using the appropriate properties and methods provided by Aspose.PDF for .NET.
+О: Да, вы можете прикрепить целевую ссылку к определенным фигурам или тексту в PDF-документе, используя соответствующие свойства и методы, предоставляемые Aspose.PDF для .NET.
 
-#### Q: How can I test if the target link is working as intended?
+#### Вопрос: Как я могу проверить, работает ли целевая ссылка должным образом?
 
-A: After setting the target link using the provided code, open the modified PDF and click on the link to ensure it navigates to the desired destination.
+О: После установки целевой ссылки с помощью предоставленного кода откройте измененный PDF-файл и щелкните ссылку, чтобы убедиться, что она ведет к нужному месту назначения.
 
-#### Q: Can I set target links in password-protected PDFs?
+#### Вопрос: Могу ли я установить целевые ссылки в PDF-файлах, защищенных паролем?
 
-A: Yes, you can set target links in password-protected PDFs as long as you provide the appropriate credentials to access and modify the document.
+О: Да, вы можете устанавливать целевые ссылки в PDF-файлах, защищенных паролем, при условии, что вы предоставляете соответствующие учетные данные для доступа и изменения документа.

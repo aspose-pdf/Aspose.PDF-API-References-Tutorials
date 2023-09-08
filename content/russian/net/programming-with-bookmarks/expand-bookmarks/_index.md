@@ -1,49 +1,49 @@
 ---
-title: Expand Bookmarks In PDF File
-linktitle: Expand Bookmarks In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily expand bookmarks in PDF file for improved navigation with Aspose.PDF for .NET.
+title: Развернуть закладки в PDF-файле
+linktitle: Развернуть закладки в PDF-файле
+second_title: Справочник по Aspose.PDF для .NET API
+description: Легко расширяйте закладки в PDF-файле для улучшения навигации с помощью Aspose.PDF для .NET.
 type: docs
 weight: 50
 url: /ru/net/programming-with-bookmarks/expand-bookmarks/
 ---
-Expanding bookmarks in PDF file will display all open bookmarks by default. With Aspose.PDF for .NET, you can easily expand bookmarks by following the following source code:
+При раскрытии закладок в PDF-файле по умолчанию отображаются все открытые закладки. С помощью Aspose.PDF для .NET вы можете легко расширить закладки, выполнив следующий исходный код:
 
-## Step 1: Import required libraries
+## Шаг 1. Импортируйте необходимые библиотеки.
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Прежде чем начать, вам необходимо импортировать необходимые библиотеки для вашего проекта C#. Вот необходимая директива импорта:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## Шаг 2. Установите путь к папке с документами.
 
-In this step, you need to specify the path to the folder containing the PDF file whose bookmarks you want to expand. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ На этом шаге вам необходимо указать путь к папке, содержащей PDF-файл, закладки которого вы хотите расширить. Заменять`"YOUR DOCUMENT DIRECTORY"`в следующем коде с фактическим путем к папке ваших документов:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Шаг 3. Откройте PDF-документ.
 
-Now we will open the PDF document whose bookmarks we want to expand using the following code:
+Теперь мы откроем PDF-документ, закладки которого хотим расширить, используя следующий код:
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 4: Set Page Display Mode
+## Шаг 4. Установите режим отображения страницы
 
-In this step, we will set the page display mode to show bookmarks by default. We use the `PageMode` property of the `doc` object to set the desired page mode. Here is the corresponding code:
+На этом этапе мы установим режим отображения страницы для отображения закладок по умолчанию. Мы используем`PageMode` собственность`doc` объект для установки желаемого режима страницы. Вот соответствующий код:
 
 ```csharp
 doc.PageMode = PageMode.UseOutlines;
 ```
 
-## Step 5: Browse bookmarks and expand them
+## Шаг 5. Просмотрите закладки и разверните их
 
-Now we'll loop through each bookmark item in the document's bookmarks collection and set each item's open state to `true` to expand them by default. Here is the corresponding code:
+ Теперь мы пройдемся по каждому элементу закладки в коллекции закладок документа и установим для каждого элемента открытое состояние.`true` чтобы развернуть их по умолчанию. Вот соответствующий код:
 
 ```csharp
 foreach(OutlineItemCollection item in doc.Outlines)
@@ -52,86 +52,86 @@ foreach(OutlineItemCollection item in doc.Outlines)
 }
 ```
 
-## Step 6: Save the updated file
+## Шаг 6. Сохраните обновленный файл.
 
-Finally, we save the updated PDF file using the `Save` method of the `doc` object. Here is the corresponding code:
+ Наконец, мы сохраняем обновленный PDF-файл, используя`Save` метод`doc` объект. Вот соответствующий код:
 
 ```csharp
 dataDir = dataDir + "ExpandBookmarks_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Expand Bookmarks using Aspose.PDF for .NET 
+### Пример исходного кода для расширения закладок с помощью Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Открыть документ
 Document doc = new Document(dataDir + "input.pdf");
-// Set page view mode i.e. show thumbnails, full-screen, show attachment panel
+// Установить режим просмотра страницы, т.е. показывать миниатюры, полноэкранный режим, показывать панель вложений.
 doc.PageMode = PageMode.UseOutlines;
-// Traverse through each Ouline item in outlines collection of PDF file
+// Просмотрите каждый элемент Ouline в коллекции контуров PDF-файла.
 foreach (OutlineItemCollection item in doc.Outlines)
 {
-	// Set open status for outline item
+	// Установить открытый статус для элемента структуры
 	item.Open = true;
 }
 dataDir = dataDir + "ExpandBookmarks_out.pdf";
-// Save output
+// Сохранить вывод
 doc.Save(dataDir);
 Console.WriteLine("\nBookmarks expanded successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Заключение
 
-Congratulation ! You now have a step-by-step guide to developing bookmarks with Aspose.PDF for .NET. You can use this code to show all default bookmarks in your PDF documents.
+Поздравляем! Теперь у вас есть пошаговое руководство по разработке закладок с помощью Aspose.PDF для .NET. Вы можете использовать этот код, чтобы показать все закладки по умолчанию в ваших PDF-документах.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Обязательно ознакомьтесь с официальной документацией Aspose.PDF для получения дополнительной информации о расширенных функциях управления закладками.
 
-### FAQ's for expand bookmarks in PDF file
+### Часто задаваемые вопросы по расширению закладок в PDF-файле
 
-#### Q: What are bookmarks in a PDF file?
+#### Вопрос: Что такое закладки в PDF-файле?
 
-A: Bookmarks in a PDF file are navigational aids that allow users to quickly jump to specific sections or pages within the document. They provide a convenient way to access different parts of a document.
+О: Закладки в PDF-файле — это средства навигации, которые позволяют пользователям быстро переходить к определенным разделам или страницам документа. Они обеспечивают удобный способ доступа к различным частям документа.
 
-#### Q: Why would I want to expand bookmarks in a PDF file?
+#### Вопрос: Зачем мне расширять закладки в PDF-файле?
 
-A: Expanding bookmarks can improve the user experience by displaying all bookmarks in an expanded state by default. This gives users a clear overview of the document's structure and allows them to easily navigate to different sections.
+О: Раскрытие закладок может улучшить взаимодействие с пользователем, поскольку по умолчанию все закладки отображаются в развернутом состоянии. Это дает пользователям четкое представление о структуре документа и позволяет им легко переходить к различным разделам.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### Вопрос: Как мне импортировать необходимые библиотеки для моего проекта C#?
 
-A: To import the required library for your C# project, use the following import directive:
+О: Чтобы импортировать необходимую библиотеку для вашего проекта C#, используйте следующую директиву импорта:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This directive allows you to utilize the classes and methods provided by Aspose.PDF for .NET.
+Эта директива позволяет вам использовать классы и методы, предоставляемые Aspose.PDF для .NET.
 
-#### Q: How do I specify the path to the documents folder?
+#### Вопрос: Как указать путь к папке с документами?
 
-A: In the provided source code, replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file that you want to work with. This ensures that the code can locate the target PDF file.
+ О: В предоставленном исходном коде замените`"YOUR DOCUMENT DIRECTORY"` с фактическим путем к папке, содержащей PDF-файл, с которым вы хотите работать. Это гарантирует, что код сможет найти целевой PDF-файл.
 
-#### Q: How do I open a PDF document to expand its bookmarks?
+#### Вопрос: Как открыть PDF-документ, чтобы развернуть его закладки?
 
-A: To open a PDF document for expanding bookmarks, use the following code:
+О: Чтобы открыть PDF-документ для расширения закладок, используйте следующий код:
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-Replace `"input.pdf"` with the actual file name.
+ Заменять`"input.pdf"` с фактическим именем файла.
 
-#### Q: How do I set the page display mode to show bookmarks by default?
+#### Вопрос: Как настроить режим отображения страницы, чтобы по умолчанию отображались закладки?
 
-A: To set the page display mode to show bookmarks by default, use the `PageMode` property of the `doc` object:
+О: Чтобы настроить режим отображения страницы на отображение закладок по умолчанию, используйте команду`PageMode` собственность`doc` объект:
 
 ```csharp
 doc.PageMode = PageMode.UseOutlines;
 ```
 
-#### Q: How do I expand all bookmarks in the PDF document?
+#### Вопрос: Как развернуть все закладки в PDF-документе?
 
-A: To expand all bookmarks, loop through each bookmark item in the document's outlines collection and set the `Open` property to `true`:
+ О: Чтобы развернуть все закладки, просмотрите каждый элемент закладки в коллекции структур документа и установите`Open` собственность`true`:
 
 ```csharp
 foreach (OutlineItemCollection item in doc.Outlines)
@@ -140,19 +140,19 @@ foreach (OutlineItemCollection item in doc.Outlines)
 }
 ```
 
-#### Q: What happens if a bookmark has nested child bookmarks?
+#### Вопрос: Что произойдет, если закладка имеет вложенные дочерние закладки?
 
-A: If a bookmark has nested child bookmarks, expanding the parent bookmark will also expand its child bookmarks, providing a comprehensive view of the document's structure.
+О: Если закладка имеет вложенные дочерние закладки, раскрытие родительской закладки также приведет к расширению ее дочерних закладок, предоставляя полное представление о структуре документа.
 
-#### Q: How do I save the updated PDF file after expanding bookmarks?
+#### Вопрос: Как сохранить обновленный PDF-файл после расширения закладок?
 
-A: To save the updated PDF file after expanding bookmarks, use the following code:
+О: Чтобы сохранить обновленный PDF-файл после расширения закладок, используйте следующий код:
 
 ```csharp
 dataDir = dataDir + "ExpandBookmarks_out.pdf";
 doc.Save(dataDir);
 ```
 
-#### Q: Can I customize the appearance of expanded bookmarks?
+#### Вопрос: Могу ли я настроить внешний вид развернутых закладок?
 
-A: While this tutorial focuses on expanding bookmarks by default, you can customize the appearance of bookmarks using Aspose.PDF's other features and properties.
+О: Хотя в этом руководстве основное внимание уделяется расширению закладок по умолчанию, вы можете настроить внешний вид закладок, используя другие функции и свойства Aspose.PDF.

@@ -1,92 +1,92 @@
 ---
-title: Radio Button
-linktitle: Radio Button
-second_title: Aspose.PDF for .NET API Reference
-description: Easily add radio buttons to your PDF documents with Aspose.PDF for .NET.
+title: زر الراديو
+linktitle: زر الراديو
+second_title: Aspose.PDF لمرجع .NET API
+description: أضف أزرار الاختيار بسهولة إلى مستندات PDF الخاصة بك باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 220
 url: /ar/net/programming-with-forms/radio-button/
 ---
-In this tutorial, we will show you how to add a radio button in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+سنوضح لك في هذا البرنامج التعليمي كيفية إضافة زر اختيار في مستند PDF باستخدام Aspose.PDF لـ .NET. سنشرح لك كود مصدر C# خطوة بخطوة لإرشادك خلال هذه العملية.
 
-## Step 1: Preparation
+## الخطوة 1: التحضير
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+تأكد من استيراد المكتبات الضرورية وتعيين المسار إلى دليل المستندات الخاص بك:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Instantiate a Document Object
+## الخطوة 2: إنشاء مثيل لكائن المستند
 
-Instantiate a Document object to create a new PDF document:
+إنشاء كائن مستند لإنشاء مستند PDF جديد:
 
 ```csharp
 Document pdfDocument = new Document();
 ```
 
-## Step 3: Add a page
+## الخطوة 3: إضافة صفحة
 
-Add a page to the PDF document:
+إضافة صفحة إلى مستند PDF:
 
 ```csharp
 pdfDocument.Pages.Add();
 ```
 
-## Step 4: Instantiate a RadioButtonField Object
+## الخطوة 4: إنشاء مثيل لكائن RadioButtonField
 
-Instantiate a RadioButtonField object specifying the page number as an argument:
+إنشاء مثيل لكائن RadioButtonField مع تحديد رقم الصفحة كوسيطة:
 
 ```csharp
 RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
 ```
 
-## Step 5: Add radio button options
+## الخطوة 5: إضافة خيارات زر الاختيار
 
-Add radio button options to the RadioButtonField object by specifying the coordinates of each option with a Rectangle object:
+أضف خيارات زر الاختيار إلى كائن RadioButtonField عن طريق تحديد إحداثيات كل خيار مع كائن Rectangle:
 
 ```csharp
 radio.AddOption("Test", new Rectangle(0, 0, 20, 20));
 radio.AddOption("Test1", new Rectangle(20, 20, 40, 40));
 ```
 
-## Step 6: Add the radio button to the form
+## الخطوة 6: أضف زر الاختيار إلى النموذج
 
-Add the radio button to the document's Form object:
+أضف زر الاختيار إلى كائن النموذج الخاص بالمستند:
 
 ```csharp
 pdfDocument.Form.Add(radio);
 ```
 
-## Step 7: Save the PDF Document
+## الخطوة 7: احفظ مستند PDF
 
-Save the created PDF document:
+احفظ مستند PDF الذي تم إنشاؤه:
 
 ```csharp
 dataDir = dataDir + "RadioButton_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Radio Button using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لزر الراديو باستخدام Aspose.PDF لـ .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// المسار إلى دليل المستندات.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Instantiate Document object
+	// إنشاء مثيل لكائن المستند
 	Document pdfDocument = new Document();
-	// Add a page to PDF file
+	// إضافة صفحة إلى ملف PDF
 	pdfDocument.Pages.Add();
-	// Instatiate RadioButtonField object with page number as argument
+	// إنشاء كائن RadioButtonField باستخدام رقم الصفحة كوسيطة
 	RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
-	// Add first radio button option and also specify its origin using Rectangle object
+	// أضف خيار زر الاختيار الأول وحدد أيضًا أصله باستخدام كائن المستطيل
 	radio.AddOption("Test", new Rectangle(0, 0, 20, 20));
-	// Add second radio button option
+	// إضافة خيار زر الاختيار الثاني
 	radio.AddOption("Test1", new Rectangle(20, 20, 40, 40));
-	// Add radio button to form object of Document object
+	// أضف زر الاختيار لتكوين كائن كائن المستند
 	pdfDocument.Form.Add(radio);
 	dataDir = dataDir + "RadioButton_out.pdf";
-	// Save the PDF file
+	// احفظ ملف PDF
 	pdfDocument.Save(dataDir);
 	Console.WriteLine("\nRadio button field added successfully.\nFile saved at " + dataDir);
 }
@@ -96,29 +96,29 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we learned how to add a radio button in a PDF document using Aspose.PDF for .NET. By following these steps, you can easily create a radio button and place it on a specific page in your PDF document.
+في هذا البرنامج التعليمي، تعلمنا كيفية إضافة زر اختيار في مستند PDF باستخدام Aspose.PDF لـ .NET. باتباع هذه الخطوات، يمكنك بسهولة إنشاء زر اختيار ووضعه على صفحة معينة في مستند PDF الخاص بك.
 
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: Can I customize the appearance of the radio button, such as its size and color?
+#### س: هل يمكنني تخصيص مظهر زر الاختيار، مثل حجمه ولونه؟
 
-A: Yes, you can customize the appearance of the radio button using the `Rectangle` object's coordinates to define its size and position. Aspose.PDF for .NET allows you to adjust the radio button's appearance to suit your needs.
+ ج: نعم، يمكنك تخصيص مظهر زر الاختيار باستخدام`Rectangle` إحداثيات الكائن لتحديد حجمه وموضعه. يتيح لك Aspose.PDF for .NET إمكانية ضبط مظهر زر الاختيار ليناسب احتياجاتك.
 
-#### Q: Can I add multiple radio buttons with different groups on the same page?
+#### س: هل يمكنني إضافة أزرار اختيار متعددة مع مجموعات مختلفة في نفس الصفحة؟
 
-A: Yes, you can add multiple radio buttons with different groups on the same page. Each group of radio buttons can have a unique name, and only one option within each group can be selected at a time.
+ج: نعم، يمكنك إضافة أزرار اختيار متعددة مع مجموعات مختلفة في نفس الصفحة. يمكن أن يكون لكل مجموعة من أزرار الاختيار اسم فريد، ويمكن تحديد خيار واحد فقط داخل كل مجموعة في المرة الواحدة.
 
-#### Q: How can I add a label or text description to the radio button options?
+#### س: كيف يمكنني إضافة تسمية أو وصف نصي إلى خيارات زر الاختيار؟
 
-A: To add a label or text description to the radio button options, you can use the `TextStamp` class from Aspose.PDF for .NET to overlay text on the PDF document at specific coordinates.
+ ج: لإضافة تسمية أو وصف نصي إلى خيارات زر الاختيار، يمكنك استخدام`TextStamp`فئة من Aspose.PDF لـ .NET لتراكب النص على مستند PDF بإحداثيات محددة.
 
-#### Q: Is Aspose.PDF for .NET compatible with all versions of .NET Framework?
+#### س: هل يتوافق Aspose.PDF for .NET مع كافة إصدارات .NET Framework؟
 
-A: Yes, Aspose.PDF for .NET is compatible with all versions of .NET Framework, including .NET Core and .NET Standard.
+ج: نعم، Aspose.PDF for .NET متوافق مع كافة إصدارات .NET Framework، بما في ذلك .NET Core و.NET Standard.
 
-#### Q: Can I programmatically control the selection of a radio button option in the PDF document?
+#### س: هل يمكنني التحكم برمجيًا في تحديد خيار زر الاختيار في مستند PDF؟
 
-A: Yes, you can programmatically control the selection of a radio button option using the `IsSelected` property of the `RadioButtonOption` class. This property allows you to set a specific option as selected.
+ ج: نعم، يمكنك التحكم برمجيًا في تحديد خيار زر الاختيار باستخدام الزر`IsSelected` ملكية`RadioButtonOption` فصل. تسمح لك هذه الخاصية بتعيين خيار محدد كما هو محدد.

@@ -1,92 +1,92 @@
 ---
-title: Insert Empty Page At End
-linktitle: Insert Empty Page At End
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to insert a blank page at the end of a PDF document with Aspose.PDF for .NET. Easy and fast!
+title: أدخل صفحة فارغة في النهاية
+linktitle: أدخل صفحة فارغة في النهاية
+second_title: Aspose.PDF لمرجع .NET API
+description: دليل خطوة بخطوة لإدراج صفحة فارغة في نهاية مستند PDF باستخدام Aspose.PDF لـ .NET. سهل وسريع!
 type: docs
 weight: 130
 url: /ar/net/programming-with-pdf-pages/insert-empty-page-at-end/
 ---
-In this tutorial, we'll walk you through the step-by-step process to insert a blank page at the end of a PDF document using Aspose.PDF for .NET. We'll explain the bundled C# source code and provide you with a comprehensive guide to help you understand and implement this feature in your own projects. At the end of this tutorial, you will know how to insert a blank page at the end of a PDF document using Aspose.PDF for .NET.
+في هذا البرنامج التعليمي، سنرشدك خلال العملية خطوة بخطوة لإدراج صفحة فارغة في نهاية مستند PDF باستخدام Aspose.PDF لـ .NET. سنشرح لك التعليمات البرمجية المصدرية المجمعة لـ C# ونزودك بدليل شامل لمساعدتك على فهم هذه الميزة وتنفيذها في مشاريعك الخاصة. في نهاية هذا البرنامج التعليمي، ستعرف كيفية إدراج صفحة فارغة في نهاية مستند PDF باستخدام Aspose.PDF لـ .NET.
 
-## Prerequisites
-Before you begin, make sure you have the following:
+## المتطلبات الأساسية
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- A basic knowledge of the C# programming language
-- Aspose.PDF for .NET installed in your development environment
+- معرفة أساسية بلغة البرمجة C#
+- تم تثبيت Aspose.PDF لـ .NET في بيئة التطوير الخاصة بك
 
-## Step 1: Define the document directory
-First, you need to set the path to your documents directory. This is the location where you have your original PDF file and where you want to save the modified PDF file. Replace "YOUR DOCUMENTS DIRECTORY" with the appropriate path.
+## الخطوة 1: تحديد دليل المستند
+أولاً، تحتاج إلى تعيين المسار إلى دليل المستندات الخاص بك. هذا هو الموقع الذي يوجد به ملف PDF الأصلي الخاص بك والمكان الذي تريد حفظ ملف PDF المعدل فيه. استبدل "دليل المستندات الخاصة بك" بالمسار المناسب.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Open the PDF document
-Then you can open the PDF document using the `Document` class of Aspose.PDF. Be sure to specify the correct path to the original PDF document.
+## الخطوة 2: افتح مستند PDF
+ ثم يمكنك فتح مستند PDF باستخدام`Document` فئة Aspose.PDF. تأكد من تحديد المسار الصحيح لمستند PDF الأصلي.
 
 ```csharp
 Document pdfDocument1 = new Document(dataDir + "InsertEmptyPageAtEnd.pdf");
 ```
 
-## Step 3: Insert an empty page
-Now you can insert a blank page at the end of the PDF document using the `Add()` method of the `Pages` property of the `pdfDocument1` object.
+## الخطوة 3: أدخل صفحة فارغة
+ يمكنك الآن إدراج صفحة فارغة في نهاية مستند PDF باستخدام الملف`Add()` طريقة`Pages` ملكية`pdfDocument1` هدف.
 
 ```csharp
 pdfDocument1.Pages.Add();
 ```
 
-## Step 4: Save the modified document
-Finally, you can save the modified PDF document to a file using the `Save()` method of the `Document` class. Be sure to specify the correct path and filename for the output file.
+## الخطوة 4: احفظ المستند المعدل
+وأخيرًا، يمكنك حفظ مستند PDF المعدل في ملف باستخدام الملف`Save()` طريقة`Document` فصل. تأكد من تحديد المسار الصحيح واسم الملف لملف الإخراج.
 
 ```csharp
 dataDir = dataDir + "InsertEmptyPageAtEnd_out.pdf";
 pdfDocument1.Save(dataDir);
 ```
 
-### Sample source code for Insert Empty Page At End using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لإدراج صفحة فارغة في النهاية باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument1 = new Document(dataDir + "InsertEmptyPageAtEnd.pdf");
-// Insert an empty page at the end of a PDF file
+// قم بإدراج صفحة فارغة في نهاية ملف PDF
 pdfDocument1.Pages.Add();
 dataDir = dataDir + "InsertEmptyPageAtEnd_out.pdf";
-// Save output file
+// حفظ ملف الإخراج
 pdfDocument1.Save(dataDir);
 System.Console.WriteLine("\nEmpty page inserted successfully at the end of document.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
-In this tutorial, we learned how to insert a blank page at the end of a PDF document using Aspose.PDF for .NET. By following this step-by-step guide, you can easily add a blank page at the end of your PDF document. Aspose.PDF offers a powerful and flexible API for working with PDF files, allowing you to manipulate, modify and generate PDF documents according to your specific needs.
+## خاتمة
+في هذا البرنامج التعليمي، تعلمنا كيفية إدراج صفحة فارغة في نهاية مستند PDF باستخدام Aspose.PDF لـ .NET. باتباع هذا الدليل التفصيلي، يمكنك بسهولة إضافة صفحة فارغة في نهاية مستند PDF الخاص بك. يوفر Aspose.PDF واجهة برمجة تطبيقات قوية ومرنة للعمل مع ملفات PDF، مما يسمح لك بمعالجة وتعديل وإنشاء مستندات PDF وفقًا لاحتياجاتك الخاصة.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: How can I insert a blank page at the end of a PDF document using Aspose.PDF for .NET?
+#### س: كيف يمكنني إدراج صفحة فارغة في نهاية مستند PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: To insert a blank page at the end of a PDF document using Aspose.PDF for .NET, you can follow these steps:
+ج: لإدراج صفحة فارغة في نهاية مستند PDF باستخدام Aspose.PDF لـ .NET، يمكنك اتباع الخطوات التالية:
 
-1. Set the document directory by specifying the path where your original PDF file is located and where you want to save the modified PDF file. Replace "YOUR DOCUMENTS DIRECTORY" with the appropriate path.
-2. Open the PDF document using the `Document` class of Aspose.PDF. Be sure to specify the correct path to the original PDF document.
-3. Insert a blank page at the end of the PDF document using the `Add()` method of the `Pages` property of the `pdfDocument1` object.
-4. Save the modified PDF document to a file using the `Save()` method of the `Document` class. Be sure to specify the correct path and filename for the output file.
+1. قم بتعيين دليل المستند عن طريق تحديد المسار الذي يوجد به ملف PDF الأصلي الخاص بك والمكان الذي تريد حفظ ملف PDF المعدل فيه. استبدل "دليل المستندات الخاصة بك" بالمسار المناسب.
+2.  افتح مستند PDF باستخدام`Document` فئة Aspose.PDF. تأكد من تحديد المسار الصحيح لمستند PDF الأصلي.
+3.  قم بإدراج صفحة فارغة في نهاية مستند PDF باستخدام`Add()` طريقة`Pages` ملكية`pdfDocument1` هدف.
+4.  احفظ مستند PDF المعدل في ملف باستخدام الملف`Save()` طريقة`Document` فصل. تأكد من تحديد المسار الصحيح واسم الملف لملف الإخراج.
 
-#### Q: Can I insert a blank page at a specific position within the PDF document?
+#### س: هل يمكنني إدراج صفحة فارغة في موضع محدد داخل مستند PDF؟
 
-A: Yes, you can insert a blank page at any specific position within the PDF document by using the `Insert()` method of the `Pages` collection of the `pdfDocument1` object. Specify the index of the page to insert. For example, to insert a blank page at index 2, you can use `pdfDocument1.Pages.Insert(2);`.
+ ج: نعم، يمكنك إدراج صفحة فارغة في أي موضع محدد داخل مستند PDF باستخدام`Insert()` طريقة`Pages` جمع من`pdfDocument1` هدف. حدد فهرس الصفحة المراد إدراجها. على سبيل المثال، لإدراج صفحة فارغة في الفهرس 2، يمكنك استخدام`pdfDocument1.Pages.Insert(2);`.
 
-#### Q: Will inserting a blank page overwrite the existing content in the PDF file?
+#### س: هل سيؤدي إدراج صفحة فارغة إلى استبدال المحتوى الموجود في ملف PDF؟
 
-A: No, inserting a blank page at the end of the PDF document will not overwrite the existing content. It simply adds an empty page to the end, leaving the rest of the content unchanged.
+ج: لا، لن يؤدي إدراج صفحة فارغة في نهاية مستند PDF إلى استبدال المحتوى الموجود. فهو ببساطة يضيف صفحة فارغة إلى النهاية، ويترك بقية المحتوى دون تغيير.
 
-#### Q: Can I insert multiple blank pages at the end of the PDF document?
+#### س: هل يمكنني إدراج عدة صفحات فارغة في نهاية مستند PDF؟
 
-A: Yes, you can insert multiple blank pages at the end of the PDF document by repeating the step to insert the blank page for each additional page you want to add.
+ج: نعم، يمكنك إدراج عدة صفحات فارغة في نهاية مستند PDF عن طريق تكرار خطوة إدراج الصفحة الفارغة لكل صفحة إضافية تريد إضافتها.
 
-#### Q: Is it possible to remove a page from the end of the PDF document instead of adding a blank page?
+#### س: هل يمكن إزالة صفحة من نهاية مستند PDF بدلاً من إضافة صفحة فارغة؟
 
-A: Yes, you can remove a page from the end of the PDF document using the `RemoveAt()` method of the `Pages` collection. For example, to remove the last page, you can use `pdfDocument1.Pages.RemoveAt(pdfDocument1.Pages.Count);`.
+ ج: نعم، يمكنك إزالة صفحة من نهاية مستند PDF باستخدام`RemoveAt()` طريقة`Pages`مجموعة. على سبيل المثال، لإزالة الصفحة الأخيرة، يمكنك استخدام`pdfDocument1.Pages.RemoveAt(pdfDocument1.Pages.Count);`.

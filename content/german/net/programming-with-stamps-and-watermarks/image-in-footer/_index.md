@@ -1,139 +1,139 @@
 ---
-title: Image In Footer
-linktitle: Image In Footer
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add an image in the footer section of a PDF document with Aspose.PDF for .NET.
+title: Bild in der Fußzeile
+linktitle: Bild in der Fußzeile
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET ein Bild in den Fußzeilenbereich eines PDF-Dokuments einfügen.
 type: docs
 weight: 130
 url: /de/net/programming-with-stamps-and-watermarks/image-in-footer/
 ---
-In this tutorial, we will guide you step by step on how to add an image in the footer section of a PDF document using Aspose.PDF for .NET. We will use the provided C# source code to open an existing PDF document, create an image buffer, set its properties, and add it to all pages of the PDF document.
+In diesem Tutorial zeigen wir Ihnen Schritt für Schritt, wie Sie mit Aspose.PDF für .NET ein Bild in den Fußzeilenbereich eines PDF-Dokuments einfügen. Wir verwenden den bereitgestellten C#-Quellcode, um ein vorhandenes PDF-Dokument zu öffnen, einen Bildpuffer zu erstellen, seine Eigenschaften festzulegen und ihn allen Seiten des PDF-Dokuments hinzuzufügen.
 
-## Step 1: Setting up the environment
+## Schritt 1: Einrichten der Umgebung
 
-Before you begin, make sure you have the following:
+Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Eine installierte .NET-Entwicklungsumgebung.
+- Die Aspose.PDF-Bibliothek für .NET wurde heruntergeladen und in Ihrem Projekt referenziert.
 
-## Step 2: Loading the existing PDF document
+## Schritt 2: Laden des vorhandenen PDF-Dokuments
 
-The first step is to load the existing PDF document into your project. Here's how:
+Der erste Schritt besteht darin, das vorhandene PDF-Dokument in Ihr Projekt zu laden. Hier ist wie:
 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the existing PDF document
+// Öffnen Sie das vorhandene PDF-Dokument
 Document pdfDocument = new Document(dataDir + "ImageInFooter.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+Ersetzen Sie „IHR DOKUMENTENVERZEICHNIS“ unbedingt durch den tatsächlichen Pfad zu dem Verzeichnis, in dem sich Ihr PDF-Dokument befindet.
 
-## Step 3: Creating and adding the image in the footer section
+## Schritt 3: Erstellen und Hinzufügen des Bildes im Fußzeilenbereich
 
-Now that the PDF document is loaded, we can create an image stamp and add it to all the pages of the document. Here's how:
+Nachdem das PDF-Dokument nun geladen ist, können wir einen Bildstempel erstellen und ihn auf allen Seiten des Dokuments hinzufügen. Hier ist wie:
 
 ```csharp
-// Create the frame buffer
+// Erstellen Sie den Frame-Puffer
 ImageStamp imageStamp = new ImageStamp(dataDir + "aspose-logo.jpg");
 
-// Set image buffer properties
+// Legen Sie die Eigenschaften des Bildpuffers fest
 imageStamp.BottomMargin = 10;
 imageStamp.HorizontalAlignment = HorizontalAlignment.Center;
 imageStamp.VerticalAlignment = VerticalAlignment.Bottom;
 
-// Add image buffer to all pages
+// Bildpuffer zu allen Seiten hinzufügen
 foreach(Page page in pdfDocument.Pages)
 {
      page.AddStamp(imageStamp);
 }
 ```
 
-The code above creates an image buffer from the "aspose-logo.jpg" file and sets its properties, such as bottom margin, horizontal and vertical alignment. Then the image buffer is added to all pages of the PDF document.
+Der obige Code erstellt einen Bildpuffer aus der Datei „aspose-logo.jpg“ und legt dessen Eigenschaften wie den unteren Rand sowie die horizontale und vertikale Ausrichtung fest. Anschließend wird der Bildpuffer allen Seiten des PDF-Dokuments hinzugefügt.
 
-## Step 4: Saving the modified PDF document
+## Schritt 4: Speichern des geänderten PDF-Dokuments
 
-Once the image is added to the footer section, we can save the modified PDF document. Here's how:
+Sobald das Bild zum Fußzeilenbereich hinzugefügt wurde, können wir das geänderte PDF-Dokument speichern. Hier ist wie:
 
 ```csharp
-// Save the modified PDF document
+// Speichern Sie das geänderte PDF-Dokument
 pdfDocument.Save(dataDir + "ImageInFooter_out.pdf");
 ```
 
-The above code saves the edited PDF document to the specified directory.
+Der obige Code speichert das bearbeitete PDF-Dokument im angegebenen Verzeichnis.
 
-### Sample source code for Image In Footer using Aspose.PDF for .NET 
+### Beispielquellcode für Image In Footer mit Aspose.PDF für .NET 
 ```csharp
 
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Dokument öffnen
 Document pdfDocument = new Document(dataDir+ "ImageInFooter.pdf");
 
-// Create footer
+// Fußzeile erstellen
 ImageStamp imageStamp = new ImageStamp(dataDir+ "aspose-logo.jpg");
 
-// Set properties of the stamp
+// Legen Sie die Eigenschaften des Stempels fest
 imageStamp.BottomMargin = 10;
 imageStamp.HorizontalAlignment = HorizontalAlignment.Center;
 imageStamp.VerticalAlignment = VerticalAlignment.Bottom;
 
-// Add footer on all pages
+// Fußzeile auf allen Seiten hinzufügen
 foreach (Page page in pdfDocument.Pages)
 {
 	page.AddStamp(imageStamp);
 }
 dataDir = dataDir + "ImageInFooter_out.pdf";
 
-// Save updated PDF file
+// Speichern Sie die aktualisierte PDF-Datei
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nImage in footer added successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Abschluss
 
-Congratulation ! You have learned how to add an image in the footer section of a PDF document using Aspose.PDF for .NET. You can now customize the footers of your PDF documents by adding images.
+Herzlichen Glückwunsch! Sie haben gelernt, wie Sie mit Aspose.PDF für .NET ein Bild in den Fußzeilenbereich eines PDF-Dokuments einfügen. Sie können jetzt die Fußzeilen Ihrer PDF-Dokumente anpassen, indem Sie Bilder hinzufügen.
 
-### FAQ's for image in footer
+### FAQs zum Bild in der Fußzeile
 
-#### Q: What is the purpose of adding an image to the footer section of a PDF document?
+#### F: Welchen Zweck hat das Hinzufügen eines Bildes zum Fußzeilenbereich eines PDF-Dokuments?
 
-A: Adding an image to the footer section of a PDF document allows you to include visual elements, such as a logo or watermark, at the bottom of every page. This can enhance the branding and aesthetics of the PDF content.
+A: Durch das Hinzufügen eines Bildes zum Fußzeilenbereich eines PDF-Dokuments können Sie am unteren Rand jeder Seite visuelle Elemente wie ein Logo oder ein Wasserzeichen einfügen. Dies kann das Branding und die Ästhetik des PDF-Inhalts verbessern.
 
-#### Q: How does the provided C# source code achieve adding an image to the footer section of a PDF document?
+#### F: Wie ermöglicht der bereitgestellte C#-Quellcode das Hinzufügen eines Bildes zum Fußzeilenbereich eines PDF-Dokuments?
 
-A: The provided code demonstrates how to load an existing PDF document, create an `ImageStamp` object from an image file, set properties such as bottom margin and alignment, and then add the image stamp to the footer of all pages.
+ A: Der bereitgestellte Code zeigt, wie man ein vorhandenes PDF-Dokument lädt und erstellt`ImageStamp` Objekt aus einer Bilddatei, legen Sie Eigenschaften wie den unteren Rand und die Ausrichtung fest und fügen Sie dann den Bildstempel zur Fußzeile aller Seiten hinzu.
 
-#### Q: Can I adjust the position and alignment of the image within the footer section?
+#### F: Kann ich die Position und Ausrichtung des Bildes im Fußzeilenbereich anpassen?
 
-A: Yes, you can adjust the position and alignment of the image within the footer section by modifying the properties of the `ImageStamp` object. The code snippet sets properties such as `BottomMargin`, `HorizontalAlignment`, and `VerticalAlignment`.
+ A: Ja, Sie können die Position und Ausrichtung des Bildes im Fußzeilenbereich anpassen, indem Sie die Eigenschaften des ändern`ImageStamp` Objekt. Das Code-Snippet legt Eigenschaften fest wie`BottomMargin`, `HorizontalAlignment` , Und`VerticalAlignment`.
 
-#### Q: Is it possible to add different images to the footer section on different pages of the PDF document?
+#### F: Ist es möglich, auf verschiedenen Seiten des PDF-Dokuments unterschiedliche Bilder zum Fußzeilenbereich hinzuzufügen?
 
-A: Yes, you can add different images to the footer section on different pages by creating separate `ImageStamp` objects with different image files and properties, and then adding them to specific pages.
+ A: Ja, Sie können dem Fußzeilenbereich auf verschiedenen Seiten unterschiedliche Bilder hinzufügen, indem Sie separate Bilder erstellen`ImageStamp` Objekte mit unterschiedlichen Bilddateien und Eigenschaften erstellen und sie dann zu bestimmten Seiten hinzufügen.
 
-#### Q: How does the code ensure that the image is added to all pages of the PDF document?
+#### F: Wie stellt der Code sicher, dass das Bild allen Seiten des PDF-Dokuments hinzugefügt wird?
 
-A: The provided code uses a `foreach` loop to iterate through all pages of the PDF document and adds the same `ImageStamp` to each page's footer section.
+A: Der bereitgestellte Code verwendet a`foreach` Schleife, um alle Seiten des PDF-Dokuments zu durchlaufen und diese hinzuzufügen`ImageStamp` zum Fußzeilenbereich jeder Seite.
 
-#### Q: Can I add other elements, such as text or shapes, to the footer section using a similar approach?
+#### F: Kann ich auf ähnliche Weise andere Elemente wie Text oder Formen zum Fußzeilenbereich hinzufügen?
 
-A: Yes, you can add other elements like text or shapes to the footer section using a similar approach by creating the appropriate stamp objects (e.g., `TextStamp`) and setting their properties accordingly.
+ A: Ja, Sie können dem Fußzeilenbereich auf ähnliche Weise andere Elemente wie Text oder Formen hinzufügen, indem Sie die entsprechenden Stempelobjekte erstellen (z. B.`TextStamp`) und legen ihre Eigenschaften entsprechend fest.
 
-#### Q: How do I specify the path to the image file that I want to add to the footer?
+#### F: Wie gebe ich den Pfad zur Bilddatei an, die ich zur Fußzeile hinzufügen möchte?
 
-A: The path to the image file is specified when creating the `ImageStamp` object, as shown in the code. Make sure to provide the correct path to the image file.
+ A: Der Pfad zur Bilddatei wird beim Erstellen angegeben`ImageStamp` Objekt, wie im Code gezeigt. Stellen Sie sicher, dass Sie den richtigen Pfad zur Bilddatei angeben.
 
-#### Q: Can I customize the image's size within the footer section?
+#### F: Kann ich die Größe des Bildes im Fußzeilenbereich anpassen?
 
-A: Yes, you can customize the image's size within the footer section by adjusting the dimensions of the `ImageStamp` using properties like `Width` and `Height`.
+ A: Ja, Sie können die Größe des Bildes im Fußzeilenbereich anpassen, indem Sie die Abmessungen anpassen`ImageStamp` Verwenden von Eigenschaften wie`Width` Und`Height`.
 
-#### Q: Is it possible to remove or replace the image in the footer section after it has been added?
+#### F: Ist es möglich, das Bild im Fußzeilenbereich zu entfernen oder zu ersetzen, nachdem es hinzugefügt wurde?
 
-A: Yes, you can remove or replace the image in the footer section by modifying the contents of the `ImageStamp` object or removing the stamp from specific pages.
+ A: Ja, Sie können das Bild im Fußzeilenbereich entfernen oder ersetzen, indem Sie den Inhalt des ändern`ImageStamp` Einspruch erheben oder den Stempel von bestimmten Seiten entfernen.
 
-#### Q: How does the code handle scenarios where the image's dimensions exceed the available space in the footer?
+#### F: Wie geht der Code mit Situationen um, in denen die Abmessungen des Bildes den verfügbaren Platz in der Fußzeile überschreiten?
 
-A: The code sets properties such as `BottomMargin`, `HorizontalAlignment`, and `VerticalAlignment` to control the positioning and alignment of the image. Ensure that these properties are adjusted to prevent any overlap or layout issues.
+ A: Der Code legt Eigenschaften wie fest`BottomMargin`, `HorizontalAlignment` , Und`VerticalAlignment` um die Positionierung und Ausrichtung des Bildes zu steuern. Stellen Sie sicher, dass diese Eigenschaften angepasst sind, um Überlappungen oder Layoutprobleme zu vermeiden.

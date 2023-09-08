@@ -1,113 +1,113 @@
 ---
-title: Flate Decode Compression
-linktitle: Flate Decode Compression
-second_title: Aspose.PDF for .NET API Reference
-description: Efficiently compress images in a PDF using Flate Decode compression with Aspose.PDF for .NET.
+title: Compresión de decodificación plana
+linktitle: Compresión de decodificación plana
+second_title: Aspose.PDF para referencia de API .NET
+description: Comprima eficientemente imágenes en un PDF usando la compresión Flate Decode con Aspose.PDF para .NET.
 type: docs
 weight: 140
 url: /es/net/programming-with-images/flate-decode-compression/
 ---
-This guide will take you step by step how to compress images using Flate Decode compression into a PDF file using Aspose.PDF for .NET. Make sure you have already set up your environment and follow the steps below:
+Esta guía le mostrará paso a paso cómo comprimir imágenes usando la compresión Flate Decode en un archivo PDF usando Aspose.PDF para .NET. Asegúrese de haber configurado su entorno y siga los pasos a continuación:
 
-## Step 1: Define the document directory
+## Paso 1: definir el directorio de documentos
 
-Make sure to set the correct document directory. Replace `"YOUR DOCUMENT DIRECTORY"` in the code with the path to the directory where your PDF document is located.
+ Asegúrese de configurar el directorio de documentos correcto. Reemplazar`"YOUR DOCUMENT DIRECTORY"` en el código con la ruta al directorio donde se encuentra su documento PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Open the PDF document
+## Paso 2: abre el documento PDF
 
-In this step, we will open the PDF document using the `Document` class of Aspose.PDF. Use the `Document` constructor and pass the path to the PDF document.
+En este paso, abriremos el documento PDF usando el`Document` clase de Aspose.PDF. Utilizar el`Document` constructor y pase la ruta al documento PDF.
 
 ```csharp
 Document doc = new Document(dataDir + "AddImage.pdf");
 ```
 
-## Step 3: Initialize optimization options
+## Paso 3: inicializar las opciones de optimización
 
-In this step, we will initialize the optimization options for image compression. Create an instance of `OptimizationOptions` and set the appropriate options. In this example, we are using Flate Decode compression to optimize the images.
+En este paso, inicializaremos las opciones de optimización para la compresión de imágenes. Crear una instancia de`OptimizationOptions` y configure las opciones apropiadas. En este ejemplo, utilizamos la compresión Flate Decode para optimizar las imágenes.
 
 ```csharp
 var optimizationOptions = new Aspose.Pdf.Optimization.OptimizationOptions();
 optimizationOptions.ImageCompressionOptions.Encoding = ImageEncoding.Flate;
 ```
 
-## Step 4: Optimize the PDF document
+## Paso 4: Optimice el documento PDF
 
-In this step, we will optimize the PDF document using the optimization options defined earlier. Call the `OptimizeResources` method of the `doc` object and pass the optimization options.
+ En este paso, optimizaremos el documento PDF utilizando las opciones de optimización definidas anteriormente. Llama a`OptimizeResources` método de la`doc` objeto y pasar las opciones de optimización.
 
 ```csharp
 doc.OptimizeResources(optimizationOptions);
 ```
 
-## Step 5: Save the updated PDF document
+## Paso 5: guarde el documento PDF actualizado
 
-Save the updated PDF document using the `Save` method of the `doc` object. Specify the output path for the PDF file.
+ Guarde el documento PDF actualizado utilizando el`Save` método de la`doc` objeto. Especifique la ruta de salida del archivo PDF.
 
 ```csharp
 doc.Save(dataDir + "FlateDecodeCompression.pdf");
 ```
 
-### Sample source code for Flate Decode Compression using Aspose.PDF for .NET 
+### Código fuente de muestra para Flate Decode Compression usando Aspose.PDF para .NET 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open Document
+// Abrir documento
 Document doc = new Document(dataDir + "AddImage.pdf");
-// Initialize OptimizationOptions  
+// Inicializar opciones de optimización
 var optimizationOptions = new Aspose.Pdf.Optimization.OptimizationOptions();
-// To optimise image using FlateDecode Compression set optimization options to Flate
+// Para optimizar la imagen usando FlateDecode Compresión, establezca las opciones de optimización en Flate
 optimizationOptions.ImageCompressionOptions.Encoding = ImageEncoding.Flate;
-// Set Optimization Options 
+// Establecer opciones de optimización
 doc.OptimizeResources(optimizationOptions);
-// Save Document
+// Guardar documento
 doc.Save(dataDir + "FlateDecodeCompression.pdf");
 ```
 
-## Conclusion
+## Conclusión
 
-Congratulation ! You have successfully compressed images into a PDF using Flate Decode compression with Aspose.PDF for .NET. The optimized PDF file is saved in the specified directory. You can now use this PDF file for more efficient storage or sharing needs.
+¡Enhorabuena! Ha comprimido imágenes con éxito en un PDF utilizando la compresión Flate Decode con Aspose.PDF para .NET. El archivo PDF optimizado se guarda en el directorio especificado. Ahora puede utilizar este archivo PDF para necesidades de almacenamiento o uso compartido más eficientes.
 
-### FAQ's
+### Preguntas frecuentes
 
-#### Q: What is Flate Decode compression, and why is it used in PDF documents?
+#### P: ¿Qué es la compresión Flate Decode y por qué se utiliza en documentos PDF?
 
-A: Flate Decode compression is a data compression method that is commonly used to reduce the size of data within a PDF document. It is particularly effective for compressing images, reducing the overall file size and improving efficiency during storage and transmission.
+R: La compresión Flate Decode es un método de compresión de datos que se usa comúnmente para reducir el tamaño de los datos dentro de un documento PDF. Es particularmente eficaz para comprimir imágenes, reducir el tamaño total del archivo y mejorar la eficiencia durante el almacenamiento y la transmisión.
 
-#### Q: How does Aspose.PDF for .NET facilitate Flate Decode compression in a PDF document?
+#### P: ¿Cómo facilita Aspose.PDF para .NET la compresión Flate Decode en un documento PDF?
 
-A: Aspose.PDF for .NET provides a streamlined process to open a PDF document, apply Flate Decode compression to images, and save the optimized PDF file with compressed images.
+R: Aspose.PDF para .NET proporciona un proceso simplificado para abrir un documento PDF, aplicar compresión Flate Decode a las imágenes y guardar el archivo PDF optimizado con imágenes comprimidas.
 
-#### Q: What are the advantages of using Flate Decode compression for image optimization in a PDF document?
+#### P: ¿Cuáles son las ventajas de utilizar la compresión Flate Decode para optimizar la imagen en un documento PDF?
 
-A: Flate Decode compression offers efficient and lossless image compression, resulting in reduced file sizes without compromising image quality. This can lead to faster document loading and improved data transfer.
+R: La compresión Flate Decode ofrece una compresión de imágenes eficiente y sin pérdidas, lo que resulta en tamaños de archivo reducidos sin comprometer la calidad de la imagen. Esto puede conducir a una carga de documentos más rápida y una mejor transferencia de datos.
 
-#### Q: How does the `ImageEncoding.Flate` option contribute to image optimization in Flate Decode compression?
+####  P: ¿Cómo funciona el`ImageEncoding.Flate` option contribute to image optimization in Flate Decode compression?
 
-A: The `ImageEncoding.Flate` option specifies the use of Flate Decode compression for image optimization in the PDF document, ensuring that images are effectively compressed using this method.
+ R: El`ImageEncoding.Flate`La opción especifica el uso de la compresión Flate Decode para la optimización de imágenes en el documento PDF, lo que garantiza que las imágenes se compriman eficazmente con este método.
 
-#### Q: Can I selectively apply Flate Decode compression to specific images within a PDF document?
+#### P: ¿Puedo aplicar selectivamente la compresión Flate Decode a imágenes específicas dentro de un documento PDF?
 
-A: Yes, you can selectively apply Flate Decode compression to specific images by setting the `ImageCompressionOptions.Encoding` property to `ImageEncoding.Flate` for the desired images.
+ R: Sí, puedes aplicar selectivamente la compresión Flate Decode a imágenes específicas configurando el`ImageCompressionOptions.Encoding` propiedad a`ImageEncoding.Flate` para las imágenes deseadas.
 
-#### Q: How does the `OptimizeResources` method work to apply Flate Decode compression in a PDF document?
+####  P: ¿Cómo funciona el`OptimizeResources` method work to apply Flate Decode compression in a PDF document?
 
-A: The `OptimizeResources` method analyzes the PDF document and applies the specified optimization options, including Flate Decode compression, to images and other resources, effectively reducing file size.
+ R: El`OptimizeResources` El método analiza el documento PDF y aplica las opciones de optimización especificadas, incluida la compresión Flate Decode, a imágenes y otros recursos, reduciendo efectivamente el tamaño del archivo.
 
-#### Q: What scenarios benefit from Flate Decode compression in PDF documents?
+#### P: ¿Qué escenarios se benefician de la compresión Flate Decode en documentos PDF?
 
-A: Flate Decode compression is particularly beneficial when preparing PDF files for online distribution, archiving, or sharing, as it reduces file size while maintaining high-quality images.
+R: La compresión Flate Decode es particularmente beneficiosa al preparar archivos PDF para distribuirlos, archivarlos o compartirlos en línea, ya que reduce el tamaño del archivo y mantiene imágenes de alta calidad.
 
-#### Q: Does Flate Decode compression impact the visual quality of images in the PDF document?
+#### P: ¿La compresión Flate Decode afecta la calidad visual de las imágenes en el documento PDF?
 
-A: Flate Decode compression is a lossless compression method, meaning it does not impact the visual quality of images. Images remain unchanged while the file size is reduced.
+R: La compresión Flate Decode es un método de compresión sin pérdidas, lo que significa que no afecta la calidad visual de las imágenes. Las imágenes permanecen sin cambios mientras se reduce el tamaño del archivo.
 
-#### Q: Is it possible to reverse Flate Decode compression and restore original images from the optimized PDF?
+#### P: ¿Es posible revertir la compresión Flate Decode y restaurar imágenes originales desde el PDF optimizado?
 
-A: No, Flate Decode compression is a lossless method, and the original image data is retained. There is no need to reverse compression to access the original images.
+R: No, la compresión Flate Decode es un método sin pérdidas y se conservan los datos de la imagen original. No es necesario invertir la compresión para acceder a las imágenes originales.
 
-#### Q: How does Flate Decode compression affect the performance of PDF documents?
+#### P: ¿Cómo afecta la compresión Flate Decode al rendimiento de los documentos PDF?
 
-A: Flate Decode compression can improve the performance of PDF documents by reducing their file size, leading to faster loading times and more efficient data transfer.
+R: La compresión Flate Decode puede mejorar el rendimiento de los documentos PDF al reducir el tamaño de los archivos, lo que genera tiempos de carga más rápidos y una transferencia de datos más eficiente.

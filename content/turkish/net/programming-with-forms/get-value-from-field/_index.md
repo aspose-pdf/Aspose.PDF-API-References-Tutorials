@@ -1,82 +1,82 @@
 ---
-title: Get Value From Field In PDF Document
-linktitle: Get Value From Field In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Easily get the value of a form field in PDF document with Aspose.PDF for .NET.
+title: PDF Belgesindeki Alandan Değer Alın
+linktitle: PDF Belgesindeki Alandan Değer Alın
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile PDF belgesindeki bir form alanının değerini kolayca elde edin.
 type: docs
 weight: 140
 url: /tr/net/programming-with-forms/get-value-from-field/
 ---
-In this tutorial, we will show you how to get the value of a form field using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+Bu eğitimde size Aspose.PDF for .NET kullanarak bir form alanının değerini nasıl alacağınızı göstereceğiz. Bu süreçte size yol göstermek için C# kaynak kodunu adım adım açıklayacağız.
 
-## Step 1: Preparation
+## Adım 1: Hazırlık
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+Gerekli kitaplıkları içe aktardığınızdan ve belgeler dizininizin yolunu ayarladığınızdan emin olun:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Open the document
+## 2. Adım: Belgeyi açın
 
-Open the PDF document:
+PDF belgesini açın:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetValueFromField.pdf");
 ```
 
-## Step 3: Get Field
+## 3. Adım: Alanı Alın
 
-Get the desired form field (in this example, we're using the "textbox1" field):
+İstediğiniz form alanını alın (bu örnekte "textbox1" alanını kullanıyoruz):
 
 ```csharp
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
 ```
 
-## Step 4: Get field value
+## 4. Adım: Alan değerini alın
 
-Get the field value using the `Value` property:
+ kullanarak alan değerini alın`Value` mülk:
 
 ```csharp
 Console.WriteLine("PartialName: {0}", textBoxField.PartialName);
 Console.WriteLine("Value: {0}", textBoxField.Value);
 ```
 
-### Sample source code for Get Value From Field using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Alandan Değer Al için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir + "GetValueFromField.pdf");
-// Get a field
+// Bir alan al
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
-// Get field value
+// Alan değerini al
 Console.WriteLine("PartialName : {0} ", textBoxField.PartialName);
 Console.WriteLine("Value : {0} ", textBoxField.Value);
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we learned how to get the value of a form field using Aspose.PDF for .NET. By following these steps, you can easily extract the value of a specific form field in your PDF documents using Aspose.PDF.
+Bu eğitimde Aspose.PDF for .NET kullanarak bir form alanının değerini nasıl elde edeceğimizi öğrendik. Bu adımları izleyerek Aspose.PDF'yi kullanarak PDF belgelerinizdeki belirli bir form alanının değerini kolayca çıkarabilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: Can I get the value of a form field without knowing its name beforehand?
+#### S: Bir form alanının değerini, adını önceden bilmeden öğrenebilir miyim?
 
-A: No, you need to know the name or partial name of the form field to get its value using Aspose.PDF for .NET. The `pdfDocument.Form["fieldname"]` syntax requires the exact name or partial name of the form field to access its properties, including the value.
+ C: Hayır, Aspose.PDF for .NET kullanarak değerini elde etmek için form alanının adını veya kısmi adını bilmeniz gerekir.`pdfDocument.Form["fieldname"]` sözdizimi, değer de dahil olmak üzere özelliklerine erişmek için form alanının tam adını veya kısmi adını gerektirir.
 
-#### Q: What if the form field does not exist in the PDF document?
+#### S: PDF belgesinde form alanı yoksa ne olur?
 
-A: If the form field does not exist in the PDF document, the `pdfDocument.Form["fieldname"]` syntax will return `null`. It's essential to handle such cases by checking for `null` before accessing the properties of the form field to avoid exceptions.
+ C: PDF belgesinde form alanı yoksa,`pdfDocument.Form["fieldname"]` sözdizimi geri dönecek`null` . Bu tür vakaları kontrol ederek ele almak önemlidir.`null` İstisnalardan kaçınmak için form alanının özelliklerine erişmeden önce.
 
-#### Q: How can I handle different types of form fields (e.g., checkboxes, radio buttons) to get their values?
+#### S: Farklı türdeki form alanlarını (örn. onay kutuları, radyo düğmeleri) değerlerini almak için nasıl işleyebilirim?
 
-A: To handle different types of form fields, you can use the appropriate field classes available in Aspose.PDF for .NET. For example, use `CheckBoxField` to work with checkboxes and `RadioButtonField` to work with radio buttons. Once you have the correct field object, you can access its properties, including the value.
+ C: Farklı türdeki form alanlarını yönetmek için Aspose.PDF for .NET'te bulunan uygun alan sınıflarını kullanabilirsiniz. Örneğin, şunu kullanın:`CheckBoxField` onay kutularıyla çalışmak ve`RadioButtonField`radyo düğmeleriyle çalışmak için. Doğru alan nesnesine sahip olduğunuzda, değer dahil özelliklerine erişebilirsiniz.
 
-#### Q: Can I get the values of multiple form fields at once?
+#### S: Birden fazla form alanının değerini aynı anda alabilir miyim?
 
-A: Yes, you can get the values of multiple form fields at once by iterating through the form fields collection using a loop or LINQ queries. This way, you can access the value of each form field in the PDF document programmatically.
+C: Evet, bir döngü veya LINQ sorguları kullanarak form alanları koleksiyonunu yineleyerek birden fazla form alanının değerini aynı anda alabilirsiniz. Bu şekilde PDF belgesindeki her form alanının değerine programlı olarak erişebilirsiniz.
 
-#### Q: Is it possible to modify the value of a form field and save the changes back to the PDF document?
+#### S: Bir form alanının değerini değiştirmek ve değişiklikleri tekrar PDF belgesine kaydetmek mümkün müdür?
 
-A: Yes, you can modify the value of a form field using Aspose.PDF for .NET and save the changes back to the PDF document. After updating the `Value` property of the form field, you can use the `pdfDocument.Save()` method to save the changes to the original PDF document.
+ C: Evet, Aspose.PDF for .NET'i kullanarak bir form alanının değerini değiştirebilir ve değişiklikleri tekrar PDF belgesine kaydedebilirsiniz. Güncelledikten sonra`Value` form alanının özelliğini kullanabilirsiniz.`pdfDocument.Save()` Değişiklikleri orijinal PDF belgesine kaydetme yöntemini kullanın.

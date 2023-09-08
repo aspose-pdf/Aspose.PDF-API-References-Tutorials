@@ -1,28 +1,28 @@
 ---
-title: Create PDF with Tagged Image
-linktitle: Create PDF with Tagged Image
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to create PDF with tagged image using Aspose.PDF for .NET.
+title: إنشاء ملف PDF مع صورة ذات علامات
+linktitle: إنشاء ملف PDF مع صورة ذات علامات
+second_title: Aspose.PDF لمرجع .NET API
+description: دليل خطوة بخطوة لإنشاء ملف PDF مع صورة موسومة باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 40
 url: /ar/net/programming-with-tagged-pdf/create-pdf-with-tagged-image/
 ---
-In this tutorial, we will provide you with a step-by-step guide on how to create a PDF document with a tagged image using Aspose.PDF for .NET. Aspose.PDF is a powerful library that allows you to create, manipulate and convert PDF documents programmatically. Using the tagged content structure features of Aspose.PDF, you can add tagged images to your PDF document.
+في هذا البرنامج التعليمي، سنزودك بدليل خطوة بخطوة حول كيفية إنشاء مستند PDF مع صورة ذات علامات تمييز باستخدام Aspose.PDF for .NET. Aspose.PDF هي مكتبة قوية تتيح لك إنشاء مستندات PDF ومعالجتها وتحويلها برمجيًا. باستخدام ميزات بنية المحتوى ذات العلامات في Aspose.PDF، يمكنك إضافة صور ذات علامات إلى مستند PDF الخاص بك.
 
-## Prerequisites
+## المتطلبات الأساسية
 
-Before you begin, make sure you have the following prerequisites in place:
+قبل البدء، تأكد من توفر المتطلبات الأساسية التالية:
 
-1. Visual Studio installed with .NET framework.
-2. The Aspose.PDF library for .NET.
+1. تم تثبيت Visual Studio مع إطار عمل .NET.
+2. مكتبة Aspose.PDF لـ .NET.
 
-## Step 1: Project Setup
+## الخطوة 1: إعداد المشروع
 
-To get started, create a new project in Visual Studio and add a reference to the Aspose.PDF for .NET library. You can download the library from Aspose official website and install it on your machine.
+للبدء، قم بإنشاء مشروع جديد في Visual Studio وقم بإضافة مرجع إلى مكتبة Aspose.PDF لـ .NET. يمكنك تنزيل المكتبة من موقع Aspose الرسمي وتثبيتها على جهازك.
 
-## Step 2: Import the necessary namespaces
+## الخطوة 2: استيراد مساحات الأسماء الضرورية
 
-In your C# code file, import the namespaces required to access the classes and methods provided by Aspose.PDF:
+في ملف التعليمات البرمجية C# الخاص بك، قم باستيراد مساحات الأسماء المطلوبة للوصول إلى الفئات والأساليب التي يوفرها Aspose.PDF:
 
 ```csharp
 using System;
@@ -30,9 +30,9 @@ using Aspose.Pdf;
 using Aspose.Pdf.Tagged;
 ```
 
-## Step 3: Creating the PDF document with a tagged image
+## الخطوة 3: إنشاء مستند PDF مع صورة ذات علامة تمييز
 
-Use the following code to create a PDF document with a tagged image:
+استخدم الكود التالي لإنشاء مستند PDF مع صورة ذات علامات:
 
 ```csharp
 string dataDir = "YOUR_DIRECTORY_OF_DOCUMENTS";
@@ -49,22 +49,22 @@ figure1.SetTag("Fig");
 figure1.SetImage(dataDir + @"aspose-logo.jpg");
 ```
 
-This code creates an empty PDF document and adds a tagged image using the methods provided by Aspose.PDF. The image is specified with alt text, title, and tag.
+يقوم هذا الرمز بإنشاء مستند PDF فارغ وإضافة صورة ذات علامات باستخدام الطرق التي يوفرها Aspose.PDF. يتم تحديد الصورة بنص بديل وعنوان وعلامة.
 
-## Step 4: Saving the PDF Document
+## الخطوة 4: حفظ مستند PDF
 
-Use the following code to save the PDF document:
+استخدم الكود التالي لحفظ مستند PDF:
 
 ```csharp
 document.Save(dataDir + "PDFwithTaggedImage.pdf");
 ```
 
-This code saves the PDF document with the tagged image to a specified file.
+يحفظ هذا الرمز مستند PDF مع الصورة ذات العلامات في ملف محدد.
 
-### Sample source code for Create PDFwith Tagged Image using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لإنشاء ملف PDF باستخدام صورة ذات علامات باستخدام Aspose.PDF لـ .NET 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
@@ -75,55 +75,55 @@ taggedContent.RootElement.AppendChild(figure1);
 figure1.AlternativeText = "Aspose Logo";
 figure1.Title = "Image 1";
 figure1.SetTag("Fig");
-// Add image with resolution 300 DPI (by default)
+// إضافة صورة بدقة 300 نقطة في البوصة (افتراضيًا)
 figure1.SetImage(dataDir + @"aspose-logo.jpg");
-// Save PDF Document
+// حفظ وثيقة PDF
 document.Save(dataDir + "PDFwithTaggedImage.pdf");
 
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, you learned how to create a PDF document with a tagged image using Aspose.PDF for .NET. Tagged images add additional, structured information to your PDF document.
+في هذا البرنامج التعليمي، تعلمت كيفية إنشاء مستند PDF مع صورة ذات علامات تمييز باستخدام Aspose.PDF لـ .NET. تضيف الصور ذات العلامات معلومات إضافية ومنظمة إلى مستند PDF الخاص بك.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of creating a PDF document with a tagged image using Aspose.PDF for .NET?
+#### س: ما هو الغرض من إنشاء مستند PDF مع صورة ذات علامات تمييز باستخدام Aspose.PDF لـ .NET؟
 
-A: Creating a PDF document with a tagged image using Aspose.PDF for .NET allows you to add tagged images to the document's content. Tagged images provide structured information, such as alt text and titles, enhancing accessibility and organization.
+ج: يتيح لك إنشاء مستند PDF مع صورة ذات علامات تمييز باستخدام Aspose.PDF لـ .NET إضافة صور ذات علامات تمييز إلى محتوى المستند. توفر الصور ذات العلامات معلومات منظمة، مثل النص البديل والعناوين، مما يعزز إمكانية الوصول والتنظيم.
 
-#### Q: How does the Aspose.PDF library assist in creating a PDF document with a tagged image?
+#### س: كيف تساعد مكتبة Aspose.PDF في إنشاء مستند PDF مع صورة ذات علامات تمييز؟
 
-A: Aspose.PDF for .NET is a robust library that provides functionalities for creating, manipulating, and converting PDF documents programmatically. In this tutorial, the library's tagged content structure features are used to add a tagged image to the PDF document.
+ج: Aspose.PDF for .NET هي مكتبة قوية توفر وظائف لإنشاء مستندات PDF ومعالجتها وتحويلها برمجيًا. في هذا البرنامج التعليمي، يتم استخدام ميزات بنية المحتوى المميزة بالمكتبة لإضافة صورة ذات علامات تمييز إلى مستند PDF.
 
-#### Q: What are the prerequisites for creating a PDF document with a tagged image using Aspose.PDF for .NET?
+#### س: ما هي المتطلبات الأساسية لإنشاء مستند PDF مع صورة ذات علامات تمييز باستخدام Aspose.PDF لـ .NET؟
 
-A: Before you begin, ensure that you have Visual Studio installed with the .NET framework and have the Aspose.PDF library for .NET referenced in your project.
+ج: قبل أن تبدأ، تأكد من تثبيت Visual Studio مع إطار عمل .NET وأن مكتبة Aspose.PDF الخاصة بـ .NET مشار إليها في مشروعك.
 
-#### Q: How does the provided C# code create a PDF document with a tagged image?
+#### س: كيف يقوم كود C# المقدم بإنشاء مستند PDF مع صورة ذات علامات تمييز؟
 
-A: The code demonstrates how to create a PDF document, define a tagged image element, and add it to the document's content. The tagged image includes alt text, a title, and a tag using methods provided by Aspose.PDF.
+ج: يوضح الكود كيفية إنشاء مستند PDF، وتحديد عنصر الصورة الموسوم، وإضافته إلى محتوى المستند. تتضمن الصورة ذات العلامات نصًا بديلاً وعنوانًا وعلامة باستخدام الطرق التي يوفرها Aspose.PDF.
 
-#### Q: Can I use different image formats for the tagged image?
+#### س: هل يمكنني استخدام تنسيقات صور مختلفة للصورة التي تم وضع علامة عليها؟
 
-A: Yes, you can use different image formats for the tagged image, such as JPEG, PNG, GIF, etc. The code example provided in the tutorial uses a JPEG image, but you can replace it with the path to an image file in your preferred format.
+ج: نعم، يمكنك استخدام تنسيقات صور مختلفة للصورة ذات العلامات، مثل JPEG، وPNG، وGIF، وما إلى ذلك. يستخدم مثال التعليمات البرمجية المتوفر في البرنامج التعليمي صورة JPEG، ولكن يمكنك استبدالها بالمسار إلى ملف صورة في التنسيق المفضل لديك.
 
-#### Q: How is the alternative text (alt text) used in tagged images?
+#### س: كيف يتم استخدام النص البديل (النص البديل) في الصور ذات العلامات؟
 
-A: Alt text provides a textual description of the image, which is read aloud by screen readers for visually impaired users. In the provided code, the alt text is set using the `AlternativeText` property of the `IllustrationElement` representing the tagged image.
+ ج: يوفر النص البديل وصفًا نصيًا للصورة، والذي تتم قراءته بصوت عالٍ بواسطة برامج قراءة الشاشة للمستخدمين ضعاف البصر. في الكود المقدم، يتم تعيين النص البديل باستخدام`AlternativeText` ملكية`IllustrationElement` تمثل الصورة الموسومة.
 
-#### Q: How does the `SetTitle` method contribute to the PDF document's tagged image?
+####  س: كيف`SetTitle` method contribute to the PDF document's tagged image?
 
-A: The `SetTitle` method sets the title of the PDF document's tagged content, providing additional context for the tagged image. This title can help identify the purpose or subject of the tagged content.
+ ج: ال`SetTitle` تقوم هذه الطريقة بتعيين عنوان محتوى مستند PDF الذي تم وضع علامة عليه، مما يوفر سياقًا إضافيًا للصورة التي تم وضع علامة عليها. يمكن أن يساعد هذا العنوان في تحديد غرض أو موضوع المحتوى الذي تم وضع علامة عليه.
 
-#### Q: Can I customize the tag and title of the tagged image?
+#### س: هل يمكنني تخصيص العلامة وعنوان الصورة الموسومة؟
 
-A: Yes, you can customize the tag and title of the tagged image using the `SetTag` and `Title` methods of the `IllustrationElement`. The code example demonstrates how to set the tag to "Fig" and the title to "Picture 1."
+ ج: نعم، يمكنك تخصيص العلامة وعنوان الصورة الموسومة باستخدام`SetTag` و`Title` أساليب`IllustrationElement`. يوضح مثال التعليمات البرمجية كيفية تعيين العلامة إلى "الشكل" والعنوان إلى "الصورة 1."
 
-#### Q: How can I ensure that the tagged image is accessible and compliant with accessibility standards?
+#### س: كيف يمكنني التأكد من إمكانية الوصول إلى الصورة الموسومة ومتوافقة مع معايير إمكانية الوصول؟
 
-A: By using the tagged content structure features of Aspose.PDF and providing alt text and other relevant information, you contribute to the accessibility of the tagged image. Ensuring compliance with accessibility standards involves following best practices for alt text and document structure.
+ج: باستخدام ميزات بنية المحتوى ذات العلامات في Aspose.PDF وتوفير نص بديل ومعلومات أخرى ذات صلة، فإنك تساهم في إمكانية الوصول إلى الصورة ذات العلامات. يتضمن ضمان الامتثال لمعايير إمكانية الوصول اتباع أفضل الممارسات للنص البديل وبنية المستند.
 
-#### Q: Is it possible to add multiple tagged images to the same PDF document using similar techniques?
+#### س: هل من الممكن إضافة صور متعددة ذات علامات إلى نفس مستند PDF باستخدام تقنيات مماثلة؟
 
-A: Yes, you can add multiple tagged images to the same PDF document using similar techniques. You would create additional `IllustrationElement` instances for each tagged image and customize their properties as needed.
+ ج: نعم، يمكنك إضافة صور متعددة ذات علامات إلى نفس مستند PDF باستخدام تقنيات مشابهة. يمكنك إنشاء إضافية`IllustrationElement` مثيلات لكل صورة ذات علامة وتخصيص خصائصها حسب الحاجة.

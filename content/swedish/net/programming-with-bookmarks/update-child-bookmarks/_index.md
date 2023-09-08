@@ -1,57 +1,57 @@
 ---
-title: Update Child Bookmarks In PDF File
-linktitle: Update Child Bookmarks In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily update child bookmarks in PDF file with Aspose.PDF for .NET.
+title: Uppdatera underordnade bokmärken i PDF-fil
+linktitle: Uppdatera underordnade bokmärken i PDF-fil
+second_title: Aspose.PDF för .NET API Referens
+description: Uppdatera enkelt barnbokmärken i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 110
 url: /sv/net/programming-with-bookmarks/update-child-bookmarks/
 ---
-Updating child bookmarks in PDF file allows you to modify the properties of specific bookmarks within a parent bookmark. With Aspose.PDF for .NET, you can easily update child bookmarks by following the following source code:
+Genom att uppdatera underordnade bokmärken i en PDF-fil kan du ändra egenskaperna för specifika bokmärken i ett överordnat bokmärke. Med Aspose.PDF för .NET kan du enkelt uppdatera underordnade bokmärken genom att följa följande källkod:
 
-## Step 1: Import required libraries
+## Steg 1: Importera nödvändiga bibliotek
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Innan du börjar måste du importera de nödvändiga biblioteken för ditt C#-projekt. Här är det nödvändiga importdirektivet:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## Steg 2: Ange sökväg till dokumentmappen
 
-In this step, you need to specify the path to the folder containing the PDF file you want to update. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ I det här steget måste du ange sökvägen till mappen som innehåller PDF-filen du vill uppdatera. Byta ut`"YOUR DOCUMENT DIRECTORY"` följande kod med den faktiska sökvägen till din dokumentmapp:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Steg 3: Öppna PDF-dokumentet
 
-Now we will open the PDF document we want to update using the following code:
+Nu kommer vi att öppna PDF-dokumentet vi vill uppdatera med följande kod:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "UpdateChildBookmarks.pdf");
 ```
 
-## Step 4: Get parent bookmark object
+## Steg 4: Hämta överordnat bokmärkesobjekt
 
-In this step, we are going to get the specific parent bookmark object from which we want to update the child bookmarks. In the example below, we retrieve the parent bookmark at index 1 (the second bookmark in the bookmarks collection). You can adjust the index according to your needs. Here is the corresponding code:
+det här steget ska vi hämta det specifika överordnade bokmärkesobjektet från vilket vi vill uppdatera de underordnade bokmärkena. I exemplet nedan hämtar vi det överordnade bokmärket vid index 1 (det andra bokmärket i bokmärkessamlingen). Du kan justera indexet efter dina behov. Här är motsvarande kod:
 
 ```csharp
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
 ```
 
-## Step 5: Get Child Bookmark Object
+## Steg 5: Skaffa barnbokmärkesobjekt
 
-Now let's get the specific child bookmark object we want to update. In the example below, we retrieve the child bookmark at index 1 (the second child bookmark in the collection of child bookmarks of the parent bookmark). You can adjust the index according to your needs. Here is the corresponding code:
+Låt oss nu skaffa det specifika underordnade bokmärkesobjektet vi vill uppdatera. I exemplet nedan hämtar vi det underordnade bokmärket vid index 1 (det andra underordnade bokmärket i samlingen av underordnade bokmärken för det överordnade bokmärket). Du kan justera indexet efter dina behov. Här är motsvarande kod:
 
 ```csharp
 OutlineItemCollection childOutline = pdfOutline[1];
 ```
 
-## Step 6: Update child bookmark properties
+## Steg 6: Uppdatera egenskaper för underordnade bokmärken
 
-Now let's update the child bookmark properties such as title, italic style, and bold style. You can adjust these properties according to your needs. Here is the corresponding code:
+Låt oss nu uppdatera egenskaperna för det underordnade bokmärket som titel, kursiv stil och fet stil. Du kan anpassa dessa egenskaper efter dina behov. Här är motsvarande kod:
 
 ```csharp
 childOutline.Title = "Updated Outline";
@@ -59,93 +59,93 @@ childOutline. Italic = true;
 childOutline. Bold = true;
 ```
 
-## Step 7: Save the updated file
+## Steg 7: Spara den uppdaterade filen
 
-Now let's save the updated PDF file using the `Save` method of the `pdfDocument` object. Here is the corresponding code:
+ Låt oss nu spara den uppdaterade PDF-filen med hjälp av`Save` metod för`pdfDocument` objekt. Här är motsvarande kod:
 
 ```csharp
 dataDir = dataDir + "UpdateChildBookmarks_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Update Child Bookmarks using Aspose.PDF for .NET 
+### Exempel på källkod för Uppdatera barnbokmärken med Aspose.PDF för .NET 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Öppna dokumentet
 Document pdfDocument = new Document(dataDir + "UpdateChildBookmarks.pdf");
-// Get a bookmark object
+// Skaffa ett bokmärkesobjekt
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
-// Get child bookmark object
+//Skaffa ett underordnat bokmärkesobjekt
 OutlineItemCollection childOutline = pdfOutline[1];
 childOutline.Title = "Updated Outline";
 childOutline.Italic = true;
 childOutline.Bold = true;
 dataDir = dataDir + "UpdateChildBookmarks_out.pdf";            
-// Save output
+// Spara utdata
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nChild bookmarks updated successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Slutsats
 
-Congratulation ! You now have a step-by-step guide to updating child bookmarks with Aspose.PDF for .NET. You can use this code to modify the properties of child bookmarks in your PDF documents.
+Grattis! Du har nu en steg-för-steg-guide för att uppdatera barnbokmärken med Aspose.PDF för .NET. Du kan använda den här koden för att ändra egenskaperna för underordnade bokmärken i dina PDF-dokument.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Se till att kolla in den officiella Aspose.PDF-dokumentationen för mer information om avancerade bokmärkesmanipuleringsfunktioner.
 
-### FAQ's for update child bookmarks in PDF file
+### Vanliga frågor för att uppdatera underordnade bokmärken i PDF-fil
 
-#### Q: What are child bookmarks in a PDF file?
+#### F: Vad är underordnade bokmärken i en PDF-fil?
 
-A: Child bookmarks are bookmarks that are nested within a parent bookmark. They allow you to create a hierarchical structure for navigating through a PDF document's content.
+S: Underordnade bokmärken är bokmärken som är kapslade i ett överordnat bokmärke. De låter dig skapa en hierarkisk struktur för att navigera genom ett PDF-dokuments innehåll.
 
-#### Q: Why would I need to update child bookmarks?
+#### F: Varför skulle jag behöva uppdatera underordnade bokmärken?
 
-A: Updating child bookmarks is useful when you want to modify the properties, titles, or styles of specific bookmarks within a parent bookmark. This helps customize the document's navigational structure.
+S: Att uppdatera underordnade bokmärken är användbart när du vill ändra egenskaper, titlar eller stilar för specifika bokmärken i ett överordnat bokmärke. Detta hjälper till att anpassa dokumentets navigeringsstruktur.
 
-#### Q: How do I import the required libraries for my C# project?
+#### F: Hur importerar jag de nödvändiga biblioteken för mitt C#-projekt?
 
-A: To import the necessary libraries for your C# project, include the following import directive:
+S: För att importera de nödvändiga biblioteken för ditt C#-projekt, inkludera följande importdirektiv:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This directive enables you to access the classes and methods needed for working with PDF documents and bookmarks.
+Detta direktiv ger dig tillgång till de klasser och metoder som behövs för att arbeta med PDF-dokument och bokmärken.
 
-#### Q: How do I specify the path to the documents folder?
+#### F: Hur anger jag sökvägen till dokumentmappen?
 
-A: Replace `"YOUR DOCUMENT DIRECTORY"` in the provided source code with the actual path to the folder containing the PDF file you want to update.
+ S: Byt ut`"YOUR DOCUMENT DIRECTORY"` i den medföljande källkoden med den faktiska sökvägen till mappen som innehåller PDF-filen du vill uppdatera.
 
-#### Q: How do I open a PDF document for updating child bookmarks?
+#### F: Hur öppnar jag ett PDF-dokument för att uppdatera barnbokmärken?
 
-A: To open a PDF document for updating child bookmarks, use the following code:
+S: För att öppna ett PDF-dokument för uppdatering av underordnade bokmärken, använd följande kod:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "UpdateChildBookmarks.pdf");
 ```
 
-Replace `"UpdateChildBookmarks.pdf"` with the actual file name.
+ Byta ut`"UpdateChildBookmarks.pdf"` med det faktiska filnamnet.
 
-#### Q: How do I get the parent bookmark object from which I want to update child bookmarks?
+#### F: Hur får jag det överordnade bokmärkesobjektet som jag vill uppdatera underordnade bokmärken från?
 
-A: To retrieve a specific parent bookmark for updating child bookmarks, access the `Outlines` property of the `pdfDocument` object. In the example below, we retrieve the parent bookmark at index 1:
+ S: För att hämta ett specifikt överordnat bokmärke för uppdatering av underordnade bokmärken, gå till`Outlines` egendom av`pdfDocument` objekt. I exemplet nedan hämtar vi det överordnade bokmärket vid index 1:
 
 ```csharp
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
 ```
 
-#### Q: How do I get the child bookmark object I want to update?
+#### F: Hur får jag det underordnade bokmärkesobjektet som jag vill uppdatera?
 
-A: To retrieve a specific child bookmark for updating, access the `OutlineItemCollection` of the parent bookmark. In the example below, we retrieve the child bookmark at index 1:
+ S: För att hämta ett specifikt underordnat bokmärke för uppdatering, gå till`OutlineItemCollection` av det överordnade bokmärket. I exemplet nedan hämtar vi det underordnade bokmärket vid index 1:
 
 ```csharp
 OutlineItemCollection childOutline = pdfOutline[1];
 ```
 
-#### Q: What child bookmark properties can I update?
+#### F: Vilka underordnade bokmärkesegenskaper kan jag uppdatera?
 
-A: You can update various properties of a child bookmark, such as its title, italic style, and bold style. Customize these properties according to your needs:
+S: Du kan uppdatera olika egenskaper för ett underordnat bokmärke, som dess titel, kursiv stil och fet stil. Anpassa dessa egenskaper efter dina behov:
 
 ```csharp
 childOutline.Title = "Updated Outline";
@@ -153,13 +153,13 @@ childOutline.Italic = true;
 childOutline.Bold = true;
 ```
 
-#### Q: Can I update multiple child bookmarks using this method?
+#### F: Kan jag uppdatera flera underordnade bokmärken med den här metoden?
 
-A: Yes, you can repeat steps 4 to 7 for each child bookmark you want to update. Modify the parent index and child index as needed.
+S: Ja, du kan upprepa steg 4 till 7 för varje underordnat bokmärke du vill uppdatera. Ändra det överordnade indexet och det underordnade indexet efter behov.
 
-#### Q: How do I save the updated PDF file?
+#### F: Hur sparar jag den uppdaterade PDF-filen?
 
-A: Save the updated PDF file using the `Save` method of the `pdfDocument` object:
+ S: Spara den uppdaterade PDF-filen med hjälp av`Save` metod för`pdfDocument` objekt:
 
 ```csharp
 dataDir = dataDir + "UpdateChildBookmarks_out.pdf";

@@ -1,38 +1,38 @@
 ---
-title: Set Radio Button Caption
-linktitle: Set Radio Button Caption
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use Aspose.PDF for .NET to set the caption for a radio button in a PDF form.
+title: تعيين التسمية التوضيحية لزر الراديو
+linktitle: تعيين التسمية التوضيحية لزر الراديو
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية استخدام Aspose.PDF لـ .NET لتعيين التسمية التوضيحية لزر الاختيار في نموذج PDF.
 type: docs
 weight: 280
 url: /ar/net/programming-with-forms/set-radio-button-caption/
 ---
-In this guide, we will explain step by step how to use the Aspose.PDF library for .NET to define the caption of a radio button in a PDF form. We'll show you how to access the radio button field, create a new radio button option, and customize the button caption.
+سنشرح في هذا الدليل خطوة بخطوة كيفية استخدام مكتبة Aspose.PDF لـ .NET لتحديد التسمية التوضيحية لزر الاختيار في نموذج PDF. سنوضح لك كيفية الوصول إلى حقل زر الاختيار، وإنشاء خيار زر اختيار جديد، وتخصيص التسمية التوضيحية للزر.
 
-## Step 1: Configuring the document directory
+## الخطوة 1: تكوين دليل المستندات
 
-The first step is to configure the document directory where the PDF form you want to work on is located. You can use the `dataDir` variable to specify the directory path.
+ الخطوة الأولى هي تكوين دليل المستند حيث يوجد نموذج PDF الذي تريد العمل عليه. يمكنك استخدام ال`dataDir` متغير لتحديد مسار الدليل.
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual path to your documents directory.
+ تأكد من استبدال`"YOUR DOCUMENTS DIRECTORY"` بالمسار الفعلي إلى دليل المستندات الخاص بك.
 
-## Step 2: Loading the source PDF form
+## الخطوة 2: تحميل نموذج PDF المصدر
 
-In this step, we will load the source PDF form using the `Aspose.Pdf.Facades.Form` class of Aspose.PDF.
+ في هذه الخطوة، سنقوم بتحميل نموذج PDF المصدر باستخدام ملف`Aspose.Pdf.Facades.Form` فئة Aspose.PDF.
 
 ```csharp
 Aspose.Pdf.Facades.Form form1 = new Aspose.Pdf.Facades.Form(dataDir + "RadioButtonField.pdf");
 ```
 
-Make sure that the PDF file containing the form is present in the specified documents directory.
+تأكد من وجود ملف PDF الذي يحتوي على النموذج في دليل المستندات المحدد.
 
-## Step 3: Editing the radio button caption
+## الخطوة 3: تحرير التسمية التوضيحية لزر الاختيار
 
-We'll loop through the form field names and search for radio button fields. If a matching field is found, we'll create a new radio button option with a custom caption and add it to the existing field.
+سنقوم بالتنقل خلال أسماء حقول النموذج ونبحث عن حقول زر الاختيار. إذا تم العثور على حقل مطابق، فسنقوم بإنشاء خيار زر اختيار جديد مع تسمية توضيحية مخصصة وإضافته إلى الحقل الموجود.
 
 ```csharp
 foreach(var item in form1.FieldNames)
@@ -47,15 +47,15 @@ var updatedFragment = new Aspose.Pdf.Text.TextFragment("test123");
 updatedFragment.TextState.Font = FontRepository.FindFont("Arial");
 updatedFragment.TextState.FontSize = 10;
 updatedFragment.TextState.LineSpacing = 6.32f;
-// Create a TextParagraph object
+// إنشاء كائن TextParagraph
 TextParagraph par = new TextParagraph();
-// Set paragraph position
+// ضبط موضع الفقرة
 par.Position = new Position(field0.Rect.LLX, field0.Rect.LLY + updatedFragment.TextState.FontSize);
-// Specify word wrap mode
+// تحديد وضع التفاف الكلمات
 by.FormattingOptions.WrapMode = TextFormattingOptions.WordWrapMode.ByWords;
-// Add the new TextFragment to the paragraph
+// أضف TextFragment الجديد إلى الفقرة
 par.AppendLine(updatedFragment);
-// Add the TextParagraph using TextBuilder
+// أضف TextParagraph باستخدام TextBuilder
 TextBuilder textBuilder = new TextBuilder(PDF_Template_PDF_HTML.Pages[1]);
 textBuilder.AppendParagraph(par);
 field0.DeleteOption("item1");
@@ -63,23 +63,23 @@ field0.DeleteOption("item1");
 }
 ```
 
-Customize the caption radio button and other settings as needed.
+قم بتخصيص زر اختيار التسمية التوضيحية والإعدادات الأخرى حسب الحاجة.
 
-## Step 4: Saving the Resulting PDF
+## الخطوة 4: حفظ ملف PDF الناتج
 
-Now that we are done modifying the radio button caption, we can save the resulting PDF using the `Save` method of the `Document` class.
+ الآن بعد أن انتهينا من تعديل التسمية التوضيحية لزر الاختيار، يمكننا حفظ ملف PDF الناتج باستخدام ملف`Save` طريقة`Document` فصل.
 
 ```csharp
 PDF_Template_PDF_HTML.Save(dataDir + "RadioButtonField_out.pdf");
 ```
 
-Be sure to specify the full path and filename for the resulting PDF.
+تأكد من تحديد المسار الكامل واسم الملف لملف PDF الناتج.
 
-### Sample source code for Set Radio Button Caption using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لـ Set Radio Button Caption باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load source PDF form
+// تحميل نموذج PDF المصدر
 Aspose.Pdf.Facades.Form form1 = new Aspose.Pdf.Facades.Form(dataDir + "RadioButtonField.pdf");
 Document PDF_Template_PDF_HTML = new Document(dataDir + "RadioButtonField.pdf");
 foreach (var item in form1.FieldNames)
@@ -96,15 +96,15 @@ foreach (var item in form1.FieldNames)
 		updatedFragment.TextState.Font = FontRepository.FindFont("Arial");
 		updatedFragment.TextState.FontSize = 10;
 		updatedFragment.TextState.LineSpacing = 6.32f;
-		// Create TextParagraph object
+		// إنشاء كائن TextParagraph
 		TextParagraph par = new TextParagraph();
-		// Set paragraph position
+		// ضبط موضع الفقرة
 		par.Position = new Position(field0.Rect.LLX, field0.Rect.LLY + updatedFragment.TextState.FontSize);
-		// Specify word wraping mode
+		// تحديد وضع التفاف الكلمات
 		par.FormattingOptions.WrapMode = TextFormattingOptions.WordWrapMode.ByWords;
-		// Add new TextFragment to paragraph
+		// إضافة TextFragment جديد إلى الفقرة
 		par.AppendLine(updatedFragment);
-		// Add the TextParagraph using TextBuilder
+		// أضف TextParagraph باستخدام TextBuilder
 		TextBuilder textBuilder = new TextBuilder(PDF_Template_PDF_HTML.Pages[1]);
 		textBuilder.AppendParagraph(par);
 		field0.DeleteOption("item1");
@@ -113,28 +113,28 @@ foreach (var item in form1.FieldNames)
 PDF_Template_PDF_HTML.Save(dataDir + "RadioButtonField_out.pdf");
 ```
 
-## Conclusion
+## خاتمة
 
-In this guide, we learned how to use the Aspose.PDF library for .NET to set the caption for a radio button in a PDF form. By following the described steps, you can customize the radio button options and change the caption as needed. Feel free to further explore the features of Aspose.PDF for .NET to expand the possibilities of manipulating PDF files.
+في هذا الدليل، تعلمنا كيفية استخدام مكتبة Aspose.PDF لـ .NET لتعيين التسمية التوضيحية لزر الاختيار في نموذج PDF. باتباع الخطوات الموضحة، يمكنك تخصيص خيارات زر الاختيار وتغيير التسمية التوضيحية حسب الحاجة. لا تتردد في استكشاف المزيد من ميزات Aspose.PDF لـ .NET لتوسيع إمكانيات معالجة ملفات PDF.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: Can I use Aspose.PDF for .NET to set captions for radio buttons in a PDF form?
+#### س: هل يمكنني استخدام Aspose.PDF لـ .NET لتعيين التسميات التوضيحية لأزرار الاختيار في نموذج PDF؟
 
-A: Yes, you can use Aspose.PDF for .NET to set captions for radio buttons in a PDF form. The provided sample source code demonstrates how to access the radio button field, create a new radio button option with a custom caption, and update the existing field.
+ج: نعم، يمكنك استخدام Aspose.PDF لـ .NET لتعيين التسميات التوضيحية لأزرار الاختيار في نموذج PDF. يوضح نموذج التعليمات البرمجية المصدر المقدم كيفية الوصول إلى حقل زر الاختيار، وإنشاء خيار زر اختيار جديد مع تسمية توضيحية مخصصة، وتحديث الحقل الحالي.
 
-#### Q: How can I customize the appearance of the radio button caption, such as font size and color?
+#### س: كيف يمكنني تخصيص مظهر التسمية التوضيحية لزر الاختيار، مثل حجم الخط ولونه؟
 
-A: You can customize the appearance of the radio button caption by adjusting the properties of the `TextFragment` used for the caption. For example, you can set the font, font size, color, line spacing, and other text formatting options.
+ ج: يمكنك تخصيص مظهر التسمية التوضيحية لزر الاختيار عن طريق ضبط خصائص`TextFragment` تستخدم للتسمية التوضيحية. على سبيل المثال، يمكنك تعيين الخط وحجم الخط واللون وتباعد الأسطر وخيارات تنسيق النص الأخرى.
 
-#### Q: Is it possible to add multiple radio button options with different captions to a single radio button group?
+#### س: هل من الممكن إضافة خيارات متعددة لأزرار الاختيار مع تسميات توضيحية مختلفة لمجموعة أزرار اختيار واحدة؟
 
-A: Yes, you can add multiple radio button options with different captions to a single radio button group. Each option will represent a different choice, and users can select only one option from the group.
+ج: نعم، يمكنك إضافة خيارات متعددة لأزرار الاختيار مع تسميات توضيحية مختلفة لمجموعة أزرار اختيار واحدة. سيمثل كل خيار اختيارًا مختلفًا، ويمكن للمستخدمين تحديد خيار واحد فقط من المجموعة.
 
-#### Q: Can I use Aspose.PDF for .NET to modify other form fields in a PDF document?
+#### س: هل يمكنني استخدام Aspose.PDF لـ .NET لتعديل حقول النموذج الأخرى في مستند PDF؟
 
-A: Yes, Aspose.PDF for .NET provides a comprehensive set of features to manipulate various form fields in a PDF document, such as text fields, checkboxes, dropdown lists, and more. You can use the library to set values, modify appearances, and add interactivity to form fields.
+ج: نعم، يوفر Aspose.PDF for .NET مجموعة شاملة من الميزات للتعامل مع حقول النماذج المختلفة في مستند PDF، مثل الحقول النصية ومربعات الاختيار والقوائم المنسدلة والمزيد. يمكنك استخدام المكتبة لتعيين القيم وتعديل المظاهر وإضافة التفاعل إلى حقول النموذج.
 
-#### Q: Does Aspose.PDF for .NET support working with PDFs generated from other sources, such as scanned documents?
+#### س: هل يدعم Aspose.PDF for .NET العمل مع ملفات PDF التي تم إنشاؤها من مصادر أخرى، مثل المستندات الممسوحة ضوئيًا؟
 
-A: Yes, Aspose.PDF for .NET supports working with PDFs generated from various sources, including scanned documents. The library provides OCR (Optical Character Recognition) capabilities to extract text from scanned PDFs and manipulate the content programmatically.
+ج: نعم، يدعم Aspose.PDF for .NET العمل مع ملفات PDF التي تم إنشاؤها من مصادر مختلفة، بما في ذلك المستندات الممسوحة ضوئيًا. توفر المكتبة إمكانات التعرف الضوئي على الحروف (OCR) لاستخراج النص من ملفات PDF الممسوحة ضوئيًا ومعالجة المحتوى برمجيًا.

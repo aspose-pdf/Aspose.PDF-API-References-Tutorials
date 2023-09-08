@@ -1,37 +1,37 @@
 ---
-title: Store Image In XImage Collection
-linktitle: Store Image In XImage Collection
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to store an image in XImage collection using Aspose.PDF for .NET.
+title: Сохранение изображения в коллекции XImage
+linktitle: Сохранение изображения в коллекции XImage
+second_title: Справочник по Aspose.PDF для .NET API
+description: Пошаговое руководство по сохранению изображения в коллекции XImage с использованием Aspose.PDF для .NET.
 type: docs
 weight: 290
 url: /ru/net/programming-with-images/store-image-in-ximage-collection/
 ---
-In this tutorial, we will walk you through how to store an image in the XImage collection using Aspose.PDF for .NET. Follow these steps to perform this operation easily.
+В этом уроке мы покажем вам, как сохранить изображение в коллекции XImage с помощью Aspose.PDF для .NET. Выполните следующие действия, чтобы легко выполнить эту операцию.
 
-## Prerequisites
+## Предварительные условия
 
-Before you begin, make sure you have the following:
+Прежде чем начать, убедитесь, что у вас есть следующее:
 
-- Visual Studio or any other development environment installed and configured.
-- A basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed. You can download it from Aspose official website.
+- Visual Studio или любая другая среда разработки установлена и настроена.
+- Базовые знания языка программирования C#.
+- Установлена библиотека Aspose.PDF для .NET. Вы можете скачать его с официального сайта Aspose.
 
-## Step 1: PDF document initialization
+## Шаг 1. Инициализация PDF-документа
 
-To get started, use the following code to initialize a new PDF document:
+Для начала используйте следующий код для инициализации нового PDF-документа:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Initialize the document
+//Инициализировать документ
 Aspose.Pdf.Document document = new Document();
 document.Pages.Add();
 Page page = document.Pages[1];
 ```
 
-## Step 2: Adding the image to the XImage collection
+## Шаг 2. Добавление изображения в коллекцию XImage.
 
-Next, we'll add the image to the XImage collection of the PDF document. Use the following code:
+Далее мы добавим изображение в коллекцию XImage PDF-документа. Используйте следующий код:
 
 ```csharp
 FileStream imageStream = new FileStream(dataDir + "aspose-logo.jpg", FileMode.Open);
@@ -39,16 +39,16 @@ page.Resources.Images.Add(imageStream, ImageFilterType.Flate);
 XImage ximage = page.Resources.Images[page.Resources.Images.Count];
 ```
 
-Be sure to provide the correct path to the image source file.
+Обязательно укажите правильный путь к исходному файлу изображения.
 
-## Step 3: Placement of the image on the page
+## Шаг 3. Размещение изображения на странице.
 
-Now let's place the image on the page of the PDF document. Use the following code:
+Теперь разместим изображение на странице PDF-документа. Используйте следующий код:
 
 ```csharp
 page. Contents. Add(new GSave());
 
-// Set coordinates
+// Установить координаты
 int lowerLeftX = 0;
 int lowerLeftY = 0;
 int upperRightX = 600;
@@ -56,29 +56,29 @@ int upperRightY = 600;
 Aspose.Pdf.Rectangle rectangle = new Aspose.Pdf.Rectangle(lowerLeftX, lowerLeftY, upperRightX, upperRightY);
 Matrix matrix = new Matrix(new double[] {rectangle.URX - rectangle.LLX, 0, 0, rectangle.URY - rectangle.LLY, rectangle.LLX, rectangle.LLY});
 
-// Using the ConcatenateMatrix operator: define how the image should be placed
+// Использование оператора ConcatenateMatrix: определите, как должно быть размещено изображение.
 page.Contents.Add(new ConcatenateMatrix(matrix));
 page.Contents.Add(new Do(ximage.Name));
 page. Contents. Add(new GRestore());
 ```
 
-This will place the image at the specified coordinates on the page.
+Это разместит изображение в указанных координатах на странице.
 
-## Step 4: Saving the PDF document
+## Шаг 4. Сохранение PDF-документа
 
-Finally, we'll save the updated PDF document. Use the following code:
+Наконец, мы сохраним обновленный PDF-документ. Используйте следующий код:
 
 ```csharp
 document.Save(dataDir + "FlateDecodeCompression.pdf");
 ```
 
-Be sure to provide the desired path and filename for the final PDF document.
+Обязательно укажите желаемый путь и имя файла для окончательного PDF-документа.
 
-### Sample source code for Store Image In XImage Collection using Aspose.PDF for .NET 
+### Пример исходного кода для сохранения изображения в коллекции XImage с использованием Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Initialize Document
+// Инициализировать документ
 Aspose.Pdf.Document document = new Document();
 document.Pages.Add();
 Page page = document.Pages[1];
@@ -86,58 +86,58 @@ FileStream imageStream = new FileStream(dataDir + "aspose-logo.jpg", FileMode.Op
 page.Resources.Images.Add(imageStream, ImageFilterType.Flate);
 XImage ximage = page.Resources.Images[page.Resources.Images.Count];
 page.Contents.Add(new GSave());
-// Set coordinates
+// Установить координаты
 int lowerLeftX = 0;
 int lowerLeftY = 0;
 int upperRightX = 600;
 int upperRightY = 600;
 Aspose.Pdf.Rectangle rectangle = new Aspose.Pdf.Rectangle(lowerLeftX, lowerLeftY, upperRightX, upperRightY);
 Matrix matrix = new Matrix(new double[] {rectangle.URX - rectangle.LLX, 0, 0, rectangle.URY - rectangle.LLY, rectangle.LLX, rectangle.LLY});
-// Using ConcatenateMatrix (concatenate matrix) operator: defines how image must be placed
+// Использование оператора ConcatenateMatrix (матрица объединения): определяет, как должно быть размещено изображение.
 page.Contents.Add(new ConcatenateMatrix(matrix));
 page.Contents.Add(new Do(ximage.Name));
 page.Contents.Add(new GRestore());
 document.Save(dataDir + "FlateDecodeCompression.pdf");
 ```
 
-## Conclusion
+## Заключение
 
-Congratulation ! You have successfully stored an image in the XImage collection using Aspose.PDF for .NET. You can now apply this method to your own projects to manipulate and personalize images in PDF files.
+Поздравляем! Вы успешно сохранили изображение в коллекции XImage с помощью Aspose.PDF для .NET. Теперь вы можете применить этот метод к своим собственным проектам, чтобы манипулировать и персонализировать изображения в файлах PDF.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is the purpose of storing an image in the XImage collection using Aspose.PDF for .NET?
+#### Вопрос: Какова цель хранения изображения в коллекции XImage с помощью Aspose.PDF для .NET?
 
-A: Storing an image in the XImage collection allows you to efficiently manage and use images within a PDF document. This approach enables you to manipulate, customize, and personalize images before placing them on specific pages.
+О: Хранение изображений в коллекции XImage позволяет эффективно управлять изображениями и использовать их в PDF-документе. Этот подход позволяет вам манипулировать, настраивать и персонализировать изображения перед их размещением на определенных страницах.
 
-#### Q: How does storing an image in the XImage collection differ from directly placing an image on a PDF page?
+#### Вопрос: Чем хранение изображения в коллекции XImage отличается от непосредственного размещения изображения на странице PDF?
 
-A: Storing an image in the XImage collection provides a more organized and reusable way to manage images. Instead of directly placing an image on a page, you store it in the collection and can then refer to it by name when needed, allowing for easier management and modification.
+О: Хранение изображений в коллекции XImage обеспечивает более организованный и многоразовый способ управления изображениями. Вместо непосредственного размещения изображения на странице вы сохраняете его в коллекции и затем можете обращаться к нему по имени, когда это необходимо, что упрощает управление и модификацию.
 
-#### Q: Can I add multiple images to the XImage collection within a single PDF document?
+#### Вопрос: Могу ли я добавить несколько изображений в коллекцию XImage в один PDF-документ?
 
-A: Yes, you can add multiple images to the XImage collection within the same PDF document. Each image is assigned a unique name in the collection, which can be used to reference and place the images on different pages.
+О: Да, вы можете добавить несколько изображений в коллекцию XImage в одном PDF-документе. Каждому изображению в коллекции присваивается уникальное имя, которое можно использовать для ссылки и размещения изображений на разных страницах.
 
-#### Q: How do I specify the position and size of the image when placing it on a PDF page from the XImage collection?
+#### Вопрос: Как указать положение и размер изображения при размещении его на странице PDF из коллекции XImage?
 
-A: To specify the position and size of the image, you need to define a rectangle and a matrix transformation. The rectangle defines the boundaries of the image, and the matrix transformation specifies how the image should be placed within that rectangle.
+О: Чтобы указать положение и размер изображения, вам необходимо определить прямоугольник и матричное преобразование. Прямоугольник определяет границы изображения, а матричное преобразование определяет, как изображение должно быть размещено внутри этого прямоугольника.
 
-#### Q: What is the purpose of the `GSave()` and `GRestore()` operators in the code for placing the image?
+####  Вопрос: Какова цель`GSave()` and `GRestore()` operators in the code for placing the image?
 
-A: The `GSave()` and `GRestore()` operators are used to save and restore the graphics state of the PDF page. This ensures that the operations performed on the page, such as placing the image, do not affect the state of the page after the image is placed.
+ А:`GSave()` и`GRestore()` операторы используются для сохранения и восстановления графического состояния страницы PDF. Это гарантирует, что операции, выполняемые на странице, такие как размещение изображения, не влияют на состояние страницы после размещения изображения.
 
-#### Q: Can I apply additional modifications or transformations to the images stored in the XImage collection?
+#### Вопрос: Могу ли я применить дополнительные модификации или преобразования к изображениям, хранящимся в коллекции XImage?
 
-A: Yes, you can apply various modifications and transformations to the images stored in the XImage collection. You can rotate, scale, crop, and perform other transformations using the appropriate operations and techniques provided by Aspose.PDF for .NET.
+О: Да, вы можете применять различные модификации и преобразования к изображениям, хранящимся в коллекции XImage. Вы можете вращать, масштабировать, обрезать и выполнять другие преобразования, используя соответствующие операции и методы, предоставляемые Aspose.PDF для .NET.
 
-#### Q: How can I integrate this method into my own projects to store and place images in the XImage collection of a PDF document?
+#### Вопрос: Как я могу интегрировать этот метод в свои собственные проекты для хранения и размещения изображений в коллекции XImage PDF-документа?
 
-A: To integrate this method, follow the outlined steps and modify the code to meet your project's requirements. You can use the XImage collection to store and manage images, then place them on specific pages using the specified coordinates and transformations.
+О: Чтобы интегрировать этот метод, выполните описанные шаги и измените код в соответствии с требованиями вашего проекта. Вы можете использовать коллекцию XImage для хранения изображений и управления ими, а затем размещать их на определенных страницах, используя указанные координаты и преобразования.
 
-#### Q: Are there any considerations or limitations when working with the XImage collection in Aspose.PDF for .NET?
+#### Вопрос: Есть ли какие-либо соображения или ограничения при работе с коллекцией XImage в Aspose.PDF для .NET?
 
-A: While the XImage collection provides a powerful way to manage and manipulate images, it's important to consider factors such as memory usage and the complexity of the operations performed on the images. Careful management of the collection and efficient use of resources is recommended.
+О: Хотя коллекция XImage предоставляет мощный способ управления изображениями и манипулирования ими, важно учитывать такие факторы, как использование памяти и сложность операций, выполняемых с изображениями. Рекомендуется тщательное управление сбором и эффективное использование ресурсов.
 
-#### Q: Can I reuse images stored in the XImage collection across multiple PDF documents?
+#### Вопрос: Могу ли я повторно использовать изображения, хранящиеся в коллекции XImage, в нескольких документах PDF?
 
-A: The XImage collection is specific to each PDF document and is not designed for cross-document reuse. If you need to reuse images across multiple documents, you would need to store and manage them separately for each document.
+О: Коллекция XImage индивидуальна для каждого PDF-документа и не предназначена для повторного использования в нескольких документах. Если вам нужно повторно использовать изображения в нескольких документах, вам придется хранить их и управлять ими отдельно для каждого документа.

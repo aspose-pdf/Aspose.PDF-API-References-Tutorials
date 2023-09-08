@@ -1,100 +1,100 @@
 ---
-title: Add Tooltip To Field
-linktitle: Add Tooltip To Field
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add a tooltip to a field with Aspose.PDF for .NET.
+title: Ajouter une info-bulle au champ
+linktitle: Ajouter une info-bulle au champ
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment ajouter une info-bulle à un champ avec Aspose.PDF pour .NET.
 type: docs
 weight: 10
 url: /fr/net/programming-with-forms/add-tooltip-to-field/
 ---
-Aspose.PDF for .NET is a powerful library that allows developers to manipulate PDF documents programmatically. In this tutorial, we will walk through the process of adding a tooltip to a field using Aspose.PDF for .NET. We will provide a step-by-step guide to help you understand and implement this functionality in your C# code.
+Aspose.PDF pour .NET est une bibliothèque puissante qui permet aux développeurs de manipuler des documents PDF par programme. Dans ce didacticiel, nous allons parcourir le processus d'ajout d'une info-bulle à un champ à l'aide d'Aspose.PDF pour .NET. Nous vous fournirons un guide étape par étape pour vous aider à comprendre et à implémenter cette fonctionnalité dans votre code C#.
 
-## Step 1: Setting up the project and including Aspose.PDF for .NET
+## Étape 1 : Configuration du projet et inclusion d'Aspose.PDF pour .NET
 
-Before we begin, make sure you have Aspose.PDF for .NET installed in your development environment. You can download the library from the official website and follow the installation instructions provided.
+Avant de commencer, assurez-vous que Aspose.PDF pour .NET est installé dans votre environnement de développement. Vous pouvez télécharger la bibliothèque depuis le site officiel et suivre les instructions d'installation fournies.
 
-Once you have installed Aspose.PDF for .NET, create a new C# project in your preferred Integrated Development Environment (IDE). Add a reference to the Aspose.PDF.dll file in your project to access the library's functionality.
+Une fois que vous avez installé Aspose.PDF pour .NET, créez un nouveau projet C# dans votre environnement de développement intégré (IDE) préféré. Ajoutez une référence au fichier Aspose.PDF.dll dans votre projet pour accéder aux fonctionnalités de la bibliothèque.
 
-## Step 2: Loading the source PDF form
+## Étape 2 : Chargement du formulaire PDF source
 
-In this step, we will load the source PDF form that contains the field to which we want to add a tooltip. First, ensure that you have the source PDF form file available in your project directory. You can obtain a sample PDF form or use your own existing form.
+Dans cette étape, nous allons charger le formulaire PDF source qui contient le champ auquel nous souhaitons ajouter une info-bulle. Tout d’abord, assurez-vous que le fichier de formulaire PDF source est disponible dans le répertoire de votre projet. Vous pouvez obtenir un exemple de formulaire PDF ou utiliser votre propre formulaire existant.
 
-To load the PDF form, use the following code:
+Pour charger le formulaire PDF, utilisez le code suivant :
 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load source PDF form
+// Charger le formulaire PDF source
 Document doc = new Document(dataDir + "AddTooltipToField.pdf");
 ```
 
-Make sure to replace `"AddTooltipToField.pdf"` with the actual filename of your source PDF form.
+ Assurez-vous de remplacer`"AddTooltipToField.pdf"` avec le nom de fichier réel de votre formulaire PDF source.
 
-## Step 3: Adding a tooltip to a text field
+## Étape 3 : Ajouter une info-bulle à un champ de texte
 
-Now that we have loaded the source PDF form, we can proceed to add a tooltip to a specific text field. In this example, let's assume that the text field's name is "textbox1".
+Maintenant que nous avons chargé le formulaire PDF source, nous pouvons procéder à l'ajout d'une info-bulle à un champ de texte spécifique. Dans cet exemple, supposons que le nom du champ de texte soit « textbox1 ».
 
-To add a tooltip to the text field, use the following code:
+Pour ajouter une info-bulle au champ de texte, utilisez le code suivant :
 
 ```csharp
-// Set the tooltip for textfield
+// Définir l'info-bulle pour le champ de texte
 (doc.Form["textbox1"] as Field).AlternateName = "Text box tool tip";
 ```
 
-Replace `"textbox1"` with the actual name of the text field to which you want to add the tooltip. Also, customize the tooltip text by modifying the value assigned to `AlternateName`.
+ Remplacer`"textbox1"` avec le nom réel du champ de texte auquel vous souhaitez ajouter l'info-bulle. Personnalisez également le texte de l'info-bulle en modifiant la valeur attribuée à`AlternateName`.
 
-## Step 4: Saving the updated document
+## Étape 4 : Sauvegarde du document mis à jour
 
-After adding the tooltip to the field, we need to save the updated document. Specify the output file path where you want to save the modified PDF form.
+Après avoir ajouté l'info-bulle au champ, nous devons enregistrer le document mis à jour. Spécifiez le chemin du fichier de sortie dans lequel vous souhaitez enregistrer le formulaire PDF modifié.
 
-To save the updated document, use the following code:
+Pour enregistrer le document mis à jour, utilisez le code suivant :
 
 ```csharp
 dataDir = dataDir + "AddTooltipToField_out.pdf";
-// Save the updated document
+// Enregistrez le document mis à jour
 doc.Save(dataDir);
 Console.WriteLine("\nTooltip added successfully.\nFile saved at " + dataDir);
 ```
 
-Make sure to provide the desired output file name and path. After executing this code, the modified PDF form with the added tooltip will be saved to the specified location.
+Assurez-vous de fournir le nom et le chemin du fichier de sortie souhaité. Après avoir exécuté ce code, le formulaire PDF modifié avec l'info-bulle ajoutée sera enregistré à l'emplacement spécifié.
 
-### Sample source code for Add Tooltip To Field using Aspose.PDF for .NET 
+### Exemple de code source pour Ajouter une info-bulle au champ à l'aide d'Aspose.PDF pour .NET 
 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load source PDF form
+// Charger le formulaire PDF source
 Document doc = new Document(dataDir + "AddTooltipToField.pdf");
-// Set the tooltip for textfield
+// Définir l'info-bulle pour le champ de texte
 (doc.Form["textbox1"] as Field).AlternateName = "Text box tool tip";
 dataDir = dataDir + "AddTooltipToField_out.pdf";
-// Save the updated document
+// Enregistrez le document mis à jour
 doc.Save(dataDir);
 Console.WriteLine("\nTooltip added successfully.\nFile saved at " + dataDir);
 ```
 
 ## Conclusion
 
-Congratulations! You have successfully learned how to add a tooltip to a field using Aspose.PDF for .NET. By following the step-by-step guide in this tutorial, you can enhance your PDF forms with tooltips to provide additional information or guidance to the users. Remember to explore the documentation and examples provided by Aspose.PDF for .NET to discover more advanced features and functionalities offered by the library.
+Toutes nos félicitations! Vous avez appris avec succès comment ajouter une info-bulle à un champ à l'aide d'Aspose.PDF pour .NET. En suivant le guide étape par étape de ce didacticiel, vous pouvez améliorer vos formulaires PDF avec des info-bulles pour fournir des informations supplémentaires ou des conseils aux utilisateurs. N'oubliez pas d'explorer la documentation et les exemples fournis par Aspose.PDF for .NET pour découvrir des fonctionnalités plus avancées proposées par la bibliothèque.
 
-### FAQ's
+### FAQ
 
-#### Q: What is a tooltip in a PDF form, and why would I use it?
+#### Q : Qu'est-ce qu'une info-bulle dans un formulaire PDF et pourquoi devrais-je l'utiliser ?
 
-A: A tooltip in a PDF form is a small pop-up box that appears when the user hovers their mouse over a specific field. It provides additional information or instructions related to that field. Tooltips are helpful for guiding users, providing explanations, or offering context-specific help in PDF forms.
+R : Une info-bulle dans un formulaire PDF est une petite boîte contextuelle qui apparaît lorsque l'utilisateur passe la souris sur un champ spécifique. Il fournit des informations ou des instructions supplémentaires liées à ce champ. Les info-bulles sont utiles pour guider les utilisateurs, fournir des explications ou proposer une aide contextuelle dans les formulaires PDF.
 
-#### Q: Can I customize the appearance and behavior of the tooltip?
+#### Q : Puis-je personnaliser l'apparence et le comportement de l'info-bulle ?
 
-A: Yes, with Aspose.PDF for .NET, you can customize the appearance and behavior of the tooltip. You can set the tooltip text, font, color, and other attributes to match your application's design and requirements.
+R : Oui, avec Aspose.PDF pour .NET, vous pouvez personnaliser l'apparence et le comportement de l'info-bulle. Vous pouvez définir le texte, la police, la couleur et d'autres attributs de l'info-bulle pour qu'ils correspondent à la conception et aux exigences de votre application.
 
-#### Q: Is Aspose.PDF for .NET compatible with other programming languages besides C#?
+#### Q : Aspose.PDF pour .NET est-il compatible avec d'autres langages de programmation que C# ?
 
-A: Yes, Aspose.PDF for .NET is designed to work with other .NET languages such as VB.NET, F#, and more. The library provides consistent functionality across these languages.
+R : Oui, Aspose.PDF pour .NET est conçu pour fonctionner avec d'autres langages .NET tels que VB.NET, F#, etc. La bibliothèque fournit des fonctionnalités cohérentes dans ces langages.
 
-#### Q: Can I add tooltips to other types of form fields, such as checkboxes or radio buttons?
+#### Q : Puis-je ajouter des info-bulles à d’autres types de champs de formulaire, tels que des cases à cocher ou des boutons radio ?
 
-A: Yes, you can add tooltips to various types of form fields, including text fields, checkboxes, radio buttons, combo boxes, and more. The process is similar, and you can access different types of form fields using their names or IDs.
+: Oui, vous pouvez ajouter des info-bulles à différents types de champs de formulaire, notamment des champs de texte, des cases à cocher, des boutons radio, des zones de liste déroulante, etc. Le processus est similaire et vous pouvez accéder à différents types de champs de formulaire en utilisant leurs noms ou identifiants.
 
-#### Q: Can I remove or modify the tooltip after it has been added to the field?
+#### Q : Puis-je supprimer ou modifier l'info-bulle une fois qu'elle a été ajoutée au champ ?
 
-A: Yes, you can modify or remove the tooltip from a field even after it has been added using Aspose.PDF for .NET. Simply access the field and update its `AlternateName` property with the new tooltip text or set it to an empty string to remove the tooltip.
+ R : Oui, vous pouvez modifier ou supprimer l'info-bulle d'un champ même après son ajout à l'aide d'Aspose.PDF pour .NET. Accédez simplement au champ et mettez à jour son`AlternateName` propriété avec le nouveau texte d’info-bulle ou définissez-la sur une chaîne vide pour supprimer l’info-bulle.

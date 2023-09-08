@@ -1,77 +1,77 @@
 ---
-title: Margins Or Padding
-linktitle: Margins Or Padding
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set margins or padding in a table using Aspose.PDF for .NET.
+title: الهوامش أو الحشو
+linktitle: الهوامش أو الحشو
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية تعيين الهوامش أو المساحة المتروكة في جدول باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 140
 url: /ar/net/programming-with-tables/margins-or-padding/
 ---
-In this tutorial, we will guide you through the step-by-step process of using Aspose.PDF for .NET to set margins or padding in a table. We will provide explanations and code snippets to help you understand and implement this functionality in your C# source code.
+في هذا البرنامج التعليمي، سنرشدك خلال عملية خطوة بخطوة لاستخدام Aspose.PDF لـ .NET لتعيين الهوامش أو المساحة المتروكة في الجدول. سنقدم توضيحات ومقتطفات من التعليمات البرمجية لمساعدتك على فهم هذه الوظيفة وتنفيذها في كود مصدر C# الخاص بك.
 
-## Step 1: Setting up the Document and Page
-To begin, you need to set up the document and page using the following code:
+## الخطوة 1: إعداد الوثيقة والصفحة
+للبدء، تحتاج إلى إعداد المستند والصفحة باستخدام الكود التالي:
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate the Document object by calling its empty constructor
+// قم بإنشاء مثيل لكائن المستند عن طريق استدعاء المُنشئ الفارغ الخاص به
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Step 2: Creating a Table
-Next, we will create a table object using the Aspose.Pdf.Table class:
+## الخطوة 2: إنشاء جدول
+بعد ذلك، سنقوم بإنشاء كائن جدول باستخدام فئة Aspose.Pdf.Table:
 
 ```csharp
-// Instantiate a table object
+// إنشاء مثيل لكائن الجدول
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
-// Add the table to the paragraphs collection of the desired section
+// إضافة الجدول إلى مجموعة فقرات القسم المطلوب
 page.Paragraphs.Add(tab1);
 ```
 
-## Step 3: Setting Column Widths and Default Cell Border
-To set the column widths and default cell border of the table, use the following code:
+## الخطوة 3: تحديد عرض الأعمدة وحدود الخلية الافتراضية
+لتعيين عرض الأعمدة وحدود الخلية الافتراضية للجدول، استخدم الكود التالي:
 
 ```csharp
-// Set the column widths of the table
+// قم بتعيين عرض أعمدة الجدول
 tab1. ColumnWidths = "50 50 50";
-// Set the default cell border using the BorderInfo object
+// قم بتعيين حدود الخلية الافتراضية باستخدام كائن BorderInfo
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 ```
 
-## Step 4: Setting Table Border and Cell Padding
-To set the table border and cell padding, create a MarginInfo object and set its properties:
+## الخطوة 4: تعيين حدود الجدول وحشو الخلية
+لتعيين حدود الجدول ومساحة الخلية، قم بإنشاء كائن MarginInfo وقم بتعيين خصائصه:
 
 ```csharp
-// Create a MarginInfo object and set its left, bottom, right, and top margins
+// قم بإنشاء كائن MarginInfo وقم بتعيين الهوامش اليسرى والسفلى واليمنى والعليا
 Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
 margin. Top = 5f;
 margin. Left = 5f;
 margin. Right = 5f;
 margin. Bottom = 5f;
 
-// Set the default cell padding to the MarginInfo object
+// قم بتعيين حشوة الخلية الافتراضية لكائن MarginInfo
 tab1. DefaultCellPadding = margin;
 
-// Set the table border using another customized BorderInfo object
+// قم بتعيين حدود الجدول باستخدام كائن BorderInfo مخصص آخر
 tab1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
 ```
 
-## Step 5: Adding Rows and Cells
-Now, let's add rows and cells to the table. We will create a new row and add cells to it:
+## الخطوة 5: إضافة الصفوف والخلايا
+الآن، دعونا نضيف صفوفًا وخلايا إلى الجدول. سنقوم بإنشاء صف جديد وإضافة خلايا إليه:
 
 ```csharp
-// Create rows in the table and then cells in the rows
+// قم بإنشاء صفوف في الجدول ثم خلايا في الصفوف
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
 row1.Cells.Add();
 ```
 
-## Step 6: Adding Text to Cells
-To add text to a cell, create a TextFragment object and add it to the desired cell:
+## الخطوة 6: إضافة نص إلى الخلايا
+لإضافة نص إلى خلية، قم بإنشاء كائن TextFragment وأضفه إلى الخلية المطلوبة:
 
 ```csharp
 TextFragment mytext = new TextFragment("col3 with large text string");
@@ -79,51 +79,51 @@ row1.Cells[2].Paragraphs.Add(mytext);
 row1.Cells[2].IsWordWrapped = false;
 ```
 
-## Step 7: Saving the PDF
-To save the PDF document, use the following code:
+## الخطوة 7: حفظ ملف PDF
+لحفظ مستند PDF استخدم الكود التالي:
 
 ```csharp
 dataDir = dataDir + "MarginsOrPadding_out.pdf";
-// Save the PDF
+// احفظ ملف PDF
 doc.Save(dataDir);
 
 Console.WriteLine("\nCell and table border width setup successfully.\nFile saved at " + dataDir);
 ```
 
-### Example source code for Margins Or Padding using Aspose.PDF for .NET
+### مثال على التعليمات البرمجية المصدر للهوامش أو الحشو باستخدام Aspose.PDF لـ .NET
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instntiate the Document object by calling its empty constructor
+// قم بإنشاء كائن المستند عن طريق استدعاء المُنشئ الفارغ الخاص به
 Document doc = new Document();
 Page page = doc.Pages.Add();
-// Instantiate a table object
+// إنشاء مثيل لكائن الجدول
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
-// Add the table in paragraphs collection of the desired section
+// إضافة الجدول في مجموعة فقرات القسم المطلوب
 page.Paragraphs.Add(tab1);
-// Set with column widths of the table
+// تعيين مع عرض أعمدة الجدول
 tab1.ColumnWidths = "50 50 50";
-// Set default cell border using BorderInfo object
+// قم بتعيين حدود الخلية الافتراضية باستخدام كائن BorderInfo
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
-// Set table border using another customized BorderInfo object
+// قم بتعيين حدود الجدول باستخدام كائن BorderInfo مخصص آخر
 tab1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
-// Create MarginInfo object and set its left, bottom, right and top margins
+// قم بإنشاء كائن MarginInfo وقم بتعيين الهوامش اليسرى والسفلى واليمنى والعليا
 Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
 margin.Top = 5f;
 margin.Left = 5f;
 margin.Right = 5f;
 margin.Bottom = 5f;
-// Set the default cell padding to the MarginInfo object
+// قم بتعيين حشوة الخلية الافتراضية لكائن MarginInfo
 tab1.DefaultCellPadding = margin;
-// Create rows in the table and then cells in the rows
+// قم بإنشاء صفوف في الجدول ثم خلايا في الصفوف
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
 row1.Cells.Add();
 TextFragment mytext = new TextFragment("col3 with large text string");
-// Row1.Cells.Add("col3 with large text string to be placed inside cell");
+// Row1.Cells.Add("col3 بسلسلة نصية كبيرة ليتم وضعها داخل الخلية");
 row1.Cells[2].Paragraphs.Add(mytext);
 row1.Cells[2].IsWordWrapped = false;
 // Row1.Cells[2].Paragraphs[0].FixedWidth= 80;
@@ -132,33 +132,33 @@ row2.Cells.Add("item1");
 row2.Cells.Add("item2");
 row2.Cells.Add("item3");
 dataDir = dataDir + "MarginsOrPadding_out.pdf";
-// Save the Pdf
+// احفظ ملف PDF
 doc.Save(dataDir);
 
 Console.WriteLine("\nCell and table border width setup successfully.\nFile saved at " + dataDir); 
 ```
 
-## Conclusion
-Congratulations! You have successfully learned how to set margins or padding in a table using Aspose.PDF for .NET. This knowledge will help you enhance your document formatting capabilities and make your tables visually appealing.
+## خاتمة
+تهانينا! لقد تعلمت بنجاح كيفية تعيين الهوامش أو المساحة المتروكة في جدول باستخدام Aspose.PDF لـ .NET. ستساعدك هذه المعرفة على تحسين قدرات تنسيق المستندات لديك وجعل جداولك جذابة بصريًا.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: Can I set different margins or padding for individual cells in a table?
+#### س: هل يمكنني تعيين هوامش أو حشوات مختلفة للخلايا الفردية في الجدول؟
 
-A: Yes, you can set different margins or padding for individual cells in a table using Aspose.PDF for .NET. In the provided example, we set the default cell padding for the entire table using the `DefaultCellPadding` property. To set different padding for specific cells, you can access the `MarginInfo` of each cell individually and modify their margins.
+ج: نعم، يمكنك تعيين هوامش أو مساحة مختلفة للخلايا الفردية في جدول باستخدام Aspose.PDF لـ .NET. في المثال المقدم، قمنا بتعيين حشوة الخلية الافتراضية للجدول بأكمله باستخدام`DefaultCellPadding` ملكية. لتعيين حشوة مختلفة لخلايا معينة، يمكنك الوصول إلى`MarginInfo` لكل خلية على حدة وتعديل هوامشها.
 
-#### Q: How can I change the border color or style of the table?
+#### س: كيف يمكنني تغيير لون حدود الجدول أو نمطه؟
 
-A: To change the border color or style of the table, you can modify the `Color` and `Width` properties of the `BorderInfo` object. In the given example, we set the border color to black and a width of 1F (one point) using `tab1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);`. You can adjust the color and width as per your requirements.
+ ج: لتغيير لون حدود الجدول أو نمطه، يمكنك تعديل`Color` و`Width` خصائص`BorderInfo` هدف. في المثال الموضح، قمنا بتعيين لون الحدود إلى اللون الأسود وعرض 1F (نقطة واحدة) باستخدام`tab1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);`. يمكنك ضبط اللون والعرض حسب متطلباتك.
 
-#### Q: Is it possible to add headers or footers to the table?
+#### س: هل من الممكن إضافة رؤوس أو تذييلات إلى الجدول؟
 
-A: Yes, you can add headers or footers to the table using Aspose.PDF for .NET. Headers and footers are typically separate rows that contain additional information such as column labels, table titles, or summary data. You can create additional rows, style them differently, and add them above or below the table content.
+ج: نعم، يمكنك إضافة رؤوس أو تذييلات إلى الجدول باستخدام Aspose.PDF لـ .NET. عادةً ما تكون الرؤوس والتذييلات عبارة عن صفوف منفصلة تحتوي على معلومات إضافية مثل تسميات الأعمدة أو عناوين الجداول أو بيانات التلخيص. يمكنك إنشاء صفوف إضافية وتصميمها بشكل مختلف وإضافتها أعلى محتوى الجدول أو أسفله.
 
-#### Q: How do I adjust the text alignment within a table cell?
+#### س: كيف يمكنني ضبط محاذاة النص داخل خلية جدول؟
 
-A: To adjust the text alignment within a table cell, you can use the `HorizontalAlignment` and `VerticalAlignment` properties of the `TextFragment` object. For example, to center-align the text horizontally, you can set `mytext.HorizontalAlignment = HorizontalAlignment.Center;`. Similarly, you can set `mytext.VerticalAlignment` to control the vertical alignment.
+ ج: لضبط محاذاة النص داخل خلية جدول، يمكنك استخدام الخيار`HorizontalAlignment` و`VerticalAlignment` خصائص`TextFragment` هدف. على سبيل المثال، يمكنك ضبط النص لمحاذاة النص أفقيًا إلى المنتصف`mytext.HorizontalAlignment = HorizontalAlignment.Center;` . وبالمثل، يمكنك تعيين`mytext.VerticalAlignment` للتحكم في المحاذاة العمودية.
 
-#### Q: Can I add images to the table cells instead of text?
+#### س: هل يمكنني إضافة صور إلى خلايا الجدول بدلاً من النص؟
 
-A: Yes, you can add images to the table cells using Aspose.PDF for .NET. Instead of creating a `TextFragment` object, you can create an `Image` object, load the image file, and add it to the desired cell using the `cell.Paragraphs.Add(image);` method. This allows you to insert images into the table alongside text content.
+ ج: نعم، يمكنك إضافة صور إلى خلايا الجدول باستخدام Aspose.PDF لـ .NET. بدلاً من إنشاء`TextFragment` كائن، يمكنك إنشاء`Image` الكائن، وقم بتحميل ملف الصورة، ثم قم بإضافته إلى الخلية المطلوبة باستخدام الملف`cell.Paragraphs.Add(image);` طريقة. يتيح لك ذلك إدراج صور في الجدول إلى جانب محتوى النص.

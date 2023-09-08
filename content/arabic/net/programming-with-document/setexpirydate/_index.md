@@ -1,49 +1,49 @@
 ---
-title: Set Expiry Date In PDF File
-linktitle: Set Expiry Date In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set expiry date in PDF file using Aspose.PDF for .NET with this step-by-step guide.
+title: ضبط تاريخ انتهاء الصلاحية في ملف PDF
+linktitle: ضبط تاريخ انتهاء الصلاحية في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية تعيين تاريخ انتهاء الصلاحية في ملف PDF باستخدام Aspose.PDF لـ .NET باستخدام هذا الدليل التفصيلي خطوة بخطوة.
 type: docs
 weight: 300
 url: /ar/net/programming-with-document/setexpirydate/
 ---
-Aspose.PDF for .NET is a powerful library that provides various features for working with PDF files. One such feature is the ability to set an expiry date for a PDF document. In this tutorial, we will walk you through the process of setting an expiry date for a PDF document using Aspose.PDF for .NET. 
+Aspose.PDF for .NET هي مكتبة قوية توفر ميزات متنوعة للعمل مع ملفات PDF. إحدى هذه الميزات هي القدرة على تحديد تاريخ انتهاء الصلاحية لمستند PDF. في هذا البرنامج التعليمي، سنرشدك خلال عملية تحديد تاريخ انتهاء الصلاحية لمستند PDF باستخدام Aspose.PDF لـ .NET. 
 
-## Step 1: Set the path to the document directory
+## الخطوة 1: قم بتعيين المسار إلى دليل المستند
 
-Before we start, we need to set the path to the directory where our PDF document is located. We will store this path in a variable called "dataDir".
+قبل أن نبدأ، نحتاج إلى تعيين المسار إلى الدليل الذي يوجد به مستند PDF الخاص بنا. سنقوم بتخزين هذا المسار في متغير يسمى "dataDir".
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Creating a new PDF document
+## الخطوة 2: إنشاء مستند PDF جديد
 
-To create a new PDF document, we need to instantiate a new `Aspose.Pdf.Document` object. We can do this using the following code:
+ لإنشاء مستند PDF جديد، نحتاج إلى إنشاء نسخة جديدة`Aspose.Pdf.Document` هدف. يمكننا القيام بذلك باستخدام الكود التالي:
 
 ```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 ```
 
-## Step 3: Adding a new page to the PDF document
+## الخطوة 3: إضافة صفحة جديدة إلى مستند PDF
 
-Once we have created the PDF document, we can add a new page to it. We can do this using the following code:
+بمجرد إنشاء مستند PDF، يمكننا إضافة صفحة جديدة إليه. يمكننا القيام بذلك باستخدام الكود التالي:
 
 ```csharp
 doc.Pages.Add();
 ```
 
-## Step 4: Adding Text to the PDF Document
+## الخطوة 4: إضافة نص إلى وثيقة PDF
 
-After adding a page to the PDF document, we can add text to it using the `Paragraphs` collection. We can do this using the following code:
+بعد إضافة صفحة إلى مستند PDF، يمكننا إضافة نص إليها باستخدام الملف`Paragraphs` مجموعة. يمكننا القيام بذلك باستخدام الكود التالي:
 
 ```csharp
 doc.Pages[1].Paragraphs.Add(new TextFragment("Hello World..."));
 ```
 
-## Step 5: Setting PDF expiry date using JavaScript
+## الخطوة 5: تحديد تاريخ انتهاء صلاحية ملف PDF باستخدام JavaScript
 
-To set the PDF expiry date, we need to create a JavaScript object. We can do this using the following code:
+لتعيين تاريخ انتهاء صلاحية ملف PDF، نحتاج إلى إنشاء كائن JavaScript. يمكننا القيام بذلك باستخدام الكود التالي:
 
 ```csharp
 JavascriptAction javaScript = new JavascriptAction(
@@ -54,37 +54,37 @@ JavascriptAction javaScript = new JavascriptAction(
 + "if (today.getTime() > expiry.getTime())"
 + "app.alert('The file is expired. You need a new one.');");
 
-// Set JavaScript as PDF open action
+// قم بتعيين JavaScript كإجراء مفتوح لملف PDF
 doc.OpenAction = javaScript;
 ```
 
-In this code, we are setting the expiry date to May 2017.
+في هذا الكود، نقوم بتحديد تاريخ انتهاء الصلاحية إلى مايو 2017.
 
-## Step 6: Save the PDF File
+## الخطوة 6: احفظ ملف PDF
 
-After you've set the expiry date, you need to save the PDF file. To do this, you can use the `Save` method of the `Document` object and pass in the path to where you want to save the updated PDF file.
+ بعد تحديد تاريخ انتهاء الصلاحية، ستحتاج إلى حفظ ملف PDF. للقيام بذلك، يمكنك استخدام`Save` طريقة`Document` كائن وتمرير المسار إلى المكان الذي تريد حفظ ملف PDF المحدث فيه.
 
 ```csharp
 dataDir = dataDir + "SetExpiryDate_out.pdf";
-// Save PDF Document
+// حفظ وثيقة PDF
 doc.Save(dataDir);
 ```
 
-### Example source code for Set Expiry Date using Aspose.PDF for .NET
+### مثال على التعليمات البرمجية المصدر لتعيين تاريخ انتهاء الصلاحية باستخدام Aspose.PDF لـ .NET
 
-Here's the complete example source code for setting expiry date using Aspose.PDF for .NET:
+فيما يلي المثال الكامل للتعليمة البرمجية المصدر لتحديد تاريخ انتهاء الصلاحية باستخدام Aspose.PDF لـ .NET:
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate Document object
+// إنشاء مثيل لكائن المستند
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
-// Add page to pages collection of PDF file
+// إضافة صفحة إلى مجموعة الصفحات من ملف PDF
 doc.Pages.Add();
-// Add text fragment to paragraphs collection of page object
+// إضافة جزء نص إلى مجموعة الفقرات من كائن الصفحة
 doc.Pages[1].Paragraphs.Add(new TextFragment("Hello World..."));
-// Create JavaScript object to set PDF expiry date
+// قم بإنشاء كائن JavaScript لتعيين تاريخ انتهاء صلاحية PDF
 JavascriptAction javaScript = new JavascriptAction(
 "var year=2017;"
 + "var month=5;"
@@ -92,28 +92,28 @@ JavascriptAction javaScript = new JavascriptAction(
 + "expiry = new Date(year, month);"
 + "if (today.getTime() > expiry.getTime())"
 + "app.alert('The file is expired. You need a new one.');");
-// Set JavaScript as PDF open action
+// قم بتعيين JavaScript كإجراء مفتوح لملف PDF
 doc.OpenAction = javaScript;
 
 dataDir = dataDir + "SetExpiryDate_out.pdf";
-// Save PDF Document
+// حفظ وثيقة PDF
 doc.Save(dataDir);
 ```
 
-## Conclusion
+## خاتمة
 
-Setting an expiry date for a PDF document using Aspose.PDF for .NET is a useful feature to ensure that the document is only valid for a specified period. By following the step-by-step guide and using the provided C# source code, developers can easily set the expiry date and create PDFs with time-limited validity. This feature can be particularly helpful for documents that need to be accessed or distributed for a limited duration.
+يعد تحديد تاريخ انتهاء صلاحية مستند PDF باستخدام Aspose.PDF لـ .NET ميزة مفيدة للتأكد من أن المستند صالح لفترة محددة فقط. باتباع الدليل الموضح خطوة بخطوة واستخدام كود مصدر C# المقدم، يمكن للمطورين بسهولة تعيين تاريخ انتهاء الصلاحية وإنشاء ملفات PDF ذات صلاحية محدودة المدة. يمكن أن تكون هذه الميزة مفيدة بشكل خاص للمستندات التي يلزم الوصول إليها أو توزيعها لمدة محدودة.
 
-### FAQ's for set expiry date in PDF file
+### الأسئلة الشائعة لتحديد تاريخ انتهاء الصلاحية في ملف PDF
 
-#### Q: Can I set a different expiry date for the PDF document?
+#### س: هل يمكنني تحديد تاريخ انتهاء مختلف لمستند PDF؟
 
-A: Yes, you can set a different expiry date for the PDF document by modifying the JavaScript code in Step 5. In the provided example, the expiry date is set to May 2017. To set a different expiry date, you need to modify the `year` and `month` variables in the JavaScript code to the desired year and month.
+ ج: نعم، يمكنك تعيين تاريخ انتهاء صلاحية مختلف لمستند PDF عن طريق تعديل كود JavaScript في الخطوة 5. في المثال المقدم، تم تعيين تاريخ انتهاء الصلاحية على مايو 2017. لتعيين تاريخ انتهاء صلاحية مختلف، تحتاج إلى تعديل`year` و`month` المتغيرات في كود JavaScript إلى السنة والشهر المطلوبين.
 
-#### Q: What happens when the PDF document has expired?
+#### س: ماذا يحدث عند انتهاء صلاحية مستند PDF؟
 
-A: When the PDF document has expired, as specified in the JavaScript code, the viewer will display an alert message indicating that the file is expired and that the user needs a new one. This alert message will be shown when the PDF is opened.
+ج: عند انتهاء صلاحية مستند PDF، كما هو محدد في كود JavaScript، سيعرض العارض رسالة تنبيه تشير إلى انتهاء صلاحية الملف وأن المستخدم يحتاج إلى ملف جديد. سيتم عرض رسالة التنبيه هذه عند فتح ملف PDF.
 
-#### Q: Can I use a specific time for the expiry date instead of just the date?
+#### س: هل يمكنني استخدام وقت محدد لتاريخ انتهاء الصلاحية بدلاً من التاريخ فقط؟
 
-A: Yes, you can set a specific time for the expiry date in the JavaScript code. By modifying the `expiry` variable in the JavaScript code to include the desired time, you can set a specific time for the expiry date.
+ ج: نعم، يمكنك تحديد وقت محدد لتاريخ انتهاء الصلاحية في كود JavaScript. عن طريق تعديل`expiry` متغير في كود جافا سكريبت ليشمل الوقت المطلوب، يمكنك ضبط وقت محدد لتاريخ انتهاء الصلاحية.

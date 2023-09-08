@@ -1,41 +1,41 @@
 ---
-title: Fast Shrink Images
-linktitle: Fast Shrink Images
-second_title: Aspose.PDF for .NET API Reference
-description: Quickly reduce the size of images in a PDF file with Aspose.PDF for .NET.
+title: Bilder schnell verkleinern
+linktitle: Bilder schnell verkleinern
+second_title: Aspose.PDF für .NET API-Referenz
+description: Reduzieren Sie schnell die Größe von Bildern in einer PDF-Datei mit Aspose.PDF für .NET.
 type: docs
 weight: 130
 url: /de/net/programming-with-images/fast-shrink-images/
 ---
-This guide will take you step by step how to quickly reduce the size of images in a PDF file using Aspose.PDF for .NET. Make sure you have already set up your environment and follow the steps below:
+In dieser Anleitung erfahren Sie Schritt für Schritt, wie Sie mit Aspose.PDF für .NET schnell die Größe von Bildern in einer PDF-Datei reduzieren. Stellen Sie sicher, dass Sie Ihre Umgebung bereits eingerichtet haben, und führen Sie die folgenden Schritte aus:
 
-## Step 1: Initialize the time
+## Schritt 1: Initialisieren Sie die Uhrzeit
 
-Before we begin, we'll initialize the time to measure compression performance. Add the following code to record the start time:
+Bevor wir beginnen, initialisieren wir die Zeit zum Messen der Komprimierungsleistung. Fügen Sie den folgenden Code hinzu, um die Startzeit aufzuzeichnen:
 
 ```csharp
 var time = DateTime.Now.Ticks;
 ```
 
-## Step 2: Define the document directory
+## Schritt 2: Definieren Sie das Dokumentenverzeichnis
 
-Make sure to set the correct document directory. Replace `"YOUR DOCUMENT DIRECTORY"` in the code with the path to the directory where your PDF document is located.
+ Stellen Sie sicher, dass Sie das richtige Dokumentenverzeichnis festlegen. Ersetzen`"YOUR DOCUMENT DIRECTORY"` Geben Sie im Code den Pfad zu dem Verzeichnis ein, in dem sich Ihr PDF-Dokument befindet.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Schritt 3: Öffnen Sie das PDF-Dokument
 
-In this step, we will open the PDF document using the `Document` class of Aspose.PDF. Use the `Document` constructor and pass the path to the PDF document.
+In diesem Schritt öffnen wir das PDF-Dokument mit`Document` Klasse von Aspose.PDF. Benutzen Sie die`Document` Konstruktor und übergeben Sie den Pfad zum PDF-Dokument.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "Shrinkimage.pdf");
 ```
 
-## Step 4: Initialize optimization options
+## Schritt 4: Optimierungsoptionen initialisieren
 
-In this step, we will initialize the optimization options for image compression. Create an instance of `OptimizationOptions` and set the appropriate options. In this example, we enable image compression, set the image quality to 75, and use the fast compression version.
+In diesem Schritt initialisieren wir die Optimierungsoptionen für die Bildkomprimierung. Erstellen Sie eine Instanz von`OptimizationOptions` und stellen Sie die entsprechenden Optionen ein. In diesem Beispiel aktivieren wir die Bildkomprimierung, stellen die Bildqualität auf 75 ein und verwenden die schnelle Komprimierungsversion.
 
 ```csharp
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions();
@@ -44,90 +44,90 @@ optimizeOptions.ImageCompressionOptions.ImageQuality = 75;
 optimizeOptions.ImageCompressionOptions.Version = Pdf.Optimization.ImageCompressionVersion.Fast;
 ```
 
-## Step 5: Optimize the PDF document
+## Schritt 5: Optimieren Sie das PDF-Dokument
 
-In this step, we will optimize the PDF document using the optimization options defined earlier. Call the `OptimizeResources` method of the `pdfDocument` object and pass the optimization options.
+ In diesem Schritt optimieren wir das PDF-Dokument mithilfe der zuvor definierten Optimierungsoptionen. Ruf den`OptimizeResources` Methode der`pdfDocument` Objekt und übergeben Sie die Optimierungsoptionen.
 
 ```csharp
 pdfDocument.OptimizeResources(optimizeOptions);
 ```
 
-## Step 6: Save the updated PDF document
+## Schritt 6: Speichern Sie das aktualisierte PDF-Dokument
 
-Save the updated PDF document using the `Save` method of the `pdfDocument` object. Specify the output path for the PDF file.
+ Speichern Sie das aktualisierte PDF-Dokument mit`Save` Methode der`pdfDocument` Objekt. Geben Sie den Ausgabepfad für die PDF-Datei an.
 
 ```csharp
 dataDir = dataDir + "FastShrinkImages_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Fast Shrink Images using Aspose.PDF for .NET 
+### Beispielquellcode für Fast Shrink Images mit Aspose.PDF für .NET 
 ```csharp
-// Initialize Time
+// Zeit initialisieren
 var time = DateTime.Now.Ticks;
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Dokument öffnen
 Document pdfDocument = new Document(dataDir + "Shrinkimage.pdf");
-// Initialize OptimizationOptions
+// OptimizationOptions initialisieren
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions();
-// Set CompressImages option
+// Legen Sie die Option „CompressImages“ fest
 optimizeOptions.ImageCompressionOptions.CompressImages = true;
-// Set ImageQuality option
+// Legen Sie die Option „ImageQuality“ fest
 optimizeOptions.ImageCompressionOptions.ImageQuality = 75;
-// Set Imagae Compression Version to fast 
+// Stellen Sie die Image-Komprimierungsversion auf „Schnell“ ein
 optimizeOptions.ImageCompressionOptions.Version = Pdf.Optimization.ImageCompressionVersion.Fast;
-// Optimize PDF document using OptimizationOptions
+// Optimieren Sie PDF-Dokumente mit OptimizationOptions
 pdfDocument.OptimizeResources(optimizeOptions);
 dataDir = dataDir + "FastShrinkImages_out.pdf";
-// Save updated document
+// Aktualisiertes Dokument speichern
 pdfDocument.Save(dataDir);
 Console.WriteLine("Ticks: {0}", DateTime.Now.Ticks - time);
 Console.WriteLine("\nImage fast shrinked successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Abschluss
 
-Congratulation ! You quickly reduced the size of images in a PDF using Aspose.PDF for .NET. The optimized PDF file is saved in the specified directory. You can now use this PDF file with reduced images for more efficient storage or sharing needs.
+Herzlichen Glückwunsch! Mit Aspose.PDF für .NET haben Sie die Größe von Bildern in einer PDF-Datei schnell reduziert. Die optimierte PDF-Datei wird im angegebenen Verzeichnis gespeichert. Sie können diese PDF-Datei jetzt mit reduzierten Bildern für eine effizientere Speicherung oder Freigabe verwenden.
 
-### FAQ's
+### FAQs
 
-#### Q: Why would I want to quickly reduce the size of images in a PDF file using Aspose.PDF for .NET?
+#### F: Warum sollte ich die Größe von Bildern in einer PDF-Datei mit Aspose.PDF für .NET schnell reduzieren wollen?
 
-A: Quickly reducing the size of images in a PDF file can help optimize the file for storage, sharing, or transmission, resulting in improved performance and reduced resource consumption.
+A: Das schnelle Reduzieren der Größe von Bildern in einer PDF-Datei kann dazu beitragen, die Datei für die Speicherung, Freigabe oder Übertragung zu optimieren, was zu einer verbesserten Leistung und einem geringeren Ressourcenverbrauch führt.
 
-#### Q: What advantages does image compression offer in a PDF document?
+#### F: Welche Vorteile bietet die Bildkomprimierung in einem PDF-Dokument?
 
-A: Image compression in a PDF document helps minimize the file size while maintaining acceptable image quality, leading to faster loading times, reduced storage requirements, and improved data transfer efficiency.
+A: Die Bildkomprimierung in einem PDF-Dokument trägt dazu bei, die Dateigröße zu minimieren und gleichzeitig eine akzeptable Bildqualität beizubehalten, was zu schnelleren Ladezeiten, geringeren Speicheranforderungen und einer verbesserten Datenübertragungseffizienz führt.
 
-#### Q: How does Aspose.PDF for .NET facilitate fast image size reduction in a PDF file?
+#### F: Wie ermöglicht Aspose.PDF für .NET eine schnelle Reduzierung der Bildgröße in einer PDF-Datei?
 
-A: Aspose.PDF for .NET provides a streamlined process to open a PDF document, apply image compression options, and save the optimized PDF file with reduced image sizes.
+A: Aspose.PDF für .NET bietet einen optimierten Prozess zum Öffnen eines PDF-Dokuments, zum Anwenden von Bildkomprimierungsoptionen und zum Speichern der optimierten PDF-Datei mit reduzierten Bildgrößen.
 
-#### Q: What is the significance of the `OptimizationOptions` class in fast image size reduction?
+####  F: Welche Bedeutung hat das?`OptimizationOptions` class in fast image size reduction?
 
-A: The `OptimizationOptions` class enables you to define various optimization settings, including image compression options, to effectively reduce the size of images within the PDF document.
+ A: Die`OptimizationOptions`Mit der Klasse können Sie verschiedene Optimierungseinstellungen definieren, einschließlich Bildkomprimierungsoptionen, um die Größe von Bildern im PDF-Dokument effektiv zu reduzieren.
 
-#### Q: Can I customize the image compression settings to control the balance between file size and image quality?
+#### F: Kann ich die Bildkomprimierungseinstellungen anpassen, um das Gleichgewicht zwischen Dateigröße und Bildqualität zu steuern?
 
-A: Yes, you can customize the image compression settings by adjusting parameters such as image quality and compression version to achieve the desired balance between file size and image appearance.
+A: Ja, Sie können die Bildkomprimierungseinstellungen anpassen, indem Sie Parameter wie Bildqualität und Komprimierungsversion anpassen, um das gewünschte Gleichgewicht zwischen Dateigröße und Bilderscheinung zu erreichen.
 
-#### Q: How does the `pdfDocument.OptimizeResources` method work to reduce image sizes?
+####  F: Wie funktioniert das?`pdfDocument.OptimizeResources` method work to reduce image sizes?
 
-A: The `OptimizeResources` method analyzes the PDF document and applies the specified optimization options, including image compression settings, to reduce the size of images and other resources.
+ A: Die`OptimizeResources` Die Methode analysiert das PDF-Dokument und wendet die angegebenen Optimierungsoptionen an, einschließlich Bildkomprimierungseinstellungen, um die Größe von Bildern und anderen Ressourcen zu reduzieren.
 
-#### Q: Is it possible to apply fast image size reduction to a specific range of pages within a PDF document?
+#### F: Ist es möglich, eine schnelle Bildgrößenreduzierung auf einen bestimmten Seitenbereich in einem PDF-Dokument anzuwenden?
 
-A: The `OptimizeResources` method applies optimization options to the entire PDF document. If you want to apply optimization to specific pages, you need to extract those pages into a new document before optimization.
+ A: Die`OptimizeResources` Die Methode wendet Optimierungsoptionen auf das gesamte PDF-Dokument an. Wenn Sie die Optimierung auf bestimmte Seiten anwenden möchten, müssen Sie diese Seiten vor der Optimierung in ein neues Dokument extrahieren.
 
-#### Q: What are some scenarios where fast image size reduction can be beneficial?
+#### F: In welchen Szenarien kann eine schnelle Reduzierung der Bildgröße von Vorteil sein?
 
-A: Fast image size reduction can be beneficial when preparing PDF files for online distribution, email attachments, archiving, or when working with large documents with many images.
+A: Eine schnelle Reduzierung der Bildgröße kann bei der Vorbereitung von PDF-Dateien für die Online-Verteilung, E-Mail-Anhänge, Archivierung oder bei der Arbeit mit großen Dokumenten mit vielen Bildern von Vorteil sein.
 
-#### Q: Does reducing image sizes impact the visual quality of images in the PDF document?
+#### F: Hat die Reduzierung der Bildgröße Auswirkungen auf die visuelle Qualität der Bilder im PDF-Dokument?
 
-A: Reducing image sizes through compression can impact image quality to some extent. It's important to find a balance between size reduction and acceptable image quality.
+A: Die Reduzierung der Bildgröße durch Komprimierung kann sich in gewissem Maße auf die Bildqualität auswirken. Es ist wichtig, ein Gleichgewicht zwischen Größenreduzierung und akzeptabler Bildqualität zu finden.
 
-#### Q: How can I measure the performance of the fast image size reduction process?
+#### F: Wie kann ich die Leistung des schnellen Bildgrößenreduzierungsprozesses messen?
 
-A: You can measure the performance by recording the start time using the `DateTime.Now.Ticks` method before the optimization process and calculating the time elapsed after the process.
+ A: Sie können die Leistung messen, indem Sie die Startzeit mit aufzeichnen`DateTime.Now.Ticks` Methode vor dem Optimierungsprozess und Berechnung der nach dem Prozess verstrichenen Zeit.

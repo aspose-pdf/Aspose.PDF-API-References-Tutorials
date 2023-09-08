@@ -1,95 +1,95 @@
 ---
-title: Fill XFAFields
-linktitle: Fill XFAFields
-second_title: Aspose.PDF for .NET API Reference
-description: Easily fill XFA fields in your PDF documents using Aspose.PDF for .NET.
+title: املأ حقول XFA
+linktitle: املأ حقول XFA
+second_title: Aspose.PDF لمرجع .NET API
+description: قم بملء حقول XFA بسهولة في مستندات PDF الخاصة بك باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 90
 url: /ar/net/programming-with-forms/fill-xfafields/
 ---
-In this tutorial, we will show you how to fill XFA fields using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+سنوضح لك في هذا البرنامج التعليمي كيفية ملء حقول XFA باستخدام Aspose.PDF لـ .NET. سنشرح لك كود مصدر C# خطوة بخطوة لإرشادك خلال هذه العملية.
 
-## Step 1: Preparation
+## الخطوة 1: التحضير
 
-First, make sure you have imported the necessary libraries and set the path to the documents directory:
+أولاً، تأكد من استيراد المكتبات اللازمة وتعيين المسار إلى دليل المستندات:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load the XFA form
+## الخطوة 2: قم بتحميل نموذج XFA
 
-Load the XFA form:
+قم بتحميل نموذج XFA:
 
 ```csharp
 Document doc = new Document(dataDir + "FillXFAFields.pdf");
 ```
 
-## Step 3: Get XFA Field Names
+## الخطوة 3: احصل على أسماء حقول XFA
 
-Get the form's XFA field names:
+احصل على أسماء حقول XFA الخاصة بالنموذج:
 
 ```csharp
 string[] names = doc.Form.XFA.FieldNames;
 ```
 
-## Step 4: Set Field Values
+## الخطوة 4: تعيين قيم الحقل
 
-Set the XFA field values using the names obtained earlier:
+قم بتعيين قيم حقل XFA باستخدام الأسماء التي تم الحصول عليها مسبقًا:
 
 ```csharp
 doc.Form.XFA[names[0]] = "Field 0";
 doc.Form.XFA[names[1]] = "Field 1";
 ```
 
-## Step 5: Save the updated document
+## الخطوة 5: احفظ المستند المحدث
 
-Save the updated PDF document:
+احفظ مستند PDF المحدث:
 
 ```csharp
 dataDir = dataDir + "Filled_XFA_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Fill XFAFields using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لتعبئة XFAFields باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load XFA form
+// قم بتحميل نموذج XFA
 Document doc = new Document(dataDir + "FillXFAFields.pdf");
-// Get names of XFA form fields
+// احصل على أسماء حقول نموذج XFA
 string[] names = doc.Form.XFA.FieldNames;
-// Set field values
+// تعيين قيم الحقول
 doc.Form.XFA[names[0]] = "Field 0";
 doc.Form.XFA[names[1]] = "Field 1";
 dataDir = dataDir + "Filled_XFA_out.pdf";
-// Save the updated document
+// احفظ المستند المحدث
 doc.Save(dataDir);
 Console.WriteLine("\nXFA fields filled successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we learned how to fill XFA fields using Aspose.PDF for .NET. By following these steps, you can easily change the values of XFA fields in your PDF documents using Aspose.PDF.
+في هذا البرنامج التعليمي، تعلمنا كيفية ملء حقول XFA باستخدام Aspose.PDF لـ .NET. باتباع هذه الخطوات، يمكنك بسهولة تغيير قيم حقول XFA في مستندات PDF الخاصة بك باستخدام Aspose.PDF.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is XFA (XML Forms Architecture)?
+#### س: ما هو XFA (هندسة نماذج XML)؟
 
-A: XFA stands for XML Forms Architecture, which is an XML-based format for defining interactive forms in PDF documents. XFA forms are typically more complex than traditional AcroForms and can include dynamic content and scripting. Aspose.PDF for .NET provides support for filling XFA form fields.
+ج: يشير XFA إلى XML Forms Architecture، وهو تنسيق يعتمد على XML لتعريف النماذج التفاعلية في مستندات PDF. عادةً ما تكون نماذج XFA أكثر تعقيدًا من نماذج AcroForms التقليدية ويمكن أن تتضمن محتوى ديناميكيًا وبرمجة نصية. يوفر Aspose.PDF for .NET الدعم لملء حقول نموذج XFA.
 
-#### Q: Can I fill XFA fields in any PDF document?
+#### س: هل يمكنني ملء حقول XFA في أي مستند PDF؟
 
-A: Not all PDF documents contain XFA forms. XFA forms are less common than traditional AcroForms. You can determine if a PDF document contains an XFA form by checking the `doc.Form.Type` property. If the value is `FormType.Xfa`, the document contains an XFA form, and you can proceed with filling its fields using `doc.Form.XFA`.
+ ج: لا تحتوي جميع مستندات PDF على نماذج XFA. تعد نماذج XFA أقل شيوعًا من نماذج AcroForms التقليدية. يمكنك تحديد ما إذا كان مستند PDF يحتوي على نموذج XFA عن طريق التحقق من`doc.Form.Type` ملكية. إذا كانت القيمة`FormType.Xfa` ، تحتوي الوثيقة على نموذج XFA، ويمكنك متابعة ملء حقوله باستخدام`doc.Form.XFA`.
 
-#### Q: How do I find the names of XFA form fields in a PDF document?
+#### س: كيف يمكنني العثور على أسماء حقول نموذج XFA في مستند PDF؟
 
-A: To find the names of XFA form fields in a PDF document, you can use the `doc.Form.XFA.FieldNames` property, which returns an array of strings containing the names of all XFA fields in the document.
+ ج: للعثور على أسماء حقول نموذج XFA في مستند PDF، يمكنك استخدام ملف`doc.Form.XFA.FieldNames` الخاصية، والتي تُرجع مصفوفة من السلاسل التي تحتوي على أسماء جميع حقول XFA في المستند.
 
-#### Q: Can I fill XFA fields with dynamic data from an external data source?
+#### س: هل يمكنني ملء حقول XFA ببيانات ديناميكية من مصدر بيانات خارجي؟
 
-A: Yes, you can populate XFA fields with dynamic data from an external data source. Before setting the field values, retrieve the data from the source, and use the names of the XFA fields to set their values programmatically.
+ج: نعم، يمكنك تعبئة حقول XFA ببيانات ديناميكية من مصدر بيانات خارجي. قبل تعيين قيم الحقول، قم باسترداد البيانات من المصدر، واستخدم أسماء حقول XFA لتعيين قيمها برمجيًا.
 
-#### Q: Are there any limitations when working with XFA forms in Aspose.PDF for .NET?
+#### س: هل هناك أي قيود عند العمل مع نماذج XFA في Aspose.PDF لـ .NET؟
 
-A: Aspose.PDF for .NET provides support for filling XFA form fields, but it may not fully support all complex features and functionalities of XFA forms. Some advanced XFA-specific features, such as scripting or dynamic layout changes, may not be fully supported in Aspose.PDF for .NET.
+ج: يوفر Aspose.PDF for .NET دعمًا لملء حقول نموذج XFA، ولكنه قد لا يدعم بشكل كامل جميع الميزات والوظائف المعقدة لنماذج XFA. قد لا تكون بعض الميزات المتقدمة الخاصة بـ XFA، مثل البرمجة النصية أو تغييرات التخطيط الديناميكي، مدعومة بشكل كامل في Aspose.PDF لـ .NET.

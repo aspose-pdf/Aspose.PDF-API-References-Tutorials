@@ -1,87 +1,87 @@
 ---
-title: PDF To SVG
-linktitle: PDF To SVG
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to convert PDF to SVG using Aspose.PDF for .NET.
+title: PDF 转 SVG
+linktitle: PDF 转 SVG
+second_title: Aspose.PDF for .NET API 参考
+description: 使用 Aspose.PDF for .NET 将 PDF 转换为 SVG 的分步指南。
 type: docs
 weight: 180
 url: /zh/net/document-conversion/pdf-to-svg/
 ---
-In this tutorial, we'll walk you through the process of converting a PDF to SVG format using Aspose.PDF for .NET. SVG (Scalable Vector Graphics) is a vector image format that helps maintain the quality and scaling of graphics. By following the steps below, you will be able to convert a PDF file to SVG format.
+在本教程中，我们将引导您完成使用 Aspose.PDF for .NET 将 PDF 转换为 SVG 格式的过程。 SVG（可缩放矢量图形）是一种矢量图像格式，有助于保持图形的质量和缩放比例。通过执行以下步骤，您将能够将 PDF 文件转换为 SVG 格式。
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## 先决条件
+在开始之前，请确保满足以下先决条件：
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- C# 编程语言的基础知识。
+- 您的系统上安装了适用于 .NET 的 Aspose.PDF 库。
+- 开发环境，例如 Visual Studio。
 
-## Step 1: Loading the PDF document
-In this step we will load the source PDF file using Aspose.PDF for .NET. Follow the code below:
+## 第 1 步：加载 PDF 文档
+在此步骤中，我们将使用 Aspose.PDF for .NET 加载源 PDF 文件。请按照以下代码操作：
 
 ```csharp
-// Path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Load the PDF document
+//加载 PDF 文档
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where your PDF file is located.
+一定要更换`"YOUR DOCUMENTS DIRECTORY"`与您的 PDF 文件所在的实际目录。
 
-## Step 2: Instantiation of SVG save options
-After loading the PDF file, we will instantiate the SVG save options. Use the following code:
+## 步骤 2：SVG 保存选项的实例化
+加载 PDF 文件后，我们将实例化 SVG 保存选项。使用以下代码：
 
 ```csharp
-// Instantiate an SvgSaveOptions object
+//实例化 SvgSaveOptions 对象
 SvgSaveOptions saveOptions = new SvgSaveOptions();
-// Do not compress the SVG image in a Zip archive
+//不要在 Zip 存档中压缩 SVG 图像
 saveOptions.CompressOutputToZipArchive = false;
 ```
 
-## Step 3: Saving the resulting SVG file
-Now we are going to save the converted PDF file in SVG format. Use the following code:
+## 步骤 3：保存生成的 SVG 文件
+现在我们要将转换后的 PDF 文件保存为 SVG 格式。使用以下代码：
 
 ```csharp
-// Save output to SVG files
+//将输出保存到 SVG 文件
 doc.Save(dataDir + "PDFToSVG_out.svg", saveOptions);
 ```
 
-The code above saves the converted PDF to SVG format with the filename `"PDFToSVG_out.svg"`.
+上面的代码将转换后的 PDF 保存为 SVG 格式，文件名为`"PDFToSVG_out.svg"`.
 
-### Example source code for PDF to SVG using Aspose.PDF for .NET
+### 使用 Aspose.PDF for .NET 将 PDF 转换为 SVG 的示例源代码
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Load PDF document
+//加载 PDF 文档
 Document doc = new Document(dataDir + "input.pdf");
-// Instantiate an object of SvgSaveOptions
+//实例化 SvgSaveOptions 对象
 SvgSaveOptions saveOptions = new SvgSaveOptions();
-// Do not compress SVG image to Zip archive
+//不要将 SVG 图像压缩为 Zip 存档
 saveOptions.CompressOutputToZipArchive = false;
-// Save the output in SVG files
+//将输出保存为 SVG 文件
 doc.Save(dataDir + "PDFToSVG_out.svg", saveOptions);
 ```
 
-## Conclusion
-In this tutorial, we covered the step-by-step process of converting a PDF file to SVG format using Aspose.PDF for .NET. By following the instructions outlined above, you should now be able to convert a PDF file to SVG format. This feature is useful when you want to maintain graphics quality and scaling when converting to vector images.
+## 结论
+在本教程中，我们介绍了使用 Aspose.PDF for .NET 将 PDF 文件转换为 SVG 格式的分步过程。按照上述说明操作，您现在应该能够将 PDF 文件转换为 SVG 格式。当您希望在转换为矢量图像时保持图形质量和缩放比例时，此功能非常有用。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: Can I control the resolution or size of the resulting SVG files during the PDF to SVG conversion?
+#### 问：在 PDF 到 SVG 转换过程中，我可以控制生成的 SVG 文件的分辨率或大小吗？
 
-A: Yes, you can control the resolution or size of the resulting SVG files during the PDF to SVG conversion using Aspose.PDF for .NET. The `SvgSaveOptions` class provides properties like `PageSavingCallback` and `SaveFormat` that allow you to set the resolution, page size, or other parameters related to SVG output. You can customize these options according to your requirements to control the quality and size of the SVG files.
+答：是的，您可以在使用 Aspose.PDF for .NET 将 PDF 转换为 SVG 期间控制生成的 SVG 文件的分辨率或大小。这`SvgSaveOptions`类提供如下属性`PageSavingCallback`和`SaveFormat`允许您设置分辨率、页面大小或与 SVG 输出相关的其他参数。您可以根据您的要求自定义这些选项，以控制 SVG 文件的质量和大小。
 
-#### Q: Does Aspose.PDF for .NET support converting encrypted or password-protected PDFs to SVG?
+#### 问：Aspose.PDF for .NET 是否支持将加密或受密码保护的 PDF 转换为 SVG？
 
-A: Yes, Aspose.PDF for .NET supports converting encrypted or password-protected PDFs to SVG format. When you load a password-protected PDF, you can provide the password using the `Document` class constructor or by setting the `Password` property before loading the PDF. Aspose.PDF for .NET will handle decryption during the PDF to SVG conversion process.
+答：是的，Aspose.PDF for .NET 支持将加密或受密码保护的 PDF 转换为 SVG 格式。当您加载受密码保护的 PDF 时，您可以使用`Document`类构造函数或通过设置`Password`加载 PDF 之前的属性。 Aspose.PDF for .NET 将在 PDF 到 SVG 转换过程中处理解密。
 
-#### Q: Can I convert only specific pages of the PDF to SVG instead of the entire document?
+#### 问：我可以仅将 PDF 的特定页面而不是整个文档转换为 SVG 吗？
 
-A: Yes, you can convert only specific pages of the PDF to SVG instead of the entire document using Aspose.PDF for .NET. Before saving the output as SVG files, you can select the pages you want to convert by specifying their page numbers or ranges. This way, you can extract and convert only the desired pages from the PDF to SVG format.
+答：是的，您可以使用 Aspose.PDF for .NET 仅将 PDF 的特定页面转换为 SVG，而不是整个文档。在将输出保存为 SVG 文件之前，您可以通过指定页码或范围来选择要转换的页面。这样，您可以仅提取所需的页面并将其从 PDF 转换为 SVG 格式。
 
-#### Q: Is Aspose.PDF for .NET compatible with all versions of SVG?
+#### 问：Aspose.PDF for .NET 是否与所有版本的 SVG 兼容？
 
-A: Aspose.PDF for .NET is designed to be compatible with the SVG 1.1 (Scalable Vector Graphics) specification. It supports generating SVG files according to the SVG 1.1 standard. However, please note that SVG 2.0 has been introduced as the latest version of the SVG specification. While Aspose.PDF for .NET may still work well with SVG 2.0 in many cases, it is recommended to check for compatibility and potential limitations with the specific SVG features you intend to use.
+答：Aspose.PDF for .NET 旨在与 SVG 1.1（可缩放矢量图形）规范兼容。它支持根据SVG 1.1标准生成SVG文件。但请注意，SVG 2.0 已作为 SVG 规范的最新版本引入。虽然 Aspose.PDF for .NET 在许多情况下仍可与 SVG 2.0 配合良好，但建议检查您打算使用的特定 SVG 功能的兼容性和潜在限制。

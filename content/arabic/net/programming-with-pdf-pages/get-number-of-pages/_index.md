@@ -1,75 +1,75 @@
 ---
-title: Get Number of Pages In PDF File
-linktitle: Get Number of Pages In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to get number of pages in PDF file using Aspose.PDF for .NET. Simple to implement, ideal for your projects.
+title: الحصول على عدد الصفحات في ملف PDF
+linktitle: الحصول على عدد الصفحات في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: دليل خطوة بخطوة للحصول على عدد الصفحات في ملف PDF باستخدام Aspose.PDF لـ .NET. سهلة التنفيذ، مثالية لمشاريعك.
 type: docs
 weight: 70
 url: /ar/net/programming-with-pdf-pages/get-number-of-pages/
 ---
-In this tutorial, we'll walk you through the step-by-step process to get number of pages in PDF file using Aspose.PDF for .NET. We'll explain the bundled C# source code and provide you with a comprehensive guide to help you understand and implement this feature in your own projects. At the end of this tutorial, you will know how to get the page count of a PDF file using Aspose.PDF for .NET.
+في هذا البرنامج التعليمي، سنرشدك خلال العملية خطوة بخطوة للحصول على عدد الصفحات في ملف PDF باستخدام Aspose.PDF لـ .NET. سنشرح لك التعليمات البرمجية المصدرية المجمعة لـ C# ونزودك بدليل شامل لمساعدتك على فهم هذه الميزة وتنفيذها في مشاريعك الخاصة. في نهاية هذا البرنامج التعليمي، ستعرف كيفية الحصول على عدد الصفحات لملف PDF باستخدام Aspose.PDF لـ .NET.
 
-## Prerequisites
-Before you begin, make sure you have the following:
+## المتطلبات الأساسية
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- A basic knowledge of the C# programming language
-- Aspose.PDF for .NET installed in your development environment
+- معرفة أساسية بلغة البرمجة C#
+- تم تثبيت Aspose.PDF لـ .NET في بيئة التطوير الخاصة بك
 
-## Step 1: Define the document directory
-First, you need to set the path to your documents directory. This is the location of your PDF file for which you want to get the page count. Replace "YOUR DOCUMENTS DIRECTORY" with the appropriate path.
+## الخطوة 1: تحديد دليل المستند
+أولاً، تحتاج إلى تعيين المسار إلى دليل المستندات الخاص بك. هذا هو موقع ملف PDF الخاص بك الذي تريد الحصول على عدد الصفحات له. استبدل "دليل المستندات الخاصة بك" بالمسار المناسب.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Open the PDF document
-Then you can open the PDF file using the `Document` class of Aspose.PDF. Be sure to specify the correct path to the PDF file.
+## الخطوة 2: افتح مستند PDF
+ ثم يمكنك فتح ملف PDF باستخدام`Document` فئة Aspose.PDF. تأكد من تحديد المسار الصحيح لملف PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetNumberofPages.pdf");
 ```
 
-## Step 3: Get the number of pages
-Now you can get the number of pages in the document using the `Count` property of the document`s `Pages` collection. This will give you the total number of pages in the PDF file.
+## الخطوة 3: احصل على عدد الصفحات
+ يمكنك الآن الحصول على عدد الصفحات في المستند باستخدام الملف`Count` خاصية الوثيقة`s `مجموعة الصفحات. سيعطيك هذا العدد الإجمالي للصفحات في ملف PDF.
 
 ```csharp
 System.Console.WriteLine("Number of pages: {0}", pdfDocument.Pages.Count);
 ```
 
-### Sample source code for Get Numberof Pages using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر للحصول على عدد الصفحات باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "GetNumberofPages.pdf");
-// Get page count
+// الحصول على عدد الصفحات
 System.Console.WriteLine("Page Count : {0}", pdfDocument.Pages.Count);
 
 ```
 
-## Conclusion
-In this tutorial, we learned how to get the page count of a PDF file using Aspose.PDF for .NET. By following the steps outlined above, you can easily implement this functionality in your own projects. Feel free to explore the Aspose.PDF documentation further to discover other useful features for working with PDF files.
+## خاتمة
+في هذا البرنامج التعليمي، تعلمنا كيفية الحصول على عدد الصفحات لملف PDF باستخدام Aspose.PDF لـ .NET. باتباع الخطوات الموضحة أعلاه، يمكنك بسهولة تنفيذ هذه الوظيفة في مشاريعك الخاصة. لا تتردد في استكشاف وثائق Aspose.PDF بشكل أكبر لاكتشاف ميزات مفيدة أخرى للعمل مع ملفات PDF.
 
-### FAQ's for get number of pages in PDF file
+### الأسئلة الشائعة للحصول على عدد الصفحات في ملف PDF
 
-#### Q: How can I get the number of pages in a PDF file using Aspose.PDF for .NET?
+#### س: كيف يمكنني الحصول على عدد الصفحات في ملف PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: To get the number of pages in a PDF file, you can use the `Count` property of the `Pages` collection of the `Document` object in Aspose.PDF for .NET. This property returns the total number of pages in the PDF document.
+ ج: لمعرفة عدد الصفحات في ملف PDF، يمكنك استخدام`Count` ملكية`Pages` جمع من`Document` الكائن في Aspose.PDF لـ .NET. تقوم هذه الخاصية بإرجاع إجمالي عدد الصفحات في مستند PDF.
 
-#### Q: Can I use Aspose.PDF for .NET to get the number of pages in an encrypted or password-protected PDF file?
+#### س: هل يمكنني استخدام Aspose.PDF لـ .NET للحصول على عدد الصفحات في ملف PDF مشفر أو محمي بكلمة مرور؟
 
-A: Yes, you can use Aspose.PDF for .NET to get the number of pages in an encrypted or password-protected PDF file. As long as you have the necessary permissions to access the document, you can open it using the `Document` class and retrieve the page count.
+ ج: نعم، يمكنك استخدام Aspose.PDF لـ .NET للحصول على عدد الصفحات في ملف PDF مشفر أو محمي بكلمة مرور. طالما أن لديك الأذونات اللازمة للوصول إلى المستند، يمكنك فتحه باستخدام الملف`Document` فئة واسترداد عدد الصفحات.
 
-#### Q: Is it possible to get the number of pages in a PDF file without opening the entire document?
+#### س: هل من الممكن معرفة عدد الصفحات في ملف PDF دون فتح المستند بأكمله؟
 
-A: No, in order to get the number of pages in a PDF file, you need to open the document using the `Document` class. Aspose.PDF for .NET provides efficient and optimized methods for working with PDF files, but accessing page count generally requires loading the entire document.
+ ج: لا، لكي تحصل على عدد الصفحات في ملف PDF، تحتاج إلى فتح المستند باستخدام الملف`Document` فصل. يوفر Aspose.PDF for .NET أساليب فعالة ومحسنة للعمل مع ملفات PDF، ولكن الوصول إلى عدد الصفحات يتطلب بشكل عام تحميل المستند بأكمله.
 
-#### Q: What happens if I try to get the number of pages in a non-existent PDF file using Aspose.PDF for .NET?
+#### س: ماذا يحدث إذا حاولت الحصول على عدد الصفحات في ملف PDF غير موجود باستخدام Aspose.PDF لـ .NET؟
 
-A: If you try to open a non-existent or invalid PDF file using the `Document` class, it will throw an exception indicating that the file does not exist or is not a valid PDF document.
+ ج: إذا حاولت فتح ملف PDF غير موجود أو غير صالح باستخدام الملف`Document` فئة، فإنه سيطرح استثناءً يشير إلى أن الملف غير موجود أو أنه ليس مستند PDF صالحًا.
 
-#### Q: Can I get the number of pages in a PDF file without printing the count to the console?
+#### س: هل يمكنني الحصول على عدد الصفحات في ملف PDF دون طباعة العدد على وحدة التحكم؟
 
-A: Yes, you can use the `pdfDocument.Pages.Count` property to get the page count and store it in a variable for further use or processing within your .NET application.
+ ج: نعم، يمكنك استخدام`pdfDocument.Pages.Count` للحصول على عدد الصفحات وتخزينها في متغير لمزيد من الاستخدام أو المعالجة داخل تطبيق .NET الخاص بك.

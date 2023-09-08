@@ -1,124 +1,124 @@
 ---
-title: Create Filled Rectangle
-linktitle: Create Filled Rectangle
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to create a filled rectangle with Aspose.PDF for .NET. Step by step guide to customize fill color.
+title: إنشاء مستطيل معبأ
+linktitle: إنشاء مستطيل معبأ
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إنشاء مستطيل معبأ باستخدام Aspose.PDF لـ .NET. دليل خطوة بخطوة لتخصيص لون التعبئة.
 type: docs
 weight: 50
 url: /ar/net/programming-with-graphs/create-filled-rectangle/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to create a filled rectangle using Aspose.PDF for .NET.
+في هذا البرنامج التعليمي، سنرشدك عبر التعليمات البرمجية المصدر لـ C# التالية خطوة بخطوة لإنشاء مستطيل معبأ باستخدام Aspose.PDF لـ .NET.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+تأكد من تثبيت مكتبة Aspose.PDF وإعداد بيئة التطوير الخاصة بك قبل البدء. لديك أيضًا معرفة أساسية ببرمجة C#.
 
-## Step 1: Document Directory Setup
+## الخطوة 1: إعداد دليل المستندات
 
-In the provided source code, you need to specify the directory where you want to save the resulting PDF file. Change the "dataDir" variable to the desired directory.
+في كود المصدر المقدم، تحتاج إلى تحديد الدليل الذي تريد حفظ ملف PDF الناتج فيه. قم بتغيير المتغير "dataDir" إلى الدليل المطلوب.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Creating a Document Instance and Adding a Page
+## الخطوة 2: إنشاء مثيل مستند وإضافة صفحة
 
-We create an instance of the Document class and add a page to this document.
+نقوم بإنشاء مثيل لفئة المستند وإضافة صفحة إلى هذا المستند.
 
 ```csharp
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Step 3: Creating a Graph Object and Adding it to the Page
+## الخطوة 3: إنشاء كائن رسم بياني وإضافته إلى الصفحة
 
-We create a Graph object with specified dimensions and add it to the page's paragraph collection.
+نقوم بإنشاء كائن رسم بياني بأبعاد محددة ونضيفه إلى مجموعة فقرات الصفحة.
 
 ```csharp
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(100, 400);
 page.Paragraphs.Add(graph);
 ```
 
-## Step 4: Create Rectangle Object and Add to Chart
+## الخطوة 4: إنشاء كائن مستطيل وإضافته إلى المخطط
 
-We create a Rectangle object with the specified dimensions and add it to the chart's shape collection.
+نقوم بإنشاء كائن مستطيل بالأبعاد المحددة ونضيفه إلى مجموعة أشكال المخطط.
 
 ```csharp
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 200, 120);
 graph.Shapes.Add(rect);
 ```
 
-## Step 5: Setting the fill color
+## الخطوة 5: تحديد لون التعبئة
 
-We can specify the fill color for the rectangle using the FillColor property of the GraphInfo object.
+يمكننا تحديد لون التعبئة للمستطيل باستخدام خاصية fillColor لكائن GraphInfo.
 
 ```csharp
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.Red;
 ```
 
-## Step 6: Saving the Resulting PDF File
+## الخطوة 6: حفظ ملف PDF الناتج
 
-Finally, we save the resulting PDF file with the name "CreateFilledRectangle_out.pdf" in the specified directory.
+أخيرًا، نقوم بحفظ ملف PDF الناتج بالاسم "CreateFilledRectangle_out.pdf" في الدليل المحدد.
 
 ```csharp
 doc.Save(dataDir + "CreateFilledRectangle_out.pdf");
 ```
 
-### Sample source code for Create Filled Rectangle using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لإنشاء مستطيل معبأ باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create Document instance
+// إنشاء مثيل المستند
 Document doc = new Document();
-// Add page to pages collection of PDF file
+// إضافة صفحة إلى مجموعة الصفحات من ملف PDF
 Page page = doc.Pages.Add();
-// Create Graph instance
+// إنشاء مثيل الرسم البياني
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(100, 400);
-// Add graph object to paragraphs collection of page instance
+// إضافة كائن الرسم البياني إلى مجموعة الفقرات من مثيل الصفحة
 page.Paragraphs.Add(graph);
-// Create Rectangle instance
+// إنشاء مثيل مستطيل
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 200, 120);
-// Specify fill color for Graph object
+// تحديد لون التعبئة لكائن الرسم البياني
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.Red;
-// Add rectangle object to shapes collection of Graph object
+// إضافة كائن مستطيل إلى مجموعة أشكال كائن الرسم البياني
 graph.Shapes.Add(rect);
 dataDir = dataDir + "CreateFilledRectangle_out.pdf";
-// Save PDF file
+// حفظ ملف PDF
 doc.Save(dataDir);
 Console.WriteLine("\nFilled rectangle object created successfully.\nFile saved at " + dataDir);            
 
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we explained how to create a filled rectangle using Aspose.PDF for .NET. You can now use this knowledge to create geometric shapes with custom fill colors in your PDF files.
+في هذا البرنامج التعليمي، شرحنا كيفية إنشاء مستطيل معبأ باستخدام Aspose.PDF لـ .NET. يمكنك الآن استخدام هذه المعرفة لإنشاء أشكال هندسية بألوان تعبئة مخصصة في ملفات PDF الخاصة بك.
 
-## FAQ's
+## الأسئلة الشائعة
 
-#### Q: What is the purpose of this tutorial?
+#### س: ما هو الغرض من هذا البرنامج التعليمي؟
 
-A: The purpose of this tutorial is to guide you through the process of creating a filled rectangle using Aspose.PDF for .NET, enabling you to add custom geometric shapes with fill colors to your PDF files.
+ج: الغرض من هذا البرنامج التعليمي هو إرشادك خلال عملية إنشاء مستطيل معبأ باستخدام Aspose.PDF لـ .NET، مما يتيح لك إضافة أشكال هندسية مخصصة بألوان التعبئة إلى ملفات PDF الخاصة بك.
 
-#### Q: What prerequisites are required before starting?
+#### س: ما هي المتطلبات الأساسية المطلوبة قبل البدء؟
 
-A: Before you begin, ensure that you have installed the Aspose.PDF library and set up your development environment. Additionally, having a basic understanding of C# programming is recommended.
+ج: قبل أن تبدأ، تأكد من تثبيت مكتبة Aspose.PDF وإعداد بيئة التطوير الخاصة بك. بالإضافة إلى ذلك، يوصى بالحصول على فهم أساسي لبرمجة C#.
 
-#### Q: How do I specify the directory for saving the PDF file?
+#### س: كيف أحدد الدليل لحفظ ملف PDF؟
 
-A: In the provided source code, you can modify the "dataDir" variable to indicate the directory where you want to save the resulting PDF file.
+ج: في الكود المصدري المقدم، يمكنك تعديل متغير "dataDir" للإشارة إلى الدليل الذي تريد حفظ ملف PDF الناتج فيه.
 
-#### Q: What is the purpose of the Graph object?
+#### س: ما هو الغرض من كائن الرسم البياني؟
 
-A: The Graph object acts as a container for drawing elements. It is created with specified dimensions and added to the page's paragraph collection.
+ج: يعمل كائن الرسم البياني كحاوية لعناصر الرسم. يتم إنشاؤه بأبعاد محددة وإضافته إلى مجموعة فقرات الصفحة.
 
-#### Q: How can I add a filled rectangle to the PDF document?
+#### س: كيف يمكنني إضافة مستطيل مملوء إلى مستند PDF؟
 
-A: To add a filled rectangle, create an instance of the Rectangle class with specified dimensions and fill color, and add it to the graph's shape collection.
+ج: لإضافة مستطيل معبأ، قم بإنشاء مثيل لفئة المستطيل بأبعاد ولون تعبئة محددين، ثم قم بإضافته إلى مجموعة أشكال الرسم البياني.
 
-#### Q: Can I customize the dimensions and fill color of the rectangle?
+#### س: هل يمكنني تخصيص الأبعاد ولون تعبئة المستطيل؟
 
-A: Yes, you can customize the dimensions and fill color of the rectangle by modifying the parameters passed to the `Aspose.Pdf.Drawing.Rectangle` constructor and setting the FillColor property.
+ ج: نعم، يمكنك تخصيص الأبعاد ولون تعبئة المستطيل عن طريق تعديل المعلمات التي تم تمريرها إلى`Aspose.Pdf.Drawing.Rectangle` منشئ وتعيين خاصية fillColor.
 
-#### Q: How do I save the resulting PDF file after creating the filled rectangle?
+#### س: كيف يمكنني حفظ ملف PDF الناتج بعد إنشاء المستطيل المعبأ؟
 
-A: After creating the filled rectangle, you can save the resulting PDF file using the `doc.Save(dataDir + "CreateFilledRectangle_out.pdf");` line in the provided source code.
+ ج: بعد إنشاء المستطيل المملوء، يمكنك حفظ ملف PDF الناتج باستخدام الملف`doc.Save(dataDir + "CreateFilledRectangle_out.pdf");` سطر في كود المصدر المقدم.

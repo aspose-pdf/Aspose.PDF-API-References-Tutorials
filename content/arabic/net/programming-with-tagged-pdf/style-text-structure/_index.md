@@ -1,164 +1,164 @@
 ---
-title: Style Text Structure In PDF File
-linktitle: Style Text Structure In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to format text structure in PDF file with Aspose.PDF for .NET. Step-by-step guide to style text.
+title: نمط هيكل النص في ملف PDF
+linktitle: نمط هيكل النص في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية تنسيق بنية النص في ملف PDF باستخدام Aspose.PDF لـ .NET. دليل خطوة بخطوة لنمط النص.
 type: docs
 weight: 190
 url: /ar/net/programming-with-tagged-pdf/style-text-structure/
 ---
-In this detailed tutorial, we will walk you through the provided C# source code step by step to format text structure using Aspose.PDF for .NET. Follow the instructions below to understand how to style and format the text in PDF file.
+في هذا البرنامج التعليمي التفصيلي، سنرشدك عبر كود مصدر C# المقدم خطوة بخطوة لتنسيق بنية النص باستخدام Aspose.PDF لـ .NET. اتبع الإرشادات أدناه لفهم كيفية تصميم النص وتنسيقه في ملف PDF.
 
-## Step 1: Setting up the environment
+## الخطوة 1: تهيئة البيئة
 
-Before you begin, make sure you've configured your development environment to use Aspose.PDF for .NET. This includes installing the Aspose.PDF library and configuring your project to reference it.
+قبل أن تبدأ، تأكد من تكوين بيئة التطوير الخاصة بك لاستخدام Aspose.PDF لـ .NET. يتضمن ذلك تثبيت مكتبة Aspose.PDF وتكوين مشروعك للرجوع إليه.
 
-## Step 2: Creating the PDF document
+## الخطوة 2: إنشاء وثيقة PDF
 
-In this step, we will create a new PDF document object with Aspose.PDF.
+في هذه الخطوة، سنقوم بإنشاء كائن مستند PDF جديد باستخدام Aspose.PDF.
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Create the PDF document
+// قم بإنشاء مستند PDF
 Document document = new Document();
 ```
 
-We have created a new PDF document with Aspose.PDF.
+لقد قمنا بإنشاء مستند PDF جديد باستخدام Aspose.PDF.
 
-## Step 3: Get content to work with TaggedPdf
+## الخطوة 3: الحصول على المحتوى للعمل مع TaggedPdf
 
-In this step, we will get the contents of the PDF document to work with the tagged structure.
+في هذه الخطوة، سنجعل محتويات مستند PDF تعمل مع البنية المميزة.
 
 ```csharp
-// Get content to work with TaggedPdf
+// احصل على محتوى للعمل مع TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-We got the contents of the PDF document to work with the tagged structure.
+لقد حصلنا على محتويات مستند PDF للعمل مع البنية الموسومة.
 
-## Step 4: Set document title and language
+## الخطوة 4: تعيين عنوان المستند واللغة
 
-Now we will set the title and language of the PDF document.
+الآن سنقوم بتعيين عنوان ولغة مستند PDF.
 
 ```csharp
-// Define the document title and language
+// تحديد عنوان الوثيقة واللغة
 taggedContent.SetTitle("Tagged PDF document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-We have defined the title and the language of the PDF document.
+لقد حددنا عنوان ولغة مستند PDF.
 
-## Step 5: Creating a paragraph element
+## الخطوة 5: إنشاء عنصر الفقرة
 
-In this step, we'll create a new paragraph element and add it to the tagged structure.
+في هذه الخطوة، سنقوم بإنشاء عنصر فقرة جديد وإضافته إلى البنية المميزة.
 
 ```csharp
-// Create a paragraph element
+// إنشاء عنصر فقرة
 ParagraphElement p = taggedContent.CreateParagraphElement();
 taggedContent.RootElement.AppendChild(p);
 ```
 
-We created a new paragraph element and added it to the root of the tagged structure.
+لقد أنشأنا عنصر فقرة جديدًا وأضفناه إلى جذر البنية المميزة.
 
-## Step 6: Formatting the text
+## الخطوة 6: تنسيق النص
 
-Now let's style and format the text of the paragraph element.
+الآن لنقم بتصميم وتنسيق نص عنصر الفقرة.
 
 ```csharp
-// Format the text
+// تنسيق النص
 p.StructureTextState.FontSize = 18F;
 p.StructureTextState.ForegroundColor = Color.Red;
 p.StructureTextState.FontStyle = FontStyles.Italic;
 p.SetText("Text in italic red.");
 ```
 
-We applied formatting to the text by setting the font size, color, and font style.
+قمنا بتطبيق التنسيق على النص من خلال تحديد حجم الخط واللون ونمط الخط.
 
-## Step 7: Saving the tagged PDF document
+## الخطوة 7: حفظ وثيقة PDF ذات العلامات
 
-Now that we've styled the text in our PDF document, let's save it as a tagged PDF document.
+الآن بعد أن قمنا بتصميم النص في مستند PDF الخاص بنا، فلنحفظه كمستند PDF ذو علامات.
 
 ```csharp
-// Save the tagged PDF document
+// احفظ مستند PDF الذي تم وضع علامة عليه
 document.Save(dataDir + "StyleTextStructure.pdf");
 ```
 
-We saved the tagged PDF document in the specified directory.
+لقد حفظنا مستند PDF الذي تم وضع علامة عليه في الدليل المحدد.
 
-### Sample source code for Style Text Structure using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لبنية نص النمط باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create Pdf Document
+// إنشاء مستند PDF
 Document document = new Document();
 
-// Get Content for work with TaggedPdf
+// احصل على محتوى للعمل مع TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Set Title and Language for Documnet
+// قم بتعيين العنوان واللغة لـ Documnet
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 ParagraphElement p = taggedContent.CreateParagraphElement();
 taggedContent.RootElement.AppendChild(p);
 
-// Under Development
+// تحت التطوير
 p.StructureTextState.FontSize = 18F;
 p.StructureTextState.ForegroundColor = Color.Red;
 p.StructureTextState.FontStyle = FontStyles.Italic;
 p.SetText("Red italic text.");
 
-// Save Tagged Pdf Document
+// حفظ وثيقة PDF ذات العلامات
 document.Save(dataDir + "StyleTextStructure.pdf");
 
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we learned how to style and format the text structure in a PDF document using Aspose.PDF for .NET. You can now use Aspose.PDF to create PDF documents with custom formatting for text.
+في هذا البرنامج التعليمي، تعلمنا كيفية تصميم وتنسيق بنية النص في مستند PDF باستخدام Aspose.PDF لـ .NET. يمكنك الآن استخدام Aspose.PDF لإنشاء مستندات PDF بتنسيق مخصص للنص.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the main objective of this tutorial on styling text structure in a PDF file using Aspose.PDF for .NET?
+#### س: ما هو الهدف الرئيسي من هذا البرنامج التعليمي حول تصميم بنية النص في ملف PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: The primary goal of this tutorial is to guide you through the process of formatting and styling text within a PDF document using Aspose.PDF for .NET. It provides step-by-step instructions and C# source code examples to help you understand how to apply styles and formatting to text elements.
+ج: الهدف الأساسي من هذا البرنامج التعليمي هو إرشادك خلال عملية تنسيق النص وتصميمه داخل مستند PDF باستخدام Aspose.PDF لـ .NET. فهو يوفر إرشادات خطوة بخطوة وأمثلة التعليمات البرمجية المصدر لـ C# لمساعدتك على فهم كيفية تطبيق الأنماط والتنسيق على عناصر النص.
 
-#### Q: What are the prerequisites for following this tutorial on text structure styling in PDF using Aspose.PDF for .NET?
+#### س: ما هي المتطلبات الأساسية لمتابعة هذا البرنامج التعليمي حول تصميم بنية النص في PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: Before you start, ensure that you have set up your development environment to use Aspose.PDF for .NET. This involves installing the Aspose.PDF library and configuring your project to reference it.
+ج: قبل البدء، تأكد من أنك قمت بإعداد بيئة التطوير الخاصة بك لاستخدام Aspose.PDF لـ .NET. يتضمن ذلك تثبيت مكتبة Aspose.PDF وتكوين مشروعك للرجوع إليه.
 
-#### Q: How can I create a new PDF document and set its title and language using Aspose.PDF for .NET?
+#### س: كيف يمكنني إنشاء مستند PDF جديد وتعيين عنوانه ولغته باستخدام Aspose.PDF لـ .NET؟
 
-A: The tutorial provides C# source code examples to demonstrate how to create a new PDF document using Aspose.PDF for .NET and how to set its title and language properties.
+ج: يوفر البرنامج التعليمي أمثلة على التعليمات البرمجية المصدر لـ C# لتوضيح كيفية إنشاء مستند PDF جديد باستخدام Aspose.PDF لـ .NET وكيفية تعيين عنوانه وخصائص اللغة الخاصة به.
 
-#### Q: What is the purpose of the "tagged structure" in the context of PDF documents?
+#### س: ما هو الغرض من "البنية ذات العلامات" في سياق مستندات PDF؟
 
-A: The "tagged structure" refers to the logical organization of content within a PDF document, enabling accessibility and structural information for assistive technologies. It allows for proper text extraction, navigation, and semantic understanding of the document's content.
+ج: تشير "البنية الموسومة" إلى التنظيم المنطقي للمحتوى داخل مستند PDF، مما يتيح إمكانية الوصول والمعلومات الهيكلية للتقنيات المساعدة. فهو يسمح باستخراج النص المناسب والتنقل والفهم الدلالي لمحتوى المستند.
 
-#### Q: How can I create a paragraph element and add it to the tagged structure of a PDF document?
+#### س: كيف يمكنني إنشاء عنصر فقرة وإضافته إلى البنية المميزة لمستند PDF؟
 
-A: The tutorial explains how to create a paragraph element using Aspose.PDF for .NET and add it to the tagged structure of the PDF document. This element will serve as a container for the styled text.
+ج: يشرح البرنامج التعليمي كيفية إنشاء عنصر فقرة باستخدام Aspose.PDF لـ .NET وإضافته إلى البنية ذات العلامات الخاصة بمستند PDF. سيكون هذا العنصر بمثابة حاوية للنص المصمم.
 
-#### Q: How do I apply formatting and styling to the text within a paragraph element using Aspose.PDF for .NET?
+#### س: كيف يمكنني تطبيق التنسيق والتصميم على النص داخل عنصر الفقرة باستخدام Aspose.PDF لـ .NET؟
 
-A: The tutorial provides C# source code examples that demonstrate how to format and style the text within a paragraph element. You'll learn how to set properties such as font size, text color, and font style.
+ج: يوفر البرنامج التعليمي أمثلة على التعليمات البرمجية المصدر لـ C# التي توضح كيفية تنسيق النص وتصميمه داخل عنصر الفقرة. ستتعلم كيفية تعيين خصائص مثل حجم الخط ولون النص ونمط الخط.
 
-#### Q: What is the significance of setting the font size, color, and style for text in a PDF document?
+#### س: ما أهمية تحديد حجم الخط واللون والنمط للنص في مستند PDF؟
 
-A: Setting font size, color, and style for text enhances the visual appearance of the document, making it more engaging and aesthetically pleasing to readers. Additionally, proper styling helps emphasize important information and improve readability.
+ج: يؤدي تعيين حجم الخط واللون والنمط للنص إلى تحسين المظهر المرئي للمستند، مما يجعله أكثر جاذبية وإمتاعًا من الناحية الجمالية للقراء. بالإضافة إلى ذلك، يساعد التصميم المناسب في التأكيد على المعلومات المهمة وتحسين إمكانية القراءة.
 
-#### Q: How can I save the PDF document after styling and formatting the text structure?
+#### س: كيف يمكنني حفظ مستند PDF بعد تصميم وتنسيق بنية النص؟
 
-A: Once you have styled and formatted the text structure, you can use the provided C# source code examples to save the tagged PDF document using the `Save()` method.
+ ج: بمجرد الانتهاء من تصميم بنية النص وتنسيقها، يمكنك استخدام أمثلة التعليمات البرمجية المصدر لـ C# المتوفرة لحفظ مستند PDF ذي العلامات باستخدام`Save()` طريقة.
 
-#### Q: What is the purpose of the sample source code provided in the tutorial?
+#### س: ما هو الغرض من نموذج التعليمات البرمجية المصدر الموجود في البرنامج التعليمي؟
 
-A: The sample source code serves as a practical reference for implementing text styling and formatting using Aspose.PDF for .NET. You can use this code as a starting point and modify it to suit your specific requirements.
+ج: يعتبر نموذج التعليمات البرمجية المصدر بمثابة مرجع عملي لتنفيذ تصميم النص وتنسيقه باستخدام Aspose.PDF لـ .NET. يمكنك استخدام هذا الرمز كنقطة بداية وتعديله ليناسب متطلباتك المحددة.
 
-#### Q: Can I incorporate these concepts into my own .NET applications to create customized PDF documents?
+#### س: هل يمكنني دمج هذه المفاهيم في تطبيقات .NET الخاصة بي لإنشاء مستندات PDF مخصصة؟
 
-A: Yes, you can use the concepts and code provided in the tutorial as a foundation for creating your own customized PDF documents with styled and formatted text. Modify and expand upon the code to achieve your desired results.
+ج: نعم، يمكنك استخدام المفاهيم والتعليمات البرمجية المتوفرة في البرنامج التعليمي كأساس لإنشاء مستندات PDF المخصصة الخاصة بك مع نص منسق ومنسق. قم بتعديل الكود وتوسيعه لتحقيق النتائج المرجوة.

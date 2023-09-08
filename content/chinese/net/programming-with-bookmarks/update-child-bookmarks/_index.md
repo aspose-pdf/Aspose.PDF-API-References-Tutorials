@@ -1,57 +1,57 @@
 ---
-title: Update Child Bookmarks In PDF File
-linktitle: Update Child Bookmarks In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily update child bookmarks in PDF file with Aspose.PDF for .NET.
+title: 更新 PDF 文件中的子书签
+linktitle: 更新 PDF 文件中的子书签
+second_title: Aspose.PDF for .NET API 参考
+description: 使用 Aspose.PDF for .NET 轻松更新 PDF 文件中的子书签。
 type: docs
 weight: 110
 url: /zh/net/programming-with-bookmarks/update-child-bookmarks/
 ---
-Updating child bookmarks in PDF file allows you to modify the properties of specific bookmarks within a parent bookmark. With Aspose.PDF for .NET, you can easily update child bookmarks by following the following source code:
+更新 PDF 文件中的子书签允许您修改父书签中特定书签的属性。使用Aspose.PDF for .NET，您可以通过以下源代码轻松更新子书签：
 
-## Step 1: Import required libraries
+## 第1步：导入所需的库
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+在开始之前，您需要为 C# 项目导入必要的库。这是必要的导入指令：
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## 步骤 2：设置文档文件夹路径
 
-In this step, you need to specify the path to the folder containing the PDF file you want to update. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+在此步骤中，您需要指定包含要更新的 PDF 文件的文件夹的路径。代替`"YOUR DOCUMENT DIRECTORY"`在以下代码中使用文档文件夹的实际路径：
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## 步骤 3：打开 PDF 文档
 
-Now we will open the PDF document we want to update using the following code:
+现在我们将使用以下代码打开要更新的 PDF 文档：
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "UpdateChildBookmarks.pdf");
 ```
 
-## Step 4: Get parent bookmark object
+## 第四步：获取父书签对象
 
-In this step, we are going to get the specific parent bookmark object from which we want to update the child bookmarks. In the example below, we retrieve the parent bookmark at index 1 (the second bookmark in the bookmarks collection). You can adjust the index according to your needs. Here is the corresponding code:
+在此步骤中，我们将获取要更新子书签的特定父书签对象。在下面的示例中，我们检索索引 1 处的父书签（书签集合中的第二个书签）。您可以根据需要调整索引。这是相应的代码：
 
 ```csharp
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
 ```
 
-## Step 5: Get Child Bookmark Object
+## 第5步：获取子书签对象
 
-Now let's get the specific child bookmark object we want to update. In the example below, we retrieve the child bookmark at index 1 (the second child bookmark in the collection of child bookmarks of the parent bookmark). You can adjust the index according to your needs. Here is the corresponding code:
+现在让我们获取要更新的特定子书签对象。在下面的示例中，我们检索索引 1 处的子书签（父书签的子书签集合中的第二个子书签）。您可以根据需要调整索引。这是相应的代码：
 
 ```csharp
 OutlineItemCollection childOutline = pdfOutline[1];
 ```
 
-## Step 6: Update child bookmark properties
+## 步骤 6：更新子书签属性
 
-Now let's update the child bookmark properties such as title, italic style, and bold style. You can adjust these properties according to your needs. Here is the corresponding code:
+现在让我们更新子书签属性，例如标题、斜体样式和粗体样式。您可以根据需要调整这些属性。这是相应的代码：
 
 ```csharp
 childOutline.Title = "Updated Outline";
@@ -59,93 +59,93 @@ childOutline. Italic = true;
 childOutline. Bold = true;
 ```
 
-## Step 7: Save the updated file
+## 第 7 步：保存更新的文件
 
-Now let's save the updated PDF file using the `Save` method of the `pdfDocument` object. Here is the corresponding code:
+现在让我们使用以下命令保存更新后的 PDF 文件`Save`的方法`pdfDocument`目的。这是相应的代码：
 
 ```csharp
 dataDir = dataDir + "UpdateChildBookmarks_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Update Child Bookmarks using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 更新子书签的示例源代码 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+//打开文档
 Document pdfDocument = new Document(dataDir + "UpdateChildBookmarks.pdf");
-// Get a bookmark object
+//获取书签对象
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
-// Get child bookmark object
+//获取子书签对象
 OutlineItemCollection childOutline = pdfOutline[1];
 childOutline.Title = "Updated Outline";
 childOutline.Italic = true;
 childOutline.Bold = true;
 dataDir = dataDir + "UpdateChildBookmarks_out.pdf";            
-// Save output
+//保存输出
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nChild bookmarks updated successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## 结论
 
-Congratulation ! You now have a step-by-step guide to updating child bookmarks with Aspose.PDF for .NET. You can use this code to modify the properties of child bookmarks in your PDF documents.
+恭喜！您现在已经有了使用 Aspose.PDF for .NET 更新子书签的分步指南。您可以使用此代码修改 PDF 文档中子书签的属性。
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+请务必查看官方 Aspose.PDF 文档，以获取有关高级书签操作功能的更多信息。
 
-### FAQ's for update child bookmarks in PDF file
+### 更新 PDF 文件中的子书签的常见问题解答
 
-#### Q: What are child bookmarks in a PDF file?
+#### 问：什么是 PDF 文件中的子书签？
 
-A: Child bookmarks are bookmarks that are nested within a parent bookmark. They allow you to create a hierarchical structure for navigating through a PDF document's content.
+答：子书签是嵌套在父书签内的书签。它们允许您创建用于浏览 PDF 文档内容的层次结构。
 
-#### Q: Why would I need to update child bookmarks?
+#### 问：为什么我需要更新子书签？
 
-A: Updating child bookmarks is useful when you want to modify the properties, titles, or styles of specific bookmarks within a parent bookmark. This helps customize the document's navigational structure.
+答：当您想要修改父书签中特定书签的属性、标题或样式时，更新子书签非常有用。这有助于自定义文档的导航结构。
 
-#### Q: How do I import the required libraries for my C# project?
+#### 问：如何导入 C# 项目所需的库？
 
-A: To import the necessary libraries for your C# project, include the following import directive:
+答：要导入 C# 项目所需的库，请包含以下导入指令：
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This directive enables you to access the classes and methods needed for working with PDF documents and bookmarks.
+该指令使您能够访问处理 PDF 文档和书签所需的类和方法。
 
-#### Q: How do I specify the path to the documents folder?
+#### 问：如何指定文档文件夹的路径？
 
-A: Replace `"YOUR DOCUMENT DIRECTORY"` in the provided source code with the actual path to the folder containing the PDF file you want to update.
+答：更换`"YOUR DOCUMENT DIRECTORY"`在提供的源代码中包含包含要更新的 PDF 文件的文件夹的实际路径。
 
-#### Q: How do I open a PDF document for updating child bookmarks?
+#### 问：如何打开 PDF 文档来更新子书签？
 
-A: To open a PDF document for updating child bookmarks, use the following code:
+答：要打开 PDF 文档来更新子书签，请使用以下代码：
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "UpdateChildBookmarks.pdf");
 ```
 
-Replace `"UpdateChildBookmarks.pdf"` with the actual file name.
+代替`"UpdateChildBookmarks.pdf"`与实际的文件名。
 
-#### Q: How do I get the parent bookmark object from which I want to update child bookmarks?
+#### 问：如何获取要更新子书签的父书签对象？
 
-A: To retrieve a specific parent bookmark for updating child bookmarks, access the `Outlines` property of the `pdfDocument` object. In the example below, we retrieve the parent bookmark at index 1:
+答：要检索特定的父书签以更新子书签，请访问`Outlines`的财产`pdfDocument`目的。在下面的示例中，我们检索索引 1 处的父书签：
 
 ```csharp
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
 ```
 
-#### Q: How do I get the child bookmark object I want to update?
+#### 问：如何获取我想要更新的子书签对象？
 
-A: To retrieve a specific child bookmark for updating, access the `OutlineItemCollection` of the parent bookmark. In the example below, we retrieve the child bookmark at index 1:
+答：要检索特定的子书签以进行更新，请访问`OutlineItemCollection`父书签的。在下面的示例中，我们检索索引 1 处的子书签：
 
 ```csharp
 OutlineItemCollection childOutline = pdfOutline[1];
 ```
 
-#### Q: What child bookmark properties can I update?
+#### 问：我可以更新哪些子书签属性？
 
-A: You can update various properties of a child bookmark, such as its title, italic style, and bold style. Customize these properties according to your needs:
+答：您可以更新子书签的各种属性，例如标题、斜体、粗体等。根据您的需要自定义这些属性：
 
 ```csharp
 childOutline.Title = "Updated Outline";
@@ -153,13 +153,13 @@ childOutline.Italic = true;
 childOutline.Bold = true;
 ```
 
-#### Q: Can I update multiple child bookmarks using this method?
+#### 问：我可以使用此方法更新多个子书签吗？
 
-A: Yes, you can repeat steps 4 to 7 for each child bookmark you want to update. Modify the parent index and child index as needed.
+答：是的，您可以为每个要更新的子书签重复步骤 4 到 7。根据需要修改父索引和子索引。
 
-#### Q: How do I save the updated PDF file?
+#### 问：如何保存更新后的 PDF 文件？
 
-A: Save the updated PDF file using the `Save` method of the `pdfDocument` object:
+答：使用以下命令保存更新的 PDF 文件`Save`的方法`pdfDocument`目的：
 
 ```csharp
 dataDir = dataDir + "UpdateChildBookmarks_out.pdf";

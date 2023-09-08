@@ -1,50 +1,50 @@
 ---
-title: Document Conversion
-linktitle: Document Conversion
+title: Преобразование документов
+linktitle: Преобразование документов
 type: docs
 weight: 11
 url: /ru/net/document-conversion/
-description: Check out document conversion tutorials with Aspose.PDF for .NET. Easily convert files to different formats.
+description: Ознакомьтесь с учебными пособиями по преобразованию документов с помощью Aspose.PDF для .NET. Легко конвертируйте файлы в разные форматы.
 ---
-In Aspose.PDF document conversion tutorials for .NET, you will learn how to convert different types of documents such as Word, Excel, HTML, images, etc. to PDF files. You'll learn how to convert an existing document using advanced conversion options such as layout, fonts, images, tables, and more. The tutorials will also guide you on converting PDF documents to other formats, such as Word, Excel, HTML, images, etc. 
+В учебных пособиях по преобразованию документов Aspose.PDF для .NET вы узнаете, как конвертировать различные типы документов, такие как Word, Excel, HTML, изображения и т. д., в файлы PDF. Вы узнаете, как преобразовать существующий документ, используя расширенные параметры преобразования, такие как макет, шрифты, изображения, таблицы и многое другое. Учебные пособия также помогут вам конвертировать PDF-документы в другие форматы, такие как Word, Excel, HTML, изображения и т. д. 
 
-You'll learn how to specify conversion settings, extract text and images, retain original document structure and formatting, and perform bulk conversions. The tutorials provide detailed code examples and step-by-step explanations to help you master the document conversion capabilities of Aspose.PDF for .NET. Whether you need to convert documents for archiving, electronic distribution, or other needs, these tutorials provide you with the knowledge to perform all document conversion tasks efficiently using the powerful Aspose.PDF library for .NET.
+Вы узнаете, как задавать параметры преобразования, извлекать текст и изображения, сохранять исходную структуру и форматирование документа, а также выполнять массовые преобразования. В учебных пособиях представлены подробные примеры кода и пошаговые объяснения, которые помогут вам освоить возможности преобразования документов в Aspose.PDF для .NET. Если вам нужно преобразовать документы для архивирования, электронного распространения или других нужд, эти учебные пособия предоставят вам знания для эффективного выполнения всех задач по преобразованию документов с использованием мощной библиотеки Aspose.PDF для .NET.
 
-## Tutorials
-| Title | Description |
+## Учебники
+| Заголовок | Описание |
 | --- | --- | 
-| [Add Attachment to PDFA](./add-attachment-to-pdfa/) | Easily add attachments to your PDF/A files using Aspose.PDF for .NET. |  
-| [CGM To PDF Files](./cgm-to-pdf/) | Easily convert CGM files to PDF using Aspose.PDF for .NET. |  
-| [EPUB To PDF](./epub-to-pdf/) | Step by step guide to convert EPUB to PDF using Aspose.PDF for .NET. |  
-| [Get SVG Dimensions](./get-svg-dimensions/) | Step by step guide to getting SVG dimensions using Aspose.PDF for .NET. |  
-| [HTML To PDF](./html-to-pdf/) | Step by step guide to convert HTML to PDF using Aspose.PDF for .NET. |  
-| [Markdown To PDF](./markdown-to-pdf/) | Step by step guide to convert Markdown to PDF using Aspose.PDF for .NET. |  
-| [MHT To PDF](./mht-to-pdf/) | Step by step guide to convert MHT to PDF using Aspose.PDF for .NET. |  
-| [Page Orientation According Image Dimensions](./page-orientation-according-image-dimensions/) | Step-by-step guide to set page orientation based on image dimensions with Aspose.PDF for .NET. |  
-| [PCL To PDF](./pcl-to-pdf/) | Step by step guide to convert PCL to PDF using Aspose.PDF for .NET. |  
-| [PDFA To PDF](./pdfa-to-pdf/) | Step by step guide to convert PDFA to PDF using Aspose.PDF for .NET. |  
-| [PDF To DOC](./pdf-to-doc/) | Step by step guide to convert PDF to DOC using Aspose.PDF for .NET.  |  
-| [PDF To EPUB](./pdf-to-epub/) | Step by step guide to convert PDF to EPUB using Aspose.PDF for .NET. |  
-| [PDF To HTML](./pdf-to-html/) | Step by step guide to convert PDF to HTML using Aspose.PDF for .NET. |  
-| [PDF To PDFA](./pdf-to-pdfa/) | Step by step guide to convert PDF to PDFA using Aspose.PDF for .NET. |  
-| [PDF To PDFA3b](./pdf-to-pdfa3b/) | Step by step guide to convert PDF to PDF/A-3b using Aspose.PDF for .NET. |  
-| [PDF To PNG Font Hinting](./pdf-to-png-font-hinting/) | Step by step guide to convert PDF to PNG with font hinting using Aspose.PDF for .NET. |  
-| [PDF To PPT](./pdf-to-ppt/) | Step by step guide to convert PDF to PPT using Aspose.PDF for .NET. |  
-| [PDF To SVG](./pdf-to-svg/) | Step by step guide to convert PDF to SVG using Aspose.PDF for .NET. |  
-| [PDF To TeX](./pdf-to-tex/) | Step by step guide to convert PDF to Te X using Aspose.PDF for .NET. |  
-| [PDF To XLS](./pdf-to-xls/) | Step by step guide to convert PDF to XLS using Aspose.PDF for .NET. |  
-| [PDF To XML](./pdf-to-xml/) | Step by step guide to convert PDF to XML using Aspose.PDF for .NET. |  
-| [PDF To XPS](./pdf-to-xps/) | Step by step guide to convert PDF to XPS using Aspose.PDF for .NET. |  
-| [Postscript To PDF](./postscript-to-pdf/) | Step by step guide to convert PostScript to PDF using Aspose.PDF for .NET. |  
-| [Provide Credentials During HTML To PDF](./provide-credentials-during-html-to-pdf/) | Step by step guide to convert HTML to PDF by providing credentials with Aspose.PDF for .NET. |  
-| [Remove Hyperlinks After Converting From Html](./remove-hyperlinks-after-converting-from-html/) | Step by step guide to remove hyperlinks after converting HTML to PDF using Aspose.PDF for .NET. |  
-| [Replace Missing Fonts](./replace-missing-fonts/) | Step-by-step guide to replace missing fonts in a PDF file using Aspose.PDF for .NET. |  
-| [Set Default Font Name](./set-default-font-name/) | Step by step guide to set default font name in PDF file using Aspose.PDF for .NET. |  
-| [SVG To PDF](./svg-to-pdf/) | Easy and fast SVG to PDF conversion using Aspose.PDF for .NET. |  
-| [TeX To PDF](./tex-to-pdf/) | Easy and accurate conversion of TeX files to PDF using Aspose.PDF for .NET. |  
-| [Text To PDF](./text-to-pdf/) | Simple and efficient conversion of text files to PDF using Aspose.PDF for .NET. |  
-| [TIFF To PDF Performance Improvement](./tiff-to-pdf-performance-improvement/) | Step-by-step guide to improve TIFF to PDF conversion performance with Aspose.PDF for .NET. |  
-| [Web Page To PDF](./web-page-to-pdf/) | Step by step guide to convert web page to PDF using Aspose.PDF for .NET. |  
-| [XML To PDF](./xml-to-pdf/) | Step by step guide to convert XML file to PDF using Aspose.PDF for .NET. |  
-| [XML To PDFSet Image Path](./xml-to-pdfset-image-path/) | Step-by-step guide to set the path of an image when converting XML to PDF with Aspose.PDF for .NET. |  
-| [XPS To PDF](./xps-to-pdf/) | Step by step guide to convert XPS file to PDF with Aspose.PDF for .NET. |  
+| [Добавить вложение в PDFA](./add-attachment-to-pdfa/) | Легко добавляйте вложения в файлы PDF/A с помощью Aspose.PDF для .NET. |  
+| [CGM в PDF-файлы](./cgm-to-pdf/) | Легко конвертируйте файлы CGM в PDF с помощью Aspose.PDF для .NET. |  
+| [EPUB в PDF](./epub-to-pdf/) | Пошаговое руководство по преобразованию EPUB в PDF с помощью Aspose.PDF для .NET. |  
+| [Получить размеры SVG](./get-svg-dimensions/) | Пошаговое руководство по получению размеров SVG с помощью Aspose.PDF для .NET. |  
+| [HTML в PDF](./html-to-pdf/) | Пошаговое руководство по преобразованию HTML в PDF с помощью Aspose.PDF для .NET. |  
+| [Уценка в PDF](./markdown-to-pdf/) | Пошаговое руководство по преобразованию Markdown в PDF с помощью Aspose.PDF для .NET. |  
+| [MHT в PDF](./mht-to-pdf/) | Пошаговое руководство по преобразованию MHT в PDF с помощью Aspose.PDF для .NET. |  
+| [Ориентация страницы в соответствии с размерами изображения](./page-orientation-according-image-dimensions/) | Пошаговое руководство по настройке ориентации страницы на основе размеров изображения с помощью Aspose.PDF для .NET. |  
+| [PCL в PDF](./pcl-to-pdf/) | Пошаговое руководство по преобразованию PCL в PDF с помощью Aspose.PDF для .NET. |  
+| [PDFA в PDF](./pdfa-to-pdf/) | Пошаговое руководство по преобразованию PDFA в PDF с помощью Aspose.PDF для .NET. |  
+| [PDF в DOC](./pdf-to-doc/) | Пошаговое руководство по преобразованию PDF в DOC с помощью Aspose.PDF для .NET.  |  
+| [PDF в EPUB](./pdf-to-epub/) | Пошаговое руководство по преобразованию PDF в EPUB с помощью Aspose.PDF для .NET. |  
+| [PDF в HTML](./pdf-to-html/) | Пошаговое руководство по преобразованию PDF в HTML с помощью Aspose.PDF для .NET. |  
+| [PDF в PDFA](./pdf-to-pdfa/) | Пошаговое руководство по преобразованию PDF в PDFA с помощью Aspose.PDF для .NET. |  
+| [PDF в PDFA3b](./pdf-to-pdfa3b/) | Пошаговое руководство по преобразованию PDF в PDF/A-3b с помощью Aspose.PDF для .NET. |  
+| [Подсказка к шрифту PDF в PNG](./pdf-to-png-font-hinting/) | Пошаговое руководство по преобразованию PDF в PNG с подсказкой шрифта с помощью Aspose.PDF для .NET. |  
+| [PDF в PPT](./pdf-to-ppt/) | Пошаговое руководство по преобразованию PDF в PPT с помощью Aspose.PDF для .NET. |  
+| [PDF в SVG](./pdf-to-svg/) | Пошаговое руководство по преобразованию PDF в SVG с помощью Aspose.PDF для .NET. |  
+| [PDF в TeX](./pdf-to-tex/) | Пошаговое руководство по преобразованию PDF в Te X с помощью Aspose.PDF для .NET. |  
+| [PDF в XLS](./pdf-to-xls/) | Пошаговое руководство по преобразованию PDF в XLS с помощью Aspose.PDF для .NET. |  
+| [PDF в XML](./pdf-to-xml/) | Пошаговое руководство по преобразованию PDF в XML с помощью Aspose.PDF для .NET. |  
+| [PDF в XPS](./pdf-to-xps/) | Пошаговое руководство по преобразованию PDF в XPS с помощью Aspose.PDF для .NET. |  
+| [Постскриптум в PDF](./postscript-to-pdf/) | Пошаговое руководство по преобразованию PostScript в PDF с помощью Aspose.PDF для .NET. |  
+| [Предоставление учетных данных при преобразовании HTML в PDF](./provide-credentials-during-html-to-pdf/) | Пошаговое руководство по преобразованию HTML в PDF путем предоставления учетных данных с помощью Aspose.PDF для .NET. |  
+| [Удалить гиперссылки после преобразования из HTML](./remove-hyperlinks-after-converting-from-html/) | Пошаговое руководство по удалению гиперссылок после преобразования HTML в PDF с помощью Aspose.PDF для .NET. |  
+| [Заменить отсутствующие шрифты](./replace-missing-fonts/) | Пошаговое руководство по замене отсутствующих шрифтов в файле PDF с помощью Aspose.PDF для .NET. |  
+| [Установить имя шрифта по умолчанию](./set-default-font-name/) | Пошаговое руководство по установке имени шрифта по умолчанию в PDF-файле с помощью Aspose.PDF для .NET. |  
+| [SVG в PDF](./svg-to-pdf/) | Простое и быстрое преобразование SVG в PDF с помощью Aspose.PDF для .NET. |  
+| [TeX в PDF](./tex-to-pdf/) | Простое и точное преобразование файлов TeX в PDF с помощью Aspose.PDF для .NET. |  
+| [Текст в PDF](./text-to-pdf/) | Простое и эффективное преобразование текстовых файлов в PDF с помощью Aspose.PDF для .NET. |  
+| [Улучшение производительности TIFF в PDF](./tiff-to-pdf-performance-improvement/) | Пошаговое руководство по повышению производительности преобразования TIFF в PDF с помощью Aspose.PDF для .NET. |  
+| [Веб-страница в PDF](./web-page-to-pdf/) | Пошаговое руководство по преобразованию веб-страницы в PDF с помощью Aspose.PDF для .NET. |  
+| [XML в PDF](./xml-to-pdf/) | Пошаговое руководство по преобразованию XML-файла в PDF с помощью Aspose.PDF для .NET. |  
+| [XML в PDFУстановить путь к изображению](./xml-to-pdfset-image-path/) | Пошаговое руководство по установке пути к изображению при преобразовании XML в PDF с помощью Aspose.PDF для .NET. |  
+| [XPS в PDF](./xps-to-pdf/) | Пошаговое руководство по преобразованию файла XPS в PDF с помощью Aspose.PDF для .NET. |  

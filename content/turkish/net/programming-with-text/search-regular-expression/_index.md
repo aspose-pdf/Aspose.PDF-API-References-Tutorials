@@ -1,83 +1,83 @@
 ---
-title: Search Regular Expression In PDF File
-linktitle: Search Regular Expression In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to search and retrieve text using regular expressions in PDF file using Aspose.PDF for .NET.
+title: PDF Dosyasında Normal İfadeyi Ara
+linktitle: PDF Dosyasında Normal İfadeyi Ara
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET'i kullanarak PDF dosyasında normal ifadeleri kullanarak metni nasıl arayacağınızı ve alacağınızı öğrenin.
 type: docs
 weight: 440
 url: /tr/net/programming-with-text/search-regular-expression/
 ---
-This tutorial explains how to use Aspose.PDF for .NET to search and retrieve text that matches a regular expression in PDF file. The provided C# source code demonstrates the process step by step.
+Bu eğitimde, PDF dosyasındaki normal ifadeyle eşleşen metni aramak ve almak için Aspose.PDF for .NET'in nasıl kullanılacağı açıklanmaktadır. Sağlanan C# kaynak kodu süreci adım adım gösterir.
 
-## Prerequisites
+## Önkoşullar
 
-Before proceeding with the tutorial, make sure you have the following:
+Eğiticiye devam etmeden önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- Basic knowledge of C# programming language.
-- Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to install it in your project.
+- Temel C# programlama dili bilgisi.
+- Aspose.PDF for .NET kütüphanesi kuruldu. Bunu Aspose web sitesinden edinebilir veya projenize kurmak için NuGet'i kullanabilirsiniz.
 
-## Step 1: Set up the project
+## 1. Adım: Projeyi ayarlayın
 
-Start by creating a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library.
+Tercih ettiğiniz entegre geliştirme ortamında (IDE) yeni bir C# projesi oluşturarak başlayın ve Aspose.PDF for .NET kitaplığına bir referans ekleyin.
 
-## Step 2: Import necessary namespaces
+## 2. Adım: Gerekli ad alanlarını içe aktarın
 
-Add the following using directives at the beginning of your C# file to import the required namespaces:
+Gerekli ad alanlarını içe aktarmak için C# dosyanızın başına aşağıdaki kullanma yönergelerini ekleyin:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Load the PDF document
+## 3. Adım: PDF belgesini yükleyin
 
-Set the path to your PDF document directory and load the document using the `Document` class:
+ PDF belge dizininizin yolunu ayarlayın ve belgeyi kullanarak yükleyin.`Document` sınıf:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "SearchRegularExpressionAll.pdf");
 ```
 
-Make sure to replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ Değiştirdiğinizden emin olun`"YOUR DOCUMENT DIRECTORY"` belge dizininizin gerçek yolu ile.
 
-## Step 4: Search with regular expression
+## 4. Adım: Normal ifadeyle arama yapın
 
-Create a `TextFragmentAbsorber` object and set the regular expression pattern to find all phrases that match the pattern:
+ Oluşturmak`TextFragmentAbsorber` nesnesini açın ve kalıpla eşleşen tüm ifadeleri bulmak için normal ifade modelini ayarlayın:
 
 ```csharp
-TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // Like 1999-2000
+TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // 1999-2000 gibi
 ```
 
-Replace `"\\d{4}-\\d{4}"` with your desired regular expression pattern.
+ Yer değiştirmek`"\\d{4}-\\d{4}"` İstediğiniz düzenli ifade modeliyle.
 
-## Step 5: Set text search options
+## 5. Adım: Metin arama seçeneklerini ayarlayın
 
-Create a `TextSearchOptions` object and set it to the `TextSearchOptions` property of the `TextFragmentAbsorber` object to enable regular expression usage:
+ Oluşturmak`TextSearchOptions` nesneyi seçin ve buna ayarlayın`TextSearchOptions` mülkiyeti`TextFragmentAbsorber` Düzenli ifade kullanımını etkinleştirmek için nesne:
 
 ```csharp
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textFragmentAbsorber.TextSearchOptions = textSearchOptions;
 ```
 
-## Step 6: Search on all pages
+## 6. Adım: Tüm sayfalarda arama yapın
 
-Accept the absorber for all the pages of the document:
+Belgenin tüm sayfaları için emiciyi kabul edin:
 
 ```csharp
 pdfDocument.Pages.Accept(textFragmentAbsorber);
 ```
 
-## Step 7: Retrieve extracted text fragments
+## 7. Adım: Çıkarılan metin parçalarını alın
 
-Get the extracted text fragments using the `TextFragments` property of the `TextFragmentAbsorber` object:
+Çıkarılan metin parçalarını kullanarak alın`TextFragments` mülkiyeti`TextFragmentAbsorber` nesne:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
 ```
 
-## Step 8: Loop through the text fragments
+## Adım 8: Metin parçaları arasında döngü yapın
 
-Loop through the retrieved text fragments and access their properties:
+Alınan metin parçaları arasında dolaşın ve özelliklerine erişin:
 
 ```csharp
 foreach (TextFragment textFragment in textFragmentCollection)
@@ -95,24 +95,24 @@ foreach (TextFragment textFragment in textFragmentCollection)
 }
 ```
 
-You can modify the code within the loop to perform further actions on each text fragment.
+Her metin parçası üzerinde daha fazla eylem gerçekleştirmek için döngü içindeki kodu değiştirebilirsiniz.
 
-### Sample source code for Search Regular Expression using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Normal İfade Arama için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir + "SearchRegularExpressionAll.pdf");
-// Create TextAbsorber object to find all the phrases matching the regular expression
-TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // Like 1999-2000
-// Set text search option to specify regular expression usage
+// Normal ifadeyle eşleşen tüm ifadeleri bulmak için TextAbsorber nesnesi oluşturun
+TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // 1999-2000 gibi
+// Normal ifade kullanımını belirtmek için metin arama seçeneğini ayarlayın
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textFragmentAbsorber.TextSearchOptions = textSearchOptions;
-// Accept the absorber for all the pages
+// Tüm sayfalar için emiciyi kabul edin
 pdfDocument.Pages.Accept(textFragmentAbsorber);
-// Get the extracted text fragments
+// Çıkarılan metin parçalarını alın
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-// Loop through the fragments
+// Parçalar arasında döngü yapın
 foreach (TextFragment textFragment in textFragmentCollection)
 {
 	Console.WriteLine("Text : {0} ", textFragment.Text);
@@ -128,48 +128,48 @@ foreach (TextFragment textFragment in textFragmentCollection)
 }
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulations! You have successfully learned how to search and retrieve text that matches a regular expression in a PDF document using Aspose.PDF for .NET. This tutorial provided a step-by-step guide, from loading the document to accessing the extracted text fragments. You can now incorporate this code into your own C# projects to perform advanced text searches in PDF files.
+Tebrikler! Aspose.PDF for .NET'i kullanarak bir PDF belgesinde normal ifadeyle eşleşen metni nasıl arayacağınızı ve alacağınızı başarıyla öğrendiniz. Bu eğitimde, belgenin yüklenmesinden çıkarılan metin parçalarına erişmeye kadar adım adım bir kılavuz sağlanmıştır. Artık PDF dosyalarında gelişmiş metin aramaları gerçekleştirmek için bu kodu kendi C# projelerinize dahil edebilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the purpose of the "Search Regular Expression In PDF File" tutorial?
+#### S: "PDF Dosyasında Normal İfadeyi Ara" eğitiminin amacı nedir?
 
-A: The "Search Regular Expression In PDF File" tutorial aims to showcase how to use the Aspose.PDF library for .NET to search for and extract text that matches a specified regular expression pattern within a PDF file. The tutorial provides comprehensive guidance and sample C# code to demonstrate the process.
+C: "PDF Dosyasında Normal İfadeyi Ara" eğitimi, bir PDF dosyasındaki belirli bir düzenli ifade düzeniyle eşleşen metni aramak ve çıkarmak için Aspose.PDF kütüphanesinin .NET için nasıl kullanılacağını göstermeyi amaçlamaktadır. Öğretici, süreci göstermek için kapsamlı rehberlik ve örnek C# kodu sağlar.
 
-#### Q: How does this tutorial help in searching for text using regular expressions in a PDF document?
+#### S: Bu eğitim, bir PDF belgesinde normal ifadeler kullanılarak metin aranmasına nasıl yardımcı olur?
 
-A: This tutorial provides a step-by-step approach to using the Aspose.PDF library to conduct text searches in a PDF document based on a regular expression pattern. It details how to set up the project, load the PDF document, define a regular expression pattern, and retrieve the matching text fragments.
+C: Bu eğitim, Aspose.PDF kütüphanesinin düzenli ifade düzenine dayalı olarak bir PDF belgesinde metin araması yapmak için kullanılmasına yönelik adım adım bir yaklaşım sağlar. Projenin nasıl kurulacağı, PDF belgesinin nasıl yükleneceği, düzenli ifade modelinin nasıl tanımlanacağı ve eşleşen metin parçalarının nasıl alınacağı ayrıntılarıyla anlatılmaktadır.
 
-#### Q: What are the prerequisites for following this tutorial?
+#### S: Bu eğitimi takip etmenin önkoşulları nelerdir?
 
-A: Before starting this tutorial, you should have a basic understanding of the C# programming language. Additionally, you need to have the Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to integrate it into your project.
+C: Bu eğitime başlamadan önce C# programlama dili hakkında temel bilgiye sahip olmanız gerekir. Ayrıca Aspose.PDF for .NET kütüphanesinin de kurulu olması gerekir. Bunu Aspose web sitesinden edinebilir veya projenize entegre etmek için NuGet'i kullanabilirsiniz.
 
-#### Q: How do I set up my project to follow this tutorial?
+#### S: Projemi bu öğreticiyi takip edecek şekilde nasıl ayarlayabilirim?
 
-A: To begin, create a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library. This will allow you to leverage the library's capabilities within your project.
+C: Başlamak için tercih ettiğiniz entegre geliştirme ortamında (IDE) yeni bir C# projesi oluşturun ve Aspose.PDF for .NET kütüphanesine bir referans ekleyin. Bu, projeniz dahilinde kütüphanenin yeteneklerinden yararlanmanıza olanak sağlayacaktır.
 
-#### Q: Can I use regular expressions to search for text in a PDF document?
+#### S: Bir PDF belgesinde metin aramak için normal ifadeleri kullanabilir miyim?
 
-A: Yes, this tutorial demonstrates how to use regular expressions to search for and extract text from a PDF document. It involves utilizing the `TextFragmentAbsorber` class and specifying a regular expression pattern to find phrases that match the provided pattern.
+ C: Evet, bu eğitimde bir PDF belgesinde metin aramak ve çıkarmak için normal ifadelerin nasıl kullanılacağı gösterilmektedir. Şunların kullanılmasını içerir:`TextFragmentAbsorber` sınıfını kullanarak ve sağlanan kalıpla eşleşen cümleleri bulmak için bir normal ifade modeli belirleyerek.
 
-#### Q: How do I define the regular expression pattern for text search?
+#### S: Metin araması için normal ifade modelini nasıl tanımlarım?
 
-A: To define a regular expression pattern for text search, create a `TextFragmentAbsorber` object and set its pattern using the `Text` parameter. Replace the default pattern `"\\d{4}-\\d{4}"` in the tutorial's code with your desired regular expression pattern.
+ C: Metin aramaya yönelik bir normal ifade modeli tanımlamak için`TextFragmentAbsorber` kullanarak nesneyi seçin ve desenini ayarlayın.`Text` parametre. Varsayılan deseni değiştir`"\\d{4}-\\d{4}"` öğreticinin kodunda istediğiniz normal ifade düzeniyle.
 
-#### Q: How can I enable regular expression usage for text search?
+#### S: Metin araması için normal ifade kullanımını nasıl etkinleştirebilirim?
 
-A: Regular expression usage is enabled by creating a `TextSearchOptions` object and setting its value to `true`. Assign this object to the `TextSearchOptions` property of the `TextFragmentAbsorber` instance. This ensures that the regular expression pattern is applied during text search.
+ C: Normal ifade kullanımı, bir`TextSearchOptions` nesne ve değerini ayarlama`true` . Bu nesneyi şuraya atayın:`TextSearchOptions` mülkiyeti`TextFragmentAbsorber` misal. Bu, metin araması sırasında normal ifade modelinin uygulanmasını sağlar.
 
-#### Q: Can I retrieve text fragments that match the regular expression pattern?
+#### S: Normal ifade düzeniyle eşleşen metin parçalarını alabilir miyim?
 
-A: Absolutely. After applying the regular expression search on the PDF document, you can retrieve the extracted text fragments using the `TextFragments` property of the `TextFragmentAbsorber` object. These text fragments contain the text segments that match the specified regular expression pattern.
+ C: Kesinlikle. PDF belgesinde normal ifade aramasını uyguladıktan sonra, çıkartılan metin parçalarını`TextFragments` mülkiyeti`TextFragmentAbsorber` nesne. Bu metin parçaları, belirtilen düzenli ifade düzeniyle eşleşen metin parçalarını içerir.
 
-#### Q: What can I access from the retrieved text fragments?
+#### S: Alınan metin parçalarından neye erişebilirim?
 
-A: From the retrieved text fragments, you can access various properties such as the matched text content, position (X and Y coordinates), font information (name, size, color), and more. The sample code within the tutorial's loop demonstrates how to access and display these properties.
+C: Alınan metin parçalarından eşleşen metin içeriği, konum (X ve Y koordinatları), yazı tipi bilgileri (ad, boyut, renk) ve daha fazlası gibi çeşitli özelliklere erişebilirsiniz. Öğreticinin döngüsündeki örnek kod, bu özelliklere nasıl erişileceğini ve görüntüleneceğini gösterir.
 
-#### Q: How can I customize actions on the extracted text fragments?
+#### S: Çıkarılan metin parçaları üzerindeki eylemleri nasıl özelleştirebilirim?
 
-A: Once you have the extracted text fragments, you can customize the code within the loop to perform additional actions on each text fragment. This can include saving the extracted text, analyzing patterns, or implementing formatting changes based on your requirements.
+C: Çıkarılan metin parçalarını aldıktan sonra, her metin parçası üzerinde ek eylemler gerçekleştirmek için döngü içindeki kodu özelleştirebilirsiniz. Bu, çıkarılan metnin kaydedilmesini, kalıpların analiz edilmesini veya gereksinimlerinize göre biçimlendirme değişikliklerinin uygulanmasını içerebilir.

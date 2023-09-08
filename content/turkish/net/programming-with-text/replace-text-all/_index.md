@@ -1,49 +1,49 @@
 ---
-title: Replace Text All In PDF File
-linktitle: Replace Text All In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to replace all text in PDF file using Aspose.PDF for .NET.
+title: PDF Dosyasındaki Metnin Tamamını Değiştir
+linktitle: PDF Dosyasındaki Metnin Tamamını Değiştir
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET'i kullanarak PDF dosyasındaki tüm metni nasıl değiştireceğinizi öğrenin.
 type: docs
 weight: 350
 url: /tr/net/programming-with-text/replace-text-all/
 ---
-In this tutorial, we will explain how to replace all text in PDF file using the Aspose.PDF library for .NET. We will provide a step-by-step guide along with the necessary C# source code.
+Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak PDF dosyasındaki tüm metni nasıl değiştireceğinizi açıklayacağız. Gerekli C# kaynak koduyla birlikte adım adım bir kılavuz sağlayacağız.
 
-## Prerequisites
+## Önkoşullar
 
-Before you begin, make sure you have the following:
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- Aspose.PDF for .NET library installed.
-- Basic understanding of C# programming.
+- Aspose.PDF for .NET kütüphanesi kuruldu.
+- C# programlamanın temel anlayışı.
 
-## Step 1: Set up the Document Directory
+## 1. Adım: Belge Dizinini Ayarlayın
 
-Set the path to the directory where you have the input PDF file. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your PDF file.
+ Giriş PDF dosyasının bulunduğu dizinin yolunu ayarlayın. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` PDF dosyanızın yolunu içeren değişken.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load the PDF Document
+## Adım 2: PDF Belgesini Yükleyin
 
-Load the PDF document using the `Document` class from the Aspose.PDF library.
+ PDF belgesini kullanarak yükleyin`Document` Aspose.PDF kütüphanesinden sınıf.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ReplaceTextAll.pdf");
 ```
 
-## Step 3: Search and Replace Text
+## 3. Adım: Metni Arayın ve Değiştirin
 
-Create a `TextFragmentAbsorber` object to find all instances of the input search phrase. Accept the absorber for all the pages of the PDF document to extract the text fragments.
+ Oluşturmak`TextFragmentAbsorber` Giriş arama ifadesinin tüm örneklerini bulmak için nesne. Metin parçalarını çıkarmak için PDF belgesinin tüm sayfaları için emiciyi kabul edin.
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
 pdfDocument.Pages.Accept(textFragmentAbsorber);
 ```
 
-## Step 4: Replace Text
+## 4. Adım: Metni Değiştir
 
-Loop through the extracted text fragments and replace the text as required. Update the text and other properties such as font, font size, foreground color, and background color.
+Çıkarılan metin parçaları arasında dolaşın ve metni gerektiği gibi değiştirin. Metni ve yazı tipi, yazı tipi boyutu, ön plan rengi ve arka plan rengi gibi diğer özellikleri güncelleyin.
 
 ```csharp
 foreach (TextFragment textFragment in textFragmentAbsorber.TextFragments)
@@ -56,9 +56,9 @@ foreach (TextFragment textFragment in textFragmentAbsorber.TextFragments)
 }
 ```
 
-## Step 5: Save the Modified PDF
+## 5. Adım: Değiştirilen PDF'yi kaydedin
 
-Save the modified PDF document to the specified output file.
+Değiştirilen PDF belgesini belirtilen çıktı dosyasına kaydedin.
 
 ```csharp
 dataDir = dataDir + "ReplaceTextAll_out.pdf";
@@ -66,22 +66,22 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nText replaced successfully.\nFile saved at " + dataDir);
 ```
 
-### Sample source code for Replace Text All using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Tüm Metni Değiştir için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir + "ReplaceTextAll.pdf");
-// Create TextAbsorber object to find all instances of the input search phrase
+// Giriş arama ifadesinin tüm örneklerini bulmak için TextAbsorber nesnesi oluşturun
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
-// Accept the absorber for all the pages
+// Tüm sayfalar için emiciyi kabul edin
 pdfDocument.Pages.Accept(textFragmentAbsorber);
-// Get the extracted text fragments
+// Çıkarılan metin parçalarını alın
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-// Loop through the fragments
+// Parçalar arasında döngü yapın
 foreach (TextFragment textFragment in textFragmentCollection)
 {
-	// Update text and other properties
+	// Metni ve diğer özellikleri güncelleme
 	textFragment.Text = "TEXT";
 	textFragment.TextState.Font = FontRepository.FindFont("Verdana");
 	textFragment.TextState.FontSize = 22;
@@ -89,56 +89,56 @@ foreach (TextFragment textFragment in textFragmentCollection)
 	textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Green);
 }
 dataDir = dataDir + "ReplaceTextAll_out.pdf";
-// Save resulting PDF document.
+// Ortaya çıkan PDF belgesini kaydedin.
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nText replaced  successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, you have learned how to replace all text in a PDF document using the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can load a PDF document, search for the desired text, replace it, and save the modified PDF.
+Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak bir PDF belgesindeki tüm metni nasıl değiştireceğinizi öğrendiniz. Adım adım kılavuzu izleyerek ve verilen C# kodunu çalıştırarak bir PDF belgesi yükleyebilir, istediğiniz metni arayabilir, değiştirebilir ve değiştirilen PDF'yi kaydedebilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the purpose of the "Replace Text All In PDF File" tutorial?
+#### S: "PDF Dosyasındaki Tüm Metni Değiştir" öğreticisinin amacı nedir?
 
-A: The "Replace Text All In PDF File" tutorial aims to guide you through the process of using the Aspose.PDF library for .NET to replace all instances of a specific text in a PDF document. It provides a step-by-step guide along with sample C# code.
+C: "PDF Dosyasındaki Tüm Metni Değiştir" eğitimi, bir PDF belgesindeki belirli bir metnin tüm örneklerini değiştirmek için .NET için Aspose.PDF kütüphanesini kullanma sürecinde size rehberlik etmeyi amaçlamaktadır. Örnek C# koduyla birlikte adım adım bir kılavuz sağlar.
 
-#### Q: Why would I want to replace all instances of text in a PDF document?
+#### S: Bir PDF belgesindeki metnin tüm örneklerini neden değiştirmek isteyeyim?
 
-A: Replacing all instances of a specific text in a PDF document can be necessary when you need to update or standardize the content throughout the document. This process can be especially useful for ensuring consistency in document content and formatting.
+C: Belge genelindeki içeriği güncellemeniz veya standartlaştırmanız gerektiğinde, PDF belgesindeki belirli bir metnin tüm örneklerini değiştirmek gerekli olabilir. Bu süreç özellikle belge içeriğinde ve biçimlendirmesinde tutarlılığın sağlanması açısından yararlı olabilir.
 
-#### Q: How do I set up the document directory?
+#### S: Belge dizinini nasıl ayarlarım?
 
-A: To set up the document directory:
+C: Belge dizinini ayarlamak için:
 
-1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where your input PDF file is located.
+1.  Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` giriş PDF dosyanızın bulunduğu dizinin yolunu içeren değişken.
 
-#### Q: How do I replace all instances of text in a PDF document?
+#### S: Bir PDF belgesindeki metnin tüm örneklerini nasıl değiştiririm?
 
-A: The tutorial guides you through the following steps:
+C: Eğitim aşağıdaki adımlarda size yol gösterir:
 
-1. Load the PDF document using the `Document` class.
-2. Create a `TextFragmentAbsorber` object to find all instances of the input search phrase. Accept the absorber for all the pages of the PDF document to extract the text fragments.
-3. Loop through the extracted text fragments and replace the text. Update other properties like font, font size, foreground color, and background color as required.
-4. Save the modified PDF document.
+1.  PDF belgesini kullanarak yükleyin`Document` sınıf.
+2.  Oluşturmak`TextFragmentAbsorber` Giriş arama ifadesinin tüm örneklerini bulmak için nesne. Metin parçalarını çıkarmak için PDF belgesinin tüm sayfaları için emiciyi kabul edin.
+3. Çıkarılan metin parçaları arasında dolaşın ve metni değiştirin. Yazı tipi, yazı tipi boyutu, ön plan rengi ve arka plan rengi gibi diğer özellikleri gerektiği gibi güncelleyin.
+4. Değiştirilen PDF belgesini kaydedin.
 
-#### Q: Can I replace text based on a case-sensitive search?
+#### S: Büyük/küçük harfe duyarlı aramaya dayalı olarak metni değiştirebilir miyim?
 
-A: Yes, you can modify the `TextFragmentAbsorber` search text to perform a case-sensitive search. Simply provide the exact text you want to search for, and the absorber will match it accordingly.
+ C: Evet, değiştirebilirsiniz`TextFragmentAbsorber` Büyük/küçük harfe duyarlı bir arama gerçekleştirmek için metni arayın. Aramak istediğiniz metni tam olarak belirtmeniz yeterlidir; emici onu buna göre eşleştirecektir.
 
-#### Q: Is font replacement optional when replacing text?
+#### S: Metni değiştirirken yazı tipini değiştirmek isteğe bağlı mıdır?
 
-A: Yes, font replacement is optional. If you don't specify a new font, the text will retain the font of the original text fragment.
+C: Evet, yazı tipi değişimi isteğe bağlıdır. Yeni bir yazı tipi belirtmezseniz metin, orijinal metin parçasının yazı tipini koruyacaktır.
 
-#### Q: How can I replace text in specific sections of the PDF document?
+#### S: PDF belgesinin belirli bölümlerindeki metni nasıl değiştirebilirim?
 
-A: You can adapt the loop through the text fragments to include conditional statements based on the position of the text fragments. This way, you can choose to replace text only in specific sections of the PDF.
+C: Metin parçalarının konumuna bağlı olarak koşullu ifadeler içerecek şekilde metin parçaları arasındaki döngüyü uyarlayabilirsiniz. Bu şekilde, PDF'nin yalnızca belirli bölümlerindeki metni değiştirmeyi seçebilirsiniz.
 
-#### Q: What is the expected outcome of executing the provided code?
+#### S: Sağlanan kodu çalıştırmanın beklenen sonucu nedir?
 
-A: By following the tutorial and running the provided C# code, you will replace all instances of the specified text in the PDF document. The replaced text will have the properties you specified, such as font, font size, foreground color, and background color.
+C: Öğreticiyi takip ederek ve sağlanan C# kodunu çalıştırarak, PDF belgesindeki belirtilen metnin tüm örneklerini değiştireceksiniz. Değiştirilen metin, yazı tipi, yazı tipi boyutu, ön plan rengi ve arka plan rengi gibi belirttiğiniz özelliklere sahip olacaktır.
 
-#### Q: Can I use this approach to replace non-text elements, such as images or annotations?
+#### S: Bu yaklaşımı resimler veya ek açıklamalar gibi metin olmayan öğeleri değiştirmek için kullanabilir miyim?
 
-A: No, this tutorial focuses specifically on replacing text in a PDF document. If you need to replace non-text elements, you would need to follow different procedures or use other Aspose.PDF features.
+C: Hayır, bu eğitim özellikle bir PDF belgesindeki metni değiştirmeye odaklanmaktadır. Metin olmayan öğeleri değiştirmeniz gerekiyorsa farklı prosedürleri izlemeniz veya diğer Aspose.PDF özelliklerini kullanmanız gerekir.

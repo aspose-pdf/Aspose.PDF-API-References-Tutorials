@@ -1,47 +1,47 @@
 ---
-title: Get Warnings For Font Substitution
-linktitle: Get Warnings For Font Substitution
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use the GetWarningsForFontSubstitution feature of Aspose.PDF for .NET to detect font substitution warnings when opening a PDF document.
+title: Få varningar för teckensnittsersättning
+linktitle: Få varningar för teckensnittsersättning
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du använder GetWarningsForFontSubstitution-funktionen i Aspose.PDF för .NET för att upptäcka varningar för teckensnittsersättning när du öppnar ett PDF-dokument.
 type: docs
 weight: 190
 url: /sv/net/programming-with-document/getwarningsforfontsubstitution/
 ---
-Aspose.PDF for .NET is a popular PDF manipulation library that enables developers to create, edit, and convert PDF files in their .NET applications. One of the features offered by this library is the ability to detect font substitution warnings when a PDF document is opened. This tutorial will guide you through the steps of using the `GetWarningsForFontSubstitution` feature of Aspose.PDF for .NET to detect font substitution warnings when opening a PDF document.
+Aspose.PDF för .NET är ett populärt PDF-manipuleringsbibliotek som gör det möjligt för utvecklare att skapa, redigera och konvertera PDF-filer i sina .NET-applikationer. En av funktionerna som erbjuds av detta bibliotek är möjligheten att upptäcka varningar för teckensnittsersättning när ett PDF-dokument öppnas. Denna handledning guidar dig genom stegen för att använda`GetWarningsForFontSubstitution` funktion i Aspose.PDF för .NET för att upptäcka varningar för teckensnittsbyte när du öppnar ett PDF-dokument.
 
-## Step 1: Install Aspose.PDF for .NET
+## Steg 1: Installera Aspose.PDF för .NET
 
-To use Aspose.PDF for .NET in your .NET applications, you must first install the library. You can download the latest version of the library from the [Aspose.PDF for .NET download page](https://relases.aspose.com/pdf/net).
+ För att använda Aspose.PDF för .NET i dina .NET-applikationer måste du först installera biblioteket. Du kan ladda ner den senaste versionen av biblioteket från[Aspose.PDF för .NET nedladdningssida](https://relases.aspose.com/pdf/net).
 
-Once you have downloaded the library, extract the contents of the ZIP file to a folder on your computer. You will then need to add a reference to the Aspose.PDF for .NET DLL in your .NET project.
+När du har laddat ner biblioteket, extrahera innehållet i ZIP-filen till en mapp på din dator. Du måste sedan lägga till en referens till Aspose.PDF för .NET DLL i ditt .NET-projekt.
 
-## Step 2: Load the PDF Document
+## Steg 2: Ladda PDF-dokumentet
 
-Once you have installed Aspose.PDF for .NET and added a reference to the DLL in your .NET project, you can begin using the `GetWarningsForFontSubstitution` feature to detect font substitution warnings when opening a PDF document.
+När du har installerat Aspose.PDF för .NET och lagt till en referens till DLL-filen i ditt .NET-projekt kan du börja använda`GetWarningsForFontSubstitution` funktion för att upptäcka varningar för teckensnittsersättning när du öppnar ett PDF-dokument.
 
-The first step in using this feature is to load the PDF document that you want to detect font substitution warnings for. To do this, you can use the following code:
+Det första steget i att använda den här funktionen är att ladda PDF-dokumentet som du vill upptäcka varningar för teckensnittsersättning. För att göra detta kan du använda följande kod:
 
 ```csharp
-// The path to the PDF document
+// Sökvägen till PDF-dokumentet
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open the PDF document
+//Öppna PDF-dokumentet
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-In the above code, replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your PDF document is located. This code will load the PDF document into a `Document` object, which you can then use to detect font substitution warnings.
+ I koden ovan, ersätt`"YOUR DOCUMENT DIRECTORY"` med sökvägen till katalogen där ditt PDF-dokument finns. Denna kod kommer att ladda PDF-dokumentet i en`Document` objekt, som du sedan kan använda för att upptäcka varningar för teckensnittsersättning.
 
-## Step 3: Detect Font Substitution Warnings
+## Steg 3: Upptäck varningar för teckensnittsersättning
 
-To detect font substitution warnings when opening a PDF document, you can use the following code:
+För att upptäcka varningar för teckensnittsbyte när du öppnar ett PDF-dokument kan du använda följande kod:
 
 ```csharp
 doc.FontSubstitution += new Document.FontSubstitutionHandler(OnFontSubstitution);
 ```
 
-In the above code, `OnFontSubstitution` is a method that will be called whenever a font substitution warning is detected. You can customize this method to handle the font substitution warning in any way that you like.
+ I ovanstående kod,`OnFontSubstitution`är en metod som kommer att anropas när en varning för teckensnittsersättning upptäcks. Du kan anpassa den här metoden för att hantera teckensnittsersättningsvarningen på vilket sätt du vill.
 
-Here is an example implementation of the `OnFontSubstitution` method:
+ Här är ett exempel på implementering av`OnFontSubstitution` metod:
 
 ```csharp
 private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArgs e)
@@ -50,47 +50,47 @@ private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArg
 }
 ```
 
-In the above code, the `OnFontSubstitution` method simply outputs the original font name and the substituted font name to the console whenever a font substitution warning is detected. You can customize this method to handle the font substitution warning in any way that you like.
+ I ovanstående kod är`OnFontSubstitution` metod matar helt enkelt ut det ursprungliga teckensnittsnamnet och det ersatta teckensnittsnamnet till konsolen när en varning för teckensnittsersättning upptäcks. Du kan anpassa den här metoden för att hantera teckensnittsersättningsvarningen på vilket sätt du vill.
 
-### Example source code for Get Warnings For Font Substitution using Aspose.NET for PDF
+### Exempel på källkod för Get Warnings For Font Substitution med Aspose.NET för PDF
 
-Here is the full source code for detecting font substitution warnings when opening a PDF document using the `GetWarningsForFontSubstitution` feature of Aspose.PDF for .NET:
+ Här är den fullständiga källkoden för att upptäcka varningar för teckensnittsersättning när du öppnar ett PDF-dokument med hjälp av`GetWarningsForFontSubstitution` funktion i Aspose.PDF för .NET:
 
 ```csharp
-// The path to the PDF document
+// Sökvägen till PDF-dokumentet
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open the PDF document
+//Öppna PDF-dokumentet
 Document doc = new Document(dataDir + "input.pdf");
 
-// Detect font substitution warnings
+// Upptäck varningar för teckensnittsersättning
 doc.FontSubstitution += new Document.FontSubstitutionHandler(OnFontSubstitution);
 
-// Handle font substitution warning
+// Hantera varning för teckensnittsbyte
 private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArgs e)
 {
     Console.WriteLine("Font substitution: {0} => {1}", e.OriginalFontName, e.SubstitutedFontName);
 }
 ```
 
-## Conclusion
+## Slutsats
 
-In this tutorial, we have discussed how to use Aspose.PDF for .NET to detect font substitution warnings when opening a PDF document. By subscribing to the `FontSubstitution` event, developers can detect font substitution situations and handle them according to their application's needs. Aspose.PDF for .NET provides a straightforward API to detect and handle font substitution warnings, helping developers ensure the visual fidelity and consistency of PDF documents across different systems.
+ I den här handledningen har vi diskuterat hur man använder Aspose.PDF för .NET för att upptäcka varningar för teckensnittsersättning när man öppnar ett PDF-dokument. Genom att prenumerera på`FontSubstitution`händelse, kan utvecklare upptäcka teckensnittsersättningssituationer och hantera dem enligt deras applikations behov. Aspose.PDF för .NET tillhandahåller ett enkelt API för att upptäcka och hantera varningar för teckensnittsersättning, vilket hjälper utvecklare att säkerställa den visuella troheten och konsistensen hos PDF-dokument i olika system.
 
 ### FAQ's
 
-#### Q: What is font substitution in a PDF document?
+#### F: Vad är teckensnittsersättning i ett PDF-dokument?
 
-A: Font substitution in a PDF document occurs when a font used in the document is not available or embedded in the file. In such cases, the viewer or printer substitutes the missing font with a similar one that is available on the system. Font substitution can affect the appearance and layout of the document.
+S: Teckensnittsersättning i ett PDF-dokument sker när ett teckensnitt som används i dokumentet inte är tillgängligt eller inbäddat i filen. I sådana fall ersätter tittaren eller skrivaren det saknade teckensnittet med ett liknande som finns tillgängligt i systemet. Teckensnittsersättning kan påverka dokumentets utseende och layout.
 
-#### Q: Why is font substitution important to detect?
+#### F: Varför är teckensnittsersättning viktigt att upptäcka?
 
-A: Font substitution is important to detect because it can impact the visual fidelity and layout of the PDF document. Detecting font substitution warnings allows developers to identify situations where fonts are being substituted and take appropriate actions to ensure the document's visual appearance is consistent across different systems.
+S: Teckensnittsersättning är viktig att upptäcka eftersom det kan påverka den visuella tillförlitligheten och layouten för PDF-dokumentet. Genom att upptäcka varningar för teckensnittsbyte kan utvecklare identifiera situationer där teckensnitt byts ut och vidta lämpliga åtgärder för att säkerställa att dokumentets visuella utseende är konsekvent i olika system.
 
-#### Q: How can I handle font substitution warnings?
+#### F: Hur kan jag hantera varningar för teckensnittsersättning?
 
-A: You can handle font substitution warnings by subscribing to the `FontSubstitution` event of the `Document` class and providing a custom method to handle the event. In this custom method, you can log the font substitution warnings, notify users, or take other actions based on your application's requirements.
+ S: Du kan hantera varningar för teckensnittsersättning genom att prenumerera på`FontSubstitution` händelse av`Document` klass och tillhandahåller en anpassad metod för att hantera händelsen. I den här anpassade metoden kan du logga varningarna för teckensnittsersättning, meddela användare eller vidta andra åtgärder baserat på din applikations krav.
 
-#### Q: Can I customize the handling of font substitution warnings?
+#### F: Kan jag anpassa hanteringen av varningar för teckensnittsersättning?
 
-A: Yes, you can customize the handling of font substitution warnings by providing a custom method to handle the `FontSubstitution` event. In this custom method, you can log the font substitution warnings, notify users, or take any other appropriate actions based on your application's requirements.
+ S: Ja, du kan anpassa hanteringen av varningar för teckensnittsersättning genom att tillhandahålla en anpassad metod för att hantera`FontSubstitution`händelse. Med den här anpassade metoden kan du logga varningarna för teckensnittsersättning, meddela användare eller vidta andra lämpliga åtgärder baserat på din applikations krav.

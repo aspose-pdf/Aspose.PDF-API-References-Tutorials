@@ -1,49 +1,49 @@
 ---
-title: Image Placements
-linktitle: Image Placements
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use Aspose.PDF for .NET to place images in a PDF document.
+title: Emplacements d'images
+linktitle: Emplacements d'images
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment utiliser Aspose.PDF pour .NET pour placer des images dans un document PDF.
 type: docs
 weight: 170
 url: /fr/net/programming-with-images/image-placements/
 ---
-In this tutorial, we will use the Aspose.PDF library for .NET to work with PDF documents and perform operations on images. We'll load a PDF document, extract the image placement information, and retrieve the images with their dimensions visible.
+Dans ce didacticiel, nous utiliserons la bibliothèque Aspose.PDF pour .NET pour travailler avec des documents PDF et effectuer des opérations sur les images. Nous allons charger un document PDF, extraire les informations de placement des images et récupérer les images avec leurs dimensions visibles.
 
-## Step 1: Setting up the environment
-Before you begin, make sure you've set up your development environment with the following:
-- Aspose.PDF for .NET installed on your machine.
-- A C# project ready to be used.
+## Étape 1 : Configuration de l'environnement
+Avant de commencer, assurez-vous d'avoir configuré votre environnement de développement avec les éléments suivants :
+- Aspose.PDF pour .NET installé sur votre ordinateur.
+- Projet AC# prêt à être utilisé.
 
-## Step 2: Loading the PDF document
-To start, we need to load the PDF document we want to process. Make sure you have the correct path to the directory containing the PDF document.
+## Étape 2 : Chargement du document PDF
+Pour commencer, nous devons charger le document PDF que nous voulons traiter. Assurez-vous d'avoir le chemin correct vers le répertoire contenant le document PDF.
 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Load the source PDF document
+// Charger le document PDF source
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "PlacementImage.pdf");
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual path to your documents directory containing the PDF file.
+ Assurez-vous de remplacer`"YOUR DOCUMENTS DIRECTORY"` avec le chemin réel vers votre répertoire de documents contenant le fichier PDF.
 
-## Step 3: Extract placement information from images
-Now that we've loaded the PDF document, we can extract the placement information from the images. We will use `ImagePlacementAbsorber` to absorb image locations from the first page of the document.
+## Étape 3 : Extraire les informations de placement des images
+ Maintenant que nous avons chargé le document PDF, nous pouvons extraire les informations de placement des images. Nous utiliserons`ImagePlacementAbsorber`pour absorber les emplacements des images de la première page du document.
 
 ```csharp
 ImagePlacementAbsorber abs = new ImagePlacementAbsorber();
-// Load the content of the first page
+// Charger le contenu de la première page
 doc.Pages[1].Accept(abs);
 ```
 
-We have now extracted the image placement information from the first page of the document.
+Nous avons maintenant extrait les informations de placement d'image de la première page du document.
 
-## Step 4: Retrieving images with visible dimensions
-Now we will retrieve the images with their visible dimensions from the placement information we extracted earlier.
+## Étape 4 : Récupération d'images avec des dimensions visibles
+Nous allons maintenant récupérer les images avec leurs dimensions visibles à partir des informations de placement que nous avons extraites précédemment.
 
 ```csharp
 foreach(ImagePlacement imagePlacement in abs.ImagePlacements)
 {
-     // Get image properties
+     // Obtenir les propriétés de l'image
      Console.Out.WriteLine("Image Width: " + imagePlacement.Rectangle.Width);
      Console.Out.WriteLine("Image Height: " + imagePlacement.Rectangle.Height);
      Console.Out.WriteLine("LLX of image: " + imagePlacement.Rectangle.LLX);
@@ -53,94 +53,94 @@ foreach(ImagePlacement imagePlacement in abs.ImagePlacements)
   : " + imagePlacement.Resolution.X);
      Console.Out.WriteLine("Vertical image resolution: " + imagePlacement.Resolution.Y);
 
-     // Retrieve the image with visible dimensions
+     // Récupérer l'image avec les dimensions visibles
      Bitmap scaledImage;
      using (MemoryStream imageStream = new MemoryStream())
      {
-         // Get the image from the resources
+         // Obtenez l'image à partir des ressources
          imagePlacement.Image.Save(imageStream, System.Drawing.Imaging.ImageFormat.Png);
          Bitmap resourceImage = (Bitmap)Bitmap.FromStream(imageStream);
 
-         // Create an image with actual dimensions
+         // Créer une image avec des dimensions réelles
          scaledImage = new Bitmap(resourceImage, (int)imagePlacement.Rectangle.Width, (int)imagePlacement.Rectangle.Height);
      }
 }
 ```
 
-In this loop, we retrieve the properties of each image, such as width, height, X and Y coordinates of the lower left corner, and horizontal and vertical resolution. Then we retrieve each image with its visible dimensions using the placement information.
+Dans cette boucle, nous récupérons les propriétés de chaque image, telles que la largeur, la hauteur, les coordonnées X et Y du coin inférieur gauche et la résolution horizontale et verticale. Ensuite nous récupérons chaque image avec ses dimensions visibles en utilisant les informations de placement.
 
-### Sample source code for Image Placements using Aspose.PDF for .NET 
+### Exemple de code source pour les placements d'images à l'aide d'Aspose.PDF pour .NET 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load the source PDF document
+// Charger le document PDF source
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir+ "ImagePlacement.pdf");
 ImagePlacementAbsorber abs = new ImagePlacementAbsorber();
-// Load the contents of first page
+// Charger le contenu de la première page
 doc.Pages[1].Accept(abs);
 foreach (ImagePlacement imagePlacement in abs.ImagePlacements)
 {
-	// Get image properties
+	// Obtenir les propriétés de l'image
 	Console.Out.WriteLine("image width:" + imagePlacement.Rectangle.Width);
 	Console.Out.WriteLine("image height:" + imagePlacement.Rectangle.Height);
 	Console.Out.WriteLine("image LLX:" + imagePlacement.Rectangle.LLX);
 	Console.Out.WriteLine("image LLY:" + imagePlacement.Rectangle.LLY);
 	Console.Out.WriteLine("image horizontal resolution:" + imagePlacement.Resolution.X);
 	Console.Out.WriteLine("image vertical resolution:" + imagePlacement.Resolution.Y);
-	// Retrieve image with visible dimensions
+	// Récupérer une image avec des dimensions visibles
 	Bitmap scaledImage;
 	using (MemoryStream imageStream = new MemoryStream())
 	{
-		// Retrieve image from resources
+		// Récupérer une image à partir de ressources
 		imagePlacement.Image.Save(imageStream, System.Drawing.Imaging.ImageFormat.Png);
 		Bitmap resourceImage = (Bitmap)Bitmap.FromStream(imageStream);
-		// Create bitmap with actual dimensions
+		//Créer un bitmap avec des dimensions réelles
 		scaledImage = new Bitmap(resourceImage, (int)imagePlacement.Rectangle.Width, (int)imagePlacement.Rectangle.Height);
 	}
 }
 ```
 
 ## Conclusion
-Congratulation ! You have now learned how to use Aspose.PDF for .NET to perform image placements in a PDF document. We explained the C# source code provided, which allows you to load a PDF document, extract the placement information from the images, and retrieve the images with their dimensions visible. Feel free to experiment more with Aspose.PDF to explore its many other features.
+Félicitation ! Vous avez maintenant appris à utiliser Aspose.PDF pour .NET pour effectuer des placements d'images dans un document PDF. Nous avons expliqué le code source C# fourni, qui permet de charger un document PDF, d'extraire les informations de placement des images et de récupérer les images avec leurs dimensions visibles. N'hésitez pas à expérimenter davantage avec Aspose.PDF pour explorer ses nombreuses autres fonctionnalités.
 
-### FAQ's
+### FAQ
 
-#### Q: What is the purpose of extracting image placement information from a PDF document using Aspose.PDF for .NET?
+#### Q : Quel est le but d'extraire les informations de placement d'image d'un document PDF à l'aide d'Aspose.PDF pour .NET ?
 
-A: Extracting image placement information allows you to retrieve the positioning, dimensions, and resolution of images within a PDF document. This information is essential for precise image manipulation and analysis.
+R : L'extraction des informations sur le placement des images vous permet de récupérer le positionnement, les dimensions et la résolution des images dans un document PDF. Ces informations sont essentielles pour une manipulation et une analyse précises des images.
 
-#### Q: How does Aspose.PDF for .NET facilitate the extraction of image placement information from a PDF document?
+#### Q : Comment Aspose.PDF pour .NET facilite-t-il l'extraction des informations de placement d'image à partir d'un document PDF ?
 
-A: Aspose.PDF for .NET provides the `ImagePlacementAbsorber` class, which can be used to absorb image placement details from a PDF document. The provided code demonstrates how to utilize this class to retrieve image placement information.
+ R : Aspose.PDF pour .NET fournit le`ImagePlacementAbsorber`classe, qui peut être utilisée pour absorber les détails de placement d’image à partir d’un document PDF. Le code fourni montre comment utiliser cette classe pour récupérer les informations de placement d'image.
 
-#### Q: What can image placement information be used for in real-world scenarios?
+#### Q : À quoi peuvent servir les informations sur le placement des images dans des scénarios réels ?
 
-A: Image placement information is valuable for tasks such as ensuring accurate image alignment, calculating image dimensions, verifying image quality, and generating reports on image usage within a PDF document.
+R : Les informations sur le placement des images sont utiles pour des tâches telles que garantir un alignement précis de l'image, calculer les dimensions de l'image, vérifier la qualité de l'image et générer des rapports sur l'utilisation des images dans un document PDF.
 
-#### Q: How does the code sample ensure accurate extraction of image placement information?
+#### Q : Comment l'exemple de code garantit-il une extraction précise des informations de placement d'image ?
 
-A: The code sample employs the `ImagePlacementAbsorber` class to traverse the contents of a specified page, identify image placements, and retrieve their attributes, such as width, height, coordinates, and resolution.
+ R : L'exemple de code utilise le`ImagePlacementAbsorber` pour parcourir le contenu d'une page spécifiée, identifier les emplacements d'images et récupérer leurs attributs, tels que la largeur, la hauteur, les coordonnées et la résolution.
 
-#### Q: Can the code be extended to process images across multiple pages or documents?
+#### Q : Le code peut-il être étendu pour traiter des images sur plusieurs pages ou documents ?
 
-A: Yes, the code can be extended by iterating through multiple pages or documents to extract image placement information and perform image-related tasks.
+R : Oui, le code peut être étendu en parcourant plusieurs pages ou documents pour extraire des informations sur le placement des images et effectuer des tâches liées aux images.
 
-#### Q: How does the code retrieve images with their visible dimensions based on the placement information?
+#### Q : Comment le code récupère-t-il les images avec leurs dimensions visibles en fonction des informations de placement ?
 
-A: The code sample extracts the image data from the resources, creates a bitmap image with the actual dimensions, and provides properties such as width, height, coordinates, and resolution.
+R : L'exemple de code extrait les données d'image des ressources, crée une image bitmap avec les dimensions réelles et fournit des propriétés telles que la largeur, la hauteur, les coordonnées et la résolution.
 
-#### Q: Is this approach efficient for large PDF documents containing numerous images?
+#### Q : Cette approche est-elle efficace pour les documents PDF volumineux contenant de nombreuses images ?
 
-A: Yes, Aspose.PDF for .NET is optimized for performance and resource usage. It efficiently extracts image placement information even from large PDF documents.
+R : Oui, Aspose.PDF pour .NET est optimisé pour les performances et l'utilisation des ressources. Il extrait efficacement les informations sur le placement des images, même à partir de documents PDF volumineux.
 
-#### Q: How can developers benefit from understanding and utilizing image placement information?
+#### Q : Comment les développeurs peuvent-ils bénéficier de la compréhension et de l'utilisation des informations sur le placement des images ?
 
-A: Developers can ensure precise image manipulation, alignment, and analysis within PDF documents. This information empowers them to create applications for image processing, reporting, and quality assurance.
+R : Les développeurs peuvent garantir une manipulation, un alignement et une analyse précis des images dans les documents PDF. Ces informations leur permettent de créer des applications pour le traitement d'images, la création de rapports et l'assurance qualité.
 
-#### Q: Can the code be customized to extract additional image-related attributes or metadata?
+#### Q : Le code peut-il être personnalisé pour extraire des attributs ou des métadonnées supplémentaires liés à l'image ?
 
-A: Absolutely, the code can be enhanced to extract additional attributes, such as image type, color space, compression, and more, by utilizing appropriate classes and methods provided by Aspose.PDF for .NET.
+R : Absolument, le code peut être amélioré pour extraire des attributs supplémentaires, tels que le type d'image, l'espace colorimétrique, la compression, etc., en utilisant les classes et méthodes appropriées fournies par Aspose.PDF pour .NET.
 
-#### Q: What is the significance of the provided conclusion in this tutorial?
+#### Q : Quelle est la signification de la conclusion fournie dans ce didacticiel ?
 
-A: The conclusion summarizes the tutorial's content and encourages further exploration of Aspose.PDF for .NET to leverage its capabilities beyond image placements, opening doors to various PDF-related tasks.
+R : La conclusion résume le contenu du didacticiel et encourage une exploration plus approfondie d'Aspose.PDF pour .NET afin d'exploiter ses capacités au-delà du placement d'images, ouvrant ainsi la porte à diverses tâches liées aux PDF.

@@ -1,44 +1,44 @@
 ---
-title: Web Page To PDF
-linktitle: Web Page To PDF
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to convert web page to PDF using Aspose.PDF for .NET.
+title: Page Web en PDF
+linktitle: Page Web en PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Guide étape par étape pour convertir une page Web en PDF à l'aide d'Aspose.PDF pour .NET.
 type: docs
 weight: 320
 url: /fr/net/document-conversion/web-page-to-pdf/
 ---
-In this tutorial, we will guide you step by step on how to convert a web page to PDF using the Aspose.PDF for .NET library. We will explain the provided C# source code and show you how to implement it in your own projects. By the end of this tutorial, you will be able to convert web pages to PDF documents effortlessly.
+Dans ce didacticiel, nous vous guiderons étape par étape sur la façon de convertir une page Web en PDF à l'aide de la bibliothèque Aspose.PDF pour .NET. Nous expliquerons le code source C# fourni et vous montrerons comment l'implémenter dans vos propres projets. À la fin de ce didacticiel, vous serez en mesure de convertir des pages Web en documents PDF sans effort.
 
 ## Introduction
-Converting web pages to PDF format is a common requirement in many applications. By converting web content to PDF, you can easily preserve the layout, formatting, and images of the original web page. Aspose.PDF for .NET is a powerful library that allows you to perform this conversion efficiently and accurately.
+La conversion de pages Web au format PDF est une exigence courante dans de nombreuses applications. En convertissant le contenu Web en PDF, vous pouvez facilement conserver la mise en page, le formatage et les images de la page Web d'origine. Aspose.PDF pour .NET est une bibliothèque puissante qui vous permet d'effectuer cette conversion de manière efficace et précise.
 
-## Requirements
-Before we get started, make sure you have the following prerequisites in place:
-- Visual Studio installed on your machine
-- Aspose.PDF for .NET library (you can download it from the official Aspose website)
-- Basic knowledge of C# programming
+## Exigences
+Avant de commencer, assurez-vous que les conditions préalables suivantes sont remplies :
+- Visual Studio installé sur votre machine
+- Bibliothèque Aspose.PDF pour .NET (vous pouvez le télécharger depuis le site officiel d'Aspose)
+- Connaissance de base de la programmation C#
 
 
-## Step 1: Define the Document Directory
+## Étape 1 : Définir le répertoire des documents
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
-Replace `"YOUR DOCUMENT DIRECTORY"` with the path where you want to save the generated PDF file.
+ Remplacer`"YOUR DOCUMENT DIRECTORY"` avec le chemin où vous souhaitez enregistrer le fichier PDF généré.
 
-## Step 2: Create a Web Request
+## Étape 2 : Créer une demande Web
 ```csharp
 WebRequest request = WebRequest.Create("https://en.wikipedia.org/wiki/Main_Page");
 request.Credentials = CredentialCache.DefaultCredentials;
 ```
-Create a web request object and specify the URL of the web page you want to convert. You can replace the URL with any desired web page.
+Créez un objet de requête Web et spécifiez l'URL de la page Web que vous souhaitez convertir. Vous pouvez remplacer l'URL par n'importe quelle page Web souhaitée.
 
-## Step 3: Get the Web Response
+## Étape 3 : Obtenez la réponse Web
 ```csharp
 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 ```
-Send the web request and retrieve the response from the server.
+Envoyez la requête Web et récupérez la réponse du serveur.
 
-## Step 4: Read the Web Content
+## Étape 4 : Lire le contenu Web
 ```csharp
 Stream dataStream = response. GetResponseStream();
 StreamReader reader = new StreamReader(dataStream);
@@ -47,9 +47,9 @@ reader. Close();
 dataStream.Close();
 response. Close();
 ```
-Read the content of the web page using a `StreamReader` and store it in the `responseFromServer` variable.
+ Lire le contenu de la page Web à l'aide d'un`StreamReader`et rangez-le dans le`responseFromServer` variable.
 
-## Step 5: Convert HTML to PDF
+## Étape 5 : Convertir le HTML en PDF
 ```csharp
 MemoryStream stream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(responseFromServer));
 HtmlLoadOptions options = new HtmlLoadOptions("https://en.wikipedia.org/wiki/");
@@ -57,42 +57,42 @@ Document pdfDocument = new Document(stream, options);
 options.PageInfo.IsLandscape = true;
 pdfDocument.Save(dataDir + "WebPageToPDF_out.pdf");
 ```
-Create a `MemoryStream` object to load the web page content. Then, create an instance of `HtmlLoadOptions` and pass the base URL of the web page. Next, create a `Document` object using the loaded stream and the HTML load options. Set the `IsLandscape` property to `true` if you want the PDF to be in landscape orientation. Finally, save the PDF document to the specified directory
+ Créer un`MemoryStream` objet pour charger le contenu de la page Web. Ensuite, créez une instance de`HtmlLoadOptions` et transmettez l'URL de base de la page Web. Ensuite, créez un`Document` objet en utilisant le flux chargé et les options de chargement HTML. Met le`IsLandscape` propriété à`true` si vous souhaitez que le PDF soit en orientation paysage. Enfin, enregistrez le document PDF dans le répertoire spécifié
 
 .
 
-## Step 6: Handle Exceptions
+## Étape 6 : Gérer les exceptions
 ```csharp
 catch (Exception ex)
 {
 Console.WriteLine(ex.Message);
 }
 ```
-Catch any exceptions that may occur during the conversion process and display the error message.
+Détectez toutes les exceptions pouvant survenir pendant le processus de conversion et affichez le message d'erreur.
 
-### Example source code for Web Page to PDF using Aspose.PDF for .NET
+### Exemple de code source pour une page Web au format PDF à l'aide d'Aspose.PDF pour .NET
 
 ```csharp
 try
 {
 	
-	// The path to the documents directory.
+	// Le chemin d'accès au répertoire des documents.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Create a request for the URL.
+	// Créez une demande pour l'URL.
 	WebRequest request = WebRequest.Create("https:// En.wikipedia.org/wiki/Main_Page");
-	// If required by the server, set the credentials.
+	// Si le serveur l'exige, définissez les informations d'identification.
 	request.Credentials = CredentialCache.DefaultCredentials;
-	// Time out in miliseconds before the request times out
-	// Request.Timeout = 100;
+	// Délai d'expiration en millisecondes avant l'expiration de la demande
+	// Request.Timeout = 100 ;
 
-	// Get the response.
+	// Obtenez la réponse.
 	HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 
-	// Get the stream containing content returned by the server.
+	// Récupère le flux contenant le contenu renvoyé par le serveur.
 	Stream dataStream = response.GetResponseStream();
-	// Open the stream using a StreamReader for easy access.
+	// Ouvrez le flux à l'aide d'un StreamReader pour un accès facile.
 	StreamReader reader = new StreamReader(dataStream);
-	// Read the content.
+	// Lisez le contenu.
 	string responseFromServer = reader.ReadToEnd();
 	reader.Close();
 	dataStream.Close();
@@ -102,12 +102,12 @@ try
 	HtmlLoadOptions options = new HtmlLoadOptions("https:// En.wikipedia.org/wiki/");
 
 
-	// Load HTML file
+	// Charger le fichier HTML
 	Document pdfDocument = new Document(stream, options);
 
 	options.PageInfo.IsLandscape = true;
 
-	// Save output as PDF format
+	// Enregistrer la sortie au format PDF
 	pdfDocument.Save(dataDir + "WebPageToPDF_out.pdf");
 	
 }
@@ -118,26 +118,26 @@ catch (Exception ex)
 ```
 
 ## Conclusion
-In this tutorial, we have learned how to convert a web page to PDF using the Aspose.PDF for .NET library. We went through the step-by-step guide explaining the provided C# source code. By following these instructions, you can easily integrate web page to PDF conversion functionality into your own .NET applications.
+Dans ce didacticiel, nous avons appris à convertir une page Web en PDF à l'aide de la bibliothèque Aspose.PDF pour .NET. Nous avons parcouru le guide étape par étape expliquant le code source C# fourni. En suivant ces instructions, vous pouvez facilement intégrer la fonctionnalité de conversion de page Web en PDF dans vos propres applications .NET.
 
-### FAQ's
+### FAQ
 
-#### Q: What is Aspose.PDF for .NET?
+#### Q : Qu'est-ce qu'Aspose.PDF pour .NET ?
 
-A: Aspose.PDF for .NET is a powerful library that allows developers to work with PDF documents in C# applications. It provides various functionalities, including converting web pages to PDF.
+R : Aspose.PDF pour .NET est une bibliothèque puissante qui permet aux développeurs de travailler avec des documents PDF dans des applications C#. Il offre diverses fonctionnalités, notamment la conversion de pages Web en PDF.
 
-#### Q: Why would I want to convert a web page to PDF?
+#### Q : Pourquoi voudrais-je convertir une page Web en PDF ?
 
-A: Converting web pages to PDF is useful for preserving the layout, formatting, and images of the original web content. It allows you to create a snapshot of the web page for offline viewing or sharing with others.
+R : La conversion de pages Web au format PDF est utile pour préserver la mise en page, le formatage et les images du contenu Web d'origine. Il vous permet de créer un instantané de la page Web pour une visualisation hors ligne ou un partage avec d'autres.
 
-#### Q: What are the prerequisites for this tutorial?
+#### Q : Quels sont les prérequis pour ce didacticiel ?
 
-A: To follow this tutorial, you need to have Visual Studio installed on your machine, the Aspose.PDF for .NET library, and a basic understanding of C# programming.
+R : Pour suivre ce didacticiel, vous devez avoir installé Visual Studio sur votre ordinateur, la bibliothèque Aspose.PDF pour .NET et une compréhension de base de la programmation C#.
 
-#### Q: Can I convert any web page to PDF?
+#### Q : Puis-je convertir n’importe quelle page Web en PDF ?
 
-A: Yes, you can convert any web page to PDF by providing the URL of the web page in the code. Aspose.PDF for .NET will retrieve the web content and convert it to PDF format.
+: Oui, vous pouvez convertir n'importe quelle page Web en PDF en fournissant l'URL de la page Web dans le code. Aspose.PDF pour .NET récupérera le contenu Web et le convertira au format PDF.
 
-#### Q: How can I customize the PDF output, such as page orientation?
+#### Q : Comment puis-je personnaliser la sortie PDF, comme l'orientation de la page ?
 
-A: You can customize the PDF output by using options like `IsLandscape` to set the page orientation. In the provided code, `options.PageInfo.IsLandscape = true` is used to create the PDF in landscape orientation.
+ R : Vous pouvez personnaliser la sortie PDF en utilisant des options telles que`IsLandscape` pour définir l’orientation de la page. Dans le code fourni,`options.PageInfo.IsLandscape = true` est utilisé pour créer le PDF en orientation paysage.

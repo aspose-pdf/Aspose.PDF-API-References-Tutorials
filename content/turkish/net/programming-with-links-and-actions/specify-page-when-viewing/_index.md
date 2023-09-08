@@ -1,145 +1,145 @@
 ---
-title: Specify Page When Viewing
-linktitle: Specify Page When Viewing
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to specify a page when viewing a PDF using Aspose.PDF for .NET.
+title: Görüntülerken Sayfayı Belirtin
+linktitle: Görüntülerken Sayfayı Belirtin
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak bir PDF'yi görüntülerken bir sayfayı nasıl belirleyeceğinizi öğrenin.
 type: docs
 weight: 110
 url: /tr/net/programming-with-links-and-actions/specify-page-when-viewing/
 ---
-Learn how to specify a page when viewing a PDF file using Aspose.PDF for .NET with this step-by-step guide.
+Bu adım adım kılavuzla Aspose.PDF for .NET kullanarak bir PDF dosyasını görüntülerken bir sayfayı nasıl belirleyeceğinizi öğrenin.
 
-## Step 1: Setting up the environment
+## 1. Adım: Ortamı ayarlama
 
-Make sure you have set up your development environment with a C# project and the appropriate Aspose.PDF references.
+Geliştirme ortamınızı bir C# projesi ve uygun Aspose.PDF referanslarıyla kurduğunuzdan emin olun.
 
-## Step 2: Loading the PDF file
+## Adım 2: PDF dosyasını yükleme
 
-Set the directory path of your documents and upload the PDF file using the following code:
+Belgelerinizin dizin yolunu ayarlayın ve aşağıdaki kodu kullanarak PDF dosyasını yükleyin:
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Load the PDF file
+// PDF dosyasını yükleyin
 Document doc = new Document(dataDir + "SpecifyPageWhenViewing.pdf");
 ```
 
-## Step 3: Specifying the target page
+## 3. Adım: Hedef sayfayı belirtme
 
-Get the target page instance using the following code:
+Aşağıdaki kodu kullanarak hedef sayfa örneğini alın:
 
 ```csharp
 Page page2 = doc.Pages[2];
 ```
 
-You can adjust the index `[2]` to select the desired page.
+ Endeksi ayarlayabilirsiniz`[2]` İstediğiniz sayfayı seçmek için
 
-## Step 4: Configuring the zoom setting
+## 4. Adım: Yakınlaştırma ayarını yapılandırma
 
-Create a variable to set the target page zoom factor:
+Hedef sayfa yakınlaştırma faktörünü ayarlamak için bir değişken oluşturun:
 
 ```csharp
 double zoom = 1;
 ```
 
-You can adjust the zoom value according to your needs.
+Yakınlaştırma değerini ihtiyaçlarınıza göre ayarlayabilirsiniz.
 
-## Step 5: Create the navigation action
+## 5. Adım: Gezinme eylemini oluşturun
 
-Create an instance of the navigation action using the specified target page:
+Belirtilen hedef sayfayı kullanarak gezinme eyleminin bir örneğini oluşturun:
 
 ```csharp
 GoToAction action = new GoToAction(doc.Pages[2]);
 ```
 
-## Step 6: Setting the destination
+## Adım 6: Hedefi ayarlama
 
-Set the destination to go to the target page using coordinates and zoom:
+Koordinatları ve yakınlaştırmayı kullanarak hedef sayfaya gitmek için hedefi ayarlayın:
 
 ```csharp
 action.Destination = new XYZExplicitDestination(page2, 0, page2.Rect.Height, zoom);
 ```
 
-## Step 7: Configuring the Document Open Action
+## Adım 7: Belge Açma Eylemini Yapılandırma
 
-Set the document open action with the created navigation action:
+Oluşturulan gezinme eylemiyle belge açma eylemini ayarlayın:
 
 ```csharp
 doc. OpenAction = action;
 ```
 
-## Step 8: Save the updated document
+## 8. Adım: Güncellenen belgeyi kaydedin
 
-Save the updated document using the `Save` method:
+ Güncellenen belgeyi kullanarak kaydedin.`Save` yöntem:
 
 ```csharp
 doc.Save(dataDir + "goto2page_out.pdf");
 ```
 
-### Sample source code for Specify Page When Viewing using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Görüntülerken Sayfayı Belirtin için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load the PDF file
+// PDF dosyasını yükleyin
 Document doc = new Document(dataDir + "SpecifyPageWhenViewing.pdf");
-// Get the instance of second page of document
+// Belgenin ikinci sayfasının örneğini alın
 Page page2 = doc.Pages[2];
-// Create the variable to set the zoom factor of target page
+// Hedef sayfanın yakınlaştırma faktörünü ayarlamak için değişkeni oluşturun
 double zoom = 1;
-// Create GoToAction instance
+// GoToAction örneği oluşturun
 GoToAction action = new GoToAction(doc.Pages[2]);
-// Go to 2 page
+// 2 sayfaya git
 action.Destination = new XYZExplicitDestination(page2, 0, page2.Rect.Height, zoom);
-// Set the document open action
+// Belge açma eylemini ayarlama
 doc.OpenAction = action;
-// Save updated document
+// Güncellenen belgeyi kaydet
 doc.Save(dataDir + "goto2page_out.pdf");
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulation ! You now know how to specify a page when viewing a PDF using Aspose.PDF for .NET. Use this knowledge to customize the user viewing experience in your PDF documents.
+Tebrikler! Artık Aspose.PDF for .NET kullanarak bir PDF'yi görüntülerken bir sayfayı nasıl belirleyeceğinizi biliyorsunuz. PDF belgelerinizdeki kullanıcı görüntüleme deneyimini özelleştirmek için bu bilgiyi kullanın.
 
-Now that you've completed this guide, you can apply these concepts to your own projects and further explore the features offered by Aspose.PDF for .NET.
+Artık bu kılavuzu tamamladığınıza göre, bu kavramları kendi projelerinize uygulayabilir ve Aspose.PDF for .NET'in sunduğu özellikleri daha fazla keşfedebilirsiniz.
 
-### FAQ's 
+### SSS'ler 
 
-#### Q: What is the purpose of specifying a target page when viewing a PDF file?
+#### S: Bir PDF dosyasını görüntülerken hedef sayfayı belirtmenin amacı nedir?
 
-A: Specifying a target page allows you to control which page of a PDF document is displayed when the file is opened. This can enhance the user experience by directing them to a specific page of interest.
+C: Bir hedef sayfa belirlemek, dosya açıldığında PDF belgesinin hangi sayfasının görüntüleneceğini kontrol etmenize olanak tanır. Bu, kullanıcıları belirli bir ilgi çekici sayfaya yönlendirerek kullanıcı deneyimini geliştirebilir.
 
-#### Q: How can specifying a target page be useful in PDF documents?
+#### S: PDF belgelerinde hedef sayfa belirlemek nasıl faydalı olabilir?
 
-A: Specifying a target page is beneficial when you want to guide users to a particular section or content within a PDF document without requiring them to manually navigate through the pages.
+C: Kullanıcıların sayfalar arasında manuel olarak gezinmesine gerek kalmadan, kullanıcıları bir PDF belgesi içindeki belirli bir bölüme veya içeriğe yönlendirmek istediğinizde, hedef sayfanın belirtilmesi yararlı olur.
 
-#### Q: How does Aspose.PDF for .NET facilitate specifying a target page for viewing?
+#### S: Aspose.PDF for .NET, görüntülenecek hedef sayfayı belirlemeyi nasıl kolaylaştırır?
 
-A: Aspose.PDF for .NET provides APIs that allow you to set the initial view of a PDF document, including the target page, zoom level, and other display properties.
+C: Aspose.PDF for .NET, hedef sayfa, yakınlaştırma düzeyi ve diğer görüntüleme özellikleri de dahil olmak üzere bir PDF belgesinin ilk görünümünü ayarlamanıza olanak tanıyan API'ler sağlar.
 
-#### Q: Can I specify any page to be the target page?
+#### S: Hedef sayfa olarak herhangi bir sayfayı belirtebilir miyim?
 
-A: Yes, you can specify any page within the PDF document as the target page for viewing. Simply use the appropriate index to select the desired page.
+C: Evet, PDF belgesindeki herhangi bir sayfayı görüntülenecek hedef sayfa olarak belirtebilirsiniz. İstediğiniz sayfayı seçmek için uygun dizini kullanmanız yeterlidir.
 
-#### Q: What is the significance of the zoom factor when specifying a target page?
+#### S: Hedef sayfayı belirlerken yakınlaştırma faktörünün önemi nedir?
 
-A: The zoom factor determines the level of magnification applied to the target page when the PDF document is opened. It controls how much content is displayed within the viewport.
+C: Yakınlaştırma faktörü, PDF belgesi açıldığında hedef sayfaya uygulanan büyütme düzeyini belirler. Görünüm alanında ne kadar içeriğin görüntüleneceğini kontrol eder.
 
-#### Q: Can I set different zoom factors for different target pages?
+#### S: Farklı hedef sayfalar için farklı yakınlaştırma faktörleri ayarlayabilir miyim?
 
-A: Yes, you can set different zoom factors for different target pages by creating separate `GoToAction` instances and configuring their destinations accordingly.
+C: Evet, ayrı sayfalar oluşturarak farklı hedef sayfalar için farklı yakınlaştırma faktörleri ayarlayabilirsiniz.`GoToAction` örnekleri ve hedeflerini buna göre yapılandırmak.
 
-#### Q: Are there any limitations to specifying a target page?
+#### S: Hedef sayfa belirlemede herhangi bir sınırlama var mı?
 
-A: Specifying a target page is limited to controlling the initial view when the PDF is opened. It does not affect user interactions or navigation once the PDF is displayed.
+C: Hedef sayfayı belirlemek, PDF açıldığında ilk görünümü kontrol etmekle sınırlıdır. PDF görüntülendikten sonra kullanıcı etkileşimlerini veya gezinmeyi etkilemez.
 
-#### Q: Can I use this feature to create presentations within a PDF document?
+#### S: Bu özelliği bir PDF belgesinde sunumlar oluşturmak için kullanabilir miyim?
 
-A: Yes, you can use this feature to create presentation-like experiences within a PDF document, guiding users through different sections or topics.
+C: Evet, bu özelliği bir PDF belgesinde sunum benzeri deneyimler oluşturmak ve kullanıcılara farklı bölümler veya konular boyunca rehberlik etmek için kullanabilirsiniz.
 
-#### Q: Can I customize other aspects of the initial view, such as page layout?
+#### S: İlk görünümün sayfa düzeni gibi diğer yönlerini özelleştirebilir miyim?
 
-A: Yes, Aspose.PDF for .NET provides properties to customize other aspects of the initial view, including page layout, page mode, and more.
+C: Evet, Aspose.PDF for .NET, sayfa düzeni, sayfa modu ve daha fazlası dahil olmak üzere ilk görünümün diğer yönlerini özelleştirmek için özellikler sağlar.
 
-#### Q: How can I test if the specified target page and zoom factor are working as intended?
+#### S: Belirtilen hedef sayfanın ve yakınlaştırma faktörünün amaçlandığı gibi çalışıp çalışmadığını nasıl test edebilirim?
 
-A: After applying the provided code to specify the target page and zoom factor, open the modified PDF file and verify that it opens with the correct page and zoom level.
+C: Hedef sayfayı ve yakınlaştırma faktörünü belirlemek için sağlanan kodu uyguladıktan sonra, değiştirilen PDF dosyasını açın ve dosyanın doğru sayfa ve yakınlaştırma düzeyiyle açıldığını doğrulayın.

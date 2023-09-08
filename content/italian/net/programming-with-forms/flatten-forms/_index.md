@@ -1,33 +1,33 @@
 ---
-title: Flatten Forms In PDF Document
-linktitle: Flatten Forms In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Easily flatten forms in PDF document using Aspose.PDF for .NET.
+title: Appiattire i moduli nel documento PDF
+linktitle: Appiattire i moduli nel documento PDF
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Appiattisci facilmente i moduli nel documento PDF utilizzando Aspose.PDF per .NET.
 type: docs
 weight: 100
 url: /it/net/programming-with-forms/flatten-forms/
 ---
-In this tutorial, we will show you how to flatten forms using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+In questo tutorial, ti mostreremo come appiattire i moduli utilizzando Aspose.PDF per .NET. Spiegheremo il codice sorgente C# passo dopo passo per guidarti attraverso questo processo.
 
-## Step 1: Preparation
+## Passaggio 1: preparazione
 
-First, make sure you have imported the necessary libraries and set the path to the documents directory:
+Innanzitutto, assicurati di aver importato le librerie necessarie e di impostare il percorso della directory dei documenti:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load source PDF form
+## Passaggio 2: carica il modulo PDF di origine
 
-Load the source PDF form:
+Carica il modulo PDF di origine:
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 3: Flatten the forms
+## Passaggio 3: appiattire i moduli
 
-First check if there are any form fields in the document. If so, iterate through each field and apply flattening:
+Per prima cosa controlla se ci sono campi modulo nel documento. In tal caso, scorrere ciascun campo e applicare l'appiattimento:
 
 ```csharp
 if (doc.Form.Fields.Count() > 0)
@@ -39,22 +39,22 @@ item. Flatten();
 }
 ```
 
-## Step 4: Save the updated document
+## Passaggio 4: salva il documento aggiornato
 
-Save the updated PDF document:
+Salvare il documento PDF aggiornato:
 
 ```csharp
 dataDir = dataDir + "FlattenForms_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Flatten Forms using Aspose.PDF for .NET 
+### Codice sorgente di esempio per Flatten Forms utilizzando Aspose.PDF per .NET 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load source PDF form
+// Carica il modulo PDF di origine
 Document doc = new Document(dataDir + "input.pdf");
-// Flatten Forms
+// Forme appiattite
 if (doc.Form.Fields.Count() > 0)
 {
 	foreach (var item in doc.Form.Fields)
@@ -63,33 +63,33 @@ if (doc.Form.Fields.Count() > 0)
 	}
 }
 dataDir = dataDir + "FlattenForms_out.pdf";
-// Save the updated document
+// Salva il documento aggiornato
 doc.Save(dataDir);
 Console.WriteLine("\nForms flattened successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Conclusione
 
-In this tutorial, we learned how to flatten forms using Aspose.PDF for .NET. By following these steps, you can easily flatten forms in your PDF documents, making fields uneditable and merging annotations with document content.
+In questo tutorial, abbiamo imparato come appiattire i moduli utilizzando Aspose.PDF per .NET. Seguendo questi passaggi, puoi facilmente unire i moduli nei tuoi documenti PDF, rendendo i campi non modificabili e unendo le annotazioni al contenuto del documento.
 
-### FAQ's
+### Domande frequenti
 
-#### Q: What does "flattening forms" mean in Aspose.PDF for .NET?
+#### D: Cosa significa "appiattimento di moduli" in Aspose.PDF per .NET?
 
-A: Flattening forms in Aspose.PDF for .NET refers to the process of making form fields in a PDF document uneditable and merging annotations (such as form fields, annotations, and digital signatures) with the document's content. Once forms are flattened, users cannot modify the form fields, and the visual appearance of the form fields becomes a part of the static content of the PDF document.
+R: L'appiattimento dei moduli in Aspose.PDF per .NET si riferisce al processo di rendere non modificabili i campi modulo in un documento PDF e di unire annotazioni (come campi modulo, annotazioni e firme digitali) con il contenuto del documento. Una volta appiattiti i moduli, gli utenti non possono modificare i campi modulo e l'aspetto visivo dei campi modulo diventa parte del contenuto statico del documento PDF.
 
-#### Q: Can I reverse the flattening process and make the form fields editable again?
+#### D: Posso invertire il processo di appiattimento e rendere nuovamente modificabili i campi del modulo?
 
-A: No, once the form fields are flattened, the process is irreversible using Aspose.PDF for .NET. Flattening permanently merges the form fields' appearance with the PDF's content, and the individual form field elements are no longer accessible or editable.
+R: No, una volta appiattiti i campi del modulo, il processo è irreversibile utilizzando Aspose.PDF per .NET. L'appiattimento unisce in modo permanente l'aspetto dei campi modulo con il contenuto del PDF e i singoli elementi dei campi modulo non sono più accessibili o modificabili.
 
-#### Q: When should I flatten forms in a PDF document?
+#### D: Quando devo unire i moduli in un documento PDF?
 
-A: Flattening forms is useful when you want to preserve the visual appearance of form fields and annotations in a PDF document while preventing users from modifying the data. This is commonly done when you want to share a PDF document with pre-filled form data or annotations that should not be altered by the recipients.
+R: L'appiattimento dei moduli è utile quando si desidera preservare l'aspetto visivo dei campi modulo e delle annotazioni in un documento PDF impedendo al tempo stesso agli utenti di modificare i dati. Questo viene comunemente fatto quando si desidera condividere un documento PDF con dati di moduli precompilati o annotazioni che non devono essere modificate dai destinatari.
 
-#### Q: Will flattening forms affect other annotations, such as digital signatures?
+#### D: L'appiattimento dei moduli avrà effetto su altre annotazioni, come le firme digitali?
 
-A: Yes, flattening forms will merge all annotations, including digital signatures, with the PDF's content. Once the forms are flattened, any existing digital signatures will become a permanent part of the document, and users cannot modify or remove them.
+R: Sì, la conversione dei moduli unirà tutte le annotazioni, comprese le firme digitali, al contenuto del PDF. Una volta appiattiti i moduli, eventuali firme digitali esistenti diventeranno parte permanente del documento e gli utenti non potranno modificarle o rimuoverle.
 
-#### Q: Can I selectively flatten specific form fields and leave others editable?
+#### D: Posso appiattire selettivamente campi modulo specifici e lasciare gli altri modificabili?
 
-A: Yes, you can selectively flatten specific form fields in a PDF document while leaving others editable. Instead of using the code to flatten all form fields, you can choose to flatten only the desired form fields based on their names or other criteria.
+R: Sì, puoi unire selettivamente campi modulo specifici in un documento PDF lasciandone altri modificabili. Invece di utilizzare il codice per unire tutti i campi del modulo, puoi scegliere di unire solo i campi del modulo desiderati in base ai loro nomi o ad altri criteri.

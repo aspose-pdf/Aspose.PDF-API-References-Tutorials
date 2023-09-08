@@ -1,41 +1,41 @@
 ---
-title: Replaceable Symbols In Header Footer
-linktitle: Replaceable Symbols In Header Footer
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use replaceable symbols in the header and footer of a PDF document using Aspose.PDF for .NET.
+title: Utbytbara symboler i sidhuvudet
+linktitle: Utbytbara symboler i sidhuvudet
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du använder utbytbara symboler i sidhuvudet och sidfoten i ett PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 320
 url: /sv/net/programming-with-text/replaceable-symbols-in-header-footer/
 ---
-In this tutorial, we will explain how to use replaceable symbols in the header and footer of a PDF document using the Aspose.PDF library for .NET. We will go through the step-by-step process of creating a PDF, setting margins, adding header and footer with replaceable symbols, and saving the PDF using the provided C# source code.
+I den här handledningen kommer vi att förklara hur man använder utbytbara symboler i sidhuvudet och sidfoten i ett PDF-dokument med hjälp av Aspose.PDF-biblioteket för .NET. Vi kommer att gå igenom steg-för-steg-processen för att skapa en PDF, ställa in marginaler, lägga till sidhuvud och sidfot med utbytbara symboler och spara PDF:en med den medföljande C#-källkoden.
 
-## Prerequisites
+## Förutsättningar
 
-Before you begin, ensure that you have the following:
+Innan du börjar, se till att du har följande:
 
-- The Aspose.PDF for .NET library installed.
-- A basic understanding of C# programming.
+- Aspose.PDF för .NET-biblioteket installerat.
+- En grundläggande förståelse för C#-programmering.
 
-## Step 1: Set up the Document Directory
+## Steg 1: Konfigurera dokumentkatalogen
 
-First, you need to set the path to the directory where you want to save the generated PDF file. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your desired directory.
+ Först måste du ställa in sökvägen till katalogen där du vill spara den genererade PDF-filen. Byta ut`"YOUR DOCUMENT DIRECTORY"` i`dataDir`variabel med sökvägen till din önskade katalog.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Create a PDF Document and Page
+## Steg 2: Skapa ett PDF-dokument och en sida
 
-Next, we create a new PDF document and add a page to it using the `Document` class and `Page` class from the Aspose.PDF library.
+ Därefter skapar vi ett nytt PDF-dokument och lägger till en sida till det med hjälp av`Document` klass och`Page` klass från Aspose.PDF-biblioteket.
 
 ```csharp
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Step 3: Set Margins
+## Steg 3: Ställ in marginaler
 
-We set the margins for the page using the `MarginInfo` class. Adjust the margin values according to your requirements.
+ Vi ställer in marginalerna för sidan med hjälp av`MarginInfo`klass. Justera marginalvärdena enligt dina krav.
 
 ```csharp
 MarginInfo marginInfo = new MarginInfo();
@@ -46,9 +46,9 @@ marginInfo.Right = 50;
 page.PageInfo.Margin = marginInfo;
 ```
 
-## Step 4: Add Header with Replaceable Symbols
+## Steg 4: Lägg till rubrik med utbytbara symboler
 
-We create a `HeaderFooter` object for the page and add a `TextFragment` with replaceable symbols to it.
+ Vi skapar en`HeaderFooter` objekt för sidan och lägg till en`TextFragment` med utbytbara symboler.
 
 ```csharp
 HeaderFooter hfFirst = new HeaderFooter();
@@ -57,7 +57,7 @@ hfFirst.Margin.Left = 50;
 hfFirst.Margin.Right = 50;
 
 TextFragment t1 = new TextFragment("report title");
-// Set text properties if desired
+// Ställ in textegenskaper om så önskas
 t1.TextState.Font = FontRepository.FindFont("Arial");
 t1.TextState.FontSize = 16;
 t1.TextState.ForegroundColor = Aspose.Pdf.Color.Black;
@@ -67,12 +67,12 @@ t1.TextState.LineSpacing = 5f;
 
 hfFirst.Paragraphs.Add(t1);
 
-// Add more TextFragments or customize as needed
+// Lägg till fler textfragment eller anpassa efter behov
 ```
 
-## Step 5: Add Footer with Replaceable Symbols
+## Steg 5: Lägg till sidfot med utbytbara symboler
 
-Similarly, we create a `HeaderFooter` object for the page footer and add `TextFragment` objects with replaceable symbols to it.
+ På samma sätt skapar vi en`HeaderFooter` objekt för sidfoten och lägg till`TextFragment` föremål med utbytbara symboler.
 
 ```csharp
 HeaderFooter hfFoot = new HeaderFooter();
@@ -84,14 +84,14 @@ TextFragment t3 = new TextFragment("Generated on test date");
 TextFragment t4 = new TextFragment("report name ");
 TextFragment t5 = new TextFragment("Page $p of $P");
 
-// Add more TextFragments or customize as needed
+// Lägg till fler textfragment eller anpassa efter behov
 
 hfFoot.Paragraphs.Add(tab2);
 ```
 
-## Step 6: Save the PDF Document
+## Steg 6: Spara PDF-dokumentet
 
-Finally, we save the PDF document to the specified output file.
+Slutligen sparar vi PDF-dokumentet till den angivna utdatafilen.
 
 ```csharp
 dataDir = dataDir + "ReplaceableSymbolsInHeaderFooter_out.pdf";
@@ -99,9 +99,9 @@ doc.Save(dataDir);
 Console.WriteLine("\nReplaceable symbols replaced successfully in the header and footer.\nFile saved at " + dataDir);
 ```
 
-### Sample source code for Replaceable Symbols In Header Footer using Aspose.PDF for .NET 
+### Exempel på källkod för utbytbara symboler i sidhuvud med Aspose.PDF för .NET 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 Page page = doc.Pages.Add();
@@ -110,13 +110,13 @@ marginInfo.Top = 90;
 marginInfo.Bottom = 50;
 marginInfo.Left = 50;
 marginInfo.Right = 50;
-// Assign the marginInfo instance to Margin property of sec1.PageInfo
+// Tilldela marginInfo-instansen Margin-egenskapen för sec1.PageInfo
 page.PageInfo.Margin = marginInfo;
 HeaderFooter hfFirst = new HeaderFooter();
 page.Header = hfFirst;
 hfFirst.Margin.Left = 50;
 hfFirst.Margin.Right = 50;
-// Instantiate a Text paragraph that will store the content to show as header
+// Instantiera ett textstycke som lagrar innehållet för att visas som rubrik
 TextFragment t1 = new TextFragment("report title");
 t1.TextState.Font = FontRepository.FindFont("Arial");
 t1.TextState.FontSize = 16;
@@ -132,48 +132,48 @@ t2.TextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 t2.TextState.LineSpacing = 5f;
 t2.TextState.FontSize = 12;
 hfFirst.Paragraphs.Add(t2);
-// Create a HeaderFooter object for the section
+// Skapa ett HeaderFooter-objekt för avsnittet
 HeaderFooter hfFoot = new HeaderFooter();
-// Set the HeaderFooter object to odd & even footer
+// Ställ in HeaderFooter-objektet till udda och jämna sidfot
 page.Footer = hfFoot;
 hfFoot.Margin.Left = 50;
 hfFoot.Margin.Right = 50;
-// Add a text paragraph containing current page number of total number of pages
+// Lägg till ett textstycke som innehåller aktuellt sidnummer av totalt antal sidor
 TextFragment t3 = new TextFragment("Generated on test date");
 TextFragment t4 = new TextFragment("report name ");
 TextFragment t5 = new TextFragment("Page $p of $P");
-// Instantiate a table object
+// Instantiera ett tabellobjekt
 Table tab2 = new Table();
-// Add the table in paragraphs collection of the desired section
+// Lägg till tabellen i styckesamlingen av önskat avsnitt
 hfFoot.Paragraphs.Add(tab2);
-// Set with column widths of the table
+// Ställ in med tabellens kolumnbredder
 tab2.ColumnWidths = "165 172 165";
-// Create rows in the table and then cells in the rows
+// Skapa rader i tabellen och sedan celler i raderna
 Row row3 = tab2.Rows.Add();
 row3.Cells.Add();
 row3.Cells.Add();
 row3.Cells.Add();
-// Set the vertical allignment of the text as center alligned
+// Ställ in den vertikala justeringen av texten som mittjusterad
 row3.Cells[0].Alignment = Aspose.Pdf.HorizontalAlignment.Left;
 row3.Cells[1].Alignment = Aspose.Pdf.HorizontalAlignment.Center;
 row3.Cells[2].Alignment = Aspose.Pdf.HorizontalAlignment.Right;
 row3.Cells[0].Paragraphs.Add(t3);
 row3.Cells[1].Paragraphs.Add(t4);
 row3.Cells[2].Paragraphs.Add(t5);
-// Sec1.Paragraphs.Add(New Text("Aspose.Total for Java is a compilation of every Java component offered by Aspose. It is compiled on a#$NL" + "daily basis to ensure it contains the most up to date versions of each of our Java components. #$NL " + "Using Aspose.Total for Java developers can create a wide range of applications. #$NL #$NL #$NP" + "Aspose.Total for Java is a compilation of every Java component offered by Aspose. It is compiled on a#$NL" + "daily basis to ensure it contains the most up to date versions of each of our Java components. #$NL " + "Using Aspose.Total for Java developers can create a wide range of applications. #$NL #$NL #$NP" + "Aspose.Total for Java is a compilation of every Java component offered by Aspose. It is compiled on a#$NL" + "daily basis to ensure it contains the most up to date versions of each of our Java components. #$NL " + "Using Aspose.Total for Java developers can create a wide range of applications. #$NL #$NL"))
+//Sec1.Paragraphs.Add(New Text("Aspose.Total för Java är en sammanställning av alla Java-komponenter som erbjuds av Aspose. Den kompileras på en #$NL" + "daglig basis för att säkerställa att den innehåller de mest uppdaterade versionerna av varje av våra Java-komponenter. #$NL " + "Genom att använda Aspose.Total för Java kan utvecklare skapa ett brett utbud av applikationer. #$NL #$NL #$NP" + "Aspose.Total för Java är en sammanställning av alla Java-komponenter erbjuds av Aspose. Den sammanställs dagligen #$NL" + "för att säkerställa att den innehåller de senaste versionerna av var och en av våra Java-komponenter. #$NL " + "Genom att använda Aspose.Total för Java-utvecklare kan du skapa en bred utbud av applikationer. #$NL #$NL #$NP" + "Aspose.Total för Java är en sammanställning av alla Java-komponenter som erbjuds av Aspose. Den kompileras på en#$NL" + "daglig basis för att säkerställa att den innehåller det mesta uppdaterade versioner av var och en av våra Java-komponenter. #$NL " + "Att använda Aspose.Total för Java kan utvecklare skapa ett brett utbud av applikationer. #$NL #$NL"))
 Table table = new Table();
 table.ColumnWidths = "33% 33% 34%";
 table.DefaultCellPadding = new MarginInfo();
 table.DefaultCellPadding.Top = 10;
 table.DefaultCellPadding.Bottom = 10;
-// Add the table in paragraphs collection of the desired section
+// Lägg till tabellen i styckesamlingen av önskat avsnitt
 page.Paragraphs.Add(table);
-// Set default cell border using BorderInfo object
+// Ställ in standardcellkant med hjälp av BorderInfo-objektet
 table.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1f);
-// Set table border using another customized BorderInfo object
+// Ställ in tabellkanten med ett annat anpassat BorderInfo-objekt
 table.Border = new BorderInfo(BorderSide.All, 1f);
 table.RepeatingRowsCount = 1;
-// Create rows in the table and then cells in the rows
+// Skapa rader i tabellen och sedan celler i raderna
 Row row1 = table.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
@@ -201,54 +201,54 @@ doc.Save(dataDir);
 Console.WriteLine("\nSymbols replaced successfully in header and footer.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Slutsats
 
-In this tutorial, you have learned how to use replaceable symbols in the header and footer of a PDF document using the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can create a PDF, set margins, add header and footer with replaceable symbols, and save the PDF.
+den här handledningen har du lärt dig hur du använder utbytbara symboler i sidhuvudet och sidfoten i ett PDF-dokument med Aspose.PDF-biblioteket för .NET. Genom att följa den steg-för-steg-guide och exekvera den medföljande C#-koden kan du skapa en PDF, ställa in marginaler, lägga till sidhuvud och sidfot med utbytbara symboler och spara PDF:en.
 
 ### FAQ's
 
-#### Q: What is the purpose of the "Replaceable Symbols In Header Footer" tutorial?
+#### F: Vad är syftet med handledningen "Utbytbara symboler i sidhuvudet"?
 
-A: The "Replaceable Symbols In Header Footer" tutorial aims to guide you through the process of using the Aspose.PDF library for .NET to add replaceable symbols to the header and footer of a PDF document. Replaceable symbols allow you to dynamically replace specific placeholders with actual values when generating the PDF.
+S: Handledningen "Utbytbara symboler i sidhuvudet" syftar till att guida dig genom processen att använda Aspose.PDF-biblioteket för .NET för att lägga till utbytbara symboler i sidhuvudet och sidfoten i ett PDF-dokument. Utbytbara symboler gör att du dynamiskt kan ersätta specifika platshållare med faktiska värden när du genererar PDF-filen.
 
-#### Q: What are replaceable symbols in the context of a PDF header and footer?
+#### F: Vad är utbytbara symboler i ett PDF-huvud och sidfot?
 
-A: Replaceable symbols are placeholders that you can insert into the header and footer of a PDF document. These symbols act as dynamic placeholders for values that can be filled in at runtime, such as page numbers, dates, and custom information.
+S: Utbytbara symboler är platshållare som du kan infoga i sidhuvudet och sidfoten i ett PDF-dokument. Dessa symboler fungerar som dynamiska platshållare för värden som kan fyllas i vid körning, såsom sidnummer, datum och anpassad information.
 
-#### Q: Why would I want to use replaceable symbols in a PDF header and footer?
+#### F: Varför skulle jag vilja använda utbytbara symboler i en PDF-huvud och sidfot?
 
-A: Replaceable symbols in the header and footer are useful when you want to include dynamic information in your PDF documents, such as page numbers, dates, or other variable data that may change when the document is generated.
+S: Utbytbara symboler i sidhuvudet och sidfoten är användbara när du vill inkludera dynamisk information i dina PDF-dokument, som sidnummer, datum eller annan variabel data som kan ändras när dokumentet genereras.
 
-#### Q: How can I set the margins for the PDF page?
+#### F: Hur kan jag ställa in marginalerna för PDF-sidan?
 
-A: You can set the margins for the PDF page using the `MarginInfo` class and assigning it to the `Margin` property of the `PageInfo` of the page. Adjust the margin values as needed.
+ S: Du kan ställa in marginalerna för PDF-sidan med hjälp av`MarginInfo` klass och tilldela den till`Margin` egendom av`PageInfo` av sidan. Justera marginalvärdena efter behov.
 
-#### Q: How do I add replaceable symbols to the header and footer?
+#### F: Hur lägger jag till utbytbara symboler i sidhuvudet och sidfoten?
 
-A: You can add replaceable symbols by creating a `HeaderFooter` object for the header and footer of the page. Then, you can add `TextFragment` objects with the desired text, including replaceable symbols, to the `Paragraphs` collection of the `HeaderFooter` object.
+ S: Du kan lägga till utbytbara symboler genom att skapa en`HeaderFooter` objekt för sidhuvudet och sidfoten på sidan. Sedan kan du lägga till`TextFragment`objekt med önskad text, inklusive utbytbara symboler, till`Paragraphs` samling av`HeaderFooter` objekt.
 
-#### Q: Can I customize the appearance of the replaceable symbols?
+#### F: Kan jag anpassa utseendet på de utbytbara symbolerna?
 
-A: Yes, you can customize the appearance of the replaceable symbols by modifying the properties of the `TextFragment` objects that contain the symbols. You can set properties such as font, font size, color, alignment, and line spacing.
+ S: Ja, du kan anpassa utseendet på de utbytbara symbolerna genom att ändra egenskaperna för`TextFragment` objekt som innehåller symbolerna. Du kan ställa in egenskaper som teckensnitt, teckenstorlek, färg, justering och radavstånd.
 
-#### Q: What kind of replaceable symbols can I use?
+#### F: Vilken typ av utbytbara symboler kan jag använda?
 
-A: You can use a variety of replaceable symbols, such as:
+S: Du kan använda en mängd olika utbytbara symboler, som:
 
-- `$p`: Current page number.
-- `$P`: Total number of pages.
-- `$d`: Current date.
-- `$t`: Current time.
-- Custom placeholders you define.
+- `$p`: Aktuellt sidnummer.
+- `$P`: Totalt antal sidor.
+- `$d`: Dagens datum.
+- `$t`: Aktuell tid.
+- Anpassade platshållare du definierar.
 
-#### Q: Can I include other text and formatting around the replaceable symbols?
+#### F: Kan jag inkludera annan text och formatering runt de utbytbara symbolerna?
 
-A: Yes, you can include other text and formatting around the replaceable symbols within the `TextFragment` objects. This allows you to create more complex headers and footers that incorporate dynamic and static content.
+ S: Ja, du kan inkludera annan text och formatering runt de utbytbara symbolerna i`TextFragment` föremål. Detta gör att du kan skapa mer komplexa sidhuvuden och sidfötter som innehåller dynamiskt och statiskt innehåll.
 
-#### Q: How can I save the generated PDF document?
+#### F: Hur kan jag spara det genererade PDF-dokumentet?
 
-A: To save the generated PDF document, you can use the `Save` method of the `Document` class. Provide the desired output file path and name as an argument.
+ S: För att spara det genererade PDF-dokumentet kan du använda`Save` metod för`Document`klass. Ange önskad sökväg och namn för utdatafilen som ett argument.
 
-#### Q: Is a valid Aspose License required for this tutorial?
+#### F: Krävs en giltig Aspose-licens för denna handledning?
 
-A: Yes, a valid Aspose License is required to execute the code successfully in this tutorial. You can obtain a full license or a 30-day temporary license from the Aspose website.
+S: Ja, en giltig Aspose-licens krävs för att exekvera koden framgångsrikt i denna handledning. Du kan få en fullständig licens eller en 30-dagars tillfällig licens från Asposes webbplats.

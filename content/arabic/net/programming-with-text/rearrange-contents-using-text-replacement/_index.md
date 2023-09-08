@@ -1,40 +1,40 @@
 ---
-title: Rearrange Contents Using Text Replacement
-linktitle: Rearrange Contents Using Text Replacement
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to rearrange contents in a PDF document using text replacement with Aspose.PDF for .NET.
+title: إعادة ترتيب المحتويات باستخدام استبدال النص
+linktitle: إعادة ترتيب المحتويات باستخدام استبدال النص
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية إعادة ترتيب المحتويات في مستند PDF باستخدام استبدال النص باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 270
 url: /ar/net/programming-with-text/rearrange-contents-using-text-replacement/
 ---
-In this tutorial, we will explain how to rearrange contents in a PDF document by using text replacement with the Aspose.PDF library for .NET. We will go through the step-by-step process of loading a PDF, searching for specific text fragments, replacing the text, and saving the modified PDF using the provided C# source code.
+في هذا البرنامج التعليمي، سنشرح كيفية إعادة ترتيب المحتويات في مستند PDF باستخدام استبدال النص مع مكتبة Aspose.PDF لـ .NET. سنتابع عملية تحميل ملف PDF خطوة بخطوة، والبحث عن أجزاء نصية محددة، واستبدال النص، وحفظ ملف PDF المعدل باستخدام كود مصدر C# المقدم.
 
-## Requirements
+## متطلبات
 
-Before you begin, ensure that you have the following:
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- The Aspose.PDF for .NET library installed.
-- A basic understanding of C# programming.
+- تم تثبيت Aspose.PDF لمكتبة .NET.
+- فهم أساسي للبرمجة C#.
 
-## Step 1: Set up the Document Directory
+## الخطوة 1: إعداد دليل المستندات
 
-First, you need to set the path to the directory where your PDF files are located. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your PDF files.
+ أولاً، تحتاج إلى تعيين المسار إلى الدليل الذي توجد به ملفات PDF الخاصة بك. يستبدل`"YOUR DOCUMENT DIRECTORY"` في ال`dataDir` متغير مع المسار إلى ملفات PDF الخاصة بك.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load the Source PDF
+## الخطوة 2: قم بتحميل ملف PDF المصدر
 
-Next, we load the source PDF document using the `Document` class from the Aspose.PDF library.
+ بعد ذلك، نقوم بتحميل مستند PDF المصدر باستخدام الملف`Document` فئة من مكتبة Aspose.PDF.
 
 ```csharp
 Document doc = new Document(dataDir + "ExtractTextPage.pdf");
 ```
 
-## Step 3: Search and Replace Text Fragments
+## الخطوة 3: البحث عن أجزاء النص واستبدالها
 
-We create a `TextFragmentAbsorber` object with a regular expression to search for specific text fragments. Then, we iterate through the text fragments, customize their font, size, color, and replace the text.
+ نقوم بإنشاء أ`TextFragmentAbsorber` كائن بتعبير عادي للبحث عن أجزاء نصية محددة. بعد ذلك، نقوم بمراجعة أجزاء النص، وتخصيص الخط والحجم واللون واستبدال النص.
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("[TextFragmentAbsorber,companyname,Textbox,50]");
@@ -49,9 +49,9 @@ foreach(TextFragment textFragment in textFragmentAbsorber.TextFragments)
 }
 ```
 
-## Step 4: Save the Modified PDF
+## الخطوة 4: احفظ ملف PDF المعدل
 
-Finally, we save the modified PDF document to the specified output file.
+وأخيرًا، نقوم بحفظ مستند PDF المعدل في ملف الإخراج المحدد.
 
 ```csharp
 dataDir = dataDir + "RearrangeContentsUsingTextReplacement_out.pdf";
@@ -59,30 +59,30 @@ doc.Save(dataDir);
 Console.WriteLine("\nContents rearranged successfully using text replacement.\nFile saved at " + dataDir);
 ```
 
-### Sample source code for Rearrange Contents Using Text Replacement using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لإعادة ترتيب المحتويات باستخدام استبدال النص باستخدام Aspose.PDF لـ .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// المسار إلى دليل المستندات.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Load source PDF file
+	// تحميل ملف PDF المصدر
 	Document doc = new Document(dataDir + "ExtractTextPage.pdf");
-	// Create TextFragment Absorber object with regular expression
+	// إنشاء كائن TextFragment Absorter بتعبير عادي
 	TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("[TextFragmentAbsorber,companyname,Textbox,50]");
 	doc.Pages.Accept(textFragmentAbsorber);
-	// Replace each TextFragment
+	// استبدل كل TextFragment
 	foreach (TextFragment textFragment in textFragmentAbsorber.TextFragments)
 	{
-		// Set font of text fragment being replaced
+		// تعيين خط جزء النص الذي سيتم استبداله
 		textFragment.TextState.Font = FontRepository.FindFont("Arial");
-		// Set font size
+		// ضبط حجم الخط
 		textFragment.TextState.FontSize = 12;
 		textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Navy;
-		// Replace the text with larger string than placeholder
+		// استبدل النص بسلسلة أكبر من العنصر النائب
 		textFragment.Text = "This is a Larger String for the Testing of this issue";
 	}
 	dataDir = dataDir + "RearrangeContentsUsingTextReplacement_out.pdf";
-	// Save resultant PDF
+	// حفظ ملف PDF الناتج
 	doc.Save(dataDir);
 	Console.WriteLine("\nContents rearranged successfully using text replacement.\nFile saved at " + dataDir);
 }
@@ -92,46 +92,46 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, you have learned how to rearrange contents in a PDF document by using text replacement with the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can search for specific text fragments, customize their appearance, and replace the text in a PDF document.
+في هذا البرنامج التعليمي، تعلمت كيفية إعادة ترتيب المحتويات في مستند PDF باستخدام استبدال النص مع مكتبة Aspose.PDF لـ .NET. باتباع الدليل التفصيلي وتنفيذ كود C# المقدم، يمكنك البحث عن أجزاء نصية محددة وتخصيص مظهرها واستبدال النص في مستند PDF.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of the "Rearrange Contents Using Text Replacement" tutorial?
+#### س: ما هو الغرض من البرنامج التعليمي "إعادة ترتيب المحتويات باستخدام استبدال النص"؟
 
-A: The "Rearrange Contents Using Text Replacement" tutorial demonstrates how to use the Aspose.PDF library for .NET to rearrange contents in a PDF document by performing text replacement. The tutorial provides a step-by-step guide and C# source code to help you load a PDF, search for specific text fragments, replace the text, and save the modified PDF.
+ج: يوضح البرنامج التعليمي "إعادة ترتيب المحتويات باستخدام استبدال النص" كيفية استخدام مكتبة Aspose.PDF لـ .NET لإعادة ترتيب المحتويات في مستند PDF عن طريق إجراء استبدال النص. يوفر البرنامج التعليمي دليلاً خطوة بخطوة وكود مصدر C# لمساعدتك في تحميل ملف PDF والبحث عن أجزاء نصية محددة واستبدال النص وحفظ ملف PDF المعدل.
 
-#### Q: Why would I want to rearrange contents in a PDF document?
+#### س: لماذا أرغب في إعادة ترتيب المحتويات في مستند PDF؟
 
-A: Rearranging contents in a PDF document can be useful for various purposes, such as updating text, reformatting layout, or making corrections. This technique allows you to dynamically modify the content of a PDF while preserving its structure and appearance.
+ج: يمكن أن تكون إعادة ترتيب المحتويات في مستند PDF مفيدة لأغراض متعددة، مثل تحديث النص أو إعادة تنسيق التخطيط أو إجراء التصحيحات. تسمح لك هذه التقنية بتعديل محتوى ملف PDF ديناميكيًا مع الحفاظ على بنيته ومظهره.
 
-#### Q: How do I set up the document directory?
+#### س: كيف أقوم بإعداد دليل المستندات؟
 
-A: To set up the document directory:
+ج: لإعداد دليل المستندات:
 
-1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where your PDF files are located.
+1.  يستبدل`"YOUR DOCUMENT DIRECTORY"` في ال`dataDir` متغير مع المسار إلى الدليل حيث توجد ملفات PDF الخاصة بك.
 
-#### Q: How do I perform text replacement in a PDF document?
+#### س: كيف يمكنني إجراء استبدال النص في مستند PDF؟
 
-A: The tutorial guides you through the process of searching for specific text fragments in a PDF using the `TextFragmentAbsorber` class. It demonstrates how to customize the appearance of the text fragments and replace their content.
+ ج: يرشدك البرنامج التعليمي خلال عملية البحث عن أجزاء نصية محددة في ملف PDF باستخدام الملف`TextFragmentAbsorber`فصل. ويوضح كيفية تخصيص مظهر أجزاء النص واستبدال محتواها.
 
-#### Q: Can I customize the font, size, and color of the replaced text?
+#### س: هل يمكنني تخصيص الخط والحجم واللون للنص المستبدل؟
 
-A: Yes, you can customize the font, size, and color of the replaced text by modifying the `TextState` properties of the `TextFragment` object. The tutorial provides an example of how to set the font, font size, and foreground color of the text.
+ ج: نعم، يمكنك تخصيص الخط والحجم واللون للنص المستبدل عن طريق تعديل`TextState` خصائص`TextFragment` هدف. يوفر البرنامج التعليمي مثالاً لكيفية تعيين الخط وحجم الخط ولون المقدمة للنص.
 
-#### Q: How do I save the modified PDF document?
+#### س: كيف يمكنني حفظ مستند PDF المعدل؟
 
-A: After performing text replacement and customizing the text fragments, you can save the modified PDF document using the `Save` method of the `Document` class. Provide the desired output file path as an argument to the `Save` method.
+ ج: بعد إجراء استبدال النص وتخصيص أجزاء النص، يمكنك حفظ مستند PDF المعدل باستخدام الملف`Save` طريقة`Document` فصل. قم بتوفير مسار ملف الإخراج المطلوب كوسيطة لملف`Save` طريقة.
 
-#### Q: What is the expected output of this tutorial?
+#### س: ما هو الناتج المتوقع من هذا البرنامج التعليمي؟
 
-A: By following the tutorial and executing the provided C# code, you will generate a modified PDF document where specific text fragments have been replaced and customized according to your specifications.
+ج: باتباع البرنامج التعليمي وتنفيذ كود C# المقدم، سوف تقوم بإنشاء مستند PDF معدل حيث تم استبدال أجزاء نصية محددة وتخصيصها وفقًا لمواصفاتك.
 
-#### Q: Can I use different regular expressions for text search?
+#### س: هل يمكنني استخدام تعبيرات عادية مختلفة للبحث عن النص؟
 
-A: Yes, you can use different regular expressions to search for specific text fragments in the PDF document. The example provided in the tutorial demonstrates how to create a `TextFragmentAbsorber` object with a specific regular expression to search for and replace text.
+ ج: نعم، يمكنك استخدام تعبيرات عادية مختلفة للبحث عن أجزاء نصية محددة في مستند PDF. يوضح المثال الموجود في البرنامج التعليمي كيفية إنشاء ملف`TextFragmentAbsorber`كائن بتعبير عادي محدد للبحث عن النص واستبداله.
 
-#### Q: Is a valid Aspose License required for this tutorial?
+#### س: هل يلزم وجود ترخيص Aspose صالح لهذا البرنامج التعليمي؟
 
-A: Yes, a valid Aspose License is required for this tutorial to work correctly. You can purchase a full license or obtain a 30-day temporary license from the Aspose website.
+ج: نعم، يلزم وجود ترخيص Aspose صالح حتى يعمل هذا البرنامج التعليمي بشكل صحيح. يمكنك شراء ترخيص كامل أو الحصول على ترخيص مؤقت لمدة 30 يومًا من موقع Aspose.

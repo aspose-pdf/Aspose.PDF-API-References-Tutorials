@@ -1,56 +1,56 @@
 ---
-title: Change Password In PDF File
-linktitle: Change Password In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to change the password in PDF file using Aspose.PDF for .NET.
+title: تغيير كلمة المرور في ملف PDF
+linktitle: تغيير كلمة المرور في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية تغيير كلمة المرور في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 10
 url: /ar/net/programming-with-security-and-signatures/change-password/
 ---
-In this tutorial, we will guide you through the process of changing the password in PDF file using Aspose.PDF for .NET. The library allows you to open an existing PDF file, modify its password, and save the updated version. This feature comes in handy when you need to secure your PDF documents by changing the password.
+في هذا البرنامج التعليمي، سنرشدك خلال عملية تغيير كلمة المرور في ملف PDF باستخدام Aspose.PDF لـ .NET. تتيح لك المكتبة فتح ملف PDF موجود وتعديل كلمة المرور الخاصة به وحفظ النسخة المحدثة. تكون هذه الميزة مفيدة عندما تحتاج إلى تأمين مستندات PDF الخاصة بك عن طريق تغيير كلمة المرور.
 
-## Step 1: Requirements
+## الخطوة 1: المتطلبات
 
-Before we begin, make sure you have the following prerequisites:
+قبل أن نبدأ، تأكد من توفر المتطلبات الأساسية التالية:
 
-- Basic knowledge of C# programming language
-- Visual Studio installed on your machine
-- Aspose.PDF for .NET library installed
+- المعرفة الأساسية بلغة البرمجة C#
+- تم تثبيت Visual Studio على جهازك
+- تم تثبيت Aspose.PDF لمكتبة .NET
 
-## Step 2: Setting up the Environment
+## الخطوة 2: إعداد البيئة
 
-To get started, follow these steps to set up your development environment:
+للبدء، اتبع الخطوات التالية لإعداد بيئة التطوير الخاصة بك:
 
-1. Open Visual Studio and create a new C# project.
-2. Install the Aspose.PDF for .NET library using NuGet Package Manager.
-3. Import the required namespaces into your code file:
+1. افتح Visual Studio وقم بإنشاء مشروع C# جديد.
+2. قم بتثبيت Aspose.PDF لمكتبة .NET باستخدام NuGet Package Manager.
+3. قم باستيراد مساحات الأسماء المطلوبة إلى ملف التعليمات البرمجية الخاص بك:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 3: Loading the PDF Document
+## الخطوة 3: تحميل وثيقة PDF
 
-The first step is to load the PDF document that you want to change the password for. In this example, we assume that you have a PDF file named "ChangePassword.pdf" in the specified directory.
+الخطوة الأولى هي تحميل مستند PDF الذي تريد تغيير كلمة المرور الخاصة به. في هذا المثال، نفترض أن لديك ملف PDF باسم "ChangePassword.pdf" في الدليل المحدد.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document document = new Document(dataDir + "ChangePassword.pdf", "owner");
 ```
 
-## Step 4: Changing the Password
+## الخطوة 4: تغيير كلمة المرور
 
-Once you have loaded the PDF document, you can change its password using the `ChangePasswords` method. The method requires three parameters: the current owner password, the new user password, and the new owner password.
+ بمجرد قيامك بتحميل مستند PDF، يمكنك تغيير كلمة المرور الخاصة به باستخدام الزر`ChangePasswords` طريقة. تتطلب الطريقة ثلاثة معلمات: كلمة مرور المالك الحالي، وكلمة مرور المستخدم الجديدة، وكلمة مرور المالك الجديد.
 
 ```csharp
 document.ChangePasswords("owner", "newuser", "newowner");
 ```
 
-Make sure to replace the placeholders with the actual passwords you want to set.
+تأكد من استبدال العناصر النائبة بكلمات المرور الفعلية التي تريد تعيينها.
 
-## Step 5: Saving the Updated PDF
+## الخطوة 5: حفظ ملف PDF المحدث
 
-After changing the password, you need to save the updated PDF document. Specify the output file path and use the `Save` method to save the document.
+ بعد تغيير كلمة المرور، تحتاج إلى حفظ مستند PDF المحدث. حدد مسار ملف الإخراج واستخدم`Save` طريقة حفظ الوثيقة.
 
 ```csharp
 dataDir = dataDir + "ChangePassword_out.pdf";
@@ -58,56 +58,56 @@ document. Save(dataDir);
 Console.WriteLine("\nPDF file password changed successfully.\nFile saved at " + dataDir);
 ```
 
-The updated PDF will be saved at the specified location.
+سيتم حفظ ملف PDF المحدث في الموقع المحدد.
 
-### Sample source code for Change Password using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لتغيير كلمة المرور باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Open document
+// افتح المستند
 Document document = new Document(dataDir+ "ChangePassword.pdf", "owner");
-// Change password
+// تغيير كلمة المرور
 document.ChangePasswords("owner", "newuser", "newowner");
 dataDir = dataDir + "ChangePassword_out.pdf";
-// Save updated PDF
+// حفظ ملف PDF المحدث
 document.Save(dataDir);
 Console.WriteLine("\nPDF file password changed successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulations! You have successfully changed the password of a PDF document using Aspose.PDF for .NET. This tutorial covered the step-by-step process, from loading the document to saving the updated version. You can now use this feature to secure your PDF files with new passwords.
+تهانينا! لقد نجحت في تغيير كلمة المرور لمستند PDF باستخدام Aspose.PDF لـ .NET. يغطي هذا البرنامج التعليمي العملية خطوة بخطوة، بدءًا من تحميل المستند وحتى حفظ الإصدار المحدث. يمكنك الآن استخدام هذه الميزة لتأمين ملفات PDF الخاصة بك بكلمات مرور جديدة.
 
-### FAQ's for change password in PDF file
+### الأسئلة الشائعة لتغيير كلمة المرور في ملف PDF
 
-#### Q: What is the purpose of this tutorial?
+#### س: ما هو الغرض من هذا البرنامج التعليمي؟
 
-A: This tutorial aims to guide you through the process of changing the password in a PDF file using Aspose.PDF for .NET. The library allows you to modify the password of an existing PDF document, enhancing document security.
+ج: يهدف هذا البرنامج التعليمي إلى إرشادك خلال عملية تغيير كلمة المرور في ملف PDF باستخدام Aspose.PDF لـ .NET. تتيح لك المكتبة تعديل كلمة المرور الخاصة بمستند PDF موجود، مما يعزز أمان المستند.
 
-#### Q: What prerequisites are required before starting?
+#### س: ما هي المتطلبات الأساسية المطلوبة قبل البدء؟
 
-A: Before you begin, ensure you have a basic understanding of the C# programming language and have Visual Studio installed on your machine. Additionally, you need to have the Aspose.PDF for .NET library installed.
+ج: قبل أن تبدأ، تأكد من أن لديك الفهم الأساسي للغة البرمجة C# وأنك قمت بتثبيت Visual Studio على جهازك. بالإضافة إلى ذلك، تحتاج إلى تثبيت Aspose.PDF لمكتبة .NET.
 
-#### Q: How do I set up the development environment?
+#### س: كيف أقوم بإعداد بيئة التطوير؟
 
-A: Follow the provided steps to set up your development environment, including creating a new C# project in Visual Studio, installing the Aspose.PDF for .NET library using NuGet Package Manager, and importing the required namespaces.
+ج: اتبع الخطوات المتوفرة لإعداد بيئة التطوير الخاصة بك، بما في ذلك إنشاء مشروع C# جديد في Visual Studio، وتثبيت Aspose.PDF لمكتبة .NET باستخدام NuGet Package Manager، واستيراد مساحات الأسماء المطلوبة.
 
-#### Q: How do I load an existing PDF document?
+#### س: كيف يمكنني تحميل مستند PDF موجود؟
 
-A: Use the `Document` class to load the PDF document that you want to change the password for. Replace "ChangePassword.pdf" with the actual file name and provide the current owner password.
+ ج: استخدم`Document` class لتحميل مستند PDF الذي تريد تغيير كلمة المرور الخاصة به. استبدل "ChangePassword.pdf" باسم الملف الفعلي وقم بتوفير كلمة مرور المالك الحالي.
 
-#### Q: How can I change the password of the PDF document?
+#### س: كيف يمكنني تغيير كلمة المرور لمستند PDF؟
 
-A: Use the `ChangePasswords` method on the `Document` object, providing the current owner password, the new user password, and the new owner password as parameters.
+ ج: استخدم`ChangePasswords` الطريقة على`Document` كائن، وتوفير كلمة مرور المالك الحالي، وكلمة مرور المستخدم الجديدة، وكلمة مرور المالك الجديد كمعلمات.
 
-#### Q: Can I specify different passwords for users and owners?
+#### س: هل يمكنني تحديد كلمات مرور مختلفة للمستخدمين والمالكين؟
 
-A: Yes, the `ChangePasswords` method allows you to set different passwords for the user and owner. Replace the placeholders "newuser" and "newowner" with the desired passwords.
+ ج: نعم،`ChangePasswords`تتيح لك الطريقة تعيين كلمات مرور مختلفة للمستخدم والمالك. استبدل العنصرين النائبين "newuser" و"newowner" بكلمات المرور المطلوبة.
 
-#### Q: How do I save the updated PDF document?
+#### س: كيف يمكنني حفظ مستند PDF المحدث؟
 
-A: After changing the password, use the `Save` method on the `Document` object to save the updated PDF document. Specify the output file path where the updated PDF will be saved.
+ ج: بعد تغيير كلمة المرور، استخدم`Save` الطريقة على`Document` كائن لحفظ مستند PDF المحدث. حدد مسار ملف الإخراج حيث سيتم حفظ ملف PDF المحدث.
 
-#### Q: How can I ensure the security of my PDF files?
+#### س: كيف يمكنني ضمان أمان ملفات PDF الخاصة بي؟
 
-A: By changing the password of your PDF documents, you can enhance their security. Make sure to keep the passwords safe and share them only with authorized users.
+ج: من خلال تغيير كلمة المرور لمستندات PDF الخاصة بك، يمكنك تحسين أمانها. تأكد من الحفاظ على أمان كلمات المرور ومشاركتها مع المستخدمين المصرح لهم فقط.

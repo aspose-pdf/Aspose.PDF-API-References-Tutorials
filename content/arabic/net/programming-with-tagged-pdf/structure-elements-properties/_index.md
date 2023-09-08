@@ -1,61 +1,61 @@
 ---
-title: Structure Elements Properties In PDF File
-linktitle: Structure Elements Properties In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to working with structural element properties in PDF file with Aspose.PDF for .NET. Create information-rich structural elements.
+title: خصائص عناصر الهيكل في ملف PDF
+linktitle: خصائص عناصر الهيكل في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: دليل خطوة بخطوة للعمل مع خصائص العناصر الهيكلية في ملف PDF باستخدام Aspose.PDF لـ .NET. إنشاء عناصر هيكلية غنية بالمعلومات.
 type: docs
 weight: 150
 url: /ar/net/programming-with-tagged-pdf/structure-elements-properties/
 ---
-In this guide, we are going to show you how to work with structural element properties in PDF file using the Aspose.PDF library for .NET. Aspose.PDF is a powerful library that lets you programmatically create, manipulate, and convert PDF files.
+سنوضح لك في هذا الدليل كيفية التعامل مع خصائص العناصر الهيكلية في ملف PDF باستخدام مكتبة Aspose.PDF لـ .NET. Aspose.PDF هي مكتبة قوية تتيح لك إنشاء ملفات PDF ومعالجتها وتحويلها برمجيًا.
 
-Let's dive into the code and learn how to work with structure element properties in a PDF document using Aspose.PDF for .NET.
+دعنا نتعمق في التعليمات البرمجية ونتعلم كيفية العمل مع خصائص عناصر البنية في مستند PDF باستخدام Aspose.PDF لـ .NET.
 
-## Prerequisites
+## المتطلبات الأساسية
 
-Before you start, make sure you have installed Aspose.PDF for .NET and set up your development environment.
+قبل البدء، تأكد من تثبيت Aspose.PDF لـ .NET وإعداد بيئة التطوير الخاصة بك.
 
-## Step 1: Creating the document
+## الخطوة 1: إنشاء الوثيقة
 
-The first step is to create a new PDF document using the `Document` class.
+ الخطوة الأولى هي إنشاء مستند PDF جديد باستخدام الملف`Document` فصل.
 
 ```csharp
-// Create the PDF document
+// قم بإنشاء مستند PDF
 Document document = new Document();
 ```
 
-## Step 2: Access tagged content
+## الخطوة 2: الوصول إلى المحتوى الموسوم
 
-Next, we access the tagged content of the document using the `ITaggedContent` object.
+ بعد ذلك، نصل إلى المحتوى المميز للمستند باستخدام الملف`ITaggedContent` هدف.
 
 ```csharp
-// Access tagged content
+// الوصول إلى المحتوى الموسوم
 Tagged.ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-## Step 3: Set title and language
+## الخطوة 3: تحديد العنوان واللغة
 
-Now we can set the document title and language using the `SetTitle` and `SetLanguage` methods of the `ITaggedContent` object.
+ يمكننا الآن ضبط عنوان المستند ولغته باستخدام الأمر`SetTitle` و`SetLanguage` أساليب`ITaggedContent` هدف.
 
 ```csharp
-// Define the title of the document
+// تحديد عنوان الوثيقة
 taggedContent.SetTitle("Tagged PDF document");
 
-// Set the document language
+// ضبط لغة الوثيقة
 taggedContent.SetLanguage("fr-FR");
 ```
 
-## Step 4: Creating structural elements
+## الخطوة 4: إنشاء العناصر الهيكلية
 
-Then we create the structural elements in the PDF document. In this example, we will create a section element (`SectElement`) and a header element (`HeaderElement`).
+ثم نقوم بإنشاء العناصر الهيكلية في وثيقة PDF. في هذا المثال، سنقوم بإنشاء عنصر القسم (`SectElement`) وعنصر الرأس (`HeaderElement`).
 
 ```csharp
-// Create a section element
+// إنشاء عنصر القسم
 StructureElement rootElement = taggedContent.RootElement;
 SectElement sect = taggedContent.CreateSectElement();
 rootElement.AppendChild(sect);
 
-// Create a header element
+// إنشاء عنصر رأس
 HeaderElement h1 = taggedContent.CreateHeaderElement(1);
 sect.AppendChild(h1);
 h1.SetText("Header");
@@ -66,32 +66,32 @@ h1.ExpansionText = "Expansion Text";
 h1.ActualText = "Actual Text";
 ```
 
-## Step 5: Save the tagged PDF document
+## الخطوة 5: احفظ مستند PDF الذي تم وضع علامة عليه
 
-Finally, we save the tagged PDF document.
+وأخيرًا، نقوم بحفظ مستند PDF الذي تم وضع علامة عليه.
 
 ```csharp
-// Save the tagged PDF document
+// احفظ مستند PDF الذي تم وضع علامة عليه
 document.Save(dataDir + "StructureElementsProperties.pdf");
 ```
 
-### Sample source code for Structure Elements Properties using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لخصائص Structure Elements باستخدام Aspose.PDF لـ .NET 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create Pdf Document
+// إنشاء مستند PDF
 Document document = new Document();
 
-// Get Content for work with TaggedPdf
+// احصل على محتوى للعمل مع TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Set Title and Language for Documnet
+// قم بتعيين العنوان واللغة لـ Documnet
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 
-// Create Structure Elements
+// إنشاء عناصر الهيكل
 StructureElement rootElement = taggedContent.RootElement;
 SectElement sect = taggedContent.CreateSectElement();
 rootElement.AppendChild(sect);
@@ -104,53 +104,53 @@ h1.AlternativeText = "Alternative Text";
 h1.ExpansionText = "Expansion Text";
 h1.ActualText = "Actual Text";
 
-// Save Tagged Pdf Document
+// حفظ وثيقة PDF ذات العلامات
 document.Save(dataDir + "StructureElementsProperties.pdf");
 
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You now know how to work with structural element properties in a PDF document using Aspose.PDF for .NET. You can further explore the features of Aspose.PDF to create personalized PDF documents with information-rich structure elements.
+تهنئة ! أنت تعرف الآن كيفية التعامل مع خصائص العناصر الهيكلية في مستند PDF باستخدام Aspose.PDF لـ .NET. يمكنك أيضًا استكشاف ميزات Aspose.PDF لإنشاء مستندات PDF مخصصة تحتوي على عناصر بنية غنية بالمعلومات.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What are structural element properties in a PDF document, and why are they important?
+#### س: ما هي خصائص العناصر الهيكلية في وثيقة PDF، ولماذا هي مهمة؟
 
-A: Structural element properties define characteristics of elements in a tagged PDF document, enhancing accessibility and organization. Properties such as title, language, alternative text, expansion text, and actual text provide context and assistive information for users.
+ج: تحدد خصائص العناصر الهيكلية خصائص العناصر في وثيقة PDF ذات علامات، مما يعزز إمكانية الوصول والتنظيم. توفر الخصائص مثل العنوان واللغة والنص البديل والنص الموسع والنص الفعلي سياقًا ومعلومات مساعدة للمستخدمين.
 
-#### Q: How does Aspose.PDF for .NET help work with structural element properties in a PDF document?
+#### س: كيف يساعد Aspose.PDF for .NET في العمل مع خصائص العناصر الهيكلية في مستند PDF؟
 
-A: Aspose.PDF for .NET provides APIs to create and manipulate structural elements with various properties. You can set properties such as title, language, alternative text, expansion text, and actual text to enhance the semantic structure and accessibility of the document.
+ج: يوفر Aspose.PDF for .NET واجهات برمجة التطبيقات لإنشاء العناصر الهيكلية ومعالجتها بخصائص مختلفة. يمكنك تعيين خصائص مثل العنوان واللغة والنص البديل والنص الموسع والنص الفعلي لتحسين البنية الدلالية وإمكانية الوصول إلى المستند.
 
-#### Q: What is the role of the `SetTitle` and `SetLanguage` methods in working with structural element properties?
+####  س: ما هو دور`SetTitle` and `SetLanguage` methods in working with structural element properties?
 
-A: The `SetTitle` and `SetLanguage` methods of the `ITaggedContent` object allow you to set the document title and language, which influence structural element properties. Setting the title and language ensures consistency and meaningful metadata for the document.
+ ج: ال`SetTitle` و`SetLanguage` أساليب`ITaggedContent`يسمح لك الكائن بتعيين عنوان المستند ولغته، مما يؤثر على خصائص العناصر الهيكلية. يضمن تعيين العنوان واللغة الاتساق والبيانات الوصفية ذات المغزى للمستند.
 
-#### Q: How can I create and manipulate structural elements in a PDF document using Aspose.PDF for .NET?
+#### س: كيف يمكنني إنشاء العناصر الهيكلية ومعالجتها في مستند PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: You can create and manipulate structural elements using Aspose.PDF for .NET by accessing the tagged content of the document. Create structural elements, such as `SectElement` and `HeaderElement`, and set properties like text, title, language, alternative text, expansion text, and actual text.
+ ج: يمكنك إنشاء العناصر الهيكلية ومعالجتها باستخدام Aspose.PDF لـ .NET من خلال الوصول إلى المحتوى المميز للمستند. إنشاء العناصر الهيكلية، مثل`SectElement` و`HeaderElement`وتعيين خصائص مثل النص والعنوان واللغة والنص البديل والنص الموسع والنص الفعلي.
 
-#### Q: Can I specify different properties for different structural elements in a PDF document?
+#### س: هل يمكنني تحديد خصائص مختلفة لعناصر هيكلية مختلفة في مستند PDF؟
 
-A: Yes, you can specify different properties for different structural elements in a PDF document. For example, you can set unique titles, languages, and accessibility properties for each structural element to provide comprehensive context for assistive technologies.
+ج: نعم، يمكنك تحديد خصائص مختلفة لعناصر هيكلية مختلفة في مستند PDF. على سبيل المثال، يمكنك تعيين عناوين ولغات وخصائص إمكانية الوصول فريدة لكل عنصر هيكلي لتوفير سياق شامل للتقنيات المساعدة.
 
-#### Q: What is the purpose of alternative text, expansion text, and actual text in structural elements?
+#### س: ما هو الغرض من النص البديل والنص الموسع والنص الفعلي في العناصر الهيكلية؟
 
-A: Alternative text provides a descriptive alternative for images or non-text elements, aiding accessibility. Expansion text offers additional information when content is expanded. Actual text specifies the text equivalent of a visual element, enhancing text extraction and search capabilities.
+ج: يوفر النص البديل بديلاً وصفيًا للصور أو العناصر غير النصية، مما يساعد على إمكانية الوصول. يوفر نص التوسيع معلومات إضافية عند توسيع المحتوى. يحدد النص الفعلي المكافئ النصي للعنصر المرئي، مما يعزز إمكانيات استخراج النص والبحث.
 
-#### Q: How can I ensure that the structural element properties I set are properly reflected in the final PDF document?
+#### س: كيف يمكنني التأكد من أن خصائص العنصر الهيكلي التي قمت بتعيينها تنعكس بشكل صحيح في وثيقة PDF النهائية؟
 
-A: You can verify the structural element properties by examining the PDF document's properties and metadata. Additionally, you can use PDF viewers, accessibility tools, or text extraction to confirm that the set properties are accurately represented.
+ج: يمكنك التحقق من خصائص العنصر الهيكلي من خلال فحص خصائص مستند PDF وبياناته الوصفية. بالإضافة إلى ذلك، يمكنك استخدام عارضات PDF، أو أدوات إمكانية الوصول، أو استخراج النص للتأكد من تمثيل خصائص المجموعة بدقة.
 
-#### Q: Are there any best practices to follow when working with structural element properties in a PDF document?
+#### س: هل هناك أي أفضل الممارسات التي يجب اتباعها عند العمل مع خصائص العناصر الهيكلية في مستند PDF؟
 
-A: When working with structural element properties, consider the needs of diverse users. Provide meaningful titles, accurate languages, and descriptive alternative text to ensure accessibility and an enhanced user experience.
+ج: عند التعامل مع خصائص العناصر الهيكلية، ضع في اعتبارك احتياجات المستخدمين المتنوعين. قم بتوفير عناوين ذات معنى ولغات دقيقة ونص وصفي بديل لضمان إمكانية الوصول وتجربة مستخدم محسنة.
 
-#### Q: Can I modify or update the properties of existing structural elements in a PDF document using Aspose.PDF for .NET?
+#### س: هل يمكنني تعديل أو تحديث خصائص العناصر الهيكلية الموجودة في مستند PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: Yes, you can modify or update the properties of existing structural elements using Aspose.PDF for .NET. Load the document, access the tagged content, navigate to the desired structural element, and use the available methods to update its properties.
+ج: نعم، يمكنك تعديل أو تحديث خصائص العناصر الهيكلية الموجودة باستخدام Aspose.PDF لـ .NET. قم بتحميل المستند، وقم بالوصول إلى المحتوى ذي العلامات، وانتقل إلى العنصر الهيكلي المطلوب، واستخدم الطرق المتاحة لتحديث خصائصه.
 
-#### Q: How can I use structural element properties to create information-rich PDF documents?
+#### س: كيف يمكنني استخدام خصائص العناصر الهيكلية لإنشاء مستندات PDF غنية بالمعلومات؟
 
-A: By leveraging structural element properties, you can create information-rich PDF documents that offer enhanced accessibility and context. Use properties such as title, language, and alternative text to provide comprehensive details about document structure and content.
+ج: من خلال الاستفادة من خصائص العناصر الهيكلية، يمكنك إنشاء مستندات PDF غنية بالمعلومات توفر إمكانية وصول وسياقًا محسّنين. استخدم خصائص مثل العنوان واللغة والنص البديل لتوفير تفاصيل شاملة حول بنية المستند ومحتواه.

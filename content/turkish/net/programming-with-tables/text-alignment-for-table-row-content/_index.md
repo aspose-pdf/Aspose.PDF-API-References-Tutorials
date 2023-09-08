@@ -1,45 +1,45 @@
 ---
-title: Text Alignment For Table Row Content
-linktitle: Text Alignment For Table Row Content
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to align row content in a PDF table using Aspose.PDF for .NET.
+title: Tablo Satır İçeriği İçin Metin Hizalaması
+linktitle: Tablo Satır İçeriği İçin Metin Hizalaması
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET'i kullanarak bir PDF tablosundaki satır içeriğini nasıl hizalayacağınızı öğrenin.
 type: docs
 weight: 210
 url: /tr/net/programming-with-tables/text-alignment-for-table-row-content/
 ---
-In this tutorial, we will guide you step by step to align the contents of a row in a table of a PDF document using Aspose.PDF for .NET. We'll explain the provided C# source code and show you how to implement it.
+Bu eğitimde, Aspose.PDF for .NET'i kullanarak bir PDF belgesi tablosundaki bir satırın içeriğini hizalamak için size adım adım rehberlik edeceğiz. Sağlanan C# kaynak kodunu açıklayacağız ve size nasıl uygulayacağınızı göstereceğiz.
 
-## Step 1: Creating the PDF document
-First, we'll create the PDF document:
+## 1. Adım: PDF belgesini oluşturma
+İlk önce PDF belgesini oluşturacağız:
 
 ```csharp
 var dataDir = "YOUR DOCUMENTS DIRECTORY";
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 ```
 
-## Step 2: Table initialization
-Next, we will initialize the table:
+## Adım 2: Tablo başlatma
+Daha sonra tabloyu başlatacağız:
 
 ```csharp
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
 ```
 
-## Step 3: Setting the table border color
-We will configure the table border color:
+## 3. Adım: Tablo kenarlığı rengini ayarlama
+Tablo kenarlığı rengini yapılandıracağız:
 
 ```csharp
 table.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
 ```
 
-## Step 4: Configuring the table cell border
-We are going to configure the table cell border:
+## 4. Adım: Tablo hücresi kenarlığını yapılandırma
+Tablo hücresi kenarlığını yapılandıracağız:
 
 ```csharp
 table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
 ```
 
-## Step 5: Loop to add 10 rows to the table
-We will now use a loop to add 10 rows to the table:
+## Adım 5: Tabloya 10 satır eklemek için döngü yapın
+Şimdi tabloya 10 satır eklemek için bir döngü kullanacağız:
 
 ```csharp
 for (int row_count = 0; row_count < 10; row_count++)
@@ -53,15 +53,15 @@ for (int row_count = 0; row_count < 10; row_count++)
 }
 ```
 
-## Step 6: Configuring the vertical line alignment
-We are going to configure the vertical alignment of the rows of the table:
+## Adım 6: Dikey çizgi hizalamasını yapılandırma
+Tablonun satırlarının dikey hizalamasını yapılandıracağız:
 
 ```csharp
 row.VerticalAlignment = VerticalAlignment.Center;
 ```
 
-## Step 7: Adding content to row cells
-We are going to add content to the row cells:
+## 7. Adım: Satır hücrelerine içerik ekleme
+Satır hücrelerine içerik ekleyeceğiz:
 
 ```csharp
 row.Cells.Add("Column("+row_count+",1)"+DateTime.Now.Ticks);
@@ -69,38 +69,38 @@ row.Cells.Add("Column("+row_count+",2)");
 row.Cells.Add("Column("+row_count+",3)");
 ```
 
-## Step 8: Adding the table to the document page
-Now let's add the table to the document page:
+## Adım 8: Tabloyu belge sayfasına ekleme
+Şimdi tabloyu belge sayfasına ekleyelim:
 
 ```csharp
 Page tocPage = doc.Pages.Add();
 tocPage.Paragraphs.Add(table);
 ```
 
-## Step 9: Saving the PDF document
-Finally, we will save the PDF document:
+## Adım 9: PDF belgesini kaydetme
+Son olarak PDF belgesini kaydedeceğiz:
 
 ```csharp
 doc.Save(dataDir + "43620_ByWords_out.pdf");
 ```
 
-### Example source code for Text Alignment For Table Row Content using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak Tablo Satır İçeriği İçin Metin Hizalama için örnek kaynak kodu
 
 ```csharp
 var dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create PDF document
+// PDF belgesi oluştur
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
-// Initializes a new instance of the Table
+// Tablonun yeni bir örneğini başlatır
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-// Set the table border color as LightGray
+// Tablo kenarlığı rengini AçıkGri olarak ayarlayın
 table.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
-// set the border for table cells
+// tablo hücreleri için kenarlığı ayarlama
 table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
-// create a loop to add 10 rows
+// 10 satır eklemek için bir döngü oluşturun
 for (int row_count = 0; row_count < 10; row_count++)
 {
-	// add row to table
+	// tabloya satır ekle
 	Aspose.Pdf.Row row = table.Rows.Add();
 	row.VerticalAlignment = VerticalAlignment.Center;
 
@@ -109,33 +109,33 @@ for (int row_count = 0; row_count < 10; row_count++)
 	row.Cells.Add("Column (" + row_count + ", 3)");
 }
 Page tocPage = doc.Pages.Add();
-// Add table object to first page of input document
+// Giriş belgesinin ilk sayfasına tablo nesnesi ekleyin
 tocPage.Paragraphs.Add(table);
-// Save updated document containing table object
+// Tablo nesnesini içeren güncellenmiş belgeyi kaydet
 doc.Save(dataDir + "43620_ByWords_out.pdf");
 ```
 
-## Conclusion
-Congratulation ! You have now learned how to align the contents of a row in a table in a PDF document using Aspose.PDF for .NET. This step-by-step guide showed you how to create a document, initialize a table, configure border and alignment, add content, and save the PDF document. Now you can apply this knowledge to your own projects.
+## Çözüm
+Tebrikler! Artık Aspose.PDF for .NET kullanarak bir PDF belgesindeki bir tablodaki satırın içeriğini nasıl hizalayacağınızı öğrendiniz. Bu adım adım kılavuz size nasıl belge oluşturacağınızı, tabloyu nasıl başlatacağınızı, kenarlığı ve hizalamayı nasıl yapılandıracağınızı, içerik ekleyeceğinizi ve PDF belgesini nasıl kaydedeceğinizi gösterdi. Artık bu bilgiyi kendi projelerinize uygulayabilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: How can I align the contents of the table cells horizontally?
+#### S: Tablo hücrelerinin içeriğini yatay olarak nasıl hizalayabilirim?
 
-A: You can align the contents of the table cells horizontally by setting the `HorizontalAlign` property of the cell's `TextState` object. For example, to center-align the text, use `cell.TextState.HorizontalAlignment = HorizontalAlignment.Center`. You can also set it to `HorizontalAlignment.Left` or `HorizontalAlignment.Right` for left and right alignment, respectively.
+ C: Tablo hücrelerinin içeriğini yatay olarak hizalayabilirsiniz.`HorizontalAlign` hücrenin özelliği`TextState` nesne. Örneğin, metni ortaya hizalamak için şunu kullanın:`cell.TextState.HorizontalAlignment = HorizontalAlignment.Center` . Ayrıca şu şekilde de ayarlayabilirsiniz:`HorizontalAlignment.Left` veya`HorizontalAlignment.Right` sırasıyla sol ve sağ hizalama için.
 
-#### Q: Can I apply different border styles and colors to individual cells within the table?
+#### S: Tablodaki tek tek hücrelere farklı kenarlık stilleri ve renkleri uygulayabilir miyim?
 
-A: Yes, you can apply different border styles and colors to individual cells within the table. To customize the border for a specific cell, set the `cell.Border` property to a new `BorderInfo` object with the desired settings, such as border sides, width, and color.
+ C: Evet, tablodaki tek tek hücrelere farklı kenarlık stilleri ve renkleri uygulayabilirsiniz. Belirli bir hücrenin kenarlığını özelleştirmek için`cell.Border` yeni bir mülke`BorderInfo`Nesneyi kenarlık kenarları, genişlik ve renk gibi istenen ayarlarla seçin.
 
-#### Q: How can I adjust the vertical alignment of the table content within the cells?
+#### S: Hücrelerdeki tablo içeriğinin dikey hizalamasını nasıl ayarlayabilirim?
 
-A: You can adjust the vertical alignment of the table content within the cells by setting the `VerticalAlignment` property of the row to `VerticalAlignment.Center`, `VerticalAlignment.Top`, or `VerticalAlignment.Bottom`. This property controls the vertical alignment of all cells in that row.
+ C: Hücrelerdeki tablo içeriğinin dikey hizalamasını ayarlayarak ayarlayabilirsiniz.`VerticalAlignment` satırının özelliği`VerticalAlignment.Center`, `VerticalAlignment.Top` , veya`VerticalAlignment.Bottom`. Bu özellik, o satırdaki tüm hücrelerin dikey hizalamasını kontrol eder.
 
-#### Q: Is it possible to add more columns or rows to the table dynamically?
+#### S: Tabloya dinamik olarak daha fazla sütun veya satır eklemek mümkün müdür?
 
-A: Yes, you can add more columns and rows to the table dynamically by using the `table.Rows.Add()` method to add new rows and the `row.Cells.Add()` method to add new cells to the rows. You can do this inside loops or based on your specific requirements.
+ C: Evet, tabloya dinamik olarak daha fazla sütun ve satır ekleyebilirsiniz.`table.Rows.Add()` yeni satırlar ekleme yöntemi ve`row.Cells.Add()` satırlara yeni hücreler ekleme yöntemi. Bunu döngüler içinde veya özel gereksinimlerinize göre yapabilirsiniz.
 
-#### Q: How can I set a background color for specific cells or the entire table?
+#### S: Belirli hücreler veya tablonun tamamı için arka plan rengini nasıl ayarlayabilirim?
 
-A: To set a background color for specific cells or the entire table, use the `BackgroundColor` property of the `Cell` or `Table` object. For example, to set the background color of a cell, use `cell.BackgroundColor = Aspose.Pdf.Color.LightBlue`.
+ C: Belirli hücrelere veya tablonun tamamına arka plan rengi ayarlamak için`BackgroundColor` mülkiyeti`Cell` veya`Table` nesne. Örneğin, bir hücrenin arka plan rengini ayarlamak için şunu kullanın:`cell.BackgroundColor = Aspose.Pdf.Color.LightBlue`.

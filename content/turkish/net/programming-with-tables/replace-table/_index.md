@@ -1,51 +1,51 @@
 ---
-title: Replace Table In PDF Document
-linktitle: Replace Table In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to replace a table in PDF document using Aspose.PDF for .NET.
+title: PDF Belgesindeki Tabloyu Değiştir
+linktitle: PDF Belgesindeki Tabloyu Değiştir
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF belgesindeki bir tabloyu nasıl değiştireceğinizi öğrenin.
 type: docs
 weight: 180
 url: /tr/net/programming-with-tables/replace-table/
 ---
-In this tutorial, we will guide you step by step to replace a table in PDF document using Aspose.PDF for .NET. We'll explain the provided C# source code and show you how to implement it.
+Bu eğitimde, Aspose.PDF for .NET'i kullanarak PDF belgesindeki bir tabloyu değiştirmek için size adım adım rehberlik edeceğiz. Sağlanan C# kaynak kodunu açıklayacağız ve size nasıl uygulayacağınızı göstereceğiz.
 
-## Step 1: Loading the existing PDF document
-First, you need to load the existing PDF document using the following code:
+## 1. Adım: Mevcut PDF belgesini yükleme
+Öncelikle mevcut PDF belgesini aşağıdaki kodu kullanarak yüklemeniz gerekir:
 
 ```csharp
-// Path to the documents directory
+// Belgeler dizininin yolu
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Load the existing PDF document
+// Mevcut PDF belgesini yükleyin
 Document pdfDocument = new Document(dataDir + @"Table_input.pdf");
 ```
 
-## Step 2: Creating the TableAbsorber object to find the tables
-Next, we'll create a TableAbsorber object to find the tables in the PDF document:
+## Adım 2: Tabloları bulmak için TableAbsorber nesnesini oluşturma
+Daha sonra, PDF belgesindeki tabloları bulmak için bir TableAbsorber nesnesi oluşturacağız:
 
 ```csharp
-// Create a TableAbsorber object to find the tables
+// Tabloları bulmak için bir TableAbsorber nesnesi oluşturun
 TableAbsorber absorber = new TableAbsorber();
 ```
 
-## Step 3: Visit the first page with the absorber
-We will now visit the first page of the PDF document using the absorber:
+## 3. Adım: Emicinin bulunduğu ilk sayfayı ziyaret edin
+Şimdi emiciyi kullanarak PDF belgesinin ilk sayfasını ziyaret edeceğiz:
 
 ```csharp
-// Visit the first page with the absorber
+// Emicinin bulunduğu ilk sayfayı ziyaret edin
 absorb.Visit(pdfDocument.Pages[1]);
 ```
 
-## Step 4: Getting the first table on the page
-To be able to replace the table, we will obtain the first table of the page:
+## Adım 4: Sayfadaki ilk tabloyu alma
+Tabloyu değiştirebilmek için sayfanın ilk tablosunu alacağız:
 
 ```csharp
-// Get the first table on the page
+// Sayfadaki ilk tabloyu alın
 AbsorbedTable table = absorb.TableList[0];
 ```
 
-## Step 5: Creating a new table
-Now we will create a new table with the desired columns and cells:
+## 5. Adım: Yeni bir tablo oluşturma
+Şimdi istenilen sütun ve hücrelerle yeni bir tablo oluşturacağız:
 
 ```csharp
 Table newTable = new Table();
@@ -58,40 +58,40 @@ row. Cells. Add("Col 2");
 row. Cells. Add("Col 3");
 ```
 
-## Step 6: Replacing the existing table with the new table
-We will now replace the existing table with the new table on the first page of the document:
+## Adım 6: Mevcut tabloyu yeni tabloyla değiştirme
+Şimdi mevcut tabloyu belgenin ilk sayfasındaki yeni tabloyla değiştireceğiz:
 
 ```csharp
-// Replace the table with the new table
+// Tabloyu yeni tabloyla değiştirin
 absorb.Replace(pdfDocument.Pages[1], table, newTable);
 ```
 
-## Step 7: Saving the document
-Finally, we save the modified PDF document:
+## Adım 7: Belgeyi kaydetme
+Son olarak değiştirilen PDF belgesini kaydediyoruz:
 
 ```csharp
 pdfDocument.Save(dataDir + "TableReplaced_out.pdf");
 ```
 
-### Example source code for Replace Table using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak Tabloyu Değiştir için örnek kaynak kodu
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Load existing PDF document
+// Mevcut PDF belgesini yükle
 Document pdfDocument = new Document(dataDir + @"Table_input.pdf");
 
-// Create TableAbsorber object to find tables
+// Tabloları bulmak için TableAbsorber nesnesi oluşturun
 TableAbsorber absorber = new TableAbsorber();
 
-// Visit first page with absorber
+// Emici ile ilk sayfayı ziyaret edin
 absorber.Visit(pdfDocument.Pages[1]);
 
-// Get first table on the page
+// Sayfadaki ilk tabloyu alın
 AbsorbedTable table = absorber.TableList[0];
 
-// Create new table
+// Yeni tablo oluştur
 Table newTable = new Table();
 newTable.ColumnWidths = "100 100 100";
 newTable.DefaultCellBorder = new BorderInfo(BorderSide.All, 1F);
@@ -101,34 +101,34 @@ row.Cells.Add("Col 1");
 row.Cells.Add("Col 2");
 row.Cells.Add("Col 3");
 
-// Replace the table with new one
+// Masayı yenisiyle değiştirin
 absorber.Replace(pdfDocument.Pages[1], table, newTable);
 
-// Save document
+// Belgeyi kaydet
 pdfDocument.Save(dataDir + "TableReplaced_out.pdf");
 ```
 
-## Conclusion
-Congratulation ! You have now learned how to replace a table in a PDF document using Aspose.PDF for .NET. This step-by-step guide showed you how to load the document, find the existing table, create a new table, and replace it. Now you can apply this knowledge to your own projects.
+## Çözüm
+Tebrikler! Artık Aspose.PDF for .NET kullanarak bir PDF belgesindeki tabloyu nasıl değiştireceğinizi öğrendiniz. Bu adım adım kılavuz, belgeyi nasıl yükleyeceğinizi, mevcut tabloyu nasıl bulacağınızı, yeni bir tablo oluşturacağınızı ve değiştireceğinizi gösterdi. Artık bu bilgiyi kendi projelerinize uygulayabilirsiniz.
 
-### FAQ's for replace table in PDF document
+### PDF belgesindeki tabloyu değiştirmeyle ilgili SSS'ler
 
-#### Q: Can I replace multiple tables in the same PDF document using this approach?
+#### S: Bu yaklaşımı kullanarak aynı PDF belgesindeki birden fazla tabloyu değiştirebilir miyim?
 
-A: Yes, you can replace multiple tables in the same PDF document by following the same process for each table you want to replace. After obtaining the `AbsorbedTable` object for each table using the `TableAbsorber`, you can create corresponding new tables and then use the `absorber.Replace()` method to replace each existing table with the respective new table.
+ C: Evet, değiştirmek istediğiniz her tablo için aynı işlemi izleyerek aynı PDF belgesindeki birden fazla tabloyu değiştirebilirsiniz. elde ettikten sonra`AbsorbedTable` kullanarak her tablo için nesne`TableAbsorber` , karşılık gelen yeni tablolar oluşturabilir ve ardından`absorber.Replace()` Mevcut her tabloyu ilgili yeni tabloyla değiştirme yöntemi.
 
-#### Q: What happens if the new table has a different number of columns than the original table?
+#### S: Yeni tabloda orijinal tablodan farklı sayıda sütun varsa ne olur?
 
-A: If the new table has a different number of columns than the original table, it may result in unexpected behavior or layout issues in the modified PDF document. It is essential to ensure that the new table's structure (number of columns and their widths) matches the original table's structure for seamless replacement.
+C: Yeni tablonun orijinal tablodan farklı sayıda sütunu varsa, bu durum değiştirilen PDF belgesinde beklenmeyen davranışlara veya düzen sorunlarına neden olabilir. Sorunsuz değiştirme için yeni tablonun yapısının (sütun sayısı ve genişlikleri) orijinal tablonun yapısına uygun olmasını sağlamak önemlidir.
 
-#### Q: Can I replace a table on a specific page other than the first page?
+#### S: İlk sayfa dışında belirli bir sayfadaki tabloyu değiştirebilir miyim?
 
-A: Yes, you can replace a table on a specific page other than the first page by changing the page index in the `pdfDocument.Pages[]` method call when obtaining the `AbsorbedTable` object. For example, to replace a table on the second page, you would use `pdfDocument.Pages[2]`.
+ C: Evet, ilk sayfa dışındaki belirli bir sayfadaki tabloyu, sayfa dizinini değiştirerek değiştirebilirsiniz.`pdfDocument.Pages[]` elde ederken yöntem çağrısı`AbsorbedTable` nesne. Örneğin, ikinci sayfadaki bir tabloyu değiştirmek için şunu kullanırsınız:`pdfDocument.Pages[2]`.
 
-#### Q: Can I customize the appearance of the new table, such as adding background color or borders?
+#### S: Yeni tablonun görünümünü arka plan rengi veya kenarlıklar ekleyerek özelleştirebilir miyim?
 
-A: Yes, you can customize the appearance of the new table by setting various properties of the `Table` and its cells. For example, you can set the `BackgroundColor` property of cells to add background color. You can also set the `DefaultCellBorder` property of the new table or individual cells to add borders.
+ C: Evet, yeni tablonun çeşitli özelliklerini ayarlayarak yeni tablonun görünümünü özelleştirebilirsiniz.`Table` ve hücreleri. Örneğin,`BackgroundColor` Hücrelerin arka plan rengi ekleme özelliği. Ayrıca`DefaultCellBorder` yeni tablonun özelliği veya tek tek hücrelere kenarlık eklemek.
 
-#### Q: Does replacing a table affect the content layout of the rest of the PDF document?
+#### S: Bir tablonun değiştirilmesi PDF belgesinin geri kalanının içerik düzenini etkiler mi?
 
-A: Replacing a table may affect the content layout if the new table's size or structure differs significantly from the original table. The rest of the content on the page will reflow to accommodate the new table. It is essential to carefully design the new table to fit seamlessly within the existing layout to avoid any layout issues.
+C: Yeni tablonun boyutu veya yapısı orijinal tablodan önemli ölçüde farklıysa, tabloyu değiştirmek içerik düzenini etkileyebilir. Sayfadaki içeriğin geri kalanı yeni tabloya uyum sağlayacak şekilde yeniden düzenlenecektir. Herhangi bir düzen sorununu önlemek için yeni tabloyu mevcut düzene kusursuz bir şekilde uyacak şekilde dikkatli bir şekilde tasarlamak önemlidir.

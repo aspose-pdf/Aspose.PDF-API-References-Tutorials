@@ -1,70 +1,70 @@
 ---
-title: Tag Image In Existing PDF
-linktitle: Tag Image In Existing PDF
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to mark up an image in an existing PDF with Aspose.PDF for .NET. A Step-by-Step Guide to Adding Tags to Images.
+title: Tagga bild i befintlig PDF
+linktitle: Tagga bild i befintlig PDF
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du markerar en bild i en befintlig PDF med Aspose.PDF för .NET. En steg-för-steg-guide för att lägga till taggar till bilder.
 type: docs
 weight: 210
 url: /sv/net/programming-with-tagged-pdf/tag-image-in-existing-pdf/
 ---
-In this detailed tutorial, we will walk you through the provided C# source code step by step to mark up an image in an existing PDF using Aspose.PDF for .NET. Follow the instructions below to understand how to add tags to an image in a PDF.
+I denna detaljerade handledning går vi igenom den medföljande C#-källkoden steg för steg för att markera en bild i en befintlig PDF med Aspose.PDF för .NET. Följ instruktionerna nedan för att förstå hur du lägger till taggar till en bild i en PDF.
 
-## Step 1: Setting up the environment
+## Steg 1: Sätta upp miljön
 
-Before you begin, make sure you've configured your development environment to use Aspose.PDF for .NET. This includes installing the Aspose.PDF library and configuring your project to reference it.
+Innan du börjar, se till att du har konfigurerat din utvecklingsmiljö för att använda Aspose.PDF för .NET. Detta inkluderar att installera Aspose.PDF-biblioteket och konfigurera ditt projekt för att referera till det.
 
-## Step 2: Open the existing PDF document
+## Steg 2: Öppna det befintliga PDF-dokumentet
 
-In this step, we will open an existing PDF document using Aspose.PDF.
+det här steget kommer vi att öppna ett befintligt PDF-dokument med Aspose.PDF.
 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Input and output file paths
+// In- och utdatafilsökvägar
 string inFile = dataDir + "TH.pdf";
 string outFile = dataDir + "TH_out.pdf";
 string logFile = dataDir + "TH_out.xml";
 
-// Open the document
+// Öppna dokumentet
 Document document = new Document(inFile);
 ```
 
-We opened the existing PDF document using Aspose.PDF.
+Vi öppnade det befintliga PDF-dokumentet med Aspose.PDF.
 
-## Step 3: Obtain Tagged Content and Root Structure Element
+## Steg 3: Skaffa taggat innehåll och rotstrukturelement
 
-Now we will get the tagged content of the PDF document and the corresponding root structure element.
+Nu kommer vi att få det taggade innehållet i PDF-dokumentet och motsvarande rotstrukturelement.
 
 ```csharp
-// Get tagged content and root structure element
+// Få taggat innehåll och rotstrukturelement
 ITaggedContent taggedContent = document.TaggedContent;
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-We got the tagged content of the PDF document and the corresponding root structure element.
+Vi fick det taggade innehållet i PDF-dokumentet och motsvarande rotstrukturelement.
 
-## Step 4: Setting the title for the tagged PDF document
+## Steg 4: Ställ in titeln för det taggade PDF-dokumentet
 
-Now let's set the title for the tagged PDF document.
+Låt oss nu ställa in titeln för det taggade PDF-dokumentet.
 
 ```csharp
-// Define the title for the tagged PDF document
+// Definiera titeln för det taggade PDF-dokumentet
 taggedContent.SetTitle("Document with images");
 ```
 
-We have set the title for the tagged PDF document.
+Vi har angett titeln för det taggade PDF-dokumentet.
 
-## Step 5: Assign alt texts and bounding box to the image
+## Steg 5: Tilldela alt-texter och begränsningsruta till bilden
 
-Now, for each image element, we'll assign alt text and a bounding box.
+Nu, för varje bildelement, tilldelar vi alternativ text och en begränsningsram.
 
 ```csharp
 foreach(FigureElement figureElement in rootElement.FindElements<FigureElement>(true))
 {
-     // Assign alternative text to the image
+     // Tilldela alternativ text till bilden
      figureElement.AlternativeText = "Alternative text for image (technique 2)";
-     // Create and assign the bounding box (bbox)
+     // Skapa och tilldela begränsningsrutan (bbox)
      StructureAttribute bboxAttribute = new StructureAttribute(AttributeKey.BBox);
      bboxAttribute.SetRectangleValue(new Rectangle(0.0, 0.0, 100.0, 100.0));
      StructureAttributes figureLayoutAttributes = figureElement.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
@@ -72,131 +72,131 @@ foreach(FigureElement figureElement in rootElement.FindElements<FigureElement>(t
 }
 ```
 
-We've assigned alt text and a bounding box to each image element in the PDF document.
+Vi har tilldelat alternativ text och en begränsningsruta till varje bildelement i PDF-dokumentet.
 
-## Step 6: Moving the Span element into the paragraph
+## Steg 6: Flytta Span-elementet till stycket
 
-Now let's move the Span element into the paragraph.
+Låt oss nu flytta Span-elementet till stycket.
 
 ```csharp
-// Move Span element into paragraph (find incorrect span and paragraph in first TD)
+// Flytta Span-elementet till stycket (hitta felaktigt spann och stycke i första TD)
 TableElement tableElement = rootElement.FindElements<TableElement>(true)[0];
 SpanElement spanElement = tableElement.FindElements<SpanElement>(true)[0];
 TableTDElement firstTdElement = tableElement.FindElements<TableTDElement>(true)[0];
 ParagraphElement paragraph = firstTdElement.FindElements<ParagraphElement>(true)[0];
 
-// Move the Span element in the paragraph
+// Flytta Span-elementet i stycket
 spanElement.ChangeParentElement(paragraph);
 ```
 
-We moved the Span element into the specified paragraph.
+Vi flyttade Span-elementet till det angivna stycket.
 
-## Step 7: Saving the modified PDF document
+## Steg 7: Spara det ändrade PDF-dokumentet
 
-Now that we have made the necessary changes, we will save the modified PDF document.
+Nu när vi har gjort de nödvändiga ändringarna kommer vi att spara det ändrade PDF-dokumentet.
 
 ```csharp
-// Save the PDF document
+// Spara PDF-dokumentet
 document. Save(outFile);
 ```
 
-We saved the modified PDF document in the specified directory.
+Vi sparade det ändrade PDF-dokumentet i den angivna katalogen.
 
-### Sample source code for Tag Image In Existing PDF using Aspose.PDF for .NET 
+### Exempel på källkod för taggbild i befintlig PDF med Aspose.PDF för .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string inFile = dataDir + "TH.pdf";
 string outFile = dataDir + "TH_out.pdf";
 string logFile = dataDir + "TH_out.xml";
 
-// Open document
+// Öppna dokumentet
 Document document = new Document(inFile);
 
-// Gets tagged content and root structure element
+// Får taggat innehåll och rotstrukturelement
 ITaggedContent taggedContent = document.TaggedContent;
 StructureElement rootElement = taggedContent.RootElement;
 
-// Set title for tagged pdf document
+// Ange titel för taggade pdf-dokument
 taggedContent.SetTitle("Document with images");
 foreach (FigureElement figureElement in rootElement.FindElements<FigureElement>(true))
 {
-	// Set Alternative Text  for Figure
+	// Ställ in alternativ text för figur
 	figureElement.AlternativeText = "Figure alternative text (technique 2)";
-	// Create and Set BBox Attribute
+	// Skapa och ställ in BBox-attribut
 	StructureAttribute bboxAttribute = new StructureAttribute(AttributeKey.BBox);
 	bboxAttribute.SetRectangleValue(new Rectangle(0.0, 0.0, 100.0, 100.0));
 	StructureAttributes figureLayoutAttributes = figureElement.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
 	figureLayoutAttributes.SetAttribute(bboxAttribute);
 }
 
-// Move Span Element into Paragraph (find wrong span and paragraph in first TD)
+// Flytta spannelement till stycke (hitta fel span och stycke i första TD)
 TableElement tableElement = rootElement.FindElements<TableElement>(true)[0];
 SpanElement spanElement = tableElement.FindElements<SpanElement>(true)[0];
 TableTDElement firstTdElement = tableElement.FindElements<TableTDElement>(true)[0];
 ParagraphElement paragraph = firstTdElement.FindElements<ParagraphElement>(true)[0];
 
-// Move Span Element into Paragraph
+// Flytta Span Element till Paragraph
 spanElement.ChangeParentElement(paragraph);
 
-// Save document
+// Spara dokument
 document.Save(outFile);
 
-// Checking PDF/UA Compliance for out document
+//Kontrollerar PDF/UA-efterlevnad för dokument
 document = new Document(outFile);
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ```
 
-## Conclusion
+## Slutsats
 
-In this tutorial, we learned how to mark up an image in an existing PDF using Aspose.PDF for .NET. You can now use Aspose.PDF to add tags and make edits to images in your PDF documents.
+I den här handledningen lärde vi oss hur man markerar en bild i en befintlig PDF med Aspose.PDF för .NET. Du kan nu använda Aspose.PDF för att lägga till taggar och göra redigeringar av bilder i dina PDF-dokument.
 
 ### FAQ's
 
-#### Q: What is the main objective of this tutorial on tagging images in an existing PDF using Aspose.PDF for .NET?
+#### F: Vad är huvudsyftet med denna handledning om att tagga bilder i en befintlig PDF med Aspose.PDF för .NET?
 
-A: The primary goal of this tutorial is to guide you through the process of marking up an image within an existing PDF document using Aspose.PDF for .NET. The tutorial provides step-by-step instructions and C# source code examples to help you understand how to assign alternative text and bounding boxes to images, move elements within the document, and add tags to images.
+S: Det primära målet med denna handledning är att guida dig genom processen att markera en bild i ett befintligt PDF-dokument med Aspose.PDF för .NET. Handledningen innehåller steg-för-steg-instruktioner och exempel på C#-källkod för att hjälpa dig förstå hur du tilldelar alternativ text och begränsningsrutor till bilder, flyttar element i dokumentet och lägger till taggar till bilder.
 
-#### Q: What are the prerequisites for following this tutorial on tagging images in a PDF using Aspose.PDF for .NET?
+#### F: Vilka är förutsättningarna för att följa denna handledning om att tagga bilder i en PDF med Aspose.PDF för .NET?
 
-A: Before you start, ensure that you have set up your development environment to use Aspose.PDF for .NET. This involves installing the Aspose.PDF library and configuring your project to reference it.
+S: Innan du börjar, se till att du har ställt in din utvecklingsmiljö för att använda Aspose.PDF för .NET. Detta innebär att du installerar Aspose.PDF-biblioteket och konfigurerar ditt projekt för att referera till det.
 
-#### Q: How can I open an existing PDF document and access its tagged content using Aspose.PDF for .NET?
+#### F: Hur kan jag öppna ett befintligt PDF-dokument och komma åt dess taggade innehåll med Aspose.PDF för .NET?
 
-A: The tutorial provides C# source code examples that demonstrate how to open an existing PDF document using Aspose.PDF for .NET and access its tagged content for further manipulation.
+S: Handledningen ger C#-källkodsexempel som visar hur man öppnar ett befintligt PDF-dokument med Aspose.PDF för .NET och får åtkomst till dess taggade innehåll för vidare manipulation.
 
-#### Q: What is the purpose of assigning alternative text and bounding boxes to images in a PDF document?
+#### F: Vad är syftet med att tilldela alternativ text och begränsningsrutor till bilder i ett PDF-dokument?
 
-A: Assigning alternative text and bounding boxes to images enhances accessibility by providing descriptive text for images and defining their layout and position within the document. This information is crucial for screen readers and other assistive technologies.
+S: Att tilldela alternativ text och begränsningsrutor till bilder förbättrar tillgängligheten genom att tillhandahålla beskrivande text för bilder och definiera deras layout och position i dokumentet. Denna information är avgörande för skärmläsare och andra hjälpmedel.
 
-#### Q: How can I set the title for a tagged PDF document using Aspose.PDF for .NET?
+#### F: Hur kan jag ställa in titeln för ett taggat PDF-dokument med Aspose.PDF för .NET?
 
-A: The tutorial includes C# source code examples that illustrate how to set the title for a tagged PDF document using Aspose.PDF for .NET.
+S: Handledningen innehåller C#-källkodsexempel som illustrerar hur man ställer in titeln för ett taggat PDF-dokument med Aspose.PDF för .NET.
 
-#### Q: What does the process of moving elements within a PDF document involve?
+#### F: Vad innebär processen att flytta element i ett PDF-dokument?
 
-A: Moving elements within a PDF document involves changing the parent element of a particular element. In this tutorial, you'll learn how to move a Span element into a specified Paragraph element within a table.
+S: Flytta element i ett PDF-dokument innebär att det överordnade elementet för ett visst element ändras. I den här handledningen lär du dig hur du flyttar ett Span-element till ett specificerat Paragraph-element i en tabell.
 
-#### Q: How do I save the modified PDF document after adding tags and making edits to images?
+#### F: Hur sparar jag det modifierade PDF-dokumentet efter att ha lagt till taggar och gjort redigeringar i bilder?
 
-A: Once you've added tags, assigned alternative text, set bounding boxes, and made edits to the PDF document, you can use the provided C# source code examples to save the modified PDF document using the `Save()` method.
+ S: När du har lagt till taggar, tilldelat alternativ text, satt begränsningsrutor och gjort ändringar i PDF-dokumentet, kan du använda de medföljande C#-källkodsexemplen för att spara det modifierade PDF-dokumentet med`Save()` metod.
 
-#### Q: What is the purpose of the sample source code provided in the tutorial?
+#### F: Vad är syftet med exempelkällkoden som tillhandahålls i handledningen?
 
-A: The sample source code serves as a practical reference for implementing image tagging and manipulation using Aspose.PDF for .NET. You can use this code as a starting point and modify it to suit your specific requirements.
+S: Exempelkällkoden fungerar som en praktisk referens för implementering av bildtaggning och manipulering med Aspose.PDF för .NET. Du kan använda den här koden som utgångspunkt och modifiera den för att passa dina specifika krav.
 
-#### Q: Can I apply these techniques to other types of elements in a PDF document, not just images?
+#### F: Kan jag tillämpa dessa tekniker på andra typer av element i ett PDF-dokument, inte bara bilder?
 
-A: Yes, the techniques demonstrated in this tutorial can be adapted to work with various types of elements within a PDF document. You can apply similar principles to tag and manipulate other elements such as text, tables, and more.
+S: Ja, teknikerna som visas i denna handledning kan anpassas för att fungera med olika typer av element i ett PDF-dokument. Du kan tillämpa liknande principer för att tagga och manipulera andra element som text, tabeller och mer.
 
-#### Q: How can I validate the PDF/UA compliance of the modified PDF document?
+#### F: Hur kan jag validera PDF/UA-kompatibiliteten för det modifierade PDF-dokumentet?
 
-A: The tutorial provides C# source code examples that show how to validate the PDF/UA compliance of the modified PDF document by using the `Validate()` method and generating an XML report.
+ S: Handledningen ger C#-källkodsexempel som visar hur man validerar PDF/UA-kompatibiliteten för det modifierade PDF-dokumentet genom att använda`Validate()` metod och generera en XML-rapport.
 
-#### Q: What other features does Aspose.PDF for .NET offer for working with PDF documents?
+#### F: Vilka andra funktioner erbjuder Aspose.PDF för .NET för att arbeta med PDF-dokument?
 
-A: Aspose.PDF for .NET offers a wide range of features for working with PDF documents, including text manipulation, image insertion, table creation, form field management, digital signatures, annotations, and more. Consult the official documentation and resources for further exploration.
+S: Aspose.PDF för .NET erbjuder ett brett utbud av funktioner för att arbeta med PDF-dokument, inklusive textmanipulering, bildinfogning, tabellskapande, formulärfältshantering, digitala signaturer, anteckningar och mer. Se den officiella dokumentationen och resurserna för vidare utforskning.

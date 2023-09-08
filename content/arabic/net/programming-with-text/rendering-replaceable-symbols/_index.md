@@ -1,49 +1,49 @@
 ---
-title: Rendering Replaceable Symbols In PDF File
-linktitle: Rendering Replaceable Symbols In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to render replaceable symbols in PDF file using Aspose.PDF for .NET.
+title: تقديم الرموز القابلة للاستبدال في ملف PDF
+linktitle: تقديم الرموز القابلة للاستبدال في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية عرض الرموز القابلة للاستبدال في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 310
 url: /ar/net/programming-with-text/rendering-replaceable-symbols/
 ---
-In this tutorial, we will explain how to render replaceable symbols in PDF file using the Aspose.PDF library for .NET. We will go through the step-by-step process of creating a PDF, adding a text fragment with newline markers, setting text properties, positioning the text, and saving the PDF using the provided C# source code.
+سنشرح في هذا البرنامج التعليمي كيفية عرض الرموز القابلة للاستبدال في ملف PDF باستخدام مكتبة Aspose.PDF لـ .NET. سنتابع عملية إنشاء ملف PDF خطوة بخطوة، وإضافة جزء نص باستخدام علامات السطر الجديد، وتعيين خصائص النص، وتحديد موضع النص، وحفظ ملف PDF باستخدام كود مصدر C# المقدم.
 
-## Prerequisites
+## المتطلبات الأساسية
 
-Before you begin, ensure that you have the following:
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- The Aspose.PDF for .NET library installed.
-- A basic understanding of C# programming.
+- تم تثبيت Aspose.PDF لمكتبة .NET.
+- فهم أساسي للبرمجة C#.
 
-## Step 1: Set up the Document Directory
+## الخطوة 1: إعداد دليل المستندات
 
-First, you need to set the path to the directory where you want to save the generated PDF file. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your desired directory.
+ أولاً، تحتاج إلى تعيين المسار إلى الدليل الذي تريد حفظ ملف PDF الذي تم إنشاؤه فيه. يستبدل`"YOUR DOCUMENT DIRECTORY"` في ال`dataDir`متغير مع المسار إلى الدليل المطلوب.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Create a PDF Document and Page
+## الخطوة 2: إنشاء مستند وصفحة PDF
 
-Next, we create a new PDF document and add a page to it using the `Document` class and `Page` class from the Aspose.PDF library.
+ بعد ذلك، نقوم بإنشاء مستند PDF جديد ونضيف إليه صفحة باستخدام الملف`Document` الطبقة و`Page` فئة من مكتبة Aspose.PDF.
 
 ```csharp
 Aspose.Pdf.Document pdfApplicationDoc = new Aspose.Pdf.Document();
 Aspose.Pdf.Page applicationFirstPage = (Aspose.Pdf.Page)pdfApplicationDoc.Pages.Add();
 ```
 
-## Step 3: Add Text Fragment with Newline Markers
+## الخطوة 3: إضافة جزء نص باستخدام علامات السطر الجديد
 
-We create a `TextFragment` object and set its text to include newline markers (`Environment.NewLine`) to represent multiple lines of text.
+ نقوم بإنشاء أ`TextFragment`كائن وقم بتعيين نصه ليشمل علامات السطر الجديد (`Environment.NewLine`) لتمثيل أسطر متعددة من النص.
 
 ```csharp
 Aspose.Pdf.Text.TextFragment textFragment = new Aspose.Pdf.Text.TextFragment("Applicant Name: " + Environment.NewLine + " Joe Smoe");
 ```
 
-## Step 4: Set Text Fragment Properties
+## الخطوة 4: تعيين خصائص جزء النص
 
-We can set various properties for the text fragment if desired, such as font size, font, background color, and foreground color.
+يمكننا تعيين خصائص مختلفة لجزء النص إذا رغبت في ذلك، مثل حجم الخط والخط ولون الخلفية ولون المقدمة.
 
 ```csharp
 textFragment.TextState.FontSize = 12;
@@ -52,9 +52,9 @@ textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
 textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
 ```
 
-## Step 5: Create Text Paragraph and Position
+## الخطوة 5: إنشاء فقرة نصية وموضعها
 
-We create a `TextParagraph` object, append the text fragment to the paragraph, and set the position of the paragraph on the page.
+ نقوم بإنشاء أ`TextParagraph` كائن، وإلحاق جزء النص بالفقرة، وتعيين موضع الفقرة على الصفحة.
 
 ```csharp
 TextParagraph par = new TextParagraph();
@@ -62,18 +62,18 @@ par.AppendLine(textFragment);
 par.Position = new Aspose.Pdf.Text.Position(100, 600);
 ```
 
-## Step 6: Add Text Paragraph to the Page
+## الخطوة 6: إضافة فقرة نصية إلى الصفحة
 
-We create a `TextBuilder` object with the page and append the text paragraph to the text builder.
+ نقوم بإنشاء أ`TextBuilder` كائن مع الصفحة وإلحاق فقرة النص بمنشئ النص.
 
 ```csharp
 TextBuilder textBuilder = new TextBuilder(applicationFirstPage);
 textBuilder.AppendParagraph(par);
 ```
 
-## Step 7: Save the PDF Document
+## الخطوة 7: احفظ مستند PDF
 
-Finally, we save the PDF document to the specified output file.
+وأخيرًا، نقوم بحفظ مستند PDF في ملف الإخراج المحدد.
 
 ```csharp
 dataDir = dataDir + "RenderingReplaceableSymbols_out.pdf";
@@ -81,82 +81,82 @@ pdfApplicationDoc.Save(dataDir);
 Console.WriteLine("\nReplaceable symbols rendered successfully during PDF creation.\nFile saved at " + dataDir);
 ```
 
-### Sample source code for Rendering Replaceable Symbols using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لعرض الرموز القابلة للاستبدال باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document pdfApplicationDoc = new Aspose.Pdf.Document();
 Aspose.Pdf.Page applicationFirstPage = (Aspose.Pdf.Page)pdfApplicationDoc.Pages.Add();
-// Initialize new TextFragment with text containing required newline markers
+// قم بتهيئة TextFragment الجديد بنص يحتوي على علامات السطر الجديد المطلوبة
 Aspose.Pdf.Text.TextFragment textFragment = new Aspose.Pdf.Text.TextFragment("Applicant Name: " + Environment.NewLine + " Joe Smoe");
-// Set text fragment properties if necessary
+// قم بتعيين خصائص جزء النص إذا لزم الأمر
 textFragment.TextState.FontSize = 12;
 textFragment.TextState.Font = Aspose.Pdf.Text.FontRepository.FindFont("TimesNewRoman");
 textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
 textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
-// Create TextParagraph object
+// إنشاء كائن TextParagraph
 TextParagraph par = new TextParagraph();
-// Add new TextFragment to paragraph
+// إضافة TextFragment جديد إلى الفقرة
 par.AppendLine(textFragment);
-// Set paragraph position
+// ضبط موضع الفقرة
 par.Position = new Aspose.Pdf.Text.Position(100, 600);
-// Create TextBuilder object
+// إنشاء كائن TextBuilder
 TextBuilder textBuilder = new TextBuilder(applicationFirstPage);
-// Add the TextParagraph using TextBuilder
+// أضف TextParagraph باستخدام TextBuilder
 textBuilder.AppendParagraph(par);
 dataDir = dataDir + "RenderingReplaceableSymbols_out.pdf";
 pdfApplicationDoc.Save(dataDir);
 Console.WriteLine("\nReplaceable symbols render successfully duing pdf creation.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, you have learned how to render replaceable symbols in a PDF document using the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can create a PDF, add text with newline markers, set text properties, position the text on the page, and save the PDF.
+في هذا البرنامج التعليمي، تعلمت كيفية عرض رموز قابلة للاستبدال في مستند PDF باستخدام مكتبة Aspose.PDF لـ .NET. باتباع الدليل خطوة بخطوة وتنفيذ كود C# المقدم، يمكنك إنشاء ملف PDF وإضافة نص بعلامات السطر الجديد وتعيين خصائص النص ووضع النص على الصفحة وحفظ ملف PDF.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of the "Rendering Replaceable Symbols In PDF File" tutorial?
+#### س: ما هو الغرض من البرنامج التعليمي "عرض الرموز القابلة للاستبدال في ملف PDF"؟
 
-A: The "Rendering Replaceable Symbols In PDF File" tutorial demonstrates how to use the Aspose.PDF library for .NET to create a PDF document that includes replaceable symbols. These symbols are represented as text fragments with newline markers to create multi-line content.
+ج: يوضح البرنامج التعليمي "عرض الرموز القابلة للاستبدال في ملف PDF" كيفية استخدام مكتبة Aspose.PDF لـ .NET لإنشاء مستند PDF يتضمن رموزًا قابلة للاستبدال. يتم تمثيل هذه الرموز كأجزاء نصية مع علامات الأسطر الجديدة لإنشاء محتوى متعدد الأسطر.
 
-#### Q: Why would I want to render replaceable symbols in a PDF document?
+#### س: لماذا أرغب في عرض رموز قابلة للاستبدال في مستند PDF؟
 
-A: Rendering replaceable symbols is useful when you need to dynamically generate PDF content that includes variable or user-specific information. These symbols act as placeholders that can be replaced with actual data during runtime, such as form field values or personalized details.
+ج: يعد عرض الرموز القابلة للاستبدال مفيدًا عندما تحتاج إلى إنشاء محتوى PDF يتضمن معلومات متغيرة أو خاصة بالمستخدم ديناميكيًا. تعمل هذه الرموز كعناصر نائبة يمكن استبدالها بالبيانات الفعلية أثناء وقت التشغيل، مثل قيم حقل النموذج أو التفاصيل الشخصية.
 
-#### Q: How do I set up the document directory?
+#### س: كيف أقوم بإعداد دليل المستندات؟
 
-A: To set up the document directory:
+ج: لإعداد دليل المستندات:
 
-1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where you want to save the generated PDF file.
+1.  يستبدل`"YOUR DOCUMENT DIRECTORY"` في ال`dataDir` متغير مع المسار إلى الدليل الذي تريد حفظ ملف PDF الذي تم إنشاؤه فيه.
 
-#### Q: How do I render replaceable symbols in a PDF document using the Aspose.PDF library?
+#### س: كيف يمكنني عرض رموز قابلة للاستبدال في مستند PDF باستخدام مكتبة Aspose.PDF؟
 
-A: The tutorial guides you through the process step by step:
+ج: يرشدك البرنامج التعليمي خلال العملية خطوة بخطوة:
 
-1. Create a new PDF document using the `Document` class.
-2. Add a page to the document using the `Page` class.
-3. Create a `TextFragment` object with newline markers (`Environment.NewLine`) to represent multi-line content.
-4. Customize the text fragment's properties such as font size, font, background color, and foreground color.
-5. Create a `TextParagraph` object, append the text fragment to it, and set the position of the paragraph on the page.
-6. Create a `TextBuilder` object with the page and append the text paragraph to it.
-7. Save the PDF document.
+1.  قم بإنشاء مستند PDF جديد باستخدام`Document` فصل.
+2.  أضف صفحة إلى المستند باستخدام`Page` فصل.
+3.  إنشاء`TextFragment` كائن بعلامات السطر الجديد (`Environment.NewLine`) لتمثيل محتوى متعدد الأسطر.
+4. قم بتخصيص خصائص جزء النص مثل حجم الخط والخط ولون الخلفية ولون المقدمة.
+5.  إنشاء`TextParagraph` كائن، وألحق جزء النص به، وقم بتعيين موضع الفقرة على الصفحة.
+6.  إنشاء`TextBuilder` كائن مع الصفحة وإلحاق فقرة النص بها.
+7. احفظ مستند PDF.
 
-#### Q: What is the purpose of using newline markers (`Environment.NewLine`) in the text fragment?
+#### س: ما هو الغرض من استخدام علامات السطر الجديد (`Environment.NewLine`) in the text fragment?
 
-A: Newline markers are used to create multi-line content within a single text fragment. By using `Environment.NewLine`, you can indicate where line breaks should occur in the text.
+ ج: تُستخدم علامات السطر الجديد لإنشاء محتوى متعدد الأسطر داخل جزء نص واحد. باستخدام`Environment.NewLine`، يمكنك الإشارة إلى المكان الذي يجب أن تظهر فيه فواصل الأسطر في النص.
 
-#### Q: Can I customize the appearance of the replaceable symbols?
+#### س: هل يمكنني تخصيص مظهر الرموز القابلة للاستبدال؟
 
-A: Yes, you can customize various properties of the text fragment, such as font size, font, background color, and foreground color. These properties determine the visual appearance of the replaceable symbols in the PDF document.
+ج: نعم، يمكنك تخصيص خصائص مختلفة لجزء النص، مثل حجم الخط والخط ولون الخلفية ولون المقدمة. تحدد هذه الخصائص المظهر المرئي للرموز القابلة للاستبدال في مستند PDF.
 
-#### Q: How do I specify the position of the text on the page?
+#### س: كيف أحدد موضع النص في الصفحة؟
 
-A: You can set the position of the text by creating a `TextParagraph` object and using the `Position` property to specify the X and Y coordinates on the page where the paragraph should be positioned.
+ ج: يمكنك ضبط موضع النص عن طريق إنشاء ملف`TextParagraph` الكائن واستخدام`Position` الخاصية لتحديد إحداثيات X وY على الصفحة التي يجب وضع الفقرة فيها.
 
-#### Q: What is the expected outcome of executing the provided code?
+#### س: ما هي النتيجة المتوقعة من تنفيذ الكود المقدم؟
 
-A: By following the tutorial and running the provided C# code, you will create a PDF document that includes replaceable symbols. The replaceable symbols will be represented as text fragments with newline markers and customized properties.
+ج: باتباع البرنامج التعليمي وتشغيل رمز C# المقدم، ستقوم بإنشاء مستند PDF يتضمن رموزًا قابلة للاستبدال. سيتم تمثيل الرموز القابلة للاستبدال على هيئة أجزاء نصية مع علامات السطر الجديد وخصائص مخصصة.
 
-#### Q: Can I use this approach to dynamically generate personalized PDF documents?
+#### س: هل يمكنني استخدام هذا الأسلوب لإنشاء مستندات PDF مخصصة ديناميكيًا؟
 
-A: Yes, this approach is suitable for dynamically generating PDF documents with personalized information. By replacing the replaceable symbols with actual data, you can create customized PDF content for each user or scenario.
+ج: نعم، هذا الأسلوب مناسب لإنشاء مستندات PDF بمعلومات مخصصة ديناميكيًا. من خلال استبدال الرموز القابلة للاستبدال بالبيانات الفعلية، يمكنك إنشاء محتوى PDF مخصص لكل مستخدم أو سيناريو.

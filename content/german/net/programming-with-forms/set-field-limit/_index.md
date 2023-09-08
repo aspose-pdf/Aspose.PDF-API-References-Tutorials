@@ -1,22 +1,22 @@
 ---
-title: Set Field Limit
-linktitle: Set Field Limit
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set a field boundary in a PDF document using Aspose.PDF for .NET.
+title: Feldlimit festlegen
+linktitle: Feldlimit festlegen
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET eine Feldgrenze in einem PDF-Dokument festlegen.
 type: docs
 weight: 260
 url: /de/net/programming-with-forms/set-field-limit/
 ---
-Here is a detailed tutorial on how to set a field boundary using Aspose.PDF for .NET. Follow these steps:
+Hier finden Sie eine ausführliche Anleitung zum Festlegen einer Feldgrenze mit Aspose.PDF für .NET. Folge diesen Schritten:
 
-## Step 1: Start by defining the directory of your documents by specifying the path in the `dataDir` variable.
+##  Schritt 1: Definieren Sie zunächst das Verzeichnis Ihrer Dokumente, indem Sie den Pfad im angeben`dataDir` variable.
 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Add the field with a boundary using the `FormEditor` class.
+##  Schritt 2: Fügen Sie das Feld mit einer Grenze hinzu`FormEditor` class.
 
 ```csharp
 FormEditor form = new FormEditor();
@@ -24,29 +24,29 @@ form.BindPdf(dataDir + "input.pdf");
 form.SetFieldLimit("textbox1", 15);
 ```
 
-## Step 3: Set the output path for the edited PDF file.
+## Schritt 3: Legen Sie den Ausgabepfad für die bearbeitete PDF-Datei fest.
 
 ```csharp
 dataDir = dataDir + "SetFieldLimit_out.pdf";
 ```
 
-## Step 4: Save the modified PDF file.
+## Schritt 4: Speichern Sie die geänderte PDF-Datei.
 
 ```csharp
 form.Save(dataDir);
 ```
 
-## Step 5: Display a confirmation message and the location of the saved file.
+## Schritt 5: Zeigen Sie eine Bestätigungsmeldung und den Speicherort der gespeicherten Datei an.
 
 ```csharp
 Console.WriteLine("\nField added successfully with limit.\nFile saved to location: " + dataDir);
 ```
 
-### Sample source code for Set Field Limit using Aspose.PDF for .NET 
+### Beispielquellcode für „Feldlimit festlegen“ mit Aspose.PDF für .NET 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Adding Field with limit
+// Feld mit Limit hinzufügen
 FormEditor form = new FormEditor();
 form.BindPdf( dataDir + "input.pdf");
 form.SetFieldLimit("textbox1", 15);
@@ -55,29 +55,29 @@ form.Save(dataDir);
 Console.WriteLine("\nField added successfully with limit.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Abschluss
 
-In this tutorial, we learned how to set a field boundary using Aspose.PDF for .NET. By following the steps outlined above, you can manipulate and set limits for form fields in your PDF documents using Aspose.PDF for .NET.
+In diesem Tutorial haben wir gelernt, wie man mit Aspose.PDF für .NET eine Feldgrenze festlegt. Indem Sie die oben beschriebenen Schritte ausführen, können Sie mit Aspose.PDF für .NET Formularfelder in Ihren PDF-Dokumenten bearbeiten und Grenzen für diese festlegen.
 
 
-### FAQ's
+### FAQs
 
-#### Q: Can I set different limits for different form fields in the same PDF document?
+#### F: Kann ich für verschiedene Formularfelder im selben PDF-Dokument unterschiedliche Grenzwerte festlegen?
 
-A: Yes, you can set different limits for different form fields in the same PDF document using Aspose.PDF for .NET. Simply specify the desired field name and the corresponding limit for each form field in your code.
+A: Ja, Sie können mit Aspose.PDF für .NET unterschiedliche Grenzwerte für verschiedene Formularfelder im selben PDF-Dokument festlegen. Geben Sie einfach für jedes Formularfeld in Ihrem Code den gewünschten Feldnamen und das entsprechende Limit an.
 
-#### Q: How do I remove a field boundary or limit using Aspose.PDF for .NET?
+#### F: Wie entferne ich eine Feldgrenze oder -beschränkung mit Aspose.PDF für .NET?
 
-A: To remove a field boundary or limit, you can use the `RemoveFieldLimit` method of the `FormEditor` class and specify the name of the form field from which you want to remove the limit.
+ A: Um eine Feldgrenze oder -begrenzung zu entfernen, können Sie die verwenden`RemoveFieldLimit` Methode der`FormEditor` Klasse und geben Sie den Namen des Formularfelds an, aus dem Sie die Beschränkung entfernen möchten.
 
-#### Q: Does Aspose.PDF for .NET support setting field limits for checkboxes and radio buttons?
+#### F: Unterstützt Aspose.PDF für .NET das Festlegen von Feldgrenzen für Kontrollkästchen und Optionsfelder?
 
-A: No, field limits are applicable to text fields only. Aspose.PDF for .NET does not support setting field limits for checkboxes and radio buttons.
+A: Nein, Feldbeschränkungen gelten nur für Textfelder. Aspose.PDF für .NET unterstützt das Festlegen von Feldgrenzen für Kontrollkästchen und Optionsfelder nicht.
 
-#### Q: Can I customize the appearance of the field boundary using Aspose.PDF for .NET?
+#### F: Kann ich das Erscheinungsbild der Feldgrenze mit Aspose.PDF für .NET anpassen?
 
-A: No, field limits set using Aspose.PDF for .NET are not visible in the PDF document's visual representation. They are used to control the input length and data entry for text fields, but they do not affect the appearance of the form fields.
+A: Nein, die mit Aspose.PDF für .NET festgelegten Feldgrenzen sind in der visuellen Darstellung des PDF-Dokuments nicht sichtbar. Sie dienen zur Steuerung der Eingabelänge und der Dateneingabe für Textfelder, haben jedoch keinen Einfluss auf das Erscheinungsbild der Formularfelder.
 
-#### Q: Is it possible to set field limits for multiple fields simultaneously using Aspose.PDF for .NET?
+#### F: Ist es möglich, mit Aspose.PDF für .NET Feldgrenzen für mehrere Felder gleichzeitig festzulegen?
 
-A: Yes, you can set field limits for multiple fields simultaneously by iterating through each form field and using the `SetFieldLimit` method for each field with the desired limit.
+A: Ja, Sie können Feldgrenzen für mehrere Felder gleichzeitig festlegen, indem Sie jedes Formularfeld durchlaufen und verwenden`SetFieldLimit` Methode für jedes Feld mit der gewünschten Grenze.

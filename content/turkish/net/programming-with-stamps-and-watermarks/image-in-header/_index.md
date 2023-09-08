@@ -1,141 +1,141 @@
 ---
-title: Image In Header
-linktitle: Image In Header
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add an image in the header section of a PDF document with Aspose.PDF for .NET.
+title: Başlıktaki Resim
+linktitle: Başlıktaki Resim
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile bir PDF belgesinin başlık bölümüne nasıl resim ekleyeceğinizi öğrenin.
 type: docs
 weight: 140
 url: /tr/net/programming-with-stamps-and-watermarks/image-in-header/
 ---
-In this tutorial, we will guide you step by step on how to add an image in the header section of a PDF document using Aspose.PDF for .NET. We will use the provided C# source code to open an existing PDF document, create an image buffer, set its properties, and add it to all pages of the PDF document.
+Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF belgesinin başlık bölümüne nasıl resim ekleyeceğiniz konusunda size adım adım rehberlik edeceğiz. Mevcut bir PDF belgesini açmak, bir görüntü arabelleği oluşturmak, özelliklerini ayarlamak ve bunu PDF belgesinin tüm sayfalarına eklemek için sağlanan C# kaynak kodunu kullanacağız.
 
-## Step 1: Setting up the environment
+## 1. Adım: Ortamı ayarlama
 
-Before you begin, make sure you have the following:
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Kurulu bir .NET geliştirme ortamı.
+- .NET için Aspose.PDF kütüphanesini indirip projenizde referans olarak kullanabilirsiniz.
 
-## Step 2: Loading the existing PDF document
+## Adım 2: Mevcut PDF belgesini yükleme
 
-The first step is to load the existing PDF document into your project. Here's how:
+İlk adım mevcut PDF belgesini projenize yüklemektir. İşte nasıl:
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the existing PDF document
+// Mevcut PDF belgesini aç
 Document pdfDocument = new Document(dataDir + "ImageinHeader.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+"BELGELERİNİZ DİZİNİ"ni, PDF belgenizin bulunduğu dizine giden gerçek yolla değiştirdiğinizden emin olun.
 
-## Step 3: Creating and adding the image in the header section
+## 3. Adım: Görüntüyü oluşturma ve başlık bölümüne ekleme
 
-Now that the PDF document is loaded, we can create an image buffer and add it to all pages of the document as a header section. Here's how:
+Artık PDF belgesi yüklendiğine göre, bir görüntü arabelleği oluşturabilir ve bunu belgenin tüm sayfalarına başlık bölümü olarak ekleyebiliriz. İşte nasıl:
 
 ```csharp
-// Create the frame buffer
+// Çerçeve arabelleğini oluşturun
 ImageStamp imageStamp = new ImageStamp(dataDir + "aspose-logo.jpg");
 
-// Set image buffer properties
+// Görüntü arabelleği özelliklerini ayarlama
 imageStamp.TopMargin = 10;
 imageStamp.HorizontalAlignment = HorizontalAlignment.Center;
 imageStamp.VerticalAlignment = VerticalAlignment.Top;
 
-// Add image buffer to all pages
+// Tüm sayfalara resim arabelleği ekleyin
 foreach(Page page in pdfDocument.Pages)
 {
      page.AddStamp(imageStamp);
 }
 ```
 
-The above code creates an image buffer from the "aspose-logo.jpg" file and sets its properties, such as top margin, horizontal and vertical alignment. Then the image stamp is added to all pages of the PDF document as a header section.
+Yukarıdaki kod, "aspose-logo.jpg" dosyasından bir görüntü arabelleği oluşturur ve bunun üst kenar boşluğu, yatay ve dikey hizalama gibi özelliklerini ayarlar. Daha sonra görüntü damgası PDF belgesinin tüm sayfalarına başlık bölümü olarak eklenir.
 
-## Step 4: Saving the modified PDF document
+## Adım 4: Değiştirilen PDF belgesini kaydetme
 
-Once the image is added in the header section, we can save the modified PDF document. Here's how:
+Resim başlık bölümüne eklendikten sonra değiştirilen PDF belgesini kaydedebiliriz. İşte nasıl:
 
 ```csharp
-// Save the modified PDF document
+// Değiştirilen PDF belgesini kaydedin
 pdfDocument.Save(dataDir + "ImageinHeader_out.pdf");
 ```
 
-The above code saves the edited PDF document to the specified directory.
+Yukarıdaki kod, düzenlenen PDF belgesini belirtilen dizine kaydeder.
 
-### Sample source code for Imagein Header using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanan Imagein Başlığı için örnek kaynak kodu 
 
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir+ "ImageinHeader.pdf");
 
-// Create header
+// Başlık oluştur
 ImageStamp imageStamp = new ImageStamp(dataDir+ "aspose-logo.jpg");
 
-// Set properties of the stamp
+// Damganın özelliklerini ayarlama
 imageStamp.TopMargin = 10;
 imageStamp.HorizontalAlignment = HorizontalAlignment.Center;
 imageStamp.VerticalAlignment = VerticalAlignment.Top;
 
-// Add header on all pages
+// Tüm sayfalara başlık ekleyin
 foreach (Page page in pdfDocument.Pages)
 {
 	page.AddStamp(imageStamp);
 }
 dataDir = dataDir + "ImageinHeader_out.pdf";
 
-// Save updated document
+// Güncellenen belgeyi kaydet
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nImage in header added successfully.\nFile saved at " + dataDir);                        
 
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulation ! You have learned how to add an image in the header section of a PDF document using Aspose.PDF for .NET. You can now customize the headers of your PDF documents by adding images.
+Tebrikler! Aspose.PDF for .NET kullanarak bir PDF belgesinin başlık bölümüne nasıl resim ekleyeceğinizi öğrendiniz. Artık PDF belgelerinizin başlıklarını resim ekleyerek özelleştirebilirsiniz.
 
-### FAQ's for image in header
+### Başlıktaki resim için SSS
 
-#### Q: What is the purpose of adding an image in the header section of a PDF document?
+#### S: PDF belgesinin başlık bölümüne resim eklemenin amacı nedir?
 
-A: Adding an image in the header section of a PDF document allows you to include visual elements, such as a logo or branding, at the top of every page. This can enhance the overall look and feel of the PDF content.
+C: Bir PDF belgesinin başlık bölümüne bir resim eklemek, her sayfanın üst kısmına logo veya markalama gibi görsel öğeler eklemenizi sağlar. Bu, PDF içeriğinin genel görünümünü ve hissini geliştirebilir.
 
-#### Q: How does the provided C# source code achieve adding an image to the header section of a PDF document?
+#### S: Sağlanan C# kaynak kodu, bir PDF belgesinin başlık bölümüne resim eklemeyi nasıl başarır?
 
-A: The provided code demonstrates how to load an existing PDF document, create an `ImageStamp` object from an image file, set properties such as top margin and alignment, and then add the image stamp to the header of all pages.
+ C: Sağlanan kod, mevcut bir PDF belgesinin nasıl yükleneceğini, bir PDF belgesinin nasıl oluşturulacağını gösterir.`ImageStamp` Bir görüntü dosyasından bir nesne seçin, üst kenar boşluğu ve hizalama gibi özellikleri ayarlayın ve ardından görüntü damgasını tüm sayfaların başlığına ekleyin.
 
-#### Q: Can I adjust the position and alignment of the image within the header section?
+#### S: Başlık bölümündeki görüntünün konumunu ve hizalamasını ayarlayabilir miyim?
 
-A: Yes, you can adjust the position and alignment of the image within the header section by modifying the properties of the `ImageStamp` object. The code snippet sets properties such as `TopMargin`, `HorizontalAlignment`, and `VerticalAlignment`.
+ C: Evet, başlık bölümünün özelliklerini değiştirerek görüntünün başlık bölümündeki konumunu ve hizalamasını ayarlayabilirsiniz.`ImageStamp` nesne. Kod pasajı aşağıdaki gibi özellikleri ayarlar:`TopMargin`, `HorizontalAlignment` , Ve`VerticalAlignment`.
 
-#### Q: Is it possible to add different images to the header section on different pages of the PDF document?
+#### S: PDF belgesinin farklı sayfalarındaki başlık bölümüne farklı görseller eklemek mümkün müdür?
 
-A: Yes, you can add different images to the header section on different pages by creating separate `ImageStamp` objects with different image files and properties, and then adding them to specific pages.
+ C: Evet, farklı sayfalardaki başlık bölümüne ayrı ayrı oluşturarak farklı görseller ekleyebilirsiniz.`ImageStamp` farklı görüntü dosyalarına ve özelliklere sahip nesneler oluşturma ve ardından bunları belirli sayfalara ekleme.
 
-#### Q: How does the code ensure that the image is added to all pages of the PDF document's header section?
+#### S: Kod, görüntünün PDF belgesinin başlık bölümünün tüm sayfalarına eklenmesini nasıl sağlıyor?
 
-A: The provided code uses a `foreach` loop to iterate through all pages of the PDF document and adds the same `ImageStamp` to each page's header section.
+C: Sağlanan kod bir`foreach` PDF belgesinin tüm sayfalarını yinelemek için döngü yapar ve aynısını ekler`ImageStamp`her sayfanın başlık bölümüne.
 
-#### Q: Can I add other elements, such as text or shapes, to the header section using a similar approach?
+#### S: Benzer bir yaklaşım kullanarak başlık bölümüne metin veya şekil gibi başka öğeler ekleyebilir miyim?
 
-A: Yes, you can add other elements like text or shapes to the header section using a similar approach by creating the appropriate stamp objects (e.g., `TextStamp`) and setting their properties accordingly.
+ C: Evet, uygun damga nesnelerini (örn.`TextStamp`) ve özelliklerini buna göre ayarlamak.
 
-#### Q: How do I specify the path to the image file that I want to add to the header?
+#### S: Başlığa eklemek istediğim görüntü dosyasının yolunu nasıl belirlerim?
 
-A: The path to the image file is specified when creating the `ImageStamp` object, as shown in the code. Make sure to provide the correct path to the image file.
+ C: Görüntü dosyasının yolu, görüntü dosyası oluşturulurken belirtilir.`ImageStamp` nesne, kodda gösterildiği gibi. Resim dosyasına doğru yolu girdiğinizden emin olun.
 
-#### Q: Can I customize the image's size within the header section?
+#### S: Başlık bölümünde görselin boyutunu özelleştirebilir miyim?
 
-A: Yes, you can customize the image's size within the header section by adjusting the dimensions of the `ImageStamp` using properties like `Width` and `Height`.
+ C: Evet, başlık bölümünün boyutlarını ayarlayarak görüntünün boyutunu özelleştirebilirsiniz.`ImageStamp` gibi özellikleri kullanarak`Width` Ve`Height`.
 
-#### Q: Is it possible to remove or replace the image in the header section after it has been added?
+#### S: Başlık bölümündeki görseli eklendikten sonra kaldırmak veya değiştirmek mümkün müdür?
 
-A: Yes, you can remove or replace the image in the header section by modifying the contents of the `ImageStamp` object or removing the stamp from specific pages.
+ C: Evet, başlık bölümündeki görseli, içeriğini değiştirerek kaldırabilir veya değiştirebilirsiniz.`ImageStamp` nesne veya damganın belirli sayfalardan kaldırılması.
 
-#### Q: How does the code handle scenarios where the image's dimensions exceed the available space in the header?
+#### S: Kod, görüntünün boyutlarının başlıktaki kullanılabilir alanı aştığı senaryoları nasıl ele alır?
 
-A: The code sets properties such as `TopMargin`, `HorizontalAlignment`, and `VerticalAlignment` to control the positioning and alignment of the image. Ensure that these properties are adjusted to prevent any overlap or layout issues.
+ C: Kod aşağıdaki gibi özellikleri ayarlar:`TopMargin`, `HorizontalAlignment` , Ve`VerticalAlignment` görüntünün konumunu ve hizalamasını kontrol etmek için. Bu özelliklerin çakışma veya düzen sorunlarını önleyecek şekilde ayarlandığından emin olun.

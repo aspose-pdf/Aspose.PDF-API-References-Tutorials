@@ -1,82 +1,82 @@
 ---
-title: Validate PDF AB Standard
-linktitle: Validate PDF AB Standard
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use Aspose.PDF for .NET to validate PDF documents against the PDFABStandard with our step-by-step guide and code example.
+title: Подтвердите стандарт PDF AB
+linktitle: Подтвердите стандарт PDF AB
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как использовать Aspose.PDF для .NET для проверки PDF-документов на соответствие PDFABStandard, с помощью нашего пошагового руководства и примера кода.
 type: docs
 weight: 380
 url: /ru/net/programming-with-document/validatepdfabstandard/
 ---
-If you are working with PDF documents in .NET, you may need to validate the PDF against a standard such as PDF/A. Aspose.PDF for .NET provides an easy-to-use method for validating a PDF document against PDF/A-1a standard. In this article, we will provide a step-by-step guide to explain the following C# source code of getting and validating PDF/A-1a standard using Aspose.PDF for .NET.
+Если вы работаете с PDF-документами в .NET, вам может потребоваться проверить PDF на соответствие такому стандарту, как PDF/A. Aspose.PDF для .NET предоставляет простой в использовании метод проверки PDF-документа на соответствие стандарту PDF/A-1a. В этой статье мы предоставим пошаговое руководство, объясняющее следующий исходный код C# для получения и проверки стандарта PDF/A-1a с использованием Aspose.PDF для .NET.
 
-## Step 1: Set the path to the document directory
+## Шаг 1. Установите путь к каталогу документов.
 
-Before we start, we need to set the path to the directory where our PDF document is located. We will store this path in a variable called "dataDir".
+Прежде чем начать, нам нужно указать путь к каталогу, в котором находится наш PDF-документ. Мы сохраним этот путь в переменной с именем «dataDir».
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace "YOUR DOCUMENT DIRECTORY" with the actual path to the directory where your PDF document is located.
+Замените «КАТАЛОГ ВАШЕГО ДОКУМЕНТА» фактическим путем к каталогу, в котором находится ваш PDF-документ.
 
-## Step 2: Open the PDF document
+## Шаг 2. Откройте PDF-документ.
 
-Next, we need to open the PDF document using the Aspose.PDF for .NET "Document" class. We will store the document in a variable called "pdfDocument".
+Далее нам нужно открыть PDF-документ, используя класс «Документ» Aspose.PDF for .NET. Мы сохраним документ в переменной с именем «pdfDocument».
 
 ```csharp
-// Open document
+// Открыть документ
 Document pdfDocument = new Document(dataDir + "ValidatePDFAStandard.pdf");
 ```
 
-Replace "ValidatePDFAStandard.pdf" with the name of your PDF document.
+Замените «ValidatePDFAStandard.pdf» на имя вашего PDF-документа.
 
-### Step 3: Validate the PDF for PDF/A-1a
+### Шаг 3. Проверьте PDF на наличие PDF/A-1a.
 
-Finally, we can validate the PDF document against PDF/A-1a standard using the "Validate" method of the "Document" class. We will store the validation result in a file called "validation-result-A1A.xml".
+Наконец, мы можем проверить документ PDF на соответствие стандарту PDF/A-1a, используя метод «Проверить» класса «Документ». Мы сохраним результат проверки в файле с именем «validation-result-A1A.xml».
 
 ```csharp
-// Validate PDF for PDF/A-1a
+// Проверка PDF на наличие PDF/A-1a
 pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1B);
 ```
 
-The second parameter "PdfFormat.PDF_A_1B" specifies that we want to validate the PDF against PDF/A-1a standard.
+Второй параметр «PdfFormat.PDF_A_1B» указывает, что мы хотим проверить PDF на соответствие стандарту PDF/A-1a.
 
-### Example source code for Get Validate PDFABStandard using Aspose.PDF for .NET
+### Пример исходного кода для Get Validate PDFABStandard с использованием Aspose.PDF для .NET
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Открыть документ
 Document pdfDocument = new Document(dataDir + "ValidatePDFAStandard.pdf");
 
-// Validate PDF for PDF/A-1a
+// Проверка PDF на наличие PDF/A-1a
 pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1B);
 ```
 
-## Conclusion
+## Заключение
 
-In this article, we have explained how to use Aspose.PDF for .NET to validate a PDF document against PDF/A-1a standard. By following the above steps, you can easily validate your PDF documents against various standards using Aspose.PDF for .NET.
+В этой статье мы объяснили, как использовать Aspose.PDF для .NET для проверки PDF-документа на соответствие стандарту PDF/A-1a. Следуя вышеуказанным шагам, вы можете легко проверить свои PDF-документы на соответствие различным стандартам, используя Aspose.PDF для .NET.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is PDF/A-1a standard, and why is it important to validate against it?
+#### Вопрос: Что такое стандарт PDF/A-1a и почему важно проверять его соответствие?
 
-A: PDF/A-1a is a standard for archiving PDF documents to ensure long-term preservation and accessibility. Validating a PDF against PDF/A-1a ensures that the document is compliant with this archiving standard, making it suitable for long-term storage and retrieval.
+О: PDF/A-1a — это стандарт архивирования PDF-документов, обеспечивающий долгосрочное сохранение и доступность. Проверка PDF на соответствие PDF/A-1a гарантирует, что документ соответствует этому стандарту архивирования, что делает его пригодным для долгосрочного хранения и поиска.
 
-#### Q: Can I use Aspose.PDF for .NET to validate PDFs against other standards?
+#### Вопрос: Могу ли я использовать Aspose.PDF для .NET для проверки PDF-файлов на соответствие другим стандартам?
 
-A: Yes, Aspose.PDF for .NET provides support for validating PDF documents against various PDF/A and PDF/X standards. You can specify the desired standard when using the `Validate` method, such as PDF/A-1b or PDF/X-1a.
+ О: Да, Aspose.PDF для .NET обеспечивает поддержку проверки PDF-документов на соответствие различным стандартам PDF/A и PDF/X. Вы можете указать желаемый стандарт при использовании`Validate` метод, например PDF/A-1b или PDF/X-1a.
 
-#### Q: What happens if a PDF document fails validation against PDF/A-1a?
+#### Вопрос: Что произойдет, если PDF-документ не пройдет проверку на соответствие PDF/A-1a?
 
-A: If a PDF document fails validation against PDF/A-1a, it means that the document contains elements that are not compliant with the standard. You may need to make necessary adjustments to ensure compliance with the archiving requirements.
+О: Если PDF-документ не проходит проверку на соответствие PDF/A-1a, это означает, что документ содержит элементы, не соответствующие стандарту. Возможно, вам придется внести необходимые изменения, чтобы обеспечить соответствие требованиям архивирования.
 
-#### Q: What type of PDF documents benefit most from PDF/A-1a validation?
+#### Вопрос: Для каких типов PDF-документов больше всего подходит проверка PDF/A-1a?
 
-A: PDF/A-1a validation is particularly useful for documents that need to be archived or preserved for long-term use. These may include legal documents, official records, historical documents, and other materials with long-lasting value.
+О: Проверка PDF/A-1a особенно полезна для документов, которые необходимо заархивировать или сохранить для долгосрочного использования. Они могут включать юридические документы, официальные отчеты, исторические документы и другие материалы, имеющие долгосрочную ценность.
 
-#### Q: Does Aspose.PDF for .NET provide detailed validation reports?
+#### Вопрос: Предоставляет ли Aspose.PDF для .NET подробные отчеты о проверке?
 
-A: Yes, Aspose.PDF for .NET generates detailed validation reports when validating against PDF/A-1a standard. The validation report, usually in XML format, highlights any issues or non-compliant elements in the PDF document.
+О: Да, Aspose.PDF для .NET генерирует подробные отчеты о проверке при проверке на соответствие стандарту PDF/A-1a. Отчет о проверке, обычно в формате XML, выделяет любые проблемы или несоответствующие элементы в документе PDF.

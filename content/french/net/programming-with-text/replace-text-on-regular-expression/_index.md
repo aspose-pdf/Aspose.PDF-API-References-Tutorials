@@ -1,51 +1,51 @@
 ---
-title: Replace Text on Regular Expression In PDF File
-linktitle: Replace Texton Regular Expression In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to replace text based on a regular expression in PDF file using Aspose.PDF for .NET.
+title: Remplacer le texte par une expression régulière dans un fichier PDF
+linktitle: Remplacer l'expression régulière Texton dans un fichier PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment remplacer du texte basé sur une expression régulière dans un fichier PDF à l'aide d'Aspose.PDF pour .NET.
 type: docs
 weight: 360
 url: /fr/net/programming-with-text/replace-text-on-regular-expression/
 ---
-In this tutorial, we will explain how to replace text based on a regular expression in PDF file using the Aspose.PDF library for .NET. We will provide a step-by-step guide along with the necessary C# source code.
+Dans ce didacticiel, nous expliquerons comment remplacer du texte basé sur une expression régulière dans un fichier PDF à l'aide de la bibliothèque Aspose.PDF pour .NET. Nous fournirons un guide étape par étape ainsi que le code source C# nécessaire.
 
-## Prerequisites
+## Conditions préalables
 
-Before you begin, make sure you have the following:
+Avant de commencer, assurez-vous d'avoir les éléments suivants :
 
-- Aspose.PDF for .NET library installed.
-- Basic understanding of C# programming.
+- Aspose.PDF pour la bibliothèque .NET installée.
+- Compréhension de base de la programmation C#.
 
-## Step 1: Set up the Document Directory
+## Étape 1 : configurer le répertoire de documents
 
-Set the path to the directory where you have the input PDF file. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your PDF file.
+ Définissez le chemin d’accès au répertoire dans lequel se trouve le fichier PDF d’entrée. Remplacer`"YOUR DOCUMENT DIRECTORY"` dans le`dataDir` variable avec le chemin d'accès à votre fichier PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load the PDF Document
+## Étape 2 : Charger le document PDF
 
-Load the PDF document using the `Document` class from the Aspose.PDF library.
+ Chargez le document PDF à l'aide du`Document` classe de la bibliothèque Aspose.PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "SearchRegularExpressionPage.pdf");
 ```
 
-## Step 3: Search and Replace Text using Regular Expression
+## Étape 3 : Rechercher et remplacer du texte à l'aide d'une expression régulière
 
-Create a `TextFragmentAbsorber` object and specify the regular expression pattern to find all the phrases matching the pattern. Set the text search option to enable regular expression usage.
+ Créer un`TextFragmentAbsorber` objet et spécifiez le modèle d’expression régulière pour trouver toutes les phrases correspondant au modèle. Définissez l’option de recherche de texte pour activer l’utilisation des expressions régulières.
 
 ```csharp
-TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // Like 1999-2000
+TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // Comme 1999-2000
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textFragmentAbsorber.TextSearchOptions = textSearchOptions;
 pdfDocument.Pages[1].Accept(textFragmentAbsorber);
 ```
 
-## Step 4: Replace Text
+## Étape 4 : Remplacer le texte
 
-Loop through the extracted text fragments and replace the text as required. Update the text and other properties such as font, font size, foreground color, and background color.
+Parcourez les fragments de texte extraits et remplacez le texte si nécessaire. Mettez à jour le texte et d'autres propriétés telles que la police, la taille de la police, la couleur de premier plan et la couleur d'arrière-plan.
 
 ```csharp
 foreach (TextFragment textFragment in textFragmentAbsorber.TextFragments)
@@ -58,9 +58,9 @@ foreach (TextFragment textFragment in textFragmentAbsorber.TextFragments)
 }
 ```
 
-## Step 5: Save the Modified PDF
+## Étape 5 : Enregistrez le PDF modifié
 
-Save the modified PDF document to the specified output file.
+Enregistrez le document PDF modifié dans le fichier de sortie spécifié.
 
 ```csharp
 dataDir = dataDir + "ReplaceTextonRegularExpression_out.pdf";
@@ -68,27 +68,27 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nText replaced successfully based on a regular expression.\nFile saved at " + dataDir);
 ```
 
-### Sample source code for Replace Texton Regular Expression using Aspose.PDF for .NET 
+### Exemple de code source pour remplacer l'expression régulière Texton à l'aide d'Aspose.PDF pour .NET 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Ouvrir le document
 Document pdfDocument = new Document(dataDir + "SearchRegularExpressionPage.pdf");
-// Create TextAbsorber object to find all the phrases matching the regular expression
-TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // Like 1999-2000
-// Set text search option to specify regular expression usage
+// Créez un objet TextAbsorber pour trouver toutes les phrases correspondant à l'expression régulière
+TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // Comme 1999-2000
+// Définir l'option de recherche de texte pour spécifier l'utilisation des expressions régulières
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textFragmentAbsorber.TextSearchOptions = textSearchOptions;
-// Accept the absorber for a single page
+// Acceptez l'absorbeur pour une seule page
 pdfDocument.Pages[1].Accept(textFragmentAbsorber);
-// Get the extracted text fragments
+// Obtenez les fragments de texte extraits
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-// Loop through the fragments
+// Parcourez les fragments
 foreach (TextFragment textFragment in textFragmentCollection)
 {
-	// Update text and other properties
+	// Mettre à jour le texte et d'autres propriétés
 	textFragment.Text = "New Phrase";
-	// Set to an instance of an object.
+	// Défini sur une instance d’un objet.
 	textFragment.TextState.Font = FontRepository.FindFont("Verdana");
 	textFragment.TextState.FontSize = 22;
 	textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Blue);
@@ -101,53 +101,53 @@ Console.WriteLine("\nText replaced successfully based on a regular expression.\n
 
 ## Conclusion
 
-In this tutorial, you have learned how to replace text based on a regular expression in a PDF document using the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can load a PDF document, search for text using a regular expression, replace it, and save the modified PDF.
+Dans ce didacticiel, vous avez appris à remplacer du texte basé sur une expression régulière dans un document PDF à l'aide de la bibliothèque Aspose.PDF pour .NET. En suivant le guide étape par étape et en exécutant le code C# fourni, vous pouvez charger un document PDF, rechercher du texte à l'aide d'une expression régulière, le remplacer et enregistrer le PDF modifié.
 
-### FAQ's
+### FAQ
 
-#### Q: What is the purpose of the "Replace Text on Regular Expression In PDF File" tutorial?
+#### Q : Quel est l'objectif du didacticiel « Remplacer le texte par une expression régulière dans un fichier PDF » ?
 
-A: The "Replace Text on Regular Expression In PDF File" tutorial aims to guide you through the process of using the Aspose.PDF library for .NET to search for and replace text in a PDF document based on a regular expression. It provides a step-by-step guide along with sample C# code.
+R : Le didacticiel « Remplacer le texte par une expression régulière dans un fichier PDF » vise à vous guider tout au long du processus d'utilisation de la bibliothèque Aspose.PDF pour .NET afin de rechercher et de remplacer du texte dans un document PDF basé sur une expression régulière. Il fournit un guide étape par étape ainsi qu’un exemple de code C#.
 
-#### Q: Why would I want to use a regular expression to replace text in a PDF document?
+#### Q : Pourquoi voudrais-je utiliser une expression régulière pour remplacer du texte dans un document PDF ?
 
-A: Using regular expressions allows you to search for and replace text patterns that follow a specific format, making it a powerful way to manipulate content. This approach is particularly useful when you need to replace text that matches a certain pattern or structure across the PDF document.
+R : L'utilisation d'expressions régulières vous permet de rechercher et de remplacer des modèles de texte qui suivent un format spécifique, ce qui en fait un moyen puissant de manipuler le contenu. Cette approche est particulièrement utile lorsque vous devez remplacer du texte qui correspond à un certain modèle ou structure dans le document PDF.
 
-#### Q: How do I set up the document directory?
+#### Q : Comment configurer le répertoire de documents ?
 
-A: To set up the document directory:
+R : Pour configurer le répertoire de documents :
 
-1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where your input PDF file is located.
+1.  Remplacer`"YOUR DOCUMENT DIRECTORY"` dans le`dataDir` variable avec le chemin d’accès au répertoire où se trouve votre fichier PDF d’entrée.
 
-#### Q: How do I replace text based on a regular expression in a PDF document?
+#### Q : Comment remplacer du texte basé sur une expression régulière dans un document PDF ?
 
-A: The tutorial guides you through the following steps:
+R : Le didacticiel vous guide à travers les étapes suivantes :
 
-1. Load the PDF document using the `Document` class.
-2. Create a `TextFragmentAbsorber` object and specify the regular expression pattern to find phrases matching the pattern. Set the text search option to enable regular expression usage.
-3. Loop through the extracted text fragments and replace the text. Update other properties like font, font size, foreground color, and background color as required.
-4. Save the modified PDF document.
+1.  Chargez le document PDF à l'aide du`Document` classe.
+2.  Créer un`TextFragmentAbsorber` objet et spécifiez le modèle d’expression régulière pour trouver les expressions correspondant au modèle. Définissez l’option de recherche de texte pour activer l’utilisation des expressions régulières.
+3. Parcourez les fragments de texte extraits et remplacez le texte. Mettez à jour d'autres propriétés telles que la police, la taille de la police, la couleur de premier plan et la couleur d'arrière-plan, selon vos besoins.
+4. Enregistrez le document PDF modifié.
 
-#### Q: Can I replace text using complex regular expressions?
+#### Q : Puis-je remplacer du texte à l’aide d’expressions régulières complexes ?
 
-A: Yes, you can use complex regular expressions to match and replace text in the PDF document. Regular expressions provide a flexible way to identify specific patterns or structures in the text.
+R : Oui, vous pouvez utiliser des expressions régulières complexes pour faire correspondre et remplacer du texte dans le document PDF. Les expressions régulières offrent un moyen flexible d'identifier des modèles ou des structures spécifiques dans le texte.
 
-#### Q: What is the purpose of the `TextSearchOptions` class in the tutorial?
+####  Q : Quel est le but du`TextSearchOptions` class in the tutorial?
 
-A: The `TextSearchOptions` class allows you to specify text search options, such as enabling regular expression usage when searching for text fragments. In the tutorial, it's used to enable regular expression mode for the `TextFragmentAbsorber`.
+ R : Le`TextSearchOptions`La classe vous permet de spécifier des options de recherche de texte, telles que l'activation de l'utilisation d'expressions régulières lors de la recherche de fragments de texte. Dans le didacticiel, il est utilisé pour activer le mode expression régulière pour le`TextFragmentAbsorber`.
 
-#### Q: Is font replacement optional when using regular expressions to replace text?
+#### Q : Le remplacement de la police est-il facultatif lors de l'utilisation d'expressions régulières pour remplacer du texte ?
 
-A: Yes, font replacement is optional when using regular expressions to replace text. If you don't specify a new font, the text will retain the font of the original text fragment.
+R : Oui, le remplacement de la police est facultatif lors de l'utilisation d'expressions régulières pour remplacer du texte. Si vous ne spécifiez pas de nouvelle police, le texte conservera la police du fragment de texte d'origine.
 
-#### Q: How can I replace text in multiple pages using a regular expression?
+#### Q : Comment puis-je remplacer du texte sur plusieurs pages à l'aide d'une expression régulière ?
 
-A: You can modify the loop through the text fragments to include all the pages of the PDF document, similar to the tutorial example. This way, you can replace text on multiple pages based on the regular expression pattern.
+R : Vous pouvez modifier la boucle à travers les fragments de texte pour inclure toutes les pages du document PDF, comme dans l'exemple du didacticiel. De cette façon, vous pouvez remplacer le texte sur plusieurs pages en fonction du modèle d'expression régulière.
 
-#### Q: What is the expected outcome of executing the provided code?
+#### Q : Quel est le résultat attendu de l’exécution du code fourni ?
 
-A: By following the tutorial and running the provided C# code, you will replace text in the PDF document that matches the specified regular expression pattern. The replaced text will have the properties you specified, such as font, font size, foreground color, and background color.
+R : En suivant le didacticiel et en exécutant le code C# fourni, vous remplacerez le texte du document PDF qui correspond au modèle d'expression régulière spécifié. Le texte remplacé aura les propriétés que vous avez spécifiées, telles que la police, la taille de la police, la couleur de premier plan et la couleur d'arrière-plan.
 
-#### Q: Can I use this approach to replace text with complex formatting?
+#### Q : Puis-je utiliser cette approche pour remplacer du texte avec une mise en forme complexe ?
 
-A: Yes, you can customize the formatting of the replaced text by updating properties like font, font size, foreground color, and background color. This allows you to maintain or modify the formatting as needed.
+R : Oui, vous pouvez personnaliser la mise en forme du texte remplacé en mettant à jour les propriétés telles que la police, la taille de la police, la couleur de premier plan et la couleur d'arrière-plan. Cela vous permet de conserver ou de modifier le formatage selon vos besoins.

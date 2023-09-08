@@ -1,28 +1,28 @@
 ---
-title: Digitally Sign In PDF File
-linktitle: Digitally Sign In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to digitally sign in PDF file with Aspose.PDF for .NET.
+title: Connectez-vous numériquement au fichier PDF
+linktitle: Connectez-vous numériquement au fichier PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment vous connecter numériquement à un fichier PDF avec Aspose.PDF pour .NET.
 type: docs
 weight: 40
 url: /fr/net/programming-with-security-and-signatures/digitally-sign/
 ---
-In this tutorial, we will walk you through the process of digitally signing in PDF file using Aspose.PDF for .NET. The digital signature guarantees the authenticity and integrity of the document, by adding a unique electronic fingerprint.
+Dans ce didacticiel, nous vous guiderons tout au long du processus de signature numérique d'un fichier PDF à l'aide d'Aspose.PDF pour .NET. La signature numérique garantit l'authenticité et l'intégrité du document, en ajoutant une empreinte électronique unique.
 
-## Step 1: Prerequisites
+## Étape 1 : prérequis
 
-Before you begin, make sure you have the following prerequisites:
+Avant de commencer, assurez-vous de disposer des prérequis suivants :
 
-- Basic knowledge of the C# programming language
-- Installing Visual Studio on your machine
-- Aspose.PDF library for .NET installed
+- Connaissance de base du langage de programmation C#
+- Installer Visual Studio sur votre ordinateur
+- Bibliothèque Aspose.PDF pour .NET installée
 
-## Step 2: Environment setup
+## Étape 2 : Configuration de l'environnement
 
-To get started, follow these steps to set up your development environment:
+Pour commencer, suivez ces étapes pour configurer votre environnement de développement :
 
-1. Open Visual Studio and create a new C# project.
-2. Import the required namespaces into your code file:
+1. Ouvrez Visual Studio et créez un nouveau projet C#.
+2. Importez les espaces de noms requis dans votre fichier de code :
 
 ```csharp
 using Aspose.Pdf;
@@ -30,9 +30,9 @@ using Aspose.Pdf.Forms;
 using System.Collections.Generic;
 ```
 
-## Step 3: Digital signature
+## Étape 3 : Signature numérique
 
-The first step is to digitally sign the PDF file. The provided code shows how to make a digital signature with Aspose.PDF for .NET.
+La première étape consiste à signer numériquement le fichier PDF. Le code fourni montre comment créer une signature numérique avec Aspose.PDF pour .NET.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -53,11 +53,11 @@ using (Document document = new Document(inFile))
 }
 ```
 
-This code loads a PDF file, creates a digital signature with a specified appearance, then saves the PDF file with the added signature.
+Ce code charge un fichier PDF, crée une signature numérique avec une apparence spécifiée, puis enregistre le fichier PDF avec la signature ajoutée.
 
-## Step 4: Signature Verification
+## Étape 4 : Vérification de la signature
 
-After adding the digital signature, you can check if the PDF file contains a valid signature.
+Après avoir ajouté la signature numérique, vous pouvez vérifier si le fichier PDF contient une signature valide.
 
 ```csharp
 using(Document document = new Document(outFile))
@@ -73,7 +73,7 @@ using(Document document = new Document(outFile))
                  {
                      if (signature.GetAccessPermissions() == DocMDPAccessPermissions.FillingInForms)
                      {
-                         // Do something
+                         // Faire quelque chose
                      }
                  }
              }
@@ -82,13 +82,13 @@ using(Document document = new Document(outFile))
 }
 ```
 
-This code verifies the first signature of the PDF file and performs additional actions if the signature is certified and has specific permissions.
+Ce code vérifie la première signature du fichier PDF et effectue des actions supplémentaires si la signature est certifiée et dispose d'autorisations spécifiques.
 
-### Sample source code for Digitally Sign using Aspose.PDF for .NET 
+### Exemple de code source pour la signature numérique à l'aide d'Aspose.PDF pour .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Le chemin d'accès au répertoire des documents.
 	string dataDir = "YOUR DOCUMENTS DIRECTORY";
 	string pbxFile = "";
 	string inFile = dataDir + @"DigitallySign.pdf";
@@ -97,14 +97,14 @@ try
 	{
 		using (PdfFileSignature signature = new PdfFileSignature(document))
 		{
-			PKCS7 pkcs = new PKCS7(pbxFile, "WebSales"); // Use PKCS7/PKCS7Detached objects
+			PKCS7 pkcs = new PKCS7(pbxFile, "WebSales"); // Utiliser les objets PKCS7/PKCS7Detached
 			DocMDPSignature docMdpSignature = new DocMDPSignature(pkcs, DocMDPAccessPermissions.FillingInForms);
 			System.Drawing.Rectangle rect = new System.Drawing.Rectangle(100, 100, 200, 100);
-			// Set signature appearance
+			// Définir l'apparence de la signature
 			signature.SignatureAppearance = dataDir + @"aspose-logo.jpg";
-			// Create any of the three signature types
+			// Créez l'un des trois types de signature
 			signature.Certify(1, "Signature Reason", "Contact", "Location", true, rect, docMdpSignature);
-			// Save output PDF file
+			// Enregistrer le fichier PDF de sortie
 			signature.Save(outFile);
 		}
 	}
@@ -113,15 +113,15 @@ try
 		using (PdfFileSignature signature = new PdfFileSignature(document))
 		{
 			IList<string> sigNames = signature.GetSignNames();
-			if (sigNames.Count > 0) // Any signatures?
+			if (sigNames.Count > 0) // Des signatures ?
 			{
-				if (signature.VerifySigned(sigNames[0] as string)) // Verify first one
+				if (signature.VerifySigned(sigNames[0] as string)) // Vérifiez le premier
 				{
-					if (signature.IsCertified) // Certified?
+					if (signature.IsCertified) // Agréé?
 					{
-						if (signature.GetAccessPermissions() == DocMDPAccessPermissions.FillingInForms) // Get access permission
+						if (signature.GetAccessPermissions() == DocMDPAccessPermissions.FillingInForms) // Obtenir l'autorisation d'accès
 						{
-							// Do something
+							// Faire quelque chose
 						}
 					}
 				}
@@ -137,46 +137,46 @@ catch (Exception ex)
 
 ## Conclusion
 
-Congratulation ! You have successfully performed a digital signature on a PDF file using Aspose.PDF for .NET. This tutorial covered the step-by-step process, from adding the digital signature to verifying its validity. You can now use this feature to secure your PDF files with digital signatures.
+Félicitation ! Vous avez réussi à réaliser une signature numérique sur un fichier PDF à l'aide d'Aspose.PDF pour .NET. Ce didacticiel a couvert le processus étape par étape, depuis l'ajout de la signature numérique jusqu'à la vérification de sa validité. Vous pouvez désormais utiliser cette fonctionnalité pour sécuriser vos fichiers PDF avec des signatures numériques.
 
-### FAQ's
+### FAQ
 
-#### Q: What is the purpose of this tutorial?
+#### Q : Quel est le but de ce tutoriel ?
 
-A: This tutorial guides you through the process of digitally signing a PDF file using Aspose.PDF for .NET. Digital signatures add an electronic fingerprint to ensure the authenticity and integrity of the document.
+R : Ce didacticiel vous guide tout au long du processus de signature numérique d'un fichier PDF à l'aide d'Aspose.PDF pour .NET. Les signatures numériques ajoutent une empreinte électronique pour garantir l'authenticité et l'intégrité du document.
 
-#### Q: What prerequisites are required before starting?
+#### Q : Quels sont les prérequis requis avant de commencer ?
 
-A: Before you begin, ensure you have a basic understanding of the C# programming language, have Visual Studio installed, and have the Aspose.PDF library for .NET installed.
+R : Avant de commencer, assurez-vous d'avoir une compréhension de base du langage de programmation C#, d'avoir installé Visual Studio et d'avoir installé la bibliothèque Aspose.PDF pour .NET.
 
-#### Q: How do I set up the development environment?
+#### Q : Comment configurer l’environnement de développement ?
 
-A: Follow the provided steps to set up your development environment, including creating a new C# project in Visual Studio, and importing the required namespaces.
+R : suivez les étapes fournies pour configurer votre environnement de développement, notamment en créant un nouveau projet C# dans Visual Studio et en important les espaces de noms requis.
 
-#### Q: How do I add a digital signature to a PDF file?
+#### Q : Comment ajouter une signature numérique à un fichier PDF ?
 
-A: The provided sample code demonstrates how to load a PDF file, create a digital signature, specify appearance, and save the signed PDF file. The digital signature is added using the `Certify` method of the `PdfFileSignature` object.
+ R : L'exemple de code fourni montre comment charger un fichier PDF, créer une signature numérique, spécifier l'apparence et enregistrer le fichier PDF signé. La signature numérique est ajoutée à l'aide du`Certify` méthode du`PdfFileSignature` objet.
 
-#### Q: How do I verify the validity of a digital signature?
+#### Q : Comment puis-je vérifier la validité d'une signature numérique ?
 
-A: After adding the digital signature, you can use the sample code to verify the validity of the signature. It checks if the signature is certified and has specific access permissions.
+R : Après avoir ajouté la signature numérique, vous pouvez utiliser l'exemple de code pour vérifier la validité de la signature. Il vérifie si la signature est certifiée et dispose d'autorisations d'accès spécifiques.
 
-#### Q: What does the `PKCS7` object represent?
+####  Q : Qu’est-ce que le`PKCS7` object represent?
 
-A: The `PKCS7` object is used to provide the cryptographic functionality for digital signatures. It is used to create the digital signature in the provided sample code.
+ R : Le`PKCS7` L'objet est utilisé pour fournir la fonctionnalité cryptographique pour les signatures numériques. Il est utilisé pour créer la signature numérique dans l’exemple de code fourni.
 
-#### Q: Can I customize the appearance of the digital signature?
+#### Q : Puis-je personnaliser l’apparence de la signature numérique ?
 
-A: Yes, you can customize the appearance of the digital signature by specifying the path to an image in the `SignatureAppearance` property of the `PdfFileSignature` object.
+ R : Oui, vous pouvez personnaliser l'apparence de la signature numérique en spécifiant le chemin d'accès à une image dans le champ`SignatureAppearance` propriété du`PdfFileSignature` objet.
 
-#### Q: What happens if the signature is not valid?
+#### Q : Que se passe-t-il si la signature n'est pas valide ?
 
-A: If the signature is not valid, the verification process will fail, and the corresponding actions within the verification code block will not be executed.
+R : Si la signature n'est pas valide, le processus de vérification échouera et les actions correspondantes dans le bloc de code de vérification ne seront pas exécutées.
 
-#### Q: How can I ensure the security of my digital signatures?
+#### Q : Comment puis-je garantir la sécurité de mes signatures numériques ?
 
-A: Digital signatures are secure by design and use cryptographic techniques to ensure authenticity and integrity. Ensure that you keep your private key secure and follow best practices for handling digital signatures.
+R : Les signatures numériques sont sécurisées de par leur conception et utilisent des techniques cryptographiques pour garantir leur authenticité et leur intégrité. Assurez-vous de conserver votre clé privée en sécurité et de suivre les meilleures pratiques en matière de gestion des signatures numériques.
 
-#### Q: Can I add multiple digital signatures to a PDF?
+#### Q : Puis-je ajouter plusieurs signatures numériques à un PDF ?
 
-A: Yes, you can add multiple digital signatures to a PDF file using the `PdfFileSignature` object's `Sign` or `Certify` methods. Each signature will have its own appearance and configuration.
+ R : Oui, vous pouvez ajouter plusieurs signatures numériques à un fichier PDF à l'aide de l'outil`PdfFileSignature` objets`Sign` ou`Certify` méthodes. Chaque signature aura sa propre apparence et configuration.

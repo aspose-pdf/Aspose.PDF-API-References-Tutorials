@@ -1,178 +1,178 @@
 ---
-title: Image and Page Number in Header Footer Section
-linktitle: Image and Page Number in Header Footer Section
-second_title: Aspose.PDF for .NET API Reference
-description: Find out how to add an image and a page number in the header and footer of a PDF document with Aspose.
+title: Bild und Seitenzahl im Kopf- und Fußzeilenbereich
+linktitle: Bild und Seitenzahl im Kopf- und Fußzeilenbereich
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie, wie Sie mit Aspose ein Bild und eine Seitenzahl in die Kopf- und Fußzeile eines PDF-Dokuments einfügen.
 type: docs
 weight: 110
 url: /de/net/programming-with-stamps-and-watermarks/image-and-page-number-in-header-footer-section/
 ---
-In this tutorial, we will guide you step by step on how to add an image and page number in the header and footer section of a PDF document using Aspose.PDF for .NET. We will show you how to use provided C# source code to create a page, set header and footer, add image to header and text with page number to document footer PDF.
+In diesem Tutorial zeigen wir Ihnen Schritt für Schritt, wie Sie mit Aspose.PDF für .NET ein Bild und eine Seitenzahl in den Kopf- und Fußzeilenbereich eines PDF-Dokuments einfügen. Wir zeigen Ihnen, wie Sie den bereitgestellten C#-Quellcode verwenden, um eine Seite zu erstellen, Kopf- und Fußzeilen festzulegen, Bilder zur Kopfzeile und Text mit Seitenzahl zur PDF-Dokumentfußzeile hinzuzufügen.
 
-## Step 1: Setting up the environment
+## Schritt 1: Einrichten der Umgebung
 
-Before you begin, make sure you have the following:
+Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Eine installierte .NET-Entwicklungsumgebung.
+- Die Aspose.PDF-Bibliothek für .NET wurde heruntergeladen und in Ihrem Projekt referenziert.
 
-## Step 2: Creating the PDF Document and Page
+## Schritt 2: Erstellen des PDF-Dokuments und der Seite
 
-The first step is to create a new Document object and a page in the PDF document. Here's how:
+Der erste Schritt besteht darin, ein neues Dokumentobjekt und eine Seite im PDF-Dokument zu erstellen. Hier ist wie:
 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Create a new Document object
+// Erstellen Sie ein neues Document-Objekt
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
-// Create a page in the document
+// Erstellen Sie eine Seite im Dokument
 Aspose.Pdf.Page page = doc.Pages.Add();
 ```
 
-The code above creates a new Document object and an empty page in the PDF document.
+Der obige Code erstellt ein neues Document-Objekt und eine leere Seite im PDF-Dokument.
 
-## Step 3: Adding the header with an image
+## Schritt 3: Den Header mit einem Bild hinzufügen
 
-Now that the page is created, we can add a header section with an image. Here's how:
+Nachdem die Seite nun erstellt ist, können wir einen Kopfzeilenabschnitt mit einem Bild hinzufügen. Hier ist wie:
 
 ```csharp
-// Create a header section
+// Erstellen Sie einen Header-Bereich
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-// Set the page header
+// Legen Sie den Seitenkopf fest
 page. Header = header;
 
-// Create an Image object
+// Erstellen Sie ein Bildobjekt
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 
-// Set image path
+// Bildpfad festlegen
 image1.File = dataDir + "aspose-logo.jpg";
 
-// Add the image to the page header of the PDF document
+// Fügen Sie das Bild zum Seitenkopf des PDF-Dokuments hinzu
 header.Paragraphs.Add(image1);
 ```
 
-The code above creates a header section, sets the page header with this section, and adds an image to the header.
+Der obige Code erstellt einen Kopfzeilenabschnitt, legt die Seitenkopfzeile mit diesem Abschnitt fest und fügt der Kopfzeile ein Bild hinzu.
 
-## Step 4: Adding the footer with the page number
+## Schritt 4: Fügen Sie die Fußzeile mit der Seitenzahl hinzu
 
-Now that the header is added, we can add a footer section with a page number. Here's how:
+Nachdem die Kopfzeile hinzugefügt wurde, können wir einen Fußzeilenabschnitt mit einer Seitenzahl hinzufügen. Hier ist wie:
 
 ```csharp
-// Create a footer section
+// Erstellen Sie einen Fußzeilenbereich
 Aspose.Pdf.HeaderFooter footer = new Aspose.Pdf.HeaderFooter();
 
-// Define the footer of the PDF document
+// Definieren Sie die Fußzeile des PDF-Dokuments
 page. Footer = footer;
 
-// Create a TextFragment object
+// Erstellen Sie ein TextFragment-Objekt
 Aspose.Pdf.Text.TextFragment txt = new Aspose.Pdf.Text.TextFragment("Page: ($p of $P)");
 
-// Add the text with the page number to the footer of the PDF document
+// Fügen Sie den Text mit der Seitenzahl in die Fußzeile des PDF-Dokuments ein
 footer.Paragraphs.Add(txt);
 ```
 
-The above code creates a footer section, sets the footer of the page with this section and adds a TextFragment containing the text "Page: ($p of $P )"
+Der obige Code erstellt einen Fußzeilenabschnitt, legt die Fußzeile der Seite mit diesem Abschnitt fest und fügt ein TextFragment hinzu, das den Text „Seite: ($p von $P)“ enthält.
 
-  which displays the page number.
+  Hier wird die Seitenzahl angezeigt.
 
-## Step 5: Saving the modified PDF document
+## Schritt 5: Speichern des geänderten PDF-Dokuments
 
-Once the header and footer are added, we can save the modified PDF document. Here's how:
+Sobald die Kopf- und Fußzeile hinzugefügt sind, können wir das geänderte PDF-Dokument speichern. Hier ist wie:
 
 ```csharp
-// Save the modified PDF document
+// Speichern Sie das geänderte PDF-Dokument
 doc.Save(dataDir + "ImageAndPageNumberInHeaderFooter_out.pdf");
 ```
 
-The above code saves the edited PDF document to the specified directory.
+Der obige Code speichert das bearbeitete PDF-Dokument im angegebenen Verzeichnis.
 
-### Sample source code for Imageand Page Numberin Header Footersection using Aspose.PDF for .NET 
+### Beispielquellcode für Bild und Seitennummer im Kopf- und Fußbereich mit Aspose.PDF für .NET 
 ```csharp
 
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
-// Create a page in the document object
+// Erstellen Sie eine Seite im Dokumentobjekt
 Aspose.Pdf.Page page = doc.Pages.Add();
 
-// Create Header Section of the document
+// Erstellen Sie einen Kopfabschnitt des Dokuments
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-// Set the header for the PDF file
+// Legen Sie den Header für die PDF-Datei fest
 page.Header = header;
 
-// Create an image object in the page
+// Erstellen Sie ein Bildobjekt auf der Seite
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 
-// Set the path of image file
+// Legen Sie den Pfad der Bilddatei fest
 image1.File = dataDir + "aspose-logo.jpg";
 
-// Add image to Header page of the Pdf file
+// Bild zur Kopfzeile der PDF-Datei hinzufügen
 header.Paragraphs.Add(image1);
 
-// Create a Footer Section of the document
+//Erstellen Sie einen Fußzeilenabschnitt des Dokuments
 Aspose.Pdf.HeaderFooter footer = new Aspose.Pdf.HeaderFooter();
 
-// Set the footer of the PDF file
+// Legen Sie die Fußzeile der PDF-Datei fest
 page.Footer = footer;
 
-// Create a Text object
+// Erstellen Sie ein Textobjekt
 Aspose.Pdf.Text.TextFragment txt = new Aspose.Pdf.Text.TextFragment("Page: ($p of $P ) ");
 
-// Add text to Header section of the Pdf file
+// Fügen Sie Text zum Kopfzeilenabschnitt der PDF-Datei hinzu
 footer.Paragraphs.Add(txt);
 
-// Save the Pdf file
+// Speichern Sie die PDF-Datei
 doc.Save(dataDir + "ImageAndPageNumberInHeaderFooter_out.pdf");
 
 ```
 
-## Conclusion
+## Abschluss
 
-Congratulation ! You have learned how to add an image and page number in the header and footer section of a PDF document using Aspose.PDF for .NET. Now you can use this method to customize header and footer in your PDF documents.
+Herzlichen Glückwunsch! Sie haben gelernt, wie Sie mit Aspose.PDF für .NET ein Bild und eine Seitenzahl in den Kopf- und Fußzeilenbereich eines PDF-Dokuments einfügen. Jetzt können Sie diese Methode verwenden, um Kopf- und Fußzeilen in Ihren PDF-Dokumenten anzupassen.
 
-### FAQ's
+### FAQs
 
-#### Q: What is the purpose of adding an image and page number in the header and footer section of a PDF document?
+#### F: Welchen Zweck hat das Hinzufügen eines Bildes und einer Seitenzahl im Kopf- und Fußzeilenbereich eines PDF-Dokuments?
 
-A: Adding an image and page number in the header and footer section of a PDF document can enhance its visual appeal, branding, and navigational elements. An image can represent a logo, watermark, or any graphical element, while a page number helps users track their progress and locate specific pages.
+A: Das Hinzufügen eines Bildes und einer Seitenzahl im Kopf- und Fußzeilenbereich eines PDF-Dokuments kann seine visuelle Attraktivität, sein Branding und seine Navigationselemente verbessern. Ein Bild kann ein Logo, ein Wasserzeichen oder ein beliebiges grafisches Element darstellen, während eine Seitenzahl Benutzern hilft, ihren Fortschritt zu verfolgen und bestimmte Seiten zu finden.
 
-#### Q: How does the provided C# source code help in adding an image and page number to the header and footer of a PDF document?
+#### F: Wie hilft der bereitgestellte C#-Quellcode beim Hinzufügen eines Bildes und einer Seitenzahl zur Kopf- und Fußzeile eines PDF-Dokuments?
 
-A: The provided code demonstrates how to create a PDF document, add a page, and then customize the header and footer sections. It shows how to add an image to the header and a text fragment with page numbering to the footer.
+A: Der bereitgestellte Code zeigt, wie man ein PDF-Dokument erstellt, eine Seite hinzufügt und dann die Kopf- und Fußzeilenabschnitte anpasst. Es zeigt, wie man ein Bild zur Kopfzeile und ein Textfragment mit Seitennummerierung zur Fußzeile hinzufügt.
 
-#### Q: Can I use any image format for the header, and how do I specify its path?
+#### F: Kann ich ein beliebiges Bildformat für den Header verwenden und wie gebe ich dessen Pfad an?
 
-A: Yes, you can use various image formats (such as JPEG, PNG, GIF, etc.) for the header image. The image's path is specified using the `File` property of the `Aspose.Pdf.Image` object.
+ A: Ja, Sie können für das Headerbild verschiedene Bildformate (z. B. JPEG, PNG, GIF usw.) verwenden. Der Pfad des Bildes wird mit angegeben`File` Eigentum der`Aspose.Pdf.Image` Objekt.
 
-#### Q: How do I customize the appearance and positioning of the image in the header section?
+#### F: Wie kann ich das Erscheinungsbild und die Positionierung des Bildes im Kopfbereich anpassen?
 
-A: You can customize the appearance and positioning of the image by adjusting the properties of the `Aspose.Pdf.Image` object before adding it to the header section. For example, you can set the image's dimensions, alignment, rotation, opacity, etc.
+ A: Sie können das Erscheinungsbild und die Positionierung des Bildes anpassen, indem Sie die Eigenschaften anpassen`Aspose.Pdf.Image` Objekt, bevor Sie es zum Header-Abschnitt hinzufügen. Sie können beispielsweise die Abmessungen, die Ausrichtung, die Drehung, die Deckkraft usw. des Bildes festlegen.
 
-#### Q: What is the purpose of the `TextFragment` object used for the footer?
+####  F: Was ist der Zweck des`TextFragment` object used for the footer?
 
-A: The `TextFragment` object is used to create and format text that will be displayed in the footer section. In the provided code, it is used to display the page number and total page count.
+ A: Die`TextFragment` Das Objekt wird zum Erstellen und Formatieren von Text verwendet, der im Fußzeilenbereich angezeigt wird. Im bereitgestellten Code wird es verwendet, um die Seitenzahl und die Gesamtseitenzahl anzuzeigen.
 
-#### Q: Can I modify the footer text to include additional information or formatting?
+#### F: Kann ich den Fußzeilentext ändern, um zusätzliche Informationen oder Formatierungen hinzuzufügen?
 
-A: Yes, you can modify the footer text by modifying the contents of the `TextFragment` object. You can add additional text, change fonts, colors, and formatting according to your requirements.
+ A: Ja, Sie können den Fußzeilentext ändern, indem Sie den Inhalt des ändern`TextFragment` Objekt. Sie können zusätzlichen Text hinzufügen, Schriftarten, Farben und Formatierungen entsprechend Ihren Anforderungen ändern.
 
-#### Q: Can I apply different header and footer contents to different pages of the PDF document?
+#### F: Kann ich unterschiedliche Kopf- und Fußzeileninhalte auf verschiedene Seiten des PDF-Dokuments anwenden?
 
-A: Yes, you can apply different header and footer contents to different pages by creating separate `HeaderFooter` objects and assigning them to specific pages using the `Header` and `Footer` properties of the `Aspose.Pdf.Page` object.
+ A: Ja, Sie können unterschiedliche Kopf- und Fußzeileninhalte auf verschiedene Seiten anwenden, indem Sie separate Seiten erstellen`HeaderFooter` Objekte und deren Zuordnung zu bestimmten Seiten mithilfe der`Header` Und`Footer` Eigenschaften der`Aspose.Pdf.Page` Objekt.
 
-#### Q: How can I further customize the header and footer, such as changing font styles or adding additional elements?
+#### F: Wie kann ich die Kopf- und Fußzeile weiter anpassen, z. B. den Schriftstil ändern oder zusätzliche Elemente hinzufügen?
 
-A: You can customize the header and footer by using various classes and properties provided by Aspose.PDF for .NET. For example, you can use different text formatting options, add more paragraphs, images, or even tables to the header and footer sections.
+A: Sie können die Kopf- und Fußzeile anpassen, indem Sie verschiedene Klassen und Eigenschaften verwenden, die von Aspose.PDF für .NET bereitgestellt werden. Sie können beispielsweise verschiedene Textformatierungsoptionen verwenden und den Kopf- und Fußzeilenabschnitten weitere Absätze, Bilder oder sogar Tabellen hinzufügen.
 
-#### Q: Can I remove or clear the header and footer sections if needed?
+#### F: Kann ich bei Bedarf die Kopf- und Fußzeilenabschnitte entfernen oder löschen?
 
-A: Yes, you can remove or clear the header and footer sections by setting the `Header` and `Footer` properties of the `Aspose.Pdf.Page` object to `null`.
+A: Ja, Sie können die Kopf- und Fußzeilenabschnitte entfernen oder löschen, indem Sie festlegen`Header` Und`Footer` Eigenschaften der`Aspose.Pdf.Page` widersprechen`null`.
 
-#### Q: How can I ensure that the added image and page number remain consistent across different devices and viewers?
+#### F: Wie kann ich sicherstellen, dass das hinzugefügte Bild und die Seitenzahl auf verschiedenen Geräten und Betrachtern konsistent bleiben?
 
-A: Aspose.PDF for .NET provides functionality to create standardized and consistent PDF documents, ensuring that the added image and page number will appear consistently across different devices and PDF viewers.
+A: Aspose.PDF für .NET bietet Funktionen zum Erstellen standardisierter und konsistenter PDF-Dokumente und stellt sicher, dass das hinzugefügte Bild und die Seitenzahl auf verschiedenen Geräten und PDF-Viewern konsistent angezeigt werden.

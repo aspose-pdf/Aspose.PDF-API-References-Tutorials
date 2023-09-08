@@ -1,33 +1,33 @@
 ---
-title: Flatten Forms In PDF Document
-linktitle: Flatten Forms In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Easily flatten forms in PDF document using Aspose.PDF for .NET.
+title: Platta formulär i PDF-dokument
+linktitle: Platta formulär i PDF-dokument
+second_title: Aspose.PDF för .NET API Referens
+description: Platta enkelt ut formulär i PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 100
 url: /sv/net/programming-with-forms/flatten-forms/
 ---
-In this tutorial, we will show you how to flatten forms using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+I den här handledningen kommer vi att visa dig hur du plattar ut formulär med Aspose.PDF för .NET. Vi kommer att förklara C#-källkoden steg för steg för att guida dig genom denna process.
 
-## Step 1: Preparation
+## Steg 1: Förberedelser
 
-First, make sure you have imported the necessary libraries and set the path to the documents directory:
+Se först till att du har importerat de nödvändiga biblioteken och ställer in sökvägen till dokumentkatalogen:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load source PDF form
+## Steg 2: Ladda käll-PDF-formulär
 
-Load the source PDF form:
+Ladda käll-PDF-formuläret:
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 3: Flatten the forms
+## Steg 3: Platta till formerna
 
-First check if there are any form fields in the document. If so, iterate through each field and apply flattening:
+Kontrollera först om det finns några formulärfält i dokumentet. Om så är fallet, iterera genom varje fält och tillämpa utjämning:
 
 ```csharp
 if (doc.Form.Fields.Count() > 0)
@@ -39,22 +39,22 @@ item. Flatten();
 }
 ```
 
-## Step 4: Save the updated document
+## Steg 4: Spara det uppdaterade dokumentet
 
-Save the updated PDF document:
+Spara det uppdaterade PDF-dokumentet:
 
 ```csharp
 dataDir = dataDir + "FlattenForms_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Flatten Forms using Aspose.PDF for .NET 
+### Exempel på källkod för Flatten Forms med Aspose.PDF för .NET 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load source PDF form
+// Ladda käll-PDF-formulär
 Document doc = new Document(dataDir + "input.pdf");
-// Flatten Forms
+// Platta formulär
 if (doc.Form.Fields.Count() > 0)
 {
 	foreach (var item in doc.Form.Fields)
@@ -63,33 +63,33 @@ if (doc.Form.Fields.Count() > 0)
 	}
 }
 dataDir = dataDir + "FlattenForms_out.pdf";
-// Save the updated document
+// Spara det uppdaterade dokumentet
 doc.Save(dataDir);
 Console.WriteLine("\nForms flattened successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Slutsats
 
-In this tutorial, we learned how to flatten forms using Aspose.PDF for .NET. By following these steps, you can easily flatten forms in your PDF documents, making fields uneditable and merging annotations with document content.
+I den här handledningen lärde vi oss hur man plattar ut formulär med Aspose.PDF för .NET. Genom att följa dessa steg kan du enkelt platta till formulär i dina PDF-dokument, göra fält oredigerbara och slå samman kommentarer med dokumentinnehåll.
 
 ### FAQ's
 
-#### Q: What does "flattening forms" mean in Aspose.PDF for .NET?
+#### F: Vad betyder "utplattande formulär" i Aspose.PDF för .NET?
 
-A: Flattening forms in Aspose.PDF for .NET refers to the process of making form fields in a PDF document uneditable and merging annotations (such as form fields, annotations, and digital signatures) with the document's content. Once forms are flattened, users cannot modify the form fields, and the visual appearance of the form fields becomes a part of the static content of the PDF document.
+S: Tillplattade formulär i Aspose.PDF för .NET avser processen att göra formulärfält i ett PDF-dokument oredigerbara och sammanfoga kommentarer (som formulärfält, anteckningar och digitala signaturer) med dokumentets innehåll. När formulären väl är tillplattade kan användarna inte ändra formulärfälten och det visuella utseendet på formulärfälten blir en del av det statiska innehållet i PDF-dokumentet.
 
-#### Q: Can I reverse the flattening process and make the form fields editable again?
+#### F: Kan jag vända utjämningsprocessen och göra formulärfälten redigerbara igen?
 
-A: No, once the form fields are flattened, the process is irreversible using Aspose.PDF for .NET. Flattening permanently merges the form fields' appearance with the PDF's content, and the individual form field elements are no longer accessible or editable.
+S: Nej, när formulärfälten väl är tillplattade är processen oåterkallelig med Aspose.PDF för .NET. Förplattning sammanfogar permanent formulärfältens utseende med PDF-filens innehåll, och de enskilda formulärfältselementen är inte längre tillgängliga eller redigerbara.
 
-#### Q: When should I flatten forms in a PDF document?
+#### F: När ska jag platta till formulär i ett PDF-dokument?
 
-A: Flattening forms is useful when you want to preserve the visual appearance of form fields and annotations in a PDF document while preventing users from modifying the data. This is commonly done when you want to share a PDF document with pre-filled form data or annotations that should not be altered by the recipients.
+S: Att förenkla formulär är användbart när du vill bevara det visuella utseendet på formulärfält och anteckningar i ett PDF-dokument samtidigt som du hindrar användare från att ändra data. Detta görs vanligtvis när du vill dela ett PDF-dokument med förifyllda formulärdata eller kommentarer som inte bör ändras av mottagarna.
 
-#### Q: Will flattening forms affect other annotations, such as digital signatures?
+#### F: Kommer utjämningsformulär att påverka andra kommentarer, till exempel digitala signaturer?
 
-A: Yes, flattening forms will merge all annotations, including digital signatures, with the PDF's content. Once the forms are flattened, any existing digital signatures will become a permanent part of the document, and users cannot modify or remove them.
+S: Ja, platta formulär sammanfogar alla anteckningar, inklusive digitala signaturer, med PDF:s innehåll. När formulären är tillplattade kommer alla befintliga digitala signaturer att bli en permanent del av dokumentet, och användare kan inte ändra eller ta bort dem.
 
-#### Q: Can I selectively flatten specific form fields and leave others editable?
+#### F: Kan jag selektivt platta ut specifika formulärfält och låta andra redigeras?
 
-A: Yes, you can selectively flatten specific form fields in a PDF document while leaving others editable. Instead of using the code to flatten all form fields, you can choose to flatten only the desired form fields based on their names or other criteria.
+S: Ja, du kan selektivt förenkla specifika formulärfält i ett PDF-dokument samtidigt som andra kan redigeras. Istället för att använda koden för att platta till alla formulärfält kan du välja att bara platta till önskade formulärfält baserat på deras namn eller andra kriterier.

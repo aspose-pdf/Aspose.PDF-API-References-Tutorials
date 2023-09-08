@@ -1,77 +1,77 @@
 ---
-title: Margins Or Padding
-linktitle: Margins Or Padding
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to set margins or padding in a table using Aspose.PDF for .NET.
+title: Kenar Boşlukları veya Dolgu
+linktitle: Kenar Boşlukları veya Dolgu
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak bir tabloda kenar boşluklarını veya dolguyu nasıl ayarlayacağınızı öğrenin.
 type: docs
 weight: 140
 url: /tr/net/programming-with-tables/margins-or-padding/
 ---
-In this tutorial, we will guide you through the step-by-step process of using Aspose.PDF for .NET to set margins or padding in a table. We will provide explanations and code snippets to help you understand and implement this functionality in your C# source code.
+Bu eğitimde, bir tabloda kenar boşluklarını veya dolguları ayarlamak için Aspose.PDF for .NET'i kullanma sürecinde size adım adım rehberlik edeceğiz. Bu işlevselliği anlamanıza ve C# kaynak kodunuzda uygulamanıza yardımcı olacak açıklamalar ve kod parçacıkları sunacağız.
 
-## Step 1: Setting up the Document and Page
-To begin, you need to set up the document and page using the following code:
+## 1. Adım: Belgeyi ve Sayfayı Ayarlama
+Başlamak için aşağıdaki kodu kullanarak belgeyi ve sayfayı ayarlamanız gerekir:
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate the Document object by calling its empty constructor
+// Boş yapıcısını çağırarak Document nesnesini örnekleyin
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Step 2: Creating a Table
-Next, we will create a table object using the Aspose.Pdf.Table class:
+## Adım 2: Tablo Oluşturma
+Daha sonra Aspose.Pdf.Table sınıfını kullanarak bir tablo nesnesi oluşturacağız:
 
 ```csharp
-// Instantiate a table object
+// Bir tablo nesnesinin örneğini oluşturma
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
-// Add the table to the paragraphs collection of the desired section
+// Tabloyu istediğiniz bölümün paragraf koleksiyonuna ekleyin
 page.Paragraphs.Add(tab1);
 ```
 
-## Step 3: Setting Column Widths and Default Cell Border
-To set the column widths and default cell border of the table, use the following code:
+## Adım 3: Sütun Genişliklerini ve Varsayılan Hücre Kenarlığını Ayarlama
+Tablonun sütun genişliklerini ve varsayılan hücre kenarlığını ayarlamak için aşağıdaki kodu kullanın:
 
 ```csharp
-// Set the column widths of the table
+// Tablonun sütun genişliklerini ayarlayın
 tab1. ColumnWidths = "50 50 50";
-// Set the default cell border using the BorderInfo object
+// BorderInfo nesnesini kullanarak varsayılan hücre kenarlığını ayarlama
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 ```
 
-## Step 4: Setting Table Border and Cell Padding
-To set the table border and cell padding, create a MarginInfo object and set its properties:
+## Adım 4: Tablo Kenarlığını ve Hücre Dolgusunu Ayarlama
+Tablo kenarlığını ve hücre dolgusunu ayarlamak için bir MarginInfo nesnesi oluşturun ve özelliklerini ayarlayın:
 
 ```csharp
-// Create a MarginInfo object and set its left, bottom, right, and top margins
+// MarginInfo nesnesi oluşturun ve sol, alt, sağ ve üst kenar boşluklarını ayarlayın
 Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
 margin. Top = 5f;
 margin. Left = 5f;
 margin. Right = 5f;
 margin. Bottom = 5f;
 
-// Set the default cell padding to the MarginInfo object
+// Varsayılan hücre dolgusunu MarginInfo nesnesine ayarlayın
 tab1. DefaultCellPadding = margin;
 
-// Set the table border using another customized BorderInfo object
+// Başka bir özelleştirilmiş BorderInfo nesnesini kullanarak tablo kenarlığını ayarlayın
 tab1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
 ```
 
-## Step 5: Adding Rows and Cells
-Now, let's add rows and cells to the table. We will create a new row and add cells to it:
+## Adım 5: Satır ve Hücre Ekleme
+Şimdi tabloya satır ve hücre ekleyelim. Yeni bir satır oluşturup ona hücreler ekleyeceğiz:
 
 ```csharp
-// Create rows in the table and then cells in the rows
+// Tabloda satırlar ve ardından satırlarda hücreler oluşturun
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
 row1.Cells.Add();
 ```
 
-## Step 6: Adding Text to Cells
-To add text to a cell, create a TextFragment object and add it to the desired cell:
+## Adım 6: Hücrelere Metin Ekleme
+Bir hücreye metin eklemek için bir TextFragment nesnesi oluşturun ve bunu istediğiniz hücreye ekleyin:
 
 ```csharp
 TextFragment mytext = new TextFragment("col3 with large text string");
@@ -79,51 +79,51 @@ row1.Cells[2].Paragraphs.Add(mytext);
 row1.Cells[2].IsWordWrapped = false;
 ```
 
-## Step 7: Saving the PDF
-To save the PDF document, use the following code:
+## Adım 7: PDF'yi kaydetme
+PDF belgesini kaydetmek için aşağıdaki kodu kullanın:
 
 ```csharp
 dataDir = dataDir + "MarginsOrPadding_out.pdf";
-// Save the PDF
+// PDF'yi kaydet
 doc.Save(dataDir);
 
 Console.WriteLine("\nCell and table border width setup successfully.\nFile saved at " + dataDir);
 ```
 
-### Example source code for Margins Or Padding using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanan Kenar Boşlukları veya Dolgu için örnek kaynak kodu
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instntiate the Document object by calling its empty constructor
+// Boş yapıcısını çağırarak Document nesnesini başlatın
 Document doc = new Document();
 Page page = doc.Pages.Add();
-// Instantiate a table object
+// Bir tablo nesnesinin örneğini oluşturma
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
-// Add the table in paragraphs collection of the desired section
+// Tabloyu istediğiniz bölümün paragraf koleksiyonuna ekleyin
 page.Paragraphs.Add(tab1);
-// Set with column widths of the table
+// Tablonun sütun genişliklerine göre ayarlama
 tab1.ColumnWidths = "50 50 50";
-// Set default cell border using BorderInfo object
+// BorderInfo nesnesini kullanarak varsayılan hücre kenarlığını ayarlama
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
-// Set table border using another customized BorderInfo object
+// Başka bir özelleştirilmiş BorderInfo nesnesini kullanarak tablo kenarlığını ayarlayın
 tab1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
-// Create MarginInfo object and set its left, bottom, right and top margins
+// MarginInfo nesnesi oluşturun ve sol, alt, sağ ve üst kenar boşluklarını ayarlayın
 Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
 margin.Top = 5f;
 margin.Left = 5f;
 margin.Right = 5f;
 margin.Bottom = 5f;
-// Set the default cell padding to the MarginInfo object
+// Varsayılan hücre dolgusunu MarginInfo nesnesine ayarlayın
 tab1.DefaultCellPadding = margin;
-// Create rows in the table and then cells in the rows
+// Tabloda satırlar ve ardından satırlarda hücreler oluşturun
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
 row1.Cells.Add();
 TextFragment mytext = new TextFragment("col3 with large text string");
-// Row1.Cells.Add("col3 with large text string to be placed inside cell");
+// Row1.Cells.Add("hücrenin içine yerleştirilecek büyük metin dizesine sahip col3");
 row1.Cells[2].Paragraphs.Add(mytext);
 row1.Cells[2].IsWordWrapped = false;
 // Row1.Cells[2].Paragraphs[0].FixedWidth= 80;
@@ -132,33 +132,33 @@ row2.Cells.Add("item1");
 row2.Cells.Add("item2");
 row2.Cells.Add("item3");
 dataDir = dataDir + "MarginsOrPadding_out.pdf";
-// Save the Pdf
+// PDF'yi kaydet
 doc.Save(dataDir);
 
 Console.WriteLine("\nCell and table border width setup successfully.\nFile saved at " + dataDir); 
 ```
 
-## Conclusion
-Congratulations! You have successfully learned how to set margins or padding in a table using Aspose.PDF for .NET. This knowledge will help you enhance your document formatting capabilities and make your tables visually appealing.
+## Çözüm
+Tebrikler! Aspose.PDF for .NET'i kullanarak bir tabloda kenar boşluklarını veya dolguyu nasıl ayarlayacağınızı başarıyla öğrendiniz. Bu bilgi, belge biçimlendirme yeteneklerinizi geliştirmenize ve tablolarınızı görsel olarak çekici hale getirmenize yardımcı olacaktır.
 
-### FAQ's
+### SSS'ler
 
-#### Q: Can I set different margins or padding for individual cells in a table?
+#### S: Bir tablodaki tek tek hücreler için farklı kenar boşlukları veya dolgular ayarlayabilir miyim?
 
-A: Yes, you can set different margins or padding for individual cells in a table using Aspose.PDF for .NET. In the provided example, we set the default cell padding for the entire table using the `DefaultCellPadding` property. To set different padding for specific cells, you can access the `MarginInfo` of each cell individually and modify their margins.
+C: Evet, Aspose.PDF for .NET'i kullanarak bir tablodaki tek tek hücreler için farklı kenar boşlukları veya dolgular ayarlayabilirsiniz. Verilen örnekte, tablonun tamamı için varsayılan hücre dolgusunu aşağıdaki komutu kullanarak ayarladık:`DefaultCellPadding` mülk. Belirli hücreler için farklı dolgu ayarlamak amacıyla`MarginInfo` her hücrenin ayrı ayrı ve kenar boşluklarını değiştirin.
 
-#### Q: How can I change the border color or style of the table?
+#### S: Tablonun kenarlık rengini veya stilini nasıl değiştirebilirim?
 
-A: To change the border color or style of the table, you can modify the `Color` and `Width` properties of the `BorderInfo` object. In the given example, we set the border color to black and a width of 1F (one point) using `tab1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);`. You can adjust the color and width as per your requirements.
+ C: Tablonun kenarlık rengini veya stilini değiştirmek için`Color` Ve`Width` özellikleri`BorderInfo` nesne. Verilen örnekte, kenarlık rengini siyah ve genişliğini 1F (bir nokta) olarak ayarladık.`tab1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);`. Rengini ve genişliğini ihtiyaçlarınıza göre ayarlayabilirsiniz.
 
-#### Q: Is it possible to add headers or footers to the table?
+#### S: Tabloya üstbilgi veya altbilgi eklemek mümkün mü?
 
-A: Yes, you can add headers or footers to the table using Aspose.PDF for .NET. Headers and footers are typically separate rows that contain additional information such as column labels, table titles, or summary data. You can create additional rows, style them differently, and add them above or below the table content.
+C: Evet, Aspose.PDF for .NET'i kullanarak tabloya üstbilgi veya altbilgi ekleyebilirsiniz. Üstbilgiler ve altbilgiler genellikle sütun etiketleri, tablo başlıkları veya özet verileri gibi ek bilgileri içeren ayrı satırlardır. Ek satırlar oluşturabilir, bunları farklı şekilde biçimlendirebilir ve tablo içeriğinin üstüne veya altına ekleyebilirsiniz.
 
-#### Q: How do I adjust the text alignment within a table cell?
+#### S: Bir tablo hücresindeki metin hizalamasını nasıl ayarlayabilirim?
 
-A: To adjust the text alignment within a table cell, you can use the `HorizontalAlignment` and `VerticalAlignment` properties of the `TextFragment` object. For example, to center-align the text horizontally, you can set `mytext.HorizontalAlignment = HorizontalAlignment.Center;`. Similarly, you can set `mytext.VerticalAlignment` to control the vertical alignment.
+ C: Bir tablo hücresindeki metin hizalamasını ayarlamak için`HorizontalAlignment` Ve`VerticalAlignment` özellikleri`TextFragment` nesne. Örneğin, metni yatay olarak ortaya hizalamak için`mytext.HorizontalAlignment = HorizontalAlignment.Center;` . Benzer şekilde, ayarlayabilirsiniz`mytext.VerticalAlignment` Dikey hizalamayı kontrol etmek için.
 
-#### Q: Can I add images to the table cells instead of text?
+#### S: Tablo hücrelerine metin yerine resim ekleyebilir miyim?
 
-A: Yes, you can add images to the table cells using Aspose.PDF for .NET. Instead of creating a `TextFragment` object, you can create an `Image` object, load the image file, and add it to the desired cell using the `cell.Paragraphs.Add(image);` method. This allows you to insert images into the table alongside text content.
+ C: Evet, Aspose.PDF for .NET'i kullanarak tablo hücrelerine görüntüler ekleyebilirsiniz. Bir oluşturmak yerine`TextFragment` nesne oluşturabilirsiniz.`Image` nesnesini seçin, görüntü dosyasını yükleyin ve düğmeyi kullanarak istediğiniz hücreye ekleyin.`cell.Paragraphs.Add(image);` yöntem. Bu, tabloya metin içeriğinin yanında resimler eklemenizi sağlar.

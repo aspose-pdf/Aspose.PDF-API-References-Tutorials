@@ -1,59 +1,59 @@
 ---
-title: Search And Get Images In PDF File
-linktitle: Search And Get Images In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to search and get images in PDF file using Aspose.PDF for .NET.
+title: Suchen und holen Sie sich Bilder in einer PDF-Datei
+linktitle: Suchen und holen Sie sich Bilder in einer PDF-Datei
+second_title: Aspose.PDF für .NET API-Referenz
+description: Schritt-für-Schritt-Anleitung zum Suchen und Abrufen von Bildern in PDF-Dateien mit Aspose.PDF für .NET.
 type: docs
 weight: 260
 url: /de/net/programming-with-images/search-and-get-images/
 ---
-In this tutorial, we will walk you through how to search and get images in PDF file using Aspose.PDF for .NET. Follow these steps to perform this operation easily.
+In diesem Tutorial zeigen wir Ihnen, wie Sie mit Aspose.PDF für .NET Bilder suchen und in PDF-Dateien abrufen. Befolgen Sie diese Schritte, um diesen Vorgang einfach durchzuführen.
 
-## Prerequisites
+## Voraussetzungen
 
-Before you begin, make sure you have the following:
+Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
-- Visual Studio or any other development environment installed and configured.
-- A basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed. You can download it from Aspose official website.
+- Visual Studio oder eine andere Entwicklungsumgebung installiert und konfiguriert.
+- Grundkenntnisse der Programmiersprache C#.
+- Aspose.PDF-Bibliothek für .NET installiert. Sie können es von der offiziellen Website von Aspose herunterladen.
 
-## Step 1: Loading the PDF document
+## Schritt 1: Laden des PDF-Dokuments
 
-To get started, use the following code to load the PDF document:
+Verwenden Sie zunächst den folgenden Code, um das PDF-Dokument zu laden:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Open the document
+// Öffnen Sie das Dokument
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "SearchAndGetImages.pdf");
 ```
 
-Be sure to provide the correct path to your PDF document.
+Stellen Sie sicher, dass Sie den richtigen Pfad zu Ihrem PDF-Dokument angeben.
 
-## Step 2: Searching Image Locations
+## Schritt 2: Bildspeicherorte suchen
 
-To search the locations of images in the PDF document, use the following code:
+Um die Speicherorte von Bildern im PDF-Dokument zu durchsuchen, verwenden Sie den folgenden Code:
 
 ```csharp
-// Create an ImagePlacementAbsorber object to search for image locations
+// Erstellen Sie ein ImagePlacementAbsorber-Objekt, um nach Bildpositionen zu suchen
 ImagePlacementAbsorber abs = new ImagePlacementAbsorber();
 
-// Accept the absorber for all the pages of the document
+// Akzeptieren Sie den Absorber für alle Seiten des Dokuments
 doc.Pages.Accept(abs);
 ```
 
-This will collect the locations of the images in the absorber.
+Dadurch werden die Positionen der Bilder im Absorber erfasst.
 
-## Step 3: Browse image locations and get images and their properties
+## Schritt 3: Durchsuchen Sie Bildspeicherorte und rufen Sie Bilder und ihre Eigenschaften ab
 
-Next, we'll browse the collected image locations and get the images and their properties. Use the following code:
+Als Nächstes durchsuchen wir die gesammelten Bildspeicherorte und rufen die Bilder und ihre Eigenschaften ab. Verwenden Sie den folgenden Code:
 
 ```csharp
 foreach(ImagePlacement imagePlacement in abs.ImagePlacements)
 {
-     // Get the image using the ImagePlacement object
+     // Rufen Sie das Bild mit dem ImagePlacement-Objekt ab
      XImage image = imagePlacement.Image;
 
-     // Display the image location properties
+     // Zeigen Sie die Eigenschaften des Bildstandorts an
      Console.Out.WriteLine("Image Width: " + imagePlacement.Rectangle.Width);
      Console.Out.WriteLine("Image Height: " + imagePlacement.Rectangle.Height);
      Console.Out.WriteLine("LLX of image: " + imagePlacement.Rectangle.LLX);
@@ -63,24 +63,24 @@ foreach(ImagePlacement imagePlacement in abs.ImagePlacements)
 }
 ```
 
-This will browse all image locations, get matching images and display their properties.
+Dadurch werden alle Bildspeicherorte durchsucht, passende Bilder gefunden und deren Eigenschaften angezeigt.
 
-### Sample source code for Search And Get Images using Aspose.PDF for .NET 
+### Beispielquellcode für „Bilder suchen und abrufen“ mit Aspose.PDF für .NET 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Dokument öffnen
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir+ "SearchAndGetImages.pdf");
-// Create ImagePlacementAbsorber object to perform image placement search
+// Erstellen Sie ein ImagePlacementAbsorber-Objekt, um eine Bildplatzierungssuche durchzuführen
 ImagePlacementAbsorber abs = new ImagePlacementAbsorber();
-// Accept the absorber for all the pages
+// Akzeptieren Sie den Absorber für alle Seiten
 doc.Pages.Accept(abs);
-// Loop through all ImagePlacements, get image and ImagePlacement Properties
+// Durchlaufen Sie alle ImagePlacements und rufen Sie Bild- und ImagePlacement-Eigenschaften ab
 foreach (ImagePlacement imagePlacement in abs.ImagePlacements)
 {
-	// Get the image using ImagePlacement object
+	// Rufen Sie das Bild mit dem ImagePlacement-Objekt ab
 	XImage image = imagePlacement.Image;
-	// Display image placement properties for all placements
+	// Bildplatzierungseigenschaften für alle Platzierungen anzeigen
 	Console.Out.WriteLine("image width:" + imagePlacement.Rectangle.Width);
 	Console.Out.WriteLine("image height:" + imagePlacement.Rectangle.Height);
 	Console.Out.WriteLine("image LLX:" + imagePlacement.Rectangle.LLX);
@@ -90,44 +90,44 @@ foreach (ImagePlacement imagePlacement in abs.ImagePlacements)
 }
 ```
 
-## Conclusion
+## Abschluss
 
-Congratulation ! You have successfully searched and obtained images in a PDF document using Aspose.PDF for .NET. Now you can apply this method to your own projects to extract images and get their properties from PDF files.
+Herzlichen Glückwunsch! Sie haben mit Aspose.PDF für .NET erfolgreich Bilder in einem PDF-Dokument gesucht und abgerufen. Jetzt können Sie diese Methode auf Ihre eigenen Projekte anwenden, um Bilder zu extrahieren und deren Eigenschaften aus PDF-Dateien abzurufen.
 
-### FAQ's for search and get images in PDF file
+### FAQs zum Suchen und Abrufen von Bildern in PDF-Dateien
 
-#### Q: What is the purpose of searching and obtaining images in a PDF document using Aspose.PDF for .NET?
+#### F: Was ist der Zweck des Suchens und Abrufens von Bildern in einem PDF-Dokument mit Aspose.PDF für .NET?
 
-A: Searching and obtaining images in a PDF document allows you to locate and extract images within the PDF file. This can be useful for various purposes such as analyzing the content, verifying image properties, or further processing the images.
+A: Durch das Suchen und Abrufen von Bildern in einem PDF-Dokument können Sie Bilder in der PDF-Datei finden und extrahieren. Dies kann für verschiedene Zwecke nützlich sein, beispielsweise zur Analyse des Inhalts, zur Überprüfung der Bildeigenschaften oder zur Weiterverarbeitung der Bilder.
 
-#### Q: How does the process of searching for images in a PDF document work?
+#### F: Wie funktioniert die Suche nach Bildern in einem PDF-Dokument?
 
-A: The process involves using the `ImagePlacementAbsorber` object to perform a search for image placements on all pages of the PDF document. The absorber collects information about the location, size, and resolution of each image within the document.
+ A: Der Prozess beinhaltet die Verwendung von`ImagePlacementAbsorber` -Objekt, um eine Suche nach Bildplatzierungen auf allen Seiten des PDF-Dokuments durchzuführen. Der Absorber sammelt Informationen über die Position, Größe und Auflösung jedes Bildes im Dokument.
 
-#### Q: What is the purpose of the `ImagePlacement` object in the code?
+####  F: Was ist der Zweck des`ImagePlacement` object in the code?
 
-A: The `ImagePlacement` object represents the placement of an image within the PDF document. It provides properties that allow you to access details such as the image's dimensions, coordinates, and resolution.
+ A: Die`ImagePlacement`Das Objekt stellt die Platzierung eines Bildes innerhalb des PDF-Dokuments dar. Es bietet Eigenschaften, mit denen Sie auf Details wie die Abmessungen, Koordinaten und Auflösung des Bildes zugreifen können.
 
-#### Q: Can I filter the images that are searched and obtained based on specific criteria?
+#### F: Kann ich die gesuchten und erhaltenen Bilder nach bestimmten Kriterien filtern?
 
-A: The provided code collects information about all images within the PDF document. If you want to filter images based on specific criteria (e.g., image type, dimensions, resolution), you may need to modify the code to include appropriate filtering conditions.
+A: Der bereitgestellte Code sammelt Informationen über alle Bilder im PDF-Dokument. Wenn Sie Bilder nach bestimmten Kriterien filtern möchten (z. B. Bildtyp, Abmessungen, Auflösung), müssen Sie möglicherweise den Code ändern, um entsprechende Filterbedingungen einzuschließen.
 
-#### Q: How can I access the actual image content after obtaining its placement information?
+#### F: Wie kann ich auf den eigentlichen Bildinhalt zugreifen, nachdem ich dessen Platzierungsinformationen erhalten habe?
 
-A: The `XImage` object obtained from the `ImagePlacement` object represents the actual image content. You can further process this `XImage` object, such as saving it to a file or displaying it in your application.
+ A: Die`XImage` Objekt erhalten aus dem`ImagePlacement` Das Objekt stellt den eigentlichen Bildinhalt dar. Sie können dies weiter bearbeiten`XImage` Objekt, z. B. das Speichern in einer Datei oder das Anzeigen in Ihrer Anwendung.
 
-#### Q: What can I do with the obtained image properties?
+#### F: Was kann ich mit den erhaltenen Bildeigenschaften machen?
 
-A: The obtained image properties, such as width, height, coordinates, and resolution, can be used for various purposes. You can analyze the properties, display them to the user, or use them as input for further processing.
+A: Die erhaltenen Bildeigenschaften wie Breite, Höhe, Koordinaten und Auflösung können für verschiedene Zwecke verwendet werden. Sie können die Eigenschaften analysieren, dem Benutzer anzeigen oder als Eingabe für die weitere Verarbeitung verwenden.
 
-#### Q: Can I modify or edit the images within the PDF document using this method?
+#### F: Kann ich mit dieser Methode die Bilder im PDF-Dokument ändern oder bearbeiten?
 
-A: The provided code focuses on searching for and obtaining image placement information. To modify or edit images, you may need to integrate additional functionality, such as image manipulation, using the Aspose.PDF library.
+A: Der bereitgestellte Code konzentriert sich auf die Suche nach und den Erhalt von Informationen zur Bildplatzierung. Um Bilder zu ändern oder zu bearbeiten, müssen Sie möglicherweise zusätzliche Funktionen, wie z. B. Bildbearbeitung, mithilfe der Aspose.PDF-Bibliothek integrieren.
 
-#### Q: How can I integrate this method into my own projects?
+#### F: Wie kann ich diese Methode in meine eigenen Projekte integrieren?
 
-A: To integrate this method into your projects, follow the outlined steps and modify the code as needed. You can use the obtained image placement information and properties according to the requirements of your application.
+A: Um diese Methode in Ihre Projekte zu integrieren, befolgen Sie die beschriebenen Schritte und ändern Sie den Code nach Bedarf. Sie können die erhaltenen Bildplatzierungsinformationen und -eigenschaften entsprechend den Anforderungen Ihrer Anwendung verwenden.
 
-#### Q: Does Aspose.PDF for .NET offer other features related to image manipulation in PDF documents?
+#### F: Bietet Aspose.PDF für .NET weitere Funktionen im Zusammenhang mit der Bildbearbeitung in PDF-Dokumenten?
 
-A: Yes, Aspose.PDF for .NET provides a range of features for working with images in PDF documents, including image insertion, resizing, rotation, extraction, and more. You can explore the library's documentation and examples to discover its full capabilities.
+A: Ja, Aspose.PDF für .NET bietet eine Reihe von Funktionen für die Arbeit mit Bildern in PDF-Dokumenten, einschließlich Bildeinfügung, Größenänderung, Drehung, Extraktion und mehr. Sie können die Dokumentation und Beispiele der Bibliothek durchstöbern, um alle Möglichkeiten kennenzulernen.

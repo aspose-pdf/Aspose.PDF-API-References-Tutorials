@@ -1,64 +1,64 @@
 ---
-title: Programming with Text
-linktitle: Programming with Text
+title: Программирование с текстом
+linktitle: Программирование с текстом
 type: docs
 weight: 25
 url: /ru/net/programming-with-text/
-description: Check out Aspose.PDF for .NET's Programming with Text tutorials, which walk you through advanced text manipulation in your PDF documents.
+description: Ознакомьтесь с учебными пособиями Aspose.PDF for .NET по программированию с использованием текста, которые помогут вам освоить сложные манипуляции с текстом в PDF-документах.
 ---
-Aspose.PDF's "Programming with Text" tutorials for .NET offer a comprehensive range of instructions for working with text in your PDF documents. You will learn how to add text, format it with fonts and styles, edit existing content, and extract textual information. The tutorials also cover advanced topics such as managing alignments, text tables, and keyword research. These step-by-step resources will help you master all facets of manipulating text with Aspose.PDF for .NET.
+Учебные пособия Aspose.PDF «Программирование с текстом» для .NET предлагают полный набор инструкций по работе с текстом в PDF-документах. Вы научитесь добавлять текст, форматировать его с помощью шрифтов и стилей, редактировать существующий контент и извлекать текстовую информацию. Учебные пособия также охватывают сложные темы, такие как управление выравниванием, текстовые таблицы и исследование ключевых слов. Эти пошаговые ресурсы помогут вам освоить все аспекты управления текстом с помощью Aspose.PDF для .NET.
 
-## Tutorials
-| Title | Description |
+## Учебники
+| Заголовок | Описание |
 | --- | --- | 
-| [Add And Search Hidden Text In PDF File](./add-and-search-hidden-text/) | Step-by-step guide to add and search hidden text in PDF file using Aspose.PDF for .NET. |  
-| [Add HTML Ordered List Into Documents](./add-html-ordered-list-into-documents/) | Learn how to add an HTML ordered list to a document using Aspose.PDF for .NET. |  
-| [Add HTML Using DOM](./add-html-using-dom/) | Learn how to add HTML content using DOM in Aspose.PDF for .NET. |  
-| [Add HTML Using DOM And PDF Overwrite](./add-html-using-dom-and-overwrite/) | Learn how to add HTML content using DOM and PDF overwrite in Aspose.PDF for .NET. |  
-| [Add Subsequent Lines Indent In PDF File](./add-subsequent-lines-indent/) | Learn how to add subsequent lines indent to text in PDF file using Aspose.PDF for .NET. |  
-| [Add Text Border In PDF File](./add-text-border/) | Learn how to add a text border in PDF file using Aspose.PDF for .NET. |  
-| [Add Text With Shading Colors In PDF File](./add-text-with-shading-colors/) | Learn how to add text with shading colors in PDF file using Aspose.PDF for .NET. |  
-| [Add Tooltip To Text In PDF File](./add-tooltip-to-text/) | Learn how to add tooltips to text in PDF file using Aspose.PDF for .NET. |  
-| [Add Transparent Text In PDF File](./add-transparent-text/) | Learn how to add transparent text in PDF file using Aspose.PDF for .NET. |  
-| [Create Multi Column Pdf](./create-multi-column-pdf/) | Learn how to create a multi column PDF using Aspose.PDF for .NET. |  
-| [Custom Tab Stops In PDF File](./custom-tab-stops/) | Learn how to create custom tab stops in PDF file using Aspose.PDF for .NET. |  
-| [Determine Line Break In PDF File](./determine-line-break/) | Learn how to determine line breaks in PDF file using Aspose.PDF for .NET. |  
-| [Embed Standard Type 1Fonts In PDF File](./embed-standard-type-1fonts/) | Learn how to embed standard Type 1 fonts in PDF file using Aspose.PDF for .NET. |  
-| [Extract Columns Text In PDF File](./extract-columns-text/) | Learn how to extract columns text in PDF file using Aspose.PDF for .NET. |  
-| [Extract Paragraphs In PDF File](./extract-paragraphs/) | Learn how to extract paragraphs in PDF file using Aspose.PDF for .NET. |   
-| [Extract Text All In PDF File](./extract-text-all/) |Learn how to extract all text in PDF file using Aspose.PDF for .NET.|  
-| [Extract Text From Page Region In PDF File](./extract-text-from-page-region/) | Learn how to extract text from a specific region on a page in PDF file using Aspose.PDF for .NET. |  
-| [Extract Text Page In PDF File](./extract-text-page/) | Learn how to extract text from a specific page in PDF file using Aspose.PDF for .NET. |  
-| [Extract Text Using Text Device](./extract-text-using-text-device/) | Learn how to extract text from a PDF document using the Text Device in Aspose.PDF for .NET. |  
-| [Get Width Of Text Dynamically](./get-width-of-text-dynamically/) | Learn how to dynamically get the width of text using Aspose.PDF for .NET. |  
-| [Hidden Text Block In PDF File](./hidden-text-block/) | Learn how to create hidden text blocks in PDF file using Aspose.PDF for .NET. |  
-| [Highlight Character In PDF File](./highlight-character-in-pdf/) | Learn how to highlight characters in PDF file using Aspose.PDF for .NET. |  
-| [Multicolumn Paragraphs In PDF File](./multicolumn-paragraphs/) | Learn how to work with multicolumn paragraphs in PDF file using Aspose.PDF for .NET. |  
-| [Placing Text Around Image In PDF File](./placing-text-around-image/) | Learn how to place text around an image in PDF file using Aspose.PDF for .NET. |  
-| [Rearrange Contents Using Text Replacement](./rearrange-contents-using-text-replacement/) | Learn how to rearrange contents in a PDF document using text replacement with Aspose.PDF for .NET. |  
-| [Remove All Text In PDF File](./remove-all-text/) | Learn how to remove all text in PDF file using Aspose.PDF for .NET. |  
-| [Remove All Text From PDF](./remove-all-text-from-pdf/) | Learn how to remove all text from a PDF document using Aspose.PDF for .NET. |  
-| [Remove Unused Fonts In PDF File](./remove-unused-fonts/) | Learn how to remove unused fonts in PDF file using Aspose.PDF for .NET. |  
-| [Rendering Replaceable Symbols In PDF File](./rendering-replaceable-symbols/) | Learn how to render replaceable symbols in PDF file using Aspose.PDF for .NET. |  
-| [Replaceable Symbols In Header Footer](./replaceable-symbols-in-header-footer/) | Learn how to use replaceable symbols in the header and footer of a PDF document using Aspose.PDF for .NET. |  
-| [Replace First Occurrence](./replace-first-occurrence/) | Learn how to replace the first occurrence of text in a PDF document using Aspose.PDF for .NET. |  
-| [Replace Fonts In PDF File](./replace-fonts/) | Learn how to replace fonts in PDF file using Aspose.PDF for .NET. |  
-| [Replace Text All In PDF File](./replace-text-all/) | Learn how to replace all text in PDF file using Aspose.PDF for .NET. |  
-| [Replace Text on Regular Expression In PDF File](./replace-text-on-regular-expression/) | Learn how to replace text based on a regular expression in PDF file using Aspose.PDF for .NET. |  
-| [Replace Text Page In PDF File](./replace-text-page/) | Learn how to replace text on a specific page in PDF file using Aspose.PDF for .NET. |  
-| [Rotate Text Using Paragraph In PDF File](./rotate-text-using-paragraph/) | Learn how to rotate text using paragraphs in PDF file using Aspose.PDF for .NET. |  
-| [Rotate Text Using Text Fragment In PDF File](./rotate-text-using-text-fragment/) | Learn how to rotate text using text fragments in PDF file using Aspose.PDF for .NET. |  
-| [Rotate Text Using Text Fragment And Paragraph](./rotate-text-using-text-fragment-and-paragraph/) | Learn how to rotate text using text fragment and paragraph in a PDF document using Aspose.PDF for .NET. |  
-| [Rotate Text Using Text Paragraph And Builder In PDF File](./rotate-text-using-text-paragraph-and-builder/) | Learn how to rotate text using text paragraph and builder in PDF file using Aspose.PDF for .NET. |  
-| [Search And Get Text All](./search-and-get-text-all/) | Learn how to search and get text from all pages of a PDF document using Aspose.PDF for .NET. |  
-| [Search And Get Text Page In PDF File](./search-and-get-text-page/) | Learn how to search and get text from a specific page in PDF file using Aspose.PDF for .NET. |  
-| [Search Regular Expression In PDF File](./search-regular-expression/) | Learn how to search and retrieve text using regular expressions in PDF file using Aspose.PDF for .NET. |  
-| [Search Text And Add Hyperlink](./search-text-and-add-hyperlink/) | Learn how to search for text in a PDF, add hyperlinks to the found text, and save the modified document using Aspose.PDF for .NET. |  
-| [Search Text And Draw Rectangle](./search-text-and-draw-rectangle/) | Learn how to search for text in a PDF, draw rectangles around the found text, and save the modified document using Aspose.PDF for .NET. |  
-| [Search Text Segments Page In PDF File](./search-text-segments-page/) | Learn how to search for text segments on a page in PDF file and retrieve their properties using Aspose.PDF for .NET. |  
-| [Search Text With Dot Net Regex](./search-text-with-dot-net-regex/) | Learn how to search for text using .NET regular expressions in a PDF document using Aspose.PDF for .NET. |   
-| [Specify Line Spacing In PDF File](./specify-line-spacing/) | Learn how to specify line spacing in PDF file using Aspose.PDF for .NET. |  
-| [Text Alignment For Floating Box Contents In PDF File](./text-alignment-for-floating-box-contents/) | Learn how to align text within floating boxes in PDF file using Aspose.PDF for .NET. |  
-| [Text And Image As Paragraph In PDF File](./text-and-image-as-paragraph/) | Learn how to add text and an image as inline paragraphs in PDF file using Aspose.PDF for .NET. |  
-| [Text Segments In PDF File](./text-segments/) | Learn how to search for specific text segments in PDF file using regular expressions in Aspose.PDF for .NET. |  
-| [Use Latex Script In PDF File](./use-latex-script/) | Learn how to use Latex script to add mathematical expressions or formulae in PDF file using Aspose.PDF for .NET. |  
+| [Добавление и поиск скрытого текста в PDF-файле](./add-and-search-hidden-text/) | Пошаговое руководство по добавлению и поиску скрытого текста в PDF-файле с помощью Aspose.PDF для .NET. |  
+| [Добавить упорядоченный список HTML в документы](./add-html-ordered-list-into-documents/) | Узнайте, как добавить упорядоченный список HTML в документ с помощью Aspose.PDF для .NET. |  
+| [Добавьте HTML с помощью DOM](./add-html-using-dom/) | Узнайте, как добавить HTML-контент с помощью DOM в Aspose.PDF для .NET. |  
+| [Добавьте HTML с помощью DOM и перезаписи PDF](./add-html-using-dom-and-overwrite/) | Узнайте, как добавить HTML-контент с помощью DOM и перезаписи PDF в Aspose.PDF для .NET. |  
+| [Добавить отступ последующих строк в PDF-файле](./add-subsequent-lines-indent/) | Узнайте, как добавить отступ к последующим строкам текста в PDF-файле с помощью Aspose.PDF для .NET. |  
+| [Добавить текстовую рамку в PDF-файл](./add-text-border/) | Узнайте, как добавить рамку текста в файл PDF с помощью Aspose.PDF для .NET. |  
+| [Добавить текст с цветами заливки в файл PDF](./add-text-with-shading-colors/) | Узнайте, как добавить текст с цветами заливки в файл PDF с помощью Aspose.PDF для .NET. |  
+| [Добавить подсказку к тексту в PDF-файле](./add-tooltip-to-text/) | Узнайте, как добавлять всплывающие подсказки к тексту в PDF-файле с помощью Aspose.PDF для .NET. |  
+| [Добавить прозрачный текст в PDF-файл](./add-transparent-text/) | Узнайте, как добавить прозрачный текст в PDF-файл с помощью Aspose.PDF для .NET. |  
+| [Создать многоколоночный PDF-файл](./create-multi-column-pdf/) | Узнайте, как создать многоколоночный PDF-файл с помощью Aspose.PDF для .NET. |  
+| [Пользовательские позиции табуляции в PDF-файле](./custom-tab-stops/) | Узнайте, как создавать собственные позиции табуляции в файле PDF с помощью Aspose.PDF для .NET. |  
+| [Определить разрыв строки в PDF-файле](./determine-line-break/) | Узнайте, как определить разрывы строк в файле PDF с помощью Aspose.PDF для .NET. |  
+| [Встроить стандартные шрифты типа 1 в PDF-файл](./embed-standard-type-1fonts/) | Узнайте, как встроить стандартные шрифты Type 1 в файл PDF с помощью Aspose.PDF для .NET. |  
+| [Извлечь текст столбцов в PDF-файл](./extract-columns-text/) | Узнайте, как извлечь текст столбцов из PDF-файла с помощью Aspose.PDF для .NET. |  
+| [Извлечь абзацы из PDF-файла](./extract-paragraphs/) | Узнайте, как извлечь абзацы из PDF-файла с помощью Aspose.PDF для .NET. |   
+| [Извлечь весь текст из PDF-файла](./extract-text-all/) |Узнайте, как извлечь весь текст из PDF-файла с помощью Aspose.PDF для .NET.|  
+| [Извлечь текст из области страницы в PDF-файле](./extract-text-from-page-region/) | Узнайте, как извлечь текст из определенной области на странице в файле PDF с помощью Aspose.PDF для .NET. |  
+| [Извлечь текстовую страницу в PDF-файл](./extract-text-page/) | Узнайте, как извлечь текст из определенной страницы PDF-файла с помощью Aspose.PDF для .NET. |  
+| [Извлечение текста с помощью текстового устройства](./extract-text-using-text-device/) | Узнайте, как извлечь текст из PDF-документа с помощью текстового устройства в Aspose.PDF для .NET. |  
+| [Динамическое получение ширины текста](./get-width-of-text-dynamically/) | Узнайте, как динамически получать ширину текста с помощью Aspose.PDF для .NET. |  
+| [Скрытый текстовый блок в PDF-файле](./hidden-text-block/) | Узнайте, как создавать скрытые текстовые блоки в файле PDF с помощью Aspose.PDF для .NET. |  
+| [Выделить символ в PDF-файле](./highlight-character-in-pdf/) | Узнайте, как выделить символы в PDF-файле с помощью Aspose.PDF для .NET. |  
+| [Многоколоночные абзацы в PDF-файле](./multicolumn-paragraphs/) | Узнайте, как работать с абзацами, состоящими из нескольких столбцов, в PDF-файле с помощью Aspose.PDF для .NET. |  
+| [Размещение текста вокруг изображения в PDF-файле](./placing-text-around-image/) | Узнайте, как разместить текст вокруг изображения в файле PDF с помощью Aspose.PDF для .NET. |  
+| [Переупорядочение содержимого с помощью замены текста](./rearrange-contents-using-text-replacement/) | Узнайте, как изменить порядок содержимого в PDF-документе с помощью замены текста с помощью Aspose.PDF для .NET. |  
+| [Удалить весь текст в PDF-файле](./remove-all-text/) | Узнайте, как удалить весь текст в файле PDF с помощью Aspose.PDF для .NET. |  
+| [Удалить весь текст из PDF](./remove-all-text-from-pdf/) | Узнайте, как удалить весь текст из PDF-документа с помощью Aspose.PDF для .NET. |  
+| [Удалить неиспользуемые шрифты в PDF-файле](./remove-unused-fonts/) | Узнайте, как удалить неиспользуемые шрифты в файле PDF с помощью Aspose.PDF для .NET. |  
+| [Отрисовка заменяемых символов в PDF-файле](./rendering-replaceable-symbols/) | Узнайте, как отображать заменяемые символы в файле PDF с помощью Aspose.PDF для .NET. |  
+| [Сменные символы в верхнем колонтитуле](./replaceable-symbols-in-header-footer/) | Узнайте, как использовать заменяемые символы в верхнем и нижнем колонтитуле PDF-документа с помощью Aspose.PDF для .NET. |  
+| [Заменить первое вхождение](./replace-first-occurrence/) | Узнайте, как заменить первое вхождение текста в PDF-документе с помощью Aspose.PDF для .NET. |  
+| [Заменить шрифты в PDF-файле](./replace-fonts/) | Узнайте, как заменить шрифты в файле PDF с помощью Aspose.PDF для .NET. |  
+| [Заменить весь текст в PDF-файле](./replace-text-all/) | Узнайте, как заменить весь текст в файле PDF с помощью Aspose.PDF для .NET. |  
+| [Заменить текст регулярного выражения в PDF-файле](./replace-text-on-regular-expression/) | Узнайте, как заменить текст на основе регулярного выражения в файле PDF с помощью Aspose.PDF для .NET. |  
+| [Заменить текстовую страницу в PDF-файле](./replace-text-page/) | Узнайте, как заменить текст на определенной странице в файле PDF с помощью Aspose.PDF для .NET. |  
+| [Поворот текста с использованием абзаца в PDF-файле](./rotate-text-using-paragraph/) | Узнайте, как вращать текст с помощью абзацев в PDF-файле с помощью Aspose.PDF для .NET. |  
+| [Поворот текста с использованием фрагмента текста в PDF-файле](./rotate-text-using-text-fragment/) | Узнайте, как вращать текст, используя текстовые фрагменты в PDF-файле, с помощью Aspose.PDF для .NET. |  
+| [Поворот текста с использованием фрагмента текста и абзаца](./rotate-text-using-text-fragment-and-paragraph/) | Узнайте, как повернуть текст, используя текстовый фрагмент и абзац в PDF-документе, с помощью Aspose.PDF для .NET. |  
+| [Поворот текста с использованием текстового абзаца и построителя в PDF-файле](./rotate-text-using-text-paragraph-and-builder/) | Узнайте, как повернуть текст с помощью текстового абзаца и конструктора в PDF-файле с помощью Aspose.PDF для .NET. |  
+| [Искать и получать весь текст](./search-and-get-text-all/) | Узнайте, как искать и получать текст со всех страниц PDF-документа с помощью Aspose.PDF для .NET. |  
+| [Найдите и получите текстовую страницу в PDF-файле](./search-and-get-text-page/) | Узнайте, как искать и получать текст с определенной страницы в PDF-файле с помощью Aspose.PDF для .NET. |  
+| [Поиск регулярного выражения в PDF-файле](./search-regular-expression/) | Узнайте, как искать и извлекать текст с помощью регулярных выражений в файле PDF с помощью Aspose.PDF для .NET. |  
+| [Найдите текст и добавьте гиперссылку](./search-text-and-add-hyperlink/) | Узнайте, как искать текст в PDF-файле, добавлять гиперссылки к найденному тексту и сохранять измененный документ с помощью Aspose.PDF для .NET. |  
+| [Найдите текст и нарисуйте прямоугольник](./search-text-and-draw-rectangle/) | Узнайте, как искать текст в PDF-файле, рисовать прямоугольники вокруг найденного текста и сохранять измененный документ с помощью Aspose.PDF для .NET. |  
+| [Страница поиска текстовых сегментов в PDF-файле](./search-text-segments-page/) | Узнайте, как искать текстовые сегменты на странице в PDF-файле и получать их свойства с помощью Aspose.PDF для .NET. |  
+| [Поиск текста с помощью Dot Net Regex](./search-text-with-dot-net-regex/) | Узнайте, как искать текст с помощью регулярных выражений .NET в документе PDF с помощью Aspose.PDF для .NET. |   
+| [Укажите межстрочный интервал в PDF-файле](./specify-line-spacing/) | Узнайте, как указать межстрочный интервал в файле PDF с помощью Aspose.PDF для .NET. |  
+| [Выравнивание текста для содержимого плавающего поля в PDF-файле](./text-alignment-for-floating-box-contents/) | Узнайте, как выровнять текст в плавающих полях в PDF-файле с помощью Aspose.PDF для .NET. |  
+| [Текст и изображение как абзац в PDF-файле](./text-and-image-as-paragraph/) | Узнайте, как добавить текст и изображение в виде встроенных абзацев в файл PDF с помощью Aspose.PDF для .NET. |  
+| [Текстовые сегменты в PDF-файле](./text-segments/) | Узнайте, как искать определенные текстовые сегменты в PDF-файле с помощью регулярных выражений в Aspose.PDF для .NET. |  
+| [Использовать латексный сценарий в PDF-файле](./use-latex-script/) | Узнайте, как использовать сценарий Latex для добавления математических выражений или формул в PDF-файл с помощью Aspose.PDF для .NET. |  

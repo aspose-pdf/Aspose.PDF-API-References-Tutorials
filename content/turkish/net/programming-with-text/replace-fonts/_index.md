@@ -1,49 +1,49 @@
 ---
-title: Replace Fonts In PDF File
-linktitle: Replace Fonts In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to replace fonts in PDF file using Aspose.PDF for .NET.
+title: PDF Dosyasındaki Yazı Tiplerini Değiştir
+linktitle: PDF Dosyasındaki Yazı Tiplerini Değiştir
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET kullanarak PDF dosyasındaki yazı tiplerini nasıl değiştireceğinizi öğrenin.
 type: docs
 weight: 340
 url: /tr/net/programming-with-text/replace-fonts/
 ---
-In this tutorial, we will explain how to replace specific fonts in PDF file using the Aspose.PDF library for .NET. We will go through the step-by-step process of loading a PDF document, searching for text fragments, identifying the fonts to replace, replacing the fonts, and saving the modified PDF using the provided C# source code.
+Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak PDF dosyasındaki belirli yazı tiplerinin nasıl değiştirileceğini açıklayacağız. Bir PDF belgesi yükleme, metin parçalarını arama, değiştirilecek yazı tiplerini belirleme, yazı tiplerini değiştirme ve değiştirilen PDF'yi sağlanan C# kaynak kodunu kullanarak kaydetme sürecini adım adım gerçekleştireceğiz.
 
-## Prerequisites
+## Önkoşullar
 
-Before you begin, ensure that you have the following:
+Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- The Aspose.PDF for .NET library installed.
-- A basic understanding of C# programming.
+- Aspose.PDF for .NET kütüphanesi kuruldu.
+- C# programlamanın temel anlayışı.
 
-## Step 1: Set up the Document Directory
+## 1. Adım: Belge Dizinini Ayarlayın
 
-First, you need to set the path to the directory where you have the input PDF file. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your PDF file.
+ Öncelikle, giriş PDF dosyasının bulunduğu dizinin yolunu ayarlamanız gerekir. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` PDF dosyanızın yolunu içeren değişken.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load the PDF Document
+## Adım 2: PDF Belgesini Yükleyin
 
-Next, we load the PDF document using the `Document` class from the Aspose.PDF library.
+ Daha sonra, PDF belgesini kullanarak yüklüyoruz.`Document` Aspose.PDF kütüphanesinden sınıf.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 ```
 
-## Step 3: Search and Replace Fonts
+## 3. Adım: Yazı Tiplerini Arayın ve Değiştirin
 
-We create a `TextFragmentAbsorber` object and set the edit option to remove unused fonts. Then, we accept the absorber for all the pages of the PDF document to search for text fragments.
+ Biz bir yaratıyoruz`TextFragmentAbsorber`nesneyi seçin ve kullanılmayan yazı tiplerini kaldırmak için düzenleme seçeneğini ayarlayın. Ardından, metin parçalarını aramak için PDF belgesinin tüm sayfaları için emiciyi kabul ediyoruz.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));
 pdfDocument.Pages.Accept(absorber);
 ```
 
-## Step 4: Replace Fonts
+## 4. Adım: Yazı Tiplerini Değiştirin
 
-We traverse through all the text fragments identified by the absorber. If the font name of a text fragment matches the desired font to replace, we replace it with the new font.
+Emici tarafından tanımlanan tüm metin parçalarının üzerinden geçiyoruz. Bir metin parçasının yazı tipi adı, değiştirilmesi istenen yazı tipiyle eşleşiyorsa onu yeni yazı tipiyle değiştiririz.
 
 ```csharp
 foreach (TextFragment textFragment in absorber.TextFragments)
@@ -55,9 +55,9 @@ foreach (TextFragment textFragment in absorber.TextFragments)
 }
 ```
 
-## Step 5: Save the Modified PDF
+## 5. Adım: Değiştirilen PDF'yi kaydedin
 
-Finally, we save the modified PDF document to the specified output file.
+Son olarak değiştirilen PDF belgesini belirtilen çıktı dosyasına kaydediyoruz.
 
 ```csharp
 dataDir = dataDir + "ReplaceFonts_out.pdf";
@@ -65,29 +65,29 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nFonts replaced successfully in the PDF document.\nFile saved at " + dataDir);
 ```
 
-### Sample source code for Replace Fonts using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Yazı Tiplerini Değiştirme için örnek kaynak kodu 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Belgeler dizininin yolu.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Load source PDF file
+	// Kaynak PDF dosyasını yükle
 	Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
-	// Search text fragments and set edit option as remove unused fonts
+	// Metin parçalarını arayın ve kullanılmayan yazı tiplerini kaldırmak için düzenleme seçeneğini ayarlayın
 	TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));
-	// Accept the absorber for all the pages
+	// Tüm sayfalar için emiciyi kabul edin
 	pdfDocument.Pages.Accept(absorber);
-	// Traverse through all the TextFragments
+	// Tüm TextFragments'ler arasında geçiş yapın
 	foreach (TextFragment textFragment in absorber.TextFragments)
 	{
-		// If the font name is ArialMT, replace font name with Arial
+		// Yazı tipi adı ArialMT ise yazı tipi adını Arial ile değiştirin
 		if (textFragment.TextState.Font.FontName == "Arial,Bold")
 		{
 			textFragment.TextState.Font = FontRepository.FindFont("Arial");
 		}
 	}
 	dataDir = dataDir + "ReplaceFonts_out.pdf";
-	// Save updated document
+	// Güncellenen belgeyi kaydet
 	pdfDocument.Save(dataDir);
 	Console.WriteLine("\nFonts replaced successfully in pdf document.\nFile saved at " + dataDir);
 }
@@ -97,54 +97,54 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, you have learned how to replace specific fonts in a PDF document using the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can load a PDF document, search for text fragments, identify and replace specific fonts, and save the modified PDF.
+Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak bir PDF belgesindeki belirli yazı tiplerini nasıl değiştireceğinizi öğrendiniz. Adım adım kılavuzu izleyerek ve verilen C# kodunu çalıştırarak bir PDF belgesi yükleyebilir, metin parçalarını arayabilir, belirli yazı tiplerini tanımlayıp değiştirebilir ve değiştirilen PDF'yi kaydedebilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the purpose of the "Replace Fonts In PDF File" tutorial?
+#### S: "PDF Dosyasındaki Yazı Tiplerini Değiştirme" eğitiminin amacı nedir?
 
-A: The "Replace Fonts In PDF File" tutorial demonstrates how to use the Aspose.PDF library for .NET to replace specific fonts in a PDF document. It provides a step-by-step guide on how to load a PDF document, search for text fragments, identify fonts to replace, replace the fonts, and save the modified PDF.
+C: "PDF Dosyasındaki Fontları Değiştirme" eğitimi, bir PDF belgesindeki belirli fontları değiştirmek için Aspose.PDF for .NET kütüphanesinin nasıl kullanılacağını gösterir. Bir PDF belgesinin nasıl yükleneceği, metin parçalarının nasıl aranacağı, değiştirilecek yazı tiplerinin nasıl belirleneceği, yazı tiplerinin nasıl değiştirileceği ve değiştirilen PDF'nin nasıl kaydedileceği konusunda adım adım kılavuz sağlar.
 
-#### Q: Why would I want to replace fonts in a PDF document?
+#### S: Bir PDF belgesindeki yazı tiplerini neden değiştirmek isteyeyim?
 
-A: Replacing fonts in a PDF document can be necessary when you want to standardize the appearance of the text or improve the compatibility of the document across different devices and platforms. It allows you to ensure consistent typography and formatting.
+C: Metnin görünümünü standartlaştırmak veya belgenin farklı cihazlar ve platformlar arasındaki uyumluluğunu geliştirmek istediğinizde, PDF belgesindeki yazı tiplerini değiştirmek gerekli olabilir. Tutarlı tipografi ve biçimlendirme sağlamanıza olanak tanır.
 
-#### Q: How do I set up the document directory?
+#### S: Belge dizinini nasıl ayarlarım?
 
-A: To set up the document directory:
+C: Belge dizinini ayarlamak için:
 
-1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where your input PDF file is located.
+1.  Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` giriş PDF dosyanızın bulunduğu dizinin yolunu içeren değişken.
 
-#### Q: How do I replace specific fonts in a PDF document?
+#### S: Bir PDF belgesindeki belirli yazı tiplerini nasıl değiştiririm?
 
-A: The tutorial guides you through the process step by step:
+C: Eğitim, süreç boyunca size adım adım rehberlik eder:
 
-1. Load the PDF document using the `Document` class.
-2. Create a `TextFragmentAbsorber` object and set the edit option to remove unused fonts. Accept the absorber for all the pages to search for text fragments.
-3. Traverse through the identified text fragments. If the font name of a text fragment matches the font you want to replace, replace it with the new font.
+1.  PDF belgesini kullanarak yükleyin`Document` sınıf.
+2.  Oluşturmak`TextFragmentAbsorber` nesneyi seçin ve kullanılmayan yazı tiplerini kaldırmak için düzenleme seçeneğini ayarlayın. Metin parçalarını aramak için tüm sayfalar için emiciyi kabul edin.
+3. Tanımlanan metin parçaları arasında gezinin. Bir metin parçasının yazı tipi adı değiştirmek istediğiniz yazı tipiyle eşleşiyorsa onu yeni yazı tipiyle değiştirin.
 
-#### Q: What is the purpose of using `TextFragmentAbsorber` with font replacement options?
+####  S: Kullanmanın amacı nedir?`TextFragmentAbsorber` with font replacement options?
 
-A: The `TextFragmentAbsorber` with font replacement options allows you to locate text fragments and simultaneously remove unused fonts. This is important to ensure that the replaced fonts are not added as additional resources in the PDF.
+ C:`TextFragmentAbsorber` yazı tipi değiştirme seçenekleriyle metin parçalarını bulmanıza ve aynı anda kullanılmayan yazı tiplerini kaldırmanıza olanak tanır. Değiştirilen yazı tiplerinin PDF'ye ek kaynak olarak eklenmemesini sağlamak için bu önemlidir.
 
-#### Q: How do I identify specific fonts to replace?
+#### S: Değiştirilecek belirli yazı tiplerini nasıl tanımlarım?
 
-A: By traversing through the text fragments identified by the absorber, you can access the font information for each text fragment. If the font name matches the font you want to replace, you can perform the replacement.
+C: Emici tarafından tanımlanan metin parçaları arasında geçiş yaparak her bir metin parçası için yazı tipi bilgisine erişebilirsiniz. Font adı değiştirmek istediğiniz fontla eşleşiyorsa değiştirme işlemini gerçekleştirebilirsiniz.
 
-#### Q: What happens if the font to be replaced is not found in a text fragment?
+#### S: Değiştirilecek yazı tipi bir metin parçasında bulunamazsa ne olur?
 
-A: If the font to be replaced is not found in a text fragment, the text fragment's font remains unchanged. The replacement will only occur if the font name matches.
+C: Değiştirilecek yazı tipi bir metin parçasında bulunamazsa, metin parçasının yazı tipi değişmeden kalır. Değiştirme yalnızca yazı tipi adı eşleştiğinde gerçekleşir.
 
-#### Q: Is there a limitation to replacing fonts in this tutorial?
+#### S: Bu eğitimde yazı tiplerini değiştirmeyle ilgili bir sınırlama var mı?
 
-A: This tutorial focuses on replacing specific fonts in text fragments. If you need to replace fonts in other contexts, such as annotations or form fields, you would need to extend the approach accordingly.
+C: Bu eğitim, metin parçalarındaki belirli yazı tiplerini değiştirmeye odaklanmaktadır. Ek açıklamalar veya form alanları gibi başka bağlamlardaki yazı tiplerini değiştirmeniz gerekiyorsa yaklaşımı buna göre genişletmeniz gerekir.
 
-#### Q: What is the expected outcome of executing the provided code?
+#### S: Sağlanan kodu çalıştırmanın beklenen sonucu nedir?
 
-A: By following the tutorial and running the provided C# code, you will replace specific fonts in the PDF document. The fonts identified by the criteria you set will be replaced with the new font you specify.
+C: Öğreticiyi takip ederek ve verilen C# kodunu çalıştırarak, PDF belgesindeki belirli yazı tiplerini değiştireceksiniz. Belirlediğiniz kriterlere göre belirlenen yazı tipleri, belirttiğiniz yeni yazı tipiyle değiştirilecektir.
 
-#### Q: Can I use this approach to replace fonts throughout the entire PDF document?
+#### S: Bu yaklaşımı tüm PDF belgesindeki yazı tiplerini değiştirmek için kullanabilir miyim?
 
-A: Yes, you can adapt the code to replace fonts throughout the entire PDF document by traversing through all text fragments and applying the font replacement logic.
+C: Evet, tüm metin parçalarından geçerek ve yazı tipi değiştirme mantığını uygulayarak kodu, PDF belgesinin tamamındaki yazı tiplerini değiştirecek şekilde uyarlayabilirsiniz.

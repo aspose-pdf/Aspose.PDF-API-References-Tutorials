@@ -1,54 +1,54 @@
 ---
-title: Create Structure Elements
-linktitle: Create Structure Elements
-second_title: Aspose.PDF for .NET API Reference
-description: In this tutorial, you will learn how to use Aspose.PDF for .NET to create structural elements in a tagged PDF document.
+title: Создание элементов структуры
+linktitle: Создание элементов структуры
+second_title: Справочник по Aspose.PDF для .NET API
+description: В этом руководстве вы узнаете, как использовать Aspose.PDF для .NET для создания структурных элементов в PDF-документе с тегами.
 type: docs
 weight: 60
 url: /ru/net/programming-with-tagged-pdf/create-structure-elements/
 ---
-The following C# source code uses Aspose.PDF for .NET to create structure elements. Follow the steps below to understand how the code works.
+Следующий исходный код C# использует Aspose.PDF для .NET для создания элементов структуры. Выполните следующие действия, чтобы понять, как работает код.
 
-## Step 1: Import the necessary libraries
+## Шаг 1. Импортируйте необходимые библиотеки.
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Define the directory of your documents
+## Шаг 2. Определите каталог ваших документов.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-Be sure to specify the correct path to your documents directory.
+Обязательно укажите правильный путь к каталогу ваших документов.
 
-## Step 3: Create a PDF document
+## Шаг 3. Создайте PDF-документ.
 
 ```csharp
 Document document = new Document();
 ```
 
-We create a new Document object that represents the PDF document.
+Мы создаем новый объект Document, который представляет документ PDF.
 
-## Step 4: Get content to work with TaggedPdf
+## Шаг 4. Обеспечьте работу контента с TaggedPdf
 
 ```csharp
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-We retrieve the tagged content of the PDF document. This will allow us to manipulate structural elements.
+Мы извлекаем размеченное содержимое PDF-документа. Это позволит нам манипулировать структурными элементами.
 
-## Step 5: Set document title and language
+## Шаг 5. Установите название и язык документа.
 
 ```csharp
 taggedContent.SetTitle("Tagged PDF document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-We set the title and language of the tagged PDF document. This improves the accessibility of the document.
+Устанавливаем заголовок и язык размеченного PDF-документа. Это улучшает доступность документа.
 
-## Step 6: Create grouping elements
+## Шаг 6. Создайте элементы группировки
 
 ```csharp
 PartElement partElement = taggedContent.CreatePartElement();
@@ -64,9 +64,9 @@ NonStructElement nonStructElement = taggedContent.CreateNonStructElement();
 PrivateElement privateElement = taggedContent.CreatePrivateElement();
 ```
 
-We create different structural elements for grouping content in the PDF document.
+Мы создаем различные структурные элементы для группировки контента в PDF-документе.
 
-## Step 7: Create paragraph structure elements
+## Шаг 7. Создайте элементы структуры абзаца
 
 ```csharp
 ParagraphElement paragraphElement = taggedContent.CreateParagraphElement();
@@ -74,9 +74,9 @@ HeaderElement headerElement = taggedContent.CreateHeaderElement();
 HeaderElement h1Element = taggedContent.CreateHeaderElement(1);
 ```
 
-We create block-level structural elements for paragraphs and headings. The example above shows the creation of a level 1 header.
+Создаём блочные структурные элементы для абзацев и заголовков. В приведенном выше примере показано создание заголовка уровня 1.
 
-## Step 8: Create inline level structure elements
+## Шаг 8. Создайте элементы структуры встроенного уровня.
 
 ```csharp
 SpanElement spanElement = taggedContent.CreateSpanElement();
@@ -84,39 +84,39 @@ QuoteElement quoteElement = taggedContent.CreateQuoteElement();
 NoteElement noteElement = taggedContent.CreateNoteElement();
 ```
 
-We create inline level structure elements for the parts of text that appear inside a paragraph or heading.
+Мы создаем элементы структуры встроенного уровня для частей текста, которые появляются внутри абзаца или заголовка.
 
-## Step 9: Create artwork structure elements
+## Шаг 9: Создайте элементы структуры графического изображения
 
 ```csharp
 FigureElement figureElement = taggedContent.CreateFigureElement();
 FormulaElement formulaElement = taggedContent.CreateFormulaElement();
 ```
 
-We create structural elements for the illustrations and mathematical formulas present in the document.
+Создаем структурные элементы для иллюстраций и математических формул, присутствующих в документе.
 
-## Step 10: Save the tagged PDF document
+## Шаг 10. Сохраните PDF-документ с тегами.
 
 ```csharp
 document.Save(dataDir + "StructureElements.pdf");
 ```
 
-We save the tagged PDF document with the created structure elements.
+Сохраняем размеченный PDF-документ с созданными элементами структуры.
 
-### Sample source code for Create Structure Elements using Aspose.PDF for .NET 
+### Пример исходного кода для создания элементов структуры с использованием Aspose.PDF для .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create Pdf Document
+// Создать PDF-документ
 Document document = new Document();
-// Get Content for work with TaggedPdf
+// Получить контент для работы с TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
-// Set Title and Language for Documnet
+// Установите заголовок и язык для Documentnet
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
-// Create Grouping Elements
+// Создание элементов группировки
 PartElement partElement = taggedContent.CreatePartElement();
 ArtElement artElement = taggedContent.CreateArtElement();
 SectElement sectElement = taggedContent.CreateSectElement();
@@ -128,18 +128,18 @@ TOCIElement tociElement = taggedContent.CreateTOCIElement();
 IndexElement indexElement = taggedContent.CreateIndexElement();
 NonStructElement nonStructElement = taggedContent.CreateNonStructElement();
 PrivateElement privateElement = taggedContent.CreatePrivateElement();
-// Create Text Block-Level Structure Elements
+// Создание элементов структуры на уровне текстового блока
 ParagraphElement paragraphElement = taggedContent.CreateParagraphElement();
 HeaderElement headerElement = taggedContent.CreateHeaderElement();
 HeaderElement h1Element = taggedContent.CreateHeaderElement(1);
-// Create Text Inline-Level Structure Elements
+// Создание текстовых элементов структуры встроенного уровня
 SpanElement spanElement = taggedContent.CreateSpanElement();
 QuoteElement quoteElement = taggedContent.CreateQuoteElement();
 NoteElement noteElement = taggedContent.CreateNoteElement();
-// Create Illustration Structure Elements
+// Создание элементов структуры иллюстрации
 FigureElement figureElement = taggedContent.CreateFigureElement();
 FormulaElement formulaElement = taggedContent.CreateFormulaElement();
-// Methods are under development
+// Методы находятся в разработке
 ListElement listElement = taggedContent.CreateListElement();
 TableElement tableElement = taggedContent.CreateTableElement();
 ReferenceElement referenceElement = taggedContent.CreateReferenceElement();
@@ -150,53 +150,53 @@ AnnotElement annotElement = taggedContent.CreateAnnotElement();
 RubyElement rubyElement = taggedContent.CreateRubyElement();
 WarichuElement warichuElement = taggedContent.CreateWarichuElement();
 FormElement formElement = taggedContent.CreateFormElement();
-// Save Tagged Pdf Document
+// Сохранить PDF-документ с тегами
 document.Save(dataDir + "StructureElements.pdf");
 
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, we learned how to use Aspose.PDF for .NET to create structure elements in a tagged PDF document. Structural elements help improve document accessibility and organize content in a meaningful way. Now you can use this knowledge to create structured, easy-to-navigate PDF documents.
+В этом уроке мы узнали, как использовать Aspose.PDF для .NET для создания элементов структуры в PDF-документе с тегами. Структурные элементы помогают улучшить доступность документа и осмысленно организовать контент. Теперь вы можете использовать эти знания для создания структурированных PDF-документов с удобной навигацией.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is the purpose of creating structure elements in a PDF document using Aspose.PDF for .NET?
+#### Вопрос: Какова цель создания элементов структуры в PDF-документе с помощью Aspose.PDF для .NET?
 
-A: Creating structure elements in a PDF document using Aspose.PDF for .NET enhances the accessibility and organization of the document's content. Structure elements provide a hierarchical structure that improves navigation, semantics, and compatibility with assistive technologies.
+О: Создание структурных элементов в PDF-документе с помощью Aspose.PDF для .NET повышает доступность и организацию содержимого документа. Элементы структуры обеспечивают иерархическую структуру, которая улучшает навигацию, семантику и совместимость со вспомогательными технологиями.
 
-#### Q: How does the provided C# code create structure elements in a PDF document?
+#### Вопрос: Как предоставленный код C# создает элементы структуры в документе PDF?
 
-A: The code example demonstrates how to create various types of structure elements, including grouping elements (such as parts, sections, and divs), block-level elements (like paragraphs and headings), inline-level elements (span, quote, note), and artwork elements (such as figures and formulas). These structure elements help organize content.
+Ответ: В примере кода показано, как создавать различные типы структурных элементов, включая элементы группировки (например, части, разделы и элементы div), элементы уровня блока (например, абзацы и заголовки), элементы строкового уровня (диапазон, кавычка, примечание). ) и элементы графического изображения (например, рисунки и формулы). Эти элементы структуры помогают организовать контент.
 
-#### Q: Why is it important to set the document's title and language using the `SetTitle` and `SetLanguage` methods?
+####  Вопрос: Почему важно задавать название и язык документа с помощью`SetTitle` and `SetLanguage` methods?
 
-A: Setting the document's title and language using the `SetTitle` and `SetLanguage` methods improves document accessibility and semantics. The title provides a brief description of the document's purpose, while the language attribute enhances language-specific rendering and accessibility.
+ О: Установка названия и языка документа с помощью`SetTitle` и`SetLanguage`методы улучшают доступность и семантику документов. Заголовок дает краткое описание цели документа, а атрибут языка улучшает отображение и доступность для конкретного языка.
 
-#### Q: How do grouping elements, such as `PartElement` and `SectElement`, contribute to the structure of the PDF document?
+####  Вопрос: Как группируются элементы, например`PartElement` and `SectElement`, contribute to the structure of the PDF document?
 
-A: Grouping elements create a hierarchical structure within the PDF document, allowing you to logically organize and group related content. This enhances navigation and provides a clear structure for users.
+О: Группировка элементов создает иерархическую структуру в PDF-документе, позволяя логически организовывать и группировать связанный контент. Это улучшает навигацию и обеспечивает четкую структуру для пользователей.
 
-#### Q: What are block-level and inline-level structure elements, and how do they differ?
+#### Вопрос: Что такое элементы структуры уровня блока и строчного уровня и чем они отличаются?
 
-A: Block-level structure elements represent larger blocks of content, such as paragraphs and headings, while inline-level elements represent parts of text within a paragraph or heading, such as spans, quotes, and notes. They help define the hierarchy and relationships of content.
+Ответ: Элементы структуры уровня блока представляют собой более крупные блоки контента, такие как абзацы и заголовки, тогда как элементы строчного уровня представляют собой части текста внутри абзаца или заголовка, такие как промежутки, кавычки и примечания. Они помогают определить иерархию и отношения содержания.
 
-#### Q: How do artwork structure elements, like `FigureElement` and `FormulaElement`, contribute to the document?
+####  Вопрос: Как элементы структуры произведения искусства, например`FigureElement` and `FormulaElement`, contribute to the document?
 
-A: Artwork structure elements allow you to add illustrations, figures, and mathematical formulas to the document. They provide a structured way to include visual and mathematical content.
+О: Элементы структуры графического изображения позволяют добавлять в документ иллюстрации, рисунки и математические формулы. Они обеспечивают структурированный способ включения визуального и математического контента.
 
-#### Q: Can I use similar techniques to create other types of structure elements, like lists, tables, or annotations?
+#### Вопрос: Могу ли я использовать аналогичные методы для создания других типов структурных элементов, таких как списки, таблицы или аннотации?
 
-A: Yes, you can use similar techniques to create other types of structure elements like lists, tables, annotations, references, and more. Aspose.PDF provides a wide range of structure element creation methods.
+О: Да, вы можете использовать аналогичные методы для создания других типов структурных элементов, таких как списки, таблицы, аннотации, ссылки и т. д. Aspose.PDF предоставляет широкий спектр методов создания элементов структуры.
 
-#### Q: How does saving the tagged PDF document using the `Save` method ensure the preservation of structure elements?
+####  Вопрос: Как сохранить PDF-документ с тегами с помощью`Save` method ensure the preservation of structure elements?
 
-A: The `Save` method saves the PDF document along with the created structure elements, ensuring that the document's hierarchical and semantic structure is preserved for accessibility and navigation.
+ А:`Save` Метод сохраняет PDF-документ вместе с созданными элементами структуры, гарантируя сохранение иерархической и семантической структуры документа для обеспечения доступности и навигации.
 
-#### Q: What benefits do structure elements bring to PDF documents in terms of accessibility and compatibility with assistive technologies?
+#### Вопрос: Какие преимущества структурные элементы приносят PDF-документам с точки зрения доступности и совместимости со вспомогательными технологиями?
 
-A: Structure elements enhance accessibility by providing a meaningful structure and semantics to the document. This allows assistive technologies like screen readers to interpret and convey the document's content more effectively to users with disabilities.
+Ответ: Элементы структуры повышают доступность, обеспечивая осмысленную структуру и семантику документа. Это позволяет вспомогательным технологиям, таким как программы чтения с экрана, более эффективно интерпретировать и передавать содержимое документа пользователям с ограниченными возможностями.
 
-#### Q: How can I further customize and combine different types of structure elements in my PDF documents?
+#### Вопрос: Как я могу дополнительно настраивать и комбинировать различные типы структурных элементов в своих PDF-документах?
 
-A: You can combine and customize structure elements by using appropriate creation methods provided by Aspose.PDF. Experiment with different elements and their properties to create a well-structured and organized PDF document.
+О: Вы можете комбинировать и настраивать элементы структуры, используя соответствующие методы создания, предоставляемые Aspose.PDF. Поэкспериментируйте с различными элементами и их свойствами, чтобы создать хорошо структурированный и организованный PDF-документ.

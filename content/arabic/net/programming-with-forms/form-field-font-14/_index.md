@@ -1,57 +1,57 @@
 ---
-title: Form Field Font 14
-linktitle: Form Field Font 14
-second_title: Aspose.PDF for .NET API Reference
-description: Easily configure the font of form fields in your PDF documents with Aspose.PDF for .NET.
+title: خط حقل النموذج 14
+linktitle: خط حقل النموذج 14
+second_title: Aspose.PDF لمرجع .NET API
+description: يمكنك بسهولة تكوين خط حقول النموذج في مستندات PDF الخاصة بك باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 110
 url: /ar/net/programming-with-forms/form-field-font-14/
 ---
-In this tutorial, we will show you how to configure the font of a form field using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+سنوضح لك في هذا البرنامج التعليمي كيفية تكوين خط حقل النموذج باستخدام Aspose.PDF لـ .NET. سنشرح لك كود مصدر C# خطوة بخطوة لإرشادك خلال هذه العملية.
 
-## Step 1: Preparation
+## الخطوة 1: التحضير
 
-First, make sure you have imported the necessary libraries and set the path to the documents directory:
+أولاً، تأكد من استيراد المكتبات اللازمة وتعيين المسار إلى دليل المستندات:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Open the document
+## الخطوة 2: افتح المستند
 
-Open the existing PDF document:
+افتح مستند PDF الموجود:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "FormFieldFont14.pdf");
 ```
 
-## Step 3: Get a particular form field
+## الخطوة 3: الحصول على حقل نموذج معين
 
-Get the desired form field (in this example, we're using the "textbox1" field):
+احصل على حقل النموذج المطلوب (في هذا المثال، نستخدم الحقل "textbox1"):
 
 ```csharp
 Aspose.Pdf.Forms.Field field = pdfDocument.Form["textbox1"] as Aspose.Pdf.Forms.Field;
 ```
 
-## Step 4: Create a font object
+## الخطوة 4: إنشاء كائن الخط
 
-Create a font object for the new font you want to use (for example, "ComicSansMS"):
+قم بإنشاء كائن خط للخط الجديد الذي تريد استخدامه (على سبيل المثال، "ComicSansMS"):
 
 ```csharp
 Aspose.Pdf.Text.Font font = FontRepository.FindFont("ComicSansMS");
 ```
 
-## Step 5: Configure font information for the form field
+## الخطوة 5: تكوين معلومات الخط لحقل النموذج
 
-Configure the font information for the form field using the font created earlier:
+قم بتكوين معلومات الخط لحقل النموذج باستخدام الخط الذي تم إنشاؤه مسبقًا:
 
 ```csharp
 field.DefaultAppearance = new Aspose.Pdf.Forms.DefaultAppearance(font, 14, System.Drawing.Color.Black);
 ```
 
-## Step 6: Save the updated document
+## الخطوة 6: احفظ المستند المحدث
 
-Save the updated PDF document:
+احفظ مستند PDF المحدث:
 
 ```csharp
 dataDir = dataDir + "FormFieldFont14_out.pdf";
@@ -59,46 +59,46 @@ pdfDocument.Save(dataDir);
 ```
 
 
-### Sample source code for Form Field Font 14 using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لـ Form Field Font 14 باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "FormFieldFont14.pdf");
-// Get particular form field from document
+// الحصول على حقل نموذج معين من المستند
 Aspose.Pdf.Forms.Field field = pdfDocument.Form["textbox1"] as Aspose.Pdf.Forms.Field;
-// Create font object
+// إنشاء كائن الخط
 Aspose.Pdf.Text.Font font = FontRepository.FindFont("ComicSansMS");
-// Set the font information for form field
+// قم بتعيين معلومات الخط لحقل النموذج
 // Field.DefaultAppearance = new Aspose.Pdf.Forms.in.DefaultAppearance(font, 10, System.Drawing.Color.Black);
 dataDir = dataDir + "FormFieldFont14_out.pdf";
-// Save updated document
+// حفظ المستند المحدث
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nForm field font setup successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we learned how to configure the font of a form field using Aspose.PDF for .NET. By following these steps, you can easily specify the font and font size for form fields in your PDF documents using Aspose.PDF.
+في هذا البرنامج التعليمي، تعلمنا كيفية تكوين خط حقل النموذج باستخدام Aspose.PDF لـ .NET. باتباع هذه الخطوات، يمكنك بسهولة تحديد الخط وحجم الخط لحقول النموذج في مستندات PDF الخاصة بك باستخدام Aspose.PDF.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: Can I use any font for form fields in Aspose.PDF for .NET?
+#### س: هل يمكنني استخدام أي خط لحقول النموذج في Aspose.PDF لـ .NET؟
 
-A: Yes, you can use any TrueType or OpenType font for form fields in Aspose.PDF for .NET. As long as the font is available and installed on the system or accessible through the FontRepository, you can use it to customize the appearance of form field text.
+ج: نعم، يمكنك استخدام أي خط TrueType أو OpenType لحقول النموذج في Aspose.PDF لـ .NET. طالما أن الخط متاح ومثبت على النظام أو يمكن الوصول إليه من خلال FontRepository، فيمكنك استخدامه لتخصيص مظهر نص حقل النموذج.
 
-#### Q: How do I find the available fonts in Aspose.PDF for .NET?
+#### س: كيف يمكنني العثور على الخطوط المتوفرة في Aspose.PDF لـ .NET؟
 
-A: To find the available fonts in Aspose.PDF for .NET, you can use the `FontRepository.GetAvailableFonts()` method. This method returns an array of available fonts that you can use for form fields or any other text-related operations in your PDF document.
+ ج: للعثور على الخطوط المتوفرة في Aspose.PDF لـ .NET، يمكنك استخدام`FontRepository.GetAvailableFonts()`طريقة. تقوم هذه الطريقة بإرجاع مجموعة من الخطوط المتوفرة التي يمكنك استخدامها لحقول النموذج أو أي عمليات أخرى متعلقة بالنص في مستند PDF الخاص بك.
 
-#### Q: Can I change the font size for form fields to any value?
+#### س: هل يمكنني تغيير حجم الخط لحقول النموذج إلى أي قيمة؟
 
-A: Yes, you can change the font size for form fields to any positive numeric value using Aspose.PDF for .NET. However, it is essential to ensure that the font size is appropriate for the specific form field and does not lead to text truncation or overlapping with other elements in the document.
+ج: نعم، يمكنك تغيير حجم الخط لحقول النموذج إلى أي قيمة رقمية موجبة باستخدام Aspose.PDF لـ .NET. ومع ذلك، من الضروري التأكد من أن حجم الخط مناسب لحقل النموذج المحدد ولا يؤدي إلى اقتطاع النص أو تداخله مع عناصر أخرى في المستند.
 
-#### Q: Can I change the font color for form fields?
+#### س: هل يمكنني تغيير لون الخط لحقول النموذج؟
 
-A: Yes, you can change the font color for form fields using Aspose.PDF for .NET. In the provided C# source code, the font color is set to black (`System.Drawing.Color.Black`), but you can customize it to any other valid color value.
+ج: نعم، يمكنك تغيير لون الخط لحقول النموذج باستخدام Aspose.PDF لـ .NET. في كود مصدر C# المقدم، تم ضبط لون الخط على اللون الأسود (`System.Drawing.Color.Black`)، ولكن يمكنك تخصيصه لأي قيمة لون صالحة أخرى.
 
-#### Q: How can I align the text within the form field?
+#### س: كيف يمكنني محاذاة النص داخل حقل النموذج؟
 
-A: To align the text within the form field, you can use the `Multiline` property of the form field and set it to true. This property enables multiline text within the form field, allowing you to control the text alignment with line breaks and carriage returns.
+ ج: لمحاذاة النص داخل حقل النموذج، يمكنك استخدام`Multiline`خاصية حقل النموذج وتعيينه إلى صحيح. تعمل هذه الخاصية على تمكين النص متعدد الأسطر داخل حقل النموذج، مما يسمح لك بالتحكم في محاذاة النص باستخدام فواصل الأسطر وإرجاع السطر.

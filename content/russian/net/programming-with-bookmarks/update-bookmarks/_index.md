@@ -1,49 +1,49 @@
 ---
-title: Update Bookmarks In PDF File
-linktitle: Update Bookmarks In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily update bookmarks in PDF file with Aspose.PDF for .NET.
+title: Обновить закладки в PDF-файле
+linktitle: Обновить закладки в PDF-файле
+second_title: Справочник по Aspose.PDF для .NET API
+description: Легко обновляйте закладки в PDF-файле с помощью Aspose.PDF для .NET.
 type: docs
 weight: 100
 url: /ru/net/programming-with-bookmarks/update-bookmarks/
 ---
-Updating bookmarks in PDF file is often necessary to reflect changes or updates in the structure or content of the document. With Aspose.PDF for .NET, you can easily update bookmarks by following the following source code:
+Обновление закладок в PDF-файле часто необходимо для отражения изменений или обновлений в структуре или содержании документа. С помощью Aspose.PDF для .NET вы можете легко обновлять закладки, следуя следующему исходному коду:
 
-## Step 1: Import required libraries
+## Шаг 1. Импортируйте необходимые библиотеки.
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Прежде чем начать, вам необходимо импортировать необходимые библиотеки для вашего проекта C#. Вот необходимая директива импорта:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## Шаг 2. Установите путь к папке с документами.
 
-In this step, you need to specify the path to the folder containing the PDF file you want to update. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ На этом этапе вам необходимо указать путь к папке, содержащей PDF-файл, который вы хотите обновить. Заменять`"YOUR DOCUMENT DIRECTORY"`в следующем коде с фактическим путем к папке ваших документов:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Шаг 3. Откройте PDF-документ.
 
-Now we will open the PDF document we want to update using the following code:
+Теперь мы откроем PDF-документ, который хотим обновить, используя следующий код:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "UpdateBookmarks.pdf");
 ```
 
-## Step 4: Get bookmark object
+## Шаг 4. Получите объект закладки
 
-In this step, we'll get the specific bookmark object we want to update. In the example below, we retrieve the bookmark at index 1 (the second bookmark in the bookmarks collection). You can adjust the index according to your needs. Here is the corresponding code:
+На этом этапе мы получим конкретный объект закладки, который хотим обновить. В приведенном ниже примере мы извлекаем закладку с индексом 1 (вторая закладка в коллекции закладок). Вы можете настроить индекс в соответствии с вашими потребностями. Вот соответствующий код:
 
 ```csharp
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
 ```
 
-## Step 5: Update bookmark properties
+## Шаг 5. Обновите свойства закладки
 
-Now let's update the bookmark properties such as title, italic style, and bold style. You can adjust these properties according to your needs. Here is the corresponding code:
+Теперь давайте обновим свойства закладки, такие как заголовок, курсив и полужирный стиль. Вы можете настроить эти свойства в соответствии с вашими потребностями. Вот соответствующий код:
 
 ```csharp
 pdfOutline.Title = "Updated Outline";
@@ -51,79 +51,79 @@ pdfOutline. Italic = true;
 pdfOutline. Bold = true;
 ```
 
-## Step 6: Save the updated file
+## Шаг 6. Сохраните обновленный файл.
 
-Now let's save the updated PDF file using the `Save` method of the `pdfDocument` object. Here is the corresponding code:
+ Теперь давайте сохраним обновленный PDF-файл, используя`Save` метод`pdfDocument` объект. Вот соответствующий код:
 
 ```csharp
 dataDir = dataDir + "UpdateBookmarks_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Update Bookmarks using Aspose.PDF for .NET 
+### Пример исходного кода для обновления закладок с использованием Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Открыть документ
 Document pdfDocument = new Document(dataDir + "UpdateBookmarks.pdf");
-// Get a bookmark object
+// Получить объект закладки
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
 pdfOutline.Title = "Updated Outline";
 pdfOutline.Italic = true;
 pdfOutline.Bold = true;
 dataDir = dataDir + "UpdateBookmarks_out.pdf";
-// Save output
+// Сохранить вывод
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nBookmarks updated successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Заключение
 
-Congratulation ! Now you have a step-by-step guide to updating bookmarks with Aspose.PDF for .NET. You can use this code to change the titles and styles of bookmarks in your PDF documents.
+Поздравляем! Теперь у вас есть пошаговое руководство по обновлению закладок с помощью Aspose.PDF для .NET. Вы можете использовать этот код для изменения заголовков и стилей закладок в ваших PDF-документах.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Обязательно ознакомьтесь с официальной документацией Aspose.PDF для получения дополнительной информации о расширенных функциях управления закладками.
 
-### FAQ's for update bookmarks in PDF file
+### Часто задаваемые вопросы по обновлению закладок в PDF-файле
 
-#### Q: Why would I need to update bookmarks in a PDF file?
+#### Вопрос: Зачем мне обновлять закладки в PDF-файле?
 
-A: Updating bookmarks is essential when you want to reflect changes or updates in the structure, content, or appearance of a PDF document. It ensures that the bookmarks accurately represent the document's organization.
+О: Обновление закладок необходимо, если вы хотите отразить изменения или обновления в структуре, содержании или внешнем виде PDF-документа. Это гарантирует, что закладки точно отражают структуру документа.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### Вопрос: Как мне импортировать необходимые библиотеки для моего проекта C#?
 
-A: To import the required libraries for your C# project, include the following import directive:
+О: Чтобы импортировать необходимые библиотеки для вашего проекта C#, включите следующую директиву импорта:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This directive allows you to access the classes and methods needed to work with PDF documents and bookmarks.
+Эта директива позволяет получить доступ к классам и методам, необходимым для работы с PDF-документами и закладками.
 
-#### Q: How do I specify the path to the documents folder?
+#### Вопрос: Как указать путь к папке с документами?
 
-A: Replace `"YOUR DOCUMENT DIRECTORY"` in the provided source code with the actual path to the folder containing the PDF file you want to update.
+ А: заменить`"YOUR DOCUMENT DIRECTORY"` в предоставленном исходном коде с указанием фактического пути к папке, содержащей PDF-файл, который вы хотите обновить.
 
-#### Q: How do I open a PDF document for updating bookmarks?
+#### Вопрос: Как открыть PDF-документ для обновления закладок?
 
-A: To open a PDF document for updating bookmarks, use the following code:
+О: Чтобы открыть PDF-документ для обновления закладок, используйте следующий код:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "UpdateBookmarks.pdf");
 ```
 
-Replace `"UpdateBookmarks.pdf"` with the actual file name.
+ Заменять`"UpdateBookmarks.pdf"` с фактическим именем файла.
 
-#### Q: How do I get the bookmark object I want to update?
+#### Вопрос: Как мне получить объект закладки, который я хочу обновить?
 
-A: To retrieve a specific bookmark for updating, access the `Outlines` property of the `pdfDocument` object. In the example below, we retrieve the bookmark at index 1:
+ О: Чтобы получить определенную закладку для обновления, откройте`Outlines` собственность`pdfDocument` объект. В приведенном ниже примере мы извлекаем закладку с индексом 1:
 
 ```csharp
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
 ```
 
-#### Q: What bookmark properties can I update?
+#### Вопрос: Какие свойства закладок я могу обновить?
 
-A: You can update various properties of a bookmark, such as its title, italic style, and bold style. Customize these properties according to your needs:
+О: Вы можете обновить различные свойства закладки, такие как заголовок, курсив и жирный шрифт. Настройте эти свойства в соответствии с вашими потребностями:
 
 ```csharp
 pdfOutline.Title = "Updated Outline";
@@ -131,23 +131,23 @@ pdfOutline.Italic = true;
 pdfOutline.Bold = true;
 ```
 
-#### Q: How do I save the updated PDF file?
+#### Вопрос: Как сохранить обновленный PDF-файл?
 
-A: Save the updated PDF file using the `Save` method of the `pdfDocument` object:
+ О: Сохраните обновленный PDF-файл, используя`Save` метод`pdfDocument` объект:
 
 ```csharp
 dataDir = dataDir + "UpdateBookmarks_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-#### Q: Can I update multiple bookmarks using this method?
+#### Вопрос: Могу ли я обновить несколько закладок этим методом?
 
-A: Yes, you can repeat steps 4 to 6 for each bookmark you want to update. Modify the index and properties as needed.
+О: Да, вы можете повторить шаги с 4 по 6 для каждой закладки, которую хотите обновить. При необходимости измените индекс и свойства.
 
-#### Q: Is there a limit to the number of bookmarks I can update?
+#### Вопрос: Существует ли ограничение на количество закладок, которые я могу обновить?
 
-A: There is typically no strict limit to the number of bookmarks you can update. However, very large documents with numerous bookmarks may require efficient memory management.
+О: Обычно строгого ограничения на количество закладок, которые вы можете обновить, не существует. Однако очень большие документы с многочисленными закладками могут потребовать эффективного управления памятью.
 
-#### Q: How can I confirm that the bookmarks have been updated?
+#### Вопрос: Как я могу убедиться, что закладки обновлены?
 
-A: Open the generated PDF file to verify that the specified bookmark updates have been applied.
+О: Откройте созданный PDF-файл и убедитесь, что указанные обновления закладок применены.

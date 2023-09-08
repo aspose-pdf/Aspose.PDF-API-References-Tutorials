@@ -1,52 +1,52 @@
 ---
-title: Add Text Stamp In PDF File
-linktitle: Add Text Stamp In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to easily add a text stamp in PDF file with Aspose.PDF for .NET.
+title: Textstempel in PDF-Datei hinzufügen
+linktitle: Textstempel in PDF-Datei hinzufügen
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET ganz einfach einen Textstempel in eine PDF-Datei einfügen.
 type: docs
 weight: 50
 url: /de/net/programming-with-stamps-and-watermarks/add-text-stamp/
 ---
-In this tutorial, we will take you step by step on how to add a text stamp in PDF file using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to add a custom text stamp to a specific page of the PDF file.
+In diesem Tutorial zeigen wir Ihnen Schritt für Schritt, wie Sie mit Aspose.PDF für .NET einen Textstempel in eine PDF-Datei einfügen. Wir zeigen Ihnen, wie Sie mit dem bereitgestellten C#-Quellcode einen benutzerdefinierten Textstempel zu einer bestimmten Seite der PDF-Datei hinzufügen.
 
-## Step 1: Setting up the environment
+## Schritt 1: Einrichten der Umgebung
 
-Before you begin, make sure you have the following:
+Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Eine installierte .NET-Entwicklungsumgebung.
+- Die Aspose.PDF-Bibliothek für .NET wurde heruntergeladen und in Ihrem Projekt referenziert.
 
-## Step 2: Loading the PDF document
+## Schritt 2: Laden des PDF-Dokuments
 
-The first step is to load the existing PDF document into your project. Here's how:
+Der erste Schritt besteht darin, das vorhandene PDF-Dokument in Ihr Projekt zu laden. Hier ist wie:
 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the document
+// Öffnen Sie das Dokument
 Document pdfDocument = new Document(dataDir + "AddTextStamp.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+Ersetzen Sie „IHR DOKUMENTENVERZEICHNIS“ unbedingt durch den tatsächlichen Pfad zu dem Verzeichnis, in dem sich Ihr PDF-Dokument befindet.
 
-## Step 3: Creating the text buffer
+## Schritt 3: Erstellen des Textpuffers
 
-Now that you have uploaded the PDF document, you can create the text stamp to add. Here's how to do it:
+Nachdem Sie das PDF-Dokument hochgeladen haben, können Sie den hinzuzufügenden Textstempel erstellen. So geht's:
 
 ```csharp
-// Create the text buffer
+// Erstellen Sie den Textpuffer
 TextStamp textStamp = new TextStamp("Example Stamp");
 ```
 
-The code above creates a new text buffer containing the specified text.
+Der obige Code erstellt einen neuen Textpuffer, der den angegebenen Text enthält.
 
-## Step 4: Configuring Text Stamp Properties
+## Schritt 4: Konfigurieren der Textstempeleigenschaften
 
-Before adding the text stamp to the PDF document, you can configure various properties of the stamp, such as background, position, rotation, font, size, etc. Here's how:
+Bevor Sie den Textstempel zum PDF-Dokument hinzufügen, können Sie verschiedene Eigenschaften des Stempels konfigurieren, wie Hintergrund, Position, Drehung, Schriftart, Größe usw. So geht's:
 
 ```csharp
-// Configure text buffer properties
+// Konfigurieren Sie die Eigenschaften des Textpuffers
 textStamp. Background = true;
 textStamp. XIndent = 100;
 textStamp. YIndent = 100;
@@ -57,107 +57,107 @@ textStamp.TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;
 textStamp.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Aqua);
 ```
 
-You can adjust these properties according to your needs.
+Sie können diese Eigenschaften entsprechend Ihren Bedürfnissen anpassen.
 
-## Step 5: Add Text Stamp to PDF
+## Schritt 5: Textstempel zum PDF hinzufügen
 
-Now that the text stamp is ready, you can add it to a specific page of the PDF document. Here's how:
+Da der Textstempel nun fertig ist, können Sie ihn einer bestimmten Seite des PDF-Dokuments hinzufügen. Hier ist wie:
 
 ```csharp
-// Add text buffer to specific page
+//Textpuffer zu einer bestimmten Seite hinzufügen
 pdfDocument.Pages[1].AddStamp(textStamp);
 ```
 
-The code above adds the text stamp to the first page of the PDF document. You can specify another page if needed.
+Der obige Code fügt den Textstempel auf der ersten Seite des PDF-Dokuments hinzu. Bei Bedarf können Sie eine andere Seite angeben.
 
-## Step 6: Save the output document
+## Schritt 6: Speichern Sie das Ausgabedokument
 
-Once you have added the text stamp, you can save the edited PDF document. Here's how:
+Nachdem Sie den Textstempel hinzugefügt haben, können Sie das bearbeitete PDF-Dokument speichern. Hier ist wie:
 
 ```csharp
-// Save the output document
+// Speichern Sie das Ausgabedokument
 pdfDocument.Save(dataDir);
 ```
 
-The code above saves the modified PDF document in the specified directory.
+Der obige Code speichert das geänderte PDF-Dokument im angegebenen Verzeichnis.
 
-### Sample source code for Add Text Stamp using Aspose.PDF for .NET 
+### Beispielquellcode für „Textstempel hinzufügen“ mit Aspose.PDF für .NET 
 ```csharp
 
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Dokument öffnen
 Document pdfDocument = new Document(dataDir+ "AddTextStamp.pdf");
 
-// Create text stamp
+// Textstempel erstellen
 TextStamp textStamp = new TextStamp("Sample Stamp");
 
-// Set whether stamp is background
+// Legen Sie fest, ob der Stempel im Hintergrund angezeigt wird
 textStamp.Background = true;
 
-// Set origin
+// Ursprung festlegen
 textStamp.XIndent = 100;
 textStamp.YIndent = 100;
 
-// Rotate stamp
+// Stempel drehen
 textStamp.Rotate = Rotation.on90;
 
-// Set text properties
+// Texteigenschaften festlegen
 textStamp.TextState.Font = FontRepository.FindFont("Arial");
 textStamp.TextState.FontSize = 14.0F;
 textStamp.TextState.FontStyle = FontStyles.Bold;
 textStamp.TextState.FontStyle = FontStyles.Italic;
 textStamp.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Aqua);
 
-// Add stamp to particular page
+// Stempel zu einer bestimmten Seite hinzufügen
 pdfDocument.Pages[1].AddStamp(textStamp);
 dataDir = dataDir + "AddTextStamp_out.pdf";
 
-// Save output document
+// Ausgabedokument speichern
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nText stamp added successfully.\nFile saved at " + dataDir);            
 
 ```
 
-## Conclusion
+## Abschluss
 
-Congratulation ! You have learned how to add a text stamp using Aspose.PDF for .NET. Now you can apply this knowledge to your own projects to add custom text stamps to PDF documents.
+Herzlichen Glückwunsch! Sie haben gelernt, wie Sie mit Aspose.PDF für .NET einen Textstempel hinzufügen. Jetzt können Sie dieses Wissen auf Ihre eigenen Projekte anwenden, um benutzerdefinierte Textstempel zu PDF-Dokumenten hinzuzufügen.
 
-### FAQ's for add text stamp in PDF file
+### FAQs zum Hinzufügen eines Textstempels in einer PDF-Datei
 
-#### Q: What is the purpose of adding a text stamp in a PDF file using Aspose.PDF for .NET?
+#### F: Was ist der Zweck des Hinzufügens eines Textstempels in einer PDF-Datei mit Aspose.PDF für .NET?
 
-A: Adding a text stamp allows you to place custom text on a specific page of a PDF document. This feature is useful for adding labels, comments, watermarks, or any other textual information to enhance the document's content and provide additional context.
+A: Durch das Hinzufügen eines Textstempels können Sie benutzerdefinierten Text auf einer bestimmten Seite eines PDF-Dokuments platzieren. Diese Funktion ist nützlich, um Beschriftungen, Kommentare, Wasserzeichen oder andere Textinformationen hinzuzufügen, um den Inhalt des Dokuments zu verbessern und zusätzlichen Kontext bereitzustellen.
 
-#### Q: Can I customize the appearance of the text stamp, such as font, size, color, and rotation?
+#### F: Kann ich das Erscheinungsbild des Textstempels anpassen, z. B. Schriftart, Größe, Farbe und Drehung?
 
-A: Yes, you can fully customize the appearance of the text stamp. The provided C# source code demonstrates how to set various properties of the `TextStamp` object, including font, font size, font style, text color, background color, and rotation.
+ A: Ja, Sie können das Erscheinungsbild des Textstempels vollständig anpassen. Der bereitgestellte C#-Quellcode zeigt, wie verschiedene Eigenschaften festgelegt werden`TextStamp` Objekt, einschließlich Schriftart, Schriftgröße, Schriftstil, Textfarbe, Hintergrundfarbe und Drehung.
 
-#### Q: Is it possible to add multiple text stamps to different pages of the same PDF document?
+#### F: Ist es möglich, mehrere Textstempel auf verschiedenen Seiten desselben PDF-Dokuments hinzuzufügen?
 
-A: Absolutely, you can add multiple text stamps to different pages of the same PDF document. The tutorial's provided code allows you to specify the target page for adding the text stamp, making it versatile for different pages within the document.
+A: Auf jeden Fall können Sie mehrere Textstempel auf verschiedenen Seiten desselben PDF-Dokuments hinzufügen. Mit dem im Tutorial bereitgestellten Code können Sie die Zielseite für das Hinzufügen des Textstempels angeben und ihn so vielseitig für verschiedene Seiten im Dokument verwenden.
 
-#### Q: How do I specify the position of the text stamp within the PDF document?
+#### F: Wie lege ich die Position des Textstempels im PDF-Dokument fest?
 
-A: You can customize the position of the text stamp by modifying the `XIndent` and `YIndent` properties of the `TextStamp` object. These properties define the coordinates of the stamp's top-left corner relative to the origin of the page.
+ A: Sie können die Position des Textstempels anpassen, indem Sie die ändern`XIndent` Und`YIndent` Eigenschaften der`TextStamp` Objekt. Diese Eigenschaften definieren die Koordinaten der oberen linken Ecke des Stempels relativ zum Ursprung der Seite.
 
-#### Q: Can I apply this method to existing PDF documents to add text stamps?
+#### F: Kann ich diese Methode auf vorhandene PDF-Dokumente anwenden, um Textstempel hinzuzufügen?
 
-A: Yes, you can apply this method to existing PDF documents to add text stamps. The tutorial's provided code demonstrates how to load an existing PDF document and add a text stamp to a specific page.
+A: Ja, Sie können diese Methode auf vorhandene PDF-Dokumente anwenden, um Textstempel hinzuzufügen. Der bereitgestellte Code des Tutorials zeigt, wie man ein vorhandenes PDF-Dokument lädt und einer bestimmten Seite einen Textstempel hinzufügt.
 
-#### Q: Can I add both background and foreground colors to the text stamp?
+#### F: Kann ich dem Textstempel sowohl Hintergrund- als auch Vordergrundfarben hinzufügen?
 
-A: Yes, you can add both background and foreground colors to the text stamp. By setting the `Background` property to `true`, you can provide a colored background for the text stamp. Additionally, you can set the `TextState.ForegroundColor` property to specify the color of the text itself.
+ A: Ja, Sie können dem Textstempel sowohl Hintergrund- als auch Vordergrundfarben hinzufügen. Durch Einstellen der`Background` Eigentum zu`true` können Sie dem Textstempel einen farbigen Hintergrund verleihen. Darüber hinaus können Sie die festlegen`TextState.ForegroundColor` -Eigenschaft, um die Farbe des Textes selbst anzugeben.
 
-#### Q: How can I ensure that the text stamp does not obscure the underlying content of the PDF document?
+#### F: Wie kann ich sicherstellen, dass der Textstempel den zugrunde liegenden Inhalt des PDF-Dokuments nicht verdeckt?
 
-A: When adding a text stamp, be mindful of its placement to ensure that it does not obstruct critical information or negatively affect the document's readability. You can adjust the `XIndent` and `YIndent` properties to position the text stamp appropriately.
+ A: Achten Sie beim Hinzufügen eines Textstempels auf die Platzierung, um sicherzustellen, dass er wichtige Informationen nicht verdeckt oder die Lesbarkeit des Dokuments beeinträchtigt. Sie können die anpassen`XIndent` Und`YIndent` Eigenschaften, um den Textstempel entsprechend zu positionieren.
 
-#### Q: Can I use this method to add stamps other than text, such as images or logos?
+#### F: Kann ich diese Methode verwenden, um andere Stempel als Text hinzuzufügen, beispielsweise Bilder oder Logos?
 
-A: This specific tutorial focuses on adding text stamps, but you can similarly add other types of stamps, such as images or logos, using Aspose.PDF for .NET. The process involves creating the appropriate stamp object and configuring its properties.
+A: Dieses spezielle Tutorial konzentriert sich auf das Hinzufügen von Textstempeln, aber Sie können mit Aspose.PDF für .NET auch andere Stempeltypen wie Bilder oder Logos hinzufügen. Der Prozess umfasst das Erstellen des entsprechenden Stempelobjekts und das Konfigurieren seiner Eigenschaften.
 
-#### Q: How can I automate the process of adding text stamps to multiple PDF documents?
+#### F: Wie kann ich das Hinzufügen von Textstempeln zu mehreren PDF-Dokumenten automatisieren?
 
-A: You can automate the process of adding text stamps to multiple PDF documents by creating a script or program that iterates through a list of documents and applies the same text stamping process to each one.
+A: Sie können den Prozess des Hinzufügens von Textstempeln zu mehreren PDF-Dokumenten automatisieren, indem Sie ein Skript oder Programm erstellen, das eine Liste von Dokumenten durchläuft und auf jedes einzelne den gleichen Textstempelprozess anwendet.

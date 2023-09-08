@@ -1,28 +1,28 @@
 ---
-title: Text And Image As Paragraph In PDF File
-linktitle: Text And Image As Paragraph In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add text and an image as inline paragraphs in PDF file using Aspose.PDF for .NET.
+title: PDF Dosyasında Paragraf Olarak Metin ve Resim
+linktitle: PDF Dosyasında Paragraf Olarak Metin ve Resim
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET'i kullanarak PDF dosyasına metin ve görüntüyü satır içi paragraflar olarak nasıl ekleyeceğinizi öğrenin.
 type: docs
 weight: 530
 url: /tr/net/programming-with-text/text-and-image-as-paragraph/
 ---
-This tutorial explains how to add text and an image as inline paragraphs in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the process step by step.
+Bu eğitimde Aspose.PDF for .NET kullanılarak PDF dosyasına metin ve görüntünün satır içi paragraflar olarak nasıl ekleneceği açıklanmaktadır. Sağlanan C# kaynak kodu süreci adım adım gösterir.
 
-## Prerequisites
+## Önkoşullar
 
-Before proceeding with the tutorial, make sure you have the following:
+Eğiticiye devam etmeden önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- Basic knowledge of C# programming language.
-- Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to install it in your project.
+- Temel C# programlama dili bilgisi.
+- Aspose.PDF for .NET kütüphanesi kuruldu. Bunu Aspose web sitesinden edinebilir veya projenize kurmak için NuGet'i kullanabilirsiniz.
 
-## Step 1: Set up the project
+## 1. Adım: Projeyi ayarlayın
 
-Start by creating a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library.
+Tercih ettiğiniz entegre geliştirme ortamında (IDE) yeni bir C# projesi oluşturarak başlayın ve Aspose.PDF for .NET kitaplığına bir referans ekleyin.
 
-## Step 2: Import necessary namespaces
+## 2. Adım: Gerekli ad alanlarını içe aktarın
 
-Add the following using directives at the beginning of your C# file to import the required namespaces:
+Gerekli ad alanlarını içe aktarmak için C# dosyanızın başına aşağıdaki kullanma yönergelerini ekleyin:
 
 ```csharp
 using Aspose.Pdf;
@@ -30,52 +30,52 @@ using Aspose.Pdf.Text;
 using Aspose.Pdf.Drawing;
 ```
 
-## Step 3: Set the path to the document directory
+## 3. Adım: Belge dizininin yolunu ayarlayın
 
-Set the path to your document directory using the `dataDir` variable:
+ kullanarak belge dizininizin yolunu ayarlayın.`dataDir` değişken:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` belge dizininizin gerçek yolu ile.
 
-## Step 4: Create a new Document and Page
+## 4. Adım: Yeni bir Belge ve Sayfa Oluşturun
 
-Create a new `Document` object and add a page to its pages collection:
+ Yeni bir tane oluştur`Document` nesnesini açın ve sayfa koleksiyonuna bir sayfa ekleyin:
 
 ```csharp
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Step 5: Create a TextFragment and add it as a paragraph
+## Adım 5: Bir TextFragment oluşturun ve onu paragraf olarak ekleyin
 
-Create a `TextFragment` object and add it to the paragraphs collection of the page:
+ Oluşturmak`TextFragment` nesnesini seçin ve sayfanın paragraf koleksiyonuna ekleyin:
 
 ```csharp
 TextFragment text = new TextFragment("Hello World.. ");
 page.Paragraphs.Add(text);
 ```
 
-## Step 6: Add an image as an inline paragraph
+## 6. Adım: Satır içi paragraf olarak bir resim ekleyin
 
-Create an `Aspose.Pdf.Image` object and set it as an inline paragraph so that it appears right after the previous paragraph:
+ Oluşturduğunuz bir`Aspose.Pdf.Image` nesnesini seçin ve önceki paragraftan hemen sonra görünecek şekilde satır içi paragraf olarak ayarlayın:
 
 ```csharp
 Aspose.Pdf.Image image = new Aspose.Pdf.Image();
 image.IsInLineParagraph = true;
 image.File = dataDir + "aspose-logo.jpg";
-image.FixHeight = 30; // Optional: Set image height
-image.FixWidth = 100; // Optional: Set image width
+image.FixHeight = 30; // İsteğe bağlı: Görüntü yüksekliğini ayarlayın
+image.FixWidth = 100; // İsteğe bağlı: Görüntü genişliğini ayarlayın
 page.Paragraphs.Add(image);
 ```
 
-Replace `"aspose-logo.jpg"` with the actual image file name and adjust the optional image height and width as desired.
+ Yer değiştirmek`"aspose-logo.jpg"` gerçek görüntü dosyası adını girin ve isteğe bağlı görüntü yüksekliğini ve genişliğini istediğiniz gibi ayarlayın.
 
-## Step 7: Add another TextFragment as an inline paragraph
+## 7. Adım: Satır içi paragraf olarak başka bir TextFragment ekleyin
 
-Re-initialize the `TextFragment` object with different content and add it as an inline paragraph:
+ Yeniden başlat`TextFragment` farklı içeriğe sahip bir nesne oluşturun ve onu satır içi paragraf olarak ekleyin:
 
 ```csharp
 text = new TextFragment(" Hello Again..");
@@ -83,87 +83,87 @@ text.IsInLineParagraph = true;
 page.Paragraphs.Add(text);
 ```
 
-## Step 8: Save the PDF document
+## Adım 8: PDF belgesini kaydedin
 
-Save the modified PDF document:
+Değiştirilen PDF belgesini kaydedin:
 
 ```csharp
 dataDir = dataDir + "TextAndImageAsParagraph_out.pdf";
 doc.Save(dataDir);
 ```
 
-Make sure to replace `"TextAndImageAsParagraph_out.pdf"` with the desired output file name.
+ Değiştirdiğinizden emin olun`"TextAndImageAsParagraph_out.pdf"` İstenilen çıktı dosyası adı ile.
 
-### Sample source code for Text And Image As Paragraph using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanılarak Paragraf Olarak Metin ve Resim için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Instantiate Document instance
+// Belge örneğini oluştur
 Document doc = new Document();
-// Add page to pages collection of Document instance
+// Belge örneğinin sayfa koleksiyonuna sayfa ekle
 Page page = doc.Pages.Add();
-// Create TextFragmnet
+// TextFragmnet'i oluştur
 TextFragment text = new TextFragment("Hello World.. ");
-// Add text fragment to paragraphs collection of Page object
+// Sayfa nesnesinin paragraf koleksiyonuna metin parçası ekleme
 page.Paragraphs.Add(text);
-// Create an image instance
+// Bir görüntü örneği oluşturun
 Aspose.Pdf.Image image = new Aspose.Pdf.Image();
-// Set image as inline paragraph so that it appears right after 
-// The previous paragraph object (TextFragment)
+// Resmi paragraftan hemen sonra görünecek şekilde satır içi paragraf olarak ayarlayın
+// Önceki paragraf nesnesi (TextFragment)
 image.IsInLineParagraph = true;
-// Specify image file path 
+// Görüntü dosyası yolunu belirtin
 image.File = dataDir + "aspose-logo.jpg";
-// Set image Height (optional)
+// Görüntü Yüksekliğini Ayarla (isteğe bağlı)
 image.FixHeight = 30;
-// Set Image Width (optional)
+// Resim Genişliğini Ayarla (isteğe bağlı)
 image.FixWidth = 100;
-// Add image to paragraphs collection of page object
+// Sayfa nesnesinin paragraf koleksiyonuna resim ekleme
 page.Paragraphs.Add(image);
-// Re-initialize TextFragment object with different contents
+// TextFragment nesnesini farklı içeriklerle yeniden başlatın
 text = new TextFragment(" Hello Again..");
-// Set TextFragment as inline paragraph
+// TextFragment'i satır içi paragraf olarak ayarla
 text.IsInLineParagraph = true;
-// Add newly created TextFragment to paragraphs collection of page
+// Yeni oluşturulan TextFragment'i sayfanın paragraf koleksiyonuna ekleyin
 page.Paragraphs.Add(text);
 dataDir = dataDir + "TextAndImageAsParagraph_out.pdf";
 doc.Save(dataDir);
 Console.WriteLine("\nText and image added successfully as an inline paragraphs.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulations! You have successfully learned how to add text and an image as inline paragraphs in a PDF document using Aspose.PDF for .NET. This tutorial provided a step-by-step guide, from setting up the project to saving the modified document. You can now incorporate this code into your own C# projects to customize the layout of text and images in PDF files.
+Tebrikler! Aspose.PDF for .NET'i kullanarak bir PDF belgesine metin ve görüntüyü satır içi paragraflar olarak nasıl ekleyeceğinizi başarıyla öğrendiniz. Bu eğitimde, projenin kurulumundan değiştirilen belgenin kaydedilmesine kadar adım adım bir kılavuz sağlanmıştır. Artık PDF dosyalarındaki metin ve görüntülerin düzenini özelleştirmek için bu kodu kendi C# projelerinize dahil edebilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is the purpose of the "Text And Image As Paragraph In PDF File" tutorial?
+#### S: "PDF Dosyasında Paragraf Olarak Metin ve Görüntü" eğitiminin amacı nedir?
 
-A: The "Text And Image As Paragraph In PDF File" tutorial aims to guide users on how to add both text and images as inline paragraphs within a PDF document using Aspose.PDF for .NET. The tutorial provides step-by-step instructions and C# code samples to demonstrate the process.
+C: "PDF Dosyasında Paragraf Olarak Metin ve Görüntü" eğitimi, kullanıcılara Aspose.PDF for .NET kullanarak bir PDF belgesine hem metin hem de görüntüleri satır içi paragraflar olarak nasıl ekleyecekleri konusunda rehberlik etmeyi amaçlamaktadır. Öğretici, süreci göstermek için adım adım talimatlar ve C# kod örnekleri sağlar.
 
-#### Q: How does this tutorial help in adding text and images as inline paragraphs?
+#### S: Bu eğitim, metin ve resimlerin satır içi paragraf olarak eklenmesine nasıl yardımcı olur?
 
-A: This tutorial helps users understand how to use Aspose.PDF for .NET to incorporate both text and images as inline paragraphs within a PDF document. By following the provided steps and code examples, users can create PDF files with custom layouts that combine text and images.
+C: Bu eğitim, kullanıcıların Aspose.PDF for .NET'i kullanarak hem metni hem de görüntüleri bir PDF belgesine satır içi paragraflar olarak nasıl dahil edeceklerini anlamalarına yardımcı olur. Sağlanan adımları ve kod örneklerini takip ederek kullanıcılar, metin ve görüntüleri birleştiren özel düzenlere sahip PDF dosyaları oluşturabilir.
 
-#### Q: What prerequisites are required to follow this tutorial?
+#### S: Bu öğreticiyi takip etmek için hangi ön koşullar gereklidir?
 
-A: Before starting the tutorial, you should have a basic understanding of the C# programming language. Additionally, you need to have the Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or install it in your project using NuGet.
+C: Eğitime başlamadan önce C# programlama dili hakkında temel bilgiye sahip olmanız gerekir. Ayrıca Aspose.PDF for .NET kütüphanesinin de kurulu olması gerekir. Bunu Aspose web sitesinden edinebilir veya NuGet'i kullanarak projenize yükleyebilirsiniz.
 
-#### Q: How do I set up my project to follow this tutorial?
+#### S: Projemi bu öğreticiyi takip edecek şekilde nasıl ayarlayabilirim?
 
-A: To begin, create a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library. This allows you to utilize the library's features for working with PDF documents, text fragments, and images.
+C: Başlamak için tercih ettiğiniz entegre geliştirme ortamında (IDE) yeni bir C# projesi oluşturun ve Aspose.PDF for .NET kütüphanesine bir referans ekleyin. Bu, kitaplığın PDF belgeleri, metin parçaları ve resimlerle çalışma özelliklerini kullanmanızı sağlar.
 
-#### Q: Can I use this tutorial to add multiple text and image paragraphs in a PDF?
+#### S: Bu eğitimi bir PDF'ye birden fazla metin ve resim paragrafı eklemek için kullanabilir miyim?
 
-A: Yes, you can use the provided code samples to add multiple instances of both text and image paragraphs within the same PDF document. This tutorial demonstrates how to create inline paragraphs, making it easy to include different combinations of text and images.
+C: Evet, aynı PDF belgesine hem metin hem de resim paragraflarının birden çok örneğini eklemek için sağlanan kod örneklerini kullanabilirsiniz. Bu eğitimde satır içi paragrafların nasıl oluşturulacağı gösterilerek farklı metin ve resim kombinasyonlarının eklenmesi kolaylaşır.
 
-#### Q: How do I specify the content and appearance of the text paragraphs and images?
+#### S: Metin paragraflarının ve resimlerin içeriğini ve görünümünü nasıl belirlerim?
 
-A: The tutorial demonstrates how to create `TextFragment` objects to represent text paragraphs and `Aspose.Pdf.Image` objects to represent images. You can customize the content, dimensions, and appearance of both text and images using the provided code samples.
+ C: Eğitimde nasıl oluşturulacağı gösteriliyor`TextFragment`metin paragraflarını temsil eden nesneler ve`Aspose.Pdf.Image` görüntüleri temsil eden nesneler. Sağlanan kod örneklerini kullanarak hem metnin hem de görsellerin içeriğini, boyutlarını ve görünümünü özelleştirebilirsiniz.
 
-#### Q: Can I adjust the layout of the inline paragraphs?
+#### S: Satır içi paragrafların düzenini ayarlayabilir miyim?
 
-A: Yes, you can adjust the layout of inline paragraphs by controlling their positioning, dimensions, and order within the page. The tutorial shows how to set inline attributes, such as `IsInLineParagraph`, to control the layout of text and image paragraphs.
+ C: Evet, satır içi paragrafların sayfa içindeki konumlarını, boyutlarını ve sıralarını kontrol ederek düzenini ayarlayabilirsiniz. Öğretici, aşağıdaki gibi satır içi niteliklerin nasıl ayarlanacağını gösterir:`IsInLineParagraph`, metin ve resim paragraflarının düzenini kontrol etmek için.
 
-#### Q: How do I save the modified PDF document?
+#### S: Değiştirilen PDF belgesini nasıl kaydederim?
 
-A: To save the modified PDF document, you can use the `Save` method of the `Document` object. The tutorial provides code samples that demonstrate how to save the resulting PDF document.
+ C: Değiştirilen PDF belgesini kaydetmek için`Save` yöntemi`Document` nesne. Eğitimde, ortaya çıkan PDF belgesinin nasıl kaydedileceğini gösteren kod örnekleri sağlanır.

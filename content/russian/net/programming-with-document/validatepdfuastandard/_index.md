@@ -1,85 +1,85 @@
 ---
-title: Validate PDF UA Standard
-linktitle: Validate PDF UA Standard
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use Aspose.PDF for .NET to validate PDF/UA standard using C# code. Step-by-step guide.
+title: Проверка стандарта PDF UA
+linktitle: Проверка стандарта PDF UA
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как использовать Aspose.PDF для .NET для проверки стандарта PDF/UA с использованием кода C#. Пошаговое руководство.
 type: docs
 weight: 400
 url: /ru/net/programming-with-document/validatepdfuastandard/
 ---
-Aspose.PDF for .NET is a powerful library that provides various features for working with PDF documents. One of its features is the ability to validate PDF documents for PDF/UA standard compliance. In this article, we will provide step-by-step guidance on how to use Aspose.PDF for .NET to get and validate PDF/UA standard compliance using C# code.
+Aspose.PDF for .NET — мощная библиотека, предоставляющая различные функции для работы с PDF-документами. Одной из его функций является возможность проверять PDF-документы на соответствие стандартам PDF/UA. В этой статье мы предоставим пошаговое руководство по использованию Aspose.PDF для .NET для получения и проверки соответствия стандарту PDF/UA с использованием кода C#.
 
-## Step 1: Defining the Document Directory Path
+## Шаг 1. Определение пути к каталогу документов
 
-Next, we need to define the path to the directory where our PDF document is located. You can do this by adding the following code snippet:
+Далее нам нужно определить путь к каталогу, в котором находится наш PDF-документ. Вы можете сделать это, добавив следующий фрагмент кода:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace "YOUR DOCUMENT DIRECTORY" with the actual path to your PDF document directory.
+Замените «ВАШ КАТАЛОГ ДОКУМЕНТОВ» фактическим путем к каталогу вашего PDF-документа.
 
-## Step 2: Opening the PDF Document
+## Шаг 2. Открытие PDF-документа
 
-After defining the document directory path, we can open our PDF document using the following code:
+После определения пути к каталогу документа мы можем открыть наш PDF-документ, используя следующий код:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ValidatePDFUAStandard.pdf");
 ```
 
-This code creates a new `Document` object from our PDF file located in the specified directory.
+ Этот код создает новый`Document` объект из нашего PDF-файла, расположенного в указанном каталоге.
 
-## Step 3: Validating the PDF for PDF/UA
+## Шаг 3. Проверка PDF на соответствие PDF/UA
 
-Now that we have opened the PDF document, we can use Aspose.PDF for .NET to validate the document for PDF/UA compliance. The following code snippet will do the job:
+Теперь, когда мы открыли PDF-документ, мы можем использовать Aspose.PDF для .NET для проверки документа на соответствие PDF/UA. Следующий фрагмент кода выполнит эту работу:
 
 ```csharp
 bool isValidPdfUa = pdfDocument.Validate(dataDir + "validation-result-UA.xml", PdfFormat.PDF_UA_1);
 ```
 
-This code validates the PDF document for PDF/UA standard compliance and generates a validation report in the specified XML file. The validation result is stored in the `isValidPdfUa` variable, which is of boolean data type.
+ Этот код проверяет PDF-документ на соответствие стандарту PDF/UA и создает отчет о проверке в указанном XML-файле. Результат проверки сохраняется в`isValidPdfUa` переменная, имеющая логический тип данных.
 
-### Example source code for Get Validate PDFUAstandard using Aspose.PDF for .NET
+### Пример исходного кода для Get Validate PDFUAstandard с использованием Aspose.PDF для .NET
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Открыть документ
 Document pdfDocument = new Document(dataDir + "ValidatePDFUAStandard.pdf");
 
-// Validate PDF for PDF/UA
+// Проверка PDF на наличие PDF/UA
 bool isValidPdfUa = pdfDocument.Validate(dataDir + "validation-result-UA.xml", PdfFormat.PDF_UA_1); 
 ```
 
-## Conclusion
+## Заключение
 
-Ensuring that PDF documents are accessible to all users, including those with disabilities, is vital for creating inclusive and user-friendly content. Aspose.PDF for .NET simplifies the process of validating PDF documents against the PDF/UA standard, helping developers create more accessible PDFs.
+Обеспечение доступности PDF-документов для всех пользователей, включая людей с ограниченными возможностями, имеет жизненно важное значение для создания инклюзивного и удобного для пользователя контента. Aspose.PDF для .NET упрощает процесс проверки PDF-документов на соответствие стандарту PDF/UA, помогая разработчикам создавать более доступные PDF-файлы.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is the PDF/UA standard, and why is it important to validate PDF documents against it?
+#### Вопрос: Что такое стандарт PDF/UA и почему важно проверять PDF-документы на его соответствие?
 
-A: The PDF/UA standard, also known as "Universal Accessibility," ensures that PDF documents are accessible to individuals with disabilities, such as visual impairments. Validating PDF documents against PDF/UA standard compliance helps in creating documents that are inclusive and accessible to a broader audience.
+Ответ: Стандарт PDF/UA, также известный как «Универсальная доступность», гарантирует, что PDF-документы будут доступны людям с ограниченными возможностями, например с нарушениями зрения. Проверка PDF-документов на соответствие стандартам PDF/UA помогает создавать инклюзивные и доступные для более широкой аудитории документы.
 
-#### Q: How do I define the document directory path in the C# code?
+#### Вопрос: Как определить путь к каталогу документов в коде C#?
 
-A: To define the path to the directory where your PDF document is located, use the following code snippet:
+О: Чтобы определить путь к каталогу, в котором находится ваш PDF-документ, используйте следующий фрагмент кода:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace "YOUR DOCUMENT DIRECTORY" with the actual path to the directory containing your PDF document.
+Замените «ВАШ КАТАЛОГ ДОКУМЕНТОВ» фактическим путем к каталогу, содержащему ваш PDF-документ.
 
-#### Q: Can I validate PDF documents against other PDF standards using Aspose.PDF for .NET?
+#### Вопрос: Могу ли я проверить PDF-документы на соответствие другим стандартам PDF с помощью Aspose.PDF для .NET?
 
-A: Yes, Aspose.PDF for .NET provides support for validating PDF documents against various PDF standards, including PDF/A and PDF/X standards. You can specify the desired standard when using the `Validate` method.
+ О: Да, Aspose.PDF для .NET обеспечивает поддержку проверки PDF-документов на соответствие различным стандартам PDF, включая стандарты PDF/A и PDF/X. Вы можете указать желаемый стандарт при использовании`Validate` метод.
 
-#### Q: How can I check if a PDF document passed the PDF/UA validation?
+#### Вопрос: Как я могу проверить, прошел ли PDF-документ проверку PDF/UA?
 
-A: After calling the `Validate` method, the boolean variable `isValidPdfUa` will store the validation result. If the value of `isValidPdfUa` is `true`, the PDF document complies with the PDF/UA standard; otherwise, it does not.
+ О: После звонка`Validate` метод, логическая переменная`isValidPdfUa` сохранит результат проверки. Если значение`isValidPdfUa` является`true`, PDF-документ соответствует стандарту PDF/UA; в противном случае это не так.
 
-#### Q: Are there any specific accessibility requirements for PDF/UA compliance?
+#### Вопрос: Существуют ли какие-либо особые требования к доступности для соответствия PDF/UA?
 
-A: Yes, PDF/UA compliance requires documents to meet specific accessibility criteria, such as providing alternative text for images, logical reading order, proper document structure, and text equivalents for non-text content.
+О: Да, соответствие PDF/UA требует, чтобы документы соответствовали определенным критериям доступности, таким как предоставление альтернативного текста для изображений, логический порядок чтения, правильная структура документа и текстовые эквиваленты для нетекстового контента.

@@ -1,43 +1,43 @@
 ---
-title: Get All The Attachments In PDF File
-linktitle: Get All The Attachments In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to get all attachments in PDF file with Aspose.PDF for .NET. Step-by-step guide for easy handling.
+title: Tüm Ekleri PDF Dosyasında Alın
+linktitle: Tüm Ekleri PDF Dosyasında Alın
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile tüm ekleri PDF dosyasına nasıl alacağınızı öğrenin. Kolay kullanım için adım adım kılavuz.
 type: docs
 weight: 40
 url: /tr/net/programming-with-attachments/get-all-the-attachments/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to get all attachments in PDF file using Aspose.PDF for .NET.
+Bu eğitimde, Aspose.PDF for .NET kullanarak PDF dosyasındaki tüm ekleri almak için aşağıdaki C# kaynak kodunu adım adım anlatacağız.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Başlamadan önce Aspose.PDF kütüphanesini kurduğunuzdan ve geliştirme ortamınızı kurduğunuzdan emin olun. Ayrıca temel C# programlama bilgisine sahip olmak.
 
-### Step 1: Document Directory Setup
+### Adım 1: Belge Dizini Kurulumu
 
-In the provided source code, you need to specify the directory where the PDF file is located from which you want to get the attachments. Change the "dataDir" variable to the desired directory.
+Sağlanan kaynak kodunda, ekleri almak istediğiniz PDF dosyasının bulunduğu dizini belirtmeniz gerekir. "dataDir" değişkenini istediğiniz dizine değiştirin.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### Step 2: Open the existing PDF document
+### 2. Adım: Mevcut PDF belgesini açın
 
-We open the existing PDF document using the specified path.
+Mevcut PDF belgesini belirtilen yolu kullanarak açıyoruz.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
 ```
 
-### Step 3: Obtaining the Attachments Collection
+### Adım 3: Ek Koleksiyonunun Edinilmesi
 
-We get the collection of attachments from the document.
+Eklerin koleksiyonunu belgeden alıyoruz.
 
 ```csharp
 EmbeddedFileCollection embeddedFiles = pdfDocument.EmbeddedFiles;
 ```
 
-### Step 4: Retrieving attachments
+### 4. Adım: Ekleri alma
 
-We go through the collection to get all the attachments and display their information. We also save attachments in individual files.
+Tüm ekleri almak ve bilgilerini görüntülemek için koleksiyona göz atıyoruz. Ekleri ayrı ayrı dosyalara da kaydediyoruz.
 
 ```csharp
 int count = 1;
@@ -47,7 +47,7 @@ Console.WriteLine("Name: {0}", fileSpecification.Name);
 Console.WriteLine("Description: {0}", fileSpecification.Description);
 Console.WriteLine("MIME Type: {0}", fileSpecification.MIMEType);
 
-// Check if object parameters contain additional information
+// Nesne parametrelerinin ek bilgi içerip içermediğini kontrol edin
 if (fileSpecification.Params != null)
 {
 Console.WriteLine("CheckSum: {0}", fileSpecification.Params.CheckSum);
@@ -56,7 +56,7 @@ Console.WriteLine("Modified date: {0}", fileSpecification.Params.ModDate);
 Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
 }
 
-// Retrieve the attachment and save in a file
+// Eki alın ve bir dosyaya kaydedin
 byte[] fileContent = new byte[fileSpecification.Contents.Length];
 fileSpecification.Contents.Read(fileContent, 0, fileContent.Length);
 FileStream fileStream = new FileStream(dataDir + count + "_out" + ".txt", FileMode.Create);
@@ -68,27 +68,27 @@ count += 1;
 ```
 
 
-### Sample source code for Get Allthe Attachments using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Tüm Ekleri Al için örnek kaynak kodu 
 
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
-// Get embedded files collection
+// Gömülü dosya koleksiyonunu edinin
 EmbeddedFileCollection embeddedFiles = pdfDocument.EmbeddedFiles;
-// Get count of the embedded files
+// Gömülü dosyaların sayısını alın
 Console.WriteLine("Total files : {0}", embeddedFiles.Count);
 int count = 1;
-// Loop through the collection to get all the attachments
+// Tüm ekleri almak için koleksiyonda dolaşın
 foreach (FileSpecification fileSpecification in embeddedFiles)
 {
 	Console.WriteLine("Name: {0}", fileSpecification.Name);
 	Console.WriteLine("Description: {0}",
 	fileSpecification.Description);
 	Console.WriteLine("Mime Type: {0}", fileSpecification.MIMEType);
-	// Check if parameter object contains the parameters
+	//Parametre nesnesinin parametreleri içerip içermediğini kontrol edin
 	if (fileSpecification.Params != null)
 	{
 		Console.WriteLine("CheckSum: {0}",
@@ -99,7 +99,7 @@ foreach (FileSpecification fileSpecification in embeddedFiles)
 		fileSpecification.Params.ModDate);
 		Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
 	}
-	// Get the attachment and write to file or stream
+	// Eki alın ve dosyaya veya akışa yazın
 	byte[] fileContent = new byte[fileSpecification.Contents.Length];
 	fileSpecification.Contents.Read(fileContent, 0,
 	fileContent.Length);
@@ -112,44 +112,44 @@ foreach (FileSpecification fileSpecification in embeddedFiles)
 
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we explained how to get all attachments from a PDF file using Aspose.PDF for .NET. You can now use this knowledge to extract and manipulate attachments from your PDF files.
+Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF dosyasındaki tüm eklerin nasıl alınacağını açıkladık. Artık bu bilgiyi PDF dosyalarınızdaki ekleri ayıklamak ve değiştirmek için kullanabilirsiniz.
 
-## FAQ's for get all the attachments in PDF file
+## Tüm ekleri PDF dosyasına almak için SSS
 
-#### Q: Why would I need to retrieve all attachments from a PDF document?
+#### S: Neden bir PDF belgesindeki tüm ekleri almam gerekiyor?
 
-A: Retrieving attachments allows you to access and manipulate additional files embedded within a PDF, which can be useful for archiving, sharing, or further processing.
+C: Ekleri almak, PDF'ye gömülü ek dosyalara erişmenize ve bunları değiştirmenize olanak tanır; bunlar, arşivleme, paylaşma veya daha ileri işlemler için yararlı olabilir.
 
-#### Q: What types of files can be attached to a PDF document?
+#### S: Bir PDF belgesine ne tür dosyalar eklenebilir?
 
-A: PDF documents can contain a wide range of attached files, including images, documents, spreadsheets, audio files, and more.
+C: PDF belgeleri; resimler, belgeler, e-tablolar, ses dosyaları ve daha fazlasını içeren çok çeşitli ekli dosyalar içerebilir.
 
-#### Q: How does this tutorial help me retrieve attachments from a PDF using Aspose.PDF for .NET?
+#### S: Bu eğitim Aspose.PDF for .NET kullanarak bir PDF'den ekleri almama nasıl yardımcı olacak?
 
-A: This tutorial provides step-by-step instructions and C# source code to access and retrieve all attachments within a PDF document.
+C: Bu eğitimde, bir PDF belgesindeki tüm eklere erişmek ve bunları almak için adım adım talimatlar ve C# kaynak kodu sağlanır.
 
-#### Q: Can I retrieve specific attachments instead of all attachments using this tutorial?
+#### S: Bu öğreticiyi kullanarak tüm ekler yerine belirli ekleri alabilir miyim?
 
-A: Yes, you can modify the provided code to selectively retrieve attachments based on your requirements.
+C: Evet, gereksinimlerinize göre ekleri seçerek almak için sağlanan kodu değiştirebilirsiniz.
 
-#### Q: What information about each attachment can I obtain using this tutorial?
+#### S: Bu öğreticiyi kullanarak her bir ek hakkında hangi bilgileri edinebilirim?
 
-A: This tutorial demonstrates how to retrieve and display details such as the attachment's name, description, MIME type, creation date, modification date, and size.
+C: Bu eğitimde, ekin adı, açıklaması, MIME türü, oluşturulma tarihi, değiştirilme tarihi ve boyutu gibi ayrıntıların nasıl alınacağı ve görüntüleneceği gösterilmektedir.
 
-#### Q: How are the retrieved attachments saved using this tutorial?
+#### S: Alınan ekler bu eğitim kullanılarak nasıl kaydedilir?
 
-A: The tutorial guides you through saving each retrieved attachment as a separate file in the specified directory.
+C: Eğitim, alınan her eki belirtilen dizinde ayrı bir dosya olarak kaydetme konusunda size yol gösterir.
 
-#### Q: Can I use this knowledge to extract attachments from password-protected PDF files?
+#### S: Bu bilgiyi parola korumalı PDF dosyalarından ekleri çıkarmak için kullanabilir miyim?
 
-A: Yes, you can apply similar principles to retrieve attachments from password-protected PDF files using Aspose.PDF for .NET.
+C: Evet, Aspose.PDF for .NET'i kullanarak parola korumalı PDF dosyalarından ekleri almak için benzer ilkeleri uygulayabilirsiniz.
 
-#### Q: How does Aspose.PDF for .NET facilitate attachment retrieval?
+#### S: Aspose.PDF for .NET eklerin alınmasını nasıl kolaylaştırır?
 
-A: Aspose.PDF for .NET provides an intuitive API that allows you to access and manipulate attachments in PDF documents easily.
+C: Aspose.PDF for .NET, PDF belgelerindeki eklere kolayca erişmenizi ve bunları değiştirmenizi sağlayan sezgisel bir API sağlar.
 
-#### Q: Are there specific scenarios where retrieving attachments is recommended?
+#### S: Eklerin alınmasının önerildiği belirli senaryolar var mı?
 
-A: Retrieving attachments is useful when you need to access files embedded within a PDF, such as extracting images, audio files, or additional documents.
+C: Ekleri almak, görüntüleri, ses dosyalarını veya ek belgeleri ayıklamak gibi bir PDF'ye gömülü dosyalara erişmeniz gerektiğinde kullanışlıdır.

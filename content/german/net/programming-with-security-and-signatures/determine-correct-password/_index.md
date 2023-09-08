@@ -1,36 +1,36 @@
 ---
-title: Determine Correct Password In PDF File
-linktitle: Determine Correct Password In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to determine the correct password in PDF file with Aspose.PDF for .NET.
+title: Bestimmen Sie das richtige Passwort in der PDF-Datei
+linktitle: Bestimmen Sie das richtige Passwort in der PDF-Datei
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET das richtige Passwort in einer PDF-Datei ermitteln.
 type: docs
 weight: 30
 url: /de/net/programming-with-security-and-signatures/determine-correct-password/
 ---
-In this tutorial, we'll walk you through the process of determining the correct password in PDF file using Aspose.PDF for .NET. This feature allows you to check if a PDF file is password protected and find the correct password from a predefined list.
+In diesem Tutorial führen wir Sie durch den Prozess der Ermittlung des richtigen Passworts in einer PDF-Datei mit Aspose.PDF für .NET. Mit dieser Funktion können Sie überprüfen, ob eine PDF-Datei passwortgeschützt ist, und das richtige Passwort aus einer vordefinierten Liste finden.
 
-## Step 1: Prerequisites
+## Schritt 1: Voraussetzungen
 
-Before you begin, make sure you have the following prerequisites:
+Bevor Sie beginnen, stellen Sie sicher, dass Sie die folgenden Voraussetzungen erfüllen:
 
-- Basic knowledge of the C# programming language
-- Installing Visual Studio on your machine
-- Aspose.PDF library for .NET installed
+- Grundkenntnisse der Programmiersprache C#
+- Installieren von Visual Studio auf Ihrem Computer
+- Aspose.PDF-Bibliothek für .NET installiert
 
-## Step 2: Environment setup
+## Schritt 2: Umgebungseinrichtung
 
-To get started, follow these steps to set up your development environment:
+Führen Sie zunächst die folgenden Schritte aus, um Ihre Entwicklungsumgebung einzurichten:
 
-1. Open Visual Studio and create a new C# project.
-2. Import the required namespaces into your code file:
+1. Öffnen Sie Visual Studio und erstellen Sie ein neues C#-Projekt.
+2. Importieren Sie die erforderlichen Namespaces in Ihre Codedatei:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 3: Loading source PDF file
+## Schritt 3: Laden der Quell-PDF-Datei
 
-The first step is to upload the source PDF file you want to verify. In this example, we assume that you have a PDF file named "IsPasswordProtected.pdf" in the specified directory.
+Der erste Schritt besteht darin, die Quell-PDF-Datei hochzuladen, die Sie überprüfen möchten. In diesem Beispiel gehen wir davon aus, dass Sie im angegebenen Verzeichnis eine PDF-Datei mit dem Namen „IsPasswordProtected.pdf“ haben.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -38,21 +38,21 @@ PdfFileInfo info = new PdfFileInfo();
 info.BindPdf(dataDir + "IsPasswordProtected.pdf");
 ```
 
-Be sure to replace the placeholders with the actual locations of your PDF file.
+Ersetzen Sie die Platzhalter unbedingt durch die tatsächlichen Speicherorte Ihrer PDF-Datei.
 
-## Step 4: Determine Source PDF Encryption
+## Schritt 4: Bestimmen Sie die Quell-PDF-Verschlüsselung
 
-Once you have uploaded the source PDF file, you can determine if it is encrypted using the `IsEncrypted` method of the `PdfFileInfo` object.
+Sobald Sie die Quell-PDF-Datei hochgeladen haben, können Sie mithilfe von feststellen, ob sie verschlüsselt ist`IsEncrypted` Methode der`PdfFileInfo` Objekt.
 
 ```csharp
 Console.WriteLine("The file is password protected: " + info.IsEncrypted);
 ```
 
-This statement displays whether the PDF file is password protected or not.
+Diese Anweisung zeigt an, ob die PDF-Datei passwortgeschützt ist oder nicht.
 
-## Step 5: Finding the correct password
+## Schritt 5: Das richtige Passwort finden
 
-Next, we will search for the correct password using a predefined list of passwords. We go through each password in the list and try to load the PDF document with that password.
+Als nächstes suchen wir anhand einer vordefinierten Liste von Passwörtern nach dem richtigen Passwort. Wir gehen jedes Passwort in der Liste durch und versuchen, das PDF-Dokument mit diesem Passwort zu laden.
 
 ```csharp
 String[] passwords = new String[5] { "test", "test1", "test2", "test3", "sample" };
@@ -71,17 +71,17 @@ Console.WriteLine("The password " + passwords[passwordcount] + " is not correct.
 }
 ```
 
-This loop tests each word of pass from the list. If the password is correct, the number of pages in the document is displayed. Otherwise, a message indicating that the password is not correct is displayed.
+Diese Schleife testet jedes Passwort aus der Liste. Wenn das Passwort korrekt ist, wird die Anzahl der Seiten im Dokument angezeigt. Andernfalls wird eine Meldung angezeigt, dass das Passwort nicht korrekt ist.
 
 
-### Sample source code for Determine Correct Password using Aspose.PDF for .NET 
+### Beispielquellcode für die Bestimmung des richtigen Passworts mit Aspose.PDF für .NET 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";            
-// Load source PDF file
+// Laden Sie die PDF-Quelldatei
 PdfFileInfo info = new PdfFileInfo();
 info.BindPdf(dataDir + "IsPasswordProtected.pdf");
-// Determine if the source PDF is encrypted
+// Stellen Sie fest, ob das Quell-PDF verschlüsselt ist
 Console.WriteLine("File is password protected " + info.IsEncrypted);
 String[] passwords = new String[5] { "test", "test1", "test2", "test3", "sample" };
 for (int passwordcount = 0; passwordcount < passwords.Length; passwordcount++)
@@ -99,48 +99,48 @@ for (int passwordcount = 0; passwordcount < passwords.Length; passwordcount++)
 }
 ```
 
-## Conclusion
+## Abschluss
 
-Congratulation ! You have successfully determined the correct password for a PDF file using Aspose.PDF for .NET. This tutorial covered the step-by-step process, from verifying file encryption to finding the correct password from a predefined list. Now you can use this feature to check and find the correct password of your PDF files.
+Herzlichen Glückwunsch! Sie haben mit Aspose.PDF für .NET erfolgreich das richtige Passwort für eine PDF-Datei ermittelt. Dieses Tutorial behandelt den schrittweisen Prozess, von der Überprüfung der Dateiverschlüsselung bis zum Finden des richtigen Passworts aus einer vordefinierten Liste. Jetzt können Sie diese Funktion verwenden, um das richtige Passwort für Ihre PDF-Dateien zu überprüfen und zu finden.
 
-### FAQ's for determine correct password in PDF file
+### FAQs zum Ermitteln des richtigen Passworts in einer PDF-Datei
 
-#### Q: What is the purpose of this tutorial?
+#### F: Was ist der Zweck dieses Tutorials?
 
-A: This tutorial aims to guide you through the process of determining the correct password for a PDF file using Aspose.PDF for .NET. This feature allows you to check whether a PDF file is password protected and attempt to find the correct password from a predefined list.
+A: Dieses Tutorial soll Sie durch den Prozess der Ermittlung des richtigen Passworts für eine PDF-Datei mit Aspose.PDF für .NET führen. Mit dieser Funktion können Sie überprüfen, ob eine PDF-Datei passwortgeschützt ist, und versuchen, das richtige Passwort aus einer vordefinierten Liste zu finden.
 
-#### Q: What prerequisites are required before starting?
+#### F: Welche Voraussetzungen sind vor dem Start erforderlich?
 
-A: Before you begin, make sure you have a basic understanding of the C# programming language, have Visual Studio installed on your machine, and have the Aspose.PDF library for .NET installed.
+A: Bevor Sie beginnen, stellen Sie sicher, dass Sie über grundlegende Kenntnisse der Programmiersprache C# verfügen, Visual Studio auf Ihrem Computer installiert haben und die Aspose.PDF-Bibliothek für .NET installiert ist.
 
-#### Q: How do I set up the development environment?
+#### F: Wie richte ich die Entwicklungsumgebung ein?
 
-A: Follow the provided steps to set up your development environment, including creating a new C# project in Visual Studio, and importing the required namespaces.
+A: Befolgen Sie die bereitgestellten Schritte zum Einrichten Ihrer Entwicklungsumgebung, einschließlich der Erstellung eines neuen C#-Projekts in Visual Studio und des Imports der erforderlichen Namespaces.
 
-#### Q: How do I determine if a PDF file is encrypted?
+#### F: Wie kann ich feststellen, ob eine PDF-Datei verschlüsselt ist?
 
-A: Use the `PdfFileInfo` class to bind the source PDF file. Then, use the `IsEncrypted` property to determine if the PDF file is password protected.
+ A: Benutzen Sie die`PdfFileInfo` Klasse zum Binden der Quell-PDF-Datei. Dann verwenden Sie die`IsEncrypted` -Eigenschaft, um festzustellen, ob die PDF-Datei kennwortgeschützt ist.
 
-#### Q: How can I find the correct password for a PDF file?
+#### F: Wie finde ich das richtige Passwort für eine PDF-Datei?
 
-A: After determining that the PDF file is encrypted, you can attempt to find the correct password by using a predefined list of passwords. The provided sample code demonstrates how to loop through the list, try each password, and determine if the password is correct.
+A: Nachdem Sie festgestellt haben, dass die PDF-Datei verschlüsselt ist, können Sie versuchen, das richtige Passwort mithilfe einer vordefinierten Liste von Passwörtern zu finden. Der bereitgestellte Beispielcode zeigt, wie Sie die Liste durchlaufen, jedes Kennwort ausprobieren und feststellen, ob das Kennwort korrekt ist.
 
-#### Q: What happens if the correct password is found?
+#### F: Was passiert, wenn das richtige Passwort gefunden wird?
 
-A: If the correct password is found, the sample code will display the number of pages in the PDF document.
+A: Wenn das richtige Passwort gefunden wird, zeigt der Beispielcode die Anzahl der Seiten im PDF-Dokument an.
 
-#### Q: What if the password is not correct?
+#### F: Was passiert, wenn das Passwort nicht korrekt ist?
 
-A: If the password is not correct, the sample code will catch the `InvalidPasswordException` and display a message indicating that the password is not correct.
+ A: Wenn das Passwort nicht korrekt ist, wird der Beispielcode dies abfangen`InvalidPasswordException` und zeigen Sie eine Meldung an, dass das Passwort nicht korrekt ist.
 
-#### Q: Can I use a different list of passwords?
+#### F: Kann ich eine andere Liste von Passwörtern verwenden?
 
-A: Yes, you can modify the `passwords` array in the sample code to include the passwords you want to test.
+ A: Ja, Sie können das ändern`passwords` Array im Beispielcode, um die Passwörter einzuschließen, die Sie testen möchten.
 
-#### Q: How do I know the password has been successfully determined?
+#### F: Woher weiß ich, dass das Passwort erfolgreich ermittelt wurde?
 
-A: If the sample code successfully loads the PDF document with a password and displays the number of pages, it means that the correct password has been determined.
+A: Wenn der Beispielcode das PDF-Dokument erfolgreich mit einem Passwort lädt und die Anzahl der Seiten anzeigt, bedeutet dies, dass das richtige Passwort ermittelt wurde.
 
-#### Q: How can I ensure the security of my passwords while testing?
+#### F: Wie kann ich beim Testen die Sicherheit meiner Passwörter gewährleisten?
 
-A: Be cautious when using a predefined list of passwords, and avoid using sensitive or confidential passwords for testing purposes. Additionally, remove or modify the testing code before deploying your application.
+A: Seien Sie vorsichtig, wenn Sie eine vordefinierte Liste von Passwörtern verwenden, und vermeiden Sie die Verwendung sensibler oder vertraulicher Passwörter zu Testzwecken. Entfernen oder ändern Sie außerdem den Testcode, bevor Sie Ihre Anwendung bereitstellen.

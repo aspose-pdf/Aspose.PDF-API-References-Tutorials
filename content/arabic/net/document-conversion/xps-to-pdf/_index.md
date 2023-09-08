@@ -1,54 +1,54 @@
 ---
-title: XPS To PDF
-linktitle: XPS To PDF
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to convert XPS file to PDF with Aspose.PDF for .NET.
+title: XPS إلى PDF
+linktitle: XPS إلى PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: دليل خطوة بخطوة لتحويل ملف XPS إلى PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 350
 url: /ar/net/document-conversion/xps-to-pdf/
 ---
-In this tutorial, we will walk you through how to convert XPS file to PDF using Aspose.PDF library for .NET step by step. We'll detail the provided C# source code and show you how to implement it in your own projects. By the end of this tutorial, you will be able to easily convert XPS files to PDF documents.
+في هذا البرنامج التعليمي، سنرشدك إلى كيفية تحويل ملف XPS إلى PDF باستخدام مكتبة Aspose.PDF لـ .NET خطوة بخطوة. سنقوم بتفصيل كود مصدر C# المقدم ونوضح لك كيفية تنفيذه في مشاريعك الخاصة. بحلول نهاية هذا البرنامج التعليمي، ستتمكن بسهولة من تحويل ملفات XPS إلى مستندات PDF.
 
-## Step 1: Set Documents Directory
+## الخطوة 1: قم بتعيين دليل المستندات
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
-Replace `"YOUR DOCUMENTS DIRECTORY"` with the path where you saved your files.
+ يستبدل`"YOUR DOCUMENTS DIRECTORY"` بالمسار الذي قمت بحفظ ملفاتك فيه.
 
-## Step 2: Instantiate the LoadOptions Object Using XPS Load Options
+## الخطوة 2: إنشاء كائن LoadOptions باستخدام خيارات تحميل XPS
 ```csharp
 Aspose.Pdf.LoadOptions options = new XpsLoadOptions();
 ```
-Create an instance of the LoadOptions object using XPS load options.
+قم بإنشاء مثيل لكائن LoadOptions باستخدام خيارات تحميل XPS.
 
-## Step 3: Create the Document Object
+## الخطوة 3: إنشاء كائن المستند
 ```csharp
 Aspose.Pdf.Document document = new Aspose.Pdf.Document(dataDir + "XPSToPDF.xps", options);
 ```
-Create a Document object specifying the input XPS file and load options.
+قم بإنشاء كائن مستند يحدد ملف XPS المدخل وخيارات التحميل.
 
-## Step 4: Save the Resulting PDF Document
+## الخطوة 4: احفظ مستند PDF الناتج
 ```csharp
 document.Save(dataDir + "XPSToPDF_out.pdf");
 ```
-Save the resulting PDF document to the specified directory.
+احفظ مستند PDF الناتج في الدليل المحدد.
 
-### Example source code for XPS to PDF using Aspose.PDF for .NET
+### مثال على التعليمات البرمجية المصدر لـ XPS إلى PDF باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 try
 {
 	
-	// The path to the documents directory.
+	// المسار إلى دليل المستندات.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-	// Instantiate LoadOption object using XPS load option
+	//إنشاء كائن LoadOption باستخدام خيار تحميل XPS
 	Aspose.Pdf.LoadOptions options = new XpsLoadOptions();
 
-	// Create document object 
+	// إنشاء كائن المستند
 	Aspose.Pdf.Document document = new Aspose.Pdf.Document(dataDir + "XPSToPDF.xps", options);
 
-	// Save the resultant PDF document
+	// احفظ مستند PDF الناتج
 	document.Save(dataDir + "XPSToPDF_out.pdf");
 	
 }
@@ -59,27 +59,27 @@ catch(Exception ex)
 }
 ```
 
-## Conclusion
-In this tutorial, we learned how to convert XPS file to PDF using Aspose.PDF library for .NET. By following the steps provided, you can easily perform this conversion in your own applications. Get accurate and professional results when converting XPS files to PDF.
+## خاتمة
+في هذا البرنامج التعليمي، تعلمنا كيفية تحويل ملف XPS إلى PDF باستخدام مكتبة Aspose.PDF لـ .NET. باتباع الخطوات المتوفرة، يمكنك إجراء هذا التحويل بسهولة في تطبيقاتك الخاصة. احصل على نتائج دقيقة واحترافية عند تحويل ملفات XPS إلى PDF.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is XPS, and why would I want to convert it to PDF?
+#### س: ما هو XPS، ولماذا أرغب في تحويله إلى PDF؟
 
-A: XPS (XML Paper Specification) is a fixed-layout document format developed by Microsoft. Converting XPS to PDF allows you to make the document more accessible and widely compatible, as PDF is a universally supported format across different platforms and devices.
+ج: XPS (مواصفات ورق XML) هو تنسيق مستند ذو تخطيط ثابت تم تطويره بواسطة Microsoft. يتيح لك تحويل XPS إلى PDF تسهيل الوصول إلى المستند وجعله متوافقًا على نطاق واسع، حيث أن PDF هو تنسيق مدعوم عالميًا عبر الأنظمة الأساسية والأجهزة المختلفة.
 
-#### Q: Does the Aspose.PDF library support other file formats besides XPS?
+#### س: هل تدعم مكتبة Aspose.PDF تنسيقات ملفات أخرى إلى جانب XPS؟
 
-A: Yes, Aspose.PDF for .NET supports various other file formats for conversion, such as HTML, EPUB, SVG, XML, and more. It also allows you to create and manipulate PDF documents programmatically.
+ج: نعم، يدعم Aspose.PDF for .NET العديد من تنسيقات الملفات الأخرى للتحويل، مثل HTML وEPUB وSVG وXML والمزيد. كما يسمح لك بإنشاء مستندات PDF ومعالجتها برمجياً.
 
-#### Q: Can I customize the PDF conversion process, such as setting page size, margins, or other options?
+#### س: هل يمكنني تخصيص عملية تحويل PDF، مثل تحديد حجم الصفحة أو الهوامش أو خيارات أخرى؟
 
-A: Yes, you can customize the PDF conversion process using Aspose.PDF for .NET. The library provides a wide range of options to control page size, margins, image compression, font embedding, and other PDF-related settings to meet your specific requirements.
+ج: نعم، يمكنك تخصيص عملية تحويل PDF باستخدام Aspose.PDF لـ .NET. توفر المكتبة نطاقًا واسعًا من الخيارات للتحكم في حجم الصفحة والهوامش وضغط الصور وتضمين الخطوط والإعدادات الأخرى المتعلقة بملف PDF لتلبية متطلباتك المحددة.
 
-#### Q: Is there a trial version of Aspose.PDF for .NET available for testing?
+#### س: هل هناك إصدار تجريبي من Aspose.PDF لـ .NET متاح للاختبار؟
 
-A: Yes, you can download and try the trial version of Aspose.PDF for .NET from the official Aspose website. The trial version allows you to explore the library's features before making a purchase.
+ج: نعم، يمكنك تنزيل وتجربة الإصدار التجريبي من Aspose.PDF لـ .NET من موقع Aspose الرسمي. تتيح لك النسخة التجريبية استكشاف ميزات المكتبة قبل إجراء عملية الشراء.
 
-#### Q: Can I convert multiple XPS files to PDF in a batch process?
+#### س: هل يمكنني تحويل ملفات XPS متعددة إلى PDF في عملية مجمعة؟
 
-A: Yes, you can convert multiple XPS files to PDF in a batch process by implementing a loop or iterating through the list of XPS files and converting each file to PDF using the provided code.
+ج: نعم، يمكنك تحويل ملفات XPS متعددة إلى PDF في عملية مجمعة عن طريق تنفيذ حلقة أو التكرار خلال قائمة ملفات XPS وتحويل كل ملف إلى PDF باستخدام الكود المقدم.

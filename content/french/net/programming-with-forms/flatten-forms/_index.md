@@ -1,33 +1,33 @@
 ---
-title: Flatten Forms In PDF Document
-linktitle: Flatten Forms In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Easily flatten forms in PDF document using Aspose.PDF for .NET.
+title: Aplatir les formulaires dans un document PDF
+linktitle: Aplatir les formulaires dans un document PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Aplatissez facilement les formulaires dans un document PDF à l'aide d'Aspose.PDF pour .NET.
 type: docs
 weight: 100
 url: /fr/net/programming-with-forms/flatten-forms/
 ---
-In this tutorial, we will show you how to flatten forms using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+Dans ce didacticiel, nous allons vous montrer comment aplatir des formulaires à l'aide d'Aspose.PDF pour .NET. Nous expliquerons le code source C# étape par étape pour vous guider tout au long de ce processus.
 
-## Step 1: Preparation
+## Étape 1 : Préparation
 
-First, make sure you have imported the necessary libraries and set the path to the documents directory:
+Tout d'abord, assurez-vous d'avoir importé les bibliothèques nécessaires et défini le chemin d'accès au répertoire des documents :
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load source PDF form
+## Étape 2 : Charger le formulaire PDF source
 
-Load the source PDF form:
+Chargez le formulaire PDF source :
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 3: Flatten the forms
+## Étape 3 : Aplatir les formulaires
 
-First check if there are any form fields in the document. If so, iterate through each field and apply flattening:
+Vérifiez d’abord s’il y a des champs de formulaire dans le document. Si tel est le cas, parcourez chaque champ et appliquez un aplatissement :
 
 ```csharp
 if (doc.Form.Fields.Count() > 0)
@@ -39,22 +39,22 @@ item. Flatten();
 }
 ```
 
-## Step 4: Save the updated document
+## Étape 4 : Enregistrez le document mis à jour
 
-Save the updated PDF document:
+Enregistrez le document PDF mis à jour :
 
 ```csharp
 dataDir = dataDir + "FlattenForms_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Flatten Forms using Aspose.PDF for .NET 
+### Exemple de code source pour Flatten Forms à l’aide d’Aspose.PDF pour .NET 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load source PDF form
+// Charger le formulaire PDF source
 Document doc = new Document(dataDir + "input.pdf");
-// Flatten Forms
+// Aplatir les formulaires
 if (doc.Form.Fields.Count() > 0)
 {
 	foreach (var item in doc.Form.Fields)
@@ -63,33 +63,33 @@ if (doc.Form.Fields.Count() > 0)
 	}
 }
 dataDir = dataDir + "FlattenForms_out.pdf";
-// Save the updated document
+// Enregistrez le document mis à jour
 doc.Save(dataDir);
 Console.WriteLine("\nForms flattened successfully.\nFile saved at " + dataDir);
 ```
 
 ## Conclusion
 
-In this tutorial, we learned how to flatten forms using Aspose.PDF for .NET. By following these steps, you can easily flatten forms in your PDF documents, making fields uneditable and merging annotations with document content.
+Dans ce didacticiel, nous avons appris à aplatir des formulaires à l'aide d'Aspose.PDF pour .NET. En suivant ces étapes, vous pouvez facilement aplatir les formulaires de vos documents PDF, rendant les champs non modifiables et fusionnant les annotations avec le contenu du document.
 
-### FAQ's
+### FAQ
 
-#### Q: What does "flattening forms" mean in Aspose.PDF for .NET?
+#### Q : Que signifie « aplatir les formulaires » dans Aspose.PDF pour .NET ?
 
-A: Flattening forms in Aspose.PDF for .NET refers to the process of making form fields in a PDF document uneditable and merging annotations (such as form fields, annotations, and digital signatures) with the document's content. Once forms are flattened, users cannot modify the form fields, and the visual appearance of the form fields becomes a part of the static content of the PDF document.
+R : L'aplatissement des formulaires dans Aspose.PDF pour .NET fait référence au processus consistant à rendre les champs de formulaire d'un document PDF non modifiables et à fusionner les annotations (telles que les champs de formulaire, les annotations et les signatures numériques) avec le contenu du document. Une fois les formulaires aplatis, les utilisateurs ne peuvent pas modifier les champs du formulaire et l'apparence visuelle des champs du formulaire devient une partie du contenu statique du document PDF.
 
-#### Q: Can I reverse the flattening process and make the form fields editable again?
+#### Q : Puis-je inverser le processus d'aplatissement et rendre les champs du formulaire à nouveau modifiables ?
 
-A: No, once the form fields are flattened, the process is irreversible using Aspose.PDF for .NET. Flattening permanently merges the form fields' appearance with the PDF's content, and the individual form field elements are no longer accessible or editable.
+R : Non, une fois les champs du formulaire aplatis, le processus est irréversible en utilisant Aspose.PDF pour .NET. L'aplatissement fusionne définitivement l'apparence des champs de formulaire avec le contenu du PDF, et les éléments individuels des champs de formulaire ne sont plus accessibles ou modifiables.
 
-#### Q: When should I flatten forms in a PDF document?
+#### Q : Quand dois-je aplatir les formulaires dans un document PDF ?
 
-A: Flattening forms is useful when you want to preserve the visual appearance of form fields and annotations in a PDF document while preventing users from modifying the data. This is commonly done when you want to share a PDF document with pre-filled form data or annotations that should not be altered by the recipients.
+R : L'aplatissement des formulaires est utile lorsque vous souhaitez conserver l'apparence visuelle des champs de formulaire et des annotations dans un document PDF tout en empêchant les utilisateurs de modifier les données. Cela se produit généralement lorsque vous souhaitez partager un document PDF avec des données de formulaire pré-remplies ou des annotations qui ne doivent pas être modifiées par les destinataires.
 
-#### Q: Will flattening forms affect other annotations, such as digital signatures?
+#### Q : L'aplatissement des formulaires affectera-t-il d'autres annotations, telles que les signatures numériques ?
 
-A: Yes, flattening forms will merge all annotations, including digital signatures, with the PDF's content. Once the forms are flattened, any existing digital signatures will become a permanent part of the document, and users cannot modify or remove them.
+R : Oui, l'aplatissement des formulaires fusionnera toutes les annotations, y compris les signatures numériques, avec le contenu du PDF. Une fois les formulaires aplatis, toutes les signatures numériques existantes deviendront une partie permanente du document et les utilisateurs ne pourront pas les modifier ou les supprimer.
 
-#### Q: Can I selectively flatten specific form fields and leave others editable?
+#### Q : Puis-je aplatir de manière sélective des champs de formulaire spécifiques et laisser d’autres modifiables ?
 
-A: Yes, you can selectively flatten specific form fields in a PDF document while leaving others editable. Instead of using the code to flatten all form fields, you can choose to flatten only the desired form fields based on their names or other criteria.
+R : Oui, vous pouvez aplatir de manière sélective des champs de formulaire spécifiques dans un document PDF tout en laissant les autres modifiables. Au lieu d'utiliser le code pour aplatir tous les champs du formulaire, vous pouvez choisir d'aplatir uniquement les champs de formulaire souhaités en fonction de leur nom ou d'autres critères.

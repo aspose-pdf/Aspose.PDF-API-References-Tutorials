@@ -1,42 +1,42 @@
 ---
-title: Add Child Bookmark In PDF File
-linktitle: Add Child Bookmark In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily add child bookmark in PDF file for more organized browsing with Aspose.PDF for .NET.
+title: Lägg till barnbokmärke i PDF-fil
+linktitle: Lägg till barnbokmärke i PDF-fil
+second_title: Aspose.PDF för .NET API Referens
+description: Lägg enkelt till ett barnbokmärke i PDF-fil för mer organiserad surfning med Aspose.PDF för .NET.
 type: docs
 weight: 20
 url: /sv/net/programming-with-bookmarks/add-child-bookmark/
 ---
-Adding child bookmarks in PDF file allows for more structured organization and navigation. With Aspose.PDF for .NET, you can easily add a sub-bookmark by following the following source code:
+Att lägga till underordnade bokmärken i en PDF-fil möjliggör mer strukturerad organisation och navigering. Med Aspose.PDF för .NET kan du enkelt lägga till ett underbokmärke genom att följa följande källkod:
 
-## Step 1: Import required libraries
+## Steg 1: Importera nödvändiga bibliotek
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Innan du börjar måste du importera de nödvändiga biblioteken för ditt C#-projekt. Här är det nödvändiga importdirektivet:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-## Step 2: Set path to documents folder
+## Steg 2: Ange sökväg till dokumentmappen
 
-In this step, you need to specify the path to the folder containing the PDF file you want to add a sub-bookmark. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ I det här steget måste du ange sökvägen till mappen som innehåller PDF-filen som du vill lägga till ett underbokmärke. Byta ut`"YOUR DOCUMENT DIRECTORY"` följande kod med den faktiska sökvägen till din dokumentmapp:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Steg 3: Öppna PDF-dokumentet
 
-Now we will open the PDF document to which we want to add a sub-bookmark using the following code:
+Nu kommer vi att öppna PDF-dokumentet som vi vill lägga till ett underbokmärke till med hjälp av följande kod:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "AddChildBookmark.pdf");
 ```
 
-## Step 4: Create parent bookmark object
+## Steg 4: Skapa ett överordnat bokmärkesobjekt
 
-In this step, we will create a parent bookmark object using the `OutlineItemCollection` class and set its properties such as title, italic attribute and bold attribute. Here is the corresponding code:
+ I det här steget skapar vi ett överordnat bokmärkesobjekt med hjälp av`OutlineItemCollection` klass och ställ in dess egenskaper såsom titel, kursiv attribut och fet attribut. Här är motsvarande kod:
 
 ```csharp
 OutlineItemCollection pdfOutline = new OutlineItemCollection(pdfDocument.Outlines);
@@ -45,9 +45,9 @@ pdfOutline. Italic = true;
 pdfOutline. Bold = true;
 ```
 
-## Step 5: Create Child Bookmark Object
+## Steg 5: Skapa underordnat bokmärkesobjekt
 
-In this step, we will create a sub-bookmark object again using the `OutlineItemCollection` class and set its properties. Here is the corresponding code:
+ det här steget kommer vi att skapa ett underbokmärkesobjekt igen med hjälp av`OutlineItemCollection` klass och ställ in dess egenskaper. Här är motsvarande kod:
 
 ```csharp
 OutlineItemCollection pdfChildOutline = new OutlineItemCollection(pdfDocument.Outlines);
@@ -56,95 +56,95 @@ pdfChildOutline. Italic = true;
 pdfChildOutline. Bold = true;
 ```
 
-## Step 6: Add the sub-bookmark to the parent bookmark
+## Steg 6: Lägg till underbokmärket till det överordnade bokmärket
 
-Finally, we add the created subbookmark to the parent bookmark's subbookmark collection using the `Add` method of the parent object. Here is the corresponding code:
+ Slutligen lägger vi till det skapade underbokmärket till det överordnade bokmärkets underbokmärkessamling med hjälp av`Add` metod för det överordnade objektet. Här är motsvarande kod:
 
 ```csharp
 pdfOutline.Add(pdfChildOutline);
 ```
 
-## Step 7: Add the parent bookmark to the document's bookmark collection
+## Steg 7: Lägg till det överordnade bokmärket i dokumentets bokmärkessamling
 
-Finally, we add the parent bookmark to the document's bookmark collection using the `Add` method of the `Outlines` property. Here is the corresponding code:
+ Slutligen lägger vi till det överordnade bokmärket till dokumentets bokmärkessamling med hjälp av`Add` metod för`Outlines` fast egendom. Här är motsvarande kod:
 
 ```csharp
 pdfDocument.Outlines.Add(pdfOutline);
 ```
 
-### Sample source code for Add Child Bookmark using Aspose.PDF for .NET 
+### Exempel på källkod för Add Child Bookmark med Aspose.PDF för .NET 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Öppna dokumentet
 Document pdfDocument = new Document(dataDir + "AddChildBookmark.pdf");
-// Create a parent bookmark object
+// Skapa ett överordnat bokmärkesobjekt
 OutlineItemCollection pdfOutline = new OutlineItemCollection(pdfDocument.Outlines);
 pdfOutline.Title = "Parent Outline";
 pdfOutline.Italic = true;
 pdfOutline.Bold = true;      
-// Create a child bookmark object
+// Skapa ett underordnat bokmärkesobjekt
 OutlineItemCollection pdfChildOutline = new OutlineItemCollection(pdfDocument.Outlines);
 pdfChildOutline.Title = "Child Outline";
 pdfChildOutline.Italic = true;
 pdfChildOutline.Bold = true;
-// Add child bookmark in parent bookmark's collection
+// Lägg till ett barnbokmärke i överordnat bokmärkes samling
 pdfOutline.Add(pdfChildOutline);
-// Add parent bookmark in the document's outline collection.
+// Lägg till ett överordnat bokmärke i dokumentets dispositionssamling.
 pdfDocument.Outlines.Add(pdfOutline);
 dataDir = dataDir + "AddChildBookmark_out.pdf";
-// Save output
+// Spara utdata
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nChild bookmark added successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Slutsats
 
-Congratulation ! Now you have a step by step guide to add a sub-bookmark with Aspose.PDF for .NET. You can use this code to organize and structure your bookmarks in your PDF documents.
+Grattis! Nu har du en steg-för-steg-guide för att lägga till ett underbokmärke med Aspose.PDF för .NET. Du kan använda den här koden för att organisera och strukturera dina bokmärken i dina PDF-dokument.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Se till att kolla in den officiella Aspose.PDF-dokumentationen för mer information om avancerade bokmärkesmanipuleringsfunktioner.
 
-### FAQ's for add child bookmark in PDF file
+### Vanliga frågor för att lägga till barnbokmärke i PDF-fil
 
-#### Q: What are child bookmarks in a PDF file?
+#### F: Vad är underordnade bokmärken i en PDF-fil?
 
-A: Child bookmarks, also known as sub-bookmarks, are navigational elements within a PDF document that are hierarchically structured under a parent bookmark. They provide a way to create a more organized and detailed table of contents for the document.
+S: Underordnade bokmärken, även kända som underbokmärken, är navigeringselement i ett PDF-dokument som är hierarkiskt strukturerade under ett överordnat bokmärke. De ger ett sätt att skapa en mer organiserad och detaljerad innehållsförteckning för dokumentet.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### F: Hur importerar jag de nödvändiga biblioteken för mitt C#-projekt?
 
-A: To import the required libraries for your C# project, you can use the following import directive:
+S: För att importera de nödvändiga biblioteken för ditt C#-projekt kan du använda följande importdirektiv:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-These libraries provide the necessary classes and functions for working with PDF documents and interactive features.
+Dessa bibliotek tillhandahåller de nödvändiga klasserna och funktionerna för att arbeta med PDF-dokument och interaktiva funktioner.
 
-#### Q: How do I specify the path to the documents folder?
+#### F: Hur anger jag sökvägen till dokumentmappen?
 
-A: In the source code provided, you need to replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file you want to work with. This ensures that the code correctly locates the target PDF file.
+ S: I källkoden som tillhandahålls måste du ersätta`"YOUR DOCUMENT DIRECTORY"` med den faktiska sökvägen till mappen som innehåller PDF-filen du vill arbeta med. Detta säkerställer att koden korrekt lokaliserar mål-PDF-filen.
 
-#### Q: Can I create multiple levels of child bookmarks?
+#### F: Kan jag skapa flera nivåer av underordnade bokmärken?
 
-A: Yes, you can create multiple levels of child bookmarks by extending the process outlined in the tutorial. By creating parent bookmarks with sub-bookmarks and further nesting them, you can create a hierarchical structure of bookmarks for complex PDF documents.
+S: Ja, du kan skapa flera nivåer av underordnade bokmärken genom att utöka processen som beskrivs i handledningen. Genom att skapa överordnade bokmärken med underbokmärken och kapsla dem ytterligare kan du skapa en hierarkisk struktur av bokmärken för komplexa PDF-dokument.
 
-#### Q: What is the purpose of the `OutlineItemCollection` class?
+####  F: Vad är syftet med`OutlineItemCollection` class?
 
-A: The `OutlineItemCollection` class in Aspose.PDF for .NET is used to create and manage outlines, which are essentially bookmarks in a PDF document. This class allows you to set properties such as title, font style, and actions for bookmarks.
+ A: Den`OutlineItemCollection` klass i Aspose.PDF för .NET används för att skapa och hantera konturer, som i huvudsak är bokmärken i ett PDF-dokument. Den här klassen låter dig ställa in egenskaper som titel, teckensnittsstil och åtgärder för bokmärken.
 
-#### Q: How do I add a sub-bookmark to a parent bookmark?
+#### F: Hur lägger jag till ett underbokmärke till ett överordnat bokmärke?
 
-A: To add a sub-bookmark to a parent bookmark, you create a new `OutlineItemCollection` object for the sub-bookmark and set its properties. Then, you use the `Add` method of the parent bookmark's `OutlineItemCollection` to add the sub-bookmark to the parent's collection.
+ S: För att lägga till ett underbokmärke till ett överordnat bokmärke skapar du ett nytt`OutlineItemCollection` objekt för underbokmärket och ställ in dess egenskaper. Sedan använder du`Add` metoden för det överordnade bokmärket`OutlineItemCollection` för att lägga till underbokmärket till förälderns samling.
 
-#### Q: Can I customize the appearance of child bookmarks?
+#### F: Kan jag anpassa utseendet på underordnade bokmärken?
 
-A: Yes, similar to parent bookmarks, you can customize the appearance of child bookmarks by setting properties such as title, font style, and other attributes. This allows you to create visually distinctive and informative bookmarks.
+S: Ja, på samma sätt som för överordnade bokmärken kan du anpassa utseendet på underordnade bokmärken genom att ställa in egenskaper som titel, teckensnitt och andra attribut. Detta gör att du kan skapa visuellt distinkta och informativa bokmärken.
 
-#### Q: Is Aspose.PDF for .NET compatible with other programming languages?
+#### F: Är Aspose.PDF för .NET kompatibelt med andra programmeringsspråk?
 
-A: Aspose.PDF for .NET is specifically designed for C# and .NET environments. However, Aspose offers similar libraries for other programming languages such as Java and Android, each tailored to their respective platforms.
+S: Aspose.PDF för .NET är speciellt utformad för C#- och .NET-miljöer. Men Aspose erbjuder liknande bibliotek för andra programmeringsspråk som Java och Android, vart och ett skräddarsytt för sina respektive plattformar.
 
-#### Q: How do child bookmarks improve PDF navigation?
+#### F: Hur förbättrar barnbokmärken PDF-navigering?
 
-A: Child bookmarks improve PDF navigation by providing a more structured and organized table of contents. Users can quickly access specific sections of the document through the hierarchical bookmark structure.
+S: Underordnade bokmärken förbättrar PDF-navigering genom att tillhandahålla en mer strukturerad och organiserad innehållsförteckning. Användare kan snabbt komma åt specifika delar av dokumentet genom den hierarkiska bokmärkesstrukturen.

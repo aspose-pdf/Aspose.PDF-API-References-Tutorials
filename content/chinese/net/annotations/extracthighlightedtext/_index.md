@@ -1,58 +1,58 @@
 ---
-title: Extract Highlighted Text In PDF File
-linktitle: Extract Highlighted Text In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to extract highlighted text in PDF file using Aspose.PDF for .NET with this step-by-step guide.
+title: 提取 PDF 文件中突出显示的文本
+linktitle: 提取 PDF 文件中突出显示的文本
+second_title: Aspose.PDF for .NET API 参考
+description: 通过此分步指南，了解如何使用 Aspose.PDF for .NET 提取 PDF 文件中突出显示的文本。
 type: docs
 weight: 60
 url: /zh/net/annotations/extracthighlightedtext/
 ---
-To extract highlighted text in PDF file, you can use the Aspose.PDF for .NET API. This API provides a simple way to retrieve all the text that has been highlighted in a document.
+要提取 PDF 文件中突出显示的文本，您可以使用 Aspose.PDF for .NET API。此 API 提供了一种简单的方法来检索文档中突出显示的所有文本。
 
-## Step 1: Load the PDF document
+## 第 1 步：加载 PDF 文档
 
-The first step in extracting highlighted text in PDF file is to load the document using the Aspose.PDF for .NET API. You can do this by creating a new instance of the `Document` class and passing the path to the PDF document as a parameter. 
+提取 PDF 文件中突出显示的文本的第一步是使用 Aspose.PDF for .NET API 加载文档。您可以通过创建一个新实例来完成此操作`Document`类并将 PDF 文档的路径作为参数传递。 
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir ="YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "ExtractHighlightedText.pdf");
 ```
 
-## Step 2: Loop through all annotations
+## 第 2 步：循环遍历所有注释
 
-The next step is to loop through all the annotations in the PDF document. You can do this using a `foreach` loop, like so:
+下一步是循环遍历 PDF 文档中的所有注释。您可以使用`foreach`循环，像这样：
 
 ```csharp
 foreach (Annotation annotation in doc.Pages[1].Annotations)
 {
-	// Code goes here
+	//代码放在这里
 }
 ```
 
-## Step 3: Filter text markup annotations
+## 步骤 3：过滤文本标记注释
 
-Inside the `foreach` loop, you will need to filter out all the annotations that are not text markup annotations. You can do this by checking if the annotation is an instance of the `TextMarkupAnnotation` class.
+在 - 的里面`foreach`循环中，您需要过滤掉所有不是文本标记注释的注释。您可以通过检查注释是否是`TextMarkupAnnotation`班级。
 
 ```csharp
 if (annotation is TextMarkupAnnotation)
 {
-	// Code goes here
+	//代码放在这里
 }
 ```
 
-## Step 4: Retrieve highlighted text fragments
+## 步骤 4：检索突出显示的文本片段
 
-Once you have filtered out all the text markup annotations, you can retrieve the highlighted text fragments for each annotation. You can do this by calling the `GetMarkedTextFragments()` method on the `TextMarkupAnnotation` object.
+过滤掉所有文本标记注释后，您可以检索每个注释的突出显示的文本片段。您可以通过调用来做到这一点`GetMarkedTextFragments()`方法上的`TextMarkupAnnotation`目的。
 
 ```csharp
 TextMarkupAnnotation highlightedAnnotation = annotation as TextMarkupAnnotation;
 TextFragmentCollection collection = highlightedAnnotation.GetMarkedTextFragments();
 ```
 
-## Step 5: Display the highlighted text
+## 第 5 步：显示突出显示的文本
 
-Finally, you can display the highlighted text to the user. You can do this by looping through each `TextFragment` object in the `TextFragmentCollection` and calling the `Text` property.
+最后，您可以向用户显示突出显示的文本。您可以通过循环遍历每个来完成此操作`TextFragment`对象在`TextFragmentCollection`并调用`Text`财产。
 
 ```csharp
 foreach (TextFragment tf in collection)
@@ -61,10 +61,10 @@ foreach (TextFragment tf in collection)
 }
 ```
 
-### Example source code for Extract Highlighted Text using Aspose.PDF for .NET
+### 使用 Aspose.PDF for .NET 提取突出显示文本的示例源代码
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir ="YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "ExtractHighlightedText.pdf");
 
@@ -82,28 +82,28 @@ foreach (Annotation annotation in doc.Pages[1].Annotations)
 }
 ```
 
-## Conclusion
+## 结论
 
-In this tutorial, we explored how to extract highlighted text from a PDF document using Aspose.PDF for .NET. By following the step-by-step guide and using the provided C# source code, developers can easily extract and manage highlighted text in their PDF documents.
+在本教程中，我们探讨了如何使用 Aspose.PDF for .NET 从 PDF 文档中提取突出显示的文本。通过遵循分步指南并使用提供的 C# 源代码，开发人员可以轻松提取和管理 PDF 文档中突出显示的文本。
 
-### FAQ's for extract highlighted text in PDF file
+### 提取 PDF 文件中突出显示文本的常见问题解答
 
-#### Q: What are text markup annotations in a PDF document?
+#### 问：什么是 PDF 文档中的文本标记注释？
 
-A: Text markup annotations are annotations that highlight or mark specific text in a PDF document. Examples of text markup annotations include highlights, underlines, and strikethroughs.
+答：文本标记注释是突出显示或标记 PDF 文档中特定文本的注释。文本标记注释的示例包括突出显示、下划线和删除线。
 
-#### Q: Can I extract text from other types of annotations using Aspose.PDF for .NET?
+#### 问：我可以使用 Aspose.PDF for .NET 从其他类型的注释中提取文本吗？
 
-A: Yes, Aspose.PDF for .NET provides various methods to extract text from different types of annotations, including text markup annotations, free text annotations, and more.
+答：是的，Aspose.PDF for .NET 提供了多种方法从不同类型的注释中提取文本，包括文本标记注释、自由文本注释等。
 
-#### Q: Does Aspose.PDF for .NET support extracting text from password-protected PDF files?
+#### 问：Aspose.PDF for .NET 支持从受密码保护的 PDF 文件中提取文本吗？
 
-A: Yes, Aspose.PDF for .NET supports extracting text from password-protected PDF files. You need to provide the correct password when loading the PDF document using the `Document` class.
+答：是的，Aspose.PDF for .NET 支持从受密码保护的 PDF 文件中提取文本。使用以下方式加载 PDF 文档时需要提供正确的密码`Document`班级。
 
-#### Q: Can I filter highlighted text based on other criteria, such as color or author?
+#### 问：我可以根据其他条件（例如颜色或作者）过滤突出显示的文本吗？
 
-A: Yes, you can filter highlighted text based on other criteria, such as color, author, or creation date. Aspose.PDF for .NET provides methods to access and filter annotations based on their properties.
+答：是的，您可以根据其他条件（例如颜色、作者或创建日期）过滤突出显示的文本。 Aspose.PDF for .NET 提供了根据属性访问和过滤注释的方法。
 
-#### Q: Is it possible to save the extracted highlighted text to a separate file?
+#### 问：是否可以将提取的突出显示文本保存到单独的文件中？
 
-A: Yes, you can save the extracted highlighted text to a separate file or store it in a data structure for further processing or analysis.
+答：是的，您可以将提取的突出显示文本保存到单独的文件中或将其存储在数据结构中以供进一步处理或分析。

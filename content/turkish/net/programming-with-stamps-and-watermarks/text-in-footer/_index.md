@@ -1,51 +1,51 @@
 ---
-title: Text In Footer Of PDF File
-linktitle: Text In Footer Of PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn to add text in the footer of PDF file with Aspose.PDF for .NET.
+title: PDF Dosyasının Alt Bilgisindeki Metin
+linktitle: PDF Dosyasının Alt Bilgisindeki Metin
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile PDF dosyasının alt bilgisine metin eklemeyi öğrenin.
 type: docs
 weight: 180
 url: /tr/net/programming-with-stamps-and-watermarks/text-in-footer/
 ---
-In this tutorial, we are going to learn how to add text in the footer of PDF file using Aspose.PDF for .NET. Follow the steps below:
+Bu derste Aspose.PDF for .NET kullanarak PDF dosyasının altbilgisine nasıl metin ekleneceğini öğreneceğiz. Aşağıdaki adımları takip et:
 
-## Step 1: Project preparation
+## Adım 1: Proje hazırlama
 
-Make sure you have installed Aspose.PDF for .NET and created a C# project.
+Aspose.PDF for .NET'i yüklediğinizden ve bir C# projesi oluşturduğunuzdan emin olun.
 
-## Step 2: Importing namespaces
+## 2. Adım: Ad alanlarını içe aktarma
 
-Add the following namespaces to your C# source file:
+Aşağıdaki ad alanlarını C# kaynak dosyanıza ekleyin:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Opening the document
+## 3. Adım: Belgeyi açma
 
-Open the existing PDF document using the path provided:
+Sağlanan yolu kullanarak mevcut PDF belgesini açın:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document pdfDocument = new Document(dataDir + "TextinFooter.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to your documents directory.
+"BELGELERİNİZ DİZİNİ"ni belge dizininizin gerçek yolu ile değiştirdiğinizden emin olun.
 
-## Step 4: Create footer text
+## 4. Adım: Altbilgi metni oluşturun
 
-Create a new text stamp with the text you want to add in the footer:
+Alt bilgiye eklemek istediğiniz metni içeren yeni bir metin damgası oluşturun:
 
 ```csharp
 TextStamp textStamp = new TextStamp("footer text");
 ```
 
-You can customize the text by changing its properties like bottom margin, horizontal alignment, and vertical alignment.
+Alt kenar boşluğu, yatay hizalama ve dikey hizalama gibi özelliklerini değiştirerek metni özelleştirebilirsiniz.
 
-## Step 5: Add footer text to all pages
+## 5. Adım: Tüm sayfalara altbilgi metni ekleyin
 
-Go through all the pages of the PDF document and add the text stamp in the footer:
+PDF belgesinin tüm sayfalarını inceleyin ve altbilgiye metin damgasını ekleyin:
 
 ```csharp
 foreach(Page page in pdfDocument.Pages)
@@ -54,9 +54,9 @@ foreach(Page page in pdfDocument.Pages)
 }
 ```
 
-## Step 6: Saving the PDF Document
+## Adım 6: PDF Belgesini Kaydetme
 
-Once the footer text has been added on all pages, save the updated PDF document:
+Alt bilgi metni tüm sayfalara eklendikten sonra güncellenen PDF belgesini kaydedin:
 
 ```csharp
 dataDir = dataDir + "TextinFooter_out.pdf";
@@ -64,72 +64,72 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nText in footer added successfully.\nFile saved at: " + dataDir);
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where you want to save the PDF document.
+"BELGELERİNİZ DİZİNİ"ni, PDF belgesini kaydetmek istediğiniz dizinin gerçek yolu ile değiştirdiğinizden emin olun.
 
-### Sample source code for Textin Footer using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanan Metin Alt Bilgisi için örnek kaynak kodu 
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir+ "TextinFooter.pdf");
 
-// Create footer
+// Altbilgi oluştur
 TextStamp textStamp = new TextStamp("Footer Text");
 
-// Set properties of the stamp
+// Damganın özelliklerini ayarlama
 textStamp.BottomMargin = 10;
 textStamp.HorizontalAlignment = HorizontalAlignment.Center;
 textStamp.VerticalAlignment = VerticalAlignment.Bottom;
 
-// Add footer on all pages
+// Tüm sayfalara altbilgi ekleyin
 foreach (Page page in pdfDocument.Pages)
 {
 	page.AddStamp(textStamp);
 }
 dataDir = dataDir + "TextinFooter_out.pdf";
 
-// Save updated PDF file
+// Güncellenmiş PDF dosyasını kaydet
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nText in footer added successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulation ! You have learned how to add text in the footer of a PDF document using Aspose.PDF for .NET. You can now customize your footers by adding additional text to your PDF documents.
+Tebrikler! Aspose.PDF for .NET kullanarak bir PDF belgesinin altbilgisine nasıl metin ekleyeceğinizi öğrendiniz. Artık PDF belgelerinize ek metin ekleyerek altbilgilerinizi özelleştirebilirsiniz.
 
-### FAQ's for text in footer of PDF file
+### PDF dosyasının altbilgisindeki metinler için SSS
 
-#### Q: What is the purpose of adding text in the footer of a PDF document?
+#### S: Bir PDF belgesinin altbilgisine metin eklemenin amacı nedir?
 
-A: Adding text in the footer of a PDF document allows you to include important information, such as copyright notices, page numbers, document version, or any other text that you want to appear consistently at the bottom of each page.
+C: Bir PDF belgesinin alt bilgisine metin eklemek, telif hakkı bildirimleri, sayfa numaraları, belge sürümü gibi önemli bilgileri veya her sayfanın altında tutarlı bir şekilde görünmesini istediğiniz diğer metinleri eklemenize olanak tanır.
 
-#### Q: How does the provided C# source code achieve the addition of text in the footer of a PDF document?
+#### S: Sağlanan C# kaynak kodu, bir PDF belgesinin altbilgisine metin eklenmesini nasıl başarır?
 
-A: The code demonstrates the process of opening an existing PDF document, creating a text stamp with the desired footer text, customizing the text properties, adding the text stamp to all pages, and finally saving the updated PDF document with the added footer text.
+C: Kod, mevcut bir PDF belgesini açma, istenen altbilgi metniyle bir metin damgası oluşturma, metin özelliklerini özelleştirme, metin damgasını tüm sayfalara ekleme ve son olarak güncellenmiş PDF belgesini eklenen altbilgi metniyle kaydetme sürecini gösterir.
 
-#### Q: Can I modify the appearance of the footer text, such as its font, size, color, and alignment?
+#### S: Alt bilgi metninin yazı tipi, boyutu, rengi ve hizalaması gibi görünümünü değiştirebilir miyim?
 
-A: Yes, you can customize the appearance of the footer text by modifying the properties of the `TextStamp` object. The code example includes setting properties like bottom margin, horizontal alignment, and vertical alignment. You can also adjust the font, size, color, and other text-related properties.
+ C: Evet, altbilgi metninin görünümünü, altbilgi metninin özelliklerini değiştirerek özelleştirebilirsiniz.`TextStamp` nesne. Kod örneği, alt kenar boşluğu, yatay hizalama ve dikey hizalama gibi özelliklerin ayarlanmasını içerir. Ayrıca yazı tipini, boyutunu, rengini ve metinle ilgili diğer özellikleri de ayarlayabilirsiniz.
 
-#### Q: Is it possible to add different text to each page's footer?
+#### S: Her sayfanın alt bilgisine farklı metin eklemek mümkün mü?
 
-A: Yes, you can add different text to each page's footer by creating separate `TextStamp` objects with different text content or properties and then adding them to specific pages as needed.
+ C: Evet, her sayfanın altbilgisine ayrı metinler oluşturarak farklı metinler ekleyebilirsiniz.`TextStamp` farklı metin içeriğine veya özelliklere sahip nesneler oluşturma ve ardından bunları gerektiğinde belirli sayfalara ekleme.
 
-#### Q: How do I ensure the footer text appears consistently on every page of the PDF document?
+#### S: Altbilgi metninin PDF belgesinin her sayfasında tutarlı bir şekilde görünmesini nasıl sağlayabilirim?
 
-A: By using a loop that iterates through all the pages of the PDF document and adding the same text stamp to each page, you ensure that the footer text appears consistently on every page.
+C: PDF belgesinin tüm sayfaları boyunca yinelenen bir döngü kullanarak ve her sayfaya aynı metin damgasını ekleyerek, alt bilgi metninin her sayfada tutarlı bir şekilde görünmesini sağlarsınız.
 
-#### Q: Can I add multiple lines of text or format the footer text with line breaks?
+#### S: Birden fazla metin satırı ekleyebilir miyim veya alt bilgi metnini satır sonlarıyla biçimlendirebilir miyim?
 
-A: Yes, you can add multiple lines of text to the footer by including line breaks in the text string. For example, you can use the escape sequence `\n` to indicate a line break in the text.
+ C: Evet, metin dizesine satır sonları ekleyerek alt bilgiye birden fazla metin satırı ekleyebilirsiniz. Örneğin kaçış sırasını kullanabilirsiniz`\n` Metinde satır sonunu belirtmek için.
 
-#### Q: What happens if I want to add different content to the header and footer of the same PDF document?
+#### S: Aynı PDF belgesinin üstbilgisine ve altbilgisine farklı içerik eklemek istersem ne olur?
 
-A: To add different content to the header and footer sections, you would follow similar steps for both sections. The code demonstrates adding text to the footer; you can use a similar approach to add text to the header.
+C: Üstbilgi ve altbilgi bölümlerine farklı içerik eklemek için her iki bölüm için de benzer adımları izleyeceksiniz. Kod, altbilgiye metin eklemeyi gösterir; Başlığa metin eklemek için benzer bir yaklaşım kullanabilirsiniz.
 
-#### Q: Is it possible to add images or other elements alongside the footer text using this approach?
+#### S: Bu yaklaşımı kullanarak alt bilgi metninin yanına resim veya başka öğeler eklemek mümkün müdür?
 
-A: While the provided code specifically demonstrates adding text to the footer, you can extend the approach to add other elements like images, lines, shapes, or any other content to the footer section using the Aspose.PDF library.
+C: Sağlanan kod özellikle altbilgiye metin eklemeyi gösterse de, Aspose.PDF kütüphanesini kullanarak yaklaşımı resimler, çizgiler, şekiller veya diğer herhangi bir içerik gibi diğer öğeleri altbilgi bölümüne ekleyecek şekilde genişletebilirsiniz.

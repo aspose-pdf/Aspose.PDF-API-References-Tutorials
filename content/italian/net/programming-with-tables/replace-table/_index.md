@@ -1,51 +1,51 @@
 ---
-title: Replace Table In PDF Document
-linktitle: Replace Table In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to replace a table in PDF document using Aspose.PDF for .NET.
+title: Sostituisci tabella nel documento PDF
+linktitle: Sostituisci tabella nel documento PDF
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Scopri come sostituire una tabella nel documento PDF utilizzando Aspose.PDF per .NET.
 type: docs
 weight: 180
 url: /it/net/programming-with-tables/replace-table/
 ---
-In this tutorial, we will guide you step by step to replace a table in PDF document using Aspose.PDF for .NET. We'll explain the provided C# source code and show you how to implement it.
+In questo tutorial, ti guideremo passo dopo passo per sostituire una tabella nel documento PDF utilizzando Aspose.PDF per .NET. Spiegheremo il codice sorgente C# fornito e ti mostreremo come implementarlo.
 
-## Step 1: Loading the existing PDF document
-First, you need to load the existing PDF document using the following code:
+## Passaggio 1: caricamento del documento PDF esistente
+Innanzitutto, devi caricare il documento PDF esistente utilizzando il seguente codice:
 
 ```csharp
-// Path to the documents directory
+// Percorso della directory dei documenti
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Load the existing PDF document
+// Carica il documento PDF esistente
 Document pdfDocument = new Document(dataDir + @"Table_input.pdf");
 ```
 
-## Step 2: Creating the TableAbsorber object to find the tables
-Next, we'll create a TableAbsorber object to find the tables in the PDF document:
+## Passaggio 2: creazione dell'oggetto TableAbsorber per trovare le tabelle
+Successivamente, creeremo un oggetto TableAbsorber per trovare le tabelle nel documento PDF:
 
 ```csharp
-// Create a TableAbsorber object to find the tables
+// Crea un oggetto TableAbsorber per trovare le tabelle
 TableAbsorber absorber = new TableAbsorber();
 ```
 
-## Step 3: Visit the first page with the absorber
-We will now visit the first page of the PDF document using the absorber:
+## Passaggio 3: visitare la prima pagina con l'assorbitore
+Visiteremo ora la prima pagina del documento PDF utilizzando l'assorbitore:
 
 ```csharp
-// Visit the first page with the absorber
+// Visita la prima pagina con l'assorbitore
 absorb.Visit(pdfDocument.Pages[1]);
 ```
 
-## Step 4: Getting the first table on the page
-To be able to replace the table, we will obtain the first table of the page:
+## Passaggio 4: ottenere la prima tabella sulla pagina
+Per poter sostituire la tabella, otterremo la prima tabella della pagina:
 
 ```csharp
-// Get the first table on the page
+// Ottieni la prima tabella nella pagina
 AbsorbedTable table = absorb.TableList[0];
 ```
 
-## Step 5: Creating a new table
-Now we will create a new table with the desired columns and cells:
+## Passaggio 5: creazione di una nuova tabella
+Ora creeremo una nuova tabella con le colonne e le celle desiderate:
 
 ```csharp
 Table newTable = new Table();
@@ -58,40 +58,40 @@ row. Cells. Add("Col 2");
 row. Cells. Add("Col 3");
 ```
 
-## Step 6: Replacing the existing table with the new table
-We will now replace the existing table with the new table on the first page of the document:
+## Passaggio 6: sostituzione della tabella esistente con la nuova tabella
+Sostituiremo ora la tabella esistente con la nuova tabella nella prima pagina del documento:
 
 ```csharp
-// Replace the table with the new table
+// Sostituisci la tabella con la nuova tabella
 absorb.Replace(pdfDocument.Pages[1], table, newTable);
 ```
 
-## Step 7: Saving the document
-Finally, we save the modified PDF document:
+## Passaggio 7: salvataggio del documento
+Infine, salviamo il documento PDF modificato:
 
 ```csharp
 pdfDocument.Save(dataDir + "TableReplaced_out.pdf");
 ```
 
-### Example source code for Replace Table using Aspose.PDF for .NET
+### Codice sorgente di esempio per Sostituisci tabella utilizzando Aspose.PDF per .NET
 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Load existing PDF document
+// Carica il documento PDF esistente
 Document pdfDocument = new Document(dataDir + @"Table_input.pdf");
 
-// Create TableAbsorber object to find tables
+// Crea un oggetto TableAbsorber per trovare le tabelle
 TableAbsorber absorber = new TableAbsorber();
 
-// Visit first page with absorber
+// Visita la prima pagina con l'assorbitore
 absorber.Visit(pdfDocument.Pages[1]);
 
-// Get first table on the page
+// Ottieni la prima tabella nella pagina
 AbsorbedTable table = absorber.TableList[0];
 
-// Create new table
+// Crea nuova tabella
 Table newTable = new Table();
 newTable.ColumnWidths = "100 100 100";
 newTable.DefaultCellBorder = new BorderInfo(BorderSide.All, 1F);
@@ -101,34 +101,34 @@ row.Cells.Add("Col 1");
 row.Cells.Add("Col 2");
 row.Cells.Add("Col 3");
 
-// Replace the table with new one
+// Sostituisci la tabella con una nuova
 absorber.Replace(pdfDocument.Pages[1], table, newTable);
 
-// Save document
+// Salva documento
 pdfDocument.Save(dataDir + "TableReplaced_out.pdf");
 ```
 
-## Conclusion
-Congratulation ! You have now learned how to replace a table in a PDF document using Aspose.PDF for .NET. This step-by-step guide showed you how to load the document, find the existing table, create a new table, and replace it. Now you can apply this knowledge to your own projects.
+## Conclusione
+Congratulazioni! Ora hai imparato come sostituire una tabella in un documento PDF utilizzando Aspose.PDF per .NET. Questa guida passo passo ti ha mostrato come caricare il documento, trovare la tabella esistente, creare una nuova tabella e sostituirla. Ora puoi applicare questa conoscenza ai tuoi progetti.
 
-### FAQ's for replace table in PDF document
+### Domande frequenti sulla sostituzione della tabella nel documento PDF
 
-#### Q: Can I replace multiple tables in the same PDF document using this approach?
+#### D: Posso sostituire più tabelle nello stesso documento PDF utilizzando questo approccio?
 
-A: Yes, you can replace multiple tables in the same PDF document by following the same process for each table you want to replace. After obtaining the `AbsorbedTable` object for each table using the `TableAbsorber`, you can create corresponding new tables and then use the `absorber.Replace()` method to replace each existing table with the respective new table.
+ R: Sì, puoi sostituire più tabelle nello stesso documento PDF seguendo la stessa procedura per ciascuna tabella che desideri sostituire. Dopo aver ottenuto il`AbsorbedTable` oggetto per ogni tabella utilizzando il metodo`TableAbsorber` , puoi creare nuove tabelle corrispondenti e quindi utilizzare il file`absorber.Replace()` metodo per sostituire ogni tabella esistente con la rispettiva nuova tabella.
 
-#### Q: What happens if the new table has a different number of columns than the original table?
+#### D: Cosa succede se la nuova tabella ha un numero di colonne diverso rispetto alla tabella originale?
 
-A: If the new table has a different number of columns than the original table, it may result in unexpected behavior or layout issues in the modified PDF document. It is essential to ensure that the new table's structure (number of columns and their widths) matches the original table's structure for seamless replacement.
+R: Se la nuova tabella ha un numero di colonne diverso rispetto alla tabella originale, potrebbero verificarsi comportamenti imprevisti o problemi di layout nel documento PDF modificato. È essenziale garantire che la struttura della nuova tabella (numero di colonne e relative larghezze) corrisponda alla struttura della tabella originale per una sostituzione senza interruzioni.
 
-#### Q: Can I replace a table on a specific page other than the first page?
+#### D: Posso sostituire una tabella su una pagina specifica diversa dalla prima pagina?
 
-A: Yes, you can replace a table on a specific page other than the first page by changing the page index in the `pdfDocument.Pages[]` method call when obtaining the `AbsorbedTable` object. For example, to replace a table on the second page, you would use `pdfDocument.Pages[2]`.
+ R: Sì, puoi sostituire una tabella su una pagina specifica diversa dalla prima pagina modificando l'indice della pagina nel file`pdfDocument.Pages[]` chiamata al metodo quando si ottiene il file`AbsorbedTable` oggetto. Ad esempio, per sostituire una tabella nella seconda pagina, utilizzeresti`pdfDocument.Pages[2]`.
 
-#### Q: Can I customize the appearance of the new table, such as adding background color or borders?
+#### D: Posso personalizzare l'aspetto della nuova tabella, ad esempio aggiungendo colore di sfondo o bordi?
 
-A: Yes, you can customize the appearance of the new table by setting various properties of the `Table` and its cells. For example, you can set the `BackgroundColor` property of cells to add background color. You can also set the `DefaultCellBorder` property of the new table or individual cells to add borders.
+ R: Sì, puoi personalizzare l'aspetto della nuova tabella impostando varie proprietà del file`Table` e le sue cellule. Ad esempio, puoi impostare il file`BackgroundColor` proprietà delle celle per aggiungere colore di sfondo. Puoi anche impostare il`DefaultCellBorder` proprietà della nuova tabella o di singole celle per aggiungere bordi.
 
-#### Q: Does replacing a table affect the content layout of the rest of the PDF document?
+#### D: La sostituzione di una tabella influisce sul layout del contenuto del resto del documento PDF?
 
-A: Replacing a table may affect the content layout if the new table's size or structure differs significantly from the original table. The rest of the content on the page will reflow to accommodate the new table. It is essential to carefully design the new table to fit seamlessly within the existing layout to avoid any layout issues.
+R: La sostituzione di una tabella può influire sul layout del contenuto se la dimensione o la struttura della nuova tabella differisce in modo significativo dalla tabella originale. Il resto del contenuto della pagina verrà ridisposto per accogliere la nuova tabella. È essenziale progettare attentamente il nuovo tavolo in modo che si adatti perfettamente al layout esistente per evitare problemi di layout.

@@ -1,41 +1,41 @@
 ---
-title: Replaceable Symbols In Header Footer
-linktitle: Replaceable Symbols In Header Footer
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use replaceable symbols in the header and footer of a PDF document using Aspose.PDF for .NET.
+title: Сменные символы в верхнем колонтитуле
+linktitle: Сменные символы в верхнем колонтитуле
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как использовать заменяемые символы в верхнем и нижнем колонтитуле PDF-документа с помощью Aspose.PDF для .NET.
 type: docs
 weight: 320
 url: /ru/net/programming-with-text/replaceable-symbols-in-header-footer/
 ---
-In this tutorial, we will explain how to use replaceable symbols in the header and footer of a PDF document using the Aspose.PDF library for .NET. We will go through the step-by-step process of creating a PDF, setting margins, adding header and footer with replaceable symbols, and saving the PDF using the provided C# source code.
+В этом уроке мы объясним, как использовать заменяемые символы в верхнем и нижнем колонтитуле PDF-документа с помощью библиотеки Aspose.PDF для .NET. Мы пройдем пошаговый процесс создания PDF-файла, настройки полей, добавления верхнего и нижнего колонтитула со заменяемыми символами и сохранения PDF-файла с использованием предоставленного исходного кода C#.
 
-## Prerequisites
+## Предварительные условия
 
-Before you begin, ensure that you have the following:
+Прежде чем начать, убедитесь, что у вас есть следующее:
 
-- The Aspose.PDF for .NET library installed.
-- A basic understanding of C# programming.
+- Установлена библиотека Aspose.PDF для .NET.
+- Базовое понимание программирования на C#.
 
-## Step 1: Set up the Document Directory
+## Шаг 1. Настройте каталог документов
 
-First, you need to set the path to the directory where you want to save the generated PDF file. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your desired directory.
+ Сначала вам нужно указать путь к каталогу, в котором вы хотите сохранить созданный PDF-файл. Заменять`"YOUR DOCUMENT DIRECTORY"` в`dataDir`переменная с путем к желаемому каталогу.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Create a PDF Document and Page
+## Шаг 2. Создайте PDF-документ и страницу.
 
-Next, we create a new PDF document and add a page to it using the `Document` class and `Page` class from the Aspose.PDF library.
+ Далее мы создаем новый PDF-документ и добавляем к нему страницу с помощью`Document` класс и`Page` класс из библиотеки Aspose.PDF.
 
 ```csharp
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Step 3: Set Margins
+## Шаг 3: Установите поля
 
-We set the margins for the page using the `MarginInfo` class. Adjust the margin values according to your requirements.
+ Мы устанавливаем поля для страницы с помощью`MarginInfo`сорт. Отрегулируйте значения маржи в соответствии с вашими требованиями.
 
 ```csharp
 MarginInfo marginInfo = new MarginInfo();
@@ -46,9 +46,9 @@ marginInfo.Right = 50;
 page.PageInfo.Margin = marginInfo;
 ```
 
-## Step 4: Add Header with Replaceable Symbols
+## Шаг 4. Добавьте заголовок со заменяемыми символами
 
-We create a `HeaderFooter` object for the page and add a `TextFragment` with replaceable symbols to it.
+ Мы создаем`HeaderFooter` объект для страницы и добавьте`TextFragment` со сменными символами к нему.
 
 ```csharp
 HeaderFooter hfFirst = new HeaderFooter();
@@ -57,7 +57,7 @@ hfFirst.Margin.Left = 50;
 hfFirst.Margin.Right = 50;
 
 TextFragment t1 = new TextFragment("report title");
-// Set text properties if desired
+// При необходимости установите свойства текста
 t1.TextState.Font = FontRepository.FindFont("Arial");
 t1.TextState.FontSize = 16;
 t1.TextState.ForegroundColor = Aspose.Pdf.Color.Black;
@@ -67,12 +67,12 @@ t1.TextState.LineSpacing = 5f;
 
 hfFirst.Paragraphs.Add(t1);
 
-// Add more TextFragments or customize as needed
+// Добавьте больше TextFragments или настройте по мере необходимости.
 ```
 
-## Step 5: Add Footer with Replaceable Symbols
+## Шаг 5. Добавьте нижний колонтитул со заменяемыми символами
 
-Similarly, we create a `HeaderFooter` object for the page footer and add `TextFragment` objects with replaceable symbols to it.
+ Аналогичным образом мы создаем`HeaderFooter` объект для нижнего колонтитула страницы и добавьте`TextFragment` объекты со сменными символами к нему.
 
 ```csharp
 HeaderFooter hfFoot = new HeaderFooter();
@@ -84,14 +84,14 @@ TextFragment t3 = new TextFragment("Generated on test date");
 TextFragment t4 = new TextFragment("report name ");
 TextFragment t5 = new TextFragment("Page $p of $P");
 
-// Add more TextFragments or customize as needed
+// Добавьте больше TextFragments или настройте по мере необходимости.
 
 hfFoot.Paragraphs.Add(tab2);
 ```
 
-## Step 6: Save the PDF Document
+## Шаг 6. Сохраните PDF-документ
 
-Finally, we save the PDF document to the specified output file.
+Наконец, мы сохраняем PDF-документ в указанный выходной файл.
 
 ```csharp
 dataDir = dataDir + "ReplaceableSymbolsInHeaderFooter_out.pdf";
@@ -99,9 +99,9 @@ doc.Save(dataDir);
 Console.WriteLine("\nReplaceable symbols replaced successfully in the header and footer.\nFile saved at " + dataDir);
 ```
 
-### Sample source code for Replaceable Symbols In Header Footer using Aspose.PDF for .NET 
+### Пример исходного кода для заменяемых символов в нижнем колонтитуле с использованием Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 Page page = doc.Pages.Add();
@@ -110,13 +110,13 @@ marginInfo.Top = 90;
 marginInfo.Bottom = 50;
 marginInfo.Left = 50;
 marginInfo.Right = 50;
-// Assign the marginInfo instance to Margin property of sec1.PageInfo
+// Назначьте экземпляр MarginInfo свойству Margin раздела sec1.PageInfo.
 page.PageInfo.Margin = marginInfo;
 HeaderFooter hfFirst = new HeaderFooter();
 page.Header = hfFirst;
 hfFirst.Margin.Left = 50;
 hfFirst.Margin.Right = 50;
-// Instantiate a Text paragraph that will store the content to show as header
+// Создайте экземпляр текстового абзаца, в котором будет храниться содержимое для отображения в виде заголовка.
 TextFragment t1 = new TextFragment("report title");
 t1.TextState.Font = FontRepository.FindFont("Arial");
 t1.TextState.FontSize = 16;
@@ -132,48 +132,48 @@ t2.TextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 t2.TextState.LineSpacing = 5f;
 t2.TextState.FontSize = 12;
 hfFirst.Paragraphs.Add(t2);
-// Create a HeaderFooter object for the section
+// Создайте объект HeaderFooter для раздела.
 HeaderFooter hfFoot = new HeaderFooter();
-// Set the HeaderFooter object to odd & even footer
+// Установите для объекта HeaderFooter нечетный и четный нижний колонтитул.
 page.Footer = hfFoot;
 hfFoot.Margin.Left = 50;
 hfFoot.Margin.Right = 50;
-// Add a text paragraph containing current page number of total number of pages
+// Добавить текстовый абзац, содержащий текущий номер страницы из общего количества страниц.
 TextFragment t3 = new TextFragment("Generated on test date");
 TextFragment t4 = new TextFragment("report name ");
 TextFragment t5 = new TextFragment("Page $p of $P");
-// Instantiate a table object
+// Создать экземпляр табличного объекта
 Table tab2 = new Table();
-// Add the table in paragraphs collection of the desired section
+// Добавьте таблицу в коллекцию абзацев нужного раздела
 hfFoot.Paragraphs.Add(tab2);
-// Set with column widths of the table
+// Задается шириной столбца таблицы
 tab2.ColumnWidths = "165 172 165";
-// Create rows in the table and then cells in the rows
+// Создайте строки в таблице, а затем ячейки в строках.
 Row row3 = tab2.Rows.Add();
 row3.Cells.Add();
 row3.Cells.Add();
 row3.Cells.Add();
-// Set the vertical allignment of the text as center alligned
+// Установите вертикальное выравнивание текста по центру.
 row3.Cells[0].Alignment = Aspose.Pdf.HorizontalAlignment.Left;
 row3.Cells[1].Alignment = Aspose.Pdf.HorizontalAlignment.Center;
 row3.Cells[2].Alignment = Aspose.Pdf.HorizontalAlignment.Right;
 row3.Cells[0].Paragraphs.Add(t3);
 row3.Cells[1].Paragraphs.Add(t4);
 row3.Cells[2].Paragraphs.Add(t5);
-// Sec1.Paragraphs.Add(New Text("Aspose.Total for Java is a compilation of every Java component offered by Aspose. It is compiled on a#$NL" + "daily basis to ensure it contains the most up to date versions of each of our Java components. #$NL " + "Using Aspose.Total for Java developers can create a wide range of applications. #$NL #$NL #$NP" + "Aspose.Total for Java is a compilation of every Java component offered by Aspose. It is compiled on a#$NL" + "daily basis to ensure it contains the most up to date versions of each of our Java components. #$NL " + "Using Aspose.Total for Java developers can create a wide range of applications. #$NL #$NL #$NP" + "Aspose.Total for Java is a compilation of every Java component offered by Aspose. It is compiled on a#$NL" + "daily basis to ensure it contains the most up to date versions of each of our Java components. #$NL " + "Using Aspose.Total for Java developers can create a wide range of applications. #$NL #$NL"))
+//Sec1.Paragraphs.Add(New Text("Aspose.Total for Java — это компиляция всех компонентов Java, предлагаемых Aspose. Он компилируется #$NL" + "ежедневно, чтобы гарантировать, что он содержит самые актуальные версии каждого компонента. наших компонентов Java. #$NL " + "Используя Aspose.Total для разработчиков Java, разработчики могут создавать широкий спектр приложений. #$NL #$NL #$NP" + "Aspose.Total for Java — это компиляция всех компонентов Java предлагается Aspose. Он компилируется #$NL" + "ежедневно, чтобы гарантировать, что он содержит самые последние версии каждого из наших компонентов Java. #$NL " + "Использование Aspose.Total для разработчиков Java может создать широкий #$NL #$NL #$NP" + "Aspose.Total for Java представляет собой компиляцию всех компонентов Java, предлагаемых Aspose. Он компилируется #$NL" + "ежедневно, чтобы гарантировать, что он содержит наиболее актуальные версии каждого из наших Java-компонентов. #$NL " + "Использование Aspose.Total для разработчиков Java позволяет создавать широкий спектр приложений. #$NL #$NL"))
 Table table = new Table();
 table.ColumnWidths = "33% 33% 34%";
 table.DefaultCellPadding = new MarginInfo();
 table.DefaultCellPadding.Top = 10;
 table.DefaultCellPadding.Bottom = 10;
-// Add the table in paragraphs collection of the desired section
+// Добавьте таблицу в коллекцию абзацев нужного раздела
 page.Paragraphs.Add(table);
-// Set default cell border using BorderInfo object
+// Установите границу ячейки по умолчанию, используя объект BorderInfo
 table.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1f);
-// Set table border using another customized BorderInfo object
+// Установите границу таблицы, используя другой настраиваемый объект BorderInfo.
 table.Border = new BorderInfo(BorderSide.All, 1f);
 table.RepeatingRowsCount = 1;
-// Create rows in the table and then cells in the rows
+// Создайте строки в таблице, а затем ячейки в строках.
 Row row1 = table.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
@@ -201,54 +201,54 @@ doc.Save(dataDir);
 Console.WriteLine("\nSymbols replaced successfully in header and footer.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, you have learned how to use replaceable symbols in the header and footer of a PDF document using the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can create a PDF, set margins, add header and footer with replaceable symbols, and save the PDF.
+В этом уроке вы узнали, как использовать заменяемые символы в верхнем и нижнем колонтитуле PDF-документа с помощью библиотеки Aspose.PDF для .NET. Следуя пошаговому руководству и выполнив предоставленный код C#, вы можете создать PDF-файл, установить поля, добавить верхний и нижний колонтитулы со заменяемыми символами и сохранить PDF-файл.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is the purpose of the "Replaceable Symbols In Header Footer" tutorial?
+#### Вопрос: Какова цель урока «Заменяемые символы в нижнем колонтитуле»?
 
-A: The "Replaceable Symbols In Header Footer" tutorial aims to guide you through the process of using the Aspose.PDF library for .NET to add replaceable symbols to the header and footer of a PDF document. Replaceable symbols allow you to dynamically replace specific placeholders with actual values when generating the PDF.
+О: Учебное пособие «Заменяемые символы в нижнем колонтитуле» призвано помочь вам в процессе использования библиотеки Aspose.PDF для .NET для добавления заменяемых символов в верхний и нижний колонтитулы PDF-документа. Сменные символы позволяют динамически заменять определенные заполнители фактическими значениями при создании PDF-файла.
 
-#### Q: What are replaceable symbols in the context of a PDF header and footer?
+#### Вопрос: Что такое заменяемые символы в контексте верхнего и нижнего колонтитула PDF-файла?
 
-A: Replaceable symbols are placeholders that you can insert into the header and footer of a PDF document. These symbols act as dynamic placeholders for values that can be filled in at runtime, such as page numbers, dates, and custom information.
+О: Заменяемые символы — это заполнители, которые можно вставлять в верхний и нижний колонтитулы PDF-документа. Эти символы действуют как динамические заполнители для значений, которые можно заполнить во время выполнения, например номеров страниц, дат и пользовательской информации.
 
-#### Q: Why would I want to use replaceable symbols in a PDF header and footer?
+#### Вопрос: Зачем мне использовать заменяемые символы в верхнем и нижнем колонтитуле PDF-файла?
 
-A: Replaceable symbols in the header and footer are useful when you want to include dynamic information in your PDF documents, such as page numbers, dates, or other variable data that may change when the document is generated.
+О: Сменные символы в верхнем и нижнем колонтитуле полезны, если вы хотите включить в PDF-документы динамическую информацию, такую как номера страниц, даты или другие переменные данные, которые могут измениться при создании документа.
 
-#### Q: How can I set the margins for the PDF page?
+#### Вопрос: Как установить поля для страницы PDF?
 
-A: You can set the margins for the PDF page using the `MarginInfo` class and assigning it to the `Margin` property of the `PageInfo` of the page. Adjust the margin values as needed.
+ О: Вы можете установить поля для страницы PDF, используя`MarginInfo` класс и присвоение его`Margin` собственность`PageInfo` страницы. При необходимости отрегулируйте значения полей.
 
-#### Q: How do I add replaceable symbols to the header and footer?
+#### Вопрос: Как добавить заменяемые символы в верхний и нижний колонтитулы?
 
-A: You can add replaceable symbols by creating a `HeaderFooter` object for the header and footer of the page. Then, you can add `TextFragment` objects with the desired text, including replaceable symbols, to the `Paragraphs` collection of the `HeaderFooter` object.
+ О: Вы можете добавить заменяемые символы, создав`HeaderFooter` объект для верхнего и нижнего колонтитула страницы. Затем вы можете добавить`TextFragment`объекты с нужным текстом, включая заменяемые символы, в`Paragraphs` коллекция`HeaderFooter` объект.
 
-#### Q: Can I customize the appearance of the replaceable symbols?
+#### Вопрос: Могу ли я настроить внешний вид заменяемых символов?
 
-A: Yes, you can customize the appearance of the replaceable symbols by modifying the properties of the `TextFragment` objects that contain the symbols. You can set properties such as font, font size, color, alignment, and line spacing.
+ О: Да, вы можете настроить внешний вид заменяемых символов, изменив свойства`TextFragment` объекты, содержащие символы. Вы можете установить такие свойства, как шрифт, размер шрифта, цвет, выравнивание и межстрочный интервал.
 
-#### Q: What kind of replaceable symbols can I use?
+#### Вопрос: Какие сменные символы я могу использовать?
 
-A: You can use a variety of replaceable symbols, such as:
+О: Вы можете использовать различные заменяемые символы, например:
 
-- `$p`: Current page number.
-- `$P`: Total number of pages.
-- `$d`: Current date.
-- `$t`: Current time.
-- Custom placeholders you define.
+- `$p`: Номер текущей страницы.
+- `$P`: Общее количество страниц.
+- `$d`: Текущая дата.
+- `$t`: Текущее время.
+- Пользовательские заполнители, которые вы определяете.
 
-#### Q: Can I include other text and formatting around the replaceable symbols?
+#### Вопрос: Могу ли я включить другой текст и форматирование вокруг заменяемых символов?
 
-A: Yes, you can include other text and formatting around the replaceable symbols within the `TextFragment` objects. This allows you to create more complex headers and footers that incorporate dynamic and static content.
+ О: Да, вы можете включать другой текст и форматирование вокруг заменяемых символов внутри`TextFragment` объекты. Это позволяет создавать более сложные верхние и нижние колонтитулы, включающие динамический и статический контент.
 
-#### Q: How can I save the generated PDF document?
+#### Вопрос: Как сохранить созданный PDF-документ?
 
-A: To save the generated PDF document, you can use the `Save` method of the `Document` class. Provide the desired output file path and name as an argument.
+ О: Чтобы сохранить созданный PDF-документ, вы можете использовать`Save` метод`Document`сорт. Укажите желаемый путь и имя выходного файла в качестве аргумента.
 
-#### Q: Is a valid Aspose License required for this tutorial?
+#### Вопрос: Требуется ли для работы с этим руководством действующая лицензия Aspose?
 
-A: Yes, a valid Aspose License is required to execute the code successfully in this tutorial. You can obtain a full license or a 30-day temporary license from the Aspose website.
+О: Да, для успешного выполнения кода в этом руководстве требуется действующая лицензия Aspose. Вы можете получить полную лицензию или 30-дневную временную лицензию на веб-сайте Aspose.

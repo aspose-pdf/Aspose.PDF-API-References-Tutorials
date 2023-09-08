@@ -1,161 +1,161 @@
 ---
-title: Define Alignment In PDF File
-linktitle: Define Alignment In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to easily set text alignment in PDF file with Aspose.PDF for .NET.
+title: تحديد المحاذاة في ملف PDF
+linktitle: تحديد المحاذاة في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية ضبط محاذاة النص بسهولة في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 70
 url: /ar/net/programming-with-stamps-and-watermarks/define-alignment/
 ---
-In this tutorial, we will take you step by step on how to set text alignment in PDF file using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to create a centered text stamp in the PDF file.
+في هذا البرنامج التعليمي، سنأخذك خطوة بخطوة حول كيفية ضبط محاذاة النص في ملف PDF باستخدام Aspose.PDF لـ .NET. سنوضح لك كيفية استخدام كود مصدر C# المقدم لإنشاء ختم نصي مركزي في ملف PDF.
 
-## Step 1: Setting up the environment
+## الخطوة 1: تهيئة البيئة
 
-Before you begin, make sure you have the following:
+قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- بيئة تطوير .NET مثبتة.
+- تم تنزيل مكتبة Aspose.PDF الخاصة بـ .NET والإشارة إليها في مشروعك.
 
-## Step 2: Loading the PDF document
+## الخطوة 2: تحميل مستند PDF
 
-The first step is to load the existing PDF document into your project. Here's how:
+الخطوة الأولى هي تحميل مستند PDF الموجود في مشروعك. إليك الطريقة:
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Instantiate a Document object with the input file
+// إنشاء كائن مستند باستخدام ملف الإدخال
 Document doc = new Document(dataDir + "DefineAlignment.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+تأكد من استبدال "دليل المستندات الخاص بك" بالمسار الفعلي للدليل الذي يوجد به مستند PDF الخاص بك.
 
-## Step 3: Defining the alignment
+## الخطوة 3: تحديد المحاذاة
 
-Now that you have loaded the PDF document, you can set the alignment of the text stamp. Here's how:
+الآن بعد أن قمت بتحميل مستند PDF، يمكنك ضبط محاذاة ختم النص. إليك الطريقة:
 
 ```csharp
-// Instantiate a FormattedText object with the example string
+// إنشاء كائن FormattedText باستخدام سلسلة المثال
 FormattedText text = new FormattedText("This");
 
-// Add a new line of text to FormattedText
+// أضف سطرًا جديدًا من النص إلى FormattedText
 text.AddNewLineText("is an example");
 text.AddNewLineText("Center aligned");
 text.AddNewLineText("Text buffer");
 text.AddNewLineText("Subject");
 
-// Create a TextStamp object using FormattedText
+// قم بإنشاء كائن TextStamp باستخدام FormattedText
 TextStamp stamp = new TextStamp(text);
 
-// Specify the horizontal alignment of the text buffer as centered
+// حدد المحاذاة الأفقية للمخزن المؤقت للنص في المنتصف
 stamp.HorizontalAlignment = HorizontalAlignment.Center;
 
-// Specify the vertical alignment of the text buffer as centered
+// حدد المحاذاة الرأسية للمخزن المؤقت للنص في المنتصف
 stamp.VerticalAlignment = VerticalAlignment.Center;
 
-// Specify the horizontal alignment of the text in the TextStamp as centered
+// حدد المحاذاة الأفقية للنص في TextStamp كتوسيط
 stamp.TextAlignment = HorizontalAlignment.Center;
 
-// Set top margin for buffer object
+// تعيين الهامش العلوي لكائن المخزن المؤقت
 stamp. TopMargin = 20;
 
-// Add the stamp object to the first page of the document
+// قم بإضافة كائن الطابع إلى الصفحة الأولى من المستند
 doc.Pages[1].AddStamp(stamp);
 ```
 
-The code above creates a centered text buffer using the FormattedText class to specify the content and sets the horizontal and vertical alignment of the text buffer.
+يقوم الكود أعلاه بإنشاء مخزن مؤقت للنص في المنتصف باستخدام فئة FormattedText لتحديد المحتوى وتعيين المحاذاة الأفقية والرأسية للمخزن المؤقت للنص.
 
-## Step 4: Save the output document
+## الخطوة 4: احفظ مستند الإخراج
 
-Once you have set the text stamp alignment, you can save the modified PDF document. Here's how:
+بمجرد قيامك بتعيين محاذاة ختم النص، يمكنك حفظ مستند PDF المعدل. إليك الطريقة:
 
 ```csharp
-// Save the updated document
+// احفظ المستند المحدث
 doc.Save(dataDir);
 ```
 
-The above code saves the edited PDF document to the specified directory.
+يحفظ الكود أعلاه مستند PDF المحرر في الدليل المحدد.
 
-### Sample source code for Define Alignment using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لـ Define Alignment باستخدام Aspose.PDF لـ .NET 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantiate Document object with input file
+// إنشاء كائن المستند مع ملف الإدخال
 Document doc = new Document(dataDir+ "DefineAlignment.pdf");
 
-// Instantiate FormattedText object with sample string
+// إنشاء كائن FormattedText باستخدام سلسلة عينة
 FormattedText text = new FormattedText("This");
 
-// Add new text line to FormattedText
+// إضافة سطر نص جديد إلى FormattedText
 text.AddNewLineText("is sample");
 text.AddNewLineText("Center Aligned");
 text.AddNewLineText("TextStamp");
 text.AddNewLineText("Object");
 
-// Create TextStamp object using FormattedText
+// قم بإنشاء كائن TextStamp باستخدام FormattedText
 TextStamp stamp = new TextStamp(text);
 
-// Specify the Horizontal Alignment of text stamp as Center aligned
+// حدد المحاذاة الأفقية لختم النص كمحاذاة للوسط
 stamp.HorizontalAlignment = HorizontalAlignment.Center;
 
-// Specify the Vertical Alignment of text stamp as Center aligned
+// حدد المحاذاة العمودية لختم النص كمحاذاة للوسط
 stamp.VerticalAlignment = VerticalAlignment.Center;
 
-// Specify the Text Horizontal Alignment of TextStamp as Center aligned
+// حدد محاذاة النص الأفقية لـ TextStamp كمحاذاة للوسط
 stamp.TextAlignment = HorizontalAlignment.Center;
 
-// Set top margin for stamp object
+// تعيين الهامش العلوي لكائن الطوابع
 stamp.TopMargin = 20;
 
-// Add the stamp object over first page of document
+// قم بإضافة كائن الختم على الصفحة الأولى من المستند
 doc.Pages[1].AddStamp(stamp);
 dataDir = dataDir + "StampedPDF_out.pdf";
 
-// Save the udpated document
+// احفظ المستند المحدث
 doc.Save(dataDir);
 Console.WriteLine("\nAlignment defined successfully for text stamp.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! You have learned how to set text alignment in a PDF document using Aspose.PDF for .NET. You can now apply this knowledge to create text stamps with different alignments in your PDF documents.
+تهنئة ! لقد تعلمت كيفية ضبط محاذاة النص في مستند PDF باستخدام Aspose.PDF لـ .NET. يمكنك الآن تطبيق هذه المعرفة لإنشاء طوابع نصية بمحاذاة مختلفة في مستندات PDF الخاصة بك.
 
-### FAQ's for define alignment in PDF file
+### الأسئلة الشائعة لتحديد المحاذاة في ملف PDF
 
-#### Q: What is text alignment in a PDF document, and why is it important?
+#### س: ما هي محاذاة النص في مستند PDF، ولماذا هي مهمة؟
 
-A: Text alignment in a PDF document refers to the positioning of text within a specific area, such as a paragraph or a text stamp. Proper text alignment enhances the readability and visual appeal of a document, making it easier for readers to follow the content.
+ج: تشير محاذاة النص في مستند PDF إلى موضع النص داخل منطقة معينة، مثل فقرة أو ختم نص. تعمل محاذاة النص الصحيحة على تحسين إمكانية القراءة والجاذبية المرئية للمستند، مما يسهل على القراء متابعة المحتوى.
 
-#### Q: How can I center-align text within a PDF document using Aspose.PDF for .NET?
+#### س: كيف يمكنني محاذاة النص إلى المنتصف داخل مستند PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: The provided C# source code demonstrates how to create a centered text stamp using the Aspose.PDF library. By specifying the `HorizontalAlignment` and `VerticalAlignment` properties of the `TextStamp` object, you can achieve center alignment both horizontally and vertically.
+ ج: يوضح كود مصدر C# كيفية إنشاء طابع نصي مركزي باستخدام مكتبة Aspose.PDF. وذلك بتحديد`HorizontalAlignment` و`VerticalAlignment` خصائص`TextStamp` كائن، يمكنك تحقيق محاذاة المركز أفقيًا وعموديًا.
 
-#### Q: Can I align text differently for different parts of the PDF document?
+#### س: هل يمكنني محاذاة النص بشكل مختلف لأجزاء مختلفة من مستند PDF؟
 
-A: Yes, you can adjust the text alignment for different parts of the PDF document by creating multiple `TextStamp` objects and setting their alignment properties accordingly. This allows you to achieve different alignments within the same document.
+ج: نعم، يمكنك ضبط محاذاة النص لأجزاء مختلفة من مستند PDF عن طريق إنشاء عدة أجزاء`TextStamp` الكائنات وتعيين خصائص المحاذاة الخاصة بها وفقًا لذلك. يتيح لك ذلك تحقيق توافقات مختلفة داخل نفس المستند.
 
-#### Q: What is the purpose of using the `FormattedText` class in the code?
-A: The `FormattedText` class allows you to create a structured text content with multiple lines and formatting options. It's used to define the content of the text stamp with multiple lines of text and new line breaks.
+####  س: ما هو الغرض من استخدام`FormattedText` class in the code?
+ ج: ال`FormattedText` يتيح لك class إنشاء محتوى نص منظم يحتوي على أسطر متعددة وخيارات تنسيق. يتم استخدامه لتحديد محتوى ختم النص بأسطر نصية متعددة وفواصل أسطر جديدة.
 
-#### Q: How do I modify the alignment of an existing text stamp in a PDF document?
+#### س: كيف يمكنني تعديل محاذاة ختم نص موجود في مستند PDF؟
 
-A: To modify the alignment of an existing text stamp, you need to access the specific `TextStamp` object and update its alignment properties (`HorizontalAlignment`, `VerticalAlignment`, `TextAlignment`) as demonstrated in the provided source code.
+ ج: لتعديل محاذاة ختم نص موجود، تحتاج إلى الوصول إلى العنصر المحدد`TextStamp` الكائن وتحديث خصائص المحاذاة الخاصة به (`HorizontalAlignment`, `VerticalAlignment`, `TextAlignment`) كما هو موضح في كود المصدر المقدم.
 
-#### Q: Is it possible to adjust the margins around the text stamp for better layout?
+#### س: هل من الممكن ضبط الهوامش حول ختم النص للحصول على تخطيط أفضل؟
 
-A: Yes, you can adjust the top margin of the `TextStamp` object using the `TopMargin` property. This allows you to control the spacing between the text stamp and other elements on the page.
+ ج: نعم، يمكنك ضبط الهامش العلوي لل`TextStamp` كائن باستخدام`TopMargin`ملكية. يتيح لك ذلك التحكم في التباعد بين ختم النص والعناصر الأخرى الموجودة على الصفحة.
 
-#### Q: Can I align text at different angles or orientations using this approach?
+#### س: هل يمكنني محاذاة النص بزوايا أو اتجاهات مختلفة باستخدام هذا الأسلوب؟
 
-A: While this tutorial focuses on center alignment, you can adjust the `RotationAngle` property of the `TextStamp` object to align the text at different angles or orientations, achieving effects like diagonal or vertical alignment.
+ ج: بينما يركز هذا البرنامج التعليمي على المحاذاة المركزية، يمكنك ضبط`RotationAngle` ملكية`TextStamp` كائن لمحاذاة النص في زوايا أو اتجاهات مختلفة، وتحقيق تأثيرات مثل المحاذاة القطرية أو العمودية.
 
-#### Q: What if I want to align text differently on different pages of the PDF document?
+#### س: ماذا لو كنت أرغب في محاذاة النص بشكل مختلف على صفحات مختلفة من مستند PDF؟
 
-A: You can modify the source code to create and apply different `TextStamp` objects with specific alignments to different pages of the PDF document. By repeating the process for each page, you can achieve varied text alignments throughout the document.
+ ج: يمكنك تعديل الكود المصدري لإنشاء وتطبيق مختلف`TextStamp` كائنات ذات محاذاة محددة لصفحات مختلفة من مستند PDF. من خلال تكرار العملية لكل صفحة، يمكنك تحقيق محاذاة نصية متنوعة في جميع أنحاء المستند.
 
-#### Q: How can I apply this knowledge to create other types of stamps or annotations with specific alignments?
+#### س: كيف يمكنني تطبيق هذه المعرفة لإنشاء أنواع أخرى من الطوابع أو التعليقات التوضيحية بمحاذاة محددة؟
 
-A: You can extend this knowledge to create other types of stamps or annotations (such as image stamps or custom drawings) by using similar alignment principles and the appropriate classes from the Aspose.PDF library.
+ج: يمكنك توسيع هذه المعرفة لإنشاء أنواع أخرى من الطوابع أو التعليقات التوضيحية (مثل طوابع الصور أو الرسومات المخصصة) باستخدام مبادئ محاذاة مماثلة والفئات المناسبة من مكتبة Aspose.PDF.

@@ -1,178 +1,178 @@
 ---
-title: Inherit Zoom In PDF File
-linktitle: Inherit Zoom In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily inherit bookmark zoom in PDF file with Aspose.PDF for .NET.
+title: وراثة التكبير في ملف PDF
+linktitle: وراثة التكبير في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: يمكنك بسهولة توارث تكبير الإشارة المرجعية في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 90
 url: /ar/net/programming-with-bookmarks/inherit-zoom/
 ---
-Zoom inheritance in PDF file allows you to specify a default zoom level for bookmarks. With Aspose.PDF for .NET, you can easily inherit zoom by following the following source code:
+يتيح لك وراثة التكبير/التصغير في ملف PDF تحديد مستوى التكبير/التصغير الافتراضي للإشارات المرجعية. باستخدام Aspose.PDF for .NET، يمكنك بسهولة اكتساب التكبير/التصغير باتباع التعليمات البرمجية المصدر التالية:
 
-## Step 1: Import required libraries
+## الخطوة 1: استيراد المكتبات المطلوبة
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+قبل أن تبدأ، تحتاج إلى استيراد المكتبات اللازمة لمشروع C# الخاص بك. فيما يلي توجيه الاستيراد الضروري:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-## Step 2: Set path to documents folder
+## الخطوة 2: تعيين المسار إلى مجلد المستندات
 
-In this step, you need to specify the path to the folder containing the PDF file you want to inherit the zoom from. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ في هذه الخطوة، تحتاج إلى تحديد المسار إلى المجلد الذي يحتوي على ملف PDF الذي تريد أن ترث التكبير/التصغير منه. يستبدل`"YOUR DOCUMENT DIRECTORY"`في الكود التالي مع المسار الفعلي لمجلد المستندات الخاص بك:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## الخطوة 3: افتح مستند PDF
 
-Now we are going to open the PDF document on which we want to inherit the zoom using the following code:
+سنقوم الآن بفتح مستند PDF الذي نريد أن نرث التكبير/التصغير باستخدام الكود التالي:
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Step 4: Get Bookmarks Collection
+## الخطوة 4: احصل على مجموعة الإشارات المرجعية
 
-In this step, we will get the collection of bookmarks or landmarks of the document using the `Outlines` property of the `doc` object. Here is the corresponding code:
+ في هذه الخطوة، سنحصل على مجموعة الإشارات المرجعية أو معالم المستند باستخدام ملف`Outlines` ملكية`doc` هدف. هنا هو الكود المقابل:
 
 ```csharp
 OutlineItemCollection item = new OutlineItemCollection(doc.Outlines);
 ```
 
-## Step 5: Set Zoom Level
+## الخطوة 5: ضبط مستوى التكبير/التصغير
 
-Now we will set the zoom level by creating an `XYZExplicitDestination` object with the specified x, y and z coordinates. Here we use the coordinates (100, 100, 0) with a zoom of 2. Here is the corresponding code:
+ الآن سوف نقوم بتعيين مستوى التكبير/التصغير عن طريق إنشاء`XYZExplicitDestination` كائن بإحداثيات x وy وz المحددة. نستخدم هنا الإحداثيات (100، 100، 0) مع تكبير 2. وإليك الكود المقابل:
 
 ```csharp
 XYZExplicitDestination dest = new XYZExplicitDestination(2, 100, 100, 0);
 ```
 
-## Step 6: Add Zoom Level to Bookmarks
+## الخطوة 6: إضافة مستوى التكبير/التصغير إلى الإشارات المرجعية
 
-In this step, we add the `XYZExplicitDestination` object as an action to the bookmarks of the `item` collection. Here is the corresponding code:
+ في هذه الخطوة نضيف`XYZExplicitDestination` كائن كإجراء إلى الإشارات المرجعية لل`item` مجموعة. هنا هو الكود المقابل:
 
 ```csharp
 item. Action = new GoToAction(dest);
 ```
 
-## Step 7: Add the updated bookmarks to the document
+## الخطوة 7: أضف الإشارات المرجعية المحدثة إلى المستند
 
-Finally, we add the updated bookmarks to the document's bookmarks collection using the `Add` method of the `doc.Outlines` object. Here is the corresponding code:
+ وأخيرًا، نضيف الإشارات المرجعية المحدثة إلى مجموعة الإشارات المرجعية للمستند باستخدام الملف`Add` طريقة`doc.Outlines` هدف. هنا هو الكود المقابل:
 
 ```csharp
 doc. Outlines. Add(item);
 ```
 
-## Step 8: Save the updated file
+## الخطوة 8: احفظ الملف المحدث
 
-Now let's save the updated PDF file using the `Save` method of the `doc` object. Here is the corresponding code:
+ الآن دعونا نحفظ ملف PDF المحدث باستخدام ملف`Save` طريقة`doc` هدف. هنا هو الكود المقابل:
 
 ```csharp
 dataDir = dataDir + "InheritZoom_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Inherit Zoom using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لـ Inherit Zoom باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document doc = new Document(dataDir + "input.pdf");
-// Get outlines/bookmarks collection of PDF file
+// احصل على مجموعة الخطوط العريضة/الإشارات المرجعية لملف PDF
 OutlineItemCollection item = new OutlineItemCollection(doc.Outlines);
-// Set zoom level as 0
+// اضبط مستوى التكبير/التصغير على 0
 XYZExplicitDestination dest = new XYZExplicitDestination(2, 100, 100, 0);
-// Add XYZExplicitDestination as action to outlines collection of PDF
+// أضف XYZExplicitDestination كإجراء لتحديد مجموعة ملفات PDF
 item.Action = new GoToAction(dest);
-// Add item to outlines collection of PDF file
+// إضافة عنصر إلى مجموعة الخطوط العريضة لملف PDF
 doc.Outlines.Add(item);
 dataDir = dataDir + "InheritZoom_out.pdf";
-// Save output
+// حفظ الإخراج
 doc.Save(dataDir);
 Console.WriteLine("\nBookmarks updated successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! Now you have a step by step guide to Inherit Zoom with Aspose.PDF for .NET. You can use this code to specify a default zoom level for bookmarks in your PDF documents.
+تهنئة ! الآن لديك دليل خطوة بخطوة لـ Inherit Zoom with Aspose.PDF for .NET. يمكنك استخدام هذا الرمز لتحديد مستوى التكبير/التصغير الافتراضي للإشارات المرجعية في مستندات PDF الخاصة بك.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+تأكد من مراجعة وثائق Aspose.PDF الرسمية لمزيد من المعلومات حول ميزات معالجة الإشارات المرجعية المتقدمة.
 
-### FAQ's for inherit zoom in PDF file
+### الأسئلة الشائعة لوراثة التكبير في ملف PDF
 
-#### Q: What is zoom inheritance in a PDF file?
+#### س: ما هو وراثة التكبير في ملف PDF؟
 
-A: Zoom inheritance refers to the ability to specify a default zoom level for bookmarks in a PDF document. This allows for consistent and user-friendly navigation when users interact with the bookmarks.
+ج: يشير وراثة التكبير/التصغير إلى القدرة على تحديد مستوى التكبير/التصغير الافتراضي للإشارات المرجعية في مستند PDF. يتيح ذلك التنقل المتسق وسهل الاستخدام عندما يتفاعل المستخدمون مع الإشارات المرجعية.
 
-#### Q: Why would I want to inherit zoom levels for bookmarks?
+#### س: لماذا أرغب في الحصول على مستويات التكبير/التصغير للإشارات المرجعية؟
 
-A: Inheriting zoom levels ensures that users have a consistent viewing experience when navigating through bookmarks in a PDF document. It can be particularly useful when you want to provide a specific view for different sections of a document.
+ج: يضمن اكتساب مستويات التكبير/التصغير حصول المستخدمين على تجربة عرض متسقة عند التنقل عبر الإشارات المرجعية في مستند PDF. يمكن أن يكون مفيدًا بشكل خاص عندما تريد توفير عرض محدد لأقسام مختلفة من المستند.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### س: كيف يمكنني استيراد المكتبات اللازمة لمشروع C# الخاص بي؟
 
-A: To import the required libraries for your C# project, include the following import directives:
+ج: لاستيراد المكتبات المطلوبة لمشروع C# الخاص بك، قم بتضمين توجيهات الاستيراد التالية:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-These directives enable you to access the classes and methods needed to work with PDF documents and bookmarks.
+تمكنك هذه التوجيهات من الوصول إلى الفئات والأساليب اللازمة للعمل مع مستندات PDF والإشارات المرجعية.
 
-#### Q: How do I specify the path to the documents folder?
+#### س: كيف أحدد المسار إلى مجلد المستندات؟
 
-A: In the provided source code, replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file for which you want to inherit zoom levels.
+ ج: في كود المصدر المقدم، استبدل`"YOUR DOCUMENT DIRECTORY"` بالمسار الفعلي للمجلد الذي يحتوي على ملف PDF الذي تريد أن ترث مستويات التكبير/التصغير له.
 
-#### Q: How do I open a PDF document to inherit zoom levels?
+#### س: كيف يمكنني فتح مستند PDF لاكتساب مستويات التكبير/التصغير؟
 
-A: To open a PDF document for inheriting zoom levels, use the following code:
+ج: لفتح مستند PDF لاكتساب مستويات التكبير/التصغير، استخدم الكود التالي:
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-Replace `"input.pdf"` with the actual file name.
+ يستبدل`"input.pdf"` مع اسم الملف الفعلي.
 
-#### Q: How do I set the zoom level for bookmarks?
+#### س: كيف يمكنني ضبط مستوى التكبير/التصغير للإشارات المرجعية؟
 
-A: To set the zoom level, create an `XYZExplicitDestination` object with the desired coordinates and zoom factor. Here's an example:
+ ج: لتعيين مستوى التكبير/التصغير، قم بإنشاء`XYZExplicitDestination` الكائن بالإحداثيات المطلوبة وعامل التكبير. هنا مثال:
 
 ```csharp
 XYZExplicitDestination dest = new XYZExplicitDestination(2, 100, 100, 0);
 ```
 
-This sets the zoom level to 2 at coordinates (100, 100).
+يؤدي هذا إلى ضبط مستوى التكبير/التصغير على 2 عند الإحداثيات (100، 100).
 
-#### Q: How do I add the zoom level to bookmarks?
+#### س: كيف يمكنني إضافة مستوى التكبير/التصغير إلى الإشارات المرجعية؟
 
-A: Add the `XYZExplicitDestination` object as an action to the bookmarks collection:
+ ج: أضف`XYZExplicitDestination` كائن كإجراء لمجموعة الإشارات المرجعية:
 
 ```csharp
 item.Action = new GoToAction(dest);
 ```
 
-Where `item` is an `OutlineItemCollection` representing a bookmark.
+ أين`item` هو`OutlineItemCollection` تمثل إشارة مرجعية.
 
-#### Q: How do I save the updated PDF file?
+#### س: كيف يمكنني حفظ ملف PDF المحدث؟
 
-A: Save the updated PDF file using the `Save` method of the `doc` object:
+ ج: احفظ ملف PDF المحدث باستخدام الملف`Save` طريقة`doc` هدف:
 
 ```csharp
 dataDir = dataDir + "InheritZoom_out.pdf";
 doc.Save(dataDir);
 ```
 
-#### Q: Can I customize zoom levels for different bookmarks?
+#### س: هل يمكنني تخصيص مستويات التكبير/التصغير لإشارات مرجعية مختلفة؟
 
-A: Yes, you can customize the zoom levels for different bookmarks by creating multiple `XYZExplicitDestination` objects with different coordinates and zoom factors.
+ ج: نعم، يمكنك تخصيص مستويات التكبير/التصغير لإشارات مرجعية مختلفة عن طريق إنشاء عدة إشارات`XYZExplicitDestination` كائنات ذات إحداثيات وعوامل تكبير مختلفة.
 
-#### Q: Is there a limit to the number of bookmarks I can apply zoom inheritance to?
+#### س: هل هناك حد لعدد الإشارات المرجعية التي يمكنني تطبيق توارث التكبير عليها؟
 
-A: There is typically no strict limit to the number of bookmarks you can apply zoom inheritance to. However, very large documents with an excessive number of bookmarks may require efficient memory management.
+ج: لا يوجد عادةً حد صارم لعدد الإشارات المرجعية التي يمكنك تطبيق توارث التكبير/التصغير عليها. ومع ذلك، قد تتطلب المستندات الكبيرة جدًا والتي تحتوي على عدد كبير من الإشارات المرجعية إدارة فعالة للذاكرة.
 
-#### Q: How can I confirm that the zoom inheritance has been applied?
+#### س: كيف يمكنني التأكد من تطبيق وراثة التكبير؟
 
-A: Open the generated PDF file to verify that the specified zoom levels have been inherited by the bookmarks.
+ج: افتح ملف PDF الذي تم إنشاؤه للتحقق من أن مستويات التكبير/التصغير المحددة قد ورثتها الإشارات المرجعية.

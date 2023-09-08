@@ -1,38 +1,38 @@
 ---
-title: Set Radio Button Caption
-linktitle: Set Radio Button Caption
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use Aspose.PDF for .NET to set the caption for a radio button in a PDF form.
+title: Radyo Düğmesi Başlığını Ayarla
+linktitle: Radyo Düğmesi Başlığını Ayarla
+second_title: .NET API Referansı için Aspose.PDF
+description: PDF formundaki bir radyo düğmesinin başlığını ayarlamak için Aspose.PDF for .NET'i nasıl kullanacağınızı öğrenin.
 type: docs
 weight: 280
 url: /tr/net/programming-with-forms/set-radio-button-caption/
 ---
-In this guide, we will explain step by step how to use the Aspose.PDF library for .NET to define the caption of a radio button in a PDF form. We'll show you how to access the radio button field, create a new radio button option, and customize the button caption.
+Bu kılavuzda, PDF formundaki bir radyo düğmesinin başlığını tanımlamak için Aspose.PDF kütüphanesinin .NET için nasıl kullanılacağını adım adım açıklayacağız. Size radyo düğmesi alanına nasıl erişeceğinizi, yeni bir radyo düğmesi seçeneği oluşturacağınızı ve düğme başlığını nasıl özelleştireceğinizi göstereceğiz.
 
-## Step 1: Configuring the document directory
+## 1. Adım: Belge dizinini yapılandırma
 
-The first step is to configure the document directory where the PDF form you want to work on is located. You can use the `dataDir` variable to specify the directory path.
+ İlk adım, üzerinde çalışmak istediğiniz PDF formunun bulunduğu belge dizinini yapılandırmaktır. Şunu kullanabilirsiniz:`dataDir` Dizin yolunu belirtmek için değişken.
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual path to your documents directory.
+ Değiştirdiğinizden emin olun`"YOUR DOCUMENTS DIRECTORY"` Belgeler dizininizin gerçek yolu ile.
 
-## Step 2: Loading the source PDF form
+## 2. Adım: Kaynak PDF formunu yükleme
 
-In this step, we will load the source PDF form using the `Aspose.Pdf.Facades.Form` class of Aspose.PDF.
+ Bu adımda, kaynak PDF formunu kullanarak yükleyeceğiz.`Aspose.Pdf.Facades.Form` Aspose.PDF sınıfı.
 
 ```csharp
 Aspose.Pdf.Facades.Form form1 = new Aspose.Pdf.Facades.Form(dataDir + "RadioButtonField.pdf");
 ```
 
-Make sure that the PDF file containing the form is present in the specified documents directory.
+Formu içeren PDF dosyasının belirtilen belgeler dizininde bulunduğundan emin olun.
 
-## Step 3: Editing the radio button caption
+## 3. Adım: Radyo düğmesi başlığını düzenleme
 
-We'll loop through the form field names and search for radio button fields. If a matching field is found, we'll create a new radio button option with a custom caption and add it to the existing field.
+Form alanı adları arasında dolaşacağız ve radyo düğmesi alanlarını arayacağız. Eşleşen bir alan bulunursa, özel başlık içeren yeni bir radyo düğmesi seçeneği oluşturup bunu mevcut alana ekleyeceğiz.
 
 ```csharp
 foreach(var item in form1.FieldNames)
@@ -47,15 +47,15 @@ var updatedFragment = new Aspose.Pdf.Text.TextFragment("test123");
 updatedFragment.TextState.Font = FontRepository.FindFont("Arial");
 updatedFragment.TextState.FontSize = 10;
 updatedFragment.TextState.LineSpacing = 6.32f;
-// Create a TextParagraph object
+// TextParagraph nesnesi oluşturma
 TextParagraph par = new TextParagraph();
-// Set paragraph position
+// Paragraf konumunu ayarla
 par.Position = new Position(field0.Rect.LLX, field0.Rect.LLY + updatedFragment.TextState.FontSize);
-// Specify word wrap mode
+// Kelime kaydırma modunu belirtin
 by.FormattingOptions.WrapMode = TextFormattingOptions.WordWrapMode.ByWords;
-// Add the new TextFragment to the paragraph
+// Yeni TextFragment'i paragrafa ekleme
 par.AppendLine(updatedFragment);
-// Add the TextParagraph using TextBuilder
+// TextBuilder'ı kullanarak TextParagraph'ı ekleme
 TextBuilder textBuilder = new TextBuilder(PDF_Template_PDF_HTML.Pages[1]);
 textBuilder.AppendParagraph(par);
 field0.DeleteOption("item1");
@@ -63,23 +63,23 @@ field0.DeleteOption("item1");
 }
 ```
 
-Customize the caption radio button and other settings as needed.
+Altyazı radyo düğmesini ve diğer ayarları gerektiği gibi özelleştirin.
 
-## Step 4: Saving the Resulting PDF
+## Adım 4: Ortaya Çıkan PDF'yi Kaydetme
 
-Now that we are done modifying the radio button caption, we can save the resulting PDF using the `Save` method of the `Document` class.
+ Artık radyo düğmesi başlığını değiştirmeyi bitirdiğimize göre, elde edilen PDF'yi aşağıdaki komutu kullanarak kaydedebiliriz:`Save` yöntemi`Document` sınıf.
 
 ```csharp
 PDF_Template_PDF_HTML.Save(dataDir + "RadioButtonField_out.pdf");
 ```
 
-Be sure to specify the full path and filename for the resulting PDF.
+Ortaya çıkan PDF'nin tam yolunu ve dosya adını belirttiğinizden emin olun.
 
-### Sample source code for Set Radio Button Caption using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Radyo Düğmesi Başlığını Ayarla için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Load source PDF form
+// Kaynak PDF formunu yükle
 Aspose.Pdf.Facades.Form form1 = new Aspose.Pdf.Facades.Form(dataDir + "RadioButtonField.pdf");
 Document PDF_Template_PDF_HTML = new Document(dataDir + "RadioButtonField.pdf");
 foreach (var item in form1.FieldNames)
@@ -96,15 +96,15 @@ foreach (var item in form1.FieldNames)
 		updatedFragment.TextState.Font = FontRepository.FindFont("Arial");
 		updatedFragment.TextState.FontSize = 10;
 		updatedFragment.TextState.LineSpacing = 6.32f;
-		// Create TextParagraph object
+		// TextParagraph nesnesi oluştur
 		TextParagraph par = new TextParagraph();
-		// Set paragraph position
+		// Paragraf konumunu ayarla
 		par.Position = new Position(field0.Rect.LLX, field0.Rect.LLY + updatedFragment.TextState.FontSize);
-		// Specify word wraping mode
+		// Kelime kaydırma modunu belirtin
 		par.FormattingOptions.WrapMode = TextFormattingOptions.WordWrapMode.ByWords;
-		// Add new TextFragment to paragraph
+		// Paragrafa yeni TextFragment ekle
 		par.AppendLine(updatedFragment);
-		// Add the TextParagraph using TextBuilder
+		// TextBuilder'ı kullanarak TextParagraph'ı ekleme
 		TextBuilder textBuilder = new TextBuilder(PDF_Template_PDF_HTML.Pages[1]);
 		textBuilder.AppendParagraph(par);
 		field0.DeleteOption("item1");
@@ -113,28 +113,28 @@ foreach (var item in form1.FieldNames)
 PDF_Template_PDF_HTML.Save(dataDir + "RadioButtonField_out.pdf");
 ```
 
-## Conclusion
+## Çözüm
 
-In this guide, we learned how to use the Aspose.PDF library for .NET to set the caption for a radio button in a PDF form. By following the described steps, you can customize the radio button options and change the caption as needed. Feel free to further explore the features of Aspose.PDF for .NET to expand the possibilities of manipulating PDF files.
+Bu kılavuzda, PDF formundaki bir radyo düğmesinin başlığını ayarlamak için .NET için Aspose.PDF kütüphanesini nasıl kullanacağımızı öğrendik. Açıklanan adımları izleyerek radyo düğmesi seçeneklerini özelleştirebilir ve başlığı gerektiği gibi değiştirebilirsiniz. PDF dosyalarını değiştirme olanaklarını genişletmek için Aspose.PDF for .NET'in özelliklerini daha fazla keşfetmekten çekinmeyin.
 
-### FAQ's
+### SSS'ler
 
-#### Q: Can I use Aspose.PDF for .NET to set captions for radio buttons in a PDF form?
+#### S: Aspose.PDF for .NET'i kullanarak PDF formundaki radyo düğmelerinin başlıklarını ayarlayabilir miyim?
 
-A: Yes, you can use Aspose.PDF for .NET to set captions for radio buttons in a PDF form. The provided sample source code demonstrates how to access the radio button field, create a new radio button option with a custom caption, and update the existing field.
+C: Evet, PDF formundaki radyo düğmelerinin başlıklarını ayarlamak için Aspose.PDF for .NET'i kullanabilirsiniz. Sağlanan örnek kaynak kodu, radyo düğmesi alanına nasıl erişileceğini, özel başlıkla yeni bir radyo düğmesi seçeneğinin nasıl oluşturulacağını ve mevcut alanın nasıl güncelleneceğini gösterir.
 
-#### Q: How can I customize the appearance of the radio button caption, such as font size and color?
+#### S: Radyo düğmesi başlığının yazı tipi boyutu ve rengi gibi görünümünü nasıl özelleştirebilirim?
 
-A: You can customize the appearance of the radio button caption by adjusting the properties of the `TextFragment` used for the caption. For example, you can set the font, font size, color, line spacing, and other text formatting options.
+ C: Radyo düğmesi başlığının özelliklerini ayarlayarak, radyo düğmesi başlığının görünümünü özelleştirebilirsiniz.`TextFragment` başlık için kullanılır. Örneğin yazı tipini, yazı tipi boyutunu, rengini, satır aralığını ve diğer metin biçimlendirme seçeneklerini ayarlayabilirsiniz.
 
-#### Q: Is it possible to add multiple radio button options with different captions to a single radio button group?
+#### S: Tek bir radyo düğmesi grubuna farklı başlıklara sahip birden fazla radyo düğmesi seçeneği eklemek mümkün müdür?
 
-A: Yes, you can add multiple radio button options with different captions to a single radio button group. Each option will represent a different choice, and users can select only one option from the group.
+C: Evet, tek bir radyo düğmesi grubuna farklı başlıklara sahip birden fazla radyo düğmesi seçeneği ekleyebilirsiniz. Her seçenek farklı bir seçeneği temsil edecek ve kullanıcılar gruptan yalnızca bir seçeneği seçebilecek.
 
-#### Q: Can I use Aspose.PDF for .NET to modify other form fields in a PDF document?
+#### S: Aspose.PDF for .NET'i bir PDF belgesindeki diğer form alanlarını değiştirmek için kullanabilir miyim?
 
-A: Yes, Aspose.PDF for .NET provides a comprehensive set of features to manipulate various form fields in a PDF document, such as text fields, checkboxes, dropdown lists, and more. You can use the library to set values, modify appearances, and add interactivity to form fields.
+C: Evet, Aspose.PDF for .NET, bir PDF belgesindeki metin alanları, onay kutuları, açılır listeler ve daha fazlası gibi çeşitli form alanlarını yönetmek için kapsamlı bir dizi özellik sağlar. Değerleri ayarlamak, görünümleri değiştirmek ve form alanlarına etkileşim eklemek için kitaplığı kullanabilirsiniz.
 
-#### Q: Does Aspose.PDF for .NET support working with PDFs generated from other sources, such as scanned documents?
+#### S: Aspose.PDF for .NET, taranmış belgeler gibi diğer kaynaklardan oluşturulan PDF'lerle çalışmayı destekliyor mu?
 
-A: Yes, Aspose.PDF for .NET supports working with PDFs generated from various sources, including scanned documents. The library provides OCR (Optical Character Recognition) capabilities to extract text from scanned PDFs and manipulate the content programmatically.
+C: Evet, Aspose.PDF for .NET, taranmış belgeler de dahil olmak üzere çeşitli kaynaklardan oluşturulan PDF'lerle çalışmayı destekler. Kitaplık, taranan PDF'lerden metin çıkarmak ve içeriği programlı olarak değiştirmek için OCR (Optik Karakter Tanıma) yetenekleri sağlar.

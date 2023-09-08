@@ -1,54 +1,54 @@
 ---
-title: Add Drawing With Gradient Fill
-linktitle: Add Drawing With Gradient Fill
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add a drawing with gradient fill with Aspose.PDF for .NET. Step by step tutorial to create attractive PDF documents.
+title: Agregar dibujo con relleno degradado
+linktitle: Agregar dibujo con relleno degradado
+second_title: Aspose.PDF para referencia de API .NET
+description: Aprenda cómo agregar un dibujo con relleno degradado con Aspose.PDF para .NET. Tutorial paso a paso para crear atractivos documentos PDF.
 type: docs
 weight: 20
 url: /es/net/programming-with-graphs/add-drawing-with-gradient-fill/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to add a drawing with gradient fill to programming with graphics using Aspose.PDF for .NET.
+En este tutorial, lo guiaremos a través del siguiente código fuente de C# paso a paso para agregar un dibujo con relleno degradado a la programación con gráficos usando Aspose.PDF para .NET.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Asegúrese de haber instalado la biblioteca Aspose.PDF y configurar su entorno de desarrollo antes de comenzar. También tener conocimientos básicos de programación en C#.
 
-## Step 1: Document Directory Setup
+## Paso 1: Configuración del directorio de documentos
 
-In the provided source code, you need to specify the directory where you want to save the resulting PDF file. Change the "dataDir" variable to the desired directory.
+En el código fuente proporcionado, debe especificar el directorio donde desea guardar el archivo PDF resultante. Cambie la variable "dataDir" al directorio deseado.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Instantiating a Document Object and Adding a Page
+## Paso 2: crear una instancia de un objeto de documento y agregar una página
 
-We create an instance of the Document class and add a page to this document.
+Creamos una instancia de la clase Documento y agregamos una página a este documento.
 
 ```csharp
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Step 3: Creating a Graph Object and Adding it to the Page
+## Paso 3: crear un objeto gráfico y agregarlo a la página
 
-We create a Graph object with specified dimensions and add it to the page's paragraph collection.
+Creamos un objeto Graph con dimensiones específicas y lo agregamos a la colección de párrafos de la página.
 
 ```csharp
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(300, 300);
 page.Paragraphs.Add(graph);
 ```
 
-## Step 4: Create Rectangle Object and Add to Chart
+## Paso 4: crear un objeto rectangular y agregarlo al gráfico
 
-We create a Rectangle object with specified dimensions and add it to the chart's shape collection.
+Creamos un objeto Rectángulo con dimensiones específicas y lo agregamos a la colección de formas del gráfico.
 
 ```csharp
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(0, 0, 300, 300);
 graph.Shapes.Add(rect);
 ```
 
-## Step 5: Configuring Gradient Fill
+## Paso 5: Configurar el relleno degradado
 
-We configure the gradient fill for the rectangle using the GradientAxialShading class.
+Configuramos el relleno degradado para el rectángulo usando la clase GradientAxialShading.
 
 ```csharp
 rect.GraphInfo.FillColor = new Aspose.Pdf.Color
@@ -61,21 +61,21 @@ End = new Point(300, 300)
 };
 ```
 
-This creates a gradient fill from red to blue, from point (0, 0) to point (300, 300).
+Esto crea un relleno degradado de rojo a azul, desde el punto (0, 0) hasta el punto (300, 300).
 
-## Step 6: Saving the PDF File
+## Paso 6: guardar el archivo PDF
 
-Finally, we save the resulting PDF file with the name "AddDrawingWithGradientFill_out.pdf" in the specified directory.
+Finalmente, guardamos el archivo PDF resultante con el nombre "AddDrawingWithGradientFill_out.pdf" en el directorio especificado.
 
 ```csharp
 doc.Save(dataDir + "AddDrawingWithGradientFill_out.pdf");
 ```
 
-### Sample source code for Add Drawing With Gradient Fill using Aspose.PDF for .NET 
+### Código fuente de muestra para agregar dibujo con relleno degradado usando Aspose.PDF para .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 Page page = doc.Pages.Add();
@@ -94,44 +94,44 @@ rect.GraphInfo.FillColor = new Aspose.Pdf.Color
 doc.Save(dataDir + "AddDrawingWithGradientFill_out.pdf");
 
 ```
-## Conclusion
+## Conclusión
 
-In this tutorial, we have explained step by step how to add a drawing with a gradient fill to programming with graphics using Aspose.PDF for .NET. Now you can use this knowledge to create attractive PDF documents with custom designs and gradient fills.
+En este tutorial hemos explicado paso a paso cómo añadir un dibujo con relleno degradado a la programación con gráficos usando Aspose.PDF para .NET. Ahora puede utilizar este conocimiento para crear atractivos documentos PDF con diseños personalizados y rellenos degradados.
 
-### FAQ's
+### Preguntas frecuentes
 
-#### Q: What is the purpose of this tutorial?
+#### P: ¿Cuál es el propósito de este tutorial?
 
-A: This tutorial aims to guide you through the process of adding a drawing with gradient fill to programming with graphics using Aspose.PDF for .NET.
+R: Este tutorial tiene como objetivo guiarlo a través del proceso de agregar un dibujo con relleno degradado a la programación con gráficos usando Aspose.PDF para .NET.
 
-#### Q: What prerequisites are required before starting?
+#### P: ¿Qué requisitos previos se requieren antes de comenzar?
 
-A: Before you begin, ensure that you have installed the Aspose.PDF library and set up your development environment. Additionally, having a basic understanding of C# programming is recommended.
+R: Antes de comenzar, asegúrese de haber instalado la biblioteca Aspose.PDF y configurado su entorno de desarrollo. Además, se recomienda tener conocimientos básicos de programación en C#.
 
-#### Q: How do I specify the directory for saving the PDF file?
+#### P: ¿Cómo especifico el directorio para guardar el archivo PDF?
 
-A: In the provided source code, you can change the value of the "dataDir" variable to indicate the directory where you want to save the resulting PDF file.
+R: En el código fuente proporcionado, puede cambiar el valor de la variable "dataDir" para indicar el directorio donde desea guardar el archivo PDF resultante.
 
-#### Q: What is the purpose of the Graph object?
+#### P: ¿Cuál es el propósito del objeto Graph?
 
-A: The Graph object serves as a container for the drawing elements. It is created with specified dimensions and added to the page's paragraph collection.
+R: El objeto Gráfico sirve como contenedor para los elementos de dibujo. Se crea con dimensiones específicas y se agrega a la colección de párrafos de la página.
 
-#### Q: How can I configure gradient fill for a shape?
+#### P: ¿Cómo puedo configurar el relleno degradado para una forma?
 
-A: To configure gradient fill, you can set the FillColor property of a shape's GraphInfo using the GradientAxialShading class. This allows you to define the start and end points of the gradient and the colors to transition between.
+R: Para configurar el relleno degradado, puede configurar la propiedad FillColor de GraphInfo de una forma usando la clase GradientAxialShading. Esto le permite definir los puntos inicial y final del degradado y los colores entre los que realizar la transición.
 
-#### Q: Can I customize the colors and direction of the gradient fill?
+#### P: ¿Puedo personalizar los colores y la dirección del relleno degradado?
 
-A: Yes, you can customize the colors and direction of the gradient fill by adjusting the Color objects and specifying the start and end points of the GradientAxialShading.
+R: Sí, puede personalizar los colores y la dirección del relleno degradado ajustando los objetos de color y especificando los puntos inicial y final de GradientAxialShading.
 
-#### Q: What is the final step of the tutorial?
+#### P: ¿Cuál es el paso final del tutorial?
 
-A: The final step involves saving the resulting PDF file with the name "AddDrawingWithGradientFill_out.pdf" in the specified directory.
+R: El último paso consiste en guardar el archivo PDF resultante con el nombre "AddDrawingWithGradientFill_out.pdf" en el directorio especificado.
 
-#### Q: Is there a sample source code available?
+#### P: ¿Hay un código fuente de muestra disponible?
 
-A: Yes, the tutorial provides a sample source code that you can use as a reference to implement the steps described.
+R: Sí, el tutorial proporciona un código fuente de muestra que puede utilizar como referencia para implementar los pasos descritos.
 
-#### Q: Can I apply gradient fill to other shapes besides rectangles?
+#### P: ¿Puedo aplicar relleno degradado a otras formas además de los rectángulos?
 
-A: Yes, you can apply gradient fill to other shapes as well. The process involves configuring the FillColor property of the shape's GraphInfo using the GradientAxialShading class.
+R: Sí, también puedes aplicar relleno degradado a otras formas. El proceso implica configurar la propiedad FillColor de GraphInfo de la forma usando la clase GradientAxialShading.

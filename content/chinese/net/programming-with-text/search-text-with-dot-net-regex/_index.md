@@ -1,102 +1,102 @@
 ---
-title: Search Text With Dot Net Regex
-linktitle: Search Text With Dot Net Regex
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to search for text using .NET regular expressions in a PDF document using Aspose.PDF for .NET.
+title: 使用 Dot Net Regex 搜索文本
+linktitle: 使用 Dot Net Regex 搜索文本
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 在 PDF 文档中使用 .NET 正则表达式搜索文本。
 type: docs
 weight: 480
 url: /zh/net/programming-with-text/search-text-with-dot-net-regex/
 ---
-This tutorial explains how to use Aspose.PDF for .NET to search for text using .NET regular expressions in a PDF document. The provided C# source code demonstrates the process step by step.
+本教程介绍如何使用 Aspose.PDF for .NET 在 PDF 文档中使用 .NET 正则表达式搜索文本。提供的 C# 源代码逐步演示了该过程。
 
-## Prerequisites
+## 先决条件
 
-Before proceeding with the tutorial, make sure you have the following:
+在继续学习本教程之前，请确保您具备以下条件：
 
-- Basic knowledge of C# programming language.
-- Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to install it in your project.
+- C# 编程语言的基础知识。
+- 安装了 Aspose.PDF for .NET 库。您可以从 Aspose 网站获取它或使用 NuGet 将其安装到您的项目中。
 
-## Step 1: Set up the project
+## 第 1 步：设置项目
 
-Start by creating a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library.
+首先在您首选的集成开发环境 (IDE) 中创建一个新的 C# 项目，并添加对 Aspose.PDF for .NET 库的引用。
 
-## Step 2: Import necessary namespaces
+## 第2步：导入必要的命名空间
 
-Add the following using directives at the beginning of your C# file to import the required namespaces:
+在 C# 文件的开头添加以下 using 指令以导入所需的命名空间：
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Set the path to the document directory
+## 第三步：设置文档目录路径
 
-Set the path to your document directory using the `dataDir` variable:
+使用以下命令设置文档目录的路径`dataDir`多变的：
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+代替`"YOUR DOCUMENT DIRECTORY"`与文档目录的实际路径。
 
-## Step 4: Create a .NET Regex object
+## 步骤 4：创建 .NET Regex 对象
 
-Create a `.NET Regex` object to define the search pattern:
+创建一个`.NET Regex`定义搜索模式的对象：
 
 ```csharp
 System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@"[\S]+");
 ```
 
-Replace `@"[\S]+"` with your desired regular expression pattern.
+代替`@"[\S]+"`与您想要的正则表达式模式。
 
-## Step 5: Load the PDF document
+## 第 5 步：加载 PDF 文档
 
-Load the PDF document using the `Document` class:
+使用加载 PDF 文档`Document`班级：
 
 ```csharp
 Aspose.Pdf.Document document = new Aspose.Pdf.Document(dataDir + "SearchTextRegex.pdf");
 ```
 
-Replace `"SearchTextRegex.pdf"` with the actual name of your PDF file.
+代替`"SearchTextRegex.pdf"`与您的 PDF 文件的实际名称。
 
-## Step 6: Get a specific page
+## 第6步：获取特定页面
 
-Get the desired page of the document:
+获取文档所需的页面：
 
 ```csharp
 Page page = document.Pages[1];
 ```
 
-Replace `1` with the desired page number (1-based index).
+代替`1`与所需的页码（从 1 开始的索引）。
 
-## Step 7: Create a TextFragmentAbsorber
+## 第7步：创建一个TextFragmentAbsorber
 
-Create a `TextFragmentAbsorber` object to find all instances of the input regular expression:
+创建一个`TextFragmentAbsorber`对象查找输入正则表达式的所有实例：
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(regex);
 textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
 ```
 
-## Step 8: Accept the absorber for the page
+## 第 8 步：接受页面的吸收器
 
-Accept the absorber for the page:
+接受页面的吸收器：
 
 ```csharp
 page.Accept(textFragmentAbsorber);
 ```
 
-## Step 9: Retrieve the extracted text fragments
+## 步骤9：检索提取的文本片段
 
-Get the extracted text fragments using the `TextFragments` property of the `TextFragmentAbsorber` object:
+使用以下命令获取提取的文本片段`TextFragments`的财产`TextFragmentAbsorber`目的：
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
 ```
 
-## Step 10: Loop through the text fragments
+## 第 10 步：循环遍历文本片段
 
-Loop through the retrieved text fragments and perform desired actions:
+循环检索到的文本片段并执行所需的操作：
 
 ```csharp
 foreach (TextFragment textFragment in textFragmentCollection)
@@ -105,69 +105,69 @@ foreach (TextFragment textFragment in textFragmentCollection)
 }
 ```
 
-Modify the code within the loop to perform further actions on each text fragment if needed.
+如果需要，修改循环内的代码以对每个文本片段执行进一步的操作。
 
-### Sample source code for Search Text With Dot Net Regex using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 使用 Dot Net Regex 搜索文本的示例源代码 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create Regex object to find all words
+//创建 Regex 对象来查找所有单词
 System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@"[\S]+");
-// Open document
+//打开文档
 Aspose.Pdf.Document document = new Aspose.Pdf.Document(dataDir + "SearchTextRegex.pdf");
-// Get a particular page
+//获取特定页面
 Page page = document.Pages[1];
-// Create TextAbsorber object to find all instances of the input regex
+//创建 TextAbsorber 对象以查找输入正则表达式的所有实例
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(regex);
 textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
-// Accept the absorber for the page
+//接受页面的吸收器
 page.Accept(textFragmentAbsorber);
-// Get the extracted text fragments
+//获取提取的文本片段
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-// Loop through the fragments
+//循环遍历片段
 foreach (TextFragment textFragment in textFragmentCollection)
 {
 	Console.WriteLine(textFragment.Text);
 }
 ```
 
-## Conclusion
+## 结论
 
-Congratulations! You have successfully learned how to search for text using .NET regular expressions in a PDF document using Aspose.PDF for .NET. This tutorial provided a step-by-step guide, from setting up the project to accessing the extracted text fragments. You can now incorporate this code into your own C# projects to perform advanced text searches in PDF files.
+恭喜！您已成功学习如何使用 Aspose.PDF for .NET 在 PDF 文档中使用 .NET 正则表达式搜索文本。本教程提供了从设置项目到访问提取的文本片段的分步指南。现在，您可以将此代码合并到您自己的 C# 项目中，以在 PDF 文件中执行高级文本搜索。
 
-### FAQ's
+### 常见问题解答
 
-#### Q: What is the purpose of the "Search Text With Dot Net Regex" tutorial?
+#### 问：“使用 Dot Net Regex 搜索文本”教程的目的是什么？
 
-A: The "Search Text With Dot Net Regex" tutorial aims to guide users on using the Aspose.PDF library for .NET to search for text within a PDF document using .NET regular expressions. The tutorial provides step-by-step instructions and C# code samples to demonstrate the process.
+答：“使用 Dot Net Regex 搜索文本”教程旨在指导用户使用 Aspose.PDF .NET 库，使用 .NET 正则表达式在 PDF 文档中搜索文本。本教程提供分步说明和 C# 代码示例来演示该过程。
 
-#### Q: How does this tutorial help in searching for text using .NET regular expressions in a PDF?
+#### 问：本教程如何帮助您在 PDF 中使用 .NET 正则表达式搜索文本？
 
-A: This tutorial helps users understand how to leverage the capabilities of Aspose.PDF for .NET to search for text using .NET regular expressions within a PDF document. By following the provided steps and code examples, users can effectively search for text patterns that match their specified regular expressions.
+答：本教程帮助用户了解如何利用 Aspose.PDF for .NET 的功能在 PDF 文档中使用 .NET 正则表达式搜索文本。通过遵循提供的步骤和代码示例，用户可以有效地搜索与其指定的正则表达式匹配的文本模式。
 
-#### Q: What prerequisites are required to follow this tutorial?
+#### 问：学习本教程需要什么先决条件？
 
-A: Before starting the tutorial, you should have a basic understanding of the C# programming language. Additionally, you need to have the Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or install it in your project using NuGet.
+答：在开始本教程之前，您应该对 C# 编程语言有基本的了解。此外，您需要安装 Aspose.PDF for .NET 库。您可以从 Aspose 网站获取它或使用 NuGet 将其安装到您的项目中。
 
-#### Q: How do I set up my project to follow this tutorial?
+#### 问：如何设置我的项目来遵循本教程？
 
-A: To begin, create a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library. This will enable you to utilize the library's features for searching and working with PDF documents.
+答：首先，在您首选的集成开发环境 (IDE) 中创建一个新的 C# 项目，并添加对 Aspose.PDF for .NET 库的引用。这将使您能够利用库的功能来搜索和处理 PDF 文档。
 
-#### Q: Can I use this tutorial to search for any specific type of text using .NET regular expressions?
+#### 问：我可以使用本教程使用 .NET 正则表达式搜索任何特定类型的文本吗？
 
-A: Yes, this tutorial provides instructions on how to search for text using .NET regular expressions within a PDF document. You can customize the `.NET Regex` object to define the specific search pattern you want to use.
+答：是的，本教程提供有关如何在 PDF 文档中使用 .NET 正则表达式搜索文本的说明。您可以自定义`.NET Regex`对象来定义您要使用的特定搜索模式。
 
-#### Q: How do I specify the .NET regular expression pattern to search for in this tutorial?
+#### 问：如何指定本教程中要搜索的 .NET 正则表达式模式？
 
-A: To specify the .NET regular expression pattern you want to search for, create a `.NET Regex` object and set its pattern using the appropriate regular expression syntax. Replace the default `@"[\S]+"` in the tutorial's code with your desired regular expression.
+答：要指定要搜索的 .NET 正则表达式模式，请创建一个`.NET Regex`对象并使用适当的正则表达式语法设置其模式。替换默认值`@"[\S]+"`在教程的代码中添加您所需的正则表达式。
 
-#### Q: How do I retrieve the properties of the extracted text fragments?
+#### 问：如何检索提取的文本片段的属性？
 
-A: After accepting the `TextFragmentAbsorber` for a specific page of the PDF, you can retrieve the extracted text fragments using the `TextFragments` property of the absorber object. This provides access to a collection of text fragments that match the specified .NET regular expression.
+答：接受后`TextFragmentAbsorber`对于 PDF 的特定页面，您可以使用以下命令检索提取的文本片段`TextFragments`吸收体对象的属性。这提供了对与指定 .NET 正则表达式匹配的文本片段集合的访问。
 
-#### Q: Can I customize the code to perform additional actions on each extracted text fragment?
+#### 问：我可以自定义代码以对每个提取的文本片段执行其他操作吗？
 
-A: Certainly. The tutorial's sample code includes a loop to iterate through the retrieved text fragments. You can customize the code within this loop to perform additional actions on each extracted text fragment based on your project requirements.
+答：当然可以。本教程的示例代码包括一个循环，用于迭代检索到的文本片段。您可以自定义此循环中的代码，以根据您的项目要求对每个提取的文本片段执行其他操作。
 
-#### Q: How do I save the modified PDF document after extracting text fragments?
+#### 问：提取文本片段后如何保存修改后的PDF文档？
 
-A: This tutorial primarily focuses on searching for text using .NET regular expressions and retrieving text fragments. If you intend to make modifications to the PDF, you can refer to other Aspose.PDF documentation to learn how to manipulate and save the document based on your specific needs.
+答：本教程主要关注使用 .NET 正则表达式搜索文本并检索文本片段。如果您打算对 PDF 进行修改，您可以参考其他 Aspose.PDF 文档，了解如何根据您的具体需求操作和保存文档。

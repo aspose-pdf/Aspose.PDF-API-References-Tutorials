@@ -1,143 +1,143 @@
 ---
-title: Page Orientation According Image Dimensions
-linktitle: Page Orientation According Image Dimensions
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to set page orientation based on image dimensions with Aspose.PDF for .NET.
+title: Seitenausrichtung gemäß Bildabmessungen
+linktitle: Seitenausrichtung gemäß Bildabmessungen
+second_title: Aspose.PDF für .NET API-Referenz
+description: Schritt-für-Schritt-Anleitung zum Festlegen der Seitenausrichtung basierend auf Bildabmessungen mit Aspose.PDF für .NET.
 type: docs
 weight: 80
 url: /de/net/document-conversion/page-orientation-according-image-dimensions/
 ---
-In this tutorial, we'll walk you through the process of setting page orientation based on an image's dimensions using Aspose.PDF for .NET. We will loop through a list of JPG images in a given directory and automatically adjust the page orientation based on the width of each image. Follow the steps below to achieve this.
+In diesem Tutorial führen wir Sie durch den Prozess der Festlegung der Seitenausrichtung basierend auf den Abmessungen eines Bildes mithilfe von Aspose.PDF für .NET. Wir durchlaufen eine Liste von JPG-Bildern in einem bestimmten Verzeichnis und passen die Seitenausrichtung automatisch an die Breite jedes Bildes an. Befolgen Sie die folgenden Schritte, um dies zu erreichen.
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## Voraussetzungen
+Bevor Sie beginnen, stellen Sie sicher, dass Sie die folgenden Voraussetzungen erfüllen:
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- Grundkenntnisse der Programmiersprache C#.
+- Aspose.PDF-Bibliothek für .NET auf Ihrem System installiert.
+- Eine Entwicklungsumgebung wie Visual Studio.
 
-## Step 1: Browse JPG images
-At this step, we will browse all JPG images in a given directory. Follow the code below:
+## Schritt 1: Durchsuchen Sie JPG-Bilder
+In diesem Schritt durchsuchen wir alle JPG-Bilder in einem bestimmten Verzeichnis. Befolgen Sie den folgenden Code:
 
 ```csharp
-// Path to the documents directory.
+// Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Create a new PDF document
+// Erstellen Sie ein neues PDF-Dokument
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
-// Retrieve the names of all JPG files in a particular directory
+// Rufen Sie die Namen aller JPG-Dateien in einem bestimmten Verzeichnis ab
 string[] fileEntries = Directory.GetFiles(dataDir, "*.JPG");
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where your JPG images are located.
+ Unbedingt ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre JPG-Bilder befinden.
 
-## Step 2: Creation of the page and the image
-After browsing the JPG files, we will create a page and an image for each file. Use the following code:
+## Schritt 2: Erstellung der Seite und des Bildes
+Nachdem wir die JPG-Dateien durchsucht haben, erstellen wir für jede Datei eine Seite und ein Bild. Verwenden Sie den folgenden Code:
 
 ```csharp
 int counter;
 for (counter = 0; counter < fileEntries.Length - 1; counter++)
 {
-// Create a Page object
+// Erstellen Sie ein Seitenobjekt
 Aspose.Pdf.Page page = doc.Pages.Add();
 
-// Create an Image object
+// Erstellen Sie ein Bildobjekt
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 image1.File = fileEntries[counter];
 ```
 
-## Step 3: Checking image dimensions
-Now let's check the dimensions of each image to determine the page orientation. Use the following code:
+## Schritt 3: Bildabmessungen prüfen
+Lassen Sie uns nun die Abmessungen jedes Bildes überprüfen, um die Seitenausrichtung zu bestimmen. Verwenden Sie den folgenden Code:
 
 ```csharp
-// Create a BitMap object to get information from the image file
+// Erstellen Sie ein BitMap-Objekt, um Informationen aus der Bilddatei abzurufen
 Bitmap myimage = new Bitmap(fileEntries[counter]);
 
-// Check if the width of the image is greater than the width of the page or not
+// Überprüfen Sie, ob die Breite des Bildes größer als die Breite der Seite ist oder nicht
 if (myimage.Width > page.PageInfo.Width)
 //
 
   If the width of the image is greater than the width of the page, set the page orientation to landscape
 page.PageInfo.IsLandscape = true;
 else
-// If the width of the image is less than the width of the page, set the orientation of the page to portrait
+// Wenn die Breite des Bildes geringer ist als die Breite der Seite, stellen Sie die Ausrichtung der Seite auf Hochformat ein
 page.PageInfo.IsLandscape = false;
 ```
 
-## Step 4: Adding the image to the PDF document
-After checking the dimensions of the image, we will add the image to the PDF document's paragraph collection. Use the following code:
+## Schritt 4: Hinzufügen des Bildes zum PDF-Dokument
+Nachdem wir die Abmessungen des Bildes überprüft haben, fügen wir das Bild der Absatzsammlung des PDF-Dokuments hinzu. Verwenden Sie den folgenden Code:
 
 ```csharp
-// Add the image to the paragraph collection of the PDF document
+// Fügen Sie das Bild zur Absatzsammlung des PDF-Dokuments hinzu
 page.Paragraphs.Add(image1);
 ```
 
-## Step 5: Saving the PDF file
-Once we have added all the images to the PDF document, we can now save the resulting PDF file. Here is the last step:
+## Schritt 5: Speichern der PDF-Datei
+Nachdem wir alle Bilder zum PDF-Dokument hinzugefügt haben, können wir nun die resultierende PDF-Datei speichern. Hier ist der letzte Schritt:
 
 ```csharp
-// Save the PDF file
+// Speichern Sie die PDF-Datei
 doc.Save(dataDir + "SetPageOrientation_out.pdf");
 ```
 
-Replace `"YOUR DOCUMENTS DIRECTORY"` with the desired directory where you want to save the output PDF file.
+ Ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem gewünschten Verzeichnis, in dem Sie die ausgegebene PDF-Datei speichern möchten.
 
-### Example source code for Page Orientation According Image Dimensions using Aspose.PDF for .NET
+### Beispielquellcode für die Seitenausrichtung entsprechend den Bildabmessungen mit Aspose.PDF für .NET
 
 ```csharp
 
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
-// Retrieve names of all the JPG files in a particular Directory
+// Rufen Sie die Namen aller JPG-Dateien in einem bestimmten Verzeichnis ab
 string[] fileEntries = Directory.GetFiles(dataDir, "*.JPG");
 
 int counter;
 for (counter = 0; counter < fileEntries.Length - 1; counter++)
 {
-	// Create a page object
+	// Erstellen Sie ein Seitenobjekt
 	Aspose.Pdf.Page page = doc.Pages.Add();
 
-	// Creat an image object
+	// Erstellen Sie ein Bildobjekt
 	Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 	image1.File = fileEntries[counter];
 
-	// Create a BitMap object in order to get the information of image file
+	// Erstellen Sie ein BitMap-Objekt, um die Informationen der Bilddatei abzurufen
 	Bitmap myimage = new Bitmap(fileEntries[counter]);
-	// Check if the width of the image file is greater than Page width or not
+	// Überprüfen Sie, ob die Breite der Bilddatei größer als die Seitenbreite ist oder nicht
 	if (myimage.Width > page.PageInfo.Width)
-		// If the Image width is greater than page width, then set the page orientation to Landscape
+		// Wenn die Bildbreite größer als die Seitenbreite ist, stellen Sie die Seitenausrichtung auf Querformat ein
 		page.PageInfo.IsLandscape = true;
 	else
-		// If the Image width is less than page width, then set the page orientation to Portrait
+		// Wenn die Bildbreite kleiner als die Seitenbreite ist, stellen Sie die Seitenausrichtung auf Hochformat ein
 		page.PageInfo.IsLandscape = false;
-	// Add the image to paragraphs collection of the PDF document 
+	// Fügen Sie das Bild zur Absatzsammlung des PDF-Dokuments hinzu
 	page.Paragraphs.Add(image1);
 }
-// Save the Pdf file
+// Speichern Sie die PDF-Datei
 doc.Save(dataDir + "SetPageOrientation_out.pdf");
 ```
 
-## Conclusion
-In this tutorial, we've covered the step-by-step process of setting page orientation based on an image's dimensions using Aspose.PDF for .NET. By following the instructions outlined above, you should now be able to create a PDF document with the correct page orientation for each image. This feature is useful when you have images of different sizes and want to embed them into a PDF document.
+## Abschluss
+In diesem Tutorial haben wir den Schritt-für-Schritt-Prozess zum Festlegen der Seitenausrichtung basierend auf den Abmessungen eines Bildes mit Aspose.PDF für .NET behandelt. Wenn Sie die oben beschriebenen Anweisungen befolgen, sollten Sie nun in der Lage sein, für jedes Bild ein PDF-Dokument mit der richtigen Seitenausrichtung zu erstellen. Diese Funktion ist nützlich, wenn Sie Bilder unterschiedlicher Größe haben und diese in ein PDF-Dokument einbetten möchten.
 
-### FAQ's
+### FAQs
 
-#### Q: Can I use other image formats instead of JPG for setting page orientation based on image dimensions?
+#### F: Kann ich anstelle von JPG andere Bildformate verwenden, um die Seitenausrichtung basierend auf den Bildabmessungen festzulegen?
 
-A: Yes, you can use other image formats such as PNG, BMP, or GIF in addition to JPG for setting page orientation based on image dimensions. The provided code loops through all image files with the ".JPG" extension, but you can modify it to include other image formats as well.
+A: Ja, Sie können neben JPG auch andere Bildformate wie PNG, BMP oder GIF verwenden, um die Seitenausrichtung basierend auf den Bildabmessungen festzulegen. Der bereitgestellte Code durchläuft alle Bilddateien mit der Erweiterung „.JPG“, Sie können ihn jedoch ändern, um auch andere Bildformate einzubeziehen.
 
-#### Q: What happens if an image's dimensions are exactly equal to the page width?
+#### F: Was passiert, wenn die Abmessungen eines Bildes genau der Seitenbreite entsprechen?
 
-A: If an image's width is exactly equal to the page width, the page orientation will be set to portrait. In the code provided, the page orientation is set to landscape only if the image's width is greater than the page width.
+A: Wenn die Breite eines Bildes genau der Seitenbreite entspricht, wird die Seitenausrichtung auf Hochformat eingestellt. Im bereitgestellten Code ist die Seitenausrichtung nur dann auf Querformat eingestellt, wenn die Breite des Bildes größer als die Seitenbreite ist.
 
-#### Q: Can I customize the page orientation logic based on specific requirements?
+#### F: Kann ich die Seitenausrichtungslogik basierend auf spezifischen Anforderungen anpassen?
 
-A: Yes, you can customize the page orientation logic based on specific requirements. For example, you can set a threshold value to determine when the page orientation should be set to landscape or portrait. Additionally, you can consider factors such as image height or aspect ratio to determine the page orientation.
+A: Ja, Sie können die Seitenausrichtungslogik basierend auf spezifischen Anforderungen anpassen. Sie können beispielsweise einen Schwellenwert festlegen, um zu bestimmen, wann die Seitenausrichtung auf Quer- oder Hochformat eingestellt werden soll. Darüber hinaus können Sie Faktoren wie Bildhöhe oder Seitenverhältnis berücksichtigen, um die Seitenausrichtung zu bestimmen.
 
-#### Q: Can I add other content, such as text or tables, to the PDF document along with the images?
+#### F: Kann ich neben den Bildern auch andere Inhalte wie Text oder Tabellen zum PDF-Dokument hinzufügen?
 
-A: Yes, you can add other content, such as text or tables, to the PDF document along with the images. Aspose.PDF for .NET provides a rich set of features to manipulate PDF documents, including adding text, images, tables, and other elements to the pages.
+A: Ja, Sie können dem PDF-Dokument neben den Bildern auch andere Inhalte wie Text oder Tabellen hinzufügen. Aspose.PDF für .NET bietet zahlreiche Funktionen zum Bearbeiten von PDF-Dokumenten, einschließlich des Hinzufügens von Text, Bildern, Tabellen und anderen Elementen zu den Seiten.

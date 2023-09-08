@@ -1,57 +1,57 @@
 ---
-title: Extract Text From Stamp Annotation
-linktitle: Extract Text From Stamp Annotation
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to easily extract text from a stamp annotation in your PDF documents with Aspose.PDF for .NET.
+title: Extraer texto de la anotación del sello
+linktitle: Extraer texto de la anotación del sello
+second_title: Aspose.PDF para referencia de API .NET
+description: Aprenda cómo extraer fácilmente texto de una anotación de sello en sus documentos PDF con Aspose.PDF para .NET.
 type: docs
 weight: 80
 url: /es/net/programming-with-stamps-and-watermarks/extract-text-from-stamp-annotation/
 ---
-In this tutorial, we will take you step by step on how to extract text from a stamp annotation in a PDF document using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to extract the text from a specific stamp annotation on a given page of the PDF document.
+En este tutorial, le explicaremos paso a paso cómo extraer texto de una anotación de sello en un documento PDF utilizando Aspose.PDF para .NET. Le mostraremos cómo utilizar el código fuente C# proporcionado para extraer el texto de una anotación de sello específica en una página determinada del documento PDF.
 
-## Step 1: Setting up the environment
+## Paso 1: configurar el entorno
 
-Before you begin, make sure you have the following:
+Antes de comenzar, asegúrese de tener lo siguiente:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- Un entorno de desarrollo .NET instalado.
+- La biblioteca Aspose.PDF para .NET descargada y referenciada en su proyecto.
 
-## Step 2: Loading the PDF document
+## Paso 2: cargar el documento PDF
 
-The first step is to load the existing PDF document into your project. Here's how:
+El primer paso es cargar el documento PDF existente en su proyecto. Así es cómo:
 
 ```csharp
-// The path to the documents directory.
+// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Load the document
+// Cargar el documento
 Document doc = new Document(dataDir + "test.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+Asegúrese de reemplazar "SU DIRECTORIO DE DOCUMENTOS" con la ruta real al directorio donde se encuentra su documento PDF.
 
-## Step 3: Extract text from stamp annotation
+## Paso 3: extraer texto de la anotación del sello
 
-Now that you have loaded the PDF document, you can extract the text from the specific stamp annotation. Here's how:
+Ahora que ha cargado el documento PDF, puede extraer el texto de la anotación de sello específica. Así es cómo:
 
 ```csharp
-// Retrieve buffer annotation
+// Recuperar anotación del búfer
 StampAnnotation annot = doc.Pages[1].Annotations[3] as StampAnnotation;
 
-// Create a text absorber
+// Crear un absorbente de texto
 TextAbsorber ta = new TextAbsorber();
 
-// Visit the appearance of the annotation
+// Visita la apariencia de la anotación.
 XForm ap = annot. Appearance["N"];
 ta.Visit(ap);
 
-// Display the extracted text
+// Mostrar el texto extraído
 Console.WriteLine(ta.Text);
 ```
 
-The code above retrieves the stamp annotation from the specified page of the PDF document and then uses a text absorber to extract the text from the appearance of the annotation. The extracted text is then displayed in the output.
+El código anterior recupera la anotación del sello de la página especificada del documento PDF y luego utiliza un absorbente de texto para extraer el texto de la apariencia de la anotación. El texto extraído luego se muestra en la salida.
 
-### Sample source code for Extract Text From Stamp Annotation using Aspose.PDF for .NET 
+### Código fuente de muestra para extraer texto de anotación de sello usando Aspose.PDF para .NET 
 ```csharp
 
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -64,44 +64,44 @@ Console.WriteLine(ta.Text);
 
 ```
 
-## Conclusion
+## Conclusión
 
-Congratulation ! You have learned how to extract text from a stamp annotation in a PDF document using Aspose.PDF for .NET. You can now use this method to extract text from other annotations in your PDF documents.
+¡Enhorabuena! Ha aprendido cómo extraer texto de una anotación de sello en un documento PDF usando Aspose.PDF para .NET. Ahora puede utilizar este método para extraer texto de otras anotaciones en sus documentos PDF.
 
-### FAQ's for extract text from stamp annotation
+### Preguntas frecuentes para extraer texto de anotaciones de sellos
 
-#### Q: What is a stamp annotation in a PDF document, and why would I need to extract text from it?
+#### P: ¿Qué es una anotación de sello en un documento PDF y por qué necesitaría extraer texto del mismo?
 
-A: A stamp annotation in a PDF document is a graphical element that can be used to provide additional information, such as a watermark or a rubber stamp. Extracting text from a stamp annotation is useful when you want to retrieve text-based content from these annotations, which can include notes, labels, or other textual information.
+R: Una anotación de sello en un documento PDF es un elemento gráfico que se puede utilizar para proporcionar información adicional, como una marca de agua o un sello de goma. Extraer texto de una anotación de sello es útil cuando desea recuperar contenido basado en texto de estas anotaciones, que puede incluir notas, etiquetas u otra información textual.
 
-#### Q: How does the provided C# source code extract text from a stamp annotation?
+#### P: ¿Cómo extrae el código fuente de C# proporcionado texto de una anotación de sello?
 
-A: The provided source code demonstrates how to extract text from a specific stamp annotation on a given page of a PDF document. It uses the Aspose.PDF library to retrieve the stamp annotation, visit its appearance using a `TextAbsorber`, and then displays the extracted text in the output.
+ R: El código fuente proporcionado demuestra cómo extraer texto de una anotación de sello específica en una página determinada de un documento PDF. Utiliza la biblioteca Aspose.PDF para recuperar la anotación del sello, visita su apariencia usando un`TextAbsorber`y luego muestra el texto extraído en la salida.
 
-#### Q: Can I extract text from different types of annotations using a similar approach?
+#### P: ¿Puedo extraer texto de diferentes tipos de anotaciones usando un enfoque similar?
 
-A: Yes, you can use a similar approach to extract text from other types of annotations, such as text annotations or popup annotations. You would need to modify the code to target the specific type of annotation you want to extract text from.
+R: Sí, puedes utilizar un enfoque similar para extraer texto de otros tipos de anotaciones, como anotaciones de texto o anotaciones emergentes. Debería modificar el código para apuntar al tipo específico de anotación del que desea extraer texto.
 
-#### Q: What is the purpose of the `TextAbsorber` class in the code?
+####  P: ¿Cuál es el propósito de la`TextAbsorber` class in the code?
 
-A: The `TextAbsorber` class is used to extract text from different parts of a PDF document, including stamp annotations. It "absorbs" or captures the text content found in the specified area or element of the PDF.
+ R: El`TextAbsorber` La clase se utiliza para extraer texto de diferentes partes de un documento PDF, incluidas las anotaciones de sello. "Absorbe" o captura el contenido del texto que se encuentra en el área o elemento especificado del PDF.
 
-#### Q: How do I identify the specific stamp annotation I want to extract text from?
+#### P: ¿Cómo identifico la anotación de sello específica de la que deseo extraer texto?
 
-A: In the provided code, the stamp annotation is identified by accessing the `Annotations` collection of a specific page and using the index to retrieve the desired annotation. You can adjust the index or use other criteria to identify the target annotation.
+ R: En el código proporcionado, la anotación del sello se identifica accediendo al`Annotations` colección de una página específica y usar el índice para recuperar la anotación deseada. Puede ajustar el índice o utilizar otros criterios para identificar la anotación de destino.
 
-#### Q: Can I extract text from multiple stamp annotations on the same page?
+#### P: ¿Puedo extraer texto de varias anotaciones de sello en la misma página?
 
-A: Yes, you can modify the code to loop through the `Annotations` collection of a page, filter out stamp annotations, and extract text from each of them.
+ R: Sí, puede modificar el código para recorrer el`Annotations`colección de una página, filtrar anotaciones de sellos y extraer texto de cada una de ellas.
 
-#### Q: What if the stamp annotation has no textual content? Will the code still work?
+#### P: ¿Qué pasa si la anotación del sello no tiene contenido textual? ¿Seguirá funcionando el código?
 
-A: The code will still work, but it will extract and display an empty string if the stamp annotation's appearance does not contain any textual content.
+R: El código seguirá funcionando, pero extraerá y mostrará una cadena vacía si la apariencia de la anotación del sello no contiene ningún contenido textual.
 
-#### Q: How can I save the extracted text to a file instead of displaying it in the output?
+#### P: ¿Cómo puedo guardar el texto extraído en un archivo en lugar de mostrarlo en el resultado?
 
-A: You can modify the code to save the extracted text to a file instead of displaying it in the console. Simply replace the `Console.WriteLine` statement with code to write the text to a file.
+ R: Puedes modificar el código para guardar el texto extraído en un archivo en lugar de mostrarlo en la consola. Simplemente reemplace el`Console.WriteLine` Declaración con código para escribir el texto en un archivo.
 
-#### Q: How can I use the extracted text in further processing or analysis?
+#### P: ¿Cómo puedo utilizar el texto extraído en un procesamiento o análisis posterior?
 
-A: Once you have extracted the text using the provided method, you can store it in a variable, manipulate it, analyze it, or integrate it into other parts of your application as needed.
+R: Una vez que haya extraído el texto utilizando el método proporcionado, puede almacenarlo en una variable, manipularlo, analizarlo o integrarlo en otras partes de su aplicación según sea necesario.

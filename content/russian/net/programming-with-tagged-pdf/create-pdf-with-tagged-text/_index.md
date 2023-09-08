@@ -1,28 +1,28 @@
 ---
-title: Create PDF with Tagged Text
-linktitle: Create PDF with Tagged Text
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to create a PDF with tagged text using Aspose.PDF for .NET.
+title: Создать PDF с текстом с тегами
+linktitle: Создать PDF с текстом с тегами
+second_title: Справочник по Aspose.PDF для .NET API
+description: Пошаговое руководство по созданию PDF-файла с текстом с тегами с помощью Aspose.PDF для .NET.
 type: docs
 weight: 50
 url: /ru/net/programming-with-tagged-pdf/create-pdf-with-tagged-text/
 ---
-In this tutorial, we will provide you with a step-by-step guide on how to create a PDF document with tagged text using Aspose.PDF for .NET. Aspose.PDF is a powerful library that allows you to create, manipulate and convert PDF documents programmatically. Using the tagged content structure features of Aspose.PDF, you can add tagged text to your PDF document.
+В этом уроке мы предоставим вам пошаговое руководство по созданию PDF-документа с текстом с тегами с помощью Aspose.PDF для .NET. Aspose.PDF — это мощная библиотека, которая позволяет программно создавать, манипулировать и конвертировать PDF-документы. Используя функции структуры содержимого с тегами в Aspose.PDF, вы можете добавлять текст с тегами в свой PDF-документ.
 
-## Prerequisites
+## Предварительные условия
 
-Before you begin, make sure you have the following prerequisites in place:
+Прежде чем начать, убедитесь, что у вас есть следующие предварительные условия:
 
-1. Visual Studio installed with .NET framework.
-2. The Aspose.PDF library for .NET.
+1. Visual Studio установлена с .NET Framework.
+2. Библиотека Aspose.PDF для .NET.
 
-## Step 1: Project Setup
+## Шаг 1: Настройка проекта
 
-To get started, create a new project in Visual Studio and add a reference to the Aspose.PDF for .NET library. You can download the library from Aspose official website and install it on your machine.
+Для начала создайте новый проект в Visual Studio и добавьте ссылку на библиотеку Aspose.PDF для .NET. Вы можете скачать библиотеку с официального сайта Aspose и установить ее на свой компьютер.
 
-## Step 2: Import the necessary namespaces
+## Шаг 2. Импортируйте необходимые пространства имен.
 
-In your C# code file, import the namespaces required to access the classes and methods provided by Aspose.PDF:
+В файл кода C# импортируйте пространства имен, необходимые для доступа к классам и методам, предоставляемым Aspose.PDF:
 
 ```csharp
 using System;
@@ -30,9 +30,9 @@ using Aspose.Pdf;
 using Aspose.Pdf.Tagged;
 ```
 
-## Step 3: Creating the PDF document with tagged text
+## Шаг 3. Создание PDF-документа с размеченным текстом
 
-Use the following code to create a PDF document with tagged text:
+Используйте следующий код для создания PDF-документа с текстом с тегами:
 
 ```csharp
 string dataDir = "YOUR_DIRECTORY_OF_DOCUMENTS";
@@ -47,27 +47,27 @@ headerElement.ActualText = "Header 1";
 ParagraphElement paragraphElement1 = taggedContent.CreateParagraphElement();
 paragraphElement1.ActualText = "test1";
 
-// Add more paragraphs here
+// Добавьте сюда еще абзацы
 
-// Save the PDF document
+// Сохраните PDF-документ
 document.Save(dataDir + "PDFwithTagText.pdf");
 ```
 
-This code creates an empty PDF document and adds tagged text using the methods provided by Aspose.PDF. You can add other tagged text elements such as headings and paragraphs using the appropriate methods.
+Этот код создает пустой PDF-документ и добавляет текст с тегами, используя методы Aspose.PDF. Вы можете добавить другие текстовые элементы с тегами, такие как заголовки и абзацы, используя соответствующие методы.
 
-### Sample source code for Create PDFwith Tagged Text using Aspose.PDF for .NET 
+### Пример исходного кода для создания PDF с текстом с тегами с использованием Aspose.PDF для .NET 
 ```csharp
 
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create Pdf Document
+// Создать PDF-документ
 Document document = new Document();
-// Get Content for work with TaggedPdf
+// Получить контент для работы с TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
-// Set Title and Language for Documnet
+// Установите заголовок и язык для Documentnet
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
-// Create Text Block-Level Structure Elements
+// Создание элементов структуры на уровне текстового блока
 HeaderElement headerElement = taggedContent.CreateHeaderElement();
 headerElement.ActualText = "Heading 1";
 ParagraphElement paragraphElement1 = taggedContent.CreateParagraphElement();
@@ -84,53 +84,53 @@ ParagraphElement paragraphElement6 = taggedContent.CreateParagraphElement();
 paragraphElement6.ActualText = "test 6";
 ParagraphElement paragraphElement7 = taggedContent.CreateParagraphElement();
 paragraphElement7.ActualText = "test 7";
-// Save PDF Document
+// Сохранить PDF-документ
 document.Save( dataDir + "PDFwithTaggedText.pdf");
 
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, you learned how to create a PDF document with tagged text using Aspose.PDF for .NET. Aspose.PDF's marked content structure features allow you to structure and organize your text for better accessibility and semantics.
+В этом уроке вы узнали, как создать PDF-документ с текстом с тегами, используя Aspose.PDF для .NET. Отмеченные функции структуры контента Aspose.PDF позволяют структурировать и организовывать текст для лучшей доступности и семантики.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is the purpose of creating a PDF document with tagged text using Aspose.PDF for .NET?
+#### Вопрос: Какова цель создания PDF-документа с размеченным текстом с помощью Aspose.PDF для .NET?
 
-A: Creating a PDF document with tagged text using Aspose.PDF for .NET allows you to structure and organize your text content within the PDF document. Tagged text adds semantic meaning and improves accessibility for users, especially those using assistive technologies.
+О: Создание PDF-документа с размеченным текстом с помощью Aspose.PDF для .NET позволяет вам структурировать и организовывать текстовое содержимое в PDF-документе. Текст с тегами добавляет семантическое значение и улучшает доступность для пользователей, особенно для тех, кто использует вспомогательные технологии.
 
-#### Q: How does Aspose.PDF assist in creating a PDF document with tagged text?
+#### Вопрос: Как Aspose.PDF помогает создать PDF-документ с текстом с тегами?
 
-A: Aspose.PDF for .NET is a powerful library that provides functionalities for creating, manipulating, and converting PDF documents programmatically. In this tutorial, the library's tagged content structure features are used to add structured and semantically meaningful text to the PDF document.
+О: Aspose.PDF для .NET — это мощная библиотека, предоставляющая функциональные возможности для программного создания, управления и преобразования PDF-документов. В этом руководстве функции структуры тегированного содержимого библиотеки используются для добавления структурированного и семантически значимого текста в PDF-документ.
 
-#### Q: What are the prerequisites for creating a PDF document with tagged text using Aspose.PDF for .NET?
+#### Вопрос: Каковы необходимые условия для создания PDF-документа с размеченным текстом с помощью Aspose.PDF для .NET?
 
-A: Before you begin, ensure you have Visual Studio installed with the .NET framework and have the Aspose.PDF library for .NET referenced in your project.
+О: Прежде чем начать, убедитесь, что у вас установлена Visual Studio с платформой .NET и в вашем проекте есть ссылка на библиотеку Aspose.PDF для .NET.
 
-#### Q: How does the provided C# code create a PDF document with tagged text?
+#### Вопрос: Как предоставленный код C# создает PDF-документ с текстом с тегами?
 
-A: The code example demonstrates how to create a PDF document, define various tagged text elements (such as headers and paragraphs), and add them to the document's content. This is achieved using the tagged content structure features provided by Aspose.PDF.
+Ответ: В примере кода показано, как создать PDF-документ, определить различные текстовые элементы с тегами (например, заголовки и абзацы) и добавить их к содержимому документа. Это достигается с помощью функций структуры тегированного контента, предоставляемых Aspose.PDF.
 
-#### Q: How can I customize the tagged text elements, such as headers and paragraphs?
+#### Вопрос: Как настроить текстовые элементы с тегами, например заголовки и абзацы?
 
-A: You can customize the tagged text elements by using appropriate methods, such as `CreateHeaderElement` and `CreateParagraphElement`, and setting properties like `ActualText` to provide meaningful text and semantics.
+ О. Вы можете настроить текстовые элементы с тегами, используя соответствующие методы, например`CreateHeaderElement` и`CreateParagraphElement` и установка таких свойств, как`ActualText` обеспечить содержательный текст и семантику.
 
-#### Q: Can I add other tagged text elements, such as lists or links, using similar techniques?
+#### Вопрос: Могу ли я добавить другие текстовые элементы с тегами, например списки или ссылки, используя аналогичные методы?
 
-A: Yes, you can add other tagged text elements like lists, links, or other custom structures using similar techniques. Aspose.PDF provides various methods to create different types of tagged content, allowing you to enhance document semantics.
+О: Да, вы можете добавлять другие текстовые элементы с тегами, такие как списки, ссылки или другие пользовательские структуры, используя аналогичные методы. Aspose.PDF предоставляет различные методы для создания различных типов тегированного контента, что позволяет улучшить семантику документа.
 
-#### Q: How does the `SetTitle` method contribute to the PDF document's tagged text?
+####  Вопрос: Как`SetTitle` method contribute to the PDF document's tagged text?
 
-A: The `SetTitle` method sets the title of the PDF document's tagged content, providing a brief description of the document's purpose or subject. This information helps users understand the context of the tagged text.
+ А:`SetTitle` Метод устанавливает заголовок размеченного содержимого PDF-документа, предоставляя краткое описание цели или темы документа. Эта информация помогает пользователям понять контекст размеченного текста.
 
-#### Q: How does using tagged text improve accessibility in PDF documents?
+#### Вопрос: Как использование текста с тегами улучшает доступность PDF-документов?
 
-A: Tagged text adds semantic meaning to the document, making it more accessible to users with disabilities or those using assistive technologies. Screen readers and other assistive devices can interpret and present tagged text for improved user experience.
+Ответ: Текст с тегами добавляет смысловое значение документу, делая его более доступным для пользователей с ограниченными возможностями или тех, кто использует ассистивные технологии. Программы чтения с экрана и другие вспомогательные устройства могут интерпретировать и отображать текст с тегами для улучшения взаимодействия с пользователем.
 
-#### Q: How does the `SetLanguage` method enhance the tagged text in a PDF document?
+####  Вопрос: Как`SetLanguage` method enhance the tagged text in a PDF document?
 
-A: The `SetLanguage` method sets the language attribute of the PDF document's tagged content. This helps indicate the language in which the tagged text is written, improving accessibility and enabling proper language-specific rendering.
+ А:`SetLanguage`Метод устанавливает атрибут языка размеченного содержимого PDF-документа. Это помогает указать язык, на котором написан текст с тегами, улучшая доступность и обеспечивая правильное отображение с учетом особенностей языка.
 
-#### Q: Is it possible to add other elements, such as images or multimedia, alongside tagged text using similar techniques?
+#### Вопрос: Можно ли добавить другие элементы, например изображения или мультимедиа, рядом с размеченным текстом, используя аналогичные методы?
 
-A: Yes, you can add other elements like images, multimedia, or annotations alongside tagged text using similar techniques. Aspose.PDF offers a wide range of features to combine different types of content within the document.
+О: Да, вы можете добавлять другие элементы, такие как изображения, мультимедиа или аннотации, рядом с текстом с тегами, используя аналогичные методы. Aspose.PDF предлагает широкий спектр функций для объединения различных типов контента в документе.

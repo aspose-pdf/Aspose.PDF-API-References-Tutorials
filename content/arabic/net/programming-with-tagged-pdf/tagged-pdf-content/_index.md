@@ -1,126 +1,126 @@
 ---
-title: Tagged PDF Content
-linktitle: Tagged PDF Content
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to work with tagged content in a PDF document with Aspose.PDF for .NET. A step-by-step guide to using tags.
+title: محتوى PDF ذو علامات
+linktitle: محتوى PDF ذو علامات
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية التعامل مع المحتوى ذي العلامات في مستند PDF باستخدام Aspose.PDF لـ .NET. دليل خطوة بخطوة لاستخدام العلامات.
 type: docs
 weight: 200
 url: /ar/net/programming-with-tagged-pdf/tagged-pdf-content/
 ---
-In this detailed tutorial, we will walk you through the provided C# source code step by step for working with marked up content of a PDF document using Aspose.PDF for .NET. Follow the instructions below to understand how to use the tag for PDF content.
+في هذا البرنامج التعليمي التفصيلي، سنرشدك عبر كود مصدر C# المقدم خطوة بخطوة للعمل مع المحتوى المرمز لمستند PDF باستخدام Aspose.PDF لـ .NET. اتبع الإرشادات أدناه لفهم كيفية استخدام العلامة لمحتوى PDF.
 
-## Step 1: Setting up the environment
+## الخطوة 1: تهيئة البيئة
 
-Before you begin, make sure you've configured your development environment to use Aspose.PDF for .NET. This includes installing the Aspose.PDF library and configuring your project to reference it.
+قبل أن تبدأ، تأكد من تكوين بيئة التطوير الخاصة بك لاستخدام Aspose.PDF لـ .NET. يتضمن ذلك تثبيت مكتبة Aspose.PDF وتكوين مشروعك للرجوع إليه.
 
-## Step 2: Creating the PDF document
+## الخطوة 2: إنشاء وثيقة PDF
 
-In this step, we will create a new PDF document object with Aspose.PDF.
+في هذه الخطوة، سنقوم بإنشاء كائن مستند PDF جديد باستخدام Aspose.PDF.
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Create the PDF document
+// قم بإنشاء مستند PDF
 Document document = new Document();
 ```
 
-We have created a new PDF document with Aspose.PDF.
+لقد قمنا بإنشاء مستند PDF جديد باستخدام Aspose.PDF.
 
-## Step 3: Get content to work with the tagged PDF
+## الخطوة 3: احصل على محتوى للعمل مع ملف PDF المميز
 
-In this step, we will get the contents of the PDF document to work with the tagged PDF.
+في هذه الخطوة، سنجعل محتويات مستند PDF تعمل مع ملف PDF المميز.
 
 ```csharp
-// Get the content to work with the tagged PDF
+// احصل على المحتوى للعمل مع ملف PDF الذي تم وضع علامة عليه
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-We got the contents of the PDF document to work with the tagged PDF.
+لقد حصلنا على محتويات مستند PDF للعمل مع ملف PDF المميز.
 
-## Step 4: Work with PDF Tagged Content
+## الخطوة 4: العمل مع محتوى PDF الموسوم
 
-Now we will work with the tagged content of the PDF using the appropriate tags.
+سنعمل الآن مع المحتوى المميز لملف PDF باستخدام العلامات المناسبة.
 
 ```csharp
-// Work with the tagged content of the PDF
+// العمل مع المحتوى الموسوم بملف PDF
 taggedContent.SetTitle("Simple tagged PDF document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-We have set the title and language of the tagged PDF document.
+لقد قمنا بتعيين عنوان ولغة مستند PDF الذي تم وضع علامة عليه.
 
-## Step 5: Saving the tagged PDF document
+## الخطوة 5: حفظ مستند PDF الذي تم وضع علامة عليه
 
-Now that we've worked with the tagged content of the PDF document, let's save it as a tagged PDF document.
+الآن بعد أن تعاملنا مع المحتوى المميز لمستند PDF، فلنحفظه كمستند PDF مميز.
 
 ```csharp
-// Save the tagged PDF document
+// احفظ مستند PDF الذي تم وضع علامة عليه
 document.Save(dataDir + "ContentPDFTag.pdf");
 ```
 
-We saved the tagged PDF document in the specified directory.
+لقد حفظنا مستند PDF الذي تم وضع علامة عليه في الدليل المحدد.
 
-### Sample source code for Tagged PDFContent using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لـ Tagged PDFContent باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create Pdf Document
+// إنشاء مستند PDF
 Document document = new Document();
 
-// Get Content for work with TaggedPdf
+// احصل على محتوى للعمل مع TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Work with Tagged Pdf content
-// Set Title and Language for Documnet
+// العمل مع محتوى Pdf الموسوم
+// قم بتعيين العنوان واللغة لـ Documnet
 taggedContent.SetTitle("Simple Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 
-// Save Tagged Pdf Document
+// حفظ وثيقة PDF ذات العلامات
 document.Save(dataDir + "TaggedPDFContent.pdf");
 
 ```
-## Conclusion
+## خاتمة
 
-In this tutorial, we learned how to work with marked up content in a PDF document using Aspose.PDF for .NET. You can now use Aspose.PDF to create PDF documents with appropriate tagged content.
+في هذا البرنامج التعليمي، تعلمنا كيفية التعامل مع المحتوى المرمز في مستند PDF باستخدام Aspose.PDF لـ .NET. يمكنك الآن استخدام Aspose.PDF لإنشاء مستندات PDF تحتوي على محتوى ذي علامة مناسبة.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the main focus of this tutorial on working with tagged PDF content using Aspose.PDF for .NET?
+#### س: ما هو التركيز الرئيسي لهذا البرنامج التعليمي على العمل مع محتوى PDF المميز باستخدام Aspose.PDF لـ .NET؟
 
-A: This tutorial is primarily focused on guiding you through the process of working with marked up content within a PDF document using Aspose.PDF for .NET. The tutorial provides step-by-step instructions and C# source code examples to help you understand how to use tags to define and manipulate the content of a PDF document.
+ج: يركز هذا البرنامج التعليمي بشكل أساسي على إرشادك خلال عملية العمل مع المحتوى المرمز داخل مستند PDF باستخدام Aspose.PDF لـ .NET. يوفر البرنامج التعليمي إرشادات خطوة بخطوة وأمثلة على التعليمات البرمجية المصدر لـ C# لمساعدتك على فهم كيفية استخدام العلامات لتحديد محتوى مستند PDF ومعالجته.
 
-#### Q: What are the prerequisites for following this tutorial on tagged PDF content manipulation with Aspose.PDF for .NET?
+#### س: ما هي المتطلبات الأساسية لمتابعة هذا البرنامج التعليمي حول معالجة محتوى PDF ذي العلامات باستخدام Aspose.PDF لـ .NET؟
 
-A: Before you begin, ensure that you have set up your development environment to use Aspose.PDF for .NET. This involves installing the Aspose.PDF library and configuring your project to reference it.
+ج: قبل أن تبدأ، تأكد من أنك قمت بإعداد بيئة التطوير الخاصة بك لاستخدام Aspose.PDF لـ .NET. يتضمن ذلك تثبيت مكتبة Aspose.PDF وتكوين مشروعك للرجوع إليه.
 
-#### Q: How can I create a new PDF document and work with its tagged content using Aspose.PDF for .NET?
+#### س: كيف يمكنني إنشاء مستند PDF جديد والتعامل مع محتواه المميز باستخدام Aspose.PDF لـ .NET؟
 
-A: The tutorial provides C# source code examples that demonstrate how to create a new PDF document and access its tagged content for further manipulation.
+ج: يوفر البرنامج التعليمي أمثلة على التعليمات البرمجية المصدر لـ C# التي توضح كيفية إنشاء مستند PDF جديد والوصول إلى محتواه المميز لمزيد من المعالجة.
 
-#### Q: What is the significance of working with tagged content in a PDF document?
+#### س: ما أهمية العمل مع المحتوى المميز في مستند PDF؟
 
-A: Working with tagged content in a PDF document involves using structured tags to define the semantic meaning of the document's elements. This is particularly important for accessibility and content extraction, as it enables screen readers and other technologies to interpret the document's content correctly.
+ج: يتضمن العمل مع المحتوى ذي العلامات في مستند PDF استخدام العلامات المنظمة لتحديد المعنى الدلالي لعناصر المستند. وهذا مهم بشكل خاص لإمكانية الوصول واستخراج المحتوى، لأنه يمكّن قارئات الشاشة والتقنيات الأخرى من تفسير محتوى المستند بشكل صحيح.
 
-#### Q: How can I set the title and language for a tagged PDF document using Aspose.PDF for .NET?
+#### س: كيف يمكنني تعيين العنوان واللغة لمستند PDF ذو علامات باستخدام Aspose.PDF لـ .NET؟
 
-A: The tutorial includes C# source code examples that illustrate how to set the title and language for a tagged PDF document using Aspose.PDF for .NET.
+ج: يشتمل البرنامج التعليمي على أمثلة التعليمات البرمجية المصدر لـ C# التي توضح كيفية تعيين العنوان واللغة لمستند PDF ذي علامات باستخدام Aspose.PDF لـ .NET.
 
-#### Q: What is the process of saving a tagged PDF document after working with its tagged content?
+#### س: ما هي عملية حفظ مستند PDF ذي علامة تمييز بعد التعامل مع محتواه المميز؟
 
-A: After making modifications to the tagged content of a PDF document, you can use the provided C# source code examples to save the modified document using the `Save()` method.
+ ج: بعد إجراء تعديلات على المحتوى المميز لمستند PDF، يمكنك استخدام أمثلة التعليمات البرمجية المصدر لـ C# المتوفرة لحفظ المستند المعدل باستخدام`Save()` طريقة.
 
-#### Q: How does the sample source code provided in the tutorial help in working with tagged PDF content?
+#### س: كيف يساعد نموذج التعليمات البرمجية المصدر الموجود في البرنامج التعليمي في العمل مع محتوى PDF ذي العلامات؟
 
-A: The sample source code serves as a practical reference for implementing tagged content manipulation using Aspose.PDF for .NET. You can use this code as a starting point and modify it according to your specific requirements.
+ج: يعد نموذج التعليمات البرمجية المصدر بمثابة مرجع عملي لتنفيذ معالجة المحتوى الموسوم باستخدام Aspose.PDF لـ .NET. يمكنك استخدام هذا الرمز كنقطة بداية وتعديله وفقًا لمتطلباتك المحددة.
 
-#### Q: Can I apply similar techniques to other types of elements in a PDF document, not just text and language settings?
+#### س: هل يمكنني تطبيق تقنيات مماثلة على أنواع أخرى من العناصر في مستند PDF، وليس فقط إعدادات النص واللغة؟
 
-A: Yes, the techniques demonstrated in this tutorial can be adapted to work with various types of elements within a PDF document. You can use similar principles to manipulate text, images, tables, and more, while utilizing tags to define their roles and attributes.
+ج: نعم، يمكن تكييف التقنيات الموضحة في هذا البرنامج التعليمي للعمل مع أنواع مختلفة من العناصر داخل مستند PDF. يمكنك استخدام مبادئ مماثلة لمعالجة النصوص والصور والجداول والمزيد، مع استخدام العلامات لتحديد أدوارها وسماتها.
 
-#### Q: How can I use Aspose.PDF for .NET to further enhance and customize PDF documents beyond tagged content?
+#### س: كيف يمكنني استخدام Aspose.PDF لـ .NET لتحسين وتخصيص مستندات PDF بما يتجاوز المحتوى المميز؟
 
-A: Aspose.PDF for .NET offers a wide range of features for PDF document manipulation, including adding text, images, tables, hyperlinks, annotations, form fields, watermarks, digital signatures, and more. You can explore the official documentation and resources for a comprehensive understanding of the library's capabilities.
+ج: يوفر Aspose.PDF for .NET نطاقًا واسعًا من الميزات لمعالجة مستندات PDF، بما في ذلك إضافة النصوص والصور والجداول والارتباطات التشعبية والتعليقات التوضيحية وحقول النماذج والعلامات المائية والتوقيعات الرقمية والمزيد. يمكنك استكشاف الوثائق والموارد الرسمية لفهم شامل لقدرات المكتبة.

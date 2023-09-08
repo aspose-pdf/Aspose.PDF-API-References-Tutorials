@@ -1,26 +1,26 @@
 ---
-title: Add Tooltip To Text In PDF File
-linktitle: Add Tooltip To Text In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add tooltips to text in PDF file using Aspose.PDF for .NET.
+title: Aggiungi descrizione comando al testo nel file PDF
+linktitle: Aggiungi descrizione comando al testo nel file PDF
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Scopri come aggiungere descrizioni comandi al testo nel file PDF utilizzando Aspose.PDF per .NET.
 type: docs
 weight: 90
 url: /it/net/programming-with-text/add-tooltip-to-text/
 ---
-This tutorial will guide you through the process of adding tooltips to text in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+Questo tutorial ti guiderà attraverso il processo di aggiunta di descrizioni comandi al testo nel file PDF utilizzando Aspose.PDF per .NET. Il codice sorgente C# fornito illustra i passaggi necessari.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## Requisiti
+Prima di iniziare, assicurati di avere quanto segue:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio o qualsiasi altro compilatore C# installato sul tuo computer.
+- Aspose.PDF per la libreria .NET. Puoi scaricarlo dal sito Web ufficiale di Aspose o utilizzare un gestore di pacchetti come NuGet per installarlo.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## Passaggio 1: impostare il progetto
+1. Crea un nuovo progetto C# nel tuo ambiente di sviluppo preferito.
+2. Aggiungere un riferimento alla libreria Aspose.PDF per .NET.
 
-## Step 2: Import required namespaces
-In the code file where you want to add tooltips to text, add the following using directives at the top of the file:
+## Passaggio 2: importa gli spazi dei nomi richiesti
+Nel file di codice in cui desideri aggiungere descrizioni comando al testo, aggiungi le seguenti direttive using nella parte superiore del file:
 
 ```csharp
 using Aspose.Pdf;
@@ -28,11 +28,11 @@ using Aspose.Pdf.Forms;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## Passaggio 3: imposta la directory dei documenti
+ Nel codice, individua la riga che dice`string dataDir = "YOUR DOCUMENT DIRECTORY";` e sostituire`"YOUR DOCUMENT DIRECTORY"` con il percorso della directory in cui sono archiviati i tuoi documenti.
 
-## Step 4: Create a sample document with text
-Create a new `Document` object and add pages with text fragments. In the provided code, two text fragments are added to the document with the respective tooltip text.
+## Passaggio 4: crea un documento di esempio con testo
+ Creane uno nuovo`Document` oggetto e aggiungere pagine con frammenti di testo. Nel codice fornito vengono aggiunti al documento due frammenti di testo con il rispettivo testo del tooltip.
 
 ```csharp
 Document doc = new Document();
@@ -41,8 +41,8 @@ doc.Pages[1].Paragraphs.Add(new TextFragment("Move the mouse cursor here to disp
 doc.Save(outputFile);
 ```
 
-## Step 5: Open the document and find the text fragments
-Load the created document using the `Document` constructor and find the text fragments that need tooltips using `TextFragmentAbsorber`.
+## Passaggio 5: apri il documento e trova i frammenti di testo
+ Caricare il documento creato utilizzando il file`Document` costruttore e trova i frammenti di testo che necessitano di descrizioni comandi utilizzando`TextFragmentAbsorber`.
 
 ```csharp
 Document document = new Document(outputFile);
@@ -51,8 +51,8 @@ document.Pages.Accept(absorb);
 TextFragmentCollection textFragments = absorb.TextFragments;
 ```
 
-## Step 6: Add tooltips to the text fragments
-Loop through the extracted text fragments and create invisible buttons at their positions. Assign the desired tooltip text to the `AlternateName` property of the `ButtonField`. Add the button fields to the document's form.
+## Passaggio 6: aggiungi descrizioni comandi ai frammenti di testo
+ Passa in rassegna i frammenti di testo estratti e crea pulsanti invisibili nelle loro posizioni. Assegna il testo tooltip desiderato al file`AlternateName` proprietà del`ButtonField`. Aggiungi i campi del pulsante al modulo del documento.
 
 ```csharp
 foreach(TextFragment fragment in textFragments)
@@ -63,8 +63,8 @@ foreach(TextFragment fragment in textFragments)
 }
 ```
 
-## Step 7: Repeat for additional text fragments with long tooltips
-Repeat steps 5 and 6 for text fragments with long tooltips. Modify the search criteria and tooltip text accordingly.
+## Passaggio 7: ripetere l'operazione per ulteriori frammenti di testo con descrizioni comandi lunghe
+Ripeti i passaggi 5 e 6 per i frammenti di testo con descrizioni comandi lunghe. Modifica i criteri di ricerca e il testo della descrizione comando di conseguenza.
 
 ```csharp
 absorb = new TextFragmentAbsorber("Move the mouse cursor here to display a very long tooltip");
@@ -79,49 +79,49 @@ foreach(TextFragment fragment in textFragments)
 }
 ```
 
-## Step 8: Save the modified document
-Save the modified PDF document using the `Save` method of the `Document` object.
+## Passaggio 8: salva il documento modificato
+ Salvare il documento PDF modificato utilizzando il file`Save` metodo del`Document` oggetto.
 
 ```csharp
 document. Save(outputFile);
 ```
 
-### Sample source code for Add Tooltip To Text using Aspose.PDF for .NET 
+### Codice sorgente di esempio per Aggiungi descrizione comando al testo utilizzando Aspose.PDF per .NET 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outputFile = dataDir + "Tooltip_out.pdf";
-// Create sample document with text
+// Crea un documento di esempio con testo
 Document doc = new Document();
 doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display a tooltip"));
 doc.Pages[1].Paragraphs.Add(new TextFragment("Move the mouse cursor here to display a very long tooltip"));
 doc.Save(outputFile);
-// Open document with text
+// Apri il documento con il testo
 Document document = new Document(outputFile);
-// Create TextAbsorber object to find all the phrases matching the regular expression
+// Crea un oggetto TextAbsorber per trovare tutte le frasi che corrispondono all'espressione regolare
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a tooltip");
-// Accept the absorber for the document pages
+// Accettare l'assorbitore per le pagine del documento
 document.Pages.Accept(absorber);
-// Get the extracted text fragments
+// Ottieni i frammenti di testo estratti
 TextFragmentCollection textFragments = absorber.TextFragments;
-// Loop through the fragments
+// Passa in rassegna i frammenti
 foreach (TextFragment fragment in textFragments)
 {
-	// Create invisible button on text fragment position
+	// Crea un pulsante invisibile sulla posizione del frammento di testo
 	ButtonField field = new ButtonField(fragment.Page, fragment.Rectangle);
-	// AlternateName value will be displayed as tooltip by a viewer application
+	// Il valore AlternateName verrà visualizzato come descrizione comando da un'applicazione visualizzatore
 	field.AlternateName = "Tooltip for text.";
-	// Add button field to the document
+	// Aggiungi un campo pulsante al documento
 	document.Form.Add(field);
 }
-// Next will be sapmle of very long tooltip
+// Il prossimo sarà un esempio di tooltip molto lungo
 absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a very long tooltip");
 document.Pages.Accept(absorber);
 textFragments = absorber.TextFragments;
 foreach (TextFragment fragment in textFragments)
 {
 	ButtonField field = new ButtonField(fragment.Page, fragment.Rectangle);
-	// Set very long text
+	// Imposta un testo molto lungo
 	field.AlternateName = "Lorem ipsum dolor sit amet, consectetur adipiscing elit," +
 							" sed do eiusmod tempor incididunt ut labore et dolore magna" +
 							" aliqua. Ut enim ad minim veniam, quis nostrud exercitation" +
@@ -132,22 +132,22 @@ foreach (TextFragment fragment in textFragments)
 							" deserunt mollit anim id est laborum.";
 	document.Form.Add(field);
 }
-// Save document
+// Salva documento
 document.Save(outputFile);
 ```
 
-## Conclusion
-You have successfully added tooltips to text in a PDF document using Aspose.PDF for .NET. The resulting PDF file can now be found at the specified output file path.
+## Conclusione
+Hai aggiunto con successo descrizioni comandi al testo in un documento PDF utilizzando Aspose.PDF per .NET. Il file PDF risultante può ora essere trovato nel percorso del file di output specificato.
 
-## FAQs
+## Domande frequenti
 
-#### Q: What is the focus of this tutorial?
+#### D: Qual è il focus di questo tutorial?
 
-A: This tutorial focuses on adding tooltips to text within a PDF file using the Aspose.PDF for .NET library. The provided C# source code demonstrates the steps required to achieve this.
+R: Questo tutorial si concentra sull'aggiunta di descrizioni comandi al testo all'interno di un file PDF utilizzando la libreria Aspose.PDF per .NET. Il codice sorgente C# fornito illustra i passaggi necessari per raggiungere questo obiettivo.
 
-#### Q: Which namespaces need to be imported for this tutorial?
+#### D: Quali spazi dei nomi devono essere importati per questo tutorial?
 
-A: In the code file where you want to add tooltips to text, import the following namespaces at the beginning of the file:
+R: Nel file di codice in cui desideri aggiungere descrizioni comando al testo, importa i seguenti spazi dei nomi all'inizio del file:
 
 ```csharp
 using Aspose.Pdf;
@@ -155,30 +155,30 @@ using Aspose.Pdf.Forms;
 using Aspose.Pdf.Text;
 ```
 
-#### Q: How do I specify the document directory?
+#### D: Come posso specificare la directory dei documenti?
 
-A: In the code, find the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ A: Nel codice, trova la riga`string dataDir = "YOUR DOCUMENT DIRECTORY";` e sostituire`"YOUR DOCUMENT DIRECTORY"` con il percorso effettivo della directory dei documenti.
 
-#### Q: How can I create a sample document with text?
+#### D: Come posso creare un documento di esempio con testo?
 
-A: In Step 4, you'll create a new `Document` object and add pages with text fragments. The code provided adds two text fragments with respective tooltip text.
+ R: Nel passaggio 4 ne creerai uno nuovo`Document` oggetto e aggiungere pagine con frammenti di testo. Il codice fornito aggiunge due frammenti di testo con il rispettivo testo tooltip.
 
-#### Q: How do I open the document and find the text fragments?
+#### D: Come faccio ad aprire il documento e trovare i frammenti di testo?
 
-A: In Step 5, you'll load the created document using the `Document` constructor and find the text fragments requiring tooltips using the `TextFragmentAbsorber`.
+ R: Nel passaggio 5, caricherai il documento creato utilizzando il file`Document` costruttore e trova i frammenti di testo che richiedono descrizioni comandi utilizzando il file`TextFragmentAbsorber`.
 
-#### Q: How do I add tooltips to the text fragments?
+#### D: Come posso aggiungere descrizioni comandi ai frammenti di testo?
 
-A: In Step 6, you'll loop through the extracted text fragments and create invisible buttons at their positions. The tooltip text is assigned to the `AlternateName` property of the `ButtonField`, which is added to the document's form.
+ R: Nel passaggio 6, scorrerai i frammenti di testo estratti e creerai pulsanti invisibili nelle loro posizioni. Il testo della descrizione comando è assegnato al file`AlternateName` proprietà del`ButtonField`che viene aggiunto al modulo del documento.
 
-#### Q: How do I repeat the process for additional text fragments with long tooltips?
+#### D: Come posso ripetere la procedura per ulteriori frammenti di testo con descrizioni comandi lunghe?
 
-A: For text fragments with long tooltips, repeat Steps 5 and 6. Modify the search criteria and tooltip text accordingly.
+R: Per frammenti di testo con tooltip lunghi, ripetere i passaggi 5 e 6. Modificare di conseguenza i criteri di ricerca e il testo del tooltip.
 
-#### Q: How do I save the modified document?
+#### D: Come posso salvare il documento modificato?
 
-A: In Step 8, you'll save the modified PDF document using the `Save` method of the `Document` object.
+ R: Nel passaggio 8, salverai il documento PDF modificato utilizzando il file`Save` metodo del`Document` oggetto.
 
-#### Q: What is the main takeaway from this tutorial?
+#### D: Qual è il punto principale di questo tutorial?
 
-A: By following this tutorial, you've learned how to enhance your PDF document by adding tooltips to text using Aspose.PDF for .NET. This can provide valuable additional information for readers when they interact with the PDF content.
+R: Seguendo questo tutorial, hai imparato come migliorare il tuo documento PDF aggiungendo descrizioni comandi al testo utilizzando Aspose.PDF per .NET. Ciò può fornire preziose informazioni aggiuntive ai lettori quando interagiscono con il contenuto PDF.

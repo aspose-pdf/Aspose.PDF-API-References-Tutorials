@@ -1,51 +1,51 @@
 ---
-title: Determine Line Break In PDF File
-linktitle: Determine Line Break In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to determine line breaks in PDF file using Aspose.PDF for .NET.
+title: Определить разрыв строки в PDF-файле
+linktitle: Определить разрыв строки в PDF-файле
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как определить разрывы строк в файле PDF с помощью Aspose.PDF для .NET.
 type: docs
 weight: 130
 url: /ru/net/programming-with-text/determine-line-break/
 ---
-This tutorial will guide you through the process of determining line breaks in PDF file using Aspose.PDF for .NET. The provided C# source code demonstrates the necessary steps.
+Это руководство проведет вас через процесс определения разрывов строк в PDF-файле с помощью Aspose.PDF для .NET. Приведенный исходный код C# демонстрирует необходимые шаги.
 
-## Requirements
-Before you begin, ensure that you have the following:
+## Требования
+Прежде чем начать, убедитесь, что у вас есть следующее:
 
-- Visual Studio or any other C# compiler installed on your machine.
-- Aspose.PDF for .NET library. You can download it from the official Aspose website or use a package manager like NuGet to install it.
+- Visual Studio или любой другой компилятор C#, установленный на вашем компьютере.
+- Aspose.PDF для библиотеки .NET. Вы можете скачать его с официального сайта Aspose или использовать для установки менеджер пакетов, например NuGet.
 
-## Step 1: Set up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF for .NET library.
+## Шаг 1. Настройте проект
+1. Создайте новый проект C# в предпочитаемой вами среде разработки.
+2. Добавьте ссылку на библиотеку Aspose.PDF для .NET.
 
-## Step 2: Import required namespaces
-In the code file where you want to determine line breaks, add the following using directives at the top of the file:
+## Шаг 2. Импортируйте необходимые пространства имен.
+В файле кода, в котором вы хотите определить разрывы строк, добавьте следующие директивы в верхней части файла:
 
 ```csharp
 using Aspose.Pdf;
 using System.IO;
 ```
 
-## Step 3: Set the document directory
-In the code, locate the line that says `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your documents are stored.
+## Шаг 3. Установите каталог документов.
+ В коде найдите строку с надписью`string dataDir = "YOUR DOCUMENT DIRECTORY";` и заменить`"YOUR DOCUMENT DIRECTORY"` с путем к каталогу, в котором хранятся ваши документы.
 
-## Step 4: Create a new Document instance
-Instantiate a new `Document` object by adding the following line of code:
+## Шаг 4. Создайте новый экземпляр документа.
+ Создать экземпляр нового`Document` объект, добавив следующую строку кода:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 5: Add a page to the document
-Add a new page to the document using the `Add` method of the `Pages` collection. In the provided code, the new page is assigned to the variable `page`.
+## Шаг 5. Добавьте страницу в документ
+ Добавьте новую страницу в документ с помощью`Add` метод`Pages`коллекция. В предоставленном коде новая страница присваивается переменной`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
-## Step 6: Add text fragments with line breaks
-Create a loop to add multiple text fragments to the page, each containing a paragraph with line breaks.
+## Шаг 6. Добавьте фрагменты текста с разрывами строк.
+Создайте цикл для добавления на страницу нескольких фрагментов текста, каждый из которых содержит абзац с разрывами строк.
 
 ```csharp
 for (int i = 0; i < 4; i++)
@@ -56,8 +56,8 @@ for (int i = 0; i < 4; i++)
 }
 ```
 
-## Step 7: Save the PDF document and extract line break information
-Save the PDF document using the `Save` method of the `Document` object. Then, extract the line break information using the `GetNotifications` method of the desired page.
+## Шаг 7. Сохраните PDF-документ и извлеките информацию о разрыве строки.
+ Сохраните PDF-документ, используя`Save` метод`Document` объект. Затем извлеките информацию о разрыве строки, используя`GetNotifications` метод нужной страницы.
 
 ```csharp
 doc.Save(dataDir + "DetermineLineBreak_out.pdf");
@@ -65,9 +65,9 @@ string notifications = doc.Pages[1].GetNotifications();
 File.WriteAllText(dataDir + "notifications_out.txt", notifications);
 ```
 
-### Sample source code for Determine Line Break using Aspose.PDF for .NET 
+### Пример исходного кода для определения разрыва строки с использованием Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 Page page = doc.Pages.Add();
@@ -82,48 +82,48 @@ string notifications = doc.Pages[1].GetNotifications();
 File.WriteAllText(dataDir + "notifications_out.txt", notifications);
 ```
 
-## Conclusion
-You have successfully determined line breaks in a PDF document using Aspose.PDF for .NET. The line break information has been extracted and saved to a text file.
+## Заключение
+Вы успешно определили разрывы строк в PDF-документе с помощью Aspose.PDF для .NET. Информация о разрыве строки была извлечена и сохранена в текстовый файл.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is the main focus of this tutorial?
+#### Вопрос: Какова основная цель этого урока?
 
-A: This tutorial is focused on guiding you through the process of determining line breaks in a PDF file using the Aspose.PDF for .NET library. The provided C# source code demonstrates the necessary steps to achieve this.
+О: Это руководство направлено на то, чтобы помочь вам определить разрывы строк в PDF-файле с помощью библиотеки Aspose.PDF для .NET. Приведенный исходный код C# демонстрирует необходимые шаги для достижения этой цели.
 
-#### Q: Which namespaces should I import for this tutorial?
+#### Вопрос: Какие пространства имен мне следует импортировать для этого руководства?
 
-A: In the code file where you want to determine line breaks, import the following namespaces at the beginning of the file:
+О: В файле кода, в котором вы хотите определить разрывы строк, импортируйте следующие пространства имен в начало файла:
 
 ```csharp
 using Aspose.Pdf;
 using System.IO;
 ```
 
-#### Q: How do I specify the document directory?
+#### Вопрос: Как указать каталог документа?
 
-A: In the code, find the line `string dataDir = "YOUR DOCUMENT DIRECTORY";` and replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ О: В коде найдите строку`string dataDir = "YOUR DOCUMENT DIRECTORY";` и заменить`"YOUR DOCUMENT DIRECTORY"` с фактическим путем к каталогу вашего документа.
 
-#### Q: How do I create a new Document instance?
+#### Вопрос: Как создать новый экземпляр документа?
 
-A: In Step 4, you'll instantiate a new `Document` object using the provided code.
+ О: На шаге 4 вы создадите новый экземпляр`Document` объект, используя предоставленный код.
 
-#### Q: How do I add a page to the document?
+#### Вопрос: Как добавить страницу в документ?
 
-A: In Step 5, you'll add a new page to the document using the `Add` method of the `Pages` collection.
+ О: На шаге 5 вы добавите в документ новую страницу, используя`Add` метод`Pages` коллекция.
 
-#### Q: How do I add text fragments with line breaks?
+#### Вопрос: Как добавить фрагменты текста с разрывами строк?
 
-A: In Step 6, you'll create a loop to add multiple text fragments to the page, each containing a paragraph with line breaks.
+О: На шаге 6 вы создадите цикл для добавления на страницу нескольких фрагментов текста, каждый из которых содержит абзац с разрывами строк.
 
-#### Q: How do I save the PDF document and extract line break information?
+#### Вопрос: Как сохранить PDF-документ и извлечь информацию о разрыве строки?
 
-A: In Step 7, you'll save the PDF document using the `Save` method of the `Document` object. Then, you'll extract the line break information using the `GetNotifications` method of the desired page and save it to a text file.
+ О: На шаге 7 вы сохраните PDF-документ, используя`Save` метод`Document` объект. Затем вы извлечете информацию о разрыве строки, используя`GetNotifications` метод нужной страницы и сохраните его в текстовый файл.
 
-#### Q: What is the purpose of the extracted line break information?
+#### Вопрос: Какова цель извлеченной информации о разрыве строки?
 
-A: The extracted line break information provides details about the line breaks and notifications present in the PDF document. This can be useful for analyzing and understanding how text and paragraphs are structured within the document.
+Ответ: Извлеченная информация о разрыве строки содержит подробную информацию о разрывах строк и уведомлениях, присутствующих в PDF-документе. Это может быть полезно для анализа и понимания структуры текста и абзацев в документе.
 
-#### Q: What is the main takeaway from this tutorial?
+#### Вопрос: Каков основной вывод из этого урока?
 
-A: By following this tutorial, you've learned how to determine line breaks in a PDF document using Aspose.PDF for .NET. You can use this knowledge to extract and analyze line break information from PDF files programmatically.
+О: Следуя этому руководству, вы научились определять разрывы строк в PDF-документе с помощью Aspose.PDF для .NET. Вы можете использовать эти знания для программного извлечения и анализа информации о разрыве строк из файлов PDF.

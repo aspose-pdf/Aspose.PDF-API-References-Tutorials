@@ -1,76 +1,76 @@
 ---
-title: PDF To HTML
-linktitle: PDF To HTML
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to convert PDF to HTML using Aspose.PDF for .NET.
+title: قوات الدفاع الشعبي إلى HTML
+linktitle: قوات الدفاع الشعبي إلى HTML
+second_title: Aspose.PDF لمرجع .NET API
+description: دليل خطوة بخطوة لتحويل PDF إلى HTML باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 130
 url: /ar/net/document-conversion/pdf-to-html/
 ---
-In this tutorial, we'll walk you through the process of converting a PDF file to HTML format using Aspose.PDF for .NET. The PDF format is commonly used to view and share documents, while the HTML format is used to create web pages. By following the steps below, you will be able to convert PDF files to HTML format.
+في هذا البرنامج التعليمي، سنرشدك خلال عملية تحويل ملف PDF إلى تنسيق HTML باستخدام Aspose.PDF لـ .NET. يُستخدم تنسيق PDF بشكل شائع لعرض المستندات ومشاركتها، بينما يُستخدم تنسيق HTML لإنشاء صفحات الويب. باتباع الخطوات التالية، ستتمكن من تحويل ملفات PDF إلى تنسيق HTML.
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## المتطلبات الأساسية
+قبل البدء، تأكد من استيفاء المتطلبات الأساسية التالية:
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- المعرفة الأساسية بلغة البرمجة C#.
+- مكتبة Aspose.PDF لـ .NET مثبتة على نظامك.
+- بيئة تطوير مثل Visual Studio.
 
-## Step 1: Opening the source PDF document
-In this step, we will open the source PDF file using Aspose.PDF for .NET. Follow the code below:
+## الخطوة 1: فتح مستند PDF المصدر
+في هذه الخطوة، سنقوم بفتح ملف PDF المصدر باستخدام Aspose.PDF لـ .NET. اتبع الكود أدناه:
 
 ```csharp
-// Path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the source PDF document
+// افتح مستند PDF المصدر
 Document pdfDocument = new Document(dataDir + "PDFToHTML.pdf");
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where your PDF file is located.
+ تأكد من استبدال`"YOUR DOCUMENTS DIRECTORY"` مع الدليل الفعلي الذي يوجد به ملف PDF الخاص بك.
 
-## Step 2: PDF to HTML conversion
-After opening the PDF file, we can proceed with the conversion into HTML format. Use the following code:
+## الخطوة 2: تحويل PDF إلى HTML
+بعد فتح ملف PDF، يمكننا متابعة التحويل إلى تنسيق HTML. استخدم الكود التالي:
 
 ```csharp
-// Save the file in HTML format
+//احفظ الملف بتنسيق HTML
 pdfDocument.Save(dataDir + "output_out.html", SaveFormat.Html);
 ```
 
-The above code converts the PDF file to HTML format and saves it as `"output_out.html"` file.
+ يقوم الكود أعلاه بتحويل ملف PDF إلى تنسيق HTML وحفظه كملف`"output_out.html"` ملف.
 
-Replace `"YOUR DOCUMENTS DIRECTORY"` with the desired directory where you want to save the output HTML file.
+ يستبدل`"YOUR DOCUMENTS DIRECTORY"` مع الدليل المطلوب حيث تريد حفظ ملف HTML الناتج.
 
-### Example source code for PDF to HTML using Aspose.PDF for .NET
+### مثال على التعليمات البرمجية المصدر لتحويل PDF إلى HTML باستخدام Aspose.PDF لـ .NET
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open the source PDF document
+// افتح مستند PDF المصدر
 Document pdfDocument = new Document(dataDir + "PDFToHTML.pdf");
 
-// Save the file into MS document format
+// احفظ الملف بتنسيق مستند MS
 pdfDocument.Save(dataDir + "output_out.html", SaveFormat.Html);
 ```
 
-## Conclusion
-In this tutorial, we covered the step-by-step process of converting a PDF file to HTML format using Aspose.PDF for .NET. By following the instructions outlined above, you should now be able to convert PDF files to HTML format. This feature is useful when you want to embed PDF content into web pages or other applications that support HTML format.
+## خاتمة
+في هذا البرنامج التعليمي، قمنا بتغطية عملية تحويل ملف PDF إلى تنسيق HTML خطوة بخطوة باستخدام Aspose.PDF لـ .NET. باتباع الإرشادات الموضحة أعلاه، يجب أن تكون الآن قادرًا على تحويل ملفات PDF إلى تنسيق HTML. تكون هذه الميزة مفيدة عندما تريد تضمين محتوى PDF في صفحات الويب أو التطبيقات الأخرى التي تدعم تنسيق HTML.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: Can I control the output structure of the HTML file during conversion?
+#### س: هل يمكنني التحكم في بنية الإخراج لملف HTML أثناء التحويل؟
 
-A: Yes, Aspose.PDF for .NET allows you to control the output structure of the HTML file during conversion. You can specify options such as the conversion mode, whether to create separate folders for resources, and more. These options can be set through the `HtmlSaveOptions` class.
+ ج: نعم، Aspose.PDF for .NET يسمح لك بالتحكم في بنية الإخراج لملف HTML أثناء التحويل. يمكنك تحديد خيارات مثل وضع التحويل، وما إذا كنت تريد إنشاء مجلدات منفصلة للموارد، والمزيد. يمكن ضبط هذه الخيارات من خلال`HtmlSaveOptions` فصل.
 
-#### Q: Does Aspose.PDF for .NET support converting complex PDFs to HTML format?
+#### س: هل يدعم Aspose.PDF for .NET تحويل ملفات PDF المعقدة إلى تنسيق HTML؟
 
-A: Aspose.PDF for .NET provides comprehensive support for converting complex PDFs to HTML format. However, in some cases, highly intricate PDFs with advanced graphics, special fonts, or complex layouts might require additional adjustments or manual post-processing of the generated HTML file.
+ج: يوفر Aspose.PDF for .NET دعمًا شاملاً لتحويل ملفات PDF المعقدة إلى تنسيق HTML. ومع ذلك، في بعض الحالات، قد تتطلب ملفات PDF المعقدة للغاية والتي تحتوي على رسومات متقدمة أو خطوط خاصة أو تخطيطات معقدة تعديلات إضافية أو معالجة لاحقة يدوية لملف HTML الذي تم إنشاؤه.
 
-#### Q: Can I extract images and other resources from the PDF during the conversion process?
+#### س: هل يمكنني استخراج الصور والموارد الأخرى من ملف PDF أثناء عملية التحويل؟
 
-A: Yes, Aspose.PDF for .NET allows you to extract images and other resources embedded in the PDF during the conversion process. You can enable the option to create separate folders for resources, which will save the images and other assets in a separate directory, and then reference them in the converted HTML file.
+ج: نعم، يسمح لك Aspose.PDF for .NET باستخراج الصور والموارد الأخرى المضمنة في ملف PDF أثناء عملية التحويل. يمكنك تمكين خيار إنشاء مجلدات منفصلة للموارد، مما سيحفظ الصور والأصول الأخرى في دليل منفصل، ثم يشير إليها في ملف HTML المحول.
 
-#### Q: How can I handle hyperlinks and bookmarks in the output HTML file?
+#### س: كيف يمكنني التعامل مع الارتباطات التشعبية والإشارات المرجعية في ملف HTML الناتج؟
 
-A: Aspose.PDF for .NET preserves hyperlinks and bookmarks during the PDF to HTML conversion. The links and bookmarks present in the original PDF will be retained in the converted HTML file, making it possible to navigate within the generated HTML content.
+ج: يحتفظ Aspose.PDF for .NET بالارتباطات التشعبية والإشارات المرجعية أثناء تحويل PDF إلى HTML. سيتم الاحتفاظ بالروابط والإشارات المرجعية الموجودة في ملف PDF الأصلي في ملف HTML المحول، مما يجعل من الممكن التنقل داخل محتوى HTML الذي تم إنشاؤه.

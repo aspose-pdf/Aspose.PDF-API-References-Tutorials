@@ -1,120 +1,120 @@
 ---
-title: Set Free Text Annotation Formatting
-linktitle: Set Free Text Annotation Formatting
-second_title: Aspose.PDF for .NET API Reference
-description: This article provides a step-by-step guide on how to create a free text annotation and specify its contents using Aspose.PDF for .NET
+title: Serbest Metin Açıklaması Biçimlendirmesini Ayarlama
+linktitle: Serbest Metin Açıklaması Biçimlendirmesini Ayarlama
+second_title: .NET API Referansı için Aspose.PDF
+description: Bu makale, Aspose.PDF for .NET kullanılarak serbest metin açıklamasının nasıl oluşturulacağı ve içeriğinin nasıl belirleneceği konusunda adım adım bir kılavuz sunmaktadır.
 type: docs
 weight: 140
 url: /tr/net/annotations/setfreetextannotationformatting/
 ---
-Aspose.PDF for .NET is a powerful and easy-to-use PDF document manipulation API that allows you to work with PDF files programmatically in your .NET applications. One of the features provided by Aspose.PDF for .NET is the ability to set free text annotation formatting in PDF documents. In this article, we will walk you through the step-by-step process of setting free text annotation formatting using Aspose.PDF for .NET.
+Aspose.PDF for .NET, .NET uygulamalarınızda PDF dosyalarıyla programlı olarak çalışmanıza olanak tanıyan güçlü ve kullanımı kolay bir PDF belge işleme API'sidir. Aspose.PDF for .NET'in sağladığı özelliklerden biri, PDF belgelerinde serbest metin açıklama formatını ayarlama yeteneğidir. Bu makalede, Aspose.PDF for .NET'i kullanarak serbest metin açıklaması formatını ayarlama konusunda size adım adım yol göstereceğiz.
 
-## Prerequisites
+## Önkoşullar
 
-Before we get started, make sure that you have the following prerequisites:
+Başlamadan önce aşağıdaki önkoşullara sahip olduğunuzdan emin olun:
 
-- Microsoft Visual Studio 2010 or later
-- Aspose.PDF for .NET
-- Basic knowledge of C#
+- Microsoft Visual Studio 2010 veya üzeri
+- .NET için Aspose.PDF
+- Temel C# bilgisi
 
 
 
-## Step 1: Create a new C# console application
+## 1. Adım: Yeni bir C# konsol uygulaması oluşturun
 
-First, create a new C# console application in Microsoft Visual Studio. To create a new console application, select "File" > "New" > "Project" > "Visual C#" > "Console Application" from the main menu.
+Öncelikle Microsoft Visual Studio'da yeni bir C# konsol uygulaması oluşturun. Yeni bir konsol uygulaması oluşturmak için ana menüden "Dosya" > "Yeni" > "Proje" > "Visual C#" > "Konsol Uygulaması"nı seçin.
 
-## Step 2: Add reference to Aspose.PDF for .NET
+## Adım 2: Aspose.PDF for .NET'e referans ekleyin
 
-Next, add a reference to Aspose.PDF for .NET in your project. To do this, right-click on your project in the "Solution Explorer" pane, select "Add" > "Reference", and then browse to the location where you saved the Aspose.PDF for .NET DLL file. Select the DLL file and click "OK" to add the reference to your project.
+Daha sonra projenize Aspose.PDF for .NET'e bir referans ekleyin. Bunu yapmak için, "Çözüm Gezgini" bölmesinde projenize sağ tıklayın, "Ekle" > "Referans"ı seçin ve ardından Aspose.PDF for .NET DLL dosyasını kaydettiğiniz konuma göz atın. Referansı projenize eklemek için DLL dosyasını seçin ve "Tamam"a tıklayın.
 
-## Step 3: Set up the environment
+## 3. Adım: Ortamı ayarlayın
 
-After adding the reference to Aspose.PDF for .NET, you need to set up the environment. To do this, create a new string variable called "dataDir" and set it to the path of the directory where your PDF document is located. Replace "YOUR DOCUMENT DIRECTORY" in the code below with the actual path of your document directory:
+Referansı Aspose.PDF for .NET'e ekledikten sonra ortamı ayarlamanız gerekir. Bunu yapmak için "dataDir" adında yeni bir dize değişkeni oluşturun ve bunu PDF belgenizin bulunduğu dizinin yoluna ayarlayın. Aşağıdaki koddaki "BELGE DİZİNİNİZ" ifadesini belge dizininizin gerçek yolu ile değiştirin:
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 4: Open the PDF document
+## 4. Adım: PDF belgesini açın
 
-Once you have set up the environment, you can open the PDF document using the following code:
+Ortamı ayarladıktan sonra aşağıdaki kodu kullanarak PDF belgesini açabilirsiniz:
 
 ```csharp
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir + "SetFreeTextAnnotationFormatting.pdf");
 ```
 
-Replace "SetFreeTextAnnotationFormatting.pdf" with the actual name of your PDF document.
+"SetFreeTextAnnotationFormatting.pdf" ifadesini PDF belgenizin gerçek adıyla değiştirin.
 
-## Step 5: Set up default appearance
+## 5. Adım: Varsayılan görünümü ayarlayın
 
-To set up the default appearance of the free text annotation, you need to instantiate the DefaultAppearance object with the desired font, font size, and color. In this tutorial, we are setting the font to "Arial", font size to 28, and color to red.
+Serbest metin açıklamasının varsayılan görünümünü ayarlamak için, DefaultAppearance nesnesini istenen yazı tipi, yazı tipi boyutu ve renkle başlatmanız gerekir. Bu dersimizde yazı tipini "Arial", yazı tipi boyutunu 28 ve rengini kırmızı olarak ayarlıyoruz.
 
 ```csharp
-// Instantiate DefaultAppearance object
+// DefaultAppearance nesnesini örnekle
 DefaultAppearance default_appearance = new DefaultAppearance("Arial", 28, System.Drawing.Color.Red);
 ```
 
-## Step 6: Create a free text annotation
+## 6. Adım: Serbest metin ek açıklaması oluşturun
 
-Now that you have set up the default appearance, you can create a free text annotation using the following code:
+Artık varsayılan görünümü ayarladığınıza göre, aşağıdaki kodu kullanarak serbest metin açıklaması oluşturabilirsiniz:
 
 ```csharp
-// Create annotation
+// Ek açıklama oluştur
 FreeTextAnnotation freetext = new FreeTextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600), default_appearance);
 ```
 
-The above code creates a new free text annotation on the second page of the PDF document. The annotation will be positioned at (200, 400) and will have a width of 400 and a height of 600.
+Yukarıdaki kod, PDF belgesinin ikinci sayfasında yeni bir serbest metin açıklaması oluşturur. Ek açıklama (200, 400) konumuna yerleştirilecek ve 400 genişliğinde ve 600 yüksekliğinde olacaktır.
 
-## Step 7: Specify the contents of the annotation
+## 7. Adım: Ek açıklamanın içeriğini belirtin
 
-After creating the free text annotation, you can specify the contents of the annotation using the following code:
+Serbest metin açıklamasını oluşturduktan sonra aşağıdaki kodu kullanarak açıklamanın içeriğini belirleyebilirsiniz:
 
 ```csharp
-// Specify the contents of annotation
+// Ek açıklamanın içeriğini belirtin
 freetext.Contents = "Free Text
 ```
 
-### Example source code for Set Free Text Annotation Formatting using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak Serbest Metin Açıklaması Formatını Ayarlama için örnek kaynak kodu
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir + "SetFreeTextAnnotationFormatting.pdf");
 
-// Instantiate DefaultAppearance object
+// DefaultAppearance nesnesini örnekle
 DefaultAppearance default_appearance = new DefaultAppearance("Arial", 28, System.Drawing.Color.Red);
-// Create annotation
+// Ek açıklama oluştur
 FreeTextAnnotation freetext = new FreeTextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(200, 400, 400, 600), default_appearance);
-// Specify the contents of annotation
+// Ek açıklamanın içeriğini belirtin
 freetext.Contents = "Free Text";
-// Add anootation to annotations collection of page
+// Sayfanın ek açıklamalar koleksiyonuna ek açıklama ekleyin
 pdfDocument.Pages[1].Annotations.Add(freetext);
 dataDir = dataDir + "SetFreeTextAnnotationFormatting_out.pdf";
-// Save the updated document
+// Güncellenen belgeyi kaydet
 pdfDocument.Save(dataDir);            
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we learned how to set free text annotation formatting in a PDF document using Aspose.PDF for .NET. The library provides a straightforward and efficient way to work with PDF documents programmatically, allowing developers to create and customize various types of annotations, including free text annotations. By following the step-by-step guide and using the provided C# source code, you can easily set up the environment, open a PDF document, and create a free text annotation with custom formatting. Aspose.PDF for .NET is a robust and reliable API that simplifies PDF document manipulation tasks, making it a valuable tool for .NET developers working with PDF files.
+Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF belgesinde serbest metin açıklaması formatının nasıl ayarlanacağını öğrendik. Kitaplık, PDF belgeleriyle programlı olarak çalışmanın basit ve etkili bir yolunu sunarak geliştiricilerin serbest metin açıklamaları da dahil olmak üzere çeşitli türde açıklamaları oluşturmasına ve özelleştirmesine olanak tanır. Adım adım kılavuzu izleyerek ve sağlanan C# kaynak kodunu kullanarak ortamı kolayca kurabilir, bir PDF belgesi açabilir ve özel biçimlendirmeyle serbest metin açıklaması oluşturabilirsiniz. Aspose.PDF for .NET, PDF belgesi düzenleme görevlerini basitleştiren, onu PDF dosyalarıyla çalışan .NET geliştiricileri için değerli bir araç haline getiren sağlam ve güvenilir bir API'dir.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is a free text annotation in a PDF document?
+#### S: PDF belgesindeki serbest metin açıklaması nedir?
 
-A: A free text annotation in a PDF document is a type of annotation that allows you to add text to the document without being tied to a specific location or structure. It is commonly used to provide comments, notes, or other additional information in the document.
+C: PDF belgesindeki serbest metin açıklaması, belirli bir konuma veya yapıya bağlı kalmadan belgeye metin eklemenizi sağlayan bir açıklama türüdür. Genellikle belgede yorum, not veya diğer ek bilgileri sağlamak için kullanılır.
 
-#### Q: Can I customize the appearance of the free text annotation using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'i kullanarak serbest metin açıklamasının görünümünü özelleştirebilir miyim?
 
-A: Yes, you can customize various properties of the free text annotation, such as the font, font size, color, position, and more.
+C: Evet, serbest metin açıklamasının yazı tipi, yazı tipi boyutu, rengi, konumu ve daha fazlası gibi çeşitli özelliklerini özelleştirebilirsiniz.
 
-#### Q: How do I specify the contents of the free text annotation?
+#### S: Serbest metin açıklamasının içeriğini nasıl belirleyebilirim?
 
-A: To specify the contents of the free text annotation, you can set the `Contents` property of the `FreeTextAnnotation` object to the desired text.
+ C: Serbest metin açıklamasının içeriğini belirtmek için`Contents` mülkiyeti`FreeTextAnnotation` İstenilen metne itiraz edin.
 
-#### Q: Can I add multiple free text annotations to a PDF document using Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET kullanarak bir PDF belgesine birden fazla serbest metin açıklaması ekleyebilir miyim?
 
-A: Yes, you can create multiple free text annotations in a PDF document by creating multiple instances of the `FreeTextAnnotation` object and adding them to different pages or locations in the document.
+ C: Evet, bir PDF belgesinde birden çok serbest metin açıklaması oluşturabilirsiniz.`FreeTextAnnotation`nesneyi kullanma ve bunları belgedeki farklı sayfalara veya konumlara ekleme.

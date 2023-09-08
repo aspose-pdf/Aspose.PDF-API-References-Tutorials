@@ -1,128 +1,128 @@
 ---
-title: Delete Particular Bookmark In PDF File
-linktitle: Delete Particular Bookmark In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily delete a particular bookmark in PDF file with Aspose.PDF for .NET.
+title: حذف إشارة مرجعية معينة في ملف PDF
+linktitle: حذف إشارة مرجعية معينة في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: يمكنك بسهولة حذف إشارة مرجعية معينة في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 40
 url: /ar/net/programming-with-bookmarks/delete-particular-bookmark/
 ---
-It may be necessary to delete a particular bookmark in PDF file. With Aspose.PDF for .NET, you can easily delete a particular bookmark by following the following source code:
+قد يكون من الضروري حذف إشارة مرجعية معينة في ملف PDF. باستخدام Aspose.PDF for .NET، يمكنك بسهولة حذف إشارة مرجعية معينة باتباع التعليمات البرمجية المصدر التالية:
 
-## Step 1: Import required libraries
+## الخطوة 1: استيراد المكتبات المطلوبة
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+قبل أن تبدأ، تحتاج إلى استيراد المكتبات اللازمة لمشروع C# الخاص بك. فيما يلي توجيه الاستيراد الضروري:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## الخطوة 2: تعيين المسار إلى مجلد المستندات
 
-In this step, you need to specify the path to the folder containing the PDF file from which you want to remove a particular bookmark. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ في هذه الخطوة، تحتاج إلى تحديد المسار إلى المجلد الذي يحتوي على ملف PDF الذي تريد إزالة إشارة مرجعية معينة منه. يستبدل`"YOUR DOCUMENT DIRECTORY"`في الكود التالي مع المسار الفعلي لمجلد المستندات الخاص بك:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## الخطوة 3: افتح مستند PDF
 
-Now we are going to open the PDF document from which we want to remove a bookmark using the following code:
+سنقوم الآن بفتح مستند PDF الذي نريد إزالة إشارة مرجعية منه باستخدام الكود التالي:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "DeleteParticularBookmark.pdf");
 ```
 
-## Step 4: Delete a particular bookmark
+## الخطوة 4: حذف إشارة مرجعية معينة
 
-In this step, we delete a particular bookmark using the `Delete` method of the `Outlines` property. We specify the title of the bookmark to delete. Here is the corresponding code:
+ في هذه الخطوة، نقوم بحذف إشارة مرجعية معينة باستخدام`Delete` طريقة`Outlines` ملكية. نحدد عنوان الإشارة المرجعية المراد حذفها. هنا هو الكود المقابل:
 
 ```csharp
 pdfDocument.Outlines.Delete("Child Outline");
 ```
 
-## Step 5: Save the updated file
+## الخطوة 5: احفظ الملف المحدث
 
-Finally, we save the updated PDF file using the `Save` method of the `pdfDocument` object. Here is the corresponding code:
+ أخيرًا، نقوم بحفظ ملف PDF المحدث باستخدام ملف`Save` طريقة`pdfDocument` هدف. هنا هو الكود المقابل:
 
 ```csharp
 dataDir = dataDir + "DeleteParticularBookmark_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Delete Particular Bookmark using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لحذف إشارة مرجعية معينة باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "DeleteParticularBookmark.pdf");
-// Delete particular outline by Title
+// حذف مخطط تفصيلي معين حسب العنوان
 pdfDocument.Outlines.Delete("Child Outline");
 dataDir = dataDir + "DeleteParticularBookmark_out.pdf";
-// Save updated file
+// حفظ الملف المحدث
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nParticular bookmark deleted successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## خاتمة
 
-Congratulation ! Now you have a step by step guide to delete a particular bookmark with Aspose.PDF for .NET. You can use this code to target and remove specific bookmarks from your PDF documents.
+تهنئة ! الآن لديك دليل خطوة بخطوة لحذف إشارة مرجعية معينة باستخدام Aspose.PDF لـ .NET. يمكنك استخدام هذا الرمز لاستهداف وإزالة إشارات مرجعية محددة من مستندات PDF الخاصة بك.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+تأكد من مراجعة وثائق Aspose.PDF الرسمية لمزيد من المعلومات حول ميزات معالجة الإشارات المرجعية المتقدمة.
 
-### FAQ's for delete particular bookmark in PDF file
+### الأسئلة الشائعة لحذف إشارة مرجعية معينة في ملف PDF
 
-#### Q: Why would I need to delete a particular bookmark from a PDF file?
+#### س: لماذا أحتاج إلى حذف إشارة مرجعية معينة من ملف PDF؟
 
-A: There are instances where you might want to remove a specific bookmark to improve the structure or user experience of the PDF document. Deleting unnecessary or outdated bookmarks can enhance navigation.
+ج: هناك حالات قد ترغب فيها في إزالة إشارة مرجعية معينة لتحسين البنية أو تجربة المستخدم لمستند PDF. يمكن أن يؤدي حذف الإشارات المرجعية غير الضرورية أو القديمة إلى تحسين التنقل.
 
-#### Q: What is the purpose of deleting a particular bookmark?
+#### س: ما هو الغرض من حذف إشارة مرجعية معينة؟
 
-A: Deleting a particular bookmark allows you to fine-tune the organization of the PDF's navigational elements. This can be useful when certain bookmarks are no longer relevant or when you want to focus on key sections.
+ج: يتيح لك حذف إشارة مرجعية معينة ضبط تنظيم عناصر التنقل في ملف PDF. يمكن أن يكون هذا مفيدًا عندما لا تعود بعض الإشارات المرجعية ذات صلة أو عندما تريد التركيز على الأقسام الرئيسية.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### س: كيف يمكنني استيراد المكتبات اللازمة لمشروع C# الخاص بي؟
 
-A: To import the required library for your C# project, use the following import directive:
+ج: لاستيراد المكتبة المطلوبة لمشروع C# الخاص بك، استخدم توجيه الاستيراد التالي:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This directive allows you to access the classes and methods provided by Aspose.PDF for .NET.
+يتيح لك هذا التوجيه الوصول إلى الفئات والأساليب التي يوفرها Aspose.PDF لـ .NET.
 
-#### Q: How do I specify the path to the documents folder?
+#### س: كيف أحدد المسار إلى مجلد المستندات؟
 
-A: In the provided source code, replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file from which you want to remove a particular bookmark. This ensures that the code can locate the target PDF file.
+ ج: في كود المصدر المقدم، استبدل`"YOUR DOCUMENT DIRECTORY"` بالمسار الفعلي إلى المجلد الذي يحتوي على ملف PDF الذي تريد إزالة إشارة مرجعية معينة منه. وهذا يضمن أن الكود يمكنه تحديد موقع ملف PDF المستهدف.
 
-#### Q: How do I open a PDF document to delete a specific bookmark?
+#### س: كيف يمكنني فتح مستند PDF لحذف إشارة مرجعية معينة؟
 
-A: To open a PDF document for bookmark deletion, use the following code:
+ج: لفتح مستند PDF لحذف الإشارة المرجعية، استخدم الكود التالي:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "DeleteParticularBookmark.pdf");
 ```
 
-Replace `"DeleteParticularBookmark.pdf"` with the actual file name.
+ يستبدل`"DeleteParticularBookmark.pdf"` مع اسم الملف الفعلي.
 
-#### Q: How do I delete a particular bookmark?
+#### س: كيف يمكنني حذف إشارة مرجعية معينة؟
 
-A: To remove a particular bookmark from the PDF document, use the `Delete` method of the `Outlines` property. Specify the title of the bookmark to be deleted:
+ ج: لإزالة إشارة مرجعية معينة من مستند PDF، استخدم`Delete` طريقة`Outlines` ملكية. حدد عنوان الإشارة المرجعية المراد حذفها:
 
 ```csharp
 pdfDocument.Outlines.Delete("Child Outline");
 ```
 
-#### Q: Can I delete multiple particular bookmarks at once?
+#### س: هل يمكنني حذف إشارات مرجعية معينة متعددة مرة واحدة؟
 
-A: Yes, you can delete multiple specific bookmarks by calling the `Delete` method for each bookmark title. Customize the code to target and remove the desired bookmarks.
+ ج: نعم، يمكنك حذف عدة إشارات مرجعية محددة عن طريق الاتصال بـ`Delete` طريقة لكل عنوان الإشارة المرجعية. قم بتخصيص الكود لاستهداف الإشارات المرجعية المطلوبة وإزالتها.
 
-#### Q: What happens to the rest of the document when a bookmark is deleted?
+#### س: ماذا يحدث لبقية المستند عند حذف إشارة مرجعية؟
 
-A: Deleting a bookmark affects only the navigational structure of the document. The content and layout of the PDF remain unaffected.
+ج: يؤثر حذف الإشارة المرجعية على بنية التنقل للمستند فقط. يظل محتوى وتخطيط ملف PDF غير متأثرين.
 
-#### Q: How do I save the updated PDF file after deleting a bookmark?
+#### س: كيف يمكنني حفظ ملف PDF المحدث بعد حذف الإشارة المرجعية؟
 
-A: To save the updated PDF file after removing a bookmark, use the following code:
+ج: لحفظ ملف PDF المحدث بعد إزالة الإشارة المرجعية، استخدم الكود التالي:
 
 ```csharp
 dataDir = dataDir + "DeleteParticularBookmark_out.pdf";

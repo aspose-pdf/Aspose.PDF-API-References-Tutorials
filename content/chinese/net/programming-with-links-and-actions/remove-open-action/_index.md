@@ -1,107 +1,107 @@
 ---
-title: Remove Open Action
-linktitle: Remove Open Action
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to remove the open action from a PDF using Aspose.PDF for .NET.
+title: 删除打开的操作
+linktitle: 删除打开的操作
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 从 PDF 中删除打开操作。
 type: docs
 weight: 80
 url: /zh/net/programming-with-links-and-actions/remove-open-action/
 ---
-Learn how to remove the open action from a PDF file using Aspose.PDF for .NET with this step-by-step guide.
+通过此分步指南，了解如何使用 Aspose.PDF for .NET 从 PDF 文件中删除打开操作。
 
-## Step 1: Setting up the environment
+## 第一步：搭建环境
 
-Make sure you have set up your development environment with a C# project and the appropriate Aspose.PDF references.
+确保您已使用 C# 项目和适当的 Aspose.PDF 参考设置开发环境。
 
-## Step 2: Loading the PDF file
+## 第 2 步：加载 PDF 文件
 
-Set the directory path of your documents and upload the PDF file using the following code:
+使用以下代码设置文档的目录路径并上传 PDF 文件：
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Open the document
+//打开文档
 Document document = new Document(dataDir + "RemoveOpenAction.pdf");
 ```
 
-## Step 3: Deleting the open action
+## 第三步：删除打开的动作
 
-Remove the open action from the document by setting the `OpenAction` property to null:
+通过设置从文档中删除打开操作`OpenAction`属性为空：
 
 ```csharp
 document. OpenAction = null;
 ```
 
-## Step 4: Save the updated document
+## 步骤 4：保存更新后的文档
 
-Save the updated document using the `Save` method:
+使用保存更新的文档`Save`方法：
 
 ```csharp
 dataDir = dataDir + "RemoveOpenAction_out.pdf";
 document. Save(dataDir);
 ```
 
-## Step 5: Displaying the result
+## 第5步：显示结果
 
-Display a message indicating that the open action was successfully removed and specify the location of the saved file:
+显示一条消息，指示打开操作已成功删除并指定保存文件的位置：
 
 ```csharp
 Console.WriteLine("\nOpen action deleted successfully.\nFile saved to location: " + dataDir);
 ```
 
-### Sample source code for Remove Open Action using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 删除打开操作的示例源代码 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+//打开文档
 Document document = new Document(dataDir + "RemoveOpenAction.pdf");
-// Remove document open action
+//删除文档打开操作
 document.OpenAction = null;
 dataDir = dataDir + "RemoveOpenAction_out.pdf";
-// Save updated document
+//保存更新的文档
 document.Save(dataDir);
 Console.WriteLine("\nOpen action removed successfully.\nFile saved at " + dataDir); 
 ```
 
-## Conclusion
+## 结论
 
-Congratulation ! Now you know how to remove the open action from a PDF using Aspose.PDF for .NET. Use this knowledge to customize the properties and behavior of PDF files in your projects.
+恭喜！现在您知道如何使用 Aspose.PDF for .NET 从 PDF 中删除打开操作。使用这些知识来自定义项目中 PDF 文件的属性和行为。
 
-Now that you've completed this guide, you can apply these concepts to your own projects and further explore the features offered by Aspose.PDF for .NET.
+现在您已经完成了本指南，您可以将这些概念应用到您自己的项目中，并进一步探索 Aspose.PDF for .NET 提供的功能。
 
-### FAQ's 
+### 常见问题解答 
 
-#### Q: What is the "open action" in a PDF file?
+#### 问：PDF 文件中的“打开操作”是什么？
 
-A: The "open action" in a PDF file is an instruction that specifies what should happen when the PDF is opened. It can include actions like navigating to a specific page or location within the document, launching an external application, or displaying a specific view.
+答：PDF 文件中的“打开操作”是一条指令，指定打开 PDF 时会发生什么情况。它可以包括导航到文档中的特定页面或位置、启动外部应用程序或显示特定视图等操作。
 
-#### Q: Why would I want to remove the open action from a PDF file?
+#### 问：为什么我要从 PDF 文件中删除打开操作？
 
-A: Removing the open action can enhance security, user experience, and control over how the PDF is presented when opened. For example, you might want to prevent automatic navigation or disable certain actions upon opening the document.
+答：删除打开操作可以增强安全性、用户体验以及对打开 PDF 时呈现方式的控制。例如，您可能希望在打开文档时阻止自动导航或禁用某些操作。
 
-#### Q: How does Aspose.PDF for .NET help in removing the open action?
+#### 问：Aspose.PDF for .NET 如何帮助删除打开操作？
 
-A: Aspose.PDF for .NET provides APIs to manipulate various aspects of PDF files. This tutorial demonstrates how to remove the open action using C# code.
+答：Aspose.PDF for .NET 提供 API 来操作 PDF 文件的各个方面。本教程演示如何使用 C# 代码删除打开操作。
 
-#### Q: Are there any potential risks or considerations when removing the open action?
+#### 问：取消开放动作是否有潜在的风险或注意事项？
 
-A: Removing the open action can alter the default behavior of the PDF, so ensure that it aligns with the intended user experience. Test the modified PDF thoroughly to confirm that the removal does not affect other functionalities.
+答：删除打开操作可能会改变 PDF 的默认行为，因此请确保它符合预期的用户体验。彻底测试修改后的 PDF，以确认删除不会影响其他功能。
 
-#### Q: Can I customize the open action to perform other actions?
+#### 问：我可以自定义打开动作来执行其他操作吗？
 
-A: Yes, Aspose.PDF for .NET enables you to customize the open action by setting it to various types of actions, such as navigating to a specific page or executing JavaScript.
+答：是的，Aspose.PDF for .NET 允许您通过将打开操作设置为各种类型的操作来自定义打开操作，例如导航到特定页面或执行 JavaScript。
 
-#### Q: Can I remove open actions from password-protected PDFs?
-A: Yes, you can remove open actions from password-protected PDFs as long as you provide the appropriate credentials to access and modify the document.
+#### 问：我可以从受密码保护的 PDF 中删除打开的操作吗？
+答：是的，只要您提供适当的凭据来访问和修改文档，您就可以从受密码保护的 PDF 中删除打开操作。
 
-#### Q: Is the open action removal reversible?
+#### 问：打开动作移除是否可逆？
 
-A: No, once the open action is removed and the PDF is saved, the original open action cannot be restored from the modified PDF.
+答：不可以，一旦打开操作被删除并保存 PDF，则无法从修改后的 PDF 恢复原始打开操作。
 
-#### Q: How do I verify that the open action was successfully removed?
+#### 问：如何验证打开操作是否已成功删除？
 
-A: After removing the open action using the provided code, open the modified PDF and confirm that no specific action occurs upon opening.
+A：使用提供的代码去除打开操作后，打开修改后的PDF并确认打开时没有发生任何特定操作。
 
-#### Q: Can I remove open actions from multiple PDF files simultaneously?
+#### 问：我可以同时从多个 PDF 文件中删除打开的操作吗？
 
-A: Yes, you can use the same approach to remove open actions from multiple PDF files in a batch processing scenario.
+答：是的，您可以使用相同的方法在批处理场景中从多个 PDF 文件中删除打开的操作。

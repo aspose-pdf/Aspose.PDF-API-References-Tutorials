@@ -1,31 +1,31 @@
 ---
-title: lnk Annotation Line Width
-linktitle: lnk Annotation Line Width
-second_title: Aspose.PDF for .NET API Reference
-description: This article provides a step-by-step guide for setting the line width of the lnk Annotation using Aspose.PDF for .NET.
+title: lnk Anteckningslinjebredd
+linktitle: lnk Anteckningslinjebredd
+second_title: Aspose.PDF för .NET API Referens
+description: Den här artikeln ger en steg-för-steg-guide för att ställa in linjebredden för lnk-anteckningen med Aspose.PDF för .NET.
 type: docs
 weight: 110
 url: /sv/net/annotations/lnkannotationlinewidth/
 ---
-Aspose.PDF is a powerful and widely-used tool for working with PDF files in .NET applications. It provides a variety of features for creating, editing, and manipulating PDF files, including the ability to add annotations to pages. In this tutorial, we will explain how to set the line width of a link annotation using Aspose.PDF for .NET.
+Aspose.PDF är ett kraftfullt och allmänt använt verktyg för att arbeta med PDF-filer i .NET-applikationer. Den tillhandahåller en mängd olika funktioner för att skapa, redigera och manipulera PDF-filer, inklusive möjligheten att lägga till kommentarer till sidor. I den här handledningen kommer vi att förklara hur man ställer in linjebredden för en länkkommentar med Aspose.PDF för .NET.
 
-Once you have these prerequisites, create a new console application project in Visual Studio. Then, add a reference to the Aspose.PDF for .NET library by right-clicking on the project in the Solution Explorer, selecting "Manage NuGet Packages," and searching for "Aspose.PDF" in the NuGet Package Manager.
+När du har dessa förutsättningar skapar du ett nytt konsolapplikationsprojekt i Visual Studio. Lägg sedan till en referens till Aspose.PDF för .NET-biblioteket genom att högerklicka på projektet i Solution Explorer, välja "Manage NuGet Packages" och söka efter "Aspose.PDF" i NuGet Package Manager.
 
-To add a lnk annotation to a PDF document, follow these steps:
+För att lägga till en lnk-kommentar till ett PDF-dokument, följ dessa steg:
 
-## Step 1: Create a new `Document` object.
+##  Steg 1: Skapa en ny`Document` object.
 ```csharp
 Document doc = new Document();
 ```
-## Step 2: Add a new page to the document.
+## Steg 2: Lägg till en ny sida i dokumentet.
 ```csharp
 doc.Pages.Add();
 ```
-## Step 3: Create a list of `Point` arrays that represent the ink gesture for the annotation.
+##  Steg 3: Skapa en lista över`Point` arrays that represent the ink gesture for the annotation.
 ```csharp
 IList<Point[]> inkList = new List<Point[]>();
 ```
-## Step 4: Create a new `LineInfo` object that defines the properties of the ink gesture.
+##  Steg 4: Skapa en ny`LineInfo` object that defines the properties of the ink gesture.
 ```csharp
 LineInfo lineInfo = new LineInfo();
 lineInfo.VerticeCoordinate = new float[] { 55, 55, 70, 70, 70, 90, 150, 60 };
@@ -33,7 +33,7 @@ lineInfo.Visibility = true;
 lineInfo.LineColor = System.Drawing.Color.Red;
 lineInfo.LineWidth = 2;
 ```
-## Step 5: Create a new `Aspose.Pdf.Point` array that represents the gesture from the `LineInfo` object.
+##  Steg 5: Skapa en ny`Aspose.Pdf.Point` array that represents the gesture from the `LineInfo` object.
 ```csharp
 int length = lineInfo.VerticeCoordinate.Length / 2;
 Aspose.Pdf.Point[] gesture = new Aspose.Pdf.Point[length];
@@ -42,24 +42,24 @@ for (int i = 0; i < length; i++)
     gesture[i] = new Aspose.Pdf.Point(lineInfo.VerticeCoordinate[2 * i], lineInfo.VerticeCoordinate[2 * i + 1]);
 }
 ```
-## Step 6: Add the gesture to the list of ink gestures.
+## Steg 6: Lägg till gesten i listan över bläckgester.
 ```csharp
 inkList.Add(gesture);
 ```
-## Step 7: Create a new `InkAnnotation` object that represents the link annotation.
+##  Steg 7: Skapa en ny`InkAnnotation` object that represents the link annotation.
 ```csharp
 InkAnnotation a1 = new InkAnnotation(doc.Pages[1], new Aspose.Pdf.Rectangle(100, 100, 300, 300), inkList);
 ```
-## Step 8: Set the subject and title of the annotation.
+## Steg 8: Ställ in ämnet och rubriken för kommentaren.
 ```csharp
 a1.Subject = "Test";
 a1.Title = "Title";
 ```
-## Step 9: Set the color of the annotation.
+## Steg 9: Ställ in färgen på anteckningen.
 ```csharp
 a1.Color = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Green);
 ```
-## Step 10: Create a new `Border` object that defines the properties of the annotation's border.
+##  Steg 10: Skapa en ny`Border` object that defines the properties of the annotation's border.
 ```csharp
 Border border = new Border(a1);
 border.Width = 3;
@@ -67,21 +67,21 @@ border.Effect = BorderEffect.Cloudy;
 border.Dash = new Dash(1, 1);
 border.Style = BorderStyle.Solid;
 ```
-## Step 11: Add the annotation to the page.
+## Steg 11: Lägg till anteckningen på sidan.
 ```csharp
 doc.Pages[1].Annotations.Add(a1);
 ```
-## Step 12: Save the document to a file.
+## Steg 12: Spara dokumentet till en fil.
 ```csharp
-// Save output file
+// Spara utdatafil
 doc.Save(dataDir);
 
 
 ```
-### The example shows lnk Annotation Line Width with Aspose.PDF for .NET
+### Exemplet visar lnk Annotation Line Width med Aspose.PDF för .NET
 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 Document doc = new Document();
@@ -112,32 +112,32 @@ border.Style = BorderStyle.Solid;
 doc.Pages[1].Annotations.Add(a1);
 
 dataDir = dataDir + "lnkAnnotationLineWidth_out.pdf";
-// Save output file
+// Spara utdatafil
 doc.Save(dataDir);
 ```
 
-## Conclusion
+## Slutsats
 
-In this tutorial, we learned how to set the line width of a link annotation in a PDF document using Aspose.PDF for .NET. Aspose.PDF for .NET provides a wide range of tools and features for working with PDF documents, including the ability to create and customize link annotations. By following the step-by-step guide and using the provided C# source code, developers can easily add interactive links to their PDF documents, enhancing the user experience and interactivity of their applications. Aspose.PDF for .NET is a versatile library that empowers .NET developers to work with PDF files efficiently and effectively.
+den här handledningen lärde vi oss hur man ställer in radbredden för en länkkommentar i ett PDF-dokument med Aspose.PDF för .NET. Aspose.PDF för .NET tillhandahåller ett brett utbud av verktyg och funktioner för att arbeta med PDF-dokument, inklusive möjligheten att skapa och anpassa länkkommentarer. Genom att följa den steg-för-steg-guide och använda den medföljande C#-källkoden, kan utvecklare enkelt lägga till interaktiva länkar till sina PDF-dokument, vilket förbättrar användarupplevelsen och interaktiviteten i sina applikationer. Aspose.PDF för .NET är ett mångsidigt bibliotek som ger .NET-utvecklare möjlighet att arbeta med PDF-filer effektivt och effektivt.
 
 ### FAQ's
 
-#### Q: What is a link annotation in a PDF document?
+#### F: Vad är en länkkommentar i ett PDF-dokument?
 
-A: A link annotation in a PDF document is an interactive element that allows you to create hyperlinks or actions that direct the user to another location within the same document, an external website, or a different PDF document.
+S: En länkkommentar i ett PDF-dokument är ett interaktivt element som låter dig skapa hyperlänkar eller åtgärder som leder användaren till en annan plats i samma dokument, en extern webbplats eller ett annat PDF-dokument.
 
-#### Q: How can I set the line width of a link annotation using Aspose.PDF for .NET?
+#### F: Hur kan jag ställa in linjebredden för en länkanteckning med Aspose.PDF för .NET?
 
-A: To set the line width of a link annotation using Aspose.PDF for .NET, you can create an `InkAnnotation` object and specify the line width property.
+S: För att ställa in linjebredden för en länkkommentar med Aspose.PDF för .NET, kan du skapa en`InkAnnotation` objekt och ange egenskapen linjebredd.
 
-#### Q: What properties can be customized for a link annotation in Aspose.PDF for .NET?
+#### F: Vilka egenskaper kan anpassas för en länkkommentar i Aspose.PDF för .NET?
 
-A: You can customize various properties of a link annotation in Aspose.PDF for .NET, such as its location, size, color, border properties (width, style, dash pattern, and effect), subject, title, and visibility.
+S: Du kan anpassa olika egenskaper för en länkkommentar i Aspose.PDF för .NET, såsom dess plats, storlek, färg, kantegenskaper (bredd, stil, streckmönster och effekt), ämne, titel och synlighet.
 
-#### Q: Can I create a link annotation that contains multiple ink gestures?
+#### F: Kan jag skapa en länkkommentar som innehåller flera bläckgester?
 
-A: Yes, you can create a link annotation that contains multiple ink gestures by adding multiple `Point` arrays to the `InkAnnotation` object.
+ S: Ja, du kan skapa en länkkommentar som innehåller flera bläckgester genom att lägga till flera`Point` matriser till`InkAnnotation` objekt.
 
-#### Q: How can I add a link annotation to a specific page of the PDF document?
+#### F: Hur kan jag lägga till en länkkommentar till en specifik sida i PDF-dokumentet?
 
-A: To add a link annotation to a specific page of the PDF document, you need to specify the page number when creating the `InkAnnotation` object. For example, `new InkAnnotation(doc.Pages[1], ...)` adds the link annotation to the first page.
+ S: För att lägga till en länkkommentar till en specifik sida i PDF-dokumentet måste du ange sidnumret när du skapar`InkAnnotation` objekt. Till exempel,`new InkAnnotation(doc.Pages[1], ...)` lägger till länkkommentaren på första sidan.

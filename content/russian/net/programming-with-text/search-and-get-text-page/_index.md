@@ -1,74 +1,74 @@
 ---
-title: Search And Get Text Page In PDF File
-linktitle: Search And Get Text Page In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to search and get text from a specific page in PDF file using Aspose.PDF for .NET.
+title: Найдите и получите текстовую страницу в PDF-файле
+linktitle: Найдите и получите текстовую страницу в PDF-файле
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как искать и получать текст с определенной страницы в PDF-файле с помощью Aspose.PDF для .NET.
 type: docs
 weight: 430
 url: /ru/net/programming-with-text/search-and-get-text-page/
 ---
-This tutorial explains how to use Aspose.PDF for .NET to search and get text from a specific page in PDF file. The provided C# source code demonstrates the process step by step.
+В этом руководстве объясняется, как использовать Aspose.PDF для .NET для поиска и получения текста с определенной страницы в файле PDF. Приведенный исходный код C# демонстрирует процесс шаг за шагом.
 
-## Prerequisites
+## Предварительные условия
 
-Before proceeding with the tutorial, make sure you have the following:
+Прежде чем продолжить обучение, убедитесь, что у вас есть следующее:
 
-- Basic knowledge of C# programming language.
-- Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to install it in your project.
+- Базовые знания языка программирования C#.
+- Установлена библиотека Aspose.PDF для .NET. Вы можете получить его с веб-сайта Aspose или использовать NuGet для установки в свой проект.
 
-## Step 1: Set up the project
+## Шаг 1. Настройте проект
 
-Start by creating a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library.
+Начните с создания нового проекта C# в предпочитаемой вами интегрированной среде разработки (IDE) и добавьте ссылку на библиотеку Aspose.PDF для .NET.
 
-## Step 2: Import necessary namespaces
+## Шаг 2. Импортируйте необходимые пространства имен.
 
-Add the following using directives at the beginning of your C# file to import the required namespaces:
+Добавьте следующие директивы using в начало файла C#, чтобы импортировать необходимые пространства имен:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Load the PDF document
+## Шаг 3. Загрузите PDF-документ.
 
-Set the path to your PDF document directory and load the document using the `Document` class:
+ Укажите путь к каталогу вашего PDF-документа и загрузите документ, используя`Document` сорт:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "SearchAndGetTextPage.pdf");
 ```
 
-Make sure to replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ Обязательно замените`"YOUR DOCUMENT DIRECTORY"` с фактическим путем к каталогу вашего документа.
 
-## Step 4: Search and extract text from a page
+## Шаг 4. Найдите и извлеките текст со страницы.
 
-Create a `TextFragmentAbsorber` object to find all instances of the input search phrase on a specific page:
+ Создать`TextFragmentAbsorber`объект, чтобы найти все экземпляры входной поисковой фразы на определенной странице:
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("Figure");
 ```
 
-Replace `"Figure"` with the actual text you want to search for.
+ Заменять`"Figure"` с фактическим текстом, который вы хотите найти.
 
-## Step 5: Search on a specific page
+## Шаг 5. Поиск на определенной странице.
 
-Accept the absorber for a specific page of the document:
+Примите поглотитель для конкретной страницы документа:
 
 ```csharp
 pdfDocument.Pages.Accept(textFragmentAbsorber);
 ```
 
-## Step 6: get extracted text fragments
+## Шаг 6: получите извлеченные фрагменты текста
 
-Get the extracted text fragments using the `TextFragments` property of the `TextFragmentAbsorber` object:
+Получите извлеченные фрагменты текста, используя`TextFragments` собственность`TextFragmentAbsorber` объект:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
 ```
 
-## Step 7: Loop through the text fragments and segments
+## Шаг 7. Прокрутите фрагменты и сегменты текста.
 
-Loop through the getd text fragments and their segments, and access their properties:
+Прокрутите полученные фрагменты текста и их сегменты и получите доступ к их свойствам:
 
 ```csharp
 foreach (TextFragment textFragment in textFragmentCollection)
@@ -89,21 +89,21 @@ foreach (TextFragment textFragment in textFragmentCollection)
 }
 ```
 
-You can modify the code within the loop to perform further actions on each text segment.
+Вы можете изменить код внутри цикла, чтобы выполнять дальнейшие действия над каждым текстовым сегментом.
 
-### Sample source code for Search And Get Text Page using Aspose.PDF for .NET 
+### Пример исходного кода для страницы поиска и получения текста с использованием Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Открыть документ
 Document pdfDocument = new Document(dataDir + "SearchAndGetTextPage.pdf");
-// Create TextAbsorber object to find all instances of the input search phrase
+// Создайте объект TextAbsorber, чтобы найти все экземпляры входной поисковой фразы.
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("Figure");
-// Accept the absorber for all the pages
+// Примите поглотитель для всех страниц
 pdfDocument.Pages.Accept(textFragmentAbsorber);
-// Get the extracted text fragments
+// Получить извлеченные фрагменты текста
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-// Loop through the fragments
+// Перебирать фрагменты
 foreach (TextFragment textFragment in textFragmentCollection)
 {
 	foreach (TextSegment textSegment in textFragment.Segments)
@@ -122,40 +122,40 @@ foreach (TextFragment textFragment in textFragmentCollection)
 }
 ```
 
-## Conclusion
+## Заключение
 
-Congratulations! You have successfully learned how to search and get text from a specific page of a PDF document using Aspose.PDF for .NET. This tutorial provided a step-by-step guide, from loading the document to accessing the extracted text segments. You can now incorporate
+Поздравляем! Вы успешно научились искать и получать текст с определенной страницы PDF-документа с помощью Aspose.PDF для .NET. В этом руководстве представлено пошаговое руководство: от загрузки документа до доступа к извлеченным текстовым сегментам. Теперь вы можете включить
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is the purpose of the "Search And Get Text Page" tutorial?
+#### Вопрос: Какова цель руководства «Поиск и получение текстовой страницы»?
 
-A: The "Search And Get Text Page" tutorial is designed to illustrate how to use the Aspose.PDF library for .NET to search for and retrieve text from a specific page within a PDF file. The tutorial provides detailed instructions and sample C# code to demonstrate the process.
+О: Учебное пособие «Поиск и получение текстовой страницы» предназначено для иллюстрации того, как использовать библиотеку Aspose.PDF для .NET для поиска и извлечения текста с определенной страницы в файле PDF. В руководстве представлены подробные инструкции и пример кода C# для демонстрации процесса.
 
-#### Q: How does this tutorial help in extracting text from a specific page in a PDF document?
+#### Вопрос: Как это руководство поможет извлечь текст с определенной страницы PDF-документа?
 
-A: This tutorial guides you through the process of extracting text from a particular page of a PDF document using the Aspose.PDF library. It outlines the necessary steps and provides C# code to search for a specified text phrase on the selected page and retrieve associated text segments.
+О: Это руководство проведет вас через процесс извлечения текста из определенной страницы PDF-документа с помощью библиотеки Aspose.PDF. В нем описываются необходимые шаги и предоставляется код C# для поиска указанной текстовой фразы на выбранной странице и получения связанных текстовых сегментов.
 
-#### Q: What are the prerequisites for following this tutorial?
+#### Вопрос: Каковы необходимые условия для изучения этого руководства?
 
-A: Before starting this tutorial, you should have a basic understanding of the C# programming language. Additionally, you need to have the Aspose.PDF for .NET library installed. You can obtain it from the Aspose website or use NuGet to integrate it into your project.
+О: Прежде чем приступить к изучению этого руководства, вы должны иметь базовое представление о языке программирования C#. Кроме того, вам необходимо установить библиотеку Aspose.PDF for .NET. Вы можете получить его с веб-сайта Aspose или использовать NuGet для интеграции в свой проект.
 
-#### Q: How do I set up my project to follow this tutorial?
+#### Вопрос: Как мне настроить свой проект для использования этого руководства?
 
-A: To get started, create a new C# project in your preferred integrated development environment (IDE) and add a reference to the Aspose.PDF for .NET library. This will enable you to utilize the library's capabilities in your project.
+О: Для начала создайте новый проект C# в предпочитаемой вами интегрированной среде разработки (IDE) и добавьте ссылку на библиотеку Aspose.PDF для .NET. Это позволит вам использовать возможности библиотеки в своем проекте.
 
-#### Q: Can I search for text on a specific page of the PDF document?
+#### Вопрос: Могу ли я искать текст на определенной странице PDF-документа?
 
-A: Yes, this tutorial demonstrates how to search for text on a specific page of a PDF document. It involves using the `TextFragmentAbsorber` class to locate instances of a particular text phrase on the chosen page.
+О: Да, в этом руководстве показано, как искать текст на определенной странице PDF-документа. Он предполагает использование`TextFragmentAbsorber` класс для поиска экземпляров определенной текстовой фразы на выбранной странице.
 
-#### Q: How do I access the extracted text segments from the specific page?
+#### Вопрос: Как мне получить доступ к извлеченным фрагментам текста с определенной страницы?
 
-A: After searching for the text on the designated page, you can access the extracted text segments using the `TextSegments` property of the `TextFragment` object. This property provides access to a collection of `TextSegment` objects that contain the extracted text and related information.
+ О: После поиска текста на назначенной странице вы можете получить доступ к извлеченным фрагментам текста с помощью кнопки`TextSegments` собственность`TextFragment` объект. Это свойство обеспечивает доступ к коллекции`TextSegment` объекты, содержащие извлеченный текст и связанную с ним информацию.
 
-#### Q: What information can I retrieve from the extracted text segments?
+#### Вопрос: Какую информацию я могу получить из извлеченных текстовых сегментов?
 
-A: You can retrieve various details from the extracted text segments, including the text content, position (X and Y coordinates), font information (name, size, color, etc.), and more. The tutorial's sample code demonstrates how to access and print these details for each text segment.
+О: Вы можете получить различную информацию из извлеченных текстовых сегментов, включая текстовое содержимое, положение (координаты X и Y), информацию о шрифте (имя, размер, цвет и т. д.) и многое другое. Пример кода руководства демонстрирует, как получить доступ к этим сведениям и распечатать их для каждого текстового сегмента.
 
-#### Q: Can I perform custom actions on the extracted text segments?
+#### Вопрос: Могу ли я выполнять дополнительные действия над извлеченными фрагментами текста?
 
-A: Certainly. Once you have the extracted text segments, you can customize the code within the loop to perform additional actions on each segment. This could include saving the extracted text, analyzing text patterns, or applying formatting changes.
+А: Конечно. Получив извлеченные сегменты текста, вы можете настроить код внутри цикла для выполнения дополнительных действий над каждым сегментом. Это может включать сохранение извлеченного текста, анализ текстовых шаблонов или применение изменений форматирования.

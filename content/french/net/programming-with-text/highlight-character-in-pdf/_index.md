@@ -1,40 +1,40 @@
 ---
-title: Highlight Character In PDF File
-linktitle: Highlight Character In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to highlight characters in PDF file using Aspose.PDF for .NET.
+title: Mettre en surbrillance le caractère dans le fichier PDF
+linktitle: Mettre en surbrillance le caractère dans le fichier PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment mettre en surbrillance des caractères dans un fichier PDF à l'aide d'Aspose.PDF pour .NET.
 type: docs
 weight: 240
 url: /fr/net/programming-with-text/highlight-character-in-pdf/
 ---
-In this tutorial, we will explain how to highlight characters in a PDF file using the Aspose.PDF library for .NET. We will go through the step-by-step process of highlighting characters in a PDF using the provided C# source code.
+Dans ce didacticiel, nous expliquerons comment mettre en évidence des caractères dans un fichier PDF à l'aide de la bibliothèque Aspose.PDF pour .NET. Nous passerons en revue le processus étape par étape de mise en surbrillance des caractères dans un PDF à l'aide du code source C# fourni.
 
-## Requirements
+## Exigences
 
-Before you begin, ensure that you have the following:
+Avant de commencer, assurez-vous d'avoir les éléments suivants :
 
-- The Aspose.PDF for .NET library installed.
-- A basic understanding of C# programming.
+- La bibliothèque Aspose.PDF pour .NET installée.
+- Une compréhension de base de la programmation C#.
 
-## Step 1: Set up the Document Directory
+## Étape 1 : configurer le répertoire de documents
 
-First, you need to set the path to the directory where your input PDF file is located. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your PDF file.
+ Tout d’abord, vous devez définir le chemin d’accès au répertoire où se trouve votre fichier PDF d’entrée. Remplacer`"YOUR DOCUMENT DIRECTORY"` dans le`dataDir` variable avec le chemin d'accès à votre fichier PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load the PDF Document
+## Étape 2 : Charger le document PDF
 
-Next, we load the input PDF document using the `Aspose.Pdf.Document` class.
+ Ensuite, nous chargeons le document PDF d'entrée à l'aide du`Aspose.Pdf.Document` classe.
 
 ```csharp
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(dataDir + "input.pdf");
 ```
 
-## Step 3: Convert PDF to Image
+## Étape 3 : Convertir un PDF en image
 
-To highlight characters, we convert the PDF document to an image using the `PdfConverter` class. We set the resolution for the conversion and retrieve the image as a `Bitmap` object.
+ Pour mettre en évidence des caractères, nous convertissons le document PDF en image à l'aide du`PdfConverter` classe. Nous définissons la résolution pour la conversion et récupérons l'image sous forme de`Bitmap` objet.
 
 ```csharp
 int resolution = 150;
@@ -46,34 +46,34 @@ using (MemoryStream ms = new MemoryStream())
      Bitmap bmp = (Bitmap)Bitmap.FromStream(ms);
 ```
 
-## Step 4: Highlight Characters
+## Étape 4 : Mettre en surbrillance les personnages
 
-We loop through each page of the PDF document and use a `TextFragmentAbsorber` object to find all the words in the page. We then iterate over the text fragments, segments, and characters to highlight them using rectangles.
+ Nous parcourons chaque page du document PDF et utilisons un`TextFragmentAbsorber` objet pour retrouver tous les mots de la page. Nous parcourons ensuite les fragments de texte, les segments et les caractères pour les mettre en évidence à l'aide de rectangles.
 
 ```csharp
 using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
 {
-     // Set scale and transform
+     //Définir l’échelle et transformer
      float scale = resolution / 72f;
      gr.Transform = new System.Drawing.Drawing2D.Matrix(scale, 0, 0, -scale, 0, bmp.Height);
 
-     // Loop through pages
+     // Parcourez les pages en boucle
      for (int i = 0; i < pdfDocument.Pages.Count; i++)
      {
          Page page = pdfDocument.Pages[1];
 
-         // Find all words in the page
+         // Trouver tous les mots de la page
          TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
          textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
          page. Accept(textFragmentAbsorber);
          TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
 
-         // Loop through text fragments
+         // Parcourez des fragments de texte en boucle
          foreach(TextFragment textFragment in textFragmentCollection)
          {
              if (i == 0)
              {
-                 // Highlight characters
+                 // Mettre en surbrillance les personnages
                  gr.DrawRectangle(
                      Think.Yellow,
                      (float)textFragment.Position.XIndent,
@@ -81,10 +81,10 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
                      (float)textFragment.Rectangle.Width,
                      (float)textFragment.Rectangle.Height);
 
-                 // Loop through segments
+                 // Parcourez les segments en boucle
                  foreach(TextSegment segment in textFragment.Segments)
                  {
-                     // Highlight segment
+                     // Segment phare
                      gr.DrawRectangle(
                          Think Green,
                          (float)segment.Rectangle.LLX,
@@ -92,10 +92,10 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
                          (float)segment.Rectangle.Width,
                          (float)segment.Rectangle.Height);
 
-                     // Loop through characters
+                     // Parcourez les personnages en boucle
                      foreach(CharInfo characterInfo in segment.Characters)
                      {
-                         // Highlightcharacter
+                         // Personnage en surbrillance
                          gr.DrawRectangle(
                              Think.Black,
                              (float)characterInfo.Rectangle.LLx,
@@ -110,20 +110,20 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
 }
 ```
 
-## Step 5: Save the Output Image
+## Étape 5 : Enregistrez l'image de sortie
 
-Finally, we save the modified image with the highlighted characters to the specified output file.
+Enfin, nous enregistrons l'image modifiée avec les caractères en surbrillance dans le fichier de sortie spécifié.
 
 ```csharp
 dataDir = dataDir + "HighlightCharacterInPDF_out.png";
 bmp.Save(dataDir, System.Drawing.Imaging.ImageFormat.Png);
 ```
 
-### Sample source code for Highlight Character In PDF using Aspose.PDF for .NET 
+### Exemple de code source pour surligner le caractère dans un PDF à l'aide d'Aspose.PDF pour .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Le chemin d'accès au répertoire des documents.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
 	int resolution = 150;
 	Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(dataDir + "input.pdf");
@@ -140,13 +140,13 @@ try
 			for (int i = 0; i < pdfDocument.Pages.Count; i++)
 			{
 				Page page = pdfDocument.Pages[1];
-				// Create TextAbsorber object to find all words
+				// Créez un objet TextAbsorber pour trouver tous les mots
 				TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
 				textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
 				page.Accept(textFragmentAbsorber);
-				// Get the extracted text fragments
+				// Obtenez les fragments de texte extraits
 				TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-				// Loop through the fragments
+				// Parcourez les fragments
 				foreach (TextFragment textFragment in textFragmentCollection)
 				{
 					if (i == 0)
@@ -197,40 +197,40 @@ catch (Exception ex)
 
 ## Conclusion
 
-In this tutorial, you have learned how to highlight characters in a PDF document using the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can highlight characters in a PDF and save the output as an image.
+Dans ce didacticiel, vous avez appris à mettre en surbrillance des caractères dans un document PDF à l'aide de la bibliothèque Aspose.PDF pour .NET. En suivant le guide étape par étape et en exécutant le code C# fourni, vous pouvez mettre en surbrillance des caractères dans un PDF et enregistrer la sortie sous forme d'image.
 
-### FAQ's
+### FAQ
 
-#### Q: What is the purpose of the "Highlight Character In PDF File" tutorial?
+#### Q : Quel est l'objectif du didacticiel « Surligner un caractère dans un fichier PDF » ?
 
-A: The "Highlight Character In PDF File" tutorial explains how to use the Aspose.PDF library for .NET to highlight characters within a PDF document. The tutorial provides a step-by-step guide and C# source code to achieve this.
+: Le didacticiel « Mettre en surbrillance un caractère dans un fichier PDF » explique comment utiliser la bibliothèque Aspose.PDF pour .NET pour mettre en surbrillance des caractères dans un document PDF. Le didacticiel fournit un guide étape par étape et un code source C# pour y parvenir.
 
-#### Q: Why would I want to highlight characters in a PDF document?
+#### Q : Pourquoi voudrais-je mettre en surbrillance des caractères dans un document PDF ?
 
-A: Highlighting characters in a PDF document can be useful for various purposes, such as emphasizing specific content or making certain text more visible and distinguishable.
+R : La surbrillance de caractères dans un document PDF peut être utile à diverses fins, par exemple pour mettre en valeur un contenu spécifique ou rendre certains textes plus visibles et distinctifs.
 
-#### Q: How do I set up the document directory?
+#### Q : Comment configurer le répertoire de documents ?
 
-A: To set up the document directory:
+R : Pour configurer le répertoire de documents :
 
-1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where your input PDF file is located.
+1.  Remplacer`"YOUR DOCUMENT DIRECTORY"` dans le`dataDir` variable avec le chemin d’accès au répertoire où se trouve votre fichier PDF d’entrée.
 
-#### Q: How do I load the PDF document and convert it to an image?
+#### Q : Comment puis-je charger le document PDF et le convertir en image ?
 
-A: In the tutorial, the `Aspose.Pdf.Document` class is used to load the input PDF document. Then, the `PdfConverter` class is employed to convert the PDF document to an image. The resolution of the image is set, and the image is retrieved as a `Bitmap` object.
+ R : Dans le didacticiel, le`Aspose.Pdf.Document` La classe est utilisée pour charger le document PDF d'entrée. Puis le`PdfConverter` La classe est utilisée pour convertir le document PDF en image. La résolution de l'image est définie et l'image est récupérée sous forme de`Bitmap` objet.
 
-#### Q: How do I highlight characters in the PDF document image?
+#### Q : Comment mettre en surbrillance des caractères dans l'image d'un document PDF ?
 
-A: The tutorial guides you through the process of looping through each page of the PDF document, finding words using a `TextFragmentAbsorber`, and iterating through text fragments, segments, and characters to highlight them using rectangles.
+R : Le didacticiel vous guide tout au long du processus consistant à parcourir chaque page du document PDF, à trouver des mots à l'aide d'un`TextFragmentAbsorber`, et parcourir des fragments de texte, des segments et des caractères pour les mettre en évidence à l'aide de rectangles.
 
-#### Q: Can I customize the appearance of the highlighted characters and segments?
+#### Q : Puis-je personnaliser l'apparence des caractères et des segments en surbrillance ?
 
-A: Yes, you can customize the appearance of the highlighted characters and segments by modifying the colors and styles used in the drawing operations.
+R : Oui, vous pouvez personnaliser l'apparence des caractères et segments en surbrillance en modifiant les couleurs et les styles utilisés dans les opérations de dessin.
 
-#### Q: How do I save the modified image with the highlighted characters?
+#### Q : Comment puis-je enregistrer l'image modifiée avec les caractères en surbrillance ?
 
-A: The tutorial demonstrates how to save the modified image with the highlighted characters to the specified output file using the `Save` method of the `Bitmap` class.
+ R : Le didacticiel montre comment enregistrer l'image modifiée avec les caractères en surbrillance dans le fichier de sortie spécifié à l'aide du`Save` méthode du`Bitmap` classe.
 
-#### Q: Is a valid Aspose License required for this tutorial?
+#### Q : Une licence Aspose valide est-elle requise pour ce didacticiel ?
 
-A: Yes, a valid Aspose License is required for this tutorial to work correctly. You can purchase a full license or obtain a 30-day temporary license from the Aspose website.
+R : Oui, une licence Aspose valide est requise pour que ce didacticiel fonctionne correctement. Vous pouvez acheter une licence complète ou obtenir une licence temporaire de 30 jours sur le site Web Aspose.

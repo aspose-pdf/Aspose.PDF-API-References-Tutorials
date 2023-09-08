@@ -1,117 +1,117 @@
 ---
-title: Large CGM Image to PDF
-linktitle: Large CGMImage to PDF
-second_title: Aspose.PDF for .NET API Reference
-description: Easily convert a large CGM image to PDF using Aspose.PDF for .NET.
+title: صورة CGM كبيرة إلى PDF
+linktitle: صورة CGMImage كبيرة إلى PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: يمكنك بسهولة تحويل صورة CGM كبيرة إلى PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 190
 url: /ar/net/programming-with-images/large-cgm-image-to-pdf/
 ---
-In this tutorial, we will walk through a step-by-step guide on how to convert a large CGM image to a PDF file using the Aspose.PDF library in .NET. The provided C# source code demonstrates the process of converting a CGM file to PDF format, specifying the page size, and saving the output file. We will explain each step in detail to help you understand the process thoroughly.
+في هذا البرنامج التعليمي، سنتعرف على دليل خطوة بخطوة حول كيفية تحويل صورة CGM كبيرة إلى ملف PDF باستخدام مكتبة Aspose.PDF في .NET. يوضح كود مصدر C# المقدم عملية تحويل ملف CGM إلى تنسيق PDF، وتحديد حجم الصفحة، وحفظ ملف الإخراج. سنشرح كل خطوة بالتفصيل لمساعدتك على فهم العملية بدقة.
 
-## Requirements
-Before we begin, make sure you have the following:
-- Basic knowledge of C# programming language.
-- Aspose.PDF for .NET library installed in your project.
-- A CGM image file that you want to convert to PDF.
+## متطلبات
+قبل أن نبدأ، تأكد من أن لديك ما يلي:
+- المعرفة الأساسية بلغة البرمجة C#.
+- Aspose.PDF لمكتبة .NET المثبتة في مشروعك.
+- ملف صورة CGM الذي تريد تحويله إلى PDF.
 
-## Step 1: Setting up the project
-1. Create a new C# project in your preferred development environment.
-2. Add a reference to the Aspose.PDF library in your project.
+## الخطوة 1: إعداد المشروع
+1. قم بإنشاء مشروع C# جديد في بيئة التطوير المفضلة لديك.
+2. قم بإضافة مرجع إلى مكتبة Aspose.PDF في مشروعك.
 
-## Step 2: Importing necessary namespaces
-In the beginning of your C# file, import the required namespaces to access the Aspose.PDF classes and methods. Here's an example:
+## الخطوة 2: استيراد مساحات الأسماء الضرورية
+في بداية ملف C#، قم باستيراد مساحات الأسماء المطلوبة للوصول إلى فئات وطرق Aspose.PDF. هنا مثال:
 ```csharp
 using System;
 using Aspose.Pdf;
 using System.Drawing;
 ```
 
-## Step 3: Initializing variables and paths
-Before performing the conversion, we need to set up the necessary variables and paths.
+## الخطوة 3: تهيئة المتغيرات والمسارات
+قبل إجراء التحويل، نحتاج إلى إعداد المتغيرات والمسارات الضرورية.
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string inputFile = dataDir + "corvette.cgm";
 dataDir = dataDir + "LargeCGMImageToPDF_out.pdf";
 ```
-Make sure to replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to your document directory.
+ تأكد من استبدال`"YOUR DOCUMENT DIRECTORY"` بالمسار الفعلي إلى دليل المستندات الخاص بك.
 
-## Step 4: Converting CGM to PDF
-To convert the CGM image to PDF format, follow these steps:
-1. Create an instance of the `CgmImportOptions` class.
+## الخطوة 4: تحويل CGM إلى PDF
+لتحويل صورة CGM إلى تنسيق PDF، اتبع الخطوات التالية:
+1.  إنشاء مثيل لـ`CgmImportOptions` فصل.
 ```csharp
 CgmImportOptions options = new CgmImportOptions();
 ```
-2. Specify the dimensions for the page size import.
+2. حدد أبعاد استيراد حجم الصفحة.
 ```csharp
 options. PageSize = new SizeF(1000, 1000);
 ```
-Here, we set the page size to 1000x1000 pixels. You can adjust the dimensions according to your requirements.
-3. Use the `PdfProducer.Produce` method to convert the CGM file to PDF format.
+هنا، قمنا بتعيين حجم الصفحة على 1000 × 1000 بكسل. يمكنك ضبط الأبعاد وفقًا لمتطلباتك.
+ 3. استخدم`PdfProducer.Produce` طريقة تحويل ملف CGM إلى تنسيق PDF.
 ```csharp
 PdfProducer.Produce(inputFile, ImportFormat.Cgm, dataDir);
 ```
-4. Display a success message with the path where the PDF file is saved.
+4. عرض رسالة نجاح مع المسار الذي تم حفظ ملف PDF فيه.
 ```csharp
 Console.WriteLine("\nLarge CGM file converted to PDF successfully.\nFile saved at " + dataDir);
 ```
 
-### Sample source code for Large CGMImage to PDF using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لـ Large CGMImage إلى PDF باستخدام Aspose.PDF لـ .NET 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string inputFile = dataDir + "corvette.cgm";
 dataDir = dataDir + "LargeCGMImageToPDF_out.pdf";
-// Create an instance of CgmImportOptions
+//إنشاء مثيل CgmImportOptions
 CgmImportOptions options = new CgmImportOptions();
-// Specify the dimentions for page size import 
+// حدد الأبعاد لاستيراد حجم الصفحة
 options.PageSize = new SizeF(1000, 1000);
-// Save CGM into PDF format
+// حفظ CGM في تنسيق PDF
 PdfProducer.Produce(inputFile, ImportFormat.Cgm, dataDir);
 Console.WriteLine("\nLarge CGM file converted to pdf successfully.\nFile saved at " + dataDir); 
 ```
 
-## Conclusion
-By following this step-by-step guide, you have learned how to convert a large CGM image to a PDF file using the Aspose.PDF library in .NET. This process involves setting up the project, importing the necessary namespaces, initializing variables and paths, and performing the conversion. You can now integrate this code into your own projects and modify it according to your specific requirements.
+## خاتمة
+باتباع هذا الدليل خطوة بخطوة، تعلمت كيفية تحويل صورة CGM كبيرة إلى ملف PDF باستخدام مكتبة Aspose.PDF في .NET. تتضمن هذه العملية إعداد المشروع، واستيراد مساحات الأسماء الضرورية، وتهيئة المتغيرات والمسارات، وإجراء التحويل. يمكنك الآن دمج هذا الرمز في مشاريعك الخاصة وتعديله وفقًا لمتطلباتك المحددة.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of converting a large CGM image to a PDF file using Aspose.PDF for .NET?
+#### س: ما هو الغرض من تحويل صورة CGM كبيرة إلى ملف PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: Converting a large CGM image to a PDF file allows for better document compatibility, easier sharing, and improved archiving. PDF format ensures that the image retains its quality and can be viewed consistently across different platforms.
+ج: يتيح تحويل صورة CGM كبيرة إلى ملف PDF توافقًا أفضل للمستندات، ومشاركة أسهل، وتحسين الأرشفة. يضمن تنسيق PDF احتفاظ الصورة بجودتها وإمكانية عرضها باستمرار عبر منصات مختلفة.
 
-#### Q: What are the prerequisites for following this tutorial?
+#### س: ما هي المتطلبات الأساسية لمتابعة هذا البرنامج التعليمي؟
 
-A: Before starting, you should have a basic understanding of C# programming. Additionally, ensure that you have the Aspose.PDF for .NET library installed in your project and have a CGM image file that you intend to convert to PDF.
+ج: قبل البدء، يجب أن يكون لديك فهم أساسي لبرمجة C#. بالإضافة إلى ذلك، تأكد من تثبيت مكتبة Aspose.PDF for .NET في مشروعك ولديك ملف صورة CGM الذي تنوي تحويله إلى PDF.
 
-#### Q: How do I set up my project to begin converting CGM images to PDF files?
+#### س: كيف أقوم بإعداد مشروعي لبدء تحويل صور CGM إلى ملفات PDF؟
 
-A: To set up your project, create a new C# project in your chosen development environment and add a reference to the Aspose.PDF library. This will enable you to access the required classes and methods.
+ج: لإعداد مشروعك، قم بإنشاء مشروع C# جديد في بيئة التطوير التي اخترتها وأضف مرجعًا إلى مكتبة Aspose.PDF. سيمكنك هذا من الوصول إلى الفئات والأساليب المطلوبة.
 
-#### Q: What role does the `CgmImportOptions` class play in the conversion process?
+####  س: ما هو الدور الذي يقوم به`CgmImportOptions` class play in the conversion process?
 
-A: The `CgmImportOptions` class is used to specify import options for the CGM image. You can set parameters such as page size and other relevant attributes using this class.
+ ج: ال`CgmImportOptions` يتم استخدام الفئة لتحديد خيارات الاستيراد لصورة CGM. يمكنك تعيين معلمات مثل حجم الصفحة والسمات الأخرى ذات الصلة باستخدام هذه الفئة.
 
-#### Q: How do I customize the page size during the conversion process?
+#### س: كيف يمكنني تخصيص حجم الصفحة أثناء عملية التحويل؟
 
-A: To customize the page size, create an instance of `CgmImportOptions`, and set the `PageSize` property to the desired dimensions using the `SizeF` class.
+ ج: لتخصيص حجم الصفحة، قم بإنشاء مثيل لـ`CgmImportOptions` ، وقم بتعيين`PageSize` الخاصية إلى الأبعاد المطلوبة باستخدام`SizeF` فصل.
 
-#### Q: Can I adjust the dimensions of the PDF page to accommodate the CGM image's size?
+#### س: هل يمكنني ضبط أبعاد صفحة PDF لتتناسب مع حجم صورة CGM؟
 
-A: Yes, you can adjust the page size dimensions using the `PageSize` property in the `CgmImportOptions` class. This ensures that the CGM image fits appropriately within the PDF page.
+ج: نعم، يمكنك ضبط أبعاد حجم الصفحة باستخدام`PageSize` الممتلكات في`CgmImportOptions` فصل. وهذا يضمن أن صورة CGM تناسب بشكل مناسب داخل صفحة PDF.
 
-#### Q: How is the CGM image actually converted to PDF using Aspose.PDF for .NET?
+#### س: كيف يتم تحويل صورة CGM فعليًا إلى PDF باستخدام Aspose.PDF لـ .NET؟
 
-A: The conversion process involves using the `PdfProducer.Produce` method, which takes the input CGM file, specifies the import format as CGM, and produces a PDF file as output.
+ ج: تتضمن عملية التحويل استخدام`PdfProducer.Produce` الطريقة، التي تأخذ ملف CGM للإدخال، وتحدد تنسيق الاستيراد كـ CGM، وتنتج ملف PDF كإخراج.
 
-#### Q: How can I verify the successful conversion of the large CGM image to PDF?
+#### س: كيف يمكنني التحقق من التحويل الناجح لصورة CGM الكبيرة إلى PDF؟
 
-A: Upon successful conversion, a message will be displayed indicating that the CGM file has been converted to PDF, and the location of the saved PDF file will be provided.
+ج: عند التحويل الناجح، سيتم عرض رسالة تشير إلى أن ملف CGM قد تم تحويله إلى PDF، وسيتم توفير موقع ملف PDF المحفوظ.
 
-#### Q: Can I integrate this code into my own projects for CGM-to-PDF conversion?
+#### س: هل يمكنني دمج هذا الرمز في مشاريعي الخاصة لتحويل CGM إلى PDF؟
 
-A: Absolutely, you can integrate this code into your own projects to perform CGM-to-PDF conversion. Modify the code as needed to suit your project's requirements.
+ج: بالتأكيد، يمكنك دمج هذا الرمز في مشاريعك الخاصة لإجراء تحويل CGM إلى PDF. قم بتعديل الكود حسب الحاجة ليناسب متطلبات مشروعك.
 
-#### Q: What benefits does converting a large CGM image to PDF offer in terms of document management and sharing?
+#### س: ما هي الفوائد التي يقدمها تحويل صورة CGM كبيرة إلى PDF فيما يتعلق بإدارة المستندات ومشاركتها؟
 
-A: Converting a large CGM image to PDF ensures that the image is preserved in a widely recognized format that can be easily shared, viewed, and archived across different platforms and devices.
+ج: يضمن تحويل صورة CGM كبيرة إلى PDF الحفاظ على الصورة بتنسيق معروف على نطاق واسع ويمكن مشاركته وعرضه وأرشفته بسهولة عبر الأنظمة الأساسية والأجهزة المختلفة.

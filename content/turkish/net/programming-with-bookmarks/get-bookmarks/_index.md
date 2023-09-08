@@ -1,41 +1,41 @@
 ---
-title: Get Bookmarks In PDF File
-linktitle: Get Bookmarks In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily get bookmark in PDF file with Aspose.PDF for .NET.
+title: PDF Dosyasındaki Yer İmlerini Alın
+linktitle: PDF Dosyasındaki Yer İmlerini Alın
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile PDF dosyasındaki yer işaretlerini kolayca alın.
 type: docs
 weight: 70
 url: /tr/net/programming-with-bookmarks/get-bookmarks/
 ---
-Retrieving bookmark in PDF file can be useful for analyzing the document's structure and navigational information. With Aspose.PDF for .NET, you can easily get the bookmarks by following the following source code:
+PDF dosyasındaki yer işaretini almak, belgenin yapısını ve gezinme bilgilerini analiz etmek için yararlı olabilir. Aspose.PDF for .NET ile aşağıdaki kaynak kodunu takip ederek yer işaretlerini kolayca alabilirsiniz:
 
-## Step 1: Import required libraries
+## 1. Adım: Gerekli kitaplıkları içe aktarın
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Başlamadan önce C# projeniz için gerekli kütüphaneleri içe aktarmanız gerekir. Gerekli ithalat direktifi aşağıdadır:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 2: Set path to documents folder
+## 2. Adım: Belgeler klasörünün yolunu ayarlayın
 
-In this step, you need to specify the path to the folder containing the PDF file you want to extract the bookmarks from. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ Bu adımda, yer imlerini çıkarmak istediğiniz PDF dosyasını içeren klasörün yolunu belirtmeniz gerekir. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"`belgeler klasörünüzün gerçek yolunu içeren aşağıdaki kodda:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## 3. Adım: PDF belgesini açın
 
-Now we are going to open the PDF document from which we want to extract the bookmarks using the following code:
+Şimdi yer işaretlerini çıkarmak istediğimiz PDF belgesini aşağıdaki kodu kullanarak açacağız:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetBookmarks.pdf");
 ```
 
-## Step 4: Browse Bookmarks
+## 4. Adım: Yer İşaretlerine Göz Atın
 
-In this step, we will iterate over all the bookmarks in the document using a `foreach` loop. For each bookmark, we will display the information such as title, italic style, bold style and color. Here is the corresponding code:
+ Bu adımda, bir belge kullanarak belgedeki tüm yer imlerini yineleyeceğiz.`foreach`döngü. Her yer imi için başlık, italik stil, kalın stil ve renk gibi bilgileri görüntüleyeceğiz. İşte ilgili kod:
 
 ```csharp
 foreach(OutlineItemCollection outlineItem in pdfDocument.Outlines)
@@ -47,13 +47,13 @@ foreach(OutlineItemCollection outlineItem in pdfDocument.Outlines)
 }
 ```
 
-### Sample source code for Get Bookmarks using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanarak Yer İşaretlerini Al için örnek kaynak kodu 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir + "GetBookmarks.pdf");
-// Loop through all the bookmarks
+// Tüm yer imleri arasında dolaşın
 foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
 {
 	Console.WriteLine(outlineItem.Title);
@@ -63,49 +63,49 @@ foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
 }
 ```
 
-## Conclusion
+## Çözüm
 
-Congratulation ! Now you have a step by step guide to get bookmarks with Aspose.PDF for .NET. You can use this code to parse bookmarks and extract information associated with each bookmark in your PDF documents.
+Tebrikler! Artık Aspose.PDF for .NET ile yer imlerini almak için adım adım bir kılavuza sahipsiniz. Bu kodu, yer imlerini ayrıştırmak ve PDF belgelerinizdeki her yer imiyle ilişkili bilgileri çıkarmak için kullanabilirsiniz.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Gelişmiş yer imi düzenleme özellikleri hakkında daha fazla bilgi için resmi Aspose.PDF belgelerine göz atmayı unutmayın.
 
-### FAQ's for get bookmarks in PDF file
+### PDF dosyasındaki yer imlerini almak için SSS
 
-#### Q: What are bookmarks in a PDF file?
+#### S: PDF dosyasındaki yer işaretleri nedir?
 
-A: Bookmarks in a PDF file are interactive elements that allow users to quickly navigate to specific sections or pages within the document. Bookmarks enhance the user experience by providing shortcuts to relevant content.
+C: Bir PDF dosyasındaki yer imleri, kullanıcıların belge içindeki belirli bölümlere veya sayfalara hızlı bir şekilde gitmesine olanak tanıyan etkileşimli öğelerdir. Yer imleri, ilgili içeriğe kısayollar sağlayarak kullanıcı deneyimini geliştirir.
 
-#### Q: Why would I want to retrieve bookmarks from a PDF file?
+#### S: Neden bir PDF dosyasındaki yer işaretlerini almak isteyeyim?
 
-A: Retrieving bookmarks helps you analyze the organization of a document and understand its hierarchy. It's particularly useful for documents with complex structures or multiple sections.
+C: Yer işaretlerini almak, bir belgenin organizasyonunu analiz etmenize ve hiyerarşisini anlamanıza yardımcı olur. Özellikle karmaşık yapılara veya birden fazla bölüme sahip belgeler için kullanışlıdır.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### S: C# projem için gerekli kitaplıkları nasıl içeri aktarabilirim?
 
-A: To import the required library for your C# project, use the following import directive:
+C: C# projeniz için gerekli kitaplığı içe aktarmak için aşağıdaki içe aktarma yönergesini kullanın:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-This directive enables you to access the classes and methods provided by Aspose.PDF for .NET.
+Bu yönerge Aspose.PDF for .NET tarafından sağlanan sınıflara ve yöntemlere erişmenizi sağlar.
 
-#### Q: How do I specify the path to the documents folder?
+#### S: Belgeler klasörünün yolunu nasıl belirlerim?
 
-A: In the provided source code, replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file from which you want to extract bookmarks. This ensures that the code can locate the target PDF file.
+ C: Sağlanan kaynak kodunda değiştirin`"YOUR DOCUMENT DIRECTORY"` yer imlerini çıkarmak istediğiniz PDF dosyasını içeren klasörün gerçek yolunu belirtin. Bu, kodun hedef PDF dosyasını bulabilmesini sağlar.
 
-#### Q: How do I open a PDF document to extract bookmarks?
+#### S: Yer işaretlerini çıkarmak için bir PDF belgesini nasıl açarım?
 
-A: To open a PDF document for bookmark extraction, use the following code:
+C: Yer imi çıkarmak amacıyla bir PDF belgesi açmak için aşağıdaki kodu kullanın:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetBookmarks.pdf");
 ```
 
-Replace `"GetBookmarks.pdf"` with the actual file name.
+ Yer değiştirmek`"GetBookmarks.pdf"` gerçek dosya adı ile.
 
-#### Q: How do I iterate through and display bookmark information?
+#### S: Yer imi bilgilerini nasıl yineleyebilirim ve görüntüleyebilirim?
 
-A: Loop through all the bookmarks in the document using a `foreach` loop. For each bookmark, display information such as the title, italic style, bold style, and color:
+ C: Bir belge kullanarak belgedeki tüm yer imleri arasında dolaşın.`foreach` döngü. Her yer işareti için başlık, italik stil, kalın stil ve renk gibi bilgileri görüntüleyin:
 
 ```csharp
 foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
@@ -117,18 +117,18 @@ foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
 }
 ```
 
-#### Q: Can I extract other properties of bookmarks using a similar approach?
+#### S: Benzer bir yaklaşım kullanarak yer imlerinin diğer özelliklerini çıkarabilir miyim?
 
-A: Yes, you can extract various properties of bookmarks using the `OutlineItemCollection` object. Refer to the Aspose.PDF documentation for a comprehensive list of available properties.
+ C: Evet, yer imlerinin çeşitli özelliklerini kullanarak çıkarabilirsiniz.`OutlineItemCollection` nesne. Mevcut özelliklerin kapsamlı bir listesi için Aspose.PDF belgelerine bakın.
 
-#### Q: How do I save changes to the PDF file after extracting bookmark information?
+#### S: Yer imi bilgilerini çıkardıktan sonra PDF dosyasındaki değişiklikleri nasıl kaydederim?
 
-A: Bookmark extraction does not modify the original PDF file. If you want to save any changes or perform other operations, you can explore additional methods provided by Aspose.PDF for .NET.
+C: Yer imini çıkarma orijinal PDF dosyasını değiştirmez. Herhangi bir değişikliği kaydetmek veya başka işlemler gerçekleştirmek istiyorsanız Aspose.PDF for .NET tarafından sağlanan ek yöntemleri keşfedebilirsiniz.
 
-#### Q: What if the document has nested bookmarks?
+#### S: Belgede iç içe yer imleri varsa ne olur?
 
-A: If the document has nested bookmarks, the provided code will still iterate through and display each bookmark's information, including nested bookmarks.
+C: Belgede iç içe yer imleri varsa, sağlanan kod yinelenecek ve iç içe yer imleri de dahil olmak üzere her yer iminin bilgilerini görüntüleyecektir.
 
-#### Q: Is there a limit to the number of bookmarks I can retrieve?
+#### S: Alabileceğim yer imlerinin sayısında bir sınır var mı?
 
-A: There is typically no strict limit to the number of bookmarks you can retrieve using this method. However, very large documents with an excessive number of bookmarks may require efficient memory management.
+C: Bu yöntemi kullanarak alabileceğiniz yer imlerinin sayısı konusunda genellikle kesin bir sınır yoktur. Ancak, aşırı sayıda yer imine sahip çok büyük belgeler, etkin bellek yönetimi gerektirebilir.

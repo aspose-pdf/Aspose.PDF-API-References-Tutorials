@@ -1,53 +1,53 @@
 ---
-title: Control Rectangle Z Order In PDF File
-linktitle: Control Rectangle Z Order In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to control the Z-order of rectangles in a PDF file using Aspose.PDF for .NET. 
+title: التحكم في ترتيب المستطيل Z في ملف PDF
+linktitle: التحكم في ترتيب المستطيل Z في ملف PDF
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية التحكم في الترتيب Z للمستطيلات في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 40
 url: /ar/net/programming-with-graphs/control-rectangle-z-order/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to control the Z-order of rectangles using Aspose.PDF for .NET.
+في هذا البرنامج التعليمي، سنرشدك عبر التعليمات البرمجية المصدر لـ C# التالية خطوة بخطوة للتحكم في الترتيب Z للمستطيلات باستخدام Aspose.PDF لـ .NET.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+تأكد من تثبيت مكتبة Aspose.PDF وإعداد بيئة التطوير الخاصة بك قبل البدء. لديك أيضًا معرفة أساسية ببرمجة C#.
 
-## Step 1: Document Directory Setup
+## الخطوة 1: إعداد دليل المستندات
 
-In the provided source code, you need to specify the directory where you want to save the resulting PDF file. Change the "dataDir" variable to the desired directory.
+في كود المصدر المقدم، تحتاج إلى تحديد الدليل الذي تريد حفظ ملف PDF الناتج فيه. قم بتغيير المتغير "dataDir" إلى الدليل المطلوب.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Instantiating a Document Object and Adding a Page
+## الخطوة 2: إنشاء كائن مستند وإضافة صفحة
 
-We create an instance of the Document class and add a page to this document.
+نقوم بإنشاء مثيل لفئة المستند وإضافة صفحة إلى هذا المستند.
 
 ```csharp
 Document doc1 = new Document();
 Aspose.Pdf.Page page1 = doc1.Pages.Add();
 ```
 
-## Step 3: Setting up the page size
+## الخطوة 3: إعداد حجم الصفحة
 
-We set the PDF page size using the SetPageSize method.
+قمنا بتعيين حجم صفحة PDF باستخدام طريقة SetPageSize.
 
 ```csharp
 page1.SetPageSize(375, 300);
 ```
 
-## Step 4: Setting Page Margins
+## الخطوة 4: تحديد هوامش الصفحة
 
-We can configure the page margins using the properties of the PageInfo object.
+يمكننا تكوين هوامش الصفحة باستخدام خصائص كائن PageInfo.
 
 ```csharp
 page1.PageInfo.Margin.Left = 0;
 page1.PageInfo.Margin.Top = 0;
 ```
 
-## Step 5: Add Rectangles with Specified Z Order
+## الخطوة 5: إضافة مستطيلات بترتيب Z المحدد
 
-We create and add rectangles to the page with different colors and specified Z orders.
+نقوم بإنشاء وإضافة مستطيلات إلى الصفحة بألوان مختلفة وأوامر Z محددة.
 
 ```csharp
 AddRectangle(page1, 50, 40, 60, 40, Aspose.Pdf.Color.Red, 2);
@@ -55,75 +55,75 @@ AddRectangle(page1, 20, 20, 30, 30, Aspose.Pdf.Color.Blue, 1);
 AddRectangle(page1, 40, 40, 60, 30, Aspose.Pdf.Color.Green, 0);
 ```
 
-## Step 6: Saving the Resulting PDF File
+## الخطوة 6: حفظ ملف PDF الناتج
 
-Finally, we save the resulting PDF file with the name "ControlRectangleZOrder_out.pdf" in the specified directory.
+أخيرًا، نقوم بحفظ ملف PDF الناتج بالاسم "ControlRectangleZOrder_out.pdf" في الدليل المحدد.
 
 ```csharp
 doc1.Save(dataDir);
 ```
-### Sample source code for Control Rectangle Z Order using Aspose.PDF for .NET 
+### نموذج التعليمات البرمجية المصدر لـ Control Rectangle Z Order باستخدام Aspose.PDF لـ .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Instantiate Document class object
+// إنشاء مثيل لكائن فئة المستند
 Document doc1 = new Document();
-/// Add page to pages collection of PDF file
+/// إضافة صفحة إلى مجموعة صفحات ملف PDF
 Aspose.Pdf.Page page1 = doc1.Pages.Add();
-// Set size of PDF page
+// ضبط حجم صفحة PDF
 page1.SetPageSize(375, 300);
-// Set left margin for page object as 0
+// قم بتعيين الهامش الأيسر لكائن الصفحة على 0
 page1.PageInfo.Margin.Left = 0;
-// Set top margin of page object as 0
+// قم بتعيين الهامش العلوي لكائن الصفحة على 0
 page1.PageInfo.Margin.Top = 0;
-// Create a new rectangle with Color as Red, Z-Order as 0 and certain dimensions
+// قم بإنشاء مستطيل جديد باللون الأحمر، والترتيب Z كـ 0 وأبعاد معينة
 AddRectangle(page1, 50, 40, 60, 40, Aspose.Pdf.Color.Red, 2);
-// Create a new rectangle with Color as Blue, Z-Order as 0 and certain dimensions
+// قم بإنشاء مستطيل جديد باللون الأزرق، وترتيب Z كـ 0 وأبعاد معينة
 AddRectangle(page1, 20, 20, 30, 30, Aspose.Pdf.Color.Blue, 1);
-// Create a new rectangle with Color as Green, Z-Order as 0 and certain dimensions
+//قم بإنشاء مستطيل جديد باللون الأخضر، والترتيب Z كـ 0 وأبعاد معينة
 AddRectangle(page1, 40, 40, 60, 30, Aspose.Pdf.Color.Green, 0);
 dataDir = dataDir + "ControlRectangleZOrder_out.pdf";
-// Save resultant PDF file
+// حفظ ملف PDF الناتج
 doc1.Save(dataDir);
 
 ```
 
-## Conclusion
+## خاتمة
 
-In this tutorial, we explained how to control the Z-order of rectangles using Aspose.PDF for .NET. You can now use this knowledge to arrange and layer rectangles in your PDF files with precision.
+في هذا البرنامج التعليمي، شرحنا كيفية التحكم في الترتيب Z للمستطيلات باستخدام Aspose.PDF لـ .NET. يمكنك الآن استخدام هذه المعرفة لترتيب المستطيلات وطبقاتها في ملفات PDF الخاصة بك بدقة.
 
-### FAQ's control rectangle z order in PDF file
+### الأسئلة الشائعة للتحكم في ترتيب المستطيل z في ملف PDF
 
-#### Q: What is the purpose of this tutorial?
+#### س: ما هو الغرض من هذا البرنامج التعليمي؟
 
-A: This tutorial aims to guide you through the process of controlling the Z-order of rectangles using Aspose.PDF for .NET, allowing you to arrange and layer rectangles in your PDF files.
+ج: يهدف هذا البرنامج التعليمي إلى إرشادك خلال عملية التحكم في الترتيب Z للمستطيلات باستخدام Aspose.PDF لـ .NET، مما يسمح لك بترتيب المستطيلات وطبقاتها في ملفات PDF الخاصة بك.
 
-#### Q: What prerequisites are required before starting?
+#### س: ما هي المتطلبات الأساسية المطلوبة قبل البدء؟
 
-A: Before you begin, ensure that you have installed the Aspose.PDF library and set up your development environment. Additionally, having a basic understanding of C# programming is recommended.
+ج: قبل أن تبدأ، تأكد من تثبيت مكتبة Aspose.PDF وإعداد بيئة التطوير الخاصة بك. بالإضافة إلى ذلك، يوصى بالحصول على فهم أساسي لبرمجة C#.
 
-#### Q: How do I specify the directory for saving the PDF file?
+#### س: كيف أحدد الدليل لحفظ ملف PDF؟
 
-A: In the provided source code, you can modify the "dataDir" variable to indicate the directory where you want to save the resulting PDF file.
+ج: في الكود المصدري المقدم، يمكنك تعديل متغير "dataDir" للإشارة إلى الدليل الذي تريد حفظ ملف PDF الناتج فيه.
 
-#### Q: What is the purpose of setting page size and margins?
+#### س: ما هو الغرض من تحديد حجم الصفحة والهوامش؟
 
-A: Setting the page size and margins helps configure the layout of the PDF page and provides a canvas on which you can arrange the rectangles.
+ج: يساعد تعيين حجم الصفحة والهوامش في تكوين تخطيط صفحة PDF ويوفر لوحة يمكنك ترتيب المستطيلات عليها.
 
-#### Q: How do I add rectangles with specified Z order?
+#### س: كيف يمكنني إضافة مستطيلات بترتيب Z المحدد؟
 
-A: You can create and add rectangles to the page using the `AddRectangle` method, specifying the position, dimensions, color, and Z order for each rectangle.
+ ج: يمكنك إنشاء مستطيلات وإضافتها إلى الصفحة باستخدام`AddRectangle` الطريقة، مع تحديد الموضع والأبعاد واللون وترتيب Z لكل مستطيل.
 
-#### Q: What is Z-order, and why is it important?
+#### س: ما هو الترتيب Z، وما أهميته؟
 
-A: Z-order determines the stacking order of objects on a page. Objects with higher Z-order values are positioned on top of objects with lower Z-order values, affecting their visibility and layering.
+ج: يحدد الترتيب Z ترتيب تراص الكائنات على الصفحة. يتم وضع الكائنات ذات قيم الترتيب Z الأعلى أعلى الكائنات ذات قيم الترتيب Z الأقل، مما يؤثر على رؤيتها وطبقاتها.
 
-#### Q: Can I customize the colors and dimensions of the rectangles?
+#### س: هل يمكنني تخصيص ألوان وأبعاد المستطيلات؟
 
-A: Yes, you can customize the colors, positions, and dimensions of the rectangles by modifying the parameters passed to the `AddRectangle` method.
+ ج: نعم، يمكنك تخصيص الألوان والمواضع والأبعاد للمستطيلات عن طريق تعديل المعلمات التي تم تمريرها إلى الملف`AddRectangle` طريقة.
 
-#### Q: How do I save the resulting PDF file after arranging the rectangles?
+#### س: كيف يمكنني حفظ ملف PDF الناتج بعد ترتيب المستطيلات؟
 
-A: After arranging the rectangles, you can save the resulting PDF file using the `doc1.Save(dataDir);` line in the provided source code.
+ ج: بعد ترتيب المستطيلات، يمكنك حفظ ملف PDF الناتج باستخدام الملف`doc1.Save(dataDir);` سطر في كود المصدر المقدم.

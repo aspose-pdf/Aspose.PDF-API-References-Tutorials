@@ -1,75 +1,75 @@
 ---
-title: Get Resource Of Annotation
-linktitle: Get Resource Of Annotation
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to retrieve the resource of an annotation using Aspose.PDF for .NET with this step-by-step guide.
+title: Ek Açıklamanın Kaynağını Alın
+linktitle: Ek Açıklamanın Kaynağını Alın
+second_title: .NET API Referansı için Aspose.PDF
+description: Bu adım adım kılavuzla Aspose.PDF for .NET kullanarak bir açıklamanın kaynağını nasıl alacağınızı öğrenin.
 type: docs
 weight: 90
 url: /tr/net/annotations/getresourceofannotation/
 ---
-The example shows how to get resource of annotation with Aspose.PDF for .NET. To get the resource of an annotation using Aspose.PDF for .NET, follow these steps:
+Örnek, Aspose.PDF for .NET ile açıklama kaynağının nasıl alınacağını gösterir. Aspose.PDF for .NET kullanarak bir açıklamanın kaynağını almak için şu adımları izleyin:
 
-## Step 1: Set the path of the directory where the document is located.
+## Adım 1: Belgenin bulunduğu dizinin yolunu ayarlayın.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Open the PDF document that contains the annotation whose resource you want to get.
+## Adım 2: Kaynağını almak istediğiniz ek açıklamayı içeren PDF belgesini açın.
 
 ```csharp
 Document doc = new Document(dataDir + "AddAnnotation.pdf");
 ```
 
-## Step 3: Create an annotation.
+## Adım 3: Bir ek açıklama oluşturun.
 
 ```csharp
 ScreenAnnotation sa = new ScreenAnnotation(doc.Pages[1], new Rectangle(100, 400, 300, 600), dataDir + "AddSwfFileAsAnnotation.swf");
 ```
 
-## Step 4: Add the annotation to a page in the document.
+## Adım 4: Ek açıklamayı belgedeki bir sayfaya ekleyin.
 
 ```csharp
 doc.Pages[1].Annotations.Add(sa);
 ```
 
-## Step 5: Save the document.
+## Adım 5: Belgeyi kaydedin.
 
 ```csharp
 doc.Save(dataDir + "GetResourceOfAnnotation_Out.pdf");
 ```
 
-## Step 6: Open the modified document.
+## Adım 6: Değiştirilen belgeyi açın.
 
 ```csharp
 Document doc1 = new Document(dataDir + "GetResourceOfAnnotation_Out.pdf");
 ```
 
-## Step 7: Get the action of the annotation.
+## Adım 7: Ek açıklamanın eylemini alın.
 
 ```csharp
 RenditionAction action = (doc.Pages[1].Annotations[1] as ScreenAnnotation).Action as RenditionAction;
 ```
 
-## Step 7: Get the rendition of the action.
+## Adım 7: Eylemin yorumunu alın.
 
 ```csharp
 Rendition rendition = ((doc.Pages[1].Annotations[1] as ScreenAnnotation).Action as RenditionAction).Rendition;
 ```
 
-## Step 8: Get the media clip.
+## Adım 8: Medya klibini alın.
 
 ```csharp
 MediaClip clip = (rendition as MediaRendition).MediaClip;
 ```
 
-## Step 9: Get the file specification.
+## Adım 9: Dosya özelliklerini alın.
 
 ```csharp
 FileSpecification data = (clip as MediaClipData).Data;
 ```
 
-## Step 10: Read the data of the media.
+## Adım 10: Medyanın verilerini okuyun.
 
 ```csharp
 MemoryStream ms = new MemoryStream();
@@ -82,41 +82,41 @@ while ((read = source.Read(buffer, 0, buffer.Length)) > 0)
 }
 ```
 
-## Step 11: Print the name of the rendition and the rendition operation.
+## Adım 11: Yorumlamanın adını ve yorumlama işlemini yazdırın.
 
 ```csharp
 Console.WriteLine(rendition.Name);
 Console.WriteLine(action.RenditionOperation);
 ```
 
-By following these steps, you can easily get the resource of an annotation in a PDF document using Aspose.PDF for .NET.
+Bu adımları izleyerek Aspose.PDF for .NET'i kullanarak bir PDF belgesindeki bir açıklamanın kaynağını kolayca alabilirsiniz.
 
-### Example source code for Get Resource Of Annotation using Aspose.PDF for .NET:
+### Aspose.PDF for .NET kullanarak Get Resource Of Annotation için örnek kaynak kodu:
 
 ```csharp
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Belgeyi aç
 Document doc = new Document(dataDir + "AddAnnotation.pdf");
-//Create annotation
+//Ek açıklama oluştur
 ScreenAnnotation sa = new ScreenAnnotation(doc.Pages[1], new Rectangle(100, 400, 300, 600), dataDir + "AddSwfFileAsAnnotation.swf");
 doc.Pages[1].Annotations.Add(sa);
-// Save Doucument
+// Belgeyi Kaydet
 doc.Save(dataDir + "GetResourceOfAnnotation_Out.pdf");
-// Open document
+// Belgeyi aç
 Document doc1 = new Document(dataDir + "GetResourceOfAnnotation_Out.pdf");
-//Get action of the annotation
+//Ek açıklamanın eylemini alın
 RenditionAction action = (doc.Pages[1].Annotations[1] as ScreenAnnotation).Action as RenditionAction;
-//Get rendition of the rendition action
+//Yorumlama eyleminin yorumunu alın
 Rendition rendition = ((doc.Pages[1].Annotations[1] as ScreenAnnotation).Action as RenditionAction).Rendition;
-//Media Clip 
+// Medya Klibi
 MediaClip clip = (rendition as MediaRendition).MediaClip;
 FileSpecification data = (clip as MediaClipData).Data;
 MemoryStream ms = new MemoryStream();
 byte[] buffer = new byte[1024];
 int read = 0;
-//Data of media are accessible in FileSpecification.Contents
+//Medya verilerine FileSpecification.Contents adresinden erişilebilir.
 Stream source = data.Contents;
 while ((read = source.Read(buffer, 0, buffer.Length)) > 0)
 {
@@ -126,28 +126,28 @@ Console.WriteLine(rendition.Name);
 Console.WriteLine(action.RenditionOperation);
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we explored how to get the resource of a particular annotation from a PDF document using Aspose.PDF for .NET. By following the step-by-step guide and using the provided C# source code, developers can easily access and manage annotations, including rendition annotations, in their PDF documents.
+Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF belgesinden belirli bir açıklamanın kaynağının nasıl alınacağını araştırdık. Geliştiriciler, adım adım kılavuzu izleyerek ve sağlanan C# kaynak kodunu kullanarak, PDF belgelerindeki yorumlama ek açıklamaları da dahil olmak üzere ek açıklamalara kolayca erişebilir ve bunları yönetebilir.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What is a rendition in the context of PDF annotations?
+#### S: PDF ek açıklamaları bağlamında yorumlama nedir?
 
-A: In the context of PDF annotations, a rendition is a multimedia content presentation. It allows for embedding multimedia, such as audio or video, within the PDF document. The rendition annotation specifies the media to be presented and how it should be played.
+C: PDF ek açıklamaları bağlamında yorumlama, multimedya içerik sunumudur. PDF belgesine ses veya video gibi multimedyaların yerleştirilmesine olanak tanır. Yorumlama açıklaması, sunulacak medyayı ve nasıl oynatılması gerektiğini belirtir.
 
-#### Q: Can I get the name of the media file associated with a rendition annotation?
+#### S: Bir yorumlama açıklamasıyla ilişkili medya dosyasının adını alabilir miyim?
 
-A: Yes, you can get the name of the media file associated with a rendition annotation using Aspose.PDF for .NET. The media file name can be accessed through the `FileSpecification` of the `MediaClip` object.
+C: Evet, Aspose.PDF for .NET'i kullanarak bir yorumlama açıklamasıyla ilişkili medya dosyasının adını alabilirsiniz. Medya dosyası adına şu adresten erişilebilir:`FileSpecification` arasında`MediaClip` nesne.
 
-#### Q: Can Aspose.PDF for .NET extract media files from a rendition annotation?
+#### S: Aspose.PDF for .NET bir yorumlama açıklamasından medya dosyalarını çıkarabilir mi?
 
-A: Yes, Aspose.PDF for .NET can extract the media data from a rendition annotation, which includes audio or video content, and save it as a separate file.
+C: Evet, Aspose.PDF for .NET, ses veya video içeriği içeren bir yorumlama notundan medya verilerini çıkarabilir ve ayrı bir dosya olarak kaydedebilir.
 
-#### Q: How can I access the media data of a rendition annotation?
+#### S: Bir yorumlama ek açıklamasının medya verilerine nasıl erişebilirim?
 
-A: The media data of a rendition annotation can be accessed through the `FileSpecification.Contents` property of the `MediaClipData` object.
+ C: Bir yorumlama ek açıklamasının medya verilerine şu adresten erişilebilir:`FileSpecification.Contents` mülkiyeti`MediaClipData` nesne.
 
-#### Q: Can I modify the media associated with a rendition annotation using Aspose.PDF for .NET?
+#### S: Bir yorumlama açıklamasıyla ilişkili medyayı Aspose.PDF for .NET kullanarak değiştirebilir miyim?
 
-A: Aspose.PDF for .NET provides methods to access and modify the media data associated with a rendition annotation. You can update or replace the media file used by a rendition annotation.
+C: Aspose.PDF for .NET, bir yorumlama açıklamasıyla ilişkili medya verilerine erişmeye ve bunları değiştirmeye yönelik yöntemler sağlar. Bir yorumlama ek açıklaması tarafından kullanılan medya dosyasını güncelleyebilir veya değiştirebilirsiniz.

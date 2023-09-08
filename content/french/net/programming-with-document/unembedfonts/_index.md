@@ -1,69 +1,69 @@
 ---
-title: Unembed Fonts And Optimize PDF Files
-linktitle: Unembed Fonts And Optimize PDF Files
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use Aspose.PDF for .NET to get Unembed Fonts and optimize PDF files. A step-by-step guide.
+title: Désintégrez les polices et optimisez les fichiers PDF
+linktitle: Désintégrez les polices et optimisez les fichiers PDF
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment utiliser Aspose.PDF pour .NET pour obtenir des polices non intégrées et optimiser les fichiers PDF. Un guide étape par étape.
 type: docs
 weight: 370
 url: /fr/net/programming-with-document/unembedfonts/
 ---
-Aspose.PDF for .NET is a powerful library that provides a wide range of features to work with PDF documents. One of its features is to get unembed fonts from a PDF document. This can be useful if you need to extract fonts from a PDF document and use them in other applications.
+Aspose.PDF pour .NET est une bibliothèque puissante qui offre un large éventail de fonctionnalités pour travailler avec des documents PDF. L'une de ses fonctionnalités consiste à obtenir des polices non intégrées à partir d'un document PDF. Cela peut être utile si vous devez extraire des polices d'un document PDF et les utiliser dans d'autres applications.
 
-we will provide a step-by-step guide to explain the following C# source code of get unembed fonts feature of Aspose.PDF for .NET.
+nous fournirons un guide étape par étape pour expliquer le code source C# suivant de la fonctionnalité d'obtention de polices non intégrées d'Aspose.PDF pour .NET.
 
-## Step 1: Set the path to the document directory
+## Étape 1 : Définir le chemin d'accès au répertoire de documents
 
-Before we start, we need to set the path to the directory where our PDF document is located. We will store this path in a variable called "dataDir".
+Avant de commencer, nous devons définir le chemin d’accès au répertoire où se trouve notre document PDF. Nous stockerons ce chemin dans une variable appelée "dataDir".
 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Replace "YOUR DOCUMENT DIRECTORY" with the actual path to the directory where your PDF document is located.
+Remplacez « VOTRE RÉPERTOIRE DE DOCUMENTS » par le chemin réel vers le répertoire où se trouve votre document PDF.
 
-## Step 2: Open the PDF Document
+## Étape 2 : ouvrez le document PDF
 
-The first step is to load the PDF document that you want to do this, use the `Document` class of Aspose.PDF for .NET. The following code snippet shows how to load the PDF document:
+ La première étape consiste à charger le document PDF que vous souhaitez faire, utilisez le`Document` classe d’Aspose.PDF pour .NET. L'extrait de code suivant montre comment charger le document PDF :
 
 ```csharp
-// Open document
+// Ouvrir le document
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 ```
 
-## Step3: Set the UnembedFonts Option
+## Étape 3 : définissez l'option UnembedFonts
 
-To get unembed fonts from the PDF document, you need to set the `UnembedFonts` option to `true`. This option is available in the `OptimizationOptions` class. The following code snippet shows how to set the `UnembedFonts` option:
+ Pour obtenir les polices non intégrées du document PDF, vous devez définir le paramètre`UnembedFonts` possibilité de`true` . Cette option est disponible dans le`OptimizationOptions` classe. L'extrait de code suivant montre comment définir le`UnembedFonts` option:
 
 ```csharp
-// Set UnembedFonts option 
+// Définir l'option UnembedFonts
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 {
 	UnembedFonts = true
 };
 ```
 
-## Step 4: Optimize the PDF Document
+## Étape 4 : Optimiser le document PDF
 
-After setting the `UnembedFonts` option, you can optimize the PDF document using the `OptimizeResources` method of the `Document` class. The following code snippet shows how to optimize the PDF document:
+ Après avoir réglé le`UnembedFonts` option, vous pouvez optimiser le document PDF à l'aide de l'option`OptimizeResources` méthode du`Document` classe. L'extrait de code suivant montre comment optimiser le document PDF :
 
 ```csharp
-// Optimize PDF document using OptimizationOptions
+// Optimiser le document PDF à l'aide d'OptimizationOptions
 pdfDocument.OptimizeResources(optimizeOptions);
 ```
 
-## Step 5: Save the Updated Document
+## Étape 5 : Enregistrez le document mis à jour
 
-Once the PDF document is optimized, you can save the updated document using the `Save` method of the `Document` class. The following code snippet shows how to save the updated document:
+ Une fois le document PDF optimisé, vous pouvez enregistrer le document mis à jour à l'aide du`Save` méthode du`Document`classe. L'extrait de code suivant montre comment enregistrer le document mis à jour :
 
 ```csharp
-// Save updated document
+// Enregistrer le document mis à jour
 pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
 ```
 
-## Step 6: Get the Original and Reduced File Size
+## Étape 6 : Obtenez la taille de fichier originale et réduite
 
-Finally, you can get the original and reduced file size of the PDF document using the `FileInfo` class of System.IO. The following code snippet shows how to get the original and reduced file size:
+ Enfin, vous pouvez obtenir la taille de fichier originale et réduite du document PDF en utilisant le`FileInfo` classe de System.IO. L'extrait de code suivant montre comment obtenir la taille de fichier originale et réduite :
 
 ```csharp
 var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
@@ -71,24 +71,24 @@ var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
 Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
 ```
 
-### Example Source Code for Get Unembed Fonts using Aspose.PDF for .NET
+### Exemple de code source pour obtenir des polices non intégrées à l'aide d'Aspose.PDF pour .NET
 
-Here is the complete example source code for getting unembed fonts from a PDF document using Aspose.PDF for .NET:
+Voici l'exemple complet de code source pour obtenir des polices non intégrées à partir d'un document PDF à l'aide d'Aspose.PDF pour .NET :
 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Ouvrir le document
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-// Set UnembedFonts  option 
+// Définir l'option UnembedFonts
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 {
 	UnembedFonts = true
 };
 Console.WriteLine("Start");
-// Optimize PDF document using OptimizationOptions
+// Optimiser le document PDF à l'aide d'OptimizationOptions
 pdfDocument.OptimizeResources(optimizeOptions);
-// Save updated document
+// Enregistrer le document mis à jour
 pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
 Console.WriteLine("Finished");
 var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
@@ -98,21 +98,21 @@ Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length,
 
 ## Conclusion
 
-In this tutorial, we demonstrated how to use Aspose.PDF for .NET to get unembed fonts from a PDF document. By following the step-by-step guide, you can easily implement this feature in your C# applications. Unembedding fonts can be advantageous when you need to work with the extracted fonts separately or ensure consistent font usage across various platforms.
+Dans ce didacticiel, nous avons montré comment utiliser Aspose.PDF pour .NET pour obtenir des polices non intégrées à partir d'un document PDF. En suivant le guide étape par étape, vous pouvez facilement implémenter cette fonctionnalité dans vos applications C#. La désintégration des polices peut être avantageuse lorsque vous devez travailler avec les polices extraites séparément ou garantir une utilisation cohérente des polices sur différentes plates-formes.
 
-## FAQ's
+## FAQ
 
-#### Q: What is the purpose of unembedding fonts from a PDF document?
+#### Q : A quoi sert la suppression des polices d'un document PDF ?
 
-A: Unembedding fonts from a PDF document allows you to extract the embedded fonts and use them in other applications. This can be useful for ensuring consistent font rendering and preserving the document's visual appearance.
+R : La suppression des polices d'un document PDF vous permet d'extraire les polices incorporées et de les utiliser dans d'autres applications. Cela peut être utile pour garantir un rendu cohérent des polices et préserver l’apparence visuelle du document.
 
-#### Q: How do I specify the path to the document directory in the C# code?
+#### Q : Comment spécifier le chemin d’accès au répertoire de documents dans le code C# ?
 
-A: To specify the path to the document directory, replace `"YOUR DOCUMENT DIRECTORY"` in the code with the actual path to the directory where your PDF document is located.
+ R : Pour spécifier le chemin d'accès au répertoire du document, remplacez`"YOUR DOCUMENT DIRECTORY"` dans le code avec le chemin réel vers le répertoire où se trouve votre document PDF.
 
-#### Q: What does the `UnembedFonts` option do, and where is it set?
+####  Q : Qu’est-ce que le`UnembedFonts` option do, and where is it set?
 
-A: The `UnembedFonts` option, available in the `OptimizationOptions` class, enables or disables the unembedding of fonts from the PDF document. To set this option to `true`, use the following code:
+ R : Le`UnembedFonts` option, disponible dans le`OptimizationOptions` classe, active ou désactive la désintégration des polices du document PDF. Pour définir cette option sur`true`, utilisez le code suivant :
 
 ```csharp
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
@@ -121,13 +121,13 @@ var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 };
 ```
 
-#### Q: Can I revert the changes made during the optimization process?
+#### Q : Puis-je annuler les modifications apportées au cours du processus d'optimisation ?
 
-A: Aspose.PDF for .NET does not make permanent changes to the original PDF document during optimization. The optimization process is performed on a copy of the document, leaving the original intact.
+R : Aspose.PDF pour .NET n'apporte pas de modifications permanentes au document PDF d'origine pendant l'optimisation. Le processus d'optimisation est effectué sur une copie du document, laissant l'original intact.
 
-#### Q: How can I check the original and reduced file size after optimization?
+#### Q : Comment puis-je vérifier la taille du fichier d'origine et réduite après l'optimisation ?
 
-A: You can use the `FileInfo` class of `System.IO` to get the original and reduced file size. Here's an example code snippet to achieve this:
+R : Vous pouvez utiliser le`FileInfo` une sorte de`System.IO` pour obtenir la taille de fichier originale et réduite. Voici un exemple d'extrait de code pour y parvenir :
 
 ```csharp
 var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");

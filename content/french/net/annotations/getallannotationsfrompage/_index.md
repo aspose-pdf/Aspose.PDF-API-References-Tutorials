@@ -1,57 +1,57 @@
 ---
-title: Get All Annotations From Page
-linktitle: Get All Annotations From Page
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use Aspose.PDF for .NET to retrieve all annotations from a PDF page with this step-by-step guide.
+title: Obtenir toutes les annotations de la page
+linktitle: Obtenir toutes les annotations de la page
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Découvrez comment utiliser Aspose.PDF pour .NET pour récupérer toutes les annotations d'une page PDF avec ce guide étape par étape.
 type: docs
 weight: 70
 url: /fr/net/annotations/getallannotationsfrompage/
 ---
-This article will guide you through the process of extracting all annotations from a PDF page using Aspose.PDF for .NET. Aspose.PDF for .NET is a library that allows developers to create, edit, and convert PDF documents. With the help of this guide, you will be able to get all the annotations from a specific PDF page using the provided C# source code.
+Cet article vous guidera tout au long du processus d'extraction de toutes les annotations d'une page PDF à l'aide d'Aspose.PDF pour .NET. Aspose.PDF pour .NET est une bibliothèque qui permet aux développeurs de créer, modifier et convertir des documents PDF. Avec l'aide de ce guide, vous pourrez obtenir toutes les annotations d'une page PDF spécifique en utilisant le code source C# fourni.
 
-Follow the below steps how to get all Annotations for a PDF page using Aspose.PDF for .NET:
+Suivez les étapes ci-dessous pour obtenir toutes les annotations d'une page PDF à l'aide d'Aspose.PDF pour .NET :
 
-## Step 1: The Path to the Documents Directory
+## Étape 1 : le chemin d'accès au répertoire des documents
 
-The first step in getting all annotations from a PDF page using Aspose.PDF for .NET is to set the path to the documents directory where your PDF files are stored. You can do this by modifying the following line of code:
+La première étape pour obtenir toutes les annotations d'une page PDF à l'aide d'Aspose.PDF pour .NET consiste à définir le chemin d'accès au répertoire de documents dans lequel vos fichiers PDF sont stockés. Vous pouvez le faire en modifiant la ligne de code suivante :
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
-## Step 2: Your PDF files are stored
+## Étape 2 : Vos fichiers PDF sont stockés
 
-Replace "YOUR DOCUMENT DIRECTORY" with the path to the folder where your PDF files are stored. For example:
+Remplacez « VOTRE RÉPERTOIRE DE DOCUMENTS » par le chemin d'accès au dossier où sont stockés vos fichiers PDF. Par exemple:
 
 ```csharp
 string dataDir = @"C:\Users\JohnDoe\Documents\PDFs\";
 ```
 
-## Step 3: Open Document
+## Étape 3 : ouvrir le document
 
-The next step is to open the PDF document that contains the annotations you want to extract. You can do this by adding the following code:
+L'étape suivante consiste à ouvrir le document PDF contenant les annotations que vous souhaitez extraire. Vous pouvez le faire en ajoutant le code suivant :
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetAllAnnotationsFromPage.pdf");
 ```
 
-This line of code initializes a new instance of the Document class and loads the PDF document "GetAllAnnotationsFromPage.pdf". Replace this filename with the name of your PDF file.
+Cette ligne de code initialise une nouvelle instance de la classe Document et charge le document PDF « GetAllAnnotationsFromPage.pdf ». Remplacez ce nom de fichier par le nom de votre fichier PDF.
 
-## Step 4: Loop through All Annotations
+## Étape 4 : Parcourir toutes les annotations
 
-Once you have opened the PDF document, you can loop through all the annotations on a specific page. For example, to loop through all the annotations on the first page of the PDF document, add the following code:
+Une fois que vous avez ouvert le document PDF, vous pouvez parcourir toutes les annotations sur une page spécifique. Par exemple, pour parcourir toutes les annotations de la première page du document PDF, ajoutez le code suivant :
 
 ```csharp
 foreach (MarkupAnnotation annotation in pdfDocument.Pages[1].Annotations)
 {
-    // Code goes here
+    // Le code va ici
 }
 ```
 
-This code loops through all the annotations on the first page of the PDF document and assigns each annotation to the "annotation" variable.
+Ce code parcourt toutes les annotations de la première page du document PDF et attribue chaque annotation à la variable "annotation".
 
-## Step 5: Get Annotation Properties
+## Étape 5 : obtenir les propriétés de l'annotation
 
-To extract the properties of each annotation, you can add the following code inside the foreach loop:
+Pour extraire les propriétés de chaque annotation, vous pouvez ajouter le code suivant dans la boucle foreach :
 
 ```csharp
 Console.WriteLine("Title : {0} ", annotation.Title);
@@ -59,23 +59,23 @@ Console.WriteLine("Subject : {0} ", annotation.Subject);
 Console.WriteLine("Contents : {0} ", annotation.Contents);
 ```
 
-This code writes the Title, Subject, and Contents of each annotation to the console.
+Ce code écrit le titre, le sujet et le contenu de chaque annotation sur la console.
 
-### Example Source Code for Get All Annotations From Page using Aspose.PDF for .NET
+### Exemple de code source pour obtenir toutes les annotations de la page à l'aide d'Aspose.PDF pour .NET
 
-Here is the complete source code for getting all annotations from a PDF page using Aspose.PDF for .NET:
+Voici le code source complet pour obtenir toutes les annotations d'une page PDF à l'aide d'Aspose.PDF pour .NET :
 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Ouvrir le document
 Document pdfDocument = new Document(dataDir + "GetAllAnnotationsFromPage.pdf");
 
-// Loop through all the annotations
+// Parcourez toutes les annotations
 foreach (MarkupAnnotation annotation in pdfDocument.Pages[1].Annotations)
 {
-	// Get annotation properties
+	// Obtenir les propriétés des annotations
 	Console.WriteLine("Title : {0} ", annotation.Title);
 	Console.WriteLine("Subject : {0} ", annotation.Subject);
 	Console.WriteLine("Contents : {0} ", annotation.Contents);                
@@ -84,26 +84,26 @@ foreach (MarkupAnnotation annotation in pdfDocument.Pages[1].Annotations)
 
 ## Conclusion
 
-In this tutorial, we explored how to get all annotations from a specific page of a PDF document using Aspose.PDF for .NET. By following the step-by-step guide and using the provided C# source code, developers can easily extract and manage annotations from their PDF documents.
+Dans ce didacticiel, nous avons expliqué comment obtenir toutes les annotations d'une page spécifique d'un document PDF à l'aide d'Aspose.PDF pour .NET. En suivant le guide étape par étape et en utilisant le code source C# fourni, les développeurs peuvent facilement extraire et gérer les annotations de leurs documents PDF.
 
-### FAQ's
+### FAQ
 
-#### Q: What are annotations in a PDF document?
+#### Q : Que sont les annotations dans un document PDF ?
 
-A: Annotations in a PDF document are interactive elements that provide additional information, comments, or notes on specific parts of the document. Annotations can include text notes, comments, highlights, and other interactive elements.
+R : Les annotations dans un document PDF sont des éléments interactifs qui fournissent des informations supplémentaires, des commentaires ou des notes sur des parties spécifiques du document. Les annotations peuvent inclure des notes textuelles, des commentaires, des surlignages et d'autres éléments interactifs.
 
-#### Q: Can I get annotations from specific pages only?
+#### Q : Puis-je obtenir des annotations provenant de pages spécifiques uniquement ?
 
-A: Yes, with Aspose.PDF for .NET, you can get annotations from specific pages or even from the entire document, depending on your requirements.
+R : Oui, avec Aspose.PDF pour .NET, vous pouvez obtenir des annotations à partir de pages spécifiques ou même de l'intégralité du document, selon vos besoins.
 
-#### Q: Does Aspose.PDF for .NET support extracting annotations from password-protected PDF files?
+#### Q : Aspose.PDF pour .NET prend-il en charge l'extraction d'annotations à partir de fichiers PDF protégés par mot de passe ?
 
-A: Yes, Aspose.PDF for .NET supports extracting annotations from password-protected PDF files. You need to provide the correct password when loading the PDF document using the `Document` class.
+ R : Oui, Aspose.PDF pour .NET prend en charge l'extraction d'annotations à partir de fichiers PDF protégés par mot de passe. Vous devez fournir le mot de passe correct lors du chargement du document PDF à l'aide du`Document` classe.
 
-#### Q: Can I filter annotations based on their properties, such as content or author?
+#### Q : Puis-je filtrer les annotations en fonction de leurs propriétés, telles que le contenu ou l'auteur ?
 
-A: Yes, Aspose.PDF for .NET provides methods to access and filter annotations based on their properties, such as content, author, or creation date. You can loop through all annotations and check for the specific properties you want to filter.
+R : Oui, Aspose.PDF pour .NET fournit des méthodes pour accéder et filtrer les annotations en fonction de leurs propriétés, telles que le contenu, l'auteur ou la date de création. Vous pouvez parcourir toutes les annotations et vérifier les propriétés spécifiques que vous souhaitez filtrer.
 
-#### Q: Does Aspose.PDF for .NET support extracting annotations from different types of PDF documents?
+#### Q : Aspose.PDF pour .NET prend-il en charge l'extraction d'annotations à partir de différents types de documents PDF ?
 
-A: Yes, Aspose.PDF for .NET provides various methods to extract annotations from different types of PDF documents, including text markup annotations, free text annotations, and more.
+R : Oui, Aspose.PDF pour .NET fournit diverses méthodes pour extraire des annotations de différents types de documents PDF, notamment des annotations de balisage de texte, des annotations de texte libre, etc.

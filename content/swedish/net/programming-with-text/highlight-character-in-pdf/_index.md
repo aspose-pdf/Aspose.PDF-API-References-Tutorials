@@ -1,40 +1,40 @@
 ---
-title: Highlight Character In PDF File
-linktitle: Highlight Character In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to highlight characters in PDF file using Aspose.PDF for .NET.
+title: Markera karaktär i PDF-fil
+linktitle: Markera karaktär i PDF-fil
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du markerar tecken i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 240
 url: /sv/net/programming-with-text/highlight-character-in-pdf/
 ---
-In this tutorial, we will explain how to highlight characters in a PDF file using the Aspose.PDF library for .NET. We will go through the step-by-step process of highlighting characters in a PDF using the provided C# source code.
+I den här handledningen kommer vi att förklara hur man markerar tecken i en PDF-fil med Aspose.PDF-biblioteket för .NET. Vi kommer att gå igenom steg-för-steg-processen för att markera tecken i en PDF-fil med den medföljande C#-källkoden.
 
-## Requirements
+## Krav
 
-Before you begin, ensure that you have the following:
+Innan du börjar, se till att du har följande:
 
-- The Aspose.PDF for .NET library installed.
-- A basic understanding of C# programming.
+- Aspose.PDF för .NET-biblioteket installerat.
+- En grundläggande förståelse för C#-programmering.
 
-## Step 1: Set up the Document Directory
+## Steg 1: Konfigurera dokumentkatalogen
 
-First, you need to set the path to the directory where your input PDF file is located. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to your PDF file.
+ Först måste du ställa in sökvägen till katalogen där din indata-PDF-fil finns. Byta ut`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till din PDF-fil.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Load the PDF Document
+## Steg 2: Ladda PDF-dokumentet
 
-Next, we load the input PDF document using the `Aspose.Pdf.Document` class.
+ Därefter laddar vi in PDF-dokumentet med hjälp av`Aspose.Pdf.Document` klass.
 
 ```csharp
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(dataDir + "input.pdf");
 ```
 
-## Step 3: Convert PDF to Image
+## Steg 3: Konvertera PDF till bild
 
-To highlight characters, we convert the PDF document to an image using the `PdfConverter` class. We set the resolution for the conversion and retrieve the image as a `Bitmap` object.
+ För att markera tecken konverterar vi PDF-dokumentet till en bild med hjälp av`PdfConverter` klass. Vi ställer in upplösningen för konverteringen och hämtar bilden som en`Bitmap` objekt.
 
 ```csharp
 int resolution = 150;
@@ -46,34 +46,34 @@ using (MemoryStream ms = new MemoryStream())
      Bitmap bmp = (Bitmap)Bitmap.FromStream(ms);
 ```
 
-## Step 4: Highlight Characters
+## Steg 4: Markera tecken
 
-We loop through each page of the PDF document and use a `TextFragmentAbsorber` object to find all the words in the page. We then iterate over the text fragments, segments, and characters to highlight them using rectangles.
+ Vi går igenom varje sida i PDF-dokumentet och använder en`TextFragmentAbsorber` objekt för att hitta alla ord på sidan. Vi itererar sedan över textfragmenten, segmenten och tecknen för att markera dem med hjälp av rektanglar.
 
 ```csharp
 using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
 {
-     // Set scale and transform
+     //Ställ in skala och transformera
      float scale = resolution / 72f;
      gr.Transform = new System.Drawing.Drawing2D.Matrix(scale, 0, 0, -scale, 0, bmp.Height);
 
-     // Loop through pages
+     // Bläddra igenom sidorna
      for (int i = 0; i < pdfDocument.Pages.Count; i++)
      {
          Page page = pdfDocument.Pages[1];
 
-         // Find all words in the page
+         // Hitta alla ord på sidan
          TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
          textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
          page. Accept(textFragmentAbsorber);
          TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
 
-         // Loop through text fragments
+         // Gå igenom textfragment
          foreach(TextFragment textFragment in textFragmentCollection)
          {
              if (i == 0)
              {
-                 // Highlight characters
+                 // Markera tecken
                  gr.DrawRectangle(
                      Think.Yellow,
                      (float)textFragment.Position.XIndent,
@@ -81,10 +81,10 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
                      (float)textFragment.Rectangle.Width,
                      (float)textFragment.Rectangle.Height);
 
-                 // Loop through segments
+                 // Slinga igenom segment
                  foreach(TextSegment segment in textFragment.Segments)
                  {
-                     // Highlight segment
+                     // Markera segment
                      gr.DrawRectangle(
                          Think Green,
                          (float)segment.Rectangle.LLX,
@@ -92,10 +92,10 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
                          (float)segment.Rectangle.Width,
                          (float)segment.Rectangle.Height);
 
-                     // Loop through characters
+                     // Gå igenom karaktärer
                      foreach(CharInfo characterInfo in segment.Characters)
                      {
-                         // Highlightcharacter
+                         // Markera karaktär
                          gr.DrawRectangle(
                              Think.Black,
                              (float)characterInfo.Rectangle.LLx,
@@ -110,20 +110,20 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
 }
 ```
 
-## Step 5: Save the Output Image
+## Steg 5: Spara utdatabilden
 
-Finally, we save the modified image with the highlighted characters to the specified output file.
+Slutligen sparar vi den modifierade bilden med de markerade tecknen till den angivna utdatafilen.
 
 ```csharp
 dataDir = dataDir + "HighlightCharacterInPDF_out.png";
 bmp.Save(dataDir, System.Drawing.Imaging.ImageFormat.Png);
 ```
 
-### Sample source code for Highlight Character In PDF using Aspose.PDF for .NET 
+### Exempel på källkod för Highlight Character i PDF med Aspose.PDF för .NET 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Sökvägen till dokumentkatalogen.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
 	int resolution = 150;
 	Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(dataDir + "input.pdf");
@@ -140,13 +140,13 @@ try
 			for (int i = 0; i < pdfDocument.Pages.Count; i++)
 			{
 				Page page = pdfDocument.Pages[1];
-				// Create TextAbsorber object to find all words
+				// Skapa TextAbsorber-objekt för att hitta alla ord
 				TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
 				textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
 				page.Accept(textFragmentAbsorber);
-				// Get the extracted text fragments
+				// Hämta de extraherade textfragmenten
 				TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-				// Loop through the fragments
+				// Gå igenom fragmenten
 				foreach (TextFragment textFragment in textFragmentCollection)
 				{
 					if (i == 0)
@@ -195,42 +195,42 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Slutsats
 
-In this tutorial, you have learned how to highlight characters in a PDF document using the Aspose.PDF library for .NET. By following the step-by-step guide and executing the provided C# code, you can highlight characters in a PDF and save the output as an image.
+I den här handledningen har du lärt dig hur du markerar tecken i ett PDF-dokument med Aspose.PDF-biblioteket för .NET. Genom att följa steg-för-steg-guiden och köra den medföljande C#-koden kan du markera tecken i en PDF och spara utdata som en bild.
 
 ### FAQ's
 
-#### Q: What is the purpose of the "Highlight Character In PDF File" tutorial?
+#### F: Vad är syftet med handledningen "Markera karaktär i PDF-fil"?
 
-A: The "Highlight Character In PDF File" tutorial explains how to use the Aspose.PDF library for .NET to highlight characters within a PDF document. The tutorial provides a step-by-step guide and C# source code to achieve this.
+S: Handledningen "Markera tecken i PDF-fil" förklarar hur du använder Aspose.PDF-biblioteket för .NET för att markera tecken i ett PDF-dokument. Handledningen tillhandahåller en steg-för-steg-guide och C#-källkod för att uppnå detta.
 
-#### Q: Why would I want to highlight characters in a PDF document?
+#### F: Varför skulle jag vilja markera tecken i ett PDF-dokument?
 
-A: Highlighting characters in a PDF document can be useful for various purposes, such as emphasizing specific content or making certain text more visible and distinguishable.
+S: Att markera tecken i ett PDF-dokument kan vara användbart för olika ändamål, som att framhäva specifikt innehåll eller göra viss text mer synlig och urskiljbar.
 
-#### Q: How do I set up the document directory?
+#### F: Hur ställer jag in dokumentkatalogen?
 
-A: To set up the document directory:
+S: Så här ställer du in dokumentkatalogen:
 
-1. Replace `"YOUR DOCUMENT DIRECTORY"` in the `dataDir` variable with the path to the directory where your input PDF file is located.
+1.  Byta ut`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till katalogen där din indata-PDF-fil finns.
 
-#### Q: How do I load the PDF document and convert it to an image?
+#### F: Hur laddar jag in PDF-dokumentet och konverterar det till en bild?
 
-A: In the tutorial, the `Aspose.Pdf.Document` class is used to load the input PDF document. Then, the `PdfConverter` class is employed to convert the PDF document to an image. The resolution of the image is set, and the image is retrieved as a `Bitmap` object.
+ S: I handledningen visas`Aspose.Pdf.Document` klass används för att läsa in PDF-dokumentet. Sedan`PdfConverter` klass används för att konvertera PDF-dokumentet till en bild. Bildens upplösning ställs in och bilden hämtas som en`Bitmap` objekt.
 
-#### Q: How do I highlight characters in the PDF document image?
+#### F: Hur markerar jag tecken i PDF-dokumentets bild?
 
-A: The tutorial guides you through the process of looping through each page of the PDF document, finding words using a `TextFragmentAbsorber`, and iterating through text fragments, segments, and characters to highlight them using rectangles.
+S: Handledningen guidar dig genom processen att gå igenom varje sida i PDF-dokumentet, hitta ord med hjälp av en`TextFragmentAbsorber`, och itererar genom textfragment, segment och tecken för att markera dem med hjälp av rektanglar.
 
-#### Q: Can I customize the appearance of the highlighted characters and segments?
+#### F: Kan jag anpassa utseendet på de markerade karaktärerna och segmenten?
 
-A: Yes, you can customize the appearance of the highlighted characters and segments by modifying the colors and styles used in the drawing operations.
+S: Ja, du kan anpassa utseendet på de markerade tecknen och segmenten genom att ändra färgerna och stilarna som används i ritningsoperationerna.
 
-#### Q: How do I save the modified image with the highlighted characters?
+#### F: Hur sparar jag den ändrade bilden med de markerade tecknen?
 
-A: The tutorial demonstrates how to save the modified image with the highlighted characters to the specified output file using the `Save` method of the `Bitmap` class.
+ S: Handledningen visar hur man sparar den modifierade bilden med de markerade tecknen till den angivna utdatafilen med`Save` metod för`Bitmap` klass.
 
-#### Q: Is a valid Aspose License required for this tutorial?
+#### F: Krävs en giltig Aspose-licens för denna handledning?
 
-A: Yes, a valid Aspose License is required for this tutorial to work correctly. You can purchase a full license or obtain a 30-day temporary license from the Aspose website.
+S: Ja, en giltig Aspose-licens krävs för att denna handledning ska fungera korrekt. Du kan köpa en fullständig licens eller få en 30-dagars tillfällig licens från Asposes webbplats.

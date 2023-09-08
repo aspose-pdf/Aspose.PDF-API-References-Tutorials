@@ -1,120 +1,120 @@
 ---
-title: Add Date Time Stamp In PDF File
-linktitle: Add Date Time Stamp In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to easily add a date and time stamp in PDF file with Aspose.PDF for .NET.
+title: Lägg till datum Tidstämpel i PDF-fil
+linktitle: Lägg till datum Tidstämpel i PDF-fil
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du enkelt lägger till en datum- och tidsstämpel i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 10
 url: /sv/net/programming-with-stamps-and-watermarks/add-date-time-stamp/
 ---
-In this article, we will take you step by step on how to add a date and time stamp in PDF file using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to add a date and time stamp to an existing PDF file.
+den här artikeln tar vi dig steg för steg om hur du lägger till en datum- och tidsstämpel i PDF-fil med Aspose.PDF för .NET. Vi visar dig hur du använder den medföljande C#-källkoden för att lägga till en datum- och tidsstämpel till en befintlig PDF-fil.
 
-## Requirements
+## Krav
 
-Before you begin, make sure you have the following:
+Innan du börjar, se till att du har följande:
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+- En installerad .NET-utvecklingsmiljö.
+- Aspose.PDF-biblioteket för .NET laddas ner och refereras till i ditt projekt.
 
-## Step 1: Setting up the environment
+## Steg 1: Sätta upp miljön
 
-Before you can add a date and time stamp to a PDF document, you need to set up your development environment. Here are the steps to follow:
+Innan du kan lägga till en datum- och tidsstämpel i ett PDF-dokument måste du konfigurera din utvecklingsmiljö. Här är stegen att följa:
 
-1. Open your favorite IDE (Integrated Development Environment).
-2. Create a new C# project.
-3. Make sure you have added a reference to the Aspose.PDF library for .NET.
+1. Öppna din favorit-IDE (Integrated Development Environment).
+2. Skapa ett nytt C#-projekt.
+3. Se till att du har lagt till en referens till Aspose.PDF-biblioteket för .NET.
 
-## Step 2: Adding the Aspose.PDF library
+## Steg 2: Lägga till Aspose.PDF-biblioteket
 
-The Aspose.PDF library for .NET is required to work with PDF documents in your project.
+Aspose.PDF-biblioteket för .NET krävs för att arbeta med PDF-dokument i ditt projekt.
 
-## Step 3: Loading the PDF document
+## Steg 3: Laddar PDF-dokumentet
 
-The first step to adding a date and time stamp is to load the existing PDF document into your project. Here's how:
+Det första steget för att lägga till en datum- och tidsstämpel är att ladda det befintliga PDF-dokumentet i ditt projekt. Här är hur:
 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Open the document
+// Öppna dokumentet
 Document pdfDocument = new Document(dataDir + "AddTextStamp.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where your PDF document is located.
+Var noga med att ersätta "DIN DOKUMENTKATOLOG" med den faktiska sökvägen till katalogen där ditt PDF-dokument finns.
 
-## Step 4: Creating the date and time stamp
+## Steg 4: Skapa datum och tidsstämpel
 
-Now that you have uploaded the document
+Nu när du har laddat upp dokumentet
 
-  PDF, you can create the date and time stamp to add. Here's how to do it:
+  PDF kan du skapa datum- och tidsstämpeln att lägga till. Så här gör du:
 
 ```csharp
 string annotationText = string.Empty;
 annotationText = DateTime.Now.ToString("MM/dd/yy hh:mm:ss tt");
 
-// Create a text buffer
+// Skapa en textbuffert
 TextStamp textStamp = new TextStamp(annotationText);
 ```
 
-The code above creates a new text buffer containing the current date and time.
+Koden ovan skapar en ny textbuffert som innehåller aktuellt datum och tid.
 
-## Step 5: Configuring Stamp Properties
+## Steg 5: Konfigurera stämpelegenskaper
 
-Before adding the stamp to the PDF document, you can configure various properties of the stamp, such as margin, horizontal and vertical alignment, etc. Here's how:
+Innan du lägger till stämpeln i PDF-dokumentet kan du konfigurera olika egenskaper för stämpeln, såsom marginal, horisontell och vertikal justering, etc. Så här gör du:
 
 ```csharp
-// Set buffer properties
+// Ställ in buffertegenskaper
 textStamp.BottomMargin = 10;
 textStamp. RightMargin = 20;
 textStamp.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Right;
 textStamp.VerticalAlignment = VerticalAlignment.Bottom;
 ```
 
-You can adjust these properties according to your needs.
+Du kan anpassa dessa egenskaper efter dina behov.
 
-## Step 6: Add Stamp to PDF
+## Steg 6: Lägg till stämpel till PDF
 
-Now that the date and time stamp is ready, you can add it to a specific page of the PDF document. Here's how:
+Nu när datum- och tidsstämpeln är klar kan du lägga till den på en specifik sida i PDF-dokumentet. Här är hur:
 
 ```csharp
-// Add the stamp to the page's stamp collection
+// Lägg till frimärket i sidans frimärkssamling
 pdfDocument.Pages[1].AddStamp(textStamp);
 ```
 
-The code above adds the stamp to the first page of the PDF document. You can specify another page if needed.
+Koden ovan lägger till stämpeln på första sidan i PDF-dokumentet. Du kan ange en annan sida om det behövs.
 
-## Step 7: Save the output document
+## Steg 7: Spara utdatadokumentet
 
-Once you have added the date and time stamp, you can save the modified PDF document. Here's how:
+När du har lagt till datum- och tidsstämpeln kan du spara det ändrade PDF-dokumentet. Här är hur:
 
 ```csharp
-// Save the output document
+// Spara utdatadokumentet
 pdfDocument.Save(dataDir);
 ```
 
-The above code saves the edited PDF document to the specified directory.
+Ovanstående kod sparar det redigerade PDF-dokumentet i den angivna katalogen.
 
-### Sample source code for Add Date Time Stamp using Aspose.PDF for .NET 
+### Exempel på källkod för Lägg till datum och tidsstämpel med Aspose.PDF för .NET 
 ```csharp
 
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Öppna dokumentet
 Document pdfDocument = new Document(dataDir+ "AddTextStamp.pdf");
 string annotationText = string.Empty;
 annotationText = DateTime.Now.ToString("MM/dd/yy hh:mm:ss tt ");
 
-// Create text stamp
+// Skapa textstämpel
 TextStamp textStamp = new TextStamp(annotationText);
 
-// Set properties of the stamp
+// Ställ in egenskaper för stämpeln
 textStamp.BottomMargin = 10;
 textStamp.RightMargin = 20;
 textStamp.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Right;
 textStamp.VerticalAlignment = VerticalAlignment.Bottom;
 
-// Adding stamp on stamp collection
+// Lägger till stämpel på frimärkssamling
 pdfDocument.Pages[1].AddStamp(textStamp);
 DefaultAppearance default_appearance = new DefaultAppearance("Arial", 6, System.Drawing.Color.Black);
 FreeTextAnnotation textAnnotation = new FreeTextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(0, 0, 0, 0), default_appearance);
@@ -130,50 +130,50 @@ textAnnotation.Rect = new Aspose.Pdf.Rectangle(0, 0, 0, 0);
 pdfDocument.Pages[1].Annotations.Add(textAnnotation);
 dataDir = dataDir + "AddDateTimeStamp_out.pdf";
 
-// Save output document
+// Spara utdatadokument
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nDate time stamp added successfully.\nFile saved at " + dataDir);  
           
 ```
 
-## Conclusion
+## Slutsats
 
-Congratulation ! You have learned how to add a date and time stamp using Aspose.PDF for .NET. Now you can apply this knowledge to your own projects to add date and time stamps to PDF documents.
+Grattis! Du har lärt dig hur du lägger till en datum- och tidsstämpel med Aspose.PDF för .NET. Nu kan du tillämpa denna kunskap på dina egna projekt för att lägga till datum- och tidsstämplar till PDF-dokument.
 
-### FAQ's for add date time stamp in PDF file
+### Vanliga frågor för att lägga till datum och tidsstämpel i PDF-fil
 
-#### Q: What is the purpose of adding a date and time stamp to a PDF document using Aspose.PDF for .NET?
+#### F: Vad är syftet med att lägga till en datum- och tidsstämpel i ett PDF-dokument med Aspose.PDF för .NET?
 
-A: Adding a date and time stamp to a PDF document enhances its informational value by indicating when the document was modified or created. This feature is useful for tracking document changes and providing a reference point for document history.
+S: Att lägga till en datum- och tidsstämpel i ett PDF-dokument ökar dess informationsvärde genom att ange när dokumentet ändrades eller skapades. Den här funktionen är användbar för att spåra dokumentändringar och tillhandahålla en referenspunkt för dokumenthistorik.
 
-#### Q: Can I customize the format of the date and time stamp to match specific requirements?
+#### F: Kan jag anpassa formatet på datum- och tidsstämpeln för att matcha specifika krav?
 
-A: Yes, you can customize the format of the date and time stamp according to your preferences. The provided C# source code uses the `DateTime.Now.ToString()` method to generate the timestamp in a specific format. You can modify this code to format the timestamp as needed.
+ S: Ja, du kan anpassa formatet för datum- och tidsstämpeln enligt dina önskemål. Den medföljande C#-källkoden använder`DateTime.Now.ToString()` metod för att generera tidsstämpeln i ett specifikt format. Du kan ändra den här koden för att formatera tidsstämpeln efter behov.
 
-#### Q: Is it possible to add the date and time stamp to a specific location on a PDF page?
+#### F: Är det möjligt att lägga till datum och tidsstämpel på en specifik plats på en PDF-sida?
 
-A: Absolutely, you can adjust the placement of the date and time stamp on the PDF page by modifying the properties of the `TextStamp` object. The code provided in the tutorial demonstrates how to set properties such as margin, alignment, and vertical positioning.
+ S: Absolut, du kan justera placeringen av datum- och tidsstämpeln på PDF-sidan genom att ändra egenskaperna för`TextStamp` objekt. Koden som tillhandahålls i handledningen visar hur man ställer in egenskaper som marginal, justering och vertikal positionering.
 
-#### Q: Can I add multiple date and time stamps to different pages of the same PDF document?
+#### F: Kan jag lägga till flera datum- och tidsstämplar på olika sidor i samma PDF-dokument?
 
-A: Yes, you can add multiple date and time stamps to different pages of the same PDF document. Simply repeat the process of creating a `TextStamp` object and configuring its properties for each desired page.
+ S: Ja, du kan lägga till flera datum- och tidsstämplar på olika sidor i samma PDF-dokument. Upprepa helt enkelt processen att skapa en`TextStamp` objekt och konfigurera dess egenskaper för varje önskad sida.
 
-#### Q: How can I change the font, size, or color of the date and time stamp text?
+#### F: Hur kan jag ändra teckensnitt, storlek eller färg på datum- och tidsstämpeltexten?
 
-A: To modify the font, size, or color of the date and time stamp text, you can customize the properties of the `DefaultAppearance` object used to create the `TextStamp`. Adjust the font name, size, and color values to achieve the desired appearance.
+ S: För att ändra teckensnitt, storlek eller färg på datum- och tidsstämpeltexten kan du anpassa egenskaperna för`DefaultAppearance` objekt som används för att skapa`TextStamp`. Justera teckensnittsnamn, storlek och färgvärden för att uppnå önskat utseende.
 
-#### Q: Is it possible to add other types of annotations or stamps to a PDF document using Aspose.PDF for .NET?
+#### F: Är det möjligt att lägga till andra typer av anteckningar eller stämplar till ett PDF-dokument med Aspose.PDF för .NET?
 
-A: Yes, Aspose.PDF for .NET provides a wide range of annotation types that you can add to PDF documents, including text annotations, stamps, lines, shapes, and more. You can explore the Aspose.PDF documentation for further details on working with annotations.
+S: Ja, Aspose.PDF för .NET tillhandahåller ett brett utbud av anteckningstyper som du kan lägga till i PDF-dokument, inklusive textkommentarer, stämplar, linjer, former och mer. Du kan utforska Aspose.PDF-dokumentationen för ytterligare information om hur du arbetar med anteckningar.
 
-#### Q: Are there any limitations or considerations when adding a date and time stamp to a PDF document?
+#### F: Finns det några begränsningar eller överväganden när du lägger till en datum- och tidsstämpel i ett PDF-dokument?
 
-A: While adding a date and time stamp is straightforward, consider factors such as the document's layout and existing content. Make sure the placement of the stamp does not obscure important information or affect the readability of the document.
+S: Även om det är enkelt att lägga till en datum- och tidsstämpel, överväg faktorer som dokumentets layout och befintligt innehåll. Se till att stämpelns placering inte skymmer viktig information eller påverkar dokumentets läsbarhet.
 
-#### Q: How can I integrate this method into my own projects to add date and time stamps to PDF documents?
+#### F: Hur kan jag integrera den här metoden i mina egna projekt för att lägga till datum- och tidsstämplar i PDF-dokument?
 
-A: To integrate this method, follow the provided steps and adjust the code to fit your project's structure. You can add date and time stamps to existing PDF documents to enhance their usefulness and provide a clear timeline of changes.
+S: För att integrera denna metod, följ de medföljande stegen och justera koden så att den passar ditt projekts struktur. Du kan lägga till datum- och tidsstämplar i befintliga PDF-dokument för att förbättra deras användbarhet och ge en tydlig tidslinje för ändringar.
 
-#### Q: Can I automate the process of adding date and time stamps to multiple PDF documents?
+#### F: Kan jag automatisera processen att lägga till datum- och tidsstämplar i flera PDF-dokument?
 
-A: Yes, you can automate the process of adding date and time stamps to multiple PDF documents by creating a script or program that iterates through a list of documents and applies the same stamping process to each one.
+S: Ja, du kan automatisera processen att lägga till datum- och tidsstämplar till flera PDF-dokument genom att skapa ett skript eller program som itererar genom en lista med dokument och tillämpar samma stämplingsprocess på var och en.

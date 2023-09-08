@@ -1,126 +1,126 @@
 ---
-title: Tagged PDF Content
-linktitle: Tagged PDF Content
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to work with tagged content in a PDF document with Aspose.PDF for .NET. A step-by-step guide to using tags.
+title: PDF-контент с тегами
+linktitle: PDF-контент с тегами
+second_title: Справочник по Aspose.PDF для .NET API
+description: Узнайте, как работать с размеченным содержимым в PDF-документе с помощью Aspose.PDF для .NET. Пошаговое руководство по использованию тегов.
 type: docs
 weight: 200
 url: /ru/net/programming-with-tagged-pdf/tagged-pdf-content/
 ---
-In this detailed tutorial, we will walk you through the provided C# source code step by step for working with marked up content of a PDF document using Aspose.PDF for .NET. Follow the instructions below to understand how to use the tag for PDF content.
+В этом подробном руководстве мы шаг за шагом познакомим вас с предоставленным исходным кодом C# для работы с размеченным содержимым PDF-документа с использованием Aspose.PDF для .NET. Следуйте инструкциям ниже, чтобы понять, как использовать тег для содержимого PDF.
 
-## Step 1: Setting up the environment
+## Шаг 1. Настройка среды
 
-Before you begin, make sure you've configured your development environment to use Aspose.PDF for .NET. This includes installing the Aspose.PDF library and configuring your project to reference it.
+Прежде чем начать, убедитесь, что вы настроили свою среду разработки для использования Aspose.PDF для .NET. Это включает в себя установку библиотеки Aspose.PDF и настройку вашего проекта для ссылки на нее.
 
-## Step 2: Creating the PDF document
+## Шаг 2. Создание PDF-документа
 
-In this step, we will create a new PDF document object with Aspose.PDF.
+На этом этапе мы создадим новый объект PDF-документа с помощью Aspose.PDF.
 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Create the PDF document
+// Создайте PDF-документ
 Document document = new Document();
 ```
 
-We have created a new PDF document with Aspose.PDF.
+Мы создали новый PDF-документ с помощью Aspose.PDF.
 
-## Step 3: Get content to work with the tagged PDF
+## Шаг 3. Получите контент для работы с PDF-файлом с тегами
 
-In this step, we will get the contents of the PDF document to work with the tagged PDF.
+На этом этапе мы получим содержимое PDF-документа для работы с PDF-файлом с тегами.
 
 ```csharp
-// Get the content to work with the tagged PDF
+// Заставьте контент работать с PDF-файлом с тегами
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-We got the contents of the PDF document to work with the tagged PDF.
+Мы получили содержимое PDF-документа для работы с PDF-файлом с тегами.
 
-## Step 4: Work with PDF Tagged Content
+## Шаг 4. Работа с содержимым PDF с тегами
 
-Now we will work with the tagged content of the PDF using the appropriate tags.
+Теперь мы будем работать с размеченным содержимым PDF-файла, используя соответствующие теги.
 
 ```csharp
-// Work with the tagged content of the PDF
+// Работа с размеченным содержимым PDF-файла
 taggedContent.SetTitle("Simple tagged PDF document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-We have set the title and language of the tagged PDF document.
+Мы установили заголовок и язык PDF-документа с тегами.
 
-## Step 5: Saving the tagged PDF document
+## Шаг 5. Сохранение PDF-документа с тегами
 
-Now that we've worked with the tagged content of the PDF document, let's save it as a tagged PDF document.
+Теперь, когда мы поработали с тегированным содержимым PDF-документа, давайте сохраним его как PDF-документ с тегами.
 
 ```csharp
-// Save the tagged PDF document
+// Сохраните PDF-документ с тегами
 document.Save(dataDir + "ContentPDFTag.pdf");
 ```
 
-We saved the tagged PDF document in the specified directory.
+Мы сохранили PDF-документ с тегами в указанном каталоге.
 
-### Sample source code for Tagged PDFContent using Aspose.PDF for .NET 
+### Пример исходного кода для Tagged PDFContent с использованием Aspose.PDF для .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Create Pdf Document
+// Создать PDF-документ
 Document document = new Document();
 
-// Get Content for work with TaggedPdf
+// Получить контент для работы с TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Work with Tagged Pdf content
-// Set Title and Language for Documnet
+// Работа с содержимым PDF с тегами
+// Установите заголовок и язык для Documentnet
 taggedContent.SetTitle("Simple Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 
-// Save Tagged Pdf Document
+// Сохранить PDF-документ с тегами
 document.Save(dataDir + "TaggedPDFContent.pdf");
 
 ```
-## Conclusion
+## Заключение
 
-In this tutorial, we learned how to work with marked up content in a PDF document using Aspose.PDF for .NET. You can now use Aspose.PDF to create PDF documents with appropriate tagged content.
+В этом уроке мы узнали, как работать с размеченным содержимым в PDF-документе с помощью Aspose.PDF для .NET. Теперь вы можете использовать Aspose.PDF для создания PDF-документов с соответствующим содержимым с тегами.
 
-### FAQ's
+### Часто задаваемые вопросы
 
-#### Q: What is the main focus of this tutorial on working with tagged PDF content using Aspose.PDF for .NET?
+#### Вопрос: Какова основная задача этого руководства по работе с PDF-содержимым с тегами с использованием Aspose.PDF для .NET?
 
-A: This tutorial is primarily focused on guiding you through the process of working with marked up content within a PDF document using Aspose.PDF for .NET. The tutorial provides step-by-step instructions and C# source code examples to help you understand how to use tags to define and manipulate the content of a PDF document.
+О: Это руководство в первую очередь направлено на то, чтобы помочь вам разобраться в процессе работы с размеченным содержимым в PDF-документе с использованием Aspose.PDF для .NET. В этом руководстве представлены пошаговые инструкции и примеры исходного кода C#, которые помогут вам понять, как использовать теги для определения содержимого PDF-документа и управления им.
 
-#### Q: What are the prerequisites for following this tutorial on tagged PDF content manipulation with Aspose.PDF for .NET?
+#### Вопрос: Каковы необходимые условия для изучения этого руководства по манипулированию содержимым PDF с тегами с помощью Aspose.PDF для .NET?
 
-A: Before you begin, ensure that you have set up your development environment to use Aspose.PDF for .NET. This involves installing the Aspose.PDF library and configuring your project to reference it.
+О: Прежде чем начать, убедитесь, что вы настроили свою среду разработки для использования Aspose.PDF для .NET. Это включает в себя установку библиотеки Aspose.PDF и настройку вашего проекта для ссылки на нее.
 
-#### Q: How can I create a new PDF document and work with its tagged content using Aspose.PDF for .NET?
+#### Вопрос: Как создать новый PDF-документ и работать с его размеченным содержимым с помощью Aspose.PDF для .NET?
 
-A: The tutorial provides C# source code examples that demonstrate how to create a new PDF document and access its tagged content for further manipulation.
+Ответ: В руководстве представлены примеры исходного кода C#, демонстрирующие, как создать новый PDF-документ и получить доступ к его размеченному содержимому для дальнейших манипуляций.
 
-#### Q: What is the significance of working with tagged content in a PDF document?
+#### Вопрос: В чем важность работы с размеченным содержимым в PDF-документе?
 
-A: Working with tagged content in a PDF document involves using structured tags to define the semantic meaning of the document's elements. This is particularly important for accessibility and content extraction, as it enables screen readers and other technologies to interpret the document's content correctly.
+О: Работа с содержимым с тегами в документе PDF предполагает использование структурированных тегов для определения семантического значения элементов документа. Это особенно важно для доступности и извлечения контента, поскольку позволяет программам чтения с экрана и другим технологиям правильно интерпретировать содержимое документа.
 
-#### Q: How can I set the title and language for a tagged PDF document using Aspose.PDF for .NET?
+#### Вопрос: Как я могу установить заголовок и язык для PDF-документа с тегами, используя Aspose.PDF для .NET?
 
-A: The tutorial includes C# source code examples that illustrate how to set the title and language for a tagged PDF document using Aspose.PDF for .NET.
+О: Учебное пособие включает примеры исходного кода C#, которые иллюстрируют, как установить заголовок и язык для PDF-документа с тегами с помощью Aspose.PDF для .NET.
 
-#### Q: What is the process of saving a tagged PDF document after working with its tagged content?
+#### Вопрос: Каков процесс сохранения PDF-документа с тегами после работы с его содержимым с тегами?
 
-A: After making modifications to the tagged content of a PDF document, you can use the provided C# source code examples to save the modified document using the `Save()` method.
+ О: После внесения изменений в размеченное содержимое PDF-документа вы можете использовать предоставленные примеры исходного кода C#, чтобы сохранить измененный документ с помощью`Save()` метод.
 
-#### Q: How does the sample source code provided in the tutorial help in working with tagged PDF content?
+#### Вопрос: Как пример исходного кода, представленный в руководстве, помогает в работе с содержимым PDF с тегами?
 
-A: The sample source code serves as a practical reference for implementing tagged content manipulation using Aspose.PDF for .NET. You can use this code as a starting point and modify it according to your specific requirements.
+О: Пример исходного кода служит практическим справочником по реализации манипуляций с тегированным содержимым с помощью Aspose.PDF для .NET. Вы можете использовать этот код в качестве отправной точки и изменять его в соответствии с вашими конкретными требованиями.
 
-#### Q: Can I apply similar techniques to other types of elements in a PDF document, not just text and language settings?
+#### Вопрос: Могу ли я применить аналогичные методы к другим типам элементов PDF-документа, а не только к настройкам текста и языка?
 
-A: Yes, the techniques demonstrated in this tutorial can be adapted to work with various types of elements within a PDF document. You can use similar principles to manipulate text, images, tables, and more, while utilizing tags to define their roles and attributes.
+О: Да, методы, продемонстрированные в этом руководстве, можно адаптировать для работы с различными типами элементов в PDF-документе. Вы можете использовать аналогичные принципы для управления текстом, изображениями, таблицами и т. д., используя теги для определения их ролей и атрибутов.
 
-#### Q: How can I use Aspose.PDF for .NET to further enhance and customize PDF documents beyond tagged content?
+#### Вопрос: Как я могу использовать Aspose.PDF для .NET для дальнейшего улучшения и настройки PDF-документов, помимо содержимого с тегами?
 
-A: Aspose.PDF for .NET offers a wide range of features for PDF document manipulation, including adding text, images, tables, hyperlinks, annotations, form fields, watermarks, digital signatures, and more. You can explore the official documentation and resources for a comprehensive understanding of the library's capabilities.
+О: Aspose.PDF для .NET предлагает широкий спектр функций для манипулирования PDF-документами, включая добавление текста, изображений, таблиц, гиперссылок, аннотаций, полей форм, водяных знаков, цифровых подписей и т. д. Вы можете изучить официальную документацию и ресурсы для полного понимания возможностей библиотеки.

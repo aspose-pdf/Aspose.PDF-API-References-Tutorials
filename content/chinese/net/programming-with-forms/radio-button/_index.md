@@ -1,92 +1,92 @@
 ---
-title: Radio Button
-linktitle: Radio Button
-second_title: Aspose.PDF for .NET API Reference
-description: Easily add radio buttons to your PDF documents with Aspose.PDF for .NET.
+title: 单选按钮
+linktitle: 单选按钮
+second_title: Aspose.PDF for .NET API 参考
+description: 使用 Aspose.PDF for .NET 轻松将单选按钮添加到 PDF 文档中。
 type: docs
 weight: 220
 url: /zh/net/programming-with-forms/radio-button/
 ---
-In this tutorial, we will show you how to add a radio button in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+在本教程中，我们将向您展示如何使用 Aspose.PDF for .NET 在 PDF 文档中添加单选按钮。我们将逐步解释 C# 源代码，以指导您完成此过程。
 
-## Step 1: Preparation
+## 第 1 步：准备
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+确保您已导入必要的库并设置文档目录的路径：
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Instantiate a Document Object
+## 第 2 步：实例化文档对象
 
-Instantiate a Document object to create a new PDF document:
+实例化一个 Document 对象来创建一个新的 PDF 文档：
 
 ```csharp
 Document pdfDocument = new Document();
 ```
 
-## Step 3: Add a page
+## 第 3 步：添加页面
 
-Add a page to the PDF document:
+向 PDF 文档添加页面：
 
 ```csharp
 pdfDocument.Pages.Add();
 ```
 
-## Step 4: Instantiate a RadioButtonField Object
+## 第 4 步：实例化 RadioButtonField 对象
 
-Instantiate a RadioButtonField object specifying the page number as an argument:
+实例化一个 RadioButtonField 对象，并将页码指定为参数：
 
 ```csharp
 RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
 ```
 
-## Step 5: Add radio button options
+## 第 5 步：添加单选按钮选项
 
-Add radio button options to the RadioButtonField object by specifying the coordinates of each option with a Rectangle object:
+通过使用 Rectangle 对象指定每个选项的坐标，将单选按钮选项添加到 RadioButtonField 对象：
 
 ```csharp
 radio.AddOption("Test", new Rectangle(0, 0, 20, 20));
 radio.AddOption("Test1", new Rectangle(20, 20, 40, 40));
 ```
 
-## Step 6: Add the radio button to the form
+## 第 6 步：将单选按钮添加到表单中
 
-Add the radio button to the document's Form object:
+将单选按钮添加到文档的 Form 对象：
 
 ```csharp
 pdfDocument.Form.Add(radio);
 ```
 
-## Step 7: Save the PDF Document
+## 第7步：保存PDF文档
 
-Save the created PDF document:
+保存创建的PDF文档：
 
 ```csharp
 dataDir = dataDir + "RadioButton_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Radio Button using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 的单选按钮示例源代码 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	//文档目录的路径。
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Instantiate Document object
+	//实例化文档对象
 	Document pdfDocument = new Document();
-	// Add a page to PDF file
+	//将页面添加到 PDF 文件
 	pdfDocument.Pages.Add();
-	// Instatiate RadioButtonField object with page number as argument
+	//以页码作为参数实例化 RadioButtonField 对象
 	RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
-	// Add first radio button option and also specify its origin using Rectangle object
+	//添加第一个单选按钮选项，并使用 Rectangle 对象指定其原点
 	radio.AddOption("Test", new Rectangle(0, 0, 20, 20));
-	// Add second radio button option
+	//添加第二个单选按钮选项
 	radio.AddOption("Test1", new Rectangle(20, 20, 40, 40));
-	// Add radio button to form object of Document object
+	//添加单选按钮以形成 Document 对象的对象
 	pdfDocument.Form.Add(radio);
 	dataDir = dataDir + "RadioButton_out.pdf";
-	// Save the PDF file
+	//保存 PDF 文件
 	pdfDocument.Save(dataDir);
 	Console.WriteLine("\nRadio button field added successfully.\nFile saved at " + dataDir);
 }
@@ -96,29 +96,29 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## 结论
 
-In this tutorial, we learned how to add a radio button in a PDF document using Aspose.PDF for .NET. By following these steps, you can easily create a radio button and place it on a specific page in your PDF document.
+在本教程中，我们学习了如何使用 Aspose.PDF for .NET 在 PDF 文档中添加单选按钮。通过执行以下步骤，您可以轻松创建单选按钮并将其放置在 PDF 文档中的特定页面上。
 
 
-### FAQ's
+### 常见问题解答
 
-#### Q: Can I customize the appearance of the radio button, such as its size and color?
+#### 问：我可以自定义单选按钮的外观，例如其大小和颜色吗？
 
-A: Yes, you can customize the appearance of the radio button using the `Rectangle` object's coordinates to define its size and position. Aspose.PDF for .NET allows you to adjust the radio button's appearance to suit your needs.
+答：是的，您可以使用以下命令自定义单选按钮的外观`Rectangle`对象的坐标来定义其大小和位置。 Aspose.PDF for .NET 允许您调整单选按钮的外观以满足您的需求。
 
-#### Q: Can I add multiple radio buttons with different groups on the same page?
+#### 问：我可以在同一页面上添加多个不同组的单选按钮吗？
 
-A: Yes, you can add multiple radio buttons with different groups on the same page. Each group of radio buttons can have a unique name, and only one option within each group can be selected at a time.
+答：是的，您可以在同一页面上添加多个具有不同组的单选按钮。每组单选按钮可以有一个唯一的名称，并且一次只能选择每组中的一个选项。
 
-#### Q: How can I add a label or text description to the radio button options?
+#### 问：如何向单选按钮选项添加标签或文本描述？
 
-A: To add a label or text description to the radio button options, you can use the `TextStamp` class from Aspose.PDF for .NET to overlay text on the PDF document at specific coordinates.
+答：要向单选按钮选项添加标签或文本描述，您可以使用`TextStamp`Aspose.PDF for .NET 中的类，用于在 PDF 文档上的特定坐标处覆盖文本。
 
-#### Q: Is Aspose.PDF for .NET compatible with all versions of .NET Framework?
+#### 问：Aspose.PDF for .NET 是否与所有版本的 .NET Framework 兼容？
 
-A: Yes, Aspose.PDF for .NET is compatible with all versions of .NET Framework, including .NET Core and .NET Standard.
+答：是的，Aspose.PDF for .NET 与所有版本的 .NET Framework 兼容，包括 .NET Core 和 .NET Standard。
 
-#### Q: Can I programmatically control the selection of a radio button option in the PDF document?
+#### 问：我可以通过编程方式控制 PDF 文档中单选按钮选项的选择吗？
 
-A: Yes, you can programmatically control the selection of a radio button option using the `IsSelected` property of the `RadioButtonOption` class. This property allows you to set a specific option as selected.
+答：是的，您可以使用以下命令以编程方式控制单选按钮选项的选择：`IsSelected`的财产`RadioButtonOption`班级。此属性允许您设置选定的特定选项。

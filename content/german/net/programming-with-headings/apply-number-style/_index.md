@@ -1,27 +1,27 @@
 ---
-title: Apply Number Style In PDF File
-linktitle: Apply Number Style In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to apply a numbering style to headings in PDF file using Aspose.PDF for .NET. Step by step guide.
+title: Zahlenstil in PDF-Datei anwenden
+linktitle: Zahlenstil in PDF-Datei anwenden
+second_title: Aspose.PDF für .NET API-Referenz
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET einen Nummerierungsstil auf Überschriften in einer PDF-Datei anwenden. Schritt für Schritt Anleitung.
 type: docs
 weight: 10
 url: /de/net/programming-with-headings/apply-number-style/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to apply numbering style in PDF file using Aspose.PDF for .NET.
+In diesem Tutorial führen wir Sie Schritt für Schritt durch den folgenden C#-Quellcode, um mit Aspose.PDF für .NET den Nummerierungsstil in einer PDF-Datei anzuwenden.
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+Stellen Sie sicher, dass Sie die Aspose.PDF-Bibliothek installiert und Ihre Entwicklungsumgebung eingerichtet haben, bevor Sie beginnen. Außerdem verfügen Sie über Grundkenntnisse der C#-Programmierung.
 
-### Step 1: Document Directory Setup
+### Schritt 1: Einrichten des Dokumentenverzeichnisses
 
-In the provided source code, you need to specify the directory where you want to save the generated PDF file. Change the "dataDir" variable to the desired directory.
+Im bereitgestellten Quellcode müssen Sie das Verzeichnis angeben, in dem Sie die generierte PDF-Datei speichern möchten. Ändern Sie die Variable „dataDir“ in das gewünschte Verzeichnis.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### Step 2: Creating the PDF Document
+### Schritt 2: Erstellen des PDF-Dokuments
 
-We create a new PDF document with specified dimensions and margins.
+Wir erstellen ein neues PDF-Dokument mit den angegebenen Abmessungen und Rändern.
 
 ```csharp
 Document pdfDoc = new Document();
@@ -34,9 +34,9 @@ pdfDoc.PageInfo.Margin.Top = 72;
 pdfDoc.PageInfo.Margin.Bottom = 72;
 ```
 
-### Step 3: Creating a Page and Floating Container
+### Schritt 3: Erstellen einer Seite und eines schwebenden Containers
 
-We add a page to the document and create a floating container to organize the content.
+Wir fügen dem Dokument eine Seite hinzu und erstellen einen schwebenden Container, um den Inhalt zu organisieren.
 
 ```csharp
 Aspose.Pdf.Page pdfPage = pdfDoc.Pages.Add();
@@ -52,9 +52,9 @@ floatBox.Margin = pdfPage.PageInfo.Margin;
 pdfPage.Paragraphs.Add(floatBox);
 ```
 
-### Step 4: Add headings with numbering
+### Schritt 4: Überschriften mit Nummerierung hinzufügen
 
-We create headers with specified numberings and add them to the floating container.
+Wir erstellen Header mit vorgegebener Nummerierung und fügen sie dem Floating-Container hinzu.
 
 ```csharp
 Aspose.Pdf.Heading heading = new Aspose.Pdf.Heading(1);
@@ -84,9 +84,9 @@ heading3.IsAutoSequence = true;
 floatBox.Paragraphs.Add(heading3);
 ```
 
-### Step 5: Saving the PDF Document
+### Schritt 5: Speichern des PDF-Dokuments
 
-We save the generated PDF document in the specified directory.
+Wir speichern das generierte PDF-Dokument im angegebenen Verzeichnis.
 
 ```csharp
 dataDir = dataDir + "ApplyNumberStyle_out.pdf";
@@ -94,10 +94,10 @@ pdfDoc.Save(dataDir);
 Console.WriteLine("\nNumbering style successfully applied to headers.\nFile saved as: " + dataDir);
 ```
 
-### Sample source code for Apply Number Style using Aspose.PDF for .NET 
+### Beispielquellcode für „Anwenden des Zahlenstils“ mit Aspose.PDF für .NET 
 ```csharp
 
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDoc = new Document();
 pdfDoc.PageInfo.Width = 612.0;
@@ -147,48 +147,48 @@ Console.WriteLine("\nNumber style applied successfully in headings.\nFile saved 
           
 ```
 
-## Conclusion
+## Abschluss
 
-In this tutorial, we explained how to apply a numbering style to headings in a PDF document using Aspose.PDF for .NET. You can now use this knowledge to create PDF documents with custom numberings for headings.
+In diesem Tutorial haben wir erklärt, wie Sie mit Aspose.PDF für .NET einen Nummerierungsstil auf Überschriften in einem PDF-Dokument anwenden. Dieses Wissen können Sie nun nutzen, um PDF-Dokumente mit benutzerdefinierten Nummerierungen für Überschriften zu erstellen.
 
-### FAQ's for apply number style in PDF file
+### FAQs zum Anwenden des Zahlenstils in einer PDF-Datei
 
-#### Q: What is numbering style in a PDF document?
+#### F: Was ist der Nummerierungsstil in einem PDF-Dokument?
 
-A: Numbering style refers to the format in which headings or sections are numbered in a PDF document. It can include numerals, letters, or other characters to provide a hierarchical structure.
+A: Der Nummerierungsstil bezieht sich auf das Format, in dem Überschriften oder Abschnitte in einem PDF-Dokument nummeriert werden. Es kann Ziffern, Buchstaben oder andere Zeichen enthalten, um eine hierarchische Struktur bereitzustellen.
 
-#### Q: Why would I need to apply numbering style to headings in a PDF document?
+#### F: Warum sollte ich den Nummerierungsstil auf Überschriften in einem PDF-Dokument anwenden?
 
-A: Applying numbering style to headings enhances the readability and organization of your PDF document. It helps readers easily navigate and understand the hierarchical structure of the content.
+A: Das Anwenden eines Nummerierungsstils auf Überschriften verbessert die Lesbarkeit und Organisation Ihres PDF-Dokuments. Es hilft den Lesern, sich leicht zurechtzufinden und die hierarchische Struktur des Inhalts zu verstehen.
 
-#### Q: What is Aspose.PDF for .NET?
+#### F: Was ist Aspose.PDF für .NET?
 
-A: Aspose.PDF for .NET is a library that allows developers to work with PDF files programmatically in .NET applications. It provides a wide range of features for creating, editing, converting, and manipulating PDF documents.
+A: Aspose.PDF für .NET ist eine Bibliothek, die es Entwicklern ermöglicht, programmgesteuert mit PDF-Dateien in .NET-Anwendungen zu arbeiten. Es bietet eine breite Palette von Funktionen zum Erstellen, Bearbeiten, Konvertieren und Bearbeiten von PDF-Dokumenten.
 
-#### Q: How do I import the required libraries for my C# project?
+#### F: Wie importiere ich die erforderlichen Bibliotheken für mein C#-Projekt?
 
-A: To import the necessary libraries for your C# project, include the following import directives:
+A: Um die erforderlichen Bibliotheken für Ihr C#-Projekt zu importieren, schließen Sie die folgenden Importanweisungen ein:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-These directives enable you to access the classes and methods needed for working with PDF documents and applying numbering styles.
+Mit diesen Anweisungen können Sie auf die Klassen und Methoden zugreifen, die zum Arbeiten mit PDF-Dokumenten und zum Anwenden von Nummerierungsstilen erforderlich sind.
 
-#### Q: How do I specify the directory for saving the generated PDF file?
+#### F: Wie lege ich das Verzeichnis zum Speichern der generierten PDF-Datei fest?
 
-A: In the provided source code, modify the "dataDir" variable to specify the directory where you want to save the generated PDF file.
+A: Ändern Sie im bereitgestellten Quellcode die Variable „dataDir“, um das Verzeichnis anzugeben, in dem Sie die generierte PDF-Datei speichern möchten.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-Replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory path.
+ Ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnispfad.
 
-#### Q: How do I create a PDF document with specified dimensions and margins?
+#### F: Wie erstelle ich ein PDF-Dokument mit bestimmten Abmessungen und Rändern?
 
-A: To create a PDF document with specified dimensions and margins, use the following code:
+A: Um ein PDF-Dokument mit angegebenen Abmessungen und Rändern zu erstellen, verwenden Sie den folgenden Code:
 
 ```csharp
 Document pdfDoc = new Document();
@@ -201,13 +201,13 @@ pdfDoc.PageInfo.Margin.Top = 72;
 pdfDoc.PageInfo.Margin.Bottom = 72;
 ```
 
-#### Q: How do I add headings with numbering style to the PDF document?
+#### F: Wie füge ich Überschriften mit Nummerierungsstil zum PDF-Dokument hinzu?
 
-A: To add headings with numbering style to the PDF document, use the provided code samples to create headings and customize their numbering styles. Adjust properties such as text, numbering style, start number, and auto sequence as needed.
+A: Um dem PDF-Dokument Überschriften mit Nummerierungsstil hinzuzufügen, verwenden Sie die bereitgestellten Codebeispiele, um Überschriften zu erstellen und deren Nummerierungsstile anzupassen. Passen Sie Eigenschaften wie Text, Nummerierungsstil, Startnummer und automatische Reihenfolge nach Bedarf an.
 
-#### Q: How do I save the generated PDF document?
+#### F: Wie speichere ich das generierte PDF-Dokument?
 
-A: To save the generated PDF document, use the `Save` method of the `pdfDoc` object:
+ A: Um das generierte PDF-Dokument zu speichern, verwenden Sie die`Save` Methode der`pdfDoc` Objekt:
 
 ```csharp
 dataDir = dataDir + "ApplyNumberStyle_out.pdf";
@@ -215,14 +215,14 @@ pdfDoc.Save(dataDir);
 Console.WriteLine("\nNumbering style applied to headers.\nFile saved as: " + dataDir);
 ```
 
-#### Q: How can I confirm that the numbering style has been applied?
+#### F: Wie kann ich bestätigen, dass der Nummerierungsstil angewendet wurde?
 
-A: Open the generated PDF file to verify that the specified numbering style has been applied to the headings.
+A: Öffnen Sie die generierte PDF-Datei, um zu überprüfen, ob der angegebene Nummerierungsstil auf die Überschriften angewendet wurde.
 
-#### Q: Can I customize the numbering style further?
+#### F: Kann ich den Nummerierungsstil weiter anpassen?
 
-A: Yes, you can customize the numbering style further by adjusting the properties of the `Heading` objects, such as numbering style type, start number, and auto sequence.
+ A: Ja, Sie können den Nummerierungsstil weiter anpassen, indem Sie die Eigenschaften anpassen`Heading` Objekte wie Nummerierungsstiltyp, Startnummer und automatische Reihenfolge.
 
-#### Q: Can I apply different numbering styles to different sections of the document?
+#### F: Kann ich unterschiedliche Nummerierungsstile auf verschiedene Abschnitte des Dokuments anwenden?
 
-A: Yes, you can apply different numbering styles to different sections of the document by creating multiple `Heading` objects with different styles and sequences.
+A: Ja, Sie können verschiedene Nummerierungsstile auf verschiedene Abschnitte des Dokuments anwenden, indem Sie mehrere erstellen`Heading` Objekte mit unterschiedlichen Stilen und Sequenzen.

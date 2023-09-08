@@ -1,128 +1,128 @@
 ---
-title: Configure Metered License Keys In PDF File
-linktitle: Configure Metered License Keys In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to set up a metered license keys in PDF file with Aspose.PDF for .NET and benefit from advanced features.
+title: Настройка лимитных лицензионных ключей в PDF-файле
+linktitle: Настройка лимитных лицензионных ключей в PDF-файле
+second_title: Справочник по Aspose.PDF для .NET API
+description: Пошаговое руководство по настройке лимитированных лицензионных ключей в файле PDF с помощью Aspose.PDF для .NET и использования расширенных функций.
 type: docs
 weight: 10
 url: /ru/net/licensing-aspose-pdf/configure-metered-license/
 ---
-In this tutorial, we will walk you through step-by-step how to set up a metered license keys in PDF file with Aspose.PDF for .NET. The metered license allows you to use the advanced features of Aspose.PDF based on your actual consumption.
+В этом руководстве мы шаг за шагом покажем вам, как настроить лимитированные лицензионные ключи в PDF-файле с помощью Aspose.PDF для .NET. Измеренная лицензия позволяет вам использовать расширенные функции Aspose.PDF в зависимости от фактического потребления.
 
-### Step 1: Configuring License Keys
+### Шаг 1. Настройка лицензионных ключей
 
-In the source code provided, you must specify the public and private keys of the metered license. Replace the "*****" values with your own keys. These keys will be provided to you when you purchase a metered license from Aspose.
+В предоставленном исходном коде необходимо указать открытый и закрытый ключи лимитной лицензии. Заменить "*****" с вашими собственными ключами. Эти ключи будут предоставлены вам при покупке лимитной лицензии у Aspose.
 
 ```csharp
 Aspose.Pdf.Metered metered = new Aspose.Pdf.Metered();
 metered.SetMeteredKey("PUBLIC_KEY", "PRIVATE_KEY");
 ```
 
-### Step 2: Loading the document
+### Шаг 2: Загрузка документа
 
-Load the PDF document from disk using the `Document` class of Aspose.PDF.
+ Загрузите PDF-документ с диска, используя`Document` класс Aspose.PDF.
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-### Step 3: Get Document Page Count
+### Шаг 3. Получите количество страниц документа
 
-Use the `Count` property of the `Pages` collection to get the total number of pages in the document.
+ Использовать`Count` собственность`Pages` коллекцию, чтобы получить общее количество страниц в документе.
 
 ```csharp
 Console.WriteLine(doc.Pages.Count);
 ```
 
-### Sample source code for Configure Metered License using Aspose.PDF for .NET 
+### Пример исходного кода для настройки лимитной лицензии с использованием Aspose.PDF для .NET 
 
 ```csharp
 
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// set metered public and private keys
+// установить лимитированные открытые и закрытые ключи
 Aspose.Pdf.Metered metered = new Aspose.Pdf.Metered();
-// Access the setMeteredKey property and pass public and private keys as parameters
+//Получите доступ к свойству setMeteredKey и передайте открытый и закрытый ключи в качестве параметров.
 metered.SetMeteredKey("*****", "*****");
-// Load the document from disk.
+// Загрузите документ с диска.
 Document doc = new Document(dataDir + "input.pdf");
-//Get the page count of document
+//Получить количество страниц документа
 Console.WriteLine(doc.Pages.Count);
 
 ```
 
-## Conclusion
+## Заключение
 
-In this tutorial, we explained how to set up a metered license with Aspose.PDF for .NET. By using a metered license, you can benefit from the advanced features of Aspose.PDF based on your actual usage. Make sure to provide valid license keys to use Aspose.PDF with all its features.
+В этом руководстве мы объяснили, как настроить лимитную лицензию с помощью Aspose.PDF для .NET. Используя дозированную лицензию, вы можете воспользоваться расширенными функциями Aspose.PDF в зависимости от фактического использования. Обязательно предоставьте действительные лицензионные ключи для использования Aspose.PDF со всеми его функциями.
 
-### FAQ's for configure metered license keys in PDF file
+### Часто задаваемые вопросы по настройке ключей лимитной лицензии в файле PDF
 
-#### Q: What is a metered license in Aspose.PDF?
+#### Вопрос: Что такое лимитная лицензия в Aspose.PDF?
 
-A: A metered license in Aspose.PDF is a licensing model that allows you to pay based on your actual consumption of features rather than a fixed license fee. It enables you to use advanced features of Aspose.PDF while paying only for what you use.
+О: Измеренная лицензия в Aspose.PDF — это модель лицензирования, которая позволяет вам платить на основе фактического потребления функций, а не фиксированной платы за лицензию. Он позволяет вам использовать расширенные функции Aspose.PDF, платя только за то, что вы используете.
 
-#### Q: Why should I use a metered license for Aspose.PDF?
+#### Вопрос: Почему мне следует использовать лимитную лицензию для Aspose.PDF?
 
-A: Using a metered license offers cost savings and flexibility. You pay only for the features you use, making it suitable for projects with varying demands. It eliminates the need for upfront licensing fees and allows you to access advanced PDF features.
+О: Использование лимитной лицензии обеспечивает экономию средств и гибкость. Вы платите только за те функции, которые используете, что делает его подходящим для проектов с различными требованиями. Это устраняет необходимость вносить предоплату за лицензию и позволяет получить доступ к расширенным функциям PDF.
 
-#### Q: How do I obtain metered license keys?
+#### Вопрос: Как получить ключи лимитной лицензии?
 
-A: When you purchase a metered license from Aspose, you will receive a pair of public and private keys. These keys will be used to authenticate and enable metered licensing for your Aspose.PDF application.
+О: Когда вы приобретаете дозированную лицензию у Aspose, вы получаете пару открытого и закрытого ключей. Эти ключи будут использоваться для аутентификации и включения дозированного лицензирования для вашего приложения Aspose.PDF.
 
-#### Q: How do I configure metered license keys in Aspose.PDF for .NET?
+#### Вопрос: Как настроить ключи лимитной лицензии в Aspose.PDF для .NET?
 
-A: To configure metered license keys, use the `SetMeteredKey` method of the `Aspose.Pdf.Metered` class. Replace `"PUBLIC_KEY"` and `"PRIVATE_KEY"` with your actual keys.
+ О: Чтобы настроить лимитные лицензионные ключи, используйте`SetMeteredKey` метод`Aspose.Pdf.Metered` сорт. Заменять`"PUBLIC_KEY"` и`"PRIVATE_KEY"` с вашими настоящими ключами.
 
 ```csharp
 Aspose.Pdf.Metered metered = new Aspose.Pdf.Metered();
 metered.SetMeteredKey("PUBLIC_KEY", "PRIVATE_KEY");
 ```
 
-#### Q: How do I load a PDF document using Aspose.PDF for .NET?
+#### Вопрос: Как загрузить PDF-документ с помощью Aspose.PDF для .NET?
 
-A: To load a PDF document from disk, use the `Document` class of Aspose.PDF and provide the file path.
+ О: Чтобы загрузить PDF-документ с диска, используйте команду`Document` класс Aspose.PDF и укажите путь к файлу.
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-#### Q: How do I get the total page count of a PDF document?
+#### Вопрос: Как узнать общее количество страниц PDF-документа?
 
-A: To get the total page count of a PDF document, use the `Count` property of the `Pages` collection.
+ О: Чтобы узнать общее количество страниц PDF-документа, используйте команду`Count` собственность`Pages` коллекция.
 
 ```csharp
 int pageCount = doc.Pages.Count;
 Console.WriteLine("Total pages: " + pageCount);
 ```
 
-#### Q: Can I use metered licensing for other Aspose products?
+#### Вопрос: Могу ли я использовать лимитное лицензирование для других продуктов Aspose?
 
-A: Yes, metered licensing is available for various Aspose products, allowing you to pay based on your usage for a wide range of features.
+О: Да, для различных продуктов Aspose доступно дозированное лицензирование, позволяющее вам платить в зависимости от использования широкого спектра функций.
 
-#### Q: Is a metered license suitable for all types of projects?
+#### Вопрос. Подходит ли лимитная лицензия для всех типов проектов?
 
-A: Metered licensing is suitable for projects with varying feature usage. It may not be cost-effective for projects with consistent, high-feature usage.
+О: Лицензирование по счетчику подходит для проектов с различным использованием функций. Это может быть нерентабельно для проектов с последовательным и многофункциональным использованием.
 
-#### Q: Where can I find more information about Aspose.PDF metered licensing?
+#### Вопрос: Где я могу найти дополнительную информацию о лимитном лицензировании Aspose.PDF?
 
-A: For more information about metered licensing, pricing, and benefits, visit the [Aspose.PDF Metered Licensing](https://purchase.aspose.com/pricing/pdf/net) page.
+ О: Для получения дополнительной информации о лицензировании по счетчику, ценах и преимуществах посетите[Aspose.PDF Лимитное лицензирование](https://purchase.aspose.com/pricing/pdf/net) страница.
 
-#### Q: How do I ensure the security of my metered license keys?
+#### Вопрос: Как мне обеспечить безопасность моих лимитированных лицензионных ключей?
 
-A: Metered license keys are used for authentication and are sensitive information. Ensure they are kept confidential and not shared publicly.
+О: Лицензионные ключи с лимитом использования используются для аутентификации и являются конфиденциальной информацией. Обеспечьте, чтобы они оставались конфиденциальными и не разглашались публично.
 
-#### Q: Can I switch between traditional and metered licensing?
+#### Вопрос: Могу ли я переключиться между традиционным и лимитным лицензированием?
 
-A: Yes, you can switch between traditional licensing and metered licensing for Aspose.PDF based on your project's requirements.
+О: Да, вы можете переключаться между традиционным лицензированием и лимитным лицензированием для Aspose.PDF в зависимости от требований вашего проекта.
 
-#### Q: Can I use a trial version before purchasing a metered license?
+#### Вопрос: Могу ли я использовать пробную версию перед покупкой лимитной лицензии?
 
-A: Yes, you can try the [free trial version](https://products.aspose.com/pdf/net) of Aspose.PDF to evaluate its features and functionality before purchasing a metered license.
+ О: Да, вы можете попробовать[бесплатная пробная версия](https://products.aspose.com/pdf/net) Aspose.PDF, чтобы оценить его возможности и функциональность перед покупкой лимитной лицензии.
 
-#### Q: How often should I configure metered license keys?
+#### Вопрос: Как часто мне следует настраивать ключи лимитной лицензии?
 
-A: You need to configure metered license keys only once when your application starts. It provides access to the advanced features throughout the application's runtime.
+О: Вам необходимо настроить лимитированные лицензионные ключи только один раз при запуске приложения. Он обеспечивает доступ к расширенным функциям на протяжении всего времени работы приложения.
 
-#### Q: Can I apply metered licensing to an existing application?
+#### Вопрос. Могу ли я применить лимитированное лицензирование к существующему приложению?
 
-A: Yes, you can integrate metered licensing into an existing Aspose.PDF application to benefit from its advantages.
+О: Да, вы можете интегрировать дозированное лицензирование в существующее приложение Aspose.PDF, чтобы воспользоваться его преимуществами.

@@ -1,49 +1,49 @@
 ---
-title: Combo Box
-linktitle: Combo Box
-second_title: Aspose.PDF for .NET API Reference
-description: Easily create combo box list in your PDF documents using Aspose.PDF for .NET.
+title: Açılan kutu
+linktitle: Açılan kutu
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET'i kullanarak PDF belgelerinizde kolayca açılan kutu listesi oluşturun.
 type: docs
 weight: 30
 url: /tr/net/programming-with-forms/combo-box/
 ---
-In this tutorial, we will show you how to create a combo box list using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+Bu eğitimde size Aspose.PDF for .NET kullanarak bir açılır kutu listesinin nasıl oluşturulacağını göstereceğiz. Bu süreçte size yol göstermek için C# kaynak kodunu adım adım açıklayacağız.
 
-## Step 1: Preparation
+## Adım 1: Hazırlık
 
-First, make sure you have imported the necessary libraries and set the path to the documents directory:
+Öncelikle gerekli kitaplıkları içe aktardığınızdan ve belgeler dizininin yolunu ayarladığınızdan emin olun:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Create a Document Object
+## Adım 2: Belge Nesnesi Oluşturun
 
-Create a Document object to hold the PDF form:
+PDF formunu tutacak bir Belge nesnesi oluşturun:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Step 3: Add a page
+## 3. Adım: Sayfa ekleyin
 
-Add a page to the document:
+Belgeye bir sayfa ekleyin:
 
 ```csharp
 doc.Pages.Add();
 ```
 
-## Step 4: Instantiate a ComboBoxField Object
+## Adım 4: ComboBoxField Nesnesini Örneklendirin
 
-Instantiate a ComboBoxField object with the desired dimensions:
+İstediğiniz boyutlara sahip bir ComboBoxField nesnesinin örneğini oluşturun:
 
 ```csharp
 ComboBoxField combo = new ComboBoxField(doc.Pages[1], new Aspose.Pdf.Rectangle(100, 600, 150, 616));
 ```
 
-## Step 5: Add options to the drop-down list
+## 5. Adım: Açılır listeye seçenekleri ekleyin
 
-Add the desired options to the drop-down list:
+İstediğiniz seçenekleri açılır listeye ekleyin:
 
 ```csharp
 combo.AddOption("Red");
@@ -52,44 +52,44 @@ combo.AddOption("Green");
 combo.AddOption("Blue");
 ```
 
-## Step 6: Add the combo box list to the form
+## Adım 6: Birleşik giriş kutusu listesini forma ekleyin
 
-Add the ComboBoxField object to the Document Form Fields collection:
+ComboBoxField nesnesini Belge Formu Alanları koleksiyonuna ekleyin:
 
 ```csharp
 doc.Form.Add(combo);
 ```
 
-## Step 7: Save the document
+## 7. Adım: Belgeyi kaydedin
 
-Save the PDF document:
+PDF belgesini kaydedin:
 
 ```csharp
 dataDir = dataDir + "ComboBox_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Sample source code for Combo Box using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanan Combo Box için örnek kaynak kodu 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Belgeler dizininin yolu.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Create Document object
+	// Belge nesnesi oluştur
 	Document doc = new Document();
-	// Add page to document object
+	// Belge nesnesine sayfa ekle
 	doc.Pages.Add();
-	// Instantiate ComboBox Field object
+	// ComboBox Field nesnesini örnekle
 	ComboBoxField combo = new ComboBoxField(doc.Pages[1], new Aspose.Pdf.Rectangle(100, 600, 150, 616));
-	// Add option to ComboBox
+	// ComboBox'a seçenek ekle
 	combo.AddOption("Red");
 	combo.AddOption("Yellow");
 	combo.AddOption("Green");
 	combo.AddOption("Blue");
-	// Add combo box object to form fields collection of document object
+	// Belge nesnesinin alan koleksiyonunu oluşturmak için açılan kutu nesnesini ekleyin
 	doc.Form.Add(combo);
 	dataDir = dataDir + "ComboBox_out.pdf";
-	// Save the PDF document
+	// PDF belgesini kaydedin
 	doc.Save(dataDir);
 	Console.WriteLine("\nCombobox field added successfully.\nFile saved at " + dataDir);
 }
@@ -99,28 +99,28 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we learned how to create a combo box list using Aspose.PDF for .NET. By following these steps, you can easily add a combo box list to your PDF documents using Aspose.PDF.
+Bu eğitimde Aspose.PDF for .NET kullanarak birleşik giriş kutusu listesinin nasıl oluşturulacağını öğrendik. Bu adımları takip ederek Aspose.PDF'yi kullanarak PDF belgelerinize kolayca açılan kutu listesi ekleyebilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: Can I customize the appearance of the combo box list using Aspose.PDF for .NET?
+#### S: Açılan kutu listesinin görünümünü Aspose.PDF for .NET'i kullanarak özelleştirebilir miyim?
 
-A: Yes, you can customize the appearance of the combo box list using Aspose.PDF for .NET. You can set properties such as font size, color, background color, border style, and more to match your desired look and feel.
+C: Evet, Aspose.PDF for .NET'i kullanarak açılan kutu listesinin görünümünü özelleştirebilirsiniz. İstediğiniz görünüm ve hisle eşleşecek şekilde yazı tipi boyutu, renk, arka plan rengi, kenarlık stili ve daha fazlası gibi özellikleri ayarlayabilirsiniz.
 
-#### Q: Can I set default selected options in the combo box list?
+#### S: Birleşik giriş kutusu listesinde varsayılan seçili seçenekleri ayarlayabilir miyim?
 
-A: Yes, you can set default selected options in the combo box list using Aspose.PDF for .NET. You can use the `Selected` property of the `ComboBoxField` object to mark one or more options as selected by default.
+ C: Evet, Aspose.PDF for .NET'i kullanarak açılan kutu listesindeki varsayılan seçili seçenekleri ayarlayabilirsiniz. Şunu kullanabilirsiniz:`Selected` mülkiyeti`ComboBoxField` Bir veya daha fazla seçeneği varsayılan olarak seçili olarak işaretlemek için nesneyi seçin.
 
-#### Q: How can I retrieve the selected value from the combo box list after the user makes a selection?
+#### S: Kullanıcı bir seçim yaptıktan sonra seçilen değeri açılan kutu listesinden nasıl alabilirim?
 
-A: You can retrieve the selected value from the combo box list using Aspose.PDF for .NET. After the user makes a selection, you can access the `Value` property of the `ComboBoxField` object to obtain the selected value.
+ C: Seçilen değeri Aspose.PDF for .NET'i kullanarak açılan kutu listesinden alabilirsiniz. Kullanıcı seçim yaptıktan sonra erişim sağlayabilirsiniz.`Value` mülkiyeti`ComboBoxField`Seçilen değeri elde etmek için nesne.
 
-#### Q: Is it possible to add event handlers or actions to the combo box list?
+#### S: Birleşik giriş kutusu listesine olay işleyicileri veya eylemler eklemek mümkün mü?
 
-A: Yes, Aspose.PDF for .NET allows you to add event handlers or actions to the combo box list. You can associate JavaScript actions, such as `OnValueChanged`, to the combo box list to perform specific actions when the user selects an option.
+ C: Evet, Aspose.PDF for .NET, birleşik giriş kutusu listesine olay işleyicileri veya eylemler eklemenizi sağlar. Aşağıdaki gibi JavaScript eylemlerini ilişkilendirebilirsiniz:`OnValueChanged`Kullanıcı bir seçeneği seçtiğinde belirli eylemleri gerçekleştirmek için açılan kutu listesine.
 
-#### Q: Can I add tooltips or descriptions to the options in the combo box list?
+#### S: Birleşik giriş kutusu listesindeki seçeneklere araç ipuçları veya açıklamalar ekleyebilir miyim?
 
-A: Yes, you can add tooltips or descriptions to the options in the combo box list using Aspose.PDF for .NET. You can set the `AlternateName` property of each option to provide a tooltip or description that will be displayed when the user hovers over the option.
+ C: Evet, Aspose.PDF for .NET'i kullanarak birleşik giriş kutusu listesindeki seçeneklere araç ipuçları veya açıklamalar ekleyebilirsiniz. Ayarlayabilirsiniz`AlternateName` Kullanıcı seçeneğin üzerine geldiğinde görüntülenecek bir araç ipucu veya açıklama sağlamak için her seçeneğin özelliği.

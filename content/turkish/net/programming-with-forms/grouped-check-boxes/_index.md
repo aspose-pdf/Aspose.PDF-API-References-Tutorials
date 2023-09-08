@@ -1,49 +1,49 @@
 ---
-title: Grouped Check Boxes In PDF Document
-linktitle: Grouped Check Boxes In PDF Document
-second_title: Aspose.PDF for .NET API Reference
-description: Easily create grouped checkboxes in PDF document with Aspose.PDF for .NET.
+title: PDF Belgesinde Gruplandırılmış Onay Kutuları
+linktitle: PDF Belgesinde Gruplandırılmış Onay Kutuları
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile PDF belgesinde kolayca gruplandırılmış onay kutuları oluşturun.
 type: docs
 weight: 170
 url: /tr/net/programming-with-forms/grouped-check-boxes/
 ---
-In this tutorial, we will show you how to create grouped checkboxes in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+Bu eğitimde size Aspose.PDF for .NET kullanarak bir PDF belgesinde gruplandırılmış onay kutularının nasıl oluşturulacağını göstereceğiz. Bu süreçte size yol göstermek için C# kaynak kodunu adım adım açıklayacağız.
 
-## Step 1: Preparation
+## Adım 1: Hazırlık
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+Gerekli kitaplıkları içe aktardığınızdan ve belgeler dizininizin yolunu ayarladığınızdan emin olun:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Instantiate a Document Object
+## Adım 2: Bir Belge Nesnesini Örneklendirin
 
-Instantiate a Document object:
+Bir Document nesnesinin örneğini oluşturun:
 
 ```csharp
 Document pdfDocument = new Document();
 ```
 
-## Step 3: Add page to PDF document
+## 3. Adım: PDF belgesine sayfa ekleyin
 
-Add a page to the PDF document:
+PDF belgesine bir sayfa ekleyin:
 
 ```csharp
 Page page = pdfDocument.Pages.Add();
 ```
 
-## Step 4: Instantiate a RadioButtonField Object
+## Adım 4: RadioButtonField Nesnesini Örneklendirin
 
-Instantiate a RadioButtonField object with the page number as argument:
+Bağımsız değişken olarak sayfa numarasıyla bir RadioButtonField nesnesi örneği oluşturun:
 
 ```csharp
 RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
 ```
 
-## Step 5: Add radio button options
+## 5. Adım: Radyo düğmesi seçeneklerini ekleyin
 
-Add radio button options using the RadioButtonOptionField object and specify their position using the Rectangle object:
+RadioButtonOptionField nesnesini kullanarak radyo düğmesi seçeneklerini ekleyin ve Rectangle nesnesini kullanarak konumlarını belirtin:
 
 ```csharp
 RadioButtonOptionField opt1 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(0, 0, 20, 20));
@@ -54,9 +54,9 @@ radio.Add(opt1);
 radio.Add(opt2);
 ```
 
-## Step 6: Customize radio button options
+## 6. Adım: Radyo düğmesi seçeneklerini özelleştirin
 
-Customize radio button options by setting their style, border, and appearance:
+Stillerini, kenarlıklarını ve görünümlerini ayarlayarak radyo düğmesi seçeneklerini özelleştirin:
 
 ```csharp
 opt1.Style = BoxStyle.Square;
@@ -69,36 +69,36 @@ opt2.Border.Width = 1;
 opt2.Border.Style = BorderStyle.Solid;
 ```
 
-## Step 7: Add the radio buttons to the form
+## Adım 7: Radyo düğmelerini forma ekleyin
 
-Add the radio buttons to the document form object:
+Radyo düğmelerini belge formu nesnesine ekleyin:
 
 ```csharp
 pdfDocument.Form.Add(radio);
 ```
 
-## Step 8: Save the document
+## Adım 8: Belgeyi kaydedin
 
-Save the PDF document:
+PDF belgesini kaydedin:
 
 ```csharp
 dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Grouped Check Boxes using Aspose.PDF for .NET 
+### Aspose.PDF for .NET kullanan Gruplandırılmış Onay Kutuları için örnek kaynak kodu 
 ```csharp
 try
 {
-	// The path to the documents directory.
+	// Belgeler dizininin yolu.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Instantiate Document object
+	// Belge nesnesini somutlaştır
 	Document pdfDocument = new Document();
-	// Add a page to PDF file
+	// PDF dosyasına sayfa ekleme
 	Page page = pdfDocument.Pages.Add();
-	// Instatiate RadioButtonField object with page number as argument
+	// Bağımsız değişken olarak sayfa numarasıyla RadioButtonField nesnesini başlat
 	RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
-	// Add first radio button option and also specify its origin using Rectangle object
+	// İlk radyo düğmesi seçeneğini ekleyin ve ayrıca Rectangle nesnesini kullanarak kökenini belirtin
 	RadioButtonOptionField opt1 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(0, 0, 20, 20));
 	RadioButtonOptionField opt2 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(100, 0, 120, 20));
 	opt1.OptionName = "Test1";
@@ -117,10 +117,10 @@ try
 	opt2.Border.Width = 1;
 	opt2.Border.Style = BorderStyle.Solid;
 	opt2.Characteristics.Border = System.Drawing.Color.Black;
-	// Add radio button to form object of Document object
+	// Belge nesnesinin nesnesini oluşturmak için radyo düğmesi ekleyin
 	pdfDocument.Form.Add(radio);
 	dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
-	// Save the PDF document
+	// PDF belgesini kaydedin
 	pdfDocument.Save(dataDir);
 	Console.WriteLine("\nGrouped checkboxes added successfully.\nFile saved at " + dataDir);
 }
@@ -130,28 +130,28 @@ catch (Exception ex)
 }
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, we learned how to create grouped checkboxes in a PDF document using Aspose.PDF for .NET. By following these steps, you can easily add custom radio button options and bundle them in your PDF documents using Aspose.PDF.
+Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF belgesinde gruplandırılmış onay kutularının nasıl oluşturulacağını öğrendik. Bu adımları izleyerek, özel radyo düğmesi seçeneklerini kolayca ekleyebilir ve bunları Aspose.PDF kullanarak PDF belgelerinizde paketleyebilirsiniz.
 
-### FAQ's
+### SSS'ler
 
-#### Q: What are grouped checkboxes in a PDF document?
+#### S: PDF belgesindeki gruplandırılmış onay kutuları nelerdir?
 
-A: Grouped checkboxes in a PDF document refer to a set of radio button options that are grouped together. Radio buttons allow users to select only one option from a group of mutually exclusive choices. When one radio button is selected, the others in the same group are automatically deselected. This grouping behavior is useful when you want to present users with multiple options but limit their selection to one choice only.
+C: Bir PDF belgesindeki gruplandırılmış onay kutuları, birlikte gruplandırılmış bir dizi radyo düğmesi seçeneğini ifade eder. Radyo düğmeleri, kullanıcıların birbirini dışlayan bir grup seçenek arasından yalnızca bir seçeneği seçmesine olanak tanır. Bir radyo düğmesi seçildiğinde aynı gruptaki diğerlerinin seçimi otomatik olarak kaldırılır. Bu gruplandırma davranışı, kullanıcılara birden çok seçenek sunmak ancak seçimlerini yalnızca tek bir seçenekle sınırlamak istediğinizde kullanışlıdır.
 
-#### Q: Can I customize the appearance of grouped checkboxes in Aspose.PDF for .NET?
+#### S: Aspose.PDF for .NET'te gruplandırılmış onay kutularının görünümünü özelleştirebilir miyim?
 
-A: Yes, you can customize the appearance of grouped checkboxes in Aspose.PDF for .NET. The API provides various options to set the style, border, and appearance of radio button options. You can define the position of each option, choose between different box styles (e.g., square, circle, cross), and adjust the border properties to achieve the desired visual representation.
+C: Evet, Aspose.PDF for .NET'te gruplandırılmış onay kutularının görünümünü özelleştirebilirsiniz. API, radyo düğmesi seçeneklerinin stilini, kenarlığını ve görünümünü ayarlamak için çeşitli seçenekler sunar. Her seçeneğin konumunu tanımlayabilir, farklı kutu stilleri (örn. kare, daire, çarpı) arasından seçim yapabilir ve istediğiniz görsel temsili elde etmek için kenarlık özelliklerini ayarlayabilirsiniz.
 
-#### Q: How do I add grouped checkboxes to a specific page in a PDF document?
+#### S: Gruplandırılmış onay kutularını bir PDF belgesindeki belirli bir sayfaya nasıl eklerim?
 
-A: To add grouped checkboxes to a specific page in a PDF document, you need to instantiate a `RadioButtonField` object with the desired page number as an argument. Then, create `RadioButtonOptionField` objects representing each radio button option and specify their position using the `Rectangle` object. Finally, add these options to the `RadioButtonField` and customize their appearance as needed before adding the `RadioButtonField` to the document form.
+C: Bir PDF belgesindeki belirli bir sayfaya gruplandırılmış onay kutuları eklemek için bir örnek oluşturmanız gerekir.`RadioButtonField` argüman olarak istenen sayfa numarasına sahip nesne. Daha sonra oluşturun`RadioButtonOptionField` Her bir radyo düğmesi seçeneğini temsil eden nesneler ve konumlarını kullanarak`Rectangle` nesne. Son olarak bu seçenekleri`RadioButtonField` ve eklemeden önce görünümlerini gerektiği gibi özelleştirin.`RadioButtonField` belge formuna gidin.
 
-#### Q: Can I add multiple groups of checkboxes to a single PDF document?
+#### S: Tek bir PDF belgesine birden fazla onay kutusu grubu ekleyebilir miyim?
 
-A: Yes, you can add multiple groups of checkboxes to a single PDF document. Each group should have a unique `RadioButtonField` object, and the `RadioButtonOptionField` objects within each group should share the same page and unique names for their options. This ensures that the radio buttons within each group function correctly, and the selections are mutually exclusive.
+ C: Evet, tek bir PDF belgesine birden fazla onay kutusu grubu ekleyebilirsiniz. Her grubun kendine özgü bir özelliği olmalı`RadioButtonField` nesne ve`RadioButtonOptionField` her gruptaki nesneler, seçenekleri için aynı sayfayı ve benzersiz adları paylaşmalıdır. Bu, her gruptaki radyo düğmelerinin doğru çalışmasını ve seçimlerin birbirini dışlamasını sağlar.
 
-#### Q: Are grouped checkboxes supported in all PDF viewers and applications?
+#### S: Gruplandırılmış onay kutuları tüm PDF görüntüleyicilerde ve uygulamalarda destekleniyor mu?
 
-A: Yes, grouped checkboxes are supported in all standard-compliant PDF viewers and applications. The PDF specification defines radio buttons and their grouping behavior, making them universally recognized in the PDF format. However, it's essential to test the functionality in different PDF viewers to ensure consistent behavior across various platforms.
+C: Evet, gruplandırılmış onay kutuları tüm standart uyumlu PDF görüntüleyicilerde ve uygulamalarda desteklenir. PDF spesifikasyonu, radyo düğmelerini ve bunların gruplanma davranışlarını tanımlayarak bunların evrensel olarak PDF formatında tanınmasını sağlar. Ancak çeşitli platformlarda tutarlı davranış sağlamak için işlevselliği farklı PDF görüntüleyicilerde test etmek önemlidir.

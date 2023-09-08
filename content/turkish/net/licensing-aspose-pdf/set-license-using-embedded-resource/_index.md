@@ -1,122 +1,122 @@
 ---
-title: Set License Using Embedded Resource
-linktitle: Set License Using Embedded Resource
-second_title: Aspose.PDF for .NET API Reference
-description: Step-by-step guide to setting a license using an embedded resource with Aspose.PDF for .NET. Unlock full features.
+title: Gömülü Kaynağı Kullanarak Lisansı Ayarlama
+linktitle: Gömülü Kaynağı Kullanarak Lisansı Ayarlama
+second_title: .NET API Referansı için Aspose.PDF
+description: Aspose.PDF for .NET ile yerleşik bir kaynak kullanarak lisans ayarlamaya yönelik adım adım kılavuz. Tüm özelliklerin kilidini açın.
 type: docs
 weight: 50
 url: /tr/net/licensing-aspose-pdf/set-license-using-embedded-resource/
 ---
-In this tutorial, we will provide you with a step-by-step guide on how to set a license using an embedded resource with Aspose.PDF for .NET. Aspose.PDF is a powerful library that allows you to create, manipulate and convert PDF documents programmatically. By setting a license, you can unlock the full features offered by Aspose.PDF.
+Bu eğitimde size Aspose.PDF for .NET ile gömülü bir kaynak kullanarak nasıl lisans ayarlayacağınız konusunda adım adım bir kılavuz sunacağız. Aspose.PDF, PDF belgelerini programlı olarak oluşturmanıza, değiştirmenize ve dönüştürmenize olanak tanıyan güçlü bir kütüphanedir. Bir lisans ayarlayarak Aspose.PDF'in sunduğu tüm özelliklerin kilidini açabilirsiniz.
 
-## Prerequisites
+## Önkoşullar
 
-Before you begin, make sure you have the following prerequisites in place:
+Başlamadan önce aşağıdaki önkoşulların mevcut olduğundan emin olun:
 
-1. Visual Studio installed with .NET framework.
-2. The Aspose.PDF library for .NET.
+1. .NET framework ile yüklenen Visual Studio.
+2. .NET için Aspose.PDF kütüphanesi.
 
-## Step 1: Project Setup
+## Adım 1: Proje Kurulumu
 
-To get started, create a new project in Visual Studio and add a reference to the Aspose.PDF for .NET library. You can download the library from Aspose official website and install it on your machine.
+Başlamak için Visual Studio'da yeni bir proje oluşturun ve Aspose.PDF for .NET kitaplığına bir referans ekleyin. Kütüphaneyi Aspose resmi web sitesinden indirebilir ve makinenize kurabilirsiniz.
 
-## Step 2: Import the necessary namespaces
+## 2. Adım: Gerekli ad alanlarını içe aktarın
 
-In your C# code file, import the namespaces required to access the classes and methods provided by Aspose.PDF:
+Aspose.PDF tarafından sağlanan sınıflara ve yöntemlere erişmek için gereken ad alanlarını C# kod dosyanıza aktarın:
 
 ```csharp
 using System;
 using Aspose.Pdf;
 ```
 
-## Step 3: Setting the license from the embedded resource
+## 3. Adım: Lisansı yerleşik kaynaktan ayarlama
 
-After importing the necessary namespaces, you can set the license using an embedded resource. Use the following line of code to set the license:
+Gerekli ad alanlarını içe aktardıktan sonra, yerleşik bir kaynağı kullanarak lisansı ayarlayabilirsiniz. Lisansı ayarlamak için aşağıdaki kod satırını kullanın:
 
 ```csharp
 Aspose.Pdf.License license = new Aspose.Pdf.License();
 license.SetLicense("MergedAPI.Aspose.Total.lic");
 ```
 
-Make sure the `"MergedAPI.Aspose.Total.lic"` license file is included in your project's embedded resources.
+ Emin ol`"MergedAPI.Aspose.Total.lic"` lisans dosyası projenizin yerleşik kaynaklarına dahildir.
 
-## Step 4: Confirming the license definition
+## 4. Adım: Lisans tanımının onaylanması
 
-After setting the license, you can display a confirmation message to check whether the license has been set successfully. Use the following line of code to display a message in the console:
+Lisansı ayarladıktan sonra lisansın başarıyla ayarlanıp ayarlanmadığını kontrol etmek için bir onay mesajı görüntüleyebilirsiniz. Konsolda bir mesaj görüntülemek için aşağıdaki kod satırını kullanın:
 
 ```csharp
 Console.WriteLine("License set successfully.");
 ```
 
 
-### Sample source code for Set License Using Embedded Resource using Aspose.PDF for .NET
+### Aspose.PDF for .NET kullanarak Gömülü Kaynağı Kullanarak Lisans Ayarlama için örnek kaynak kodu
  
 ```csharp
 
-// The path to the documents directory.
+// Belgeler dizininin yolu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Initialize license object
+// Lisans nesnesini başlat
 Aspose.Pdf.License license = new Aspose.Pdf.License();
-// Set license
+//Lisansı ayarla
 license.SetLicense("MergedAPI.Aspose.Total.lic");
 Console.WriteLine("License set successfully.");
 
 ```
 
-## Conclusion
+## Çözüm
 
-In this tutorial, you learned how to set a license using an embedded resource with Aspose.PDF for .NET. By following the described steps, you will be able to unlock the full functionality offered by Aspose.PDF and use the library optimally in your C# projects.
+Bu eğitimde Aspose.PDF for .NET ile yerleşik bir kaynak kullanarak nasıl lisans ayarlayacağınızı öğrendiniz. Açıklanan adımları takip ederek Aspose.PDF'nin sunduğu tüm işlevselliklerin kilidini açabilecek ve kütüphaneyi C# projelerinizde en iyi şekilde kullanabileceksiniz.
 
-### FAQ's for set license using embedded resource
+### Yerleşik kaynağı kullanarak lisans ayarlamaya ilişkin SSS'ler
 
-#### Q: Why should I set a license using an embedded resource?
+#### S: Neden yerleşik bir kaynak kullanarak lisans ayarlamalıyım?
 
-A: Setting a license using an embedded resource ensures that your licensing information is securely stored within your application. It allows you to unlock the full features offered by Aspose.PDF while keeping your licensing information confidential.
+C: Yerleşik bir kaynak kullanarak lisans ayarlamak, lisans bilgilerinizin uygulamanızda güvenli bir şekilde saklanmasını sağlar. Lisans bilgilerinizi gizli tutarken Aspose.PDF tarafından sunulan tüm özelliklerin kilidini açmanıza olanak tanır.
 
-#### Q: How do I import the necessary namespaces for Aspose.PDF?
+#### S: Aspose.PDF için gerekli ad alanlarını nasıl içe aktarabilirim?
 
-A: In your C# code file, use the `using` directive to import the required namespaces for accessing the classes and methods provided by Aspose.PDF:
+ C: C# kod dosyanızda şunu kullanın:`using` Aspose.PDF tarafından sağlanan sınıflara ve yöntemlere erişim için gerekli ad alanlarını içe aktarma yönergesi:
 ```csharp
 using System;
 using Aspose.Pdf;
 ```
 
-#### Q: What is an embedded resource?
+#### S: Gömülü kaynak nedir?
 
-A: An embedded resource is a file that is included within your application's assembly. It can be accessed and used directly from your code.
+C: Katıştırılmış kaynak, uygulamanızın derlemesine dahil edilen bir dosyadır. Doğrudan kodunuzdan erişilebilir ve kullanılabilir.
 
-#### Q: How do I include the license file as an embedded resource?
+#### S: Lisans dosyasını gömülü kaynak olarak nasıl eklerim?
 
-A: To include the license file as an embedded resource, add the license file to your project and set its Build Action property to "Embedded Resource."
+C: Lisans dosyasını katıştırılmış kaynak olarak eklemek için lisans dosyasını projenize ekleyin ve Oluşturma Eylemi özelliğini "Gömülü Kaynak" olarak ayarlayın.
 
-#### Q: How do I set the license using an embedded resource?
+#### S: Gömülü bir kaynağı kullanarak lisansı nasıl ayarlarım?
 
-A: After importing the necessary namespaces, you can set the license using the provided code snippet. Replace `"MergedAPI.Aspose.Total.lic"` with the correct path to your embedded license resource.
+ C: Gerekli ad alanlarını içe aktardıktan sonra sağlanan kod pasajını kullanarak lisansı ayarlayabilirsiniz. Yer değiştirmek`"MergedAPI.Aspose.Total.lic"` katıştırılmış lisans kaynağınızın doğru yolu ile.
 
-#### Q: Can I use multiple embedded license resources in the same project?
+#### S: Aynı projede birden fazla yerleşik lisans kaynağı kullanabilir miyim?
 
-A: Yes, you can use multiple embedded license resources in the same project by initializing separate `Aspose.Pdf.License` objects and setting each license individually.
+ C: Evet, ayrı ayrı başlatarak aynı projede birden fazla yerleşik lisans kaynağı kullanabilirsiniz.`Aspose.Pdf.License` nesneler ve her lisansı ayrı ayrı ayarlamak.
 
-#### Q: What happens if I change the license file?
+#### S: Lisans dosyasını değiştirirsem ne olur?
 
-A: If you need to update the license, replace the existing embedded license file with the new one and make sure to update the file path in the `SetLicense` method accordingly.
+ C: Lisansı güncellemeniz gerekiyorsa mevcut gömülü lisans dosyasını yenisiyle değiştirin ve dosya yolunu güncellediğinizden emin olun.`SetLicense` buna göre yöntem.
 
-#### Q: Can I set a license using an embedded resource for other Aspose libraries?
+#### S: Diğer Aspose kütüphaneleri için yerleşik bir kaynak kullanarak lisans ayarlayabilir miyim?
 
-A: Yes, the process of setting a license using an embedded resource is similar across different Aspose libraries. However, each library may have its own specifics, so refer to the documentation for the relevant library.
+C: Evet, yerleşik bir kaynak kullanarak lisans ayarlama süreci farklı Aspose kütüphanelerinde benzerdir. Ancak her kütüphanenin kendine has özellikleri olabilir, dolayısıyla ilgili kütüphanenin belgelerine bakın.
 
-#### Q: Is it necessary to set the license using an embedded resource?
+#### S: Lisansı yerleşik bir kaynak kullanarak ayarlamak gerekli mi?
 
-A: While it's not mandatory, setting the license using an embedded resource is a recommended practice to keep your licensing information secure and ensure smooth functionality.
+C: Zorunlu olmasa da, lisansı yerleşik bir kaynak kullanarak ayarlamak, lisans bilgilerinizi güvende tutmak ve sorunsuz işlevsellik sağlamak için önerilen bir uygulamadır.
 
-#### Q: Can I use an embedded license with a trial version of Aspose.PDF?
+#### S: Gömülü lisansı Aspose.PDF'in deneme sürümüyle birlikte kullanabilir miyim?
 
-A: Yes, you can use an embedded license with a trial version of Aspose.PDF. However, for full functionality, it's recommended to use a valid license.
+C: Evet, yerleşik lisansı Aspose.PDF'in deneme sürümüyle birlikte kullanabilirsiniz. Ancak tam işlevsellik için geçerli bir lisans kullanılması önerilir.
 
-#### Q: How do I obtain a valid license for Aspose.PDF?
+#### S: Aspose.PDF için geçerli bir lisansı nasıl edinebilirim?
 
-A: You can obtain a valid license by purchasing it from the [Aspose.PDF Purchase](https://purchase.aspose.com/pricing/pdf/net) page.
+ C: Geçerli bir lisansı şu adresten satın alabilirsiniz:[Aspose.PDF Satın Al](https://purchase.aspose.com/pricing/pdf/net) sayfa.
 
-#### Q: Where can I obtain more information about setting licenses for Aspose products?
+#### S: Aspose ürünleri için lisans ayarlama konusunda daha fazla bilgiyi nereden edinebilirim?
 
-A: For more information about setting licenses, embedding resources, and related details, refer to the [Aspose Licensing Documentation](https://docs.aspose.com/pdf/net/licensing/) page.
+C: Lisansları ayarlama, kaynakları yerleştirme ve ilgili ayrıntılar hakkında daha fazla bilgi için bkz.[Aspose Lisanslama Belgeleri](https://docs.aspose.com/pdf/net/licensing/) sayfa.

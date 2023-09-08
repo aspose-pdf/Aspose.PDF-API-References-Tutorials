@@ -1,97 +1,97 @@
 ---
-title: Link Duplicate Streams
-linktitle: Link Duplicate Streams
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to use Aspose.PDF for .NET Link Duplicate Streams feature to optimize your PDF documents with this step-by-step guide.
+title: ربط التدفقات المكررة
+linktitle: ربط التدفقات المكررة
+second_title: Aspose.PDF لمرجع .NET API
+description: تعرف على كيفية استخدام ميزة Aspose.PDF for .NET Link Duplicate Streams لتحسين مستندات PDF الخاصة بك باستخدام هذا الدليل التفصيلي خطوة بخطوة.
 type: docs
 weight: 230
 url: /ar/net/programming-with-document/linkduplicatestreams/
 ---
-Aspose.PDF for .NET is a comprehensive and powerful library that provides a variety of features to work with PDF files. One of its key features is the ability to optimize PDF files. In this article, we will explain how to use the Link Duplicate Streams feature of Aspose.PDF for .NET to optimize PDF files. We will provide step-by-step instructions and include a full source code example to make it easy for developers to follow along.
+Aspose.PDF for .NET هي مكتبة شاملة وقوية توفر مجموعة متنوعة من الميزات للعمل مع ملفات PDF. إحدى ميزاته الرئيسية هي القدرة على تحسين ملفات PDF. سنشرح في هذه المقالة كيفية استخدام ميزة Link Duplicate Streams في Aspose.PDF لـ .NET لتحسين ملفات PDF. سنقدم تعليمات خطوة بخطوة وندرج مثالًا كاملاً لكود المصدر لتسهيل متابعة المطورين.
 
-## Step 1: Opening the PDF Document
+## الخطوة 1: فتح مستند PDF
 
-To open the PDF document using Aspose.PDF for .NET, follow these steps:
+لفتح مستند PDF باستخدام Aspose.PDF لـ .NET، اتبع الخطوات التالية:
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 ```
 
-In the code above, replace "YOUR DOCUMENT DIRECTORY" with the path to your project directory.
+في الكود أعلاه، استبدل "YOUR DOCUMENT DIRECTORY" بالمسار إلى دليل مشروعك.
 
-## Step 2: Setting the LinkDuplicateStreams Option
+## الخطوة 2: إعداد خيار LinkDuplicateStreams
 
-To set the LinkDuplicateStreams option, follow these steps:
+لتعيين خيار LinkDuplicateStreams، اتبع الخطوات التالية:
 
 ```csharp
-// Set LinkDuplcateStreams option 
+// قم بتعيين خيار LinkDuplcateStreams
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 {
     LinkDuplcateStreams = true
 };
 ```
 
-In the code above, we created a new instance of OptimizationOptions and set the LinkDuplicateStreams option to true.
+في الكود أعلاه، أنشأنا مثيلًا جديدًا لـ OptimizationOptions وقمنا بتعيين خيار LinkDuplicateStreams على true.
 
-## Step 3: Optimizing the PDF Document
+## الخطوة 3: تحسين مستند PDF
 
-To optimize the PDF document, follow these steps:
+لتحسين مستند PDF، اتبع الخطوات التالية:
 
 ```csharp
-// Optimize PDF document using OptimizationOptions
+// تحسين مستند PDF باستخدام OptimizationOptions
 pdfDocument.OptimizeResources(optimizeOptions);
 ```
 
-In the code above, we used the OptimizeResources method of the pdfDocument object to optimize the PDF document using the OptimizationOptions we created earlier.
+في الكود أعلاه، استخدمنا طريقة OptimizeResources لكائن pdfDocument لتحسين مستند PDF باستخدام OptimizationOptions الذي أنشأناه سابقًا.
 
-## Step 4: Saving the Updated Document
+## الخطوة 4: حفظ المستند المحدث
 
-To save the updated document, follow these steps:
+لحفظ المستند المحدث، اتبع الخطوات التالية:
 
 ```csharp
 dataDir = dataDir + "OptimizeDocument_out.pdf";
-// Save updated document
+// حفظ المستند المحدث
 pdfDocument.Save(dataDir);
 ```
 
-In the code above, we used the Save method of the pdfDocument object to save the updated document to a new file named "OptimizeDocument_out.pdf" in the project directory.
+في الكود أعلاه، استخدمنا طريقة Save لكائن pdfDocument لحفظ المستند المحدث في ملف جديد يسمى "OptimizeDocument_out.pdf" في دليل المشروع.
 
-### Example Source Code for Link Duplicate Streams using Aspose.PDF for .NET
+### مثال على كود المصدر لربط التدفقات المكررة باستخدام Aspose.PDF لـ .NET
 
 ```csharp
-// The path to the documents directory.
+// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-// Set LinkDuplcateStreams option 
+// قم بتعيين خيار LinkDuplcateStreams
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 {
 	LinkDuplcateStreams = true
 };
-// Optimize PDF document using OptimizationOptions
+// تحسين مستند PDF باستخدام OptimizationOptions
 pdfDocument.OptimizeResources(optimizeOptions);
 dataDir = dataDir + "OptimizeDocument_out.pdf";
-// Save updated document
+// حفظ المستند المحدث
 pdfDocument.Save(dataDir);
 ```
 
-## Conclusion
+## خاتمة
 
-The Link Duplicate Streams feature of Aspose.PDF for .NET provides an effective way to optimize PDF files by reducing their size. By identifying and linking duplicate streams, the library helps create more efficient PDF documents without sacrificing data integrity or visual quality. Developers can easily implement this feature using the provided steps and source code example, enhancing the performance and storage efficiency of their PDF files.
+توفر ميزة ربط التدفقات المكررة في Aspose.PDF لـ .NET طريقة فعالة لتحسين ملفات PDF عن طريق تقليل حجمها. من خلال تحديد التدفقات المكررة وربطها، تساعد المكتبة في إنشاء مستندات PDF أكثر كفاءة دون التضحية بتكامل البيانات أو الجودة المرئية. يمكن للمطورين تنفيذ هذه الميزة بسهولة باستخدام الخطوات المتوفرة ومثال التعليمات البرمجية المصدر، مما يعزز الأداء وكفاءة تخزين ملفات PDF الخاصة بهم.
 
-### FAQ's
+### الأسئلة الشائعة
 
-#### Q: What is the purpose of the Link Duplicate Streams feature in Aspose.PDF for .NET?
+#### س: ما هو الغرض من ميزة ربط التدفقات المكررة في Aspose.PDF لـ .NET؟
 
-A: The Link Duplicate Streams feature in Aspose.PDF for .NET is used to optimize PDF files by identifying and linking duplicate streams within the document. In a PDF file, there may be duplicate streams (such as images or fonts) that consume unnecessary space. By linking these duplicate streams, the file size can be reduced, resulting in a more efficient and smaller PDF document.
+ج: يتم استخدام ميزة ربط التدفقات المكررة في Aspose.PDF لـ .NET لتحسين ملفات PDF عن طريق تحديد التدفقات المكررة وربطها داخل المستند. في ملف PDF، قد يكون هناك تدفقات مكررة (مثل الصور أو الخطوط) التي تستهلك مساحة غير ضرورية. من خلال ربط هذه التدفقات المكررة، يمكن تقليل حجم الملف، مما يؤدي إلى مستند PDF أصغر حجمًا وأكثر كفاءة.
 
-#### Q: How does the Link Duplicate Streams feature work?
+#### س: كيف تعمل ميزة ربط التدفقات المكررة؟
 
-A: The Link Duplicate Streams feature works by analyzing the content streams of the PDF document and identifying duplicate streams that have the same content. Instead of storing these duplicate streams separately, the feature creates a link between them, effectively sharing the same content. This optimization technique reduces the overall size of the PDF document without affecting its visual appearance or functionality.
+ج: تعمل ميزة ربط التدفقات المكررة من خلال تحليل تدفقات المحتوى الخاصة بمستند PDF وتحديد التدفقات المكررة التي لها نفس المحتوى. بدلاً من تخزين هذه التدفقات المكررة بشكل منفصل، تقوم الميزة بإنشاء رابط بينها، ومشاركة نفس المحتوى بشكل فعال. تعمل تقنية التحسين هذه على تقليل الحجم الإجمالي لمستند PDF دون التأثير على مظهره المرئي أو وظيفته.
 
-#### Q: Can the Link Duplicate Streams feature cause any loss of data or quality in the PDF document?
+#### س: هل يمكن أن تتسبب ميزة ربط التدفقات المكررة في فقدان البيانات أو الجودة في مستند PDF؟
 
-A: No, the Link Duplicate Streams feature does not cause any loss of data or quality in the PDF document. It only optimizes the file size by linking duplicate streams, without altering the content or visual appearance of the document. The feature is designed to ensure that the PDF document remains intact and maintains its original quality.
+ج: لا، لا تتسبب ميزة ربط التدفقات المكررة في أي فقدان للبيانات أو الجودة في مستند PDF. فهو يعمل فقط على تحسين حجم الملف عن طريق ربط التدفقات المكررة، دون تغيير المحتوى أو المظهر المرئي للمستند. تم تصميم هذه الميزة لضمان بقاء مستند PDF سليمًا ويحافظ على جودته الأصلية.

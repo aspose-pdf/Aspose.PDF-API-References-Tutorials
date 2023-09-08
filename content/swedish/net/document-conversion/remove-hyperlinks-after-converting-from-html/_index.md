@@ -1,51 +1,51 @@
 ---
-title: Remove Hyperlinks After Converting From Html
-linktitle: Remove Hyperlinks After Converting From Html
-second_title: Aspose.PDF for .NET API Reference
-description: Step by step guide to remove hyperlinks after converting HTML to PDF using Aspose.PDF for .NET.
+title: Ta bort hyperlänkar efter konvertering från HTML
+linktitle: Ta bort hyperlänkar efter konvertering från HTML
+second_title: Aspose.PDF för .NET API Referens
+description: Steg för steg guide för att ta bort hyperlänkar efter att ha konverterat HTML till PDF med Aspose.PDF för .NET.
 type: docs
 weight: 250
 url: /sv/net/document-conversion/remove-hyperlinks-after-converting-from-html/
 ---
-In this tutorial, we'll walk you through the process of removing hyperlinks from a PDF file generated from an HTML file using Aspose.PDF for .NET. Hyperlinks are clickable links that may redirect to other pages or websites. By following the steps below, you will be able to remove hyperlinks from the resulting PDF file.
+I den här handledningen går vi igenom processen för att ta bort hyperlänkar från en PDF-fil som genererats från en HTML-fil med Aspose.PDF för .NET. Hyperlänkar är klickbara länkar som kan omdirigera till andra sidor eller webbplatser. Genom att följa stegen nedan kommer du att kunna ta bort hyperlänkar från den resulterande PDF-filen.
 
-## Prerequisites
-Before you begin, make sure you meet the following prerequisites:
+## Förutsättningar
+Innan du börjar, se till att du uppfyller följande förutsättningar:
 
-- Basic knowledge of the C# programming language.
-- Aspose.PDF library for .NET installed on your system.
-- A development environment such as Visual Studio.
+- Grundläggande kunskaper i programmeringsspråket C#.
+- Aspose.PDF-bibliotek för .NET installerat på ditt system.
+- En utvecklingsmiljö som Visual Studio.
 
-## Step 1: Loading HTML file and removing hyperlinks
-At this step, we will load the HTML file and remove the hyperlinks from the resulting PDF document. Use the following code:
+## Steg 1: Laddar HTML-fil och tar bort hyperlänkar
+det här steget kommer vi att ladda HTML-filen och ta bort hyperlänkarna från det resulterande PDF-dokumentet. Använd följande kod:
 
 ```csharp
-// Path to the documents directory.
+// Sökväg till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Load the HTML file using the HTML loading options
+// Ladda HTML-filen med HTML-laddningsalternativen
 Document doc = new Document(dataDir + "SampleHtmlFile.html", new HtmlLoadOptions());
 
-// Browse the annotations of the first page of the document
+// Bläddra bland kommentarerna på första sidan i dokumentet
 foreach(Annotation a in doc.Pages[1].Annotations)
 {
-     // Check if the annotation is a link
+     // Kontrollera om anteckningen är en länk
      if (a.AnnotationType == AnnotationType.Link)
      {
          LinkAnnotation the = (LinkAnnotation)a;
         
-         // Check if the action is of type GoToURIAction
+         // Kontrollera om åtgärden är av typen GoToURIAction
          if (the.Action is GoToURIAction)
          {
              GoToURIAction gta = (GoToURIAction)the.Action;
              gta.URI = "";
             
-             // Use a text fragment absorber to find matching text fragments
+             // Använd en textfragmentabsorbator för att hitta matchande textfragment
              TextFragmentAbsorber tfa = new TextFragmentAbsorber();
              tfa.TextSearchOptions = new TextSearchOptions(a.Rect);
              doc.Pages[a.PageIndex].Accept(tfa);
             
-             // Loop through matching text fragments and remove attributes from hyperlinks
+             // Gå igenom matchande textfragment och ta bort attribut från hyperlänkar
              foreach(TextFragment tf in tfa.TextFragments)
              {
                  tf.TextState.Underline = false;
@@ -53,28 +53,28 @@ foreach(Annotation a in doc.Pages[1].Annotations)
              }
          }
         
-         // Remove the annotation from the page
+         // Ta bort anteckningen från sidan
          doc.Pages[a.PageIndex].Annotations.Delete(a);
      }
 }
 ```
 
-Be sure to replace `"YOUR DOCUMENTS DIRECTORY"` with the actual directory where your HTML file is located.
+ Se till att byta ut`"YOUR DOCUMENTS DIRECTORY"` med den faktiska katalogen där din HTML-fil finns.
 
-## Step 2: Saving the resulting PDF file
-Finally, we'll save the resulting PDF file without the hyperlinks. Use the following code:
+## Steg 2: Spara den resulterande PDF-filen
+Slutligen kommer vi att spara den resulterande PDF-filen utan hyperlänkarna. Använd följande kod:
 
 ```csharp
-// Save the resulting PDF file
+// Spara den resulterande PDF-filen
 doc.Save(dataDir + "RemoveHyperlinksFromText_out.pdf");
 ```
 
-The code above saves the resulting PDF file with the filename `"RemoveHyperlinksFromText_out.pdf"`.
+ Koden ovan sparar den resulterande PDF-filen med filnamnet`"RemoveHyperlinksFromText_out.pdf"`.
 
-### Example source code for Remove Hyperlinks After Converting From Html using Aspose.PDF for .NET
+### Exempel på källkod för Ta bort hyperlänkar efter konvertering från HTML med Aspose.PDF för .NET
 
 ```csharp
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 Document doc = new Document(dataDir + "SampleHtmlFile.html", new HtmlLoadOptions());
@@ -103,27 +103,27 @@ foreach (Annotation a in doc.Pages[1].Annotations)
 doc.Save(dataDir + "RemoveHyperlinksFromText_out.pdf");
 ```
 
-## Conclusion
-In this tutorial, we covered the step-by-step process of removing hyperlinks from a PDF file generated from an HTML file using Aspose.PDF for .NET. By following the instructions described above, you will be able to successfully remove hyperlinks from the resulting PDF file.
+## Slutsats
+I den här handledningen täckte vi steg-för-steg-processen för att ta bort hyperlänkar från en PDF-fil som genererats från en HTML-fil med Aspose.PDF för .NET. Genom att följa instruktionerna som beskrivs ovan kommer du att kunna ta bort hyperlänkar från den resulterande PDF-filen.
 
 ### FAQ's
 
-#### Q: What is Aspose.PDF for .NET?
+#### F: Vad är Aspose.PDF för .NET?
 
-A: Aspose.PDF for .NET is a powerful library that enables developers to work with PDF documents in C# applications. It offers a wide range of functionalities, including the ability to convert HTML files to PDF and manipulate PDF content.
+S: Aspose.PDF för .NET är ett kraftfullt bibliotek som gör det möjligt för utvecklare att arbeta med PDF-dokument i C#-applikationer. Den erbjuder ett brett utbud av funktioner, inklusive möjligheten att konvertera HTML-filer till PDF och manipulera PDF-innehåll.
 
-#### Q: Why would I want to remove hyperlinks from a PDF file?
+#### F: Varför skulle jag vilja ta bort hyperlänkar från en PDF-fil?
 
-A: There are various reasons for removing hyperlinks from a PDF file. For example, you might want to eliminate external links for printing or archiving purposes or ensure that the PDF content is not navigable via hyperlinks.
+S: Det finns olika anledningar till att ta bort hyperlänkar från en PDF-fil. Du kanske till exempel vill ta bort externa länkar för utskrifts- eller arkiveringsändamål eller se till att PDF-innehållet inte går att navigera via hyperlänkar.
 
-#### Q: How can I load an HTML file and remove hyperlinks using Aspose.PDF for .NET?
+#### F: Hur kan jag ladda en HTML-fil och ta bort hyperlänkar med Aspose.PDF för .NET?
 
-A: To load an HTML file and remove hyperlinks, you can use Aspose.PDF for .NET's `HtmlLoadOptions` class. Iterate through the annotations of the PDF pages to find link annotations and modify their attributes.
+ S: För att ladda en HTML-fil och ta bort hyperlänkar kan du använda Aspose.PDF för .NET:s`HtmlLoadOptions` klass. Gå igenom kommentarerna på PDF-sidorna för att hitta länkkommentarer och ändra deras attribut.
 
-#### Q: Can I customize the output filename for the resulting PDF?
+#### F: Kan jag anpassa utdatafilnamnet för den resulterande PDF-filen?
 
-A: Yes, you can customize the output filename for the resulting PDF file by modifying the code that saves the PDF document. Simply change the desired filename in the `doc.Save()` method.
+S: Ja, du kan anpassa utdatafilnamnet för den resulterande PDF-filen genom att ändra koden som sparar PDF-dokumentet. Ändra helt enkelt önskat filnamn i`doc.Save()` metod.
 
-#### Q: Is it possible to selectively remove hyperlinks based on certain criteria?
+#### F: Är det möjligt att selektivt ta bort hyperlänkar baserat på vissa kriterier?
 
-A: Yes, you can selectively remove hyperlinks based on specific criteria. For example, you can choose to remove only external links or links pointing to specific URLs.
+S: Ja, du kan selektivt ta bort hyperlänkar baserat på specifika kriterier. Du kan till exempel välja att bara ta bort externa länkar eller länkar som pekar på specifika webbadresser.

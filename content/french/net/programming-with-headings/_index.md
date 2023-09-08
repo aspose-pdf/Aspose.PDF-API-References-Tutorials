@@ -1,16 +1,16 @@
 ---
-title: Programming with Headings
-linktitle: Programming with Headings
+title: Programmation avec des titres
+linktitle: Programmation avec des titres
 type: docs
 weight: 20
 url: /fr/net/programming-with-headings/
-description: The Aspose.PDF for .NET tutorials walk you through using headings to improve the structure of your PDF documents.
+description: Les didacticiels Aspose.PDF pour .NET vous guident dans l'utilisation des titres pour améliorer la structure de vos documents PDF.
 ---
-The Aspose.PDF for .NET tutorials take you step-by-step to master programming with headings in your PDF documents. Learn how to add, style and manipulate headings to improve the structure of your PDF files.
+Les didacticiels Aspose.PDF pour .NET vous guident étape par étape pour maîtriser la programmation avec des titres dans vos documents PDF. Apprenez à ajouter, styliser et manipuler des titres pour améliorer la structure de vos fichiers PDF.
 
-Explore the features of Aspose.PDF for .NET with dedicated tutorials. Learn how to work with headings in your PDF documents, using practical examples and step-by-step explanations. Improve the readability and navigation of your PDF files with these comprehensive resources.
+Explorez les fonctionnalités d'Aspose.PDF pour .NET avec des didacticiels dédiés. Apprenez à utiliser les titres de vos documents PDF, à l'aide d'exemples pratiques et d'explications étape par étape. Améliorez la lisibilité et la navigation de vos fichiers PDF avec ces ressources complètes.
 
-## Tutorials
-| Title | Description |
+## Tutoriels
+| Titre | Description |
 | --- | --- | 
-| [Apply Number Style In PDF File](./apply-number-style/) | Learn how to apply a numbering style to headings in PDF file using Aspose.PDF for .NET. Step by step guide. |   
+| [Appliquer le style de numéro dans un fichier PDF](./apply-number-style/) | Découvrez comment appliquer un style de numérotation aux titres d'un fichier PDF à l'aide d'Aspose.PDF pour .NET. Guide étape par étape. |   

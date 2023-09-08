@@ -1,57 +1,57 @@
 ---
-title: Get Bookmark Page Number In PDF File
-linktitle: Get Bookmark Page Number In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily get bookmark page number in PDF file with Aspose.PDF for .NET.
+title: Получить номер страницы закладки в PDF-файле
+linktitle: Получить номер страницы закладки в PDF-файле
+second_title: Справочник по Aspose.PDF для .NET API
+description: Легко получите номер страницы закладки в PDF-файле с помощью Aspose.PDF для .NET.
 type: docs
 weight: 60
 url: /ru/net/programming-with-bookmarks/get-bookmark-page-number/
 ---
-Retrieving page numbers associated with bookmarks in PDF file can be useful for navigation. With Aspose.PDF for .NET, you can easily get the page number of bookmarks by following the following source code:
+Получение номеров страниц, связанных с закладками в PDF-файле, может быть полезно для навигации. С помощью Aspose.PDF для .NET вы можете легко получить номер страницы закладок, выполнив следующий исходный код:
 
-## Step 1: Import required libraries
+## Шаг 1. Импортируйте необходимые библиотеки.
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Прежде чем начать, вам необходимо импортировать необходимые библиотеки для вашего проекта C#. Вот необходимая директива импорта:
 
 ```csharp
 using Aspose.Pdf.Facades;
 ```
 
-## Step 2: Set path to documents folder
+## Шаг 2. Установите путь к папке с документами.
 
-In this step, you need to specify the path to the folder containing the PDF file you want to extract the bookmark page numbers from. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ На этом этапе вам необходимо указать путь к папке, содержащей PDF-файл, из которого вы хотите извлечь номера страниц закладок. Заменять`"YOUR DOCUMENT DIRECTORY"`в следующем коде с фактическим путем к папке ваших документов:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Create the bookmark editor
+## Шаг 3. Создайте редактор закладок.
 
-Now we will create a `PdfBookmarkEditor` object to manipulate the bookmarks of the document. Use the following code:
+ Теперь мы создадим`PdfBookmarkEditor` объект для управления закладками документа. Используйте следующий код:
 
 ```csharp
 PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
 ```
 
-## Step 4: Open the PDF File
+## Шаг 4: Откройте PDF-файл
 
-In this step, we open the PDF file using the `BindPdf` method of the bookmark editor. Here is the corresponding code:
+ На этом этапе мы открываем PDF-файл с помощью`BindPdf` метод редактора закладок. Вот соответствующий код:
 
 ```csharp
 bookmarkEditor.BindPdf(dataDir + "GetBookmarks.pdf");
 ```
 
-## Step 5: Extract bookmarks
+## Шаг 5. Извлеките закладки
 
-Now we will extract the bookmarks from the document using the `ExtractBookmarks` method of the bookmark editor. Here is the corresponding code:
+ Теперь мы извлечем закладки из документа с помощью`ExtractBookmarks` метод редактора закладок. Вот соответствующий код:
 
 ```csharp
 Bookmarks bookmarks = bookmarkEditor.ExtractBookmarks();
 ```
 
-## Step 6: Browse bookmarks and get page numbers
+## Шаг 6. Просмотрите закладки и получите номера страниц.
 
-Finally, we loop through the extracted bookmarks and get the page numbers associated with each bookmark using a `foreach` loop. Here is the corresponding code:
+ Наконец, мы просматриваем извлеченные закладки и получаем номера страниц, связанных с каждой закладкой, используя`foreach` петля. Вот соответствующий код:
 
 ```csharp
 foreach (Bookmark bookmark in bookmarks)
@@ -67,15 +67,15 @@ foreach (Bookmark bookmark in bookmarks)
 }
 ```
 
-### Sample source code for Get Bookmark Page Number using Aspose.PDF for .NET 
+### Пример исходного кода для получения номера страницы закладки с использованием Aspose.PDF для .NET 
 ```csharp
-// The path to the documents directory.
+// Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Create PdfBookmarkEditor
+// Создать PDFBookmarkEditor
 PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
-// Open PDF file
+// Открыть PDF-файл
 bookmarkEditor.BindPdf(dataDir + "GetBookmarks.pdf");
-// Extract bookmarks
+// Извлечь закладки
 Aspose.Pdf.Facades.Bookmarks bookmarks = bookmarkEditor.ExtractBookmarks();
 foreach (Aspose.Pdf.Facades.Bookmark bookmark in bookmarks)
 {
@@ -90,65 +90,65 @@ foreach (Aspose.Pdf.Facades.Bookmark bookmark in bookmarks)
 }
 ```
 
-## Conclusion
+## Заключение
 
-Congratulation ! Now you have a step by step guide to getting bookmark page numbers with Aspose.PDF for .NET. You can use this code to retrieve the navigation information associated with each bookmark in your PDF documents.
+Поздравляем! Теперь у вас есть пошаговое руководство по получению номеров страниц закладок с помощью Aspose.PDF для .NET. Вы можете использовать этот код для получения навигационной информации, связанной с каждой закладкой в ваших PDF-документах.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Обязательно ознакомьтесь с официальной документацией Aspose.PDF для получения дополнительной информации о расширенных функциях управления закладками.
 
-### FAQ's for get bookmark page number in PDF file
+### Часто задаваемые вопросы по получению номера страницы закладки в PDF-файле
 
-#### Q: What are bookmarks in a PDF file?
+#### Вопрос: Что такое закладки в PDF-файле?
 
-A: Bookmarks in a PDF file are navigational aids that allow users to quickly jump to specific sections or pages within the document. They enhance the user experience by providing shortcuts to relevant content.
+О: Закладки в PDF-файле — это средства навигации, которые позволяют пользователям быстро переходить к определенным разделам или страницам документа. Они улучшают взаимодействие с пользователем, предоставляя ярлыки к соответствующему контенту.
 
-#### Q: Why would I want to retrieve bookmark page numbers from a PDF file?
+#### Вопрос: Зачем мне получать номера страниц закладок из PDF-файла?
 
-A: Retrieving bookmark page numbers helps users navigate through a document more effectively, providing a clear indication of where each bookmark leads. This is particularly useful for longer documents with multiple sections.
+Ответ: Получение номеров страниц закладок помогает пользователям более эффективно перемещаться по документу, обеспечивая четкое представление о том, куда ведет каждая закладка. Это особенно полезно для более длинных документов с несколькими разделами.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### Вопрос: Как мне импортировать необходимые библиотеки для моего проекта C#?
 
-A: To import the required library for your C# project, use the following import directive:
+О: Чтобы импортировать необходимую библиотеку для вашего проекта C#, используйте следующую директиву импорта:
 
 ```csharp
 using Aspose.Pdf.Facades;
 ```
 
-This directive allows you to utilize the classes and methods provided by Aspose.PDF for .NET.
+Эта директива позволяет вам использовать классы и методы, предоставляемые Aspose.PDF для .NET.
 
-#### Q: How do I specify the path to the documents folder?
+#### Вопрос: Как указать путь к папке с документами?
 
-A: In the provided source code, replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file from which you want to extract bookmark page numbers. This ensures that the code can locate the target PDF file.
+ О: В предоставленном исходном коде замените`"YOUR DOCUMENT DIRECTORY"`с фактическим путем к папке, содержащей PDF-файл, из которого вы хотите извлечь номера страниц закладок. Это гарантирует, что код сможет найти целевой PDF-файл.
 
-#### Q: How do I create a bookmark editor?
+#### Вопрос: Как создать редактор закладок?
 
-A: To create a bookmark editor, use the following code:
+О: Чтобы создать редактор закладок, используйте следующий код:
 
 ```csharp
 PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
 ```
 
-#### Q: How do I open a PDF file for bookmark manipulation?
+#### Вопрос: Как открыть PDF-файл для манипуляций с закладками?
 
-A: To open a PDF file for extracting bookmark information, use the following code:
+О: Чтобы открыть PDF-файл для извлечения информации о закладках, используйте следующий код:
 
 ```csharp
 bookmarkEditor.BindPdf(dataDir + "GetBookmarks.pdf");
 ```
 
-Replace `"GetBookmarks.pdf"` with the actual file name.
+ Заменять`"GetBookmarks.pdf"` с фактическим именем файла.
 
-#### Q: How do I extract bookmarks from the PDF file?
+#### Вопрос: Как извлечь закладки из PDF-файла?
 
-A: To extract bookmarks from the PDF file, use the `ExtractBookmarks` method of the bookmark editor:
+ О: Чтобы извлечь закладки из PDF-файла, используйте команду`ExtractBookmarks` метод редактора закладок:
 
 ```csharp
 Bookmarks bookmarks = bookmarkEditor.ExtractBookmarks();
 ```
 
-#### Q: How do I retrieve and display bookmark page numbers?
+#### Вопрос: Как получить и отобразить номера страниц закладок?
 
-A: Loop through the extracted bookmarks using a `foreach` loop and access the `PageNumber` property of each bookmark to retrieve and display its associated page number:
+ A: Прокрутите извлеченные закладки с помощью`foreach` цикл и доступ к`PageNumber` свойство каждой закладки для получения и отображения связанного с ней номера страницы:
 
 ```csharp
 foreach (Bookmark bookmark in bookmarks)
@@ -159,10 +159,10 @@ foreach (Bookmark bookmark in bookmarks)
 }
 ```
 
-#### Q: Can I modify bookmark properties using this approach?
+#### Вопрос: Могу ли я изменить свойства закладок, используя этот подход?
 
-A: While this tutorial focuses on retrieving bookmark page numbers, you can modify other bookmark properties using the same `Bookmark` object and associated properties.
+ О: Хотя в этом руководстве основное внимание уделяется получению номеров страниц закладок, вы можете изменить другие свойства закладок, используя тот же`Bookmark`объект и связанные с ним свойства.
 
-#### Q: How do I save the updated PDF file after extracting bookmark information?
+#### Вопрос: Как сохранить обновленный PDF-файл после извлечения информации о закладках?
 
-A: Bookmark extraction does not modify the original PDF file. If you want to save any changes, you can do so using other methods provided by Aspose.PDF for .NET.
+О: Извлечение закладки не изменяет исходный PDF-файл. Если вы хотите сохранить какие-либо изменения, вы можете сделать это, используя другие методы, предоставляемые Aspose.PDF для .NET.

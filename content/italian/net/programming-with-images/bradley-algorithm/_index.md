@@ -1,50 +1,50 @@
 ---
-title: Bradley Algorithm
-linktitle: Bradley Algorithm
-second_title: Aspose.PDF for .NET API Reference
-description: Convert a PDF document using the Bradley algorithm with Aspose.PDF for .NET.
+title: Algoritmo di Bradley
+linktitle: Algoritmo di Bradley
+second_title: Aspose.PDF per riferimento all'API .NET
+description: Converti un documento PDF utilizzando l'algoritmo Bradley con Aspose.PDF per .NET.
 type: docs
 weight: 30
 url: /it/net/programming-with-images/bradley-algorithm/
 ---
-This step-by-step guide explains how to use the Bradley Algorithm with Aspose.PDF for .NET. Make sure you have already set up your environment and follow the steps below:
+Questa guida passo passo spiega come utilizzare l'algoritmo Bradley con Aspose.PDF per .NET. Assicurati di aver già configurato il tuo ambiente e segui i passaggi seguenti:
 
-## Step 1: Define the document directory
+## Passaggio 1: definire la directory dei documenti
 
-Before you start, make sure you set the correct directory for the documents. Replace `"YOUR DOCUMENT DIRECTORY"` in the code with the path to the directory where your PDF document is located.
+ Prima di iniziare, assicurati di impostare la directory corretta per i documenti. Sostituire`"YOUR DOCUMENT DIRECTORY"` nel codice con il percorso della directory in cui si trova il documento PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 2: Open the document
+## Passaggio 2: apri il documento
 
-In this step, we will open the PDF document using the `Document` class of Aspose.PDF. Use the `Document` constructor and pass the path to the PDF document.
+In questo passaggio, apriremo il documento PDF utilizzando il file`Document` classe di Aspose.PDF. Usa il`Document` costruttore e passare il percorso al documento PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "PageToTIFF.pdf");
 ```
 
-## Step 3: Define output files
+## Passaggio 3: definire i file di output
 
-Define the output filenames for the resulting image and the binary image. Replace `"resultant_out.tif"` and `"37116-bin_out.tif"` with the desired names for the output files.
+ Definire i nomi dei file di output per l'immagine risultante e l'immagine binaria. Sostituire`"resultant_out.tif"` E`"37116-bin_out.tif"` con i nomi desiderati per i file di output.
 
 ```csharp
 string outputImageFile = dataDir + "resultant_out.tif";
 string outputBinImageFile = dataDir + "37116-bin_out.tif";
 ```
 
-## Step 4: Create the Resolution object
+## Passaggio 4: crea l'oggetto Risoluzione
 
-Create a `Resolution` object to set the resolution of the TIFF image. In this example, we are using a resolution of 300 dpi.
+ Creare un`Resolution`oggetto per impostare la risoluzione dell'immagine TIFF. In questo esempio utilizziamo una risoluzione di 300 dpi.
 
 ```csharp
 Resolution resolution = new Resolution(300);
 ```
 
-## Step 5: Create the TiffSettings object
+## Passaggio 5: crea l'oggetto TiffSettings
 
-Create a `TiffSettings` object to specify settings for the output TIFF file. In this example, we are using LZW compression and a color depth of 1 bit per pixel (1 bpp format).
+ Creare un`TiffSettings`oggetto per specificare le impostazioni per il file TIFF di output. In questo esempio utilizziamo la compressione LZW e una profondità di colore di 1 bit per pixel (formato 1 bpp).
 
 ```csharp
 TiffSettings tiffSettings = new TiffSettings();
@@ -52,25 +52,25 @@ tiffSettings.Compression = CompressionType.LZW;
 tiffSettings.Depth = Aspose.Pdf.Devices.ColorDepth.Format1bpp;
 ```
 
-## Step 6: Create the TIFF device
+## Passaggio 6: crea il dispositivo TIFF
 
-Create a TIFF device using the `TiffDevice` object, specifying the resolution and TIFF settings.
+ Crea un dispositivo TIFF utilizzando il file`TiffDevice` oggetto, specificando la risoluzione e le impostazioni TIFF.
 
 ```csharp
 TiffDevice tiffDevice = new TiffDevice(resolution, tiffSettings);
 ```
 
-## Step 7: Convert the specific page and save the image
+## Passaggio 7: converti la pagina specifica e salva l'immagine
 
-Use the `Process` method of the TIFF device to convert a specific page of the PDF document and save the image to a TIFF file. Specify the file output path.
+ Usa il`Process` metodo del dispositivo TIFF per convertire una pagina specifica del documento PDF e salvare l'immagine in un file TIFF. Specificare il percorso di output del file.
 
 ```csharp
 tiffDevice.Process(pdfDocument, outputImageFile);
 ```
 
-## Step 8: Binarize the image using the Bradley algorithm
+## Passaggio 8: binarizza l'immagine utilizzando l'algoritmo Bradley
 
-Use the `BinarizeBradley` method of the TIFF device to binarize the image using the Bradley algorithm. This method takes an input stream of the original image and an output stream for the binary image. Specify the binarization threshold (0.1 in this example).
+ Usa il`BinarizeBradley` metodo del dispositivo TIFF per binarizzare l'immagine utilizzando l'algoritmo Bradley. Questo metodo accetta un flusso di input dell'immagine originale e un flusso di output per l'immagine binaria. Specificare la soglia di binarizzazione (0,1 in questo esempio).
 
 ```csharp
 using (FileStream
@@ -84,23 +84,23 @@ tiffDevice. Binarize Bradley(inStream, outStream, 0.1);
 }
 ```
 
-### Sample source code for Bradley Algorithm using Aspose.PDF for .NET 
+### Codice sorgente di esempio per l'algoritmo Bradley utilizzando Aspose.PDF per .NET 
 ```csharp
-// The path to the documents directory.
+// Il percorso della directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Apri documento
 Document pdfDocument = new Document(dataDir+ "PageToTIFF.pdf");
 string outputImageFile = dataDir + "resultant_out.tif";
 string outputBinImageFile = dataDir + "37116-bin_out.tif";
-// Create Resolution object
+// Crea oggetto Risoluzione
 Resolution resolution = new Resolution(300);
-// Create TiffSettings object
+// Crea un oggetto TiffSettings
 TiffSettings tiffSettings = new TiffSettings();
 tiffSettings.Compression = CompressionType.LZW;
 tiffSettings.Depth = Aspose.Pdf.Devices.ColorDepth.Format1bpp;
-// Create TIFF device
+// Crea dispositivo TIFF
 TiffDevice tiffDevice = new TiffDevice(resolution, tiffSettings);
-// Convert a particular page and save the image to stream
+//Converti una pagina particolare e salva l'immagine in streaming
 tiffDevice.Process(pdfDocument, outputImageFile);
 using (FileStream inStream = new FileStream(outputImageFile, FileMode.Open))
 {
@@ -112,43 +112,43 @@ using (FileStream inStream = new FileStream(outputImageFile, FileMode.Open))
 System.Console.WriteLine("Conversion using bradley algorithm performed successfully!");
 ```
 
-## Conclusion
+## Conclusione
 
-Congratulation ! You have successfully completed the conversion using the Bradley algorithm with Aspose.PDF for .NET. You can now use the resulting images in your projects or applications.
+Congratulazioni! Hai completato con successo la conversione utilizzando l'algoritmo Bradley con Aspose.PDF per .NET. Ora puoi utilizzare le immagini risultanti nei tuoi progetti o applicazioni.
 
-### FAQ's
+### Domande frequenti
 
-#### Q: What is the Bradley Algorithm and how does it relate to Aspose.PDF for .NET?
+#### D: Cos'è l'algoritmo Bradley e come si collega ad Aspose.PDF per .NET?
 
-A: The Bradley Algorithm is an image processing technique used to enhance image quality and clarity. Aspose.PDF for .NET provides a convenient way to apply the Bradley Algorithm to PDF documents, resulting in improved images.
+R: L'algoritmo Bradley è una tecnica di elaborazione delle immagini utilizzata per migliorare la qualità e la chiarezza dell'immagine. Aspose.PDF per .NET fornisce un modo conveniente per applicare l'algoritmo Bradley ai documenti PDF, ottenendo immagini migliorate.
 
-#### Q: How do I set up my environment for using the Bradley Algorithm with Aspose.PDF for .NET?
+#### D: Come posso configurare il mio ambiente per utilizzare l'algoritmo Bradley con Aspose.PDF per .NET?
 
-A: Before you begin, ensure that you have Aspose.PDF for .NET properly installed and your development environment configured.
+R: Prima di iniziare, assicurati di avere Aspose.PDF per .NET installato correttamente e il tuo ambiente di sviluppo configurato.
 
-#### Q: What is the significance of defining the document directory in the Bradley Algorithm process?
+#### D: Qual è il significato della definizione della directory dei documenti nel processo dell'algoritmo Bradley?
 
-A: Specifying the correct document directory is crucial to ensure that the PDF document is located in the right path for processing.
+R: Specificare la directory corretta del documento è fondamentale per garantire che il documento PDF si trovi nel percorso corretto per l'elaborazione.
 
-#### Q: How do I open a PDF document using Aspose.PDF for .NET in the Bradley Algorithm?
+#### D: Come posso aprire un documento PDF utilizzando Aspose.PDF per .NET nell'algoritmo Bradley?
 
-A: Use the `Document` class to open the PDF document, which serves as the input for the Bradley Algorithm process.
+ R: Usa il`Document` per aprire il documento PDF, che funge da input per il processo dell'algoritmo di Bradley.
 
-#### Q: What is the purpose of defining output filenames for the image and binary image in the Bradley Algorithm process?
+#### D: Qual è lo scopo di definire i nomi dei file di output per l'immagine e l'immagine binaria nel processo dell'algoritmo di Bradley?
 
-A: Defining output filenames allows you to specify where the resulting image and binary image will be saved after applying the Bradley Algorithm.
+R: La definizione dei nomi dei file di output consente di specificare dove verranno salvate l'immagine risultante e l'immagine binaria dopo aver applicato l'algoritmo Bradley.
 
-#### Q: How does the resolution setting affect the TIFF image quality in the Bradley Algorithm process?
+#### D: In che modo l'impostazione della risoluzione influisce sulla qualità dell'immagine TIFF nel processo dell'algoritmo Bradley?
 
-A: The resolution setting determines the level of detail and clarity in the resulting TIFF image after applying the Bradley Algorithm.
+R: L'impostazione della risoluzione determina il livello di dettaglio e chiarezza nell'immagine TIFF risultante dopo l'applicazione dell'algoritmo Bradley.
 
-#### Q: What settings can I customize for the output TIFF image in the Bradley Algorithm process?
-A: You can customize settings such as compression type and color depth to achieve the desired output for the TIFF image.
+#### D: Quali impostazioni posso personalizzare per l'immagine TIFF di output nel processo dell'algoritmo Bradley?
+R: È possibile personalizzare impostazioni quali il tipo di compressione e la profondità del colore per ottenere l'output desiderato per l'immagine TIFF.
 
-#### Q: How does the TIFF device contribute to the Bradley Algorithm process?
+#### D: In che modo il dispositivo TIFF contribuisce al processo dell'algoritmo Bradley?
 
-A: The TIFF device acts as a tool for processing images and applying the Bradley Algorithm, resulting in enhanced image quality.
+R: Il dispositivo TIFF funge da strumento per l'elaborazione delle immagini e l'applicazione dell'algoritmo Bradley, con conseguente miglioramento della qualità dell'immagine.
 
-#### Q: How do I convert a specific page of a PDF document to a TIFF image in the Bradley Algorithm process?
+#### D: Come posso convertire una pagina specifica di un documento PDF in un'immagine TIFF nel processo dell'algoritmo di Bradley?
 
-A: Utilize the `Process` method of the TIFF device to convert a specific page of the PDF document into a TIFF image, which can then be further processed using the Bradley Algorithm.
+ R: Utilizza il`Process` metodo del dispositivo TIFF per convertire una pagina specifica del documento PDF in un'immagine TIFF, che può quindi essere ulteriormente elaborata utilizzando l'algoritmo Bradley.

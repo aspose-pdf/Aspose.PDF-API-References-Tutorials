@@ -1,35 +1,35 @@
 ---
-title: Flatten Annotation In PDF File
-linktitle: Flatten Annotation In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to flatten annotations in PDF file using Aspose.PDF for .NET. Preserve annotations and prevent accidental alteration.
+title: 拼合 PDF 文件中的注释
+linktitle: 拼合 PDF 文件中的注释
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 拼合 PDF 文件中的注释。保留注释并防止意外更改。
 type: docs
 weight: 150
 url: /zh/net/programming-with-document/flattenannotation/
 ---
-Aspose.PDF for .NET is a powerful library that enables developers to work with PDF file programmatically. One of the features that it provides is the ability to flatten annotations in PDF file. Flattening annotations in a PDF document means that the annotations become part of the document content and can no longer be edited or deleted. This is useful when you want to ensure that the annotations are preserved and cannot be accidentally altered.
+Aspose.PDF for .NET 是一个功能强大的库，使开发人员能够以编程方式处理 PDF 文件。它提供的功能之一是能够平整 PDF 文件中的注释。扁平化PDF文档中的注释意味着注释成为文档内容的一部分，并且无法再编辑或删除。当您想要确保保留注释并且不会意外更改时，这非常有用。
 
-In this tutorial, we will discuss how to use Aspose.PDF for .NET to flatten annotations in a PDF document. We will provide a step-by-step guide on how to do this, along with example source code.
+在本教程中，我们将讨论如何使用 Aspose.PDF for .NET 来展平 PDF 文档中的注释。我们将提供有关如何执行此操作的分步指南以及示例源代码。
 
-## Step 1: Create a new C# Console Application
-To get started, create a new C# Console Application in Visual Studio. You can name it whatever you like. Once the project is created, you need to add a reference to the Aspose.PDF for .NET library.
+## 步骤 1：创建一个新的 C# 控制台应用程序
+首先，在 Visual Studio 中创建一个新的 C# 控制台应用程序。您可以将其命名为任何您喜欢的名称。创建项目后，您需要添加对 Aspose.PDF for .NET 库的引用。
 
-## Step 2: Import the Aspose.PDF Namespace
-Add the following line of code at the top of your C# file to import the Aspose.PDF namespace:
+## 第2步：导入Aspose.PDF命名空间
+在 C# 文件顶部添加以下代码行以导入 Aspose.PDF 命名空间：
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Step 3: Open the PDF Document
-Open the PDF document that you want to flatten:
+## 步骤 3：打开 PDF 文档
+打开您要拼合的 PDF 文档：
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 ```
 
-## Step 4: Flatten the Annotations
-Flatten the annotations in the PDF document:
+## 第 4 步：展平注释
+拼合PDF文档中的注释：
 
 ```csharp
 foreach (var page in pdfDocument.Pages)
@@ -41,22 +41,22 @@ foreach (var page in pdfDocument.Pages)
 }
 ```
 
-## Step 5: Save the Updated Document
-Save the updated document:
+## 第5步：保存更新后的文档
+保存更新后的文档：
 
 ```csharp
 pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
 Console.WriteLine("\nFlattened annotation successfully.\nFile saved at " + dataDir);
 ```
 
-### Example source code for Flatten Annotation using Aspose.PDF for .NET
+### 使用 Aspose.PDF for .NET 进行扁平化注释的示例源代码
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+//打开文档
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-// Flatten annotations
+//扁平化注释
 foreach (var page in pdfDocument.Pages)
 {
 	foreach (var annotation in page.Annotations)
@@ -65,25 +65,25 @@ foreach (var page in pdfDocument.Pages)
 	}
 
 }
-// Save updated document
+//保存更新的文档
 pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
 
 Console.WriteLine("\nFlattened annotation successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
-In this tutorial, we have discussed how to flatten annotations in a PDF document using Aspose.PDF for .NET. Flattening annotations in a PDF document is a useful feature that ensures that the annotations are preserved and cannot be accidentally altered. Aspose.PDF for .NET provides a simple and easy-to-use API to work with PDF documents, including flattening annotations. 
+## 结论
+在本教程中，我们讨论了如何使用 Aspose.PDF for .NET 展平 PDF 文档中的注释。拼合 PDF 文档中的注释是一项有用的功能，可确保保留注释并且不会意外更改。 Aspose.PDF for .NET 提供了一个简单易用的 API 来处理 PDF 文档，包括展平注释。 
 
-### FAQ's for flatten annotation in PDF file
+### PDF 文件中拼合注释的常见问题解答
 
-#### Q: What are annotations in a PDF document?
+#### 问：PDF文档中的注释是什么？
 
-A: Annotations in a PDF document are additional elements or notes that can be added to the document to provide extra information or interactivity. Annotations can include text, images, links, comments, and more.
+答：PDF 文档中的注释是可以添加到文档中以提供额外信息或交互性的附加元素或注释。注释可以包括文本、图像、链接、评论等。
 
-#### Q: Why would I want to flatten annotations in a PDF document?
+#### 问：为什么我要拼合 PDF 文档中的注释？
 
-A: Flattening annotations in a PDF document is useful when you want to ensure that the annotations become a part of the document content and cannot be edited or deleted. It helps in preserving the annotations as part of the document.
+答：当您想要确保注释成为文档内容的一部分并且无法编辑或删除时，拼合 PDF 文档中的注释非常有用。它有助于将注释保留为文档的一部分。
 
-#### Q: Can I selectively flatten annotations in a PDF document?
+#### 问：我可以选择性地拼合 PDF 文档中的注释吗？
 
-A: Yes, you can selectively flatten annotations in a PDF document using Aspose.PDF for .NET. You can choose to flatten specific annotations or all annotations on a particular page or across the entire document.
+答：是的，您可以使用 Aspose.PDF for .NET 有选择地展平 PDF 文档中的注释。您可以选择展平特定页面或整个文档上的特定注释或所有注释。

@@ -1,51 +1,51 @@
 ---
-title: Text In Header Of PDF File
-linktitle: Text In Header Of PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to add text in the header of PDF file with Aspose.PDF for .NET.
+title: Text i rubriken på PDF-filen
+linktitle: Text i rubriken på PDF-filen
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du lägger till text i rubriken på PDF-filen med Aspose.PDF för .NET.
 type: docs
 weight: 190
 url: /sv/net/programming-with-stamps-and-watermarks/text-in-header/
 ---
-In this tutorial, we are going to learn how to add text in the header of PDF file using Aspose.PDF for .NET. Follow the steps below:
+I den här handledningen ska vi lära oss hur du lägger till text i rubriken på PDF-filen med Aspose.PDF för .NET. Följ stegen nedan:
 
-## Step 1: Project preparation
+## Steg 1: Projektförberedelser
 
-Make sure you have installed Aspose.PDF for .NET and created a C# project.
+Se till att du har installerat Aspose.PDF för .NET och skapat ett C#-projekt.
 
-## Step 2: Importing namespaces
+## Steg 2: Importera namnutrymmen
 
-Add the following namespaces to your C# source file:
+Lägg till följande namnområden till din C#-källfil:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Step 3: Opening the document
+## Steg 3: Öppna dokumentet
 
-Open the existing PDF document using the path provided:
+Öppna det befintliga PDF-dokumentet med den angivna sökvägen:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document pdfDocument = new Document(dataDir + "TextinHeader.pdf");
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to your documents directory.
+Se till att ersätta "DIN DOKUMENTKATOLOG" med den faktiska sökvägen till din dokumentkatalog.
 
-## Step 4: Creating Header Text
+## Steg 4: Skapa rubriktext
 
-Create a new text stamp with the text you want to add in the header:
+Skapa en ny textstämpel med texten du vill lägga till i rubriken:
 
 ```csharp
 TextStamp textStamp = new TextStamp("Header text");
 ```
 
-You can customize the text by changing its properties like top margin, horizontal alignment, and vertical alignment.
+Du kan anpassa texten genom att ändra dess egenskaper som toppmarginal, horisontell justering och vertikal justering.
 
-## Step 5: Add header text to all pages
+## Steg 5: Lägg till rubriktext på alla sidor
 
-Go through all the pages of the PDF document and add the text stamp in the header:
+Gå igenom alla sidor i PDF-dokumentet och lägg till textstämpeln i rubriken:
 
 ```csharp
 foreach(Page page in pdfDocument.Pages)
@@ -54,80 +54,80 @@ foreach(Page page in pdfDocument.Pages)
 }
 ```
 
-## Step 6: Saving the PDF Document
+## Steg 6: Spara PDF-dokumentet
 
-Once the header text has been added on all pages, save the updated PDF document:
+När rubriktexten har lagts till på alla sidor, spara det uppdaterade PDF-dokumentet:
 
 ```csharp
 pdfDocument.Save(dataDir + "TextinHeader_out.pdf");
 Console.WriteLine("\nText in header added successfully.\nFile saved at: " + dataDir);
 ```
 
-Be sure to replace "YOUR DOCUMENTS DIRECTORY" with the actual path to the directory where you want to save the PDF document.
+Var noga med att ersätta "DIN DOKUMENTKATOLOG" med den faktiska sökvägen till katalogen där du vill spara PDF-dokumentet.
 
-### Sample source code for Textin Header using Aspose.PDF for .NET 
+### Exempel på källkod för Textin Header med Aspose.PDF för .NET 
 ```csharp
 
-// The path to the documents directory.
+// Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Open document
+// Öppna dokumentet
 Document pdfDocument = new Document(dataDir+ "TextinHeader.pdf");
 
-// Create header
+// Skapa rubrik
 TextStamp textStamp = new TextStamp("Header Text");
 
-// Set properties of the stamp
+// Ställ in egenskaper för stämpeln
 textStamp.TopMargin = 10;
 textStamp.HorizontalAlignment = HorizontalAlignment.Center;
 textStamp.VerticalAlignment = VerticalAlignment.Top;
 
-// Add header on all pages
+// Lägg till rubrik på alla sidor
 foreach (Page page in pdfDocument.Pages)
 {
 	page.AddStamp(textStamp);
 }
 
-// Save updated document
+// Spara uppdaterat dokument
 pdfDocument.Save(dataDir+ "TextinHeader_out.pdf");
 Console.WriteLine("\nText in header added successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
+## Slutsats
 
-Congratulation ! You have learned how to add text in the header of a PDF document using Aspose.PDF for .NET. You can now customize your headers by adding additional text to your PDF documents.
+Grattis! Du har lärt dig hur du lägger till text i rubriken på ett PDF-dokument med Aspose.PDF för .NET. Du kan nu anpassa dina rubriker genom att lägga till ytterligare text i dina PDF-dokument.
 
-### FAQ's for text in header of PDF file
+### Vanliga frågor för text i rubriken på PDF-filen
 
-#### Q: What is the purpose of adding text in the header of a PDF document?
+#### F: Vad är syftet med att lägga till text i rubriken på ett PDF-dokument?
 
-A: Adding text in the header of a PDF document allows you to include important information, such as titles, document names, dates, or any other text that you want to appear consistently at the top of each page.
+S: Genom att lägga till text i rubriken på ett PDF-dokument kan du inkludera viktig information, såsom titlar, dokumentnamn, datum eller annan text som du vill ska visas konsekvent överst på varje sida.
 
-#### Q: How does the provided C# source code achieve the addition of text in the header of a PDF document?
+#### F: Hur uppnår den medföljande C#-källkoden tillägg av text i rubriken på ett PDF-dokument?
 
-A: The code demonstrates the process of opening an existing PDF document, creating a text stamp with the desired header text, customizing the text properties, adding the text stamp to all pages, and finally saving the updated PDF document with the added header text.
+S: Koden demonstrerar processen att öppna ett befintligt PDF-dokument, skapa en textstämpel med önskad rubriktext, anpassa textegenskaperna, lägga till textstämpeln på alla sidor och slutligen spara det uppdaterade PDF-dokumentet med den tillagda rubriktexten.
 
-#### Q: Can I modify the appearance of the header text, such as its font, size, color, and alignment?
+#### F: Kan jag ändra utseendet på rubriktexten, såsom teckensnitt, storlek, färg och justering?
 
-A: Yes, you can customize the appearance of the header text by modifying the properties of the `TextStamp` object. The code example includes setting properties like top margin, horizontal alignment, and vertical alignment. You can also adjust the font, size, color, and other text-related properties.
+ S: Ja, du kan anpassa utseendet på rubriktexten genom att ändra egenskaperna för`TextStamp`objekt. Kodexemplet inkluderar inställningsegenskaper som toppmarginal, horisontell justering och vertikal justering. Du kan också justera teckensnitt, storlek, färg och andra textrelaterade egenskaper.
 
-#### Q: Is it possible to add different text to each page's header?
+#### F: Är det möjligt att lägga till olika text i varje sidas rubrik?
 
-A: Yes, you can add different text to each page's header by creating separate `TextStamp` objects with different text content or properties and then adding them to specific pages as needed.
+ S: Ja, du kan lägga till olika text i varje sidas rubrik genom att skapa separata`TextStamp` objekt med olika textinnehåll eller egenskaper och sedan lägga till dem på specifika sidor efter behov.
 
-#### Q: How do I ensure the header text appears consistently on every page of the PDF document?
+#### F: Hur säkerställer jag att rubriktexten visas konsekvent på varje sida i PDF-dokumentet?
 
-A: By using a loop that iterates through all the pages of the PDF document and adding the same text stamp to each page, you ensure that the header text appears consistently on every page.
+S: Genom att använda en slinga som itererar genom alla sidor i PDF-dokumentet och lägga till samma textstämpel på varje sida, säkerställer du att rubriktexten visas konsekvent på varje sida.
 
-#### Q: Can I add multiple lines of text or format the header text with line breaks?
+#### F: Kan jag lägga till flera rader text eller formatera rubriktexten med radbrytningar?
 
-A: Yes, you can add multiple lines of text to the header by including line breaks in the text string. For example, you can use the escape sequence `\n` to indicate a line break in the text.
+ S: Ja, du kan lägga till flera rader text i rubriken genom att inkludera radbrytningar i textsträngen. Du kan till exempel använda flyktsekvensen`\n` för att indikera en radbrytning i texten.
 
-#### Q: What happens if I want to add different content to the header and footer of the same PDF document?
+#### F: Vad händer om jag vill lägga till olika innehåll i sidhuvudet och sidfoten i samma PDF-dokument?
 
-A: To add different content to the header and footer sections, you would follow similar steps for both sections. The code demonstrates adding text to the header; you can use a similar approach to add text to the footer.
+S: För att lägga till olika innehåll i sidhuvuds- och sidfotssektionerna, skulle du följa liknande steg för båda sektionerna. Koden visar hur man lägger till text i rubriken; du kan använda en liknande metod för att lägga till text i sidfoten.
 
-#### Q: Is it possible to add images or other elements alongside the header text using this approach?
+#### F: Är det möjligt att lägga till bilder eller andra element vid sidan av rubriktexten med detta tillvägagångssätt?
 
-A: While the provided code specifically demonstrates adding text to the header, you can extend the approach to add other elements like images, lines, shapes, or any other content to the header section using the Aspose.PDF library.
+S: Även om den medföljande koden specifikt visar att du lägger till text i rubriken, kan du utöka tillvägagångssättet för att lägga till andra element som bilder, linjer, former eller annat innehåll till rubriksektionen med hjälp av Aspose.PDF-biblioteket.

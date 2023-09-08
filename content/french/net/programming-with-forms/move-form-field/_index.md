@@ -1,90 +1,90 @@
 ---
-title: Move Form Field
-linktitle: Move Form Field
-second_title: Aspose.PDF for .NET API Reference
-description: Easily move form fields around in your PDF documents with Aspose.PDF for .NET.
+title: Déplacer le champ du formulaire
+linktitle: Déplacer le champ du formulaire
+second_title: Aspose.PDF pour la référence de l'API .NET
+description: Déplacez facilement les champs de formulaire dans vos documents PDF avec Aspose.PDF pour .NET.
 type: docs
 weight: 200
 url: /fr/net/programming-with-forms/move-form-field/
 ---
-In this tutorial, we will show you how to move a form field in a PDF document using Aspose.PDF for .NET. We will explain the C# source code step by step to guide you through this process.
+Dans ce didacticiel, nous allons vous montrer comment déplacer un champ de formulaire dans un document PDF à l'aide d'Aspose.PDF pour .NET. Nous expliquerons le code source C# étape par étape pour vous guider tout au long de ce processus.
 
-## Step 1: Preparation
+## Étape 1 : Préparation
 
-Make sure you have imported the necessary libraries and set the path to your documents directory:
+Assurez-vous d'avoir importé les bibliothèques nécessaires et défini le chemin d'accès à votre répertoire de documents :
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Step 2: Load the document
+## Étape 2 : Charger le document
 
-Load the existing PDF document:
+Chargez le document PDF existant :
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "MoveFormField.pdf");
 ```
 
-## Step 3: Get the form field
+## Étape 3 : Obtenez le champ du formulaire
 
-Get the form field you want to move:
+Obtenez le champ de formulaire que vous souhaitez déplacer :
 
 ```csharp
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
 ```
 
-## Step 4: Change Field Location
+## Étape 4 : Modifier l'emplacement du champ
 
-Change the location of the form field by defining a new rectangular area:
+Modifiez l'emplacement du champ du formulaire en définissant une nouvelle zone rectangulaire :
 
 ```csharp
 textBoxField.Rect = new Aspose.Pdf.Rectangle(300, 400, 600, 500);
 ```
 
-## Step 5: Save the edited document
+## Étape 5 : Enregistrez le document modifié
 
-Save the modified PDF document:
+Enregistrez le document PDF modifié :
 
 ```csharp
 dataDir = dataDir + "MoveFormField_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Sample source code for Move Form Field using Aspose.PDF for .NET 
+### Exemple de code source pour déplacer le champ de formulaire à l'aide d'Aspose.PDF pour .NET 
 ```csharp
-// The path to the documents directory.
+// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Ouvrir le document
 Document pdfDocument = new Document(dataDir + "MoveFormField.pdf");
-// Get a field
+// Obtenez un champ
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
-// Modify field location
+// Modifier l'emplacement du champ
 textBoxField.Rect = new Aspose.Pdf.Rectangle(300, 400, 600, 500);
 dataDir = dataDir + "MoveFormField_out.pdf";
-// Save modified document
+// Enregistrer le document modifié
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nForm field moved successfully to a new location.\nFile saved at " + dataDir);
 ```
 
 ## Conclusion
 
-In this tutorial, we learned how to move a form field in a PDF document using Aspose.PDF for .NET. By following these steps, you can easily navigate to a specific field and change its location as needed.
+Dans ce didacticiel, nous avons appris à déplacer un champ de formulaire dans un document PDF à l'aide d'Aspose.PDF pour .NET. En suivant ces étapes, vous pouvez facilement accéder à un champ spécifique et modifier son emplacement si nécessaire.
 
 
-### FAQ's
+### FAQ
 
-#### Q: Can I move multiple form fields within a single PDF document using Aspose.PDF for .NET?
+#### Q : Puis-je déplacer plusieurs champs de formulaire dans un seul document PDF à l'aide d'Aspose.PDF pour .NET ?
 
-A: Yes, you can move multiple form fields within a single PDF document using Aspose.PDF for .NET. Simply repeat the process for each form field you want to relocate.
+R : Oui, vous pouvez déplacer plusieurs champs de formulaire dans un seul document PDF à l'aide d'Aspose.PDF pour .NET. Répétez simplement le processus pour chaque champ de formulaire que vous souhaitez déplacer.
 
-#### Q: Will moving a form field affect its associated data or functionality?
+#### Q : Le déplacement d'un champ de formulaire affectera-t-il ses données ou fonctionnalités associées ?
 
-A: No, moving a form field does not affect its associated data or functionality. The form field retains all its properties and values after being moved to a new location.
+R : Non, le déplacement d'un champ de formulaire n'affecte pas ses données ou fonctionnalités associées. Le champ de formulaire conserve toutes ses propriétés et valeurs après avoir été déplacé vers un nouvel emplacement.
 
-#### Q: How can I determine the exact coordinates for the new location of the form field?
+#### Q : Comment puis-je déterminer les coordonnées exactes du nouvel emplacement du champ du formulaire ?
 
-A: You can specify the new location using the `Aspose.Pdf.Rectangle` class, where you define the X and Y coordinates of the top-left corner and the X and Y coordinates of the bottom-right corner of the rectangular area.
+ R : Vous pouvez spécifier le nouvel emplacement à l'aide du`Aspose.Pdf.Rectangle` classe, où vous définissez les coordonnées X et Y du coin supérieur gauche et les coordonnées X et Y du coin inférieur droit de la zone rectangulaire.
 
-#### Q: Is Aspose.PDF for .NET compatible with both Windows and Linux environments?
+#### Q : Aspose.PDF pour .NET est-il compatible avec les environnements Windows et Linux ?
 
-A: Yes, Aspose.PDF for .NET is compatible with both Windows and Linux environments, providing flexibility for developers to work in their preferred operating systems.
+R : Oui, Aspose.PDF pour .NET est compatible avec les environnements Windows et Linux, offrant ainsi aux développeurs la possibilité de travailler dans leurs systèmes d'exploitation préférés.

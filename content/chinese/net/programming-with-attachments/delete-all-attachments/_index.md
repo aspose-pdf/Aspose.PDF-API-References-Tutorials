@@ -1,101 +1,101 @@
 ---
-title: Delete All Attachments In PDF File
-linktitle: Delete All Attachments In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Learn how to remove all attachments in PDF file using Aspose.PDF for .NET. Step-by-step guide for easy handling.
+title: 删除 PDF 文件中的所有附件
+linktitle: 删除 PDF 文件中的所有附件
+second_title: Aspose.PDF for .NET API 参考
+description: 了解如何使用 Aspose.PDF for .NET 删除 PDF 文件中的所有附件。分步指南，方便操作。
 type: docs
 weight: 20
 url: /zh/net/programming-with-attachments/delete-all-attachments/
 ---
-In this tutorial, we will walk you through the following C# source code step by step to remove all attachments in PDF file using Aspose.PDF for .NET.
+在本教程中，我们将引导您逐步完成以下 C# 源代码，以使用 Aspose.PDF for .NET 删除 PDF 文件中的所有附件。
 
-Make sure you have installed the Aspose.PDF library and set up your development environment before you begin. Also have basic knowledge of C# programming.
+在开始之前，请确保您已经安装了 Aspose.PDF 库并设置了开发环境。还具备 C# 编程的基础知识。
 
-### Step 1: Document Directory Setup
+### 第 1 步：文档目录设置
 
-In the provided source code, you need to specify the directory where the PDF file is located from which you want to remove the attachments. Change the "dataDir" variable to the desired directory.
+在提供的源代码中，您需要指定要从中删除附件的 PDF 文件所在的目录。将“dataDir”变量更改为所需的目录。
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-### Step 2: Open the existing PDF document
+### 步骤 2：打开现有 PDF 文档
 
-We open the existing PDF document using the specified path.
+我们使用指定的路径打开现有的 PDF 文档。
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "DeleteAllAttachments.pdf");
 ```
 
-### Step 3: Remove all attachments
+### 第 3 步：删除所有附件
 
-We remove all attachments from the document.
+我们从文档中删除所有附件。
 
 ```csharp
 pdfDocument.EmbeddedFiles.Delete();
 ```
 
-### Step 4: Save the Updated File
+### 步骤 4：保存更新的文件
 
-Finally, we save the updated PDF file with the name "DeleteAllAttachments_out.pdf" in the specified directory.
+最后，我们将更新后的 PDF 文件保存在指定目录中，名称为“DeleteAllAttachments_out.pdf”。
 
 ```csharp
 pdfDocument.Save(dataDir + "DeleteAllAttachments_out.pdf");
 ```
 
-### Sample source code for Delete All Attachments using Aspose.PDF for .NET 
+### 使用 Aspose.PDF for .NET 删除所有附件的示例源代码 
 
 ```csharp
-// The path to the documents directory.
+//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+//打开文档
 Document pdfDocument = new Document(dataDir + "DeleteAllAttachments.pdf");
-// Delete all attachments
+//删除所有附件
 pdfDocument.EmbeddedFiles.Delete();
 dataDir = dataDir + "DeleteAllAttachments_out.pdf";
-// Save updated file
+//保存更新的文件
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nAll attachments deleted successfully.\nFile saved at " + dataDir);
 
 ```
 
-## Conclusion
+## 结论
 
-In this tutorial, we have explained how to remove all attachments from a PDF file using Aspose.PDF for .NET. You can now use this knowledge to clean up your PDF documents by removing all unwanted attachments.
+在本教程中，我们解释了如何使用 Aspose.PDF for .NET 从 PDF 文件中删除所有附件。您现在可以使用这些知识通过删除所有不需要的附件来清理您的 PDF 文档。
 
-## FAQ's for delete all attachments in PDF file
+## 删除 PDF 文件中所有附件的常见问题解答
 
-#### Q: Why would I need to remove all attachments from a PDF file?
+#### 问：为什么我需要删除 PDF 文件中的所有附件？
 
-A: Removing all attachments from a PDF file can help streamline the document, reduce file size, and eliminate any unnecessary or outdated supplementary materials.
+答：从 PDF 文件中删除所有附件可以帮助简化文档、减小文件大小并消除任何不必要或过时的补充材料。
 
-#### Q: How does Aspose.PDF for .NET simplify the process of removing all attachments?
+#### 问：Aspose.PDF for .NET 如何简化删除所有附件的过程？
 
-A: Aspose.PDF for .NET provides a user-friendly API that allows you to easily remove all attachments from a PDF file. The provided source code demonstrates the step-by-step process.
+答：Aspose.PDF for .NET 提供了一个用户友好的 API，允许您轻松地从 PDF 文件中删除所有附件。提供的源代码演示了分步过程。
 
-#### Q: Can I selectively remove specific attachments using this tutorial?
+#### 问：我可以使用本教程有选择地删除特定附件吗？
 
-A: No, this tutorial focuses on removing all attachments from a PDF document. If you need to remove specific attachments, you can explore Aspose.PDF for .NET's API for more advanced attachment management.
+答：不，本教程的重点是从 PDF 文档中删除所有附件。如果您需要删除特定附件，您可以探索 Aspose.PDF for .NET 的 API 以进行更高级的附件管理。
 
-#### Q: Is there a limit to the number of attachments that can be removed using this method?
+#### 问：使用此方法可以删除的附件数量有限制吗？
 
-A: There is no strict limit to the number of attachments that can be removed using this method. However, it's important to note that all attachments within the PDF document will be deleted.
+答：使用此方法可以删除的附件数量没有严格限制。但请务必注意，PDF 文档中的所有附件都将被删除。
 
-#### Q: Will removing attachments affect the main content of the PDF document?
+#### 问：删除附件会影响PDF文档的主要内容吗？
 
-A: No, removing attachments will not affect the main content of the PDF document. Only the attachments, such as additional files or materials, will be removed.
+答：不会，删除附件不会影响PDF文档的主要内容。仅删除附件，例如附加文件或材料。
 
-#### Q: How can I verify that all attachments have been successfully removed?
+#### 问：如何验证所有附件是否已成功删除？
 
-A: After following the provided source code, you can open the resulting PDF file to confirm that the attachments have been removed from the document.
+答：按照提供的源代码操作后，您可以打开生成的 PDF 文件以确认附件已从文档中删除。
 
-#### Q: Can I undo the removal of attachments once it's done?
+#### 问：附件删除完成后我可以撤消吗？
 
-A: No, once attachments are removed from the PDF file, the action is irreversible. Make sure to back up your original PDF file before performing this action.
+答：不可以，一旦从 PDF 文件中删除附件，该操作就不可逆转。在执行此操作之前，请确保备份原始 PDF 文件。
 
-#### Q: Are there any file size considerations when removing attachments?
+#### 问：删除附件时是否需要考虑文件大小？
 
-A: Removing attachments can reduce the overall file size of the PDF document, which may lead to improved document performance and sharing efficiency.
+答：删除附件可以减少 PDF 文档的整体文件大小，从而提高文档性能和共享效率。
 
-#### Q: Can I automate the process of removing attachments for multiple PDF files?
-A: Yes, you can create a script or program using Aspose.PDF for .NET to automate the process of removing attachments from multiple PDF files in a batch.
+#### 问：我可以自动删除多个 PDF 文件的附件吗？
+答：是的，您可以使用 Aspose.PDF for .NET 创建脚本或程序来自动执行批量删除多个 PDF 文件中附件的过程。

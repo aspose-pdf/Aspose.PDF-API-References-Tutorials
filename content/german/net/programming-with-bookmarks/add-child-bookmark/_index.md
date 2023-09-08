@@ -1,42 +1,42 @@
 ---
-title: Add Child Bookmark In PDF File
-linktitle: Add Child Bookmark In PDF File
-second_title: Aspose.PDF for .NET API Reference
-description: Easily add child bookmark in PDF file for more organized browsing with Aspose.PDF for .NET.
+title: Untergeordnetes Lesezeichen in PDF-Datei hinzufügen
+linktitle: Untergeordnetes Lesezeichen in PDF-Datei hinzufügen
+second_title: Aspose.PDF für .NET API-Referenz
+description: Fügen Sie mit Aspose.PDF für .NET ganz einfach untergeordnete Lesezeichen zur PDF-Datei hinzu, um das Surfen besser zu organisieren.
 type: docs
 weight: 20
 url: /de/net/programming-with-bookmarks/add-child-bookmark/
 ---
-Adding child bookmarks in PDF file allows for more structured organization and navigation. With Aspose.PDF for .NET, you can easily add a sub-bookmark by following the following source code:
+Das Hinzufügen untergeordneter Lesezeichen in einer PDF-Datei ermöglicht eine strukturiertere Organisation und Navigation. Mit Aspose.PDF für .NET können Sie ganz einfach ein Unterlesezeichen hinzufügen, indem Sie dem folgenden Quellcode folgen:
 
-## Step 1: Import required libraries
+## Schritt 1: Erforderliche Bibliotheken importieren
 
-Before you begin, you need to import the necessary libraries for your C# project. Here is the necessary import directive:
+Bevor Sie beginnen, müssen Sie die erforderlichen Bibliotheken für Ihr C#-Projekt importieren. Hier ist die notwendige Importanweisung:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-## Step 2: Set path to documents folder
+## Schritt 2: Legen Sie den Pfad zum Dokumentenordner fest
 
-In this step, you need to specify the path to the folder containing the PDF file you want to add a sub-bookmark. Replace `"YOUR DOCUMENT DIRECTORY"` in the following code with the actual path to your documents folder:
+ In diesem Schritt müssen Sie den Pfad zu dem Ordner angeben, der die PDF-Datei enthält, der Sie ein Unterlesezeichen hinzufügen möchten. Ersetzen`"YOUR DOCUMENT DIRECTORY"`Geben Sie im folgenden Code den tatsächlichen Pfad zu Ihrem Dokumentenordner ein:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Step 3: Open the PDF document
+## Schritt 3: Öffnen Sie das PDF-Dokument
 
-Now we will open the PDF document to which we want to add a sub-bookmark using the following code:
+Nun öffnen wir das PDF-Dokument, zu dem wir ein Unterlesezeichen hinzufügen möchten, mit dem folgenden Code:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "AddChildBookmark.pdf");
 ```
 
-## Step 4: Create parent bookmark object
+## Schritt 4: Erstellen Sie ein übergeordnetes Lesezeichenobjekt
 
-In this step, we will create a parent bookmark object using the `OutlineItemCollection` class and set its properties such as title, italic attribute and bold attribute. Here is the corresponding code:
+ In diesem Schritt erstellen wir mithilfe von ein übergeordnetes Lesezeichenobjekt`OutlineItemCollection` Klasse und legen Sie ihre Eigenschaften wie Titel, Kursivschrift-Attribut und Fettdruck-Attribut fest. Hier ist der entsprechende Code:
 
 ```csharp
 OutlineItemCollection pdfOutline = new OutlineItemCollection(pdfDocument.Outlines);
@@ -45,9 +45,9 @@ pdfOutline. Italic = true;
 pdfOutline. Bold = true;
 ```
 
-## Step 5: Create Child Bookmark Object
+## Schritt 5: Erstellen Sie ein untergeordnetes Lesezeichenobjekt
 
-In this step, we will create a sub-bookmark object again using the `OutlineItemCollection` class and set its properties. Here is the corresponding code:
+In diesem Schritt erstellen wir erneut ein Unter-Lesezeichen-Objekt mit`OutlineItemCollection` Klasse und legen Sie ihre Eigenschaften fest. Hier ist der entsprechende Code:
 
 ```csharp
 OutlineItemCollection pdfChildOutline = new OutlineItemCollection(pdfDocument.Outlines);
@@ -56,95 +56,95 @@ pdfChildOutline. Italic = true;
 pdfChildOutline. Bold = true;
 ```
 
-## Step 6: Add the sub-bookmark to the parent bookmark
+## Schritt 6: Fügen Sie das Unter-Lesezeichen zum übergeordneten Lesezeichen hinzu
 
-Finally, we add the created subbookmark to the parent bookmark's subbookmark collection using the `Add` method of the parent object. Here is the corresponding code:
+ Schließlich fügen wir das erstellte Unterlesezeichen mithilfe von zur Unterlesezeichensammlung des übergeordneten Lesezeichens hinzu`Add` Methode des übergeordneten Objekts. Hier ist der entsprechende Code:
 
 ```csharp
 pdfOutline.Add(pdfChildOutline);
 ```
 
-## Step 7: Add the parent bookmark to the document's bookmark collection
+## Schritt 7: Fügen Sie das übergeordnete Lesezeichen zur Lesezeichensammlung des Dokuments hinzu
 
-Finally, we add the parent bookmark to the document's bookmark collection using the `Add` method of the `Outlines` property. Here is the corresponding code:
+ Schließlich fügen wir das übergeordnete Lesezeichen mithilfe von zur Lesezeichensammlung des Dokuments hinzu`Add` Methode der`Outlines` Eigentum. Hier ist der entsprechende Code:
 
 ```csharp
 pdfDocument.Outlines.Add(pdfOutline);
 ```
 
-### Sample source code for Add Child Bookmark using Aspose.PDF for .NET 
+### Beispielquellcode für „Untergeordnetes Lesezeichen hinzufügen“ mit Aspose.PDF für .NET 
 ```csharp
-// The path to the documents directory.
+// Der Pfad zum Dokumentenverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open document
+// Dokument öffnen
 Document pdfDocument = new Document(dataDir + "AddChildBookmark.pdf");
-// Create a parent bookmark object
+// Erstellen Sie ein übergeordnetes Lesezeichenobjekt
 OutlineItemCollection pdfOutline = new OutlineItemCollection(pdfDocument.Outlines);
 pdfOutline.Title = "Parent Outline";
 pdfOutline.Italic = true;
 pdfOutline.Bold = true;      
-// Create a child bookmark object
+// Erstellen Sie ein untergeordnetes Lesezeichenobjekt
 OutlineItemCollection pdfChildOutline = new OutlineItemCollection(pdfDocument.Outlines);
 pdfChildOutline.Title = "Child Outline";
 pdfChildOutline.Italic = true;
 pdfChildOutline.Bold = true;
-// Add child bookmark in parent bookmark's collection
+// Fügen Sie ein untergeordnetes Lesezeichen zur Sammlung des übergeordneten Lesezeichens hinzu
 pdfOutline.Add(pdfChildOutline);
-// Add parent bookmark in the document's outline collection.
+// Fügen Sie der Gliederungssammlung des Dokuments ein übergeordnetes Lesezeichen hinzu.
 pdfDocument.Outlines.Add(pdfOutline);
 dataDir = dataDir + "AddChildBookmark_out.pdf";
-// Save output
+// Ausgabe speichern
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nChild bookmark added successfully.\nFile saved at " + dataDir);
 ```
 
-## Conclusion
+## Abschluss
 
-Congratulation ! Now you have a step by step guide to add a sub-bookmark with Aspose.PDF for .NET. You can use this code to organize and structure your bookmarks in your PDF documents.
+Herzlichen Glückwunsch! Jetzt haben Sie eine Schritt-für-Schritt-Anleitung zum Hinzufügen eines Unterlesezeichens mit Aspose.PDF für .NET. Mit diesem Code können Sie Ihre Lesezeichen in Ihren PDF-Dokumenten organisieren und strukturieren.
 
-Be sure to check out the official Aspose.PDF documentation for more information on advanced bookmark manipulation features.
+Weitere Informationen zu erweiterten Funktionen zur Lesezeichenmanipulation finden Sie unbedingt in der offiziellen Aspose.PDF-Dokumentation.
 
-### FAQ's for add child bookmark in PDF file
+### FAQs zum Hinzufügen eines untergeordneten Lesezeichens in einer PDF-Datei
 
-#### Q: What are child bookmarks in a PDF file?
+#### F: Was sind untergeordnete Lesezeichen in einer PDF-Datei?
 
-A: Child bookmarks, also known as sub-bookmarks, are navigational elements within a PDF document that are hierarchically structured under a parent bookmark. They provide a way to create a more organized and detailed table of contents for the document.
+A: Untergeordnete Lesezeichen, auch Unterlesezeichen genannt, sind Navigationselemente innerhalb eines PDF-Dokuments, die hierarchisch unter einem übergeordneten Lesezeichen strukturiert sind. Sie bieten eine Möglichkeit, ein besser organisiertes und detaillierteres Inhaltsverzeichnis für das Dokument zu erstellen.
 
-#### Q: How do I import the necessary libraries for my C# project?
+#### F: Wie importiere ich die erforderlichen Bibliotheken für mein C#-Projekt?
 
-A: To import the required libraries for your C# project, you can use the following import directive:
+A: Um die erforderlichen Bibliotheken für Ihr C#-Projekt zu importieren, können Sie die folgende Importanweisung verwenden:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.InteractiveFeatures;
 ```
 
-These libraries provide the necessary classes and functions for working with PDF documents and interactive features.
+Diese Bibliotheken stellen die notwendigen Klassen und Funktionen für die Arbeit mit PDF-Dokumenten und interaktiven Funktionen bereit.
 
-#### Q: How do I specify the path to the documents folder?
+#### F: Wie lege ich den Pfad zum Dokumentenordner fest?
 
-A: In the source code provided, you need to replace `"YOUR DOCUMENT DIRECTORY"` with the actual path to the folder containing the PDF file you want to work with. This ensures that the code correctly locates the target PDF file.
+ A: Der bereitgestellte Quellcode muss ersetzt werden`"YOUR DOCUMENT DIRECTORY"` mit dem tatsächlichen Pfad zu dem Ordner, der die PDF-Datei enthält, mit der Sie arbeiten möchten. Dadurch wird sichergestellt, dass der Code die Ziel-PDF-Datei korrekt lokalisiert.
 
-#### Q: Can I create multiple levels of child bookmarks?
+#### F: Kann ich mehrere Ebenen untergeordneter Lesezeichen erstellen?
 
-A: Yes, you can create multiple levels of child bookmarks by extending the process outlined in the tutorial. By creating parent bookmarks with sub-bookmarks and further nesting them, you can create a hierarchical structure of bookmarks for complex PDF documents.
+A: Ja, Sie können mehrere Ebenen untergeordneter Lesezeichen erstellen, indem Sie den im Tutorial beschriebenen Prozess erweitern. Indem Sie übergeordnete Lesezeichen mit Unterlesezeichen erstellen und diese weiter verschachteln, können Sie eine hierarchische Struktur von Lesezeichen für komplexe PDF-Dokumente erstellen.
 
-#### Q: What is the purpose of the `OutlineItemCollection` class?
+####  F: Was ist der Zweck des`OutlineItemCollection` class?
 
-A: The `OutlineItemCollection` class in Aspose.PDF for .NET is used to create and manage outlines, which are essentially bookmarks in a PDF document. This class allows you to set properties such as title, font style, and actions for bookmarks.
+ A: Die`OutlineItemCollection` Die Klasse in Aspose.PDF für .NET wird zum Erstellen und Verwalten von Gliederungen verwendet, bei denen es sich im Wesentlichen um Lesezeichen in einem PDF-Dokument handelt. Mit dieser Klasse können Sie Eigenschaften wie Titel, Schriftart und Aktionen für Lesezeichen festlegen.
 
-#### Q: How do I add a sub-bookmark to a parent bookmark?
+#### F: Wie füge ich ein Unterlesezeichen zu einem übergeordneten Lesezeichen hinzu?
 
-A: To add a sub-bookmark to a parent bookmark, you create a new `OutlineItemCollection` object for the sub-bookmark and set its properties. Then, you use the `Add` method of the parent bookmark's `OutlineItemCollection` to add the sub-bookmark to the parent's collection.
+ A: Um ein Unter-Lesezeichen zu einem übergeordneten Lesezeichen hinzuzufügen, erstellen Sie ein neues`OutlineItemCollection` Objekt für das Unter-Lesezeichen und legen Sie seine Eigenschaften fest. Dann verwenden Sie die`Add` Methode der übergeordneten Lesezeichen`OutlineItemCollection` um das Unter-Lesezeichen zur übergeordneten Sammlung hinzuzufügen.
 
-#### Q: Can I customize the appearance of child bookmarks?
+#### F: Kann ich das Erscheinungsbild von untergeordneten Lesezeichen anpassen?
 
-A: Yes, similar to parent bookmarks, you can customize the appearance of child bookmarks by setting properties such as title, font style, and other attributes. This allows you to create visually distinctive and informative bookmarks.
+A: Ja, ähnlich wie bei übergeordneten Lesezeichen können Sie das Erscheinungsbild untergeordneter Lesezeichen anpassen, indem Sie Eigenschaften wie Titel, Schriftstil und andere Attribute festlegen. Dadurch können Sie optisch markante und informative Lesezeichen erstellen.
 
-#### Q: Is Aspose.PDF for .NET compatible with other programming languages?
+#### F: Ist Aspose.PDF für .NET mit anderen Programmiersprachen kompatibel?
 
-A: Aspose.PDF for .NET is specifically designed for C# and .NET environments. However, Aspose offers similar libraries for other programming languages such as Java and Android, each tailored to their respective platforms.
+A: Aspose.PDF für .NET wurde speziell für C#- und .NET-Umgebungen entwickelt. Aspose bietet jedoch ähnliche Bibliotheken für andere Programmiersprachen wie Java und Android an, die jeweils auf die jeweilige Plattform zugeschnitten sind.
 
-#### Q: How do child bookmarks improve PDF navigation?
+#### F: Wie verbessern untergeordnete Lesezeichen die PDF-Navigation?
 
-A: Child bookmarks improve PDF navigation by providing a more structured and organized table of contents. Users can quickly access specific sections of the document through the hierarchical bookmark structure.
+A: Untergeordnete Lesezeichen verbessern die PDF-Navigation, indem sie ein strukturierteres und organisierteres Inhaltsverzeichnis bereitstellen. Über die hierarchische Lesezeichenstruktur können Benutzer schnell auf bestimmte Abschnitte des Dokuments zugreifen.

@@ -20,7 +20,7 @@ HTML ordered lists are used to display a list of items in a sequential order, ty
 
 ## Adding Aspose.PDF for Java to Your Project
 
-Before we begin, you need to add Aspose.PDF for Java to your Java project. You can download the library from the official website at [https://releases.aspose.com/pdf/java/](https://releases.aspose.com/pdf/java/) and follow the installation instructions provided.
+Before we begin, you need to add Aspose.PDF for Java to your Java project. You can download the library from the website at [https://releases.aspose.com/pdf/java/](https://releases.aspose.com/pdf/java/) and follow the installation instructions provided.
 
 ## Creating a New PDF Document
 
@@ -79,7 +79,7 @@ Yes, you can customize the style of the HTML ordered list by changing its font s
 
 ### Is Aspose.PDF for Java free to use?
 
-Aspose.PDF for Java is a commercial library, and you may need to purchase a license for certain usage scenarios. Please refer to the official website for licensing information.
+Aspose.PDF for Java is a commercial library, and you may need to purchase a license for certain usage scenarios. Please refer to the website for licensing information.
 
 ### Are there any other features provided by Aspose.PDF for Java?
 

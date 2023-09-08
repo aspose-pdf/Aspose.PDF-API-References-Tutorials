@@ -22,7 +22,7 @@ If you haven't already, install the Java Development Kit (JDK) and set up your p
 ## Step 2: Add Aspose.PDF for Java to Your Project
 Once you've set up your development environment, you need to add the Aspose.PDF for Java library to your project. Follow these steps:
 
-1. Download the Aspose.PDF for Java library from the official website.
+1. Download the Aspose.PDF for Java library from the website.
 2. In your IDE, create a new Java project or open an existing one.
 3. Add the downloaded Aspose.PDF JAR files to your project's build path.
 
@@ -106,7 +106,7 @@ Yes, Aspose.PDF for Java supports various PDF versions, including PDF 1.5 and la
 You can apply different properties to individual layers by accessing their respective properties, such as name, visibility, and content. This allows you to customize each layer according to your requirements.
 
 ### Where can I find more documentation and examples for Aspose.PDF for Java?
-You can find comprehensive documentation and code examples for Aspose.PDF for Java on the official Aspose website: [Aspose.PDF for Java Documentation](https://reference.aspose.com/pdf/java/).
+You can find comprehensive documentation and code examples for Aspose.PDF for Java on the Aspose website: [Aspose.PDF for Java Documentation](https://reference.aspose.com/pdf/java/).
 
 
-In this comprehensive guide, we've covered the process of adding layers to a PDF file using Java with Aspose.PDF for Java. You've learned how to set up your development environment, integrate the library, create a PDF document, add layers, organize them, and save the modified PDF. We hope this tutorial has been informative and helpful for your PDF manipulation needs. If you have any further questions, please refer to the FAQs or visit the official Aspose.PDF for Java documentation for more details.
+In this comprehensive guide, we've covered the process of adding layers to a PDF file using Java with Aspose.PDF for Java. You've learned how to set up your development environment, integrate the library, create a PDF document, add layers, organize them, and save the modified PDF. We hope this tutorial has been informative and helpful for your PDF manipulation needs. If you have any further questions, please refer to the FAQs or visit the Aspose.PDF for Java documentation for more details.

@@ -18,7 +18,7 @@ Aspose.PDF for Java is a powerful library that allows you to work with PDF docum
 
 ## Setting up the Development Environment
 
-Before we begin, make sure you have a Java development environment set up on your system. You will also need to download the Aspose.PDF for Java library from the official website.
+Before we begin, make sure you have a Java development environment set up on your system. You will also need to download the Aspose.PDF for Java library from the website.
 
 ## Creating a New Java Project
 

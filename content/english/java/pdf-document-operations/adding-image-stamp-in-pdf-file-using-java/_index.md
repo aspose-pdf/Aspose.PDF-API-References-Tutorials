@@ -25,7 +25,7 @@ Now, let's dive into the steps to add an image stamp to a PDF file using Java.
 
 ## Step 1: Set Up Your Java Environment
 
-To begin, make sure you have Java installed on your system. You can download and install the latest JDK from the official Oracle website. Once installed, set up your Java environment variables.
+To begin, make sure you have Java installed on your system. You can download and install the latest JDK from the Oracle website. Once installed, set up your Java environment variables.
 
 ## Step 2: Add Aspose.PDF for Java to Your Project
 
@@ -80,7 +80,7 @@ Yes, you can add multiple image stamps to a single PDF document by repeating the
 
 ### Is Aspose.PDF for Java free to use?
 
-Aspose.PDF for Java is a commercial library, and you may need to purchase a license for certain usage scenarios. Check Aspose's official website for licensing details.
+Aspose.PDF for Java is a commercial library, and you may need to purchase a license for certain usage scenarios. Check Aspose's website for licensing details.
 
 ### Are there any limitations on the image formats supported for stamping?
 
@@ -88,4 +88,4 @@ Aspose.PDF for Java supports various image formats like PNG, JPEG, GIF, and BMP 
 
 ### Where can I find more examples and documentation for Aspose.PDF for Java?
 
-You can find comprehensive documentation and examples on the official Aspose.PDF for Java website at [here](https://reference.aspose.com/pdf/java/.)
+You can find comprehensive documentation and examples on the Aspose.PDF for Java website at [here](https://reference.aspose.com/pdf/java/.)

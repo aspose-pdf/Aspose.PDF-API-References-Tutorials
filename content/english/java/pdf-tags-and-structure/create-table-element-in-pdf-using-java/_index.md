@@ -77,7 +77,7 @@ Aspose.PDF for Java provides extensive options for customizing the appearance of
 // Example: Setting cell text color
 row1.getCells().get_Item(0).getParagraphs().get_Item(0).getTextState().setForegroundColor(Color.getRed());
 
-// Explore other customization options in the official documentation.
+// Explore other customization options in the documentation.
 ```
 
 ## Step 8: Adding the Table to the Page

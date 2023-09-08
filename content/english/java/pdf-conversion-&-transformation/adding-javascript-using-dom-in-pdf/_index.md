@@ -101,7 +101,7 @@ Now that you have a fundamental understanding of how to add JavaScript to PDFs, 
 
 ### How can I download Aspose.PDF for Java?
 
-You can download Aspose.PDF for Java from the official website by visiting [https://releases.aspose.com/pdf/java/](https://releases.aspose.com/pdf/java/).
+You can download Aspose.PDF for Java from the website by visiting [https://releases.aspose.com/pdf/java/](https://releases.aspose.com/pdf/java/).
 
 ### Is JavaScript support available in all PDF viewers?
 

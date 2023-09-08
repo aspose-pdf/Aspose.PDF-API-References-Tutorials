@@ -102,7 +102,7 @@ With Aspose.PDF for Java, you can efficiently manage document conversions, makin
 
 ### How can I download Aspose.PDF for Java?
 
-You can download Aspose.PDF for Java from the official Aspose website by visiting [this link](https://releases.aspose.com/pdf/java/).
+You can download Aspose.PDF for Java from the Aspose website by visiting [this link](https://releases.aspose.com/pdf/java/).
 
 ### Are there any licensing requirements for using Aspose.PDF for Java?
 
@@ -118,4 +118,4 @@ Yes, Aspose.PDF for Java is well-suited for batch processing of PCL files, makin
 
 ### How can I get technical support for Aspose.PDF for Java?
 
-You can access technical support and documentation for Aspose.PDF for Java on the official Aspose website. Additionally, you may find helpful resources and community forums for assistance with common issues and questions.
+You can access technical support and documentation for Aspose.PDF for Java on the Aspose website. Additionally, you may find helpful resources and community forums for assistance with common issues and questions.

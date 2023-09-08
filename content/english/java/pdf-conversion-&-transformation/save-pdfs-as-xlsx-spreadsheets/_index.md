@@ -66,7 +66,7 @@ In this step-by-step guide, we have learned how to use Aspose.PDF for Java to co
 
 ### How do I install Aspose.PDF for Java?
 
-You can download the Aspose.PDF for Java library from the official website at [https://releases.aspose.com/pdf/java/](https://releases.aspose.com/pdf/java/). Follow the installation instructions provided on their website.
+You can download the Aspose.PDF for Java library from the website at [https://releases.aspose.com/pdf/java/](https://releases.aspose.com/pdf/java/). Follow the installation instructions provided on their website.
 
 ### Can I convert PDFs to other formats using Aspose.PDF for Java?
 

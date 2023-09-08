@@ -102,4 +102,4 @@ Extracting content from tagged PDFs using Java and Aspose.PDF for Java is essent
    Aspose.PDF for Java is a commercial library, but it provides a free trial for evaluation purposes.
 
 ### Where can I find more information about Aspose.PDF for Java?
-   Refer to the official API documentation at [https://reference.aspose.com/pdf/java/](https://reference.aspose.com/pdf/java/) for detailed information and examples.
+   Refer to the API documentation at [https://reference.aspose.com/pdf/java/](https://reference.aspose.com/pdf/java/) for detailed information and examples.

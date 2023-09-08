@@ -85,7 +85,7 @@ In this step-by-step guide, we learned how to use Aspose.PDF for Java to extract
 
 ### How can I install Aspose.PDF for Java?
 
-You can include Aspose.PDF for Java in your project by adding the Maven dependency mentioned earlier. Alternatively, you can download the library from the official Aspose website.
+You can include Aspose.PDF for Java in your project by adding the Maven dependency mentioned earlier. Alternatively, you can download the library from the Aspose website.
 
 ### Can I extract other information from a PDF using Aspose.PDF for Java?
 
@@ -93,7 +93,7 @@ Yes, Aspose.PDF for Java provides extensive capabilities for working with PDF do
 
 ### What if I encounter issues while using Aspose.PDF for Java?
 
-If you encounter any problems or have questions about using Aspose.PDF for Java, you can refer to the official documentation or seek assistance from the Aspose support team.
+If you encounter any problems or have questions about using Aspose.PDF for Java, you can refer to the documentation or seek assistance from the Aspose support team.
 
 ### Is Aspose.PDF for Java free to use?
 

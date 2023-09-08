@@ -75,7 +75,7 @@ The conversion process largely depends on the complexity of the original PostScr
 
 ### Where can I find more resources and documentation for Aspose.PDF for Java?
 
-You can find comprehensive documentation and examples on the official Aspose.PDF for Java API reference [here](https://reference.aspose.com/pdf/java/).
+You can find comprehensive documentation and examples on the Aspose.PDF for Java API reference [here](https://reference.aspose.com/pdf/java/).
 
 ## Conclusion
 

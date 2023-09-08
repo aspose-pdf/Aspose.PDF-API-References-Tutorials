@@ -116,4 +116,4 @@ textStamp.setRotation(45);
 
 ### Where can I find more documentation and examples for Aspose.PDF for Java?
 
-You can find comprehensive documentation and examples for Aspose.PDF for Java on the official documentation website: [Aspose.PDF for Java Documentation](https://reference.aspose.com/pdf/java/).
+You can find comprehensive documentation and examples for Aspose.PDF for Java on the documentation website: [Aspose.PDF for Java Documentation](https://reference.aspose.com/pdf/java/).

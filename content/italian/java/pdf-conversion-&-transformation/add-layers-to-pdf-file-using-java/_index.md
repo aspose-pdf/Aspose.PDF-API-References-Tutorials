@@ -5,7 +5,7 @@ second_title: Aspose.PDF API di elaborazione PDF Java
 description: Scopri come aggiungere livelli a un file PDF utilizzando Java con Aspose.PDF per Java. Questa guida passo passo include il codice sorgente e copre facilmente la manipolazione dei PDF.
 type: docs
 weight: 33
-url: /it/java/pdf-conversion-&-transformation/add-layers-to-pdf-file-using-java/
+url: /it/java/pdf-conversion-transformation/add-layers-to-pdf-file-using-java/
 ---
 In questa guida passo passo, esploreremo come aggiungere livelli a un file PDF utilizzando Java con la libreria Aspose.PDF per Java. I livelli, noti anche come gruppi di contenuti opzionali (OCG), consentono di organizzare i contenuti all'interno di un documento PDF e di controllarne la visibilità. Ciò può essere particolarmente utile quando desideri creare PDF interattivi o fornire visualizzazioni diverse dello stesso documento.
 

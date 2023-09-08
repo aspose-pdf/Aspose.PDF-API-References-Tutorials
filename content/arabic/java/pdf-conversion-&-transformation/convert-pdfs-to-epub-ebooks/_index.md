@@ -5,7 +5,7 @@ second_title: Aspose.PDF جافا واجهة برمجة تطبيقات معال�
 description: قم بتحويل ملفات PDF إلى كتب إلكترونية EPUB بسهولة باستخدام Aspose.PDF لـ Java. تعرف على الأسئلة الشائعة حول تحويل PDF إلى EPUB خطوة بخطوة.
 type: docs
 weight: 15
-url: /ar/java/pdf-conversion-&-transformation/convert-pdfs-to-epub-ebooks/
+url: /ar/java/pdf-conversion-transformation/convert-pdfs-to-epub-ebooks/
 ---
 
 ## مقدمة لتحويل ملفات PDF إلى كتب EPUB الإلكترونية

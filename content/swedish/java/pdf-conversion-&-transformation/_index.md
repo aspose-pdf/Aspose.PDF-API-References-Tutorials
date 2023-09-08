@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF Processing API
 description: Lås upp kraften i PDF-konvertering och -transformation med Aspose.PDF för Java - Omfattande handledning för utvecklare. Förbättra dina färdigheter i PDF-bearbetning idag!
 type: docs
 weight: 13
-url: /sv/java/pdf-conversion-&-transformation/
+url: /sv/java/pdf-conversion-transformation/
 ---
 
 ## Introduktion till Aspose.PDF för Java

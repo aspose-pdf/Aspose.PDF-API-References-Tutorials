@@ -5,7 +5,7 @@ second_title: Aspose.PDF جافا واجهة برمجة تطبيقات معال�
 description: تعرف على كيفية تحويل SVG إلى PDF بسهولة باستخدام Aspose.PDF لـ Java في هذا الدليل التفصيلي خطوة بخطوة. قم بإنشاء مستندات PDF عالية الجودة من ملفات SVG الخاصة بك بسهولة.
 type: docs
 weight: 24
-url: /ar/java/pdf-conversion-&-transformation/convert-svg-to-pdf-format/
+url: /ar/java/pdf-conversion-transformation/convert-svg-to-pdf-format/
 ---
 
 ## مقدمة

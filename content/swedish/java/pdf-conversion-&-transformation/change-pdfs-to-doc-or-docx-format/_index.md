@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF Processing API
 description: Lär dig hur du enkelt konverterar PDF-filer till DOC- eller DOCX-format med Aspose.PDF för Java. En steg-för-steg-guide med källkod och vanliga frågor för sömlös dokumenttransformation.
 type: docs
 weight: 14
-url: /sv/java/pdf-conversion-&-transformation/change-pdfs-to-doc-or-docx-format/
+url: /sv/java/pdf-conversion-transformation/change-pdfs-to-doc-or-docx-format/
 ---
 
 ## 1. Introduktion

@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java API обработки PDF
 description: Узнайте, как конвертировать PDF в HTML с заменой шрифтов с помощью Aspose.PDF для Java. Пошаговое руководство с исходным кодом для плавного преобразования. Оптимизируйте свой веб-контент прямо сейчас!
 type: docs
 weight: 30
-url: /ru/java/pdf-conversion-&-transformation/convert-pdf-to-html-with-font-substitution/
+url: /ru/java/pdf-conversion-transformation/convert-pdf-to-html-with-font-substitution/
 ---
 
 В этом пошаговом руководстве мы рассмотрим, как преобразовать PDF-документ в HTML с заменой шрифта с помощью Aspose.PDF для Java. Замена шрифтов является важной функцией при работе с PDF-документами, в которых используются шрифты, недоступные в HTML. К концу этого руководства вы сможете выполнять плавные преобразования, сохраняя при этом целостность документа.

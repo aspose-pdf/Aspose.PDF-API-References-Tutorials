@@ -5,7 +5,7 @@ second_title: Aspose.PDF API di elaborazione PDF Java
 description: Converti facilmente XML in PDF con Aspose.PDF per Java. Semplifica la rappresentazione e la condivisione dei dati. Scopri come in questa guida completa.
 type: docs
 weight: 26
-url: /it/java/pdf-conversion-&-transformation/export-xml-to-pdf-documents/
+url: /it/java/pdf-conversion-transformation/export-xml-to-pdf-documents/
 ---
 
 ## Esporta XML in documenti PDF utilizzando Aspose.PDF per Java

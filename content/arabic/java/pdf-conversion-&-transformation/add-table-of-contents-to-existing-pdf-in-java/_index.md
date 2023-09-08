@@ -5,7 +5,7 @@ second_title: Aspose.PDF جافا واجهة برمجة تطبيقات معال�
 description: تعرف على كيفية إضافة جدول محتويات إلى ملف PDF في Java باستخدام Aspose.PDF لـ Java. قم بتحسين التنقل في المستندات باستخدام هذا الدليل المفصّل خطوة بخطوة.
 type: docs
 weight: 34
-url: /ar/java/pdf-conversion-&-transformation/add-table-of-contents-to-existing-pdf-in-java/
+url: /ar/java/pdf-conversion-transformation/add-table-of-contents-to-existing-pdf-in-java/
 ---
 
 ## مقدمة

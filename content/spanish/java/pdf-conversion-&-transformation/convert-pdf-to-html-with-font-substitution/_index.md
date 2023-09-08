@@ -5,7 +5,7 @@ second_title: Aspose.PDF API de procesamiento de PDF Java
 description: Aprenda a convertir PDF a HTML con sustitución de fuentes usando Aspose.PDF para Java. Guía paso a paso con código fuente para conversiones perfectas. ¡Optimiza tu contenido web ahora!
 type: docs
 weight: 30
-url: /es/java/pdf-conversion-&-transformation/convert-pdf-to-html-with-font-substitution/
+url: /es/java/pdf-conversion-transformation/convert-pdf-to-html-with-font-substitution/
 ---
 
 En esta guía paso a paso, exploraremos cómo convertir un documento PDF a HTML con sustitución de fuentes usando Aspose.PDF para Java. La sustitución de fuentes es una característica crucial cuando se trata de documentos PDF que utilizan fuentes que no están disponibles en HTML. Al final de este tutorial, podrá realizar conversiones sin problemas manteniendo la integridad del documento.

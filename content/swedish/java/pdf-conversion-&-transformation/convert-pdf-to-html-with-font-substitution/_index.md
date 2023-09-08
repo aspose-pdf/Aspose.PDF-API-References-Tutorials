@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF Processing API
 description: Lär dig hur du konverterar PDF till HTML med teckensnittsersättning med Aspose.PDF för Java. Steg-för-steg-guide med källkod för sömlösa konverteringar. Optimera ditt webbinnehåll nu!
 type: docs
 weight: 30
-url: /sv/java/pdf-conversion-&-transformation/convert-pdf-to-html-with-font-substitution/
+url: /sv/java/pdf-conversion-transformation/convert-pdf-to-html-with-font-substitution/
 ---
 
 I denna steg-för-steg-guide kommer vi att utforska hur man konverterar ett PDF-dokument till HTML med teckensnittsersättning med Aspose.PDF för Java. Teckensnittsersättning är en avgörande funktion när man hanterar PDF-dokument som använder teckensnitt som inte är lätt tillgängliga i HTML. I slutet av denna handledning kommer du att kunna utföra sömlösa konverteringar samtidigt som dokumentets integritet bibehålls.

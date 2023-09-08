@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF İşleme API'si
 description: Aspose.PDF for Java ile PDF'leri Excel çalışma kitaplarına zahmetsizce nasıl aktaracağınızı öğrenin. Sorunsuz veri çıkarma için adım adım kılavuz.
 type: docs
 weight: 16
-url: /tr/java/pdf-conversion-&-transformation/export-pdfs-to-excel-workbooks/
+url: /tr/java/pdf-conversion-transformation/export-pdfs-to-excel-workbooks/
 ---
 
 ## Aspose.PDF for Java kullanarak PDF'leri Excel Çalışma Kitaplarına aktarın

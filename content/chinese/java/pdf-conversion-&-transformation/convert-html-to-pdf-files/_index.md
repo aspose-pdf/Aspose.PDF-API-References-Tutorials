@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF 处理 API
 description: 了解如何使用 Aspose.PDF for Java 轻松将 HTML 转换为 PDF 文件。包含有效生成文档的代码示例的分步指南。
 type: docs
 weight: 11
-url: /zh/java/pdf-conversion-&-transformation/convert-html-to-pdf-files/
+url: /zh/java/pdf-conversion-transformation/convert-html-to-pdf-files/
 ---
 
 ## 将 HTML 转换为 PDF 文件简介

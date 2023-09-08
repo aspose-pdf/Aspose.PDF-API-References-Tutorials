@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF-Verarbeitungs-API
 description: Erfahren Sie, wie Sie mit Aspose.PDF für Java Ebenen zu einer PDF-Datei mit Java hinzufügen. Diese Schritt-für-Schritt-Anleitung enthält Quellcode und erklärt die einfache PDF-Manipulation.
 type: docs
 weight: 33
-url: /de/java/pdf-conversion-&-transformation/add-layers-to-pdf-file-using-java/
+url: /de/java/pdf-conversion-transformation/add-layers-to-pdf-file-using-java/
 ---
 In dieser Schritt-für-Schritt-Anleitung erfahren Sie, wie Sie mithilfe von Java mit der Bibliothek Aspose.PDF für Java Ebenen zu einer PDF-Datei hinzufügen. Ebenen, auch optionale Inhaltsgruppen (OCGs) genannt, ermöglichen Ihnen die Organisation von Inhalten in einem PDF-Dokument und die Steuerung seiner Sichtbarkeit. Dies kann besonders nützlich sein, wenn Sie interaktive PDFs erstellen oder verschiedene Ansichten desselben Dokuments bereitstellen möchten.
 

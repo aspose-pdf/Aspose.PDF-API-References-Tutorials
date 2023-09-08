@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF 处理 API
 description: 了解如何使用 Aspose.PDF for Java 从 PDF 生成 MobiXML。带有代码示例的分步指南。将 PDF 无缝转换为 MobiXML 格式。
 type: docs
 weight: 17
-url: /zh/java/pdf-conversion-&-transformation/generate-mobixml-from-pdfs/
+url: /zh/java/pdf-conversion-transformation/generate-mobixml-from-pdfs/
 ---
 
 ## 介绍

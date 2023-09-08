@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF-Verarbeitungs-API
 description: Erfahren Sie, wie Sie mit Aspose.PDF für Java ganz einfach Text in PDF-Dateien konvertieren. Schritt-für-Schritt-Anleitung mit Quellcode.
 type: docs
 weight: 25
-url: /de/java/pdf-conversion-&-transformation/change-text-to-pdf-files/
+url: /de/java/pdf-conversion-transformation/change-text-to-pdf-files/
 ---
 
 ## Einführung in die Umwandlung von Text in PDF-Dateien

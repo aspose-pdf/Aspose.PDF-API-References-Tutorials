@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF 处理 API
 description: 了解如何使用 Java 和 Aspose.PDF for Java 将图层添加到 PDF 文件。本分步指南包括源代码并涵盖轻松的 PDF 操作。
 type: docs
 weight: 33
-url: /zh/java/pdf-conversion-&-transformation/add-layers-to-pdf-file-using-java/
+url: /zh/java/pdf-conversion-transformation/add-layers-to-pdf-file-using-java/
 ---
 在本分步指南中，我们将探讨如何使用 Java 和 Aspose.PDF for Java 库向 PDF 文件添加图层。图层也称为可选内容组 (OCG)，允许您组织 PDF 文档中的内容并控制其可见性。当您想要创建交互式 PDF 或提供同一文档的不同视图时，这尤其有用。
 

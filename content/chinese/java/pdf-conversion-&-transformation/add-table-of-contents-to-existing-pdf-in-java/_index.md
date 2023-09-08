@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF 处理 API
 description: 了解如何使用 Aspose.PDF for Java 在 Java 中将目录添加到 PDF。通过此分步指南增强文档导航。
 type: docs
 weight: 34
-url: /zh/java/pdf-conversion-&-transformation/add-table-of-contents-to-existing-pdf-in-java/
+url: /zh/java/pdf-conversion-transformation/add-table-of-contents-to-existing-pdf-in-java/
 ---
 
 ## 介绍

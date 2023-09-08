@@ -5,7 +5,7 @@ second_title: Aspose.PDF API di elaborazione PDF Java
 description: Scopri come aggiungere un sommario a un PDF in Java utilizzando Aspose.PDF per Java. Migliora la navigazione dei documenti con questa guida passo passo.
 type: docs
 weight: 34
-url: /it/java/pdf-conversion-&-transformation/add-table-of-contents-to-existing-pdf-in-java/
+url: /it/java/pdf-conversion-transformation/add-table-of-contents-to-existing-pdf-in-java/
 ---
 
 ## introduzione

@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF Processing API
 description: Learn how to create PDF/A compliant files using Aspose.PDF for Java. Step-by-step guide with code examples for industry-standard PDFs.
 type: docs
 weight: 18
-url: /java/pdf-conversion-&-transformation/create-pdfa-compliant-files/
+url: /java/pdf-conversion-transformation/create-pdfa-compliant-files/
 ---
 
 ## Introduction

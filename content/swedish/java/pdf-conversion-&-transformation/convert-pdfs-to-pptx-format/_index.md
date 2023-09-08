@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF Processing API
 description: Lär dig hur du konverterar PDF-filer till PPTX-format med Aspose.PDF för Java. Steg-för-steg guide med kodexempel för sömlös konvertering.
 type: docs
 weight: 19
-url: /sv/java/pdf-conversion-&-transformation/convert-pdfs-to-pptx-format/
+url: /sv/java/pdf-conversion-transformation/convert-pdfs-to-pptx-format/
 ---
 
 ## Introduktion till att konvertera PDF-filer till PPTX-format

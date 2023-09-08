@@ -5,7 +5,7 @@ second_title: Aspose.PDF جافا واجهة برمجة تطبيقات معال�
 description: تحويل ملفات PDF إلى صور SVG باستخدام Aspose.PDF لـ Java - دليل خطوة بخطوة لتحويل PDF إلى SVG بسلاسة باستخدام Aspose.PDF لـ Java.
 type: docs
 weight: 20
-url: /ar/java/pdf-conversion-&-transformation/convert-pdfs-to-svg-images/
+url: /ar/java/pdf-conversion-transformation/convert-pdfs-to-svg-images/
 ---
 
 ## مقدمة لتحويل ملفات PDF إلى صور SVG باستخدام Aspose.PDF لـ Java

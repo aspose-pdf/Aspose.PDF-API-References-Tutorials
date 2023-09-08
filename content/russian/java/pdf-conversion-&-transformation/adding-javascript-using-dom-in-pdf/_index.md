@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java API обработки PDF
 description: Узнайте, как повысить интерактивность PDF с помощью JavaScript с помощью Aspose.PDF для Java. Пошаговое руководство с исходным кодом для динамических PDF-файлов
 type: docs
 weight: 32
-url: /ru/java/pdf-conversion-&-transformation/adding-javascript-using-dom-in-pdf/
+url: /ru/java/pdf-conversion-transformation/adding-javascript-using-dom-in-pdf/
 ---
 
 ## Введение

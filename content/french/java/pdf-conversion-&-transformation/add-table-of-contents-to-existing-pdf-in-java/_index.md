@@ -5,7 +5,7 @@ second_title: Aspose.PDF API de traitement PDF Java
 description: Découvrez comment ajouter une table des matières à un PDF en Java à l'aide d'Aspose.PDF pour Java. Améliorez la navigation dans les documents avec ce guide étape par étape.
 type: docs
 weight: 34
-url: /fr/java/pdf-conversion-&-transformation/add-table-of-contents-to-existing-pdf-in-java/
+url: /fr/java/pdf-conversion-transformation/add-table-of-contents-to-existing-pdf-in-java/
 ---
 
 ## Introduction

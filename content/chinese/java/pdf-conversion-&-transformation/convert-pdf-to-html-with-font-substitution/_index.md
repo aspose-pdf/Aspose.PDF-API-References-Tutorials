@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF 处理 API
 description: 了解如何使用 Aspose.PDF for Java 通过字体替换将 PDF 转换为 HTML。带有源代码的分步指南，可实现无缝转换。立即优化您的网页内容！
 type: docs
 weight: 30
-url: /zh/java/pdf-conversion-&-transformation/convert-pdf-to-html-with-font-substitution/
+url: /zh/java/pdf-conversion-transformation/convert-pdf-to-html-with-font-substitution/
 ---
 
 在本分步指南中，我们将探索如何使用 Aspose.PDF for Java 将 PDF 文档转换为具有字体替换的 HTML。在处理使用 HTML 中不易提供的字体的 PDF 文档时，字体替换是一个至关重要的功能。在本教程结束时，您将能够执行无缝转换，同时保持文档的完整性。

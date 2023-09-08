@@ -5,7 +5,7 @@ second_title: Aspose.PDF API de procesamiento de PDF Java
 description: Aprenda a exportar archivos PDF a libros de Excel sin esfuerzo con Aspose.PDF para Java. Guía paso a paso para una extracción de datos perfecta.
 type: docs
 weight: 16
-url: /es/java/pdf-conversion-&-transformation/export-pdfs-to-excel-workbooks/
+url: /es/java/pdf-conversion-transformation/export-pdfs-to-excel-workbooks/
 ---
 
 ## Exporte archivos PDF a libros de Excel usando Aspose.PDF para Java

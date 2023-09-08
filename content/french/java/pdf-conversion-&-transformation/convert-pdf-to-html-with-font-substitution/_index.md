@@ -5,7 +5,7 @@ second_title: Aspose.PDF API de traitement PDF Java
 description: Découvrez comment convertir un PDF en HTML avec substitution de police à l'aide d'Aspose.PDF pour Java. Guide étape par étape avec code source pour des conversions transparentes. Optimisez votre contenu Web maintenant !
 type: docs
 weight: 30
-url: /fr/java/pdf-conversion-&-transformation/convert-pdf-to-html-with-font-substitution/
+url: /fr/java/pdf-conversion-transformation/convert-pdf-to-html-with-font-substitution/
 ---
 
 Dans ce guide étape par étape, nous explorerons comment convertir un document PDF en HTML avec substitution de police à l'aide d'Aspose.PDF pour Java. La substitution de polices est une fonctionnalité cruciale lorsqu'il s'agit de documents PDF qui utilisent des polices qui ne sont pas facilement disponibles en HTML. À la fin de ce didacticiel, vous serez en mesure d'effectuer des conversions transparentes tout en préservant l'intégrité du document.

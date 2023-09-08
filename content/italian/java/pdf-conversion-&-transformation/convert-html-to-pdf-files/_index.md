@@ -5,7 +5,7 @@ second_title: Aspose.PDF API di elaborazione PDF Java
 description: Scopri come convertire facilmente file HTML in PDF utilizzando Aspose.PDF per Java. Guida passo passo con esempi di codice per la generazione efficiente di documenti.
 type: docs
 weight: 11
-url: /it/java/pdf-conversion-&-transformation/convert-html-to-pdf-files/
+url: /it/java/pdf-conversion-transformation/convert-html-to-pdf-files/
 ---
 
 ## Introduzione alla conversione di file HTML in PDF

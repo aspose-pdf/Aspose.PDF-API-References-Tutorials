@@ -31,7 +31,7 @@ Det här är länkar till några användbara resurser:
 - [PDF-anteckningar](./java/pdf-annotations/)
 - [PDF-bilagor](./java/pdf-attachments/)
 - [PDF-bokmärken](./java/pdf-bookmarks/)
-- [PDF-konvertering och transformation](./java/pdf-conversion-&-transformation/)
+- [PDF-konvertering och transformation](./java/pdf-conversion-transformation/)
 - [PDF-bilder](./java/pdf-images/)
 - [PDF-bildbehandling](./java/pdf-image-manipulation/)
 - [PDF-dokumentlänkar](./java/pdf-document-links/)

@@ -5,7 +5,7 @@ second_title: Aspose.PDF جافا واجهة برمجة تطبيقات معال�
 description: تعرف على كيفية تحسين تفاعل PDF مع JavaScript باستخدام Aspose.PDF لـ Java. دليل خطوة بخطوة مع الكود المصدري لملفات PDF الديناميكية
 type: docs
 weight: 32
-url: /ar/java/pdf-conversion-&-transformation/adding-javascript-using-dom-in-pdf/
+url: /ar/java/pdf-conversion-transformation/adding-javascript-using-dom-in-pdf/
 ---
 
 ## مقدمة

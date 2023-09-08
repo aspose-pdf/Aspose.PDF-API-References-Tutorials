@@ -5,7 +5,7 @@ second_title: Aspose.PDF جافا واجهة برمجة تطبيقات معال�
 description: تعرف على كيفية تحويل ملفات PDF إلى تنسيق PPTX باستخدام Aspose.PDF لـ Java. دليل خطوة بخطوة مع أمثلة التعليمات البرمجية للتحويل السلس.
 type: docs
 weight: 19
-url: /ar/java/pdf-conversion-&-transformation/convert-pdfs-to-pptx-format/
+url: /ar/java/pdf-conversion-transformation/convert-pdfs-to-pptx-format/
 ---
 
 ## مقدمة لتحويل ملفات PDF إلى تنسيق PPTX

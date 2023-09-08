@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF-Verarbeitungs-API
 description: Erfahren Sie, wie Sie mit Aspose.PDF für Java ein Inhaltsverzeichnis zu einer PDF-Datei in Java hinzufügen. Verbessern Sie die Dokumentennavigation mit dieser Schritt-für-Schritt-Anleitung.
 type: docs
 weight: 34
-url: /de/java/pdf-conversion-&-transformation/add-table-of-contents-to-existing-pdf-in-java/
+url: /de/java/pdf-conversion-transformation/add-table-of-contents-to-existing-pdf-in-java/
 ---
 
 ## Einführung

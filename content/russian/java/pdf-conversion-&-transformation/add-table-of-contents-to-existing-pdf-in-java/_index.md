@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java API обработки PDF
 description: Узнайте, как добавить оглавление в PDF-файл на Java с помощью Aspose.PDF для Java. Улучшите навигацию по документу с помощью этого пошагового руководства.
 type: docs
 weight: 34
-url: /ru/java/pdf-conversion-&-transformation/add-table-of-contents-to-existing-pdf-in-java/
+url: /ru/java/pdf-conversion-transformation/add-table-of-contents-to-existing-pdf-in-java/
 ---
 
 ## Введение

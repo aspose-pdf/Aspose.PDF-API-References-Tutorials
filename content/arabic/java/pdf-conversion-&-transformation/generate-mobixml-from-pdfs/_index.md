@@ -5,7 +5,7 @@ second_title: Aspose.PDF جافا واجهة برمجة تطبيقات معال�
 description: تعرف على كيفية إنشاء MobiXML من ملفات PDF باستخدام Aspose.PDF لـ Java. دليل خطوة بخطوة مع أمثلة التعليمات البرمجية. تحويل ملفات PDF بسهولة إلى تنسيق MobiXML.
 type: docs
 weight: 17
-url: /ar/java/pdf-conversion-&-transformation/generate-mobixml-from-pdfs/
+url: /ar/java/pdf-conversion-transformation/generate-mobixml-from-pdfs/
 ---
 
 ## مقدمة

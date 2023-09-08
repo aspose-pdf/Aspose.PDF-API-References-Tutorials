@@ -5,7 +5,7 @@ second_title: Aspose.PDF جافا واجهة برمجة تطبيقات معال�
 description: تعرف على كيفية تحويل ملفات PDF إلى XML بسهولة باستخدام Aspose.PDF لـ Java. دليل خطوة بخطوة وأفضل الممارسات للتحويل الفعال.
 type: docs
 weight: 22
-url: /ar/java/pdf-conversion-&-transformation/convert-pdfs-to-xml-format/
+url: /ar/java/pdf-conversion-transformation/convert-pdfs-to-xml-format/
 ---
 
 ## مقدمة لتحويل ملفات PDF إلى تنسيق XML باستخدام Aspose.PDF لـ Java

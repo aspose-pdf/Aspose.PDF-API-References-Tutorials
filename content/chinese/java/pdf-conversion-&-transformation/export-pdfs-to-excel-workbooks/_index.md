@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF 处理 API
 description: 了解如何使用 Aspose.PDF for Java 轻松将 PDF 导出到 Excel 工作簿。无缝数据提取的分步指南。
 type: docs
 weight: 16
-url: /zh/java/pdf-conversion-&-transformation/export-pdfs-to-excel-workbooks/
+url: /zh/java/pdf-conversion-transformation/export-pdfs-to-excel-workbooks/
 ---
 
 ## 使用 Aspose.PDF for Java 将 PDF 导出到 Excel 工作簿

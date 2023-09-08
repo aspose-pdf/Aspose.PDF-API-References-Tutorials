@@ -5,7 +5,7 @@ second_title: Aspose.PDF Java PDF 处理 API
 description: 了解如何使用 Aspose.PDF for Java 轻松将文本转换为 PDF 文件。带有源代码的分步指南。
 type: docs
 weight: 25
-url: /zh/java/pdf-conversion-&-transformation/change-text-to-pdf-files/
+url: /zh/java/pdf-conversion-transformation/change-text-to-pdf-files/
 ---
 
 ## 将文本更改为 PDF 文件简介
